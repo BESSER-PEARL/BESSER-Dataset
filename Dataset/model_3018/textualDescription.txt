@@ -1,0 +1,411 @@
+The domain model 'ir' describes the core structural elements and their relationships within the system.
+
+The model defines 80 main class(es).
+
+'ir_IrAnnotation' represents an important domain concept.
+It has one attribute: 'source', which is of type str.
+
+'ir_IrAnnotable' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_If' represents an important domain concept.
+It does not declare any attributes.
+
+'IrAnnotable' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_BoolConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'ir_TimeLoopCopy' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_BaseType' represents an important domain concept.
+It has one attribute: 'primitive', which is of type str.
+
+'ir_ConnectivityType' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_InstructionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ItemIndexValue' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ItemIdValueIterator' represents an important domain concept.
+It has one attribute: 'shift', which is of type int.
+
+'ir_TimeLoopJob' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Arg' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ItemIndex' represents an important domain concept.
+It has the following attributes: 'itemName', which is of type str; 'name', which is of type str.
+
+'ir_Affectation' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Exit' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'ir_IntConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'ir_RealConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'ir_Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_VectorConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_VariableDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_UnaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ir_AfterTimeLoopJob' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ReductionInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Loop' represents an important domain concept.
+It has one attribute: 'multithreadable', which is of type bool.
+
+'ir_ItemIdValue' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_IterableInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ItemIndexDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ArgOrVarRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_IrType' represents an important domain concept.
+It does not declare any attributes.
+
+'JobContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ItemIdValueCall' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TimeLoop' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_BaseTypeConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TimeLoopCopyJob' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Function' represents an important domain concept.
+It has the following attributes: 'provider', which is of type str; 'name', which is of type str.
+
+'ir_ContractedIf' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_SimpleVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_BinaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ir_Container' represents an important domain concept.
+It does not declare any attributes.
+
+'IterationBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'TimeLoopCopyJob' represents an important domain concept.
+It does not declare any attributes.
+
+'Job' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_InstructionJob' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_SetDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_MinConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'ItemIdValue' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'ir_Job' represents an important domain concept.
+It has the following attributes: 'at', which is of type float; 'onCycle', which is of type bool; 'name', which is of type str.
+
+'ir_Parenthesis' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ConnectivityCall' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_MaxConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ItemType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ConnectivityVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'ArgOrVar' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Connectivity' represents an important domain concept.
+It has the following attributes: 'multiple', which is of type bool; 'name', which is of type str; 'indexEqualId', which is of type bool.
+
+'ir_Variable' represents an important domain concept.
+It has the following attributes: 'const', which is of type bool; 'persistenceName', which is of type str.
+
+'ir_ArgOrVar' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Container' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Cardinality' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_JobContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_PostProcessingInfo' represents an important domain concept.
+It has one attribute: 'periodValue', which is of type float.
+
+'ir_IrModule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'IterableInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_BeforeTimeLoopJob' represents an important domain concept.
+It does not declare any attributes.
+
+'IrType' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TimeLoopVariable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_ItemIdDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ItemId' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'itemName', which is of type str.
+
+'ir_SetRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_IterationBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PrimitiveType' defines the following possible values: 'Bool', 'Real', 'Int'.
+
+The model also captures inheritance relationships between classes.
+The class 'ir_JobContainer' is a specialization of 'IrAnnotable'.
+The class 'ir_IrModule' is a specialization of 'JobContainer'.
+The class 'ir_Import' is a specialization of 'IrAnnotable'.
+The class 'ir_PostProcessingInfo' is a specialization of 'IrAnnotable'.
+The class 'ir_TimeLoop' is a specialization of 'IrAnnotable'.
+The class 'ir_ArgOrVar' is a specialization of 'IrAnnotable'.
+The class 'ir_Arg' is a specialization of 'ArgOrVar'.
+The class 'ir_Variable' is a specialization of 'ArgOrVar'.
+The class 'ir_SimpleVariable' is a specialization of 'Variable'.
+The class 'ir_ConnectivityVariable' is a specialization of 'Variable'.
+The class 'ir_Function' is a specialization of 'IrAnnotable'.
+The class 'ir_Connectivity' is a specialization of 'IrAnnotable'.
+The class 'ir_Job' is a specialization of 'IrAnnotable'.
+The class 'ir_InstructionJob' is a specialization of 'Job'.
+The class 'ir_TimeLoopJob' is a specialization of 'TimeLoopCopyJob'.
+The class 'ir_TimeLoopJob' is a specialization of 'JobContainer'.
+The class 'ir_TimeLoopCopyJob' is a specialization of 'Job'.
+The class 'ir_BeforeTimeLoopJob' is a specialization of 'TimeLoopCopyJob'.
+The class 'ir_AfterTimeLoopJob' is a specialization of 'TimeLoopCopyJob'.
+The class 'ir_TimeLoopCopy' is a specialization of 'IrAnnotable'.
+The class 'ir_Instruction' is a specialization of 'IrAnnotable'.
+The class 'ir_InstructionBlock' is a specialization of 'Instruction'.
+The class 'ir_VariableDefinition' is a specialization of 'Instruction'.
+The class 'ir_Affectation' is a specialization of 'Instruction'.
+The class 'ir_IterableInstruction' is a specialization of 'Instruction'.
+The class 'ir_ReductionInstruction' is a specialization of 'IterableInstruction'.
+The class 'ir_Loop' is a specialization of 'IterableInstruction'.
+The class 'ir_ItemIndexDefinition' is a specialization of 'Instruction'.
+The class 'ir_ItemIdDefinition' is a specialization of 'Instruction'.
+The class 'ir_SetDefinition' is a specialization of 'Instruction'.
+The class 'ir_If' is a specialization of 'Instruction'.
+The class 'ir_Return' is a specialization of 'Instruction'.
+The class 'ir_Exit' is a specialization of 'Instruction'.
+The class 'ir_IterationBlock' is a specialization of 'IrAnnotable'.
+The class 'ir_Iterator' is a specialization of 'IterationBlock'.
+The class 'ir_Interval' is a specialization of 'IterationBlock'.
+The class 'ir_Expression' is a specialization of 'IrAnnotable'.
+The class 'ir_ContractedIf' is a specialization of 'Expression'.
+The class 'ir_BinaryExpression' is a specialization of 'Expression'.
+The class 'ir_UnaryExpression' is a specialization of 'Expression'.
+The class 'ir_Parenthesis' is a specialization of 'Expression'.
+The class 'ir_IntConstant' is a specialization of 'Expression'.
+The class 'ir_RealConstant' is a specialization of 'Expression'.
+The class 'ir_BoolConstant' is a specialization of 'Expression'.
+The class 'ir_MinConstant' is a specialization of 'Expression'.
+The class 'ir_MaxConstant' is a specialization of 'Expression'.
+The class 'ir_FunctionCall' is a specialization of 'Expression'.
+The class 'ir_BaseTypeConstant' is a specialization of 'Expression'.
+The class 'ir_VectorConstant' is a specialization of 'Expression'.
+The class 'ir_Cardinality' is a specialization of 'Expression'.
+The class 'ir_ArgOrVarRef' is a specialization of 'Expression'.
+The class 'ir_ItemType' is a specialization of 'IrAnnotable'.
+The class 'ir_IrType' is a specialization of 'IrAnnotable'.
+The class 'ir_BaseType' is a specialization of 'IrType'.
+The class 'ir_ConnectivityType' is a specialization of 'IrType'.
+The class 'ir_TimeLoopVariable' is a specialization of 'IrAnnotable'.
+The class 'ir_Container' is a specialization of 'IrAnnotable'.
+The class 'ir_ConnectivityCall' is a specialization of 'Container'.
+The class 'ir_SetRef' is a specialization of 'Container'.
+The class 'ir_ItemId' is a specialization of 'IrAnnotable'.
+The class 'ir_ItemIdValue' is a specialization of 'IrAnnotable'.
+The class 'ir_ItemIdValueIterator' is a specialization of 'ItemIdValue'.
+The class 'ir_ItemIdValueCall' is a specialization of 'ItemIdValue'.
+The class 'ir_ItemIndex' is a specialization of 'IrAnnotable'.
+The class 'ir_ItemIndexValue' is a specialization of 'IrAnnotable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ir_IrAnnotable' and 'ir_IrAnnotation'. From 'ir_IrAnnotable', the role 'ir_IrAnnotable' has cardinality 0..*, and from 'ir_IrAnnotation', the role 'ir_IrAnnotation' has cardinality 0..*.
+An association connects 'ir_IrAnnotation' and 'ir_EStringToStringMapEntry'. From 'ir_IrAnnotation', the role 'ir_IrAnnotation2' has cardinality 0..*, and from 'ir_EStringToStringMapEntry', the role 'ir_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'ir_Job' and 'ir_JobContainer'. From 'ir_Job', the role 'Job' has cardinality 0..*, and from 'ir_JobContainer', the role 'jobContainer' has cardinality 0..*.
+An association connects 'ir_Import' and 'ir_IrModule'. From 'ir_Import', the role 'ir_Import' has cardinality 0..*, and from 'ir_IrModule', the role 'ir_IrModule' has cardinality 0..*.
+An association connects 'ir_IrModule' and 'ir_ItemType'. From 'ir_IrModule', the role 'ir_IrModule6' has cardinality 0..*, and from 'ir_ItemType', the role 'ir_ItemType' has cardinality 0..*.
+An association connects 'ir_Function' and 'ir_IrModule'. From 'ir_Function', the role 'ir_Function' has cardinality 0..*, and from 'ir_IrModule', the role 'ir_IrModule8' has cardinality 0..*.
+An association connects 'ir_Connectivity' and 'ir_IrModule'. From 'ir_Connectivity', the role 'ir_Connectivity' has cardinality 0..*, and from 'ir_IrModule', the role 'ir_IrModule10' has cardinality 0..*.
+An association connects 'ir_SimpleVariable' and 'ir_IrModule'. From 'ir_SimpleVariable', the role 'ir_SimpleVariable' has cardinality 0..*, and from 'ir_IrModule', the role 'ir_IrModule12' has cardinality 0..*.
+An association connects 'ir_IrModule' and 'ir_Variable'. From 'ir_IrModule', the role 'ir_IrModule14' has cardinality 0..*, and from 'ir_Variable', the role 'ir_Variable' has cardinality 0..*.
+An association connects 'ir_IrModule' and 'ir_ConnectivityVariable'. From 'ir_IrModule', the role 'ir_IrModule16' has cardinality 0..*, and from 'ir_ConnectivityVariable', the role 'ir_ConnectivityVariable' has cardinality 0..*.
+An association connects 'ir_ConnectivityVariable' and 'ir_IrModule'. From 'ir_ConnectivityVariable', the role 'ir_ConnectivityVariable19' has cardinality 0..*, and from 'ir_IrModule', the role 'ir_IrModule18' has cardinality 0..*.
+An association connects 'ir_IrModule' and 'ir_SimpleVariable'. From 'ir_IrModule', the role 'ir_IrModule21' has cardinality 0..*, and from 'ir_SimpleVariable', the role 'ir_SimpleVariable22' has cardinality 0..*.
+An association connects 'ir_IrModule' and 'ir_SimpleVariable'. From 'ir_IrModule', the role 'ir_IrModule24' has cardinality 0..*, and from 'ir_SimpleVariable', the role 'ir_SimpleVariable25' has cardinality 0..*.
+An association connects 'ir_IrModule' and 'ir_Job'. From 'ir_IrModule', the role 'ir_IrModule27' has cardinality 0..*, and from 'ir_Job', the role 'ir_Job' has cardinality 0..*.
+An association connects 'ir_TimeLoop' and 'ir_IrModule'. From 'ir_TimeLoop', the role 'ir_TimeLoop' has cardinality 0..*, and from 'ir_IrModule', the role 'ir_IrModule29' has cardinality 0..*.
+An association connects 'ir_PostProcessingInfo' and 'ir_IrModule'. From 'ir_PostProcessingInfo', the role 'ir_PostProcessingInfo' has cardinality 0..*, and from 'ir_IrModule', the role 'ir_IrModule31' has cardinality 0..*.
+An association connects 'ir_Variable' and 'ir_PostProcessingInfo'. From 'ir_Variable', the role 'ir_Variable34' has cardinality 0..*, and from 'ir_PostProcessingInfo', the role 'ir_PostProcessingInfo33' has cardinality 0..*.
+An association connects 'ir_SimpleVariable' and 'ir_PostProcessingInfo'. From 'ir_SimpleVariable', the role 'ir_SimpleVariable37' has cardinality 0..*, and from 'ir_PostProcessingInfo', the role 'ir_PostProcessingInfo36' has cardinality 0..*.
+An association connects 'ir_SimpleVariable' and 'ir_PostProcessingInfo'. From 'ir_SimpleVariable', the role 'ir_SimpleVariable40' has cardinality 0..*, and from 'ir_PostProcessingInfo', the role 'ir_PostProcessingInfo39' has cardinality 0..*.
+An association connects 'ir_TimeLoop' and 'ir_TimeLoop'. From 'ir_TimeLoop', the role 'outerTimeLoop' has cardinality 0..*, and from 'ir_TimeLoop', the role 'TimeLoop' has cardinality 0..*.
+An association connects 'ir_TimeLoop' and 'ir_TimeLoop'. From 'ir_TimeLoop', the role 'TimeLoop45' has cardinality 0..*, and from 'ir_TimeLoop', the role 'innerTimeLoop' has cardinality 0..*.
+An association connects 'ir_TimeLoopVariable' and 'ir_TimeLoop'. From 'ir_TimeLoopVariable', the role 'ir_TimeLoopVariable' has cardinality 0..*, and from 'ir_TimeLoop', the role 'ir_TimeLoop47' has cardinality 0..*.
+An association connects 'ir_TimeLoop' and 'ir_Expression'. From 'ir_TimeLoop', the role 'ir_TimeLoop49' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression' has cardinality 0..*.
+An association connects 'ir_TimeLoop' and 'ir_TimeLoopJob'. From 'ir_TimeLoop', the role 'ir_TimeLoop51' has cardinality 0..*, and from 'ir_TimeLoopJob', the role 'ir_TimeLoopJob' has cardinality 0..*.
+An association connects 'ir_TimeLoop' and 'ir_SimpleVariable'. From 'ir_TimeLoop', the role 'ir_TimeLoop53' has cardinality 0..*, and from 'ir_SimpleVariable', the role 'ir_SimpleVariable54' has cardinality 0..*.
+An association connects 'ir_BaseType' and 'ir_Arg'. From 'ir_BaseType', the role 'ir_BaseType' has cardinality 0..*, and from 'ir_Arg', the role 'ir_Arg' has cardinality 0..*.
+An association connects 'ir_SimpleVariable' and 'ir_BaseType'. From 'ir_SimpleVariable', the role 'ir_SimpleVariable57' has cardinality 0..*, and from 'ir_BaseType', the role 'ir_BaseType58' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_SimpleVariable'. From 'ir_Expression', the role 'ir_Expression61' has cardinality 0..*, and from 'ir_SimpleVariable', the role 'ir_SimpleVariable60' has cardinality 0..*.
+An association connects 'ir_ConnectivityType' and 'ir_ConnectivityVariable'. From 'ir_ConnectivityType', the role 'ir_ConnectivityType' has cardinality 0..*, and from 'ir_ConnectivityVariable', the role 'ir_ConnectivityVariable63' has cardinality 0..*.
+An association connects 'ir_ConnectivityVariable' and 'ir_ArgOrVarRef'. From 'ir_ConnectivityVariable', the role 'ir_ConnectivityVariable65' has cardinality 0..*, and from 'ir_ArgOrVarRef', the role 'ir_ArgOrVarRef' has cardinality 0..*.
+An association connects 'ir_Function' and 'ir_BaseType'. From 'ir_Function', the role 'ir_Function67' has cardinality 0..*, and from 'ir_BaseType', the role 'ir_BaseType68' has cardinality 0..*.
+An association connects 'ir_Function' and 'ir_SimpleVariable'. From 'ir_Function', the role 'ir_Function70' has cardinality 0..*, and from 'ir_SimpleVariable', the role 'ir_SimpleVariable71' has cardinality 0..*.
+An association connects 'ir_Function' and 'ir_Arg'. From 'ir_Function', the role 'ir_Function73' has cardinality 0..*, and from 'ir_Arg', the role 'ir_Arg74' has cardinality 0..*.
+An association connects 'ir_Function' and 'ir_Instruction'. From 'ir_Function', the role 'ir_Function76' has cardinality 0..*, and from 'ir_Instruction', the role 'ir_Instruction' has cardinality 0..*.
+An association connects 'ir_ItemType' and 'ir_Connectivity'. From 'ir_ItemType', the role 'ir_ItemType79' has cardinality 0..*, and from 'ir_Connectivity', the role 'ir_Connectivity78' has cardinality 0..*.
+An association connects 'ir_ItemType' and 'ir_Connectivity'. From 'ir_ItemType', the role 'ir_ItemType82' has cardinality 0..*, and from 'ir_Connectivity', the role 'ir_Connectivity81' has cardinality 0..*.
+An association connects 'ir_JobContainer' and 'ir_Job'. From 'ir_JobContainer', the role 'JobContainer' has cardinality 0..*, and from 'ir_Job', the role 'innerJobs' has cardinality 0..*.
+An association connects 'ir_Instruction' and 'ir_InstructionJob'. From 'ir_Instruction', the role 'ir_Instruction85' has cardinality 0..*, and from 'ir_InstructionJob', the role 'ir_InstructionJob' has cardinality 0..*.
+An association connects 'ir_TimeLoopCopyJob' and 'ir_TimeLoopCopy'. From 'ir_TimeLoopCopyJob', the role 'ir_TimeLoopCopyJob' has cardinality 0..*, and from 'ir_TimeLoopCopy', the role 'ir_TimeLoopCopy' has cardinality 0..*.
+An association connects 'ir_TimeLoopCopyJob' and 'ir_TimeLoop'. From 'ir_TimeLoopCopyJob', the role 'ir_TimeLoopCopyJob88' has cardinality 0..*, and from 'ir_TimeLoop', the role 'ir_TimeLoop89' has cardinality 0..*.
+An association connects 'ir_Variable' and 'ir_TimeLoopCopy'. From 'ir_Variable', the role 'ir_Variable92' has cardinality 0..*, and from 'ir_TimeLoopCopy', the role 'ir_TimeLoopCopy91' has cardinality 0..*.
+An association connects 'ir_TimeLoopCopy' and 'ir_Variable'. From 'ir_TimeLoopCopy', the role 'ir_TimeLoopCopy94' has cardinality 0..*, and from 'ir_Variable', the role 'ir_Variable95' has cardinality 0..*.
+An association connects 'ir_InstructionBlock' and 'ir_Variable'. From 'ir_InstructionBlock', the role 'ir_InstructionBlock' has cardinality 0..*, and from 'ir_Variable', the role 'ir_Variable97' has cardinality 0..*.
+An association connects 'ir_Instruction' and 'ir_InstructionBlock'. From 'ir_Instruction', the role 'ir_Instruction100' has cardinality 0..*, and from 'ir_InstructionBlock', the role 'ir_InstructionBlock99' has cardinality 0..*.
+An association connects 'ir_VariableDefinition' and 'ir_Variable'. From 'ir_VariableDefinition', the role 'ir_VariableDefinition' has cardinality 0..*, and from 'ir_Variable', the role 'ir_Variable102' has cardinality 0..*.
+An association connects 'ir_ArgOrVarRef' and 'ir_Affectation'. From 'ir_ArgOrVarRef', the role 'ir_ArgOrVarRef104' has cardinality 0..*, and from 'ir_Affectation', the role 'ir_Affectation' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_Affectation'. From 'ir_Expression', the role 'ir_Expression107' has cardinality 0..*, and from 'ir_Affectation', the role 'ir_Affectation106' has cardinality 0..*.
+An association connects 'ir_IterationBlock' and 'ir_IterableInstruction'. From 'ir_IterationBlock', the role 'ir_IterationBlock' has cardinality 0..*, and from 'ir_IterableInstruction', the role 'ir_IterableInstruction' has cardinality 0..*.
+An association connects 'ir_ReductionInstruction' and 'ir_Instruction'. From 'ir_ReductionInstruction', the role 'ir_ReductionInstruction' has cardinality 0..*, and from 'ir_Instruction', the role 'ir_Instruction110' has cardinality 0..*.
+An association connects 'ir_Function' and 'ir_ReductionInstruction'. From 'ir_Function', the role 'ir_Function113' has cardinality 0..*, and from 'ir_ReductionInstruction', the role 'ir_ReductionInstruction112' has cardinality 0..*.
+An association connects 'ir_ReductionInstruction' and 'ir_Expression'. From 'ir_ReductionInstruction', the role 'ir_ReductionInstruction115' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression116' has cardinality 0..*.
+An association connects 'ir_SimpleVariable' and 'ir_ReductionInstruction'. From 'ir_SimpleVariable', the role 'ir_SimpleVariable119' has cardinality 0..*, and from 'ir_ReductionInstruction', the role 'ir_ReductionInstruction118' has cardinality 0..*.
+An association connects 'ir_Instruction' and 'ir_Loop'. From 'ir_Instruction', the role 'ir_Instruction121' has cardinality 0..*, and from 'ir_Loop', the role 'ir_Loop' has cardinality 0..*.
+An association connects 'ir_ItemIndexDefinition' and 'ir_ItemIndex'. From 'ir_ItemIndexDefinition', the role 'ir_ItemIndexDefinition' has cardinality 0..*, and from 'ir_ItemIndex', the role 'ir_ItemIndex' has cardinality 0..*.
+An association connects 'ir_ItemIndexDefinition' and 'ir_ItemIndexValue'. From 'ir_ItemIndexDefinition', the role 'ir_ItemIndexDefinition124' has cardinality 0..*, and from 'ir_ItemIndexValue', the role 'ir_ItemIndexValue' has cardinality 0..*.
+An association connects 'ir_ItemIdDefinition' and 'ir_ItemId'. From 'ir_ItemIdDefinition', the role 'ir_ItemIdDefinition' has cardinality 0..*, and from 'ir_ItemId', the role 'ir_ItemId' has cardinality 0..*.
+An association connects 'ir_ItemIdDefinition' and 'ir_ItemIdValue'. From 'ir_ItemIdDefinition', the role 'ir_ItemIdDefinition127' has cardinality 0..*, and from 'ir_ItemIdValue', the role 'ir_ItemIdValue' has cardinality 0..*.
+An association connects 'ir_SetDefinition' and 'ir_ConnectivityCall'. From 'ir_SetDefinition', the role 'ir_SetDefinition' has cardinality 0..*, and from 'ir_ConnectivityCall', the role 'ir_ConnectivityCall' has cardinality 0..*.
+An association connects 'ir_If' and 'ir_Expression'. From 'ir_If', the role 'ir_If' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression130' has cardinality 0..*.
+An association connects 'ir_If' and 'ir_Instruction'. From 'ir_If', the role 'ir_If132' has cardinality 0..*, and from 'ir_Instruction', the role 'ir_Instruction133' has cardinality 0..*.
+An association connects 'ir_Instruction' and 'ir_If'. From 'ir_Instruction', the role 'ir_Instruction136' has cardinality 0..*, and from 'ir_If', the role 'ir_If135' has cardinality 0..*.
+An association connects 'ir_Return' and 'ir_Expression'. From 'ir_Return', the role 'ir_Return' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression138' has cardinality 0..*.
+An association connects 'ir_Iterator' and 'ir_ItemIndex'. From 'ir_Iterator', the role 'ir_Iterator' has cardinality 0..*, and from 'ir_ItemIndex', the role 'ir_ItemIndex140' has cardinality 0..*.
+An association connects 'ir_Container' and 'ir_Iterator'. From 'ir_Container', the role 'ir_Container' has cardinality 0..*, and from 'ir_Iterator', the role 'ir_Iterator142' has cardinality 0..*.
+An association connects 'ir_Iterator' and 'ir_SimpleVariable'. From 'ir_Iterator', the role 'ir_Iterator144' has cardinality 0..*, and from 'ir_SimpleVariable', the role 'ir_SimpleVariable145' has cardinality 0..*.
+An association connects 'ir_SimpleVariable' and 'ir_Interval'. From 'ir_SimpleVariable', the role 'ir_SimpleVariable147' has cardinality 0..*, and from 'ir_Interval', the role 'ir_Interval' has cardinality 0..*.
+An association connects 'ir_Interval' and 'ir_Expression'. From 'ir_Interval', the role 'ir_Interval149' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression150' has cardinality 0..*.
+An association connects 'ir_IrType' and 'ir_Expression'. From 'ir_IrType', the role 'ir_IrType' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression152' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_ContractedIf'. From 'ir_Expression', the role 'ir_Expression154' has cardinality 0..*, and from 'ir_ContractedIf', the role 'ir_ContractedIf' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_ContractedIf'. From 'ir_Expression', the role 'ir_Expression157' has cardinality 0..*, and from 'ir_ContractedIf', the role 'ir_ContractedIf156' has cardinality 0..*.
+An association connects 'ir_ContractedIf' and 'ir_Expression'. From 'ir_ContractedIf', the role 'ir_ContractedIf159' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression160' has cardinality 0..*.
+An association connects 'ir_BinaryExpression' and 'ir_Expression'. From 'ir_BinaryExpression', the role 'ir_BinaryExpression' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression162' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_BinaryExpression'. From 'ir_Expression', the role 'ir_Expression165' has cardinality 0..*, and from 'ir_BinaryExpression', the role 'ir_BinaryExpression164' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_UnaryExpression'. From 'ir_Expression', the role 'ir_Expression167' has cardinality 0..*, and from 'ir_UnaryExpression', the role 'ir_UnaryExpression' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_Parenthesis'. From 'ir_Expression', the role 'ir_Expression169' has cardinality 0..*, and from 'ir_Parenthesis', the role 'ir_Parenthesis' has cardinality 0..*.
+An association connects 'ir_Function' and 'ir_FunctionCall'. From 'ir_Function', the role 'ir_Function171' has cardinality 0..*, and from 'ir_FunctionCall', the role 'ir_FunctionCall' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_FunctionCall'. From 'ir_Expression', the role 'ir_Expression174' has cardinality 0..*, and from 'ir_FunctionCall', the role 'ir_FunctionCall173' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_BaseTypeConstant'. From 'ir_Expression', the role 'ir_Expression176' has cardinality 0..*, and from 'ir_BaseTypeConstant', the role 'ir_BaseTypeConstant' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_VectorConstant'. From 'ir_Expression', the role 'ir_Expression178' has cardinality 0..*, and from 'ir_VectorConstant', the role 'ir_VectorConstant' has cardinality 0..*.
+An association connects 'ir_Container' and 'ir_Cardinality'. From 'ir_Container', the role 'ir_Container180' has cardinality 0..*, and from 'ir_Cardinality', the role 'ir_Cardinality' has cardinality 0..*.
+An association connects 'ir_ArgOrVar' and 'ir_ArgOrVarRef'. From 'ir_ArgOrVar', the role 'ir_ArgOrVar' has cardinality 0..*, and from 'ir_ArgOrVarRef', the role 'ir_ArgOrVarRef182' has cardinality 0..*.
+An association connects 'ir_ItemIndex' and 'ir_ArgOrVarRef'. From 'ir_ItemIndex', the role 'ir_ItemIndex185' has cardinality 0..*, and from 'ir_ArgOrVarRef', the role 'ir_ArgOrVarRef184' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_ArgOrVarRef'. From 'ir_Expression', the role 'ir_Expression188' has cardinality 0..*, and from 'ir_ArgOrVarRef', the role 'ir_ArgOrVarRef187' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_BaseType'. From 'ir_Expression', the role 'ir_Expression191' has cardinality 0..*, and from 'ir_BaseType', the role 'ir_BaseType190' has cardinality 0..*.
+An association connects 'ir_ConnectivityType' and 'ir_Connectivity'. From 'ir_ConnectivityType', the role 'ir_ConnectivityType193' has cardinality 0..*, and from 'ir_Connectivity', the role 'ir_Connectivity194' has cardinality 0..*.
+An association connects 'ir_BaseType' and 'ir_ConnectivityType'. From 'ir_BaseType', the role 'ir_BaseType197' has cardinality 0..*, and from 'ir_ConnectivityType', the role 'ir_ConnectivityType196' has cardinality 0..*.
+An association connects 'ir_TimeLoopVariable' and 'ir_Variable'. From 'ir_TimeLoopVariable', the role 'ir_TimeLoopVariable199' has cardinality 0..*, and from 'ir_Variable', the role 'ir_Variable200' has cardinality 0..*.
+An association connects 'ir_TimeLoopVariable' and 'ir_Variable'. From 'ir_TimeLoopVariable', the role 'ir_TimeLoopVariable202' has cardinality 0..*, and from 'ir_Variable', the role 'ir_Variable203' has cardinality 0..*.
+An association connects 'ir_Variable' and 'ir_TimeLoopVariable'. From 'ir_Variable', the role 'ir_Variable206' has cardinality 0..*, and from 'ir_TimeLoopVariable', the role 'ir_TimeLoopVariable205' has cardinality 0..*.
+An association connects 'ir_Connectivity' and 'ir_ConnectivityCall'. From 'ir_Connectivity', the role 'ir_Connectivity209' has cardinality 0..*, and from 'ir_ConnectivityCall', the role 'ir_ConnectivityCall208' has cardinality 0..*.
+An association connects 'ir_ConnectivityCall' and 'ir_ItemId'. From 'ir_ConnectivityCall', the role 'ir_ConnectivityCall211' has cardinality 0..*, and from 'ir_ItemId', the role 'ir_ItemId212' has cardinality 0..*.
+An association connects 'ir_SetRef' and 'ir_SetDefinition'. From 'ir_SetRef', the role 'ir_SetRef' has cardinality 0..*, and from 'ir_SetDefinition', the role 'ir_SetDefinition214' has cardinality 0..*.
+An association connects 'ir_ItemIdValueIterator' and 'ir_Iterator'. From 'ir_ItemIdValueIterator', the role 'ir_ItemIdValueIterator' has cardinality 0..*, and from 'ir_Iterator', the role 'ir_Iterator216' has cardinality 0..*.
+An association connects 'ir_ItemIdValueCall' and 'ir_ConnectivityCall'. From 'ir_ItemIdValueCall', the role 'ir_ItemIdValueCall' has cardinality 0..*, and from 'ir_ConnectivityCall', the role 'ir_ConnectivityCall218' has cardinality 0..*.
+An association connects 'ir_ItemId' and 'ir_ItemIndexValue'. From 'ir_ItemId', the role 'ir_ItemId221' has cardinality 0..*, and from 'ir_ItemIndexValue', the role 'ir_ItemIndexValue220' has cardinality 0..*.
+An association connects 'ir_ItemIndexValue' and 'ir_ConnectivityCall'. From 'ir_ItemIndexValue', the role 'ir_ItemIndexValue223' has cardinality 0..*, and from 'ir_ConnectivityCall', the role 'ir_ConnectivityCall224' has cardinality 0..*.

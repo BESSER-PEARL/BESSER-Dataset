@@ -1,0 +1,28 @@
+The domain model 'test100' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'test100_B' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'test100_A' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'test100_DsmlRelation' represents an important domain concept.
+It has the following attributes: 'details', which is of type str; 'mandatory', which is of type bool; 'name', which is of type str.
+
+'test100_C' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'test100_A' is a specialization of 'B'.
+
+Relationships between classes are modeled using associations.
+An association connects 'test100_C' and 'test100_A'. From 'test100_C', the role 'test100_C' has cardinality 0..*, and from 'test100_A', the role 'test100_A' has cardinality 0..*.
+An association connects 'test100_B' and 'test100_A'. From 'test100_B', the role 'test100_B' has cardinality 0..*, and from 'test100_A', the role 'test100_A2' has cardinality 0..*.
+An association connects 'test100_DsmlRelation' and 'test100_A'. From 'test100_DsmlRelation', the role 'test100_DsmlRelation' has cardinality 0..*, and from 'test100_A', the role 'test100_A4' has cardinality 0..*.
+An association connects 'test100_A' and 'test100_DsmlRelation'. From 'test100_A', the role 'test100_A7' has cardinality 0..*, and from 'test100_DsmlRelation', the role 'test100_DsmlRelation6' has cardinality 0..*.
+An association connects 'test100_DsmlRelation' and 'test100_A'. From 'test100_DsmlRelation', the role 'test100_DsmlRelation9' has cardinality 0..*, and from 'test100_A', the role 'test100_A10' has cardinality 0..*.

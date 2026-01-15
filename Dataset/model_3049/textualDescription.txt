@@ -1,0 +1,55 @@
+The domain model 'myDot' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'myDot_Usage' represents an important domain concept.
+It does not declare any attributes.
+
+'myDot_DotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDot_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'myDot_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'myDot_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Ref' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'myDot_Attribute' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'myDot_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDot_EntityRef' represents an important domain concept.
+It does not declare any attributes.
+
+'myDot_Ref' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DataType' defines the following possible values: 'int', 'string'.
+
+The model also captures inheritance relationships between classes.
+The class 'myDot_Attribute' is a specialization of 'Feature'.
+The class 'myDot_Reference' is a specialization of 'Feature'.
+The class 'myDot_DotExpression' is a specialization of 'Ref'.
+The class 'myDot_EntityRef' is a specialization of 'Ref'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDot_Entity' and 'myDot_Model'. From 'myDot_Entity', the role 'myDot_Entity' has cardinality 0..*, and from 'myDot_Model', the role 'myDot_Model' has cardinality 0..*.
+An association connects 'myDot_Model' and 'myDot_Usage'. From 'myDot_Model', the role 'myDot_Model2' has cardinality 0..*, and from 'myDot_Usage', the role 'myDot_Usage' has cardinality 0..*.
+An association connects 'myDot_Feature' and 'myDot_Entity'. From 'myDot_Feature', the role 'myDot_Feature' has cardinality 0..*, and from 'myDot_Entity', the role 'myDot_Entity4' has cardinality 0..*.
+An association connects 'myDot_Reference' and 'myDot_Entity'. From 'myDot_Reference', the role 'myDot_Reference' has cardinality 0..*, and from 'myDot_Entity', the role 'myDot_Entity6' has cardinality 0..*.
+An association connects 'myDot_Usage' and 'myDot_Ref'. From 'myDot_Usage', the role 'myDot_Usage8' has cardinality 0..*, and from 'myDot_Ref', the role 'myDot_Ref' has cardinality 0..*.
+An association connects 'myDot_Ref' and 'myDot_DotExpression'. From 'myDot_Ref', the role 'myDot_Ref10' has cardinality 0..*, and from 'myDot_DotExpression', the role 'myDot_DotExpression' has cardinality 0..*.
+An association connects 'myDot_DotExpression' and 'myDot_Feature'. From 'myDot_DotExpression', the role 'myDot_DotExpression12' has cardinality 0..*, and from 'myDot_Feature', the role 'myDot_Feature13' has cardinality 0..*.
+An association connects 'myDot_EntityRef' and 'myDot_Entity'. From 'myDot_EntityRef', the role 'myDot_EntityRef' has cardinality 0..*, and from 'myDot_Entity', the role 'myDot_Entity15' has cardinality 0..*.

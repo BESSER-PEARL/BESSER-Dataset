@@ -1,0 +1,30 @@
+The domain model 'facademapping' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'facademapping_StereotypedMapping' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'facademapping_Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'facademapping_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'facademapping_FacadeMappping' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ExtensionDefinitionKind' defines the following possible values: 'Generalization', 'MultiGeneralization', 'Association', 'Fusion'.
+
+The model also captures inheritance relationships between classes.
+The class 'facademapping_StereotypedMapping' is a specialization of 'Mapping'.
+
+Relationships between classes are modeled using associations.
+An association connects 'facademapping_EObject' and 'facademapping_Mapping'. From 'facademapping_EObject', the role 'facademapping_EObject' has cardinality 0..*, and from 'facademapping_Mapping', the role 'facademapping_Mapping' has cardinality 0..*.
+An association connects 'facademapping_Mapping' and 'facademapping_EObject'. From 'facademapping_Mapping', the role 'facademapping_Mapping2' has cardinality 0..*, and from 'facademapping_EObject', the role 'facademapping_EObject3' has cardinality 0..*.
+An association connects 'facademapping_StereotypedMapping' and 'facademapping_EObject'. From 'facademapping_StereotypedMapping', the role 'facademapping_StereotypedMapping' has cardinality 0..*, and from 'facademapping_EObject', the role 'facademapping_EObject5' has cardinality 0..*.
+An association connects 'facademapping_Mapping' and 'facademapping_FacadeMappping'. From 'facademapping_Mapping', the role 'facademapping_Mapping7' has cardinality 0..*, and from 'facademapping_FacadeMappping', the role 'facademapping_FacadeMappping' has cardinality 0..*.

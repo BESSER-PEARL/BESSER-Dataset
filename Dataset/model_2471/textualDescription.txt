@@ -1,0 +1,72 @@
+The domain model 'dependability2stochasticpetrinet' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'dependability2stochasticpetrinet_DependabilityModel' represents an important domain concept.
+It does not declare any attributes.
+
+'dependability2stochasticpetrinet_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'dependability2stochasticpetrinet_ErrorModel' represents an important domain concept.
+It does not declare any attributes.
+
+'dependability2stochasticpetrinet_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'dependability2stochasticpetrinet_RailwayContainer2PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'dependability2stochasticpetrinet_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'dependability2stochasticpetrinet_Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'dependability2stochasticpetrinet_ErrorModel2PetriNetModule' represents an important domain concept.
+It does not declare any attributes.
+
+'TraceLink' represents an important domain concept.
+It does not declare any attributes.
+
+'dependability2stochasticpetrinet_RailwayContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'dependability2stochasticpetrinet_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'dependability2stochasticpetrinet_PetriNetModuleTraceLink' represents an important domain concept.
+It does not declare any attributes.
+
+'dependability2stochasticpetrinet_Dependability2StochasticPetriNetTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'dependability2stochasticpetrinet_RequiredElement2Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'dependability2stochasticpetrinet_TraceLink' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNetModuleTraceLink' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule' is a specialization of 'PetriNetModuleTraceLink'.
+The class 'dependability2stochasticpetrinet_RailwayContainer2PetriNet' is a specialization of 'TraceLink'.
+The class 'dependability2stochasticpetrinet_PetriNetModuleTraceLink' is a specialization of 'TraceLink'.
+The class 'dependability2stochasticpetrinet_RequiredElement2Connection' is a specialization of 'PetriNetModuleTraceLink'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dependability2stochasticpetrinet_Dependability2StochasticPetriNetTrace' and 'dependability2stochasticpetrinet_RailwayContainer'. From 'dependability2stochasticpetrinet_Dependability2StochasticPetriNetTrace', the role 'dependability2stochasticpetrinet_Dependability2StochasticPetriNetTrace' has cardinality 0..*, and from 'dependability2stochasticpetrinet_RailwayContainer', the role 'dependability2stochasticpetrinet_RailwayContainer' has cardinality 0..*.
+An association connects 'dependability2stochasticpetrinet_Dependability2StochasticPetriNetTrace' and 'dependability2stochasticpetrinet_DependabilityModel'. From 'dependability2stochasticpetrinet_Dependability2StochasticPetriNetTrace', the role 'dependability2stochasticpetrinet_Dependability2StochasticPetriNetTrace2' has cardinality 0..*, and from 'dependability2stochasticpetrinet_DependabilityModel', the role 'dependability2stochasticpetrinet_DependabilityModel' has cardinality 0..*.
+An association connects 'dependability2stochasticpetrinet_Dependability2StochasticPetriNetTrace' and 'dependability2stochasticpetrinet_TraceLink'. From 'dependability2stochasticpetrinet_Dependability2StochasticPetriNetTrace', the role 'dependability2stochasticpetrinet_Dependability2StochasticPetriNetTrace4' has cardinality 0..*, and from 'dependability2stochasticpetrinet_TraceLink', the role 'dependability2stochasticpetrinet_TraceLink' has cardinality 0..*.
+An association connects 'dependability2stochasticpetrinet_ErrorModel' and 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule'. From 'dependability2stochasticpetrinet_ErrorModel', the role 'dependability2stochasticpetrinet_ErrorModel' has cardinality 0..*, and from 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule', the role 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule' has cardinality 0..*.
+An association connects 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule' and 'dependability2stochasticpetrinet_Place'. From 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule', the role 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule7' has cardinality 0..*, and from 'dependability2stochasticpetrinet_Place', the role 'dependability2stochasticpetrinet_Place' has cardinality 0..*.
+An association connects 'dependability2stochasticpetrinet_Place' and 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule'. From 'dependability2stochasticpetrinet_Place', the role 'dependability2stochasticpetrinet_Place10' has cardinality 0..*, and from 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule', the role 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule9' has cardinality 0..*.
+An association connects 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule' and 'dependability2stochasticpetrinet_Transition'. From 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule', the role 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule12' has cardinality 0..*, and from 'dependability2stochasticpetrinet_Transition', the role 'dependability2stochasticpetrinet_Transition' has cardinality 0..*.
+An association connects 'dependability2stochasticpetrinet_RailwayContainer2PetriNet' and 'dependability2stochasticpetrinet_RailwayContainer'. From 'dependability2stochasticpetrinet_RailwayContainer2PetriNet', the role 'dependability2stochasticpetrinet_RailwayContainer2PetriNet' has cardinality 0..*, and from 'dependability2stochasticpetrinet_RailwayContainer', the role 'dependability2stochasticpetrinet_RailwayContainer14' has cardinality 0..*.
+An association connects 'dependability2stochasticpetrinet_RailwayContainer2PetriNet' and 'dependability2stochasticpetrinet_PetriNet'. From 'dependability2stochasticpetrinet_RailwayContainer2PetriNet', the role 'dependability2stochasticpetrinet_RailwayContainer2PetriNet16' has cardinality 0..*, and from 'dependability2stochasticpetrinet_PetriNet', the role 'dependability2stochasticpetrinet_PetriNet' has cardinality 0..*.
+An association connects 'dependability2stochasticpetrinet_PetriNetModuleTraceLink' and 'dependability2stochasticpetrinet_Node'. From 'dependability2stochasticpetrinet_PetriNetModuleTraceLink', the role 'dependability2stochasticpetrinet_PetriNetModuleTraceLink' has cardinality 0..*, and from 'dependability2stochasticpetrinet_Node', the role 'dependability2stochasticpetrinet_Node' has cardinality 0..*.
+An association connects 'dependability2stochasticpetrinet_Arc' and 'dependability2stochasticpetrinet_PetriNetModuleTraceLink'. From 'dependability2stochasticpetrinet_Arc', the role 'dependability2stochasticpetrinet_Arc' has cardinality 0..*, and from 'dependability2stochasticpetrinet_PetriNetModuleTraceLink', the role 'dependability2stochasticpetrinet_PetriNetModuleTraceLink19' has cardinality 0..*.
+An association connects 'dependability2stochasticpetrinet_ErrorModel' and 'dependability2stochasticpetrinet_RequiredElement2Connection'. From 'dependability2stochasticpetrinet_ErrorModel', the role 'dependability2stochasticpetrinet_ErrorModel21' has cardinality 0..*, and from 'dependability2stochasticpetrinet_RequiredElement2Connection', the role 'dependability2stochasticpetrinet_RequiredElement2Connection' has cardinality 0..*.
+An association connects 'dependability2stochasticpetrinet_RequiredElement2Connection' and 'dependability2stochasticpetrinet_ErrorModel'. From 'dependability2stochasticpetrinet_RequiredElement2Connection', the role 'dependability2stochasticpetrinet_RequiredElement2Connection23' has cardinality 0..*, and from 'dependability2stochasticpetrinet_ErrorModel', the role 'dependability2stochasticpetrinet_ErrorModel24' has cardinality 0..*.

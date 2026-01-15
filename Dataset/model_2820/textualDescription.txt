@@ -1,0 +1,74 @@
+The domain model 'sofiagraphics' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'Rectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'sofiagraphics_Rectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'sofiagraphics_Style' represents an important domain concept.
+It has the following attributes: 'lineWidth', which is of type float; 'filled', which is of type bool.
+
+'sofiagraphics_Color' represents an important domain concept.
+It has the following attributes: 'b', which is of type float; 'r', which is of type float; 'a', which is of type float; 'g', which is of type float.
+
+'sofiagraphics_Polyline' represents an important domain concept.
+It does not declare any attributes.
+
+'Widget' represents an important domain concept.
+It does not declare any attributes.
+
+'sofiagraphics_Gesture' represents an important domain concept.
+It does not declare any attributes.
+
+'sofiagraphics_Text' represents an important domain concept.
+It has the following attributes: 'valign', which is of type str; 'attributeName', which is of type str; 'halign', which is of type str; 'text', which is of type str.
+
+'sofiagraphics_RoundedRectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'sofiagraphics_Widget' represents an important domain concept.
+It has the following attributes: 'portYPosition', which is of type float; 'gestureOnly', which is of type bool.
+
+'sofiagraphics_Ellipse' represents an important domain concept.
+It does not declare any attributes.
+
+'sofiagraphics_Point' represents an important domain concept.
+It has the following attributes: 'x', which is of type float; 'xrelative', which is of type bool; 'yrelative', which is of type bool; 'y', which is of type float.
+
+'sofiagraphics_Scene' represents an important domain concept.
+It does not declare any attributes.
+
+'sofiagraphics_Dimension' represents an important domain concept.
+It has the following attributes: 'width', which is of type float; 'wrelative', which is of type bool; 'hrelative', which is of type bool; 'height', which is of type float; 'noresize', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Alignment' defines the following possible values: 'UNSPECIFIED', 'MIDDLE', 'CENTER', 'BOTTOM', 'TOP', 'LEFT', 'RIGHT'.
+
+The model also captures inheritance relationships between classes.
+The class 'sofiagraphics_Rectangle' is a specialization of 'Widget'.
+The class 'sofiagraphics_RoundedRectangle' is a specialization of 'Rectangle'.
+The class 'sofiagraphics_Ellipse' is a specialization of 'Widget'.
+The class 'sofiagraphics_Polyline' is a specialization of 'Widget'.
+The class 'sofiagraphics_Text' is a specialization of 'Widget'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sofiagraphics_Widget' and 'sofiagraphics_Widget'. From 'sofiagraphics_Widget', the role 'Widget' has cardinality 0..*, and from 'sofiagraphics_Widget', the role 'child' has cardinality 0..*.
+An association connects 'sofiagraphics_Widget' and 'sofiagraphics_Style'. From 'sofiagraphics_Widget', the role 'sofiagraphics_Widget' has cardinality 0..*, and from 'sofiagraphics_Style', the role 'sofiagraphics_Style' has cardinality 0..*.
+An association connects 'sofiagraphics_Widget' and 'sofiagraphics_Widget'. From 'sofiagraphics_Widget', the role 'parent' has cardinality 0..*, and from 'sofiagraphics_Widget', the role 'Widget5' has cardinality 0..*.
+An association connects 'sofiagraphics_Point' and 'sofiagraphics_Widget'. From 'sofiagraphics_Point', the role 'sofiagraphics_Point' has cardinality 0..*, and from 'sofiagraphics_Widget', the role 'sofiagraphics_Widget7' has cardinality 0..*.
+An association connects 'sofiagraphics_Widget' and 'sofiagraphics_Dimension'. From 'sofiagraphics_Widget', the role 'sofiagraphics_Widget9' has cardinality 0..*, and from 'sofiagraphics_Dimension', the role 'sofiagraphics_Dimension' has cardinality 0..*.
+An association connects 'sofiagraphics_RoundedRectangle' and 'sofiagraphics_Dimension'. From 'sofiagraphics_RoundedRectangle', the role 'sofiagraphics_RoundedRectangle' has cardinality 0..*, and from 'sofiagraphics_Dimension', the role 'sofiagraphics_Dimension11' has cardinality 0..*.
+An association connects 'sofiagraphics_Polyline' and 'sofiagraphics_Point'. From 'sofiagraphics_Polyline', the role 'sofiagraphics_Polyline' has cardinality 0..*, and from 'sofiagraphics_Point', the role 'sofiagraphics_Point13' has cardinality 0..*.
+An association connects 'sofiagraphics_Widget' and 'sofiagraphics_Scene'. From 'sofiagraphics_Widget', the role 'sofiagraphics_Widget15' has cardinality 0..*, and from 'sofiagraphics_Scene', the role 'sofiagraphics_Scene' has cardinality 0..*.
+An association connects 'sofiagraphics_Scene' and 'sofiagraphics_Widget'. From 'sofiagraphics_Scene', the role 'sofiagraphics_Scene17' has cardinality 0..*, and from 'sofiagraphics_Widget', the role 'sofiagraphics_Widget18' has cardinality 0..*.
+An association connects 'sofiagraphics_Point' and 'sofiagraphics_Scene'. From 'sofiagraphics_Point', the role 'sofiagraphics_Point21' has cardinality 0..*, and from 'sofiagraphics_Scene', the role 'sofiagraphics_Scene20' has cardinality 0..*.
+An association connects 'sofiagraphics_Dimension' and 'sofiagraphics_Scene'. From 'sofiagraphics_Dimension', the role 'sofiagraphics_Dimension24' has cardinality 0..*, and from 'sofiagraphics_Scene', the role 'sofiagraphics_Scene23' has cardinality 0..*.
+An association connects 'sofiagraphics_Color' and 'sofiagraphics_Scene'. From 'sofiagraphics_Color', the role 'sofiagraphics_Color' has cardinality 0..*, and from 'sofiagraphics_Scene', the role 'sofiagraphics_Scene26' has cardinality 0..*.
+An association connects 'sofiagraphics_Style' and 'sofiagraphics_Scene'. From 'sofiagraphics_Style', the role 'sofiagraphics_Style29' has cardinality 0..*, and from 'sofiagraphics_Scene', the role 'sofiagraphics_Scene28' has cardinality 0..*.
+An association connects 'sofiagraphics_Gesture' and 'sofiagraphics_Scene'. From 'sofiagraphics_Gesture', the role 'sofiagraphics_Gesture' has cardinality 0..*, and from 'sofiagraphics_Scene', the role 'sofiagraphics_Scene31' has cardinality 0..*.
+An association connects 'sofiagraphics_Style' and 'sofiagraphics_Color'. From 'sofiagraphics_Style', the role 'sofiagraphics_Style33' has cardinality 0..*, and from 'sofiagraphics_Color', the role 'sofiagraphics_Color34' has cardinality 0..*.
+An association connects 'sofiagraphics_Style' and 'sofiagraphics_Color'. From 'sofiagraphics_Style', the role 'sofiagraphics_Style36' has cardinality 0..*, and from 'sofiagraphics_Color', the role 'sofiagraphics_Color37' has cardinality 0..*.
+An association connects 'sofiagraphics_Gesture' and 'sofiagraphics_Widget'. From 'sofiagraphics_Gesture', the role 'sofiagraphics_Gesture39' has cardinality 0..*, and from 'sofiagraphics_Widget', the role 'sofiagraphics_Widget40' has cardinality 0..*.

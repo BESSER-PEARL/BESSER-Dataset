@@ -1,0 +1,70 @@
+The domain model 'Company' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'Company_CompanyModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Project' represents an important domain concept.
+It does not declare any attributes.
+
+'Company_Category' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Company_Address' represents an important domain concept.
+It has the following attributes: 'completeAddress', which is of type str; 'city', which is of type str.
+
+'Company_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'Company_Topic' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Company_Division' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Company_National' represents an important domain concept.
+It has one attribute: 'budget', which is of type int.
+
+'Company_Company' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Company_Project' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Company_ServiceLine' represents an important domain concept.
+It does not declare any attributes.
+
+'Division' represents an important domain concept.
+It does not declare any attributes.
+
+'Company_Person' represents an important domain concept.
+It has the following attributes: 'position', which is of type str; 'firstname', which is of type str; 'lastname', which is of type str.
+
+'Company_European' represents an important domain concept.
+It has one attribute: 'budget', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'type' defines the following possible values: 'employee', 'client'.
+
+The model also captures inheritance relationships between classes.
+The class 'Company_European' is a specialization of 'Project'.
+The class 'Company_National' is a specialization of 'Project'.
+The class 'Company_Unit' is a specialization of 'Division'.
+The class 'Company_ServiceLine' is a specialization of 'Division'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Company_Person' and 'Company_Project'. From 'Company_Person', the role 'Company_Person' has cardinality 0..*, and from 'Company_Project', the role 'Company_Project' has cardinality 0..*.
+An association connects 'Company_Person' and 'Company_ServiceLine'. From 'Company_Person', the role 'Company_Person2' has cardinality 0..*, and from 'Company_ServiceLine', the role 'Company_ServiceLine' has cardinality 0..*.
+An association connects 'Company_Company' and 'Company_Person'. From 'Company_Company', the role 'Company_Company' has cardinality 0..*, and from 'Company_Person', the role 'Company_Person4' has cardinality 0..*.
+An association connects 'Company_Company' and 'Company_Project'. From 'Company_Company', the role 'Company_Company6' has cardinality 0..*, and from 'Company_Project', the role 'Company_Project7' has cardinality 0..*.
+An association connects 'Company_Address' and 'Company_Company'. From 'Company_Address', the role 'Company_Address' has cardinality 0..*, and from 'Company_Company', the role 'Company_Company9' has cardinality 0..*.
+An association connects 'Company_Company' and 'Company_Division'. From 'Company_Company', the role 'Company_Company11' has cardinality 0..*, and from 'Company_Division', the role 'Company_Division' has cardinality 0..*.
+An association connects 'Company_Category' and 'Company_Project'. From 'Company_Category', the role 'Company_Category' has cardinality 0..*, and from 'Company_Project', the role 'Company_Project13' has cardinality 0..*.
+An association connects 'Company_Topic' and 'Company_Category'. From 'Company_Topic', the role 'Topic' has cardinality 0..*, and from 'Company_Category', the role 'category' has cardinality 0..*.
+An association connects 'Company_Topic' and 'Company_Category'. From 'Company_Topic', the role 'topics' has cardinality 0..*, and from 'Company_Category', the role 'Category' has cardinality 0..*.
+An association connects 'Company_Company' and 'Company_CompanyModel'. From 'Company_Company', the role 'Company_Company17' has cardinality 0..*, and from 'Company_CompanyModel', the role 'Company_CompanyModel' has cardinality 0..*.
+An association connects 'Company_Category' and 'Company_CompanyModel'. From 'Company_Category', the role 'Company_Category20' has cardinality 0..*, and from 'Company_CompanyModel', the role 'Company_CompanyModel19' has cardinality 0..*.
+An association connects 'Company_Topic' and 'Company_CompanyModel'. From 'Company_Topic', the role 'Company_Topic' has cardinality 0..*, and from 'Company_CompanyModel', the role 'Company_CompanyModel22' has cardinality 0..*.
+An association connects 'Company_Address' and 'Company_CompanyModel'. From 'Company_Address', the role 'Company_Address25' has cardinality 0..*, and from 'Company_CompanyModel', the role 'Company_CompanyModel24' has cardinality 0..*.
+An association connects 'Company_CompanyModel' and 'Company_Division'. From 'Company_CompanyModel', the role 'Company_CompanyModel27' has cardinality 0..*, and from 'Company_Division', the role 'Company_Division28' has cardinality 0..*.

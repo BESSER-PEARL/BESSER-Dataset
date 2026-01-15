@@ -1,0 +1,84 @@
+The domain model 'metamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_PlainVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Entity' represents an important domain concept.
+It has one attribute: 'base', which is of type str.
+
+'metamodel_Datatype' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_View' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_ActsAs' represents an important domain concept.
+It has one attribute: 'actsAsWhat', which is of type str.
+
+'metamodel_Extension_MQPublishing' represents an important domain concept.
+It has one attribute: 'queue', which is of type str.
+
+'metamodel_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodel_EntityObserver' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_ConnectionToEntity' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'cardinalityMany', which is of type bool.
+
+'metamodel_TransientVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodel_StaticVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_ValueRestriction_Value' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'metamodel_Validation_ValueRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'metamodel_PlainVariable' is a specialization of 'Variable'.
+The class 'metamodel_Entity' is a specialization of 'Type'.
+The class 'metamodel_Datatype' is a specialization of 'Type'.
+The class 'metamodel_TransientVariable' is a specialization of 'Variable'.
+The class 'metamodel_Controller' is a specialization of 'Type'.
+The class 'metamodel_StaticVariable' is a specialization of 'Variable'.
+The class 'metamodel_View' is a specialization of 'Type'.
+The class 'metamodel_Model' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'metamodel_Entity' and 'metamodel_Variable'. From 'metamodel_Entity', the role 'metamodel_Entity' has cardinality 0..*, and from 'metamodel_Variable', the role 'metamodel_Variable' has cardinality 0..*.
+An association connects 'metamodel_Entity' and 'metamodel_ConnectionToEntity'. From 'metamodel_Entity', the role 'metamodel_Entity2' has cardinality 0..*, and from 'metamodel_ConnectionToEntity', the role 'metamodel_ConnectionToEntity' has cardinality 0..*.
+An association connects 'metamodel_Entity' and 'metamodel_ConnectionToEntity'. From 'metamodel_Entity', the role 'metamodel_Entity4' has cardinality 0..*, and from 'metamodel_ConnectionToEntity', the role 'metamodel_ConnectionToEntity5' has cardinality 0..*.
+An association connects 'metamodel_EntityObserver' and 'metamodel_Entity'. From 'metamodel_EntityObserver', the role 'metamodel_EntityObserver' has cardinality 0..*, and from 'metamodel_Entity', the role 'metamodel_Entity7' has cardinality 0..*.
+An association connects 'metamodel_ActsAs' and 'metamodel_Entity'. From 'metamodel_ActsAs', the role 'metamodel_ActsAs' has cardinality 0..*, and from 'metamodel_Entity', the role 'metamodel_Entity9' has cardinality 0..*.
+An association connects 'metamodel_Validation_ValueRestriction' and 'metamodel_ValueRestriction_Value'. From 'metamodel_Validation_ValueRestriction', the role 'metamodel_Validation_ValueRestriction' has cardinality 0..*, and from 'metamodel_ValueRestriction_Value', the role 'metamodel_ValueRestriction_Value' has cardinality 0..*.
+An association connects 'metamodel_ConnectionToEntity' and 'metamodel_Entity'. From 'metamodel_ConnectionToEntity', the role 'metamodel_ConnectionToEntity12' has cardinality 0..*, and from 'metamodel_Entity', the role 'metamodel_Entity13' has cardinality 0..*.
+An association connects 'metamodel_Type' and 'metamodel_Variable'. From 'metamodel_Type', the role 'metamodel_Type' has cardinality 0..*, and from 'metamodel_Variable', the role 'metamodel_Variable15' has cardinality 0..*.
+An association connects 'metamodel_Variable' and 'metamodel_Validation_ValueRestriction'. From 'metamodel_Variable', the role 'metamodel_Variable17' has cardinality 0..*, and from 'metamodel_Validation_ValueRestriction', the role 'metamodel_Validation_ValueRestriction18' has cardinality 0..*.
+An association connects 'metamodel_Extension_MQPublishing' and 'metamodel_EntityObserver'. From 'metamodel_Extension_MQPublishing', the role 'metamodel_Extension_MQPublishing' has cardinality 0..*, and from 'metamodel_EntityObserver', the role 'metamodel_EntityObserver20' has cardinality 0..*.
+An association connects 'metamodel_View' and 'metamodel_Controller'. From 'metamodel_View', the role 'metamodel_View' has cardinality 0..*, and from 'metamodel_Controller', the role 'metamodel_Controller' has cardinality 0..*.
+An association connects 'metamodel_Controller' and 'metamodel_Model'. From 'metamodel_Controller', the role 'metamodel_Controller23' has cardinality 0..*, and from 'metamodel_Model', the role 'metamodel_Model' has cardinality 0..*.
+An association connects 'metamodel_View' and 'metamodel_Model'. From 'metamodel_View', the role 'metamodel_View26' has cardinality 0..*, and from 'metamodel_Model', the role 'metamodel_Model25' has cardinality 0..*.
+An association connects 'metamodel_Entity' and 'metamodel_Model'. From 'metamodel_Entity', the role 'metamodel_Entity29' has cardinality 0..*, and from 'metamodel_Model', the role 'metamodel_Model28' has cardinality 0..*.
+An association connects 'metamodel_Type' and 'metamodel_Model'. From 'metamodel_Type', the role 'metamodel_Type32' has cardinality 0..*, and from 'metamodel_Model', the role 'metamodel_Model31' has cardinality 0..*.

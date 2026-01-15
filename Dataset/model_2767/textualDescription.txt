@@ -1,0 +1,50 @@
+The domain model 'ref3' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'ref3_D' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'ref3_B' represents an important domain concept.
+It does not declare any attributes.
+
+'ref3_E' represents an important domain concept.
+It does not declare any attributes.
+
+'ref3_A' represents an important domain concept.
+It does not declare any attributes.
+
+'ref3_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'D' represents an important domain concept.
+It does not declare any attributes.
+
+'T' represents an important domain concept.
+It does not declare any attributes.
+
+'ref3_T' represents an important domain concept.
+It does not declare any attributes.
+
+'ref3_N' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ref3_D' is a specialization of 'T'.
+The class 'ref3_N' is a specialization of 'Named'.
+The class 'ref3_T' is a specialization of 'Named'.
+The class 'ref3_A' is a specialization of 'Named'.
+The class 'ref3_B' is a specialization of 'Named'.
+The class 'ref3_E' is a specialization of 'Named'.
+The class 'ref3_E' is a specialization of 'D'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ref3_N' and 'ref3_T'. From 'ref3_N', the role 'ref3_N' has cardinality 0..*, and from 'ref3_T', the role 'ref3_T' has cardinality 0..*.
+An association connects 'ref3_N' and 'ref3_A'. From 'ref3_N', the role 'ref3_N2' has cardinality 0..*, and from 'ref3_A', the role 'ref3_A' has cardinality 0..*.
+An association connects 'ref3_B' and 'ref3_N'. From 'ref3_B', the role 'ref3_B' has cardinality 0..*, and from 'ref3_N', the role 'ref3_N4' has cardinality 0..*.
+An association connects 'ref3_A' and 'ref3_D'. From 'ref3_A', the role 'ref3_A6' has cardinality 0..*, and from 'ref3_D', the role 'ref3_D' has cardinality 0..*.
+An association connects 'ref3_B' and 'ref3_D'. From 'ref3_B', the role 'ref3_B8' has cardinality 0..*, and from 'ref3_D', the role 'ref3_D9' has cardinality 0..*.
+An association connects 'ref3_E' and 'ref3_D'. From 'ref3_E', the role 'ref3_E' has cardinality 0..*, and from 'ref3_D', the role 'ref3_D11' has cardinality 0..*.

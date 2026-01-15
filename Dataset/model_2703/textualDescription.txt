@@ -1,0 +1,26 @@
+The domain model 'reference' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'reference_Y' represents an important domain concept.
+It does not declare any attributes.
+
+'reference_A' represents an important domain concept.
+It does not declare any attributes.
+
+'reference_B' represents an important domain concept.
+It does not declare any attributes.
+
+'reference_C' represents an important domain concept.
+It does not declare any attributes.
+
+'reference_X' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'reference_A' and 'reference_B'. From 'reference_A', the role 'reference_A' has cardinality 0..*, and from 'reference_B', the role 'reference_B' has cardinality 0..*.
+An association connects 'reference_A' and 'reference_X'. From 'reference_A', the role 'a' has cardinality 0..*, and from 'reference_X', the role 'X' has cardinality 0..*.
+An association connects 'reference_Y' and 'reference_A'. From 'reference_Y', the role 'Y' has cardinality 0..*, and from 'reference_A', the role 'a3' has cardinality 0..*.
+An association connects 'reference_C' and 'reference_B'. From 'reference_C', the role 'reference_C' has cardinality 0..*, and from 'reference_B', the role 'reference_B5' has cardinality 0..*.
+An association connects 'reference_A' and 'reference_X'. From 'reference_A', the role 'A' has cardinality 0..*, and from 'reference_X', the role 'x' has cardinality 0..*.
+An association connects 'reference_A' and 'reference_Y'. From 'reference_A', the role 'A8' has cardinality 0..*, and from 'reference_Y', the role 'y' has cardinality 0..*.

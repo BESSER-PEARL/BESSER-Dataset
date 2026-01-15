@@ -1,0 +1,54 @@
+The domain model 'automata' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'automata_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'initial', which is of type bool.
+
+'Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'automata_Variable' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'automata_NumberGuard' represents an important domain concept.
+It has the following attributes: 'operator', which is of type str; 'value', which is of type str.
+
+'automata_Automaton' represents an important domain concept.
+It does not declare any attributes.
+
+'automata_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'automata_StringGuard' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'operator', which is of type str.
+
+'automata_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'automata_BooleanGuard' represents an important domain concept.
+It has the following attributes: 'operator', which is of type str; 'value', which is of type bool.
+
+'automata_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'NumberOperator' defines the following possible values: 'Equal', 'Unequal'.
+The enumeration 'DataType' defines the following possible values: 'String', 'Boolean', 'Number'.
+The enumeration 'StringOperator' defines the following possible values: 'Unequal', 'Equal'.
+The enumeration 'BooleanOperator' defines the following possible values: 'Equal', 'Unequal'.
+
+The model also captures inheritance relationships between classes.
+The class 'automata_BooleanGuard' is a specialization of 'Guard'.
+The class 'automata_StringGuard' is a specialization of 'Guard'.
+The class 'automata_NumberGuard' is a specialization of 'Guard'.
+
+Relationships between classes are modeled using associations.
+An association connects 'automata_State' and 'automata_Automaton'. From 'automata_State', the role 'automata_State' has cardinality 0..*, and from 'automata_Automaton', the role 'automata_Automaton' has cardinality 0..*.
+An association connects 'automata_Automaton' and 'automata_Transition'. From 'automata_Automaton', the role 'automata_Automaton2' has cardinality 0..*, and from 'automata_Transition', the role 'automata_Transition' has cardinality 0..*.
+An association connects 'automata_Automaton' and 'automata_Variable'. From 'automata_Automaton', the role 'automata_Automaton4' has cardinality 0..*, and from 'automata_Variable', the role 'automata_Variable' has cardinality 0..*.
+An association connects 'automata_Transition' and 'automata_State'. From 'automata_Transition', the role 'automata_Transition6' has cardinality 0..*, and from 'automata_State', the role 'automata_State7' has cardinality 0..*.
+An association connects 'automata_Transition' and 'automata_State'. From 'automata_Transition', the role 'automata_Transition9' has cardinality 0..*, and from 'automata_State', the role 'automata_State10' has cardinality 0..*.
+An association connects 'automata_Transition' and 'automata_Guard'. From 'automata_Transition', the role 'automata_Transition12' has cardinality 0..*, and from 'automata_Guard', the role 'automata_Guard' has cardinality 0..*.
+An association connects 'automata_Variable' and 'automata_Guard'. From 'automata_Variable', the role 'automata_Variable15' has cardinality 0..*, and from 'automata_Guard', the role 'automata_Guard14' has cardinality 0..*.
+An association connects 'automata_Action' and 'automata_Variable'. From 'automata_Action', the role 'automata_Action' has cardinality 0..*, and from 'automata_Variable', the role 'automata_Variable17' has cardinality 0..*.

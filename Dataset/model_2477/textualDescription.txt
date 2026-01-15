@@ -1,0 +1,43 @@
+The domain model 'etrace' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'etrace_CompositeLink' represents an important domain concept.
+It does not declare any attributes.
+
+'etrace_LinkType' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'purpose', which is of type str; 'example', which is of type str; 'uses', which is of type str.
+
+'etrace_AbstractLink' represents an important domain concept.
+It does not declare any attributes.
+
+'etrace_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'etrace_ETrace' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'etrace_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeLink' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractLink' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'etrace_ETrace' is a specialization of 'CompositeLink'.
+The class 'etrace_CompositeLink' is a specialization of 'AbstractLink'.
+The class 'etrace_Link' is a specialization of 'AbstractLink'.
+
+Relationships between classes are modeled using associations.
+An association connects 'etrace_AbstractLink' and 'etrace_EObject'. From 'etrace_AbstractLink', the role 'etrace_AbstractLink' has cardinality 0..*, and from 'etrace_EObject', the role 'etrace_EObject' has cardinality 0..*.
+An association connects 'etrace_AbstractLink' and 'etrace_EObject'. From 'etrace_AbstractLink', the role 'etrace_AbstractLink2' has cardinality 0..*, and from 'etrace_EObject', the role 'etrace_EObject3' has cardinality 0..*.
+An association connects 'etrace_AbstractLink' and 'etrace_LinkType'. From 'etrace_AbstractLink', the role 'etrace_AbstractLink5' has cardinality 0..*, and from 'etrace_LinkType', the role 'etrace_LinkType' has cardinality 0..*.
+An association connects 'etrace_LinkType' and 'etrace_LinkType'. From 'etrace_LinkType', the role 'LinkType' has cardinality 0..*, and from 'etrace_LinkType', the role 'superType' has cardinality 0..*.
+An association connects 'etrace_LinkType' and 'etrace_LinkType'. From 'etrace_LinkType', the role 'subType' has cardinality 0..*, and from 'etrace_LinkType', the role 'LinkType10' has cardinality 0..*.
+An association connects 'etrace_LinkType' and 'etrace_ETrace'. From 'etrace_LinkType', the role 'etrace_LinkType12' has cardinality 0..*, and from 'etrace_ETrace', the role 'etrace_ETrace' has cardinality 0..*.
+An association connects 'etrace_EObject' and 'etrace_ETrace'. From 'etrace_EObject', the role 'etrace_EObject15' has cardinality 0..*, and from 'etrace_ETrace', the role 'etrace_ETrace14' has cardinality 0..*.
+An association connects 'etrace_ETrace' and 'etrace_EObject'. From 'etrace_ETrace', the role 'etrace_ETrace17' has cardinality 0..*, and from 'etrace_EObject', the role 'etrace_EObject18' has cardinality 0..*.
+An association connects 'etrace_AbstractLink' and 'etrace_CompositeLink'. From 'etrace_AbstractLink', the role 'etrace_AbstractLink20' has cardinality 0..*, and from 'etrace_CompositeLink', the role 'etrace_CompositeLink' has cardinality 0..*.

@@ -1,0 +1,47 @@
+The domain model 'aGES' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'aGES_Domainmodel' represents an important domain concept.
+It does not declare any attributes.
+
+'aGES_PackageDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aGES_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'aGES_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'aGES_Feature' represents an important domain concept.
+It has the following attributes: 'many', which is of type bool; 'name', which is of type str.
+
+'aGES_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'aGES_AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'aGES_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'aGES_PackageDeclaration' is a specialization of 'AbstractElement'.
+The class 'aGES_Import' is a specialization of 'AbstractElement'.
+The class 'aGES_Type' is a specialization of 'AbstractElement'.
+The class 'aGES_DataType' is a specialization of 'Type'.
+The class 'aGES_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'aGES_Domainmodel' and 'aGES_AbstractElement'. From 'aGES_Domainmodel', the role 'aGES_Domainmodel' has cardinality 0..*, and from 'aGES_AbstractElement', the role 'aGES_AbstractElement' has cardinality 0..*.
+An association connects 'aGES_AbstractElement' and 'aGES_PackageDeclaration'. From 'aGES_AbstractElement', the role 'aGES_AbstractElement2' has cardinality 0..*, and from 'aGES_PackageDeclaration', the role 'aGES_PackageDeclaration' has cardinality 0..*.
+An association connects 'aGES_Entity' and 'aGES_Entity'. From 'aGES_Entity', the role 'aGES_Entity3' has cardinality 0..*, and from 'aGES_Entity', the role 'aGES_Entity' has cardinality 0..*.
+An association connects 'aGES_Feature' and 'aGES_Entity'. From 'aGES_Feature', the role 'aGES_Feature' has cardinality 0..*, and from 'aGES_Entity', the role 'aGES_Entity6' has cardinality 0..*.
+An association connects 'aGES_Type' and 'aGES_Feature'. From 'aGES_Type', the role 'aGES_Type' has cardinality 0..*, and from 'aGES_Feature', the role 'aGES_Feature8' has cardinality 0..*.

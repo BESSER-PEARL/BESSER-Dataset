@@ -1,0 +1,37 @@
+The domain model 'region' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'region_RgRegion' represents an important domain concept.
+It has one attribute: 'containerClass', which is of type str.
+
+'region_RgTransition' represents an important domain concept.
+It has the following attributes: 'effect', which is of type str; 'event', which is of type str; 'message', which is of type str.
+
+'Referenced' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'region_RgState' represents an important domain concept.
+It has the following attributes: 'entry', which is of type str; 'exit', which is of type str; 'isFinal', which is of type bool.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'region_RgInitialPseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'region_RgRegion' is a specialization of 'ModelRoot'.
+The class 'region_RgInitialPseudostate' is a specialization of 'Named'.
+The class 'region_RgState' is a specialization of 'Named'.
+The class 'region_RgTransition' is a specialization of 'Referenced'.
+
+Relationships between classes are modeled using associations.
+An association connects 'region_RgInitialPseudostate' and 'region_RgRegion'. From 'region_RgInitialPseudostate', the role 'region_RgInitialPseudostate' has cardinality 0..*, and from 'region_RgRegion', the role 'region_RgRegion' has cardinality 0..*.
+An association connects 'region_RgState' and 'region_RgRegion'. From 'region_RgState', the role 'region_RgState' has cardinality 0..*, and from 'region_RgRegion', the role 'region_RgRegion2' has cardinality 0..*.
+An association connects 'region_RgInitialPseudostate' and 'region_RgTransition'. From 'region_RgInitialPseudostate', the role 'region_RgInitialPseudostate4' has cardinality 0..*, and from 'region_RgTransition', the role 'region_RgTransition' has cardinality 0..*.
+An association connects 'region_RgState' and 'region_RgTransition'. From 'region_RgState', the role 'region_RgState6' has cardinality 0..*, and from 'region_RgTransition', the role 'region_RgTransition7' has cardinality 0..*.
+An association connects 'region_RgState' and 'region_RgTransition'. From 'region_RgState', the role 'region_RgState10' has cardinality 0..*, and from 'region_RgTransition', the role 'region_RgTransition9' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/cdo/plugins/org.eclipse.emf.cdo.tests.model3/model/model3.ecore

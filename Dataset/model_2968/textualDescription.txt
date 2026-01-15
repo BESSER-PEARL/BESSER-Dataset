@@ -1,0 +1,172 @@
+The domain model 'owl' describes the core structural elements and their relationships within the system.
+
+The model defines 34 main class(es).
+
+'RDFProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_IntersectionClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RDFSClass' represents an important domain concept.
+It does not declare any attributes.
+
+'RDFSResource' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_RDFSClass' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_OWLAllDifferent' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_OWLClass' represents an important domain concept.
+It has one attribute: 'deprecated', which is of type str.
+
+'owl_CardinalityRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'OWLClass' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_OWLAnnotationProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_ComplementClass' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_OWLOntologyProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_OWLDataRange' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_Individual' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_OWLObjectProperty' represents an important domain concept.
+It has the following attributes: 'inverseFunctional', which is of type str; 'symmetric', which is of type str; 'transitive', which is of type str.
+
+'owl_OWLRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_RDFSResource' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_Property' represents an important domain concept.
+It has the following attributes: 'deprecated', which is of type str; 'functional', which is of type str.
+
+'Ontology' represents an important domain concept.
+It does not declare any attributes.
+
+'OWLRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_HasValueRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_MaxCardinalityRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_MinCardinalityRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_UnionClass' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_RDFSLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_EnumeratedClass' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_RDFProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_DatatypeSlot' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_ObjectSlot' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_AllValuesFromRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_OWLOntology' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_OWLDatatypeProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'owl_SomeValuesFromRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'owl_OWLOntology' is a specialization of 'Ontology'.
+The class 'owl_OWLOntologyProperty' is a specialization of 'RDFProperty'.
+The class 'owl_OWLClass' is a specialization of 'RDFSClass'.
+The class 'owl_OWLRestriction' is a specialization of 'OWLClass'.
+The class 'owl_OWLObjectProperty' is a specialization of 'Property'.
+The class 'owl_Property' is a specialization of 'RDFProperty'.
+The class 'owl_Individual' is a specialization of 'RDFSResource'.
+The class 'owl_OWLAllDifferent' is a specialization of 'RDFSResource'.
+The class 'owl_OWLDataRange' is a specialization of 'RDFSClass'.
+The class 'owl_OWLAnnotationProperty' is a specialization of 'RDFProperty'.
+The class 'owl_EnumeratedClass' is a specialization of 'OWLClass'.
+The class 'owl_IntersectionClass' is a specialization of 'OWLClass'.
+The class 'owl_UnionClass' is a specialization of 'OWLClass'.
+The class 'owl_HasValueRestriction' is a specialization of 'OWLRestriction'.
+The class 'owl_AllValuesFromRestriction' is a specialization of 'OWLRestriction'.
+The class 'owl_SomeValuesFromRestriction' is a specialization of 'OWLRestriction'.
+The class 'owl_CardinalityRestriction' is a specialization of 'OWLRestriction'.
+The class 'owl_MaxCardinalityRestriction' is a specialization of 'OWLRestriction'.
+The class 'owl_MinCardinalityRestriction' is a specialization of 'OWLRestriction'.
+The class 'owl_ComplementClass' is a specialization of 'OWLClass'.
+The class 'owl_OWLDatatypeProperty' is a specialization of 'Property'.
+
+Relationships between classes are modeled using associations.
+An association connects 'owl_OWLOntology' and 'owl_OWLOntology'. From 'owl_OWLOntology', the role 'owl_OWLOntology' has cardinality 0..*, and from 'owl_OWLOntology', the role 'owl_OWLOntology0' has cardinality 0..*.
+An association connects 'owl_OWLOntology' and 'owl_OWLOntology'. From 'owl_OWLOntology', the role 'owl_OWLOntology2' has cardinality 0..*, and from 'owl_OWLOntology', the role 'owl_OWLOntology4' has cardinality 0..*.
+An association connects 'owl_OWLOntology' and 'owl_OWLOntology'. From 'owl_OWLOntology', the role 'owl_OWLOntology7' has cardinality 0..*, and from 'owl_OWLOntology', the role 'owl_OWLOntology5' has cardinality 0..*.
+An association connects 'owl_OWLOntology' and 'owl_OWLOntology'. From 'owl_OWLOntology', the role 'owl_OWLOntology10' has cardinality 0..*, and from 'owl_OWLOntology', the role 'owl_OWLOntology8' has cardinality 0..*.
+An association connects 'owl_OWLOntology' and 'owl_RDFSLiteral'. From 'owl_OWLOntology', the role 'owl_OWLOntology12' has cardinality 0..*, and from 'owl_RDFSLiteral', the role 'owl_RDFSLiteral' has cardinality 0..*.
+An association connects 'owl_OWLClass' and 'owl_OWLClass'. From 'owl_OWLClass', the role 'OWLEquivalentClass' has cardinality 0..*, and from 'owl_OWLClass', the role 'OWLClass' has cardinality 0..*.
+An association connects 'owl_OWLClass' and 'owl_OWLClass'. From 'owl_OWLClass', the role 'OWLClass17' has cardinality 0..*, and from 'owl_OWLClass', the role 'invOWLEquivalentClass' has cardinality 0..*.
+An association connects 'owl_OWLClass' and 'owl_OWLClass'. From 'owl_OWLClass', the role 'OWLClass20' has cardinality 0..*, and from 'owl_OWLClass', the role 'invOWLDisjointWith' has cardinality 0..*.
+An association connects 'owl_OWLClass' and 'owl_OWLClass'. From 'owl_OWLClass', the role 'OWLClass23' has cardinality 0..*, and from 'owl_OWLClass', the role 'OWLDisjointWith' has cardinality 0..*.
+An association connects 'owl_IntersectionClass' and 'owl_OWLClass'. From 'owl_IntersectionClass', the role 'IntersectionClass' has cardinality 0..*, and from 'owl_OWLClass', the role 'OWLIntersectionOf' has cardinality 0..*.
+An association connects 'owl_OWLClass' and 'owl_UnionClass'. From 'owl_OWLClass', the role 'OWLUnionOf' has cardinality 0..*, and from 'owl_UnionClass', the role 'UnionClass' has cardinality 0..*.
+An association connects 'owl_OWLClass' and 'owl_ComplementClass'. From 'owl_OWLClass', the role 'OWLComplementOf' has cardinality 0..*, and from 'owl_ComplementClass', the role 'ComplementClass' has cardinality 0..*.
+An association connects 'owl_OWLRestriction' and 'owl_RDFProperty'. From 'owl_OWLRestriction', the role 'refByRestriction' has cardinality 0..*, and from 'owl_RDFProperty', the role 'rdfs.ecoreRDFProperty' has cardinality 0..*.
+An association connects 'owl_OWLObjectProperty' and 'owl_OWLObjectProperty'. From 'owl_OWLObjectProperty', the role 'OWLObjectProperty' has cardinality 0..*, and from 'owl_OWLObjectProperty', the role 'invOWLInverseOf' has cardinality 0..*.
+An association connects 'owl_OWLObjectProperty' and 'owl_OWLObjectProperty'. From 'owl_OWLObjectProperty', the role 'OWLObjectProperty32' has cardinality 0..*, and from 'owl_OWLObjectProperty', the role 'OWLInverseOf' has cardinality 0..*.
+An association connects 'owl_Property' and 'owl_Property'. From 'owl_Property', the role 'Property' has cardinality 0..*, and from 'owl_Property', the role 'invOWLEquivalentProperty' has cardinality 0..*.
+An association connects 'owl_Property' and 'owl_Property'. From 'owl_Property', the role 'OWLEquivalentProperty' has cardinality 0..*, and from 'owl_Property', the role 'Property37' has cardinality 0..*.
+An association connects 'owl_Individual' and 'owl_Individual'. From 'owl_Individual', the role 'invOWLDifferentFrom' has cardinality 0..*, and from 'owl_Individual', the role 'Individual' has cardinality 0..*.
+An association connects 'owl_Individual' and 'owl_Individual'. From 'owl_Individual', the role 'Individual42' has cardinality 0..*, and from 'owl_Individual', the role 'OWLDifferentFrom' has cardinality 0..*.
+An association connects 'owl_Individual' and 'owl_OWLAllDifferent'. From 'owl_Individual', the role 'OWLDistinctMembers' has cardinality 0..*, and from 'owl_OWLAllDifferent', the role 'OWLAllDifferent' has cardinality 0..*.
+An association connects 'owl_Individual' and 'owl_Individual'. From 'owl_Individual', the role 'Individual46' has cardinality 0..*, and from 'owl_Individual', the role 'invOWLSameAs' has cardinality 0..*.
+An association connects 'owl_Individual' and 'owl_Individual'. From 'owl_Individual', the role 'OWLSameAs' has cardinality 0..*, and from 'owl_Individual', the role 'Individual49' has cardinality 0..*.
+An association connects 'owl_DatatypeSlot' and 'owl_Individual'. From 'owl_DatatypeSlot', the role 'DatatypeSlot' has cardinality 0..*, and from 'owl_Individual', the role 'Individual51' has cardinality 0..*.
+An association connects 'owl_Individual' and 'owl_ObjectSlot'. From 'owl_Individual', the role 'Individual53' has cardinality 0..*, and from 'owl_ObjectSlot', the role 'ObjectSlot' has cardinality 0..*.
+An association connects 'owl_OWLAllDifferent' and 'owl_Individual'. From 'owl_OWLAllDifferent', the role 'refByOWLDistinctMembers' has cardinality 0..*, and from 'owl_Individual', the role 'Individual55' has cardinality 0..*.
+An association connects 'owl_OWLDataRange' and 'owl_RDFSLiteral'. From 'owl_OWLDataRange', the role 'owl_OWLDataRange' has cardinality 0..*, and from 'owl_RDFSLiteral', the role 'owl_RDFSLiteral57' has cardinality 0..*.
+An association connects 'owl_Individual' and 'owl_DatatypeSlot'. From 'owl_Individual', the role 'Individual59' has cardinality 0..*, and from 'owl_DatatypeSlot', the role 'datatypeSlot' has cardinality 0..*.
+An association connects 'owl_DatatypeSlot' and 'owl_RDFSLiteral'. From 'owl_DatatypeSlot', the role 'DatatypeSlot61' has cardinality 0..*, and from 'owl_RDFSLiteral', the role 'rdfs.ecoreRDFSLiteral' has cardinality 0..*.
+An association connects 'owl_DatatypeSlot' and 'owl_OWLDatatypeProperty'. From 'owl_DatatypeSlot', the role 'owl_DatatypeSlot' has cardinality 0..*, and from 'owl_OWLDatatypeProperty', the role 'owl_OWLDatatypeProperty' has cardinality 0..*.
+An association connects 'owl_ObjectSlot' and 'owl_Individual'. From 'owl_ObjectSlot', the role 'objectSlot' has cardinality 0..*, and from 'owl_Individual', the role 'Individual64' has cardinality 0..*.
+An association connects 'owl_Individual' and 'owl_ObjectSlot'. From 'owl_Individual', the role 'owl_Individual' has cardinality 0..*, and from 'owl_ObjectSlot', the role 'owl_ObjectSlot' has cardinality 0..*.
+An association connects 'owl_OWLObjectProperty' and 'owl_ObjectSlot'. From 'owl_OWLObjectProperty', the role 'owl_OWLObjectProperty' has cardinality 0..*, and from 'owl_ObjectSlot', the role 'owl_ObjectSlot67' has cardinality 0..*.
+An association connects 'owl_EnumeratedClass' and 'owl_Individual'. From 'owl_EnumeratedClass', the role 'owl_EnumeratedClass' has cardinality 0..*, and from 'owl_Individual', the role 'owl_Individual69' has cardinality 0..*.
+An association connects 'owl_OWLClass' and 'owl_IntersectionClass'. From 'owl_OWLClass', the role 'OWLClass71' has cardinality 0..*, and from 'owl_IntersectionClass', the role 'refByIntersectionClass' has cardinality 0..*.
+An association connects 'owl_UnionClass' and 'owl_OWLClass'. From 'owl_UnionClass', the role 'refByUnionClass' has cardinality 0..*, and from 'owl_OWLClass', the role 'OWLClass73' has cardinality 0..*.
+An association connects 'owl_RDFSResource' and 'owl_HasValueRestriction'. From 'owl_RDFSResource', the role 'owl_RDFSResource' has cardinality 0..*, and from 'owl_HasValueRestriction', the role 'owl_HasValueRestriction' has cardinality 0..*.
+An association connects 'owl_RDFSClass' and 'owl_AllValuesFromRestriction'. From 'owl_RDFSClass', the role 'rdfs.ecoreRDFSClass' has cardinality 0..*, and from 'owl_AllValuesFromRestriction', the role 'refByAVFRestriction' has cardinality 0..*.
+An association connects 'owl_SomeValuesFromRestriction' and 'owl_RDFSClass'. From 'owl_SomeValuesFromRestriction', the role 'refBySVFRestriction' has cardinality 0..*, and from 'owl_RDFSClass', the role 'rdfs.ecoreRDFSClass77' has cardinality 0..*.
+An association connects 'owl_CardinalityRestriction' and 'owl_RDFSLiteral'. From 'owl_CardinalityRestriction', the role 'owl_CardinalityRestriction' has cardinality 0..*, and from 'owl_RDFSLiteral', the role 'owl_RDFSLiteral79' has cardinality 0..*.
+An association connects 'owl_MaxCardinalityRestriction' and 'owl_RDFSLiteral'. From 'owl_MaxCardinalityRestriction', the role 'owl_MaxCardinalityRestriction' has cardinality 0..*, and from 'owl_RDFSLiteral', the role 'owl_RDFSLiteral81' has cardinality 0..*.
+An association connects 'owl_RDFSLiteral' and 'owl_MinCardinalityRestriction'. From 'owl_RDFSLiteral', the role 'owl_RDFSLiteral83' has cardinality 0..*, and from 'owl_MinCardinalityRestriction', the role 'owl_MinCardinalityRestriction' has cardinality 0..*.
+An association connects 'owl_ComplementClass' and 'owl_OWLClass'. From 'owl_ComplementClass', the role 'invOWLComplementOf' has cardinality 0..*, and from 'owl_OWLClass', the role 'OWLClass85' has cardinality 0..*.

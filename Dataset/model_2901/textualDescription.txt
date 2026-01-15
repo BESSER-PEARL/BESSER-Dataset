@@ -1,0 +1,41 @@
+The domain model 'myDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'myDSL_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'myDSL_Feature' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'myDSL_Entity' represents an important domain concept.
+It has one attribute: 'abstract', which is of type bool.
+
+'myDSL_EntityModel' represents an important domain concept.
+It does not declare any attributes.
+
+'myDSL_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'myDSL_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FeatureKind' defines the following possible values: 'attribute', 'containment', 'reference'.
+
+The model also captures inheritance relationships between classes.
+The class 'myDSL_Type' is a specialization of 'NamedElement'.
+The class 'myDSL_DataType' is a specialization of 'Type'.
+The class 'myDSL_Entity' is a specialization of 'Type'.
+The class 'myDSL_Feature' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDSL_Entity' and 'myDSL_Feature'. From 'myDSL_Entity', the role 'myDSL_Entity' has cardinality 0..*, and from 'myDSL_Feature', the role 'myDSL_Feature' has cardinality 0..*.
+An association connects 'myDSL_Type' and 'myDSL_EntityModel'. From 'myDSL_Type', the role 'myDSL_Type' has cardinality 0..*, and from 'myDSL_EntityModel', the role 'myDSL_EntityModel' has cardinality 0..*.
+An association connects 'myDSL_Feature' and 'myDSL_Type'. From 'myDSL_Feature', the role 'myDSL_Feature3' has cardinality 0..*, and from 'myDSL_Type', the role 'myDSL_Type4' has cardinality 0..*.

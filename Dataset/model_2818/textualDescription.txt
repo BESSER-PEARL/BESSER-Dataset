@@ -1,0 +1,262 @@
+The domain model 'dg' describes the core structural elements and their relationships within the system.
+
+The model defines 55 main class(es).
+
+'dg_Paint' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+'MarkedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_ClosePath' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Definition' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dg_LineTo' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_GraphicalElement' represents an important domain concept.
+It has the following attributes: 'class', which is of type str; 'layoutData', which is of type str.
+
+'dg_StyleSheet' represents an important domain concept.
+It does not declare any attributes.
+
+'Group' represents an important domain concept.
+It does not declare any attributes.
+
+'Gradient' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_PaintServer' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Polygon' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Translate' represents an important domain concept.
+It has the following attributes: 'deltaX', which is of type str; 'deltaY', which is of type str.
+
+'dg_LinearGradient' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Definitions' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Path' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_ClipPath' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Gradient' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Matrix' represents an important domain concept.
+It has the following attributes: 'e', which is of type str; 'd', which is of type str; 'f', which is of type str; 'a', which is of type str; 'b', which is of type str; 'c', which is of type str.
+
+'dg_Scale' represents an important domain concept.
+It has the following attributes: 'factorX', which is of type str; 'factorY', which is of type str.
+
+'dg_QuadraticCurveTo' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Bounds' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_EllipticalArcTo' represents an important domain concept.
+It has the following attributes: 'isLargeArc', which is of type str; 'isSweep', which is of type str; 'rotation', which is of type str.
+
+'dg_Marker' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Text' represents an important domain concept.
+It has the following attributes: 'anchor', which is of type str; 'data', which is of type str.
+
+'dg_Canvas' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_RootCanvas' represents an important domain concept.
+It has one attribute: 'backgroundColor', which is of type str.
+
+'dg_GradientStop' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'offset', which is of type str; 'opacity', which is of type str.
+
+'dg_Group' represents an important domain concept.
+It has one attribute: 'layout', which is of type str.
+
+'dg_MarkedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Rotate' represents an important domain concept.
+It has one attribute: 'angle', which is of type str.
+
+'dg_StyleSelector' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'class', which is of type str.
+
+'dg_Style' represents an important domain concept.
+It has the following attributes: 'strokeWidth', which is of type str; 'strokeDashLength', which is of type str; 'fontSize', which is of type str; 'fontDecoration', which is of type str; 'fontItalic', which is of type str; 'fillOpacity', which is of type str; 'fontBold', which is of type str; 'strokeOpacity', which is of type str; 'fontName', which is of type str.
+
+'dg_Dimension' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_PathCommand' represents an important domain concept.
+It has one attribute: 'isRelative', which is of type str.
+
+'dg_Polyline' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_CubicCurveTo' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Circle' represents an important domain concept.
+It has one attribute: 'radius', which is of type str.
+
+'Transform' represents an important domain concept.
+It does not declare any attributes.
+
+'PathCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'PaintServer' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Skew' represents an important domain concept.
+It has the following attributes: 'angleX', which is of type str; 'angleY', which is of type str.
+
+'dg_Line' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Use' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Ellipse' represents an important domain concept.
+It does not declare any attributes.
+
+'Canvas' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Image' represents an important domain concept.
+It has the following attributes: 'isAspectRatioPreserved', which is of type str; 'source', which is of type str.
+
+'dg_StyleRule' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Rectangle' represents an important domain concept.
+It has one attribute: 'cornerRadius', which is of type str.
+
+'GraphicalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_MoveTo' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_RadialGradient' represents an important domain concept.
+It has one attribute: 'radius', which is of type str.
+
+'dg_Point' represents an important domain concept.
+It does not declare any attributes.
+
+'dg_Transform' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TextAnchor' defines the following possible values: 'middle', 'start', 'end'.
+The enumeration 'FontDecoration' defines the following possible values: 'overline', 'lineThrough', 'underline'.
+The enumeration 'ElementKind' defines the following possible values: 'use', 'group', 'circle', 'path', 'canvas', 'polygon', 'marker', 'line', 'ellipse', 'text', 'image', 'clipPath', 'rectangle', 'polyline'.
+
+The model also captures inheritance relationships between classes.
+The class 'dg_Canvas' is a specialization of 'Group'.
+The class 'dg_Group' is a specialization of 'GraphicalElement'.
+The class 'dg_GraphicalElement' is a specialization of 'Definition'.
+The class 'dg_MoveTo' is a specialization of 'PathCommand'.
+The class 'dg_ClipPath' is a specialization of 'Group'.
+The class 'dg_PaintServer' is a specialization of 'Definition'.
+The class 'dg_Circle' is a specialization of 'GraphicalElement'.
+The class 'dg_ClosePath' is a specialization of 'PathCommand'.
+The class 'dg_CubicCurveTo' is a specialization of 'PathCommand'.
+The class 'dg_Ellipse' is a specialization of 'GraphicalElement'.
+The class 'dg_EllipticalArcTo' is a specialization of 'PathCommand'.
+The class 'dg_QuadraticCurveTo' is a specialization of 'PathCommand'.
+The class 'dg_Gradient' is a specialization of 'PaintServer'.
+The class 'dg_Image' is a specialization of 'GraphicalElement'.
+The class 'dg_Line' is a specialization of 'MarkedElement'.
+The class 'dg_MarkedElement' is a specialization of 'GraphicalElement'.
+The class 'dg_Marker' is a specialization of 'Group'.
+The class 'dg_LinearGradient' is a specialization of 'Gradient'.
+The class 'dg_LineTo' is a specialization of 'PathCommand'.
+The class 'dg_Matrix' is a specialization of 'Transform'.
+The class 'dg_Path' is a specialization of 'MarkedElement'.
+The class 'dg_Pattern' is a specialization of 'PaintServer'.
+The class 'dg_Polygon' is a specialization of 'MarkedElement'.
+The class 'dg_Polyline' is a specialization of 'MarkedElement'.
+The class 'dg_RadialGradient' is a specialization of 'Gradient'.
+The class 'dg_Rectangle' is a specialization of 'GraphicalElement'.
+The class 'dg_RootCanvas' is a specialization of 'Canvas'.
+The class 'dg_Rotate' is a specialization of 'Transform'.
+The class 'dg_Scale' is a specialization of 'Transform'.
+The class 'dg_Skew' is a specialization of 'Transform'.
+The class 'dg_Text' is a specialization of 'GraphicalElement'.
+The class 'dg_Translate' is a specialization of 'Transform'.
+The class 'dg_Use' is a specialization of 'GraphicalElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dg_Bounds' and 'dg_Canvas'. From 'dg_Bounds', the role 'dg_Bounds' has cardinality 0..*, and from 'dg_Canvas', the role 'dg_Canvas' has cardinality 0..*.
+An association connects 'dg_GraphicalElement' and 'dg_Group'. From 'dg_GraphicalElement', the role 'GraphicalElement' has cardinality 0..*, and from 'dg_Group', the role 'group' has cardinality 0..*.
+An association connects 'dg_GraphicalElement' and 'dg_ClipPath'. From 'dg_GraphicalElement', the role 'dg_GraphicalElement' has cardinality 0..*, and from 'dg_ClipPath', the role 'dg_ClipPath' has cardinality 0..*.
+An association connects 'dg_GraphicalElement' and 'dg_Group'. From 'dg_GraphicalElement', the role 'member' has cardinality 0..*, and from 'dg_Group', the role 'Group' has cardinality 0..*.
+An association connects 'dg_Style' and 'dg_GraphicalElement'. From 'dg_Style', the role 'dg_Style' has cardinality 0..*, and from 'dg_GraphicalElement', the role 'dg_GraphicalElement5' has cardinality 0..*.
+An association connects 'dg_Transform' and 'dg_GraphicalElement'. From 'dg_Transform', the role 'dg_Transform' has cardinality 0..*, and from 'dg_GraphicalElement', the role 'dg_GraphicalElement7' has cardinality 0..*.
+An association connects 'dg_MoveTo' and 'dg_Point'. From 'dg_MoveTo', the role 'dg_MoveTo' has cardinality 0..*, and from 'dg_Point', the role 'dg_Point' has cardinality 0..*.
+An association connects 'dg_Style' and 'dg_Paint'. From 'dg_Style', the role 'dg_Style10' has cardinality 0..*, and from 'dg_Paint', the role 'dg_Paint' has cardinality 0..*.
+An association connects 'dg_Style' and 'dg_Paint'. From 'dg_Style', the role 'dg_Style12' has cardinality 0..*, and from 'dg_Paint', the role 'dg_Paint13' has cardinality 0..*.
+An association connects 'dg_Paint' and 'dg_PaintServer'. From 'dg_Paint', the role 'dg_Paint15' has cardinality 0..*, and from 'dg_PaintServer', the role 'dg_PaintServer' has cardinality 0..*.
+An association connects 'dg_Transform' and 'dg_PaintServer'. From 'dg_Transform', the role 'dg_Transform18' has cardinality 0..*, and from 'dg_PaintServer', the role 'dg_PaintServer17' has cardinality 0..*.
+An association connects 'dg_Point' and 'dg_Circle'. From 'dg_Point', the role 'dg_Point20' has cardinality 0..*, and from 'dg_Circle', the role 'dg_Circle' has cardinality 0..*.
+An association connects 'dg_CubicCurveTo' and 'dg_Point'. From 'dg_CubicCurveTo', the role 'dg_CubicCurveTo' has cardinality 0..*, and from 'dg_Point', the role 'dg_Point22' has cardinality 0..*.
+An association connects 'dg_Point' and 'dg_CubicCurveTo'. From 'dg_Point', the role 'dg_Point25' has cardinality 0..*, and from 'dg_CubicCurveTo', the role 'dg_CubicCurveTo24' has cardinality 0..*.
+An association connects 'dg_Point' and 'dg_CubicCurveTo'. From 'dg_Point', the role 'dg_Point28' has cardinality 0..*, and from 'dg_CubicCurveTo', the role 'dg_CubicCurveTo27' has cardinality 0..*.
+An association connects 'dg_Definitions' and 'dg_Definition'. From 'dg_Definitions', the role 'dg_Definitions' has cardinality 0..*, and from 'dg_Definition', the role 'dg_Definition' has cardinality 0..*.
+An association connects 'dg_StyleSheet' and 'dg_Definitions'. From 'dg_StyleSheet', the role 'dg_StyleSheet' has cardinality 0..*, and from 'dg_Definitions', the role 'dg_Definitions31' has cardinality 0..*.
+An association connects 'dg_StyleRule' and 'dg_StyleSheet'. From 'dg_StyleRule', the role 'dg_StyleRule' has cardinality 0..*, and from 'dg_StyleSheet', the role 'dg_StyleSheet33' has cardinality 0..*.
+An association connects 'dg_StyleRule' and 'dg_StyleSelector'. From 'dg_StyleRule', the role 'dg_StyleRule35' has cardinality 0..*, and from 'dg_StyleSelector', the role 'dg_StyleSelector' has cardinality 0..*.
+An association connects 'dg_StyleRule' and 'dg_Style'. From 'dg_StyleRule', the role 'dg_StyleRule37' has cardinality 0..*, and from 'dg_Style', the role 'dg_Style38' has cardinality 0..*.
+An association connects 'dg_Point' and 'dg_Ellipse'. From 'dg_Point', the role 'dg_Point40' has cardinality 0..*, and from 'dg_Ellipse', the role 'dg_Ellipse' has cardinality 0..*.
+An association connects 'dg_Dimension' and 'dg_Ellipse'. From 'dg_Dimension', the role 'dg_Dimension' has cardinality 0..*, and from 'dg_Ellipse', the role 'dg_Ellipse42' has cardinality 0..*.
+An association connects 'dg_EllipticalArcTo' and 'dg_Dimension'. From 'dg_EllipticalArcTo', the role 'dg_EllipticalArcTo' has cardinality 0..*, and from 'dg_Dimension', the role 'dg_Dimension44' has cardinality 0..*.
+An association connects 'dg_Point' and 'dg_EllipticalArcTo'. From 'dg_Point', the role 'dg_Point47' has cardinality 0..*, and from 'dg_EllipticalArcTo', the role 'dg_EllipticalArcTo46' has cardinality 0..*.
+An association connects 'dg_QuadraticCurveTo' and 'dg_Point'. From 'dg_QuadraticCurveTo', the role 'dg_QuadraticCurveTo' has cardinality 0..*, and from 'dg_Point', the role 'dg_Point49' has cardinality 0..*.
+An association connects 'dg_Point' and 'dg_QuadraticCurveTo'. From 'dg_Point', the role 'dg_Point52' has cardinality 0..*, and from 'dg_QuadraticCurveTo', the role 'dg_QuadraticCurveTo51' has cardinality 0..*.
+An association connects 'dg_Gradient' and 'dg_GradientStop'. From 'dg_Gradient', the role 'dg_Gradient' has cardinality 0..*, and from 'dg_GradientStop', the role 'dg_GradientStop' has cardinality 0..*.
+An association connects 'dg_Image' and 'dg_Bounds'. From 'dg_Image', the role 'dg_Image' has cardinality 0..*, and from 'dg_Bounds', the role 'dg_Bounds55' has cardinality 0..*.
+An association connects 'dg_Line' and 'dg_Point'. From 'dg_Line', the role 'dg_Line' has cardinality 0..*, and from 'dg_Point', the role 'dg_Point57' has cardinality 0..*.
+An association connects 'dg_Line' and 'dg_Point'. From 'dg_Line', the role 'dg_Line59' has cardinality 0..*, and from 'dg_Point', the role 'dg_Point60' has cardinality 0..*.
+An association connects 'dg_Marker' and 'dg_MarkedElement'. From 'dg_Marker', the role 'dg_Marker' has cardinality 0..*, and from 'dg_MarkedElement', the role 'dg_MarkedElement' has cardinality 0..*.
+An association connects 'dg_MarkedElement' and 'dg_Marker'. From 'dg_MarkedElement', the role 'dg_MarkedElement63' has cardinality 0..*, and from 'dg_Marker', the role 'dg_Marker64' has cardinality 0..*.
+An association connects 'dg_MarkedElement' and 'dg_Marker'. From 'dg_MarkedElement', the role 'dg_MarkedElement66' has cardinality 0..*, and from 'dg_Marker', the role 'dg_Marker67' has cardinality 0..*.
+An association connects 'dg_Dimension' and 'dg_Marker'. From 'dg_Dimension', the role 'dg_Dimension70' has cardinality 0..*, and from 'dg_Marker', the role 'dg_Marker69' has cardinality 0..*.
+An association connects 'dg_Marker' and 'dg_Point'. From 'dg_Marker', the role 'dg_Marker72' has cardinality 0..*, and from 'dg_Point', the role 'dg_Point73' has cardinality 0..*.
+An association connects 'dg_Point' and 'dg_LinearGradient'. From 'dg_Point', the role 'dg_Point75' has cardinality 0..*, and from 'dg_LinearGradient', the role 'dg_LinearGradient' has cardinality 0..*.
+An association connects 'dg_Point' and 'dg_LinearGradient'. From 'dg_Point', the role 'dg_Point78' has cardinality 0..*, and from 'dg_LinearGradient', the role 'dg_LinearGradient77' has cardinality 0..*.
+An association connects 'dg_LineTo' and 'dg_Point'. From 'dg_LineTo', the role 'dg_LineTo' has cardinality 0..*, and from 'dg_Point', the role 'dg_Point80' has cardinality 0..*.
+An association connects 'dg_PathCommand' and 'dg_Path'. From 'dg_PathCommand', the role 'dg_PathCommand' has cardinality 0..*, and from 'dg_Path', the role 'dg_Path' has cardinality 0..*.
+An association connects 'dg_Bounds' and 'dg_Pattern'. From 'dg_Bounds', the role 'dg_Bounds83' has cardinality 0..*, and from 'dg_Pattern', the role 'dg_Pattern' has cardinality 0..*.
+An association connects 'dg_GraphicalElement' and 'dg_Pattern'. From 'dg_GraphicalElement', the role 'dg_GraphicalElement86' has cardinality 0..*, and from 'dg_Pattern', the role 'dg_Pattern85' has cardinality 0..*.
+An association connects 'dg_Polygon' and 'dg_Point'. From 'dg_Polygon', the role 'dg_Polygon' has cardinality 0..*, and from 'dg_Point', the role 'dg_Point88' has cardinality 0..*.
+An association connects 'dg_Point' and 'dg_Polyline'. From 'dg_Point', the role 'dg_Point90' has cardinality 0..*, and from 'dg_Polyline', the role 'dg_Polyline' has cardinality 0..*.
+An association connects 'dg_RadialGradient' and 'dg_Point'. From 'dg_RadialGradient', the role 'dg_RadialGradient' has cardinality 0..*, and from 'dg_Point', the role 'dg_Point92' has cardinality 0..*.
+An association connects 'dg_RadialGradient' and 'dg_Point'. From 'dg_RadialGradient', the role 'dg_RadialGradient94' has cardinality 0..*, and from 'dg_Point', the role 'dg_Point95' has cardinality 0..*.
+An association connects 'dg_Bounds' and 'dg_Rectangle'. From 'dg_Bounds', the role 'dg_Bounds97' has cardinality 0..*, and from 'dg_Rectangle', the role 'dg_Rectangle' has cardinality 0..*.
+An association connects 'dg_Definitions' and 'dg_RootCanvas'. From 'dg_Definitions', the role 'dg_Definitions99' has cardinality 0..*, and from 'dg_RootCanvas', the role 'dg_RootCanvas' has cardinality 0..*.
+An association connects 'dg_StyleSheet' and 'dg_RootCanvas'. From 'dg_StyleSheet', the role 'dg_StyleSheet102' has cardinality 0..*, and from 'dg_RootCanvas', the role 'dg_RootCanvas101' has cardinality 0..*.
+An association connects 'dg_Rotate' and 'dg_Point'. From 'dg_Rotate', the role 'dg_Rotate' has cardinality 0..*, and from 'dg_Point', the role 'dg_Point104' has cardinality 0..*.
+An association connects 'dg_Text' and 'dg_Bounds'. From 'dg_Text', the role 'dg_Text' has cardinality 0..*, and from 'dg_Bounds', the role 'dg_Bounds106' has cardinality 0..*.
+An association connects 'dg_Use' and 'dg_Bounds'. From 'dg_Use', the role 'dg_Use' has cardinality 0..*, and from 'dg_Bounds', the role 'dg_Bounds108' has cardinality 0..*.
+An association connects 'dg_GraphicalElement' and 'dg_Use'. From 'dg_GraphicalElement', the role 'dg_GraphicalElement111' has cardinality 0..*, and from 'dg_Use', the role 'dg_Use110' has cardinality 0..*.

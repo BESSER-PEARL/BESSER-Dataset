@@ -1,0 +1,48 @@
+The domain model 'cstat1' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'cstat1_Action' represents an important domain concept.
+It has the following attributes: 'mode', which is of type str; 'expression', which is of type str.
+
+'cstat1_Transition' represents an important domain concept.
+It has the following attributes: 'event', which is of type str; 'guard', which is of type str.
+
+'cstat1_SubState2' represents an important domain concept.
+It does not declare any attributes.
+
+'cstat1_State' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'cstat1_StateChart' represents an important domain concept.
+It does not declare any attributes.
+
+'cstat1_AbstractState' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'type', which is of type str.
+
+'cstat1_EClass0' represents an important domain concept.
+It does not declare any attributes.
+
+'cstat1_SubState1' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StateType' defines the following possible values: 'SIMPLE', 'FINAL', 'INITIAL'.
+The enumeration 'ActionMode' defines the following possible values: 'ENTRY', 'EXIT'.
+
+The model also captures inheritance relationships between classes.
+The class 'cstat1_SubState1' is a specialization of 'AbstractState'.
+The class 'cstat1_State' is a specialization of 'AbstractState'.
+The class 'cstat1_SubState2' is a specialization of 'AbstractState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cstat1_SubState1' and 'cstat1_SubState2'. From 'cstat1_SubState1', the role 'cstat1_SubState1' has cardinality 0..*, and from 'cstat1_SubState2', the role 'cstat1_SubState2' has cardinality 0..*.
+An association connects 'cstat1_State' and 'cstat1_StateChart'. From 'cstat1_State', the role 'cstat1_State' has cardinality 0..*, and from 'cstat1_StateChart', the role 'cstat1_StateChart' has cardinality 0..*.
+An association connects 'cstat1_State' and 'cstat1_SubState1'. From 'cstat1_State', the role 'cstat1_State3' has cardinality 0..*, and from 'cstat1_SubState1', the role 'cstat1_SubState14' has cardinality 0..*.
+An association connects 'cstat1_AbstractState' and 'cstat1_Transition'. From 'cstat1_AbstractState', the role 'cstat1_AbstractState' has cardinality 0..*, and from 'cstat1_Transition', the role 'cstat1_Transition' has cardinality 0..*.
+An association connects 'cstat1_Transition' and 'cstat1_AbstractState'. From 'cstat1_Transition', the role 'cstat1_Transition7' has cardinality 0..*, and from 'cstat1_AbstractState', the role 'cstat1_AbstractState8' has cardinality 0..*.
+An association connects 'cstat1_AbstractState' and 'cstat1_Transition'. From 'cstat1_AbstractState', the role 'cstat1_AbstractState10' has cardinality 0..*, and from 'cstat1_Transition', the role 'cstat1_Transition11' has cardinality 0..*.
+An association connects 'cstat1_Action' and 'cstat1_AbstractState'. From 'cstat1_Action', the role 'cstat1_Action' has cardinality 0..*, and from 'cstat1_AbstractState', the role 'cstat1_AbstractState13' has cardinality 0..*.

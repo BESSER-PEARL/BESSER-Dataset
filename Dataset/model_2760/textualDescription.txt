@@ -1,0 +1,38 @@
+The domain model 'case5' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'case5_N' represents an important domain concept.
+It does not declare any attributes.
+
+'case5_T' represents an important domain concept.
+It does not declare any attributes.
+
+'case5_D' represents an important domain concept.
+It does not declare any attributes.
+
+'case5_E' represents an important domain concept.
+It does not declare any attributes.
+
+'case5_A' represents an important domain concept.
+It does not declare any attributes.
+
+'D' represents an important domain concept.
+It does not declare any attributes.
+
+'T' represents an important domain concept.
+It does not declare any attributes.
+
+'case5_B' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'case5_D' is a specialization of 'T'.
+The class 'case5_E' is a specialization of 'D'.
+
+Relationships between classes are modeled using associations.
+An association connects 'case5_T' and 'case5_N'. From 'case5_T', the role 'case5_T' has cardinality 0..*, and from 'case5_N', the role 'case5_N' has cardinality 0..*.
+An association connects 'case5_A' and 'case5_N'. From 'case5_A', the role 'case5_A' has cardinality 0..*, and from 'case5_N', the role 'case5_N2' has cardinality 0..*.
+An association connects 'case5_B' and 'case5_N'. From 'case5_B', the role 'case5_B' has cardinality 0..*, and from 'case5_N', the role 'case5_N4' has cardinality 0..*.
+An association connects 'case5_D' and 'case5_A'. From 'case5_D', the role 'case5_D' has cardinality 0..*, and from 'case5_A', the role 'case5_A6' has cardinality 0..*.
+An association connects 'case5_D' and 'case5_B'. From 'case5_D', the role 'case5_D9' has cardinality 0..*, and from 'case5_B', the role 'case5_B8' has cardinality 0..*.

@@ -1,0 +1,311 @@
+The domain model 'eJSL' describes the core structural elements and their relationships within the system.
+
+The model defines 64 main class(es).
+
+'eJSL_Plugin' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'eJSL_KeyValuePair' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'eJSL_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_StaticPage' represents an important domain concept.
+It has the following attributes: 'preserve', which is of type bool; 'HTMLBody', which is of type str.
+
+'eJSL_Parameter' represents an important domain concept.
+It has the following attributes: 'size', which is of type int; 'name', which is of type str; 'defaultvalue', which is of type str; 'descripton', which is of type str; 'label', which is of type str.
+
+'eJSL_CMSExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_coreFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'EJSLPart' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_ExternalLink' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'target', which is of type str.
+
+'eJSL_Position' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eJSL_Entity' represents an important domain concept.
+It has the following attributes: 'preserve', which is of type bool; 'name', which is of type str.
+
+'eJSL_Datatype' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'eJSL_Page' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eJSL_Package' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eJSL_FrontendSection' represents an important domain concept.
+It does not declare any attributes.
+
+'InternalLink' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_Extension' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eJSL_PageReference' represents an important domain concept.
+It has one attribute: 'sect', which is of type str.
+
+'eJSL_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_Section' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_CMSCore' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_ComplexHTMLTypes' represents an important domain concept.
+It has one attribute: 'htmltype', which is of type str.
+
+'eJSL_PositionParameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'divid', which is of type str; 'type', which is of type str.
+
+'eJSL_BackendSection' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_Language' represents an important domain concept.
+It has the following attributes: 'sys', which is of type bool; 'name', which is of type str.
+
+'eJSL_DatatypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_ContextLink' represents an important domain concept.
+It does not declare any attributes.
+
+'HTMLTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_SimpleHTMLTypes' represents an important domain concept.
+It has one attribute: 'htmltype', which is of type str.
+
+'eJSL_HTMLTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'Section' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_InternalLink' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eJSL_Reference' represents an important domain concept.
+It has the following attributes: 'lower', which is of type str; 'id', which is of type bool; 'upper', which is of type str; 'preserve', which is of type bool.
+
+'Link' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_Manifestation' represents an important domain concept.
+It has the following attributes: 'license', which is of type str; 'link', which is of type str; 'copyright', which is of type str; 'version', which is of type str; 'creationdate', which is of type str; 'description', which is of type str.
+
+'eJSL_ComponentReference' represents an important domain concept.
+It has one attribute: 'core', which is of type str.
+
+'Page' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_Method' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'returnvalue', which is of type str.
+
+'eJSL_PageAction' represents an important domain concept.
+It has the following attributes: 'pageActionType', which is of type str; 'name', which is of type str; 'pageActionPosition', which is of type str.
+
+'eJSL_EJSLModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eJSL_Entitypackage' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eJSL_ExtensionPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'DynamicPage' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_MethodParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eJSL_EJSLPart' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_CustomPage' represents an important domain concept.
+It has the following attributes: 'preserve', which is of type str; 'pageType', which is of type str.
+
+'eJSL_DetailPageField' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_Template' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_Author' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'authoremail', which is of type str; 'authorurl', which is of type str.
+
+'eJSL_IndexPage' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_Class' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eJSL_Attribute' represents an important domain concept.
+It has the following attributes: 'isprimary', which is of type bool; 'preserve', which is of type bool; 'isunique', which is of type bool; 'id', which is of type bool; 'name', which is of type str.
+
+'eJSL_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_LinkParameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str; 'id', which is of type bool.
+
+'eJSL_DynamicPage' represents an important domain concept.
+It has one attribute: 'preserve', which is of type bool.
+
+'eJSL_StandardTypes' represents an important domain concept.
+It has the following attributes: 'notnull', which is of type bool; 'type', which is of type str; 'default', which is of type str; 'autoincrement', which is of type bool.
+
+'Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_DetailsPage' represents an important domain concept.
+It does not declare any attributes.
+
+'eJSL_CssBlock' represents an important domain concept.
+It has one attribute: 'selector', which is of type str.
+
+'eJSL_ParameterGroup' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PageKinds' defines the following possible values: 'details', 'custom', 'list'.
+The enumeration 'PageActionPositionKind' defines the following possible values: 'bottom', 'top', 'center'.
+The enumeration 'PluginKinds' defines the following possible values: 'authenticate', 'content', 'quick_icons', 'system', 'user', 'xml_rpc', 'captcha', 'extensions', 'search', 'contact', 'finder', 'editors'.
+The enumeration 'PageActionKind' defines the following possible values: 'NEW', 'CANCEL', 'INDIVIDUAL', 'SAVE_COPY', 'ARCHIVE', 'HIDE', 'CLOSE', 'PWRESET', 'CHECKIN', 'EDIT', 'PUBLISH', 'TRASH', 'SAVE_CLOSE', 'LOGIN', 'SAVE', 'UNPUBLISH'.
+The enumeration 'SimpleHTMLTypeKinds' defines the following possible values: 'Yes_No_Buttons', 'Text_Field', 'Datepicker', 'Imagepicker', 'Integer', 'Editor', 'Link', 'Filepicker', 'Text_Field_NE', 'Textarea'.
+The enumeration 'DataAccessKinds' defines the following possible values: 'backendDAO', 'webservice', 'frontendDAO', 'database'.
+The enumeration 'CoreComponent' defines the following possible values: 'Menu', 'User', 'Content'.
+The enumeration 'StandardTypeKinds' defines the following possible values: 'Datetime', 'Image', 'File', 'Short_Text', 'Date', 'Link', 'Time', 'Label', 'Encrypted_Text', 'Text', 'Integer', 'Boolean'.
+The enumeration 'ComplexHTMLTypeKinds' defines the following possible values: 'Checkbox', 'Radiobutton', 'Multiselect', 'Select'.
+
+The model also captures inheritance relationships between classes.
+The class 'eJSL_CMSCore' is a specialization of 'EJSLPart'.
+The class 'eJSL_CMSExtension' is a specialization of 'EJSLPart'.
+The class 'eJSL_DatatypeReference' is a specialization of 'Type'.
+The class 'eJSL_DatatypeReference' is a specialization of 'HTMLTypes'.
+The class 'eJSL_StandardTypes' is a specialization of 'Type'.
+The class 'eJSL_StaticPage' is a specialization of 'Page'.
+The class 'eJSL_DynamicPage' is a specialization of 'Page'.
+The class 'eJSL_IndexPage' is a specialization of 'DynamicPage'.
+The class 'eJSL_DetailsPage' is a specialization of 'DynamicPage'.
+The class 'eJSL_CustomPage' is a specialization of 'Page'.
+The class 'eJSL_SimpleHTMLTypes' is a specialization of 'HTMLTypes'.
+The class 'eJSL_ComplexHTMLTypes' is a specialization of 'HTMLTypes'.
+The class 'eJSL_ExternalLink' is a specialization of 'Link'.
+The class 'eJSL_InternalLink' is a specialization of 'Link'.
+The class 'eJSL_ContextLink' is a specialization of 'InternalLink'.
+The class 'eJSL_ExtensionPackage' is a specialization of 'Extension'.
+The class 'eJSL_Component' is a specialization of 'Extension'.
+The class 'eJSL_BackendSection' is a specialization of 'Section'.
+The class 'eJSL_FrontendSection' is a specialization of 'Section'.
+The class 'eJSL_Module' is a specialization of 'Extension'.
+The class 'eJSL_Plugin' is a specialization of 'Extension'.
+The class 'eJSL_Library' is a specialization of 'Extension'.
+The class 'eJSL_Template' is a specialization of 'Extension'.
+
+Relationships between classes are modeled using associations.
+An association connects 'eJSL_EJSLPart' and 'eJSL_EJSLModel'. From 'eJSL_EJSLPart', the role 'eJSL_EJSLPart' has cardinality 0..*, and from 'eJSL_EJSLModel', the role 'eJSL_EJSLModel' has cardinality 0..*.
+An association connects 'eJSL_EJSLPart' and 'eJSL_Datatype'. From 'eJSL_EJSLPart', the role 'eJSL_EJSLPart2' has cardinality 0..*, and from 'eJSL_Datatype', the role 'eJSL_Datatype' has cardinality 0..*.
+An association connects 'eJSL_EJSLPart' and 'eJSL_Parameter'. From 'eJSL_EJSLPart', the role 'eJSL_EJSLPart4' has cardinality 0..*, and from 'eJSL_Parameter', the role 'eJSL_Parameter' has cardinality 0..*.
+An association connects 'eJSL_EJSLPart' and 'eJSL_ParameterGroup'. From 'eJSL_EJSLPart', the role 'eJSL_EJSLPart6' has cardinality 0..*, and from 'eJSL_ParameterGroup', the role 'eJSL_ParameterGroup' has cardinality 0..*.
+An association connects 'eJSL_EJSLPart' and 'eJSL_Feature'. From 'eJSL_EJSLPart', the role 'eJSL_EJSLPart8' has cardinality 0..*, and from 'eJSL_Feature', the role 'eJSL_Feature' has cardinality 0..*.
+An association connects 'eJSL_CMSExtension' and 'eJSL_Extension'. From 'eJSL_CMSExtension', the role 'eJSL_CMSExtension' has cardinality 0..*, and from 'eJSL_Extension', the role 'eJSL_Extension' has cardinality 0..*.
+An association connects 'eJSL_Entitypackage' and 'eJSL_Feature'. From 'eJSL_Entitypackage', the role 'eJSL_Entitypackage' has cardinality 0..*, and from 'eJSL_Feature', the role 'eJSL_Feature11' has cardinality 0..*.
+An association connects 'eJSL_Feature' and 'eJSL_Entity'. From 'eJSL_Feature', the role 'eJSL_Feature13' has cardinality 0..*, and from 'eJSL_Entity', the role 'eJSL_Entity' has cardinality 0..*.
+An association connects 'eJSL_Page' and 'eJSL_Feature'. From 'eJSL_Page', the role 'eJSL_Page' has cardinality 0..*, and from 'eJSL_Feature', the role 'eJSL_Feature15' has cardinality 0..*.
+An association connects 'eJSL_Section' and 'eJSL_Feature'. From 'eJSL_Section', the role 'eJSL_Section' has cardinality 0..*, and from 'eJSL_Feature', the role 'eJSL_Feature17' has cardinality 0..*.
+An association connects 'eJSL_Datatype' and 'eJSL_DatatypeReference'. From 'eJSL_Datatype', the role 'eJSL_Datatype19' has cardinality 0..*, and from 'eJSL_DatatypeReference', the role 'eJSL_DatatypeReference' has cardinality 0..*.
+An association connects 'eJSL_HTMLTypes' and 'eJSL_Parameter'. From 'eJSL_HTMLTypes', the role 'eJSL_HTMLTypes' has cardinality 0..*, and from 'eJSL_Parameter', the role 'eJSL_Parameter21' has cardinality 0..*.
+An association connects 'eJSL_Parameter' and 'eJSL_KeyValuePair'. From 'eJSL_Parameter', the role 'eJSL_Parameter23' has cardinality 0..*, and from 'eJSL_KeyValuePair', the role 'eJSL_KeyValuePair' has cardinality 0..*.
+An association connects 'eJSL_KeyValuePair' and 'eJSL_Parameter'. From 'eJSL_KeyValuePair', the role 'eJSL_KeyValuePair26' has cardinality 0..*, and from 'eJSL_Parameter', the role 'eJSL_Parameter25' has cardinality 0..*.
+An association connects 'eJSL_Parameter' and 'eJSL_ParameterGroup'. From 'eJSL_Parameter', the role 'eJSL_Parameter29' has cardinality 0..*, and from 'eJSL_ParameterGroup', the role 'eJSL_ParameterGroup28' has cardinality 0..*.
+An association connects 'eJSL_Parameter' and 'eJSL_ParameterGroup'. From 'eJSL_Parameter', the role 'eJSL_Parameter32' has cardinality 0..*, and from 'eJSL_ParameterGroup', the role 'eJSL_ParameterGroup31' has cardinality 0..*.
+An association connects 'eJSL_Entitypackage' and 'eJSL_Entitypackage'. From 'eJSL_Entitypackage', the role 'eJSL_Entitypackage33' has cardinality 0..*, and from 'eJSL_Entitypackage', the role 'eJSL_Entitypackage35' has cardinality 0..*.
+An association connects 'eJSL_Entity' and 'eJSL_Entitypackage'. From 'eJSL_Entity', the role 'eJSL_Entity38' has cardinality 0..*, and from 'eJSL_Entitypackage', the role 'eJSL_Entitypackage37' has cardinality 0..*.
+An association connects 'eJSL_Entitypackage' and 'eJSL_Datatype'. From 'eJSL_Entitypackage', the role 'eJSL_Entitypackage40' has cardinality 0..*, and from 'eJSL_Datatype', the role 'eJSL_Datatype41' has cardinality 0..*.
+An association connects 'eJSL_Entity' and 'eJSL_Entity'. From 'eJSL_Entity', the role 'eJSL_Entity42' has cardinality 0..*, and from 'eJSL_Entity', the role 'eJSL_Entity44' has cardinality 0..*.
+An association connects 'eJSL_Attribute' and 'eJSL_Entity'. From 'eJSL_Attribute', the role 'eJSL_Attribute' has cardinality 0..*, and from 'eJSL_Entity', the role 'eJSL_Entity46' has cardinality 0..*.
+An association connects 'eJSL_Reference' and 'eJSL_Entity'. From 'eJSL_Reference', the role 'eJSL_Reference' has cardinality 0..*, and from 'eJSL_Entity', the role 'eJSL_Entity48' has cardinality 0..*.
+An association connects 'eJSL_Type' and 'eJSL_Attribute'. From 'eJSL_Type', the role 'eJSL_Type' has cardinality 0..*, and from 'eJSL_Attribute', the role 'eJSL_Attribute50' has cardinality 0..*.
+An association connects 'eJSL_Attribute' and 'eJSL_Attribute'. From 'eJSL_Attribute', the role 'eJSL_Attribute51' has cardinality 0..*, and from 'eJSL_Attribute', the role 'eJSL_Attribute53' has cardinality 0..*.
+An association connects 'eJSL_Attribute' and 'eJSL_Reference'. From 'eJSL_Attribute', the role 'eJSL_Attribute56' has cardinality 0..*, and from 'eJSL_Reference', the role 'eJSL_Reference55' has cardinality 0..*.
+An association connects 'eJSL_Entity' and 'eJSL_Reference'. From 'eJSL_Entity', the role 'eJSL_Entity59' has cardinality 0..*, and from 'eJSL_Reference', the role 'eJSL_Reference58' has cardinality 0..*.
+An association connects 'eJSL_Attribute' and 'eJSL_Reference'. From 'eJSL_Attribute', the role 'eJSL_Attribute62' has cardinality 0..*, and from 'eJSL_Reference', the role 'eJSL_Reference61' has cardinality 0..*.
+An association connects 'eJSL_ParameterGroup' and 'eJSL_Page'. From 'eJSL_ParameterGroup', the role 'eJSL_ParameterGroup65' has cardinality 0..*, and from 'eJSL_Page', the role 'eJSL_Page64' has cardinality 0..*.
+An association connects 'eJSL_Page' and 'eJSL_Parameter'. From 'eJSL_Page', the role 'eJSL_Page67' has cardinality 0..*, and from 'eJSL_Parameter', the role 'eJSL_Parameter68' has cardinality 0..*.
+An association connects 'eJSL_Page' and 'eJSL_Parameter'. From 'eJSL_Page', the role 'eJSL_Page70' has cardinality 0..*, and from 'eJSL_Parameter', the role 'eJSL_Parameter71' has cardinality 0..*.
+An association connects 'eJSL_Page' and 'eJSL_PageAction'. From 'eJSL_Page', the role 'eJSL_Page73' has cardinality 0..*, and from 'eJSL_PageAction', the role 'eJSL_PageAction' has cardinality 0..*.
+An association connects 'eJSL_Page' and 'eJSL_Link'. From 'eJSL_Page', the role 'eJSL_Page75' has cardinality 0..*, and from 'eJSL_Link', the role 'eJSL_Link' has cardinality 0..*.
+An association connects 'eJSL_Entity' and 'eJSL_DynamicPage'. From 'eJSL_Entity', the role 'eJSL_Entity77' has cardinality 0..*, and from 'eJSL_DynamicPage', the role 'eJSL_DynamicPage' has cardinality 0..*.
+An association connects 'eJSL_DynamicPage' and 'eJSL_Attribute'. From 'eJSL_DynamicPage', the role 'eJSL_DynamicPage79' has cardinality 0..*, and from 'eJSL_Attribute', the role 'eJSL_Attribute80' has cardinality 0..*.
+An association connects 'eJSL_Attribute' and 'eJSL_DynamicPage'. From 'eJSL_Attribute', the role 'eJSL_Attribute83' has cardinality 0..*, and from 'eJSL_DynamicPage', the role 'eJSL_DynamicPage82' has cardinality 0..*.
+An association connects 'eJSL_DetailsPage' and 'eJSL_DetailPageField'. From 'eJSL_DetailsPage', the role 'eJSL_DetailsPage' has cardinality 0..*, and from 'eJSL_DetailPageField', the role 'eJSL_DetailPageField' has cardinality 0..*.
+An association connects 'eJSL_Attribute' and 'eJSL_DetailPageField'. From 'eJSL_Attribute', the role 'eJSL_Attribute87' has cardinality 0..*, and from 'eJSL_DetailPageField', the role 'eJSL_DetailPageField86' has cardinality 0..*.
+An association connects 'eJSL_HTMLTypes' and 'eJSL_DetailPageField'. From 'eJSL_HTMLTypes', the role 'eJSL_HTMLTypes90' has cardinality 0..*, and from 'eJSL_DetailPageField', the role 'eJSL_DetailPageField89' has cardinality 0..*.
+An association connects 'eJSL_DetailPageField' and 'eJSL_KeyValuePair'. From 'eJSL_DetailPageField', the role 'eJSL_DetailPageField92' has cardinality 0..*, and from 'eJSL_KeyValuePair', the role 'eJSL_KeyValuePair93' has cardinality 0..*.
+An association connects 'eJSL_KeyValuePair' and 'eJSL_DetailPageField'. From 'eJSL_KeyValuePair', the role 'eJSL_KeyValuePair96' has cardinality 0..*, and from 'eJSL_DetailPageField', the role 'eJSL_DetailPageField95' has cardinality 0..*.
+An association connects 'eJSL_Entity' and 'eJSL_CustomPage'. From 'eJSL_Entity', the role 'eJSL_Entity98' has cardinality 0..*, and from 'eJSL_CustomPage', the role 'eJSL_CustomPage' has cardinality 0..*.
+An association connects 'eJSL_Attribute' and 'eJSL_Link'. From 'eJSL_Attribute', the role 'eJSL_Attribute101' has cardinality 0..*, and from 'eJSL_Link', the role 'eJSL_Link100' has cardinality 0..*.
+An association connects 'eJSL_Link' and 'eJSL_PageAction'. From 'eJSL_Link', the role 'eJSL_Link103' has cardinality 0..*, and from 'eJSL_PageAction', the role 'eJSL_PageAction104' has cardinality 0..*.
+An association connects 'eJSL_Page' and 'eJSL_InternalLink'. From 'eJSL_Page', the role 'eJSL_Page106' has cardinality 0..*, and from 'eJSL_InternalLink', the role 'eJSL_InternalLink' has cardinality 0..*.
+An association connects 'eJSL_ContextLink' and 'eJSL_LinkParameter'. From 'eJSL_ContextLink', the role 'eJSL_ContextLink' has cardinality 0..*, and from 'eJSL_LinkParameter', the role 'eJSL_LinkParameter' has cardinality 0..*.
+An association connects 'eJSL_LinkParameter' and 'eJSL_Attribute'. From 'eJSL_LinkParameter', the role 'eJSL_LinkParameter109' has cardinality 0..*, and from 'eJSL_Attribute', the role 'eJSL_Attribute110' has cardinality 0..*.
+An association connects 'eJSL_Extension' and 'eJSL_Manifestation'. From 'eJSL_Extension', the role 'eJSL_Extension112' has cardinality 0..*, and from 'eJSL_Manifestation', the role 'eJSL_Manifestation' has cardinality 0..*.
+An association connects 'eJSL_Language' and 'eJSL_Extension'. From 'eJSL_Language', the role 'eJSL_Language' has cardinality 0..*, and from 'eJSL_Extension', the role 'eJSL_Extension114' has cardinality 0..*.
+An association connects 'eJSL_Extension' and 'eJSL_ExtensionPackage'. From 'eJSL_Extension', the role 'eJSL_Extension116' has cardinality 0..*, and from 'eJSL_ExtensionPackage', the role 'eJSL_ExtensionPackage' has cardinality 0..*.
+An association connects 'eJSL_Component' and 'eJSL_ParameterGroup'. From 'eJSL_Component', the role 'eJSL_Component' has cardinality 0..*, and from 'eJSL_ParameterGroup', the role 'eJSL_ParameterGroup118' has cardinality 0..*.
+An association connects 'eJSL_Component' and 'eJSL_Section'. From 'eJSL_Component', the role 'eJSL_Component120' has cardinality 0..*, and from 'eJSL_Section', the role 'eJSL_Section121' has cardinality 0..*.
+An association connects 'eJSL_Section' and 'eJSL_PageReference'. From 'eJSL_Section', the role 'eJSL_Section123' has cardinality 0..*, and from 'eJSL_PageReference', the role 'eJSL_PageReference' has cardinality 0..*.
+An association connects 'eJSL_PageReference' and 'eJSL_Page'. From 'eJSL_PageReference', the role 'eJSL_PageReference125' has cardinality 0..*, and from 'eJSL_Page', the role 'eJSL_Page126' has cardinality 0..*.
+An association connects 'eJSL_ComponentReference' and 'eJSL_PageReference'. From 'eJSL_ComponentReference', the role 'eJSL_ComponentReference' has cardinality 0..*, and from 'eJSL_PageReference', the role 'eJSL_PageReference128' has cardinality 0..*.
+An association connects 'eJSL_ComponentReference' and 'eJSL_Component'. From 'eJSL_ComponentReference', the role 'eJSL_ComponentReference130' has cardinality 0..*, and from 'eJSL_Component', the role 'eJSL_Component131' has cardinality 0..*.
+An association connects 'eJSL_PageReference' and 'eJSL_Module'. From 'eJSL_PageReference', the role 'eJSL_PageReference133' has cardinality 0..*, and from 'eJSL_Module', the role 'eJSL_Module' has cardinality 0..*.
+An association connects 'eJSL_Plugin' and 'eJSL_Entity'. From 'eJSL_Plugin', the role 'eJSL_Plugin' has cardinality 0..*, and from 'eJSL_Entity', the role 'eJSL_Entity135' has cardinality 0..*.
+An association connects 'eJSL_Plugin' and 'eJSL_Parameter'. From 'eJSL_Plugin', the role 'eJSL_Plugin137' has cardinality 0..*, and from 'eJSL_Parameter', the role 'eJSL_Parameter138' has cardinality 0..*.
+An association connects 'eJSL_Entity' and 'eJSL_Library'. From 'eJSL_Entity', the role 'eJSL_Entity140' has cardinality 0..*, and from 'eJSL_Library', the role 'eJSL_Library' has cardinality 0..*.
+An association connects 'eJSL_Library' and 'eJSL_Class'. From 'eJSL_Library', the role 'eJSL_Library142' has cardinality 0..*, and from 'eJSL_Class', the role 'eJSL_Class' has cardinality 0..*.
+An association connects 'eJSL_Package' and 'eJSL_Library'. From 'eJSL_Package', the role 'eJSL_Package' has cardinality 0..*, and from 'eJSL_Library', the role 'eJSL_Library144' has cardinality 0..*.
+An association connects 'eJSL_Package' and 'eJSL_Package'. From 'eJSL_Package', the role 'eJSL_Package145' has cardinality 0..*, and from 'eJSL_Package', the role 'eJSL_Package147' has cardinality 0..*.
+An association connects 'eJSL_Class' and 'eJSL_Package'. From 'eJSL_Class', the role 'eJSL_Class150' has cardinality 0..*, and from 'eJSL_Package', the role 'eJSL_Package149' has cardinality 0..*.
+An association connects 'eJSL_Class' and 'eJSL_Class'. From 'eJSL_Class', the role 'eJSL_Class153' has cardinality 0..*, and from 'eJSL_Class', the role 'eJSL_Class151' has cardinality 0..*.
+An association connects 'eJSL_Class' and 'eJSL_Class'. From 'eJSL_Class', the role 'eJSL_Class156' has cardinality 0..*, and from 'eJSL_Class', the role 'eJSL_Class154' has cardinality 0..*.
+An association connects 'eJSL_Entity' and 'eJSL_Class'. From 'eJSL_Entity', the role 'eJSL_Entity159' has cardinality 0..*, and from 'eJSL_Class', the role 'eJSL_Class158' has cardinality 0..*.
+An association connects 'eJSL_Method' and 'eJSL_Class'. From 'eJSL_Method', the role 'eJSL_Method' has cardinality 0..*, and from 'eJSL_Class', the role 'eJSL_Class161' has cardinality 0..*.
+An association connects 'eJSL_Method' and 'eJSL_Type'. From 'eJSL_Method', the role 'eJSL_Method163' has cardinality 0..*, and from 'eJSL_Type', the role 'eJSL_Type164' has cardinality 0..*.
+An association connects 'eJSL_Method' and 'eJSL_MethodParameter'. From 'eJSL_Method', the role 'eJSL_Method166' has cardinality 0..*, and from 'eJSL_MethodParameter', the role 'eJSL_MethodParameter' has cardinality 0..*.
+An association connects 'eJSL_MethodParameter' and 'eJSL_Type'. From 'eJSL_MethodParameter', the role 'eJSL_MethodParameter168' has cardinality 0..*, and from 'eJSL_Type', the role 'eJSL_Type169' has cardinality 0..*.
+An association connects 'eJSL_Template' and 'eJSL_Parameter'. From 'eJSL_Template', the role 'eJSL_Template' has cardinality 0..*, and from 'eJSL_Parameter', the role 'eJSL_Parameter171' has cardinality 0..*.
+An association connects 'eJSL_Template' and 'eJSL_Position'. From 'eJSL_Template', the role 'eJSL_Template173' has cardinality 0..*, and from 'eJSL_Position', the role 'eJSL_Position' has cardinality 0..*.
+An association connects 'eJSL_CssBlock' and 'eJSL_Template'. From 'eJSL_CssBlock', the role 'eJSL_CssBlock' has cardinality 0..*, and from 'eJSL_Template', the role 'eJSL_Template175' has cardinality 0..*.
+An association connects 'eJSL_Manifestation' and 'eJSL_Author'. From 'eJSL_Manifestation', the role 'eJSL_Manifestation177' has cardinality 0..*, and from 'eJSL_Author', the role 'eJSL_Author' has cardinality 0..*.
+An association connects 'eJSL_Language' and 'eJSL_KeyValuePair'. From 'eJSL_Language', the role 'eJSL_Language179' has cardinality 0..*, and from 'eJSL_KeyValuePair', the role 'eJSL_KeyValuePair180' has cardinality 0..*.
+An association connects 'eJSL_Position' and 'eJSL_PositionParameter'. From 'eJSL_Position', the role 'eJSL_Position182' has cardinality 0..*, and from 'eJSL_PositionParameter', the role 'eJSL_PositionParameter' has cardinality 0..*.
+An association connects 'eJSL_KeyValuePair' and 'eJSL_PositionParameter'. From 'eJSL_KeyValuePair', the role 'eJSL_KeyValuePair185' has cardinality 0..*, and from 'eJSL_PositionParameter', the role 'eJSL_PositionParameter184' has cardinality 0..*.
+An association connects 'eJSL_KeyValuePair' and 'eJSL_CssBlock'. From 'eJSL_KeyValuePair', the role 'eJSL_KeyValuePair188' has cardinality 0..*, and from 'eJSL_CssBlock', the role 'eJSL_CssBlock187' has cardinality 0..*.

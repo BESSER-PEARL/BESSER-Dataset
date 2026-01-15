@@ -1,0 +1,66 @@
+The domain model 'traces' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'RootIn' represents an important domain concept.
+It does not declare any attributes.
+
+'Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'RootOut' represents an important domain concept.
+It does not declare any attributes.
+
+'traces_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'traces_D' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'traces_RootOut' represents an important domain concept.
+It does not declare any attributes.
+
+'traces_E' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'traces_A' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'traces_B' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'traces_RootIn' represents an important domain concept.
+It does not declare any attributes.
+
+'traces_R2_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'traces_R1_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'traces_C' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'traces_R1_Trace' is a specialization of 'Trace'.
+The class 'traces_R2_Trace' is a specialization of 'Trace'.
+The class 'traces_A' is a specialization of 'RootIn'.
+The class 'traces_B' is a specialization of 'RootIn'.
+The class 'traces_C' is a specialization of 'RootIn'.
+The class 'traces_D' is a specialization of 'RootOut'.
+The class 'traces_E' is a specialization of 'RootOut'.
+
+Relationships between classes are modeled using associations.
+An association connects 'traces_Trace' and 'traces_RootIn'. From 'traces_Trace', the role 'traces_Trace' has cardinality 0..*, and from 'traces_RootIn', the role 'traces_RootIn' has cardinality 0..*.
+An association connects 'traces_RootOut' and 'traces_Trace'. From 'traces_RootOut', the role 'traces_RootOut' has cardinality 0..*, and from 'traces_Trace', the role 'traces_Trace2' has cardinality 0..*.
+An association connects 'traces_A' and 'traces_R1_Trace'. From 'traces_A', the role 'traces_A' has cardinality 0..*, and from 'traces_R1_Trace', the role 'traces_R1_Trace' has cardinality 0..*.
+An association connects 'traces_D' and 'traces_R1_Trace'. From 'traces_D', the role 'traces_D' has cardinality 0..*, and from 'traces_R1_Trace', the role 'traces_R1_Trace5' has cardinality 0..*.
+An association connects 'traces_R1_Trace' and 'traces_D'. From 'traces_R1_Trace', the role 'traces_R1_Trace7' has cardinality 0..*, and from 'traces_D', the role 'traces_D8' has cardinality 0..*.
+An association connects 'traces_B' and 'traces_R2_Trace'. From 'traces_B', the role 'traces_B' has cardinality 0..*, and from 'traces_R2_Trace', the role 'traces_R2_Trace' has cardinality 0..*.
+An association connects 'traces_R2_Trace' and 'traces_E'. From 'traces_R2_Trace', the role 'traces_R2_Trace11' has cardinality 0..*, and from 'traces_E', the role 'traces_E' has cardinality 0..*.
+An association connects 'traces_A' and 'traces_B'. From 'traces_A', the role 'traces_A13' has cardinality 0..*, and from 'traces_B', the role 'traces_B14' has cardinality 0..*.
+An association connects 'traces_C' and 'traces_A'. From 'traces_C', the role 'traces_C' has cardinality 0..*, and from 'traces_A', the role 'traces_A16' has cardinality 0..*.
+An association connects 'traces_B' and 'traces_A'. From 'traces_B', the role 'traces_B18' has cardinality 0..*, and from 'traces_A', the role 'traces_A19' has cardinality 0..*.
+An association connects 'traces_E' and 'traces_D'. From 'traces_E', the role 'traces_E22' has cardinality 0..*, and from 'traces_D', the role 'traces_D21' has cardinality 0..*.
+An association connects 'traces_D' and 'traces_D'. From 'traces_D', the role 'traces_D23' has cardinality 0..*, and from 'traces_D', the role 'traces_D25' has cardinality 0..*.
+An association connects 'traces_E' and 'traces_D'. From 'traces_E', the role 'traces_E27' has cardinality 0..*, and from 'traces_D', the role 'traces_D28' has cardinality 0..*.

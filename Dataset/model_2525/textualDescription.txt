@@ -1,0 +1,95 @@
+The domain model 'abcd' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'abcd_C2' represents an important domain concept.
+It has one attribute: 'propOfC2', which is of type str.
+
+'D' represents an important domain concept.
+It does not declare any attributes.
+
+'abcd_D3_B_C' represents an important domain concept.
+It does not declare any attributes.
+
+'abcd_D3' represents an important domain concept.
+It has one attribute: 'commonOfD', which is of type str.
+
+'abcd_D' represents an important domain concept.
+It has one attribute: 'propOfD', which is of type str.
+
+'D3' represents an important domain concept.
+It does not declare any attributes.
+
+'abcd_A' represents an important domain concept.
+It has the following attributes: 'anIntegerAttr', which is of type int; 'aBooleanAttr', which is of type str.
+
+'abcd_Model' represents an important domain concept.
+It has one attribute: 'style', which is of type str.
+
+'C' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElt' represents an important domain concept.
+It does not declare any attributes.
+
+'abcd_C1' represents an important domain concept.
+It has one attribute: 'propOfC1', which is of type str.
+
+'abcd_D1' represents an important domain concept.
+It has one attribute: 'commonOfD', which is of type str.
+
+'abcd_D2' represents an important domain concept.
+It has one attribute: 'commonOfD', which is of type str.
+
+'abcd_D3_B' represents an important domain concept.
+It does not declare any attributes.
+
+'abcd_Other' represents an important domain concept.
+It does not declare any attributes.
+
+'abcd_B' represents an important domain concept.
+It has one attribute: 'propOfB', which is of type str.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'D3_B' represents an important domain concept.
+It does not declare any attributes.
+
+'abcd_C' represents an important domain concept.
+It has one attribute: 'propOfC', which is of type str.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'abcd_NamedElt' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StyleKind' defines the following possible values: 'Style1', 'Style2'.
+
+The model also captures inheritance relationships between classes.
+The class 'abcd_Model' is a specialization of 'NamedElt'.
+The class 'abcd_A' is a specialization of 'NamedElt'.
+The class 'abcd_B' is a specialization of 'A'.
+The class 'abcd_C' is a specialization of 'A'.
+The class 'abcd_C1' is a specialization of 'C'.
+The class 'abcd_C2' is a specialization of 'C'.
+The class 'abcd_D' is a specialization of 'A'.
+The class 'abcd_D1' is a specialization of 'D'.
+The class 'abcd_D2' is a specialization of 'D'.
+The class 'abcd_D3' is a specialization of 'D'.
+The class 'abcd_D3_B' is a specialization of 'D3'.
+The class 'abcd_D3_B' is a specialization of 'B'.
+The class 'abcd_D3_B_C' is a specialization of 'D3_B'.
+The class 'abcd_D3_B_C' is a specialization of 'C'.
+The class 'abcd_Other' is a specialization of 'NamedElt'.
+
+Relationships between classes are modeled using associations.
+An association connects 'abcd_A' and 'abcd_Model'. From 'abcd_A', the role 'abcd_A' has cardinality 0..*, and from 'abcd_Model', the role 'abcd_Model' has cardinality 0..*.
+An association connects 'abcd_Model' and 'abcd_Other'. From 'abcd_Model', the role 'abcd_Model2' has cardinality 0..*, and from 'abcd_Other', the role 'abcd_Other' has cardinality 0..*.
+An association connects 'abcd_Model' and 'abcd_A'. From 'abcd_Model', the role 'abcd_Model4' has cardinality 0..*, and from 'abcd_A', the role 'abcd_A5' has cardinality 0..*.
+An association connects 'abcd_Model' and 'abcd_B'. From 'abcd_Model', the role 'abcd_Model7' has cardinality 0..*, and from 'abcd_B', the role 'abcd_B' has cardinality 0..*.
+An association connects 'abcd_Model' and 'abcd_C'. From 'abcd_Model', the role 'abcd_Model9' has cardinality 0..*, and from 'abcd_C', the role 'abcd_C' has cardinality 0..*.
+An association connects 'abcd_Model' and 'abcd_D'. From 'abcd_Model', the role 'abcd_Model11' has cardinality 0..*, and from 'abcd_D', the role 'abcd_D' has cardinality 0..*.
+An association connects 'abcd_A' and 'abcd_A'. From 'abcd_A', the role 'abcd_A12' has cardinality 0..*, and from 'abcd_A', the role 'abcd_A14' has cardinality 0..*.

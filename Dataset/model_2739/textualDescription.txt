@@ -1,0 +1,32 @@
+The domain model 'TypeB' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'TypeB_BDescription1' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'TypeB_BDescription3' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'TypeB_CDescription' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'TypeB_C' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TypeB_B' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TypeB_BDescription2' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'TypeB_A' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'TypeB_A' and 'TypeB_B'. From 'TypeB_A', the role 'TypeB_A' has cardinality 0..*, and from 'TypeB_B', the role 'TypeB_B' has cardinality 0..*.
+An association connects 'TypeB_A' and 'TypeB_C'. From 'TypeB_A', the role 'TypeB_A2' has cardinality 0..*, and from 'TypeB_C', the role 'TypeB_C' has cardinality 0..*.
+An association connects 'TypeB_BDescription1' and 'TypeB_B'. From 'TypeB_BDescription1', the role 'TypeB_BDescription1' has cardinality 0..*, and from 'TypeB_B', the role 'TypeB_B4' has cardinality 0..*.
+An association connects 'TypeB_B' and 'TypeB_BDescription2'. From 'TypeB_B', the role 'TypeB_B6' has cardinality 0..*, and from 'TypeB_BDescription2', the role 'TypeB_BDescription2' has cardinality 0..*.
+An association connects 'TypeB_BDescription3' and 'TypeB_B'. From 'TypeB_BDescription3', the role 'TypeB_BDescription3' has cardinality 0..*, and from 'TypeB_B', the role 'TypeB_B8' has cardinality 0..*.
+An association connects 'TypeB_C' and 'TypeB_CDescription'. From 'TypeB_C', the role 'TypeB_C10' has cardinality 0..*, and from 'TypeB_CDescription', the role 'TypeB_CDescription' has cardinality 0..*.

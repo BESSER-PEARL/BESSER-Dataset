@@ -1,0 +1,58 @@
+The domain model 'fiacre' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'fiacre_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Init' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Component' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'fiacre_State' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'fiacre_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Process' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Variable' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'fiacre_State' is a specialization of 'EModelElement'.
+The class 'fiacre_Process' is a specialization of 'EModelElement'.
+The class 'fiacre_Transition' is a specialization of 'EModelElement'.
+The class 'fiacre_DataType' is a specialization of 'EModelElement'.
+The class 'fiacre_Variable' is a specialization of 'EModelElement'.
+The class 'fiacre_Init' is a specialization of 'State'.
+The class 'fiacre_Component' is a specialization of 'EModelElement'.
+The class 'fiacre_Program' is a specialization of 'EModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fiacre_State' and 'fiacre_Transition'. From 'fiacre_State', the role 'state' has cardinality 0..*, and from 'fiacre_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'fiacre_Process' and 'fiacre_State'. From 'fiacre_Process', the role 'fiacre_Process' has cardinality 0..*, and from 'fiacre_State', the role 'fiacre_State' has cardinality 0..*.
+An association connects 'fiacre_Process' and 'fiacre_Transition'. From 'fiacre_Process', the role 'fiacre_Process3' has cardinality 0..*, and from 'fiacre_Transition', the role 'fiacre_Transition' has cardinality 0..*.
+An association connects 'fiacre_Variable' and 'fiacre_Process'. From 'fiacre_Variable', the role 'Variable' has cardinality 0..*, and from 'fiacre_Process', the role 'process' has cardinality 0..*.
+An association connects 'fiacre_State' and 'fiacre_Transition'. From 'fiacre_State', the role 'State' has cardinality 0..*, and from 'fiacre_Transition', the role 'transition' has cardinality 0..*.
+An association connects 'fiacre_DataType' and 'fiacre_Variable'. From 'fiacre_DataType', the role 'fiacre_DataType' has cardinality 0..*, and from 'fiacre_Variable', the role 'fiacre_Variable' has cardinality 0..*.
+An association connects 'fiacre_Variable' and 'fiacre_Process'. From 'fiacre_Variable', the role 'variable' has cardinality 0..*, and from 'fiacre_Process', the role 'Process' has cardinality 0..*.
+An association connects 'fiacre_Variable' and 'fiacre_Component'. From 'fiacre_Variable', the role 'variable9' has cardinality 0..*, and from 'fiacre_Component', the role 'Component' has cardinality 0..*.
+An association connects 'fiacre_Process' and 'fiacre_Component'. From 'fiacre_Process', the role 'fiacre_Process11' has cardinality 0..*, and from 'fiacre_Component', the role 'fiacre_Component' has cardinality 0..*.
+An association connects 'fiacre_Variable' and 'fiacre_Component'. From 'fiacre_Variable', the role 'Variable13' has cardinality 0..*, and from 'fiacre_Component', the role 'component' has cardinality 0..*.
+An association connects 'fiacre_Component' and 'fiacre_Program'. From 'fiacre_Component', the role 'fiacre_Component15' has cardinality 0..*, and from 'fiacre_Program', the role 'fiacre_Program' has cardinality 0..*.
+An association connects 'fiacre_Variable' and 'fiacre_Program'. From 'fiacre_Variable', the role 'fiacre_Variable18' has cardinality 0..*, and from 'fiacre_Program', the role 'fiacre_Program17' has cardinality 0..*.
+An association connects 'fiacre_Process' and 'fiacre_Program'. From 'fiacre_Process', the role 'fiacre_Process21' has cardinality 0..*, and from 'fiacre_Program', the role 'fiacre_Program20' has cardinality 0..*.

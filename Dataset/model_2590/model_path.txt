@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/viatra/org.eclipse.viatra.examples/query/headless/org.eclipse.viatra.query.application.queries/testmodels/Test.ecore

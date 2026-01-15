@@ -1,0 +1,18 @@
+The domain model 'abc' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'abc_B' represents an important domain concept.
+It has one attribute: 'x', which is of type int.
+
+'abc_A' represents an important domain concept.
+It has one attribute: 'x', which is of type int.
+
+'abc_C' represents an important domain concept.
+It has one attribute: 'x', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'abc_C' and 'abc_B'. From 'abc_C', the role 'abc_C' has cardinality 0..*, and from 'abc_B', the role 'abc_B' has cardinality 0..*.
+An association connects 'abc_A' and 'abc_B'. From 'abc_A', the role 'unnamed role' has cardinality 0..*, and from 'abc_B', the role '2' has cardinality 0..*.
+An association connects 'abc_A' and 'abc_C'. From 'abc_A', the role 'abc_A' has cardinality 0..*, and from 'abc_C', the role 'abc_C4' has cardinality 0..*.
+An association connects 'abc_A' and 'abc_B'. From 'abc_A', the role '7' has cardinality 0..*, and from 'abc_B', the role '6' has cardinality 0..*.

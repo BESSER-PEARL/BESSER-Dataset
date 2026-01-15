@@ -1,0 +1,36 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'myDsl_Attribute' represents an important domain concept.
+It has one attribute: 'many', which is of type bool.
+
+'myDsl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_JAVAID' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_TypeDef' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl_TypeDef' is a specialization of 'Type'.
+The class 'myDsl_Interface' is a specialization of 'Type'.
+The class 'myDsl_Attribute' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_Model' and 'myDsl_Type'. From 'myDsl_Model', the role 'myDsl_Model' has cardinality 0..*, and from 'myDsl_Type', the role 'myDsl_Type' has cardinality 0..*.
+An association connects 'myDsl_JAVAID' and 'myDsl_TypeDef'. From 'myDsl_JAVAID', the role 'myDsl_JAVAID' has cardinality 0..*, and from 'myDsl_TypeDef', the role 'myDsl_TypeDef' has cardinality 0..*.
+An association connects 'myDsl_Interface' and 'myDsl_Interface'. From 'myDsl_Interface', the role 'myDsl_Interface' has cardinality 0..*, and from 'myDsl_Interface', the role 'myDsl_Interface2' has cardinality 0..*.
+An association connects 'myDsl_Interface' and 'myDsl_Attribute'. From 'myDsl_Interface', the role 'myDsl_Interface5' has cardinality 0..*, and from 'myDsl_Attribute', the role 'myDsl_Attribute' has cardinality 0..*.
+An association connects 'myDsl_Attribute' and 'myDsl_Type'. From 'myDsl_Attribute', the role 'myDsl_Attribute7' has cardinality 0..*, and from 'myDsl_Type', the role 'myDsl_Type8' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jpilgrim/mitra2/plugins/de.jevopi.mitra2/src-gen/de/jevopi/mitra2/Mitra.ecore

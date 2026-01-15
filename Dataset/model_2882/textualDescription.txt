@@ -1,0 +1,37 @@
+The domain model 'entitiesDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'entitiesDsl_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'entitiesDsl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'entitiesDsl_Attribute' represents an important domain concept.
+It has one attribute: 'attrrName', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'entitiesDsl_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'entitiesDsl_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'entitiesDsl_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'entitiesDsl_DataType' is a specialization of 'Type'.
+The class 'entitiesDsl_Entity' is a specialization of 'Type'.
+The class 'entitiesDsl_Attribute' is a specialization of 'Feature'.
+
+Relationships between classes are modeled using associations.
+An association connects 'entitiesDsl_Model' and 'entitiesDsl_Type'. From 'entitiesDsl_Model', the role 'entitiesDsl_Model' has cardinality 0..*, and from 'entitiesDsl_Type', the role 'entitiesDsl_Type' has cardinality 0..*.
+An association connects 'entitiesDsl_Feature' and 'entitiesDsl_Entity'. From 'entitiesDsl_Feature', the role 'entitiesDsl_Feature' has cardinality 0..*, and from 'entitiesDsl_Entity', the role 'entitiesDsl_Entity' has cardinality 0..*.
+An association connects 'entitiesDsl_Type' and 'entitiesDsl_Attribute'. From 'entitiesDsl_Type', the role 'entitiesDsl_Type3' has cardinality 0..*, and from 'entitiesDsl_Attribute', the role 'entitiesDsl_Attribute' has cardinality 0..*.

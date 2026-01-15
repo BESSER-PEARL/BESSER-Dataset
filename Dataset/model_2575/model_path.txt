@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/lolybc88/CEP2Maude/ws/org.xtext.example.esper2maude/model/generated/Esper2Maude.ecore

@@ -1,0 +1,110 @@
+The domain model 'grammar_features' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'grammar_features_MandatoryNonContainment' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractSuperclass' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_CompoundOptional' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_CompoundPlus' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_OptionalNonContainment' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_StarNonContainment' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_PlusPrefix' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_PlusNonContainment' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_AlternativeSyntax' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_ConcreteSubclassA' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_PlusContainment' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_AbstractSuperclass' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_ClassWithAttributes' represents an important domain concept.
+It has the following attributes: 'a1', which is of type str; 'a2', which is of type bool.
+
+'grammar_features_ConcreteSubclassB' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_SecondRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_OptionalContainment' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_CompoundStar' represents an important domain concept.
+It does not declare any attributes.
+
+'Child' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_StarPrefix' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_MandatoryContainment' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_StarContainment' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_X' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'grammar_features_OptionalPrefix' represents an important domain concept.
+It does not declare any attributes.
+
+'grammar_features_Child' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'grammar_features_AlternativeSyntax' is a specialization of 'Child'.
+The class 'grammar_features_AbstractSuperclass' is a specialization of 'Child'.
+The class 'grammar_features_ConcreteSubclassA' is a specialization of 'AbstractSuperclass'.
+The class 'grammar_features_ConcreteSubclassB' is a specialization of 'AbstractSuperclass'.
+The class 'grammar_features_OptionalContainment' is a specialization of 'Child'.
+The class 'grammar_features_MandatoryContainment' is a specialization of 'Child'.
+The class 'grammar_features_PlusContainment' is a specialization of 'Child'.
+The class 'grammar_features_StarContainment' is a specialization of 'Child'.
+The class 'grammar_features_OptionalNonContainment' is a specialization of 'Child'.
+The class 'grammar_features_MandatoryNonContainment' is a specialization of 'Child'.
+The class 'grammar_features_PlusNonContainment' is a specialization of 'Child'.
+The class 'grammar_features_StarNonContainment' is a specialization of 'Child'.
+The class 'grammar_features_CompoundStar' is a specialization of 'Child'.
+The class 'grammar_features_CompoundPlus' is a specialization of 'Child'.
+The class 'grammar_features_CompoundOptional' is a specialization of 'Child'.
+The class 'grammar_features_ClassWithAttributes' is a specialization of 'Child'.
+The class 'grammar_features_OptionalPrefix' is a specialization of 'Child'.
+The class 'grammar_features_StarPrefix' is a specialization of 'Child'.
+The class 'grammar_features_PlusPrefix' is a specialization of 'Child'.
+
+Relationships between classes are modeled using associations.
+An association connects 'grammar_features_Child' and 'grammar_features_Root'. From 'grammar_features_Child', the role 'grammar_features_Child' has cardinality 0..*, and from 'grammar_features_Root', the role 'grammar_features_Root' has cardinality 0..*.
+An association connects 'grammar_features_OptionalContainment' and 'grammar_features_X'. From 'grammar_features_OptionalContainment', the role 'grammar_features_OptionalContainment' has cardinality 0..*, and from 'grammar_features_X', the role 'grammar_features_X' has cardinality 0..*.
+An association connects 'grammar_features_MandatoryContainment' and 'grammar_features_X'. From 'grammar_features_MandatoryContainment', the role 'grammar_features_MandatoryContainment' has cardinality 0..*, and from 'grammar_features_X', the role 'grammar_features_X3' has cardinality 0..*.
+An association connects 'grammar_features_X' and 'grammar_features_PlusContainment'. From 'grammar_features_X', the role 'grammar_features_X5' has cardinality 0..*, and from 'grammar_features_PlusContainment', the role 'grammar_features_PlusContainment' has cardinality 0..*.
+An association connects 'grammar_features_StarContainment' and 'grammar_features_X'. From 'grammar_features_StarContainment', the role 'grammar_features_StarContainment' has cardinality 0..*, and from 'grammar_features_X', the role 'grammar_features_X7' has cardinality 0..*.
+An association connects 'grammar_features_OptionalNonContainment' and 'grammar_features_X'. From 'grammar_features_OptionalNonContainment', the role 'grammar_features_OptionalNonContainment' has cardinality 0..*, and from 'grammar_features_X', the role 'grammar_features_X9' has cardinality 0..*.
+An association connects 'grammar_features_X' and 'grammar_features_MandatoryNonContainment'. From 'grammar_features_X', the role 'grammar_features_X11' has cardinality 0..*, and from 'grammar_features_MandatoryNonContainment', the role 'grammar_features_MandatoryNonContainment' has cardinality 0..*.
+An association connects 'grammar_features_PlusNonContainment' and 'grammar_features_X'. From 'grammar_features_PlusNonContainment', the role 'grammar_features_PlusNonContainment' has cardinality 0..*, and from 'grammar_features_X', the role 'grammar_features_X13' has cardinality 0..*.
+An association connects 'grammar_features_StarNonContainment' and 'grammar_features_X'. From 'grammar_features_StarNonContainment', the role 'grammar_features_StarNonContainment' has cardinality 0..*, and from 'grammar_features_X', the role 'grammar_features_X15' has cardinality 0..*.

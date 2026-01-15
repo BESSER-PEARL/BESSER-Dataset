@@ -1,0 +1,18 @@
+The domain model 'BAttributes' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'BAttributes_RootB' represents an important domain concept.
+It does not declare any attributes.
+
+'BAttributes_B' represents an important domain concept.
+It does not declare any attributes.
+
+'BAttributes_Y' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'BAttributes_B' and 'BAttributes_RootB'. From 'BAttributes_B', the role 'bs' has cardinality 0..*, and from 'BAttributes_RootB', the role 'RootB' has cardinality 0..*.
+An association connects 'BAttributes_B' and 'BAttributes_Y'. From 'BAttributes_B', the role 'BAttributes_B' has cardinality 0..*, and from 'BAttributes_Y', the role 'BAttributes_Y' has cardinality 0..*.
+An association connects 'BAttributes_RootB' and 'BAttributes_B'. From 'BAttributes_RootB', the role 'root' has cardinality 0..*, and from 'BAttributes_B', the role 'B' has cardinality 0..*.
+An association connects 'BAttributes_RootB' and 'BAttributes_Y'. From 'BAttributes_RootB', the role 'BAttributes_RootB' has cardinality 0..*, and from 'BAttributes_Y', the role 'BAttributes_Y4' has cardinality 0..*.

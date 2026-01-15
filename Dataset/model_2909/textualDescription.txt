@@ -1,0 +1,31 @@
+The domain model 'entitymm' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'entitymm_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'entitymm_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'entitymm_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'entitymm_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'entitymm_Entity' represents an important domain concept.
+It has the following attributes: 'desc', which is of type str; 'size', which is of type int; 'isPersistent', which is of type bool.
+
+The model also captures inheritance relationships between classes.
+The class 'entitymm_PrimitiveType' is a specialization of 'Type'.
+The class 'entitymm_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'entitymm_Model' and 'entitymm_Type'. From 'entitymm_Model', the role 'entitymm_Model' has cardinality 0..*, and from 'entitymm_Type', the role 'entitymm_Type' has cardinality 0..*.
+An association connects 'entitymm_Entity' and 'entitymm_Attribute'. From 'entitymm_Entity', the role 'Entity' has cardinality 0..*, and from 'entitymm_Attribute', the role 'attributes' has cardinality 0..*.
+An association connects 'entitymm_PrimitiveType' and 'entitymm_Attribute'. From 'entitymm_PrimitiveType', the role 'entitymm_PrimitiveType' has cardinality 0..*, and from 'entitymm_Attribute', the role 'entitymm_Attribute' has cardinality 0..*.
+An association connects 'entitymm_Attribute' and 'entitymm_Entity'. From 'entitymm_Attribute', the role 'Attribute' has cardinality 0..*, and from 'entitymm_Entity', the role 'entity' has cardinality 0..*.

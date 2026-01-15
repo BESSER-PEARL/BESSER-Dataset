@@ -1,0 +1,32 @@
+The domain model 'pghttptest' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'pghttptest_B' represents an important domain concept.
+It has one attribute: 'priv1', which is of type int.
+
+'pghttptest_D' represents an important domain concept.
+It does not declare any attributes.
+
+'pghttptest_C' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pghttptest_Priv' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'C' represents an important domain concept.
+It does not declare any attributes.
+
+'pghttptest_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'pghttptest_A' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'pghttptest_D' is a specialization of 'C'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pghttptest_Root' and 'pghttptest_A'. From 'pghttptest_Root', the role 'pghttptest_Root' has cardinality 0..*, and from 'pghttptest_A', the role 'pghttptest_A' has cardinality 0..*.
+An association connects 'pghttptest_Root' and 'pghttptest_B'. From 'pghttptest_Root', the role 'pghttptest_Root2' has cardinality 0..*, and from 'pghttptest_B', the role 'pghttptest_B' has cardinality 0..*.
+An association connects 'pghttptest_B' and 'pghttptest_C'. From 'pghttptest_B', the role 'pghttptest_B4' has cardinality 0..*, and from 'pghttptest_C', the role 'pghttptest_C' has cardinality 0..*.

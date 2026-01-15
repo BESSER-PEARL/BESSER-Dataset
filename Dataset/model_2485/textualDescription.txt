@@ -1,0 +1,22 @@
+The domain model 'z3fsm' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'z3fsm_AbstractState' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'z3fsm_Region' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'z3fsm_State' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'z3fsm_Region' is a specialization of 'AbstractState'.
+The class 'z3fsm_State' is a specialization of 'AbstractState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'z3fsm_Region' and 'z3fsm_AbstractState'. From 'z3fsm_Region', the role 'z3fsm_Region' has cardinality 0..*, and from 'z3fsm_AbstractState', the role 'z3fsm_AbstractState' has cardinality 0..*.

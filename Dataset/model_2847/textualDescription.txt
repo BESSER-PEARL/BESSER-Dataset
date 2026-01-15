@@ -1,0 +1,306 @@
+The domain model 'aDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 57 main class(es).
+
+'aDSL_Program' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'aDSL_ForStat' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_IntegerNegative' represents an important domain concept.
+It has the following attributes: 'isneg', which is of type bool; 'value', which is of type int.
+
+'aDSL_Comparison' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_TryCatchStat' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_MulOrDiv' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'aDSL_VariableDef' represents an important domain concept.
+It has the following attributes: 'isstatic', which is of type bool; 'vartype', which is of type str; 'istyped', which is of type bool; 'name', which is of type str; 'isinit', which is of type bool.
+
+'aDSL_Operator' represents an important domain concept.
+It has one attribute: 'opName', which is of type str.
+
+'aDSL_SharedVarDef' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_MemberSelection' represents an important domain concept.
+It has the following attributes: 'methodinvocation', which is of type bool; 'ispar', which is of type bool.
+
+'aDSL_Method' represents an important domain concept.
+It has the following attributes: 'istyped', which is of type bool; 'name', which is of type str; 'isconst', which is of type bool.
+
+'aDSL_Block' represents an important domain concept.
+It has one attribute: 'ispar', which is of type bool.
+
+'VarDef' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_AbstractElements' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'aDSL_FinishStat' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_FuncVarDef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'aDSL_SharedDef' represents an important domain concept.
+It has the following attributes: 'replicas', which is of type bool; 'name', which is of type str.
+
+'aDSL_DeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_IfStat' represents an important domain concept.
+It has one attribute: 'iselse', which is of type bool.
+
+'aDSL_For2Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_And' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_Body' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_New' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_This' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_VariableType' represents an important domain concept.
+It has one attribute: 'isarray', which is of type bool.
+
+'SharedDef' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_AtStat' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_Equality' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'aDSL_XClass' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'aDSL_AsyncStat' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_ReturnStat' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_Here' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_PrintInst' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_AtomicStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_StringConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'aDSL_WhileStat' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_SharedArrayDef' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_MainMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_VarDef' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_Null' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_Parameter' represents an important domain concept.
+It has the following attributes: 'istyped', which is of type bool; 'name', which is of type str.
+
+'aDSL_BoolConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'aDSL_WhenStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_Reference' represents an important domain concept.
+It has one attribute: 'isarray', which is of type bool.
+
+'aDSL_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_Init' represents an important domain concept.
+It does not declare any attributes.
+
+'aDSL_IntConstant' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'aDSL_XClass' is a specialization of 'VarDef'.
+The class 'aDSL_MainMethod' is a specialization of 'Member'.
+The class 'aDSL_PrintInst' is a specialization of 'Member'.
+The class 'aDSL_PrintInst' is a specialization of 'Statement'.
+The class 'aDSL_Method' is a specialization of 'Member'.
+The class 'aDSL_Operator' is a specialization of 'Member'.
+The class 'aDSL_FuncVarDef' is a specialization of 'Member'.
+The class 'aDSL_FuncVarDef' is a specialization of 'Statement'.
+The class 'aDSL_FuncVarDef' is a specialization of 'VarDef'.
+The class 'aDSL_VariableDef' is a specialization of 'Member'.
+The class 'aDSL_VariableDef' is a specialization of 'Statement'.
+The class 'aDSL_VariableDef' is a specialization of 'VarDef'.
+The class 'aDSL_SharedArrayDef' is a specialization of 'SharedDef'.
+The class 'aDSL_SharedVarDef' is a specialization of 'SharedDef'.
+The class 'aDSL_Parameter' is a specialization of 'VarDef'.
+The class 'aDSL_VariableType' is a specialization of 'VarDef'.
+The class 'aDSL_AsyncStat' is a specialization of 'Statement'.
+The class 'aDSL_FinishStat' is a specialization of 'Statement'.
+The class 'aDSL_AtStat' is a specialization of 'Statement'.
+The class 'aDSL_AtomicStatement' is a specialization of 'Statement'.
+The class 'aDSL_WhenStatement' is a specialization of 'Statement'.
+The class 'aDSL_For2Statement' is a specialization of 'Statement'.
+The class 'aDSL_SharedDef' is a specialization of 'Member'.
+The class 'aDSL_SharedDef' is a specialization of 'Statement'.
+The class 'aDSL_SharedDef' is a specialization of 'VarDef'.
+The class 'aDSL_Expression' is a specialization of 'Statement'.
+The class 'aDSL_TryCatchStat' is a specialization of 'Statement'.
+The class 'aDSL_WhileStat' is a specialization of 'Statement'.
+The class 'aDSL_ForStat' is a specialization of 'Statement'.
+The class 'aDSL_ReturnStat' is a specialization of 'Statement'.
+The class 'aDSL_IfStat' is a specialization of 'Statement'.
+The class 'aDSL_Assignment' is a specialization of 'Expression'.
+The class 'aDSL_MemberSelection' is a specialization of 'Expression'.
+The class 'aDSL_Or' is a specialization of 'Expression'.
+The class 'aDSL_And' is a specialization of 'Expression'.
+The class 'aDSL_Equality' is a specialization of 'Expression'.
+The class 'aDSL_Comparison' is a specialization of 'Expression'.
+The class 'aDSL_Plus' is a specialization of 'Expression'.
+The class 'aDSL_Minus' is a specialization of 'Expression'.
+The class 'aDSL_MulOrDiv' is a specialization of 'Expression'.
+The class 'aDSL_Not' is a specialization of 'Expression'.
+The class 'aDSL_StringConstant' is a specialization of 'Expression'.
+The class 'aDSL_IntConstant' is a specialization of 'Expression'.
+The class 'aDSL_BoolConstant' is a specialization of 'Expression'.
+The class 'aDSL_DeRef' is a specialization of 'Expression'.
+The class 'aDSL_This' is a specialization of 'Expression'.
+The class 'aDSL_Null' is a specialization of 'Expression'.
+The class 'aDSL_Here' is a specialization of 'Expression'.
+The class 'aDSL_Reference' is a specialization of 'Expression'.
+The class 'aDSL_New' is a specialization of 'Expression'.
+The class 'aDSL_Init' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'aDSL_AbstractElements' and 'aDSL_Program'. From 'aDSL_AbstractElements', the role 'aDSL_AbstractElements' has cardinality 0..*, and from 'aDSL_Program', the role 'aDSL_Program' has cardinality 0..*.
+An association connects 'aDSL_Program' and 'aDSL_XClass'. From 'aDSL_Program', the role 'aDSL_Program2' has cardinality 0..*, and from 'aDSL_XClass', the role 'aDSL_XClass' has cardinality 0..*.
+An association connects 'aDSL_XClass' and 'aDSL_XClass'. From 'aDSL_XClass', the role 'aDSL_XClass5' has cardinality 0..*, and from 'aDSL_XClass', the role 'aDSL_XClass3' has cardinality 0..*.
+An association connects 'aDSL_XClass' and 'aDSL_Member'. From 'aDSL_XClass', the role 'aDSL_XClass7' has cardinality 0..*, and from 'aDSL_Member', the role 'aDSL_Member' has cardinality 0..*.
+An association connects 'aDSL_VariableType' and 'aDSL_MainMethod'. From 'aDSL_VariableType', the role 'aDSL_VariableType' has cardinality 0..*, and from 'aDSL_MainMethod', the role 'aDSL_MainMethod' has cardinality 0..*.
+An association connects 'aDSL_MainMethod' and 'aDSL_Body'. From 'aDSL_MainMethod', the role 'aDSL_MainMethod10' has cardinality 0..*, and from 'aDSL_Body', the role 'aDSL_Body' has cardinality 0..*.
+An association connects 'aDSL_PrintInst' and 'aDSL_Expression'. From 'aDSL_PrintInst', the role 'aDSL_PrintInst' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression' has cardinality 0..*.
+An association connects 'aDSL_Parameter' and 'aDSL_Method'. From 'aDSL_Parameter', the role 'aDSL_Parameter' has cardinality 0..*, and from 'aDSL_Method', the role 'aDSL_Method' has cardinality 0..*.
+An association connects 'aDSL_VariableType' and 'aDSL_Method'. From 'aDSL_VariableType', the role 'aDSL_VariableType15' has cardinality 0..*, and from 'aDSL_Method', the role 'aDSL_Method14' has cardinality 0..*.
+An association connects 'aDSL_Body' and 'aDSL_Method'. From 'aDSL_Body', the role 'aDSL_Body18' has cardinality 0..*, and from 'aDSL_Method', the role 'aDSL_Method17' has cardinality 0..*.
+An association connects 'aDSL_Parameter' and 'aDSL_Operator'. From 'aDSL_Parameter', the role 'aDSL_Parameter20' has cardinality 0..*, and from 'aDSL_Operator', the role 'aDSL_Operator' has cardinality 0..*.
+An association connects 'aDSL_Expression' and 'aDSL_Operator'. From 'aDSL_Expression', the role 'aDSL_Expression23' has cardinality 0..*, and from 'aDSL_Operator', the role 'aDSL_Operator22' has cardinality 0..*.
+An association connects 'aDSL_FuncVarDef' and 'aDSL_Parameter'. From 'aDSL_FuncVarDef', the role 'aDSL_FuncVarDef' has cardinality 0..*, and from 'aDSL_Parameter', the role 'aDSL_Parameter25' has cardinality 0..*.
+An association connects 'aDSL_VariableType' and 'aDSL_FuncVarDef'. From 'aDSL_VariableType', the role 'aDSL_VariableType28' has cardinality 0..*, and from 'aDSL_FuncVarDef', the role 'aDSL_FuncVarDef27' has cardinality 0..*.
+An association connects 'aDSL_FuncVarDef' and 'aDSL_Body'. From 'aDSL_FuncVarDef', the role 'aDSL_FuncVarDef30' has cardinality 0..*, and from 'aDSL_Body', the role 'aDSL_Body31' has cardinality 0..*.
+An association connects 'aDSL_VariableDef' and 'aDSL_VariableType'. From 'aDSL_VariableDef', the role 'aDSL_VariableDef' has cardinality 0..*, and from 'aDSL_VariableType', the role 'aDSL_VariableType33' has cardinality 0..*.
+An association connects 'aDSL_Expression' and 'aDSL_VariableDef'. From 'aDSL_Expression', the role 'aDSL_Expression36' has cardinality 0..*, and from 'aDSL_VariableDef', the role 'aDSL_VariableDef35' has cardinality 0..*.
+An association connects 'aDSL_VariableDef' and 'aDSL_SharedArrayDef'. From 'aDSL_VariableDef', the role 'aDSL_VariableDef38' has cardinality 0..*, and from 'aDSL_SharedArrayDef', the role 'aDSL_SharedArrayDef' has cardinality 0..*.
+An association connects 'aDSL_SharedVarDef' and 'aDSL_Expression'. From 'aDSL_SharedVarDef', the role 'aDSL_SharedVarDef' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression40' has cardinality 0..*.
+An association connects 'aDSL_VariableType' and 'aDSL_Parameter'. From 'aDSL_VariableType', the role 'aDSL_VariableType43' has cardinality 0..*, and from 'aDSL_Parameter', the role 'aDSL_Parameter42' has cardinality 0..*.
+An association connects 'aDSL_Body' and 'aDSL_Statement'. From 'aDSL_Body', the role 'aDSL_Body45' has cardinality 0..*, and from 'aDSL_Statement', the role 'aDSL_Statement' has cardinality 0..*.
+An association connects 'aDSL_Statement' and 'aDSL_Block'. From 'aDSL_Statement', the role 'aDSL_Statement47' has cardinality 0..*, and from 'aDSL_Block', the role 'aDSL_Block' has cardinality 0..*.
+An association connects 'aDSL_VariableType' and 'aDSL_XClass'. From 'aDSL_VariableType', the role 'aDSL_VariableType49' has cardinality 0..*, and from 'aDSL_XClass', the role 'aDSL_XClass50' has cardinality 0..*.
+An association connects 'aDSL_VariableType' and 'aDSL_VariableType'. From 'aDSL_VariableType', the role 'aDSL_VariableType51' has cardinality 0..*, and from 'aDSL_VariableType', the role 'aDSL_VariableType53' has cardinality 0..*.
+An association connects 'aDSL_Block' and 'aDSL_AsyncStat'. From 'aDSL_Block', the role 'aDSL_Block55' has cardinality 0..*, and from 'aDSL_AsyncStat', the role 'aDSL_AsyncStat' has cardinality 0..*.
+An association connects 'aDSL_FinishStat' and 'aDSL_Block'. From 'aDSL_FinishStat', the role 'aDSL_FinishStat' has cardinality 0..*, and from 'aDSL_Block', the role 'aDSL_Block57' has cardinality 0..*.
+An association connects 'aDSL_Expression' and 'aDSL_AtStat'. From 'aDSL_Expression', the role 'aDSL_Expression59' has cardinality 0..*, and from 'aDSL_AtStat', the role 'aDSL_AtStat' has cardinality 0..*.
+An association connects 'aDSL_AtStat' and 'aDSL_Block'. From 'aDSL_AtStat', the role 'aDSL_AtStat61' has cardinality 0..*, and from 'aDSL_Block', the role 'aDSL_Block62' has cardinality 0..*.
+An association connects 'aDSL_Statement' and 'aDSL_AtomicStatement'. From 'aDSL_Statement', the role 'aDSL_Statement64' has cardinality 0..*, and from 'aDSL_AtomicStatement', the role 'aDSL_AtomicStatement' has cardinality 0..*.
+An association connects 'aDSL_Expression' and 'aDSL_WhenStatement'. From 'aDSL_Expression', the role 'aDSL_Expression66' has cardinality 0..*, and from 'aDSL_WhenStatement', the role 'aDSL_WhenStatement' has cardinality 0..*.
+An association connects 'aDSL_Statement' and 'aDSL_WhenStatement'. From 'aDSL_Statement', the role 'aDSL_Statement69' has cardinality 0..*, and from 'aDSL_WhenStatement', the role 'aDSL_WhenStatement68' has cardinality 0..*.
+An association connects 'aDSL_For2Statement' and 'aDSL_Parameter'. From 'aDSL_For2Statement', the role 'aDSL_For2Statement' has cardinality 0..*, and from 'aDSL_Parameter', the role 'aDSL_Parameter71' has cardinality 0..*.
+An association connects 'aDSL_For2Statement' and 'aDSL_Expression'. From 'aDSL_For2Statement', the role 'aDSL_For2Statement73' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression74' has cardinality 0..*.
+An association connects 'aDSL_For2Statement' and 'aDSL_Block'. From 'aDSL_For2Statement', the role 'aDSL_For2Statement76' has cardinality 0..*, and from 'aDSL_Block', the role 'aDSL_Block77' has cardinality 0..*.
+An association connects 'aDSL_SharedDef' and 'aDSL_VariableType'. From 'aDSL_SharedDef', the role 'aDSL_SharedDef' has cardinality 0..*, and from 'aDSL_VariableType', the role 'aDSL_VariableType79' has cardinality 0..*.
+An association connects 'aDSL_SharedDef' and 'aDSL_VarDef'. From 'aDSL_SharedDef', the role 'aDSL_SharedDef81' has cardinality 0..*, and from 'aDSL_VarDef', the role 'aDSL_VarDef' has cardinality 0..*.
+An association connects 'aDSL_TryCatchStat' and 'aDSL_Body'. From 'aDSL_TryCatchStat', the role 'aDSL_TryCatchStat' has cardinality 0..*, and from 'aDSL_Body', the role 'aDSL_Body83' has cardinality 0..*.
+An association connects 'aDSL_TryCatchStat' and 'aDSL_Body'. From 'aDSL_TryCatchStat', the role 'aDSL_TryCatchStat85' has cardinality 0..*, and from 'aDSL_Body', the role 'aDSL_Body86' has cardinality 0..*.
+An association connects 'aDSL_Expression' and 'aDSL_WhileStat'. From 'aDSL_Expression', the role 'aDSL_Expression88' has cardinality 0..*, and from 'aDSL_WhileStat', the role 'aDSL_WhileStat' has cardinality 0..*.
+An association connects 'aDSL_WhileStat' and 'aDSL_Body'. From 'aDSL_WhileStat', the role 'aDSL_WhileStat90' has cardinality 0..*, and from 'aDSL_Body', the role 'aDSL_Body91' has cardinality 0..*.
+An association connects 'aDSL_VariableDef' and 'aDSL_ForStat'. From 'aDSL_VariableDef', the role 'aDSL_VariableDef93' has cardinality 0..*, and from 'aDSL_ForStat', the role 'aDSL_ForStat' has cardinality 0..*.
+An association connects 'aDSL_ForStat' and 'aDSL_Expression'. From 'aDSL_ForStat', the role 'aDSL_ForStat95' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression96' has cardinality 0..*.
+An association connects 'aDSL_ForStat' and 'aDSL_Expression'. From 'aDSL_ForStat', the role 'aDSL_ForStat98' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression99' has cardinality 0..*.
+An association connects 'aDSL_ForStat' and 'aDSL_Block'. From 'aDSL_ForStat', the role 'aDSL_ForStat101' has cardinality 0..*, and from 'aDSL_Block', the role 'aDSL_Block102' has cardinality 0..*.
+An association connects 'aDSL_ReturnStat' and 'aDSL_Expression'. From 'aDSL_ReturnStat', the role 'aDSL_ReturnStat' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression104' has cardinality 0..*.
+An association connects 'aDSL_IfStat' and 'aDSL_Expression'. From 'aDSL_IfStat', the role 'aDSL_IfStat' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression106' has cardinality 0..*.
+An association connects 'aDSL_IfStat' and 'aDSL_Block'. From 'aDSL_IfStat', the role 'aDSL_IfStat108' has cardinality 0..*, and from 'aDSL_Block', the role 'aDSL_Block109' has cardinality 0..*.
+An association connects 'aDSL_IfStat' and 'aDSL_Block'. From 'aDSL_IfStat', the role 'aDSL_IfStat111' has cardinality 0..*, and from 'aDSL_Block', the role 'aDSL_Block112' has cardinality 0..*.
+An association connects 'aDSL_Assignment' and 'aDSL_Expression'. From 'aDSL_Assignment', the role 'aDSL_Assignment' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression114' has cardinality 0..*.
+An association connects 'aDSL_Assignment' and 'aDSL_Expression'. From 'aDSL_Assignment', the role 'aDSL_Assignment116' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression117' has cardinality 0..*.
+An association connects 'aDSL_MemberSelection' and 'aDSL_Expression'. From 'aDSL_MemberSelection', the role 'aDSL_MemberSelection' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression119' has cardinality 0..*.
+An association connects 'aDSL_MemberSelection' and 'aDSL_Member'. From 'aDSL_MemberSelection', the role 'aDSL_MemberSelection121' has cardinality 0..*, and from 'aDSL_Member', the role 'aDSL_Member122' has cardinality 0..*.
+An association connects 'aDSL_XClass' and 'aDSL_MemberSelection'. From 'aDSL_XClass', the role 'aDSL_XClass125' has cardinality 0..*, and from 'aDSL_MemberSelection', the role 'aDSL_MemberSelection124' has cardinality 0..*.
+An association connects 'aDSL_Expression' and 'aDSL_MemberSelection'. From 'aDSL_Expression', the role 'aDSL_Expression128' has cardinality 0..*, and from 'aDSL_MemberSelection', the role 'aDSL_MemberSelection127' has cardinality 0..*.
+An association connects 'aDSL_Or' and 'aDSL_Expression'. From 'aDSL_Or', the role 'aDSL_Or' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression130' has cardinality 0..*.
+An association connects 'aDSL_Or' and 'aDSL_Expression'. From 'aDSL_Or', the role 'aDSL_Or132' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression133' has cardinality 0..*.
+An association connects 'aDSL_And' and 'aDSL_Expression'. From 'aDSL_And', the role 'aDSL_And' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression135' has cardinality 0..*.
+An association connects 'aDSL_Expression' and 'aDSL_And'. From 'aDSL_Expression', the role 'aDSL_Expression138' has cardinality 0..*, and from 'aDSL_And', the role 'aDSL_And137' has cardinality 0..*.
+An association connects 'aDSL_Expression' and 'aDSL_Equality'. From 'aDSL_Expression', the role 'aDSL_Expression140' has cardinality 0..*, and from 'aDSL_Equality', the role 'aDSL_Equality' has cardinality 0..*.
+An association connects 'aDSL_Expression' and 'aDSL_Equality'. From 'aDSL_Expression', the role 'aDSL_Expression143' has cardinality 0..*, and from 'aDSL_Equality', the role 'aDSL_Equality142' has cardinality 0..*.
+An association connects 'aDSL_Comparison' and 'aDSL_Expression'. From 'aDSL_Comparison', the role 'aDSL_Comparison' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression145' has cardinality 0..*.
+An association connects 'aDSL_Comparison' and 'aDSL_Expression'. From 'aDSL_Comparison', the role 'aDSL_Comparison147' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression148' has cardinality 0..*.
+An association connects 'aDSL_Plus' and 'aDSL_Expression'. From 'aDSL_Plus', the role 'aDSL_Plus' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression150' has cardinality 0..*.
+An association connects 'aDSL_Expression' and 'aDSL_Plus'. From 'aDSL_Expression', the role 'aDSL_Expression153' has cardinality 0..*, and from 'aDSL_Plus', the role 'aDSL_Plus152' has cardinality 0..*.
+An association connects 'aDSL_Minus' and 'aDSL_Expression'. From 'aDSL_Minus', the role 'aDSL_Minus' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression155' has cardinality 0..*.
+An association connects 'aDSL_Expression' and 'aDSL_Minus'. From 'aDSL_Expression', the role 'aDSL_Expression158' has cardinality 0..*, and from 'aDSL_Minus', the role 'aDSL_Minus157' has cardinality 0..*.
+An association connects 'aDSL_MulOrDiv' and 'aDSL_Expression'. From 'aDSL_MulOrDiv', the role 'aDSL_MulOrDiv' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression160' has cardinality 0..*.
+An association connects 'aDSL_MulOrDiv' and 'aDSL_Expression'. From 'aDSL_MulOrDiv', the role 'aDSL_MulOrDiv162' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression163' has cardinality 0..*.
+An association connects 'aDSL_Not' and 'aDSL_Expression'. From 'aDSL_Not', the role 'aDSL_Not' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression165' has cardinality 0..*.
+An association connects 'aDSL_IntegerNegative' and 'aDSL_IntConstant'. From 'aDSL_IntegerNegative', the role 'aDSL_IntegerNegative' has cardinality 0..*, and from 'aDSL_IntConstant', the role 'aDSL_IntConstant' has cardinality 0..*.
+An association connects 'aDSL_VarDef' and 'aDSL_DeRef'. From 'aDSL_VarDef', the role 'aDSL_VarDef168' has cardinality 0..*, and from 'aDSL_DeRef', the role 'aDSL_DeRef' has cardinality 0..*.
+An association connects 'aDSL_Reference' and 'aDSL_VarDef'. From 'aDSL_Reference', the role 'aDSL_Reference' has cardinality 0..*, and from 'aDSL_VarDef', the role 'aDSL_VarDef170' has cardinality 0..*.
+An association connects 'aDSL_Expression' and 'aDSL_Reference'. From 'aDSL_Expression', the role 'aDSL_Expression173' has cardinality 0..*, and from 'aDSL_Reference', the role 'aDSL_Reference172' has cardinality 0..*.
+An association connects 'aDSL_New' and 'aDSL_VariableType'. From 'aDSL_New', the role 'aDSL_New' has cardinality 0..*, and from 'aDSL_VariableType', the role 'aDSL_VariableType175' has cardinality 0..*.
+An association connects 'aDSL_Expression' and 'aDSL_New'. From 'aDSL_Expression', the role 'aDSL_Expression178' has cardinality 0..*, and from 'aDSL_New', the role 'aDSL_New177' has cardinality 0..*.
+An association connects 'aDSL_VariableType' and 'aDSL_Init'. From 'aDSL_VariableType', the role 'aDSL_VariableType180' has cardinality 0..*, and from 'aDSL_Init', the role 'aDSL_Init' has cardinality 0..*.
+An association connects 'aDSL_Init' and 'aDSL_Expression'. From 'aDSL_Init', the role 'aDSL_Init182' has cardinality 0..*, and from 'aDSL_Expression', the role 'aDSL_Expression183' has cardinality 0..*.

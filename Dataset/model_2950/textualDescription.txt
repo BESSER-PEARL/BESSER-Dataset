@@ -1,0 +1,214 @@
+The domain model 'metamodeloArquitecturaPila' describes the core structural elements and their relationships within the system.
+
+The model defines 50 main class(es).
+
+'metamodeloArquitecturaPila_Menu' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'SimpleComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_ComplexComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_Boolean' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceType' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_ListItem' represents an important domain concept.
+It has the following attributes: 'action', which is of type str; 'isSelected', which is of type str.
+
+'metamodeloArquitecturaPila_Service' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ComplexComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_DatePicker' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_BusinessLogic' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodeloArquitecturaPila_Button' represents an important domain concept.
+It has one attribute: 'action', which is of type str.
+
+'metamodeloArquitecturaPila_String' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_SimpleComponent' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'metamodeloArquitecturaPila_DataType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodeloArquitecturaPila_FunctionBody' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'metamodeloArquitecturaPila_ServiceType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodeloArquitecturaPila_Method' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodeloArquitecturaPila_Radio' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_Number' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_Date' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_Check' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'metamodeloArquitecturaPila_Select' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_GraphicalComponent' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'length', which is of type str; 'displayName', which is of type str; 'height', which is of type str; 'name', which is of type str.
+
+'metamodeloArquitecturaPila_Read' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_TextArea' represents an important domain concept.
+It has one attribute: 'visibleLines', which is of type str.
+
+'metamodeloArquitecturaPila_DropdownList' represents an important domain concept.
+It does not declare any attributes.
+
+'Input' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodeloArquitecturaPila_Architecture' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodeloArquitecturaPila_Delete' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_Body' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'GraphicalComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_Text' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodeloArquitecturaPila_BusinessModel' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_Form' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'metamodeloArquitecturaPila_Create' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_View' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodeloArquitecturaPila_Grid' represents an important domain concept.
+It has the following attributes: 'cols', which is of type str; 'rows', which is of type str.
+
+'metamodeloArquitecturaPila_MenuItem' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'metamodeloArquitecturaPila_Integer' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_TitleBar' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'metamodeloArquitecturaPila_Float' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_Update' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_Function' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodeloArquitecturaPila_Enum' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodeloArquitecturaPila_Input' represents an important domain concept.
+It has one attribute: 'action', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'metamodeloArquitecturaPila_Button' is a specialization of 'SimpleComponent'.
+The class 'metamodeloArquitecturaPila_Input' is a specialization of 'SimpleComponent'.
+The class 'metamodeloArquitecturaPila_Label' is a specialization of 'SimpleComponent'.
+The class 'metamodeloArquitecturaPila_SimpleComponent' is a specialization of 'GraphicalComponent'.
+The class 'metamodeloArquitecturaPila_ComplexComponent' is a specialization of 'GraphicalComponent'.
+The class 'metamodeloArquitecturaPila_DropdownList' is a specialization of 'SimpleComponent'.
+The class 'metamodeloArquitecturaPila_Grid' is a specialization of 'ComplexComponent'.
+The class 'metamodeloArquitecturaPila_TextArea' is a specialization of 'ComplexComponent'.
+The class 'metamodeloArquitecturaPila_Integer' is a specialization of 'DataType'.
+The class 'metamodeloArquitecturaPila_Float' is a specialization of 'DataType'.
+The class 'metamodeloArquitecturaPila_Boolean' is a specialization of 'DataType'.
+The class 'metamodeloArquitecturaPila_String' is a specialization of 'DataType'.
+The class 'metamodeloArquitecturaPila_Date' is a specialization of 'DataType'.
+The class 'metamodeloArquitecturaPila_Enum' is a specialization of 'DataType'.
+The class 'metamodeloArquitecturaPila_Create' is a specialization of 'ServiceType'.
+The class 'metamodeloArquitecturaPila_Read' is a specialization of 'ServiceType'.
+The class 'metamodeloArquitecturaPila_Update' is a specialization of 'ServiceType'.
+The class 'metamodeloArquitecturaPila_Delete' is a specialization of 'ServiceType'.
+The class 'metamodeloArquitecturaPila_Text' is a specialization of 'Input'.
+The class 'metamodeloArquitecturaPila_Radio' is a specialization of 'Input'.
+The class 'metamodeloArquitecturaPila_Check' is a specialization of 'Input'.
+The class 'metamodeloArquitecturaPila_Number' is a specialization of 'Input'.
+The class 'metamodeloArquitecturaPila_DatePicker' is a specialization of 'Input'.
+The class 'metamodeloArquitecturaPila_Select' is a specialization of 'ComplexComponent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'metamodeloArquitecturaPila_Architecture' and 'metamodeloArquitecturaPila_View'. From 'metamodeloArquitecturaPila_Architecture', the role 'metamodeloArquitecturaPila_Architecture' has cardinality 0..*, and from 'metamodeloArquitecturaPila_View', the role 'metamodeloArquitecturaPila_View' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_BusinessModel' and 'metamodeloArquitecturaPila_Architecture'. From 'metamodeloArquitecturaPila_BusinessModel', the role 'metamodeloArquitecturaPila_BusinessModel' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Architecture', the role 'metamodeloArquitecturaPila_Architecture2' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Service' and 'metamodeloArquitecturaPila_Architecture'. From 'metamodeloArquitecturaPila_Service', the role 'metamodeloArquitecturaPila_Service' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Architecture', the role 'metamodeloArquitecturaPila_Architecture4' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_ServiceType' and 'metamodeloArquitecturaPila_Architecture'. From 'metamodeloArquitecturaPila_ServiceType', the role 'metamodeloArquitecturaPila_ServiceType' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Architecture', the role 'metamodeloArquitecturaPila_Architecture6' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_BusinessLogic' and 'metamodeloArquitecturaPila_Architecture'. From 'metamodeloArquitecturaPila_BusinessLogic', the role 'metamodeloArquitecturaPila_BusinessLogic' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Architecture', the role 'metamodeloArquitecturaPila_Architecture8' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_View' and 'metamodeloArquitecturaPila_TitleBar'. From 'metamodeloArquitecturaPila_View', the role 'metamodeloArquitecturaPila_View10' has cardinality 0..*, and from 'metamodeloArquitecturaPila_TitleBar', the role 'metamodeloArquitecturaPila_TitleBar' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Menu' and 'metamodeloArquitecturaPila_View'. From 'metamodeloArquitecturaPila_Menu', the role 'metamodeloArquitecturaPila_Menu' has cardinality 0..*, and from 'metamodeloArquitecturaPila_View', the role 'metamodeloArquitecturaPila_View12' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_View' and 'metamodeloArquitecturaPila_Form'. From 'metamodeloArquitecturaPila_View', the role 'metamodeloArquitecturaPila_View14' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Form', the role 'metamodeloArquitecturaPila_Form' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_View' and 'metamodeloArquitecturaPila_GraphicalComponent'. From 'metamodeloArquitecturaPila_View', the role 'metamodeloArquitecturaPila_View16' has cardinality 0..*, and from 'metamodeloArquitecturaPila_GraphicalComponent', the role 'metamodeloArquitecturaPila_GraphicalComponent' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_View' and 'metamodeloArquitecturaPila_View'. From 'metamodeloArquitecturaPila_View', the role 'metamodeloArquitecturaPila_View19' has cardinality 0..*, and from 'metamodeloArquitecturaPila_View', the role 'metamodeloArquitecturaPila_View17' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_SimpleComponent' and 'metamodeloArquitecturaPila_TitleBar'. From 'metamodeloArquitecturaPila_SimpleComponent', the role 'metamodeloArquitecturaPila_SimpleComponent' has cardinality 0..*, and from 'metamodeloArquitecturaPila_TitleBar', the role 'metamodeloArquitecturaPila_TitleBar21' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Menu' and 'metamodeloArquitecturaPila_MenuItem'. From 'metamodeloArquitecturaPila_Menu', the role 'metamodeloArquitecturaPila_Menu23' has cardinality 0..*, and from 'metamodeloArquitecturaPila_MenuItem', the role 'metamodeloArquitecturaPila_MenuItem' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_GraphicalComponent' and 'metamodeloArquitecturaPila_Form'. From 'metamodeloArquitecturaPila_GraphicalComponent', the role 'metamodeloArquitecturaPila_GraphicalComponent26' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Form', the role 'metamodeloArquitecturaPila_Form25' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_MenuItem' and 'metamodeloArquitecturaPila_SimpleComponent'. From 'metamodeloArquitecturaPila_MenuItem', the role 'metamodeloArquitecturaPila_MenuItem28' has cardinality 0..*, and from 'metamodeloArquitecturaPila_SimpleComponent', the role 'metamodeloArquitecturaPila_SimpleComponent29' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_ListItem' and 'metamodeloArquitecturaPila_DropdownList'. From 'metamodeloArquitecturaPila_ListItem', the role 'metamodeloArquitecturaPila_ListItem' has cardinality 0..*, and from 'metamodeloArquitecturaPila_DropdownList', the role 'metamodeloArquitecturaPila_DropdownList' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_ServiceType' and 'metamodeloArquitecturaPila_Service'. From 'metamodeloArquitecturaPila_ServiceType', the role 'metamodeloArquitecturaPila_ServiceType33' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Service', the role 'metamodeloArquitecturaPila_Service32' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Parameter' and 'metamodeloArquitecturaPila_Service'. From 'metamodeloArquitecturaPila_Parameter', the role 'metamodeloArquitecturaPila_Parameter' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Service', the role 'metamodeloArquitecturaPila_Service35' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Parameter' and 'metamodeloArquitecturaPila_Service'. From 'metamodeloArquitecturaPila_Parameter', the role 'metamodeloArquitecturaPila_Parameter38' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Service', the role 'metamodeloArquitecturaPila_Service37' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Function' and 'metamodeloArquitecturaPila_Service'. From 'metamodeloArquitecturaPila_Function', the role 'metamodeloArquitecturaPila_Function' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Service', the role 'metamodeloArquitecturaPila_Service40' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Entity' and 'metamodeloArquitecturaPila_BusinessModel'. From 'metamodeloArquitecturaPila_Entity', the role 'metamodeloArquitecturaPila_Entity' has cardinality 0..*, and from 'metamodeloArquitecturaPila_BusinessModel', the role 'metamodeloArquitecturaPila_BusinessModel42' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_BusinessModel' and 'metamodeloArquitecturaPila_DataType'. From 'metamodeloArquitecturaPila_BusinessModel', the role 'metamodeloArquitecturaPila_BusinessModel44' has cardinality 0..*, and from 'metamodeloArquitecturaPila_DataType', the role 'metamodeloArquitecturaPila_DataType' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Attribute' and 'metamodeloArquitecturaPila_Entity'. From 'metamodeloArquitecturaPila_Attribute', the role 'metamodeloArquitecturaPila_Attribute' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Entity', the role 'metamodeloArquitecturaPila_Entity46' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Method' and 'metamodeloArquitecturaPila_Entity'. From 'metamodeloArquitecturaPila_Method', the role 'metamodeloArquitecturaPila_Method' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Entity', the role 'metamodeloArquitecturaPila_Entity48' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Entity' and 'metamodeloArquitecturaPila_Entity'. From 'metamodeloArquitecturaPila_Entity', the role 'metamodeloArquitecturaPila_Entity51' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Entity', the role 'metamodeloArquitecturaPila_Entity49' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Attribute' and 'metamodeloArquitecturaPila_DataType'. From 'metamodeloArquitecturaPila_Attribute', the role 'metamodeloArquitecturaPila_Attribute53' has cardinality 0..*, and from 'metamodeloArquitecturaPila_DataType', the role 'metamodeloArquitecturaPila_DataType54' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Parameter' and 'metamodeloArquitecturaPila_Method'. From 'metamodeloArquitecturaPila_Parameter', the role 'metamodeloArquitecturaPila_Parameter57' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Method', the role 'metamodeloArquitecturaPila_Method56' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Parameter' and 'metamodeloArquitecturaPila_Method'. From 'metamodeloArquitecturaPila_Parameter', the role 'metamodeloArquitecturaPila_Parameter60' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Method', the role 'metamodeloArquitecturaPila_Method59' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Body' and 'metamodeloArquitecturaPila_Method'. From 'metamodeloArquitecturaPila_Body', the role 'metamodeloArquitecturaPila_Body' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Method', the role 'metamodeloArquitecturaPila_Method62' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Function' and 'metamodeloArquitecturaPila_BusinessLogic'. From 'metamodeloArquitecturaPila_Function', the role 'metamodeloArquitecturaPila_Function65' has cardinality 0..*, and from 'metamodeloArquitecturaPila_BusinessLogic', the role 'metamodeloArquitecturaPila_BusinessLogic64' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Parameter' and 'metamodeloArquitecturaPila_Function'. From 'metamodeloArquitecturaPila_Parameter', the role 'metamodeloArquitecturaPila_Parameter68' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Function', the role 'metamodeloArquitecturaPila_Function67' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Function' and 'metamodeloArquitecturaPila_Parameter'. From 'metamodeloArquitecturaPila_Function', the role 'metamodeloArquitecturaPila_Function70' has cardinality 0..*, and from 'metamodeloArquitecturaPila_Parameter', the role 'metamodeloArquitecturaPila_Parameter71' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Function' and 'metamodeloArquitecturaPila_FunctionBody'. From 'metamodeloArquitecturaPila_Function', the role 'metamodeloArquitecturaPila_Function73' has cardinality 0..*, and from 'metamodeloArquitecturaPila_FunctionBody', the role 'metamodeloArquitecturaPila_FunctionBody' has cardinality 0..*.
+An association connects 'metamodeloArquitecturaPila_Parameter' and 'metamodeloArquitecturaPila_DataType'. From 'metamodeloArquitecturaPila_Parameter', the role 'metamodeloArquitecturaPila_Parameter75' has cardinality 0..*, and from 'metamodeloArquitecturaPila_DataType', the role 'metamodeloArquitecturaPila_DataType76' has cardinality 0..*.

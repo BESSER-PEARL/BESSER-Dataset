@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/emf/tests/org.eclipse.emf.test.common/models/edit.RefTest/ref.ecore

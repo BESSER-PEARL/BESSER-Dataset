@@ -1,0 +1,330 @@
+The domain model 'mm' describes the core structural elements and their relationships within the system.
+
+The model defines 78 main class(es).
+
+'styles_GradientColoredAreas' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_pictograms_AdvancedAnchor' represents an important domain concept.
+It has one attribute: 'useAnchorLocationAsConnectionEndpoint', which is of type bool.
+
+'mm_pictograms_AnchorContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'styles_mm_StyleContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_pictograms_Anchor' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_styles_PrecisionPoint' represents an important domain concept.
+It has the following attributes: 'x', which is of type float; 'y', which is of type float.
+
+'mm_pictograms_CurvedConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'styles_GradientColoredArea' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_pictograms_PictogramElement' represents an important domain concept.
+It has the following attributes: 'active', which is of type bool; 'visible', which is of type bool.
+
+'mm_styles_TextStyle' represents an important domain concept.
+It has the following attributes: 'strikeout', which is of type bool; 'underline', which is of type bool; 'underlineStyle', which is of type str.
+
+'styles_GradientColoredLocation' represents an important domain concept.
+It does not declare any attributes.
+
+'styles_Point' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_styles_Font' represents an important domain concept.
+It has the following attributes: 'size', which is of type int; 'name', which is of type str; 'italic', which is of type bool; 'bold', which is of type bool.
+
+'mm_algorithms_Image' represents an important domain concept.
+It has the following attributes: 'stretchV', which is of type str; 'proportional', which is of type str; 'stretchH', which is of type str; 'id', which is of type str.
+
+'ConnectionDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractText' represents an important domain concept.
+It does not declare any attributes.
+
+'styles_AdaptedGradientColoredAreas' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_styles_AdaptedGradientColoredAreas' represents an important domain concept.
+It has the following attributes: 'gradientType', which is of type str; 'definedStyleId', which is of type str.
+
+'styles_RenderingStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'Anchor' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_styles_AbstractStyle' represents an important domain concept.
+It has the following attributes: 'lineVisible', which is of type str; 'transparency', which is of type str; 'filled', which is of type str; 'lineStyle', which is of type str; 'lineWidth', which is of type str.
+
+'mm_pictograms_Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'styles_TextStyleRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_GraphicsAlgorithmContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'AnchorContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphicsAlgorithmContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_algorithms_Text' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_styles_Style' represents an important domain concept.
+It has the following attributes: 'proportional', which is of type str; 'horizontalAlignment', which is of type str; 'id', which is of type str; 'stretchV', which is of type str; 'verticalAlignment', which is of type str; 'angle', which is of type str; 'stretchH', which is of type str; 'description', which is of type str; 'rotation', which is of type str.
+
+'styles_TextStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'Polyline' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_algorithms_GraphicsAlgorithm' represents an important domain concept.
+It has the following attributes: 'width', which is of type int; 'y', which is of type int; 'height', which is of type int; 'x', which is of type int.
+
+'mm_algorithms_Ellipse' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_PropertyContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_pictograms_CompositeConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_pictograms_PictogramLink' represents an important domain concept.
+It does not declare any attributes.
+
+'PictogramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_pictograms_ContainerShape' represents an important domain concept.
+It does not declare any attributes.
+
+'pictograms_ContainerShape' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_algorithms_Polygon' represents an important domain concept.
+It does not declare any attributes.
+
+'styles_Font' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphicsAlgorithm' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_algorithms_RoundedRectangle' represents an important domain concept.
+It has the following attributes: 'cornerWidth', which is of type int; 'cornerHeight', which is of type int.
+
+'AdvancedAnchor' represents an important domain concept.
+It does not declare any attributes.
+
+'ContainerShape' represents an important domain concept.
+It does not declare any attributes.
+
+'CurvedConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_Property' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'mm_pictograms_ManhattanConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_styles_RenderingStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'styles_AbstractStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_algorithms_PlatformGraphicsAlgorithm' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'mm_pictograms_BoxRelativeAnchor' represents an important domain concept.
+It has the following attributes: 'relativeWidth', which is of type float; 'relativeHeight', which is of type float.
+
+'mm_pictograms_ConnectionDecorator' represents an important domain concept.
+It has the following attributes: 'locationRelative', which is of type bool; 'location', which is of type float.
+
+'mm_styles_Point' represents an important domain concept.
+It has the following attributes: 'before', which is of type int; 'after', which is of type int; 'x', which is of type int; 'y', which is of type int.
+
+'PropertyContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_pictograms_Diagram' represents an important domain concept.
+It has the following attributes: 'snapToGrid', which is of type bool; 'name', which is of type str; 'diagramTypeId', which is of type str; 'verticalGridUnit', which is of type int; 'showGuides', which is of type bool; 'gridUnit', which is of type int; 'version', which is of type str.
+
+'Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_algorithms_Polyline' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_pictograms_FreeFormConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_algorithms_MultiText' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_styles_GradientColoredLocation' represents an important domain concept.
+It has the following attributes: 'locationValue', which is of type str; 'locationType', which is of type str.
+
+'styles_PrecisionPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'styles_Style' represents an important domain concept.
+It does not declare any attributes.
+
+'StyleContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_styles_GradientColoredAreas' represents an important domain concept.
+It has one attribute: 'styleAdaption', which is of type str.
+
+'mm_styles_TextStyleRegion' represents an important domain concept.
+It has the following attributes: 'start', which is of type int; 'end', which is of type int.
+
+'mm_pictograms_Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_styles_GradientColoredArea' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_algorithms_Rectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_styles_Color' represents an important domain concept.
+It has the following attributes: 'red', which is of type int; 'blue', which is of type int; 'green', which is of type int.
+
+'mm_pictograms_FixPointAnchor' represents an important domain concept.
+It does not declare any attributes.
+
+'styles_Color' represents an important domain concept.
+It does not declare any attributes.
+
+'pictograms_mm_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_StyleContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_algorithms_AbstractText' represents an important domain concept.
+It has the following attributes: 'horizontalAlignment', which is of type str; 'rotation', which is of type str; 'angle', which is of type str; 'verticalAlignment', which is of type str; 'value', which is of type str.
+
+'Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'mm_pictograms_ChopboxAnchor' represents an important domain concept.
+It does not declare any attributes.
+
+'PictogramLink' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'LineStyle' defines the following possible values: 'SOLID', 'DASH', 'UNSPECIFIED', 'DASHDOTDOT', 'DOT', 'DASHDOT'.
+The enumeration 'LocationType' defines the following possible values: 'LOCATION_TYPE_RELATIVE', 'LOCATION_TYPE_ABSOLUTE_END', 'LOCATION_TYPE_ABSOLUTE_START'.
+The enumeration 'UnderlineStyle' defines the following possible values: 'UNDERLINE_ERROR', 'UNDERLINE_SINGLE', 'UNDERLINE_SQUIGGLE', 'UNDERLINE_DOUBLE'.
+The enumeration 'Orientation' defines the following possible values: 'ALIGNMENT_MIDDLE', 'ALIGNMENT_CENTER', 'UNSPECIFIED', 'ALIGNMENT_RIGHT', 'ALIGNMENT_LEFT', 'ALIGNMENT_BOTTOM', 'ALIGNMENT_TOP'.
+
+The model also captures inheritance relationships between classes.
+The class 'mm_GraphicsAlgorithmContainer' is a specialization of 'PropertyContainer'.
+The class 'mm_pictograms_Shape' is a specialization of 'AnchorContainer'.
+The class 'mm_pictograms_ContainerShape' is a specialization of 'Shape'.
+The class 'mm_pictograms_Diagram' is a specialization of 'pictograms_ContainerShape'.
+The class 'mm_pictograms_Diagram' is a specialization of 'StyleContainer'.
+The class 'mm_pictograms_PictogramElement' is a specialization of 'GraphicsAlgorithmContainer'.
+The class 'mm_pictograms_Connection' is a specialization of 'AnchorContainer'.
+The class 'mm_pictograms_Anchor' is a specialization of 'PictogramElement'.
+The class 'mm_pictograms_AnchorContainer' is a specialization of 'PictogramElement'.
+The class 'mm_pictograms_FixPointAnchor' is a specialization of 'AdvancedAnchor'.
+The class 'mm_pictograms_BoxRelativeAnchor' is a specialization of 'AdvancedAnchor'.
+The class 'mm_pictograms_ChopboxAnchor' is a specialization of 'Anchor'.
+The class 'mm_pictograms_ConnectionDecorator' is a specialization of 'Shape'.
+The class 'mm_pictograms_FreeFormConnection' is a specialization of 'Connection'.
+The class 'mm_pictograms_ManhattanConnection' is a specialization of 'Connection'.
+The class 'mm_pictograms_PictogramLink' is a specialization of 'PropertyContainer'.
+The class 'mm_pictograms_AdvancedAnchor' is a specialization of 'Anchor'.
+The class 'mm_pictograms_CurvedConnection' is a specialization of 'Connection'.
+The class 'mm_pictograms_CompositeConnection' is a specialization of 'Connection'.
+The class 'mm_algorithms_GraphicsAlgorithm' is a specialization of 'GraphicsAlgorithmContainer'.
+The class 'mm_algorithms_GraphicsAlgorithm' is a specialization of 'styles_AbstractStyle'.
+The class 'mm_algorithms_Polyline' is a specialization of 'GraphicsAlgorithm'.
+The class 'mm_algorithms_Ellipse' is a specialization of 'GraphicsAlgorithm'.
+The class 'mm_algorithms_Text' is a specialization of 'AbstractText'.
+The class 'mm_algorithms_Polygon' is a specialization of 'Polyline'.
+The class 'mm_algorithms_Rectangle' is a specialization of 'GraphicsAlgorithm'.
+The class 'mm_algorithms_RoundedRectangle' is a specialization of 'GraphicsAlgorithm'.
+The class 'mm_algorithms_Image' is a specialization of 'GraphicsAlgorithm'.
+The class 'mm_algorithms_PlatformGraphicsAlgorithm' is a specialization of 'GraphicsAlgorithm'.
+The class 'mm_algorithms_AbstractText' is a specialization of 'GraphicsAlgorithm'.
+The class 'mm_algorithms_MultiText' is a specialization of 'AbstractText'.
+The class 'mm_styles_Style' is a specialization of 'StyleContainer'.
+The class 'mm_styles_Style' is a specialization of 'styles_AbstractStyle'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mm_PropertyContainer' and 'mm_Property'. From 'mm_PropertyContainer', the role 'mm_PropertyContainer' has cardinality 0..*, and from 'mm_Property', the role 'mm_Property' has cardinality 0..*.
+An association connects 'styles_Style' and 'mm_StyleContainer'. From 'styles_Style', the role 'algorithms' has cardinality 0..*, and from 'mm_StyleContainer', the role 'styles' has cardinality 0..*.
+An association connects 'ContainerShape' and 'mm_pictograms_Shape'. From 'ContainerShape', the role 'pictograms' has cardinality 0..*, and from 'mm_pictograms_Shape', the role 'ContainerShape' has cardinality 0..*.
+An association connects 'Shape' and 'mm_pictograms_ContainerShape'. From 'Shape', the role 'pictograms4' has cardinality 0..*, and from 'mm_pictograms_ContainerShape', the role 'Shape' has cardinality 0..*.
+An association connects 'mm_pictograms_Diagram' and 'Connection'. From 'mm_pictograms_Diagram', the role 'Connection' has cardinality 0..*, and from 'Connection', the role 'pictograms6' has cardinality 0..*.
+An association connects 'styles_Color' and 'mm_pictograms_Diagram'. From 'styles_Color', the role 'styles_Color' has cardinality 0..*, and from 'mm_pictograms_Diagram', the role 'mm_pictograms_Diagram' has cardinality 0..*.
+An association connects 'styles_Font' and 'mm_pictograms_Diagram'. From 'styles_Font', the role 'styles_Font' has cardinality 0..*, and from 'mm_pictograms_Diagram', the role 'mm_pictograms_Diagram9' has cardinality 0..*.
+An association connects 'PictogramLink' and 'mm_pictograms_Diagram'. From 'PictogramLink', the role 'PictogramLink' has cardinality 0..*, and from 'mm_pictograms_Diagram', the role 'mm_pictograms_Diagram11' has cardinality 0..*.
+An association connects 'GraphicsAlgorithm' and 'mm_pictograms_PictogramElement'. From 'GraphicsAlgorithm', the role 'algorithms13' has cardinality 0..*, and from 'mm_pictograms_PictogramElement', the role 'GraphicsAlgorithm' has cardinality 0..*.
+An association connects 'mm_pictograms_PictogramElement' and 'PictogramLink'. From 'mm_pictograms_PictogramElement', the role 'PictogramLink15' has cardinality 0..*, and from 'PictogramLink', the role 'pictograms16' has cardinality 0..*.
+An association connects 'Anchor' and 'mm_pictograms_Connection'. From 'Anchor', the role 'pictograms18' has cardinality 0..*, and from 'mm_pictograms_Connection', the role 'Anchor' has cardinality 0..*.
+An association connects 'mm_pictograms_Connection' and 'Anchor'. From 'mm_pictograms_Connection', the role 'Anchor20' has cardinality 0..*, and from 'Anchor', the role 'pictograms21' has cardinality 0..*.
+An association connects 'mm_pictograms_Connection' and 'Diagram'. From 'mm_pictograms_Connection', the role 'Diagram' has cardinality 0..*, and from 'Diagram', the role 'pictograms23' has cardinality 0..*.
+An association connects 'mm_pictograms_Connection' and 'ConnectionDecorator'. From 'mm_pictograms_Connection', the role 'ConnectionDecorator' has cardinality 0..*, and from 'ConnectionDecorator', the role 'pictograms25' has cardinality 0..*.
+An association connects 'AnchorContainer' and 'mm_pictograms_Anchor'. From 'AnchorContainer', the role 'pictograms27' has cardinality 0..*, and from 'mm_pictograms_Anchor', the role 'AnchorContainer' has cardinality 0..*.
+An association connects 'Connection' and 'mm_pictograms_Anchor'. From 'Connection', the role 'pictograms30' has cardinality 0..*, and from 'mm_pictograms_Anchor', the role 'Connection29' has cardinality 0..*.
+An association connects 'Connection' and 'mm_pictograms_Anchor'. From 'Connection', the role 'pictograms33' has cardinality 0..*, and from 'mm_pictograms_Anchor', the role 'Connection32' has cardinality 0..*.
+An association connects 'mm_pictograms_Anchor' and 'GraphicsAlgorithm'. From 'mm_pictograms_Anchor', the role 'mm_pictograms_Anchor' has cardinality 0..*, and from 'GraphicsAlgorithm', the role 'GraphicsAlgorithm35' has cardinality 0..*.
+An association connects 'mm_pictograms_AnchorContainer' and 'Anchor'. From 'mm_pictograms_AnchorContainer', the role 'Anchor37' has cardinality 0..*, and from 'Anchor', the role 'pictograms38' has cardinality 0..*.
+An association connects 'mm_pictograms_FixPointAnchor' and 'styles_Point'. From 'mm_pictograms_FixPointAnchor', the role 'mm_pictograms_FixPointAnchor' has cardinality 0..*, and from 'styles_Point', the role 'styles_Point' has cardinality 0..*.
+An association connects 'Connection' and 'mm_pictograms_ConnectionDecorator'. From 'Connection', the role 'pictograms42' has cardinality 0..*, and from 'mm_pictograms_ConnectionDecorator', the role 'Connection41' has cardinality 0..*.
+An association connects 'mm_pictograms_FreeFormConnection' and 'styles_Point'. From 'mm_pictograms_FreeFormConnection', the role 'mm_pictograms_FreeFormConnection' has cardinality 0..*, and from 'styles_Point', the role 'styles_Point44' has cardinality 0..*.
+An association connects 'mm_pictograms_PictogramLink' and 'PictogramElement'. From 'mm_pictograms_PictogramLink', the role 'PictogramElement' has cardinality 0..*, and from 'PictogramElement', the role 'pictograms46' has cardinality 0..*.
+An association connects 'mm_pictograms_PictogramLink' and 'pictograms_mm_EObject'. From 'mm_pictograms_PictogramLink', the role 'mm_pictograms_PictogramLink' has cardinality 0..*, and from 'pictograms_mm_EObject', the role 'pictograms_mm_EObject' has cardinality 0..*.
+An association connects 'styles_PrecisionPoint' and 'mm_pictograms_CurvedConnection'. From 'styles_PrecisionPoint', the role 'styles_PrecisionPoint' has cardinality 0..*, and from 'mm_pictograms_CurvedConnection', the role 'mm_pictograms_CurvedConnection' has cardinality 0..*.
+An association connects 'CurvedConnection' and 'mm_pictograms_CompositeConnection'. From 'CurvedConnection', the role 'CurvedConnection' has cardinality 0..*, and from 'mm_pictograms_CompositeConnection', the role 'mm_pictograms_CompositeConnection' has cardinality 0..*.
+An association connects 'GraphicsAlgorithm' and 'mm_algorithms_GraphicsAlgorithm'. From 'GraphicsAlgorithm', the role 'algorithms52' has cardinality 0..*, and from 'mm_algorithms_GraphicsAlgorithm', the role 'GraphicsAlgorithm51' has cardinality 0..*.
+An association connects 'GraphicsAlgorithm' and 'mm_algorithms_GraphicsAlgorithm'. From 'GraphicsAlgorithm', the role 'algorithms55' has cardinality 0..*, and from 'mm_algorithms_GraphicsAlgorithm', the role 'GraphicsAlgorithm54' has cardinality 0..*.
+An association connects 'PictogramElement' and 'mm_algorithms_GraphicsAlgorithm'. From 'PictogramElement', the role 'pictograms58' has cardinality 0..*, and from 'mm_algorithms_GraphicsAlgorithm', the role 'PictogramElement57' has cardinality 0..*.
+An association connects 'styles_Style' and 'mm_algorithms_GraphicsAlgorithm'. From 'styles_Style', the role 'styles_Style' has cardinality 0..*, and from 'mm_algorithms_GraphicsAlgorithm', the role 'mm_algorithms_GraphicsAlgorithm' has cardinality 0..*.
+An association connects 'mm_algorithms_Polyline' and 'styles_Point'. From 'mm_algorithms_Polyline', the role 'mm_algorithms_Polyline' has cardinality 0..*, and from 'styles_Point', the role 'styles_Point61' has cardinality 0..*.
+An association connects 'styles_Font' and 'mm_algorithms_AbstractText'. From 'styles_Font', the role 'styles_Font63' has cardinality 0..*, and from 'mm_algorithms_AbstractText', the role 'mm_algorithms_AbstractText' has cardinality 0..*.
+An association connects 'mm_algorithms_AbstractText' and 'styles_TextStyleRegion'. From 'mm_algorithms_AbstractText', the role 'mm_algorithms_AbstractText65' has cardinality 0..*, and from 'styles_TextStyleRegion', the role 'styles_TextStyleRegion' has cardinality 0..*.
+An association connects 'mm_styles_RenderingStyle' and 'styles_AdaptedGradientColoredAreas'. From 'mm_styles_RenderingStyle', the role 'mm_styles_RenderingStyle' has cardinality 0..*, and from 'styles_AdaptedGradientColoredAreas', the role 'styles_AdaptedGradientColoredAreas' has cardinality 0..*.
+An association connects 'mm_styles_Style' and 'styles_Font'. From 'mm_styles_Style', the role 'mm_styles_Style' has cardinality 0..*, and from 'styles_Font', the role 'styles_Font68' has cardinality 0..*.
+An association connects 'styles_mm_StyleContainer' and 'mm_styles_Style'. From 'styles_mm_StyleContainer', the role 'StyleContainer' has cardinality 0..*, and from 'mm_styles_Style', the role 'styles70' has cardinality 0..*.
+An association connects 'styles_Color' and 'mm_styles_AbstractStyle'. From 'styles_Color', the role 'styles_Color72' has cardinality 0..*, and from 'mm_styles_AbstractStyle', the role 'mm_styles_AbstractStyle' has cardinality 0..*.
+An association connects 'mm_styles_AbstractStyle' and 'styles_Color'. From 'mm_styles_AbstractStyle', the role 'mm_styles_AbstractStyle74' has cardinality 0..*, and from 'styles_Color', the role 'styles_Color75' has cardinality 0..*.
+An association connects 'styles_RenderingStyle' and 'mm_styles_AbstractStyle'. From 'styles_RenderingStyle', the role 'styles_RenderingStyle' has cardinality 0..*, and from 'mm_styles_AbstractStyle', the role 'mm_styles_AbstractStyle77' has cardinality 0..*.
+An association connects 'mm_styles_GradientColoredLocation' and 'styles_Color'. From 'mm_styles_GradientColoredLocation', the role 'mm_styles_GradientColoredLocation' has cardinality 0..*, and from 'styles_Color', the role 'styles_Color79' has cardinality 0..*.
+An association connects 'mm_styles_GradientColoredArea' and 'styles_GradientColoredLocation'. From 'mm_styles_GradientColoredArea', the role 'mm_styles_GradientColoredArea' has cardinality 0..*, and from 'styles_GradientColoredLocation', the role 'styles_GradientColoredLocation' has cardinality 0..*.
+An association connects 'styles_GradientColoredLocation' and 'mm_styles_GradientColoredArea'. From 'styles_GradientColoredLocation', the role 'styles_GradientColoredLocation83' has cardinality 0..*, and from 'mm_styles_GradientColoredArea', the role 'mm_styles_GradientColoredArea82' has cardinality 0..*.
+An association connects 'mm_styles_GradientColoredAreas' and 'styles_GradientColoredArea'. From 'mm_styles_GradientColoredAreas', the role 'mm_styles_GradientColoredAreas' has cardinality 0..*, and from 'styles_GradientColoredArea', the role 'styles_GradientColoredArea' has cardinality 0..*.
+An association connects 'mm_styles_AdaptedGradientColoredAreas' and 'styles_GradientColoredAreas'. From 'mm_styles_AdaptedGradientColoredAreas', the role 'mm_styles_AdaptedGradientColoredAreas' has cardinality 0..*, and from 'styles_GradientColoredAreas', the role 'styles_GradientColoredAreas' has cardinality 0..*.
+An association connects 'mm_styles_TextStyle' and 'styles_Font'. From 'mm_styles_TextStyle', the role 'mm_styles_TextStyle' has cardinality 0..*, and from 'styles_Font', the role 'styles_Font87' has cardinality 0..*.
+An association connects 'mm_styles_TextStyle' and 'styles_Color'. From 'mm_styles_TextStyle', the role 'mm_styles_TextStyle89' has cardinality 0..*, and from 'styles_Color', the role 'styles_Color90' has cardinality 0..*.
+An association connects 'mm_styles_TextStyle' and 'styles_Color'. From 'mm_styles_TextStyle', the role 'mm_styles_TextStyle92' has cardinality 0..*, and from 'styles_Color', the role 'styles_Color93' has cardinality 0..*.
+An association connects 'styles_Color' and 'mm_styles_TextStyle'. From 'styles_Color', the role 'styles_Color96' has cardinality 0..*, and from 'mm_styles_TextStyle', the role 'mm_styles_TextStyle95' has cardinality 0..*.
+An association connects 'styles_Color' and 'mm_styles_TextStyle'. From 'styles_Color', the role 'styles_Color99' has cardinality 0..*, and from 'mm_styles_TextStyle', the role 'mm_styles_TextStyle98' has cardinality 0..*.
+An association connects 'styles_TextStyle' and 'mm_styles_TextStyleRegion'. From 'styles_TextStyle', the role 'styles_TextStyle' has cardinality 0..*, and from 'mm_styles_TextStyleRegion', the role 'mm_styles_TextStyleRegion' has cardinality 0..*.

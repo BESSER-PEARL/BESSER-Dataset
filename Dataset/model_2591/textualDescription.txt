@@ -1,0 +1,12 @@
+The domain model 'subpackage' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'LazyRuleInheritanceTest_ClassA' represents an important domain concept.
+It does not declare any attributes.
+
+'subpackage_ClassB' represents an important domain concept.
+It does not declare any attributes.
+
+'LazyRuleInheritanceTest_subpackage_ClassB' represents an important domain concept.
+It does not declare any attributes.

@@ -1,0 +1,27 @@
+The domain model 'my' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'my_BType' represents an important domain concept.
+It does not declare any attributes.
+
+'my_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'my_AType' represents an important domain concept.
+It does not declare any attributes.
+
+'my_Model' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'my_AType' is a specialization of 'Entity'.
+The class 'my_BType' is a specialization of 'Entity'.
+
+Relationships between classes are modeled using associations.
+An association connects 'my_BType' and 'my_Model'. From 'my_BType', the role 'my_BType' has cardinality 0..*, and from 'my_Model', the role 'my_Model' has cardinality 0..*.
+An association connects 'my_BType' and 'my_AType'. From 'my_BType', the role 'my_BType2' has cardinality 0..*, and from 'my_AType', the role 'my_AType' has cardinality 0..*.
+An association connects 'my_BType' and 'my_AType'. From 'my_BType', the role 'my_BType4' has cardinality 0..*, and from 'my_AType', the role 'my_AType5' has cardinality 0..*.

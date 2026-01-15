@@ -1,0 +1,39 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Relational_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Relational_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'Column' represents an important domain concept.
+It does not declare any attributes.
+
+'Table' represents an important domain concept.
+It does not declare any attributes.
+
+'Relational_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Relational_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Relational_Table' is a specialization of 'Named'.
+The class 'Relational_Column' is a specialization of 'Named'.
+The class 'Relational_Type' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Relational_Table' and 'Column'. From 'Relational_Table', the role '0' has cardinality 0..*, and from 'Column', the role '#' has cardinality 0..*.
+An association connects 'Relational_Table' and 'Column'. From 'Relational_Table', the role '02' has cardinality 0..*, and from 'Column', the role '#3' has cardinality 0..*.
+An association connects 'Relational_Column' and 'Table'. From 'Relational_Column', the role '05' has cardinality 0..*, and from 'Table', the role '#6' has cardinality 0..*.
+An association connects 'Relational_Column' and 'Table'. From 'Relational_Column', the role '08' has cardinality 0..*, and from 'Table', the role '#9' has cardinality 0..*.
+An association connects 'Type' and 'Relational_Column'. From 'Type', the role 'Type' has cardinality 0..*, and from 'Relational_Column', the role 'Relational_Column' has cardinality 0..*.

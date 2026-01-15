@@ -1,0 +1,94 @@
+The domain model 'content' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'W' represents an important domain concept.
+It does not declare any attributes.
+
+'content_A' represents an important domain concept.
+It does not declare any attributes.
+
+'content_E' represents an important domain concept.
+It does not declare any attributes.
+
+'content_R' represents an important domain concept.
+It does not declare any attributes.
+
+'content_P' represents an important domain concept.
+It does not declare any attributes.
+
+'content_W' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'content_C' represents an important domain concept.
+It does not declare any attributes.
+
+'content_D' represents an important domain concept.
+It does not declare any attributes.
+
+'content_J' represents an important domain concept.
+It has the following attributes: 'cardinality', which is of type int; 'linkName', which is of type str.
+
+'content_M' represents an important domain concept.
+It does not declare any attributes.
+
+'content_I' represents an important domain concept.
+It does not declare any attributes.
+
+'content_H' represents an important domain concept.
+It does not declare any attributes.
+
+'content_B' represents an important domain concept.
+It does not declare any attributes.
+
+'content_Q' represents an important domain concept.
+It does not declare any attributes.
+
+'content_N' represents an important domain concept.
+It does not declare any attributes.
+
+'content_F' represents an important domain concept.
+It does not declare any attributes.
+
+'content_G' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'content_A' is a specialization of 'W'.
+The class 'content_B' is a specialization of 'W'.
+The class 'content_C' is a specialization of 'W'.
+The class 'content_D' is a specialization of 'W'.
+The class 'content_E' is a specialization of 'W'.
+The class 'content_F' is a specialization of 'W'.
+The class 'content_G' is a specialization of 'W'.
+The class 'content_H' is a specialization of 'W'.
+The class 'content_I' is a specialization of 'W'.
+The class 'content_J' is a specialization of 'W'.
+The class 'content_M' is a specialization of 'W'.
+The class 'content_N' is a specialization of 'W'.
+The class 'content_P' is a specialization of 'W'.
+The class 'content_Q' is a specialization of 'W'.
+The class 'content_R' is a specialization of 'W'.
+
+Relationships between classes are modeled using associations.
+An association connects 'content_B' and 'content_A'. From 'content_B', the role 'content_B' has cardinality 0..*, and from 'content_A', the role 'content_A' has cardinality 0..*.
+An association connects 'content_C' and 'content_A'. From 'content_C', the role 'content_C' has cardinality 0..*, and from 'content_A', the role 'content_A2' has cardinality 0..*.
+An association connects 'content_A' and 'content_D'. From 'content_A', the role 'content_A4' has cardinality 0..*, and from 'content_D', the role 'content_D' has cardinality 0..*.
+An association connects 'content_F' and 'content_A'. From 'content_F', the role 'content_F' has cardinality 0..*, and from 'content_A', the role 'content_A6' has cardinality 0..*.
+An association connects 'content_E' and 'content_A'. From 'content_E', the role 'content_E' has cardinality 0..*, and from 'content_A', the role 'content_A8' has cardinality 0..*.
+An association connects 'content_A' and 'content_A'. From 'content_A', the role 'content_A9' has cardinality 0..*, and from 'content_A', the role 'content_A11' has cardinality 0..*.
+An association connects 'content_C' and 'content_G'. From 'content_C', the role 'content_C13' has cardinality 0..*, and from 'content_G', the role 'content_G' has cardinality 0..*.
+An association connects 'content_D' and 'content_E'. From 'content_D', the role 'content_D15' has cardinality 0..*, and from 'content_E', the role 'content_E16' has cardinality 0..*.
+An association connects 'content_J' and 'content_F'. From 'content_J', the role 'content_J' has cardinality 0..*, and from 'content_F', the role 'content_F18' has cardinality 0..*.
+An association connects 'content_H' and 'content_G'. From 'content_H', the role 'content_H' has cardinality 0..*, and from 'content_G', the role 'content_G20' has cardinality 0..*.
+An association connects 'content_G' and 'content_I'. From 'content_G', the role 'content_G22' has cardinality 0..*, and from 'content_I', the role 'content_I' has cardinality 0..*.
+An association connects 'content_G' and 'content_Q'. From 'content_G', the role 'content_G24' has cardinality 0..*, and from 'content_Q', the role 'content_Q' has cardinality 0..*.
+An association connects 'content_E' and 'content_H'. From 'content_E', the role 'content_E27' has cardinality 0..*, and from 'content_H', the role 'content_H26' has cardinality 0..*.
+An association connects 'content_Q' and 'content_H'. From 'content_Q', the role 'content_Q30' has cardinality 0..*, and from 'content_H', the role 'content_H29' has cardinality 0..*.
+An association connects 'content_H' and 'content_R'. From 'content_H', the role 'content_H32' has cardinality 0..*, and from 'content_R', the role 'content_R' has cardinality 0..*.
+An association connects 'content_I' and 'content_P'. From 'content_I', the role 'content_I34' has cardinality 0..*, and from 'content_P', the role 'content_P' has cardinality 0..*.
+An association connects 'content_H' and 'content_J'. From 'content_H', the role 'content_H37' has cardinality 0..*, and from 'content_J', the role 'content_J36' has cardinality 0..*.
+An association connects 'content_M' and 'content_A'. From 'content_M', the role 'content_M' has cardinality 0..*, and from 'content_A', the role 'content_A39' has cardinality 0..*.
+An association connects 'content_N' and 'content_M'. From 'content_N', the role 'content_N' has cardinality 0..*, and from 'content_M', the role 'content_M41' has cardinality 0..*.
+An association connects 'content_Q' and 'content_P'. From 'content_Q', the role 'content_Q44' has cardinality 0..*, and from 'content_P', the role 'content_P43' has cardinality 0..*.
+An association connects 'content_R' and 'content_P'. From 'content_R', the role 'content_R46' has cardinality 0..*, and from 'content_P', the role 'content_P47' has cardinality 0..*.

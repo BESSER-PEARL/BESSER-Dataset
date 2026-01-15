@@ -1,0 +1,33 @@
+The domain model 'simpletest' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'simpletest_N' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpletest_A' represents an important domain concept.
+It does not declare any attributes.
+
+'simpletest_B' represents an important domain concept.
+It does not declare any attributes.
+
+'simpletest_L' represents an important domain concept.
+It does not declare any attributes.
+
+'N' represents an important domain concept.
+It does not declare any attributes.
+
+'simpletest_X' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpletest_A' is a specialization of 'N'.
+The class 'simpletest_B' is a specialization of 'N'.
+The class 'simpletest_L' is a specialization of 'N'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpletest_A' and 'simpletest_B'. From 'simpletest_A', the role 'simpletest_A' has cardinality 0..*, and from 'simpletest_B', the role 'simpletest_B' has cardinality 0..*.
+An association connects 'simpletest_L' and 'simpletest_A'. From 'simpletest_L', the role 'simpletest_L' has cardinality 0..*, and from 'simpletest_A', the role 'simpletest_A2' has cardinality 0..*.
+An association connects 'simpletest_X' and 'simpletest_A'. From 'simpletest_X', the role 'simpletest_X' has cardinality 0..*, and from 'simpletest_A', the role 'simpletest_A4' has cardinality 0..*.
+An association connects 'simpletest_A' and 'simpletest_L'. From 'simpletest_A', the role 'simpletest_A7' has cardinality 0..*, and from 'simpletest_L', the role 'simpletest_L6' has cardinality 0..*.
+An association connects 'simpletest_L' and 'simpletest_B'. From 'simpletest_L', the role 'simpletest_L9' has cardinality 0..*, and from 'simpletest_B', the role 'simpletest_B10' has cardinality 0..*.

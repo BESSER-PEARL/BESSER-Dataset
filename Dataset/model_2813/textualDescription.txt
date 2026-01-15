@@ -1,0 +1,241 @@
+The domain model 'geoff' describes the core structural elements and their relationships within the system.
+
+The model defines 56 main class(es).
+
+'geoff_Location' represents an important domain concept.
+It has one attribute: 'projectionCode', which is of type str.
+
+'TileImage' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_Descriptive' represents an important domain concept.
+It has the following attributes: 'shortDescription', which is of type str; 'longDescription', which is of type str.
+
+'geoff_Identifiable' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'TileSource' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_source_TileImage' represents an important domain concept.
+It does not declare any attributes.
+
+'layer_geoff_StyleEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_StyleEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'Image' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_XYZLocation' represents an important domain concept.
+It has the following attributes: 'x', which is of type float; 'y', which is of type float; 'z', which is of type float.
+
+'geoff_style_Circle' represents an important domain concept.
+It has one attribute: 'radius', which is of type float.
+
+'geoff_geom_Geometry' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_geom_SimpleGeometry' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_style_Style' represents an important domain concept.
+It has one attribute: 'zindex', which is of type str.
+
+'geom_geoff_Location' represents an important domain concept.
+It does not declare any attributes.
+
+'style_geoff_Color' represents an important domain concept.
+It does not declare any attributes.
+
+'Geometry' represents an important domain concept.
+It does not declare any attributes.
+
+'Descriptive' represents an important domain concept.
+It does not declare any attributes.
+
+'XYZ' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_source_TileSource' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_source_XYZ' represents an important domain concept.
+It does not declare any attributes.
+
+'Stroke' represents an important domain concept.
+It does not declare any attributes.
+
+'Fill' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_Color' represents an important domain concept.
+It has the following attributes: 'blue', which is of type int; 'alpha', which is of type float; 'red', which is of type int; 'green', which is of type int.
+
+'geoff_source_VectorSource' represents an important domain concept.
+It has the following attributes: 'projection', which is of type str; 'format', which is of type str; 'url', which is of type str.
+
+'geoff_interaction_Select' represents an important domain concept.
+It has the following attributes: 'multi', which is of type bool; 'condition', which is of type str.
+
+'source_geoff_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_interaction_Interaction' represents an important domain concept.
+It does not declare any attributes.
+
+'Style' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_geom_Point' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_style_Stroke' represents an important domain concept.
+It has the following attributes: 'lineCap', which is of type str; 'miterLimit', which is of type str; 'lineDash', which is of type float; 'width', which is of type str; 'lineJoin', which is of type str.
+
+'geoff_StringToStringMapEntry' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'geoff_layer_VectorLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'Location' represents an important domain concept.
+It does not declare any attributes.
+
+'Text' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_Script' represents an important domain concept.
+It has the following attributes: 'context', which is of type str; 'type', which is of type str; 'src', which is of type str.
+
+'geoff_source_MapQuest' represents an important domain concept.
+It has one attribute: 'layer', which is of type str.
+
+'geoff_Feature' represents an important domain concept.
+It has one attribute: 'onclick', which is of type str.
+
+'Interaction' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_source_OSM' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_layer_Layer' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_View' represents an important domain concept.
+It has one attribute: 'zoom', which is of type int.
+
+'Source' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_source_Source' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_style_Text' represents an important domain concept.
+It has the following attributes: 'scale', which is of type str; 'textAlign', which is of type str; 'text', which is of type str; 'textBaseLine', which is of type str; 'offsetY', which is of type float; 'rotation', which is of type str; 'font', which is of type str; 'offsetX', which is of type float.
+
+'geoff_style_Fill' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_style_Icon' represents an important domain concept.
+It has one attribute: 'src', which is of type str.
+
+'geoff_geom_Polygon' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_GeoMap' represents an important domain concept.
+It has one attribute: 'rendererHint', which is of type str.
+
+'Layer' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_layer_TileLayer' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_style_Image' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_geom_LineString' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleGeometry' represents an important domain concept.
+It does not declare any attributes.
+
+'geoff_source_BingMaps' represents an important domain concept.
+It has the following attributes: 'imagerySet', which is of type str; 'key', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SourceFormat' defines the following possible values: 'GPX', 'GeoJSON', 'KML', 'INTERNAL'.
+The enumeration 'ScriptContext' defines the following possible values: 'MAP', 'GLOBAL', 'LAYER'.
+The enumeration 'EventCondition' defines the following possible values: 'SINGLE_CLICK', 'HOVER', 'CLICK'.
+The enumeration 'RendererHint' defines the following possible values: 'DOM', 'CANVAS', 'WEBGL'.
+
+The model also captures inheritance relationships between classes.
+The class 'geoff_GeoMap' is a specialization of 'Identifiable'.
+The class 'geoff_GeoMap' is a specialization of 'Descriptive'.
+The class 'geoff_View' is a specialization of 'Identifiable'.
+The class 'geoff_Location' is a specialization of 'Identifiable'.
+The class 'geoff_XYZLocation' is a specialization of 'Location'.
+The class 'geoff_Feature' is a specialization of 'Identifiable'.
+The class 'geoff_Color' is a specialization of 'Identifiable'.
+The class 'geoff_Script' is a specialization of 'Identifiable'.
+The class 'geoff_layer_Layer' is a specialization of 'Identifiable'.
+The class 'geoff_layer_Layer' is a specialization of 'Descriptive'.
+The class 'geoff_layer_TileLayer' is a specialization of 'Layer'.
+The class 'geoff_layer_VectorLayer' is a specialization of 'Layer'.
+The class 'geoff_source_Source' is a specialization of 'Identifiable'.
+The class 'geoff_source_Source' is a specialization of 'Descriptive'.
+The class 'geoff_source_TileSource' is a specialization of 'Source'.
+The class 'geoff_source_TileImage' is a specialization of 'TileSource'.
+The class 'geoff_source_XYZ' is a specialization of 'TileImage'.
+The class 'geoff_source_OSM' is a specialization of 'XYZ'.
+The class 'geoff_source_MapQuest' is a specialization of 'XYZ'.
+The class 'geoff_source_BingMaps' is a specialization of 'XYZ'.
+The class 'geoff_source_VectorSource' is a specialization of 'Source'.
+The class 'geoff_geom_Geometry' is a specialization of 'Identifiable'.
+The class 'geoff_geom_SimpleGeometry' is a specialization of 'Geometry'.
+The class 'geoff_geom_Point' is a specialization of 'SimpleGeometry'.
+The class 'geoff_geom_LineString' is a specialization of 'SimpleGeometry'.
+The class 'geoff_geom_Polygon' is a specialization of 'SimpleGeometry'.
+The class 'geoff_style_Style' is a specialization of 'Identifiable'.
+The class 'geoff_style_Image' is a specialization of 'Identifiable'.
+The class 'geoff_style_Icon' is a specialization of 'Image'.
+The class 'geoff_style_Fill' is a specialization of 'Identifiable'.
+The class 'geoff_style_Stroke' is a specialization of 'Identifiable'.
+The class 'geoff_style_Circle' is a specialization of 'Image'.
+The class 'geoff_style_Text' is a specialization of 'Identifiable'.
+The class 'geoff_interaction_Interaction' is a specialization of 'Identifiable'.
+The class 'geoff_interaction_Select' is a specialization of 'Interaction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'geoff_GeoMap' and 'Layer'. From 'geoff_GeoMap', the role 'geoff_GeoMap' has cardinality 0..*, and from 'Layer', the role 'Layer' has cardinality 0..*.
+An association connects 'geoff_View' and 'geoff_GeoMap'. From 'geoff_View', the role 'geoff_View' has cardinality 0..*, and from 'geoff_GeoMap', the role 'geoff_GeoMap2' has cardinality 0..*.
+An association connects 'geoff_GeoMap' and 'geoff_Script'. From 'geoff_GeoMap', the role 'geoff_GeoMap4' has cardinality 0..*, and from 'geoff_Script', the role 'geoff_Script' has cardinality 0..*.
+An association connects 'geoff_GeoMap' and 'Interaction'. From 'geoff_GeoMap', the role 'geoff_GeoMap6' has cardinality 0..*, and from 'Interaction', the role 'Interaction' has cardinality 0..*.
+An association connects 'geoff_View' and 'geoff_Location'. From 'geoff_View', the role 'geoff_View8' has cardinality 0..*, and from 'geoff_Location', the role 'geoff_Location' has cardinality 0..*.
+An association connects 'Geometry' and 'geoff_Feature'. From 'Geometry', the role 'Geometry' has cardinality 0..*, and from 'geoff_Feature', the role 'geoff_Feature' has cardinality 0..*.
+An association connects 'Style' and 'geoff_Feature'. From 'Style', the role 'Style' has cardinality 0..*, and from 'geoff_Feature', the role 'geoff_Feature11' has cardinality 0..*.
+An association connects 'geoff_Feature' and 'geoff_StringToStringMapEntry'. From 'geoff_Feature', the role 'geoff_Feature13' has cardinality 0..*, and from 'geoff_StringToStringMapEntry', the role 'geoff_StringToStringMapEntry' has cardinality 0..*.
+An association connects 'geoff_StyleEntry' and 'Style'. From 'geoff_StyleEntry', the role 'geoff_StyleEntry' has cardinality 0..*, and from 'Style', the role 'Style15' has cardinality 0..*.
+An association connects 'geoff_layer_Layer' and 'Source'. From 'geoff_layer_Layer', the role 'geoff_layer_Layer' has cardinality 0..*, and from 'Source', the role 'Source' has cardinality 0..*.
+An association connects 'layer_geoff_StyleEntry' and 'geoff_layer_VectorLayer'. From 'layer_geoff_StyleEntry', the role 'layer_geoff_StyleEntry' has cardinality 0..*, and from 'geoff_layer_VectorLayer', the role 'geoff_layer_VectorLayer' has cardinality 0..*.
+An association connects 'source_geoff_Feature' and 'geoff_source_VectorSource'. From 'source_geoff_Feature', the role 'source_geoff_Feature' has cardinality 0..*, and from 'geoff_source_VectorSource', the role 'geoff_source_VectorSource' has cardinality 0..*.
+An association connects 'geoff_geom_Point' and 'geom_geoff_Location'. From 'geoff_geom_Point', the role 'geoff_geom_Point' has cardinality 0..*, and from 'geom_geoff_Location', the role 'geom_geoff_Location' has cardinality 0..*.
+An association connects 'geom_geoff_Location' and 'geoff_geom_LineString'. From 'geom_geoff_Location', the role 'geom_geoff_Location21' has cardinality 0..*, and from 'geoff_geom_LineString', the role 'geoff_geom_LineString' has cardinality 0..*.
+An association connects 'geoff_geom_Polygon' and 'geom_geoff_Location'. From 'geoff_geom_Polygon', the role 'geoff_geom_Polygon' has cardinality 0..*, and from 'geom_geoff_Location', the role 'geom_geoff_Location23' has cardinality 0..*.
+An association connects 'geoff_style_Style' and 'Image'. From 'geoff_style_Style', the role 'geoff_style_Style' has cardinality 0..*, and from 'Image', the role 'Image' has cardinality 0..*.
+An association connects 'geoff_style_Style' and 'Fill'. From 'geoff_style_Style', the role 'geoff_style_Style26' has cardinality 0..*, and from 'Fill', the role 'Fill' has cardinality 0..*.
+An association connects 'Stroke' and 'geoff_style_Style'. From 'Stroke', the role 'Stroke' has cardinality 0..*, and from 'geoff_style_Style', the role 'geoff_style_Style28' has cardinality 0..*.
+An association connects 'Text' and 'geoff_style_Style'. From 'Text', the role 'Text' has cardinality 0..*, and from 'geoff_style_Style', the role 'geoff_style_Style30' has cardinality 0..*.
+An association connects 'geoff_style_Fill' and 'style_geoff_Color'. From 'geoff_style_Fill', the role 'geoff_style_Fill' has cardinality 0..*, and from 'style_geoff_Color', the role 'style_geoff_Color' has cardinality 0..*.
+An association connects 'geoff_style_Stroke' and 'style_geoff_Color'. From 'geoff_style_Stroke', the role 'geoff_style_Stroke' has cardinality 0..*, and from 'style_geoff_Color', the role 'style_geoff_Color33' has cardinality 0..*.
+An association connects 'Fill' and 'geoff_style_Circle'. From 'Fill', the role 'Fill35' has cardinality 0..*, and from 'geoff_style_Circle', the role 'geoff_style_Circle' has cardinality 0..*.
+An association connects 'Stroke' and 'geoff_style_Circle'. From 'Stroke', the role 'Stroke38' has cardinality 0..*, and from 'geoff_style_Circle', the role 'geoff_style_Circle37' has cardinality 0..*.
+An association connects 'geoff_style_Text' and 'Fill'. From 'geoff_style_Text', the role 'geoff_style_Text' has cardinality 0..*, and from 'Fill', the role 'Fill40' has cardinality 0..*.
+An association connects 'Stroke' and 'geoff_style_Text'. From 'Stroke', the role 'Stroke43' has cardinality 0..*, and from 'geoff_style_Text', the role 'geoff_style_Text42' has cardinality 0..*.

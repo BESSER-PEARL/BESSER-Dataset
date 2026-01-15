@@ -1,0 +1,20 @@
+The domain model 'cbmg' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'cbmg_RequestParameter' represents an important domain concept.
+It has the following attributes: 'parameterName', which is of type str; 'parameterValue', which is of type str.
+
+'cbmg_State' represents an important domain concept.
+It has the following attributes: 'isEndState', which is of type bool; 'localAddr', which is of type str; 'localName', which is of type str; 'isStartState', which is of type bool; 'requestURL', which is of type str; 'port', which is of type int.
+
+'cbmg_Transition' represents an important domain concept.
+It has the following attributes: 'accept', which is of type str; 'condition', which is of type str; 'nbrOfTransitions', which is of type int; 'probability', which is of type float; 'method', which is of type str; 'thinkTime', which is of type float.
+
+Relationships between classes are modeled using associations.
+An association connects 'cbmg_State' and 'cbmg_Transition'. From 'cbmg_State', the role 'cbmg_State' has cardinality 0..*, and from 'cbmg_Transition', the role 'cbmg_Transition' has cardinality 0..*.
+An association connects 'cbmg_Transition' and 'cbmg_State'. From 'cbmg_Transition', the role 'cbmg_Transition3' has cardinality 0..*, and from 'cbmg_State', the role 'cbmg_State2' has cardinality 0..*.
+An association connects 'cbmg_State' and 'cbmg_Transition'. From 'cbmg_State', the role 'cbmg_State6' has cardinality 0..*, and from 'cbmg_Transition', the role 'cbmg_Transition5' has cardinality 0..*.
+An association connects 'cbmg_State' and 'cbmg_Transition'. From 'cbmg_State', the role 'cbmg_State9' has cardinality 0..*, and from 'cbmg_Transition', the role 'cbmg_Transition8' has cardinality 0..*.
+An association connects 'cbmg_RequestParameter' and 'cbmg_Transition'. From 'cbmg_RequestParameter', the role 'cbmg_RequestParameter' has cardinality 0..*, and from 'cbmg_Transition', the role 'cbmg_Transition11' has cardinality 0..*.
+An association connects 'cbmg_Transition' and 'cbmg_RequestParameter'. From 'cbmg_Transition', the role 'cbmg_Transition14' has cardinality 0..*, and from 'cbmg_RequestParameter', the role 'cbmg_RequestParameter13' has cardinality 0..*.

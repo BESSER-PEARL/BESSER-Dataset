@@ -1,0 +1,38 @@
+The domain model 'mydsl' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'mydsl_W' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mydsl_L' represents an important domain concept.
+It does not declare any attributes.
+
+'W' represents an important domain concept.
+It does not declare any attributes.
+
+'mydsl_A' represents an important domain concept.
+It does not declare any attributes.
+
+'mydsl_D' represents an important domain concept.
+It does not declare any attributes.
+
+'mydsl_B' represents an important domain concept.
+It does not declare any attributes.
+
+'mydsl_C' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mydsl_A' is a specialization of 'W'.
+The class 'mydsl_B' is a specialization of 'W'.
+The class 'mydsl_C' is a specialization of 'W'.
+The class 'mydsl_L' is a specialization of 'W'.
+The class 'mydsl_D' is a specialization of 'W'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mydsl_B' and 'mydsl_A'. From 'mydsl_B', the role 'mydsl_B' has cardinality 0..*, and from 'mydsl_A', the role 'mydsl_A' has cardinality 0..*.
+An association connects 'mydsl_C' and 'mydsl_A'. From 'mydsl_C', the role 'mydsl_C' has cardinality 0..*, and from 'mydsl_A', the role 'mydsl_A2' has cardinality 0..*.
+An association connects 'mydsl_L' and 'mydsl_B'. From 'mydsl_L', the role 'mydsl_L' has cardinality 0..*, and from 'mydsl_B', the role 'mydsl_B4' has cardinality 0..*.
+An association connects 'mydsl_B' and 'mydsl_D'. From 'mydsl_B', the role 'mydsl_B6' has cardinality 0..*, and from 'mydsl_D', the role 'mydsl_D' has cardinality 0..*.
+An association connects 'mydsl_L' and 'mydsl_C'. From 'mydsl_L', the role 'mydsl_L8' has cardinality 0..*, and from 'mydsl_C', the role 'mydsl_C9' has cardinality 0..*.

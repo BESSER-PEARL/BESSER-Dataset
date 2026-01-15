@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/TypeFox/xtext-splitted-repo/org.eclipse.xtext.tests/src/org/eclipse/xtext/util/GenericsTest.ecore

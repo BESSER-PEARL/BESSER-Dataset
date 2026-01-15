@@ -1,0 +1,598 @@
+The domain model 'vcml' describes the core structural elements and their relationships within the system.
+
+The model defines 123 main class(es).
+
+'vcml_NumberListEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_PFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_ConstraintRestrictionFalse' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Comparison' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'vcml_IsSpecified_C' represents an important domain concept.
+It does not declare any attributes.
+
+'BOMItem' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_MultiLanguageDescription' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'value', which is of type str.
+
+'vcml_MultipleLanguageDocumentation_LanguageBlock' represents an important domain concept.
+It has one attribute: 'language', which is of type str.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'Description' represents an important domain concept.
+It does not declare any attributes.
+
+'NumberListEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_CompoundStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_MultiLanguageDescriptions' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Class' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'group', which is of type str.
+
+'vcml_ConditionalStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_SimpleDescription' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vcml_PartialKey' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'vcml_CharacteristicReference_P' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'ConstraintRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_InCondition_P' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_SymbolicType' represents an important domain concept.
+It has one attribute: 'caseSensitive', which is of type bool.
+
+'vcml_Material' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'vcml_ShortVarReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_CountParts' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'vcml_ShortVarDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'vcml_VariantFunction' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'group', which is of type str.
+
+'vcml_VariantTableArgument' represents an important domain concept.
+It has one attribute: 'key', which is of type bool.
+
+'vcml_ConstraintMaterial' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_IsSpecified_P' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Import' represents an important domain concept.
+It has one attribute: 'importURI', which is of type str.
+
+'vcml_DelDefault' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_ConditionSource' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_ConditionalConstraintRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_CharacteristicOrValueDependencies' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Documentation' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_CharacteristicType' represents an important domain concept.
+It has one attribute: 'numberOfChars', which is of type int.
+
+'vcml_BillOfMaterial' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Procedure' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'status', which is of type str.
+
+'vcml_ConstraintSource' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_FunctionCall' represents an important domain concept.
+It has one attribute: 'function', which is of type str.
+
+'vcml_CharacteristicReference_C' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_VariantTableContent' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Description' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_ValueAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_SymbolicLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vcml_NegatedConstraintRestrictionLHS' represents an important domain concept.
+It does not declare any attributes.
+
+'List' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_NumericLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vcml_InterfaceDesign' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_ConstraintClass' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Option' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'vcml_SumParts' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'FunctionOrTable' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Row' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_DateCharacteristicValue' represents an important domain concept.
+It has the following attributes: 'from', which is of type str; 'to', which is of type str; 'default', which is of type bool.
+
+'SetOrDelDefault' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_ObjectCharacteristicReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstraintObject' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_SymbolList' represents an important domain concept.
+It does not declare any attributes.
+
+'VCObject' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_NumericCharacteristicValue' represents an important domain concept.
+It has one attribute: 'default', which is of type bool.
+
+'vcml_CharacteristicValue' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'default', which is of type bool.
+
+'Documentation' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Characteristic' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'group', which is of type str; 'required', which is of type bool; 'additionalValues', which is of type bool; 'field', which is of type str; 'restrictable', which is of type bool; 'displayAllowedValues', which is of type bool; 'table', which is of type str; 'multiValue', which is of type bool; 'notReadyForInput', which is of type bool; 'noDisplay', which is of type bool.
+
+'vcml_InCondition_C' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_VariantTable' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'group', which is of type str.
+
+'vcml_VCObject' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_FunctionOrTable' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_ConstraintRestriction' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_CharacteristicGroup' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'vcml_SimpleStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_BinaryCondition' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'vcml_BOMItem_Material' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_SimpleDocumentation' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vcml_UnaryCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_DateType' represents an important domain concept.
+It has one attribute: 'intervalValuesAllowed', which is of type bool.
+
+'vcml_IsInvisible' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Classification' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_SubpartOfCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_MultipleLanguageDocumentation' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_NumericInterval' represents an important domain concept.
+It has the following attributes: 'lowerBoundOp', which is of type str; 'upperBoundOp', which is of type str; 'upperBound', which is of type str; 'lowerBound', which is of type str.
+
+'vcml_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'CharacteristicType' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_BOMItem_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_PartOfCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_MDataCharacteristic_P' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_UnaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'vcml_ProcedureSource' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Constraint' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'status', which is of type str.
+
+'vcml_VcmlModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_BinaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_ConfigurationProfileEntry' represents an important domain concept.
+It has one attribute: 'sequence', which is of type int.
+
+'vcml_VariantFunctionArgument' represents an important domain concept.
+It has one attribute: 'in', which is of type bool.
+
+'CharacteristicReference_C' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_ConfigurationProfile' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'bomapplication', which is of type str; 'fixing', which is of type str.
+
+'vcml_FormattedDocumentationBlock' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'format', which is of type str.
+
+'vcml_NumberList' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_BOMItem' represents an important domain concept.
+It has one attribute: 'itemnumber', which is of type int.
+
+'vcml_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_SetPricingFactor' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'vcml_DependencyNet' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'status', which is of type str.
+
+'vcml_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_SetOrDelDefault' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_TypeOf' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'vcml_MDataCharacteristic_C' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_SetDefault' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_ConstraintObject' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'vcml_NumericType' represents an important domain concept.
+It has the following attributes: 'intervalValuesAllowed', which is of type bool; 'unit', which is of type str; 'decimalPlaces', which is of type int; 'negativeValuesAllowed', which is of type bool.
+
+'vcml_Precondition' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'group', which is of type str.
+
+'vcml_SelectionCondition' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'group', which is of type str.
+
+'vcml_List' represents an important domain concept.
+It does not declare any attributes.
+
+'vcml_ObjectType' represents an important domain concept.
+It has the following attributes: 'classType', which is of type int; 'type', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Status' defines the following possible values: 'Locked', 'InPreparation', 'Released'.
+The enumeration 'Language' defines the following possible values: 'HR', 'SK', 'DA', 'EL', 'UK', 'JA', 'ZH', 'HE', 'SV', 'AR', 'SL', 'SR', 'RU', 'TH', 'NO', 'FI', 'IS', 'LT', 'PT', 'BG', 'TR', 'NL', 'CA', 'AF', 'FR', 'ES', 'EN', 'KO', 'ET', 'CS', 'DE', 'LV', 'Z1', 'SH', 'HU', 'MS', 'ID', 'ZF', 'RO', 'IT', 'PL'.
+The enumeration 'ProcedureLocation' defines the following possible values: 'PARENT', 'SELF', 'ROOT'.
+The enumeration 'OptionType' defines the following possible values: 'ECM', 'KeyDate', 'UPS'.
+The enumeration 'UnaryExpressionOperator' defines the following possible values: 'PLUS', 'LC', 'MINUS', 'UC'.
+The enumeration 'Fixing' defines the following possible values: 'Entry', 'TopDown', 'BottomUp', 'None'.
+The enumeration 'ComparisonOperator' defines the following possible values: 'LE', 'EQ', 'GT', 'NE', 'GE', 'LT'.
+The enumeration 'FunctionName' defines the following possible values: 'ABS', 'TRUNK', 'FLOOR', 'SQRT', 'ARCCOS', 'EXP', 'COS', 'ARCSIN', 'LOG10', 'FRAC', 'SIGN', 'ARCTAN', 'CEIL', 'TAN', 'SIN', 'LN'.
+
+The model also captures inheritance relationships between classes.
+The class 'vcml_BillOfMaterial' is a specialization of 'VCObject'.
+The class 'vcml_BOMItem_Material' is a specialization of 'BOMItem'.
+The class 'vcml_BOMItem_Class' is a specialization of 'BOMItem'.
+The class 'vcml_Characteristic' is a specialization of 'VCObject'.
+The class 'vcml_NumericType' is a specialization of 'CharacteristicType'.
+The class 'vcml_SymbolicType' is a specialization of 'CharacteristicType'.
+The class 'vcml_DateType' is a specialization of 'CharacteristicType'.
+The class 'vcml_Class' is a specialization of 'VCObject'.
+The class 'vcml_ConfigurationProfile' is a specialization of 'VCObject'.
+The class 'vcml_Procedure' is a specialization of 'VCObject'.
+The class 'vcml_Procedure' is a specialization of 'Dependency'.
+The class 'vcml_SelectionCondition' is a specialization of 'VCObject'.
+The class 'vcml_SelectionCondition' is a specialization of 'Dependency'.
+The class 'vcml_Precondition' is a specialization of 'VCObject'.
+The class 'vcml_Precondition' is a specialization of 'Dependency'.
+The class 'vcml_DependencyNet' is a specialization of 'VCObject'.
+The class 'vcml_Constraint' is a specialization of 'VCObject'.
+The class 'vcml_Constraint' is a specialization of 'Dependency'.
+The class 'vcml_InterfaceDesign' is a specialization of 'VCObject'.
+The class 'vcml_Material' is a specialization of 'VCObject'.
+The class 'vcml_VariantFunction' is a specialization of 'VCObject'.
+The class 'vcml_VariantTable' is a specialization of 'VCObject'.
+The class 'vcml_VariantTableContent' is a specialization of 'VCObject'.
+The class 'vcml_SimpleDescription' is a specialization of 'Description'.
+The class 'vcml_MultiLanguageDescriptions' is a specialization of 'Description'.
+The class 'vcml_SimpleDocumentation' is a specialization of 'Documentation'.
+The class 'vcml_MultipleLanguageDocumentation' is a specialization of 'Documentation'.
+The class 'vcml_ConstraintClass' is a specialization of 'ConstraintObject'.
+The class 'vcml_ConstraintMaterial' is a specialization of 'ConstraintObject'.
+The class 'vcml_PartOfCondition' is a specialization of 'ConstraintRestriction'.
+The class 'vcml_PartOfCondition' is a specialization of 'Condition'.
+The class 'vcml_SubpartOfCondition' is a specialization of 'ConstraintRestriction'.
+The class 'vcml_SubpartOfCondition' is a specialization of 'Condition'.
+The class 'vcml_ConstraintRestrictionFalse' is a specialization of 'ConstraintRestriction'.
+The class 'vcml_NegatedConstraintRestrictionLHS' is a specialization of 'ConstraintRestriction'.
+The class 'vcml_CharacteristicReference_C' is a specialization of 'Literal'.
+The class 'vcml_ObjectCharacteristicReference' is a specialization of 'CharacteristicReference_C'.
+The class 'vcml_ShortVarReference' is a specialization of 'CharacteristicReference_C'.
+The class 'vcml_CompoundStatement' is a specialization of 'Statement'.
+The class 'vcml_SimpleStatement' is a specialization of 'Statement'.
+The class 'vcml_Assignment' is a specialization of 'SimpleStatement'.
+The class 'vcml_Function' is a specialization of 'ConstraintRestriction'.
+The class 'vcml_Function' is a specialization of 'SimpleStatement'.
+The class 'vcml_Function' is a specialization of 'FunctionOrTable'.
+The class 'vcml_Function' is a specialization of 'Condition'.
+The class 'vcml_PFunction' is a specialization of 'SimpleStatement'.
+The class 'vcml_PFunction' is a specialization of 'FunctionOrTable'.
+The class 'vcml_PFunction' is a specialization of 'Condition'.
+The class 'vcml_Table' is a specialization of 'ConstraintRestriction'.
+The class 'vcml_Table' is a specialization of 'SimpleStatement'.
+The class 'vcml_Table' is a specialization of 'FunctionOrTable'.
+The class 'vcml_Table' is a specialization of 'Condition'.
+The class 'vcml_SetOrDelDefault' is a specialization of 'SimpleStatement'.
+The class 'vcml_SetDefault' is a specialization of 'SetOrDelDefault'.
+The class 'vcml_DelDefault' is a specialization of 'SetOrDelDefault'.
+The class 'vcml_IsInvisible' is a specialization of 'SimpleStatement'.
+The class 'vcml_SetPricingFactor' is a specialization of 'SimpleStatement'.
+The class 'vcml_CharacteristicReference_P' is a specialization of 'Literal'.
+The class 'vcml_UnaryExpression' is a specialization of 'Expression'.
+The class 'vcml_Literal' is a specialization of 'Expression'.
+The class 'vcml_FunctionCall' is a specialization of 'Expression'.
+The class 'vcml_SumParts' is a specialization of 'Expression'.
+The class 'vcml_CountParts' is a specialization of 'Expression'.
+The class 'vcml_MDataCharacteristic_C' is a specialization of 'Literal'.
+The class 'vcml_MDataCharacteristic_P' is a specialization of 'Literal'.
+The class 'vcml_NumericLiteral' is a specialization of 'Literal'.
+The class 'vcml_NumericLiteral' is a specialization of 'NumberListEntry'.
+The class 'vcml_SymbolicLiteral' is a specialization of 'Literal'.
+The class 'vcml_UnaryCondition' is a specialization of 'Condition'.
+The class 'vcml_Comparison' is a specialization of 'ConstraintRestriction'.
+The class 'vcml_Comparison' is a specialization of 'Condition'.
+The class 'vcml_IsSpecified_C' is a specialization of 'ConstraintRestriction'.
+The class 'vcml_IsSpecified_C' is a specialization of 'Condition'.
+The class 'vcml_IsSpecified_P' is a specialization of 'Condition'.
+The class 'vcml_TypeOf' is a specialization of 'Condition'.
+The class 'vcml_InCondition_C' is a specialization of 'ConstraintRestriction'.
+The class 'vcml_InCondition_C' is a specialization of 'Condition'.
+The class 'vcml_InCondition_P' is a specialization of 'Condition'.
+The class 'vcml_NumberList' is a specialization of 'List'.
+The class 'vcml_NumericInterval' is a specialization of 'NumberListEntry'.
+The class 'vcml_SymbolList' is a specialization of 'List'.
+The class 'vcml_ConditionalConstraintRestriction' is a specialization of 'ConstraintRestriction'.
+The class 'vcml_ConditionalStatement' is a specialization of 'Statement'.
+The class 'vcml_BinaryExpression' is a specialization of 'Expression'.
+The class 'vcml_BinaryCondition' is a specialization of 'Condition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'vcml_Import' and 'vcml_VcmlModel'. From 'vcml_Import', the role 'vcml_Import' has cardinality 0..*, and from 'vcml_VcmlModel', the role 'vcml_VcmlModel' has cardinality 0..*.
+An association connects 'vcml_Option' and 'vcml_VcmlModel'. From 'vcml_Option', the role 'vcml_Option' has cardinality 0..*, and from 'vcml_VcmlModel', the role 'vcml_VcmlModel2' has cardinality 0..*.
+An association connects 'vcml_VcmlModel' and 'vcml_VCObject'. From 'vcml_VcmlModel', the role 'vcml_VcmlModel4' has cardinality 0..*, and from 'vcml_VCObject', the role 'vcml_VCObject' has cardinality 0..*.
+An association connects 'vcml_VCObject' and 'vcml_Description'. From 'vcml_VCObject', the role 'vcml_VCObject6' has cardinality 0..*, and from 'vcml_Description', the role 'vcml_Description' has cardinality 0..*.
+An association connects 'vcml_VCObject' and 'vcml_Option'. From 'vcml_VCObject', the role 'vcml_VCObject8' has cardinality 0..*, and from 'vcml_Option', the role 'vcml_Option9' has cardinality 0..*.
+An association connects 'vcml_BillOfMaterial' and 'vcml_BOMItem'. From 'vcml_BillOfMaterial', the role 'vcml_BillOfMaterial' has cardinality 0..*, and from 'vcml_BOMItem', the role 'vcml_BOMItem' has cardinality 0..*.
+An association connects 'vcml_Material' and 'vcml_BillOfMaterial'. From 'vcml_Material', the role 'Material' has cardinality 0..*, and from 'vcml_BillOfMaterial', the role 'billofmaterials' has cardinality 0..*.
+An association connects 'vcml_BOMItem' and 'vcml_SelectionCondition'. From 'vcml_BOMItem', the role 'vcml_BOMItem13' has cardinality 0..*, and from 'vcml_SelectionCondition', the role 'vcml_SelectionCondition' has cardinality 0..*.
+An association connects 'vcml_ConfigurationProfileEntry' and 'vcml_BOMItem'. From 'vcml_ConfigurationProfileEntry', the role 'vcml_ConfigurationProfileEntry' has cardinality 0..*, and from 'vcml_BOMItem', the role 'vcml_BOMItem15' has cardinality 0..*.
+An association connects 'vcml_BOMItem_Material' and 'vcml_Material'. From 'vcml_BOMItem_Material', the role 'vcml_BOMItem_Material' has cardinality 0..*, and from 'vcml_Material', the role 'vcml_Material' has cardinality 0..*.
+An association connects 'vcml_BOMItem_Class' and 'vcml_Class'. From 'vcml_BOMItem_Class', the role 'vcml_BOMItem_Class' has cardinality 0..*, and from 'vcml_Class', the role 'vcml_Class' has cardinality 0..*.
+An association connects 'vcml_Documentation' and 'vcml_Characteristic'. From 'vcml_Documentation', the role 'vcml_Documentation' has cardinality 0..*, and from 'vcml_Characteristic', the role 'vcml_Characteristic' has cardinality 0..*.
+An association connects 'vcml_CharacteristicType' and 'vcml_Characteristic'. From 'vcml_CharacteristicType', the role 'vcml_CharacteristicType' has cardinality 0..*, and from 'vcml_Characteristic', the role 'vcml_Characteristic20' has cardinality 0..*.
+An association connects 'vcml_Characteristic' and 'vcml_CharacteristicOrValueDependencies'. From 'vcml_Characteristic', the role 'vcml_Characteristic22' has cardinality 0..*, and from 'vcml_CharacteristicOrValueDependencies', the role 'vcml_CharacteristicOrValueDependencies' has cardinality 0..*.
+An association connects 'vcml_NumericCharacteristicValue' and 'vcml_NumericType'. From 'vcml_NumericCharacteristicValue', the role 'vcml_NumericCharacteristicValue' has cardinality 0..*, and from 'vcml_NumericType', the role 'vcml_NumericType' has cardinality 0..*.
+An association connects 'vcml_SymbolicType' and 'vcml_CharacteristicValue'. From 'vcml_SymbolicType', the role 'vcml_SymbolicType' has cardinality 0..*, and from 'vcml_CharacteristicValue', the role 'vcml_CharacteristicValue' has cardinality 0..*.
+An association connects 'vcml_DateCharacteristicValue' and 'vcml_DateType'. From 'vcml_DateCharacteristicValue', the role 'vcml_DateCharacteristicValue' has cardinality 0..*, and from 'vcml_DateType', the role 'vcml_DateType' has cardinality 0..*.
+An association connects 'vcml_CharacteristicValue' and 'vcml_Description'. From 'vcml_CharacteristicValue', the role 'vcml_CharacteristicValue27' has cardinality 0..*, and from 'vcml_Description', the role 'vcml_Description28' has cardinality 0..*.
+An association connects 'vcml_CharacteristicValue' and 'vcml_Documentation'. From 'vcml_CharacteristicValue', the role 'vcml_CharacteristicValue30' has cardinality 0..*, and from 'vcml_Documentation', the role 'vcml_Documentation31' has cardinality 0..*.
+An association connects 'vcml_CharacteristicOrValueDependencies' and 'vcml_CharacteristicValue'. From 'vcml_CharacteristicOrValueDependencies', the role 'vcml_CharacteristicOrValueDependencies34' has cardinality 0..*, and from 'vcml_CharacteristicValue', the role 'vcml_CharacteristicValue33' has cardinality 0..*.
+An association connects 'vcml_NumericCharacteristicValue' and 'vcml_NumberListEntry'. From 'vcml_NumericCharacteristicValue', the role 'vcml_NumericCharacteristicValue36' has cardinality 0..*, and from 'vcml_NumberListEntry', the role 'vcml_NumberListEntry' has cardinality 0..*.
+An association connects 'vcml_NumericCharacteristicValue' and 'vcml_Documentation'. From 'vcml_NumericCharacteristicValue', the role 'vcml_NumericCharacteristicValue38' has cardinality 0..*, and from 'vcml_Documentation', the role 'vcml_Documentation39' has cardinality 0..*.
+An association connects 'vcml_NumericCharacteristicValue' and 'vcml_CharacteristicOrValueDependencies'. From 'vcml_NumericCharacteristicValue', the role 'vcml_NumericCharacteristicValue41' has cardinality 0..*, and from 'vcml_CharacteristicOrValueDependencies', the role 'vcml_CharacteristicOrValueDependencies42' has cardinality 0..*.
+An association connects 'vcml_Documentation' and 'vcml_DateCharacteristicValue'. From 'vcml_Documentation', the role 'vcml_Documentation45' has cardinality 0..*, and from 'vcml_DateCharacteristicValue', the role 'vcml_DateCharacteristicValue44' has cardinality 0..*.
+An association connects 'vcml_CharacteristicOrValueDependencies' and 'vcml_DateCharacteristicValue'. From 'vcml_CharacteristicOrValueDependencies', the role 'vcml_CharacteristicOrValueDependencies48' has cardinality 0..*, and from 'vcml_DateCharacteristicValue', the role 'vcml_DateCharacteristicValue47' has cardinality 0..*.
+An association connects 'vcml_Dependency' and 'vcml_CharacteristicOrValueDependencies'. From 'vcml_Dependency', the role 'vcml_Dependency' has cardinality 0..*, and from 'vcml_CharacteristicOrValueDependencies', the role 'vcml_CharacteristicOrValueDependencies50' has cardinality 0..*.
+An association connects 'vcml_Class' and 'vcml_Characteristic'. From 'vcml_Class', the role 'vcml_Class52' has cardinality 0..*, and from 'vcml_Characteristic', the role 'vcml_Characteristic53' has cardinality 0..*.
+An association connects 'vcml_Class' and 'vcml_Class'. From 'vcml_Class', the role 'vcml_Class56' has cardinality 0..*, and from 'vcml_Class', the role 'vcml_Class54' has cardinality 0..*.
+An association connects 'vcml_InterfaceDesign' and 'vcml_ConfigurationProfile'. From 'vcml_InterfaceDesign', the role 'vcml_InterfaceDesign' has cardinality 0..*, and from 'vcml_ConfigurationProfile', the role 'vcml_ConfigurationProfile' has cardinality 0..*.
+An association connects 'vcml_DependencyNet' and 'vcml_ConfigurationProfile'. From 'vcml_DependencyNet', the role 'vcml_DependencyNet' has cardinality 0..*, and from 'vcml_ConfigurationProfile', the role 'vcml_ConfigurationProfile59' has cardinality 0..*.
+An association connects 'vcml_ConfigurationProfileEntry' and 'vcml_ConfigurationProfile'. From 'vcml_ConfigurationProfileEntry', the role 'vcml_ConfigurationProfileEntry62' has cardinality 0..*, and from 'vcml_ConfigurationProfile', the role 'vcml_ConfigurationProfile61' has cardinality 0..*.
+An association connects 'vcml_Material' and 'vcml_ConfigurationProfile'. From 'vcml_Material', the role 'Material64' has cardinality 0..*, and from 'vcml_ConfigurationProfile', the role 'configurationprofiles' has cardinality 0..*.
+An association connects 'vcml_Procedure' and 'vcml_Documentation'. From 'vcml_Procedure', the role 'vcml_Procedure' has cardinality 0..*, and from 'vcml_Documentation', the role 'vcml_Documentation66' has cardinality 0..*.
+An association connects 'vcml_ProcedureSource' and 'vcml_Procedure'. From 'vcml_ProcedureSource', the role 'vcml_ProcedureSource' has cardinality 0..*, and from 'vcml_Procedure', the role 'vcml_Procedure68' has cardinality 0..*.
+An association connects 'vcml_SelectionCondition' and 'vcml_Documentation'. From 'vcml_SelectionCondition', the role 'vcml_SelectionCondition70' has cardinality 0..*, and from 'vcml_Documentation', the role 'vcml_Documentation71' has cardinality 0..*.
+An association connects 'vcml_ConditionSource' and 'vcml_SelectionCondition'. From 'vcml_ConditionSource', the role 'vcml_ConditionSource' has cardinality 0..*, and from 'vcml_SelectionCondition', the role 'vcml_SelectionCondition73' has cardinality 0..*.
+An association connects 'vcml_Precondition' and 'vcml_Documentation'. From 'vcml_Precondition', the role 'vcml_Precondition' has cardinality 0..*, and from 'vcml_Documentation', the role 'vcml_Documentation75' has cardinality 0..*.
+An association connects 'vcml_Precondition' and 'vcml_ConditionSource'. From 'vcml_Precondition', the role 'vcml_Precondition77' has cardinality 0..*, and from 'vcml_ConditionSource', the role 'vcml_ConditionSource78' has cardinality 0..*.
+An association connects 'vcml_ConditionSource' and 'vcml_Condition'. From 'vcml_ConditionSource', the role 'vcml_ConditionSource80' has cardinality 0..*, and from 'vcml_Condition', the role 'vcml_Condition' has cardinality 0..*.
+An association connects 'vcml_Documentation' and 'vcml_DependencyNet'. From 'vcml_Documentation', the role 'vcml_Documentation83' has cardinality 0..*, and from 'vcml_DependencyNet', the role 'vcml_DependencyNet82' has cardinality 0..*.
+An association connects 'vcml_DependencyNet' and 'vcml_Constraint'. From 'vcml_DependencyNet', the role 'vcml_DependencyNet85' has cardinality 0..*, and from 'vcml_Constraint', the role 'vcml_Constraint' has cardinality 0..*.
+An association connects 'vcml_Constraint' and 'vcml_Documentation'. From 'vcml_Constraint', the role 'vcml_Constraint87' has cardinality 0..*, and from 'vcml_Documentation', the role 'vcml_Documentation88' has cardinality 0..*.
+An association connects 'vcml_Constraint' and 'vcml_ConstraintSource'. From 'vcml_Constraint', the role 'vcml_Constraint90' has cardinality 0..*, and from 'vcml_ConstraintSource', the role 'vcml_ConstraintSource' has cardinality 0..*.
+An association connects 'vcml_ConfigurationProfileEntry' and 'vcml_Procedure'. From 'vcml_ConfigurationProfileEntry', the role 'vcml_ConfigurationProfileEntry92' has cardinality 0..*, and from 'vcml_Procedure', the role 'vcml_Procedure93' has cardinality 0..*.
+An association connects 'vcml_CharacteristicGroup' and 'vcml_InterfaceDesign'. From 'vcml_CharacteristicGroup', the role 'vcml_CharacteristicGroup' has cardinality 0..*, and from 'vcml_InterfaceDesign', the role 'vcml_InterfaceDesign95' has cardinality 0..*.
+An association connects 'vcml_CharacteristicGroup' and 'vcml_Description'. From 'vcml_CharacteristicGroup', the role 'vcml_CharacteristicGroup97' has cardinality 0..*, and from 'vcml_Description', the role 'vcml_Description98' has cardinality 0..*.
+An association connects 'vcml_Characteristic' and 'vcml_CharacteristicGroup'. From 'vcml_Characteristic', the role 'vcml_Characteristic101' has cardinality 0..*, and from 'vcml_CharacteristicGroup', the role 'vcml_CharacteristicGroup100' has cardinality 0..*.
+An association connects 'vcml_Material' and 'vcml_BillOfMaterial'. From 'vcml_Material', the role 'material' has cardinality 0..*, and from 'vcml_BillOfMaterial', the role 'BillOfMaterial' has cardinality 0..*.
+An association connects 'vcml_Classification' and 'vcml_Material'. From 'vcml_Classification', the role 'vcml_Classification' has cardinality 0..*, and from 'vcml_Material', the role 'vcml_Material104' has cardinality 0..*.
+An association connects 'vcml_Material' and 'vcml_ConfigurationProfile'. From 'vcml_Material', the role 'material106' has cardinality 0..*, and from 'vcml_ConfigurationProfile', the role 'ConfigurationProfile' has cardinality 0..*.
+An association connects 'vcml_Class' and 'vcml_Classification'. From 'vcml_Class', the role 'vcml_Class109' has cardinality 0..*, and from 'vcml_Classification', the role 'vcml_Classification108' has cardinality 0..*.
+An association connects 'vcml_Classification' and 'vcml_ValueAssignment'. From 'vcml_Classification', the role 'vcml_Classification111' has cardinality 0..*, and from 'vcml_ValueAssignment', the role 'vcml_ValueAssignment' has cardinality 0..*.
+An association connects 'vcml_Characteristic' and 'vcml_ValueAssignment'. From 'vcml_Characteristic', the role 'vcml_Characteristic114' has cardinality 0..*, and from 'vcml_ValueAssignment', the role 'vcml_ValueAssignment113' has cardinality 0..*.
+An association connects 'vcml_Literal' and 'vcml_ValueAssignment'. From 'vcml_Literal', the role 'vcml_Literal' has cardinality 0..*, and from 'vcml_ValueAssignment', the role 'vcml_ValueAssignment116' has cardinality 0..*.
+An association connects 'vcml_VariantFunction' and 'vcml_VariantFunctionArgument'. From 'vcml_VariantFunction', the role 'vcml_VariantFunction' has cardinality 0..*, and from 'vcml_VariantFunctionArgument', the role 'vcml_VariantFunctionArgument' has cardinality 0..*.
+An association connects 'vcml_Characteristic' and 'vcml_VariantFunctionArgument'. From 'vcml_Characteristic', the role 'vcml_Characteristic120' has cardinality 0..*, and from 'vcml_VariantFunctionArgument', the role 'vcml_VariantFunctionArgument119' has cardinality 0..*.
+An association connects 'vcml_VariantTable' and 'vcml_VariantTableArgument'. From 'vcml_VariantTable', the role 'vcml_VariantTable' has cardinality 0..*, and from 'vcml_VariantTableArgument', the role 'vcml_VariantTableArgument' has cardinality 0..*.
+An association connects 'vcml_Characteristic' and 'vcml_VariantTableArgument'. From 'vcml_Characteristic', the role 'vcml_Characteristic124' has cardinality 0..*, and from 'vcml_VariantTableArgument', the role 'vcml_VariantTableArgument123' has cardinality 0..*.
+An association connects 'vcml_VariantTableContent' and 'vcml_VariantTable'. From 'vcml_VariantTableContent', the role 'vcml_VariantTableContent' has cardinality 0..*, and from 'vcml_VariantTable', the role 'vcml_VariantTable126' has cardinality 0..*.
+An association connects 'vcml_VariantTableContent' and 'vcml_Row'. From 'vcml_VariantTableContent', the role 'vcml_VariantTableContent128' has cardinality 0..*, and from 'vcml_Row', the role 'vcml_Row' has cardinality 0..*.
+An association connects 'vcml_Literal' and 'vcml_Row'. From 'vcml_Literal', the role 'vcml_Literal131' has cardinality 0..*, and from 'vcml_Row', the role 'vcml_Row130' has cardinality 0..*.
+An association connects 'vcml_MultiLanguageDescription' and 'vcml_MultiLanguageDescriptions'. From 'vcml_MultiLanguageDescription', the role 'vcml_MultiLanguageDescription' has cardinality 0..*, and from 'vcml_MultiLanguageDescriptions', the role 'vcml_MultiLanguageDescriptions' has cardinality 0..*.
+An association connects 'vcml_MultipleLanguageDocumentation' and 'vcml_MultipleLanguageDocumentation_LanguageBlock'. From 'vcml_MultipleLanguageDocumentation', the role 'vcml_MultipleLanguageDocumentation' has cardinality 0..*, and from 'vcml_MultipleLanguageDocumentation_LanguageBlock', the role 'vcml_MultipleLanguageDocumentation_LanguageBlock' has cardinality 0..*.
+An association connects 'vcml_MultipleLanguageDocumentation_LanguageBlock' and 'vcml_FormattedDocumentationBlock'. From 'vcml_MultipleLanguageDocumentation_LanguageBlock', the role 'vcml_MultipleLanguageDocumentation_LanguageBlock135' has cardinality 0..*, and from 'vcml_FormattedDocumentationBlock', the role 'vcml_FormattedDocumentationBlock' has cardinality 0..*.
+An association connects 'vcml_ConstraintObject' and 'vcml_ConstraintSource'. From 'vcml_ConstraintObject', the role 'vcml_ConstraintObject' has cardinality 0..*, and from 'vcml_ConstraintSource', the role 'vcml_ConstraintSource137' has cardinality 0..*.
+An association connects 'vcml_Condition' and 'vcml_ConstraintSource'. From 'vcml_Condition', the role 'vcml_Condition140' has cardinality 0..*, and from 'vcml_ConstraintSource', the role 'vcml_ConstraintSource139' has cardinality 0..*.
+An association connects 'vcml_ConstraintRestriction' and 'vcml_ConstraintSource'. From 'vcml_ConstraintRestriction', the role 'vcml_ConstraintRestriction' has cardinality 0..*, and from 'vcml_ConstraintSource', the role 'vcml_ConstraintSource142' has cardinality 0..*.
+An association connects 'vcml_CharacteristicReference_C' and 'vcml_ConstraintSource'. From 'vcml_CharacteristicReference_C', the role 'vcml_CharacteristicReference_C' has cardinality 0..*, and from 'vcml_ConstraintSource', the role 'vcml_ConstraintSource144' has cardinality 0..*.
+An association connects 'vcml_ConstraintObject' and 'vcml_ShortVarDefinition'. From 'vcml_ConstraintObject', the role 'vcml_ConstraintObject146' has cardinality 0..*, and from 'vcml_ShortVarDefinition', the role 'vcml_ShortVarDefinition' has cardinality 0..*.
+An association connects 'vcml_Class' and 'vcml_ConstraintClass'. From 'vcml_Class', the role 'vcml_Class148' has cardinality 0..*, and from 'vcml_ConstraintClass', the role 'vcml_ConstraintClass' has cardinality 0..*.
+An association connects 'vcml_ConstraintMaterial' and 'vcml_ObjectType'. From 'vcml_ConstraintMaterial', the role 'vcml_ConstraintMaterial' has cardinality 0..*, and from 'vcml_ObjectType', the role 'vcml_ObjectType' has cardinality 0..*.
+An association connects 'vcml_ObjectType' and 'vcml_PartialKey'. From 'vcml_ObjectType', the role 'vcml_ObjectType151' has cardinality 0..*, and from 'vcml_PartialKey', the role 'vcml_PartialKey' has cardinality 0..*.
+An association connects 'vcml_Material' and 'vcml_PartialKey'. From 'vcml_Material', the role 'vcml_Material154' has cardinality 0..*, and from 'vcml_PartialKey', the role 'vcml_PartialKey153' has cardinality 0..*.
+An association connects 'vcml_ShortVarDefinition' and 'vcml_Characteristic'. From 'vcml_ShortVarDefinition', the role 'vcml_ShortVarDefinition156' has cardinality 0..*, and from 'vcml_Characteristic', the role 'vcml_Characteristic157' has cardinality 0..*.
+An association connects 'vcml_PartOfCondition' and 'vcml_ConstraintObject'. From 'vcml_PartOfCondition', the role 'vcml_PartOfCondition' has cardinality 0..*, and from 'vcml_ConstraintObject', the role 'vcml_ConstraintObject159' has cardinality 0..*.
+An association connects 'vcml_PartOfCondition' and 'vcml_ConstraintObject'. From 'vcml_PartOfCondition', the role 'vcml_PartOfCondition161' has cardinality 0..*, and from 'vcml_ConstraintObject', the role 'vcml_ConstraintObject162' has cardinality 0..*.
+An association connects 'vcml_ConstraintObject' and 'vcml_SubpartOfCondition'. From 'vcml_ConstraintObject', the role 'vcml_ConstraintObject164' has cardinality 0..*, and from 'vcml_SubpartOfCondition', the role 'vcml_SubpartOfCondition' has cardinality 0..*.
+An association connects 'vcml_SubpartOfCondition' and 'vcml_ConstraintObject'. From 'vcml_SubpartOfCondition', the role 'vcml_SubpartOfCondition166' has cardinality 0..*, and from 'vcml_ConstraintObject', the role 'vcml_ConstraintObject167' has cardinality 0..*.
+An association connects 'vcml_NegatedConstraintRestrictionLHS' and 'vcml_EObject'. From 'vcml_NegatedConstraintRestrictionLHS', the role 'vcml_NegatedConstraintRestrictionLHS' has cardinality 0..*, and from 'vcml_EObject', the role 'vcml_EObject' has cardinality 0..*.
+An association connects 'vcml_ConstraintObject' and 'vcml_ObjectCharacteristicReference'. From 'vcml_ConstraintObject', the role 'vcml_ConstraintObject170' has cardinality 0..*, and from 'vcml_ObjectCharacteristicReference', the role 'vcml_ObjectCharacteristicReference' has cardinality 0..*.
+An association connects 'vcml_ObjectCharacteristicReference' and 'vcml_Characteristic'. From 'vcml_ObjectCharacteristicReference', the role 'vcml_ObjectCharacteristicReference172' has cardinality 0..*, and from 'vcml_Characteristic', the role 'vcml_Characteristic173' has cardinality 0..*.
+An association connects 'vcml_ShortVarReference' and 'vcml_ShortVarDefinition'. From 'vcml_ShortVarReference', the role 'vcml_ShortVarReference' has cardinality 0..*, and from 'vcml_ShortVarDefinition', the role 'vcml_ShortVarDefinition175' has cardinality 0..*.
+An association connects 'vcml_Statement' and 'vcml_ProcedureSource'. From 'vcml_Statement', the role 'vcml_Statement' has cardinality 0..*, and from 'vcml_ProcedureSource', the role 'vcml_ProcedureSource177' has cardinality 0..*.
+An association connects 'vcml_SimpleStatement' and 'vcml_CompoundStatement'. From 'vcml_SimpleStatement', the role 'vcml_SimpleStatement' has cardinality 0..*, and from 'vcml_CompoundStatement', the role 'vcml_CompoundStatement' has cardinality 0..*.
+An association connects 'vcml_Assignment' and 'vcml_Characteristic'. From 'vcml_Assignment', the role 'vcml_Assignment' has cardinality 0..*, and from 'vcml_Characteristic', the role 'vcml_Characteristic180' has cardinality 0..*.
+An association connects 'vcml_Assignment' and 'vcml_Expression'. From 'vcml_Assignment', the role 'vcml_Assignment182' has cardinality 0..*, and from 'vcml_Expression', the role 'vcml_Expression' has cardinality 0..*.
+An association connects 'vcml_Function' and 'vcml_VariantFunction'. From 'vcml_Function', the role 'vcml_Function' has cardinality 0..*, and from 'vcml_VariantFunction', the role 'vcml_VariantFunction184' has cardinality 0..*.
+An association connects 'vcml_Function' and 'vcml_Characteristic'. From 'vcml_Function', the role 'vcml_Function186' has cardinality 0..*, and from 'vcml_Characteristic', the role 'vcml_Characteristic187' has cardinality 0..*.
+An association connects 'vcml_Function' and 'vcml_Literal'. From 'vcml_Function', the role 'vcml_Function189' has cardinality 0..*, and from 'vcml_Literal', the role 'vcml_Literal190' has cardinality 0..*.
+An association connects 'vcml_VariantFunction' and 'vcml_PFunction'. From 'vcml_VariantFunction', the role 'vcml_VariantFunction192' has cardinality 0..*, and from 'vcml_PFunction', the role 'vcml_PFunction' has cardinality 0..*.
+An association connects 'vcml_PFunction' and 'vcml_Characteristic'. From 'vcml_PFunction', the role 'vcml_PFunction194' has cardinality 0..*, and from 'vcml_Characteristic', the role 'vcml_Characteristic195' has cardinality 0..*.
+An association connects 'vcml_Literal' and 'vcml_PFunction'. From 'vcml_Literal', the role 'vcml_Literal198' has cardinality 0..*, and from 'vcml_PFunction', the role 'vcml_PFunction197' has cardinality 0..*.
+An association connects 'vcml_Table' and 'vcml_VariantTable'. From 'vcml_Table', the role 'vcml_Table' has cardinality 0..*, and from 'vcml_VariantTable', the role 'vcml_VariantTable200' has cardinality 0..*.
+An association connects 'vcml_Table' and 'vcml_Characteristic'. From 'vcml_Table', the role 'vcml_Table202' has cardinality 0..*, and from 'vcml_Characteristic', the role 'vcml_Characteristic203' has cardinality 0..*.
+An association connects 'vcml_Table' and 'vcml_Literal'. From 'vcml_Table', the role 'vcml_Table205' has cardinality 0..*, and from 'vcml_Literal', the role 'vcml_Literal206' has cardinality 0..*.
+An association connects 'vcml_SetOrDelDefault' and 'vcml_Characteristic'. From 'vcml_SetOrDelDefault', the role 'vcml_SetOrDelDefault' has cardinality 0..*, and from 'vcml_Characteristic', the role 'vcml_Characteristic208' has cardinality 0..*.
+An association connects 'vcml_Expression' and 'vcml_SetOrDelDefault'. From 'vcml_Expression', the role 'vcml_Expression211' has cardinality 0..*, and from 'vcml_SetOrDelDefault', the role 'vcml_SetOrDelDefault210' has cardinality 0..*.
+An association connects 'vcml_Characteristic' and 'vcml_IsInvisible'. From 'vcml_Characteristic', the role 'vcml_Characteristic213' has cardinality 0..*, and from 'vcml_IsInvisible', the role 'vcml_IsInvisible' has cardinality 0..*.
+An association connects 'vcml_Characteristic' and 'vcml_SetPricingFactor'. From 'vcml_Characteristic', the role 'vcml_Characteristic215' has cardinality 0..*, and from 'vcml_SetPricingFactor', the role 'vcml_SetPricingFactor' has cardinality 0..*.
+An association connects 'vcml_SetPricingFactor' and 'vcml_Expression'. From 'vcml_SetPricingFactor', the role 'vcml_SetPricingFactor217' has cardinality 0..*, and from 'vcml_Expression', the role 'vcml_Expression218' has cardinality 0..*.
+An association connects 'vcml_SetPricingFactor' and 'vcml_Expression'. From 'vcml_SetPricingFactor', the role 'vcml_SetPricingFactor220' has cardinality 0..*, and from 'vcml_Expression', the role 'vcml_Expression221' has cardinality 0..*.
+An association connects 'vcml_CharacteristicReference_P' and 'vcml_Characteristic'. From 'vcml_CharacteristicReference_P', the role 'vcml_CharacteristicReference_P' has cardinality 0..*, and from 'vcml_Characteristic', the role 'vcml_Characteristic223' has cardinality 0..*.
+An association connects 'vcml_Expression' and 'vcml_UnaryExpression'. From 'vcml_Expression', the role 'vcml_Expression225' has cardinality 0..*, and from 'vcml_UnaryExpression', the role 'vcml_UnaryExpression' has cardinality 0..*.
+An association connects 'vcml_FunctionCall' and 'vcml_Expression'. From 'vcml_FunctionCall', the role 'vcml_FunctionCall' has cardinality 0..*, and from 'vcml_Expression', the role 'vcml_Expression227' has cardinality 0..*.
+An association connects 'vcml_SumParts' and 'vcml_Characteristic'. From 'vcml_SumParts', the role 'vcml_SumParts' has cardinality 0..*, and from 'vcml_Characteristic', the role 'vcml_Characteristic229' has cardinality 0..*.
+An association connects 'vcml_MDataCharacteristic_C' and 'vcml_CharacteristicReference_C'. From 'vcml_MDataCharacteristic_C', the role 'vcml_MDataCharacteristic_C' has cardinality 0..*, and from 'vcml_CharacteristicReference_C', the role 'vcml_CharacteristicReference_C231' has cardinality 0..*.
+An association connects 'vcml_CharacteristicReference_P' and 'vcml_MDataCharacteristic_P'. From 'vcml_CharacteristicReference_P', the role 'vcml_CharacteristicReference_P233' has cardinality 0..*, and from 'vcml_MDataCharacteristic_P', the role 'vcml_MDataCharacteristic_P' has cardinality 0..*.
+An association connects 'vcml_UnaryCondition' and 'vcml_Condition'. From 'vcml_UnaryCondition', the role 'vcml_UnaryCondition' has cardinality 0..*, and from 'vcml_Condition', the role 'vcml_Condition235' has cardinality 0..*.
+An association connects 'vcml_Expression' and 'vcml_Comparison'. From 'vcml_Expression', the role 'vcml_Expression237' has cardinality 0..*, and from 'vcml_Comparison', the role 'vcml_Comparison' has cardinality 0..*.
+An association connects 'vcml_Comparison' and 'vcml_Expression'. From 'vcml_Comparison', the role 'vcml_Comparison239' has cardinality 0..*, and from 'vcml_Expression', the role 'vcml_Expression240' has cardinality 0..*.
+An association connects 'vcml_CharacteristicReference_C' and 'vcml_IsSpecified_C'. From 'vcml_CharacteristicReference_C', the role 'vcml_CharacteristicReference_C242' has cardinality 0..*, and from 'vcml_IsSpecified_C', the role 'vcml_IsSpecified_C' has cardinality 0..*.
+An association connects 'vcml_CharacteristicReference_P' and 'vcml_IsSpecified_P'. From 'vcml_CharacteristicReference_P', the role 'vcml_CharacteristicReference_P244' has cardinality 0..*, and from 'vcml_IsSpecified_P', the role 'vcml_IsSpecified_P' has cardinality 0..*.
+An association connects 'vcml_TypeOf' and 'vcml_ObjectType'. From 'vcml_TypeOf', the role 'vcml_TypeOf' has cardinality 0..*, and from 'vcml_ObjectType', the role 'vcml_ObjectType246' has cardinality 0..*.
+An association connects 'vcml_InCondition_C' and 'vcml_CharacteristicReference_C'. From 'vcml_InCondition_C', the role 'vcml_InCondition_C' has cardinality 0..*, and from 'vcml_CharacteristicReference_C', the role 'vcml_CharacteristicReference_C248' has cardinality 0..*.
+An association connects 'vcml_InCondition_C' and 'vcml_List'. From 'vcml_InCondition_C', the role 'vcml_InCondition_C250' has cardinality 0..*, and from 'vcml_List', the role 'vcml_List' has cardinality 0..*.
+An association connects 'vcml_InCondition_P' and 'vcml_CharacteristicReference_P'. From 'vcml_InCondition_P', the role 'vcml_InCondition_P' has cardinality 0..*, and from 'vcml_CharacteristicReference_P', the role 'vcml_CharacteristicReference_P252' has cardinality 0..*.
+An association connects 'vcml_InCondition_P' and 'vcml_List'. From 'vcml_InCondition_P', the role 'vcml_InCondition_P254' has cardinality 0..*, and from 'vcml_List', the role 'vcml_List255' has cardinality 0..*.
+An association connects 'vcml_NumberListEntry' and 'vcml_NumberList'. From 'vcml_NumberListEntry', the role 'vcml_NumberListEntry257' has cardinality 0..*, and from 'vcml_NumberList', the role 'vcml_NumberList' has cardinality 0..*.
+An association connects 'vcml_SymbolList' and 'vcml_SymbolicLiteral'. From 'vcml_SymbolList', the role 'vcml_SymbolList' has cardinality 0..*, and from 'vcml_SymbolicLiteral', the role 'vcml_SymbolicLiteral' has cardinality 0..*.
+An association connects 'vcml_ConstraintRestriction' and 'vcml_ConditionalConstraintRestriction'. From 'vcml_ConstraintRestriction', the role 'vcml_ConstraintRestriction260' has cardinality 0..*, and from 'vcml_ConditionalConstraintRestriction', the role 'vcml_ConditionalConstraintRestriction' has cardinality 0..*.
+An association connects 'vcml_Condition' and 'vcml_ConditionalConstraintRestriction'. From 'vcml_Condition', the role 'vcml_Condition263' has cardinality 0..*, and from 'vcml_ConditionalConstraintRestriction', the role 'vcml_ConditionalConstraintRestriction262' has cardinality 0..*.
+An association connects 'vcml_ConditionalStatement' and 'vcml_Statement'. From 'vcml_ConditionalStatement', the role 'vcml_ConditionalStatement' has cardinality 0..*, and from 'vcml_Statement', the role 'vcml_Statement265' has cardinality 0..*.
+An association connects 'vcml_ConditionalStatement' and 'vcml_Condition'. From 'vcml_ConditionalStatement', the role 'vcml_ConditionalStatement267' has cardinality 0..*, and from 'vcml_Condition', the role 'vcml_Condition268' has cardinality 0..*.
+An association connects 'vcml_BinaryExpression' and 'vcml_Expression'. From 'vcml_BinaryExpression', the role 'vcml_BinaryExpression' has cardinality 0..*, and from 'vcml_Expression', the role 'vcml_Expression270' has cardinality 0..*.
+An association connects 'vcml_BinaryExpression' and 'vcml_Expression'. From 'vcml_BinaryExpression', the role 'vcml_BinaryExpression272' has cardinality 0..*, and from 'vcml_Expression', the role 'vcml_Expression273' has cardinality 0..*.
+An association connects 'vcml_BinaryCondition' and 'vcml_Condition'. From 'vcml_BinaryCondition', the role 'vcml_BinaryCondition' has cardinality 0..*, and from 'vcml_Condition', the role 'vcml_Condition275' has cardinality 0..*.
+An association connects 'vcml_Condition' and 'vcml_BinaryCondition'. From 'vcml_Condition', the role 'vcml_Condition278' has cardinality 0..*, and from 'vcml_BinaryCondition', the role 'vcml_BinaryCondition277' has cardinality 0..*.

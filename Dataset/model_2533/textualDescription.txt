@@ -1,0 +1,33 @@
+The domain model 'test' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'test_E' represents an important domain concept.
+It has one attribute: 'newAttribute2', which is of type str.
+
+'test_C' represents an important domain concept.
+It has one attribute: 'newAttribute', which is of type str.
+
+'test_F' represents an important domain concept.
+It does not declare any attributes.
+
+'test_B' represents an important domain concept.
+It has one attribute: 'newAttribute', which is of type str.
+
+'E' represents an important domain concept.
+It does not declare any attributes.
+
+'test_D' represents an important domain concept.
+It has one attribute: 'newAttribute', which is of type str.
+
+'test_Adown' represents an important domain concept.
+It has one attribute: 'newAttribute', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'test_Adown' is a specialization of 'E'.
+
+Relationships between classes are modeled using associations.
+An association connects 'test_B' and 'test_Adown'. From 'test_B', the role 'test_B' has cardinality 0..*, and from 'test_Adown', the role 'test_Adown' has cardinality 0..*.
+An association connects 'test_C' and 'test_Adown'. From 'test_C', the role 'C' has cardinality 0..*, and from 'test_Adown', the role 'a' has cardinality 0..*.
+An association connects 'test_Adown' and 'test_D'. From 'test_Adown', the role 'test_Adown3' has cardinality 0..*, and from 'test_D', the role 'test_D' has cardinality 0..*.
+An association connects 'test_C' and 'test_Adown'. From 'test_C', the role 'c' has cardinality 0..*, and from 'test_Adown', the role 'Adown' has cardinality 0..*.

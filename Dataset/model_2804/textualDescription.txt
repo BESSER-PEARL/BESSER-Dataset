@@ -1,0 +1,30 @@
+The domain model 'attackimpact' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'attackimpact_Node' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'tags', which is of type str; 'domains', which is of type str; 'name', which is of type str.
+
+'attackimpact_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'attackimpact_Propagation' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'severity', which is of type int; 'tags', which is of type str.
+
+'attackimpact_Model' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'attackimpact_Vulnerability' represents an important domain concept.
+It has the following attributes: 'severity', which is of type int; 'name', which is of type str; 'tags', which is of type str; 'type', which is of type str; 'description', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'vulnerabilityType' defines the following possible values: 'Timing', 'Authentication', 'Exposure', 'Isolation', 'ResourceAllocation', 'Concurrency'.
+The enumeration 'propagationType' defines the following possible values: 'processor', 'local', 'dataFlow', 'bus', 'memory', 'data'.
+
+Relationships between classes are modeled using associations.
+An association connects 'attackimpact_Vulnerability' and 'attackimpact_Node'. From 'attackimpact_Vulnerability', the role 'attackimpact_Vulnerability' has cardinality 0..*, and from 'attackimpact_Node', the role 'attackimpact_Node' has cardinality 0..*.
+An association connects 'attackimpact_Propagation' and 'attackimpact_Node'. From 'attackimpact_Propagation', the role 'attackimpact_Propagation' has cardinality 0..*, and from 'attackimpact_Node', the role 'attackimpact_Node2' has cardinality 0..*.
+An association connects 'attackimpact_Node' and 'attackimpact_EObject'. From 'attackimpact_Node', the role 'attackimpact_Node4' has cardinality 0..*, and from 'attackimpact_EObject', the role 'attackimpact_EObject' has cardinality 0..*.
+An association connects 'attackimpact_Vulnerability' and 'attackimpact_Propagation'. From 'attackimpact_Vulnerability', the role 'attackimpact_Vulnerability6' has cardinality 0..*, and from 'attackimpact_Propagation', the role 'attackimpact_Propagation7' has cardinality 0..*.
+An association connects 'attackimpact_Propagation' and 'attackimpact_Node'. From 'attackimpact_Propagation', the role 'attackimpact_Propagation9' has cardinality 0..*, and from 'attackimpact_Node', the role 'attackimpact_Node10' has cardinality 0..*.
+An association connects 'attackimpact_Node' and 'attackimpact_Model'. From 'attackimpact_Node', the role 'attackimpact_Node12' has cardinality 0..*, and from 'attackimpact_Model', the role 'attackimpact_Model' has cardinality 0..*.

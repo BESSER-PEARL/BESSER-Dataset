@@ -1,0 +1,29 @@
+The domain model 'relationalmm' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'relationalmm_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'relationalmm_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'relationalmm_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'relationalmm_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'relationalmm_Table' is a specialization of 'Named'.
+The class 'relationalmm_Column' is a specialization of 'Named'.
+The class 'relationalmm_Type' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'relationalmm_Table' and 'relationalmm_Column'. From 'relationalmm_Table', the role 'owner' has cardinality 0..*, and from 'relationalmm_Column', the role 'Column' has cardinality 0..*.
+An association connects 'relationalmm_Table' and 'relationalmm_Column'. From 'relationalmm_Table', the role 'relationalmm_Table' has cardinality 0..*, and from 'relationalmm_Column', the role 'relationalmm_Column' has cardinality 0..*.
+An association connects 'relationalmm_Type' and 'relationalmm_Column'. From 'relationalmm_Type', the role 'relationalmm_Type' has cardinality 0..*, and from 'relationalmm_Column', the role 'relationalmm_Column3' has cardinality 0..*.
+An association connects 'relationalmm_Column' and 'relationalmm_Table'. From 'relationalmm_Column', the role 'col' has cardinality 0..*, and from 'relationalmm_Table', the role 'Table' has cardinality 0..*.

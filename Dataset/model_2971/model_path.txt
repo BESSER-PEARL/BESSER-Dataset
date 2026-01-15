@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/org.eclipse.atl.reactive/tests/org.eclipse.m2m.atl.emftvm.tests/test-data/EcoreCopy/My2.ecore

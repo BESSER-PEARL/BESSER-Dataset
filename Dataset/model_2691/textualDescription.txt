@@ -1,0 +1,62 @@
+The domain model 'link' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'link_B' represents an important domain concept.
+It does not declare any attributes.
+
+'link_C' represents an important domain concept.
+It does not declare any attributes.
+
+'link_W' represents an important domain concept.
+It does not declare any attributes.
+
+'link_X' represents an important domain concept.
+It does not declare any attributes.
+
+'link_A' represents an important domain concept.
+It does not declare any attributes.
+
+'link_N99' represents an important domain concept.
+It does not declare any attributes.
+
+'link_D' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'link_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'link_K' represents an important domain concept.
+It does not declare any attributes.
+
+'link_M' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'link_A' is a specialization of 'Named'.
+The class 'link_B' is a specialization of 'Named'.
+The class 'link_C' is a specialization of 'Named'.
+The class 'link_X' is a specialization of 'Named'.
+The class 'link_W' is a specialization of 'Named'.
+The class 'link_K' is a specialization of 'Named'.
+The class 'link_M' is a specialization of 'Named'.
+The class 'link_N99' is a specialization of 'Named'.
+The class 'link_D' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'link_B' and 'link_A'. From 'link_B', the role 'link_B' has cardinality 0..*, and from 'link_A', the role 'link_A' has cardinality 0..*.
+An association connects 'link_C' and 'link_A'. From 'link_C', the role 'link_C' has cardinality 0..*, and from 'link_A', the role 'link_A2' has cardinality 0..*.
+An association connects 'link_A' and 'link_W'. From 'link_A', the role 'link_A4' has cardinality 0..*, and from 'link_W', the role 'link_W' has cardinality 0..*.
+An association connects 'link_M' and 'link_A'. From 'link_M', the role 'link_M' has cardinality 0..*, and from 'link_A', the role 'link_A6' has cardinality 0..*.
+An association connects 'link_N99' and 'link_A'. From 'link_N99', the role 'link_N99' has cardinality 0..*, and from 'link_A', the role 'link_A8' has cardinality 0..*.
+An association connects 'link_C' and 'link_B'. From 'link_C', the role 'link_C10' has cardinality 0..*, and from 'link_B', the role 'link_B11' has cardinality 0..*.
+An association connects 'link_D' and 'link_C'. From 'link_D', the role 'link_D' has cardinality 0..*, and from 'link_C', the role 'link_C13' has cardinality 0..*.
+An association connects 'link_A' and 'link_X'. From 'link_A', the role 'link_A15' has cardinality 0..*, and from 'link_X', the role 'link_X' has cardinality 0..*.
+An association connects 'link_K' and 'link_X'. From 'link_K', the role 'link_K' has cardinality 0..*, and from 'link_X', the role 'link_X17' has cardinality 0..*.
+An association connects 'link_W' and 'link_C'. From 'link_W', the role 'link_W19' has cardinality 0..*, and from 'link_C', the role 'link_C20' has cardinality 0..*.
+An association connects 'link_M' and 'link_K'. From 'link_M', the role 'link_M22' has cardinality 0..*, and from 'link_K', the role 'link_K23' has cardinality 0..*.
+An association connects 'link_M' and 'link_A'. From 'link_M', the role 'link_M25' has cardinality 0..*, and from 'link_A', the role 'link_A26' has cardinality 0..*.
+An association connects 'link_N99' and 'link_K'. From 'link_N99', the role 'link_N9928' has cardinality 0..*, and from 'link_K', the role 'link_K29' has cardinality 0..*.

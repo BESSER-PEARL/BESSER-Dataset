@@ -1,0 +1,93 @@
+The domain model 'rdbms' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'rdbms_UserDefinedDataType' represents an important domain concept.
+It has the following attributes: 'precision', which is of type int; 'length', which is of type int; 'defaultValue', which is of type str.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_CheckCon' represents an important domain concept.
+It has one attribute: 'checkCondition', which is of type str.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_PKeyAndUnique' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_Database' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_PrimaryKeyCon' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_Constraints' represents an important domain concept.
+It has the following attributes: 'deferred', which is of type str; 'deferrable', which is of type str.
+
+'PKeyAndUnique' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraints' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_ForeignKey' represents an important domain concept.
+It has the following attributes: 'inverseReferentialIntegrityCon', which is of type bool; 'deleteActionRHS', which is of type str; 'updateActionRHS', which is of type str; 'match', which is of type str.
+
+'rdbms_UniqueCon' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_Column' represents an important domain concept.
+It has the following attributes: 'default', which is of type str; 'precision', which is of type int; 'nullable', which is of type bool; 'length', which is of type int.
+
+'rdbms_ModelElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rdbms_SystemDataType' represents an important domain concept.
+It has the following attributes: 'predefinedLength', which is of type int; 'predefinedDecPlaces', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ReferencingType' defines the following possible values: 'FULL', 'DEFAULT', 'PARTIAL'.
+The enumeration 'DeferrableAct' defines the following possible values: 'NOT_DEFFERABLE', 'DEFFERABLE'.
+The enumeration 'DeferredAct' defines the following possible values: 'INITIALLY_IMMEDIATE', 'INITIALLY_DEFERRED'.
+The enumeration 'Action' defines the following possible values: 'NO_ACTION', 'SET_NULL', 'SET_DEFAULT', 'RESTRICT', 'CASCADE'.
+
+The model also captures inheritance relationships between classes.
+The class 'rdbms_Database' is a specialization of 'ModelElement'.
+The class 'rdbms_Table' is a specialization of 'ModelElement'.
+The class 'rdbms_Column' is a specialization of 'ModelElement'.
+The class 'rdbms_ForeignKey' is a specialization of 'Constraints'.
+The class 'rdbms_Constraints' is a specialization of 'ModelElement'.
+The class 'rdbms_CheckCon' is a specialization of 'Constraints'.
+The class 'rdbms_PKeyAndUnique' is a specialization of 'Constraints'.
+The class 'rdbms_PrimaryKeyCon' is a specialization of 'PKeyAndUnique'.
+The class 'rdbms_UniqueCon' is a specialization of 'PKeyAndUnique'.
+The class 'rdbms_SystemDataType' is a specialization of 'DataType'.
+The class 'rdbms_UserDefinedDataType' is a specialization of 'DataType'.
+The class 'rdbms_DataType' is a specialization of 'ModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rdbms_Database' and 'rdbms_UserDefinedDataType'. From 'rdbms_Database', the role 'rdbms_Database' has cardinality 0..*, and from 'rdbms_UserDefinedDataType', the role 'rdbms_UserDefinedDataType' has cardinality 0..*.
+An association connects 'rdbms_Table' and 'rdbms_Database'. From 'rdbms_Table', the role 'rdbms_Table' has cardinality 0..*, and from 'rdbms_Database', the role 'rdbms_Database2' has cardinality 0..*.
+An association connects 'rdbms_Database' and 'rdbms_SystemDataType'. From 'rdbms_Database', the role 'rdbms_Database4' has cardinality 0..*, and from 'rdbms_SystemDataType', the role 'rdbms_SystemDataType' has cardinality 0..*.
+An association connects 'rdbms_ForeignKey' and 'rdbms_Table'. From 'rdbms_ForeignKey', the role 'ForeignKey' has cardinality 0..*, and from 'rdbms_Table', the role 'FKTable' has cardinality 0..*.
+An association connects 'rdbms_PrimaryKeyCon' and 'rdbms_Table'. From 'rdbms_PrimaryKeyCon', the role 'rdbms_PrimaryKeyCon' has cardinality 0..*, and from 'rdbms_Table', the role 'rdbms_Table7' has cardinality 0..*.
+An association connects 'rdbms_Table' and 'rdbms_UniqueCon'. From 'rdbms_Table', the role 'rdbms_Table9' has cardinality 0..*, and from 'rdbms_UniqueCon', the role 'rdbms_UniqueCon' has cardinality 0..*.
+An association connects 'rdbms_Column' and 'rdbms_Table'. From 'rdbms_Column', the role 'rdbms_Column' has cardinality 0..*, and from 'rdbms_Table', the role 'rdbms_Table11' has cardinality 0..*.
+An association connects 'rdbms_CheckCon' and 'rdbms_Table'. From 'rdbms_CheckCon', the role 'rdbms_CheckCon' has cardinality 0..*, and from 'rdbms_Table', the role 'rdbms_Table13' has cardinality 0..*.
+An association connects 'rdbms_Column' and 'rdbms_PKeyAndUnique'. From 'rdbms_Column', the role 'rdbms_Column15' has cardinality 0..*, and from 'rdbms_PKeyAndUnique', the role 'rdbms_PKeyAndUnique' has cardinality 0..*.
+An association connects 'rdbms_ForeignKey' and 'rdbms_Column'. From 'rdbms_ForeignKey', the role 'rdbms_ForeignKey' has cardinality 0..*, and from 'rdbms_Column', the role 'rdbms_Column17' has cardinality 0..*.
+An association connects 'rdbms_Column' and 'rdbms_DataType'. From 'rdbms_Column', the role 'rdbms_Column19' has cardinality 0..*, and from 'rdbms_DataType', the role 'rdbms_DataType' has cardinality 0..*.
+An association connects 'rdbms_PKeyAndUnique' and 'rdbms_ForeignKey'. From 'rdbms_PKeyAndUnique', the role 'rdbms_PKeyAndUnique22' has cardinality 0..*, and from 'rdbms_ForeignKey', the role 'rdbms_ForeignKey21' has cardinality 0..*.
+An association connects 'rdbms_Column' and 'rdbms_ForeignKey'. From 'rdbms_Column', the role 'rdbms_Column25' has cardinality 0..*, and from 'rdbms_ForeignKey', the role 'rdbms_ForeignKey24' has cardinality 0..*.
+An association connects 'rdbms_Table' and 'rdbms_ForeignKey'. From 'rdbms_Table', the role 'rdbms_Table28' has cardinality 0..*, and from 'rdbms_ForeignKey', the role 'rdbms_ForeignKey27' has cardinality 0..*.
+An association connects 'rdbms_Table' and 'rdbms_ForeignKey'. From 'rdbms_Table', the role 'Table' has cardinality 0..*, and from 'rdbms_ForeignKey', the role 'tableFKs' has cardinality 0..*.
+An association connects 'rdbms_PKeyAndUnique' and 'rdbms_Column'. From 'rdbms_PKeyAndUnique', the role 'rdbms_PKeyAndUnique31' has cardinality 0..*, and from 'rdbms_Column', the role 'rdbms_Column32' has cardinality 0..*.
+An association connects 'rdbms_SystemDataType' and 'rdbms_UserDefinedDataType'. From 'rdbms_SystemDataType', the role 'rdbms_SystemDataType35' has cardinality 0..*, and from 'rdbms_UserDefinedDataType', the role 'rdbms_UserDefinedDataType34' has cardinality 0..*.

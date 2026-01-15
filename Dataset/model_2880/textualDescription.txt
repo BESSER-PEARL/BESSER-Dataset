@@ -1,0 +1,258 @@
+The domain model 'express' describes the core structural elements and their relationships within the system.
+
+The model defines 57 main class(es).
+
+'express_Function' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'express_TypeNameList' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'express_Rule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'express_AttributeVar' represents an important domain concept.
+It does not declare any attributes.
+
+'express_ReferenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'BuiltInType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_EscapeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'express_Assignment' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'express_Line' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'IndexTerminal' represents an important domain concept.
+It does not declare any attributes.
+
+'express_VarLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'express_Schema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'express_LocalVar' represents an important domain concept.
+It has one attribute: 'varname', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_SelectType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_GenericType' represents an important domain concept.
+It has one attribute: 'typelabel', which is of type str.
+
+'express_Intervall' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'express_UniqueRule' represents an important domain concept.
+It has the following attributes: 'attribute', which is of type str; 'name', which is of type str.
+
+'express_CollectionType' represents an important domain concept.
+It has the following attributes: 'lowerBound', which is of type int; 'upperBound', which is of type int; 'many', which is of type bool; 'unique', which is of type bool; 'name', which is of type str; 'opt', which is of type bool.
+
+'express_ConstantVal' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'express_BuiltInType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_WhereRule' represents an important domain concept.
+It has the following attributes: 'expression', which is of type str; 'name', which is of type str.
+
+'express_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'Index' represents an important domain concept.
+It does not declare any attributes.
+
+'express_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'VarOrAttrib' represents an important domain concept.
+It does not declare any attributes.
+
+'express_SequenceStatement' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'express_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_Reference' represents an important domain concept.
+It has the following attributes: 'qualifier', which is of type str; 'name', which is of type str; 'self', which is of type bool; 'optional', which is of type bool.
+
+'express_FunctionExpression' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'express_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'express_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_NumberType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_Attribute' represents an important domain concept.
+It has the following attributes: 'optional', which is of type bool; 'self', which is of type bool; 'expression', which is of type str; 'qualifier', which is of type str; 'name', which is of type str.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_ReturnStatement' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'express_StringType' represents an important domain concept.
+It has the following attributes: 'size', which is of type int; 'fixed', which is of type bool.
+
+'express_FormalParam' represents an important domain concept.
+It has one attribute: 'paramName', which is of type str.
+
+'express_IndexedVar' represents an important domain concept.
+It does not declare any attributes.
+
+'express_ParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'express_RepeatStatement' represents an important domain concept.
+It has the following attributes: 'idx', which is of type str; 'end', which is of type str; 'start', which is of type str.
+
+'express_RealType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_CaseStatement' represents an important domain concept.
+It has one attribute: 'variable', which is of type str.
+
+'express_SimpleVar' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'express_LogicalType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_BinaryType' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'express_IntLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'express_VarOrAttrib' represents an important domain concept.
+It does not declare any attributes.
+
+'express_ExpressConcept' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'express_Entity' represents an important domain concept.
+It has one attribute: 'abstract', which is of type bool.
+
+'express_EnumType' represents an important domain concept.
+It does not declare any attributes.
+
+'express_Index' represents an important domain concept.
+It does not declare any attributes.
+
+'express_CaseAction' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ExpressConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'express_LiteralType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'express_IndexTerminal' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'express_Type' is a specialization of 'ExpressConcept'.
+The class 'express_Entity' is a specialization of 'ExpressConcept'.
+The class 'express_BuiltInType' is a specialization of 'DataType'.
+The class 'express_ReferenceType' is a specialization of 'DataType'.
+The class 'express_GenericType' is a specialization of 'DataType'.
+The class 'express_CollectionType' is a specialization of 'DataType'.
+The class 'express_StringType' is a specialization of 'BuiltInType'.
+The class 'express_BinaryType' is a specialization of 'BuiltInType'.
+The class 'express_LogicalType' is a specialization of 'BuiltInType'.
+The class 'express_BooleanType' is a specialization of 'BuiltInType'.
+The class 'express_RealType' is a specialization of 'BuiltInType'.
+The class 'express_NumberType' is a specialization of 'BuiltInType'.
+The class 'express_IntegerType' is a specialization of 'BuiltInType'.
+The class 'express_EnumType' is a specialization of 'DataType'.
+The class 'express_SelectType' is a specialization of 'DataType'.
+The class 'express_SequenceStatement' is a specialization of 'Statement'.
+The class 'express_CaseStatement' is a specialization of 'Statement'.
+The class 'express_ReturnStatement' is a specialization of 'Statement'.
+The class 'express_EscapeStatement' is a specialization of 'Statement'.
+The class 'express_Assignment' is a specialization of 'Statement'.
+The class 'express_SimpleVar' is a specialization of 'VarOrAttrib'.
+The class 'express_IndexedVar' is a specialization of 'VarOrAttrib'.
+The class 'express_AttributeVar' is a specialization of 'VarOrAttrib'.
+The class 'express_IndexTerminal' is a specialization of 'Index'.
+The class 'express_IfStatement' is a specialization of 'Statement'.
+The class 'express_RepeatStatement' is a specialization of 'Statement'.
+The class 'express_VarLiteral' is a specialization of 'IndexTerminal'.
+The class 'express_IntLiteral' is a specialization of 'IndexTerminal'.
+
+Relationships between classes are modeled using associations.
+An association connects 'express_Type' and 'express_Schema'. From 'express_Type', the role 'express_Type' has cardinality 0..*, and from 'express_Schema', the role 'express_Schema' has cardinality 0..*.
+An association connects 'express_Entity' and 'express_Schema'. From 'express_Entity', the role 'express_Entity' has cardinality 0..*, and from 'express_Schema', the role 'express_Schema2' has cardinality 0..*.
+An association connects 'express_Schema' and 'express_Function'. From 'express_Schema', the role 'express_Schema4' has cardinality 0..*, and from 'express_Function', the role 'express_Function' has cardinality 0..*.
+An association connects 'express_Rule' and 'express_Schema'. From 'express_Rule', the role 'express_Rule' has cardinality 0..*, and from 'express_Schema', the role 'express_Schema6' has cardinality 0..*.
+An association connects 'express_WhereRule' and 'express_ExpressConcept'. From 'express_WhereRule', the role 'express_WhereRule' has cardinality 0..*, and from 'express_ExpressConcept', the role 'express_ExpressConcept' has cardinality 0..*.
+An association connects 'express_Type' and 'express_DataType'. From 'express_Type', the role 'express_Type9' has cardinality 0..*, and from 'express_DataType', the role 'express_DataType' has cardinality 0..*.
+An association connects 'express_Entity' and 'express_Entity'. From 'express_Entity', the role 'express_Entity10' has cardinality 0..*, and from 'express_Entity', the role 'express_Entity12' has cardinality 0..*.
+An association connects 'express_Entity' and 'express_Entity'. From 'express_Entity', the role 'express_Entity15' has cardinality 0..*, and from 'express_Entity', the role 'express_Entity13' has cardinality 0..*.
+An association connects 'express_Entity' and 'express_Entity'. From 'express_Entity', the role 'express_Entity16' has cardinality 0..*, and from 'express_Entity', the role 'express_Entity18' has cardinality 0..*.
+An association connects 'express_Entity' and 'express_Attribute'. From 'express_Entity', the role 'express_Entity20' has cardinality 0..*, and from 'express_Attribute', the role 'express_Attribute' has cardinality 0..*.
+An association connects 'express_Entity' and 'express_UniqueRule'. From 'express_Entity', the role 'express_Entity22' has cardinality 0..*, and from 'express_UniqueRule', the role 'express_UniqueRule' has cardinality 0..*.
+An association connects 'express_DataType' and 'express_Attribute'. From 'express_DataType', the role 'express_DataType25' has cardinality 0..*, and from 'express_Attribute', the role 'express_Attribute24' has cardinality 0..*.
+An association connects 'express_Attribute' and 'express_Attribute'. From 'express_Attribute', the role 'express_Attribute26' has cardinality 0..*, and from 'express_Attribute', the role 'express_Attribute28' has cardinality 0..*.
+An association connects 'express_Reference' and 'express_Entity'. From 'express_Reference', the role 'express_Reference' has cardinality 0..*, and from 'express_Entity', the role 'express_Entity30' has cardinality 0..*.
+An association connects 'express_TypeNameList' and 'express_Rule'. From 'express_TypeNameList', the role 'express_TypeNameList' has cardinality 0..*, and from 'express_Rule', the role 'express_Rule32' has cardinality 0..*.
+An association connects 'express_ConstantVal' and 'express_Rule'. From 'express_ConstantVal', the role 'express_ConstantVal' has cardinality 0..*, and from 'express_Rule', the role 'express_Rule34' has cardinality 0..*.
+An association connects 'express_Rule' and 'express_LocalVar'. From 'express_Rule', the role 'express_Rule36' has cardinality 0..*, and from 'express_LocalVar', the role 'express_LocalVar' has cardinality 0..*.
+An association connects 'express_Rule' and 'express_Statement'. From 'express_Rule', the role 'express_Rule38' has cardinality 0..*, and from 'express_Statement', the role 'express_Statement' has cardinality 0..*.
+An association connects 'express_Rule' and 'express_WhereRule'. From 'express_Rule', the role 'express_Rule40' has cardinality 0..*, and from 'express_WhereRule', the role 'express_WhereRule41' has cardinality 0..*.
+An association connects 'express_DataType' and 'express_ConstantVal'. From 'express_DataType', the role 'express_DataType44' has cardinality 0..*, and from 'express_ConstantVal', the role 'express_ConstantVal43' has cardinality 0..*.
+An association connects 'express_Line' and 'express_ConstantVal'. From 'express_Line', the role 'express_Line' has cardinality 0..*, and from 'express_ConstantVal', the role 'express_ConstantVal46' has cardinality 0..*.
+An association connects 'express_LocalVar' and 'express_DataType'. From 'express_LocalVar', the role 'express_LocalVar48' has cardinality 0..*, and from 'express_DataType', the role 'express_DataType49' has cardinality 0..*.
+An association connects 'express_LocalVar' and 'express_Line'. From 'express_LocalVar', the role 'express_LocalVar51' has cardinality 0..*, and from 'express_Line', the role 'express_Line52' has cardinality 0..*.
+An association connects 'express_FunctionExpression' and 'express_ParameterList'. From 'express_FunctionExpression', the role 'express_FunctionExpression' has cardinality 0..*, and from 'express_ParameterList', the role 'express_ParameterList' has cardinality 0..*.
+An association connects 'express_FunctionExpression' and 'express_DataType'. From 'express_FunctionExpression', the role 'express_FunctionExpression55' has cardinality 0..*, and from 'express_DataType', the role 'express_DataType56' has cardinality 0..*.
+An association connects 'express_FunctionExpression' and 'express_LocalVar'. From 'express_FunctionExpression', the role 'express_FunctionExpression58' has cardinality 0..*, and from 'express_LocalVar', the role 'express_LocalVar59' has cardinality 0..*.
+An association connects 'express_Statement' and 'express_FunctionExpression'. From 'express_Statement', the role 'express_Statement62' has cardinality 0..*, and from 'express_FunctionExpression', the role 'express_FunctionExpression61' has cardinality 0..*.
+An association connects 'express_Function' and 'express_ParameterList'. From 'express_Function', the role 'express_Function64' has cardinality 0..*, and from 'express_ParameterList', the role 'express_ParameterList65' has cardinality 0..*.
+An association connects 'express_DataType' and 'express_Function'. From 'express_DataType', the role 'express_DataType68' has cardinality 0..*, and from 'express_Function', the role 'express_Function67' has cardinality 0..*.
+An association connects 'express_Function' and 'express_ConstantVal'. From 'express_Function', the role 'express_Function70' has cardinality 0..*, and from 'express_ConstantVal', the role 'express_ConstantVal71' has cardinality 0..*.
+An association connects 'express_LocalVar' and 'express_Function'. From 'express_LocalVar', the role 'express_LocalVar74' has cardinality 0..*, and from 'express_Function', the role 'express_Function73' has cardinality 0..*.
+An association connects 'express_Function' and 'express_Statement'. From 'express_Function', the role 'express_Function76' has cardinality 0..*, and from 'express_Statement', the role 'express_Statement77' has cardinality 0..*.
+An association connects 'express_ParameterList' and 'express_FormalParam'. From 'express_ParameterList', the role 'express_ParameterList79' has cardinality 0..*, and from 'express_FormalParam', the role 'express_FormalParam' has cardinality 0..*.
+An association connects 'express_FormalParam' and 'express_DataType'. From 'express_FormalParam', the role 'express_FormalParam81' has cardinality 0..*, and from 'express_DataType', the role 'express_DataType82' has cardinality 0..*.
+An association connects 'express_WhereRule' and 'express_Intervall'. From 'express_WhereRule', the role 'express_WhereRule84' has cardinality 0..*, and from 'express_Intervall', the role 'express_Intervall' has cardinality 0..*.
+An association connects 'express_ReferenceType' and 'express_ExpressConcept'. From 'express_ReferenceType', the role 'express_ReferenceType' has cardinality 0..*, and from 'express_ExpressConcept', the role 'express_ExpressConcept86' has cardinality 0..*.
+An association connects 'express_Attribute' and 'express_CollectionType'. From 'express_Attribute', the role 'express_Attribute88' has cardinality 0..*, and from 'express_CollectionType', the role 'express_CollectionType' has cardinality 0..*.
+An association connects 'express_Attribute' and 'express_CollectionType'. From 'express_Attribute', the role 'express_Attribute91' has cardinality 0..*, and from 'express_CollectionType', the role 'express_CollectionType90' has cardinality 0..*.
+An association connects 'express_CollectionType' and 'express_DataType'. From 'express_CollectionType', the role 'express_CollectionType93' has cardinality 0..*, and from 'express_DataType', the role 'express_DataType94' has cardinality 0..*.
+An association connects 'express_EnumType' and 'express_LiteralType'. From 'express_EnumType', the role 'express_EnumType' has cardinality 0..*, and from 'express_LiteralType', the role 'express_LiteralType' has cardinality 0..*.
+An association connects 'express_SelectType' and 'express_ExpressConcept'. From 'express_SelectType', the role 'express_SelectType' has cardinality 0..*, and from 'express_ExpressConcept', the role 'express_ExpressConcept97' has cardinality 0..*.
+An association connects 'express_CaseStatement' and 'express_CaseAction'. From 'express_CaseStatement', the role 'express_CaseStatement' has cardinality 0..*, and from 'express_CaseAction', the role 'express_CaseAction' has cardinality 0..*.
+An association connects 'express_Statement' and 'express_CaseStatement'. From 'express_Statement', the role 'express_Statement101' has cardinality 0..*, and from 'express_CaseStatement', the role 'express_CaseStatement100' has cardinality 0..*.
+An association connects 'express_Statement' and 'express_CaseAction'. From 'express_Statement', the role 'express_Statement104' has cardinality 0..*, and from 'express_CaseAction', the role 'express_CaseAction103' has cardinality 0..*.
+An association connects 'express_Assignment' and 'express_VarOrAttrib'. From 'express_Assignment', the role 'express_Assignment' has cardinality 0..*, and from 'express_VarOrAttrib', the role 'express_VarOrAttrib' has cardinality 0..*.
+An association connects 'express_SimpleVar' and 'express_IndexedVar'. From 'express_SimpleVar', the role 'express_SimpleVar' has cardinality 0..*, and from 'express_IndexedVar', the role 'express_IndexedVar' has cardinality 0..*.
+An association connects 'express_Index' and 'express_IndexedVar'. From 'express_Index', the role 'express_Index' has cardinality 0..*, and from 'express_IndexedVar', the role 'express_IndexedVar108' has cardinality 0..*.
+An association connects 'express_VarOrAttrib' and 'express_AttributeVar'. From 'express_VarOrAttrib', the role 'express_VarOrAttrib110' has cardinality 0..*, and from 'express_AttributeVar', the role 'express_AttributeVar' has cardinality 0..*.
+An association connects 'express_IfStatement' and 'express_Line'. From 'express_IfStatement', the role 'express_IfStatement' has cardinality 0..*, and from 'express_Line', the role 'express_Line112' has cardinality 0..*.
+An association connects 'express_Statement' and 'express_IfStatement'. From 'express_Statement', the role 'express_Statement115' has cardinality 0..*, and from 'express_IfStatement', the role 'express_IfStatement114' has cardinality 0..*.
+An association connects 'express_IfStatement' and 'express_Statement'. From 'express_IfStatement', the role 'express_IfStatement117' has cardinality 0..*, and from 'express_Statement', the role 'express_Statement118' has cardinality 0..*.
+An association connects 'express_Statement' and 'express_RepeatStatement'. From 'express_Statement', the role 'express_Statement120' has cardinality 0..*, and from 'express_RepeatStatement', the role 'express_RepeatStatement' has cardinality 0..*.

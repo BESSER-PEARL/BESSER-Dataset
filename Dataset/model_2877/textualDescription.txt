@@ -1,0 +1,82 @@
+The domain model 'parameterizedExpressionsTestLanguage' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'parameterizedExpressionsTestLanguage_IndexedAccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'parameterizedExpressionsTestLanguage_FunctionDeclaration' represents an important domain concept.
+It has the following attributes: 'generator', which is of type bool; 'name', which is of type str.
+
+'parameterizedExpressionsTestLanguage_YieldExpression' represents an important domain concept.
+It has one attribute: 'many', which is of type bool.
+
+'parameterizedExpressionsTestLanguage_IdentifierRef' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'parameterizedExpressionsTestLanguage_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'parameterizedExpressionsTestLanguage_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'parameterizedExpressionsTestLanguage_AssignmentExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'parameterizedExpressionsTestLanguage_RelationalExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'parameterizedExpressionsTestLanguage_LabelledStatement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'parameterizedExpressionsTestLanguage_ShiftExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'parameterizedExpressionsTestLanguage_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'parameterizedExpressionsTestLanguage_CommaExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'parameterizedExpressionsTestLanguage_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'parameterizedExpressionsTestLanguage_ParameterizedPropertyAccessExpression' represents an important domain concept.
+It has one attribute: 'property', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'parameterizedExpressionsTestLanguage_FunctionDeclaration' is a specialization of 'Statement'.
+The class 'parameterizedExpressionsTestLanguage_Block' is a specialization of 'Statement'.
+The class 'parameterizedExpressionsTestLanguage_ExpressionStatement' is a specialization of 'Statement'.
+The class 'parameterizedExpressionsTestLanguage_LabelledStatement' is a specialization of 'Statement'.
+The class 'parameterizedExpressionsTestLanguage_IdentifierRef' is a specialization of 'Expression'.
+The class 'parameterizedExpressionsTestLanguage_IndexedAccessExpression' is a specialization of 'Expression'.
+The class 'parameterizedExpressionsTestLanguage_ParameterizedPropertyAccessExpression' is a specialization of 'Expression'.
+The class 'parameterizedExpressionsTestLanguage_ShiftExpression' is a specialization of 'Expression'.
+The class 'parameterizedExpressionsTestLanguage_RelationalExpression' is a specialization of 'Expression'.
+The class 'parameterizedExpressionsTestLanguage_AssignmentExpression' is a specialization of 'Expression'.
+The class 'parameterizedExpressionsTestLanguage_YieldExpression' is a specialization of 'Expression'.
+The class 'parameterizedExpressionsTestLanguage_CommaExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'parameterizedExpressionsTestLanguage_FunctionDeclaration' and 'parameterizedExpressionsTestLanguage_Block'. From 'parameterizedExpressionsTestLanguage_FunctionDeclaration', the role 'parameterizedExpressionsTestLanguage_FunctionDeclaration' has cardinality 0..*, and from 'parameterizedExpressionsTestLanguage_Block', the role 'parameterizedExpressionsTestLanguage_Block' has cardinality 0..*.
+An association connects 'parameterizedExpressionsTestLanguage_Statement' and 'parameterizedExpressionsTestLanguage_Block'. From 'parameterizedExpressionsTestLanguage_Statement', the role 'parameterizedExpressionsTestLanguage_Statement' has cardinality 0..*, and from 'parameterizedExpressionsTestLanguage_Block', the role 'parameterizedExpressionsTestLanguage_Block2' has cardinality 0..*.
+An association connects 'parameterizedExpressionsTestLanguage_ExpressionStatement' and 'parameterizedExpressionsTestLanguage_Expression'. From 'parameterizedExpressionsTestLanguage_ExpressionStatement', the role 'parameterizedExpressionsTestLanguage_ExpressionStatement' has cardinality 0..*, and from 'parameterizedExpressionsTestLanguage_Expression', the role 'parameterizedExpressionsTestLanguage_Expression' has cardinality 0..*.
+An association connects 'parameterizedExpressionsTestLanguage_LabelledStatement' and 'parameterizedExpressionsTestLanguage_Statement'. From 'parameterizedExpressionsTestLanguage_LabelledStatement', the role 'parameterizedExpressionsTestLanguage_LabelledStatement' has cardinality 0..*, and from 'parameterizedExpressionsTestLanguage_Statement', the role 'parameterizedExpressionsTestLanguage_Statement5' has cardinality 0..*.
+An association connects 'parameterizedExpressionsTestLanguage_Expression' and 'parameterizedExpressionsTestLanguage_IndexedAccessExpression'. From 'parameterizedExpressionsTestLanguage_Expression', the role 'parameterizedExpressionsTestLanguage_Expression7' has cardinality 0..*, and from 'parameterizedExpressionsTestLanguage_IndexedAccessExpression', the role 'parameterizedExpressionsTestLanguage_IndexedAccessExpression' has cardinality 0..*.
+An association connects 'parameterizedExpressionsTestLanguage_Expression' and 'parameterizedExpressionsTestLanguage_IndexedAccessExpression'. From 'parameterizedExpressionsTestLanguage_Expression', the role 'parameterizedExpressionsTestLanguage_Expression10' has cardinality 0..*, and from 'parameterizedExpressionsTestLanguage_IndexedAccessExpression', the role 'parameterizedExpressionsTestLanguage_IndexedAccessExpression9' has cardinality 0..*.
+An association connects 'parameterizedExpressionsTestLanguage_ParameterizedPropertyAccessExpression' and 'parameterizedExpressionsTestLanguage_Expression'. From 'parameterizedExpressionsTestLanguage_ParameterizedPropertyAccessExpression', the role 'parameterizedExpressionsTestLanguage_ParameterizedPropertyAccessExpression' has cardinality 0..*, and from 'parameterizedExpressionsTestLanguage_Expression', the role 'parameterizedExpressionsTestLanguage_Expression12' has cardinality 0..*.
+An association connects 'parameterizedExpressionsTestLanguage_Expression' and 'parameterizedExpressionsTestLanguage_ShiftExpression'. From 'parameterizedExpressionsTestLanguage_Expression', the role 'parameterizedExpressionsTestLanguage_Expression14' has cardinality 0..*, and from 'parameterizedExpressionsTestLanguage_ShiftExpression', the role 'parameterizedExpressionsTestLanguage_ShiftExpression' has cardinality 0..*.
+An association connects 'parameterizedExpressionsTestLanguage_Expression' and 'parameterizedExpressionsTestLanguage_ShiftExpression'. From 'parameterizedExpressionsTestLanguage_Expression', the role 'parameterizedExpressionsTestLanguage_Expression17' has cardinality 0..*, and from 'parameterizedExpressionsTestLanguage_ShiftExpression', the role 'parameterizedExpressionsTestLanguage_ShiftExpression16' has cardinality 0..*.
+An association connects 'parameterizedExpressionsTestLanguage_Expression' and 'parameterizedExpressionsTestLanguage_RelationalExpression'. From 'parameterizedExpressionsTestLanguage_Expression', the role 'parameterizedExpressionsTestLanguage_Expression19' has cardinality 0..*, and from 'parameterizedExpressionsTestLanguage_RelationalExpression', the role 'parameterizedExpressionsTestLanguage_RelationalExpression' has cardinality 0..*.
+An association connects 'parameterizedExpressionsTestLanguage_Expression' and 'parameterizedExpressionsTestLanguage_RelationalExpression'. From 'parameterizedExpressionsTestLanguage_Expression', the role 'parameterizedExpressionsTestLanguage_Expression22' has cardinality 0..*, and from 'parameterizedExpressionsTestLanguage_RelationalExpression', the role 'parameterizedExpressionsTestLanguage_RelationalExpression21' has cardinality 0..*.
+An association connects 'parameterizedExpressionsTestLanguage_AssignmentExpression' and 'parameterizedExpressionsTestLanguage_Expression'. From 'parameterizedExpressionsTestLanguage_AssignmentExpression', the role 'parameterizedExpressionsTestLanguage_AssignmentExpression' has cardinality 0..*, and from 'parameterizedExpressionsTestLanguage_Expression', the role 'parameterizedExpressionsTestLanguage_Expression24' has cardinality 0..*.
+An association connects 'parameterizedExpressionsTestLanguage_Expression' and 'parameterizedExpressionsTestLanguage_AssignmentExpression'. From 'parameterizedExpressionsTestLanguage_Expression', the role 'parameterizedExpressionsTestLanguage_Expression27' has cardinality 0..*, and from 'parameterizedExpressionsTestLanguage_AssignmentExpression', the role 'parameterizedExpressionsTestLanguage_AssignmentExpression26' has cardinality 0..*.
+An association connects 'parameterizedExpressionsTestLanguage_Expression' and 'parameterizedExpressionsTestLanguage_YieldExpression'. From 'parameterizedExpressionsTestLanguage_Expression', the role 'parameterizedExpressionsTestLanguage_Expression29' has cardinality 0..*, and from 'parameterizedExpressionsTestLanguage_YieldExpression', the role 'parameterizedExpressionsTestLanguage_YieldExpression' has cardinality 0..*.
+An association connects 'parameterizedExpressionsTestLanguage_Expression' and 'parameterizedExpressionsTestLanguage_CommaExpression'. From 'parameterizedExpressionsTestLanguage_Expression', the role 'parameterizedExpressionsTestLanguage_Expression31' has cardinality 0..*, and from 'parameterizedExpressionsTestLanguage_CommaExpression', the role 'parameterizedExpressionsTestLanguage_CommaExpression' has cardinality 0..*.

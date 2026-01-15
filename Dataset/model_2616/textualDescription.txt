@@ -1,0 +1,69 @@
+The domain model 'Freemind' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'Freemind_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Freemind_ParametersType' represents an important domain concept.
+It has one attribute: 'RemindUserAt', which is of type str.
+
+'Freemind_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'Freemind_MapType' represents an important domain concept.
+It has one attribute: 'version', which is of type str.
+
+'Freemind_EdgeType' represents an important domain concept.
+It has the following attributes: 'Color', which is of type str; 'Style', which is of type str; 'Width', which is of type str.
+
+'Freemind_NodeType' represents an important domain concept.
+It has the following attributes: 'Created', which is of type str; 'Folded', which is of type str; 'Modified', which is of type str; 'Text', which is of type str; 'Position', which is of type str; 'BackgroundColor', which is of type str; 'Vgap', which is of type str; 'Vshift', which is of type str; 'Style', which is of type str; 'Color', which is of type str; 'Link', which is of type str; 'EncryptedContent', which is of type str; 'group', which is of type str; 'Hgap', which is of type str; 'Id', which is of type str.
+
+'Freemind_ArrowlinkType' represents an important domain concept.
+It has the following attributes: 'StartArrow', which is of type str; 'Color', which is of type str; 'Id', which is of type str; 'StartInclination', which is of type str; 'EndArrow', which is of type str; 'EndInclination', which is of type str; 'Destination', which is of type str.
+
+'Freemind_HookType' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'Freemind_FontType' represents an important domain concept.
+It has the following attributes: 'Bold', which is of type str; 'Italic', which is of type str; 'Size', which is of type str; 'Name', which is of type str.
+
+'Freemind_IconType' represents an important domain concept.
+It has one attribute: 'Builtin', which is of type str.
+
+'Freemind_CloudType' represents an important domain concept.
+It has one attribute: 'Color', which is of type str.
+
+'Freemind_TextType' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BOLDType' defines a single possible value: 'true'.
+The enumeration 'FOLDEDType' defines the following possible values: 'true', 'false'.
+The enumeration 'ITALICType' defines the following possible values: 'false', 'true'.
+The enumeration 'POSITIONType' defines the following possible values: 'right', 'left'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Freemind_DocumentRoot' and 'Freemind_EStringToStringMapEntry'. From 'Freemind_DocumentRoot', the role 'Freemind_DocumentRoot' has cardinality 0..*, and from 'Freemind_EStringToStringMapEntry', the role 'Freemind_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'Freemind_EStringToStringMapEntry' and 'Freemind_DocumentRoot'. From 'Freemind_EStringToStringMapEntry', the role 'Freemind_EStringToStringMapEntry3' has cardinality 0..*, and from 'Freemind_DocumentRoot', the role 'Freemind_DocumentRoot2' has cardinality 0..*.
+An association connects 'Freemind_DocumentRoot' and 'Freemind_ArrowlinkType'. From 'Freemind_DocumentRoot', the role 'Freemind_DocumentRoot5' has cardinality 0..*, and from 'Freemind_ArrowlinkType', the role 'Freemind_ArrowlinkType' has cardinality 0..*.
+An association connects 'Freemind_DocumentRoot' and 'Freemind_CloudType'. From 'Freemind_DocumentRoot', the role 'Freemind_DocumentRoot7' has cardinality 0..*, and from 'Freemind_CloudType', the role 'Freemind_CloudType' has cardinality 0..*.
+An association connects 'Freemind_DocumentRoot' and 'Freemind_EdgeType'. From 'Freemind_DocumentRoot', the role 'Freemind_DocumentRoot9' has cardinality 0..*, and from 'Freemind_EdgeType', the role 'Freemind_EdgeType' has cardinality 0..*.
+An association connects 'Freemind_FontType' and 'Freemind_DocumentRoot'. From 'Freemind_FontType', the role 'Freemind_FontType' has cardinality 0..*, and from 'Freemind_DocumentRoot', the role 'Freemind_DocumentRoot11' has cardinality 0..*.
+An association connects 'Freemind_DocumentRoot' and 'Freemind_HookType'. From 'Freemind_DocumentRoot', the role 'Freemind_DocumentRoot13' has cardinality 0..*, and from 'Freemind_HookType', the role 'Freemind_HookType' has cardinality 0..*.
+An association connects 'Freemind_DocumentRoot' and 'Freemind_IconType'. From 'Freemind_DocumentRoot', the role 'Freemind_DocumentRoot15' has cardinality 0..*, and from 'Freemind_IconType', the role 'Freemind_IconType' has cardinality 0..*.
+An association connects 'Freemind_DocumentRoot' and 'Freemind_MapType'. From 'Freemind_DocumentRoot', the role 'Freemind_DocumentRoot17' has cardinality 0..*, and from 'Freemind_MapType', the role 'Freemind_MapType' has cardinality 0..*.
+An association connects 'Freemind_NodeType' and 'Freemind_DocumentRoot'. From 'Freemind_NodeType', the role 'Freemind_NodeType' has cardinality 0..*, and from 'Freemind_DocumentRoot', the role 'Freemind_DocumentRoot19' has cardinality 0..*.
+An association connects 'Freemind_DocumentRoot' and 'Freemind_ParametersType'. From 'Freemind_DocumentRoot', the role 'Freemind_DocumentRoot21' has cardinality 0..*, and from 'Freemind_ParametersType', the role 'Freemind_ParametersType' has cardinality 0..*.
+An association connects 'Freemind_TextType' and 'Freemind_DocumentRoot'. From 'Freemind_TextType', the role 'Freemind_TextType' has cardinality 0..*, and from 'Freemind_DocumentRoot', the role 'Freemind_DocumentRoot23' has cardinality 0..*.
+An association connects 'Freemind_HookType' and 'Freemind_ParametersType'. From 'Freemind_HookType', the role 'Freemind_HookType25' has cardinality 0..*, and from 'Freemind_ParametersType', the role 'Freemind_ParametersType26' has cardinality 0..*.
+An association connects 'Freemind_TextType' and 'Freemind_HookType'. From 'Freemind_TextType', the role 'Freemind_TextType29' has cardinality 0..*, and from 'Freemind_HookType', the role 'Freemind_HookType28' has cardinality 0..*.
+An association connects 'Freemind_MapType' and 'Freemind_NodeType'. From 'Freemind_MapType', the role 'Freemind_MapType31' has cardinality 0..*, and from 'Freemind_NodeType', the role 'Freemind_NodeType32' has cardinality 0..*.
+An association connects 'Freemind_ArrowlinkType' and 'Freemind_NodeType'. From 'Freemind_ArrowlinkType', the role 'Freemind_ArrowlinkType35' has cardinality 0..*, and from 'Freemind_NodeType', the role 'Freemind_NodeType34' has cardinality 0..*.
+An association connects 'Freemind_CloudType' and 'Freemind_NodeType'. From 'Freemind_CloudType', the role 'Freemind_CloudType38' has cardinality 0..*, and from 'Freemind_NodeType', the role 'Freemind_NodeType37' has cardinality 0..*.
+An association connects 'Freemind_EdgeType' and 'Freemind_NodeType'. From 'Freemind_EdgeType', the role 'Freemind_EdgeType41' has cardinality 0..*, and from 'Freemind_NodeType', the role 'Freemind_NodeType40' has cardinality 0..*.
+An association connects 'Freemind_NodeType' and 'Freemind_FontType'. From 'Freemind_NodeType', the role 'Freemind_NodeType43' has cardinality 0..*, and from 'Freemind_FontType', the role 'Freemind_FontType44' has cardinality 0..*.
+An association connects 'Freemind_NodeType' and 'Freemind_HookType'. From 'Freemind_NodeType', the role 'Freemind_NodeType46' has cardinality 0..*, and from 'Freemind_HookType', the role 'Freemind_HookType47' has cardinality 0..*.
+An association connects 'Freemind_NodeType' and 'Freemind_IconType'. From 'Freemind_NodeType', the role 'Freemind_NodeType49' has cardinality 0..*, and from 'Freemind_IconType', the role 'Freemind_IconType50' has cardinality 0..*.
+An association connects 'Freemind_NodeType' and 'Freemind_NodeType'. From 'Freemind_NodeType', the role 'Freemind_NodeType53' has cardinality 0..*, and from 'Freemind_NodeType', the role 'Freemind_NodeType51' has cardinality 0..*.

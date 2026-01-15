@@ -1,0 +1,55 @@
+The domain model 'wiki' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'wiki_Node' represents an important domain concept.
+It has the following attributes: 'node_namespace', which is of type int; 'type', which is of type str; 'title', which is of type str; 'visits', which is of type int; 'editions', which is of type int; 'node_id', which is of type int.
+
+'wiki_ClassificationGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'wiki_Revision' represents an important domain concept.
+It has the following attributes: 'user', which is of type str; 'text_id', which is of type int; 'date', which is of type str.
+
+'wiki_IndexGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'wiki_Wiki' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'wiki_CategoryGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'wiki_Graph' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'wiki_Edge' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'wiki_ArticleGraph' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'wiki_IndexGraph' is a specialization of 'Graph'.
+The class 'wiki_CategoryGraph' is a specialization of 'Graph'.
+The class 'wiki_ArticleGraph' is a specialization of 'Graph'.
+The class 'wiki_ClassificationGraph' is a specialization of 'Graph'.
+
+Relationships between classes are modeled using associations.
+An association connects 'wiki_Wiki' and 'wiki_IndexGraph'. From 'wiki_Wiki', the role 'wiki_Wiki' has cardinality 0..*, and from 'wiki_IndexGraph', the role 'wiki_IndexGraph' has cardinality 0..*.
+An association connects 'wiki_CategoryGraph' and 'wiki_Wiki'. From 'wiki_CategoryGraph', the role 'wiki_CategoryGraph' has cardinality 0..*, and from 'wiki_Wiki', the role 'wiki_Wiki2' has cardinality 0..*.
+An association connects 'wiki_ArticleGraph' and 'wiki_Wiki'. From 'wiki_ArticleGraph', the role 'wiki_ArticleGraph' has cardinality 0..*, and from 'wiki_Wiki', the role 'wiki_Wiki4' has cardinality 0..*.
+An association connects 'wiki_ClassificationGraph' and 'wiki_Wiki'. From 'wiki_ClassificationGraph', the role 'wiki_ClassificationGraph' has cardinality 0..*, and from 'wiki_Wiki', the role 'wiki_Wiki6' has cardinality 0..*.
+An association connects 'wiki_Wiki' and 'wiki_Node'. From 'wiki_Wiki', the role 'wiki_Wiki8' has cardinality 0..*, and from 'wiki_Node', the role 'wiki_Node' has cardinality 0..*.
+An association connects 'wiki_Wiki' and 'wiki_Edge'. From 'wiki_Wiki', the role 'wiki_Wiki10' has cardinality 0..*, and from 'wiki_Edge', the role 'wiki_Edge' has cardinality 0..*.
+An association connects 'wiki_Revision' and 'wiki_Wiki'. From 'wiki_Revision', the role 'wiki_Revision' has cardinality 0..*, and from 'wiki_Wiki', the role 'wiki_Wiki12' has cardinality 0..*.
+An association connects 'wiki_Graph' and 'wiki_Node'. From 'wiki_Graph', the role 'wiki_Graph' has cardinality 0..*, and from 'wiki_Node', the role 'wiki_Node14' has cardinality 0..*.
+An association connects 'wiki_Edge' and 'wiki_Graph'. From 'wiki_Edge', the role 'wiki_Edge17' has cardinality 0..*, and from 'wiki_Graph', the role 'wiki_Graph16' has cardinality 0..*.
+An association connects 'wiki_Revision' and 'wiki_Node'. From 'wiki_Revision', the role 'wiki_Revision20' has cardinality 0..*, and from 'wiki_Node', the role 'wiki_Node19' has cardinality 0..*.
+An association connects 'wiki_Revision' and 'wiki_Node'. From 'wiki_Revision', the role 'Revision' has cardinality 0..*, and from 'wiki_Node', the role 'node' has cardinality 0..*.
+An association connects 'wiki_Node' and 'wiki_Revision'. From 'wiki_Node', the role 'Node' has cardinality 0..*, and from 'wiki_Revision', the role 'revisions' has cardinality 0..*.
+An association connects 'wiki_Node' and 'wiki_Edge'. From 'wiki_Node', the role 'wiki_Node25' has cardinality 0..*, and from 'wiki_Edge', the role 'wiki_Edge24' has cardinality 0..*.
+An association connects 'wiki_Node' and 'wiki_Edge'. From 'wiki_Node', the role 'wiki_Node28' has cardinality 0..*, and from 'wiki_Edge', the role 'wiki_Edge27' has cardinality 0..*.

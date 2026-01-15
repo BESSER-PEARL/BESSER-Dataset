@@ -1,0 +1,768 @@
+The domain model 'website' describes the core structural elements and their relationships within the system.
+
+The model defines 159 main class(es).
+
+'website_EnumerationType' represents an important domain concept.
+It does not declare any attributes.
+
+'website_ThumbnailFilter' represents an important domain concept.
+It has the following attributes: 'height', which is of type int; 'width', which is of type int.
+
+'website_LoginUnit' represents an important domain concept.
+It has the following attributes: 'styleClass', which is of type str; 'logoutUriElement', which is of type str.
+
+'website_ImageManipulation' represents an important domain concept.
+It has one attribute: 'jpegQuality', which is of type int.
+
+'website_AssociationReference' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'website_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'website_ModelLabelFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'website_ImageAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'website_SelectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'website_EncapsulatedAssociation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isSourceAssociation', which is of type bool; 'cardinality', which is of type str.
+
+'website_Selection' represents an important domain concept.
+It has the following attributes: 'selected', which is of type bool; 'distinct', which is of type bool; 'limit', which is of type int.
+
+'InterfaceField' represents an important domain concept.
+It does not declare any attributes.
+
+'website_IndexUnit' represents an important domain concept.
+It has the following attributes: 'styleClass', which is of type str; 'rowClasses', which is of type str; 'omitColumnLabels', which is of type bool; 'displayOption', which is of type str; 'contentClass', which is of type str.
+
+'UnitField' represents an important domain concept.
+It does not declare any attributes.
+
+'website_DetailsUnit' represents an important domain concept.
+It has the following attributes: 'omitFieldLabels', which is of type bool; 'onlyDisplayWhenNotEmpty', which is of type bool; 'styleClass', which is of type str; 'contentClass', which is of type str.
+
+'website_DynamicUnit' represents an important domain concept.
+It has the following attributes: 'footer', which is of type str; 'header', which is of type str; 'footerClass', which is of type str; 'controlClass', which is of type str; 'errorClass', which is of type str; 'headerClass', which is of type str.
+
+'website_EntityFeature' represents an important domain concept.
+It has the following attributes: 'singletonName', which is of type str; 'unique', which is of type bool; 'columnName', which is of type str; 'booleanIsHasChoice', which is of type str; 'pluralisedName', which is of type str; 'ordered', which is of type bool; 'cardinality', which is of type str.
+
+'website_InterfaceField' represents an important domain concept.
+It has the following attributes: 'required', which is of type bool; 'defaultValue', which is of type str; 'inputClass', which is of type str; 'validationPattern', which is of type str; 'placeholder', which is of type str.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'website_AssociationWithoutContainment' represents an important domain concept.
+It has the following attributes: 'targetCardinality', which is of type str; 'targetUnique', which is of type bool.
+
+'website_DatePathElement' represents an important domain concept.
+It has one attribute: 'format', which is of type str.
+
+'website_EditStaticTextMenuEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EntityFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'website_SingletonUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'website_ForgottenPasswordUnit' represents an important domain concept.
+It has one attribute: 'styleClass', which is of type str.
+
+'website_ControlUnit' represents an important domain concept.
+It has the following attributes: 'cancelLabel', which is of type str; 'submitLabel', which is of type str; 'contentClass', which is of type str.
+
+'website_LocationAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedDisplayElement' represents an important domain concept.
+It does not declare any attributes.
+
+'website_MapUnit' represents an important domain concept.
+It has the following attributes: 'defaultZoomLevel', which is of type int; 'readOnly', which is of type bool; 'styleClass', which is of type str.
+
+'website_AuthenticationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'website_CasAuthentication' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'website_ImageUnit' represents an important domain concept.
+It has the following attributes: 'missingImagePath', which is of type str; 'transitionTime', which is of type int; 'showTime', which is of type int.
+
+'website_DateAttribute' represents an important domain concept.
+It has the following attributes: 'format', which is of type str; 'details', which is of type str.
+
+'AuthenticationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'website_ParameterReference' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'website_UnitFeature' represents an important domain concept.
+It has the following attributes: 'required', which is of type bool; 'footerClass', which is of type str; 'footer', which is of type str; 'headerClass', which is of type str; 'displayClass', which is of type str; 'nullDisplayValue', which is of type str; 'autofocus', which is of type bool; 'inputClass', which is of type str; 'onlyDisplayWhenNotEmpty', which is of type bool; 'displayLabel', which is of type str.
+
+'website_DataTypeAttribute' represents an important domain concept.
+It has the following attributes: 'encrypt', which is of type bool; 'obfuscateFormFields', which is of type bool; 'caseInsensitive', which is of type bool.
+
+'website_LocalAuthenticationSystem' represents an important domain concept.
+It has the following attributes: 'allowRememberMe', which is of type bool; 'trackLoginAttempts', which is of type bool; 'sendWelcomeEmail', which is of type bool; 'useEmailActivation', which is of type bool; 'authenticationKey', which is of type str; 'allowSelfRegistration', which is of type bool; 'useCaptcha', which is of type bool.
+
+'AssociationReference' represents an important domain concept.
+It does not declare any attributes.
+
+'website_FeaturePath' represents an important domain concept.
+It does not declare any attributes.
+
+'Authentication' represents an important domain concept.
+It does not declare any attributes.
+
+'website_EntityOrView' represents an important domain concept.
+It has the following attributes: 'autoKeyName', which is of type str; 'serializationExcludeAll', which is of type bool; 'tableName', which is of type str; 'implementsUserInterface', which is of type bool; 'autoKeyPersistentType', which is of type str; 'autoKeyGenerationStrategy', which is of type str; 'singletonName', which is of type str; 'pluralisedName', which is of type str.
+
+'EntityOrView' represents an important domain concept.
+It does not declare any attributes.
+
+'website_EncapsulatedAttribute' represents an important domain concept.
+It has the following attributes: 'cardinality', which is of type str; 'name', which is of type str.
+
+'website_FilterParameter' represents an important domain concept.
+It has the following attributes: 'placeholder', which is of type str; 'defaultValue', which is of type str.
+
+'website_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'SelectableUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'website_Menu' represents an important domain concept.
+It has the following attributes: 'styleClass', which is of type str; 'captionClass', which is of type str; 'omitCaption', which is of type bool; 'layoutClass', which is of type str.
+
+'website_Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'website_UpdateUnit' represents an important domain concept.
+It has one attribute: 'styleClass', which is of type str.
+
+'website_UrlAttribute' represents an important domain concept.
+It has one attribute: 'displayValue', which is of type str.
+
+'website_InlineAction' represents an important domain concept.
+It has the following attributes: 'requiresRole', which is of type str; 'disable', which is of type bool; 'footer', which is of type str; 'footerClass', which is of type str; 'header', which is of type str; 'headerClass', which is of type str.
+
+'website_AssociationKey' represents an important domain concept.
+It has one attribute: 'targetColumnName', which is of type str.
+
+'website_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EncapsulatedFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'website_CreateSitemapUnit' represents an important domain concept.
+It has the following attributes: 'filename', which is of type str; 'styleClass', which is of type str; 'contentClass', which is of type str; 'deployedURL', which is of type str.
+
+'website_Page' represents an important domain concept.
+It has the following attributes: 'uriElement', which is of type str; 'navigationLabel', which is of type str; 'authenticated', which is of type bool; 'topMenuRank', which is of type int; 'topMenuOption', which is of type str; 'styleClass', which is of type str.
+
+'website_EncapsulatedFeature' represents an important domain concept.
+It has the following attributes: 'alias', which is of type str; 'displayLabel', which is of type str; 'columnName', which is of type str.
+
+'DataUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'website_Order' represents an important domain concept.
+It does not declare any attributes.
+
+'website_QueryParameter' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'website_MenuFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'website_Attribute' represents an important domain concept.
+It has the following attributes: 'validationPattern', which is of type str; 'inputClass', which is of type str; 'placeholder', which is of type str.
+
+'ImageFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'website_RegistrationUnit' represents an important domain concept.
+It has one attribute: 'styleClass', which is of type str.
+
+'MenuEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'EditUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'website_SliderUnit' represents an important domain concept.
+It has the following attributes: 'styleClass', which is of type str; 'contentClass', which is of type str.
+
+'website_GalleryUnit' represents an important domain concept.
+It has the following attributes: 'styleClass', which is of type str; 'contentClass', which is of type str.
+
+'website_MenuEntry' represents an important domain concept.
+It has one attribute: 'requiresRole', which is of type str.
+
+'CollectionUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'website_UnitSupportAction' represents an important domain concept.
+It has the following attributes: 'confirmMessage', which is of type str; 'disable', which is of type bool.
+
+'ModelLabelFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'InlineAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ViewFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'website_Association' represents an important domain concept.
+It has the following attributes: 'serializationMaxDepth', which is of type int; 'inputClass', which is of type str; 'pseudo', which is of type bool.
+
+'website_ContentUnit' represents an important domain concept.
+It has the following attributes: 'createDefaultUriElement', which is of type bool; 'omitCaption', which is of type bool; 'captionClass', which is of type str; 'uriElement', which is of type str; 'alternative', which is of type str; 'purposeSummary', which is of type str; 'requiresRole', which is of type str.
+
+'website_UnitField' represents an important domain concept.
+It has the following attributes: 'maximumDisplaySize', which is of type int; 'collectionAllowAdd', which is of type bool; 'dateFormat', which is of type str; 'collectionDisplayOption', which is of type str; 'title', which is of type str; 'collectionAllowRemove', which is of type bool.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'website_DateField' represents an important domain concept.
+It has the following attributes: 'details', which is of type str; 'format', which is of type str.
+
+'website_PathElement' represents an important domain concept.
+It does not declare any attributes.
+
+'website_ChildPathAssociation' represents an important domain concept.
+It has one attribute: 'isSourceAssociation', which is of type bool.
+
+'ImageUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'website_ViewFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'website_CaptchaField' represents an important domain concept.
+It does not declare any attributes.
+
+'website_StaticMenu' represents an important domain concept.
+It does not declare any attributes.
+
+'website_ChildPathAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'website_EntityAssociation' represents an important domain concept.
+It has the following attributes: 'targetDisplayLabel', which is of type str; 'targetPrimaryKey', which is of type bool; 'pivotTableName', which is of type str; 'bidirectional', which is of type bool; 'targetFooterClass', which is of type str; 'targetFeatureName', which is of type str; 'targetDisplayClass', which is of type str; 'targetHeaderClass', which is of type str; 'targetInputClass', which is of type str.
+
+'website_ViewAssociation' represents an important domain concept.
+It has one attribute: 'cardinality', which is of type str.
+
+'website_DynamicMenu' represents an important domain concept.
+It does not declare any attributes.
+
+'website_PageLink' represents an important domain concept.
+It does not declare any attributes.
+
+'website_DataType' represents an important domain concept.
+It has the following attributes: 'persistentType', which is of type str; 'ormType', which is of type str; 'placeholder', which is of type str; 'interfaceType', which is of type str; 'validationPattern', which is of type str.
+
+'website_UnitElement' represents an important domain concept.
+It has the following attributes: 'placeholder', which is of type str; 'obfuscateFormFields', which is of type bool; 'validationPattern', which is of type str; 'name', which is of type str.
+
+'website_View' represents an important domain concept.
+It does not declare any attributes.
+
+'website_ModelLabelAssociation' represents an important domain concept.
+It has one attribute: 'isSourceAssociation', which is of type bool.
+
+'website_InlineActionContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'website_NamedDisplayElement' represents an important domain concept.
+It has one attribute: 'displayLabel', which is of type str.
+
+'website_CollectionUnit' represents an important domain concept.
+It has the following attributes: 'previousNpages', which is of type int; 'useDisabledPageLinks', which is of type bool; 'nextPageLabel', which is of type str; 'nextNpages', which is of type int; 'useFirstLastPageLinks', which is of type bool; 'firstPageLabel', which is of type str; 'previousPageLabel', which is of type str; 'lastPageLabel', which is of type str; 'defaultPaginationSize', which is of type int; 'emptyMessage', which is of type str.
+
+'website_Feature' represents an important domain concept.
+It has the following attributes: 'encodeUriKey', which is of type bool; 'displayClass', which is of type str; 'headerClass', which is of type str; 'serializationExpose', which is of type bool; 'footerClass', which is of type str; 'collectionAllowRemove', which is of type bool; 'serializationGroups', which is of type str; 'collectionAllowAdd', which is of type bool; 'nullDisplayValue', which is of type str; 'title', which is of type str.
+
+'Label' represents an important domain concept.
+It does not declare any attributes.
+
+'website_ModelLabel' represents an important domain concept.
+It has one attribute: 'format', which is of type str.
+
+'website_WebGenModel' represents an important domain concept.
+It does not declare any attributes.
+
+'DynamicUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'website_FeaturePathAssociation' represents an important domain concept.
+It has one attribute: 'isSourceAssociation', which is of type bool.
+
+'website_FeatureSupportAction' represents an important domain concept.
+It has the following attributes: 'fileExtension', which is of type str; 'uriElement', which is of type str; 'confirmMessage', which is of type str.
+
+'EntityAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'website_SearchUnit' represents an important domain concept.
+It has one attribute: 'styleClass', which is of type str.
+
+'website_Authentication' represents an important domain concept.
+It has the following attributes: 'logoutLabel', which is of type str; 'loginLabel', which is of type str.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'website_DataUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'website_CurrentUserReference' represents an important domain concept.
+It does not declare any attributes.
+
+'website_FeaturePathAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'website_DataTypeField' represents an important domain concept.
+It has the following attributes: 'interfaceType', which is of type str; 'encrypt', which is of type bool; 'obfuscateFormFields', which is of type bool.
+
+'website_ModelReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Menu' represents an important domain concept.
+It does not declare any attributes.
+
+'website_SelectableUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'website_Query' represents an important domain concept.
+It does not declare any attributes.
+
+'EntityAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'website_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'website_UnitAssociation' represents an important domain concept.
+It has one attribute: 'isSourceAssociation', which is of type bool.
+
+'website_CreateUnit' represents an important domain concept.
+It has one attribute: 'styleClass', which is of type str.
+
+'Path' represents an important domain concept.
+It does not declare any attributes.
+
+'website_ModelLabelAttribute' represents an important domain concept.
+It has one attribute: 'dateFormat', which is of type str.
+
+'website_EditUnit' represents an important domain concept.
+It has the following attributes: 'confirmLabel', which is of type str; 'customiseValues', which is of type bool; 'contentClass', which is of type str; 'cancelLabel', which is of type str.
+
+'website_FeatureReference' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ChildPath' represents an important domain concept.
+It does not declare any attributes.
+
+'website_ChildPath' represents an important domain concept.
+It does not declare any attributes.
+
+'website_RouteParameterReference' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'website_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'website_ResourceAttribute' represents an important domain concept.
+It has the following attributes: 'validUploadMimeTypes', which is of type str; 'validUploadExtensions', which is of type str; 'uploadsWithinWebsite', which is of type bool; 'maximumUploadSize', which is of type int.
+
+'website_EntityAttribute' represents an important domain concept.
+It has the following attributes: 'primaryKey', which is of type bool; 'ormType', which is of type str; 'persistentType', which is of type str; 'containerUnique', which is of type bool; 'interfaceType', which is of type str.
+
+'website_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'website_Filter' represents an important domain concept.
+It does not declare any attributes.
+
+'website_StaticPathElement' represents an important domain concept.
+It has one attribute: 'element', which is of type str.
+
+'SingletonUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'website_CreateUpdateUnit' represents an important domain concept.
+It has the following attributes: 'styleClass', which is of type str; 'createUriElement', which is of type str; 'clearLabel', which is of type str.
+
+'website_FileAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'UnitFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UnitContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'website_SelectionParameter' represents an important domain concept.
+It has the following attributes: 'defaultValue', which is of type str; 'optional', which is of type bool.
+
+'website_ActionMenuEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'website_BusinessOperation' represents an important domain concept.
+It has the following attributes: 'resultType', which is of type str; 'resultMimeType', which is of type str.
+
+'website_UnitContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'website_StaticUnit' represents an important domain concept.
+It has the following attributes: 'styleClass', which is of type str; 'contentClass', which is of type str; 'content', which is of type str.
+
+'FeaturePath' represents an important domain concept.
+It does not declare any attributes.
+
+'website_AssociationWithContainment' represents an important domain concept.
+It has one attribute: 'sourceVisible', which is of type bool.
+
+'ContentUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'website_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'website_ImageIndexUnit' represents an important domain concept.
+It has the following attributes: 'contentClass', which is of type str; 'styleClass', which is of type str.
+
+'website_WebsiteProperties' represents an important domain concept.
+It has the following attributes: 'siteTitle', which is of type str; 'databasePrefix', which is of type str; 'textEditorURL', which is of type str; 'testProjectName', which is of type str; 'webmasterEmail', which is of type str; 'timestampCreation', which is of type bool; 'databasePort', which is of type str; 'ormTechnology', which is of type str; 'captchaSiteKey', which is of type str; 'captchaSecretKey', which is of type str; 'projectName', which is of type str; 'staticUnitsEditable', which is of type bool; 'timestampUpdates', which is of type bool; 'databaseHost', which is of type str; 'defaultDateTimeFormat', which is of type str; 'copyrightText', which is of type str; 'defaultDateFormat', which is of type str; 'developmentVersion', which is of type bool; 'rewriteURLs', which is of type bool; 'databaseTechnology', which is of type str; 'siteTemplate', which is of type str; 'databaseName', which is of type str; 'ajaxTechnology', which is of type str; 'databaseUsername', which is of type str; 'metaDescription', which is of type str; 'topNavigationId', which is of type str; 'defaultTimeFormat', which is of type str; 'defaultMaximumUploadSize', which is of type int; 'inputTechnology', which is of type str; 'databasePassword', which is of type str; 'frameworkTechnology', which is of type str; 'baseURL', which is of type str; 'responsiveTopMenu', which is of type bool.
+
+'PathElement' represents an important domain concept.
+It does not declare any attributes.
+
+'website_DeleteAction' represents an important domain concept.
+It has the following attributes: 'confirmMessage', which is of type str; 'uriElement', which is of type str.
+
+'website_ImageFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'InlineActionContainer' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DateDetails' defines the following possible values: 'DateOnly', 'DateAndTime', 'TimeOnly'.
+The enumeration 'CollectionDisplayOptions' defines the following possible values: 'PageDirection', 'LineDirection'.
+The enumeration 'Cardinality' defines the following possible values: 'Many', 'Required', 'Optional'.
+The enumeration 'DatabaseTechnologies' defines the following possible values: 'Oracle', 'MySql'.
+The enumeration 'InputTechnologies' defines the following possible values: 'jQueryUI', 'Html'.
+The enumeration 'FrameworkTechnologies' defines the following possible values: 'Kohana', 'JSF', 'Symfony', 'CodeIgniter', 'Laravel', 'CakePHP'.
+The enumeration 'isHasChoices' defines the following possible values: 'hasA', 'isA'.
+The enumeration 'AjaxTechnologies' defines the following possible values: 'None', 'jQuery', 'AngularJS'.
+The enumeration 'IndexDisplayOption' defines the following possible values: 'LineDirection', 'Grid', 'PageDirection'.
+The enumeration 'OrmTechnologies' defines the following possible values: 'DoctrineORM', 'Idiorm', 'Kohana', 'DataMapper', 'JPA', 'DoctrineODM'.
+The enumeration 'AuthenticationKeyTypes' defines the following possible values: 'Username', 'Email', 'ScreenName'.
+The enumeration 'OperationResultTypes' defines the following possible values: 'File', 'None'.
+The enumeration 'PageTopMenuOptions' defines the following possible values: 'IncludeWhenAuthenticated', 'NeverInclude', 'AlwaysInclude'.
+
+The model also captures inheritance relationships between classes.
+The class 'website_LocalAuthenticationSystem' is a specialization of 'Authentication'.
+The class 'website_CasAuthentication' is a specialization of 'Authentication'.
+The class 'website_NamedDisplayElement' is a specialization of 'NamedElement'.
+The class 'website_Classifier' is a specialization of 'NamedDisplayElement'.
+The class 'website_DataType' is a specialization of 'Classifier'.
+The class 'website_EnumerationType' is a specialization of 'DataType'.
+The class 'website_EnumerationLiteral' is a specialization of 'NamedDisplayElement'.
+The class 'website_EntityOrView' is a specialization of 'Classifier'.
+The class 'website_Attribute' is a specialization of 'Feature'.
+The class 'website_Attribute' is a specialization of 'Label'.
+The class 'website_Association' is a specialization of 'Feature'.
+The class 'website_ModelLabel' is a specialization of 'NamedElement'.
+The class 'website_ModelLabel' is a specialization of 'Label'.
+The class 'website_ModelLabelAttribute' is a specialization of 'ModelLabelFeature'.
+The class 'website_ModelLabelAssociation' is a specialization of 'ModelLabelFeature'.
+The class 'website_Entity' is a specialization of 'EntityOrView'.
+The class 'website_EntityFeature' is a specialization of 'NamedDisplayElement'.
+The class 'website_EntityFeature' is a specialization of 'Feature'.
+The class 'website_EntityAttribute' is a specialization of 'EntityFeature'.
+The class 'website_EntityAttribute' is a specialization of 'Attribute'.
+The class 'website_DataTypeAttribute' is a specialization of 'EntityAttribute'.
+The class 'website_DateAttribute' is a specialization of 'EntityAttribute'.
+The class 'website_UrlAttribute' is a specialization of 'EntityAttribute'.
+The class 'website_ResourceAttribute' is a specialization of 'EntityAttribute'.
+The class 'website_StaticPathElement' is a specialization of 'PathElement'.
+The class 'website_DatePathElement' is a specialization of 'PathElement'.
+The class 'website_FileAttribute' is a specialization of 'ResourceAttribute'.
+The class 'website_ImageAttribute' is a specialization of 'ResourceAttribute'.
+The class 'website_LocationAttribute' is a specialization of 'EntityAttribute'.
+The class 'website_EntityAssociation' is a specialization of 'EntityFeature'.
+The class 'website_EntityAssociation' is a specialization of 'Association'.
+The class 'website_AssociationWithoutContainment' is a specialization of 'EntityAssociation'.
+The class 'website_AssociationWithContainment' is a specialization of 'EntityAssociation'.
+The class 'website_View' is a specialization of 'EntityOrView'.
+The class 'website_ViewFeature' is a specialization of 'Feature'.
+The class 'website_EncapsulatedFeature' is a specialization of 'ViewFeature'.
+The class 'website_EncapsulatedAttribute' is a specialization of 'EncapsulatedFeature'.
+The class 'website_EncapsulatedAttribute' is a specialization of 'Attribute'.
+The class 'website_EncapsulatedAssociation' is a specialization of 'EncapsulatedFeature'.
+The class 'website_EncapsulatedAssociation' is a specialization of 'Association'.
+The class 'website_ViewAssociation' is a specialization of 'NamedDisplayElement'.
+The class 'website_ViewAssociation' is a specialization of 'ViewFeature'.
+The class 'website_ViewAssociation' is a specialization of 'Association'.
+The class 'website_Service' is a specialization of 'NamedElement'.
+The class 'website_Selection' is a specialization of 'NamedElement'.
+The class 'website_SelectionParameter' is a specialization of 'NamedElement'.
+The class 'website_BusinessOperation' is a specialization of 'NamedElement'.
+The class 'website_ImageManipulation' is a specialization of 'NamedElement'.
+The class 'website_ThumbnailFilter' is a specialization of 'ImageFilter'.
+The class 'website_Page' is a specialization of 'NamedDisplayElement'.
+The class 'website_Page' is a specialization of 'UnitContainer'.
+The class 'website_Menu' is a specialization of 'NamedDisplayElement'.
+The class 'website_StaticMenu' is a specialization of 'Menu'.
+The class 'website_ActionMenuEntry' is a specialization of 'MenuEntry'.
+The class 'website_ActionMenuEntry' is a specialization of 'NamedDisplayElement'.
+The class 'website_EditStaticTextMenuEntry' is a specialization of 'MenuEntry'.
+The class 'website_EditStaticTextMenuEntry' is a specialization of 'NamedDisplayElement'.
+The class 'website_DynamicMenu' is a specialization of 'Menu'.
+The class 'website_MenuFeature' is a specialization of 'MenuEntry'.
+The class 'website_Filter' is a specialization of 'NamedDisplayElement'.
+The class 'website_FilterParameter' is a specialization of 'NamedElement'.
+The class 'website_ContentUnit' is a specialization of 'NamedDisplayElement'.
+The class 'website_StaticUnit' is a specialization of 'ContentUnit'.
+The class 'website_CreateSitemapUnit' is a specialization of 'ContentUnit'.
+The class 'website_DynamicUnit' is a specialization of 'ContentUnit'.
+The class 'website_UnitFeature' is a specialization of 'UnitField'.
+The class 'website_UnitFeature' is a specialization of 'InlineActionContainer'.
+The class 'website_UnitElement' is a specialization of 'UnitFeature'.
+The class 'website_UnitAssociation' is a specialization of 'UnitFeature'.
+The class 'website_UnitAssociation' is a specialization of 'UnitContainer'.
+The class 'website_UnitAssociation' is a specialization of 'AssociationReference'.
+The class 'website_InterfaceField' is a specialization of 'NamedDisplayElement'.
+The class 'website_InterfaceField' is a specialization of 'UnitField'.
+The class 'website_DataTypeField' is a specialization of 'InterfaceField'.
+The class 'website_DateField' is a specialization of 'InterfaceField'.
+The class 'website_CaptchaField' is a specialization of 'InterfaceField'.
+The class 'website_UnitSupportAction' is a specialization of 'NamedDisplayElement'.
+The class 'website_CollectionUnit' is a specialization of 'SelectableUnit'.
+The class 'website_EditUnit' is a specialization of 'DynamicUnit'.
+The class 'website_EditUnit' is a specialization of 'SingletonUnit'.
+The class 'website_CreateUnit' is a specialization of 'EditUnit'.
+The class 'website_CreateUpdateUnit' is a specialization of 'EditUnit'.
+The class 'website_CreateUpdateUnit' is a specialization of 'SelectableUnit'.
+The class 'website_UpdateUnit' is a specialization of 'EditUnit'.
+The class 'website_UpdateUnit' is a specialization of 'SelectableUnit'.
+The class 'website_MapUnit' is a specialization of 'EditUnit'.
+The class 'website_MapUnit' is a specialization of 'SelectableUnit'.
+The class 'website_DataUnit' is a specialization of 'DynamicUnit'.
+The class 'website_DetailsUnit' is a specialization of 'DataUnit'.
+The class 'website_DetailsUnit' is a specialization of 'SingletonUnit'.
+The class 'website_DetailsUnit' is a specialization of 'SelectableUnit'.
+The class 'website_IndexUnit' is a specialization of 'DataUnit'.
+The class 'website_IndexUnit' is a specialization of 'CollectionUnit'.
+The class 'website_IndexUnit' is a specialization of 'InlineActionContainer'.
+The class 'website_ControlUnit' is a specialization of 'DynamicUnit'.
+The class 'website_SearchUnit' is a specialization of 'ControlUnit'.
+The class 'website_ImageUnit' is a specialization of 'DynamicUnit'.
+The class 'website_ImageUnit' is a specialization of 'CollectionUnit'.
+The class 'website_FeaturePathAttribute' is a specialization of 'FeaturePath'.
+The class 'website_FeaturePathAssociation' is a specialization of 'FeaturePath'.
+The class 'website_FeaturePathAssociation' is a specialization of 'AssociationReference'.
+The class 'website_ChildPathAttribute' is a specialization of 'ChildPath'.
+The class 'website_ChildPathAssociation' is a specialization of 'ChildPath'.
+The class 'website_ChildPathAssociation' is a specialization of 'AssociationReference'.
+The class 'website_ImageIndexUnit' is a specialization of 'ImageUnit'.
+The class 'website_ImageIndexUnit' is a specialization of 'InlineActionContainer'.
+The class 'website_SliderUnit' is a specialization of 'ImageUnit'.
+The class 'website_GalleryUnit' is a specialization of 'ImageUnit'.
+The class 'website_RegistrationUnit' is a specialization of 'AuthenticationUnit'.
+The class 'website_RegistrationUnit' is a specialization of 'ControlUnit'.
+The class 'website_LoginUnit' is a specialization of 'AuthenticationUnit'.
+The class 'website_LoginUnit' is a specialization of 'ControlUnit'.
+The class 'website_ForgottenPasswordUnit' is a specialization of 'AuthenticationUnit'.
+The class 'website_ForgottenPasswordUnit' is a specialization of 'ControlUnit'.
+The class 'website_InlineAction' is a specialization of 'NamedDisplayElement'.
+The class 'website_SelectAction' is a specialization of 'InlineAction'.
+The class 'website_DeleteAction' is a specialization of 'InlineAction'.
+The class 'website_FeatureSupportAction' is a specialization of 'InlineAction'.
+The class 'website_ModelReference' is a specialization of 'Path'.
+The class 'website_FeatureReference' is a specialization of 'Path'.
+The class 'website_RouteParameterReference' is a specialization of 'Path'.
+The class 'website_ParameterReference' is a specialization of 'Path'.
+The class 'website_CurrentUserReference' is a specialization of 'Path'.
+
+Relationships between classes are modeled using associations.
+An association connects 'website_WebGenModel' and 'website_WebsiteProperties'. From 'website_WebGenModel', the role 'website_WebGenModel' has cardinality 0..*, and from 'website_WebsiteProperties', the role 'website_WebsiteProperties' has cardinality 0..*.
+An association connects 'website_WebGenModel' and 'website_Classifier'. From 'website_WebGenModel', the role 'website_WebGenModel2' has cardinality 0..*, and from 'website_Classifier', the role 'website_Classifier' has cardinality 0..*.
+An association connects 'website_WebGenModel' and 'website_Service'. From 'website_WebGenModel', the role 'website_WebGenModel4' has cardinality 0..*, and from 'website_Service', the role 'website_Service' has cardinality 0..*.
+An association connects 'website_WebGenModel' and 'website_Page'. From 'website_WebGenModel', the role 'website_WebGenModel6' has cardinality 0..*, and from 'website_Page', the role 'website_Page' has cardinality 0..*.
+An association connects 'website_WebGenModel' and 'website_Menu'. From 'website_WebGenModel', the role 'website_WebGenModel8' has cardinality 0..*, and from 'website_Menu', the role 'website_Menu' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_WebGenModel'. From 'website_EntityOrView', the role 'website_EntityOrView' has cardinality 0..*, and from 'website_WebGenModel', the role 'website_WebGenModel10' has cardinality 0..*.
+An association connects 'website_WebGenModel' and 'website_ImageManipulation'. From 'website_WebGenModel', the role 'website_WebGenModel12' has cardinality 0..*, and from 'website_ImageManipulation', the role 'website_ImageManipulation' has cardinality 0..*.
+An association connects 'website_WebsiteProperties' and 'website_Authentication'. From 'website_WebsiteProperties', the role 'authenticates' has cardinality 0..*, and from 'website_Authentication', the role 'Authentication' has cardinality 0..*.
+An association connects 'website_Menu' and 'website_WebsiteProperties'. From 'website_Menu', the role 'website_Menu16' has cardinality 0..*, and from 'website_WebsiteProperties', the role 'website_WebsiteProperties15' has cardinality 0..*.
+An association connects 'website_Authentication' and 'website_WebsiteProperties'. From 'website_Authentication', the role 'authentication' has cardinality 0..*, and from 'website_WebsiteProperties', the role 'WebsiteProperties' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_Authentication'. From 'website_EntityOrView', the role 'website_EntityOrView19' has cardinality 0..*, and from 'website_Authentication', the role 'website_Authentication' has cardinality 0..*.
+An association connects 'website_Attribute' and 'website_Authentication'. From 'website_Attribute', the role 'website_Attribute' has cardinality 0..*, and from 'website_Authentication', the role 'website_Authentication21' has cardinality 0..*.
+An association connects 'website_LocalAuthenticationSystem' and 'website_EntityOrView'. From 'website_LocalAuthenticationSystem', the role 'website_LocalAuthenticationSystem' has cardinality 0..*, and from 'website_EntityOrView', the role 'website_EntityOrView23' has cardinality 0..*.
+An association connects 'website_RegistrationUnit' and 'website_LocalAuthenticationSystem'. From 'website_RegistrationUnit', the role 'website_RegistrationUnit' has cardinality 0..*, and from 'website_LocalAuthenticationSystem', the role 'website_LocalAuthenticationSystem25' has cardinality 0..*.
+An association connects 'website_LocalAuthenticationSystem' and 'website_LoginUnit'. From 'website_LocalAuthenticationSystem', the role 'website_LocalAuthenticationSystem27' has cardinality 0..*, and from 'website_LoginUnit', the role 'website_LoginUnit' has cardinality 0..*.
+An association connects 'website_LocalAuthenticationSystem' and 'website_ForgottenPasswordUnit'. From 'website_LocalAuthenticationSystem', the role 'website_LocalAuthenticationSystem29' has cardinality 0..*, and from 'website_ForgottenPasswordUnit', the role 'website_ForgottenPasswordUnit' has cardinality 0..*.
+An association connects 'website_EnumerationType' and 'website_EnumerationLiteral'. From 'website_EnumerationType', the role 'website_EnumerationType' has cardinality 0..*, and from 'website_EnumerationLiteral', the role 'website_EnumerationLiteral' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_Feature'. From 'website_EntityOrView', the role 'website_EntityOrView32' has cardinality 0..*, and from 'website_Feature', the role 'website_Feature' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_Feature'. From 'website_EntityOrView', the role 'website_EntityOrView34' has cardinality 0..*, and from 'website_Feature', the role 'website_Feature35' has cardinality 0..*.
+An association connects 'website_Feature' and 'website_EntityOrView'. From 'website_Feature', the role 'website_Feature38' has cardinality 0..*, and from 'website_EntityOrView', the role 'website_EntityOrView37' has cardinality 0..*.
+An association connects 'website_Service' and 'website_EntityOrView'. From 'website_Service', the role 'Service' has cardinality 0..*, and from 'website_EntityOrView', the role 'serves' has cardinality 0..*.
+An association connects 'website_ModelLabel' and 'website_EntityOrView'. From 'website_ModelLabel', the role 'ModelLabel' has cardinality 0..*, and from 'website_EntityOrView', the role 'labelFor' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_Feature'. From 'website_EntityOrView', the role 'website_EntityOrView42' has cardinality 0..*, and from 'website_Feature', the role 'website_Feature43' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_Feature'. From 'website_EntityOrView', the role 'website_EntityOrView45' has cardinality 0..*, and from 'website_Feature', the role 'website_Feature46' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_Attribute'. From 'website_EntityOrView', the role 'website_EntityOrView48' has cardinality 0..*, and from 'website_Attribute', the role 'website_Attribute49' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_Association'. From 'website_EntityOrView', the role 'website_EntityOrView51' has cardinality 0..*, and from 'website_Association', the role 'website_Association' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_Association'. From 'website_EntityOrView', the role 'website_EntityOrView53' has cardinality 0..*, and from 'website_Association', the role 'website_Association54' has cardinality 0..*.
+An association connects 'website_Expression' and 'website_Attribute'. From 'website_Expression', the role 'website_Expression' has cardinality 0..*, and from 'website_Attribute', the role 'website_Attribute56' has cardinality 0..*.
+An association connects 'website_Association' and 'website_EncapsulatedAssociation'. From 'website_Association', the role 'association' has cardinality 0..*, and from 'website_EncapsulatedAssociation', the role 'EncapsulatedAssociation' has cardinality 0..*.
+An association connects 'website_Association' and 'website_EntityOrView'. From 'website_Association', the role 'website_Association59' has cardinality 0..*, and from 'website_EntityOrView', the role 'website_EntityOrView60' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_Association'. From 'website_EntityOrView', the role 'website_EntityOrView63' has cardinality 0..*, and from 'website_Association', the role 'website_Association62' has cardinality 0..*.
+An association connects 'website_ModelLabel' and 'website_EntityOrView'. From 'website_ModelLabel', the role 'labels' has cardinality 0..*, and from 'website_EntityOrView', the role 'EntityOrView' has cardinality 0..*.
+An association connects 'website_ModelLabel' and 'website_ModelLabelFeature'. From 'website_ModelLabel', the role 'partOf' has cardinality 0..*, and from 'website_ModelLabelFeature', the role 'ModelLabelFeature' has cardinality 0..*.
+An association connects 'website_ModelLabelFeature' and 'website_ModelLabel'. From 'website_ModelLabelFeature', the role 'features' has cardinality 0..*, and from 'website_ModelLabel', the role 'ModelLabel67' has cardinality 0..*.
+An association connects 'website_Attribute' and 'website_ModelLabelAttribute'. From 'website_Attribute', the role 'website_Attribute69' has cardinality 0..*, and from 'website_ModelLabelAttribute', the role 'website_ModelLabelAttribute' has cardinality 0..*.
+An association connects 'website_ModelLabelAssociation' and 'website_EntityAssociation'. From 'website_ModelLabelAssociation', the role 'website_ModelLabelAssociation' has cardinality 0..*, and from 'website_EntityAssociation', the role 'website_EntityAssociation' has cardinality 0..*.
+An association connects 'website_ModelLabel' and 'website_ModelLabelAssociation'. From 'website_ModelLabel', the role 'website_ModelLabel' has cardinality 0..*, and from 'website_ModelLabelAssociation', the role 'website_ModelLabelAssociation72' has cardinality 0..*.
+An association connects 'website_Entity' and 'website_EntityFeature'. From 'website_Entity', the role 'partOf74' has cardinality 0..*, and from 'website_EntityFeature', the role 'EntityFeature' has cardinality 0..*.
+An association connects 'website_EntityAssociation' and 'website_Entity'. From 'website_EntityAssociation', the role 'EntityAssociation' has cardinality 0..*, and from 'website_Entity', the role 'targetEntity' has cardinality 0..*.
+An association connects 'website_EntityFeature' and 'website_Entity'. From 'website_EntityFeature', the role 'entityFeatures' has cardinality 0..*, and from 'website_Entity', the role 'Entity' has cardinality 0..*.
+An association connects 'website_DataType' and 'website_DataTypeAttribute'. From 'website_DataType', the role 'website_DataType' has cardinality 0..*, and from 'website_DataTypeAttribute', the role 'website_DataTypeAttribute' has cardinality 0..*.
+An association connects 'website_ResourceAttribute' and 'website_PathElement'. From 'website_ResourceAttribute', the role 'website_ResourceAttribute' has cardinality 0..*, and from 'website_PathElement', the role 'website_PathElement' has cardinality 0..*.
+An association connects 'website_AssociationKey' and 'website_EntityAssociation'. From 'website_AssociationKey', the role 'AssociationKey' has cardinality 0..*, and from 'website_EntityAssociation', the role 'keyFor' has cardinality 0..*.
+An association connects 'website_EntityAssociation' and 'website_Entity'. From 'website_EntityAssociation', the role 'associationEnds' has cardinality 0..*, and from 'website_Entity', the role 'Entity81' has cardinality 0..*.
+An association connects 'website_AssociationKey' and 'website_EntityAssociation'. From 'website_AssociationKey', the role 'keys' has cardinality 0..*, and from 'website_EntityAssociation', the role 'EntityAssociation83' has cardinality 0..*.
+An association connects 'website_AssociationKey' and 'website_EntityFeature'. From 'website_AssociationKey', the role 'website_AssociationKey' has cardinality 0..*, and from 'website_EntityFeature', the role 'website_EntityFeature' has cardinality 0..*.
+An association connects 'website_EntityFeature' and 'website_AssociationKey'. From 'website_EntityFeature', the role 'website_EntityFeature87' has cardinality 0..*, and from 'website_AssociationKey', the role 'website_AssociationKey86' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_View'. From 'website_EntityOrView', the role 'website_EntityOrView89' has cardinality 0..*, and from 'website_View', the role 'website_View' has cardinality 0..*.
+An association connects 'website_ViewFeature' and 'website_View'. From 'website_ViewFeature', the role 'ViewFeature' has cardinality 0..*, and from 'website_View', the role 'partOf91' has cardinality 0..*.
+An association connects 'website_View' and 'website_ViewFeature'. From 'website_View', the role 'View' has cardinality 0..*, and from 'website_ViewFeature', the role 'viewFeatures' has cardinality 0..*.
+An association connects 'website_EncapsulatedAttribute' and 'website_Attribute'. From 'website_EncapsulatedAttribute', the role 'website_EncapsulatedAttribute' has cardinality 0..*, and from 'website_Attribute', the role 'website_Attribute94' has cardinality 0..*.
+An association connects 'website_Association' and 'website_EncapsulatedAssociation'. From 'website_Association', the role 'Association' has cardinality 0..*, and from 'website_EncapsulatedAssociation', the role 'encapsulatedBy' has cardinality 0..*.
+An association connects 'website_EncapsulatedAssociation' and 'website_EncapsulatedAssociation'. From 'website_EncapsulatedAssociation', the role 'website_EncapsulatedAssociation' has cardinality 0..*, and from 'website_EncapsulatedAssociation', the role 'website_EncapsulatedAssociation96' has cardinality 0..*.
+An association connects 'website_Entity' and 'website_EncapsulatedAssociation'. From 'website_Entity', the role 'website_Entity' has cardinality 0..*, and from 'website_EncapsulatedAssociation', the role 'website_EncapsulatedAssociation99' has cardinality 0..*.
+An association connects 'website_Entity' and 'website_EncapsulatedAssociation'. From 'website_Entity', the role 'website_Entity102' has cardinality 0..*, and from 'website_EncapsulatedAssociation', the role 'website_EncapsulatedAssociation101' has cardinality 0..*.
+An association connects 'website_ViewAssociation' and 'website_EncapsulatedAssociation'. From 'website_ViewAssociation', the role 'website_ViewAssociation' has cardinality 0..*, and from 'website_EncapsulatedAssociation', the role 'website_EncapsulatedAssociation104' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_Service'. From 'website_EntityOrView', the role 'EntityOrView106' has cardinality 0..*, and from 'website_Service', the role 'servedBy' has cardinality 0..*.
+An association connects 'website_Service' and 'website_Selection'. From 'website_Service', the role 'usedBy' has cardinality 0..*, and from 'website_Selection', the role 'Selection' has cardinality 0..*.
+An association connects 'website_Service' and 'website_BusinessOperation'. From 'website_Service', the role 'website_Service109' has cardinality 0..*, and from 'website_BusinessOperation', the role 'website_BusinessOperation' has cardinality 0..*.
+An association connects 'website_Selection' and 'website_Service'. From 'website_Selection', the role 'selections' has cardinality 0..*, and from 'website_Service', the role 'Service111' has cardinality 0..*.
+An association connects 'website_Feature' and 'website_Selection'. From 'website_Feature', the role 'website_Feature113' has cardinality 0..*, and from 'website_Selection', the role 'website_Selection' has cardinality 0..*.
+An association connects 'website_Selection' and 'website_SelectionParameter'. From 'website_Selection', the role 'formalFor' has cardinality 0..*, and from 'website_SelectionParameter', the role 'SelectionParameter' has cardinality 0..*.
+An association connects 'website_Selection' and 'website_Association'. From 'website_Selection', the role 'website_Selection116' has cardinality 0..*, and from 'website_Association', the role 'website_Association117' has cardinality 0..*.
+An association connects 'website_Predicate' and 'website_Selection'. From 'website_Predicate', the role 'website_Predicate' has cardinality 0..*, and from 'website_Selection', the role 'website_Selection119' has cardinality 0..*.
+An association connects 'website_Order' and 'website_Selection'. From 'website_Order', the role 'website_Order' has cardinality 0..*, and from 'website_Selection', the role 'website_Selection121' has cardinality 0..*.
+An association connects 'website_Selection' and 'website_SelectionParameter'. From 'website_Selection', the role 'Selection123' has cardinality 0..*, and from 'website_SelectionParameter', the role 'parameters' has cardinality 0..*.
+An association connects 'website_Service' and 'website_BusinessOperation'. From 'website_Service', the role 'website_Service126' has cardinality 0..*, and from 'website_BusinessOperation', the role 'website_BusinessOperation125' has cardinality 0..*.
+An association connects 'website_ImageFilter' and 'website_ImageManipulation'. From 'website_ImageFilter', the role 'website_ImageFilter' has cardinality 0..*, and from 'website_ImageManipulation', the role 'website_ImageManipulation128' has cardinality 0..*.
+An association connects 'website_PageLink' and 'website_Page'. From 'website_PageLink', the role 'website_PageLink' has cardinality 0..*, and from 'website_Page', the role 'website_Page130' has cardinality 0..*.
+An association connects 'website_PageLink' and 'website_Page'. From 'website_PageLink', the role 'PageLink' has cardinality 0..*, and from 'website_Page', the role 'targetPage' has cardinality 0..*.
+An association connects 'website_Page' and 'website_Menu'. From 'website_Page', the role 'website_Page133' has cardinality 0..*, and from 'website_Menu', the role 'website_Menu134' has cardinality 0..*.
+An association connects 'website_PageLink' and 'website_Page'. From 'website_PageLink', the role 'childPages' has cardinality 0..*, and from 'website_Page', the role 'Page' has cardinality 0..*.
+An association connects 'website_Menu' and 'website_MenuEntry'. From 'website_Menu', the role 'partOf137' has cardinality 0..*, and from 'website_MenuEntry', the role 'MenuEntry' has cardinality 0..*.
+An association connects 'website_Menu' and 'website_MenuEntry'. From 'website_Menu', the role 'Menu' has cardinality 0..*, and from 'website_MenuEntry', the role 'entries' has cardinality 0..*.
+An association connects 'website_ContentUnit' and 'website_ActionMenuEntry'. From 'website_ContentUnit', the role 'website_ContentUnit' has cardinality 0..*, and from 'website_ActionMenuEntry', the role 'website_ActionMenuEntry' has cardinality 0..*.
+An association connects 'website_ActionMenuEntry' and 'website_Query'. From 'website_ActionMenuEntry', the role 'website_ActionMenuEntry141' has cardinality 0..*, and from 'website_Query', the role 'website_Query' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_DynamicMenu'. From 'website_EntityOrView', the role 'website_EntityOrView143' has cardinality 0..*, and from 'website_DynamicMenu', the role 'website_DynamicMenu' has cardinality 0..*.
+An association connects 'website_Selection' and 'website_DynamicMenu'. From 'website_Selection', the role 'website_Selection146' has cardinality 0..*, and from 'website_DynamicMenu', the role 'website_DynamicMenu145' has cardinality 0..*.
+An association connects 'website_Label' and 'website_DynamicMenu'. From 'website_Label', the role 'website_Label' has cardinality 0..*, and from 'website_DynamicMenu', the role 'website_DynamicMenu148' has cardinality 0..*.
+An association connects 'website_FilterParameter' and 'website_Filter'. From 'website_FilterParameter', the role 'FilterParameter' has cardinality 0..*, and from 'website_Filter', the role 'partOf150' has cardinality 0..*.
+An association connects 'website_Filter' and 'website_Selection'. From 'website_Filter', the role 'website_Filter' has cardinality 0..*, and from 'website_Selection', the role 'website_Selection152' has cardinality 0..*.
+An association connects 'website_FilterParameter' and 'website_Filter'. From 'website_FilterParameter', the role 'parameters154' has cardinality 0..*, and from 'website_Filter', the role 'Filter' has cardinality 0..*.
+An association connects 'website_SelectionParameter' and 'website_FilterParameter'. From 'website_SelectionParameter', the role 'website_SelectionParameter' has cardinality 0..*, and from 'website_FilterParameter', the role 'website_FilterParameter' has cardinality 0..*.
+An association connects 'website_DataType' and 'website_FilterParameter'. From 'website_DataType', the role 'website_DataType158' has cardinality 0..*, and from 'website_FilterParameter', the role 'website_FilterParameter157' has cardinality 0..*.
+An association connects 'website_Query' and 'website_Filter'. From 'website_Query', the role 'website_Query160' has cardinality 0..*, and from 'website_Filter', the role 'website_Filter161' has cardinality 0..*.
+An association connects 'website_Query' and 'website_QueryParameter'. From 'website_Query', the role 'website_Query163' has cardinality 0..*, and from 'website_QueryParameter', the role 'website_QueryParameter' has cardinality 0..*.
+An association connects 'website_QueryParameter' and 'website_FilterParameter'. From 'website_QueryParameter', the role 'website_QueryParameter165' has cardinality 0..*, and from 'website_FilterParameter', the role 'website_FilterParameter166' has cardinality 0..*.
+An association connects 'website_UnitContainer' and 'website_ContentUnit'. From 'website_UnitContainer', the role 'displayedOn' has cardinality 0..*, and from 'website_ContentUnit', the role 'ContentUnit' has cardinality 0..*.
+An association connects 'website_UnitContainer' and 'website_ContentUnit'. From 'website_UnitContainer', the role 'UnitContainer' has cardinality 0..*, and from 'website_ContentUnit', the role 'units' has cardinality 0..*.
+An association connects 'website_DynamicUnit' and 'website_EntityOrView'. From 'website_DynamicUnit', the role 'website_DynamicUnit' has cardinality 0..*, and from 'website_EntityOrView', the role 'website_EntityOrView170' has cardinality 0..*.
+An association connects 'website_DynamicUnit' and 'website_UnitField'. From 'website_DynamicUnit', the role 'displayedOn172' has cardinality 0..*, and from 'website_UnitField', the role 'UnitField' has cardinality 0..*.
+An association connects 'website_DynamicUnit' and 'website_UnitSupportAction'. From 'website_DynamicUnit', the role 'website_DynamicUnit174' has cardinality 0..*, and from 'website_UnitSupportAction', the role 'website_UnitSupportAction' has cardinality 0..*.
+An association connects 'website_UnitField' and 'website_DynamicUnit'. From 'website_UnitField', the role 'displayFields' has cardinality 0..*, and from 'website_DynamicUnit', the role 'DynamicUnit' has cardinality 0..*.
+An association connects 'website_Expression' and 'website_UnitFeature'. From 'website_Expression', the role 'website_Expression177' has cardinality 0..*, and from 'website_UnitFeature', the role 'website_UnitFeature' has cardinality 0..*.
+An association connects 'website_UnitElement' and 'website_Attribute'. From 'website_UnitElement', the role 'website_UnitElement' has cardinality 0..*, and from 'website_Attribute', the role 'website_Attribute179' has cardinality 0..*.
+An association connects 'website_UnitElement' and 'website_Expression'. From 'website_UnitElement', the role 'website_UnitElement181' has cardinality 0..*, and from 'website_Expression', the role 'website_Expression182' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_UnitAssociation'. From 'website_EntityOrView', the role 'website_EntityOrView184' has cardinality 0..*, and from 'website_UnitAssociation', the role 'website_UnitAssociation' has cardinality 0..*.
+An association connects 'website_UnitAssociation' and 'website_EntityOrView'. From 'website_UnitAssociation', the role 'website_UnitAssociation186' has cardinality 0..*, and from 'website_EntityOrView', the role 'website_EntityOrView187' has cardinality 0..*.
+An association connects 'website_Selection' and 'website_UnitAssociation'. From 'website_Selection', the role 'website_Selection190' has cardinality 0..*, and from 'website_UnitAssociation', the role 'website_UnitAssociation189' has cardinality 0..*.
+An association connects 'website_Association' and 'website_AssociationReference'. From 'website_Association', the role 'website_Association192' has cardinality 0..*, and from 'website_AssociationReference', the role 'website_AssociationReference' has cardinality 0..*.
+An association connects 'website_Label' and 'website_AssociationReference'. From 'website_Label', the role 'website_Label195' has cardinality 0..*, and from 'website_AssociationReference', the role 'website_AssociationReference194' has cardinality 0..*.
+An association connects 'website_AssociationReference' and 'website_ChildPath'. From 'website_AssociationReference', the role 'partOf197' has cardinality 0..*, and from 'website_ChildPath', the role 'ChildPath' has cardinality 0..*.
+An association connects 'website_InterfaceField' and 'website_UnitField'. From 'website_InterfaceField', the role 'website_InterfaceField' has cardinality 0..*, and from 'website_UnitField', the role 'website_UnitField' has cardinality 0..*.
+An association connects 'website_DataTypeField' and 'website_DataType'. From 'website_DataTypeField', the role 'website_DataTypeField' has cardinality 0..*, and from 'website_DataType', the role 'website_DataType200' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_SelectableUnit'. From 'website_EntityOrView', the role 'website_EntityOrView202' has cardinality 0..*, and from 'website_SelectableUnit', the role 'website_SelectableUnit' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_SingletonUnit'. From 'website_EntityOrView', the role 'website_EntityOrView204' has cardinality 0..*, and from 'website_SingletonUnit', the role 'website_SingletonUnit' has cardinality 0..*.
+An association connects 'website_CollectionUnit' and 'website_EntityOrView'. From 'website_CollectionUnit', the role 'website_CollectionUnit' has cardinality 0..*, and from 'website_EntityOrView', the role 'website_EntityOrView206' has cardinality 0..*.
+An association connects 'website_CollectionUnit' and 'website_Feature'. From 'website_CollectionUnit', the role 'website_CollectionUnit208' has cardinality 0..*, and from 'website_Feature', the role 'website_Feature209' has cardinality 0..*.
+An association connects 'website_CollectionUnit' and 'website_Selection'. From 'website_CollectionUnit', the role 'website_CollectionUnit211' has cardinality 0..*, and from 'website_Selection', the role 'website_Selection212' has cardinality 0..*.
+An association connects 'website_CollectionUnit' and 'website_Filter'. From 'website_CollectionUnit', the role 'website_CollectionUnit214' has cardinality 0..*, and from 'website_Filter', the role 'website_Filter215' has cardinality 0..*.
+An association connects 'website_CollectionUnit' and 'website_Filter'. From 'website_CollectionUnit', the role 'website_CollectionUnit217' has cardinality 0..*, and from 'website_Filter', the role 'website_Filter218' has cardinality 0..*.
+An association connects 'website_EditUnit' and 'website_Selection'. From 'website_EditUnit', the role 'website_EditUnit' has cardinality 0..*, and from 'website_Selection', the role 'website_Selection220' has cardinality 0..*.
+An association connects 'website_EditUnit' and 'website_Label'. From 'website_EditUnit', the role 'website_EditUnit222' has cardinality 0..*, and from 'website_Label', the role 'website_Label223' has cardinality 0..*.
+An association connects 'website_Predicate' and 'website_EditUnit'. From 'website_Predicate', the role 'website_Predicate226' has cardinality 0..*, and from 'website_EditUnit', the role 'website_EditUnit225' has cardinality 0..*.
+An association connects 'website_Page' and 'website_EditUnit'. From 'website_Page', the role 'website_Page229' has cardinality 0..*, and from 'website_EditUnit', the role 'website_EditUnit228' has cardinality 0..*.
+An association connects 'website_Page' and 'website_EditUnit'. From 'website_Page', the role 'website_Page232' has cardinality 0..*, and from 'website_EditUnit', the role 'website_EditUnit231' has cardinality 0..*.
+An association connects 'website_LocationAttribute' and 'website_MapUnit'. From 'website_LocationAttribute', the role 'website_LocationAttribute' has cardinality 0..*, and from 'website_MapUnit', the role 'website_MapUnit' has cardinality 0..*.
+An association connects 'website_Attribute' and 'website_MapUnit'. From 'website_Attribute', the role 'website_Attribute236' has cardinality 0..*, and from 'website_MapUnit', the role 'website_MapUnit235' has cardinality 0..*.
+An association connects 'website_DataUnit' and 'website_Selection'. From 'website_DataUnit', the role 'website_DataUnit' has cardinality 0..*, and from 'website_Selection', the role 'website_Selection238' has cardinality 0..*.
+An association connects 'website_DataUnit' and 'website_Label'. From 'website_DataUnit', the role 'website_DataUnit240' has cardinality 0..*, and from 'website_Label', the role 'website_Label241' has cardinality 0..*.
+An association connects 'website_Page' and 'website_ControlUnit'. From 'website_Page', the role 'website_Page243' has cardinality 0..*, and from 'website_ControlUnit', the role 'website_ControlUnit' has cardinality 0..*.
+An association connects 'website_SearchUnit' and 'website_IndexUnit'. From 'website_SearchUnit', the role 'website_SearchUnit' has cardinality 0..*, and from 'website_IndexUnit', the role 'website_IndexUnit' has cardinality 0..*.
+An association connects 'website_ImageUnit' and 'website_Selection'. From 'website_ImageUnit', the role 'website_ImageUnit' has cardinality 0..*, and from 'website_Selection', the role 'website_Selection246' has cardinality 0..*.
+An association connects 'website_ImageUnit' and 'website_FeaturePath'. From 'website_ImageUnit', the role 'website_ImageUnit248' has cardinality 0..*, and from 'website_FeaturePath', the role 'website_FeaturePath' has cardinality 0..*.
+An association connects 'website_FeaturePath' and 'website_ImageUnit'. From 'website_FeaturePath', the role 'website_FeaturePath251' has cardinality 0..*, and from 'website_ImageUnit', the role 'website_ImageUnit250' has cardinality 0..*.
+An association connects 'website_ImageManipulation' and 'website_ImageUnit'. From 'website_ImageManipulation', the role 'website_ImageManipulation254' has cardinality 0..*, and from 'website_ImageUnit', the role 'website_ImageUnit253' has cardinality 0..*.
+An association connects 'website_FeaturePathAttribute' and 'website_Attribute'. From 'website_FeaturePathAttribute', the role 'website_FeaturePathAttribute' has cardinality 0..*, and from 'website_Attribute', the role 'website_Attribute256' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_FeaturePathAssociation'. From 'website_EntityOrView', the role 'website_EntityOrView258' has cardinality 0..*, and from 'website_FeaturePathAssociation', the role 'website_FeaturePathAssociation' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_FeaturePathAssociation'. From 'website_EntityOrView', the role 'website_EntityOrView261' has cardinality 0..*, and from 'website_FeaturePathAssociation', the role 'website_FeaturePathAssociation260' has cardinality 0..*.
+An association connects 'website_ChildPath' and 'website_AssociationReference'. From 'website_ChildPath', the role 'childFeature' has cardinality 0..*, and from 'website_AssociationReference', the role 'AssociationReference' has cardinality 0..*.
+An association connects 'website_ChildPathAttribute' and 'website_Attribute'. From 'website_ChildPathAttribute', the role 'website_ChildPathAttribute' has cardinality 0..*, and from 'website_Attribute', the role 'website_Attribute264' has cardinality 0..*.
+An association connects 'website_ChildPathAssociation' and 'website_EntityOrView'. From 'website_ChildPathAssociation', the role 'website_ChildPathAssociation' has cardinality 0..*, and from 'website_EntityOrView', the role 'website_EntityOrView266' has cardinality 0..*.
+An association connects 'website_ChildPathAssociation' and 'website_EntityOrView'. From 'website_ChildPathAssociation', the role 'website_ChildPathAssociation268' has cardinality 0..*, and from 'website_EntityOrView', the role 'website_EntityOrView269' has cardinality 0..*.
+An association connects 'website_GalleryUnit' and 'website_ImageManipulation'. From 'website_GalleryUnit', the role 'website_GalleryUnit' has cardinality 0..*, and from 'website_ImageManipulation', the role 'website_ImageManipulation271' has cardinality 0..*.
+An association connects 'website_InlineAction' and 'website_InlineActionContainer'. From 'website_InlineAction', the role 'InlineAction' has cardinality 0..*, and from 'website_InlineActionContainer', the role 'usedBy273' has cardinality 0..*.
+An association connects 'website_InlineActionContainer' and 'website_InlineAction'. From 'website_InlineActionContainer', the role 'InlineActionContainer' has cardinality 0..*, and from 'website_InlineAction', the role 'actions' has cardinality 0..*.
+An association connects 'website_Predicate' and 'website_InlineAction'. From 'website_Predicate', the role 'website_Predicate276' has cardinality 0..*, and from 'website_InlineAction', the role 'website_InlineAction' has cardinality 0..*.
+An association connects 'website_InlineAction' and 'website_Predicate'. From 'website_InlineAction', the role 'website_InlineAction278' has cardinality 0..*, and from 'website_Predicate', the role 'website_Predicate279' has cardinality 0..*.
+An association connects 'website_SelectableUnit' and 'website_SelectAction'. From 'website_SelectableUnit', the role 'website_SelectableUnit281' has cardinality 0..*, and from 'website_SelectAction', the role 'website_SelectAction' has cardinality 0..*.
+An association connects 'website_DeleteAction' and 'website_Page'. From 'website_DeleteAction', the role 'website_DeleteAction' has cardinality 0..*, and from 'website_Page', the role 'website_Page283' has cardinality 0..*.
+An association connects 'website_FeatureSupportAction' and 'website_BusinessOperation'. From 'website_FeatureSupportAction', the role 'website_FeatureSupportAction' has cardinality 0..*, and from 'website_BusinessOperation', the role 'website_BusinessOperation285' has cardinality 0..*.
+An association connects 'website_DynamicUnit' and 'website_ModelReference'. From 'website_DynamicUnit', the role 'website_DynamicUnit287' has cardinality 0..*, and from 'website_ModelReference', the role 'website_ModelReference' has cardinality 0..*.
+An association connects 'website_Feature' and 'website_FeatureReference'. From 'website_Feature', the role 'website_Feature289' has cardinality 0..*, and from 'website_FeatureReference', the role 'website_FeatureReference' has cardinality 0..*.
+An association connects 'website_Attribute' and 'website_RouteParameterReference'. From 'website_Attribute', the role 'website_Attribute291' has cardinality 0..*, and from 'website_RouteParameterReference', the role 'website_RouteParameterReference' has cardinality 0..*.
+An association connects 'website_SelectionParameter' and 'website_ParameterReference'. From 'website_SelectionParameter', the role 'website_SelectionParameter293' has cardinality 0..*, and from 'website_ParameterReference', the role 'website_ParameterReference' has cardinality 0..*.
+An association connects 'website_EntityOrView' and 'website_CurrentUserReference'. From 'website_EntityOrView', the role 'website_EntityOrView295' has cardinality 0..*, and from 'website_CurrentUserReference', the role 'website_CurrentUserReference' has cardinality 0..*.

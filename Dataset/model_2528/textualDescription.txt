@@ -1,0 +1,25 @@
+The domain model 'target' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'target_F' represents an important domain concept.
+It does not declare any attributes.
+
+'F' represents an important domain concept.
+It does not declare any attributes.
+
+'target_E' represents an important domain concept.
+It does not declare any attributes.
+
+'target_G' represents an important domain concept.
+It does not declare any attributes.
+
+'target_H' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'target_G' is a specialization of 'F'.
+The class 'target_H' is a specialization of 'F'.
+
+Relationships between classes are modeled using associations.
+An association connects 'target_F' and 'target_E'. From 'target_F', the role 'target_F' has cardinality 0..*, and from 'target_E', the role 'target_E' has cardinality 0..*.

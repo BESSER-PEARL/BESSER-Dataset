@@ -1,0 +1,51 @@
+The domain model 'zhu' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'zhu_Triggers' represents an important domain concept.
+It does not declare any attributes.
+
+'zhu_Transitions' represents an important domain concept.
+It does not declare any attributes.
+
+'zhu_TopRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'zhu_Transition' represents an important domain concept.
+It has the following attributes: 'behaviour', which is of type str; 'guard', which is of type str.
+
+'zhu_StatesSeparated' represents an important domain concept.
+It does not declare any attributes.
+
+'zhu_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'zhu_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'zhu_Region' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'zhu_TriggersSeparated' represents an important domain concept.
+It has the following attributes: 'firstTrigger', which is of type str; 'followingTriggers', which is of type str.
+
+'zhu_States' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'zhu_StateMachine' and 'zhu_TopRegion'. From 'zhu_StateMachine', the role 'zhu_StateMachine' has cardinality 0..*, and from 'zhu_TopRegion', the role 'zhu_TopRegion' has cardinality 0..*.
+An association connects 'zhu_States' and 'zhu_TopRegion'. From 'zhu_States', the role 'zhu_States' has cardinality 0..*, and from 'zhu_TopRegion', the role 'zhu_TopRegion2' has cardinality 0..*.
+An association connects 'zhu_Region' and 'zhu_TopRegion'. From 'zhu_Region', the role 'zhu_Region' has cardinality 0..*, and from 'zhu_TopRegion', the role 'zhu_TopRegion4' has cardinality 0..*.
+An association connects 'zhu_TopRegion' and 'zhu_Transitions'. From 'zhu_TopRegion', the role 'zhu_TopRegion6' has cardinality 0..*, and from 'zhu_Transitions', the role 'zhu_Transitions' has cardinality 0..*.
+An association connects 'zhu_States' and 'zhu_Region'. From 'zhu_States', the role 'zhu_States9' has cardinality 0..*, and from 'zhu_Region', the role 'zhu_Region8' has cardinality 0..*.
+An association connects 'zhu_Region' and 'zhu_Region'. From 'zhu_Region', the role 'zhu_Region10' has cardinality 0..*, and from 'zhu_Region', the role 'zhu_Region12' has cardinality 0..*.
+An association connects 'zhu_Region' and 'zhu_Transitions'. From 'zhu_Region', the role 'zhu_Region14' has cardinality 0..*, and from 'zhu_Transitions', the role 'zhu_Transitions15' has cardinality 0..*.
+An association connects 'zhu_Transition' and 'zhu_Transitions'. From 'zhu_Transition', the role 'zhu_Transition' has cardinality 0..*, and from 'zhu_Transitions', the role 'zhu_Transitions17' has cardinality 0..*.
+An association connects 'zhu_Transitions' and 'zhu_Transition'. From 'zhu_Transitions', the role 'zhu_Transitions19' has cardinality 0..*, and from 'zhu_Transition', the role 'zhu_Transition20' has cardinality 0..*.
+An association connects 'zhu_Transition' and 'zhu_State'. From 'zhu_Transition', the role 'zhu_Transition22' has cardinality 0..*, and from 'zhu_State', the role 'zhu_State' has cardinality 0..*.
+An association connects 'zhu_Transition' and 'zhu_State'. From 'zhu_Transition', the role 'zhu_Transition24' has cardinality 0..*, and from 'zhu_State', the role 'zhu_State25' has cardinality 0..*.
+An association connects 'zhu_Triggers' and 'zhu_Transition'. From 'zhu_Triggers', the role 'zhu_Triggers' has cardinality 0..*, and from 'zhu_Transition', the role 'zhu_Transition27' has cardinality 0..*.
+An association connects 'zhu_StatesSeparated' and 'zhu_States'. From 'zhu_StatesSeparated', the role 'zhu_StatesSeparated' has cardinality 0..*, and from 'zhu_States', the role 'zhu_States29' has cardinality 0..*.
+An association connects 'zhu_State' and 'zhu_StatesSeparated'. From 'zhu_State', the role 'zhu_State32' has cardinality 0..*, and from 'zhu_StatesSeparated', the role 'zhu_StatesSeparated31' has cardinality 0..*.
+An association connects 'zhu_StatesSeparated' and 'zhu_State'. From 'zhu_StatesSeparated', the role 'zhu_StatesSeparated34' has cardinality 0..*, and from 'zhu_State', the role 'zhu_State35' has cardinality 0..*.
+An association connects 'zhu_TriggersSeparated' and 'zhu_Triggers'. From 'zhu_TriggersSeparated', the role 'zhu_TriggersSeparated' has cardinality 0..*, and from 'zhu_Triggers', the role 'zhu_Triggers37' has cardinality 0..*.

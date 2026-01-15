@@ -1,0 +1,27 @@
+The domain model 'MainPackage' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'MainPackage_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'MainPackage_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'MainPackage_Subpackage_InheritingClass' represents an important domain concept.
+It does not declare any attributes.
+
+'MainPackage_ClassInMainPackage' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MainPackage_Subpackage_ClassInSubpackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassInMainPackage' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'MainPackage_Subpackage_InheritingClass' is a specialization of 'ClassInMainPackage'.
+
+Relationships between classes are modeled using associations.
+An association connects 'MainPackage_Model' and 'MainPackage_EObject'. From 'MainPackage_Model', the role 'MainPackage_Model' has cardinality 0..*, and from 'MainPackage_EObject', the role 'MainPackage_EObject' has cardinality 0..*.

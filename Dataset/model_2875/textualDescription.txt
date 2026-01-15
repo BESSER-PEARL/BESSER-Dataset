@@ -1,0 +1,327 @@
+The domain model 'xpand3' describes the core structural elements and their relationships within the system.
+
+The model defines 67 main class(es).
+
+'xpand3_statement_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'SyntaxElement' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_declaration_Extension' represents an important domain concept.
+It has one attribute: 'cached', which is of type bool.
+
+'xpand3_statement_AbstractStatementWithBody' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_SwitchExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_declaration_AbstractAspect' represents an important domain concept.
+It has one attribute: 'wildparams', which is of type bool.
+
+'xpand3_expression_ConstructorCallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_DeclaredParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_File' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_SyntaxElement' represents an important domain concept.
+It has the following attributes: 'line', which is of type int; 'start', which is of type int; 'end', which is of type int; 'fileName', which is of type str.
+
+'xpand3_ImportStatement' represents an important domain concept.
+It has one attribute: 'exported', which is of type bool.
+
+'xpand3_declaration_DefinitionAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_declaration_ExtensionAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_declaration_JavaExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractNamedDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'declaration_xpand3_DeclaredParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_RealLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_statement_TextStatement' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'deleteLine', which is of type bool.
+
+'xpand3_expression_IfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_statement_LetStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_UnaryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'declaration_xpand3_File' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'statement_xpand3_Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractStatementWithBody' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_ListLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_Case' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_Identifier' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'xpand3_statement_AbstractStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_BooleanLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_OperationCall' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_statement_ProtectStatement' represents an important domain concept.
+It has one attribute: 'disable', which is of type bool.
+
+'xpand3_expression_GlobalVarExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_TypeSelectExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_declaration_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_IntegerLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_declaration_CreateExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'declaration_xpand3_Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_statement_ErrorStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_ChainExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_statement_ForEachStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_AbstractExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_declaration_Check' represents an important domain concept.
+It has the following attributes: 'feature', which is of type str; 'errorSeverity', which is of type bool.
+
+'xpand3_expression_Cast' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_statement_ExpandStatement' represents an important domain concept.
+It has one attribute: 'foreach', which is of type bool.
+
+'xpand3_expression_BooleanOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_LetExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_CollectionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_StringLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_xpand3_Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_declaration_AbstractDeclaration' represents an important domain concept.
+It has one attribute: 'isPrivate', which is of type bool.
+
+'xpand3_declaration_AbstractNamedDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_expression_FeatureCall' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_statement_FileStatement' represents an important domain concept.
+It has one attribute: 'once', which is of type bool.
+
+'xpand3_expression_BinaryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'xpand3_statement_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureCall' represents an important domain concept.
+It does not declare any attributes.
+
+'Case' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'xpand3_File' is a specialization of 'SyntaxElement'.
+The class 'xpand3_ImportStatement' is a specialization of 'SyntaxElement'.
+The class 'xpand3_Identifier' is a specialization of 'SyntaxElement'.
+The class 'xpand3_DeclaredParameter' is a specialization of 'SyntaxElement'.
+The class 'xpand3_expression_AbstractExpression' is a specialization of 'SyntaxElement'.
+The class 'xpand3_expression_BooleanOperation' is a specialization of 'BinaryOperation'.
+The class 'xpand3_expression_Cast' is a specialization of 'AbstractExpression'.
+The class 'xpand3_expression_ChainExpression' is a specialization of 'AbstractExpression'.
+The class 'xpand3_expression_ConstructorCallExpression' is a specialization of 'AbstractExpression'.
+The class 'xpand3_expression_FeatureCall' is a specialization of 'AbstractExpression'.
+The class 'xpand3_expression_CollectionExpression' is a specialization of 'FeatureCall'.
+The class 'xpand3_expression_OperationCall' is a specialization of 'FeatureCall'.
+The class 'xpand3_expression_TypeSelectExpression' is a specialization of 'FeatureCall'.
+The class 'xpand3_expression_GlobalVarExpression' is a specialization of 'AbstractExpression'.
+The class 'xpand3_expression_IfExpression' is a specialization of 'AbstractExpression'.
+The class 'xpand3_expression_LetExpression' is a specialization of 'AbstractExpression'.
+The class 'xpand3_expression_ListLiteral' is a specialization of 'AbstractExpression'.
+The class 'xpand3_expression_Literal' is a specialization of 'AbstractExpression'.
+The class 'xpand3_expression_BooleanLiteral' is a specialization of 'Literal'.
+The class 'xpand3_expression_IntegerLiteral' is a specialization of 'Literal'.
+The class 'xpand3_expression_NullLiteral' is a specialization of 'Literal'.
+The class 'xpand3_expression_RealLiteral' is a specialization of 'Literal'.
+The class 'xpand3_expression_StringLiteral' is a specialization of 'Literal'.
+The class 'xpand3_expression_SwitchExpression' is a specialization of 'AbstractExpression'.
+The class 'xpand3_expression_Case' is a specialization of 'SyntaxElement'.
+The class 'xpand3_expression_BinaryOperation' is a specialization of 'AbstractExpression'.
+The class 'xpand3_expression_UnaryOperation' is a specialization of 'AbstractExpression'.
+The class 'xpand3_statement_AbstractStatement' is a specialization of 'SyntaxElement'.
+The class 'xpand3_statement_ExpandStatement' is a specialization of 'AbstractStatement'.
+The class 'xpand3_statement_ExpressionStatement' is a specialization of 'AbstractStatement'.
+The class 'xpand3_statement_ErrorStatement' is a specialization of 'AbstractStatement'.
+The class 'xpand3_statement_AbstractStatementWithBody' is a specialization of 'AbstractStatement'.
+The class 'xpand3_statement_FileStatement' is a specialization of 'AbstractStatementWithBody'.
+The class 'xpand3_statement_ForEachStatement' is a specialization of 'AbstractStatementWithBody'.
+The class 'xpand3_statement_IfStatement' is a specialization of 'AbstractStatementWithBody'.
+The class 'xpand3_statement_LetStatement' is a specialization of 'AbstractStatementWithBody'.
+The class 'xpand3_statement_ProtectStatement' is a specialization of 'AbstractStatementWithBody'.
+The class 'xpand3_statement_TextStatement' is a specialization of 'AbstractStatement'.
+The class 'xpand3_declaration_AbstractDeclaration' is a specialization of 'SyntaxElement'.
+The class 'xpand3_declaration_AbstractNamedDeclaration' is a specialization of 'AbstractDeclaration'.
+The class 'xpand3_declaration_Definition' is a specialization of 'AbstractNamedDeclaration'.
+The class 'xpand3_declaration_Extension' is a specialization of 'AbstractNamedDeclaration'.
+The class 'xpand3_declaration_AbstractAspect' is a specialization of 'AbstractDeclaration'.
+The class 'xpand3_declaration_ExtensionAspect' is a specialization of 'AbstractAspect'.
+The class 'xpand3_declaration_DefinitionAspect' is a specialization of 'AbstractAspect'.
+The class 'xpand3_declaration_Check' is a specialization of 'AbstractDeclaration'.
+The class 'xpand3_declaration_CreateExtension' is a specialization of 'Extension'.
+The class 'xpand3_declaration_JavaExtension' is a specialization of 'AbstractNamedDeclaration'.
+
+Relationships between classes are modeled using associations.
+An association connects 'xpand3_ImportStatement' and 'xpand3_File'. From 'xpand3_ImportStatement', the role 'xpand3_ImportStatement' has cardinality 0..*, and from 'xpand3_File', the role 'xpand3_File' has cardinality 0..*.
+An association connects 'AbstractDeclaration' and 'xpand3_File'. From 'AbstractDeclaration', the role 'AbstractDeclaration' has cardinality 0..*, and from 'xpand3_File', the role 'xpand3_File2' has cardinality 0..*.
+An association connects 'xpand3_Identifier' and 'xpand3_ImportStatement'. From 'xpand3_Identifier', the role 'xpand3_Identifier' has cardinality 0..*, and from 'xpand3_ImportStatement', the role 'xpand3_ImportStatement4' has cardinality 0..*.
+An association connects 'xpand3_DeclaredParameter' and 'xpand3_Identifier'. From 'xpand3_DeclaredParameter', the role 'xpand3_DeclaredParameter' has cardinality 0..*, and from 'xpand3_Identifier', the role 'xpand3_Identifier6' has cardinality 0..*.
+An association connects 'xpand3_DeclaredParameter' and 'xpand3_Identifier'. From 'xpand3_DeclaredParameter', the role 'xpand3_DeclaredParameter8' has cardinality 0..*, and from 'xpand3_Identifier', the role 'xpand3_Identifier9' has cardinality 0..*.
+An association connects 'expression_xpand3_Identifier' and 'xpand3_expression_Cast'. From 'expression_xpand3_Identifier', the role 'expression_xpand3_Identifier' has cardinality 0..*, and from 'xpand3_expression_Cast', the role 'xpand3_expression_Cast' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_expression_Cast'. From 'AbstractExpression', the role 'AbstractExpression' has cardinality 0..*, and from 'xpand3_expression_Cast', the role 'xpand3_expression_Cast12' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_expression_ChainExpression'. From 'AbstractExpression', the role 'AbstractExpression14' has cardinality 0..*, and from 'xpand3_expression_ChainExpression', the role 'xpand3_expression_ChainExpression' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_expression_ChainExpression'. From 'AbstractExpression', the role 'AbstractExpression17' has cardinality 0..*, and from 'xpand3_expression_ChainExpression', the role 'xpand3_expression_ChainExpression16' has cardinality 0..*.
+An association connects 'expression_xpand3_Identifier' and 'xpand3_expression_ConstructorCallExpression'. From 'expression_xpand3_Identifier', the role 'expression_xpand3_Identifier19' has cardinality 0..*, and from 'xpand3_expression_ConstructorCallExpression', the role 'xpand3_expression_ConstructorCallExpression' has cardinality 0..*.
+An association connects 'xpand3_expression_FeatureCall' and 'AbstractExpression'. From 'xpand3_expression_FeatureCall', the role 'xpand3_expression_FeatureCall' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression21' has cardinality 0..*.
+An association connects 'xpand3_expression_FeatureCall' and 'expression_xpand3_Identifier'. From 'xpand3_expression_FeatureCall', the role 'xpand3_expression_FeatureCall23' has cardinality 0..*, and from 'expression_xpand3_Identifier', the role 'expression_xpand3_Identifier24' has cardinality 0..*.
+An association connects 'xpand3_expression_CollectionExpression' and 'AbstractExpression'. From 'xpand3_expression_CollectionExpression', the role 'xpand3_expression_CollectionExpression' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression26' has cardinality 0..*.
+An association connects 'expression_xpand3_Identifier' and 'xpand3_expression_CollectionExpression'. From 'expression_xpand3_Identifier', the role 'expression_xpand3_Identifier29' has cardinality 0..*, and from 'xpand3_expression_CollectionExpression', the role 'xpand3_expression_CollectionExpression28' has cardinality 0..*.
+An association connects 'xpand3_expression_OperationCall' and 'AbstractExpression'. From 'xpand3_expression_OperationCall', the role 'xpand3_expression_OperationCall' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression31' has cardinality 0..*.
+An association connects 'xpand3_expression_TypeSelectExpression' and 'expression_xpand3_Identifier'. From 'xpand3_expression_TypeSelectExpression', the role 'xpand3_expression_TypeSelectExpression' has cardinality 0..*, and from 'expression_xpand3_Identifier', the role 'expression_xpand3_Identifier33' has cardinality 0..*.
+An association connects 'xpand3_expression_GlobalVarExpression' and 'expression_xpand3_Identifier'. From 'xpand3_expression_GlobalVarExpression', the role 'xpand3_expression_GlobalVarExpression' has cardinality 0..*, and from 'expression_xpand3_Identifier', the role 'expression_xpand3_Identifier35' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_expression_IfExpression'. From 'AbstractExpression', the role 'AbstractExpression37' has cardinality 0..*, and from 'xpand3_expression_IfExpression', the role 'xpand3_expression_IfExpression' has cardinality 0..*.
+An association connects 'xpand3_expression_IfExpression' and 'AbstractExpression'. From 'xpand3_expression_IfExpression', the role 'xpand3_expression_IfExpression39' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression40' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_expression_IfExpression'. From 'AbstractExpression', the role 'AbstractExpression43' has cardinality 0..*, and from 'xpand3_expression_IfExpression', the role 'xpand3_expression_IfExpression42' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_expression_LetExpression'. From 'AbstractExpression', the role 'AbstractExpression45' has cardinality 0..*, and from 'xpand3_expression_LetExpression', the role 'xpand3_expression_LetExpression' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_expression_LetExpression'. From 'AbstractExpression', the role 'AbstractExpression48' has cardinality 0..*, and from 'xpand3_expression_LetExpression', the role 'xpand3_expression_LetExpression47' has cardinality 0..*.
+An association connects 'expression_xpand3_Identifier' and 'xpand3_expression_LetExpression'. From 'expression_xpand3_Identifier', the role 'expression_xpand3_Identifier51' has cardinality 0..*, and from 'xpand3_expression_LetExpression', the role 'xpand3_expression_LetExpression50' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_expression_ListLiteral'. From 'AbstractExpression', the role 'AbstractExpression53' has cardinality 0..*, and from 'xpand3_expression_ListLiteral', the role 'xpand3_expression_ListLiteral' has cardinality 0..*.
+An association connects 'expression_xpand3_Identifier' and 'xpand3_expression_Literal'. From 'expression_xpand3_Identifier', the role 'expression_xpand3_Identifier55' has cardinality 0..*, and from 'xpand3_expression_Literal', the role 'xpand3_expression_Literal' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_expression_SwitchExpression'. From 'AbstractExpression', the role 'AbstractExpression57' has cardinality 0..*, and from 'xpand3_expression_SwitchExpression', the role 'xpand3_expression_SwitchExpression' has cardinality 0..*.
+An association connects 'xpand3_expression_SwitchExpression' and 'AbstractExpression'. From 'xpand3_expression_SwitchExpression', the role 'xpand3_expression_SwitchExpression59' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression60' has cardinality 0..*.
+An association connects 'Case' and 'xpand3_expression_SwitchExpression'. From 'Case', the role 'Case' has cardinality 0..*, and from 'xpand3_expression_SwitchExpression', the role 'xpand3_expression_SwitchExpression62' has cardinality 0..*.
+An association connects 'xpand3_expression_Case' and 'AbstractExpression'. From 'xpand3_expression_Case', the role 'xpand3_expression_Case' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression64' has cardinality 0..*.
+An association connects 'xpand3_expression_Case' and 'AbstractExpression'. From 'xpand3_expression_Case', the role 'xpand3_expression_Case66' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression67' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_expression_BinaryOperation'. From 'AbstractExpression', the role 'AbstractExpression69' has cardinality 0..*, and from 'xpand3_expression_BinaryOperation', the role 'xpand3_expression_BinaryOperation' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_expression_BinaryOperation'. From 'AbstractExpression', the role 'AbstractExpression72' has cardinality 0..*, and from 'xpand3_expression_BinaryOperation', the role 'xpand3_expression_BinaryOperation71' has cardinality 0..*.
+An association connects 'xpand3_expression_BinaryOperation' and 'expression_xpand3_Identifier'. From 'xpand3_expression_BinaryOperation', the role 'xpand3_expression_BinaryOperation74' has cardinality 0..*, and from 'expression_xpand3_Identifier', the role 'expression_xpand3_Identifier75' has cardinality 0..*.
+An association connects 'xpand3_expression_UnaryOperation' and 'expression_xpand3_Identifier'. From 'xpand3_expression_UnaryOperation', the role 'xpand3_expression_UnaryOperation' has cardinality 0..*, and from 'expression_xpand3_Identifier', the role 'expression_xpand3_Identifier77' has cardinality 0..*.
+An association connects 'xpand3_expression_UnaryOperation' and 'AbstractExpression'. From 'xpand3_expression_UnaryOperation', the role 'xpand3_expression_UnaryOperation79' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression80' has cardinality 0..*.
+An association connects 'xpand3_statement_ExpandStatement' and 'AbstractExpression'. From 'xpand3_statement_ExpandStatement', the role 'xpand3_statement_ExpandStatement' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression82' has cardinality 0..*.
+An association connects 'xpand3_statement_ExpandStatement' and 'AbstractExpression'. From 'xpand3_statement_ExpandStatement', the role 'xpand3_statement_ExpandStatement84' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression85' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_statement_ExpandStatement'. From 'AbstractExpression', the role 'AbstractExpression88' has cardinality 0..*, and from 'xpand3_statement_ExpandStatement', the role 'xpand3_statement_ExpandStatement87' has cardinality 0..*.
+An association connects 'xpand3_statement_ExpandStatement' and 'statement_xpand3_Identifier'. From 'xpand3_statement_ExpandStatement', the role 'xpand3_statement_ExpandStatement90' has cardinality 0..*, and from 'statement_xpand3_Identifier', the role 'statement_xpand3_Identifier' has cardinality 0..*.
+An association connects 'xpand3_statement_ExpressionStatement' and 'AbstractExpression'. From 'xpand3_statement_ExpressionStatement', the role 'xpand3_statement_ExpressionStatement' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression92' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_statement_ErrorStatement'. From 'AbstractExpression', the role 'AbstractExpression94' has cardinality 0..*, and from 'xpand3_statement_ErrorStatement', the role 'xpand3_statement_ErrorStatement' has cardinality 0..*.
+An association connects 'xpand3_statement_AbstractStatementWithBody' and 'AbstractStatement'. From 'xpand3_statement_AbstractStatementWithBody', the role 'xpand3_statement_AbstractStatementWithBody' has cardinality 0..*, and from 'AbstractStatement', the role 'AbstractStatement' has cardinality 0..*.
+An association connects 'xpand3_statement_FileStatement' and 'AbstractExpression'. From 'xpand3_statement_FileStatement', the role 'xpand3_statement_FileStatement' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression97' has cardinality 0..*.
+An association connects 'xpand3_statement_FileStatement' and 'statement_xpand3_Identifier'. From 'xpand3_statement_FileStatement', the role 'xpand3_statement_FileStatement99' has cardinality 0..*, and from 'statement_xpand3_Identifier', the role 'statement_xpand3_Identifier100' has cardinality 0..*.
+An association connects 'xpand3_statement_ForEachStatement' and 'AbstractExpression'. From 'xpand3_statement_ForEachStatement', the role 'xpand3_statement_ForEachStatement' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression102' has cardinality 0..*.
+An association connects 'xpand3_statement_ForEachStatement' and 'AbstractExpression'. From 'xpand3_statement_ForEachStatement', the role 'xpand3_statement_ForEachStatement104' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression105' has cardinality 0..*.
+An association connects 'statement_xpand3_Identifier' and 'xpand3_statement_ForEachStatement'. From 'statement_xpand3_Identifier', the role 'statement_xpand3_Identifier108' has cardinality 0..*, and from 'xpand3_statement_ForEachStatement', the role 'xpand3_statement_ForEachStatement107' has cardinality 0..*.
+An association connects 'statement_xpand3_Identifier' and 'xpand3_statement_ForEachStatement'. From 'statement_xpand3_Identifier', the role 'statement_xpand3_Identifier111' has cardinality 0..*, and from 'xpand3_statement_ForEachStatement', the role 'xpand3_statement_ForEachStatement110' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_statement_IfStatement'. From 'AbstractExpression', the role 'AbstractExpression113' has cardinality 0..*, and from 'xpand3_statement_IfStatement', the role 'xpand3_statement_IfStatement' has cardinality 0..*.
+An association connects 'IfStatement' and 'xpand3_statement_IfStatement'. From 'IfStatement', the role 'IfStatement' has cardinality 0..*, and from 'xpand3_statement_IfStatement', the role 'xpand3_statement_IfStatement115' has cardinality 0..*.
+An association connects 'xpand3_statement_LetStatement' and 'statement_xpand3_Identifier'. From 'xpand3_statement_LetStatement', the role 'xpand3_statement_LetStatement' has cardinality 0..*, and from 'statement_xpand3_Identifier', the role 'statement_xpand3_Identifier117' has cardinality 0..*.
+An association connects 'xpand3_statement_LetStatement' and 'AbstractExpression'. From 'xpand3_statement_LetStatement', the role 'xpand3_statement_LetStatement119' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression120' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_statement_ProtectStatement'. From 'AbstractExpression', the role 'AbstractExpression122' has cardinality 0..*, and from 'xpand3_statement_ProtectStatement', the role 'xpand3_statement_ProtectStatement' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_statement_ProtectStatement'. From 'AbstractExpression', the role 'AbstractExpression125' has cardinality 0..*, and from 'xpand3_statement_ProtectStatement', the role 'xpand3_statement_ProtectStatement124' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_statement_ProtectStatement'. From 'AbstractExpression', the role 'AbstractExpression128' has cardinality 0..*, and from 'xpand3_statement_ProtectStatement', the role 'xpand3_statement_ProtectStatement127' has cardinality 0..*.
+An association connects 'declaration_xpand3_File' and 'xpand3_declaration_AbstractDeclaration'. From 'declaration_xpand3_File', the role 'declaration_xpand3_File' has cardinality 0..*, and from 'xpand3_declaration_AbstractDeclaration', the role 'xpand3_declaration_AbstractDeclaration' has cardinality 0..*.
+An association connects 'declaration_xpand3_DeclaredParameter' and 'xpand3_declaration_AbstractDeclaration'. From 'declaration_xpand3_DeclaredParameter', the role 'declaration_xpand3_DeclaredParameter' has cardinality 0..*, and from 'xpand3_declaration_AbstractDeclaration', the role 'xpand3_declaration_AbstractDeclaration131' has cardinality 0..*.
+An association connects 'xpand3_declaration_AbstractDeclaration' and 'AbstractExpression'. From 'xpand3_declaration_AbstractDeclaration', the role 'xpand3_declaration_AbstractDeclaration133' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression134' has cardinality 0..*.
+An association connects 'xpand3_declaration_AbstractNamedDeclaration' and 'declaration_xpand3_Identifier'. From 'xpand3_declaration_AbstractNamedDeclaration', the role 'xpand3_declaration_AbstractNamedDeclaration' has cardinality 0..*, and from 'declaration_xpand3_Identifier', the role 'declaration_xpand3_Identifier' has cardinality 0..*.
+An association connects 'xpand3_declaration_Definition' and 'AbstractStatement'. From 'xpand3_declaration_Definition', the role 'xpand3_declaration_Definition' has cardinality 0..*, and from 'AbstractStatement', the role 'AbstractStatement137' has cardinality 0..*.
+An association connects 'xpand3_declaration_Extension' and 'AbstractExpression'. From 'xpand3_declaration_Extension', the role 'xpand3_declaration_Extension' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression139' has cardinality 0..*.
+An association connects 'xpand3_declaration_Extension' and 'declaration_xpand3_Identifier'. From 'xpand3_declaration_Extension', the role 'xpand3_declaration_Extension141' has cardinality 0..*, and from 'declaration_xpand3_Identifier', the role 'declaration_xpand3_Identifier142' has cardinality 0..*.
+An association connects 'declaration_xpand3_Identifier' and 'xpand3_declaration_AbstractAspect'. From 'declaration_xpand3_Identifier', the role 'declaration_xpand3_Identifier144' has cardinality 0..*, and from 'xpand3_declaration_AbstractAspect', the role 'xpand3_declaration_AbstractAspect' has cardinality 0..*.
+An association connects 'xpand3_declaration_ExtensionAspect' and 'AbstractExpression'. From 'xpand3_declaration_ExtensionAspect', the role 'xpand3_declaration_ExtensionAspect' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression146' has cardinality 0..*.
+An association connects 'AbstractStatement' and 'xpand3_declaration_DefinitionAspect'. From 'AbstractStatement', the role 'AbstractStatement148' has cardinality 0..*, and from 'xpand3_declaration_DefinitionAspect', the role 'xpand3_declaration_DefinitionAspect' has cardinality 0..*.
+An association connects 'AbstractExpression' and 'xpand3_declaration_Check'. From 'AbstractExpression', the role 'AbstractExpression150' has cardinality 0..*, and from 'xpand3_declaration_Check', the role 'xpand3_declaration_Check' has cardinality 0..*.
+An association connects 'xpand3_declaration_Check' and 'AbstractExpression'. From 'xpand3_declaration_Check', the role 'xpand3_declaration_Check152' has cardinality 0..*, and from 'AbstractExpression', the role 'AbstractExpression153' has cardinality 0..*.
+An association connects 'xpand3_declaration_CreateExtension' and 'declaration_xpand3_DeclaredParameter'. From 'xpand3_declaration_CreateExtension', the role 'xpand3_declaration_CreateExtension' has cardinality 0..*, and from 'declaration_xpand3_DeclaredParameter', the role 'declaration_xpand3_DeclaredParameter155' has cardinality 0..*.
+An association connects 'xpand3_declaration_JavaExtension' and 'declaration_xpand3_Identifier'. From 'xpand3_declaration_JavaExtension', the role 'xpand3_declaration_JavaExtension' has cardinality 0..*, and from 'declaration_xpand3_Identifier', the role 'declaration_xpand3_Identifier157' has cardinality 0..*.
+An association connects 'declaration_xpand3_Identifier' and 'xpand3_declaration_JavaExtension'. From 'declaration_xpand3_Identifier', the role 'declaration_xpand3_Identifier160' has cardinality 0..*, and from 'xpand3_declaration_JavaExtension', the role 'xpand3_declaration_JavaExtension159' has cardinality 0..*.
+An association connects 'xpand3_declaration_JavaExtension' and 'declaration_xpand3_Identifier'. From 'xpand3_declaration_JavaExtension', the role 'xpand3_declaration_JavaExtension162' has cardinality 0..*, and from 'declaration_xpand3_Identifier', the role 'declaration_xpand3_Identifier163' has cardinality 0..*.

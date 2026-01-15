@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/bendavid-olivier/tooling/org.eclipse.emf.ecore/model/Ecore.ecore

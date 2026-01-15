@@ -1,0 +1,13 @@
+The domain model 'BBase' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'BBase_B' represents an important domain concept.
+It does not declare any attributes.
+
+'BBase_RootB' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'BBase_RootB' and 'BBase_B'. From 'BBase_RootB', the role 'RootB' has cardinality 0..*, and from 'BBase_B', the role 'bs' has cardinality 0..*.
+An association connects 'BBase_RootB' and 'BBase_B'. From 'BBase_RootB', the role 'root' has cardinality 0..*, and from 'BBase_B', the role 'B' has cardinality 0..*.

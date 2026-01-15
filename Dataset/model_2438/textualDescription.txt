@@ -1,0 +1,27 @@
+The domain model 'Sql' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Sql_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Sql_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'Sql_Column' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Sql_Database' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Sql_Database' is a specialization of 'NamedElement'.
+The class 'Sql_Table' is a specialization of 'NamedElement'.
+The class 'Sql_Column' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Sql_Database' and 'Sql_Table'. From 'Sql_Database', the role 'Sql_Database' has cardinality 0..*, and from 'Sql_Table', the role 'Sql_Table' has cardinality 0..*.
+An association connects 'Sql_Column' and 'Sql_Table'. From 'Sql_Column', the role 'Sql_Column' has cardinality 0..*, and from 'Sql_Table', the role 'Sql_Table2' has cardinality 0..*.

@@ -1,0 +1,71 @@
+The domain model 'codemodel' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_CMElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'codemodel_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_codemodel_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_expressions_VarExp' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_CodeModel' represents an important domain concept.
+It does not declare any attributes.
+
+'CMElement' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_expressions_BinExp' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'codemodel_D' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_statements_AsgnStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_E' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_statements_CompStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'codemodel_CodeModel' is a specialization of 'CMElement'.
+The class 'codemodel_Variable' is a specialization of 'CMElement'.
+The class 'codemodel_D' is a specialization of 'CMElement'.
+The class 'codemodel_E' is a specialization of 'CMElement'.
+The class 'codemodel_expressions_Expression' is a specialization of 'CMElement'.
+The class 'codemodel_expressions_VarExp' is a specialization of 'Expression'.
+The class 'codemodel_expressions_BinExp' is a specialization of 'Expression'.
+The class 'codemodel_statements_Statement' is a specialization of 'CMElement'.
+The class 'codemodel_statements_AsgnStmt' is a specialization of 'Statement'.
+The class 'codemodel_statements_CompStmt' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'codemodel_Variable' and 'codemodel_CodeModel'. From 'codemodel_Variable', the role 'codemodel_Variable' has cardinality 0..*, and from 'codemodel_CodeModel', the role 'codemodel_CodeModel' has cardinality 0..*.
+An association connects 'codemodel_CodeModel' and 'Statement'. From 'codemodel_CodeModel', the role 'codemodel_CodeModel2' has cardinality 0..*, and from 'Statement', the role 'Statement' has cardinality 0..*.
+An association connects 'codemodel_E' and 'codemodel_D'. From 'codemodel_E', the role 'codemodel_E' has cardinality 0..*, and from 'codemodel_D', the role 'codemodel_D' has cardinality 0..*.
+An association connects 'codemodel_expressions_VarExp' and 'expressions_codemodel_Variable'. From 'codemodel_expressions_VarExp', the role 'codemodel_expressions_VarExp' has cardinality 0..*, and from 'expressions_codemodel_Variable', the role 'expressions_codemodel_Variable' has cardinality 0..*.
+An association connects 'Expression' and 'codemodel_expressions_BinExp'. From 'Expression', the role 'Expression' has cardinality 0..*, and from 'codemodel_expressions_BinExp', the role 'codemodel_expressions_BinExp' has cardinality 0..*.
+An association connects 'codemodel_expressions_BinExp' and 'Expression'. From 'codemodel_expressions_BinExp', the role 'codemodel_expressions_BinExp7' has cardinality 0..*, and from 'Expression', the role 'Expression8' has cardinality 0..*.
+An association connects 'codemodel_statements_AsgnStmt' and 'Expression'. From 'codemodel_statements_AsgnStmt', the role 'codemodel_statements_AsgnStmt' has cardinality 0..*, and from 'Expression', the role 'Expression10' has cardinality 0..*.
+An association connects 'Expression' and 'codemodel_statements_AsgnStmt'. From 'Expression', the role 'Expression13' has cardinality 0..*, and from 'codemodel_statements_AsgnStmt', the role 'codemodel_statements_AsgnStmt12' has cardinality 0..*.
+An association connects 'codemodel_statements_CompStmt' and 'Statement'. From 'codemodel_statements_CompStmt', the role 'codemodel_statements_CompStmt' has cardinality 0..*, and from 'Statement', the role 'Statement15' has cardinality 0..*.

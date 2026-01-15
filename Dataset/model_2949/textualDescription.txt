@@ -1,0 +1,39 @@
+The domain model 'jsonldConverter' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'jsonldConverter_EnumItem' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'jsonldConverter_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jsonldConverter_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'jsonldConverter_Property' represents an important domain concept.
+It has the following attributes: 'one', which is of type bool; 'name', which is of type str; 'many', which is of type bool.
+
+'jsonldConverter_Enum' represents an important domain concept.
+It does not declare any attributes.
+
+'jsonldConverter_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'jsonldConverter_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'jsonldConverter_DataType' is a specialization of 'Type'.
+The class 'jsonldConverter_Entity' is a specialization of 'Type'.
+The class 'jsonldConverter_Enum' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'jsonldConverter_Model' and 'jsonldConverter_Type'. From 'jsonldConverter_Model', the role 'jsonldConverter_Model' has cardinality 0..*, and from 'jsonldConverter_Type', the role 'jsonldConverter_Type' has cardinality 0..*.
+An association connects 'jsonldConverter_Entity' and 'jsonldConverter_Entity'. From 'jsonldConverter_Entity', the role 'jsonldConverter_Entity' has cardinality 0..*, and from 'jsonldConverter_Entity', the role 'jsonldConverter_Entity1' has cardinality 0..*.
+An association connects 'jsonldConverter_Entity' and 'jsonldConverter_Property'. From 'jsonldConverter_Entity', the role 'jsonldConverter_Entity4' has cardinality 0..*, and from 'jsonldConverter_Property', the role 'jsonldConverter_Property' has cardinality 0..*.
+An association connects 'jsonldConverter_Property' and 'jsonldConverter_Type'. From 'jsonldConverter_Property', the role 'jsonldConverter_Property6' has cardinality 0..*, and from 'jsonldConverter_Type', the role 'jsonldConverter_Type7' has cardinality 0..*.
+An association connects 'jsonldConverter_Enum' and 'jsonldConverter_EnumItem'. From 'jsonldConverter_Enum', the role 'jsonldConverter_Enum' has cardinality 0..*, and from 'jsonldConverter_EnumItem', the role 'jsonldConverter_EnumItem' has cardinality 0..*.

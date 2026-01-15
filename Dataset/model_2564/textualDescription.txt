@@ -1,0 +1,16 @@
+The domain model 'eCoreContainemntTree' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'eCoreContainemntTree_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'eCoreContainemntTree_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'eCoreContainemntTree_Node' and 'eCoreContainemntTree_Node'. From 'eCoreContainemntTree_Node', the role 'children' has cardinality 0..*, and from 'eCoreContainemntTree_Node', the role 'Node' has cardinality 0..*.
+An association connects 'eCoreContainemntTree_Node' and 'eCoreContainemntTree_Node'. From 'eCoreContainemntTree_Node', the role 'Node4' has cardinality 0..*, and from 'eCoreContainemntTree_Node', the role 'parent' has cardinality 0..*.
+An association connects 'eCoreContainemntTree_Node' and 'eCoreContainemntTree_EObject'. From 'eCoreContainemntTree_Node', the role 'eCoreContainemntTree_Node' has cardinality 0..*, and from 'eCoreContainemntTree_EObject', the role 'eCoreContainemntTree_EObject' has cardinality 0..*.
+An association connects 'eCoreContainemntTree_Node' and 'eCoreContainemntTree_Node'. From 'eCoreContainemntTree_Node', the role 'Node8' has cardinality 0..*, and from 'eCoreContainemntTree_Node', the role 'superTypes' has cardinality 0..*.
+An association connects 'eCoreContainemntTree_Node' and 'eCoreContainemntTree_Node'. From 'eCoreContainemntTree_Node', the role 'Node11' has cardinality 0..*, and from 'eCoreContainemntTree_Node', the role 'subTypes' has cardinality 0..*.

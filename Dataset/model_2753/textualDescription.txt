@@ -1,0 +1,13 @@
+The domain model 'PK461726' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'PK461726_B461726' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PK461726_A461726' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'PK461726_A461726' and 'PK461726_B461726'. From 'PK461726_A461726', the role 'as' has cardinality 0..*, and from 'PK461726_B461726', the role 'B461726' has cardinality 0..*.
+An association connects 'PK461726_B461726' and 'PK461726_A461726'. From 'PK461726_B461726', the role 'bs' has cardinality 0..*, and from 'PK461726_A461726', the role 'A461726' has cardinality 0..*.

@@ -1,0 +1,119 @@
+The domain model 'megal' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'megal_MegalRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'megal_MegalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'megal_MegalEntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'QueryEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'megal_MegalEntity' represents an important domain concept.
+It has one attribute: 'many', which is of type bool.
+
+'megal_MegalFile' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'megal_MegalLink' represents an important domain concept.
+It has one attribute: 'to', which is of type str.
+
+'MegalNamed' represents an important domain concept.
+It does not declare any attributes.
+
+'megal_QueryStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'megal_QueryEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'megal_MegalAnnotation' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'megal_QueryReference' represents an important domain concept.
+It does not declare any attributes.
+
+'megal_MegalPair' represents an important domain concept.
+It does not declare any attributes.
+
+'megal_MegalNamed' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'megal_Selection' represents an important domain concept.
+It does not declare any attributes.
+
+'megal_QueryParam' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'megal_QueryString' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'megal_MegalRelationshipType' represents an important domain concept.
+It has the following attributes: 'leftMany', which is of type bool; 'rightBoth', which is of type bool; 'leftBoth', which is of type bool; 'rightMany', which is of type bool.
+
+'megal_QueryEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'megal_MegalDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'MegalDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'megal_QueryPos' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'MegalElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'megal_MegalFile' is a specialization of 'MegalElement'.
+The class 'megal_MegalLink' is a specialization of 'MegalElement'.
+The class 'megal_MegalDeclaration' is a specialization of 'MegalElement'.
+The class 'megal_MegalRelationship' is a specialization of 'MegalDeclaration'.
+The class 'megal_MegalPair' is a specialization of 'MegalDeclaration'.
+The class 'megal_MegalNamed' is a specialization of 'MegalDeclaration'.
+The class 'megal_MegalEntityType' is a specialization of 'MegalNamed'.
+The class 'megal_MegalRelationshipType' is a specialization of 'MegalNamed'.
+The class 'megal_MegalEntity' is a specialization of 'MegalNamed'.
+The class 'megal_QueryParam' is a specialization of 'QueryEntry'.
+The class 'megal_QueryReference' is a specialization of 'QueryEntry'.
+The class 'megal_QueryString' is a specialization of 'QueryEntry'.
+The class 'megal_QueryEntity' is a specialization of 'QueryEntry'.
+The class 'megal_QueryPos' is a specialization of 'QueryEntry'.
+
+Relationships between classes are modeled using associations.
+An association connects 'megal_MegalAnnotation' and 'megal_Selection'. From 'megal_MegalAnnotation', the role 'megal_MegalAnnotation' has cardinality 0..*, and from 'megal_Selection', the role 'megal_Selection' has cardinality 0..*.
+An association connects 'megal_MegalElement' and 'megal_MegalAnnotation'. From 'megal_MegalElement', the role 'megal_MegalElement' has cardinality 0..*, and from 'megal_MegalAnnotation', the role 'megal_MegalAnnotation2' has cardinality 0..*.
+An association connects 'megal_MegalDeclaration' and 'megal_MegalFile'. From 'megal_MegalDeclaration', the role 'megal_MegalDeclaration' has cardinality 0..*, and from 'megal_MegalFile', the role 'megal_MegalFile' has cardinality 0..*.
+An association connects 'megal_MegalFile' and 'megal_MegalLink'. From 'megal_MegalFile', the role 'megal_MegalFile5' has cardinality 0..*, and from 'megal_MegalLink', the role 'megal_MegalLink' has cardinality 0..*.
+An association connects 'megal_MegalFile' and 'megal_MegalFile'. From 'megal_MegalFile', the role 'megal_MegalFile8' has cardinality 0..*, and from 'megal_MegalFile', the role 'megal_MegalFile6' has cardinality 0..*.
+An association connects 'megal_MegalLink' and 'megal_MegalEntity'. From 'megal_MegalLink', the role 'megal_MegalLink10' has cardinality 0..*, and from 'megal_MegalEntity', the role 'megal_MegalEntity' has cardinality 0..*.
+An association connects 'megal_MegalEntity' and 'megal_MegalLink'. From 'megal_MegalEntity', the role 'megal_MegalEntity13' has cardinality 0..*, and from 'megal_MegalLink', the role 'megal_MegalLink12' has cardinality 0..*.
+An association connects 'megal_MegalEntity' and 'megal_MegalLink'. From 'megal_MegalEntity', the role 'megal_MegalEntity16' has cardinality 0..*, and from 'megal_MegalLink', the role 'megal_MegalLink15' has cardinality 0..*.
+An association connects 'megal_MegalRelationship' and 'megal_MegalRelationshipType'. From 'megal_MegalRelationship', the role 'megal_MegalRelationship' has cardinality 0..*, and from 'megal_MegalRelationshipType', the role 'megal_MegalRelationshipType' has cardinality 0..*.
+An association connects 'megal_MegalRelationship' and 'megal_MegalEntity'. From 'megal_MegalRelationship', the role 'megal_MegalRelationship19' has cardinality 0..*, and from 'megal_MegalEntity', the role 'megal_MegalEntity20' has cardinality 0..*.
+An association connects 'megal_MegalRelationship' and 'megal_MegalEntity'. From 'megal_MegalRelationship', the role 'megal_MegalRelationship22' has cardinality 0..*, and from 'megal_MegalEntity', the role 'megal_MegalEntity23' has cardinality 0..*.
+An association connects 'megal_MegalEntity' and 'megal_MegalPair'. From 'megal_MegalEntity', the role 'megal_MegalEntity25' has cardinality 0..*, and from 'megal_MegalPair', the role 'megal_MegalPair' has cardinality 0..*.
+An association connects 'megal_MegalPair' and 'megal_MegalEntity'. From 'megal_MegalPair', the role 'megal_MegalPair27' has cardinality 0..*, and from 'megal_MegalEntity', the role 'megal_MegalEntity28' has cardinality 0..*.
+An association connects 'megal_MegalPair' and 'megal_MegalEntity'. From 'megal_MegalPair', the role 'megal_MegalPair30' has cardinality 0..*, and from 'megal_MegalEntity', the role 'megal_MegalEntity31' has cardinality 0..*.
+An association connects 'megal_MegalEntityType' and 'megal_MegalEntityType'. From 'megal_MegalEntityType', the role 'megal_MegalEntityType32' has cardinality 0..*, and from 'megal_MegalEntityType', the role 'megal_MegalEntityType' has cardinality 0..*.
+An association connects 'megal_MegalRelationshipType' and 'megal_MegalEntityType'. From 'megal_MegalRelationshipType', the role 'megal_MegalRelationshipType35' has cardinality 0..*, and from 'megal_MegalEntityType', the role 'megal_MegalEntityType36' has cardinality 0..*.
+An association connects 'megal_MegalRelationshipType' and 'megal_MegalEntityType'. From 'megal_MegalRelationshipType', the role 'megal_MegalRelationshipType38' has cardinality 0..*, and from 'megal_MegalEntityType', the role 'megal_MegalEntityType39' has cardinality 0..*.
+An association connects 'megal_MegalRelationshipType' and 'megal_MegalEntity'. From 'megal_MegalRelationshipType', the role 'megal_MegalRelationshipType41' has cardinality 0..*, and from 'megal_MegalEntity', the role 'megal_MegalEntity42' has cardinality 0..*.
+An association connects 'megal_MegalEntity' and 'megal_MegalRelationshipType'. From 'megal_MegalEntity', the role 'megal_MegalEntity45' has cardinality 0..*, and from 'megal_MegalRelationshipType', the role 'megal_MegalRelationshipType44' has cardinality 0..*.
+An association connects 'megal_MegalEntityType' and 'megal_MegalEntity'. From 'megal_MegalEntityType', the role 'megal_MegalEntityType48' has cardinality 0..*, and from 'megal_MegalEntity', the role 'megal_MegalEntity47' has cardinality 0..*.
+An association connects 'megal_MegalEntity' and 'megal_MegalEntity'. From 'megal_MegalEntity', the role 'megal_MegalEntity49' has cardinality 0..*, and from 'megal_MegalEntity', the role 'megal_MegalEntity51' has cardinality 0..*.
+An association connects 'megal_QueryEntry' and 'megal_Selection'. From 'megal_QueryEntry', the role 'megal_QueryEntry' has cardinality 0..*, and from 'megal_Selection', the role 'megal_Selection53' has cardinality 0..*.
+An association connects 'megal_QueryStatement' and 'megal_Selection'. From 'megal_QueryStatement', the role 'megal_QueryStatement' has cardinality 0..*, and from 'megal_Selection', the role 'megal_Selection55' has cardinality 0..*.
+An association connects 'megal_QueryStatement' and 'megal_QueryEntry'. From 'megal_QueryStatement', the role 'megal_QueryStatement57' has cardinality 0..*, and from 'megal_QueryEntry', the role 'megal_QueryEntry58' has cardinality 0..*.
+An association connects 'megal_QueryStatement' and 'megal_MegalRelationshipType'. From 'megal_QueryStatement', the role 'megal_QueryStatement60' has cardinality 0..*, and from 'megal_MegalRelationshipType', the role 'megal_MegalRelationshipType61' has cardinality 0..*.
+An association connects 'megal_QueryEntry' and 'megal_QueryStatement'. From 'megal_QueryEntry', the role 'megal_QueryEntry64' has cardinality 0..*, and from 'megal_QueryStatement', the role 'megal_QueryStatement63' has cardinality 0..*.
+An association connects 'megal_MegalEntityType' and 'megal_QueryParam'. From 'megal_MegalEntityType', the role 'megal_MegalEntityType66' has cardinality 0..*, and from 'megal_QueryParam', the role 'megal_QueryParam' has cardinality 0..*.
+An association connects 'megal_QueryReference' and 'megal_QueryParam'. From 'megal_QueryReference', the role 'megal_QueryReference' has cardinality 0..*, and from 'megal_QueryParam', the role 'megal_QueryParam68' has cardinality 0..*.
+An association connects 'megal_MegalEntity' and 'megal_QueryEntity'. From 'megal_MegalEntity', the role 'megal_MegalEntity70' has cardinality 0..*, and from 'megal_QueryEntity', the role 'megal_QueryEntity' has cardinality 0..*.

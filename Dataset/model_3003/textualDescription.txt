@@ -1,0 +1,305 @@
+The domain model 'blorqueScript' describes the core structural elements and their relationships within the system.
+
+The model defines 60 main class(es).
+
+'blorqueScript_BSVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'BSBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSCaseBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSHexadecimalConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'blorqueScript_BSImport' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'blorqueScript_BSStringConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'blorqueScript_BSReturn' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSBitwiseXorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSPlusMinusOrStringConcatExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'blorqueScript_BSBooleanConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'blorqueScript_BSSymbol' represents an important domain concept.
+It has the following attributes: 'pType', which is of type str; 'name', which is of type str.
+
+'blorqueScript_BSContinue' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSUnaryModifierExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'blorqueScript_BSClientLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSBitwiseShiftExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'blorqueScript_BSOrderedRelationExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'blorqueScript_BSBitwiseOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSNullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSPostfixArithmeticExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'blorqueScript_BSAssignmentExpression' represents an important domain concept.
+It has one attribute: 'assignmentOperator', which is of type str.
+
+'blorqueScript_BSSwitchStatement' represents an important domain concept.
+It has one attribute: 'stringSwitch', which is of type bool.
+
+'blorqueScript_BSNumberConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'BSStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSBooleanAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSTernaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSRealConstant' represents an important domain concept.
+It has one attribute: 'right', which is of type int.
+
+'blorqueScript_BSEqualityExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'blorqueScript_BSMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSIfBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSField' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSCastExpression' represents an important domain concept.
+It has the following attributes: 'isArray', which is of type bool; 'pType', which is of type str.
+
+'blorqueScript_BSSymbolRef' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'BSSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSClass' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'blorqueScript_BSIfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSLoopBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSSwitchBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'BSExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSForLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSMethodBody' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSMember' represents an important domain concept.
+It has one attribute: 'isArray', which is of type bool.
+
+'blorqueScript_BSCase' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSMulDivOrModExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'blorqueScript_BSMethodInvokationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSWhileLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSMemberSelectionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSParentheticalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSNewExpression' represents an important domain concept.
+It has one attribute: 'isArray', which is of type bool.
+
+'BSMember' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSThisLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSBreak' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSParentLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSArrayAccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSFile' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'blorqueScript_BSBooleanOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'blorqueScript_BSParameter' represents an important domain concept.
+It has one attribute: 'isArray', which is of type bool.
+
+'blorqueScript_BSBitwiseAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BSPrimitiveType' defines the following possible values: 'NONE', 'STRING', 'NUMBER', 'VOID', 'TAGGED_STRING', 'OBJECT'.
+
+The model also captures inheritance relationships between classes.
+The class 'blorqueScript_BSMember' is a specialization of 'BSSymbol'.
+The class 'blorqueScript_BSField' is a specialization of 'BSMember'.
+The class 'blorqueScript_BSMethod' is a specialization of 'BSMember'.
+The class 'blorqueScript_BSParameter' is a specialization of 'BSSymbol'.
+The class 'blorqueScript_BSMethodBody' is a specialization of 'BSBlock'.
+The class 'blorqueScript_BSReturn' is a specialization of 'BSStatement'.
+The class 'blorqueScript_BSBreak' is a specialization of 'BSStatement'.
+The class 'blorqueScript_BSContinue' is a specialization of 'BSStatement'.
+The class 'blorqueScript_BSVariableDeclaration' is a specialization of 'BSStatement'.
+The class 'blorqueScript_BSVariableDeclaration' is a specialization of 'BSSymbol'.
+The class 'blorqueScript_BSIfStatement' is a specialization of 'BSStatement'.
+The class 'blorqueScript_BSWhileLoop' is a specialization of 'BSStatement'.
+The class 'blorqueScript_BSForLoop' is a specialization of 'BSStatement'.
+The class 'blorqueScript_BSSwitchStatement' is a specialization of 'BSStatement'.
+The class 'blorqueScript_BSIfBlock' is a specialization of 'BSBlock'.
+The class 'blorqueScript_BSLoopBlock' is a specialization of 'BSBlock'.
+The class 'blorqueScript_BSSwitchBlock' is a specialization of 'BSBlock'.
+The class 'blorqueScript_BSCaseBlock' is a specialization of 'BSBlock'.
+The class 'blorqueScript_BSExpression' is a specialization of 'BSStatement'.
+The class 'blorqueScript_BSAssignmentExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSTernaryExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSBooleanOrExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSBooleanAndExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSBitwiseOrExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSBitwiseXorExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSBitwiseAndExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSEqualityExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSOrderedRelationExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSBitwiseShiftExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSPlusMinusOrStringConcatExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSMulDivOrModExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSCastExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSNewExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSUnaryModifierExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSMemberSelectionExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSMethodInvokationExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSArrayAccessExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSPostfixArithmeticExpression' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSStringConstant' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSHexadecimalConstant' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSNumberConstant' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSRealConstant' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSBooleanConstant' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSNullLiteral' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSThisLiteral' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSClientLiteral' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSParentLiteral' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSSymbolRef' is a specialization of 'BSExpression'.
+The class 'blorqueScript_BSParentheticalExpression' is a specialization of 'BSExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'blorqueScript_BSImport' and 'blorqueScript_BSFile'. From 'blorqueScript_BSImport', the role 'blorqueScript_BSImport' has cardinality 0..*, and from 'blorqueScript_BSFile', the role 'blorqueScript_BSFile' has cardinality 0..*.
+An association connects 'blorqueScript_BSClass' and 'blorqueScript_BSFile'. From 'blorqueScript_BSClass', the role 'blorqueScript_BSClass' has cardinality 0..*, and from 'blorqueScript_BSFile', the role 'blorqueScript_BSFile2' has cardinality 0..*.
+An association connects 'blorqueScript_BSClass' and 'blorqueScript_BSClass'. From 'blorqueScript_BSClass', the role 'blorqueScript_BSClass5' has cardinality 0..*, and from 'blorqueScript_BSClass', the role 'blorqueScript_BSClass3' has cardinality 0..*.
+An association connects 'blorqueScript_BSClass' and 'blorqueScript_BSMember'. From 'blorqueScript_BSClass', the role 'blorqueScript_BSClass7' has cardinality 0..*, and from 'blorqueScript_BSMember', the role 'blorqueScript_BSMember' has cardinality 0..*.
+An association connects 'blorqueScript_BSMethod' and 'blorqueScript_BSParameter'. From 'blorqueScript_BSMethod', the role 'blorqueScript_BSMethod' has cardinality 0..*, and from 'blorqueScript_BSParameter', the role 'blorqueScript_BSParameter' has cardinality 0..*.
+An association connects 'blorqueScript_BSMethodBody' and 'blorqueScript_BSMethod'. From 'blorqueScript_BSMethodBody', the role 'blorqueScript_BSMethodBody' has cardinality 0..*, and from 'blorqueScript_BSMethod', the role 'blorqueScript_BSMethod10' has cardinality 0..*.
+An association connects 'blorqueScript_BSStatement' and 'blorqueScript_BSMethodBody'. From 'blorqueScript_BSStatement', the role 'blorqueScript_BSStatement' has cardinality 0..*, and from 'blorqueScript_BSMethodBody', the role 'blorqueScript_BSMethodBody12' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSReturn'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression' has cardinality 0..*, and from 'blorqueScript_BSReturn', the role 'blorqueScript_BSReturn' has cardinality 0..*.
+An association connects 'blorqueScript_BSVariableDeclaration' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSVariableDeclaration', the role 'blorqueScript_BSVariableDeclaration' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression15' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSIfStatement'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression17' has cardinality 0..*, and from 'blorqueScript_BSIfStatement', the role 'blorqueScript_BSIfStatement' has cardinality 0..*.
+An association connects 'blorqueScript_BSIfStatement' and 'blorqueScript_BSIfBlock'. From 'blorqueScript_BSIfStatement', the role 'blorqueScript_BSIfStatement19' has cardinality 0..*, and from 'blorqueScript_BSIfBlock', the role 'blorqueScript_BSIfBlock' has cardinality 0..*.
+An association connects 'blorqueScript_BSIfStatement' and 'blorqueScript_BSIfBlock'. From 'blorqueScript_BSIfStatement', the role 'blorqueScript_BSIfStatement21' has cardinality 0..*, and from 'blorqueScript_BSIfBlock', the role 'blorqueScript_BSIfBlock22' has cardinality 0..*.
+An association connects 'blorqueScript_BSWhileLoop' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSWhileLoop', the role 'blorqueScript_BSWhileLoop' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression24' has cardinality 0..*.
+An association connects 'blorqueScript_BSLoopBlock' and 'blorqueScript_BSWhileLoop'. From 'blorqueScript_BSLoopBlock', the role 'blorqueScript_BSLoopBlock' has cardinality 0..*, and from 'blorqueScript_BSWhileLoop', the role 'blorqueScript_BSWhileLoop26' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSForLoop'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression28' has cardinality 0..*, and from 'blorqueScript_BSForLoop', the role 'blorqueScript_BSForLoop' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSForLoop'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression31' has cardinality 0..*, and from 'blorqueScript_BSForLoop', the role 'blorqueScript_BSForLoop30' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSForLoop'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression34' has cardinality 0..*, and from 'blorqueScript_BSForLoop', the role 'blorqueScript_BSForLoop33' has cardinality 0..*.
+An association connects 'blorqueScript_BSLoopBlock' and 'blorqueScript_BSForLoop'. From 'blorqueScript_BSLoopBlock', the role 'blorqueScript_BSLoopBlock37' has cardinality 0..*, and from 'blorqueScript_BSForLoop', the role 'blorqueScript_BSForLoop36' has cardinality 0..*.
+An association connects 'blorqueScript_BSSwitchStatement' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSSwitchStatement', the role 'blorqueScript_BSSwitchStatement' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression39' has cardinality 0..*.
+An association connects 'blorqueScript_BSSwitchStatement' and 'blorqueScript_BSSwitchBlock'. From 'blorqueScript_BSSwitchStatement', the role 'blorqueScript_BSSwitchStatement41' has cardinality 0..*, and from 'blorqueScript_BSSwitchBlock', the role 'blorqueScript_BSSwitchBlock' has cardinality 0..*.
+An association connects 'blorqueScript_BSIfBlock' and 'blorqueScript_BSStatement'. From 'blorqueScript_BSIfBlock', the role 'blorqueScript_BSIfBlock43' has cardinality 0..*, and from 'blorqueScript_BSStatement', the role 'blorqueScript_BSStatement44' has cardinality 0..*.
+An association connects 'blorqueScript_BSStatement' and 'blorqueScript_BSLoopBlock'. From 'blorqueScript_BSStatement', the role 'blorqueScript_BSStatement47' has cardinality 0..*, and from 'blorqueScript_BSLoopBlock', the role 'blorqueScript_BSLoopBlock46' has cardinality 0..*.
+An association connects 'blorqueScript_BSCase' and 'blorqueScript_BSSwitchBlock'. From 'blorqueScript_BSCase', the role 'blorqueScript_BSCase' has cardinality 0..*, and from 'blorqueScript_BSSwitchBlock', the role 'blorqueScript_BSSwitchBlock49' has cardinality 0..*.
+An association connects 'blorqueScript_BSCase' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSCase', the role 'blorqueScript_BSCase51' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression52' has cardinality 0..*.
+An association connects 'blorqueScript_BSCaseBlock' and 'blorqueScript_BSCase'. From 'blorqueScript_BSCaseBlock', the role 'blorqueScript_BSCaseBlock' has cardinality 0..*, and from 'blorqueScript_BSCase', the role 'blorqueScript_BSCase54' has cardinality 0..*.
+An association connects 'blorqueScript_BSCaseBlock' and 'blorqueScript_BSStatement'. From 'blorqueScript_BSCaseBlock', the role 'blorqueScript_BSCaseBlock56' has cardinality 0..*, and from 'blorqueScript_BSStatement', the role 'blorqueScript_BSStatement57' has cardinality 0..*.
+An association connects 'blorqueScript_BSSymbol' and 'blorqueScript_BSClass'. From 'blorqueScript_BSSymbol', the role 'blorqueScript_BSSymbol' has cardinality 0..*, and from 'blorqueScript_BSClass', the role 'blorqueScript_BSClass59' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSAssignmentExpression'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression61' has cardinality 0..*, and from 'blorqueScript_BSAssignmentExpression', the role 'blorqueScript_BSAssignmentExpression' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSAssignmentExpression'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression64' has cardinality 0..*, and from 'blorqueScript_BSAssignmentExpression', the role 'blorqueScript_BSAssignmentExpression63' has cardinality 0..*.
+An association connects 'blorqueScript_BSTernaryExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSTernaryExpression', the role 'blorqueScript_BSTernaryExpression' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression66' has cardinality 0..*.
+An association connects 'blorqueScript_BSTernaryExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSTernaryExpression', the role 'blorqueScript_BSTernaryExpression68' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression69' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSTernaryExpression'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression72' has cardinality 0..*, and from 'blorqueScript_BSTernaryExpression', the role 'blorqueScript_BSTernaryExpression71' has cardinality 0..*.
+An association connects 'blorqueScript_BSBooleanOrExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSBooleanOrExpression', the role 'blorqueScript_BSBooleanOrExpression' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression74' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSBooleanOrExpression'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression77' has cardinality 0..*, and from 'blorqueScript_BSBooleanOrExpression', the role 'blorqueScript_BSBooleanOrExpression76' has cardinality 0..*.
+An association connects 'blorqueScript_BSBooleanAndExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSBooleanAndExpression', the role 'blorqueScript_BSBooleanAndExpression' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression79' has cardinality 0..*.
+An association connects 'blorqueScript_BSBooleanAndExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSBooleanAndExpression', the role 'blorqueScript_BSBooleanAndExpression81' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression82' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSBitwiseOrExpression'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression84' has cardinality 0..*, and from 'blorqueScript_BSBitwiseOrExpression', the role 'blorqueScript_BSBitwiseOrExpression' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSBitwiseOrExpression'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression87' has cardinality 0..*, and from 'blorqueScript_BSBitwiseOrExpression', the role 'blorqueScript_BSBitwiseOrExpression86' has cardinality 0..*.
+An association connects 'blorqueScript_BSBitwiseXorExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSBitwiseXorExpression', the role 'blorqueScript_BSBitwiseXorExpression' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression89' has cardinality 0..*.
+An association connects 'blorqueScript_BSBitwiseXorExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSBitwiseXorExpression', the role 'blorqueScript_BSBitwiseXorExpression91' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression92' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSBitwiseAndExpression'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression94' has cardinality 0..*, and from 'blorqueScript_BSBitwiseAndExpression', the role 'blorqueScript_BSBitwiseAndExpression' has cardinality 0..*.
+An association connects 'blorqueScript_BSBitwiseAndExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSBitwiseAndExpression', the role 'blorqueScript_BSBitwiseAndExpression96' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression97' has cardinality 0..*.
+An association connects 'blorqueScript_BSEqualityExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSEqualityExpression', the role 'blorqueScript_BSEqualityExpression' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression99' has cardinality 0..*.
+An association connects 'blorqueScript_BSEqualityExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSEqualityExpression', the role 'blorqueScript_BSEqualityExpression101' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression102' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSOrderedRelationExpression'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression104' has cardinality 0..*, and from 'blorqueScript_BSOrderedRelationExpression', the role 'blorqueScript_BSOrderedRelationExpression' has cardinality 0..*.
+An association connects 'blorqueScript_BSOrderedRelationExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSOrderedRelationExpression', the role 'blorqueScript_BSOrderedRelationExpression106' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression107' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSBitwiseShiftExpression'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression109' has cardinality 0..*, and from 'blorqueScript_BSBitwiseShiftExpression', the role 'blorqueScript_BSBitwiseShiftExpression' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSBitwiseShiftExpression'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression112' has cardinality 0..*, and from 'blorqueScript_BSBitwiseShiftExpression', the role 'blorqueScript_BSBitwiseShiftExpression111' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSPlusMinusOrStringConcatExpression'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression114' has cardinality 0..*, and from 'blorqueScript_BSPlusMinusOrStringConcatExpression', the role 'blorqueScript_BSPlusMinusOrStringConcatExpression' has cardinality 0..*.
+An association connects 'blorqueScript_BSPlusMinusOrStringConcatExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSPlusMinusOrStringConcatExpression', the role 'blorqueScript_BSPlusMinusOrStringConcatExpression116' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression117' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSMulDivOrModExpression'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression119' has cardinality 0..*, and from 'blorqueScript_BSMulDivOrModExpression', the role 'blorqueScript_BSMulDivOrModExpression' has cardinality 0..*.
+An association connects 'blorqueScript_BSMulDivOrModExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSMulDivOrModExpression', the role 'blorqueScript_BSMulDivOrModExpression121' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression122' has cardinality 0..*.
+An association connects 'blorqueScript_BSCastExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSCastExpression', the role 'blorqueScript_BSCastExpression' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression124' has cardinality 0..*.
+An association connects 'blorqueScript_BSNewExpression' and 'blorqueScript_BSClass'. From 'blorqueScript_BSNewExpression', the role 'blorqueScript_BSNewExpression' has cardinality 0..*, and from 'blorqueScript_BSClass', the role 'blorqueScript_BSClass126' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSNewExpression'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression129' has cardinality 0..*, and from 'blorqueScript_BSNewExpression', the role 'blorqueScript_BSNewExpression128' has cardinality 0..*.
+An association connects 'blorqueScript_BSUnaryModifierExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSUnaryModifierExpression', the role 'blorqueScript_BSUnaryModifierExpression' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression131' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSMemberSelectionExpression'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression133' has cardinality 0..*, and from 'blorqueScript_BSMemberSelectionExpression', the role 'blorqueScript_BSMemberSelectionExpression' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSMemberSelectionExpression'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression136' has cardinality 0..*, and from 'blorqueScript_BSMemberSelectionExpression', the role 'blorqueScript_BSMemberSelectionExpression135' has cardinality 0..*.
+An association connects 'blorqueScript_BSMethodInvokationExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSMethodInvokationExpression', the role 'blorqueScript_BSMethodInvokationExpression' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression138' has cardinality 0..*.
+An association connects 'blorqueScript_BSMethodInvokationExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSMethodInvokationExpression', the role 'blorqueScript_BSMethodInvokationExpression140' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression141' has cardinality 0..*.
+An association connects 'blorqueScript_BSArrayAccessExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSArrayAccessExpression', the role 'blorqueScript_BSArrayAccessExpression' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression143' has cardinality 0..*.
+An association connects 'blorqueScript_BSArrayAccessExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSArrayAccessExpression', the role 'blorqueScript_BSArrayAccessExpression145' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression146' has cardinality 0..*.
+An association connects 'blorqueScript_BSExpression' and 'blorqueScript_BSPostfixArithmeticExpression'. From 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression148' has cardinality 0..*, and from 'blorqueScript_BSPostfixArithmeticExpression', the role 'blorqueScript_BSPostfixArithmeticExpression' has cardinality 0..*.
+An association connects 'blorqueScript_BSRealConstant' and 'blorqueScript_BSNumberConstant'. From 'blorqueScript_BSRealConstant', the role 'blorqueScript_BSRealConstant' has cardinality 0..*, and from 'blorqueScript_BSNumberConstant', the role 'blorqueScript_BSNumberConstant' has cardinality 0..*.
+An association connects 'blorqueScript_BSSymbol' and 'blorqueScript_BSSymbolRef'. From 'blorqueScript_BSSymbol', the role 'blorqueScript_BSSymbol151' has cardinality 0..*, and from 'blorqueScript_BSSymbolRef', the role 'blorqueScript_BSSymbolRef' has cardinality 0..*.
+An association connects 'blorqueScript_BSParentheticalExpression' and 'blorqueScript_BSExpression'. From 'blorqueScript_BSParentheticalExpression', the role 'blorqueScript_BSParentheticalExpression' has cardinality 0..*, and from 'blorqueScript_BSExpression', the role 'blorqueScript_BSExpression153' has cardinality 0..*.

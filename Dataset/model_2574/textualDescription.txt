@@ -1,0 +1,609 @@
+The domain model 'sql' describes the core structural elements and their relationships within the system.
+
+The model defines 138 main class(es).
+
+'RowValues' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Rows' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_SelectQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'OrExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'Pivots' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_FunctionAnalytical' represents an important domain concept.
+It does not declare any attributes.
+
+'OrColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'OrGroupByColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_TableOrAlias' represents an important domain concept.
+It has one attribute: 'alias', which is of type str.
+
+'sql_UnipivotInClause' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'sql_ColumnFull' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Operand' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Multiply' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_uicargs' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_OrderByClause' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_ExpOperand' represents an important domain concept.
+It has one attribute: 'prm', which is of type str.
+
+'sql_FromValuesColumns' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_InOper' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'sql_FromValues' represents an important domain concept.
+It does not declare any attributes.
+
+'WithColumns' represents an important domain concept.
+It does not declare any attributes.
+
+'Operands' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_ExistsOper' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'sql_tbls' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_pcols' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_UnpivotInClause' represents an important domain concept.
+It does not declare any attributes.
+
+'OrderByClauseArgs' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Limit' represents an important domain concept.
+It has the following attributes: 'l2', which is of type str; 'l1', which is of type str.
+
+'OpFunctionArgAgregate' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_FromTable' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_DbObjectName' represents an important domain concept.
+It has one attribute: 'dbname', which is of type str.
+
+'PivotColumns' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_AExpArgs' represents an important domain concept.
+It does not declare any attributes.
+
+'PivotFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'QueryPartitionClause' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Operands' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_OrderByClauseArg' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_OpFList' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_OpFunction' represents an important domain concept.
+It has the following attributes: 'star', which is of type str; 'fname', which is of type str.
+
+'sql_OpFunctionCast' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'p', which is of type str; 'p2', which is of type str.
+
+'sql_ExprGroup' represents an important domain concept.
+It has one attribute: 'isnot', which is of type str.
+
+'sql_OpFunctionArgAgregate' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_UsingCols' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_OpList' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_OrTable' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_FunctionExtract' represents an important domain concept.
+It has one attribute: 'v', which is of type str.
+
+'sql_FetchFirst' represents an important domain concept.
+It has one attribute: 'row', which is of type str.
+
+'sql_UnpivotInClauseArgs' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_PivotInClause' represents an important domain concept.
+It has one attribute: 'pinany', which is of type str.
+
+'sql_WhenList' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Offset' represents an important domain concept.
+It has one attribute: 'offset', which is of type str.
+
+'sql_WindowingClauseOperandFollowing' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_ScalarOperand' represents an important domain concept.
+It has the following attributes: 'sodbl', which is of type str; 'sodt', which is of type str; 'sotime', which is of type str; 'sodate', which is of type str; 'soUInt', which is of type str; 'sostr', which is of type str; 'soint', which is of type str.
+
+'FromValuesColumnNames' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_WithColumns' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_OrColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_SelectSubSet' represents an important domain concept.
+It has the following attributes: 'all', which is of type str; 'op', which is of type str.
+
+'WindowingClause' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Values' represents an important domain concept.
+It does not declare any attributes.
+
+'SQLCaseWhens' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_OBCArgs' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_FromValuesColumnNames' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_WithQuery' represents an important domain concept.
+It has the following attributes: 'w', which is of type str; 'wname', which is of type str.
+
+'sql_AnalyticClause' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_PivotTable' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_QueryPartitionClause' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_LikeOperand' represents an important domain concept.
+It has one attribute: 'op2', which is of type str.
+
+'sql_OrOrderByColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_POperand' represents an important domain concept.
+It has one attribute: 'prm', which is of type str.
+
+'sql_ColumnOperand' represents an important domain concept.
+It has one attribute: 'ora', which is of type str.
+
+'sql_Pivots' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_ColumnNames' represents an important domain concept.
+It has one attribute: 'colName', which is of type str.
+
+'OrTable' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_abc' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_OpFunctionArg' represents an important domain concept.
+It does not declare any attributes.
+
+'UnpivotInClauseArgs' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_pvcs' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Like' represents an important domain concept.
+It has one attribute: 'opLike', which is of type str.
+
+'Rows' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_IntegerValue' represents an important domain concept.
+It has one attribute: 'integer', which is of type str.
+
+'sql_SQLCaseOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_SqlCaseWhen' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_ColumnOrAlias' represents an important domain concept.
+It has the following attributes: 'alias', which is of type str; 'allCols', which is of type str.
+
+'PivotForClause' represents an important domain concept.
+It does not declare any attributes.
+
+'OrOrderByColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_AnalyticExprArg' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_SubQueryOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_WindowingClause' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_PivotForClause' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_FromTableJoin' represents an important domain concept.
+It has one attribute: 'join', which is of type str.
+
+'sql_Comparison' represents an important domain concept.
+It has the following attributes: 'subOperator', which is of type str; 'operator', which is of type str.
+
+'sql_PivotColumns' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_DbObjectNameAll' represents an important domain concept.
+It has one attribute: 'dbname', which is of type str.
+
+'sql_OperandListGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_OrGroupByColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_PivotFunctions' represents an important domain concept.
+It has one attribute: 'abc', which is of type str.
+
+'sql_Prms' represents an important domain concept.
+It does not declare any attributes.
+
+'SelectQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'TableFull' represents an important domain concept.
+It does not declare any attributes.
+
+'UnpivotInClause' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_OperandList' represents an important domain concept.
+It does not declare any attributes.
+
+'RowValue' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_RowValue' represents an important domain concept.
+It has one attribute: 'null', which is of type str.
+
+'sql_Select' represents an important domain concept.
+It has one attribute: 'select', which is of type str.
+
+'sql_PivotCol' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_UnpivotInClauseArg' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_OpFunctionArgOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_JoinCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_FullExpression' represents an important domain concept.
+It has the following attributes: 'isnull', which is of type str; 'notPrm', which is of type str; 'c', which is of type str.
+
+'PivotCol' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_WindowingClauseOperandPreceding' represents an important domain concept.
+It does not declare any attributes.
+
+'ColumnFull' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_GroupByColumnFull' represents an important domain concept.
+It has one attribute: 'grByInt', which is of type str.
+
+'OperandList' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_TableFull' represents an important domain concept.
+It does not declare any attributes.
+
+'AnalyticExprArgs' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_XExpr' represents an important domain concept.
+It has one attribute: 'xf', which is of type str.
+
+'sql_JRParameter' represents an important domain concept.
+It has one attribute: 'jrprm', which is of type str.
+
+'OpFunctionArg' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Row' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Between' represents an important domain concept.
+It has one attribute: 'opBetween', which is of type str.
+
+'Prms' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_PivotFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_OrderByClauseArgs' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_WindowingClauseBetween' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Concat' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Col' represents an important domain concept.
+It does not declare any attributes.
+
+'UsingCols' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_AnalyticExprArgs' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_RowValues' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_UnpivotTable' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_OrExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_UnsignedValue' represents an important domain concept.
+It has one attribute: 'integer', which is of type str.
+
+'sql_OrderByColumnFull' represents an important domain concept.
+It has the following attributes: 'direction', which is of type str; 'colOrderInt', which is of type str.
+
+'sql_SQLCaseWhens' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'XFunction' defines the following possible values: 'xgt', 'xls', 'xbwnc', 'xgtl', 'xin', 'xbwn', 'xbwnr', 'xlsr', 'xnoteq', 'xnotin', 'xeq', 'xbwnl'.
+The enumeration 'EXTRACT_VALUES' defines the following possible values: 'm', 'hmin', 'month', 'hms', 'daymin', 'ms', 'minSec', 'hs', 'dayh', 'micros', 'year', 'ds', 'quart', 'minMicro', 'yearMonth', 'week', 'h', 'dms', 'day', 's'.
+
+The model also captures inheritance relationships between classes.
+The class 'sql_Select' is a specialization of 'SelectQuery'.
+The class 'sql_OrColumn' is a specialization of 'PivotForClause'.
+The class 'sql_ColumnOrAlias' is a specialization of 'OrColumn'.
+The class 'sql_ColumnFull' is a specialization of 'PivotForClause'.
+The class 'sql_FromTable' is a specialization of 'OrTable'.
+The class 'sql_UsingCols' is a specialization of 'WithColumns'.
+The class 'sql_ColumnNames' is a specialization of 'FromValuesColumnNames'.
+The class 'sql_Row' is a specialization of 'Rows'.
+The class 'sql_RowValue' is a specialization of 'RowValues'.
+The class 'sql_UnpivotInClauseArg' is a specialization of 'UnpivotInClauseArgs'.
+The class 'sql_Pivots' is a specialization of 'PivotColumns'.
+The class 'sql_PivotCol' is a specialization of 'PivotFunction'.
+The class 'sql_PivotCol' is a specialization of 'PivotColumns'.
+The class 'sql_PivotCol' is a specialization of 'Pivots'.
+The class 'sql_DbObjectName' is a specialization of 'ColumnFull'.
+The class 'sql_DbObjectName' is a specialization of 'UsingCols'.
+The class 'sql_DbObjectName' is a specialization of 'PivotCol'.
+The class 'sql_DbObjectName' is a specialization of 'TableFull'.
+The class 'sql_OrderByColumnFull' is a specialization of 'OrOrderByColumn'.
+The class 'sql_GroupByColumnFull' is a specialization of 'OrGroupByColumn'.
+The class 'sql_FullExpression' is a specialization of 'OrExpr'.
+The class 'sql_JRParameter' is a specialization of 'Prms'.
+The class 'sql_Operands' is a specialization of 'OpFunctionArgAgregate'.
+The class 'sql_WindowingClauseBetween' is a specialization of 'WindowingClause'.
+The class 'sql_WindowingClauseOperandPreceding' is a specialization of 'WindowingClause'.
+The class 'sql_OrderByClauseArg' is a specialization of 'OrderByClauseArgs'.
+The class 'sql_AnalyticExprArgs' is a specialization of 'QueryPartitionClause'.
+The class 'sql_AnalyticExprArg' is a specialization of 'AnalyticExprArgs'.
+The class 'sql_OpFunctionArgOperand' is a specialization of 'OpFunctionArg'.
+The class 'sql_ScalarOperand' is a specialization of 'RowValue'.
+The class 'sql_ScalarOperand' is a specialization of 'OperandList'.
+The class 'sql_SqlCaseWhen' is a specialization of 'SQLCaseWhens'.
+The class 'sql_Col' is a specialization of 'ColumnFull'.
+The class 'sql_abc' is a specialization of 'FromValuesColumnNames'.
+The class 'sql_UnipivotInClause' is a specialization of 'UnpivotInClause'.
+The class 'sql_uicargs' is a specialization of 'UnpivotInClauseArgs'.
+The class 'sql_pvcs' is a specialization of 'Pivots'.
+The class 'sql_pcols' is a specialization of 'PivotCol'.
+The class 'sql_tbls' is a specialization of 'TableFull'.
+The class 'sql_OpList' is a specialization of 'OperandList'.
+The class 'sql_Plus' is a specialization of 'Operands'.
+The class 'sql_Minus' is a specialization of 'Operands'.
+The class 'sql_Concat' is a specialization of 'Operands'.
+The class 'sql_Multiply' is a specialization of 'Operands'.
+The class 'sql_Division' is a specialization of 'Operands'.
+The class 'sql_OBCArgs' is a specialization of 'OrderByClauseArgs'.
+The class 'sql_AExpArgs' is a specialization of 'AnalyticExprArgs'.
+The class 'sql_OpFList' is a specialization of 'OpFunctionArg'.
+The class 'sql_WhenList' is a specialization of 'SQLCaseWhens'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sql_Model' and 'sql_WithQuery'. From 'sql_Model', the role 'sql_Model' has cardinality 0..*, and from 'sql_WithQuery', the role 'sql_WithQuery' has cardinality 0..*.
+An association connects 'sql_SelectQuery' and 'sql_Model'. From 'sql_SelectQuery', the role 'sql_SelectQuery' has cardinality 0..*, and from 'sql_Model', the role 'sql_Model2' has cardinality 0..*.
+An association connects 'sql_WithColumns' and 'sql_WithQuery'. From 'sql_WithColumns', the role 'sql_WithColumns' has cardinality 0..*, and from 'sql_WithQuery', the role 'sql_WithQuery4' has cardinality 0..*.
+An association connects 'sql_SelectQuery' and 'sql_WithQuery'. From 'sql_SelectQuery', the role 'sql_SelectQuery7' has cardinality 0..*, and from 'sql_WithQuery', the role 'sql_WithQuery6' has cardinality 0..*.
+An association connects 'sql_FetchFirst' and 'sql_UnsignedValue'. From 'sql_FetchFirst', the role 'sql_FetchFirst' has cardinality 0..*, and from 'sql_UnsignedValue', the role 'sql_UnsignedValue' has cardinality 0..*.
+An association connects 'sql_Select' and 'sql_SelectSubSet'. From 'sql_Select', the role 'sql_Select' has cardinality 0..*, and from 'sql_SelectSubSet', the role 'sql_SelectSubSet' has cardinality 0..*.
+An association connects 'sql_Select' and 'sql_SelectSubSet'. From 'sql_Select', the role 'sql_Select11' has cardinality 0..*, and from 'sql_SelectSubSet', the role 'sql_SelectSubSet12' has cardinality 0..*.
+An association connects 'sql_Select' and 'sql_OrColumn'. From 'sql_Select', the role 'sql_Select14' has cardinality 0..*, and from 'sql_OrColumn', the role 'sql_OrColumn' has cardinality 0..*.
+An association connects 'sql_Select' and 'sql_OrTable'. From 'sql_Select', the role 'sql_Select16' has cardinality 0..*, and from 'sql_OrTable', the role 'sql_OrTable' has cardinality 0..*.
+An association connects 'sql_Select' and 'sql_OrExpr'. From 'sql_Select', the role 'sql_Select18' has cardinality 0..*, and from 'sql_OrExpr', the role 'sql_OrExpr' has cardinality 0..*.
+An association connects 'sql_Select' and 'sql_OrGroupByColumn'. From 'sql_Select', the role 'sql_Select20' has cardinality 0..*, and from 'sql_OrGroupByColumn', the role 'sql_OrGroupByColumn' has cardinality 0..*.
+An association connects 'sql_OrExpr' and 'sql_Select'. From 'sql_OrExpr', the role 'sql_OrExpr23' has cardinality 0..*, and from 'sql_Select', the role 'sql_Select22' has cardinality 0..*.
+An association connects 'sql_OrOrderByColumn' and 'sql_Select'. From 'sql_OrOrderByColumn', the role 'sql_OrOrderByColumn' has cardinality 0..*, and from 'sql_Select', the role 'sql_Select25' has cardinality 0..*.
+An association connects 'sql_Select' and 'sql_Limit'. From 'sql_Select', the role 'sql_Select27' has cardinality 0..*, and from 'sql_Limit', the role 'sql_Limit' has cardinality 0..*.
+An association connects 'sql_Offset' and 'sql_Select'. From 'sql_Offset', the role 'sql_Offset' has cardinality 0..*, and from 'sql_Select', the role 'sql_Select29' has cardinality 0..*.
+An association connects 'sql_FetchFirst' and 'sql_Select'. From 'sql_FetchFirst', the role 'sql_FetchFirst32' has cardinality 0..*, and from 'sql_Select', the role 'sql_Select31' has cardinality 0..*.
+An association connects 'sql_ColumnOrAlias' and 'sql_OrColumn'. From 'sql_ColumnOrAlias', the role 'sql_ColumnOrAlias' has cardinality 0..*, and from 'sql_OrColumn', the role 'sql_OrColumn34' has cardinality 0..*.
+An association connects 'sql_Operands' and 'sql_ColumnOrAlias'. From 'sql_Operands', the role 'sql_Operands' has cardinality 0..*, and from 'sql_ColumnOrAlias', the role 'sql_ColumnOrAlias36' has cardinality 0..*.
+An association connects 'sql_ColumnOrAlias' and 'sql_DbObjectName'. From 'sql_ColumnOrAlias', the role 'sql_ColumnOrAlias38' has cardinality 0..*, and from 'sql_DbObjectName', the role 'sql_DbObjectName' has cardinality 0..*.
+An association connects 'sql_ColumnOrAlias' and 'sql_DbObjectNameAll'. From 'sql_ColumnOrAlias', the role 'sql_ColumnOrAlias40' has cardinality 0..*, and from 'sql_DbObjectNameAll', the role 'sql_DbObjectNameAll' has cardinality 0..*.
+An association connects 'sql_OrTable' and 'sql_FromTable'. From 'sql_OrTable', the role 'sql_OrTable42' has cardinality 0..*, and from 'sql_FromTable', the role 'sql_FromTable' has cardinality 0..*.
+An association connects 'sql_FromTable' and 'sql_TableOrAlias'. From 'sql_FromTable', the role 'sql_FromTable44' has cardinality 0..*, and from 'sql_TableOrAlias', the role 'sql_TableOrAlias' has cardinality 0..*.
+An association connects 'sql_FromTableJoin' and 'sql_FromTable'. From 'sql_FromTableJoin', the role 'sql_FromTableJoin' has cardinality 0..*, and from 'sql_FromTable', the role 'sql_FromTable46' has cardinality 0..*.
+An association connects 'sql_FromTableJoin' and 'sql_TableOrAlias'. From 'sql_FromTableJoin', the role 'sql_FromTableJoin48' has cardinality 0..*, and from 'sql_TableOrAlias', the role 'sql_TableOrAlias49' has cardinality 0..*.
+An association connects 'sql_OrExpr' and 'sql_FromTableJoin'. From 'sql_OrExpr', the role 'sql_OrExpr52' has cardinality 0..*, and from 'sql_FromTableJoin', the role 'sql_FromTableJoin51' has cardinality 0..*.
+An association connects 'sql_FromTableJoin' and 'sql_JoinCondition'. From 'sql_FromTableJoin', the role 'sql_FromTableJoin54' has cardinality 0..*, and from 'sql_JoinCondition', the role 'sql_JoinCondition' has cardinality 0..*.
+An association connects 'sql_JoinCondition' and 'sql_UsingCols'. From 'sql_JoinCondition', the role 'sql_JoinCondition56' has cardinality 0..*, and from 'sql_UsingCols', the role 'sql_UsingCols' has cardinality 0..*.
+An association connects 'sql_UsingCols' and 'sql_DbObjectName'. From 'sql_UsingCols', the role 'sql_UsingCols58' has cardinality 0..*, and from 'sql_DbObjectName', the role 'sql_DbObjectName59' has cardinality 0..*.
+An association connects 'sql_TableOrAlias' and 'sql_TableFull'. From 'sql_TableOrAlias', the role 'sql_TableOrAlias61' has cardinality 0..*, and from 'sql_TableFull', the role 'sql_TableFull' has cardinality 0..*.
+An association connects 'sql_TableOrAlias' and 'sql_SubQueryOperand'. From 'sql_TableOrAlias', the role 'sql_TableOrAlias63' has cardinality 0..*, and from 'sql_SubQueryOperand', the role 'sql_SubQueryOperand' has cardinality 0..*.
+An association connects 'sql_FromValues' and 'sql_TableOrAlias'. From 'sql_FromValues', the role 'sql_FromValues' has cardinality 0..*, and from 'sql_TableOrAlias', the role 'sql_TableOrAlias65' has cardinality 0..*.
+An association connects 'sql_PivotTable' and 'sql_TableOrAlias'. From 'sql_PivotTable', the role 'sql_PivotTable' has cardinality 0..*, and from 'sql_TableOrAlias', the role 'sql_TableOrAlias67' has cardinality 0..*.
+An association connects 'sql_TableOrAlias' and 'sql_UnpivotTable'. From 'sql_TableOrAlias', the role 'sql_TableOrAlias69' has cardinality 0..*, and from 'sql_UnpivotTable', the role 'sql_UnpivotTable' has cardinality 0..*.
+An association connects 'sql_TableOrAlias' and 'sql_DbObjectName'. From 'sql_TableOrAlias', the role 'sql_TableOrAlias71' has cardinality 0..*, and from 'sql_DbObjectName', the role 'sql_DbObjectName72' has cardinality 0..*.
+An association connects 'sql_Values' and 'sql_FromValues'. From 'sql_Values', the role 'sql_Values' has cardinality 0..*, and from 'sql_FromValues', the role 'sql_FromValues74' has cardinality 0..*.
+An association connects 'sql_FromValuesColumns' and 'sql_FromValues'. From 'sql_FromValuesColumns', the role 'sql_FromValuesColumns' has cardinality 0..*, and from 'sql_FromValues', the role 'sql_FromValues76' has cardinality 0..*.
+An association connects 'sql_FromValuesColumnNames' and 'sql_FromValuesColumns'. From 'sql_FromValuesColumnNames', the role 'sql_FromValuesColumnNames' has cardinality 0..*, and from 'sql_FromValuesColumns', the role 'sql_FromValuesColumns78' has cardinality 0..*.
+An association connects 'sql_Rows' and 'sql_Values'. From 'sql_Rows', the role 'sql_Rows' has cardinality 0..*, and from 'sql_Values', the role 'sql_Values80' has cardinality 0..*.
+An association connects 'sql_Rows' and 'sql_Row'. From 'sql_Rows', the role 'sql_Rows82' has cardinality 0..*, and from 'sql_Row', the role 'sql_Row' has cardinality 0..*.
+An association connects 'sql_Row' and 'sql_RowValues'. From 'sql_Row', the role 'sql_Row84' has cardinality 0..*, and from 'sql_RowValues', the role 'sql_RowValues' has cardinality 0..*.
+An association connects 'sql_RowValue' and 'sql_RowValues'. From 'sql_RowValue', the role 'sql_RowValue' has cardinality 0..*, and from 'sql_RowValues', the role 'sql_RowValues86' has cardinality 0..*.
+An association connects 'sql_PivotFunctions' and 'sql_PivotTable'. From 'sql_PivotFunctions', the role 'sql_PivotFunctions' has cardinality 0..*, and from 'sql_PivotTable', the role 'sql_PivotTable88' has cardinality 0..*.
+An association connects 'sql_PivotTable' and 'sql_PivotForClause'. From 'sql_PivotTable', the role 'sql_PivotTable90' has cardinality 0..*, and from 'sql_PivotForClause', the role 'sql_PivotForClause' has cardinality 0..*.
+An association connects 'sql_PivotInClause' and 'sql_PivotTable'. From 'sql_PivotInClause', the role 'sql_PivotInClause' has cardinality 0..*, and from 'sql_PivotTable', the role 'sql_PivotTable92' has cardinality 0..*.
+An association connects 'sql_PivotInClause' and 'sql_SubQueryOperand'. From 'sql_PivotInClause', the role 'sql_PivotInClause94' has cardinality 0..*, and from 'sql_SubQueryOperand', the role 'sql_SubQueryOperand95' has cardinality 0..*.
+An association connects 'sql_PivotInClause' and 'sql_UnpivotInClauseArgs'. From 'sql_PivotInClause', the role 'sql_PivotInClause97' has cardinality 0..*, and from 'sql_UnpivotInClauseArgs', the role 'sql_UnpivotInClauseArgs' has cardinality 0..*.
+An association connects 'sql_PivotColumns' and 'sql_UnpivotTable'. From 'sql_PivotColumns', the role 'sql_PivotColumns' has cardinality 0..*, and from 'sql_UnpivotTable', the role 'sql_UnpivotTable99' has cardinality 0..*.
+An association connects 'sql_PivotForClause' and 'sql_UnpivotTable'. From 'sql_PivotForClause', the role 'sql_PivotForClause102' has cardinality 0..*, and from 'sql_UnpivotTable', the role 'sql_UnpivotTable101' has cardinality 0..*.
+An association connects 'sql_UnpivotTable' and 'sql_UnpivotInClause'. From 'sql_UnpivotTable', the role 'sql_UnpivotTable104' has cardinality 0..*, and from 'sql_UnpivotInClause', the role 'sql_UnpivotInClause' has cardinality 0..*.
+An association connects 'sql_PivotColumns' and 'sql_UnpivotInClauseArg'. From 'sql_PivotColumns', the role 'sql_PivotColumns106' has cardinality 0..*, and from 'sql_UnpivotInClauseArg', the role 'sql_UnpivotInClauseArg' has cardinality 0..*.
+An association connects 'sql_UnpivotInClauseArg' and 'sql_PivotColumns'. From 'sql_UnpivotInClauseArg', the role 'sql_UnpivotInClauseArg108' has cardinality 0..*, and from 'sql_PivotColumns', the role 'sql_PivotColumns109' has cardinality 0..*.
+An association connects 'sql_OrOrderByColumn' and 'sql_OrderByColumnFull'. From 'sql_OrOrderByColumn', the role 'sql_OrOrderByColumn111' has cardinality 0..*, and from 'sql_OrderByColumnFull', the role 'sql_OrderByColumnFull' has cardinality 0..*.
+An association connects 'sql_OrderByColumnFull' and 'sql_ColumnFull'. From 'sql_OrderByColumnFull', the role 'sql_OrderByColumnFull113' has cardinality 0..*, and from 'sql_ColumnFull', the role 'sql_ColumnFull' has cardinality 0..*.
+An association connects 'sql_OrGroupByColumn' and 'sql_GroupByColumnFull'. From 'sql_OrGroupByColumn', the role 'sql_OrGroupByColumn115' has cardinality 0..*, and from 'sql_GroupByColumnFull', the role 'sql_GroupByColumnFull' has cardinality 0..*.
+An association connects 'sql_GroupByColumnFull' and 'sql_ColumnFull'. From 'sql_GroupByColumnFull', the role 'sql_GroupByColumnFull117' has cardinality 0..*, and from 'sql_ColumnFull', the role 'sql_ColumnFull118' has cardinality 0..*.
+An association connects 'sql_OpFunction' and 'sql_GroupByColumnFull'. From 'sql_OpFunction', the role 'sql_OpFunction' has cardinality 0..*, and from 'sql_GroupByColumnFull', the role 'sql_GroupByColumnFull120' has cardinality 0..*.
+An association connects 'sql_OrExpr' and 'sql_FullExpression'. From 'sql_OrExpr', the role 'sql_OrExpr122' has cardinality 0..*, and from 'sql_FullExpression', the role 'sql_FullExpression' has cardinality 0..*.
+An association connects 'sql_FullExpression' and 'sql_FullExpression'. From 'sql_FullExpression', the role 'sql_FullExpression125' has cardinality 0..*, and from 'sql_FullExpression', the role 'sql_FullExpression123' has cardinality 0..*.
+An association connects 'sql_ExprGroup' and 'sql_FullExpression'. From 'sql_ExprGroup', the role 'sql_ExprGroup' has cardinality 0..*, and from 'sql_FullExpression', the role 'sql_FullExpression127' has cardinality 0..*.
+An association connects 'sql_FullExpression' and 'sql_FullExpression'. From 'sql_FullExpression', the role 'sql_FullExpression128' has cardinality 0..*, and from 'sql_FullExpression', the role 'sql_FullExpression130' has cardinality 0..*.
+An association connects 'sql_FullExpression' and 'sql_XExpr'. From 'sql_FullExpression', the role 'sql_FullExpression132' has cardinality 0..*, and from 'sql_XExpr', the role 'sql_XExpr' has cardinality 0..*.
+An association connects 'sql_InOper' and 'sql_FullExpression'. From 'sql_InOper', the role 'sql_InOper' has cardinality 0..*, and from 'sql_FullExpression', the role 'sql_FullExpression134' has cardinality 0..*.
+An association connects 'sql_FullExpression' and 'sql_ExistsOper'. From 'sql_FullExpression', the role 'sql_FullExpression136' has cardinality 0..*, and from 'sql_ExistsOper', the role 'sql_ExistsOper' has cardinality 0..*.
+An association connects 'sql_FullExpression' and 'sql_Operands'. From 'sql_FullExpression', the role 'sql_FullExpression138' has cardinality 0..*, and from 'sql_Operands', the role 'sql_Operands139' has cardinality 0..*.
+An association connects 'sql_FullExpression' and 'sql_Between'. From 'sql_FullExpression', the role 'sql_FullExpression141' has cardinality 0..*, and from 'sql_Between', the role 'sql_Between' has cardinality 0..*.
+An association connects 'sql_FullExpression' and 'sql_Like'. From 'sql_FullExpression', the role 'sql_FullExpression143' has cardinality 0..*, and from 'sql_Like', the role 'sql_Like' has cardinality 0..*.
+An association connects 'sql_FullExpression' and 'sql_Comparison'. From 'sql_FullExpression', the role 'sql_FullExpression145' has cardinality 0..*, and from 'sql_Comparison', the role 'sql_Comparison' has cardinality 0..*.
+An association connects 'sql_ExprGroup' and 'sql_OrExpr'. From 'sql_ExprGroup', the role 'sql_ExprGroup147' has cardinality 0..*, and from 'sql_OrExpr', the role 'sql_OrExpr148' has cardinality 0..*.
+An association connects 'sql_XExpr' and 'sql_Operands'. From 'sql_XExpr', the role 'sql_XExpr150' has cardinality 0..*, and from 'sql_Operands', the role 'sql_Operands151' has cardinality 0..*.
+An association connects 'sql_Prms' and 'sql_XExpr'. From 'sql_Prms', the role 'sql_Prms' has cardinality 0..*, and from 'sql_XExpr', the role 'sql_XExpr153' has cardinality 0..*.
+An association connects 'sql_Prms' and 'sql_JRParameter'. From 'sql_Prms', the role 'sql_Prms155' has cardinality 0..*, and from 'sql_JRParameter', the role 'sql_JRParameter' has cardinality 0..*.
+An association connects 'sql_Comparison' and 'sql_Operands'. From 'sql_Comparison', the role 'sql_Comparison157' has cardinality 0..*, and from 'sql_Operands', the role 'sql_Operands158' has cardinality 0..*.
+An association connects 'sql_LikeOperand' and 'sql_Like'. From 'sql_LikeOperand', the role 'sql_LikeOperand' has cardinality 0..*, and from 'sql_Like', the role 'sql_Like160' has cardinality 0..*.
+An association connects 'sql_OpFunction' and 'sql_LikeOperand'. From 'sql_OpFunction', the role 'sql_OpFunction163' has cardinality 0..*, and from 'sql_LikeOperand', the role 'sql_LikeOperand162' has cardinality 0..*.
+An association connects 'sql_LikeOperand' and 'sql_OpFunctionCast'. From 'sql_LikeOperand', the role 'sql_LikeOperand165' has cardinality 0..*, and from 'sql_OpFunctionCast', the role 'sql_OpFunctionCast' has cardinality 0..*.
+An association connects 'sql_LikeOperand' and 'sql_POperand'. From 'sql_LikeOperand', the role 'sql_LikeOperand167' has cardinality 0..*, and from 'sql_POperand', the role 'sql_POperand' has cardinality 0..*.
+An association connects 'sql_Operands' and 'sql_Between'. From 'sql_Operands', the role 'sql_Operands170' has cardinality 0..*, and from 'sql_Between', the role 'sql_Between169' has cardinality 0..*.
+An association connects 'sql_Between' and 'sql_Operands'. From 'sql_Between', the role 'sql_Between172' has cardinality 0..*, and from 'sql_Operands', the role 'sql_Operands173' has cardinality 0..*.
+An association connects 'sql_InOper' and 'sql_SubQueryOperand'. From 'sql_InOper', the role 'sql_InOper175' has cardinality 0..*, and from 'sql_SubQueryOperand', the role 'sql_SubQueryOperand176' has cardinality 0..*.
+An association connects 'sql_InOper' and 'sql_OperandListGroup'. From 'sql_InOper', the role 'sql_InOper178' has cardinality 0..*, and from 'sql_OperandListGroup', the role 'sql_OperandListGroup' has cardinality 0..*.
+An association connects 'sql_SubQueryOperand' and 'sql_ExistsOper'. From 'sql_SubQueryOperand', the role 'sql_SubQueryOperand181' has cardinality 0..*, and from 'sql_ExistsOper', the role 'sql_ExistsOper180' has cardinality 0..*.
+An association connects 'sql_OperandListGroup' and 'sql_ExistsOper'. From 'sql_OperandListGroup', the role 'sql_OperandListGroup184' has cardinality 0..*, and from 'sql_ExistsOper', the role 'sql_ExistsOper183' has cardinality 0..*.
+An association connects 'sql_OperandListGroup' and 'sql_OperandList'. From 'sql_OperandListGroup', the role 'sql_OperandListGroup186' has cardinality 0..*, and from 'sql_OperandList', the role 'sql_OperandList' has cardinality 0..*.
+An association connects 'sql_Operands' and 'sql_Operand'. From 'sql_Operands', the role 'sql_Operands188' has cardinality 0..*, and from 'sql_Operand', the role 'sql_Operand' has cardinality 0..*.
+An association connects 'sql_Operands' and 'sql_Operands'. From 'sql_Operands', the role 'sql_Operands191' has cardinality 0..*, and from 'sql_Operands', the role 'sql_Operands189' has cardinality 0..*.
+An association connects 'sql_Operand' and 'sql_Operands'. From 'sql_Operand', the role 'sql_Operand194' has cardinality 0..*, and from 'sql_Operands', the role 'sql_Operands193' has cardinality 0..*.
+An association connects 'sql_Operand' and 'sql_ColumnOperand'. From 'sql_Operand', the role 'sql_Operand196' has cardinality 0..*, and from 'sql_ColumnOperand', the role 'sql_ColumnOperand' has cardinality 0..*.
+An association connects 'sql_Operand' and 'sql_Operand'. From 'sql_Operand', the role 'sql_Operand197' has cardinality 0..*, and from 'sql_Operand', the role 'sql_Operand199' has cardinality 0..*.
+An association connects 'sql_Operand' and 'sql_SubQueryOperand'. From 'sql_Operand', the role 'sql_Operand201' has cardinality 0..*, and from 'sql_SubQueryOperand', the role 'sql_SubQueryOperand202' has cardinality 0..*.
+An association connects 'sql_OpFunctionCast' and 'sql_Operand'. From 'sql_OpFunctionCast', the role 'sql_OpFunctionCast205' has cardinality 0..*, and from 'sql_Operand', the role 'sql_Operand204' has cardinality 0..*.
+An association connects 'sql_FunctionExtract' and 'sql_Operand'. From 'sql_FunctionExtract', the role 'sql_FunctionExtract' has cardinality 0..*, and from 'sql_Operand', the role 'sql_Operand207' has cardinality 0..*.
+An association connects 'sql_Operand' and 'sql_OpFunction'. From 'sql_Operand', the role 'sql_Operand209' has cardinality 0..*, and from 'sql_OpFunction', the role 'sql_OpFunction210' has cardinality 0..*.
+An association connects 'sql_SQLCaseOperand' and 'sql_Operand'. From 'sql_SQLCaseOperand', the role 'sql_SQLCaseOperand' has cardinality 0..*, and from 'sql_Operand', the role 'sql_Operand212' has cardinality 0..*.
+An association connects 'sql_Operand' and 'sql_POperand'. From 'sql_Operand', the role 'sql_Operand214' has cardinality 0..*, and from 'sql_POperand', the role 'sql_POperand215' has cardinality 0..*.
+An association connects 'sql_Operand' and 'sql_ExpOperand'. From 'sql_Operand', the role 'sql_Operand217' has cardinality 0..*, and from 'sql_ExpOperand', the role 'sql_ExpOperand' has cardinality 0..*.
+An association connects 'sql_ScalarOperand' and 'sql_Operand'. From 'sql_ScalarOperand', the role 'sql_ScalarOperand' has cardinality 0..*, and from 'sql_Operand', the role 'sql_Operand219' has cardinality 0..*.
+An association connects 'sql_OpFunctionArg' and 'sql_OpFunction'. From 'sql_OpFunctionArg', the role 'sql_OpFunctionArg' has cardinality 0..*, and from 'sql_OpFunction', the role 'sql_OpFunction221' has cardinality 0..*.
+An association connects 'sql_FunctionAnalytical' and 'sql_OpFunction'. From 'sql_FunctionAnalytical', the role 'sql_FunctionAnalytical' has cardinality 0..*, and from 'sql_OpFunction', the role 'sql_OpFunction223' has cardinality 0..*.
+An association connects 'sql_FunctionExtract' and 'sql_Operands'. From 'sql_FunctionExtract', the role 'sql_FunctionExtract225' has cardinality 0..*, and from 'sql_Operands', the role 'sql_Operands226' has cardinality 0..*.
+An association connects 'sql_AnalyticClause' and 'sql_FunctionAnalytical'. From 'sql_AnalyticClause', the role 'sql_AnalyticClause' has cardinality 0..*, and from 'sql_FunctionAnalytical', the role 'sql_FunctionAnalytical228' has cardinality 0..*.
+An association connects 'sql_QueryPartitionClause' and 'sql_AnalyticClause'. From 'sql_QueryPartitionClause', the role 'sql_QueryPartitionClause' has cardinality 0..*, and from 'sql_AnalyticClause', the role 'sql_AnalyticClause230' has cardinality 0..*.
+An association connects 'sql_AnalyticClause' and 'sql_OrderByClause'. From 'sql_AnalyticClause', the role 'sql_AnalyticClause232' has cardinality 0..*, and from 'sql_OrderByClause', the role 'sql_OrderByClause' has cardinality 0..*.
+An association connects 'sql_WindowingClause' and 'sql_AnalyticClause'. From 'sql_WindowingClause', the role 'sql_WindowingClause' has cardinality 0..*, and from 'sql_AnalyticClause', the role 'sql_AnalyticClause234' has cardinality 0..*.
+An association connects 'sql_WindowingClauseBetween' and 'sql_WindowingClauseOperandPreceding'. From 'sql_WindowingClauseBetween', the role 'sql_WindowingClauseBetween' has cardinality 0..*, and from 'sql_WindowingClauseOperandPreceding', the role 'sql_WindowingClauseOperandPreceding' has cardinality 0..*.
+An association connects 'sql_WindowingClauseOperandFollowing' and 'sql_WindowingClauseBetween'. From 'sql_WindowingClauseOperandFollowing', the role 'sql_WindowingClauseOperandFollowing' has cardinality 0..*, and from 'sql_WindowingClauseBetween', the role 'sql_WindowingClauseBetween237' has cardinality 0..*.
+An association connects 'sql_WindowingClauseOperandFollowing' and 'sql_AnalyticExprArg'. From 'sql_WindowingClauseOperandFollowing', the role 'sql_WindowingClauseOperandFollowing239' has cardinality 0..*, and from 'sql_AnalyticExprArg', the role 'sql_AnalyticExprArg' has cardinality 0..*.
+An association connects 'sql_WindowingClauseOperandPreceding' and 'sql_AnalyticExprArg'. From 'sql_WindowingClauseOperandPreceding', the role 'sql_WindowingClauseOperandPreceding241' has cardinality 0..*, and from 'sql_AnalyticExprArg', the role 'sql_AnalyticExprArg242' has cardinality 0..*.
+An association connects 'sql_OrderByClause' and 'sql_OrderByClauseArgs'. From 'sql_OrderByClause', the role 'sql_OrderByClause244' has cardinality 0..*, and from 'sql_OrderByClauseArgs', the role 'sql_OrderByClauseArgs' has cardinality 0..*.
+An association connects 'sql_OrderByClauseArg' and 'sql_AnalyticExprArg'. From 'sql_OrderByClauseArg', the role 'sql_OrderByClauseArg' has cardinality 0..*, and from 'sql_AnalyticExprArg', the role 'sql_AnalyticExprArg246' has cardinality 0..*.
+An association connects 'sql_AnalyticExprArgs' and 'sql_QueryPartitionClause'. From 'sql_AnalyticExprArgs', the role 'sql_AnalyticExprArgs' has cardinality 0..*, and from 'sql_QueryPartitionClause', the role 'sql_QueryPartitionClause248' has cardinality 0..*.
+An association connects 'sql_Operands' and 'sql_AnalyticExprArg'. From 'sql_Operands', the role 'sql_Operands251' has cardinality 0..*, and from 'sql_AnalyticExprArg', the role 'sql_AnalyticExprArg250' has cardinality 0..*.
+An association connects 'sql_AnalyticExprArg' and 'sql_DbObjectName'. From 'sql_AnalyticExprArg', the role 'sql_AnalyticExprArg253' has cardinality 0..*, and from 'sql_DbObjectName', the role 'sql_DbObjectName254' has cardinality 0..*.
+An association connects 'sql_OpFunctionArgOperand' and 'sql_OpFunctionArgAgregate'. From 'sql_OpFunctionArgOperand', the role 'sql_OpFunctionArgOperand' has cardinality 0..*, and from 'sql_OpFunctionArgAgregate', the role 'sql_OpFunctionArgAgregate' has cardinality 0..*.
+An association connects 'sql_Operands' and 'sql_OpFunctionCast'. From 'sql_Operands', the role 'sql_Operands258' has cardinality 0..*, and from 'sql_OpFunctionCast', the role 'sql_OpFunctionCast257' has cardinality 0..*.
+An association connects 'sql_ColumnFull' and 'sql_ColumnOperand'. From 'sql_ColumnFull', the role 'sql_ColumnFull261' has cardinality 0..*, and from 'sql_ColumnOperand', the role 'sql_ColumnOperand260' has cardinality 0..*.
+An association connects 'sql_SelectQuery' and 'sql_SubQueryOperand'. From 'sql_SelectQuery', the role 'sql_SelectQuery264' has cardinality 0..*, and from 'sql_SubQueryOperand', the role 'sql_SubQueryOperand263' has cardinality 0..*.
+An association connects 'sql_SQLCaseOperand' and 'sql_Operands'. From 'sql_SQLCaseOperand', the role 'sql_SQLCaseOperand266' has cardinality 0..*, and from 'sql_Operands', the role 'sql_Operands267' has cardinality 0..*.
+An association connects 'sql_SQLCaseOperand' and 'sql_OrExpr'. From 'sql_SQLCaseOperand', the role 'sql_SQLCaseOperand269' has cardinality 0..*, and from 'sql_OrExpr', the role 'sql_OrExpr270' has cardinality 0..*.
+An association connects 'sql_SQLCaseOperand' and 'sql_SQLCaseWhens'. From 'sql_SQLCaseOperand', the role 'sql_SQLCaseOperand272' has cardinality 0..*, and from 'sql_SQLCaseWhens', the role 'sql_SQLCaseWhens' has cardinality 0..*.
+An association connects 'sql_Operands' and 'sql_SqlCaseWhen'. From 'sql_Operands', the role 'sql_Operands274' has cardinality 0..*, and from 'sql_SqlCaseWhen', the role 'sql_SqlCaseWhen' has cardinality 0..*.
+An association connects 'sql_SqlCaseWhen' and 'sql_OrExpr'. From 'sql_SqlCaseWhen', the role 'sql_SqlCaseWhen276' has cardinality 0..*, and from 'sql_OrExpr', the role 'sql_OrExpr277' has cardinality 0..*.
+An association connects 'sql_Operands' and 'sql_SqlCaseWhen'. From 'sql_Operands', the role 'sql_Operands280' has cardinality 0..*, and from 'sql_SqlCaseWhen', the role 'sql_SqlCaseWhen279' has cardinality 0..*.
+An association connects 'sql_Operands' and 'sql_SqlCaseWhen'. From 'sql_Operands', the role 'sql_Operands283' has cardinality 0..*, and from 'sql_SqlCaseWhen', the role 'sql_SqlCaseWhen282' has cardinality 0..*.
+An association connects 'sql_Col' and 'sql_DbObjectName'. From 'sql_Col', the role 'sql_Col' has cardinality 0..*, and from 'sql_DbObjectName', the role 'sql_DbObjectName285' has cardinality 0..*.
+An association connects 'sql_ColumnNames' and 'sql_abc'. From 'sql_ColumnNames', the role 'sql_ColumnNames' has cardinality 0..*, and from 'sql_abc', the role 'sql_abc' has cardinality 0..*.
+An association connects 'sql_UnipivotInClause' and 'sql_UnpivotInClauseArgs'. From 'sql_UnipivotInClause', the role 'sql_UnipivotInClause' has cardinality 0..*, and from 'sql_UnpivotInClauseArgs', the role 'sql_UnpivotInClauseArgs288' has cardinality 0..*.
+An association connects 'sql_UnpivotInClauseArg' and 'sql_uicargs'. From 'sql_UnpivotInClauseArg', the role 'sql_UnpivotInClauseArg290' has cardinality 0..*, and from 'sql_uicargs', the role 'sql_uicargs' has cardinality 0..*.
+An association connects 'sql_pvcs' and 'sql_PivotCol'. From 'sql_pvcs', the role 'sql_pvcs' has cardinality 0..*, and from 'sql_PivotCol', the role 'sql_PivotCol' has cardinality 0..*.
+An association connects 'sql_DbObjectName' and 'sql_pcols'. From 'sql_DbObjectName', the role 'sql_DbObjectName293' has cardinality 0..*, and from 'sql_pcols', the role 'sql_pcols' has cardinality 0..*.
+An association connects 'sql_DbObjectName' and 'sql_tbls'. From 'sql_DbObjectName', the role 'sql_DbObjectName295' has cardinality 0..*, and from 'sql_tbls', the role 'sql_tbls' has cardinality 0..*.
+An association connects 'sql_OpList' and 'sql_ScalarOperand'. From 'sql_OpList', the role 'sql_OpList' has cardinality 0..*, and from 'sql_ScalarOperand', the role 'sql_ScalarOperand297' has cardinality 0..*.
+An association connects 'sql_OBCArgs' and 'sql_OrderByClauseArg'. From 'sql_OBCArgs', the role 'sql_OBCArgs' has cardinality 0..*, and from 'sql_OrderByClauseArg', the role 'sql_OrderByClauseArg299' has cardinality 0..*.
+An association connects 'sql_AExpArgs' and 'sql_AnalyticExprArg'. From 'sql_AExpArgs', the role 'sql_AExpArgs' has cardinality 0..*, and from 'sql_AnalyticExprArg', the role 'sql_AnalyticExprArg301' has cardinality 0..*.
+An association connects 'sql_OpFList' and 'sql_OpFunctionArgOperand'. From 'sql_OpFList', the role 'sql_OpFList' has cardinality 0..*, and from 'sql_OpFunctionArgOperand', the role 'sql_OpFunctionArgOperand303' has cardinality 0..*.
+An association connects 'sql_SqlCaseWhen' and 'sql_WhenList'. From 'sql_SqlCaseWhen', the role 'sql_SqlCaseWhen305' has cardinality 0..*, and from 'sql_WhenList', the role 'sql_WhenList' has cardinality 0..*.

@@ -1,0 +1,105 @@
+The domain model 'tfsm' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_LowerEqualClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockConstraintOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_TimedFSM' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_UpperClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_OrClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_Clock' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'tick', which is of type int.
+
+'tfsm_ClockReset' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_TimedState' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_ClockConstraintOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_TimedTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'ClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'FSM' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_TimedFinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_BinaryClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_ClockConstraint' represents an important domain concept.
+It has one attribute: 'threshold', which is of type int.
+
+'tfsm_AndClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_LowerClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_TimedInitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_UpperEqualClockConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'TimedState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'tfsm_TimedFSM' is a specialization of 'FSM'.
+The class 'tfsm_TimedState' is a specialization of 'State'.
+The class 'tfsm_TimedTransition' is a specialization of 'Transition'.
+The class 'tfsm_ClockConstraint' is a specialization of 'ClockConstraintOperation'.
+The class 'tfsm_LowerClockConstraint' is a specialization of 'ClockConstraint'.
+The class 'tfsm_LowerEqualClockConstraint' is a specialization of 'ClockConstraint'.
+The class 'tfsm_UpperClockConstraint' is a specialization of 'ClockConstraint'.
+The class 'tfsm_UpperEqualClockConstraint' is a specialization of 'ClockConstraint'.
+The class 'tfsm_AndClockConstraint' is a specialization of 'BinaryClockConstraint'.
+The class 'tfsm_OrClockConstraint' is a specialization of 'BinaryClockConstraint'.
+The class 'tfsm_BinaryClockConstraint' is a specialization of 'ClockConstraintOperation'.
+The class 'tfsm_TimedFinalState' is a specialization of 'FinalState'.
+The class 'tfsm_TimedFinalState' is a specialization of 'TimedState'.
+The class 'tfsm_TimedInitialState' is a specialization of 'TimedState'.
+The class 'tfsm_TimedInitialState' is a specialization of 'InitialState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tfsm_Clock' and 'tfsm_TimedFSM'. From 'tfsm_Clock', the role 'tfsm_Clock' has cardinality 0..*, and from 'tfsm_TimedFSM', the role 'tfsm_TimedFSM' has cardinality 0..*.
+An association connects 'tfsm_TimedState' and 'tfsm_ClockConstraintOperation'. From 'tfsm_TimedState', the role 'tfsm_TimedState' has cardinality 0..*, and from 'tfsm_ClockConstraintOperation', the role 'tfsm_ClockConstraintOperation' has cardinality 0..*.
+An association connects 'tfsm_ClockReset' and 'tfsm_TimedTransition'. From 'tfsm_ClockReset', the role 'tfsm_ClockReset' has cardinality 0..*, and from 'tfsm_TimedTransition', the role 'tfsm_TimedTransition' has cardinality 0..*.
+An association connects 'tfsm_TimedTransition' and 'tfsm_ClockConstraintOperation'. From 'tfsm_TimedTransition', the role 'tfsm_TimedTransition4' has cardinality 0..*, and from 'tfsm_ClockConstraintOperation', the role 'tfsm_ClockConstraintOperation5' has cardinality 0..*.
+An association connects 'tfsm_ClockConstraint' and 'tfsm_Clock'. From 'tfsm_ClockConstraint', the role 'tfsm_ClockConstraint' has cardinality 0..*, and from 'tfsm_Clock', the role 'tfsm_Clock7' has cardinality 0..*.
+An association connects 'tfsm_ClockReset' and 'tfsm_Clock'. From 'tfsm_ClockReset', the role 'tfsm_ClockReset9' has cardinality 0..*, and from 'tfsm_Clock', the role 'tfsm_Clock10' has cardinality 0..*.
+An association connects 'tfsm_BinaryClockConstraint' and 'tfsm_ClockConstraintOperation'. From 'tfsm_BinaryClockConstraint', the role 'tfsm_BinaryClockConstraint' has cardinality 0..*, and from 'tfsm_ClockConstraintOperation', the role 'tfsm_ClockConstraintOperation12' has cardinality 0..*.
+An association connects 'tfsm_BinaryClockConstraint' and 'tfsm_ClockConstraintOperation'. From 'tfsm_BinaryClockConstraint', the role 'tfsm_BinaryClockConstraint14' has cardinality 0..*, and from 'tfsm_ClockConstraintOperation', the role 'tfsm_ClockConstraintOperation15' has cardinality 0..*.

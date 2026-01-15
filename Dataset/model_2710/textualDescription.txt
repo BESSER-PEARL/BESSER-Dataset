@@ -1,0 +1,20 @@
+The domain model 'Kasu11' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'Kasu11_ClassB' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'Kasu11_ClassA' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'Kasu11_ClassC' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Kasu11_ClassA' and 'Kasu11_ClassB'. From 'Kasu11_ClassA', the role 'C_A' has cardinality 0..*, and from 'Kasu11_ClassB', the role 'ClassB' has cardinality 0..*.
+An association connects 'Kasu11_ClassC' and 'Kasu11_ClassA'. From 'Kasu11_ClassC', the role 'ClassC' has cardinality 0..*, and from 'Kasu11_ClassA', the role 'C_A2' has cardinality 0..*.
+An association connects 'Kasu11_ClassB' and 'Kasu11_ClassA'. From 'Kasu11_ClassB', the role 'C_B' has cardinality 0..*, and from 'Kasu11_ClassA', the role 'ClassA' has cardinality 0..*.
+An association connects 'Kasu11_ClassB' and 'Kasu11_ClassC'. From 'Kasu11_ClassB', the role 'C_B5' has cardinality 0..*, and from 'Kasu11_ClassC', the role 'ClassC6' has cardinality 0..*.
+An association connects 'Kasu11_ClassC' and 'Kasu11_ClassA'. From 'Kasu11_ClassC', the role 'C_C' has cardinality 0..*, and from 'Kasu11_ClassA', the role 'ClassA8' has cardinality 0..*.
+An association connects 'Kasu11_ClassB' and 'Kasu11_ClassC'. From 'Kasu11_ClassB', the role 'ClassB11' has cardinality 0..*, and from 'Kasu11_ClassC', the role 'C_C10' has cardinality 0..*.

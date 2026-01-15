@@ -1,0 +1,535 @@
+The domain model 'behavioral' describes the core structural elements and their relationships within the system.
+
+The model defines 129 main class(es).
+
+'actions_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'design_BusinessObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'design_StatusValue' represents an important domain concept.
+It does not declare any attributes.
+
+'SAMStatusValue' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_design_AbstractStatusVariable' represents an important domain concept.
+It has the following attributes: 'isAgent', which is of type bool; 'isStateGuarded', which is of type bool.
+
+'behavioral_actions_WhileLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'SAMStatusVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_AddLink' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_design_StatusVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'StatementWithNestedBlocks' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_rules_Dummy' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkManipulationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'SAMOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_assembly_StatusSchema' represents an important domain concept.
+It does not declare any attributes.
+
+'design_StatusVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractStatusVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_design_BusinessObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_assembly_Precondition' represents an important domain concept.
+It does not declare any attributes.
+
+'EventFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_businesstasks_TaskAgent' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_Foreach' represents an important domain concept.
+It has one attribute: 'parallel', which is of type bool.
+
+'behavioral_status_and_action_old_SAMOperator' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'collectionexpressions_Iterate' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_status_and_action_old_SAMSchemaValue' represents an important domain concept.
+It has the following attributes: 'isInhibiting', which is of type bool; 'isInitial', which is of type bool.
+
+'behavioral_assembly_InhibitingStrategy' represents an important domain concept.
+It does not declare any attributes.
+
+'Subscription' represents an important domain concept.
+It does not declare any attributes.
+
+'SAMStatusSchema' represents an important domain concept.
+It does not declare any attributes.
+
+'Selection' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_assembly_NeutralStrategy' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_StatementWithArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_ConditionalStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_assembly_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_status_and_action_old_SAMStatusValue' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SingleBlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Iterator' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_InScope' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_design_AbstractStatusValue' represents an important domain concept.
+It has the following attributes: 'isInhibiting', which is of type bool; 'isInitial', which is of type bool; 'isStateGuarded', which is of type bool.
+
+'behavioral_actions_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedValueWithOptionalInitExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_FunctionSignatureImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_events_EventProducer' represents an important domain concept.
+It does not declare any attributes.
+
+'InScope' represents an important domain concept.
+It does not declare any attributes.
+
+'assembly_Strategy' represents an important domain concept.
+It does not declare any attributes.
+
+'DimensionDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'assembly_ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_StatementWithNestedBlocks' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_events_Subscription' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedValueDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'SapClass' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_RemoveLink' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_events_EventFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_status_and_action_old_SAMStatusVariable' represents an important domain concept.
+It has the following attributes: 'isAgentVariable', which is of type bool; 'name', which is of type str.
+
+'behavioral_assembly_ActionProxy' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_bpdm_Dummy' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractStatusValue' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_assembly_AndOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_assembly_SchemaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'design_AbstractStatusValue' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_ConditionalStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'assembly_SchemaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_SingleBlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_NamedValueDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_assembly_EnablingStrategy' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_transactions_Dummy' represents an important domain concept.
+It does not declare any attributes.
+
+'SAMSchemaVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_assembly_Strategy' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_SingleBlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'SchemaElement' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_NamedValueWithOptionalInitExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'GroupBy' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_design_StatusValue' represents an important domain concept.
+It does not declare any attributes.
+
+'design_AbstractStatusVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'SAMSchemaDerivator' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_status_and_action_old_SAMSchemaDerivator' represents an important domain concept.
+It does not declare any attributes.
+
+'SAMAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_design_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_Sort' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_status_and_action_old_SAMAction' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isAgentAction', which is of type bool.
+
+'Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_assembly_ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Strategy' represents an important domain concept.
+It does not declare any attributes.
+
+'EventProducer' represents an important domain concept.
+It does not declare any attributes.
+
+'StatementWithArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_QueryInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_IfElse' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_status_and_action_old_SAMSchemaVariable' represents an important domain concept.
+It has one attribute: 'hasStateGuard', which is of type bool.
+
+'FromClause' represents an important domain concept.
+It does not declare any attributes.
+
+'design_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_status_and_action_old_SAMSchemaAction' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractAction' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_assembly_OrOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_assembly_RequiredStrategy' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_assembly_StatusValueProxy' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_assembly_Synchroniser' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_status_and_action_old_SAMStatusSchema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'behavioral_actions_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_LinkManipulationStatement' represents an important domain concept.
+It has one attribute: 'at', which is of type int.
+
+'SAMDerivator' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_design_BusinessObject' represents an important domain concept.
+It does not declare any attributes.
+
+'design_AbstractAction' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_assembly_StatusVariableProxy' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_assembly_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Signature' represents an important domain concept.
+It does not declare any attributes.
+
+'SAMSchemaAction' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_status_and_action_old_SAMDerivator' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'behavioral_actions_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_design_AbstractAction' represents an important domain concept.
+It has the following attributes: 'isAgent', which is of type bool; 'isPreconditionFixed', which is of type bool.
+
+'Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_actions_StatementWithNestedBlocks' represents an important domain concept.
+It does not declare any attributes.
+
+'SAMSchemaValue' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_assembly_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_WithArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'Foreach' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SAMOperatorKindEnum' defines the following possible values: 'AND', 'OR'.
+The enumeration 'PreconditionKindEnum' defines the following possible values: 'INHIBIT', 'NEUTEAL', 'ENABLE', 'REQUIRED'.
+The enumeration 'SAMDerivatorKindEnum' defines the following possible values: 'POPULATION', 'AGGREGATION', 'OVERALL'.
+
+The model also captures inheritance relationships between classes.
+The class 'behavioral_actions_Assignment' is a specialization of 'StatementWithArgument'.
+The class 'behavioral_actions_Statement' is a specialization of 'InScope'.
+The class 'behavioral_actions_Block' is a specialization of 'classes_FunctionSignatureImplementation'.
+The class 'behavioral_actions_Block' is a specialization of 'classes_InScope'.
+The class 'behavioral_actions_IfElse' is a specialization of 'actions_ConditionalStatement'.
+The class 'behavioral_actions_IfElse' is a specialization of 'actions_StatementWithNestedBlocks'.
+The class 'behavioral_actions_WhileLoop' is a specialization of 'actions_ConditionalStatement'.
+The class 'behavioral_actions_WhileLoop' is a specialization of 'actions_SingleBlockStatement'.
+The class 'behavioral_actions_Foreach' is a specialization of 'SingleBlockStatement'.
+The class 'behavioral_actions_Return' is a specialization of 'StatementWithArgument'.
+The class 'behavioral_actions_AddLink' is a specialization of 'LinkManipulationStatement'.
+The class 'behavioral_actions_RemoveLink' is a specialization of 'LinkManipulationStatement'.
+The class 'behavioral_actions_LinkManipulationStatement' is a specialization of 'Statement'.
+The class 'behavioral_actions_ExpressionStatement' is a specialization of 'Statement'.
+The class 'behavioral_actions_Constant' is a specialization of 'NamedValueWithOptionalInitExpression'.
+The class 'behavioral_actions_Variable' is a specialization of 'NamedValueWithOptionalInitExpression'.
+The class 'behavioral_actions_Iterator' is a specialization of 'NamedValue'.
+The class 'behavioral_actions_NamedValueDeclaration' is a specialization of 'Statement'.
+The class 'behavioral_actions_StatementWithNestedBlocks' is a specialization of 'Statement'.
+The class 'behavioral_actions_SingleBlockStatement' is a specialization of 'StatementWithNestedBlocks'.
+The class 'behavioral_actions_StatementWithArgument' is a specialization of 'actions_Statement'.
+The class 'behavioral_actions_StatementWithArgument' is a specialization of 'expressions_WithArgument'.
+The class 'behavioral_actions_NamedValueWithOptionalInitExpression' is a specialization of 'NamedValue'.
+The class 'behavioral_actions_ConditionalStatement' is a specialization of 'expressions_Conditional'.
+The class 'behavioral_actions_ConditionalStatement' is a specialization of 'actions_Statement'.
+The class 'behavioral_events_Subscription' is a specialization of 'NamedElement'.
+The class 'behavioral_design_BusinessObjectNode' is a specialization of 'NamedElement'.
+The class 'behavioral_design_StatusVariable' is a specialization of 'AbstractStatusVariable'.
+The class 'behavioral_design_StatusValue' is a specialization of 'AbstractStatusValue'.
+The class 'behavioral_design_Action' is a specialization of 'AbstractAction'.
+The class 'behavioral_design_AbstractStatusVariable' is a specialization of 'NamedElement'.
+The class 'behavioral_design_AbstractStatusValue' is a specialization of 'NamedElement'.
+The class 'behavioral_design_AbstractAction' is a specialization of 'NamedElement'.
+The class 'behavioral_assembly_StatusSchema' is a specialization of 'NamedElement'.
+The class 'behavioral_assembly_Connector' is a specialization of 'SchemaElement'.
+The class 'behavioral_assembly_Operator' is a specialization of 'ConnectableElement'.
+The class 'behavioral_assembly_ConnectableElement' is a specialization of 'SchemaElement'.
+The class 'behavioral_assembly_ActionProxy' is a specialization of 'design_AbstractAction'.
+The class 'behavioral_assembly_ActionProxy' is a specialization of 'design_Action'.
+The class 'behavioral_assembly_ActionProxy' is a specialization of 'assembly_ConnectableElement'.
+The class 'behavioral_assembly_StatusValueProxy' is a specialization of 'design_AbstractStatusValue'.
+The class 'behavioral_assembly_StatusValueProxy' is a specialization of 'design_StatusValue'.
+The class 'behavioral_assembly_StatusValueProxy' is a specialization of 'assembly_ConnectableElement'.
+The class 'behavioral_assembly_Transition' is a specialization of 'Connector'.
+The class 'behavioral_assembly_Synchroniser' is a specialization of 'Connector'.
+The class 'behavioral_assembly_Precondition' is a specialization of 'Connector'.
+The class 'behavioral_assembly_StatusVariableProxy' is a specialization of 'design_AbstractStatusVariable'.
+The class 'behavioral_assembly_StatusVariableProxy' is a specialization of 'design_StatusVariable'.
+The class 'behavioral_assembly_StatusVariableProxy' is a specialization of 'assembly_ConnectableElement'.
+The class 'behavioral_assembly_AndOperator' is a specialization of 'Operator'.
+The class 'behavioral_assembly_OrOperator' is a specialization of 'Operator'.
+The class 'behavioral_assembly_RequiredStrategy' is a specialization of 'Strategy'.
+The class 'behavioral_assembly_NeutralStrategy' is a specialization of 'Strategy'.
+The class 'behavioral_assembly_EnablingStrategy' is a specialization of 'Strategy'.
+The class 'behavioral_assembly_InhibitingStrategy' is a specialization of 'Strategy'.
+The class 'behavioral_assembly_SchemaElement' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Variable' and 'behavioral_actions_Assignment'. From 'Variable', the role 'actions' has cardinality 0..*, and from 'behavioral_actions_Assignment', the role 'Variable' has cardinality 0..*.
+An association connects 'behavioral_actions_Statement' and 'Block'. From 'behavioral_actions_Statement', the role 'Block' has cardinality 0..*, and from 'Block', the role 'actions2' has cardinality 0..*.
+An association connects 'Statement' and 'behavioral_actions_Block'. From 'Statement', the role 'actions4' has cardinality 0..*, and from 'behavioral_actions_Block', the role 'Statement' has cardinality 0..*.
+An association connects 'behavioral_actions_Block' and 'NamedValue'. From 'behavioral_actions_Block', the role 'NamedValue' has cardinality 0..*, and from 'NamedValue', the role 'data.ecoreclasses' has cardinality 0..*.
+An association connects 'StatementWithNestedBlocks' and 'behavioral_actions_Block'. From 'StatementWithNestedBlocks', the role 'actions7' has cardinality 0..*, and from 'behavioral_actions_Block', the role 'StatementWithNestedBlocks' has cardinality 0..*.
+An association connects 'Expression' and 'behavioral_actions_Foreach'. From 'Expression', the role 'Expression' has cardinality 0..*, and from 'behavioral_actions_Foreach', the role 'behavioral_actions_Foreach' has cardinality 0..*.
+An association connects 'behavioral_actions_Foreach' and 'Iterator'. From 'behavioral_actions_Foreach', the role 'Iterator' has cardinality 0..*, and from 'Iterator', the role 'actions10' has cardinality 0..*.
+An association connects 'Association' and 'behavioral_actions_LinkManipulationStatement'. From 'Association', the role 'Association' has cardinality 0..*, and from 'behavioral_actions_LinkManipulationStatement', the role 'behavioral_actions_LinkManipulationStatement' has cardinality 0..*.
+An association connects 'Expression' and 'behavioral_actions_LinkManipulationStatement'. From 'Expression', the role 'Expression14' has cardinality 0..*, and from 'behavioral_actions_LinkManipulationStatement', the role 'behavioral_actions_LinkManipulationStatement13' has cardinality 0..*.
+An association connects 'behavioral_actions_ExpressionStatement' and 'Expression'. From 'behavioral_actions_ExpressionStatement', the role 'Expression16' has cardinality 0..*, and from 'Expression', the role 'dataaccess.ecoreexpressions' has cardinality 0..*.
+An association connects 'collectionexpressions_Iterate' and 'behavioral_actions_Constant'. From 'collectionexpressions_Iterate', the role 'dataaccess.ecoreexpressions18' has cardinality 0..*, and from 'behavioral_actions_Constant', the role 'collectionexpressions' has cardinality 0..*.
+An association connects 'behavioral_actions_Variable' and 'Assignment'. From 'behavioral_actions_Variable', the role 'Assignment' has cardinality 0..*, and from 'Assignment', the role 'actions20' has cardinality 0..*.
+An association connects 'behavioral_actions_Iterator' and 'Foreach'. From 'behavioral_actions_Iterator', the role 'Foreach' has cardinality 0..*, and from 'Foreach', the role 'actions22' has cardinality 0..*.
+An association connects 'behavioral_actions_Iterator' and 'collectionexpressions_Iterate'. From 'behavioral_actions_Iterator', the role 'collectionexpressions24' has cardinality 0..*, and from 'collectionexpressions_Iterate', the role 'dataaccess.ecoreexpressions25' has cardinality 0..*.
+An association connects 'Selection' and 'behavioral_actions_Iterator'. From 'Selection', the role 'dataaccess.ecorequery' has cardinality 0..*, and from 'behavioral_actions_Iterator', the role 'Selection' has cardinality 0..*.
+An association connects 'FromClause' and 'behavioral_actions_Iterator'. From 'FromClause', the role 'dataaccess.ecorequery28' has cardinality 0..*, and from 'behavioral_actions_Iterator', the role 'FromClause' has cardinality 0..*.
+An association connects 'GroupBy' and 'behavioral_actions_Iterator'. From 'GroupBy', the role 'dataaccess.ecoreanalytics' has cardinality 0..*, and from 'behavioral_actions_Iterator', the role 'GroupBy' has cardinality 0..*.
+An association connects 'DimensionDefinition' and 'behavioral_actions_Iterator'. From 'DimensionDefinition', the role 'dataaccess.ecoreanalytics31' has cardinality 0..*, and from 'behavioral_actions_Iterator', the role 'DimensionDefinition' has cardinality 0..*.
+An association connects 'GroupBy' and 'behavioral_actions_Iterator'. From 'GroupBy', the role 'dataaccess.ecoreanalytics34' has cardinality 0..*, and from 'behavioral_actions_Iterator', the role 'GroupBy33' has cardinality 0..*.
+An association connects 'NamedValueWithOptionalInitExpression' and 'behavioral_actions_NamedValueDeclaration'. From 'NamedValueWithOptionalInitExpression', the role 'actions36' has cardinality 0..*, and from 'behavioral_actions_NamedValueDeclaration', the role 'NamedValueWithOptionalInitExpression' has cardinality 0..*.
+An association connects 'Block' and 'behavioral_actions_StatementWithNestedBlocks'. From 'Block', the role 'actions39' has cardinality 0..*, and from 'behavioral_actions_StatementWithNestedBlocks', the role 'Block38' has cardinality 0..*.
+An association connects 'behavioral_actions_NamedValueWithOptionalInitExpression' and 'Expression'. From 'behavioral_actions_NamedValueWithOptionalInitExpression', the role 'Expression41' has cardinality 0..*, and from 'Expression', the role 'dataaccess.ecoreexpressions42' has cardinality 0..*.
+An association connects 'behavioral_actions_NamedValueWithOptionalInitExpression' and 'NamedValueDeclaration'. From 'behavioral_actions_NamedValueWithOptionalInitExpression', the role 'NamedValueDeclaration' has cardinality 0..*, and from 'NamedValueDeclaration', the role 'actions44' has cardinality 0..*.
+An association connects 'behavioral_events_Subscription' and 'EventProducer'. From 'behavioral_events_Subscription', the role 'EventProducer' has cardinality 0..*, and from 'EventProducer', the role 'events' has cardinality 0..*.
+An association connects 'behavioral_events_Subscription' and 'EventFilter'. From 'behavioral_events_Subscription', the role 'EventFilter' has cardinality 0..*, and from 'EventFilter', the role 'events47' has cardinality 0..*.
+An association connects 'SapClass' and 'behavioral_events_Subscription'. From 'SapClass', the role 'data.ecoreclasses49' has cardinality 0..*, and from 'behavioral_events_Subscription', the role 'SapClass' has cardinality 0..*.
+An association connects 'behavioral_events_EventProducer' and 'Subscription'. From 'behavioral_events_EventProducer', the role 'Subscription' has cardinality 0..*, and from 'Subscription', the role 'events51' has cardinality 0..*.
+An association connects 'behavioral_events_EventProducer' and 'MethodSignature'. From 'behavioral_events_EventProducer', the role 'MethodSignature' has cardinality 0..*, and from 'MethodSignature', the role 'data.ecoreclasses53' has cardinality 0..*.
+An association connects 'Subscription' and 'behavioral_events_EventFilter'. From 'Subscription', the role 'events56' has cardinality 0..*, and from 'behavioral_events_EventFilter', the role 'Subscription55' has cardinality 0..*.
+An association connects 'behavioral_events_EventFilter' and 'Block'. From 'behavioral_events_EventFilter', the role 'behavioral_events_EventFilter' has cardinality 0..*, and from 'Block', the role 'Block58' has cardinality 0..*.
+An association connects 'behavioral_status_and_action_old_SAMAction' and 'SapClass'. From 'behavioral_status_and_action_old_SAMAction', the role 'SapClass60' has cardinality 0..*, and from 'SapClass', the role 'data.ecoreclasses61' has cardinality 0..*.
+An association connects 'SAMSchemaAction' and 'behavioral_status_and_action_old_SAMAction'. From 'SAMSchemaAction', the role 'status_and_action_old' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMAction', the role 'SAMSchemaAction' has cardinality 0..*.
+An association connects 'behavioral_status_and_action_old_SAMStatusVariable' and 'SapClass'. From 'behavioral_status_and_action_old_SAMStatusVariable', the role 'SapClass64' has cardinality 0..*, and from 'SapClass', the role 'data.ecoreclasses65' has cardinality 0..*.
+An association connects 'SAMStatusValue' and 'behavioral_status_and_action_old_SAMStatusVariable'. From 'SAMStatusValue', the role 'status_and_action_old67' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMStatusVariable', the role 'SAMStatusValue' has cardinality 0..*.
+An association connects 'SAMSchemaVariable' and 'behavioral_status_and_action_old_SAMStatusVariable'. From 'SAMSchemaVariable', the role 'status_and_action_old69' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMStatusVariable', the role 'SAMSchemaVariable' has cardinality 0..*.
+An association connects 'SapClass' and 'behavioral_status_and_action_old_SAMDerivator'. From 'SapClass', the role 'data.ecoreclasses72' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMDerivator', the role 'SapClass71' has cardinality 0..*.
+An association connects 'behavioral_status_and_action_old_SAMDerivator' and 'SAMSchemaDerivator'. From 'behavioral_status_and_action_old_SAMDerivator', the role 'SAMSchemaDerivator' has cardinality 0..*, and from 'SAMSchemaDerivator', the role 'status_and_action_old74' has cardinality 0..*.
+An association connects 'behavioral_status_and_action_old_SAMStatusValue' and 'SAMStatusVariable'. From 'behavioral_status_and_action_old_SAMStatusValue', the role 'SAMStatusVariable' has cardinality 0..*, and from 'SAMStatusVariable', the role 'status_and_action_old76' has cardinality 0..*.
+An association connects 'behavioral_status_and_action_old_SAMStatusSchema' and 'SapClass'. From 'behavioral_status_and_action_old_SAMStatusSchema', the role 'SapClass78' has cardinality 0..*, and from 'SapClass', the role 'data.ecoreclasses79' has cardinality 0..*.
+An association connects 'SAMOperator' and 'behavioral_status_and_action_old_SAMStatusSchema'. From 'SAMOperator', the role 'status_and_action_old81' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMStatusSchema', the role 'SAMOperator' has cardinality 0..*.
+An association connects 'SAMSchemaVariable' and 'behavioral_status_and_action_old_SAMStatusSchema'. From 'SAMSchemaVariable', the role 'status_and_action_old84' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMStatusSchema', the role 'SAMSchemaVariable83' has cardinality 0..*.
+An association connects 'SAMSchemaAction' and 'behavioral_status_and_action_old_SAMStatusSchema'. From 'SAMSchemaAction', the role 'status_and_action_old87' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMStatusSchema', the role 'SAMSchemaAction86' has cardinality 0..*.
+An association connects 'SAMSchemaDerivator' and 'behavioral_status_and_action_old_SAMStatusSchema'. From 'SAMSchemaDerivator', the role 'status_and_action_old90' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMStatusSchema', the role 'SAMSchemaDerivator89' has cardinality 0..*.
+An association connects 'behavioral_status_and_action_old_SAMOperator' and 'SAMStatusSchema'. From 'behavioral_status_and_action_old_SAMOperator', the role 'SAMStatusSchema' has cardinality 0..*, and from 'SAMStatusSchema', the role 'status_and_action_old92' has cardinality 0..*.
+An association connects 'SAMSchemaValue' and 'behavioral_status_and_action_old_SAMOperator'. From 'SAMSchemaValue', the role 'status_and_action_old94' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMOperator', the role 'SAMSchemaValue' has cardinality 0..*.
+An association connects 'SAMOperator' and 'behavioral_status_and_action_old_SAMOperator'. From 'SAMOperator', the role 'status_and_action_old97' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMOperator', the role 'SAMOperator96' has cardinality 0..*.
+An association connects 'SAMOperator' and 'behavioral_status_and_action_old_SAMOperator'. From 'SAMOperator', the role 'status_and_action_old100' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMOperator', the role 'SAMOperator99' has cardinality 0..*.
+An association connects 'behavioral_status_and_action_old_SAMOperator' and 'SAMSchemaAction'. From 'behavioral_status_and_action_old_SAMOperator', the role 'SAMSchemaAction102' has cardinality 0..*, and from 'SAMSchemaAction', the role 'status_and_action_old103' has cardinality 0..*.
+An association connects 'SAMStatusSchema' and 'behavioral_status_and_action_old_SAMSchemaVariable'. From 'SAMStatusSchema', the role 'status_and_action_old106' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMSchemaVariable', the role 'SAMStatusSchema105' has cardinality 0..*.
+An association connects 'SAMSchemaValue' and 'behavioral_status_and_action_old_SAMSchemaVariable'. From 'SAMSchemaValue', the role 'status_and_action_old109' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMSchemaVariable', the role 'SAMSchemaValue108' has cardinality 0..*.
+An association connects 'SAMStatusVariable' and 'behavioral_status_and_action_old_SAMSchemaVariable'. From 'SAMStatusVariable', the role 'status_and_action_old112' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMSchemaVariable', the role 'SAMStatusVariable111' has cardinality 0..*.
+An association connects 'behavioral_status_and_action_old_SAMSchemaVariable' and 'SAMSchemaDerivator'. From 'behavioral_status_and_action_old_SAMSchemaVariable', the role 'SAMSchemaDerivator114' has cardinality 0..*, and from 'SAMSchemaDerivator', the role 'status_and_action_old115' has cardinality 0..*.
+An association connects 'SAMSchemaDerivator' and 'behavioral_status_and_action_old_SAMSchemaVariable'. From 'SAMSchemaDerivator', the role 'status_and_action_old118' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMSchemaVariable', the role 'SAMSchemaDerivator117' has cardinality 0..*.
+An association connects 'SAMSchemaVariable' and 'behavioral_status_and_action_old_SAMSchemaValue'. From 'SAMSchemaVariable', the role 'status_and_action_old121' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMSchemaValue', the role 'SAMSchemaVariable120' has cardinality 0..*.
+An association connects 'SAMSchemaAction' and 'behavioral_status_and_action_old_SAMSchemaValue'. From 'SAMSchemaAction', the role 'status_and_action_old124' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMSchemaValue', the role 'SAMSchemaAction123' has cardinality 0..*.
+An association connects 'behavioral_status_and_action_old_SAMSchemaValue' and 'SAMSchemaValue'. From 'behavioral_status_and_action_old_SAMSchemaValue', the role 'SAMSchemaValue126' has cardinality 0..*, and from 'SAMSchemaValue', the role 'status_and_action_old127' has cardinality 0..*.
+An association connects 'SAMSchemaValue' and 'behavioral_status_and_action_old_SAMSchemaValue'. From 'SAMSchemaValue', the role 'status_and_action_old130' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMSchemaValue', the role 'SAMSchemaValue129' has cardinality 0..*.
+An association connects 'behavioral_status_and_action_old_SAMSchemaValue' and 'SAMOperator'. From 'behavioral_status_and_action_old_SAMSchemaValue', the role 'SAMOperator132' has cardinality 0..*, and from 'SAMOperator', the role 'status_and_action_old133' has cardinality 0..*.
+An association connects 'behavioral_status_and_action_old_SAMSchemaValue' and 'SAMSchemaAction'. From 'behavioral_status_and_action_old_SAMSchemaValue', the role 'SAMSchemaAction135' has cardinality 0..*, and from 'SAMSchemaAction', the role 'status_and_action_old136' has cardinality 0..*.
+An association connects 'SAMStatusSchema' and 'behavioral_status_and_action_old_SAMSchemaAction'. From 'SAMStatusSchema', the role 'status_and_action_old139' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMSchemaAction', the role 'SAMStatusSchema138' has cardinality 0..*.
+An association connects 'behavioral_status_and_action_old_SAMSchemaAction' and 'SAMAction'. From 'behavioral_status_and_action_old_SAMSchemaAction', the role 'SAMAction' has cardinality 0..*, and from 'SAMAction', the role 'status_and_action_old141' has cardinality 0..*.
+An association connects 'behavioral_status_and_action_old_SAMSchemaAction' and 'SAMSchemaValue'. From 'behavioral_status_and_action_old_SAMSchemaAction', the role 'SAMSchemaValue143' has cardinality 0..*, and from 'SAMSchemaValue', the role 'status_and_action_old144' has cardinality 0..*.
+An association connects 'behavioral_status_and_action_old_SAMSchemaAction' and 'SAMSchemaValue'. From 'behavioral_status_and_action_old_SAMSchemaAction', the role 'SAMSchemaValue146' has cardinality 0..*, and from 'SAMSchemaValue', the role 'status_and_action_old147' has cardinality 0..*.
+An association connects 'behavioral_status_and_action_old_SAMSchemaAction' and 'SAMOperator'. From 'behavioral_status_and_action_old_SAMSchemaAction', the role 'SAMOperator149' has cardinality 0..*, and from 'SAMOperator', the role 'status_and_action_old150' has cardinality 0..*.
+An association connects 'SAMDerivator' and 'behavioral_status_and_action_old_SAMSchemaDerivator'. From 'SAMDerivator', the role 'status_and_action_old152' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMSchemaDerivator', the role 'SAMDerivator' has cardinality 0..*.
+An association connects 'SAMStatusSchema' and 'behavioral_status_and_action_old_SAMSchemaDerivator'. From 'SAMStatusSchema', the role 'status_and_action_old155' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMSchemaDerivator', the role 'SAMStatusSchema154' has cardinality 0..*.
+An association connects 'SAMSchemaVariable' and 'behavioral_status_and_action_old_SAMSchemaDerivator'. From 'SAMSchemaVariable', the role 'status_and_action_old158' has cardinality 0..*, and from 'behavioral_status_and_action_old_SAMSchemaDerivator', the role 'SAMSchemaVariable157' has cardinality 0..*.
+An association connects 'behavioral_status_and_action_old_SAMSchemaDerivator' and 'SAMSchemaVariable'. From 'behavioral_status_and_action_old_SAMSchemaDerivator', the role 'SAMSchemaVariable160' has cardinality 0..*, and from 'SAMSchemaVariable', the role 'status_and_action_old161' has cardinality 0..*.
+An association connects 'design_BusinessObjectNode' and 'behavioral_design_BusinessObject'. From 'design_BusinessObjectNode', the role 'design_BusinessObjectNode' has cardinality 0..*, and from 'behavioral_design_BusinessObject', the role 'behavioral_design_BusinessObject' has cardinality 0..*.
+An association connects 'behavioral_design_BusinessObjectNode' and 'design_StatusVariable'. From 'behavioral_design_BusinessObjectNode', the role 'behavioral_design_BusinessObjectNode' has cardinality 0..*, and from 'design_StatusVariable', the role 'design_StatusVariable' has cardinality 0..*.
+An association connects 'behavioral_design_BusinessObjectNode' and 'design_Action'. From 'behavioral_design_BusinessObjectNode', the role 'behavioral_design_BusinessObjectNode165' has cardinality 0..*, and from 'design_Action', the role 'design_Action' has cardinality 0..*.
+An association connects 'behavioral_design_AbstractStatusVariable' and 'design_AbstractStatusValue'. From 'behavioral_design_AbstractStatusVariable', the role 'behavioral_design_AbstractStatusVariable' has cardinality 0..*, and from 'design_AbstractStatusValue', the role 'design_AbstractStatusValue' has cardinality 0..*.
+An association connects 'behavioral_assembly_StatusSchema' and 'SapClass'. From 'behavioral_assembly_StatusSchema', the role 'SapClass168' has cardinality 0..*, and from 'SapClass', the role 'data.ecoreclasses169' has cardinality 0..*.
+An association connects 'assembly_SchemaElement' and 'behavioral_assembly_StatusSchema'. From 'assembly_SchemaElement', the role 'assembly_SchemaElement' has cardinality 0..*, and from 'behavioral_assembly_StatusSchema', the role 'behavioral_assembly_StatusSchema' has cardinality 0..*.
+An association connects 'behavioral_assembly_Connector' and 'assembly_ConnectableElement'. From 'behavioral_assembly_Connector', the role 'behavioral_assembly_Connector' has cardinality 0..*, and from 'assembly_ConnectableElement', the role 'assembly_ConnectableElement' has cardinality 0..*.
+An association connects 'behavioral_assembly_Connector' and 'assembly_ConnectableElement'. From 'behavioral_assembly_Connector', the role 'behavioral_assembly_Connector173' has cardinality 0..*, and from 'assembly_ConnectableElement', the role 'assembly_ConnectableElement174' has cardinality 0..*.
+An association connects 'Signature' and 'behavioral_assembly_ActionProxy'. From 'Signature', the role 'Signature' has cardinality 0..*, and from 'behavioral_assembly_ActionProxy', the role 'behavioral_assembly_ActionProxy' has cardinality 0..*.
+An association connects 'design_StatusValue' and 'behavioral_assembly_StatusValueProxy'. From 'design_StatusValue', the role 'design_StatusValue' has cardinality 0..*, and from 'behavioral_assembly_StatusValueProxy', the role 'behavioral_assembly_StatusValueProxy' has cardinality 0..*.
+An association connects 'behavioral_assembly_Precondition' and 'assembly_Strategy'. From 'behavioral_assembly_Precondition', the role 'behavioral_assembly_Precondition' has cardinality 0..*, and from 'assembly_Strategy', the role 'assembly_Strategy' has cardinality 0..*.
+An association connects 'design_StatusVariable' and 'behavioral_assembly_StatusVariableProxy'. From 'design_StatusVariable', the role 'design_StatusVariable179' has cardinality 0..*, and from 'behavioral_assembly_StatusVariableProxy', the role 'behavioral_assembly_StatusVariableProxy' has cardinality 0..*.

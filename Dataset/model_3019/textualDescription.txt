@@ -1,0 +1,402 @@
+The domain model 'nabla' describes the core structural elements and their relationships within the system.
+
+The model defines 82 main class(es).
+
+'Iterable' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_ItemType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'nabla_Function' represents an important domain concept.
+It has one attribute: 'external', which is of type bool.
+
+'nabla_SetRef' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_UnaryMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Iterable' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_SimpleVar' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_SimpleVarDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'IterationBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Interval' represents an important domain concept.
+It has one attribute: 'from', which is of type int.
+
+'nabla_Arg' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_InstructionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_ReductionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_MultipleConnectivity' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_ArgOrVarRef' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_ArgOrVar' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Mul' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'nabla_Reduction' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Exit' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'nabla_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'Container' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionOrReduction' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Equality' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'nabla_SingleConnectivity' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_ItemRef' represents an important domain concept.
+It has the following attributes: 'dec', which is of type int; 'inc', which is of type int.
+
+'nabla_Or' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectivityCall' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Plus' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'nabla_Cardinality' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Div' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'TimeIteratorRef' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_TimeIteratorDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_TimeIteratorRef' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_SingleConnectivityCall' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_ItemDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_SetDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'nabla_ConnectivityCall' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Comparison' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'nabla_CurrentTimeIteratorRef' represents an important domain concept.
+It does not declare any attributes.
+
+'ArgOrVar' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_FunctionOrReduction' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'nabla_Parenthesis' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Container' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Var' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_TimeIterator' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Minus' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'nabla_MultipleConnectivityCall' represents an important domain concept.
+It does not declare any attributes.
+
+'Var' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_SpaceIterator' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_VarGroupDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_IntConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'nabla_VectorConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_BaseTypeConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_ConnectivityVar' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_NextTimeIteratorRef' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'nabla_If' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Connectivity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'nabla_ContractedIf' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_RealConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'nabla_OptDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_IterationBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_BoolConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'nabla_NablaModule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'nabla_MinConstant' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'nabla_Job' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Connectivity' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_Affectation' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_BaseType' represents an important domain concept.
+It has one attribute: 'primitive', which is of type str.
+
+'nabla_Modulo' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'nabla_SingletonDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_MaxConstant' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'nabla_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'nabla_And' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'nabla_InitTimeIteratorRef' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'nabla_Item' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PrimitiveType' defines the following possible values: 'Int', 'Real', 'Bool'.
+
+The model also captures inheritance relationships between classes.
+The class 'nabla_MultipleConnectivity' is a specialization of 'Connectivity'.
+The class 'nabla_SingleConnectivity' is a specialization of 'Connectivity'.
+The class 'nabla_SimpleVarDefinition' is a specialization of 'Instruction'.
+The class 'nabla_VarGroupDeclaration' is a specialization of 'Instruction'.
+The class 'nabla_InstructionBlock' is a specialization of 'Instruction'.
+The class 'nabla_Loop' is a specialization of 'Iterable'.
+The class 'nabla_Loop' is a specialization of 'Instruction'.
+The class 'nabla_Affectation' is a specialization of 'Instruction'.
+The class 'nabla_If' is a specialization of 'Instruction'.
+The class 'nabla_ItemDefinition' is a specialization of 'Instruction'.
+The class 'nabla_SetDefinition' is a specialization of 'Instruction'.
+The class 'nabla_Return' is a specialization of 'Instruction'.
+The class 'nabla_Exit' is a specialization of 'Instruction'.
+The class 'nabla_SetRef' is a specialization of 'Container'.
+The class 'nabla_SpaceIterator' is a specialization of 'IterationBlock'.
+The class 'nabla_Interval' is a specialization of 'IterationBlock'.
+The class 'nabla_MultipleConnectivityCall' is a specialization of 'Container'.
+The class 'nabla_MultipleConnectivityCall' is a specialization of 'ConnectivityCall'.
+The class 'nabla_SingleConnectivityCall' is a specialization of 'ConnectivityCall'.
+The class 'nabla_TimeIterator' is a specialization of 'ArgOrVar'.
+The class 'nabla_CurrentTimeIteratorRef' is a specialization of 'TimeIteratorRef'.
+The class 'nabla_InitTimeIteratorRef' is a specialization of 'TimeIteratorRef'.
+The class 'nabla_NextTimeIteratorRef' is a specialization of 'TimeIteratorRef'.
+The class 'nabla_Var' is a specialization of 'ArgOrVar'.
+The class 'nabla_SimpleVar' is a specialization of 'Var'.
+The class 'nabla_ConnectivityVar' is a specialization of 'Var'.
+The class 'nabla_Function' is a specialization of 'FunctionOrReduction'.
+The class 'nabla_Reduction' is a specialization of 'FunctionOrReduction'.
+The class 'nabla_Arg' is a specialization of 'ArgOrVar'.
+The class 'nabla_IntConstant' is a specialization of 'Expression'.
+The class 'nabla_ReductionCall' is a specialization of 'Iterable'.
+The class 'nabla_ReductionCall' is a specialization of 'Expression'.
+The class 'nabla_ArgOrVarRef' is a specialization of 'Expression'.
+The class 'nabla_ContractedIf' is a specialization of 'Expression'.
+The class 'nabla_Or' is a specialization of 'Expression'.
+The class 'nabla_And' is a specialization of 'Expression'.
+The class 'nabla_Equality' is a specialization of 'Expression'.
+The class 'nabla_Comparison' is a specialization of 'Expression'.
+The class 'nabla_Plus' is a specialization of 'Expression'.
+The class 'nabla_Minus' is a specialization of 'Expression'.
+The class 'nabla_Mul' is a specialization of 'Expression'.
+The class 'nabla_Div' is a specialization of 'Expression'.
+The class 'nabla_Modulo' is a specialization of 'Expression'.
+The class 'nabla_Parenthesis' is a specialization of 'Expression'.
+The class 'nabla_UnaryMinus' is a specialization of 'Expression'.
+The class 'nabla_Not' is a specialization of 'Expression'.
+The class 'nabla_RealConstant' is a specialization of 'Expression'.
+The class 'nabla_BoolConstant' is a specialization of 'Expression'.
+The class 'nabla_MinConstant' is a specialization of 'Expression'.
+The class 'nabla_MaxConstant' is a specialization of 'Expression'.
+The class 'nabla_FunctionCall' is a specialization of 'Expression'.
+The class 'nabla_BaseTypeConstant' is a specialization of 'Expression'.
+The class 'nabla_VectorConstant' is a specialization of 'Expression'.
+The class 'nabla_Cardinality' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'nabla_Import' and 'nabla_NablaModule'. From 'nabla_Import', the role 'nabla_Import' has cardinality 0..*, and from 'nabla_NablaModule', the role 'nabla_NablaModule' has cardinality 0..*.
+An association connects 'nabla_ItemType' and 'nabla_NablaModule'. From 'nabla_ItemType', the role 'nabla_ItemType' has cardinality 0..*, and from 'nabla_NablaModule', the role 'nabla_NablaModule2' has cardinality 0..*.
+An association connects 'nabla_Connectivity' and 'nabla_NablaModule'. From 'nabla_Connectivity', the role 'nabla_Connectivity' has cardinality 0..*, and from 'nabla_NablaModule', the role 'nabla_NablaModule4' has cardinality 0..*.
+An association connects 'nabla_Reduction' and 'nabla_NablaModule'. From 'nabla_Reduction', the role 'nabla_Reduction' has cardinality 0..*, and from 'nabla_NablaModule', the role 'nabla_NablaModule6' has cardinality 0..*.
+An association connects 'nabla_NablaModule' and 'nabla_Function'. From 'nabla_NablaModule', the role 'nabla_NablaModule8' has cardinality 0..*, and from 'nabla_Function', the role 'nabla_Function' has cardinality 0..*.
+An association connects 'nabla_NablaModule' and 'nabla_OptDefinition'. From 'nabla_NablaModule', the role 'nabla_NablaModule10' has cardinality 0..*, and from 'nabla_OptDefinition', the role 'nabla_OptDefinition' has cardinality 0..*.
+An association connects 'nabla_NablaModule' and 'nabla_SimpleVarDefinition'. From 'nabla_NablaModule', the role 'nabla_NablaModule12' has cardinality 0..*, and from 'nabla_SimpleVarDefinition', the role 'nabla_SimpleVarDefinition' has cardinality 0..*.
+An association connects 'nabla_NablaModule' and 'nabla_VarGroupDeclaration'. From 'nabla_NablaModule', the role 'nabla_NablaModule14' has cardinality 0..*, and from 'nabla_VarGroupDeclaration', the role 'nabla_VarGroupDeclaration' has cardinality 0..*.
+An association connects 'nabla_TimeIteratorDefinition' and 'nabla_NablaModule'. From 'nabla_TimeIteratorDefinition', the role 'nabla_TimeIteratorDefinition' has cardinality 0..*, and from 'nabla_NablaModule', the role 'nabla_NablaModule16' has cardinality 0..*.
+An association connects 'nabla_NablaModule' and 'nabla_Job'. From 'nabla_NablaModule', the role 'nabla_NablaModule18' has cardinality 0..*, and from 'nabla_Job', the role 'nabla_Job' has cardinality 0..*.
+An association connects 'nabla_SimpleVar' and 'nabla_OptDefinition'. From 'nabla_SimpleVar', the role 'nabla_SimpleVar' has cardinality 0..*, and from 'nabla_OptDefinition', the role 'nabla_OptDefinition20' has cardinality 0..*.
+An association connects 'nabla_Expression' and 'nabla_OptDefinition'. From 'nabla_Expression', the role 'nabla_Expression' has cardinality 0..*, and from 'nabla_OptDefinition', the role 'nabla_OptDefinition22' has cardinality 0..*.
+An association connects 'nabla_ItemType' and 'nabla_Connectivity'. From 'nabla_ItemType', the role 'nabla_ItemType25' has cardinality 0..*, and from 'nabla_Connectivity', the role 'nabla_Connectivity24' has cardinality 0..*.
+An association connects 'nabla_Connectivity' and 'nabla_ItemType'. From 'nabla_Connectivity', the role 'nabla_Connectivity27' has cardinality 0..*, and from 'nabla_ItemType', the role 'nabla_ItemType28' has cardinality 0..*.
+An association connects 'nabla_Instruction' and 'nabla_Job'. From 'nabla_Instruction', the role 'nabla_Instruction' has cardinality 0..*, and from 'nabla_Job', the role 'nabla_Job30' has cardinality 0..*.
+An association connects 'nabla_Iterable' and 'nabla_IterationBlock'. From 'nabla_Iterable', the role 'nabla_Iterable' has cardinality 0..*, and from 'nabla_IterationBlock', the role 'nabla_IterationBlock' has cardinality 0..*.
+An association connects 'nabla_SimpleVar' and 'nabla_SimpleVarDefinition'. From 'nabla_SimpleVar', the role 'nabla_SimpleVar34' has cardinality 0..*, and from 'nabla_SimpleVarDefinition', the role 'nabla_SimpleVarDefinition33' has cardinality 0..*.
+An association connects 'nabla_SimpleVarDefinition' and 'nabla_Expression'. From 'nabla_SimpleVarDefinition', the role 'nabla_SimpleVarDefinition36' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression37' has cardinality 0..*.
+An association connects 'nabla_BaseType' and 'nabla_VarGroupDeclaration'. From 'nabla_BaseType', the role 'nabla_BaseType' has cardinality 0..*, and from 'nabla_VarGroupDeclaration', the role 'nabla_VarGroupDeclaration39' has cardinality 0..*.
+An association connects 'nabla_VarGroupDeclaration' and 'nabla_Var'. From 'nabla_VarGroupDeclaration', the role 'nabla_VarGroupDeclaration41' has cardinality 0..*, and from 'nabla_Var', the role 'nabla_Var' has cardinality 0..*.
+An association connects 'nabla_InstructionBlock' and 'nabla_Instruction'. From 'nabla_InstructionBlock', the role 'nabla_InstructionBlock' has cardinality 0..*, and from 'nabla_Instruction', the role 'nabla_Instruction43' has cardinality 0..*.
+An association connects 'nabla_Loop' and 'nabla_Instruction'. From 'nabla_Loop', the role 'nabla_Loop' has cardinality 0..*, and from 'nabla_Instruction', the role 'nabla_Instruction45' has cardinality 0..*.
+An association connects 'nabla_ArgOrVarRef' and 'nabla_Affectation'. From 'nabla_ArgOrVarRef', the role 'nabla_ArgOrVarRef' has cardinality 0..*, and from 'nabla_Affectation', the role 'nabla_Affectation' has cardinality 0..*.
+An association connects 'nabla_Expression' and 'nabla_Affectation'. From 'nabla_Expression', the role 'nabla_Expression49' has cardinality 0..*, and from 'nabla_Affectation', the role 'nabla_Affectation48' has cardinality 0..*.
+An association connects 'nabla_If' and 'nabla_Expression'. From 'nabla_If', the role 'nabla_If' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression51' has cardinality 0..*.
+An association connects 'nabla_Instruction' and 'nabla_If'. From 'nabla_Instruction', the role 'nabla_Instruction54' has cardinality 0..*, and from 'nabla_If', the role 'nabla_If53' has cardinality 0..*.
+An association connects 'nabla_Instruction' and 'nabla_If'. From 'nabla_Instruction', the role 'nabla_Instruction57' has cardinality 0..*, and from 'nabla_If', the role 'nabla_If56' has cardinality 0..*.
+An association connects 'nabla_Item' and 'nabla_ItemDefinition'. From 'nabla_Item', the role 'nabla_Item' has cardinality 0..*, and from 'nabla_ItemDefinition', the role 'nabla_ItemDefinition' has cardinality 0..*.
+An association connects 'nabla_SingleConnectivityCall' and 'nabla_ItemDefinition'. From 'nabla_SingleConnectivityCall', the role 'nabla_SingleConnectivityCall' has cardinality 0..*, and from 'nabla_ItemDefinition', the role 'nabla_ItemDefinition60' has cardinality 0..*.
+An association connects 'nabla_SetDefinition' and 'nabla_MultipleConnectivityCall'. From 'nabla_SetDefinition', the role 'nabla_SetDefinition' has cardinality 0..*, and from 'nabla_MultipleConnectivityCall', the role 'nabla_MultipleConnectivityCall' has cardinality 0..*.
+An association connects 'nabla_Return' and 'nabla_Expression'. From 'nabla_Return', the role 'nabla_Return' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression63' has cardinality 0..*.
+An association connects 'nabla_SetRef' and 'nabla_SetDefinition'. From 'nabla_SetRef', the role 'nabla_SetRef' has cardinality 0..*, and from 'nabla_SetDefinition', the role 'nabla_SetDefinition65' has cardinality 0..*.
+An association connects 'nabla_Item' and 'nabla_SpaceIterator'. From 'nabla_Item', the role 'nabla_Item67' has cardinality 0..*, and from 'nabla_SpaceIterator', the role 'nabla_SpaceIterator' has cardinality 0..*.
+An association connects 'nabla_SpaceIterator' and 'nabla_SimpleVar'. From 'nabla_SpaceIterator', the role 'nabla_SpaceIterator69' has cardinality 0..*, and from 'nabla_SimpleVar', the role 'nabla_SimpleVar70' has cardinality 0..*.
+An association connects 'nabla_SpaceIterator' and 'nabla_Container'. From 'nabla_SpaceIterator', the role 'nabla_SpaceIterator72' has cardinality 0..*, and from 'nabla_Container', the role 'nabla_Container' has cardinality 0..*.
+An association connects 'nabla_SpaceIterator' and 'nabla_SingletonDefinition'. From 'nabla_SpaceIterator', the role 'nabla_SpaceIterator74' has cardinality 0..*, and from 'nabla_SingletonDefinition', the role 'nabla_SingletonDefinition' has cardinality 0..*.
+An association connects 'nabla_SingletonDefinition' and 'nabla_Item'. From 'nabla_SingletonDefinition', the role 'nabla_SingletonDefinition76' has cardinality 0..*, and from 'nabla_Item', the role 'nabla_Item77' has cardinality 0..*.
+An association connects 'nabla_SingletonDefinition' and 'nabla_SingleConnectivityCall'. From 'nabla_SingletonDefinition', the role 'nabla_SingletonDefinition79' has cardinality 0..*, and from 'nabla_SingleConnectivityCall', the role 'nabla_SingleConnectivityCall80' has cardinality 0..*.
+An association connects 'nabla_SimpleVar' and 'nabla_Interval'. From 'nabla_SimpleVar', the role 'nabla_SimpleVar82' has cardinality 0..*, and from 'nabla_Interval', the role 'nabla_Interval' has cardinality 0..*.
+An association connects 'nabla_Interval' and 'nabla_Expression'. From 'nabla_Interval', the role 'nabla_Interval84' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression85' has cardinality 0..*.
+An association connects 'nabla_ItemRef' and 'nabla_ConnectivityCall'. From 'nabla_ItemRef', the role 'nabla_ItemRef' has cardinality 0..*, and from 'nabla_ConnectivityCall', the role 'nabla_ConnectivityCall' has cardinality 0..*.
+An association connects 'nabla_MultipleConnectivityCall' and 'nabla_MultipleConnectivity'. From 'nabla_MultipleConnectivityCall', the role 'nabla_MultipleConnectivityCall88' has cardinality 0..*, and from 'nabla_MultipleConnectivity', the role 'nabla_MultipleConnectivity' has cardinality 0..*.
+An association connects 'nabla_SingleConnectivityCall' and 'nabla_SingleConnectivity'. From 'nabla_SingleConnectivityCall', the role 'nabla_SingleConnectivityCall90' has cardinality 0..*, and from 'nabla_SingleConnectivity', the role 'nabla_SingleConnectivity' has cardinality 0..*.
+An association connects 'nabla_ItemRef' and 'nabla_Item'. From 'nabla_ItemRef', the role 'nabla_ItemRef92' has cardinality 0..*, and from 'nabla_Item', the role 'nabla_Item93' has cardinality 0..*.
+An association connects 'nabla_TimeIteratorDefinition' and 'nabla_TimeIterator'. From 'nabla_TimeIteratorDefinition', the role 'nabla_TimeIteratorDefinition95' has cardinality 0..*, and from 'nabla_TimeIterator', the role 'nabla_TimeIterator' has cardinality 0..*.
+An association connects 'nabla_TimeIterator' and 'nabla_Expression'. From 'nabla_TimeIterator', the role 'nabla_TimeIterator97' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression98' has cardinality 0..*.
+An association connects 'nabla_TimeIterator' and 'nabla_TimeIteratorRef'. From 'nabla_TimeIterator', the role 'nabla_TimeIterator100' has cardinality 0..*, and from 'nabla_TimeIteratorRef', the role 'nabla_TimeIteratorRef' has cardinality 0..*.
+An association connects 'nabla_ConnectivityVar' and 'nabla_MultipleConnectivity'. From 'nabla_ConnectivityVar', the role 'nabla_ConnectivityVar' has cardinality 0..*, and from 'nabla_MultipleConnectivity', the role 'nabla_MultipleConnectivity102' has cardinality 0..*.
+An association connects 'nabla_SimpleVar' and 'nabla_FunctionOrReduction'. From 'nabla_SimpleVar', the role 'nabla_SimpleVar104' has cardinality 0..*, and from 'nabla_FunctionOrReduction', the role 'nabla_FunctionOrReduction' has cardinality 0..*.
+An association connects 'nabla_Arg' and 'nabla_FunctionOrReduction'. From 'nabla_Arg', the role 'nabla_Arg' has cardinality 0..*, and from 'nabla_FunctionOrReduction', the role 'nabla_FunctionOrReduction106' has cardinality 0..*.
+An association connects 'nabla_Instruction' and 'nabla_FunctionOrReduction'. From 'nabla_Instruction', the role 'nabla_Instruction109' has cardinality 0..*, and from 'nabla_FunctionOrReduction', the role 'nabla_FunctionOrReduction108' has cardinality 0..*.
+An association connects 'nabla_BaseType' and 'nabla_Function'. From 'nabla_BaseType', the role 'nabla_BaseType112' has cardinality 0..*, and from 'nabla_Function', the role 'nabla_Function111' has cardinality 0..*.
+An association connects 'nabla_BaseType' and 'nabla_Function'. From 'nabla_BaseType', the role 'nabla_BaseType115' has cardinality 0..*, and from 'nabla_Function', the role 'nabla_Function114' has cardinality 0..*.
+An association connects 'nabla_Reduction' and 'nabla_Expression'. From 'nabla_Reduction', the role 'nabla_Reduction117' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression118' has cardinality 0..*.
+An association connects 'nabla_BaseType' and 'nabla_Reduction'. From 'nabla_BaseType', the role 'nabla_BaseType121' has cardinality 0..*, and from 'nabla_Reduction', the role 'nabla_Reduction120' has cardinality 0..*.
+An association connects 'nabla_ReductionCall' and 'nabla_Reduction'. From 'nabla_ReductionCall', the role 'nabla_ReductionCall' has cardinality 0..*, and from 'nabla_Reduction', the role 'nabla_Reduction123' has cardinality 0..*.
+An association connects 'nabla_Expression' and 'nabla_ReductionCall'. From 'nabla_Expression', the role 'nabla_Expression126' has cardinality 0..*, and from 'nabla_ReductionCall', the role 'nabla_ReductionCall125' has cardinality 0..*.
+An association connects 'nabla_ArgOrVarRef' and 'nabla_ArgOrVar'. From 'nabla_ArgOrVarRef', the role 'nabla_ArgOrVarRef128' has cardinality 0..*, and from 'nabla_ArgOrVar', the role 'nabla_ArgOrVar' has cardinality 0..*.
+An association connects 'nabla_TimeIteratorRef' and 'nabla_ArgOrVarRef'. From 'nabla_TimeIteratorRef', the role 'nabla_TimeIteratorRef131' has cardinality 0..*, and from 'nabla_ArgOrVarRef', the role 'nabla_ArgOrVarRef130' has cardinality 0..*.
+An association connects 'nabla_ArgOrVarRef' and 'nabla_ItemRef'. From 'nabla_ArgOrVarRef', the role 'nabla_ArgOrVarRef133' has cardinality 0..*, and from 'nabla_ItemRef', the role 'nabla_ItemRef134' has cardinality 0..*.
+An association connects 'nabla_ArgOrVarRef' and 'nabla_Expression'. From 'nabla_ArgOrVarRef', the role 'nabla_ArgOrVarRef136' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression137' has cardinality 0..*.
+An association connects 'nabla_BaseType' and 'nabla_Expression'. From 'nabla_BaseType', the role 'nabla_BaseType139' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression140' has cardinality 0..*.
+An association connects 'nabla_ContractedIf' and 'nabla_Expression'. From 'nabla_ContractedIf', the role 'nabla_ContractedIf' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression142' has cardinality 0..*.
+An association connects 'nabla_Expression' and 'nabla_ContractedIf'. From 'nabla_Expression', the role 'nabla_Expression145' has cardinality 0..*, and from 'nabla_ContractedIf', the role 'nabla_ContractedIf144' has cardinality 0..*.
+An association connects 'nabla_ContractedIf' and 'nabla_Expression'. From 'nabla_ContractedIf', the role 'nabla_ContractedIf147' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression148' has cardinality 0..*.
+An association connects 'nabla_Or' and 'nabla_Expression'. From 'nabla_Or', the role 'nabla_Or' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression150' has cardinality 0..*.
+An association connects 'nabla_Or' and 'nabla_Expression'. From 'nabla_Or', the role 'nabla_Or152' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression153' has cardinality 0..*.
+An association connects 'nabla_Expression' and 'nabla_And'. From 'nabla_Expression', the role 'nabla_Expression155' has cardinality 0..*, and from 'nabla_And', the role 'nabla_And' has cardinality 0..*.
+An association connects 'nabla_And' and 'nabla_Expression'. From 'nabla_And', the role 'nabla_And157' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression158' has cardinality 0..*.
+An association connects 'nabla_Equality' and 'nabla_Expression'. From 'nabla_Equality', the role 'nabla_Equality' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression160' has cardinality 0..*.
+An association connects 'nabla_Equality' and 'nabla_Expression'. From 'nabla_Equality', the role 'nabla_Equality162' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression163' has cardinality 0..*.
+An association connects 'nabla_Expression' and 'nabla_Comparison'. From 'nabla_Expression', the role 'nabla_Expression165' has cardinality 0..*, and from 'nabla_Comparison', the role 'nabla_Comparison' has cardinality 0..*.
+An association connects 'nabla_Comparison' and 'nabla_Expression'. From 'nabla_Comparison', the role 'nabla_Comparison167' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression168' has cardinality 0..*.
+An association connects 'nabla_Plus' and 'nabla_Expression'. From 'nabla_Plus', the role 'nabla_Plus' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression170' has cardinality 0..*.
+An association connects 'nabla_Plus' and 'nabla_Expression'. From 'nabla_Plus', the role 'nabla_Plus172' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression173' has cardinality 0..*.
+An association connects 'nabla_Expression' and 'nabla_Minus'. From 'nabla_Expression', the role 'nabla_Expression175' has cardinality 0..*, and from 'nabla_Minus', the role 'nabla_Minus' has cardinality 0..*.
+An association connects 'nabla_Minus' and 'nabla_Expression'. From 'nabla_Minus', the role 'nabla_Minus177' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression178' has cardinality 0..*.
+An association connects 'nabla_Mul' and 'nabla_Expression'. From 'nabla_Mul', the role 'nabla_Mul' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression180' has cardinality 0..*.
+An association connects 'nabla_Expression' and 'nabla_Mul'. From 'nabla_Expression', the role 'nabla_Expression183' has cardinality 0..*, and from 'nabla_Mul', the role 'nabla_Mul182' has cardinality 0..*.
+An association connects 'nabla_Div' and 'nabla_Expression'. From 'nabla_Div', the role 'nabla_Div' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression185' has cardinality 0..*.
+An association connects 'nabla_Expression' and 'nabla_Div'. From 'nabla_Expression', the role 'nabla_Expression188' has cardinality 0..*, and from 'nabla_Div', the role 'nabla_Div187' has cardinality 0..*.
+An association connects 'nabla_Modulo' and 'nabla_Expression'. From 'nabla_Modulo', the role 'nabla_Modulo' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression190' has cardinality 0..*.
+An association connects 'nabla_Expression' and 'nabla_Modulo'. From 'nabla_Expression', the role 'nabla_Expression193' has cardinality 0..*, and from 'nabla_Modulo', the role 'nabla_Modulo192' has cardinality 0..*.
+An association connects 'nabla_Expression' and 'nabla_Parenthesis'. From 'nabla_Expression', the role 'nabla_Expression195' has cardinality 0..*, and from 'nabla_Parenthesis', the role 'nabla_Parenthesis' has cardinality 0..*.
+An association connects 'nabla_UnaryMinus' and 'nabla_Expression'. From 'nabla_UnaryMinus', the role 'nabla_UnaryMinus' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression197' has cardinality 0..*.
+An association connects 'nabla_Not' and 'nabla_Expression'. From 'nabla_Not', the role 'nabla_Not' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression199' has cardinality 0..*.
+An association connects 'nabla_Function' and 'nabla_FunctionCall'. From 'nabla_Function', the role 'nabla_Function201' has cardinality 0..*, and from 'nabla_FunctionCall', the role 'nabla_FunctionCall' has cardinality 0..*.
+An association connects 'nabla_Expression' and 'nabla_FunctionCall'. From 'nabla_Expression', the role 'nabla_Expression204' has cardinality 0..*, and from 'nabla_FunctionCall', the role 'nabla_FunctionCall203' has cardinality 0..*.
+An association connects 'nabla_BaseType' and 'nabla_BaseTypeConstant'. From 'nabla_BaseType', the role 'nabla_BaseType206' has cardinality 0..*, and from 'nabla_BaseTypeConstant', the role 'nabla_BaseTypeConstant' has cardinality 0..*.
+An association connects 'nabla_BaseTypeConstant' and 'nabla_Expression'. From 'nabla_BaseTypeConstant', the role 'nabla_BaseTypeConstant208' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression209' has cardinality 0..*.
+An association connects 'nabla_VectorConstant' and 'nabla_Expression'. From 'nabla_VectorConstant', the role 'nabla_VectorConstant' has cardinality 0..*, and from 'nabla_Expression', the role 'nabla_Expression211' has cardinality 0..*.
+An association connects 'nabla_Container' and 'nabla_Cardinality'. From 'nabla_Container', the role 'nabla_Container213' has cardinality 0..*, and from 'nabla_Cardinality', the role 'nabla_Cardinality' has cardinality 0..*.

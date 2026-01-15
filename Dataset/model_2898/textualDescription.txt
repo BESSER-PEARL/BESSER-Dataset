@@ -1,0 +1,364 @@
+The domain model 'domainmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 84 main class(es).
+
+'domainmodel_InterfaceOperationsUsageRule' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_NavigateToAction' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_Domainmodel' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_SetRestCallReceiver' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_BusinessModule' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_ValidatorRules' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_ElementFeature' represents an important domain concept.
+It has the following attributes: 'propertyValue', which is of type str; 'propertyName', which is of type str.
+
+'domainmodel_BindSource' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_MainFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_DataType' represents an important domain concept.
+It has the following attributes: 'initValue', which is of type str; 'name', which is of type str; 'mappedType', which is of type str.
+
+'domainmodel_ControllerModule' represents an important domain concept.
+It does not declare any attributes.
+
+'UIActionFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_InitActionModule' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_SystemModule' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_ContentElement' represents an important domain concept.
+It has one attribute: 'contentElement', which is of type str.
+
+'UIFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_UIActionModule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'domainmodel_UIModule' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessFeatureType' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_InitActionFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'BusinessModule' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_ValidatorModule' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_SetRestCallReceiverParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_ViewModule' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_InterfaceOperation' represents an important domain concept.
+It has one attribute: 'restOperation', which is of type str.
+
+'domainmodel_AbstractElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'domainmodel_MethodParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_InterfaceOperationUsageRule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'domainmodel_AttachAction' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_SetAction' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_AbstractNamespaceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_DomainRepository' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'domainmodel_InterfaceMethodCall' represents an important domain concept.
+It does not declare any attributes.
+
+'InitActionFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_ScreenModule' represents an important domain concept.
+It does not declare any attributes.
+
+'ControllerElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SetRestCallReceiverParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_ValidatorRule' represents an important domain concept.
+It has one attribute: 'stringRule', which is of type str.
+
+'domainmodel_SystemDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_SetUIElementReceiver' represents an important domain concept.
+It has one attribute: 'uiKey', which is of type str.
+
+'SystemModule' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_SetRestCallReceiverParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_MethodCall' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'domainmodel_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_ModelModule' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_ScreenFeature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'domainmodel_SetActionReceiver' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_EntryParametersModule' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_InterfaceMethodCallParameter' represents an important domain concept.
+It has one attribute: 'parameterType', which is of type str.
+
+'BindSource' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_UIFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_MainFeatureOption' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'domainmodel_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'domainmodel_InterfaceDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ScreenModule' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_ValidateAction' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_BusinessFeature' represents an important domain concept.
+It has the following attributes: 'connectEnd', which is of type str; 'name', which is of type str; 'connectPoint1', which is of type str.
+
+'SetActionReceiver' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_ScreenModelParameter' represents an important domain concept.
+It has one attribute: 'modelFeatureValue', which is of type str.
+
+'domainmodel_ControllerElement' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_InterfaceMethodCallParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_ValidatorFeature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'domainmodel_SetRestCallReceiverReturnTypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_BusinessFeatureType' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_BindEnumSource' represents an important domain concept.
+It has one attribute: 'enumType', which is of type str.
+
+'domainmodel_Feature' represents an important domain concept.
+It has the following attributes: 'mapName', which is of type str; 'name', which is of type str; 'mappingOption', which is of type str.
+
+'domainmodel_StatelessComponent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'domainmodel_DomainEntity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'domainmodel_ViewElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'domainmodel_SetRestCallReceiverURLParameter' represents an important domain concept.
+It has one attribute: 'parameterType', which is of type str.
+
+'domainmodel_MethodParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ViewElement' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_SetRestCallReceiverIDParameter' represents an important domain concept.
+It has one attribute: 'parameterType', which is of type str.
+
+'domainmodel_ScreenModelParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_BusinessFeatures' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_UIActionFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_BindAction' represents an important domain concept.
+It has one attribute: 'attribute', which is of type str.
+
+'AbstractNamespaceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_ModelFeature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'domainmodel_ExecuteAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_ContainerElement' represents an important domain concept.
+It has one attribute: 'container', which is of type str.
+
+'domainmodel_NamespaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PropertyNameLiteral' defines the following possible values: 'TYPE', 'LABEL_PROVIDER', 'RESOURCE_KEY', 'TOOLTIP', 'COLUMNS', 'PATH', 'CSS_ITEM', 'STYLE'.
+The enumeration 'ContainerElementLiteral' defines the following possible values: 'SCREEN', 'LAYOUT'.
+The enumeration 'UIElementReceiverKey' defines the following possible values: 'ON_SELECTION', 'VALUES_', 'SELECTION', 'TEXT'.
+The enumeration 'ContentElementLiteral' defines the following possible values: 'IMAGE', 'TEXT', 'BUTTON', 'LIST', 'LABEL'.
+
+The model also captures inheritance relationships between classes.
+The class 'domainmodel_Import' is a specialization of 'AbstractNamespaceElement'.
+The class 'domainmodel_DataType' is a specialization of 'Type'.
+The class 'domainmodel_DataType' is a specialization of 'AbstractNamespaceElement'.
+The class 'domainmodel_NamespaceDeclaration' is a specialization of 'AbstractElement'.
+The class 'domainmodel_DomainEntity' is a specialization of 'Type'.
+The class 'domainmodel_DomainEntity' is a specialization of 'AbstractNamespaceElement'.
+The class 'domainmodel_InterfaceDeclaration' is a specialization of 'AbstractNamespaceElement'.
+The class 'domainmodel_InterfaceDeclaration' is a specialization of 'BusinessFeatureType'.
+The class 'domainmodel_StatelessComponent' is a specialization of 'AbstractNamespaceElement'.
+The class 'domainmodel_StatelessComponent' is a specialization of 'BusinessFeatureType'.
+The class 'domainmodel_DomainRepository' is a specialization of 'AbstractNamespaceElement'.
+The class 'domainmodel_DomainRepository' is a specialization of 'BusinessFeatureType'.
+The class 'domainmodel_EntryParametersModule' is a specialization of 'ScreenModule'.
+The class 'domainmodel_ModelModule' is a specialization of 'ScreenModule'.
+The class 'domainmodel_ContentElement' is a specialization of 'ViewElement'.
+The class 'domainmodel_ContainerElement' is a specialization of 'ViewElement'.
+The class 'domainmodel_ViewModule' is a specialization of 'ScreenModule'.
+The class 'domainmodel_ValidateAction' is a specialization of 'InitActionFeature'.
+The class 'domainmodel_AttachAction' is a specialization of 'InitActionFeature'.
+The class 'domainmodel_BindEnumSource' is a specialization of 'BindSource'.
+The class 'domainmodel_BindAction' is a specialization of 'InitActionFeature'.
+The class 'domainmodel_InitActionModule' is a specialization of 'ControllerElement'.
+The class 'domainmodel_ValidatorModule' is a specialization of 'ControllerElement'.
+The class 'domainmodel_NavigateToAction' is a specialization of 'UIActionFeature'.
+The class 'domainmodel_ExecuteAction' is a specialization of 'UIActionFeature'.
+The class 'domainmodel_SetRestCallReceiverURLParameter' is a specialization of 'SetRestCallReceiverParameter'.
+The class 'domainmodel_SetRestCallReceiverReturnTypeParameter' is a specialization of 'SetRestCallReceiverParameter'.
+The class 'domainmodel_SetRestCallReceiverIDParameter' is a specialization of 'SetRestCallReceiverParameter'.
+The class 'domainmodel_SetRestCallReceiver' is a specialization of 'SetActionReceiver'.
+The class 'domainmodel_SetUIElementReceiver' is a specialization of 'SetActionReceiver'.
+The class 'domainmodel_SetAction' is a specialization of 'InitActionFeature'.
+The class 'domainmodel_SetAction' is a specialization of 'UIActionFeature'.
+The class 'domainmodel_InterfaceMethodCall' is a specialization of 'UIActionFeature'.
+The class 'domainmodel_UIActionModule' is a specialization of 'ControllerElement'.
+The class 'domainmodel_ControllerModule' is a specialization of 'ScreenModule'.
+The class 'domainmodel_ScreenFeature' is a specialization of 'UIFeature'.
+The class 'domainmodel_MainFeature' is a specialization of 'UIFeature'.
+The class 'domainmodel_UIModule' is a specialization of 'SystemModule'.
+The class 'domainmodel_BusinessFeatures' is a specialization of 'BusinessModule'.
+The class 'domainmodel_BusinessModule' is a specialization of 'SystemModule'.
+The class 'domainmodel_SystemDefinition' is a specialization of 'AbstractElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'domainmodel_Domainmodel' and 'domainmodel_AbstractElement'. From 'domainmodel_Domainmodel', the role 'domainmodel_Domainmodel' has cardinality 0..*, and from 'domainmodel_AbstractElement', the role 'domainmodel_AbstractElement' has cardinality 0..*.
+An association connects 'domainmodel_AbstractNamespaceElement' and 'domainmodel_NamespaceDeclaration'. From 'domainmodel_AbstractNamespaceElement', the role 'domainmodel_AbstractNamespaceElement' has cardinality 0..*, and from 'domainmodel_NamespaceDeclaration', the role 'domainmodel_NamespaceDeclaration' has cardinality 0..*.
+An association connects 'domainmodel_Feature' and 'domainmodel_Type'. From 'domainmodel_Feature', the role 'domainmodel_Feature' has cardinality 0..*, and from 'domainmodel_Type', the role 'domainmodel_Type' has cardinality 0..*.
+An association connects 'domainmodel_Feature' and 'domainmodel_DomainEntity'. From 'domainmodel_Feature', the role 'domainmodel_Feature4' has cardinality 0..*, and from 'domainmodel_DomainEntity', the role 'domainmodel_DomainEntity' has cardinality 0..*.
+An association connects 'domainmodel_MethodParameter' and 'domainmodel_Type'. From 'domainmodel_MethodParameter', the role 'domainmodel_MethodParameter' has cardinality 0..*, and from 'domainmodel_Type', the role 'domainmodel_Type6' has cardinality 0..*.
+An association connects 'domainmodel_MethodParameter' and 'domainmodel_MethodParameters'. From 'domainmodel_MethodParameter', the role 'domainmodel_MethodParameter8' has cardinality 0..*, and from 'domainmodel_MethodParameters', the role 'domainmodel_MethodParameters' has cardinality 0..*.
+An association connects 'domainmodel_MethodCall' and 'domainmodel_MethodParameters'. From 'domainmodel_MethodCall', the role 'domainmodel_MethodCall' has cardinality 0..*, and from 'domainmodel_MethodParameters', the role 'domainmodel_MethodParameters10' has cardinality 0..*.
+An association connects 'domainmodel_MethodCall' and 'domainmodel_InterfaceOperation'. From 'domainmodel_MethodCall', the role 'domainmodel_MethodCall12' has cardinality 0..*, and from 'domainmodel_InterfaceOperation', the role 'domainmodel_InterfaceOperation' has cardinality 0..*.
+An association connects 'domainmodel_InterfaceOperation' and 'domainmodel_Type'. From 'domainmodel_InterfaceOperation', the role 'domainmodel_InterfaceOperation14' has cardinality 0..*, and from 'domainmodel_Type', the role 'domainmodel_Type15' has cardinality 0..*.
+An association connects 'domainmodel_InterfaceOperation' and 'domainmodel_InterfaceDeclaration'. From 'domainmodel_InterfaceOperation', the role 'domainmodel_InterfaceOperation17' has cardinality 0..*, and from 'domainmodel_InterfaceDeclaration', the role 'domainmodel_InterfaceDeclaration' has cardinality 0..*.
+An association connects 'domainmodel_InterfaceDeclaration' and 'domainmodel_InterfaceOperationUsageRule'. From 'domainmodel_InterfaceDeclaration', the role 'domainmodel_InterfaceDeclaration19' has cardinality 0..*, and from 'domainmodel_InterfaceOperationUsageRule', the role 'domainmodel_InterfaceOperationUsageRule' has cardinality 0..*.
+An association connects 'domainmodel_InterfaceOperationUsageRule' and 'domainmodel_InterfaceOperationsUsageRule'. From 'domainmodel_InterfaceOperationUsageRule', the role 'domainmodel_InterfaceOperationUsageRule21' has cardinality 0..*, and from 'domainmodel_InterfaceOperationsUsageRule', the role 'domainmodel_InterfaceOperationsUsageRule' has cardinality 0..*.
+An association connects 'domainmodel_InterfaceOperationsUsageRule' and 'domainmodel_StatelessComponent'. From 'domainmodel_InterfaceOperationsUsageRule', the role 'domainmodel_InterfaceOperationsUsageRule23' has cardinality 0..*, and from 'domainmodel_StatelessComponent', the role 'domainmodel_StatelessComponent' has cardinality 0..*.
+An association connects 'domainmodel_DomainRepository' and 'domainmodel_DomainEntity'. From 'domainmodel_DomainRepository', the role 'domainmodel_DomainRepository' has cardinality 0..*, and from 'domainmodel_DomainEntity', the role 'domainmodel_DomainEntity25' has cardinality 0..*.
+An association connects 'domainmodel_InterfaceOperationsUsageRule' and 'domainmodel_DomainRepository'. From 'domainmodel_InterfaceOperationsUsageRule', the role 'domainmodel_InterfaceOperationsUsageRule28' has cardinality 0..*, and from 'domainmodel_DomainRepository', the role 'domainmodel_DomainRepository27' has cardinality 0..*.
+An association connects 'domainmodel_EntryParametersModule' and 'domainmodel_ModelFeature'. From 'domainmodel_EntryParametersModule', the role 'domainmodel_EntryParametersModule' has cardinality 0..*, and from 'domainmodel_ModelFeature', the role 'domainmodel_ModelFeature' has cardinality 0..*.
+An association connects 'domainmodel_Type' and 'domainmodel_ModelFeature'. From 'domainmodel_Type', the role 'domainmodel_Type32' has cardinality 0..*, and from 'domainmodel_ModelFeature', the role 'domainmodel_ModelFeature31' has cardinality 0..*.
+An association connects 'domainmodel_ModelModule' and 'domainmodel_ModelFeature'. From 'domainmodel_ModelModule', the role 'domainmodel_ModelModule' has cardinality 0..*, and from 'domainmodel_ModelFeature', the role 'domainmodel_ModelFeature34' has cardinality 0..*.
+An association connects 'domainmodel_ContainerElement' and 'domainmodel_ViewElement'. From 'domainmodel_ContainerElement', the role 'domainmodel_ContainerElement' has cardinality 0..*, and from 'domainmodel_ViewElement', the role 'domainmodel_ViewElement' has cardinality 0..*.
+An association connects 'domainmodel_ElementFeature' and 'domainmodel_ViewElement'. From 'domainmodel_ElementFeature', the role 'domainmodel_ElementFeature' has cardinality 0..*, and from 'domainmodel_ViewElement', the role 'domainmodel_ViewElement37' has cardinality 0..*.
+An association connects 'domainmodel_ViewModule' and 'domainmodel_ViewElement'. From 'domainmodel_ViewModule', the role 'domainmodel_ViewModule' has cardinality 0..*, and from 'domainmodel_ViewElement', the role 'domainmodel_ViewElement39' has cardinality 0..*.
+An association connects 'domainmodel_ValidateAction' and 'domainmodel_ValidatorFeature'. From 'domainmodel_ValidateAction', the role 'domainmodel_ValidateAction' has cardinality 0..*, and from 'domainmodel_ValidatorFeature', the role 'domainmodel_ValidatorFeature' has cardinality 0..*.
+An association connects 'domainmodel_SetUIElementReceiver' and 'domainmodel_ValidateAction'. From 'domainmodel_SetUIElementReceiver', the role 'domainmodel_SetUIElementReceiver' has cardinality 0..*, and from 'domainmodel_ValidateAction', the role 'domainmodel_ValidateAction42' has cardinality 0..*.
+An association connects 'domainmodel_AttachAction' and 'domainmodel_UIActionModule'. From 'domainmodel_AttachAction', the role 'domainmodel_AttachAction' has cardinality 0..*, and from 'domainmodel_UIActionModule', the role 'domainmodel_UIActionModule' has cardinality 0..*.
+An association connects 'domainmodel_AttachAction' and 'domainmodel_SetUIElementReceiver'. From 'domainmodel_AttachAction', the role 'domainmodel_AttachAction45' has cardinality 0..*, and from 'domainmodel_SetUIElementReceiver', the role 'domainmodel_SetUIElementReceiver46' has cardinality 0..*.
+An association connects 'domainmodel_BindSource' and 'domainmodel_ModelFeature'. From 'domainmodel_BindSource', the role 'domainmodel_BindSource' has cardinality 0..*, and from 'domainmodel_ModelFeature', the role 'domainmodel_ModelFeature48' has cardinality 0..*.
+An association connects 'domainmodel_BindSource' and 'domainmodel_BindAction'. From 'domainmodel_BindSource', the role 'domainmodel_BindSource50' has cardinality 0..*, and from 'domainmodel_BindAction', the role 'domainmodel_BindAction' has cardinality 0..*.
+An association connects 'domainmodel_SetUIElementReceiver' and 'domainmodel_BindAction'. From 'domainmodel_SetUIElementReceiver', the role 'domainmodel_SetUIElementReceiver53' has cardinality 0..*, and from 'domainmodel_BindAction', the role 'domainmodel_BindAction52' has cardinality 0..*.
+An association connects 'domainmodel_InitActionFeature' and 'domainmodel_InitActionModule'. From 'domainmodel_InitActionFeature', the role 'domainmodel_InitActionFeature' has cardinality 0..*, and from 'domainmodel_InitActionModule', the role 'domainmodel_InitActionModule' has cardinality 0..*.
+An association connects 'domainmodel_ValidatorRule' and 'domainmodel_ValidatorFeature'. From 'domainmodel_ValidatorRule', the role 'domainmodel_ValidatorRule' has cardinality 0..*, and from 'domainmodel_ValidatorFeature', the role 'domainmodel_ValidatorFeature56' has cardinality 0..*.
+An association connects 'domainmodel_ValidatorRule' and 'domainmodel_ValidatorRules'. From 'domainmodel_ValidatorRule', the role 'domainmodel_ValidatorRule58' has cardinality 0..*, and from 'domainmodel_ValidatorRules', the role 'domainmodel_ValidatorRules' has cardinality 0..*.
+An association connects 'domainmodel_ValidatorRules' and 'domainmodel_ValidatorFeature'. From 'domainmodel_ValidatorRules', the role 'domainmodel_ValidatorRules61' has cardinality 0..*, and from 'domainmodel_ValidatorFeature', the role 'domainmodel_ValidatorFeature60' has cardinality 0..*.
+An association connects 'domainmodel_ValidatorModule' and 'domainmodel_ValidatorFeature'. From 'domainmodel_ValidatorModule', the role 'domainmodel_ValidatorModule' has cardinality 0..*, and from 'domainmodel_ValidatorFeature', the role 'domainmodel_ValidatorFeature63' has cardinality 0..*.
+An association connects 'domainmodel_ModelFeature' and 'domainmodel_ScreenModelParameter'. From 'domainmodel_ModelFeature', the role 'domainmodel_ModelFeature65' has cardinality 0..*, and from 'domainmodel_ScreenModelParameter', the role 'domainmodel_ScreenModelParameter' has cardinality 0..*.
+An association connects 'domainmodel_ScreenModelParameters' and 'domainmodel_ScreenModelParameter'. From 'domainmodel_ScreenModelParameters', the role 'domainmodel_ScreenModelParameters' has cardinality 0..*, and from 'domainmodel_ScreenModelParameter', the role 'domainmodel_ScreenModelParameter67' has cardinality 0..*.
+An association connects 'domainmodel_NavigateToAction' and 'domainmodel_ScreenFeature'. From 'domainmodel_NavigateToAction', the role 'domainmodel_NavigateToAction' has cardinality 0..*, and from 'domainmodel_ScreenFeature', the role 'domainmodel_ScreenFeature' has cardinality 0..*.
+An association connects 'domainmodel_ScreenModelParameters' and 'domainmodel_NavigateToAction'. From 'domainmodel_ScreenModelParameters', the role 'domainmodel_ScreenModelParameters71' has cardinality 0..*, and from 'domainmodel_NavigateToAction', the role 'domainmodel_NavigateToAction70' has cardinality 0..*.
+An association connects 'domainmodel_UIActionModule' and 'domainmodel_ExecuteAction'. From 'domainmodel_UIActionModule', the role 'domainmodel_UIActionModule73' has cardinality 0..*, and from 'domainmodel_ExecuteAction', the role 'domainmodel_ExecuteAction' has cardinality 0..*.
+An association connects 'domainmodel_SetRestCallReceiverReturnTypeParameter' and 'domainmodel_Type'. From 'domainmodel_SetRestCallReceiverReturnTypeParameter', the role 'domainmodel_SetRestCallReceiverReturnTypeParameter' has cardinality 0..*, and from 'domainmodel_Type', the role 'domainmodel_Type75' has cardinality 0..*.
+An association connects 'domainmodel_SetRestCallReceiverParameter' and 'domainmodel_SetRestCallReceiverParameters'. From 'domainmodel_SetRestCallReceiverParameter', the role 'domainmodel_SetRestCallReceiverParameter' has cardinality 0..*, and from 'domainmodel_SetRestCallReceiverParameters', the role 'domainmodel_SetRestCallReceiverParameters' has cardinality 0..*.
+An association connects 'domainmodel_SetRestCallReceiver' and 'domainmodel_SetRestCallReceiverParameters'. From 'domainmodel_SetRestCallReceiver', the role 'domainmodel_SetRestCallReceiver' has cardinality 0..*, and from 'domainmodel_SetRestCallReceiverParameters', the role 'domainmodel_SetRestCallReceiverParameters78' has cardinality 0..*.
+An association connects 'domainmodel_SetUIElementReceiver' and 'domainmodel_ViewElement'. From 'domainmodel_SetUIElementReceiver', the role 'domainmodel_SetUIElementReceiver80' has cardinality 0..*, and from 'domainmodel_ViewElement', the role 'domainmodel_ViewElement81' has cardinality 0..*.
+An association connects 'domainmodel_ModelFeature' and 'domainmodel_SetAction'. From 'domainmodel_ModelFeature', the role 'domainmodel_ModelFeature83' has cardinality 0..*, and from 'domainmodel_SetAction', the role 'domainmodel_SetAction' has cardinality 0..*.
+An association connects 'domainmodel_SetActionReceiver' and 'domainmodel_SetAction'. From 'domainmodel_SetActionReceiver', the role 'domainmodel_SetActionReceiver' has cardinality 0..*, and from 'domainmodel_SetAction', the role 'domainmodel_SetAction85' has cardinality 0..*.
+An association connects 'domainmodel_MethodParameter' and 'domainmodel_InterfaceMethodCallParameter'. From 'domainmodel_MethodParameter', the role 'domainmodel_MethodParameter87' has cardinality 0..*, and from 'domainmodel_InterfaceMethodCallParameter', the role 'domainmodel_InterfaceMethodCallParameter' has cardinality 0..*.
+An association connects 'domainmodel_InterfaceMethodCallParameters' and 'domainmodel_InterfaceMethodCallParameter'. From 'domainmodel_InterfaceMethodCallParameters', the role 'domainmodel_InterfaceMethodCallParameters' has cardinality 0..*, and from 'domainmodel_InterfaceMethodCallParameter', the role 'domainmodel_InterfaceMethodCallParameter89' has cardinality 0..*.
+An association connects 'domainmodel_InterfaceMethodCall' and 'domainmodel_BusinessFeature'. From 'domainmodel_InterfaceMethodCall', the role 'domainmodel_InterfaceMethodCall' has cardinality 0..*, and from 'domainmodel_BusinessFeature', the role 'domainmodel_BusinessFeature' has cardinality 0..*.
+An association connects 'domainmodel_MethodCall' and 'domainmodel_InterfaceMethodCall'. From 'domainmodel_MethodCall', the role 'domainmodel_MethodCall93' has cardinality 0..*, and from 'domainmodel_InterfaceMethodCall', the role 'domainmodel_InterfaceMethodCall92' has cardinality 0..*.
+An association connects 'domainmodel_InterfaceMethodCallParameters' and 'domainmodel_InterfaceMethodCall'. From 'domainmodel_InterfaceMethodCallParameters', the role 'domainmodel_InterfaceMethodCallParameters96' has cardinality 0..*, and from 'domainmodel_InterfaceMethodCall', the role 'domainmodel_InterfaceMethodCall95' has cardinality 0..*.
+An association connects 'domainmodel_UIActionFeature' and 'domainmodel_UIActionModule'. From 'domainmodel_UIActionFeature', the role 'domainmodel_UIActionFeature' has cardinality 0..*, and from 'domainmodel_UIActionModule', the role 'domainmodel_UIActionModule98' has cardinality 0..*.
+An association connects 'domainmodel_ControllerModule' and 'domainmodel_ControllerElement'. From 'domainmodel_ControllerModule', the role 'domainmodel_ControllerModule' has cardinality 0..*, and from 'domainmodel_ControllerElement', the role 'domainmodel_ControllerElement' has cardinality 0..*.
+An association connects 'domainmodel_ScreenFeature' and 'domainmodel_ScreenModule'. From 'domainmodel_ScreenFeature', the role 'domainmodel_ScreenFeature101' has cardinality 0..*, and from 'domainmodel_ScreenModule', the role 'domainmodel_ScreenModule' has cardinality 0..*.
+An association connects 'domainmodel_MainFeatureOption' and 'domainmodel_MainFeature'. From 'domainmodel_MainFeatureOption', the role 'domainmodel_MainFeatureOption' has cardinality 0..*, and from 'domainmodel_MainFeature', the role 'domainmodel_MainFeature' has cardinality 0..*.
+An association connects 'domainmodel_UIModule' and 'domainmodel_UIFeature'. From 'domainmodel_UIModule', the role 'domainmodel_UIModule' has cardinality 0..*, and from 'domainmodel_UIFeature', the role 'domainmodel_UIFeature' has cardinality 0..*.
+An association connects 'domainmodel_BusinessFeature' and 'domainmodel_BusinessFeatureType'. From 'domainmodel_BusinessFeature', the role 'domainmodel_BusinessFeature105' has cardinality 0..*, and from 'domainmodel_BusinessFeatureType', the role 'domainmodel_BusinessFeatureType' has cardinality 0..*.
+An association connects 'domainmodel_BusinessFeature' and 'domainmodel_BusinessFeature'. From 'domainmodel_BusinessFeature', the role 'domainmodel_BusinessFeature106' has cardinality 0..*, and from 'domainmodel_BusinessFeature', the role 'domainmodel_BusinessFeature108' has cardinality 0..*.
+An association connects 'domainmodel_BusinessFeatures' and 'domainmodel_BusinessFeature'. From 'domainmodel_BusinessFeatures', the role 'domainmodel_BusinessFeatures' has cardinality 0..*, and from 'domainmodel_BusinessFeature', the role 'domainmodel_BusinessFeature110' has cardinality 0..*.
+An association connects 'domainmodel_SystemDefinition' and 'domainmodel_SystemModule'. From 'domainmodel_SystemDefinition', the role 'domainmodel_SystemDefinition' has cardinality 0..*, and from 'domainmodel_SystemModule', the role 'domainmodel_SystemModule' has cardinality 0..*.

@@ -1,0 +1,19 @@
+The domain model 'testmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'testmodel_cont' represents an important domain concept.
+It does not declare any attributes.
+
+'testmodel_Val' represents an important domain concept.
+It has the following attributes: 'valname', which is of type str; 'intlist', which is of type int; 'intvl', which is of type int.
+
+'testmodel_Node' represents an important domain concept.
+It has one attribute: 'nodename', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'testmodel_cont' and 'testmodel_Node'. From 'testmodel_cont', the role 'testmodel_cont' has cardinality 0..*, and from 'testmodel_Node', the role 'testmodel_Node' has cardinality 0..*.
+An association connects 'testmodel_cont' and 'testmodel_Val'. From 'testmodel_cont', the role 'testmodel_cont2' has cardinality 0..*, and from 'testmodel_Val', the role 'testmodel_Val' has cardinality 0..*.
+An association connects 'testmodel_Node' and 'testmodel_Val'. From 'testmodel_Node', the role 'testmodel_Node4' has cardinality 0..*, and from 'testmodel_Val', the role 'testmodel_Val5' has cardinality 0..*.
+An association connects 'testmodel_Node' and 'testmodel_Node'. From 'testmodel_Node', the role 'childNodes' has cardinality 0..*, and from 'testmodel_Node', the role 'Node' has cardinality 0..*.
+An association connects 'testmodel_Node' and 'testmodel_Node'. From 'testmodel_Node', the role 'parentNode' has cardinality 0..*, and from 'testmodel_Node', the role 'Node10' has cardinality 0..*.

@@ -1,0 +1,121 @@
+The domain model 'k4' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'k4_Q' represents an important domain concept.
+It does not declare any attributes.
+
+'k4_K' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'M' represents an important domain concept.
+It does not declare any attributes.
+
+'k4_M' represents an important domain concept.
+It does not declare any attributes.
+
+'N' represents an important domain concept.
+It does not declare any attributes.
+
+'J' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'P' represents an important domain concept.
+It does not declare any attributes.
+
+'k4_Z' represents an important domain concept.
+It has the following attributes: 'z3', which is of type str; 'z1', which is of type str; 'z2', which is of type str.
+
+'k4_C' represents an important domain concept.
+It does not declare any attributes.
+
+'k4_A' represents an important domain concept.
+It does not declare any attributes.
+
+'k4_L1' represents an important domain concept.
+It has the following attributes: 'id2', which is of type int; 'id1', which is of type str.
+
+'k4_L3' represents an important domain concept.
+It does not declare any attributes.
+
+'k4_L2' represents an important domain concept.
+It has the following attributes: 'l2', which is of type int; 'l1', which is of type int.
+
+'k4_W' represents an important domain concept.
+It has one attribute: 'w', which is of type str.
+
+'k4_G' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'C' represents an important domain concept.
+It does not declare any attributes.
+
+'L1' represents an important domain concept.
+It does not declare any attributes.
+
+'k4_N' represents an important domain concept.
+It does not declare any attributes.
+
+'k4_Y' represents an important domain concept.
+It has one attribute: 'y', which is of type int.
+
+'k4_I' represents an important domain concept.
+It does not declare any attributes.
+
+'k4_B' represents an important domain concept.
+It does not declare any attributes.
+
+'k4_P' represents an important domain concept.
+It does not declare any attributes.
+
+'k4_X' represents an important domain concept.
+It does not declare any attributes.
+
+'k4_L4' represents an important domain concept.
+It does not declare any attributes.
+
+'G' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'k4_J' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'k4_A' is a specialization of 'B'.
+The class 'k4_B' is a specialization of 'C'.
+The class 'k4_C' is a specialization of 'G'.
+The class 'k4_M' is a specialization of 'G'.
+The class 'k4_N' is a specialization of 'M'.
+The class 'k4_J' is a specialization of 'A'.
+The class 'k4_P' is a specialization of 'N'.
+The class 'k4_Q' is a specialization of 'P'.
+The class 'k4_I' is a specialization of 'G'.
+The class 'k4_K' is a specialization of 'J'.
+The class 'k4_L3' is a specialization of 'L1'.
+The class 'k4_L4' is a specialization of 'L1'.
+
+Relationships between classes are modeled using associations.
+An association connects 'k4_X' and 'k4_C'. From 'k4_X', the role 'k4_X' has cardinality 0..*, and from 'k4_C', the role 'k4_C' has cardinality 0..*.
+An association connects 'k4_P' and 'k4_X'. From 'k4_P', the role 'k4_P' has cardinality 0..*, and from 'k4_X', the role 'k4_X2' has cardinality 0..*.
+An association connects 'k4_Z' and 'k4_X'. From 'k4_Z', the role 'k4_Z' has cardinality 0..*, and from 'k4_X', the role 'k4_X4' has cardinality 0..*.
+An association connects 'k4_X' and 'k4_Y'. From 'k4_X', the role 'k4_X6' has cardinality 0..*, and from 'k4_Y', the role 'k4_Y' has cardinality 0..*.
+An association connects 'k4_W' and 'k4_X'. From 'k4_W', the role 'k4_W' has cardinality 0..*, and from 'k4_X', the role 'k4_X8' has cardinality 0..*.
+An association connects 'k4_B' and 'k4_I'. From 'k4_B', the role 'k4_B' has cardinality 0..*, and from 'k4_I', the role 'k4_I' has cardinality 0..*.
+An association connects 'k4_M' and 'k4_C'. From 'k4_M', the role 'k4_M' has cardinality 0..*, and from 'k4_C', the role 'k4_C11' has cardinality 0..*.
+An association connects 'k4_M' and 'k4_L1'. From 'k4_M', the role 'k4_M13' has cardinality 0..*, and from 'k4_L1', the role 'k4_L1' has cardinality 0..*.
+An association connects 'k4_P' and 'k4_A'. From 'k4_P', the role 'k4_P15' has cardinality 0..*, and from 'k4_A', the role 'k4_A' has cardinality 0..*.
+An association connects 'k4_P' and 'k4_K'. From 'k4_P', the role 'k4_P17' has cardinality 0..*, and from 'k4_K', the role 'k4_K' has cardinality 0..*.
+An association connects 'k4_P' and 'k4_J'. From 'k4_P', the role 'k4_P19' has cardinality 0..*, and from 'k4_J', the role 'k4_J' has cardinality 0..*.
+An association connects 'k4_Q' and 'k4_L2'. From 'k4_Q', the role 'k4_Q' has cardinality 0..*, and from 'k4_L2', the role 'k4_L2' has cardinality 0..*.
+An association connects 'k4_L1' and 'k4_C'. From 'k4_L1', the role 'k4_L122' has cardinality 0..*, and from 'k4_C', the role 'k4_C23' has cardinality 0..*.
+An association connects 'k4_M' and 'k4_L1'. From 'k4_M', the role 'k4_M26' has cardinality 0..*, and from 'k4_L1', the role 'k4_L125' has cardinality 0..*.
+An association connects 'k4_Q' and 'k4_L2'. From 'k4_Q', the role 'k4_Q29' has cardinality 0..*, and from 'k4_L2', the role 'k4_L228' has cardinality 0..*.
+An association connects 'k4_L2' and 'k4_K'. From 'k4_L2', the role 'k4_L231' has cardinality 0..*, and from 'k4_K', the role 'k4_K32' has cardinality 0..*.
+An association connects 'k4_I' and 'k4_L3'. From 'k4_I', the role 'k4_I34' has cardinality 0..*, and from 'k4_L3', the role 'k4_L3' has cardinality 0..*.
+An association connects 'k4_Z' and 'k4_L4'. From 'k4_Z', the role 'k4_Z36' has cardinality 0..*, and from 'k4_L4', the role 'k4_L4' has cardinality 0..*.

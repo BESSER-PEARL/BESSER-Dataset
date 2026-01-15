@@ -1,0 +1,55 @@
+The domain model 'BoemTest' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'BoemTest_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'BoemTest_B' represents an important domain concept.
+It has one attribute: 'enumAttr', which is of type str.
+
+'BoemTest_C' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'BoemTest_A' represents an important domain concept.
+It does not declare any attributes.
+
+'BoemTest_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'BoemTest_BNode' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AnEnumeration' defines the following possible values: 'LITERAL0', 'LITERAL2', 'LITERAL1'.
+
+The model also captures inheritance relationships between classes.
+The class 'BoemTest_A' is a specialization of 'NamedElement'.
+The class 'BoemTest_B' is a specialization of 'A'.
+The class 'BoemTest_C' is a specialization of 'B'.
+The class 'BoemTest_Node' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'BoemTest_Node' and 'BoemTest_A'. From 'BoemTest_Node', the role 'BoemTest_Node' has cardinality 0..*, and from 'BoemTest_A', the role 'BoemTest_A' has cardinality 0..*.
+An association connects 'BoemTest_A' and 'BoemTest_Node'. From 'BoemTest_A', the role 'BoemTest_A2' has cardinality 0..*, and from 'BoemTest_Node', the role 'BoemTest_Node3' has cardinality 0..*.
+An association connects 'BoemTest_A' and 'BoemTest_Node'. From 'BoemTest_A', the role 'BoemTest_A5' has cardinality 0..*, and from 'BoemTest_Node', the role 'BoemTest_Node6' has cardinality 0..*.
+An association connects 'BoemTest_A' and 'BoemTest_Node'. From 'BoemTest_A', the role 'BoemTest_A8' has cardinality 0..*, and from 'BoemTest_Node', the role 'BoemTest_Node9' has cardinality 0..*.
+An association connects 'BoemTest_Node' and 'BoemTest_A'. From 'BoemTest_Node', the role 'BoemTest_Node12' has cardinality 0..*, and from 'BoemTest_A', the role 'BoemTest_A11' has cardinality 0..*.
+An association connects 'BoemTest_A' and 'BoemTest_A'. From 'BoemTest_A', the role 'BoemTest_A15' has cardinality 0..*, and from 'BoemTest_A', the role 'BoemTest_A13' has cardinality 0..*.
+An association connects 'BoemTest_Node' and 'BoemTest_B'. From 'BoemTest_Node', the role 'BoemTest_Node17' has cardinality 0..*, and from 'BoemTest_B', the role 'BoemTest_B' has cardinality 0..*.
+An association connects 'BoemTest_Node' and 'BoemTest_B'. From 'BoemTest_Node', the role 'BoemTest_Node20' has cardinality 0..*, and from 'BoemTest_B', the role 'BoemTest_B19' has cardinality 0..*.
+An association connects 'BoemTest_BNode' and 'BoemTest_B'. From 'BoemTest_BNode', the role 'BoemTest_BNode' has cardinality 0..*, and from 'BoemTest_B', the role 'BoemTest_B22' has cardinality 0..*.
+An association connects 'BoemTest_C' and 'BoemTest_Node'. From 'BoemTest_C', the role 'BoemTest_C' has cardinality 0..*, and from 'BoemTest_Node', the role 'BoemTest_Node24' has cardinality 0..*.
+An association connects 'BoemTest_Node' and 'BoemTest_C'. From 'BoemTest_Node', the role 'BoemTest_Node27' has cardinality 0..*, and from 'BoemTest_C', the role 'BoemTest_C26' has cardinality 0..*.
+An association connects 'BoemTest_Node' and 'BoemTest_C'. From 'BoemTest_Node', the role 'BoemTest_Node30' has cardinality 0..*, and from 'BoemTest_C', the role 'BoemTest_C29' has cardinality 0..*.
+An association connects 'BoemTest_Node' and 'BoemTest_C'. From 'BoemTest_Node', the role 'BoemTest_Node33' has cardinality 0..*, and from 'BoemTest_C', the role 'BoemTest_C32' has cardinality 0..*.
+An association connects 'BoemTest_Node' and 'BoemTest_Node'. From 'BoemTest_Node', the role 'BoemTest_Node36' has cardinality 0..*, and from 'BoemTest_Node', the role 'BoemTest_Node34' has cardinality 0..*.

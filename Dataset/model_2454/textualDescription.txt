@@ -1,0 +1,232 @@
+The domain model 'jpdl31' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'jpdl31_TimerType' represents an important domain concept.
+It has the following attributes: 'transition', which is of type str; 'duedate', which is of type str; 'name', which is of type str; 'repeat', which is of type str.
+
+'jpdl31_CreateTimerType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'duedate', which is of type str; 'transition', which is of type str; 'repeat', which is of type str.
+
+'jpdl31_SubProcessType' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'name', which is of type str.
+
+'jpdl31_StateType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'nodeContentElements', which is of type str; 'async', which is of type str.
+
+'jpdl31_CancelTimerType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jpdl31_TaskNodeType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'createTasks', which is of type str; 'async', which is of type str; 'signal', which is of type str; 'group', which is of type str; 'endTasks', which is of type str.
+
+'jpdl31_StartStateType' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'name', which is of type str.
+
+'jpdl31_EndStateType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'group', which is of type str.
+
+'jpdl31_TransitionType1' represents an important domain concept.
+It has the following attributes: 'to', which is of type str; 'name', which is of type str; 'group', which is of type str.
+
+'jpdl31_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'jpdl31_SuperStateType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'group', which is of type str; 'async', which is of type str.
+
+'jpdl31_NodeType' represents an important domain concept.
+It has the following attributes: 'async', which is of type str; 'nodeContentElements', which is of type str; 'name', which is of type str.
+
+'jpdl31_ConditionType' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'mixed', which is of type str; 'expression', which is of type str; 'any', which is of type str.
+
+'jpdl31_ScriptType' represents an important domain concept.
+It has the following attributes: 'acceptPropagatedEvents', which is of type str; 'any', which is of type str; 'name', which is of type str; 'mixed', which is of type str.
+
+'jpdl31_ProcessDefinitionType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'group', which is of type str.
+
+'jpdl31_ProcessStateType' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'async', which is of type str; 'name', which is of type str.
+
+'Delegation' represents an important domain concept.
+It does not declare any attributes.
+
+'jpdl31_ActionType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'mixed', which is of type str; 'acceptPropagatedEvents', which is of type str; 'configType', which is of type str; 'expression', which is of type str; 'async', which is of type str; 'class', which is of type str; 'refName', which is of type str; 'any', which is of type str.
+
+'jpdl31_SwimlaneType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jpdl31_ForkType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'async', which is of type str; 'group', which is of type str.
+
+'jpdl31_TransitionType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'group', which is of type str; 'to', which is of type str.
+
+'jpdl31_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'jpdl31_DecisionType' represents an important domain concept.
+It has the following attributes: 'async', which is of type str; 'group', which is of type str; 'name', which is of type str; 'expression', which is of type str.
+
+'jpdl31_AssignmentType' represents an important domain concept.
+It has the following attributes: 'actorId', which is of type str; 'pooledActors', which is of type str; 'expression', which is of type str.
+
+'jpdl31_EventType' represents an important domain concept.
+It has the following attributes: 'actionElements', which is of type str; 'type', which is of type str.
+
+'jpdl31_Delegation' represents an important domain concept.
+It has the following attributes: 'any', which is of type str; 'configType', which is of type str; 'class', which is of type str; 'mixed', which is of type str.
+
+'jpdl31_VariableType' represents an important domain concept.
+It has the following attributes: 'mappedName', which is of type str; 'any', which is of type str; 'name', which is of type str; 'access', which is of type str.
+
+'jpdl31_ExceptionHandlerType' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'exceptionClass', which is of type str.
+
+'jpdl31_TaskType' represents an important domain concept.
+It has the following attributes: 'duedate', which is of type str; 'signalling', which is of type str; 'blocking', which is of type str; 'swimlane', which is of type str; 'description', which is of type str; 'group', which is of type str; 'name', which is of type str; 'priority', which is of type str.
+
+'jpdl31_JoinType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'async', which is of type str; 'nodeContentElements', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TypeTypeMember1' defines the following possible values: 'nodeLeave', 'beforeSignal', 'taskStart', 'superstateLeave', 'processStart', 'taskEnd', 'processEnd', 'subprocessCreated', 'nodeEnter', 'timerCreate', 'subprocessEnd', 'taskAssign', 'afterSignal', 'taskCreate', 'superstateEnter'.
+The enumeration 'PriorityTypeMember0' defines the following possible values: 'low', 'high', 'normal', 'highest', 'lowest'.
+The enumeration 'ConfigType' defines the following possible values: 'configurationProperty', 'field', 'constructor', 'bean'.
+The enumeration 'BooleanType' defines the following possible values: 'on', 'no', 'true', 'yes', 'off', 'false'.
+The enumeration 'ConfigTypeType1' defines the following possible values: 'bean', 'configurationProperty', 'constructor', 'field'.
+The enumeration 'ConfigTypeType' defines the following possible values: 'constructor', 'configurationProperty', 'field', 'bean'.
+The enumeration 'SignalType' defines the following possible values: 'firstWait', 'last', 'unsynchronized', 'first', 'lastWait', 'never'.
+
+The model also captures inheritance relationships between classes.
+The class 'jpdl31_AssignmentType' is a specialization of 'Delegation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'jpdl31_CreateTimerType' and 'jpdl31_ActionType'. From 'jpdl31_CreateTimerType', the role 'jpdl31_CreateTimerType' has cardinality 0..*, and from 'jpdl31_ActionType', the role 'jpdl31_ActionType' has cardinality 0..*.
+An association connects 'jpdl31_CreateTimerType' and 'jpdl31_ScriptType'. From 'jpdl31_CreateTimerType', the role 'jpdl31_CreateTimerType2' has cardinality 0..*, and from 'jpdl31_ScriptType', the role 'jpdl31_ScriptType' has cardinality 0..*.
+An association connects 'jpdl31_DecisionType' and 'jpdl31_Delegation'. From 'jpdl31_DecisionType', the role 'jpdl31_DecisionType' has cardinality 0..*, and from 'jpdl31_Delegation', the role 'jpdl31_Delegation' has cardinality 0..*.
+An association connects 'jpdl31_EventType' and 'jpdl31_DecisionType'. From 'jpdl31_EventType', the role 'jpdl31_EventType' has cardinality 0..*, and from 'jpdl31_DecisionType', the role 'jpdl31_DecisionType5' has cardinality 0..*.
+An association connects 'jpdl31_DecisionType' and 'jpdl31_ExceptionHandlerType'. From 'jpdl31_DecisionType', the role 'jpdl31_DecisionType7' has cardinality 0..*, and from 'jpdl31_ExceptionHandlerType', the role 'jpdl31_ExceptionHandlerType' has cardinality 0..*.
+An association connects 'jpdl31_DecisionType' and 'jpdl31_TransitionType1'. From 'jpdl31_DecisionType', the role 'jpdl31_DecisionType9' has cardinality 0..*, and from 'jpdl31_TransitionType1', the role 'jpdl31_TransitionType1' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_EStringToStringMapEntry'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot' has cardinality 0..*, and from 'jpdl31_EStringToStringMapEntry', the role 'jpdl31_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_EStringToStringMapEntry'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot12' has cardinality 0..*, and from 'jpdl31_EStringToStringMapEntry', the role 'jpdl31_EStringToStringMapEntry13' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_ActionType'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot15' has cardinality 0..*, and from 'jpdl31_ActionType', the role 'jpdl31_ActionType16' has cardinality 0..*.
+An association connects 'jpdl31_AssignmentType' and 'jpdl31_DocumentRoot'. From 'jpdl31_AssignmentType', the role 'jpdl31_AssignmentType' has cardinality 0..*, and from 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot18' has cardinality 0..*.
+An association connects 'jpdl31_CancelTimerType' and 'jpdl31_DocumentRoot'. From 'jpdl31_CancelTimerType', the role 'jpdl31_CancelTimerType' has cardinality 0..*, and from 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot20' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_Delegation'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot22' has cardinality 0..*, and from 'jpdl31_Delegation', the role 'jpdl31_Delegation23' has cardinality 0..*.
+An association connects 'jpdl31_CreateTimerType' and 'jpdl31_DocumentRoot'. From 'jpdl31_CreateTimerType', the role 'jpdl31_CreateTimerType26' has cardinality 0..*, and from 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot25' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_DecisionType'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot28' has cardinality 0..*, and from 'jpdl31_DecisionType', the role 'jpdl31_DecisionType29' has cardinality 0..*.
+An association connects 'jpdl31_EndStateType' and 'jpdl31_DocumentRoot'. From 'jpdl31_EndStateType', the role 'jpdl31_EndStateType' has cardinality 0..*, and from 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot31' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_EventType'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot33' has cardinality 0..*, and from 'jpdl31_EventType', the role 'jpdl31_EventType34' has cardinality 0..*.
+An association connects 'jpdl31_ExceptionHandlerType' and 'jpdl31_DocumentRoot'. From 'jpdl31_ExceptionHandlerType', the role 'jpdl31_ExceptionHandlerType37' has cardinality 0..*, and from 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot36' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_ForkType'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot39' has cardinality 0..*, and from 'jpdl31_ForkType', the role 'jpdl31_ForkType' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_JoinType'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot41' has cardinality 0..*, and from 'jpdl31_JoinType', the role 'jpdl31_JoinType' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_NodeType'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot43' has cardinality 0..*, and from 'jpdl31_NodeType', the role 'jpdl31_NodeType' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_ProcessDefinitionType'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot45' has cardinality 0..*, and from 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_ProcessStateType'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot47' has cardinality 0..*, and from 'jpdl31_ProcessStateType', the role 'jpdl31_ProcessStateType' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_ScriptType'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot49' has cardinality 0..*, and from 'jpdl31_ScriptType', the role 'jpdl31_ScriptType50' has cardinality 0..*.
+An association connects 'jpdl31_StartStateType' and 'jpdl31_DocumentRoot'. From 'jpdl31_StartStateType', the role 'jpdl31_StartStateType' has cardinality 0..*, and from 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot52' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_StateType'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot54' has cardinality 0..*, and from 'jpdl31_StateType', the role 'jpdl31_StateType' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_SuperStateType'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot56' has cardinality 0..*, and from 'jpdl31_SuperStateType', the role 'jpdl31_SuperStateType' has cardinality 0..*.
+An association connects 'jpdl31_SwimlaneType' and 'jpdl31_DocumentRoot'. From 'jpdl31_SwimlaneType', the role 'jpdl31_SwimlaneType' has cardinality 0..*, and from 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot58' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_TaskType'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot60' has cardinality 0..*, and from 'jpdl31_TaskType', the role 'jpdl31_TaskType' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_TaskNodeType'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot62' has cardinality 0..*, and from 'jpdl31_TaskNodeType', the role 'jpdl31_TaskNodeType' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_TimerType'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot64' has cardinality 0..*, and from 'jpdl31_TimerType', the role 'jpdl31_TimerType' has cardinality 0..*.
+An association connects 'jpdl31_TransitionType' and 'jpdl31_DocumentRoot'. From 'jpdl31_TransitionType', the role 'jpdl31_TransitionType' has cardinality 0..*, and from 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot66' has cardinality 0..*.
+An association connects 'jpdl31_DocumentRoot' and 'jpdl31_VariableType'. From 'jpdl31_DocumentRoot', the role 'jpdl31_DocumentRoot68' has cardinality 0..*, and from 'jpdl31_VariableType', the role 'jpdl31_VariableType' has cardinality 0..*.
+An association connects 'jpdl31_EndStateType' and 'jpdl31_EventType'. From 'jpdl31_EndStateType', the role 'jpdl31_EndStateType70' has cardinality 0..*, and from 'jpdl31_EventType', the role 'jpdl31_EventType71' has cardinality 0..*.
+An association connects 'jpdl31_EndStateType' and 'jpdl31_ExceptionHandlerType'. From 'jpdl31_EndStateType', the role 'jpdl31_EndStateType73' has cardinality 0..*, and from 'jpdl31_ExceptionHandlerType', the role 'jpdl31_ExceptionHandlerType74' has cardinality 0..*.
+An association connects 'jpdl31_EventType' and 'jpdl31_ActionType'. From 'jpdl31_EventType', the role 'jpdl31_EventType76' has cardinality 0..*, and from 'jpdl31_ActionType', the role 'jpdl31_ActionType77' has cardinality 0..*.
+An association connects 'jpdl31_ScriptType' and 'jpdl31_EventType'. From 'jpdl31_ScriptType', the role 'jpdl31_ScriptType80' has cardinality 0..*, and from 'jpdl31_EventType', the role 'jpdl31_EventType79' has cardinality 0..*.
+An association connects 'jpdl31_EventType' and 'jpdl31_CreateTimerType'. From 'jpdl31_EventType', the role 'jpdl31_EventType82' has cardinality 0..*, and from 'jpdl31_CreateTimerType', the role 'jpdl31_CreateTimerType83' has cardinality 0..*.
+An association connects 'jpdl31_EventType' and 'jpdl31_CancelTimerType'. From 'jpdl31_EventType', the role 'jpdl31_EventType85' has cardinality 0..*, and from 'jpdl31_CancelTimerType', the role 'jpdl31_CancelTimerType86' has cardinality 0..*.
+An association connects 'jpdl31_ActionType' and 'jpdl31_ExceptionHandlerType'. From 'jpdl31_ActionType', the role 'jpdl31_ActionType89' has cardinality 0..*, and from 'jpdl31_ExceptionHandlerType', the role 'jpdl31_ExceptionHandlerType88' has cardinality 0..*.
+An association connects 'jpdl31_ExceptionHandlerType' and 'jpdl31_ScriptType'. From 'jpdl31_ExceptionHandlerType', the role 'jpdl31_ExceptionHandlerType91' has cardinality 0..*, and from 'jpdl31_ScriptType', the role 'jpdl31_ScriptType92' has cardinality 0..*.
+An association connects 'jpdl31_ForkType' and 'jpdl31_ScriptType'. From 'jpdl31_ForkType', the role 'jpdl31_ForkType94' has cardinality 0..*, and from 'jpdl31_ScriptType', the role 'jpdl31_ScriptType95' has cardinality 0..*.
+An association connects 'jpdl31_EventType' and 'jpdl31_ForkType'. From 'jpdl31_EventType', the role 'jpdl31_EventType98' has cardinality 0..*, and from 'jpdl31_ForkType', the role 'jpdl31_ForkType97' has cardinality 0..*.
+An association connects 'jpdl31_ExceptionHandlerType' and 'jpdl31_ForkType'. From 'jpdl31_ExceptionHandlerType', the role 'jpdl31_ExceptionHandlerType101' has cardinality 0..*, and from 'jpdl31_ForkType', the role 'jpdl31_ForkType100' has cardinality 0..*.
+An association connects 'jpdl31_ForkType' and 'jpdl31_TimerType'. From 'jpdl31_ForkType', the role 'jpdl31_ForkType103' has cardinality 0..*, and from 'jpdl31_TimerType', the role 'jpdl31_TimerType104' has cardinality 0..*.
+An association connects 'jpdl31_ForkType' and 'jpdl31_TransitionType'. From 'jpdl31_ForkType', the role 'jpdl31_ForkType106' has cardinality 0..*, and from 'jpdl31_TransitionType', the role 'jpdl31_TransitionType107' has cardinality 0..*.
+An association connects 'jpdl31_EventType' and 'jpdl31_JoinType'. From 'jpdl31_EventType', the role 'jpdl31_EventType110' has cardinality 0..*, and from 'jpdl31_JoinType', the role 'jpdl31_JoinType109' has cardinality 0..*.
+An association connects 'jpdl31_JoinType' and 'jpdl31_ExceptionHandlerType'. From 'jpdl31_JoinType', the role 'jpdl31_JoinType112' has cardinality 0..*, and from 'jpdl31_ExceptionHandlerType', the role 'jpdl31_ExceptionHandlerType113' has cardinality 0..*.
+An association connects 'jpdl31_TimerType' and 'jpdl31_JoinType'. From 'jpdl31_TimerType', the role 'jpdl31_TimerType116' has cardinality 0..*, and from 'jpdl31_JoinType', the role 'jpdl31_JoinType115' has cardinality 0..*.
+An association connects 'jpdl31_TransitionType' and 'jpdl31_JoinType'. From 'jpdl31_TransitionType', the role 'jpdl31_TransitionType119' has cardinality 0..*, and from 'jpdl31_JoinType', the role 'jpdl31_JoinType118' has cardinality 0..*.
+An association connects 'jpdl31_NodeType' and 'jpdl31_ActionType'. From 'jpdl31_NodeType', the role 'jpdl31_NodeType121' has cardinality 0..*, and from 'jpdl31_ActionType', the role 'jpdl31_ActionType122' has cardinality 0..*.
+An association connects 'jpdl31_ScriptType' and 'jpdl31_NodeType'. From 'jpdl31_ScriptType', the role 'jpdl31_ScriptType125' has cardinality 0..*, and from 'jpdl31_NodeType', the role 'jpdl31_NodeType124' has cardinality 0..*.
+An association connects 'jpdl31_NodeType' and 'jpdl31_CreateTimerType'. From 'jpdl31_NodeType', the role 'jpdl31_NodeType127' has cardinality 0..*, and from 'jpdl31_CreateTimerType', the role 'jpdl31_CreateTimerType128' has cardinality 0..*.
+An association connects 'jpdl31_NodeType' and 'jpdl31_CancelTimerType'. From 'jpdl31_NodeType', the role 'jpdl31_NodeType130' has cardinality 0..*, and from 'jpdl31_CancelTimerType', the role 'jpdl31_CancelTimerType131' has cardinality 0..*.
+An association connects 'jpdl31_NodeType' and 'jpdl31_EventType'. From 'jpdl31_NodeType', the role 'jpdl31_NodeType133' has cardinality 0..*, and from 'jpdl31_EventType', the role 'jpdl31_EventType134' has cardinality 0..*.
+An association connects 'jpdl31_NodeType' and 'jpdl31_ExceptionHandlerType'. From 'jpdl31_NodeType', the role 'jpdl31_NodeType136' has cardinality 0..*, and from 'jpdl31_ExceptionHandlerType', the role 'jpdl31_ExceptionHandlerType137' has cardinality 0..*.
+An association connects 'jpdl31_TimerType' and 'jpdl31_NodeType'. From 'jpdl31_TimerType', the role 'jpdl31_TimerType140' has cardinality 0..*, and from 'jpdl31_NodeType', the role 'jpdl31_NodeType139' has cardinality 0..*.
+An association connects 'jpdl31_NodeType' and 'jpdl31_TransitionType'. From 'jpdl31_NodeType', the role 'jpdl31_NodeType142' has cardinality 0..*, and from 'jpdl31_TransitionType', the role 'jpdl31_TransitionType143' has cardinality 0..*.
+An association connects 'jpdl31_ProcessDefinitionType' and 'jpdl31_SwimlaneType'. From 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType145' has cardinality 0..*, and from 'jpdl31_SwimlaneType', the role 'jpdl31_SwimlaneType146' has cardinality 0..*.
+An association connects 'jpdl31_ProcessDefinitionType' and 'jpdl31_StartStateType'. From 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType148' has cardinality 0..*, and from 'jpdl31_StartStateType', the role 'jpdl31_StartStateType149' has cardinality 0..*.
+An association connects 'jpdl31_ProcessDefinitionType' and 'jpdl31_NodeType'. From 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType151' has cardinality 0..*, and from 'jpdl31_NodeType', the role 'jpdl31_NodeType152' has cardinality 0..*.
+An association connects 'jpdl31_StateType' and 'jpdl31_ProcessDefinitionType'. From 'jpdl31_StateType', the role 'jpdl31_StateType155' has cardinality 0..*, and from 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType154' has cardinality 0..*.
+An association connects 'jpdl31_ProcessDefinitionType' and 'jpdl31_TaskNodeType'. From 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType157' has cardinality 0..*, and from 'jpdl31_TaskNodeType', the role 'jpdl31_TaskNodeType158' has cardinality 0..*.
+An association connects 'jpdl31_ProcessDefinitionType' and 'jpdl31_SuperStateType'. From 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType160' has cardinality 0..*, and from 'jpdl31_SuperStateType', the role 'jpdl31_SuperStateType161' has cardinality 0..*.
+An association connects 'jpdl31_ProcessDefinitionType' and 'jpdl31_ProcessStateType'. From 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType163' has cardinality 0..*, and from 'jpdl31_ProcessStateType', the role 'jpdl31_ProcessStateType164' has cardinality 0..*.
+An association connects 'jpdl31_ForkType' and 'jpdl31_ProcessDefinitionType'. From 'jpdl31_ForkType', the role 'jpdl31_ForkType167' has cardinality 0..*, and from 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType166' has cardinality 0..*.
+An association connects 'jpdl31_JoinType' and 'jpdl31_ProcessDefinitionType'. From 'jpdl31_JoinType', the role 'jpdl31_JoinType170' has cardinality 0..*, and from 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType169' has cardinality 0..*.
+An association connects 'jpdl31_DecisionType' and 'jpdl31_ProcessDefinitionType'. From 'jpdl31_DecisionType', the role 'jpdl31_DecisionType173' has cardinality 0..*, and from 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType172' has cardinality 0..*.
+An association connects 'jpdl31_ProcessDefinitionType' and 'jpdl31_EndStateType'. From 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType175' has cardinality 0..*, and from 'jpdl31_EndStateType', the role 'jpdl31_EndStateType176' has cardinality 0..*.
+An association connects 'jpdl31_ProcessDefinitionType' and 'jpdl31_ActionType'. From 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType178' has cardinality 0..*, and from 'jpdl31_ActionType', the role 'jpdl31_ActionType179' has cardinality 0..*.
+An association connects 'jpdl31_ProcessDefinitionType' and 'jpdl31_ScriptType'. From 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType181' has cardinality 0..*, and from 'jpdl31_ScriptType', the role 'jpdl31_ScriptType182' has cardinality 0..*.
+An association connects 'jpdl31_ProcessDefinitionType' and 'jpdl31_CreateTimerType'. From 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType184' has cardinality 0..*, and from 'jpdl31_CreateTimerType', the role 'jpdl31_CreateTimerType185' has cardinality 0..*.
+An association connects 'jpdl31_CancelTimerType' and 'jpdl31_ProcessDefinitionType'. From 'jpdl31_CancelTimerType', the role 'jpdl31_CancelTimerType188' has cardinality 0..*, and from 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType187' has cardinality 0..*.
+An association connects 'jpdl31_ProcessDefinitionType' and 'jpdl31_EventType'. From 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType190' has cardinality 0..*, and from 'jpdl31_EventType', the role 'jpdl31_EventType191' has cardinality 0..*.
+An association connects 'jpdl31_ExceptionHandlerType' and 'jpdl31_ProcessDefinitionType'. From 'jpdl31_ExceptionHandlerType', the role 'jpdl31_ExceptionHandlerType194' has cardinality 0..*, and from 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType193' has cardinality 0..*.
+An association connects 'jpdl31_TaskType' and 'jpdl31_ProcessDefinitionType'. From 'jpdl31_TaskType', the role 'jpdl31_TaskType197' has cardinality 0..*, and from 'jpdl31_ProcessDefinitionType', the role 'jpdl31_ProcessDefinitionType196' has cardinality 0..*.
+An association connects 'jpdl31_SubProcessType' and 'jpdl31_ProcessStateType'. From 'jpdl31_SubProcessType', the role 'jpdl31_SubProcessType' has cardinality 0..*, and from 'jpdl31_ProcessStateType', the role 'jpdl31_ProcessStateType199' has cardinality 0..*.
+An association connects 'jpdl31_ProcessStateType' and 'jpdl31_VariableType'. From 'jpdl31_ProcessStateType', the role 'jpdl31_ProcessStateType201' has cardinality 0..*, and from 'jpdl31_VariableType', the role 'jpdl31_VariableType202' has cardinality 0..*.
+An association connects 'jpdl31_ProcessStateType' and 'jpdl31_EventType'. From 'jpdl31_ProcessStateType', the role 'jpdl31_ProcessStateType204' has cardinality 0..*, and from 'jpdl31_EventType', the role 'jpdl31_EventType205' has cardinality 0..*.
+An association connects 'jpdl31_ProcessStateType' and 'jpdl31_ExceptionHandlerType'. From 'jpdl31_ProcessStateType', the role 'jpdl31_ProcessStateType207' has cardinality 0..*, and from 'jpdl31_ExceptionHandlerType', the role 'jpdl31_ExceptionHandlerType208' has cardinality 0..*.
+An association connects 'jpdl31_ProcessStateType' and 'jpdl31_TimerType'. From 'jpdl31_ProcessStateType', the role 'jpdl31_ProcessStateType210' has cardinality 0..*, and from 'jpdl31_TimerType', the role 'jpdl31_TimerType211' has cardinality 0..*.
+An association connects 'jpdl31_ProcessStateType' and 'jpdl31_TransitionType'. From 'jpdl31_ProcessStateType', the role 'jpdl31_ProcessStateType213' has cardinality 0..*, and from 'jpdl31_TransitionType', the role 'jpdl31_TransitionType214' has cardinality 0..*.
+An association connects 'jpdl31_TaskType' and 'jpdl31_StartStateType'. From 'jpdl31_TaskType', the role 'jpdl31_TaskType217' has cardinality 0..*, and from 'jpdl31_StartStateType', the role 'jpdl31_StartStateType216' has cardinality 0..*.
+An association connects 'jpdl31_StartStateType' and 'jpdl31_TransitionType'. From 'jpdl31_StartStateType', the role 'jpdl31_StartStateType219' has cardinality 0..*, and from 'jpdl31_TransitionType', the role 'jpdl31_TransitionType220' has cardinality 0..*.
+An association connects 'jpdl31_EventType' and 'jpdl31_StartStateType'. From 'jpdl31_EventType', the role 'jpdl31_EventType223' has cardinality 0..*, and from 'jpdl31_StartStateType', the role 'jpdl31_StartStateType222' has cardinality 0..*.
+An association connects 'jpdl31_ExceptionHandlerType' and 'jpdl31_StartStateType'. From 'jpdl31_ExceptionHandlerType', the role 'jpdl31_ExceptionHandlerType226' has cardinality 0..*, and from 'jpdl31_StartStateType', the role 'jpdl31_StartStateType225' has cardinality 0..*.
+An association connects 'jpdl31_StateType' and 'jpdl31_EventType'. From 'jpdl31_StateType', the role 'jpdl31_StateType228' has cardinality 0..*, and from 'jpdl31_EventType', the role 'jpdl31_EventType229' has cardinality 0..*.
+An association connects 'jpdl31_StateType' and 'jpdl31_ExceptionHandlerType'. From 'jpdl31_StateType', the role 'jpdl31_StateType231' has cardinality 0..*, and from 'jpdl31_ExceptionHandlerType', the role 'jpdl31_ExceptionHandlerType232' has cardinality 0..*.
+An association connects 'jpdl31_TimerType' and 'jpdl31_StateType'. From 'jpdl31_TimerType', the role 'jpdl31_TimerType235' has cardinality 0..*, and from 'jpdl31_StateType', the role 'jpdl31_StateType234' has cardinality 0..*.
+An association connects 'jpdl31_StateType' and 'jpdl31_TransitionType'. From 'jpdl31_StateType', the role 'jpdl31_StateType237' has cardinality 0..*, and from 'jpdl31_TransitionType', the role 'jpdl31_TransitionType238' has cardinality 0..*.
+An association connects 'jpdl31_NodeType' and 'jpdl31_SuperStateType'. From 'jpdl31_NodeType', the role 'jpdl31_NodeType241' has cardinality 0..*, and from 'jpdl31_SuperStateType', the role 'jpdl31_SuperStateType240' has cardinality 0..*.
+An association connects 'jpdl31_StateType' and 'jpdl31_SuperStateType'. From 'jpdl31_StateType', the role 'jpdl31_StateType244' has cardinality 0..*, and from 'jpdl31_SuperStateType', the role 'jpdl31_SuperStateType243' has cardinality 0..*.
+An association connects 'jpdl31_SuperStateType' and 'jpdl31_TaskNodeType'. From 'jpdl31_SuperStateType', the role 'jpdl31_SuperStateType246' has cardinality 0..*, and from 'jpdl31_TaskNodeType', the role 'jpdl31_TaskNodeType247' has cardinality 0..*.
+An association connects 'jpdl31_SuperStateType' and 'jpdl31_SuperStateType'. From 'jpdl31_SuperStateType', the role 'jpdl31_SuperStateType248' has cardinality 0..*, and from 'jpdl31_SuperStateType', the role 'jpdl31_SuperStateType250' has cardinality 0..*.
+An association connects 'jpdl31_ProcessStateType' and 'jpdl31_SuperStateType'. From 'jpdl31_ProcessStateType', the role 'jpdl31_ProcessStateType253' has cardinality 0..*, and from 'jpdl31_SuperStateType', the role 'jpdl31_SuperStateType252' has cardinality 0..*.
+An association connects 'jpdl31_ForkType' and 'jpdl31_SuperStateType'. From 'jpdl31_ForkType', the role 'jpdl31_ForkType256' has cardinality 0..*, and from 'jpdl31_SuperStateType', the role 'jpdl31_SuperStateType255' has cardinality 0..*.
+An association connects 'jpdl31_SuperStateType' and 'jpdl31_JoinType'. From 'jpdl31_SuperStateType', the role 'jpdl31_SuperStateType258' has cardinality 0..*, and from 'jpdl31_JoinType', the role 'jpdl31_JoinType259' has cardinality 0..*.
+An association connects 'jpdl31_DecisionType' and 'jpdl31_SuperStateType'. From 'jpdl31_DecisionType', the role 'jpdl31_DecisionType262' has cardinality 0..*, and from 'jpdl31_SuperStateType', the role 'jpdl31_SuperStateType261' has cardinality 0..*.
+An association connects 'jpdl31_EndStateType' and 'jpdl31_SuperStateType'. From 'jpdl31_EndStateType', the role 'jpdl31_EndStateType265' has cardinality 0..*, and from 'jpdl31_SuperStateType', the role 'jpdl31_SuperStateType264' has cardinality 0..*.
+An association connects 'jpdl31_SuperStateType' and 'jpdl31_EventType'. From 'jpdl31_SuperStateType', the role 'jpdl31_SuperStateType267' has cardinality 0..*, and from 'jpdl31_EventType', the role 'jpdl31_EventType268' has cardinality 0..*.
+An association connects 'jpdl31_SuperStateType' and 'jpdl31_ExceptionHandlerType'. From 'jpdl31_SuperStateType', the role 'jpdl31_SuperStateType270' has cardinality 0..*, and from 'jpdl31_ExceptionHandlerType', the role 'jpdl31_ExceptionHandlerType271' has cardinality 0..*.
+An association connects 'jpdl31_TimerType' and 'jpdl31_SuperStateType'. From 'jpdl31_TimerType', the role 'jpdl31_TimerType274' has cardinality 0..*, and from 'jpdl31_SuperStateType', the role 'jpdl31_SuperStateType273' has cardinality 0..*.
+An association connects 'jpdl31_SuperStateType' and 'jpdl31_TransitionType'. From 'jpdl31_SuperStateType', the role 'jpdl31_SuperStateType276' has cardinality 0..*, and from 'jpdl31_TransitionType', the role 'jpdl31_TransitionType277' has cardinality 0..*.
+An association connects 'jpdl31_AssignmentType' and 'jpdl31_SwimlaneType'. From 'jpdl31_AssignmentType', the role 'jpdl31_AssignmentType280' has cardinality 0..*, and from 'jpdl31_SwimlaneType', the role 'jpdl31_SwimlaneType279' has cardinality 0..*.
+An association connects 'jpdl31_TaskType' and 'jpdl31_TaskNodeType'. From 'jpdl31_TaskType', the role 'jpdl31_TaskType283' has cardinality 0..*, and from 'jpdl31_TaskNodeType', the role 'jpdl31_TaskNodeType282' has cardinality 0..*.
+An association connects 'jpdl31_EventType' and 'jpdl31_TaskNodeType'. From 'jpdl31_EventType', the role 'jpdl31_EventType286' has cardinality 0..*, and from 'jpdl31_TaskNodeType', the role 'jpdl31_TaskNodeType285' has cardinality 0..*.
+An association connects 'jpdl31_ExceptionHandlerType' and 'jpdl31_TaskNodeType'. From 'jpdl31_ExceptionHandlerType', the role 'jpdl31_ExceptionHandlerType289' has cardinality 0..*, and from 'jpdl31_TaskNodeType', the role 'jpdl31_TaskNodeType288' has cardinality 0..*.
+An association connects 'jpdl31_TaskNodeType' and 'jpdl31_TimerType'. From 'jpdl31_TaskNodeType', the role 'jpdl31_TaskNodeType291' has cardinality 0..*, and from 'jpdl31_TimerType', the role 'jpdl31_TimerType292' has cardinality 0..*.
+An association connects 'jpdl31_TransitionType' and 'jpdl31_TaskNodeType'. From 'jpdl31_TransitionType', the role 'jpdl31_TransitionType295' has cardinality 0..*, and from 'jpdl31_TaskNodeType', the role 'jpdl31_TaskNodeType294' has cardinality 0..*.
+An association connects 'jpdl31_TaskType' and 'jpdl31_AssignmentType'. From 'jpdl31_TaskType', the role 'jpdl31_TaskType297' has cardinality 0..*, and from 'jpdl31_AssignmentType', the role 'jpdl31_AssignmentType298' has cardinality 0..*.
+An association connects 'jpdl31_TaskType' and 'jpdl31_Delegation'. From 'jpdl31_TaskType', the role 'jpdl31_TaskType300' has cardinality 0..*, and from 'jpdl31_Delegation', the role 'jpdl31_Delegation301' has cardinality 0..*.
+An association connects 'jpdl31_TaskType' and 'jpdl31_EventType'. From 'jpdl31_TaskType', the role 'jpdl31_TaskType303' has cardinality 0..*, and from 'jpdl31_EventType', the role 'jpdl31_EventType304' has cardinality 0..*.
+An association connects 'jpdl31_TimerType' and 'jpdl31_TaskType'. From 'jpdl31_TimerType', the role 'jpdl31_TimerType307' has cardinality 0..*, and from 'jpdl31_TaskType', the role 'jpdl31_TaskType306' has cardinality 0..*.
+An association connects 'jpdl31_ActionType' and 'jpdl31_TimerType'. From 'jpdl31_ActionType', the role 'jpdl31_ActionType310' has cardinality 0..*, and from 'jpdl31_TimerType', the role 'jpdl31_TimerType309' has cardinality 0..*.
+An association connects 'jpdl31_TimerType' and 'jpdl31_ScriptType'. From 'jpdl31_TimerType', the role 'jpdl31_TimerType312' has cardinality 0..*, and from 'jpdl31_ScriptType', the role 'jpdl31_ScriptType313' has cardinality 0..*.
+An association connects 'jpdl31_ActionType' and 'jpdl31_TransitionType'. From 'jpdl31_ActionType', the role 'jpdl31_ActionType316' has cardinality 0..*, and from 'jpdl31_TransitionType', the role 'jpdl31_TransitionType315' has cardinality 0..*.
+An association connects 'jpdl31_TransitionType' and 'jpdl31_ScriptType'. From 'jpdl31_TransitionType', the role 'jpdl31_TransitionType318' has cardinality 0..*, and from 'jpdl31_ScriptType', the role 'jpdl31_ScriptType319' has cardinality 0..*.
+An association connects 'jpdl31_CreateTimerType' and 'jpdl31_TransitionType'. From 'jpdl31_CreateTimerType', the role 'jpdl31_CreateTimerType322' has cardinality 0..*, and from 'jpdl31_TransitionType', the role 'jpdl31_TransitionType321' has cardinality 0..*.
+An association connects 'jpdl31_CancelTimerType' and 'jpdl31_TransitionType'. From 'jpdl31_CancelTimerType', the role 'jpdl31_CancelTimerType325' has cardinality 0..*, and from 'jpdl31_TransitionType', the role 'jpdl31_TransitionType324' has cardinality 0..*.
+An association connects 'jpdl31_TransitionType' and 'jpdl31_ExceptionHandlerType'. From 'jpdl31_TransitionType', the role 'jpdl31_TransitionType327' has cardinality 0..*, and from 'jpdl31_ExceptionHandlerType', the role 'jpdl31_ExceptionHandlerType328' has cardinality 0..*.
+An association connects 'jpdl31_TransitionType1' and 'jpdl31_ConditionType'. From 'jpdl31_TransitionType1', the role 'jpdl31_TransitionType1330' has cardinality 0..*, and from 'jpdl31_ConditionType', the role 'jpdl31_ConditionType' has cardinality 0..*.
+An association connects 'jpdl31_ActionType' and 'jpdl31_TransitionType1'. From 'jpdl31_ActionType', the role 'jpdl31_ActionType333' has cardinality 0..*, and from 'jpdl31_TransitionType1', the role 'jpdl31_TransitionType1332' has cardinality 0..*.
+An association connects 'jpdl31_TransitionType1' and 'jpdl31_ScriptType'. From 'jpdl31_TransitionType1', the role 'jpdl31_TransitionType1335' has cardinality 0..*, and from 'jpdl31_ScriptType', the role 'jpdl31_ScriptType336' has cardinality 0..*.
+An association connects 'jpdl31_TransitionType1' and 'jpdl31_CreateTimerType'. From 'jpdl31_TransitionType1', the role 'jpdl31_TransitionType1338' has cardinality 0..*, and from 'jpdl31_CreateTimerType', the role 'jpdl31_CreateTimerType339' has cardinality 0..*.
+An association connects 'jpdl31_TransitionType1' and 'jpdl31_CancelTimerType'. From 'jpdl31_TransitionType1', the role 'jpdl31_TransitionType1341' has cardinality 0..*, and from 'jpdl31_CancelTimerType', the role 'jpdl31_CancelTimerType342' has cardinality 0..*.
+An association connects 'jpdl31_TransitionType1' and 'jpdl31_ExceptionHandlerType'. From 'jpdl31_TransitionType1', the role 'jpdl31_TransitionType1344' has cardinality 0..*, and from 'jpdl31_ExceptionHandlerType', the role 'jpdl31_ExceptionHandlerType345' has cardinality 0..*.

@@ -1,0 +1,18 @@
+The domain model 'test_containmentwalker_dependency' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'test_containmentwalker_dependency_subpackage_ClassInOtherPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassInOtherPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'test_containmentwalker_dependency_IsolatedClassInReachablePackage' represents an important domain concept.
+It does not declare any attributes.
+
+'test_containmentwalker_dependency_Foo' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'test_containmentwalker_dependency_Foo' and 'ClassInOtherPackage'. From 'test_containmentwalker_dependency_Foo', the role 'test_containmentwalker_dependency_Foo' has cardinality 0..*, and from 'ClassInOtherPackage', the role 'ClassInOtherPackage' has cardinality 0..*.

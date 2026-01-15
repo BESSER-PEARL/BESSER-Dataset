@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/fx-world/GenerationGap/jars/generationgap-maven-plugin/src/test/resources/unit/simpleGeneration/metamodel/test.ecore

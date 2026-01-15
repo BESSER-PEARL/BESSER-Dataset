@@ -1,0 +1,587 @@
+The domain model 'presentation' describes the core structural elements and their relationships within the system.
+
+The model defines 151 main class(es).
+
+'presentation_picture_Bitmap' represents an important domain concept.
+It has one attribute: 'bitmap_parameters', which is of type str.
+
+'presentation_stimulus_Trial' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_parameter_TargetButtonParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_parameter_CodeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_literal_NumberLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'presentation_parameter_BitmapParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'picture_Bitmap' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_common_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'presentation_common_VariableInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'CoordinateDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'NameLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'SDL' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_statements_Inclusion' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_expressions_AssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_picture_Box' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_statements_StatementList' represents an important domain concept.
+It does not declare any attributes.
+
+'PCL' represents an important domain concept.
+It does not declare any attributes.
+
+'EqualityOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_parameter_ScenarioNameParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'AtomExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_statements_DeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Stimulus' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_picture_Picture' represents an important domain concept.
+It does not declare any attributes.
+
+'PicturePart' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_scenario_PCL' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_operators_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_operators_Less' represents an important domain concept.
+It does not declare any attributes.
+
+'StimulusList' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_expressions_BoolExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_stimulus_StimulusEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_operators_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_program_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'TextParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_picture_PicturePart' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_types_BasicType' represents an important domain concept.
+It does not declare any attributes.
+
+'GeneralLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_stimulus_Stimulus' represents an important domain concept.
+It does not declare any attributes.
+
+'picture_Box' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_statements_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_operators_RelationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_parameter_StimulusEventParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_literal_NumericLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_operators_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_stimulus_StimulusList' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_picture_Graphic2D' represents an important domain concept.
+It does not declare any attributes.
+
+'ScenarioObject' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_parameter_TextParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_ForInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_literal_FilenameLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_operators_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_types_Double' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_scenario_Scenario' represents an important domain concept.
+It does not declare any attributes.
+
+'StimulusEventParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicType' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_parameter_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_picture_PictureStimulusEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_expressions_AtomExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_sound_Sound' represents an important domain concept.
+It does not declare any attributes.
+
+'HeaderParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Graphic2D' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_statements_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_expressions_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_VariableDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_parameter_TimeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'picture_PicturePart' represents an important domain concept.
+It does not declare any attributes.
+
+'CaptionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_operators_GreaterOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_ResourceAcquisition' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_parameter_PictureParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_statements_VariableDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'FilenameLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_picture_BoxStimulus' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_general_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'presentation_stimulus_ScenarioObject' represents an important domain concept.
+It does not declare any attributes.
+
+'AssignmentOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'TextLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_operators_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_operators_AdditiveOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_literal_GeneralLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_literal_NameLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_literal_TextLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'presentation_expressions_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'BitmapParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_picture_TextStimulus' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_parameter_ButtonCodesParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_common_Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_operators_LessOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_picture_Text' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_types_String' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_scenario_Header' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_parameter_TrialParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_operators_EqualityOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_picture_Stimulus2D' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_parameter_CaptionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_types_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ScenarioFile' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_parameter_HeaderParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_general_CoordinateDefinition' represents an important domain concept.
+It has the following attributes: 'coordinate', which is of type str; 'right_bottom', which is of type str; 'type', which is of type str.
+
+'NumberLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_types_Int' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_operators_AssignmentOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_statements_ResourceAcquisition' represents an important domain concept.
+It does not declare any attributes.
+
+'common_VariableInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_literal_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'statements_StatementList' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_StatementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_parameter_ActiveButtonsParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_AssignmentOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_scenario_ScenarioFile' represents an important domain concept.
+It does not declare any attributes.
+
+'Header' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_picture_BitmapStimulus' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_parameter_FilenameParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_types_Bool' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_statements_ForInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'PictureParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_scenario_SDL' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_statements_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'TrialParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_expressions_BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_operators_NotEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'picture_Text' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'StimulusEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'picture_Picture' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_literal_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_operators_MultiplicativeOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'FilenameParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_expressions_NotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_parameter_BackgroundColorParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_expressions_EqualsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_expressions_PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Stimulus2D' represents an important domain concept.
+It does not declare any attributes.
+
+'presentation_expressions_StatementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CoordinateType' defines the following possible values: 'TOP_Y', 'LEFT_X', 'X', 'CENTER_Y', 'CENTER_X', 'Y'.
+
+The model also captures inheritance relationships between classes.
+The class 'presentation_literal_NumericLiteral' is a specialization of 'Literal'.
+The class 'presentation_literal_NumberLiteral' is a specialization of 'NumericLiteral'.
+The class 'presentation_literal_GeneralLiteral' is a specialization of 'Literal'.
+The class 'presentation_literal_BooleanLiteral' is a specialization of 'GeneralLiteral'.
+The class 'presentation_literal_NameLiteral' is a specialization of 'TextLiteral'.
+The class 'presentation_literal_FilenameLiteral' is a specialization of 'TextLiteral'.
+The class 'presentation_literal_TextLiteral' is a specialization of 'GeneralLiteral'.
+The class 'presentation_scenario_Header' is a specialization of 'ScenarioFile'.
+The class 'presentation_scenario_SDL' is a specialization of 'ScenarioFile'.
+The class 'presentation_scenario_PCL' is a specialization of 'ScenarioFile'.
+The class 'presentation_scenario_Scenario' is a specialization of 'NamedElement'.
+The class 'presentation_parameter_HeaderParameter' is a specialization of 'Parameter'.
+The class 'presentation_parameter_StimulusEventParameter' is a specialization of 'Parameter'.
+The class 'presentation_parameter_ActiveButtonsParameter' is a specialization of 'HeaderParameter'.
+The class 'presentation_parameter_ButtonCodesParameter' is a specialization of 'HeaderParameter'.
+The class 'presentation_parameter_ScenarioNameParameter' is a specialization of 'HeaderParameter'.
+The class 'presentation_parameter_TimeParameter' is a specialization of 'StimulusEventParameter'.
+The class 'presentation_parameter_TargetButtonParameter' is a specialization of 'StimulusEventParameter'.
+The class 'presentation_parameter_CodeParameter' is a specialization of 'StimulusEventParameter'.
+The class 'presentation_parameter_PictureParameter' is a specialization of 'Parameter'.
+The class 'presentation_parameter_BackgroundColorParameter' is a specialization of 'PictureParameter'.
+The class 'presentation_parameter_TextParameter' is a specialization of 'Parameter'.
+The class 'presentation_parameter_CaptionParameter' is a specialization of 'TextParameter'.
+The class 'presentation_parameter_FilenameParameter' is a specialization of 'BitmapParameter'.
+The class 'presentation_parameter_TrialParameter' is a specialization of 'Parameter'.
+The class 'presentation_stimulus_Stimulus' is a specialization of 'ScenarioObject'.
+The class 'presentation_stimulus_StimulusEvent' is a specialization of 'ScenarioObject'.
+The class 'presentation_stimulus_Trial' is a specialization of 'ScenarioObject'.
+The class 'presentation_stimulus_ScenarioObject' is a specialization of 'NamedElement'.
+The class 'presentation_picture_Picture' is a specialization of 'Stimulus'.
+The class 'presentation_picture_PictureStimulusEvent' is a specialization of 'StimulusEvent'.
+The class 'presentation_picture_PicturePart' is a specialization of 'ScenarioObject'.
+The class 'presentation_picture_Bitmap' is a specialization of 'Graphic2D'.
+The class 'presentation_picture_Text' is a specialization of 'Graphic2D'.
+The class 'presentation_picture_Box' is a specialization of 'Graphic2D'.
+The class 'presentation_picture_Graphic2D' is a specialization of 'ScenarioObject'.
+The class 'presentation_picture_Stimulus2D' is a specialization of 'PicturePart'.
+The class 'presentation_picture_BitmapStimulus' is a specialization of 'Stimulus2D'.
+The class 'presentation_picture_BoxStimulus' is a specialization of 'Stimulus2D'.
+The class 'presentation_picture_TextStimulus' is a specialization of 'Stimulus2D'.
+The class 'presentation_sound_Sound' is a specialization of 'Stimulus'.
+The class 'presentation_types_BasicType' is a specialization of 'Type'.
+The class 'presentation_types_Bool' is a specialization of 'BasicType'.
+The class 'presentation_types_Int' is a specialization of 'BasicType'.
+The class 'presentation_types_Double' is a specialization of 'BasicType'.
+The class 'presentation_types_String' is a specialization of 'BasicType'.
+The class 'presentation_expressions_BooleanExpression' is a specialization of 'Expression'.
+The class 'presentation_expressions_OrExpression' is a specialization of 'BooleanExpression'.
+The class 'presentation_expressions_AndExpression' is a specialization of 'BooleanExpression'.
+The class 'presentation_expressions_NotExpression' is a specialization of 'BooleanExpression'.
+The class 'presentation_expressions_AtomExpression' is a specialization of 'BooleanExpression'.
+The class 'presentation_expressions_BoolExpression' is a specialization of 'AtomExpression'.
+The class 'presentation_expressions_EqualsExpression' is a specialization of 'AtomExpression'.
+The class 'presentation_expressions_Expression' is a specialization of 'VariableInitializer'.
+The class 'presentation_expressions_AssignmentExpression' is a specialization of 'expressions_Expression'.
+The class 'presentation_expressions_AssignmentExpression' is a specialization of 'expressions_StatementExpression'.
+The class 'presentation_operators_AssignmentOperator' is a specialization of 'Operator'.
+The class 'presentation_operators_RelationOperator' is a specialization of 'Operator'.
+The class 'presentation_operators_EqualityOperator' is a specialization of 'Operator'.
+The class 'presentation_operators_MultiplicativeOperator' is a specialization of 'Operator'.
+The class 'presentation_operators_UnaryOperator' is a specialization of 'Operator'.
+The class 'presentation_operators_AdditiveOperator' is a specialization of 'Operator'.
+The class 'presentation_operators_Assignment' is a specialization of 'AssignmentOperator'.
+The class 'presentation_operators_Greater' is a specialization of 'RelationOperator'.
+The class 'presentation_operators_Less' is a specialization of 'RelationOperator'.
+The class 'presentation_operators_GreaterOrEqual' is a specialization of 'RelationOperator'.
+The class 'presentation_operators_LessOrEqual' is a specialization of 'RelationOperator'.
+The class 'presentation_operators_Equal' is a specialization of 'EqualityOperator'.
+The class 'presentation_operators_NotEqual' is a specialization of 'EqualityOperator'.
+The class 'presentation_statements_Inclusion' is a specialization of 'Statement'.
+The class 'presentation_statements_Assignment' is a specialization of 'Statement'.
+The class 'presentation_statements_Loop' is a specialization of 'Statement'.
+The class 'presentation_statements_VariableDeclaration' is a specialization of 'statements_ForInitializer'.
+The class 'presentation_statements_VariableDeclaration' is a specialization of 'statements_ResourceAcquisition'.
+The class 'presentation_statements_DeclarationStatement' is a specialization of 'Statement'.
+The class 'presentation_statements_VariableDeclarator' is a specialization of 'NamedElement'.
+The class 'presentation_common_Identifier' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'presentation_scenario_Header' and 'HeaderParameter'. From 'presentation_scenario_Header', the role 'presentation_scenario_Header' has cardinality 0..*, and from 'HeaderParameter', the role 'HeaderParameter' has cardinality 0..*.
+An association connects 'ScenarioObject' and 'presentation_scenario_SDL'. From 'ScenarioObject', the role 'ScenarioObject' has cardinality 0..*, and from 'presentation_scenario_SDL', the role 'presentation_scenario_SDL' has cardinality 0..*.
+An association connects 'presentation_scenario_PCL' and 'statements_Statement'. From 'presentation_scenario_PCL', the role 'presentation_scenario_PCL' has cardinality 0..*, and from 'statements_Statement', the role 'statements_Statement' has cardinality 0..*.
+An association connects 'Header' and 'presentation_scenario_Scenario'. From 'Header', the role 'Header' has cardinality 0..*, and from 'presentation_scenario_Scenario', the role 'presentation_scenario_Scenario' has cardinality 0..*.
+An association connects 'presentation_scenario_Scenario' and 'SDL'. From 'presentation_scenario_Scenario', the role 'presentation_scenario_Scenario5' has cardinality 0..*, and from 'SDL', the role 'SDL' has cardinality 0..*.
+An association connects 'PCL' and 'presentation_scenario_Scenario'. From 'PCL', the role 'PCL' has cardinality 0..*, and from 'presentation_scenario_Scenario', the role 'presentation_scenario_Scenario7' has cardinality 0..*.
+An association connects 'presentation_parameter_ActiveButtonsParameter' and 'NumberLiteral'. From 'presentation_parameter_ActiveButtonsParameter', the role 'presentation_parameter_ActiveButtonsParameter' has cardinality 0..*, and from 'NumberLiteral', the role 'NumberLiteral' has cardinality 0..*.
+An association connects 'NumberLiteral' and 'presentation_parameter_ButtonCodesParameter'. From 'NumberLiteral', the role 'NumberLiteral10' has cardinality 0..*, and from 'presentation_parameter_ButtonCodesParameter', the role 'presentation_parameter_ButtonCodesParameter' has cardinality 0..*.
+An association connects 'presentation_parameter_ScenarioNameParameter' and 'NameLiteral'. From 'presentation_parameter_ScenarioNameParameter', the role 'presentation_parameter_ScenarioNameParameter' has cardinality 0..*, and from 'NameLiteral', the role 'NameLiteral' has cardinality 0..*.
+An association connects 'NumberLiteral' and 'presentation_parameter_TimeParameter'. From 'NumberLiteral', the role 'NumberLiteral13' has cardinality 0..*, and from 'presentation_parameter_TimeParameter', the role 'presentation_parameter_TimeParameter' has cardinality 0..*.
+An association connects 'NumberLiteral' and 'presentation_parameter_TargetButtonParameter'. From 'NumberLiteral', the role 'NumberLiteral15' has cardinality 0..*, and from 'presentation_parameter_TargetButtonParameter', the role 'presentation_parameter_TargetButtonParameter' has cardinality 0..*.
+An association connects 'presentation_parameter_CodeParameter' and 'TextLiteral'. From 'presentation_parameter_CodeParameter', the role 'presentation_parameter_CodeParameter' has cardinality 0..*, and from 'TextLiteral', the role 'TextLiteral' has cardinality 0..*.
+An association connects 'presentation_parameter_BackgroundColorParameter' and 'NumberLiteral'. From 'presentation_parameter_BackgroundColorParameter', the role 'presentation_parameter_BackgroundColorParameter' has cardinality 0..*, and from 'NumberLiteral', the role 'NumberLiteral18' has cardinality 0..*.
+An association connects 'presentation_parameter_CaptionParameter' and 'TextLiteral'. From 'presentation_parameter_CaptionParameter', the role 'presentation_parameter_CaptionParameter' has cardinality 0..*, and from 'TextLiteral', the role 'TextLiteral20' has cardinality 0..*.
+An association connects 'FilenameLiteral' and 'presentation_parameter_FilenameParameter'. From 'FilenameLiteral', the role 'FilenameLiteral' has cardinality 0..*, and from 'presentation_parameter_FilenameParameter', the role 'presentation_parameter_FilenameParameter' has cardinality 0..*.
+An association connects 'StimulusEventParameter' and 'presentation_stimulus_StimulusEvent'. From 'StimulusEventParameter', the role 'StimulusEventParameter' has cardinality 0..*, and from 'presentation_stimulus_StimulusEvent', the role 'presentation_stimulus_StimulusEvent' has cardinality 0..*.
+An association connects 'presentation_stimulus_StimulusList' and 'StimulusEvent'. From 'presentation_stimulus_StimulusList', the role 'presentation_stimulus_StimulusList' has cardinality 0..*, and from 'StimulusEvent', the role 'StimulusEvent' has cardinality 0..*.
+An association connects 'presentation_stimulus_Trial' and 'StimulusList'. From 'presentation_stimulus_Trial', the role 'presentation_stimulus_Trial' has cardinality 0..*, and from 'StimulusList', the role 'StimulusList' has cardinality 0..*.
+An association connects 'presentation_stimulus_Trial' and 'TrialParameter'. From 'presentation_stimulus_Trial', the role 'presentation_stimulus_Trial26' has cardinality 0..*, and from 'TrialParameter', the role 'TrialParameter' has cardinality 0..*.
+An association connects 'presentation_picture_Picture' and 'picture_PicturePart'. From 'presentation_picture_Picture', the role 'presentation_picture_Picture' has cardinality 0..*, and from 'picture_PicturePart', the role 'picture_PicturePart' has cardinality 0..*.
+An association connects 'presentation_picture_Picture' and 'PictureParameter'. From 'presentation_picture_Picture', the role 'presentation_picture_Picture29' has cardinality 0..*, and from 'PictureParameter', the role 'PictureParameter' has cardinality 0..*.
+An association connects 'picture_Picture' and 'presentation_picture_PictureStimulusEvent'. From 'picture_Picture', the role 'picture_Picture' has cardinality 0..*, and from 'presentation_picture_PictureStimulusEvent', the role 'presentation_picture_PictureStimulusEvent' has cardinality 0..*.
+An association connects 'FilenameParameter' and 'presentation_picture_Bitmap'. From 'FilenameParameter', the role 'FilenameParameter' has cardinality 0..*, and from 'presentation_picture_Bitmap', the role 'presentation_picture_Bitmap' has cardinality 0..*.
+An association connects 'CaptionParameter' and 'presentation_picture_Text'. From 'CaptionParameter', the role 'CaptionParameter' has cardinality 0..*, and from 'presentation_picture_Text', the role 'presentation_picture_Text' has cardinality 0..*.
+An association connects 'presentation_picture_Text' and 'TextParameter'. From 'presentation_picture_Text', the role 'presentation_picture_Text34' has cardinality 0..*, and from 'TextParameter', the role 'TextParameter' has cardinality 0..*.
+An association connects 'presentation_picture_Stimulus2D' and 'CoordinateDefinition'. From 'presentation_picture_Stimulus2D', the role 'presentation_picture_Stimulus2D' has cardinality 0..*, and from 'CoordinateDefinition', the role 'CoordinateDefinition' has cardinality 0..*.
+An association connects 'CoordinateDefinition' and 'presentation_picture_Stimulus2D'. From 'CoordinateDefinition', the role 'CoordinateDefinition38' has cardinality 0..*, and from 'presentation_picture_Stimulus2D', the role 'presentation_picture_Stimulus2D37' has cardinality 0..*.
+An association connects 'presentation_picture_BitmapStimulus' and 'picture_Bitmap'. From 'presentation_picture_BitmapStimulus', the role 'presentation_picture_BitmapStimulus' has cardinality 0..*, and from 'picture_Bitmap', the role 'picture_Bitmap' has cardinality 0..*.
+An association connects 'picture_Box' and 'presentation_picture_BoxStimulus'. From 'picture_Box', the role 'picture_Box' has cardinality 0..*, and from 'presentation_picture_BoxStimulus', the role 'presentation_picture_BoxStimulus' has cardinality 0..*.
+An association connects 'presentation_picture_TextStimulus' and 'picture_Text'. From 'presentation_picture_TextStimulus', the role 'presentation_picture_TextStimulus' has cardinality 0..*, and from 'picture_Text', the role 'picture_Text' has cardinality 0..*.
+An association connects 'expressions_BooleanExpression' and 'presentation_expressions_OrExpression'. From 'expressions_BooleanExpression', the role 'expressions_BooleanExpression' has cardinality 0..*, and from 'presentation_expressions_OrExpression', the role 'presentation_expressions_OrExpression' has cardinality 0..*.
+An association connects 'expressions_BooleanExpression' and 'presentation_expressions_AndExpression'. From 'expressions_BooleanExpression', the role 'expressions_BooleanExpression44' has cardinality 0..*, and from 'presentation_expressions_AndExpression', the role 'presentation_expressions_AndExpression' has cardinality 0..*.
+An association connects 'expressions_BooleanExpression' and 'presentation_expressions_NotExpression'. From 'expressions_BooleanExpression', the role 'expressions_BooleanExpression46' has cardinality 0..*, and from 'presentation_expressions_NotExpression', the role 'presentation_expressions_NotExpression' has cardinality 0..*.
+An association connects 'BooleanLiteral' and 'presentation_expressions_BoolExpression'. From 'BooleanLiteral', the role 'BooleanLiteral' has cardinality 0..*, and from 'presentation_expressions_BoolExpression', the role 'presentation_expressions_BoolExpression' has cardinality 0..*.
+An association connects 'presentation_expressions_EqualsExpression' and 'expressions_Expression'. From 'presentation_expressions_EqualsExpression', the role 'presentation_expressions_EqualsExpression' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression' has cardinality 0..*.
+An association connects 'operators_AssignmentOperator' and 'presentation_expressions_AssignmentExpression'. From 'operators_AssignmentOperator', the role 'operators_AssignmentOperator' has cardinality 0..*, and from 'presentation_expressions_AssignmentExpression', the role 'presentation_expressions_AssignmentExpression' has cardinality 0..*.
+An association connects 'presentation_expressions_AssignmentExpression' and 'expressions_Expression'. From 'presentation_expressions_AssignmentExpression', the role 'presentation_expressions_AssignmentExpression51' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression52' has cardinality 0..*.
+An association connects 'statements_Statement' and 'presentation_statements_StatementList'. From 'statements_Statement', the role 'statements_Statement54' has cardinality 0..*, and from 'presentation_statements_StatementList', the role 'presentation_statements_StatementList' has cardinality 0..*.
+An association connects 'presentation_statements_Assignment' and 'expressions_Expression'. From 'presentation_statements_Assignment', the role 'presentation_statements_Assignment' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression56' has cardinality 0..*.
+An association connects 'statements_StatementList' and 'presentation_statements_Loop'. From 'statements_StatementList', the role 'statements_StatementList' has cardinality 0..*, and from 'presentation_statements_Loop', the role 'presentation_statements_Loop' has cardinality 0..*.
+An association connects 'statements_StatementList' and 'presentation_statements_Loop'. From 'statements_StatementList', the role 'statements_StatementList60' has cardinality 0..*, and from 'presentation_statements_Loop', the role 'presentation_statements_Loop59' has cardinality 0..*.
+An association connects 'expressions_BooleanExpression' and 'presentation_statements_Loop'. From 'expressions_BooleanExpression', the role 'expressions_BooleanExpression63' has cardinality 0..*, and from 'presentation_statements_Loop', the role 'presentation_statements_Loop62' has cardinality 0..*.
+An association connects 'presentation_statements_VariableDeclaration' and 'types_Type'. From 'presentation_statements_VariableDeclaration', the role 'presentation_statements_VariableDeclaration' has cardinality 0..*, and from 'types_Type', the role 'types_Type' has cardinality 0..*.
+An association connects 'statements_VariableDeclarator' and 'presentation_statements_VariableDeclaration'. From 'statements_VariableDeclarator', the role 'statements_VariableDeclarator' has cardinality 0..*, and from 'presentation_statements_VariableDeclaration', the role 'presentation_statements_VariableDeclaration66' has cardinality 0..*.
+An association connects 'statements_VariableDeclaration' and 'presentation_statements_DeclarationStatement'. From 'statements_VariableDeclaration', the role 'statements_VariableDeclaration' has cardinality 0..*, and from 'presentation_statements_DeclarationStatement', the role 'presentation_statements_DeclarationStatement' has cardinality 0..*.
+An association connects 'common_VariableInitializer' and 'presentation_statements_VariableDeclarator'. From 'common_VariableInitializer', the role 'common_VariableInitializer' has cardinality 0..*, and from 'presentation_statements_VariableDeclarator', the role 'presentation_statements_VariableDeclarator' has cardinality 0..*.
+An association connects 'statements_Statement' and 'presentation_program_Block'. From 'statements_Statement', the role 'statements_Statement70' has cardinality 0..*, and from 'presentation_program_Block', the role 'presentation_program_Block' has cardinality 0..*.

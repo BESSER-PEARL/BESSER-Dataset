@@ -1,0 +1,21 @@
+The domain model 'testSubpackages1_root' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'testSubpackages1_root_testSubpackages1_subpackage1_class2' represents an important domain concept.
+It does not declare any attributes.
+
+'testSubpackages1_root_class1' represents an important domain concept.
+It has one attribute: 'a', which is of type date.
+
+'class3' represents an important domain concept.
+It does not declare any attributes.
+
+'testSubpackages1_root_testSubpackages1_subpackage3_class4' represents an important domain concept.
+It does not declare any attributes.
+
+'testSubpackages1_root_testSubpackages1_subpackage2_class3' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'class3' and 'testSubpackages1_root_class1'. From 'class3', the role 'class3' has cardinality 0..*, and from 'testSubpackages1_root_class1', the role 'testSubpackages1_root_class1' has cardinality 0..*.

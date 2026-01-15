@@ -1,0 +1,26 @@
+The domain model 'project' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'project_CommitterShip' represents an important domain concept.
+It has the following attributes: 'start', which is of type date; 'end', which is of type date.
+
+'project_Foundation' represents an important domain concept.
+It does not declare any attributes.
+
+'project_Project' represents an important domain concept.
+It has the following attributes: 'start', which is of type date; 'longname', which is of type str; 'devmail', which is of type str; 'end', which is of type date; 'homepage', which is of type str; 'shortname', which is of type str.
+
+'project_Person' represents an important domain concept.
+It has the following attributes: 'firstname', which is of type str; 'lastname', which is of type str; 'image', which is of type str; 'email', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'project_Project' and 'project_Foundation'. From 'project_Project', the role 'project_Project' has cardinality 0..*, and from 'project_Foundation', the role 'project_Foundation' has cardinality 0..*.
+An association connects 'project_Foundation' and 'project_Person'. From 'project_Foundation', the role 'project_Foundation2' has cardinality 0..*, and from 'project_Person', the role 'project_Person' has cardinality 0..*.
+An association connects 'project_Project' and 'project_Project'. From 'project_Project', the role 'Project' has cardinality 0..*, and from 'project_Project', the role 'parent' has cardinality 0..*.
+An association connects 'project_CommitterShip' and 'project_Project'. From 'project_CommitterShip', the role 'CommitterShip' has cardinality 0..*, and from 'project_Project', the role 'project' has cardinality 0..*.
+An association connects 'project_Project' and 'project_Project'. From 'project_Project', the role 'Project8' has cardinality 0..*, and from 'project_Project', the role 'subprojects' has cardinality 0..*.
+An association connects 'project_Project' and 'project_Person'. From 'project_Project', the role 'project_Project10' has cardinality 0..*, and from 'project_Person', the role 'project_Person11' has cardinality 0..*.
+An association connects 'project_CommitterShip' and 'project_Project'. From 'project_CommitterShip', the role 'committers' has cardinality 0..*, and from 'project_Project', the role 'Project13' has cardinality 0..*.
+An association connects 'project_CommitterShip' and 'project_Person'. From 'project_CommitterShip', the role 'committerships' has cardinality 0..*, and from 'project_Person', the role 'Person' has cardinality 0..*.
+An association connects 'project_Person' and 'project_CommitterShip'. From 'project_Person', the role 'person' has cardinality 0..*, and from 'project_CommitterShip', the role 'CommitterShip16' has cardinality 0..*.

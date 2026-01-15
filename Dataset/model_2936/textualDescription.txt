@@ -1,0 +1,69 @@
+The domain model 'test7' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'test7_AttributeTypeElement' represents an important domain concept.
+It has the following attributes: 'dataType', which is of type str; 'name', which is of type str.
+
+'test7_FiniteDomainSCValueReference' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'test7_SelectionStateSC' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'test7_AttributeType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'test7_SolutionConstraint' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'test7_FiniteDomainSC' represents an important domain concept.
+It does not declare any attributes.
+
+'test7_FeatureAttributeElement' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'test7_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'test7_FeatureAttributeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'test7_HardLimitSC' represents an important domain concept.
+It has the following attributes: 'op2', which is of type str; 'value2', which is of type str; 'value1', which is of type str; 'op1', which is of type str.
+
+'test7_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'test7_OptimizationSC' represents an important domain concept.
+It has one attribute: 'funct', which is of type str.
+
+'SolutionConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'test7_FeatureAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'test7_OptimizationSC' is a specialization of 'SolutionConstraint'.
+The class 'test7_HardLimitSC' is a specialization of 'SolutionConstraint'.
+The class 'test7_SelectionStateSC' is a specialization of 'SolutionConstraint'.
+The class 'test7_FiniteDomainSC' is a specialization of 'SolutionConstraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'test7_AttributeType' and 'test7_Model'. From 'test7_AttributeType', the role 'test7_AttributeType' has cardinality 0..*, and from 'test7_Model', the role 'test7_Model' has cardinality 0..*.
+An association connects 'test7_Model' and 'test7_FeatureAttribute'. From 'test7_Model', the role 'test7_Model2' has cardinality 0..*, and from 'test7_FeatureAttribute', the role 'test7_FeatureAttribute' has cardinality 0..*.
+An association connects 'test7_Model' and 'test7_Feature'. From 'test7_Model', the role 'test7_Model4' has cardinality 0..*, and from 'test7_Feature', the role 'test7_Feature' has cardinality 0..*.
+An association connects 'test7_SolutionConstraint' and 'test7_Model'. From 'test7_SolutionConstraint', the role 'test7_SolutionConstraint' has cardinality 0..*, and from 'test7_Model', the role 'test7_Model6' has cardinality 0..*.
+An association connects 'test7_AttributeTypeElement' and 'test7_AttributeType'. From 'test7_AttributeTypeElement', the role 'test7_AttributeTypeElement' has cardinality 0..*, and from 'test7_AttributeType', the role 'test7_AttributeType8' has cardinality 0..*.
+An association connects 'test7_AttributeType' and 'test7_AttributeType'. From 'test7_AttributeType', the role 'test7_AttributeType9' has cardinality 0..*, and from 'test7_AttributeType', the role 'test7_AttributeType11' has cardinality 0..*.
+An association connects 'test7_AttributeType' and 'test7_FeatureAttribute'. From 'test7_AttributeType', the role 'test7_AttributeType14' has cardinality 0..*, and from 'test7_FeatureAttribute', the role 'test7_FeatureAttribute13' has cardinality 0..*.
+An association connects 'test7_FeatureAttributeElement' and 'test7_FeatureAttribute'. From 'test7_FeatureAttributeElement', the role 'test7_FeatureAttributeElement' has cardinality 0..*, and from 'test7_FeatureAttribute', the role 'test7_FeatureAttribute16' has cardinality 0..*.
+An association connects 'test7_FeatureAttributeReference' and 'test7_FeatureAttribute'. From 'test7_FeatureAttributeReference', the role 'test7_FeatureAttributeReference' has cardinality 0..*, and from 'test7_FeatureAttribute', the role 'test7_FeatureAttribute18' has cardinality 0..*.
+An association connects 'test7_Feature' and 'test7_FeatureAttributeReference'. From 'test7_Feature', the role 'test7_Feature20' has cardinality 0..*, and from 'test7_FeatureAttributeReference', the role 'test7_FeatureAttributeReference21' has cardinality 0..*.
+An association connects 'test7_AttributeType' and 'test7_OptimizationSC'. From 'test7_AttributeType', the role 'test7_AttributeType23' has cardinality 0..*, and from 'test7_OptimizationSC', the role 'test7_OptimizationSC' has cardinality 0..*.
+An association connects 'test7_HardLimitSC' and 'test7_AttributeType'. From 'test7_HardLimitSC', the role 'test7_HardLimitSC' has cardinality 0..*, and from 'test7_AttributeType', the role 'test7_AttributeType25' has cardinality 0..*.
+An association connects 'test7_Feature' and 'test7_SelectionStateSC'. From 'test7_Feature', the role 'test7_Feature27' has cardinality 0..*, and from 'test7_SelectionStateSC', the role 'test7_SelectionStateSC' has cardinality 0..*.
+An association connects 'test7_Feature' and 'test7_FiniteDomainSC'. From 'test7_Feature', the role 'test7_Feature29' has cardinality 0..*, and from 'test7_FiniteDomainSC', the role 'test7_FiniteDomainSC' has cardinality 0..*.
+An association connects 'test7_FeatureAttribute' and 'test7_FiniteDomainSC'. From 'test7_FeatureAttribute', the role 'test7_FeatureAttribute32' has cardinality 0..*, and from 'test7_FiniteDomainSC', the role 'test7_FiniteDomainSC31' has cardinality 0..*.
+An association connects 'test7_FiniteDomainSCValueReference' and 'test7_FiniteDomainSC'. From 'test7_FiniteDomainSCValueReference', the role 'test7_FiniteDomainSCValueReference' has cardinality 0..*, and from 'test7_FiniteDomainSC', the role 'test7_FiniteDomainSC34' has cardinality 0..*.

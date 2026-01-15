@@ -1,0 +1,75 @@
+The domain model 'actions' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'actions_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'AtomicProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'Process' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_CompositeAction' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_ActionResult' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'version', which is of type int.
+
+'actions_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_AtomicAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionResult' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_Participant' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_Distribution' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'version', which is of type int; 'density', which is of type float; 'datapoint', which is of type float.
+
+'actions_AtomicActionResult' represents an important domain concept.
+It has one attribute: 'hasDensity', which is of type float.
+
+'actions_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_ActionsCollection' represents an important domain concept.
+It has the following attributes: 'ns', which is of type str; 'version', which is of type int; 'id', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'actions_Action' is a specialization of 'Process'.
+The class 'actions_AtomicAction' is a specialization of 'Action'.
+The class 'actions_AtomicAction' is a specialization of 'AtomicProcess'.
+The class 'actions_CompositeAction' is a specialization of 'Action'.
+The class 'actions_CompositeAction' is a specialization of 'CompositeProcess'.
+The class 'actions_AtomicActionResult' is a specialization of 'ActionResult'.
+
+Relationships between classes are modeled using associations.
+An association connects 'actions_Action' and 'actions_Role'. From 'actions_Action', the role 'actions_Action' has cardinality 0..*, and from 'actions_Role', the role 'actions_Role' has cardinality 0..*.
+An association connects 'actions_AtomicAction' and 'actions_AtomicActionResult'. From 'actions_AtomicAction', the role 'actions_AtomicAction' has cardinality 0..*, and from 'actions_AtomicActionResult', the role 'actions_AtomicActionResult' has cardinality 0..*.
+An association connects 'actions_ActionResult' and 'actions_Condition'. From 'actions_ActionResult', the role 'actions_ActionResult' has cardinality 0..*, and from 'actions_Condition', the role 'actions_Condition' has cardinality 0..*.
+An association connects 'actions_ActionResult' and 'actions_Expression'. From 'actions_ActionResult', the role 'actions_ActionResult4' has cardinality 0..*, and from 'actions_Expression', the role 'actions_Expression' has cardinality 0..*.
+An association connects 'actions_ActionResult' and 'actions_Expression'. From 'actions_ActionResult', the role 'actions_ActionResult6' has cardinality 0..*, and from 'actions_Expression', the role 'actions_Expression7' has cardinality 0..*.
+An association connects 'actions_Distribution' and 'actions_AtomicActionResult'. From 'actions_Distribution', the role 'actions_Distribution' has cardinality 0..*, and from 'actions_AtomicActionResult', the role 'actions_AtomicActionResult9' has cardinality 0..*.
+An association connects 'actions_AtomicActionResult' and 'actions_Distribution'. From 'actions_AtomicActionResult', the role 'actions_AtomicActionResult11' has cardinality 0..*, and from 'actions_Distribution', the role 'actions_Distribution12' has cardinality 0..*.
+An association connects 'actions_Distribution' and 'actions_AtomicActionResult'. From 'actions_Distribution', the role 'actions_Distribution15' has cardinality 0..*, and from 'actions_AtomicActionResult', the role 'actions_AtomicActionResult14' has cardinality 0..*.
+An association connects 'actions_ActionsCollection' and 'actions_Action'. From 'actions_ActionsCollection', the role 'actions_ActionsCollection' has cardinality 0..*, and from 'actions_Action', the role 'actions_Action17' has cardinality 0..*.
+An association connects 'actions_Participant' and 'actions_ActionsCollection'. From 'actions_Participant', the role 'actions_Participant' has cardinality 0..*, and from 'actions_ActionsCollection', the role 'actions_ActionsCollection19' has cardinality 0..*.
+An association connects 'actions_Parameter' and 'actions_ActionsCollection'. From 'actions_Parameter', the role 'actions_Parameter' has cardinality 0..*, and from 'actions_ActionsCollection', the role 'actions_ActionsCollection21' has cardinality 0..*.

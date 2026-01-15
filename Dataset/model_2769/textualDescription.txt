@@ -1,0 +1,38 @@
+The domain model 'links' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'links_Child_AB_Element_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'links_Root_BA_Element_Link' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'links_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'links_RootNodeA' represents an important domain concept.
+It does not declare any attributes.
+
+'links_ChildNodeA' represents an important domain concept.
+It does not declare any attributes.
+
+'links_RootNodeB' represents an important domain concept.
+It does not declare any attributes.
+
+'links_ChildNodeB' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'links_Child_AB_Element_Link' and 'links_Root'. From 'links_Child_AB_Element_Link', the role 'links_Child_AB_Element_Link' has cardinality 0..*, and from 'links_Root', the role 'links_Root' has cardinality 0..*.
+An association connects 'links_Root' and 'links_RootNodeA'. From 'links_Root', the role 'links_Root2' has cardinality 0..*, and from 'links_RootNodeA', the role 'links_RootNodeA' has cardinality 0..*.
+An association connects 'links_Root' and 'links_RootNodeB'. From 'links_Root', the role 'links_Root4' has cardinality 0..*, and from 'links_RootNodeB', the role 'links_RootNodeB' has cardinality 0..*.
+An association connects 'links_Root_BA_Element_Link' and 'links_Root'. From 'links_Root_BA_Element_Link', the role 'links_Root_BA_Element_Link' has cardinality 0..*, and from 'links_Root', the role 'links_Root6' has cardinality 0..*.
+An association connects 'links_ChildNodeA' and 'links_RootNodeA'. From 'links_ChildNodeA', the role 'links_ChildNodeA' has cardinality 0..*, and from 'links_RootNodeA', the role 'links_RootNodeA8' has cardinality 0..*.
+An association connects 'links_RootNodeB' and 'links_ChildNodeB'. From 'links_RootNodeB', the role 'links_RootNodeB10' has cardinality 0..*, and from 'links_ChildNodeB', the role 'links_ChildNodeB' has cardinality 0..*.
+An association connects 'links_RootNodeB' and 'links_RootNodeA'. From 'links_RootNodeB', the role 'links_RootNodeB12' has cardinality 0..*, and from 'links_RootNodeA', the role 'links_RootNodeA13' has cardinality 0..*.
+An association connects 'links_ChildNodeA' and 'links_ChildNodeB'. From 'links_ChildNodeA', the role 'links_ChildNodeA15' has cardinality 0..*, and from 'links_ChildNodeB', the role 'links_ChildNodeB16' has cardinality 0..*.
+An association connects 'links_Child_AB_Element_Link' and 'links_ChildNodeA'. From 'links_Child_AB_Element_Link', the role 'links_Child_AB_Element_Link18' has cardinality 0..*, and from 'links_ChildNodeA', the role 'links_ChildNodeA19' has cardinality 0..*.
+An association connects 'links_ChildNodeB' and 'links_Child_AB_Element_Link'. From 'links_ChildNodeB', the role 'links_ChildNodeB22' has cardinality 0..*, and from 'links_Child_AB_Element_Link', the role 'links_Child_AB_Element_Link21' has cardinality 0..*.
+An association connects 'links_RootNodeB' and 'links_Root_BA_Element_Link'. From 'links_RootNodeB', the role 'links_RootNodeB25' has cardinality 0..*, and from 'links_Root_BA_Element_Link', the role 'links_Root_BA_Element_Link24' has cardinality 0..*.
+An association connects 'links_RootNodeA' and 'links_Root_BA_Element_Link'. From 'links_RootNodeA', the role 'links_RootNodeA28' has cardinality 0..*, and from 'links_Root_BA_Element_Link', the role 'links_Root_BA_Element_Link27' has cardinality 0..*.

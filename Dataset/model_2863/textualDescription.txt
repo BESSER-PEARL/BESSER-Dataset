@@ -1,0 +1,609 @@
+The domain model 'abs' describes the core structural elements and their relationships within the system.
+
+The model defines 120 main class(es).
+
+'abs_Class_modifier_fragment' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_MexpComparison_expr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'abs_Field_decl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'abs_Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Interface_modifier_fragment' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Delta_access' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_AppOr_exp' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Module_modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Trait_expr' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_After_condition' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Feature_decl_group' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Methodsig' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'abs_AndGuard' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'abs_Pure_exp' represents an important domain concept.
+It has the following attributes: 'await', which is of type str; 'value', which is of type str; 'op', which is of type str; 'val', which is of type str.
+
+'abs_Update_decl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'abs_Stmt' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'abs_Module_export' represents an important domain concept.
+It has the following attributes: 'importedNamespace', which is of type str; 'anyPackage', which is of type str.
+
+'abs_Trait_decl' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Mexp' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'abs_Class_decl' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Product_decl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'abs_Equality_expr' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Case_branch' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_OO_modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Module_decl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'abs_Fnode' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_MexpEquality_expr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'Update_preamble_declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Product_expr' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Function_name_decl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'abs_MexpPlusOrMinus_expr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'abs_Main_block' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Decl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Namespace_modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Delta_id' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Function_param' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Feature_decl_constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Delta_param' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Var_or_field_ref' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'abs_Interface_decl' represents an important domain concept.
+It does not declare any attributes.
+
+'Module_modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_DomainModel' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Functional_modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Feature_decl_attribute' represents an important domain concept.
+It has the following attributes: 'boundary_val', which is of type str; 'uBoundary_int', which is of type str; 'lBoundary_int', which is of type str.
+
+'abs_Pure_exp_list' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Has_condition' represents an important domain concept.
+It does not declare any attributes.
+
+'Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Product_reconfiguration' represents an important domain concept.
+It has the following attributes: 'update', which is of type str; 'name', which is of type str.
+
+'abs_Function_name_list' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainModel' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Compilation_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_AppAnd_exp' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_MulDivOrMod_expr' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_MexpPrimary_expr' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_MexpOr_exp' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_ProductAnd_exp' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_PlusOrMinus_expr' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Namespace_modifier' represents an important domain concept.
+It has one attribute: 'star', which is of type str.
+
+'abs_Function_name_param_decl' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'abs_Annotations' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_DataType_decl' represents an important domain concept.
+It has one attribute: 'p', which is of type str.
+
+'abs_Function_param' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Delta_clause' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Trait_usage' represents an important domain concept.
+It does not declare any attributes.
+
+'Fnode' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Comparison_expr' represents an important domain concept.
+It does not declare any attributes.
+
+'Eff_expr' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Param_list' represents an important domain concept.
+It does not declare any attributes.
+
+'Class_modifier_fragment' represents an important domain concept.
+It does not declare any attributes.
+
+'Pure_exp' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_MexpImplies_expr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'abs_Data_constructor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Mexp' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Type_use' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'abs_From_condition' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Function_decl' represents an important domain concept.
+It has one attribute: 'p', which is of type str.
+
+'abs_MexpMulDivOrMod_expr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'abs_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Param_decl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Type_exp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'abs_ProductMinus_exp' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface_modifier_fragment' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Interface_name' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'abs_Trait_oper' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Module_import' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'importedNamespace', which is of type str.
+
+'abs_MexpAnd_expr' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_ProductOr_expr' represents an important domain concept.
+It does not declare any attributes.
+
+'Data_constructor_arg' represents an important domain concept.
+It does not declare any attributes.
+
+'Case_branch' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Casestmtbranch' represents an important domain concept.
+It does not declare any attributes.
+
+'Functional_modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Application_condition' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Object_update_assign_stmt' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Product_expr' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Delta_decl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'abs_Update_preamble_declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Deltaspec' represents an important domain concept.
+It has the following attributes: 'deltaspec_param', which is of type str; 'name', which is of type str.
+
+'abs_Method' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'abs_Data_constructor_arg' represents an important domain concept.
+It does not declare any attributes.
+
+'Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Application_condition' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Function_list' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_And_expr' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Fextension' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'abs_Anon_function_decl' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Delta_param' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Feature' represents an important domain concept.
+It has the following attributes: 'attr_assignment', which is of type str; 'p', which is of type str.
+
+'abs_Or_expr' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Productline_decl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'abs_Feature_decl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'abs_Object_update' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_When_condition' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Exception_decl' represents an important domain concept.
+It does not declare any attributes.
+
+'Decl' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Eff_expr' represents an important domain concept.
+It has one attribute: 'l', which is of type str.
+
+'abs_Typesyn_decl' represents an important domain concept.
+It does not declare any attributes.
+
+'abs_Par_function_decl' represents an important domain concept.
+It has one attribute: 'p', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'abs_Compilation_Unit' is a specialization of 'DomainModel'.
+The class 'abs_Module_export' is a specialization of 'Namespace_modifier'.
+The class 'abs_Module_import' is a specialization of 'Namespace_modifier'.
+The class 'abs_Par_function_decl' is a specialization of 'Decl'.
+The class 'abs_DataType_decl' is a specialization of 'Decl'.
+The class 'abs_DataType_decl' is a specialization of 'Functional_modifier'.
+The class 'abs_Type_use' is a specialization of 'Data_constructor_arg'.
+The class 'abs_Type_use' is a specialization of 'Annotation'.
+The class 'abs_Pure_exp' is a specialization of 'Exp'.
+The class 'abs_Pure_exp' is a specialization of 'Eff_expr'.
+The class 'abs_Var_or_field_ref' is a specialization of 'Pure_exp'.
+The class 'abs_Pattern' is a specialization of 'Case_branch'.
+The class 'abs_Function_name_param_decl' is a specialization of 'Function_param'.
+The class 'abs_Anon_function_decl' is a specialization of 'Function_param'.
+The class 'abs_Param_decl' is a specialization of 'Delta_param'.
+The class 'abs_Type_exp' is a specialization of 'Update_preamble_declaration'.
+The class 'abs_Function_decl' is a specialization of 'Decl'.
+The class 'abs_Function_decl' is a specialization of 'Functional_modifier'.
+The class 'abs_Typesyn_decl' is a specialization of 'Decl'.
+The class 'abs_Typesyn_decl' is a specialization of 'Functional_modifier'.
+The class 'abs_Exception_decl' is a specialization of 'Decl'.
+The class 'abs_Interface_decl' is a specialization of 'Decl'.
+The class 'abs_Methodsig' is a specialization of 'Class_modifier_fragment'.
+The class 'abs_Methodsig' is a specialization of 'Interface_modifier_fragment'.
+The class 'abs_Class_decl' is a specialization of 'Decl'.
+The class 'abs_Field_decl' is a specialization of 'Class_modifier_fragment'.
+The class 'abs_Eff_expr' is a specialization of 'Exp'.
+The class 'abs_Delta_id' is a specialization of 'Eff_expr'.
+The class 'abs_Trait_expr' is a specialization of 'Class_modifier_fragment'.
+The class 'abs_Trait_decl' is a specialization of 'Decl'.
+The class 'abs_Has_condition' is a specialization of 'Delta_param'.
+The class 'abs_Functional_modifier' is a specialization of 'Module_modifier'.
+The class 'abs_OO_modifier' is a specialization of 'Module_modifier'.
+The class 'abs_Namespace_modifier' is a specialization of 'Module_modifier'.
+The class 'abs_Feature_decl' is a specialization of 'Fnode'.
+The class 'abs_Or_expr' is a specialization of 'Pure_exp'.
+The class 'abs_And_expr' is a specialization of 'Pure_exp'.
+The class 'abs_Equality_expr' is a specialization of 'Pure_exp'.
+The class 'abs_Comparison_expr' is a specialization of 'Pure_exp'.
+The class 'abs_PlusOrMinus_expr' is a specialization of 'Pure_exp'.
+The class 'abs_MulDivOrMod_expr' is a specialization of 'Pure_exp'.
+The class 'abs_AndGuard' is a specialization of 'Guard'.
+The class 'abs_AppOr_exp' is a specialization of 'Application_condition'.
+The class 'abs_AppAnd_exp' is a specialization of 'Application_condition'.
+The class 'abs_ProductOr_expr' is a specialization of 'Product_expr'.
+The class 'abs_ProductAnd_exp' is a specialization of 'Product_expr'.
+The class 'abs_ProductMinus_exp' is a specialization of 'Product_expr'.
+The class 'abs_MexpOr_exp' is a specialization of 'Mexp'.
+The class 'abs_MexpAnd_expr' is a specialization of 'Mexp'.
+The class 'abs_MexpImplies_expr' is a specialization of 'Mexp'.
+The class 'abs_MexpEquality_expr' is a specialization of 'Mexp'.
+The class 'abs_MexpComparison_expr' is a specialization of 'Mexp'.
+The class 'abs_MexpPlusOrMinus_expr' is a specialization of 'Mexp'.
+The class 'abs_MexpMulDivOrMod_expr' is a specialization of 'Mexp'.
+The class 'abs_MexpPrimary_expr' is a specialization of 'Mexp'.
+
+Relationships between classes are modeled using associations.
+An association connects 'abs_Compilation_Unit' and 'abs_Module_decl'. From 'abs_Compilation_Unit', the role 'abs_Compilation_Unit' has cardinality 0..*, and from 'abs_Module_decl', the role 'abs_Module_decl' has cardinality 0..*.
+An association connects 'abs_Delta_decl' and 'abs_Compilation_Unit'. From 'abs_Delta_decl', the role 'abs_Delta_decl' has cardinality 0..*, and from 'abs_Compilation_Unit', the role 'abs_Compilation_Unit2' has cardinality 0..*.
+An association connects 'abs_Update_decl' and 'abs_Compilation_Unit'. From 'abs_Update_decl', the role 'abs_Update_decl' has cardinality 0..*, and from 'abs_Compilation_Unit', the role 'abs_Compilation_Unit4' has cardinality 0..*.
+An association connects 'abs_Compilation_Unit' and 'abs_Productline_decl'. From 'abs_Compilation_Unit', the role 'abs_Compilation_Unit6' has cardinality 0..*, and from 'abs_Productline_decl', the role 'abs_Productline_decl' has cardinality 0..*.
+An association connects 'abs_Compilation_Unit' and 'abs_Product_decl'. From 'abs_Compilation_Unit', the role 'abs_Compilation_Unit8' has cardinality 0..*, and from 'abs_Product_decl', the role 'abs_Product_decl' has cardinality 0..*.
+An association connects 'abs_Feature_decl' and 'abs_Compilation_Unit'. From 'abs_Feature_decl', the role 'abs_Feature_decl' has cardinality 0..*, and from 'abs_Compilation_Unit', the role 'abs_Compilation_Unit10' has cardinality 0..*.
+An association connects 'abs_Fextension' and 'abs_Compilation_Unit'. From 'abs_Fextension', the role 'abs_Fextension' has cardinality 0..*, and from 'abs_Compilation_Unit', the role 'abs_Compilation_Unit12' has cardinality 0..*.
+An association connects 'abs_Module_decl' and 'abs_Module_export'. From 'abs_Module_decl', the role 'abs_Module_decl14' has cardinality 0..*, and from 'abs_Module_export', the role 'abs_Module_export' has cardinality 0..*.
+An association connects 'abs_Module_import' and 'abs_Module_decl'. From 'abs_Module_import', the role 'abs_Module_import' has cardinality 0..*, and from 'abs_Module_decl', the role 'abs_Module_decl16' has cardinality 0..*.
+An association connects 'abs_Decl' and 'abs_Module_decl'. From 'abs_Decl', the role 'abs_Decl' has cardinality 0..*, and from 'abs_Module_decl', the role 'abs_Module_decl18' has cardinality 0..*.
+An association connects 'abs_Main_block' and 'abs_Module_decl'. From 'abs_Main_block', the role 'abs_Main_block' has cardinality 0..*, and from 'abs_Module_decl', the role 'abs_Module_decl20' has cardinality 0..*.
+An association connects 'abs_Par_function_decl' and 'abs_Type_use'. From 'abs_Par_function_decl', the role 'abs_Par_function_decl' has cardinality 0..*, and from 'abs_Type_use', the role 'abs_Type_use' has cardinality 0..*.
+An association connects 'abs_Function_name_list' and 'abs_Par_function_decl'. From 'abs_Function_name_list', the role 'abs_Function_name_list' has cardinality 0..*, and from 'abs_Par_function_decl', the role 'abs_Par_function_decl23' has cardinality 0..*.
+An association connects 'abs_Param_list' and 'abs_Par_function_decl'. From 'abs_Param_list', the role 'abs_Param_list' has cardinality 0..*, and from 'abs_Par_function_decl', the role 'abs_Par_function_decl25' has cardinality 0..*.
+An association connects 'abs_Par_function_decl' and 'abs_Pure_exp'. From 'abs_Par_function_decl', the role 'abs_Par_function_decl27' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp' has cardinality 0..*.
+An association connects 'abs_Function_name_decl' and 'abs_Function_name_list'. From 'abs_Function_name_decl', the role 'abs_Function_name_decl' has cardinality 0..*, and from 'abs_Function_name_list', the role 'abs_Function_name_list29' has cardinality 0..*.
+An association connects 'abs_DataType_decl' and 'abs_Data_constructor'. From 'abs_DataType_decl', the role 'abs_DataType_decl' has cardinality 0..*, and from 'abs_Data_constructor', the role 'abs_Data_constructor' has cardinality 0..*.
+An association connects 'abs_Data_constructor_arg' and 'abs_Data_constructor'. From 'abs_Data_constructor_arg', the role 'abs_Data_constructor_arg' has cardinality 0..*, and from 'abs_Data_constructor', the role 'abs_Data_constructor32' has cardinality 0..*.
+An association connects 'abs_Annotation' and 'abs_Annotations'. From 'abs_Annotation', the role 'abs_Annotation' has cardinality 0..*, and from 'abs_Annotations', the role 'abs_Annotations' has cardinality 0..*.
+An association connects 'abs_Annotation' and 'abs_Pure_exp'. From 'abs_Annotation', the role 'abs_Annotation35' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp36' has cardinality 0..*.
+An association connects 'abs_Type_use' and 'abs_Type_use'. From 'abs_Type_use', the role 'abs_Type_use37' has cardinality 0..*, and from 'abs_Type_use', the role 'abs_Type_use39' has cardinality 0..*.
+An association connects 'abs_Function_list' and 'abs_Pure_exp'. From 'abs_Function_list', the role 'abs_Function_list' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp41' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Pure_exp_list'. From 'abs_Pure_exp', the role 'abs_Pure_exp43' has cardinality 0..*, and from 'abs_Pure_exp_list', the role 'abs_Pure_exp_list' has cardinality 0..*.
+An association connects 'abs_Pure_exp_list' and 'abs_Pure_exp'. From 'abs_Pure_exp_list', the role 'abs_Pure_exp_list46' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp45' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Pure_exp'. From 'abs_Pure_exp', the role 'abs_Pure_exp47' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp49' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Pure_exp'. From 'abs_Pure_exp', the role 'abs_Pure_exp50' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp52' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Pure_exp'. From 'abs_Pure_exp', the role 'abs_Pure_exp55' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp53' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Pure_exp'. From 'abs_Pure_exp', the role 'abs_Pure_exp58' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp56' has cardinality 0..*.
+An association connects 'abs_Case_branch' and 'abs_Pure_exp'. From 'abs_Case_branch', the role 'abs_Case_branch' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp60' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Type_use'. From 'abs_Pure_exp', the role 'abs_Pure_exp62' has cardinality 0..*, and from 'abs_Type_use', the role 'abs_Type_use63' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Pure_exp'. From 'abs_Pure_exp', the role 'abs_Pure_exp66' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp64' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Pure_exp'. From 'abs_Pure_exp', the role 'abs_Pure_exp67' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp69' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Pure_exp'. From 'abs_Pure_exp', the role 'abs_Pure_exp72' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp70' has cardinality 0..*.
+An association connects 'abs_Field_decl' and 'abs_Var_or_field_ref'. From 'abs_Field_decl', the role 'abs_Field_decl' has cardinality 0..*, and from 'abs_Var_or_field_ref', the role 'abs_Var_or_field_ref' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Pattern'. From 'abs_Pure_exp', the role 'abs_Pure_exp75' has cardinality 0..*, and from 'abs_Pattern', the role 'abs_Pattern' has cardinality 0..*.
+An association connects 'abs_Pattern' and 'abs_Pattern'. From 'abs_Pattern', the role 'abs_Pattern76' has cardinality 0..*, and from 'abs_Pattern', the role 'abs_Pattern78' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Pure_exp_list'. From 'abs_Pure_exp', the role 'abs_Pure_exp81' has cardinality 0..*, and from 'abs_Pure_exp_list', the role 'abs_Pure_exp_list80' has cardinality 0..*.
+An association connects 'abs_Function_list' and 'abs_Function_param'. From 'abs_Function_list', the role 'abs_Function_list83' has cardinality 0..*, and from 'abs_Function_param', the role 'abs_Function_param' has cardinality 0..*.
+An association connects 'abs_Anon_function_decl' and 'abs_Param_list'. From 'abs_Anon_function_decl', the role 'abs_Anon_function_decl' has cardinality 0..*, and from 'abs_Param_list', the role 'abs_Param_list85' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Anon_function_decl'. From 'abs_Pure_exp', the role 'abs_Pure_exp88' has cardinality 0..*, and from 'abs_Anon_function_decl', the role 'abs_Anon_function_decl87' has cardinality 0..*.
+An association connects 'abs_Param_list' and 'abs_Param_decl'. From 'abs_Param_list', the role 'abs_Param_list90' has cardinality 0..*, and from 'abs_Param_decl', the role 'abs_Param_decl' has cardinality 0..*.
+An association connects 'abs_Type_exp' and 'abs_Param_decl'. From 'abs_Type_exp', the role 'abs_Type_exp' has cardinality 0..*, and from 'abs_Param_decl', the role 'abs_Param_decl92' has cardinality 0..*.
+An association connects 'abs_Type_exp' and 'abs_Type_use'. From 'abs_Type_exp', the role 'abs_Type_exp94' has cardinality 0..*, and from 'abs_Type_use', the role 'abs_Type_use95' has cardinality 0..*.
+An association connects 'abs_Function_decl' and 'abs_Type_use'. From 'abs_Function_decl', the role 'abs_Function_decl' has cardinality 0..*, and from 'abs_Type_use', the role 'abs_Type_use97' has cardinality 0..*.
+An association connects 'abs_Param_list' and 'abs_Function_decl'. From 'abs_Param_list', the role 'abs_Param_list100' has cardinality 0..*, and from 'abs_Function_decl', the role 'abs_Function_decl99' has cardinality 0..*.
+An association connects 'abs_Function_decl' and 'abs_Pure_exp'. From 'abs_Function_decl', the role 'abs_Function_decl102' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp103' has cardinality 0..*.
+An association connects 'abs_Typesyn_decl' and 'abs_Type_use'. From 'abs_Typesyn_decl', the role 'abs_Typesyn_decl' has cardinality 0..*, and from 'abs_Type_use', the role 'abs_Type_use105' has cardinality 0..*.
+An association connects 'abs_Exception_decl' and 'abs_Data_constructor_arg'. From 'abs_Exception_decl', the role 'abs_Exception_decl' has cardinality 0..*, and from 'abs_Data_constructor_arg', the role 'abs_Data_constructor_arg107' has cardinality 0..*.
+An association connects 'abs_Interface_decl' and 'abs_Interface_decl'. From 'abs_Interface_decl', the role 'abs_Interface_decl' has cardinality 0..*, and from 'abs_Interface_decl', the role 'abs_Interface_decl108' has cardinality 0..*.
+An association connects 'abs_Methodsig' and 'abs_Interface_decl'. From 'abs_Methodsig', the role 'abs_Methodsig' has cardinality 0..*, and from 'abs_Interface_decl', the role 'abs_Interface_decl111' has cardinality 0..*.
+An association connects 'abs_Methodsig' and 'abs_Type_use'. From 'abs_Methodsig', the role 'abs_Methodsig113' has cardinality 0..*, and from 'abs_Type_use', the role 'abs_Type_use114' has cardinality 0..*.
+An association connects 'abs_Param_list' and 'abs_Methodsig'. From 'abs_Param_list', the role 'abs_Param_list117' has cardinality 0..*, and from 'abs_Methodsig', the role 'abs_Methodsig116' has cardinality 0..*.
+An association connects 'abs_Param_list' and 'abs_Class_decl'. From 'abs_Param_list', the role 'abs_Param_list119' has cardinality 0..*, and from 'abs_Class_decl', the role 'abs_Class_decl' has cardinality 0..*.
+An association connects 'abs_Interface_decl' and 'abs_Class_decl'. From 'abs_Interface_decl', the role 'abs_Interface_decl122' has cardinality 0..*, and from 'abs_Class_decl', the role 'abs_Class_decl121' has cardinality 0..*.
+An association connects 'abs_Field_decl' and 'abs_Class_decl'. From 'abs_Field_decl', the role 'abs_Field_decl125' has cardinality 0..*, and from 'abs_Class_decl', the role 'abs_Class_decl124' has cardinality 0..*.
+An association connects 'abs_Stmt' and 'abs_Class_decl'. From 'abs_Stmt', the role 'abs_Stmt' has cardinality 0..*, and from 'abs_Class_decl', the role 'abs_Class_decl127' has cardinality 0..*.
+An association connects 'abs_Class_decl' and 'abs_Casestmtbranch'. From 'abs_Class_decl', the role 'abs_Class_decl129' has cardinality 0..*, and from 'abs_Casestmtbranch', the role 'abs_Casestmtbranch' has cardinality 0..*.
+An association connects 'abs_Class_decl' and 'abs_Trait_usage'. From 'abs_Class_decl', the role 'abs_Class_decl131' has cardinality 0..*, and from 'abs_Trait_usage', the role 'abs_Trait_usage' has cardinality 0..*.
+An association connects 'abs_Class_decl' and 'abs_Method'. From 'abs_Class_decl', the role 'abs_Class_decl133' has cardinality 0..*, and from 'abs_Method', the role 'abs_Method' has cardinality 0..*.
+An association connects 'abs_Type_use' and 'abs_Field_decl'. From 'abs_Type_use', the role 'abs_Type_use136' has cardinality 0..*, and from 'abs_Field_decl', the role 'abs_Field_decl135' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Field_decl'. From 'abs_Pure_exp', the role 'abs_Pure_exp139' has cardinality 0..*, and from 'abs_Field_decl', the role 'abs_Field_decl138' has cardinality 0..*.
+An association connects 'abs_Stmt' and 'abs_Type_exp'. From 'abs_Stmt', the role 'abs_Stmt141' has cardinality 0..*, and from 'abs_Type_exp', the role 'abs_Type_exp142' has cardinality 0..*.
+An association connects 'abs_Exp' and 'abs_Stmt'. From 'abs_Exp', the role 'abs_Exp' has cardinality 0..*, and from 'abs_Stmt', the role 'abs_Stmt144' has cardinality 0..*.
+An association connects 'abs_Var_or_field_ref' and 'abs_Stmt'. From 'abs_Var_or_field_ref', the role 'abs_Var_or_field_ref147' has cardinality 0..*, and from 'abs_Stmt', the role 'abs_Stmt146' has cardinality 0..*.
+An association connects 'abs_Stmt' and 'abs_Stmt'. From 'abs_Stmt', the role 'abs_Stmt148' has cardinality 0..*, and from 'abs_Stmt', the role 'abs_Stmt150' has cardinality 0..*.
+An association connects 'abs_Stmt' and 'abs_Pure_exp'. From 'abs_Stmt', the role 'abs_Stmt152' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp153' has cardinality 0..*.
+An association connects 'abs_Stmt' and 'abs_Stmt'. From 'abs_Stmt', the role 'abs_Stmt154' has cardinality 0..*, and from 'abs_Stmt', the role 'abs_Stmt156' has cardinality 0..*.
+An association connects 'abs_Stmt' and 'abs_Stmt'. From 'abs_Stmt', the role 'abs_Stmt159' has cardinality 0..*, and from 'abs_Stmt', the role 'abs_Stmt157' has cardinality 0..*.
+An association connects 'abs_Stmt' and 'abs_Pure_exp'. From 'abs_Stmt', the role 'abs_Stmt161' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp162' has cardinality 0..*.
+An association connects 'abs_Stmt' and 'abs_Stmt'. From 'abs_Stmt', the role 'abs_Stmt165' has cardinality 0..*, and from 'abs_Stmt', the role 'abs_Stmt163' has cardinality 0..*.
+An association connects 'abs_Stmt' and 'abs_Pure_exp'. From 'abs_Stmt', the role 'abs_Stmt167' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp168' has cardinality 0..*.
+An association connects 'abs_Stmt' and 'abs_Stmt'. From 'abs_Stmt', the role 'abs_Stmt171' has cardinality 0..*, and from 'abs_Stmt', the role 'abs_Stmt169' has cardinality 0..*.
+An association connects 'abs_Stmt' and 'abs_Stmt'. From 'abs_Stmt', the role 'abs_Stmt174' has cardinality 0..*, and from 'abs_Stmt', the role 'abs_Stmt172' has cardinality 0..*.
+An association connects 'abs_Casestmtbranch' and 'abs_Stmt'. From 'abs_Casestmtbranch', the role 'abs_Casestmtbranch177' has cardinality 0..*, and from 'abs_Stmt', the role 'abs_Stmt176' has cardinality 0..*.
+An association connects 'abs_Guard' and 'abs_Stmt'. From 'abs_Guard', the role 'abs_Guard' has cardinality 0..*, and from 'abs_Stmt', the role 'abs_Stmt179' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Stmt'. From 'abs_Pure_exp', the role 'abs_Pure_exp182' has cardinality 0..*, and from 'abs_Stmt', the role 'abs_Stmt181' has cardinality 0..*.
+An association connects 'abs_Stmt' and 'abs_Pure_exp'. From 'abs_Stmt', the role 'abs_Stmt184' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp185' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Stmt'. From 'abs_Pure_exp', the role 'abs_Pure_exp188' has cardinality 0..*, and from 'abs_Stmt', the role 'abs_Stmt187' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Stmt'. From 'abs_Pure_exp', the role 'abs_Pure_exp191' has cardinality 0..*, and from 'abs_Stmt', the role 'abs_Stmt190' has cardinality 0..*.
+An association connects 'abs_Stmt' and 'abs_Pure_exp'. From 'abs_Stmt', the role 'abs_Stmt193' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp194' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Stmt'. From 'abs_Pure_exp', the role 'abs_Pure_exp197' has cardinality 0..*, and from 'abs_Stmt', the role 'abs_Stmt196' has cardinality 0..*.
+An association connects 'abs_Pure_exp_list' and 'abs_Eff_expr'. From 'abs_Pure_exp_list', the role 'abs_Pure_exp_list199' has cardinality 0..*, and from 'abs_Eff_expr', the role 'abs_Eff_expr' has cardinality 0..*.
+An association connects 'abs_Eff_expr' and 'abs_Pure_exp_list'. From 'abs_Eff_expr', the role 'abs_Eff_expr201' has cardinality 0..*, and from 'abs_Pure_exp_list', the role 'abs_Pure_exp_list202' has cardinality 0..*.
+An association connects 'abs_Var_or_field_ref' and 'abs_Guard'. From 'abs_Var_or_field_ref', the role 'abs_Var_or_field_ref205' has cardinality 0..*, and from 'abs_Guard', the role 'abs_Guard204' has cardinality 0..*.
+An association connects 'abs_Guard' and 'abs_Pure_exp'. From 'abs_Guard', the role 'abs_Guard207' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp208' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Guard'. From 'abs_Pure_exp', the role 'abs_Pure_exp211' has cardinality 0..*, and from 'abs_Guard', the role 'abs_Guard210' has cardinality 0..*.
+An association connects 'abs_Guard' and 'abs_Pure_exp'. From 'abs_Guard', the role 'abs_Guard213' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp214' has cardinality 0..*.
+An association connects 'abs_Pattern' and 'abs_Casestmtbranch'. From 'abs_Pattern', the role 'abs_Pattern217' has cardinality 0..*, and from 'abs_Casestmtbranch', the role 'abs_Casestmtbranch216' has cardinality 0..*.
+An association connects 'abs_Stmt' and 'abs_Casestmtbranch'. From 'abs_Stmt', the role 'abs_Stmt220' has cardinality 0..*, and from 'abs_Casestmtbranch', the role 'abs_Casestmtbranch219' has cardinality 0..*.
+An association connects 'abs_Trait_decl' and 'abs_Trait_usage'. From 'abs_Trait_decl', the role 'abs_Trait_decl' has cardinality 0..*, and from 'abs_Trait_usage', the role 'abs_Trait_usage222' has cardinality 0..*.
+An association connects 'abs_Trait_expr' and 'abs_Method'. From 'abs_Trait_expr', the role 'abs_Trait_expr' has cardinality 0..*, and from 'abs_Method', the role 'abs_Method224' has cardinality 0..*.
+An association connects 'abs_Method' and 'abs_Trait_expr'. From 'abs_Method', the role 'abs_Method227' has cardinality 0..*, and from 'abs_Trait_expr', the role 'abs_Trait_expr226' has cardinality 0..*.
+An association connects 'abs_Trait_expr' and 'abs_Trait_decl'. From 'abs_Trait_expr', the role 'abs_Trait_expr229' has cardinality 0..*, and from 'abs_Trait_decl', the role 'abs_Trait_decl230' has cardinality 0..*.
+An association connects 'abs_Trait_expr' and 'abs_Trait_oper'. From 'abs_Trait_expr', the role 'abs_Trait_expr232' has cardinality 0..*, and from 'abs_Trait_oper', the role 'abs_Trait_oper' has cardinality 0..*.
+An association connects 'abs_Trait_expr' and 'abs_Trait_expr'. From 'abs_Trait_expr', the role 'abs_Trait_expr233' has cardinality 0..*, and from 'abs_Trait_expr', the role 'abs_Trait_expr235' has cardinality 0..*.
+An association connects 'abs_Methodsig' and 'abs_Trait_oper'. From 'abs_Methodsig', the role 'abs_Methodsig238' has cardinality 0..*, and from 'abs_Trait_oper', the role 'abs_Trait_oper237' has cardinality 0..*.
+An association connects 'abs_Methodsig' and 'abs_Trait_oper'. From 'abs_Methodsig', the role 'abs_Methodsig241' has cardinality 0..*, and from 'abs_Trait_oper', the role 'abs_Trait_oper240' has cardinality 0..*.
+An association connects 'abs_Trait_oper' and 'abs_Trait_expr'. From 'abs_Trait_oper', the role 'abs_Trait_oper243' has cardinality 0..*, and from 'abs_Trait_expr', the role 'abs_Trait_expr244' has cardinality 0..*.
+An association connects 'abs_Trait_oper' and 'abs_Trait_expr'. From 'abs_Trait_oper', the role 'abs_Trait_oper246' has cardinality 0..*, and from 'abs_Trait_expr', the role 'abs_Trait_expr247' has cardinality 0..*.
+An association connects 'abs_Type_use' and 'abs_Method'. From 'abs_Type_use', the role 'abs_Type_use250' has cardinality 0..*, and from 'abs_Method', the role 'abs_Method249' has cardinality 0..*.
+An association connects 'abs_Method' and 'abs_Param_list'. From 'abs_Method', the role 'abs_Method252' has cardinality 0..*, and from 'abs_Param_list', the role 'abs_Param_list253' has cardinality 0..*.
+An association connects 'abs_Method' and 'abs_Stmt'. From 'abs_Method', the role 'abs_Method255' has cardinality 0..*, and from 'abs_Stmt', the role 'abs_Stmt256' has cardinality 0..*.
+An association connects 'abs_Trait_decl' and 'abs_Trait_expr'. From 'abs_Trait_decl', the role 'abs_Trait_decl258' has cardinality 0..*, and from 'abs_Trait_expr', the role 'abs_Trait_expr259' has cardinality 0..*.
+An association connects 'abs_Main_block' and 'abs_Stmt'. From 'abs_Main_block', the role 'abs_Main_block261' has cardinality 0..*, and from 'abs_Stmt', the role 'abs_Stmt262' has cardinality 0..*.
+An association connects 'abs_Delta_param' and 'abs_Delta_decl'. From 'abs_Delta_param', the role 'abs_Delta_param' has cardinality 0..*, and from 'abs_Delta_decl', the role 'abs_Delta_decl264' has cardinality 0..*.
+An association connects 'abs_Delta_decl' and 'abs_Delta_access'. From 'abs_Delta_decl', the role 'abs_Delta_decl266' has cardinality 0..*, and from 'abs_Delta_access', the role 'abs_Delta_access' has cardinality 0..*.
+An association connects 'abs_Module_modifier' and 'abs_Delta_decl'. From 'abs_Module_modifier', the role 'abs_Module_modifier' has cardinality 0..*, and from 'abs_Delta_decl', the role 'abs_Delta_decl268' has cardinality 0..*.
+An association connects 'abs_Has_condition' and 'abs_Field_decl'. From 'abs_Has_condition', the role 'abs_Has_condition' has cardinality 0..*, and from 'abs_Field_decl', the role 'abs_Field_decl270' has cardinality 0..*.
+An association connects 'abs_Methodsig' and 'abs_Has_condition'. From 'abs_Methodsig', the role 'abs_Methodsig273' has cardinality 0..*, and from 'abs_Has_condition', the role 'abs_Has_condition272' has cardinality 0..*.
+An association connects 'abs_Has_condition' and 'abs_Interface_decl'. From 'abs_Has_condition', the role 'abs_Has_condition275' has cardinality 0..*, and from 'abs_Interface_decl', the role 'abs_Interface_decl276' has cardinality 0..*.
+An association connects 'abs_Delta_access' and 'abs_Module_decl'. From 'abs_Delta_access', the role 'abs_Delta_access278' has cardinality 0..*, and from 'abs_Module_decl', the role 'abs_Module_decl279' has cardinality 0..*.
+An association connects 'abs_OO_modifier' and 'abs_Class_decl'. From 'abs_OO_modifier', the role 'abs_OO_modifier' has cardinality 0..*, and from 'abs_Class_decl', the role 'abs_Class_decl281' has cardinality 0..*.
+An association connects 'abs_OO_modifier' and 'abs_Interface_decl'. From 'abs_OO_modifier', the role 'abs_OO_modifier283' has cardinality 0..*, and from 'abs_Interface_decl', the role 'abs_Interface_decl284' has cardinality 0..*.
+An association connects 'abs_Class_decl' and 'abs_OO_modifier'. From 'abs_Class_decl', the role 'abs_Class_decl287' has cardinality 0..*, and from 'abs_OO_modifier', the role 'abs_OO_modifier286' has cardinality 0..*.
+An association connects 'abs_OO_modifier' and 'abs_Interface_decl'. From 'abs_OO_modifier', the role 'abs_OO_modifier289' has cardinality 0..*, and from 'abs_Interface_decl', the role 'abs_Interface_decl290' has cardinality 0..*.
+An association connects 'abs_OO_modifier' and 'abs_Interface_decl'. From 'abs_OO_modifier', the role 'abs_OO_modifier292' has cardinality 0..*, and from 'abs_Interface_decl', the role 'abs_Interface_decl293' has cardinality 0..*.
+An association connects 'abs_OO_modifier' and 'abs_Interface_decl'. From 'abs_OO_modifier', the role 'abs_OO_modifier295' has cardinality 0..*, and from 'abs_Interface_decl', the role 'abs_Interface_decl296' has cardinality 0..*.
+An association connects 'abs_Class_modifier_fragment' and 'abs_OO_modifier'. From 'abs_Class_modifier_fragment', the role 'abs_Class_modifier_fragment' has cardinality 0..*, and from 'abs_OO_modifier', the role 'abs_OO_modifier298' has cardinality 0..*.
+An association connects 'abs_OO_modifier' and 'abs_Interface_decl'. From 'abs_OO_modifier', the role 'abs_OO_modifier300' has cardinality 0..*, and from 'abs_Interface_decl', the role 'abs_Interface_decl301' has cardinality 0..*.
+An association connects 'abs_Interface_modifier_fragment' and 'abs_OO_modifier'. From 'abs_Interface_modifier_fragment', the role 'abs_Interface_modifier_fragment' has cardinality 0..*, and from 'abs_OO_modifier', the role 'abs_OO_modifier303' has cardinality 0..*.
+An association connects 'abs_Class_modifier_fragment' and 'abs_Methodsig'. From 'abs_Class_modifier_fragment', the role 'abs_Class_modifier_fragment305' has cardinality 0..*, and from 'abs_Methodsig', the role 'abs_Methodsig306' has cardinality 0..*.
+An association connects 'abs_Object_update' and 'abs_Update_decl'. From 'abs_Object_update', the role 'abs_Object_update' has cardinality 0..*, and from 'abs_Update_decl', the role 'abs_Update_decl308' has cardinality 0..*.
+An association connects 'abs_Guard' and 'abs_Object_update'. From 'abs_Guard', the role 'abs_Guard311' has cardinality 0..*, and from 'abs_Object_update', the role 'abs_Object_update310' has cardinality 0..*.
+An association connects 'abs_Update_preamble_declaration' and 'abs_Object_update'. From 'abs_Update_preamble_declaration', the role 'abs_Update_preamble_declaration' has cardinality 0..*, and from 'abs_Object_update', the role 'abs_Object_update313' has cardinality 0..*.
+An association connects 'abs_Object_update' and 'abs_Object_update_assign_stmt'. From 'abs_Object_update', the role 'abs_Object_update315' has cardinality 0..*, and from 'abs_Object_update_assign_stmt', the role 'abs_Object_update_assign_stmt' has cardinality 0..*.
+An association connects 'abs_Object_update' and 'abs_Object_update_assign_stmt'. From 'abs_Object_update', the role 'abs_Object_update317' has cardinality 0..*, and from 'abs_Object_update_assign_stmt', the role 'abs_Object_update_assign_stmt318' has cardinality 0..*.
+An association connects 'abs_Var_or_field_ref' and 'abs_Object_update_assign_stmt'. From 'abs_Var_or_field_ref', the role 'abs_Var_or_field_ref321' has cardinality 0..*, and from 'abs_Object_update_assign_stmt', the role 'abs_Object_update_assign_stmt320' has cardinality 0..*.
+An association connects 'abs_Exp' and 'abs_Object_update_assign_stmt'. From 'abs_Exp', the role 'abs_Exp324' has cardinality 0..*, and from 'abs_Object_update_assign_stmt', the role 'abs_Object_update_assign_stmt323' has cardinality 0..*.
+An association connects 'abs_Feature' and 'abs_Productline_decl'. From 'abs_Feature', the role 'abs_Feature' has cardinality 0..*, and from 'abs_Productline_decl', the role 'abs_Productline_decl326' has cardinality 0..*.
+An association connects 'abs_Delta_clause' and 'abs_Productline_decl'. From 'abs_Delta_clause', the role 'abs_Delta_clause' has cardinality 0..*, and from 'abs_Productline_decl', the role 'abs_Productline_decl328' has cardinality 0..*.
+An association connects 'abs_Feature' and 'abs_Feature_decl'. From 'abs_Feature', the role 'abs_Feature330' has cardinality 0..*, and from 'abs_Feature_decl', the role 'abs_Feature_decl331' has cardinality 0..*.
+An association connects 'abs_Delta_clause' and 'abs_Delta_decl'. From 'abs_Delta_clause', the role 'abs_Delta_clause333' has cardinality 0..*, and from 'abs_Delta_decl', the role 'abs_Delta_decl334' has cardinality 0..*.
+An association connects 'abs_After_condition' and 'abs_Delta_clause'. From 'abs_After_condition', the role 'abs_After_condition' has cardinality 0..*, and from 'abs_Delta_clause', the role 'abs_Delta_clause336' has cardinality 0..*.
+An association connects 'abs_From_condition' and 'abs_Delta_clause'. From 'abs_From_condition', the role 'abs_From_condition' has cardinality 0..*, and from 'abs_Delta_clause', the role 'abs_Delta_clause338' has cardinality 0..*.
+An association connects 'abs_When_condition' and 'abs_Delta_clause'. From 'abs_When_condition', the role 'abs_When_condition' has cardinality 0..*, and from 'abs_Delta_clause', the role 'abs_Delta_clause340' has cardinality 0..*.
+An association connects 'abs_After_condition' and 'abs_Delta_decl'. From 'abs_After_condition', the role 'abs_After_condition342' has cardinality 0..*, and from 'abs_Delta_decl', the role 'abs_Delta_decl343' has cardinality 0..*.
+An association connects 'abs_From_condition' and 'abs_Application_condition'. From 'abs_From_condition', the role 'abs_From_condition345' has cardinality 0..*, and from 'abs_Application_condition', the role 'abs_Application_condition' has cardinality 0..*.
+An association connects 'abs_Application_condition' and 'abs_When_condition'. From 'abs_Application_condition', the role 'abs_Application_condition348' has cardinality 0..*, and from 'abs_When_condition', the role 'abs_When_condition347' has cardinality 0..*.
+An association connects 'abs_Application_condition' and 'abs_Application_condition'. From 'abs_Application_condition', the role 'abs_Application_condition349' has cardinality 0..*, and from 'abs_Application_condition', the role 'abs_Application_condition351' has cardinality 0..*.
+An association connects 'abs_Feature' and 'abs_Application_condition'. From 'abs_Feature', the role 'abs_Feature354' has cardinality 0..*, and from 'abs_Application_condition', the role 'abs_Application_condition353' has cardinality 0..*.
+An association connects 'abs_Application_condition' and 'abs_Application_condition'. From 'abs_Application_condition', the role 'abs_Application_condition357' has cardinality 0..*, and from 'abs_Application_condition', the role 'abs_Application_condition355' has cardinality 0..*.
+An association connects 'abs_Application_condition' and 'abs_Application_condition'. From 'abs_Application_condition', the role 'abs_Application_condition358' has cardinality 0..*, and from 'abs_Application_condition', the role 'abs_Application_condition360' has cardinality 0..*.
+An association connects 'abs_Product_decl' and 'abs_Feature'. From 'abs_Product_decl', the role 'abs_Product_decl362' has cardinality 0..*, and from 'abs_Feature', the role 'abs_Feature363' has cardinality 0..*.
+An association connects 'abs_Product_reconfiguration' and 'abs_Product_decl'. From 'abs_Product_reconfiguration', the role 'abs_Product_reconfiguration' has cardinality 0..*, and from 'abs_Product_decl', the role 'abs_Product_decl365' has cardinality 0..*.
+An association connects 'abs_Product_expr' and 'abs_Product_decl'. From 'abs_Product_expr', the role 'abs_Product_expr' has cardinality 0..*, and from 'abs_Product_decl', the role 'abs_Product_decl367' has cardinality 0..*.
+An association connects 'abs_Feature_decl' and 'abs_Product_expr'. From 'abs_Feature_decl', the role 'abs_Feature_decl370' has cardinality 0..*, and from 'abs_Product_expr', the role 'abs_Product_expr369' has cardinality 0..*.
+An association connects 'abs_Product_expr' and 'abs_Product_decl'. From 'abs_Product_expr', the role 'abs_Product_expr372' has cardinality 0..*, and from 'abs_Product_decl', the role 'abs_Product_decl373' has cardinality 0..*.
+An association connects 'abs_Product_expr' and 'abs_Product_expr'. From 'abs_Product_expr', the role 'abs_Product_expr374' has cardinality 0..*, and from 'abs_Product_expr', the role 'abs_Product_expr376' has cardinality 0..*.
+An association connects 'abs_Product_expr' and 'abs_Product_expr'. From 'abs_Product_expr', the role 'abs_Product_expr379' has cardinality 0..*, and from 'abs_Product_expr', the role 'abs_Product_expr377' has cardinality 0..*.
+An association connects 'abs_Product_reconfiguration' and 'abs_Delta_id'. From 'abs_Product_reconfiguration', the role 'abs_Product_reconfiguration381' has cardinality 0..*, and from 'abs_Delta_id', the role 'abs_Delta_id' has cardinality 0..*.
+An association connects 'abs_Feature_decl_group' and 'abs_Feature_decl'. From 'abs_Feature_decl_group', the role 'abs_Feature_decl_group' has cardinality 0..*, and from 'abs_Feature_decl', the role 'abs_Feature_decl383' has cardinality 0..*.
+An association connects 'abs_Feature_decl_attribute' and 'abs_Feature_decl'. From 'abs_Feature_decl_attribute', the role 'abs_Feature_decl_attribute' has cardinality 0..*, and from 'abs_Feature_decl', the role 'abs_Feature_decl385' has cardinality 0..*.
+An association connects 'abs_Feature_decl' and 'abs_Feature_decl_constraint'. From 'abs_Feature_decl', the role 'abs_Feature_decl387' has cardinality 0..*, and from 'abs_Feature_decl_constraint', the role 'abs_Feature_decl_constraint' has cardinality 0..*.
+An association connects 'abs_Fnode' and 'abs_Feature_decl_group'. From 'abs_Fnode', the role 'abs_Fnode' has cardinality 0..*, and from 'abs_Feature_decl_group', the role 'abs_Feature_decl_group389' has cardinality 0..*.
+An association connects 'abs_Feature_decl_constraint' and 'abs_Mexp'. From 'abs_Feature_decl_constraint', the role 'abs_Feature_decl_constraint391' has cardinality 0..*, and from 'abs_Mexp', the role 'abs_Mexp' has cardinality 0..*.
+An association connects 'abs_Feature_decl_group' and 'abs_Fextension'. From 'abs_Feature_decl_group', the role 'abs_Feature_decl_group394' has cardinality 0..*, and from 'abs_Fextension', the role 'abs_Fextension393' has cardinality 0..*.
+An association connects 'abs_Fextension' and 'abs_Feature_decl_attribute'. From 'abs_Fextension', the role 'abs_Fextension396' has cardinality 0..*, and from 'abs_Feature_decl_attribute', the role 'abs_Feature_decl_attribute397' has cardinality 0..*.
+An association connects 'abs_Feature_decl_constraint' and 'abs_Fextension'. From 'abs_Feature_decl_constraint', the role 'abs_Feature_decl_constraint400' has cardinality 0..*, and from 'abs_Fextension', the role 'abs_Fextension399' has cardinality 0..*.
+An association connects 'abs_Or_expr' and 'abs_Pure_exp'. From 'abs_Or_expr', the role 'abs_Or_expr' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp402' has cardinality 0..*.
+An association connects 'abs_Or_expr' and 'abs_Pure_exp'. From 'abs_Or_expr', the role 'abs_Or_expr404' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp405' has cardinality 0..*.
+An association connects 'abs_And_expr' and 'abs_Pure_exp'. From 'abs_And_expr', the role 'abs_And_expr' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp407' has cardinality 0..*.
+An association connects 'abs_And_expr' and 'abs_Pure_exp'. From 'abs_And_expr', the role 'abs_And_expr409' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp410' has cardinality 0..*.
+An association connects 'abs_Equality_expr' and 'abs_Pure_exp'. From 'abs_Equality_expr', the role 'abs_Equality_expr' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp412' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Equality_expr'. From 'abs_Pure_exp', the role 'abs_Pure_exp415' has cardinality 0..*, and from 'abs_Equality_expr', the role 'abs_Equality_expr414' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_Comparison_expr'. From 'abs_Pure_exp', the role 'abs_Pure_exp417' has cardinality 0..*, and from 'abs_Comparison_expr', the role 'abs_Comparison_expr' has cardinality 0..*.
+An association connects 'abs_Comparison_expr' and 'abs_Pure_exp'. From 'abs_Comparison_expr', the role 'abs_Comparison_expr419' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp420' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_PlusOrMinus_expr'. From 'abs_Pure_exp', the role 'abs_Pure_exp422' has cardinality 0..*, and from 'abs_PlusOrMinus_expr', the role 'abs_PlusOrMinus_expr' has cardinality 0..*.
+An association connects 'abs_PlusOrMinus_expr' and 'abs_Pure_exp'. From 'abs_PlusOrMinus_expr', the role 'abs_PlusOrMinus_expr424' has cardinality 0..*, and from 'abs_Pure_exp', the role 'abs_Pure_exp425' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_MulDivOrMod_expr'. From 'abs_Pure_exp', the role 'abs_Pure_exp427' has cardinality 0..*, and from 'abs_MulDivOrMod_expr', the role 'abs_MulDivOrMod_expr' has cardinality 0..*.
+An association connects 'abs_Pure_exp' and 'abs_MulDivOrMod_expr'. From 'abs_Pure_exp', the role 'abs_Pure_exp430' has cardinality 0..*, and from 'abs_MulDivOrMod_expr', the role 'abs_MulDivOrMod_expr429' has cardinality 0..*.
+An association connects 'abs_AndGuard' and 'abs_Guard'. From 'abs_AndGuard', the role 'abs_AndGuard' has cardinality 0..*, and from 'abs_Guard', the role 'abs_Guard432' has cardinality 0..*.
+An association connects 'abs_AndGuard' and 'abs_Guard'. From 'abs_AndGuard', the role 'abs_AndGuard434' has cardinality 0..*, and from 'abs_Guard', the role 'abs_Guard435' has cardinality 0..*.
+An association connects 'abs_Mexp' and 'abs_MexpOr_exp'. From 'abs_Mexp', the role 'abs_Mexp437' has cardinality 0..*, and from 'abs_MexpOr_exp', the role 'abs_MexpOr_exp' has cardinality 0..*.
+An association connects 'abs_MexpOr_exp' and 'abs_Mexp'. From 'abs_MexpOr_exp', the role 'abs_MexpOr_exp439' has cardinality 0..*, and from 'abs_Mexp', the role 'abs_Mexp440' has cardinality 0..*.
+An association connects 'abs_Mexp' and 'abs_MexpAnd_expr'. From 'abs_Mexp', the role 'abs_Mexp442' has cardinality 0..*, and from 'abs_MexpAnd_expr', the role 'abs_MexpAnd_expr' has cardinality 0..*.
+An association connects 'abs_Mexp' and 'abs_MexpAnd_expr'. From 'abs_Mexp', the role 'abs_Mexp445' has cardinality 0..*, and from 'abs_MexpAnd_expr', the role 'abs_MexpAnd_expr444' has cardinality 0..*.
+An association connects 'abs_Mexp' and 'abs_MexpImplies_expr'. From 'abs_Mexp', the role 'abs_Mexp447' has cardinality 0..*, and from 'abs_MexpImplies_expr', the role 'abs_MexpImplies_expr' has cardinality 0..*.
+An association connects 'abs_Mexp' and 'abs_MexpImplies_expr'. From 'abs_Mexp', the role 'abs_Mexp450' has cardinality 0..*, and from 'abs_MexpImplies_expr', the role 'abs_MexpImplies_expr449' has cardinality 0..*.
+An association connects 'abs_MexpEquality_expr' and 'abs_Mexp'. From 'abs_MexpEquality_expr', the role 'abs_MexpEquality_expr' has cardinality 0..*, and from 'abs_Mexp', the role 'abs_Mexp452' has cardinality 0..*.
+An association connects 'abs_Mexp' and 'abs_MexpEquality_expr'. From 'abs_Mexp', the role 'abs_Mexp455' has cardinality 0..*, and from 'abs_MexpEquality_expr', the role 'abs_MexpEquality_expr454' has cardinality 0..*.
+An association connects 'abs_MexpComparison_expr' and 'abs_Mexp'. From 'abs_MexpComparison_expr', the role 'abs_MexpComparison_expr' has cardinality 0..*, and from 'abs_Mexp', the role 'abs_Mexp457' has cardinality 0..*.
+An association connects 'abs_Mexp' and 'abs_MexpComparison_expr'. From 'abs_Mexp', the role 'abs_Mexp460' has cardinality 0..*, and from 'abs_MexpComparison_expr', the role 'abs_MexpComparison_expr459' has cardinality 0..*.
+An association connects 'abs_MexpPlusOrMinus_expr' and 'abs_Mexp'. From 'abs_MexpPlusOrMinus_expr', the role 'abs_MexpPlusOrMinus_expr' has cardinality 0..*, and from 'abs_Mexp', the role 'abs_Mexp462' has cardinality 0..*.
+An association connects 'abs_MexpPlusOrMinus_expr' and 'abs_Mexp'. From 'abs_MexpPlusOrMinus_expr', the role 'abs_MexpPlusOrMinus_expr464' has cardinality 0..*, and from 'abs_Mexp', the role 'abs_Mexp465' has cardinality 0..*.
+An association connects 'abs_MexpMulDivOrMod_expr' and 'abs_Mexp'. From 'abs_MexpMulDivOrMod_expr', the role 'abs_MexpMulDivOrMod_expr' has cardinality 0..*, and from 'abs_Mexp', the role 'abs_Mexp467' has cardinality 0..*.
+An association connects 'abs_Mexp' and 'abs_MexpMulDivOrMod_expr'. From 'abs_Mexp', the role 'abs_Mexp470' has cardinality 0..*, and from 'abs_MexpMulDivOrMod_expr', the role 'abs_MexpMulDivOrMod_expr469' has cardinality 0..*.
+An association connects 'abs_Mexp' and 'abs_MexpPrimary_expr'. From 'abs_Mexp', the role 'abs_Mexp472' has cardinality 0..*, and from 'abs_MexpPrimary_expr', the role 'abs_MexpPrimary_expr' has cardinality 0..*.

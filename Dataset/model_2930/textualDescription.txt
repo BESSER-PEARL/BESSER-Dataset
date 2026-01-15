@@ -1,0 +1,51 @@
+The domain model 'domainmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'domainmodel_PackageDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_Method' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'name', which is of type str.
+
+'domainmodel_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'domainmodel_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_Feature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type bool; 'value', which is of type str.
+
+'domainmodel_Domainmodel' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'domainmodel_PackageDeclaration' is a specialization of 'AbstractElement'.
+The class 'domainmodel_Import' is a specialization of 'AbstractElement'.
+The class 'domainmodel_Type' is a specialization of 'AbstractElement'.
+The class 'domainmodel_DataType' is a specialization of 'Type'.
+The class 'domainmodel_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'domainmodel_AbstractElement' and 'domainmodel_Domainmodel'. From 'domainmodel_AbstractElement', the role 'domainmodel_AbstractElement' has cardinality 0..*, and from 'domainmodel_Domainmodel', the role 'domainmodel_Domainmodel' has cardinality 0..*.
+An association connects 'domainmodel_AbstractElement' and 'domainmodel_PackageDeclaration'. From 'domainmodel_AbstractElement', the role 'domainmodel_AbstractElement2' has cardinality 0..*, and from 'domainmodel_PackageDeclaration', the role 'domainmodel_PackageDeclaration' has cardinality 0..*.
+An association connects 'domainmodel_Entity' and 'domainmodel_Entity'. From 'domainmodel_Entity', the role 'domainmodel_Entity' has cardinality 0..*, and from 'domainmodel_Entity', the role 'domainmodel_Entity3' has cardinality 0..*.
+An association connects 'domainmodel_Entity' and 'domainmodel_Feature'. From 'domainmodel_Entity', the role 'domainmodel_Entity6' has cardinality 0..*, and from 'domainmodel_Feature', the role 'domainmodel_Feature' has cardinality 0..*.
+An association connects 'domainmodel_Method' and 'domainmodel_Entity'. From 'domainmodel_Method', the role 'domainmodel_Method' has cardinality 0..*, and from 'domainmodel_Entity', the role 'domainmodel_Entity8' has cardinality 0..*.
+An association connects 'domainmodel_Type' and 'domainmodel_Feature'. From 'domainmodel_Type', the role 'domainmodel_Type' has cardinality 0..*, and from 'domainmodel_Feature', the role 'domainmodel_Feature10' has cardinality 0..*.

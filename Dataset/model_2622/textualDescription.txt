@@ -1,0 +1,36 @@
+The domain model 'Dot' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Dot_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'Dot_Node' represents an important domain concept.
+It has the following attributes: 'shape', which is of type str; 'style', which is of type str.
+
+'Dot_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Dot_GraphElement' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'label', which is of type str.
+
+'Dot_DirectedArc' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Dot_Graph' is a specialization of 'NamedElement'.
+The class 'Dot_GraphElement' is a specialization of 'NamedElement'.
+The class 'Dot_Node' is a specialization of 'GraphElement'.
+The class 'Dot_DirectedArc' is a specialization of 'GraphElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Dot_GraphElement' and 'Dot_Graph'. From 'Dot_GraphElement', the role 'GraphElement' has cardinality 0..*, and from 'Dot_Graph', the role 'graph' has cardinality 0..*.
+An association connects 'Dot_GraphElement' and 'Dot_Graph'. From 'Dot_GraphElement', the role 'contents' has cardinality 0..*, and from 'Dot_Graph', the role 'Graph' has cardinality 0..*.
+An association connects 'Dot_DirectedArc' and 'Dot_Node'. From 'Dot_DirectedArc', the role 'Dot_DirectedArc' has cardinality 0..*, and from 'Dot_Node', the role 'Dot_Node' has cardinality 0..*.
+An association connects 'Dot_DirectedArc' and 'Dot_Node'. From 'Dot_DirectedArc', the role 'Dot_DirectedArc4' has cardinality 0..*, and from 'Dot_Node', the role 'Dot_Node5' has cardinality 0..*.

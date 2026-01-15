@@ -1,0 +1,795 @@
+The domain model 'robochart' describes the core structural elements and their relationships within the system.
+
+The model defines 168 main class(es).
+
+'robochart_ArrayExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Iff' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Exists' represents an important domain concept.
+It has one attribute: 'unique', which is of type bool.
+
+'robochart_Connection' represents an important domain concept.
+It has the following attributes: 'bidirec', which is of type bool; 'async', which is of type bool.
+
+'robochart_RCModule' represents an important domain concept.
+It does not declare any attributes.
+
+'LambdaExp' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationType' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_IsExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_ControllerDef' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_NamedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_NameType' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_NodeContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_ProbabilisticJunction' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationSig' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Assignable' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Call' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_And' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_BasicPackage' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'QuantifierExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_RoboticPlatformRef' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_BasicContext' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_VarSelection' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Cat' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_ExitAction' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Trigger' represents an important domain concept.
+It has one attribute: '_type', which is of type str.
+
+'robochart_SetComp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_SetRange' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Event' represents an important domain concept.
+It has one attribute: 'broadcast', which is of type bool.
+
+'robochart_StateMachineRef' represents an important domain concept.
+It does not declare any attributes.
+
+'Junction' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_TypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_ClockExp' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_TypedNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_GreaterOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Initial' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachineBody' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_ArrayAssignable' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'robochart_IntegerExp' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'robochart_VarExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_StateClockExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_LessThan' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_WaitingCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'robochart_SetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_IdExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_OperationDef' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_AnyType' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'robochart_IfStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Wait' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_FromExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_WaitingConditionRef' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_TypeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_EnumExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_ProductType' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_FloatExp' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'robochart_TupleExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Modulus' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_SeqType' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_IfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_VarRef' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_ControllerRef' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_ToExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_LambdaExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Assignable' represents an important domain concept.
+It does not declare any attributes.
+
+'RoboticPlatform' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_LetExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicContext' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_GreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_InExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_EntryAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_SeqStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_RecordType' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_ResultExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Mult' represents an important domain concept.
+It does not declare any attributes.
+
+'Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_CallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Skip' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Implies' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_OperationSig' represents an important domain concept.
+It has one attribute: 'terminates', which is of type bool.
+
+'robochart_TypeDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_ParExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_SendEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_SeqExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Different' represents an important domain concept.
+It does not declare any attributes.
+
+'Context' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Junction' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_RelationType' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_OperationRef' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_QuantifierExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_State' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_LessOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_ConnectionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_ClockReset' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Selection' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_RCPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_DefiniteDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_RoboticPlatform' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_FunctionType' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Forall' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Neg' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_StateMachineDef' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Clock' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_RoboticPlatformDef' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_RefExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_RangeExp' represents an important domain concept.
+It has the following attributes: 'linterval', which is of type str; 'rinterval', which is of type str.
+
+'NamedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_ElseExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Equals' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_MatrixType' represents an important domain concept.
+It has the following attributes: 'columns', which is of type int; 'rows', which is of type int.
+
+'robochart_BooleanExp' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'robochart_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_VariableList' represents an important domain concept.
+It has one attribute: 'modifier', which is of type str.
+
+'robochart_TimedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_DuringAction' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Variable' represents an important domain concept.
+It has one attribute: 'modifier', which is of type str.
+
+'robochart_AsExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_VectorType' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'robochart_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_ParStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Context' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_StateMachineBody' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'robochart_StringExp' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TriggerType' defines the following possible values: 'INPUT', 'SIMPLE', 'OUTPUT', 'SYNC', 'EMPTY'.
+The enumeration 'VariableModifier' defines the following possible values: 'VAR', 'CONST'.
+
+The model also captures inheritance relationships between classes.
+The class 'robochart_RCPackage' is a specialization of 'BasicPackage'.
+The class 'robochart_TypeDecl' is a specialization of 'NamedElement'.
+The class 'robochart_PrimitiveType' is a specialization of 'TypeDecl'.
+The class 'robochart_RecordType' is a specialization of 'TypeDecl'.
+The class 'robochart_Field' is a specialization of 'Member'.
+The class 'robochart_Field' is a specialization of 'NamedExpression'.
+The class 'robochart_TypedNamedElement' is a specialization of 'NamedElement'.
+The class 'robochart_Member' is a specialization of 'TypedNamedElement'.
+The class 'robochart_Enumeration' is a specialization of 'TypeDecl'.
+The class 'robochart_Literal' is a specialization of 'TypeDecl'.
+The class 'robochart_Literal' is a specialization of 'NamedExpression'.
+The class 'robochart_NameType' is a specialization of 'TypeDecl'.
+The class 'robochart_ProductType' is a specialization of 'Type'.
+The class 'robochart_RelationType' is a specialization of 'Type'.
+The class 'robochart_FunctionType' is a specialization of 'RelationType'.
+The class 'robochart_SetType' is a specialization of 'Type'.
+The class 'robochart_SeqType' is a specialization of 'SetType'.
+The class 'robochart_TypeRef' is a specialization of 'Type'.
+The class 'robochart_AnyType' is a specialization of 'Type'.
+The class 'robochart_Variable' is a specialization of 'TypedNamedElement'.
+The class 'robochart_Variable' is a specialization of 'NamedExpression'.
+The class 'robochart_Variable' is a specialization of 'Member'.
+The class 'robochart_Event' is a specialization of 'NamedElement'.
+The class 'robochart_Function' is a specialization of 'TypedNamedElement'.
+The class 'robochart_Function' is a specialization of 'NamedExpression'.
+The class 'robochart_Parameter' is a specialization of 'Variable'.
+The class 'robochart_OperationSig' is a specialization of 'NamedElement'.
+The class 'robochart_Operation' is a specialization of 'NamedElement'.
+The class 'robochart_Operation' is a specialization of 'ConnectionNode'.
+The class 'robochart_OperationDef' is a specialization of 'Operation'.
+The class 'robochart_OperationDef' is a specialization of 'OperationSig'.
+The class 'robochart_OperationDef' is a specialization of 'StateMachineBody'.
+The class 'robochart_OperationRef' is a specialization of 'Operation'.
+The class 'robochart_OperationRef' is a specialization of 'Reference'.
+The class 'robochart_Interface' is a specialization of 'NamedElement'.
+The class 'robochart_Interface' is a specialization of 'BasicContext'.
+The class 'robochart_RoboticPlatform' is a specialization of 'NamedElement'.
+The class 'robochart_RoboticPlatform' is a specialization of 'ConnectionNode'.
+The class 'robochart_RoboticPlatformDef' is a specialization of 'Context'.
+The class 'robochart_RoboticPlatformDef' is a specialization of 'RoboticPlatform'.
+The class 'robochart_Context' is a specialization of 'BasicContext'.
+The class 'robochart_RoboticPlatformRef' is a specialization of 'RoboticPlatform'.
+The class 'robochart_RoboticPlatformRef' is a specialization of 'Reference'.
+The class 'robochart_StateMachine' is a specialization of 'NamedElement'.
+The class 'robochart_StateMachine' is a specialization of 'ConnectionNode'.
+The class 'robochart_StateMachineDef' is a specialization of 'StateMachineBody'.
+The class 'robochart_StateMachineDef' is a specialization of 'StateMachine'.
+The class 'robochart_StateMachineRef' is a specialization of 'StateMachine'.
+The class 'robochart_StateMachineRef' is a specialization of 'Reference'.
+The class 'robochart_StateMachineBody' is a specialization of 'Context'.
+The class 'robochart_StateMachineBody' is a specialization of 'NodeContainer'.
+The class 'robochart_Clock' is a specialization of 'NamedElement'.
+The class 'robochart_Node' is a specialization of 'NamedElement'.
+The class 'robochart_Junction' is a specialization of 'Node'.
+The class 'robochart_Initial' is a specialization of 'Junction'.
+The class 'robochart_State' is a specialization of 'Node'.
+The class 'robochart_State' is a specialization of 'NodeContainer'.
+The class 'robochart_Final' is a specialization of 'State'.
+The class 'robochart_ProbabilisticJunction' is a specialization of 'Junction'.
+The class 'robochart_Transition' is a specialization of 'NamedElement'.
+The class 'robochart_EntryAction' is a specialization of 'Action'.
+The class 'robochart_DuringAction' is a specialization of 'Action'.
+The class 'robochart_ExitAction' is a specialization of 'Action'.
+The class 'robochart_Controller' is a specialization of 'NamedElement'.
+The class 'robochart_Controller' is a specialization of 'ConnectionNode'.
+The class 'robochart_ControllerDef' is a specialization of 'Context'.
+The class 'robochart_ControllerDef' is a specialization of 'Controller'.
+The class 'robochart_ControllerRef' is a specialization of 'Controller'.
+The class 'robochart_RCModule' is a specialization of 'NamedElement'.
+The class 'robochart_TimedStatement' is a specialization of 'Statement'.
+The class 'robochart_Wait' is a specialization of 'Statement'.
+The class 'robochart_Skip' is a specialization of 'Statement'.
+The class 'robochart_IfStmt' is a specialization of 'Statement'.
+The class 'robochart_Assignment' is a specialization of 'Statement'.
+The class 'robochart_SendEvent' is a specialization of 'Statement'.
+The class 'robochart_SeqStatement' is a specialization of 'Statement'.
+The class 'robochart_ParStmt' is a specialization of 'Statement'.
+The class 'robochart_Call' is a specialization of 'Statement'.
+The class 'robochart_ClockReset' is a specialization of 'Statement'.
+The class 'robochart_ResultExp' is a specialization of 'Expression'.
+The class 'robochart_ArrayExp' is a specialization of 'Expression'.
+The class 'robochart_ClockExp' is a specialization of 'Expression'.
+The class 'robochart_StateClockExp' is a specialization of 'Expression'.
+The class 'robochart_BinaryExpression' is a specialization of 'Expression'.
+The class 'robochart_Iff' is a specialization of 'BinaryExpression'.
+The class 'robochart_Implies' is a specialization of 'BinaryExpression'.
+The class 'robochart_Or' is a specialization of 'BinaryExpression'.
+The class 'robochart_QuantifierExpression' is a specialization of 'Expression'.
+The class 'robochart_Forall' is a specialization of 'QuantifierExpression'.
+The class 'robochart_Exists' is a specialization of 'QuantifierExpression'.
+The class 'robochart_LambdaExp' is a specialization of 'Expression'.
+The class 'robochart_DefiniteDescription' is a specialization of 'LambdaExp'.
+The class 'robochart_IfExpression' is a specialization of 'Expression'.
+The class 'robochart_Declaration' is a specialization of 'NamedElement'.
+The class 'robochart_Declaration' is a specialization of 'NamedExpression'.
+The class 'robochart_LetExpression' is a specialization of 'Expression'.
+The class 'robochart_And' is a specialization of 'BinaryExpression'.
+The class 'robochart_Not' is a specialization of 'Expression'.
+The class 'robochart_InExp' is a specialization of 'Expression'.
+The class 'robochart_TypeExp' is a specialization of 'Expression'.
+The class 'robochart_Equals' is a specialization of 'BinaryExpression'.
+The class 'robochart_Different' is a specialization of 'BinaryExpression'.
+The class 'robochart_GreaterThan' is a specialization of 'BinaryExpression'.
+The class 'robochart_GreaterOrEqual' is a specialization of 'BinaryExpression'.
+The class 'robochart_LessThan' is a specialization of 'BinaryExpression'.
+The class 'robochart_LessOrEqual' is a specialization of 'BinaryExpression'.
+The class 'robochart_Plus' is a specialization of 'BinaryExpression'.
+The class 'robochart_Minus' is a specialization of 'BinaryExpression'.
+The class 'robochart_Modulus' is a specialization of 'BinaryExpression'.
+The class 'robochart_Mult' is a specialization of 'BinaryExpression'.
+The class 'robochart_Div' is a specialization of 'BinaryExpression'.
+The class 'robochart_Cat' is a specialization of 'BinaryExpression'.
+The class 'robochart_Neg' is a specialization of 'Expression'.
+The class 'robochart_Selection' is a specialization of 'Expression'.
+The class 'robochart_IntegerExp' is a specialization of 'Expression'.
+The class 'robochart_FloatExp' is a specialization of 'Expression'.
+The class 'robochart_StringExp' is a specialization of 'Expression'.
+The class 'robochart_BooleanExp' is a specialization of 'Expression'.
+The class 'robochart_VarExp' is a specialization of 'Expression'.
+The class 'robochart_RefExp' is a specialization of 'Expression'.
+The class 'robochart_ToExp' is a specialization of 'Expression'.
+The class 'robochart_FromExp' is a specialization of 'Expression'.
+The class 'robochart_IdExp' is a specialization of 'Expression'.
+The class 'robochart_AsExp' is a specialization of 'Expression'.
+The class 'robochart_IsExp' is a specialization of 'Expression'.
+The class 'robochart_EnumExp' is a specialization of 'Expression'.
+The class 'robochart_ParExp' is a specialization of 'Expression'.
+The class 'robochart_SeqExp' is a specialization of 'Expression'.
+The class 'robochart_SetExp' is a specialization of 'Expression'.
+The class 'robochart_SetComp' is a specialization of 'Expression'.
+The class 'robochart_SetRange' is a specialization of 'Expression'.
+The class 'robochart_TupleExp' is a specialization of 'Expression'.
+The class 'robochart_RangeExp' is a specialization of 'Expression'.
+The class 'robochart_CallExp' is a specialization of 'Expression'.
+The class 'robochart_ElseExp' is a specialization of 'Expression'.
+The class 'robochart_VarSelection' is a specialization of 'Assignable'.
+The class 'robochart_ArrayAssignable' is a specialization of 'Assignable'.
+The class 'robochart_VarRef' is a specialization of 'Assignable'.
+The class 'robochart_WaitingCondition' is a specialization of 'NamedElement'.
+The class 'robochart_WaitingConditionRef' is a specialization of 'Expression'.
+The class 'robochart_VectorType' is a specialization of 'Type'.
+The class 'robochart_MatrixType' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'robochart_Import' and 'robochart_BasicPackage'. From 'robochart_Import', the role 'robochart_Import' has cardinality 0..*, and from 'robochart_BasicPackage', the role 'robochart_BasicPackage' has cardinality 0..*.
+An association connects 'robochart_Interface' and 'robochart_RCPackage'. From 'robochart_Interface', the role 'robochart_Interface' has cardinality 0..*, and from 'robochart_RCPackage', the role 'robochart_RCPackage' has cardinality 0..*.
+An association connects 'robochart_RCPackage' and 'robochart_RoboticPlatformDef'. From 'robochart_RCPackage', the role 'robochart_RCPackage3' has cardinality 0..*, and from 'robochart_RoboticPlatformDef', the role 'robochart_RoboticPlatformDef' has cardinality 0..*.
+An association connects 'robochart_RCPackage' and 'robochart_TypeDecl'. From 'robochart_RCPackage', the role 'robochart_RCPackage5' has cardinality 0..*, and from 'robochart_TypeDecl', the role 'robochart_TypeDecl' has cardinality 0..*.
+An association connects 'robochart_StateMachineDef' and 'robochart_RCPackage'. From 'robochart_StateMachineDef', the role 'robochart_StateMachineDef' has cardinality 0..*, and from 'robochart_RCPackage', the role 'robochart_RCPackage7' has cardinality 0..*.
+An association connects 'robochart_RCPackage' and 'robochart_ControllerDef'. From 'robochart_RCPackage', the role 'robochart_RCPackage9' has cardinality 0..*, and from 'robochart_ControllerDef', the role 'robochart_ControllerDef' has cardinality 0..*.
+An association connects 'robochart_RCPackage' and 'robochart_RCModule'. From 'robochart_RCPackage', the role 'robochart_RCPackage11' has cardinality 0..*, and from 'robochart_RCModule', the role 'robochart_RCModule' has cardinality 0..*.
+An association connects 'robochart_RCPackage' and 'robochart_OperationDef'. From 'robochart_RCPackage', the role 'robochart_RCPackage13' has cardinality 0..*, and from 'robochart_OperationDef', the role 'robochart_OperationDef' has cardinality 0..*.
+An association connects 'robochart_Function' and 'robochart_RCPackage'. From 'robochart_Function', the role 'robochart_Function' has cardinality 0..*, and from 'robochart_RCPackage', the role 'robochart_RCPackage15' has cardinality 0..*.
+An association connects 'robochart_Field' and 'robochart_RecordType'. From 'robochart_Field', the role 'robochart_Field' has cardinality 0..*, and from 'robochart_RecordType', the role 'robochart_RecordType' has cardinality 0..*.
+An association connects 'robochart_TypedNamedElement' and 'robochart_Type'. From 'robochart_TypedNamedElement', the role 'robochart_TypedNamedElement' has cardinality 0..*, and from 'robochart_Type', the role 'robochart_Type' has cardinality 0..*.
+An association connects 'robochart_Literal' and 'robochart_Enumeration'. From 'robochart_Literal', the role 'robochart_Literal' has cardinality 0..*, and from 'robochart_Enumeration', the role 'robochart_Enumeration' has cardinality 0..*.
+An association connects 'robochart_Type' and 'robochart_Literal'. From 'robochart_Type', the role 'robochart_Type21' has cardinality 0..*, and from 'robochart_Literal', the role 'robochart_Literal20' has cardinality 0..*.
+An association connects 'robochart_Type' and 'robochart_NameType'. From 'robochart_Type', the role 'robochart_Type23' has cardinality 0..*, and from 'robochart_NameType', the role 'robochart_NameType' has cardinality 0..*.
+An association connects 'robochart_Type' and 'robochart_ProductType'. From 'robochart_Type', the role 'robochart_Type25' has cardinality 0..*, and from 'robochart_ProductType', the role 'robochart_ProductType' has cardinality 0..*.
+An association connects 'robochart_Type' and 'robochart_RelationType'. From 'robochart_Type', the role 'robochart_Type27' has cardinality 0..*, and from 'robochart_RelationType', the role 'robochart_RelationType' has cardinality 0..*.
+An association connects 'robochart_Type' and 'robochart_RelationType'. From 'robochart_Type', the role 'robochart_Type30' has cardinality 0..*, and from 'robochart_RelationType', the role 'robochart_RelationType29' has cardinality 0..*.
+An association connects 'robochart_SetType' and 'robochart_Type'. From 'robochart_SetType', the role 'robochart_SetType' has cardinality 0..*, and from 'robochart_Type', the role 'robochart_Type32' has cardinality 0..*.
+An association connects 'robochart_TypeRef' and 'robochart_TypeDecl'. From 'robochart_TypeRef', the role 'robochart_TypeRef' has cardinality 0..*, and from 'robochart_TypeDecl', the role 'robochart_TypeDecl34' has cardinality 0..*.
+An association connects 'robochart_Variable' and 'robochart_VariableList'. From 'robochart_Variable', the role 'robochart_Variable' has cardinality 0..*, and from 'robochart_VariableList', the role 'robochart_VariableList' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_Variable'. From 'robochart_Expression', the role 'robochart_Expression' has cardinality 0..*, and from 'robochart_Variable', the role 'robochart_Variable37' has cardinality 0..*.
+An association connects 'robochart_Type' and 'robochart_Event'. From 'robochart_Type', the role 'robochart_Type39' has cardinality 0..*, and from 'robochart_Event', the role 'robochart_Event' has cardinality 0..*.
+An association connects 'robochart_Parameter' and 'robochart_Function'. From 'robochart_Parameter', the role 'robochart_Parameter' has cardinality 0..*, and from 'robochart_Function', the role 'robochart_Function41' has cardinality 0..*.
+An association connects 'robochart_Function' and 'robochart_Expression'. From 'robochart_Function', the role 'robochart_Function43' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression44' has cardinality 0..*.
+An association connects 'robochart_Function' and 'robochart_Expression'. From 'robochart_Function', the role 'robochart_Function46' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression47' has cardinality 0..*.
+An association connects 'robochart_Parameter' and 'robochart_OperationSig'. From 'robochart_Parameter', the role 'robochart_Parameter49' has cardinality 0..*, and from 'robochart_OperationSig', the role 'robochart_OperationSig' has cardinality 0..*.
+An association connects 'robochart_OperationSig' and 'robochart_Expression'. From 'robochart_OperationSig', the role 'robochart_OperationSig51' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression52' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_OperationSig'. From 'robochart_Expression', the role 'robochart_Expression55' has cardinality 0..*, and from 'robochart_OperationSig', the role 'robochart_OperationSig54' has cardinality 0..*.
+An association connects 'robochart_OperationDef' and 'robochart_OperationRef'. From 'robochart_OperationDef', the role 'robochart_OperationDef57' has cardinality 0..*, and from 'robochart_OperationRef', the role 'robochart_OperationRef' has cardinality 0..*.
+An association connects 'robochart_VariableList' and 'robochart_BasicContext'. From 'robochart_VariableList', the role 'robochart_VariableList59' has cardinality 0..*, and from 'robochart_BasicContext', the role 'robochart_BasicContext' has cardinality 0..*.
+An association connects 'robochart_OperationSig' and 'robochart_BasicContext'. From 'robochart_OperationSig', the role 'robochart_OperationSig62' has cardinality 0..*, and from 'robochart_BasicContext', the role 'robochart_BasicContext61' has cardinality 0..*.
+An association connects 'robochart_Event' and 'robochart_BasicContext'. From 'robochart_Event', the role 'robochart_Event65' has cardinality 0..*, and from 'robochart_BasicContext', the role 'robochart_BasicContext64' has cardinality 0..*.
+An association connects 'robochart_BasicContext' and 'robochart_Clock'. From 'robochart_BasicContext', the role 'robochart_BasicContext67' has cardinality 0..*, and from 'robochart_Clock', the role 'robochart_Clock' has cardinality 0..*.
+An association connects 'robochart_Context' and 'robochart_Interface'. From 'robochart_Context', the role 'robochart_Context' has cardinality 0..*, and from 'robochart_Interface', the role 'robochart_Interface69' has cardinality 0..*.
+An association connects 'robochart_Interface' and 'robochart_Context'. From 'robochart_Interface', the role 'robochart_Interface72' has cardinality 0..*, and from 'robochart_Context', the role 'robochart_Context71' has cardinality 0..*.
+An association connects 'robochart_Context' and 'robochart_Interface'. From 'robochart_Context', the role 'robochart_Context74' has cardinality 0..*, and from 'robochart_Interface', the role 'robochart_Interface75' has cardinality 0..*.
+An association connects 'robochart_RoboticPlatformDef' and 'robochart_RoboticPlatformRef'. From 'robochart_RoboticPlatformDef', the role 'robochart_RoboticPlatformDef77' has cardinality 0..*, and from 'robochart_RoboticPlatformRef', the role 'robochart_RoboticPlatformRef' has cardinality 0..*.
+An association connects 'robochart_StateMachineRef' and 'robochart_StateMachineDef'. From 'robochart_StateMachineRef', the role 'robochart_StateMachineRef' has cardinality 0..*, and from 'robochart_StateMachineDef', the role 'robochart_StateMachineDef79' has cardinality 0..*.
+An association connects 'robochart_NodeContainer' and 'robochart_Node'. From 'robochart_NodeContainer', the role 'robochart_NodeContainer' has cardinality 0..*, and from 'robochart_Node', the role 'robochart_Node' has cardinality 0..*.
+An association connects 'robochart_Transition' and 'robochart_NodeContainer'. From 'robochart_Transition', the role 'robochart_Transition' has cardinality 0..*, and from 'robochart_NodeContainer', the role 'robochart_NodeContainer82' has cardinality 0..*.
+An association connects 'robochart_Action' and 'robochart_State'. From 'robochart_Action', the role 'robochart_Action' has cardinality 0..*, and from 'robochart_State', the role 'robochart_State' has cardinality 0..*.
+An association connects 'robochart_Node' and 'robochart_Transition'. From 'robochart_Node', the role 'robochart_Node86' has cardinality 0..*, and from 'robochart_Transition', the role 'robochart_Transition85' has cardinality 0..*.
+An association connects 'robochart_Node' and 'robochart_Transition'. From 'robochart_Node', the role 'robochart_Node89' has cardinality 0..*, and from 'robochart_Transition', the role 'robochart_Transition88' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_Transition'. From 'robochart_Expression', the role 'robochart_Expression92' has cardinality 0..*, and from 'robochart_Transition', the role 'robochart_Transition91' has cardinality 0..*.
+An association connects 'robochart_Transition' and 'robochart_Trigger'. From 'robochart_Transition', the role 'robochart_Transition94' has cardinality 0..*, and from 'robochart_Trigger', the role 'robochart_Trigger' has cardinality 0..*.
+An association connects 'robochart_Transition' and 'robochart_Expression'. From 'robochart_Transition', the role 'robochart_Transition96' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression97' has cardinality 0..*.
+An association connects 'robochart_Transition' and 'robochart_Expression'. From 'robochart_Transition', the role 'robochart_Transition99' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression100' has cardinality 0..*.
+An association connects 'robochart_Statement' and 'robochart_Transition'. From 'robochart_Statement', the role 'robochart_Statement' has cardinality 0..*, and from 'robochart_Transition', the role 'robochart_Transition102' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_Transition'. From 'robochart_Expression', the role 'robochart_Expression105' has cardinality 0..*, and from 'robochart_Transition', the role 'robochart_Transition104' has cardinality 0..*.
+An association connects 'robochart_Event' and 'robochart_Trigger'. From 'robochart_Event', the role 'robochart_Event108' has cardinality 0..*, and from 'robochart_Trigger', the role 'robochart_Trigger107' has cardinality 0..*.
+An association connects 'robochart_Variable' and 'robochart_Trigger'. From 'robochart_Variable', the role 'robochart_Variable111' has cardinality 0..*, and from 'robochart_Trigger', the role 'robochart_Trigger110' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_Trigger'. From 'robochart_Expression', the role 'robochart_Expression114' has cardinality 0..*, and from 'robochart_Trigger', the role 'robochart_Trigger113' has cardinality 0..*.
+An association connects 'robochart_Trigger' and 'robochart_Variable'. From 'robochart_Trigger', the role 'robochart_Trigger116' has cardinality 0..*, and from 'robochart_Variable', the role 'robochart_Variable117' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_Trigger'. From 'robochart_Expression', the role 'robochart_Expression120' has cardinality 0..*, and from 'robochart_Trigger', the role 'robochart_Trigger119' has cardinality 0..*.
+An association connects 'robochart_Variable' and 'robochart_Trigger'. From 'robochart_Variable', the role 'robochart_Variable123' has cardinality 0..*, and from 'robochart_Trigger', the role 'robochart_Trigger122' has cardinality 0..*.
+An association connects 'robochart_Trigger' and 'robochart_ClockReset'. From 'robochart_Trigger', the role 'robochart_Trigger125' has cardinality 0..*, and from 'robochart_ClockReset', the role 'robochart_ClockReset' has cardinality 0..*.
+An association connects 'robochart_Action' and 'robochart_Statement'. From 'robochart_Action', the role 'robochart_Action127' has cardinality 0..*, and from 'robochart_Statement', the role 'robochart_Statement128' has cardinality 0..*.
+An association connects 'robochart_ControllerDef' and 'robochart_StateMachine'. From 'robochart_ControllerDef', the role 'robochart_ControllerDef130' has cardinality 0..*, and from 'robochart_StateMachine', the role 'robochart_StateMachine' has cardinality 0..*.
+An association connects 'robochart_Operation' and 'robochart_ControllerDef'. From 'robochart_Operation', the role 'robochart_Operation' has cardinality 0..*, and from 'robochart_ControllerDef', the role 'robochart_ControllerDef132' has cardinality 0..*.
+An association connects 'robochart_ControllerDef' and 'robochart_Connection'. From 'robochart_ControllerDef', the role 'robochart_ControllerDef134' has cardinality 0..*, and from 'robochart_Connection', the role 'robochart_Connection' has cardinality 0..*.
+An association connects 'robochart_Connection' and 'robochart_ConnectionNode'. From 'robochart_Connection', the role 'robochart_Connection136' has cardinality 0..*, and from 'robochart_ConnectionNode', the role 'robochart_ConnectionNode' has cardinality 0..*.
+An association connects 'robochart_ConnectionNode' and 'robochart_Connection'. From 'robochart_ConnectionNode', the role 'robochart_ConnectionNode139' has cardinality 0..*, and from 'robochart_Connection', the role 'robochart_Connection138' has cardinality 0..*.
+An association connects 'robochart_Connection' and 'robochart_Event'. From 'robochart_Connection', the role 'robochart_Connection141' has cardinality 0..*, and from 'robochart_Event', the role 'robochart_Event142' has cardinality 0..*.
+An association connects 'robochart_Connection' and 'robochart_Event'. From 'robochart_Connection', the role 'robochart_Connection144' has cardinality 0..*, and from 'robochart_Event', the role 'robochart_Event145' has cardinality 0..*.
+An association connects 'robochart_ControllerDef' and 'robochart_ControllerRef'. From 'robochart_ControllerDef', the role 'robochart_ControllerDef147' has cardinality 0..*, and from 'robochart_ControllerRef', the role 'robochart_ControllerRef' has cardinality 0..*.
+An association connects 'robochart_Connection' and 'robochart_RCModule'. From 'robochart_Connection', the role 'robochart_Connection150' has cardinality 0..*, and from 'robochart_RCModule', the role 'robochart_RCModule149' has cardinality 0..*.
+An association connects 'robochart_ConnectionNode' and 'robochart_RCModule'. From 'robochart_ConnectionNode', the role 'robochart_ConnectionNode153' has cardinality 0..*, and from 'robochart_RCModule', the role 'robochart_RCModule152' has cardinality 0..*.
+An association connects 'robochart_TimedStatement' and 'robochart_Expression'. From 'robochart_TimedStatement', the role 'robochart_TimedStatement' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression155' has cardinality 0..*.
+An association connects 'robochart_TimedStatement' and 'robochart_Statement'. From 'robochart_TimedStatement', the role 'robochart_TimedStatement157' has cardinality 0..*, and from 'robochart_Statement', the role 'robochart_Statement158' has cardinality 0..*.
+An association connects 'robochart_TimedStatement' and 'robochart_Expression'. From 'robochart_TimedStatement', the role 'robochart_TimedStatement160' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression161' has cardinality 0..*.
+An association connects 'robochart_Wait' and 'robochart_Expression'. From 'robochart_Wait', the role 'robochart_Wait' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression163' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_IfStmt'. From 'robochart_Expression', the role 'robochart_Expression165' has cardinality 0..*, and from 'robochart_IfStmt', the role 'robochart_IfStmt' has cardinality 0..*.
+An association connects 'robochart_IfStmt' and 'robochart_Statement'. From 'robochart_IfStmt', the role 'robochart_IfStmt167' has cardinality 0..*, and from 'robochart_Statement', the role 'robochart_Statement168' has cardinality 0..*.
+An association connects 'robochart_IfStmt' and 'robochart_Statement'. From 'robochart_IfStmt', the role 'robochart_IfStmt170' has cardinality 0..*, and from 'robochart_Statement', the role 'robochart_Statement171' has cardinality 0..*.
+An association connects 'robochart_Assignment' and 'robochart_Assignable'. From 'robochart_Assignment', the role 'robochart_Assignment' has cardinality 0..*, and from 'robochart_Assignable', the role 'robochart_Assignable' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_Assignment'. From 'robochart_Expression', the role 'robochart_Expression175' has cardinality 0..*, and from 'robochart_Assignment', the role 'robochart_Assignment174' has cardinality 0..*.
+An association connects 'robochart_Trigger' and 'robochart_SendEvent'. From 'robochart_Trigger', the role 'robochart_Trigger177' has cardinality 0..*, and from 'robochart_SendEvent', the role 'robochart_SendEvent' has cardinality 0..*.
+An association connects 'robochart_Statement' and 'robochart_SeqStatement'. From 'robochart_Statement', the role 'robochart_Statement179' has cardinality 0..*, and from 'robochart_SeqStatement', the role 'robochart_SeqStatement' has cardinality 0..*.
+An association connects 'robochart_Statement' and 'robochart_ParStmt'. From 'robochart_Statement', the role 'robochart_Statement181' has cardinality 0..*, and from 'robochart_ParStmt', the role 'robochart_ParStmt' has cardinality 0..*.
+An association connects 'robochart_Call' and 'robochart_OperationSig'. From 'robochart_Call', the role 'robochart_Call' has cardinality 0..*, and from 'robochart_OperationSig', the role 'robochart_OperationSig183' has cardinality 0..*.
+An association connects 'robochart_Call' and 'robochart_Expression'. From 'robochart_Call', the role 'robochart_Call185' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression186' has cardinality 0..*.
+An association connects 'robochart_ClockReset' and 'robochart_Clock'. From 'robochart_ClockReset', the role 'robochart_ClockReset188' has cardinality 0..*, and from 'robochart_Clock', the role 'robochart_Clock189' has cardinality 0..*.
+An association connects 'robochart_ArrayExp' and 'robochart_Expression'. From 'robochart_ArrayExp', the role 'robochart_ArrayExp' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression191' has cardinality 0..*.
+An association connects 'robochart_ArrayExp' and 'robochart_Expression'. From 'robochart_ArrayExp', the role 'robochart_ArrayExp193' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression194' has cardinality 0..*.
+An association connects 'robochart_ClockExp' and 'robochart_Clock'. From 'robochart_ClockExp', the role 'robochart_ClockExp' has cardinality 0..*, and from 'robochart_Clock', the role 'robochart_Clock196' has cardinality 0..*.
+An association connects 'robochart_StateClockExp' and 'robochart_State'. From 'robochart_StateClockExp', the role 'robochart_StateClockExp' has cardinality 0..*, and from 'robochart_State', the role 'robochart_State198' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_BinaryExpression'. From 'robochart_Expression', the role 'robochart_Expression200' has cardinality 0..*, and from 'robochart_BinaryExpression', the role 'robochart_BinaryExpression' has cardinality 0..*.
+An association connects 'robochart_BinaryExpression' and 'robochart_Expression'. From 'robochart_BinaryExpression', the role 'robochart_BinaryExpression202' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression203' has cardinality 0..*.
+An association connects 'robochart_Variable' and 'robochart_QuantifierExpression'. From 'robochart_Variable', the role 'robochart_Variable205' has cardinality 0..*, and from 'robochart_QuantifierExpression', the role 'robochart_QuantifierExpression' has cardinality 0..*.
+An association connects 'robochart_QuantifierExpression' and 'robochart_Expression'. From 'robochart_QuantifierExpression', the role 'robochart_QuantifierExpression207' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression208' has cardinality 0..*.
+An association connects 'robochart_QuantifierExpression' and 'robochart_Expression'. From 'robochart_QuantifierExpression', the role 'robochart_QuantifierExpression210' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression211' has cardinality 0..*.
+An association connects 'robochart_Variable' and 'robochart_LambdaExp'. From 'robochart_Variable', the role 'robochart_Variable213' has cardinality 0..*, and from 'robochart_LambdaExp', the role 'robochart_LambdaExp' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_LambdaExp'. From 'robochart_Expression', the role 'robochart_Expression216' has cardinality 0..*, and from 'robochart_LambdaExp', the role 'robochart_LambdaExp215' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_LambdaExp'. From 'robochart_Expression', the role 'robochart_Expression219' has cardinality 0..*, and from 'robochart_LambdaExp', the role 'robochart_LambdaExp218' has cardinality 0..*.
+An association connects 'robochart_IfExpression' and 'robochart_Expression'. From 'robochart_IfExpression', the role 'robochart_IfExpression' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression221' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_IfExpression'. From 'robochart_Expression', the role 'robochart_Expression224' has cardinality 0..*, and from 'robochart_IfExpression', the role 'robochart_IfExpression223' has cardinality 0..*.
+An association connects 'robochart_IfExpression' and 'robochart_Expression'. From 'robochart_IfExpression', the role 'robochart_IfExpression226' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression227' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_Declaration'. From 'robochart_Expression', the role 'robochart_Expression229' has cardinality 0..*, and from 'robochart_Declaration', the role 'robochart_Declaration' has cardinality 0..*.
+An association connects 'robochart_LetExpression' and 'robochart_Declaration'. From 'robochart_LetExpression', the role 'robochart_LetExpression' has cardinality 0..*, and from 'robochart_Declaration', the role 'robochart_Declaration231' has cardinality 0..*.
+An association connects 'robochart_LetExpression' and 'robochart_Expression'. From 'robochart_LetExpression', the role 'robochart_LetExpression233' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression234' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_Not'. From 'robochart_Expression', the role 'robochart_Expression236' has cardinality 0..*, and from 'robochart_Not', the role 'robochart_Not' has cardinality 0..*.
+An association connects 'robochart_InExp' and 'robochart_Expression'. From 'robochart_InExp', the role 'robochart_InExp' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression238' has cardinality 0..*.
+An association connects 'robochart_InExp' and 'robochart_Expression'. From 'robochart_InExp', the role 'robochart_InExp240' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression241' has cardinality 0..*.
+An association connects 'robochart_TypeExp' and 'robochart_Type'. From 'robochart_TypeExp', the role 'robochart_TypeExp' has cardinality 0..*, and from 'robochart_Type', the role 'robochart_Type243' has cardinality 0..*.
+An association connects 'robochart_Neg' and 'robochart_Expression'. From 'robochart_Neg', the role 'robochart_Neg' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression245' has cardinality 0..*.
+An association connects 'robochart_Selection' and 'robochart_Expression'. From 'robochart_Selection', the role 'robochart_Selection' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression247' has cardinality 0..*.
+An association connects 'robochart_Selection' and 'robochart_Member'. From 'robochart_Selection', the role 'robochart_Selection249' has cardinality 0..*, and from 'robochart_Member', the role 'robochart_Member' has cardinality 0..*.
+An association connects 'robochart_VarExp' and 'robochart_Variable'. From 'robochart_VarExp', the role 'robochart_VarExp' has cardinality 0..*, and from 'robochart_Variable', the role 'robochart_Variable251' has cardinality 0..*.
+An association connects 'robochart_RefExp' and 'robochart_NamedExpression'. From 'robochart_RefExp', the role 'robochart_RefExp' has cardinality 0..*, and from 'robochart_NamedExpression', the role 'robochart_NamedExpression' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_AsExp'. From 'robochart_Expression', the role 'robochart_Expression254' has cardinality 0..*, and from 'robochart_AsExp', the role 'robochart_AsExp' has cardinality 0..*.
+An association connects 'robochart_Type' and 'robochart_AsExp'. From 'robochart_Type', the role 'robochart_Type257' has cardinality 0..*, and from 'robochart_AsExp', the role 'robochart_AsExp256' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_IsExp'. From 'robochart_Expression', the role 'robochart_Expression259' has cardinality 0..*, and from 'robochart_IsExp', the role 'robochart_IsExp' has cardinality 0..*.
+An association connects 'robochart_IsExp' and 'robochart_Type'. From 'robochart_IsExp', the role 'robochart_IsExp261' has cardinality 0..*, and from 'robochart_Type', the role 'robochart_Type262' has cardinality 0..*.
+An association connects 'robochart_EnumExp' and 'robochart_Enumeration'. From 'robochart_EnumExp', the role 'robochart_EnumExp' has cardinality 0..*, and from 'robochart_Enumeration', the role 'robochart_Enumeration264' has cardinality 0..*.
+An association connects 'robochart_Literal' and 'robochart_EnumExp'. From 'robochart_Literal', the role 'robochart_Literal267' has cardinality 0..*, and from 'robochart_EnumExp', the role 'robochart_EnumExp266' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_ParExp'. From 'robochart_Expression', the role 'robochart_Expression269' has cardinality 0..*, and from 'robochart_ParExp', the role 'robochart_ParExp' has cardinality 0..*.
+An association connects 'robochart_SeqExp' and 'robochart_Expression'. From 'robochart_SeqExp', the role 'robochart_SeqExp' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression271' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_SetExp'. From 'robochart_Expression', the role 'robochart_Expression273' has cardinality 0..*, and from 'robochart_SetExp', the role 'robochart_SetExp' has cardinality 0..*.
+An association connects 'robochart_SetComp' and 'robochart_Variable'. From 'robochart_SetComp', the role 'robochart_SetComp' has cardinality 0..*, and from 'robochart_Variable', the role 'robochart_Variable275' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_SetComp'. From 'robochart_Expression', the role 'robochart_Expression278' has cardinality 0..*, and from 'robochart_SetComp', the role 'robochart_SetComp277' has cardinality 0..*.
+An association connects 'robochart_SetComp' and 'robochart_Expression'. From 'robochart_SetComp', the role 'robochart_SetComp280' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression281' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_SetRange'. From 'robochart_Expression', the role 'robochart_Expression283' has cardinality 0..*, and from 'robochart_SetRange', the role 'robochart_SetRange' has cardinality 0..*.
+An association connects 'robochart_SetRange' and 'robochart_Expression'. From 'robochart_SetRange', the role 'robochart_SetRange285' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression286' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_TupleExp'. From 'robochart_Expression', the role 'robochart_Expression288' has cardinality 0..*, and from 'robochart_TupleExp', the role 'robochart_TupleExp' has cardinality 0..*.
+An association connects 'robochart_RangeExp' and 'robochart_Expression'. From 'robochart_RangeExp', the role 'robochart_RangeExp' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression290' has cardinality 0..*.
+An association connects 'robochart_RangeExp' and 'robochart_Expression'. From 'robochart_RangeExp', the role 'robochart_RangeExp292' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression293' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_CallExp'. From 'robochart_Expression', the role 'robochart_Expression295' has cardinality 0..*, and from 'robochart_CallExp', the role 'robochart_CallExp' has cardinality 0..*.
+An association connects 'robochart_CallExp' and 'robochart_Expression'. From 'robochart_CallExp', the role 'robochart_CallExp297' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression298' has cardinality 0..*.
+An association connects 'robochart_Assignable' and 'robochart_VarSelection'. From 'robochart_Assignable', the role 'robochart_Assignable300' has cardinality 0..*, and from 'robochart_VarSelection', the role 'robochart_VarSelection' has cardinality 0..*.
+An association connects 'robochart_Member' and 'robochart_VarSelection'. From 'robochart_Member', the role 'robochart_Member303' has cardinality 0..*, and from 'robochart_VarSelection', the role 'robochart_VarSelection302' has cardinality 0..*.
+An association connects 'robochart_ArrayAssignable' and 'robochart_Assignable'. From 'robochart_ArrayAssignable', the role 'robochart_ArrayAssignable' has cardinality 0..*, and from 'robochart_Assignable', the role 'robochart_Assignable305' has cardinality 0..*.
+An association connects 'robochart_ArrayAssignable' and 'robochart_Expression'. From 'robochart_ArrayAssignable', the role 'robochart_ArrayAssignable307' has cardinality 0..*, and from 'robochart_Expression', the role 'robochart_Expression308' has cardinality 0..*.
+An association connects 'robochart_VarRef' and 'robochart_Variable'. From 'robochart_VarRef', the role 'robochart_VarRef' has cardinality 0..*, and from 'robochart_Variable', the role 'robochart_Variable310' has cardinality 0..*.
+An association connects 'robochart_Expression' and 'robochart_WaitingCondition'. From 'robochart_Expression', the role 'robochart_Expression312' has cardinality 0..*, and from 'robochart_WaitingCondition', the role 'robochart_WaitingCondition' has cardinality 0..*.
+An association connects 'robochart_Transition' and 'robochart_WaitingCondition'. From 'robochart_Transition', the role 'robochart_Transition315' has cardinality 0..*, and from 'robochart_WaitingCondition', the role 'robochart_WaitingCondition314' has cardinality 0..*.
+An association connects 'robochart_WaitingCondition' and 'robochart_WaitingConditionRef'. From 'robochart_WaitingCondition', the role 'robochart_WaitingCondition317' has cardinality 0..*, and from 'robochart_WaitingConditionRef', the role 'robochart_WaitingConditionRef' has cardinality 0..*.
+An association connects 'robochart_VectorType' and 'robochart_Type'. From 'robochart_VectorType', the role 'robochart_VectorType' has cardinality 0..*, and from 'robochart_Type', the role 'robochart_Type319' has cardinality 0..*.
+An association connects 'robochart_Type' and 'robochart_MatrixType'. From 'robochart_Type', the role 'robochart_Type321' has cardinality 0..*, and from 'robochart_MatrixType', the role 'robochart_MatrixType' has cardinality 0..*.

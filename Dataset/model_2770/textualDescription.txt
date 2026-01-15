@@ -1,0 +1,23 @@
+The domain model 'ecoreJavascriptTest' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'ecoreJavascriptTest_C3' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreJavascriptTest_C1' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ecoreJavascriptTest_C2' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type int.
+
+'C2' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ecoreJavascriptTest_C3' is a specialization of 'C2'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ecoreJavascriptTest_C2' and 'ecoreJavascriptTest_C1'. From 'ecoreJavascriptTest_C2', the role 'C2' has cardinality 0..*, and from 'ecoreJavascriptTest_C1', the role 'c1' has cardinality 0..*.
+An association connects 'ecoreJavascriptTest_C1' and 'ecoreJavascriptTest_C1'. From 'ecoreJavascriptTest_C1', the role 'ecoreJavascriptTest_C11' has cardinality 0..*, and from 'ecoreJavascriptTest_C1', the role 'ecoreJavascriptTest_C1' has cardinality 0..*.
+An association connects 'ecoreJavascriptTest_C1' and 'ecoreJavascriptTest_C2'. From 'ecoreJavascriptTest_C1', the role 'C1' has cardinality 0..*, and from 'ecoreJavascriptTest_C2', the role 'c2s' has cardinality 0..*.

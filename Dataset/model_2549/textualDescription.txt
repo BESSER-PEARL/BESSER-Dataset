@@ -1,0 +1,97 @@
+The domain model 'dml' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'dml_PL' represents an important domain concept.
+It does not declare any attributes.
+
+'dml_PE' represents an important domain concept.
+It does not declare any attributes.
+
+'dml_BS' represents an important domain concept.
+It does not declare any attributes.
+
+'dml_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'dml_F' represents an important domain concept.
+It does not declare any attributes.
+
+'dml_D' represents an important domain concept.
+It does not declare any attributes.
+
+'dml_S' represents an important domain concept.
+It has the following attributes: 'src', which is of type str; 'cwd', which is of type str.
+
+'dml_TAN' represents an important domain concept.
+It has one attribute: 't', which is of type str.
+
+'dml_PARFORPARAMS' represents an important domain concept.
+It has one attribute: 'params', which is of type str.
+
+'dml_TE' represents an important domain concept.
+It has the following attributes: 'd', which is of type float; 'b', which is of type str; 'i', which is of type int; 's', which is of type str.
+
+'dml_ID' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dml_SPKV' represents an important domain concept.
+It has one attribute: 'v', which is of type str.
+
+'dml_FC' represents an important domain concept.
+It has one attribute: 'bif', which is of type str.
+
+'dml_IS' represents an important domain concept.
+It does not declare any attributes.
+
+'dml_DI' represents an important domain concept.
+It has the following attributes: 'cln', which is of type str; 'clid', which is of type str.
+
+'dml_E' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'dml_FP' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'dml_D' and 'dml_F'. From 'dml_D', the role 'dml_D' has cardinality 0..*, and from 'dml_F', the role 'dml_F' has cardinality 0..*.
+An association connects 'dml_S' and 'dml_D'. From 'dml_S', the role 'dml_S' has cardinality 0..*, and from 'dml_D', the role 'dml_D2' has cardinality 0..*.
+An association connects 'dml_F' and 'dml_ID'. From 'dml_F', the role 'dml_F4' has cardinality 0..*, and from 'dml_ID', the role 'dml_ID' has cardinality 0..*.
+An association connects 'dml_PL' and 'dml_F'. From 'dml_PL', the role 'dml_PL' has cardinality 0..*, and from 'dml_F', the role 'dml_F6' has cardinality 0..*.
+An association connects 'dml_F' and 'dml_PL'. From 'dml_F', the role 'dml_F8' has cardinality 0..*, and from 'dml_PL', the role 'dml_PL9' has cardinality 0..*.
+An association connects 'dml_S' and 'dml_F'. From 'dml_S', the role 'dml_S12' has cardinality 0..*, and from 'dml_F', the role 'dml_F11' has cardinality 0..*.
+An association connects 'dml_SPKV' and 'dml_F'. From 'dml_SPKV', the role 'dml_SPKV' has cardinality 0..*, and from 'dml_F', the role 'dml_F14' has cardinality 0..*.
+An association connects 'dml_ID' and 'dml_S'. From 'dml_ID', the role 'dml_ID17' has cardinality 0..*, and from 'dml_S', the role 'dml_S16' has cardinality 0..*.
+An association connects 'dml_S' and 'dml_E'. From 'dml_S', the role 'dml_S19' has cardinality 0..*, and from 'dml_E', the role 'dml_E' has cardinality 0..*.
+An association connects 'dml_BS' and 'dml_S'. From 'dml_BS', the role 'dml_BS' has cardinality 0..*, and from 'dml_S', the role 'dml_S21' has cardinality 0..*.
+An association connects 'dml_BS' and 'dml_S'. From 'dml_BS', the role 'dml_BS24' has cardinality 0..*, and from 'dml_S', the role 'dml_S23' has cardinality 0..*.
+An association connects 'dml_FP' and 'dml_S'. From 'dml_FP', the role 'dml_FP' has cardinality 0..*, and from 'dml_S', the role 'dml_S26' has cardinality 0..*.
+An association connects 'dml_S' and 'dml_PARFORPARAMS'. From 'dml_S', the role 'dml_S28' has cardinality 0..*, and from 'dml_PARFORPARAMS', the role 'dml_PARFORPARAMS' has cardinality 0..*.
+An association connects 'dml_S' and 'dml_BS'. From 'dml_S', the role 'dml_S30' has cardinality 0..*, and from 'dml_BS', the role 'dml_BS31' has cardinality 0..*.
+An association connects 'dml_S' and 'dml_FP'. From 'dml_S', the role 'dml_S33' has cardinality 0..*, and from 'dml_FP', the role 'dml_FP34' has cardinality 0..*.
+An association connects 'dml_S' and 'dml_E'. From 'dml_S', the role 'dml_S36' has cardinality 0..*, and from 'dml_E', the role 'dml_E37' has cardinality 0..*.
+An association connects 'dml_DI' and 'dml_S'. From 'dml_DI', the role 'dml_DI' has cardinality 0..*, and from 'dml_S', the role 'dml_S39' has cardinality 0..*.
+An association connects 'dml_FC' and 'dml_S'. From 'dml_FC', the role 'dml_FC' has cardinality 0..*, and from 'dml_S', the role 'dml_S41' has cardinality 0..*.
+An association connects 'dml_S' and 'dml_DI'. From 'dml_S', the role 'dml_S43' has cardinality 0..*, and from 'dml_DI', the role 'dml_DI44' has cardinality 0..*.
+An association connects 'dml_E' and 'dml_S'. From 'dml_E', the role 'dml_E47' has cardinality 0..*, and from 'dml_S', the role 'dml_S46' has cardinality 0..*.
+An association connects 'dml_FC' and 'dml_ID'. From 'dml_FC', the role 'dml_FC49' has cardinality 0..*, and from 'dml_ID', the role 'dml_ID50' has cardinality 0..*.
+An association connects 'dml_FC' and 'dml_PE'. From 'dml_FC', the role 'dml_FC52' has cardinality 0..*, and from 'dml_PE', the role 'dml_PE' has cardinality 0..*.
+An association connects 'dml_BS' and 'dml_S'. From 'dml_BS', the role 'dml_BS54' has cardinality 0..*, and from 'dml_S', the role 'dml_S55' has cardinality 0..*.
+An association connects 'dml_S' and 'dml_BS'. From 'dml_S', the role 'dml_S58' has cardinality 0..*, and from 'dml_BS', the role 'dml_BS57' has cardinality 0..*.
+An association connects 'dml_ID' and 'dml_FP'. From 'dml_ID', the role 'dml_ID61' has cardinality 0..*, and from 'dml_FP', the role 'dml_FP60' has cardinality 0..*.
+An association connects 'dml_IS' and 'dml_FP'. From 'dml_IS', the role 'dml_IS' has cardinality 0..*, and from 'dml_FP', the role 'dml_FP63' has cardinality 0..*.
+An association connects 'dml_ID' and 'dml_DI'. From 'dml_ID', the role 'dml_ID66' has cardinality 0..*, and from 'dml_DI', the role 'dml_DI65' has cardinality 0..*.
+An association connects 'dml_IS' and 'dml_DI'. From 'dml_IS', the role 'dml_IS69' has cardinality 0..*, and from 'dml_DI', the role 'dml_DI68' has cardinality 0..*.
+An association connects 'dml_DI' and 'dml_IS'. From 'dml_DI', the role 'dml_DI71' has cardinality 0..*, and from 'dml_IS', the role 'dml_IS72' has cardinality 0..*.
+An association connects 'dml_E' and 'dml_IS'. From 'dml_E', the role 'dml_E75' has cardinality 0..*, and from 'dml_IS', the role 'dml_IS74' has cardinality 0..*.
+An association connects 'dml_IS' and 'dml_E'. From 'dml_IS', the role 'dml_IS77' has cardinality 0..*, and from 'dml_E', the role 'dml_E78' has cardinality 0..*.
+An association connects 'dml_TAN' and 'dml_PL'. From 'dml_TAN', the role 'dml_TAN' has cardinality 0..*, and from 'dml_PL', the role 'dml_PL80' has cardinality 0..*.
+An association connects 'dml_E' and 'dml_EObject'. From 'dml_E', the role 'dml_E82' has cardinality 0..*, and from 'dml_EObject', the role 'dml_EObject' has cardinality 0..*.
+An association connects 'dml_E' and 'dml_E'. From 'dml_E', the role 'dml_E85' has cardinality 0..*, and from 'dml_E', the role 'dml_E83' has cardinality 0..*.
+An association connects 'dml_E' and 'dml_TE'. From 'dml_E', the role 'dml_E87' has cardinality 0..*, and from 'dml_TE', the role 'dml_TE' has cardinality 0..*.
+An association connects 'dml_FC' and 'dml_TE'. From 'dml_FC', the role 'dml_FC90' has cardinality 0..*, and from 'dml_TE', the role 'dml_TE89' has cardinality 0..*.
+An association connects 'dml_DI' and 'dml_TE'. From 'dml_DI', the role 'dml_DI93' has cardinality 0..*, and from 'dml_TE', the role 'dml_TE92' has cardinality 0..*.
+An association connects 'dml_SPKV' and 'dml_ID'. From 'dml_SPKV', the role 'dml_SPKV95' has cardinality 0..*, and from 'dml_ID', the role 'dml_ID96' has cardinality 0..*.
+An association connects 'dml_PE' and 'dml_ID'. From 'dml_PE', the role 'dml_PE98' has cardinality 0..*, and from 'dml_ID', the role 'dml_ID99' has cardinality 0..*.
+An association connects 'dml_PE' and 'dml_E'. From 'dml_PE', the role 'dml_PE101' has cardinality 0..*, and from 'dml_E', the role 'dml_E102' has cardinality 0..*.
+An association connects 'dml_ID' and 'dml_TAN'. From 'dml_ID', the role 'dml_ID105' has cardinality 0..*, and from 'dml_TAN', the role 'dml_TAN104' has cardinality 0..*.

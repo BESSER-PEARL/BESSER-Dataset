@@ -1,0 +1,79 @@
+The domain model 'ASD' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'ASD_AssertionSet' represents an important domain concept.
+It has one attribute: 'lType', which is of type str.
+
+'ASD_Annotation' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'InfoType' represents an important domain concept.
+It does not declare any attributes.
+
+'ASD_Operation' represents an important domain concept.
+It has one attribute: 'messagePattern', which is of type str.
+
+'ASD_ServiceDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'ASD_InfoTypeImported' represents an important domain concept.
+It has one attribute: 'url', which is of type str.
+
+'ASD_Assertion' represents an important domain concept.
+It has the following attributes: 'dimension', which is of type str; 'role', which is of type str; 'minVal', which is of type float; 'lType', which is of type str; 'subset', which is of type str; 'dimensionType', which is of type str; 'maxVal', which is of type float.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ASD_InfoType' represents an important domain concept.
+It has the following attributes: 'subset', which is of type str; 'valueType', which is of type str; 'valueRange', which is of type str.
+
+'ASD_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ASD_Message' represents an important domain concept.
+It has the following attributes: 'subset', which is of type str; 'role', which is of type str.
+
+'ASD_Profile' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EEnumValueType' defines the following possible values: 'document', 'int', 'float', 'string', 'date', 'double'.
+The enumeration 'EEnumSubset' defines the following possible values: 'off', 'pro', 'exp', 'req'.
+The enumeration 'EEnumlogicalType' defines the following possible values: 'AND', 'OR'.
+The enumeration 'EEnumMes' defines the following possible values: 'input', 'output', 'fault'.
+The enumeration 'EEnumIntention' defines the following possible values: 'expectation', 'offering'.
+The enumeration 'EEnumOp' defines the following possible values: 'notification', 'requestresponse', 'solicitresponse', 'oneway'.
+The enumeration 'EEnumDimensionType' defines the following possible values: 'antitonic', 'monotonic'.
+
+The model also captures inheritance relationships between classes.
+The class 'ASD_ServiceDescription' is a specialization of 'NamedElement'.
+The class 'ASD_Operation' is a specialization of 'NamedElement'.
+The class 'ASD_Message' is a specialization of 'NamedElement'.
+The class 'ASD_InfoType' is a specialization of 'NamedElement'.
+The class 'ASD_Profile' is a specialization of 'NamedElement'.
+The class 'ASD_AssertionSet' is a specialization of 'NamedElement'.
+The class 'ASD_Assertion' is a specialization of 'NamedElement'.
+The class 'ASD_InfoTypeImported' is a specialization of 'InfoType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ASD_ServiceDescription' and 'ASD_Operation'. From 'ASD_ServiceDescription', the role 'service' has cardinality 0..*, and from 'ASD_Operation', the role 'Operation' has cardinality 0..*.
+An association connects 'ASD_ServiceDescription' and 'ASD_InfoType'. From 'ASD_ServiceDescription', the role 'service2' has cardinality 0..*, and from 'ASD_InfoType', the role 'InfoType' has cardinality 0..*.
+An association connects 'ASD_ServiceDescription' and 'ASD_Profile'. From 'ASD_ServiceDescription', the role 'service4' has cardinality 0..*, and from 'ASD_Profile', the role 'Profile' has cardinality 0..*.
+An association connects 'ASD_Message' and 'ASD_Operation'. From 'ASD_Message', the role 'Message' has cardinality 0..*, and from 'ASD_Operation', the role 'operation' has cardinality 0..*.
+An association connects 'ASD_ServiceDescription' and 'ASD_Operation'. From 'ASD_ServiceDescription', the role 'ServiceDescription' has cardinality 0..*, and from 'ASD_Operation', the role 'operations' has cardinality 0..*.
+An association connects 'ASD_InfoType' and 'ASD_Message'. From 'ASD_InfoType', the role 'InfoType8' has cardinality 0..*, and from 'ASD_Message', the role 'message' has cardinality 0..*.
+An association connects 'ASD_Operation' and 'ASD_Message'. From 'ASD_Operation', the role 'Operation10' has cardinality 0..*, and from 'ASD_Message', the role 'contents' has cardinality 0..*.
+An association connects 'ASD_InfoType' and 'ASD_InfoType'. From 'ASD_InfoType', the role 'ASD_InfoType' has cardinality 0..*, and from 'ASD_InfoType', the role 'ASD_InfoType11' has cardinality 0..*.
+An association connects 'ASD_InfoType' and 'ASD_InfoType'. From 'ASD_InfoType', the role 'ASD_InfoType13' has cardinality 0..*, and from 'ASD_InfoType', the role 'ASD_InfoType15' has cardinality 0..*.
+An association connects 'ASD_InfoType' and 'ASD_Message'. From 'ASD_InfoType', the role 'infoType' has cardinality 0..*, and from 'ASD_Message', the role 'Message17' has cardinality 0..*.
+An association connects 'ASD_InfoType' and 'ASD_ServiceDescription'. From 'ASD_InfoType', the role 'infotypes' has cardinality 0..*, and from 'ASD_ServiceDescription', the role 'ServiceDescription19' has cardinality 0..*.
+An association connects 'ASD_Profile' and 'ASD_Operation'. From 'ASD_Profile', the role 'ASD_Profile' has cardinality 0..*, and from 'ASD_Operation', the role 'ASD_Operation' has cardinality 0..*.
+An association connects 'ASD_AssertionSet' and 'ASD_Profile'. From 'ASD_AssertionSet', the role 'AssertionSet' has cardinality 0..*, and from 'ASD_Profile', the role 'profile' has cardinality 0..*.
+An association connects 'ASD_ServiceDescription' and 'ASD_Profile'. From 'ASD_ServiceDescription', the role 'ServiceDescription23' has cardinality 0..*, and from 'ASD_Profile', the role 'profiles' has cardinality 0..*.
+An association connects 'ASD_AssertionSet' and 'ASD_Profile'. From 'ASD_AssertionSet', the role 'sets' has cardinality 0..*, and from 'ASD_Profile', the role 'Profile25' has cardinality 0..*.
+An association connects 'ASD_AssertionSet' and 'ASD_Assertion'. From 'ASD_AssertionSet', the role 'set' has cardinality 0..*, and from 'ASD_Assertion', the role 'Assertion' has cardinality 0..*.
+An association connects 'ASD_AssertionSet' and 'ASD_Assertion'. From 'ASD_AssertionSet', the role 'AssertionSet28' has cardinality 0..*, and from 'ASD_Assertion', the role 'assertions' has cardinality 0..*.
+An association connects 'ASD_Annotation' and 'ASD_NamedElement'. From 'ASD_Annotation', the role 'Annotation' has cardinality 0..*, and from 'ASD_NamedElement', the role 'owner' has cardinality 0..*.
+An association connects 'ASD_Annotation' and 'ASD_NamedElement'. From 'ASD_Annotation', the role 'annotations' has cardinality 0..*, and from 'ASD_NamedElement', the role 'NamedElement' has cardinality 0..*.

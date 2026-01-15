@@ -1,0 +1,12 @@
+The domain model 'simplea' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'simplea_A' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simplea_B' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'simplea_A' and 'simplea_B'. From 'simplea_A', the role 'simplea_A' has cardinality 0..*, and from 'simplea_B', the role 'simplea_B' has cardinality 0..*.

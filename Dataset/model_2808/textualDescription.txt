@@ -1,0 +1,95 @@
+The domain model 'cs' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'cs_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'cs_CSConnectionEnd' represents an important domain concept.
+It has one attribute: 'tipType', which is of type int.
+
+'cs_CSRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'cs_CSText' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'cs_CSTemplateDescription' represents an important domain concept.
+It has one attribute: 'scale', which is of type float.
+
+'cs_CSTransform' represents an important domain concept.
+It has the following attributes: 'm21', which is of type float; 'm20', which is of type float; 'm11', which is of type float; 'm12', which is of type float; 'm02', which is of type float; 'm00', which is of type float; 'm10', which is of type float; 'm01', which is of type float; 'm22', which is of type float.
+
+'cs_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'cs_CSConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CSElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cs_CSPoint' represents an important domain concept.
+It has the following attributes: 'y', which is of type float; 'x', which is of type float.
+
+'cs_CSNode' represents an important domain concept.
+It has the following attributes: 'height', which is of type str; 'verticalAlign', which is of type str; 'horizontalAlign', which is of type str; 'width', which is of type str; 'minWidth', which is of type str; 'maxWidth', which is of type str; 'maxHeight', which is of type str; 'x', which is of type str; 'minHeight', which is of type str; 'heightRatioToParent', which is of type str; 'y', which is of type str; 'widthRatioToParent', which is of type str.
+
+'cs_CSElement' represents an important domain concept.
+It has the following attributes: 'templateRoot', which is of type bool; 'selectable', which is of type str; 'maxZoom', which is of type str; 'draggable', which is of type bool; 'minZoom', which is of type str; 'resizable', which is of type bool.
+
+'CSNode' represents an important domain concept.
+It does not declare any attributes.
+
+'cs_CSStroke' represents an important domain concept.
+It has the following attributes: 'dash_phase', which is of type float; 'width', which is of type float; 'cap', which is of type int; 'join', which is of type int; 'dash', which is of type float; 'miterlimit', which is of type float.
+
+'cs_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'cs_CSLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'cs_CSColor' represents an important domain concept.
+It has the following attributes: 'r', which is of type float; 'g', which is of type float; 'a', which is of type float; 'b', which is of type float.
+
+'cs_CSShape' represents an important domain concept.
+It has one attribute: 'closed', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CSFitType' defines the following possible values: 'FIT_TO_CHILDREN', 'AUTO_EXPAND'.
+The enumeration 'CSOrientation' defines the following possible values: 'VERTICAL', 'HORIZONTAL'.
+
+The model also captures inheritance relationships between classes.
+The class 'cs_CSRoot' is a specialization of 'CSElement'.
+The class 'cs_CSElement' is a specialization of 'ENamedElement'.
+The class 'cs_CSNode' is a specialization of 'CSElement'.
+The class 'cs_CSConnection' is a specialization of 'CSElement'.
+The class 'cs_CSText' is a specialization of 'CSNode'.
+The class 'cs_CSShape' is a specialization of 'ENamedElement'.
+The class 'cs_CSTemplateDescription' is a specialization of 'CSNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cs_CSElement' and 'cs_CSStroke'. From 'cs_CSElement', the role 'cs_CSElement' has cardinality 0..*, and from 'cs_CSStroke', the role 'cs_CSStroke' has cardinality 0..*.
+An association connects 'cs_CSElement' and 'cs_CSElement'. From 'cs_CSElement', the role 'CSElement' has cardinality 0..*, and from 'cs_CSElement', the role 'parent' has cardinality 0..*.
+An association connects 'cs_CSElement' and 'cs_CSElement'. From 'cs_CSElement', the role 'CSElement5' has cardinality 0..*, and from 'cs_CSElement', the role 'children' has cardinality 0..*.
+An association connects 'cs_CSElement' and 'cs_CSColor'. From 'cs_CSElement', the role 'cs_CSElement7' has cardinality 0..*, and from 'cs_CSColor', the role 'cs_CSColor' has cardinality 0..*.
+An association connects 'cs_CSColor' and 'cs_CSElement'. From 'cs_CSColor', the role 'cs_CSColor10' has cardinality 0..*, and from 'cs_CSElement', the role 'cs_CSElement9' has cardinality 0..*.
+An association connects 'cs_CSElement' and 'cs_CSShape'. From 'cs_CSElement', the role 'cs_CSElement12' has cardinality 0..*, and from 'cs_CSShape', the role 'cs_CSShape' has cardinality 0..*.
+An association connects 'cs_CSTransform' and 'cs_CSElement'. From 'cs_CSTransform', the role 'cs_CSTransform' has cardinality 0..*, and from 'cs_CSElement', the role 'cs_CSElement14' has cardinality 0..*.
+An association connects 'cs_CSElement' and 'cs_EObject'. From 'cs_CSElement', the role 'cs_CSElement16' has cardinality 0..*, and from 'cs_EObject', the role 'cs_EObject' has cardinality 0..*.
+An association connects 'cs_EStructuralFeature' and 'cs_CSElement'. From 'cs_EStructuralFeature', the role 'cs_EStructuralFeature' has cardinality 0..*, and from 'cs_CSElement', the role 'cs_CSElement18' has cardinality 0..*.
+An association connects 'cs_CSElement' and 'cs_CSLayout'. From 'cs_CSElement', the role 'cs_CSElement20' has cardinality 0..*, and from 'cs_CSLayout', the role 'cs_CSLayout' has cardinality 0..*.
+An association connects 'cs_CSConnection' and 'cs_CSNode'. From 'cs_CSConnection', the role 'cs_CSConnection' has cardinality 0..*, and from 'cs_CSNode', the role 'cs_CSNode' has cardinality 0..*.
+An association connects 'cs_CSConnection' and 'cs_CSConnectionEnd'. From 'cs_CSConnection', the role 'cs_CSConnection23' has cardinality 0..*, and from 'cs_CSConnectionEnd', the role 'cs_CSConnectionEnd' has cardinality 0..*.
+An association connects 'cs_CSPoint' and 'cs_CSShape'. From 'cs_CSPoint', the role 'cs_CSPoint' has cardinality 0..*, and from 'cs_CSShape', the role 'cs_CSShape25' has cardinality 0..*.
+An association connects 'cs_EClass' and 'cs_CSTemplateDescription'. From 'cs_EClass', the role 'cs_EClass' has cardinality 0..*, and from 'cs_CSTemplateDescription', the role 'cs_CSTemplateDescription' has cardinality 0..*.
+An association connects 'cs_CSTemplateDescription' and 'cs_EClass'. From 'cs_CSTemplateDescription', the role 'cs_CSTemplateDescription28' has cardinality 0..*, and from 'cs_EClass', the role 'cs_EClass29' has cardinality 0..*.
+An association connects 'cs_EStructuralFeature' and 'cs_CSTemplateDescription'. From 'cs_EStructuralFeature', the role 'cs_EStructuralFeature32' has cardinality 0..*, and from 'cs_CSTemplateDescription', the role 'cs_CSTemplateDescription31' has cardinality 0..*.
+An association connects 'cs_CSElement' and 'cs_CSTemplateDescription'. From 'cs_CSElement', the role 'cs_CSElement35' has cardinality 0..*, and from 'cs_CSTemplateDescription', the role 'cs_CSTemplateDescription34' has cardinality 0..*.
+An association connects 'cs_CSNode' and 'cs_CSConnectionEnd'. From 'cs_CSNode', the role 'cs_CSNode38' has cardinality 0..*, and from 'cs_CSConnectionEnd', the role 'cs_CSConnectionEnd37' has cardinality 0..*.
+An association connects 'cs_CSConnectionEnd' and 'cs_EStructuralFeature'. From 'cs_CSConnectionEnd', the role 'cs_CSConnectionEnd40' has cardinality 0..*, and from 'cs_EStructuralFeature', the role 'cs_EStructuralFeature41' has cardinality 0..*.
+An association connects 'cs_EStructuralFeature' and 'cs_CSConnectionEnd'. From 'cs_EStructuralFeature', the role 'cs_EStructuralFeature44' has cardinality 0..*, and from 'cs_CSConnectionEnd', the role 'cs_CSConnectionEnd43' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/hallvard/js4emf/org.eclipse.emf.js4emf.tests/src/org/eclipse/emf/js4emf/ecore/internal/ecoreJavascriptTest.ecore

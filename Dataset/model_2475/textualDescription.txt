@@ -1,0 +1,72 @@
+The domain model 'brmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'brmodel_ReachableVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'brmodel_RelatedMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'brmodel_Statement' represents an important domain concept.
+It has one attribute: 'textContent', which is of type str.
+
+'Method' represents an important domain concept.
+It does not declare any attributes.
+
+'brmodel_Method' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'class', which is of type str.
+
+'brmodel_RelatedVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'brmodel_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'brmodel_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'brmodel_ReachableMethod' represents an important domain concept.
+It has one attribute: 'distance', which is of type str.
+
+'brmodel_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'brmodel_SlicedVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'brmodel_RulePart' represents an important domain concept.
+It has one attribute: 'granularity', which is of type str.
+
+'brmodel_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'brmodel_Rule' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'brmodel_RelatedMethod' is a specialization of 'Method'.
+The class 'brmodel_Statement' is a specialization of 'Trace'.
+The class 'brmodel_SlicedVariable' is a specialization of 'Variable'.
+The class 'brmodel_RelatedVariable' is a specialization of 'Variable'.
+The class 'brmodel_ReachableVariable' is a specialization of 'Variable'.
+The class 'brmodel_Variable' is a specialization of 'Trace'.
+The class 'brmodel_Method' is a specialization of 'Trace'.
+The class 'brmodel_ReachableMethod' is a specialization of 'Method'.
+
+Relationships between classes are modeled using associations.
+An association connects 'brmodel_Rule' and 'brmodel_Model'. From 'brmodel_Rule', the role 'brmodel_Rule' has cardinality 0..*, and from 'brmodel_Model', the role 'brmodel_Model' has cardinality 0..*.
+An association connects 'brmodel_Rule' and 'brmodel_SlicedVariable'. From 'brmodel_Rule', the role 'brmodel_Rule2' has cardinality 0..*, and from 'brmodel_SlicedVariable', the role 'brmodel_SlicedVariable' has cardinality 0..*.
+An association connects 'brmodel_Rule' and 'brmodel_RulePart'. From 'brmodel_Rule', the role 'brmodel_Rule4' has cardinality 0..*, and from 'brmodel_RulePart', the role 'brmodel_RulePart' has cardinality 0..*.
+An association connects 'brmodel_RulePart' and 'brmodel_RelatedMethod'. From 'brmodel_RulePart', the role 'brmodel_RulePart6' has cardinality 0..*, and from 'brmodel_RelatedMethod', the role 'brmodel_RelatedMethod' has cardinality 0..*.
+An association connects 'brmodel_RulePart' and 'brmodel_Statement'. From 'brmodel_RulePart', the role 'brmodel_RulePart8' has cardinality 0..*, and from 'brmodel_Statement', the role 'brmodel_Statement' has cardinality 0..*.
+An association connects 'brmodel_Statement' and 'brmodel_RulePart'. From 'brmodel_Statement', the role 'brmodel_Statement11' has cardinality 0..*, and from 'brmodel_RulePart', the role 'brmodel_RulePart10' has cardinality 0..*.
+An association connects 'brmodel_RulePart' and 'brmodel_ReachableMethod'. From 'brmodel_RulePart', the role 'brmodel_RulePart13' has cardinality 0..*, and from 'brmodel_ReachableMethod', the role 'brmodel_ReachableMethod' has cardinality 0..*.
+An association connects 'brmodel_ReachableVariable' and 'brmodel_RulePart'. From 'brmodel_ReachableVariable', the role 'brmodel_ReachableVariable' has cardinality 0..*, and from 'brmodel_RulePart', the role 'brmodel_RulePart15' has cardinality 0..*.
+An association connects 'brmodel_EObject' and 'brmodel_Trace'. From 'brmodel_EObject', the role 'brmodel_EObject' has cardinality 0..*, and from 'brmodel_Trace', the role 'brmodel_Trace' has cardinality 0..*.

@@ -1,0 +1,47 @@
+The domain model 'ling' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'ling_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'ling_PackageDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ling_Feature' represents an important domain concept.
+It has the following attributes: 'many', which is of type bool; 'name', which is of type str.
+
+'ling_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'ling_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ling_AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ling_Domainmodel' represents an important domain concept.
+It does not declare any attributes.
+
+'ling_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ling_PackageDeclaration' is a specialization of 'AbstractElement'.
+The class 'ling_Import' is a specialization of 'AbstractElement'.
+The class 'ling_Type' is a specialization of 'AbstractElement'.
+The class 'ling_DataType' is a specialization of 'Type'.
+The class 'ling_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ling_Domainmodel' and 'ling_AbstractElement'. From 'ling_Domainmodel', the role 'ling_Domainmodel' has cardinality 0..*, and from 'ling_AbstractElement', the role 'ling_AbstractElement' has cardinality 0..*.
+An association connects 'ling_AbstractElement' and 'ling_PackageDeclaration'. From 'ling_AbstractElement', the role 'ling_AbstractElement2' has cardinality 0..*, and from 'ling_PackageDeclaration', the role 'ling_PackageDeclaration' has cardinality 0..*.
+An association connects 'ling_Entity' and 'ling_Entity'. From 'ling_Entity', the role 'ling_Entity' has cardinality 0..*, and from 'ling_Entity', the role 'ling_Entity3' has cardinality 0..*.
+An association connects 'ling_Entity' and 'ling_Feature'. From 'ling_Entity', the role 'ling_Entity6' has cardinality 0..*, and from 'ling_Feature', the role 'ling_Feature' has cardinality 0..*.
+An association connects 'ling_Type' and 'ling_Feature'. From 'ling_Type', the role 'ling_Type' has cardinality 0..*, and from 'ling_Feature', the role 'ling_Feature8' has cardinality 0..*.

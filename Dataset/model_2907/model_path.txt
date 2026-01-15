@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/rainys57/peterfriese/xtext_getting_started/tags/xtext_getting_started_1/org.xtext.example.entity/src-gen/org/xtext/example/Entity.ecore

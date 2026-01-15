@@ -1,0 +1,87 @@
+The domain model 'raas_small_test' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'raas_small_test_MergingE1AndE2' represents an important domain concept.
+It has one attribute: 'optionalAttrString', which is of type str.
+
+'raas_small_test_TopClassD' represents an important domain concept.
+It has the following attributes: 'optionalTimeZone', which is of type str; 'singleAttrInt', which is of type int; 'optionalAttrInt', which is of type int; 'raasRef', which is of type str; 'multi2lowerAttrInt', which is of type int.
+
+'raas_small_test_#19723516' represents an important domain concept.
+It does not declare any attributes.
+
+'raas_small_test_UnderClassF' represents an important domain concept.
+It has the following attributes: 'singleAttrInt', which is of type int; 'raasRef', which is of type str.
+
+'raas_small_test_ThirdLevelClassJ' represents an important domain concept.
+It has the following attributes: 'raasRef', which is of type str; 'multi2lowerAttrInt', which is of type int; 'singleAttrInt', which is of type int; 'optionalAttrInt', which is of type int.
+
+'raas_small_test_#10382437' represents an important domain concept.
+It does not declare any attributes.
+
+'raas_small_test_TopClassB' represents an important domain concept.
+It has the following attributes: 'singleAttrInt', which is of type int; 'optionalAttrInt', which is of type int; 'multi2lowerAttrInt', which is of type int; 'raasRef', which is of type str.
+
+'raas_small_test_ReposRoot' represents an important domain concept.
+It has the following attributes: 'singleAttrString', which is of type str; 'raasRef', which is of type str; 'multiAttrString', which is of type str.
+
+'raas_small_test_TopClassC' represents an important domain concept.
+It has the following attributes: 'raasRef', which is of type str; 'singleAttrInt', which is of type int; 'multi2lowerAttrInt', which is of type int; 'optionalAttrInt', which is of type int.
+
+'raas_small_test_UnderClassE' represents an important domain concept.
+It has one attribute: 'raasRef', which is of type str.
+
+'raas_small_test_#5656663' represents an important domain concept.
+It does not declare any attributes.
+
+'raas_small_test_FourthLevelClassK' represents an important domain concept.
+It has the following attributes: 'multi2lowerAttrInt', which is of type int; 'raasRef', which is of type str; 'singleAttrInt', which is of type int; 'optionalAttrInt', which is of type int.
+
+'raas_small_test_#29373817' represents an important domain concept.
+It does not declare any attributes.
+
+'raas_small_test_#16551649' represents an important domain concept.
+It does not declare any attributes.
+
+'raas_small_test_DerivedUnderClassE1' represents an important domain concept.
+It does not declare any attributes.
+
+'raas_small_test_#30911270' represents an important domain concept.
+It does not declare any attributes.
+
+'raas_small_test_TopClassA' represents an important domain concept.
+It has one attribute: 'raasRef', which is of type str.
+
+'raas_small_test_#11832905' represents an important domain concept.
+It does not declare any attributes.
+
+'raas_small_test_TopClassM' represents an important domain concept.
+It has one attribute: 'singleAttrInt', which is of type int.
+
+'raas_small_test_DerivedUnderClassE2' represents an important domain concept.
+It does not declare any attributes.
+
+'raas_small_test_#7345254' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'raas_small_test_DerivedUnderClassE1' is a specialization of 'raas_small_test_UnderClassE'.
+The class 'raas_small_test_DerivedUnderClassE2' is a specialization of 'raas_small_test_UnderClassE'.
+The class 'raas_small_test_TopClassM' is a specialization of 'raas_small_test_UnderClassE'.
+The class 'raas_small_test_MergingE1AndE2' is a specialization of 'raas_small_test_DerivedUnderClassE1'.
+The class 'raas_small_test_MergingE1AndE2' is a specialization of 'raas_small_test_DerivedUnderClassE2'.
+
+Relationships between classes are modeled using associations.
+An association connects 'raas_small_test_#29373817' and 'raas_small_test_ReposRoot'. From 'raas_small_test_#29373817', the role 'raas_small_test_#29373817' has cardinality 0..*, and from 'raas_small_test_ReposRoot', the role 'raas_small_test_ReposRoot' has cardinality 0..*.
+An association connects 'raas_small_test_ReposRoot' and 'raas_small_test_#19723516'. From 'raas_small_test_ReposRoot', the role 'raas_small_test_ReposRoot2' has cardinality 0..*, and from 'raas_small_test_#19723516', the role 'raas_small_test_#19723516' has cardinality 0..*.
+An association connects 'raas_small_test_#7345254' and 'raas_small_test_ReposRoot'. From 'raas_small_test_#7345254', the role 'raas_small_test_#7345254' has cardinality 0..*, and from 'raas_small_test_ReposRoot', the role 'raas_small_test_ReposRoot4' has cardinality 0..*.
+An association connects 'raas_small_test_#11832905' and 'raas_small_test_ReposRoot'. From 'raas_small_test_#11832905', the role 'raas_small_test_#11832905' has cardinality 0..*, and from 'raas_small_test_ReposRoot', the role 'raas_small_test_ReposRoot6' has cardinality 0..*.
+An association connects 'raas_small_test_TopClassM' and 'raas_small_test_ReposRoot'. From 'raas_small_test_TopClassM', the role 'raas_small_test_TopClassM' has cardinality 0..*, and from 'raas_small_test_ReposRoot', the role 'raas_small_test_ReposRoot8' has cardinality 0..*.
+An association connects 'raas_small_test_TopClassA' and 'raas_small_test_#5656663'. From 'raas_small_test_TopClassA', the role 'raas_small_test_TopClassA' has cardinality 0..*, and from 'raas_small_test_#5656663', the role 'raas_small_test_#5656663' has cardinality 0..*.
+An association connects 'raas_small_test_TopClassA' and 'raas_small_test_#16551649'. From 'raas_small_test_TopClassA', the role 'raas_small_test_TopClassA11' has cardinality 0..*, and from 'raas_small_test_#16551649', the role 'raas_small_test_#16551649' has cardinality 0..*.
+An association connects 'raas_small_test_#5656663' and 'raas_small_test_TopClassB'. From 'raas_small_test_#5656663', the role 'raas_small_test_#565666313' has cardinality 0..*, and from 'raas_small_test_TopClassB', the role 'raas_small_test_TopClassB' has cardinality 0..*.
+An association connects 'raas_small_test_TopClassC' and 'raas_small_test_#16551649'. From 'raas_small_test_TopClassC', the role 'raas_small_test_TopClassC' has cardinality 0..*, and from 'raas_small_test_#16551649', the role 'raas_small_test_#1655164915' has cardinality 0..*.
+An association connects 'raas_small_test_ThirdLevelClassJ' and 'raas_small_test_#10382437'. From 'raas_small_test_ThirdLevelClassJ', the role 'raas_small_test_ThirdLevelClassJ' has cardinality 0..*, and from 'raas_small_test_#10382437', the role 'raas_small_test_#10382437' has cardinality 0..*.
+An association connects 'raas_small_test_DerivedUnderClassE1' and 'raas_small_test_#11832905'. From 'raas_small_test_DerivedUnderClassE1', the role 'raas_small_test_DerivedUnderClassE1' has cardinality 0..*, and from 'raas_small_test_#11832905', the role 'raas_small_test_#1183290518' has cardinality 0..*.
+An association connects 'raas_small_test_#30911270' and 'raas_small_test_DerivedUnderClassE2'. From 'raas_small_test_#30911270', the role 'raas_small_test_#30911270' has cardinality 0..*, and from 'raas_small_test_DerivedUnderClassE2', the role 'raas_small_test_DerivedUnderClassE2' has cardinality 0..*.

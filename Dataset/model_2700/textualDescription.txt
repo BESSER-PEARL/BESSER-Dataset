@@ -1,0 +1,20 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'model_B' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'model_C' represents an important domain concept.
+It does not declare any attributes.
+
+'model_A' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_A' and 'model_Model'. From 'model_A', the role 'model_A' has cardinality 0..*, and from 'model_Model', the role 'model_Model' has cardinality 0..*.
+An association connects 'model_B' and 'model_A'. From 'model_B', the role 'model_B' has cardinality 0..*, and from 'model_A', the role 'model_A2' has cardinality 0..*.
+An association connects 'model_B' and 'model_C'. From 'model_B', the role 'model_B4' has cardinality 0..*, and from 'model_C', the role 'model_C' has cardinality 0..*.

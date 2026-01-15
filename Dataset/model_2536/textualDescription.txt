@@ -1,0 +1,35 @@
+The domain model 'test' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'test_C' represents an important domain concept.
+It does not declare any attributes.
+
+'test_B' represents an important domain concept.
+It does not declare any attributes.
+
+'test_D' represents an important domain concept.
+It has the following attributes: 'yList', which is of type int; 'x', which is of type str.
+
+'test_EClassToAMap' represents an important domain concept.
+It does not declare any attributes.
+
+'test_EClassToEStringMap' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'test_A' represents an important domain concept.
+It does not declare any attributes.
+
+'test_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'test_A' and 'test_B'. From 'test_A', the role 'test_A' has cardinality 0..*, and from 'test_B', the role 'test_B' has cardinality 0..*.
+An association connects 'test_B' and 'test_C'. From 'test_B', the role 'test_B2' has cardinality 0..*, and from 'test_C', the role 'test_C' has cardinality 0..*.
+An association connects 'test_B' and 'test_C'. From 'test_B', the role 'test_B4' has cardinality 0..*, and from 'test_C', the role 'test_C5' has cardinality 0..*.
+An association connects 'test_C' and 'test_D'. From 'test_C', the role 'test_C7' has cardinality 0..*, and from 'test_D', the role 'test_D' has cardinality 0..*.
+An association connects 'test_C' and 'test_EClassToEStringMap'. From 'test_C', the role 'test_C9' has cardinality 0..*, and from 'test_EClassToEStringMap', the role 'test_EClassToEStringMap' has cardinality 0..*.
+An association connects 'test_C' and 'test_EClassToAMap'. From 'test_C', the role 'test_C11' has cardinality 0..*, and from 'test_EClassToAMap', the role 'test_EClassToAMap' has cardinality 0..*.
+An association connects 'test_EClassToEStringMap' and 'test_EClass'. From 'test_EClassToEStringMap', the role 'test_EClassToEStringMap13' has cardinality 0..*, and from 'test_EClass', the role 'test_EClass' has cardinality 0..*.
+An association connects 'test_EClassToAMap' and 'test_EClass'. From 'test_EClassToAMap', the role 'test_EClassToAMap15' has cardinality 0..*, and from 'test_EClass', the role 'test_EClass16' has cardinality 0..*.
+An association connects 'test_EClassToAMap' and 'test_A'. From 'test_EClassToAMap', the role 'test_EClassToAMap18' has cardinality 0..*, and from 'test_A', the role 'test_A19' has cardinality 0..*.

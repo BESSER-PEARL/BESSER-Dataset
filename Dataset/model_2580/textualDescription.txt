@@ -1,0 +1,143 @@
+The domain model 'esper' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'esper_Select' represents an important domain concept.
+It has the following attributes: 'alias', which is of type str; 'asterisk', which is of type bool.
+
+'esper_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'esper_AttributesDefinition' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'esper_Priority' represents an important domain concept.
+It has one attribute: 'priorityInt', which is of type int.
+
+'esper_KindOfEvent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'esper_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'esper_Attributes' represents an important domain concept.
+It does not declare any attributes.
+
+'esper_KindSelectAttributesDefinition' represents an important domain concept.
+It has the following attributes: 'int', which is of type int; 'string', which is of type str.
+
+'esper_TerminalExpression' represents an important domain concept.
+It has the following attributes: 'every', which is of type bool; 'parenthesis', which is of type bool.
+
+'esper_RuleParts' represents an important domain concept.
+It does not declare any attributes.
+
+'esper_GroupBy' represents an important domain concept.
+It does not declare any attributes.
+
+'esper_SingleSelectDefinition' represents an important domain concept.
+It has one attribute: 'attribute', which is of type str.
+
+'esper_SingleDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'esper_JoinFollowBy' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'esper_AbstractFollowBy' represents an important domain concept.
+It does not declare any attributes.
+
+'esper_Having' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'esper_Anything' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'esper_Name' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'esper_Timer' represents an important domain concept.
+It does not declare any attributes.
+
+'esper_DefaultMethods' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'esper_Insert' represents an important domain concept.
+It does not declare any attributes.
+
+'esper_Domainmodel' represents an important domain concept.
+It does not declare any attributes.
+
+'esper_Win' represents an important domain concept.
+It does not declare any attributes.
+
+'esper_FollowByWhere' represents an important domain concept.
+It does not declare any attributes.
+
+'esper_ExtraParenthesisRule' represents an important domain concept.
+It does not declare any attributes.
+
+'esper_SelectAttributesDefinition' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'esper_From' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtraParenthesisRule' represents an important domain concept.
+It does not declare any attributes.
+
+'esper_FollowBy' represents an important domain concept.
+It does not declare any attributes.
+
+'KindOfEvent' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Operators' defines the following possible values: 'between', 'not', 'isnot', 'notIn', 'equal', 'moreEqualThan', 'or', 'multiplication', 'plus', 'minus', 'and', 'in', 'moreThan', 'lessEqualThan', 'lessThan'.
+
+The model also captures inheritance relationships between classes.
+The class 'esper_Event' is a specialization of 'KindOfEvent'.
+The class 'esper_Insert' is a specialization of 'KindOfEvent'.
+The class 'esper_Anything' is a specialization of 'ExtraParenthesisRule'.
+
+Relationships between classes are modeled using associations.
+An association connects 'esper_Domainmodel' and 'esper_RuleParts'. From 'esper_Domainmodel', the role 'esper_Domainmodel' has cardinality 0..*, and from 'esper_RuleParts', the role 'esper_RuleParts' has cardinality 0..*.
+An association connects 'esper_Event' and 'esper_Domainmodel'. From 'esper_Event', the role 'esper_Event' has cardinality 0..*, and from 'esper_Domainmodel', the role 'esper_Domainmodel2' has cardinality 0..*.
+An association connects 'esper_Attributes' and 'esper_Event'. From 'esper_Attributes', the role 'esper_Attributes' has cardinality 0..*, and from 'esper_Event', the role 'esper_Event4' has cardinality 0..*.
+An association connects 'esper_Attributes' and 'esper_AttributesDefinition'. From 'esper_Attributes', the role 'esper_Attributes6' has cardinality 0..*, and from 'esper_AttributesDefinition', the role 'esper_AttributesDefinition' has cardinality 0..*.
+An association connects 'esper_RuleParts' and 'esper_Name'. From 'esper_RuleParts', the role 'esper_RuleParts8' has cardinality 0..*, and from 'esper_Name', the role 'esper_Name' has cardinality 0..*.
+An association connects 'esper_RuleParts' and 'esper_Insert'. From 'esper_RuleParts', the role 'esper_RuleParts10' has cardinality 0..*, and from 'esper_Insert', the role 'esper_Insert' has cardinality 0..*.
+An association connects 'esper_Priority' and 'esper_RuleParts'. From 'esper_Priority', the role 'esper_Priority' has cardinality 0..*, and from 'esper_RuleParts', the role 'esper_RuleParts12' has cardinality 0..*.
+An association connects 'esper_RuleParts' and 'esper_Select'. From 'esper_RuleParts', the role 'esper_RuleParts14' has cardinality 0..*, and from 'esper_Select', the role 'esper_Select' has cardinality 0..*.
+An association connects 'esper_From' and 'esper_RuleParts'. From 'esper_From', the role 'esper_From' has cardinality 0..*, and from 'esper_RuleParts', the role 'esper_RuleParts16' has cardinality 0..*.
+An association connects 'esper_GroupBy' and 'esper_RuleParts'. From 'esper_GroupBy', the role 'esper_GroupBy' has cardinality 0..*, and from 'esper_RuleParts', the role 'esper_RuleParts18' has cardinality 0..*.
+An association connects 'esper_RuleParts' and 'esper_Having'. From 'esper_RuleParts', the role 'esper_RuleParts20' has cardinality 0..*, and from 'esper_Having', the role 'esper_Having' has cardinality 0..*.
+An association connects 'esper_Select' and 'esper_SelectAttributesDefinition'. From 'esper_Select', the role 'esper_Select22' has cardinality 0..*, and from 'esper_SelectAttributesDefinition', the role 'esper_SelectAttributesDefinition' has cardinality 0..*.
+An association connects 'esper_SingleSelectDefinition' and 'esper_KindSelectAttributesDefinition'. From 'esper_SingleSelectDefinition', the role 'esper_SingleSelectDefinition' has cardinality 0..*, and from 'esper_KindSelectAttributesDefinition', the role 'esper_KindSelectAttributesDefinition' has cardinality 0..*.
+An association connects 'esper_KindSelectAttributesDefinition' and 'esper_DefaultMethods'. From 'esper_KindSelectAttributesDefinition', the role 'esper_KindSelectAttributesDefinition25' has cardinality 0..*, and from 'esper_DefaultMethods', the role 'esper_DefaultMethods' has cardinality 0..*.
+An association connects 'esper_SelectAttributesDefinition' and 'esper_KindSelectAttributesDefinition'. From 'esper_SelectAttributesDefinition', the role 'esper_SelectAttributesDefinition27' has cardinality 0..*, and from 'esper_KindSelectAttributesDefinition', the role 'esper_KindSelectAttributesDefinition28' has cardinality 0..*.
+An association connects 'esper_SelectAttributesDefinition' and 'esper_KindSelectAttributesDefinition'. From 'esper_SelectAttributesDefinition', the role 'esper_SelectAttributesDefinition30' has cardinality 0..*, and from 'esper_KindSelectAttributesDefinition', the role 'esper_KindSelectAttributesDefinition31' has cardinality 0..*.
+An association connects 'esper_SingleDefinition' and 'esper_SingleSelectDefinition'. From 'esper_SingleDefinition', the role 'esper_SingleDefinition' has cardinality 0..*, and from 'esper_SingleSelectDefinition', the role 'esper_SingleSelectDefinition33' has cardinality 0..*.
+An association connects 'esper_Event' and 'esper_From'. From 'esper_Event', the role 'esper_Event36' has cardinality 0..*, and from 'esper_From', the role 'esper_From35' has cardinality 0..*.
+An association connects 'esper_Anything' and 'esper_From'. From 'esper_Anything', the role 'esper_Anything' has cardinality 0..*, and from 'esper_From', the role 'esper_From38' has cardinality 0..*.
+An association connects 'esper_Pattern' and 'esper_From'. From 'esper_Pattern', the role 'esper_Pattern' has cardinality 0..*, and from 'esper_From', the role 'esper_From40' has cardinality 0..*.
+An association connects 'esper_Pattern' and 'esper_JoinFollowBy'. From 'esper_Pattern', the role 'esper_Pattern42' has cardinality 0..*, and from 'esper_JoinFollowBy', the role 'esper_JoinFollowBy' has cardinality 0..*.
+An association connects 'esper_Win' and 'esper_Pattern'. From 'esper_Win', the role 'esper_Win' has cardinality 0..*, and from 'esper_Pattern', the role 'esper_Pattern44' has cardinality 0..*.
+An association connects 'esper_JoinFollowBy' and 'esper_AbstractFollowBy'. From 'esper_JoinFollowBy', the role 'esper_JoinFollowBy46' has cardinality 0..*, and from 'esper_AbstractFollowBy', the role 'esper_AbstractFollowBy' has cardinality 0..*.
+An association connects 'esper_FollowBy' and 'esper_AbstractFollowBy'. From 'esper_FollowBy', the role 'esper_FollowBy' has cardinality 0..*, and from 'esper_AbstractFollowBy', the role 'esper_AbstractFollowBy48' has cardinality 0..*.
+An association connects 'esper_FollowByWhere' and 'esper_AbstractFollowBy'. From 'esper_FollowByWhere', the role 'esper_FollowByWhere' has cardinality 0..*, and from 'esper_AbstractFollowBy', the role 'esper_AbstractFollowBy50' has cardinality 0..*.
+An association connects 'esper_TerminalExpression' and 'esper_FollowBy'. From 'esper_TerminalExpression', the role 'esper_TerminalExpression' has cardinality 0..*, and from 'esper_FollowBy', the role 'esper_FollowBy52' has cardinality 0..*.
+An association connects 'esper_FollowBy' and 'esper_TerminalExpression'. From 'esper_FollowBy', the role 'esper_FollowBy54' has cardinality 0..*, and from 'esper_TerminalExpression', the role 'esper_TerminalExpression55' has cardinality 0..*.
+An association connects 'esper_FollowBy' and 'esper_TerminalExpression'. From 'esper_FollowBy', the role 'esper_FollowBy58' has cardinality 0..*, and from 'esper_TerminalExpression', the role 'esper_TerminalExpression57' has cardinality 0..*.
+An association connects 'esper_TerminalExpression' and 'esper_FollowBy'. From 'esper_TerminalExpression', the role 'esper_TerminalExpression60' has cardinality 0..*, and from 'esper_FollowBy', the role 'esper_FollowBy61' has cardinality 0..*.
+An association connects 'esper_SingleDefinition' and 'esper_TerminalExpression'. From 'esper_SingleDefinition', the role 'esper_SingleDefinition64' has cardinality 0..*, and from 'esper_TerminalExpression', the role 'esper_TerminalExpression63' has cardinality 0..*.
+An association connects 'esper_KindOfEvent' and 'esper_SingleDefinition'. From 'esper_KindOfEvent', the role 'esper_KindOfEvent' has cardinality 0..*, and from 'esper_SingleDefinition', the role 'esper_SingleDefinition66' has cardinality 0..*.
+An association connects 'esper_SingleDefinition' and 'esper_Anything'. From 'esper_SingleDefinition', the role 'esper_SingleDefinition68' has cardinality 0..*, and from 'esper_Anything', the role 'esper_Anything69' has cardinality 0..*.
+An association connects 'esper_Win' and 'esper_DefaultMethods'. From 'esper_Win', the role 'esper_Win71' has cardinality 0..*, and from 'esper_DefaultMethods', the role 'esper_DefaultMethods72' has cardinality 0..*.
+An association connects 'esper_Timer' and 'esper_FollowByWhere'. From 'esper_Timer', the role 'esper_Timer' has cardinality 0..*, and from 'esper_FollowByWhere', the role 'esper_FollowByWhere74' has cardinality 0..*.
+An association connects 'esper_Timer' and 'esper_DefaultMethods'. From 'esper_Timer', the role 'esper_Timer76' has cardinality 0..*, and from 'esper_DefaultMethods', the role 'esper_DefaultMethods77' has cardinality 0..*.
+An association connects 'esper_GroupBy' and 'esper_Anything'. From 'esper_GroupBy', the role 'esper_GroupBy79' has cardinality 0..*, and from 'esper_Anything', the role 'esper_Anything80' has cardinality 0..*.
+An association connects 'esper_DefaultMethods' and 'esper_Having'. From 'esper_DefaultMethods', the role 'esper_DefaultMethods83' has cardinality 0..*, and from 'esper_Having', the role 'esper_Having82' has cardinality 0..*.
+An association connects 'esper_Anything' and 'esper_Having'. From 'esper_Anything', the role 'esper_Anything86' has cardinality 0..*, and from 'esper_Having', the role 'esper_Having85' has cardinality 0..*.
+An association connects 'esper_DefaultMethods' and 'esper_Anything'. From 'esper_DefaultMethods', the role 'esper_DefaultMethods88' has cardinality 0..*, and from 'esper_Anything', the role 'esper_Anything89' has cardinality 0..*.
+An association connects 'esper_ExtraParenthesisRule' and 'esper_Anything'. From 'esper_ExtraParenthesisRule', the role 'esper_ExtraParenthesisRule' has cardinality 0..*, and from 'esper_Anything', the role 'esper_Anything91' has cardinality 0..*.

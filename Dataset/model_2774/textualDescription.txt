@@ -1,0 +1,27 @@
+The domain model 'MetamodelInheritance3' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'MetamodelInheritance3_BaseContaineeA' represents an important domain concept.
+It does not declare any attributes.
+
+'MetamodelInheritance3_ChildC' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseContaineeC' represents an important domain concept.
+It does not declare any attributes.
+
+'ChildContaineeD' represents an important domain concept.
+It does not declare any attributes.
+
+'MetamodelInheritance3_ChildD' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'MetamodelInheritance3_ChildC' is a specialization of 'BaseContaineeC'.
+The class 'MetamodelInheritance3_ChildD' is a specialization of 'ChildContaineeD'.
+
+Relationships between classes are modeled using associations.
+An association connects 'MetamodelInheritance3_ChildD' and 'MetamodelInheritance3_ChildC'. From 'MetamodelInheritance3_ChildD', the role 'ChildD' has cardinality 0..*, and from 'MetamodelInheritance3_ChildC', the role 'c' has cardinality 0..*.
+An association connects 'MetamodelInheritance3_ChildD' and 'MetamodelInheritance3_ChildC'. From 'MetamodelInheritance3_ChildD', the role 'd' has cardinality 0..*, and from 'MetamodelInheritance3_ChildC', the role 'ChildC' has cardinality 0..*.
+An association connects 'MetamodelInheritance3_ChildD' and 'MetamodelInheritance3_BaseContaineeA'. From 'MetamodelInheritance3_ChildD', the role 'MetamodelInheritance3_ChildD' has cardinality 0..*, and from 'MetamodelInheritance3_BaseContaineeA', the role 'MetamodelInheritance3_BaseContaineeA' has cardinality 0..*.

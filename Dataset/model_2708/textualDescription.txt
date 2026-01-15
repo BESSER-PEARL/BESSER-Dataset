@@ -1,0 +1,20 @@
+The domain model 'strictSample' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'strictSample_D' represents an important domain concept.
+It does not declare any attributes.
+
+'strictSample_C' represents an important domain concept.
+It does not declare any attributes.
+
+'strictSample_B' represents an important domain concept.
+It has one attribute: 'b', which is of type str.
+
+'strictSample_A' represents an important domain concept.
+It has one attribute: 'a', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'strictSample_A' and 'strictSample_B'. From 'strictSample_A', the role 'strictSample_A' has cardinality 0..*, and from 'strictSample_B', the role 'strictSample_B' has cardinality 0..*.
+An association connects 'strictSample_B' and 'strictSample_C'. From 'strictSample_B', the role 'strictSample_B2' has cardinality 0..*, and from 'strictSample_C', the role 'strictSample_C' has cardinality 0..*.
+An association connects 'strictSample_D' and 'strictSample_B'. From 'strictSample_D', the role 'strictSample_D' has cardinality 0..*, and from 'strictSample_B', the role 'strictSample_B4' has cardinality 0..*.

@@ -1,0 +1,83 @@
+The domain model 'test101' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'test101_L1' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'test101_A' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'test101_J' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'test101_F' represents an important domain concept.
+It does not declare any attributes.
+
+'test101_N' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'test101_B' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'test101_E' represents an important domain concept.
+It does not declare any attributes.
+
+'test101_M' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'test101_K' represents an important domain concept.
+It has one attribute: 'ids', which is of type str.
+
+'test101_I' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'M' represents an important domain concept.
+It does not declare any attributes.
+
+'test101_C' represents an important domain concept.
+It does not declare any attributes.
+
+'test101_G' represents an important domain concept.
+It does not declare any attributes.
+
+'D' represents an important domain concept.
+It does not declare any attributes.
+
+'test101_Q' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'E' represents an important domain concept.
+It does not declare any attributes.
+
+'G' represents an important domain concept.
+It does not declare any attributes.
+
+'test101_D' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'test101_A' is a specialization of 'B'.
+The class 'test101_D' is a specialization of 'G'.
+The class 'test101_E' is a specialization of 'D'.
+The class 'test101_F' is a specialization of 'E'.
+The class 'test101_G' is a specialization of 'M'.
+
+Relationships between classes are modeled using associations.
+An association connects 'test101_C' and 'test101_A'. From 'test101_C', the role 'test101_C' has cardinality 0..*, and from 'test101_A', the role 'test101_A' has cardinality 0..*.
+An association connects 'test101_C' and 'test101_D'. From 'test101_C', the role 'test101_C2' has cardinality 0..*, and from 'test101_D', the role 'test101_D' has cardinality 0..*.
+An association connects 'test101_C' and 'test101_L1'. From 'test101_C', the role 'test101_C4' has cardinality 0..*, and from 'test101_L1', the role 'test101_L1' has cardinality 0..*.
+An association connects 'test101_B' and 'test101_A'. From 'test101_B', the role 'test101_B' has cardinality 0..*, and from 'test101_A', the role 'test101_A6' has cardinality 0..*.
+An association connects 'test101_B' and 'test101_G'. From 'test101_B', the role 'test101_B8' has cardinality 0..*, and from 'test101_G', the role 'test101_G' has cardinality 0..*.
+An association connects 'test101_F' and 'test101_D'. From 'test101_F', the role 'test101_F' has cardinality 0..*, and from 'test101_D', the role 'test101_D10' has cardinality 0..*.
+An association connects 'test101_G' and 'test101_D'. From 'test101_G', the role 'test101_G13' has cardinality 0..*, and from 'test101_D', the role 'test101_D12' has cardinality 0..*.
+An association connects 'test101_D' and 'test101_N'. From 'test101_D', the role 'test101_D15' has cardinality 0..*, and from 'test101_N', the role 'test101_N' has cardinality 0..*.
+An association connects 'test101_E' and 'test101_J'. From 'test101_E', the role 'test101_E' has cardinality 0..*, and from 'test101_J', the role 'test101_J' has cardinality 0..*.
+An association connects 'test101_Q' and 'test101_F'. From 'test101_Q', the role 'test101_Q' has cardinality 0..*, and from 'test101_F', the role 'test101_F18' has cardinality 0..*.
+An association connects 'test101_I' and 'test101_G'. From 'test101_I', the role 'test101_I' has cardinality 0..*, and from 'test101_G', the role 'test101_G20' has cardinality 0..*.
+An association connects 'test101_G' and 'test101_K'. From 'test101_G', the role 'test101_G22' has cardinality 0..*, and from 'test101_K', the role 'test101_K' has cardinality 0..*.
+An association connects 'test101_B' and 'test101_L1'. From 'test101_B', the role 'test101_B25' has cardinality 0..*, and from 'test101_L1', the role 'test101_L124' has cardinality 0..*.
+An association connects 'test101_G' and 'test101_L1'. From 'test101_G', the role 'test101_G28' has cardinality 0..*, and from 'test101_L1', the role 'test101_L127' has cardinality 0..*.

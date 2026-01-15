@@ -1,0 +1,102 @@
+The domain model 'systemmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'systemmodel_Sum2' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_SrcBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'SMElement' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_Sum1' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_Outport' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'Sum' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_Test' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_UnitDelay' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_C' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'systemmodel_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_SystemModel' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_B' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_Sum' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_SMElement' represents an important domain concept.
+It does not declare any attributes.
+
+'systemmodel_A' represents an important domain concept.
+It has the following attributes: 'multiValAtt', which is of type str; 'name', which is of type str.
+
+'systemmodel_Inport' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'systemmodel_SystemModel' is a specialization of 'SMElement'.
+The class 'systemmodel_Block' is a specialization of 'SMElement'.
+The class 'systemmodel_Signal' is a specialization of 'SMElement'.
+The class 'systemmodel_Inport' is a specialization of 'SMElement'.
+The class 'systemmodel_Outport' is a specialization of 'SMElement'.
+The class 'systemmodel_UnitDelay' is a specialization of 'Block'.
+The class 'systemmodel_Sum' is a specialization of 'Block'.
+The class 'systemmodel_SrcBlock' is a specialization of 'Block'.
+The class 'systemmodel_Sum1' is a specialization of 'Sum'.
+The class 'systemmodel_Sum2' is a specialization of 'Sum'.
+The class 'systemmodel_Test' is a specialization of 'Block'.
+The class 'systemmodel_A' is a specialization of 'ModelElement'.
+The class 'systemmodel_B' is a specialization of 'A'.
+The class 'systemmodel_C' is a specialization of 'ModelElement'.
+The class 'systemmodel_Root' is a specialization of 'SMElement'.
+The class 'systemmodel_ModelElement' is a specialization of 'SMElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'systemmodel_Block' and 'systemmodel_SystemModel'. From 'systemmodel_Block', the role 'systemmodel_Block' has cardinality 0..*, and from 'systemmodel_SystemModel', the role 'systemmodel_SystemModel' has cardinality 0..*.
+An association connects 'systemmodel_SystemModel' and 'systemmodel_Signal'. From 'systemmodel_SystemModel', the role 'systemmodel_SystemModel2' has cardinality 0..*, and from 'systemmodel_Signal', the role 'systemmodel_Signal' has cardinality 0..*.
+An association connects 'systemmodel_Inport' and 'systemmodel_Block'. From 'systemmodel_Inport', the role 'systemmodel_Inport' has cardinality 0..*, and from 'systemmodel_Block', the role 'systemmodel_Block4' has cardinality 0..*.
+An association connects 'systemmodel_Block' and 'systemmodel_Outport'. From 'systemmodel_Block', the role 'parentBlock' has cardinality 0..*, and from 'systemmodel_Outport', the role 'Outport' has cardinality 0..*.
+An association connects 'systemmodel_Outport' and 'systemmodel_Signal'. From 'systemmodel_Outport', the role 'Outport7' has cardinality 0..*, and from 'systemmodel_Signal', the role 'outSignals' has cardinality 0..*.
+An association connects 'systemmodel_Signal' and 'systemmodel_Inport'. From 'systemmodel_Signal', the role 'inSignal' has cardinality 0..*, and from 'systemmodel_Inport', the role 'Inport' has cardinality 0..*.
+An association connects 'systemmodel_Signal' and 'systemmodel_Inport'. From 'systemmodel_Signal', the role 'Signal' has cardinality 0..*, and from 'systemmodel_Inport', the role 'dstPort' has cardinality 0..*.
+An association connects 'systemmodel_Outport' and 'systemmodel_Signal'. From 'systemmodel_Outport', the role 'srcPort' has cardinality 0..*, and from 'systemmodel_Signal', the role 'Signal11' has cardinality 0..*.
+An association connects 'systemmodel_Block' and 'systemmodel_Outport'. From 'systemmodel_Block', the role 'Block' has cardinality 0..*, and from 'systemmodel_Outport', the role 'outports' has cardinality 0..*.
+An association connects 'systemmodel_Block' and 'systemmodel_Test'. From 'systemmodel_Block', the role 'systemmodel_Block14' has cardinality 0..*, and from 'systemmodel_Test', the role 'systemmodel_Test' has cardinality 0..*.
+An association connects 'systemmodel_B' and 'systemmodel_A'. From 'systemmodel_B', the role 'systemmodel_B' has cardinality 0..*, and from 'systemmodel_A', the role 'systemmodel_A' has cardinality 0..*.
+An association connects 'systemmodel_C' and 'systemmodel_A'. From 'systemmodel_C', the role 'systemmodel_C' has cardinality 0..*, and from 'systemmodel_A', the role 'systemmodel_A17' has cardinality 0..*.
+An association connects 'systemmodel_ModelElement' and 'systemmodel_Root'. From 'systemmodel_ModelElement', the role 'systemmodel_ModelElement' has cardinality 0..*, and from 'systemmodel_Root', the role 'systemmodel_Root' has cardinality 0..*.

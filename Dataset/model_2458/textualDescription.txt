@@ -1,0 +1,53 @@
+The domain model 'dscDiagramModel' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'dscDiagramModel_DeepHistory' represents an important domain concept.
+It does not declare any attributes.
+
+'Container' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'dscDiagramModel_DSCDiagram' represents an important domain concept.
+It has the following attributes: 'functionFile', which is of type str; 'diagramVariables', which is of type str; 'eventFile', which is of type str; 'actionFile', which is of type str; 'guardFile', which is of type str.
+
+'GenericDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'dscDiagramModel_ShallowHistory' represents an important domain concept.
+It does not declare any attributes.
+
+'dscDiagramModel_StartPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'dscDiagramModel_AnchorNoteToItem' represents an important domain concept.
+It does not declare any attributes.
+
+'dscDiagramModel_DSCState' represents an important domain concept.
+It has the following attributes: 'isSimple', which is of type bool; 'Variables', which is of type str.
+
+'dscDiagramModel_Transition' represents an important domain concept.
+It has the following attributes: 'transitionID', which is of type str; 'showProperties', which is of type bool; 'actionID', which is of type str; 'eventID', which is of type str; 'triggeredByEvent', which is of type bool; 'guardID', which is of type str; 'showTransitionID', which is of type bool.
+
+The model also captures inheritance relationships between classes.
+The class 'dscDiagramModel_DSCDiagram' is a specialization of 'GenericDiagram'.
+The class 'dscDiagramModel_AnchorNoteToItem' is a specialization of 'Relationship'.
+The class 'dscDiagramModel_Transition' is a specialization of 'Relationship'.
+The class 'dscDiagramModel_StartPoint' is a specialization of 'Classifier'.
+The class 'dscDiagramModel_ShallowHistory' is a specialization of 'Classifier'.
+The class 'dscDiagramModel_DeepHistory' is a specialization of 'Classifier'.
+The class 'dscDiagramModel_DSCState' is a specialization of 'Container'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dscDiagramModel_StartPoint' and 'dscDiagramModel_DSCState'. From 'dscDiagramModel_StartPoint', the role 'startPoint' has cardinality 0..*, and from 'dscDiagramModel_DSCState', the role 'DSCState' has cardinality 0..*.
+An association connects 'dscDiagramModel_DSCState' and 'dscDiagramModel_ShallowHistory'. From 'dscDiagramModel_DSCState', the role 'DSCState2' has cardinality 0..*, and from 'dscDiagramModel_ShallowHistory', the role 'shallowHistory' has cardinality 0..*.
+An association connects 'dscDiagramModel_DSCState' and 'dscDiagramModel_DeepHistory'. From 'dscDiagramModel_DSCState', the role 'DSCState4' has cardinality 0..*, and from 'dscDiagramModel_DeepHistory', the role 'deepHistory' has cardinality 0..*.
+An association connects 'dscDiagramModel_StartPoint' and 'dscDiagramModel_DSCState'. From 'dscDiagramModel_StartPoint', the role 'StartPoint' has cardinality 0..*, and from 'dscDiagramModel_DSCState', the role 'compositeState' has cardinality 0..*.
+An association connects 'dscDiagramModel_ShallowHistory' and 'dscDiagramModel_DSCState'. From 'dscDiagramModel_ShallowHistory', the role 'ShallowHistory' has cardinality 0..*, and from 'dscDiagramModel_DSCState', the role 'compositeState7' has cardinality 0..*.
+An association connects 'dscDiagramModel_DeepHistory' and 'dscDiagramModel_DSCState'. From 'dscDiagramModel_DeepHistory', the role 'DeepHistory' has cardinality 0..*, and from 'dscDiagramModel_DSCState', the role 'compositeState9' has cardinality 0..*.

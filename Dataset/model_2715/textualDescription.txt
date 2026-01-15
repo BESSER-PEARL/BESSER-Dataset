@@ -1,0 +1,83 @@
+The domain model 'errorkref' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'errorkref_G' represents an important domain concept.
+It does not declare any attributes.
+
+'errorkref_F' represents an important domain concept.
+It does not declare any attributes.
+
+'errorkref_N' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'errorkref_L1' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'E' represents an important domain concept.
+It does not declare any attributes.
+
+'errorkref_Q' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'errorkref_E' represents an important domain concept.
+It does not declare any attributes.
+
+'errorkref_I' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'errorkref_A' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'D' represents an important domain concept.
+It does not declare any attributes.
+
+'M' represents an important domain concept.
+It does not declare any attributes.
+
+'errorkref_B' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'G' represents an important domain concept.
+It does not declare any attributes.
+
+'errorkref_M' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'errorkref_C' represents an important domain concept.
+It does not declare any attributes.
+
+'errorkref_J' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'errorkref_K' represents an important domain concept.
+It has one attribute: 'ids', which is of type str.
+
+'errorkref_D' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'errorkref_A' is a specialization of 'B'.
+The class 'errorkref_D' is a specialization of 'G'.
+The class 'errorkref_E' is a specialization of 'D'.
+The class 'errorkref_F' is a specialization of 'E'.
+The class 'errorkref_G' is a specialization of 'M'.
+
+Relationships between classes are modeled using associations.
+An association connects 'errorkref_A' and 'errorkref_C'. From 'errorkref_A', the role 'errorkref_A' has cardinality 0..*, and from 'errorkref_C', the role 'errorkref_C' has cardinality 0..*.
+An association connects 'errorkref_C' and 'errorkref_D'. From 'errorkref_C', the role 'errorkref_C2' has cardinality 0..*, and from 'errorkref_D', the role 'errorkref_D' has cardinality 0..*.
+An association connects 'errorkref_C' and 'errorkref_L1'. From 'errorkref_C', the role 'errorkref_C4' has cardinality 0..*, and from 'errorkref_L1', the role 'errorkref_L1' has cardinality 0..*.
+An association connects 'errorkref_A' and 'errorkref_B'. From 'errorkref_A', the role 'errorkref_A6' has cardinality 0..*, and from 'errorkref_B', the role 'errorkref_B' has cardinality 0..*.
+An association connects 'errorkref_B' and 'errorkref_G'. From 'errorkref_B', the role 'errorkref_B8' has cardinality 0..*, and from 'errorkref_G', the role 'errorkref_G' has cardinality 0..*.
+An association connects 'errorkref_D' and 'errorkref_F'. From 'errorkref_D', the role 'errorkref_D10' has cardinality 0..*, and from 'errorkref_F', the role 'errorkref_F' has cardinality 0..*.
+An association connects 'errorkref_D' and 'errorkref_G'. From 'errorkref_D', the role 'errorkref_D12' has cardinality 0..*, and from 'errorkref_G', the role 'errorkref_G13' has cardinality 0..*.
+An association connects 'errorkref_D' and 'errorkref_N'. From 'errorkref_D', the role 'errorkref_D15' has cardinality 0..*, and from 'errorkref_N', the role 'errorkref_N' has cardinality 0..*.
+An association connects 'errorkref_E' and 'errorkref_J'. From 'errorkref_E', the role 'errorkref_E' has cardinality 0..*, and from 'errorkref_J', the role 'errorkref_J' has cardinality 0..*.
+An association connects 'errorkref_F' and 'errorkref_Q'. From 'errorkref_F', the role 'errorkref_F18' has cardinality 0..*, and from 'errorkref_Q', the role 'errorkref_Q' has cardinality 0..*.
+An association connects 'errorkref_G' and 'errorkref_K'. From 'errorkref_G', the role 'errorkref_G20' has cardinality 0..*, and from 'errorkref_K', the role 'errorkref_K' has cardinality 0..*.
+An association connects 'errorkref_L1' and 'errorkref_B'. From 'errorkref_L1', the role 'errorkref_L122' has cardinality 0..*, and from 'errorkref_B', the role 'errorkref_B23' has cardinality 0..*.
+An association connects 'errorkref_G' and 'errorkref_L1'. From 'errorkref_G', the role 'errorkref_G26' has cardinality 0..*, and from 'errorkref_L1', the role 'errorkref_L125' has cardinality 0..*.
+An association connects 'errorkref_I' and 'errorkref_M'. From 'errorkref_I', the role 'errorkref_I' has cardinality 0..*, and from 'errorkref_M', the role 'errorkref_M' has cardinality 0..*.

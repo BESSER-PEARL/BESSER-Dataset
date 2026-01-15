@@ -1,0 +1,1147 @@
+The domain model 'alf' describes the core structural elements and their relationships within the system.
+
+The model defines 239 main class(es).
+
+'alf_TaggedValueList' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ActiveClassMember' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'NUMBER_LITERAL' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_AndExpressionCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_STRING_LITERAL' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_QualifiedNameList' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_AttributeInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_StructuredBody' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ConditionalExpressionCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_LinkOperationCompletion' represents an important domain concept.
+It has one attribute: 'linkOperation', which is of type str.
+
+'ClassifierDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_Name' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'alf_Feature_Or_SequenceOperationOrReductionOrExpansion_Or_Index' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_NameList' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SequenceAnyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ColonQualifiedNameCompletionWithoutBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_RelationalExpressionCompletion' represents an important domain concept.
+It has one attribute: 'relationalOperator', which is of type str.
+
+'alf_NUMBER_LITERAL' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassMemberDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_Multiplicity' represents an important domain concept.
+It has the following attributes: 'isNonUnique', which is of type bool; 'isOrdered', which is of type bool; 'isSequence', which is of type bool.
+
+'ActiveFeatureDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_NonFinalClause' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_UnqualifiedName' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ConditionalOrExpressionCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_DataTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_FormalParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ExpressionCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SequenceOperationOrReductionOrExpansion' represents an important domain concept.
+It has the following attributes: 'isReduce', which is of type bool; 'id', which is of type str; 'isOrdered', which is of type bool.
+
+'CastCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ImportReference' represents an important domain concept.
+It has one attribute: 'star', which is of type bool.
+
+'alf_RedefinitionClause' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SwitchDefaultClause' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_NameBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_BehaviorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ColonQualifiedNameCompletionOfImportReference' represents an important domain concept.
+It has one attribute: 'star', which is of type bool.
+
+'alf_ClassifierDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_Tuple' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_NamedTemplateBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'TaggedValues' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_NumericUnaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'alf_NamespaceDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_BaseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ExclusiveOrExpressionCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_UnitDefinition' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'alf_BOOLEAN_LITERAL' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SequenceInitializationExpression' represents an important domain concept.
+It has one attribute: 'isNew', which is of type bool.
+
+'alf_ClassificationClause' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ClassifierSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ClassMemberDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_PackagedElement' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'importVisibilityIndicator', which is of type str.
+
+'alf_TemplateBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ClassificationToClause' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ActivityDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_NameOrPrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ActiveClassBody' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ShiftExpressionCompletion' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'alf_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NamespaceDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_DocumentedStatement' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'BaseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ReceptionDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_StereotypeAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_NonPostfixNonCastUnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_CompoundAcceptStatementCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ParenthesizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ClassExtentExpressionCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_PropertyDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_AcceptClause' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_AnnotatedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_LiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_RelationalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_InitializationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ClassDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_AssociationDeclaration' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'alf_LoopVariableDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_AttributeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SignalDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SequentialClauses' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_AcceptBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_TemplateParameters' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ActiveClassMemberDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SignalDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ClassificationExpressionCompletion' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'alf_ActivityDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ClassificationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ActiveClassDeclaration' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'alf_NameToPrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_FormalParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ExclusiveOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_AcceptStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_TypePart' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SequenceElements' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ClassBody' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ClassDeclaration' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'alf_TypeName' represents an important domain concept.
+It has one attribute: 'any', which is of type bool.
+
+'alf_PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ClassifierDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_INTEGER_LITERAL' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_InclusiveOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_MultiplicityIndicator' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_PackageDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_Annotations' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_NonNameExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_PackagedElementDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ShiftExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_TaggedValues' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_AssignmentExpressionCompletion' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ExpressionCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_VisibilityIndicator' represents an important domain concept.
+It has the following attributes: 'PROTECTED', which is of type str; 'PUBLIC', which is of type str; 'PRIVATE', which is of type str.
+
+'alf_ActiveFeatureDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ConditionalAndExpressionCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SequenceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_FeatureDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ForControl' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_PositionalTupleExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_LocalNameDeclarationStatementCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_TaggedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_PrefixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'alf_EnumerationDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_IndexedNamedExpressionListCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_FeatureInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ClassDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_NamedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_InstanceInitializationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SignalReceptionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SignalDeclaration' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'alf_SignalReceptionDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_DataTypeDeclaration' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'alf_PostfixExpressionCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_PackageDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_PRIMITIVE_LITERAL' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'TemplateBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'ActiveClassMemberDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_NamedTupleExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_EnumerationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ClassifyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_BitStringComplementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_PackageBody' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_AdditiveExpressionCompletion' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'alf_NonEmptyStatementSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_EqualityExpressionCompletion' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'alf_InstanceCreationOrSequenceConstructionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ClassifierTemplateParameter' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'alf_DoStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_LocalNameDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_AssociationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_UNLIMITED_NATURAL' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ConcurrentClauses' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_PrimaryToExpressionCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_EnumerationBody' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SequenceElementListCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_PrimaryExpressionCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_BehaviorClause' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_BlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_FinalClause' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_NonNamePostfixOrCastExpression' represents an important domain concept.
+It has one attribute: 'any', which is of type bool.
+
+'alf_SpecializationClause' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_Index' represents an important domain concept.
+It does not declare any attributes.
+
+'PRIMITIVE_LITERAL' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_QualifiedNameWithoutBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_LinkOperationTuple' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_OperationDeclaration' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'alf_QualifiedName' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_CastCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_TemplateParameterSubstitution' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_LocalNameDeclarationOrExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'InitializationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ReclassifyAllClause' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'PackagedElementDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_MultiplicativeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'NonNameUnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_PostfixOperation' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'alf_ActiveClassDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ImportReferenceQualifiedNameCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_OperationDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_AssociationDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_InLineStatement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'alf_ConditionalAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassifierDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SuperInvocationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_Annotation' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'alf_UnlimitedNaturalLiteral' represents an important domain concept.
+It has one attribute: 'star', which is of type bool.
+
+'alf_EnumerationDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'UnqualifiedName' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_IndexedNamedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ImportReferenceQualifiedNameCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SimpleAcceptStatementCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_IsolationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_PositionalTemplateBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_PostfixOrCastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_AdditiveExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_PropertyDeclaration' represents an important domain concept.
+It has one attribute: 'isComposite', which is of type bool.
+
+'alf_ClassMember' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'alf_InclusiveOrExpressionCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ActivityDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_StereotypeAnnotations' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ImportDeclaration' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'alf_MultiplicityRange' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SequenceConstructionExpressionCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ConditionalOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_PackageDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_StructuredMember' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'isPublic', which is of type bool.
+
+'alf_StatementSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_NamespaceDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_MultiplicativeExpressionCompletion' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'alf_AliasDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_EnumerationLiteralName' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'alf_NameToExpressionCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_BooleanNegationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_FormalParameter' represents an important domain concept.
+It has the following attributes: 'parameterDirection', which is of type str; 'comment', which is of type str.
+
+'alf_PositionalTupleExpressionListCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_SwitchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ColonQualifiedNameCompletion' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ClassificationFromClause' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_NonNameUnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ActiveClassDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'NonPostfixNonCastUnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_DataTypeDefinitionOrStub' represents an important domain concept.
+It does not declare any attributes.
+
+'alf_ThisExpression' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AffixOperator' defines the following possible values: 'INCR', 'DECR'.
+The enumeration 'ParameterDirection' defines the following possible values: 'OUT', 'IN', 'INOUT'.
+The enumeration 'ShiftOperator' defines the following possible values: 'URSHIFT', 'RSHIFT', 'LSHIFT'.
+The enumeration 'AdditiveOperator' defines the following possible values: 'MINUS', 'PLUS'.
+The enumeration 'NumericUnaryOperator' defines the following possible values: 'PLUS', 'MINUS'.
+The enumeration 'ImportVisibilityIndicator' defines the following possible values: 'PUBLIC', 'PRIVATE'.
+The enumeration 'LinkOperation' defines the following possible values: 'CREATE_LINK', 'CLEAR_ASSOC', 'DESTROY_LINK'.
+The enumeration 'RelationalOperator' defines the following possible values: 'LE', 'GE', 'GT', 'LT'.
+The enumeration 'EqualityOperator' defines the following possible values: 'EQ', 'NE'.
+The enumeration 'MultiplicativeOperator' defines the following possible values: 'REM', 'SLASH', 'STAR'.
+The enumeration 'ClassificationOperator' defines the following possible values: 'HASTYPE', 'INSTANCEOF'.
+The enumeration 'AssignmentOperator' defines the following possible values: 'ANSASSIGN', 'RSHIFTASSIGN', 'URSHIFTASSIGN', 'PLUSASSIGN', 'ORASSIGN', 'MINUSASSIGN', 'ASSIGN', 'LSHIFTASSIGN', 'XORASSIGN', 'SLASHASSIGN', 'REMASSIGN', 'STARASSIGN'.
+
+The model also captures inheritance relationships between classes.
+The class 'alf_BOOLEAN_LITERAL' is a specialization of 'PRIMITIVE_LITERAL'.
+The class 'alf_NUMBER_LITERAL' is a specialization of 'PRIMITIVE_LITERAL'.
+The class 'alf_INTEGER_LITERAL' is a specialization of 'NUMBER_LITERAL'.
+The class 'alf_UNLIMITED_NATURAL' is a specialization of 'NUMBER_LITERAL'.
+The class 'alf_STRING_LITERAL' is a specialization of 'PRIMITIVE_LITERAL'.
+The class 'alf_TaggedValueList' is a specialization of 'TaggedValues'.
+The class 'alf_ColonQualifiedNameCompletionOfImportReference' is a specialization of 'ImportReferenceQualifiedNameCompletion'.
+The class 'alf_PackageDefinition' is a specialization of 'NamespaceDefinition'.
+The class 'alf_PackageDefinitionOrStub' is a specialization of 'PackagedElementDefinition'.
+The class 'alf_ClassifierDefinition' is a specialization of 'NamespaceDefinition'.
+The class 'alf_ClassifierDefinitionOrStub' is a specialization of 'PackagedElementDefinition'.
+The class 'alf_ClassifierDefinitionOrStub' is a specialization of 'ClassMemberDefinition'.
+The class 'alf_ClassDefinition' is a specialization of 'ClassifierDefinition'.
+The class 'alf_ClassDefinitionOrStub' is a specialization of 'ClassifierDefinitionOrStub'.
+The class 'alf_ClassMemberDefinition' is a specialization of 'ActiveClassMemberDefinition'.
+The class 'alf_ActiveClassDefinition' is a specialization of 'ClassifierDefinition'.
+The class 'alf_ActiveClassDefinitionOrStub' is a specialization of 'ClassifierDefinitionOrStub'.
+The class 'alf_DataTypeDefinition' is a specialization of 'ClassifierDefinition'.
+The class 'alf_DataTypeDefinitionOrStub' is a specialization of 'ClassifierDefinitionOrStub'.
+The class 'alf_AssociationDefinition' is a specialization of 'ClassifierDefinition'.
+The class 'alf_AssociationDefinitionOrStub' is a specialization of 'ClassifierDefinitionOrStub'.
+The class 'alf_EnumerationDefinition' is a specialization of 'ClassifierDefinition'.
+The class 'alf_EnumerationDefinitionOrStub' is a specialization of 'ClassifierDefinitionOrStub'.
+The class 'alf_SignalDefinition' is a specialization of 'ClassifierDefinition'.
+The class 'alf_SignalDefinitionOrStub' is a specialization of 'ClassifierDefinitionOrStub'.
+The class 'alf_ActivityDefinition' is a specialization of 'ClassifierDefinition'.
+The class 'alf_ActivityDefinitionOrStub' is a specialization of 'ClassifierDefinitionOrStub'.
+The class 'alf_FeatureDefinitionOrStub' is a specialization of 'ClassMemberDefinition'.
+The class 'alf_ActiveFeatureDefinitionOrStub' is a specialization of 'ActiveClassMemberDefinition'.
+The class 'alf_AttributeDefinition' is a specialization of 'FeatureDefinitionOrStub'.
+The class 'alf_OperationDeclaration' is a specialization of 'OperationDefinitionOrStub'.
+The class 'alf_OperationDefinitionOrStub' is a specialization of 'FeatureDefinitionOrStub'.
+The class 'alf_ReceptionDefinition' is a specialization of 'ActiveFeatureDefinitionOrStub'.
+The class 'alf_SignalReceptionDefinitionOrStub' is a specialization of 'ActiveFeatureDefinitionOrStub'.
+The class 'alf_NameBinding' is a specialization of 'UnqualifiedName'.
+The class 'alf_PositionalTemplateBinding' is a specialization of 'TemplateBinding'.
+The class 'alf_NamedTemplateBinding' is a specialization of 'TemplateBinding'.
+The class 'alf_Expression' is a specialization of 'InitializationExpression'.
+The class 'alf_LiteralExpression' is a specialization of 'BaseExpression'.
+The class 'alf_ThisExpression' is a specialization of 'BaseExpression'.
+The class 'alf_SuperInvocationExpression' is a specialization of 'BaseExpression'.
+The class 'alf_InstanceCreationOrSequenceConstructionExpression' is a specialization of 'BaseExpression'.
+The class 'alf_SequenceAnyExpression' is a specialization of 'BaseExpression'.
+The class 'alf_SequenceInitializationExpression' is a specialization of 'InitializationExpression'.
+The class 'alf_PrefixExpression' is a specialization of 'NonPostfixNonCastUnaryExpression'.
+The class 'alf_PostfixOrCastExpression' is a specialization of 'UnaryExpression'.
+The class 'alf_PostfixOrCastExpression' is a specialization of 'CastCompletion'.
+The class 'alf_NonNamePostfixOrCastExpression' is a specialization of 'NonNameUnaryExpression'.
+The class 'alf_NonPostfixNonCastUnaryExpression' is a specialization of 'UnaryExpression'.
+The class 'alf_NonPostfixNonCastUnaryExpression' is a specialization of 'NonNameUnaryExpression'.
+The class 'alf_BooleanNegationExpression' is a specialization of 'NonPostfixNonCastUnaryExpression'.
+The class 'alf_BooleanNegationExpression' is a specialization of 'CastCompletion'.
+The class 'alf_BitStringComplementExpression' is a specialization of 'NonPostfixNonCastUnaryExpression'.
+The class 'alf_BitStringComplementExpression' is a specialization of 'CastCompletion'.
+The class 'alf_NumericUnaryExpression' is a specialization of 'NonPostfixNonCastUnaryExpression'.
+The class 'alf_IsolationExpression' is a specialization of 'NonPostfixNonCastUnaryExpression'.
+The class 'alf_IsolationExpression' is a specialization of 'CastCompletion'.
+The class 'alf_ConditionalExpressionCompletion' is a specialization of 'ExpressionCompletion'.
+The class 'alf_AssignmentExpressionCompletion' is a specialization of 'ExpressionCompletion'.
+The class 'alf_AnnotatedStatement' is a specialization of 'Statement'.
+The class 'alf_InLineStatement' is a specialization of 'Statement'.
+The class 'alf_BlockStatement' is a specialization of 'Statement'.
+The class 'alf_EmptyStatement' is a specialization of 'Statement'.
+The class 'alf_LocalNameDeclarationOrExpressionStatement' is a specialization of 'Statement'.
+The class 'alf_LocalNameDeclarationStatement' is a specialization of 'Statement'.
+The class 'alf_InstanceInitializationExpression' is a specialization of 'InitializationExpression'.
+The class 'alf_IfStatement' is a specialization of 'Statement'.
+The class 'alf_SwitchStatement' is a specialization of 'Statement'.
+The class 'alf_WhileStatement' is a specialization of 'Statement'.
+The class 'alf_DoStatement' is a specialization of 'Statement'.
+The class 'alf_ForStatement' is a specialization of 'Statement'.
+The class 'alf_BreakStatement' is a specialization of 'Statement'.
+The class 'alf_ReturnStatement' is a specialization of 'Statement'.
+The class 'alf_AcceptStatement' is a specialization of 'Statement'.
+The class 'alf_ClassifyStatement' is a specialization of 'Statement'.
+The class 'alf_QualifiedNameList' is a specialization of 'TaggedValues'.
+
+Relationships between classes are modeled using associations.
+An association connects 'alf_NamespaceDeclaration' and 'alf_UnitDefinition'. From 'alf_NamespaceDeclaration', the role 'alf_NamespaceDeclaration' has cardinality 0..*, and from 'alf_UnitDefinition', the role 'alf_UnitDefinition' has cardinality 0..*.
+An association connects 'alf_ImportDeclaration' and 'alf_UnitDefinition'. From 'alf_ImportDeclaration', the role 'alf_ImportDeclaration' has cardinality 0..*, and from 'alf_UnitDefinition', the role 'alf_UnitDefinition2' has cardinality 0..*.
+An association connects 'alf_StereotypeAnnotations' and 'alf_UnitDefinition'. From 'alf_StereotypeAnnotations', the role 'alf_StereotypeAnnotations' has cardinality 0..*, and from 'alf_UnitDefinition', the role 'alf_UnitDefinition4' has cardinality 0..*.
+An association connects 'alf_UnitDefinition' and 'alf_NamespaceDefinition'. From 'alf_UnitDefinition', the role 'alf_UnitDefinition6' has cardinality 0..*, and from 'alf_NamespaceDefinition', the role 'alf_NamespaceDefinition' has cardinality 0..*.
+An association connects 'alf_StereotypeAnnotation' and 'alf_StereotypeAnnotations'. From 'alf_StereotypeAnnotation', the role 'alf_StereotypeAnnotation' has cardinality 0..*, and from 'alf_StereotypeAnnotations', the role 'alf_StereotypeAnnotations8' has cardinality 0..*.
+An association connects 'alf_StereotypeAnnotation' and 'alf_QualifiedName'. From 'alf_StereotypeAnnotation', the role 'alf_StereotypeAnnotation10' has cardinality 0..*, and from 'alf_QualifiedName', the role 'alf_QualifiedName' has cardinality 0..*.
+An association connects 'alf_StereotypeAnnotation' and 'alf_TaggedValues'. From 'alf_StereotypeAnnotation', the role 'alf_StereotypeAnnotation12' has cardinality 0..*, and from 'alf_TaggedValues', the role 'alf_TaggedValues' has cardinality 0..*.
+An association connects 'alf_TaggedValue' and 'alf_TaggedValueList'. From 'alf_TaggedValue', the role 'alf_TaggedValue' has cardinality 0..*, and from 'alf_TaggedValueList', the role 'alf_TaggedValueList' has cardinality 0..*.
+An association connects 'alf_TaggedValue' and 'alf_Name'. From 'alf_TaggedValue', the role 'alf_TaggedValue15' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name' has cardinality 0..*.
+An association connects 'alf_PRIMITIVE_LITERAL' and 'alf_TaggedValue'. From 'alf_PRIMITIVE_LITERAL', the role 'alf_PRIMITIVE_LITERAL' has cardinality 0..*, and from 'alf_TaggedValue', the role 'alf_TaggedValue17' has cardinality 0..*.
+An association connects 'alf_QualifiedName' and 'alf_NamespaceDeclaration'. From 'alf_QualifiedName', the role 'alf_QualifiedName20' has cardinality 0..*, and from 'alf_NamespaceDeclaration', the role 'alf_NamespaceDeclaration19' has cardinality 0..*.
+An association connects 'alf_ImportDeclaration' and 'alf_ImportReference'. From 'alf_ImportDeclaration', the role 'alf_ImportDeclaration22' has cardinality 0..*, and from 'alf_ImportReference', the role 'alf_ImportReference' has cardinality 0..*.
+An association connects 'alf_ImportReference' and 'alf_Name'. From 'alf_ImportReference', the role 'alf_ImportReference24' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name25' has cardinality 0..*.
+An association connects 'alf_ImportReference' and 'alf_ImportReferenceQualifiedNameCompletion'. From 'alf_ImportReference', the role 'alf_ImportReference27' has cardinality 0..*, and from 'alf_ImportReferenceQualifiedNameCompletion', the role 'alf_ImportReferenceQualifiedNameCompletion' has cardinality 0..*.
+An association connects 'alf_ImportReference' and 'alf_AliasDefinition'. From 'alf_ImportReference', the role 'alf_ImportReference29' has cardinality 0..*, and from 'alf_AliasDefinition', the role 'alf_AliasDefinition' has cardinality 0..*.
+An association connects 'alf_Name' and 'alf_ColonQualifiedNameCompletionOfImportReference'. From 'alf_Name', the role 'alf_Name31' has cardinality 0..*, and from 'alf_ColonQualifiedNameCompletionOfImportReference', the role 'alf_ColonQualifiedNameCompletionOfImportReference' has cardinality 0..*.
+An association connects 'alf_AliasDefinition' and 'alf_ColonQualifiedNameCompletionOfImportReference'. From 'alf_AliasDefinition', the role 'alf_AliasDefinition34' has cardinality 0..*, and from 'alf_ColonQualifiedNameCompletionOfImportReference', the role 'alf_ColonQualifiedNameCompletionOfImportReference33' has cardinality 0..*.
+An association connects 'alf_AliasDefinition' and 'alf_Name'. From 'alf_AliasDefinition', the role 'alf_AliasDefinition36' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name37' has cardinality 0..*.
+An association connects 'alf_PackageDeclaration' and 'alf_Name'. From 'alf_PackageDeclaration', the role 'alf_PackageDeclaration' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name39' has cardinality 0..*.
+An association connects 'alf_PackageDefinition' and 'alf_PackageDeclaration'. From 'alf_PackageDefinition', the role 'alf_PackageDefinition' has cardinality 0..*, and from 'alf_PackageDeclaration', the role 'alf_PackageDeclaration41' has cardinality 0..*.
+An association connects 'alf_PackageDefinition' and 'alf_PackageBody'. From 'alf_PackageDefinition', the role 'alf_PackageDefinition43' has cardinality 0..*, and from 'alf_PackageBody', the role 'alf_PackageBody' has cardinality 0..*.
+An association connects 'alf_PackageDeclaration' and 'alf_PackageDefinitionOrStub'. From 'alf_PackageDeclaration', the role 'alf_PackageDeclaration45' has cardinality 0..*, and from 'alf_PackageDefinitionOrStub', the role 'alf_PackageDefinitionOrStub' has cardinality 0..*.
+An association connects 'alf_PackageBody' and 'alf_PackageDefinitionOrStub'. From 'alf_PackageBody', the role 'alf_PackageBody48' has cardinality 0..*, and from 'alf_PackageDefinitionOrStub', the role 'alf_PackageDefinitionOrStub47' has cardinality 0..*.
+An association connects 'alf_PackageBody' and 'alf_PackagedElement'. From 'alf_PackageBody', the role 'alf_PackageBody50' has cardinality 0..*, and from 'alf_PackagedElement', the role 'alf_PackagedElement' has cardinality 0..*.
+An association connects 'alf_PackagedElement' and 'alf_StereotypeAnnotations'. From 'alf_PackagedElement', the role 'alf_PackagedElement52' has cardinality 0..*, and from 'alf_StereotypeAnnotations', the role 'alf_StereotypeAnnotations53' has cardinality 0..*.
+An association connects 'alf_PackagedElement' and 'alf_PackagedElementDefinition'. From 'alf_PackagedElement', the role 'alf_PackagedElement55' has cardinality 0..*, and from 'alf_PackagedElementDefinition', the role 'alf_PackagedElementDefinition' has cardinality 0..*.
+An association connects 'alf_Name' and 'alf_ClassifierSignature'. From 'alf_Name', the role 'alf_Name57' has cardinality 0..*, and from 'alf_ClassifierSignature', the role 'alf_ClassifierSignature' has cardinality 0..*.
+An association connects 'alf_TemplateParameters' and 'alf_ClassifierSignature'. From 'alf_TemplateParameters', the role 'alf_TemplateParameters' has cardinality 0..*, and from 'alf_ClassifierSignature', the role 'alf_ClassifierSignature59' has cardinality 0..*.
+An association connects 'alf_SpecializationClause' and 'alf_ClassifierSignature'. From 'alf_SpecializationClause', the role 'alf_SpecializationClause' has cardinality 0..*, and from 'alf_ClassifierSignature', the role 'alf_ClassifierSignature61' has cardinality 0..*.
+An association connects 'alf_ClassifierTemplateParameter' and 'alf_TemplateParameters'. From 'alf_ClassifierTemplateParameter', the role 'alf_ClassifierTemplateParameter' has cardinality 0..*, and from 'alf_TemplateParameters', the role 'alf_TemplateParameters63' has cardinality 0..*.
+An association connects 'alf_Name' and 'alf_ClassifierTemplateParameter'. From 'alf_Name', the role 'alf_Name66' has cardinality 0..*, and from 'alf_ClassifierTemplateParameter', the role 'alf_ClassifierTemplateParameter65' has cardinality 0..*.
+An association connects 'alf_QualifiedName' and 'alf_ClassifierTemplateParameter'. From 'alf_QualifiedName', the role 'alf_QualifiedName69' has cardinality 0..*, and from 'alf_ClassifierTemplateParameter', the role 'alf_ClassifierTemplateParameter68' has cardinality 0..*.
+An association connects 'alf_SpecializationClause' and 'alf_QualifiedNameList'. From 'alf_SpecializationClause', the role 'alf_SpecializationClause71' has cardinality 0..*, and from 'alf_QualifiedNameList', the role 'alf_QualifiedNameList' has cardinality 0..*.
+An association connects 'alf_ClassDeclaration' and 'alf_ClassifierSignature'. From 'alf_ClassDeclaration', the role 'alf_ClassDeclaration' has cardinality 0..*, and from 'alf_ClassifierSignature', the role 'alf_ClassifierSignature73' has cardinality 0..*.
+An association connects 'alf_ClassDeclaration' and 'alf_ClassDefinition'. From 'alf_ClassDeclaration', the role 'alf_ClassDeclaration75' has cardinality 0..*, and from 'alf_ClassDefinition', the role 'alf_ClassDefinition' has cardinality 0..*.
+An association connects 'alf_ClassDefinition' and 'alf_ClassBody'. From 'alf_ClassDefinition', the role 'alf_ClassDefinition77' has cardinality 0..*, and from 'alf_ClassBody', the role 'alf_ClassBody' has cardinality 0..*.
+An association connects 'alf_ClassDeclaration' and 'alf_ClassDefinitionOrStub'. From 'alf_ClassDeclaration', the role 'alf_ClassDeclaration79' has cardinality 0..*, and from 'alf_ClassDefinitionOrStub', the role 'alf_ClassDefinitionOrStub' has cardinality 0..*.
+An association connects 'alf_ClassBody' and 'alf_ClassDefinitionOrStub'. From 'alf_ClassBody', the role 'alf_ClassBody82' has cardinality 0..*, and from 'alf_ClassDefinitionOrStub', the role 'alf_ClassDefinitionOrStub81' has cardinality 0..*.
+An association connects 'alf_ClassMember' and 'alf_ClassBody'. From 'alf_ClassMember', the role 'alf_ClassMember' has cardinality 0..*, and from 'alf_ClassBody', the role 'alf_ClassBody84' has cardinality 0..*.
+An association connects 'alf_StereotypeAnnotations' and 'alf_ClassMember'. From 'alf_StereotypeAnnotations', the role 'alf_StereotypeAnnotations87' has cardinality 0..*, and from 'alf_ClassMember', the role 'alf_ClassMember86' has cardinality 0..*.
+An association connects 'alf_VisibilityIndicator' and 'alf_ClassMember'. From 'alf_VisibilityIndicator', the role 'alf_VisibilityIndicator' has cardinality 0..*, and from 'alf_ClassMember', the role 'alf_ClassMember89' has cardinality 0..*.
+An association connects 'alf_ClassMemberDefinition' and 'alf_ClassMember'. From 'alf_ClassMemberDefinition', the role 'alf_ClassMemberDefinition' has cardinality 0..*, and from 'alf_ClassMember', the role 'alf_ClassMember91' has cardinality 0..*.
+An association connects 'alf_ActiveClassDeclaration' and 'alf_ClassifierSignature'. From 'alf_ActiveClassDeclaration', the role 'alf_ActiveClassDeclaration' has cardinality 0..*, and from 'alf_ClassifierSignature', the role 'alf_ClassifierSignature93' has cardinality 0..*.
+An association connects 'alf_ActiveClassDefinition' and 'alf_ActiveClassDeclaration'. From 'alf_ActiveClassDefinition', the role 'alf_ActiveClassDefinition' has cardinality 0..*, and from 'alf_ActiveClassDeclaration', the role 'alf_ActiveClassDeclaration95' has cardinality 0..*.
+An association connects 'alf_ActiveClassDefinition' and 'alf_ActiveClassBody'. From 'alf_ActiveClassDefinition', the role 'alf_ActiveClassDefinition97' has cardinality 0..*, and from 'alf_ActiveClassBody', the role 'alf_ActiveClassBody' has cardinality 0..*.
+An association connects 'alf_ActiveClassDeclaration' and 'alf_ActiveClassDefinitionOrStub'. From 'alf_ActiveClassDeclaration', the role 'alf_ActiveClassDeclaration99' has cardinality 0..*, and from 'alf_ActiveClassDefinitionOrStub', the role 'alf_ActiveClassDefinitionOrStub' has cardinality 0..*.
+An association connects 'alf_ActiveClassBody' and 'alf_ActiveClassDefinitionOrStub'. From 'alf_ActiveClassBody', the role 'alf_ActiveClassBody102' has cardinality 0..*, and from 'alf_ActiveClassDefinitionOrStub', the role 'alf_ActiveClassDefinitionOrStub101' has cardinality 0..*.
+An association connects 'alf_ActiveClassBody' and 'alf_ActiveClassMember'. From 'alf_ActiveClassBody', the role 'alf_ActiveClassBody104' has cardinality 0..*, and from 'alf_ActiveClassMember', the role 'alf_ActiveClassMember' has cardinality 0..*.
+An association connects 'alf_ActiveClassBody' and 'alf_BehaviorClause'. From 'alf_ActiveClassBody', the role 'alf_ActiveClassBody106' has cardinality 0..*, and from 'alf_BehaviorClause', the role 'alf_BehaviorClause' has cardinality 0..*.
+An association connects 'alf_BehaviorClause' and 'alf_Block'. From 'alf_BehaviorClause', the role 'alf_BehaviorClause108' has cardinality 0..*, and from 'alf_Block', the role 'alf_Block' has cardinality 0..*.
+An association connects 'alf_Name' and 'alf_BehaviorClause'. From 'alf_Name', the role 'alf_Name111' has cardinality 0..*, and from 'alf_BehaviorClause', the role 'alf_BehaviorClause110' has cardinality 0..*.
+An association connects 'alf_StereotypeAnnotations' and 'alf_ActiveClassMember'. From 'alf_StereotypeAnnotations', the role 'alf_StereotypeAnnotations114' has cardinality 0..*, and from 'alf_ActiveClassMember', the role 'alf_ActiveClassMember113' has cardinality 0..*.
+An association connects 'alf_ActiveClassMember' and 'alf_VisibilityIndicator'. From 'alf_ActiveClassMember', the role 'alf_ActiveClassMember116' has cardinality 0..*, and from 'alf_VisibilityIndicator', the role 'alf_VisibilityIndicator117' has cardinality 0..*.
+An association connects 'alf_ActiveClassMemberDefinition' and 'alf_ActiveClassMember'. From 'alf_ActiveClassMemberDefinition', the role 'alf_ActiveClassMemberDefinition' has cardinality 0..*, and from 'alf_ActiveClassMember', the role 'alf_ActiveClassMember119' has cardinality 0..*.
+An association connects 'alf_ClassifierSignature' and 'alf_DataTypeDeclaration'. From 'alf_ClassifierSignature', the role 'alf_ClassifierSignature121' has cardinality 0..*, and from 'alf_DataTypeDeclaration', the role 'alf_DataTypeDeclaration' has cardinality 0..*.
+An association connects 'alf_DataTypeDefinition' and 'alf_DataTypeDeclaration'. From 'alf_DataTypeDefinition', the role 'alf_DataTypeDefinition' has cardinality 0..*, and from 'alf_DataTypeDeclaration', the role 'alf_DataTypeDeclaration123' has cardinality 0..*.
+An association connects 'alf_StructuredBody' and 'alf_DataTypeDefinition'. From 'alf_StructuredBody', the role 'alf_StructuredBody' has cardinality 0..*, and from 'alf_DataTypeDefinition', the role 'alf_DataTypeDefinition125' has cardinality 0..*.
+An association connects 'alf_DataTypeDeclaration' and 'alf_DataTypeDefinitionOrStub'. From 'alf_DataTypeDeclaration', the role 'alf_DataTypeDeclaration127' has cardinality 0..*, and from 'alf_DataTypeDefinitionOrStub', the role 'alf_DataTypeDefinitionOrStub' has cardinality 0..*.
+An association connects 'alf_DataTypeDefinitionOrStub' and 'alf_StructuredBody'. From 'alf_DataTypeDefinitionOrStub', the role 'alf_DataTypeDefinitionOrStub129' has cardinality 0..*, and from 'alf_StructuredBody', the role 'alf_StructuredBody130' has cardinality 0..*.
+An association connects 'alf_StructuredMember' and 'alf_StructuredBody'. From 'alf_StructuredMember', the role 'alf_StructuredMember' has cardinality 0..*, and from 'alf_StructuredBody', the role 'alf_StructuredBody132' has cardinality 0..*.
+An association connects 'alf_StereotypeAnnotations' and 'alf_StructuredMember'. From 'alf_StereotypeAnnotations', the role 'alf_StereotypeAnnotations135' has cardinality 0..*, and from 'alf_StructuredMember', the role 'alf_StructuredMember134' has cardinality 0..*.
+An association connects 'alf_PropertyDefinition' and 'alf_StructuredMember'. From 'alf_PropertyDefinition', the role 'alf_PropertyDefinition' has cardinality 0..*, and from 'alf_StructuredMember', the role 'alf_StructuredMember137' has cardinality 0..*.
+An association connects 'alf_AssociationDeclaration' and 'alf_ClassifierSignature'. From 'alf_AssociationDeclaration', the role 'alf_AssociationDeclaration' has cardinality 0..*, and from 'alf_ClassifierSignature', the role 'alf_ClassifierSignature139' has cardinality 0..*.
+An association connects 'alf_AssociationDeclaration' and 'alf_AssociationDefinition'. From 'alf_AssociationDeclaration', the role 'alf_AssociationDeclaration141' has cardinality 0..*, and from 'alf_AssociationDefinition', the role 'alf_AssociationDefinition' has cardinality 0..*.
+An association connects 'alf_StructuredBody' and 'alf_AssociationDefinition'. From 'alf_StructuredBody', the role 'alf_StructuredBody144' has cardinality 0..*, and from 'alf_AssociationDefinition', the role 'alf_AssociationDefinition143' has cardinality 0..*.
+An association connects 'alf_AssociationDefinitionOrStub' and 'alf_AssociationDeclaration'. From 'alf_AssociationDefinitionOrStub', the role 'alf_AssociationDefinitionOrStub' has cardinality 0..*, and from 'alf_AssociationDeclaration', the role 'alf_AssociationDeclaration146' has cardinality 0..*.
+An association connects 'alf_AssociationDefinitionOrStub' and 'alf_StructuredBody'. From 'alf_AssociationDefinitionOrStub', the role 'alf_AssociationDefinitionOrStub148' has cardinality 0..*, and from 'alf_StructuredBody', the role 'alf_StructuredBody149' has cardinality 0..*.
+An association connects 'alf_Name' and 'alf_EnumerationDeclaration'. From 'alf_Name', the role 'alf_Name151' has cardinality 0..*, and from 'alf_EnumerationDeclaration', the role 'alf_EnumerationDeclaration' has cardinality 0..*.
+An association connects 'alf_EnumerationDeclaration' and 'alf_SpecializationClause'. From 'alf_EnumerationDeclaration', the role 'alf_EnumerationDeclaration153' has cardinality 0..*, and from 'alf_SpecializationClause', the role 'alf_SpecializationClause154' has cardinality 0..*.
+An association connects 'alf_EnumerationDefinition' and 'alf_EnumerationDeclaration'. From 'alf_EnumerationDefinition', the role 'alf_EnumerationDefinition' has cardinality 0..*, and from 'alf_EnumerationDeclaration', the role 'alf_EnumerationDeclaration156' has cardinality 0..*.
+An association connects 'alf_EnumerationBody' and 'alf_EnumerationDefinition'. From 'alf_EnumerationBody', the role 'alf_EnumerationBody' has cardinality 0..*, and from 'alf_EnumerationDefinition', the role 'alf_EnumerationDefinition158' has cardinality 0..*.
+An association connects 'alf_EnumerationDeclaration' and 'alf_EnumerationDefinitionOrStub'. From 'alf_EnumerationDeclaration', the role 'alf_EnumerationDeclaration160' has cardinality 0..*, and from 'alf_EnumerationDefinitionOrStub', the role 'alf_EnumerationDefinitionOrStub' has cardinality 0..*.
+An association connects 'alf_EnumerationBody' and 'alf_EnumerationDefinitionOrStub'. From 'alf_EnumerationBody', the role 'alf_EnumerationBody163' has cardinality 0..*, and from 'alf_EnumerationDefinitionOrStub', the role 'alf_EnumerationDefinitionOrStub162' has cardinality 0..*.
+An association connects 'alf_EnumerationLiteralName' and 'alf_EnumerationBody'. From 'alf_EnumerationLiteralName', the role 'alf_EnumerationLiteralName' has cardinality 0..*, and from 'alf_EnumerationBody', the role 'alf_EnumerationBody165' has cardinality 0..*.
+An association connects 'alf_EnumerationLiteralName' and 'alf_Name'. From 'alf_EnumerationLiteralName', the role 'alf_EnumerationLiteralName167' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name168' has cardinality 0..*.
+An association connects 'alf_SignalDeclaration' and 'alf_ClassifierSignature'. From 'alf_SignalDeclaration', the role 'alf_SignalDeclaration' has cardinality 0..*, and from 'alf_ClassifierSignature', the role 'alf_ClassifierSignature170' has cardinality 0..*.
+An association connects 'alf_SignalDeclaration' and 'alf_SignalDefinition'. From 'alf_SignalDeclaration', the role 'alf_SignalDeclaration172' has cardinality 0..*, and from 'alf_SignalDefinition', the role 'alf_SignalDefinition' has cardinality 0..*.
+An association connects 'alf_SignalDefinition' and 'alf_StructuredBody'. From 'alf_SignalDefinition', the role 'alf_SignalDefinition174' has cardinality 0..*, and from 'alf_StructuredBody', the role 'alf_StructuredBody175' has cardinality 0..*.
+An association connects 'alf_SignalDeclaration' and 'alf_SignalDefinitionOrStub'. From 'alf_SignalDeclaration', the role 'alf_SignalDeclaration177' has cardinality 0..*, and from 'alf_SignalDefinitionOrStub', the role 'alf_SignalDefinitionOrStub' has cardinality 0..*.
+An association connects 'alf_StructuredBody' and 'alf_SignalDefinitionOrStub'. From 'alf_StructuredBody', the role 'alf_StructuredBody180' has cardinality 0..*, and from 'alf_SignalDefinitionOrStub', the role 'alf_SignalDefinitionOrStub179' has cardinality 0..*.
+An association connects 'alf_ActivityDeclaration' and 'alf_Name'. From 'alf_ActivityDeclaration', the role 'alf_ActivityDeclaration' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name182' has cardinality 0..*.
+An association connects 'alf_ActivityDeclaration' and 'alf_TemplateParameters'. From 'alf_ActivityDeclaration', the role 'alf_ActivityDeclaration184' has cardinality 0..*, and from 'alf_TemplateParameters', the role 'alf_TemplateParameters185' has cardinality 0..*.
+An association connects 'alf_FormalParameters' and 'alf_ActivityDeclaration'. From 'alf_FormalParameters', the role 'alf_FormalParameters' has cardinality 0..*, and from 'alf_ActivityDeclaration', the role 'alf_ActivityDeclaration187' has cardinality 0..*.
+An association connects 'alf_TypePart' and 'alf_ActivityDeclaration'. From 'alf_TypePart', the role 'alf_TypePart' has cardinality 0..*, and from 'alf_ActivityDeclaration', the role 'alf_ActivityDeclaration189' has cardinality 0..*.
+An association connects 'alf_ActivityDefinition' and 'alf_ActivityDeclaration'. From 'alf_ActivityDefinition', the role 'alf_ActivityDefinition' has cardinality 0..*, and from 'alf_ActivityDeclaration', the role 'alf_ActivityDeclaration191' has cardinality 0..*.
+An association connects 'alf_Block' and 'alf_ActivityDefinition'. From 'alf_Block', the role 'alf_Block194' has cardinality 0..*, and from 'alf_ActivityDefinition', the role 'alf_ActivityDefinition193' has cardinality 0..*.
+An association connects 'alf_ActivityDefinitionOrStub' and 'alf_ActivityDeclaration'. From 'alf_ActivityDefinitionOrStub', the role 'alf_ActivityDefinitionOrStub' has cardinality 0..*, and from 'alf_ActivityDeclaration', the role 'alf_ActivityDeclaration196' has cardinality 0..*.
+An association connects 'alf_ActivityDefinitionOrStub' and 'alf_Block'. From 'alf_ActivityDefinitionOrStub', the role 'alf_ActivityDefinitionOrStub198' has cardinality 0..*, and from 'alf_Block', the role 'alf_Block199' has cardinality 0..*.
+An association connects 'alf_FormalParameters' and 'alf_FormalParameterList'. From 'alf_FormalParameters', the role 'alf_FormalParameters201' has cardinality 0..*, and from 'alf_FormalParameterList', the role 'alf_FormalParameterList' has cardinality 0..*.
+An association connects 'alf_FormalParameter' and 'alf_FormalParameterList'. From 'alf_FormalParameter', the role 'alf_FormalParameter' has cardinality 0..*, and from 'alf_FormalParameterList', the role 'alf_FormalParameterList203' has cardinality 0..*.
+An association connects 'alf_StereotypeAnnotations' and 'alf_FormalParameter'. From 'alf_StereotypeAnnotations', the role 'alf_StereotypeAnnotations206' has cardinality 0..*, and from 'alf_FormalParameter', the role 'alf_FormalParameter205' has cardinality 0..*.
+An association connects 'alf_FormalParameter' and 'alf_Name'. From 'alf_FormalParameter', the role 'alf_FormalParameter208' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name209' has cardinality 0..*.
+An association connects 'alf_TypePart' and 'alf_FormalParameter'. From 'alf_TypePart', the role 'alf_TypePart212' has cardinality 0..*, and from 'alf_FormalParameter', the role 'alf_FormalParameter211' has cardinality 0..*.
+An association connects 'alf_PropertyDeclaration' and 'alf_PropertyDefinition'. From 'alf_PropertyDeclaration', the role 'alf_PropertyDeclaration' has cardinality 0..*, and from 'alf_PropertyDefinition', the role 'alf_PropertyDefinition214' has cardinality 0..*.
+An association connects 'alf_PropertyDeclaration' and 'alf_AttributeDefinition'. From 'alf_PropertyDeclaration', the role 'alf_PropertyDeclaration216' has cardinality 0..*, and from 'alf_AttributeDefinition', the role 'alf_AttributeDefinition' has cardinality 0..*.
+An association connects 'alf_AttributeInitializer' and 'alf_AttributeDefinition'. From 'alf_AttributeInitializer', the role 'alf_AttributeInitializer' has cardinality 0..*, and from 'alf_AttributeDefinition', the role 'alf_AttributeDefinition218' has cardinality 0..*.
+An association connects 'alf_InitializationExpression' and 'alf_AttributeInitializer'. From 'alf_InitializationExpression', the role 'alf_InitializationExpression' has cardinality 0..*, and from 'alf_AttributeInitializer', the role 'alf_AttributeInitializer220' has cardinality 0..*.
+An association connects 'alf_Name' and 'alf_PropertyDeclaration'. From 'alf_Name', the role 'alf_Name223' has cardinality 0..*, and from 'alf_PropertyDeclaration', the role 'alf_PropertyDeclaration222' has cardinality 0..*.
+An association connects 'alf_TypePart' and 'alf_PropertyDeclaration'. From 'alf_TypePart', the role 'alf_TypePart226' has cardinality 0..*, and from 'alf_PropertyDeclaration', the role 'alf_PropertyDeclaration225' has cardinality 0..*.
+An association connects 'alf_TypePart' and 'alf_TypeName'. From 'alf_TypePart', the role 'alf_TypePart228' has cardinality 0..*, and from 'alf_TypeName', the role 'alf_TypeName' has cardinality 0..*.
+An association connects 'alf_Multiplicity' and 'alf_TypePart'. From 'alf_Multiplicity', the role 'alf_Multiplicity' has cardinality 0..*, and from 'alf_TypePart', the role 'alf_TypePart230' has cardinality 0..*.
+An association connects 'alf_TypeName' and 'alf_QualifiedName'. From 'alf_TypeName', the role 'alf_TypeName232' has cardinality 0..*, and from 'alf_QualifiedName', the role 'alf_QualifiedName233' has cardinality 0..*.
+An association connects 'alf_MultiplicityRange' and 'alf_Multiplicity'. From 'alf_MultiplicityRange', the role 'alf_MultiplicityRange' has cardinality 0..*, and from 'alf_Multiplicity', the role 'alf_Multiplicity235' has cardinality 0..*.
+An association connects 'alf_MultiplicityRange' and 'alf_INTEGER_LITERAL'. From 'alf_MultiplicityRange', the role 'alf_MultiplicityRange237' has cardinality 0..*, and from 'alf_INTEGER_LITERAL', the role 'alf_INTEGER_LITERAL' has cardinality 0..*.
+An association connects 'alf_MultiplicityRange' and 'alf_UnlimitedNaturalLiteral'. From 'alf_MultiplicityRange', the role 'alf_MultiplicityRange239' has cardinality 0..*, and from 'alf_UnlimitedNaturalLiteral', the role 'alf_UnlimitedNaturalLiteral' has cardinality 0..*.
+An association connects 'alf_UnlimitedNaturalLiteral' and 'alf_INTEGER_LITERAL'. From 'alf_UnlimitedNaturalLiteral', the role 'alf_UnlimitedNaturalLiteral241' has cardinality 0..*, and from 'alf_INTEGER_LITERAL', the role 'alf_INTEGER_LITERAL242' has cardinality 0..*.
+An association connects 'alf_Name' and 'alf_OperationDeclaration'. From 'alf_Name', the role 'alf_Name244' has cardinality 0..*, and from 'alf_OperationDeclaration', the role 'alf_OperationDeclaration' has cardinality 0..*.
+An association connects 'alf_FormalParameters' and 'alf_OperationDeclaration'. From 'alf_FormalParameters', the role 'alf_FormalParameters247' has cardinality 0..*, and from 'alf_OperationDeclaration', the role 'alf_OperationDeclaration246' has cardinality 0..*.
+An association connects 'alf_OperationDeclaration' and 'alf_TypePart'. From 'alf_OperationDeclaration', the role 'alf_OperationDeclaration249' has cardinality 0..*, and from 'alf_TypePart', the role 'alf_TypePart250' has cardinality 0..*.
+An association connects 'alf_OperationDeclaration' and 'alf_RedefinitionClause'. From 'alf_OperationDeclaration', the role 'alf_OperationDeclaration252' has cardinality 0..*, and from 'alf_RedefinitionClause', the role 'alf_RedefinitionClause' has cardinality 0..*.
+An association connects 'alf_Block' and 'alf_OperationDeclaration'. From 'alf_Block', the role 'alf_Block255' has cardinality 0..*, and from 'alf_OperationDeclaration', the role 'alf_OperationDeclaration254' has cardinality 0..*.
+An association connects 'alf_QualifiedNameList' and 'alf_RedefinitionClause'. From 'alf_QualifiedNameList', the role 'alf_QualifiedNameList258' has cardinality 0..*, and from 'alf_RedefinitionClause', the role 'alf_RedefinitionClause257' has cardinality 0..*.
+An association connects 'alf_QualifiedName' and 'alf_ReceptionDefinition'. From 'alf_QualifiedName', the role 'alf_QualifiedName260' has cardinality 0..*, and from 'alf_ReceptionDefinition', the role 'alf_ReceptionDefinition' has cardinality 0..*.
+An association connects 'alf_Name' and 'alf_SignalReceptionDeclaration'. From 'alf_Name', the role 'alf_Name262' has cardinality 0..*, and from 'alf_SignalReceptionDeclaration', the role 'alf_SignalReceptionDeclaration' has cardinality 0..*.
+An association connects 'alf_SpecializationClause' and 'alf_SignalReceptionDeclaration'. From 'alf_SpecializationClause', the role 'alf_SpecializationClause265' has cardinality 0..*, and from 'alf_SignalReceptionDeclaration', the role 'alf_SignalReceptionDeclaration264' has cardinality 0..*.
+An association connects 'alf_SignalReceptionDeclaration' and 'alf_SignalReceptionDefinitionOrStub'. From 'alf_SignalReceptionDeclaration', the role 'alf_SignalReceptionDeclaration267' has cardinality 0..*, and from 'alf_SignalReceptionDefinitionOrStub', the role 'alf_SignalReceptionDefinitionOrStub' has cardinality 0..*.
+An association connects 'alf_SignalReceptionDefinitionOrStub' and 'alf_StructuredBody'. From 'alf_SignalReceptionDefinitionOrStub', the role 'alf_SignalReceptionDefinitionOrStub269' has cardinality 0..*, and from 'alf_StructuredBody', the role 'alf_StructuredBody270' has cardinality 0..*.
+An association connects 'alf_QualifiedName' and 'alf_UnqualifiedName'. From 'alf_QualifiedName', the role 'alf_QualifiedName272' has cardinality 0..*, and from 'alf_UnqualifiedName', the role 'alf_UnqualifiedName' has cardinality 0..*.
+An association connects 'alf_ColonQualifiedNameCompletion' and 'alf_QualifiedName'. From 'alf_ColonQualifiedNameCompletion', the role 'alf_ColonQualifiedNameCompletion' has cardinality 0..*, and from 'alf_QualifiedName', the role 'alf_QualifiedName274' has cardinality 0..*.
+An association connects 'alf_ColonQualifiedNameCompletion' and 'alf_NameBinding'. From 'alf_ColonQualifiedNameCompletion', the role 'alf_ColonQualifiedNameCompletion276' has cardinality 0..*, and from 'alf_NameBinding', the role 'alf_NameBinding' has cardinality 0..*.
+An association connects 'alf_NameBinding' and 'alf_Name'. From 'alf_NameBinding', the role 'alf_NameBinding278' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name279' has cardinality 0..*.
+An association connects 'alf_NameBinding' and 'alf_TemplateBinding'. From 'alf_NameBinding', the role 'alf_NameBinding281' has cardinality 0..*, and from 'alf_TemplateBinding', the role 'alf_TemplateBinding' has cardinality 0..*.
+An association connects 'alf_QualifiedNameWithoutBinding' and 'alf_Name'. From 'alf_QualifiedNameWithoutBinding', the role 'alf_QualifiedNameWithoutBinding' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name283' has cardinality 0..*.
+An association connects 'alf_ColonQualifiedNameCompletionWithoutBinding' and 'alf_QualifiedNameWithoutBinding'. From 'alf_ColonQualifiedNameCompletionWithoutBinding', the role 'alf_ColonQualifiedNameCompletionWithoutBinding' has cardinality 0..*, and from 'alf_QualifiedNameWithoutBinding', the role 'alf_QualifiedNameWithoutBinding285' has cardinality 0..*.
+An association connects 'alf_Name' and 'alf_ColonQualifiedNameCompletionWithoutBinding'. From 'alf_Name', the role 'alf_Name288' has cardinality 0..*, and from 'alf_ColonQualifiedNameCompletionWithoutBinding', the role 'alf_ColonQualifiedNameCompletionWithoutBinding287' has cardinality 0..*.
+An association connects 'alf_PositionalTemplateBinding' and 'alf_QualifiedName'. From 'alf_PositionalTemplateBinding', the role 'alf_PositionalTemplateBinding' has cardinality 0..*, and from 'alf_QualifiedName', the role 'alf_QualifiedName290' has cardinality 0..*.
+An association connects 'alf_TemplateParameterSubstitution' and 'alf_NamedTemplateBinding'. From 'alf_TemplateParameterSubstitution', the role 'alf_TemplateParameterSubstitution' has cardinality 0..*, and from 'alf_NamedTemplateBinding', the role 'alf_NamedTemplateBinding' has cardinality 0..*.
+An association connects 'alf_Name' and 'alf_TemplateParameterSubstitution'. From 'alf_Name', the role 'alf_Name294' has cardinality 0..*, and from 'alf_TemplateParameterSubstitution', the role 'alf_TemplateParameterSubstitution293' has cardinality 0..*.
+An association connects 'alf_QualifiedName' and 'alf_TemplateParameterSubstitution'. From 'alf_QualifiedName', the role 'alf_QualifiedName297' has cardinality 0..*, and from 'alf_TemplateParameterSubstitution', the role 'alf_TemplateParameterSubstitution296' has cardinality 0..*.
+An association connects 'alf_Expression' and 'alf_UnaryExpression'. From 'alf_Expression', the role 'alf_Expression' has cardinality 0..*, and from 'alf_UnaryExpression', the role 'alf_UnaryExpression' has cardinality 0..*.
+An association connects 'alf_Expression' and 'alf_ExpressionCompletion'. From 'alf_Expression', the role 'alf_Expression300' has cardinality 0..*, and from 'alf_ExpressionCompletion', the role 'alf_ExpressionCompletion' has cardinality 0..*.
+An association connects 'alf_NonNameExpression' and 'alf_NonNameUnaryExpression'. From 'alf_NonNameExpression', the role 'alf_NonNameExpression' has cardinality 0..*, and from 'alf_NonNameUnaryExpression', the role 'alf_NonNameUnaryExpression' has cardinality 0..*.
+An association connects 'alf_NonNameExpression' and 'alf_ExpressionCompletion'. From 'alf_NonNameExpression', the role 'alf_NonNameExpression303' has cardinality 0..*, and from 'alf_ExpressionCompletion', the role 'alf_ExpressionCompletion304' has cardinality 0..*.
+An association connects 'alf_NameToPrimaryExpression' and 'alf_NameToExpressionCompletion'. From 'alf_NameToPrimaryExpression', the role 'alf_NameToPrimaryExpression' has cardinality 0..*, and from 'alf_NameToExpressionCompletion', the role 'alf_NameToExpressionCompletion' has cardinality 0..*.
+An association connects 'alf_PrimaryToExpressionCompletion' and 'alf_NameToExpressionCompletion'. From 'alf_PrimaryToExpressionCompletion', the role 'alf_PrimaryToExpressionCompletion' has cardinality 0..*, and from 'alf_NameToExpressionCompletion', the role 'alf_NameToExpressionCompletion307' has cardinality 0..*.
+An association connects 'alf_PrimaryToExpressionCompletion' and 'alf_PostfixExpressionCompletion'. From 'alf_PrimaryToExpressionCompletion', the role 'alf_PrimaryToExpressionCompletion309' has cardinality 0..*, and from 'alf_PostfixExpressionCompletion', the role 'alf_PostfixExpressionCompletion' has cardinality 0..*.
+An association connects 'alf_PrimaryToExpressionCompletion' and 'alf_ExpressionCompletion'. From 'alf_PrimaryToExpressionCompletion', the role 'alf_PrimaryToExpressionCompletion311' has cardinality 0..*, and from 'alf_ExpressionCompletion', the role 'alf_ExpressionCompletion312' has cardinality 0..*.
+An association connects 'alf_ExpressionCompletion' and 'alf_Expression'. From 'alf_ExpressionCompletion', the role 'alf_ExpressionCompletion314' has cardinality 0..*, and from 'alf_Expression', the role 'alf_Expression315' has cardinality 0..*.
+An association connects 'alf_PrimaryExpression' and 'alf_NameOrPrimaryExpression'. From 'alf_PrimaryExpression', the role 'alf_PrimaryExpression' has cardinality 0..*, and from 'alf_NameOrPrimaryExpression', the role 'alf_NameOrPrimaryExpression' has cardinality 0..*.
+An association connects 'alf_BaseExpression' and 'alf_PrimaryExpression'. From 'alf_BaseExpression', the role 'alf_BaseExpression' has cardinality 0..*, and from 'alf_PrimaryExpression', the role 'alf_PrimaryExpression318' has cardinality 0..*.
+An association connects 'alf_PrimaryExpression' and 'alf_ParenthesizedExpression'. From 'alf_PrimaryExpression', the role 'alf_PrimaryExpression320' has cardinality 0..*, and from 'alf_ParenthesizedExpression', the role 'alf_ParenthesizedExpression' has cardinality 0..*.
+An association connects 'alf_PrimaryExpression' and 'alf_PrimaryExpressionCompletion'. From 'alf_PrimaryExpression', the role 'alf_PrimaryExpression322' has cardinality 0..*, and from 'alf_PrimaryExpressionCompletion', the role 'alf_PrimaryExpressionCompletion' has cardinality 0..*.
+An association connects 'alf_NameToPrimaryExpression' and 'alf_LinkOperationCompletion'. From 'alf_NameToPrimaryExpression', the role 'alf_NameToPrimaryExpression324' has cardinality 0..*, and from 'alf_LinkOperationCompletion', the role 'alf_LinkOperationCompletion' has cardinality 0..*.
+An association connects 'alf_ClassExtentExpressionCompletion' and 'alf_NameToPrimaryExpression'. From 'alf_ClassExtentExpressionCompletion', the role 'alf_ClassExtentExpressionCompletion' has cardinality 0..*, and from 'alf_NameToPrimaryExpression', the role 'alf_NameToPrimaryExpression326' has cardinality 0..*.
+An association connects 'alf_SequenceConstructionExpressionCompletion' and 'alf_NameToPrimaryExpression'. From 'alf_SequenceConstructionExpressionCompletion', the role 'alf_SequenceConstructionExpressionCompletion' has cardinality 0..*, and from 'alf_NameToPrimaryExpression', the role 'alf_NameToPrimaryExpression328' has cardinality 0..*.
+An association connects 'alf_NameToPrimaryExpression' and 'alf_BehaviorInvocation'. From 'alf_NameToPrimaryExpression', the role 'alf_NameToPrimaryExpression330' has cardinality 0..*, and from 'alf_BehaviorInvocation', the role 'alf_BehaviorInvocation' has cardinality 0..*.
+An association connects 'alf_PrimaryExpressionCompletion' and 'alf_Feature_Or_SequenceOperationOrReductionOrExpansion_Or_Index'. From 'alf_PrimaryExpressionCompletion', the role 'alf_PrimaryExpressionCompletion332' has cardinality 0..*, and from 'alf_Feature_Or_SequenceOperationOrReductionOrExpansion_Or_Index', the role 'alf_Feature_Or_SequenceOperationOrReductionOrExpansion_Or_Index' has cardinality 0..*.
+An association connects 'alf_Feature' and 'alf_Feature_Or_SequenceOperationOrReductionOrExpansion_Or_Index'. From 'alf_Feature', the role 'alf_Feature' has cardinality 0..*, and from 'alf_Feature_Or_SequenceOperationOrReductionOrExpansion_Or_Index', the role 'alf_Feature_Or_SequenceOperationOrReductionOrExpansion_Or_Index334' has cardinality 0..*.
+An association connects 'alf_Feature_Or_SequenceOperationOrReductionOrExpansion_Or_Index' and 'alf_FeatureInvocation'. From 'alf_Feature_Or_SequenceOperationOrReductionOrExpansion_Or_Index', the role 'alf_Feature_Or_SequenceOperationOrReductionOrExpansion_Or_Index336' has cardinality 0..*, and from 'alf_FeatureInvocation', the role 'alf_FeatureInvocation' has cardinality 0..*.
+An association connects 'alf_Feature_Or_SequenceOperationOrReductionOrExpansion_Or_Index' and 'alf_SequenceOperationOrReductionOrExpansion'. From 'alf_Feature_Or_SequenceOperationOrReductionOrExpansion_Or_Index', the role 'alf_Feature_Or_SequenceOperationOrReductionOrExpansion_Or_Index338' has cardinality 0..*, and from 'alf_SequenceOperationOrReductionOrExpansion', the role 'alf_SequenceOperationOrReductionOrExpansion' has cardinality 0..*.
+An association connects 'alf_Index' and 'alf_Feature_Or_SequenceOperationOrReductionOrExpansion_Or_Index'. From 'alf_Index', the role 'alf_Index' has cardinality 0..*, and from 'alf_Feature_Or_SequenceOperationOrReductionOrExpansion_Or_Index', the role 'alf_Feature_Or_SequenceOperationOrReductionOrExpansion_Or_Index340' has cardinality 0..*.
+An association connects 'alf_PRIMITIVE_LITERAL' and 'alf_LiteralExpression'. From 'alf_PRIMITIVE_LITERAL', the role 'alf_PRIMITIVE_LITERAL342' has cardinality 0..*, and from 'alf_LiteralExpression', the role 'alf_LiteralExpression' has cardinality 0..*.
+An association connects 'alf_QualifiedNameWithoutBinding' and 'alf_NameOrPrimaryExpression'. From 'alf_QualifiedNameWithoutBinding', the role 'alf_QualifiedNameWithoutBinding345' has cardinality 0..*, and from 'alf_NameOrPrimaryExpression', the role 'alf_NameOrPrimaryExpression344' has cardinality 0..*.
+An association connects 'alf_NameOrPrimaryExpression' and 'alf_NameToPrimaryExpression'. From 'alf_NameOrPrimaryExpression', the role 'alf_NameOrPrimaryExpression347' has cardinality 0..*, and from 'alf_NameToPrimaryExpression', the role 'alf_NameToPrimaryExpression348' has cardinality 0..*.
+An association connects 'alf_Tuple' and 'alf_ThisExpression'. From 'alf_Tuple', the role 'alf_Tuple' has cardinality 0..*, and from 'alf_ThisExpression', the role 'alf_ThisExpression' has cardinality 0..*.
+An association connects 'alf_Expression' and 'alf_ParenthesizedExpression'. From 'alf_Expression', the role 'alf_Expression352' has cardinality 0..*, and from 'alf_ParenthesizedExpression', the role 'alf_ParenthesizedExpression351' has cardinality 0..*.
+An association connects 'alf_Feature' and 'alf_Name'. From 'alf_Feature', the role 'alf_Feature354' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name355' has cardinality 0..*.
+An association connects 'alf_NamedTupleExpressionList' and 'alf_Tuple'. From 'alf_NamedTupleExpressionList', the role 'alf_NamedTupleExpressionList' has cardinality 0..*, and from 'alf_Tuple', the role 'alf_Tuple357' has cardinality 0..*.
+An association connects 'alf_PositionalTupleExpressionList' and 'alf_Tuple'. From 'alf_PositionalTupleExpressionList', the role 'alf_PositionalTupleExpressionList' has cardinality 0..*, and from 'alf_Tuple', the role 'alf_Tuple359' has cardinality 0..*.
+An association connects 'alf_Expression' and 'alf_PositionalTupleExpressionList'. From 'alf_Expression', the role 'alf_Expression362' has cardinality 0..*, and from 'alf_PositionalTupleExpressionList', the role 'alf_PositionalTupleExpressionList361' has cardinality 0..*.
+An association connects 'alf_PositionalTupleExpressionListCompletion' and 'alf_Expression'. From 'alf_PositionalTupleExpressionListCompletion', the role 'alf_PositionalTupleExpressionListCompletion' has cardinality 0..*, and from 'alf_Expression', the role 'alf_Expression364' has cardinality 0..*.
+An association connects 'alf_NamedExpression' and 'alf_NamedTupleExpressionList'. From 'alf_NamedExpression', the role 'alf_NamedExpression' has cardinality 0..*, and from 'alf_NamedTupleExpressionList', the role 'alf_NamedTupleExpressionList366' has cardinality 0..*.
+An association connects 'alf_Name' and 'alf_NamedExpression'. From 'alf_Name', the role 'alf_Name369' has cardinality 0..*, and from 'alf_NamedExpression', the role 'alf_NamedExpression368' has cardinality 0..*.
+An association connects 'alf_Expression' and 'alf_NamedExpression'. From 'alf_Expression', the role 'alf_Expression372' has cardinality 0..*, and from 'alf_NamedExpression', the role 'alf_NamedExpression371' has cardinality 0..*.
+An association connects 'alf_Tuple' and 'alf_BehaviorInvocation'. From 'alf_Tuple', the role 'alf_Tuple375' has cardinality 0..*, and from 'alf_BehaviorInvocation', the role 'alf_BehaviorInvocation374' has cardinality 0..*.
+An association connects 'alf_Tuple' and 'alf_FeatureInvocation'. From 'alf_Tuple', the role 'alf_Tuple378' has cardinality 0..*, and from 'alf_FeatureInvocation', the role 'alf_FeatureInvocation377' has cardinality 0..*.
+An association connects 'alf_SuperInvocationExpression' and 'alf_QualifiedName'. From 'alf_SuperInvocationExpression', the role 'alf_SuperInvocationExpression' has cardinality 0..*, and from 'alf_QualifiedName', the role 'alf_QualifiedName380' has cardinality 0..*.
+An association connects 'alf_SuperInvocationExpression' and 'alf_Tuple'. From 'alf_SuperInvocationExpression', the role 'alf_SuperInvocationExpression382' has cardinality 0..*, and from 'alf_Tuple', the role 'alf_Tuple383' has cardinality 0..*.
+An association connects 'alf_QualifiedName' and 'alf_InstanceCreationOrSequenceConstructionExpression'. From 'alf_QualifiedName', the role 'alf_QualifiedName385' has cardinality 0..*, and from 'alf_InstanceCreationOrSequenceConstructionExpression', the role 'alf_InstanceCreationOrSequenceConstructionExpression' has cardinality 0..*.
+An association connects 'alf_InstanceCreationOrSequenceConstructionExpression' and 'alf_SequenceConstructionExpressionCompletion'. From 'alf_InstanceCreationOrSequenceConstructionExpression', the role 'alf_InstanceCreationOrSequenceConstructionExpression387' has cardinality 0..*, and from 'alf_SequenceConstructionExpressionCompletion', the role 'alf_SequenceConstructionExpressionCompletion388' has cardinality 0..*.
+An association connects 'alf_Tuple' and 'alf_InstanceCreationOrSequenceConstructionExpression'. From 'alf_Tuple', the role 'alf_Tuple391' has cardinality 0..*, and from 'alf_InstanceCreationOrSequenceConstructionExpression', the role 'alf_InstanceCreationOrSequenceConstructionExpression390' has cardinality 0..*.
+An association connects 'alf_LinkOperationTuple' and 'alf_LinkOperationCompletion'. From 'alf_LinkOperationTuple', the role 'alf_LinkOperationTuple' has cardinality 0..*, and from 'alf_LinkOperationCompletion', the role 'alf_LinkOperationCompletion393' has cardinality 0..*.
+An association connects 'alf_Name' and 'alf_LinkOperationTuple'. From 'alf_Name', the role 'alf_Name396' has cardinality 0..*, and from 'alf_LinkOperationTuple', the role 'alf_LinkOperationTuple395' has cardinality 0..*.
+An association connects 'alf_LinkOperationTuple' and 'alf_Index'. From 'alf_LinkOperationTuple', the role 'alf_LinkOperationTuple398' has cardinality 0..*, and from 'alf_Index', the role 'alf_Index399' has cardinality 0..*.
+An association connects 'alf_LinkOperationTuple' and 'alf_IndexedNamedExpressionListCompletion'. From 'alf_LinkOperationTuple', the role 'alf_LinkOperationTuple401' has cardinality 0..*, and from 'alf_IndexedNamedExpressionListCompletion', the role 'alf_IndexedNamedExpressionListCompletion' has cardinality 0..*.
+An association connects 'alf_LinkOperationTuple' and 'alf_PrimaryToExpressionCompletion'. From 'alf_LinkOperationTuple', the role 'alf_LinkOperationTuple403' has cardinality 0..*, and from 'alf_PrimaryToExpressionCompletion', the role 'alf_PrimaryToExpressionCompletion404' has cardinality 0..*.
+An association connects 'alf_LinkOperationTuple' and 'alf_PositionalTupleExpressionListCompletion'. From 'alf_LinkOperationTuple', the role 'alf_LinkOperationTuple406' has cardinality 0..*, and from 'alf_PositionalTupleExpressionListCompletion', the role 'alf_PositionalTupleExpressionListCompletion407' has cardinality 0..*.
+An association connects 'alf_LinkOperationTuple' and 'alf_IndexedNamedExpressionListCompletion'. From 'alf_LinkOperationTuple', the role 'alf_LinkOperationTuple409' has cardinality 0..*, and from 'alf_IndexedNamedExpressionListCompletion', the role 'alf_IndexedNamedExpressionListCompletion410' has cardinality 0..*.
+An association connects 'alf_NameToExpressionCompletion' and 'alf_LinkOperationTuple'. From 'alf_NameToExpressionCompletion', the role 'alf_NameToExpressionCompletion413' has cardinality 0..*, and from 'alf_LinkOperationTuple', the role 'alf_LinkOperationTuple412' has cardinality 0..*.
+An association connects 'alf_LinkOperationTuple' and 'alf_PositionalTupleExpressionList'. From 'alf_LinkOperationTuple', the role 'alf_LinkOperationTuple415' has cardinality 0..*, and from 'alf_PositionalTupleExpressionList', the role 'alf_PositionalTupleExpressionList416' has cardinality 0..*.
+An association connects 'alf_Expression' and 'alf_IndexedNamedExpressionListCompletion'. From 'alf_Expression', the role 'alf_Expression419' has cardinality 0..*, and from 'alf_IndexedNamedExpressionListCompletion', the role 'alf_IndexedNamedExpressionListCompletion418' has cardinality 0..*.
+An association connects 'alf_IndexedNamedExpression' and 'alf_IndexedNamedExpressionListCompletion'. From 'alf_IndexedNamedExpression', the role 'alf_IndexedNamedExpression' has cardinality 0..*, and from 'alf_IndexedNamedExpressionListCompletion', the role 'alf_IndexedNamedExpressionListCompletion421' has cardinality 0..*.
+An association connects 'alf_IndexedNamedExpression' and 'alf_Name'. From 'alf_IndexedNamedExpression', the role 'alf_IndexedNamedExpression423' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name424' has cardinality 0..*.
+An association connects 'alf_Index' and 'alf_IndexedNamedExpression'. From 'alf_Index', the role 'alf_Index427' has cardinality 0..*, and from 'alf_IndexedNamedExpression', the role 'alf_IndexedNamedExpression426' has cardinality 0..*.
+An association connects 'alf_IndexedNamedExpression' and 'alf_Expression'. From 'alf_IndexedNamedExpression', the role 'alf_IndexedNamedExpression429' has cardinality 0..*, and from 'alf_Expression', the role 'alf_Expression430' has cardinality 0..*.
+An association connects 'alf_SequenceAnyExpression' and 'alf_SequenceConstructionExpressionCompletion'. From 'alf_SequenceAnyExpression', the role 'alf_SequenceAnyExpression' has cardinality 0..*, and from 'alf_SequenceConstructionExpressionCompletion', the role 'alf_SequenceConstructionExpressionCompletion432' has cardinality 0..*.
+An association connects 'alf_SequenceConstructionExpressionCompletion' and 'alf_MultiplicityIndicator'. From 'alf_SequenceConstructionExpressionCompletion', the role 'alf_SequenceConstructionExpressionCompletion434' has cardinality 0..*, and from 'alf_MultiplicityIndicator', the role 'alf_MultiplicityIndicator' has cardinality 0..*.
+An association connects 'alf_SequenceConstructionExpressionCompletion' and 'alf_SequenceElements'. From 'alf_SequenceConstructionExpressionCompletion', the role 'alf_SequenceConstructionExpressionCompletion436' has cardinality 0..*, and from 'alf_SequenceElements', the role 'alf_SequenceElements' has cardinality 0..*.
+An association connects 'alf_Expression' and 'alf_SequenceElements'. From 'alf_Expression', the role 'alf_Expression439' has cardinality 0..*, and from 'alf_SequenceElements', the role 'alf_SequenceElements438' has cardinality 0..*.
+An association connects 'alf_SequenceElements' and 'alf_Expression'. From 'alf_SequenceElements', the role 'alf_SequenceElements441' has cardinality 0..*, and from 'alf_Expression', the role 'alf_Expression442' has cardinality 0..*.
+An association connects 'alf_SequenceElements' and 'alf_SequenceElementListCompletion'. From 'alf_SequenceElements', the role 'alf_SequenceElements444' has cardinality 0..*, and from 'alf_SequenceElementListCompletion', the role 'alf_SequenceElementListCompletion' has cardinality 0..*.
+An association connects 'alf_SequenceElements' and 'alf_SequenceInitializationExpression'. From 'alf_SequenceElements', the role 'alf_SequenceElements446' has cardinality 0..*, and from 'alf_SequenceInitializationExpression', the role 'alf_SequenceInitializationExpression' has cardinality 0..*.
+An association connects 'alf_SequenceElement' and 'alf_SequenceElementListCompletion'. From 'alf_SequenceElement', the role 'alf_SequenceElement' has cardinality 0..*, and from 'alf_SequenceElementListCompletion', the role 'alf_SequenceElementListCompletion448' has cardinality 0..*.
+An association connects 'alf_Expression' and 'alf_SequenceElement'. From 'alf_Expression', the role 'alf_Expression451' has cardinality 0..*, and from 'alf_SequenceElement', the role 'alf_SequenceElement450' has cardinality 0..*.
+An association connects 'alf_SequenceElement' and 'alf_SequenceInitializationExpression'. From 'alf_SequenceElement', the role 'alf_SequenceElement453' has cardinality 0..*, and from 'alf_SequenceInitializationExpression', the role 'alf_SequenceInitializationExpression454' has cardinality 0..*.
+An association connects 'alf_SequenceElements' and 'alf_SequenceInitializationExpression'. From 'alf_SequenceElements', the role 'alf_SequenceElements457' has cardinality 0..*, and from 'alf_SequenceInitializationExpression', the role 'alf_SequenceInitializationExpression456' has cardinality 0..*.
+An association connects 'alf_Expression' and 'alf_Index'. From 'alf_Expression', the role 'alf_Expression460' has cardinality 0..*, and from 'alf_Index', the role 'alf_Index459' has cardinality 0..*.
+An association connects 'alf_EObject' and 'alf_SequenceOperationOrReductionOrExpansion'. From 'alf_EObject', the role 'alf_EObject' has cardinality 0..*, and from 'alf_SequenceOperationOrReductionOrExpansion', the role 'alf_SequenceOperationOrReductionOrExpansion462' has cardinality 0..*.
+An association connects 'alf_SequenceOperationOrReductionOrExpansion' and 'alf_Tuple'. From 'alf_SequenceOperationOrReductionOrExpansion', the role 'alf_SequenceOperationOrReductionOrExpansion464' has cardinality 0..*, and from 'alf_Tuple', the role 'alf_Tuple465' has cardinality 0..*.
+An association connects 'alf_TemplateBinding' and 'alf_SequenceOperationOrReductionOrExpansion'. From 'alf_TemplateBinding', the role 'alf_TemplateBinding468' has cardinality 0..*, and from 'alf_SequenceOperationOrReductionOrExpansion', the role 'alf_SequenceOperationOrReductionOrExpansion467' has cardinality 0..*.
+An association connects 'alf_SequenceOperationOrReductionOrExpansion' and 'alf_Name'. From 'alf_SequenceOperationOrReductionOrExpansion', the role 'alf_SequenceOperationOrReductionOrExpansion470' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name471' has cardinality 0..*.
+An association connects 'alf_SequenceOperationOrReductionOrExpansion' and 'alf_Expression'. From 'alf_SequenceOperationOrReductionOrExpansion', the role 'alf_SequenceOperationOrReductionOrExpansion473' has cardinality 0..*, and from 'alf_Expression', the role 'alf_Expression474' has cardinality 0..*.
+An association connects 'alf_PostfixExpressionCompletion' and 'alf_PrimaryExpressionCompletion'. From 'alf_PostfixExpressionCompletion', the role 'alf_PostfixExpressionCompletion476' has cardinality 0..*, and from 'alf_PrimaryExpressionCompletion', the role 'alf_PrimaryExpressionCompletion477' has cardinality 0..*.
+An association connects 'alf_PostfixOperation' and 'alf_PostfixExpressionCompletion'. From 'alf_PostfixOperation', the role 'alf_PostfixOperation' has cardinality 0..*, and from 'alf_PostfixExpressionCompletion', the role 'alf_PostfixExpressionCompletion479' has cardinality 0..*.
+An association connects 'alf_PrefixExpression' and 'alf_PrimaryExpression'. From 'alf_PrefixExpression', the role 'alf_PrefixExpression' has cardinality 0..*, and from 'alf_PrimaryExpression', the role 'alf_PrimaryExpression481' has cardinality 0..*.
+An association connects 'alf_PostfixOrCastExpression' and 'alf_NonNamePostfixOrCastExpression'. From 'alf_PostfixOrCastExpression', the role 'alf_PostfixOrCastExpression' has cardinality 0..*, and from 'alf_NonNamePostfixOrCastExpression', the role 'alf_NonNamePostfixOrCastExpression' has cardinality 0..*.
+An association connects 'alf_NameOrPrimaryExpression' and 'alf_PostfixOrCastExpression'. From 'alf_NameOrPrimaryExpression', the role 'alf_NameOrPrimaryExpression485' has cardinality 0..*, and from 'alf_PostfixOrCastExpression', the role 'alf_PostfixOrCastExpression484' has cardinality 0..*.
+An association connects 'alf_PostfixOrCastExpression' and 'alf_PostfixExpressionCompletion'. From 'alf_PostfixOrCastExpression', the role 'alf_PostfixOrCastExpression487' has cardinality 0..*, and from 'alf_PostfixExpressionCompletion', the role 'alf_PostfixExpressionCompletion488' has cardinality 0..*.
+An association connects 'alf_CastCompletion' and 'alf_NonNamePostfixOrCastExpression'. From 'alf_CastCompletion', the role 'alf_CastCompletion' has cardinality 0..*, and from 'alf_NonNamePostfixOrCastExpression', the role 'alf_NonNamePostfixOrCastExpression490' has cardinality 0..*.
+An association connects 'alf_NonNamePostfixOrCastExpression' and 'alf_QualifiedNameWithoutBinding'. From 'alf_NonNamePostfixOrCastExpression', the role 'alf_NonNamePostfixOrCastExpression492' has cardinality 0..*, and from 'alf_QualifiedNameWithoutBinding', the role 'alf_QualifiedNameWithoutBinding493' has cardinality 0..*.
+An association connects 'alf_PostfixExpressionCompletion' and 'alf_NonNamePostfixOrCastExpression'. From 'alf_PostfixExpressionCompletion', the role 'alf_PostfixExpressionCompletion496' has cardinality 0..*, and from 'alf_NonNamePostfixOrCastExpression', the role 'alf_NonNamePostfixOrCastExpression495' has cardinality 0..*.
+An association connects 'alf_NameToExpressionCompletion' and 'alf_NonNamePostfixOrCastExpression'. From 'alf_NameToExpressionCompletion', the role 'alf_NameToExpressionCompletion499' has cardinality 0..*, and from 'alf_NonNamePostfixOrCastExpression', the role 'alf_NonNamePostfixOrCastExpression498' has cardinality 0..*.
+An association connects 'alf_PostfixExpressionCompletion' and 'alf_NonNamePostfixOrCastExpression'. From 'alf_PostfixExpressionCompletion', the role 'alf_PostfixExpressionCompletion502' has cardinality 0..*, and from 'alf_NonNamePostfixOrCastExpression', the role 'alf_NonNamePostfixOrCastExpression501' has cardinality 0..*.
+An association connects 'alf_NonNamePostfixOrCastExpression' and 'alf_NonNameExpression'. From 'alf_NonNamePostfixOrCastExpression', the role 'alf_NonNamePostfixOrCastExpression504' has cardinality 0..*, and from 'alf_NonNameExpression', the role 'alf_NonNameExpression505' has cardinality 0..*.
+An association connects 'alf_NonNamePostfixOrCastExpression' and 'alf_BaseExpression'. From 'alf_NonNamePostfixOrCastExpression', the role 'alf_NonNamePostfixOrCastExpression507' has cardinality 0..*, and from 'alf_BaseExpression', the role 'alf_BaseExpression508' has cardinality 0..*.
+An association connects 'alf_BooleanNegationExpression' and 'alf_UnaryExpression'. From 'alf_BooleanNegationExpression', the role 'alf_BooleanNegationExpression' has cardinality 0..*, and from 'alf_UnaryExpression', the role 'alf_UnaryExpression510' has cardinality 0..*.
+An association connects 'alf_UnaryExpression' and 'alf_BitStringComplementExpression'. From 'alf_UnaryExpression', the role 'alf_UnaryExpression512' has cardinality 0..*, and from 'alf_BitStringComplementExpression', the role 'alf_BitStringComplementExpression' has cardinality 0..*.
+An association connects 'alf_NumericUnaryExpression' and 'alf_UnaryExpression'. From 'alf_NumericUnaryExpression', the role 'alf_NumericUnaryExpression' has cardinality 0..*, and from 'alf_UnaryExpression', the role 'alf_UnaryExpression514' has cardinality 0..*.
+An association connects 'alf_UnaryExpression' and 'alf_IsolationExpression'. From 'alf_UnaryExpression', the role 'alf_UnaryExpression516' has cardinality 0..*, and from 'alf_IsolationExpression', the role 'alf_IsolationExpression' has cardinality 0..*.
+An association connects 'alf_MultiplicativeExpression' and 'alf_UnaryExpression'. From 'alf_MultiplicativeExpression', the role 'alf_MultiplicativeExpression' has cardinality 0..*, and from 'alf_UnaryExpression', the role 'alf_UnaryExpression518' has cardinality 0..*.
+An association connects 'alf_MultiplicativeExpression' and 'alf_MultiplicativeExpressionCompletion'. From 'alf_MultiplicativeExpression', the role 'alf_MultiplicativeExpression520' has cardinality 0..*, and from 'alf_MultiplicativeExpressionCompletion', the role 'alf_MultiplicativeExpressionCompletion' has cardinality 0..*.
+An association connects 'alf_UnaryExpression' and 'alf_MultiplicativeExpressionCompletion'. From 'alf_UnaryExpression', the role 'alf_UnaryExpression523' has cardinality 0..*, and from 'alf_MultiplicativeExpressionCompletion', the role 'alf_MultiplicativeExpressionCompletion522' has cardinality 0..*.
+An association connects 'alf_UnaryExpression' and 'alf_AdditiveExpression'. From 'alf_UnaryExpression', the role 'alf_UnaryExpression525' has cardinality 0..*, and from 'alf_AdditiveExpression', the role 'alf_AdditiveExpression' has cardinality 0..*.
+An association connects 'alf_AdditiveExpression' and 'alf_AdditiveExpressionCompletion'. From 'alf_AdditiveExpression', the role 'alf_AdditiveExpression527' has cardinality 0..*, and from 'alf_AdditiveExpressionCompletion', the role 'alf_AdditiveExpressionCompletion' has cardinality 0..*.
+An association connects 'alf_MultiplicativeExpressionCompletion' and 'alf_AdditiveExpressionCompletion'. From 'alf_MultiplicativeExpressionCompletion', the role 'alf_MultiplicativeExpressionCompletion530' has cardinality 0..*, and from 'alf_AdditiveExpressionCompletion', the role 'alf_AdditiveExpressionCompletion529' has cardinality 0..*.
+An association connects 'alf_MultiplicativeExpression' and 'alf_AdditiveExpressionCompletion'. From 'alf_MultiplicativeExpression', the role 'alf_MultiplicativeExpression533' has cardinality 0..*, and from 'alf_AdditiveExpressionCompletion', the role 'alf_AdditiveExpressionCompletion532' has cardinality 0..*.
+An association connects 'alf_UnaryExpression' and 'alf_ShiftExpression'. From 'alf_UnaryExpression', the role 'alf_UnaryExpression535' has cardinality 0..*, and from 'alf_ShiftExpression', the role 'alf_ShiftExpression' has cardinality 0..*.
+An association connects 'alf_ShiftExpression' and 'alf_ShiftExpressionCompletion'. From 'alf_ShiftExpression', the role 'alf_ShiftExpression537' has cardinality 0..*, and from 'alf_ShiftExpressionCompletion', the role 'alf_ShiftExpressionCompletion' has cardinality 0..*.
+An association connects 'alf_AdditiveExpressionCompletion' and 'alf_ShiftExpressionCompletion'. From 'alf_AdditiveExpressionCompletion', the role 'alf_AdditiveExpressionCompletion540' has cardinality 0..*, and from 'alf_ShiftExpressionCompletion', the role 'alf_ShiftExpressionCompletion539' has cardinality 0..*.
+An association connects 'alf_ShiftExpressionCompletion' and 'alf_AdditiveExpression'. From 'alf_ShiftExpressionCompletion', the role 'alf_ShiftExpressionCompletion542' has cardinality 0..*, and from 'alf_AdditiveExpression', the role 'alf_AdditiveExpression543' has cardinality 0..*.
+An association connects 'alf_UnaryExpression' and 'alf_RelationalExpression'. From 'alf_UnaryExpression', the role 'alf_UnaryExpression545' has cardinality 0..*, and from 'alf_RelationalExpression', the role 'alf_RelationalExpression' has cardinality 0..*.
+An association connects 'alf_RelationalExpressionCompletion' and 'alf_RelationalExpression'. From 'alf_RelationalExpressionCompletion', the role 'alf_RelationalExpressionCompletion' has cardinality 0..*, and from 'alf_RelationalExpression', the role 'alf_RelationalExpression547' has cardinality 0..*.
+An association connects 'alf_ShiftExpressionCompletion' and 'alf_RelationalExpressionCompletion'. From 'alf_ShiftExpressionCompletion', the role 'alf_ShiftExpressionCompletion550' has cardinality 0..*, and from 'alf_RelationalExpressionCompletion', the role 'alf_RelationalExpressionCompletion549' has cardinality 0..*.
+An association connects 'alf_RelationalExpressionCompletion' and 'alf_ShiftExpression'. From 'alf_RelationalExpressionCompletion', the role 'alf_RelationalExpressionCompletion552' has cardinality 0..*, and from 'alf_ShiftExpression', the role 'alf_ShiftExpression553' has cardinality 0..*.
+An association connects 'alf_ClassificationExpression' and 'alf_UnaryExpression'. From 'alf_ClassificationExpression', the role 'alf_ClassificationExpression' has cardinality 0..*, and from 'alf_UnaryExpression', the role 'alf_UnaryExpression555' has cardinality 0..*.
+An association connects 'alf_ClassificationExpressionCompletion' and 'alf_ClassificationExpression'. From 'alf_ClassificationExpressionCompletion', the role 'alf_ClassificationExpressionCompletion' has cardinality 0..*, and from 'alf_ClassificationExpression', the role 'alf_ClassificationExpression557' has cardinality 0..*.
+An association connects 'alf_ClassificationExpressionCompletion' and 'alf_RelationalExpressionCompletion'. From 'alf_ClassificationExpressionCompletion', the role 'alf_ClassificationExpressionCompletion559' has cardinality 0..*, and from 'alf_RelationalExpressionCompletion', the role 'alf_RelationalExpressionCompletion560' has cardinality 0..*.
+An association connects 'alf_ClassificationExpressionCompletion' and 'alf_QualifiedName'. From 'alf_ClassificationExpressionCompletion', the role 'alf_ClassificationExpressionCompletion562' has cardinality 0..*, and from 'alf_QualifiedName', the role 'alf_QualifiedName563' has cardinality 0..*.
+An association connects 'alf_UnaryExpression' and 'alf_EqualityExpression'. From 'alf_UnaryExpression', the role 'alf_UnaryExpression565' has cardinality 0..*, and from 'alf_EqualityExpression', the role 'alf_EqualityExpression' has cardinality 0..*.
+An association connects 'alf_ClassificationExpressionCompletion' and 'alf_EqualityExpression'. From 'alf_ClassificationExpressionCompletion', the role 'alf_ClassificationExpressionCompletion568' has cardinality 0..*, and from 'alf_EqualityExpression', the role 'alf_EqualityExpression567' has cardinality 0..*.
+An association connects 'alf_EqualityExpressionCompletion' and 'alf_ClassificationExpressionCompletion'. From 'alf_EqualityExpressionCompletion', the role 'alf_EqualityExpressionCompletion' has cardinality 0..*, and from 'alf_ClassificationExpressionCompletion', the role 'alf_ClassificationExpressionCompletion570' has cardinality 0..*.
+An association connects 'alf_ClassificationExpression' and 'alf_EqualityExpressionCompletion'. From 'alf_ClassificationExpression', the role 'alf_ClassificationExpression573' has cardinality 0..*, and from 'alf_EqualityExpressionCompletion', the role 'alf_EqualityExpressionCompletion572' has cardinality 0..*.
+An association connects 'alf_AndExpression' and 'alf_UnaryExpression'. From 'alf_AndExpression', the role 'alf_AndExpression' has cardinality 0..*, and from 'alf_UnaryExpression', the role 'alf_UnaryExpression575' has cardinality 0..*.
+An association connects 'alf_AndExpression' and 'alf_AndExpressionCompletion'. From 'alf_AndExpression', the role 'alf_AndExpression577' has cardinality 0..*, and from 'alf_AndExpressionCompletion', the role 'alf_AndExpressionCompletion' has cardinality 0..*.
+An association connects 'alf_EqualityExpressionCompletion' and 'alf_AndExpressionCompletion'. From 'alf_EqualityExpressionCompletion', the role 'alf_EqualityExpressionCompletion580' has cardinality 0..*, and from 'alf_AndExpressionCompletion', the role 'alf_AndExpressionCompletion579' has cardinality 0..*.
+An association connects 'alf_AndExpressionCompletion' and 'alf_EqualityExpression'. From 'alf_AndExpressionCompletion', the role 'alf_AndExpressionCompletion582' has cardinality 0..*, and from 'alf_EqualityExpression', the role 'alf_EqualityExpression583' has cardinality 0..*.
+An association connects 'alf_UnaryExpression' and 'alf_ExclusiveOrExpression'. From 'alf_UnaryExpression', the role 'alf_UnaryExpression585' has cardinality 0..*, and from 'alf_ExclusiveOrExpression', the role 'alf_ExclusiveOrExpression' has cardinality 0..*.
+An association connects 'alf_ExclusiveOrExpression' and 'alf_ExclusiveOrExpressionCompletion'. From 'alf_ExclusiveOrExpression', the role 'alf_ExclusiveOrExpression587' has cardinality 0..*, and from 'alf_ExclusiveOrExpressionCompletion', the role 'alf_ExclusiveOrExpressionCompletion' has cardinality 0..*.
+An association connects 'alf_ExclusiveOrExpressionCompletion' and 'alf_AndExpressionCompletion'. From 'alf_ExclusiveOrExpressionCompletion', the role 'alf_ExclusiveOrExpressionCompletion589' has cardinality 0..*, and from 'alf_AndExpressionCompletion', the role 'alf_AndExpressionCompletion590' has cardinality 0..*.
+An association connects 'alf_ExclusiveOrExpressionCompletion' and 'alf_AndExpression'. From 'alf_ExclusiveOrExpressionCompletion', the role 'alf_ExclusiveOrExpressionCompletion592' has cardinality 0..*, and from 'alf_AndExpression', the role 'alf_AndExpression593' has cardinality 0..*.
+An association connects 'alf_UnaryExpression' and 'alf_InclusiveOrExpression'. From 'alf_UnaryExpression', the role 'alf_UnaryExpression595' has cardinality 0..*, and from 'alf_InclusiveOrExpression', the role 'alf_InclusiveOrExpression' has cardinality 0..*.
+An association connects 'alf_InclusiveOrExpression' and 'alf_InclusiveOrExpressionCompletion'. From 'alf_InclusiveOrExpression', the role 'alf_InclusiveOrExpression597' has cardinality 0..*, and from 'alf_InclusiveOrExpressionCompletion', the role 'alf_InclusiveOrExpressionCompletion' has cardinality 0..*.
+An association connects 'alf_ExclusiveOrExpressionCompletion' and 'alf_InclusiveOrExpressionCompletion'. From 'alf_ExclusiveOrExpressionCompletion', the role 'alf_ExclusiveOrExpressionCompletion600' has cardinality 0..*, and from 'alf_InclusiveOrExpressionCompletion', the role 'alf_InclusiveOrExpressionCompletion599' has cardinality 0..*.
+An association connects 'alf_InclusiveOrExpressionCompletion' and 'alf_ExclusiveOrExpression'. From 'alf_InclusiveOrExpressionCompletion', the role 'alf_InclusiveOrExpressionCompletion602' has cardinality 0..*, and from 'alf_ExclusiveOrExpression', the role 'alf_ExclusiveOrExpression603' has cardinality 0..*.
+An association connects 'alf_UnaryExpression' and 'alf_ConditionalAndExpression'. From 'alf_UnaryExpression', the role 'alf_UnaryExpression605' has cardinality 0..*, and from 'alf_ConditionalAndExpression', the role 'alf_ConditionalAndExpression' has cardinality 0..*.
+An association connects 'alf_ConditionalAndExpression' and 'alf_ConditionalAndExpressionCompletion'. From 'alf_ConditionalAndExpression', the role 'alf_ConditionalAndExpression607' has cardinality 0..*, and from 'alf_ConditionalAndExpressionCompletion', the role 'alf_ConditionalAndExpressionCompletion' has cardinality 0..*.
+An association connects 'alf_InclusiveOrExpressionCompletion' and 'alf_ConditionalAndExpressionCompletion'. From 'alf_InclusiveOrExpressionCompletion', the role 'alf_InclusiveOrExpressionCompletion610' has cardinality 0..*, and from 'alf_ConditionalAndExpressionCompletion', the role 'alf_ConditionalAndExpressionCompletion609' has cardinality 0..*.
+An association connects 'alf_InclusiveOrExpression' and 'alf_ConditionalAndExpressionCompletion'. From 'alf_InclusiveOrExpression', the role 'alf_InclusiveOrExpression613' has cardinality 0..*, and from 'alf_ConditionalAndExpressionCompletion', the role 'alf_ConditionalAndExpressionCompletion612' has cardinality 0..*.
+An association connects 'alf_ConditionalOrExpression' and 'alf_UnaryExpression'. From 'alf_ConditionalOrExpression', the role 'alf_ConditionalOrExpression' has cardinality 0..*, and from 'alf_UnaryExpression', the role 'alf_UnaryExpression615' has cardinality 0..*.
+An association connects 'alf_ConditionalOrExpression' and 'alf_ConditionalOrExpressionCompletion'. From 'alf_ConditionalOrExpression', the role 'alf_ConditionalOrExpression617' has cardinality 0..*, and from 'alf_ConditionalOrExpressionCompletion', the role 'alf_ConditionalOrExpressionCompletion' has cardinality 0..*.
+An association connects 'alf_ConditionalAndExpressionCompletion' and 'alf_ConditionalOrExpressionCompletion'. From 'alf_ConditionalAndExpressionCompletion', the role 'alf_ConditionalAndExpressionCompletion620' has cardinality 0..*, and from 'alf_ConditionalOrExpressionCompletion', the role 'alf_ConditionalOrExpressionCompletion619' has cardinality 0..*.
+An association connects 'alf_ConditionalAndExpression' and 'alf_ConditionalOrExpressionCompletion'. From 'alf_ConditionalAndExpression', the role 'alf_ConditionalAndExpression623' has cardinality 0..*, and from 'alf_ConditionalOrExpressionCompletion', the role 'alf_ConditionalOrExpressionCompletion622' has cardinality 0..*.
+An association connects 'alf_UnaryExpression' and 'alf_ConditionalExpression'. From 'alf_UnaryExpression', the role 'alf_UnaryExpression625' has cardinality 0..*, and from 'alf_ConditionalExpression', the role 'alf_ConditionalExpression' has cardinality 0..*.
+An association connects 'alf_ConditionalExpression' and 'alf_ConditionalExpressionCompletion'. From 'alf_ConditionalExpression', the role 'alf_ConditionalExpression627' has cardinality 0..*, and from 'alf_ConditionalExpressionCompletion', the role 'alf_ConditionalExpressionCompletion' has cardinality 0..*.
+An association connects 'alf_ConditionalExpressionCompletion' and 'alf_ConditionalOrExpressionCompletion'. From 'alf_ConditionalExpressionCompletion', the role 'alf_ConditionalExpressionCompletion629' has cardinality 0..*, and from 'alf_ConditionalOrExpressionCompletion', the role 'alf_ConditionalOrExpressionCompletion630' has cardinality 0..*.
+An association connects 'alf_ConditionalExpressionCompletion' and 'alf_ConditionalExpression'. From 'alf_ConditionalExpressionCompletion', the role 'alf_ConditionalExpressionCompletion632' has cardinality 0..*, and from 'alf_ConditionalExpression', the role 'alf_ConditionalExpression633' has cardinality 0..*.
+An association connects 'alf_DocumentedStatement' and 'alf_StatementSequence'. From 'alf_DocumentedStatement', the role 'alf_DocumentedStatement' has cardinality 0..*, and from 'alf_StatementSequence', the role 'alf_StatementSequence' has cardinality 0..*.
+An association connects 'alf_Statement' and 'alf_DocumentedStatement'. From 'alf_Statement', the role 'alf_Statement' has cardinality 0..*, and from 'alf_DocumentedStatement', the role 'alf_DocumentedStatement636' has cardinality 0..*.
+An association connects 'alf_Block' and 'alf_StatementSequence'. From 'alf_Block', the role 'alf_Block638' has cardinality 0..*, and from 'alf_StatementSequence', the role 'alf_StatementSequence639' has cardinality 0..*.
+An association connects 'alf_AnnotatedStatement' and 'alf_Annotations'. From 'alf_AnnotatedStatement', the role 'alf_AnnotatedStatement' has cardinality 0..*, and from 'alf_Annotations', the role 'alf_Annotations' has cardinality 0..*.
+An association connects 'alf_Statement' and 'alf_AnnotatedStatement'. From 'alf_Statement', the role 'alf_Statement643' has cardinality 0..*, and from 'alf_AnnotatedStatement', the role 'alf_AnnotatedStatement642' has cardinality 0..*.
+An association connects 'alf_Annotations' and 'alf_Annotation'. From 'alf_Annotations', the role 'alf_Annotations645' has cardinality 0..*, and from 'alf_Annotation', the role 'alf_Annotation' has cardinality 0..*.
+An association connects 'alf_Annotation' and 'alf_NameList'. From 'alf_Annotation', the role 'alf_Annotation647' has cardinality 0..*, and from 'alf_NameList', the role 'alf_NameList' has cardinality 0..*.
+An association connects 'alf_NameList' and 'alf_Name'. From 'alf_NameList', the role 'alf_NameList649' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name650' has cardinality 0..*.
+An association connects 'alf_Name' and 'alf_InLineStatement'. From 'alf_Name', the role 'alf_Name652' has cardinality 0..*, and from 'alf_InLineStatement', the role 'alf_InLineStatement' has cardinality 0..*.
+An association connects 'alf_Block' and 'alf_BlockStatement'. From 'alf_Block', the role 'alf_Block654' has cardinality 0..*, and from 'alf_BlockStatement', the role 'alf_BlockStatement' has cardinality 0..*.
+An association connects 'alf_LocalNameDeclarationOrExpressionStatement' and 'alf_QualifiedName'. From 'alf_LocalNameDeclarationOrExpressionStatement', the role 'alf_LocalNameDeclarationOrExpressionStatement' has cardinality 0..*, and from 'alf_QualifiedName', the role 'alf_QualifiedName656' has cardinality 0..*.
+An association connects 'alf_LocalNameDeclarationOrExpressionStatement' and 'alf_MultiplicityIndicator'. From 'alf_LocalNameDeclarationOrExpressionStatement', the role 'alf_LocalNameDeclarationOrExpressionStatement658' has cardinality 0..*, and from 'alf_MultiplicityIndicator', the role 'alf_MultiplicityIndicator659' has cardinality 0..*.
+An association connects 'alf_LocalNameDeclarationOrExpressionStatement' and 'alf_Name'. From 'alf_LocalNameDeclarationOrExpressionStatement', the role 'alf_LocalNameDeclarationOrExpressionStatement661' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name662' has cardinality 0..*.
+An association connects 'alf_LocalNameDeclarationStatementCompletion' and 'alf_LocalNameDeclarationOrExpressionStatement'. From 'alf_LocalNameDeclarationStatementCompletion', the role 'alf_LocalNameDeclarationStatementCompletion' has cardinality 0..*, and from 'alf_LocalNameDeclarationOrExpressionStatement', the role 'alf_LocalNameDeclarationOrExpressionStatement664' has cardinality 0..*.
+An association connects 'alf_LocalNameDeclarationOrExpressionStatement' and 'alf_NameToExpressionCompletion'. From 'alf_LocalNameDeclarationOrExpressionStatement', the role 'alf_LocalNameDeclarationOrExpressionStatement666' has cardinality 0..*, and from 'alf_NameToExpressionCompletion', the role 'alf_NameToExpressionCompletion667' has cardinality 0..*.
+An association connects 'alf_LocalNameDeclarationOrExpressionStatement' and 'alf_NonNameExpression'. From 'alf_LocalNameDeclarationOrExpressionStatement', the role 'alf_LocalNameDeclarationOrExpressionStatement669' has cardinality 0..*, and from 'alf_NonNameExpression', the role 'alf_NonNameExpression670' has cardinality 0..*.
+An association connects 'alf_LocalNameDeclarationStatement' and 'alf_Name'. From 'alf_LocalNameDeclarationStatement', the role 'alf_LocalNameDeclarationStatement' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name672' has cardinality 0..*.
+An association connects 'alf_TypeName' and 'alf_LocalNameDeclarationStatement'. From 'alf_TypeName', the role 'alf_TypeName675' has cardinality 0..*, and from 'alf_LocalNameDeclarationStatement', the role 'alf_LocalNameDeclarationStatement674' has cardinality 0..*.
+An association connects 'alf_MultiplicityIndicator' and 'alf_LocalNameDeclarationStatement'. From 'alf_MultiplicityIndicator', the role 'alf_MultiplicityIndicator678' has cardinality 0..*, and from 'alf_LocalNameDeclarationStatement', the role 'alf_LocalNameDeclarationStatement677' has cardinality 0..*.
+An association connects 'alf_LocalNameDeclarationStatementCompletion' and 'alf_LocalNameDeclarationStatement'. From 'alf_LocalNameDeclarationStatementCompletion', the role 'alf_LocalNameDeclarationStatementCompletion681' has cardinality 0..*, and from 'alf_LocalNameDeclarationStatement', the role 'alf_LocalNameDeclarationStatement680' has cardinality 0..*.
+An association connects 'alf_LocalNameDeclarationStatementCompletion' and 'alf_InitializationExpression'. From 'alf_LocalNameDeclarationStatementCompletion', the role 'alf_LocalNameDeclarationStatementCompletion683' has cardinality 0..*, and from 'alf_InitializationExpression', the role 'alf_InitializationExpression684' has cardinality 0..*.
+An association connects 'alf_InstanceInitializationExpression' and 'alf_Tuple'. From 'alf_InstanceInitializationExpression', the role 'alf_InstanceInitializationExpression' has cardinality 0..*, and from 'alf_Tuple', the role 'alf_Tuple686' has cardinality 0..*.
+An association connects 'alf_IfStatement' and 'alf_SequentialClauses'. From 'alf_IfStatement', the role 'alf_IfStatement' has cardinality 0..*, and from 'alf_SequentialClauses', the role 'alf_SequentialClauses' has cardinality 0..*.
+An association connects 'alf_FinalClause' and 'alf_IfStatement'. From 'alf_FinalClause', the role 'alf_FinalClause' has cardinality 0..*, and from 'alf_IfStatement', the role 'alf_IfStatement689' has cardinality 0..*.
+An association connects 'alf_ConcurrentClauses' and 'alf_SequentialClauses'. From 'alf_ConcurrentClauses', the role 'alf_ConcurrentClauses' has cardinality 0..*, and from 'alf_SequentialClauses', the role 'alf_SequentialClauses691' has cardinality 0..*.
+An association connects 'alf_NonFinalClause' and 'alf_ConcurrentClauses'. From 'alf_NonFinalClause', the role 'alf_NonFinalClause' has cardinality 0..*, and from 'alf_ConcurrentClauses', the role 'alf_ConcurrentClauses693' has cardinality 0..*.
+An association connects 'alf_NonFinalClause' and 'alf_Expression'. From 'alf_NonFinalClause', the role 'alf_NonFinalClause695' has cardinality 0..*, and from 'alf_Expression', the role 'alf_Expression696' has cardinality 0..*.
+An association connects 'alf_Block' and 'alf_NonFinalClause'. From 'alf_Block', the role 'alf_Block699' has cardinality 0..*, and from 'alf_NonFinalClause', the role 'alf_NonFinalClause698' has cardinality 0..*.
+An association connects 'alf_Block' and 'alf_FinalClause'. From 'alf_Block', the role 'alf_Block702' has cardinality 0..*, and from 'alf_FinalClause', the role 'alf_FinalClause701' has cardinality 0..*.
+An association connects 'alf_Expression' and 'alf_SwitchStatement'. From 'alf_Expression', the role 'alf_Expression704' has cardinality 0..*, and from 'alf_SwitchStatement', the role 'alf_SwitchStatement' has cardinality 0..*.
+An association connects 'alf_SwitchClause' and 'alf_SwitchStatement'. From 'alf_SwitchClause', the role 'alf_SwitchClause' has cardinality 0..*, and from 'alf_SwitchStatement', the role 'alf_SwitchStatement706' has cardinality 0..*.
+An association connects 'alf_SwitchStatement' and 'alf_SwitchDefaultClause'. From 'alf_SwitchStatement', the role 'alf_SwitchStatement708' has cardinality 0..*, and from 'alf_SwitchDefaultClause', the role 'alf_SwitchDefaultClause' has cardinality 0..*.
+An association connects 'alf_SwitchCase' and 'alf_SwitchClause'. From 'alf_SwitchCase', the role 'alf_SwitchCase' has cardinality 0..*, and from 'alf_SwitchClause', the role 'alf_SwitchClause710' has cardinality 0..*.
+An association connects 'alf_SwitchClause' and 'alf_NonEmptyStatementSequence'. From 'alf_SwitchClause', the role 'alf_SwitchClause712' has cardinality 0..*, and from 'alf_NonEmptyStatementSequence', the role 'alf_NonEmptyStatementSequence' has cardinality 0..*.
+An association connects 'alf_Expression' and 'alf_SwitchCase'. From 'alf_Expression', the role 'alf_Expression715' has cardinality 0..*, and from 'alf_SwitchCase', the role 'alf_SwitchCase714' has cardinality 0..*.
+An association connects 'alf_NonEmptyStatementSequence' and 'alf_SwitchDefaultClause'. From 'alf_NonEmptyStatementSequence', the role 'alf_NonEmptyStatementSequence718' has cardinality 0..*, and from 'alf_SwitchDefaultClause', the role 'alf_SwitchDefaultClause717' has cardinality 0..*.
+An association connects 'alf_DocumentedStatement' and 'alf_NonEmptyStatementSequence'. From 'alf_DocumentedStatement', the role 'alf_DocumentedStatement721' has cardinality 0..*, and from 'alf_NonEmptyStatementSequence', the role 'alf_NonEmptyStatementSequence720' has cardinality 0..*.
+An association connects 'alf_Expression' and 'alf_WhileStatement'. From 'alf_Expression', the role 'alf_Expression723' has cardinality 0..*, and from 'alf_WhileStatement', the role 'alf_WhileStatement' has cardinality 0..*.
+An association connects 'alf_Block' and 'alf_WhileStatement'. From 'alf_Block', the role 'alf_Block726' has cardinality 0..*, and from 'alf_WhileStatement', the role 'alf_WhileStatement725' has cardinality 0..*.
+An association connects 'alf_Block' and 'alf_DoStatement'. From 'alf_Block', the role 'alf_Block728' has cardinality 0..*, and from 'alf_DoStatement', the role 'alf_DoStatement' has cardinality 0..*.
+An association connects 'alf_Expression' and 'alf_DoStatement'. From 'alf_Expression', the role 'alf_Expression731' has cardinality 0..*, and from 'alf_DoStatement', the role 'alf_DoStatement730' has cardinality 0..*.
+An association connects 'alf_ForStatement' and 'alf_ForControl'. From 'alf_ForStatement', the role 'alf_ForStatement' has cardinality 0..*, and from 'alf_ForControl', the role 'alf_ForControl' has cardinality 0..*.
+An association connects 'alf_Block' and 'alf_ForStatement'. From 'alf_Block', the role 'alf_Block735' has cardinality 0..*, and from 'alf_ForStatement', the role 'alf_ForStatement734' has cardinality 0..*.
+An association connects 'alf_LoopVariableDefinition' and 'alf_ForControl'. From 'alf_LoopVariableDefinition', the role 'alf_LoopVariableDefinition' has cardinality 0..*, and from 'alf_ForControl', the role 'alf_ForControl737' has cardinality 0..*.
+An association connects 'alf_LoopVariableDefinition' and 'alf_Name'. From 'alf_LoopVariableDefinition', the role 'alf_LoopVariableDefinition739' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name740' has cardinality 0..*.
+An association connects 'alf_Expression' and 'alf_LoopVariableDefinition'. From 'alf_Expression', the role 'alf_Expression743' has cardinality 0..*, and from 'alf_LoopVariableDefinition', the role 'alf_LoopVariableDefinition742' has cardinality 0..*.
+An association connects 'alf_LoopVariableDefinition' and 'alf_Expression'. From 'alf_LoopVariableDefinition', the role 'alf_LoopVariableDefinition745' has cardinality 0..*, and from 'alf_Expression', the role 'alf_Expression746' has cardinality 0..*.
+An association connects 'alf_LoopVariableDefinition' and 'alf_QualifiedName'. From 'alf_LoopVariableDefinition', the role 'alf_LoopVariableDefinition748' has cardinality 0..*, and from 'alf_QualifiedName', the role 'alf_QualifiedName749' has cardinality 0..*.
+An association connects 'alf_LoopVariableDefinition' and 'alf_Expression'. From 'alf_LoopVariableDefinition', the role 'alf_LoopVariableDefinition751' has cardinality 0..*, and from 'alf_Expression', the role 'alf_Expression752' has cardinality 0..*.
+An association connects 'alf_Expression' and 'alf_ReturnStatement'. From 'alf_Expression', the role 'alf_Expression754' has cardinality 0..*, and from 'alf_ReturnStatement', the role 'alf_ReturnStatement' has cardinality 0..*.
+An association connects 'alf_AcceptStatement' and 'alf_AcceptClause'. From 'alf_AcceptStatement', the role 'alf_AcceptStatement' has cardinality 0..*, and from 'alf_AcceptClause', the role 'alf_AcceptClause' has cardinality 0..*.
+An association connects 'alf_SimpleAcceptStatementCompletion' and 'alf_AcceptStatement'. From 'alf_SimpleAcceptStatementCompletion', the role 'alf_SimpleAcceptStatementCompletion' has cardinality 0..*, and from 'alf_AcceptStatement', the role 'alf_AcceptStatement757' has cardinality 0..*.
+An association connects 'alf_AcceptStatement' and 'alf_CompoundAcceptStatementCompletion'. From 'alf_AcceptStatement', the role 'alf_AcceptStatement759' has cardinality 0..*, and from 'alf_CompoundAcceptStatementCompletion', the role 'alf_CompoundAcceptStatementCompletion' has cardinality 0..*.
+An association connects 'alf_CompoundAcceptStatementCompletion' and 'alf_Block'. From 'alf_CompoundAcceptStatementCompletion', the role 'alf_CompoundAcceptStatementCompletion761' has cardinality 0..*, and from 'alf_Block', the role 'alf_Block762' has cardinality 0..*.
+An association connects 'alf_CompoundAcceptStatementCompletion' and 'alf_AcceptBlock'. From 'alf_CompoundAcceptStatementCompletion', the role 'alf_CompoundAcceptStatementCompletion764' has cardinality 0..*, and from 'alf_AcceptBlock', the role 'alf_AcceptBlock' has cardinality 0..*.
+An association connects 'alf_AcceptClause' and 'alf_AcceptBlock'. From 'alf_AcceptClause', the role 'alf_AcceptClause767' has cardinality 0..*, and from 'alf_AcceptBlock', the role 'alf_AcceptBlock766' has cardinality 0..*.
+An association connects 'alf_Block' and 'alf_AcceptBlock'. From 'alf_Block', the role 'alf_Block770' has cardinality 0..*, and from 'alf_AcceptBlock', the role 'alf_AcceptBlock769' has cardinality 0..*.
+An association connects 'alf_AcceptClause' and 'alf_Name'. From 'alf_AcceptClause', the role 'alf_AcceptClause772' has cardinality 0..*, and from 'alf_Name', the role 'alf_Name773' has cardinality 0..*.
+An association connects 'alf_QualifiedNameList' and 'alf_AcceptClause'. From 'alf_QualifiedNameList', the role 'alf_QualifiedNameList776' has cardinality 0..*, and from 'alf_AcceptClause', the role 'alf_AcceptClause775' has cardinality 0..*.
+An association connects 'alf_Expression' and 'alf_ClassifyStatement'. From 'alf_Expression', the role 'alf_Expression778' has cardinality 0..*, and from 'alf_ClassifyStatement', the role 'alf_ClassifyStatement' has cardinality 0..*.
+An association connects 'alf_ClassifyStatement' and 'alf_ClassificationClause'. From 'alf_ClassifyStatement', the role 'alf_ClassifyStatement780' has cardinality 0..*, and from 'alf_ClassificationClause', the role 'alf_ClassificationClause' has cardinality 0..*.
+An association connects 'alf_ClassificationClause' and 'alf_ClassificationFromClause'. From 'alf_ClassificationClause', the role 'alf_ClassificationClause782' has cardinality 0..*, and from 'alf_ClassificationFromClause', the role 'alf_ClassificationFromClause' has cardinality 0..*.
+An association connects 'alf_ClassificationClause' and 'alf_ClassificationToClause'. From 'alf_ClassificationClause', the role 'alf_ClassificationClause784' has cardinality 0..*, and from 'alf_ClassificationToClause', the role 'alf_ClassificationToClause' has cardinality 0..*.
+An association connects 'alf_ReclassifyAllClause' and 'alf_ClassificationClause'. From 'alf_ReclassifyAllClause', the role 'alf_ReclassifyAllClause' has cardinality 0..*, and from 'alf_ClassificationClause', the role 'alf_ClassificationClause786' has cardinality 0..*.
+An association connects 'alf_ClassificationFromClause' and 'alf_QualifiedNameList'. From 'alf_ClassificationFromClause', the role 'alf_ClassificationFromClause788' has cardinality 0..*, and from 'alf_QualifiedNameList', the role 'alf_QualifiedNameList789' has cardinality 0..*.
+An association connects 'alf_ClassificationToClause' and 'alf_QualifiedNameList'. From 'alf_ClassificationToClause', the role 'alf_ClassificationToClause791' has cardinality 0..*, and from 'alf_QualifiedNameList', the role 'alf_QualifiedNameList792' has cardinality 0..*.
+An association connects 'alf_QualifiedName' and 'alf_QualifiedNameList'. From 'alf_QualifiedName', the role 'alf_QualifiedName795' has cardinality 0..*, and from 'alf_QualifiedNameList', the role 'alf_QualifiedNameList794' has cardinality 0..*.

@@ -1,0 +1,125 @@
+The domain model 'model6' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'model6_E' represents an important domain concept.
+It does not declare any attributes.
+
+'model6_UnsettableAttributes' represents an important domain concept.
+It has the following attributes: 'attrJavaObject', which is of type str; 'attrLong', which is of type str; 'attrByteArray', which is of type str; 'attrBooleanObject', which is of type str; 'attrChar', which is of type str; 'attrCharacterObject', which is of type str; 'attrBoolean', which is of type bool; 'attrDoubleObject', which is of type str; 'attrFloat', which is of type float; 'attrByte', which is of type str; 'attrBigDecimal', which is of type str; 'attrBigInteger', which is of type str; 'attrByteObject', which is of type str; 'attrShort', which is of type str; 'attrFloatObject', which is of type str; 'attrDouble', which is of type float; 'attrIntegerObject', which is of type str; 'attrJavaClass', which is of type str; 'attrLongObject', which is of type str; 'attrString', which is of type str; 'attrDate', which is of type date; 'attrShortObject', which is of type str; 'attrInt', which is of type int.
+
+'BaseObject' represents an important domain concept.
+It does not declare any attributes.
+
+'Holdable' represents an important domain concept.
+It does not declare any attributes.
+
+'model6_MyEnumList' represents an important domain concept.
+It has one attribute: 'myEnum', which is of type str.
+
+'model6_ContainmentObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model6_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model6_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'model6_PropertiesMapEntryValue' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'model6_EmptyStringDefaultUnsettable' represents an important domain concept.
+It has one attribute: 'attribute', which is of type str.
+
+'model6_CanReferenceLegacy' represents an important domain concept.
+It does not declare any attributes.
+
+'model6_F' represents an important domain concept.
+It does not declare any attributes.
+
+'model6_Holder' represents an important domain concept.
+It does not declare any attributes.
+
+'model6_G' represents an important domain concept.
+It has one attribute: 'dummy', which is of type str.
+
+'model6_PropertiesMapEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'model6_BaseObject' represents an important domain concept.
+It has the following attributes: 'attributeList', which is of type str; 'attributeRequired', which is of type str; 'attributeOptional', which is of type str.
+
+'model6_MyEnumListUnsettable' represents an important domain concept.
+It has one attribute: 'myEnum', which is of type str.
+
+'model6_Holdable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model6_UnorderedList' represents an important domain concept.
+It does not declare any attributes.
+
+'model6_ReferenceObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model6_C' represents an important domain concept.
+It does not declare any attributes.
+
+'model6_EmptyStringDefault' represents an important domain concept.
+It has one attribute: 'attribute', which is of type str.
+
+'model6_A' represents an important domain concept.
+It does not declare any attributes.
+
+'model6_D' represents an important domain concept.
+It does not declare any attributes.
+
+'model6_Thing' represents an important domain concept.
+It does not declare any attributes.
+
+'model6_PropertiesMap' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'model6_HasNillableAttribute' represents an important domain concept.
+It has one attribute: 'nillable', which is of type str.
+
+'model6_B' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MyEnum' defines the following possible values: 'ONE', 'THREE', 'TWO', 'ZERO'.
+
+The model also captures inheritance relationships between classes.
+The class 'model6_ReferenceObject' is a specialization of 'BaseObject'.
+The class 'model6_ContainmentObject' is a specialization of 'BaseObject'.
+The class 'model6_Holder' is a specialization of 'Holdable'.
+The class 'model6_Thing' is a specialization of 'Holdable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model6_Root' and 'model6_BaseObject'. From 'model6_Root', the role 'model6_Root' has cardinality 0..*, and from 'model6_BaseObject', the role 'model6_BaseObject' has cardinality 0..*.
+An association connects 'model6_Root' and 'model6_BaseObject'. From 'model6_Root', the role 'model6_Root2' has cardinality 0..*, and from 'model6_BaseObject', the role 'model6_BaseObject3' has cardinality 0..*.
+An association connects 'model6_Root' and 'model6_BaseObject'. From 'model6_Root', the role 'model6_Root5' has cardinality 0..*, and from 'model6_BaseObject', the role 'model6_BaseObject6' has cardinality 0..*.
+An association connects 'model6_Root' and 'model6_BaseObject'. From 'model6_Root', the role 'model6_Root8' has cardinality 0..*, and from 'model6_BaseObject', the role 'model6_BaseObject9' has cardinality 0..*.
+An association connects 'model6_BaseObject' and 'model6_ReferenceObject'. From 'model6_BaseObject', the role 'model6_BaseObject11' has cardinality 0..*, and from 'model6_ReferenceObject', the role 'model6_ReferenceObject' has cardinality 0..*.
+An association connects 'model6_BaseObject' and 'model6_ReferenceObject'. From 'model6_BaseObject', the role 'model6_BaseObject14' has cardinality 0..*, and from 'model6_ReferenceObject', the role 'model6_ReferenceObject13' has cardinality 0..*.
+An association connects 'model6_ContainmentObject' and 'model6_BaseObject'. From 'model6_ContainmentObject', the role 'model6_ContainmentObject' has cardinality 0..*, and from 'model6_BaseObject', the role 'model6_BaseObject16' has cardinality 0..*.
+An association connects 'model6_ContainmentObject' and 'model6_BaseObject'. From 'model6_ContainmentObject', the role 'model6_ContainmentObject18' has cardinality 0..*, and from 'model6_BaseObject', the role 'model6_BaseObject19' has cardinality 0..*.
+An association connects 'model6_UnorderedList' and 'model6_UnorderedList'. From 'model6_UnorderedList', the role 'model6_UnorderedList' has cardinality 0..*, and from 'model6_UnorderedList', the role 'model6_UnorderedList20' has cardinality 0..*.
+An association connects 'model6_UnorderedList' and 'model6_UnorderedList'. From 'model6_UnorderedList', the role 'model6_UnorderedList22' has cardinality 0..*, and from 'model6_UnorderedList', the role 'model6_UnorderedList24' has cardinality 0..*.
+An association connects 'model6_PropertiesMapEntry' and 'model6_PropertiesMap'. From 'model6_PropertiesMapEntry', the role 'model6_PropertiesMapEntry' has cardinality 0..*, and from 'model6_PropertiesMap', the role 'model6_PropertiesMap' has cardinality 0..*.
+An association connects 'model6_PropertiesMapEntry' and 'model6_PropertiesMap'. From 'model6_PropertiesMapEntry', the role 'model6_PropertiesMapEntry28' has cardinality 0..*, and from 'model6_PropertiesMap', the role 'model6_PropertiesMap27' has cardinality 0..*.
+An association connects 'model6_PropertiesMapEntry' and 'model6_PropertiesMapEntryValue'. From 'model6_PropertiesMapEntry', the role 'model6_PropertiesMapEntry30' has cardinality 0..*, and from 'model6_PropertiesMapEntryValue', the role 'model6_PropertiesMapEntryValue' has cardinality 0..*.
+An association connects 'model6_D' and 'model6_A'. From 'model6_D', the role 'model6_D' has cardinality 0..*, and from 'model6_A', the role 'model6_A' has cardinality 0..*.
+An association connects 'model6_B' and 'model6_A'. From 'model6_B', the role 'model6_B' has cardinality 0..*, and from 'model6_A', the role 'model6_A33' has cardinality 0..*.
+An association connects 'model6_B' and 'model6_C'. From 'model6_B', the role 'model6_B35' has cardinality 0..*, and from 'model6_C', the role 'model6_C' has cardinality 0..*.
+An association connects 'model6_EObject' and 'model6_D'. From 'model6_EObject', the role 'model6_EObject' has cardinality 0..*, and from 'model6_D', the role 'model6_D37' has cardinality 0..*.
+An association connects 'model6_A' and 'model6_E'. From 'model6_A', the role 'model6_A39' has cardinality 0..*, and from 'model6_E', the role 'model6_E' has cardinality 0..*.
+An association connects 'model6_E' and 'model6_F'. From 'model6_E', the role 'model6_E41' has cardinality 0..*, and from 'model6_F', the role 'model6_F' has cardinality 0..*.
+An association connects 'model6_G' and 'model6_BaseObject'. From 'model6_G', the role 'model6_G' has cardinality 0..*, and from 'model6_BaseObject', the role 'model6_BaseObject43' has cardinality 0..*.
+An association connects 'model6_BaseObject' and 'model6_G'. From 'model6_BaseObject', the role 'model6_BaseObject46' has cardinality 0..*, and from 'model6_G', the role 'model6_G45' has cardinality 0..*.
+An association connects 'model6_Holdable' and 'model6_Holder'. From 'model6_Holdable', the role 'model6_Holdable' has cardinality 0..*, and from 'model6_Holder', the role 'model6_Holder' has cardinality 0..*.
+An association connects 'model6_Holdable' and 'model6_Holder'. From 'model6_Holdable', the role 'model6_Holdable50' has cardinality 0..*, and from 'model6_Holder', the role 'model6_Holder49' has cardinality 0..*.
+An association connects 'model6_EObject' and 'model6_CanReferenceLegacy'. From 'model6_EObject', the role 'model6_EObject52' has cardinality 0..*, and from 'model6_CanReferenceLegacy', the role 'model6_CanReferenceLegacy' has cardinality 0..*.
+An association connects 'model6_EObject' and 'model6_CanReferenceLegacy'. From 'model6_EObject', the role 'model6_EObject55' has cardinality 0..*, and from 'model6_CanReferenceLegacy', the role 'model6_CanReferenceLegacy54' has cardinality 0..*.
+An association connects 'model6_CanReferenceLegacy' and 'model6_EObject'. From 'model6_CanReferenceLegacy', the role 'model6_CanReferenceLegacy57' has cardinality 0..*, and from 'model6_EObject', the role 'model6_EObject58' has cardinality 0..*.
+An association connects 'model6_EObject' and 'model6_CanReferenceLegacy'. From 'model6_EObject', the role 'model6_EObject61' has cardinality 0..*, and from 'model6_CanReferenceLegacy', the role 'model6_CanReferenceLegacy60' has cardinality 0..*.

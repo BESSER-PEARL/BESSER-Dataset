@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jesusc/atl-tutorial/src/guigen.trafo.uml2gui/metamodels/wireframe.ecore

@@ -1,0 +1,34 @@
+The domain model 'typeB' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'typeB_PortB' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'typeB_InPortB' represents an important domain concept.
+It does not declare any attributes.
+
+'PortB' represents an important domain concept.
+It does not declare any attributes.
+
+'OutPortB' represents an important domain concept.
+It does not declare any attributes.
+
+'typeB_OutType1' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'typeB_OutPortB' represents an important domain concept.
+It does not declare any attributes.
+
+'typeB_BlockB' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'typeB_InPortB' is a specialization of 'PortB'.
+The class 'typeB_OutPortB' is a specialization of 'PortB'.
+The class 'typeB_OutType1' is a specialization of 'OutPortB'.
+
+Relationships between classes are modeled using associations.
+An association connects 'typeB_BlockB' and 'typeB_InPortB'. From 'typeB_BlockB', the role 'typeB_BlockB' has cardinality 0..*, and from 'typeB_InPortB', the role 'typeB_InPortB' has cardinality 0..*.
+An association connects 'typeB_BlockB' and 'typeB_OutPortB'. From 'typeB_BlockB', the role 'block' has cardinality 0..*, and from 'typeB_OutPortB', the role 'OutPortB' has cardinality 0..*.
+An association connects 'typeB_OutPortB' and 'typeB_BlockB'. From 'typeB_OutPortB', the role 'outputPorts' has cardinality 0..*, and from 'typeB_BlockB', the role 'BlockB' has cardinality 0..*.

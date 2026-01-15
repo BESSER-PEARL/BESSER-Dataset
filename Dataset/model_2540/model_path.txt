@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/apinsonneau/M2Doc/doc/example/org.obeonetwork.m2doc.ecore.wtable.test/My.ecore

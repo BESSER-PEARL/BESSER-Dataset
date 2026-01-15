@@ -1,0 +1,47 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'myDsl_AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_PackageDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Feature' represents an important domain concept.
+It has the following attributes: 'many', which is of type bool; 'name', which is of type str.
+
+'myDsl_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'myDsl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl_PackageDeclaration' is a specialization of 'AbstractElement'.
+The class 'myDsl_Type' is a specialization of 'AbstractElement'.
+The class 'myDsl_DataType' is a specialization of 'Type'.
+The class 'myDsl_Import' is a specialization of 'AbstractElement'.
+The class 'myDsl_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_Model' and 'myDsl_AbstractElement'. From 'myDsl_Model', the role 'myDsl_Model' has cardinality 0..*, and from 'myDsl_AbstractElement', the role 'myDsl_AbstractElement' has cardinality 0..*.
+An association connects 'myDsl_AbstractElement' and 'myDsl_PackageDeclaration'. From 'myDsl_AbstractElement', the role 'myDsl_AbstractElement2' has cardinality 0..*, and from 'myDsl_PackageDeclaration', the role 'myDsl_PackageDeclaration' has cardinality 0..*.
+An association connects 'myDsl_Entity' and 'myDsl_Entity'. From 'myDsl_Entity', the role 'myDsl_Entity3' has cardinality 0..*, and from 'myDsl_Entity', the role 'myDsl_Entity' has cardinality 0..*.
+An association connects 'myDsl_Feature' and 'myDsl_Entity'. From 'myDsl_Feature', the role 'myDsl_Feature' has cardinality 0..*, and from 'myDsl_Entity', the role 'myDsl_Entity6' has cardinality 0..*.
+An association connects 'myDsl_Type' and 'myDsl_Feature'. From 'myDsl_Type', the role 'myDsl_Type' has cardinality 0..*, and from 'myDsl_Feature', the role 'myDsl_Feature8' has cardinality 0..*.

@@ -1,0 +1,30 @@
+The domain model 'testModel' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'AClass' represents an important domain concept.
+It does not declare any attributes.
+
+'testModel_BClass' represents an important domain concept.
+It has the following attributes: 'BClassAttr2', which is of type str; 'BClassAttr1', which is of type bool.
+
+'testModel_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'testModel_CClass' represents an important domain concept.
+It has the following attributes: 'CClassAttr2', which is of type str; 'CClassAttr1', which is of type bool.
+
+'testModel_AClass' represents an important domain concept.
+It has the following attributes: 'AClassAttr1', which is of type bool; 'AClassAttr2', which is of type str.
+
+'BClass' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'testModel_BClass' is a specialization of 'AClass'.
+The class 'testModel_CClass' is a specialization of 'BClass'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testModel_AClass' and 'testModel_BClass'. From 'testModel_AClass', the role 'testModel_AClass' has cardinality 0..*, and from 'testModel_BClass', the role 'testModel_BClass' has cardinality 0..*.
+An association connects 'testModel_CClass' and 'testModel_BClass'. From 'testModel_CClass', the role 'testModel_CClass' has cardinality 0..*, and from 'testModel_BClass', the role 'testModel_BClass2' has cardinality 0..*.
+An association connects 'testModel_EObject' and 'testModel_CClass'. From 'testModel_EObject', the role 'testModel_EObject' has cardinality 0..*, and from 'testModel_CClass', the role 'testModel_CClass4' has cardinality 0..*.

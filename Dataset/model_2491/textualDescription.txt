@@ -1,0 +1,26 @@
+The domain model 'z6fsm' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'z6fsm_State' represents an important domain concept.
+It does not declare any attributes.
+
+'z6fsm_Foo' represents an important domain concept.
+It does not declare any attributes.
+
+'z6fsm_AbstractState' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'z6fsm_Region' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'z6fsm_State' is a specialization of 'AbstractState'.
+The class 'z6fsm_Foo' is a specialization of 'AbstractState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'z6fsm_AbstractState' and 'z6fsm_Region'. From 'z6fsm_AbstractState', the role 'z6fsm_AbstractState' has cardinality 0..*, and from 'z6fsm_Region', the role 'z6fsm_Region' has cardinality 0..*.
+An association connects 'z6fsm_AbstractState' and 'z6fsm_AbstractState'. From 'z6fsm_AbstractState', the role 'z6fsm_AbstractState1' has cardinality 0..*, and from 'z6fsm_AbstractState', the role 'z6fsm_AbstractState3' has cardinality 0..*.

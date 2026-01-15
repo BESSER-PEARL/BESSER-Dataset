@@ -1,0 +1,72 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'model_ObjectRef' represents an important domain concept.
+It has the following attributes: 'domain', which is of type int; 'appId', which is of type str; 'state', which is of type str; 'labels', which is of type str; 'nature', which is of type str; 'id', which is of type str; 'type', which is of type str.
+
+'model_BasicCode' represents an important domain concept.
+It has the following attributes: 'names', which is of type str; 'structure', which is of type bool; 'sortHint', which is of type int; 'id', which is of type str; 'domain', which is of type int; 'active', which is of type bool; 'descriptions', which is of type str.
+
+'model_NotificationParticipant' represents an important domain concept.
+It has the following attributes: 'groupId', which is of type str; 'mailAddress', which is of type str; 'id', which is of type str.
+
+'model_NotificationDefinition' represents an important domain concept.
+It has the following attributes: 'excludeFilter', which is of type str; 'template', which is of type bool; 'includeFilter', which is of type str.
+
+'model_CodeEntry' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'id', which is of type str; 'key', which is of type str.
+
+'model_TreeNode' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_Attachment' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'objectId', which is of type str; 'data', which is of type str.
+
+'model_BasicObject' represents an important domain concept.
+It has the following attributes: 'locale', which is of type str; 'domain', which is of type int; 'id', which is of type str.
+
+'BasicCode' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicNotificationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Category' represents an important domain concept.
+It has the following attributes: 'classifier', which is of type str; 'associatedClassifier', which is of type str.
+
+'model_BasicNotificationDefinition' represents an important domain concept.
+It has the following attributes: 'notificationEventId', which is of type str; 'active', which is of type bool; 'identifier', which is of type str; 'description', which is of type str.
+
+'BasicObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TreeNodeChild' represents an important domain concept.
+It has one attribute: 'nodeId', which is of type str.
+
+'model_Code' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ObjectState' defines the following possible values: 'DELETION', 'PRODUCTION', 'MODIFICATION', 'NEW'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_Attachment' is a specialization of 'BasicObject'.
+The class 'model_TreeNode' is a specialization of 'BasicObject'.
+The class 'model_Code' is a specialization of 'BasicCode'.
+The class 'model_Category' is a specialization of 'BasicCode'.
+The class 'model_BasicNotificationDefinition' is a specialization of 'BasicObject'.
+The class 'model_NotificationDefinition' is a specialization of 'BasicNotificationDefinition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_TreeNodeChild' and 'model_TreeNode'. From 'model_TreeNodeChild', the role 'TreeNodeChild' has cardinality 0..*, and from 'model_TreeNode', the role 'parent' has cardinality 0..*.
+An association connects 'model_TreeNode' and 'model_ObjectRef'. From 'model_TreeNode', the role 'model_TreeNode' has cardinality 0..*, and from 'model_ObjectRef', the role 'model_ObjectRef' has cardinality 0..*.
+An association connects 'model_TreeNodeChild' and 'model_TreeNode'. From 'model_TreeNodeChild', the role 'childs' has cardinality 0..*, and from 'model_TreeNode', the role 'TreeNode' has cardinality 0..*.
+An association connects 'model_BasicCode' and 'model_BasicCode'. From 'model_BasicCode', the role 'model_BasicCode' has cardinality 0..*, and from 'model_BasicCode', the role 'model_BasicCode3' has cardinality 0..*.
+An association connects 'model_CodeEntry' and 'model_BasicCode'. From 'model_CodeEntry', the role 'model_CodeEntry' has cardinality 0..*, and from 'model_BasicCode', the role 'model_BasicCode6' has cardinality 0..*.
+An association connects 'model_ObjectRef' and 'model_NotificationParticipant'. From 'model_ObjectRef', the role 'model_ObjectRef8' has cardinality 0..*, and from 'model_NotificationParticipant', the role 'model_NotificationParticipant' has cardinality 0..*.
+An association connects 'model_NotificationParticipant' and 'model_BasicNotificationDefinition'. From 'model_NotificationParticipant', the role 'model_NotificationParticipant10' has cardinality 0..*, and from 'model_BasicNotificationDefinition', the role 'model_BasicNotificationDefinition' has cardinality 0..*.
+An association connects 'model_BasicNotificationDefinition' and 'model_NotificationParticipant'. From 'model_BasicNotificationDefinition', the role 'model_BasicNotificationDefinition12' has cardinality 0..*, and from 'model_NotificationParticipant', the role 'model_NotificationParticipant13' has cardinality 0..*.
+An association connects 'model_BasicNotificationDefinition' and 'model_NotificationParticipant'. From 'model_BasicNotificationDefinition', the role 'model_BasicNotificationDefinition15' has cardinality 0..*, and from 'model_NotificationParticipant', the role 'model_NotificationParticipant16' has cardinality 0..*.
+An association connects 'model_BasicNotificationDefinition' and 'model_NotificationParticipant'. From 'model_BasicNotificationDefinition', the role 'model_BasicNotificationDefinition18' has cardinality 0..*, and from 'model_NotificationParticipant', the role 'model_NotificationParticipant19' has cardinality 0..*.
+An association connects 'model_Code' and 'model_BasicNotificationDefinition'. From 'model_Code', the role 'model_Code' has cardinality 0..*, and from 'model_BasicNotificationDefinition', the role 'model_BasicNotificationDefinition21' has cardinality 0..*.

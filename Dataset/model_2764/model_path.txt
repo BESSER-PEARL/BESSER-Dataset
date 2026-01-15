@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/CloudScale-Project/StaticSpotter/plugins/tests/org.reclipse.tests/model/tests.ecore

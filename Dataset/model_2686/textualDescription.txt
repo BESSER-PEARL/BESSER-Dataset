@@ -1,0 +1,37 @@
+The domain model 'multiview4' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'multiview4_C' represents an important domain concept.
+It does not declare any attributes.
+
+'multiview4_A' represents an important domain concept.
+It does not declare any attributes.
+
+'multiview4_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'multiview4_B' represents an important domain concept.
+It does not declare any attributes.
+
+'multiview4_E' represents an important domain concept.
+It does not declare any attributes.
+
+'multiview4_F' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'multiview4_A' is a specialization of 'Named'.
+The class 'multiview4_B' is a specialization of 'Named'.
+The class 'multiview4_C' is a specialization of 'Named'.
+The class 'multiview4_E' is a specialization of 'Named'.
+The class 'multiview4_F' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'multiview4_A' and 'multiview4_B'. From 'multiview4_A', the role 'multiview4_A' has cardinality 0..*, and from 'multiview4_B', the role 'multiview4_B' has cardinality 0..*.
+An association connects 'multiview4_A' and 'multiview4_E'. From 'multiview4_A', the role 'multiview4_A2' has cardinality 0..*, and from 'multiview4_E', the role 'multiview4_E' has cardinality 0..*.
+An association connects 'multiview4_C' and 'multiview4_B'. From 'multiview4_C', the role 'multiview4_C' has cardinality 0..*, and from 'multiview4_B', the role 'multiview4_B4' has cardinality 0..*.
+An association connects 'multiview4_F' and 'multiview4_E'. From 'multiview4_F', the role 'multiview4_F' has cardinality 0..*, and from 'multiview4_E', the role 'multiview4_E6' has cardinality 0..*.

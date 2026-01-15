@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/kit-sdq/Metamodel-Reference-Architecture-Validation/evaluationtooling/metamodelassessor.manualtests/models/systematic/test_down.ecore

@@ -1,0 +1,71 @@
+The domain model 'ulmDsl2' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'ulmDsl2_AttributeType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ulmDsl2_LookupIntValue' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'description', which is of type str.
+
+'ulmDsl2_Context' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'name', which is of type str.
+
+'ulmDsl2_AttributeDecimalType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'scale', which is of type int; 'precision', which is of type int; 'array', which is of type bool.
+
+'ulmDsl2_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ulmDsl2_Entity' represents an important domain concept.
+It has the following attributes: 'desc', which is of type str; 'type', which is of type str; 'name', which is of type str.
+
+'ulmDsl2_LookupString' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'ulmDsl2_Lookup' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ulmDsl2_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ulmDsl2_LookupInt' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'ulmDsl2_LookupStringValue' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'description', which is of type str.
+
+'ulmDsl2_FeatureType' represents an important domain concept.
+It does not declare any attributes.
+
+'ulmDsl2_AttributeFeatureType' represents an important domain concept.
+It does not declare any attributes.
+
+'ulmDsl2_Attribute' represents an important domain concept.
+It has the following attributes: 'desc', which is of type str; 'name', which is of type str.
+
+'ulmDsl2_Feature' represents an important domain concept.
+It has the following attributes: 'identifier', which is of type bool; 'mandatory', which is of type bool; 'name', which is of type str.
+
+'ulmDsl2_AttributeStringType' represents an important domain concept.
+It has the following attributes: 'array', which is of type bool; 'name', which is of type str; 'length', which is of type int.
+
+'ulmDsl2_EntityFeatureType' represents an important domain concept.
+It has the following attributes: 'length', which is of type int; 'array', which is of type bool.
+
+Relationships between classes are modeled using associations.
+An association connects 'ulmDsl2_Model' and 'ulmDsl2_Context'. From 'ulmDsl2_Model', the role 'ulmDsl2_Model' has cardinality 0..*, and from 'ulmDsl2_Context', the role 'ulmDsl2_Context' has cardinality 0..*.
+An association connects 'ulmDsl2_Attribute' and 'ulmDsl2_Context'. From 'ulmDsl2_Attribute', the role 'ulmDsl2_Attribute' has cardinality 0..*, and from 'ulmDsl2_Context', the role 'ulmDsl2_Context2' has cardinality 0..*.
+An association connects 'ulmDsl2_Context' and 'ulmDsl2_Lookup'. From 'ulmDsl2_Context', the role 'ulmDsl2_Context4' has cardinality 0..*, and from 'ulmDsl2_Lookup', the role 'ulmDsl2_Lookup' has cardinality 0..*.
+An association connects 'ulmDsl2_Entity' and 'ulmDsl2_Context'. From 'ulmDsl2_Entity', the role 'ulmDsl2_Entity' has cardinality 0..*, and from 'ulmDsl2_Context', the role 'ulmDsl2_Context6' has cardinality 0..*.
+An association connects 'ulmDsl2_Attribute' and 'ulmDsl2_EObject'. From 'ulmDsl2_Attribute', the role 'ulmDsl2_Attribute8' has cardinality 0..*, and from 'ulmDsl2_EObject', the role 'ulmDsl2_EObject' has cardinality 0..*.
+An association connects 'ulmDsl2_Entity' and 'ulmDsl2_Entity'. From 'ulmDsl2_Entity', the role 'ulmDsl2_Entity9' has cardinality 0..*, and from 'ulmDsl2_Entity', the role 'ulmDsl2_Entity11' has cardinality 0..*.
+An association connects 'ulmDsl2_Entity' and 'ulmDsl2_Feature'. From 'ulmDsl2_Entity', the role 'ulmDsl2_Entity13' has cardinality 0..*, and from 'ulmDsl2_Feature', the role 'ulmDsl2_Feature' has cardinality 0..*.
+An association connects 'ulmDsl2_FeatureType' and 'ulmDsl2_Feature'. From 'ulmDsl2_FeatureType', the role 'ulmDsl2_FeatureType' has cardinality 0..*, and from 'ulmDsl2_Feature', the role 'ulmDsl2_Feature15' has cardinality 0..*.
+An association connects 'ulmDsl2_FeatureType' and 'ulmDsl2_EObject'. From 'ulmDsl2_FeatureType', the role 'ulmDsl2_FeatureType17' has cardinality 0..*, and from 'ulmDsl2_EObject', the role 'ulmDsl2_EObject18' has cardinality 0..*.
+An association connects 'ulmDsl2_AttributeFeatureType' and 'ulmDsl2_Attribute'. From 'ulmDsl2_AttributeFeatureType', the role 'ulmDsl2_AttributeFeatureType' has cardinality 0..*, and from 'ulmDsl2_Attribute', the role 'ulmDsl2_Attribute20' has cardinality 0..*.
+An association connects 'ulmDsl2_AttributeFeatureType' and 'ulmDsl2_Lookup'. From 'ulmDsl2_AttributeFeatureType', the role 'ulmDsl2_AttributeFeatureType22' has cardinality 0..*, and from 'ulmDsl2_Lookup', the role 'ulmDsl2_Lookup23' has cardinality 0..*.
+An association connects 'ulmDsl2_EntityFeatureType' and 'ulmDsl2_Entity'. From 'ulmDsl2_EntityFeatureType', the role 'ulmDsl2_EntityFeatureType' has cardinality 0..*, and from 'ulmDsl2_Entity', the role 'ulmDsl2_Entity25' has cardinality 0..*.
+An association connects 'ulmDsl2_EObject' and 'ulmDsl2_Lookup'. From 'ulmDsl2_EObject', the role 'ulmDsl2_EObject28' has cardinality 0..*, and from 'ulmDsl2_Lookup', the role 'ulmDsl2_Lookup27' has cardinality 0..*.
+An association connects 'ulmDsl2_LookupInt' and 'ulmDsl2_LookupIntValue'. From 'ulmDsl2_LookupInt', the role 'ulmDsl2_LookupInt' has cardinality 0..*, and from 'ulmDsl2_LookupIntValue', the role 'ulmDsl2_LookupIntValue' has cardinality 0..*.
+An association connects 'ulmDsl2_LookupString' and 'ulmDsl2_LookupStringValue'. From 'ulmDsl2_LookupString', the role 'ulmDsl2_LookupString' has cardinality 0..*, and from 'ulmDsl2_LookupStringValue', the role 'ulmDsl2_LookupStringValue' has cardinality 0..*.

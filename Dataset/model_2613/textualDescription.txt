@@ -1,0 +1,31 @@
+The domain model 'grapho' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'grapho_GraphElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'grapho_Node' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'style', which is of type str; 'shape', which is of type str; 'color', which is of type str.
+
+'grapho_Edge' represents an important domain concept.
+It has the following attributes: 'constraintRank', which is of type bool; 'color', which is of type str; 'style', which is of type str.
+
+'grapho_GraphOEditor' represents an important domain concept.
+It does not declare any attributes.
+
+'grapho_GraphO' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'grapho_GraphO' is a specialization of 'GraphElement'.
+The class 'grapho_Node' is a specialization of 'GraphElement'.
+The class 'grapho_Edge' is a specialization of 'GraphElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'grapho_GraphElement' and 'grapho_GraphO'. From 'grapho_GraphElement', the role 'grapho_GraphElement' has cardinality 0..*, and from 'grapho_GraphO', the role 'grapho_GraphO' has cardinality 0..*.
+An association connects 'grapho_Edge' and 'grapho_Node'. From 'grapho_Edge', the role 'grapho_Edge' has cardinality 0..*, and from 'grapho_Node', the role 'grapho_Node' has cardinality 0..*.
+An association connects 'grapho_Node' and 'grapho_Edge'. From 'grapho_Node', the role 'grapho_Node4' has cardinality 0..*, and from 'grapho_Edge', the role 'grapho_Edge3' has cardinality 0..*.

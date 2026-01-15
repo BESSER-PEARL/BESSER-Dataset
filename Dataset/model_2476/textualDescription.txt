@@ -1,0 +1,48 @@
+The domain model 'traceability' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'traceability_TraceDiff' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'traceability_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'traceability_Trace' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'description', which is of type str; 'comment', which is of type str.
+
+'traceability_LogEntry' represents an important domain concept.
+It has the following attributes: 'severity', which is of type int; 'comment', which is of type str; 'messageType', which is of type int; 'message', which is of type str.
+
+'traceability_TraceDiffs' represents an important domain concept.
+It does not declare any attributes.
+
+'traceability_Category' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'traceability_Traces' represents an important domain concept.
+It has the following attributes: 'uriMap', which is of type str; 'date', which is of type date; 'fullName', which is of type str; 'username', which is of type str; 'comments', which is of type str; 'location', which is of type str; 'originalSourceURL', which is of type str.
+
+'traceability_TraceComment' represents an important domain concept.
+It has the following attributes: 'username', which is of type str; 'date', which is of type date; 'comment', which is of type str; 'column', which is of type str.
+
+'traceability_DiffCategory' represents an important domain concept.
+It has the following attributes: 'unequal', which is of type bool; 'modelIndex', which is of type int; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'traceability_EObject' and 'traceability_Trace'. From 'traceability_EObject', the role 'traceability_EObject' has cardinality 0..*, and from 'traceability_Trace', the role 'traceability_Trace' has cardinality 0..*.
+An association connects 'traceability_Trace' and 'traceability_EObject'. From 'traceability_Trace', the role 'traceability_Trace2' has cardinality 0..*, and from 'traceability_EObject', the role 'traceability_EObject3' has cardinality 0..*.
+An association connects 'traceability_Trace' and 'traceability_Trace'. From 'traceability_Trace', the role 'Trace' has cardinality 0..*, and from 'traceability_Trace', the role 'parent' has cardinality 0..*.
+An association connects 'traceability_Trace' and 'traceability_Trace'. From 'traceability_Trace', the role 'Trace8' has cardinality 0..*, and from 'traceability_Trace', the role 'children' has cardinality 0..*.
+An association connects 'traceability_Trace' and 'traceability_TraceComment'. From 'traceability_Trace', the role 'traceability_Trace10' has cardinality 0..*, and from 'traceability_TraceComment', the role 'traceability_TraceComment' has cardinality 0..*.
+An association connects 'traceability_EObject' and 'traceability_LogEntry'. From 'traceability_EObject', the role 'traceability_EObject12' has cardinality 0..*, and from 'traceability_LogEntry', the role 'traceability_LogEntry' has cardinality 0..*.
+An association connects 'traceability_TraceComment' and 'traceability_LogEntry'. From 'traceability_TraceComment', the role 'traceability_TraceComment15' has cardinality 0..*, and from 'traceability_LogEntry', the role 'traceability_LogEntry14' has cardinality 0..*.
+An association connects 'traceability_EObject' and 'traceability_Traces'. From 'traceability_EObject', the role 'traceability_EObject17' has cardinality 0..*, and from 'traceability_Traces', the role 'traceability_Traces' has cardinality 0..*.
+An association connects 'traceability_Traces' and 'traceability_EObject'. From 'traceability_Traces', the role 'traceability_Traces19' has cardinality 0..*, and from 'traceability_EObject', the role 'traceability_EObject20' has cardinality 0..*.
+An association connects 'traceability_EObject' and 'traceability_Traces'. From 'traceability_EObject', the role 'traceability_EObject23' has cardinality 0..*, and from 'traceability_Traces', the role 'traceability_Traces22' has cardinality 0..*.
+An association connects 'traceability_TraceDiff' and 'traceability_EObject'. From 'traceability_TraceDiff', the role 'traceability_TraceDiff' has cardinality 0..*, and from 'traceability_EObject', the role 'traceability_EObject25' has cardinality 0..*.
+An association connects 'traceability_TraceDiff' and 'traceability_TraceComment'. From 'traceability_TraceDiff', the role 'traceability_TraceDiff27' has cardinality 0..*, and from 'traceability_TraceComment', the role 'traceability_TraceComment28' has cardinality 0..*.
+An association connects 'traceability_TraceDiff' and 'traceability_DiffCategory'. From 'traceability_TraceDiff', the role 'traceability_TraceDiff30' has cardinality 0..*, and from 'traceability_DiffCategory', the role 'traceability_DiffCategory' has cardinality 0..*.
+An association connects 'traceability_TraceDiffs' and 'traceability_Traces'. From 'traceability_TraceDiffs', the role 'traceability_TraceDiffs' has cardinality 0..*, and from 'traceability_Traces', the role 'traceability_Traces32' has cardinality 0..*.
+An association connects 'traceability_EObject' and 'traceability_Category'. From 'traceability_EObject', the role 'traceability_EObject34' has cardinality 0..*, and from 'traceability_Category', the role 'traceability_Category' has cardinality 0..*.
+An association connects 'traceability_TraceComment' and 'traceability_EObject'. From 'traceability_TraceComment', the role 'traceability_TraceComment36' has cardinality 0..*, and from 'traceability_EObject', the role 'traceability_EObject37' has cardinality 0..*.

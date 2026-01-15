@@ -1,0 +1,121 @@
+The domain model 'anol3l4' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'C' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_B' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_Z' represents an important domain concept.
+It has the following attributes: 'z1', which is of type str; 'z3', which is of type str; 'z2', which is of type str.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_L2' represents an important domain concept.
+It has the following attributes: 'l2', which is of type int; 'l1', which is of type int.
+
+'N' represents an important domain concept.
+It does not declare any attributes.
+
+'P' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_L4' represents an important domain concept.
+It does not declare any attributes.
+
+'L1' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_A' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_I' represents an important domain concept.
+It does not declare any attributes.
+
+'J' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_M' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_Q' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_L3' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_J' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_K' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'anol3l4_G' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'G' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_X' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_L1' represents an important domain concept.
+It has the following attributes: 'id1', which is of type str; 'id2', which is of type int.
+
+'anol3l4_N' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_P' represents an important domain concept.
+It does not declare any attributes.
+
+'M' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_C' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_W' represents an important domain concept.
+It has one attribute: 'w', which is of type str.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'anol3l4_Y' represents an important domain concept.
+It has one attribute: 'y', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'anol3l4_A' is a specialization of 'B'.
+The class 'anol3l4_B' is a specialization of 'C'.
+The class 'anol3l4_C' is a specialization of 'G'.
+The class 'anol3l4_M' is a specialization of 'G'.
+The class 'anol3l4_N' is a specialization of 'M'.
+The class 'anol3l4_J' is a specialization of 'A'.
+The class 'anol3l4_P' is a specialization of 'N'.
+The class 'anol3l4_Q' is a specialization of 'P'.
+The class 'anol3l4_I' is a specialization of 'G'.
+The class 'anol3l4_K' is a specialization of 'J'.
+The class 'anol3l4_L3' is a specialization of 'L1'.
+The class 'anol3l4_L4' is a specialization of 'L1'.
+
+Relationships between classes are modeled using associations.
+An association connects 'anol3l4_X' and 'anol3l4_C'. From 'anol3l4_X', the role 'anol3l4_X' has cardinality 0..*, and from 'anol3l4_C', the role 'anol3l4_C' has cardinality 0..*.
+An association connects 'anol3l4_X' and 'anol3l4_P'. From 'anol3l4_X', the role 'anol3l4_X2' has cardinality 0..*, and from 'anol3l4_P', the role 'anol3l4_P' has cardinality 0..*.
+An association connects 'anol3l4_X' and 'anol3l4_Z'. From 'anol3l4_X', the role 'anol3l4_X4' has cardinality 0..*, and from 'anol3l4_Z', the role 'anol3l4_Z' has cardinality 0..*.
+An association connects 'anol3l4_X' and 'anol3l4_Y'. From 'anol3l4_X', the role 'anol3l4_X6' has cardinality 0..*, and from 'anol3l4_Y', the role 'anol3l4_Y' has cardinality 0..*.
+An association connects 'anol3l4_W' and 'anol3l4_X'. From 'anol3l4_W', the role 'anol3l4_W' has cardinality 0..*, and from 'anol3l4_X', the role 'anol3l4_X8' has cardinality 0..*.
+An association connects 'anol3l4_B' and 'anol3l4_I'. From 'anol3l4_B', the role 'anol3l4_B' has cardinality 0..*, and from 'anol3l4_I', the role 'anol3l4_I' has cardinality 0..*.
+An association connects 'anol3l4_C' and 'anol3l4_M'. From 'anol3l4_C', the role 'anol3l4_C11' has cardinality 0..*, and from 'anol3l4_M', the role 'anol3l4_M' has cardinality 0..*.
+An association connects 'anol3l4_L1' and 'anol3l4_M'. From 'anol3l4_L1', the role 'anol3l4_L1' has cardinality 0..*, and from 'anol3l4_M', the role 'anol3l4_M13' has cardinality 0..*.
+An association connects 'anol3l4_P' and 'anol3l4_A'. From 'anol3l4_P', the role 'anol3l4_P15' has cardinality 0..*, and from 'anol3l4_A', the role 'anol3l4_A' has cardinality 0..*.
+An association connects 'anol3l4_P' and 'anol3l4_K'. From 'anol3l4_P', the role 'anol3l4_P17' has cardinality 0..*, and from 'anol3l4_K', the role 'anol3l4_K' has cardinality 0..*.
+An association connects 'anol3l4_P' and 'anol3l4_J'. From 'anol3l4_P', the role 'anol3l4_P19' has cardinality 0..*, and from 'anol3l4_J', the role 'anol3l4_J' has cardinality 0..*.
+An association connects 'anol3l4_Q' and 'anol3l4_L2'. From 'anol3l4_Q', the role 'anol3l4_Q' has cardinality 0..*, and from 'anol3l4_L2', the role 'anol3l4_L2' has cardinality 0..*.
+An association connects 'anol3l4_L1' and 'anol3l4_C'. From 'anol3l4_L1', the role 'anol3l4_L122' has cardinality 0..*, and from 'anol3l4_C', the role 'anol3l4_C23' has cardinality 0..*.
+An association connects 'anol3l4_M' and 'anol3l4_L1'. From 'anol3l4_M', the role 'anol3l4_M26' has cardinality 0..*, and from 'anol3l4_L1', the role 'anol3l4_L125' has cardinality 0..*.
+An association connects 'anol3l4_L2' and 'anol3l4_Q'. From 'anol3l4_L2', the role 'anol3l4_L228' has cardinality 0..*, and from 'anol3l4_Q', the role 'anol3l4_Q29' has cardinality 0..*.
+An association connects 'anol3l4_L2' and 'anol3l4_K'. From 'anol3l4_L2', the role 'anol3l4_L231' has cardinality 0..*, and from 'anol3l4_K', the role 'anol3l4_K32' has cardinality 0..*.
+An association connects 'anol3l4_L3' and 'anol3l4_I'. From 'anol3l4_L3', the role 'anol3l4_L3' has cardinality 0..*, and from 'anol3l4_I', the role 'anol3l4_I34' has cardinality 0..*.
+An association connects 'anol3l4_L4' and 'anol3l4_Z'. From 'anol3l4_L4', the role 'anol3l4_L4' has cardinality 0..*, and from 'anol3l4_Z', the role 'anol3l4_Z36' has cardinality 0..*.

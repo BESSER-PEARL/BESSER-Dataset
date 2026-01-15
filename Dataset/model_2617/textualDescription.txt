@@ -1,0 +1,64 @@
+The domain model 'diastyle' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'diastyle_DGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'DNodeEdgeStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'diastyle_DNodeEdgeStyle' represents an important domain concept.
+It has the following attributes: 'fontStyle', which is of type str; 'lineWidth', which is of type int; 'fontSize', which is of type int; 'fontColor', which is of type str; 'fontName', which is of type str; 'textAlignment', which is of type str; 'icon', which is of type str; 'line', which is of type str.
+
+'diastyle_DNestingEdgeStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'diastyle_DEdgeStyle' represents an important domain concept.
+It has the following attributes: 'arrowSize', which is of type int; 'shape', which is of type str; 'arrowDirection', which is of type str.
+
+'diastyle_DStyleBridge' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'diastyle_DStyle' represents an important domain concept.
+It has one attribute: 'styleHandler', which is of type str.
+
+'DBaseStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'diastyle_DBaseStyle' represents an important domain concept.
+It has the following attributes: 'parentName', which is of type str; 'name', which is of type str; 'color', which is of type str.
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'diastyle_DGraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'diastyle_DNodeStyle' represents an important domain concept.
+It has the following attributes: 'sizeX', which is of type int; 'radius', which is of type int; 'sizeY', which is of type int; 'figure', which is of type str; 'shapeData', which is of type str; 'shape', which is of type str; 'layout', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DLayout' defines the following possible values: 'none', 'vertical', 'free', 'horizontal'.
+The enumeration 'DDirection' defines the following possible values: 'none', 'right', 'bidirectional', 'left'.
+The enumeration 'DAlignment' defines the following possible values: 'center', 'fill', 'beginning', 'end'.
+The enumeration 'DLine' defines the following possible values: 'dash', 'custom', 'solid', 'dashdot', 'dashdotdot', 'dot'.
+The enumeration 'DColor' defines the following possible values: 'blue', 'white', 'darkGreen', 'yellow', 'darkBlue', 'orange', 'black', 'lightGreen', 'darkGray', 'gray', 'red', 'green', 'lightBlue', 'cyan', 'lightGray'.
+The enumeration 'DFontStyle' defines the following possible values: 'normal', 'bold', 'italic'.
+The enumeration 'DShape' defines the following possible values: 'rectangle', 'arrow', 'custom', 'dot', 'triangle', 'roundedRectangle', 'ellipse'.
+The enumeration 'DFontName' defines the following possible values: 'courier', 'arial', 'times'.
+
+The model also captures inheritance relationships between classes.
+The class 'diastyle_DNodeEdgeStyle' is a specialization of 'EModelElement'.
+The class 'diastyle_DNodeEdgeStyle' is a specialization of 'DBaseStyle'.
+The class 'diastyle_DStyle' is a specialization of 'EModelElement'.
+The class 'diastyle_DNodeStyle' is a specialization of 'DNodeEdgeStyle'.
+The class 'diastyle_DEdgeStyle' is a specialization of 'DNodeEdgeStyle'.
+The class 'diastyle_DNestingEdgeStyle' is a specialization of 'DBaseStyle'.
+
+Relationships between classes are modeled using associations.
+An association connects 'diastyle_DBaseStyle' and 'diastyle_DStyle'. From 'diastyle_DBaseStyle', the role 'diastyle_DBaseStyle' has cardinality 0..*, and from 'diastyle_DStyle', the role 'diastyle_DStyle' has cardinality 0..*.
+An association connects 'diastyle_DStyle' and 'diastyle_DGraph'. From 'diastyle_DStyle', the role 'diastyle_DStyle2' has cardinality 0..*, and from 'diastyle_DGraph', the role 'diastyle_DGraph' has cardinality 0..*.
+An association connects 'diastyle_DStyleBridge' and 'diastyle_DGraphElement'. From 'diastyle_DStyleBridge', the role 'diastyle_DStyleBridge' has cardinality 0..*, and from 'diastyle_DGraphElement', the role 'diastyle_DGraphElement' has cardinality 0..*.
+An association connects 'diastyle_DBaseStyle' and 'diastyle_DStyleBridge'. From 'diastyle_DBaseStyle', the role 'diastyle_DBaseStyle5' has cardinality 0..*, and from 'diastyle_DStyleBridge', the role 'diastyle_DStyleBridge6' has cardinality 0..*.
+An association connects 'diastyle_DBaseStyle' and 'diastyle_DBaseStyle'. From 'diastyle_DBaseStyle', the role 'diastyle_DBaseStyle7' has cardinality 0..*, and from 'diastyle_DBaseStyle', the role 'diastyle_DBaseStyle9' has cardinality 0..*.

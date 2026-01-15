@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/checopdleon/umple_for_analysis/cruise.umple/test/cruise/umple/compiler/ECoreImport_Association.ecore

@@ -1,0 +1,18 @@
+The domain model 'myfsm' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'myfsm_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myfsm_Trans' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+'myfsm_Machine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'myfsm_State' and 'myfsm_Machine'. From 'myfsm_State', the role 'myfsm_State' has cardinality 0..*, and from 'myfsm_Machine', the role 'myfsm_Machine' has cardinality 0..*.
+An association connects 'myfsm_Machine' and 'myfsm_State'. From 'myfsm_Machine', the role 'myfsm_Machine2' has cardinality 0..*, and from 'myfsm_State', the role 'myfsm_State3' has cardinality 0..*.
+An association connects 'myfsm_Trans' and 'myfsm_State'. From 'myfsm_Trans', the role 'myfsm_Trans' has cardinality 0..*, and from 'myfsm_State', the role 'myfsm_State5' has cardinality 0..*.
+An association connects 'myfsm_Trans' and 'myfsm_State'. From 'myfsm_Trans', the role 'myfsm_Trans7' has cardinality 0..*, and from 'myfsm_State', the role 'myfsm_State8' has cardinality 0..*.

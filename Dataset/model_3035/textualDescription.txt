@@ -1,0 +1,37 @@
+The domain model 'basicfsm' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'basicfsm_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'basicfsm_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'basicfsm_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'basicfsm_Machine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'basicfsm_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'basicfsm_Trans' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'basicfsm_InitialState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'basicfsm_State' and 'basicfsm_Machine'. From 'basicfsm_State', the role 'basicfsm_State' has cardinality 0..*, and from 'basicfsm_Machine', the role 'basicfsm_Machine' has cardinality 0..*.
+An association connects 'basicfsm_Machine' and 'basicfsm_Trans'. From 'basicfsm_Machine', the role 'basicfsm_Machine2' has cardinality 0..*, and from 'basicfsm_Trans', the role 'basicfsm_Trans' has cardinality 0..*.
+An association connects 'basicfsm_Trans' and 'basicfsm_State'. From 'basicfsm_Trans', the role 'Trans' has cardinality 0..*, and from 'basicfsm_State', the role 'tgt' has cardinality 0..*.
+An association connects 'basicfsm_State' and 'basicfsm_Trans'. From 'basicfsm_State', the role 'src' has cardinality 0..*, and from 'basicfsm_Trans', the role 'Trans5' has cardinality 0..*.
+An association connects 'basicfsm_State' and 'basicfsm_Trans'. From 'basicfsm_State', the role 'State' has cardinality 0..*, and from 'basicfsm_Trans', the role 'out' has cardinality 0..*.
+An association connects 'basicfsm_Trans' and 'basicfsm_State'. From 'basicfsm_Trans', the role 'in' has cardinality 0..*, and from 'basicfsm_State', the role 'State8' has cardinality 0..*.
+An association connects 'basicfsm_Trans' and 'basicfsm_Guard'. From 'basicfsm_Trans', the role 'basicfsm_Trans10' has cardinality 0..*, and from 'basicfsm_Guard', the role 'basicfsm_Guard' has cardinality 0..*.
+An association connects 'basicfsm_Trans' and 'basicfsm_Action'. From 'basicfsm_Trans', the role 'basicfsm_Trans12' has cardinality 0..*, and from 'basicfsm_Action', the role 'basicfsm_Action' has cardinality 0..*.

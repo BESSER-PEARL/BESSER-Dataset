@@ -1,0 +1,20 @@
+The domain model 'MetamodelInheritance' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'MetamodelInheritance_BaseContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'MetamodelInheritance_BaseContaineeC' represents an important domain concept.
+It does not declare any attributes.
+
+'MetamodelInheritance_BaseContaineeB' represents an important domain concept.
+It does not declare any attributes.
+
+'MetamodelInheritance_BaseContaineeA' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'MetamodelInheritance_BaseContaineeA' and 'MetamodelInheritance_BaseContainer'. From 'MetamodelInheritance_BaseContaineeA', the role 'MetamodelInheritance_BaseContaineeA' has cardinality 0..*, and from 'MetamodelInheritance_BaseContainer', the role 'MetamodelInheritance_BaseContainer' has cardinality 0..*.
+An association connects 'MetamodelInheritance_BaseContaineeB' and 'MetamodelInheritance_BaseContainer'. From 'MetamodelInheritance_BaseContaineeB', the role 'MetamodelInheritance_BaseContaineeB' has cardinality 0..*, and from 'MetamodelInheritance_BaseContainer', the role 'MetamodelInheritance_BaseContainer2' has cardinality 0..*.
+An association connects 'MetamodelInheritance_BaseContaineeC' and 'MetamodelInheritance_BaseContainer'. From 'MetamodelInheritance_BaseContaineeC', the role 'MetamodelInheritance_BaseContaineeC' has cardinality 0..*, and from 'MetamodelInheritance_BaseContainer', the role 'MetamodelInheritance_BaseContainer4' has cardinality 0..*.

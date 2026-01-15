@@ -1,0 +1,9 @@
+The domain model 'LazyRuleInheritanceTest' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'LazyRuleInheritanceTest_subpackage_ClassB' represents an important domain concept.
+It does not declare any attributes.
+
+'LazyRuleInheritanceTest_ClassA' represents an important domain concept.
+It does not declare any attributes.

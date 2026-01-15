@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/EvdokimovMaks/xtext-example-entities/org.example.entities/model/generated/Entities.ecore

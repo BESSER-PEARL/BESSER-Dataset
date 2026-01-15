@@ -1,0 +1,98 @@
+The domain model 'esper2Maude' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'esper2Maude_Pattern' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'num', which is of type int.
+
+'esper2Maude_ComparisonOperator' represents an important domain concept.
+It has the following attributes: 'le', which is of type str; 'lt', which is of type str; 'gt', which is of type str; 'ge', which is of type str; 'eq', which is of type str; 'neq', which is of type str.
+
+'esper2Maude_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'esper2Maude_Window' represents an important domain concept.
+It has the following attributes: 'num', which is of type int; 'typeBatch', which is of type str; 'typeTime', which is of type str.
+
+'esper2Maude_SubFilterFollowedBy' represents an important domain concept.
+It has the following attributes: 'eventVariable', which is of type str; 'eventName', which is of type str.
+
+'esper2Maude_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'esper2Maude_NonLastSelectEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'esper2Maude_EventProperty' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'esper2Maude_FilterEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'esper2Maude_FollowedBy' represents an important domain concept.
+It does not declare any attributes.
+
+'esper2Maude_LogicalOperator' represents an important domain concept.
+It has the following attributes: 'and', which is of type str; 'or', which is of type str.
+
+'esper2Maude_Field' represents an important domain concept.
+It has the following attributes: 'eventPropName', which is of type str; 'eventVariable', which is of type str; 'star', which is of type str.
+
+'esper2Maude_SelectEntry' represents an important domain concept.
+It has the following attributes: 'groupOp', which is of type str; 'alias', which is of type str.
+
+'esper2Maude_WhereFilter' represents an important domain concept.
+It has the following attributes: 'timer', which is of type str; 'num', which is of type int.
+
+'esper2Maude_FilterFrom' represents an important domain concept.
+It has the following attributes: 'eventName', which is of type str; 'eventVariable', which is of type str.
+
+'esper2Maude_FilterOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'esper2Maude_LastSelectEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'esper2Maude_FilterPart' represents an important domain concept.
+It has the following attributes: 'eventPropName', which is of type str; 'str', which is of type str; 'f', which is of type str; 'eventVariable', which is of type str; 'dec', which is of type int; 'neg', which is of type str; 't', which is of type str; 'num', which is of type int.
+
+'esper2Maude_Every' represents an important domain concept.
+It has the following attributes: 'eventVariable', which is of type str; 'eventName', which is of type str.
+
+'esper2Maude_Schema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'esper2Maude_Model' and 'esper2Maude_Schema'. From 'esper2Maude_Model', the role 'esper2Maude_Model' has cardinality 0..*, and from 'esper2Maude_Schema', the role 'esper2Maude_Schema' has cardinality 0..*.
+An association connects 'esper2Maude_Pattern' and 'esper2Maude_Model'. From 'esper2Maude_Pattern', the role 'esper2Maude_Pattern' has cardinality 0..*, and from 'esper2Maude_Model', the role 'esper2Maude_Model2' has cardinality 0..*.
+An association connects 'esper2Maude_EventProperty' and 'esper2Maude_Schema'. From 'esper2Maude_EventProperty', the role 'esper2Maude_EventProperty' has cardinality 0..*, and from 'esper2Maude_Schema', the role 'esper2Maude_Schema4' has cardinality 0..*.
+An association connects 'esper2Maude_EventProperty' and 'esper2Maude_Schema'. From 'esper2Maude_EventProperty', the role 'esper2Maude_EventProperty7' has cardinality 0..*, and from 'esper2Maude_Schema', the role 'esper2Maude_Schema6' has cardinality 0..*.
+An association connects 'esper2Maude_Pattern' and 'esper2Maude_Event'. From 'esper2Maude_Pattern', the role 'esper2Maude_Pattern9' has cardinality 0..*, and from 'esper2Maude_Event', the role 'esper2Maude_Event' has cardinality 0..*.
+An association connects 'esper2Maude_NonLastSelectEntry' and 'esper2Maude_Pattern'. From 'esper2Maude_NonLastSelectEntry', the role 'esper2Maude_NonLastSelectEntry' has cardinality 0..*, and from 'esper2Maude_Pattern', the role 'esper2Maude_Pattern11' has cardinality 0..*.
+An association connects 'esper2Maude_Pattern' and 'esper2Maude_LastSelectEntry'. From 'esper2Maude_Pattern', the role 'esper2Maude_Pattern13' has cardinality 0..*, and from 'esper2Maude_LastSelectEntry', the role 'esper2Maude_LastSelectEntry' has cardinality 0..*.
+An association connects 'esper2Maude_FilterFrom' and 'esper2Maude_Pattern'. From 'esper2Maude_FilterFrom', the role 'esper2Maude_FilterFrom' has cardinality 0..*, and from 'esper2Maude_Pattern', the role 'esper2Maude_Pattern15' has cardinality 0..*.
+An association connects 'esper2Maude_Window' and 'esper2Maude_Pattern'. From 'esper2Maude_Window', the role 'esper2Maude_Window' has cardinality 0..*, and from 'esper2Maude_Pattern', the role 'esper2Maude_Pattern17' has cardinality 0..*.
+An association connects 'esper2Maude_FilterEvent' and 'esper2Maude_WhereFilter'. From 'esper2Maude_FilterEvent', the role 'esper2Maude_FilterEvent' has cardinality 0..*, and from 'esper2Maude_WhereFilter', the role 'esper2Maude_WhereFilter' has cardinality 0..*.
+An association connects 'esper2Maude_FilterOperator' and 'esper2Maude_WhereFilter'. From 'esper2Maude_FilterOperator', the role 'esper2Maude_FilterOperator' has cardinality 0..*, and from 'esper2Maude_WhereFilter', the role 'esper2Maude_WhereFilter20' has cardinality 0..*.
+An association connects 'esper2Maude_WhereFilter' and 'esper2Maude_FilterOperator'. From 'esper2Maude_WhereFilter', the role 'esper2Maude_WhereFilter22' has cardinality 0..*, and from 'esper2Maude_FilterOperator', the role 'esper2Maude_FilterOperator23' has cardinality 0..*.
+An association connects 'esper2Maude_WhereFilter' and 'esper2Maude_FilterEvent'. From 'esper2Maude_WhereFilter', the role 'esper2Maude_WhereFilter25' has cardinality 0..*, and from 'esper2Maude_FilterEvent', the role 'esper2Maude_FilterEvent26' has cardinality 0..*.
+An association connects 'esper2Maude_FilterFrom' and 'esper2Maude_FollowedBy'. From 'esper2Maude_FilterFrom', the role 'esper2Maude_FilterFrom28' has cardinality 0..*, and from 'esper2Maude_FollowedBy', the role 'esper2Maude_FollowedBy' has cardinality 0..*.
+An association connects 'esper2Maude_FilterFrom' and 'esper2Maude_FilterFrom'. From 'esper2Maude_FilterFrom', the role 'esper2Maude_FilterFrom31' has cardinality 0..*, and from 'esper2Maude_FilterFrom', the role 'esper2Maude_FilterFrom29' has cardinality 0..*.
+An association connects 'esper2Maude_FilterFrom' and 'esper2Maude_LogicalOperator'. From 'esper2Maude_FilterFrom', the role 'esper2Maude_FilterFrom33' has cardinality 0..*, and from 'esper2Maude_LogicalOperator', the role 'esper2Maude_LogicalOperator' has cardinality 0..*.
+An association connects 'esper2Maude_FilterFrom' and 'esper2Maude_FilterFrom'. From 'esper2Maude_FilterFrom', the role 'esper2Maude_FilterFrom34' has cardinality 0..*, and from 'esper2Maude_FilterFrom', the role 'esper2Maude_FilterFrom36' has cardinality 0..*.
+An association connects 'esper2Maude_FilterFrom' and 'esper2Maude_FilterEvent'. From 'esper2Maude_FilterFrom', the role 'esper2Maude_FilterFrom38' has cardinality 0..*, and from 'esper2Maude_FilterEvent', the role 'esper2Maude_FilterEvent39' has cardinality 0..*.
+An association connects 'esper2Maude_SubFilterFollowedBy' and 'esper2Maude_FollowedBy'. From 'esper2Maude_SubFilterFollowedBy', the role 'esper2Maude_SubFilterFollowedBy' has cardinality 0..*, and from 'esper2Maude_FollowedBy', the role 'esper2Maude_FollowedBy41' has cardinality 0..*.
+An association connects 'esper2Maude_SubFilterFollowedBy' and 'esper2Maude_FollowedBy'. From 'esper2Maude_SubFilterFollowedBy', the role 'esper2Maude_SubFilterFollowedBy44' has cardinality 0..*, and from 'esper2Maude_FollowedBy', the role 'esper2Maude_FollowedBy43' has cardinality 0..*.
+An association connects 'esper2Maude_WhereFilter' and 'esper2Maude_FollowedBy'. From 'esper2Maude_WhereFilter', the role 'esper2Maude_WhereFilter47' has cardinality 0..*, and from 'esper2Maude_FollowedBy', the role 'esper2Maude_FollowedBy46' has cardinality 0..*.
+An association connects 'esper2Maude_FilterEvent' and 'esper2Maude_SubFilterFollowedBy'. From 'esper2Maude_FilterEvent', the role 'esper2Maude_FilterEvent50' has cardinality 0..*, and from 'esper2Maude_SubFilterFollowedBy', the role 'esper2Maude_SubFilterFollowedBy49' has cardinality 0..*.
+An association connects 'esper2Maude_SubFilterFollowedBy' and 'esper2Maude_Every'. From 'esper2Maude_SubFilterFollowedBy', the role 'esper2Maude_SubFilterFollowedBy52' has cardinality 0..*, and from 'esper2Maude_Every', the role 'esper2Maude_Every' has cardinality 0..*.
+An association connects 'esper2Maude_Every' and 'esper2Maude_FilterEvent'. From 'esper2Maude_Every', the role 'esper2Maude_Every54' has cardinality 0..*, and from 'esper2Maude_FilterEvent', the role 'esper2Maude_FilterEvent55' has cardinality 0..*.
+An association connects 'esper2Maude_FilterFrom' and 'esper2Maude_Every'. From 'esper2Maude_FilterFrom', the role 'esper2Maude_FilterFrom58' has cardinality 0..*, and from 'esper2Maude_Every', the role 'esper2Maude_Every57' has cardinality 0..*.
+An association connects 'esper2Maude_FilterEvent' and 'esper2Maude_FilterPart'. From 'esper2Maude_FilterEvent', the role 'esper2Maude_FilterEvent60' has cardinality 0..*, and from 'esper2Maude_FilterPart', the role 'esper2Maude_FilterPart' has cardinality 0..*.
+An association connects 'esper2Maude_FilterEvent' and 'esper2Maude_FilterOperator'. From 'esper2Maude_FilterEvent', the role 'esper2Maude_FilterEvent62' has cardinality 0..*, and from 'esper2Maude_FilterOperator', the role 'esper2Maude_FilterOperator63' has cardinality 0..*.
+An association connects 'esper2Maude_FilterPart' and 'esper2Maude_FilterEvent'. From 'esper2Maude_FilterPart', the role 'esper2Maude_FilterPart66' has cardinality 0..*, and from 'esper2Maude_FilterEvent', the role 'esper2Maude_FilterEvent65' has cardinality 0..*.
+An association connects 'esper2Maude_FilterOperator' and 'esper2Maude_ComparisonOperator'. From 'esper2Maude_FilterOperator', the role 'esper2Maude_FilterOperator68' has cardinality 0..*, and from 'esper2Maude_ComparisonOperator', the role 'esper2Maude_ComparisonOperator' has cardinality 0..*.
+An association connects 'esper2Maude_LogicalOperator' and 'esper2Maude_FilterOperator'. From 'esper2Maude_LogicalOperator', the role 'esper2Maude_LogicalOperator71' has cardinality 0..*, and from 'esper2Maude_FilterOperator', the role 'esper2Maude_FilterOperator70' has cardinality 0..*.
+An association connects 'esper2Maude_NonLastSelectEntry' and 'esper2Maude_SelectEntry'. From 'esper2Maude_NonLastSelectEntry', the role 'esper2Maude_NonLastSelectEntry73' has cardinality 0..*, and from 'esper2Maude_SelectEntry', the role 'esper2Maude_SelectEntry' has cardinality 0..*.
+An association connects 'esper2Maude_LastSelectEntry' and 'esper2Maude_SelectEntry'. From 'esper2Maude_LastSelectEntry', the role 'esper2Maude_LastSelectEntry75' has cardinality 0..*, and from 'esper2Maude_SelectEntry', the role 'esper2Maude_SelectEntry76' has cardinality 0..*.
+An association connects 'esper2Maude_SelectEntry' and 'esper2Maude_Field'. From 'esper2Maude_SelectEntry', the role 'esper2Maude_SelectEntry78' has cardinality 0..*, and from 'esper2Maude_Field', the role 'esper2Maude_Field' has cardinality 0..*.

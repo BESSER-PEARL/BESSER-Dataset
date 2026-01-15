@@ -1,0 +1,104 @@
+The domain model 'Ecore' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'Ecore_EEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'Ecore_ENamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Ecore_EEnumLiteral' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'instance', which is of type str; 'literal', which is of type str.
+
+'Ecore_EDataType' represents an important domain concept.
+It has one attribute: 'serializable', which is of type bool.
+
+'ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Ecore_EStructuralFeature' represents an important domain concept.
+It has the following attributes: 'defaultValueLiteral', which is of type str; 'unsettable', which is of type bool; 'changeable', which is of type bool; 'defaultValue', which is of type str; 'transient', which is of type bool; 'derived', which is of type bool; 'volatile', which is of type bool.
+
+'Ecore_ETypedElement' represents an important domain concept.
+It has the following attributes: 'many', which is of type bool; 'ordered', which is of type bool; 'required', which is of type bool; 'upperBound', which is of type int; 'unique', which is of type bool; 'lowerBound', which is of type int.
+
+'ETypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Ecore_EPackage' represents an important domain concept.
+It has the following attributes: 'nsURI', which is of type str; 'nsPrefix', which is of type str.
+
+'Ecore_EStringToStringMapEntry' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'Ecore_EOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'Ecore_EReference' represents an important domain concept.
+It has the following attributes: 'container', which is of type bool; 'containment', which is of type bool; 'resolveProxies', which is of type bool.
+
+'Ecore_EClassifier' represents an important domain concept.
+It has the following attributes: 'defaultValue', which is of type str; 'instanceTypeName', which is of type str; 'instanceClassName', which is of type str; 'instanceClass', which is of type str.
+
+'Ecore_EParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Ecore_EAttribute' represents an important domain concept.
+It has one attribute: 'iD', which is of type bool.
+
+'EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Ecore_EClass' represents an important domain concept.
+It has the following attributes: 'interface', which is of type bool; 'abstract', which is of type bool.
+
+The model also captures inheritance relationships between classes.
+The class 'Ecore_EAttribute' is a specialization of 'EStructuralFeature'.
+The class 'Ecore_EClass' is a specialization of 'EClassifier'.
+The class 'Ecore_EClassifier' is a specialization of 'ENamedElement'.
+The class 'Ecore_EDataType' is a specialization of 'EClassifier'.
+The class 'Ecore_EEnum' is a specialization of 'EDataType'.
+The class 'Ecore_EEnumLiteral' is a specialization of 'ENamedElement'.
+The class 'Ecore_EOperation' is a specialization of 'ETypedElement'.
+The class 'Ecore_EPackage' is a specialization of 'ENamedElement'.
+The class 'Ecore_EParameter' is a specialization of 'ETypedElement'.
+The class 'Ecore_EReference' is a specialization of 'EStructuralFeature'.
+The class 'Ecore_EStructuralFeature' is a specialization of 'ETypedElement'.
+The class 'Ecore_ETypedElement' is a specialization of 'ENamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Ecore_EAttribute' and 'Ecore_EDataType'. From 'Ecore_EAttribute', the role 'Ecore_EAttribute' has cardinality 0..*, and from 'Ecore_EDataType', the role 'Ecore_EDataType' has cardinality 0..*.
+An association connects 'Ecore_EClass' and 'Ecore_EClass'. From 'Ecore_EClass', the role 'Ecore_EClass1' has cardinality 0..*, and from 'Ecore_EClass', the role 'Ecore_EClass' has cardinality 0..*.
+An association connects 'Ecore_EClass' and 'Ecore_EOperation'. From 'Ecore_EClass', the role 'eContainingClass' has cardinality 0..*, and from 'Ecore_EOperation', the role 'EOperation' has cardinality 0..*.
+An association connects 'Ecore_EClass' and 'Ecore_EAttribute'. From 'Ecore_EClass', the role 'Ecore_EClass5' has cardinality 0..*, and from 'Ecore_EAttribute', the role 'Ecore_EAttribute6' has cardinality 0..*.
+An association connects 'Ecore_EReference' and 'Ecore_EClass'. From 'Ecore_EReference', the role 'Ecore_EReference' has cardinality 0..*, and from 'Ecore_EClass', the role 'Ecore_EClass8' has cardinality 0..*.
+An association connects 'Ecore_EReference' and 'Ecore_EClass'. From 'Ecore_EReference', the role 'Ecore_EReference11' has cardinality 0..*, and from 'Ecore_EClass', the role 'Ecore_EClass10' has cardinality 0..*.
+An association connects 'Ecore_EAttribute' and 'Ecore_EClass'. From 'Ecore_EAttribute', the role 'Ecore_EAttribute14' has cardinality 0..*, and from 'Ecore_EClass', the role 'Ecore_EClass13' has cardinality 0..*.
+An association connects 'Ecore_EReference' and 'Ecore_EClass'. From 'Ecore_EReference', the role 'Ecore_EReference17' has cardinality 0..*, and from 'Ecore_EClass', the role 'Ecore_EClass16' has cardinality 0..*.
+An association connects 'Ecore_EClass' and 'Ecore_EOperation'. From 'Ecore_EClass', the role 'Ecore_EClass19' has cardinality 0..*, and from 'Ecore_EOperation', the role 'Ecore_EOperation' has cardinality 0..*.
+An association connects 'Ecore_EStructuralFeature' and 'Ecore_EClass'. From 'Ecore_EStructuralFeature', the role 'Ecore_EStructuralFeature' has cardinality 0..*, and from 'Ecore_EClass', the role 'Ecore_EClass21' has cardinality 0..*.
+An association connects 'Ecore_EClass' and 'Ecore_EClass'. From 'Ecore_EClass', the role 'Ecore_EClass22' has cardinality 0..*, and from 'Ecore_EClass', the role 'Ecore_EClass24' has cardinality 0..*.
+An association connects 'Ecore_EAttribute' and 'Ecore_EClass'. From 'Ecore_EAttribute', the role 'Ecore_EAttribute27' has cardinality 0..*, and from 'Ecore_EClass', the role 'Ecore_EClass26' has cardinality 0..*.
+An association connects 'Ecore_EClass' and 'Ecore_EStructuralFeature'. From 'Ecore_EClass', the role 'eContainingClass29' has cardinality 0..*, and from 'Ecore_EStructuralFeature', the role 'EStructuralFeature' has cardinality 0..*.
+An association connects 'Ecore_EPackage' and 'Ecore_EClassifier'. From 'Ecore_EPackage', the role 'EPackage' has cardinality 0..*, and from 'Ecore_EClassifier', the role 'eClassifiers' has cardinality 0..*.
+An association connects 'Ecore_EEnumLiteral' and 'Ecore_EEnum'. From 'Ecore_EEnumLiteral', the role 'EEnumLiteral' has cardinality 0..*, and from 'Ecore_EEnum', the role 'eEnum' has cardinality 0..*.
+An association connects 'Ecore_EEnum' and 'Ecore_EEnumLiteral'. From 'Ecore_EEnum', the role 'EEnum' has cardinality 0..*, and from 'Ecore_EEnumLiteral', the role 'eLiterals' has cardinality 0..*.
+An association connects 'Ecore_EClass' and 'Ecore_EOperation'. From 'Ecore_EClass', the role 'EClass' has cardinality 0..*, and from 'Ecore_EOperation', the role 'eOperations' has cardinality 0..*.
+An association connects 'Ecore_EParameter' and 'Ecore_EOperation'. From 'Ecore_EParameter', the role 'EParameter' has cardinality 0..*, and from 'Ecore_EOperation', the role 'eOperation' has cardinality 0..*.
+An association connects 'Ecore_EClassifier' and 'Ecore_EOperation'. From 'Ecore_EClassifier', the role 'Ecore_EClassifier' has cardinality 0..*, and from 'Ecore_EOperation', the role 'Ecore_EOperation36' has cardinality 0..*.
+An association connects 'Ecore_EClassifier' and 'Ecore_EPackage'. From 'Ecore_EClassifier', the role 'EClassifier' has cardinality 0..*, and from 'Ecore_EPackage', the role 'ePackage' has cardinality 0..*.
+An association connects 'Ecore_EPackage' and 'Ecore_EPackage'. From 'Ecore_EPackage', the role 'eSuperPackage' has cardinality 0..*, and from 'Ecore_EPackage', the role 'EPackage40' has cardinality 0..*.
+An association connects 'Ecore_EPackage' and 'Ecore_EPackage'. From 'Ecore_EPackage', the role 'eSubpackages' has cardinality 0..*, and from 'Ecore_EPackage', the role 'EPackage43' has cardinality 0..*.
+An association connects 'Ecore_EOperation' and 'Ecore_EParameter'. From 'Ecore_EOperation', the role 'EOperation45' has cardinality 0..*, and from 'Ecore_EParameter', the role 'eParameters' has cardinality 0..*.
+An association connects 'Ecore_EReference' and 'Ecore_EReference'. From 'Ecore_EReference', the role 'Ecore_EReference46' has cardinality 0..*, and from 'Ecore_EReference', the role 'Ecore_EReference48' has cardinality 0..*.
+An association connects 'Ecore_EClass' and 'Ecore_EReference'. From 'Ecore_EClass', the role 'Ecore_EClass51' has cardinality 0..*, and from 'Ecore_EReference', the role 'Ecore_EReference50' has cardinality 0..*.
+An association connects 'Ecore_EAttribute' and 'Ecore_EReference'. From 'Ecore_EAttribute', the role 'Ecore_EAttribute54' has cardinality 0..*, and from 'Ecore_EReference', the role 'Ecore_EReference53' has cardinality 0..*.
+An association connects 'Ecore_EStructuralFeature' and 'Ecore_EClass'. From 'Ecore_EStructuralFeature', the role 'eStructuralFeatures' has cardinality 0..*, and from 'Ecore_EClass', the role 'EClass56' has cardinality 0..*.
+An association connects 'Ecore_ETypedElement' and 'Ecore_EClassifier'. From 'Ecore_ETypedElement', the role 'Ecore_ETypedElement' has cardinality 0..*, and from 'Ecore_EClassifier', the role 'Ecore_EClassifier58' has cardinality 0..*.

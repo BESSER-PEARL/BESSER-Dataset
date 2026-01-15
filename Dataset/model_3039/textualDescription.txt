@@ -1,0 +1,193 @@
+The domain model 'actions' describes the core structural elements and their relationships within the system.
+
+The model defines 44 main class(es).
+
+'actions_Term' represents an important domain concept.
+It does not declare any attributes.
+
+'IContextVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_GetFeatureStateAction' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_TimeAction' represents an important domain concept.
+It has one attribute: 'time', which is of type int.
+
+'rules_IRealTimeConsumer' represents an important domain concept.
+It does not declare any attributes.
+
+'ReconfigurationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'IDataNodeFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_FailAction' represents an important domain concept.
+It does not declare any attributes.
+
+'core_AbstractModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PostGenerationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'DependentAction' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_TimedConditionAction' represents an important domain concept.
+It has one attribute: 'frequency', which is of type int.
+
+'actions_ReconfigurationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_PreGenerationSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_DeactivateFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'DataBag' represents an important domain concept.
+It does not declare any attributes.
+
+'PreGenerationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_GetRealTimeAction' represents an important domain concept.
+It has one attribute: 'timeHint', which is of type str.
+
+'actions_ThrowAction' represents an important domain concept.
+It has one attribute: 'eventID', which is of type str.
+
+'actions_RemoveBagAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ILogicFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_SetPropertyAction' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_PreGenerationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'core_ITopLevelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DataLeaf' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_SetDataAction' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_GetPropertyAction' represents an important domain concept.
+It does not declare any attributes.
+
+'DataElement' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_TermAction' represents an important domain concept.
+It does not declare any attributes.
+
+'IFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_PostGenerationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_ActionReference' represents an important domain concept.
+It does not declare any attributes.
+
+'IArithmetricFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_StandAloneAction' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_PostGenerationSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'ITimeConsumer' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_GetDataAction' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_DependentAction' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureVersion' represents an important domain concept.
+It does not declare any attributes.
+
+'actions_ActivateFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'IValueFunction' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'actions_ActionReference' is a specialization of 'PreGenerationAction'.
+The class 'actions_StandAloneAction' is a specialization of 'core_AbstractModelElement'.
+The class 'actions_StandAloneAction' is a specialization of 'core_ITopLevelElement'.
+The class 'actions_TimedConditionAction' is a specialization of 'core_AbstractModelElement'.
+The class 'actions_TimedConditionAction' is a specialization of 'core_ITopLevelElement'.
+The class 'actions_TimedConditionAction' is a specialization of 'rules_IRealTimeConsumer'.
+The class 'actions_PreGenerationAction' is a specialization of 'Action'.
+The class 'actions_PostGenerationAction' is a specialization of 'Action'.
+The class 'actions_PreGenerationSequence' is a specialization of 'PreGenerationAction'.
+The class 'actions_PostGenerationSequence' is a specialization of 'PostGenerationAction'.
+The class 'actions_ThrowAction' is a specialization of 'PreGenerationAction'.
+The class 'actions_TermAction' is a specialization of 'PostGenerationAction'.
+The class 'actions_TermAction' is a specialization of 'PreGenerationAction'.
+The class 'actions_TermAction' is a specialization of 'ReconfigurationAction'.
+The class 'actions_ReconfigurationAction' is a specialization of 'PreGenerationAction'.
+The class 'actions_SetDataAction' is a specialization of 'ReconfigurationAction'.
+The class 'actions_GetDataAction' is a specialization of 'PreGenerationAction'.
+The class 'actions_RemoveBagAction' is a specialization of 'ReconfigurationAction'.
+The class 'actions_ActivateFeatureAction' is a specialization of 'PostGenerationAction'.
+The class 'actions_ActivateFeatureAction' is a specialization of 'ReconfigurationAction'.
+The class 'actions_DeactivateFeatureAction' is a specialization of 'PostGenerationAction'.
+The class 'actions_DeactivateFeatureAction' is a specialization of 'ReconfigurationAction'.
+The class 'actions_SetPropertyAction' is a specialization of 'PostGenerationAction'.
+The class 'actions_FailAction' is a specialization of 'PostGenerationAction'.
+The class 'actions_FailAction' is a specialization of 'PreGenerationAction'.
+The class 'actions_TimeAction' is a specialization of 'PreGenerationAction'.
+The class 'actions_DependentAction' is a specialization of 'PostGenerationAction'.
+The class 'actions_GetPropertyAction' is a specialization of 'DependentAction'.
+The class 'actions_GetRealTimeAction' is a specialization of 'DependentAction'.
+The class 'actions_GetRealTimeAction' is a specialization of 'PreGenerationAction'.
+The class 'actions_GetFeatureStateAction' is a specialization of 'DependentAction'.
+The class 'actions_GetFeatureStateAction' is a specialization of 'PreGenerationAction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'actions_ActionReference' and 'actions_StandAloneAction'. From 'actions_ActionReference', the role 'actions_ActionReference' has cardinality 0..*, and from 'actions_StandAloneAction', the role 'actions_StandAloneAction' has cardinality 0..*.
+An association connects 'actions_EObject' and 'actions_ActionReference'. From 'actions_EObject', the role 'actions_EObject' has cardinality 0..*, and from 'actions_ActionReference', the role 'actions_ActionReference2' has cardinality 0..*.
+An association connects 'actions_PreGenerationAction' and 'actions_StandAloneAction'. From 'actions_PreGenerationAction', the role 'actions_PreGenerationAction' has cardinality 0..*, and from 'actions_StandAloneAction', the role 'actions_StandAloneAction4' has cardinality 0..*.
+An association connects 'IContextVariable' and 'actions_StandAloneAction'. From 'IContextVariable', the role 'IContextVariable' has cardinality 0..*, and from 'actions_StandAloneAction', the role 'actions_StandAloneAction6' has cardinality 0..*.
+An association connects 'actions_PreGenerationAction' and 'actions_TimedConditionAction'. From 'actions_PreGenerationAction', the role 'actions_PreGenerationAction8' has cardinality 0..*, and from 'actions_TimedConditionAction', the role 'actions_TimedConditionAction' has cardinality 0..*.
+An association connects 'actions_TimedConditionAction' and 'ILogicFunction'. From 'actions_TimedConditionAction', the role 'actions_TimedConditionAction10' has cardinality 0..*, and from 'ILogicFunction', the role 'ILogicFunction' has cardinality 0..*.
+An association connects 'actions_PreGenerationAction' and 'actions_PreGenerationSequence'. From 'actions_PreGenerationAction', the role 'actions_PreGenerationAction12' has cardinality 0..*, and from 'actions_PreGenerationSequence', the role 'actions_PreGenerationSequence' has cardinality 0..*.
+An association connects 'actions_PostGenerationAction' and 'actions_PostGenerationSequence'. From 'actions_PostGenerationAction', the role 'actions_PostGenerationAction' has cardinality 0..*, and from 'actions_PostGenerationSequence', the role 'actions_PostGenerationSequence' has cardinality 0..*.
+An association connects 'actions_Term' and 'actions_TermAction'. From 'actions_Term', the role 'actions_Term' has cardinality 0..*, and from 'actions_TermAction', the role 'actions_TermAction' has cardinality 0..*.
+An association connects 'IValueFunction' and 'actions_SetDataAction'. From 'IValueFunction', the role 'IValueFunction' has cardinality 0..*, and from 'actions_SetDataAction', the role 'actions_SetDataAction' has cardinality 0..*.
+An association connects 'IDataNodeFunction' and 'actions_SetDataAction'. From 'IDataNodeFunction', the role 'IDataNodeFunction' has cardinality 0..*, and from 'actions_SetDataAction', the role 'actions_SetDataAction17' has cardinality 0..*.
+An association connects 'IDataNodeFunction' and 'actions_GetDataAction'. From 'IDataNodeFunction', the role 'IDataNodeFunction19' has cardinality 0..*, and from 'actions_GetDataAction', the role 'actions_GetDataAction' has cardinality 0..*.
+An association connects 'DataBag' and 'actions_RemoveBagAction'. From 'DataBag', the role 'DataBag' has cardinality 0..*, and from 'actions_RemoveBagAction', the role 'actions_RemoveBagAction' has cardinality 0..*.
+An association connects 'IArithmetricFunction' and 'actions_RemoveBagAction'. From 'IArithmetricFunction', the role 'IArithmetricFunction' has cardinality 0..*, and from 'actions_RemoveBagAction', the role 'actions_RemoveBagAction22' has cardinality 0..*.
+An association connects 'IFeature' and 'actions_ActivateFeatureAction'. From 'IFeature', the role 'IFeature' has cardinality 0..*, and from 'actions_ActivateFeatureAction', the role 'actions_ActivateFeatureAction' has cardinality 0..*.
+An association connects 'FeatureVersion' and 'actions_ActivateFeatureAction'. From 'FeatureVersion', the role 'FeatureVersion' has cardinality 0..*, and from 'actions_ActivateFeatureAction', the role 'actions_ActivateFeatureAction25' has cardinality 0..*.
+An association connects 'actions_DeactivateFeatureAction' and 'IFeature'. From 'actions_DeactivateFeatureAction', the role 'actions_DeactivateFeatureAction' has cardinality 0..*, and from 'IFeature', the role 'IFeature27' has cardinality 0..*.
+An association connects 'DataLeaf' and 'actions_SetPropertyAction'. From 'DataLeaf', the role 'DataLeaf' has cardinality 0..*, and from 'actions_SetPropertyAction', the role 'actions_SetPropertyAction' has cardinality 0..*.
+An association connects 'actions_SetPropertyAction' and 'DataElement'. From 'actions_SetPropertyAction', the role 'actions_SetPropertyAction30' has cardinality 0..*, and from 'DataElement', the role 'DataElement' has cardinality 0..*.
+An association connects 'ITimeConsumer' and 'actions_TimeAction'. From 'ITimeConsumer', the role 'ITimeConsumer' has cardinality 0..*, and from 'actions_TimeAction', the role 'actions_TimeAction' has cardinality 0..*.
+An association connects 'actions_GetPropertyAction' and 'DataLeaf'. From 'actions_GetPropertyAction', the role 'actions_GetPropertyAction' has cardinality 0..*, and from 'DataLeaf', the role 'DataLeaf33' has cardinality 0..*.
+An association connects 'actions_GetFeatureStateAction' and 'IFeature'. From 'actions_GetFeatureStateAction', the role 'actions_GetFeatureStateAction' has cardinality 0..*, and from 'IFeature', the role 'IFeature35' has cardinality 0..*.

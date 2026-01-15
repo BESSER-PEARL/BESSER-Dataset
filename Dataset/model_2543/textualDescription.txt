@@ -1,0 +1,51 @@
+The domain model 'foo' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'foo_F' represents an important domain concept.
+It does not declare any attributes.
+
+'foo_E' represents an important domain concept.
+It does not declare any attributes.
+
+'foo_H' represents an important domain concept.
+It has one attribute: 'EAttribute0', which is of type str.
+
+'foo_I' represents an important domain concept.
+It does not declare any attributes.
+
+'foo_C' represents an important domain concept.
+It has one attribute: 'EAttribute1', which is of type float.
+
+'foo_B' represents an important domain concept.
+It has one attribute: 'EAttribute0', which is of type bool.
+
+'I' represents an important domain concept.
+It does not declare any attributes.
+
+'foo_A' represents an important domain concept.
+It has the following attributes: 'fooo', which is of type str; 'fooA', which is of type bool.
+
+'foo_D' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'J' represents an important domain concept.
+It does not declare any attributes.
+
+'foo_J' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'foo_B' is a specialization of 'J'.
+The class 'foo_C' is a specialization of 'B'.
+The class 'foo_D' is a specialization of 'B'.
+The class 'foo_F' is a specialization of 'I'.
+
+Relationships between classes are modeled using associations.
+An association connects 'foo_B' and 'foo_A'. From 'foo_B', the role 'foo_B' has cardinality 0..*, and from 'foo_A', the role 'foo_A' has cardinality 0..*.
+An association connects 'foo_C' and 'foo_A'. From 'foo_C', the role 'foo_C' has cardinality 0..*, and from 'foo_A', the role 'foo_A2' has cardinality 0..*.
+An association connects 'foo_F' and 'foo_B'. From 'foo_F', the role 'foo_F' has cardinality 0..*, and from 'foo_B', the role 'foo_B4' has cardinality 0..*.
+An association connects 'foo_E' and 'foo_D'. From 'foo_E', the role 'foo_E' has cardinality 0..*, and from 'foo_D', the role 'foo_D' has cardinality 0..*.

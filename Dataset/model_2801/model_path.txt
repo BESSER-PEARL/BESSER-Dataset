@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/jzhang3/DSL-Tao-extended/src/org.mondo.dsl/patterns/TreeHardCoded.ecore

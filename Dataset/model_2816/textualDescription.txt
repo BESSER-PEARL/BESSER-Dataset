@@ -1,0 +1,149 @@
+The domain model 'draw2d' describes the core structural elements and their relationships within the system.
+
+The model defines 35 main class(es).
+
+'ConnectionAnchor' represents an important domain concept.
+It does not declare any attributes.
+
+'draw2d_Figure' represents an important domain concept.
+It has the following attributes: 'opaque', which is of type bool; 'maximumSize', which is of type str; 'minimumSize', which is of type str; 'bounds', which is of type str; 'focusTraversable', which is of type bool; 'preferredSize', which is of type str; 'visible', which is of type bool; 'enabled', which is of type bool.
+
+'draw2d_Draw2DCanvas' represents an important domain concept.
+It does not declare any attributes.
+
+'Polyline' represents an important domain concept.
+It does not declare any attributes.
+
+'draw2d_RoundedRectangle' represents an important domain concept.
+It has one attribute: 'cornerDimensions', which is of type str.
+
+'draw2d_RectangleFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'draw2d_PolygonShape' represents an important domain concept.
+It does not declare any attributes.
+
+'Border' represents an important domain concept.
+It does not declare any attributes.
+
+'draw2d_Font' represents an important domain concept.
+It does not declare any attributes.
+
+'draw2d_Label' represents an important domain concept.
+It has the following attributes: 'iconTextGap', which is of type int; 'iconAlignment', which is of type str; 'icon', which is of type str; 'text', which is of type str; 'textAlignment', which is of type str; 'textPlacement', which is of type str.
+
+'draw2d_Polygon' represents an important domain concept.
+It does not declare any attributes.
+
+'draw2d_XYAnchor' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'draw2d_PointListShape' represents an important domain concept.
+It has one attribute: 'pointList', which is of type int.
+
+'draw2d_LabeledBorder' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'draw2d_FrameBorder' represents an important domain concept.
+It does not declare any attributes.
+
+'draw2d_PolylineShape' represents an important domain concept.
+It has one attribute: 'tolerance', which is of type int.
+
+'draw2d_ColoredLabeledBorder' represents an important domain concept.
+It does not declare any attributes.
+
+'draw2d_Polyline' represents an important domain concept.
+It has one attribute: 'tolerance', which is of type int.
+
+'draw2d_Border' represents an important domain concept.
+It has one attribute: 'opaque', which is of type bool.
+
+'draw2d_Color' represents an important domain concept.
+It does not declare any attributes.
+
+'ColoredLabeledBorder' represents an important domain concept.
+It does not declare any attributes.
+
+'draw2d_GroupBoxBorder' represents an important domain concept.
+It does not declare any attributes.
+
+'draw2d_BlockFlow' represents an important domain concept.
+It has one attribute: 'orientation', which is of type str.
+
+'draw2d_Shape' represents an important domain concept.
+It has the following attributes: 'antialias', which is of type str; 'fill', which is of type bool; 'lineStyle', which is of type str; 'lineDash', which is of type float; 'lineMiterLimit', which is of type float; 'lineJoin', which is of type str; 'lineWidthFloat', which is of type float; 'lineCap', which is of type str; 'alpha', which is of type str; 'outlineXOR', which is of type bool; 'outline', which is of type bool; 'lineDashOffset', which is of type float; 'fillXOR', which is of type bool.
+
+'draw2d_ConnectionAnchor' represents an important domain concept.
+It does not declare any attributes.
+
+'Canvas' represents an important domain concept.
+It does not declare any attributes.
+
+'Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'draw2d_ImageFigure' represents an important domain concept.
+It has one attribute: 'image', which is of type str.
+
+'draw2d_TitleBarBorder' represents an important domain concept.
+It does not declare any attributes.
+
+'LabeledBorder' represents an important domain concept.
+It does not declare any attributes.
+
+'Figure' represents an important domain concept.
+It does not declare any attributes.
+
+'draw2d_Ellipse' represents an important domain concept.
+It does not declare any attributes.
+
+'PointListShape' represents an important domain concept.
+It does not declare any attributes.
+
+'draw2d_FlowBorder' represents an important domain concept.
+It has the following attributes: 'leftMargin', which is of type int; 'rightMargin', which is of type int; 'topMargin', which is of type int; 'bottomMargin', which is of type int.
+
+'draw2d_Triangle' represents an important domain concept.
+It has the following attributes: 'direction', which is of type str; 'orientation', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Direction' defines the following possible values: 'WEST', 'NORTH', 'SOUTH', 'EAST'.
+The enumeration 'Orientation' defines the following possible values: 'VERTICAL', 'HORIZONTAL'.
+The enumeration 'Alignment' defines the following possible values: 'LEFT', 'BOTTOM', 'RIGHT', 'MIDDLE', 'CENTER', 'TOP'.
+
+The model also captures inheritance relationships between classes.
+The class 'draw2d_Draw2DCanvas' is a specialization of 'Canvas'.
+The class 'draw2d_Label' is a specialization of 'Figure'.
+The class 'draw2d_Shape' is a specialization of 'Figure'.
+The class 'draw2d_RectangleFigure' is a specialization of 'Shape'.
+The class 'draw2d_RoundedRectangle' is a specialization of 'Shape'.
+The class 'draw2d_Ellipse' is a specialization of 'Shape'.
+The class 'draw2d_Triangle' is a specialization of 'Shape'.
+The class 'draw2d_PointListShape' is a specialization of 'Shape'.
+The class 'draw2d_Polyline' is a specialization of 'PointListShape'.
+The class 'draw2d_Polygon' is a specialization of 'Polyline'.
+The class 'draw2d_PolylineShape' is a specialization of 'PointListShape'.
+The class 'draw2d_PolygonShape' is a specialization of 'PointListShape'.
+The class 'draw2d_ImageFigure' is a specialization of 'Figure'.
+The class 'draw2d_XYAnchor' is a specialization of 'ConnectionAnchor'.
+The class 'draw2d_BlockFlow' is a specialization of 'Figure'.
+The class 'draw2d_LabeledBorder' is a specialization of 'Border'.
+The class 'draw2d_FrameBorder' is a specialization of 'LabeledBorder'.
+The class 'draw2d_ColoredLabeledBorder' is a specialization of 'LabeledBorder'.
+The class 'draw2d_GroupBoxBorder' is a specialization of 'ColoredLabeledBorder'.
+The class 'draw2d_TitleBarBorder' is a specialization of 'ColoredLabeledBorder'.
+The class 'draw2d_FlowBorder' is a specialization of 'Border'.
+
+Relationships between classes are modeled using associations.
+An association connects 'draw2d_Figure' and 'draw2d_Draw2DCanvas'. From 'draw2d_Figure', the role 'draw2d_Figure' has cardinality 0..*, and from 'draw2d_Draw2DCanvas', the role 'draw2d_Draw2DCanvas' has cardinality 0..*.
+An association connects 'draw2d_Figure' and 'draw2d_Figure'. From 'draw2d_Figure', the role 'parent' has cardinality 0..*, and from 'draw2d_Figure', the role 'Figure' has cardinality 0..*.
+An association connects 'draw2d_Figure' and 'draw2d_Figure'. From 'draw2d_Figure', the role 'children' has cardinality 0..*, and from 'draw2d_Figure', the role 'Figure5' has cardinality 0..*.
+An association connects 'draw2d_Figure' and 'draw2d_Figure'. From 'draw2d_Figure', the role 'draw2d_Figure6' has cardinality 0..*, and from 'draw2d_Figure', the role 'draw2d_Figure8' has cardinality 0..*.
+An association connects 'draw2d_Figure' and 'draw2d_Color'. From 'draw2d_Figure', the role 'draw2d_Figure10' has cardinality 0..*, and from 'draw2d_Color', the role 'draw2d_Color' has cardinality 0..*.
+An association connects 'draw2d_Color' and 'draw2d_Figure'. From 'draw2d_Color', the role 'draw2d_Color13' has cardinality 0..*, and from 'draw2d_Figure', the role 'draw2d_Figure12' has cardinality 0..*.
+An association connects 'draw2d_Figure' and 'draw2d_Font'. From 'draw2d_Figure', the role 'draw2d_Figure15' has cardinality 0..*, and from 'draw2d_Font', the role 'draw2d_Font' has cardinality 0..*.
+An association connects 'draw2d_Figure' and 'draw2d_Border'. From 'draw2d_Figure', the role 'draw2d_Figure17' has cardinality 0..*, and from 'draw2d_Border', the role 'draw2d_Border' has cardinality 0..*.
+An association connects 'draw2d_Figure' and 'draw2d_ConnectionAnchor'. From 'draw2d_Figure', the role 'draw2d_Figure19' has cardinality 0..*, and from 'draw2d_ConnectionAnchor', the role 'draw2d_ConnectionAnchor' has cardinality 0..*.
+An association connects 'draw2d_LabeledBorder' and 'draw2d_Font'. From 'draw2d_LabeledBorder', the role 'draw2d_LabeledBorder' has cardinality 0..*, and from 'draw2d_Font', the role 'draw2d_Font21' has cardinality 0..*.
+An association connects 'draw2d_Color' and 'draw2d_ColoredLabeledBorder'. From 'draw2d_Color', the role 'draw2d_Color23' has cardinality 0..*, and from 'draw2d_ColoredLabeledBorder', the role 'draw2d_ColoredLabeledBorder' has cardinality 0..*.

@@ -1,0 +1,33 @@
+The domain model 'ddl' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'ddl_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'ddl_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ddl_DataElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DataElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ddl_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'ddl_Schema' represents an important domain concept.
+It has the following attributes: 'version', which is of type int; 'conformite', which is of type bool; 'prix', which is of type float.
+
+The model also captures inheritance relationships between classes.
+The class 'ddl_Schema' is a specialization of 'DataElement'.
+The class 'ddl_Table' is a specialization of 'DataElement'.
+The class 'ddl_Column' is a specialization of 'DataElement'.
+The class 'ddl_DataType' is a specialization of 'DataElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ddl_Schema' and 'ddl_Table'. From 'ddl_Schema', the role 'ddl_Schema' has cardinality 0..*, and from 'ddl_Table', the role 'ddl_Table' has cardinality 0..*.
+An association connects 'ddl_Schema' and 'ddl_DataType'. From 'ddl_Schema', the role 'ddl_Schema2' has cardinality 0..*, and from 'ddl_DataType', the role 'ddl_DataType' has cardinality 0..*.
+An association connects 'ddl_Column' and 'ddl_Table'. From 'ddl_Column', the role 'ddl_Column' has cardinality 0..*, and from 'ddl_Table', the role 'ddl_Table4' has cardinality 0..*.
+An association connects 'ddl_DataType' and 'ddl_Column'. From 'ddl_DataType', the role 'ddl_DataType7' has cardinality 0..*, and from 'ddl_Column', the role 'ddl_Column6' has cardinality 0..*.

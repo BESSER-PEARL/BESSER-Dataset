@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/rafaelruwer/lp-t2/org.example.domainmodel/model/generated/Domainmodel.ecore

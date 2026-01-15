@@ -1,0 +1,896 @@
+The domain model 'odemcustom' describes the core structural elements and their relationships within the system.
+
+The model defines 200 main class(es).
+
+'odemcustom_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'odemcustom_TypeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ActivateObject' represents an important domain concept.
+It has one attribute: 'priority', which is of type int.
+
+'ReferableRhsType' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_TrueLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredPropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_CompositeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ExpandSection' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_SetOp' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Variable' represents an important domain concept.
+It has the following attributes: 'clazz', which is of type bool; 'control', which is of type bool.
+
+'odemcustom_Terminate' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_InstanceOf' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_TextualSyntaxDef' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_SaveGenStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_AtLeastOneExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_RuntimeExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_VariableAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_WaitUntil' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassSimilar' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_IndexOf' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_AnnotationApplication' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_PropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_TsRule' represents an important domain concept.
+It has one attribute: 'metaClassName', which is of type str.
+
+'odemcustom_MeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_SetGenContextStatement' represents an important domain concept.
+It has one attribute: 'addAfterContext', which is of type bool.
+
+'odemcustom_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_MappingStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_MetaLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Reactivate' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingPart' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_NamedExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'RhsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_StructuredPropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'Construct' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_SizeOfSet' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_SimpleStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_FixedMappingPart' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'ModifierExtensionsContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_StatementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_IntType' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ExtensionRule' represents an important domain concept.
+It does not declare any attributes.
+
+'PredefinedId' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ReferableRhsType' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ActiveLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ExpandStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_CodeQuoteExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ResetGenContextStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_StartCodeBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_NativeBinding' represents an important domain concept.
+It has the following attributes: 'targetLanguage', which is of type str; 'targetType', which is of type str.
+
+'odemcustom_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_L1Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Wait' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_AnnotatableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_DoubleType' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_AbstractVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'SetStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ObjectAt' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_RhsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ResumeGenStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_IncludePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_GreaterEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotatableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_TestStatement' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'odemcustom_CodeBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ExpandExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_BeforeInSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ModifierExtensionsContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ForEachStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_IntLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'odemcustom_DepIdentifiableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ElementAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Less' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_BoolType' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ModuleContentExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_DynamicMappingPart' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_IdPropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_PotentiallyHiddenIdElements' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_RemoveFromSet' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_RuleExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_IntPropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Import' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+'odemcustom_Advance' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Cast' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_And' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_PredefinedId' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_SimpleAnnotation' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'odemcustom_AddToSet' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Print' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_FirstInSet' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'CodeBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Neg' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Procedure' represents an important domain concept.
+It has one attribute: 'clazz', which is of type bool.
+
+'SetOp' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_EmptySet' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_CompositePropertyType' represents an important domain concept.
+It has one attribute: 'list', which is of type bool.
+
+'CompositeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ClassContentExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'EmbeddableExtensionsContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_IdExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Mul' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_QuotedClassContent' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_SuperLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'StatementExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_KeyValuePair' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_MetaAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Construct' represents an important domain concept.
+It has one attribute: 'concreteSyntax', which is of type str.
+
+'odemcustom_LessEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_TerminalExpr' represents an important domain concept.
+It has one attribute: 'terminal', which is of type str.
+
+'odemcustom_ExpandableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_CreateObject' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ClassSimilar' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_TypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ArgumentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_QuotedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Mod' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_QuotedStatements' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_AlternativeExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_IdResolution' represents an important domain concept.
+It has one attribute: 'metaModelPlatformURI', which is of type str.
+
+'odemcustom_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_SequenceExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_TypedElement' represents an important domain concept.
+It has one attribute: 'isList', which is of type bool.
+
+'odemcustom_MetaExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_DeprecatedProcedureCallStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'QuotedCode' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ClassAugment' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Clazz' represents an important domain concept.
+It has one attribute: 'active', which is of type bool.
+
+'NamedExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Constructor' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_SetStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_OptionalExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_TargetStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_DoubleLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'odemcustom_LastInSet' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_FalseLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ExtensionDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Pattern' represents an important domain concept.
+It has one attribute: 'top', which is of type bool.
+
+'SimpleStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Contains' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_AfterInSet' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ReferencePropertyType' represents an important domain concept.
+It has one attribute: 'rawReference', which is of type bool.
+
+'odemcustom_ProcedureCall' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_QuotedCode' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ArbitraryExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpandableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_TimeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_StringPropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_EmbeddableExtensionsContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_QuotedModuleContent' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_ConsiderIdElements' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_FindContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_BooleanPropertyType' represents an important domain concept.
+It has one attribute: 'terminal', which is of type str.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_EvalExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_MappingPart' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_PropertyBindingExpr' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ElementAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'odemcustom_NotEqual' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BindingExprOpKind' defines the following possible values: 'ASSIGN', 'ADD', 'BOOL'.
+
+The model also captures inheritance relationships between classes.
+The class 'odemcustom_Construct' is a specialization of 'NamedExtension'.
+The class 'odemcustom_Module' is a specialization of 'NamedElement'.
+The class 'odemcustom_Module' is a specialization of 'EmbeddableExtensionsContainer'.
+The class 'odemcustom_PrimitiveType' is a specialization of 'Type'.
+The class 'odemcustom_VoidType' is a specialization of 'PrimitiveType'.
+The class 'odemcustom_IntType' is a specialization of 'PrimitiveType'.
+The class 'odemcustom_BoolType' is a specialization of 'PrimitiveType'.
+The class 'odemcustom_DoubleType' is a specialization of 'PrimitiveType'.
+The class 'odemcustom_StringType' is a specialization of 'PrimitiveType'.
+The class 'odemcustom_Procedure' is a specialization of 'NamedElement'.
+The class 'odemcustom_Procedure' is a specialization of 'TypedElement'.
+The class 'odemcustom_Procedure' is a specialization of 'CodeBlock'.
+The class 'odemcustom_Procedure' is a specialization of 'AnnotatableElement'.
+The class 'odemcustom_SimpleAnnotation' is a specialization of 'NamedElement'.
+The class 'odemcustom_Annotation' is a specialization of 'NamedElement'.
+The class 'odemcustom_Classifier' is a specialization of 'Type'.
+The class 'odemcustom_Classifier' is a specialization of 'NamedElement'.
+The class 'odemcustom_Classifier' is a specialization of 'ReferableRhsType'.
+The class 'odemcustom_ClassSimilar' is a specialization of 'EmbeddableExtensionsContainer'.
+The class 'odemcustom_ClassSimilar' is a specialization of 'ModifierExtensionsContainer'.
+The class 'odemcustom_StartCodeBlock' is a specialization of 'CodeBlock'.
+The class 'odemcustom_Clazz' is a specialization of 'Classifier'.
+The class 'odemcustom_Clazz' is a specialization of 'ClassSimilar'.
+The class 'odemcustom_ClassAugment' is a specialization of 'ClassSimilar'.
+The class 'odemcustom_Interface' is a specialization of 'Classifier'.
+The class 'odemcustom_AbstractVariable' is a specialization of 'NamedElement'.
+The class 'odemcustom_AbstractVariable' is a specialization of 'TypedElement'.
+The class 'odemcustom_Variable' is a specialization of 'AbstractVariable'.
+The class 'odemcustom_Variable' is a specialization of 'Statement'.
+The class 'odemcustom_Variable' is a specialization of 'ModifierExtensionsContainer'.
+The class 'odemcustom_Parameter' is a specialization of 'AbstractVariable'.
+The class 'odemcustom_NamedElement' is a specialization of 'ExpandableElement'.
+The class 'odemcustom_CodeBlock' is a specialization of 'Construct'.
+The class 'odemcustom_Statement' is a specialization of 'Construct'.
+The class 'odemcustom_CompositeStatement' is a specialization of 'Statement'.
+The class 'odemcustom_SimpleStatement' is a specialization of 'Statement'.
+The class 'odemcustom_ExpressionStatement' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_Assignment' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_DeprecatedProcedureCallStatement' is a specialization of 'ExpressionStatement'.
+The class 'odemcustom_ProcedureCall' is a specialization of 'StatementExpression'.
+The class 'odemcustom_Return' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_WaitUntil' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_Terminate' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_Wait' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_Reactivate' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_ActivateObject' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_Advance' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_Print' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_SetStatement' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_RemoveFromSet' is a specialization of 'SetStatement'.
+The class 'odemcustom_AddToSet' is a specialization of 'SetStatement'.
+The class 'odemcustom_EmptySet' is a specialization of 'SetStatement'.
+The class 'odemcustom_IfStatement' is a specialization of 'CompositeStatement'.
+The class 'odemcustom_WhileStatement' is a specialization of 'CompositeStatement'.
+The class 'odemcustom_BreakStatement' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_ContinueStatement' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_ForEachStatement' is a specialization of 'CompositeStatement'.
+The class 'odemcustom_Expression' is a specialization of 'Construct'.
+The class 'odemcustom_L1Expr' is a specialization of 'Expression'.
+The class 'odemcustom_BinaryOperator' is a specialization of 'Expression'.
+The class 'odemcustom_UnaryOperator' is a specialization of 'Expression'.
+The class 'odemcustom_Plus' is a specialization of 'BinaryOperator'.
+The class 'odemcustom_Minus' is a specialization of 'BinaryOperator'.
+The class 'odemcustom_Mul' is a specialization of 'BinaryOperator'.
+The class 'odemcustom_Mod' is a specialization of 'BinaryOperator'.
+The class 'odemcustom_Div' is a specialization of 'BinaryOperator'.
+The class 'odemcustom_Neg' is a specialization of 'UnaryOperator'.
+The class 'odemcustom_And' is a specialization of 'BinaryOperator'.
+The class 'odemcustom_Or' is a specialization of 'BinaryOperator'.
+The class 'odemcustom_Greater' is a specialization of 'BinaryOperator'.
+The class 'odemcustom_GreaterEqual' is a specialization of 'BinaryOperator'.
+The class 'odemcustom_Less' is a specialization of 'BinaryOperator'.
+The class 'odemcustom_LessEqual' is a specialization of 'BinaryOperator'.
+The class 'odemcustom_NotEqual' is a specialization of 'BinaryOperator'.
+The class 'odemcustom_Equal' is a specialization of 'BinaryOperator'.
+The class 'odemcustom_InstanceOf' is a specialization of 'BinaryOperator'.
+The class 'odemcustom_Not' is a specialization of 'UnaryOperator'.
+The class 'odemcustom_CreateObject' is a specialization of 'Expression'.
+The class 'odemcustom_CreateObject' is a specialization of 'TypedElement'.
+The class 'odemcustom_Cast' is a specialization of 'UnaryOperator'.
+The class 'odemcustom_Cast' is a specialization of 'TypedElement'.
+The class 'odemcustom_NullLiteral' is a specialization of 'Expression'.
+The class 'odemcustom_TimeLiteral' is a specialization of 'Expression'.
+The class 'odemcustom_ActiveLiteral' is a specialization of 'Expression'.
+The class 'odemcustom_EvalExpr' is a specialization of 'Expression'.
+The class 'odemcustom_MeLiteral' is a specialization of 'PredefinedId'.
+The class 'odemcustom_SuperLiteral' is a specialization of 'PredefinedId'.
+The class 'odemcustom_MetaLiteral' is a specialization of 'PredefinedId'.
+The class 'odemcustom_TypeLiteral' is a specialization of 'PredefinedId'.
+The class 'odemcustom_SetOp' is a specialization of 'PredefinedId'.
+The class 'odemcustom_SizeOfSet' is a specialization of 'SetOp'.
+The class 'odemcustom_FirstInSet' is a specialization of 'SetOp'.
+The class 'odemcustom_LastInSet' is a specialization of 'SetOp'.
+The class 'odemcustom_Contains' is a specialization of 'SetOp'.
+The class 'odemcustom_IndexOf' is a specialization of 'SetOp'.
+The class 'odemcustom_ObjectAt' is a specialization of 'SetOp'.
+The class 'odemcustom_BeforeInSet' is a specialization of 'SetOp'.
+The class 'odemcustom_AfterInSet' is a specialization of 'SetOp'.
+The class 'odemcustom_StringLiteral' is a specialization of 'Expression'.
+The class 'odemcustom_IntLiteral' is a specialization of 'Expression'.
+The class 'odemcustom_TrueLiteral' is a specialization of 'Expression'.
+The class 'odemcustom_FalseLiteral' is a specialization of 'Expression'.
+The class 'odemcustom_DoubleLiteral' is a specialization of 'Expression'.
+The class 'odemcustom_IdExpr' is a specialization of 'Expression'.
+The class 'odemcustom_ElementAccess' is a specialization of 'Expression'.
+The class 'odemcustom_VariableAccess' is a specialization of 'ElementAccess'.
+The class 'odemcustom_VariableAccess' is a specialization of 'ExpandableElement'.
+The class 'odemcustom_MetaAccess' is a specialization of 'VariableAccess'.
+The class 'odemcustom_TypeAccess' is a specialization of 'ElementAccess'.
+The class 'odemcustom_TypeAccess' is a specialization of 'ExpandableElement'.
+The class 'odemcustom_NamedExtension' is a specialization of 'Extension'.
+The class 'odemcustom_NamedExtension' is a specialization of 'NamedElement'.
+The class 'odemcustom_ClassContentExtension' is a specialization of 'NamedExtension'.
+The class 'odemcustom_ModuleContentExtension' is a specialization of 'NamedExtension'.
+The class 'odemcustom_ExtensionDefinition' is a specialization of 'NamedElement'.
+The class 'odemcustom_ReferableRhsType' is a specialization of 'NamedElement'.
+The class 'odemcustom_TsRule' is a specialization of 'NamedElement'.
+The class 'odemcustom_TsRule' is a specialization of 'ReferableRhsType'.
+The class 'odemcustom_ExtensionRule' is a specialization of 'NamedElement'.
+The class 'odemcustom_SequenceExpr' is a specialization of 'RhsExpression'.
+The class 'odemcustom_OptionalExpr' is a specialization of 'RhsExpression'.
+The class 'odemcustom_RuntimeExpr' is a specialization of 'RhsExpression'.
+The class 'odemcustom_AtLeastOneExpr' is a specialization of 'RhsExpression'.
+The class 'odemcustom_ArbitraryExpr' is a specialization of 'RhsExpression'.
+The class 'odemcustom_AlternativeExpr' is a specialization of 'RhsExpression'.
+The class 'odemcustom_TerminalExpr' is a specialization of 'RhsExpression'.
+The class 'odemcustom_PropertyBindingExpr' is a specialization of 'NamedElement'.
+The class 'odemcustom_PropertyBindingExpr' is a specialization of 'RhsExpression'.
+The class 'odemcustom_RuleExpr' is a specialization of 'RhsExpression'.
+The class 'odemcustom_IdPropertyType' is a specialization of 'PropertyType'.
+The class 'odemcustom_IntPropertyType' is a specialization of 'PropertyType'.
+The class 'odemcustom_StringPropertyType' is a specialization of 'PropertyType'.
+The class 'odemcustom_BooleanPropertyType' is a specialization of 'PropertyType'.
+The class 'odemcustom_StructuredPropertyType' is a specialization of 'PropertyType'.
+The class 'odemcustom_CompositePropertyType' is a specialization of 'StructuredPropertyType'.
+The class 'odemcustom_ReferencePropertyType' is a specialization of 'StructuredPropertyType'.
+The class 'odemcustom_Mapping' is a specialization of 'CodeBlock'.
+The class 'odemcustom_MetaExpr' is a specialization of 'Expression'.
+The class 'odemcustom_TargetStatement' is a specialization of 'Statement'.
+The class 'odemcustom_MappingStatement' is a specialization of 'Statement'.
+The class 'odemcustom_SetGenContextStatement' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_ResetGenContextStatement' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_SaveGenStatement' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_ResumeGenStatement' is a specialization of 'SimpleStatement'.
+The class 'odemcustom_FixedMappingPart' is a specialization of 'MappingPart'.
+The class 'odemcustom_DynamicMappingPart' is a specialization of 'MappingPart'.
+The class 'odemcustom_ExpandExpression' is a specialization of 'StatementExpression'.
+The class 'odemcustom_ExpandExpression' is a specialization of 'Expression'.
+The class 'odemcustom_ExpandStatement' is a specialization of 'Statement'.
+The class 'odemcustom_ExpandSection' is a specialization of 'CompositeStatement'.
+The class 'odemcustom_CodeQuoteExpression' is a specialization of 'Expression'.
+The class 'odemcustom_QuotedExpression' is a specialization of 'QuotedCode'.
+The class 'odemcustom_QuotedStatements' is a specialization of 'QuotedCode'.
+The class 'odemcustom_QuotedClassContent' is a specialization of 'QuotedCode'.
+The class 'odemcustom_QuotedClassContent' is a specialization of 'ClassSimilar'.
+The class 'odemcustom_QuotedModuleContent' is a specialization of 'QuotedCode'.
+The class 'odemcustom_QuotedModuleContent' is a specialization of 'Module'.
+The class 'odemcustom_TestStatement' is a specialization of 'Statement'.
+The class 'odemcustom_Pattern' is a specialization of 'NamedElement'.
+The class 'odemcustom_PotentiallyHiddenIdElements' is a specialization of 'Statement'.
+The class 'odemcustom_FindContainer' is a specialization of 'Statement'.
+The class 'odemcustom_ConsiderIdElements' is a specialization of 'Statement'.
+The class 'odemcustom_IncludePattern' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'odemcustom_Import' and 'odemcustom_Model'. From 'odemcustom_Import', the role 'odemcustom_Import' has cardinality 0..*, and from 'odemcustom_Model', the role 'odemcustom_Model' has cardinality 0..*.
+An association connects 'odemcustom_Module' and 'odemcustom_Model'. From 'odemcustom_Module', the role 'odemcustom_Module' has cardinality 0..*, and from 'odemcustom_Model', the role 'odemcustom_Model2' has cardinality 0..*.
+An association connects 'odemcustom_Model' and 'odemcustom_Import'. From 'odemcustom_Model', the role 'odemcustom_Model5' has cardinality 0..*, and from 'odemcustom_Import', the role 'odemcustom_Import4' has cardinality 0..*.
+An association connects 'odemcustom_Module' and 'odemcustom_Classifier'. From 'odemcustom_Module', the role 'odemcustom_Module7' has cardinality 0..*, and from 'odemcustom_Classifier', the role 'odemcustom_Classifier' has cardinality 0..*.
+An association connects 'odemcustom_Module' and 'odemcustom_ClassAugment'. From 'odemcustom_Module', the role 'odemcustom_Module9' has cardinality 0..*, and from 'odemcustom_ClassAugment', the role 'odemcustom_ClassAugment' has cardinality 0..*.
+An association connects 'odemcustom_ExtensionDefinition' and 'odemcustom_Module'. From 'odemcustom_ExtensionDefinition', the role 'odemcustom_ExtensionDefinition' has cardinality 0..*, and from 'odemcustom_Module', the role 'odemcustom_Module11' has cardinality 0..*.
+An association connects 'odemcustom_Module' and 'odemcustom_Annotation'. From 'odemcustom_Module', the role 'odemcustom_Module13' has cardinality 0..*, and from 'odemcustom_Annotation', the role 'odemcustom_Annotation' has cardinality 0..*.
+An association connects 'odemcustom_Procedure' and 'odemcustom_Module'. From 'odemcustom_Procedure', the role 'odemcustom_Procedure' has cardinality 0..*, and from 'odemcustom_Module', the role 'odemcustom_Module15' has cardinality 0..*.
+An association connects 'odemcustom_Module' and 'odemcustom_Variable'. From 'odemcustom_Module', the role 'odemcustom_Module17' has cardinality 0..*, and from 'odemcustom_Variable', the role 'odemcustom_Variable' has cardinality 0..*.
+An association connects 'odemcustom_Module' and 'odemcustom_IdResolution'. From 'odemcustom_Module', the role 'odemcustom_Module19' has cardinality 0..*, and from 'odemcustom_IdResolution', the role 'odemcustom_IdResolution' has cardinality 0..*.
+An association connects 'odemcustom_EmbeddableExtensionsContainer' and 'odemcustom_Extension'. From 'odemcustom_EmbeddableExtensionsContainer', the role 'odemcustom_EmbeddableExtensionsContainer' has cardinality 0..*, and from 'odemcustom_Extension', the role 'odemcustom_Extension' has cardinality 0..*.
+An association connects 'odemcustom_Extension' and 'odemcustom_ModifierExtensionsContainer'. From 'odemcustom_Extension', the role 'odemcustom_Extension22' has cardinality 0..*, and from 'odemcustom_ModifierExtensionsContainer', the role 'odemcustom_ModifierExtensionsContainer' has cardinality 0..*.
+An association connects 'odemcustom_PrimitiveType' and 'odemcustom_TypedElement'. From 'odemcustom_PrimitiveType', the role 'odemcustom_PrimitiveType' has cardinality 0..*, and from 'odemcustom_TypedElement', the role 'odemcustom_TypedElement' has cardinality 0..*.
+An association connects 'odemcustom_TypedElement' and 'odemcustom_IdExpr'. From 'odemcustom_TypedElement', the role 'odemcustom_TypedElement25' has cardinality 0..*, and from 'odemcustom_IdExpr', the role 'odemcustom_IdExpr' has cardinality 0..*.
+An association connects 'odemcustom_Parameter' and 'odemcustom_Procedure'. From 'odemcustom_Parameter', the role 'odemcustom_Parameter' has cardinality 0..*, and from 'odemcustom_Procedure', the role 'odemcustom_Procedure27' has cardinality 0..*.
+An association connects 'odemcustom_Variable' and 'odemcustom_Annotation'. From 'odemcustom_Variable', the role 'odemcustom_Variable30' has cardinality 0..*, and from 'odemcustom_Annotation', the role 'odemcustom_Annotation29' has cardinality 0..*.
+An association connects 'odemcustom_Annotation' and 'odemcustom_AnnotationApplication'. From 'odemcustom_Annotation', the role 'odemcustom_Annotation32' has cardinality 0..*, and from 'odemcustom_AnnotationApplication', the role 'odemcustom_AnnotationApplication' has cardinality 0..*.
+An association connects 'odemcustom_AnnotationApplication' and 'odemcustom_KeyValuePair'. From 'odemcustom_AnnotationApplication', the role 'odemcustom_AnnotationApplication34' has cardinality 0..*, and from 'odemcustom_KeyValuePair', the role 'odemcustom_KeyValuePair' has cardinality 0..*.
+An association connects 'odemcustom_KeyValuePair' and 'odemcustom_VariableAccess'. From 'odemcustom_KeyValuePair', the role 'odemcustom_KeyValuePair36' has cardinality 0..*, and from 'odemcustom_VariableAccess', the role 'odemcustom_VariableAccess' has cardinality 0..*.
+An association connects 'odemcustom_KeyValuePair' and 'odemcustom_Expression'. From 'odemcustom_KeyValuePair', the role 'odemcustom_KeyValuePair38' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression' has cardinality 0..*.
+An association connects 'odemcustom_AnnotationApplication' and 'odemcustom_AnnotatableElement'. From 'odemcustom_AnnotationApplication', the role 'odemcustom_AnnotationApplication40' has cardinality 0..*, and from 'odemcustom_AnnotatableElement', the role 'odemcustom_AnnotatableElement' has cardinality 0..*.
+An association connects 'odemcustom_SimpleAnnotation' and 'odemcustom_AnnotatableElement'. From 'odemcustom_SimpleAnnotation', the role 'odemcustom_SimpleAnnotation' has cardinality 0..*, and from 'odemcustom_AnnotatableElement', the role 'odemcustom_AnnotatableElement42' has cardinality 0..*.
+An association connects 'odemcustom_NativeBinding' and 'odemcustom_Classifier'. From 'odemcustom_NativeBinding', the role 'odemcustom_NativeBinding' has cardinality 0..*, and from 'odemcustom_Classifier', the role 'odemcustom_Classifier44' has cardinality 0..*.
+An association connects 'odemcustom_Variable' and 'odemcustom_ClassSimilar'. From 'odemcustom_Variable', the role 'odemcustom_Variable46' has cardinality 0..*, and from 'odemcustom_ClassSimilar', the role 'odemcustom_ClassSimilar' has cardinality 0..*.
+An association connects 'odemcustom_ClassSimilar' and 'odemcustom_Procedure'. From 'odemcustom_ClassSimilar', the role 'odemcustom_ClassSimilar48' has cardinality 0..*, and from 'odemcustom_Procedure', the role 'odemcustom_Procedure49' has cardinality 0..*.
+An association connects 'odemcustom_ClassSimilar' and 'odemcustom_Clazz'. From 'odemcustom_ClassSimilar', the role 'odemcustom_ClassSimilar51' has cardinality 0..*, and from 'odemcustom_Clazz', the role 'odemcustom_Clazz' has cardinality 0..*.
+An association connects 'odemcustom_Interface' and 'odemcustom_ClassSimilar'. From 'odemcustom_Interface', the role 'odemcustom_Interface' has cardinality 0..*, and from 'odemcustom_ClassSimilar', the role 'odemcustom_ClassSimilar53' has cardinality 0..*.
+An association connects 'odemcustom_StartCodeBlock' and 'odemcustom_ClassSimilar'. From 'odemcustom_StartCodeBlock', the role 'odemcustom_StartCodeBlock' has cardinality 0..*, and from 'odemcustom_ClassSimilar', the role 'odemcustom_ClassSimilar55' has cardinality 0..*.
+An association connects 'odemcustom_ClassSimilar' and 'odemcustom_StartCodeBlock'. From 'odemcustom_ClassSimilar', the role 'odemcustom_ClassSimilar57' has cardinality 0..*, and from 'odemcustom_StartCodeBlock', the role 'odemcustom_StartCodeBlock58' has cardinality 0..*.
+An association connects 'odemcustom_ClassSimilar' and 'odemcustom_StartCodeBlock'. From 'odemcustom_ClassSimilar', the role 'odemcustom_ClassSimilar60' has cardinality 0..*, and from 'odemcustom_StartCodeBlock', the role 'odemcustom_StartCodeBlock61' has cardinality 0..*.
+An association connects 'odemcustom_StartCodeBlock' and 'odemcustom_ClassSimilar'. From 'odemcustom_StartCodeBlock', the role 'odemcustom_StartCodeBlock64' has cardinality 0..*, and from 'odemcustom_ClassSimilar', the role 'odemcustom_ClassSimilar63' has cardinality 0..*.
+An association connects 'odemcustom_ClassSimilar' and 'odemcustom_StartCodeBlock'. From 'odemcustom_ClassSimilar', the role 'odemcustom_ClassSimilar66' has cardinality 0..*, and from 'odemcustom_StartCodeBlock', the role 'odemcustom_StartCodeBlock67' has cardinality 0..*.
+An association connects 'odemcustom_Clazz' and 'odemcustom_Constructor'. From 'odemcustom_Clazz', the role 'odemcustom_Clazz69' has cardinality 0..*, and from 'odemcustom_Constructor', the role 'odemcustom_Constructor' has cardinality 0..*.
+An association connects 'odemcustom_Clazz' and 'odemcustom_Expression'. From 'odemcustom_Clazz', the role 'odemcustom_Clazz71' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression72' has cardinality 0..*.
+An association connects 'odemcustom_Parameter' and 'odemcustom_Constructor'. From 'odemcustom_Parameter', the role 'odemcustom_Parameter75' has cardinality 0..*, and from 'odemcustom_Constructor', the role 'odemcustom_Constructor74' has cardinality 0..*.
+An association connects 'odemcustom_Clazz' and 'odemcustom_ClassAugment'. From 'odemcustom_Clazz', the role 'odemcustom_Clazz78' has cardinality 0..*, and from 'odemcustom_ClassAugment', the role 'odemcustom_ClassAugment77' has cardinality 0..*.
+An association connects 'odemcustom_Procedure' and 'odemcustom_Interface'. From 'odemcustom_Procedure', the role 'odemcustom_Procedure81' has cardinality 0..*, and from 'odemcustom_Interface', the role 'odemcustom_Interface80' has cardinality 0..*.
+An association connects 'odemcustom_Interface' and 'odemcustom_Interface'. From 'odemcustom_Interface', the role 'odemcustom_Interface82' has cardinality 0..*, and from 'odemcustom_Interface', the role 'odemcustom_Interface84' has cardinality 0..*.
+An association connects 'odemcustom_Variable' and 'odemcustom_Expression'. From 'odemcustom_Variable', the role 'odemcustom_Variable86' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression87' has cardinality 0..*.
+An association connects 'odemcustom_CodeBlock' and 'odemcustom_Statement'. From 'odemcustom_CodeBlock', the role 'odemcustom_CodeBlock' has cardinality 0..*, and from 'odemcustom_Statement', the role 'odemcustom_Statement' has cardinality 0..*.
+An association connects 'odemcustom_StatementExpression' and 'odemcustom_ExpressionStatement'. From 'odemcustom_StatementExpression', the role 'odemcustom_StatementExpression' has cardinality 0..*, and from 'odemcustom_ExpressionStatement', the role 'odemcustom_ExpressionStatement' has cardinality 0..*.
+An association connects 'odemcustom_Assignment' and 'odemcustom_VariableAccess'. From 'odemcustom_Assignment', the role 'odemcustom_Assignment' has cardinality 0..*, and from 'odemcustom_VariableAccess', the role 'odemcustom_VariableAccess91' has cardinality 0..*.
+An association connects 'odemcustom_Expression' and 'odemcustom_Assignment'. From 'odemcustom_Expression', the role 'odemcustom_Expression94' has cardinality 0..*, and from 'odemcustom_Assignment', the role 'odemcustom_Assignment93' has cardinality 0..*.
+An association connects 'odemcustom_DeprecatedProcedureCallStatement' and 'odemcustom_Expression'. From 'odemcustom_DeprecatedProcedureCallStatement', the role 'odemcustom_DeprecatedProcedureCallStatement' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression96' has cardinality 0..*.
+An association connects 'odemcustom_ProcedureCall' and 'odemcustom_Expression'. From 'odemcustom_ProcedureCall', the role 'odemcustom_ProcedureCall' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression98' has cardinality 0..*.
+An association connects 'odemcustom_Expression' and 'odemcustom_Return'. From 'odemcustom_Expression', the role 'odemcustom_Expression100' has cardinality 0..*, and from 'odemcustom_Return', the role 'odemcustom_Return' has cardinality 0..*.
+An association connects 'odemcustom_Expression' and 'odemcustom_WaitUntil'. From 'odemcustom_Expression', the role 'odemcustom_Expression102' has cardinality 0..*, and from 'odemcustom_WaitUntil', the role 'odemcustom_WaitUntil' has cardinality 0..*.
+An association connects 'odemcustom_Reactivate' and 'odemcustom_Expression'. From 'odemcustom_Reactivate', the role 'odemcustom_Reactivate' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression104' has cardinality 0..*.
+An association connects 'odemcustom_ActivateObject' and 'odemcustom_Expression'. From 'odemcustom_ActivateObject', the role 'odemcustom_ActivateObject' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression106' has cardinality 0..*.
+An association connects 'odemcustom_Expression' and 'odemcustom_Advance'. From 'odemcustom_Expression', the role 'odemcustom_Expression108' has cardinality 0..*, and from 'odemcustom_Advance', the role 'odemcustom_Advance' has cardinality 0..*.
+An association connects 'odemcustom_Expression' and 'odemcustom_Print'. From 'odemcustom_Expression', the role 'odemcustom_Expression110' has cardinality 0..*, and from 'odemcustom_Print', the role 'odemcustom_Print' has cardinality 0..*.
+An association connects 'odemcustom_SetStatement' and 'odemcustom_Expression'. From 'odemcustom_SetStatement', the role 'odemcustom_SetStatement' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression112' has cardinality 0..*.
+An association connects 'odemcustom_SetStatement' and 'odemcustom_Expression'. From 'odemcustom_SetStatement', the role 'odemcustom_SetStatement114' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression115' has cardinality 0..*.
+An association connects 'odemcustom_Expression' and 'odemcustom_AddToSet'. From 'odemcustom_Expression', the role 'odemcustom_Expression117' has cardinality 0..*, and from 'odemcustom_AddToSet', the role 'odemcustom_AddToSet' has cardinality 0..*.
+An association connects 'odemcustom_Expression' and 'odemcustom_IfStatement'. From 'odemcustom_Expression', the role 'odemcustom_Expression119' has cardinality 0..*, and from 'odemcustom_IfStatement', the role 'odemcustom_IfStatement' has cardinality 0..*.
+An association connects 'odemcustom_CodeBlock' and 'odemcustom_IfStatement'. From 'odemcustom_CodeBlock', the role 'odemcustom_CodeBlock122' has cardinality 0..*, and from 'odemcustom_IfStatement', the role 'odemcustom_IfStatement121' has cardinality 0..*.
+An association connects 'odemcustom_IfStatement' and 'odemcustom_Expression'. From 'odemcustom_IfStatement', the role 'odemcustom_IfStatement124' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression125' has cardinality 0..*.
+An association connects 'odemcustom_CodeBlock' and 'odemcustom_IfStatement'. From 'odemcustom_CodeBlock', the role 'odemcustom_CodeBlock128' has cardinality 0..*, and from 'odemcustom_IfStatement', the role 'odemcustom_IfStatement127' has cardinality 0..*.
+An association connects 'odemcustom_IfStatement' and 'odemcustom_CodeBlock'. From 'odemcustom_IfStatement', the role 'odemcustom_IfStatement130' has cardinality 0..*, and from 'odemcustom_CodeBlock', the role 'odemcustom_CodeBlock131' has cardinality 0..*.
+An association connects 'odemcustom_WhileStatement' and 'odemcustom_Expression'. From 'odemcustom_WhileStatement', the role 'odemcustom_WhileStatement' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression133' has cardinality 0..*.
+An association connects 'odemcustom_WhileStatement' and 'odemcustom_CodeBlock'. From 'odemcustom_WhileStatement', the role 'odemcustom_WhileStatement135' has cardinality 0..*, and from 'odemcustom_CodeBlock', the role 'odemcustom_CodeBlock136' has cardinality 0..*.
+An association connects 'odemcustom_Variable' and 'odemcustom_ForEachStatement'. From 'odemcustom_Variable', the role 'odemcustom_Variable138' has cardinality 0..*, and from 'odemcustom_ForEachStatement', the role 'odemcustom_ForEachStatement' has cardinality 0..*.
+An association connects 'odemcustom_ForEachStatement' and 'odemcustom_VariableAccess'. From 'odemcustom_ForEachStatement', the role 'odemcustom_ForEachStatement140' has cardinality 0..*, and from 'odemcustom_VariableAccess', the role 'odemcustom_VariableAccess141' has cardinality 0..*.
+An association connects 'odemcustom_ForEachStatement' and 'odemcustom_Expression'. From 'odemcustom_ForEachStatement', the role 'odemcustom_ForEachStatement143' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression144' has cardinality 0..*.
+An association connects 'odemcustom_CodeBlock' and 'odemcustom_ForEachStatement'. From 'odemcustom_CodeBlock', the role 'odemcustom_CodeBlock147' has cardinality 0..*, and from 'odemcustom_ForEachStatement', the role 'odemcustom_ForEachStatement146' has cardinality 0..*.
+An association connects 'odemcustom_Expression' and 'odemcustom_BinaryOperator'. From 'odemcustom_Expression', the role 'odemcustom_Expression149' has cardinality 0..*, and from 'odemcustom_BinaryOperator', the role 'odemcustom_BinaryOperator' has cardinality 0..*.
+An association connects 'odemcustom_BinaryOperator' and 'odemcustom_Expression'. From 'odemcustom_BinaryOperator', the role 'odemcustom_BinaryOperator151' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression152' has cardinality 0..*.
+An association connects 'odemcustom_Expression' and 'odemcustom_UnaryOperator'. From 'odemcustom_Expression', the role 'odemcustom_Expression154' has cardinality 0..*, and from 'odemcustom_UnaryOperator', the role 'odemcustom_UnaryOperator' has cardinality 0..*.
+An association connects 'odemcustom_Expression' and 'odemcustom_EvalExpr'. From 'odemcustom_Expression', the role 'odemcustom_Expression156' has cardinality 0..*, and from 'odemcustom_EvalExpr', the role 'odemcustom_EvalExpr' has cardinality 0..*.
+An association connects 'odemcustom_SetOp' and 'odemcustom_Expression'. From 'odemcustom_SetOp', the role 'odemcustom_SetOp' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression158' has cardinality 0..*.
+An association connects 'odemcustom_IdExpr' and 'odemcustom_IdExpr'. From 'odemcustom_IdExpr', the role 'odemcustom_IdExpr161' has cardinality 0..*, and from 'odemcustom_IdExpr', the role 'odemcustom_IdExpr159' has cardinality 0..*.
+An association connects 'odemcustom_IdExpr' and 'odemcustom_NamedElement'. From 'odemcustom_IdExpr', the role 'odemcustom_IdExpr163' has cardinality 0..*, and from 'odemcustom_NamedElement', the role 'odemcustom_NamedElement' has cardinality 0..*.
+An association connects 'odemcustom_PredefinedId' and 'odemcustom_IdExpr'. From 'odemcustom_PredefinedId', the role 'odemcustom_PredefinedId' has cardinality 0..*, and from 'odemcustom_IdExpr', the role 'odemcustom_IdExpr165' has cardinality 0..*.
+An association connects 'odemcustom_IdExpr' and 'odemcustom_ArgumentExpression'. From 'odemcustom_IdExpr', the role 'odemcustom_IdExpr167' has cardinality 0..*, and from 'odemcustom_ArgumentExpression', the role 'odemcustom_ArgumentExpression' has cardinality 0..*.
+An association connects 'odemcustom_ArgumentExpression' and 'odemcustom_Expression'. From 'odemcustom_ArgumentExpression', the role 'odemcustom_ArgumentExpression169' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression170' has cardinality 0..*.
+An association connects 'odemcustom_ElementAccess' and 'odemcustom_IdExpr'. From 'odemcustom_ElementAccess', the role 'odemcustom_ElementAccess' has cardinality 0..*, and from 'odemcustom_IdExpr', the role 'odemcustom_IdExpr172' has cardinality 0..*.
+An association connects 'odemcustom_ExtensionDefinition' and 'odemcustom_Classifier'. From 'odemcustom_ExtensionDefinition', the role 'odemcustom_ExtensionDefinition174' has cardinality 0..*, and from 'odemcustom_Classifier', the role 'odemcustom_Classifier175' has cardinality 0..*.
+An association connects 'odemcustom_TextualSyntaxDef' and 'odemcustom_ExtensionDefinition'. From 'odemcustom_TextualSyntaxDef', the role 'odemcustom_TextualSyntaxDef' has cardinality 0..*, and from 'odemcustom_ExtensionDefinition', the role 'odemcustom_ExtensionDefinition177' has cardinality 0..*.
+An association connects 'odemcustom_Mapping' and 'odemcustom_ExtensionDefinition'. From 'odemcustom_Mapping', the role 'odemcustom_Mapping' has cardinality 0..*, and from 'odemcustom_ExtensionDefinition', the role 'odemcustom_ExtensionDefinition179' has cardinality 0..*.
+An association connects 'odemcustom_TextualSyntaxDef' and 'odemcustom_ExtensionRule'. From 'odemcustom_TextualSyntaxDef', the role 'odemcustom_TextualSyntaxDef181' has cardinality 0..*, and from 'odemcustom_ExtensionRule', the role 'odemcustom_ExtensionRule' has cardinality 0..*.
+An association connects 'odemcustom_TextualSyntaxDef' and 'odemcustom_TsRule'. From 'odemcustom_TextualSyntaxDef', the role 'odemcustom_TextualSyntaxDef183' has cardinality 0..*, and from 'odemcustom_TsRule', the role 'odemcustom_TsRule' has cardinality 0..*.
+An association connects 'odemcustom_RhsExpression' and 'odemcustom_TsRule'. From 'odemcustom_RhsExpression', the role 'odemcustom_RhsExpression' has cardinality 0..*, and from 'odemcustom_TsRule', the role 'odemcustom_TsRule185' has cardinality 0..*.
+An association connects 'odemcustom_ExtensionRule' and 'odemcustom_Classifier'. From 'odemcustom_ExtensionRule', the role 'odemcustom_ExtensionRule187' has cardinality 0..*, and from 'odemcustom_Classifier', the role 'odemcustom_Classifier188' has cardinality 0..*.
+An association connects 'odemcustom_RuleExpr' and 'odemcustom_ExtensionRule'. From 'odemcustom_RuleExpr', the role 'odemcustom_RuleExpr' has cardinality 0..*, and from 'odemcustom_ExtensionRule', the role 'odemcustom_ExtensionRule190' has cardinality 0..*.
+An association connects 'odemcustom_SequenceExpr' and 'odemcustom_RhsExpression'. From 'odemcustom_SequenceExpr', the role 'odemcustom_SequenceExpr' has cardinality 0..*, and from 'odemcustom_RhsExpression', the role 'odemcustom_RhsExpression192' has cardinality 0..*.
+An association connects 'odemcustom_RhsExpression' and 'odemcustom_OptionalExpr'. From 'odemcustom_RhsExpression', the role 'odemcustom_RhsExpression194' has cardinality 0..*, and from 'odemcustom_OptionalExpr', the role 'odemcustom_OptionalExpr' has cardinality 0..*.
+An association connects 'odemcustom_RuntimeExpr' and 'odemcustom_RhsExpression'. From 'odemcustom_RuntimeExpr', the role 'odemcustom_RuntimeExpr' has cardinality 0..*, and from 'odemcustom_RhsExpression', the role 'odemcustom_RhsExpression196' has cardinality 0..*.
+An association connects 'odemcustom_RhsExpression' and 'odemcustom_AtLeastOneExpr'. From 'odemcustom_RhsExpression', the role 'odemcustom_RhsExpression198' has cardinality 0..*, and from 'odemcustom_AtLeastOneExpr', the role 'odemcustom_AtLeastOneExpr' has cardinality 0..*.
+An association connects 'odemcustom_ArbitraryExpr' and 'odemcustom_RhsExpression'. From 'odemcustom_ArbitraryExpr', the role 'odemcustom_ArbitraryExpr' has cardinality 0..*, and from 'odemcustom_RhsExpression', the role 'odemcustom_RhsExpression200' has cardinality 0..*.
+An association connects 'odemcustom_AlternativeExpr' and 'odemcustom_RhsExpression'. From 'odemcustom_AlternativeExpr', the role 'odemcustom_AlternativeExpr' has cardinality 0..*, and from 'odemcustom_RhsExpression', the role 'odemcustom_RhsExpression202' has cardinality 0..*.
+An association connects 'odemcustom_RhsExpression' and 'odemcustom_AlternativeExpr'. From 'odemcustom_RhsExpression', the role 'odemcustom_RhsExpression205' has cardinality 0..*, and from 'odemcustom_AlternativeExpr', the role 'odemcustom_AlternativeExpr204' has cardinality 0..*.
+An association connects 'odemcustom_PropertyType' and 'odemcustom_PropertyBindingExpr'. From 'odemcustom_PropertyType', the role 'odemcustom_PropertyType' has cardinality 0..*, and from 'odemcustom_PropertyBindingExpr', the role 'odemcustom_PropertyBindingExpr' has cardinality 0..*.
+An association connects 'odemcustom_TsRule' and 'odemcustom_RuleExpr'. From 'odemcustom_TsRule', the role 'odemcustom_TsRule209' has cardinality 0..*, and from 'odemcustom_RuleExpr', the role 'odemcustom_RuleExpr208' has cardinality 0..*.
+An association connects 'odemcustom_StructuredPropertyType' and 'odemcustom_ReferableRhsType'. From 'odemcustom_StructuredPropertyType', the role 'odemcustom_StructuredPropertyType' has cardinality 0..*, and from 'odemcustom_ReferableRhsType', the role 'odemcustom_ReferableRhsType' has cardinality 0..*.
+An association connects 'odemcustom_Pattern' and 'odemcustom_ReferencePropertyType'. From 'odemcustom_Pattern', the role 'odemcustom_Pattern' has cardinality 0..*, and from 'odemcustom_ReferencePropertyType', the role 'odemcustom_ReferencePropertyType' has cardinality 0..*.
+An association connects 'odemcustom_MappingPart' and 'odemcustom_Mapping'. From 'odemcustom_MappingPart', the role 'odemcustom_MappingPart' has cardinality 0..*, and from 'odemcustom_Mapping', the role 'odemcustom_Mapping213' has cardinality 0..*.
+An association connects 'odemcustom_Expression' and 'odemcustom_Mapping'. From 'odemcustom_Expression', the role 'odemcustom_Expression216' has cardinality 0..*, and from 'odemcustom_Mapping', the role 'odemcustom_Mapping215' has cardinality 0..*.
+An association connects 'odemcustom_Expression' and 'odemcustom_MetaExpr'. From 'odemcustom_Expression', the role 'odemcustom_Expression218' has cardinality 0..*, and from 'odemcustom_MetaExpr', the role 'odemcustom_MetaExpr' has cardinality 0..*.
+An association connects 'odemcustom_TargetStatement' and 'odemcustom_CodeBlock'. From 'odemcustom_TargetStatement', the role 'odemcustom_TargetStatement' has cardinality 0..*, and from 'odemcustom_CodeBlock', the role 'odemcustom_CodeBlock220' has cardinality 0..*.
+An association connects 'odemcustom_MappingStatement' and 'odemcustom_MappingPart'. From 'odemcustom_MappingStatement', the role 'odemcustom_MappingStatement' has cardinality 0..*, and from 'odemcustom_MappingPart', the role 'odemcustom_MappingPart222' has cardinality 0..*.
+An association connects 'odemcustom_Expression' and 'odemcustom_MappingStatement'. From 'odemcustom_Expression', the role 'odemcustom_Expression225' has cardinality 0..*, and from 'odemcustom_MappingStatement', the role 'odemcustom_MappingStatement224' has cardinality 0..*.
+An association connects 'odemcustom_Expression' and 'odemcustom_SetGenContextStatement'. From 'odemcustom_Expression', the role 'odemcustom_Expression227' has cardinality 0..*, and from 'odemcustom_SetGenContextStatement', the role 'odemcustom_SetGenContextStatement' has cardinality 0..*.
+An association connects 'odemcustom_SaveGenStatement' and 'odemcustom_Expression'. From 'odemcustom_SaveGenStatement', the role 'odemcustom_SaveGenStatement' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression229' has cardinality 0..*.
+An association connects 'odemcustom_ResumeGenStatement' and 'odemcustom_Expression'. From 'odemcustom_ResumeGenStatement', the role 'odemcustom_ResumeGenStatement' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression231' has cardinality 0..*.
+An association connects 'odemcustom_DynamicMappingPart' and 'odemcustom_Expression'. From 'odemcustom_DynamicMappingPart', the role 'odemcustom_DynamicMappingPart' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression233' has cardinality 0..*.
+An association connects 'odemcustom_ExpandExpression' and 'odemcustom_Expression'. From 'odemcustom_ExpandExpression', the role 'odemcustom_ExpandExpression' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression235' has cardinality 0..*.
+An association connects 'odemcustom_Expression' and 'odemcustom_ExpandStatement'. From 'odemcustom_Expression', the role 'odemcustom_Expression237' has cardinality 0..*, and from 'odemcustom_ExpandStatement', the role 'odemcustom_ExpandStatement' has cardinality 0..*.
+An association connects 'odemcustom_ExpandStatement' and 'odemcustom_Expression'. From 'odemcustom_ExpandStatement', the role 'odemcustom_ExpandStatement239' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression240' has cardinality 0..*.
+An association connects 'odemcustom_CodeBlock' and 'odemcustom_ExpandSection'. From 'odemcustom_CodeBlock', the role 'odemcustom_CodeBlock242' has cardinality 0..*, and from 'odemcustom_ExpandSection', the role 'odemcustom_ExpandSection' has cardinality 0..*.
+An association connects 'odemcustom_CodeQuoteExpression' and 'odemcustom_QuotedCode'. From 'odemcustom_CodeQuoteExpression', the role 'odemcustom_CodeQuoteExpression' has cardinality 0..*, and from 'odemcustom_QuotedCode', the role 'odemcustom_QuotedCode' has cardinality 0..*.
+An association connects 'odemcustom_QuotedExpression' and 'odemcustom_Expression'. From 'odemcustom_QuotedExpression', the role 'odemcustom_QuotedExpression' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression245' has cardinality 0..*.
+An association connects 'odemcustom_QuotedStatements' and 'odemcustom_Statement'. From 'odemcustom_QuotedStatements', the role 'odemcustom_QuotedStatements' has cardinality 0..*, and from 'odemcustom_Statement', the role 'odemcustom_Statement247' has cardinality 0..*.
+An association connects 'odemcustom_ExpandableElement' and 'odemcustom_ExpandExpression'. From 'odemcustom_ExpandableElement', the role 'odemcustom_ExpandableElement' has cardinality 0..*, and from 'odemcustom_ExpandExpression', the role 'odemcustom_ExpandExpression249' has cardinality 0..*.
+An association connects 'odemcustom_IdResolution' and 'odemcustom_Pattern'. From 'odemcustom_IdResolution', the role 'odemcustom_IdResolution251' has cardinality 0..*, and from 'odemcustom_Pattern', the role 'odemcustom_Pattern252' has cardinality 0..*.
+An association connects 'odemcustom_Parameter' and 'odemcustom_Pattern'. From 'odemcustom_Parameter', the role 'odemcustom_Parameter255' has cardinality 0..*, and from 'odemcustom_Pattern', the role 'odemcustom_Pattern254' has cardinality 0..*.
+An association connects 'odemcustom_Pattern' and 'odemcustom_CodeBlock'. From 'odemcustom_Pattern', the role 'odemcustom_Pattern257' has cardinality 0..*, and from 'odemcustom_CodeBlock', the role 'odemcustom_CodeBlock258' has cardinality 0..*.
+An association connects 'odemcustom_CodeBlock' and 'odemcustom_PotentiallyHiddenIdElements'. From 'odemcustom_CodeBlock', the role 'odemcustom_CodeBlock260' has cardinality 0..*, and from 'odemcustom_PotentiallyHiddenIdElements', the role 'odemcustom_PotentiallyHiddenIdElements' has cardinality 0..*.
+An association connects 'odemcustom_FindContainer' and 'odemcustom_Parameter'. From 'odemcustom_FindContainer', the role 'odemcustom_FindContainer' has cardinality 0..*, and from 'odemcustom_Parameter', the role 'odemcustom_Parameter262' has cardinality 0..*.
+An association connects 'odemcustom_CodeBlock' and 'odemcustom_FindContainer'. From 'odemcustom_CodeBlock', the role 'odemcustom_CodeBlock265' has cardinality 0..*, and from 'odemcustom_FindContainer', the role 'odemcustom_FindContainer264' has cardinality 0..*.
+An association connects 'odemcustom_CodeBlock' and 'odemcustom_FindContainer'. From 'odemcustom_CodeBlock', the role 'odemcustom_CodeBlock268' has cardinality 0..*, and from 'odemcustom_FindContainer', the role 'odemcustom_FindContainer267' has cardinality 0..*.
+An association connects 'odemcustom_Expression' and 'odemcustom_ConsiderIdElements'. From 'odemcustom_Expression', the role 'odemcustom_Expression270' has cardinality 0..*, and from 'odemcustom_ConsiderIdElements', the role 'odemcustom_ConsiderIdElements' has cardinality 0..*.
+An association connects 'odemcustom_Pattern' and 'odemcustom_IncludePattern'. From 'odemcustom_Pattern', the role 'odemcustom_Pattern272' has cardinality 0..*, and from 'odemcustom_IncludePattern', the role 'odemcustom_IncludePattern' has cardinality 0..*.
+An association connects 'odemcustom_IncludePattern' and 'odemcustom_Expression'. From 'odemcustom_IncludePattern', the role 'odemcustom_IncludePattern274' has cardinality 0..*, and from 'odemcustom_Expression', the role 'odemcustom_Expression275' has cardinality 0..*.

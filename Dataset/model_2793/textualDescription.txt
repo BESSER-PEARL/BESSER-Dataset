@@ -1,0 +1,43 @@
+The domain model 'kreq210' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'kreq210_Mmmm' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'kreq210_Gggg' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'kreq210_Ffff' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'kreq210_Cccc' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'kreq210_Hhhh' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'kreq210_Bbbb' represents an important domain concept.
+It does not declare any attributes.
+
+'kreq210_Llll' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ComponentPosition' defines the following possible values: 'Not_yet_defined', 'Environmental_context', 'Local'.
+The enumeration 'RequirementOrigin' defines the following possible values: 'Originating', 'Derived', 'DesignChoise_induced'.
+The enumeration 'BasicFlowTransformationType' defines the following possible values: 'Check_Verify_Validate', 'Transiform', 'Decide', 'Wait', 'Control', 'Store', 'Measure', 'EEnumLiteral0'.
+The enumeration 'ComponentType' defines the following possible values: 'Physical_component', 'Operational_system', 'System', 'Serrvice', 'Actor', 'Organization_Unit', 'Site', 'Process', 'Not_yet_desighed', 'Other', 'Role', 'Tool', 'Activity', 'Information_system', 'Logical_component'.
+The enumeration 'CategoryType' defines the following possible values: 'Functional', 'Operational', 'Interface', 'Constraints', 'VandV', 'Non_Functional'.
+
+Relationships between classes are modeled using associations.
+An association connects 'kreq210_Bbbb' and 'kreq210_Cccc'. From 'kreq210_Bbbb', the role 'kreq210_Bbbb' has cardinality 0..*, and from 'kreq210_Cccc', the role 'kreq210_Cccc' has cardinality 0..*.
+An association connects 'kreq210_Gggg' and 'kreq210_Bbbb'. From 'kreq210_Gggg', the role 'kreq210_Gggg' has cardinality 0..*, and from 'kreq210_Bbbb', the role 'kreq210_Bbbb2' has cardinality 0..*.
+An association connects 'kreq210_Hhhh' and 'kreq210_Bbbb'. From 'kreq210_Hhhh', the role 'kreq210_Hhhh' has cardinality 0..*, and from 'kreq210_Bbbb', the role 'kreq210_Bbbb4' has cardinality 0..*.
+An association connects 'kreq210_Mmmm' and 'kreq210_Bbbb'. From 'kreq210_Mmmm', the role 'kreq210_Mmmm' has cardinality 0..*, and from 'kreq210_Bbbb', the role 'kreq210_Bbbb6' has cardinality 0..*.
+An association connects 'kreq210_Cccc' and 'kreq210_Ffff'. From 'kreq210_Cccc', the role 'kreq210_Cccc8' has cardinality 0..*, and from 'kreq210_Ffff', the role 'kreq210_Ffff' has cardinality 0..*.
+An association connects 'kreq210_Ffff' and 'kreq210_Ffff'. From 'kreq210_Ffff', the role 'kreq210_Ffff9' has cardinality 0..*, and from 'kreq210_Ffff', the role 'kreq210_Ffff11' has cardinality 0..*.
+An association connects 'kreq210_Llll' and 'kreq210_Gggg'. From 'kreq210_Llll', the role 'kreq210_Llll' has cardinality 0..*, and from 'kreq210_Gggg', the role 'kreq210_Gggg13' has cardinality 0..*.
+An association connects 'kreq210_Llll' and 'kreq210_Cccc'. From 'kreq210_Llll', the role 'kreq210_Llll15' has cardinality 0..*, and from 'kreq210_Cccc', the role 'kreq210_Cccc16' has cardinality 0..*.
+An association connects 'kreq210_Llll' and 'kreq210_Hhhh'. From 'kreq210_Llll', the role 'kreq210_Llll18' has cardinality 0..*, and from 'kreq210_Hhhh', the role 'kreq210_Hhhh19' has cardinality 0..*.
+An association connects 'kreq210_Mmmm' and 'kreq210_Llll'. From 'kreq210_Mmmm', the role 'kreq210_Mmmm22' has cardinality 0..*, and from 'kreq210_Llll', the role 'kreq210_Llll21' has cardinality 0..*.

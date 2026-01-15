@@ -1,0 +1,162 @@
+The domain model 'simplejava' describes the core structural elements and their relationships within the system.
+
+The model defines 33 main class(es).
+
+'simplejava_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'simplejava_UnaryExpression' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'simplejava_SimpleJava' represents an important domain concept.
+It does not declare any attributes.
+
+'simplejava_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'simplejava_ConstantExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simplejava_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simplejava_MethodCall' represents an important domain concept.
+It has the following attributes: 'thisObject', which is of type bool; 'methodName', which is of type str.
+
+'simplejava_GenericExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simplejava_SimpleStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'simplejava_SimpleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'simplejava_IntegerExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'simplejava_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'simplejava_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstantExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'simplejava_NullExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simplejava_PackageDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simplejava_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'simplejava_ParanthesisOrBinaryExpression' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'simplejava_StringExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'simplejava_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'simplejava_ForInStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'simplejava_MethodBlock' represents an important domain concept.
+It has one attribute: 'generated', which is of type bool.
+
+'simplejava_BooleanExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'simplejava_Import' represents an important domain concept.
+It has one attribute: 'imported', which is of type str.
+
+'simplejava_Method' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'static', which is of type bool.
+
+'simplejava_VariableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simplejava_Type' represents an important domain concept.
+It has one attribute: 'typeName', which is of type str.
+
+'GenericExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simplejava_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'simplejava_ClassDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'simplejava_MethodBlock' is a specialization of 'Statement'.
+The class 'simplejava_SimpleVariableDeclaration' is a specialization of 'SimpleStatement'.
+The class 'simplejava_VariableDeclaration' is a specialization of 'Statement'.
+The class 'simplejava_VariableDeclaration' is a specialization of 'SimpleVariableDeclaration'.
+The class 'simplejava_Assignment' is a specialization of 'SimpleStatement'.
+The class 'simplejava_Assignment' is a specialization of 'Statement'.
+The class 'simplejava_IfStatement' is a specialization of 'Statement'.
+The class 'simplejava_ForStatement' is a specialization of 'Statement'.
+The class 'simplejava_ForInStatement' is a specialization of 'Statement'.
+The class 'simplejava_WhileStatement' is a specialization of 'Statement'.
+The class 'simplejava_ReturnStatement' is a specialization of 'Statement'.
+The class 'simplejava_MethodCall' is a specialization of 'Statement'.
+The class 'simplejava_MethodCall' is a specialization of 'GenericExpression'.
+The class 'simplejava_ConstantExpression' is a specialization of 'GenericExpression'.
+The class 'simplejava_NullExpression' is a specialization of 'ConstantExpression'.
+The class 'simplejava_IntegerExpression' is a specialization of 'ConstantExpression'.
+The class 'simplejava_BooleanExpression' is a specialization of 'ConstantExpression'.
+The class 'simplejava_StringExpression' is a specialization of 'ConstantExpression'.
+The class 'simplejava_UnaryExpression' is a specialization of 'GenericExpression'.
+The class 'simplejava_VariableExpression' is a specialization of 'GenericExpression'.
+The class 'simplejava_ParanthesisOrBinaryExpression' is a specialization of 'GenericExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simplejava_SimpleJava' and 'simplejava_PackageDeclaration'. From 'simplejava_SimpleJava', the role 'simplejava_SimpleJava' has cardinality 0..*, and from 'simplejava_PackageDeclaration', the role 'simplejava_PackageDeclaration' has cardinality 0..*.
+An association connects 'simplejava_Import' and 'simplejava_SimpleJava'. From 'simplejava_Import', the role 'simplejava_Import' has cardinality 0..*, and from 'simplejava_SimpleJava', the role 'simplejava_SimpleJava2' has cardinality 0..*.
+An association connects 'simplejava_SimpleJava' and 'simplejava_ClassDeclaration'. From 'simplejava_SimpleJava', the role 'simplejava_SimpleJava4' has cardinality 0..*, and from 'simplejava_ClassDeclaration', the role 'simplejava_ClassDeclaration' has cardinality 0..*.
+An association connects 'simplejava_ClassDeclaration' and 'simplejava_Parameter'. From 'simplejava_ClassDeclaration', the role 'simplejava_ClassDeclaration6' has cardinality 0..*, and from 'simplejava_Parameter', the role 'simplejava_Parameter' has cardinality 0..*.
+An association connects 'simplejava_Method' and 'simplejava_ClassDeclaration'. From 'simplejava_Method', the role 'simplejava_Method' has cardinality 0..*, and from 'simplejava_ClassDeclaration', the role 'simplejava_ClassDeclaration8' has cardinality 0..*.
+An association connects 'simplejava_Type' and 'simplejava_Parameter'. From 'simplejava_Type', the role 'simplejava_Type' has cardinality 0..*, and from 'simplejava_Parameter', the role 'simplejava_Parameter10' has cardinality 0..*.
+An association connects 'simplejava_ClassDeclaration' and 'simplejava_Type'. From 'simplejava_ClassDeclaration', the role 'simplejava_ClassDeclaration13' has cardinality 0..*, and from 'simplejava_Type', the role 'simplejava_Type12' has cardinality 0..*.
+An association connects 'simplejava_Type' and 'simplejava_Method'. From 'simplejava_Type', the role 'simplejava_Type16' has cardinality 0..*, and from 'simplejava_Method', the role 'simplejava_Method15' has cardinality 0..*.
+An association connects 'simplejava_Parameter' and 'simplejava_Method'. From 'simplejava_Parameter', the role 'simplejava_Parameter19' has cardinality 0..*, and from 'simplejava_Method', the role 'simplejava_Method18' has cardinality 0..*.
+An association connects 'simplejava_Method' and 'simplejava_MethodBlock'. From 'simplejava_Method', the role 'simplejava_Method21' has cardinality 0..*, and from 'simplejava_MethodBlock', the role 'simplejava_MethodBlock' has cardinality 0..*.
+An association connects 'simplejava_MethodBlock' and 'simplejava_Statement'. From 'simplejava_MethodBlock', the role 'simplejava_MethodBlock23' has cardinality 0..*, and from 'simplejava_Statement', the role 'simplejava_Statement' has cardinality 0..*.
+An association connects 'simplejava_Parameter' and 'simplejava_VariableDeclaration'. From 'simplejava_Parameter', the role 'simplejava_Parameter25' has cardinality 0..*, and from 'simplejava_VariableDeclaration', the role 'simplejava_VariableDeclaration' has cardinality 0..*.
+An association connects 'simplejava_VariableDeclaration' and 'simplejava_GenericExpression'. From 'simplejava_VariableDeclaration', the role 'simplejava_VariableDeclaration27' has cardinality 0..*, and from 'simplejava_GenericExpression', the role 'simplejava_GenericExpression' has cardinality 0..*.
+An association connects 'simplejava_Assignment' and 'simplejava_Parameter'. From 'simplejava_Assignment', the role 'simplejava_Assignment' has cardinality 0..*, and from 'simplejava_Parameter', the role 'simplejava_Parameter29' has cardinality 0..*.
+An association connects 'simplejava_Assignment' and 'simplejava_GenericExpression'. From 'simplejava_Assignment', the role 'simplejava_Assignment31' has cardinality 0..*, and from 'simplejava_GenericExpression', the role 'simplejava_GenericExpression32' has cardinality 0..*.
+An association connects 'simplejava_IfStatement' and 'simplejava_ParanthesisOrBinaryExpression'. From 'simplejava_IfStatement', the role 'simplejava_IfStatement' has cardinality 0..*, and from 'simplejava_ParanthesisOrBinaryExpression', the role 'simplejava_ParanthesisOrBinaryExpression' has cardinality 0..*.
+An association connects 'simplejava_MethodBlock' and 'simplejava_IfStatement'. From 'simplejava_MethodBlock', the role 'simplejava_MethodBlock36' has cardinality 0..*, and from 'simplejava_IfStatement', the role 'simplejava_IfStatement35' has cardinality 0..*.
+An association connects 'simplejava_IfStatement' and 'simplejava_MethodBlock'. From 'simplejava_IfStatement', the role 'simplejava_IfStatement38' has cardinality 0..*, and from 'simplejava_MethodBlock', the role 'simplejava_MethodBlock39' has cardinality 0..*.
+An association connects 'simplejava_ForStatement' and 'simplejava_SimpleStatement'. From 'simplejava_ForStatement', the role 'simplejava_ForStatement' has cardinality 0..*, and from 'simplejava_SimpleStatement', the role 'simplejava_SimpleStatement' has cardinality 0..*.
+An association connects 'simplejava_ForStatement' and 'simplejava_GenericExpression'. From 'simplejava_ForStatement', the role 'simplejava_ForStatement42' has cardinality 0..*, and from 'simplejava_GenericExpression', the role 'simplejava_GenericExpression43' has cardinality 0..*.
+An association connects 'simplejava_SimpleStatement' and 'simplejava_ForStatement'. From 'simplejava_SimpleStatement', the role 'simplejava_SimpleStatement46' has cardinality 0..*, and from 'simplejava_ForStatement', the role 'simplejava_ForStatement45' has cardinality 0..*.
+An association connects 'simplejava_ForStatement' and 'simplejava_Statement'. From 'simplejava_ForStatement', the role 'simplejava_ForStatement48' has cardinality 0..*, and from 'simplejava_Statement', the role 'simplejava_Statement49' has cardinality 0..*.
+An association connects 'simplejava_Parameter' and 'simplejava_ForInStatement'. From 'simplejava_Parameter', the role 'simplejava_Parameter51' has cardinality 0..*, and from 'simplejava_ForInStatement', the role 'simplejava_ForInStatement' has cardinality 0..*.
+An association connects 'simplejava_ForInStatement' and 'simplejava_GenericExpression'. From 'simplejava_ForInStatement', the role 'simplejava_ForInStatement53' has cardinality 0..*, and from 'simplejava_GenericExpression', the role 'simplejava_GenericExpression54' has cardinality 0..*.
+An association connects 'simplejava_Statement' and 'simplejava_ForInStatement'. From 'simplejava_Statement', the role 'simplejava_Statement57' has cardinality 0..*, and from 'simplejava_ForInStatement', the role 'simplejava_ForInStatement56' has cardinality 0..*.
+An association connects 'simplejava_WhileStatement' and 'simplejava_ParanthesisOrBinaryExpression'. From 'simplejava_WhileStatement', the role 'simplejava_WhileStatement' has cardinality 0..*, and from 'simplejava_ParanthesisOrBinaryExpression', the role 'simplejava_ParanthesisOrBinaryExpression59' has cardinality 0..*.
+An association connects 'simplejava_WhileStatement' and 'simplejava_Statement'. From 'simplejava_WhileStatement', the role 'simplejava_WhileStatement61' has cardinality 0..*, and from 'simplejava_Statement', the role 'simplejava_Statement62' has cardinality 0..*.
+An association connects 'simplejava_GenericExpression' and 'simplejava_ReturnStatement'. From 'simplejava_GenericExpression', the role 'simplejava_GenericExpression64' has cardinality 0..*, and from 'simplejava_ReturnStatement', the role 'simplejava_ReturnStatement' has cardinality 0..*.
+An association connects 'simplejava_MethodCall' and 'simplejava_Parameter'. From 'simplejava_MethodCall', the role 'simplejava_MethodCall' has cardinality 0..*, and from 'simplejava_Parameter', the role 'simplejava_Parameter66' has cardinality 0..*.
+An association connects 'simplejava_Method' and 'simplejava_MethodCall'. From 'simplejava_Method', the role 'simplejava_Method69' has cardinality 0..*, and from 'simplejava_MethodCall', the role 'simplejava_MethodCall68' has cardinality 0..*.
+An association connects 'simplejava_MethodCall' and 'simplejava_GenericExpression'. From 'simplejava_MethodCall', the role 'simplejava_MethodCall71' has cardinality 0..*, and from 'simplejava_GenericExpression', the role 'simplejava_GenericExpression72' has cardinality 0..*.
+An association connects 'simplejava_GenericExpression' and 'simplejava_UnaryExpression'. From 'simplejava_GenericExpression', the role 'simplejava_GenericExpression74' has cardinality 0..*, and from 'simplejava_UnaryExpression', the role 'simplejava_UnaryExpression' has cardinality 0..*.
+An association connects 'simplejava_Parameter' and 'simplejava_VariableExpression'. From 'simplejava_Parameter', the role 'simplejava_Parameter76' has cardinality 0..*, and from 'simplejava_VariableExpression', the role 'simplejava_VariableExpression' has cardinality 0..*.
+An association connects 'simplejava_ParanthesisOrBinaryExpression' and 'simplejava_GenericExpression'. From 'simplejava_ParanthesisOrBinaryExpression', the role 'simplejava_ParanthesisOrBinaryExpression78' has cardinality 0..*, and from 'simplejava_GenericExpression', the role 'simplejava_GenericExpression79' has cardinality 0..*.
+An association connects 'simplejava_GenericExpression' and 'simplejava_ParanthesisOrBinaryExpression'. From 'simplejava_GenericExpression', the role 'simplejava_GenericExpression82' has cardinality 0..*, and from 'simplejava_ParanthesisOrBinaryExpression', the role 'simplejava_ParanthesisOrBinaryExpression81' has cardinality 0..*.

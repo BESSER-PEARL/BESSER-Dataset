@@ -1,0 +1,74 @@
+The domain model 'metamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'metamodel_idFeature' represents an important domain concept.
+It has one attribute: 'generationType', which is of type str.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodel_ManyToMany' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_OneToOne' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Datatype' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Relation' represents an important domain concept.
+It has the following attributes: 'optional', which is of type bool; 'unidirectional', which is of type bool.
+
+'metamodel_Feature' represents an important domain concept.
+It has the following attributes: 'xmltransient', which is of type bool; 'nullable', which is of type bool; 'name', which is of type str.
+
+'metamodel_AssociationEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_OneToMany' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodel_DatabaseConnection' represents an important domain concept.
+It has the following attributes: 'persistenceUnit', which is of type str; 'jdbcUrl', which is of type str; 'jdbcUser', which is of type str; 'jdbcDriver', which is of type str; 'jdbcPrefix', which is of type str; 'jdbcPassword', which is of type str.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'metamodel_Datatype' is a specialization of 'Type'.
+The class 'metamodel_Entity' is a specialization of 'Type'.
+The class 'metamodel_Relation' is a specialization of 'Type'.
+The class 'metamodel_OneToOne' is a specialization of 'Relation'.
+The class 'metamodel_OneToMany' is a specialization of 'Relation'.
+The class 'metamodel_ManyToMany' is a specialization of 'Relation'.
+The class 'metamodel_idFeature' is a specialization of 'Feature'.
+The class 'metamodel_AssociationEntity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'metamodel_Model' and 'metamodel_Type'. From 'metamodel_Model', the role 'metamodel_Model' has cardinality 0..*, and from 'metamodel_Type', the role 'metamodel_Type' has cardinality 0..*.
+An association connects 'metamodel_Model' and 'metamodel_DatabaseConnection'. From 'metamodel_Model', the role 'metamodel_Model2' has cardinality 0..*, and from 'metamodel_DatabaseConnection', the role 'metamodel_DatabaseConnection' has cardinality 0..*.
+An association connects 'metamodel_Entity' and 'metamodel_Feature'. From 'metamodel_Entity', the role 'metamodel_Entity' has cardinality 0..*, and from 'metamodel_Feature', the role 'metamodel_Feature' has cardinality 0..*.
+An association connects 'metamodel_Relation' and 'metamodel_Entity'. From 'metamodel_Relation', the role 'Relation' has cardinality 0..*, and from 'metamodel_Entity', the role 'owner' has cardinality 0..*.
+An association connects 'metamodel_Entity' and 'metamodel_Relation'. From 'metamodel_Entity', the role 'slave' has cardinality 0..*, and from 'metamodel_Relation', the role 'Relation6' has cardinality 0..*.
+An association connects 'metamodel_Entity' and 'metamodel_idFeature'. From 'metamodel_Entity', the role 'metamodel_Entity8' has cardinality 0..*, and from 'metamodel_idFeature', the role 'metamodel_idFeature' has cardinality 0..*.
+An association connects 'metamodel_Entity' and 'metamodel_Entity'. From 'metamodel_Entity', the role 'Entity' has cardinality 0..*, and from 'metamodel_Entity', the role 'bequeathesTo' has cardinality 0..*.
+An association connects 'metamodel_Entity' and 'metamodel_Entity'. From 'metamodel_Entity', the role 'inherits' has cardinality 0..*, and from 'metamodel_Entity', the role 'Entity13' has cardinality 0..*.
+An association connects 'metamodel_Feature' and 'metamodel_Type'. From 'metamodel_Feature', the role 'metamodel_Feature15' has cardinality 0..*, and from 'metamodel_Type', the role 'metamodel_Type16' has cardinality 0..*.
+An association connects 'metamodel_Entity' and 'metamodel_Relation'. From 'metamodel_Entity', the role 'Entity18' has cardinality 0..*, and from 'metamodel_Relation', the role 'owns' has cardinality 0..*.
+An association connects 'metamodel_Entity' and 'metamodel_Relation'. From 'metamodel_Entity', the role 'Entity20' has cardinality 0..*, and from 'metamodel_Relation', the role 'ownedBy' has cardinality 0..*.
+An association connects 'metamodel_Relation' and 'metamodel_AssociationEntity'. From 'metamodel_Relation', the role 'relation' has cardinality 0..*, and from 'metamodel_AssociationEntity', the role 'AssociationEntity' has cardinality 0..*.
+An association connects 'metamodel_AssociationEntity' and 'metamodel_Feature'. From 'metamodel_AssociationEntity', the role 'metamodel_AssociationEntity' has cardinality 0..*, and from 'metamodel_Feature', the role 'metamodel_Feature23' has cardinality 0..*.
+An association connects 'metamodel_AssociationEntity' and 'metamodel_Relation'. From 'metamodel_AssociationEntity', the role 'associates' has cardinality 0..*, and from 'metamodel_Relation', the role 'Relation25' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/mtaal/texo/org.eclipse.emf.texo.web.example/model/library.ecore

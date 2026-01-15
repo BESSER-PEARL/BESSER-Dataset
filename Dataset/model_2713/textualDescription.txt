@@ -1,0 +1,16 @@
+The domain model 'x' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'x_C' represents an important domain concept.
+It does not declare any attributes.
+
+'x_A' represents an important domain concept.
+It does not declare any attributes.
+
+'x_B' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'x_A' and 'x_C'. From 'x_A', the role 'x_A' has cardinality 0..*, and from 'x_C', the role 'x_C' has cardinality 0..*.
+An association connects 'x_C' and 'x_B'. From 'x_C', the role 'x_C2' has cardinality 0..*, and from 'x_B', the role 'x_B' has cardinality 0..*.

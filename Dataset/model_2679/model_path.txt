@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/githubbrunob/DSLTransGIT/Transformer2.0/tests/t_negative_distinct_1/FormalMetamodel.ecore

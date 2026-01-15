@@ -1,0 +1,22 @@
+The domain model 'sample' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'sample_B' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'sample_C' represents an important domain concept.
+It does not declare any attributes.
+
+'sample_A' represents an important domain concept.
+It has the following attributes: 'quantity', which is of type int; 'name', which is of type str; 'valid', which is of type bool.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'sample_B' is a specialization of 'A'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sample_B' and 'sample_C'. From 'sample_B', the role 'sample_B' has cardinality 0..*, and from 'sample_C', the role 'sample_C' has cardinality 0..*.
+An association connects 'sample_C' and 'sample_A'. From 'sample_C', the role 'sample_C2' has cardinality 0..*, and from 'sample_A', the role 'sample_A' has cardinality 0..*.

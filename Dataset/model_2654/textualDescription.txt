@@ -1,0 +1,122 @@
+The domain model 'UML2WithID' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'UML2WithID_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Element' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'UML2WithID_Stereotype' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Collaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ExecutionEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Interaction' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_UseCase' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ProtocolStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'UML2WithID_ExecutionEnvironment' is a specialization of 'Node'.
+The class 'UML2WithID_ExecutionEnvironment' is a specialization of 'Element'.
+The class 'UML2WithID_Collaboration' is a specialization of 'BehavioredClassifier'.
+The class 'UML2WithID_Collaboration' is a specialization of 'Element'.
+The class 'UML2WithID_Node' is a specialization of 'Class'.
+The class 'UML2WithID_Node' is a specialization of 'Element'.
+The class 'UML2WithID_Component' is a specialization of 'Class'.
+The class 'UML2WithID_Component' is a specialization of 'Element'.
+The class 'UML2WithID_Interaction' is a specialization of 'Behavior'.
+The class 'UML2WithID_Interaction' is a specialization of 'Element'.
+The class 'UML2WithID_Reception' is a specialization of 'BehavioralFeature'.
+The class 'UML2WithID_Reception' is a specialization of 'Element'.
+The class 'UML2WithID_Operation' is a specialization of 'BehavioralFeature'.
+The class 'UML2WithID_Operation' is a specialization of 'Element'.
+The class 'UML2WithID_Device' is a specialization of 'Node'.
+The class 'UML2WithID_Device' is a specialization of 'Element'.
+The class 'UML2WithID_ProtocolStateMachine' is a specialization of 'StateMachine'.
+The class 'UML2WithID_ProtocolStateMachine' is a specialization of 'Element'.
+The class 'UML2WithID_BehavioredClassifier' is a specialization of 'Element'.
+The class 'UML2WithID_Class' is a specialization of 'BehavioredClassifier'.
+The class 'UML2WithID_Class' is a specialization of 'Element'.
+The class 'UML2WithID_Stereotype' is a specialization of 'Class'.
+The class 'UML2WithID_Stereotype' is a specialization of 'Element'.
+The class 'UML2WithID_Activity' is a specialization of 'Behavior'.
+The class 'UML2WithID_Activity' is a specialization of 'Element'.
+The class 'UML2WithID_Behavior' is a specialization of 'Class'.
+The class 'UML2WithID_Behavior' is a specialization of 'Element'.
+The class 'UML2WithID_AssociationClass' is a specialization of 'Class'.
+The class 'UML2WithID_AssociationClass' is a specialization of 'Element'.
+The class 'UML2WithID_UseCase' is a specialization of 'BehavioredClassifier'.
+The class 'UML2WithID_UseCase' is a specialization of 'Element'.
+The class 'UML2WithID_StateMachine' is a specialization of 'Behavior'.
+The class 'UML2WithID_StateMachine' is a specialization of 'Element'.
+The class 'UML2WithID_BehavioralFeature' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML2WithID_BehavioredClassifier' and 'UML2WithID_Behavior'. From 'UML2WithID_BehavioredClassifier', the role 'UML2WithID_BehavioredClassifier' has cardinality 0..*, and from 'UML2WithID_Behavior', the role 'UML2WithID_Behavior' has cardinality 0..*.
+An association connects 'UML2WithID_Behavior' and 'UML2WithID_BehavioredClassifier'. From 'UML2WithID_Behavior', the role 'UML2WithID_Behavior3' has cardinality 0..*, and from 'UML2WithID_BehavioredClassifier', the role 'UML2WithID_BehavioredClassifier2' has cardinality 0..*.
+An association connects 'UML2WithID_BehavioralFeature' and 'UML2WithID_Behavior'. From 'UML2WithID_BehavioralFeature', the role 'UML2WithID_BehavioralFeature' has cardinality 0..*, and from 'UML2WithID_Behavior', the role 'UML2WithID_Behavior5' has cardinality 0..*.

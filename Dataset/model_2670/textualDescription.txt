@@ -1,0 +1,50 @@
+The domain model 'comps' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'comps_F' represents an important domain concept.
+It does not declare any attributes.
+
+'comps_H' represents an important domain concept.
+It does not declare any attributes.
+
+'comps_E' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'comps_B' represents an important domain concept.
+It does not declare any attributes.
+
+'comps_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'comps_C' represents an important domain concept.
+It does not declare any attributes.
+
+'comps_G' represents an important domain concept.
+It does not declare any attributes.
+
+'comps_A' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'comps_A' is a specialization of 'Named'.
+The class 'comps_B' is a specialization of 'Named'.
+The class 'comps_C' is a specialization of 'Named'.
+The class 'comps_E' is a specialization of 'Named'.
+The class 'comps_E' is a specialization of 'B'.
+The class 'comps_F' is a specialization of 'Named'.
+The class 'comps_G' is a specialization of 'Named'.
+The class 'comps_H' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'comps_A' and 'comps_B'. From 'comps_A', the role 'comps_A' has cardinality 0..*, and from 'comps_B', the role 'comps_B' has cardinality 0..*.
+An association connects 'comps_B' and 'comps_C'. From 'comps_B', the role 'comps_B2' has cardinality 0..*, and from 'comps_C', the role 'comps_C' has cardinality 0..*.
+An association connects 'comps_B' and 'comps_G'. From 'comps_B', the role 'comps_B4' has cardinality 0..*, and from 'comps_G', the role 'comps_G' has cardinality 0..*.
+An association connects 'comps_E' and 'comps_F'. From 'comps_E', the role 'comps_E' has cardinality 0..*, and from 'comps_F', the role 'comps_F' has cardinality 0..*.
+An association connects 'comps_H' and 'comps_G'. From 'comps_H', the role 'comps_H' has cardinality 0..*, and from 'comps_G', the role 'comps_G7' has cardinality 0..*.

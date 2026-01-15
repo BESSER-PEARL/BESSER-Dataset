@@ -1,0 +1,1194 @@
+The domain model 'vhdl' describes the core structural elements and their relationships within the system.
+
+The model defines 259 main class(es).
+
+'vhdl_statement_GenerationScheme' represents an important domain concept.
+It does not declare any attributes.
+
+'IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'declaration_vhdl_PortMaps' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_BitStringExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_GroupTemplateDeclaration' represents an important domain concept.
+It has one attribute: 'entry', which is of type str.
+
+'vhdl_expression_AssociationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Configuration' represents an important domain concept.
+It does not declare any attributes.
+
+'DelayMechanism' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_BreakStatementItem' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeNatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_GenericMaps' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'type_Typed' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_configuration_ConfigurationReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_StringExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_nature_Natured' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_VariableDeclaration' represents an important domain concept.
+It has the following attributes: 'mode', which is of type str; 'shared', which is of type bool.
+
+'vhdl_statement_EntityInstantiationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_type_ConstrainedArrayTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'PhysicalTypeDefinitionSecondary' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_UnitValueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'QuantityAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'configuration_vhdl_MultiName' represents an important domain concept.
+It does not declare any attributes.
+
+'GenerationScheme' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_ValueExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vhdl_type_AccessTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'InstantiationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'configuration_ConfigurationItem' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ConfigurationReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_SubnatureDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Name' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_type_UnconstrainedArrayTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_DelayMechanism' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_type_Typed' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_vhdl_Signature' represents an important domain concept.
+It does not declare any attributes.
+
+'type_vhdl_Name' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_MultiNamed' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_SubtypeIndicationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_SequentialSignalAssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_type_RangeTypeDefinition' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'vhdl_expression_MultiExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_SubtypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'declaration_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'declaration_vhdl_Name' represents an important domain concept.
+It does not declare any attributes.
+
+'VhdlObject' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_BlockStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_nature_RecordNatureElement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_type_TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_configuration_BlockConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_DisconnectionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'IterationScheme' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_EntityReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'SignalAssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_AttributeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_ProcessStatement' represents an important domain concept.
+It has one attribute: 'postponed', which is of type bool.
+
+'vhdl_declaration_NatureDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_RelationalExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'vhdl_type_FileTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_ConfigurationInstantiationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_Named' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_nature_ConstrainedArrayNatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_MultiExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentReference' represents an important domain concept.
+It does not declare any attributes.
+
+'configuration_vhdl_PortMaps' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_EntityResolvedReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_MultiplyingExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'vhdl_expression_SignExpression' represents an important domain concept.
+It has one attribute: 'sign', which is of type str.
+
+'EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_AttributeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'nature_CompositeNatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_IterationScheme' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_SubprogramBody' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_nature_ScalarNatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'statement_vhdl_Name' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_ForIterationScheme' represents an important domain concept.
+It has one attribute: 'variable', which is of type str.
+
+'statement_vhdl_CallReference' represents an important domain concept.
+It does not declare any attributes.
+
+'nature_NatureReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_QuantityDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'statement_vhdl_ComponentReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_AggregateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'configuration_ConfigurationReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_CaseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_ams_SourceAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_InstantiationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_type_RecordTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_ams_Spectrum' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_ConditionalWaveformExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_VhdlObject' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'vhdl_expression_OthersExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_ConditionalSignalAssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_WhileIterationScheme' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_Generics' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_LogicalExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'vhdl_declaration_TerminalDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_ValueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_ValueDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_WaveformExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_FreeQuantityDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_type_ArrayTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ConfigurationItem' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_PowerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_PortMaps' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_SourceQuantityDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_IdentifierExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_type_EnumerationTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_PackageResolvedReference' represents an important domain concept.
+It does not declare any attributes.
+
+'statement_vhdl_Generics' represents an important domain concept.
+It does not declare any attributes.
+
+'SourceAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_FileDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_ConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'SubprogramDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_ForGenerationScheme' represents an important domain concept.
+It has one attribute: 'variable', which is of type str.
+
+'expression_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_VariableAssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_UnaffectedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_ReportStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'statement_vhdl_EntityReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_PackageBody' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_IndicationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_ProcedureCallStatement' represents an important domain concept.
+It has one attribute: 'postponed', which is of type bool.
+
+'vhdl_expression_SignatureExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_DesignUnit' represents an important domain concept.
+It has one attribute: 'library', which is of type str.
+
+'vhdl_statement_SignalAssignmentStatement' represents an important domain concept.
+It has the following attributes: 'postponed', which is of type bool; 'guarded', which is of type bool.
+
+'statement_vhdl_PortMaps' represents an important domain concept.
+It does not declare any attributes.
+
+'CallReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_ams_Noise' represents an important domain concept.
+It does not declare any attributes.
+
+'RecordNatureElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiNamed' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_nature_UnconstrainedArrayNatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_MultiName' represents an important domain concept.
+It does not declare any attributes.
+
+'configuration_vhdl_GenericMaps' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_TransportMechanism' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_configuration_ConfigurationItem' represents an important domain concept.
+It does not declare any attributes.
+
+'nature_Natured' represents an important domain concept.
+It does not declare any attributes.
+
+'configuration_vhdl_Name' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiName' represents an important domain concept.
+It does not declare any attributes.
+
+'AssociationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_ComponentInstantiationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'NatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'type_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_FunctionDeclaration' represents an important domain concept.
+It has one attribute: 'purity', which is of type str.
+
+'vhdl_expression_CharacterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_type_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_OpenExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_type_RecordTypeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_CaseAlternative' represents an important domain concept.
+It does not declare any attributes.
+
+'BlockConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_Architecture' represents an important domain concept.
+It does not declare any attributes.
+
+'RecordTypeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_GenerateStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_nature_NatureReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayNatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'declaration_SubprogramDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_AddingExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'vhdl_Ports' represents an important domain concept.
+It does not declare any attributes.
+
+'declaration_vhdl_ComponentReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_ConfigurationSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'BreakStatementItem' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_Name' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_ams_QuantityAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'declaration_QuantityDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'EntityReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_nature_ArrayNatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_SelectedSignalAssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_AssertionStatement' represents an important domain concept.
+It has one attribute: 'postponed', which is of type bool.
+
+'vhdl_expression_SubnatureIndicationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_UseClauseDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_Statement' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'NatureReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_WaitStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_LoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'statement_vhdl_Ports' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_configuration_ComponentConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'declaration_vhdl_EntityReference' represents an important domain concept.
+It does not declare any attributes.
+
+'CaseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_NameExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_type_CompositeTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_SubprogramDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_SimultaneousCaseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_ExitStatement' represents an important domain concept.
+It has one attribute: 'exit', which is of type str.
+
+'ValueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'declaration_vhdl_MultiName' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_NameList' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_nature_CompositeNatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_CallResolvedReference' represents an important domain concept.
+It does not declare any attributes.
+
+'statement_vhdl_GenericMaps' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_IfGenerationScheme' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'type_CompositeTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_configuration_ConfigurationResolvedReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_SimultaneousIfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_LimitDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'configuration_vhdl_EntityReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_CallReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_IfStatementTest' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_nature_NatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_NullExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_type_TypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_configuration_Configuration' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_vhdl_Name' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalSignalAssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_PackageReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_AllExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_UnaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'QuantityDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_SignalDeclaration' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'mode', which is of type str.
+
+'vhdl_declaration_AttributeSpecification' represents an important domain concept.
+It has one attribute: 'class', which is of type str.
+
+'vhdl_ComponentResolvedReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_AllocatorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'declaration_vhdl_GenericMaps' represents an important domain concept.
+It does not declare any attributes.
+
+'nature_vhdl_Name' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_IndicationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_RangeExpression' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'SubprogramBody' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_ProcedureDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_type_PhysicalTypeDefinitionSecondary' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'number', which is of type str.
+
+'vhdl_statement_SimultaneousProceduralStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_TypeQualificationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'IfStatementTest' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_BranchQuantityDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_NextStatement' represents an important domain concept.
+It has one attribute: 'next', which is of type str.
+
+'vhdl_type_PhysicalTypeDefinition' represents an important domain concept.
+It has one attribute: 'primary', which is of type str.
+
+'vhdl_statement_RejectMechanism' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_ComponentReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_statement_SimpleSimultaneousStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'type_TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'statement_vhdl_MultiName' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_declaration_AliasDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_Signature' represents an important domain concept.
+It does not declare any attributes.
+
+'type_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'CaseAlternative' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_expression_ShiftExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'vhdl_declaration_GroupDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'vhdl_nature_RecordNatureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Mode' defines the following possible values: 'BUFFER', 'OUT', 'IN', 'LINKAGE', 'INOUT'.
+The enumeration 'RelationalOperator' defines the following possible values: 'GE', 'NEQ', 'LOWERTHAN', 'GREATERTHAN', 'LE', 'EQ'.
+The enumeration 'EntityClass' defines the following possible values: 'TYPE', 'SIGNAL', 'FILE', 'SUBNATURE', 'SUBTYPE', 'COMPONENT', 'QUANTITY', 'LITERAL', 'ENTITY', 'PACKAGE', 'FUNCTION', 'UNITS', 'GROUP', 'LABEL', 'CONFIGURATION', 'ARCHITECTURE', 'PROCEDURE', 'VARIABLE', 'TERMINAL', 'CONSTANT', 'NATURE'.
+The enumeration 'AddingOperator' defines the following possible values: 'MINUS', 'PLUS', 'AMPERSAND'.
+The enumeration 'LogicalOperator' defines the following possible values: 'AND', 'OR', 'NOR', 'NAND', 'XNOR', 'XOR'.
+The enumeration 'UnaryOperator' defines the following possible values: 'ABS', 'NOT'.
+The enumeration 'SignalKind' defines the following possible values: 'BUS', 'REGISTER'.
+The enumeration 'MultiplyingOperator' defines the following possible values: 'REM', 'MUL', 'MOD', 'DIV'.
+The enumeration 'ShiftOperator' defines the following possible values: 'ROL', 'SRL', 'SLL', 'SRA', 'SLA', 'ROR'.
+The enumeration 'Sign' defines the following possible values: 'MINUS', 'PLUS'.
+The enumeration 'Purity' defines the following possible values: 'IMPURE', 'PURE'.
+The enumeration 'RangeDirection' defines the following possible values: 'TO', 'DOWNTO'.
+
+The model also captures inheritance relationships between classes.
+The class 'vhdl_Architecture' is a specialization of 'Module'.
+The class 'vhdl_Architecture' is a specialization of 'Named'.
+The class 'vhdl_Component' is a specialization of 'declaration_Declaration'.
+The class 'vhdl_Component' is a specialization of 'Named'.
+The class 'vhdl_DesignUnit' is a specialization of 'VhdlObject'.
+The class 'vhdl_Module' is a specialization of 'VhdlObject'.
+The class 'vhdl_Entity' is a specialization of 'Module'.
+The class 'vhdl_Entity' is a specialization of 'Named'.
+The class 'vhdl_GenericMaps' is a specialization of 'VhdlObject'.
+The class 'vhdl_Generics' is a specialization of 'VhdlObject'.
+The class 'vhdl_Model' is a specialization of 'VhdlObject'.
+The class 'vhdl_Package' is a specialization of 'Module'.
+The class 'vhdl_Package' is a specialization of 'Named'.
+The class 'vhdl_PackageBody' is a specialization of 'Module'.
+The class 'vhdl_Ports' is a specialization of 'VhdlObject'.
+The class 'vhdl_PortMaps' is a specialization of 'VhdlObject'.
+The class 'vhdl_Signature' is a specialization of 'VhdlObject'.
+The class 'vhdl_Name' is a specialization of 'MultiName'.
+The class 'vhdl_Name' is a specialization of 'type_TypeReference'.
+The class 'vhdl_Name' is a specialization of 'nature_NatureReference'.
+The class 'vhdl_Name' is a specialization of 'EntityReference'.
+The class 'vhdl_Name' is a specialization of 'PackageReference'.
+The class 'vhdl_Name' is a specialization of 'ComponentReference'.
+The class 'vhdl_Name' is a specialization of 'configuration_ConfigurationReference'.
+The class 'vhdl_Name' is a specialization of 'CallReference'.
+The class 'vhdl_NameList' is a specialization of 'VhdlObject'.
+The class 'vhdl_NameList' is a specialization of 'MultiName'.
+The class 'vhdl_EntityResolvedReference' is a specialization of 'VhdlObject'.
+The class 'vhdl_EntityResolvedReference' is a specialization of 'EntityReference'.
+The class 'vhdl_PackageResolvedReference' is a specialization of 'VhdlObject'.
+The class 'vhdl_PackageResolvedReference' is a specialization of 'PackageReference'.
+The class 'vhdl_ComponentResolvedReference' is a specialization of 'VhdlObject'.
+The class 'vhdl_ComponentResolvedReference' is a specialization of 'ComponentReference'.
+The class 'vhdl_CallResolvedReference' is a specialization of 'CallReference'.
+The class 'vhdl_statement_ReportStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_ReturnStatement' is a specialization of 'ExpressionStatement'.
+The class 'vhdl_statement_ConditionalSignalAssignmentStatement' is a specialization of 'SignalAssignmentStatement'.
+The class 'vhdl_statement_SelectedSignalAssignmentStatement' is a specialization of 'ConditionalSignalAssignmentStatement'.
+The class 'vhdl_statement_SequentialSignalAssignmentStatement' is a specialization of 'SignalAssignmentStatement'.
+The class 'vhdl_statement_SignalAssignmentStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_WaitStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_VariableAssignmentStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_SimultaneousCaseStatement' is a specialization of 'CaseStatement'.
+The class 'vhdl_statement_CaseStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_CaseAlternative' is a specialization of 'VhdlObject'.
+The class 'vhdl_statement_SimultaneousIfStatement' is a specialization of 'IfStatement'.
+The class 'vhdl_statement_IfStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_IfStatementTest' is a specialization of 'VhdlObject'.
+The class 'vhdl_statement_ProcedureCallStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_SimultaneousProceduralStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_ProcessStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_AssertionStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_BlockStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_BreakStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_BreakStatementItem' is a specialization of 'VhdlObject'.
+The class 'vhdl_statement_ComponentInstantiationStatement' is a specialization of 'InstantiationStatement'.
+The class 'vhdl_statement_InstantiationStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_EntityInstantiationStatement' is a specialization of 'InstantiationStatement'.
+The class 'vhdl_statement_ConfigurationInstantiationStatement' is a specialization of 'InstantiationStatement'.
+The class 'vhdl_statement_SimpleSimultaneousStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_ExitStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_GenerateStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_LoopStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_NextStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_Statement' is a specialization of 'VhdlObject'.
+The class 'vhdl_statement_IterationScheme' is a specialization of 'VhdlObject'.
+The class 'vhdl_statement_WhileIterationScheme' is a specialization of 'IterationScheme'.
+The class 'vhdl_statement_DelayMechanism' is a specialization of 'VhdlObject'.
+The class 'vhdl_statement_ExpressionStatement' is a specialization of 'Statement'.
+The class 'vhdl_statement_ForGenerationScheme' is a specialization of 'GenerationScheme'.
+The class 'vhdl_statement_ForIterationScheme' is a specialization of 'IterationScheme'.
+The class 'vhdl_statement_GenerationScheme' is a specialization of 'VhdlObject'.
+The class 'vhdl_statement_IfGenerationScheme' is a specialization of 'GenerationScheme'.
+The class 'vhdl_statement_RejectMechanism' is a specialization of 'DelayMechanism'.
+The class 'vhdl_statement_TransportMechanism' is a specialization of 'DelayMechanism'.
+The class 'vhdl_expression_AddingExpression' is a specialization of 'BinaryExpression'.
+The class 'vhdl_expression_AggregateExpression' is a specialization of 'expression_MultiExpression'.
+The class 'vhdl_expression_AggregateExpression' is a specialization of 'Name'.
+The class 'vhdl_expression_AllExpression' is a specialization of 'expression_Expression'.
+The class 'vhdl_expression_AllExpression' is a specialization of 'Name'.
+The class 'vhdl_expression_AllocatorExpression' is a specialization of 'expression_Expression'.
+The class 'vhdl_expression_AllocatorExpression' is a specialization of 'type_Typed'.
+The class 'vhdl_expression_AssociationExpression' is a specialization of 'Expression'.
+The class 'vhdl_expression_AttributeExpression' is a specialization of 'expression_ValueExpression'.
+The class 'vhdl_expression_AttributeExpression' is a specialization of 'Name'.
+The class 'vhdl_expression_BinaryExpression' is a specialization of 'Expression'.
+The class 'vhdl_expression_BitStringExpression' is a specialization of 'ValueExpression'.
+The class 'vhdl_expression_Expression' is a specialization of 'VhdlObject'.
+The class 'vhdl_expression_IndicationExpression' is a specialization of 'Expression'.
+The class 'vhdl_expression_SubtypeIndicationExpression' is a specialization of 'expression_IndicationExpression'.
+The class 'vhdl_expression_SubtypeIndicationExpression' is a specialization of 'type_TypeReference'.
+The class 'vhdl_expression_SubtypeIndicationExpression' is a specialization of 'Named'.
+The class 'vhdl_expression_SubnatureIndicationExpression' is a specialization of 'expression_IndicationExpression'.
+The class 'vhdl_expression_SubnatureIndicationExpression' is a specialization of 'nature_NatureReference'.
+The class 'vhdl_expression_LogicalExpression' is a specialization of 'BinaryExpression'.
+The class 'vhdl_expression_NameExpression' is a specialization of 'expression_Expression'.
+The class 'vhdl_expression_NameExpression' is a specialization of 'Name'.
+The class 'vhdl_expression_NullExpression' is a specialization of 'Expression'.
+The class 'vhdl_expression_MultiplyingExpression' is a specialization of 'BinaryExpression'.
+The class 'vhdl_expression_PowerExpression' is a specialization of 'BinaryExpression'.
+The class 'vhdl_expression_RelationalExpression' is a specialization of 'BinaryExpression'.
+The class 'vhdl_expression_ShiftExpression' is a specialization of 'BinaryExpression'.
+The class 'vhdl_expression_SignatureExpression' is a specialization of 'expression_Expression'.
+The class 'vhdl_expression_SignatureExpression' is a specialization of 'Name'.
+The class 'vhdl_expression_SignExpression' is a specialization of 'Expression'.
+The class 'vhdl_expression_UnaryExpression' is a specialization of 'Expression'.
+The class 'vhdl_expression_OpenExpression' is a specialization of 'Expression'.
+The class 'vhdl_expression_OthersExpression' is a specialization of 'expression_Expression'.
+The class 'vhdl_expression_OthersExpression' is a specialization of 'Name'.
+The class 'vhdl_expression_RangeExpression' is a specialization of 'expression_BinaryExpression'.
+The class 'vhdl_expression_RangeExpression' is a specialization of 'Name'.
+The class 'vhdl_expression_StringExpression' is a specialization of 'expression_ValueExpression'.
+The class 'vhdl_expression_StringExpression' is a specialization of 'Name'.
+The class 'vhdl_expression_CharacterExpression' is a specialization of 'expression_ValueExpression'.
+The class 'vhdl_expression_CharacterExpression' is a specialization of 'Name'.
+The class 'vhdl_expression_CharacterExpression' is a specialization of 'type_EnumerationLiteral'.
+The class 'vhdl_expression_IdentifierExpression' is a specialization of 'expression_ValueExpression'.
+The class 'vhdl_expression_IdentifierExpression' is a specialization of 'Name'.
+The class 'vhdl_expression_IdentifierExpression' is a specialization of 'type_EnumerationLiteral'.
+The class 'vhdl_expression_UnitValueExpression' is a specialization of 'ValueExpression'.
+The class 'vhdl_expression_UnaffectedExpression' is a specialization of 'Expression'.
+The class 'vhdl_expression_ValueExpression' is a specialization of 'Expression'.
+The class 'vhdl_expression_WaveformExpression' is a specialization of 'Expression'.
+The class 'vhdl_expression_MultiExpression' is a specialization of 'Expression'.
+The class 'vhdl_expression_ConditionalWaveformExpression' is a specialization of 'AssociationExpression'.
+The class 'vhdl_expression_TypeQualificationExpression' is a specialization of 'expression_Expression'.
+The class 'vhdl_expression_TypeQualificationExpression' is a specialization of 'Name'.
+The class 'vhdl_declaration_AliasDeclaration' is a specialization of 'declaration_Declaration'.
+The class 'vhdl_declaration_AliasDeclaration' is a specialization of 'Named'.
+The class 'vhdl_declaration_AttributeDeclaration' is a specialization of 'declaration_Declaration'.
+The class 'vhdl_declaration_AttributeDeclaration' is a specialization of 'Named'.
+The class 'vhdl_declaration_AttributeDeclaration' is a specialization of 'type_Typed'.
+The class 'vhdl_declaration_AttributeSpecification' is a specialization of 'declaration_Declaration'.
+The class 'vhdl_declaration_AttributeSpecification' is a specialization of 'Named'.
+The class 'vhdl_declaration_BranchQuantityDeclaration' is a specialization of 'QuantityDeclaration'.
+The class 'vhdl_declaration_FreeQuantityDeclaration' is a specialization of 'declaration_QuantityDeclaration'.
+The class 'vhdl_declaration_FreeQuantityDeclaration' is a specialization of 'MultiNamed'.
+The class 'vhdl_declaration_FreeQuantityDeclaration' is a specialization of 'type_Typed'.
+The class 'vhdl_declaration_LimitDeclaration' is a specialization of 'declaration_Declaration'.
+The class 'vhdl_declaration_LimitDeclaration' is a specialization of 'MultiNamed'.
+The class 'vhdl_declaration_LimitDeclaration' is a specialization of 'type_Typed'.
+The class 'vhdl_declaration_QuantityDeclaration' is a specialization of 'Declaration'.
+The class 'vhdl_declaration_SourceQuantityDeclaration' is a specialization of 'declaration_QuantityDeclaration'.
+The class 'vhdl_declaration_SourceQuantityDeclaration' is a specialization of 'MultiNamed'.
+The class 'vhdl_declaration_SourceQuantityDeclaration' is a specialization of 'type_Typed'.
+The class 'vhdl_declaration_SubnatureDeclaration' is a specialization of 'declaration_Declaration'.
+The class 'vhdl_declaration_SubnatureDeclaration' is a specialization of 'Named'.
+The class 'vhdl_declaration_SubnatureDeclaration' is a specialization of 'nature_Natured'.
+The class 'vhdl_declaration_SubprogramDeclaration' is a specialization of 'declaration_Declaration'.
+The class 'vhdl_declaration_SubprogramDeclaration' is a specialization of 'Named'.
+The class 'vhdl_declaration_ProcedureDeclaration' is a specialization of 'SubprogramDeclaration'.
+The class 'vhdl_declaration_FunctionDeclaration' is a specialization of 'declaration_SubprogramDeclaration'.
+The class 'vhdl_declaration_FunctionDeclaration' is a specialization of 'type_Typed'.
+The class 'vhdl_declaration_SubprogramBody' is a specialization of 'VhdlObject'.
+The class 'vhdl_declaration_SubtypeDeclaration' is a specialization of 'declaration_Declaration'.
+The class 'vhdl_declaration_SubtypeDeclaration' is a specialization of 'Named'.
+The class 'vhdl_declaration_SubtypeDeclaration' is a specialization of 'type_Typed'.
+The class 'vhdl_declaration_ConfigurationSpecification' is a specialization of 'Declaration'.
+The class 'vhdl_declaration_Declaration' is a specialization of 'VhdlObject'.
+The class 'vhdl_declaration_DisconnectionSpecification' is a specialization of 'declaration_Declaration'.
+The class 'vhdl_declaration_DisconnectionSpecification' is a specialization of 'type_Typed'.
+The class 'vhdl_declaration_FileDeclaration' is a specialization of 'declaration_Declaration'.
+The class 'vhdl_declaration_FileDeclaration' is a specialization of 'MultiNamed'.
+The class 'vhdl_declaration_FileDeclaration' is a specialization of 'type_Typed'.
+The class 'vhdl_declaration_TerminalDeclaration' is a specialization of 'declaration_Declaration'.
+The class 'vhdl_declaration_TerminalDeclaration' is a specialization of 'MultiNamed'.
+The class 'vhdl_declaration_TerminalDeclaration' is a specialization of 'nature_Natured'.
+The class 'vhdl_declaration_TypeDeclaration' is a specialization of 'declaration_Declaration'.
+The class 'vhdl_declaration_TypeDeclaration' is a specialization of 'Named'.
+The class 'vhdl_declaration_ConstantDeclaration' is a specialization of 'ValueDeclaration'.
+The class 'vhdl_declaration_GroupDeclaration' is a specialization of 'declaration_Declaration'.
+The class 'vhdl_declaration_GroupDeclaration' is a specialization of 'Named'.
+The class 'vhdl_declaration_GroupTemplateDeclaration' is a specialization of 'declaration_Declaration'.
+The class 'vhdl_declaration_GroupTemplateDeclaration' is a specialization of 'Named'.
+The class 'vhdl_declaration_NatureDeclaration' is a specialization of 'declaration_Declaration'.
+The class 'vhdl_declaration_NatureDeclaration' is a specialization of 'Named'.
+The class 'vhdl_declaration_SignalDeclaration' is a specialization of 'ValueDeclaration'.
+The class 'vhdl_declaration_UseClauseDeclaration' is a specialization of 'Declaration'.
+The class 'vhdl_declaration_VariableDeclaration' is a specialization of 'ValueDeclaration'.
+The class 'vhdl_declaration_ValueDeclaration' is a specialization of 'declaration_Declaration'.
+The class 'vhdl_declaration_ValueDeclaration' is a specialization of 'MultiNamed'.
+The class 'vhdl_declaration_ValueDeclaration' is a specialization of 'type_Typed'.
+The class 'vhdl_type_AccessTypeDefinition' is a specialization of 'type_TypeDefinition'.
+The class 'vhdl_type_AccessTypeDefinition' is a specialization of 'type_Typed'.
+The class 'vhdl_type_CompositeTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'vhdl_type_RecordTypeDefinition' is a specialization of 'CompositeTypeDefinition'.
+The class 'vhdl_type_ArrayTypeDefinition' is a specialization of 'type_CompositeTypeDefinition'.
+The class 'vhdl_type_ArrayTypeDefinition' is a specialization of 'type_Typed'.
+The class 'vhdl_type_ConstrainedArrayTypeDefinition' is a specialization of 'ArrayTypeDefinition'.
+The class 'vhdl_type_UnconstrainedArrayTypeDefinition' is a specialization of 'ArrayTypeDefinition'.
+The class 'vhdl_type_EnumerationTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'vhdl_type_FileTypeDefinition' is a specialization of 'type_TypeDefinition'.
+The class 'vhdl_type_FileTypeDefinition' is a specialization of 'type_Typed'.
+The class 'vhdl_type_PhysicalTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'vhdl_type_RangeTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'vhdl_type_RecordTypeElement' is a specialization of 'VhdlObject'.
+The class 'vhdl_type_RecordTypeElement' is a specialization of 'MultiNamed'.
+The class 'vhdl_type_RecordTypeElement' is a specialization of 'type_Typed'.
+The class 'vhdl_type_TypeDefinition' is a specialization of 'VhdlObject'.
+The class 'vhdl_nature_ArrayNatureDefinition' is a specialization of 'nature_CompositeNatureDefinition'.
+The class 'vhdl_nature_ArrayNatureDefinition' is a specialization of 'nature_Natured'.
+The class 'vhdl_nature_CompositeNatureDefinition' is a specialization of 'NatureDefinition'.
+The class 'vhdl_nature_ConstrainedArrayNatureDefinition' is a specialization of 'ArrayNatureDefinition'.
+The class 'vhdl_nature_NatureDefinition' is a specialization of 'VhdlObject'.
+The class 'vhdl_nature_RecordNatureDefinition' is a specialization of 'CompositeNatureDefinition'.
+The class 'vhdl_nature_RecordNatureElement' is a specialization of 'VhdlObject'.
+The class 'vhdl_nature_RecordNatureElement' is a specialization of 'MultiNamed'.
+The class 'vhdl_nature_RecordNatureElement' is a specialization of 'nature_Natured'.
+The class 'vhdl_nature_ScalarNatureDefinition' is a specialization of 'NatureDefinition'.
+The class 'vhdl_nature_UnconstrainedArrayNatureDefinition' is a specialization of 'ArrayNatureDefinition'.
+The class 'vhdl_ams_QuantityAspect' is a specialization of 'VhdlObject'.
+The class 'vhdl_ams_QuantityAspect' is a specialization of 'MultiNamed'.
+The class 'vhdl_ams_SourceAspect' is a specialization of 'VhdlObject'.
+The class 'vhdl_ams_Spectrum' is a specialization of 'SourceAspect'.
+The class 'vhdl_ams_Noise' is a specialization of 'SourceAspect'.
+The class 'vhdl_configuration_BlockConfiguration' is a specialization of 'configuration_ConfigurationItem'.
+The class 'vhdl_configuration_BlockConfiguration' is a specialization of 'Named'.
+The class 'vhdl_configuration_ComponentConfiguration' is a specialization of 'ConfigurationItem'.
+The class 'vhdl_configuration_Configuration' is a specialization of 'Module'.
+The class 'vhdl_configuration_Configuration' is a specialization of 'Named'.
+The class 'vhdl_configuration_ConfigurationItem' is a specialization of 'VhdlObject'.
+The class 'vhdl_configuration_ConfigurationResolvedReference' is a specialization of 'VhdlObject'.
+The class 'vhdl_configuration_ConfigurationResolvedReference' is a specialization of 'configuration_ConfigurationReference'.
+
+Relationships between classes are modeled using associations.
+An association connects 'vhdl_Architecture' and 'vhdl_EntityReference'. From 'vhdl_Architecture', the role 'vhdl_Architecture' has cardinality 0..*, and from 'vhdl_EntityReference', the role 'vhdl_EntityReference' has cardinality 0..*.
+An association connects 'Statement' and 'vhdl_Architecture'. From 'Statement', the role 'Statement' has cardinality 0..*, and from 'vhdl_Architecture', the role 'vhdl_Architecture2' has cardinality 0..*.
+An association connects 'vhdl_Component' and 'vhdl_Generics'. From 'vhdl_Component', the role 'vhdl_Component' has cardinality 0..*, and from 'vhdl_Generics', the role 'vhdl_Generics' has cardinality 0..*.
+An association connects 'vhdl_Component' and 'vhdl_Ports'. From 'vhdl_Component', the role 'vhdl_Component5' has cardinality 0..*, and from 'vhdl_Ports', the role 'vhdl_Ports' has cardinality 0..*.
+An association connects 'vhdl_DesignUnit' and 'vhdl_Name'. From 'vhdl_DesignUnit', the role 'vhdl_DesignUnit' has cardinality 0..*, and from 'vhdl_Name', the role 'vhdl_Name' has cardinality 0..*.
+An association connects 'vhdl_Module' and 'vhdl_DesignUnit'. From 'vhdl_Module', the role 'vhdl_Module' has cardinality 0..*, and from 'vhdl_DesignUnit', the role 'vhdl_DesignUnit8' has cardinality 0..*.
+An association connects 'vhdl_Module' and 'Declaration'. From 'vhdl_Module', the role 'vhdl_Module10' has cardinality 0..*, and from 'Declaration', the role 'Declaration' has cardinality 0..*.
+An association connects 'vhdl_Generics' and 'vhdl_Entity'. From 'vhdl_Generics', the role 'vhdl_Generics12' has cardinality 0..*, and from 'vhdl_Entity', the role 'vhdl_Entity' has cardinality 0..*.
+An association connects 'vhdl_Entity' and 'vhdl_Ports'. From 'vhdl_Entity', the role 'vhdl_Entity14' has cardinality 0..*, and from 'vhdl_Ports', the role 'vhdl_Ports15' has cardinality 0..*.
+An association connects 'Statement' and 'vhdl_Entity'. From 'Statement', the role 'Statement18' has cardinality 0..*, and from 'vhdl_Entity', the role 'vhdl_Entity17' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_GenericMaps'. From 'Expression', the role 'Expression' has cardinality 0..*, and from 'vhdl_GenericMaps', the role 'vhdl_GenericMaps' has cardinality 0..*.
+An association connects 'vhdl_Generics' and 'Declaration'. From 'vhdl_Generics', the role 'vhdl_Generics21' has cardinality 0..*, and from 'Declaration', the role 'Declaration22' has cardinality 0..*.
+An association connects 'vhdl_DesignUnit' and 'vhdl_Model'. From 'vhdl_DesignUnit', the role 'vhdl_DesignUnit24' has cardinality 0..*, and from 'vhdl_Model', the role 'vhdl_Model' has cardinality 0..*.
+An association connects 'vhdl_PackageBody' and 'vhdl_PackageReference'. From 'vhdl_PackageBody', the role 'vhdl_PackageBody' has cardinality 0..*, and from 'vhdl_PackageReference', the role 'vhdl_PackageReference' has cardinality 0..*.
+An association connects 'Declaration' and 'vhdl_Ports'. From 'Declaration', the role 'Declaration28' has cardinality 0..*, and from 'vhdl_Ports', the role 'vhdl_Ports27' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_PortMaps'. From 'Expression', the role 'Expression30' has cardinality 0..*, and from 'vhdl_PortMaps', the role 'vhdl_PortMaps' has cardinality 0..*.
+An association connects 'TypeReference' and 'vhdl_Signature'. From 'TypeReference', the role 'TypeReference' has cardinality 0..*, and from 'vhdl_Signature', the role 'vhdl_Signature' has cardinality 0..*.
+An association connects 'TypeReference' and 'vhdl_Signature'. From 'TypeReference', the role 'TypeReference34' has cardinality 0..*, and from 'vhdl_Signature', the role 'vhdl_Signature33' has cardinality 0..*.
+An association connects 'vhdl_Name' and 'vhdl_Named'. From 'vhdl_Name', the role 'vhdl_Name36' has cardinality 0..*, and from 'vhdl_Named', the role 'vhdl_Named' has cardinality 0..*.
+An association connects 'vhdl_MultiNamed' and 'vhdl_MultiName'. From 'vhdl_MultiNamed', the role 'vhdl_MultiNamed' has cardinality 0..*, and from 'vhdl_MultiName', the role 'vhdl_MultiName' has cardinality 0..*.
+An association connects 'vhdl_Name' and 'vhdl_NameList'. From 'vhdl_Name', the role 'vhdl_Name39' has cardinality 0..*, and from 'vhdl_NameList', the role 'vhdl_NameList' has cardinality 0..*.
+An association connects 'vhdl_Entity' and 'vhdl_EntityResolvedReference'. From 'vhdl_Entity', the role 'vhdl_Entity41' has cardinality 0..*, and from 'vhdl_EntityResolvedReference', the role 'vhdl_EntityResolvedReference' has cardinality 0..*.
+An association connects 'vhdl_Package' and 'vhdl_PackageResolvedReference'. From 'vhdl_Package', the role 'vhdl_Package' has cardinality 0..*, and from 'vhdl_PackageResolvedReference', the role 'vhdl_PackageResolvedReference' has cardinality 0..*.
+An association connects 'vhdl_Component' and 'vhdl_ComponentResolvedReference'. From 'vhdl_Component', the role 'vhdl_Component44' has cardinality 0..*, and from 'vhdl_ComponentResolvedReference', the role 'vhdl_ComponentResolvedReference' has cardinality 0..*.
+An association connects 'SubprogramDeclaration' and 'vhdl_CallResolvedReference'. From 'SubprogramDeclaration', the role 'SubprogramDeclaration' has cardinality 0..*, and from 'vhdl_CallResolvedReference', the role 'vhdl_CallResolvedReference' has cardinality 0..*.
+An association connects 'vhdl_statement_ReportStatement' and 'Expression'. From 'vhdl_statement_ReportStatement', the role 'vhdl_statement_ReportStatement' has cardinality 0..*, and from 'Expression', the role 'Expression47' has cardinality 0..*.
+An association connects 'vhdl_statement_ReportStatement' and 'Expression'. From 'vhdl_statement_ReportStatement', the role 'vhdl_statement_ReportStatement49' has cardinality 0..*, and from 'Expression', the role 'Expression50' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_statement_ConditionalSignalAssignmentStatement'. From 'Expression', the role 'Expression52' has cardinality 0..*, and from 'vhdl_statement_ConditionalSignalAssignmentStatement', the role 'vhdl_statement_ConditionalSignalAssignmentStatement' has cardinality 0..*.
+An association connects 'vhdl_statement_SelectedSignalAssignmentStatement' and 'Expression'. From 'vhdl_statement_SelectedSignalAssignmentStatement', the role 'vhdl_statement_SelectedSignalAssignmentStatement' has cardinality 0..*, and from 'Expression', the role 'Expression54' has cardinality 0..*.
+An association connects 'vhdl_statement_SequentialSignalAssignmentStatement' and 'Expression'. From 'vhdl_statement_SequentialSignalAssignmentStatement', the role 'vhdl_statement_SequentialSignalAssignmentStatement' has cardinality 0..*, and from 'Expression', the role 'Expression56' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_statement_SignalAssignmentStatement'. From 'Expression', the role 'Expression58' has cardinality 0..*, and from 'vhdl_statement_SignalAssignmentStatement', the role 'vhdl_statement_SignalAssignmentStatement' has cardinality 0..*.
+An association connects 'vhdl_statement_SignalAssignmentStatement' and 'DelayMechanism'. From 'vhdl_statement_SignalAssignmentStatement', the role 'vhdl_statement_SignalAssignmentStatement60' has cardinality 0..*, and from 'DelayMechanism', the role 'DelayMechanism' has cardinality 0..*.
+An association connects 'vhdl_statement_WaitStatement' and 'statement_vhdl_MultiName'. From 'vhdl_statement_WaitStatement', the role 'vhdl_statement_WaitStatement' has cardinality 0..*, and from 'statement_vhdl_MultiName', the role 'statement_vhdl_MultiName' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_statement_WaitStatement'. From 'Expression', the role 'Expression64' has cardinality 0..*, and from 'vhdl_statement_WaitStatement', the role 'vhdl_statement_WaitStatement63' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_statement_WaitStatement'. From 'Expression', the role 'Expression67' has cardinality 0..*, and from 'vhdl_statement_WaitStatement', the role 'vhdl_statement_WaitStatement66' has cardinality 0..*.
+An association connects 'vhdl_statement_VariableAssignmentStatement' and 'Expression'. From 'vhdl_statement_VariableAssignmentStatement', the role 'vhdl_statement_VariableAssignmentStatement' has cardinality 0..*, and from 'Expression', the role 'Expression69' has cardinality 0..*.
+An association connects 'vhdl_statement_VariableAssignmentStatement' and 'Expression'. From 'vhdl_statement_VariableAssignmentStatement', the role 'vhdl_statement_VariableAssignmentStatement71' has cardinality 0..*, and from 'Expression', the role 'Expression72' has cardinality 0..*.
+An association connects 'vhdl_statement_CaseStatement' and 'Expression'. From 'vhdl_statement_CaseStatement', the role 'vhdl_statement_CaseStatement' has cardinality 0..*, and from 'Expression', the role 'Expression74' has cardinality 0..*.
+An association connects 'vhdl_statement_CaseStatement' and 'CaseAlternative'. From 'vhdl_statement_CaseStatement', the role 'vhdl_statement_CaseStatement76' has cardinality 0..*, and from 'CaseAlternative', the role 'CaseAlternative' has cardinality 0..*.
+An association connects 'vhdl_statement_CaseAlternative' and 'Expression'. From 'vhdl_statement_CaseAlternative', the role 'vhdl_statement_CaseAlternative' has cardinality 0..*, and from 'Expression', the role 'Expression78' has cardinality 0..*.
+An association connects 'Statement' and 'vhdl_statement_CaseAlternative'. From 'Statement', the role 'Statement81' has cardinality 0..*, and from 'vhdl_statement_CaseAlternative', the role 'vhdl_statement_CaseAlternative80' has cardinality 0..*.
+An association connects 'IfStatementTest' and 'vhdl_statement_IfStatement'. From 'IfStatementTest', the role 'IfStatementTest' has cardinality 0..*, and from 'vhdl_statement_IfStatement', the role 'vhdl_statement_IfStatement' has cardinality 0..*.
+An association connects 'vhdl_statement_IfStatement' and 'Statement'. From 'vhdl_statement_IfStatement', the role 'vhdl_statement_IfStatement84' has cardinality 0..*, and from 'Statement', the role 'Statement85' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_statement_IfStatementTest'. From 'Expression', the role 'Expression87' has cardinality 0..*, and from 'vhdl_statement_IfStatementTest', the role 'vhdl_statement_IfStatementTest' has cardinality 0..*.
+An association connects 'Statement' and 'vhdl_statement_IfStatementTest'. From 'Statement', the role 'Statement90' has cardinality 0..*, and from 'vhdl_statement_IfStatementTest', the role 'vhdl_statement_IfStatementTest89' has cardinality 0..*.
+An association connects 'statement_vhdl_CallReference' and 'vhdl_statement_ProcedureCallStatement'. From 'statement_vhdl_CallReference', the role 'statement_vhdl_CallReference' has cardinality 0..*, and from 'vhdl_statement_ProcedureCallStatement', the role 'vhdl_statement_ProcedureCallStatement' has cardinality 0..*.
+An association connects 'Declaration' and 'vhdl_statement_SimultaneousProceduralStatement'. From 'Declaration', the role 'Declaration93' has cardinality 0..*, and from 'vhdl_statement_SimultaneousProceduralStatement', the role 'vhdl_statement_SimultaneousProceduralStatement' has cardinality 0..*.
+An association connects 'vhdl_statement_SimultaneousProceduralStatement' and 'Statement'. From 'vhdl_statement_SimultaneousProceduralStatement', the role 'vhdl_statement_SimultaneousProceduralStatement95' has cardinality 0..*, and from 'Statement', the role 'Statement96' has cardinality 0..*.
+An association connects 'vhdl_statement_ProcessStatement' and 'Declaration'. From 'vhdl_statement_ProcessStatement', the role 'vhdl_statement_ProcessStatement' has cardinality 0..*, and from 'Declaration', the role 'Declaration98' has cardinality 0..*.
+An association connects 'Statement' and 'vhdl_statement_ProcessStatement'. From 'Statement', the role 'Statement101' has cardinality 0..*, and from 'vhdl_statement_ProcessStatement', the role 'vhdl_statement_ProcessStatement100' has cardinality 0..*.
+An association connects 'vhdl_statement_ProcessStatement' and 'statement_vhdl_MultiName'. From 'vhdl_statement_ProcessStatement', the role 'vhdl_statement_ProcessStatement103' has cardinality 0..*, and from 'statement_vhdl_MultiName', the role 'statement_vhdl_MultiName104' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_statement_AssertionStatement'. From 'Expression', the role 'Expression106' has cardinality 0..*, and from 'vhdl_statement_AssertionStatement', the role 'vhdl_statement_AssertionStatement' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_statement_AssertionStatement'. From 'Expression', the role 'Expression109' has cardinality 0..*, and from 'vhdl_statement_AssertionStatement', the role 'vhdl_statement_AssertionStatement108' has cardinality 0..*.
+An association connects 'vhdl_statement_AssertionStatement' and 'Expression'. From 'vhdl_statement_AssertionStatement', the role 'vhdl_statement_AssertionStatement111' has cardinality 0..*, and from 'Expression', the role 'Expression112' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_statement_BlockStatement'. From 'Expression', the role 'Expression114' has cardinality 0..*, and from 'vhdl_statement_BlockStatement', the role 'vhdl_statement_BlockStatement' has cardinality 0..*.
+An association connects 'vhdl_statement_BlockStatement' and 'statement_vhdl_Generics'. From 'vhdl_statement_BlockStatement', the role 'vhdl_statement_BlockStatement116' has cardinality 0..*, and from 'statement_vhdl_Generics', the role 'statement_vhdl_Generics' has cardinality 0..*.
+An association connects 'vhdl_statement_BlockStatement' and 'statement_vhdl_GenericMaps'. From 'vhdl_statement_BlockStatement', the role 'vhdl_statement_BlockStatement118' has cardinality 0..*, and from 'statement_vhdl_GenericMaps', the role 'statement_vhdl_GenericMaps' has cardinality 0..*.
+An association connects 'vhdl_statement_BlockStatement' and 'statement_vhdl_Ports'. From 'vhdl_statement_BlockStatement', the role 'vhdl_statement_BlockStatement120' has cardinality 0..*, and from 'statement_vhdl_Ports', the role 'statement_vhdl_Ports' has cardinality 0..*.
+An association connects 'statement_vhdl_PortMaps' and 'vhdl_statement_BlockStatement'. From 'statement_vhdl_PortMaps', the role 'statement_vhdl_PortMaps' has cardinality 0..*, and from 'vhdl_statement_BlockStatement', the role 'vhdl_statement_BlockStatement122' has cardinality 0..*.
+An association connects 'vhdl_statement_BlockStatement' and 'Declaration'. From 'vhdl_statement_BlockStatement', the role 'vhdl_statement_BlockStatement124' has cardinality 0..*, and from 'Declaration', the role 'Declaration125' has cardinality 0..*.
+An association connects 'Statement' and 'vhdl_statement_BlockStatement'. From 'Statement', the role 'Statement128' has cardinality 0..*, and from 'vhdl_statement_BlockStatement', the role 'vhdl_statement_BlockStatement127' has cardinality 0..*.
+An association connects 'BreakStatementItem' and 'vhdl_statement_BreakStatement'. From 'BreakStatementItem', the role 'BreakStatementItem' has cardinality 0..*, and from 'vhdl_statement_BreakStatement', the role 'vhdl_statement_BreakStatement' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_statement_BreakStatement'. From 'Expression', the role 'Expression132' has cardinality 0..*, and from 'vhdl_statement_BreakStatement', the role 'vhdl_statement_BreakStatement131' has cardinality 0..*.
+An association connects 'vhdl_statement_BreakStatement' and 'statement_vhdl_MultiName'. From 'vhdl_statement_BreakStatement', the role 'vhdl_statement_BreakStatement134' has cardinality 0..*, and from 'statement_vhdl_MultiName', the role 'statement_vhdl_MultiName135' has cardinality 0..*.
+An association connects 'vhdl_statement_BreakStatementItem' and 'statement_vhdl_Name'. From 'vhdl_statement_BreakStatementItem', the role 'vhdl_statement_BreakStatementItem' has cardinality 0..*, and from 'statement_vhdl_Name', the role 'statement_vhdl_Name' has cardinality 0..*.
+An association connects 'statement_vhdl_Name' and 'vhdl_statement_BreakStatementItem'. From 'statement_vhdl_Name', the role 'statement_vhdl_Name139' has cardinality 0..*, and from 'vhdl_statement_BreakStatementItem', the role 'vhdl_statement_BreakStatementItem138' has cardinality 0..*.
+An association connects 'vhdl_statement_BreakStatementItem' and 'Expression'. From 'vhdl_statement_BreakStatementItem', the role 'vhdl_statement_BreakStatementItem141' has cardinality 0..*, and from 'Expression', the role 'Expression142' has cardinality 0..*.
+An association connects 'vhdl_statement_ComponentInstantiationStatement' and 'statement_vhdl_ComponentReference'. From 'vhdl_statement_ComponentInstantiationStatement', the role 'vhdl_statement_ComponentInstantiationStatement' has cardinality 0..*, and from 'statement_vhdl_ComponentReference', the role 'statement_vhdl_ComponentReference' has cardinality 0..*.
+An association connects 'vhdl_statement_InstantiationStatement' and 'statement_vhdl_GenericMaps'. From 'vhdl_statement_InstantiationStatement', the role 'vhdl_statement_InstantiationStatement' has cardinality 0..*, and from 'statement_vhdl_GenericMaps', the role 'statement_vhdl_GenericMaps145' has cardinality 0..*.
+An association connects 'statement_vhdl_PortMaps' and 'vhdl_statement_InstantiationStatement'. From 'statement_vhdl_PortMaps', the role 'statement_vhdl_PortMaps148' has cardinality 0..*, and from 'vhdl_statement_InstantiationStatement', the role 'vhdl_statement_InstantiationStatement147' has cardinality 0..*.
+An association connects 'statement_vhdl_EntityReference' and 'vhdl_statement_EntityInstantiationStatement'. From 'statement_vhdl_EntityReference', the role 'statement_vhdl_EntityReference' has cardinality 0..*, and from 'vhdl_statement_EntityInstantiationStatement', the role 'vhdl_statement_EntityInstantiationStatement' has cardinality 0..*.
+An association connects 'ConfigurationReference' and 'vhdl_statement_ConfigurationInstantiationStatement'. From 'ConfigurationReference', the role 'ConfigurationReference' has cardinality 0..*, and from 'vhdl_statement_ConfigurationInstantiationStatement', the role 'vhdl_statement_ConfigurationInstantiationStatement' has cardinality 0..*.
+An association connects 'vhdl_statement_SimpleSimultaneousStatement' and 'Expression'. From 'vhdl_statement_SimpleSimultaneousStatement', the role 'vhdl_statement_SimpleSimultaneousStatement' has cardinality 0..*, and from 'Expression', the role 'Expression152' has cardinality 0..*.
+An association connects 'vhdl_statement_SimpleSimultaneousStatement' and 'Expression'. From 'vhdl_statement_SimpleSimultaneousStatement', the role 'vhdl_statement_SimpleSimultaneousStatement154' has cardinality 0..*, and from 'Expression', the role 'Expression155' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_statement_SimpleSimultaneousStatement'. From 'Expression', the role 'Expression158' has cardinality 0..*, and from 'vhdl_statement_SimpleSimultaneousStatement', the role 'vhdl_statement_SimpleSimultaneousStatement157' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_statement_ExitStatement'. From 'Expression', the role 'Expression160' has cardinality 0..*, and from 'vhdl_statement_ExitStatement', the role 'vhdl_statement_ExitStatement' has cardinality 0..*.
+An association connects 'vhdl_statement_GenerateStatement' and 'GenerationScheme'. From 'vhdl_statement_GenerateStatement', the role 'vhdl_statement_GenerateStatement' has cardinality 0..*, and from 'GenerationScheme', the role 'GenerationScheme' has cardinality 0..*.
+An association connects 'Declaration' and 'vhdl_statement_GenerateStatement'. From 'Declaration', the role 'Declaration164' has cardinality 0..*, and from 'vhdl_statement_GenerateStatement', the role 'vhdl_statement_GenerateStatement163' has cardinality 0..*.
+An association connects 'vhdl_statement_GenerateStatement' and 'Statement'. From 'vhdl_statement_GenerateStatement', the role 'vhdl_statement_GenerateStatement166' has cardinality 0..*, and from 'Statement', the role 'Statement167' has cardinality 0..*.
+An association connects 'vhdl_statement_LoopStatement' and 'IterationScheme'. From 'vhdl_statement_LoopStatement', the role 'vhdl_statement_LoopStatement' has cardinality 0..*, and from 'IterationScheme', the role 'IterationScheme' has cardinality 0..*.
+An association connects 'Statement' and 'vhdl_statement_LoopStatement'. From 'Statement', the role 'Statement171' has cardinality 0..*, and from 'vhdl_statement_LoopStatement', the role 'vhdl_statement_LoopStatement170' has cardinality 0..*.
+An association connects 'vhdl_statement_NextStatement' and 'Expression'. From 'vhdl_statement_NextStatement', the role 'vhdl_statement_NextStatement' has cardinality 0..*, and from 'Expression', the role 'Expression173' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_statement_WhileIterationScheme'. From 'Expression', the role 'Expression175' has cardinality 0..*, and from 'vhdl_statement_WhileIterationScheme', the role 'vhdl_statement_WhileIterationScheme' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_statement_ExpressionStatement'. From 'Expression', the role 'Expression177' has cardinality 0..*, and from 'vhdl_statement_ExpressionStatement', the role 'vhdl_statement_ExpressionStatement' has cardinality 0..*.
+An association connects 'vhdl_statement_ForGenerationScheme' and 'Expression'. From 'vhdl_statement_ForGenerationScheme', the role 'vhdl_statement_ForGenerationScheme' has cardinality 0..*, and from 'Expression', the role 'Expression179' has cardinality 0..*.
+An association connects 'vhdl_statement_ForIterationScheme' and 'Expression'. From 'vhdl_statement_ForIterationScheme', the role 'vhdl_statement_ForIterationScheme' has cardinality 0..*, and from 'Expression', the role 'Expression181' has cardinality 0..*.
+An association connects 'vhdl_statement_IfGenerationScheme' and 'Expression'. From 'vhdl_statement_IfGenerationScheme', the role 'vhdl_statement_IfGenerationScheme' has cardinality 0..*, and from 'Expression', the role 'Expression183' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_statement_RejectMechanism'. From 'Expression', the role 'Expression185' has cardinality 0..*, and from 'vhdl_statement_RejectMechanism', the role 'vhdl_statement_RejectMechanism' has cardinality 0..*.
+An association connects 'vhdl_expression_AssociationExpression' and 'Expression'. From 'vhdl_expression_AssociationExpression', the role 'vhdl_expression_AssociationExpression' has cardinality 0..*, and from 'Expression', the role 'Expression187' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_expression_AssociationExpression'. From 'Expression', the role 'Expression190' has cardinality 0..*, and from 'vhdl_expression_AssociationExpression', the role 'vhdl_expression_AssociationExpression189' has cardinality 0..*.
+An association connects 'expression_vhdl_Signature' and 'vhdl_expression_AttributeExpression'. From 'expression_vhdl_Signature', the role 'expression_vhdl_Signature' has cardinality 0..*, and from 'vhdl_expression_AttributeExpression', the role 'vhdl_expression_AttributeExpression' has cardinality 0..*.
+An association connects 'vhdl_expression_BinaryExpression' and 'Expression'. From 'vhdl_expression_BinaryExpression', the role 'vhdl_expression_BinaryExpression' has cardinality 0..*, and from 'Expression', the role 'Expression193' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_expression_BinaryExpression'. From 'Expression', the role 'Expression196' has cardinality 0..*, and from 'vhdl_expression_BinaryExpression', the role 'vhdl_expression_BinaryExpression195' has cardinality 0..*.
+An association connects 'vhdl_expression_IndicationExpression' and 'Expression'. From 'vhdl_expression_IndicationExpression', the role 'vhdl_expression_IndicationExpression' has cardinality 0..*, and from 'Expression', the role 'Expression198' has cardinality 0..*.
+An association connects 'vhdl_expression_IndicationExpression' and 'Expression'. From 'vhdl_expression_IndicationExpression', the role 'vhdl_expression_IndicationExpression200' has cardinality 0..*, and from 'Expression', the role 'Expression201' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_expression_IndicationExpression'. From 'Expression', the role 'Expression204' has cardinality 0..*, and from 'vhdl_expression_IndicationExpression', the role 'vhdl_expression_IndicationExpression203' has cardinality 0..*.
+An association connects 'vhdl_expression_SubtypeIndicationExpression' and 'TypeReference'. From 'vhdl_expression_SubtypeIndicationExpression', the role 'vhdl_expression_SubtypeIndicationExpression' has cardinality 0..*, and from 'TypeReference', the role 'TypeReference206' has cardinality 0..*.
+An association connects 'NatureReference' and 'vhdl_expression_SubnatureIndicationExpression'. From 'NatureReference', the role 'NatureReference' has cardinality 0..*, and from 'vhdl_expression_SubnatureIndicationExpression', the role 'vhdl_expression_SubnatureIndicationExpression' has cardinality 0..*.
+An association connects 'vhdl_expression_NameExpression' and 'expression_vhdl_Name'. From 'vhdl_expression_NameExpression', the role 'vhdl_expression_NameExpression' has cardinality 0..*, and from 'expression_vhdl_Name', the role 'expression_vhdl_Name' has cardinality 0..*.
+An association connects 'expression_vhdl_Signature' and 'vhdl_expression_SignatureExpression'. From 'expression_vhdl_Signature', the role 'expression_vhdl_Signature210' has cardinality 0..*, and from 'vhdl_expression_SignatureExpression', the role 'vhdl_expression_SignatureExpression' has cardinality 0..*.
+An association connects 'vhdl_expression_SignatureExpression' and 'expression_vhdl_Name'. From 'vhdl_expression_SignatureExpression', the role 'vhdl_expression_SignatureExpression212' has cardinality 0..*, and from 'expression_vhdl_Name', the role 'expression_vhdl_Name213' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_expression_SignExpression'. From 'Expression', the role 'Expression215' has cardinality 0..*, and from 'vhdl_expression_SignExpression', the role 'vhdl_expression_SignExpression' has cardinality 0..*.
+An association connects 'vhdl_expression_UnaryExpression' and 'Expression'. From 'vhdl_expression_UnaryExpression', the role 'vhdl_expression_UnaryExpression' has cardinality 0..*, and from 'Expression', the role 'Expression217' has cardinality 0..*.
+An association connects 'vhdl_expression_UnitValueExpression' and 'expression_vhdl_Name'. From 'vhdl_expression_UnitValueExpression', the role 'vhdl_expression_UnitValueExpression' has cardinality 0..*, and from 'expression_vhdl_Name', the role 'expression_vhdl_Name219' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_expression_WaveformExpression'. From 'Expression', the role 'Expression221' has cardinality 0..*, and from 'vhdl_expression_WaveformExpression', the role 'vhdl_expression_WaveformExpression' has cardinality 0..*.
+An association connects 'vhdl_expression_WaveformExpression' and 'Expression'. From 'vhdl_expression_WaveformExpression', the role 'vhdl_expression_WaveformExpression223' has cardinality 0..*, and from 'Expression', the role 'Expression224' has cardinality 0..*.
+An association connects 'vhdl_expression_MultiExpression' and 'Expression'. From 'vhdl_expression_MultiExpression', the role 'vhdl_expression_MultiExpression' has cardinality 0..*, and from 'Expression', the role 'Expression226' has cardinality 0..*.
+An association connects 'vhdl_expression_TypeQualificationExpression' and 'Expression'. From 'vhdl_expression_TypeQualificationExpression', the role 'vhdl_expression_TypeQualificationExpression' has cardinality 0..*, and from 'Expression', the role 'Expression228' has cardinality 0..*.
+An association connects 'TypeReference' and 'vhdl_declaration_AliasDeclaration'. From 'TypeReference', the role 'TypeReference230' has cardinality 0..*, and from 'vhdl_declaration_AliasDeclaration', the role 'vhdl_declaration_AliasDeclaration' has cardinality 0..*.
+An association connects 'declaration_vhdl_Name' and 'vhdl_declaration_AliasDeclaration'. From 'declaration_vhdl_Name', the role 'declaration_vhdl_Name' has cardinality 0..*, and from 'vhdl_declaration_AliasDeclaration', the role 'vhdl_declaration_AliasDeclaration232' has cardinality 0..*.
+An association connects 'vhdl_declaration_AttributeSpecification' and 'declaration_vhdl_MultiName'. From 'vhdl_declaration_AttributeSpecification', the role 'vhdl_declaration_AttributeSpecification' has cardinality 0..*, and from 'declaration_vhdl_MultiName', the role 'declaration_vhdl_MultiName' has cardinality 0..*.
+An association connects 'vhdl_declaration_AttributeSpecification' and 'Expression'. From 'vhdl_declaration_AttributeSpecification', the role 'vhdl_declaration_AttributeSpecification235' has cardinality 0..*, and from 'Expression', the role 'Expression236' has cardinality 0..*.
+An association connects 'QuantityAspect' and 'vhdl_declaration_BranchQuantityDeclaration'. From 'QuantityAspect', the role 'QuantityAspect' has cardinality 0..*, and from 'vhdl_declaration_BranchQuantityDeclaration', the role 'vhdl_declaration_BranchQuantityDeclaration' has cardinality 0..*.
+An association connects 'QuantityAspect' and 'vhdl_declaration_BranchQuantityDeclaration'. From 'QuantityAspect', the role 'QuantityAspect240' has cardinality 0..*, and from 'vhdl_declaration_BranchQuantityDeclaration', the role 'vhdl_declaration_BranchQuantityDeclaration239' has cardinality 0..*.
+An association connects 'declaration_vhdl_Name' and 'vhdl_declaration_BranchQuantityDeclaration'. From 'declaration_vhdl_Name', the role 'declaration_vhdl_Name243' has cardinality 0..*, and from 'vhdl_declaration_BranchQuantityDeclaration', the role 'vhdl_declaration_BranchQuantityDeclaration242' has cardinality 0..*.
+An association connects 'vhdl_declaration_BranchQuantityDeclaration' and 'declaration_vhdl_Name'. From 'vhdl_declaration_BranchQuantityDeclaration', the role 'vhdl_declaration_BranchQuantityDeclaration245' has cardinality 0..*, and from 'declaration_vhdl_Name', the role 'declaration_vhdl_Name246' has cardinality 0..*.
+An association connects 'vhdl_declaration_FreeQuantityDeclaration' and 'Expression'. From 'vhdl_declaration_FreeQuantityDeclaration', the role 'vhdl_declaration_FreeQuantityDeclaration' has cardinality 0..*, and from 'Expression', the role 'Expression248' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_declaration_LimitDeclaration'. From 'Expression', the role 'Expression250' has cardinality 0..*, and from 'vhdl_declaration_LimitDeclaration', the role 'vhdl_declaration_LimitDeclaration' has cardinality 0..*.
+An association connects 'vhdl_declaration_SourceQuantityDeclaration' and 'SourceAspect'. From 'vhdl_declaration_SourceQuantityDeclaration', the role 'vhdl_declaration_SourceQuantityDeclaration' has cardinality 0..*, and from 'SourceAspect', the role 'SourceAspect' has cardinality 0..*.
+An association connects 'vhdl_declaration_SubprogramDeclaration' and 'Declaration'. From 'vhdl_declaration_SubprogramDeclaration', the role 'vhdl_declaration_SubprogramDeclaration' has cardinality 0..*, and from 'Declaration', the role 'Declaration253' has cardinality 0..*.
+An association connects 'SubprogramBody' and 'vhdl_declaration_SubprogramDeclaration'. From 'SubprogramBody', the role 'SubprogramBody' has cardinality 0..*, and from 'vhdl_declaration_SubprogramDeclaration', the role 'vhdl_declaration_SubprogramDeclaration255' has cardinality 0..*.
+An association connects 'vhdl_declaration_SubprogramBody' and 'Declaration'. From 'vhdl_declaration_SubprogramBody', the role 'vhdl_declaration_SubprogramBody' has cardinality 0..*, and from 'Declaration', the role 'Declaration257' has cardinality 0..*.
+An association connects 'Statement' and 'vhdl_declaration_SubprogramBody'. From 'Statement', the role 'Statement260' has cardinality 0..*, and from 'vhdl_declaration_SubprogramBody', the role 'vhdl_declaration_SubprogramBody259' has cardinality 0..*.
+An association connects 'declaration_vhdl_MultiName' and 'vhdl_declaration_ConfigurationSpecification'. From 'declaration_vhdl_MultiName', the role 'declaration_vhdl_MultiName262' has cardinality 0..*, and from 'vhdl_declaration_ConfigurationSpecification', the role 'vhdl_declaration_ConfigurationSpecification' has cardinality 0..*.
+An association connects 'declaration_vhdl_ComponentReference' and 'vhdl_declaration_ConfigurationSpecification'. From 'declaration_vhdl_ComponentReference', the role 'declaration_vhdl_ComponentReference' has cardinality 0..*, and from 'vhdl_declaration_ConfigurationSpecification', the role 'vhdl_declaration_ConfigurationSpecification264' has cardinality 0..*.
+An association connects 'vhdl_declaration_ConfigurationSpecification' and 'declaration_vhdl_EntityReference'. From 'vhdl_declaration_ConfigurationSpecification', the role 'vhdl_declaration_ConfigurationSpecification266' has cardinality 0..*, and from 'declaration_vhdl_EntityReference', the role 'declaration_vhdl_EntityReference' has cardinality 0..*.
+An association connects 'vhdl_declaration_ConfigurationSpecification' and 'ConfigurationReference'. From 'vhdl_declaration_ConfigurationSpecification', the role 'vhdl_declaration_ConfigurationSpecification268' has cardinality 0..*, and from 'ConfigurationReference', the role 'ConfigurationReference269' has cardinality 0..*.
+An association connects 'declaration_vhdl_GenericMaps' and 'vhdl_declaration_ConfigurationSpecification'. From 'declaration_vhdl_GenericMaps', the role 'declaration_vhdl_GenericMaps' has cardinality 0..*, and from 'vhdl_declaration_ConfigurationSpecification', the role 'vhdl_declaration_ConfigurationSpecification271' has cardinality 0..*.
+An association connects 'vhdl_declaration_ConfigurationSpecification' and 'declaration_vhdl_PortMaps'. From 'vhdl_declaration_ConfigurationSpecification', the role 'vhdl_declaration_ConfigurationSpecification273' has cardinality 0..*, and from 'declaration_vhdl_PortMaps', the role 'declaration_vhdl_PortMaps' has cardinality 0..*.
+An association connects 'declaration_vhdl_MultiName' and 'vhdl_declaration_DisconnectionSpecification'. From 'declaration_vhdl_MultiName', the role 'declaration_vhdl_MultiName275' has cardinality 0..*, and from 'vhdl_declaration_DisconnectionSpecification', the role 'vhdl_declaration_DisconnectionSpecification' has cardinality 0..*.
+An association connects 'vhdl_declaration_DisconnectionSpecification' and 'Expression'. From 'vhdl_declaration_DisconnectionSpecification', the role 'vhdl_declaration_DisconnectionSpecification277' has cardinality 0..*, and from 'Expression', the role 'Expression278' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_declaration_FileDeclaration'. From 'Expression', the role 'Expression280' has cardinality 0..*, and from 'vhdl_declaration_FileDeclaration', the role 'vhdl_declaration_FileDeclaration' has cardinality 0..*.
+An association connects 'vhdl_declaration_FileDeclaration' and 'Expression'. From 'vhdl_declaration_FileDeclaration', the role 'vhdl_declaration_FileDeclaration282' has cardinality 0..*, and from 'Expression', the role 'Expression283' has cardinality 0..*.
+An association connects 'vhdl_declaration_TypeDeclaration' and 'TypeDefinition'. From 'vhdl_declaration_TypeDeclaration', the role 'vhdl_declaration_TypeDeclaration' has cardinality 0..*, and from 'TypeDefinition', the role 'TypeDefinition' has cardinality 0..*.
+An association connects 'declaration_vhdl_Name' and 'vhdl_declaration_GroupDeclaration'. From 'declaration_vhdl_Name', the role 'declaration_vhdl_Name286' has cardinality 0..*, and from 'vhdl_declaration_GroupDeclaration', the role 'vhdl_declaration_GroupDeclaration' has cardinality 0..*.
+An association connects 'declaration_vhdl_MultiName' and 'vhdl_declaration_GroupDeclaration'. From 'declaration_vhdl_MultiName', the role 'declaration_vhdl_MultiName289' has cardinality 0..*, and from 'vhdl_declaration_GroupDeclaration', the role 'vhdl_declaration_GroupDeclaration288' has cardinality 0..*.
+An association connects 'NatureDefinition' and 'vhdl_declaration_NatureDeclaration'. From 'NatureDefinition', the role 'NatureDefinition' has cardinality 0..*, and from 'vhdl_declaration_NatureDeclaration', the role 'vhdl_declaration_NatureDeclaration' has cardinality 0..*.
+An association connects 'declaration_vhdl_MultiName' and 'vhdl_declaration_UseClauseDeclaration'. From 'declaration_vhdl_MultiName', the role 'declaration_vhdl_MultiName292' has cardinality 0..*, and from 'vhdl_declaration_UseClauseDeclaration', the role 'vhdl_declaration_UseClauseDeclaration' has cardinality 0..*.
+An association connects 'vhdl_declaration_ValueDeclaration' and 'Expression'. From 'vhdl_declaration_ValueDeclaration', the role 'vhdl_declaration_ValueDeclaration' has cardinality 0..*, and from 'Expression', the role 'Expression294' has cardinality 0..*.
+An association connects 'RecordTypeElement' and 'vhdl_type_RecordTypeDefinition'. From 'RecordTypeElement', the role 'RecordTypeElement' has cardinality 0..*, and from 'vhdl_type_RecordTypeDefinition', the role 'vhdl_type_RecordTypeDefinition' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_type_ConstrainedArrayTypeDefinition'. From 'Expression', the role 'Expression297' has cardinality 0..*, and from 'vhdl_type_ConstrainedArrayTypeDefinition', the role 'vhdl_type_ConstrainedArrayTypeDefinition' has cardinality 0..*.
+An association connects 'TypeReference' and 'vhdl_type_UnconstrainedArrayTypeDefinition'. From 'TypeReference', the role 'TypeReference299' has cardinality 0..*, and from 'vhdl_type_UnconstrainedArrayTypeDefinition', the role 'vhdl_type_UnconstrainedArrayTypeDefinition' has cardinality 0..*.
+An association connects 'EnumerationLiteral' and 'vhdl_type_EnumerationTypeDefinition'. From 'EnumerationLiteral', the role 'EnumerationLiteral' has cardinality 0..*, and from 'vhdl_type_EnumerationTypeDefinition', the role 'vhdl_type_EnumerationTypeDefinition' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_type_PhysicalTypeDefinition'. From 'Expression', the role 'Expression302' has cardinality 0..*, and from 'vhdl_type_PhysicalTypeDefinition', the role 'vhdl_type_PhysicalTypeDefinition' has cardinality 0..*.
+An association connects 'PhysicalTypeDefinitionSecondary' and 'vhdl_type_PhysicalTypeDefinition'. From 'PhysicalTypeDefinitionSecondary', the role 'PhysicalTypeDefinitionSecondary' has cardinality 0..*, and from 'vhdl_type_PhysicalTypeDefinition', the role 'vhdl_type_PhysicalTypeDefinition304' has cardinality 0..*.
+An association connects 'type_vhdl_Name' and 'vhdl_type_PhysicalTypeDefinitionSecondary'. From 'type_vhdl_Name', the role 'type_vhdl_Name' has cardinality 0..*, and from 'vhdl_type_PhysicalTypeDefinitionSecondary', the role 'vhdl_type_PhysicalTypeDefinitionSecondary' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_type_RangeTypeDefinition'. From 'Expression', the role 'Expression307' has cardinality 0..*, and from 'vhdl_type_RangeTypeDefinition', the role 'vhdl_type_RangeTypeDefinition' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_type_RangeTypeDefinition'. From 'Expression', the role 'Expression310' has cardinality 0..*, and from 'vhdl_type_RangeTypeDefinition', the role 'vhdl_type_RangeTypeDefinition309' has cardinality 0..*.
+An association connects 'vhdl_type_Typed' and 'TypeReference'. From 'vhdl_type_Typed', the role 'vhdl_type_Typed' has cardinality 0..*, and from 'TypeReference', the role 'TypeReference312' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_nature_ConstrainedArrayNatureDefinition'. From 'Expression', the role 'Expression314' has cardinality 0..*, and from 'vhdl_nature_ConstrainedArrayNatureDefinition', the role 'vhdl_nature_ConstrainedArrayNatureDefinition' has cardinality 0..*.
+An association connects 'vhdl_nature_RecordNatureDefinition' and 'RecordNatureElement'. From 'vhdl_nature_RecordNatureDefinition', the role 'vhdl_nature_RecordNatureDefinition' has cardinality 0..*, and from 'RecordNatureElement', the role 'RecordNatureElement' has cardinality 0..*.
+An association connects 'nature_vhdl_Name' and 'vhdl_nature_ScalarNatureDefinition'. From 'nature_vhdl_Name', the role 'nature_vhdl_Name' has cardinality 0..*, and from 'vhdl_nature_ScalarNatureDefinition', the role 'vhdl_nature_ScalarNatureDefinition' has cardinality 0..*.
+An association connects 'vhdl_nature_ScalarNatureDefinition' and 'nature_vhdl_Name'. From 'vhdl_nature_ScalarNatureDefinition', the role 'vhdl_nature_ScalarNatureDefinition318' has cardinality 0..*, and from 'nature_vhdl_Name', the role 'nature_vhdl_Name319' has cardinality 0..*.
+An association connects 'nature_vhdl_Name' and 'vhdl_nature_ScalarNatureDefinition'. From 'nature_vhdl_Name', the role 'nature_vhdl_Name322' has cardinality 0..*, and from 'vhdl_nature_ScalarNatureDefinition', the role 'vhdl_nature_ScalarNatureDefinition321' has cardinality 0..*.
+An association connects 'vhdl_nature_UnconstrainedArrayNatureDefinition' and 'TypeReference'. From 'vhdl_nature_UnconstrainedArrayNatureDefinition', the role 'vhdl_nature_UnconstrainedArrayNatureDefinition' has cardinality 0..*, and from 'TypeReference', the role 'TypeReference324' has cardinality 0..*.
+An association connects 'vhdl_nature_Natured' and 'NatureReference'. From 'vhdl_nature_Natured', the role 'vhdl_nature_Natured' has cardinality 0..*, and from 'NatureReference', the role 'NatureReference326' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_ams_QuantityAspect'. From 'Expression', the role 'Expression328' has cardinality 0..*, and from 'vhdl_ams_QuantityAspect', the role 'vhdl_ams_QuantityAspect' has cardinality 0..*.
+An association connects 'vhdl_ams_QuantityAspect' and 'Expression'. From 'vhdl_ams_QuantityAspect', the role 'vhdl_ams_QuantityAspect330' has cardinality 0..*, and from 'Expression', the role 'Expression331' has cardinality 0..*.
+An association connects 'vhdl_ams_Spectrum' and 'Expression'. From 'vhdl_ams_Spectrum', the role 'vhdl_ams_Spectrum' has cardinality 0..*, and from 'Expression', the role 'Expression333' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_ams_Spectrum'. From 'Expression', the role 'Expression336' has cardinality 0..*, and from 'vhdl_ams_Spectrum', the role 'vhdl_ams_Spectrum335' has cardinality 0..*.
+An association connects 'Expression' and 'vhdl_ams_Noise'. From 'Expression', the role 'Expression338' has cardinality 0..*, and from 'vhdl_ams_Noise', the role 'vhdl_ams_Noise' has cardinality 0..*.
+An association connects 'configuration_vhdl_Name' and 'vhdl_configuration_BlockConfiguration'. From 'configuration_vhdl_Name', the role 'configuration_vhdl_Name' has cardinality 0..*, and from 'vhdl_configuration_BlockConfiguration', the role 'vhdl_configuration_BlockConfiguration' has cardinality 0..*.
+An association connects 'ConfigurationItem' and 'vhdl_configuration_BlockConfiguration'. From 'ConfigurationItem', the role 'ConfigurationItem' has cardinality 0..*, and from 'vhdl_configuration_BlockConfiguration', the role 'vhdl_configuration_BlockConfiguration341' has cardinality 0..*.
+An association connects 'vhdl_configuration_ComponentConfiguration' and 'configuration_vhdl_MultiName'. From 'vhdl_configuration_ComponentConfiguration', the role 'vhdl_configuration_ComponentConfiguration' has cardinality 0..*, and from 'configuration_vhdl_MultiName', the role 'configuration_vhdl_MultiName' has cardinality 0..*.
+An association connects 'vhdl_configuration_ComponentConfiguration' and 'configuration_vhdl_Name'. From 'vhdl_configuration_ComponentConfiguration', the role 'vhdl_configuration_ComponentConfiguration344' has cardinality 0..*, and from 'configuration_vhdl_Name', the role 'configuration_vhdl_Name345' has cardinality 0..*.
+An association connects 'vhdl_configuration_ComponentConfiguration' and 'configuration_vhdl_Name'. From 'vhdl_configuration_ComponentConfiguration', the role 'vhdl_configuration_ComponentConfiguration347' has cardinality 0..*, and from 'configuration_vhdl_Name', the role 'configuration_vhdl_Name348' has cardinality 0..*.
+An association connects 'vhdl_configuration_ComponentConfiguration' and 'configuration_vhdl_Name'. From 'vhdl_configuration_ComponentConfiguration', the role 'vhdl_configuration_ComponentConfiguration350' has cardinality 0..*, and from 'configuration_vhdl_Name', the role 'configuration_vhdl_Name351' has cardinality 0..*.
+An association connects 'vhdl_configuration_ComponentConfiguration' and 'configuration_vhdl_GenericMaps'. From 'vhdl_configuration_ComponentConfiguration', the role 'vhdl_configuration_ComponentConfiguration353' has cardinality 0..*, and from 'configuration_vhdl_GenericMaps', the role 'configuration_vhdl_GenericMaps' has cardinality 0..*.
+An association connects 'vhdl_configuration_ComponentConfiguration' and 'configuration_vhdl_PortMaps'. From 'vhdl_configuration_ComponentConfiguration', the role 'vhdl_configuration_ComponentConfiguration355' has cardinality 0..*, and from 'configuration_vhdl_PortMaps', the role 'configuration_vhdl_PortMaps' has cardinality 0..*.
+An association connects 'vhdl_configuration_ComponentConfiguration' and 'BlockConfiguration'. From 'vhdl_configuration_ComponentConfiguration', the role 'vhdl_configuration_ComponentConfiguration357' has cardinality 0..*, and from 'BlockConfiguration', the role 'BlockConfiguration' has cardinality 0..*.
+An association connects 'configuration_vhdl_EntityReference' and 'vhdl_configuration_Configuration'. From 'configuration_vhdl_EntityReference', the role 'configuration_vhdl_EntityReference' has cardinality 0..*, and from 'vhdl_configuration_Configuration', the role 'vhdl_configuration_Configuration' has cardinality 0..*.
+An association connects 'vhdl_configuration_Configuration' and 'BlockConfiguration'. From 'vhdl_configuration_Configuration', the role 'vhdl_configuration_Configuration360' has cardinality 0..*, and from 'BlockConfiguration', the role 'BlockConfiguration361' has cardinality 0..*.
+An association connects 'vhdl_configuration_ConfigurationResolvedReference' and 'Configuration'. From 'vhdl_configuration_ConfigurationResolvedReference', the role 'vhdl_configuration_ConfigurationResolvedReference' has cardinality 0..*, and from 'Configuration', the role 'Configuration' has cardinality 0..*.

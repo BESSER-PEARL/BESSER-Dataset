@@ -1,0 +1,49 @@
+The domain model 'case4' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'case4_N' represents an important domain concept.
+It does not declare any attributes.
+
+'case4_E' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'T' represents an important domain concept.
+It does not declare any attributes.
+
+'case4_D' represents an important domain concept.
+It does not declare any attributes.
+
+'case4_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'case4_A' represents an important domain concept.
+It does not declare any attributes.
+
+'case4_T' represents an important domain concept.
+It does not declare any attributes.
+
+'D' represents an important domain concept.
+It does not declare any attributes.
+
+'case4_B' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'case4_D' is a specialization of 'T'.
+The class 'case4_N' is a specialization of 'Named'.
+The class 'case4_T' is a specialization of 'Named'.
+The class 'case4_A' is a specialization of 'Named'.
+The class 'case4_B' is a specialization of 'Named'.
+The class 'case4_E' is a specialization of 'Named'.
+The class 'case4_E' is a specialization of 'D'.
+
+Relationships between classes are modeled using associations.
+An association connects 'case4_N' and 'case4_T'. From 'case4_N', the role 'case4_N' has cardinality 0..*, and from 'case4_T', the role 'case4_T' has cardinality 0..*.
+An association connects 'case4_A' and 'case4_N'. From 'case4_A', the role 'case4_A' has cardinality 0..*, and from 'case4_N', the role 'case4_N2' has cardinality 0..*.
+An association connects 'case4_N' and 'case4_B'. From 'case4_N', the role 'case4_N4' has cardinality 0..*, and from 'case4_B', the role 'case4_B' has cardinality 0..*.
+An association connects 'case4_D' and 'case4_A'. From 'case4_D', the role 'case4_D' has cardinality 0..*, and from 'case4_A', the role 'case4_A6' has cardinality 0..*.
+An association connects 'case4_B' and 'case4_D'. From 'case4_B', the role 'case4_B8' has cardinality 0..*, and from 'case4_D', the role 'case4_D9' has cardinality 0..*.

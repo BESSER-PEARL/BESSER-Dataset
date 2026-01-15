@@ -1,0 +1,372 @@
+The domain model 'cal' describes the core structural elements and their relationships within the system.
+
+The model defines 73 main class(es).
+
+'AstExternalProcedure' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstExpressionString' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'AstPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'AstExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstTypeName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'AstExpressionLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'AstExternalFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstTop' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstNetwork' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstExternalProcedure' represents an important domain concept.
+It does not declare any attributes.
+
+'AstUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstActorVariable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cal_AstForeachGenerator' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cal_AstUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstGenerator' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'cal_AstEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstPort' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cal_AstExpressionBinary' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'cal_AstOutputPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstStatementWhile' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstInputPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstAnnotation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cal_AstAssignParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cal_AstActor' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstStatementIf' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstPriority' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstAction' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstProcedure' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cal_AstExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstExternalFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstExpressionUnary' represents an important domain concept.
+It has one attribute: 'unaryOperator', which is of type str.
+
+'cal_AstConnection' represents an important domain concept.
+It has the following attributes: 'outPort', which is of type str; 'inPort', which is of type str.
+
+'cal_AstTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstNamespace' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cal_AstExpressionLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstMemberAccess' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cal_AstExpressionInteger' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cal_AstTypeParam' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cal_AstStatementForeach' represents an important domain concept.
+It does not declare any attributes.
+
+'AstTop' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstVariable' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'constant', which is of type bool.
+
+'cal_AstAbstractActor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cal_AstStatementCall' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstExpressionVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstType' represents an important domain concept.
+It has one attribute: 'builtin', which is of type str.
+
+'cal_AstConnectionAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cal_AstTag' represents an important domain concept.
+It has one attribute: 'identifiers', which is of type str.
+
+'AstStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstExpressionIf' represents an important domain concept.
+It does not declare any attributes.
+
+'AstAction' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstSchedule' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstExternalActor' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstAnnotationArgument' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'cal_AstExpressionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstFunction' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cal_AstVariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstInitialize' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstActorVariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstExpressionBoolean' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'cal_AstStatementBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'AstAbstractActor' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstStatementAssign' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstTypeParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstInequality' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstTypeDefinitionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'cal_AstExpressionFloat' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+The model also captures inheritance relationships between classes.
+The class 'cal_AstPackage' is a specialization of 'AstTop'.
+The class 'cal_AstNamespace' is a specialization of 'AstTop'.
+The class 'cal_AstNamespace' is a specialization of 'AstPackage'.
+The class 'cal_AstNamespace' is a specialization of 'AstUnit'.
+The class 'cal_AstNetwork' is a specialization of 'AstAbstractActor'.
+The class 'cal_AstFunction' is a specialization of 'AstExternalFunction'.
+The class 'cal_AstActor' is a specialization of 'AstAbstractActor'.
+The class 'cal_AstProcedure' is a specialization of 'AstExternalProcedure'.
+The class 'cal_AstExternalActor' is a specialization of 'AstAbstractActor'.
+The class 'cal_AstStatementAssign' is a specialization of 'AstStatement'.
+The class 'cal_AstStatementCall' is a specialization of 'AstStatement'.
+The class 'cal_AstStatementForeach' is a specialization of 'AstStatement'.
+The class 'cal_AstStatementBlock' is a specialization of 'AstStatement'.
+The class 'cal_AstStatementIf' is a specialization of 'AstStatement'.
+The class 'cal_AstStatementWhile' is a specialization of 'AstStatement'.
+The class 'cal_AstExpressionCall' is a specialization of 'AstExpression'.
+The class 'cal_AstExpressionIf' is a specialization of 'AstExpression'.
+The class 'cal_AstExpressionList' is a specialization of 'AstExpression'.
+The class 'cal_AstExpressionVariable' is a specialization of 'AstExpression'.
+The class 'cal_AstExpressionLiteral' is a specialization of 'AstExpression'.
+The class 'cal_AstExpressionBoolean' is a specialization of 'AstExpressionLiteral'.
+The class 'cal_AstExpressionFloat' is a specialization of 'AstExpressionLiteral'.
+The class 'cal_AstExpressionInteger' is a specialization of 'AstExpressionLiteral'.
+The class 'cal_AstExpressionString' is a specialization of 'AstExpressionLiteral'.
+The class 'cal_AstInitialize' is a specialization of 'AstAction'.
+The class 'cal_AstExpressionBinary' is a specialization of 'AstExpression'.
+The class 'cal_AstExpressionUnary' is a specialization of 'AstExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cal_AstNamespace' and 'cal_AstEntity'. From 'cal_AstNamespace', the role 'cal_AstNamespace' has cardinality 0..*, and from 'cal_AstEntity', the role 'cal_AstEntity' has cardinality 0..*.
+An association connects 'cal_AstNamespace' and 'cal_Import'. From 'cal_AstNamespace', the role 'cal_AstNamespace2' has cardinality 0..*, and from 'cal_Import', the role 'cal_Import' has cardinality 0..*.
+An association connects 'cal_AstUnit' and 'cal_AstNamespace'. From 'cal_AstUnit', the role 'cal_AstUnit' has cardinality 0..*, and from 'cal_AstNamespace', the role 'cal_AstNamespace4' has cardinality 0..*.
+An association connects 'cal_AstNamespace' and 'cal_AstFunction'. From 'cal_AstNamespace', the role 'cal_AstNamespace6' has cardinality 0..*, and from 'cal_AstFunction', the role 'cal_AstFunction' has cardinality 0..*.
+An association connects 'cal_AstNamespace' and 'cal_AstVariable'. From 'cal_AstNamespace', the role 'cal_AstNamespace8' has cardinality 0..*, and from 'cal_AstVariable', the role 'cal_AstVariable' has cardinality 0..*.
+An association connects 'cal_AstNamespace' and 'cal_EObject'. From 'cal_AstNamespace', the role 'cal_AstNamespace10' has cardinality 0..*, and from 'cal_EObject', the role 'cal_EObject' has cardinality 0..*.
+An association connects 'cal_AstAnnotation' and 'cal_AstNamespace'. From 'cal_AstAnnotation', the role 'cal_AstAnnotation' has cardinality 0..*, and from 'cal_AstNamespace', the role 'cal_AstNamespace12' has cardinality 0..*.
+An association connects 'cal_AstTypeName' and 'cal_AstNamespace'. From 'cal_AstTypeName', the role 'cal_AstTypeName' has cardinality 0..*, and from 'cal_AstNamespace', the role 'cal_AstNamespace14' has cardinality 0..*.
+An association connects 'cal_AstNamespace' and 'cal_AstNamespace'. From 'cal_AstNamespace', the role 'cal_AstNamespace15' has cardinality 0..*, and from 'cal_AstNamespace', the role 'cal_AstNamespace17' has cardinality 0..*.
+An association connects 'cal_AstEntity' and 'cal_AstAnnotation'. From 'cal_AstEntity', the role 'cal_AstEntity19' has cardinality 0..*, and from 'cal_AstAnnotation', the role 'cal_AstAnnotation20' has cardinality 0..*.
+An association connects 'cal_AstEntity' and 'cal_AstAbstractActor'. From 'cal_AstEntity', the role 'cal_AstEntity22' has cardinality 0..*, and from 'cal_AstAbstractActor', the role 'cal_AstAbstractActor' has cardinality 0..*.
+An association connects 'cal_AstAbstractActor' and 'cal_AstVariable'. From 'cal_AstAbstractActor', the role 'cal_AstAbstractActor24' has cardinality 0..*, and from 'cal_AstVariable', the role 'cal_AstVariable25' has cardinality 0..*.
+An association connects 'cal_AstPort' and 'cal_AstAbstractActor'. From 'cal_AstPort', the role 'cal_AstPort' has cardinality 0..*, and from 'cal_AstAbstractActor', the role 'cal_AstAbstractActor27' has cardinality 0..*.
+An association connects 'cal_AstPort' and 'cal_AstAbstractActor'. From 'cal_AstPort', the role 'cal_AstPort30' has cardinality 0..*, and from 'cal_AstAbstractActor', the role 'cal_AstAbstractActor29' has cardinality 0..*.
+An association connects 'cal_AstVariable' and 'cal_AstNetwork'. From 'cal_AstVariable', the role 'cal_AstVariable32' has cardinality 0..*, and from 'cal_AstNetwork', the role 'cal_AstNetwork' has cardinality 0..*.
+An association connects 'cal_AstNetwork' and 'cal_AstActorVariable'. From 'cal_AstNetwork', the role 'cal_AstNetwork34' has cardinality 0..*, and from 'cal_AstActorVariable', the role 'cal_AstActorVariable' has cardinality 0..*.
+An association connects 'cal_AstStructure' and 'cal_AstNetwork'. From 'cal_AstStructure', the role 'cal_AstStructure' has cardinality 0..*, and from 'cal_AstNetwork', the role 'cal_AstNetwork36' has cardinality 0..*.
+An association connects 'cal_AstActorVariable' and 'cal_AstEntity'. From 'cal_AstActorVariable', the role 'cal_AstActorVariable38' has cardinality 0..*, and from 'cal_AstEntity', the role 'cal_AstEntity39' has cardinality 0..*.
+An association connects 'cal_AstActorVariable' and 'cal_AstAssignParameter'. From 'cal_AstActorVariable', the role 'cal_AstActorVariable41' has cardinality 0..*, and from 'cal_AstAssignParameter', the role 'cal_AstAssignParameter' has cardinality 0..*.
+An association connects 'cal_AstAssignParameter' and 'cal_AstExpression'. From 'cal_AstAssignParameter', the role 'cal_AstAssignParameter43' has cardinality 0..*, and from 'cal_AstExpression', the role 'cal_AstExpression' has cardinality 0..*.
+An association connects 'cal_AstConnection' and 'cal_AstStructure'. From 'cal_AstConnection', the role 'cal_AstConnection' has cardinality 0..*, and from 'cal_AstStructure', the role 'cal_AstStructure45' has cardinality 0..*.
+An association connects 'cal_AstActorVariableReference' and 'cal_AstConnection'. From 'cal_AstActorVariableReference', the role 'cal_AstActorVariableReference' has cardinality 0..*, and from 'cal_AstConnection', the role 'cal_AstConnection47' has cardinality 0..*.
+An association connects 'cal_AstConnection' and 'cal_AstActorVariableReference'. From 'cal_AstConnection', the role 'cal_AstConnection49' has cardinality 0..*, and from 'cal_AstActorVariableReference', the role 'cal_AstActorVariableReference50' has cardinality 0..*.
+An association connects 'cal_AstConnection' and 'cal_AstConnectionAttribute'. From 'cal_AstConnection', the role 'cal_AstConnection52' has cardinality 0..*, and from 'cal_AstConnectionAttribute', the role 'cal_AstConnectionAttribute' has cardinality 0..*.
+An association connects 'cal_AstActorVariableReference' and 'cal_AstActorVariable'. From 'cal_AstActorVariableReference', the role 'cal_AstActorVariableReference54' has cardinality 0..*, and from 'cal_AstActorVariable', the role 'cal_AstActorVariable55' has cardinality 0..*.
+An association connects 'cal_AstConnectionAttribute' and 'cal_AstExpression'. From 'cal_AstConnectionAttribute', the role 'cal_AstConnectionAttribute57' has cardinality 0..*, and from 'cal_AstExpression', the role 'cal_AstExpression58' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstVariable'. From 'cal_AstExpression', the role 'cal_AstExpression61' has cardinality 0..*, and from 'cal_AstVariable', the role 'cal_AstVariable60' has cardinality 0..*.
+An association connects 'cal_AstVariable' and 'cal_AstAnnotation'. From 'cal_AstVariable', the role 'cal_AstVariable63' has cardinality 0..*, and from 'cal_AstAnnotation', the role 'cal_AstAnnotation64' has cardinality 0..*.
+An association connects 'cal_AstVariable' and 'cal_AstType'. From 'cal_AstVariable', the role 'cal_AstVariable66' has cardinality 0..*, and from 'cal_AstType', the role 'cal_AstType' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstVariable'. From 'cal_AstExpression', the role 'cal_AstExpression69' has cardinality 0..*, and from 'cal_AstVariable', the role 'cal_AstVariable68' has cardinality 0..*.
+An association connects 'cal_AstTypeDefinitionParameter' and 'cal_AstTypeName'. From 'cal_AstTypeDefinitionParameter', the role 'cal_AstTypeDefinitionParameter' has cardinality 0..*, and from 'cal_AstTypeName', the role 'cal_AstTypeName71' has cardinality 0..*.
+An association connects 'cal_AstFunction' and 'cal_AstTypeName'. From 'cal_AstFunction', the role 'cal_AstFunction74' has cardinality 0..*, and from 'cal_AstTypeName', the role 'cal_AstTypeName73' has cardinality 0..*.
+An association connects 'cal_AstTypeName' and 'cal_AstType'. From 'cal_AstTypeName', the role 'cal_AstTypeName76' has cardinality 0..*, and from 'cal_AstType', the role 'cal_AstType77' has cardinality 0..*.
+An association connects 'cal_AstTypeDefinitionParameter' and 'cal_AstVariable'. From 'cal_AstTypeDefinitionParameter', the role 'cal_AstTypeDefinitionParameter79' has cardinality 0..*, and from 'cal_AstVariable', the role 'cal_AstVariable80' has cardinality 0..*.
+An association connects 'cal_AstTypeDefinitionParameter' and 'cal_AstTypeName'. From 'cal_AstTypeDefinitionParameter', the role 'cal_AstTypeDefinitionParameter82' has cardinality 0..*, and from 'cal_AstTypeName', the role 'cal_AstTypeName83' has cardinality 0..*.
+An association connects 'cal_AstVariable' and 'cal_AstFunction'. From 'cal_AstVariable', the role 'cal_AstVariable86' has cardinality 0..*, and from 'cal_AstFunction', the role 'cal_AstFunction85' has cardinality 0..*.
+An association connects 'cal_AstAnnotation' and 'cal_AstFunction'. From 'cal_AstAnnotation', the role 'cal_AstAnnotation89' has cardinality 0..*, and from 'cal_AstFunction', the role 'cal_AstFunction88' has cardinality 0..*.
+An association connects 'cal_AstFunction' and 'cal_AstVariable'. From 'cal_AstFunction', the role 'cal_AstFunction91' has cardinality 0..*, and from 'cal_AstVariable', the role 'cal_AstVariable92' has cardinality 0..*.
+An association connects 'cal_AstType' and 'cal_AstFunction'. From 'cal_AstType', the role 'cal_AstType95' has cardinality 0..*, and from 'cal_AstFunction', the role 'cal_AstFunction94' has cardinality 0..*.
+An association connects 'cal_AstVariable' and 'cal_AstFunction'. From 'cal_AstVariable', the role 'cal_AstVariable98' has cardinality 0..*, and from 'cal_AstFunction', the role 'cal_AstFunction97' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstFunction'. From 'cal_AstExpression', the role 'cal_AstExpression101' has cardinality 0..*, and from 'cal_AstFunction', the role 'cal_AstFunction100' has cardinality 0..*.
+An association connects 'cal_AstActor' and 'cal_AstFunction'. From 'cal_AstActor', the role 'cal_AstActor' has cardinality 0..*, and from 'cal_AstFunction', the role 'cal_AstFunction103' has cardinality 0..*.
+An association connects 'cal_AstActor' and 'cal_AstProcedure'. From 'cal_AstActor', the role 'cal_AstActor105' has cardinality 0..*, and from 'cal_AstProcedure', the role 'cal_AstProcedure' has cardinality 0..*.
+An association connects 'cal_AstActor' and 'cal_AstAction'. From 'cal_AstActor', the role 'cal_AstActor107' has cardinality 0..*, and from 'cal_AstAction', the role 'cal_AstAction' has cardinality 0..*.
+An association connects 'cal_AstAction' and 'cal_AstActor'. From 'cal_AstAction', the role 'cal_AstAction110' has cardinality 0..*, and from 'cal_AstActor', the role 'cal_AstActor109' has cardinality 0..*.
+An association connects 'cal_AstVariable' and 'cal_AstActor'. From 'cal_AstVariable', the role 'cal_AstVariable113' has cardinality 0..*, and from 'cal_AstActor', the role 'cal_AstActor112' has cardinality 0..*.
+An association connects 'cal_AstSchedule' and 'cal_AstActor'. From 'cal_AstSchedule', the role 'cal_AstSchedule' has cardinality 0..*, and from 'cal_AstActor', the role 'cal_AstActor115' has cardinality 0..*.
+An association connects 'cal_AstPriority' and 'cal_AstActor'. From 'cal_AstPriority', the role 'cal_AstPriority' has cardinality 0..*, and from 'cal_AstActor', the role 'cal_AstActor117' has cardinality 0..*.
+An association connects 'cal_AstPort' and 'cal_AstAnnotation'. From 'cal_AstPort', the role 'cal_AstPort119' has cardinality 0..*, and from 'cal_AstAnnotation', the role 'cal_AstAnnotation120' has cardinality 0..*.
+An association connects 'cal_AstPort' and 'cal_AstType'. From 'cal_AstPort', the role 'cal_AstPort122' has cardinality 0..*, and from 'cal_AstType', the role 'cal_AstType123' has cardinality 0..*.
+An association connects 'cal_AstProcedure' and 'cal_AstAnnotation'. From 'cal_AstProcedure', the role 'cal_AstProcedure125' has cardinality 0..*, and from 'cal_AstAnnotation', the role 'cal_AstAnnotation126' has cardinality 0..*.
+An association connects 'cal_AstVariable' and 'cal_AstProcedure'. From 'cal_AstVariable', the role 'cal_AstVariable129' has cardinality 0..*, and from 'cal_AstProcedure', the role 'cal_AstProcedure128' has cardinality 0..*.
+An association connects 'cal_AstVariable' and 'cal_AstProcedure'. From 'cal_AstVariable', the role 'cal_AstVariable132' has cardinality 0..*, and from 'cal_AstProcedure', the role 'cal_AstProcedure131' has cardinality 0..*.
+An association connects 'cal_AstStatement' and 'cal_AstProcedure'. From 'cal_AstStatement', the role 'cal_AstStatement' has cardinality 0..*, and from 'cal_AstProcedure', the role 'cal_AstProcedure134' has cardinality 0..*.
+An association connects 'cal_AstInequality' and 'cal_AstTag'. From 'cal_AstInequality', the role 'cal_AstInequality' has cardinality 0..*, and from 'cal_AstTag', the role 'cal_AstTag' has cardinality 0..*.
+An association connects 'cal_AstPriority' and 'cal_AstInequality'. From 'cal_AstPriority', the role 'cal_AstPriority137' has cardinality 0..*, and from 'cal_AstInequality', the role 'cal_AstInequality138' has cardinality 0..*.
+An association connects 'cal_AstState' and 'cal_AstSchedule'. From 'cal_AstState', the role 'cal_AstState' has cardinality 0..*, and from 'cal_AstSchedule', the role 'cal_AstSchedule140' has cardinality 0..*.
+An association connects 'cal_AstTransition' and 'cal_AstSchedule'. From 'cal_AstTransition', the role 'cal_AstTransition' has cardinality 0..*, and from 'cal_AstSchedule', the role 'cal_AstSchedule142' has cardinality 0..*.
+An association connects 'cal_AstTransition' and 'cal_AstState'. From 'cal_AstTransition', the role 'cal_AstTransition144' has cardinality 0..*, and from 'cal_AstState', the role 'cal_AstState145' has cardinality 0..*.
+An association connects 'cal_AstTransition' and 'cal_AstTag'. From 'cal_AstTransition', the role 'cal_AstTransition147' has cardinality 0..*, and from 'cal_AstTag', the role 'cal_AstTag148' has cardinality 0..*.
+An association connects 'cal_AstTransition' and 'cal_AstState'. From 'cal_AstTransition', the role 'cal_AstTransition150' has cardinality 0..*, and from 'cal_AstState', the role 'cal_AstState151' has cardinality 0..*.
+An association connects 'cal_AstAction' and 'cal_AstAnnotation'. From 'cal_AstAction', the role 'cal_AstAction153' has cardinality 0..*, and from 'cal_AstAnnotation', the role 'cal_AstAnnotation154' has cardinality 0..*.
+An association connects 'cal_AstAction' and 'cal_AstTag'. From 'cal_AstAction', the role 'cal_AstAction156' has cardinality 0..*, and from 'cal_AstTag', the role 'cal_AstTag157' has cardinality 0..*.
+An association connects 'cal_AstAction' and 'cal_AstInputPattern'. From 'cal_AstAction', the role 'cal_AstAction159' has cardinality 0..*, and from 'cal_AstInputPattern', the role 'cal_AstInputPattern' has cardinality 0..*.
+An association connects 'cal_AstOutputPattern' and 'cal_AstAction'. From 'cal_AstOutputPattern', the role 'cal_AstOutputPattern' has cardinality 0..*, and from 'cal_AstAction', the role 'cal_AstAction161' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstAction'. From 'cal_AstExpression', the role 'cal_AstExpression164' has cardinality 0..*, and from 'cal_AstAction', the role 'cal_AstAction163' has cardinality 0..*.
+An association connects 'cal_AstAction' and 'cal_AstVariable'. From 'cal_AstAction', the role 'cal_AstAction166' has cardinality 0..*, and from 'cal_AstVariable', the role 'cal_AstVariable167' has cardinality 0..*.
+An association connects 'cal_AstAction' and 'cal_AstStatement'. From 'cal_AstAction', the role 'cal_AstAction169' has cardinality 0..*, and from 'cal_AstStatement', the role 'cal_AstStatement170' has cardinality 0..*.
+An association connects 'cal_AstInputPattern' and 'cal_AstPort'. From 'cal_AstInputPattern', the role 'cal_AstInputPattern172' has cardinality 0..*, and from 'cal_AstPort', the role 'cal_AstPort173' has cardinality 0..*.
+An association connects 'cal_AstVariable' and 'cal_AstInputPattern'. From 'cal_AstVariable', the role 'cal_AstVariable176' has cardinality 0..*, and from 'cal_AstInputPattern', the role 'cal_AstInputPattern175' has cardinality 0..*.
+An association connects 'cal_AstInputPattern' and 'cal_AstExpression'. From 'cal_AstInputPattern', the role 'cal_AstInputPattern178' has cardinality 0..*, and from 'cal_AstExpression', the role 'cal_AstExpression179' has cardinality 0..*.
+An association connects 'cal_AstPort' and 'cal_AstOutputPattern'. From 'cal_AstPort', the role 'cal_AstPort182' has cardinality 0..*, and from 'cal_AstOutputPattern', the role 'cal_AstOutputPattern181' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstOutputPattern'. From 'cal_AstExpression', the role 'cal_AstExpression185' has cardinality 0..*, and from 'cal_AstOutputPattern', the role 'cal_AstOutputPattern184' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstOutputPattern'. From 'cal_AstExpression', the role 'cal_AstExpression188' has cardinality 0..*, and from 'cal_AstOutputPattern', the role 'cal_AstOutputPattern187' has cardinality 0..*.
+An association connects 'cal_AstVariableReference' and 'cal_AstStatementAssign'. From 'cal_AstVariableReference', the role 'cal_AstVariableReference' has cardinality 0..*, and from 'cal_AstStatementAssign', the role 'cal_AstStatementAssign' has cardinality 0..*.
+An association connects 'cal_AstStatementAssign' and 'cal_AstExpression'. From 'cal_AstStatementAssign', the role 'cal_AstStatementAssign191' has cardinality 0..*, and from 'cal_AstExpression', the role 'cal_AstExpression192' has cardinality 0..*.
+An association connects 'cal_AstMemberAccess' and 'cal_AstStatementAssign'. From 'cal_AstMemberAccess', the role 'cal_AstMemberAccess' has cardinality 0..*, and from 'cal_AstStatementAssign', the role 'cal_AstStatementAssign194' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstStatementAssign'. From 'cal_AstExpression', the role 'cal_AstExpression197' has cardinality 0..*, and from 'cal_AstStatementAssign', the role 'cal_AstStatementAssign196' has cardinality 0..*.
+An association connects 'cal_AstStatementCall' and 'cal_AstProcedure'. From 'cal_AstStatementCall', the role 'cal_AstStatementCall' has cardinality 0..*, and from 'cal_AstProcedure', the role 'cal_AstProcedure199' has cardinality 0..*.
+An association connects 'cal_AstStatementCall' and 'cal_AstExpression'. From 'cal_AstStatementCall', the role 'cal_AstStatementCall201' has cardinality 0..*, and from 'cal_AstExpression', the role 'cal_AstExpression202' has cardinality 0..*.
+An association connects 'cal_AstStatementForeach' and 'cal_AstForeachGenerator'. From 'cal_AstStatementForeach', the role 'cal_AstStatementForeach' has cardinality 0..*, and from 'cal_AstForeachGenerator', the role 'cal_AstForeachGenerator' has cardinality 0..*.
+An association connects 'cal_AstStatementForeach' and 'cal_AstVariable'. From 'cal_AstStatementForeach', the role 'cal_AstStatementForeach205' has cardinality 0..*, and from 'cal_AstVariable', the role 'cal_AstVariable206' has cardinality 0..*.
+An association connects 'cal_AstStatement' and 'cal_AstStatementForeach'. From 'cal_AstStatement', the role 'cal_AstStatement209' has cardinality 0..*, and from 'cal_AstStatementForeach', the role 'cal_AstStatementForeach208' has cardinality 0..*.
+An association connects 'cal_AstForeachGenerator' and 'cal_AstVariable'. From 'cal_AstForeachGenerator', the role 'cal_AstForeachGenerator211' has cardinality 0..*, and from 'cal_AstVariable', the role 'cal_AstVariable212' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstForeachGenerator'. From 'cal_AstExpression', the role 'cal_AstExpression215' has cardinality 0..*, and from 'cal_AstForeachGenerator', the role 'cal_AstForeachGenerator214' has cardinality 0..*.
+An association connects 'cal_AstStatementBlock' and 'cal_AstVariable'. From 'cal_AstStatementBlock', the role 'cal_AstStatementBlock' has cardinality 0..*, and from 'cal_AstVariable', the role 'cal_AstVariable217' has cardinality 0..*.
+An association connects 'cal_AstStatement' and 'cal_AstStatementBlock'. From 'cal_AstStatement', the role 'cal_AstStatement220' has cardinality 0..*, and from 'cal_AstStatementBlock', the role 'cal_AstStatementBlock219' has cardinality 0..*.
+An association connects 'cal_AstStatementIf' and 'cal_AstExpression'. From 'cal_AstStatementIf', the role 'cal_AstStatementIf' has cardinality 0..*, and from 'cal_AstExpression', the role 'cal_AstExpression222' has cardinality 0..*.
+An association connects 'cal_AstStatement' and 'cal_AstStatementIf'. From 'cal_AstStatement', the role 'cal_AstStatement225' has cardinality 0..*, and from 'cal_AstStatementIf', the role 'cal_AstStatementIf224' has cardinality 0..*.
+An association connects 'cal_AstStatement' and 'cal_AstStatementIf'. From 'cal_AstStatement', the role 'cal_AstStatement228' has cardinality 0..*, and from 'cal_AstStatementIf', the role 'cal_AstStatementIf227' has cardinality 0..*.
+An association connects 'cal_AstStatementWhile' and 'cal_AstExpression'. From 'cal_AstStatementWhile', the role 'cal_AstStatementWhile' has cardinality 0..*, and from 'cal_AstExpression', the role 'cal_AstExpression230' has cardinality 0..*.
+An association connects 'cal_AstStatement' and 'cal_AstStatementWhile'. From 'cal_AstStatement', the role 'cal_AstStatement233' has cardinality 0..*, and from 'cal_AstStatementWhile', the role 'cal_AstStatementWhile232' has cardinality 0..*.
+An association connects 'cal_AstFunction' and 'cal_AstExpressionCall'. From 'cal_AstFunction', the role 'cal_AstFunction235' has cardinality 0..*, and from 'cal_AstExpressionCall', the role 'cal_AstExpressionCall' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstExpressionCall'. From 'cal_AstExpression', the role 'cal_AstExpression238' has cardinality 0..*, and from 'cal_AstExpressionCall', the role 'cal_AstExpressionCall237' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstExpressionIf'. From 'cal_AstExpression', the role 'cal_AstExpression240' has cardinality 0..*, and from 'cal_AstExpressionIf', the role 'cal_AstExpressionIf' has cardinality 0..*.
+An association connects 'cal_AstExpressionIf' and 'cal_AstExpression'. From 'cal_AstExpressionIf', the role 'cal_AstExpressionIf242' has cardinality 0..*, and from 'cal_AstExpression', the role 'cal_AstExpression243' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstExpressionIf'. From 'cal_AstExpression', the role 'cal_AstExpression246' has cardinality 0..*, and from 'cal_AstExpressionIf', the role 'cal_AstExpressionIf245' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstExpressionList'. From 'cal_AstExpression', the role 'cal_AstExpression248' has cardinality 0..*, and from 'cal_AstExpressionList', the role 'cal_AstExpressionList' has cardinality 0..*.
+An association connects 'cal_AstExpressionList' and 'cal_AstGenerator'. From 'cal_AstExpressionList', the role 'cal_AstExpressionList250' has cardinality 0..*, and from 'cal_AstGenerator', the role 'cal_AstGenerator' has cardinality 0..*.
+An association connects 'cal_AstGenerator' and 'cal_AstVariable'. From 'cal_AstGenerator', the role 'cal_AstGenerator252' has cardinality 0..*, and from 'cal_AstVariable', the role 'cal_AstVariable253' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstGenerator'. From 'cal_AstExpression', the role 'cal_AstExpression256' has cardinality 0..*, and from 'cal_AstGenerator', the role 'cal_AstGenerator255' has cardinality 0..*.
+An association connects 'cal_AstVariableReference' and 'cal_AstExpressionVariable'. From 'cal_AstVariableReference', the role 'cal_AstVariableReference258' has cardinality 0..*, and from 'cal_AstExpressionVariable', the role 'cal_AstExpressionVariable' has cardinality 0..*.
+An association connects 'cal_AstExpressionVariable' and 'cal_AstExpression'. From 'cal_AstExpressionVariable', the role 'cal_AstExpressionVariable260' has cardinality 0..*, and from 'cal_AstExpression', the role 'cal_AstExpression261' has cardinality 0..*.
+An association connects 'cal_AstMemberAccess' and 'cal_AstExpressionVariable'. From 'cal_AstMemberAccess', the role 'cal_AstMemberAccess264' has cardinality 0..*, and from 'cal_AstExpressionVariable', the role 'cal_AstExpressionVariable263' has cardinality 0..*.
+An association connects 'cal_AstTypeParameterList' and 'cal_AstType'. From 'cal_AstTypeParameterList', the role 'cal_AstTypeParameterList' has cardinality 0..*, and from 'cal_AstType', the role 'cal_AstType266' has cardinality 0..*.
+An association connects 'cal_AstType' and 'cal_AstExpression'. From 'cal_AstType', the role 'cal_AstType268' has cardinality 0..*, and from 'cal_AstExpression', the role 'cal_AstExpression269' has cardinality 0..*.
+An association connects 'cal_AstType' and 'cal_AstTypeName'. From 'cal_AstType', the role 'cal_AstType271' has cardinality 0..*, and from 'cal_AstTypeName', the role 'cal_AstTypeName272' has cardinality 0..*.
+An association connects 'cal_AstType' and 'cal_AstType'. From 'cal_AstType', the role 'cal_AstType275' has cardinality 0..*, and from 'cal_AstType', the role 'cal_AstType273' has cardinality 0..*.
+An association connects 'cal_AstType' and 'cal_AstType'. From 'cal_AstType', the role 'cal_AstType276' has cardinality 0..*, and from 'cal_AstType', the role 'cal_AstType278' has cardinality 0..*.
+An association connects 'cal_AstType' and 'cal_AstVariable'. From 'cal_AstType', the role 'cal_AstType280' has cardinality 0..*, and from 'cal_AstVariable', the role 'cal_AstVariable281' has cardinality 0..*.
+An association connects 'cal_AstTypeParam' and 'cal_AstTypeParameterList'. From 'cal_AstTypeParam', the role 'cal_AstTypeParam' has cardinality 0..*, and from 'cal_AstTypeParameterList', the role 'cal_AstTypeParameterList283' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstTypeParam'. From 'cal_AstExpression', the role 'cal_AstExpression286' has cardinality 0..*, and from 'cal_AstTypeParam', the role 'cal_AstTypeParam285' has cardinality 0..*.
+An association connects 'cal_AstType' and 'cal_AstTypeParam'. From 'cal_AstType', the role 'cal_AstType289' has cardinality 0..*, and from 'cal_AstTypeParam', the role 'cal_AstTypeParam288' has cardinality 0..*.
+An association connects 'cal_AstVariable' and 'cal_AstVariableReference'. From 'cal_AstVariable', the role 'cal_AstVariable292' has cardinality 0..*, and from 'cal_AstVariableReference', the role 'cal_AstVariableReference291' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstMemberAccess'. From 'cal_AstExpression', the role 'cal_AstExpression295' has cardinality 0..*, and from 'cal_AstMemberAccess', the role 'cal_AstMemberAccess294' has cardinality 0..*.
+An association connects 'cal_AstAnnotationArgument' and 'cal_AstAnnotation'. From 'cal_AstAnnotationArgument', the role 'cal_AstAnnotationArgument' has cardinality 0..*, and from 'cal_AstAnnotation', the role 'cal_AstAnnotation297' has cardinality 0..*.
+An association connects 'cal_AstExpressionBinary' and 'cal_AstExpression'. From 'cal_AstExpressionBinary', the role 'cal_AstExpressionBinary' has cardinality 0..*, and from 'cal_AstExpression', the role 'cal_AstExpression299' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstExpressionBinary'. From 'cal_AstExpression', the role 'cal_AstExpression302' has cardinality 0..*, and from 'cal_AstExpressionBinary', the role 'cal_AstExpressionBinary301' has cardinality 0..*.
+An association connects 'cal_AstExpression' and 'cal_AstExpressionUnary'. From 'cal_AstExpression', the role 'cal_AstExpression304' has cardinality 0..*, and from 'cal_AstExpressionUnary', the role 'cal_AstExpressionUnary' has cardinality 0..*.

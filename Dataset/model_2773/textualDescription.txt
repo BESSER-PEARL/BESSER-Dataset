@@ -1,0 +1,48 @@
+The domain model 'xDstmdata' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'xDstmdata_cIntchannel' represents an important domain concept.
+It has the following attributes: 'bound', which is of type int; 'tID', which is of type str; 'name', which is of type str; 'tString', which is of type str.
+
+'xDstmdata_vVariable' represents an important domain concept.
+It has the following attributes: 'tID', which is of type str; 'tString', which is of type str; 'name', which is of type str.
+
+'xDstmdata_tEnum' represents an important domain concept.
+It has the following attributes: 'literals', which is of type str; 'name', which is of type str.
+
+'xDstmdata_tMultitype' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'xDstmdata_subtype' represents an important domain concept.
+It has the following attributes: 'tString', which is of type str; 'tID', which is of type str.
+
+'xDstmdata_tTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'xDstmdata_tCompound' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'xDstmdata_composingtype' represents an important domain concept.
+It has the following attributes: 'tString', which is of type str; 'tID', which is of type str.
+
+'xDstmdata_cExtchannel' represents an important domain concept.
+It has the following attributes: 'tString', which is of type str; 'name', which is of type str; 'tID', which is of type str.
+
+'xDstmdata_channel_specifier' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'xDstmdata_tTypes' and 'xDstmdata_tEnum'. From 'xDstmdata_tTypes', the role 'xDstmdata_tTypes' has cardinality 0..*, and from 'xDstmdata_tEnum', the role 'xDstmdata_tEnum' has cardinality 0..*.
+An association connects 'xDstmdata_tTypes' and 'xDstmdata_tCompound'. From 'xDstmdata_tTypes', the role 'xDstmdata_tTypes2' has cardinality 0..*, and from 'xDstmdata_tCompound', the role 'xDstmdata_tCompound' has cardinality 0..*.
+An association connects 'xDstmdata_tTypes' and 'xDstmdata_tMultitype'. From 'xDstmdata_tTypes', the role 'xDstmdata_tTypes4' has cardinality 0..*, and from 'xDstmdata_tMultitype', the role 'xDstmdata_tMultitype' has cardinality 0..*.
+An association connects 'xDstmdata_cIntchannel' and 'xDstmdata_tTypes'. From 'xDstmdata_cIntchannel', the role 'xDstmdata_cIntchannel' has cardinality 0..*, and from 'xDstmdata_tTypes', the role 'xDstmdata_tTypes6' has cardinality 0..*.
+An association connects 'xDstmdata_cExtchannel' and 'xDstmdata_tTypes'. From 'xDstmdata_cExtchannel', the role 'xDstmdata_cExtchannel' has cardinality 0..*, and from 'xDstmdata_tTypes', the role 'xDstmdata_tTypes8' has cardinality 0..*.
+An association connects 'xDstmdata_vVariable' and 'xDstmdata_tTypes'. From 'xDstmdata_vVariable', the role 'xDstmdata_vVariable' has cardinality 0..*, and from 'xDstmdata_tTypes', the role 'xDstmdata_tTypes10' has cardinality 0..*.
+An association connects 'xDstmdata_tCompound' and 'xDstmdata_subtype'. From 'xDstmdata_tCompound', the role 'xDstmdata_tCompound12' has cardinality 0..*, and from 'xDstmdata_subtype', the role 'xDstmdata_subtype' has cardinality 0..*.
+An association connects 'xDstmdata_channel_specifier' and 'xDstmdata_subtype'. From 'xDstmdata_channel_specifier', the role 'xDstmdata_channel_specifier' has cardinality 0..*, and from 'xDstmdata_subtype', the role 'xDstmdata_subtype14' has cardinality 0..*.
+An association connects 'xDstmdata_tMultitype' and 'xDstmdata_composingtype'. From 'xDstmdata_tMultitype', the role 'xDstmdata_tMultitype16' has cardinality 0..*, and from 'xDstmdata_composingtype', the role 'xDstmdata_composingtype' has cardinality 0..*.
+An association connects 'xDstmdata_composingtype' and 'xDstmdata_channel_specifier'. From 'xDstmdata_composingtype', the role 'xDstmdata_composingtype18' has cardinality 0..*, and from 'xDstmdata_channel_specifier', the role 'xDstmdata_channel_specifier19' has cardinality 0..*.
+An association connects 'xDstmdata_cIntchannel' and 'xDstmdata_channel_specifier'. From 'xDstmdata_cIntchannel', the role 'xDstmdata_cIntchannel21' has cardinality 0..*, and from 'xDstmdata_channel_specifier', the role 'xDstmdata_channel_specifier22' has cardinality 0..*.
+An association connects 'xDstmdata_channel_specifier' and 'xDstmdata_cExtchannel'. From 'xDstmdata_channel_specifier', the role 'xDstmdata_channel_specifier25' has cardinality 0..*, and from 'xDstmdata_cExtchannel', the role 'xDstmdata_cExtchannel24' has cardinality 0..*.
+An association connects 'xDstmdata_channel_specifier' and 'xDstmdata_vVariable'. From 'xDstmdata_channel_specifier', the role 'xDstmdata_channel_specifier28' has cardinality 0..*, and from 'xDstmdata_vVariable', the role 'xDstmdata_vVariable27' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tobiasg28/Uni-Zeugs-TSD/swa-lab2-generator/bin/metamodel/metamodel.ecore

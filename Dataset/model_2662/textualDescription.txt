@@ -1,0 +1,70 @@
+The domain model 'UML2' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'UML2_Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ProtocolStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ExecutionEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Interaction' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Class' represents an important domain concept.
+It has one attribute: 'isActive', which is of type bool.
+
+'UML2_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Stereotype' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Device' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'UML2_StateMachine' is a specialization of 'Behavior'.
+The class 'UML2_ProtocolStateMachine' is a specialization of 'StateMachine'.
+The class 'UML2_ExecutionEnvironment' is a specialization of 'Node'.
+The class 'UML2_Behavior' is a specialization of 'Class'.
+The class 'UML2_Device' is a specialization of 'Node'.
+The class 'UML2_AssociationClass' is a specialization of 'Class'.
+The class 'UML2_Stereotype' is a specialization of 'Class'.
+The class 'UML2_Activity' is a specialization of 'Behavior'.
+The class 'UML2_Node' is a specialization of 'Class'.
+The class 'UML2_Interaction' is a specialization of 'Behavior'.
+The class 'UML2_Component' is a specialization of 'Class'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML2_Reception' and 'UML2_Class'. From 'UML2_Reception', the role 'UML2_Reception' has cardinality 0..*, and from 'UML2_Class', the role 'UML2_Class' has cardinality 0..*.

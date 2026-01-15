@@ -1,0 +1,52 @@
+The domain model 'TestPackage' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'SuperClass' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_TestClass' represents an important domain concept.
+It does not declare any attributes.
+
+'UberClass' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_UberClass' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_TestInterface' represents an important domain concept.
+It has one attribute: 'testAttr', which is of type str.
+
+'TestPackage_SubPackage_SubTestInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_SubPackage_SubTestClass' represents an important domain concept.
+It does not declare any attributes.
+
+'SubTestClass' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_SuperClass' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TestEnum' is defined but does not specify any literals.
+The enumeration 'SubTestEnum' is defined but does not specify any literals.
+
+The model also captures inheritance relationships between classes.
+The class 'TestPackage_TestClass' is a specialization of 'SuperClass'.
+The class 'TestPackage_TestClass' is a specialization of 'UberClass'.
+The class 'TestPackage_TestInterface' is a specialization of 'SuperClass'.
+
+Relationships between classes are modeled using associations.
+An association connects 'TestPackage_TestClass' and 'SubTestClass'. From 'TestPackage_TestClass', the role 'TestPackage_TestClass' has cardinality 0..*, and from 'SubTestClass', the role 'SubTestClass' has cardinality 0..*.
+An association connects 'TestPackage_TestClass' and 'TestPackage_TestInterface'. From 'TestPackage_TestClass', the role 'TestPackage_TestClass2' has cardinality 0..*, and from 'TestPackage_TestInterface', the role 'TestPackage_TestInterface' has cardinality 0..*.
+An association connects 'TestPackage_TestInterface' and 'TestPackage_TestClass'. From 'TestPackage_TestInterface', the role 'TestPackage_TestInterface5' has cardinality 0..*, and from 'TestPackage_TestClass', the role 'TestPackage_TestClass4' has cardinality 0..*.
+An association connects 'TestPackage_TestClass' and 'TestPackage_TestInterface'. From 'TestPackage_TestClass', the role 'TestPackage_TestClass7' has cardinality 0..*, and from 'TestPackage_TestInterface', the role 'TestPackage_TestInterface8' has cardinality 0..*.
+An association connects 'TestPackage_TestClass' and 'TestPackage_TestInterface'. From 'TestPackage_TestClass', the role 'TestPackage_TestClass10' has cardinality 0..*, and from 'TestPackage_TestInterface', the role 'TestPackage_TestInterface11' has cardinality 0..*.
+An association connects 'TestPackage_TestInterface' and 'TestPackage_TestClass'. From 'TestPackage_TestInterface', the role 'TestPackage_TestInterface14' has cardinality 0..*, and from 'TestPackage_TestClass', the role 'TestPackage_TestClass13' has cardinality 0..*.
+An association connects 'TestPackage_TestInterface' and 'TestPackage_TestClass'. From 'TestPackage_TestInterface', the role 'TestPackage_TestInterface17' has cardinality 0..*, and from 'TestPackage_TestClass', the role 'TestPackage_TestClass16' has cardinality 0..*.
+An association connects 'TestPackage_TestClass' and 'TestPackage_TestInterface'. From 'TestPackage_TestClass', the role 'TestPackage_TestClass19' has cardinality 0..*, and from 'TestPackage_TestInterface', the role 'TestPackage_TestInterface20' has cardinality 0..*.
+An association connects 'TestPackage_TestInterface' and 'TestPackage_TestClass'. From 'TestPackage_TestInterface', the role 'TestPackage_TestInterface23' has cardinality 0..*, and from 'TestPackage_TestClass', the role 'TestPackage_TestClass22' has cardinality 0..*.
+An association connects 'TestPackage_TestInterface' and 'TestPackage_TestClass'. From 'TestPackage_TestInterface', the role 'TestPackage_TestInterface26' has cardinality 0..*, and from 'TestPackage_TestClass', the role 'TestPackage_TestClass25' has cardinality 0..*.
+An association connects 'TestPackage_TestInterface' and 'TestPackage_TestClass'. From 'TestPackage_TestInterface', the role 'TestPackage_TestInterface29' has cardinality 0..*, and from 'TestPackage_TestClass', the role 'TestPackage_TestClass28' has cardinality 0..*.

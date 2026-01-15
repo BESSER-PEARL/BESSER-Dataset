@@ -1,0 +1,175 @@
+The domain model 'aredsl' describes the core structural elements and their relationships within the system.
+
+The model defines 40 main class(es).
+
+'NodeStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'aredsl_Layer' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'semantics', which is of type str; 'id', which is of type str.
+
+'aredsl_MarkerBasedTrackerAction' represents an important domain concept.
+It has one attribute: 'markerId', which is of type int.
+
+'aredsl_Editor' represents an important domain concept.
+It has the following attributes: 'fileExtension', which is of type str; 'name', which is of type str; 'description', which is of type str; 'queryLanguageKind', which is of type str.
+
+'aredsl_EdgeStyle' represents an important domain concept.
+It has the following attributes: 'width', which is of type int; 'semanticCondition', which is of type str; 'color', which is of type str; 'kind', which is of type str.
+
+'aredsl_ChangeContextOperation' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'aredsl_Edge' represents an important domain concept.
+It has the following attributes: 'destinationSemantics', which is of type str; 'description', which is of type str; 'id', which is of type str; 'originSemantics', which is of type str.
+
+'aredsl_MentalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'aredsl_Behaviour' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'aredsl_SensorBasedAction' represents an important domain concept.
+It does not declare any attributes.
+
+'aredsl_TactileAction' represents an important domain concept.
+It does not declare any attributes.
+
+'aredsl_SupportOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'aredsl_MoveElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TrackerAction' represents an important domain concept.
+It does not declare any attributes.
+
+'aredsl_ShowSystemMenu' represents an important domain concept.
+It does not declare any attributes.
+
+'aredsl_Model3DNodeStyle' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+'aredsl_Exit' represents an important domain concept.
+It does not declare any attributes.
+
+'aredsl_Tool' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'targetPrecondition', which is of type str; 'id', which is of type str; 'precondition', which is of type str.
+
+'aredsl_Node' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'semantics', which is of type str; 'description', which is of type str; 'contaimentKind', which is of type str.
+
+'aredsl_Action' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'aredsl_UnsetOperation' represents an important domain concept.
+It has the following attributes: 'feature', which is of type str; 'constraint', which is of type str.
+
+'SupportOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'aredsl_Image2DNodeStyle' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+'aredsl_VoiceAction' represents an important domain concept.
+It does not declare any attributes.
+
+'aredsl_Label' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'semantics', which is of type str; 'description', which is of type str.
+
+'aredsl_CreateInstanceOperation' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'feature', which is of type str; 'name', which is of type str.
+
+'aredsl_GeometricShapeNodeStyle' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'kind', which is of type str; 'outline', which is of type str.
+
+'aredsl_SetOperation' represents an important domain concept.
+It has the following attributes: 'feature', which is of type str; 'constraint', which is of type str; 'value', which is of type str.
+
+'aredsl_TrackerAction' represents an important domain concept.
+It does not declare any attributes.
+
+'aredsl_DomainOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'aredsl_ToolSet' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'description', which is of type str.
+
+'aredsl_NodeStyle' represents an important domain concept.
+It has the following attributes: 'height', which is of type int; 'width', which is of type int; 'semanticCondition', which is of type str.
+
+'aredsl_RemoveOperation' represents an important domain concept.
+It has one attribute: 'constraint', which is of type str.
+
+'aredsl_GestureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'aredsl_ArrangeElements' represents an important domain concept.
+It does not declare any attributes.
+
+'aredsl_LabelStyle' represents an important domain concept.
+It has the following attributes: 'height', which is of type int; 'semanticCondition', which is of type str; 'color', which is of type str.
+
+'Behaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'aredsl_MarkerLessTrackerAction' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ContainmentKind' defines the following possible values: 'HORIZONTAL_ARRANGEMENT', 'VERTICAL_ARRANGEMENT', 'EXTERNAL_LINK', 'FREE'.
+The enumeration 'ShapeKind' defines the following possible values: 'SQUARE', 'RECTANGLE', 'DIAMOND', 'CIRCLE', 'ELLIPSE', 'TRIANGLE'.
+The enumeration 'OutlineKind' defines the following possible values: 'SIMPLE', 'NONE', 'DOUBLE'.
+The enumeration 'LineKind' defines the following possible values: 'DASHED', 'SOLID', 'DOTTED'.
+The enumeration 'QueryLanguageKind' defines the following possible values: 'JPQL', 'SQL', 'AQL', 'OCL', 'XPATH_XQUERY', 'LINQ'.
+The enumeration 'IntegrityRestrictionKind' defines the following possible values: 'NO_ACTION', 'CASCADE', 'SET_NULL'.
+
+The model also captures inheritance relationships between classes.
+The class 'aredsl_Model3DNodeStyle' is a specialization of 'NodeStyle'.
+The class 'aredsl_Image2DNodeStyle' is a specialization of 'NodeStyle'.
+The class 'aredsl_GeometricShapeNodeStyle' is a specialization of 'NodeStyle'.
+The class 'aredsl_CreateInstanceOperation' is a specialization of 'DomainOperation'.
+The class 'aredsl_DomainOperation' is a specialization of 'Behaviour'.
+The class 'aredsl_RemoveOperation' is a specialization of 'DomainOperation'.
+The class 'aredsl_SetOperation' is a specialization of 'DomainOperation'.
+The class 'aredsl_UnsetOperation' is a specialization of 'DomainOperation'.
+The class 'aredsl_ChangeContextOperation' is a specialization of 'DomainOperation'.
+The class 'aredsl_MarkerBasedTrackerAction' is a specialization of 'TrackerAction'.
+The class 'aredsl_MarkerLessTrackerAction' is a specialization of 'TrackerAction'.
+The class 'aredsl_SensorBasedAction' is a specialization of 'Action'.
+The class 'aredsl_GestureAction' is a specialization of 'Action'.
+The class 'aredsl_VoiceAction' is a specialization of 'Action'.
+The class 'aredsl_TrackerAction' is a specialization of 'Action'.
+The class 'aredsl_MentalAction' is a specialization of 'Action'.
+The class 'aredsl_TactileAction' is a specialization of 'Action'.
+The class 'aredsl_SupportOperation' is a specialization of 'Behaviour'.
+The class 'aredsl_MoveElement' is a specialization of 'SupportOperation'.
+The class 'aredsl_ShowSystemMenu' is a specialization of 'SupportOperation'.
+The class 'aredsl_ArrangeElements' is a specialization of 'SupportOperation'.
+The class 'aredsl_Exit' is a specialization of 'SupportOperation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'aredsl_Editor' and 'aredsl_Layer'. From 'aredsl_Editor', the role 'aredsl_Editor' has cardinality 0..*, and from 'aredsl_Layer', the role 'aredsl_Layer' has cardinality 0..*.
+An association connects 'aredsl_Editor' and 'aredsl_ToolSet'. From 'aredsl_Editor', the role 'aredsl_Editor2' has cardinality 0..*, and from 'aredsl_ToolSet', the role 'aredsl_ToolSet' has cardinality 0..*.
+An association connects 'aredsl_Node' and 'aredsl_Layer'. From 'aredsl_Node', the role 'aredsl_Node' has cardinality 0..*, and from 'aredsl_Layer', the role 'aredsl_Layer4' has cardinality 0..*.
+An association connects 'aredsl_Layer' and 'aredsl_Edge'. From 'aredsl_Layer', the role 'aredsl_Layer6' has cardinality 0..*, and from 'aredsl_Edge', the role 'aredsl_Edge' has cardinality 0..*.
+An association connects 'aredsl_TrackerAction' and 'aredsl_Layer'. From 'aredsl_TrackerAction', the role 'aredsl_TrackerAction' has cardinality 0..*, and from 'aredsl_Layer', the role 'aredsl_Layer8' has cardinality 0..*.
+An association connects 'aredsl_NodeStyle' and 'aredsl_Node'. From 'aredsl_NodeStyle', the role 'aredsl_NodeStyle' has cardinality 0..*, and from 'aredsl_Node', the role 'aredsl_Node10' has cardinality 0..*.
+An association connects 'aredsl_Label' and 'aredsl_Node'. From 'aredsl_Label', the role 'aredsl_Label' has cardinality 0..*, and from 'aredsl_Node', the role 'aredsl_Node12' has cardinality 0..*.
+An association connects 'aredsl_Node' and 'aredsl_Node'. From 'aredsl_Node', the role 'aredsl_Node15' has cardinality 0..*, and from 'aredsl_Node', the role 'aredsl_Node13' has cardinality 0..*.
+An association connects 'aredsl_Label' and 'aredsl_LabelStyle'. From 'aredsl_Label', the role 'aredsl_Label17' has cardinality 0..*, and from 'aredsl_LabelStyle', the role 'aredsl_LabelStyle' has cardinality 0..*.
+An association connects 'aredsl_Edge' and 'aredsl_EdgeStyle'. From 'aredsl_Edge', the role 'aredsl_Edge19' has cardinality 0..*, and from 'aredsl_EdgeStyle', the role 'aredsl_EdgeStyle' has cardinality 0..*.
+An association connects 'aredsl_Label' and 'aredsl_Edge'. From 'aredsl_Label', the role 'aredsl_Label22' has cardinality 0..*, and from 'aredsl_Edge', the role 'aredsl_Edge21' has cardinality 0..*.
+An association connects 'aredsl_Edge' and 'aredsl_Node'. From 'aredsl_Edge', the role 'aredsl_Edge24' has cardinality 0..*, and from 'aredsl_Node', the role 'aredsl_Node25' has cardinality 0..*.
+An association connects 'aredsl_Edge' and 'aredsl_Node'. From 'aredsl_Edge', the role 'aredsl_Edge27' has cardinality 0..*, and from 'aredsl_Node', the role 'aredsl_Node28' has cardinality 0..*.
+An association connects 'aredsl_Edge' and 'aredsl_Label'. From 'aredsl_Edge', the role 'aredsl_Edge30' has cardinality 0..*, and from 'aredsl_Label', the role 'aredsl_Label31' has cardinality 0..*.
+An association connects 'aredsl_Edge' and 'aredsl_Label'. From 'aredsl_Edge', the role 'aredsl_Edge33' has cardinality 0..*, and from 'aredsl_Label', the role 'aredsl_Label34' has cardinality 0..*.
+An association connects 'aredsl_Tool' and 'aredsl_Behaviour'. From 'aredsl_Tool', the role 'aredsl_Tool' has cardinality 0..*, and from 'aredsl_Behaviour', the role 'aredsl_Behaviour' has cardinality 0..*.
+An association connects 'aredsl_Tool' and 'aredsl_Action'. From 'aredsl_Tool', the role 'aredsl_Tool37' has cardinality 0..*, and from 'aredsl_Action', the role 'aredsl_Action' has cardinality 0..*.
+An association connects 'aredsl_ToolSet' and 'aredsl_Tool'. From 'aredsl_ToolSet', the role 'aredsl_ToolSet39' has cardinality 0..*, and from 'aredsl_Tool', the role 'aredsl_Tool40' has cardinality 0..*.

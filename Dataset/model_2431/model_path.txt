@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jesusc/rubytl/age/gts.rubytl.launching.core/test/gts/rubytl/launching/core/data/class2table/TableM.ecore

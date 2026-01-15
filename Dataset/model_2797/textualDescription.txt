@@ -1,0 +1,13 @@
+The domain model 'TreeNodeXML' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'TreeNodeXML_XMLTreeNode' represents an important domain concept.
+It has the following attributes: 'LocalName', which is of type str; 'ElementText', which is of type str.
+
+'TreeNodeXML_TreeNodeAtom' represents an important domain concept.
+It has the following attributes: 'AttributeLocalName', which is of type str; 'AttributeValue', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'TreeNodeXML_XMLTreeNode' and 'TreeNodeXML_XMLTreeNode'. From 'TreeNodeXML_XMLTreeNode', the role 'TreeNodeXML_XMLTreeNode0' has cardinality 0..*, and from 'TreeNodeXML_XMLTreeNode', the role 'TreeNodeXML_XMLTreeNode' has cardinality 0..*.
+An association connects 'TreeNodeXML_TreeNodeAtom' and 'TreeNodeXML_XMLTreeNode'. From 'TreeNodeXML_TreeNodeAtom', the role 'TreeNodeXML_TreeNodeAtom' has cardinality 0..*, and from 'TreeNodeXML_XMLTreeNode', the role 'TreeNodeXML_XMLTreeNode3' has cardinality 0..*.

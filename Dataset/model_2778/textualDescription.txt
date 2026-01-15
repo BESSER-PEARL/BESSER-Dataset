@@ -1,0 +1,38 @@
+The domain model 'testbidirectionalrelation' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'testbidirectionalrelation_ConceptD' represents an important domain concept.
+It does not declare any attributes.
+
+'testbidirectionalrelation_ConceptG' represents an important domain concept.
+It does not declare any attributes.
+
+'testbidirectionalrelation_ConceptC' represents an important domain concept.
+It does not declare any attributes.
+
+'testbidirectionalrelation_ConceptE' represents an important domain concept.
+It does not declare any attributes.
+
+'testbidirectionalrelation_ConceptF' represents an important domain concept.
+It does not declare any attributes.
+
+'testbidirectionalrelation_ConceptB' represents an important domain concept.
+It does not declare any attributes.
+
+'testbidirectionalrelation_ConceptA' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'testbidirectionalrelation_ConceptA' and 'testbidirectionalrelation_ConceptB'. From 'testbidirectionalrelation_ConceptA', the role 'testbidirectionalrelation_ConceptA' has cardinality 0..*, and from 'testbidirectionalrelation_ConceptB', the role 'testbidirectionalrelation_ConceptB' has cardinality 0..*.
+An association connects 'testbidirectionalrelation_ConceptC' and 'testbidirectionalrelation_ConceptA'. From 'testbidirectionalrelation_ConceptC', the role 'testbidirectionalrelation_ConceptC' has cardinality 0..*, and from 'testbidirectionalrelation_ConceptA', the role 'testbidirectionalrelation_ConceptA2' has cardinality 0..*.
+An association connects 'testbidirectionalrelation_ConceptD' and 'testbidirectionalrelation_ConceptA'. From 'testbidirectionalrelation_ConceptD', the role 'testbidirectionalrelation_ConceptD' has cardinality 0..*, and from 'testbidirectionalrelation_ConceptA', the role 'testbidirectionalrelation_ConceptA4' has cardinality 0..*.
+An association connects 'testbidirectionalrelation_ConceptA' and 'testbidirectionalrelation_ConceptE'. From 'testbidirectionalrelation_ConceptA', the role 'testbidirectionalrelation_ConceptA6' has cardinality 0..*, and from 'testbidirectionalrelation_ConceptE', the role 'testbidirectionalrelation_ConceptE' has cardinality 0..*.
+An association connects 'testbidirectionalrelation_ConceptA' and 'testbidirectionalrelation_ConceptF'. From 'testbidirectionalrelation_ConceptA', the role 'testbidirectionalrelation_ConceptA8' has cardinality 0..*, and from 'testbidirectionalrelation_ConceptF', the role 'testbidirectionalrelation_ConceptF' has cardinality 0..*.
+An association connects 'testbidirectionalrelation_ConceptA' and 'testbidirectionalrelation_ConceptG'. From 'testbidirectionalrelation_ConceptA', the role 'testbidirectionalrelation_ConceptA10' has cardinality 0..*, and from 'testbidirectionalrelation_ConceptG', the role 'testbidirectionalrelation_ConceptG' has cardinality 0..*.
+An association connects 'testbidirectionalrelation_ConceptB' and 'testbidirectionalrelation_ConceptC'. From 'testbidirectionalrelation_ConceptB', the role 'conceptb' has cardinality 0..*, and from 'testbidirectionalrelation_ConceptC', the role 'ConceptC' has cardinality 0..*.
+An association connects 'testbidirectionalrelation_ConceptB' and 'testbidirectionalrelation_ConceptC'. From 'testbidirectionalrelation_ConceptB', the role 'ConceptB' has cardinality 0..*, and from 'testbidirectionalrelation_ConceptC', the role 'conceptc' has cardinality 0..*.
+An association connects 'testbidirectionalrelation_ConceptD' and 'testbidirectionalrelation_ConceptE'. From 'testbidirectionalrelation_ConceptD', the role 'conceptd' has cardinality 0..*, and from 'testbidirectionalrelation_ConceptE', the role 'ConceptE' has cardinality 0..*.
+An association connects 'testbidirectionalrelation_ConceptE' and 'testbidirectionalrelation_ConceptD'. From 'testbidirectionalrelation_ConceptE', the role 'concepte' has cardinality 0..*, and from 'testbidirectionalrelation_ConceptD', the role 'ConceptD' has cardinality 0..*.
+An association connects 'testbidirectionalrelation_ConceptG' and 'testbidirectionalrelation_ConceptF'. From 'testbidirectionalrelation_ConceptG', the role 'ConceptG' has cardinality 0..*, and from 'testbidirectionalrelation_ConceptF', the role 'conceptf' has cardinality 0..*.
+An association connects 'testbidirectionalrelation_ConceptG' and 'testbidirectionalrelation_ConceptF'. From 'testbidirectionalrelation_ConceptG', the role 'conceptg' has cardinality 0..*, and from 'testbidirectionalrelation_ConceptF', the role 'ConceptF' has cardinality 0..*.

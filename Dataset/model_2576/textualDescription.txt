@@ -1,0 +1,1392 @@
+The domain model 'siddhi' describes the core structural elements and their relationships within the system.
+
+The model defines 307 main class(es).
+
+'INNER' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_Filter' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_AGGREGATE' represents an important domain concept.
+It has one attribute: 'agrregate', which is of type str.
+
+'siddhi_DOUBLE' represents an important domain concept.
+It has one attribute: 'double', which is of type str.
+
+'siddhi_GroupBy' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicAbsentPatternSource' represents an important domain concept.
+It does not declare any attributes.
+
+'PARTITION' represents an important domain concept.
+It does not declare any attributes.
+
+'INTO' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_MathAddsubOperation' represents an important domain concept.
+It has the following attributes: 'substract', which is of type str; 'add', which is of type str.
+
+'siddhi_AttributeReference' represents an important domain concept.
+It has the following attributes: 'hash1', which is of type str; 'hash2', which is of type str; 'name', which is of type str.
+
+'EverySequenceSourceChain' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_SNAPSHOT' represents an important domain concept.
+It has one attribute: 'snapshot', which is of type str.
+
+'EVENTS' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_PatternCollectionStatefulSource' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_AggregationTimeInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_OutAttr' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_LogicalStatefulSource' represents an important domain concept.
+It does not declare any attributes.
+
+'PatternCollectionStatefulSource' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_BasicAbsentPatternSource' represents an important domain concept.
+It does not declare any attributes.
+
+'STRINGS' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_INNER' represents an important domain concept.
+It has one attribute: 'inner', which is of type str.
+
+'JOIN' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'DAYS' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_STREAM' represents an important domain concept.
+It has one attribute: 'str', which is of type str.
+
+'siddhi_FOR' represents an important domain concept.
+It has one attribute: 'for', which is of type str.
+
+'siddhi_DefinitionTable' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_AT' represents an important domain concept.
+It has one attribute: 'at', which is of type str.
+
+'PatternStream' represents an important domain concept.
+It does not declare any attributes.
+
+'SequenceCollectionStatefulSource' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_Name' represents an important domain concept.
+It has one attribute: 'na', which is of type str.
+
+'DEFINE' represents an important domain concept.
+It does not declare any attributes.
+
+'HAVING' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_MathOtherOperations' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_Source1OrStandardStatefulSource' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'siddhi_INTS' represents an important domain concept.
+It has one attribute: 'int', which is of type str.
+
+'siddhi_ON' represents an important domain concept.
+It has one attribute: 'on', which is of type str.
+
+'siddhi_EveryAbsentPatternSource' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_FunctionName' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'siddhi_AttributeType' represents an important domain concept.
+It does not declare any attributes.
+
+'IS' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_MonthValue' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_AGGREGATION' represents an important domain concept.
+It has one attribute: 'aggre', which is of type str.
+
+'siddhi_AppAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_TimeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_BasicSourceStreamHandlers1' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicalAbsentStatefulSource' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_LONG' represents an important domain concept.
+It has one attribute: 'long', which is of type str.
+
+'siddhi_ConstantValue' represents an important domain concept.
+It has one attribute: 'siv', which is of type str.
+
+'siddhi_RETURN' represents an important domain concept.
+It has one attribute: 'return', which is of type str.
+
+'PartitionWithStream' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_MathLogicalOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'AGGREGATION' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_DAYS' represents an important domain concept.
+It has the following attributes: 'days', which is of type str; 'day', which is of type str.
+
+'siddhi_MathEqualOperation' represents an important domain concept.
+It has the following attributes: 'not_eq', which is of type str; 'eq', which is of type str.
+
+'siddhi_OR' represents an important domain concept.
+It has one attribute: 'or', which is of type str.
+
+'siddhi_PatternSource' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_OutputRateType' represents an important domain concept.
+It does not declare any attributes.
+
+'FULL' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_FALSE' represents an important domain concept.
+It has one attribute: 'fals', which is of type str.
+
+'AGGREGATE' represents an important domain concept.
+It does not declare any attributes.
+
+'LONG' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_SequenceCollectionStatefulSource' represents an important domain concept.
+It does not declare any attributes.
+
+'RETURN' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_WITHIN' represents an important domain concept.
+It has one attribute: 'within', which is of type str.
+
+'YEARS' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_SecondValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Name' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_YearValue' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_HAVING' represents an important domain concept.
+It has one attribute: 'having', which is of type str.
+
+'siddhi_HOURS' represents an important domain concept.
+It has the following attributes: 'hours', which is of type str; 'hour', which is of type str.
+
+'siddhi_StreamReference' represents an important domain concept.
+It has one attribute: 'hash', which is of type str.
+
+'PER' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_AnnotationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_JoinStream' represents an important domain concept.
+It does not declare any attributes.
+
+'MathAddsubOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_WeekValue' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_DefinitionTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'AT' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_AggregationTimeRange' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_OF' represents an important domain concept.
+It has one attribute: 'of', which is of type str.
+
+'EveryAbsentPatternSource' represents an important domain concept.
+It does not declare any attributes.
+
+'TABLE' represents an important domain concept.
+It does not declare any attributes.
+
+'WITH' represents an important domain concept.
+It does not declare any attributes.
+
+'GROUP' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_HourValue' represents an important domain concept.
+It does not declare any attributes.
+
+'OBJECT' represents an important domain concept.
+It does not declare any attributes.
+
+'SignedFloatValue' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_PropertyName' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_LeftAbsentSequenceSource' represents an important domain concept.
+It has the following attributes: 'comma', which is of type str; 'comm', which is of type str; 'op', which is of type str; 'cp', which is of type str.
+
+'siddhi_SignedDoubleValue' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_INTO' represents an important domain concept.
+It has one attribute: 'into', which is of type str.
+
+'siddhi_NotOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'SET' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_OBJECT' represents an important domain concept.
+It has one attribute: 'object', which is of type str.
+
+'FROM' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_WITH' represents an important domain concept.
+It has one attribute: 'wi', which is of type str.
+
+'siddhi_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_Collect' represents an important domain concept.
+It has the following attributes: 'end', which is of type str; 'start', which is of type str.
+
+'MathOtherOperations' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_GROUP' represents an important domain concept.
+It has one attribute: 'group', which is of type str.
+
+'siddhi_EverySequenceSourceChain' represents an important domain concept.
+It does not declare any attributes.
+
+'TRUE' represents an important domain concept.
+It does not declare any attributes.
+
+'LAST' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_Keyword' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_WINDOW' represents an important domain concept.
+It has one attribute: 'window', which is of type str.
+
+'siddhi_DefinitionFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_PARTITION' represents an important domain concept.
+It has one attribute: 'partition', which is of type str.
+
+'siddhi_GroupByQuerySelection' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_RightAbsentSequenceSource' represents an important domain concept.
+It has the following attributes: 'comm', which is of type str; 'cp', which is of type str; 'op', which is of type str; 'comma', which is of type str.
+
+'CURRENT' represents an important domain concept.
+It does not declare any attributes.
+
+'HOURS' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_OutputAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_SELECT' represents an important domain concept.
+It has one attribute: 'select', which is of type str.
+
+'siddhi_SetAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'SNAPSHOT' represents an important domain concept.
+It does not declare any attributes.
+
+'JoinStream' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_BasicSourceStreamHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'TRIGGER' represents an important domain concept.
+It does not declare any attributes.
+
+'FIRST' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_FeaturesOrOutAttr' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'WEEKS' represents an important domain concept.
+It does not declare any attributes.
+
+'FOR' represents an important domain concept.
+It does not declare any attributes.
+
+'LeftAbsentSequenceSource' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_LEFT' represents an important domain concept.
+It has one attribute: 'left', which is of type str.
+
+'siddhi_SiddhiQL' represents an important domain concept.
+It does not declare any attributes.
+
+'MINUTES' represents an important domain concept.
+It does not declare any attributes.
+
+'SELECT' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_F' represents an important domain concept.
+It has one attribute: 'f', which is of type str.
+
+'siddhi_RightAbsentPatternSource1' represents an important domain concept.
+It has one attribute: 'fb', which is of type str.
+
+'siddhi_EXPIRED' represents an important domain concept.
+It has one attribute: 'expired', which is of type str.
+
+'RAW' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_PLAN' represents an important domain concept.
+It has one attribute: 'plan', which is of type str.
+
+'siddhi_OutputRate' represents an important domain concept.
+It does not declare any attributes.
+
+'BOOL' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_DEFINE' represents an important domain concept.
+It has one attribute: 'define', which is of type str.
+
+'siddhi_PatternSourceChain' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'BY' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_SignedLongValue' represents an important domain concept.
+It does not declare any attributes.
+
+'FeaturesOrOutAttr' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_FeaturesOrOutAttrReference' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_E' represents an important domain concept.
+It has one attribute: 'e', which is of type str.
+
+'SignedLongValue' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_LAST' represents an important domain concept.
+It has one attribute: 'last', which is of type str.
+
+'siddhi_STRINGS' represents an important domain concept.
+It has one attribute: 'string', which is of type str.
+
+'NULL' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_DayValue' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_OUTER' represents an important domain concept.
+It has one attribute: 'outer', which is of type str.
+
+'siddhi_StreamFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_AbsentPatternSourceChain' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardStream' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_IS' represents an important domain concept.
+It has one attribute: 'is', which is of type str.
+
+'siddhi_Win' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_NULL' represents an important domain concept.
+It has one attribute: 'null', which is of type str.
+
+'siddhi_YEARS' represents an important domain concept.
+It has the following attributes: 'years', which is of type str; 'year', which is of type str.
+
+'siddhi_LanguageName' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'siddhi_L' represents an important domain concept.
+It has one attribute: 'l', which is of type str.
+
+'FUNCTION' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_PartitionWithStream' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_EVENTS' represents an important domain concept.
+It has one attribute: 'events', which is of type str.
+
+'MILLISECONDS' represents an important domain concept.
+It does not declare any attributes.
+
+'EveryAbsentSequenceSourceChain' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_SequenceStream' represents an important domain concept.
+It does not declare any attributes.
+
+'WITHIN' represents an important domain concept.
+It does not declare any attributes.
+
+'RightAbsentSequenceSource' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_AttributeNameReference' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_FLOAT' represents an important domain concept.
+It has one attribute: 'float', which is of type str.
+
+'siddhi_JoinSource' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_FunctionId' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_END' represents an important domain concept.
+It has one attribute: 'end', which is of type str.
+
+'siddhi_MathOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_WEEKS' represents an important domain concept.
+It has the following attributes: 'weeks', which is of type str; 'week', which is of type str.
+
+'siddhi_BasicSource' represents an important domain concept.
+It does not declare any attributes.
+
+'LEFT' represents an important domain concept.
+It does not declare any attributes.
+
+'SignedDoubleValue' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_StandardStream' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_DOUBLE_LITERAL' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_FunctionNamespace' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_NOT' represents an important domain concept.
+It has one attribute: 'not1', which is of type str.
+
+'LeftAbsentPatternSource' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_MathInOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_RightAbsentSequenceSource1' represents an important domain concept.
+It does not declare any attributes.
+
+'SECONDS' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_SET' represents an important domain concept.
+It has one attribute: 'set', which is of type str.
+
+'siddhi_MathDivmulOperation' represents an important domain concept.
+It has the following attributes: 'mod', which is of type str; 'multiply', which is of type str; 'devide', which is of type str.
+
+'siddhi_BasicSourceStreamHandlers' represents an important domain concept.
+It does not declare any attributes.
+
+'AppAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_Features' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_BY' represents an important domain concept.
+It has one attribute: 'by', which is of type str.
+
+'STREAM' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_AbsentSequenceSourceChain' represents an important domain concept.
+It does not declare any attributes.
+
+'RIGHT' represents an important domain concept.
+It does not declare any attributes.
+
+'MathDivmulOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_SignedFloatValue' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_ConditionRanges' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_AND' represents an important domain concept.
+It has one attribute: 'and', which is of type str.
+
+'BEGIN' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_QueryOutput' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_ALL' represents an important domain concept.
+It has one attribute: 'all', which is of type str.
+
+'siddhi_TABLE' represents an important domain concept.
+It has one attribute: 'table', which is of type str.
+
+'siddhi_AggregationTime' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_MILLISECONDS' represents an important domain concept.
+It has the following attributes: 'millisec', which is of type str; 'milliseconds', which is of type str; 'millisecond', which is of type str.
+
+'FLOAT' represents an important domain concept.
+It does not declare any attributes.
+
+'DOUBLE' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_ForTime' represents an important domain concept.
+It does not declare any attributes.
+
+'INTS' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_EVERY' represents an important domain concept.
+It has one attribute: 'every1', which is of type str.
+
+'siddhi_SetClause' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_DefinitionWindow' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_FunctionBody' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'siddhi_MathGtLtOperation' represents an important domain concept.
+It has the following attributes: 'gt_eq', which is of type str; 'lt', which is of type str; 'gt', which is of type str; 'lt_eq', which is of type str.
+
+'RightAbsentPatternSource' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_IN' represents an important domain concept.
+It has one attribute: 'in', which is of type str.
+
+'siddhi_BEGIN' represents an important domain concept.
+It has one attribute: 'begin', which is of type str.
+
+'siddhi_ExecPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'EXPIRED' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_MONTHS' represents an important domain concept.
+It has the following attributes: 'months', which is of type str; 'month', which is of type str.
+
+'siddhi_AttributeList' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_Per1' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_PatternStream' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_StandardStatefulSource' represents an important domain concept.
+It has the following attributes: 'zero_or_more', which is of type str; 'zero_or_one', which is of type str; 'one_or_more', which is of type str.
+
+'siddhi_Query' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_QueryInput' represents an important domain concept.
+It does not declare any attributes.
+
+'SequenceSource' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_QuerySection' represents an important domain concept.
+It does not declare any attributes.
+
+'AbsentPatternSourceChain' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_TRIGGER' represents an important domain concept.
+It has one attribute: 'trigger', which is of type str.
+
+'siddhi_EveryPatternSourceChain' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'siddhi_UNIDIRECTIONAL' represents an important domain concept.
+It has one attribute: 'unidirectional', which is of type str.
+
+'siddhi_D' represents an important domain concept.
+It has one attribute: 'd', which is of type str.
+
+'WINDOW' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_AS' represents an important domain concept.
+It has one attribute: 'a', which is of type str.
+
+'siddhi_BOOL' represents an important domain concept.
+It has one attribute: 'bool', which is of type str.
+
+'siddhi_WithinTime' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_AttributeIndex' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_PER' represents an important domain concept.
+It has one attribute: 'per', which is of type str.
+
+'siddhi_NullCheck' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_DefinitionStream' represents an important domain concept.
+It does not declare any attributes.
+
+'SequenceSourceChain' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_FUNCTION' represents an important domain concept.
+It has one attribute: 'function', which is of type str.
+
+'DELETE' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_HavingExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_MainSource' represents an important domain concept.
+It does not declare any attributes.
+
+'SetAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'FALSE' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_RAW' represents an important domain concept.
+It has one attribute: 'raw', which is of type str.
+
+'siddhi_UPDATE' represents an important domain concept.
+It has one attribute: 'update', which is of type str.
+
+'siddhi_OutputEventType' represents an important domain concept.
+It does not declare any attributes.
+
+'INSERT' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_EveryAbsentSequenceSourceChain' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_MinuteValue' represents an important domain concept.
+It does not declare any attributes.
+
+'ALL' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_RIGHT' represents an important domain concept.
+It has one attribute: 'right', which is of type str.
+
+'UPDATE' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_LogicalAbsentStatefulSource' represents an important domain concept.
+It does not declare any attributes.
+
+'OUTPUT' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_DefinitionAggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_Source' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_APP' represents an important domain concept.
+It has one attribute: 'ap', which is of type str.
+
+'siddhi_ExecutionPlan' represents an important domain concept.
+It does not declare any attributes.
+
+'MONTHS' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_MINUTES' represents an important domain concept.
+It has the following attributes: 'minutes', which is of type str; 'minute', which is of type str; 'min', which is of type str.
+
+'AggregationTime' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_TriggerName' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'siddhi_FLOAT_LITERAL' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_RightAbsentPatternSource' represents an important domain concept.
+It has one attribute: 'fb2', which is of type str.
+
+'siddhi_LeftAbsentPatternSource1' represents an important domain concept.
+It has one attribute: 'fb', which is of type str.
+
+'siddhi_FunctionOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_AnonymousStream' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_JOIN' represents an important domain concept.
+It has one attribute: 'join', which is of type str.
+
+'siddhi_ConditionRange' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_ExecutionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_CURRENT' represents an important domain concept.
+It has one attribute: 'currt', which is of type str.
+
+'MathOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_PropertyValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Source1OrStandardStatefulSource' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_LeftAbsentSequenceSource1' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_Target' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_OUTPUT' represents an important domain concept.
+It has one attribute: 'output', which is of type str.
+
+'siddhi_SECONDS' represents an important domain concept.
+It has the following attributes: 'second', which is of type str; 'seconds', which is of type str; 'sec', which is of type str.
+
+'siddhi_LONG_LITERAL' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_Source1' represents an important domain concept.
+It has one attribute: 'inner', which is of type str.
+
+'siddhi_joins' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_MillisecondValue' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_DELETE' represents an important domain concept.
+It has one attribute: 'delete', which is of type str.
+
+'siddhi_FULL' represents an important domain concept.
+It has one attribute: 'full', which is of type str.
+
+'siddhi_WithinTimeRange' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_SequenceSourceChain' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'JoinSource' represents an important domain concept.
+It does not declare any attributes.
+
+'OUTER' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_INSERT' represents an important domain concept.
+It has one attribute: 'insert', which is of type str.
+
+'siddhi_BoolValue' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_AggregationTimeDuration' represents an important domain concept.
+It does not declare any attributes.
+
+'END' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_LeftAbsentPatternSource' represents an important domain concept.
+It has one attribute: 'fb1', which is of type str.
+
+'siddhi_PropertySeparator' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_SourceOrEventReference' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_StringValue' represents an important domain concept.
+It has one attribute: 'sl', which is of type str.
+
+'siddhi_FIRST' represents an important domain concept.
+It has one attribute: 'first', which is of type str.
+
+'siddhi_StreamAlias' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_SequenceSource' represents an important domain concept.
+It does not declare any attributes.
+
+'siddhi_TRUE' represents an important domain concept.
+It has one attribute: 'tr', which is of type str.
+
+'siddhi_FROM' represents an important domain concept.
+It has one attribute: 'from', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'siddhi_DefinitionStream' is a specialization of 'DEFINE'.
+The class 'siddhi_DefinitionStream' is a specialization of 'STREAM'.
+The class 'siddhi_DefinitionTable' is a specialization of 'DEFINE'.
+The class 'siddhi_DefinitionTable' is a specialization of 'TABLE'.
+The class 'siddhi_DefinitionWindow' is a specialization of 'DEFINE'.
+The class 'siddhi_DefinitionWindow' is a specialization of 'WINDOW'.
+The class 'siddhi_DefinitionWindow' is a specialization of 'OUTPUT'.
+The class 'siddhi_DefinitionTrigger' is a specialization of 'DEFINE'.
+The class 'siddhi_DefinitionTrigger' is a specialization of 'TRIGGER'.
+The class 'siddhi_DefinitionTrigger' is a specialization of 'AT'.
+The class 'siddhi_DefinitionFunction' is a specialization of 'DEFINE'.
+The class 'siddhi_DefinitionFunction' is a specialization of 'FUNCTION'.
+The class 'siddhi_DefinitionFunction' is a specialization of 'RETURN'.
+The class 'siddhi_DefinitionAggregation' is a specialization of 'DEFINE'.
+The class 'siddhi_DefinitionAggregation' is a specialization of 'AGGREGATION'.
+The class 'siddhi_DefinitionAggregation' is a specialization of 'FROM'.
+The class 'siddhi_DefinitionAggregation' is a specialization of 'AGGREGATE'.
+The class 'siddhi_DefinitionAggregation' is a specialization of 'BY'.
+The class 'siddhi_AggregationTimeInterval' is a specialization of 'AggregationTime'.
+The class 'siddhi_AggregationTimeDuration' is a specialization of 'SECONDS'.
+The class 'siddhi_AggregationTimeDuration' is a specialization of 'MINUTES'.
+The class 'siddhi_AggregationTimeDuration' is a specialization of 'HOURS'.
+The class 'siddhi_AggregationTimeDuration' is a specialization of 'DAYS'.
+The class 'siddhi_AggregationTimeDuration' is a specialization of 'WEEKS'.
+The class 'siddhi_AggregationTimeDuration' is a specialization of 'MONTHS'.
+The class 'siddhi_AggregationTimeDuration' is a specialization of 'YEARS'.
+The class 'siddhi_AggregationTimeRange' is a specialization of 'AggregationTime'.
+The class 'siddhi_Features' is a specialization of 'FeaturesOrOutAttr'.
+The class 'siddhi_AttributeType' is a specialization of 'STRINGS'.
+The class 'siddhi_AttributeType' is a specialization of 'INTS'.
+The class 'siddhi_AttributeType' is a specialization of 'LONG'.
+The class 'siddhi_AttributeType' is a specialization of 'FLOAT'.
+The class 'siddhi_AttributeType' is a specialization of 'DOUBLE'.
+The class 'siddhi_AttributeType' is a specialization of 'BOOL'.
+The class 'siddhi_AttributeType' is a specialization of 'OBJECT'.
+The class 'siddhi_Source1' is a specialization of 'Source1OrStandardStatefulSource'.
+The class 'siddhi_ExecPartition' is a specialization of 'PARTITION'.
+The class 'siddhi_ExecPartition' is a specialization of 'WITH'.
+The class 'siddhi_ExecPartition' is a specialization of 'BEGIN'.
+The class 'siddhi_ExecPartition' is a specialization of 'END'.
+The class 'siddhi_ConditionRanges' is a specialization of 'PartitionWithStream'.
+The class 'siddhi_Query' is a specialization of 'FROM'.
+The class 'siddhi_QueryOutput' is a specialization of 'INSERT'.
+The class 'siddhi_QueryOutput' is a specialization of 'INTO'.
+The class 'siddhi_QueryOutput' is a specialization of 'DELETE'.
+The class 'siddhi_QueryOutput' is a specialization of 'FOR'.
+The class 'siddhi_QueryOutput' is a specialization of 'UPDATE'.
+The class 'siddhi_QueryOutput' is a specialization of 'RETURN'.
+The class 'siddhi_SetClause' is a specialization of 'SET'.
+The class 'siddhi_OutputEventType' is a specialization of 'ALL'.
+The class 'siddhi_OutputEventType' is a specialization of 'EVENTS'.
+The class 'siddhi_OutputEventType' is a specialization of 'RAW'.
+The class 'siddhi_OutputEventType' is a specialization of 'EXPIRED'.
+The class 'siddhi_OutputEventType' is a specialization of 'CURRENT'.
+The class 'siddhi_OutputRate' is a specialization of 'OUTPUT'.
+The class 'siddhi_OutputRate' is a specialization of 'EVENTS'.
+The class 'siddhi_OutputRate' is a specialization of 'SNAPSHOT'.
+The class 'siddhi_OutputRateType' is a specialization of 'ALL'.
+The class 'siddhi_OutputRateType' is a specialization of 'LAST'.
+The class 'siddhi_OutputRateType' is a specialization of 'FIRST'.
+The class 'siddhi_GroupByQuerySelection' is a specialization of 'SELECT'.
+The class 'siddhi_GroupBy' is a specialization of 'GROUP'.
+The class 'siddhi_GroupBy' is a specialization of 'BY'.
+The class 'siddhi_HavingExpr' is a specialization of 'HAVING'.
+The class 'siddhi_OutAttr' is a specialization of 'FeaturesOrOutAttr'.
+The class 'siddhi_SequenceSource' is a specialization of 'SequenceSourceChain'.
+The class 'siddhi_SequenceCollectionStatefulSource' is a specialization of 'SequenceSource'.
+The class 'siddhi_AnonymousStream' is a specialization of 'FROM'.
+The class 'siddhi_AnonymousStream' is a specialization of 'RETURN'.
+The class 'siddhi_EveryPatternSourceChain' is a specialization of 'PatternStream'.
+The class 'siddhi_LogicalStatefulSource' is a specialization of 'SequenceSource'.
+The class 'siddhi_LogicalAbsentStatefulSource' is a specialization of 'SequenceSource'.
+The class 'siddhi_AbsentPatternSourceChain' is a specialization of 'PatternStream'.
+The class 'siddhi_EveryAbsentPatternSource' is a specialization of 'AbsentPatternSourceChain'.
+The class 'siddhi_ForTime' is a specialization of 'FOR'.
+The class 'siddhi_LeftAbsentPatternSource' is a specialization of 'AbsentPatternSourceChain'.
+The class 'siddhi_RightAbsentPatternSource' is a specialization of 'AbsentPatternSourceChain'.
+The class 'siddhi_WithinTimeRange' is a specialization of 'WITHIN'.
+The class 'siddhi_Per1' is a specialization of 'PER'.
+The class 'siddhi_StreamAlias' is a specialization of 'Source1OrStandardStatefulSource'.
+The class 'siddhi_WithinTime' is a specialization of 'WITHIN'.
+The class 'siddhi_joins' is a specialization of 'LEFT'.
+The class 'siddhi_joins' is a specialization of 'OUTER'.
+The class 'siddhi_joins' is a specialization of 'JOIN'.
+The class 'siddhi_joins' is a specialization of 'RIGHT'.
+The class 'siddhi_joins' is a specialization of 'FULL'.
+The class 'siddhi_joins' is a specialization of 'INNER'.
+The class 'siddhi_StandardStream' is a specialization of 'JoinStream'.
+The class 'siddhi_MainSource' is a specialization of 'JoinSource'.
+The class 'siddhi_MainSource' is a specialization of 'StandardStream'.
+The class 'siddhi_BasicSourceStreamHandlers1' is a specialization of 'WINDOW'.
+The class 'siddhi_Win' is a specialization of 'WINDOW'.
+The class 'siddhi_MathOperation' is a specialization of 'Expression'.
+The class 'siddhi_MathAddsubOperation' is a specialization of 'MathOperation'.
+The class 'siddhi_MathDivmulOperation' is a specialization of 'MathAddsubOperation'.
+The class 'siddhi_MathOtherOperations' is a specialization of 'MathDivmulOperation'.
+The class 'siddhi_NullCheck' is a specialization of 'MathOtherOperations'.
+The class 'siddhi_NullCheck' is a specialization of 'IS'.
+The class 'siddhi_NullCheck' is a specialization of 'NULL'.
+The class 'siddhi_AttributeReference' is a specialization of 'SetAssignment'.
+The class 'siddhi_StandardStatefulSource' is a specialization of 'SequenceSource'.
+The class 'siddhi_StandardStatefulSource' is a specialization of 'SequenceCollectionStatefulSource'.
+The class 'siddhi_StandardStatefulSource' is a specialization of 'PatternCollectionStatefulSource'.
+The class 'siddhi_StandardStatefulSource' is a specialization of 'Source1OrStandardStatefulSource'.
+The class 'siddhi_AttributeIndex' is a specialization of 'LAST'.
+The class 'siddhi_BoolValue' is a specialization of 'TRUE'.
+The class 'siddhi_BoolValue' is a specialization of 'FALSE'.
+The class 'siddhi_YearValue' is a specialization of 'YEARS'.
+The class 'siddhi_MonthValue' is a specialization of 'MONTHS'.
+The class 'siddhi_WeekValue' is a specialization of 'WEEKS'.
+The class 'siddhi_DayValue' is a specialization of 'DAYS'.
+The class 'siddhi_HourValue' is a specialization of 'HOURS'.
+The class 'siddhi_MinuteValue' is a specialization of 'MINUTES'.
+The class 'siddhi_SecondValue' is a specialization of 'SECONDS'.
+The class 'siddhi_MillisecondValue' is a specialization of 'MILLISECONDS'.
+The class 'siddhi_DOUBLE_LITERAL' is a specialization of 'SignedDoubleValue'.
+The class 'siddhi_FLOAT_LITERAL' is a specialization of 'SignedFloatValue'.
+The class 'siddhi_LONG_LITERAL' is a specialization of 'SignedLongValue'.
+The class 'siddhi_Keyword' is a specialization of 'Name'.
+The class 'siddhi_Keyword' is a specialization of 'STREAM'.
+The class 'siddhi_Keyword' is a specialization of 'DEFINE'.
+The class 'siddhi_Keyword' is a specialization of 'FROM'.
+The class 'siddhi_Keyword' is a specialization of 'SELECT'.
+The class 'siddhi_Keyword' is a specialization of 'INSERT'.
+The class 'siddhi_Keyword' is a specialization of 'INTO'.
+The class 'siddhi_Keyword' is a specialization of 'ALL'.
+The class 'siddhi_Keyword' is a specialization of 'EVENTS'.
+The class 'siddhi_Keyword' is a specialization of 'TABLE'.
+The class 'siddhi_Keyword' is a specialization of 'WINDOW'.
+The class 'siddhi_Keyword' is a specialization of 'OUTPUT'.
+The class 'siddhi_Keyword' is a specialization of 'RAW'.
+The class 'siddhi_Keyword' is a specialization of 'EXPIRED'.
+The class 'siddhi_Keyword' is a specialization of 'CURRENT'.
+The class 'siddhi_Keyword' is a specialization of 'RETURN'.
+The class 'siddhi_Keyword' is a specialization of 'PARTITION'.
+The class 'siddhi_Keyword' is a specialization of 'WITHIN'.
+The class 'siddhi_Keyword' is a specialization of 'LEFT'.
+The class 'siddhi_Keyword' is a specialization of 'RIGHT'.
+The class 'siddhi_Keyword' is a specialization of 'FULL'.
+The class 'siddhi_Keyword' is a specialization of 'JOIN'.
+The class 'siddhi_Keyword' is a specialization of 'OUTER'.
+The class 'siddhi_Keyword' is a specialization of 'INNER'.
+The class 'siddhi_Keyword' is a specialization of 'YEARS'.
+The class 'siddhi_Keyword' is a specialization of 'MONTHS'.
+The class 'siddhi_Keyword' is a specialization of 'WEEKS'.
+The class 'siddhi_Keyword' is a specialization of 'DAYS'.
+The class 'siddhi_Keyword' is a specialization of 'HOURS'.
+The class 'siddhi_Keyword' is a specialization of 'MINUTES'.
+The class 'siddhi_Keyword' is a specialization of 'SECONDS'.
+The class 'siddhi_Keyword' is a specialization of 'MILLISECONDS'.
+The class 'siddhi_Keyword' is a specialization of 'STRINGS'.
+The class 'siddhi_Keyword' is a specialization of 'INTS'.
+The class 'siddhi_Keyword' is a specialization of 'LONG'.
+The class 'siddhi_Keyword' is a specialization of 'FLOAT'.
+The class 'siddhi_Keyword' is a specialization of 'DOUBLE'.
+The class 'siddhi_Keyword' is a specialization of 'BOOL'.
+The class 'siddhi_Keyword' is a specialization of 'OBJECT'.
+The class 'siddhi_Keyword' is a specialization of 'IS'.
+The class 'siddhi_Keyword' is a specialization of 'NULL'.
+The class 'siddhi_Keyword' is a specialization of 'SNAPSHOT'.
+The class 'siddhi_Keyword' is a specialization of 'LAST'.
+The class 'siddhi_Keyword' is a specialization of 'FIRST'.
+The class 'siddhi_Keyword' is a specialization of 'GROUP'.
+The class 'siddhi_Keyword' is a specialization of 'BY'.
+The class 'siddhi_Keyword' is a specialization of 'HAVING'.
+The class 'siddhi_Keyword' is a specialization of 'WITH'.
+The class 'siddhi_Keyword' is a specialization of 'BEGIN'.
+The class 'siddhi_Keyword' is a specialization of 'END'.
+The class 'siddhi_Keyword' is a specialization of 'DELETE'.
+The class 'siddhi_Keyword' is a specialization of 'FOR'.
+The class 'siddhi_Keyword' is a specialization of 'TRUE'.
+The class 'siddhi_Keyword' is a specialization of 'FALSE'.
+The class 'siddhi_Keyword' is a specialization of 'UPDATE'.
+The class 'siddhi_NOT' is a specialization of 'LogicalAbsentStatefulSource'.
+The class 'siddhi_NOT' is a specialization of 'BasicAbsentPatternSource'.
+The class 'siddhi_EVERY' is a specialization of 'EverySequenceSourceChain'.
+The class 'siddhi_EVERY' is a specialization of 'EveryAbsentSequenceSourceChain'.
+The class 'siddhi_EVERY' is a specialization of 'AbsentPatternSourceChain'.
+The class 'siddhi_EVERY' is a specialization of 'EveryAbsentPatternSource'.
+The class 'siddhi_EVERY' is a specialization of 'LeftAbsentPatternSource'.
+The class 'siddhi_EVERY' is a specialization of 'RightAbsentPatternSource'.
+The class 'siddhi_APP' is a specialization of 'AppAnnotation'.
+The class 'siddhi_LeftAbsentSequenceSource1' is a specialization of 'LeftAbsentSequenceSource'.
+The class 'siddhi_RightAbsentSequenceSource1' is a specialization of 'RightAbsentSequenceSource'.
+The class 'siddhi_LeftAbsentPatternSource1' is a specialization of 'LeftAbsentPatternSource'.
+The class 'siddhi_RightAbsentPatternSource1' is a specialization of 'RightAbsentPatternSource'.
+The class 'siddhi_MathLogicalOperation' is a specialization of 'MathOperation'.
+The class 'siddhi_MathInOperation' is a specialization of 'MathOperation'.
+The class 'siddhi_MathGtLtOperation' is a specialization of 'MathOperation'.
+The class 'siddhi_MathEqualOperation' is a specialization of 'MathOperation'.
+The class 'siddhi_NotOperation' is a specialization of 'MathOtherOperations'.
+
+Relationships between classes are modeled using associations.
+An association connects 'siddhi_ExecutionPlan' and 'siddhi_SiddhiQL'. From 'siddhi_ExecutionPlan', the role 'siddhi_ExecutionPlan' has cardinality 0..*, and from 'siddhi_SiddhiQL', the role 'siddhi_SiddhiQL' has cardinality 0..*.
+An association connects 'siddhi_AppAnnotation' and 'siddhi_ExecutionPlan'. From 'siddhi_AppAnnotation', the role 'siddhi_AppAnnotation' has cardinality 0..*, and from 'siddhi_ExecutionPlan', the role 'siddhi_ExecutionPlan2' has cardinality 0..*.
+An association connects 'siddhi_DefinitionStream' and 'siddhi_ExecutionPlan'. From 'siddhi_DefinitionStream', the role 'siddhi_DefinitionStream' has cardinality 0..*, and from 'siddhi_ExecutionPlan', the role 'siddhi_ExecutionPlan4' has cardinality 0..*.
+An association connects 'siddhi_DefinitionTable' and 'siddhi_ExecutionPlan'. From 'siddhi_DefinitionTable', the role 'siddhi_DefinitionTable' has cardinality 0..*, and from 'siddhi_ExecutionPlan', the role 'siddhi_ExecutionPlan6' has cardinality 0..*.
+An association connects 'siddhi_ExecutionPlan' and 'siddhi_DefinitionWindow'. From 'siddhi_ExecutionPlan', the role 'siddhi_ExecutionPlan8' has cardinality 0..*, and from 'siddhi_DefinitionWindow', the role 'siddhi_DefinitionWindow' has cardinality 0..*.
+An association connects 'siddhi_ExecutionPlan' and 'siddhi_DefinitionTrigger'. From 'siddhi_ExecutionPlan', the role 'siddhi_ExecutionPlan10' has cardinality 0..*, and from 'siddhi_DefinitionTrigger', the role 'siddhi_DefinitionTrigger' has cardinality 0..*.
+An association connects 'siddhi_ExecutionPlan' and 'siddhi_DefinitionFunction'. From 'siddhi_ExecutionPlan', the role 'siddhi_ExecutionPlan12' has cardinality 0..*, and from 'siddhi_DefinitionFunction', the role 'siddhi_DefinitionFunction' has cardinality 0..*.
+An association connects 'siddhi_DefinitionAggregation' and 'siddhi_ExecutionPlan'. From 'siddhi_DefinitionAggregation', the role 'siddhi_DefinitionAggregation' has cardinality 0..*, and from 'siddhi_ExecutionPlan', the role 'siddhi_ExecutionPlan14' has cardinality 0..*.
+An association connects 'siddhi_ExecutionElement' and 'siddhi_ExecutionPlan'. From 'siddhi_ExecutionElement', the role 'siddhi_ExecutionElement' has cardinality 0..*, and from 'siddhi_ExecutionPlan', the role 'siddhi_ExecutionPlan16' has cardinality 0..*.
+An association connects 'siddhi_ExecutionElement' and 'siddhi_ExecPartition'. From 'siddhi_ExecutionElement', the role 'siddhi_ExecutionElement18' has cardinality 0..*, and from 'siddhi_ExecPartition', the role 'siddhi_ExecPartition' has cardinality 0..*.
+An association connects 'siddhi_Query' and 'siddhi_ExecutionElement'. From 'siddhi_Query', the role 'siddhi_Query' has cardinality 0..*, and from 'siddhi_ExecutionElement', the role 'siddhi_ExecutionElement20' has cardinality 0..*.
+An association connects 'siddhi_DefinitionStream' and 'siddhi_Annotation'. From 'siddhi_DefinitionStream', the role 'siddhi_DefinitionStream22' has cardinality 0..*, and from 'siddhi_Annotation', the role 'siddhi_Annotation' has cardinality 0..*.
+An association connects 'siddhi_DefinitionStream' and 'siddhi_Source1'. From 'siddhi_DefinitionStream', the role 'siddhi_DefinitionStream24' has cardinality 0..*, and from 'siddhi_Source1', the role 'siddhi_Source1' has cardinality 0..*.
+An association connects 'siddhi_Features' and 'siddhi_DefinitionStream'. From 'siddhi_Features', the role 'siddhi_Features' has cardinality 0..*, and from 'siddhi_DefinitionStream', the role 'siddhi_DefinitionStream26' has cardinality 0..*.
+An association connects 'siddhi_Annotation' and 'siddhi_DefinitionTable'. From 'siddhi_Annotation', the role 'siddhi_Annotation29' has cardinality 0..*, and from 'siddhi_DefinitionTable', the role 'siddhi_DefinitionTable28' has cardinality 0..*.
+An association connects 'siddhi_DefinitionTable' and 'siddhi_Source1'. From 'siddhi_DefinitionTable', the role 'siddhi_DefinitionTable31' has cardinality 0..*, and from 'siddhi_Source1', the role 'siddhi_Source132' has cardinality 0..*.
+An association connects 'siddhi_DefinitionTable' and 'siddhi_Features'. From 'siddhi_DefinitionTable', the role 'siddhi_DefinitionTable34' has cardinality 0..*, and from 'siddhi_Features', the role 'siddhi_Features35' has cardinality 0..*.
+An association connects 'siddhi_Annotation' and 'siddhi_DefinitionWindow'. From 'siddhi_Annotation', the role 'siddhi_Annotation38' has cardinality 0..*, and from 'siddhi_DefinitionWindow', the role 'siddhi_DefinitionWindow37' has cardinality 0..*.
+An association connects 'siddhi_Source1' and 'siddhi_DefinitionWindow'. From 'siddhi_Source1', the role 'siddhi_Source141' has cardinality 0..*, and from 'siddhi_DefinitionWindow', the role 'siddhi_DefinitionWindow40' has cardinality 0..*.
+An association connects 'siddhi_Features' and 'siddhi_DefinitionWindow'. From 'siddhi_Features', the role 'siddhi_Features44' has cardinality 0..*, and from 'siddhi_DefinitionWindow', the role 'siddhi_DefinitionWindow43' has cardinality 0..*.
+An association connects 'siddhi_FunctionOperation' and 'siddhi_DefinitionWindow'. From 'siddhi_FunctionOperation', the role 'siddhi_FunctionOperation' has cardinality 0..*, and from 'siddhi_DefinitionWindow', the role 'siddhi_DefinitionWindow46' has cardinality 0..*.
+An association connects 'siddhi_OutputEventType' and 'siddhi_DefinitionWindow'. From 'siddhi_OutputEventType', the role 'siddhi_OutputEventType' has cardinality 0..*, and from 'siddhi_DefinitionWindow', the role 'siddhi_DefinitionWindow48' has cardinality 0..*.
+An association connects 'siddhi_TriggerName' and 'siddhi_DefinitionTrigger'. From 'siddhi_TriggerName', the role 'siddhi_TriggerName' has cardinality 0..*, and from 'siddhi_DefinitionTrigger', the role 'siddhi_DefinitionTrigger50' has cardinality 0..*.
+An association connects 'siddhi_DefinitionTrigger' and 'siddhi_EVERY'. From 'siddhi_DefinitionTrigger', the role 'siddhi_DefinitionTrigger52' has cardinality 0..*, and from 'siddhi_EVERY', the role 'siddhi_EVERY' has cardinality 0..*.
+An association connects 'siddhi_DefinitionTrigger' and 'siddhi_TimeValue'. From 'siddhi_DefinitionTrigger', the role 'siddhi_DefinitionTrigger54' has cardinality 0..*, and from 'siddhi_TimeValue', the role 'siddhi_TimeValue' has cardinality 0..*.
+An association connects 'siddhi_StringValue' and 'siddhi_DefinitionTrigger'. From 'siddhi_StringValue', the role 'siddhi_StringValue' has cardinality 0..*, and from 'siddhi_DefinitionTrigger', the role 'siddhi_DefinitionTrigger56' has cardinality 0..*.
+An association connects 'siddhi_DefinitionFunction' and 'siddhi_FunctionName'. From 'siddhi_DefinitionFunction', the role 'siddhi_DefinitionFunction58' has cardinality 0..*, and from 'siddhi_FunctionName', the role 'siddhi_FunctionName' has cardinality 0..*.
+An association connects 'siddhi_DefinitionFunction' and 'siddhi_LanguageName'. From 'siddhi_DefinitionFunction', the role 'siddhi_DefinitionFunction60' has cardinality 0..*, and from 'siddhi_LanguageName', the role 'siddhi_LanguageName' has cardinality 0..*.
+An association connects 'siddhi_AttributeType' and 'siddhi_DefinitionFunction'. From 'siddhi_AttributeType', the role 'siddhi_AttributeType' has cardinality 0..*, and from 'siddhi_DefinitionFunction', the role 'siddhi_DefinitionFunction62' has cardinality 0..*.
+An association connects 'siddhi_DefinitionFunction' and 'siddhi_FunctionBody'. From 'siddhi_DefinitionFunction', the role 'siddhi_DefinitionFunction64' has cardinality 0..*, and from 'siddhi_FunctionBody', the role 'siddhi_FunctionBody' has cardinality 0..*.
+An association connects 'siddhi_Annotation' and 'siddhi_DefinitionAggregation'. From 'siddhi_Annotation', the role 'siddhi_Annotation67' has cardinality 0..*, and from 'siddhi_DefinitionAggregation', the role 'siddhi_DefinitionAggregation66' has cardinality 0..*.
+An association connects 'siddhi_DefinitionAggregation' and 'siddhi_Source1'. From 'siddhi_DefinitionAggregation', the role 'siddhi_DefinitionAggregation69' has cardinality 0..*, and from 'siddhi_Source1', the role 'siddhi_Source170' has cardinality 0..*.
+An association connects 'siddhi_StandardStream' and 'siddhi_DefinitionAggregation'. From 'siddhi_StandardStream', the role 'siddhi_StandardStream' has cardinality 0..*, and from 'siddhi_DefinitionAggregation', the role 'siddhi_DefinitionAggregation72' has cardinality 0..*.
+An association connects 'siddhi_DefinitionAggregation' and 'siddhi_GroupByQuerySelection'. From 'siddhi_DefinitionAggregation', the role 'siddhi_DefinitionAggregation74' has cardinality 0..*, and from 'siddhi_GroupByQuerySelection', the role 'siddhi_GroupByQuerySelection' has cardinality 0..*.
+An association connects 'siddhi_DefinitionAggregation' and 'siddhi_AttributeReference'. From 'siddhi_DefinitionAggregation', the role 'siddhi_DefinitionAggregation76' has cardinality 0..*, and from 'siddhi_AttributeReference', the role 'siddhi_AttributeReference' has cardinality 0..*.
+An association connects 'siddhi_DefinitionAggregation' and 'siddhi_EVERY'. From 'siddhi_DefinitionAggregation', the role 'siddhi_DefinitionAggregation78' has cardinality 0..*, and from 'siddhi_EVERY', the role 'siddhi_EVERY79' has cardinality 0..*.
+An association connects 'siddhi_AggregationTime' and 'siddhi_DefinitionAggregation'. From 'siddhi_AggregationTime', the role 'siddhi_AggregationTime' has cardinality 0..*, and from 'siddhi_DefinitionAggregation', the role 'siddhi_DefinitionAggregation81' has cardinality 0..*.
+An association connects 'siddhi_AggregationTimeDuration' and 'siddhi_AggregationTime'. From 'siddhi_AggregationTimeDuration', the role 'siddhi_AggregationTimeDuration' has cardinality 0..*, and from 'siddhi_AggregationTime', the role 'siddhi_AggregationTime83' has cardinality 0..*.
+An association connects 'siddhi_Name' and 'siddhi_Annotation'. From 'siddhi_Name', the role 'siddhi_Name' has cardinality 0..*, and from 'siddhi_Annotation', the role 'siddhi_Annotation85' has cardinality 0..*.
+An association connects 'siddhi_Annotation' and 'siddhi_AnnotationElement'. From 'siddhi_Annotation', the role 'siddhi_Annotation87' has cardinality 0..*, and from 'siddhi_AnnotationElement', the role 'siddhi_AnnotationElement' has cardinality 0..*.
+An association connects 'siddhi_Annotation' and 'siddhi_Annotation'. From 'siddhi_Annotation', the role 'siddhi_Annotation90' has cardinality 0..*, and from 'siddhi_Annotation', the role 'siddhi_Annotation88' has cardinality 0..*.
+An association connects 'siddhi_PropertyName' and 'siddhi_AnnotationElement'. From 'siddhi_PropertyName', the role 'siddhi_PropertyName' has cardinality 0..*, and from 'siddhi_AnnotationElement', the role 'siddhi_AnnotationElement92' has cardinality 0..*.
+An association connects 'siddhi_PropertyValue' and 'siddhi_AnnotationElement'. From 'siddhi_PropertyValue', the role 'siddhi_PropertyValue' has cardinality 0..*, and from 'siddhi_AnnotationElement', the role 'siddhi_AnnotationElement94' has cardinality 0..*.
+An association connects 'siddhi_PropertyValue' and 'siddhi_StringValue'. From 'siddhi_PropertyValue', the role 'siddhi_PropertyValue96' has cardinality 0..*, and from 'siddhi_StringValue', the role 'siddhi_StringValue97' has cardinality 0..*.
+An association connects 'siddhi_Name' and 'siddhi_PropertyName'. From 'siddhi_Name', the role 'siddhi_Name100' has cardinality 0..*, and from 'siddhi_PropertyName', the role 'siddhi_PropertyName99' has cardinality 0..*.
+An association connects 'siddhi_PropertyName' and 'siddhi_PropertySeparator'. From 'siddhi_PropertyName', the role 'siddhi_PropertyName102' has cardinality 0..*, and from 'siddhi_PropertySeparator', the role 'siddhi_PropertySeparator' has cardinality 0..*.
+An association connects 'siddhi_Name' and 'siddhi_Features'. From 'siddhi_Name', the role 'siddhi_Name105' has cardinality 0..*, and from 'siddhi_Features', the role 'siddhi_Features104' has cardinality 0..*.
+An association connects 'siddhi_AttributeType' and 'siddhi_Features'. From 'siddhi_AttributeType', the role 'siddhi_AttributeType108' has cardinality 0..*, and from 'siddhi_Features', the role 'siddhi_Features107' has cardinality 0..*.
+An association connects 'siddhi_Source' and 'siddhi_Source1'. From 'siddhi_Source', the role 'siddhi_Source' has cardinality 0..*, and from 'siddhi_Source1', the role 'siddhi_Source1110' has cardinality 0..*.
+An association connects 'siddhi_ExecPartition' and 'siddhi_Annotation'. From 'siddhi_ExecPartition', the role 'siddhi_ExecPartition112' has cardinality 0..*, and from 'siddhi_Annotation', the role 'siddhi_Annotation113' has cardinality 0..*.
+An association connects 'siddhi_PartitionWithStream' and 'siddhi_ExecPartition'. From 'siddhi_PartitionWithStream', the role 'siddhi_PartitionWithStream' has cardinality 0..*, and from 'siddhi_ExecPartition', the role 'siddhi_ExecPartition115' has cardinality 0..*.
+An association connects 'siddhi_ExecPartition' and 'siddhi_Query'. From 'siddhi_ExecPartition', the role 'siddhi_ExecPartition117' has cardinality 0..*, and from 'siddhi_Query', the role 'siddhi_Query118' has cardinality 0..*.
+An association connects 'siddhi_ConditionRanges' and 'siddhi_OF'. From 'siddhi_ConditionRanges', the role 'siddhi_ConditionRanges' has cardinality 0..*, and from 'siddhi_OF', the role 'siddhi_OF' has cardinality 0..*.
+An association connects 'siddhi_ConditionRanges' and 'siddhi_Source'. From 'siddhi_ConditionRanges', the role 'siddhi_ConditionRanges121' has cardinality 0..*, and from 'siddhi_Source', the role 'siddhi_Source122' has cardinality 0..*.
+An association connects 'siddhi_ConditionRange' and 'siddhi_ConditionRanges'. From 'siddhi_ConditionRange', the role 'siddhi_ConditionRange' has cardinality 0..*, and from 'siddhi_ConditionRanges', the role 'siddhi_ConditionRanges124' has cardinality 0..*.
+An association connects 'siddhi_OR' and 'siddhi_ConditionRanges'. From 'siddhi_OR', the role 'siddhi_OR' has cardinality 0..*, and from 'siddhi_ConditionRanges', the role 'siddhi_ConditionRanges126' has cardinality 0..*.
+An association connects 'siddhi_ConditionRange' and 'siddhi_Expression'. From 'siddhi_ConditionRange', the role 'siddhi_ConditionRange128' has cardinality 0..*, and from 'siddhi_Expression', the role 'siddhi_Expression' has cardinality 0..*.
+An association connects 'siddhi_ConditionRange' and 'siddhi_AS'. From 'siddhi_ConditionRange', the role 'siddhi_ConditionRange130' has cardinality 0..*, and from 'siddhi_AS', the role 'siddhi_AS' has cardinality 0..*.
+An association connects 'siddhi_StringValue' and 'siddhi_ConditionRange'. From 'siddhi_StringValue', the role 'siddhi_StringValue133' has cardinality 0..*, and from 'siddhi_ConditionRange', the role 'siddhi_ConditionRange132' has cardinality 0..*.
+An association connects 'siddhi_Query' and 'siddhi_Annotation'. From 'siddhi_Query', the role 'siddhi_Query135' has cardinality 0..*, and from 'siddhi_Annotation', the role 'siddhi_Annotation136' has cardinality 0..*.
+An association connects 'siddhi_Query' and 'siddhi_QueryInput'. From 'siddhi_Query', the role 'siddhi_Query138' has cardinality 0..*, and from 'siddhi_QueryInput', the role 'siddhi_QueryInput' has cardinality 0..*.
+An association connects 'siddhi_QuerySection' and 'siddhi_Query'. From 'siddhi_QuerySection', the role 'siddhi_QuerySection' has cardinality 0..*, and from 'siddhi_Query', the role 'siddhi_Query140' has cardinality 0..*.
+An association connects 'siddhi_OutputRate' and 'siddhi_Query'. From 'siddhi_OutputRate', the role 'siddhi_OutputRate' has cardinality 0..*, and from 'siddhi_Query', the role 'siddhi_Query142' has cardinality 0..*.
+An association connects 'siddhi_QueryOutput' and 'siddhi_Query'. From 'siddhi_QueryOutput', the role 'siddhi_QueryOutput' has cardinality 0..*, and from 'siddhi_Query', the role 'siddhi_Query144' has cardinality 0..*.
+An association connects 'siddhi_OutputEventType' and 'siddhi_QueryOutput'. From 'siddhi_OutputEventType', the role 'siddhi_OutputEventType147' has cardinality 0..*, and from 'siddhi_QueryOutput', the role 'siddhi_QueryOutput146' has cardinality 0..*.
+An association connects 'siddhi_QueryOutput' and 'siddhi_Target'. From 'siddhi_QueryOutput', the role 'siddhi_QueryOutput149' has cardinality 0..*, and from 'siddhi_Target', the role 'siddhi_Target' has cardinality 0..*.
+An association connects 'siddhi_QueryOutput' and 'siddhi_ON'. From 'siddhi_QueryOutput', the role 'siddhi_QueryOutput151' has cardinality 0..*, and from 'siddhi_ON', the role 'siddhi_ON' has cardinality 0..*.
+An association connects 'siddhi_Expression' and 'siddhi_QueryOutput'. From 'siddhi_Expression', the role 'siddhi_Expression154' has cardinality 0..*, and from 'siddhi_QueryOutput', the role 'siddhi_QueryOutput153' has cardinality 0..*.
+An association connects 'siddhi_QueryOutput' and 'siddhi_OR'. From 'siddhi_QueryOutput', the role 'siddhi_QueryOutput156' has cardinality 0..*, and from 'siddhi_OR', the role 'siddhi_OR157' has cardinality 0..*.
+An association connects 'siddhi_QueryOutput' and 'siddhi_SetClause'. From 'siddhi_QueryOutput', the role 'siddhi_QueryOutput159' has cardinality 0..*, and from 'siddhi_SetClause', the role 'siddhi_SetClause' has cardinality 0..*.
+An association connects 'siddhi_Target' and 'siddhi_Source1'. From 'siddhi_Target', the role 'siddhi_Target161' has cardinality 0..*, and from 'siddhi_Source1', the role 'siddhi_Source1162' has cardinality 0..*.
+An association connects 'siddhi_Target' and 'siddhi_Source'. From 'siddhi_Target', the role 'siddhi_Target164' has cardinality 0..*, and from 'siddhi_Source', the role 'siddhi_Source165' has cardinality 0..*.
+An association connects 'siddhi_SetAssignment' and 'siddhi_SetClause'. From 'siddhi_SetAssignment', the role 'siddhi_SetAssignment' has cardinality 0..*, and from 'siddhi_SetClause', the role 'siddhi_SetClause167' has cardinality 0..*.
+An association connects 'siddhi_OutputRate' and 'siddhi_OutputRateType'. From 'siddhi_OutputRate', the role 'siddhi_OutputRate169' has cardinality 0..*, and from 'siddhi_OutputRateType', the role 'siddhi_OutputRateType' has cardinality 0..*.
+An association connects 'siddhi_OutputRate' and 'siddhi_EVERY'. From 'siddhi_OutputRate', the role 'siddhi_OutputRate171' has cardinality 0..*, and from 'siddhi_EVERY', the role 'siddhi_EVERY172' has cardinality 0..*.
+An association connects 'siddhi_TimeValue' and 'siddhi_OutputRate'. From 'siddhi_TimeValue', the role 'siddhi_TimeValue175' has cardinality 0..*, and from 'siddhi_OutputRate', the role 'siddhi_OutputRate174' has cardinality 0..*.
+An association connects 'siddhi_OutputAttribute' and 'siddhi_GroupByQuerySelection'. From 'siddhi_OutputAttribute', the role 'siddhi_OutputAttribute' has cardinality 0..*, and from 'siddhi_GroupByQuerySelection', the role 'siddhi_GroupByQuerySelection177' has cardinality 0..*.
+An association connects 'siddhi_GroupBy' and 'siddhi_GroupByQuerySelection'. From 'siddhi_GroupBy', the role 'siddhi_GroupBy' has cardinality 0..*, and from 'siddhi_GroupByQuerySelection', the role 'siddhi_GroupByQuerySelection179' has cardinality 0..*.
+An association connects 'siddhi_QuerySection' and 'siddhi_GroupByQuerySelection'. From 'siddhi_QuerySection', the role 'siddhi_QuerySection181' has cardinality 0..*, and from 'siddhi_GroupByQuerySelection', the role 'siddhi_GroupByQuerySelection182' has cardinality 0..*.
+An association connects 'siddhi_QuerySection' and 'siddhi_HavingExpr'. From 'siddhi_QuerySection', the role 'siddhi_QuerySection184' has cardinality 0..*, and from 'siddhi_HavingExpr', the role 'siddhi_HavingExpr' has cardinality 0..*.
+An association connects 'siddhi_GroupBy' and 'siddhi_AttributeReference'. From 'siddhi_GroupBy', the role 'siddhi_GroupBy186' has cardinality 0..*, and from 'siddhi_AttributeReference', the role 'siddhi_AttributeReference187' has cardinality 0..*.
+An association connects 'siddhi_Expression' and 'siddhi_HavingExpr'. From 'siddhi_Expression', the role 'siddhi_Expression190' has cardinality 0..*, and from 'siddhi_HavingExpr', the role 'siddhi_HavingExpr189' has cardinality 0..*.
+An association connects 'siddhi_OutputAttribute' and 'siddhi_OutAttr'. From 'siddhi_OutputAttribute', the role 'siddhi_OutputAttribute192' has cardinality 0..*, and from 'siddhi_OutAttr', the role 'siddhi_OutAttr' has cardinality 0..*.
+An association connects 'siddhi_OutputAttribute' and 'siddhi_AttributeReference'. From 'siddhi_OutputAttribute', the role 'siddhi_OutputAttribute194' has cardinality 0..*, and from 'siddhi_AttributeReference', the role 'siddhi_AttributeReference195' has cardinality 0..*.
+An association connects 'siddhi_OutAttr' and 'siddhi_Attribute'. From 'siddhi_OutAttr', the role 'siddhi_OutAttr197' has cardinality 0..*, and from 'siddhi_Attribute', the role 'siddhi_Attribute' has cardinality 0..*.
+An association connects 'siddhi_AS' and 'siddhi_OutAttr'. From 'siddhi_AS', the role 'siddhi_AS200' has cardinality 0..*, and from 'siddhi_OutAttr', the role 'siddhi_OutAttr199' has cardinality 0..*.
+An association connects 'siddhi_QueryInput' and 'siddhi_JoinStream'. From 'siddhi_QueryInput', the role 'siddhi_QueryInput202' has cardinality 0..*, and from 'siddhi_JoinStream', the role 'siddhi_JoinStream' has cardinality 0..*.
+An association connects 'siddhi_QueryInput' and 'siddhi_SequenceStream'. From 'siddhi_QueryInput', the role 'siddhi_QueryInput204' has cardinality 0..*, and from 'siddhi_SequenceStream', the role 'siddhi_SequenceStream' has cardinality 0..*.
+An association connects 'siddhi_PatternStream' and 'siddhi_QueryInput'. From 'siddhi_PatternStream', the role 'siddhi_PatternStream' has cardinality 0..*, and from 'siddhi_QueryInput', the role 'siddhi_QueryInput206' has cardinality 0..*.
+An association connects 'siddhi_QueryInput' and 'siddhi_AnonymousStream'. From 'siddhi_QueryInput', the role 'siddhi_QueryInput208' has cardinality 0..*, and from 'siddhi_AnonymousStream', the role 'siddhi_AnonymousStream' has cardinality 0..*.
+An association connects 'siddhi_SequenceStream' and 'siddhi_EverySequenceSourceChain'. From 'siddhi_SequenceStream', the role 'siddhi_SequenceStream210' has cardinality 0..*, and from 'siddhi_EverySequenceSourceChain', the role 'siddhi_EverySequenceSourceChain' has cardinality 0..*.
+An association connects 'siddhi_EveryAbsentSequenceSourceChain' and 'siddhi_SequenceStream'. From 'siddhi_EveryAbsentSequenceSourceChain', the role 'siddhi_EveryAbsentSequenceSourceChain' has cardinality 0..*, and from 'siddhi_SequenceStream', the role 'siddhi_SequenceStream212' has cardinality 0..*.
+An association connects 'siddhi_SequenceSource' and 'siddhi_EverySequenceSourceChain'. From 'siddhi_SequenceSource', the role 'siddhi_SequenceSource' has cardinality 0..*, and from 'siddhi_EverySequenceSourceChain', the role 'siddhi_EverySequenceSourceChain214' has cardinality 0..*.
+An association connects 'siddhi_EverySequenceSourceChain' and 'siddhi_WithinTime'. From 'siddhi_EverySequenceSourceChain', the role 'siddhi_EverySequenceSourceChain216' has cardinality 0..*, and from 'siddhi_WithinTime', the role 'siddhi_WithinTime' has cardinality 0..*.
+An association connects 'siddhi_EverySequenceSourceChain' and 'siddhi_SequenceSourceChain'. From 'siddhi_EverySequenceSourceChain', the role 'siddhi_EverySequenceSourceChain218' has cardinality 0..*, and from 'siddhi_SequenceSourceChain', the role 'siddhi_SequenceSourceChain' has cardinality 0..*.
+An association connects 'siddhi_EveryAbsentSequenceSourceChain' and 'siddhi_AbsentSequenceSourceChain'. From 'siddhi_EveryAbsentSequenceSourceChain', the role 'siddhi_EveryAbsentSequenceSourceChain220' has cardinality 0..*, and from 'siddhi_AbsentSequenceSourceChain', the role 'siddhi_AbsentSequenceSourceChain' has cardinality 0..*.
+An association connects 'siddhi_SequenceSourceChain' and 'siddhi_EveryAbsentSequenceSourceChain'. From 'siddhi_SequenceSourceChain', the role 'siddhi_SequenceSourceChain223' has cardinality 0..*, and from 'siddhi_EveryAbsentSequenceSourceChain', the role 'siddhi_EveryAbsentSequenceSourceChain222' has cardinality 0..*.
+An association connects 'siddhi_AbsentSequenceSourceChain' and 'siddhi_AbsentSequenceSourceChain'. From 'siddhi_AbsentSequenceSourceChain', the role 'siddhi_AbsentSequenceSourceChain224' has cardinality 0..*, and from 'siddhi_AbsentSequenceSourceChain', the role 'siddhi_AbsentSequenceSourceChain226' has cardinality 0..*.
+An association connects 'siddhi_AbsentSequenceSourceChain' and 'siddhi_WithinTime'. From 'siddhi_AbsentSequenceSourceChain', the role 'siddhi_AbsentSequenceSourceChain228' has cardinality 0..*, and from 'siddhi_WithinTime', the role 'siddhi_WithinTime229' has cardinality 0..*.
+An association connects 'siddhi_BasicAbsentPatternSource' and 'siddhi_AbsentSequenceSourceChain'. From 'siddhi_BasicAbsentPatternSource', the role 'siddhi_BasicAbsentPatternSource' has cardinality 0..*, and from 'siddhi_AbsentSequenceSourceChain', the role 'siddhi_AbsentSequenceSourceChain231' has cardinality 0..*.
+An association connects 'siddhi_AbsentSequenceSourceChain' and 'siddhi_LeftAbsentSequenceSource'. From 'siddhi_AbsentSequenceSourceChain', the role 'siddhi_AbsentSequenceSourceChain233' has cardinality 0..*, and from 'siddhi_LeftAbsentSequenceSource', the role 'siddhi_LeftAbsentSequenceSource' has cardinality 0..*.
+An association connects 'siddhi_RightAbsentSequenceSource' and 'siddhi_AbsentSequenceSourceChain'. From 'siddhi_RightAbsentSequenceSource', the role 'siddhi_RightAbsentSequenceSource' has cardinality 0..*, and from 'siddhi_AbsentSequenceSourceChain', the role 'siddhi_AbsentSequenceSourceChain235' has cardinality 0..*.
+An association connects 'siddhi_LeftAbsentSequenceSource' and 'siddhi_LeftAbsentSequenceSource'. From 'siddhi_LeftAbsentSequenceSource', the role 'siddhi_LeftAbsentSequenceSource238' has cardinality 0..*, and from 'siddhi_LeftAbsentSequenceSource', the role 'siddhi_LeftAbsentSequenceSource236' has cardinality 0..*.
+An association connects 'siddhi_EObject' and 'siddhi_LeftAbsentSequenceSource'. From 'siddhi_EObject', the role 'siddhi_EObject' has cardinality 0..*, and from 'siddhi_LeftAbsentSequenceSource', the role 'siddhi_LeftAbsentSequenceSource240' has cardinality 0..*.
+An association connects 'siddhi_LeftAbsentSequenceSource' and 'siddhi_LeftAbsentSequenceSource'. From 'siddhi_LeftAbsentSequenceSource', the role 'siddhi_LeftAbsentSequenceSource243' has cardinality 0..*, and from 'siddhi_LeftAbsentSequenceSource', the role 'siddhi_LeftAbsentSequenceSource241' has cardinality 0..*.
+An association connects 'siddhi_LeftAbsentSequenceSource' and 'siddhi_WithinTime'. From 'siddhi_LeftAbsentSequenceSource', the role 'siddhi_LeftAbsentSequenceSource245' has cardinality 0..*, and from 'siddhi_WithinTime', the role 'siddhi_WithinTime246' has cardinality 0..*.
+An association connects 'siddhi_BasicAbsentPatternSource' and 'siddhi_LeftAbsentSequenceSource'. From 'siddhi_BasicAbsentPatternSource', the role 'siddhi_BasicAbsentPatternSource249' has cardinality 0..*, and from 'siddhi_LeftAbsentSequenceSource', the role 'siddhi_LeftAbsentSequenceSource248' has cardinality 0..*.
+An association connects 'siddhi_SequenceSourceChain' and 'siddhi_LeftAbsentSequenceSource'. From 'siddhi_SequenceSourceChain', the role 'siddhi_SequenceSourceChain252' has cardinality 0..*, and from 'siddhi_LeftAbsentSequenceSource', the role 'siddhi_LeftAbsentSequenceSource251' has cardinality 0..*.
+An association connects 'siddhi_RightAbsentSequenceSource' and 'siddhi_RightAbsentSequenceSource'. From 'siddhi_RightAbsentSequenceSource', the role 'siddhi_RightAbsentSequenceSource253' has cardinality 0..*, and from 'siddhi_RightAbsentSequenceSource', the role 'siddhi_RightAbsentSequenceSource255' has cardinality 0..*.
+An association connects 'siddhi_RightAbsentSequenceSource' and 'siddhi_RightAbsentSequenceSource'. From 'siddhi_RightAbsentSequenceSource', the role 'siddhi_RightAbsentSequenceSource256' has cardinality 0..*, and from 'siddhi_RightAbsentSequenceSource', the role 'siddhi_RightAbsentSequenceSource258' has cardinality 0..*.
+An association connects 'siddhi_RightAbsentSequenceSource' and 'siddhi_RightAbsentSequenceSource'. From 'siddhi_RightAbsentSequenceSource', the role 'siddhi_RightAbsentSequenceSource261' has cardinality 0..*, and from 'siddhi_RightAbsentSequenceSource', the role 'siddhi_RightAbsentSequenceSource259' has cardinality 0..*.
+An association connects 'siddhi_RightAbsentSequenceSource' and 'siddhi_WithinTime'. From 'siddhi_RightAbsentSequenceSource', the role 'siddhi_RightAbsentSequenceSource263' has cardinality 0..*, and from 'siddhi_WithinTime', the role 'siddhi_WithinTime264' has cardinality 0..*.
+An association connects 'siddhi_RightAbsentSequenceSource' and 'siddhi_SequenceSourceChain'. From 'siddhi_RightAbsentSequenceSource', the role 'siddhi_RightAbsentSequenceSource266' has cardinality 0..*, and from 'siddhi_SequenceSourceChain', the role 'siddhi_SequenceSourceChain267' has cardinality 0..*.
+An association connects 'siddhi_RightAbsentSequenceSource' and 'siddhi_BasicAbsentPatternSource'. From 'siddhi_RightAbsentSequenceSource', the role 'siddhi_RightAbsentSequenceSource269' has cardinality 0..*, and from 'siddhi_BasicAbsentPatternSource', the role 'siddhi_BasicAbsentPatternSource270' has cardinality 0..*.
+An association connects 'siddhi_SequenceSourceChain' and 'siddhi_SequenceSourceChain'. From 'siddhi_SequenceSourceChain', the role 'siddhi_SequenceSourceChain273' has cardinality 0..*, and from 'siddhi_SequenceSourceChain', the role 'siddhi_SequenceSourceChain271' has cardinality 0..*.
+An association connects 'siddhi_SequenceSourceChain' and 'siddhi_SequenceSourceChain'. From 'siddhi_SequenceSourceChain', the role 'siddhi_SequenceSourceChain274' has cardinality 0..*, and from 'siddhi_SequenceSourceChain', the role 'siddhi_SequenceSourceChain276' has cardinality 0..*.
+An association connects 'siddhi_WithinTime' and 'siddhi_SequenceSourceChain'. From 'siddhi_WithinTime', the role 'siddhi_WithinTime279' has cardinality 0..*, and from 'siddhi_SequenceSourceChain', the role 'siddhi_SequenceSourceChain278' has cardinality 0..*.
+An association connects 'siddhi_SequenceSource' and 'siddhi_WithinTime'. From 'siddhi_SequenceSource', the role 'siddhi_SequenceSource281' has cardinality 0..*, and from 'siddhi_WithinTime', the role 'siddhi_WithinTime282' has cardinality 0..*.
+An association connects 'siddhi_QueryInput' and 'siddhi_AnonymousStream'. From 'siddhi_QueryInput', the role 'siddhi_QueryInput285' has cardinality 0..*, and from 'siddhi_AnonymousStream', the role 'siddhi_AnonymousStream284' has cardinality 0..*.
+An association connects 'siddhi_QuerySection' and 'siddhi_AnonymousStream'. From 'siddhi_QuerySection', the role 'siddhi_QuerySection288' has cardinality 0..*, and from 'siddhi_AnonymousStream', the role 'siddhi_AnonymousStream287' has cardinality 0..*.
+An association connects 'siddhi_OutputRate' and 'siddhi_AnonymousStream'. From 'siddhi_OutputRate', the role 'siddhi_OutputRate291' has cardinality 0..*, and from 'siddhi_AnonymousStream', the role 'siddhi_AnonymousStream290' has cardinality 0..*.
+An association connects 'siddhi_AnonymousStream' and 'siddhi_OutputEventType'. From 'siddhi_AnonymousStream', the role 'siddhi_AnonymousStream293' has cardinality 0..*, and from 'siddhi_OutputEventType', the role 'siddhi_OutputEventType294' has cardinality 0..*.
+An association connects 'siddhi_EveryPatternSourceChain' and 'siddhi_EveryPatternSourceChain'. From 'siddhi_EveryPatternSourceChain', the role 'siddhi_EveryPatternSourceChain295' has cardinality 0..*, and from 'siddhi_EveryPatternSourceChain', the role 'siddhi_EveryPatternSourceChain' has cardinality 0..*.
+An association connects 'siddhi_EveryPatternSourceChain' and 'siddhi_EveryPatternSourceChain'. From 'siddhi_EveryPatternSourceChain', the role 'siddhi_EveryPatternSourceChain297' has cardinality 0..*, and from 'siddhi_EveryPatternSourceChain', the role 'siddhi_EveryPatternSourceChain299' has cardinality 0..*.
+An association connects 'siddhi_EveryPatternSourceChain' and 'siddhi_EveryPatternSourceChain'. From 'siddhi_EveryPatternSourceChain', the role 'siddhi_EveryPatternSourceChain302' has cardinality 0..*, and from 'siddhi_EveryPatternSourceChain', the role 'siddhi_EveryPatternSourceChain300' has cardinality 0..*.
+An association connects 'siddhi_WithinTime' and 'siddhi_EveryPatternSourceChain'. From 'siddhi_WithinTime', the role 'siddhi_WithinTime305' has cardinality 0..*, and from 'siddhi_EveryPatternSourceChain', the role 'siddhi_EveryPatternSourceChain304' has cardinality 0..*.
+An association connects 'siddhi_EveryPatternSourceChain' and 'siddhi_PatternSourceChain'. From 'siddhi_EveryPatternSourceChain', the role 'siddhi_EveryPatternSourceChain307' has cardinality 0..*, and from 'siddhi_PatternSourceChain', the role 'siddhi_PatternSourceChain' has cardinality 0..*.
+An association connects 'siddhi_EveryPatternSourceChain' and 'siddhi_EVERY'. From 'siddhi_EveryPatternSourceChain', the role 'siddhi_EveryPatternSourceChain309' has cardinality 0..*, and from 'siddhi_EVERY', the role 'siddhi_EVERY310' has cardinality 0..*.
+An association connects 'siddhi_PatternSourceChain' and 'siddhi_PatternSourceChain'. From 'siddhi_PatternSourceChain', the role 'siddhi_PatternSourceChain311' has cardinality 0..*, and from 'siddhi_PatternSourceChain', the role 'siddhi_PatternSourceChain313' has cardinality 0..*.
+An association connects 'siddhi_PatternSourceChain' and 'siddhi_PatternSourceChain'. From 'siddhi_PatternSourceChain', the role 'siddhi_PatternSourceChain314' has cardinality 0..*, and from 'siddhi_PatternSourceChain', the role 'siddhi_PatternSourceChain316' has cardinality 0..*.
+An association connects 'siddhi_PatternSourceChain' and 'siddhi_PatternSourceChain'. From 'siddhi_PatternSourceChain', the role 'siddhi_PatternSourceChain317' has cardinality 0..*, and from 'siddhi_PatternSourceChain', the role 'siddhi_PatternSourceChain319' has cardinality 0..*.
+An association connects 'siddhi_PatternSourceChain' and 'siddhi_WithinTime'. From 'siddhi_PatternSourceChain', the role 'siddhi_PatternSourceChain321' has cardinality 0..*, and from 'siddhi_WithinTime', the role 'siddhi_WithinTime322' has cardinality 0..*.
+An association connects 'siddhi_PatternSourceChain' and 'siddhi_PatternSource'. From 'siddhi_PatternSourceChain', the role 'siddhi_PatternSourceChain324' has cardinality 0..*, and from 'siddhi_PatternSource', the role 'siddhi_PatternSource' has cardinality 0..*.
+An association connects 'siddhi_LogicalStatefulSource' and 'siddhi_PatternSource'. From 'siddhi_LogicalStatefulSource', the role 'siddhi_LogicalStatefulSource' has cardinality 0..*, and from 'siddhi_PatternSource', the role 'siddhi_PatternSource326' has cardinality 0..*.
+An association connects 'siddhi_PatternSource' and 'siddhi_PatternCollectionStatefulSource'. From 'siddhi_PatternSource', the role 'siddhi_PatternSource328' has cardinality 0..*, and from 'siddhi_PatternCollectionStatefulSource', the role 'siddhi_PatternCollectionStatefulSource' has cardinality 0..*.
+An association connects 'siddhi_StandardStatefulSource' and 'siddhi_PatternSource'. From 'siddhi_StandardStatefulSource', the role 'siddhi_StandardStatefulSource' has cardinality 0..*, and from 'siddhi_PatternSource', the role 'siddhi_PatternSource330' has cardinality 0..*.
+An association connects 'siddhi_PatternSource' and 'siddhi_LogicalAbsentStatefulSource'. From 'siddhi_PatternSource', the role 'siddhi_PatternSource332' has cardinality 0..*, and from 'siddhi_LogicalAbsentStatefulSource', the role 'siddhi_LogicalAbsentStatefulSource' has cardinality 0..*.
+An association connects 'siddhi_StandardStatefulSource' and 'siddhi_LogicalStatefulSource'. From 'siddhi_StandardStatefulSource', the role 'siddhi_StandardStatefulSource335' has cardinality 0..*, and from 'siddhi_LogicalStatefulSource', the role 'siddhi_LogicalStatefulSource334' has cardinality 0..*.
+An association connects 'siddhi_AND' and 'siddhi_LogicalStatefulSource'. From 'siddhi_AND', the role 'siddhi_AND' has cardinality 0..*, and from 'siddhi_LogicalStatefulSource', the role 'siddhi_LogicalStatefulSource337' has cardinality 0..*.
+An association connects 'siddhi_OR' and 'siddhi_LogicalStatefulSource'. From 'siddhi_OR', the role 'siddhi_OR340' has cardinality 0..*, and from 'siddhi_LogicalStatefulSource', the role 'siddhi_LogicalStatefulSource339' has cardinality 0..*.
+An association connects 'siddhi_LogicalAbsentStatefulSource' and 'siddhi_LogicalAbsentStatefulSource'. From 'siddhi_LogicalAbsentStatefulSource', the role 'siddhi_LogicalAbsentStatefulSource341' has cardinality 0..*, and from 'siddhi_LogicalAbsentStatefulSource', the role 'siddhi_LogicalAbsentStatefulSource343' has cardinality 0..*.
+An association connects 'siddhi_StandardStatefulSource' and 'siddhi_LogicalAbsentStatefulSource'. From 'siddhi_StandardStatefulSource', the role 'siddhi_StandardStatefulSource346' has cardinality 0..*, and from 'siddhi_LogicalAbsentStatefulSource', the role 'siddhi_LogicalAbsentStatefulSource345' has cardinality 0..*.
+An association connects 'siddhi_LogicalAbsentStatefulSource' and 'siddhi_AND'. From 'siddhi_LogicalAbsentStatefulSource', the role 'siddhi_LogicalAbsentStatefulSource348' has cardinality 0..*, and from 'siddhi_AND', the role 'siddhi_AND349' has cardinality 0..*.
+An association connects 'siddhi_LogicalAbsentStatefulSource' and 'siddhi_NOT'. From 'siddhi_LogicalAbsentStatefulSource', the role 'siddhi_LogicalAbsentStatefulSource351' has cardinality 0..*, and from 'siddhi_NOT', the role 'siddhi_NOT' has cardinality 0..*.
+An association connects 'siddhi_LogicalAbsentStatefulSource' and 'siddhi_BasicSource'. From 'siddhi_LogicalAbsentStatefulSource', the role 'siddhi_LogicalAbsentStatefulSource353' has cardinality 0..*, and from 'siddhi_BasicSource', the role 'siddhi_BasicSource' has cardinality 0..*.
+An association connects 'siddhi_BasicAbsentPatternSource' and 'siddhi_LogicalAbsentStatefulSource'. From 'siddhi_BasicAbsentPatternSource', the role 'siddhi_BasicAbsentPatternSource356' has cardinality 0..*, and from 'siddhi_LogicalAbsentStatefulSource', the role 'siddhi_LogicalAbsentStatefulSource355' has cardinality 0..*.
+An association connects 'siddhi_BasicAbsentPatternSource' and 'siddhi_LogicalAbsentStatefulSource'. From 'siddhi_BasicAbsentPatternSource', the role 'siddhi_BasicAbsentPatternSource359' has cardinality 0..*, and from 'siddhi_LogicalAbsentStatefulSource', the role 'siddhi_LogicalAbsentStatefulSource358' has cardinality 0..*.
+An association connects 'siddhi_LogicalAbsentStatefulSource' and 'siddhi_BasicAbsentPatternSource'. From 'siddhi_LogicalAbsentStatefulSource', the role 'siddhi_LogicalAbsentStatefulSource361' has cardinality 0..*, and from 'siddhi_BasicAbsentPatternSource', the role 'siddhi_BasicAbsentPatternSource362' has cardinality 0..*.
+An association connects 'siddhi_OR' and 'siddhi_LogicalAbsentStatefulSource'. From 'siddhi_OR', the role 'siddhi_OR365' has cardinality 0..*, and from 'siddhi_LogicalAbsentStatefulSource', the role 'siddhi_LogicalAbsentStatefulSource364' has cardinality 0..*.
+An association connects 'siddhi_AbsentPatternSourceChain' and 'siddhi_AbsentPatternSourceChain'. From 'siddhi_AbsentPatternSourceChain', the role 'siddhi_AbsentPatternSourceChain' has cardinality 0..*, and from 'siddhi_AbsentPatternSourceChain', the role 'siddhi_AbsentPatternSourceChain366' has cardinality 0..*.
+An association connects 'siddhi_AbsentPatternSourceChain' and 'siddhi_WithinTime'. From 'siddhi_AbsentPatternSourceChain', the role 'siddhi_AbsentPatternSourceChain369' has cardinality 0..*, and from 'siddhi_WithinTime', the role 'siddhi_WithinTime370' has cardinality 0..*.
+An association connects 'siddhi_BasicAbsentPatternSource' and 'siddhi_EveryAbsentPatternSource'. From 'siddhi_BasicAbsentPatternSource', the role 'siddhi_BasicAbsentPatternSource372' has cardinality 0..*, and from 'siddhi_EveryAbsentPatternSource', the role 'siddhi_EveryAbsentPatternSource' has cardinality 0..*.
+An association connects 'siddhi_ForTime' and 'siddhi_TimeValue'. From 'siddhi_ForTime', the role 'siddhi_ForTime' has cardinality 0..*, and from 'siddhi_TimeValue', the role 'siddhi_TimeValue374' has cardinality 0..*.
+An association connects 'siddhi_LeftAbsentPatternSource' and 'siddhi_LeftAbsentPatternSource'. From 'siddhi_LeftAbsentPatternSource', the role 'siddhi_LeftAbsentPatternSource375' has cardinality 0..*, and from 'siddhi_LeftAbsentPatternSource', the role 'siddhi_LeftAbsentPatternSource' has cardinality 0..*.
+An association connects 'siddhi_AbsentPatternSourceChain' and 'siddhi_LeftAbsentPatternSource'. From 'siddhi_AbsentPatternSourceChain', the role 'siddhi_AbsentPatternSourceChain379' has cardinality 0..*, and from 'siddhi_LeftAbsentPatternSource', the role 'siddhi_LeftAbsentPatternSource378' has cardinality 0..*.
+An association connects 'siddhi_LeftAbsentPatternSource' and 'siddhi_LeftAbsentPatternSource'. From 'siddhi_LeftAbsentPatternSource', the role 'siddhi_LeftAbsentPatternSource382' has cardinality 0..*, and from 'siddhi_LeftAbsentPatternSource', the role 'siddhi_LeftAbsentPatternSource380' has cardinality 0..*.
+An association connects 'siddhi_LeftAbsentPatternSource' and 'siddhi_WithinTime'. From 'siddhi_LeftAbsentPatternSource', the role 'siddhi_LeftAbsentPatternSource384' has cardinality 0..*, and from 'siddhi_WithinTime', the role 'siddhi_WithinTime385' has cardinality 0..*.
+An association connects 'siddhi_EveryAbsentPatternSource' and 'siddhi_LeftAbsentPatternSource'. From 'siddhi_EveryAbsentPatternSource', the role 'siddhi_EveryAbsentPatternSource388' has cardinality 0..*, and from 'siddhi_LeftAbsentPatternSource', the role 'siddhi_LeftAbsentPatternSource387' has cardinality 0..*.
+An association connects 'siddhi_LeftAbsentPatternSource' and 'siddhi_EveryPatternSourceChain'. From 'siddhi_LeftAbsentPatternSource', the role 'siddhi_LeftAbsentPatternSource390' has cardinality 0..*, and from 'siddhi_EveryPatternSourceChain', the role 'siddhi_EveryPatternSourceChain391' has cardinality 0..*.
+An association connects 'siddhi_LeftAbsentPatternSource' and 'siddhi_LeftAbsentPatternSource'. From 'siddhi_LeftAbsentPatternSource', the role 'siddhi_LeftAbsentPatternSource392' has cardinality 0..*, and from 'siddhi_LeftAbsentPatternSource', the role 'siddhi_LeftAbsentPatternSource394' has cardinality 0..*.
+An association connects 'siddhi_RightAbsentPatternSource' and 'siddhi_RightAbsentPatternSource'. From 'siddhi_RightAbsentPatternSource', the role 'siddhi_RightAbsentPatternSource' has cardinality 0..*, and from 'siddhi_RightAbsentPatternSource', the role 'siddhi_RightAbsentPatternSource395' has cardinality 0..*.
+An association connects 'siddhi_RightAbsentPatternSource' and 'siddhi_RightAbsentPatternSource'. From 'siddhi_RightAbsentPatternSource', the role 'siddhi_RightAbsentPatternSource397' has cardinality 0..*, and from 'siddhi_RightAbsentPatternSource', the role 'siddhi_RightAbsentPatternSource399' has cardinality 0..*.
+An association connects 'siddhi_RightAbsentPatternSource' and 'siddhi_RightAbsentPatternSource'. From 'siddhi_RightAbsentPatternSource', the role 'siddhi_RightAbsentPatternSource402' has cardinality 0..*, and from 'siddhi_RightAbsentPatternSource', the role 'siddhi_RightAbsentPatternSource400' has cardinality 0..*.
+An association connects 'siddhi_RightAbsentPatternSource' and 'siddhi_WithinTime'. From 'siddhi_RightAbsentPatternSource', the role 'siddhi_RightAbsentPatternSource404' has cardinality 0..*, and from 'siddhi_WithinTime', the role 'siddhi_WithinTime405' has cardinality 0..*.
+An association connects 'siddhi_EveryPatternSourceChain' and 'siddhi_RightAbsentPatternSource'. From 'siddhi_EveryPatternSourceChain', the role 'siddhi_EveryPatternSourceChain408' has cardinality 0..*, and from 'siddhi_RightAbsentPatternSource', the role 'siddhi_RightAbsentPatternSource407' has cardinality 0..*.
+An association connects 'siddhi_RightAbsentPatternSource' and 'siddhi_EveryAbsentPatternSource'. From 'siddhi_RightAbsentPatternSource', the role 'siddhi_RightAbsentPatternSource410' has cardinality 0..*, and from 'siddhi_EveryAbsentPatternSource', the role 'siddhi_EveryAbsentPatternSource411' has cardinality 0..*.
+An association connects 'siddhi_JoinSource' and 'siddhi_JoinStream'. From 'siddhi_JoinSource', the role 'siddhi_JoinSource' has cardinality 0..*, and from 'siddhi_JoinStream', the role 'siddhi_JoinStream413' has cardinality 0..*.
+An association connects 'siddhi_JoinSource' and 'siddhi_JoinStream'. From 'siddhi_JoinSource', the role 'siddhi_JoinSource416' has cardinality 0..*, and from 'siddhi_JoinStream', the role 'siddhi_JoinStream415' has cardinality 0..*.
+An association connects 'siddhi_JoinStream' and 'siddhi_UNIDIRECTIONAL'. From 'siddhi_JoinStream', the role 'siddhi_JoinStream418' has cardinality 0..*, and from 'siddhi_UNIDIRECTIONAL', the role 'siddhi_UNIDIRECTIONAL' has cardinality 0..*.
+An association connects 'siddhi_ON' and 'siddhi_JoinStream'. From 'siddhi_ON', the role 'siddhi_ON421' has cardinality 0..*, and from 'siddhi_JoinStream', the role 'siddhi_JoinStream420' has cardinality 0..*.
+An association connects 'siddhi_Expression' and 'siddhi_JoinStream'. From 'siddhi_Expression', the role 'siddhi_Expression424' has cardinality 0..*, and from 'siddhi_JoinStream', the role 'siddhi_JoinStream423' has cardinality 0..*.
+An association connects 'siddhi_JoinStream' and 'siddhi_WithinTimeRange'. From 'siddhi_JoinStream', the role 'siddhi_JoinStream426' has cardinality 0..*, and from 'siddhi_WithinTimeRange', the role 'siddhi_WithinTimeRange' has cardinality 0..*.
+An association connects 'siddhi_Per1' and 'siddhi_JoinStream'. From 'siddhi_Per1', the role 'siddhi_Per1' has cardinality 0..*, and from 'siddhi_JoinStream', the role 'siddhi_JoinStream428' has cardinality 0..*.
+An association connects 'siddhi_JoinStream' and 'siddhi_joins'. From 'siddhi_JoinStream', the role 'siddhi_JoinStream430' has cardinality 0..*, and from 'siddhi_joins', the role 'siddhi_joins' has cardinality 0..*.
+An association connects 'siddhi_UNIDIRECTIONAL' and 'siddhi_JoinStream'. From 'siddhi_UNIDIRECTIONAL', the role 'siddhi_UNIDIRECTIONAL433' has cardinality 0..*, and from 'siddhi_JoinStream', the role 'siddhi_JoinStream432' has cardinality 0..*.
+An association connects 'siddhi_Expression' and 'siddhi_WithinTimeRange'. From 'siddhi_Expression', the role 'siddhi_Expression436' has cardinality 0..*, and from 'siddhi_WithinTimeRange', the role 'siddhi_WithinTimeRange435' has cardinality 0..*.
+An association connects 'siddhi_WithinTimeRange' and 'siddhi_Expression'. From 'siddhi_WithinTimeRange', the role 'siddhi_WithinTimeRange438' has cardinality 0..*, and from 'siddhi_Expression', the role 'siddhi_Expression439' has cardinality 0..*.
+An association connects 'siddhi_Expression' and 'siddhi_Per1'. From 'siddhi_Expression', the role 'siddhi_Expression442' has cardinality 0..*, and from 'siddhi_Per1', the role 'siddhi_Per1441' has cardinality 0..*.
+An association connects 'siddhi_StreamAlias' and 'siddhi_Name'. From 'siddhi_StreamAlias', the role 'siddhi_StreamAlias' has cardinality 0..*, and from 'siddhi_Name', the role 'siddhi_Name444' has cardinality 0..*.
+An association connects 'siddhi_TimeValue' and 'siddhi_WithinTime'. From 'siddhi_TimeValue', the role 'siddhi_TimeValue447' has cardinality 0..*, and from 'siddhi_WithinTime', the role 'siddhi_WithinTime446' has cardinality 0..*.
+An association connects 'siddhi_MainSource' and 'siddhi_Win'. From 'siddhi_MainSource', the role 'siddhi_MainSource' has cardinality 0..*, and from 'siddhi_Win', the role 'siddhi_Win' has cardinality 0..*.
+An association connects 'siddhi_AS' and 'siddhi_MainSource'. From 'siddhi_AS', the role 'siddhi_AS451' has cardinality 0..*, and from 'siddhi_MainSource', the role 'siddhi_MainSource450' has cardinality 0..*.
+An association connects 'siddhi_MainSource' and 'siddhi_StreamAlias'. From 'siddhi_MainSource', the role 'siddhi_MainSource453' has cardinality 0..*, and from 'siddhi_StreamAlias', the role 'siddhi_StreamAlias454' has cardinality 0..*.
+An association connects 'siddhi_MainSource' and 'siddhi_BasicSourceStreamHandlers'. From 'siddhi_MainSource', the role 'siddhi_MainSource456' has cardinality 0..*, and from 'siddhi_BasicSourceStreamHandlers', the role 'siddhi_BasicSourceStreamHandlers' has cardinality 0..*.
+An association connects 'siddhi_Source' and 'siddhi_MainSource'. From 'siddhi_Source', the role 'siddhi_Source459' has cardinality 0..*, and from 'siddhi_MainSource', the role 'siddhi_MainSource458' has cardinality 0..*.
+An association connects 'siddhi_BasicSourceStreamHandlers1' and 'siddhi_MainSource'. From 'siddhi_BasicSourceStreamHandlers1', the role 'siddhi_BasicSourceStreamHandlers1' has cardinality 0..*, and from 'siddhi_MainSource', the role 'siddhi_MainSource461' has cardinality 0..*.
+An association connects 'siddhi_BasicSourceStreamHandlers' and 'siddhi_BasicSourceStreamHandler'. From 'siddhi_BasicSourceStreamHandlers', the role 'siddhi_BasicSourceStreamHandlers463' has cardinality 0..*, and from 'siddhi_BasicSourceStreamHandler', the role 'siddhi_BasicSourceStreamHandler' has cardinality 0..*.
+An association connects 'siddhi_Expression' and 'siddhi_BasicSourceStreamHandlers1'. From 'siddhi_Expression', the role 'siddhi_Expression466' has cardinality 0..*, and from 'siddhi_BasicSourceStreamHandlers1', the role 'siddhi_BasicSourceStreamHandlers1465' has cardinality 0..*.
+An association connects 'siddhi_FunctionOperation' and 'siddhi_BasicSourceStreamHandlers1'. From 'siddhi_FunctionOperation', the role 'siddhi_FunctionOperation469' has cardinality 0..*, and from 'siddhi_BasicSourceStreamHandlers1', the role 'siddhi_BasicSourceStreamHandlers1468' has cardinality 0..*.
+An association connects 'siddhi_FunctionOperation' and 'siddhi_BasicSourceStreamHandlers1'. From 'siddhi_FunctionOperation', the role 'siddhi_FunctionOperation472' has cardinality 0..*, and from 'siddhi_BasicSourceStreamHandlers1', the role 'siddhi_BasicSourceStreamHandlers1471' has cardinality 0..*.
+An association connects 'siddhi_BasicSourceStreamHandler' and 'siddhi_Filter'. From 'siddhi_BasicSourceStreamHandler', the role 'siddhi_BasicSourceStreamHandler474' has cardinality 0..*, and from 'siddhi_Filter', the role 'siddhi_Filter' has cardinality 0..*.
+An association connects 'siddhi_StreamFunction' and 'siddhi_BasicSourceStreamHandler'. From 'siddhi_StreamFunction', the role 'siddhi_StreamFunction' has cardinality 0..*, and from 'siddhi_BasicSourceStreamHandler', the role 'siddhi_BasicSourceStreamHandler476' has cardinality 0..*.
+An association connects 'siddhi_Expression' and 'siddhi_Filter'. From 'siddhi_Expression', the role 'siddhi_Expression479' has cardinality 0..*, and from 'siddhi_Filter', the role 'siddhi_Filter478' has cardinality 0..*.
+An association connects 'siddhi_FunctionOperation' and 'siddhi_StreamFunction'. From 'siddhi_FunctionOperation', the role 'siddhi_FunctionOperation482' has cardinality 0..*, and from 'siddhi_StreamFunction', the role 'siddhi_StreamFunction481' has cardinality 0..*.
+An association connects 'siddhi_FunctionOperation' and 'siddhi_Win'. From 'siddhi_FunctionOperation', the role 'siddhi_FunctionOperation485' has cardinality 0..*, and from 'siddhi_Win', the role 'siddhi_Win484' has cardinality 0..*.
+An association connects 'siddhi_MathOperation' and 'siddhi_MathOperation'. From 'siddhi_MathOperation', the role 'siddhi_MathOperation' has cardinality 0..*, and from 'siddhi_MathOperation', the role 'siddhi_MathOperation486' has cardinality 0..*.
+An association connects 'siddhi_MathOperation' and 'siddhi_MathOperation'. From 'siddhi_MathOperation', the role 'siddhi_MathOperation488' has cardinality 0..*, and from 'siddhi_MathOperation', the role 'siddhi_MathOperation490' has cardinality 0..*.
+An association connects 'siddhi_MathDivmulOperation' and 'siddhi_MathAddsubOperation'. From 'siddhi_MathDivmulOperation', the role 'siddhi_MathDivmulOperation' has cardinality 0..*, and from 'siddhi_MathAddsubOperation', the role 'siddhi_MathAddsubOperation' has cardinality 0..*.
+An association connects 'siddhi_MathOtherOperations' and 'siddhi_MathOperation'. From 'siddhi_MathOtherOperations', the role 'siddhi_MathOtherOperations' has cardinality 0..*, and from 'siddhi_MathOperation', the role 'siddhi_MathOperation493' has cardinality 0..*.
+An association connects 'siddhi_Literal' and 'siddhi_MathOtherOperations'. From 'siddhi_Literal', the role 'siddhi_Literal' has cardinality 0..*, and from 'siddhi_MathOtherOperations', the role 'siddhi_MathOtherOperations495' has cardinality 0..*.
+An association connects 'siddhi_NullCheck' and 'siddhi_StreamReference'. From 'siddhi_NullCheck', the role 'siddhi_NullCheck' has cardinality 0..*, and from 'siddhi_StreamReference', the role 'siddhi_StreamReference' has cardinality 0..*.
+An association connects 'siddhi_AttributeReference' and 'siddhi_NullCheck'. From 'siddhi_AttributeReference', the role 'siddhi_AttributeReference499' has cardinality 0..*, and from 'siddhi_NullCheck', the role 'siddhi_NullCheck498' has cardinality 0..*.
+An association connects 'siddhi_NullCheck' and 'siddhi_FunctionOperation'. From 'siddhi_NullCheck', the role 'siddhi_NullCheck501' has cardinality 0..*, and from 'siddhi_FunctionOperation', the role 'siddhi_FunctionOperation502' has cardinality 0..*.
+An association connects 'siddhi_StreamReference' and 'siddhi_Name'. From 'siddhi_StreamReference', the role 'siddhi_StreamReference504' has cardinality 0..*, and from 'siddhi_Name', the role 'siddhi_Name505' has cardinality 0..*.
+An association connects 'siddhi_StreamReference' and 'siddhi_AttributeIndex'. From 'siddhi_StreamReference', the role 'siddhi_StreamReference507' has cardinality 0..*, and from 'siddhi_AttributeIndex', the role 'siddhi_AttributeIndex' has cardinality 0..*.
+An association connects 'siddhi_ConstantValue' and 'siddhi_Literal'. From 'siddhi_ConstantValue', the role 'siddhi_ConstantValue' has cardinality 0..*, and from 'siddhi_Literal', the role 'siddhi_Literal509' has cardinality 0..*.
+An association connects 'siddhi_FunctionOperation' and 'siddhi_Literal'. From 'siddhi_FunctionOperation', the role 'siddhi_FunctionOperation512' has cardinality 0..*, and from 'siddhi_Literal', the role 'siddhi_Literal511' has cardinality 0..*.
+An association connects 'siddhi_Literal' and 'siddhi_AttributeReference'. From 'siddhi_Literal', the role 'siddhi_Literal514' has cardinality 0..*, and from 'siddhi_AttributeReference', the role 'siddhi_AttributeReference515' has cardinality 0..*.
+An association connects 'siddhi_Expression' and 'siddhi_AttributeReference'. From 'siddhi_Expression', the role 'siddhi_Expression518' has cardinality 0..*, and from 'siddhi_AttributeReference', the role 'siddhi_AttributeReference517' has cardinality 0..*.
+An association connects 'siddhi_AttributeReference' and 'siddhi_SourceOrEventReference'. From 'siddhi_AttributeReference', the role 'siddhi_AttributeReference520' has cardinality 0..*, and from 'siddhi_SourceOrEventReference', the role 'siddhi_SourceOrEventReference' has cardinality 0..*.
+An association connects 'siddhi_AttributeIndex' and 'siddhi_AttributeReference'. From 'siddhi_AttributeIndex', the role 'siddhi_AttributeIndex523' has cardinality 0..*, and from 'siddhi_AttributeReference', the role 'siddhi_AttributeReference522' has cardinality 0..*.
+An association connects 'siddhi_SourceOrEventReference' and 'siddhi_AttributeReference'. From 'siddhi_SourceOrEventReference', the role 'siddhi_SourceOrEventReference526' has cardinality 0..*, and from 'siddhi_AttributeReference', the role 'siddhi_AttributeReference525' has cardinality 0..*.
+An association connects 'siddhi_AttributeReference' and 'siddhi_AttributeIndex'. From 'siddhi_AttributeReference', the role 'siddhi_AttributeReference528' has cardinality 0..*, and from 'siddhi_AttributeIndex', the role 'siddhi_AttributeIndex529' has cardinality 0..*.
+An association connects 'siddhi_FeaturesOrOutAttrReference' and 'siddhi_AttributeReference'. From 'siddhi_FeaturesOrOutAttrReference', the role 'siddhi_FeaturesOrOutAttrReference' has cardinality 0..*, and from 'siddhi_AttributeReference', the role 'siddhi_AttributeReference531' has cardinality 0..*.
+An association connects 'siddhi_FeaturesOrOutAttrReference' and 'siddhi_FeaturesOrOutAttr'. From 'siddhi_FeaturesOrOutAttrReference', the role 'siddhi_FeaturesOrOutAttrReference533' has cardinality 0..*, and from 'siddhi_FeaturesOrOutAttr', the role 'siddhi_FeaturesOrOutAttr' has cardinality 0..*.
+An association connects 'siddhi_StandardStatefulSource' and 'siddhi_Collect'. From 'siddhi_StandardStatefulSource', the role 'siddhi_StandardStatefulSource535' has cardinality 0..*, and from 'siddhi_Collect', the role 'siddhi_Collect' has cardinality 0..*.
+An association connects 'siddhi_Source' and 'siddhi_StandardStatefulSource'. From 'siddhi_Source', the role 'siddhi_Source538' has cardinality 0..*, and from 'siddhi_StandardStatefulSource', the role 'siddhi_StandardStatefulSource537' has cardinality 0..*.
+An association connects 'siddhi_StandardStatefulSource' and 'siddhi_BasicSourceStreamHandlers'. From 'siddhi_StandardStatefulSource', the role 'siddhi_StandardStatefulSource540' has cardinality 0..*, and from 'siddhi_BasicSourceStreamHandlers', the role 'siddhi_BasicSourceStreamHandlers541' has cardinality 0..*.
+An association connects 'siddhi_Source' and 'siddhi_BasicSource'. From 'siddhi_Source', the role 'siddhi_Source544' has cardinality 0..*, and from 'siddhi_BasicSource', the role 'siddhi_BasicSource543' has cardinality 0..*.
+An association connects 'siddhi_BasicSourceStreamHandlers' and 'siddhi_BasicSource'. From 'siddhi_BasicSourceStreamHandlers', the role 'siddhi_BasicSourceStreamHandlers547' has cardinality 0..*, and from 'siddhi_BasicSource', the role 'siddhi_BasicSource546' has cardinality 0..*.
+An association connects 'siddhi_SourceOrEventReference' and 'siddhi_Source1OrStandardStatefulSource'. From 'siddhi_SourceOrEventReference', the role 'siddhi_SourceOrEventReference549' has cardinality 0..*, and from 'siddhi_Source1OrStandardStatefulSource', the role 'siddhi_Source1OrStandardStatefulSource' has cardinality 0..*.
+An association connects 'siddhi_Features' and 'siddhi_AttributeNameReference'. From 'siddhi_Features', the role 'siddhi_Features551' has cardinality 0..*, and from 'siddhi_AttributeNameReference', the role 'siddhi_AttributeNameReference' has cardinality 0..*.
+An association connects 'siddhi_BoolValue' and 'siddhi_ConstantValue'. From 'siddhi_BoolValue', the role 'siddhi_BoolValue' has cardinality 0..*, and from 'siddhi_ConstantValue', the role 'siddhi_ConstantValue553' has cardinality 0..*.
+An association connects 'siddhi_SignedDoubleValue' and 'siddhi_ConstantValue'. From 'siddhi_SignedDoubleValue', the role 'siddhi_SignedDoubleValue' has cardinality 0..*, and from 'siddhi_ConstantValue', the role 'siddhi_ConstantValue555' has cardinality 0..*.
+An association connects 'siddhi_ConstantValue' and 'siddhi_SignedFloatValue'. From 'siddhi_ConstantValue', the role 'siddhi_ConstantValue557' has cardinality 0..*, and from 'siddhi_SignedFloatValue', the role 'siddhi_SignedFloatValue' has cardinality 0..*.
+An association connects 'siddhi_ConstantValue' and 'siddhi_SignedLongValue'. From 'siddhi_ConstantValue', the role 'siddhi_ConstantValue559' has cardinality 0..*, and from 'siddhi_SignedLongValue', the role 'siddhi_SignedLongValue' has cardinality 0..*.
+An association connects 'siddhi_ConstantValue' and 'siddhi_TimeValue'. From 'siddhi_ConstantValue', the role 'siddhi_ConstantValue561' has cardinality 0..*, and from 'siddhi_TimeValue', the role 'siddhi_TimeValue562' has cardinality 0..*.
+An association connects 'siddhi_StringValue' and 'siddhi_ConstantValue'. From 'siddhi_StringValue', the role 'siddhi_StringValue565' has cardinality 0..*, and from 'siddhi_ConstantValue', the role 'siddhi_ConstantValue564' has cardinality 0..*.
+An association connects 'siddhi_FunctionOperation' and 'siddhi_FunctionNamespace'. From 'siddhi_FunctionOperation', the role 'siddhi_FunctionOperation567' has cardinality 0..*, and from 'siddhi_FunctionNamespace', the role 'siddhi_FunctionNamespace' has cardinality 0..*.
+An association connects 'siddhi_FunctionOperation' and 'siddhi_FunctionId'. From 'siddhi_FunctionOperation', the role 'siddhi_FunctionOperation569' has cardinality 0..*, and from 'siddhi_FunctionId', the role 'siddhi_FunctionId' has cardinality 0..*.
+An association connects 'siddhi_FunctionOperation' and 'siddhi_AttributeList'. From 'siddhi_FunctionOperation', the role 'siddhi_FunctionOperation571' has cardinality 0..*, and from 'siddhi_AttributeList', the role 'siddhi_AttributeList' has cardinality 0..*.
+An association connects 'siddhi_Name' and 'siddhi_FunctionNamespace'. From 'siddhi_Name', the role 'siddhi_Name574' has cardinality 0..*, and from 'siddhi_FunctionNamespace', the role 'siddhi_FunctionNamespace573' has cardinality 0..*.
+An association connects 'siddhi_Name' and 'siddhi_FunctionId'. From 'siddhi_Name', the role 'siddhi_Name577' has cardinality 0..*, and from 'siddhi_FunctionId', the role 'siddhi_FunctionId576' has cardinality 0..*.
+An association connects 'siddhi_Attribute' and 'siddhi_AttributeList'. From 'siddhi_Attribute', the role 'siddhi_Attribute580' has cardinality 0..*, and from 'siddhi_AttributeList', the role 'siddhi_AttributeList579' has cardinality 0..*.
+An association connects 'siddhi_Attribute' and 'siddhi_MathOperation'. From 'siddhi_Attribute', the role 'siddhi_Attribute582' has cardinality 0..*, and from 'siddhi_MathOperation', the role 'siddhi_MathOperation583' has cardinality 0..*.
+An association connects 'siddhi_TimeValue' and 'siddhi_YearValue'. From 'siddhi_TimeValue', the role 'siddhi_TimeValue585' has cardinality 0..*, and from 'siddhi_YearValue', the role 'siddhi_YearValue' has cardinality 0..*.
+An association connects 'siddhi_MonthValue' and 'siddhi_TimeValue'. From 'siddhi_MonthValue', the role 'siddhi_MonthValue' has cardinality 0..*, and from 'siddhi_TimeValue', the role 'siddhi_TimeValue587' has cardinality 0..*.
+An association connects 'siddhi_WeekValue' and 'siddhi_TimeValue'. From 'siddhi_WeekValue', the role 'siddhi_WeekValue' has cardinality 0..*, and from 'siddhi_TimeValue', the role 'siddhi_TimeValue589' has cardinality 0..*.
+An association connects 'siddhi_DayValue' and 'siddhi_TimeValue'. From 'siddhi_DayValue', the role 'siddhi_DayValue' has cardinality 0..*, and from 'siddhi_TimeValue', the role 'siddhi_TimeValue591' has cardinality 0..*.
+An association connects 'siddhi_HourValue' and 'siddhi_TimeValue'. From 'siddhi_HourValue', the role 'siddhi_HourValue' has cardinality 0..*, and from 'siddhi_TimeValue', the role 'siddhi_TimeValue593' has cardinality 0..*.
+An association connects 'siddhi_MinuteValue' and 'siddhi_TimeValue'. From 'siddhi_MinuteValue', the role 'siddhi_MinuteValue' has cardinality 0..*, and from 'siddhi_TimeValue', the role 'siddhi_TimeValue595' has cardinality 0..*.
+An association connects 'siddhi_TimeValue' and 'siddhi_SecondValue'. From 'siddhi_TimeValue', the role 'siddhi_TimeValue597' has cardinality 0..*, and from 'siddhi_SecondValue', the role 'siddhi_SecondValue' has cardinality 0..*.
+An association connects 'siddhi_MillisecondValue' and 'siddhi_TimeValue'. From 'siddhi_MillisecondValue', the role 'siddhi_MillisecondValue' has cardinality 0..*, and from 'siddhi_TimeValue', the role 'siddhi_TimeValue599' has cardinality 0..*.
+An association connects 'siddhi_TimeValue' and 'siddhi_SecondValue'. From 'siddhi_TimeValue', the role 'siddhi_TimeValue601' has cardinality 0..*, and from 'siddhi_SecondValue', the role 'siddhi_SecondValue602' has cardinality 0..*.
+An association connects 'siddhi_DOUBLE_LITERAL' and 'siddhi_E'. From 'siddhi_DOUBLE_LITERAL', the role 'siddhi_DOUBLE_LITERAL' has cardinality 0..*, and from 'siddhi_E', the role 'siddhi_E' has cardinality 0..*.
+An association connects 'siddhi_DOUBLE_LITERAL' and 'siddhi_D'. From 'siddhi_DOUBLE_LITERAL', the role 'siddhi_DOUBLE_LITERAL605' has cardinality 0..*, and from 'siddhi_D', the role 'siddhi_D' has cardinality 0..*.
+An association connects 'siddhi_E' and 'siddhi_FLOAT_LITERAL'. From 'siddhi_E', the role 'siddhi_E607' has cardinality 0..*, and from 'siddhi_FLOAT_LITERAL', the role 'siddhi_FLOAT_LITERAL' has cardinality 0..*.
+An association connects 'siddhi_FLOAT_LITERAL' and 'siddhi_F'. From 'siddhi_FLOAT_LITERAL', the role 'siddhi_FLOAT_LITERAL609' has cardinality 0..*, and from 'siddhi_F', the role 'siddhi_F' has cardinality 0..*.
+An association connects 'siddhi_L' and 'siddhi_LONG_LITERAL'. From 'siddhi_L', the role 'siddhi_L' has cardinality 0..*, and from 'siddhi_LONG_LITERAL', the role 'siddhi_LONG_LITERAL' has cardinality 0..*.
+An association connects 'siddhi_AS' and 'siddhi_Keyword'. From 'siddhi_AS', the role 'siddhi_AS612' has cardinality 0..*, and from 'siddhi_Keyword', the role 'siddhi_Keyword' has cardinality 0..*.
+An association connects 'siddhi_Keyword' and 'siddhi_EVERY'. From 'siddhi_Keyword', the role 'siddhi_Keyword614' has cardinality 0..*, and from 'siddhi_EVERY', the role 'siddhi_EVERY615' has cardinality 0..*.
+An association connects 'siddhi_UNIDIRECTIONAL' and 'siddhi_Keyword'. From 'siddhi_UNIDIRECTIONAL', the role 'siddhi_UNIDIRECTIONAL618' has cardinality 0..*, and from 'siddhi_Keyword', the role 'siddhi_Keyword617' has cardinality 0..*.
+An association connects 'siddhi_Keyword' and 'siddhi_ON'. From 'siddhi_Keyword', the role 'siddhi_Keyword620' has cardinality 0..*, and from 'siddhi_ON', the role 'siddhi_ON621' has cardinality 0..*.
+An association connects 'siddhi_Keyword' and 'siddhi_AND'. From 'siddhi_Keyword', the role 'siddhi_Keyword623' has cardinality 0..*, and from 'siddhi_AND', the role 'siddhi_AND624' has cardinality 0..*.
+An association connects 'siddhi_OR' and 'siddhi_Keyword'. From 'siddhi_OR', the role 'siddhi_OR627' has cardinality 0..*, and from 'siddhi_Keyword', the role 'siddhi_Keyword626' has cardinality 0..*.
+An association connects 'siddhi_Keyword' and 'siddhi_NOT'. From 'siddhi_Keyword', the role 'siddhi_Keyword629' has cardinality 0..*, and from 'siddhi_NOT', the role 'siddhi_NOT630' has cardinality 0..*.
+An association connects 'siddhi_OF' and 'siddhi_Keyword'. From 'siddhi_OF', the role 'siddhi_OF633' has cardinality 0..*, and from 'siddhi_Keyword', the role 'siddhi_Keyword632' has cardinality 0..*.
+An association connects 'siddhi_BasicSource' and 'siddhi_NOT'. From 'siddhi_BasicSource', the role 'siddhi_BasicSource636' has cardinality 0..*, and from 'siddhi_NOT', the role 'siddhi_NOT635' has cardinality 0..*.
+An association connects 'siddhi_ForTime' and 'siddhi_NOT'. From 'siddhi_ForTime', the role 'siddhi_ForTime639' has cardinality 0..*, and from 'siddhi_NOT', the role 'siddhi_NOT638' has cardinality 0..*.
+An association connects 'siddhi_APP' and 'siddhi_Name'. From 'siddhi_APP', the role 'siddhi_APP' has cardinality 0..*, and from 'siddhi_Name', the role 'siddhi_Name641' has cardinality 0..*.
+An association connects 'siddhi_AnnotationElement' and 'siddhi_APP'. From 'siddhi_AnnotationElement', the role 'siddhi_AnnotationElement644' has cardinality 0..*, and from 'siddhi_APP', the role 'siddhi_APP643' has cardinality 0..*.
+An association connects 'siddhi_RightAbsentSequenceSource' and 'siddhi_RightAbsentSequenceSource1'. From 'siddhi_RightAbsentSequenceSource', the role 'siddhi_RightAbsentSequenceSource646' has cardinality 0..*, and from 'siddhi_RightAbsentSequenceSource1', the role 'siddhi_RightAbsentSequenceSource1' has cardinality 0..*.
+An association connects 'siddhi_RightAbsentSequenceSource1' and 'siddhi_SequenceSourceChain'. From 'siddhi_RightAbsentSequenceSource1', the role 'siddhi_RightAbsentSequenceSource1648' has cardinality 0..*, and from 'siddhi_SequenceSourceChain', the role 'siddhi_SequenceSourceChain649' has cardinality 0..*.
+An association connects 'siddhi_RightAbsentPatternSource' and 'siddhi_RightAbsentPatternSource1'. From 'siddhi_RightAbsentPatternSource', the role 'siddhi_RightAbsentPatternSource651' has cardinality 0..*, and from 'siddhi_RightAbsentPatternSource1', the role 'siddhi_RightAbsentPatternSource1' has cardinality 0..*.
+An association connects 'siddhi_RightAbsentPatternSource1' and 'siddhi_EveryAbsentPatternSource'. From 'siddhi_RightAbsentPatternSource1', the role 'siddhi_RightAbsentPatternSource1653' has cardinality 0..*, and from 'siddhi_EveryAbsentPatternSource', the role 'siddhi_EveryAbsentPatternSource654' has cardinality 0..*.
+An association connects 'siddhi_MathLogicalOperation' and 'siddhi_AND'. From 'siddhi_MathLogicalOperation', the role 'siddhi_MathLogicalOperation' has cardinality 0..*, and from 'siddhi_AND', the role 'siddhi_AND656' has cardinality 0..*.
+An association connects 'siddhi_MathLogicalOperation' and 'siddhi_OR'. From 'siddhi_MathLogicalOperation', the role 'siddhi_MathLogicalOperation658' has cardinality 0..*, and from 'siddhi_OR', the role 'siddhi_OR659' has cardinality 0..*.
+An association connects 'siddhi_MathOperation' and 'siddhi_MathLogicalOperation'. From 'siddhi_MathOperation', the role 'siddhi_MathOperation662' has cardinality 0..*, and from 'siddhi_MathLogicalOperation', the role 'siddhi_MathLogicalOperation661' has cardinality 0..*.
+An association connects 'siddhi_MathInOperation' and 'siddhi_IN'. From 'siddhi_MathInOperation', the role 'siddhi_MathInOperation' has cardinality 0..*, and from 'siddhi_IN', the role 'siddhi_IN' has cardinality 0..*.
+An association connects 'siddhi_Name' and 'siddhi_MathInOperation'. From 'siddhi_Name', the role 'siddhi_Name666' has cardinality 0..*, and from 'siddhi_MathInOperation', the role 'siddhi_MathInOperation665' has cardinality 0..*.
+An association connects 'siddhi_MathGtLtOperation' and 'siddhi_MathOperation'. From 'siddhi_MathGtLtOperation', the role 'siddhi_MathGtLtOperation' has cardinality 0..*, and from 'siddhi_MathOperation', the role 'siddhi_MathOperation668' has cardinality 0..*.
+An association connects 'siddhi_MathEqualOperation' and 'siddhi_MathAddsubOperation'. From 'siddhi_MathEqualOperation', the role 'siddhi_MathEqualOperation' has cardinality 0..*, and from 'siddhi_MathAddsubOperation', the role 'siddhi_MathAddsubOperation670' has cardinality 0..*.
+An association connects 'siddhi_NotOperation' and 'siddhi_NOT'. From 'siddhi_NotOperation', the role 'siddhi_NotOperation' has cardinality 0..*, and from 'siddhi_NOT', the role 'siddhi_NOT672' has cardinality 0..*.

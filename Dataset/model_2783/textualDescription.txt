@@ -1,0 +1,12 @@
+The domain model 'use_registered_classes' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'use_registered_classes_C' represents an important domain concept.
+It does not declare any attributes.
+
+'use_registered_classes_B' represents an important domain concept.
+It does not declare any attributes.
+
+'use_registered_classes_A' represents an important domain concept.
+It has the following attributes: 'x', which is of type int; 'z', which is of type str; 'y', which is of type str.

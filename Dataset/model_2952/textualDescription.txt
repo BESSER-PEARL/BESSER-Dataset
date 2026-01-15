@@ -1,0 +1,179 @@
+The domain model 'modelDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 42 main class(es).
+
+'DefAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_Method' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'modelDsl_MethodAllModelReturn' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_MethodCollectionReturn' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_AllModelType' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_SimpleEntity' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'modelDsl_DefLinkVariable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'modelDsl_AssociativeEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_ValueType' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_DefAllModelTypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_ModelType' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_Element' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ModelType' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_DefVariable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DefCollectionTypeAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_SimpleTypeCollection' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'modelDsl_ModelTypeCollection' represents an important domain concept.
+It has one attribute: 'collection', which is of type str.
+
+'modelDsl_Enumerable' represents an important domain concept.
+It has one attribute: 'enums', which is of type str.
+
+'modelDsl_CollectionReturnType' represents an important domain concept.
+It has one attribute: 'collection', which is of type str.
+
+'DefIdAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Method' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionReturnType' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_SimpleLink' represents an important domain concept.
+It does not declare any attributes.
+
+'Link' represents an important domain concept.
+It does not declare any attributes.
+
+'DefVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'AllModelType' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_DefModelModelTypeCollectionVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_AllModelTypeCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_DefCollectionTypeVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_DefAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_Relation' represents an important domain concept.
+It has the following attributes: 'multiplicity', which is of type str; 'navigable', which is of type str; 'name', which is of type str.
+
+'modelDsl_DefSimpleVariable' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'nullable', which is of type str.
+
+'modelDsl_DefCollectionTypeAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'modelDsl_MethodSimpleReturn' represents an important domain concept.
+It has one attribute: 'returnType', which is of type str.
+
+'modelDsl_DefModelSimpleTypeCollectionVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_DefModelTypeVariable' represents an important domain concept.
+It has the following attributes: 'nullable', which is of type str; 'name', which is of type str.
+
+'modelDsl_DefIdAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'modelDsl_AllModelType' is a specialization of 'Element'.
+The class 'modelDsl_Entity' is a specialization of 'AllModelType'.
+The class 'modelDsl_ModelType' is a specialization of 'AllModelType'.
+The class 'modelDsl_SimpleEntity' is a specialization of 'Entity'.
+The class 'modelDsl_AssociativeEntity' is a specialization of 'Entity'.
+The class 'modelDsl_AssociativeEntity' is a specialization of 'Link'.
+The class 'modelDsl_ValueType' is a specialization of 'ModelType'.
+The class 'modelDsl_Enumerable' is a specialization of 'ModelType'.
+The class 'modelDsl_SimpleLink' is a specialization of 'Element'.
+The class 'modelDsl_SimpleLink' is a specialization of 'Link'.
+The class 'modelDsl_DefAllModelTypeVariable' is a specialization of 'DefVariable'.
+The class 'modelDsl_DefSimpleVariable' is a specialization of 'DefAttribute'.
+The class 'modelDsl_DefSimpleVariable' is a specialization of 'DefVariable'.
+The class 'modelDsl_DefSimpleVariable' is a specialization of 'DefIdAttribute'.
+The class 'modelDsl_DefModelTypeVariable' is a specialization of 'DefAttribute'.
+The class 'modelDsl_DefModelTypeVariable' is a specialization of 'DefIdAttribute'.
+The class 'modelDsl_DefCollectionTypeAttribute' is a specialization of 'DefAttribute'.
+The class 'modelDsl_DefCollectionTypeVariable' is a specialization of 'DefVariable'.
+The class 'modelDsl_DefModelModelTypeCollectionVariable' is a specialization of 'DefCollectionTypeAttribute'.
+The class 'modelDsl_DefModelSimpleTypeCollectionVariable' is a specialization of 'DefCollectionTypeAttribute'.
+The class 'modelDsl_DefLinkVariable' is a specialization of 'DefIdAttribute'.
+The class 'modelDsl_MethodSimpleReturn' is a specialization of 'Method'.
+The class 'modelDsl_MethodCollectionReturn' is a specialization of 'Method'.
+The class 'modelDsl_MethodAllModelReturn' is a specialization of 'Method'.
+The class 'modelDsl_AllModelTypeCollection' is a specialization of 'CollectionReturnType'.
+The class 'modelDsl_SimpleTypeCollection' is a specialization of 'CollectionReturnType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'modelDsl_Model' and 'modelDsl_Element'. From 'modelDsl_Model', the role 'modelDsl_Model' has cardinality 0..*, and from 'modelDsl_Element', the role 'modelDsl_Element' has cardinality 0..*.
+An association connects 'modelDsl_Entity' and 'modelDsl_DefAttribute'. From 'modelDsl_Entity', the role 'modelDsl_Entity' has cardinality 0..*, and from 'modelDsl_DefAttribute', the role 'modelDsl_DefAttribute' has cardinality 0..*.
+An association connects 'modelDsl_Entity' and 'modelDsl_Method'. From 'modelDsl_Entity', the role 'modelDsl_Entity3' has cardinality 0..*, and from 'modelDsl_Method', the role 'modelDsl_Method' has cardinality 0..*.
+An association connects 'modelDsl_SimpleEntity' and 'modelDsl_SimpleEntity'. From 'modelDsl_SimpleEntity', the role 'modelDsl_SimpleEntity' has cardinality 0..*, and from 'modelDsl_SimpleEntity', the role 'modelDsl_SimpleEntity4' has cardinality 0..*.
+An association connects 'modelDsl_DefIdAttribute' and 'modelDsl_SimpleEntity'. From 'modelDsl_DefIdAttribute', the role 'modelDsl_DefIdAttribute' has cardinality 0..*, and from 'modelDsl_SimpleEntity', the role 'modelDsl_SimpleEntity7' has cardinality 0..*.
+An association connects 'modelDsl_AssociativeEntity' and 'modelDsl_Relation'. From 'modelDsl_AssociativeEntity', the role 'modelDsl_AssociativeEntity' has cardinality 0..*, and from 'modelDsl_Relation', the role 'modelDsl_Relation' has cardinality 0..*.
+An association connects 'modelDsl_DefAttribute' and 'modelDsl_ValueType'. From 'modelDsl_DefAttribute', the role 'modelDsl_DefAttribute10' has cardinality 0..*, and from 'modelDsl_ValueType', the role 'modelDsl_ValueType' has cardinality 0..*.
+An association connects 'modelDsl_Relation' and 'modelDsl_SimpleLink'. From 'modelDsl_Relation', the role 'modelDsl_Relation12' has cardinality 0..*, and from 'modelDsl_SimpleLink', the role 'modelDsl_SimpleLink' has cardinality 0..*.
+An association connects 'modelDsl_Relation' and 'modelDsl_Entity'. From 'modelDsl_Relation', the role 'modelDsl_Relation14' has cardinality 0..*, and from 'modelDsl_Entity', the role 'modelDsl_Entity15' has cardinality 0..*.
+An association connects 'modelDsl_DefAllModelTypeVariable' and 'modelDsl_AllModelType'. From 'modelDsl_DefAllModelTypeVariable', the role 'modelDsl_DefAllModelTypeVariable' has cardinality 0..*, and from 'modelDsl_AllModelType', the role 'modelDsl_AllModelType' has cardinality 0..*.
+An association connects 'modelDsl_DefModelTypeVariable' and 'modelDsl_ModelType'. From 'modelDsl_DefModelTypeVariable', the role 'modelDsl_DefModelTypeVariable' has cardinality 0..*, and from 'modelDsl_ModelType', the role 'modelDsl_ModelType' has cardinality 0..*.
+An association connects 'modelDsl_DefCollectionTypeVariable' and 'modelDsl_CollectionReturnType'. From 'modelDsl_DefCollectionTypeVariable', the role 'modelDsl_DefCollectionTypeVariable' has cardinality 0..*, and from 'modelDsl_CollectionReturnType', the role 'modelDsl_CollectionReturnType' has cardinality 0..*.
+An association connects 'modelDsl_DefModelModelTypeCollectionVariable' and 'modelDsl_ModelTypeCollection'. From 'modelDsl_DefModelModelTypeCollectionVariable', the role 'modelDsl_DefModelModelTypeCollectionVariable' has cardinality 0..*, and from 'modelDsl_ModelTypeCollection', the role 'modelDsl_ModelTypeCollection' has cardinality 0..*.
+An association connects 'modelDsl_DefModelSimpleTypeCollectionVariable' and 'modelDsl_SimpleTypeCollection'. From 'modelDsl_DefModelSimpleTypeCollectionVariable', the role 'modelDsl_DefModelSimpleTypeCollectionVariable' has cardinality 0..*, and from 'modelDsl_SimpleTypeCollection', the role 'modelDsl_SimpleTypeCollection' has cardinality 0..*.
+An association connects 'modelDsl_Link' and 'modelDsl_DefLinkVariable'. From 'modelDsl_Link', the role 'modelDsl_Link' has cardinality 0..*, and from 'modelDsl_DefLinkVariable', the role 'modelDsl_DefLinkVariable' has cardinality 0..*.
+An association connects 'modelDsl_Method' and 'modelDsl_DefVariable'. From 'modelDsl_Method', the role 'modelDsl_Method23' has cardinality 0..*, and from 'modelDsl_DefVariable', the role 'modelDsl_DefVariable' has cardinality 0..*.
+An association connects 'modelDsl_CollectionReturnType' and 'modelDsl_MethodCollectionReturn'. From 'modelDsl_CollectionReturnType', the role 'modelDsl_CollectionReturnType25' has cardinality 0..*, and from 'modelDsl_MethodCollectionReturn', the role 'modelDsl_MethodCollectionReturn' has cardinality 0..*.
+An association connects 'modelDsl_AllModelType' and 'modelDsl_MethodAllModelReturn'. From 'modelDsl_AllModelType', the role 'modelDsl_AllModelType27' has cardinality 0..*, and from 'modelDsl_MethodAllModelReturn', the role 'modelDsl_MethodAllModelReturn' has cardinality 0..*.
+An association connects 'modelDsl_AllModelTypeCollection' and 'modelDsl_AllModelType'. From 'modelDsl_AllModelTypeCollection', the role 'modelDsl_AllModelTypeCollection' has cardinality 0..*, and from 'modelDsl_AllModelType', the role 'modelDsl_AllModelType29' has cardinality 0..*.
+An association connects 'modelDsl_ModelTypeCollection' and 'modelDsl_ModelType'. From 'modelDsl_ModelTypeCollection', the role 'modelDsl_ModelTypeCollection31' has cardinality 0..*, and from 'modelDsl_ModelType', the role 'modelDsl_ModelType32' has cardinality 0..*.

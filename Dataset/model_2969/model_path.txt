@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/shittycoder353/joynr-atm2/libjoynr/tools/generator/joynr-generator-standalone/target/info/org.eclipse.emf.ecore-2.12.0-jar/model/XMLNamespace.ecore

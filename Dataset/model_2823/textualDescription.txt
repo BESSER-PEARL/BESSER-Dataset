@@ -1,0 +1,108 @@
+The domain model 'editormodel' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'editormodel_Color' represents an important domain concept.
+It has the following attributes: 'red', which is of type int; 'blue', which is of type int; 'green', which is of type int.
+
+'editormodel_VisualModel' represents an important domain concept.
+It has the following attributes: 'lineWidth', which is of type int; 'detailLevel', which is of type int; 'lineStyle', which is of type int.
+
+'NodeVisualModel' represents an important domain concept.
+It does not declare any attributes.
+
+'editormodel_Dimension' represents an important domain concept.
+It has the following attributes: 'height', which is of type int; 'width', which is of type int.
+
+'editormodel_Note' represents an important domain concept.
+It does not declare any attributes.
+
+'editormodel_Point' represents an important domain concept.
+It has the following attributes: 'x', which is of type int; 'y', which is of type int.
+
+'VisualModel' represents an important domain concept.
+It does not declare any attributes.
+
+'editormodel_Diagram' represents an important domain concept.
+It has the following attributes: 'gridEnabled', which is of type str; 'snapToGeometryEnabled', which is of type str.
+
+'editormodel_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElementModel' represents an important domain concept.
+It does not declare any attributes.
+
+'editormodel_ConnectionBendpoint' represents an important domain concept.
+It has one attribute: 'weight', which is of type float.
+
+'editormodel_EStringToEObjectMapEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'editormodel_ConnectionVisualModel' represents an important domain concept.
+It has the following attributes: 'sourceTerminal', which is of type str; 'targetTerminal', which is of type str.
+
+'editormodel_FlabotFileModel' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'version', which is of type str; 'name', which is of type str; 'provider', which is of type str.
+
+'editormodel_NodeVisualModel' represents an important domain concept.
+It has one attribute: 'rotation', which is of type str.
+
+'editormodel_Folder' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'editormodel_VisualDiagramJump' represents an important domain concept.
+It has one attribute: 'to', which is of type str.
+
+'ExtensibleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'editormodel_CoreModel' represents an important domain concept.
+It does not declare any attributes.
+
+'editormodel_Adapter' represents an important domain concept.
+It does not declare any attributes.
+
+'Adapter' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'editormodel_Diagram' is a specialization of 'NamedElementModel'.
+The class 'editormodel_FlabotFileModel' is a specialization of 'ExtensibleElement'.
+The class 'editormodel_VisualModel' is a specialization of 'Adapter'.
+The class 'editormodel_ConnectionVisualModel' is a specialization of 'NodeVisualModel'.
+The class 'editormodel_NodeVisualModel' is a specialization of 'VisualModel'.
+The class 'editormodel_VisualDiagramJump' is a specialization of 'NodeVisualModel'.
+
+Relationships between classes are modeled using associations.
+An association connects 'editormodel_Diagram' and 'editormodel_CoreModel'. From 'editormodel_Diagram', the role 'editormodel_Diagram' has cardinality 0..*, and from 'editormodel_CoreModel', the role 'editormodel_CoreModel' has cardinality 0..*.
+An association connects 'editormodel_Diagram' and 'editormodel_Note'. From 'editormodel_Diagram', the role 'editormodel_Diagram2' has cardinality 0..*, and from 'editormodel_Note', the role 'editormodel_Note' has cardinality 0..*.
+An association connects 'editormodel_Diagram' and 'editormodel_VisualModel'. From 'editormodel_Diagram', the role 'diagram' has cardinality 0..*, and from 'editormodel_VisualModel', the role 'VisualModel' has cardinality 0..*.
+An association connects 'editormodel_Diagram' and 'editormodel_Folder'. From 'editormodel_Diagram', the role 'diagrams' has cardinality 0..*, and from 'editormodel_Folder', the role 'Folder' has cardinality 0..*.
+An association connects 'editormodel_CoreModel' and 'editormodel_FlabotFileModel'. From 'editormodel_CoreModel', the role 'coremodel.ecoreCoreModel' has cardinality 0..*, and from 'editormodel_FlabotFileModel', the role 'file' has cardinality 0..*.
+An association connects 'editormodel_Diagram' and 'editormodel_FlabotFileModel'. From 'editormodel_Diagram', the role 'editormodel_Diagram7' has cardinality 0..*, and from 'editormodel_FlabotFileModel', the role 'editormodel_FlabotFileModel' has cardinality 0..*.
+An association connects 'editormodel_FlabotFileModel' and 'editormodel_FlabotFileModel'. From 'editormodel_FlabotFileModel', the role 'editormodel_FlabotFileModel8' has cardinality 0..*, and from 'editormodel_FlabotFileModel', the role 'editormodel_FlabotFileModel10' has cardinality 0..*.
+An association connects 'editormodel_Folder' and 'editormodel_FlabotFileModel'. From 'editormodel_Folder', the role 'editormodel_Folder' has cardinality 0..*, and from 'editormodel_FlabotFileModel', the role 'editormodel_FlabotFileModel12' has cardinality 0..*.
+An association connects 'editormodel_Diagram' and 'editormodel_FlabotFileModel'. From 'editormodel_Diagram', the role 'editormodel_Diagram15' has cardinality 0..*, and from 'editormodel_FlabotFileModel', the role 'editormodel_FlabotFileModel14' has cardinality 0..*.
+An association connects 'editormodel_VisualModel' and 'editormodel_VisualModel'. From 'editormodel_VisualModel', the role 'parent' has cardinality 0..*, and from 'editormodel_VisualModel', the role 'VisualModel18' has cardinality 0..*.
+An association connects 'editormodel_VisualModel' and 'editormodel_VisualModel'. From 'editormodel_VisualModel', the role 'children' has cardinality 0..*, and from 'editormodel_VisualModel', the role 'VisualModel21' has cardinality 0..*.
+An association connects 'editormodel_VisualModel' and 'editormodel_EObject'. From 'editormodel_VisualModel', the role 'editormodel_VisualModel' has cardinality 0..*, and from 'editormodel_EObject', the role 'editormodel_EObject' has cardinality 0..*.
+An association connects 'editormodel_VisualModel' and 'editormodel_Point'. From 'editormodel_VisualModel', the role 'editormodel_VisualModel24' has cardinality 0..*, and from 'editormodel_Point', the role 'editormodel_Point' has cardinality 0..*.
+An association connects 'editormodel_VisualModel' and 'editormodel_Dimension'. From 'editormodel_VisualModel', the role 'editormodel_VisualModel26' has cardinality 0..*, and from 'editormodel_Dimension', the role 'editormodel_Dimension' has cardinality 0..*.
+An association connects 'editormodel_VisualModel' and 'editormodel_Diagram'. From 'editormodel_VisualModel', the role 'children28' has cardinality 0..*, and from 'editormodel_Diagram', the role 'Diagram' has cardinality 0..*.
+An association connects 'editormodel_Color' and 'editormodel_VisualModel'. From 'editormodel_Color', the role 'editormodel_Color' has cardinality 0..*, and from 'editormodel_VisualModel', the role 'editormodel_VisualModel30' has cardinality 0..*.
+An association connects 'editormodel_Color' and 'editormodel_VisualModel'. From 'editormodel_Color', the role 'editormodel_Color33' has cardinality 0..*, and from 'editormodel_VisualModel', the role 'editormodel_VisualModel32' has cardinality 0..*.
+An association connects 'editormodel_Dimension' and 'editormodel_ConnectionBendpoint'. From 'editormodel_Dimension', the role 'editormodel_Dimension35' has cardinality 0..*, and from 'editormodel_ConnectionBendpoint', the role 'editormodel_ConnectionBendpoint' has cardinality 0..*.
+An association connects 'editormodel_ConnectionBendpoint' and 'editormodel_Dimension'. From 'editormodel_ConnectionBendpoint', the role 'editormodel_ConnectionBendpoint37' has cardinality 0..*, and from 'editormodel_Dimension', the role 'editormodel_Dimension38' has cardinality 0..*.
+An association connects 'editormodel_ConnectionBendpoint' and 'editormodel_ConnectionVisualModel'. From 'editormodel_ConnectionBendpoint', the role 'editormodel_ConnectionBendpoint40' has cardinality 0..*, and from 'editormodel_ConnectionVisualModel', the role 'editormodel_ConnectionVisualModel' has cardinality 0..*.
+An association connects 'editormodel_ConnectionVisualModel' and 'editormodel_NodeVisualModel'. From 'editormodel_ConnectionVisualModel', the role 'sourceConnections' has cardinality 0..*, and from 'editormodel_NodeVisualModel', the role 'NodeVisualModel' has cardinality 0..*.
+An association connects 'editormodel_NodeVisualModel' and 'editormodel_ConnectionVisualModel'. From 'editormodel_NodeVisualModel', the role 'NodeVisualModel43' has cardinality 0..*, and from 'editormodel_ConnectionVisualModel', the role 'targetConnections' has cardinality 0..*.
+An association connects 'editormodel_NodeVisualModel' and 'editormodel_ConnectionVisualModel'. From 'editormodel_NodeVisualModel', the role 'source' has cardinality 0..*, and from 'editormodel_ConnectionVisualModel', the role 'ConnectionVisualModel' has cardinality 0..*.
+An association connects 'editormodel_ConnectionVisualModel' and 'editormodel_NodeVisualModel'. From 'editormodel_ConnectionVisualModel', the role 'ConnectionVisualModel46' has cardinality 0..*, and from 'editormodel_NodeVisualModel', the role 'target' has cardinality 0..*.
+An association connects 'editormodel_Folder' and 'editormodel_Folder'. From 'editormodel_Folder', the role 'Folder50' has cardinality 0..*, and from 'editormodel_Folder', the role 'parent49' has cardinality 0..*.
+An association connects 'editormodel_Diagram' and 'editormodel_Folder'. From 'editormodel_Diagram', the role 'Diagram52' has cardinality 0..*, and from 'editormodel_Folder', the role 'folder' has cardinality 0..*.
+An association connects 'editormodel_Folder' and 'editormodel_Folder'. From 'editormodel_Folder', the role 'folders' has cardinality 0..*, and from 'editormodel_Folder', the role 'Folder55' has cardinality 0..*.
+An association connects 'editormodel_Folder' and 'editormodel_FlabotFileModel'. From 'editormodel_Folder', the role 'editormodel_Folder57' has cardinality 0..*, and from 'editormodel_FlabotFileModel', the role 'editormodel_FlabotFileModel58' has cardinality 0..*.
+An association connects 'editormodel_EObject' and 'editormodel_EStringToEObjectMapEntry'. From 'editormodel_EObject', the role 'editormodel_EObject60' has cardinality 0..*, and from 'editormodel_EStringToEObjectMapEntry', the role 'editormodel_EStringToEObjectMapEntry' has cardinality 0..*.
+An association connects 'editormodel_Diagram' and 'editormodel_VisualDiagramJump'. From 'editormodel_Diagram', the role 'editormodel_Diagram62' has cardinality 0..*, and from 'editormodel_VisualDiagramJump', the role 'editormodel_VisualDiagramJump' has cardinality 0..*.
+An association connects 'editormodel_Diagram' and 'editormodel_VisualDiagramJump'. From 'editormodel_Diagram', the role 'editormodel_Diagram65' has cardinality 0..*, and from 'editormodel_VisualDiagramJump', the role 'editormodel_VisualDiagramJump64' has cardinality 0..*.
+An association connects 'editormodel_VisualDiagramJump' and 'editormodel_NodeVisualModel'. From 'editormodel_VisualDiagramJump', the role 'editormodel_VisualDiagramJump67' has cardinality 0..*, and from 'editormodel_NodeVisualModel', the role 'editormodel_NodeVisualModel' has cardinality 0..*.

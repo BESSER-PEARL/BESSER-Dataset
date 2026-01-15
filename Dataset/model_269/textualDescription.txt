@@ -1,0 +1,132 @@
+The domain model 'javaless' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'javaless_EFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'javaless_EClass' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'interface', which is of type bool.
+
+'javaless_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'javaless_EAnnotation' represents an important domain concept.
+It has one attribute: 'source', which is of type str.
+
+'javaless_EStringToStringMapEntry' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'javaless_EClassifier' represents an important domain concept.
+It has the following attributes: 'instanceClass', which is of type str; 'instanceClassName', which is of type str; 'defaultValue', which is of type str.
+
+'javaless_EAttribute' represents an important domain concept.
+It has one attribute: 'iD', which is of type bool.
+
+'javaless_EPackage' represents an important domain concept.
+It has the following attributes: 'nsURI', which is of type str; 'nsPrefix', which is of type str.
+
+'javaless_EReference' represents an important domain concept.
+It has the following attributes: 'resolveProxies', which is of type bool; 'containment', which is of type bool; 'container', which is of type bool.
+
+'javaless_EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaless_EOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaless_EEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'javaless_EStructuralFeature' represents an important domain concept.
+It has the following attributes: 'defaultValueLiteral', which is of type str; 'changeable', which is of type bool; 'defaultValue', which is of type str; 'unsettable', which is of type bool; 'volatile', which is of type bool; 'transient', which is of type bool; 'derived', which is of type bool.
+
+'javaless_ENamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'javaless_EDataType' represents an important domain concept.
+It has one attribute: 'serializable', which is of type bool.
+
+'javaless_ETypedElement' represents an important domain concept.
+It has the following attributes: 'many', which is of type bool; 'required', which is of type bool; 'upperBound', which is of type int; 'ordered', which is of type bool; 'unique', which is of type bool; 'lowerBound', which is of type int.
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ETypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'javaless_EParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'javaless_EEnumLiteral' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'literal', which is of type str; 'instance', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'javaless_EAttribute' is a specialization of 'EStructuralFeature'.
+The class 'javaless_EAnnotation' is a specialization of 'EModelElement'.
+The class 'javaless_EClass' is a specialization of 'EClassifier'.
+The class 'javaless_EClassifier' is a specialization of 'ENamedElement'.
+The class 'javaless_EDataType' is a specialization of 'EClassifier'.
+The class 'javaless_EEnum' is a specialization of 'EDataType'.
+The class 'javaless_EEnumLiteral' is a specialization of 'ENamedElement'.
+The class 'javaless_EFactory' is a specialization of 'EModelElement'.
+The class 'javaless_EModelElement' is a specialization of 'EObject'.
+The class 'javaless_ENamedElement' is a specialization of 'EModelElement'.
+The class 'javaless_EOperation' is a specialization of 'ETypedElement'.
+The class 'javaless_EPackage' is a specialization of 'ENamedElement'.
+The class 'javaless_EParameter' is a specialization of 'ETypedElement'.
+The class 'javaless_EReference' is a specialization of 'EStructuralFeature'.
+The class 'javaless_EStructuralFeature' is a specialization of 'ETypedElement'.
+The class 'javaless_ETypedElement' is a specialization of 'ENamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'javaless_EAttribute' and 'javaless_EDataType'. From 'javaless_EAttribute', the role 'javaless_EAttribute' has cardinality 0..*, and from 'javaless_EDataType', the role 'javaless_EDataType' has cardinality 0..*.
+An association connects 'javaless_EStringToStringMapEntry' and 'javaless_EAnnotation'. From 'javaless_EStringToStringMapEntry', the role 'javaless_EStringToStringMapEntry' has cardinality 0..*, and from 'javaless_EAnnotation', the role 'javaless_EAnnotation' has cardinality 0..*.
+An association connects 'javaless_EModelElement' and 'javaless_EAnnotation'. From 'javaless_EModelElement', the role 'EModelElement' has cardinality 0..*, and from 'javaless_EAnnotation', the role 'eAnnotations' has cardinality 0..*.
+An association connects 'javaless_EAnnotation' and 'javaless_EObject'. From 'javaless_EAnnotation', the role 'javaless_EAnnotation4' has cardinality 0..*, and from 'javaless_EObject', the role 'javaless_EObject' has cardinality 0..*.
+An association connects 'javaless_EAnnotation' and 'javaless_EObject'. From 'javaless_EAnnotation', the role 'javaless_EAnnotation6' has cardinality 0..*, and from 'javaless_EObject', the role 'javaless_EObject7' has cardinality 0..*.
+An association connects 'javaless_EClass' and 'javaless_EClass'. From 'javaless_EClass', the role 'javaless_EClass8' has cardinality 0..*, and from 'javaless_EClass', the role 'javaless_EClass' has cardinality 0..*.
+An association connects 'javaless_EClass' and 'javaless_EOperation'. From 'javaless_EClass', the role 'eContainingClass' has cardinality 0..*, and from 'javaless_EOperation', the role 'EOperation' has cardinality 0..*.
+An association connects 'javaless_EAttribute' and 'javaless_EClass'. From 'javaless_EAttribute', the role 'javaless_EAttribute13' has cardinality 0..*, and from 'javaless_EClass', the role 'javaless_EClass12' has cardinality 0..*.
+An association connects 'javaless_EReference' and 'javaless_EClass'. From 'javaless_EReference', the role 'javaless_EReference' has cardinality 0..*, and from 'javaless_EClass', the role 'javaless_EClass15' has cardinality 0..*.
+An association connects 'javaless_EClass' and 'javaless_EReference'. From 'javaless_EClass', the role 'javaless_EClass17' has cardinality 0..*, and from 'javaless_EReference', the role 'javaless_EReference18' has cardinality 0..*.
+An association connects 'javaless_EAttribute' and 'javaless_EClass'. From 'javaless_EAttribute', the role 'javaless_EAttribute21' has cardinality 0..*, and from 'javaless_EClass', the role 'javaless_EClass20' has cardinality 0..*.
+An association connects 'javaless_EReference' and 'javaless_EClass'. From 'javaless_EReference', the role 'javaless_EReference24' has cardinality 0..*, and from 'javaless_EClass', the role 'javaless_EClass23' has cardinality 0..*.
+An association connects 'javaless_EOperation' and 'javaless_EClass'. From 'javaless_EOperation', the role 'javaless_EOperation' has cardinality 0..*, and from 'javaless_EClass', the role 'javaless_EClass26' has cardinality 0..*.
+An association connects 'javaless_EClass' and 'javaless_EStructuralFeature'. From 'javaless_EClass', the role 'javaless_EClass28' has cardinality 0..*, and from 'javaless_EStructuralFeature', the role 'javaless_EStructuralFeature' has cardinality 0..*.
+An association connects 'javaless_EClass' and 'javaless_EClass'. From 'javaless_EClass', the role 'javaless_EClass31' has cardinality 0..*, and from 'javaless_EClass', the role 'javaless_EClass29' has cardinality 0..*.
+An association connects 'javaless_EClass' and 'javaless_EAttribute'. From 'javaless_EClass', the role 'javaless_EClass33' has cardinality 0..*, and from 'javaless_EAttribute', the role 'javaless_EAttribute34' has cardinality 0..*.
+An association connects 'javaless_EStructuralFeature' and 'javaless_EClass'. From 'javaless_EStructuralFeature', the role 'EStructuralFeature' has cardinality 0..*, and from 'javaless_EClass', the role 'eContainingClass36' has cardinality 0..*.
+An association connects 'javaless_EClassifier' and 'javaless_EPackage'. From 'javaless_EClassifier', the role 'eClassifiers' has cardinality 0..*, and from 'javaless_EPackage', the role 'EPackage' has cardinality 0..*.
+An association connects 'javaless_EEnum' and 'javaless_EEnumLiteral'. From 'javaless_EEnum', the role 'eEnum' has cardinality 0..*, and from 'javaless_EEnumLiteral', the role 'EEnumLiteral' has cardinality 0..*.
+An association connects 'javaless_EEnum' and 'javaless_EEnumLiteral'. From 'javaless_EEnum', the role 'EEnum' has cardinality 0..*, and from 'javaless_EEnumLiteral', the role 'eLiterals' has cardinality 0..*.
+An association connects 'javaless_EPackage' and 'javaless_EFactory'. From 'javaless_EPackage', the role 'EPackage41' has cardinality 0..*, and from 'javaless_EFactory', the role 'eFactoryInstance' has cardinality 0..*.
+An association connects 'javaless_EModelElement' and 'javaless_EAnnotation'. From 'javaless_EModelElement', the role 'eModelElement' has cardinality 0..*, and from 'javaless_EAnnotation', the role 'EAnnotation' has cardinality 0..*.
+An association connects 'javaless_EOperation' and 'javaless_EClass'. From 'javaless_EOperation', the role 'eOperations' has cardinality 0..*, and from 'javaless_EClass', the role 'EClass' has cardinality 0..*.
+An association connects 'javaless_EParameter' and 'javaless_EOperation'. From 'javaless_EParameter', the role 'EParameter' has cardinality 0..*, and from 'javaless_EOperation', the role 'eOperation' has cardinality 0..*.
+An association connects 'javaless_EOperation' and 'javaless_EClassifier'. From 'javaless_EOperation', the role 'javaless_EOperation46' has cardinality 0..*, and from 'javaless_EClassifier', the role 'javaless_EClassifier' has cardinality 0..*.
+An association connects 'javaless_EPackage' and 'javaless_EFactory'. From 'javaless_EPackage', the role 'ePackage' has cardinality 0..*, and from 'javaless_EFactory', the role 'EFactory' has cardinality 0..*.
+An association connects 'javaless_EPackage' and 'javaless_EClassifier'. From 'javaless_EPackage', the role 'ePackage49' has cardinality 0..*, and from 'javaless_EClassifier', the role 'EClassifier' has cardinality 0..*.
+An association connects 'javaless_EPackage' and 'javaless_EPackage'. From 'javaless_EPackage', the role 'eSuperPackage' has cardinality 0..*, and from 'javaless_EPackage', the role 'EPackage52' has cardinality 0..*.
+An association connects 'javaless_EPackage' and 'javaless_EPackage'. From 'javaless_EPackage', the role 'eSubpackages' has cardinality 0..*, and from 'javaless_EPackage', the role 'EPackage55' has cardinality 0..*.
+An association connects 'javaless_EOperation' and 'javaless_EParameter'. From 'javaless_EOperation', the role 'EOperation57' has cardinality 0..*, and from 'javaless_EParameter', the role 'eParameters' has cardinality 0..*.
+An association connects 'javaless_EReference' and 'javaless_EReference'. From 'javaless_EReference', the role 'javaless_EReference58' has cardinality 0..*, and from 'javaless_EReference', the role 'javaless_EReference60' has cardinality 0..*.
+An association connects 'javaless_EClass' and 'javaless_EReference'. From 'javaless_EClass', the role 'javaless_EClass63' has cardinality 0..*, and from 'javaless_EReference', the role 'javaless_EReference62' has cardinality 0..*.
+An association connects 'javaless_EStructuralFeature' and 'javaless_EClass'. From 'javaless_EStructuralFeature', the role 'eStructuralFeatures' has cardinality 0..*, and from 'javaless_EClass', the role 'EClass65' has cardinality 0..*.
+An association connects 'javaless_ETypedElement' and 'javaless_EClassifier'. From 'javaless_ETypedElement', the role 'javaless_ETypedElement' has cardinality 0..*, and from 'javaless_EClassifier', the role 'javaless_EClassifier67' has cardinality 0..*.

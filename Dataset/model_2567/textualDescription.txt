@@ -1,0 +1,29 @@
+The domain model 'TestPackage' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'TestPackage_TestIndexEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_AbstractTestClass' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TestPackage_TestIndex' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTestClass' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_TestClass1' represents an important domain concept.
+It has one attribute: 'theAttributeToListen', which is of type str.
+
+'TestPackage_TestClass2' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'TestPackage_TestClass1' is a specialization of 'AbstractTestClass'.
+The class 'TestPackage_TestClass2' is a specialization of 'AbstractTestClass'.
+
+Relationships between classes are modeled using associations.
+An association connects 'TestPackage_TestIndexEntry' and 'TestPackage_TestIndex'. From 'TestPackage_TestIndexEntry', the role 'TestPackage_TestIndexEntry' has cardinality 0..*, and from 'TestPackage_TestIndex', the role 'TestPackage_TestIndex' has cardinality 0..*.
+An association connects 'TestPackage_AbstractTestClass' and 'TestPackage_TestIndexEntry'. From 'TestPackage_AbstractTestClass', the role 'TestPackage_AbstractTestClass' has cardinality 0..*, and from 'TestPackage_TestIndexEntry', the role 'TestPackage_TestIndexEntry2' has cardinality 0..*.

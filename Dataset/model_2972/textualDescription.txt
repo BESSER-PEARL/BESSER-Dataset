@@ -1,0 +1,41 @@
+The domain model 'cgimodel' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'cgimodel_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'cgimodel_BaseState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cgimodel_OrState' represents an important domain concept.
+It does not declare any attributes.
+
+'cgimodel_Expr' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cgimodel_StateModels' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseState' represents an important domain concept.
+It does not declare any attributes.
+
+'cgimodel_State' represents an important domain concept.
+It has one attribute: 'set', which is of type bool.
+
+'cgimodel_StateModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'cgimodel_State' is a specialization of 'BaseState'.
+The class 'cgimodel_OrState' is a specialization of 'BaseState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cgimodel_BaseState' and 'cgimodel_StateModel'. From 'cgimodel_BaseState', the role 'cgimodel_BaseState' has cardinality 0..*, and from 'cgimodel_StateModel', the role 'cgimodel_StateModel' has cardinality 0..*.
+An association connects 'cgimodel_Transition' and 'cgimodel_StateModel'. From 'cgimodel_Transition', the role 'cgimodel_Transition' has cardinality 0..*, and from 'cgimodel_StateModel', the role 'cgimodel_StateModel2' has cardinality 0..*.
+An association connects 'cgimodel_State' and 'cgimodel_Expr'. From 'cgimodel_State', the role 'cgimodel_State' has cardinality 0..*, and from 'cgimodel_Expr', the role 'cgimodel_Expr' has cardinality 0..*.
+An association connects 'cgimodel_OrState' and 'cgimodel_BaseState'. From 'cgimodel_OrState', the role 'cgimodel_OrState' has cardinality 0..*, and from 'cgimodel_BaseState', the role 'cgimodel_BaseState5' has cardinality 0..*.
+An association connects 'cgimodel_BaseState' and 'cgimodel_Transition'. From 'cgimodel_BaseState', the role 'cgimodel_BaseState8' has cardinality 0..*, and from 'cgimodel_Transition', the role 'cgimodel_Transition7' has cardinality 0..*.
+An association connects 'cgimodel_State' and 'cgimodel_Transition'. From 'cgimodel_State', the role 'cgimodel_State11' has cardinality 0..*, and from 'cgimodel_Transition', the role 'cgimodel_Transition10' has cardinality 0..*.
+An association connects 'cgimodel_Expr' and 'cgimodel_Transition'. From 'cgimodel_Expr', the role 'cgimodel_Expr14' has cardinality 0..*, and from 'cgimodel_Transition', the role 'cgimodel_Transition13' has cardinality 0..*.
+An association connects 'cgimodel_StateModels' and 'cgimodel_StateModel'. From 'cgimodel_StateModels', the role 'cgimodel_StateModels' has cardinality 0..*, and from 'cgimodel_StateModel', the role 'cgimodel_StateModel16' has cardinality 0..*.

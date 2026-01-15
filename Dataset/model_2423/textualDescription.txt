@@ -1,0 +1,45 @@
+The domain model 'DB' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'DB_Database' represents an important domain concept.
+It does not declare any attributes.
+
+'DB_Column' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'notNull', which is of type bool.
+
+'DatabaseElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DB_DatabaseElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DB_ForeignKey' represents an important domain concept.
+It has one attribute: 'isMany', which is of type str.
+
+'DB_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'DB_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DataType' defines the following possible values: 'unknown', 'text', 'varchar', 'int'.
+
+The model also captures inheritance relationships between classes.
+The class 'DB_DatabaseElement' is a specialization of 'NamedElement'.
+The class 'DB_Table' is a specialization of 'DatabaseElement'.
+The class 'DB_Column' is a specialization of 'DatabaseElement'.
+The class 'DB_ForeignKey' is a specialization of 'DatabaseElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'DB_Database' and 'DB_DatabaseElement'. From 'DB_Database', the role 'database' has cardinality 0..*, and from 'DB_DatabaseElement', the role 'DatabaseElement' has cardinality 0..*.
+An association connects 'DB_Database' and 'DB_DatabaseElement'. From 'DB_Database', the role 'Database' has cardinality 0..*, and from 'DB_DatabaseElement', the role 'contents' has cardinality 0..*.
+An association connects 'DB_Table' and 'DB_Column'. From 'DB_Table', the role 'table' has cardinality 0..*, and from 'DB_Column', the role 'Column' has cardinality 0..*.
+An association connects 'DB_Table' and 'DB_Column'. From 'DB_Table', the role 'DB_Table' has cardinality 0..*, and from 'DB_Column', the role 'DB_Column' has cardinality 0..*.
+An association connects 'DB_Table' and 'DB_Column'. From 'DB_Table', the role 'Table' has cardinality 0..*, and from 'DB_Column', the role 'columns' has cardinality 0..*.
+An association connects 'DB_ForeignKey' and 'DB_Column'. From 'DB_ForeignKey', the role 'DB_ForeignKey' has cardinality 0..*, and from 'DB_Column', the role 'DB_Column6' has cardinality 0..*.
+An association connects 'DB_Column' and 'DB_ForeignKey'. From 'DB_Column', the role 'DB_Column9' has cardinality 0..*, and from 'DB_ForeignKey', the role 'DB_ForeignKey8' has cardinality 0..*.

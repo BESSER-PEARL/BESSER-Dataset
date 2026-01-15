@@ -1,0 +1,58 @@
+The domain model 'manypov' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'manypov_JK' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov_E' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'manypov_C' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov_B' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov_J' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov_A' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov_K' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov_F' represents an important domain concept.
+It does not declare any attributes.
+
+'manypov_M' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'manypov_A' is a specialization of 'Named'.
+The class 'manypov_B' is a specialization of 'Named'.
+The class 'manypov_C' is a specialization of 'Named'.
+The class 'manypov_E' is a specialization of 'Named'.
+The class 'manypov_F' is a specialization of 'Named'.
+The class 'manypov_J' is a specialization of 'Named'.
+The class 'manypov_K' is a specialization of 'Named'.
+The class 'manypov_JK' is a specialization of 'Named'.
+The class 'manypov_M' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'manypov_B' and 'manypov_A'. From 'manypov_B', the role 'manypov_B' has cardinality 0..*, and from 'manypov_A', the role 'manypov_A' has cardinality 0..*.
+An association connects 'manypov_A' and 'manypov_E'. From 'manypov_A', the role 'manypov_A2' has cardinality 0..*, and from 'manypov_E', the role 'manypov_E' has cardinality 0..*.
+An association connects 'manypov_A' and 'manypov_J'. From 'manypov_A', the role 'manypov_A4' has cardinality 0..*, and from 'manypov_J', the role 'manypov_J' has cardinality 0..*.
+An association connects 'manypov_B' and 'manypov_C'. From 'manypov_B', the role 'manypov_B6' has cardinality 0..*, and from 'manypov_C', the role 'manypov_C' has cardinality 0..*.
+An association connects 'manypov_E' and 'manypov_F'. From 'manypov_E', the role 'manypov_E8' has cardinality 0..*, and from 'manypov_F', the role 'manypov_F' has cardinality 0..*.
+An association connects 'manypov_J' and 'manypov_JK'. From 'manypov_J', the role 'manypov_J10' has cardinality 0..*, and from 'manypov_JK', the role 'manypov_JK' has cardinality 0..*.
+An association connects 'manypov_K' and 'manypov_M'. From 'manypov_K', the role 'manypov_K' has cardinality 0..*, and from 'manypov_M', the role 'manypov_M' has cardinality 0..*.
+An association connects 'manypov_K' and 'manypov_C'. From 'manypov_K', the role 'manypov_K13' has cardinality 0..*, and from 'manypov_C', the role 'manypov_C14' has cardinality 0..*.
+An association connects 'manypov_K' and 'manypov_JK'. From 'manypov_K', the role 'manypov_K17' has cardinality 0..*, and from 'manypov_JK', the role 'manypov_JK16' has cardinality 0..*.

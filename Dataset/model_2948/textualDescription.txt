@@ -1,0 +1,30 @@
+The domain model 'domainmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'domainmodel_Feature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type bool; 'type', which is of type str; 's', which is of type str.
+
+'domainmodel_Domainmodel' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_DataType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'domainmodel_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'domainmodel_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'domainmodel_Domainmodel' and 'domainmodel_Type'. From 'domainmodel_Domainmodel', the role 'domainmodel_Domainmodel' has cardinality 0..*, and from 'domainmodel_Type', the role 'domainmodel_Type' has cardinality 0..*.
+An association connects 'domainmodel_Type' and 'domainmodel_DataType'. From 'domainmodel_Type', the role 'domainmodel_Type2' has cardinality 0..*, and from 'domainmodel_DataType', the role 'domainmodel_DataType' has cardinality 0..*.
+An association connects 'domainmodel_Entity' and 'domainmodel_Entity'. From 'domainmodel_Entity', the role 'domainmodel_Entity' has cardinality 0..*, and from 'domainmodel_Entity', the role 'domainmodel_Entity3' has cardinality 0..*.
+An association connects 'domainmodel_Entity' and 'domainmodel_Feature'. From 'domainmodel_Entity', the role 'domainmodel_Entity6' has cardinality 0..*, and from 'domainmodel_Feature', the role 'domainmodel_Feature' has cardinality 0..*.

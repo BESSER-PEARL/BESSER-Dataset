@@ -1,0 +1,249 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 57 main class(es).
+
+'model_Line' represents an important domain concept.
+It has the following attributes: 'horizontal', which is of type bool; 'vertical', which is of type bool.
+
+'model_IntValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'model_FeatureContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TextPart' represents an important domain concept.
+It has the following attributes: 'editable', which is of type bool; 'text', which is of type str.
+
+'model_FeatureConditional' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'model_LineWidth' represents an important domain concept.
+It has one attribute: 'width', which is of type int.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Ellipse' represents an important domain concept.
+It has the following attributes: 'circle', which is of type bool; 'ellipse', which is of type bool.
+
+'model_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'model_EnumValue' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Transparency' represents an important domain concept.
+It has one attribute: 'percent', which is of type int.
+
+'model_DoubleValue' represents an important domain concept.
+It has the following attributes: 'valueInt', which is of type int; 'valueDecimal', which is of type int.
+
+'model_Decorator' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Size' represents an important domain concept.
+It has the following attributes: 'widthRelative', which is of type bool; 'height', which is of type int; 'resizable', which is of type bool; 'width', which is of type int; 'heightRelative', which is of type bool.
+
+'model_Rhombus' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CustomColor' represents an important domain concept.
+It has the following attributes: 'B', which is of type int; 'G', which is of type int; 'name', which is of type str; 'R', which is of type int.
+
+'model_Invisible' represents an important domain concept.
+It does not declare any attributes.
+
+'model_FontProperties' represents an important domain concept.
+It has the following attributes: 'italics', which is of type bool; 'size', which is of type int; 'bold', which is of type bool; 'face', which is of type str.
+
+'FeatureContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Contains' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Custom' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Rectangle' represents an important domain concept.
+It has the following attributes: 'square', which is of type bool; 'rectangle', which is of type bool.
+
+'model_Colors' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BooleanValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'model_ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ColorFeature' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'model_TextAlign' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'model_Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MetaModel' represents an important domain concept.
+It has the following attributes: 'ecorePath', which is of type str; 'plugin', which is of type str.
+
+'model_Corner' represents an important domain concept.
+It has one attribute: 'angle', which is of type int.
+
+'model_Position' represents an important domain concept.
+It has the following attributes: 'xRelative', which is of type bool; 'x', which is of type int; 'yRelative', which is of type bool; 'y', which is of type int.
+
+'model_StringValue' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'null', which is of type bool.
+
+'model_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Image' represents an important domain concept.
+It has one attribute: 'imageId', which is of type str.
+
+'model_XDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Visible' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ImportStatement' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'model_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CustomFigure' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Polyline' represents an important domain concept.
+It has the following attributes: 'polyline', which is of type bool; 'polygon', which is of type bool.
+
+'model_Arrow' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Color' represents an important domain concept.
+It has one attribute: 'default', which is of type str.
+
+'model_Point' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'x', which is of type int.
+
+'DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Anchor' represents an important domain concept.
+It has the following attributes: 'direction', which is of type str; 'max', which is of type int.
+
+'model_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Layout' represents an important domain concept.
+It has the following attributes: 'vertical', which is of type bool; 'horizontal', which is of type bool; 'margin', which is of type int.
+
+'model_TextValue' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Triangle' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Link' represents an important domain concept.
+It has the following attributes: 'reference', which is of type bool; 'complex', which is of type bool.
+
+'model_LineStyle' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'manhattan', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BooleanLiteral' defines the following possible values: 'TRUE', 'FALSE'.
+The enumeration 'TextAlignValue' defines the following possible values: 'LEFT', 'RIGHT', 'CENTER'.
+The enumeration 'LineType' defines the following possible values: 'SOLID', 'DOT', 'DASH'.
+The enumeration 'AnchorDirection' defines the following possible values: 'INCOMING', 'OUTGOING'.
+The enumeration 'Operator' defines the following possible values: 'DIFFERENT', 'EQUAL'.
+The enumeration 'DefaultColor' defines the following possible values: 'LIME', 'GREEN', 'FUCHSIA', 'AQUA', 'NAVY', 'OLIVE', 'RED', 'TEAL', 'BLACK', 'BLUE', 'PURPLE', 'WHITE', 'GRAY', 'SILVER', 'YELLOW', 'MAROON'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_Node' is a specialization of 'DiagramElement'.
+The class 'model_Link' is a specialization of 'DiagramElement'.
+The class 'model_Link' is a specialization of 'FeatureContainer'.
+The class 'model_Anchor' is a specialization of 'Feature'.
+The class 'model_ConnectableElement' is a specialization of 'FeatureContainer'.
+The class 'model_Custom' is a specialization of 'ConnectableElement'.
+The class 'model_Rectangle' is a specialization of 'ConnectableElement'.
+The class 'model_Rhombus' is a specialization of 'ConnectableElement'.
+The class 'model_Ellipse' is a specialization of 'ConnectableElement'.
+The class 'model_Polyline' is a specialization of 'ConnectableElement'.
+The class 'model_Triangle' is a specialization of 'ConnectableElement'.
+The class 'model_Line' is a specialization of 'FeatureContainer'.
+The class 'model_Arrow' is a specialization of 'FeatureContainer'.
+The class 'model_Contains' is a specialization of 'Feature'.
+The class 'model_IntValue' is a specialization of 'Value'.
+The class 'model_DoubleValue' is a specialization of 'Value'.
+The class 'model_StringValue' is a specialization of 'Value'.
+The class 'model_BooleanValue' is a specialization of 'Value'.
+The class 'model_EnumValue' is a specialization of 'Value'.
+The class 'model_Label' is a specialization of 'ConnectableElement'.
+The class 'model_Image' is a specialization of 'ConnectableElement'.
+The class 'model_Invisible' is a specialization of 'ConnectableElement'.
+The class 'model_ColorFeature' is a specialization of 'Feature'.
+The class 'model_Transparency' is a specialization of 'Feature'.
+The class 'model_Size' is a specialization of 'Feature'.
+The class 'model_Point' is a specialization of 'Feature'.
+The class 'model_Position' is a specialization of 'Feature'.
+The class 'model_Corner' is a specialization of 'Feature'.
+The class 'model_Layout' is a specialization of 'Feature'.
+The class 'model_Visible' is a specialization of 'Feature'.
+The class 'model_TextValue' is a specialization of 'Feature'.
+The class 'model_FontProperties' is a specialization of 'Feature'.
+The class 'model_TextAlign' is a specialization of 'Feature'.
+The class 'model_LineStyle' is a specialization of 'Feature'.
+The class 'model_LineWidth' is a specialization of 'Feature'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_MetaModel' and 'model_XDiagram'. From 'model_MetaModel', the role 'model_MetaModel' has cardinality 0..*, and from 'model_XDiagram', the role 'model_XDiagram' has cardinality 0..*.
+An association connects 'model_Diagram' and 'model_XDiagram'. From 'model_Diagram', the role 'model_Diagram' has cardinality 0..*, and from 'model_XDiagram', the role 'model_XDiagram2' has cardinality 0..*.
+An association connects 'model_Colors' and 'model_XDiagram'. From 'model_Colors', the role 'model_Colors' has cardinality 0..*, and from 'model_XDiagram', the role 'model_XDiagram4' has cardinality 0..*.
+An association connects 'model_DiagramElement' and 'model_XDiagram'. From 'model_DiagramElement', the role 'model_DiagramElement' has cardinality 0..*, and from 'model_XDiagram', the role 'model_XDiagram6' has cardinality 0..*.
+An association connects 'model_XDiagram' and 'model_CustomFigure'. From 'model_XDiagram', the role 'model_XDiagram8' has cardinality 0..*, and from 'model_CustomFigure', the role 'model_CustomFigure' has cardinality 0..*.
+An association connects 'model_EClass' and 'model_Diagram'. From 'model_EClass', the role 'model_EClass' has cardinality 0..*, and from 'model_Diagram', the role 'model_Diagram10' has cardinality 0..*.
+An association connects 'model_Contains' and 'model_Diagram'. From 'model_Contains', the role 'model_Contains' has cardinality 0..*, and from 'model_Diagram', the role 'model_Diagram12' has cardinality 0..*.
+An association connects 'model_EClass' and 'model_DiagramElement'. From 'model_EClass', the role 'model_EClass15' has cardinality 0..*, and from 'model_DiagramElement', the role 'model_DiagramElement14' has cardinality 0..*.
+An association connects 'model_Feature' and 'model_FeatureConditional'. From 'model_Feature', the role 'model_Feature' has cardinality 0..*, and from 'model_FeatureConditional', the role 'model_FeatureConditional' has cardinality 0..*.
+An association connects 'model_FeatureContainer' and 'model_Feature'. From 'model_FeatureContainer', the role 'model_FeatureContainer' has cardinality 0..*, and from 'model_Feature', the role 'model_Feature18' has cardinality 0..*.
+An association connects 'model_EAttribute' and 'model_FeatureConditional'. From 'model_EAttribute', the role 'model_EAttribute' has cardinality 0..*, and from 'model_FeatureConditional', the role 'model_FeatureConditional20' has cardinality 0..*.
+An association connects 'model_Value' and 'model_FeatureConditional'. From 'model_Value', the role 'model_Value' has cardinality 0..*, and from 'model_FeatureConditional', the role 'model_FeatureConditional22' has cardinality 0..*.
+An association connects 'model_Node' and 'model_ConnectableElement'. From 'model_Node', the role 'model_Node' has cardinality 0..*, and from 'model_ConnectableElement', the role 'model_ConnectableElement' has cardinality 0..*.
+An association connects 'model_EReference' and 'model_Link'. From 'model_EReference', the role 'model_EReference' has cardinality 0..*, and from 'model_Link', the role 'model_Link' has cardinality 0..*.
+An association connects 'model_Link' and 'model_EReference'. From 'model_Link', the role 'model_Link26' has cardinality 0..*, and from 'model_EReference', the role 'model_EReference27' has cardinality 0..*.
+An association connects 'model_Link' and 'model_EReference'. From 'model_Link', the role 'model_Link29' has cardinality 0..*, and from 'model_EReference', the role 'model_EReference30' has cardinality 0..*.
+An association connects 'model_Link' and 'model_Decorator'. From 'model_Link', the role 'model_Link32' has cardinality 0..*, and from 'model_Decorator', the role 'model_Decorator' has cardinality 0..*.
+An association connects 'model_FeatureContainer' and 'model_Decorator'. From 'model_FeatureContainer', the role 'model_FeatureContainer35' has cardinality 0..*, and from 'model_Decorator', the role 'model_Decorator34' has cardinality 0..*.
+An association connects 'model_Anchor' and 'model_EReference'. From 'model_Anchor', the role 'model_Anchor' has cardinality 0..*, and from 'model_EReference', the role 'model_EReference37' has cardinality 0..*.
+An association connects 'model_CustomColor' and 'model_Colors'. From 'model_CustomColor', the role 'model_CustomColor' has cardinality 0..*, and from 'model_Colors', the role 'model_Colors39' has cardinality 0..*.
+An association connects 'model_Color' and 'model_CustomColor'. From 'model_Color', the role 'model_Color' has cardinality 0..*, and from 'model_CustomColor', the role 'model_CustomColor41' has cardinality 0..*.
+An association connects 'model_ConnectableElement' and 'model_FeatureContainer'. From 'model_ConnectableElement', the role 'model_ConnectableElement43' has cardinality 0..*, and from 'model_FeatureContainer', the role 'model_FeatureContainer44' has cardinality 0..*.
+An association connects 'model_ConnectableElement' and 'model_CustomFigure'. From 'model_ConnectableElement', the role 'model_ConnectableElement47' has cardinality 0..*, and from 'model_CustomFigure', the role 'model_CustomFigure46' has cardinality 0..*.
+An association connects 'model_CustomFigure' and 'model_Custom'. From 'model_CustomFigure', the role 'model_CustomFigure49' has cardinality 0..*, and from 'model_Custom', the role 'model_Custom' has cardinality 0..*.
+An association connects 'model_Contains' and 'model_EReference'. From 'model_Contains', the role 'model_Contains51' has cardinality 0..*, and from 'model_EReference', the role 'model_EReference52' has cardinality 0..*.
+An association connects 'model_Color' and 'model_ColorFeature'. From 'model_Color', the role 'model_Color54' has cardinality 0..*, and from 'model_ColorFeature', the role 'model_ColorFeature' has cardinality 0..*.
+An association connects 'model_TextValue' and 'model_TextPart'. From 'model_TextValue', the role 'model_TextValue' has cardinality 0..*, and from 'model_TextPart', the role 'model_TextPart' has cardinality 0..*.
+An association connects 'model_EAttribute' and 'model_TextPart'. From 'model_EAttribute', the role 'model_EAttribute58' has cardinality 0..*, and from 'model_TextPart', the role 'model_TextPart57' has cardinality 0..*.

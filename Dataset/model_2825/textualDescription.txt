@@ -1,0 +1,303 @@
+The domain model 'swt' describes the core structural elements and their relationships within the system.
+
+The model defines 69 main class(es).
+
+'IntervalControl' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_Canvas' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_ProgressBar' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'swt_Menu' represents an important domain concept.
+It has one attribute: 'menuStyle', which is of type str.
+
+'swt_MenuItem' represents an important domain concept.
+It has the following attributes: 'menuItemStyle', which is of type str; 'selection', which is of type bool; 'enabled', which is of type bool; 'accelerator', which is of type int; 'ID', which is of type int.
+
+'swt_AbstractComposite' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_Browser' represents an important domain concept.
+It has the following attributes: 'javascriptEnabled', which is of type bool; 'url', which is of type str; 'text', which is of type str.
+
+'swt_IntervalSelector' represents an important domain concept.
+It has the following attributes: 'increment', which is of type int; 'pageIncrement', which is of type int; 'orientationStyle', which is of type str.
+
+'AbstractList' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_SearchText' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_TreeColumn' represents an important domain concept.
+It has the following attributes: 'toolTipText', which is of type str; 'displayText', which is of type str.
+
+'swt_FormData' represents an important domain concept.
+It has the following attributes: 'height', which is of type int; 'width', which is of type int.
+
+'Control' represents an important domain concept.
+It does not declare any attributes.
+
+'LayoutData' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_LayoutData' represents an important domain concept.
+It does not declare any attributes.
+
+'Labeled' represents an important domain concept.
+It does not declare any attributes.
+
+'Composite' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_RowData' represents an important domain concept.
+It has the following attributes: 'width', which is of type int; 'height', which is of type int; 'exclude', which is of type bool.
+
+'swt_TreeViewer' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_Combo' represents an important domain concept.
+It has the following attributes: 'textLimit', which is of type int; 'text', which is of type str.
+
+'IntervalSelector' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_Composite' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_FormLayout' represents an important domain concept.
+It has the following attributes: 'marginRight', which is of type int; 'marginWidth', which is of type int; 'marginTop', which is of type int; 'marginBottom', which is of type int; 'marginHeight', which is of type int; 'marginLeft', which is of type int; 'spacing', which is of type int.
+
+'swt_DateTime' represents an important domain concept.
+It has the following attributes: 'hours', which is of type int; 'minutes', which is of type int; 'month', which is of type int; 'year', which is of type int; 'seconds', which is of type int; 'day', which is of type int.
+
+'swt_CoolItem' represents an important domain concept.
+It has the following attributes: 'size', which is of type str; 'preferredSize', which is of type str; 'minimumSize', which is of type str.
+
+'swt_RGBColor' represents an important domain concept.
+It has the following attributes: 'green', which is of type int; 'blue', which is of type int; 'red', which is of type int.
+
+'swt_AbstractMenu' represents an important domain concept.
+It has the following attributes: 'textOrientationStyle', which is of type str; 'enabled', which is of type bool; 'visible', which is of type bool.
+
+'Widget' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_Decorations' represents an important domain concept.
+It has the following attributes: 'minimized', which is of type bool; 'maximized', which is of type bool.
+
+'swt_Item' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_Font' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'style', which is of type int; 'height', which is of type int.
+
+'swt_List' represents an important domain concept.
+It has the following attributes: 'selection', which is of type str; 'multiplicityStyle', which is of type str; 'selectionIndices', which is of type int.
+
+'swt_LineAttributes' represents an important domain concept.
+It has the following attributes: 'miterLimit', which is of type float; 'style', which is of type str; 'cap', which is of type str; 'dash', which is of type float; 'width', which is of type float; 'dashOffset', which is of type float; 'join', which is of type str.
+
+'swt_Color' represents an important domain concept.
+It does not declare any attributes.
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+'Decorations' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_ToolItem' represents an important domain concept.
+It has the following attributes: 'toolTipText', which is of type str; 'hotImage', which is of type str; 'enabled', which is of type bool; 'selection', which is of type bool.
+
+'swt_Tree' represents an important domain concept.
+It has the following attributes: 'headerVisible', which is of type bool; 'sortDirection', which is of type str; 'linesVisible', which is of type bool.
+
+'swt_MenuBar' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_AbstractList' represents an important domain concept.
+It has the following attributes: 'selectionIndex', which is of type int; 'items', which is of type str.
+
+'swt_CoolBar' represents an important domain concept.
+It has one attribute: 'orientationStyle', which is of type str.
+
+'swt_Labeled' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'image', which is of type str.
+
+'swt_Viewer' represents an important domain concept.
+It has one attribute: 'input', which is of type str.
+
+'swt_Group' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'swt_FormAttachment' represents an important domain concept.
+It has the following attributes: 'numerator', which is of type int; 'offset', which is of type int; 'denominator', which is of type int; 'alignment', which is of type str.
+
+'swt_Widget' represents an important domain concept.
+It has one attribute: 'style', which is of type int.
+
+'swt_Shell' represents an important domain concept.
+It has the following attributes: 'alpha', which is of type int; 'fullScreen', which is of type bool; 'modalStyle', which is of type str; 'trimStyle', which is of type str.
+
+'swt_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_Slider' represents an important domain concept.
+It has one attribute: 'thumb', which is of type int.
+
+'Color' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_Control' represents an important domain concept.
+It has the following attributes: 'toolTipText', which is of type str; 'borderStyle', which is of type str; 'touchEnabled', which is of type bool; 'textOrientationStyle', which is of type str; 'enabled', which is of type bool; 'visible', which is of type bool; 'size', which is of type str.
+
+'swt_SystemColor' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+'swt_Layout' represents an important domain concept.
+It does not declare any attributes.
+
+'Canvas' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_TabItem' represents an important domain concept.
+It has one attribute: 'toolTipText', which is of type str.
+
+'swt_IntervalControl' represents an important domain concept.
+It has the following attributes: 'maximum', which is of type int; 'minimum', which is of type int; 'selection', which is of type int.
+
+'swt_RowLayout' represents an important domain concept.
+It has the following attributes: 'marginRight', which is of type int; 'orientationStyle', which is of type str; 'marginWidth', which is of type int; 'marginBottom', which is of type int; 'marginLeft', which is of type int; 'center', which is of type bool; 'marginTop', which is of type int; 'pack', which is of type bool; 'justify', which is of type bool; 'spacing', which is of type int; 'marginHeight', which is of type int; 'wrap', which is of type bool; 'fill', which is of type bool.
+
+'Text' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_Separator' represents an important domain concept.
+It has one attribute: 'orientationStyle', which is of type str.
+
+'swt_Spinner' represents an important domain concept.
+It has the following attributes: 'textLimit', which is of type int; 'digits', which is of type int.
+
+'AbstractMenu' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_GridData' represents an important domain concept.
+It has the following attributes: 'exclude', which is of type bool; 'minimumWidth', which is of type int; 'verticalAlignment', which is of type str; 'heightHint', which is of type int; 'widthHint', which is of type int; 'grabExcessHorizontalSpace', which is of type bool; 'horizontalSpan', which is of type int; 'horizontalIndent', which is of type int; 'grabExcessVerticalSpace', which is of type bool; 'verticalSpan', which is of type int; 'minimumHeight', which is of type int; 'horizontalAlignment', which is of type str; 'verticalIndent', which is of type int.
+
+'swt_ToolBar' represents an important domain concept.
+It has one attribute: 'orientationStyle', which is of type str.
+
+'swt_TabFolder' represents an important domain concept.
+It does not declare any attributes.
+
+'swt_Text' represents an important domain concept.
+It has the following attributes: 'message', which is of type str; 'tabs', which is of type int; 'multiplicityStyle', which is of type str; 'textLimit', which is of type int; 'topIndex', which is of type int; 'selection', which is of type str; 'text', which is of type str; 'editable', which is of type bool; 'echoChar', which is of type str.
+
+'swt_Button' represents an important domain concept.
+It has the following attributes: 'arrowStyle', which is of type str; 'selection', which is of type bool; 'buttonStyle', which is of type str.
+
+'swt_FillLayout' represents an important domain concept.
+It has the following attributes: 'marginWidth', which is of type int; 'marginHeight', which is of type int; 'orientationStyle', which is of type str; 'spacing', which is of type int.
+
+'swt_GridLayout' represents an important domain concept.
+It has the following attributes: 'marginHeight', which is of type int; 'makeColumnsEqualWidth', which is of type bool; 'marginLeft', which is of type int; 'marginRight', which is of type int; 'marginWidth', which is of type int; 'numColumns', which is of type int; 'verticalSpacing', which is of type int; 'marginBottom', which is of type int; 'horizontalSpacing', which is of type int; 'marginTop', which is of type int.
+
+'swt_PasswordText' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'HorizontalAlignmentStyle' defines the following possible values: 'CENTER', 'LEFT', 'RIGHT', 'FILL'.
+The enumeration 'FormAttachmentAlignment' defines the following possible values: 'RIGHT', 'TOP', 'LEFT', 'CENTER', 'DEFAULT', 'BOTTOM'.
+The enumeration 'ButtonStyle' defines the following possible values: 'CHECK', 'PUSH', 'ARROW', 'TOGGLE', 'RADIO'.
+The enumeration 'BorderStyle' defines the following possible values: 'NONE', 'BORDER'.
+The enumeration 'ComboStyle' defines the following possible values: 'READ_ONLY', 'SIMPLE', 'DROP_DOWN'.
+The enumeration 'CapStyle' defines the following possible values: 'FLAT', 'ROUND', 'SQUARE'.
+The enumeration 'MenuItemStyle' defines the following possible values: 'PUSH', 'CASCADE', 'SEPARATOR', 'RADIO', 'CHECK'.
+The enumeration 'MultiplicityStyle' defines the following possible values: 'SINGLE', 'MULTI'.
+The enumeration 'LineStyle' defines the following possible values: 'DASH', 'SOLID', 'CUSTOM', 'DASHDOTDOT', 'DASHDOT', 'DOT'.
+The enumeration 'TextOrientationStyle' defines the following possible values: 'LEFT_TO_RIGHT', 'RIGHT_TO_LEFT'.
+The enumeration 'TrimStyle' defines the following possible values: 'NOT_TRIM', 'SHELL_TRIM', 'DIALOG_TRIM'.
+The enumeration 'ProgressState' defines the following possible values: 'PAUSED', 'NORMAL', 'ERROR'.
+The enumeration 'OrientationStyle' defines the following possible values: 'VERTICAL', 'HORIZONTAL'.
+The enumeration 'ArrowStyle' defines the following possible values: 'RIGHT', 'UP', 'DOWN', 'LEFT', 'NONE'.
+The enumeration 'FontStyle' defines the following possible values: 'BOLD', 'ITALIC', 'NORMAL'.
+The enumeration 'SortDirection' defines the following possible values: 'NONE', 'DOWN', 'UP'.
+The enumeration 'ModalStyle' defines the following possible values: 'PRIMARY_MODAL', 'APPLICATION_MODAL', 'SYSTEM_MODAL'.
+The enumeration 'JoinStyle' defines the following possible values: 'MITER', 'ROUND', 'BEVEL'.
+The enumeration 'VerticalAlignmentStyle' defines the following possible values: 'CENTER', 'BOTTOM', 'FILL', 'TOP'.
+The enumeration 'MenuStyle' defines the following possible values: 'POP_UP', 'DROP_DOWN'.
+The enumeration 'SystemColors' defines the following possible values: 'RED', 'GREEN', 'BLUE'.
+
+The model also captures inheritance relationships between classes.
+The class 'swt_Control' is a specialization of 'Widget'.
+The class 'swt_AbstractComposite' is a specialization of 'Control'.
+The class 'swt_Group' is a specialization of 'Composite'.
+The class 'swt_Canvas' is a specialization of 'Composite'.
+The class 'swt_Decorations' is a specialization of 'Canvas'.
+The class 'swt_Shell' is a specialization of 'Decorations'.
+The class 'swt_AbstractMenu' is a specialization of 'Widget'.
+The class 'swt_Menu' is a specialization of 'AbstractMenu'.
+The class 'swt_MenuBar' is a specialization of 'AbstractMenu'.
+The class 'swt_Item' is a specialization of 'Widget'.
+The class 'swt_Item' is a specialization of 'Labeled'.
+The class 'swt_MenuItem' is a specialization of 'Item'.
+The class 'swt_ToolBar' is a specialization of 'Control'.
+The class 'swt_ToolItem' is a specialization of 'Item'.
+The class 'swt_CoolItem' is a specialization of 'Item'.
+The class 'swt_Label' is a specialization of 'Control'.
+The class 'swt_Label' is a specialization of 'Labeled'.
+The class 'swt_Separator' is a specialization of 'Control'.
+The class 'swt_Button' is a specialization of 'Control'.
+The class 'swt_Button' is a specialization of 'Labeled'.
+The class 'swt_Text' is a specialization of 'Control'.
+The class 'swt_PasswordText' is a specialization of 'Text'.
+The class 'swt_SearchText' is a specialization of 'Text'.
+The class 'swt_IntervalControl' is a specialization of 'Control'.
+The class 'swt_IntervalSelector' is a specialization of 'IntervalControl'.
+The class 'swt_Slider' is a specialization of 'IntervalSelector'.
+The class 'swt_Spinner' is a specialization of 'IntervalSelector'.
+The class 'swt_ProgressBar' is a specialization of 'IntervalControl'.
+The class 'swt_DateTime' is a specialization of 'Control'.
+The class 'swt_Browser' is a specialization of 'Control'.
+The class 'swt_AbstractList' is a specialization of 'Control'.
+The class 'swt_List' is a specialization of 'AbstractList'.
+The class 'swt_Combo' is a specialization of 'AbstractList'.
+The class 'swt_TabFolder' is a specialization of 'Control'.
+The class 'swt_TabItem' is a specialization of 'Item'.
+The class 'swt_SystemColor' is a specialization of 'Color'.
+The class 'swt_RGBColor' is a specialization of 'Color'.
+The class 'swt_RowData' is a specialization of 'LayoutData'.
+The class 'swt_GridData' is a specialization of 'LayoutData'.
+The class 'swt_FormData' is a specialization of 'LayoutData'.
+The class 'swt_TreeColumn' is a specialization of 'Item'.
+The class 'swt_Tree' is a specialization of 'Control'.
+
+Relationships between classes are modeled using associations.
+An association connects 'swt_LayoutData' and 'swt_Control'. From 'swt_LayoutData', the role 'swt_LayoutData' has cardinality 0..*, and from 'swt_Control', the role 'swt_Control' has cardinality 0..*.
+An association connects 'swt_Color' and 'swt_Control'. From 'swt_Color', the role 'swt_Color' has cardinality 0..*, and from 'swt_Control', the role 'swt_Control2' has cardinality 0..*.
+An association connects 'swt_Font' and 'swt_Control'. From 'swt_Font', the role 'swt_Font' has cardinality 0..*, and from 'swt_Control', the role 'swt_Control4' has cardinality 0..*.
+An association connects 'swt_Decorations' and 'swt_MenuBar'. From 'swt_Decorations', the role 'parent' has cardinality 0..*, and from 'swt_MenuBar', the role 'MenuBar' has cardinality 0..*.
+An association connects 'swt_Shell' and 'swt_Button'. From 'swt_Shell', the role 'swt_Shell' has cardinality 0..*, and from 'swt_Button', the role 'swt_Button' has cardinality 0..*.
+An association connects 'swt_AbstractMenu' and 'swt_MenuItem'. From 'swt_AbstractMenu', the role 'swt_AbstractMenu' has cardinality 0..*, and from 'swt_MenuItem', the role 'swt_MenuItem' has cardinality 0..*.
+An association connects 'swt_Menu' and 'swt_MenuItem'. From 'swt_Menu', the role 'menu' has cardinality 0..*, and from 'swt_MenuItem', the role 'MenuItem' has cardinality 0..*.
+An association connects 'swt_Decorations' and 'swt_MenuBar'. From 'swt_Decorations', the role 'Decorations' has cardinality 0..*, and from 'swt_MenuBar', the role 'menuBar' has cardinality 0..*.
+An association connects 'swt_Menu' and 'swt_MenuItem'. From 'swt_Menu', the role 'Menu' has cardinality 0..*, and from 'swt_MenuItem', the role 'parentItem' has cardinality 0..*.
+An association connects 'swt_ToolItem' and 'swt_ToolBar'. From 'swt_ToolItem', the role 'ToolItem' has cardinality 0..*, and from 'swt_ToolBar', the role 'parent12' has cardinality 0..*.
+An association connects 'swt_ToolBar' and 'swt_ToolItem'. From 'swt_ToolBar', the role 'ToolBar' has cardinality 0..*, and from 'swt_ToolItem', the role 'items' has cardinality 0..*.
+An association connects 'swt_CoolBar' and 'swt_CoolItem'. From 'swt_CoolBar', the role 'parent15' has cardinality 0..*, and from 'swt_CoolItem', the role 'CoolItem' has cardinality 0..*.
+An association connects 'swt_CoolItem' and 'swt_CoolBar'. From 'swt_CoolItem', the role 'items17' has cardinality 0..*, and from 'swt_CoolBar', the role 'CoolBar' has cardinality 0..*.
+An association connects 'swt_CoolItem' and 'swt_Control'. From 'swt_CoolItem', the role 'swt_CoolItem' has cardinality 0..*, and from 'swt_Control', the role 'swt_Control19' has cardinality 0..*.
+An association connects 'swt_TabItem' and 'swt_TabFolder'. From 'swt_TabItem', the role 'swt_TabItem' has cardinality 0..*, and from 'swt_TabFolder', the role 'swt_TabFolder' has cardinality 0..*.
+An association connects 'swt_Control' and 'swt_TabItem'. From 'swt_Control', the role 'swt_Control23' has cardinality 0..*, and from 'swt_TabItem', the role 'swt_TabItem22' has cardinality 0..*.
+An association connects 'swt_FormAttachment' and 'swt_FormData'. From 'swt_FormAttachment', the role 'swt_FormAttachment' has cardinality 0..*, and from 'swt_FormData', the role 'swt_FormData' has cardinality 0..*.
+An association connects 'swt_FormData' and 'swt_FormAttachment'. From 'swt_FormData', the role 'swt_FormData26' has cardinality 0..*, and from 'swt_FormAttachment', the role 'swt_FormAttachment27' has cardinality 0..*.
+An association connects 'swt_FormAttachment' and 'swt_FormData'. From 'swt_FormAttachment', the role 'swt_FormAttachment30' has cardinality 0..*, and from 'swt_FormData', the role 'swt_FormData29' has cardinality 0..*.
+An association connects 'swt_FormAttachment' and 'swt_FormData'. From 'swt_FormAttachment', the role 'swt_FormAttachment33' has cardinality 0..*, and from 'swt_FormData', the role 'swt_FormData32' has cardinality 0..*.
+An association connects 'swt_FormAttachment' and 'swt_Control'. From 'swt_FormAttachment', the role 'swt_FormAttachment35' has cardinality 0..*, and from 'swt_Control', the role 'swt_Control36' has cardinality 0..*.
+An association connects 'swt_TreeColumn' and 'swt_Tree'. From 'swt_TreeColumn', the role 'swt_TreeColumn' has cardinality 0..*, and from 'swt_Tree', the role 'swt_Tree' has cardinality 0..*.
+An association connects 'swt_Tree' and 'swt_TreeColumn'. From 'swt_Tree', the role 'swt_Tree39' has cardinality 0..*, and from 'swt_TreeColumn', the role 'swt_TreeColumn40' has cardinality 0..*.
+An association connects 'swt_Tree' and 'swt_TreeViewer'. From 'swt_Tree', the role 'swt_Tree42' has cardinality 0..*, and from 'swt_TreeViewer', the role 'swt_TreeViewer' has cardinality 0..*.

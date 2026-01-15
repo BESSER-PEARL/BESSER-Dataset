@@ -1,0 +1,37 @@
+The domain model 'multiview' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'multiview_C' represents an important domain concept.
+It does not declare any attributes.
+
+'multiview_B' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'multiview_E' represents an important domain concept.
+It does not declare any attributes.
+
+'multiview_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'multiview_F' represents an important domain concept.
+It does not declare any attributes.
+
+'multiview_A' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'multiview_A' is a specialization of 'Named'.
+The class 'multiview_B' is a specialization of 'Named'.
+The class 'multiview_C' is a specialization of 'Named'.
+The class 'multiview_E' is a specialization of 'Named'.
+The class 'multiview_F' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'multiview_B' and 'multiview_A'. From 'multiview_B', the role 'multiview_B' has cardinality 0..*, and from 'multiview_A', the role 'multiview_A' has cardinality 0..*.
+An association connects 'multiview_A' and 'multiview_E'. From 'multiview_A', the role 'multiview_A2' has cardinality 0..*, and from 'multiview_E', the role 'multiview_E' has cardinality 0..*.
+An association connects 'multiview_B' and 'multiview_C'. From 'multiview_B', the role 'multiview_B4' has cardinality 0..*, and from 'multiview_C', the role 'multiview_C' has cardinality 0..*.
+An association connects 'multiview_F' and 'multiview_E'. From 'multiview_F', the role 'multiview_F' has cardinality 0..*, and from 'multiview_E', the role 'multiview_E6' has cardinality 0..*.

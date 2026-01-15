@@ -1,0 +1,12 @@
+The domain model 'test1' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'test1_StringToIntegerMapEntry' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'test1_ConceptA' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'test1_StringToIntegerMapEntry' and 'test1_ConceptA'. From 'test1_StringToIntegerMapEntry', the role 'test1_StringToIntegerMapEntry' has cardinality 0..*, and from 'test1_ConceptA', the role 'test1_ConceptA' has cardinality 0..*.

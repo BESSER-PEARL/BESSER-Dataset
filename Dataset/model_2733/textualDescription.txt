@@ -1,0 +1,17 @@
+The domain model 'lhs' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'lhs_C' represents an important domain concept.
+It has one attribute: 'c', which is of type str.
+
+'lhs_A' represents an important domain concept.
+It has one attribute: 'a', which is of type str.
+
+'lhs_B' represents an important domain concept.
+It has one attribute: 'b', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'lhs_B' and 'lhs_A'. From 'lhs_B', the role 'lhs_B' has cardinality 0..*, and from 'lhs_A', the role 'lhs_A' has cardinality 0..*.
+An association connects 'lhs_C' and 'lhs_A'. From 'lhs_C', the role 'lhs_C' has cardinality 0..*, and from 'lhs_A', the role 'lhs_A2' has cardinality 0..*.
+An association connects 'lhs_C' and 'lhs_B'. From 'lhs_C', the role 'lhs_C4' has cardinality 0..*, and from 'lhs_B', the role 'lhs_B5' has cardinality 0..*.

@@ -1,0 +1,86 @@
+The domain model 'dataflownet' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'dataflownet_Channel' represents an important domain concept.
+It does not declare any attributes.
+
+'dataflownet_FiringRule' represents an important domain concept.
+It has one attribute: 'compType', which is of type str.
+
+'dataflownet_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'dataflownet_Token' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'dataflownet_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'dataflownet_Process' represents an important domain concept.
+It has one attribute: 'host', which is of type str.
+
+'dataflownet_DataflowNet' represents an important domain concept.
+It does not declare any attributes.
+
+'dataflownet_StateMachineTransition' represents an important domain concept.
+It has one attribute: 'priority', which is of type int.
+
+'dataflownet_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'dataflownet_DataflowSystem' represents an important domain concept.
+It has one attribute: 'protocol', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dataflownet_StateMachineState' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'dataflownet_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Comparation' defines the following possible values: 'Less', 'NotEqual', 'Greater', 'Equal'.
+The enumeration 'Protocol' defines the following possible values: 'Akka', 'Paho'.
+
+The model also captures inheritance relationships between classes.
+The class 'dataflownet_Node' is a specialization of 'NamedElement'.
+The class 'dataflownet_StateMachine' is a specialization of 'Node'.
+The class 'dataflownet_DataflowNet' is a specialization of 'Node'.
+The class 'dataflownet_StateMachineState' is a specialization of 'NamedElement'.
+The class 'dataflownet_StateMachineTransition' is a specialization of 'NamedElement'.
+The class 'dataflownet_Channel' is a specialization of 'NamedElement'.
+The class 'dataflownet_FiringRule' is a specialization of 'NamedElement'.
+The class 'dataflownet_DataflowSystem' is a specialization of 'NamedElement'.
+The class 'dataflownet_Process' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dataflownet_Node' and 'dataflownet_DataflowNet'. From 'dataflownet_Node', the role 'nodes' has cardinality 0..*, and from 'dataflownet_DataflowNet', the role 'DataflowNet' has cardinality 0..*.
+An association connects 'dataflownet_StateMachine' and 'dataflownet_StateMachineState'. From 'dataflownet_StateMachine', the role 'parent' has cardinality 0..*, and from 'dataflownet_StateMachineState', the role 'StateMachineState' has cardinality 0..*.
+An association connects 'dataflownet_StateMachineState' and 'dataflownet_StateMachine'. From 'dataflownet_StateMachineState', the role 'dataflownet_StateMachineState' has cardinality 0..*, and from 'dataflownet_StateMachine', the role 'dataflownet_StateMachine' has cardinality 0..*.
+An association connects 'dataflownet_FiringRule' and 'dataflownet_StateMachine'. From 'dataflownet_FiringRule', the role 'dataflownet_FiringRule' has cardinality 0..*, and from 'dataflownet_StateMachine', the role 'dataflownet_StateMachine4' has cardinality 0..*.
+An association connects 'dataflownet_DataflowNet' and 'dataflownet_Channel'. From 'dataflownet_DataflowNet', the role 'dataflownet_DataflowNet' has cardinality 0..*, and from 'dataflownet_Channel', the role 'dataflownet_Channel' has cardinality 0..*.
+An association connects 'dataflownet_Channel' and 'dataflownet_DataflowNet'. From 'dataflownet_Channel', the role 'dataflownet_Channel8' has cardinality 0..*, and from 'dataflownet_DataflowNet', the role 'dataflownet_DataflowNet7' has cardinality 0..*.
+An association connects 'dataflownet_DataflowNet' and 'dataflownet_Node'. From 'dataflownet_DataflowNet', the role 'parent10' has cardinality 0..*, and from 'dataflownet_Node', the role 'Node' has cardinality 0..*.
+An association connects 'dataflownet_Channel' and 'dataflownet_DataflowNet'. From 'dataflownet_Channel', the role 'dataflownet_Channel13' has cardinality 0..*, and from 'dataflownet_DataflowNet', the role 'dataflownet_DataflowNet12' has cardinality 0..*.
+An association connects 'dataflownet_DataflowNet' and 'dataflownet_Process'. From 'dataflownet_DataflowNet', the role 'dataflownet_DataflowNet15' has cardinality 0..*, and from 'dataflownet_Process', the role 'dataflownet_Process' has cardinality 0..*.
+An association connects 'dataflownet_StateMachineState' and 'dataflownet_StateMachineTransition'. From 'dataflownet_StateMachineState', the role 'fromState' has cardinality 0..*, and from 'dataflownet_StateMachineTransition', the role 'StateMachineTransition' has cardinality 0..*.
+An association connects 'dataflownet_StateMachineTransition' and 'dataflownet_StateMachineState'. From 'dataflownet_StateMachineTransition', the role 'StateMachineTransition18' has cardinality 0..*, and from 'dataflownet_StateMachineState', the role 'toState' has cardinality 0..*.
+An association connects 'dataflownet_StateMachine' and 'dataflownet_StateMachineState'. From 'dataflownet_StateMachine', the role 'StateMachine' has cardinality 0..*, and from 'dataflownet_StateMachineState', the role 'nodes20' has cardinality 0..*.
+An association connects 'dataflownet_StateMachineState' and 'dataflownet_StateMachineTransition'. From 'dataflownet_StateMachineState', the role 'StateMachineState22' has cardinality 0..*, and from 'dataflownet_StateMachineTransition', the role 'outputTransitions' has cardinality 0..*.
+An association connects 'dataflownet_StateMachineTransition' and 'dataflownet_StateMachineState'. From 'dataflownet_StateMachineTransition', the role 'inputTransitions' has cardinality 0..*, and from 'dataflownet_StateMachineState', the role 'StateMachineState24' has cardinality 0..*.
+An association connects 'dataflownet_StateMachineTransition' and 'dataflownet_FiringRule'. From 'dataflownet_StateMachineTransition', the role 'dataflownet_StateMachineTransition' has cardinality 0..*, and from 'dataflownet_FiringRule', the role 'dataflownet_FiringRule26' has cardinality 0..*.
+An association connects 'dataflownet_StateMachineTransition' and 'dataflownet_FiringRule'. From 'dataflownet_StateMachineTransition', the role 'dataflownet_StateMachineTransition28' has cardinality 0..*, and from 'dataflownet_FiringRule', the role 'dataflownet_FiringRule29' has cardinality 0..*.
+An association connects 'dataflownet_Type' and 'dataflownet_Channel'. From 'dataflownet_Type', the role 'dataflownet_Type' has cardinality 0..*, and from 'dataflownet_Channel', the role 'dataflownet_Channel31' has cardinality 0..*.
+An association connects 'dataflownet_FiringRule' and 'dataflownet_Channel'. From 'dataflownet_FiringRule', the role 'dataflownet_FiringRule33' has cardinality 0..*, and from 'dataflownet_Channel', the role 'dataflownet_Channel34' has cardinality 0..*.
+An association connects 'dataflownet_Token' and 'dataflownet_FiringRule'. From 'dataflownet_Token', the role 'dataflownet_Token' has cardinality 0..*, and from 'dataflownet_FiringRule', the role 'dataflownet_FiringRule36' has cardinality 0..*.
+An association connects 'dataflownet_Token' and 'dataflownet_Type'. From 'dataflownet_Token', the role 'dataflownet_Token38' has cardinality 0..*, and from 'dataflownet_Type', the role 'dataflownet_Type39' has cardinality 0..*.
+An association connects 'dataflownet_DataflowSystem' and 'dataflownet_Type'. From 'dataflownet_DataflowSystem', the role 'dataflownet_DataflowSystem' has cardinality 0..*, and from 'dataflownet_Type', the role 'dataflownet_Type41' has cardinality 0..*.
+An association connects 'dataflownet_DataflowSystem' and 'dataflownet_DataflowNet'. From 'dataflownet_DataflowSystem', the role 'dataflownet_DataflowSystem43' has cardinality 0..*, and from 'dataflownet_DataflowNet', the role 'dataflownet_DataflowNet44' has cardinality 0..*.
+An association connects 'dataflownet_DataflowSystem' and 'dataflownet_Channel'. From 'dataflownet_DataflowSystem', the role 'dataflownet_DataflowSystem46' has cardinality 0..*, and from 'dataflownet_Channel', the role 'dataflownet_Channel47' has cardinality 0..*.
+An association connects 'dataflownet_DataflowSystem' and 'dataflownet_Process'. From 'dataflownet_DataflowSystem', the role 'dataflownet_DataflowSystem49' has cardinality 0..*, and from 'dataflownet_Process', the role 'dataflownet_Process50' has cardinality 0..*.

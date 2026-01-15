@@ -1,0 +1,25 @@
+The domain model 'test' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'test_D' represents an important domain concept.
+It has one attribute: 'attr1', which is of type str.
+
+'test_A' represents an important domain concept.
+It does not declare any attributes.
+
+'test_OptionTestClass' represents an important domain concept.
+It has the following attributes: 'attribute2', which is of type str; 'attribute', which is of type str.
+
+'test_B' represents an important domain concept.
+It does not declare any attributes.
+
+'test_C' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'test_B' is a specialization of 'A'.
+The class 'test_C' is a specialization of 'A'.

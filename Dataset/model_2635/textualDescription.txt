@@ -1,0 +1,146 @@
+The domain model 'diagraph' describes the core structural elements and their relationships within the system.
+
+The model defines 33 main class(es).
+
+'diagraph_DNestedEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_DCompartmentEdge' represents an important domain concept.
+It has the following attributes: 'partitionName', which is of type str; 'depth', which is of type int.
+
+'diagraph_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_DGraphElement' represents an important domain concept.
+It has the following attributes: 'abztract', which is of type bool; 'name', which is of type str; 'icon', which is of type str.
+
+'diagraph_DPointOfView' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_DLabeledElement' represents an important domain concept.
+It has the following attributes: 'labls', which is of type str; 'expression', which is of type str.
+
+'diagraph_DReference' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_DEdge' represents an important domain concept.
+It has one attribute: 'propagated', which is of type bool.
+
+'DOwnedEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_DAffixedEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_DGeneric' represents an important domain concept.
+It does not declare any attributes.
+
+'DLineEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_DViewNavigation' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'diagraph_DLineEdge' represents an important domain concept.
+It has one attribute: 'arrows', which is of type str.
+
+'DGraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DNode' represents an important domain concept.
+It does not declare any attributes.
+
+'DNestedEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_DOwnedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_DLabel' represents an important domain concept.
+It has the following attributes: 'abztract', which is of type bool; 'propagated', which is of type bool; 'inferred', which is of type bool.
+
+'diagraph_DOwnedEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_DNode' represents an important domain concept.
+It has the following attributes: 'navigationLink', which is of type str; 'shape', which is of type str; 'layout', which is of type bool.
+
+'diagraph_DContainment' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DSimpleEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_DSimpleEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'DLabeledElement' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_DGraph' represents an important domain concept.
+It has the following attributes: 'facade2', which is of type str; 'viewName', which is of type str; 'facade1', which is of type str.
+
+'DOwnedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_DLabeledEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'DEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'diagraph_DNavigationEdge' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DShape' defines the following possible values: 'rectangle', 'dot', 'vee', 'circle', 'triangle', 'roundedRect'.
+
+The model also captures inheritance relationships between classes.
+The class 'diagraph_DEdge' is a specialization of 'DGraphElement'.
+The class 'diagraph_DNode' is a specialization of 'DLabeledElement'.
+The class 'diagraph_DNode' is a specialization of 'DOwnedElement'.
+The class 'diagraph_DLabeledEdge' is a specialization of 'DOwnedEdge'.
+The class 'diagraph_DLabeledEdge' is a specialization of 'DLabeledElement'.
+The class 'diagraph_DLabeledEdge' is a specialization of 'DLineEdge'.
+The class 'diagraph_DReference' is a specialization of 'DLineEdge'.
+The class 'diagraph_DNestedEdge' is a specialization of 'DOwnedEdge'.
+The class 'diagraph_DLabeledElement' is a specialization of 'DGraphElement'.
+The class 'diagraph_DOwnedEdge' is a specialization of 'DOwnedElement'.
+The class 'diagraph_DOwnedEdge' is a specialization of 'DEdge'.
+The class 'diagraph_DCompartmentEdge' is a specialization of 'DNestedEdge'.
+The class 'diagraph_DPointOfView' is a specialization of 'DNode'.
+The class 'diagraph_DAffixedEdge' is a specialization of 'DNestedEdge'.
+The class 'diagraph_DLineEdge' is a specialization of 'DSimpleEdge'.
+The class 'diagraph_DNavigationEdge' is a specialization of 'DSimpleEdge'.
+The class 'diagraph_DGeneric' is a specialization of 'DLabeledElement'.
+The class 'diagraph_DSimpleEdge' is a specialization of 'DEdge'.
+
+Relationships between classes are modeled using associations.
+An association connects 'diagraph_DEdge' and 'diagraph_DNode'. From 'diagraph_DEdge', the role 'diagraph_DEdge' has cardinality 0..*, and from 'diagraph_DNode', the role 'diagraph_DNode' has cardinality 0..*.
+An association connects 'diagraph_EReference' and 'diagraph_DEdge'. From 'diagraph_EReference', the role 'diagraph_EReference' has cardinality 0..*, and from 'diagraph_DEdge', the role 'diagraph_DEdge2' has cardinality 0..*.
+An association connects 'diagraph_ENamedElement' and 'diagraph_DGraphElement'. From 'diagraph_ENamedElement', the role 'diagraph_ENamedElement' has cardinality 0..*, and from 'diagraph_DGraphElement', the role 'diagraph_DGraphElement' has cardinality 0..*.
+An association connects 'diagraph_DGraphElement' and 'diagraph_DGraph'. From 'diagraph_DGraphElement', the role 'elements' has cardinality 0..*, and from 'diagraph_DGraph', the role 'DGraph' has cardinality 0..*.
+An association connects 'diagraph_DViewNavigation' and 'diagraph_DNode'. From 'diagraph_DViewNavigation', the role 'DViewNavigation' has cardinality 0..*, and from 'diagraph_DNode', the role 'navigationSource' has cardinality 0..*.
+An association connects 'diagraph_DContainment' and 'diagraph_DNode'. From 'diagraph_DContainment', the role 'DContainment' has cardinality 0..*, and from 'diagraph_DNode', the role 'node' has cardinality 0..*.
+An association connects 'diagraph_DLabeledEdge' and 'diagraph_EReference'. From 'diagraph_DLabeledEdge', the role 'diagraph_DLabeledEdge' has cardinality 0..*, and from 'diagraph_EReference', the role 'diagraph_EReference8' has cardinality 0..*.
+An association connects 'diagraph_DContainment' and 'diagraph_DNestedEdge'. From 'diagraph_DContainment', the role 'diagraph_DContainment' has cardinality 0..*, and from 'diagraph_DNestedEdge', the role 'diagraph_DNestedEdge' has cardinality 0..*.
+An association connects 'diagraph_DGraph' and 'diagraph_DGraphElement'. From 'diagraph_DGraph', the role 'graph' has cardinality 0..*, and from 'diagraph_DGraphElement', the role 'DGraphElement' has cardinality 0..*.
+An association connects 'diagraph_DPointOfView' and 'diagraph_DGraph'. From 'diagraph_DPointOfView', the role 'diagraph_DPointOfView' has cardinality 0..*, and from 'diagraph_DGraph', the role 'diagraph_DGraph' has cardinality 0..*.
+An association connects 'diagraph_EClass' and 'diagraph_DLabeledElement'. From 'diagraph_EClass', the role 'diagraph_EClass' has cardinality 0..*, and from 'diagraph_DLabeledElement', the role 'diagraph_DLabeledElement' has cardinality 0..*.
+An association connects 'diagraph_DLabel' and 'diagraph_DLabeledElement'. From 'diagraph_DLabel', the role 'diagraph_DLabel' has cardinality 0..*, and from 'diagraph_DLabeledElement', the role 'diagraph_DLabeledElement14' has cardinality 0..*.
+An association connects 'diagraph_DNode' and 'diagraph_DOwnedElement'. From 'diagraph_DNode', the role 'diagraph_DNode16' has cardinality 0..*, and from 'diagraph_DOwnedElement', the role 'diagraph_DOwnedElement' has cardinality 0..*.
+An association connects 'diagraph_DGraph' and 'diagraph_DViewNavigation'. From 'diagraph_DGraph', the role 'diagraph_DGraph18' has cardinality 0..*, and from 'diagraph_DViewNavigation', the role 'diagraph_DViewNavigation' has cardinality 0..*.
+An association connects 'diagraph_DViewNavigation' and 'diagraph_DNode'. From 'diagraph_DViewNavigation', the role 'viewNavigation' has cardinality 0..*, and from 'diagraph_DNode', the role 'DNode' has cardinality 0..*.
+An association connects 'diagraph_DLabel' and 'diagraph_EAttribute'. From 'diagraph_DLabel', the role 'diagraph_DLabel21' has cardinality 0..*, and from 'diagraph_EAttribute', the role 'diagraph_EAttribute' has cardinality 0..*.
+An association connects 'diagraph_DContainment' and 'diagraph_DNode'. From 'diagraph_DContainment', the role 'containments' has cardinality 0..*, and from 'diagraph_DNode', the role 'DNode23' has cardinality 0..*.
+An association connects 'diagraph_DNestedEdge' and 'diagraph_DContainment'. From 'diagraph_DNestedEdge', the role 'diagraph_DNestedEdge26' has cardinality 0..*, and from 'diagraph_DContainment', the role 'diagraph_DContainment25' has cardinality 0..*.
+An association connects 'diagraph_DNode' and 'diagraph_DSimpleEdge'. From 'diagraph_DNode', the role 'diagraph_DNode28' has cardinality 0..*, and from 'diagraph_DSimpleEdge', the role 'diagraph_DSimpleEdge' has cardinality 0..*.

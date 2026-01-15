@@ -1,0 +1,39 @@
+The domain model 'nodesAndEdges' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'nodesAndEdges_Node_toString' represents an important domain concept.
+It does not declare any attributes.
+
+'nodesAndEdges_Edge' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'nodesAndEdges_ColoredNode' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+'nodesAndEdges_ShapedNode' represents an important domain concept.
+It has the following attributes: 'shape', which is of type str; 'size', which is of type float.
+
+'nodesAndEdges_ShapedNode_toString' represents an important domain concept.
+It does not declare any attributes.
+
+'nodesAndEdges_Edge_toString' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'nodesAndEdges_ColoredNode_toString' represents an important domain concept.
+It does not declare any attributes.
+
+'nodesAndEdges_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Color' defines the following possible values: 'blue', 'red'.
+The enumeration 'EdgeViewType' defines the following possible values: 'solidline', 'dashline'.
+The enumeration 'Shape' defines the following possible values: 'square', 'round'.
+
+The model also captures inheritance relationships between classes.
+The class 'nodesAndEdges_ColoredNode' is a specialization of 'Node'.
+The class 'nodesAndEdges_ShapedNode' is a specialization of 'Node'.

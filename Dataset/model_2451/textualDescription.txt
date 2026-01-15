@@ -1,0 +1,249 @@
+The domain model 'scxml' describes the core structural elements and their relationships within the system.
+
+The model defines 57 main class(es).
+
+'TransitionSource' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_ParallelState' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Raise' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+'scxml_Validate' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'schema', which is of type str.
+
+'scxml_Else' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Send' represents an important domain concept.
+It has the following attributes: 'namelist', which is of type str; 'targetexpr', which is of type str; 'typeexpr', which is of type str; 'delayexpr', which is of type str; 'hints', which is of type str; 'idlocation', which is of type str; 'type', which is of type str; 'eventexpr', which is of type str; 'target', which is of type str; 'event', which is of type str; 'id', which is of type str; 'delay', which is of type str; 'hintsexpr', which is of type str.
+
+'scxml_IAdaptable' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_If' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_TransitionTarget' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Data' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_State' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Cancel' represents an important domain concept.
+It has the following attributes: 'sendidexpr', which is of type str; 'sendid', which is of type str.
+
+'IAdaptable' represents an important domain concept.
+It does not declare any attributes.
+
+'InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Script' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'scxml_Conditional' represents an important domain concept.
+It has one attribute: 'cond', which is of type str.
+
+'scxml_HistoryState' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'scxml_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Donedata' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_TransitionSource' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Invoke' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'id', which is of type str; 'idlocation', which is of type str; 'typeexpr', which is of type str; 'autoforward', which is of type str; 'namelist', which is of type str; 'srcexpr', which is of type str; 'src', which is of type str.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Log' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'expr', which is of type str; 'level', which is of type str.
+
+'DescriptionContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_ElseIf' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_StateChart' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'version', which is of type str; 'exmode', which is of type str; 'xmlns', which is of type str; 'profile', which is of type str.
+
+'scxml_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Data' represents an important domain concept.
+It has the following attributes: 'src', which is of type str; 'expr', which is of type str; 'id', which is of type str.
+
+'scxml_Content' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'scxml_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'Donedata' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_OnEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Datamodel' represents an important domain concept.
+It has one attribute: 'schema', which is of type str.
+
+'scxml_DatamodelContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'DatamodelContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_CondEventTransition' represents an important domain concept.
+It has the following attributes: 'cond', which is of type str; 'event', which is of type str.
+
+'scxml_Param' represents an important domain concept.
+It has the following attributes: 'expr', which is of type str; 'name', which is of type str.
+
+'ExecutableContent' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Description' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'scxml_XObject' represents an important domain concept.
+It has the following attributes: 'nsUri', which is of type str; 'classifierName', which is of type str; 'exchange', which is of type bool.
+
+'Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_ExecutableContent' represents an important domain concept.
+It has one attribute: 'group', which is of type str.
+
+'scxml_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractSimpleState' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_XData' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_DescriptionContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_AbstractSimpleState' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Assign' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'location', which is of type str; 'expr', which is of type str.
+
+'scxml_SimpleState' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_OnExit' represents an important domain concept.
+It does not declare any attributes.
+
+'TransitionTarget' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ExmodeDatatype' defines the following possible values: 'lax', 'strict'.
+The enumeration 'HistoryTypeDatatype' defines the following possible values: 'deep', 'shallow'.
+The enumeration 'AdapterToken' defines the following possible values: 'DESCRIPTION', 'DATAMODEL'.
+
+The model also captures inheritance relationships between classes.
+The class 'scxml_StateChart' is a specialization of 'AbstractState'.
+The class 'scxml_StateChart' is a specialization of 'AbstractSimpleState'.
+The class 'scxml_StateChart' is a specialization of 'DatamodelContainer'.
+The class 'scxml_StateChart' is a specialization of 'DescriptionContainer'.
+The class 'scxml_Node' is a specialization of 'DescriptionContainer'.
+The class 'scxml_TransitionSource' is a specialization of 'Node'.
+The class 'scxml_TransitionTarget' is a specialization of 'Node'.
+The class 'scxml_State' is a specialization of 'TransitionTarget'.
+The class 'scxml_State' is a specialization of 'AbstractState'.
+The class 'scxml_State' is a specialization of 'TransitionSource'.
+The class 'scxml_State' is a specialization of 'DatamodelContainer'.
+The class 'scxml_Transition' is a specialization of 'ExecutableContent'.
+The class 'scxml_Transition' is a specialization of 'DescriptionContainer'.
+The class 'scxml_CondEventTransition' is a specialization of 'Transition'.
+The class 'scxml_InitialState' is a specialization of 'DescriptionContainer'.
+The class 'scxml_FinalState' is a specialization of 'TransitionTarget'.
+The class 'scxml_ParallelState' is a specialization of 'State'.
+The class 'scxml_SimpleState' is a specialization of 'State'.
+The class 'scxml_SimpleState' is a specialization of 'AbstractSimpleState'.
+The class 'scxml_HistoryState' is a specialization of 'TransitionTarget'.
+The class 'scxml_HistoryState' is a specialization of 'InitialState'.
+The class 'scxml_OnEntry' is a specialization of 'ExecutableContent'.
+The class 'scxml_OnExit' is a specialization of 'ExecutableContent'.
+The class 'scxml_Raise' is a specialization of 'Donedata'.
+The class 'scxml_If' is a specialization of 'Conditional'.
+The class 'scxml_If' is a specialization of 'ExecutableContent'.
+The class 'scxml_ElseIf' is a specialization of 'Conditional'.
+The class 'scxml_Send' is a specialization of 'Donedata'.
+The class 'scxml_Invoke' is a specialization of 'Donedata'.
+The class 'scxml_Data' is a specialization of 'DescriptionContainer'.
+The class 'scxml_XData' is a specialization of 'Data'.
+The class 'scxml_Datamodel' is a specialization of 'DescriptionContainer'.
+The class 'scxml_DatamodelContainer' is a specialization of 'IAdaptable'.
+The class 'scxml_DescriptionContainer' is a specialization of 'IAdaptable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'scxml_StateChart' and 'scxml_Script'. From 'scxml_StateChart', the role 'scxml_StateChart' has cardinality 0..*, and from 'scxml_Script', the role 'scxml_Script' has cardinality 0..*.
+An association connects 'scxml_Node' and 'scxml_OnEntry'. From 'scxml_Node', the role 'scxml_Node' has cardinality 0..*, and from 'scxml_OnEntry', the role 'scxml_OnEntry' has cardinality 0..*.
+An association connects 'scxml_Node' and 'scxml_OnExit'. From 'scxml_Node', the role 'scxml_Node3' has cardinality 0..*, and from 'scxml_OnExit', the role 'scxml_OnExit' has cardinality 0..*.
+An association connects 'scxml_TransitionSource' and 'scxml_CondEventTransition'. From 'scxml_TransitionSource', the role 'scxml_TransitionSource' has cardinality 0..*, and from 'scxml_CondEventTransition', the role 'scxml_CondEventTransition' has cardinality 0..*.
+An association connects 'scxml_AbstractState' and 'scxml_SimpleState'. From 'scxml_AbstractState', the role 'scxml_AbstractState' has cardinality 0..*, and from 'scxml_SimpleState', the role 'scxml_SimpleState' has cardinality 0..*.
+An association connects 'scxml_AbstractState' and 'scxml_ParallelState'. From 'scxml_AbstractState', the role 'scxml_AbstractState7' has cardinality 0..*, and from 'scxml_ParallelState', the role 'scxml_ParallelState' has cardinality 0..*.
+An association connects 'scxml_State' and 'scxml_HistoryState'. From 'scxml_State', the role 'scxml_State' has cardinality 0..*, and from 'scxml_HistoryState', the role 'scxml_HistoryState' has cardinality 0..*.
+An association connects 'scxml_TransitionTarget' and 'scxml_Transition'. From 'scxml_TransitionTarget', the role 'scxml_TransitionTarget' has cardinality 0..*, and from 'scxml_Transition', the role 'scxml_Transition' has cardinality 0..*.
+An association connects 'scxml_InitialState' and 'scxml_Transition'. From 'scxml_InitialState', the role 'scxml_InitialState' has cardinality 0..*, and from 'scxml_Transition', the role 'scxml_Transition11' has cardinality 0..*.
+An association connects 'scxml_Param' and 'scxml_Donedata'. From 'scxml_Param', the role 'scxml_Param' has cardinality 0..*, and from 'scxml_Donedata', the role 'scxml_Donedata' has cardinality 0..*.
+An association connects 'scxml_EObject' and 'scxml_Donedata'. From 'scxml_EObject', the role 'scxml_EObject' has cardinality 0..*, and from 'scxml_Donedata', the role 'scxml_Donedata14' has cardinality 0..*.
+An association connects 'scxml_Donedata' and 'scxml_FinalState'. From 'scxml_Donedata', the role 'scxml_Donedata16' has cardinality 0..*, and from 'scxml_FinalState', the role 'scxml_FinalState' has cardinality 0..*.
+An association connects 'scxml_TransitionTarget' and 'scxml_AbstractSimpleState'. From 'scxml_TransitionTarget', the role 'scxml_TransitionTarget18' has cardinality 0..*, and from 'scxml_AbstractSimpleState', the role 'scxml_AbstractSimpleState' has cardinality 0..*.
+An association connects 'scxml_AbstractSimpleState' and 'scxml_InitialState'. From 'scxml_AbstractSimpleState', the role 'scxml_AbstractSimpleState20' has cardinality 0..*, and from 'scxml_InitialState', the role 'scxml_InitialState21' has cardinality 0..*.
+An association connects 'scxml_FinalState' and 'scxml_AbstractSimpleState'. From 'scxml_FinalState', the role 'scxml_FinalState24' has cardinality 0..*, and from 'scxml_AbstractSimpleState', the role 'scxml_AbstractSimpleState23' has cardinality 0..*.
+An association connects 'scxml_Invoke' and 'scxml_SimpleState'. From 'scxml_Invoke', the role 'scxml_Invoke' has cardinality 0..*, and from 'scxml_SimpleState', the role 'scxml_SimpleState26' has cardinality 0..*.
+An association connects 'scxml_If' and 'scxml_ExecutableContent'. From 'scxml_If', the role 'scxml_If' has cardinality 0..*, and from 'scxml_ExecutableContent', the role 'scxml_ExecutableContent' has cardinality 0..*.
+An association connects 'scxml_ExecutableContent' and 'scxml_Log'. From 'scxml_ExecutableContent', the role 'scxml_ExecutableContent29' has cardinality 0..*, and from 'scxml_Log', the role 'scxml_Log' has cardinality 0..*.
+An association connects 'scxml_ExecutableContent' and 'scxml_Raise'. From 'scxml_ExecutableContent', the role 'scxml_ExecutableContent31' has cardinality 0..*, and from 'scxml_Raise', the role 'scxml_Raise' has cardinality 0..*.
+An association connects 'scxml_Send' and 'scxml_ExecutableContent'. From 'scxml_Send', the role 'scxml_Send' has cardinality 0..*, and from 'scxml_ExecutableContent', the role 'scxml_ExecutableContent33' has cardinality 0..*.
+An association connects 'scxml_ExecutableContent' and 'scxml_Cancel'. From 'scxml_ExecutableContent', the role 'scxml_ExecutableContent35' has cardinality 0..*, and from 'scxml_Cancel', the role 'scxml_Cancel' has cardinality 0..*.
+An association connects 'scxml_Assign' and 'scxml_ExecutableContent'. From 'scxml_Assign', the role 'scxml_Assign' has cardinality 0..*, and from 'scxml_ExecutableContent', the role 'scxml_ExecutableContent37' has cardinality 0..*.
+An association connects 'scxml_Validate' and 'scxml_ExecutableContent'. From 'scxml_Validate', the role 'scxml_Validate' has cardinality 0..*, and from 'scxml_ExecutableContent', the role 'scxml_ExecutableContent39' has cardinality 0..*.
+An association connects 'scxml_ExecutableContent' and 'scxml_Script'. From 'scxml_ExecutableContent', the role 'scxml_ExecutableContent41' has cardinality 0..*, and from 'scxml_Script', the role 'scxml_Script42' has cardinality 0..*.
+An association connects 'scxml_ElseIf' and 'scxml_If'. From 'scxml_ElseIf', the role 'scxml_ElseIf' has cardinality 0..*, and from 'scxml_If', the role 'scxml_If44' has cardinality 0..*.
+An association connects 'scxml_If' and 'scxml_Else'. From 'scxml_If', the role 'scxml_If46' has cardinality 0..*, and from 'scxml_Else', the role 'scxml_Else' has cardinality 0..*.
+An association connects 'scxml_ExecutableContent' and 'scxml_Invoke'. From 'scxml_ExecutableContent', the role 'scxml_ExecutableContent49' has cardinality 0..*, and from 'scxml_Invoke', the role 'scxml_Invoke48' has cardinality 0..*.
+An association connects 'scxml_EObject' and 'scxml_XData'. From 'scxml_EObject', the role 'scxml_EObject51' has cardinality 0..*, and from 'scxml_XData', the role 'scxml_XData' has cardinality 0..*.
+An association connects 'scxml_XObject' and 'scxml_EClass'. From 'scxml_XObject', the role 'scxml_XObject' has cardinality 0..*, and from 'scxml_EClass', the role 'scxml_EClass' has cardinality 0..*.
+An association connects 'scxml_Datamodel' and 'scxml_Data'. From 'scxml_Datamodel', the role 'scxml_Datamodel' has cardinality 0..*, and from 'scxml_Data', the role 'scxml_Data' has cardinality 0..*.
+An association connects 'scxml_Datamodel' and 'scxml_DatamodelContainer'. From 'scxml_Datamodel', the role 'scxml_Datamodel55' has cardinality 0..*, and from 'scxml_DatamodelContainer', the role 'scxml_DatamodelContainer' has cardinality 0..*.
+An association connects 'scxml_Description' and 'scxml_DescriptionContainer'. From 'scxml_Description', the role 'scxml_Description' has cardinality 0..*, and from 'scxml_DescriptionContainer', the role 'scxml_DescriptionContainer' has cardinality 0..*.

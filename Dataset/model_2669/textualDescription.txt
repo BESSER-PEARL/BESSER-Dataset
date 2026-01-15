@@ -1,0 +1,50 @@
+The domain model 'conts' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'conts_H' represents an important domain concept.
+It does not declare any attributes.
+
+'conts_G' represents an important domain concept.
+It does not declare any attributes.
+
+'conts_E' represents an important domain concept.
+It does not declare any attributes.
+
+'conts_C' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'conts_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'conts_F' represents an important domain concept.
+It does not declare any attributes.
+
+'conts_B' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'conts_A' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'conts_A' is a specialization of 'Named'.
+The class 'conts_B' is a specialization of 'Named'.
+The class 'conts_C' is a specialization of 'Named'.
+The class 'conts_E' is a specialization of 'Named'.
+The class 'conts_E' is a specialization of 'B'.
+The class 'conts_F' is a specialization of 'Named'.
+The class 'conts_G' is a specialization of 'Named'.
+The class 'conts_H' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'conts_B' and 'conts_A'. From 'conts_B', the role 'conts_B' has cardinality 0..*, and from 'conts_A', the role 'conts_A' has cardinality 0..*.
+An association connects 'conts_B' and 'conts_C'. From 'conts_B', the role 'conts_B2' has cardinality 0..*, and from 'conts_C', the role 'conts_C' has cardinality 0..*.
+An association connects 'conts_B' and 'conts_G'. From 'conts_B', the role 'conts_B4' has cardinality 0..*, and from 'conts_G', the role 'conts_G' has cardinality 0..*.
+An association connects 'conts_F' and 'conts_E'. From 'conts_F', the role 'conts_F' has cardinality 0..*, and from 'conts_E', the role 'conts_E' has cardinality 0..*.
+An association connects 'conts_G' and 'conts_H'. From 'conts_G', the role 'conts_G7' has cardinality 0..*, and from 'conts_H', the role 'conts_H' has cardinality 0..*.

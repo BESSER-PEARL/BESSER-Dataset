@@ -1,0 +1,74 @@
+The domain model 'typedef' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'typedef_TypedArray' represents an important domain concept.
+It does not declare any attributes.
+
+'typedef_EnumVal' represents an important domain concept.
+It does not declare any attributes.
+
+'typedef_CSIDatatype' represents an important domain concept.
+It has the following attributes: 'nillable', which is of type bool; 'code', which is of type str.
+
+'typedef_EnumLiteral' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'typedef_Exception' represents an important domain concept.
+It has one attribute: 'exceptionType', which is of type str.
+
+'typedef_Entity' represents an important domain concept.
+It has one attribute: 'versionuid', which is of type int.
+
+'typedef_PrimitiveType' represents an important domain concept.
+It has the following attributes: 'typesetName', which is of type str; 'nillable', which is of type bool.
+
+'typedef_TDDocumentation' represents an important domain concept.
+It has one attribute: 'doc', which is of type str.
+
+'typedef_DocumentRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'typedef_TypeLanguageBinding' represents an important domain concept.
+It has the following attributes: 'lang', which is of type str; 'defaultInitValue', which is of type str; 'nullValueLiteral', which is of type str; 'langSpecificType', which is of type str; 'langSpecificNS', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'typedef_TDAnnotationDetail' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'typedef_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'typedef_TypeAnnotation' represents an important domain concept.
+It has one attribute: 'source', which is of type str.
+
+'typedef_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CSIExceptionTypes' defines the following possible values: 'UNRECOVERABLE', 'SYSTEM', 'USER'.
+The enumeration 'CSIDatatypeCodes' defines the following possible values: 'CSIFloat', 'CSIDouble', 'CSIBoolean', 'CSIDate', 'CSIByte', 'CSIString', 'CSIInteger', 'CSILong'.
+
+The model also captures inheritance relationships between classes.
+The class 'typedef_CSIDatatype' is a specialization of 'Type'.
+The class 'typedef_Entity' is a specialization of 'Type'.
+The class 'typedef_TypedArray' is a specialization of 'Type'.
+The class 'typedef_Exception' is a specialization of 'Type'.
+The class 'typedef_PrimitiveType' is a specialization of 'Type'.
+The class 'typedef_EnumVal' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'typedef_DocumentRoot' and 'typedef_Type'. From 'typedef_DocumentRoot', the role 'typedef_DocumentRoot' has cardinality 0..*, and from 'typedef_Type', the role 'typedef_Type' has cardinality 0..*.
+An association connects 'typedef_Type' and 'typedef_TypeAnnotation'. From 'typedef_Type', the role 'typedef_Type2' has cardinality 0..*, and from 'typedef_TypeAnnotation', the role 'typedef_TypeAnnotation' has cardinality 0..*.
+An association connects 'typedef_TDDocumentation' and 'typedef_Type'. From 'typedef_TDDocumentation', the role 'typedef_TDDocumentation' has cardinality 0..*, and from 'typedef_Type', the role 'typedef_Type4' has cardinality 0..*.
+An association connects 'typedef_Feature' and 'typedef_Entity'. From 'typedef_Feature', the role 'typedef_Feature' has cardinality 0..*, and from 'typedef_Entity', the role 'typedef_Entity' has cardinality 0..*.
+An association connects 'typedef_Feature' and 'typedef_Type'. From 'typedef_Feature', the role 'typedef_Feature7' has cardinality 0..*, and from 'typedef_Type', the role 'typedef_Type8' has cardinality 0..*.
+An association connects 'typedef_TDDocumentation' and 'typedef_Feature'. From 'typedef_TDDocumentation', the role 'typedef_TDDocumentation11' has cardinality 0..*, and from 'typedef_Feature', the role 'typedef_Feature10' has cardinality 0..*.
+An association connects 'typedef_Type' and 'typedef_TypedArray'. From 'typedef_Type', the role 'typedef_Type13' has cardinality 0..*, and from 'typedef_TypedArray', the role 'typedef_TypedArray' has cardinality 0..*.
+An association connects 'typedef_TypeAnnotation' and 'typedef_TDAnnotationDetail'. From 'typedef_TypeAnnotation', the role 'typedef_TypeAnnotation15' has cardinality 0..*, and from 'typedef_TDAnnotationDetail', the role 'typedef_TDAnnotationDetail' has cardinality 0..*.
+An association connects 'typedef_PrimitiveType' and 'typedef_TypeLanguageBinding'. From 'typedef_PrimitiveType', the role 'typedef_PrimitiveType' has cardinality 0..*, and from 'typedef_TypeLanguageBinding', the role 'typedef_TypeLanguageBinding' has cardinality 0..*.
+An association connects 'typedef_Type' and 'typedef_EnumVal'. From 'typedef_Type', the role 'typedef_Type18' has cardinality 0..*, and from 'typedef_EnumVal', the role 'typedef_EnumVal' has cardinality 0..*.
+An association connects 'typedef_EnumVal' and 'typedef_EnumLiteral'. From 'typedef_EnumVal', the role 'typedef_EnumVal20' has cardinality 0..*, and from 'typedef_EnumLiteral', the role 'typedef_EnumLiteral' has cardinality 0..*.
+An association connects 'typedef_TDDocumentation' and 'typedef_EnumLiteral'. From 'typedef_TDDocumentation', the role 'typedef_TDDocumentation23' has cardinality 0..*, and from 'typedef_EnumLiteral', the role 'typedef_EnumLiteral22' has cardinality 0..*.

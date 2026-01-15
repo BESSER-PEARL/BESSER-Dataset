@@ -1,0 +1,18 @@
+The domain model 'cycle' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'cycle_C' represents an important domain concept.
+It does not declare any attributes.
+
+'cycle_A' represents an important domain concept.
+It has one attribute: 'i', which is of type int.
+
+'cycle_B' represents an important domain concept.
+It has one attribute: 'x', which is of type float.
+
+Relationships between classes are modeled using associations.
+An association connects 'cycle_B' and 'cycle_A'. From 'cycle_B', the role 'cycle_B' has cardinality 0..*, and from 'cycle_A', the role 'cycle_A' has cardinality 0..*.
+An association connects 'cycle_A' and 'cycle_B'. From 'cycle_A', the role 'cycle_A3' has cardinality 0..*, and from 'cycle_B', the role 'cycle_B2' has cardinality 0..*.
+An association connects 'cycle_B' and 'cycle_C'. From 'cycle_B', the role 'cycle_B5' has cardinality 0..*, and from 'cycle_C', the role 'cycle_C' has cardinality 0..*.
+An association connects 'cycle_A' and 'cycle_C'. From 'cycle_A', the role 'cycle_A8' has cardinality 0..*, and from 'cycle_C', the role 'cycle_C7' has cardinality 0..*.

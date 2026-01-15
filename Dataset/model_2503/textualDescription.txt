@@ -1,0 +1,34 @@
+The domain model 'test2' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'test2_test2sub2_E' represents an important domain concept.
+It does not declare any attributes.
+
+'test2_test2sub1_D' represents an important domain concept.
+It does not declare any attributes.
+
+'test2_test2sub1_D2' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'test2_B' represents an important domain concept.
+It does not declare any attributes.
+
+'D' represents an important domain concept.
+It does not declare any attributes.
+
+'test2_A' represents an important domain concept.
+It does not declare any attributes.
+
+'test2_C' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'test2_C' is a specialization of 'B'.
+The class 'test2_test2sub1_D2' is a specialization of 'D'.
+
+Relationships between classes are modeled using associations.
+An association connects 'test2_B' and 'test2_A'. From 'test2_B', the role 'test2_B' has cardinality 0..*, and from 'test2_A', the role 'test2_A' has cardinality 0..*.

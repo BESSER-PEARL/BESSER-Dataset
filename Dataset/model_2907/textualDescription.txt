@@ -1,0 +1,35 @@
+The domain model 'entity' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'entity_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'entity_JAVAID' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'entity_Attribute' represents an important domain concept.
+It has the following attributes: 'many', which is of type bool; 'name', which is of type str.
+
+'entity_TypeDef' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'entity_TypeDef' is a specialization of 'Type'.
+The class 'entity_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'entity_Type' and 'entity_Model'. From 'entity_Type', the role 'entity_Type' has cardinality 0..*, and from 'entity_Model', the role 'entity_Model' has cardinality 0..*.
+An association connects 'entity_TypeDef' and 'entity_JAVAID'. From 'entity_TypeDef', the role 'entity_TypeDef' has cardinality 0..*, and from 'entity_JAVAID', the role 'entity_JAVAID' has cardinality 0..*.
+An association connects 'entity_Entity' and 'entity_Entity'. From 'entity_Entity', the role 'entity_Entity2' has cardinality 0..*, and from 'entity_Entity', the role 'entity_Entity' has cardinality 0..*.
+An association connects 'entity_Attribute' and 'entity_Entity'. From 'entity_Attribute', the role 'entity_Attribute' has cardinality 0..*, and from 'entity_Entity', the role 'entity_Entity5' has cardinality 0..*.
+An association connects 'entity_Type' and 'entity_Attribute'. From 'entity_Type', the role 'entity_Type8' has cardinality 0..*, and from 'entity_Attribute', the role 'entity_Attribute7' has cardinality 0..*.

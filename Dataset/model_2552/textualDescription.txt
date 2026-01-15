@@ -1,0 +1,19 @@
+The domain model 'Tree' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'Tree_Tree' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'Tree_Node' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'Tree_Tree' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Tree_Node' and 'Tree_Node'. From 'Tree_Node', the role 'parent' has cardinality 0..*, and from 'Tree_Node', the role 'Node' has cardinality 0..*.
+An association connects 'Tree_Node' and 'Tree_Node'. From 'Tree_Node', the role 'childs' has cardinality 0..*, and from 'Tree_Node', the role 'Node4' has cardinality 0..*.

@@ -1,0 +1,42 @@
+The domain model 'ex1' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'ex1_F' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'ex1_A' represents an important domain concept.
+It has one attribute: 'a1', which is of type int.
+
+'ex1_C' represents an important domain concept.
+It does not declare any attributes.
+
+'ex1_B' represents an important domain concept.
+It does not declare any attributes.
+
+'ex1_D' represents an important domain concept.
+It has one attribute: 'dAttr', which is of type bool.
+
+'F' represents an important domain concept.
+It does not declare any attributes.
+
+'ex1_E' represents an important domain concept.
+It does not declare any attributes.
+
+'ex1_G' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ex1_A' is a specialization of 'F'.
+The class 'ex1_B' is a specialization of 'A'.
+The class 'ex1_C' is a specialization of 'A'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ex1_D' and 'ex1_A'. From 'ex1_D', the role 'ex1_D' has cardinality 0..*, and from 'ex1_A', the role 'ex1_A' has cardinality 0..*.
+An association connects 'ex1_A' and 'ex1_A'. From 'ex1_A', the role 'ex1_A1' has cardinality 0..*, and from 'ex1_A', the role 'ex1_A3' has cardinality 0..*.
+An association connects 'ex1_C' and 'ex1_E'. From 'ex1_C', the role 'ex1_C' has cardinality 0..*, and from 'ex1_E', the role 'ex1_E' has cardinality 0..*.
+An association connects 'ex1_F' and 'ex1_G'. From 'ex1_F', the role 'ex1_F' has cardinality 0..*, and from 'ex1_G', the role 'ex1_G' has cardinality 0..*.
+An association connects 'ex1_E' and 'ex1_D'. From 'ex1_E', the role 'ex1_E8' has cardinality 0..*, and from 'ex1_D', the role 'ex1_D7' has cardinality 0..*.

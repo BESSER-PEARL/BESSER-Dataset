@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/nicolas2lee/TransformationUMLtoFiacre/rhapsody/myFiacre/metamodel/fiacre.ecore

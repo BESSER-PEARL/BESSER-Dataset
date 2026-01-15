@@ -1,0 +1,51 @@
+The domain model 'machine' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'machine_Tape' represents an important domain concept.
+It does not declare any attributes.
+
+'machine_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'machine_TuringMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'machine_Transition' represents an important domain concept.
+It has the following attributes: 'write', which is of type str; 'moveTo', which is of type str; 'name', which is of type str; 'read', which is of type str.
+
+'machine_Machine' represents an important domain concept.
+It does not declare any attributes.
+
+'machine_Symbol' represents an important domain concept.
+It has the following attributes: 'position', which is of type str; 'name', which is of type str; 'value', which is of type str.
+
+'machine_Initial' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'machine_Final' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'machine_Head' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'machine_Current' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'machine_State' and 'machine_Transition'. From 'machine_State', the role 'machine_State' has cardinality 0..*, and from 'machine_Transition', the role 'machine_Transition' has cardinality 0..*.
+An association connects 'machine_State' and 'machine_Transition'. From 'machine_State', the role 'machine_State3' has cardinality 0..*, and from 'machine_Transition', the role 'machine_Transition2' has cardinality 0..*.
+An association connects 'machine_Initial' and 'machine_Machine'. From 'machine_Initial', the role 'machine_Initial' has cardinality 0..*, and from 'machine_Machine', the role 'machine_Machine' has cardinality 0..*.
+An association connects 'machine_Final' and 'machine_Machine'. From 'machine_Final', the role 'machine_Final' has cardinality 0..*, and from 'machine_Machine', the role 'machine_Machine6' has cardinality 0..*.
+An association connects 'machine_Current' and 'machine_Machine'. From 'machine_Current', the role 'machine_Current' has cardinality 0..*, and from 'machine_Machine', the role 'machine_Machine8' has cardinality 0..*.
+An association connects 'machine_Machine' and 'machine_State'. From 'machine_Machine', the role 'machine_Machine10' has cardinality 0..*, and from 'machine_State', the role 'machine_State11' has cardinality 0..*.
+An association connects 'machine_Transition' and 'machine_Machine'. From 'machine_Transition', the role 'machine_Transition14' has cardinality 0..*, and from 'machine_Machine', the role 'machine_Machine13' has cardinality 0..*.
+An association connects 'machine_Machine' and 'machine_Head'. From 'machine_Machine', the role 'machine_Machine16' has cardinality 0..*, and from 'machine_Head', the role 'machine_Head' has cardinality 0..*.
+An association connects 'machine_Current' and 'machine_State'. From 'machine_Current', the role 'machine_Current18' has cardinality 0..*, and from 'machine_State', the role 'machine_State19' has cardinality 0..*.
+An association connects 'machine_Initial' and 'machine_State'. From 'machine_Initial', the role 'machine_Initial21' has cardinality 0..*, and from 'machine_State', the role 'machine_State22' has cardinality 0..*.
+An association connects 'machine_Symbol' and 'machine_Tape'. From 'machine_Symbol', the role 'machine_Symbol' has cardinality 0..*, and from 'machine_Tape', the role 'machine_Tape' has cardinality 0..*.
+An association connects 'machine_TuringMachine' and 'machine_Machine'. From 'machine_TuringMachine', the role 'machine_TuringMachine' has cardinality 0..*, and from 'machine_Machine', the role 'machine_Machine25' has cardinality 0..*.
+An association connects 'machine_Tape' and 'machine_TuringMachine'. From 'machine_Tape', the role 'machine_Tape28' has cardinality 0..*, and from 'machine_TuringMachine', the role 'machine_TuringMachine27' has cardinality 0..*.
+An association connects 'machine_State' and 'machine_Final'. From 'machine_State', the role 'machine_State31' has cardinality 0..*, and from 'machine_Final', the role 'machine_Final30' has cardinality 0..*.
+An association connects 'machine_Symbol' and 'machine_Symbol'. From 'machine_Symbol', the role 'machine_Symbol32' has cardinality 0..*, and from 'machine_Symbol', the role 'machine_Symbol34' has cardinality 0..*.
+An association connects 'machine_Symbol' and 'machine_Head'. From 'machine_Symbol', the role 'machine_Symbol37' has cardinality 0..*, and from 'machine_Head', the role 'machine_Head36' has cardinality 0..*.

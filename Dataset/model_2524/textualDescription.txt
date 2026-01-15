@@ -1,0 +1,29 @@
+The domain model 'rulegen' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'rulegen_D' represents an important domain concept.
+It does not declare any attributes.
+
+'rulegen_A' represents an important domain concept.
+It does not declare any attributes.
+
+'rulegen_C' represents an important domain concept.
+It does not declare any attributes.
+
+'rulegen_Context' represents an important domain concept.
+It does not declare any attributes.
+
+'rulegen_B' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'rulegen_A' and 'rulegen_Context'. From 'rulegen_A', the role 'rulegen_A' has cardinality 0..*, and from 'rulegen_Context', the role 'rulegen_Context' has cardinality 0..*.
+An association connects 'rulegen_B' and 'rulegen_Context'. From 'rulegen_B', the role 'rulegen_B' has cardinality 0..*, and from 'rulegen_Context', the role 'rulegen_Context2' has cardinality 0..*.
+An association connects 'rulegen_C' and 'rulegen_Context'. From 'rulegen_C', the role 'rulegen_C' has cardinality 0..*, and from 'rulegen_Context', the role 'rulegen_Context4' has cardinality 0..*.
+An association connects 'rulegen_D' and 'rulegen_Context'. From 'rulegen_D', the role 'rulegen_D' has cardinality 0..*, and from 'rulegen_Context', the role 'rulegen_Context6' has cardinality 0..*.
+An association connects 'rulegen_B' and 'rulegen_A'. From 'rulegen_B', the role 'B' has cardinality 0..*, and from 'rulegen_A', the role 'edgeBA' has cardinality 0..*.
+An association connects 'rulegen_A' and 'rulegen_B'. From 'rulegen_A', the role 'A' has cardinality 0..*, and from 'rulegen_B', the role 'edgeAB' has cardinality 0..*.
+An association connects 'rulegen_B' and 'rulegen_C'. From 'rulegen_B', the role 'edgeCB' has cardinality 0..*, and from 'rulegen_C', the role 'C' has cardinality 0..*.
+An association connects 'rulegen_B' and 'rulegen_C'. From 'rulegen_B', the role 'B11' has cardinality 0..*, and from 'rulegen_C', the role 'edgeBC' has cardinality 0..*.
+An association connects 'rulegen_D' and 'rulegen_C'. From 'rulegen_D', the role 'rulegen_D13' has cardinality 0..*, and from 'rulegen_C', the role 'rulegen_C14' has cardinality 0..*.

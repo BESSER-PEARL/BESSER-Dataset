@@ -1,0 +1,1001 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 222 main class(es).
+
+'JvmAnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XMemberFeatureCall' represents an important domain concept.
+It has the following attributes: 'packageFragment', which is of type bool; 'staticWithDeclaringType', which is of type bool; 'explicitOperationCall', which is of type bool; 'nullSafe', which is of type bool; 'indexedOperation', which is of type bool; 'explicitStatic', which is of type bool; 'typeLiteral', which is of type bool.
+
+'model_xbase_XBreakExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ss_RichStringElseIf' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmConstraintOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XBooleanLiteral' represents an important domain concept.
+It has one attribute: 'isTrue', which is of type bool.
+
+'model_ss_RichString' represents an important domain concept.
+It does not declare any attributes.
+
+'XAbstractFeatureCall' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XForLoopExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XAssignment' represents an important domain concept.
+It has one attribute: 'explicitStatic', which is of type bool.
+
+'model_ss_XtendParameter' represents an important domain concept.
+It has the following attributes: 'extension', which is of type bool; 'varArg', which is of type bool; 'name', which is of type str.
+
+'JvmField' represents an important domain concept.
+It does not declare any attributes.
+
+'XCollectionLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmMember' represents an important domain concept.
+It has the following attributes: 'simpleName', which is of type str; 'visibility', which is of type str; 'modifiers', which is of type str; 'identifier', which is of type str.
+
+'XExportItem' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmEnumerationType' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmEnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XCollectionLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'XCatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmDeclaredType' represents an important domain concept.
+It has the following attributes: 'exported', which is of type bool; 'packageName', which is of type str; 'static', which is of type bool; 'final', which is of type bool; 'abstract', which is of type bool.
+
+'model_richstring_ElseIfCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmSpecializedTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XFeatureCall' represents an important domain concept.
+It has the following attributes: 'typeLiteral', which is of type bool; 'explicitOperationCall', which is of type bool; 'indexedOperation', which is of type bool; 'packageFragment', which is of type bool.
+
+'model_types_JvmVoid' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XCatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmIdentifiableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmConstructor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmIntAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type int.
+
+'XtendTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XListLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xtype_XExportDeclaration' represents an important domain concept.
+It has the following attributes: 'importURI', which is of type str; 'alias', which is of type str; 'wildcard', which is of type bool.
+
+'XtendParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmDelegateTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ss_model_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xtype_XImportDeclaration1' represents an important domain concept.
+It has the following attributes: 'alias', which is of type str; 'importURI', which is of type str.
+
+'model_types_JvmNoModule' represents an important domain concept.
+It does not declare any attributes.
+
+'XVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XWhileExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'XImportSection1' represents an important domain concept.
+It does not declare any attributes.
+
+'XAbstractWhileExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ForLoopStart' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmConstraintOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'XBlockExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ss_XtendVariableDeclaration' represents an important domain concept.
+It has one attribute: 'extension', which is of type bool.
+
+'JvmFormalParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmConstructor' represents an important domain concept.
+It does not declare any attributes.
+
+'EndIf' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmDeclaredType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmUpperBound' represents an important domain concept.
+It does not declare any attributes.
+
+'Line' represents an important domain concept.
+It does not declare any attributes.
+
+'ElseStart' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmMultiTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmWildcardTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmCustomAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'model_ss_XtendEvent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'XCasePart' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XArrayLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmSpecializedTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ss_XtendAnnotationTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'CreateExtensionInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'RichStringForLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ss_CreateExtensionInfo' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_xbase_XContinueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmExecutable' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmByteAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'model_types_JvmLowerBound' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XKeyValuePair' represents an important domain concept.
+It has one attribute: 'key1', which is of type str.
+
+'model_types_JvmAnnotationTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XMemberFeatureCall1' represents an important domain concept.
+It has the following attributes: 'typeLiteral', which is of type bool; 'staticWithDeclaringType', which is of type bool; 'packageFragment', which is of type bool; 'explicitStatic', which is of type bool; 'nullSafe', which is of type bool; 'indexedOperation', which is of type bool; 'explicitOperationCall', which is of type bool.
+
+'model_xbase_XCasePart' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmDeclaredType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XBinaryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ss_XtendFunction' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_richstring_LinePart' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmBooleanAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type bool.
+
+'model_types_JvmStringAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'types_model_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XTypeLiteral' represents an important domain concept.
+It has one attribute: 'arrayDimensions', which is of type str.
+
+'XStringLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'model_richstring_LineBreak' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XAbstractWhileExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'xbase_XExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmConstraintOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmPrimitiveType' represents an important domain concept.
+It has one attribute: 'simpleName', which is of type str.
+
+'XImportDeclaration1' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmTypeParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_ss_XtendField' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_types_JvmTypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmTypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XForEachExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessedRichString' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ss_XtendEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmMember' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XIfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ss_XtendConstructor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XReturnExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_richstring_ForLoopStart' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xtype_XFunctionTypeRef' represents an important domain concept.
+It has one attribute: 'instanceContext', which is of type bool.
+
+'model_xtype_XImportDeclaration' represents an important domain concept.
+It has the following attributes: 'static', which is of type bool; 'importedNamespace', which is of type str; 'wildcard', which is of type bool; 'extension', which is of type bool.
+
+'model_types_JvmFloatAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type float.
+
+'model_ss_XtendAnnotationType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmEnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'RichStringIf' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ss_XtendDelegate' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmLongAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'model_ss_RichStringIf' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmAnnotationReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmUnknownTypeReference' represents an important domain concept.
+It has one attribute: 'qualifiedName', which is of type str.
+
+'model_types_JvmExecutable' represents an important domain concept.
+It has one attribute: 'varArgs', which is of type bool.
+
+'model_types_JvmTypeAnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XSwitchExpression' represents an important domain concept.
+It has one attribute: 'localVarName', which is of type str.
+
+'model_types_JvmCharAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'model_richstring_IfConditionStart' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmCompoundTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmSynonymTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XUnaryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xtype_XImportSection' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ss_XtendFile' represents an important domain concept.
+It has one attribute: 'package', which is of type str.
+
+'JvmTypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XInstanceOfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XVariableDeclaration' represents an important domain concept.
+It has the following attributes: 'exported', which is of type bool; 'writeable', which is of type bool; 'name', which is of type str.
+
+'model_types_JvmAnnotationAnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'IfConditionStart' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'RichStringElseIf' represents an important domain concept.
+It does not declare any attributes.
+
+'model_richstring_Literal' represents an important domain concept.
+It has the following attributes: 'length', which is of type int; 'offset', which is of type int.
+
+'XImportItem' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmIdentifiableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ss_XtendEnumLiteral' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_xannotation_XAnnotationElementValuePair' represents an important domain concept.
+It does not declare any attributes.
+
+'RichStringLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmOperation' represents an important domain concept.
+It has the following attributes: 'static', which is of type bool; 'abstract', which is of type bool; 'native', which is of type bool; 'strictFloatingPoint', which is of type bool; 'synchronized', which is of type bool; 'final', which is of type bool; 'default', which is of type bool.
+
+'model_types_JvmField' represents an important domain concept.
+It has the following attributes: 'volatile', which is of type bool; 'static', which is of type bool; 'final', which is of type bool; 'transient', which is of type bool.
+
+'model_xbase_XExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xtype_XComputedTypeReference' represents an important domain concept.
+It has one attribute: 'typeProvider', which is of type str.
+
+'JvmAnnotationTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'XForEachExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'XAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xtype_XImportSection1' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XTryCatchFinallyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XTernaryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmAnnotationReference' represents an important domain concept.
+It does not declare any attributes.
+
+'JvmParameterizedTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'XObjectLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'XExportSection' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xannotation_XAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XAbstractFeatureCall' represents an important domain concept.
+It has the following attributes: 'invalidFeatureIssueCode', which is of type str; 'validFeature', which is of type bool.
+
+'model_types_JvmParameterizedTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xtype_XImportItem' represents an important domain concept.
+It has one attribute: 'alias', which is of type str.
+
+'model_types_JvmDoubleAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type float.
+
+'model_ss_XtendTypeDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_richstring_ElseStart' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmAnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XFunctionDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_xbase_XPrefixOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ss_XtendMember' represents an important domain concept.
+It has one attribute: 'modifiers', which is of type str.
+
+'JvmAnnotationType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XNullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'LinePart' represents an important domain concept.
+It does not declare any attributes.
+
+'ForLoopEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmTypeParameterDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'XtendMember' represents an important domain concept.
+It does not declare any attributes.
+
+'XAnnotationElementValuePair' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmTypeParameterDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XStringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'model_types_JvmModule' represents an important domain concept.
+It has one attribute: 'simpleName', which is of type str.
+
+'XExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmFormalParameter' represents an important domain concept.
+It has the following attributes: 'varArg', which is of type bool; 'name', which is of type str.
+
+'model_xbase_XObjectLiteralPart' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_richstring_ForLoopEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ss_XtendFormalParameter' represents an important domain concept.
+It has one attribute: 'extension', which is of type bool.
+
+'model_xbase_XIndexOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XConstructorCall' represents an important domain concept.
+It has the following attributes: 'invalidFeatureIssueCode', which is of type str; 'validFeature', which is of type bool.
+
+'JvmArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_richstring_PrintedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmGenericType' represents an important domain concept.
+It has the following attributes: 'strictFloatingPoint', which is of type bool; 'interface', which is of type bool.
+
+'types_JvmIdentifiableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XThrowExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'types_JvmFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XPostfixOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'RichString' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmEnumAnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XBlockExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_richstring_Line' represents an important domain concept.
+It does not declare any attributes.
+
+'XtendAnnotationTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'XExportDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmShortAnnotationValue' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'model_xbase_XCastedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xtype_XExportSection' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ss_XtendClass' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ss_RichStringLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmGenericArrayTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XVariableDeclarationList' represents an important domain concept.
+It has the following attributes: 'writeable', which is of type bool; 'exported', which is of type bool.
+
+'model_types_JvmCompoundTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xtype_XExportItem' represents an important domain concept.
+It has one attribute: 'alias', which is of type str.
+
+'model_richstring_EndIf' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmAnyTypeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ElseIfCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_richstring_ProcessedRichString' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ss_XtendInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XSetLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ss_RichStringForLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'XImportDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_types_JvmAnnotationType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XObjectLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XClosure' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'exported', which is of type bool; 'operator', which is of type bool; 'explicitSyntax', which is of type bool.
+
+'JvmTypeParameterDeclarator' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XDoWhileExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_xbase_XNumberLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'types_JvmMember' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'JvmVisibility' defines the following possible values: 'PUBLIC', 'PRIVATE'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_types_JvmModule' is a specialization of 'JvmIdentifiableElement'.
+The class 'model_types_JvmType' is a specialization of 'JvmIdentifiableElement'.
+The class 'model_types_JvmVoid' is a specialization of 'JvmType'.
+The class 'model_types_JvmComponentType' is a specialization of 'JvmType'.
+The class 'model_types_JvmPrimitiveType' is a specialization of 'JvmComponentType'.
+The class 'model_types_JvmArrayType' is a specialization of 'JvmComponentType'.
+The class 'model_types_JvmDeclaredType' is a specialization of 'types_JvmMember'.
+The class 'model_types_JvmDeclaredType' is a specialization of 'types_JvmComponentType'.
+The class 'model_types_JvmTypeParameter' is a specialization of 'types_JvmComponentType'.
+The class 'model_types_JvmTypeParameter' is a specialization of 'types_JvmConstraintOwner'.
+The class 'model_types_JvmUpperBound' is a specialization of 'JvmTypeConstraint'.
+The class 'model_types_JvmLowerBound' is a specialization of 'JvmTypeConstraint'.
+The class 'model_types_JvmAnnotationType' is a specialization of 'JvmDeclaredType'.
+The class 'model_types_JvmEnumerationType' is a specialization of 'JvmDeclaredType'.
+The class 'model_types_JvmEnumerationLiteral' is a specialization of 'JvmField'.
+The class 'model_types_JvmGenericType' is a specialization of 'types_JvmDeclaredType'.
+The class 'model_types_JvmGenericType' is a specialization of 'types_JvmTypeParameterDeclarator'.
+The class 'model_types_JvmParameterizedTypeReference' is a specialization of 'JvmTypeReference'.
+The class 'model_types_JvmGenericArrayTypeReference' is a specialization of 'JvmTypeReference'.
+The class 'model_types_JvmWildcardTypeReference' is a specialization of 'types_JvmTypeReference'.
+The class 'model_types_JvmWildcardTypeReference' is a specialization of 'types_JvmConstraintOwner'.
+The class 'model_types_JvmAnyTypeReference' is a specialization of 'JvmTypeReference'.
+The class 'model_types_JvmMultiTypeReference' is a specialization of 'JvmCompoundTypeReference'.
+The class 'model_types_JvmMember' is a specialization of 'JvmAnnotationTarget'.
+The class 'model_types_JvmFeature' is a specialization of 'JvmMember'.
+The class 'model_types_JvmField' is a specialization of 'JvmFeature'.
+The class 'model_types_JvmExecutable' is a specialization of 'types_JvmFeature'.
+The class 'model_types_JvmExecutable' is a specialization of 'types_JvmTypeParameterDeclarator'.
+The class 'model_types_JvmConstructor' is a specialization of 'JvmExecutable'.
+The class 'model_types_JvmOperation' is a specialization of 'JvmExecutable'.
+The class 'model_types_JvmFormalParameter' is a specialization of 'JvmAnnotationTarget'.
+The class 'model_types_JvmAnnotationTarget' is a specialization of 'JvmIdentifiableElement'.
+The class 'model_types_JvmIntAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'model_types_JvmBooleanAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'model_types_JvmByteAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'model_types_JvmShortAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'model_types_JvmLongAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'model_types_JvmDoubleAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'model_types_JvmFloatAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'model_types_JvmCharAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'model_types_JvmStringAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'model_types_JvmTypeAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'model_types_JvmAnnotationAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'model_types_JvmEnumAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'model_types_JvmDelegateTypeReference' is a specialization of 'JvmTypeReference'.
+The class 'model_types_JvmSpecializedTypeReference' is a specialization of 'JvmTypeReference'.
+The class 'model_types_JvmSynonymTypeReference' is a specialization of 'JvmCompoundTypeReference'.
+The class 'model_types_JvmUnknownTypeReference' is a specialization of 'JvmTypeReference'.
+The class 'model_types_JvmCompoundTypeReference' is a specialization of 'JvmTypeReference'.
+The class 'model_types_JvmCustomAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+The class 'model_xbase_XIfExpression' is a specialization of 'XExpression'.
+The class 'model_xbase_XSwitchExpression' is a specialization of 'xbase_XExpression'.
+The class 'model_xbase_XSwitchExpression' is a specialization of 'types_JvmIdentifiableElement'.
+The class 'model_xbase_XBlockExpression' is a specialization of 'XExpression'.
+The class 'model_xbase_XVariableDeclaration' is a specialization of 'xbase_XExpression'.
+The class 'model_xbase_XVariableDeclaration' is a specialization of 'types_JvmIdentifiableElement'.
+The class 'model_xbase_XVariableDeclarationList' is a specialization of 'XExpression'.
+The class 'model_xbase_XAbstractFeatureCall' is a specialization of 'XExpression'.
+The class 'model_xbase_XMemberFeatureCall' is a specialization of 'XAbstractFeatureCall'.
+The class 'model_xbase_XMemberFeatureCall1' is a specialization of 'XAbstractFeatureCall'.
+The class 'model_xbase_XFeatureCall' is a specialization of 'XAbstractFeatureCall'.
+The class 'model_xbase_XConstructorCall' is a specialization of 'XExpression'.
+The class 'model_xbase_XBooleanLiteral' is a specialization of 'XExpression'.
+The class 'model_xbase_XNullLiteral' is a specialization of 'XExpression'.
+The class 'model_xbase_XNumberLiteral' is a specialization of 'XExpression'.
+The class 'model_xbase_XStringLiteral' is a specialization of 'XExpression'.
+The class 'model_xbase_XCollectionLiteral' is a specialization of 'XExpression'.
+The class 'model_xbase_XListLiteral' is a specialization of 'XCollectionLiteral'.
+The class 'model_xbase_XKeyValuePair' is a specialization of 'XExpression'.
+The class 'model_xbase_XSetLiteral' is a specialization of 'XCollectionLiteral'.
+The class 'model_xbase_XClosure' is a specialization of 'xbase_XExpression'.
+The class 'model_xbase_XClosure' is a specialization of 'types_JvmIdentifiableElement'.
+The class 'model_xbase_XCastedExpression' is a specialization of 'XExpression'.
+The class 'model_xbase_XBinaryOperation' is a specialization of 'XAbstractFeatureCall'.
+The class 'model_xbase_XUnaryOperation' is a specialization of 'XAbstractFeatureCall'.
+The class 'model_xbase_XForLoopExpression' is a specialization of 'XExpression'.
+The class 'model_xbase_XForEachExpression' is a specialization of 'XExpression'.
+The class 'model_xbase_XAbstractWhileExpression' is a specialization of 'XExpression'.
+The class 'model_xbase_XDoWhileExpression' is a specialization of 'XAbstractWhileExpression'.
+The class 'model_xbase_XWhileExpression' is a specialization of 'XAbstractWhileExpression'.
+The class 'model_xbase_XTypeLiteral' is a specialization of 'XExpression'.
+The class 'model_xbase_XInstanceOfExpression' is a specialization of 'XExpression'.
+The class 'model_xbase_XThrowExpression' is a specialization of 'XExpression'.
+The class 'model_xbase_XTryCatchFinallyExpression' is a specialization of 'XExpression'.
+The class 'model_xbase_XAssignment' is a specialization of 'XAbstractFeatureCall'.
+The class 'model_xbase_XReturnExpression' is a specialization of 'XExpression'.
+The class 'model_xbase_XBreakExpression' is a specialization of 'XExpression'.
+The class 'model_xbase_XContinueExpression' is a specialization of 'XExpression'.
+The class 'model_xbase_XPrefixOperation' is a specialization of 'XAbstractFeatureCall'.
+The class 'model_xbase_XPostfixOperation' is a specialization of 'XAbstractFeatureCall'.
+The class 'model_xbase_XTernaryOperation' is a specialization of 'XExpression'.
+The class 'model_xbase_XIndexOperation' is a specialization of 'XAbstractFeatureCall'.
+The class 'model_xbase_XFunctionDeclaration' is a specialization of 'XExpression'.
+The class 'model_xbase_XObjectLiteral' is a specialization of 'XExpression'.
+The class 'model_xbase_XArrayLiteral' is a specialization of 'XExpression'.
+The class 'model_ss_XtendClass' is a specialization of 'XtendTypeDeclaration'.
+The class 'model_ss_XtendMember' is a specialization of 'XtendAnnotationTarget'.
+The class 'model_ss_XtendFunction' is a specialization of 'XtendMember'.
+The class 'model_ss_XtendField' is a specialization of 'XtendMember'.
+The class 'model_ss_XtendParameter' is a specialization of 'XtendAnnotationTarget'.
+The class 'model_ss_RichString' is a specialization of 'XBlockExpression'.
+The class 'model_ss_RichStringLiteral' is a specialization of 'XStringLiteral'.
+The class 'model_ss_RichStringForLoop' is a specialization of 'XForEachExpression'.
+The class 'model_ss_RichStringIf' is a specialization of 'XExpression'.
+The class 'model_ss_XtendConstructor' is a specialization of 'XtendMember'.
+The class 'model_ss_XtendTypeDeclaration' is a specialization of 'XtendMember'.
+The class 'model_ss_XtendAnnotationType' is a specialization of 'XtendTypeDeclaration'.
+The class 'model_ss_XtendInterface' is a specialization of 'XtendTypeDeclaration'.
+The class 'model_ss_XtendEnum' is a specialization of 'XtendTypeDeclaration'.
+The class 'model_ss_XtendEnumLiteral' is a specialization of 'XtendMember'.
+The class 'model_ss_XtendVariableDeclaration' is a specialization of 'XVariableDeclaration'.
+The class 'model_ss_XtendFormalParameter' is a specialization of 'JvmFormalParameter'.
+The class 'model_ss_XtendDelegate' is a specialization of 'XtendTypeDeclaration'.
+The class 'model_ss_XtendEvent' is a specialization of 'XtendMember'.
+The class 'model_xannotation_XAnnotation' is a specialization of 'XExpression'.
+The class 'model_xtype_XFunctionTypeRef' is a specialization of 'JvmSpecializedTypeReference'.
+The class 'model_xtype_XComputedTypeReference' is a specialization of 'JvmSpecializedTypeReference'.
+The class 'model_richstring_Literal' is a specialization of 'LinePart'.
+The class 'model_richstring_LineBreak' is a specialization of 'Literal'.
+The class 'model_richstring_ForLoopStart' is a specialization of 'LinePart'.
+The class 'model_richstring_ForLoopEnd' is a specialization of 'LinePart'.
+The class 'model_richstring_PrintedExpression' is a specialization of 'LinePart'.
+The class 'model_richstring_IfConditionStart' is a specialization of 'LinePart'.
+The class 'model_richstring_ElseIfCondition' is a specialization of 'LinePart'.
+The class 'model_richstring_ElseStart' is a specialization of 'LinePart'.
+The class 'model_richstring_EndIf' is a specialization of 'LinePart'.
+
+Relationships between classes are modeled using associations.
+An association connects 'XImportSection1' and 'model_types_JvmModule'. From 'XImportSection1', the role 'XImportSection1' has cardinality 0..*, and from 'model_types_JvmModule', the role 'model_types_JvmModule' has cardinality 0..*.
+An association connects 'model_types_JvmModule' and 'types_model_EObject'. From 'model_types_JvmModule', the role 'model_types_JvmModule2' has cardinality 0..*, and from 'types_model_EObject', the role 'types_model_EObject' has cardinality 0..*.
+An association connects 'XExportSection' and 'model_types_JvmModule'. From 'XExportSection', the role 'XExportSection' has cardinality 0..*, and from 'model_types_JvmModule', the role 'model_types_JvmModule4' has cardinality 0..*.
+An association connects 'XImportSection1' and 'model_types_JvmNoModule'. From 'XImportSection1', the role 'XImportSection16' has cardinality 0..*, and from 'model_types_JvmNoModule', the role 'model_types_JvmNoModule' has cardinality 0..*.
+An association connects 'model_types_JvmNoModule' and 'types_model_EObject'. From 'model_types_JvmNoModule', the role 'model_types_JvmNoModule8' has cardinality 0..*, and from 'types_model_EObject', the role 'types_model_EObject9' has cardinality 0..*.
+An association connects 'model_types_JvmComponentType' and 'JvmArrayType'. From 'model_types_JvmComponentType', the role 'JvmArrayType' has cardinality 0..*, and from 'JvmArrayType', the role 'types' has cardinality 0..*.
+An association connects 'JvmComponentType' and 'model_types_JvmArrayType'. From 'JvmComponentType', the role 'types12' has cardinality 0..*, and from 'model_types_JvmArrayType', the role 'JvmComponentType' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_types_JvmDeclaredType'. From 'JvmTypeReference', the role 'JvmTypeReference' has cardinality 0..*, and from 'model_types_JvmDeclaredType', the role 'model_types_JvmDeclaredType' has cardinality 0..*.
+An association connects 'model_types_JvmDeclaredType' and 'JvmMember'. From 'model_types_JvmDeclaredType', the role 'JvmMember' has cardinality 0..*, and from 'JvmMember', the role 'types15' has cardinality 0..*.
+An association connects 'JvmTypeParameterDeclarator' and 'model_types_JvmTypeParameter'. From 'JvmTypeParameterDeclarator', the role 'types17' has cardinality 0..*, and from 'model_types_JvmTypeParameter', the role 'JvmTypeParameterDeclarator' has cardinality 0..*.
+An association connects 'model_types_JvmTypeParameterDeclarator' and 'JvmTypeParameter'. From 'model_types_JvmTypeParameterDeclarator', the role 'JvmTypeParameter' has cardinality 0..*, and from 'JvmTypeParameter', the role 'types19' has cardinality 0..*.
+An association connects 'JvmTypeConstraint' and 'model_types_JvmConstraintOwner'. From 'JvmTypeConstraint', the role 'types21' has cardinality 0..*, and from 'model_types_JvmConstraintOwner', the role 'JvmTypeConstraint' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_types_JvmTypeConstraint'. From 'JvmTypeReference', the role 'JvmTypeReference23' has cardinality 0..*, and from 'model_types_JvmTypeConstraint', the role 'model_types_JvmTypeConstraint' has cardinality 0..*.
+An association connects 'JvmConstraintOwner' and 'model_types_JvmTypeConstraint'. From 'JvmConstraintOwner', the role 'types25' has cardinality 0..*, and from 'model_types_JvmTypeConstraint', the role 'JvmConstraintOwner' has cardinality 0..*.
+An association connects 'JvmEnumerationLiteral' and 'model_types_JvmEnumerationType'. From 'JvmEnumerationLiteral', the role 'JvmEnumerationLiteral' has cardinality 0..*, and from 'model_types_JvmEnumerationType', the role 'model_types_JvmEnumerationType' has cardinality 0..*.
+An association connects 'JvmParameterizedTypeReference' and 'model_types_JvmGenericType'. From 'JvmParameterizedTypeReference', the role 'JvmParameterizedTypeReference' has cardinality 0..*, and from 'model_types_JvmGenericType', the role 'model_types_JvmGenericType' has cardinality 0..*.
+An association connects 'JvmParameterizedTypeReference' and 'model_types_JvmGenericType'. From 'JvmParameterizedTypeReference', the role 'JvmParameterizedTypeReference30' has cardinality 0..*, and from 'model_types_JvmGenericType', the role 'model_types_JvmGenericType29' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_types_JvmParameterizedTypeReference'. From 'JvmTypeReference', the role 'JvmTypeReference32' has cardinality 0..*, and from 'model_types_JvmParameterizedTypeReference', the role 'model_types_JvmParameterizedTypeReference' has cardinality 0..*.
+An association connects 'model_types_JvmParameterizedTypeReference' and 'JvmType'. From 'model_types_JvmParameterizedTypeReference', the role 'model_types_JvmParameterizedTypeReference34' has cardinality 0..*, and from 'JvmType', the role 'JvmType' has cardinality 0..*.
+An association connects 'model_types_JvmGenericArrayTypeReference' and 'JvmTypeReference'. From 'model_types_JvmGenericArrayTypeReference', the role 'model_types_JvmGenericArrayTypeReference' has cardinality 0..*, and from 'JvmTypeReference', the role 'JvmTypeReference36' has cardinality 0..*.
+An association connects 'JvmType' and 'model_types_JvmAnyTypeReference'. From 'JvmType', the role 'JvmType38' has cardinality 0..*, and from 'model_types_JvmAnyTypeReference', the role 'model_types_JvmAnyTypeReference' has cardinality 0..*.
+An association connects 'model_types_JvmMember' and 'JvmDeclaredType'. From 'model_types_JvmMember', the role 'JvmDeclaredType' has cardinality 0..*, and from 'JvmDeclaredType', the role 'types40' has cardinality 0..*.
+An association connects 'JvmAnnotationTarget' and 'model_types_JvmMember'. From 'JvmAnnotationTarget', the role 'JvmAnnotationTarget' has cardinality 0..*, and from 'model_types_JvmMember', the role 'model_types_JvmMember' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_types_JvmField'. From 'JvmTypeReference', the role 'JvmTypeReference43' has cardinality 0..*, and from 'model_types_JvmField', the role 'model_types_JvmField' has cardinality 0..*.
+An association connects 'XExpression' and 'model_types_JvmField'. From 'XExpression', the role 'XExpression' has cardinality 0..*, and from 'model_types_JvmField', the role 'model_types_JvmField45' has cardinality 0..*.
+An association connects 'XExpression' and 'model_types_JvmField'. From 'XExpression', the role 'XExpression48' has cardinality 0..*, and from 'model_types_JvmField', the role 'model_types_JvmField47' has cardinality 0..*.
+An association connects 'model_types_JvmField' and 'XExpression'. From 'model_types_JvmField', the role 'model_types_JvmField50' has cardinality 0..*, and from 'XExpression', the role 'XExpression51' has cardinality 0..*.
+An association connects 'JvmFormalParameter' and 'model_types_JvmExecutable'. From 'JvmFormalParameter', the role 'JvmFormalParameter' has cardinality 0..*, and from 'model_types_JvmExecutable', the role 'model_types_JvmExecutable' has cardinality 0..*.
+An association connects 'model_types_JvmExecutable' and 'JvmTypeReference'. From 'model_types_JvmExecutable', the role 'model_types_JvmExecutable54' has cardinality 0..*, and from 'JvmTypeReference', the role 'JvmTypeReference55' has cardinality 0..*.
+An association connects 'model_types_JvmConstructor' and 'XExpression'. From 'model_types_JvmConstructor', the role 'model_types_JvmConstructor' has cardinality 0..*, and from 'XExpression', the role 'XExpression57' has cardinality 0..*.
+An association connects 'model_types_JvmOperation' and 'JvmTypeReference'. From 'model_types_JvmOperation', the role 'model_types_JvmOperation' has cardinality 0..*, and from 'JvmTypeReference', the role 'JvmTypeReference59' has cardinality 0..*.
+An association connects 'JvmAnnotationValue' and 'model_types_JvmOperation'. From 'JvmAnnotationValue', the role 'JvmAnnotationValue' has cardinality 0..*, and from 'model_types_JvmOperation', the role 'model_types_JvmOperation61' has cardinality 0..*.
+An association connects 'XExpression' and 'model_types_JvmOperation'. From 'XExpression', the role 'XExpression64' has cardinality 0..*, and from 'model_types_JvmOperation', the role 'model_types_JvmOperation63' has cardinality 0..*.
+An association connects 'model_types_JvmOperation' and 'XExpression'. From 'model_types_JvmOperation', the role 'model_types_JvmOperation66' has cardinality 0..*, and from 'XExpression', the role 'XExpression67' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_types_JvmFormalParameter'. From 'JvmTypeReference', the role 'JvmTypeReference69' has cardinality 0..*, and from 'model_types_JvmFormalParameter', the role 'model_types_JvmFormalParameter' has cardinality 0..*.
+An association connects 'model_types_JvmFormalParameter' and 'XExpression'. From 'model_types_JvmFormalParameter', the role 'model_types_JvmFormalParameter71' has cardinality 0..*, and from 'XExpression', the role 'XExpression72' has cardinality 0..*.
+An association connects 'model_types_JvmAnnotationTarget' and 'JvmAnnotationReference'. From 'model_types_JvmAnnotationTarget', the role 'model_types_JvmAnnotationTarget' has cardinality 0..*, and from 'JvmAnnotationReference', the role 'JvmAnnotationReference' has cardinality 0..*.
+An association connects 'JvmAnnotationType' and 'model_types_JvmAnnotationReference'. From 'JvmAnnotationType', the role 'JvmAnnotationType' has cardinality 0..*, and from 'model_types_JvmAnnotationReference', the role 'model_types_JvmAnnotationReference' has cardinality 0..*.
+An association connects 'model_types_JvmAnnotationReference' and 'JvmAnnotationValue'. From 'model_types_JvmAnnotationReference', the role 'model_types_JvmAnnotationReference76' has cardinality 0..*, and from 'JvmAnnotationValue', the role 'JvmAnnotationValue77' has cardinality 0..*.
+An association connects 'XExpression' and 'model_types_JvmAnnotationReference'. From 'XExpression', the role 'XExpression80' has cardinality 0..*, and from 'model_types_JvmAnnotationReference', the role 'model_types_JvmAnnotationReference79' has cardinality 0..*.
+An association connects 'JvmOperation' and 'model_types_JvmAnnotationValue'. From 'JvmOperation', the role 'JvmOperation' has cardinality 0..*, and from 'model_types_JvmAnnotationValue', the role 'model_types_JvmAnnotationValue' has cardinality 0..*.
+An association connects 'model_types_JvmAnnotationValue' and 'XExpression'. From 'model_types_JvmAnnotationValue', the role 'model_types_JvmAnnotationValue83' has cardinality 0..*, and from 'XExpression', the role 'XExpression84' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_types_JvmTypeAnnotationValue'. From 'JvmTypeReference', the role 'JvmTypeReference86' has cardinality 0..*, and from 'model_types_JvmTypeAnnotationValue', the role 'model_types_JvmTypeAnnotationValue' has cardinality 0..*.
+An association connects 'model_types_JvmAnnotationAnnotationValue' and 'JvmAnnotationReference'. From 'model_types_JvmAnnotationAnnotationValue', the role 'model_types_JvmAnnotationAnnotationValue' has cardinality 0..*, and from 'JvmAnnotationReference', the role 'JvmAnnotationReference88' has cardinality 0..*.
+An association connects 'JvmEnumerationLiteral' and 'model_types_JvmEnumAnnotationValue'. From 'JvmEnumerationLiteral', the role 'JvmEnumerationLiteral90' has cardinality 0..*, and from 'model_types_JvmEnumAnnotationValue', the role 'model_types_JvmEnumAnnotationValue' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_types_JvmDelegateTypeReference'. From 'JvmTypeReference', the role 'JvmTypeReference92' has cardinality 0..*, and from 'model_types_JvmDelegateTypeReference', the role 'model_types_JvmDelegateTypeReference' has cardinality 0..*.
+An association connects 'model_types_JvmSpecializedTypeReference' and 'JvmTypeReference'. From 'model_types_JvmSpecializedTypeReference', the role 'model_types_JvmSpecializedTypeReference' has cardinality 0..*, and from 'JvmTypeReference', the role 'JvmTypeReference94' has cardinality 0..*.
+An association connects 'JvmType' and 'model_types_JvmCompoundTypeReference'. From 'JvmType', the role 'JvmType96' has cardinality 0..*, and from 'model_types_JvmCompoundTypeReference', the role 'model_types_JvmCompoundTypeReference' has cardinality 0..*.
+An association connects 'model_types_JvmCompoundTypeReference' and 'JvmTypeReference'. From 'model_types_JvmCompoundTypeReference', the role 'model_types_JvmCompoundTypeReference98' has cardinality 0..*, and from 'JvmTypeReference', the role 'JvmTypeReference99' has cardinality 0..*.
+An association connects 'model_xbase_XIfExpression' and 'XExpression'. From 'model_xbase_XIfExpression', the role 'model_xbase_XIfExpression' has cardinality 0..*, and from 'XExpression', the role 'XExpression101' has cardinality 0..*.
+An association connects 'model_xbase_XIfExpression' and 'XExpression'. From 'model_xbase_XIfExpression', the role 'model_xbase_XIfExpression103' has cardinality 0..*, and from 'XExpression', the role 'XExpression104' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XIfExpression'. From 'XExpression', the role 'XExpression107' has cardinality 0..*, and from 'model_xbase_XIfExpression', the role 'model_xbase_XIfExpression106' has cardinality 0..*.
+An association connects 'model_xbase_XSwitchExpression' and 'XExpression'. From 'model_xbase_XSwitchExpression', the role 'model_xbase_XSwitchExpression' has cardinality 0..*, and from 'XExpression', the role 'XExpression109' has cardinality 0..*.
+An association connects 'XCasePart' and 'model_xbase_XSwitchExpression'. From 'XCasePart', the role 'XCasePart' has cardinality 0..*, and from 'model_xbase_XSwitchExpression', the role 'model_xbase_XSwitchExpression111' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XSwitchExpression'. From 'XExpression', the role 'XExpression114' has cardinality 0..*, and from 'model_xbase_XSwitchExpression', the role 'model_xbase_XSwitchExpression113' has cardinality 0..*.
+An association connects 'model_xbase_XCasePart' and 'XExpression'. From 'model_xbase_XCasePart', the role 'model_xbase_XCasePart' has cardinality 0..*, and from 'XExpression', the role 'XExpression116' has cardinality 0..*.
+An association connects 'model_xbase_XCasePart' and 'XExpression'. From 'model_xbase_XCasePart', the role 'model_xbase_XCasePart118' has cardinality 0..*, and from 'XExpression', the role 'XExpression119' has cardinality 0..*.
+An association connects 'model_xbase_XCasePart' and 'JvmTypeReference'. From 'model_xbase_XCasePart', the role 'model_xbase_XCasePart121' has cardinality 0..*, and from 'JvmTypeReference', the role 'JvmTypeReference122' has cardinality 0..*.
+An association connects 'model_xbase_XBlockExpression' and 'XExpression'. From 'model_xbase_XBlockExpression', the role 'model_xbase_XBlockExpression' has cardinality 0..*, and from 'XExpression', the role 'XExpression124' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_xbase_XVariableDeclaration'. From 'JvmTypeReference', the role 'JvmTypeReference126' has cardinality 0..*, and from 'model_xbase_XVariableDeclaration', the role 'model_xbase_XVariableDeclaration' has cardinality 0..*.
+An association connects 'model_xbase_XVariableDeclaration' and 'XExpression'. From 'model_xbase_XVariableDeclaration', the role 'model_xbase_XVariableDeclaration128' has cardinality 0..*, and from 'XExpression', the role 'XExpression129' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XVariableDeclarationList'. From 'XExpression', the role 'XExpression131' has cardinality 0..*, and from 'model_xbase_XVariableDeclarationList', the role 'model_xbase_XVariableDeclarationList' has cardinality 0..*.
+An association connects 'JvmIdentifiableElement' and 'model_xbase_XAbstractFeatureCall'. From 'JvmIdentifiableElement', the role 'JvmIdentifiableElement' has cardinality 0..*, and from 'model_xbase_XAbstractFeatureCall', the role 'model_xbase_XAbstractFeatureCall' has cardinality 0..*.
+An association connects 'model_xbase_XAbstractFeatureCall' and 'JvmTypeReference'. From 'model_xbase_XAbstractFeatureCall', the role 'model_xbase_XAbstractFeatureCall134' has cardinality 0..*, and from 'JvmTypeReference', the role 'JvmTypeReference135' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XAbstractFeatureCall'. From 'XExpression', the role 'XExpression138' has cardinality 0..*, and from 'model_xbase_XAbstractFeatureCall', the role 'model_xbase_XAbstractFeatureCall137' has cardinality 0..*.
+An association connects 'model_xbase_XAbstractFeatureCall' and 'XExpression'. From 'model_xbase_XAbstractFeatureCall', the role 'model_xbase_XAbstractFeatureCall140' has cardinality 0..*, and from 'XExpression', the role 'XExpression141' has cardinality 0..*.
+An association connects 'model_xbase_XMemberFeatureCall' and 'XExpression'. From 'model_xbase_XMemberFeatureCall', the role 'model_xbase_XMemberFeatureCall' has cardinality 0..*, and from 'XExpression', the role 'XExpression143' has cardinality 0..*.
+An association connects 'model_xbase_XMemberFeatureCall' and 'XExpression'. From 'model_xbase_XMemberFeatureCall', the role 'model_xbase_XMemberFeatureCall145' has cardinality 0..*, and from 'XExpression', the role 'XExpression146' has cardinality 0..*.
+An association connects 'model_xbase_XMemberFeatureCall1' and 'XExpression'. From 'model_xbase_XMemberFeatureCall1', the role 'model_xbase_XMemberFeatureCall1' has cardinality 0..*, and from 'XExpression', the role 'XExpression148' has cardinality 0..*.
+An association connects 'model_xbase_XMemberFeatureCall1' and 'XExpression'. From 'model_xbase_XMemberFeatureCall1', the role 'model_xbase_XMemberFeatureCall1150' has cardinality 0..*, and from 'XExpression', the role 'XExpression151' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XFeatureCall'. From 'XExpression', the role 'XExpression153' has cardinality 0..*, and from 'model_xbase_XFeatureCall', the role 'model_xbase_XFeatureCall' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XFeatureCall'. From 'XExpression', the role 'XExpression156' has cardinality 0..*, and from 'model_xbase_XFeatureCall', the role 'model_xbase_XFeatureCall155' has cardinality 0..*.
+An association connects 'JvmConstructor' and 'model_xbase_XConstructorCall'. From 'JvmConstructor', the role 'JvmConstructor' has cardinality 0..*, and from 'model_xbase_XConstructorCall', the role 'model_xbase_XConstructorCall' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XConstructorCall'. From 'XExpression', the role 'XExpression160' has cardinality 0..*, and from 'model_xbase_XConstructorCall', the role 'model_xbase_XConstructorCall159' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_xbase_XConstructorCall'. From 'JvmTypeReference', the role 'JvmTypeReference163' has cardinality 0..*, and from 'model_xbase_XConstructorCall', the role 'model_xbase_XConstructorCall162' has cardinality 0..*.
+An association connects 'model_xbase_XCollectionLiteral' and 'XExpression'. From 'model_xbase_XCollectionLiteral', the role 'model_xbase_XCollectionLiteral' has cardinality 0..*, and from 'XExpression', the role 'XExpression165' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XKeyValuePair'. From 'XExpression', the role 'XExpression167' has cardinality 0..*, and from 'model_xbase_XKeyValuePair', the role 'model_xbase_XKeyValuePair' has cardinality 0..*.
+An association connects 'model_xbase_XKeyValuePair' and 'XExpression'. From 'model_xbase_XKeyValuePair', the role 'model_xbase_XKeyValuePair169' has cardinality 0..*, and from 'XExpression', the role 'XExpression170' has cardinality 0..*.
+An association connects 'JvmFormalParameter' and 'model_xbase_XClosure'. From 'JvmFormalParameter', the role 'JvmFormalParameter172' has cardinality 0..*, and from 'model_xbase_XClosure', the role 'model_xbase_XClosure' has cardinality 0..*.
+An association connects 'model_xbase_XClosure' and 'XExpression'. From 'model_xbase_XClosure', the role 'model_xbase_XClosure174' has cardinality 0..*, and from 'XExpression', the role 'XExpression175' has cardinality 0..*.
+An association connects 'model_xbase_XClosure' and 'JvmFormalParameter'. From 'model_xbase_XClosure', the role 'model_xbase_XClosure177' has cardinality 0..*, and from 'JvmFormalParameter', the role 'JvmFormalParameter178' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_xbase_XClosure'. From 'JvmTypeReference', the role 'JvmTypeReference181' has cardinality 0..*, and from 'model_xbase_XClosure', the role 'model_xbase_XClosure180' has cardinality 0..*.
+An association connects 'model_xbase_XClosure' and 'JvmTypeParameter'. From 'model_xbase_XClosure', the role 'model_xbase_XClosure183' has cardinality 0..*, and from 'JvmTypeParameter', the role 'JvmTypeParameter184' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_xbase_XCastedExpression'. From 'JvmTypeReference', the role 'JvmTypeReference186' has cardinality 0..*, and from 'model_xbase_XCastedExpression', the role 'model_xbase_XCastedExpression' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XCastedExpression'. From 'XExpression', the role 'XExpression189' has cardinality 0..*, and from 'model_xbase_XCastedExpression', the role 'model_xbase_XCastedExpression188' has cardinality 0..*.
+An association connects 'model_xbase_XBinaryOperation' and 'XExpression'. From 'model_xbase_XBinaryOperation', the role 'model_xbase_XBinaryOperation' has cardinality 0..*, and from 'XExpression', the role 'XExpression191' has cardinality 0..*.
+An association connects 'model_xbase_XBinaryOperation' and 'XExpression'. From 'model_xbase_XBinaryOperation', the role 'model_xbase_XBinaryOperation193' has cardinality 0..*, and from 'XExpression', the role 'XExpression194' has cardinality 0..*.
+An association connects 'model_xbase_XUnaryOperation' and 'XExpression'. From 'model_xbase_XUnaryOperation', the role 'model_xbase_XUnaryOperation' has cardinality 0..*, and from 'XExpression', the role 'XExpression196' has cardinality 0..*.
+An association connects 'model_xbase_XForLoopExpression' and 'XExpression'. From 'model_xbase_XForLoopExpression', the role 'model_xbase_XForLoopExpression' has cardinality 0..*, and from 'XExpression', the role 'XExpression198' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XForLoopExpression'. From 'XExpression', the role 'XExpression201' has cardinality 0..*, and from 'model_xbase_XForLoopExpression', the role 'model_xbase_XForLoopExpression200' has cardinality 0..*.
+An association connects 'model_xbase_XForLoopExpression' and 'XExpression'. From 'model_xbase_XForLoopExpression', the role 'model_xbase_XForLoopExpression203' has cardinality 0..*, and from 'XExpression', the role 'XExpression204' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XForLoopExpression'. From 'XExpression', the role 'XExpression207' has cardinality 0..*, and from 'model_xbase_XForLoopExpression', the role 'model_xbase_XForLoopExpression206' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XForEachExpression'. From 'XExpression', the role 'XExpression209' has cardinality 0..*, and from 'model_xbase_XForEachExpression', the role 'model_xbase_XForEachExpression' has cardinality 0..*.
+An association connects 'model_xbase_XForEachExpression' and 'XExpression'. From 'model_xbase_XForEachExpression', the role 'model_xbase_XForEachExpression211' has cardinality 0..*, and from 'XExpression', the role 'XExpression212' has cardinality 0..*.
+An association connects 'JvmFormalParameter' and 'model_xbase_XForEachExpression'. From 'JvmFormalParameter', the role 'JvmFormalParameter215' has cardinality 0..*, and from 'model_xbase_XForEachExpression', the role 'model_xbase_XForEachExpression214' has cardinality 0..*.
+An association connects 'model_xbase_XAbstractWhileExpression' and 'XExpression'. From 'model_xbase_XAbstractWhileExpression', the role 'model_xbase_XAbstractWhileExpression' has cardinality 0..*, and from 'XExpression', the role 'XExpression217' has cardinality 0..*.
+An association connects 'model_xbase_XAbstractWhileExpression' and 'XExpression'. From 'model_xbase_XAbstractWhileExpression', the role 'model_xbase_XAbstractWhileExpression219' has cardinality 0..*, and from 'XExpression', the role 'XExpression220' has cardinality 0..*.
+An association connects 'model_xbase_XTypeLiteral' and 'JvmType'. From 'model_xbase_XTypeLiteral', the role 'model_xbase_XTypeLiteral' has cardinality 0..*, and from 'JvmType', the role 'JvmType222' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_xbase_XInstanceOfExpression'. From 'JvmTypeReference', the role 'JvmTypeReference224' has cardinality 0..*, and from 'model_xbase_XInstanceOfExpression', the role 'model_xbase_XInstanceOfExpression' has cardinality 0..*.
+An association connects 'model_xbase_XInstanceOfExpression' and 'XExpression'. From 'model_xbase_XInstanceOfExpression', the role 'model_xbase_XInstanceOfExpression226' has cardinality 0..*, and from 'XExpression', the role 'XExpression227' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XThrowExpression'. From 'XExpression', the role 'XExpression229' has cardinality 0..*, and from 'model_xbase_XThrowExpression', the role 'model_xbase_XThrowExpression' has cardinality 0..*.
+An association connects 'model_xbase_XTryCatchFinallyExpression' and 'XExpression'. From 'model_xbase_XTryCatchFinallyExpression', the role 'model_xbase_XTryCatchFinallyExpression' has cardinality 0..*, and from 'XExpression', the role 'XExpression231' has cardinality 0..*.
+An association connects 'model_xbase_XTryCatchFinallyExpression' and 'XExpression'. From 'model_xbase_XTryCatchFinallyExpression', the role 'model_xbase_XTryCatchFinallyExpression233' has cardinality 0..*, and from 'XExpression', the role 'XExpression234' has cardinality 0..*.
+An association connects 'model_xbase_XTryCatchFinallyExpression' and 'XCatchClause'. From 'model_xbase_XTryCatchFinallyExpression', the role 'model_xbase_XTryCatchFinallyExpression236' has cardinality 0..*, and from 'XCatchClause', the role 'XCatchClause' has cardinality 0..*.
+An association connects 'model_xbase_XCatchClause' and 'XExpression'. From 'model_xbase_XCatchClause', the role 'model_xbase_XCatchClause' has cardinality 0..*, and from 'XExpression', the role 'XExpression238' has cardinality 0..*.
+An association connects 'model_xbase_XCatchClause' and 'JvmFormalParameter'. From 'model_xbase_XCatchClause', the role 'model_xbase_XCatchClause240' has cardinality 0..*, and from 'JvmFormalParameter', the role 'JvmFormalParameter241' has cardinality 0..*.
+An association connects 'model_xbase_XAssignment' and 'XExpression'. From 'model_xbase_XAssignment', the role 'model_xbase_XAssignment' has cardinality 0..*, and from 'XExpression', the role 'XExpression243' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XAssignment'. From 'XExpression', the role 'XExpression246' has cardinality 0..*, and from 'model_xbase_XAssignment', the role 'model_xbase_XAssignment245' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XReturnExpression'. From 'XExpression', the role 'XExpression248' has cardinality 0..*, and from 'model_xbase_XReturnExpression', the role 'model_xbase_XReturnExpression' has cardinality 0..*.
+An association connects 'model_xbase_XPrefixOperation' and 'XExpression'. From 'model_xbase_XPrefixOperation', the role 'model_xbase_XPrefixOperation' has cardinality 0..*, and from 'XExpression', the role 'XExpression250' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XPostfixOperation'. From 'XExpression', the role 'XExpression252' has cardinality 0..*, and from 'model_xbase_XPostfixOperation', the role 'model_xbase_XPostfixOperation' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XTernaryOperation'. From 'XExpression', the role 'XExpression254' has cardinality 0..*, and from 'model_xbase_XTernaryOperation', the role 'model_xbase_XTernaryOperation' has cardinality 0..*.
+An association connects 'model_xbase_XTernaryOperation' and 'XExpression'. From 'model_xbase_XTernaryOperation', the role 'model_xbase_XTernaryOperation256' has cardinality 0..*, and from 'XExpression', the role 'XExpression257' has cardinality 0..*.
+An association connects 'model_xbase_XTernaryOperation' and 'XExpression'. From 'model_xbase_XTernaryOperation', the role 'model_xbase_XTernaryOperation259' has cardinality 0..*, and from 'XExpression', the role 'XExpression260' has cardinality 0..*.
+An association connects 'model_xbase_XIndexOperation' and 'XExpression'. From 'model_xbase_XIndexOperation', the role 'model_xbase_XIndexOperation' has cardinality 0..*, and from 'XExpression', the role 'XExpression262' has cardinality 0..*.
+An association connects 'model_xbase_XIndexOperation' and 'XExpression'. From 'model_xbase_XIndexOperation', the role 'model_xbase_XIndexOperation264' has cardinality 0..*, and from 'XExpression', the role 'XExpression265' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XFunctionDeclaration'. From 'XExpression', the role 'XExpression267' has cardinality 0..*, and from 'model_xbase_XFunctionDeclaration', the role 'model_xbase_XFunctionDeclaration' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_xbase_XFunctionDeclaration'. From 'JvmTypeReference', the role 'JvmTypeReference270' has cardinality 0..*, and from 'model_xbase_XFunctionDeclaration', the role 'model_xbase_XFunctionDeclaration269' has cardinality 0..*.
+An association connects 'model_xbase_XFunctionDeclaration' and 'JvmFormalParameter'. From 'model_xbase_XFunctionDeclaration', the role 'model_xbase_XFunctionDeclaration272' has cardinality 0..*, and from 'JvmFormalParameter', the role 'JvmFormalParameter273' has cardinality 0..*.
+An association connects 'model_xbase_XObjectLiteral' and 'XObjectLiteralPart'. From 'model_xbase_XObjectLiteral', the role 'model_xbase_XObjectLiteral' has cardinality 0..*, and from 'XObjectLiteralPart', the role 'XObjectLiteralPart' has cardinality 0..*.
+An association connects 'JvmType' and 'model_xbase_XObjectLiteral'. From 'JvmType', the role 'JvmType277' has cardinality 0..*, and from 'model_xbase_XObjectLiteral', the role 'model_xbase_XObjectLiteral276' has cardinality 0..*.
+An association connects 'model_xbase_XObjectLiteralPart' and 'XExpression'. From 'model_xbase_XObjectLiteralPart', the role 'model_xbase_XObjectLiteralPart' has cardinality 0..*, and from 'XExpression', the role 'XExpression279' has cardinality 0..*.
+An association connects 'XExpression' and 'model_xbase_XArrayLiteral'. From 'XExpression', the role 'XExpression281' has cardinality 0..*, and from 'model_xbase_XArrayLiteral', the role 'model_xbase_XArrayLiteral' has cardinality 0..*.
+An association connects 'XImportSection1' and 'model_ss_XtendFile'. From 'XImportSection1', the role 'XImportSection1283' has cardinality 0..*, and from 'model_ss_XtendFile', the role 'model_ss_XtendFile' has cardinality 0..*.
+An association connects 'XtendTypeDeclaration' and 'model_ss_XtendFile'. From 'XtendTypeDeclaration', the role 'XtendTypeDeclaration' has cardinality 0..*, and from 'model_ss_XtendFile', the role 'model_ss_XtendFile285' has cardinality 0..*.
+An association connects 'ss_model_EObject' and 'model_ss_XtendFile'. From 'ss_model_EObject', the role 'ss_model_EObject' has cardinality 0..*, and from 'model_ss_XtendFile', the role 'model_ss_XtendFile287' has cardinality 0..*.
+An association connects 'XExportSection' and 'model_ss_XtendFile'. From 'XExportSection', the role 'XExportSection290' has cardinality 0..*, and from 'model_ss_XtendFile', the role 'model_ss_XtendFile289' has cardinality 0..*.
+An association connects 'model_ss_XtendClass' and 'JvmTypeReference'. From 'model_ss_XtendClass', the role 'model_ss_XtendClass' has cardinality 0..*, and from 'JvmTypeReference', the role 'JvmTypeReference292' has cardinality 0..*.
+An association connects 'model_ss_XtendClass' and 'JvmTypeReference'. From 'model_ss_XtendClass', the role 'model_ss_XtendClass294' has cardinality 0..*, and from 'JvmTypeReference', the role 'JvmTypeReference295' has cardinality 0..*.
+An association connects 'model_ss_XtendClass' and 'JvmTypeParameter'. From 'model_ss_XtendClass', the role 'model_ss_XtendClass297' has cardinality 0..*, and from 'JvmTypeParameter', the role 'JvmTypeParameter298' has cardinality 0..*.
+An association connects 'XAnnotation' and 'model_ss_XtendAnnotationTarget'. From 'XAnnotation', the role 'XAnnotation' has cardinality 0..*, and from 'model_ss_XtendAnnotationTarget', the role 'model_ss_XtendAnnotationTarget' has cardinality 0..*.
+An association connects 'XtendAnnotationTarget' and 'model_ss_XtendMember'. From 'XtendAnnotationTarget', the role 'XtendAnnotationTarget' has cardinality 0..*, and from 'model_ss_XtendMember', the role 'model_ss_XtendMember' has cardinality 0..*.
+An association connects 'XtendTypeDeclaration' and 'model_ss_XtendMember'. From 'XtendTypeDeclaration', the role 'ss' has cardinality 0..*, and from 'model_ss_XtendMember', the role 'XtendTypeDeclaration302' has cardinality 0..*.
+An association connects 'model_ss_XtendFunction' and 'XExpression'. From 'model_ss_XtendFunction', the role 'model_ss_XtendFunction' has cardinality 0..*, and from 'XExpression', the role 'XExpression304' has cardinality 0..*.
+An association connects 'model_ss_XtendFunction' and 'JvmTypeReference'. From 'model_ss_XtendFunction', the role 'model_ss_XtendFunction306' has cardinality 0..*, and from 'JvmTypeReference', the role 'JvmTypeReference307' has cardinality 0..*.
+An association connects 'model_ss_XtendFunction' and 'XtendParameter'. From 'model_ss_XtendFunction', the role 'model_ss_XtendFunction309' has cardinality 0..*, and from 'XtendParameter', the role 'XtendParameter' has cardinality 0..*.
+An association connects 'CreateExtensionInfo' and 'model_ss_XtendFunction'. From 'CreateExtensionInfo', the role 'CreateExtensionInfo' has cardinality 0..*, and from 'model_ss_XtendFunction', the role 'model_ss_XtendFunction311' has cardinality 0..*.
+An association connects 'model_ss_XtendFunction' and 'JvmTypeParameter'. From 'model_ss_XtendFunction', the role 'model_ss_XtendFunction313' has cardinality 0..*, and from 'JvmTypeParameter', the role 'JvmTypeParameter314' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_ss_XtendFunction'. From 'JvmTypeReference', the role 'JvmTypeReference317' has cardinality 0..*, and from 'model_ss_XtendFunction', the role 'model_ss_XtendFunction316' has cardinality 0..*.
+An association connects 'model_ss_XtendField' and 'JvmTypeReference'. From 'model_ss_XtendField', the role 'model_ss_XtendField' has cardinality 0..*, and from 'JvmTypeReference', the role 'JvmTypeReference319' has cardinality 0..*.
+An association connects 'model_ss_XtendField' and 'XExpression'. From 'model_ss_XtendField', the role 'model_ss_XtendField321' has cardinality 0..*, and from 'XExpression', the role 'XExpression322' has cardinality 0..*.
+An association connects 'model_ss_XtendParameter' and 'JvmTypeReference'. From 'model_ss_XtendParameter', the role 'model_ss_XtendParameter' has cardinality 0..*, and from 'JvmTypeReference', the role 'JvmTypeReference324' has cardinality 0..*.
+An association connects 'model_ss_RichStringForLoop' and 'XExpression'. From 'model_ss_RichStringForLoop', the role 'model_ss_RichStringForLoop' has cardinality 0..*, and from 'XExpression', the role 'XExpression326' has cardinality 0..*.
+An association connects 'XExpression' and 'model_ss_RichStringForLoop'. From 'XExpression', the role 'XExpression329' has cardinality 0..*, and from 'model_ss_RichStringForLoop', the role 'model_ss_RichStringForLoop328' has cardinality 0..*.
+An association connects 'XExpression' and 'model_ss_RichStringForLoop'. From 'XExpression', the role 'XExpression332' has cardinality 0..*, and from 'model_ss_RichStringForLoop', the role 'model_ss_RichStringForLoop331' has cardinality 0..*.
+An association connects 'model_ss_RichStringIf' and 'XExpression'. From 'model_ss_RichStringIf', the role 'model_ss_RichStringIf' has cardinality 0..*, and from 'XExpression', the role 'XExpression334' has cardinality 0..*.
+An association connects 'XExpression' and 'model_ss_RichStringIf'. From 'XExpression', the role 'XExpression337' has cardinality 0..*, and from 'model_ss_RichStringIf', the role 'model_ss_RichStringIf336' has cardinality 0..*.
+An association connects 'model_ss_RichStringIf' and 'RichStringElseIf'. From 'model_ss_RichStringIf', the role 'model_ss_RichStringIf339' has cardinality 0..*, and from 'RichStringElseIf', the role 'RichStringElseIf' has cardinality 0..*.
+An association connects 'XExpression' and 'model_ss_RichStringIf'. From 'XExpression', the role 'XExpression342' has cardinality 0..*, and from 'model_ss_RichStringIf', the role 'model_ss_RichStringIf341' has cardinality 0..*.
+An association connects 'XExpression' and 'model_ss_RichStringElseIf'. From 'XExpression', the role 'XExpression344' has cardinality 0..*, and from 'model_ss_RichStringElseIf', the role 'model_ss_RichStringElseIf' has cardinality 0..*.
+An association connects 'model_ss_RichStringElseIf' and 'XExpression'. From 'model_ss_RichStringElseIf', the role 'model_ss_RichStringElseIf346' has cardinality 0..*, and from 'XExpression', the role 'XExpression347' has cardinality 0..*.
+An association connects 'XExpression' and 'model_ss_CreateExtensionInfo'. From 'XExpression', the role 'XExpression349' has cardinality 0..*, and from 'model_ss_CreateExtensionInfo', the role 'model_ss_CreateExtensionInfo' has cardinality 0..*.
+An association connects 'XExpression' and 'model_ss_XtendConstructor'. From 'XExpression', the role 'XExpression351' has cardinality 0..*, and from 'model_ss_XtendConstructor', the role 'model_ss_XtendConstructor' has cardinality 0..*.
+An association connects 'model_ss_XtendConstructor' and 'XtendParameter'. From 'model_ss_XtendConstructor', the role 'model_ss_XtendConstructor353' has cardinality 0..*, and from 'XtendParameter', the role 'XtendParameter354' has cardinality 0..*.
+An association connects 'model_ss_XtendConstructor' and 'JvmTypeParameter'. From 'model_ss_XtendConstructor', the role 'model_ss_XtendConstructor356' has cardinality 0..*, and from 'JvmTypeParameter', the role 'JvmTypeParameter357' has cardinality 0..*.
+An association connects 'model_ss_XtendConstructor' and 'JvmTypeReference'. From 'model_ss_XtendConstructor', the role 'model_ss_XtendConstructor359' has cardinality 0..*, and from 'JvmTypeReference', the role 'JvmTypeReference360' has cardinality 0..*.
+An association connects 'XtendMember' and 'model_ss_XtendTypeDeclaration'. From 'XtendMember', the role 'ss362' has cardinality 0..*, and from 'model_ss_XtendTypeDeclaration', the role 'XtendMember' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_ss_XtendInterface'. From 'JvmTypeReference', the role 'JvmTypeReference364' has cardinality 0..*, and from 'model_ss_XtendInterface', the role 'model_ss_XtendInterface' has cardinality 0..*.
+An association connects 'model_ss_XtendInterface' and 'JvmTypeParameter'. From 'model_ss_XtendInterface', the role 'model_ss_XtendInterface366' has cardinality 0..*, and from 'JvmTypeParameter', the role 'JvmTypeParameter367' has cardinality 0..*.
+An association connects 'model_ss_XtendDelegate' and 'JvmTypeReference'. From 'model_ss_XtendDelegate', the role 'model_ss_XtendDelegate' has cardinality 0..*, and from 'JvmTypeReference', the role 'JvmTypeReference369' has cardinality 0..*.
+An association connects 'model_ss_XtendDelegate' and 'XtendParameter'. From 'model_ss_XtendDelegate', the role 'model_ss_XtendDelegate371' has cardinality 0..*, and from 'XtendParameter', the role 'XtendParameter372' has cardinality 0..*.
+An association connects 'JvmTypeParameter' and 'model_ss_XtendDelegate'. From 'JvmTypeParameter', the role 'JvmTypeParameter375' has cardinality 0..*, and from 'model_ss_XtendDelegate', the role 'model_ss_XtendDelegate374' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_ss_XtendDelegate'. From 'JvmTypeReference', the role 'JvmTypeReference378' has cardinality 0..*, and from 'model_ss_XtendDelegate', the role 'model_ss_XtendDelegate377' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_ss_XtendEvent'. From 'JvmTypeReference', the role 'JvmTypeReference380' has cardinality 0..*, and from 'model_ss_XtendEvent', the role 'model_ss_XtendEvent' has cardinality 0..*.
+An association connects 'model_ss_XtendEvent' and 'XExpression'. From 'model_ss_XtendEvent', the role 'model_ss_XtendEvent382' has cardinality 0..*, and from 'XExpression', the role 'XExpression383' has cardinality 0..*.
+An association connects 'XAnnotationElementValuePair' and 'model_xannotation_XAnnotation'. From 'XAnnotationElementValuePair', the role 'XAnnotationElementValuePair' has cardinality 0..*, and from 'model_xannotation_XAnnotation', the role 'model_xannotation_XAnnotation' has cardinality 0..*.
+An association connects 'model_xannotation_XAnnotation' and 'JvmType'. From 'model_xannotation_XAnnotation', the role 'model_xannotation_XAnnotation386' has cardinality 0..*, and from 'JvmType', the role 'JvmType387' has cardinality 0..*.
+An association connects 'model_xannotation_XAnnotation' and 'XExpression'. From 'model_xannotation_XAnnotation', the role 'model_xannotation_XAnnotation389' has cardinality 0..*, and from 'XExpression', the role 'XExpression390' has cardinality 0..*.
+An association connects 'model_xannotation_XAnnotationElementValuePair' and 'XExpression'. From 'model_xannotation_XAnnotationElementValuePair', the role 'model_xannotation_XAnnotationElementValuePair' has cardinality 0..*, and from 'XExpression', the role 'XExpression392' has cardinality 0..*.
+An association connects 'JvmOperation' and 'model_xannotation_XAnnotationElementValuePair'. From 'JvmOperation', the role 'JvmOperation395' has cardinality 0..*, and from 'model_xannotation_XAnnotationElementValuePair', the role 'model_xannotation_XAnnotationElementValuePair394' has cardinality 0..*.
+An association connects 'model_xtype_XFunctionTypeRef' and 'JvmTypeReference'. From 'model_xtype_XFunctionTypeRef', the role 'model_xtype_XFunctionTypeRef' has cardinality 0..*, and from 'JvmTypeReference', the role 'JvmTypeReference397' has cardinality 0..*.
+An association connects 'JvmTypeReference' and 'model_xtype_XFunctionTypeRef'. From 'JvmTypeReference', the role 'JvmTypeReference400' has cardinality 0..*, and from 'model_xtype_XFunctionTypeRef', the role 'model_xtype_XFunctionTypeRef399' has cardinality 0..*.
+An association connects 'JvmType' and 'model_xtype_XFunctionTypeRef'. From 'JvmType', the role 'JvmType403' has cardinality 0..*, and from 'model_xtype_XFunctionTypeRef', the role 'model_xtype_XFunctionTypeRef402' has cardinality 0..*.
+An association connects 'model_xtype_XImportSection' and 'XImportDeclaration'. From 'model_xtype_XImportSection', the role 'model_xtype_XImportSection' has cardinality 0..*, and from 'XImportDeclaration', the role 'XImportDeclaration' has cardinality 0..*.
+An association connects 'JvmDeclaredType' and 'model_xtype_XImportDeclaration'. From 'JvmDeclaredType', the role 'JvmDeclaredType406' has cardinality 0..*, and from 'model_xtype_XImportDeclaration', the role 'model_xtype_XImportDeclaration' has cardinality 0..*.
+An association connects 'model_xtype_XImportSection1' and 'XImportDeclaration1'. From 'model_xtype_XImportSection1', the role 'model_xtype_XImportSection1' has cardinality 0..*, and from 'XImportDeclaration1', the role 'XImportDeclaration1' has cardinality 0..*.
+An association connects 'model_xtype_XImportDeclaration1' and 'XImportItem'. From 'model_xtype_XImportDeclaration1', the role 'model_xtype_XImportDeclaration1' has cardinality 0..*, and from 'XImportItem', the role 'XImportItem' has cardinality 0..*.
+An association connects 'model_xtype_XImportItem' and 'JvmIdentifiableElement'. From 'model_xtype_XImportItem', the role 'model_xtype_XImportItem' has cardinality 0..*, and from 'JvmIdentifiableElement', the role 'JvmIdentifiableElement410' has cardinality 0..*.
+An association connects 'model_xtype_XExportSection' and 'XExportDeclaration'. From 'model_xtype_XExportSection', the role 'model_xtype_XExportSection' has cardinality 0..*, and from 'XExportDeclaration', the role 'XExportDeclaration' has cardinality 0..*.
+An association connects 'model_xtype_XExportDeclaration' and 'XExportItem'. From 'model_xtype_XExportDeclaration', the role 'model_xtype_XExportDeclaration' has cardinality 0..*, and from 'XExportItem', the role 'XExportItem' has cardinality 0..*.
+An association connects 'JvmIdentifiableElement' and 'model_xtype_XExportItem'. From 'JvmIdentifiableElement', the role 'JvmIdentifiableElement414' has cardinality 0..*, and from 'model_xtype_XExportItem', the role 'model_xtype_XExportItem' has cardinality 0..*.
+An association connects 'model_richstring_ProcessedRichString' and 'RichString'. From 'model_richstring_ProcessedRichString', the role 'model_richstring_ProcessedRichString' has cardinality 0..*, and from 'RichString', the role 'RichString' has cardinality 0..*.
+An association connects 'Line' and 'model_richstring_ProcessedRichString'. From 'Line', the role 'richstring' has cardinality 0..*, and from 'model_richstring_ProcessedRichString', the role 'Line' has cardinality 0..*.
+An association connects 'model_richstring_Line' and 'LinePart'. From 'model_richstring_Line', the role 'LinePart' has cardinality 0..*, and from 'LinePart', the role 'richstring418' has cardinality 0..*.
+An association connects 'ProcessedRichString' and 'model_richstring_Line'. From 'ProcessedRichString', the role 'richstring420' has cardinality 0..*, and from 'model_richstring_Line', the role 'ProcessedRichString' has cardinality 0..*.
+An association connects 'Line' and 'model_richstring_LinePart'. From 'Line', the role 'richstring423' has cardinality 0..*, and from 'model_richstring_LinePart', the role 'Line422' has cardinality 0..*.
+An association connects 'model_richstring_Literal' and 'RichStringLiteral'. From 'model_richstring_Literal', the role 'model_richstring_Literal' has cardinality 0..*, and from 'RichStringLiteral', the role 'RichStringLiteral' has cardinality 0..*.
+An association connects 'model_richstring_ForLoopStart' and 'RichStringForLoop'. From 'model_richstring_ForLoopStart', the role 'model_richstring_ForLoopStart' has cardinality 0..*, and from 'RichStringForLoop', the role 'RichStringForLoop' has cardinality 0..*.
+An association connects 'ForLoopEnd' and 'model_richstring_ForLoopStart'. From 'ForLoopEnd', the role 'richstring427' has cardinality 0..*, and from 'model_richstring_ForLoopStart', the role 'ForLoopEnd' has cardinality 0..*.
+An association connects 'ForLoopStart' and 'model_richstring_ForLoopEnd'. From 'ForLoopStart', the role 'richstring429' has cardinality 0..*, and from 'model_richstring_ForLoopEnd', the role 'ForLoopStart' has cardinality 0..*.
+An association connects 'model_richstring_PrintedExpression' and 'XExpression'. From 'model_richstring_PrintedExpression', the role 'model_richstring_PrintedExpression' has cardinality 0..*, and from 'XExpression', the role 'XExpression431' has cardinality 0..*.
+An association connects 'model_richstring_IfConditionStart' and 'RichStringIf'. From 'model_richstring_IfConditionStart', the role 'model_richstring_IfConditionStart' has cardinality 0..*, and from 'RichStringIf', the role 'RichStringIf' has cardinality 0..*.
+An association connects 'model_richstring_IfConditionStart' and 'ElseStart'. From 'model_richstring_IfConditionStart', the role 'ElseStart' has cardinality 0..*, and from 'ElseStart', the role 'richstring434' has cardinality 0..*.
+An association connects 'ElseIfCondition' and 'model_richstring_IfConditionStart'. From 'ElseIfCondition', the role 'richstring436' has cardinality 0..*, and from 'model_richstring_IfConditionStart', the role 'ElseIfCondition' has cardinality 0..*.
+An association connects 'EndIf' and 'model_richstring_IfConditionStart'. From 'EndIf', the role 'EndIf' has cardinality 0..*, and from 'model_richstring_IfConditionStart', the role 'model_richstring_IfConditionStart438' has cardinality 0..*.
+An association connects 'model_richstring_ElseIfCondition' and 'RichStringElseIf'. From 'model_richstring_ElseIfCondition', the role 'model_richstring_ElseIfCondition' has cardinality 0..*, and from 'RichStringElseIf', the role 'RichStringElseIf440' has cardinality 0..*.
+An association connects 'IfConditionStart' and 'model_richstring_ElseIfCondition'. From 'IfConditionStart', the role 'richstring442' has cardinality 0..*, and from 'model_richstring_ElseIfCondition', the role 'IfConditionStart' has cardinality 0..*.
+An association connects 'IfConditionStart' and 'model_richstring_ElseStart'. From 'IfConditionStart', the role 'richstring445' has cardinality 0..*, and from 'model_richstring_ElseStart', the role 'IfConditionStart444' has cardinality 0..*.
+An association connects 'IfConditionStart' and 'model_richstring_EndIf'. From 'IfConditionStart', the role 'IfConditionStart447' has cardinality 0..*, and from 'model_richstring_EndIf', the role 'model_richstring_EndIf' has cardinality 0..*.

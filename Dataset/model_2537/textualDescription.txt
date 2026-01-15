@@ -1,0 +1,120 @@
+The domain model 'ref' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'ref_C4' represents an important domain concept.
+It does not declare any attributes.
+
+'ref_unsettable_AU' represents an important domain concept.
+It does not declare any attributes.
+
+'ref_unsettable_BU' represents an important domain concept.
+It does not declare any attributes.
+
+'ref_unsettable_EU' represents an important domain concept.
+It has the following attributes: 'ids', which is of type str; 'name', which is of type str; 'labels', which is of type str.
+
+'ref_C1' represents an important domain concept.
+It does not declare any attributes.
+
+'ref_C2' represents an important domain concept.
+It does not declare any attributes.
+
+'ref_C3' represents an important domain concept.
+It does not declare any attributes.
+
+'EU' represents an important domain concept.
+It does not declare any attributes.
+
+'DU' represents an important domain concept.
+It does not declare any attributes.
+
+'ref_unsettable_C1U' represents an important domain concept.
+It does not declare any attributes.
+
+'C2U' represents an important domain concept.
+It does not declare any attributes.
+
+'ref_unsettable_CU' represents an important domain concept.
+It does not declare any attributes.
+
+'ref_unsettable_C2U' represents an important domain concept.
+It does not declare any attributes.
+
+'ref_C' represents an important domain concept.
+It does not declare any attributes.
+
+'CU' represents an important domain concept.
+It does not declare any attributes.
+
+'BU' represents an important domain concept.
+It does not declare any attributes.
+
+'ref_unsettable_C4U' represents an important domain concept.
+It does not declare any attributes.
+
+'ref_D' represents an important domain concept.
+It does not declare any attributes.
+
+'ref_A' represents an important domain concept.
+It does not declare any attributes.
+
+'AU' represents an important domain concept.
+It does not declare any attributes.
+
+'ref_unsettable_DU' represents an important domain concept.
+It does not declare any attributes.
+
+'ref_unsettable_C3U' represents an important domain concept.
+It does not declare any attributes.
+
+'ref_B' represents an important domain concept.
+It does not declare any attributes.
+
+'ref_E' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'labels', which is of type str; 'ids', which is of type str.
+
+'C4U' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'ref_A' and 'ref_B'. From 'ref_A', the role 'a' has cardinality 0..*, and from 'ref_B', the role 'B' has cardinality 0..*.
+An association connects 'ref_A' and 'ref_C2'. From 'ref_A', the role 'a2' has cardinality 0..*, and from 'ref_C2', the role 'C2' has cardinality 0..*.
+An association connects 'ref_C' and 'ref_A'. From 'ref_C', the role 'ref_C' has cardinality 0..*, and from 'ref_A', the role 'ref_A' has cardinality 0..*.
+An association connects 'ref_B' and 'ref_A'. From 'ref_B', the role 'b' has cardinality 0..*, and from 'ref_A', the role 'A' has cardinality 0..*.
+An association connects 'ref_C2' and 'ref_B'. From 'ref_C2', the role 'C27' has cardinality 0..*, and from 'ref_B', the role 'b6' has cardinality 0..*.
+An association connects 'ref_D' and 'ref_B'. From 'ref_D', the role 'ref_D' has cardinality 0..*, and from 'ref_B', the role 'ref_B' has cardinality 0..*.
+An association connects 'ref_A' and 'ref_C1'. From 'ref_A', the role 'ref_A10' has cardinality 0..*, and from 'ref_C1', the role 'ref_C1' has cardinality 0..*.
+An association connects 'ref_B' and 'ref_C1'. From 'ref_B', the role 'ref_B13' has cardinality 0..*, and from 'ref_C1', the role 'ref_C112' has cardinality 0..*.
+An association connects 'ref_C2' and 'ref_B'. From 'ref_C2', the role 'c2' has cardinality 0..*, and from 'ref_B', the role 'B15' has cardinality 0..*.
+An association connects 'ref_C2' and 'ref_A'. From 'ref_C2', the role 'c217' has cardinality 0..*, and from 'ref_A', the role 'A18' has cardinality 0..*.
+An association connects 'ref_D' and 'ref_C'. From 'ref_D', the role 'D' has cardinality 0..*, and from 'ref_C', the role 'c' has cardinality 0..*.
+An association connects 'ref_C' and 'ref_C4'. From 'ref_C', the role 'c21' has cardinality 0..*, and from 'ref_C4', the role 'C4' has cardinality 0..*.
+An association connects 'ref_C' and 'ref_D'. From 'ref_C', the role 'C' has cardinality 0..*, and from 'ref_D', the role 'd' has cardinality 0..*.
+An association connects 'ref_D' and 'ref_E'. From 'ref_D', the role 'd24' has cardinality 0..*, and from 'ref_E', the role 'E' has cardinality 0..*.
+An association connects 'ref_D' and 'ref_C4'. From 'ref_D', the role 'd26' has cardinality 0..*, and from 'ref_C4', the role 'C427' has cardinality 0..*.
+An association connects 'ref_E' and 'ref_D'. From 'ref_E', the role 'e' has cardinality 0..*, and from 'ref_D', the role 'D29' has cardinality 0..*.
+An association connects 'ref_C' and 'ref_C4'. From 'ref_C', the role 'C31' has cardinality 0..*, and from 'ref_C4', the role 'c4' has cardinality 0..*.
+An association connects 'ref_C4' and 'ref_D'. From 'ref_C4', the role 'c433' has cardinality 0..*, and from 'ref_D', the role 'D34' has cardinality 0..*.
+An association connects 'ref_D' and 'ref_C3'. From 'ref_D', the role 'ref_D36' has cardinality 0..*, and from 'ref_C3', the role 'ref_C3' has cardinality 0..*.
+An association connects 'ref_C' and 'ref_C3'. From 'ref_C', the role 'ref_C39' has cardinality 0..*, and from 'ref_C3', the role 'ref_C338' has cardinality 0..*.
+An association connects 'AU' and 'ref_unsettable_C1U'. From 'AU', the role 'AU' has cardinality 0..*, and from 'ref_unsettable_C1U', the role 'ref_unsettable_C1U' has cardinality 0..*.
+An association connects 'BU' and 'ref_unsettable_C1U'. From 'BU', the role 'BU' has cardinality 0..*, and from 'ref_unsettable_C1U', the role 'ref_unsettable_C1U42' has cardinality 0..*.
+An association connects 'AU' and 'ref_unsettable_C2U'. From 'AU', the role 'unsettable' has cardinality 0..*, and from 'ref_unsettable_C2U', the role 'AU44' has cardinality 0..*.
+An association connects 'BU' and 'ref_unsettable_C2U'. From 'BU', the role 'unsettable47' has cardinality 0..*, and from 'ref_unsettable_C2U', the role 'BU46' has cardinality 0..*.
+An association connects 'ref_unsettable_AU' and 'BU'. From 'ref_unsettable_AU', the role 'BU49' has cardinality 0..*, and from 'BU', the role 'unsettable50' has cardinality 0..*.
+An association connects 'C2U' and 'ref_unsettable_AU'. From 'C2U', the role 'unsettable52' has cardinality 0..*, and from 'ref_unsettable_AU', the role 'C2U' has cardinality 0..*.
+An association connects 'CU' and 'ref_unsettable_AU'. From 'CU', the role 'CU' has cardinality 0..*, and from 'ref_unsettable_AU', the role 'ref_unsettable_AU' has cardinality 0..*.
+An association connects 'ref_unsettable_BU' and 'AU'. From 'ref_unsettable_BU', the role 'AU55' has cardinality 0..*, and from 'AU', the role 'unsettable56' has cardinality 0..*.
+An association connects 'ref_unsettable_BU' and 'C2U'. From 'ref_unsettable_BU', the role 'C2U58' has cardinality 0..*, and from 'C2U', the role 'unsettable59' has cardinality 0..*.
+An association connects 'DU' and 'ref_unsettable_BU'. From 'DU', the role 'DU' has cardinality 0..*, and from 'ref_unsettable_BU', the role 'ref_unsettable_BU' has cardinality 0..*.
+An association connects 'ref_unsettable_CU' and 'DU'. From 'ref_unsettable_CU', the role 'DU62' has cardinality 0..*, and from 'DU', the role 'unsettable63' has cardinality 0..*.
+An association connects 'C4U' and 'ref_unsettable_CU'. From 'C4U', the role 'unsettable65' has cardinality 0..*, and from 'ref_unsettable_CU', the role 'C4U' has cardinality 0..*.
+An association connects 'ref_unsettable_DU' and 'CU'. From 'ref_unsettable_DU', the role 'CU67' has cardinality 0..*, and from 'CU', the role 'unsettable68' has cardinality 0..*.
+An association connects 'C4U' and 'ref_unsettable_DU'. From 'C4U', the role 'unsettable71' has cardinality 0..*, and from 'ref_unsettable_DU', the role 'C4U70' has cardinality 0..*.
+An association connects 'ref_unsettable_DU' and 'EU'. From 'ref_unsettable_DU', the role 'EU' has cardinality 0..*, and from 'EU', the role 'unsettable73' has cardinality 0..*.
+An association connects 'CU' and 'ref_unsettable_C4U'. From 'CU', the role 'unsettable76' has cardinality 0..*, and from 'ref_unsettable_C4U', the role 'CU75' has cardinality 0..*.
+An association connects 'ref_unsettable_C4U' and 'DU'. From 'ref_unsettable_C4U', the role 'DU78' has cardinality 0..*, and from 'DU', the role 'unsettable79' has cardinality 0..*.
+An association connects 'ref_unsettable_C3U' and 'CU'. From 'ref_unsettable_C3U', the role 'ref_unsettable_C3U' has cardinality 0..*, and from 'CU', the role 'CU81' has cardinality 0..*.
+An association connects 'DU' and 'ref_unsettable_C3U'. From 'DU', the role 'DU84' has cardinality 0..*, and from 'ref_unsettable_C3U', the role 'ref_unsettable_C3U83' has cardinality 0..*.
+An association connects 'ref_unsettable_EU' and 'DU'. From 'ref_unsettable_EU', the role 'DU86' has cardinality 0..*, and from 'DU', the role 'unsettable87' has cardinality 0..*.

@@ -1,0 +1,18 @@
+The domain model 'HSV2HLS' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'HSV2HLS_HSVNode' represents an important domain concept.
+It does not declare any attributes.
+
+'HSV2HLS_HSVNode2HLSNode' represents an important domain concept.
+It has the following attributes: 'rgb', which is of type str; 'name', which is of type str.
+
+'HSV2HLS_HLSNode' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'HSV2HLS_HSVNode2HLSNode' and 'HSV2HLS_HSVNode2HLSNode'. From 'HSV2HLS_HSVNode2HLSNode', the role 'HSVNode2HLSNode' has cardinality 0..*, and from 'HSV2HLS_HSVNode2HLSNode', the role 'children' has cardinality 0..*.
+An association connects 'HSV2HLS_HSVNode2HLSNode' and 'HSV2HLS_HSVNode2HLSNode'. From 'HSV2HLS_HSVNode2HLSNode', the role 'HSVNode2HLSNode4' has cardinality 0..*, and from 'HSV2HLS_HSVNode2HLSNode', the role 'parent' has cardinality 0..*.
+An association connects 'HSV2HLS_HSVNode2HLSNode' and 'HSV2HLS_HSVNode'. From 'HSV2HLS_HSVNode2HLSNode', the role 'HSV2HLS_HSVNode2HLSNode' has cardinality 0..*, and from 'HSV2HLS_HSVNode', the role 'HSV2HLS_HSVNode' has cardinality 0..*.
+An association connects 'HSV2HLS_HLSNode' and 'HSV2HLS_HSVNode2HLSNode'. From 'HSV2HLS_HLSNode', the role 'HSV2HLS_HLSNode' has cardinality 0..*, and from 'HSV2HLS_HSVNode2HLSNode', the role 'HSV2HLS_HSVNode2HLSNode7' has cardinality 0..*.

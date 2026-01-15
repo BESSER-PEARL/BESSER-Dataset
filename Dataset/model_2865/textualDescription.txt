@@ -1,0 +1,383 @@
+The domain model 'deviceModelingLanguage' describes the core structural elements and their relationships within the system.
+
+The model defines 86 main class(es).
+
+'MemberDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_FeatureType' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_BinaryExp' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'deviceModelingLanguage_SubMemberMatch' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'any', which is of type str; 'qNames', which is of type str.
+
+'deviceModelingLanguage_ConstraintNat' represents an important domain concept.
+It does not declare any attributes.
+
+'Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_SimpleBasicLiteral' represents an important domain concept.
+It has one attribute: 'lit', which is of type str.
+
+'deviceModelingLanguage_Param' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'deviceModelingLanguage_Report' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'deviceModelingLanguage_Override' represents an important domain concept.
+It does not declare any attributes.
+
+'OptionLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_Accessor' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_SetLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_AnyNatConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_GeneralInvariant' represents an important domain concept.
+It does not declare any attributes.
+
+'Accessor' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_NoneLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_SetType' represents an important domain concept.
+It does not declare any attributes.
+
+'Decl' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_SimpleOptionLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_Modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_TypeDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_BaseFeatureType' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_UnaryExp' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'deviceModelingLanguage_Const' represents an important domain concept.
+It has the following attributes: 'product', which is of type bool; 'schema', which is of type bool; 'instance', which is of type bool; 'class', which is of type bool.
+
+'deviceModelingLanguage_App' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_Decl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'deviceModelingLanguage_TupleLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_SubMemberDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'deviceModelingLanguage_MultiplicityInvariant' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_MModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_Data' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_Var' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_SimpleNoneLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_EitherFeatureType' represents an important domain concept.
+It has one attribute: 'choice', which is of type str.
+
+'deviceModelingLanguage_LiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_SimpleSetLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_SomeFeatureType' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_SomeType' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_SetFeatureType' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_Model' represents an important domain concept.
+It has the following attributes: 'product', which is of type bool; 'class', which is of type bool; 'schema', which is of type bool.
+
+'deviceModelingLanguage_SeqFeatureType' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstraintNat' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_SimpleTupleLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_NumNatConstraint' represents an important domain concept.
+It has one attribute: 'num', which is of type str.
+
+'deviceModelingLanguage_MemberDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'Modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleOptionLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_SeqLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_SomeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_PrimaryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_Feature' represents an important domain concept.
+It has the following attributes: 'schema', which is of type bool; 'product', which is of type bool; 'class', which is of type bool.
+
+'deviceModelingLanguage_SimpleSomeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_SimpleLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'InvariantDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_OptionLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_AccessExp' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_AttrDecl' represents an important domain concept.
+It has one attribute: 'attributeName', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_NoneType' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_BaseType' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseType' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_InvariantDecl' represents an important domain concept.
+It has one attribute: 'invName', which is of type str.
+
+'deviceModelingLanguage_ConstraintExp' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_BasicLiteral' represents an important domain concept.
+It has one attribute: 'lit', which is of type str.
+
+'deviceModelingLanguage_SimpleSeqLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'MModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_FeatureDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureType' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_Val' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_NameExp' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'deviceModelingLanguage_OptionFeatureType' represents an important domain concept.
+It has one attribute: 'none', which is of type bool.
+
+'deviceModelingLanguage_OptionType' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_Assignment' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'deviceModelingLanguage_ReportMemberDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'deviceModelingLanguage_TupleType' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'deviceModelingLanguage_SeqType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'deviceModelingLanguage_TypeDecl' is a specialization of 'Decl'.
+The class 'deviceModelingLanguage_FeatureDecl' is a specialization of 'Decl'.
+The class 'deviceModelingLanguage_AttrDecl' is a specialization of 'MemberDecl'.
+The class 'deviceModelingLanguage_AttrDecl' is a specialization of 'Accessor'.
+The class 'deviceModelingLanguage_SubMemberDecl' is a specialization of 'MemberDecl'.
+The class 'deviceModelingLanguage_SubMemberDecl' is a specialization of 'Accessor'.
+The class 'deviceModelingLanguage_BaseFeatureType' is a specialization of 'FeatureType'.
+The class 'deviceModelingLanguage_InvariantDecl' is a specialization of 'MemberDecl'.
+The class 'deviceModelingLanguage_MultiplicityInvariant' is a specialization of 'InvariantDecl'.
+The class 'deviceModelingLanguage_GeneralInvariant' is a specialization of 'InvariantDecl'.
+The class 'deviceModelingLanguage_Device' is a specialization of 'FeatureDecl'.
+The class 'deviceModelingLanguage_BaseType' is a specialization of 'Type'.
+The class 'deviceModelingLanguage_BasicLiteral' is a specialization of 'Literal'.
+The class 'deviceModelingLanguage_TupleLiteral' is a specialization of 'Literal'.
+The class 'deviceModelingLanguage_SeqLiteral' is a specialization of 'Literal'.
+The class 'deviceModelingLanguage_SetLiteral' is a specialization of 'Literal'.
+The class 'deviceModelingLanguage_OptionLiteral' is a specialization of 'Literal'.
+The class 'deviceModelingLanguage_SimpleBasicLiteral' is a specialization of 'SimpleLiteral'.
+The class 'deviceModelingLanguage_SimpleTupleLiteral' is a specialization of 'SimpleLiteral'.
+The class 'deviceModelingLanguage_SimpleOptionLiteral' is a specialization of 'SimpleLiteral'.
+The class 'deviceModelingLanguage_SimpleSeqLiteral' is a specialization of 'SimpleLiteral'.
+The class 'deviceModelingLanguage_SimpleSetLiteral' is a specialization of 'SimpleLiteral'.
+The class 'deviceModelingLanguage_Feature' is a specialization of 'FeatureDecl'.
+The class 'deviceModelingLanguage_Data' is a specialization of 'FeatureDecl'.
+The class 'deviceModelingLanguage_Data' is a specialization of 'MModifier'.
+The class 'deviceModelingLanguage_App' is a specialization of 'FeatureDecl'.
+The class 'deviceModelingLanguage_Const' is a specialization of 'Modifier'.
+The class 'deviceModelingLanguage_Const' is a specialization of 'MModifier'.
+The class 'deviceModelingLanguage_Val' is a specialization of 'Modifier'.
+The class 'deviceModelingLanguage_Val' is a specialization of 'MModifier'.
+The class 'deviceModelingLanguage_Var' is a specialization of 'Modifier'.
+The class 'deviceModelingLanguage_Var' is a specialization of 'MModifier'.
+The class 'deviceModelingLanguage_Override' is a specialization of 'Modifier'.
+The class 'deviceModelingLanguage_Override' is a specialization of 'MModifier'.
+The class 'deviceModelingLanguage_OptionFeatureType' is a specialization of 'FeatureType'.
+The class 'deviceModelingLanguage_SomeFeatureType' is a specialization of 'FeatureType'.
+The class 'deviceModelingLanguage_EitherFeatureType' is a specialization of 'FeatureType'.
+The class 'deviceModelingLanguage_SeqFeatureType' is a specialization of 'FeatureType'.
+The class 'deviceModelingLanguage_SetFeatureType' is a specialization of 'FeatureType'.
+The class 'deviceModelingLanguage_NumNatConstraint' is a specialization of 'ConstraintNat'.
+The class 'deviceModelingLanguage_AnyNatConstraint' is a specialization of 'ConstraintNat'.
+The class 'deviceModelingLanguage_BinaryExp' is a specialization of 'Exp'.
+The class 'deviceModelingLanguage_UnaryExp' is a specialization of 'Exp'.
+The class 'deviceModelingLanguage_PrimaryExp' is a specialization of 'Exp'.
+The class 'deviceModelingLanguage_AccessExp' is a specialization of 'Exp'.
+The class 'deviceModelingLanguage_NameExp' is a specialization of 'Primary'.
+The class 'deviceModelingLanguage_LiteralExp' is a specialization of 'Primary'.
+The class 'deviceModelingLanguage_SeqType' is a specialization of 'Type'.
+The class 'deviceModelingLanguage_SetType' is a specialization of 'Type'.
+The class 'deviceModelingLanguage_TupleType' is a specialization of 'BaseType'.
+The class 'deviceModelingLanguage_OptionType' is a specialization of 'BaseType'.
+The class 'deviceModelingLanguage_SomeType' is a specialization of 'BaseType'.
+The class 'deviceModelingLanguage_NoneType' is a specialization of 'BaseType'.
+The class 'deviceModelingLanguage_NoneLiteral' is a specialization of 'OptionLiteral'.
+The class 'deviceModelingLanguage_SomeLiteral' is a specialization of 'OptionLiteral'.
+The class 'deviceModelingLanguage_SimpleNoneLiteral' is a specialization of 'SimpleOptionLiteral'.
+The class 'deviceModelingLanguage_SimpleSomeLiteral' is a specialization of 'SimpleOptionLiteral'.
+
+Relationships between classes are modeled using associations.
+An association connects 'deviceModelingLanguage_Model' and 'deviceModelingLanguage_Decl'. From 'deviceModelingLanguage_Model', the role 'deviceModelingLanguage_Model' has cardinality 0..*, and from 'deviceModelingLanguage_Decl', the role 'deviceModelingLanguage_Decl' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_TypeDecl' and 'deviceModelingLanguage_TypeDecl'. From 'deviceModelingLanguage_TypeDecl', the role 'deviceModelingLanguage_TypeDecl' has cardinality 0..*, and from 'deviceModelingLanguage_TypeDecl', the role 'deviceModelingLanguage_TypeDecl1' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_FeatureDecl' and 'deviceModelingLanguage_FeatureDecl'. From 'deviceModelingLanguage_FeatureDecl', the role 'deviceModelingLanguage_FeatureDecl' has cardinality 0..*, and from 'deviceModelingLanguage_FeatureDecl', the role 'deviceModelingLanguage_FeatureDecl3' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_MemberDecl' and 'deviceModelingLanguage_FeatureDecl'. From 'deviceModelingLanguage_MemberDecl', the role 'deviceModelingLanguage_MemberDecl' has cardinality 0..*, and from 'deviceModelingLanguage_FeatureDecl', the role 'deviceModelingLanguage_FeatureDecl6' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_Device' and 'deviceModelingLanguage_FeatureDecl'. From 'deviceModelingLanguage_Device', the role 'deviceModelingLanguage_Device' has cardinality 0..*, and from 'deviceModelingLanguage_FeatureDecl', the role 'deviceModelingLanguage_FeatureDecl8' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_FeatureDecl' and 'deviceModelingLanguage_Assignment'. From 'deviceModelingLanguage_FeatureDecl', the role 'deviceModelingLanguage_FeatureDecl10' has cardinality 0..*, and from 'deviceModelingLanguage_Assignment', the role 'deviceModelingLanguage_Assignment' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_FeatureDecl' and 'deviceModelingLanguage_Exp'. From 'deviceModelingLanguage_FeatureDecl', the role 'deviceModelingLanguage_FeatureDecl12' has cardinality 0..*, and from 'deviceModelingLanguage_Exp', the role 'deviceModelingLanguage_Exp' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_AttrDecl' and 'deviceModelingLanguage_Modifier'. From 'deviceModelingLanguage_AttrDecl', the role 'deviceModelingLanguage_AttrDecl' has cardinality 0..*, and from 'deviceModelingLanguage_Modifier', the role 'deviceModelingLanguage_Modifier' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_AttrDecl' and 'deviceModelingLanguage_Type'. From 'deviceModelingLanguage_AttrDecl', the role 'deviceModelingLanguage_AttrDecl15' has cardinality 0..*, and from 'deviceModelingLanguage_Type', the role 'deviceModelingLanguage_Type' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_Literal' and 'deviceModelingLanguage_AttrDecl'. From 'deviceModelingLanguage_Literal', the role 'deviceModelingLanguage_Literal' has cardinality 0..*, and from 'deviceModelingLanguage_AttrDecl', the role 'deviceModelingLanguage_AttrDecl17' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_MModifier' and 'deviceModelingLanguage_SubMemberDecl'. From 'deviceModelingLanguage_MModifier', the role 'deviceModelingLanguage_MModifier' has cardinality 0..*, and from 'deviceModelingLanguage_SubMemberDecl', the role 'deviceModelingLanguage_SubMemberDecl' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_FeatureType' and 'deviceModelingLanguage_SubMemberDecl'. From 'deviceModelingLanguage_FeatureType', the role 'deviceModelingLanguage_FeatureType' has cardinality 0..*, and from 'deviceModelingLanguage_SubMemberDecl', the role 'deviceModelingLanguage_SubMemberDecl20' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_Assignment' and 'deviceModelingLanguage_Exp'. From 'deviceModelingLanguage_Assignment', the role 'deviceModelingLanguage_Assignment22' has cardinality 0..*, and from 'deviceModelingLanguage_Exp', the role 'deviceModelingLanguage_Exp23' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_Report' and 'deviceModelingLanguage_Exp'. From 'deviceModelingLanguage_Report', the role 'deviceModelingLanguage_Report' has cardinality 0..*, and from 'deviceModelingLanguage_Exp', the role 'deviceModelingLanguage_Exp25' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_BaseFeatureType' and 'deviceModelingLanguage_FeatureDecl'. From 'deviceModelingLanguage_BaseFeatureType', the role 'deviceModelingLanguage_BaseFeatureType' has cardinality 0..*, and from 'deviceModelingLanguage_FeatureDecl', the role 'deviceModelingLanguage_FeatureDecl27' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_MemberDecl' and 'deviceModelingLanguage_BaseFeatureType'. From 'deviceModelingLanguage_MemberDecl', the role 'deviceModelingLanguage_MemberDecl30' has cardinality 0..*, and from 'deviceModelingLanguage_BaseFeatureType', the role 'deviceModelingLanguage_BaseFeatureType29' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_MultiplicityInvariant' and 'deviceModelingLanguage_ConstraintNat'. From 'deviceModelingLanguage_MultiplicityInvariant', the role 'deviceModelingLanguage_MultiplicityInvariant' has cardinality 0..*, and from 'deviceModelingLanguage_ConstraintNat', the role 'deviceModelingLanguage_ConstraintNat' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_ConstraintNat' and 'deviceModelingLanguage_MultiplicityInvariant'. From 'deviceModelingLanguage_ConstraintNat', the role 'deviceModelingLanguage_ConstraintNat34' has cardinality 0..*, and from 'deviceModelingLanguage_MultiplicityInvariant', the role 'deviceModelingLanguage_MultiplicityInvariant33' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_SubMemberMatch' and 'deviceModelingLanguage_MultiplicityInvariant'. From 'deviceModelingLanguage_SubMemberMatch', the role 'deviceModelingLanguage_SubMemberMatch' has cardinality 0..*, and from 'deviceModelingLanguage_MultiplicityInvariant', the role 'deviceModelingLanguage_MultiplicityInvariant36' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_MultiplicityInvariant' and 'deviceModelingLanguage_FeatureDecl'. From 'deviceModelingLanguage_MultiplicityInvariant', the role 'deviceModelingLanguage_MultiplicityInvariant38' has cardinality 0..*, and from 'deviceModelingLanguage_FeatureDecl', the role 'deviceModelingLanguage_FeatureDecl39' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_Exp' and 'deviceModelingLanguage_GeneralInvariant'. From 'deviceModelingLanguage_Exp', the role 'deviceModelingLanguage_Exp41' has cardinality 0..*, and from 'deviceModelingLanguage_GeneralInvariant', the role 'deviceModelingLanguage_GeneralInvariant' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_FeatureDecl' and 'deviceModelingLanguage_Device'. From 'deviceModelingLanguage_FeatureDecl', the role 'deviceModelingLanguage_FeatureDecl44' has cardinality 0..*, and from 'deviceModelingLanguage_Device', the role 'deviceModelingLanguage_Device43' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_ConstraintExp' and 'deviceModelingLanguage_Device'. From 'deviceModelingLanguage_ConstraintExp', the role 'deviceModelingLanguage_ConstraintExp' has cardinality 0..*, and from 'deviceModelingLanguage_Device', the role 'deviceModelingLanguage_Device46' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_Exp' and 'deviceModelingLanguage_ConstraintExp'. From 'deviceModelingLanguage_Exp', the role 'deviceModelingLanguage_Exp49' has cardinality 0..*, and from 'deviceModelingLanguage_ConstraintExp', the role 'deviceModelingLanguage_ConstraintExp48' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_BaseFeatureType' and 'deviceModelingLanguage_Param'. From 'deviceModelingLanguage_BaseFeatureType', the role 'deviceModelingLanguage_BaseFeatureType51' has cardinality 0..*, and from 'deviceModelingLanguage_Param', the role 'deviceModelingLanguage_Param' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_Accessor' and 'deviceModelingLanguage_ReportMemberDecl'. From 'deviceModelingLanguage_Accessor', the role 'deviceModelingLanguage_Accessor' has cardinality 0..*, and from 'deviceModelingLanguage_ReportMemberDecl', the role 'deviceModelingLanguage_ReportMemberDecl' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_TypeDecl' and 'deviceModelingLanguage_BaseType'. From 'deviceModelingLanguage_TypeDecl', the role 'deviceModelingLanguage_TypeDecl54' has cardinality 0..*, and from 'deviceModelingLanguage_BaseType', the role 'deviceModelingLanguage_BaseType' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_TypeDecl' and 'deviceModelingLanguage_BasicLiteral'. From 'deviceModelingLanguage_TypeDecl', the role 'deviceModelingLanguage_TypeDecl56' has cardinality 0..*, and from 'deviceModelingLanguage_BasicLiteral', the role 'deviceModelingLanguage_BasicLiteral' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_TupleLiteral' and 'deviceModelingLanguage_Literal'. From 'deviceModelingLanguage_TupleLiteral', the role 'deviceModelingLanguage_TupleLiteral' has cardinality 0..*, and from 'deviceModelingLanguage_Literal', the role 'deviceModelingLanguage_Literal58' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_Type' and 'deviceModelingLanguage_SeqLiteral'. From 'deviceModelingLanguage_Type', the role 'deviceModelingLanguage_Type60' has cardinality 0..*, and from 'deviceModelingLanguage_SeqLiteral', the role 'deviceModelingLanguage_SeqLiteral' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_SeqLiteral' and 'deviceModelingLanguage_SimpleLiteral'. From 'deviceModelingLanguage_SeqLiteral', the role 'deviceModelingLanguage_SeqLiteral62' has cardinality 0..*, and from 'deviceModelingLanguage_SimpleLiteral', the role 'deviceModelingLanguage_SimpleLiteral' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_Type' and 'deviceModelingLanguage_SetLiteral'. From 'deviceModelingLanguage_Type', the role 'deviceModelingLanguage_Type64' has cardinality 0..*, and from 'deviceModelingLanguage_SetLiteral', the role 'deviceModelingLanguage_SetLiteral' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_SimpleLiteral' and 'deviceModelingLanguage_SetLiteral'. From 'deviceModelingLanguage_SimpleLiteral', the role 'deviceModelingLanguage_SimpleLiteral67' has cardinality 0..*, and from 'deviceModelingLanguage_SetLiteral', the role 'deviceModelingLanguage_SetLiteral66' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_SimpleTupleLiteral' and 'deviceModelingLanguage_SimpleLiteral'. From 'deviceModelingLanguage_SimpleTupleLiteral', the role 'deviceModelingLanguage_SimpleTupleLiteral' has cardinality 0..*, and from 'deviceModelingLanguage_SimpleLiteral', the role 'deviceModelingLanguage_SimpleLiteral69' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_SimpleLiteral' and 'deviceModelingLanguage_SimpleSeqLiteral'. From 'deviceModelingLanguage_SimpleLiteral', the role 'deviceModelingLanguage_SimpleLiteral71' has cardinality 0..*, and from 'deviceModelingLanguage_SimpleSeqLiteral', the role 'deviceModelingLanguage_SimpleSeqLiteral' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_SimpleLiteral' and 'deviceModelingLanguage_SimpleSetLiteral'. From 'deviceModelingLanguage_SimpleLiteral', the role 'deviceModelingLanguage_SimpleLiteral73' has cardinality 0..*, and from 'deviceModelingLanguage_SimpleSetLiteral', the role 'deviceModelingLanguage_SimpleSetLiteral' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_BaseFeatureType' and 'deviceModelingLanguage_OptionFeatureType'. From 'deviceModelingLanguage_BaseFeatureType', the role 'deviceModelingLanguage_BaseFeatureType75' has cardinality 0..*, and from 'deviceModelingLanguage_OptionFeatureType', the role 'deviceModelingLanguage_OptionFeatureType' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_BaseFeatureType' and 'deviceModelingLanguage_SomeFeatureType'. From 'deviceModelingLanguage_BaseFeatureType', the role 'deviceModelingLanguage_BaseFeatureType77' has cardinality 0..*, and from 'deviceModelingLanguage_SomeFeatureType', the role 'deviceModelingLanguage_SomeFeatureType' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_MemberDecl' and 'deviceModelingLanguage_SomeFeatureType'. From 'deviceModelingLanguage_MemberDecl', the role 'deviceModelingLanguage_MemberDecl80' has cardinality 0..*, and from 'deviceModelingLanguage_SomeFeatureType', the role 'deviceModelingLanguage_SomeFeatureType79' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_EitherFeatureType' and 'deviceModelingLanguage_BaseFeatureType'. From 'deviceModelingLanguage_EitherFeatureType', the role 'deviceModelingLanguage_EitherFeatureType' has cardinality 0..*, and from 'deviceModelingLanguage_BaseFeatureType', the role 'deviceModelingLanguage_BaseFeatureType82' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_MemberDecl' and 'deviceModelingLanguage_EitherFeatureType'. From 'deviceModelingLanguage_MemberDecl', the role 'deviceModelingLanguage_MemberDecl85' has cardinality 0..*, and from 'deviceModelingLanguage_EitherFeatureType', the role 'deviceModelingLanguage_EitherFeatureType84' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_SeqFeatureType' and 'deviceModelingLanguage_BaseFeatureType'. From 'deviceModelingLanguage_SeqFeatureType', the role 'deviceModelingLanguage_SeqFeatureType' has cardinality 0..*, and from 'deviceModelingLanguage_BaseFeatureType', the role 'deviceModelingLanguage_BaseFeatureType87' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_BaseFeatureType' and 'deviceModelingLanguage_SeqFeatureType'. From 'deviceModelingLanguage_BaseFeatureType', the role 'deviceModelingLanguage_BaseFeatureType90' has cardinality 0..*, and from 'deviceModelingLanguage_SeqFeatureType', the role 'deviceModelingLanguage_SeqFeatureType89' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_BaseFeatureType' and 'deviceModelingLanguage_SetFeatureType'. From 'deviceModelingLanguage_BaseFeatureType', the role 'deviceModelingLanguage_BaseFeatureType92' has cardinality 0..*, and from 'deviceModelingLanguage_SetFeatureType', the role 'deviceModelingLanguage_SetFeatureType' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_SetFeatureType' and 'deviceModelingLanguage_BaseFeatureType'. From 'deviceModelingLanguage_SetFeatureType', the role 'deviceModelingLanguage_SetFeatureType94' has cardinality 0..*, and from 'deviceModelingLanguage_BaseFeatureType', the role 'deviceModelingLanguage_BaseFeatureType95' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_BinaryExp' and 'deviceModelingLanguage_Exp'. From 'deviceModelingLanguage_BinaryExp', the role 'deviceModelingLanguage_BinaryExp' has cardinality 0..*, and from 'deviceModelingLanguage_Exp', the role 'deviceModelingLanguage_Exp97' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_BinaryExp' and 'deviceModelingLanguage_Exp'. From 'deviceModelingLanguage_BinaryExp', the role 'deviceModelingLanguage_BinaryExp99' has cardinality 0..*, and from 'deviceModelingLanguage_Exp', the role 'deviceModelingLanguage_Exp100' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_UnaryExp' and 'deviceModelingLanguage_Exp'. From 'deviceModelingLanguage_UnaryExp', the role 'deviceModelingLanguage_UnaryExp' has cardinality 0..*, and from 'deviceModelingLanguage_Exp', the role 'deviceModelingLanguage_Exp102' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_Primary' and 'deviceModelingLanguage_PrimaryExp'. From 'deviceModelingLanguage_Primary', the role 'deviceModelingLanguage_Primary' has cardinality 0..*, and from 'deviceModelingLanguage_PrimaryExp', the role 'deviceModelingLanguage_PrimaryExp' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_AccessExp' and 'deviceModelingLanguage_PrimaryExp'. From 'deviceModelingLanguage_AccessExp', the role 'deviceModelingLanguage_AccessExp' has cardinality 0..*, and from 'deviceModelingLanguage_PrimaryExp', the role 'deviceModelingLanguage_PrimaryExp105' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_AccessExp' and 'deviceModelingLanguage_Accessor'. From 'deviceModelingLanguage_AccessExp', the role 'deviceModelingLanguage_AccessExp107' has cardinality 0..*, and from 'deviceModelingLanguage_Accessor', the role 'deviceModelingLanguage_Accessor108' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_BasicLiteral' and 'deviceModelingLanguage_LiteralExp'. From 'deviceModelingLanguage_BasicLiteral', the role 'deviceModelingLanguage_BasicLiteral110' has cardinality 0..*, and from 'deviceModelingLanguage_LiteralExp', the role 'deviceModelingLanguage_LiteralExp' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_Type' and 'deviceModelingLanguage_SeqType'. From 'deviceModelingLanguage_Type', the role 'deviceModelingLanguage_Type112' has cardinality 0..*, and from 'deviceModelingLanguage_SeqType', the role 'deviceModelingLanguage_SeqType' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_SetType' and 'deviceModelingLanguage_Type'. From 'deviceModelingLanguage_SetType', the role 'deviceModelingLanguage_SetType' has cardinality 0..*, and from 'deviceModelingLanguage_Type', the role 'deviceModelingLanguage_Type114' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_TupleType' and 'deviceModelingLanguage_Type'. From 'deviceModelingLanguage_TupleType', the role 'deviceModelingLanguage_TupleType' has cardinality 0..*, and from 'deviceModelingLanguage_Type', the role 'deviceModelingLanguage_Type116' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_Type' and 'deviceModelingLanguage_OptionType'. From 'deviceModelingLanguage_Type', the role 'deviceModelingLanguage_Type118' has cardinality 0..*, and from 'deviceModelingLanguage_OptionType', the role 'deviceModelingLanguage_OptionType' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_Type' and 'deviceModelingLanguage_SomeType'. From 'deviceModelingLanguage_Type', the role 'deviceModelingLanguage_Type120' has cardinality 0..*, and from 'deviceModelingLanguage_SomeType', the role 'deviceModelingLanguage_SomeType' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_Type' and 'deviceModelingLanguage_NoneType'. From 'deviceModelingLanguage_Type', the role 'deviceModelingLanguage_Type122' has cardinality 0..*, and from 'deviceModelingLanguage_NoneType', the role 'deviceModelingLanguage_NoneType' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_NoneLiteral' and 'deviceModelingLanguage_Type'. From 'deviceModelingLanguage_NoneLiteral', the role 'deviceModelingLanguage_NoneLiteral' has cardinality 0..*, and from 'deviceModelingLanguage_Type', the role 'deviceModelingLanguage_Type124' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_Literal' and 'deviceModelingLanguage_SomeLiteral'. From 'deviceModelingLanguage_Literal', the role 'deviceModelingLanguage_Literal126' has cardinality 0..*, and from 'deviceModelingLanguage_SomeLiteral', the role 'deviceModelingLanguage_SomeLiteral' has cardinality 0..*.
+An association connects 'deviceModelingLanguage_SimpleLiteral' and 'deviceModelingLanguage_SimpleSomeLiteral'. From 'deviceModelingLanguage_SimpleLiteral', the role 'deviceModelingLanguage_SimpleLiteral128' has cardinality 0..*, and from 'deviceModelingLanguage_SimpleSomeLiteral', the role 'deviceModelingLanguage_SimpleSomeLiteral' has cardinality 0..*.

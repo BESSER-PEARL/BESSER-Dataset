@@ -1,0 +1,32 @@
+The domain model 'kreq108c' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'kreq108c_Cccc' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Gggg' represents an important domain concept.
+It does not declare any attributes.
+
+'kreq108c_Bbbb' represents an important domain concept.
+It does not declare any attributes.
+
+'kreq108c_Eeee' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'kreq108c_Ffff' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'kreq108c_Gggg' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'kreq108c_Eeee' is a specialization of 'Gggg'.
+The class 'kreq108c_Ffff' is a specialization of 'Gggg'.
+
+Relationships between classes are modeled using associations.
+An association connects 'kreq108c_Cccc' and 'kreq108c_Bbbb'. From 'kreq108c_Cccc', the role 'kreq108c_Cccc' has cardinality 0..*, and from 'kreq108c_Bbbb', the role 'kreq108c_Bbbb' has cardinality 0..*.
+An association connects 'kreq108c_Eeee' and 'kreq108c_Bbbb'. From 'kreq108c_Eeee', the role 'kreq108c_Eeee' has cardinality 0..*, and from 'kreq108c_Bbbb', the role 'kreq108c_Bbbb2' has cardinality 0..*.
+An association connects 'kreq108c_Ffff' and 'kreq108c_Cccc'. From 'kreq108c_Ffff', the role 'kreq108c_Ffff' has cardinality 0..*, and from 'kreq108c_Cccc', the role 'kreq108c_Cccc4' has cardinality 0..*.
+An association connects 'kreq108c_Ffff' and 'kreq108c_Eeee'. From 'kreq108c_Ffff', the role 'kreq108c_Ffff6' has cardinality 0..*, and from 'kreq108c_Eeee', the role 'kreq108c_Eeee7' has cardinality 0..*.
+An association connects 'kreq108c_Ffff' and 'kreq108c_Ffff'. From 'kreq108c_Ffff', the role 'kreq108c_Ffff8' has cardinality 0..*, and from 'kreq108c_Ffff', the role 'kreq108c_Ffff10' has cardinality 0..*.

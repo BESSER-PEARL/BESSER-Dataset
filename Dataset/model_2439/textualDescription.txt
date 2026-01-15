@@ -1,0 +1,19 @@
+The domain model 'database' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'database_Column' represents an important domain concept.
+It has the following attributes: 'PrimaryKey', which is of type bool; 'name', which is of type str; 'NotNull', which is of type bool; 'type', which is of type str.
+
+'database_Scheme' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'database_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'database_Scheme' and 'database_Table'. From 'database_Scheme', the role 'database_Scheme' has cardinality 0..*, and from 'database_Table', the role 'database_Table' has cardinality 0..*.
+An association connects 'database_Scheme' and 'database_Column'. From 'database_Scheme', the role 'database_Scheme2' has cardinality 0..*, and from 'database_Column', the role 'database_Column' has cardinality 0..*.
+An association connects 'database_Column' and 'database_Table'. From 'database_Column', the role 'Column' has cardinality 0..*, and from 'database_Table', the role 'table' has cardinality 0..*.
+An association connects 'database_Table' and 'database_Column'. From 'database_Table', the role 'Table' has cardinality 0..*, and from 'database_Column', the role 'columns' has cardinality 0..*.
+An association connects 'database_Column' and 'database_Column'. From 'database_Column', the role 'database_Column7' has cardinality 0..*, and from 'database_Column', the role 'database_Column5' has cardinality 0..*.

@@ -1,0 +1,34 @@
+The domain model 'operators' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'operators_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_OclType' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_OperationCallExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'operators_OperationCallExp' is a specialization of 'OclExpression'.
+The class 'operators_IfExp' is a specialization of 'OclExpression'.
+The class 'operators_OclType' is a specialization of 'OclExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'operators_OclExpression' and 'operators_Type'. From 'operators_OclExpression', the role 'operators_OclExpression' has cardinality 0..*, and from 'operators_Type', the role 'operators_Type' has cardinality 0..*.
+An association connects 'operators_OperationCallExp' and 'operators_OclExpression'. From 'operators_OperationCallExp', the role 'operators_OperationCallExp' has cardinality 0..*, and from 'operators_OclExpression', the role 'operators_OclExpression2' has cardinality 0..*.
+An association connects 'operators_OclExpression' and 'operators_OperationCallExp'. From 'operators_OclExpression', the role 'operators_OclExpression5' has cardinality 0..*, and from 'operators_OperationCallExp', the role 'operators_OperationCallExp4' has cardinality 0..*.
+An association connects 'operators_OclExpression' and 'operators_IfExp'. From 'operators_OclExpression', the role 'operators_OclExpression7' has cardinality 0..*, and from 'operators_IfExp', the role 'operators_IfExp' has cardinality 0..*.
+An association connects 'operators_IfExp' and 'operators_OclExpression'. From 'operators_IfExp', the role 'operators_IfExp9' has cardinality 0..*, and from 'operators_OclExpression', the role 'operators_OclExpression10' has cardinality 0..*.
+An association connects 'operators_IfExp' and 'operators_OclExpression'. From 'operators_IfExp', the role 'operators_IfExp12' has cardinality 0..*, and from 'operators_OclExpression', the role 'operators_OclExpression13' has cardinality 0..*.

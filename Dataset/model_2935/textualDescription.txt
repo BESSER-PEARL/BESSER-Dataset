@@ -1,0 +1,76 @@
+The domain model 'extended' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'extended_Domainmodel' represents an important domain concept.
+It has one attribute: 'nomeProj', which is of type str.
+
+'extended_AbstractType' represents an important domain concept.
+It does not declare any attributes.
+
+'FormTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'extended_FormReport' represents an important domain concept.
+It has the following attributes: 'filter', which is of type str; 'pagination', which is of type str; 'order', which is of type str.
+
+'extended_FormNewEntityOnly' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractType' represents an important domain concept.
+It does not declare any attributes.
+
+'extended_DataType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'extended_Page' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'header', which is of type str; 'footer', which is of type str; 'name', which is of type str.
+
+'extended_PackageDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'extended_AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'extended_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'extended_Form' represents an important domain concept.
+It has the following attributes: 'delete', which is of type str; 'post', which is of type str; 'put', which is of type str; 'get', which is of type str.
+
+'extended_EntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'extended_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'extended_FormTypes' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'extended_Feature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'required', which is of type str; 'max', which is of type int; 'min', which is of type int.
+
+'AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'extended_PackageDeclaration' is a specialization of 'AbstractElement'.
+The class 'extended_Import' is a specialization of 'AbstractElement'.
+The class 'extended_DataType' is a specialization of 'AbstractType'.
+The class 'extended_EntityType' is a specialization of 'AbstractType'.
+The class 'extended_Entity' is a specialization of 'AbstractElement'.
+The class 'extended_Page' is a specialization of 'AbstractElement'.
+The class 'extended_FormTypes' is a specialization of 'AbstractElement'.
+The class 'extended_Form' is a specialization of 'FormTypes'.
+The class 'extended_FormNewEntityOnly' is a specialization of 'FormTypes'.
+The class 'extended_FormReport' is a specialization of 'FormTypes'.
+
+Relationships between classes are modeled using associations.
+An association connects 'extended_Domainmodel' and 'extended_AbstractElement'. From 'extended_Domainmodel', the role 'extended_Domainmodel' has cardinality 0..*, and from 'extended_AbstractElement', the role 'extended_AbstractElement' has cardinality 0..*.
+An association connects 'extended_PackageDeclaration' and 'extended_AbstractElement'. From 'extended_PackageDeclaration', the role 'extended_PackageDeclaration' has cardinality 0..*, and from 'extended_AbstractElement', the role 'extended_AbstractElement2' has cardinality 0..*.
+An association connects 'extended_EntityType' and 'extended_Entity'. From 'extended_EntityType', the role 'extended_EntityType' has cardinality 0..*, and from 'extended_Entity', the role 'extended_Entity' has cardinality 0..*.
+An association connects 'extended_Entity' and 'extended_Entity'. From 'extended_Entity', the role 'extended_Entity4' has cardinality 0..*, and from 'extended_Entity', the role 'extended_Entity6' has cardinality 0..*.
+An association connects 'extended_Feature' and 'extended_Entity'. From 'extended_Feature', the role 'extended_Feature' has cardinality 0..*, and from 'extended_Entity', the role 'extended_Entity8' has cardinality 0..*.
+An association connects 'extended_AbstractType' and 'extended_Feature'. From 'extended_AbstractType', the role 'extended_AbstractType' has cardinality 0..*, and from 'extended_Feature', the role 'extended_Feature10' has cardinality 0..*.
+An association connects 'extended_Page' and 'extended_FormTypes'. From 'extended_Page', the role 'extended_Page' has cardinality 0..*, and from 'extended_FormTypes', the role 'extended_FormTypes' has cardinality 0..*.
+An association connects 'extended_Entity' and 'extended_FormTypes'. From 'extended_Entity', the role 'extended_Entity14' has cardinality 0..*, and from 'extended_FormTypes', the role 'extended_FormTypes13' has cardinality 0..*.

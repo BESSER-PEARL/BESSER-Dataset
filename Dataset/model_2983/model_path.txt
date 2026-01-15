@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/aronbsz/automatalearning/hu.bme.mit.mealymodel/model/mealymodel.ecore

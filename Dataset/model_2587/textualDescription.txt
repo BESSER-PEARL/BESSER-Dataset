@@ -1,0 +1,44 @@
+The domain model 'inheritance' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'inheritance_Subclass2' represents an important domain concept.
+It does not declare any attributes.
+
+'Subclass1' represents an important domain concept.
+It does not declare any attributes.
+
+'inheritance_Sub1Subclass' represents an important domain concept.
+It does not declare any attributes.
+
+'inheritance_Subclass1' represents an important domain concept.
+It does not declare any attributes.
+
+'Subclass2' represents an important domain concept.
+It does not declare any attributes.
+
+'Subclass3' represents an important domain concept.
+It does not declare any attributes.
+
+'Superclass' represents an important domain concept.
+It does not declare any attributes.
+
+'inheritance_Sub3Subclass' represents an important domain concept.
+It does not declare any attributes.
+
+'inheritance_Sub2Subclass' represents an important domain concept.
+It does not declare any attributes.
+
+'inheritance_Superclass' represents an important domain concept.
+It does not declare any attributes.
+
+'inheritance_Subclass3' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'inheritance_Subclass1' is a specialization of 'Subclass2'.
+The class 'inheritance_Subclass2' is a specialization of 'Superclass'.
+The class 'inheritance_Sub1Subclass' is a specialization of 'Subclass1'.
+The class 'inheritance_Subclass3' is a specialization of 'Superclass'.
+The class 'inheritance_Sub2Subclass' is a specialization of 'Subclass3'.
+The class 'inheritance_Sub3Subclass' is a specialization of 'Subclass3'.

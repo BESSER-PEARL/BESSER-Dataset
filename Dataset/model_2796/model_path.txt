@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/TypeFox/Xtext-XMI/io.typefox.xtextxmi.tree/model/Tree.ecore

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jesusc/rubytl/rubytl-core/test/files/metamodels/Packages.ecore

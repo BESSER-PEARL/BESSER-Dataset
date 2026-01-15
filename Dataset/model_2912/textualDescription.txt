@@ -1,0 +1,74 @@
+The domain model 'lSGL' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'lSGL_ConfigProperty' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'lSGL_Attribute' represents an important domain concept.
+It has the following attributes: 'isArray', which is of type bool; 'name', which is of type str; 'isList', which is of type bool; 'isMap', which is of type bool.
+
+'lSGL_GeneratorConfig' represents an important domain concept.
+It has the following attributes: 'values', which is of type str; 'cfgName', which is of type str.
+
+'lSGL_GeneratorAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'lSGL_AttributeType' represents an important domain concept.
+It has the following attributes: 'nullable', which is of type bool; 'typeName', which is of type str.
+
+'lSGL_Annotation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'lSGL_Config' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'lSGL_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'lSGL_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'lSGL_Enum' represents an important domain concept.
+It does not declare any attributes.
+
+'lSGL_EnumItem' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'lSGL_Generator' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'lSGL_Projection' represents an important domain concept.
+It has the following attributes: 'excluding', which is of type bool; 'name', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'lSGL_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'lSGL_Enum' is a specialization of 'Type'.
+The class 'lSGL_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'lSGL_Generator' and 'lSGL_Model'. From 'lSGL_Generator', the role 'lSGL_Generator' has cardinality 0..*, and from 'lSGL_Model', the role 'lSGL_Model' has cardinality 0..*.
+An association connects 'lSGL_Model' and 'lSGL_Type'. From 'lSGL_Model', the role 'lSGL_Model2' has cardinality 0..*, and from 'lSGL_Type', the role 'lSGL_Type' has cardinality 0..*.
+An association connects 'lSGL_Model' and 'lSGL_Projection'. From 'lSGL_Model', the role 'lSGL_Model4' has cardinality 0..*, and from 'lSGL_Projection', the role 'lSGL_Projection' has cardinality 0..*.
+An association connects 'lSGL_ConfigProperty' and 'lSGL_Generator'. From 'lSGL_ConfigProperty', the role 'lSGL_ConfigProperty' has cardinality 0..*, and from 'lSGL_Generator', the role 'lSGL_Generator6' has cardinality 0..*.
+An association connects 'lSGL_Generator' and 'lSGL_Config'. From 'lSGL_Generator', the role 'lSGL_Generator8' has cardinality 0..*, and from 'lSGL_Config', the role 'lSGL_Config' has cardinality 0..*.
+An association connects 'lSGL_Config' and 'lSGL_ConfigProperty'. From 'lSGL_Config', the role 'lSGL_Config10' has cardinality 0..*, and from 'lSGL_ConfigProperty', the role 'lSGL_ConfigProperty11' has cardinality 0..*.
+An association connects 'lSGL_EnumItem' and 'lSGL_Enum'. From 'lSGL_EnumItem', the role 'lSGL_EnumItem' has cardinality 0..*, and from 'lSGL_Enum', the role 'lSGL_Enum' has cardinality 0..*.
+An association connects 'lSGL_GeneratorAnnotation' and 'lSGL_Entity'. From 'lSGL_GeneratorAnnotation', the role 'lSGL_GeneratorAnnotation' has cardinality 0..*, and from 'lSGL_Entity', the role 'lSGL_Entity' has cardinality 0..*.
+An association connects 'lSGL_Entity' and 'lSGL_Entity'. From 'lSGL_Entity', the role 'lSGL_Entity16' has cardinality 0..*, and from 'lSGL_Entity', the role 'lSGL_Entity14' has cardinality 0..*.
+An association connects 'lSGL_Entity' and 'lSGL_Attribute'. From 'lSGL_Entity', the role 'lSGL_Entity18' has cardinality 0..*, and from 'lSGL_Attribute', the role 'lSGL_Attribute' has cardinality 0..*.
+An association connects 'lSGL_Type' and 'lSGL_AttributeType'. From 'lSGL_Type', the role 'lSGL_Type20' has cardinality 0..*, and from 'lSGL_AttributeType', the role 'lSGL_AttributeType' has cardinality 0..*.
+An association connects 'lSGL_Attribute' and 'lSGL_Annotation'. From 'lSGL_Attribute', the role 'lSGL_Attribute22' has cardinality 0..*, and from 'lSGL_Annotation', the role 'lSGL_Annotation' has cardinality 0..*.
+An association connects 'lSGL_AttributeType' and 'lSGL_Attribute'. From 'lSGL_AttributeType', the role 'lSGL_AttributeType25' has cardinality 0..*, and from 'lSGL_Attribute', the role 'lSGL_Attribute24' has cardinality 0..*.
+An association connects 'lSGL_Attribute' and 'lSGL_AttributeType'. From 'lSGL_Attribute', the role 'lSGL_Attribute27' has cardinality 0..*, and from 'lSGL_AttributeType', the role 'lSGL_AttributeType28' has cardinality 0..*.
+An association connects 'lSGL_GeneratorAnnotation' and 'lSGL_Generator'. From 'lSGL_GeneratorAnnotation', the role 'lSGL_GeneratorAnnotation30' has cardinality 0..*, and from 'lSGL_Generator', the role 'lSGL_Generator31' has cardinality 0..*.
+An association connects 'lSGL_Config' and 'lSGL_GeneratorAnnotation'. From 'lSGL_Config', the role 'lSGL_Config34' has cardinality 0..*, and from 'lSGL_GeneratorAnnotation', the role 'lSGL_GeneratorAnnotation33' has cardinality 0..*.
+An association connects 'lSGL_GeneratorAnnotation' and 'lSGL_GeneratorConfig'. From 'lSGL_GeneratorAnnotation', the role 'lSGL_GeneratorAnnotation36' has cardinality 0..*, and from 'lSGL_GeneratorConfig', the role 'lSGL_GeneratorConfig' has cardinality 0..*.
+An association connects 'lSGL_GeneratorAnnotation' and 'lSGL_Projection'. From 'lSGL_GeneratorAnnotation', the role 'lSGL_GeneratorAnnotation39' has cardinality 0..*, and from 'lSGL_Projection', the role 'lSGL_Projection38' has cardinality 0..*.
+An association connects 'lSGL_Entity' and 'lSGL_Projection'. From 'lSGL_Entity', the role 'lSGL_Entity42' has cardinality 0..*, and from 'lSGL_Projection', the role 'lSGL_Projection41' has cardinality 0..*.
+An association connects 'lSGL_Projection' and 'lSGL_Attribute'. From 'lSGL_Projection', the role 'lSGL_Projection44' has cardinality 0..*, and from 'lSGL_Attribute', the role 'lSGL_Attribute45' has cardinality 0..*.

@@ -1,0 +1,17 @@
+The domain model 'SimpleTrace' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'SimpleTrace_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleTrace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleTrace_TraceLink' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'SimpleTrace_Trace' and 'SimpleTrace_TraceLink'. From 'SimpleTrace_Trace', the role 'SimpleTrace_Trace' has cardinality 0..*, and from 'SimpleTrace_TraceLink', the role 'SimpleTrace_TraceLink' has cardinality 0..*.
+An association connects 'SimpleTrace_TraceLink' and 'SimpleTrace_EObject'. From 'SimpleTrace_TraceLink', the role 'SimpleTrace_TraceLink2' has cardinality 0..*, and from 'SimpleTrace_EObject', the role 'SimpleTrace_EObject' has cardinality 0..*.
+An association connects 'SimpleTrace_EObject' and 'SimpleTrace_TraceLink'. From 'SimpleTrace_EObject', the role 'SimpleTrace_EObject5' has cardinality 0..*, and from 'SimpleTrace_TraceLink', the role 'SimpleTrace_TraceLink4' has cardinality 0..*.

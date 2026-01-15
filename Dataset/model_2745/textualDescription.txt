@@ -1,0 +1,88 @@
+The domain model 'samplemodel' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'samplemodel_NodeTargetB' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'samplemodel_Link2Link' represents an important domain concept.
+It does not declare any attributes.
+
+'samplemodel_LinkFromLink' represents an important domain concept.
+It does not declare any attributes.
+
+'samplemodel_Child2' represents an important domain concept.
+It has one attribute: 'childLabel', which is of type str.
+
+'samplemodel_LinkCrossLink' represents an important domain concept.
+It does not declare any attributes.
+
+'samplemodel_Child' represents an important domain concept.
+It has one attribute: 'childLabel', which is of type str.
+
+'samplemodel_LinkAtoA' represents an important domain concept.
+It does not declare any attributes.
+
+'samplemodel_LinkAtoC' represents an important domain concept.
+It does not declare any attributes.
+
+'samplemodel_LinkAtoC_Cardinality1' represents an important domain concept.
+It does not declare any attributes.
+
+'samplemodel_LinkAtoC_Cardinality2' represents an important domain concept.
+It does not declare any attributes.
+
+'samplemodel_NodeTargetC' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeTargetB' represents an important domain concept.
+It does not declare any attributes.
+
+'samplemodel_CommonBaseClass' represents an important domain concept.
+It does not declare any attributes.
+
+'samplemodel_UltimateContainer' represents an important domain concept.
+It has one attribute: 'diagramAttribute', which is of type str.
+
+'samplemodel_NodeTargetD' represents an important domain concept.
+It does not declare any attributes.
+
+'samplemodel_NodeSrcA' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'CommonBaseClass' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'samplemodel_NodeSrcA' is a specialization of 'CommonBaseClass'.
+The class 'samplemodel_NodeTargetB' is a specialization of 'CommonBaseClass'.
+The class 'samplemodel_NodeTargetC' is a specialization of 'NodeTargetB'.
+The class 'samplemodel_NodeTargetD' is a specialization of 'NodeTargetB'.
+
+Relationships between classes are modeled using associations.
+An association connects 'samplemodel_CommonBaseClass' and 'samplemodel_UltimateContainer'. From 'samplemodel_CommonBaseClass', the role 'samplemodel_CommonBaseClass' has cardinality 0..*, and from 'samplemodel_UltimateContainer', the role 'samplemodel_UltimateContainer' has cardinality 0..*.
+An association connects 'samplemodel_NodeSrcA' and 'samplemodel_NodeTargetB'. From 'samplemodel_NodeSrcA', the role 'samplemodel_NodeSrcA' has cardinality 0..*, and from 'samplemodel_NodeTargetB', the role 'samplemodel_NodeTargetB' has cardinality 0..*.
+An association connects 'samplemodel_NodeTargetB' and 'samplemodel_NodeSrcA'. From 'samplemodel_NodeTargetB', the role 'samplemodel_NodeTargetB4' has cardinality 0..*, and from 'samplemodel_NodeSrcA', the role 'samplemodel_NodeSrcA3' has cardinality 0..*.
+An association connects 'samplemodel_NodeSrcA' and 'samplemodel_NodeTargetB'. From 'samplemodel_NodeSrcA', the role 'samplemodel_NodeSrcA6' has cardinality 0..*, and from 'samplemodel_NodeTargetB', the role 'samplemodel_NodeTargetB7' has cardinality 0..*.
+An association connects 'samplemodel_NodeSrcA' and 'samplemodel_NodeSrcA'. From 'samplemodel_NodeSrcA', the role 'samplemodel_NodeSrcA10' has cardinality 0..*, and from 'samplemodel_NodeSrcA', the role 'samplemodel_NodeSrcA8' has cardinality 0..*.
+An association connects 'samplemodel_NodeSrcA' and 'samplemodel_LinkAtoC'. From 'samplemodel_NodeSrcA', the role 'samplemodel_NodeSrcA12' has cardinality 0..*, and from 'samplemodel_LinkAtoC', the role 'samplemodel_LinkAtoC' has cardinality 0..*.
+An association connects 'samplemodel_LinkAtoC_Cardinality2' and 'samplemodel_NodeSrcA'. From 'samplemodel_LinkAtoC_Cardinality2', the role 'samplemodel_LinkAtoC_Cardinality2' has cardinality 0..*, and from 'samplemodel_NodeSrcA', the role 'samplemodel_NodeSrcA14' has cardinality 0..*.
+An association connects 'samplemodel_NodeSrcA' and 'samplemodel_LinkAtoC_Cardinality1'. From 'samplemodel_NodeSrcA', the role 'samplemodel_NodeSrcA16' has cardinality 0..*, and from 'samplemodel_LinkAtoC_Cardinality1', the role 'samplemodel_LinkAtoC_Cardinality1' has cardinality 0..*.
+An association connects 'samplemodel_LinkAtoA' and 'samplemodel_NodeSrcA'. From 'samplemodel_LinkAtoA', the role 'samplemodel_LinkAtoA' has cardinality 0..*, and from 'samplemodel_NodeSrcA', the role 'samplemodel_NodeSrcA18' has cardinality 0..*.
+An association connects 'samplemodel_Child' and 'samplemodel_NodeSrcA'. From 'samplemodel_Child', the role 'samplemodel_Child' has cardinality 0..*, and from 'samplemodel_NodeSrcA', the role 'samplemodel_NodeSrcA20' has cardinality 0..*.
+An association connects 'samplemodel_NodeSrcA' and 'samplemodel_Child2'. From 'samplemodel_NodeSrcA', the role 'samplemodel_NodeSrcA22' has cardinality 0..*, and from 'samplemodel_Child2', the role 'samplemodel_Child2' has cardinality 0..*.
+An association connects 'samplemodel_NodeTargetB' and 'samplemodel_Child'. From 'samplemodel_NodeTargetB', the role 'samplemodel_NodeTargetB24' has cardinality 0..*, and from 'samplemodel_Child', the role 'samplemodel_Child25' has cardinality 0..*.
+An association connects 'samplemodel_NodeTargetD' and 'samplemodel_LinkAtoC'. From 'samplemodel_NodeTargetD', the role 'samplemodel_NodeTargetD' has cardinality 0..*, and from 'samplemodel_LinkAtoC', the role 'samplemodel_LinkAtoC27' has cardinality 0..*.
+An association connects 'samplemodel_NodeTargetD' and 'samplemodel_Link2Link'. From 'samplemodel_NodeTargetD', the role 'samplemodel_NodeTargetD29' has cardinality 0..*, and from 'samplemodel_Link2Link', the role 'samplemodel_Link2Link' has cardinality 0..*.
+An association connects 'samplemodel_LinkAtoC' and 'samplemodel_NodeTargetD'. From 'samplemodel_LinkAtoC', the role 'samplemodel_LinkAtoC31' has cardinality 0..*, and from 'samplemodel_NodeTargetD', the role 'samplemodel_NodeTargetD32' has cardinality 0..*.
+An association connects 'samplemodel_LinkAtoC' and 'samplemodel_LinkAtoC'. From 'samplemodel_LinkAtoC', the role 'samplemodel_LinkAtoC35' has cardinality 0..*, and from 'samplemodel_LinkAtoC', the role 'samplemodel_LinkAtoC33' has cardinality 0..*.
+An association connects 'samplemodel_LinkAtoC' and 'samplemodel_NodeTargetC'. From 'samplemodel_LinkAtoC', the role 'samplemodel_LinkAtoC37' has cardinality 0..*, and from 'samplemodel_NodeTargetC', the role 'samplemodel_NodeTargetC' has cardinality 0..*.
+An association connects 'samplemodel_LinkAtoC' and 'samplemodel_LinkFromLink'. From 'samplemodel_LinkAtoC', the role 'samplemodel_LinkAtoC39' has cardinality 0..*, and from 'samplemodel_LinkFromLink', the role 'samplemodel_LinkFromLink' has cardinality 0..*.
+An association connects 'samplemodel_LinkCrossLink' and 'samplemodel_LinkAtoC'. From 'samplemodel_LinkCrossLink', the role 'samplemodel_LinkCrossLink' has cardinality 0..*, and from 'samplemodel_LinkAtoC', the role 'samplemodel_LinkAtoC41' has cardinality 0..*.
+An association connects 'samplemodel_LinkAtoC_Cardinality2' and 'samplemodel_NodeTargetC'. From 'samplemodel_LinkAtoC_Cardinality2', the role 'samplemodel_LinkAtoC_Cardinality243' has cardinality 0..*, and from 'samplemodel_NodeTargetC', the role 'samplemodel_NodeTargetC44' has cardinality 0..*.
+An association connects 'samplemodel_NodeTargetC' and 'samplemodel_LinkAtoC_Cardinality1'. From 'samplemodel_NodeTargetC', the role 'samplemodel_NodeTargetC47' has cardinality 0..*, and from 'samplemodel_LinkAtoC_Cardinality1', the role 'samplemodel_LinkAtoC_Cardinality146' has cardinality 0..*.
+An association connects 'samplemodel_LinkAtoA' and 'samplemodel_NodeSrcA'. From 'samplemodel_LinkAtoA', the role 'samplemodel_LinkAtoA49' has cardinality 0..*, and from 'samplemodel_NodeSrcA', the role 'samplemodel_NodeSrcA50' has cardinality 0..*.
+An association connects 'samplemodel_Child' and 'samplemodel_Child'. From 'samplemodel_Child', the role 'samplemodel_Child53' has cardinality 0..*, and from 'samplemodel_Child', the role 'samplemodel_Child51' has cardinality 0..*.
+An association connects 'samplemodel_LinkAtoC' and 'samplemodel_Link2Link'. From 'samplemodel_LinkAtoC', the role 'samplemodel_LinkAtoC56' has cardinality 0..*, and from 'samplemodel_Link2Link', the role 'samplemodel_Link2Link55' has cardinality 0..*.
+An association connects 'samplemodel_LinkFromLink' and 'samplemodel_NodeTargetD'. From 'samplemodel_LinkFromLink', the role 'samplemodel_LinkFromLink58' has cardinality 0..*, and from 'samplemodel_NodeTargetD', the role 'samplemodel_NodeTargetD59' has cardinality 0..*.
+An association connects 'samplemodel_LinkAtoC' and 'samplemodel_LinkCrossLink'. From 'samplemodel_LinkAtoC', the role 'samplemodel_LinkAtoC62' has cardinality 0..*, and from 'samplemodel_LinkCrossLink', the role 'samplemodel_LinkCrossLink61' has cardinality 0..*.

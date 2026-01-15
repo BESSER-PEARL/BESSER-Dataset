@@ -1,0 +1,69 @@
+The domain model 'HibernateTest' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'HibernateTest_Bz398057B' represents an important domain concept.
+It has the following attributes: 'value', which is of type float; 'dbId', which is of type str.
+
+'Bz398057B' represents an important domain concept.
+It does not declare any attributes.
+
+'HibernateTest_Bz398057B1' represents an important domain concept.
+It has one attribute: 'valueStr', which is of type str.
+
+'Bz398057A' represents an important domain concept.
+It does not declare any attributes.
+
+'HibernateTest_Bz380987_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'HibernateTest_Bz356181_Main' represents an important domain concept.
+It has the following attributes: 'nonTransient', which is of type str; 'transient', which is of type str.
+
+'HibernateTest_Bz356181_Transient' represents an important domain concept.
+It does not declare any attributes.
+
+'HibernateTest_Bz380987_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HibernateTest_Bz398057A' represents an important domain concept.
+It has one attribute: 'dbId', which is of type str.
+
+'HibernateTest_Bz356181_NonTransient' represents an important domain concept.
+It does not declare any attributes.
+
+'HibernateTest_Bz397682P' represents an important domain concept.
+It has one attribute: 'dbId', which is of type str.
+
+'HibernateTest_Bz397682C' represents an important domain concept.
+It has one attribute: 'dbId', which is of type str.
+
+'HibernateTest_Bz380987_Place' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HibernateTest_Bz387752_Main' represents an important domain concept.
+It has the following attributes: 'strUnsettable', which is of type str; 'strSettable', which is of type str; 'enumUnsettable', which is of type str; 'enumSettable', which is of type str.
+
+'HibernateTest_Bz398057A1' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Bz387752_Enum' defines the following possible values: 'VAL0', 'VAL1'.
+
+The model also captures inheritance relationships between classes.
+The class 'HibernateTest_Bz398057A1' is a specialization of 'Bz398057A'.
+The class 'HibernateTest_Bz398057B1' is a specialization of 'Bz398057B'.
+
+Relationships between classes are modeled using associations.
+An association connects 'HibernateTest_Bz356181_Main' and 'HibernateTest_Bz356181_Transient'. From 'HibernateTest_Bz356181_Main', the role 'HibernateTest_Bz356181_Main' has cardinality 0..*, and from 'HibernateTest_Bz356181_Transient', the role 'HibernateTest_Bz356181_Transient' has cardinality 0..*.
+An association connects 'HibernateTest_Bz356181_Main' and 'HibernateTest_Bz356181_NonTransient'. From 'HibernateTest_Bz356181_Main', the role 'HibernateTest_Bz356181_Main2' has cardinality 0..*, and from 'HibernateTest_Bz356181_NonTransient', the role 'HibernateTest_Bz356181_NonTransient' has cardinality 0..*.
+An association connects 'HibernateTest_Bz356181_NonTransient' and 'HibernateTest_Bz356181_Main'. From 'HibernateTest_Bz356181_NonTransient', the role 'HibernateTest_Bz356181_NonTransient4' has cardinality 0..*, and from 'HibernateTest_Bz356181_Main', the role 'HibernateTest_Bz356181_Main5' has cardinality 0..*.
+An association connects 'HibernateTest_Bz380987_Group' and 'HibernateTest_Bz380987_Person'. From 'HibernateTest_Bz380987_Group', the role 'group' has cardinality 0..*, and from 'HibernateTest_Bz380987_Person', the role 'Bz380987_Person' has cardinality 0..*.
+An association connects 'HibernateTest_Bz380987_Place' and 'HibernateTest_Bz380987_Person'. From 'HibernateTest_Bz380987_Place', the role 'places' has cardinality 0..*, and from 'HibernateTest_Bz380987_Person', the role 'Bz380987_Person8' has cardinality 0..*.
+An association connects 'HibernateTest_Bz380987_Person' and 'HibernateTest_Bz380987_Group'. From 'HibernateTest_Bz380987_Person', the role 'people' has cardinality 0..*, and from 'HibernateTest_Bz380987_Group', the role 'Bz380987_Group' has cardinality 0..*.
+An association connects 'HibernateTest_Bz380987_Place' and 'HibernateTest_Bz380987_Person'. From 'HibernateTest_Bz380987_Place', the role 'Bz380987_Place' has cardinality 0..*, and from 'HibernateTest_Bz380987_Person', the role 'people11' has cardinality 0..*.
+An association connects 'HibernateTest_Bz398057B' and 'HibernateTest_Bz398057A'. From 'HibernateTest_Bz398057B', the role 'Bz398057B' has cardinality 0..*, and from 'HibernateTest_Bz398057A', the role 'refToClassA' has cardinality 0..*.
+An association connects 'HibernateTest_Bz398057A' and 'HibernateTest_Bz398057B'. From 'HibernateTest_Bz398057A', the role 'Bz398057A' has cardinality 0..*, and from 'HibernateTest_Bz398057B', the role 'listOfB' has cardinality 0..*.
+An association connects 'HibernateTest_Bz397682P' and 'HibernateTest_Bz397682C'. From 'HibernateTest_Bz397682P', the role 'refToP' has cardinality 0..*, and from 'HibernateTest_Bz397682C', the role 'Bz397682C' has cardinality 0..*.
+An association connects 'HibernateTest_Bz397682C' and 'HibernateTest_Bz397682P'. From 'HibernateTest_Bz397682C', the role 'listOfC' has cardinality 0..*, and from 'HibernateTest_Bz397682P', the role 'Bz397682P' has cardinality 0..*.
+An association connects 'HibernateTest_Bz397682C' and 'HibernateTest_Bz397682C'. From 'HibernateTest_Bz397682C', the role 'HibernateTest_Bz397682C' has cardinality 0..*, and from 'HibernateTest_Bz397682C', the role 'HibernateTest_Bz397682C16' has cardinality 0..*.

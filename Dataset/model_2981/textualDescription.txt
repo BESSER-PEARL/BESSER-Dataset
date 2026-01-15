@@ -1,0 +1,88 @@
+The domain model 'automata' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'automata_StringAction' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'automata_NumberAction' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'automata_BooleanGuard' represents an important domain concept.
+It has the following attributes: 'value', which is of type bool; 'operator', which is of type bool.
+
+'automata_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'automata_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'automata_NumberVariable' represents an important domain concept.
+It has the following attributes: 'initialValue', which is of type str; 'value', which is of type str.
+
+'automata_Automaton' represents an important domain concept.
+It does not declare any attributes.
+
+'automata_NumberGuard' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'operator', which is of type str.
+
+'automata_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'automata_BooleanVariable' represents an important domain concept.
+It has the following attributes: 'value', which is of type bool; 'initialValue', which is of type bool.
+
+'automata_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'automata_StringVariable' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'initialValue', which is of type str.
+
+'Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'automata_State' represents an important domain concept.
+It has the following attributes: 'initial', which is of type bool; 'name', which is of type str.
+
+'automata_StringGuard' represents an important domain concept.
+It has the following attributes: 'operator', which is of type bool; 'value', which is of type str.
+
+'automata_BooleanAction' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StringOperator' defines the following possible values: 'Equal', 'Unequal'.
+The enumeration 'NumberOperator' defines the following possible values: 'GreaterThan', 'GreaterOrEqualThan', 'Equal', 'LessThan', 'LessOrEqualThan', 'Unequal'.
+The enumeration 'BooleanOperator' defines the following possible values: 'Equal', 'Unequal'.
+
+The model also captures inheritance relationships between classes.
+The class 'automata_StringVariable' is a specialization of 'Variable'.
+The class 'automata_NumberVariable' is a specialization of 'Variable'.
+The class 'automata_BooleanVariable' is a specialization of 'Variable'.
+The class 'automata_BooleanGuard' is a specialization of 'Guard'.
+The class 'automata_StringGuard' is a specialization of 'Guard'.
+The class 'automata_NumberGuard' is a specialization of 'Guard'.
+The class 'automata_StringAction' is a specialization of 'Action'.
+The class 'automata_NumberAction' is a specialization of 'Action'.
+The class 'automata_BooleanAction' is a specialization of 'Action'.
+
+Relationships between classes are modeled using associations.
+An association connects 'automata_State' and 'automata_Automaton'. From 'automata_State', the role 'automata_State' has cardinality 0..*, and from 'automata_Automaton', the role 'automata_Automaton' has cardinality 0..*.
+An association connects 'automata_Transition' and 'automata_Automaton'. From 'automata_Transition', the role 'automata_Transition' has cardinality 0..*, and from 'automata_Automaton', the role 'automata_Automaton2' has cardinality 0..*.
+An association connects 'automata_Variable' and 'automata_Automaton'. From 'automata_Variable', the role 'automata_Variable' has cardinality 0..*, and from 'automata_Automaton', the role 'automata_Automaton4' has cardinality 0..*.
+An association connects 'automata_Transition' and 'automata_State'. From 'automata_Transition', the role 'automata_Transition6' has cardinality 0..*, and from 'automata_State', the role 'automata_State7' has cardinality 0..*.
+An association connects 'automata_Transition' and 'automata_State'. From 'automata_Transition', the role 'automata_Transition9' has cardinality 0..*, and from 'automata_State', the role 'automata_State10' has cardinality 0..*.
+An association connects 'automata_Transition' and 'automata_Guard'. From 'automata_Transition', the role 'automata_Transition12' has cardinality 0..*, and from 'automata_Guard', the role 'automata_Guard' has cardinality 0..*.
+An association connects 'automata_Action' and 'automata_Transition'. From 'automata_Action', the role 'automata_Action' has cardinality 0..*, and from 'automata_Transition', the role 'automata_Transition14' has cardinality 0..*.
+An association connects 'automata_BooleanVariable' and 'automata_BooleanGuard'. From 'automata_BooleanVariable', the role 'automata_BooleanVariable' has cardinality 0..*, and from 'automata_BooleanGuard', the role 'automata_BooleanGuard' has cardinality 0..*.
+An association connects 'automata_StringGuard' and 'automata_StringVariable'. From 'automata_StringGuard', the role 'automata_StringGuard' has cardinality 0..*, and from 'automata_StringVariable', the role 'automata_StringVariable' has cardinality 0..*.
+An association connects 'automata_NumberGuard' and 'automata_NumberVariable'. From 'automata_NumberGuard', the role 'automata_NumberGuard' has cardinality 0..*, and from 'automata_NumberVariable', the role 'automata_NumberVariable' has cardinality 0..*.
+An association connects 'automata_StringVariable' and 'automata_StringAction'. From 'automata_StringVariable', the role 'automata_StringVariable19' has cardinality 0..*, and from 'automata_StringAction', the role 'automata_StringAction' has cardinality 0..*.
+An association connects 'automata_NumberVariable' and 'automata_NumberAction'. From 'automata_NumberVariable', the role 'automata_NumberVariable21' has cardinality 0..*, and from 'automata_NumberAction', the role 'automata_NumberAction' has cardinality 0..*.
+An association connects 'automata_BooleanAction' and 'automata_BooleanVariable'. From 'automata_BooleanAction', the role 'automata_BooleanAction' has cardinality 0..*, and from 'automata_BooleanVariable', the role 'automata_BooleanVariable23' has cardinality 0..*.

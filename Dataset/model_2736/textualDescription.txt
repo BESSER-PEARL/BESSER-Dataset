@@ -1,0 +1,17 @@
+The domain model 'AbcToNothing' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'AbcToNothing_C' represents an important domain concept.
+It does not declare any attributes.
+
+'AbcToNothing_classB' represents an important domain concept.
+It does not declare any attributes.
+
+'AbcToNothing_A' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'AbcToNothing_classB' and 'AbcToNothing_A'. From 'AbcToNothing_classB', the role 'AbcToNothing_classB' has cardinality 0..*, and from 'AbcToNothing_A', the role 'AbcToNothing_A' has cardinality 0..*.
+An association connects 'AbcToNothing_C' and 'AbcToNothing_A'. From 'AbcToNothing_C', the role 'AbcToNothing_C' has cardinality 0..*, and from 'AbcToNothing_A', the role 'AbcToNothing_A2' has cardinality 0..*.
+An association connects 'AbcToNothing_C' and 'AbcToNothing_classB'. From 'AbcToNothing_C', the role 'AbcToNothing_C4' has cardinality 0..*, and from 'AbcToNothing_classB', the role 'AbcToNothing_classB5' has cardinality 0..*.

@@ -1,0 +1,592 @@
+The domain model 'haxe' describes the core structural elements and their relationships within the system.
+
+The model defines 120 main class(es).
+
+'haxe_HaxeClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxePackage' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeBinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxePackageAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeWhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeContinue' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeVariableDeclarationFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeModule' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeTypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxePathReference' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeOperation' represents an important domain concept.
+It has one attribute: 'macro', which is of type bool.
+
+'haxe_HaxeImportDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeField' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeFunctionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeComment' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeCastingExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeVariableDeclarationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeLoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeArrayInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeSuperMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeDependencyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeArrayCreation' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeIdentifierLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'HaxeAbstractMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeReturn' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeTypedef' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeNullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeCase' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeTypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeDependencyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeField' represents an important domain concept.
+It has the following attributes: 'isPrivate', which is of type bool; 'isStatic', which is of type bool.
+
+'haxe_HaxeAttribute' represents an important domain concept.
+It has the following attributes: 'setterProperty', which is of type str; 'getterProperty', which is of type str.
+
+'haxe_HaxeFieldDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeFieldContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeCallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeUsingDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeNumberLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'haxe_HaxeBreak' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxePathReferentiable' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeLoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeAbstractOperation' represents an important domain concept.
+It has the following attributes: 'overrides', which is of type bool; 'isInline', which is of type bool.
+
+'HaxeClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeVariableDeclarationGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeSingleVariableAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeMetadataContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeTypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeDoWhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxePathReference' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeTernaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeNamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HaxeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeConstructor' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeType' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeModel' represents an important domain concept.
+It has the following attributes: 'sourceFolder', which is of type str; 'target', which is of type str; 'targetFolder', which is of type str; 'name', which is of type str.
+
+'haxe_HaxeUnsafeCastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeTypeCheckExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeAbstractFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeAbstractFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeHaxedocComment' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxePrefixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'haxe_HaxeAssignment' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'haxe_HaxeTextElement' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'haxe_HaxeSingleVariableDeclaration' represents an important domain concept.
+It has one attribute: 'isOptional', which is of type bool.
+
+'haxe_HaxeEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeFieldContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeType' represents an important domain concept.
+It has the following attributes: 'private', which is of type bool; 'extern', which is of type bool.
+
+'haxe_HaxeConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxePostfixExpression' represents an important domain concept.
+It has one attribute: 'isIncrement', which is of type bool.
+
+'haxe_HaxeFunctionTypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeCatchClause' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeInExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeClassifierAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeAbstract' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeAbstractMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeEmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeFieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeTagElement' represents an important domain concept.
+It has one attribute: 'tagName', which is of type str.
+
+'haxe_HaxeTypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeObjectDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeBooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'haxe_HaxeTryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeUnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeSuperConstructorInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeRegexLiteral' represents an important domain concept.
+It has the following attributes: 'pattern', which is of type str; 'options', which is of type str.
+
+'HaxePathReferentiable' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeComment' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'lineComment', which is of type bool; 'enclosedByParent', which is of type bool; 'prefixOfParent', which is of type bool.
+
+'HaxeMetadataContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeEnumConstructor' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeAbstractOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeThisExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeMetadata' represents an important domain concept.
+It has one attribute: 'compilerMetadata', which is of type bool.
+
+'HaxeUnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeThrowExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeIfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeInfixExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'HaxeSingleVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeParenthizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeClass' represents an important domain concept.
+It has one attribute: 'isInterface', which is of type bool.
+
+'haxe_HaxeBinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeSwitch' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeTypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeStringLiteral' represents an important domain concept.
+It has one attribute: 'escapedValue', which is of type str.
+
+'haxe_HaxeMethodInvocation' represents an important domain concept.
+It does not declare any attributes.
+
+'HaxeExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'haxe_HaxeArrayAccess' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'HaxeTarget' defines the following possible values: 'flash', 'cs', 'java', 'js', 'neko', 'cpp'.
+The enumeration 'HaxeAttributeProperty' defines the following possible values: 'dynamic', 'method', 'default', 'null'.
+The enumeration 'HaxeInfixOperators' defines the following possible values: 'REMAINDER', 'RANGE', 'AND', 'EQ', 'DIVISION', 'LESS_THAN', 'BITWISE_AND', 'TIMES', 'OR', 'SHIFT_ARITH', 'NEQ', 'BITWISE_OR', 'XOR', 'SHIFT_RIGTH', 'GREATER_EQUALS', 'MINUS', 'PLUS', 'SHIFT_LEFT', 'GREATER_THAN', 'LESS_EQUALS'.
+The enumeration 'HaxeAssignmentOperator' defines the following possible values: 'BITWISE_AND_ASSIGN', 'MINUS_ASSIGN', 'SHIFT_LEFT_ASSIGN', 'SHIFT_ARITH_ASSIGN', 'PLUS_ASSIGN', 'DIVISION_ASSIGN', 'TIMES_ASSIGN', 'XOR_ASSIGN', 'SHIFT_RIGTH_ASSIGN', 'REMAINDER_ASSIGN', 'ASSIGN', 'BITWISE_OR_ASSIGN'.
+The enumeration 'HaxePrefixOperators' defines the following possible values: 'DECREMENT', 'MINUS', 'INCREMENT', 'ONECOMPLEMENT', 'NOT', 'PLUS'.
+
+The model also captures inheritance relationships between classes.
+The class 'haxe_HaxeASTNode' is a specialization of 'HaxeModelElement'.
+The class 'haxe_HaxeNamedElement' is a specialization of 'HaxeASTNode'.
+The class 'haxe_HaxeComment' is a specialization of 'HaxeASTNode'.
+The class 'haxe_HaxeHaxedocComment' is a specialization of 'HaxeComment'.
+The class 'haxe_HaxeTagElement' is a specialization of 'HaxeASTNode'.
+The class 'haxe_HaxeTextElement' is a specialization of 'HaxeASTNode'.
+The class 'haxe_HaxePathReferentiable' is a specialization of 'HaxeNamedElement'.
+The class 'haxe_HaxePathReference' is a specialization of 'HaxeModelElement'.
+The class 'haxe_HaxeFieldContainer' is a specialization of 'HaxeModelElement'.
+The class 'haxe_HaxeExpression' is a specialization of 'HaxeASTNode'.
+The class 'haxe_HaxeLoopStatement' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeUnaryExpression' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeBinaryExpression' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeBlock' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeConditionalExpression' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeIfStatement' is a specialization of 'HaxeConditionalExpression'.
+The class 'haxe_HaxeTernaryExpression' is a specialization of 'HaxeConditionalExpression'.
+The class 'haxe_HaxeForStatement' is a specialization of 'HaxeLoopStatement'.
+The class 'haxe_HaxeWhileStatement' is a specialization of 'HaxeLoopStatement'.
+The class 'haxe_HaxeInExpression' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeDoWhileStatement' is a specialization of 'HaxeLoopStatement'.
+The class 'haxe_HaxePrefixExpression' is a specialization of 'HaxeUnaryExpression'.
+The class 'haxe_HaxeInfixExpression' is a specialization of 'HaxeBinaryExpression'.
+The class 'haxe_HaxePostfixExpression' is a specialization of 'HaxeUnaryExpression'.
+The class 'haxe_HaxeReturn' is a specialization of 'HaxeExpressionStatement'.
+The class 'haxe_HaxeBreak' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeContinue' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeThisExpression' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeEmptyStatement' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeConstant' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeStringLiteral' is a specialization of 'HaxeConstant'.
+The class 'haxe_HaxeNullLiteral' is a specialization of 'HaxeConstant'.
+The class 'haxe_HaxeBooleanLiteral' is a specialization of 'HaxeConstant'.
+The class 'haxe_HaxeNumberLiteral' is a specialization of 'HaxeConstant'.
+The class 'haxe_HaxeIdentifierLiteral' is a specialization of 'HaxeConstant'.
+The class 'haxe_HaxeRegexLiteral' is a specialization of 'HaxeConstant'.
+The class 'haxe_HaxeFieldAccess' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeParenthizedExpression' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeArrayInitializer' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeArrayCreation' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeArrayAccess' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeSwitch' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeCase' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeFunctionExpression' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeFunctionExpression' is a specialization of 'HaxeAbstractFunction'.
+The class 'haxe_HaxeCallExpression' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeObjectDeclaration' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeFieldDeclaration' is a specialization of 'HaxeNamedElement'.
+The class 'haxe_HaxeFieldDeclaration' is a specialization of 'HaxeTypedElement'.
+The class 'haxe_HaxeTryExpression' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeCatchClause' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeThrowExpression' is a specialization of 'HaxeExpressionStatement'.
+The class 'haxe_HaxeExpressionStatement' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeCastingExpression' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeUnsafeCastExpression' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeTypeCheckExpression' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeSuperMethodInvocation' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeSuperMethodInvocation' is a specialization of 'HaxeAbstractMethodInvocation'.
+The class 'haxe_HaxeMethodInvocation' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeMethodInvocation' is a specialization of 'HaxeAbstractMethodInvocation'.
+The class 'haxe_HaxeSuperConstructorInvocation' is a specialization of 'HaxeMethodInvocation'.
+The class 'haxe_HaxeSingleVariableAccess' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxePackageAccess' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxePackageAccess' is a specialization of 'HaxePathReference'.
+The class 'haxe_HaxeAssignment' is a specialization of 'HaxeBinaryExpression'.
+The class 'haxe_HaxeAbstractMethodInvocation' is a specialization of 'HaxeASTNode'.
+The class 'haxe_HaxeVariableDeclaration' is a specialization of 'HaxeNamedElement'.
+The class 'haxe_HaxeVariableDeclarationGroup' is a specialization of 'HaxeTypedElement'.
+The class 'haxe_HaxeVariableDeclarationFragment' is a specialization of 'HaxeVariableDeclaration'.
+The class 'haxe_HaxeVariableDeclarationExpression' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeSingleVariableDeclaration' is a specialization of 'HaxeVariableDeclaration'.
+The class 'haxe_HaxeSingleVariableDeclaration' is a specialization of 'HaxeTypedElement'.
+The class 'haxe_HaxePackage' is a specialization of 'HaxePathReferentiable'.
+The class 'haxe_HaxeModule' is a specialization of 'HaxeNamedElement'.
+The class 'haxe_HaxeType' is a specialization of 'HaxePathReferentiable'.
+The class 'haxe_HaxeType' is a specialization of 'HaxeASTNode'.
+The class 'haxe_HaxeClassifier' is a specialization of 'HaxeType'.
+The class 'haxe_HaxeClassifier' is a specialization of 'HaxeFieldContainer'.
+The class 'haxe_HaxeClassifier' is a specialization of 'HaxeMetadataContainer'.
+The class 'haxe_HaxeTypeParameter' is a specialization of 'HaxeType'.
+The class 'haxe_HaxeTypeAccess' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeFunctionTypeAccess' is a specialization of 'HaxeTypeAccess'.
+The class 'haxe_HaxeClassifierAccess' is a specialization of 'HaxePathReference'.
+The class 'haxe_HaxeClassifierAccess' is a specialization of 'HaxeTypeAccess'.
+The class 'haxe_HaxeTypedElement' is a specialization of 'HaxeModelElement'.
+The class 'haxe_HaxeClass' is a specialization of 'HaxeClassifier'.
+The class 'haxe_HaxeAbstract' is a specialization of 'HaxeClassifier'.
+The class 'haxe_HaxeEnum' is a specialization of 'HaxeClassifier'.
+The class 'haxe_HaxeTypedef' is a specialization of 'HaxeType'.
+The class 'haxe_HaxeField' is a specialization of 'HaxeNamedElement'.
+The class 'haxe_HaxeField' is a specialization of 'HaxeMetadataContainer'.
+The class 'haxe_HaxeAttribute' is a specialization of 'HaxeField'.
+The class 'haxe_HaxeAttribute' is a specialization of 'HaxeSingleVariableDeclaration'.
+The class 'haxe_HaxeAbstractFunction' is a specialization of 'HaxeASTNode'.
+The class 'haxe_HaxeAbstractOperation' is a specialization of 'HaxeAbstractFunction'.
+The class 'haxe_HaxeOperation' is a specialization of 'HaxeAbstractOperation'.
+The class 'haxe_HaxeOperation' is a specialization of 'HaxeField'.
+The class 'haxe_HaxeOperation' is a specialization of 'HaxeTypedElement'.
+The class 'haxe_HaxeConstructor' is a specialization of 'HaxeAbstractOperation'.
+The class 'haxe_HaxeConstructor' is a specialization of 'HaxeField'.
+The class 'haxe_HaxeEnumConstructor' is a specialization of 'HaxeVariableDeclaration'.
+The class 'haxe_HaxeEnumConstructor' is a specialization of 'HaxeField'.
+The class 'haxe_HaxeDependencyDeclaration' is a specialization of 'HaxePathReference'.
+The class 'haxe_HaxeDependencyDeclaration' is a specialization of 'HaxeASTNode'.
+The class 'haxe_HaxeImportDeclaration' is a specialization of 'HaxeDependencyDeclaration'.
+The class 'haxe_HaxeUsingDeclaration' is a specialization of 'HaxeDependencyDeclaration'.
+The class 'haxe_HaxeMetadata' is a specialization of 'HaxeNamedElement'.
+The class 'haxe_HaxeMetadata' is a specialization of 'HaxeExpression'.
+The class 'haxe_HaxeMetadataContainer' is a specialization of 'HaxeModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'haxe_HaxeModel' and 'haxe_HaxeClass'. From 'haxe_HaxeModel', the role 'haxe_HaxeModel' has cardinality 0..*, and from 'haxe_HaxeClass', the role 'haxe_HaxeClass' has cardinality 0..*.
+An association connects 'haxe_HaxeModel' and 'haxe_HaxePathReferentiable'. From 'haxe_HaxeModel', the role 'haxe_HaxeModel2' has cardinality 0..*, and from 'haxe_HaxePathReferentiable', the role 'haxe_HaxePathReferentiable' has cardinality 0..*.
+An association connects 'haxe_HaxeModel' and 'haxe_HaxePathReferentiable'. From 'haxe_HaxeModel', the role 'haxe_HaxeModel4' has cardinality 0..*, and from 'haxe_HaxePathReferentiable', the role 'haxe_HaxePathReferentiable5' has cardinality 0..*.
+An association connects 'haxe_HaxeModule' and 'haxe_HaxeModel'. From 'haxe_HaxeModule', the role 'haxe_HaxeModule' has cardinality 0..*, and from 'haxe_HaxeModel', the role 'haxe_HaxeModel7' has cardinality 0..*.
+An association connects 'haxe_HaxeASTNode' and 'haxe_HaxeComment'. From 'haxe_HaxeASTNode', the role 'haxe_HaxeASTNode' has cardinality 0..*, and from 'haxe_HaxeComment', the role 'haxe_HaxeComment' has cardinality 0..*.
+An association connects 'haxe_HaxeHaxedocComment' and 'haxe_HaxeTagElement'. From 'haxe_HaxeHaxedocComment', the role 'haxe_HaxeHaxedocComment' has cardinality 0..*, and from 'haxe_HaxeTagElement', the role 'haxe_HaxeTagElement' has cardinality 0..*.
+An association connects 'haxe_HaxeTagElement' and 'haxe_HaxeASTNode'. From 'haxe_HaxeTagElement', the role 'haxe_HaxeTagElement11' has cardinality 0..*, and from 'haxe_HaxeASTNode', the role 'haxe_HaxeASTNode12' has cardinality 0..*.
+An association connects 'haxe_HaxePackage' and 'haxe_HaxePathReferentiable'. From 'haxe_HaxePackage', the role 'HaxePackage' has cardinality 0..*, and from 'haxe_HaxePathReferentiable', the role 'childrenReferences' has cardinality 0..*.
+An association connects 'haxe_HaxePathReferentiable' and 'haxe_HaxePathReference'. From 'haxe_HaxePathReferentiable', the role 'referencedTerminal' has cardinality 0..*, and from 'haxe_HaxePathReference', the role 'HaxePathReference' has cardinality 0..*.
+An association connects 'haxe_HaxePathReference' and 'haxe_HaxePathReferentiable'. From 'haxe_HaxePathReference', the role 'referencedIn' has cardinality 0..*, and from 'haxe_HaxePathReferentiable', the role 'HaxePathReferentiable' has cardinality 0..*.
+An association connects 'haxe_HaxeFieldContainer' and 'haxe_HaxeField'. From 'haxe_HaxeFieldContainer', the role 'fieldContainer' has cardinality 0..*, and from 'haxe_HaxeField', the role 'HaxeField' has cardinality 0..*.
+An association connects 'haxe_HaxeLoopStatement' and 'haxe_HaxeExpression'. From 'haxe_HaxeLoopStatement', the role 'haxe_HaxeLoopStatement' has cardinality 0..*, and from 'haxe_HaxeExpression', the role 'haxe_HaxeExpression' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeLoopStatement'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression20' has cardinality 0..*, and from 'haxe_HaxeLoopStatement', the role 'haxe_HaxeLoopStatement19' has cardinality 0..*.
+An association connects 'haxe_HaxeUnaryExpression' and 'haxe_HaxeExpression'. From 'haxe_HaxeUnaryExpression', the role 'haxe_HaxeUnaryExpression' has cardinality 0..*, and from 'haxe_HaxeExpression', the role 'haxe_HaxeExpression22' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeBinaryExpression'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression24' has cardinality 0..*, and from 'haxe_HaxeBinaryExpression', the role 'haxe_HaxeBinaryExpression' has cardinality 0..*.
+An association connects 'haxe_HaxeBinaryExpression' and 'haxe_HaxeExpression'. From 'haxe_HaxeBinaryExpression', the role 'haxe_HaxeBinaryExpression26' has cardinality 0..*, and from 'haxe_HaxeExpression', the role 'haxe_HaxeExpression27' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeBlock'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression29' has cardinality 0..*, and from 'haxe_HaxeBlock', the role 'haxe_HaxeBlock' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeConditionalExpression'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression31' has cardinality 0..*, and from 'haxe_HaxeConditionalExpression', the role 'haxe_HaxeConditionalExpression' has cardinality 0..*.
+An association connects 'haxe_HaxeConditionalExpression' and 'haxe_HaxeExpression'. From 'haxe_HaxeConditionalExpression', the role 'haxe_HaxeConditionalExpression33' has cardinality 0..*, and from 'haxe_HaxeExpression', the role 'haxe_HaxeExpression34' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeIfStatement'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression36' has cardinality 0..*, and from 'haxe_HaxeIfStatement', the role 'haxe_HaxeIfStatement' has cardinality 0..*.
+An association connects 'haxe_HaxeTernaryExpression' and 'haxe_HaxeExpression'. From 'haxe_HaxeTernaryExpression', the role 'haxe_HaxeTernaryExpression' has cardinality 0..*, and from 'haxe_HaxeExpression', the role 'haxe_HaxeExpression38' has cardinality 0..*.
+An association connects 'haxe_HaxeForStatement' and 'haxe_HaxeSingleVariableDeclaration'. From 'haxe_HaxeForStatement', the role 'haxe_HaxeForStatement' has cardinality 0..*, and from 'haxe_HaxeSingleVariableDeclaration', the role 'haxe_HaxeSingleVariableDeclaration' has cardinality 0..*.
+An association connects 'haxe_HaxeInExpression' and 'haxe_HaxeSingleVariableDeclaration'. From 'haxe_HaxeInExpression', the role 'haxe_HaxeInExpression' has cardinality 0..*, and from 'haxe_HaxeSingleVariableDeclaration', the role 'haxe_HaxeSingleVariableDeclaration41' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeInExpression'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression44' has cardinality 0..*, and from 'haxe_HaxeInExpression', the role 'haxe_HaxeInExpression43' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeInfixExpression'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression46' has cardinality 0..*, and from 'haxe_HaxeInfixExpression', the role 'haxe_HaxeInfixExpression' has cardinality 0..*.
+An association connects 'haxe_HaxeFieldAccess' and 'haxe_HaxeSingleVariableAccess'. From 'haxe_HaxeFieldAccess', the role 'haxe_HaxeFieldAccess' has cardinality 0..*, and from 'haxe_HaxeSingleVariableAccess', the role 'haxe_HaxeSingleVariableAccess' has cardinality 0..*.
+An association connects 'haxe_HaxeFieldAccess' and 'haxe_HaxeExpression'. From 'haxe_HaxeFieldAccess', the role 'haxe_HaxeFieldAccess49' has cardinality 0..*, and from 'haxe_HaxeExpression', the role 'haxe_HaxeExpression50' has cardinality 0..*.
+An association connects 'haxe_HaxeParenthizedExpression' and 'haxe_HaxeExpression'. From 'haxe_HaxeParenthizedExpression', the role 'haxe_HaxeParenthizedExpression' has cardinality 0..*, and from 'haxe_HaxeExpression', the role 'haxe_HaxeExpression52' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeArrayInitializer'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression54' has cardinality 0..*, and from 'haxe_HaxeArrayInitializer', the role 'haxe_HaxeArrayInitializer' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeArrayCreation'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression56' has cardinality 0..*, and from 'haxe_HaxeArrayCreation', the role 'haxe_HaxeArrayCreation' has cardinality 0..*.
+An association connects 'haxe_HaxeArrayCreation' and 'haxe_HaxeArrayInitializer'. From 'haxe_HaxeArrayCreation', the role 'haxe_HaxeArrayCreation58' has cardinality 0..*, and from 'haxe_HaxeArrayInitializer', the role 'haxe_HaxeArrayInitializer59' has cardinality 0..*.
+An association connects 'haxe_HaxeArrayCreation' and 'haxe_HaxeTypeAccess'. From 'haxe_HaxeArrayCreation', the role 'haxe_HaxeArrayCreation61' has cardinality 0..*, and from 'haxe_HaxeTypeAccess', the role 'haxe_HaxeTypeAccess' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeArrayAccess'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression63' has cardinality 0..*, and from 'haxe_HaxeArrayAccess', the role 'haxe_HaxeArrayAccess' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeArrayAccess'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression66' has cardinality 0..*, and from 'haxe_HaxeArrayAccess', the role 'haxe_HaxeArrayAccess65' has cardinality 0..*.
+An association connects 'haxe_HaxeSwitch' and 'haxe_HaxeExpression'. From 'haxe_HaxeSwitch', the role 'haxe_HaxeSwitch' has cardinality 0..*, and from 'haxe_HaxeExpression', the role 'haxe_HaxeExpression68' has cardinality 0..*.
+An association connects 'haxe_HaxeCase' and 'haxe_HaxeSwitch'. From 'haxe_HaxeCase', the role 'haxe_HaxeCase' has cardinality 0..*, and from 'haxe_HaxeSwitch', the role 'haxe_HaxeSwitch70' has cardinality 0..*.
+An association connects 'haxe_HaxeSwitch' and 'haxe_HaxeExpression'. From 'haxe_HaxeSwitch', the role 'haxe_HaxeSwitch72' has cardinality 0..*, and from 'haxe_HaxeExpression', the role 'haxe_HaxeExpression73' has cardinality 0..*.
+An association connects 'haxe_HaxeCase' and 'haxe_HaxeExpression'. From 'haxe_HaxeCase', the role 'haxe_HaxeCase75' has cardinality 0..*, and from 'haxe_HaxeExpression', the role 'haxe_HaxeExpression76' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeCase'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression79' has cardinality 0..*, and from 'haxe_HaxeCase', the role 'haxe_HaxeCase78' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeCallExpression'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression81' has cardinality 0..*, and from 'haxe_HaxeCallExpression', the role 'haxe_HaxeCallExpression' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeCallExpression'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression84' has cardinality 0..*, and from 'haxe_HaxeCallExpression', the role 'haxe_HaxeCallExpression83' has cardinality 0..*.
+An association connects 'haxe_HaxeObjectDeclaration' and 'haxe_HaxeTypeAccess'. From 'haxe_HaxeObjectDeclaration', the role 'haxe_HaxeObjectDeclaration' has cardinality 0..*, and from 'haxe_HaxeTypeAccess', the role 'haxe_HaxeTypeAccess86' has cardinality 0..*.
+An association connects 'haxe_HaxeFieldDeclaration' and 'haxe_HaxeObjectDeclaration'. From 'haxe_HaxeFieldDeclaration', the role 'haxe_HaxeFieldDeclaration' has cardinality 0..*, and from 'haxe_HaxeObjectDeclaration', the role 'haxe_HaxeObjectDeclaration88' has cardinality 0..*.
+An association connects 'haxe_HaxeFieldDeclaration' and 'haxe_HaxeExpression'. From 'haxe_HaxeFieldDeclaration', the role 'haxe_HaxeFieldDeclaration90' has cardinality 0..*, and from 'haxe_HaxeExpression', the role 'haxe_HaxeExpression91' has cardinality 0..*.
+An association connects 'haxe_HaxeTryExpression' and 'haxe_HaxeExpression'. From 'haxe_HaxeTryExpression', the role 'haxe_HaxeTryExpression' has cardinality 0..*, and from 'haxe_HaxeExpression', the role 'haxe_HaxeExpression93' has cardinality 0..*.
+An association connects 'haxe_HaxeTryExpression' and 'haxe_HaxeCatchClause'. From 'haxe_HaxeTryExpression', the role 'haxe_HaxeTryExpression95' has cardinality 0..*, and from 'haxe_HaxeCatchClause', the role 'haxe_HaxeCatchClause' has cardinality 0..*.
+An association connects 'haxe_HaxeSingleVariableDeclaration' and 'haxe_HaxeCatchClause'. From 'haxe_HaxeSingleVariableDeclaration', the role 'HaxeSingleVariableDeclaration' has cardinality 0..*, and from 'haxe_HaxeCatchClause', the role 'catchClause' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeCatchClause'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression99' has cardinality 0..*, and from 'haxe_HaxeCatchClause', the role 'haxe_HaxeCatchClause98' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeExpressionStatement'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression101' has cardinality 0..*, and from 'haxe_HaxeExpressionStatement', the role 'haxe_HaxeExpressionStatement' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeCastingExpression'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression103' has cardinality 0..*, and from 'haxe_HaxeCastingExpression', the role 'haxe_HaxeCastingExpression' has cardinality 0..*.
+An association connects 'haxe_HaxeCastingExpression' and 'haxe_HaxeTypeAccess'. From 'haxe_HaxeCastingExpression', the role 'haxe_HaxeCastingExpression105' has cardinality 0..*, and from 'haxe_HaxeTypeAccess', the role 'haxe_HaxeTypeAccess106' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeUnsafeCastExpression'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression108' has cardinality 0..*, and from 'haxe_HaxeUnsafeCastExpression', the role 'haxe_HaxeUnsafeCastExpression' has cardinality 0..*.
+An association connects 'haxe_HaxeTypeCheckExpression' and 'haxe_HaxeExpression'. From 'haxe_HaxeTypeCheckExpression', the role 'haxe_HaxeTypeCheckExpression' has cardinality 0..*, and from 'haxe_HaxeExpression', the role 'haxe_HaxeExpression110' has cardinality 0..*.
+An association connects 'haxe_HaxeTypeCheckExpression' and 'haxe_HaxeTypeAccess'. From 'haxe_HaxeTypeCheckExpression', the role 'haxe_HaxeTypeCheckExpression112' has cardinality 0..*, and from 'haxe_HaxeTypeAccess', the role 'haxe_HaxeTypeAccess113' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeMethodInvocation'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression115' has cardinality 0..*, and from 'haxe_HaxeMethodInvocation', the role 'haxe_HaxeMethodInvocation' has cardinality 0..*.
+An association connects 'haxe_HaxeSingleVariableAccess' and 'haxe_HaxeExpression'. From 'haxe_HaxeSingleVariableAccess', the role 'haxe_HaxeSingleVariableAccess117' has cardinality 0..*, and from 'haxe_HaxeExpression', the role 'haxe_HaxeExpression118' has cardinality 0..*.
+An association connects 'haxe_HaxeSingleVariableAccess' and 'haxe_HaxeVariableDeclaration'. From 'haxe_HaxeSingleVariableAccess', the role 'usageInVariableAccess' has cardinality 0..*, and from 'haxe_HaxeVariableDeclaration', the role 'HaxeVariableDeclaration' has cardinality 0..*.
+An association connects 'haxe_HaxePackageAccess' and 'haxe_HaxePackageAccess'. From 'haxe_HaxePackageAccess', the role 'haxe_HaxePackageAccess120' has cardinality 0..*, and from 'haxe_HaxePackageAccess', the role 'haxe_HaxePackageAccess' has cardinality 0..*.
+An association connects 'haxe_HaxeAbstractOperation' and 'haxe_HaxeAbstractMethodInvocation'. From 'haxe_HaxeAbstractOperation', the role 'haxe_HaxeAbstractOperation' has cardinality 0..*, and from 'haxe_HaxeAbstractMethodInvocation', the role 'haxe_HaxeAbstractMethodInvocation' has cardinality 0..*.
+An association connects 'haxe_HaxeAbstractMethodInvocation' and 'haxe_HaxeExpression'. From 'haxe_HaxeAbstractMethodInvocation', the role 'haxe_HaxeAbstractMethodInvocation124' has cardinality 0..*, and from 'haxe_HaxeExpression', the role 'haxe_HaxeExpression125' has cardinality 0..*.
+An association connects 'haxe_HaxeAbstractMethodInvocation' and 'haxe_HaxeTypeAccess'. From 'haxe_HaxeAbstractMethodInvocation', the role 'haxe_HaxeAbstractMethodInvocation127' has cardinality 0..*, and from 'haxe_HaxeTypeAccess', the role 'haxe_HaxeTypeAccess128' has cardinality 0..*.
+An association connects 'haxe_HaxeVariableDeclaration' and 'haxe_HaxeSingleVariableAccess'. From 'haxe_HaxeVariableDeclaration', the role 'variable' has cardinality 0..*, and from 'haxe_HaxeSingleVariableAccess', the role 'HaxeSingleVariableAccess' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeVariableDeclaration'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression131' has cardinality 0..*, and from 'haxe_HaxeVariableDeclaration', the role 'haxe_HaxeVariableDeclaration' has cardinality 0..*.
+An association connects 'haxe_HaxeVariableDeclarationGroup' and 'haxe_HaxeVariableDeclarationExpression'. From 'haxe_HaxeVariableDeclarationGroup', the role 'groups' has cardinality 0..*, and from 'haxe_HaxeVariableDeclarationExpression', the role 'HaxeVariableDeclarationExpression' has cardinality 0..*.
+An association connects 'haxe_HaxeVariableDeclarationGroup' and 'haxe_HaxeExpression'. From 'haxe_HaxeVariableDeclarationGroup', the role 'haxe_HaxeVariableDeclarationGroup' has cardinality 0..*, and from 'haxe_HaxeExpression', the role 'haxe_HaxeExpression134' has cardinality 0..*.
+An association connects 'haxe_HaxeVariableDeclarationFragment' and 'haxe_HaxeVariableDeclarationGroup'. From 'haxe_HaxeVariableDeclarationFragment', the role 'HaxeVariableDeclarationFragment' has cardinality 0..*, and from 'haxe_HaxeVariableDeclarationGroup', the role 'variablesContainer' has cardinality 0..*.
+An association connects 'haxe_HaxeVariableDeclarationFragment' and 'haxe_HaxeVariableDeclarationGroup'. From 'haxe_HaxeVariableDeclarationFragment', the role 'fragments' has cardinality 0..*, and from 'haxe_HaxeVariableDeclarationGroup', the role 'HaxeVariableDeclarationGroup' has cardinality 0..*.
+An association connects 'haxe_HaxeVariableDeclarationGroup' and 'haxe_HaxeVariableDeclarationExpression'. From 'haxe_HaxeVariableDeclarationGroup', the role 'HaxeVariableDeclarationGroup138' has cardinality 0..*, and from 'haxe_HaxeVariableDeclarationExpression', the role 'container' has cardinality 0..*.
+An association connects 'haxe_HaxeCatchClause' and 'haxe_HaxeSingleVariableDeclaration'. From 'haxe_HaxeCatchClause', the role 'HaxeCatchClause' has cardinality 0..*, and from 'haxe_HaxeSingleVariableDeclaration', the role 'exception' has cardinality 0..*.
+An association connects 'haxe_HaxePathReferentiable' and 'haxe_HaxePackage'. From 'haxe_HaxePathReferentiable', the role 'HaxePathReferentiable141' has cardinality 0..*, and from 'haxe_HaxePackage', the role 'parentReference' has cardinality 0..*.
+An association connects 'haxe_HaxePackage' and 'haxe_HaxePackage'. From 'haxe_HaxePackage', the role 'haxe_HaxePackage142' has cardinality 0..*, and from 'haxe_HaxePackage', the role 'haxe_HaxePackage' has cardinality 0..*.
+An association connects 'haxe_HaxePackage' and 'haxe_HaxeType'. From 'haxe_HaxePackage', the role 'haxe_HaxePackage145' has cardinality 0..*, and from 'haxe_HaxeType', the role 'haxe_HaxeType' has cardinality 0..*.
+An association connects 'haxe_HaxeModule' and 'haxe_HaxeComment'. From 'haxe_HaxeModule', the role 'haxe_HaxeModule147' has cardinality 0..*, and from 'haxe_HaxeComment', the role 'haxe_HaxeComment148' has cardinality 0..*.
+An association connects 'haxe_HaxeModule' and 'haxe_HaxeDependencyDeclaration'. From 'haxe_HaxeModule', the role 'haxe_HaxeModule150' has cardinality 0..*, and from 'haxe_HaxeDependencyDeclaration', the role 'haxe_HaxeDependencyDeclaration' has cardinality 0..*.
+An association connects 'haxe_HaxeModule' and 'haxe_HaxePackage'. From 'haxe_HaxeModule', the role 'haxe_HaxeModule152' has cardinality 0..*, and from 'haxe_HaxePackage', the role 'haxe_HaxePackage153' has cardinality 0..*.
+An association connects 'haxe_HaxeType' and 'haxe_HaxeModule'. From 'haxe_HaxeType', the role 'HaxeType' has cardinality 0..*, and from 'haxe_HaxeModule', the role 'containerModule' has cardinality 0..*.
+An association connects 'haxe_HaxeType' and 'haxe_HaxeModule'. From 'haxe_HaxeType', the role 'theElements' has cardinality 0..*, and from 'haxe_HaxeModule', the role 'HaxeModule' has cardinality 0..*.
+An association connects 'haxe_HaxeType' and 'haxe_HaxeComment'. From 'haxe_HaxeType', the role 'haxe_HaxeType157' has cardinality 0..*, and from 'haxe_HaxeComment', the role 'haxe_HaxeComment158' has cardinality 0..*.
+An association connects 'haxe_HaxeType' and 'haxe_HaxeComment'. From 'haxe_HaxeType', the role 'haxe_HaxeType160' has cardinality 0..*, and from 'haxe_HaxeComment', the role 'haxe_HaxeComment161' has cardinality 0..*.
+An association connects 'haxe_HaxeTypeParameter' and 'haxe_HaxeType'. From 'haxe_HaxeTypeParameter', the role 'haxe_HaxeTypeParameter' has cardinality 0..*, and from 'haxe_HaxeType', the role 'haxe_HaxeType163' has cardinality 0..*.
+An association connects 'haxe_HaxePackage' and 'haxe_HaxeClassifier'. From 'haxe_HaxePackage', the role 'haxe_HaxePackage165' has cardinality 0..*, and from 'haxe_HaxeClassifier', the role 'haxe_HaxeClassifier' has cardinality 0..*.
+An association connects 'haxe_HaxeOperation' and 'haxe_HaxeClassifier'. From 'haxe_HaxeOperation', the role 'haxe_HaxeOperation' has cardinality 0..*, and from 'haxe_HaxeClassifier', the role 'haxe_HaxeClassifier167' has cardinality 0..*.
+An association connects 'haxe_HaxeClassifier' and 'haxe_HaxeAttribute'. From 'haxe_HaxeClassifier', the role 'haxe_HaxeClassifier169' has cardinality 0..*, and from 'haxe_HaxeAttribute', the role 'haxe_HaxeAttribute' has cardinality 0..*.
+An association connects 'haxe_HaxeClassifier' and 'haxe_HaxeConstructor'. From 'haxe_HaxeClassifier', the role 'haxe_HaxeClassifier171' has cardinality 0..*, and from 'haxe_HaxeConstructor', the role 'haxe_HaxeConstructor' has cardinality 0..*.
+An association connects 'haxe_HaxeTypeAccess' and 'haxe_HaxeTypeParameter'. From 'haxe_HaxeTypeAccess', the role 'haxe_HaxeTypeAccess174' has cardinality 0..*, and from 'haxe_HaxeTypeParameter', the role 'haxe_HaxeTypeParameter173' has cardinality 0..*.
+An association connects 'haxe_HaxeTypeAccess' and 'haxe_HaxeFunctionTypeAccess'. From 'haxe_HaxeTypeAccess', the role 'haxe_HaxeTypeAccess176' has cardinality 0..*, and from 'haxe_HaxeFunctionTypeAccess', the role 'haxe_HaxeFunctionTypeAccess' has cardinality 0..*.
+An association connects 'haxe_HaxeFunctionTypeAccess' and 'haxe_HaxeTypeAccess'. From 'haxe_HaxeFunctionTypeAccess', the role 'haxe_HaxeFunctionTypeAccess178' has cardinality 0..*, and from 'haxe_HaxeTypeAccess', the role 'haxe_HaxeTypeAccess179' has cardinality 0..*.
+An association connects 'haxe_HaxeTypeAccess' and 'haxe_HaxeClassifierAccess'. From 'haxe_HaxeTypeAccess', the role 'haxe_HaxeTypeAccess181' has cardinality 0..*, and from 'haxe_HaxeClassifierAccess', the role 'haxe_HaxeClassifierAccess' has cardinality 0..*.
+An association connects 'haxe_HaxeTypedElement' and 'haxe_HaxeTypeAccess'. From 'haxe_HaxeTypedElement', the role 'haxe_HaxeTypedElement' has cardinality 0..*, and from 'haxe_HaxeTypeAccess', the role 'haxe_HaxeTypeAccess183' has cardinality 0..*.
+An association connects 'haxe_HaxeClass' and 'haxe_HaxeClassifierAccess'. From 'haxe_HaxeClass', the role 'haxe_HaxeClass185' has cardinality 0..*, and from 'haxe_HaxeClassifierAccess', the role 'haxe_HaxeClassifierAccess186' has cardinality 0..*.
+An association connects 'haxe_HaxeClassifierAccess' and 'haxe_HaxeClass'. From 'haxe_HaxeClassifierAccess', the role 'haxe_HaxeClassifierAccess189' has cardinality 0..*, and from 'haxe_HaxeClass', the role 'haxe_HaxeClass188' has cardinality 0..*.
+An association connects 'haxe_HaxeTypeAccess' and 'haxe_HaxeAbstract'. From 'haxe_HaxeTypeAccess', the role 'haxe_HaxeTypeAccess191' has cardinality 0..*, and from 'haxe_HaxeAbstract', the role 'haxe_HaxeAbstract' has cardinality 0..*.
+An association connects 'haxe_HaxeTypeAccess' and 'haxe_HaxeAbstract'. From 'haxe_HaxeTypeAccess', the role 'haxe_HaxeTypeAccess194' has cardinality 0..*, and from 'haxe_HaxeAbstract', the role 'haxe_HaxeAbstract193' has cardinality 0..*.
+An association connects 'haxe_HaxeAbstract' and 'haxe_HaxeTypeAccess'. From 'haxe_HaxeAbstract', the role 'haxe_HaxeAbstract196' has cardinality 0..*, and from 'haxe_HaxeTypeAccess', the role 'haxe_HaxeTypeAccess197' has cardinality 0..*.
+An association connects 'haxe_HaxeEnum' and 'haxe_HaxeEnumConstructor'. From 'haxe_HaxeEnum', the role 'haxe_HaxeEnum' has cardinality 0..*, and from 'haxe_HaxeEnumConstructor', the role 'haxe_HaxeEnumConstructor' has cardinality 0..*.
+An association connects 'haxe_HaxeTypedef' and 'haxe_HaxeTypeAccess'. From 'haxe_HaxeTypedef', the role 'haxe_HaxeTypedef' has cardinality 0..*, and from 'haxe_HaxeTypeAccess', the role 'haxe_HaxeTypeAccess200' has cardinality 0..*.
+An association connects 'haxe_HaxeField' and 'haxe_HaxeFieldContainer'. From 'haxe_HaxeField', the role 'haxeFields' has cardinality 0..*, and from 'haxe_HaxeFieldContainer', the role 'HaxeFieldContainer' has cardinality 0..*.
+An association connects 'haxe_HaxeOperation' and 'haxe_HaxeAttribute'. From 'haxe_HaxeOperation', the role 'haxe_HaxeOperation204' has cardinality 0..*, and from 'haxe_HaxeAttribute', the role 'haxe_HaxeAttribute203' has cardinality 0..*.
+An association connects 'haxe_HaxeOperation' and 'haxe_HaxeAttribute'. From 'haxe_HaxeOperation', the role 'haxe_HaxeOperation207' has cardinality 0..*, and from 'haxe_HaxeAttribute', the role 'haxe_HaxeAttribute206' has cardinality 0..*.
+An association connects 'haxe_HaxeSingleVariableDeclaration' and 'haxe_HaxeAbstractFunction'. From 'haxe_HaxeSingleVariableDeclaration', the role 'haxe_HaxeSingleVariableDeclaration209' has cardinality 0..*, and from 'haxe_HaxeAbstractFunction', the role 'haxe_HaxeAbstractFunction' has cardinality 0..*.
+An association connects 'haxe_HaxeAbstractFunction' and 'haxe_HaxeTypeParameter'. From 'haxe_HaxeAbstractFunction', the role 'haxe_HaxeAbstractFunction211' has cardinality 0..*, and from 'haxe_HaxeTypeParameter', the role 'haxe_HaxeTypeParameter212' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeAbstractFunction'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression215' has cardinality 0..*, and from 'haxe_HaxeAbstractFunction', the role 'haxe_HaxeAbstractFunction214' has cardinality 0..*.
+An association connects 'haxe_HaxeConstructor' and 'haxe_HaxeClass'. From 'haxe_HaxeConstructor', the role 'haxe_HaxeConstructor217' has cardinality 0..*, and from 'haxe_HaxeClass', the role 'haxe_HaxeClass218' has cardinality 0..*.
+An association connects 'haxe_HaxeEnumConstructor' and 'haxe_HaxeSingleVariableDeclaration'. From 'haxe_HaxeEnumConstructor', the role 'haxe_HaxeEnumConstructor220' has cardinality 0..*, and from 'haxe_HaxeSingleVariableDeclaration', the role 'haxe_HaxeSingleVariableDeclaration221' has cardinality 0..*.
+An association connects 'haxe_HaxeField' and 'haxe_HaxeImportDeclaration'. From 'haxe_HaxeField', the role 'haxe_HaxeField' has cardinality 0..*, and from 'haxe_HaxeImportDeclaration', the role 'haxe_HaxeImportDeclaration' has cardinality 0..*.
+An association connects 'haxe_HaxeField' and 'haxe_HaxeUsingDeclaration'. From 'haxe_HaxeField', the role 'haxe_HaxeField224' has cardinality 0..*, and from 'haxe_HaxeUsingDeclaration', the role 'haxe_HaxeUsingDeclaration' has cardinality 0..*.
+An association connects 'haxe_HaxeMetadataContainer' and 'haxe_HaxeMetadata'. From 'haxe_HaxeMetadataContainer', the role 'HaxeMetadataContainer' has cardinality 0..*, and from 'haxe_HaxeMetadata', the role 'metadata' has cardinality 0..*.
+An association connects 'haxe_HaxeExpression' and 'haxe_HaxeMetadata'. From 'haxe_HaxeExpression', the role 'haxe_HaxeExpression227' has cardinality 0..*, and from 'haxe_HaxeMetadata', the role 'haxe_HaxeMetadata' has cardinality 0..*.
+An association connects 'haxe_HaxeMetadata' and 'haxe_HaxeMetadataContainer'. From 'haxe_HaxeMetadata', the role 'HaxeMetadata' has cardinality 0..*, and from 'haxe_HaxeMetadataContainer', the role 'usedIn' has cardinality 0..*.

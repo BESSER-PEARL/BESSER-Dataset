@@ -1,0 +1,117 @@
+The domain model 'k5' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'k5_G' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'k5_J' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'k5_K' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'P' represents an important domain concept.
+It does not declare any attributes.
+
+'k5_L3' represents an important domain concept.
+It does not declare any attributes.
+
+'k5_P' represents an important domain concept.
+It does not declare any attributes.
+
+'k5_Q' represents an important domain concept.
+It does not declare any attributes.
+
+'N' represents an important domain concept.
+It does not declare any attributes.
+
+'k5_W' represents an important domain concept.
+It has one attribute: 'w', which is of type str.
+
+'k5_X' represents an important domain concept.
+It does not declare any attributes.
+
+'J' represents an important domain concept.
+It does not declare any attributes.
+
+'k5_N' represents an important domain concept.
+It does not declare any attributes.
+
+'k5_I' represents an important domain concept.
+It does not declare any attributes.
+
+'k5_M' represents an important domain concept.
+It does not declare any attributes.
+
+'M' represents an important domain concept.
+It does not declare any attributes.
+
+'k5_L2' represents an important domain concept.
+It has the following attributes: 'l1', which is of type int; 'l2', which is of type int.
+
+'L1' represents an important domain concept.
+It does not declare any attributes.
+
+'k5_L1' represents an important domain concept.
+It has the following attributes: 'id2', which is of type int; 'id1', which is of type str.
+
+'k5_B' represents an important domain concept.
+It does not declare any attributes.
+
+'k5_Y' represents an important domain concept.
+It has one attribute: 'y', which is of type int.
+
+'k5_Z' represents an important domain concept.
+It has the following attributes: 'z3', which is of type str; 'z1', which is of type str; 'z2', which is of type str.
+
+'k5_A' represents an important domain concept.
+It does not declare any attributes.
+
+'k5_C' represents an important domain concept.
+It does not declare any attributes.
+
+'G' represents an important domain concept.
+It does not declare any attributes.
+
+'C' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'k5_A' is a specialization of 'B'.
+The class 'k5_B' is a specialization of 'C'.
+The class 'k5_C' is a specialization of 'G'.
+The class 'k5_M' is a specialization of 'G'.
+The class 'k5_N' is a specialization of 'M'.
+The class 'k5_J' is a specialization of 'A'.
+The class 'k5_P' is a specialization of 'N'.
+The class 'k5_Q' is a specialization of 'P'.
+The class 'k5_I' is a specialization of 'G'.
+The class 'k5_K' is a specialization of 'J'.
+The class 'k5_L3' is a specialization of 'L1'.
+
+Relationships between classes are modeled using associations.
+An association connects 'k5_X' and 'k5_C'. From 'k5_X', the role 'k5_X' has cardinality 0..*, and from 'k5_C', the role 'k5_C' has cardinality 0..*.
+An association connects 'k5_X' and 'k5_P'. From 'k5_X', the role 'k5_X2' has cardinality 0..*, and from 'k5_P', the role 'k5_P' has cardinality 0..*.
+An association connects 'k5_X' and 'k5_Z'. From 'k5_X', the role 'k5_X4' has cardinality 0..*, and from 'k5_Z', the role 'k5_Z' has cardinality 0..*.
+An association connects 'k5_Y' and 'k5_X'. From 'k5_Y', the role 'k5_Y' has cardinality 0..*, and from 'k5_X', the role 'k5_X6' has cardinality 0..*.
+An association connects 'k5_X' and 'k5_W'. From 'k5_X', the role 'k5_X8' has cardinality 0..*, and from 'k5_W', the role 'k5_W' has cardinality 0..*.
+An association connects 'k5_I' and 'k5_B'. From 'k5_I', the role 'k5_I' has cardinality 0..*, and from 'k5_B', the role 'k5_B' has cardinality 0..*.
+An association connects 'k5_Y' and 'k5_B'. From 'k5_Y', the role 'k5_Y12' has cardinality 0..*, and from 'k5_B', the role 'k5_B11' has cardinality 0..*.
+An association connects 'k5_M' and 'k5_C'. From 'k5_M', the role 'k5_M' has cardinality 0..*, and from 'k5_C', the role 'k5_C14' has cardinality 0..*.
+An association connects 'k5_L1' and 'k5_M'. From 'k5_L1', the role 'k5_L1' has cardinality 0..*, and from 'k5_M', the role 'k5_M16' has cardinality 0..*.
+An association connects 'k5_P' and 'k5_A'. From 'k5_P', the role 'k5_P18' has cardinality 0..*, and from 'k5_A', the role 'k5_A' has cardinality 0..*.
+An association connects 'k5_K' and 'k5_P'. From 'k5_K', the role 'k5_K' has cardinality 0..*, and from 'k5_P', the role 'k5_P20' has cardinality 0..*.
+An association connects 'k5_P' and 'k5_J'. From 'k5_P', the role 'k5_P22' has cardinality 0..*, and from 'k5_J', the role 'k5_J' has cardinality 0..*.
+An association connects 'k5_Q' and 'k5_L2'. From 'k5_Q', the role 'k5_Q' has cardinality 0..*, and from 'k5_L2', the role 'k5_L2' has cardinality 0..*.
+An association connects 'k5_C' and 'k5_L1'. From 'k5_C', the role 'k5_C26' has cardinality 0..*, and from 'k5_L1', the role 'k5_L125' has cardinality 0..*.
+An association connects 'k5_M' and 'k5_L1'. From 'k5_M', the role 'k5_M29' has cardinality 0..*, and from 'k5_L1', the role 'k5_L128' has cardinality 0..*.
+An association connects 'k5_Q' and 'k5_L2'. From 'k5_Q', the role 'k5_Q32' has cardinality 0..*, and from 'k5_L2', the role 'k5_L231' has cardinality 0..*.
+An association connects 'k5_K' and 'k5_L2'. From 'k5_K', the role 'k5_K35' has cardinality 0..*, and from 'k5_L2', the role 'k5_L234' has cardinality 0..*.
+An association connects 'k5_L3' and 'k5_Z'. From 'k5_L3', the role 'k5_L3' has cardinality 0..*, and from 'k5_Z', the role 'k5_Z37' has cardinality 0..*.

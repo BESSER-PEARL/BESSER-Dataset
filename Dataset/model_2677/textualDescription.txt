@@ -1,0 +1,77 @@
+The domain model 'refinher' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'D' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher_L' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher_G' represents an important domain concept.
+It does not declare any attributes.
+
+'F' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher_I' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher_B' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher_E' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher_H' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher_C' represents an important domain concept.
+It does not declare any attributes.
+
+'K' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher_F' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'refinher_K' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher_D' represents an important domain concept.
+It does not declare any attributes.
+
+'refinher_A' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'refinher_B' is a specialization of 'Named'.
+The class 'refinher_C' is a specialization of 'Named'.
+The class 'refinher_D' is a specialization of 'B'.
+The class 'refinher_E' is a specialization of 'Named'.
+The class 'refinher_F' is a specialization of 'D'.
+The class 'refinher_G' is a specialization of 'Named'.
+The class 'refinher_I' is a specialization of 'F'.
+The class 'refinher_I' is a specialization of 'K'.
+The class 'refinher_H' is a specialization of 'Named'.
+The class 'refinher_K' is a specialization of 'Named'.
+The class 'refinher_L' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'refinher_B' and 'refinher_A'. From 'refinher_B', the role 'refinher_B' has cardinality 0..*, and from 'refinher_A', the role 'refinher_A' has cardinality 0..*.
+An association connects 'refinher_A' and 'refinher_K'. From 'refinher_A', the role 'refinher_A2' has cardinality 0..*, and from 'refinher_K', the role 'refinher_K' has cardinality 0..*.
+An association connects 'refinher_Named' and 'refinher_A'. From 'refinher_Named', the role 'refinher_Named' has cardinality 0..*, and from 'refinher_A', the role 'refinher_A4' has cardinality 0..*.
+An association connects 'refinher_B' and 'refinher_C'. From 'refinher_B', the role 'refinher_B6' has cardinality 0..*, and from 'refinher_C', the role 'refinher_C' has cardinality 0..*.
+An association connects 'refinher_E' and 'refinher_D'. From 'refinher_E', the role 'refinher_E' has cardinality 0..*, and from 'refinher_D', the role 'refinher_D' has cardinality 0..*.
+An association connects 'refinher_F' and 'refinher_G'. From 'refinher_F', the role 'refinher_F' has cardinality 0..*, and from 'refinher_G', the role 'refinher_G' has cardinality 0..*.
+An association connects 'refinher_H' and 'refinher_F'. From 'refinher_H', the role 'refinher_H' has cardinality 0..*, and from 'refinher_F', the role 'refinher_F10' has cardinality 0..*.
+An association connects 'refinher_K' and 'refinher_L'. From 'refinher_K', the role 'refinher_K12' has cardinality 0..*, and from 'refinher_L', the role 'refinher_L' has cardinality 0..*.

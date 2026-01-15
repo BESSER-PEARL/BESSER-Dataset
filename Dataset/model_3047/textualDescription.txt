@@ -1,0 +1,88 @@
+The domain model 'soa' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'soa_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'soa_EntitiesFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'soa_Exception' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'msg', which is of type str.
+
+'soa_GenericListFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'soa_Module' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'version', which is of type str; 'event', which is of type str.
+
+'Entities' represents an important domain concept.
+It does not declare any attributes.
+
+'soa_Exceptions' represents an important domain concept.
+It does not declare any attributes.
+
+'soa_Enum' represents an important domain concept.
+It has one attribute: 'features', which is of type str.
+
+'soa_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'soa_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'soa_FeatureType' represents an important domain concept.
+It does not declare any attributes.
+
+'soa_Service' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'soa_Architecture' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'soa_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'FeatureType' represents an important domain concept.
+It does not declare any attributes.
+
+'soa_PrimitiveFeature' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'soa_Comment' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'soa_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'soa_Entities' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PrimitiveType' defines the following possible values: 'Timestamp', 'Decimal', 'Float', 'Boolean', 'Byte', 'Short', 'Integer', 'Datetime', 'String', 'Long', 'Date', 'Double'.
+
+The model also captures inheritance relationships between classes.
+The class 'soa_Enum' is a specialization of 'Entities'.
+The class 'soa_Entity' is a specialization of 'Entities'.
+The class 'soa_EntitiesFeature' is a specialization of 'FeatureType'.
+The class 'soa_PrimitiveFeature' is a specialization of 'FeatureType'.
+The class 'soa_GenericListFeature' is a specialization of 'FeatureType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'soa_Architecture' and 'soa_Module'. From 'soa_Architecture', the role 'soa_Architecture' has cardinality 0..*, and from 'soa_Module', the role 'soa_Module' has cardinality 0..*.
+An association connects 'soa_Import' and 'soa_Module'. From 'soa_Import', the role 'soa_Import' has cardinality 0..*, and from 'soa_Module', the role 'soa_Module2' has cardinality 0..*.
+An association connects 'soa_Model' and 'soa_Module'. From 'soa_Model', the role 'soa_Model' has cardinality 0..*, and from 'soa_Module', the role 'soa_Module4' has cardinality 0..*.
+An association connects 'soa_Exceptions' and 'soa_Module'. From 'soa_Exceptions', the role 'soa_Exceptions' has cardinality 0..*, and from 'soa_Module', the role 'soa_Module6' has cardinality 0..*.
+An association connects 'soa_Module' and 'soa_Service'. From 'soa_Module', the role 'soa_Module8' has cardinality 0..*, and from 'soa_Service', the role 'soa_Service' has cardinality 0..*.
+An association connects 'soa_Model' and 'soa_Entities'. From 'soa_Model', the role 'soa_Model10' has cardinality 0..*, and from 'soa_Entities', the role 'soa_Entities' has cardinality 0..*.
+An association connects 'soa_Entity' and 'soa_Feature'. From 'soa_Entity', the role 'soa_Entity' has cardinality 0..*, and from 'soa_Feature', the role 'soa_Feature' has cardinality 0..*.
+An association connects 'soa_Comment' and 'soa_Feature'. From 'soa_Comment', the role 'soa_Comment' has cardinality 0..*, and from 'soa_Feature', the role 'soa_Feature13' has cardinality 0..*.
+An association connects 'soa_FeatureType' and 'soa_Feature'. From 'soa_FeatureType', the role 'soa_FeatureType' has cardinality 0..*, and from 'soa_Feature', the role 'soa_Feature15' has cardinality 0..*.
+An association connects 'soa_Entities' and 'soa_EntitiesFeature'. From 'soa_Entities', the role 'soa_Entities17' has cardinality 0..*, and from 'soa_EntitiesFeature', the role 'soa_EntitiesFeature' has cardinality 0..*.
+An association connects 'soa_FeatureType' and 'soa_GenericListFeature'. From 'soa_FeatureType', the role 'soa_FeatureType19' has cardinality 0..*, and from 'soa_GenericListFeature', the role 'soa_GenericListFeature' has cardinality 0..*.
+An association connects 'soa_Exceptions' and 'soa_Exception'. From 'soa_Exceptions', the role 'soa_Exceptions21' has cardinality 0..*, and from 'soa_Exception', the role 'soa_Exception' has cardinality 0..*.
+An association connects 'soa_Service' and 'soa_Operation'. From 'soa_Service', the role 'soa_Service23' has cardinality 0..*, and from 'soa_Operation', the role 'soa_Operation' has cardinality 0..*.
+An association connects 'soa_Feature' and 'soa_Operation'. From 'soa_Feature', the role 'soa_Feature26' has cardinality 0..*, and from 'soa_Operation', the role 'soa_Operation25' has cardinality 0..*.
+An association connects 'soa_Operation' and 'soa_Feature'. From 'soa_Operation', the role 'soa_Operation28' has cardinality 0..*, and from 'soa_Feature', the role 'soa_Feature29' has cardinality 0..*.
+An association connects 'soa_Exception' and 'soa_Operation'. From 'soa_Exception', the role 'soa_Exception32' has cardinality 0..*, and from 'soa_Operation', the role 'soa_Operation31' has cardinality 0..*.

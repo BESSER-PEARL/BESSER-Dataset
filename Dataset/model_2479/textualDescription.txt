@@ -1,0 +1,17 @@
+The domain model 'traceability' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'traceability_Traceability' represents an important domain concept.
+It does not declare any attributes.
+
+'traceability_Trace' represents an important domain concept.
+It has one attribute: 'ruleDescriptorId', which is of type str.
+
+'traceability_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'traceability_Trace' and 'traceability_Traceability'. From 'traceability_Trace', the role 'traceability_Trace' has cardinality 0..*, and from 'traceability_Traceability', the role 'traceability_Traceability' has cardinality 0..*.
+An association connects 'traceability_Trace' and 'traceability_EObject'. From 'traceability_Trace', the role 'traceability_Trace2' has cardinality 0..*, and from 'traceability_EObject', the role 'traceability_EObject' has cardinality 0..*.
+An association connects 'traceability_EObject' and 'traceability_Trace'. From 'traceability_EObject', the role 'traceability_EObject5' has cardinality 0..*, and from 'traceability_Trace', the role 'traceability_Trace4' has cardinality 0..*.

@@ -1,0 +1,21 @@
+The domain model 'fsmProv' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'fsmProv_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmProv_Trigger' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'fsmProv_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmProv_State' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmProv_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmProv_AbstractState' represents an important domain concept.
+It does not declare any attributes.

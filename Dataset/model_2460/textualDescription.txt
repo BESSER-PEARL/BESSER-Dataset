@@ -1,0 +1,61 @@
+The domain model 'operators' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_PrimitiveExp' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_RealExp' represents an important domain concept.
+It has one attribute: 'realSymbol', which is of type str.
+
+'operators_BinaryOperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_OperatorCallExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_OclExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_UnaryOperatorCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_BooleanExp' represents an important domain concept.
+It has one attribute: 'booleanSymbol', which is of type str.
+
+'operators_NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_IntegerExp' represents an important domain concept.
+It has one attribute: 'integerSymbol', which is of type str.
+
+'operators_StringExp' represents an important domain concept.
+It has one attribute: 'stringSymbol', which is of type str.
+
+'NumericExp' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'operators_OperatorCallExp' is a specialization of 'OclExpression'.
+The class 'operators_BinaryOperatorCallExp' is a specialization of 'OperatorCallExp'.
+The class 'operators_UnaryOperatorCallExp' is a specialization of 'OperatorCallExp'.
+The class 'operators_PrimitiveExp' is a specialization of 'OclExpression'.
+The class 'operators_StringExp' is a specialization of 'PrimitiveExp'.
+The class 'operators_BooleanExp' is a specialization of 'PrimitiveExp'.
+The class 'operators_NumericExp' is a specialization of 'PrimitiveExp'.
+The class 'operators_RealExp' is a specialization of 'NumericExp'.
+The class 'operators_IntegerExp' is a specialization of 'NumericExp'.
+
+Relationships between classes are modeled using associations.
+An association connects 'operators_BinaryOperatorCallExp' and 'operators_OclExpression'. From 'operators_BinaryOperatorCallExp', the role 'operators_BinaryOperatorCallExp' has cardinality 0..*, and from 'operators_OclExpression', the role 'operators_OclExpression' has cardinality 0..*.
+An association connects 'operators_OclExpression' and 'operators_BinaryOperatorCallExp'. From 'operators_OclExpression', the role 'operators_OclExpression3' has cardinality 0..*, and from 'operators_BinaryOperatorCallExp', the role 'operators_BinaryOperatorCallExp2' has cardinality 0..*.
+An association connects 'operators_UnaryOperatorCallExp' and 'operators_OclExpression'. From 'operators_UnaryOperatorCallExp', the role 'operators_UnaryOperatorCallExp' has cardinality 0..*, and from 'operators_OclExpression', the role 'operators_OclExpression5' has cardinality 0..*.

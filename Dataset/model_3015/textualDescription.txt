@@ -1,0 +1,425 @@
+The domain model 'miniJava' describes the core structural elements and their relationships within the system.
+
+The model defines 88 main class(es).
+
+'miniJava_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_TypedDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_IntegerTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Symbol' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_SymbolBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_SuperiorOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'SingleTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_And' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_StringTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'miniJava_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_MethodCall2' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Method' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'static', which is of type bool.
+
+'miniJava_ObjectRefValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'Call' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_NullValue' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_ObjectInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_FieldBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_StringConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'miniJava_TypeDeclaration' represents an important domain concept.
+It has one attribute: 'accessLevel', which is of type str.
+
+'miniJava_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Context' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_NewArray' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Class' represents an important domain concept.
+It has one attribute: 'abstract', which is of type bool.
+
+'miniJava_NewObject' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Neg' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Equality' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_ArrayLength' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_VoidTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_State' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_BooleanTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Assignee' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_BoolConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'miniJava_ClassRef' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_InferiorOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Call' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_FieldAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Null' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Member' represents an important domain concept.
+It has one attribute: 'access', which is of type str.
+
+'miniJava_ArrayAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_MethodCall' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Inequality' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_SymbolRef' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_IntConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'Symbol' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_OutputStream' represents an important domain concept.
+It has one attribute: 'stream', which is of type str.
+
+'TypedDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'miniJava_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_This' represents an important domain concept.
+It does not declare any attributes.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_SingleTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Frame' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_StringValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'miniJava_ArrayInstance' represents an important domain concept.
+It has one attribute: 'size', which is of type str.
+
+'miniJava_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Super' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_IntegerValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'miniJava_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Superior' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_ArrayTypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Inferior' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Program' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'miniJava_PrintStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'Assignee' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_BooleanValue' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'miniJava_TypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_ArrayRefValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'miniJava_NewCall' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AccessLevel' defines the following possible values: 'PROTECTED', 'PUBLIC', 'PRIVATE'.
+
+The model also captures inheritance relationships between classes.
+The class 'miniJava_TypeDeclaration' is a specialization of 'NamedElement'.
+The class 'miniJava_Class' is a specialization of 'TypeDeclaration'.
+The class 'miniJava_Interface' is a specialization of 'TypeDeclaration'.
+The class 'miniJava_Member' is a specialization of 'TypedDeclaration'.
+The class 'miniJava_Method' is a specialization of 'Member'.
+The class 'miniJava_Parameter' is a specialization of 'Symbol'.
+The class 'miniJava_Field' is a specialization of 'Member'.
+The class 'miniJava_Block' is a specialization of 'Statement'.
+The class 'miniJava_PrintStatement' is a specialization of 'Statement'.
+The class 'miniJava_Return' is a specialization of 'Statement'.
+The class 'miniJava_IfStatement' is a specialization of 'Statement'.
+The class 'miniJava_WhileStatement' is a specialization of 'Statement'.
+The class 'miniJava_ForStatement' is a specialization of 'Statement'.
+The class 'miniJava_SingleTypeRef' is a specialization of 'TypeRef'.
+The class 'miniJava_ClassRef' is a specialization of 'SingleTypeRef'.
+The class 'miniJava_TypedDeclaration' is a specialization of 'NamedElement'.
+The class 'miniJava_Symbol' is a specialization of 'TypedDeclaration'.
+The class 'miniJava_VariableDeclaration' is a specialization of 'Symbol'.
+The class 'miniJava_VariableDeclaration' is a specialization of 'Assignee'.
+The class 'miniJava_Assignment' is a specialization of 'Statement'.
+The class 'miniJava_Expression' is a specialization of 'Statement'.
+The class 'miniJava_Expression' is a specialization of 'Assignee'.
+The class 'miniJava_ArrayTypeRef' is a specialization of 'TypeRef'.
+The class 'miniJava_IntegerTypeRef' is a specialization of 'SingleTypeRef'.
+The class 'miniJava_BooleanTypeRef' is a specialization of 'SingleTypeRef'.
+The class 'miniJava_StringTypeRef' is a specialization of 'SingleTypeRef'.
+The class 'miniJava_VoidTypeRef' is a specialization of 'SingleTypeRef'.
+The class 'miniJava_Or' is a specialization of 'Expression'.
+The class 'miniJava_And' is a specialization of 'Expression'.
+The class 'miniJava_Equality' is a specialization of 'Expression'.
+The class 'miniJava_Inequality' is a specialization of 'Expression'.
+The class 'miniJava_SuperiorOrEqual' is a specialization of 'Expression'.
+The class 'miniJava_InferiorOrEqual' is a specialization of 'Expression'.
+The class 'miniJava_Superior' is a specialization of 'Expression'.
+The class 'miniJava_Inferior' is a specialization of 'Expression'.
+The class 'miniJava_Plus' is a specialization of 'Expression'.
+The class 'miniJava_Minus' is a specialization of 'Expression'.
+The class 'miniJava_Multiplication' is a specialization of 'Expression'.
+The class 'miniJava_Division' is a specialization of 'Expression'.
+The class 'miniJava_ArrayAccess' is a specialization of 'Expression'.
+The class 'miniJava_ArrayLength' is a specialization of 'Expression'.
+The class 'miniJava_Not' is a specialization of 'Expression'.
+The class 'miniJava_Neg' is a specialization of 'Expression'.
+The class 'miniJava_FieldAccess' is a specialization of 'Expression'.
+The class 'miniJava_MethodCall' is a specialization of 'Expression'.
+The class 'miniJava_StringConstant' is a specialization of 'Expression'.
+The class 'miniJava_IntConstant' is a specialization of 'Expression'.
+The class 'miniJava_BoolConstant' is a specialization of 'Expression'.
+The class 'miniJava_This' is a specialization of 'Expression'.
+The class 'miniJava_Super' is a specialization of 'Expression'.
+The class 'miniJava_Null' is a specialization of 'Expression'.
+The class 'miniJava_NewObject' is a specialization of 'Expression'.
+The class 'miniJava_NewArray' is a specialization of 'Expression'.
+The class 'miniJava_SymbolRef' is a specialization of 'Expression'.
+The class 'miniJava_IntegerValue' is a specialization of 'Value'.
+The class 'miniJava_StringValue' is a specialization of 'Value'.
+The class 'miniJava_BooleanValue' is a specialization of 'Value'.
+The class 'miniJava_NullValue' is a specialization of 'Value'.
+The class 'miniJava_NewCall' is a specialization of 'Call'.
+The class 'miniJava_MethodCall2' is a specialization of 'Call'.
+The class 'miniJava_ObjectRefValue' is a specialization of 'Value'.
+The class 'miniJava_ArrayRefValue' is a specialization of 'Value'.
+
+Relationships between classes are modeled using associations.
+An association connects 'miniJava_Program' and 'miniJava_Import'. From 'miniJava_Program', the role 'miniJava_Program' has cardinality 0..*, and from 'miniJava_Import', the role 'miniJava_Import' has cardinality 0..*.
+An association connects 'miniJava_TypeDeclaration' and 'miniJava_Program'. From 'miniJava_TypeDeclaration', the role 'miniJava_TypeDeclaration' has cardinality 0..*, and from 'miniJava_Program', the role 'miniJava_Program2' has cardinality 0..*.
+An association connects 'miniJava_Program' and 'miniJava_State'. From 'miniJava_Program', the role 'miniJava_Program4' has cardinality 0..*, and from 'miniJava_State', the role 'miniJava_State' has cardinality 0..*.
+An association connects 'miniJava_TypeDeclaration' and 'miniJava_Interface'. From 'miniJava_TypeDeclaration', the role 'miniJava_TypeDeclaration6' has cardinality 0..*, and from 'miniJava_Interface', the role 'miniJava_Interface' has cardinality 0..*.
+An association connects 'miniJava_TypeDeclaration' and 'miniJava_Member'. From 'miniJava_TypeDeclaration', the role 'miniJava_TypeDeclaration8' has cardinality 0..*, and from 'miniJava_Member', the role 'miniJava_Member' has cardinality 0..*.
+An association connects 'miniJava_Class' and 'miniJava_Class'. From 'miniJava_Class', the role 'miniJava_Class9' has cardinality 0..*, and from 'miniJava_Class', the role 'miniJava_Class' has cardinality 0..*.
+An association connects 'miniJava_Method' and 'miniJava_Parameter'. From 'miniJava_Method', the role 'miniJava_Method' has cardinality 0..*, and from 'miniJava_Parameter', the role 'miniJava_Parameter' has cardinality 0..*.
+An association connects 'miniJava_Block' and 'miniJava_Method'. From 'miniJava_Block', the role 'miniJava_Block' has cardinality 0..*, and from 'miniJava_Method', the role 'miniJava_Method13' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_Field'. From 'miniJava_Expression', the role 'miniJava_Expression' has cardinality 0..*, and from 'miniJava_Field', the role 'miniJava_Field' has cardinality 0..*.
+An association connects 'miniJava_Block' and 'miniJava_Statement'. From 'miniJava_Block', the role 'miniJava_Block16' has cardinality 0..*, and from 'miniJava_Statement', the role 'miniJava_Statement' has cardinality 0..*.
+An association connects 'miniJava_PrintStatement' and 'miniJava_Expression'. From 'miniJava_PrintStatement', the role 'miniJava_PrintStatement' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression18' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_Return'. From 'miniJava_Expression', the role 'miniJava_Expression20' has cardinality 0..*, and from 'miniJava_Return', the role 'miniJava_Return' has cardinality 0..*.
+An association connects 'miniJava_IfStatement' and 'miniJava_Expression'. From 'miniJava_IfStatement', the role 'miniJava_IfStatement' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression22' has cardinality 0..*.
+An association connects 'miniJava_IfStatement' and 'miniJava_Block'. From 'miniJava_IfStatement', the role 'miniJava_IfStatement24' has cardinality 0..*, and from 'miniJava_Block', the role 'miniJava_Block25' has cardinality 0..*.
+An association connects 'miniJava_Block' and 'miniJava_IfStatement'. From 'miniJava_Block', the role 'miniJava_Block28' has cardinality 0..*, and from 'miniJava_IfStatement', the role 'miniJava_IfStatement27' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_WhileStatement'. From 'miniJava_Expression', the role 'miniJava_Expression30' has cardinality 0..*, and from 'miniJava_WhileStatement', the role 'miniJava_WhileStatement' has cardinality 0..*.
+An association connects 'miniJava_Block' and 'miniJava_WhileStatement'. From 'miniJava_Block', the role 'miniJava_Block33' has cardinality 0..*, and from 'miniJava_WhileStatement', the role 'miniJava_WhileStatement32' has cardinality 0..*.
+An association connects 'miniJava_ForStatement' and 'miniJava_Assignment'. From 'miniJava_ForStatement', the role 'miniJava_ForStatement' has cardinality 0..*, and from 'miniJava_Assignment', the role 'miniJava_Assignment' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_ForStatement'. From 'miniJava_Expression', the role 'miniJava_Expression37' has cardinality 0..*, and from 'miniJava_ForStatement', the role 'miniJava_ForStatement36' has cardinality 0..*.
+An association connects 'miniJava_Assignment' and 'miniJava_ForStatement'. From 'miniJava_Assignment', the role 'miniJava_Assignment40' has cardinality 0..*, and from 'miniJava_ForStatement', the role 'miniJava_ForStatement39' has cardinality 0..*.
+An association connects 'miniJava_ForStatement' and 'miniJava_Block'. From 'miniJava_ForStatement', the role 'miniJava_ForStatement42' has cardinality 0..*, and from 'miniJava_Block', the role 'miniJava_Block43' has cardinality 0..*.
+An association connects 'miniJava_TypeDeclaration' and 'miniJava_ClassRef'. From 'miniJava_TypeDeclaration', the role 'miniJava_TypeDeclaration45' has cardinality 0..*, and from 'miniJava_ClassRef', the role 'miniJava_ClassRef' has cardinality 0..*.
+An association connects 'miniJava_TypeRef' and 'miniJava_TypedDeclaration'. From 'miniJava_TypeRef', the role 'miniJava_TypeRef' has cardinality 0..*, and from 'miniJava_TypedDeclaration', the role 'miniJava_TypedDeclaration' has cardinality 0..*.
+An association connects 'miniJava_Assignment' and 'miniJava_Assignee'. From 'miniJava_Assignment', the role 'miniJava_Assignment48' has cardinality 0..*, and from 'miniJava_Assignee', the role 'miniJava_Assignee' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_Assignment'. From 'miniJava_Expression', the role 'miniJava_Expression51' has cardinality 0..*, and from 'miniJava_Assignment', the role 'miniJava_Assignment50' has cardinality 0..*.
+An association connects 'miniJava_SingleTypeRef' and 'miniJava_ArrayTypeRef'. From 'miniJava_SingleTypeRef', the role 'miniJava_SingleTypeRef' has cardinality 0..*, and from 'miniJava_ArrayTypeRef', the role 'miniJava_ArrayTypeRef' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_Or'. From 'miniJava_Expression', the role 'miniJava_Expression54' has cardinality 0..*, and from 'miniJava_Or', the role 'miniJava_Or' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_Or'. From 'miniJava_Expression', the role 'miniJava_Expression57' has cardinality 0..*, and from 'miniJava_Or', the role 'miniJava_Or56' has cardinality 0..*.
+An association connects 'miniJava_And' and 'miniJava_Expression'. From 'miniJava_And', the role 'miniJava_And' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression59' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_And'. From 'miniJava_Expression', the role 'miniJava_Expression62' has cardinality 0..*, and from 'miniJava_And', the role 'miniJava_And61' has cardinality 0..*.
+An association connects 'miniJava_Equality' and 'miniJava_Expression'. From 'miniJava_Equality', the role 'miniJava_Equality' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression64' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_Equality'. From 'miniJava_Expression', the role 'miniJava_Expression67' has cardinality 0..*, and from 'miniJava_Equality', the role 'miniJava_Equality66' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_Inequality'. From 'miniJava_Expression', the role 'miniJava_Expression69' has cardinality 0..*, and from 'miniJava_Inequality', the role 'miniJava_Inequality' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_Inequality'. From 'miniJava_Expression', the role 'miniJava_Expression72' has cardinality 0..*, and from 'miniJava_Inequality', the role 'miniJava_Inequality71' has cardinality 0..*.
+An association connects 'miniJava_SuperiorOrEqual' and 'miniJava_Expression'. From 'miniJava_SuperiorOrEqual', the role 'miniJava_SuperiorOrEqual' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression74' has cardinality 0..*.
+An association connects 'miniJava_SuperiorOrEqual' and 'miniJava_Expression'. From 'miniJava_SuperiorOrEqual', the role 'miniJava_SuperiorOrEqual76' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression77' has cardinality 0..*.
+An association connects 'miniJava_InferiorOrEqual' and 'miniJava_Expression'. From 'miniJava_InferiorOrEqual', the role 'miniJava_InferiorOrEqual' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression79' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_InferiorOrEqual'. From 'miniJava_Expression', the role 'miniJava_Expression82' has cardinality 0..*, and from 'miniJava_InferiorOrEqual', the role 'miniJava_InferiorOrEqual81' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_Superior'. From 'miniJava_Expression', the role 'miniJava_Expression84' has cardinality 0..*, and from 'miniJava_Superior', the role 'miniJava_Superior' has cardinality 0..*.
+An association connects 'miniJava_Superior' and 'miniJava_Expression'. From 'miniJava_Superior', the role 'miniJava_Superior86' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression87' has cardinality 0..*.
+An association connects 'miniJava_Inferior' and 'miniJava_Expression'. From 'miniJava_Inferior', the role 'miniJava_Inferior' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression89' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_Inferior'. From 'miniJava_Expression', the role 'miniJava_Expression92' has cardinality 0..*, and from 'miniJava_Inferior', the role 'miniJava_Inferior91' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_Plus'. From 'miniJava_Expression', the role 'miniJava_Expression94' has cardinality 0..*, and from 'miniJava_Plus', the role 'miniJava_Plus' has cardinality 0..*.
+An association connects 'miniJava_Plus' and 'miniJava_Expression'. From 'miniJava_Plus', the role 'miniJava_Plus96' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression97' has cardinality 0..*.
+An association connects 'miniJava_Minus' and 'miniJava_Expression'. From 'miniJava_Minus', the role 'miniJava_Minus' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression99' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_Minus'. From 'miniJava_Expression', the role 'miniJava_Expression102' has cardinality 0..*, and from 'miniJava_Minus', the role 'miniJava_Minus101' has cardinality 0..*.
+An association connects 'miniJava_Multiplication' and 'miniJava_Expression'. From 'miniJava_Multiplication', the role 'miniJava_Multiplication' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression104' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_Multiplication'. From 'miniJava_Expression', the role 'miniJava_Expression107' has cardinality 0..*, and from 'miniJava_Multiplication', the role 'miniJava_Multiplication106' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_Division'. From 'miniJava_Expression', the role 'miniJava_Expression109' has cardinality 0..*, and from 'miniJava_Division', the role 'miniJava_Division' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_Division'. From 'miniJava_Expression', the role 'miniJava_Expression112' has cardinality 0..*, and from 'miniJava_Division', the role 'miniJava_Division111' has cardinality 0..*.
+An association connects 'miniJava_ArrayAccess' and 'miniJava_Expression'. From 'miniJava_ArrayAccess', the role 'miniJava_ArrayAccess' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression114' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_ArrayAccess'. From 'miniJava_Expression', the role 'miniJava_Expression117' has cardinality 0..*, and from 'miniJava_ArrayAccess', the role 'miniJava_ArrayAccess116' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_ArrayLength'. From 'miniJava_Expression', the role 'miniJava_Expression119' has cardinality 0..*, and from 'miniJava_ArrayLength', the role 'miniJava_ArrayLength' has cardinality 0..*.
+An association connects 'miniJava_Not' and 'miniJava_Expression'. From 'miniJava_Not', the role 'miniJava_Not' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression121' has cardinality 0..*.
+An association connects 'miniJava_Neg' and 'miniJava_Expression'. From 'miniJava_Neg', the role 'miniJava_Neg' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression123' has cardinality 0..*.
+An association connects 'miniJava_Expression' and 'miniJava_FieldAccess'. From 'miniJava_Expression', the role 'miniJava_Expression125' has cardinality 0..*, and from 'miniJava_FieldAccess', the role 'miniJava_FieldAccess' has cardinality 0..*.
+An association connects 'miniJava_Field' and 'miniJava_FieldAccess'. From 'miniJava_Field', the role 'miniJava_Field128' has cardinality 0..*, and from 'miniJava_FieldAccess', the role 'miniJava_FieldAccess127' has cardinality 0..*.
+An association connects 'miniJava_MethodCall' and 'miniJava_Expression'. From 'miniJava_MethodCall', the role 'miniJava_MethodCall' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression130' has cardinality 0..*.
+An association connects 'miniJava_MethodCall' and 'miniJava_Method'. From 'miniJava_MethodCall', the role 'miniJava_MethodCall132' has cardinality 0..*, and from 'miniJava_Method', the role 'miniJava_Method133' has cardinality 0..*.
+An association connects 'miniJava_MethodCall' and 'miniJava_Expression'. From 'miniJava_MethodCall', the role 'miniJava_MethodCall135' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression136' has cardinality 0..*.
+An association connects 'miniJava_NewObject' and 'miniJava_Class'. From 'miniJava_NewObject', the role 'miniJava_NewObject' has cardinality 0..*, and from 'miniJava_Class', the role 'miniJava_Class138' has cardinality 0..*.
+An association connects 'miniJava_NewObject' and 'miniJava_Expression'. From 'miniJava_NewObject', the role 'miniJava_NewObject140' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression141' has cardinality 0..*.
+An association connects 'miniJava_TypeRef' and 'miniJava_NewArray'. From 'miniJava_TypeRef', the role 'miniJava_TypeRef143' has cardinality 0..*, and from 'miniJava_NewArray', the role 'miniJava_NewArray' has cardinality 0..*.
+An association connects 'miniJava_NewArray' and 'miniJava_Expression'. From 'miniJava_NewArray', the role 'miniJava_NewArray145' has cardinality 0..*, and from 'miniJava_Expression', the role 'miniJava_Expression146' has cardinality 0..*.
+An association connects 'miniJava_Symbol' and 'miniJava_SymbolRef'. From 'miniJava_Symbol', the role 'miniJava_Symbol' has cardinality 0..*, and from 'miniJava_SymbolRef', the role 'miniJava_SymbolRef' has cardinality 0..*.
+An association connects 'miniJava_Context' and 'miniJava_SymbolBinding'. From 'miniJava_Context', the role 'miniJava_Context' has cardinality 0..*, and from 'miniJava_SymbolBinding', the role 'miniJava_SymbolBinding' has cardinality 0..*.
+An association connects 'miniJava_Context' and 'miniJava_Context'. From 'miniJava_Context', the role '151' has cardinality 0..*, and from 'miniJava_Context', the role 'unnamed role' has cardinality 0..*.
+An association connects 'miniJava_Context' and 'miniJava_Context'. From 'miniJava_Context', the role '155' has cardinality 0..*, and from 'miniJava_Context', the role '154' has cardinality 0..*.
+An association connects 'miniJava_SymbolBinding' and 'miniJava_Value'. From 'miniJava_SymbolBinding', the role 'miniJava_SymbolBinding157' has cardinality 0..*, and from 'miniJava_Value', the role 'miniJava_Value' has cardinality 0..*.
+An association connects 'miniJava_SymbolBinding' and 'miniJava_Symbol'. From 'miniJava_SymbolBinding', the role 'miniJava_SymbolBinding159' has cardinality 0..*, and from 'miniJava_Symbol', the role 'miniJava_Symbol160' has cardinality 0..*.
+An association connects 'miniJava_FieldBinding' and 'miniJava_Field'. From 'miniJava_FieldBinding', the role 'miniJava_FieldBinding' has cardinality 0..*, and from 'miniJava_Field', the role 'miniJava_Field162' has cardinality 0..*.
+An association connects 'miniJava_FieldBinding' and 'miniJava_Value'. From 'miniJava_FieldBinding', the role 'miniJava_FieldBinding164' has cardinality 0..*, and from 'miniJava_Value', the role 'miniJava_Value165' has cardinality 0..*.
+An association connects 'miniJava_State' and 'miniJava_Frame'. From 'miniJava_State', the role 'miniJava_State167' has cardinality 0..*, and from 'miniJava_Frame', the role 'miniJava_Frame' has cardinality 0..*.
+An association connects 'miniJava_ObjectInstance' and 'miniJava_State'. From 'miniJava_ObjectInstance', the role 'miniJava_ObjectInstance' has cardinality 0..*, and from 'miniJava_State', the role 'miniJava_State169' has cardinality 0..*.
+An association connects 'miniJava_State' and 'miniJava_OutputStream'. From 'miniJava_State', the role 'miniJava_State171' has cardinality 0..*, and from 'miniJava_OutputStream', the role 'miniJava_OutputStream' has cardinality 0..*.
+An association connects 'miniJava_ArrayInstance' and 'miniJava_State'. From 'miniJava_ArrayInstance', the role 'miniJava_ArrayInstance' has cardinality 0..*, and from 'miniJava_State', the role 'miniJava_State173' has cardinality 0..*.
+An association connects 'miniJava_Frame' and 'miniJava_Call'. From 'miniJava_Frame', the role 'miniJava_Frame175' has cardinality 0..*, and from 'miniJava_Call', the role 'miniJava_Call' has cardinality 0..*.
+An association connects 'miniJava_ObjectInstance' and 'miniJava_Frame'. From 'miniJava_ObjectInstance', the role 'miniJava_ObjectInstance178' has cardinality 0..*, and from 'miniJava_Frame', the role 'miniJava_Frame177' has cardinality 0..*.
+An association connects 'miniJava_Frame' and 'miniJava_Frame'. From 'miniJava_Frame', the role '181' has cardinality 0..*, and from 'miniJava_Frame', the role '182' has cardinality 0..*.
+An association connects 'miniJava_Frame' and 'miniJava_Frame'. From 'miniJava_Frame', the role '186' has cardinality 0..*, and from 'miniJava_Frame', the role '185' has cardinality 0..*.
+An association connects 'miniJava_Frame' and 'miniJava_Context'. From 'miniJava_Frame', the role 'miniJava_Frame188' has cardinality 0..*, and from 'miniJava_Context', the role 'miniJava_Context189' has cardinality 0..*.
+An association connects 'miniJava_Frame' and 'miniJava_Value'. From 'miniJava_Frame', the role 'miniJava_Frame191' has cardinality 0..*, and from 'miniJava_Value', the role 'miniJava_Value192' has cardinality 0..*.
+An association connects 'miniJava_NewCall' and 'miniJava_NewObject'. From 'miniJava_NewCall', the role 'miniJava_NewCall' has cardinality 0..*, and from 'miniJava_NewObject', the role 'miniJava_NewObject194' has cardinality 0..*.
+An association connects 'miniJava_MethodCall2' and 'miniJava_MethodCall'. From 'miniJava_MethodCall2', the role 'miniJava_MethodCall2' has cardinality 0..*, and from 'miniJava_MethodCall', the role 'miniJava_MethodCall196' has cardinality 0..*.
+An association connects 'miniJava_ObjectInstance' and 'miniJava_FieldBinding'. From 'miniJava_ObjectInstance', the role 'miniJava_ObjectInstance198' has cardinality 0..*, and from 'miniJava_FieldBinding', the role 'miniJava_FieldBinding199' has cardinality 0..*.
+An association connects 'miniJava_Class' and 'miniJava_ObjectInstance'. From 'miniJava_Class', the role 'miniJava_Class202' has cardinality 0..*, and from 'miniJava_ObjectInstance', the role 'miniJava_ObjectInstance201' has cardinality 0..*.
+An association connects 'miniJava_ArrayInstance' and 'miniJava_Value'. From 'miniJava_ArrayInstance', the role 'miniJava_ArrayInstance204' has cardinality 0..*, and from 'miniJava_Value', the role 'miniJava_Value205' has cardinality 0..*.
+An association connects 'miniJava_ObjectInstance' and 'miniJava_ObjectRefValue'. From 'miniJava_ObjectInstance', the role 'miniJava_ObjectInstance207' has cardinality 0..*, and from 'miniJava_ObjectRefValue', the role 'miniJava_ObjectRefValue' has cardinality 0..*.
+An association connects 'miniJava_ArrayRefValue' and 'miniJava_ArrayInstance'. From 'miniJava_ArrayRefValue', the role 'miniJava_ArrayRefValue' has cardinality 0..*, and from 'miniJava_ArrayInstance', the role 'miniJava_ArrayInstance209' has cardinality 0..*.

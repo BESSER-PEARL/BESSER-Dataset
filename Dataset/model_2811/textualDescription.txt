@@ -1,0 +1,50 @@
+The domain model 'xygraph' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'xygraph_AxisDescriptor' represents an important domain concept.
+It has the following attributes: 'formatPattern', which is of type str; 'orientation', which is of type str; 'autoScale', which is of type bool; 'autoScaleThreshold', which is of type float; 'rangeLower', which is of type float; 'zoomType', which is of type str; 'logScale', which is of type bool; 'showMajorGrid', which is of type bool; 'showMinorGrid', which is of type bool; 'primarySide', which is of type bool; 'rangeUpper', which is of type float; 'dashGridLine', which is of type bool; 'dateEnabled', which is of type bool; 'minorTicksVisible', which is of type bool; 'title', which is of type str; 'autoFormat', which is of type bool.
+
+'xygraph_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'xygraph_TraceDescriptor' represents an important domain concept.
+It has the following attributes: 'lineWidth', which is of type int; 'traceType', which is of type str; 'drawYErrorInArea', which is of type bool; 'antiAliasing', which is of type bool; 'errorBarEnabled', which is of type bool; 'baseLine', which is of type str; 'errorBarCapWidth', which is of type int; 'name', which is of type str; 'yErrorBarType', which is of type str; 'areaAlpha', which is of type int; 'xErrorBarType', which is of type str; 'pointStyle', which is of type str; 'pointSize', which is of type int.
+
+'xygraph_FontDescriptor' represents an important domain concept.
+It has the following attributes: 'style', which is of type int; 'size', which is of type int; 'name', which is of type str.
+
+'xygraph_XYGraphDescriptor' represents an important domain concept.
+It has the following attributes: 'zoomType', which is of type str; 'showPlotAreaBorder', which is of type bool; 'showTitle', which is of type bool; 'title', which is of type str; 'transparent', which is of type bool; 'showLegend', which is of type bool.
+
+'xygraph_ColorDescriptor' represents an important domain concept.
+It has the following attributes: 'b', which is of type int; 'g', which is of type int; 'r', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Trace_PointStyle' defines the following possible values: 'FILLED_SQUARE', 'FILLED_DIAMOND', 'POINT', 'SQUARE', 'FILLED_TRIANGLE', 'XCROSS', 'BAR', 'NONE', 'CIRCLE', 'TRIANGLE', 'CROSS', 'DIAMOND'.
+The enumeration 'Trace_ErrorBarType' defines the following possible values: 'NONE', 'BOTH', 'MINUS', 'PLUS'.
+The enumeration 'ZoomType' defines the following possible values: 'VERTICAL_ZOOM', 'RUBBERBAND_ZOOM', 'NONE', 'ZOOM_OUT_VERTICALLY', 'ZOOM_IN_VERTICALLY', 'ZOOM_IN', 'ZOOM_OUT', 'PANNING', 'ZOOM_IN_HORIZONTALLY', 'HORIZONTAL_ZOOM', 'ZOOM_OUT_HORIZONTALLY', 'DYNAMIC_ZOOM'.
+The enumeration 'Trace_BaseLine' defines the following possible values: 'ZERO', 'POSITIVE_INFINITY', 'NEGATIVE_INFINITY'.
+The enumeration 'Trace_TraceType' defines the following possible values: 'BAR', 'SOLID_LINE', 'DASHDOT_LINE', 'DOT_LINE', 'STEP_VERTICALLY', 'AREA', 'STEP_HORIZONTALLY', 'DASH_LINE', 'POINT', 'LINE_AREA', 'DASHDOTDOT_LINE'.
+The enumeration 'LinearScale_Orientation' defines the following possible values: 'VERTICAL', 'HORIZONTAL'.
+
+Relationships between classes are modeled using associations.
+An association connects 'xygraph_ColorDescriptor' and 'xygraph_XYGraphDescriptor'. From 'xygraph_ColorDescriptor', the role 'xygraph_ColorDescriptor' has cardinality 0..*, and from 'xygraph_XYGraphDescriptor', the role 'xygraph_XYGraphDescriptor' has cardinality 0..*.
+An association connects 'xygraph_XYGraphDescriptor' and 'xygraph_AxisDescriptor'. From 'xygraph_XYGraphDescriptor', the role 'xygraph_XYGraphDescriptor2' has cardinality 0..*, and from 'xygraph_AxisDescriptor', the role 'xygraph_AxisDescriptor' has cardinality 0..*.
+An association connects 'xygraph_XYGraphDescriptor' and 'xygraph_TraceDescriptor'. From 'xygraph_XYGraphDescriptor', the role 'xygraph_XYGraphDescriptor4' has cardinality 0..*, and from 'xygraph_TraceDescriptor', the role 'xygraph_TraceDescriptor' has cardinality 0..*.
+An association connects 'xygraph_ColorDescriptor' and 'xygraph_XYGraphDescriptor'. From 'xygraph_ColorDescriptor', the role 'xygraph_ColorDescriptor7' has cardinality 0..*, and from 'xygraph_XYGraphDescriptor', the role 'xygraph_XYGraphDescriptor6' has cardinality 0..*.
+An association connects 'xygraph_XYGraphDescriptor' and 'xygraph_FontDescriptor'. From 'xygraph_XYGraphDescriptor', the role 'xygraph_XYGraphDescriptor9' has cardinality 0..*, and from 'xygraph_FontDescriptor', the role 'xygraph_FontDescriptor' has cardinality 0..*.
+An association connects 'xygraph_XYGraphDescriptor' and 'xygraph_EObject'. From 'xygraph_XYGraphDescriptor', the role 'xygraph_XYGraphDescriptor11' has cardinality 0..*, and from 'xygraph_EObject', the role 'xygraph_EObject' has cardinality 0..*.
+An association connects 'xygraph_EObject' and 'xygraph_XYGraphDescriptor'. From 'xygraph_EObject', the role 'xygraph_EObject14' has cardinality 0..*, and from 'xygraph_XYGraphDescriptor', the role 'xygraph_XYGraphDescriptor13' has cardinality 0..*.
+An association connects 'xygraph_XYGraphDescriptor' and 'xygraph_TraceDescriptor'. From 'xygraph_XYGraphDescriptor', the role 'xygraph_XYGraphDescriptor16' has cardinality 0..*, and from 'xygraph_TraceDescriptor', the role 'xygraph_TraceDescriptor17' has cardinality 0..*.
+An association connects 'xygraph_ColorDescriptor' and 'xygraph_AxisDescriptor'. From 'xygraph_ColorDescriptor', the role 'xygraph_ColorDescriptor20' has cardinality 0..*, and from 'xygraph_AxisDescriptor', the role 'xygraph_AxisDescriptor19' has cardinality 0..*.
+An association connects 'xygraph_AxisDescriptor' and 'xygraph_ColorDescriptor'. From 'xygraph_AxisDescriptor', the role 'xygraph_AxisDescriptor22' has cardinality 0..*, and from 'xygraph_ColorDescriptor', the role 'xygraph_ColorDescriptor23' has cardinality 0..*.
+An association connects 'xygraph_ColorDescriptor' and 'xygraph_AxisDescriptor'. From 'xygraph_ColorDescriptor', the role 'xygraph_ColorDescriptor26' has cardinality 0..*, and from 'xygraph_AxisDescriptor', the role 'xygraph_AxisDescriptor25' has cardinality 0..*.
+An association connects 'xygraph_ColorDescriptor' and 'xygraph_AxisDescriptor'. From 'xygraph_ColorDescriptor', the role 'xygraph_ColorDescriptor29' has cardinality 0..*, and from 'xygraph_AxisDescriptor', the role 'xygraph_AxisDescriptor28' has cardinality 0..*.
+An association connects 'xygraph_FontDescriptor' and 'xygraph_AxisDescriptor'. From 'xygraph_FontDescriptor', the role 'xygraph_FontDescriptor32' has cardinality 0..*, and from 'xygraph_AxisDescriptor', the role 'xygraph_AxisDescriptor31' has cardinality 0..*.
+An association connects 'xygraph_FontDescriptor' and 'xygraph_AxisDescriptor'. From 'xygraph_FontDescriptor', the role 'xygraph_FontDescriptor35' has cardinality 0..*, and from 'xygraph_AxisDescriptor', the role 'xygraph_AxisDescriptor34' has cardinality 0..*.
+An association connects 'xygraph_ColorDescriptor' and 'xygraph_TraceDescriptor'. From 'xygraph_ColorDescriptor', the role 'xygraph_ColorDescriptor38' has cardinality 0..*, and from 'xygraph_TraceDescriptor', the role 'xygraph_TraceDescriptor37' has cardinality 0..*.
+An association connects 'xygraph_ColorDescriptor' and 'xygraph_TraceDescriptor'. From 'xygraph_ColorDescriptor', the role 'xygraph_ColorDescriptor41' has cardinality 0..*, and from 'xygraph_TraceDescriptor', the role 'xygraph_TraceDescriptor40' has cardinality 0..*.
+An association connects 'xygraph_TraceDescriptor' and 'xygraph_AxisDescriptor'. From 'xygraph_TraceDescriptor', the role 'xygraph_TraceDescriptor43' has cardinality 0..*, and from 'xygraph_AxisDescriptor', the role 'xygraph_AxisDescriptor44' has cardinality 0..*.
+An association connects 'xygraph_AxisDescriptor' and 'xygraph_TraceDescriptor'. From 'xygraph_AxisDescriptor', the role 'xygraph_AxisDescriptor47' has cardinality 0..*, and from 'xygraph_TraceDescriptor', the role 'xygraph_TraceDescriptor46' has cardinality 0..*.
+An association connects 'xygraph_EObject' and 'xygraph_TraceDescriptor'. From 'xygraph_EObject', the role 'xygraph_EObject50' has cardinality 0..*, and from 'xygraph_TraceDescriptor', the role 'xygraph_TraceDescriptor49' has cardinality 0..*.

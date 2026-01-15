@@ -1,0 +1,73 @@
+The domain model 'model3' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'model3_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model3_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'subpackage_model3_Class1' represents an important domain concept.
+It does not declare any attributes.
+
+'model3_PolygonWithDuplicates' represents an important domain concept.
+It has one attribute: 'points', which is of type str.
+
+'model3_subpackage_Class2' represents an important domain concept.
+It does not declare any attributes.
+
+'model3_Class1' represents an important domain concept.
+It does not declare any attributes.
+
+'Class2' represents an important domain concept.
+It does not declare any attributes.
+
+'model3_NodeD' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model3_NodeA' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model3_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'model3_File' represents an important domain concept.
+It has the following attributes: 'data', which is of type str; 'name', which is of type str.
+
+'model3_MetaRef' represents an important domain concept.
+It does not declare any attributes.
+
+'model3_Polygon' represents an important domain concept.
+It has one attribute: 'points', which is of type str.
+
+'model3_NodeB' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model3_NodeC' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model3_Image' represents an important domain concept.
+It has the following attributes: 'height', which is of type int; 'width', which is of type int; 'data', which is of type str.
+
+'model3_ClassWithIDAttribute' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Class2' and 'model3_Class1'. From 'Class2', the role 'subpackage' has cardinality 0..*, and from 'model3_Class1', the role 'Class2' has cardinality 0..*.
+An association connects 'model3_MetaRef' and 'model3_EPackage'. From 'model3_MetaRef', the role 'model3_MetaRef' has cardinality 0..*, and from 'model3_EPackage', the role 'model3_EPackage' has cardinality 0..*.
+An association connects 'model3_MetaRef' and 'model3_EClass'. From 'model3_MetaRef', the role 'model3_MetaRef3' has cardinality 0..*, and from 'model3_EClass', the role 'model3_EClass' has cardinality 0..*.
+An association connects 'model3_MetaRef' and 'model3_EReference'. From 'model3_MetaRef', the role 'model3_MetaRef5' has cardinality 0..*, and from 'model3_EReference', the role 'model3_EReference' has cardinality 0..*.
+An association connects 'model3_NodeA' and 'model3_NodeA'. From 'model3_NodeA', the role 'model3_NodeA' has cardinality 0..*, and from 'model3_NodeA', the role 'model3_NodeA6' has cardinality 0..*.
+An association connects 'model3_NodeA' and 'model3_NodeA'. From 'model3_NodeA', the role 'model3_NodeA8' has cardinality 0..*, and from 'model3_NodeA', the role 'model3_NodeA10' has cardinality 0..*.
+An association connects 'model3_NodeB' and 'model3_NodeB'. From 'model3_NodeB', the role 'NodeB' has cardinality 0..*, and from 'model3_NodeB', the role 'parent' has cardinality 0..*.
+An association connects 'model3_NodeB' and 'model3_NodeB'. From 'model3_NodeB', the role 'NodeB15' has cardinality 0..*, and from 'model3_NodeB', the role 'children' has cardinality 0..*.
+An association connects 'model3_NodeC' and 'model3_NodeC'. From 'model3_NodeC', the role 'NodeC' has cardinality 0..*, and from 'model3_NodeC', the role 'parent18' has cardinality 0..*.
+An association connects 'model3_NodeC' and 'model3_NodeC'. From 'model3_NodeC', the role 'NodeC22' has cardinality 0..*, and from 'model3_NodeC', the role 'children21' has cardinality 0..*.
+An association connects 'model3_NodeC' and 'model3_NodeC'. From 'model3_NodeC', the role 'NodeC25' has cardinality 0..*, and from 'model3_NodeC', the role 'oppositeNodes' has cardinality 0..*.
+An association connects 'model3_NodeC' and 'model3_NodeC'. From 'model3_NodeC', the role 'otherNodes' has cardinality 0..*, and from 'model3_NodeC', the role 'NodeC28' has cardinality 0..*.
+An association connects 'model3_NodeD' and 'model3_NodeD'. From 'model3_NodeD', the role 'NodeD' has cardinality 0..*, and from 'model3_NodeD', the role 'parent31' has cardinality 0..*.
+An association connects 'model3_NodeD' and 'model3_NodeD'. From 'model3_NodeD', the role 'children34' has cardinality 0..*, and from 'model3_NodeD', the role 'NodeD35' has cardinality 0..*.
+An association connects 'model3_NodeD' and 'model3_NodeD'. From 'model3_NodeD', the role 'oppositeNode' has cardinality 0..*, and from 'model3_NodeD', the role 'NodeD38' has cardinality 0..*.
+An association connects 'model3_NodeD' and 'model3_NodeD'. From 'model3_NodeD', the role 'otherNodes41' has cardinality 0..*, and from 'model3_NodeD', the role 'NodeD42' has cardinality 0..*.
+An association connects 'subpackage_model3_Class1' and 'model3_subpackage_Class2'. From 'subpackage_model3_Class1', the role 'Class1' has cardinality 0..*, and from 'model3_subpackage_Class2', the role 'class2' has cardinality 0..*.

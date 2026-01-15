@@ -1,0 +1,174 @@
+The domain model 'scxml' describes the core structural elements and their relationships within the system.
+
+The model defines 29 main class(es).
+
+'scxml_Finalize' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Transition' represents an important domain concept.
+It has the following attributes: 'cond', which is of type str; 'anchor', which is of type str; 'event', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Cancel' represents an important domain concept.
+It has the following attributes: 'sendid', which is of type str; 'sendidexpr', which is of type str.
+
+'scxml_FinalState' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'scxml_Content' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Send' represents an important domain concept.
+It has the following attributes: 'target', which is of type str; 'type', which is of type str; 'id', which is of type str; 'eventexpr', which is of type str; 'event', which is of type str; 'typeexpr', which is of type str; 'delay', which is of type str; 'namelist', which is of type str; 'idlocation', which is of type str; 'hints', which is of type str; 'hintsexpr', which is of type str; 'targetexpr', which is of type str; 'delayexpr', which is of type str.
+
+'scxml_OnExit' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Raise' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+'scxml_OnEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_ServiceTemplate' represents an important domain concept.
+It has the following attributes: 'exmode', which is of type str; 'name', which is of type str; 'xmlns', which is of type str; 'profile', which is of type str; 'version', which is of type str.
+
+'scxml_Data' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'expr', which is of type str; 'src', which is of type str.
+
+'scxml_Donedata' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Log' represents an important domain concept.
+It has the following attributes: 'expr', which is of type str; 'level', which is of type str; 'label', which is of type str.
+
+'scxml_ElseIf' represents an important domain concept.
+It has one attribute: 'cond', which is of type str.
+
+'scxml_Param' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'expr', which is of type str.
+
+'scxml_Else' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Script' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_Assign' represents an important domain concept.
+It has the following attributes: 'expr', which is of type str; 'location', which is of type str; 'dataid', which is of type str.
+
+'scxml_Anchor' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'snapshot', which is of type str.
+
+'scxml_Invoke' represents an important domain concept.
+It has the following attributes: 'idlocation', which is of type str; 'srcexpr', which is of type str; 'typeexpr', which is of type str; 'type', which is of type str; 'namelist', which is of type str; 'autoforward', which is of type str; 'id', which is of type str; 'src', which is of type str.
+
+'scxml_State' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'scxml_If' represents an important domain concept.
+It has one attribute: 'cond', which is of type str.
+
+'scxml_Validate' represents an important domain concept.
+It has the following attributes: 'schema', which is of type str; 'location', which is of type str.
+
+'scxml_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'scxml_HistoryState' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'type', which is of type str.
+
+'scxml_DataModel' represents an important domain concept.
+It has one attribute: 'schema', which is of type str.
+
+'scxml_Parallel' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'scxml_State' is a specialization of 'NamedElement'.
+The class 'scxml_InitialState' is a specialization of 'NamedElement'.
+The class 'scxml_FinalState' is a specialization of 'NamedElement'.
+The class 'scxml_Parallel' is a specialization of 'NamedElement'.
+The class 'scxml_HistoryState' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'scxml_DataModel' and 'scxml_NamedElement'. From 'scxml_DataModel', the role 'scxml_DataModel' has cardinality 0..*, and from 'scxml_NamedElement', the role 'scxml_NamedElement' has cardinality 0..*.
+An association connects 'scxml_NamedElement' and 'scxml_Transition'. From 'scxml_NamedElement', the role 'scxml_NamedElement2' has cardinality 0..*, and from 'scxml_Transition', the role 'scxml_Transition' has cardinality 0..*.
+An association connects 'scxml_OnEntry' and 'scxml_State'. From 'scxml_OnEntry', the role 'scxml_OnEntry' has cardinality 0..*, and from 'scxml_State', the role 'scxml_State' has cardinality 0..*.
+An association connects 'scxml_OnExit' and 'scxml_State'. From 'scxml_OnExit', the role 'scxml_OnExit' has cardinality 0..*, and from 'scxml_State', the role 'scxml_State5' has cardinality 0..*.
+An association connects 'scxml_State' and 'scxml_InitialState'. From 'scxml_State', the role 'scxml_State7' has cardinality 0..*, and from 'scxml_InitialState', the role 'scxml_InitialState' has cardinality 0..*.
+An association connects 'scxml_State' and 'scxml_State'. From 'scxml_State', the role 'scxml_State8' has cardinality 0..*, and from 'scxml_State', the role 'scxml_State10' has cardinality 0..*.
+An association connects 'scxml_State' and 'scxml_FinalState'. From 'scxml_State', the role 'scxml_State12' has cardinality 0..*, and from 'scxml_FinalState', the role 'scxml_FinalState' has cardinality 0..*.
+An association connects 'scxml_State' and 'scxml_Parallel'. From 'scxml_State', the role 'scxml_State14' has cardinality 0..*, and from 'scxml_Parallel', the role 'scxml_Parallel' has cardinality 0..*.
+An association connects 'scxml_State' and 'scxml_HistoryState'. From 'scxml_State', the role 'scxml_State16' has cardinality 0..*, and from 'scxml_HistoryState', the role 'scxml_HistoryState' has cardinality 0..*.
+An association connects 'scxml_Anchor' and 'scxml_State'. From 'scxml_Anchor', the role 'scxml_Anchor' has cardinality 0..*, and from 'scxml_State', the role 'scxml_State18' has cardinality 0..*.
+An association connects 'scxml_Invoke' and 'scxml_State'. From 'scxml_Invoke', the role 'scxml_Invoke' has cardinality 0..*, and from 'scxml_State', the role 'scxml_State20' has cardinality 0..*.
+An association connects 'scxml_NamedElement' and 'scxml_Transition'. From 'scxml_NamedElement', the role 'scxml_NamedElement23' has cardinality 0..*, and from 'scxml_Transition', the role 'scxml_Transition22' has cardinality 0..*.
+An association connects 'scxml_NamedElement' and 'scxml_Transition'. From 'scxml_NamedElement', the role 'scxml_NamedElement26' has cardinality 0..*, and from 'scxml_Transition', the role 'scxml_Transition25' has cardinality 0..*.
+An association connects 'scxml_Transition' and 'scxml_ServiceTemplate'. From 'scxml_Transition', the role 'scxml_Transition28' has cardinality 0..*, and from 'scxml_ServiceTemplate', the role 'scxml_ServiceTemplate' has cardinality 0..*.
+An association connects 'scxml_State' and 'scxml_ServiceTemplate'. From 'scxml_State', the role 'scxml_State31' has cardinality 0..*, and from 'scxml_ServiceTemplate', the role 'scxml_ServiceTemplate30' has cardinality 0..*.
+An association connects 'scxml_ServiceTemplate' and 'scxml_InitialState'. From 'scxml_ServiceTemplate', the role 'scxml_ServiceTemplate33' has cardinality 0..*, and from 'scxml_InitialState', the role 'scxml_InitialState34' has cardinality 0..*.
+An association connects 'scxml_ServiceTemplate' and 'scxml_FinalState'. From 'scxml_ServiceTemplate', the role 'scxml_ServiceTemplate36' has cardinality 0..*, and from 'scxml_FinalState', the role 'scxml_FinalState37' has cardinality 0..*.
+An association connects 'scxml_ServiceTemplate' and 'scxml_Parallel'. From 'scxml_ServiceTemplate', the role 'scxml_ServiceTemplate39' has cardinality 0..*, and from 'scxml_Parallel', the role 'scxml_Parallel40' has cardinality 0..*.
+An association connects 'scxml_ServiceTemplate' and 'scxml_DataModel'. From 'scxml_ServiceTemplate', the role 'scxml_ServiceTemplate42' has cardinality 0..*, and from 'scxml_DataModel', the role 'scxml_DataModel43' has cardinality 0..*.
+An association connects 'scxml_ServiceTemplate' and 'scxml_Script'. From 'scxml_ServiceTemplate', the role 'scxml_ServiceTemplate45' has cardinality 0..*, and from 'scxml_Script', the role 'scxml_Script' has cardinality 0..*.
+An association connects 'scxml_OnEntry' and 'scxml_Script'. From 'scxml_OnEntry', the role 'scxml_OnEntry47' has cardinality 0..*, and from 'scxml_Script', the role 'scxml_Script48' has cardinality 0..*.
+An association connects 'scxml_OnEntry' and 'scxml_Assign'. From 'scxml_OnEntry', the role 'scxml_OnEntry50' has cardinality 0..*, and from 'scxml_Assign', the role 'scxml_Assign' has cardinality 0..*.
+An association connects 'scxml_Cancel' and 'scxml_OnEntry'. From 'scxml_Cancel', the role 'scxml_Cancel' has cardinality 0..*, and from 'scxml_OnEntry', the role 'scxml_OnEntry52' has cardinality 0..*.
+An association connects 'scxml_If' and 'scxml_OnEntry'. From 'scxml_If', the role 'scxml_If' has cardinality 0..*, and from 'scxml_OnEntry', the role 'scxml_OnEntry54' has cardinality 0..*.
+An association connects 'scxml_Log' and 'scxml_OnEntry'. From 'scxml_Log', the role 'scxml_Log' has cardinality 0..*, and from 'scxml_OnEntry', the role 'scxml_OnEntry56' has cardinality 0..*.
+An association connects 'scxml_OnEntry' and 'scxml_Param'. From 'scxml_OnEntry', the role 'scxml_OnEntry58' has cardinality 0..*, and from 'scxml_Param', the role 'scxml_Param' has cardinality 0..*.
+An association connects 'scxml_OnEntry' and 'scxml_Raise'. From 'scxml_OnEntry', the role 'scxml_OnEntry60' has cardinality 0..*, and from 'scxml_Raise', the role 'scxml_Raise' has cardinality 0..*.
+An association connects 'scxml_Send' and 'scxml_OnEntry'. From 'scxml_Send', the role 'scxml_Send' has cardinality 0..*, and from 'scxml_OnEntry', the role 'scxml_OnEntry62' has cardinality 0..*.
+An association connects 'scxml_Validate' and 'scxml_OnEntry'. From 'scxml_Validate', the role 'scxml_Validate' has cardinality 0..*, and from 'scxml_OnEntry', the role 'scxml_OnEntry64' has cardinality 0..*.
+An association connects 'scxml_Script' and 'scxml_OnExit'. From 'scxml_Script', the role 'scxml_Script67' has cardinality 0..*, and from 'scxml_OnExit', the role 'scxml_OnExit66' has cardinality 0..*.
+An association connects 'scxml_OnExit' and 'scxml_Assign'. From 'scxml_OnExit', the role 'scxml_OnExit69' has cardinality 0..*, and from 'scxml_Assign', the role 'scxml_Assign70' has cardinality 0..*.
+An association connects 'scxml_OnExit' and 'scxml_Cancel'. From 'scxml_OnExit', the role 'scxml_OnExit72' has cardinality 0..*, and from 'scxml_Cancel', the role 'scxml_Cancel73' has cardinality 0..*.
+An association connects 'scxml_If' and 'scxml_OnExit'. From 'scxml_If', the role 'scxml_If76' has cardinality 0..*, and from 'scxml_OnExit', the role 'scxml_OnExit75' has cardinality 0..*.
+An association connects 'scxml_Log' and 'scxml_OnExit'. From 'scxml_Log', the role 'scxml_Log79' has cardinality 0..*, and from 'scxml_OnExit', the role 'scxml_OnExit78' has cardinality 0..*.
+An association connects 'scxml_Param' and 'scxml_OnExit'. From 'scxml_Param', the role 'scxml_Param82' has cardinality 0..*, and from 'scxml_OnExit', the role 'scxml_OnExit81' has cardinality 0..*.
+An association connects 'scxml_OnExit' and 'scxml_Raise'. From 'scxml_OnExit', the role 'scxml_OnExit84' has cardinality 0..*, and from 'scxml_Raise', the role 'scxml_Raise85' has cardinality 0..*.
+An association connects 'scxml_Send' and 'scxml_OnExit'. From 'scxml_Send', the role 'scxml_Send88' has cardinality 0..*, and from 'scxml_OnExit', the role 'scxml_OnExit87' has cardinality 0..*.
+An association connects 'scxml_OnExit' and 'scxml_Validate'. From 'scxml_OnExit', the role 'scxml_OnExit90' has cardinality 0..*, and from 'scxml_Validate', the role 'scxml_Validate91' has cardinality 0..*.
+An association connects 'scxml_OnEntry' and 'scxml_FinalState'. From 'scxml_OnEntry', the role 'scxml_OnEntry94' has cardinality 0..*, and from 'scxml_FinalState', the role 'scxml_FinalState93' has cardinality 0..*.
+An association connects 'scxml_OnExit' and 'scxml_FinalState'. From 'scxml_OnExit', the role 'scxml_OnExit97' has cardinality 0..*, and from 'scxml_FinalState', the role 'scxml_FinalState96' has cardinality 0..*.
+An association connects 'scxml_Donedata' and 'scxml_FinalState'. From 'scxml_Donedata', the role 'scxml_Donedata' has cardinality 0..*, and from 'scxml_FinalState', the role 'scxml_FinalState99' has cardinality 0..*.
+An association connects 'scxml_OnEntry' and 'scxml_Parallel'. From 'scxml_OnEntry', the role 'scxml_OnEntry102' has cardinality 0..*, and from 'scxml_Parallel', the role 'scxml_Parallel101' has cardinality 0..*.
+An association connects 'scxml_OnExit' and 'scxml_Parallel'. From 'scxml_OnExit', the role 'scxml_OnExit105' has cardinality 0..*, and from 'scxml_Parallel', the role 'scxml_Parallel104' has cardinality 0..*.
+An association connects 'scxml_Parallel' and 'scxml_Parallel'. From 'scxml_Parallel', the role 'scxml_Parallel108' has cardinality 0..*, and from 'scxml_Parallel', the role 'scxml_Parallel106' has cardinality 0..*.
+An association connects 'scxml_State' and 'scxml_Parallel'. From 'scxml_State', the role 'scxml_State111' has cardinality 0..*, and from 'scxml_Parallel', the role 'scxml_Parallel110' has cardinality 0..*.
+An association connects 'scxml_Parallel' and 'scxml_HistoryState'. From 'scxml_Parallel', the role 'scxml_Parallel113' has cardinality 0..*, and from 'scxml_HistoryState', the role 'scxml_HistoryState114' has cardinality 0..*.
+An association connects 'scxml_Parallel' and 'scxml_Anchor'. From 'scxml_Parallel', the role 'scxml_Parallel116' has cardinality 0..*, and from 'scxml_Anchor', the role 'scxml_Anchor117' has cardinality 0..*.
+An association connects 'scxml_If' and 'scxml_ElseIf'. From 'scxml_If', the role 'scxml_If119' has cardinality 0..*, and from 'scxml_ElseIf', the role 'scxml_ElseIf' has cardinality 0..*.
+An association connects 'scxml_Else' and 'scxml_If'. From 'scxml_Else', the role 'scxml_Else' has cardinality 0..*, and from 'scxml_If', the role 'scxml_If121' has cardinality 0..*.
+An association connects 'scxml_Assign' and 'scxml_If'. From 'scxml_Assign', the role 'scxml_Assign124' has cardinality 0..*, and from 'scxml_If', the role 'scxml_If123' has cardinality 0..*.
+An association connects 'scxml_If' and 'scxml_Cancel'. From 'scxml_If', the role 'scxml_If126' has cardinality 0..*, and from 'scxml_Cancel', the role 'scxml_Cancel127' has cardinality 0..*.
+An association connects 'scxml_If' and 'scxml_If'. From 'scxml_If', the role 'scxml_If128' has cardinality 0..*, and from 'scxml_If', the role 'scxml_If130' has cardinality 0..*.
+An association connects 'scxml_Log' and 'scxml_If'. From 'scxml_Log', the role 'scxml_Log133' has cardinality 0..*, and from 'scxml_If', the role 'scxml_If132' has cardinality 0..*.
+An association connects 'scxml_Param' and 'scxml_If'. From 'scxml_Param', the role 'scxml_Param136' has cardinality 0..*, and from 'scxml_If', the role 'scxml_If135' has cardinality 0..*.
+An association connects 'scxml_If' and 'scxml_Raise'. From 'scxml_If', the role 'scxml_If138' has cardinality 0..*, and from 'scxml_Raise', the role 'scxml_Raise139' has cardinality 0..*.
+An association connects 'scxml_Send' and 'scxml_If'. From 'scxml_Send', the role 'scxml_Send142' has cardinality 0..*, and from 'scxml_If', the role 'scxml_If141' has cardinality 0..*.
+An association connects 'scxml_Validate' and 'scxml_If'. From 'scxml_Validate', the role 'scxml_Validate145' has cardinality 0..*, and from 'scxml_If', the role 'scxml_If144' has cardinality 0..*.
+An association connects 'scxml_Data' and 'scxml_DataModel'. From 'scxml_Data', the role 'scxml_Data' has cardinality 0..*, and from 'scxml_DataModel', the role 'scxml_DataModel147' has cardinality 0..*.
+An association connects 'scxml_Data' and 'scxml_Content'. From 'scxml_Data', the role 'scxml_Data149' has cardinality 0..*, and from 'scxml_Content', the role 'scxml_Content' has cardinality 0..*.
+An association connects 'scxml_Send' and 'scxml_Param'. From 'scxml_Send', the role 'scxml_Send151' has cardinality 0..*, and from 'scxml_Param', the role 'scxml_Param152' has cardinality 0..*.
+An association connects 'scxml_Content' and 'scxml_Send'. From 'scxml_Content', the role 'scxml_Content155' has cardinality 0..*, and from 'scxml_Send', the role 'scxml_Send154' has cardinality 0..*.
+An association connects 'scxml_Content' and 'scxml_Content'. From 'scxml_Content', the role 'scxml_Content156' has cardinality 0..*, and from 'scxml_Content', the role 'scxml_Content158' has cardinality 0..*.
+An association connects 'scxml_Content' and 'scxml_Donedata'. From 'scxml_Content', the role 'scxml_Content161' has cardinality 0..*, and from 'scxml_Donedata', the role 'scxml_Donedata160' has cardinality 0..*.
+An association connects 'scxml_Donedata' and 'scxml_Param'. From 'scxml_Donedata', the role 'scxml_Donedata163' has cardinality 0..*, and from 'scxml_Param', the role 'scxml_Param164' has cardinality 0..*.
+An association connects 'scxml_Content' and 'scxml_Invoke'. From 'scxml_Content', the role 'scxml_Content167' has cardinality 0..*, and from 'scxml_Invoke', the role 'scxml_Invoke166' has cardinality 0..*.
+An association connects 'scxml_Param' and 'scxml_Invoke'. From 'scxml_Param', the role 'scxml_Param170' has cardinality 0..*, and from 'scxml_Invoke', the role 'scxml_Invoke169' has cardinality 0..*.
+An association connects 'scxml_Invoke' and 'scxml_Finalize'. From 'scxml_Invoke', the role 'scxml_Invoke172' has cardinality 0..*, and from 'scxml_Finalize', the role 'scxml_Finalize' has cardinality 0..*.
+An association connects 'scxml_Finalize' and 'scxml_Assign'. From 'scxml_Finalize', the role 'scxml_Finalize174' has cardinality 0..*, and from 'scxml_Assign', the role 'scxml_Assign175' has cardinality 0..*.
+An association connects 'scxml_Finalize' and 'scxml_Cancel'. From 'scxml_Finalize', the role 'scxml_Finalize177' has cardinality 0..*, and from 'scxml_Cancel', the role 'scxml_Cancel178' has cardinality 0..*.
+An association connects 'scxml_If' and 'scxml_Finalize'. From 'scxml_If', the role 'scxml_If181' has cardinality 0..*, and from 'scxml_Finalize', the role 'scxml_Finalize180' has cardinality 0..*.
+An association connects 'scxml_Log' and 'scxml_Finalize'. From 'scxml_Log', the role 'scxml_Log184' has cardinality 0..*, and from 'scxml_Finalize', the role 'scxml_Finalize183' has cardinality 0..*.
+An association connects 'scxml_Finalize' and 'scxml_Param'. From 'scxml_Finalize', the role 'scxml_Finalize186' has cardinality 0..*, and from 'scxml_Param', the role 'scxml_Param187' has cardinality 0..*.
+An association connects 'scxml_Finalize' and 'scxml_Raise'. From 'scxml_Finalize', the role 'scxml_Finalize189' has cardinality 0..*, and from 'scxml_Raise', the role 'scxml_Raise190' has cardinality 0..*.
+An association connects 'scxml_Send' and 'scxml_Finalize'. From 'scxml_Send', the role 'scxml_Send193' has cardinality 0..*, and from 'scxml_Finalize', the role 'scxml_Finalize192' has cardinality 0..*.
+An association connects 'scxml_Validate' and 'scxml_Finalize'. From 'scxml_Validate', the role 'scxml_Validate196' has cardinality 0..*, and from 'scxml_Finalize', the role 'scxml_Finalize195' has cardinality 0..*.

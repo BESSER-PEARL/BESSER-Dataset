@@ -1,0 +1,880 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 157 main class(es).
+
+'model_overrides_Delete' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Circle' represents an important domain concept.
+It does not declare any attributes.
+
+'TextAlignmentSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'Widget' represents an important domain concept.
+It does not declare any attributes.
+
+'IconPositionSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Hotspot' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Panel' represents an important domain concept.
+It does not declare any attributes.
+
+'ItemOverrides' represents an important domain concept.
+It does not declare any attributes.
+
+'model_WidgetDescriptor' represents an important domain concept.
+It has the following attributes: 'resizeMode', which is of type str; 'textLines', which is of type int; 'textWrappable', which is of type bool; 'typeName', which is of type str; 'textCentered', which is of type bool; 'textEditable', which is of type bool.
+
+'model_FontSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CurlyBrace' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'model_TextLinksSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_CrossOut' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Tabs' represents an important domain concept.
+It does not declare any attributes.
+
+'VerticalScrollbarSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Map' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ColorForegroundSupport' represents an important domain concept.
+It has one attribute: 'foreground', which is of type str.
+
+'model_Checkbox' represents an important domain concept.
+It does not declare any attributes.
+
+'ItemSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'StateSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_overrides_ItemOverrides' represents an important domain concept.
+It has the following attributes: 'link', which is of type str; 'text', which is of type str; 'noLink', which is of type bool.
+
+'model_overrides_Insert' represents an important domain concept.
+It has one attribute: 'newIndex', which is of type int.
+
+'model_IconPositionSupport' represents an important domain concept.
+It has one attribute: 'iconPosition', which is of type str.
+
+'model_Combo' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Image' represents an important domain concept.
+It has the following attributes: 'src', which is of type str; 'grayscale', which is of type bool.
+
+'model_Master' represents an important domain concept.
+It has one attribute: 'dimmed', which is of type bool.
+
+'model_StateSupport' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'model_HLine' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ValueSupport' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'model_ColorPicker' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Area' represents an important domain concept.
+It does not declare any attributes.
+
+'model_SVGImage' represents an important domain concept.
+It has one attribute: 'src', which is of type str.
+
+'model_overrides_WidgetOverrides' represents an important domain concept.
+It has the following attributes: 'src', which is of type str; 'width', which is of type str; 'link', which is of type str; 'noText', which is of type bool; 'text', which is of type str; 'height', which is of type str; 'y', which is of type str; 'noLink', which is of type bool; 'x', which is of type str.
+
+'model_LinkBar' represents an important domain concept.
+It does not declare any attributes.
+
+'Storyboard' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RadioButton' represents an important domain concept.
+It does not declare any attributes.
+
+'model_overrides_WidgetContainerOverrides' represents an important domain concept.
+It does not declare any attributes.
+
+'model_NoteSupport' represents an important domain concept.
+It has one attribute: 'note', which is of type str.
+
+'model_VSlider' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ColorBackgroundSupport' represents an important domain concept.
+It has one attribute: 'background', which is of type str.
+
+'model_FlipSupport' represents an important domain concept.
+It has the following attributes: 'vFlip', which is of type bool; 'hFlip', which is of type bool.
+
+'model_Screen' represents an important domain concept.
+It has the following attributes: 'minVersion', which is of type str; 'name', which is of type str; 'theme', which is of type str.
+
+'model_SelectionSupport' represents an important domain concept.
+It has one attribute: 'selection', which is of type str.
+
+'model_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'LineStyleSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_HSlider' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ScreenRuler' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TextAlignmentSupport' represents an important domain concept.
+It has one attribute: 'textAlignment', which is of type str.
+
+'model_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'ColorAlternativeSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'BorderSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Button' represents an important domain concept.
+It has one attribute: 'style', which is of type str.
+
+'story_model_Screen' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BorderStyleSupport' represents an important domain concept.
+It has one attribute: 'border', which is of type str.
+
+'model_Widget' represents an important domain concept.
+It has the following attributes: 'measuredWidth', which is of type int; 'width', which is of type int; 'customId', which is of type str; 'x', which is of type int; 'customData', which is of type str; 'id', which is of type str; 'measuredHeight', which is of type int; 'locked', which is of type bool; 'text', which is of type str; 'annotation', which is of type bool; 'layoutParams', which is of type str; 'y', which is of type int; 'height', which is of type int.
+
+'WidgetContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_List' represents an important domain concept.
+It has one attribute: 'header', which is of type bool.
+
+'model_CoverFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'model_overrides_FontOverrides' represents an important domain concept.
+It has the following attributes: 'size', which is of type str; 'bold', which is of type str; 'underline', which is of type str; 'italic', which is of type str.
+
+'model_overrides_Overrides' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Chart' represents an important domain concept.
+It has one attribute: 'chartType', which is of type str.
+
+'model_Accordion' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ScreenFont' represents an important domain concept.
+It has the following attributes: 'size', which is of type str; 'italic', which is of type bool; 'bold', which is of type bool; 'available', which is of type str; 'name', which is of type str.
+
+'model_Tree' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ScratchOut' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LinkSupport' represents an important domain concept.
+It has one attribute: 'link', which is of type str.
+
+'model_Breadcrumbs' represents an important domain concept.
+It does not declare any attributes.
+
+'model_story_Storyboard' represents an important domain concept.
+It does not declare any attributes.
+
+'overrides_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'Panel' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TextArea' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ProgressBar' represents an important domain concept.
+It does not declare any attributes.
+
+'model_VerticalScrollbarSupport' represents an important domain concept.
+It has one attribute: 'verticalScrollbar', which is of type bool.
+
+'AnnotationSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'ColorForegroundSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_WidgetContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ColorBorderSupport' represents an important domain concept.
+It has one attribute: 'borderColor', which is of type str.
+
+'model_Browser' represents an important domain concept.
+It does not declare any attributes.
+
+'model_story_Panel' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'x', which is of type int; 'id', which is of type str.
+
+'StringToStringMap' represents an important domain concept.
+It does not declare any attributes.
+
+'SkinSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'overrides_model_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_VScrollbar' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RulerGuide' represents an important domain concept.
+It has one attribute: 'position', which is of type int.
+
+'model_Switch' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Note' represents an important domain concept.
+It does not declare any attributes.
+
+'WidgetContainerOverrides' represents an important domain concept.
+It does not declare any attributes.
+
+'model_VLine' represents an important domain concept.
+It does not declare any attributes.
+
+'Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Spinner' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DateField' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Item' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'width', which is of type int; 'x', which is of type int; 'text', which is of type str; 'height', which is of type int.
+
+'BooleanSelectionSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'NoteSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'overrides_WidgetContainerOverrides' represents an important domain concept.
+It does not declare any attributes.
+
+'model_SearchField' represents an important domain concept.
+It does not declare any attributes.
+
+'model_IconSupport' represents an important domain concept.
+It has the following attributes: 'icon', which is of type str; 'iconRotation', which is of type str.
+
+'model_HSplitter' represents an important domain concept.
+It does not declare any attributes.
+
+'model_overrides_Reference' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'model_Placeholder' represents an important domain concept.
+It does not declare any attributes.
+
+'model_WidgetGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Window' represents an important domain concept.
+It has the following attributes: 'maximizeButton', which is of type bool; 'closeButton', which is of type bool; 'minimizeButton', which is of type bool.
+
+'model_Icon' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Shape' represents an important domain concept.
+It has one attribute: 'shapeType', which is of type str.
+
+'model_TextField' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ItemSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LineHeightSupport' represents an important domain concept.
+It has one attribute: 'lineHeight', which is of type str.
+
+'model_Arrow' represents an important domain concept.
+It has the following attributes: 'direction', which is of type str; 'left', which is of type bool; 'right', which is of type bool.
+
+'model_Tooltip' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'ColorBorderSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'FlipSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Text' represents an important domain concept.
+It has one attribute: 'dummyText', which is of type bool.
+
+'RotationSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ListSupport' represents an important domain concept.
+It has the following attributes: 'rowHeight', which is of type int; 'horizontalLines', which is of type bool.
+
+'model_Table' represents an important domain concept.
+It has the following attributes: 'verticalLines', which is of type bool; 'header', which is of type bool.
+
+'model_Menu' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BooleanSelectionSupport' represents an important domain concept.
+It has one attribute: 'selected', which is of type bool.
+
+'model_overrides_Move' represents an important domain concept.
+It has one attribute: 'newIndex', which is of type int.
+
+'ColorBackgroundSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'FontSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BorderSupport' represents an important domain concept.
+It has one attribute: 'border', which is of type bool.
+
+'model_VButtonBar' represents an important domain concept.
+It does not declare any attributes.
+
+'BorderStyleSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_VSplitter' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AnnotationSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ColorAlphaSupport' represents an important domain concept.
+It has one attribute: 'alpha', which is of type int.
+
+'model_RotationSupport' represents an important domain concept.
+It has one attribute: 'rotation', which is of type str.
+
+'ColorAlphaSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Callout' represents an important domain concept.
+It does not declare any attributes.
+
+'model_SkinSupport' represents an important domain concept.
+It has one attribute: 'skin', which is of type str.
+
+'overrides_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_HScrollbar' represents an important domain concept.
+It does not declare any attributes.
+
+'model_VideoPlayer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Alert' represents an important domain concept.
+It does not declare any attributes.
+
+'WidgetOverrides' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ColorAlternativeSupport' represents an important domain concept.
+It has one attribute: 'alternative', which is of type str.
+
+'ListSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TabbedPane' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'model_overrides_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_overrides_StringToStringMap' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'model_NameSupport' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_LineStyleSupport' represents an important domain concept.
+It has one attribute: 'lineStyle', which is of type str.
+
+'TextLinksSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'IconSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'Overrides' represents an important domain concept.
+It does not declare any attributes.
+
+'FontOverrides' represents an important domain concept.
+It does not declare any attributes.
+
+'LineHeightSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'SelectionSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'NameSupport' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Font' represents an important domain concept.
+It has the following attributes: 'underline', which is of type str; 'size', which is of type str; 'bold', which is of type str; 'italic', which is of type str.
+
+'model_Rectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Popup' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ButtonBar' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ShapeType' defines the following possible values: 'Diamond', 'Star', 'RoundRectangle', 'Ellipse', 'RightTriangle', 'Rectangle', 'Triangle', 'RoundedRectangle', 'Parallelogram'.
+The enumeration 'Rotation90' defines the following possible values: '_270', '_90', '_0', '_180'.
+The enumeration 'BorderStyle' defines the following possible values: 'Solid', 'SolidRounded', 'DashedRounded', 'None'.
+The enumeration 'ResizeMode' defines the following possible values: 'Vertical', 'Both', 'Horizontal', 'None'.
+The enumeration 'LineStyle' defines the following possible values: 'Dotted', 'Dashed', 'Solid'.
+The enumeration 'ButtonStyle' defines the following possible values: 'PointRight', 'Round', 'Square', 'PointLeft'.
+The enumeration 'TextAlignment' defines the following possible values: 'Left', 'Center', 'Right'.
+The enumeration 'Theme' defines the following possible values: 'Clean', 'Sketch', 'Default'.
+The enumeration 'IconSize' defines the following possible values: 'Small', 'XLarge', 'Custom', 'Large', 'Medium', 'XXL'.
+The enumeration 'State' defines the following possible values: 'Disabled', 'Selected', 'Normal', 'Focused'.
+The enumeration 'ChartType' defines the following possible values: 'Column', 'Pie', 'Bar', 'Line'.
+The enumeration 'Position' defines the following possible values: 'TopLeft', 'BottomLeft', 'Top', 'Right', 'TopRight', 'Bottom', 'Left', 'BottomRight'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_Screen' is a specialization of 'WidgetContainer'.
+The class 'model_Screen' is a specialization of 'NoteSupport'.
+The class 'model_Widget' is a specialization of 'NoteSupport'.
+The class 'model_Button' is a specialization of 'Widget'.
+The class 'model_Button' is a specialization of 'StateSupport'.
+The class 'model_Button' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_Button' is a specialization of 'FontSupport'.
+The class 'model_Button' is a specialization of 'IconSupport'.
+The class 'model_Button' is a specialization of 'LinkSupport'.
+The class 'model_Button' is a specialization of 'TextAlignmentSupport'.
+The class 'model_Button' is a specialization of 'SkinSupport'.
+The class 'model_Checkbox' is a specialization of 'Widget'.
+The class 'model_Checkbox' is a specialization of 'BooleanSelectionSupport'.
+The class 'model_Checkbox' is a specialization of 'StateSupport'.
+The class 'model_Checkbox' is a specialization of 'LinkSupport'.
+The class 'model_Checkbox' is a specialization of 'FontSupport'.
+The class 'model_Checkbox' is a specialization of 'SkinSupport'.
+The class 'model_Combo' is a specialization of 'Widget'.
+The class 'model_Combo' is a specialization of 'StateSupport'.
+The class 'model_Combo' is a specialization of 'FontSupport'.
+The class 'model_Combo' is a specialization of 'ColorBorderSupport'.
+The class 'model_Combo' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_Combo' is a specialization of 'ColorAlphaSupport'.
+The class 'model_Combo' is a specialization of 'LinkSupport'.
+The class 'model_Combo' is a specialization of 'ItemSupport'.
+The class 'model_Combo' is a specialization of 'SkinSupport'.
+The class 'model_Label' is a specialization of 'Widget'.
+The class 'model_Label' is a specialization of 'FontSupport'.
+The class 'model_Label' is a specialization of 'TextAlignmentSupport'.
+The class 'model_Label' is a specialization of 'ColorForegroundSupport'.
+The class 'model_Label' is a specialization of 'StateSupport'.
+The class 'model_Label' is a specialization of 'IconSupport'.
+The class 'model_Label' is a specialization of 'IconPositionSupport'.
+The class 'model_Label' is a specialization of 'LinkSupport'.
+The class 'model_Label' is a specialization of 'RotationSupport'.
+The class 'model_Label' is a specialization of 'TextLinksSupport'.
+The class 'model_Link' is a specialization of 'Widget'.
+The class 'model_Link' is a specialization of 'FontSupport'.
+The class 'model_Link' is a specialization of 'StateSupport'.
+The class 'model_Link' is a specialization of 'LinkSupport'.
+The class 'model_Link' is a specialization of 'SkinSupport'.
+The class 'model_Placeholder' is a specialization of 'Widget'.
+The class 'model_Placeholder' is a specialization of 'LinkSupport'.
+The class 'model_Placeholder' is a specialization of 'SkinSupport'.
+The class 'model_RadioButton' is a specialization of 'Widget'.
+The class 'model_RadioButton' is a specialization of 'BooleanSelectionSupport'.
+The class 'model_RadioButton' is a specialization of 'StateSupport'.
+The class 'model_RadioButton' is a specialization of 'LinkSupport'.
+The class 'model_RadioButton' is a specialization of 'FontSupport'.
+The class 'model_RadioButton' is a specialization of 'SkinSupport'.
+The class 'model_TextField' is a specialization of 'Widget'.
+The class 'model_TextField' is a specialization of 'StateSupport'.
+The class 'model_TextField' is a specialization of 'FontSupport'.
+The class 'model_TextField' is a specialization of 'TextAlignmentSupport'.
+The class 'model_TextField' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_TextField' is a specialization of 'ColorAlphaSupport'.
+The class 'model_TextField' is a specialization of 'ColorBorderSupport'.
+The class 'model_TextField' is a specialization of 'SkinSupport'.
+The class 'model_Spinner' is a specialization of 'Widget'.
+The class 'model_Spinner' is a specialization of 'StateSupport'.
+The class 'model_Spinner' is a specialization of 'FontSupport'.
+The class 'model_Spinner' is a specialization of 'ColorBorderSupport'.
+The class 'model_Spinner' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_Spinner' is a specialization of 'ColorAlphaSupport'.
+The class 'model_Spinner' is a specialization of 'SkinSupport'.
+The class 'model_Window' is a specialization of 'Widget'.
+The class 'model_Window' is a specialization of 'VerticalScrollbarSupport'.
+The class 'model_Window' is a specialization of 'SkinSupport'.
+The class 'model_Window' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_Window' is a specialization of 'ColorAlphaSupport'.
+The class 'model_Browser' is a specialization of 'Widget'.
+The class 'model_Browser' is a specialization of 'VerticalScrollbarSupport'.
+The class 'model_Browser' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_Browser' is a specialization of 'SkinSupport'.
+The class 'model_Browser' is a specialization of 'ColorAlphaSupport'.
+The class 'model_Browser' is a specialization of 'FontSupport'.
+The class 'model_Text' is a specialization of 'Widget'.
+The class 'model_Text' is a specialization of 'FontSupport'.
+The class 'model_Text' is a specialization of 'TextAlignmentSupport'.
+The class 'model_Text' is a specialization of 'ColorForegroundSupport'.
+The class 'model_Text' is a specialization of 'LinkSupport'.
+The class 'model_Text' is a specialization of 'LineHeightSupport'.
+The class 'model_Text' is a specialization of 'TextLinksSupport'.
+The class 'model_Area' is a specialization of 'Widget'.
+The class 'model_Panel' is a specialization of 'Widget'.
+The class 'model_Panel' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_Panel' is a specialization of 'ColorAlphaSupport'.
+The class 'model_Panel' is a specialization of 'VerticalScrollbarSupport'.
+The class 'model_Panel' is a specialization of 'ColorForegroundSupport'.
+The class 'model_Panel' is a specialization of 'BorderStyleSupport'.
+The class 'model_Panel' is a specialization of 'LinkSupport'.
+The class 'model_Panel' is a specialization of 'SkinSupport'.
+The class 'model_Group' is a specialization of 'Widget'.
+The class 'model_Group' is a specialization of 'VerticalScrollbarSupport'.
+The class 'model_Group' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_Group' is a specialization of 'ColorAlphaSupport'.
+The class 'model_Group' is a specialization of 'FontSupport'.
+The class 'model_Group' is a specialization of 'SkinSupport'.
+The class 'model_List' is a specialization of 'Widget'.
+The class 'model_List' is a specialization of 'SelectionSupport'.
+The class 'model_List' is a specialization of 'BorderSupport'.
+The class 'model_List' is a specialization of 'VerticalScrollbarSupport'.
+The class 'model_List' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_List' is a specialization of 'ColorAlphaSupport'.
+The class 'model_List' is a specialization of 'ListSupport'.
+The class 'model_List' is a specialization of 'FontSupport'.
+The class 'model_List' is a specialization of 'ItemSupport'.
+The class 'model_List' is a specialization of 'ColorAlternativeSupport'.
+The class 'model_Popup' is a specialization of 'Widget'.
+The class 'model_Popup' is a specialization of 'SelectionSupport'.
+The class 'model_Popup' is a specialization of 'ItemSupport'.
+The class 'model_Menu' is a specialization of 'Widget'.
+The class 'model_Menu' is a specialization of 'SelectionSupport'.
+The class 'model_Menu' is a specialization of 'IconSupport'.
+The class 'model_Menu' is a specialization of 'ItemSupport'.
+The class 'model_Menu' is a specialization of 'SkinSupport'.
+The class 'model_Table' is a specialization of 'Widget'.
+The class 'model_Table' is a specialization of 'SelectionSupport'.
+The class 'model_Table' is a specialization of 'BorderSupport'.
+The class 'model_Table' is a specialization of 'VerticalScrollbarSupport'.
+The class 'model_Table' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_Table' is a specialization of 'ColorAlphaSupport'.
+The class 'model_Table' is a specialization of 'ListSupport'.
+The class 'model_Table' is a specialization of 'FontSupport'.
+The class 'model_Table' is a specialization of 'TextAlignmentSupport'.
+The class 'model_Table' is a specialization of 'ColorAlternativeSupport'.
+The class 'model_Table' is a specialization of 'TextLinksSupport'.
+The class 'model_Tree' is a specialization of 'Widget'.
+The class 'model_Tree' is a specialization of 'BorderSupport'.
+The class 'model_Tree' is a specialization of 'VerticalScrollbarSupport'.
+The class 'model_Tree' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_Tree' is a specialization of 'ColorAlphaSupport'.
+The class 'model_Tree' is a specialization of 'SelectionSupport'.
+The class 'model_Tree' is a specialization of 'ItemSupport'.
+The class 'model_Tree' is a specialization of 'FontSupport'.
+The class 'model_Icon' is a specialization of 'Widget'.
+The class 'model_Icon' is a specialization of 'ColorForegroundSupport'.
+The class 'model_Icon' is a specialization of 'IconSupport'.
+The class 'model_Icon' is a specialization of 'LinkSupport'.
+The class 'model_TextArea' is a specialization of 'Widget'.
+The class 'model_TextArea' is a specialization of 'StateSupport'.
+The class 'model_TextArea' is a specialization of 'VerticalScrollbarSupport'.
+The class 'model_TextArea' is a specialization of 'FontSupport'.
+The class 'model_TextArea' is a specialization of 'TextAlignmentSupport'.
+The class 'model_TextArea' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_TextArea' is a specialization of 'ColorAlphaSupport'.
+The class 'model_TextArea' is a specialization of 'ColorBorderSupport'.
+The class 'model_TextArea' is a specialization of 'SkinSupport'.
+The class 'model_TextArea' is a specialization of 'LineHeightSupport'.
+The class 'model_TextArea' is a specialization of 'TextLinksSupport'.
+The class 'model_HScrollbar' is a specialization of 'Widget'.
+The class 'model_HScrollbar' is a specialization of 'ValueSupport'.
+The class 'model_HScrollbar' is a specialization of 'SkinSupport'.
+The class 'model_VScrollbar' is a specialization of 'Widget'.
+The class 'model_VScrollbar' is a specialization of 'ValueSupport'.
+The class 'model_VScrollbar' is a specialization of 'SkinSupport'.
+The class 'model_HLine' is a specialization of 'Widget'.
+The class 'model_HLine' is a specialization of 'ColorForegroundSupport'.
+The class 'model_HLine' is a specialization of 'LineStyleSupport'.
+The class 'model_HLine' is a specialization of 'SkinSupport'.
+The class 'model_VLine' is a specialization of 'Widget'.
+The class 'model_VLine' is a specialization of 'ColorForegroundSupport'.
+The class 'model_VLine' is a specialization of 'LineStyleSupport'.
+The class 'model_VLine' is a specialization of 'SkinSupport'.
+The class 'model_HSlider' is a specialization of 'Widget'.
+The class 'model_HSlider' is a specialization of 'ValueSupport'.
+The class 'model_HSlider' is a specialization of 'StateSupport'.
+The class 'model_HSlider' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_HSlider' is a specialization of 'SkinSupport'.
+The class 'model_VSlider' is a specialization of 'Widget'.
+The class 'model_VSlider' is a specialization of 'ValueSupport'.
+The class 'model_VSlider' is a specialization of 'StateSupport'.
+The class 'model_VSlider' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_VSlider' is a specialization of 'SkinSupport'.
+The class 'model_Tabs' is a specialization of 'Widget'.
+The class 'model_Tabs' is a specialization of 'SelectionSupport'.
+The class 'model_Tabs' is a specialization of 'ItemSupport'.
+The class 'model_Tabs' is a specialization of 'FontSupport'.
+The class 'model_Tabs' is a specialization of 'SkinSupport'.
+The class 'model_WidgetGroup' is a specialization of 'Widget'.
+The class 'model_WidgetGroup' is a specialization of 'WidgetContainer'.
+The class 'model_WidgetGroup' is a specialization of 'LinkSupport'.
+The class 'model_WidgetGroup' is a specialization of 'NameSupport'.
+The class 'model_Master' is a specialization of 'Widget'.
+The class 'model_Master' is a specialization of 'LinkSupport'.
+The class 'model_Image' is a specialization of 'Widget'.
+The class 'model_Image' is a specialization of 'LinkSupport'.
+The class 'model_Image' is a specialization of 'RotationSupport'.
+The class 'model_Image' is a specialization of 'FlipSupport'.
+The class 'model_Image' is a specialization of 'BorderSupport'.
+The class 'model_Note' is a specialization of 'Widget'.
+The class 'model_Note' is a specialization of 'FontSupport'.
+The class 'model_Note' is a specialization of 'TextAlignmentSupport'.
+The class 'model_Note' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_Note' is a specialization of 'ColorAlphaSupport'.
+The class 'model_Note' is a specialization of 'LinkSupport'.
+The class 'model_Note' is a specialization of 'SkinSupport'.
+The class 'model_Note' is a specialization of 'AnnotationSupport'.
+The class 'model_Note' is a specialization of 'TextLinksSupport'.
+The class 'model_ProgressBar' is a specialization of 'Widget'.
+The class 'model_ProgressBar' is a specialization of 'ValueSupport'.
+The class 'model_ProgressBar' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_ProgressBar' is a specialization of 'SkinSupport'.
+The class 'model_Callout' is a specialization of 'Widget'.
+The class 'model_Callout' is a specialization of 'FontSupport'.
+The class 'model_Callout' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_Callout' is a specialization of 'ColorAlphaSupport'.
+The class 'model_Callout' is a specialization of 'LinkSupport'.
+The class 'model_Callout' is a specialization of 'SkinSupport'.
+The class 'model_Callout' is a specialization of 'AnnotationSupport'.
+The class 'model_SearchField' is a specialization of 'Widget'.
+The class 'model_SearchField' is a specialization of 'FontSupport'.
+The class 'model_SearchField' is a specialization of 'StateSupport'.
+The class 'model_SearchField' is a specialization of 'ColorBorderSupport'.
+The class 'model_SearchField' is a specialization of 'LinkSupport'.
+The class 'model_SearchField' is a specialization of 'SkinSupport'.
+The class 'model_Tooltip' is a specialization of 'Widget'.
+The class 'model_Tooltip' is a specialization of 'FontSupport'.
+The class 'model_Tooltip' is a specialization of 'TextAlignmentSupport'.
+The class 'model_Tooltip' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_Tooltip' is a specialization of 'SkinSupport'.
+The class 'model_Tooltip' is a specialization of 'TextLinksSupport'.
+The class 'model_ScratchOut' is a specialization of 'Widget'.
+The class 'model_ScratchOut' is a specialization of 'ColorForegroundSupport'.
+The class 'model_ScratchOut' is a specialization of 'ColorAlphaSupport'.
+The class 'model_ScratchOut' is a specialization of 'SkinSupport'.
+The class 'model_ScratchOut' is a specialization of 'AnnotationSupport'.
+The class 'model_Breadcrumbs' is a specialization of 'Widget'.
+The class 'model_Breadcrumbs' is a specialization of 'FontSupport'.
+The class 'model_Breadcrumbs' is a specialization of 'ItemSupport'.
+The class 'model_Breadcrumbs' is a specialization of 'SkinSupport'.
+The class 'model_LinkBar' is a specialization of 'Widget'.
+The class 'model_LinkBar' is a specialization of 'FontSupport'.
+The class 'model_LinkBar' is a specialization of 'SelectionSupport'.
+The class 'model_LinkBar' is a specialization of 'ItemSupport'.
+The class 'model_LinkBar' is a specialization of 'SkinSupport'.
+The class 'model_Accordion' is a specialization of 'Widget'.
+The class 'model_Accordion' is a specialization of 'SelectionSupport'.
+The class 'model_Accordion' is a specialization of 'VerticalScrollbarSupport'.
+The class 'model_Accordion' is a specialization of 'ItemSupport'.
+The class 'model_Accordion' is a specialization of 'FontSupport'.
+The class 'model_VerticalScrollbarSupport' is a specialization of 'ValueSupport'.
+The class 'model_DateField' is a specialization of 'Widget'.
+The class 'model_DateField' is a specialization of 'StateSupport'.
+The class 'model_DateField' is a specialization of 'ColorBorderSupport'.
+The class 'model_DateField' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_DateField' is a specialization of 'ColorAlphaSupport'.
+The class 'model_DateField' is a specialization of 'SkinSupport'.
+The class 'model_VideoPlayer' is a specialization of 'Widget'.
+The class 'model_VideoPlayer' is a specialization of 'SkinSupport'.
+The class 'model_Map' is a specialization of 'Widget'.
+The class 'model_Map' is a specialization of 'SkinSupport'.
+The class 'model_CoverFlow' is a specialization of 'Widget'.
+The class 'model_CoverFlow' is a specialization of 'SkinSupport'.
+The class 'model_TabbedPane' is a specialization of 'Widget'.
+The class 'model_TabbedPane' is a specialization of 'SelectionSupport'.
+The class 'model_TabbedPane' is a specialization of 'VerticalScrollbarSupport'.
+The class 'model_TabbedPane' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_TabbedPane' is a specialization of 'ColorAlphaSupport'.
+The class 'model_TabbedPane' is a specialization of 'ItemSupport'.
+The class 'model_TabbedPane' is a specialization of 'FontSupport'.
+The class 'model_TabbedPane' is a specialization of 'SkinSupport'.
+The class 'model_HSplitter' is a specialization of 'Widget'.
+The class 'model_HSplitter' is a specialization of 'SkinSupport'.
+The class 'model_VSplitter' is a specialization of 'Widget'.
+The class 'model_VSplitter' is a specialization of 'SkinSupport'.
+The class 'model_ColorPicker' is a specialization of 'Widget'.
+The class 'model_ColorPicker' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_ColorPicker' is a specialization of 'SkinSupport'.
+The class 'model_Arrow' is a specialization of 'Widget'.
+The class 'model_Arrow' is a specialization of 'ColorForegroundSupport'.
+The class 'model_Arrow' is a specialization of 'LineStyleSupport'.
+The class 'model_Arrow' is a specialization of 'AnnotationSupport'.
+The class 'model_CurlyBrace' is a specialization of 'Widget'.
+The class 'model_CurlyBrace' is a specialization of 'FontSupport'.
+The class 'model_CurlyBrace' is a specialization of 'ColorForegroundSupport'.
+The class 'model_CurlyBrace' is a specialization of 'SkinSupport'.
+The class 'model_CurlyBrace' is a specialization of 'AnnotationSupport'.
+The class 'model_CurlyBrace' is a specialization of 'TextLinksSupport'.
+The class 'model_ButtonBar' is a specialization of 'Widget'.
+The class 'model_ButtonBar' is a specialization of 'SelectionSupport'.
+The class 'model_ButtonBar' is a specialization of 'FontSupport'.
+The class 'model_ButtonBar' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_ButtonBar' is a specialization of 'ItemSupport'.
+The class 'model_ButtonBar' is a specialization of 'SkinSupport'.
+The class 'model_Circle' is a specialization of 'Widget'.
+The class 'model_Circle' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_Circle' is a specialization of 'ColorAlphaSupport'.
+The class 'model_Circle' is a specialization of 'ColorForegroundSupport'.
+The class 'model_Circle' is a specialization of 'BorderSupport'.
+The class 'model_Circle' is a specialization of 'IconSupport'.
+The class 'model_Circle' is a specialization of 'IconPositionSupport'.
+The class 'model_Circle' is a specialization of 'FontSupport'.
+The class 'model_Circle' is a specialization of 'LinkSupport'.
+The class 'model_Circle' is a specialization of 'TextAlignmentSupport'.
+The class 'model_Circle' is a specialization of 'LineStyleSupport'.
+The class 'model_Rectangle' is a specialization of 'Widget'.
+The class 'model_Rectangle' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_Rectangle' is a specialization of 'ColorAlphaSupport'.
+The class 'model_Rectangle' is a specialization of 'ColorForegroundSupport'.
+The class 'model_Rectangle' is a specialization of 'BorderStyleSupport'.
+The class 'model_Rectangle' is a specialization of 'IconSupport'.
+The class 'model_Rectangle' is a specialization of 'IconPositionSupport'.
+The class 'model_Rectangle' is a specialization of 'FontSupport'.
+The class 'model_Rectangle' is a specialization of 'LinkSupport'.
+The class 'model_Rectangle' is a specialization of 'TextAlignmentSupport'.
+The class 'model_IconPositionSupport' is a specialization of 'IconSupport'.
+The class 'model_Chart' is a specialization of 'Widget'.
+The class 'model_Chart' is a specialization of 'SkinSupport'.
+The class 'model_CrossOut' is a specialization of 'Widget'.
+The class 'model_CrossOut' is a specialization of 'ColorForegroundSupport'.
+The class 'model_CrossOut' is a specialization of 'ColorAlphaSupport'.
+The class 'model_CrossOut' is a specialization of 'SkinSupport'.
+The class 'model_CrossOut' is a specialization of 'AnnotationSupport'.
+The class 'model_Item' is a specialization of 'LinkSupport'.
+The class 'model_Hotspot' is a specialization of 'Widget'.
+The class 'model_Hotspot' is a specialization of 'LinkSupport'.
+The class 'model_SVGImage' is a specialization of 'Widget'.
+The class 'model_SVGImage' is a specialization of 'LinkSupport'.
+The class 'model_SVGImage' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_SVGImage' is a specialization of 'ColorForegroundSupport'.
+The class 'model_SVGImage' is a specialization of 'ColorAlphaSupport'.
+The class 'model_SVGImage' is a specialization of 'RotationSupport'.
+The class 'model_SVGImage' is a specialization of 'FlipSupport'.
+The class 'model_Shape' is a specialization of 'Widget'.
+The class 'model_Shape' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_Shape' is a specialization of 'ColorAlphaSupport'.
+The class 'model_Shape' is a specialization of 'ColorForegroundSupport'.
+The class 'model_Shape' is a specialization of 'BorderSupport'.
+The class 'model_Shape' is a specialization of 'IconSupport'.
+The class 'model_Shape' is a specialization of 'IconPositionSupport'.
+The class 'model_Shape' is a specialization of 'FontSupport'.
+The class 'model_Shape' is a specialization of 'LinkSupport'.
+The class 'model_Shape' is a specialization of 'TextAlignmentSupport'.
+The class 'model_Shape' is a specialization of 'LineStyleSupport'.
+The class 'model_Shape' is a specialization of 'SkinSupport'.
+The class 'model_Shape' is a specialization of 'RotationSupport'.
+The class 'model_Alert' is a specialization of 'Widget'.
+The class 'model_Alert' is a specialization of 'IconSupport'.
+The class 'model_Alert' is a specialization of 'ItemSupport'.
+The class 'model_Alert' is a specialization of 'FontSupport'.
+The class 'model_Alert' is a specialization of 'SkinSupport'.
+The class 'model_Switch' is a specialization of 'Widget'.
+The class 'model_Switch' is a specialization of 'BooleanSelectionSupport'.
+The class 'model_Switch' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_Switch' is a specialization of 'FontSupport'.
+The class 'model_Switch' is a specialization of 'LinkSupport'.
+The class 'model_Switch' is a specialization of 'StateSupport'.
+The class 'model_Switch' is a specialization of 'SkinSupport'.
+The class 'model_VButtonBar' is a specialization of 'Widget'.
+The class 'model_VButtonBar' is a specialization of 'SelectionSupport'.
+The class 'model_VButtonBar' is a specialization of 'FontSupport'.
+The class 'model_VButtonBar' is a specialization of 'TextAlignmentSupport'.
+The class 'model_VButtonBar' is a specialization of 'ColorBackgroundSupport'.
+The class 'model_VButtonBar' is a specialization of 'ItemSupport'.
+The class 'model_VButtonBar' is a specialization of 'SkinSupport'.
+The class 'model_TextLinksSupport' is a specialization of 'ItemSupport'.
+The class 'model_overrides_Overrides' is a specialization of 'WidgetContainerOverrides'.
+The class 'model_overrides_WidgetOverrides' is a specialization of 'overrides_WidgetContainerOverrides'.
+The class 'model_overrides_WidgetOverrides' is a specialization of 'overrides_Reference'.
+The class 'model_overrides_ItemOverrides' is a specialization of 'Reference'.
+The class 'model_overrides_Move' is a specialization of 'overrides_Operation'.
+The class 'model_overrides_Move' is a specialization of 'overrides_Reference'.
+The class 'model_overrides_Delete' is a specialization of 'overrides_Operation'.
+The class 'model_overrides_Delete' is a specialization of 'overrides_Reference'.
+The class 'model_overrides_Insert' is a specialization of 'Operation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_ScreenRuler' and 'model_Screen'. From 'model_ScreenRuler', the role 'model_ScreenRuler' has cardinality 0..*, and from 'model_Screen', the role 'model_Screen' has cardinality 0..*.
+An association connects 'model_ScreenRuler' and 'model_Screen'. From 'model_ScreenRuler', the role 'model_ScreenRuler3' has cardinality 0..*, and from 'model_Screen', the role 'model_Screen2' has cardinality 0..*.
+An association connects 'model_Screen' and 'model_ScreenFont'. From 'model_Screen', the role 'model_Screen5' has cardinality 0..*, and from 'model_ScreenFont', the role 'model_ScreenFont' has cardinality 0..*.
+An association connects 'model_ScreenRuler' and 'model_RulerGuide'. From 'model_ScreenRuler', the role 'model_ScreenRuler7' has cardinality 0..*, and from 'model_RulerGuide', the role 'model_RulerGuide' has cardinality 0..*.
+An association connects 'model_Widget' and 'model_WidgetContainer'. From 'model_Widget', the role 'widgets' has cardinality 0..*, and from 'model_WidgetContainer', the role 'WidgetContainer' has cardinality 0..*.
+An association connects 'model_Widget' and 'model_WidgetDescriptor'. From 'model_Widget', the role 'model_Widget' has cardinality 0..*, and from 'model_WidgetDescriptor', the role 'model_WidgetDescriptor' has cardinality 0..*.
+An association connects 'model_Widget' and 'model_WidgetContainer'. From 'model_Widget', the role 'Widget' has cardinality 0..*, and from 'model_WidgetContainer', the role 'container' has cardinality 0..*.
+An association connects 'model_WidgetContainer' and 'model_Master'. From 'model_WidgetContainer', the role 'model_WidgetContainer' has cardinality 0..*, and from 'model_Master', the role 'model_Master' has cardinality 0..*.
+An association connects 'model_Master' and 'Overrides'. From 'model_Master', the role 'model_Master13' has cardinality 0..*, and from 'Overrides', the role 'Overrides' has cardinality 0..*.
+An association connects 'model_Master' and 'model_WidgetContainer'. From 'model_Master', the role 'model_Master15' has cardinality 0..*, and from 'model_WidgetContainer', the role 'model_WidgetContainer16' has cardinality 0..*.
+An association connects 'model_FontSupport' and 'model_Font'. From 'model_FontSupport', the role 'model_FontSupport' has cardinality 0..*, and from 'model_Font', the role 'model_Font' has cardinality 0..*.
+An association connects 'model_ItemSupport' and 'model_Item'. From 'model_ItemSupport', the role 'model_ItemSupport' has cardinality 0..*, and from 'model_Item', the role 'model_Item' has cardinality 0..*.
+An association connects 'Panel' and 'model_story_Storyboard'. From 'Panel', the role 'Panel' has cardinality 0..*, and from 'model_story_Storyboard', the role 'model_story_Storyboard' has cardinality 0..*.
+An association connects 'model_story_Panel' and 'story_model_Screen'. From 'model_story_Panel', the role 'model_story_Panel' has cardinality 0..*, and from 'story_model_Screen', the role 'story_model_Screen' has cardinality 0..*.
+An association connects 'model_story_Panel' and 'Storyboard'. From 'model_story_Panel', the role 'model_story_Panel22' has cardinality 0..*, and from 'Storyboard', the role 'Storyboard' has cardinality 0..*.
+An association connects 'WidgetOverrides' and 'model_overrides_Overrides'. From 'WidgetOverrides', the role 'WidgetOverrides' has cardinality 0..*, and from 'model_overrides_Overrides', the role 'model_overrides_Overrides' has cardinality 0..*.
+An association connects 'StringToStringMap' and 'model_overrides_WidgetOverrides'. From 'StringToStringMap', the role 'StringToStringMap' has cardinality 0..*, and from 'model_overrides_WidgetOverrides', the role 'model_overrides_WidgetOverrides' has cardinality 0..*.
+An association connects 'FontOverrides' and 'model_overrides_WidgetOverrides'. From 'FontOverrides', the role 'FontOverrides' has cardinality 0..*, and from 'model_overrides_WidgetOverrides', the role 'model_overrides_WidgetOverrides26' has cardinality 0..*.
+An association connects 'model_overrides_WidgetOverrides' and 'ItemOverrides'. From 'model_overrides_WidgetOverrides', the role 'model_overrides_WidgetOverrides28' has cardinality 0..*, and from 'ItemOverrides', the role 'ItemOverrides' has cardinality 0..*.
+An association connects 'Operation' and 'model_overrides_WidgetOverrides'. From 'Operation', the role 'Operation' has cardinality 0..*, and from 'model_overrides_WidgetOverrides', the role 'model_overrides_WidgetOverrides30' has cardinality 0..*.
+An association connects 'model_overrides_Insert' and 'overrides_model_EObject'. From 'model_overrides_Insert', the role 'model_overrides_Insert' has cardinality 0..*, and from 'overrides_model_EObject', the role 'overrides_model_EObject' has cardinality 0..*.
+An association connects 'Operation' and 'model_overrides_WidgetContainerOverrides'. From 'Operation', the role 'Operation33' has cardinality 0..*, and from 'model_overrides_WidgetContainerOverrides', the role 'model_overrides_WidgetContainerOverrides' has cardinality 0..*.

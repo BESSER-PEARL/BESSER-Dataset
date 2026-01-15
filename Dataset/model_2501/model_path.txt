@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tdegueul/MetamodelExtensions/metamodelextensions.tfsm/model/Tfsm.ecore

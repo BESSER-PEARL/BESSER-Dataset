@@ -1,0 +1,68 @@
+The domain model 'testmultipleinheritanceedgeclasses' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'testmultipleinheritanceedgeclasses_D' represents an important domain concept.
+It does not declare any attributes.
+
+'testmultipleinheritanceedgeclasses_BetterEdgeAB' represents an important domain concept.
+It does not declare any attributes.
+
+'EdgeCD' represents an important domain concept.
+It does not declare any attributes.
+
+'testmultipleinheritanceedgeclasses_A' represents an important domain concept.
+It does not declare any attributes.
+
+'testmultipleinheritanceedgeclasses_L' represents an important domain concept.
+It does not declare any attributes.
+
+'testmultipleinheritanceedgeclasses_C' represents an important domain concept.
+It does not declare any attributes.
+
+'testmultipleinheritanceedgeclasses_EdgeAB' represents an important domain concept.
+It does not declare any attributes.
+
+'testmultipleinheritanceedgeclasses_BetterEdgeKL' represents an important domain concept.
+It does not declare any attributes.
+
+'D' represents an important domain concept.
+It does not declare any attributes.
+
+'EdgeAB' represents an important domain concept.
+It does not declare any attributes.
+
+'testmultipleinheritanceedgeclasses_EdgeCD' represents an important domain concept.
+It does not declare any attributes.
+
+'testmultipleinheritanceedgeclasses_B' represents an important domain concept.
+It does not declare any attributes.
+
+'C' represents an important domain concept.
+It does not declare any attributes.
+
+'EdgeKL' represents an important domain concept.
+It does not declare any attributes.
+
+'testmultipleinheritanceedgeclasses_K' represents an important domain concept.
+It does not declare any attributes.
+
+'testmultipleinheritanceedgeclasses_EdgeKL' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'testmultipleinheritanceedgeclasses_A' is a specialization of 'C'.
+The class 'testmultipleinheritanceedgeclasses_EdgeAB' is a specialization of 'EdgeCD'.
+The class 'testmultipleinheritanceedgeclasses_B' is a specialization of 'D'.
+The class 'testmultipleinheritanceedgeclasses_BetterEdgeAB' is a specialization of 'EdgeAB'.
+The class 'testmultipleinheritanceedgeclasses_BetterEdgeKL' is a specialization of 'EdgeKL'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testmultipleinheritanceedgeclasses_EdgeAB' and 'testmultipleinheritanceedgeclasses_A'. From 'testmultipleinheritanceedgeclasses_EdgeAB', the role 'EdgeAB' has cardinality 0..*, and from 'testmultipleinheritanceedgeclasses_A', the role 'a' has cardinality 0..*.
+An association connects 'testmultipleinheritanceedgeclasses_EdgeAB' and 'testmultipleinheritanceedgeclasses_A'. From 'testmultipleinheritanceedgeclasses_EdgeAB', the role 'edgeforA' has cardinality 0..*, and from 'testmultipleinheritanceedgeclasses_A', the role 'A' has cardinality 0..*.
+An association connects 'testmultipleinheritanceedgeclasses_B' and 'testmultipleinheritanceedgeclasses_EdgeAB'. From 'testmultipleinheritanceedgeclasses_B', the role 'B' has cardinality 0..*, and from 'testmultipleinheritanceedgeclasses_EdgeAB', the role 'edgeforB' has cardinality 0..*.
+An association connects 'testmultipleinheritanceedgeclasses_B' and 'testmultipleinheritanceedgeclasses_EdgeAB'. From 'testmultipleinheritanceedgeclasses_B', the role 'b' has cardinality 0..*, and from 'testmultipleinheritanceedgeclasses_EdgeAB', the role 'EdgeAB4' has cardinality 0..*.
+An association connects 'testmultipleinheritanceedgeclasses_C' and 'testmultipleinheritanceedgeclasses_EdgeCD'. From 'testmultipleinheritanceedgeclasses_C', the role 'testmultipleinheritanceedgeclasses_C' has cardinality 0..*, and from 'testmultipleinheritanceedgeclasses_EdgeCD', the role 'testmultipleinheritanceedgeclasses_EdgeCD' has cardinality 0..*.
+An association connects 'testmultipleinheritanceedgeclasses_EdgeCD' and 'testmultipleinheritanceedgeclasses_D'. From 'testmultipleinheritanceedgeclasses_EdgeCD', the role 'testmultipleinheritanceedgeclasses_EdgeCD7' has cardinality 0..*, and from 'testmultipleinheritanceedgeclasses_D', the role 'testmultipleinheritanceedgeclasses_D' has cardinality 0..*.
+An association connects 'testmultipleinheritanceedgeclasses_EdgeKL' and 'testmultipleinheritanceedgeclasses_K'. From 'testmultipleinheritanceedgeclasses_EdgeKL', the role 'testmultipleinheritanceedgeclasses_EdgeKL' has cardinality 0..*, and from 'testmultipleinheritanceedgeclasses_K', the role 'testmultipleinheritanceedgeclasses_K' has cardinality 0..*.
+An association connects 'testmultipleinheritanceedgeclasses_L' and 'testmultipleinheritanceedgeclasses_EdgeKL'. From 'testmultipleinheritanceedgeclasses_L', the role 'testmultipleinheritanceedgeclasses_L' has cardinality 0..*, and from 'testmultipleinheritanceedgeclasses_EdgeKL', the role 'testmultipleinheritanceedgeclasses_EdgeKL10' has cardinality 0..*.

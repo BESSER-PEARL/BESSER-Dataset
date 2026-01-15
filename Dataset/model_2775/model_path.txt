@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/christianthechristian/example_mswitch_maven_project/bundles/tools.mdsd.ecoreworkflow.examples.switches_with_tyco.bundle/model/testscenario.ecore

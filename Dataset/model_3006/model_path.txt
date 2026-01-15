@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/pjeanjean/ale-repl/languages/minijava/org.tetrabox.minijava.xtext/model/MiniJava.ecore

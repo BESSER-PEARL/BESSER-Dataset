@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/awortmann/xmontiarc/ur1.diverse.automata.model/ur1.diverse.automata.model/automata.ecore

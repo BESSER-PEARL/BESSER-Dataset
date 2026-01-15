@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jeancharles-roger/fr.minibilles.basics/basics-tools-ant/models/fiacre/fiacre.ecore

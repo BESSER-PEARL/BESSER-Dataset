@@ -1,0 +1,1170 @@
+The domain model 'frontend' describes the core structural elements and their relationships within the system.
+
+The model defines 275 main class(es).
+
+'core_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_TraceUse' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_TracedModelParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_tao_SourceExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_MappingTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_tao_ReferenceAssignment' represents an important domain concept.
+It has the following attributes: 'targetFeature', which is of type str; 'multivalued', which is of type bool.
+
+'SourceExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ResolveLink' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_imperative_MethodDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TransformationDefinitionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_ModuleParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'core_TransformationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_AttributeIsString' represents an important domain concept.
+It has one attribute: 'strValue', which is of type str.
+
+'frontend_qool_MatchExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_NumLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'Template' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_InlineFeature' represents an important domain concept.
+It has one attribute: 'multivalued', which is of type bool.
+
+'MethodDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_UseDeclaration' represents an important domain concept.
+It has the following attributes: 'module', which is of type str; 'as', which is of type str.
+
+'frontend_tao_ObjectInstantiation' represents an important domain concept.
+It does not declare any attributes.
+
+'IfBranch' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_attribution_AttributionTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'Context' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_tao_TemplateRootObject' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_tao_ObjectSyntax' represents an important domain concept.
+It does not declare any attributes.
+
+'Section' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_facilities_CopierCallbackDefinition' represents an important domain concept.
+It has one attribute: 'stop', which is of type bool.
+
+'frontend_mappings_AttributeRightPart' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_qool_ModelElementQueue' represents an important domain concept.
+It does not declare any attributes.
+
+'RequireDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_ConvertModifier' represents an important domain concept.
+It has one attribute: 'converter', which is of type str.
+
+'frontend_core_TransformationDefinitionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_ClassMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'tao_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_chain_ChainTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_AttributeMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_tao_TaoTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_AttributeIsInteger' represents an important domain concept.
+It has one attribute: 'intValue', which is of type int.
+
+'AttributeModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'mappings_MetamodelElementRef' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'core_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_koan_KoanTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_Section' represents an important domain concept.
+It has one attribute: 'sectionType', which is of type str.
+
+'frontend_core_ImportedModel' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_ClassUse' represents an important domain concept.
+It has the following attributes: 'strictType', which is of type bool; 'className', which is of type str.
+
+'frontend_DummyRootMetaclass' represents an important domain concept.
+It does not declare any attributes.
+
+'mappings_MappingVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_imperative_MethodParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_Modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_patterns_PatternSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'frontend_mappings_FeatureRef' represents an important domain concept.
+It has the following attributes: 'multivalued', which is of type bool; 'featureName', which is of type str.
+
+'frontend_qool_InvocationParameter' represents an important domain concept.
+It has one attribute: 'calleeModelName', which is of type str.
+
+'frontend_core_IfExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_GenericAnnotation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TemplateRootObject' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_tao_Invocation' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_koan_ForAllMatcher' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_patterns_PFeature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_Class2Class' represents an important domain concept.
+It has one attribute: 'cardinality', which is of type str.
+
+'frontend_tao_ObjectSourceVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_InlineModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Matcher' represents an important domain concept.
+It does not declare any attributes.
+
+'InlineClass' represents an important domain concept.
+It does not declare any attributes.
+
+'QueueOptimization' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_RequireModelParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'core_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_EqualityFilter' represents an important domain concept.
+It has one attribute: 'filter', which is of type str.
+
+'frontend_koan_KoanRule' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_attribution_AttributeInit' represents an important domain concept.
+It does not declare any attributes.
+
+'MetamodelElementRef' represents an important domain concept.
+It does not declare any attributes.
+
+'UseDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_tao_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_qool_KindOfPredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_qool_InvokeTransformation' represents an important domain concept.
+It has the following attributes: 'transformationName', which is of type str; 'entryPointName', which is of type str.
+
+'NamedInvocationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeDcl' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'core_DefinitionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_qool_QoolTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_facilities_Copier' represents an important domain concept.
+It does not declare any attributes.
+
+'QoolQueue' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_chain_ExternalTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'InvokeTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'Modifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ReferenceAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_MethodCall' represents an important domain concept.
+It has the following attributes: 'withParameters', which is of type bool; 'methodName', which is of type str.
+
+'core_ImplicitlyAnnotableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_DefinitionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureRef' represents an important domain concept.
+It does not declare any attributes.
+
+'KoanRule' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_DefineVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_IfBranch' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_PropertyWrite' represents an important domain concept.
+It has one attribute: 'property', which is of type str.
+
+'frontend_core_TraceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_AttributeIsResolveLink' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_TraceDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_TraceCompareExpression' represents an important domain concept.
+It has one attribute: 'multivaluedTag', which is of type bool.
+
+'frontend_core_ClosureParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodSelf' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_chain_CompositeTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_AttributeRef' represents an important domain concept.
+It has the following attributes: 'multivalued', which is of type bool; 'featureName', which is of type str.
+
+'frontend_attribution_AttributeDcl' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_AttributeIsDouble' represents an important domain concept.
+It has one attribute: 'doubleValue', which is of type str.
+
+'frontend_core_RepresentModel' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_chain_AvailableTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_patterns_PReference' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_TraceInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'koan_Matcher' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectInstantiation' represents an important domain concept.
+It does not declare any attributes.
+
+'PutTraceParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'DefinitionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ExternalTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_Split' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_MetamodelElementRef' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_InlineAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'core_RepresentModel' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_tao_Template' represents an important domain concept.
+It does not declare any attributes.
+
+'mappings_AttributeRightPart' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_qool_NamedInvocationParameter' represents an important domain concept.
+It has one attribute: 'formalName', which is of type str.
+
+'ModuleDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_SingleAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_C2CModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'MatchedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Segment' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_TypeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'GeneratedModel' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_MetamodelModelAnnotation' represents an important domain concept.
+It has one attribute: 'metamodel', which is of type str.
+
+'frontend_core_ModelReference' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_Join' represents an important domain concept.
+It does not declare any attributes.
+
+'Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_LinkedBy' represents an important domain concept.
+It does not declare any attributes.
+
+'C2CModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_Context' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_OptimizationsAnnotation' represents an important domain concept.
+It has one attribute: 'enabled', which is of type bool.
+
+'Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_DefaultValue' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassRef' represents an important domain concept.
+It does not declare any attributes.
+
+'MatchPredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_KeywordMethodCall' represents an important domain concept.
+It does not declare any attributes.
+
+'RepresentModel' represents an important domain concept.
+It does not declare any attributes.
+
+'core_AnnotableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_chain_GeneratedModel' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_AttributeModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_PutTraceParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_BinaryExpr' represents an important domain concept.
+It has one attribute: 'binaryOp', which is of type str.
+
+'frontend_attribution_AttributeUse' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'PReference' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_tao_AttributeAssigment' represents an important domain concept.
+It has one attribute: 'targetFeature', which is of type str.
+
+'frontend_patterns_CollectionReference' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_ClassRef' represents an important domain concept.
+It does not declare any attributes.
+
+'chain_AvailableTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'core_ModuleDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ClosureParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'KeywordParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_IntDefaultValue' represents an important domain concept.
+It has one attribute: 'defaultValue', which is of type str.
+
+'SingleAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_DoubleLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_qool_EmitStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_qool_ForAllStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mappings_Feature2Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_Attribute2Attribute' represents an important domain concept.
+It has one attribute: 'cardinality', which is of type str.
+
+'frontend_mappings_MatchedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Class2Class' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_imperative_ImperativeTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'TraceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'AvailableTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_RequireParameter' represents an important domain concept.
+It has one attribute: 'formalParameterName', which is of type str.
+
+'frontend_qool_QueueOptimization' represents an important domain concept.
+It does not declare any attributes.
+
+'MethodParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'PObject' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_ClosureDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_RequireDeclaration' represents an important domain concept.
+It has the following attributes: 'default', which is of type str; 'name', which is of type str.
+
+'frontend_mappings_ReferenceRef' represents an important domain concept.
+It has the following attributes: 'featureName', which is of type str; 'multivalued', which is of type bool.
+
+'frontend_mappings_Delegate' represents an important domain concept.
+It has the following attributes: 'isExternal', which is of type str; 'featureName', which is of type str; 'linkName', which is of type str.
+
+'frontend_core_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_chain_TransformationExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_TransformationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectSourceVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_qool_MatchPredicate' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_MappingElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ImportedModel' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_ImplicitlyAnnotableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute2Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_tao_TemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_Converter' represents an important domain concept.
+It has the following attributes: 'isExternal', which is of type str; 'converterName', which is of type str.
+
+'frontend_core_PotencyAnnotation' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'frontend_core_InlineClass' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature2Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_qool_InvokeExternal' represents an important domain concept.
+It has the following attributes: 'queueName', which is of type str; 'traceAttributeName', which is of type str.
+
+'core_TypeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Converter' represents an important domain concept.
+It does not declare any attributes.
+
+'PFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_qool_AccessByFeatureOptimization' represents an important domain concept.
+It has the following attributes: 'force', which is of type bool; 'featureName', which is of type str.
+
+'frontend_core_LocatedElement' represents an important domain concept.
+It has the following attributes: 'column', which is of type int; 'file', which is of type str; 'row', which is of type int.
+
+'RuleSelf' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_patterns_Pattern' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Delegate' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_qool_Segment' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_koan_Matcher' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_qool_PropertyEqualsPredicate' represents an important domain concept.
+It has one attribute: 'propertyName', which is of type str.
+
+'frontend_core_ResolveLink' represents an important domain concept.
+It has the following attributes: 'isExternal', which is of type str; 'featureName', which is of type str; 'linkName', which is of type str.
+
+'frontend_qool_InvokeInternal' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_AnnotationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_MatchTrace' represents an important domain concept.
+It has one attribute: 'cardinality', which is of type str.
+
+'ClassMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'TransformationExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'core_TypedWithClass' represents an important domain concept.
+It does not declare any attributes.
+
+'facilities_CopierCallbackDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingElement' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_qool_LocalQueue' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_AnnotableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_attribution_AttributionRule' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_EclecticTransformationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_Feature2Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_ModuleDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_attribution_RuleSelf' represents an important domain concept.
+It does not declare any attributes.
+
+'InlineFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_RelatedBy' represents an important domain concept.
+It does not declare any attributes.
+
+'Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_tao_WithOptionalVariableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributionRule' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_AttributeIsBoolean' represents an important domain concept.
+It has one attribute: 'boolValue', which is of type str.
+
+'frontend_mappings_MappingVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_InlineReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassUse' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_VariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'core_LocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DefaultValue' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'TraceDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'IteratorStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'RequireParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_qool_ForEachStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_ClassUse' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_attribution_SynthesizedAttributeDcl' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_patterns_PObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ReferenceRef' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_qool_IteratorStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_script_ScriptedTransformation' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_patterns_POutputVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_patterns_PAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_PutTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'InlineModel' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_KeywordParameter' represents an important domain concept.
+It has one attribute: 'keyword', which is of type str.
+
+'TraceCompareExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeRightPart' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_qool_QoolQueue' represents an important domain concept.
+It does not declare any attributes.
+
+'TransformationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'POutputVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'InvocationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_TypedWithClass' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_attribution_InheritedAttributeDcl' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_core_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'frontend_imperative_MethodSelf' represents an important domain concept.
+It does not declare any attributes.
+
+'TraceInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'frontend_mappings_Reference2Reference' represents an important domain concept.
+It has the following attributes: 'resolverName', which is of type str; 'cardinality', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MappingCardinality' defines the following possible values: 'NToOne', 'OneToN', 'OneToOne'.
+The enumeration 'ResolveTraceCardinality' defines the following possible values: 'ZERO_OR_ONE', 'MANY', 'ONE_ONE'.
+The enumeration 'BinaryOp' defines the following possible values: 'MUL', 'ADD', 'EQUAL', 'DIV', 'SUB'.
+
+The model also captures inheritance relationships between classes.
+The class 'frontend_script_ScriptedTransformation' is a specialization of 'TransformationDefinition'.
+The class 'frontend_koan_KoanTransformation' is a specialization of 'TransformationDefinition'.
+The class 'frontend_koan_KoanRule' is a specialization of 'core_LocatedElement'.
+The class 'frontend_koan_KoanRule' is a specialization of 'core_NamedElement'.
+The class 'frontend_koan_Matcher' is a specialization of 'LocatedElement'.
+The class 'frontend_koan_ForAllMatcher' is a specialization of 'koan_Matcher'.
+The class 'frontend_koan_ForAllMatcher' is a specialization of 'core_Variable'.
+The class 'frontend_attribution_AttributionTransformation' is a specialization of 'TransformationDefinition'.
+The class 'frontend_attribution_AttributeDcl' is a specialization of 'core_Variable'.
+The class 'frontend_attribution_AttributeDcl' is a specialization of 'core_TypedWithClass'.
+The class 'frontend_attribution_AttributeDcl' is a specialization of 'core_LocatedElement'.
+The class 'frontend_attribution_InheritedAttributeDcl' is a specialization of 'AttributeDcl'.
+The class 'frontend_attribution_SynthesizedAttributeDcl' is a specialization of 'AttributeDcl'.
+The class 'frontend_attribution_AttributionRule' is a specialization of 'LocatedElement'.
+The class 'frontend_attribution_RuleSelf' is a specialization of 'Variable'.
+The class 'frontend_attribution_AttributeInit' is a specialization of 'Statement'.
+The class 'frontend_attribution_AttributeUse' is a specialization of 'Expression'.
+The class 'frontend_imperative_ImperativeTransformation' is a specialization of 'TransformationDefinition'.
+The class 'frontend_imperative_MethodDefinition' is a specialization of 'LocatedElement'.
+The class 'frontend_imperative_MethodSelf' is a specialization of 'Variable'.
+The class 'frontend_imperative_MethodParameter' is a specialization of 'Variable'.
+The class 'frontend_chain_ChainTransformation' is a specialization of 'TransformationDefinition'.
+The class 'frontend_chain_GeneratedModel' is a specialization of 'core_RepresentModel'.
+The class 'frontend_chain_GeneratedModel' is a specialization of 'core_NamedElement'.
+The class 'frontend_chain_TransformationExecution' is a specialization of 'LocatedElement'.
+The class 'frontend_chain_ExternalTransformation' is a specialization of 'chain_AvailableTransformation'.
+The class 'frontend_chain_ExternalTransformation' is a specialization of 'core_NamedElement'.
+The class 'frontend_chain_CompositeTransformation' is a specialization of 'chain_AvailableTransformation'.
+The class 'frontend_chain_CompositeTransformation' is a specialization of 'core_TransformationDefinition'.
+The class 'frontend_patterns_PatternSpecification' is a specialization of 'TransformationDefinition'.
+The class 'frontend_patterns_Pattern' is a specialization of 'LocatedElement'.
+The class 'frontend_patterns_PObject' is a specialization of 'core_Variable'.
+The class 'frontend_patterns_PObject' is a specialization of 'core_LocatedElement'.
+The class 'frontend_patterns_PFeature' is a specialization of 'LocatedElement'.
+The class 'frontend_patterns_PAttribute' is a specialization of 'PFeature'.
+The class 'frontend_patterns_PReference' is a specialization of 'PFeature'.
+The class 'frontend_patterns_CollectionReference' is a specialization of 'PReference'.
+The class 'frontend_mappings_MappingTransformation' is a specialization of 'TransformationDefinition'.
+The class 'frontend_mappings_MappingVariable' is a specialization of 'Variable'.
+The class 'frontend_mappings_MatchedElement' is a specialization of 'core_ClassUse'.
+The class 'frontend_mappings_MatchedElement' is a specialization of 'mappings_MappingVariable'.
+The class 'frontend_mappings_Delegate' is a specialization of 'LocatedElement'.
+The class 'frontend_mappings_Context' is a specialization of 'LocatedElement'.
+The class 'frontend_mappings_Section' is a specialization of 'LocatedElement'.
+The class 'frontend_mappings_MappingElement' is a specialization of 'LocatedElement'.
+The class 'frontend_mappings_ClassMapping' is a specialization of 'MappingElement'.
+The class 'frontend_mappings_Feature2Feature' is a specialization of 'MappingElement'.
+The class 'frontend_mappings_AttributeMapping' is a specialization of 'Feature2Feature'.
+The class 'frontend_mappings_AttributeIsString' is a specialization of 'AttributeRightPart'.
+The class 'frontend_mappings_AttributeIsBoolean' is a specialization of 'AttributeRightPart'.
+The class 'frontend_mappings_AttributeIsDouble' is a specialization of 'AttributeRightPart'.
+The class 'frontend_mappings_AttributeIsResolveLink' is a specialization of 'AttributeRightPart'.
+The class 'frontend_mappings_AttributeIsInteger' is a specialization of 'AttributeRightPart'.
+The class 'frontend_mappings_Tag' is a specialization of 'NamedElement'.
+The class 'frontend_mappings_Class2Class' is a specialization of 'ClassMapping'.
+The class 'frontend_mappings_C2CModifier' is a specialization of 'MappingElement'.
+The class 'frontend_mappings_RelatedBy' is a specialization of 'C2CModifier'.
+The class 'frontend_mappings_LinkedBy' is a specialization of 'C2CModifier'.
+The class 'frontend_mappings_EqualityFilter' is a specialization of 'C2CModifier'.
+The class 'frontend_mappings_Operator' is a specialization of 'LocatedElement'.
+The class 'frontend_mappings_Split' is a specialization of 'Operator'.
+The class 'frontend_mappings_Join' is a specialization of 'Operator'.
+The class 'frontend_mappings_Attribute2Attribute' is a specialization of 'mappings_Feature2Feature'.
+The class 'frontend_mappings_Attribute2Attribute' is a specialization of 'mappings_AttributeRightPart'.
+The class 'frontend_mappings_Reference2Reference' is a specialization of 'Feature2Feature'.
+The class 'frontend_mappings_AttributeModifier' is a specialization of 'Modifier'.
+The class 'frontend_mappings_ConvertModifier' is a specialization of 'AttributeModifier'.
+The class 'frontend_mappings_DefaultValue' is a specialization of 'AttributeModifier'.
+The class 'frontend_mappings_IntDefaultValue' is a specialization of 'DefaultValue'.
+The class 'frontend_mappings_ClassRef' is a specialization of 'MetamodelElementRef'.
+The class 'frontend_mappings_FeatureRef' is a specialization of 'mappings_MetamodelElementRef'.
+The class 'frontend_mappings_FeatureRef' is a specialization of 'mappings_Feature2Feature'.
+The class 'frontend_mappings_AttributeRef' is a specialization of 'MetamodelElementRef'.
+The class 'frontend_mappings_ReferenceRef' is a specialization of 'MetamodelElementRef'.
+The class 'frontend_qool_QoolTransformation' is a specialization of 'TransformationDefinition'.
+The class 'frontend_qool_QoolQueue' is a specialization of 'core_LocatedElement'.
+The class 'frontend_qool_QoolQueue' is a specialization of 'core_NamedElement'.
+The class 'frontend_qool_AccessByFeatureOptimization' is a specialization of 'QueueOptimization'.
+The class 'frontend_qool_LocalQueue' is a specialization of 'QoolQueue'.
+The class 'frontend_qool_ModelElementQueue' is a specialization of 'QoolQueue'.
+The class 'frontend_qool_Segment' is a specialization of 'NamedElement'.
+The class 'frontend_qool_IteratorStatement' is a specialization of 'core_Statement'.
+The class 'frontend_qool_IteratorStatement' is a specialization of 'core_Variable'.
+The class 'frontend_qool_ForAllStatement' is a specialization of 'IteratorStatement'.
+The class 'frontend_qool_ForEachStatement' is a specialization of 'IteratorStatement'.
+The class 'frontend_qool_EmitStatement' is a specialization of 'Statement'.
+The class 'frontend_qool_MatchExpression' is a specialization of 'Expression'.
+The class 'frontend_qool_KindOfPredicate' is a specialization of 'MatchPredicate'.
+The class 'frontend_qool_PropertyEqualsPredicate' is a specialization of 'MatchPredicate'.
+The class 'frontend_qool_InvokeTransformation' is a specialization of 'Expression'.
+The class 'frontend_qool_InvokeExternal' is a specialization of 'InvokeTransformation'.
+The class 'frontend_qool_InvokeInternal' is a specialization of 'InvokeTransformation'.
+The class 'frontend_facilities_Copier' is a specialization of 'Expression'.
+The class 'frontend_tao_TaoTransformation' is a specialization of 'TransformationDefinition'.
+The class 'frontend_tao_TemplateParameter' is a specialization of 'Variable'.
+The class 'frontend_tao_ObjectInstantiation' is a specialization of 'core_Variable'.
+The class 'frontend_tao_ObjectInstantiation' is a specialization of 'core_Statement'.
+The class 'frontend_tao_TemplateRootObject' is a specialization of 'ObjectInstantiation'.
+The class 'frontend_tao_Template' is a specialization of 'core_NamedElement'.
+The class 'frontend_tao_Template' is a specialization of 'core_LocatedElement'.
+The class 'frontend_tao_Assignment' is a specialization of 'Statement'.
+The class 'frontend_tao_AttributeAssigment' is a specialization of 'Assignment'.
+The class 'frontend_tao_SourceExpression' is a specialization of 'LocatedElement'.
+The class 'frontend_tao_WithOptionalVariableExpression' is a specialization of 'SourceExpression'.
+The class 'frontend_tao_ObjectSourceVariable' is a specialization of 'Variable'.
+The class 'frontend_tao_ReferenceAssignment' is a specialization of 'tao_Assignment'.
+The class 'frontend_tao_ReferenceAssignment' is a specialization of 'core_Variable'.
+The class 'frontend_tao_ObjectSyntax' is a specialization of 'ReferenceAssignment'.
+The class 'frontend_tao_Invocation' is a specialization of 'ReferenceAssignment'.
+The class 'frontend_core_DefinitionParameter' is a specialization of 'NamedElement'.
+The class 'frontend_core_ModuleParameter' is a specialization of 'DefinitionParameter'.
+The class 'frontend_core_ModuleDefinition' is a specialization of 'core_LocatedElement'.
+The class 'frontend_core_ModuleDefinition' is a specialization of 'core_NamedElement'.
+The class 'frontend_core_ModuleDefinition' is a specialization of 'core_AnnotableElement'.
+The class 'frontend_core_OptimizationsAnnotation' is a specialization of 'Annotation'.
+The class 'frontend_core_MetamodelModelAnnotation' is a specialization of 'Annotation'.
+The class 'frontend_core_SingleAnnotation' is a specialization of 'Annotation'.
+The class 'frontend_core_PotencyAnnotation' is a specialization of 'SingleAnnotation'.
+The class 'frontend_core_RepresentModel' is a specialization of 'AnnotableElement'.
+The class 'frontend_core_TransformationDefinition' is a specialization of 'ModuleDefinition'.
+The class 'frontend_core_EclecticTransformationDefinition' is a specialization of 'TransformationDefinition'.
+The class 'frontend_core_TransformationDefinitionParameter' is a specialization of 'core_DefinitionParameter'.
+The class 'frontend_core_TransformationDefinitionParameter' is a specialization of 'core_RepresentModel'.
+The class 'frontend_core_ImportedModel' is a specialization of 'core_RepresentModel'.
+The class 'frontend_core_ImportedModel' is a specialization of 'core_NamedElement'.
+The class 'frontend_core_UseDeclaration' is a specialization of 'RepresentModel'.
+The class 'frontend_core_RequireDeclaration' is a specialization of 'RepresentModel'.
+The class 'frontend_core_RequireModelParameter' is a specialization of 'RequireParameter'.
+The class 'frontend_core_Statement' is a specialization of 'LocatedElement'.
+The class 'frontend_core_Expression' is a specialization of 'Statement'.
+The class 'frontend_core_DefineVariable' is a specialization of 'core_Statement'.
+The class 'frontend_core_DefineVariable' is a specialization of 'core_Variable'.
+The class 'frontend_core_PropertyWrite' is a specialization of 'Expression'.
+The class 'frontend_core_ModelReference' is a specialization of 'core_ClassUse'.
+The class 'frontend_core_ModelReference' is a specialization of 'core_Expression'.
+The class 'frontend_core_VariableReference' is a specialization of 'Expression'.
+The class 'frontend_core_MethodCall' is a specialization of 'Expression'.
+The class 'frontend_core_KeywordMethodCall' is a specialization of 'Expression'.
+The class 'frontend_core_BinaryExpr' is a specialization of 'Expression'.
+The class 'frontend_core_ClosureDeclaration' is a specialization of 'Expression'.
+The class 'frontend_core_ClosureParameter' is a specialization of 'Variable'.
+The class 'frontend_core_ResolveLink' is a specialization of 'Expression'.
+The class 'frontend_core_IfExpr' is a specialization of 'Expression'.
+The class 'frontend_core_NumLiteral' is a specialization of 'Expression'.
+The class 'frontend_core_DoubleLiteral' is a specialization of 'Expression'.
+The class 'frontend_core_StringLiteral' is a specialization of 'Expression'.
+The class 'frontend_core_BooleanLiteral' is a specialization of 'Expression'.
+The class 'frontend_core_ClassUse' is a specialization of 'core_TypeExpression'.
+The class 'frontend_core_ClassUse' is a specialization of 'core_ImplicitlyAnnotableElement'.
+The class 'frontend_core_TraceUse' is a specialization of 'TypeExpression'.
+The class 'frontend_core_TraceInterface' is a specialization of 'ModuleDefinition'.
+The class 'frontend_core_TracedModelParameter' is a specialization of 'core_DefinitionParameter'.
+The class 'frontend_core_TracedModelParameter' is a specialization of 'core_RepresentModel'.
+The class 'frontend_core_TraceDefinition' is a specialization of 'NamedElement'.
+The class 'frontend_core_TraceElement' is a specialization of 'NamedElement'.
+The class 'frontend_core_InlineModel' is a specialization of 'core_ModuleDefinition'.
+The class 'frontend_core_InlineModel' is a specialization of 'core_RepresentModel'.
+The class 'frontend_core_InlineClass' is a specialization of 'NamedElement'.
+The class 'frontend_core_InlineFeature' is a specialization of 'NamedElement'.
+The class 'frontend_core_InlineAttribute' is a specialization of 'InlineFeature'.
+The class 'frontend_core_InlineReference' is a specialization of 'InlineFeature'.
+The class 'frontend_core_MatchTrace' is a specialization of 'Expression'.
+The class 'frontend_core_PutTrace' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'frontend_script_ScriptedTransformation' and 'Statement'. From 'frontend_script_ScriptedTransformation', the role 'frontend_script_ScriptedTransformation' has cardinality 0..*, and from 'Statement', the role 'Statement' has cardinality 0..*.
+An association connects 'frontend_koan_KoanTransformation' and 'TraceInterface'. From 'frontend_koan_KoanTransformation', the role 'frontend_koan_KoanTransformation' has cardinality 0..*, and from 'TraceInterface', the role 'TraceInterface' has cardinality 0..*.
+An association connects 'frontend_koan_KoanTransformation' and 'KoanRule'. From 'frontend_koan_KoanTransformation', the role 'frontend_koan_KoanTransformation3' has cardinality 0..*, and from 'KoanRule', the role 'KoanRule' has cardinality 0..*.
+An association connects 'Matcher' and 'frontend_koan_KoanRule'. From 'Matcher', the role 'Matcher' has cardinality 0..*, and from 'frontend_koan_KoanRule', the role 'frontend_koan_KoanRule' has cardinality 0..*.
+An association connects 'Statement' and 'frontend_koan_KoanRule'. From 'Statement', the role 'Statement7' has cardinality 0..*, and from 'frontend_koan_KoanRule', the role 'frontend_koan_KoanRule6' has cardinality 0..*.
+An association connects 'frontend_koan_Matcher' and 'Matcher'. From 'frontend_koan_Matcher', the role 'frontend_koan_Matcher' has cardinality 0..*, and from 'Matcher', the role 'Matcher9' has cardinality 0..*.
+An association connects 'frontend_koan_ForAllMatcher' and 'ClassUse'. From 'frontend_koan_ForAllMatcher', the role 'frontend_koan_ForAllMatcher' has cardinality 0..*, and from 'ClassUse', the role 'ClassUse' has cardinality 0..*.
+An association connects 'AttributeDcl' and 'frontend_attribution_AttributionTransformation'. From 'AttributeDcl', the role 'AttributeDcl' has cardinality 0..*, and from 'frontend_attribution_AttributionTransformation', the role 'frontend_attribution_AttributionTransformation' has cardinality 0..*.
+An association connects 'frontend_attribution_AttributionTransformation' and 'AttributionRule'. From 'frontend_attribution_AttributionTransformation', the role 'frontend_attribution_AttributionTransformation13' has cardinality 0..*, and from 'AttributionRule', the role 'AttributionRule' has cardinality 0..*.
+An association connects 'frontend_attribution_AttributionRule' and 'ClassUse'. From 'frontend_attribution_AttributionRule', the role 'frontend_attribution_AttributionRule' has cardinality 0..*, and from 'ClassUse', the role 'ClassUse15' has cardinality 0..*.
+An association connects 'RuleSelf' and 'frontend_attribution_AttributionRule'. From 'RuleSelf', the role 'RuleSelf' has cardinality 0..*, and from 'frontend_attribution_AttributionRule', the role 'frontend_attribution_AttributionRule17' has cardinality 0..*.
+An association connects 'Expression' and 'frontend_attribution_AttributionRule'. From 'Expression', the role 'Expression' has cardinality 0..*, and from 'frontend_attribution_AttributionRule', the role 'frontend_attribution_AttributionRule19' has cardinality 0..*.
+An association connects 'Statement' and 'frontend_attribution_AttributionRule'. From 'Statement', the role 'Statement22' has cardinality 0..*, and from 'frontend_attribution_AttributionRule', the role 'frontend_attribution_AttributionRule21' has cardinality 0..*.
+An association connects 'frontend_attribution_AttributeInit' and 'AttributeDcl'. From 'frontend_attribution_AttributeInit', the role 'frontend_attribution_AttributeInit' has cardinality 0..*, and from 'AttributeDcl', the role 'AttributeDcl24' has cardinality 0..*.
+An association connects 'frontend_attribution_AttributeInit' and 'Expression'. From 'frontend_attribution_AttributeInit', the role 'frontend_attribution_AttributeInit26' has cardinality 0..*, and from 'Expression', the role 'Expression27' has cardinality 0..*.
+An association connects 'Expression' and 'frontend_attribution_AttributeInit'. From 'Expression', the role 'Expression30' has cardinality 0..*, and from 'frontend_attribution_AttributeInit', the role 'frontend_attribution_AttributeInit29' has cardinality 0..*.
+An association connects 'frontend_attribution_AttributeUse' and 'Expression'. From 'frontend_attribution_AttributeUse', the role 'frontend_attribution_AttributeUse' has cardinality 0..*, and from 'Expression', the role 'Expression32' has cardinality 0..*.
+An association connects 'frontend_attribution_AttributeUse' and 'AttributeDcl'. From 'frontend_attribution_AttributeUse', the role 'frontend_attribution_AttributeUse34' has cardinality 0..*, and from 'AttributeDcl', the role 'AttributeDcl35' has cardinality 0..*.
+An association connects 'frontend_imperative_ImperativeTransformation' and 'MethodDefinition'. From 'frontend_imperative_ImperativeTransformation', the role 'frontend_imperative_ImperativeTransformation' has cardinality 0..*, and from 'MethodDefinition', the role 'MethodDefinition' has cardinality 0..*.
+An association connects 'frontend_imperative_MethodDefinition' and 'MethodParameter'. From 'frontend_imperative_MethodDefinition', the role 'frontend_imperative_MethodDefinition' has cardinality 0..*, and from 'MethodParameter', the role 'MethodParameter' has cardinality 0..*.
+An association connects 'frontend_imperative_MethodDefinition' and 'MethodSelf'. From 'frontend_imperative_MethodDefinition', the role 'frontend_imperative_MethodDefinition39' has cardinality 0..*, and from 'MethodSelf', the role 'MethodSelf' has cardinality 0..*.
+An association connects 'frontend_imperative_MethodDefinition' and 'ClassUse'. From 'frontend_imperative_MethodDefinition', the role 'frontend_imperative_MethodDefinition41' has cardinality 0..*, and from 'ClassUse', the role 'ClassUse42' has cardinality 0..*.
+An association connects 'frontend_imperative_MethodDefinition' and 'Statement'. From 'frontend_imperative_MethodDefinition', the role 'frontend_imperative_MethodDefinition44' has cardinality 0..*, and from 'Statement', the role 'Statement45' has cardinality 0..*.
+An association connects 'frontend_chain_ChainTransformation' and 'CompositeTransformation'. From 'frontend_chain_ChainTransformation', the role 'frontend_chain_ChainTransformation' has cardinality 0..*, and from 'CompositeTransformation', the role 'CompositeTransformation' has cardinality 0..*.
+An association connects 'ExternalTransformation' and 'frontend_chain_ChainTransformation'. From 'ExternalTransformation', the role 'ExternalTransformation' has cardinality 0..*, and from 'frontend_chain_ChainTransformation', the role 'frontend_chain_ChainTransformation48' has cardinality 0..*.
+An association connects 'GeneratedModel' and 'frontend_chain_ChainTransformation'. From 'GeneratedModel', the role 'GeneratedModel' has cardinality 0..*, and from 'frontend_chain_ChainTransformation', the role 'frontend_chain_ChainTransformation50' has cardinality 0..*.
+An association connects 'frontend_chain_ChainTransformation' and 'TransformationExecution'. From 'frontend_chain_ChainTransformation', the role 'frontend_chain_ChainTransformation52' has cardinality 0..*, and from 'TransformationExecution', the role 'TransformationExecution' has cardinality 0..*.
+An association connects 'AvailableTransformation' and 'frontend_chain_TransformationExecution'. From 'AvailableTransformation', the role 'AvailableTransformation' has cardinality 0..*, and from 'frontend_chain_TransformationExecution', the role 'frontend_chain_TransformationExecution' has cardinality 0..*.
+An association connects 'frontend_chain_TransformationExecution' and 'RepresentModel'. From 'frontend_chain_TransformationExecution', the role 'frontend_chain_TransformationExecution55' has cardinality 0..*, and from 'RepresentModel', the role 'RepresentModel' has cardinality 0..*.
+An association connects 'RepresentModel' and 'frontend_chain_TransformationExecution'. From 'RepresentModel', the role 'RepresentModel58' has cardinality 0..*, and from 'frontend_chain_TransformationExecution', the role 'frontend_chain_TransformationExecution57' has cardinality 0..*.
+An association connects 'frontend_chain_CompositeTransformation' and 'TransformationExecution'. From 'frontend_chain_CompositeTransformation', the role 'frontend_chain_CompositeTransformation' has cardinality 0..*, and from 'TransformationExecution', the role 'TransformationExecution60' has cardinality 0..*.
+An association connects 'Pattern' and 'frontend_patterns_PatternSpecification'. From 'Pattern', the role 'Pattern' has cardinality 0..*, and from 'frontend_patterns_PatternSpecification', the role 'frontend_patterns_PatternSpecification' has cardinality 0..*.
+An association connects 'PObject' and 'frontend_patterns_Pattern'. From 'PObject', the role 'PObject' has cardinality 0..*, and from 'frontend_patterns_Pattern', the role 'frontend_patterns_Pattern' has cardinality 0..*.
+An association connects 'POutputVariable' and 'frontend_patterns_Pattern'. From 'POutputVariable', the role 'POutputVariable' has cardinality 0..*, and from 'frontend_patterns_Pattern', the role 'frontend_patterns_Pattern64' has cardinality 0..*.
+An association connects 'frontend_patterns_POutputVariable' and 'PObject'. From 'frontend_patterns_POutputVariable', the role 'frontend_patterns_POutputVariable' has cardinality 0..*, and from 'PObject', the role 'PObject66' has cardinality 0..*.
+An association connects 'frontend_patterns_PObject' and 'ClassUse'. From 'frontend_patterns_PObject', the role 'frontend_patterns_PObject' has cardinality 0..*, and from 'ClassUse', the role 'ClassUse68' has cardinality 0..*.
+An association connects 'PFeature' and 'frontend_patterns_PObject'. From 'PFeature', the role 'PFeature' has cardinality 0..*, and from 'frontend_patterns_PObject', the role 'frontend_patterns_PObject70' has cardinality 0..*.
+An association connects 'frontend_patterns_PAttribute' and 'Expression'. From 'frontend_patterns_PAttribute', the role 'frontend_patterns_PAttribute' has cardinality 0..*, and from 'Expression', the role 'Expression72' has cardinality 0..*.
+An association connects 'frontend_patterns_PAttribute' and 'Variable'. From 'frontend_patterns_PAttribute', the role 'frontend_patterns_PAttribute74' has cardinality 0..*, and from 'Variable', the role 'Variable' has cardinality 0..*.
+An association connects 'PObject' and 'frontend_patterns_PReference'. From 'PObject', the role 'PObject76' has cardinality 0..*, and from 'frontend_patterns_PReference', the role 'frontend_patterns_PReference' has cardinality 0..*.
+An association connects 'Delegate' and 'frontend_mappings_MappingTransformation'. From 'Delegate', the role 'Delegate' has cardinality 0..*, and from 'frontend_mappings_MappingTransformation', the role 'frontend_mappings_MappingTransformation' has cardinality 0..*.
+An association connects 'frontend_mappings_MappingTransformation' and 'Context'. From 'frontend_mappings_MappingTransformation', the role 'frontend_mappings_MappingTransformation79' has cardinality 0..*, and from 'Context', the role 'Context' has cardinality 0..*.
+An association connects 'frontend_mappings_Delegate' and 'MatchedElement'. From 'frontend_mappings_Delegate', the role 'frontend_mappings_Delegate' has cardinality 0..*, and from 'MatchedElement', the role 'MatchedElement' has cardinality 0..*.
+An association connects 'UseDeclaration' and 'frontend_mappings_Delegate'. From 'UseDeclaration', the role 'UseDeclaration' has cardinality 0..*, and from 'frontend_mappings_Delegate', the role 'frontend_mappings_Delegate82' has cardinality 0..*.
+An association connects 'Tag' and 'frontend_mappings_Delegate'. From 'Tag', the role 'Tag' has cardinality 0..*, and from 'frontend_mappings_Delegate', the role 'frontend_mappings_Delegate84' has cardinality 0..*.
+An association connects 'frontend_mappings_Context' and 'MatchedElement'. From 'frontend_mappings_Context', the role 'frontend_mappings_Context' has cardinality 0..*, and from 'MatchedElement', the role 'MatchedElement86' has cardinality 0..*.
+An association connects 'MatchedElement' and 'frontend_mappings_Context'. From 'MatchedElement', the role 'MatchedElement89' has cardinality 0..*, and from 'frontend_mappings_Context', the role 'frontend_mappings_Context88' has cardinality 0..*.
+An association connects 'frontend_mappings_Context' and 'MappingElement'. From 'frontend_mappings_Context', the role 'frontend_mappings_Context91' has cardinality 0..*, and from 'MappingElement', the role 'MappingElement' has cardinality 0..*.
+An association connects 'frontend_mappings_Context' and 'C2CModifier'. From 'frontend_mappings_Context', the role 'frontend_mappings_Context93' has cardinality 0..*, and from 'C2CModifier', the role 'C2CModifier' has cardinality 0..*.
+An association connects 'frontend_mappings_Context' and 'Section'. From 'frontend_mappings_Context', the role 'frontend_mappings_Context95' has cardinality 0..*, and from 'Section', the role 'Section' has cardinality 0..*.
+An association connects 'Tag' and 'frontend_mappings_Context'. From 'Tag', the role 'Tag98' has cardinality 0..*, and from 'frontend_mappings_Context', the role 'frontend_mappings_Context97' has cardinality 0..*.
+An association connects 'frontend_mappings_Section' and 'MappingElement'. From 'frontend_mappings_Section', the role 'frontend_mappings_Section' has cardinality 0..*, and from 'MappingElement', the role 'MappingElement100' has cardinality 0..*.
+An association connects 'FeatureRef' and 'frontend_mappings_Feature2Feature'. From 'FeatureRef', the role 'FeatureRef' has cardinality 0..*, and from 'frontend_mappings_Feature2Feature', the role 'frontend_mappings_Feature2Feature' has cardinality 0..*.
+An association connects 'Converter' and 'frontend_mappings_Feature2Feature'. From 'Converter', the role 'Converter' has cardinality 0..*, and from 'frontend_mappings_Feature2Feature', the role 'frontend_mappings_Feature2Feature103' has cardinality 0..*.
+An association connects 'AttributeRef' and 'frontend_mappings_AttributeMapping'. From 'AttributeRef', the role 'AttributeRef' has cardinality 0..*, and from 'frontend_mappings_AttributeMapping', the role 'frontend_mappings_AttributeMapping' has cardinality 0..*.
+An association connects 'AttributeRightPart' and 'frontend_mappings_AttributeMapping'. From 'AttributeRightPart', the role 'AttributeRightPart' has cardinality 0..*, and from 'frontend_mappings_AttributeMapping', the role 'frontend_mappings_AttributeMapping106' has cardinality 0..*.
+An association connects 'ResolveLink' and 'frontend_mappings_AttributeIsResolveLink'. From 'ResolveLink', the role 'ResolveLink' has cardinality 0..*, and from 'frontend_mappings_AttributeIsResolveLink', the role 'frontend_mappings_AttributeIsResolveLink' has cardinality 0..*.
+An association connects 'frontend_mappings_Converter' and 'UseDeclaration'. From 'frontend_mappings_Converter', the role 'frontend_mappings_Converter' has cardinality 0..*, and from 'UseDeclaration', the role 'UseDeclaration109' has cardinality 0..*.
+An association connects 'C2CModifier' and 'frontend_mappings_Class2Class'. From 'C2CModifier', the role 'C2CModifier111' has cardinality 0..*, and from 'frontend_mappings_Class2Class', the role 'frontend_mappings_Class2Class' has cardinality 0..*.
+An association connects 'ClassRef' and 'frontend_mappings_Class2Class'. From 'ClassRef', the role 'ClassRef' has cardinality 0..*, and from 'frontend_mappings_Class2Class', the role 'frontend_mappings_Class2Class113' has cardinality 0..*.
+An association connects 'frontend_mappings_Class2Class' and 'ClassRef'. From 'frontend_mappings_Class2Class', the role 'frontend_mappings_Class2Class115' has cardinality 0..*, and from 'ClassRef', the role 'ClassRef116' has cardinality 0..*.
+An association connects 'frontend_mappings_Class2Class' and 'Attribute2Attribute'. From 'frontend_mappings_Class2Class', the role 'Attribute2Attribute' has cardinality 0..*, and from 'Attribute2Attribute', the role 'mappings' has cardinality 0..*.
+An association connects 'AttributeRef' and 'frontend_mappings_RelatedBy'. From 'AttributeRef', the role 'AttributeRef119' has cardinality 0..*, and from 'frontend_mappings_RelatedBy', the role 'frontend_mappings_RelatedBy' has cardinality 0..*.
+An association connects 'frontend_mappings_LinkedBy' and 'AttributeRef'. From 'frontend_mappings_LinkedBy', the role 'frontend_mappings_LinkedBy' has cardinality 0..*, and from 'AttributeRef', the role 'AttributeRef121' has cardinality 0..*.
+An association connects 'MatchedElement' and 'frontend_mappings_LinkedBy'. From 'MatchedElement', the role 'MatchedElement124' has cardinality 0..*, and from 'frontend_mappings_LinkedBy', the role 'frontend_mappings_LinkedBy123' has cardinality 0..*.
+An association connects 'frontend_mappings_EqualityFilter' and 'AttributeRef'. From 'frontend_mappings_EqualityFilter', the role 'frontend_mappings_EqualityFilter' has cardinality 0..*, and from 'AttributeRef', the role 'AttributeRef126' has cardinality 0..*.
+An association connects 'frontend_mappings_Split' and 'ClassMapping'. From 'frontend_mappings_Split', the role 'frontend_mappings_Split' has cardinality 0..*, and from 'ClassMapping', the role 'ClassMapping' has cardinality 0..*.
+An association connects 'ClassMapping' and 'frontend_mappings_Join'. From 'ClassMapping', the role 'ClassMapping129' has cardinality 0..*, and from 'frontend_mappings_Join', the role 'frontend_mappings_Join' has cardinality 0..*.
+An association connects 'frontend_mappings_Attribute2Attribute' and 'Class2Class'. From 'frontend_mappings_Attribute2Attribute', the role 'Class2Class' has cardinality 0..*, and from 'Class2Class', the role 'mappings131' has cardinality 0..*.
+An association connects 'AttributeRef' and 'frontend_mappings_Attribute2Attribute'. From 'AttributeRef', the role 'AttributeRef133' has cardinality 0..*, and from 'frontend_mappings_Attribute2Attribute', the role 'frontend_mappings_Attribute2Attribute' has cardinality 0..*.
+An association connects 'AttributeModifier' and 'frontend_mappings_Attribute2Attribute'. From 'AttributeModifier', the role 'AttributeModifier' has cardinality 0..*, and from 'frontend_mappings_Attribute2Attribute', the role 'frontend_mappings_Attribute2Attribute135' has cardinality 0..*.
+An association connects 'frontend_mappings_Reference2Reference' and 'ReferenceRef'. From 'frontend_mappings_Reference2Reference', the role 'frontend_mappings_Reference2Reference' has cardinality 0..*, and from 'ReferenceRef', the role 'ReferenceRef' has cardinality 0..*.
+An association connects 'frontend_mappings_Reference2Reference' and 'ReferenceRef'. From 'frontend_mappings_Reference2Reference', the role 'frontend_mappings_Reference2Reference138' has cardinality 0..*, and from 'ReferenceRef', the role 'ReferenceRef139' has cardinality 0..*.
+An association connects 'frontend_mappings_ClassRef' and 'ClassUse'. From 'frontend_mappings_ClassRef', the role 'frontend_mappings_ClassRef' has cardinality 0..*, and from 'ClassUse', the role 'ClassUse141' has cardinality 0..*.
+An association connects 'MatchedElement' and 'frontend_mappings_FeatureRef'. From 'MatchedElement', the role 'MatchedElement143' has cardinality 0..*, and from 'frontend_mappings_FeatureRef', the role 'frontend_mappings_FeatureRef' has cardinality 0..*.
+An association connects 'MatchedElement' and 'frontend_mappings_AttributeRef'. From 'MatchedElement', the role 'MatchedElement145' has cardinality 0..*, and from 'frontend_mappings_AttributeRef', the role 'frontend_mappings_AttributeRef' has cardinality 0..*.
+An association connects 'MatchedElement' and 'frontend_mappings_ReferenceRef'. From 'MatchedElement', the role 'MatchedElement147' has cardinality 0..*, and from 'frontend_mappings_ReferenceRef', the role 'frontend_mappings_ReferenceRef' has cardinality 0..*.
+An association connects 'QoolQueue' and 'frontend_qool_QoolTransformation'. From 'QoolQueue', the role 'QoolQueue' has cardinality 0..*, and from 'frontend_qool_QoolTransformation', the role 'frontend_qool_QoolTransformation' has cardinality 0..*.
+An association connects 'Segment' and 'frontend_qool_QoolTransformation'. From 'Segment', the role 'Segment' has cardinality 0..*, and from 'frontend_qool_QoolTransformation', the role 'frontend_qool_QoolTransformation150' has cardinality 0..*.
+An association connects 'QueueOptimization' and 'frontend_qool_QoolQueue'. From 'QueueOptimization', the role 'QueueOptimization' has cardinality 0..*, and from 'frontend_qool_QoolQueue', the role 'frontend_qool_QoolQueue' has cardinality 0..*.
+An association connects 'frontend_qool_LocalQueue' and 'TypeExpression'. From 'frontend_qool_LocalQueue', the role 'frontend_qool_LocalQueue' has cardinality 0..*, and from 'TypeExpression', the role 'TypeExpression' has cardinality 0..*.
+An association connects 'frontend_qool_ModelElementQueue' and 'ClassUse'. From 'frontend_qool_ModelElementQueue', the role 'frontend_qool_ModelElementQueue' has cardinality 0..*, and from 'ClassUse', the role 'ClassUse154' has cardinality 0..*.
+An association connects 'ClassUse' and 'frontend_qool_ModelElementQueue'. From 'ClassUse', the role 'ClassUse157' has cardinality 0..*, and from 'frontend_qool_ModelElementQueue', the role 'frontend_qool_ModelElementQueue156' has cardinality 0..*.
+An association connects 'frontend_qool_Segment' and 'Statement'. From 'frontend_qool_Segment', the role 'frontend_qool_Segment' has cardinality 0..*, and from 'Statement', the role 'Statement159' has cardinality 0..*.
+An association connects 'frontend_qool_IteratorStatement' and 'Expression'. From 'frontend_qool_IteratorStatement', the role 'frontend_qool_IteratorStatement' has cardinality 0..*, and from 'Expression', the role 'Expression161' has cardinality 0..*.
+An association connects 'Statement' and 'frontend_qool_IteratorStatement'. From 'Statement', the role 'Statement164' has cardinality 0..*, and from 'frontend_qool_IteratorStatement', the role 'frontend_qool_IteratorStatement163' has cardinality 0..*.
+An association connects 'QoolQueue' and 'frontend_qool_ForAllStatement'. From 'QoolQueue', the role 'QoolQueue166' has cardinality 0..*, and from 'frontend_qool_ForAllStatement', the role 'frontend_qool_ForAllStatement' has cardinality 0..*.
+An association connects 'Expression' and 'frontend_qool_ForEachStatement'. From 'Expression', the role 'Expression168' has cardinality 0..*, and from 'frontend_qool_ForEachStatement', the role 'frontend_qool_ForEachStatement' has cardinality 0..*.
+An association connects 'QoolQueue' and 'frontend_qool_EmitStatement'. From 'QoolQueue', the role 'QoolQueue170' has cardinality 0..*, and from 'frontend_qool_EmitStatement', the role 'frontend_qool_EmitStatement' has cardinality 0..*.
+An association connects 'Expression' and 'frontend_qool_EmitStatement'. From 'Expression', the role 'Expression173' has cardinality 0..*, and from 'frontend_qool_EmitStatement', the role 'frontend_qool_EmitStatement172' has cardinality 0..*.
+An association connects 'QoolQueue' and 'frontend_qool_MatchExpression'. From 'QoolQueue', the role 'QoolQueue175' has cardinality 0..*, and from 'frontend_qool_MatchExpression', the role 'frontend_qool_MatchExpression' has cardinality 0..*.
+An association connects 'frontend_qool_MatchExpression' and 'MatchPredicate'. From 'frontend_qool_MatchExpression', the role 'frontend_qool_MatchExpression177' has cardinality 0..*, and from 'MatchPredicate', the role 'MatchPredicate' has cardinality 0..*.
+An association connects 'frontend_qool_KindOfPredicate' and 'ClassUse'. From 'frontend_qool_KindOfPredicate', the role 'frontend_qool_KindOfPredicate' has cardinality 0..*, and from 'ClassUse', the role 'ClassUse179' has cardinality 0..*.
+An association connects 'frontend_qool_PropertyEqualsPredicate' and 'Expression'. From 'frontend_qool_PropertyEqualsPredicate', the role 'frontend_qool_PropertyEqualsPredicate' has cardinality 0..*, and from 'Expression', the role 'Expression181' has cardinality 0..*.
+An association connects 'InvocationParameter' and 'frontend_qool_InvokeTransformation'. From 'InvocationParameter', the role 'InvocationParameter' has cardinality 0..*, and from 'frontend_qool_InvokeTransformation', the role 'frontend_qool_InvokeTransformation' has cardinality 0..*.
+An association connects 'frontend_qool_InvokeTransformation' and 'InvocationParameter'. From 'frontend_qool_InvokeTransformation', the role 'frontend_qool_InvokeTransformation184' has cardinality 0..*, and from 'InvocationParameter', the role 'InvocationParameter185' has cardinality 0..*.
+An association connects 'frontend_qool_InvokeTransformation' and 'NamedInvocationParameter'. From 'frontend_qool_InvokeTransformation', the role 'frontend_qool_InvokeTransformation187' has cardinality 0..*, and from 'NamedInvocationParameter', the role 'NamedInvocationParameter' has cardinality 0..*.
+An association connects 'Variable' and 'frontend_qool_InvokeTransformation'. From 'Variable', the role 'Variable190' has cardinality 0..*, and from 'frontend_qool_InvokeTransformation', the role 'frontend_qool_InvokeTransformation189' has cardinality 0..*.
+An association connects 'Expression' and 'frontend_qool_InvokeTransformation'. From 'Expression', the role 'Expression193' has cardinality 0..*, and from 'frontend_qool_InvokeTransformation', the role 'frontend_qool_InvokeTransformation192' has cardinality 0..*.
+An association connects 'Expression' and 'frontend_qool_InvokeExternal'. From 'Expression', the role 'Expression195' has cardinality 0..*, and from 'frontend_qool_InvokeExternal', the role 'frontend_qool_InvokeExternal' has cardinality 0..*.
+An association connects 'TransformationDefinitionParameter' and 'frontend_qool_InvocationParameter'. From 'TransformationDefinitionParameter', the role 'TransformationDefinitionParameter' has cardinality 0..*, and from 'frontend_qool_InvocationParameter', the role 'frontend_qool_InvocationParameter' has cardinality 0..*.
+An association connects 'frontend_qool_NamedInvocationParameter' and 'Expression'. From 'frontend_qool_NamedInvocationParameter', the role 'frontend_qool_NamedInvocationParameter' has cardinality 0..*, and from 'Expression', the role 'Expression198' has cardinality 0..*.
+An association connects 'Expression' and 'frontend_facilities_Copier'. From 'Expression', the role 'Expression200' has cardinality 0..*, and from 'frontend_facilities_Copier', the role 'frontend_facilities_Copier' has cardinality 0..*.
+An association connects 'facilities_CopierCallbackDefinition' and 'frontend_facilities_Copier'. From 'facilities_CopierCallbackDefinition', the role 'facilities_CopierCallbackDefinition' has cardinality 0..*, and from 'frontend_facilities_Copier', the role 'frontend_facilities_Copier202' has cardinality 0..*.
+An association connects 'frontend_facilities_Copier' and 'TransformationDefinitionParameter'. From 'frontend_facilities_Copier', the role 'frontend_facilities_Copier204' has cardinality 0..*, and from 'TransformationDefinitionParameter', the role 'TransformationDefinitionParameter205' has cardinality 0..*.
+An association connects 'Expression' and 'frontend_facilities_CopierCallbackDefinition'. From 'Expression', the role 'Expression207' has cardinality 0..*, and from 'frontend_facilities_CopierCallbackDefinition', the role 'frontend_facilities_CopierCallbackDefinition' has cardinality 0..*.
+An association connects 'frontend_facilities_CopierCallbackDefinition' and 'Expression'. From 'frontend_facilities_CopierCallbackDefinition', the role 'frontend_facilities_CopierCallbackDefinition209' has cardinality 0..*, and from 'Expression', the role 'Expression210' has cardinality 0..*.
+An association connects 'Template' and 'frontend_tao_TaoTransformation'. From 'Template', the role 'Template' has cardinality 0..*, and from 'frontend_tao_TaoTransformation', the role 'frontend_tao_TaoTransformation' has cardinality 0..*.
+An association connects 'ClassUse' and 'frontend_tao_TemplateParameter'. From 'ClassUse', the role 'ClassUse213' has cardinality 0..*, and from 'frontend_tao_TemplateParameter', the role 'frontend_tao_TemplateParameter' has cardinality 0..*.
+An association connects 'frontend_tao_ObjectInstantiation' and 'ClassUse'. From 'frontend_tao_ObjectInstantiation', the role 'frontend_tao_ObjectInstantiation' has cardinality 0..*, and from 'ClassUse', the role 'ClassUse215' has cardinality 0..*.
+An association connects 'frontend_tao_ObjectInstantiation' and 'Assignment'. From 'frontend_tao_ObjectInstantiation', the role 'frontend_tao_ObjectInstantiation217' has cardinality 0..*, and from 'Assignment', the role 'Assignment' has cardinality 0..*.
+An association connects 'frontend_tao_Template' and 'TemplateParameter'. From 'frontend_tao_Template', the role 'frontend_tao_Template' has cardinality 0..*, and from 'TemplateParameter', the role 'TemplateParameter' has cardinality 0..*.
+An association connects 'frontend_tao_Template' and 'TemplateRootObject'. From 'frontend_tao_Template', the role 'frontend_tao_Template220' has cardinality 0..*, and from 'TemplateRootObject', the role 'TemplateRootObject' has cardinality 0..*.
+An association connects 'frontend_tao_AttributeAssigment' and 'SourceExpression'. From 'frontend_tao_AttributeAssigment', the role 'frontend_tao_AttributeAssigment' has cardinality 0..*, and from 'SourceExpression', the role 'SourceExpression' has cardinality 0..*.
+An association connects 'ObjectSourceVariable' and 'frontend_tao_WithOptionalVariableExpression'. From 'ObjectSourceVariable', the role 'ObjectSourceVariable' has cardinality 0..*, and from 'frontend_tao_WithOptionalVariableExpression', the role 'frontend_tao_WithOptionalVariableExpression' has cardinality 0..*.
+An association connects 'Expression' and 'frontend_tao_WithOptionalVariableExpression'. From 'Expression', the role 'Expression225' has cardinality 0..*, and from 'frontend_tao_WithOptionalVariableExpression', the role 'frontend_tao_WithOptionalVariableExpression224' has cardinality 0..*.
+An association connects 'frontend_tao_ReferenceAssignment' and 'SourceExpression'. From 'frontend_tao_ReferenceAssignment', the role 'frontend_tao_ReferenceAssignment' has cardinality 0..*, and from 'SourceExpression', the role 'SourceExpression227' has cardinality 0..*.
+An association connects 'ObjectInstantiation' and 'frontend_tao_ObjectSyntax'. From 'ObjectInstantiation', the role 'ObjectInstantiation' has cardinality 0..*, and from 'frontend_tao_ObjectSyntax', the role 'frontend_tao_ObjectSyntax' has cardinality 0..*.
+An association connects 'Template' and 'frontend_tao_Invocation'. From 'Template', the role 'Template230' has cardinality 0..*, and from 'frontend_tao_Invocation', the role 'frontend_tao_Invocation' has cardinality 0..*.
+An association connects 'Annotation' and 'frontend_core_AnnotableElement'. From 'Annotation', the role 'core' has cardinality 0..*, and from 'frontend_core_AnnotableElement', the role 'Annotation' has cardinality 0..*.
+An association connects 'frontend_core_ImplicitlyAnnotableElement' and 'SingleAnnotation'. From 'frontend_core_ImplicitlyAnnotableElement', the role 'frontend_core_ImplicitlyAnnotableElement' has cardinality 0..*, and from 'SingleAnnotation', the role 'SingleAnnotation' has cardinality 0..*.
+An association connects 'AnnotableElement' and 'frontend_core_Annotation'. From 'AnnotableElement', the role 'core234' has cardinality 0..*, and from 'frontend_core_Annotation', the role 'AnnotableElement' has cardinality 0..*.
+An association connects 'AnnotationParameter' and 'frontend_core_GenericAnnotation'. From 'AnnotationParameter', the role 'AnnotationParameter' has cardinality 0..*, and from 'frontend_core_GenericAnnotation', the role 'frontend_core_GenericAnnotation' has cardinality 0..*.
+An association connects 'TransformationDefinitionParameter' and 'frontend_core_TransformationDefinition'. From 'TransformationDefinitionParameter', the role 'TransformationDefinitionParameter237' has cardinality 0..*, and from 'frontend_core_TransformationDefinition', the role 'frontend_core_TransformationDefinition' has cardinality 0..*.
+An association connects 'TransformationDefinitionParameter' and 'frontend_core_TransformationDefinition'. From 'TransformationDefinitionParameter', the role 'TransformationDefinitionParameter240' has cardinality 0..*, and from 'frontend_core_TransformationDefinition', the role 'frontend_core_TransformationDefinition239' has cardinality 0..*.
+An association connects 'ImportedModel' and 'frontend_core_TransformationDefinition'. From 'ImportedModel', the role 'ImportedModel' has cardinality 0..*, and from 'frontend_core_TransformationDefinition', the role 'frontend_core_TransformationDefinition242' has cardinality 0..*.
+An association connects 'frontend_core_TransformationDefinition' and 'InlineModel'. From 'frontend_core_TransformationDefinition', the role 'frontend_core_TransformationDefinition244' has cardinality 0..*, and from 'InlineModel', the role 'InlineModel' has cardinality 0..*.
+An association connects 'frontend_core_TransformationDefinition' and 'Annotation'. From 'frontend_core_TransformationDefinition', the role 'frontend_core_TransformationDefinition246' has cardinality 0..*, and from 'Annotation', the role 'Annotation247' has cardinality 0..*.
+An association connects 'UseDeclaration' and 'frontend_core_TransformationDefinition'. From 'UseDeclaration', the role 'UseDeclaration250' has cardinality 0..*, and from 'frontend_core_TransformationDefinition', the role 'frontend_core_TransformationDefinition249' has cardinality 0..*.
+An association connects 'RequireDeclaration' and 'frontend_core_TransformationDefinition'. From 'RequireDeclaration', the role 'RequireDeclaration' has cardinality 0..*, and from 'frontend_core_TransformationDefinition', the role 'frontend_core_TransformationDefinition252' has cardinality 0..*.
+An association connects 'TransformationDefinition' and 'frontend_core_EclecticTransformationDefinition'. From 'TransformationDefinition', the role 'TransformationDefinition' has cardinality 0..*, and from 'frontend_core_EclecticTransformationDefinition', the role 'frontend_core_EclecticTransformationDefinition' has cardinality 0..*.
+An association connects 'frontend_core_RequireDeclaration' and 'RequireParameter'. From 'frontend_core_RequireDeclaration', the role 'frontend_core_RequireDeclaration' has cardinality 0..*, and from 'RequireParameter', the role 'RequireParameter' has cardinality 0..*.
+An association connects 'RepresentModel' and 'frontend_core_RequireModelParameter'. From 'RepresentModel', the role 'RepresentModel256' has cardinality 0..*, and from 'frontend_core_RequireModelParameter', the role 'frontend_core_RequireModelParameter' has cardinality 0..*.
+An association connects 'frontend_core_DefineVariable' and 'Expression'. From 'frontend_core_DefineVariable', the role 'frontend_core_DefineVariable' has cardinality 0..*, and from 'Expression', the role 'Expression258' has cardinality 0..*.
+An association connects 'frontend_core_PropertyWrite' and 'Variable'. From 'frontend_core_PropertyWrite', the role 'frontend_core_PropertyWrite' has cardinality 0..*, and from 'Variable', the role 'Variable260' has cardinality 0..*.
+An association connects 'frontend_core_PropertyWrite' and 'Expression'. From 'frontend_core_PropertyWrite', the role 'frontend_core_PropertyWrite262' has cardinality 0..*, and from 'Expression', the role 'Expression263' has cardinality 0..*.
+An association connects 'frontend_core_VariableReference' and 'Variable'. From 'frontend_core_VariableReference', the role 'frontend_core_VariableReference' has cardinality 0..*, and from 'Variable', the role 'Variable265' has cardinality 0..*.
+An association connects 'Expression' and 'frontend_core_MethodCall'. From 'Expression', the role 'Expression267' has cardinality 0..*, and from 'frontend_core_MethodCall', the role 'frontend_core_MethodCall' has cardinality 0..*.
+An association connects 'frontend_core_MethodCall' and 'Expression'. From 'frontend_core_MethodCall', the role 'frontend_core_MethodCall269' has cardinality 0..*, and from 'Expression', the role 'Expression270' has cardinality 0..*.
+An association connects 'frontend_core_KeywordMethodCall' and 'Expression'. From 'frontend_core_KeywordMethodCall', the role 'frontend_core_KeywordMethodCall' has cardinality 0..*, and from 'Expression', the role 'Expression272' has cardinality 0..*.
+An association connects 'frontend_core_KeywordMethodCall' and 'KeywordParameter'. From 'frontend_core_KeywordMethodCall', the role 'frontend_core_KeywordMethodCall274' has cardinality 0..*, and from 'KeywordParameter', the role 'KeywordParameter' has cardinality 0..*.
+An association connects 'frontend_core_KeywordParameter' and 'Expression'. From 'frontend_core_KeywordParameter', the role 'frontend_core_KeywordParameter' has cardinality 0..*, and from 'Expression', the role 'Expression276' has cardinality 0..*.
+An association connects 'Expression' and 'frontend_core_BinaryExpr'. From 'Expression', the role 'Expression278' has cardinality 0..*, and from 'frontend_core_BinaryExpr', the role 'frontend_core_BinaryExpr' has cardinality 0..*.
+An association connects 'frontend_core_BinaryExpr' and 'Expression'. From 'frontend_core_BinaryExpr', the role 'frontend_core_BinaryExpr280' has cardinality 0..*, and from 'Expression', the role 'Expression281' has cardinality 0..*.
+An association connects 'frontend_core_ClosureDeclaration' and 'Statement'. From 'frontend_core_ClosureDeclaration', the role 'frontend_core_ClosureDeclaration' has cardinality 0..*, and from 'Statement', the role 'Statement283' has cardinality 0..*.
+An association connects 'ClosureParameter' and 'frontend_core_ClosureDeclaration'. From 'ClosureParameter', the role 'ClosureParameter' has cardinality 0..*, and from 'frontend_core_ClosureDeclaration', the role 'frontend_core_ClosureDeclaration285' has cardinality 0..*.
+An association connects 'Expression' and 'frontend_core_ResolveLink'. From 'Expression', the role 'Expression287' has cardinality 0..*, and from 'frontend_core_ResolveLink', the role 'frontend_core_ResolveLink' has cardinality 0..*.
+An association connects 'frontend_core_ResolveLink' and 'UseDeclaration'. From 'frontend_core_ResolveLink', the role 'frontend_core_ResolveLink289' has cardinality 0..*, and from 'UseDeclaration', the role 'UseDeclaration290' has cardinality 0..*.
+An association connects 'frontend_core_IfExpr' and 'IfBranch'. From 'frontend_core_IfExpr', the role 'frontend_core_IfExpr' has cardinality 0..*, and from 'IfBranch', the role 'IfBranch' has cardinality 0..*.
+An association connects 'IfBranch' and 'frontend_core_IfExpr'. From 'IfBranch', the role 'IfBranch294' has cardinality 0..*, and from 'frontend_core_IfExpr', the role 'frontend_core_IfExpr293' has cardinality 0..*.
+An association connects 'IfBranch' and 'frontend_core_IfExpr'. From 'IfBranch', the role 'IfBranch297' has cardinality 0..*, and from 'frontend_core_IfExpr', the role 'frontend_core_IfExpr296' has cardinality 0..*.
+An association connects 'Expression' and 'frontend_core_IfBranch'. From 'Expression', the role 'Expression299' has cardinality 0..*, and from 'frontend_core_IfBranch', the role 'frontend_core_IfBranch' has cardinality 0..*.
+An association connects 'Statement' and 'frontend_core_IfBranch'. From 'Statement', the role 'Statement302' has cardinality 0..*, and from 'frontend_core_IfBranch', the role 'frontend_core_IfBranch301' has cardinality 0..*.
+An association connects 'RepresentModel' and 'frontend_core_ClassUse'. From 'RepresentModel', the role 'RepresentModel304' has cardinality 0..*, and from 'frontend_core_ClassUse', the role 'frontend_core_ClassUse' has cardinality 0..*.
+An association connects 'TraceDefinition' and 'frontend_core_TraceUse'. From 'TraceDefinition', the role 'TraceDefinition' has cardinality 0..*, and from 'frontend_core_TraceUse', the role 'frontend_core_TraceUse' has cardinality 0..*.
+An association connects 'frontend_core_TypedWithClass' and 'ClassUse'. From 'frontend_core_TypedWithClass', the role 'frontend_core_TypedWithClass' has cardinality 0..*, and from 'ClassUse', the role 'ClassUse307' has cardinality 0..*.
+An association connects 'frontend_core_TraceInterface' and 'TraceDefinition'. From 'frontend_core_TraceInterface', the role 'frontend_core_TraceInterface' has cardinality 0..*, and from 'TraceDefinition', the role 'TraceDefinition309' has cardinality 0..*.
+An association connects 'frontend_core_TraceDefinition' and 'TraceElement'. From 'frontend_core_TraceDefinition', the role 'frontend_core_TraceDefinition' has cardinality 0..*, and from 'TraceElement', the role 'TraceElement' has cardinality 0..*.
+An association connects 'frontend_core_TraceElement' and 'TypeExpression'. From 'frontend_core_TraceElement', the role 'frontend_core_TraceElement' has cardinality 0..*, and from 'TypeExpression', the role 'TypeExpression312' has cardinality 0..*.
+An association connects 'frontend_core_InlineModel' and 'InlineClass'. From 'frontend_core_InlineModel', the role 'frontend_core_InlineModel' has cardinality 0..*, and from 'InlineClass', the role 'InlineClass' has cardinality 0..*.
+An association connects 'InlineFeature' and 'frontend_core_InlineClass'. From 'InlineFeature', the role 'InlineFeature' has cardinality 0..*, and from 'frontend_core_InlineClass', the role 'frontend_core_InlineClass' has cardinality 0..*.
+An association connects 'frontend_core_InlineFeature' and 'TypeExpression'. From 'frontend_core_InlineFeature', the role 'frontend_core_InlineFeature' has cardinality 0..*, and from 'TypeExpression', the role 'TypeExpression316' has cardinality 0..*.
+An association connects 'TraceDefinition' and 'frontend_core_MatchTrace'. From 'TraceDefinition', the role 'TraceDefinition318' has cardinality 0..*, and from 'frontend_core_MatchTrace', the role 'frontend_core_MatchTrace' has cardinality 0..*.
+An association connects 'frontend_core_MatchTrace' and 'TraceCompareExpression'. From 'frontend_core_MatchTrace', the role 'frontend_core_MatchTrace320' has cardinality 0..*, and from 'TraceCompareExpression', the role 'TraceCompareExpression' has cardinality 0..*.
+An association connects 'TraceElement' and 'frontend_core_TraceCompareExpression'. From 'TraceElement', the role 'TraceElement322' has cardinality 0..*, and from 'frontend_core_TraceCompareExpression', the role 'frontend_core_TraceCompareExpression' has cardinality 0..*.
+An association connects 'frontend_core_TraceCompareExpression' and 'Expression'. From 'frontend_core_TraceCompareExpression', the role 'frontend_core_TraceCompareExpression324' has cardinality 0..*, and from 'Expression', the role 'Expression325' has cardinality 0..*.
+An association connects 'TraceDefinition' and 'frontend_core_PutTrace'. From 'TraceDefinition', the role 'TraceDefinition327' has cardinality 0..*, and from 'frontend_core_PutTrace', the role 'frontend_core_PutTrace' has cardinality 0..*.
+An association connects 'frontend_core_PutTrace' and 'PutTraceParameter'. From 'frontend_core_PutTrace', the role 'frontend_core_PutTrace329' has cardinality 0..*, and from 'PutTraceParameter', the role 'PutTraceParameter' has cardinality 0..*.
+An association connects 'frontend_core_PutTraceParameter' and 'Expression'. From 'frontend_core_PutTraceParameter', the role 'frontend_core_PutTraceParameter' has cardinality 0..*, and from 'Expression', the role 'Expression331' has cardinality 0..*.
+An association connects 'TraceElement' and 'frontend_core_PutTraceParameter'. From 'TraceElement', the role 'TraceElement334' has cardinality 0..*, and from 'frontend_core_PutTraceParameter', the role 'frontend_core_PutTraceParameter333' has cardinality 0..*.

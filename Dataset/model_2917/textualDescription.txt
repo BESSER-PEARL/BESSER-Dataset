@@ -1,0 +1,251 @@
+The domain model 'persistence' describes the core structural elements and their relationships within the system.
+
+The model defines 52 main class(es).
+
+'persistence_StaticPathElement' represents an important domain concept.
+It has one attribute: 'element', which is of type str.
+
+'ModelLabelFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_SerializationGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_AssociationWithoutContainment' represents an important domain concept.
+It has the following attributes: 'targetCardinality', which is of type str; 'targetUnique', which is of type bool.
+
+'persistence_ViewFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_DataTypeAttribute' represents an important domain concept.
+It has the following attributes: 'obfuscateFormFields', which is of type bool; 'caseInsensitive', which is of type bool; 'encrypt', which is of type bool.
+
+'persistence_ModelLabelAttribute' represents an important domain concept.
+It has one attribute: 'dateFormat', which is of type str.
+
+'Label' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_Association' represents an important domain concept.
+It has the following attributes: 'serializationMaxDepth', which is of type int; 'pseudo', which is of type bool; 'inputClass', which is of type str.
+
+'ResourceAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'EntityOrView' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_Attribute' represents an important domain concept.
+It has the following attributes: 'validationPattern', which is of type str; 'inputClass', which is of type str.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_DateAttribute' represents an important domain concept.
+It has the following attributes: 'details', which is of type str; 'format', which is of type str.
+
+'persistence_ImageAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_Persistence' represents an important domain concept.
+It has the following attributes: 'timestampCreation', which is of type bool; 'databaseTechnology', which is of type str; 'ormTechnology', which is of type str; 'timestampUpdates', which is of type bool.
+
+'persistence_DatePathElement' represents an important domain concept.
+It has one attribute: 'format', which is of type str.
+
+'persistence_EncapsulatedAssociation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'cardinality', which is of type str; 'isSourceAssociation', which is of type bool.
+
+'persistence_ResourceAttribute' represents an important domain concept.
+It has the following attributes: 'uploadsWithinWebsite', which is of type bool; 'validUploadMimeTypes', which is of type str; 'maximumUploadSize', which is of type int; 'validUploadExtensions', which is of type str.
+
+'persistence_ModelLabelFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'EncapsulatedFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_EncapsulatedAttribute' represents an important domain concept.
+It has the following attributes: 'cardinality', which is of type str; 'name', which is of type str.
+
+'persistence_AssociationKey' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_EntityFeature' represents an important domain concept.
+It has the following attributes: 'columnName', which is of type str; 'cardinality', which is of type str; 'primaryKey', which is of type bool; 'booleanIsHasChoice', which is of type str; 'customiseSet', which is of type bool; 'singletonName', which is of type str; 'pluralisedName', which is of type str; 'derived', which is of type bool; 'ordered', which is of type bool.
+
+'persistence_ModelLabelAssociation' represents an important domain concept.
+It has one attribute: 'isSourceAssociation', which is of type bool.
+
+'EntityFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_FileAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_View' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_ViewAssociation' represents an important domain concept.
+It has one attribute: 'cardinality', which is of type str.
+
+'EntityAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_ModelLabel' represents an important domain concept.
+It has the following attributes: 'customise', which is of type bool; 'format', which is of type str.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_EntityOrView' represents an important domain concept.
+It has the following attributes: 'tableName', which is of type str; 'autoKeyPersistentType', which is of type str; 'allowFormTypeCustomisation', which is of type bool; 'pluralisedName', which is of type str; 'autoKeyGenerationStrategy', which is of type str; 'autoKeyName', which is of type str; 'singletonName', which is of type str; 'implementsUserInterface', which is of type bool.
+
+'EntityAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_PathElement' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_Feature' represents an important domain concept.
+It has the following attributes: 'headerClass', which is of type str; 'nullDisplayValue', which is of type str; 'encodeUriKey', which is of type bool; 'placeholder', which is of type str; 'footerClass', which is of type str; 'collectionOrmAllowRemove', which is of type bool; 'collectionOrmAllowAdd', which is of type bool; 'title', which is of type str; 'displayClass', which is of type str.
+
+'ViewFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_AssociationWithContainment' represents an important domain concept.
+It has one attribute: 'sourceVisible', which is of type bool.
+
+'persistence_UrlAttribute' represents an important domain concept.
+It has one attribute: 'displayValue', which is of type str.
+
+'persistence_EntityAssociation' represents an important domain concept.
+It has the following attributes: 'targetInputClass', which is of type str; 'targetHeaderClass', which is of type str; 'targetDisplayClass', which is of type str; 'unique', which is of type bool; 'targetFooterClass', which is of type str; 'bidirectional', which is of type bool; 'targetPrimaryKey', which is of type bool; 'targetDisplayLabel', which is of type str; 'targetColumnName', which is of type str; 'targetFeatureName', which is of type str; 'pivotTableName', which is of type str.
+
+'persistence_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedDisplayElement' represents an important domain concept.
+It does not declare any attributes.
+
+'persistence_EncapsulatedFeature' represents an important domain concept.
+It has the following attributes: 'displayLabel', which is of type str; 'columnName', which is of type str; 'alias', which is of type str.
+
+'persistence_EntityAttribute' represents an important domain concept.
+It has the following attributes: 'persistentType', which is of type str; 'containerUnique', which is of type bool; 'hidden', which is of type bool; 'unique', which is of type bool; 'ormType', which is of type str; 'interfaceType', which is of type str.
+
+'persistence_LocationAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PathElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Cardinality' defines the following possible values: 'Optional', 'Required', 'Many'.
+The enumeration 'DateDetails' defines the following possible values: 'TimeOnly', 'DateAndTime', 'DateOnly'.
+The enumeration 'DatabaseTechnologies' defines the following possible values: 'Oracle', 'MySql'.
+The enumeration 'isHasChoices' defines the following possible values: 'isA', 'hasA'.
+The enumeration 'OrmTechnologies' defines the following possible values: 'Idiorm', 'DataMapper', 'DoctrineORM', 'DoctrineODM', 'Kohana', 'JPA'.
+
+The model also captures inheritance relationships between classes.
+The class 'persistence_SerializationGroup' is a specialization of 'NamedElement'.
+The class 'persistence_EntityOrView' is a specialization of 'Classifier'.
+The class 'persistence_Attribute' is a specialization of 'Feature'.
+The class 'persistence_Attribute' is a specialization of 'Label'.
+The class 'persistence_Association' is a specialization of 'Feature'.
+The class 'persistence_ModelLabel' is a specialization of 'NamedElement'.
+The class 'persistence_ModelLabel' is a specialization of 'Label'.
+The class 'persistence_ModelLabelAttribute' is a specialization of 'ModelLabelFeature'.
+The class 'persistence_ModelLabelAssociation' is a specialization of 'ModelLabelFeature'.
+The class 'persistence_Entity' is a specialization of 'EntityOrView'.
+The class 'persistence_EntityFeature' is a specialization of 'NamedDisplayElement'.
+The class 'persistence_EntityFeature' is a specialization of 'Feature'.
+The class 'persistence_EntityAttribute' is a specialization of 'EntityFeature'.
+The class 'persistence_EntityAttribute' is a specialization of 'Attribute'.
+The class 'persistence_DataTypeAttribute' is a specialization of 'EntityAttribute'.
+The class 'persistence_DateAttribute' is a specialization of 'EntityAttribute'.
+The class 'persistence_UrlAttribute' is a specialization of 'EntityAttribute'.
+The class 'persistence_ResourceAttribute' is a specialization of 'EntityAttribute'.
+The class 'persistence_StaticPathElement' is a specialization of 'PathElement'.
+The class 'persistence_DatePathElement' is a specialization of 'PathElement'.
+The class 'persistence_FileAttribute' is a specialization of 'ResourceAttribute'.
+The class 'persistence_ImageAttribute' is a specialization of 'ResourceAttribute'.
+The class 'persistence_LocationAttribute' is a specialization of 'EntityAttribute'.
+The class 'persistence_EntityAssociation' is a specialization of 'EntityFeature'.
+The class 'persistence_EntityAssociation' is a specialization of 'Association'.
+The class 'persistence_AssociationWithoutContainment' is a specialization of 'EntityAssociation'.
+The class 'persistence_AssociationWithContainment' is a specialization of 'EntityAssociation'.
+The class 'persistence_View' is a specialization of 'EntityOrView'.
+The class 'persistence_ViewFeature' is a specialization of 'Feature'.
+The class 'persistence_EncapsulatedFeature' is a specialization of 'ViewFeature'.
+The class 'persistence_EncapsulatedAttribute' is a specialization of 'EncapsulatedFeature'.
+The class 'persistence_EncapsulatedAttribute' is a specialization of 'Attribute'.
+The class 'persistence_EncapsulatedAssociation' is a specialization of 'EncapsulatedFeature'.
+The class 'persistence_EncapsulatedAssociation' is a specialization of 'Association'.
+The class 'persistence_ViewAssociation' is a specialization of 'NamedDisplayElement'.
+The class 'persistence_ViewAssociation' is a specialization of 'ViewFeature'.
+The class 'persistence_ViewAssociation' is a specialization of 'Association'.
+
+Relationships between classes are modeled using associations.
+An association connects 'persistence_Persistence' and 'persistence_SerializationGroup'. From 'persistence_Persistence', the role 'persistence_Persistence' has cardinality 0..*, and from 'persistence_SerializationGroup', the role 'persistence_SerializationGroup' has cardinality 0..*.
+An association connects 'persistence_Persistence' and 'persistence_DataType'. From 'persistence_Persistence', the role 'persistence_Persistence2' has cardinality 0..*, and from 'persistence_DataType', the role 'persistence_DataType' has cardinality 0..*.
+An association connects 'persistence_EntityOrView' and 'persistence_Persistence'. From 'persistence_EntityOrView', the role 'persistence_EntityOrView' has cardinality 0..*, and from 'persistence_Persistence', the role 'persistence_Persistence4' has cardinality 0..*.
+An association connects 'persistence_EntityOrView' and 'persistence_Feature'. From 'persistence_EntityOrView', the role 'persistence_EntityOrView6' has cardinality 0..*, and from 'persistence_Feature', the role 'persistence_Feature' has cardinality 0..*.
+An association connects 'persistence_Feature' and 'persistence_EntityOrView'. From 'persistence_Feature', the role 'persistence_Feature9' has cardinality 0..*, and from 'persistence_EntityOrView', the role 'persistence_EntityOrView8' has cardinality 0..*.
+An association connects 'persistence_Feature' and 'persistence_EntityOrView'. From 'persistence_Feature', the role 'persistence_Feature12' has cardinality 0..*, and from 'persistence_EntityOrView', the role 'persistence_EntityOrView11' has cardinality 0..*.
+An association connects 'persistence_ModelLabel' and 'persistence_EntityOrView'. From 'persistence_ModelLabel', the role 'ModelLabel' has cardinality 0..*, and from 'persistence_EntityOrView', the role 'labelFor' has cardinality 0..*.
+An association connects 'persistence_EntityOrView' and 'persistence_Feature'. From 'persistence_EntityOrView', the role 'persistence_EntityOrView15' has cardinality 0..*, and from 'persistence_Feature', the role 'persistence_Feature16' has cardinality 0..*.
+An association connects 'persistence_EntityOrView' and 'persistence_Feature'. From 'persistence_EntityOrView', the role 'persistence_EntityOrView18' has cardinality 0..*, and from 'persistence_Feature', the role 'persistence_Feature19' has cardinality 0..*.
+An association connects 'persistence_Attribute' and 'persistence_EntityOrView'. From 'persistence_Attribute', the role 'persistence_Attribute' has cardinality 0..*, and from 'persistence_EntityOrView', the role 'persistence_EntityOrView21' has cardinality 0..*.
+An association connects 'persistence_Association' and 'persistence_EntityOrView'. From 'persistence_Association', the role 'persistence_Association' has cardinality 0..*, and from 'persistence_EntityOrView', the role 'persistence_EntityOrView23' has cardinality 0..*.
+An association connects 'persistence_Association' and 'persistence_EntityOrView'. From 'persistence_Association', the role 'persistence_Association26' has cardinality 0..*, and from 'persistence_EntityOrView', the role 'persistence_EntityOrView25' has cardinality 0..*.
+An association connects 'persistence_SerializationGroup' and 'persistence_Feature'. From 'persistence_SerializationGroup', the role 'persistence_SerializationGroup29' has cardinality 0..*, and from 'persistence_Feature', the role 'persistence_Feature28' has cardinality 0..*.
+An association connects 'persistence_Attribute' and 'persistence_Expression'. From 'persistence_Attribute', the role 'persistence_Attribute31' has cardinality 0..*, and from 'persistence_Expression', the role 'persistence_Expression' has cardinality 0..*.
+An association connects 'persistence_EncapsulatedAssociation' and 'persistence_Association'. From 'persistence_EncapsulatedAssociation', the role 'EncapsulatedAssociation' has cardinality 0..*, and from 'persistence_Association', the role 'association' has cardinality 0..*.
+An association connects 'persistence_EntityOrView' and 'persistence_Association'. From 'persistence_EntityOrView', the role 'persistence_EntityOrView35' has cardinality 0..*, and from 'persistence_Association', the role 'persistence_Association34' has cardinality 0..*.
+An association connects 'persistence_EntityOrView' and 'persistence_Association'. From 'persistence_EntityOrView', the role 'persistence_EntityOrView38' has cardinality 0..*, and from 'persistence_Association', the role 'persistence_Association37' has cardinality 0..*.
+An association connects 'persistence_ModelLabel' and 'persistence_EntityOrView'. From 'persistence_ModelLabel', the role 'labels' has cardinality 0..*, and from 'persistence_EntityOrView', the role 'EntityOrView' has cardinality 0..*.
+An association connects 'persistence_ModelLabel' and 'persistence_ModelLabelFeature'. From 'persistence_ModelLabel', the role 'partOf' has cardinality 0..*, and from 'persistence_ModelLabelFeature', the role 'ModelLabelFeature' has cardinality 0..*.
+An association connects 'persistence_ModelLabel' and 'persistence_SerializationGroup'. From 'persistence_ModelLabel', the role 'persistence_ModelLabel' has cardinality 0..*, and from 'persistence_SerializationGroup', the role 'persistence_SerializationGroup42' has cardinality 0..*.
+An association connects 'persistence_ModelLabelFeature' and 'persistence_ModelLabel'. From 'persistence_ModelLabelFeature', the role 'features' has cardinality 0..*, and from 'persistence_ModelLabel', the role 'ModelLabel44' has cardinality 0..*.
+An association connects 'persistence_Attribute' and 'persistence_ModelLabelAttribute'. From 'persistence_Attribute', the role 'persistence_Attribute46' has cardinality 0..*, and from 'persistence_ModelLabelAttribute', the role 'persistence_ModelLabelAttribute' has cardinality 0..*.
+An association connects 'persistence_EntityAssociation' and 'persistence_ModelLabelAssociation'. From 'persistence_EntityAssociation', the role 'persistence_EntityAssociation' has cardinality 0..*, and from 'persistence_ModelLabelAssociation', the role 'persistence_ModelLabelAssociation' has cardinality 0..*.
+An association connects 'persistence_ModelLabelAssociation' and 'persistence_ModelLabel'. From 'persistence_ModelLabelAssociation', the role 'persistence_ModelLabelAssociation49' has cardinality 0..*, and from 'persistence_ModelLabel', the role 'persistence_ModelLabel50' has cardinality 0..*.
+An association connects 'persistence_EntityFeature' and 'persistence_Entity'. From 'persistence_EntityFeature', the role 'EntityFeature' has cardinality 0..*, and from 'persistence_Entity', the role 'partOf52' has cardinality 0..*.
+An association connects 'persistence_EntityAssociation' and 'persistence_Entity'. From 'persistence_EntityAssociation', the role 'EntityAssociation' has cardinality 0..*, and from 'persistence_Entity', the role 'targetEntity' has cardinality 0..*.
+An association connects 'persistence_EntityFeature' and 'persistence_Entity'. From 'persistence_EntityFeature', the role 'entityFeatures' has cardinality 0..*, and from 'persistence_Entity', the role 'Entity' has cardinality 0..*.
+An association connects 'persistence_Attribute' and 'persistence_EntityAttribute'. From 'persistence_Attribute', the role 'persistence_Attribute56' has cardinality 0..*, and from 'persistence_EntityAttribute', the role 'persistence_EntityAttribute' has cardinality 0..*.
+An association connects 'persistence_DataType' and 'persistence_DataTypeAttribute'. From 'persistence_DataType', the role 'persistence_DataType58' has cardinality 0..*, and from 'persistence_DataTypeAttribute', the role 'persistence_DataTypeAttribute' has cardinality 0..*.
+An association connects 'persistence_ResourceAttribute' and 'persistence_PathElement'. From 'persistence_ResourceAttribute', the role 'persistence_ResourceAttribute' has cardinality 0..*, and from 'persistence_PathElement', the role 'persistence_PathElement' has cardinality 0..*.
+An association connects 'persistence_EntityAssociation' and 'persistence_AssociationKey'. From 'persistence_EntityAssociation', the role 'keyFor' has cardinality 0..*, and from 'persistence_AssociationKey', the role 'AssociationKey' has cardinality 0..*.
+An association connects 'persistence_Entity' and 'persistence_EntityAssociation'. From 'persistence_Entity', the role 'Entity62' has cardinality 0..*, and from 'persistence_EntityAssociation', the role 'associationEnds' has cardinality 0..*.
+An association connects 'persistence_AssociationKey' and 'persistence_EntityAssociation'. From 'persistence_AssociationKey', the role 'keys' has cardinality 0..*, and from 'persistence_EntityAssociation', the role 'EntityAssociation64' has cardinality 0..*.
+An association connects 'persistence_EntityFeature' and 'persistence_AssociationKey'. From 'persistence_EntityFeature', the role 'persistence_EntityFeature' has cardinality 0..*, and from 'persistence_AssociationKey', the role 'persistence_AssociationKey' has cardinality 0..*.
+An association connects 'persistence_AssociationKey' and 'persistence_EntityFeature'. From 'persistence_AssociationKey', the role 'persistence_AssociationKey67' has cardinality 0..*, and from 'persistence_EntityFeature', the role 'persistence_EntityFeature68' has cardinality 0..*.
+An association connects 'persistence_EntityOrView' and 'persistence_View'. From 'persistence_EntityOrView', the role 'persistence_EntityOrView70' has cardinality 0..*, and from 'persistence_View', the role 'persistence_View' has cardinality 0..*.
+An association connects 'persistence_View' and 'persistence_ViewFeature'. From 'persistence_View', the role 'partOf72' has cardinality 0..*, and from 'persistence_ViewFeature', the role 'ViewFeature' has cardinality 0..*.
+An association connects 'persistence_ViewFeature' and 'persistence_View'. From 'persistence_ViewFeature', the role 'viewFeatures' has cardinality 0..*, and from 'persistence_View', the role 'View' has cardinality 0..*.
+An association connects 'persistence_Attribute' and 'persistence_EncapsulatedAttribute'. From 'persistence_Attribute', the role 'persistence_Attribute75' has cardinality 0..*, and from 'persistence_EncapsulatedAttribute', the role 'persistence_EncapsulatedAttribute' has cardinality 0..*.
+An association connects 'persistence_Association' and 'persistence_EncapsulatedAssociation'. From 'persistence_Association', the role 'Association' has cardinality 0..*, and from 'persistence_EncapsulatedAssociation', the role 'encapsulatedBy' has cardinality 0..*.
+An association connects 'persistence_EncapsulatedAssociation' and 'persistence_EncapsulatedAssociation'. From 'persistence_EncapsulatedAssociation', the role 'persistence_EncapsulatedAssociation' has cardinality 0..*, and from 'persistence_EncapsulatedAssociation', the role 'persistence_EncapsulatedAssociation77' has cardinality 0..*.
+An association connects 'persistence_Entity' and 'persistence_EncapsulatedAssociation'. From 'persistence_Entity', the role 'persistence_Entity' has cardinality 0..*, and from 'persistence_EncapsulatedAssociation', the role 'persistence_EncapsulatedAssociation80' has cardinality 0..*.
+An association connects 'persistence_Entity' and 'persistence_EncapsulatedAssociation'. From 'persistence_Entity', the role 'persistence_Entity83' has cardinality 0..*, and from 'persistence_EncapsulatedAssociation', the role 'persistence_EncapsulatedAssociation82' has cardinality 0..*.
+An association connects 'persistence_EncapsulatedAssociation' and 'persistence_ViewAssociation'. From 'persistence_EncapsulatedAssociation', the role 'persistence_EncapsulatedAssociation85' has cardinality 0..*, and from 'persistence_ViewAssociation', the role 'persistence_ViewAssociation' has cardinality 0..*.

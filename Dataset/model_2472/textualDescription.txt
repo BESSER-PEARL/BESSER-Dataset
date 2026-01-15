@@ -1,0 +1,24 @@
+The domain model 'railway2virtualswitchview' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'railway2virtualswitchview_RailwayContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2virtualswitchview_Switch' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2virtualswitchview_VirtualSwitch' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2virtualswitchview_Switch2VirtualSwitch' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2virtualswitchview_Railway2VirtualSwitchViewTrace' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'railway2virtualswitchview_Switch2VirtualSwitch' and 'railway2virtualswitchview_Switch'. From 'railway2virtualswitchview_Switch2VirtualSwitch', the role 'railway2virtualswitchview_Switch2VirtualSwitch' has cardinality 0..*, and from 'railway2virtualswitchview_Switch', the role 'railway2virtualswitchview_Switch' has cardinality 0..*.
+An association connects 'railway2virtualswitchview_VirtualSwitch' and 'railway2virtualswitchview_Switch2VirtualSwitch'. From 'railway2virtualswitchview_VirtualSwitch', the role 'railway2virtualswitchview_VirtualSwitch' has cardinality 0..*, and from 'railway2virtualswitchview_Switch2VirtualSwitch', the role 'railway2virtualswitchview_Switch2VirtualSwitch2' has cardinality 0..*.
+An association connects 'railway2virtualswitchview_Switch2VirtualSwitch' and 'railway2virtualswitchview_Railway2VirtualSwitchViewTrace'. From 'railway2virtualswitchview_Switch2VirtualSwitch', the role 'railway2virtualswitchview_Switch2VirtualSwitch4' has cardinality 0..*, and from 'railway2virtualswitchview_Railway2VirtualSwitchViewTrace', the role 'railway2virtualswitchview_Railway2VirtualSwitchViewTrace' has cardinality 0..*.
+An association connects 'railway2virtualswitchview_RailwayContainer' and 'railway2virtualswitchview_Railway2VirtualSwitchViewTrace'. From 'railway2virtualswitchview_RailwayContainer', the role 'railway2virtualswitchview_RailwayContainer' has cardinality 0..*, and from 'railway2virtualswitchview_Railway2VirtualSwitchViewTrace', the role 'railway2virtualswitchview_Railway2VirtualSwitchViewTrace6' has cardinality 0..*.

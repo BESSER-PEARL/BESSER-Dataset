@@ -1,0 +1,28 @@
+The domain model 'kreq103' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'kreq103_Cccc' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'kreq103_Bbbb' represents an important domain concept.
+It does not declare any attributes.
+
+'kreq103_Ffff' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'kreq103_Gggg' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BasicFlowTransformationType' defines the following possible values: 'EEnumLiteral0', 'Measure', 'Wait', 'Decide', 'Check_Verify_Validate', 'Store', 'Transiform', 'Control'.
+The enumeration 'ComponentType' defines the following possible values: 'Serrvice', 'Site', 'Operational_system', 'Role', 'System', 'Process', 'Logical_component', 'Activity', 'Actor', 'Not_yet_desighed', 'Other', 'Information_system', 'Physical_component', 'Tool', 'Organization_Unit'.
+The enumeration 'ComponentPosition' defines the following possible values: 'Local', 'Environmental_context', 'Not_yet_defined'.
+The enumeration 'CategoryType' defines the following possible values: 'VandV', 'Non_Functional', 'Constraints', 'Interface', 'Operational', 'Functional'.
+The enumeration 'RequirementOrigin' defines the following possible values: 'Derived', 'Originating', 'DesignChoise_induced'.
+
+Relationships between classes are modeled using associations.
+An association connects 'kreq103_Cccc' and 'kreq103_Bbbb'. From 'kreq103_Cccc', the role 'kreq103_Cccc' has cardinality 0..*, and from 'kreq103_Bbbb', the role 'kreq103_Bbbb' has cardinality 0..*.
+An association connects 'kreq103_Bbbb' and 'kreq103_Gggg'. From 'kreq103_Bbbb', the role 'kreq103_Bbbb2' has cardinality 0..*, and from 'kreq103_Gggg', the role 'kreq103_Gggg' has cardinality 0..*.
+An association connects 'kreq103_Ffff' and 'kreq103_Cccc'. From 'kreq103_Ffff', the role 'kreq103_Ffff' has cardinality 0..*, and from 'kreq103_Cccc', the role 'kreq103_Cccc4' has cardinality 0..*.
+An association connects 'kreq103_Ffff' and 'kreq103_Ffff'. From 'kreq103_Ffff', the role 'kreq103_Ffff5' has cardinality 0..*, and from 'kreq103_Ffff', the role 'kreq103_Ffff7' has cardinality 0..*.

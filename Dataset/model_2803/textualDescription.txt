@@ -1,0 +1,25 @@
+The domain model 'attacktree' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'attacktree_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'attacktree_Model' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'attacktree_Vulnerability' represents an important domain concept.
+It has the following attributes: 'severity', which is of type int; 'description', which is of type str; 'name', which is of type str; 'tags', which is of type str; 'type', which is of type str.
+
+'attacktree_Node' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'domains', which is of type str; 'tags', which is of type str; 'description', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'propagationType' defines the following possible values: 'local', 'dataFlow', 'bus', 'memory', 'processor', 'data'.
+The enumeration 'vulnerabilityType' defines the following possible values: 'Isolation', 'ResourceAllocation', 'Authentication', 'Timing', 'Concurrency', 'Exposure'.
+
+Relationships between classes are modeled using associations.
+An association connects 'attacktree_Node' and 'attacktree_Vulnerability'. From 'attacktree_Node', the role 'attacktree_Node' has cardinality 0..*, and from 'attacktree_Vulnerability', the role 'attacktree_Vulnerability' has cardinality 0..*.
+An association connects 'attacktree_Node' and 'attacktree_Node'. From 'attacktree_Node', the role 'attacktree_Node3' has cardinality 0..*, and from 'attacktree_Node', the role 'attacktree_Node1' has cardinality 0..*.
+An association connects 'attacktree_Node' and 'attacktree_EObject'. From 'attacktree_Node', the role 'attacktree_Node5' has cardinality 0..*, and from 'attacktree_EObject', the role 'attacktree_EObject' has cardinality 0..*.
+An association connects 'attacktree_Model' and 'attacktree_Node'. From 'attacktree_Model', the role 'attacktree_Model' has cardinality 0..*, and from 'attacktree_Node', the role 'attacktree_Node7' has cardinality 0..*.

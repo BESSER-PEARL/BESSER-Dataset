@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/adilinam/QVTdCaseStudy/org.eclipse.qvtd.compiler/model/ECoreContainmentTree.ecore

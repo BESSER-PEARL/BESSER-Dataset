@@ -1,0 +1,31 @@
+The domain model 'opposite2' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'AbstractClassB' represents an important domain concept.
+It does not declare any attributes.
+
+'opposite2_ConcreteEndB2' represents an important domain concept.
+It does not declare any attributes.
+
+'opposite2_ConcreteEndB1' represents an important domain concept.
+It does not declare any attributes.
+
+'opposite2_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'opposite2_EndA' represents an important domain concept.
+It does not declare any attributes.
+
+'opposite2_AbstractClassB' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'opposite2_ConcreteEndB1' is a specialization of 'AbstractClassB'.
+The class 'opposite2_ConcreteEndB2' is a specialization of 'AbstractClassB'.
+
+Relationships between classes are modeled using associations.
+An association connects 'opposite2_Root' and 'opposite2_EndA'. From 'opposite2_Root', the role 'opposite2_Root' has cardinality 0..*, and from 'opposite2_EndA', the role 'opposite2_EndA' has cardinality 0..*.
+An association connects 'opposite2_Root' and 'opposite2_AbstractClassB'. From 'opposite2_Root', the role 'opposite2_Root2' has cardinality 0..*, and from 'opposite2_AbstractClassB', the role 'opposite2_AbstractClassB' has cardinality 0..*.
+An association connects 'opposite2_EndA' and 'opposite2_AbstractClassB'. From 'opposite2_EndA', the role 'EndA' has cardinality 0..*, and from 'opposite2_AbstractClassB', the role 'toB' has cardinality 0..*.
+An association connects 'opposite2_EndA' and 'opposite2_AbstractClassB'. From 'opposite2_EndA', the role 'toA' has cardinality 0..*, and from 'opposite2_AbstractClassB', the role 'AbstractClassB' has cardinality 0..*.

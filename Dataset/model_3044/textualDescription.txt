@@ -1,0 +1,155 @@
+The domain model 'df' describes the core structural elements and their relationships within the system.
+
+The model defines 29 main class(es).
+
+'df_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'df_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'df_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Attributable' represents an important domain concept.
+It does not declare any attributes.
+
+'df_Instance' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'df_FSM' represents an important domain concept.
+It does not declare any attributes.
+
+'df_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'df_Tag' represents an important domain concept.
+It has one attribute: 'identifiers', which is of type str.
+
+'df_PortToEIntegerObjectMapEntry' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'df_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'df_Port' represents an important domain concept.
+It has the following attributes: 'numTokensConsumed', which is of type int; 'numTokensProduced', which is of type int; 'name', which is of type str.
+
+'df_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'df_Argument' represents an important domain concept.
+It does not declare any attributes.
+
+'df_Unit' represents an important domain concept.
+It has the following attributes: 'fileName', which is of type str; 'name', which is of type str; 'lineNumber', which is of type int.
+
+'Adaptable' represents an important domain concept.
+It does not declare any attributes.
+
+'df_Entity' represents an important domain concept.
+It has the following attributes: 'outgoingPortMap', which is of type str; 'name', which is of type str; 'incomingPortMap', which is of type str.
+
+'df_VarToPortMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'df_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'df_Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'df_Var' represents an important domain concept.
+It does not declare any attributes.
+
+'df_State' represents an important domain concept.
+It does not declare any attributes.
+
+'df_Actor' represents an important domain concept.
+It has the following attributes: 'native', which is of type bool; 'fileName', which is of type str; 'lineNumber', which is of type int; 'name', which is of type str.
+
+'df_MoC' represents an important domain concept.
+It does not declare any attributes.
+
+'df_Procedure' represents an important domain concept.
+It does not declare any attributes.
+
+'df_Network' represents an important domain concept.
+It has the following attributes: 'fileName', which is of type str; 'name', which is of type str.
+
+'df_PortToVarMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'df_Unit' is a specialization of 'Attributable'.
+The class 'df_Port' is a specialization of 'Vertex'.
+The class 'df_Instance' is a specialization of 'Vertex'.
+The class 'df_Instance' is a specialization of 'Adaptable'.
+The class 'df_Entity' is a specialization of 'Attributable'.
+The class 'df_Entity' is a specialization of 'Adaptable'.
+The class 'df_Actor' is a specialization of 'Vertex'.
+The class 'df_Actor' is a specialization of 'Adaptable'.
+The class 'df_Network' is a specialization of 'Graph'.
+The class 'df_Network' is a specialization of 'Adaptable'.
+The class 'df_Connection' is a specialization of 'Edge'.
+The class 'df_Action' is a specialization of 'Attributable'.
+The class 'df_FSM' is a specialization of 'Graph'.
+The class 'df_State' is a specialization of 'Vertex'.
+The class 'df_Transition' is a specialization of 'Edge'.
+
+Relationships between classes are modeled using associations.
+An association connects 'df_Var' and 'df_Unit'. From 'df_Var', the role 'df_Var' has cardinality 0..*, and from 'df_Unit', the role 'df_Unit' has cardinality 0..*.
+An association connects 'df_Procedure' and 'df_Unit'. From 'df_Procedure', the role 'df_Procedure' has cardinality 0..*, and from 'df_Unit', the role 'df_Unit2' has cardinality 0..*.
+An association connects 'df_Port' and 'df_Type'. From 'df_Port', the role 'df_Port' has cardinality 0..*, and from 'df_Type', the role 'df_Type' has cardinality 0..*.
+An association connects 'df_Argument' and 'df_Instance'. From 'df_Argument', the role 'df_Argument' has cardinality 0..*, and from 'df_Instance', the role 'df_Instance' has cardinality 0..*.
+An association connects 'df_Instance' and 'df_EObject'. From 'df_Instance', the role 'df_Instance6' has cardinality 0..*, and from 'df_EObject', the role 'df_EObject' has cardinality 0..*.
+An association connects 'df_Port' and 'df_Entity'. From 'df_Port', the role 'df_Port8' has cardinality 0..*, and from 'df_Entity', the role 'df_Entity' has cardinality 0..*.
+An association connects 'df_Port' and 'df_Entity'. From 'df_Port', the role 'df_Port11' has cardinality 0..*, and from 'df_Entity', the role 'df_Entity10' has cardinality 0..*.
+An association connects 'df_Entity' and 'df_Var'. From 'df_Entity', the role 'df_Entity13' has cardinality 0..*, and from 'df_Var', the role 'df_Var14' has cardinality 0..*.
+An association connects 'df_Action' and 'df_Actor'. From 'df_Action', the role 'df_Action' has cardinality 0..*, and from 'df_Actor', the role 'df_Actor' has cardinality 0..*.
+An association connects 'df_Action' and 'df_Actor'. From 'df_Action', the role 'df_Action18' has cardinality 0..*, and from 'df_Actor', the role 'df_Actor17' has cardinality 0..*.
+An association connects 'df_Actor' and 'df_FSM'. From 'df_Actor', the role 'df_Actor20' has cardinality 0..*, and from 'df_FSM', the role 'df_FSM' has cardinality 0..*.
+An association connects 'df_Actor' and 'df_Action'. From 'df_Actor', the role 'df_Actor22' has cardinality 0..*, and from 'df_Action', the role 'df_Action23' has cardinality 0..*.
+An association connects 'df_Port' and 'df_Actor'. From 'df_Port', the role 'df_Port26' has cardinality 0..*, and from 'df_Actor', the role 'df_Actor25' has cardinality 0..*.
+An association connects 'df_MoC' and 'df_Actor'. From 'df_MoC', the role 'df_MoC' has cardinality 0..*, and from 'df_Actor', the role 'df_Actor28' has cardinality 0..*.
+An association connects 'df_Port' and 'df_Actor'. From 'df_Port', the role 'df_Port31' has cardinality 0..*, and from 'df_Actor', the role 'df_Actor30' has cardinality 0..*.
+An association connects 'df_Actor' and 'df_Var'. From 'df_Actor', the role 'df_Actor33' has cardinality 0..*, and from 'df_Var', the role 'df_Var34' has cardinality 0..*.
+An association connects 'df_Procedure' and 'df_Actor'. From 'df_Procedure', the role 'df_Procedure37' has cardinality 0..*, and from 'df_Actor', the role 'df_Actor36' has cardinality 0..*.
+An association connects 'df_Actor' and 'df_Var'. From 'df_Actor', the role 'df_Actor39' has cardinality 0..*, and from 'df_Var', the role 'df_Var40' has cardinality 0..*.
+An association connects 'df_Vertex' and 'df_Network'. From 'df_Vertex', the role 'df_Vertex' has cardinality 0..*, and from 'df_Network', the role 'df_Network' has cardinality 0..*.
+An association connects 'df_Network' and 'df_Port'. From 'df_Network', the role 'df_Network43' has cardinality 0..*, and from 'df_Port', the role 'df_Port44' has cardinality 0..*.
+An association connects 'df_MoC' and 'df_Network'. From 'df_MoC', the role 'df_MoC47' has cardinality 0..*, and from 'df_Network', the role 'df_Network46' has cardinality 0..*.
+An association connects 'df_Network' and 'df_Port'. From 'df_Network', the role 'df_Network49' has cardinality 0..*, and from 'df_Port', the role 'df_Port50' has cardinality 0..*.
+An association connects 'df_Network' and 'df_Var'. From 'df_Network', the role 'df_Network52' has cardinality 0..*, and from 'df_Var', the role 'df_Var53' has cardinality 0..*.
+An association connects 'df_Var' and 'df_Network'. From 'df_Var', the role 'df_Var56' has cardinality 0..*, and from 'df_Network', the role 'df_Network55' has cardinality 0..*.
+An association connects 'df_Port' and 'df_Connection'. From 'df_Port', the role 'df_Port58' has cardinality 0..*, and from 'df_Connection', the role 'df_Connection' has cardinality 0..*.
+An association connects 'df_Connection' and 'df_Port'. From 'df_Connection', the role 'df_Connection60' has cardinality 0..*, and from 'df_Port', the role 'df_Port61' has cardinality 0..*.
+An association connects 'df_Procedure' and 'df_Action'. From 'df_Procedure', the role 'df_Procedure64' has cardinality 0..*, and from 'df_Action', the role 'df_Action63' has cardinality 0..*.
+An association connects 'df_Pattern' and 'df_Action'. From 'df_Pattern', the role 'df_Pattern' has cardinality 0..*, and from 'df_Action', the role 'df_Action66' has cardinality 0..*.
+An association connects 'df_Pattern' and 'df_Action'. From 'df_Pattern', the role 'df_Pattern69' has cardinality 0..*, and from 'df_Action', the role 'df_Action68' has cardinality 0..*.
+An association connects 'df_Action' and 'df_Pattern'. From 'df_Action', the role 'df_Action71' has cardinality 0..*, and from 'df_Pattern', the role 'df_Pattern72' has cardinality 0..*.
+An association connects 'df_Action' and 'df_Procedure'. From 'df_Action', the role 'df_Action74' has cardinality 0..*, and from 'df_Procedure', the role 'df_Procedure75' has cardinality 0..*.
+An association connects 'df_Tag' and 'df_Action'. From 'df_Tag', the role 'df_Tag' has cardinality 0..*, and from 'df_Action', the role 'df_Action77' has cardinality 0..*.
+An association connects 'df_FSM' and 'df_State'. From 'df_FSM', the role 'df_FSM79' has cardinality 0..*, and from 'df_State', the role 'df_State' has cardinality 0..*.
+An association connects 'df_Pattern' and 'df_PortToEIntegerObjectMapEntry'. From 'df_Pattern', the role 'df_Pattern81' has cardinality 0..*, and from 'df_PortToEIntegerObjectMapEntry', the role 'df_PortToEIntegerObjectMapEntry' has cardinality 0..*.
+An association connects 'df_Port' and 'df_Pattern'. From 'df_Port', the role 'df_Port84' has cardinality 0..*, and from 'df_Pattern', the role 'df_Pattern83' has cardinality 0..*.
+An association connects 'df_Pattern' and 'df_PortToVarMapEntry'. From 'df_Pattern', the role 'df_Pattern86' has cardinality 0..*, and from 'df_PortToVarMapEntry', the role 'df_PortToVarMapEntry' has cardinality 0..*.
+An association connects 'df_Pattern' and 'df_Var'. From 'df_Pattern', the role 'df_Pattern88' has cardinality 0..*, and from 'df_Var', the role 'df_Var89' has cardinality 0..*.
+An association connects 'df_Pattern' and 'df_VarToPortMapEntry'. From 'df_Pattern', the role 'df_Pattern91' has cardinality 0..*, and from 'df_VarToPortMapEntry', the role 'df_VarToPortMapEntry' has cardinality 0..*.
+An association connects 'df_Action' and 'df_Transition'. From 'df_Action', the role 'df_Action93' has cardinality 0..*, and from 'df_Transition', the role 'df_Transition' has cardinality 0..*.
+An association connects 'df_PortToEIntegerObjectMapEntry' and 'df_Port'. From 'df_PortToEIntegerObjectMapEntry', the role 'df_PortToEIntegerObjectMapEntry95' has cardinality 0..*, and from 'df_Port', the role 'df_Port96' has cardinality 0..*.
+An association connects 'df_PortToVarMapEntry' and 'df_Port'. From 'df_PortToVarMapEntry', the role 'df_PortToVarMapEntry98' has cardinality 0..*, and from 'df_Port', the role 'df_Port99' has cardinality 0..*.
+An association connects 'df_PortToVarMapEntry' and 'df_Var'. From 'df_PortToVarMapEntry', the role 'df_PortToVarMapEntry101' has cardinality 0..*, and from 'df_Var', the role 'df_Var102' has cardinality 0..*.
+An association connects 'df_Var' and 'df_VarToPortMapEntry'. From 'df_Var', the role 'df_Var105' has cardinality 0..*, and from 'df_VarToPortMapEntry', the role 'df_VarToPortMapEntry104' has cardinality 0..*.
+An association connects 'df_VarToPortMapEntry' and 'df_Port'. From 'df_VarToPortMapEntry', the role 'df_VarToPortMapEntry107' has cardinality 0..*, and from 'df_Port', the role 'df_Port108' has cardinality 0..*.
+An association connects 'df_Argument' and 'df_Expression'. From 'df_Argument', the role 'df_Argument110' has cardinality 0..*, and from 'df_Expression', the role 'df_Expression' has cardinality 0..*.
+An association connects 'df_Argument' and 'df_Var'. From 'df_Argument', the role 'df_Argument112' has cardinality 0..*, and from 'df_Var', the role 'df_Var113' has cardinality 0..*.

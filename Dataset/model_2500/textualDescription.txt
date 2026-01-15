@@ -1,0 +1,19 @@
+The domain model 'StateMachineTraverser' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'StateMachineTraverser_State' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachineTraverser_FSM' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'FSM' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'StateMachineTraverser_FSM' is a specialization of 'FSM'.
+The class 'StateMachineTraverser_State' is a specialization of 'State'.

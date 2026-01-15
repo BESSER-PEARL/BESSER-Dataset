@@ -1,0 +1,125 @@
+The domain model 'operators' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'operators_Person' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_EquipmentRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_Protocol' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_DiagramInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_FunctionRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_Node' represents an important domain concept.
+It has one attribute: 'nodeID', which is of type str.
+
+'operators_ResourceForecast' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_Marker' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'description', which is of type str.
+
+'operators_Room' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_ResourceMonitor' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_Equipment' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_Relationship' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'operators_ExpansionExperience' represents an important domain concept.
+It has one attribute: 'duration', which is of type str.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_Warehouse' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str; 'equipments', which is of type str.
+
+'operators_Network' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'createdDate', which is of type str; 'name', which is of type str.
+
+'operators_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_MetricSource' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_ServiceUser' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_ResourceExpansion' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_Lifecycle' represents an important domain concept.
+It does not declare any attributes.
+
+'Company' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MarkerKind' defines the following possible values: 'THRESHOLDREACHED', 'EXTERNALEVENT', 'ACTIONNEEDED', 'value', 'INTERNALEVENT'.
+
+The model also captures inheritance relationships between classes.
+The class 'operators_EquipmentRelationship' is a specialization of 'Relationship'.
+The class 'operators_FunctionRelationship' is a specialization of 'Relationship'.
+The class 'operators_Operator' is a specialization of 'Company'.
+
+Relationships between classes are modeled using associations.
+An association connects 'operators_EquipmentRelationship' and 'operators_Equipment'. From 'operators_EquipmentRelationship', the role 'operators_EquipmentRelationship' has cardinality 0..*, and from 'operators_Equipment', the role 'operators_Equipment' has cardinality 0..*.
+An association connects 'operators_EquipmentRelationship' and 'operators_Equipment'. From 'operators_EquipmentRelationship', the role 'operators_EquipmentRelationship2' has cardinality 0..*, and from 'operators_Equipment', the role 'operators_Equipment3' has cardinality 0..*.
+An association connects 'operators_Equipment' and 'operators_ExpansionExperience'. From 'operators_Equipment', the role 'operators_Equipment5' has cardinality 0..*, and from 'operators_ExpansionExperience', the role 'operators_ExpansionExperience' has cardinality 0..*.
+An association connects 'operators_Function' and 'operators_FunctionRelationship'. From 'operators_Function', the role 'operators_Function' has cardinality 0..*, and from 'operators_FunctionRelationship', the role 'operators_FunctionRelationship' has cardinality 0..*.
+An association connects 'operators_FunctionRelationship' and 'operators_Function'. From 'operators_FunctionRelationship', the role 'operators_FunctionRelationship8' has cardinality 0..*, and from 'operators_Function', the role 'operators_Function9' has cardinality 0..*.
+An association connects 'operators_Equipment' and 'operators_Marker'. From 'operators_Equipment', the role 'operators_Equipment11' has cardinality 0..*, and from 'operators_Marker', the role 'operators_Marker' has cardinality 0..*.
+An association connects 'operators_Marker' and 'operators_Function'. From 'operators_Marker', the role 'operators_Marker13' has cardinality 0..*, and from 'operators_Function', the role 'operators_Function14' has cardinality 0..*.
+An association connects 'operators_Value' and 'operators_Marker'. From 'operators_Value', the role 'operators_Value' has cardinality 0..*, and from 'operators_Marker', the role 'operators_Marker16' has cardinality 0..*.
+An association connects 'operators_Network' and 'operators_DiagramInfo'. From 'operators_Network', the role 'operators_Network' has cardinality 0..*, and from 'operators_DiagramInfo', the role 'operators_DiagramInfo' has cardinality 0..*.
+An association connects 'operators_Node' and 'operators_Network'. From 'operators_Node', the role 'operators_Node' has cardinality 0..*, and from 'operators_Network', the role 'operators_Network19' has cardinality 0..*.
+An association connects 'operators_Network' and 'operators_Network'. From 'operators_Network', the role 'operators_Network20' has cardinality 0..*, and from 'operators_Network', the role 'operators_Network22' has cardinality 0..*.
+An association connects 'operators_Network' and 'operators_FunctionRelationship'. From 'operators_Network', the role 'operators_Network24' has cardinality 0..*, and from 'operators_FunctionRelationship', the role 'operators_FunctionRelationship25' has cardinality 0..*.
+An association connects 'operators_Network' and 'operators_EquipmentRelationship'. From 'operators_Network', the role 'operators_Network27' has cardinality 0..*, and from 'operators_EquipmentRelationship', the role 'operators_EquipmentRelationship28' has cardinality 0..*.
+An association connects 'operators_Network' and 'operators_MetricSource'. From 'operators_Network', the role 'operators_Network30' has cardinality 0..*, and from 'operators_MetricSource', the role 'operators_MetricSource' has cardinality 0..*.
+An association connects 'operators_Network' and 'operators_Person'. From 'operators_Network', the role 'operators_Network32' has cardinality 0..*, and from 'operators_Person', the role 'operators_Person' has cardinality 0..*.
+An association connects 'operators_Node' and 'operators_Lifecycle'. From 'operators_Node', the role 'operators_Node34' has cardinality 0..*, and from 'operators_Lifecycle', the role 'operators_Lifecycle' has cardinality 0..*.
+An association connects 'operators_Node' and 'operators_Function'. From 'operators_Node', the role 'operators_Node36' has cardinality 0..*, and from 'operators_Function', the role 'operators_Function37' has cardinality 0..*.
+An association connects 'operators_Node' and 'operators_Equipment'. From 'operators_Node', the role 'operators_Node39' has cardinality 0..*, and from 'operators_Equipment', the role 'operators_Equipment40' has cardinality 0..*.
+An association connects 'operators_Node' and 'operators_Person'. From 'operators_Node', the role 'operators_Node42' has cardinality 0..*, and from 'operators_Person', the role 'operators_Person43' has cardinality 0..*.
+An association connects 'operators_Node' and 'operators_Equipment'. From 'operators_Node', the role 'operators_Node45' has cardinality 0..*, and from 'operators_Equipment', the role 'operators_Equipment46' has cardinality 0..*.
+An association connects 'operators_Function' and 'operators_Node'. From 'operators_Function', the role 'operators_Function49' has cardinality 0..*, and from 'operators_Node', the role 'operators_Node48' has cardinality 0..*.
+An association connects 'operators_Node' and 'operators_Room'. From 'operators_Node', the role 'operators_Node51' has cardinality 0..*, and from 'operators_Room', the role 'operators_Room' has cardinality 0..*.
+An association connects 'operators_Operator' and 'operators_Network'. From 'operators_Operator', the role 'operators_Operator' has cardinality 0..*, and from 'operators_Network', the role 'operators_Network53' has cardinality 0..*.
+An association connects 'operators_Operator' and 'operators_Warehouse'. From 'operators_Operator', the role 'operators_Operator55' has cardinality 0..*, and from 'operators_Warehouse', the role 'operators_Warehouse' has cardinality 0..*.
+An association connects 'operators_Service' and 'operators_Operator'. From 'operators_Service', the role 'operators_Service' has cardinality 0..*, and from 'operators_Operator', the role 'operators_Operator57' has cardinality 0..*.
+An association connects 'operators_ServiceUser' and 'operators_Operator'. From 'operators_ServiceUser', the role 'operators_ServiceUser' has cardinality 0..*, and from 'operators_Operator', the role 'operators_Operator59' has cardinality 0..*.
+An association connects 'operators_Operator' and 'operators_ResourceExpansion'. From 'operators_Operator', the role 'operators_Operator61' has cardinality 0..*, and from 'operators_ResourceExpansion', the role 'operators_ResourceExpansion' has cardinality 0..*.
+An association connects 'operators_Operator' and 'operators_ExpansionExperience'. From 'operators_Operator', the role 'operators_Operator63' has cardinality 0..*, and from 'operators_ExpansionExperience', the role 'operators_ExpansionExperience64' has cardinality 0..*.
+An association connects 'operators_Relationship' and 'operators_Node'. From 'operators_Relationship', the role 'operators_Relationship' has cardinality 0..*, and from 'operators_Node', the role 'operators_Node66' has cardinality 0..*.
+An association connects 'operators_Relationship' and 'operators_Node'. From 'operators_Relationship', the role 'operators_Relationship68' has cardinality 0..*, and from 'operators_Node', the role 'operators_Node69' has cardinality 0..*.
+An association connects 'operators_Protocol' and 'operators_Relationship'. From 'operators_Protocol', the role 'operators_Protocol' has cardinality 0..*, and from 'operators_Relationship', the role 'operators_Relationship71' has cardinality 0..*.
+An association connects 'operators_ResourceExpansion' and 'operators_Node'. From 'operators_ResourceExpansion', the role 'operators_ResourceExpansion73' has cardinality 0..*, and from 'operators_Node', the role 'operators_Node74' has cardinality 0..*.
+An association connects 'operators_Equipment' and 'operators_ResourceExpansion'. From 'operators_Equipment', the role 'operators_Equipment77' has cardinality 0..*, and from 'operators_ResourceExpansion', the role 'operators_ResourceExpansion76' has cardinality 0..*.
+An association connects 'operators_Function' and 'operators_ResourceExpansion'. From 'operators_Function', the role 'operators_Function80' has cardinality 0..*, and from 'operators_ResourceExpansion', the role 'operators_ResourceExpansion79' has cardinality 0..*.
+An association connects 'operators_Marker' and 'operators_ResourceForecast'. From 'operators_Marker', the role 'operators_Marker82' has cardinality 0..*, and from 'operators_ResourceForecast', the role 'operators_ResourceForecast' has cardinality 0..*.
+An association connects 'operators_ResourceMonitor' and 'operators_Marker'. From 'operators_ResourceMonitor', the role 'operators_ResourceMonitor' has cardinality 0..*, and from 'operators_Marker', the role 'operators_Marker84' has cardinality 0..*.
+An association connects 'operators_Node' and 'operators_Warehouse'. From 'operators_Node', the role 'operators_Node87' has cardinality 0..*, and from 'operators_Warehouse', the role 'operators_Warehouse86' has cardinality 0..*.

@@ -1,0 +1,106 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'model_MetaData' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'model_AutoConfirmedUser' represents an important domain concept.
+It does not declare any attributes.
+
+'Administrator' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Content' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Media' represents an important domain concept.
+It has one attribute: 'typePrefix', which is of type str.
+
+'UnregisteredUser' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RegisteredUser' represents an important domain concept.
+It does not declare any attributes.
+
+'model_WikiProject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Discussion' represents an important domain concept.
+It has one attribute: 'discussions', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'AutoConfirmedUser' represents an important domain concept.
+It does not declare any attributes.
+
+'Internal' represents an important domain concept.
+It does not declare any attributes.
+
+'Role' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Internal' represents an important domain concept.
+It has the following attributes: 'typePrefix', which is of type str; 'content', which is of type str.
+
+'model_Administrator' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Revision' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'creationDate', which is of type str.
+
+'model_Article' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'typePrefix', which is of type str.
+
+'model_VersionHistory' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Talk' represents an important domain concept.
+It does not declare any attributes.
+
+'model_User' represents an important domain concept.
+It has the following attributes: 'isEditor', which is of type str; 'typePrefix', which is of type str; 'isReader', which is of type str; 'isBlocked', which is of type str.
+
+'model_Node' represents an important domain concept.
+It has the following attributes: 'nodeName', which is of type str; 'nodePrefix', which is of type str.
+
+'model_UnregisteredUser' represents an important domain concept.
+It does not declare any attributes.
+
+'Content' represents an important domain concept.
+It does not declare any attributes.
+
+'RegisteredUser' represents an important domain concept.
+It does not declare any attributes.
+
+'model_SysOp' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'model_Content' is a specialization of 'Node'.
+The class 'model_Article' is a specialization of 'Content'.
+The class 'model_Media' is a specialization of 'Content'.
+The class 'model_Internal' is a specialization of 'Content'.
+The class 'model_User' is a specialization of 'Node'.
+The class 'model_RegisteredUser' is a specialization of 'UnregisteredUser'.
+The class 'model_AutoConfirmedUser' is a specialization of 'RegisteredUser'.
+The class 'model_Administrator' is a specialization of 'AutoConfirmedUser'.
+The class 'model_SysOp' is a specialization of 'Administrator'.
+The class 'model_WikiProject' is a specialization of 'Internal'.
+The class 'model_UnregisteredUser' is a specialization of 'Role'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Content' and 'model_Revision'. From 'model_Content', the role 'model_Content' has cardinality 0..*, and from 'model_Revision', the role 'model_Revision' has cardinality 0..*.
+An association connects 'model_Content' and 'model_Discussion'. From 'model_Content', the role 'model_Content2' has cardinality 0..*, and from 'model_Discussion', the role 'model_Discussion' has cardinality 0..*.
+An association connects 'model_Revision' and 'model_Content'. From 'model_Revision', the role 'model_Revision5' has cardinality 0..*, and from 'model_Content', the role 'model_Content4' has cardinality 0..*.
+An association connects 'model_VersionHistory' and 'model_Content'. From 'model_VersionHistory', the role 'model_VersionHistory' has cardinality 0..*, and from 'model_Content', the role 'model_Content7' has cardinality 0..*.
+An association connects 'model_Media' and 'model_Article'. From 'model_Media', the role 'model_Media' has cardinality 0..*, and from 'model_Article', the role 'model_Article' has cardinality 0..*.
+An association connects 'model_MetaData' and 'model_Media'. From 'model_MetaData', the role 'model_MetaData' has cardinality 0..*, and from 'model_Media', the role 'model_Media10' has cardinality 0..*.
+An association connects 'model_Role' and 'model_User'. From 'model_Role', the role 'model_Role' has cardinality 0..*, and from 'model_User', the role 'model_User' has cardinality 0..*.
+An association connects 'model_User' and 'model_Revision'. From 'model_User', the role 'model_User14' has cardinality 0..*, and from 'model_Revision', the role 'model_Revision13' has cardinality 0..*.
+An association connects 'model_Talk' and 'model_RegisteredUser'. From 'model_Talk', the role 'model_Talk' has cardinality 0..*, and from 'model_RegisteredUser', the role 'model_RegisteredUser' has cardinality 0..*.
+An association connects 'model_WikiProject' and 'model_User'. From 'model_WikiProject', the role 'model_WikiProject' has cardinality 0..*, and from 'model_User', the role 'model_User17' has cardinality 0..*.

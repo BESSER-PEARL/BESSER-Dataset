@@ -1,0 +1,20 @@
+The domain model 'ABC' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'ABC_A' represents an important domain concept.
+It does not declare any attributes.
+
+'ABC_C' represents an important domain concept.
+It does not declare any attributes.
+
+'ABC_D' represents an important domain concept.
+It does not declare any attributes.
+
+'ABC_B' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'ABC_A' and 'ABC_B'. From 'ABC_A', the role 'ABC_A' has cardinality 0..*, and from 'ABC_B', the role 'ABC_B' has cardinality 0..*.
+An association connects 'ABC_C' and 'ABC_A'. From 'ABC_C', the role 'ABC_C' has cardinality 0..*, and from 'ABC_A', the role 'ABC_A2' has cardinality 0..*.
+An association connects 'ABC_D' and 'ABC_B'. From 'ABC_D', the role 'ABC_D' has cardinality 0..*, and from 'ABC_B', the role 'ABC_B4' has cardinality 0..*.

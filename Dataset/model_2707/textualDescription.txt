@@ -1,0 +1,30 @@
+The domain model 'tbase' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'tbase_B' represents an important domain concept.
+It does not declare any attributes.
+
+'tbase_C' represents an important domain concept.
+It does not declare any attributes.
+
+'tbase_TRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'tbase_A' represents an important domain concept.
+It does not declare any attributes.
+
+'tbase_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'tbase_A' is a specialization of 'NamedElement'.
+The class 'tbase_B' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tbase_B' and 'tbase_A'. From 'tbase_B', the role 'tbase_B' has cardinality 0..*, and from 'tbase_A', the role 'tbase_A' has cardinality 0..*.
+An association connects 'tbase_C' and 'tbase_B'. From 'tbase_C', the role 'tbase_C' has cardinality 0..*, and from 'tbase_B', the role 'tbase_B2' has cardinality 0..*.
+An association connects 'tbase_TRoot' and 'tbase_A'. From 'tbase_TRoot', the role 'tbase_TRoot' has cardinality 0..*, and from 'tbase_A', the role 'tbase_A4' has cardinality 0..*.

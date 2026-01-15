@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/rytina/cdo-light/cdo/org.eclipse.emf.cdo.tests/SubclassTest1.ecore

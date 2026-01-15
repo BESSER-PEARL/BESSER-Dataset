@@ -1,0 +1,56 @@
+The domain model 'agentDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'agentDSL_Goal' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'agentDSL_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'agentDSL_Task' represents an important domain concept.
+It does not declare any attributes.
+
+'agentDSL_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'agentDSL_JAVAID' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'agentDSL_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'agentDSL_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type bool.
+
+'agentDSL_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'agentDSL_Outcome' represents an important domain concept.
+It does not declare any attributes.
+
+'agentDSL_TypeDef' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'agentDSL_TypeDef' is a specialization of 'Type'.
+The class 'agentDSL_Entity' is a specialization of 'Type'.
+The class 'agentDSL_Task' is a specialization of 'Type'.
+The class 'agentDSL_Outcome' is a specialization of 'Type'.
+The class 'agentDSL_Function' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'agentDSL_Type' and 'agentDSL_Model'. From 'agentDSL_Type', the role 'agentDSL_Type' has cardinality 0..*, and from 'agentDSL_Model', the role 'agentDSL_Model' has cardinality 0..*.
+An association connects 'agentDSL_JAVAID' and 'agentDSL_TypeDef'. From 'agentDSL_JAVAID', the role 'agentDSL_JAVAID' has cardinality 0..*, and from 'agentDSL_TypeDef', the role 'agentDSL_TypeDef' has cardinality 0..*.
+An association connects 'agentDSL_Entity' and 'agentDSL_Entity'. From 'agentDSL_Entity', the role 'agentDSL_Entity2' has cardinality 0..*, and from 'agentDSL_Entity', the role 'agentDSL_Entity' has cardinality 0..*.
+An association connects 'agentDSL_Attribute' and 'agentDSL_Entity'. From 'agentDSL_Attribute', the role 'agentDSL_Attribute' has cardinality 0..*, and from 'agentDSL_Entity', the role 'agentDSL_Entity5' has cardinality 0..*.
+An association connects 'agentDSL_Attribute' and 'agentDSL_Task'. From 'agentDSL_Attribute', the role 'agentDSL_Attribute7' has cardinality 0..*, and from 'agentDSL_Task', the role 'agentDSL_Task' has cardinality 0..*.
+An association connects 'agentDSL_Outcome' and 'agentDSL_Task'. From 'agentDSL_Outcome', the role 'agentDSL_Outcome' has cardinality 0..*, and from 'agentDSL_Task', the role 'agentDSL_Task9' has cardinality 0..*.
+An association connects 'agentDSL_Outcome' and 'agentDSL_Attribute'. From 'agentDSL_Outcome', the role 'agentDSL_Outcome11' has cardinality 0..*, and from 'agentDSL_Attribute', the role 'agentDSL_Attribute12' has cardinality 0..*.
+An association connects 'agentDSL_Outcome' and 'agentDSL_Goal'. From 'agentDSL_Outcome', the role 'agentDSL_Outcome14' has cardinality 0..*, and from 'agentDSL_Goal', the role 'agentDSL_Goal' has cardinality 0..*.
+An association connects 'agentDSL_Attribute' and 'agentDSL_Goal'. From 'agentDSL_Attribute', the role 'agentDSL_Attribute17' has cardinality 0..*, and from 'agentDSL_Goal', the role 'agentDSL_Goal16' has cardinality 0..*.
+An association connects 'agentDSL_Function' and 'agentDSL_Attribute'. From 'agentDSL_Function', the role 'agentDSL_Function' has cardinality 0..*, and from 'agentDSL_Attribute', the role 'agentDSL_Attribute19' has cardinality 0..*.
+An association connects 'agentDSL_Attribute' and 'agentDSL_Type'. From 'agentDSL_Attribute', the role 'agentDSL_Attribute21' has cardinality 0..*, and from 'agentDSL_Type', the role 'agentDSL_Type22' has cardinality 0..*.

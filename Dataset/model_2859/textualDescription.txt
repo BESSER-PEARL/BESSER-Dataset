@@ -1,0 +1,644 @@
+The domain model 'go' describes the core structural elements and their relationships within the system.
+
+The model defines 131 main class(es).
+
+'go_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'go_MethodName' represents an important domain concept.
+It does not declare any attributes.
+
+'go_TypeSwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'go_GotoStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_RecvStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_cochetes' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ExpressionLinha' represents an important domain concept.
+It does not declare any attributes.
+
+'go_SwitchStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_SimpleStmt' represents an important domain concept.
+It has one attribute: 'EmptyStmt', which is of type str.
+
+'go_SelectStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_StructType' represents an important domain concept.
+It does not declare any attributes.
+
+'go_KeyType' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ExpressionStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ShortVarDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'SwitchStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ChannelType' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ReceiverType' represents an important domain concept.
+It does not declare any attributes.
+
+'go_PrimaryExprLinha' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Conversion' represents an important domain concept.
+It does not declare any attributes.
+
+'go_binary_op' represents an important domain concept.
+It has the following attributes: 'mul_op', which is of type str; 'add_op', which is of type str; 'rel_op', which is of type str.
+
+'go_MapType' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Key' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ImportPath' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ConstSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'Receiver' represents an important domain concept.
+It does not declare any attributes.
+
+'go_VarDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ExprSwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'go_VarSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'go_BasicLit' represents an important domain concept.
+It has one attribute: 'int_lit', which is of type str.
+
+'go_Arguments' represents an important domain concept.
+It does not declare any attributes.
+
+'go_TypeDef' represents an important domain concept.
+It does not declare any attributes.
+
+'go_IdentifierList' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ForClause' represents an important domain concept.
+It does not declare any attributes.
+
+'go_PrimaryExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'go_imaginary_lit' represents an important domain concept.
+It does not declare any attributes.
+
+'go_MethodExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'go_GoStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ponto' represents an important domain concept.
+It does not declare any attributes.
+
+'go_CommClause' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ForStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_PackageClause' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ConstDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Statement' represents an important domain concept.
+It has one attribute: 'FallthroughStmt', which is of type str.
+
+'go_FunctionBody' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Assignment' represents an important domain concept.
+It has one attribute: 'assign_op', which is of type str.
+
+'go_TypeList' represents an important domain concept.
+It does not declare any attributes.
+
+'go_TypeCaseClause' represents an important domain concept.
+It does not declare any attributes.
+
+'go_CommCase' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ImportSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Slice' represents an important domain concept.
+It does not declare any attributes.
+
+'go_LabeledStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Result' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'go_MethodSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'go_AliasDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'float_lit' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Index' represents an important domain concept.
+It does not declare any attributes.
+
+'OperandName' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ImportDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'go_FunctionLit' represents an important domain concept.
+It does not declare any attributes.
+
+'go_LiteralType' represents an important domain concept.
+It does not declare any attributes.
+
+'go_SouceFile' represents an important domain concept.
+It does not declare any attributes.
+
+'go_SendStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_CompositeLit' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Receiver' represents an important domain concept.
+It does not declare any attributes.
+
+'go_switch_stmt_linha' represents an important domain concept.
+It does not declare any attributes.
+
+'go_FieldName' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'go_TypeLitLinha' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Channel' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ParameterList' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Selector' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Operand' represents an important domain concept.
+It does not declare any attributes.
+
+'go_TypeAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'go_identifier' represents an important domain concept.
+It has the following attributes: 'DECIMAL_DIGIT', which is of type str; 'LETTER', which is of type str.
+
+'go_ParameterDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Signature' represents an important domain concept.
+It does not declare any attributes.
+
+'go_QualifiedIdent' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'go_rune_lit' represents an important domain concept.
+It has the following attributes: 'byte_value', which is of type str; 'unicode_value', which is of type str.
+
+'go_IncDecStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_EmbeddedField' represents an important domain concept.
+It does not declare any attributes.
+
+'go_UnaryExpr' represents an important domain concept.
+It has one attribute: 'unary_op', which is of type str.
+
+'go_LiteralValue' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'go_TypeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'go_PointerType' represents an important domain concept.
+It does not declare any attributes.
+
+'go_FunctionDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ArrayLength' represents an important domain concept.
+It does not declare any attributes.
+
+'go_StatementList' represents an important domain concept.
+It does not declare any attributes.
+
+'go_FunctionName' represents an important domain concept.
+It does not declare any attributes.
+
+'go_InterfaceType' represents an important domain concept.
+It does not declare any attributes.
+
+'go_TypeSwitchGuard' represents an important domain concept.
+It does not declare any attributes.
+
+'go_DeferStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_TypeLit' represents an important domain concept.
+It does not declare any attributes.
+
+'go_KeyedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'go_InitStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_RecvExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Parameters' represents an important domain concept.
+It does not declare any attributes.
+
+'go_decimals' represents an important domain concept.
+It has one attribute: 'DECIMAL_DIGIT', which is of type str.
+
+'go_topLevelDeclLinha' represents an important domain concept.
+It does not declare any attributes.
+
+'go_BreakStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_PostStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_float_lit' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'go_string_lit' represents an important domain concept.
+It has the following attributes: 'raw_string_lit', which is of type str; 'interpreted_string_lit', which is of type str.
+
+'go_TypeDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'go_TypeNameLinha' represents an important domain concept.
+It does not declare any attributes.
+
+'go_OperandName' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ExprCaseClause' represents an important domain concept.
+It does not declare any attributes.
+
+'go_TypeName' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ElementList' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ElementType' represents an important domain concept.
+It does not declare any attributes.
+
+'go_exponent' represents an important domain concept.
+It does not declare any attributes.
+
+'go_RangeClause' represents an important domain concept.
+It does not declare any attributes.
+
+'go_LiteralTypeLinha' represents an important domain concept.
+It does not declare any attributes.
+
+'go_TopLevelDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'go_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'go_InterfaceTypeName' represents an important domain concept.
+It does not declare any attributes.
+
+'go_MethodDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'go_FunctionType' represents an important domain concept.
+It does not declare any attributes.
+
+'go_IfStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_FieldDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ReturnStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'go_PackageName' represents an important domain concept.
+It does not declare any attributes.
+
+'go_ContinueStmt' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'go_Parameters' is a specialization of 'Receiver'.
+The class 'go_AliasDecl' is a specialization of 'TypeSpec'.
+The class 'go_TypeDef' is a specialization of 'TypeSpec'.
+The class 'go_QualifiedIdent' is a specialization of 'OperandName'.
+The class 'go_CompositeLit' is a specialization of 'Literal'.
+The class 'go_FunctionLit' is a specialization of 'Literal'.
+The class 'go_SimpleStmt' is a specialization of 'SwitchStmt'.
+The class 'go_identifier' is a specialization of 'OperandName'.
+The class 'go_decimals' is a specialization of 'float_lit'.
+
+Relationships between classes are modeled using associations.
+An association connects 'go_SouceFile' and 'go_PackageClause'. From 'go_SouceFile', the role 'go_SouceFile' has cardinality 0..*, and from 'go_PackageClause', the role 'go_PackageClause' has cardinality 0..*.
+An association connects 'go_ImportDecl' and 'go_SouceFile'. From 'go_ImportDecl', the role 'go_ImportDecl' has cardinality 0..*, and from 'go_SouceFile', the role 'go_SouceFile2' has cardinality 0..*.
+An association connects 'go_SouceFile' and 'go_TopLevelDecl'. From 'go_SouceFile', the role 'go_SouceFile4' has cardinality 0..*, and from 'go_TopLevelDecl', the role 'go_TopLevelDecl' has cardinality 0..*.
+An association connects 'go_Type' and 'go_TypeName'. From 'go_Type', the role 'go_Type' has cardinality 0..*, and from 'go_TypeName', the role 'go_TypeName' has cardinality 0..*.
+An association connects 'go_Type' and 'go_TypeLit'. From 'go_Type', the role 'go_Type7' has cardinality 0..*, and from 'go_TypeLit', the role 'go_TypeLit' has cardinality 0..*.
+An association connects 'go_Type' and 'go_Type'. From 'go_Type', the role 'go_Type10' has cardinality 0..*, and from 'go_Type', the role 'go_Type8' has cardinality 0..*.
+An association connects 'go_TypeName' and 'go_identifier'. From 'go_TypeName', the role 'go_TypeName12' has cardinality 0..*, and from 'go_identifier', the role 'go_identifier' has cardinality 0..*.
+An association connects 'go_TypeNameLinha' and 'go_TypeName'. From 'go_TypeNameLinha', the role 'go_TypeNameLinha' has cardinality 0..*, and from 'go_TypeName', the role 'go_TypeName14' has cardinality 0..*.
+An association connects 'go_TypeNameLinha' and 'go_identifier'. From 'go_TypeNameLinha', the role 'go_TypeNameLinha16' has cardinality 0..*, and from 'go_identifier', the role 'go_identifier17' has cardinality 0..*.
+An association connects 'go_TypeNameLinha' and 'go_TypeNameLinha'. From 'go_TypeNameLinha', the role 'go_TypeNameLinha20' has cardinality 0..*, and from 'go_TypeNameLinha', the role 'go_TypeNameLinha18' has cardinality 0..*.
+An association connects 'go_TypeNameLinha' and 'go_QualifiedIdent'. From 'go_TypeNameLinha', the role 'go_TypeNameLinha22' has cardinality 0..*, and from 'go_QualifiedIdent', the role 'go_QualifiedIdent' has cardinality 0..*.
+An association connects 'go_TypeLitLinha' and 'go_TypeLit'. From 'go_TypeLitLinha', the role 'go_TypeLitLinha' has cardinality 0..*, and from 'go_TypeLit', the role 'go_TypeLit24' has cardinality 0..*.
+An association connects 'go_TypeLit' and 'go_StructType'. From 'go_TypeLit', the role 'go_TypeLit26' has cardinality 0..*, and from 'go_StructType', the role 'go_StructType' has cardinality 0..*.
+An association connects 'go_PointerType' and 'go_TypeLit'. From 'go_PointerType', the role 'go_PointerType' has cardinality 0..*, and from 'go_TypeLit', the role 'go_TypeLit28' has cardinality 0..*.
+An association connects 'go_FunctionType' and 'go_TypeLit'. From 'go_FunctionType', the role 'go_FunctionType' has cardinality 0..*, and from 'go_TypeLit', the role 'go_TypeLit30' has cardinality 0..*.
+An association connects 'go_InterfaceType' and 'go_TypeLit'. From 'go_InterfaceType', the role 'go_InterfaceType' has cardinality 0..*, and from 'go_TypeLit', the role 'go_TypeLit32' has cardinality 0..*.
+An association connects 'go_MapType' and 'go_TypeLit'. From 'go_MapType', the role 'go_MapType' has cardinality 0..*, and from 'go_TypeLit', the role 'go_TypeLit34' has cardinality 0..*.
+An association connects 'go_ChannelType' and 'go_TypeLit'. From 'go_ChannelType', the role 'go_ChannelType' has cardinality 0..*, and from 'go_TypeLit', the role 'go_TypeLit36' has cardinality 0..*.
+An association connects 'go_ArrayLength' and 'go_TypeLitLinha'. From 'go_ArrayLength', the role 'go_ArrayLength' has cardinality 0..*, and from 'go_TypeLitLinha', the role 'go_TypeLitLinha38' has cardinality 0..*.
+An association connects 'go_TypeLitLinha' and 'go_ElementType'. From 'go_TypeLitLinha', the role 'go_TypeLitLinha40' has cardinality 0..*, and from 'go_ElementType', the role 'go_ElementType' has cardinality 0..*.
+An association connects 'go_TypeLitLinha' and 'go_TypeLitLinha'. From 'go_TypeLitLinha', the role 'go_TypeLitLinha43' has cardinality 0..*, and from 'go_TypeLitLinha', the role 'go_TypeLitLinha41' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_ArrayLength'. From 'go_Expression', the role 'go_Expression' has cardinality 0..*, and from 'go_ArrayLength', the role 'go_ArrayLength45' has cardinality 0..*.
+An association connects 'go_ElementType' and 'go_Type'. From 'go_ElementType', the role 'go_ElementType47' has cardinality 0..*, and from 'go_Type', the role 'go_Type48' has cardinality 0..*.
+An association connects 'go_FieldDecl' and 'go_StructType'. From 'go_FieldDecl', the role 'go_FieldDecl' has cardinality 0..*, and from 'go_StructType', the role 'go_StructType50' has cardinality 0..*.
+An association connects 'go_FieldDecl' and 'go_IdentifierList'. From 'go_FieldDecl', the role 'go_FieldDecl52' has cardinality 0..*, and from 'go_IdentifierList', the role 'go_IdentifierList' has cardinality 0..*.
+An association connects 'go_Type' and 'go_FieldDecl'. From 'go_Type', the role 'go_Type55' has cardinality 0..*, and from 'go_FieldDecl', the role 'go_FieldDecl54' has cardinality 0..*.
+An association connects 'go_EmbeddedField' and 'go_FieldDecl'. From 'go_EmbeddedField', the role 'go_EmbeddedField' has cardinality 0..*, and from 'go_FieldDecl', the role 'go_FieldDecl57' has cardinality 0..*.
+An association connects 'go_FieldDecl' and 'go_Tag'. From 'go_FieldDecl', the role 'go_FieldDecl59' has cardinality 0..*, and from 'go_Tag', the role 'go_Tag' has cardinality 0..*.
+An association connects 'go_TypeName' and 'go_EmbeddedField'. From 'go_TypeName', the role 'go_TypeName62' has cardinality 0..*, and from 'go_EmbeddedField', the role 'go_EmbeddedField61' has cardinality 0..*.
+An association connects 'go_Tag' and 'go_string_lit'. From 'go_Tag', the role 'go_Tag64' has cardinality 0..*, and from 'go_string_lit', the role 'go_string_lit' has cardinality 0..*.
+An association connects 'go_PointerType' and 'go_Type'. From 'go_PointerType', the role 'go_PointerType66' has cardinality 0..*, and from 'go_Type', the role 'go_Type67' has cardinality 0..*.
+An association connects 'go_Signature' and 'go_FunctionType'. From 'go_Signature', the role 'go_Signature' has cardinality 0..*, and from 'go_FunctionType', the role 'go_FunctionType69' has cardinality 0..*.
+An association connects 'go_Parameters' and 'go_Signature'. From 'go_Parameters', the role 'go_Parameters' has cardinality 0..*, and from 'go_Signature', the role 'go_Signature71' has cardinality 0..*.
+An association connects 'go_Signature' and 'go_Result'. From 'go_Signature', the role 'go_Signature73' has cardinality 0..*, and from 'go_Result', the role 'go_Result' has cardinality 0..*.
+An association connects 'go_Result' and 'go_Parameters'. From 'go_Result', the role 'go_Result75' has cardinality 0..*, and from 'go_Parameters', the role 'go_Parameters76' has cardinality 0..*.
+An association connects 'go_Type' and 'go_Result'. From 'go_Type', the role 'go_Type79' has cardinality 0..*, and from 'go_Result', the role 'go_Result78' has cardinality 0..*.
+An association connects 'go_Parameters' and 'go_ParameterList'. From 'go_Parameters', the role 'go_Parameters81' has cardinality 0..*, and from 'go_ParameterList', the role 'go_ParameterList' has cardinality 0..*.
+An association connects 'go_ParameterDecl' and 'go_ParameterList'. From 'go_ParameterDecl', the role 'go_ParameterDecl' has cardinality 0..*, and from 'go_ParameterList', the role 'go_ParameterList83' has cardinality 0..*.
+An association connects 'go_IdentifierList' and 'go_ParameterDecl'. From 'go_IdentifierList', the role 'go_IdentifierList86' has cardinality 0..*, and from 'go_ParameterDecl', the role 'go_ParameterDecl85' has cardinality 0..*.
+An association connects 'go_Type' and 'go_ParameterDecl'. From 'go_Type', the role 'go_Type89' has cardinality 0..*, and from 'go_ParameterDecl', the role 'go_ParameterDecl88' has cardinality 0..*.
+An association connects 'go_MethodSpec' and 'go_InterfaceType'. From 'go_MethodSpec', the role 'go_MethodSpec' has cardinality 0..*, and from 'go_InterfaceType', the role 'go_InterfaceType91' has cardinality 0..*.
+An association connects 'go_MethodName' and 'go_MethodSpec'. From 'go_MethodName', the role 'go_MethodName' has cardinality 0..*, and from 'go_MethodSpec', the role 'go_MethodSpec93' has cardinality 0..*.
+An association connects 'go_MethodSpec' and 'go_Signature'. From 'go_MethodSpec', the role 'go_MethodSpec95' has cardinality 0..*, and from 'go_Signature', the role 'go_Signature96' has cardinality 0..*.
+An association connects 'go_MethodSpec' and 'go_InterfaceTypeName'. From 'go_MethodSpec', the role 'go_MethodSpec98' has cardinality 0..*, and from 'go_InterfaceTypeName', the role 'go_InterfaceTypeName' has cardinality 0..*.
+An association connects 'go_MethodName' and 'go_identifier'. From 'go_MethodName', the role 'go_MethodName100' has cardinality 0..*, and from 'go_identifier', the role 'go_identifier101' has cardinality 0..*.
+An association connects 'go_TypeName' and 'go_InterfaceTypeName'. From 'go_TypeName', the role 'go_TypeName104' has cardinality 0..*, and from 'go_InterfaceTypeName', the role 'go_InterfaceTypeName103' has cardinality 0..*.
+An association connects 'go_KeyType' and 'go_MapType'. From 'go_KeyType', the role 'go_KeyType' has cardinality 0..*, and from 'go_MapType', the role 'go_MapType106' has cardinality 0..*.
+An association connects 'go_ElementType' and 'go_MapType'. From 'go_ElementType', the role 'go_ElementType109' has cardinality 0..*, and from 'go_MapType', the role 'go_MapType108' has cardinality 0..*.
+An association connects 'go_KeyType' and 'go_Type'. From 'go_KeyType', the role 'go_KeyType111' has cardinality 0..*, and from 'go_Type', the role 'go_Type112' has cardinality 0..*.
+An association connects 'go_ElementType' and 'go_ChannelType'. From 'go_ElementType', the role 'go_ElementType115' has cardinality 0..*, and from 'go_ChannelType', the role 'go_ChannelType114' has cardinality 0..*.
+An association connects 'go_StatementList' and 'go_Block'. From 'go_StatementList', the role 'go_StatementList' has cardinality 0..*, and from 'go_Block', the role 'go_Block' has cardinality 0..*.
+An association connects 'go_StatementList' and 'go_Statement'. From 'go_StatementList', the role 'go_StatementList118' has cardinality 0..*, and from 'go_Statement', the role 'go_Statement' has cardinality 0..*.
+An association connects 'go_ConstDecl' and 'go_Declaration'. From 'go_ConstDecl', the role 'go_ConstDecl' has cardinality 0..*, and from 'go_Declaration', the role 'go_Declaration' has cardinality 0..*.
+An association connects 'go_TypeDecl' and 'go_Declaration'. From 'go_TypeDecl', the role 'go_TypeDecl' has cardinality 0..*, and from 'go_Declaration', the role 'go_Declaration121' has cardinality 0..*.
+An association connects 'go_Declaration' and 'go_VarDecl'. From 'go_Declaration', the role 'go_Declaration123' has cardinality 0..*, and from 'go_VarDecl', the role 'go_VarDecl' has cardinality 0..*.
+An association connects 'go_Declaration' and 'go_TopLevelDecl'. From 'go_Declaration', the role 'go_Declaration126' has cardinality 0..*, and from 'go_TopLevelDecl', the role 'go_TopLevelDecl125' has cardinality 0..*.
+An association connects 'go_TopLevelDecl' and 'go_topLevelDeclLinha'. From 'go_TopLevelDecl', the role 'go_TopLevelDecl128' has cardinality 0..*, and from 'go_topLevelDeclLinha', the role 'go_topLevelDeclLinha' has cardinality 0..*.
+An association connects 'go_topLevelDeclLinha' and 'go_FunctionName'. From 'go_topLevelDeclLinha', the role 'go_topLevelDeclLinha130' has cardinality 0..*, and from 'go_FunctionName', the role 'go_FunctionName' has cardinality 0..*.
+An association connects 'go_topLevelDeclLinha' and 'go_Signature'. From 'go_topLevelDeclLinha', the role 'go_topLevelDeclLinha132' has cardinality 0..*, and from 'go_Signature', the role 'go_Signature133' has cardinality 0..*.
+An association connects 'go_FunctionBody' and 'go_topLevelDeclLinha'. From 'go_FunctionBody', the role 'go_FunctionBody' has cardinality 0..*, and from 'go_topLevelDeclLinha', the role 'go_topLevelDeclLinha135' has cardinality 0..*.
+An association connects 'go_Receiver' and 'go_topLevelDeclLinha'. From 'go_Receiver', the role 'go_Receiver' has cardinality 0..*, and from 'go_topLevelDeclLinha', the role 'go_topLevelDeclLinha137' has cardinality 0..*.
+An association connects 'go_topLevelDeclLinha' and 'go_MethodName'. From 'go_topLevelDeclLinha', the role 'go_topLevelDeclLinha139' has cardinality 0..*, and from 'go_MethodName', the role 'go_MethodName140' has cardinality 0..*.
+An association connects 'go_ConstSpec' and 'go_ConstDecl'. From 'go_ConstSpec', the role 'go_ConstSpec' has cardinality 0..*, and from 'go_ConstDecl', the role 'go_ConstDecl142' has cardinality 0..*.
+An association connects 'go_ConstSpec' and 'go_IdentifierList'. From 'go_ConstSpec', the role 'go_ConstSpec144' has cardinality 0..*, and from 'go_IdentifierList', the role 'go_IdentifierList145' has cardinality 0..*.
+An association connects 'go_Type' and 'go_ConstSpec'. From 'go_Type', the role 'go_Type148' has cardinality 0..*, and from 'go_ConstSpec', the role 'go_ConstSpec147' has cardinality 0..*.
+An association connects 'go_ExpressionList' and 'go_ConstSpec'. From 'go_ExpressionList', the role 'go_ExpressionList' has cardinality 0..*, and from 'go_ConstSpec', the role 'go_ConstSpec150' has cardinality 0..*.
+An association connects 'go_identifier' and 'go_IdentifierList'. From 'go_identifier', the role 'go_identifier153' has cardinality 0..*, and from 'go_IdentifierList', the role 'go_IdentifierList152' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_ExpressionList'. From 'go_Expression', the role 'go_Expression156' has cardinality 0..*, and from 'go_ExpressionList', the role 'go_ExpressionList155' has cardinality 0..*.
+An association connects 'go_TypeDecl' and 'go_TypeSpec'. From 'go_TypeDecl', the role 'go_TypeDecl158' has cardinality 0..*, and from 'go_TypeSpec', the role 'go_TypeSpec' has cardinality 0..*.
+An association connects 'go_identifier' and 'go_TypeSpec'. From 'go_identifier', the role 'go_identifier161' has cardinality 0..*, and from 'go_TypeSpec', the role 'go_TypeSpec160' has cardinality 0..*.
+An association connects 'go_Type' and 'go_TypeSpec'. From 'go_Type', the role 'go_Type164' has cardinality 0..*, and from 'go_TypeSpec', the role 'go_TypeSpec163' has cardinality 0..*.
+An association connects 'go_VarDecl' and 'go_VarSpec'. From 'go_VarDecl', the role 'go_VarDecl166' has cardinality 0..*, and from 'go_VarSpec', the role 'go_VarSpec' has cardinality 0..*.
+An association connects 'go_VarSpec' and 'go_IdentifierList'. From 'go_VarSpec', the role 'go_VarSpec168' has cardinality 0..*, and from 'go_IdentifierList', the role 'go_IdentifierList169' has cardinality 0..*.
+An association connects 'go_Type' and 'go_VarSpec'. From 'go_Type', the role 'go_Type172' has cardinality 0..*, and from 'go_VarSpec', the role 'go_VarSpec171' has cardinality 0..*.
+An association connects 'go_VarSpec' and 'go_ExpressionList'. From 'go_VarSpec', the role 'go_VarSpec174' has cardinality 0..*, and from 'go_ExpressionList', the role 'go_ExpressionList175' has cardinality 0..*.
+An association connects 'go_IdentifierList' and 'go_ShortVarDecl'. From 'go_IdentifierList', the role 'go_IdentifierList177' has cardinality 0..*, and from 'go_ShortVarDecl', the role 'go_ShortVarDecl' has cardinality 0..*.
+An association connects 'go_ExpressionList' and 'go_ShortVarDecl'. From 'go_ExpressionList', the role 'go_ExpressionList180' has cardinality 0..*, and from 'go_ShortVarDecl', the role 'go_ShortVarDecl179' has cardinality 0..*.
+An association connects 'go_FunctionName' and 'go_FunctionDecl'. From 'go_FunctionName', the role 'go_FunctionName182' has cardinality 0..*, and from 'go_FunctionDecl', the role 'go_FunctionDecl' has cardinality 0..*.
+An association connects 'go_Signature' and 'go_FunctionDecl'. From 'go_Signature', the role 'go_Signature185' has cardinality 0..*, and from 'go_FunctionDecl', the role 'go_FunctionDecl184' has cardinality 0..*.
+An association connects 'go_FunctionDecl' and 'go_FunctionBody'. From 'go_FunctionDecl', the role 'go_FunctionDecl187' has cardinality 0..*, and from 'go_FunctionBody', the role 'go_FunctionBody188' has cardinality 0..*.
+An association connects 'go_identifier' and 'go_FunctionName'. From 'go_identifier', the role 'go_identifier191' has cardinality 0..*, and from 'go_FunctionName', the role 'go_FunctionName190' has cardinality 0..*.
+An association connects 'go_Block' and 'go_FunctionBody'. From 'go_Block', the role 'go_Block194' has cardinality 0..*, and from 'go_FunctionBody', the role 'go_FunctionBody193' has cardinality 0..*.
+An association connects 'go_MethodDecl' and 'go_Receiver'. From 'go_MethodDecl', the role 'go_MethodDecl' has cardinality 0..*, and from 'go_Receiver', the role 'go_Receiver196' has cardinality 0..*.
+An association connects 'go_MethodName' and 'go_MethodDecl'. From 'go_MethodName', the role 'go_MethodName199' has cardinality 0..*, and from 'go_MethodDecl', the role 'go_MethodDecl198' has cardinality 0..*.
+An association connects 'go_MethodDecl' and 'go_Signature'. From 'go_MethodDecl', the role 'go_MethodDecl201' has cardinality 0..*, and from 'go_Signature', the role 'go_Signature202' has cardinality 0..*.
+An association connects 'go_FunctionBody' and 'go_MethodDecl'. From 'go_FunctionBody', the role 'go_FunctionBody205' has cardinality 0..*, and from 'go_MethodDecl', the role 'go_MethodDecl204' has cardinality 0..*.
+An association connects 'go_Operand' and 'go_Literal'. From 'go_Operand', the role 'go_Operand' has cardinality 0..*, and from 'go_Literal', the role 'go_Literal' has cardinality 0..*.
+An association connects 'go_OperandName' and 'go_Operand'. From 'go_OperandName', the role 'go_OperandName' has cardinality 0..*, and from 'go_Operand', the role 'go_Operand208' has cardinality 0..*.
+An association connects 'go_Operand' and 'go_Expression'. From 'go_Operand', the role 'go_Operand210' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression211' has cardinality 0..*.
+An association connects 'go_Literal' and 'go_BasicLit'. From 'go_Literal', the role 'go_Literal213' has cardinality 0..*, and from 'go_BasicLit', the role 'go_BasicLit' has cardinality 0..*.
+An association connects 'go_BasicLit' and 'go_float_lit'. From 'go_BasicLit', the role 'go_BasicLit215' has cardinality 0..*, and from 'go_float_lit', the role 'go_float_lit' has cardinality 0..*.
+An association connects 'go_BasicLit' and 'go_rune_lit'. From 'go_BasicLit', the role 'go_BasicLit217' has cardinality 0..*, and from 'go_rune_lit', the role 'go_rune_lit' has cardinality 0..*.
+An association connects 'go_BasicLit' and 'go_string_lit'. From 'go_BasicLit', the role 'go_BasicLit219' has cardinality 0..*, and from 'go_string_lit', the role 'go_string_lit220' has cardinality 0..*.
+An association connects 'go_QualifiedIdent' and 'go_PackageName'. From 'go_QualifiedIdent', the role 'go_QualifiedIdent222' has cardinality 0..*, and from 'go_PackageName', the role 'go_PackageName' has cardinality 0..*.
+An association connects 'go_identifier' and 'go_QualifiedIdent'. From 'go_identifier', the role 'go_identifier225' has cardinality 0..*, and from 'go_QualifiedIdent', the role 'go_QualifiedIdent224' has cardinality 0..*.
+An association connects 'go_CompositeLit' and 'go_LiteralType'. From 'go_CompositeLit', the role 'go_CompositeLit' has cardinality 0..*, and from 'go_LiteralType', the role 'go_LiteralType' has cardinality 0..*.
+An association connects 'go_LiteralValue' and 'go_CompositeLit'. From 'go_LiteralValue', the role 'go_LiteralValue' has cardinality 0..*, and from 'go_CompositeLit', the role 'go_CompositeLit228' has cardinality 0..*.
+An association connects 'go_LiteralType' and 'go_StructType'. From 'go_LiteralType', the role 'go_LiteralType230' has cardinality 0..*, and from 'go_StructType', the role 'go_StructType231' has cardinality 0..*.
+An association connects 'go_LiteralTypeLinha' and 'go_LiteralType'. From 'go_LiteralTypeLinha', the role 'go_LiteralTypeLinha' has cardinality 0..*, and from 'go_LiteralType', the role 'go_LiteralType233' has cardinality 0..*.
+An association connects 'go_ElementType' and 'go_LiteralType'. From 'go_ElementType', the role 'go_ElementType236' has cardinality 0..*, and from 'go_LiteralType', the role 'go_LiteralType235' has cardinality 0..*.
+An association connects 'go_LiteralType' and 'go_MapType'. From 'go_LiteralType', the role 'go_LiteralType238' has cardinality 0..*, and from 'go_MapType', the role 'go_MapType239' has cardinality 0..*.
+An association connects 'go_TypeName' and 'go_LiteralType'. From 'go_TypeName', the role 'go_TypeName242' has cardinality 0..*, and from 'go_LiteralType', the role 'go_LiteralType241' has cardinality 0..*.
+An association connects 'go_LiteralTypeLinha' and 'go_ArrayLength'. From 'go_LiteralTypeLinha', the role 'go_LiteralTypeLinha244' has cardinality 0..*, and from 'go_ArrayLength', the role 'go_ArrayLength245' has cardinality 0..*.
+An association connects 'go_LiteralTypeLinha' and 'go_ElementType'. From 'go_LiteralTypeLinha', the role 'go_LiteralTypeLinha247' has cardinality 0..*, and from 'go_ElementType', the role 'go_ElementType248' has cardinality 0..*.
+An association connects 'go_LiteralValue' and 'go_ElementList'. From 'go_LiteralValue', the role 'go_LiteralValue250' has cardinality 0..*, and from 'go_ElementList', the role 'go_ElementList' has cardinality 0..*.
+An association connects 'go_ElementList' and 'go_KeyedElement'. From 'go_ElementList', the role 'go_ElementList252' has cardinality 0..*, and from 'go_KeyedElement', the role 'go_KeyedElement' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_Element'. From 'go_Expression', the role 'go_Expression254' has cardinality 0..*, and from 'go_Element', the role 'go_Element' has cardinality 0..*.
+An association connects 'go_LiteralValue' and 'go_Element'. From 'go_LiteralValue', the role 'go_LiteralValue257' has cardinality 0..*, and from 'go_Element', the role 'go_Element256' has cardinality 0..*.
+An association connects 'go_KeyedElement' and 'go_Key'. From 'go_KeyedElement', the role 'go_KeyedElement259' has cardinality 0..*, and from 'go_Key', the role 'go_Key' has cardinality 0..*.
+An association connects 'go_Element' and 'go_KeyedElement'. From 'go_Element', the role 'go_Element262' has cardinality 0..*, and from 'go_KeyedElement', the role 'go_KeyedElement261' has cardinality 0..*.
+An association connects 'go_Key' and 'go_FieldName'. From 'go_Key', the role 'go_Key264' has cardinality 0..*, and from 'go_FieldName', the role 'go_FieldName' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_Key'. From 'go_Expression', the role 'go_Expression267' has cardinality 0..*, and from 'go_Key', the role 'go_Key266' has cardinality 0..*.
+An association connects 'go_LiteralValue' and 'go_Key'. From 'go_LiteralValue', the role 'go_LiteralValue270' has cardinality 0..*, and from 'go_Key', the role 'go_Key269' has cardinality 0..*.
+An association connects 'go_FieldName' and 'go_identifier'. From 'go_FieldName', the role 'go_FieldName272' has cardinality 0..*, and from 'go_identifier', the role 'go_identifier273' has cardinality 0..*.
+An association connects 'go_FunctionLit' and 'go_Signature'. From 'go_FunctionLit', the role 'go_FunctionLit' has cardinality 0..*, and from 'go_Signature', the role 'go_Signature275' has cardinality 0..*.
+An association connects 'go_FunctionBody' and 'go_FunctionLit'. From 'go_FunctionBody', the role 'go_FunctionBody278' has cardinality 0..*, and from 'go_FunctionLit', the role 'go_FunctionLit277' has cardinality 0..*.
+An association connects 'go_PrimaryExpr' and 'go_Operand'. From 'go_PrimaryExpr', the role 'go_PrimaryExpr' has cardinality 0..*, and from 'go_Operand', the role 'go_Operand280' has cardinality 0..*.
+An association connects 'go_PrimaryExprLinha' and 'go_PrimaryExpr'. From 'go_PrimaryExprLinha', the role 'go_PrimaryExprLinha' has cardinality 0..*, and from 'go_PrimaryExpr', the role 'go_PrimaryExpr282' has cardinality 0..*.
+An association connects 'go_Conversion' and 'go_PrimaryExpr'. From 'go_Conversion', the role 'go_Conversion' has cardinality 0..*, and from 'go_PrimaryExpr', the role 'go_PrimaryExpr284' has cardinality 0..*.
+An association connects 'go_PrimaryExpr' and 'go_MethodExpr'. From 'go_PrimaryExpr', the role 'go_PrimaryExpr286' has cardinality 0..*, and from 'go_MethodExpr', the role 'go_MethodExpr' has cardinality 0..*.
+An association connects 'go_PrimaryExprLinha' and 'go_Arguments'. From 'go_PrimaryExprLinha', the role 'go_PrimaryExprLinha288' has cardinality 0..*, and from 'go_Arguments', the role 'go_Arguments' has cardinality 0..*.
+An association connects 'go_PrimaryExprLinha' and 'go_PrimaryExprLinha'. From 'go_PrimaryExprLinha', the role 'go_PrimaryExprLinha289' has cardinality 0..*, and from 'go_PrimaryExprLinha', the role 'go_PrimaryExprLinha291' has cardinality 0..*.
+An association connects 'go_PrimaryExprLinha' and 'go_ponto'. From 'go_PrimaryExprLinha', the role 'go_PrimaryExprLinha293' has cardinality 0..*, and from 'go_ponto', the role 'go_ponto' has cardinality 0..*.
+An association connects 'go_PrimaryExprLinha' and 'go_cochetes'. From 'go_PrimaryExprLinha', the role 'go_PrimaryExprLinha295' has cardinality 0..*, and from 'go_cochetes', the role 'go_cochetes' has cardinality 0..*.
+An association connects 'go_ponto' and 'go_Selector'. From 'go_ponto', the role 'go_ponto297' has cardinality 0..*, and from 'go_Selector', the role 'go_Selector' has cardinality 0..*.
+An association connects 'go_PrimaryExprLinha' and 'go_ponto'. From 'go_PrimaryExprLinha', the role 'go_PrimaryExprLinha300' has cardinality 0..*, and from 'go_ponto', the role 'go_ponto299' has cardinality 0..*.
+An association connects 'go_TypeAssertion' and 'go_ponto'. From 'go_TypeAssertion', the role 'go_TypeAssertion' has cardinality 0..*, and from 'go_ponto', the role 'go_ponto302' has cardinality 0..*.
+An association connects 'go_cochetes' and 'go_Index'. From 'go_cochetes', the role 'go_cochetes304' has cardinality 0..*, and from 'go_Index', the role 'go_Index' has cardinality 0..*.
+An association connects 'go_cochetes' and 'go_PrimaryExprLinha'. From 'go_cochetes', the role 'go_cochetes306' has cardinality 0..*, and from 'go_PrimaryExprLinha', the role 'go_PrimaryExprLinha307' has cardinality 0..*.
+An association connects 'go_Slice' and 'go_cochetes'. From 'go_Slice', the role 'go_Slice' has cardinality 0..*, and from 'go_cochetes', the role 'go_cochetes309' has cardinality 0..*.
+An association connects 'go_identifier' and 'go_Selector'. From 'go_identifier', the role 'go_identifier312' has cardinality 0..*, and from 'go_Selector', the role 'go_Selector311' has cardinality 0..*.
+An association connects 'go_Index' and 'go_Slice'. From 'go_Index', the role 'go_Index314' has cardinality 0..*, and from 'go_Slice', the role 'go_Slice315' has cardinality 0..*.
+An association connects 'go_decimals' and 'go_Slice'. From 'go_decimals', the role 'go_decimals' has cardinality 0..*, and from 'go_Slice', the role 'go_Slice317' has cardinality 0..*.
+An association connects 'go_Type' and 'go_TypeAssertion'. From 'go_Type', the role 'go_Type320' has cardinality 0..*, and from 'go_TypeAssertion', the role 'go_TypeAssertion319' has cardinality 0..*.
+An association connects 'go_ExpressionList' and 'go_Arguments'. From 'go_ExpressionList', the role 'go_ExpressionList323' has cardinality 0..*, and from 'go_Arguments', the role 'go_Arguments322' has cardinality 0..*.
+An association connects 'go_Arguments' and 'go_Type'. From 'go_Arguments', the role 'go_Arguments325' has cardinality 0..*, and from 'go_Type', the role 'go_Type326' has cardinality 0..*.
+An association connects 'go_ReceiverType' and 'go_MethodExpr'. From 'go_ReceiverType', the role 'go_ReceiverType' has cardinality 0..*, and from 'go_MethodExpr', the role 'go_MethodExpr328' has cardinality 0..*.
+An association connects 'go_MethodExpr' and 'go_MethodName'. From 'go_MethodExpr', the role 'go_MethodExpr330' has cardinality 0..*, and from 'go_MethodName', the role 'go_MethodName331' has cardinality 0..*.
+An association connects 'go_Type' and 'go_ReceiverType'. From 'go_Type', the role 'go_Type334' has cardinality 0..*, and from 'go_ReceiverType', the role 'go_ReceiverType333' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_UnaryExpr'. From 'go_Expression', the role 'go_Expression336' has cardinality 0..*, and from 'go_UnaryExpr', the role 'go_UnaryExpr' has cardinality 0..*.
+An association connects 'go_ExpressionLinha' and 'go_Expression'. From 'go_ExpressionLinha', the role 'go_ExpressionLinha' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression338' has cardinality 0..*.
+An association connects 'go_binary_op' and 'go_ExpressionLinha'. From 'go_binary_op', the role 'go_binary_op' has cardinality 0..*, and from 'go_ExpressionLinha', the role 'go_ExpressionLinha340' has cardinality 0..*.
+An association connects 'go_Expression' and 'go_ExpressionLinha'. From 'go_Expression', the role 'go_Expression343' has cardinality 0..*, and from 'go_ExpressionLinha', the role 'go_ExpressionLinha342' has cardinality 0..*.
+An association connects 'go_ExpressionLinha' and 'go_ExpressionLinha'. From 'go_ExpressionLinha', the role 'go_ExpressionLinha344' has cardinality 0..*, and from 'go_ExpressionLinha', the role 'go_ExpressionLinha346' has cardinality 0..*.
+An association connects 'go_PrimaryExpr' and 'go_UnaryExpr'. From 'go_PrimaryExpr', the role 'go_PrimaryExpr349' has cardinality 0..*, and from 'go_UnaryExpr', the role 'go_UnaryExpr348' has cardinality 0..*.
+An association connects 'go_UnaryExpr' and 'go_UnaryExpr'. From 'go_UnaryExpr', the role 'go_UnaryExpr350' has cardinality 0..*, and from 'go_UnaryExpr', the role 'go_UnaryExpr352' has cardinality 0..*.
+An association connects 'go_Type' and 'go_Conversion'. From 'go_Type', the role 'go_Type355' has cardinality 0..*, and from 'go_Conversion', the role 'go_Conversion354' has cardinality 0..*.
+An association connects 'go_Conversion' and 'go_Expression'. From 'go_Conversion', the role 'go_Conversion357' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression358' has cardinality 0..*.
+An association connects 'go_Statement' and 'go_Declaration'. From 'go_Statement', the role 'go_Statement360' has cardinality 0..*, and from 'go_Declaration', the role 'go_Declaration361' has cardinality 0..*.
+An association connects 'go_Statement' and 'go_LabeledStmt'. From 'go_Statement', the role 'go_Statement363' has cardinality 0..*, and from 'go_LabeledStmt', the role 'go_LabeledStmt' has cardinality 0..*.
+An association connects 'go_SimpleStmt' and 'go_Statement'. From 'go_SimpleStmt', the role 'go_SimpleStmt' has cardinality 0..*, and from 'go_Statement', the role 'go_Statement365' has cardinality 0..*.
+An association connects 'go_Statement' and 'go_GoStmt'. From 'go_Statement', the role 'go_Statement367' has cardinality 0..*, and from 'go_GoStmt', the role 'go_GoStmt' has cardinality 0..*.
+An association connects 'go_ReturnStmt' and 'go_Statement'. From 'go_ReturnStmt', the role 'go_ReturnStmt' has cardinality 0..*, and from 'go_Statement', the role 'go_Statement369' has cardinality 0..*.
+An association connects 'go_Statement' and 'go_BreakStmt'. From 'go_Statement', the role 'go_Statement371' has cardinality 0..*, and from 'go_BreakStmt', the role 'go_BreakStmt' has cardinality 0..*.
+An association connects 'go_ContinueStmt' and 'go_Statement'. From 'go_ContinueStmt', the role 'go_ContinueStmt' has cardinality 0..*, and from 'go_Statement', the role 'go_Statement373' has cardinality 0..*.
+An association connects 'go_Statement' and 'go_GotoStmt'. From 'go_Statement', the role 'go_Statement375' has cardinality 0..*, and from 'go_GotoStmt', the role 'go_GotoStmt' has cardinality 0..*.
+An association connects 'go_Block' and 'go_Statement'. From 'go_Block', the role 'go_Block378' has cardinality 0..*, and from 'go_Statement', the role 'go_Statement377' has cardinality 0..*.
+An association connects 'go_IfStmt' and 'go_Statement'. From 'go_IfStmt', the role 'go_IfStmt' has cardinality 0..*, and from 'go_Statement', the role 'go_Statement380' has cardinality 0..*.
+An association connects 'go_SwitchStmt' and 'go_Statement'. From 'go_SwitchStmt', the role 'go_SwitchStmt' has cardinality 0..*, and from 'go_Statement', the role 'go_Statement382' has cardinality 0..*.
+An association connects 'go_Statement' and 'go_SelectStmt'. From 'go_Statement', the role 'go_Statement384' has cardinality 0..*, and from 'go_SelectStmt', the role 'go_SelectStmt' has cardinality 0..*.
+An association connects 'go_ForStmt' and 'go_Statement'. From 'go_ForStmt', the role 'go_ForStmt' has cardinality 0..*, and from 'go_Statement', the role 'go_Statement386' has cardinality 0..*.
+An association connects 'go_Statement' and 'go_DeferStmt'. From 'go_Statement', the role 'go_Statement388' has cardinality 0..*, and from 'go_DeferStmt', the role 'go_DeferStmt' has cardinality 0..*.
+An association connects 'go_ExpressionStmt' and 'go_SimpleStmt'. From 'go_ExpressionStmt', the role 'go_ExpressionStmt' has cardinality 0..*, and from 'go_SimpleStmt', the role 'go_SimpleStmt390' has cardinality 0..*.
+An association connects 'go_SendStmt' and 'go_SimpleStmt'. From 'go_SendStmt', the role 'go_SendStmt' has cardinality 0..*, and from 'go_SimpleStmt', the role 'go_SimpleStmt392' has cardinality 0..*.
+An association connects 'go_IncDecStmt' and 'go_SimpleStmt'. From 'go_IncDecStmt', the role 'go_IncDecStmt' has cardinality 0..*, and from 'go_SimpleStmt', the role 'go_SimpleStmt394' has cardinality 0..*.
+An association connects 'go_Assignment' and 'go_SimpleStmt'. From 'go_Assignment', the role 'go_Assignment' has cardinality 0..*, and from 'go_SimpleStmt', the role 'go_SimpleStmt396' has cardinality 0..*.
+An association connects 'go_SimpleStmt' and 'go_ShortVarDecl'. From 'go_SimpleStmt', the role 'go_SimpleStmt398' has cardinality 0..*, and from 'go_ShortVarDecl', the role 'go_ShortVarDecl399' has cardinality 0..*.
+An association connects 'go_Label' and 'go_LabeledStmt'. From 'go_Label', the role 'go_Label' has cardinality 0..*, and from 'go_LabeledStmt', the role 'go_LabeledStmt401' has cardinality 0..*.
+An association connects 'go_LabeledStmt' and 'go_Statement'. From 'go_LabeledStmt', the role 'go_LabeledStmt403' has cardinality 0..*, and from 'go_Statement', the role 'go_Statement404' has cardinality 0..*.
+An association connects 'go_identifier' and 'go_Label'. From 'go_identifier', the role 'go_identifier407' has cardinality 0..*, and from 'go_Label', the role 'go_Label406' has cardinality 0..*.
+An association connects 'go_ExpressionStmt' and 'go_Expression'. From 'go_ExpressionStmt', the role 'go_ExpressionStmt409' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression410' has cardinality 0..*.
+An association connects 'go_Channel' and 'go_SendStmt'. From 'go_Channel', the role 'go_Channel' has cardinality 0..*, and from 'go_SendStmt', the role 'go_SendStmt412' has cardinality 0..*.
+An association connects 'go_SendStmt' and 'go_Expression'. From 'go_SendStmt', the role 'go_SendStmt414' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression415' has cardinality 0..*.
+An association connects 'go_Channel' and 'go_Expression'. From 'go_Channel', the role 'go_Channel417' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression418' has cardinality 0..*.
+An association connects 'go_IncDecStmt' and 'go_Expression'. From 'go_IncDecStmt', the role 'go_IncDecStmt420' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression421' has cardinality 0..*.
+An association connects 'go_Assignment' and 'go_ExpressionList'. From 'go_Assignment', the role 'go_Assignment423' has cardinality 0..*, and from 'go_ExpressionList', the role 'go_ExpressionList424' has cardinality 0..*.
+An association connects 'go_SimpleStmt' and 'go_IfStmt'. From 'go_SimpleStmt', the role 'go_SimpleStmt427' has cardinality 0..*, and from 'go_IfStmt', the role 'go_IfStmt426' has cardinality 0..*.
+An association connects 'go_IfStmt' and 'go_Expression'. From 'go_IfStmt', the role 'go_IfStmt429' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression430' has cardinality 0..*.
+An association connects 'go_IfStmt' and 'go_Block'. From 'go_IfStmt', the role 'go_IfStmt432' has cardinality 0..*, and from 'go_Block', the role 'go_Block433' has cardinality 0..*.
+An association connects 'go_IfStmt' and 'go_IfStmt'. From 'go_IfStmt', the role 'go_IfStmt434' has cardinality 0..*, and from 'go_IfStmt', the role 'go_IfStmt436' has cardinality 0..*.
+An association connects 'go_SwitchStmt' and 'go_switch_stmt_linha'. From 'go_SwitchStmt', the role 'go_SwitchStmt438' has cardinality 0..*, and from 'go_switch_stmt_linha', the role 'go_switch_stmt_linha' has cardinality 0..*.
+An association connects 'go_ExprCaseClause' and 'go_ExprSwitchCase'. From 'go_ExprCaseClause', the role 'go_ExprCaseClause' has cardinality 0..*, and from 'go_ExprSwitchCase', the role 'go_ExprSwitchCase' has cardinality 0..*.
+An association connects 'go_StatementList' and 'go_ExprCaseClause'. From 'go_StatementList', the role 'go_StatementList442' has cardinality 0..*, and from 'go_ExprCaseClause', the role 'go_ExprCaseClause441' has cardinality 0..*.
+An association connects 'go_ExpressionList' and 'go_ExprSwitchCase'. From 'go_ExpressionList', the role 'go_ExpressionList445' has cardinality 0..*, and from 'go_ExprSwitchCase', the role 'go_ExprSwitchCase444' has cardinality 0..*.
+An association connects 'go_TypeSwitchGuard' and 'go_switch_stmt_linha'. From 'go_TypeSwitchGuard', the role 'go_TypeSwitchGuard' has cardinality 0..*, and from 'go_switch_stmt_linha', the role 'go_switch_stmt_linha447' has cardinality 0..*.
+An association connects 'go_TypeCaseClause' and 'go_switch_stmt_linha'. From 'go_TypeCaseClause', the role 'go_TypeCaseClause' has cardinality 0..*, and from 'go_switch_stmt_linha', the role 'go_switch_stmt_linha449' has cardinality 0..*.
+An association connects 'go_switch_stmt_linha' and 'go_switch_stmt_linha'. From 'go_switch_stmt_linha', the role 'go_switch_stmt_linha450' has cardinality 0..*, and from 'go_switch_stmt_linha', the role 'go_switch_stmt_linha452' has cardinality 0..*.
+An association connects 'go_switch_stmt_linha' and 'go_Expression'. From 'go_switch_stmt_linha', the role 'go_switch_stmt_linha454' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression455' has cardinality 0..*.
+An association connects 'go_switch_stmt_linha' and 'go_ExprCaseClause'. From 'go_switch_stmt_linha', the role 'go_switch_stmt_linha457' has cardinality 0..*, and from 'go_ExprCaseClause', the role 'go_ExprCaseClause458' has cardinality 0..*.
+An association connects 'go_TypeSwitchGuard' and 'go_identifier'. From 'go_TypeSwitchGuard', the role 'go_TypeSwitchGuard460' has cardinality 0..*, and from 'go_identifier', the role 'go_identifier461' has cardinality 0..*.
+An association connects 'go_PrimaryExpr' and 'go_TypeSwitchGuard'. From 'go_PrimaryExpr', the role 'go_PrimaryExpr464' has cardinality 0..*, and from 'go_TypeSwitchGuard', the role 'go_TypeSwitchGuard463' has cardinality 0..*.
+An association connects 'go_TypeCaseClause' and 'go_TypeSwitchCase'. From 'go_TypeCaseClause', the role 'go_TypeCaseClause466' has cardinality 0..*, and from 'go_TypeSwitchCase', the role 'go_TypeSwitchCase' has cardinality 0..*.
+An association connects 'go_TypeCaseClause' and 'go_StatementList'. From 'go_TypeCaseClause', the role 'go_TypeCaseClause468' has cardinality 0..*, and from 'go_StatementList', the role 'go_StatementList469' has cardinality 0..*.
+An association connects 'go_TypeList' and 'go_TypeSwitchCase'. From 'go_TypeList', the role 'go_TypeList' has cardinality 0..*, and from 'go_TypeSwitchCase', the role 'go_TypeSwitchCase471' has cardinality 0..*.
+An association connects 'go_TypeList' and 'go_Type'. From 'go_TypeList', the role 'go_TypeList473' has cardinality 0..*, and from 'go_Type', the role 'go_Type474' has cardinality 0..*.
+An association connects 'go_Condition' and 'go_ForStmt'. From 'go_Condition', the role 'go_Condition' has cardinality 0..*, and from 'go_ForStmt', the role 'go_ForStmt476' has cardinality 0..*.
+An association connects 'go_ForClause' and 'go_ForStmt'. From 'go_ForClause', the role 'go_ForClause' has cardinality 0..*, and from 'go_ForStmt', the role 'go_ForStmt478' has cardinality 0..*.
+An association connects 'go_RangeClause' and 'go_ForStmt'. From 'go_RangeClause', the role 'go_RangeClause' has cardinality 0..*, and from 'go_ForStmt', the role 'go_ForStmt480' has cardinality 0..*.
+An association connects 'go_Block' and 'go_ForStmt'. From 'go_Block', the role 'go_Block483' has cardinality 0..*, and from 'go_ForStmt', the role 'go_ForStmt482' has cardinality 0..*.
+An association connects 'go_Condition' and 'go_Expression'. From 'go_Condition', the role 'go_Condition485' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression486' has cardinality 0..*.
+An association connects 'go_InitStmt' and 'go_ForClause'. From 'go_InitStmt', the role 'go_InitStmt' has cardinality 0..*, and from 'go_ForClause', the role 'go_ForClause488' has cardinality 0..*.
+An association connects 'go_ForClause' and 'go_Condition'. From 'go_ForClause', the role 'go_ForClause490' has cardinality 0..*, and from 'go_Condition', the role 'go_Condition491' has cardinality 0..*.
+An association connects 'go_PostStmt' and 'go_ForClause'. From 'go_PostStmt', the role 'go_PostStmt' has cardinality 0..*, and from 'go_ForClause', the role 'go_ForClause493' has cardinality 0..*.
+An association connects 'go_SimpleStmt' and 'go_InitStmt'. From 'go_SimpleStmt', the role 'go_SimpleStmt496' has cardinality 0..*, and from 'go_InitStmt', the role 'go_InitStmt495' has cardinality 0..*.
+An association connects 'go_PostStmt' and 'go_SimpleStmt'. From 'go_PostStmt', the role 'go_PostStmt498' has cardinality 0..*, and from 'go_SimpleStmt', the role 'go_SimpleStmt499' has cardinality 0..*.
+An association connects 'go_RangeClause' and 'go_ExpressionList'. From 'go_RangeClause', the role 'go_RangeClause501' has cardinality 0..*, and from 'go_ExpressionList', the role 'go_ExpressionList502' has cardinality 0..*.
+An association connects 'go_RangeClause' and 'go_IdentifierList'. From 'go_RangeClause', the role 'go_RangeClause504' has cardinality 0..*, and from 'go_IdentifierList', the role 'go_IdentifierList505' has cardinality 0..*.
+An association connects 'go_RangeClause' and 'go_Expression'. From 'go_RangeClause', the role 'go_RangeClause507' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression508' has cardinality 0..*.
+An association connects 'go_GoStmt' and 'go_Expression'. From 'go_GoStmt', the role 'go_GoStmt510' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression511' has cardinality 0..*.
+An association connects 'go_CommClause' and 'go_SelectStmt'. From 'go_CommClause', the role 'go_CommClause' has cardinality 0..*, and from 'go_SelectStmt', the role 'go_SelectStmt513' has cardinality 0..*.
+An association connects 'go_CommCase' and 'go_CommClause'. From 'go_CommCase', the role 'go_CommCase' has cardinality 0..*, and from 'go_CommClause', the role 'go_CommClause515' has cardinality 0..*.
+An association connects 'go_StatementList' and 'go_CommClause'. From 'go_StatementList', the role 'go_StatementList518' has cardinality 0..*, and from 'go_CommClause', the role 'go_CommClause517' has cardinality 0..*.
+An association connects 'go_SendStmt' and 'go_CommCase'. From 'go_SendStmt', the role 'go_SendStmt521' has cardinality 0..*, and from 'go_CommCase', the role 'go_CommCase520' has cardinality 0..*.
+An association connects 'go_CommCase' and 'go_RecvStmt'. From 'go_CommCase', the role 'go_CommCase523' has cardinality 0..*, and from 'go_RecvStmt', the role 'go_RecvStmt' has cardinality 0..*.
+An association connects 'go_ExpressionList' and 'go_RecvStmt'. From 'go_ExpressionList', the role 'go_ExpressionList526' has cardinality 0..*, and from 'go_RecvStmt', the role 'go_RecvStmt525' has cardinality 0..*.
+An association connects 'go_RecvStmt' and 'go_IdentifierList'. From 'go_RecvStmt', the role 'go_RecvStmt528' has cardinality 0..*, and from 'go_IdentifierList', the role 'go_IdentifierList529' has cardinality 0..*.
+An association connects 'go_RecvExpr' and 'go_RecvStmt'. From 'go_RecvExpr', the role 'go_RecvExpr' has cardinality 0..*, and from 'go_RecvStmt', the role 'go_RecvStmt531' has cardinality 0..*.
+An association connects 'go_RecvExpr' and 'go_Expression'. From 'go_RecvExpr', the role 'go_RecvExpr533' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression534' has cardinality 0..*.
+An association connects 'go_ExpressionList' and 'go_ReturnStmt'. From 'go_ExpressionList', the role 'go_ExpressionList537' has cardinality 0..*, and from 'go_ReturnStmt', the role 'go_ReturnStmt536' has cardinality 0..*.
+An association connects 'go_Label' and 'go_BreakStmt'. From 'go_Label', the role 'go_Label540' has cardinality 0..*, and from 'go_BreakStmt', the role 'go_BreakStmt539' has cardinality 0..*.
+An association connects 'go_ContinueStmt' and 'go_Label'. From 'go_ContinueStmt', the role 'go_ContinueStmt542' has cardinality 0..*, and from 'go_Label', the role 'go_Label543' has cardinality 0..*.
+An association connects 'go_Label' and 'go_GotoStmt'. From 'go_Label', the role 'go_Label546' has cardinality 0..*, and from 'go_GotoStmt', the role 'go_GotoStmt545' has cardinality 0..*.
+An association connects 'go_DeferStmt' and 'go_Expression'. From 'go_DeferStmt', the role 'go_DeferStmt548' has cardinality 0..*, and from 'go_Expression', the role 'go_Expression549' has cardinality 0..*.
+An association connects 'go_PackageName' and 'go_PackageClause'. From 'go_PackageName', the role 'go_PackageName552' has cardinality 0..*, and from 'go_PackageClause', the role 'go_PackageClause551' has cardinality 0..*.
+An association connects 'go_identifier' and 'go_PackageName'. From 'go_identifier', the role 'go_identifier555' has cardinality 0..*, and from 'go_PackageName', the role 'go_PackageName554' has cardinality 0..*.
+An association connects 'go_ImportSpec' and 'go_ImportDecl'. From 'go_ImportSpec', the role 'go_ImportSpec' has cardinality 0..*, and from 'go_ImportDecl', the role 'go_ImportDecl557' has cardinality 0..*.
+An association connects 'go_PackageName' and 'go_ImportSpec'. From 'go_PackageName', the role 'go_PackageName560' has cardinality 0..*, and from 'go_ImportSpec', the role 'go_ImportSpec559' has cardinality 0..*.
+An association connects 'go_ImportPath' and 'go_ImportSpec'. From 'go_ImportPath', the role 'go_ImportPath' has cardinality 0..*, and from 'go_ImportSpec', the role 'go_ImportSpec562' has cardinality 0..*.
+An association connects 'go_string_lit' and 'go_ImportPath'. From 'go_string_lit', the role 'go_string_lit565' has cardinality 0..*, and from 'go_ImportPath', the role 'go_ImportPath564' has cardinality 0..*.
+An association connects 'go_decimals' and 'go_decimals'. From 'go_decimals', the role 'go_decimals568' has cardinality 0..*, and from 'go_decimals', the role 'go_decimals566' has cardinality 0..*.
+An association connects 'go_decimals' and 'go_exponent'. From 'go_decimals', the role 'go_decimals570' has cardinality 0..*, and from 'go_exponent', the role 'go_exponent' has cardinality 0..*.
+An association connects 'go_exponent' and 'go_decimals'. From 'go_exponent', the role 'go_exponent573' has cardinality 0..*, and from 'go_decimals', the role 'go_decimals572' has cardinality 0..*.
+An association connects 'go_decimals' and 'go_exponent'. From 'go_decimals', the role 'go_decimals576' has cardinality 0..*, and from 'go_exponent', the role 'go_exponent575' has cardinality 0..*.
+An association connects 'go_imaginary_lit' and 'go_decimals'. From 'go_imaginary_lit', the role 'go_imaginary_lit' has cardinality 0..*, and from 'go_decimals', the role 'go_decimals578' has cardinality 0..*.
+An association connects 'go_float_lit' and 'go_imaginary_lit'. From 'go_float_lit', the role 'go_float_lit581' has cardinality 0..*, and from 'go_imaginary_lit', the role 'go_imaginary_lit580' has cardinality 0..*.

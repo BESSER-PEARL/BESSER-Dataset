@@ -1,0 +1,16 @@
+The domain model 'Persons' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'Persons_Persons' represents an important domain concept.
+It does not declare any attributes.
+
+'Persons_Person' represents an important domain concept.
+It has the following attributes: 'lastname', which is of type str; 'gender', which is of type str; 'firstname', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'GenderType' defines the following possible values: 'female', 'male'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Persons_Persons' and 'Persons_Person'. From 'Persons_Persons', the role 'list' has cardinality 0..*, and from 'Persons_Person', the role 'Person' has cardinality 0..*.
+An association connects 'Persons_Person' and 'Persons_Persons'. From 'Persons_Person', the role 'persons' has cardinality 0..*, and from 'Persons_Persons', the role 'Persons' has cardinality 0..*.

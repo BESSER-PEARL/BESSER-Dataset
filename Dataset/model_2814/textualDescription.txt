@@ -1,0 +1,307 @@
+The domain model 'fxg' describes the core structural elements and their relationships within the system.
+
+The model defines 62 main class(es).
+
+'fxg_RichTextContentContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'ContainerAttributes' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_LinearGradient' represents an important domain concept.
+It has the following attributes: 'rotation', which is of type str; 'interpolationMethod', which is of type str; 'scaleX', which is of type str; 'spreadMethod', which is of type str; 'x', which is of type str; 'y', which is of type str.
+
+'fxg_BevelFilter' represents an important domain concept.
+It has the following attributes: 'highlightColor', which is of type str; 'distance', which is of type str; 'blurY', which is of type str; 'knockout', which is of type str; 'angle', which is of type str; 'shadowAlpha', which is of type str; 'type', which is of type str; 'quality', which is of type str; 'shadowColor', which is of type str; 'strength', which is of type str; 'highlightAlpha', which is of type str; 'blurX', which is of type str.
+
+'fxg_FXGElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_GradientEntry' represents an important domain concept.
+It has the following attributes: 'alpha', which is of type str; 'ratio', which is of type str; 'color', which is of type str.
+
+'Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_div' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_Transform' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_img' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_tcy' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_Rect' represents an important domain concept.
+It has the following attributes: 'bottomLeftRadiusY', which is of type str; 'bottomLeftRadiusX', which is of type str; 'bottomRightRadiusY', which is of type str; 'scaleY', which is of type str; 'radiusY', which is of type str; 'visible', which is of type str; 'topLeftRadiusY', which is of type str; 'blendMode', which is of type str; 'topRightRadiusX', which is of type str; 'height', which is of type str; 'radiusX', which is of type str; 'rotation', which is of type str; 'width', which is of type str; 'topLeftRadiusX', which is of type str; 'bottomRightRadiusX', which is of type str; 'scaleX', which is of type str; 'x', which is of type str; 'topRightRadiusY', which is of type str; 'y', which is of type str; 'alpha', which is of type str.
+
+'RichTextContentContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_Path' represents an important domain concept.
+It has the following attributes: 'x', which is of type str; 'rotation', which is of type str; 'scaleX', which is of type str; 'y', which is of type str; 'visible', which is of type str; 'blendMode', which is of type str; 'winding', which is of type str; 'data', which is of type str; 'scaleY', which is of type str; 'alpha', which is of type str.
+
+'fxg_Group' represents an important domain concept.
+It has the following attributes: 'y', which is of type str; 'scaleX', which is of type str; 'alpha', which is of type str; 'scaleY', which is of type str; 'rotation', which is of type str; 'scaleGridLeft', which is of type str; 'transformX', which is of type str; 'blendMode', which is of type str; 'id', which is of type str; 'scaleGridRight', which is of type str; 'scaleGridTop', which is of type str; 'visible', which is of type str; 'transformY', which is of type str; 'scaleGridBottom', which is of type str; 'maskType', which is of type str; 'x', which is of type str.
+
+'fxg_SolidColorStroke' represents an important domain concept.
+It has the following attributes: 'alpha', which is of type str; 'color', which is of type str; 'miterLimit', which is of type str; 'caps', which is of type str; 'joints', which is of type str; 'scaleMode', which is of type str; 'weight', which is of type str; 'pixelHinting', which is of type str.
+
+'fxg_rawtext' represents an important domain concept.
+It has one attribute: '_text', which is of type str.
+
+'CharacterAttributes' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_GradientBevelFilter' represents an important domain concept.
+It has the following attributes: 'knockout', which is of type str; 'strength', which is of type str; 'quality', which is of type str; 'blurX', which is of type str; 'type', which is of type str; 'distance', which is of type str; 'angle', which is of type str; 'blurY', which is of type str.
+
+'fxg_Definition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fxg_PlaceObject' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'fxg_Stroke' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_ContainerAttributes' represents an important domain concept.
+It has the following attributes: 'verticalAlign', which is of type str; 'paddingTop', which is of type str; 'paddingRight', which is of type str; 'firstBaselineOffset', which is of type str; 'paddingLeft', which is of type str; 'columnGap', which is of type str; 'columnWidth', which is of type str; 'blockProgression', which is of type str; 'lineBreak', which is of type str; 'columnCount', which is of type str; 'paddingBottom', which is of type str.
+
+'fxg_linkNormalFormat' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_ContainerElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Filter' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_Line' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'alpha', which is of type str; 'yFrom', which is of type str; 'scaleY', which is of type str; 'xTo', which is of type str; 'maskType', which is of type str; 'visible', which is of type str; 'xFrom', which is of type str; 'yTo', which is of type str; 'x', which is of type str; 'y', which is of type str; 'rotation', which is of type str; 'blendMode', which is of type str; 'scaleX', which is of type str.
+
+'fxg_RichText' represents an important domain concept.
+It has the following attributes: 'y', which is of type str; 'width', which is of type str; 'rotation', which is of type str; '_tempcontent', which is of type str; 'height', which is of type str; 'alpha', which is of type str; 'maskType', which is of type str; 'scaleY', which is of type str; 'blendMode', which is of type str; 'visible', which is of type str; 'scaleX', which is of type str; 'x', which is of type str; 'id', which is of type str.
+
+'fxg_BitmapImage' represents an important domain concept.
+It has the following attributes: 'source', which is of type str; 'scaleX', which is of type str; 'height', which is of type str; 'alpha', which is of type str; 'scaleY', which is of type str; 'y', which is of type str; 'x', which is of type str; 'rotation', which is of type str; 'fillMode', which is of type str; 'blendMode', which is of type str; 'width', which is of type str; 'visible', which is of type str.
+
+'fxg_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_Matrix' represents an important domain concept.
+It has the following attributes: 'b', which is of type str; 'ty', which is of type str; 'd', which is of type str; 'c', which is of type str; 'tx', which is of type str; 'a', which is of type str.
+
+'RichTextContent' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_tab' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_SolidColor' represents an important domain concept.
+It has the following attributes: 'alpha', which is of type str; 'color', which is of type str.
+
+'fxg_RadialGradientStroke' represents an important domain concept.
+It has the following attributes: 'scaleMode', which is of type str; 'scaleX', which is of type str; 'y', which is of type str; 'weight', which is of type str; 'caps', which is of type str; 'miterLimit', which is of type str; 'x', which is of type str; 'spreadMethod', which is of type str; 'scaleY', which is of type str; 'interpolationMethod', which is of type str; 'rotation', which is of type str; 'joints', which is of type str; 'pixelHinting', which is of type str; 'focalPointRatio', which is of type str.
+
+'fxg_Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_Fill' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_BitmapFill' represents an important domain concept.
+It has the following attributes: 'scaleX', which is of type str; 'y', which is of type str; 'x', which is of type str; 'scaleY', which is of type str; 'source', which is of type str; 'fillMode', which is of type str; 'rotation', which is of type str.
+
+'fxg_linkActiveFormat' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_RichTextContent' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_Private' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_RadialGradient' represents an important domain concept.
+It has the following attributes: 'focalPointRatio', which is of type str; 'x', which is of type str; 'spreadMethod', which is of type str; 'scaleX', which is of type str; 'interpolationMethod', which is of type str; 'y', which is of type str; 'rotation', which is of type str; 'scaleY', which is of type str.
+
+'fxg_Filter' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_ParagraphAttributes' represents an important domain concept.
+It has the following attributes: 'paragraphEndIndent', which is of type str; 'paragraphSpaceAfter', which is of type str; 'tabStops', which is of type str; 'textAlignLast', which is of type str; 'leadingModel', which is of type str; 'paragraphSpaceBefore', which is of type str; 'textJustify', which is of type str; 'justificationStyle', which is of type str; 'justificationRule', which is of type str; 'paragraphStartIndent', which is of type str; 'textIndent', which is of type str; 'textAlign', which is of type str.
+
+'fxg_ColorMatrixFilter' represents an important domain concept.
+It has one attribute: 'matrix', which is of type str.
+
+'fxg_a' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_Graphic' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'scaleGridTop', which is of type str; 'scaleGridRight', which is of type str; 'scaleGridLeft', which is of type str; 'scaleGridBottom', which is of type str; 'viewHeight', which is of type int; 'viewWidth', which is of type int.
+
+'fxg_BlurFilter' represents an important domain concept.
+It has the following attributes: 'blurY', which is of type str; 'blurX', which is of type str; 'quality', which is of type str.
+
+'fxg_ColorTransform' represents an important domain concept.
+It has the following attributes: 'blueMultiplier', which is of type str; 'redMultiplier', which is of type str; 'alphaMultiplier', which is of type str; 'redOffset', which is of type str; 'greenOffset', which is of type str; 'greenMultiplier', which is of type str; 'blueOffset', which is of type str; 'alphaOffset', which is of type str.
+
+'fxg_linkHoverFormat' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_GradientGlowFilter' represents an important domain concept.
+It has the following attributes: 'strength', which is of type str; 'distance', which is of type str; 'knockout', which is of type str; 'blurY', which is of type str; 'quality', which is of type str; 'inner', which is of type str; 'angle', which is of type str; 'blurX', which is of type str.
+
+'fxg_br' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_Ellipse' represents an important domain concept.
+It has the following attributes: 'width', which is of type str; 'scaleX', which is of type str; 'y', which is of type str; 'height', which is of type str; 'x', which is of type str; 'rotation', which is of type str; 'blendMode', which is of type str; 'visible', which is of type str; 'scaleY', which is of type str; 'alpha', which is of type str.
+
+'fxg_LinearGradientStroke' represents an important domain concept.
+It has the following attributes: 'rotation', which is of type str; 'pixelHinting', which is of type str; 'caps', which is of type str; 'joints', which is of type str; 'spreadMethod', which is of type str; 'y', which is of type str; 'scaleX', which is of type str; 'scaleMode', which is of type str; 'miterLimit', which is of type str; 'weight', which is of type str; 'interpolationMethod', which is of type str; 'x', which is of type str.
+
+'fxg_CharacterAttributes' represents an important domain concept.
+It has the following attributes: 'backgroundColor', which is of type str; 'fontSize', which is of type str; 'lineThrough', which is of type str; 'alignmentBaseline', which is of type str; 'trackingRight', which is of type str; 'color', which is of type str; 'textAlpha', which is of type str; 'dominantBaseline', which is of type str; 'backgroundAlpha', which is of type str; 'baselineShift', which is of type str; 'fontStyle', which is of type str; 'fontWeight', which is of type str; 'locale', which is of type str; 'whiteSpaceCollapse', which is of type str; 'typographicCase', which is of type str; 'textDecoration', which is of type str; 'breakOpportunity', which is of type str; 'trackingLeft', which is of type str; 'ligatureLevel', which is of type str; 'textRotation', which is of type str; 'kerning', which is of type str; 'digitCase', which is of type str; 'digitWidth', which is of type str; 'fontFamily', which is of type str; 'lineHeight', which is of type str.
+
+'Fill' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_DropShadowFilter' represents an important domain concept.
+It has the following attributes: 'hideObject', which is of type str; 'knockout', which is of type str; 'quality', which is of type str; 'inner', which is of type str; 'distance', which is of type str; 'angle', which is of type str; 'strength', which is of type str; 'color', which is of type str; 'blurX', which is of type str; 'blurY', which is of type str; 'alpha', which is of type str.
+
+'FXGElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_p' represents an important domain concept.
+It does not declare any attributes.
+
+'ParagraphAttributes' represents an important domain concept.
+It does not declare any attributes.
+
+'fxg_span' represents an important domain concept.
+It does not declare any attributes.
+
+'Stroke' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BlendMode' defines the following possible values: 'shader', 'normal', 'subtract', 'hardlight', 'alpha', 'lighten', 'screen', 'difference', 'NOT_SET', 'overlay', 'erase', 'invert', 'add', 'layer', 'multiply', 'darken'.
+The enumeration 'VerticalAlign' defines the following possible values: 'top', 'middle', 'justify', 'inherit', 'bottom'.
+The enumeration 'FontStyle' defines the following possible values: 'NORMAL', 'ITALIC'.
+The enumeration 'TypographicCase' defines the following possible values: 'uppercase', 'lowercase', 'default', 'lowercaseToSmallCaps', 'capsToSmallCaps'.
+The enumeration 'LeadingModel' defines the following possible values: 'auto', 'ideographicCenterDown', 'ideographicCenterUp', 'ascentDescentUp', 'ideographicTopUp', 'ideographicTopDown', 'romanUp'.
+The enumeration 'FontWeight' defines the following possible values: 'NORMAL', 'BOLD'.
+The enumeration 'TextDecoration' defines the following possible values: 'NONE', 'UNDERLINE'.
+The enumeration 'LigatureLevel' defines the following possible values: 'exotic', 'uncommon', 'minimum', 'common'.
+The enumeration 'Cap' defines the following possible values: 'NONE', 'ROUND', 'SQUARE'.
+The enumeration 'AlignmentBaseline' defines the following possible values: 'ideographicTop', 'descent', 'ideographicCenter', 'ascent', 'ideographicBottom', 'useDominantBaseline', 'auto', 'roman'.
+The enumeration 'Winding' defines the following possible values: 'evenOdd', 'NOT_SET', 'nonZero'.
+The enumeration 'TextAlign' defines the following possible values: 'center', 'start', 'right', 'justify', 'left', 'end'.
+The enumeration 'JustificationRule' defines the following possible values: 'eastAsian', 'space', 'auto'.
+The enumeration 'DigitWidth' defines the following possible values: 'default', 'proportional', 'tabular'.
+The enumeration 'Joint' defines the following possible values: 'ROUND', 'MITER', 'BEVEL'.
+The enumeration 'LineBreak' defines the following possible values: 'explicit', 'toFit'.
+The enumeration 'BreakOpportunity' defines the following possible values: 'all', 'any', 'none', 'auto'.
+The enumeration 'DominantBaseline' defines the following possible values: 'descent', 'ideographicBottom', 'ideographicTop', 'roman', 'ascent', 'ideographicCenter', 'auto'.
+The enumeration 'TextRotation' defines the following possible values: 'auto', 'rotate270', 'rotate90', 'rotate180', 'rotate0'.
+The enumeration 'Kerning' defines the following possible values: 'ON', 'OFF', 'AUTO'.
+The enumeration 'FillMode' defines the following possible values: 'CLIP', 'SCALE', 'REPEAT'.
+The enumeration 'InterpolationMethod' defines the following possible values: 'rgb', 'linearRGB', 'NOT_SET'.
+The enumeration 'ScaleMode' defines the following possible values: 'HORIZONTAL', 'VERTICAL', 'NORMAL', 'NONE'.
+The enumeration 'DigitCase' defines the following possible values: 'lining', 'default', 'oldStyle'.
+The enumeration 'JustificationStyle' defines the following possible values: 'auto', 'pushOutOnly', 'prioritizeLeastAdjustment', 'pushInKinsoku'.
+The enumeration 'SpreadMethod' defines the following possible values: 'NOT_SET', 'pad', 'repeat', 'reflect'.
+The enumeration 'WhitespaceCollapse' defines the following possible values: 'PRESERVE', 'COLLAPSE'.
+The enumeration 'TextJustify' defines the following possible values: 'interWord', 'distribute'.
+The enumeration 'BevelFilterType' defines the following possible values: 'FULL', 'OUTER', 'INNER'.
+The enumeration 'MaskType' defines the following possible values: 'ALPHA', 'CLIP'.
+The enumeration 'BlockProgression' defines the following possible values: 'rl', 'tb'.
+
+The model also captures inheritance relationships between classes.
+The class 'fxg_Private' is a specialization of 'FXGElement'.
+The class 'fxg_Transform' is a specialization of 'FXGElement'.
+The class 'fxg_PlaceObject' is a specialization of 'FXGElement'.
+The class 'fxg_Matrix' is a specialization of 'FXGElement'.
+The class 'fxg_Path' is a specialization of 'FXGElement'.
+The class 'fxg_Shape' is a specialization of 'FXGElement'.
+The class 'fxg_Rect' is a specialization of 'Shape'.
+The class 'fxg_Ellipse' is a specialization of 'Shape'.
+The class 'fxg_Line' is a specialization of 'Shape'.
+The class 'fxg_RichText' is a specialization of 'FXGElement'.
+The class 'fxg_RichText' is a specialization of 'ParagraphAttributes'.
+The class 'fxg_RichText' is a specialization of 'ContainerAttributes'.
+The class 'fxg_RichText' is a specialization of 'CharacterAttributes'.
+The class 'fxg_RichTextContentContainer' is a specialization of 'RichTextContent'.
+The class 'fxg_rawtext' is a specialization of 'RichTextContent'.
+The class 'fxg_div' is a specialization of 'RichTextContent'.
+The class 'fxg_div' is a specialization of 'RichTextContentContainer'.
+The class 'fxg_p' is a specialization of 'RichTextContent'.
+The class 'fxg_p' is a specialization of 'RichTextContentContainer'.
+The class 'fxg_p' is a specialization of 'ParagraphAttributes'.
+The class 'fxg_tcy' is a specialization of 'RichTextContent'.
+The class 'fxg_tcy' is a specialization of 'RichTextContentContainer'.
+The class 'fxg_a' is a specialization of 'RichTextContent'.
+The class 'fxg_a' is a specialization of 'RichTextContentContainer'.
+The class 'fxg_img' is a specialization of 'RichTextContent'.
+The class 'fxg_span' is a specialization of 'RichTextContent'.
+The class 'fxg_span' is a specialization of 'RichTextContentContainer'.
+The class 'fxg_br' is a specialization of 'RichTextContent'.
+The class 'fxg_tab' is a specialization of 'RichTextContent'.
+The class 'fxg_linkNormalFormat' is a specialization of 'RichTextContent'.
+The class 'fxg_linkHoverFormat' is a specialization of 'RichTextContent'.
+The class 'fxg_BitmapImage' is a specialization of 'FXGElement'.
+The class 'fxg_Fill' is a specialization of 'FXGElement'.
+The class 'fxg_SolidColor' is a specialization of 'Fill'.
+The class 'fxg_BitmapFill' is a specialization of 'Fill'.
+The class 'fxg_Stroke' is a specialization of 'FXGElement'.
+The class 'fxg_SolidColorStroke' is a specialization of 'Stroke'.
+The class 'fxg_GradientEntry' is a specialization of 'FXGElement'.
+The class 'fxg_ColorTransform' is a specialization of 'FXGElement'.
+The class 'fxg_Filter' is a specialization of 'FXGElement'.
+The class 'fxg_BlurFilter' is a specialization of 'Filter'.
+The class 'fxg_DropShadowFilter' is a specialization of 'Filter'.
+The class 'fxg_BevelFilter' is a specialization of 'Filter'.
+The class 'fxg_ColorMatrixFilter' is a specialization of 'Filter'.
+The class 'fxg_ContainerElement' is a specialization of 'FXGElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fxg_Group' and 'fxg_Graphic'. From 'fxg_Group', the role 'fxg_Group' has cardinality 0..*, and from 'fxg_Graphic', the role 'fxg_Graphic' has cardinality 0..*.
+An association connects 'fxg_Group' and 'fxg_Transform'. From 'fxg_Group', the role 'fxg_Group2' has cardinality 0..*, and from 'fxg_Transform', the role 'fxg_Transform' has cardinality 0..*.
+An association connects 'fxg_Group' and 'fxg_Filter'. From 'fxg_Group', the role 'fxg_Group4' has cardinality 0..*, and from 'fxg_Filter', the role 'fxg_Filter' has cardinality 0..*.
+An association connects 'fxg_Group' and 'fxg_Group'. From 'fxg_Group', the role 'fxg_Group7' has cardinality 0..*, and from 'fxg_Group', the role 'fxg_Group5' has cardinality 0..*.
+An association connects 'fxg_Transform' and 'fxg_Matrix'. From 'fxg_Transform', the role 'fxg_Transform9' has cardinality 0..*, and from 'fxg_Matrix', the role 'fxg_Matrix' has cardinality 0..*.
+An association connects 'fxg_ColorTransform' and 'fxg_Transform'. From 'fxg_ColorTransform', the role 'fxg_ColorTransform' has cardinality 0..*, and from 'fxg_Transform', the role 'fxg_Transform11' has cardinality 0..*.
+An association connects 'fxg_PlaceObject' and 'fxg_Transform'. From 'fxg_PlaceObject', the role 'fxg_PlaceObject' has cardinality 0..*, and from 'fxg_Transform', the role 'fxg_Transform13' has cardinality 0..*.
+An association connects 'fxg_PlaceObject' and 'fxg_Filter'. From 'fxg_PlaceObject', the role 'fxg_PlaceObject15' has cardinality 0..*, and from 'fxg_Filter', the role 'fxg_Filter16' has cardinality 0..*.
+An association connects 'fxg_PlaceObject' and 'fxg_Group'. From 'fxg_PlaceObject', the role 'fxg_PlaceObject18' has cardinality 0..*, and from 'fxg_Group', the role 'fxg_Group19' has cardinality 0..*.
+An association connects 'fxg_Path' and 'fxg_Fill'. From 'fxg_Path', the role 'fxg_Path' has cardinality 0..*, and from 'fxg_Fill', the role 'fxg_Fill' has cardinality 0..*.
+An association connects 'fxg_Path' and 'fxg_Stroke'. From 'fxg_Path', the role 'fxg_Path22' has cardinality 0..*, and from 'fxg_Stroke', the role 'fxg_Stroke' has cardinality 0..*.
+An association connects 'fxg_Filter' and 'fxg_Path'. From 'fxg_Filter', the role 'fxg_Filter25' has cardinality 0..*, and from 'fxg_Path', the role 'fxg_Path24' has cardinality 0..*.
+An association connects 'fxg_Transform' and 'fxg_Path'. From 'fxg_Transform', the role 'fxg_Transform28' has cardinality 0..*, and from 'fxg_Path', the role 'fxg_Path27' has cardinality 0..*.
+An association connects 'fxg_Group' and 'fxg_Path'. From 'fxg_Group', the role 'fxg_Group31' has cardinality 0..*, and from 'fxg_Path', the role 'fxg_Path30' has cardinality 0..*.
+An association connects 'fxg_Transform' and 'fxg_Rect'. From 'fxg_Transform', the role 'fxg_Transform33' has cardinality 0..*, and from 'fxg_Rect', the role 'fxg_Rect' has cardinality 0..*.
+An association connects 'fxg_Filter' and 'fxg_Rect'. From 'fxg_Filter', the role 'fxg_Filter36' has cardinality 0..*, and from 'fxg_Rect', the role 'fxg_Rect35' has cardinality 0..*.
+An association connects 'fxg_Fill' and 'fxg_Rect'. From 'fxg_Fill', the role 'fxg_Fill39' has cardinality 0..*, and from 'fxg_Rect', the role 'fxg_Rect38' has cardinality 0..*.
+An association connects 'fxg_Stroke' and 'fxg_Rect'. From 'fxg_Stroke', the role 'fxg_Stroke42' has cardinality 0..*, and from 'fxg_Rect', the role 'fxg_Rect41' has cardinality 0..*.
+An association connects 'fxg_Rect' and 'fxg_Group'. From 'fxg_Rect', the role 'fxg_Rect44' has cardinality 0..*, and from 'fxg_Group', the role 'fxg_Group45' has cardinality 0..*.
+An association connects 'fxg_Ellipse' and 'fxg_Transform'. From 'fxg_Ellipse', the role 'fxg_Ellipse' has cardinality 0..*, and from 'fxg_Transform', the role 'fxg_Transform47' has cardinality 0..*.
+An association connects 'fxg_Ellipse' and 'fxg_Filter'. From 'fxg_Ellipse', the role 'fxg_Ellipse49' has cardinality 0..*, and from 'fxg_Filter', the role 'fxg_Filter50' has cardinality 0..*.
+An association connects 'fxg_Ellipse' and 'fxg_Fill'. From 'fxg_Ellipse', the role 'fxg_Ellipse52' has cardinality 0..*, and from 'fxg_Fill', the role 'fxg_Fill53' has cardinality 0..*.
+An association connects 'fxg_Ellipse' and 'fxg_Stroke'. From 'fxg_Ellipse', the role 'fxg_Ellipse55' has cardinality 0..*, and from 'fxg_Stroke', the role 'fxg_Stroke56' has cardinality 0..*.
+An association connects 'fxg_Group' and 'fxg_Ellipse'. From 'fxg_Group', the role 'fxg_Group59' has cardinality 0..*, and from 'fxg_Ellipse', the role 'fxg_Ellipse58' has cardinality 0..*.
+An association connects 'fxg_Transform' and 'fxg_Line'. From 'fxg_Transform', the role 'fxg_Transform61' has cardinality 0..*, and from 'fxg_Line', the role 'fxg_Line' has cardinality 0..*.
+An association connects 'fxg_Filter' and 'fxg_Line'. From 'fxg_Filter', the role 'fxg_Filter64' has cardinality 0..*, and from 'fxg_Line', the role 'fxg_Line63' has cardinality 0..*.
+An association connects 'fxg_Line' and 'fxg_Fill'. From 'fxg_Line', the role 'fxg_Line66' has cardinality 0..*, and from 'fxg_Fill', the role 'fxg_Fill67' has cardinality 0..*.
+An association connects 'fxg_Stroke' and 'fxg_Line'. From 'fxg_Stroke', the role 'fxg_Stroke70' has cardinality 0..*, and from 'fxg_Line', the role 'fxg_Line69' has cardinality 0..*.
+An association connects 'fxg_Line' and 'fxg_Group'. From 'fxg_Line', the role 'fxg_Line72' has cardinality 0..*, and from 'fxg_Group', the role 'fxg_Group73' has cardinality 0..*.
+An association connects 'fxg_RichText' and 'fxg_RichTextContent'. From 'fxg_RichText', the role 'fxg_RichText' has cardinality 0..*, and from 'fxg_RichTextContent', the role 'fxg_RichTextContent' has cardinality 0..*.
+An association connects 'fxg_RichTextContentContainer' and 'fxg_RichTextContent'. From 'fxg_RichTextContentContainer', the role 'fxg_RichTextContentContainer' has cardinality 0..*, and from 'fxg_RichTextContent', the role 'fxg_RichTextContent76' has cardinality 0..*.
+An association connects 'fxg_Matrix' and 'fxg_LinearGradient'. From 'fxg_Matrix', the role 'fxg_Matrix78' has cardinality 0..*, and from 'fxg_LinearGradient', the role 'fxg_LinearGradient' has cardinality 0..*.
+An association connects 'fxg_RadialGradient' and 'fxg_Matrix'. From 'fxg_RadialGradient', the role 'fxg_RadialGradient' has cardinality 0..*, and from 'fxg_Matrix', the role 'fxg_Matrix80' has cardinality 0..*.
+An association connects 'fxg_BitmapFill' and 'fxg_Matrix'. From 'fxg_BitmapFill', the role 'fxg_BitmapFill' has cardinality 0..*, and from 'fxg_Matrix', the role 'fxg_Matrix82' has cardinality 0..*.
+An association connects 'fxg_Matrix' and 'fxg_LinearGradientStroke'. From 'fxg_Matrix', the role 'fxg_Matrix84' has cardinality 0..*, and from 'fxg_LinearGradientStroke', the role 'fxg_LinearGradientStroke' has cardinality 0..*.
+An association connects 'fxg_RadialGradientStroke' and 'fxg_Matrix'. From 'fxg_RadialGradientStroke', the role 'fxg_RadialGradientStroke' has cardinality 0..*, and from 'fxg_Matrix', the role 'fxg_Matrix86' has cardinality 0..*.

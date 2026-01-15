@@ -1,0 +1,80 @@
+The domain model 'VHDLModel' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'VHDLModel_AndGate' represents an important domain concept.
+It does not declare any attributes.
+
+'VHDLModel_CompositeBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'VHDLModel_ComplexBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'VHDLModel_OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'VHDLModel_Port' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'high', which is of type bool.
+
+'VHDLModel_InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'VHDLModel_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'VHDLModel_BinaryGate' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryGate' represents an important domain concept.
+It does not declare any attributes.
+
+'VHDLModel_NotGate' represents an important domain concept.
+It does not declare any attributes.
+
+'VHDLModel_Block' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'VHDLModel_VHDLSpecification' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'VHDLModel_OrGate' represents an important domain concept.
+It does not declare any attributes.
+
+'VHDLModel_BlockRef' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'ComplexBlock' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'VHDLModel_AndGate' is a specialization of 'BinaryGate'.
+The class 'VHDLModel_BinaryGate' is a specialization of 'Block'.
+The class 'VHDLModel_BlockRef' is a specialization of 'ComplexBlock'.
+The class 'VHDLModel_ComplexBlock' is a specialization of 'Block'.
+The class 'VHDLModel_CompositeBlock' is a specialization of 'ComplexBlock'.
+The class 'VHDLModel_InputPort' is a specialization of 'Port'.
+The class 'VHDLModel_NotGate' is a specialization of 'Block'.
+The class 'VHDLModel_OrGate' is a specialization of 'BinaryGate'.
+The class 'VHDLModel_OutputPort' is a specialization of 'Port'.
+The class 'VHDLModel_Signal' is a specialization of 'Port'.
+
+Relationships between classes are modeled using associations.
+An association connects 'VHDLModel_InputPort' and 'VHDLModel_BinaryGate'. From 'VHDLModel_InputPort', the role 'VHDLModel_InputPort' has cardinality 0..*, and from 'VHDLModel_BinaryGate', the role 'VHDLModel_BinaryGate' has cardinality 0..*.
+An association connects 'VHDLModel_InputPort' and 'VHDLModel_BinaryGate'. From 'VHDLModel_InputPort', the role 'VHDLModel_InputPort3' has cardinality 0..*, and from 'VHDLModel_BinaryGate', the role 'VHDLModel_BinaryGate2' has cardinality 0..*.
+An association connects 'VHDLModel_OutputPort' and 'VHDLModel_BinaryGate'. From 'VHDLModel_OutputPort', the role 'VHDLModel_OutputPort' has cardinality 0..*, and from 'VHDLModel_BinaryGate', the role 'VHDLModel_BinaryGate5' has cardinality 0..*.
+An association connects 'VHDLModel_InputPort' and 'VHDLModel_Block'. From 'VHDLModel_InputPort', the role 'VHDLModel_InputPort7' has cardinality 0..*, and from 'VHDLModel_Block', the role 'VHDLModel_Block' has cardinality 0..*.
+An association connects 'VHDLModel_CompositeBlock' and 'VHDLModel_BlockRef'. From 'VHDLModel_CompositeBlock', the role 'VHDLModel_CompositeBlock' has cardinality 0..*, and from 'VHDLModel_BlockRef', the role 'VHDLModel_BlockRef' has cardinality 0..*.
+An association connects 'VHDLModel_Port' and 'VHDLModel_ComplexBlock'. From 'VHDLModel_Port', the role 'VHDLModel_Port' has cardinality 0..*, and from 'VHDLModel_ComplexBlock', the role 'VHDLModel_ComplexBlock' has cardinality 0..*.
+An association connects 'VHDLModel_CompositeBlock' and 'VHDLModel_Block'. From 'VHDLModel_CompositeBlock', the role 'VHDLModel_CompositeBlock11' has cardinality 0..*, and from 'VHDLModel_Block', the role 'VHDLModel_Block12' has cardinality 0..*.
+An association connects 'VHDLModel_NotGate' and 'VHDLModel_OutputPort'. From 'VHDLModel_NotGate', the role 'VHDLModel_NotGate' has cardinality 0..*, and from 'VHDLModel_OutputPort', the role 'VHDLModel_OutputPort14' has cardinality 0..*.
+An association connects 'VHDLModel_InputPort' and 'VHDLModel_NotGate'. From 'VHDLModel_InputPort', the role 'VHDLModel_InputPort17' has cardinality 0..*, and from 'VHDLModel_NotGate', the role 'VHDLModel_NotGate16' has cardinality 0..*.
+An association connects 'VHDLModel_Port' and 'VHDLModel_Port'. From 'VHDLModel_Port', the role 'VHDLModel_Port20' has cardinality 0..*, and from 'VHDLModel_Port', the role 'VHDLModel_Port18' has cardinality 0..*.
+An association connects 'VHDLModel_Port' and 'VHDLModel_Block'. From 'VHDLModel_Port', the role 'VHDLModel_Port22' has cardinality 0..*, and from 'VHDLModel_Block', the role 'VHDLModel_Block23' has cardinality 0..*.
+An association connects 'VHDLModel_VHDLSpecification' and 'VHDLModel_CompositeBlock'. From 'VHDLModel_VHDLSpecification', the role 'VHDLModel_VHDLSpecification' has cardinality 0..*, and from 'VHDLModel_CompositeBlock', the role 'VHDLModel_CompositeBlock25' has cardinality 0..*.

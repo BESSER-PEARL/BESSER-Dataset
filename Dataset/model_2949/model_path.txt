@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/angelapopa/PSDSL/uibk.dsl.assignment1.anothertry/uibk.dsl.assignment1/model/generated/JsonldConverter.ecore

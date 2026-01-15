@@ -1,0 +1,449 @@
+The domain model 'ir' describes the core structural elements and their relationships within the system.
+
+The model defines 88 main class(es).
+
+'ir_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Action' represents an important domain concept.
+It has one attribute: 'tag', which is of type str.
+
+'ir_TypeInt' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ExternalActor' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Member' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_ReturnValue' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_LiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Port' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Network' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TypeLambda' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Variable' represents an important domain concept.
+It has the following attributes: 'constant', which is of type bool; 'parameter', which is of type bool.
+
+'ir_Declaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_LambdaExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_BinaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ir_PortInstance' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_IfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_FromSource' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Schedule' represents an important domain concept.
+It has one attribute: 'PriorityGraph', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TypeFloat' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ProcExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TypeProc' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Generator' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_VariableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_VariableExternal' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_State' represents an important domain concept.
+It has the following attributes: 'PriorityGraph', which is of type str; 'Action2TargetMap', which is of type str; 'name', which is of type str.
+
+'ir_TypeExternal' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'scopeName', which is of type str.
+
+'ir_TypeConstructor' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_AbstractActor' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Point2PointConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ExpressionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TypeConstructorCall' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ir_ToSink' represents an important domain concept.
+It does not declare any attributes.
+
+'PortAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TypeUint' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ForEach' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_PortAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ForwardDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Assign' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ActorInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_UnaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ir_Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_WhileLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_PortPeek' represents an important domain concept.
+It has one attribute: 'position', which is of type int.
+
+'ir_TypeString' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ListExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TypeDeclarationImport' represents an important domain concept.
+It has one attribute: 'namespace', which is of type str.
+
+'ir_VariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TypeUser' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_AnnotationArgument' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'value', which is of type str.
+
+'Scope' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_ProcCall' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'ir_TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TypeBool' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TaggedExpression' represents an important domain concept.
+It has one attribute: 'tag', which is of type str.
+
+'ir_Node' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'LambdaExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_VariableImport' represents an important domain concept.
+It has one attribute: 'namespace', which is of type str.
+
+'ir_Scope' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TypeRecord' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_PortRead' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Annotation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'AbstractActor' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Namespace' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ir_FloatLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TypeUndef' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_PortWrite' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TypeList' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'ir_TypeActor' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'namespace', which is of type str.
+
+'ir_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'ir_Scope' is a specialization of 'Node'.
+The class 'ir_VariableImport' is a specialization of 'Declaration'.
+The class 'ir_VariableExternal' is a specialization of 'Declaration'.
+The class 'ir_TypeDeclarationImport' is a specialization of 'Declaration'.
+The class 'ir_Namespace' is a specialization of 'Scope'.
+The class 'ir_AbstractActor' is a specialization of 'Scope'.
+The class 'ir_ExternalActor' is a specialization of 'AbstractActor'.
+The class 'ir_Actor' is a specialization of 'AbstractActor'.
+The class 'ir_Network' is a specialization of 'AbstractActor'.
+The class 'ir_Action' is a specialization of 'Scope'.
+The class 'ir_Port' is a specialization of 'Node'.
+The class 'ir_ActorInstance' is a specialization of 'Variable'.
+The class 'ir_PortInstance' is a specialization of 'Node'.
+The class 'ir_Expression' is a specialization of 'Node'.
+The class 'ir_LiteralExpression' is a specialization of 'Expression'.
+The class 'ir_IntegerLiteral' is a specialization of 'LiteralExpression'.
+The class 'ir_FloatLiteral' is a specialization of 'LiteralExpression'.
+The class 'ir_BooleanLiteral' is a specialization of 'LiteralExpression'.
+The class 'ir_StringLiteral' is a specialization of 'LiteralExpression'.
+The class 'ir_VariableExpression' is a specialization of 'Expression'.
+The class 'ir_ListExpression' is a specialization of 'Expression'.
+The class 'ir_Generator' is a specialization of 'Scope'.
+The class 'ir_Member' is a specialization of 'Node'.
+The class 'ir_BinaryExpression' is a specialization of 'Expression'.
+The class 'ir_UnaryExpression' is a specialization of 'Expression'.
+The class 'ir_ExpressionCall' is a specialization of 'Expression'.
+The class 'ir_FunctionCall' is a specialization of 'ExpressionCall'.
+The class 'ir_TypeConstructorCall' is a specialization of 'ExpressionCall'.
+The class 'ir_Connection' is a specialization of 'Node'.
+The class 'ir_Point2PointConnection' is a specialization of 'Connection'.
+The class 'ir_FromSource' is a specialization of 'Connection'.
+The class 'ir_ToSink' is a specialization of 'Connection'.
+The class 'ir_Statement' is a specialization of 'Node'.
+The class 'ir_VariableReference' is a specialization of 'Node'.
+The class 'ir_Assign' is a specialization of 'Statement'.
+The class 'ir_ReturnValue' is a specialization of 'Statement'.
+The class 'ir_ProcCall' is a specialization of 'Statement'.
+The class 'ir_WhileLoop' is a specialization of 'Statement'.
+The class 'ir_ForEach' is a specialization of 'Statement'.
+The class 'ir_IfStatement' is a specialization of 'Statement'.
+The class 'ir_Block' is a specialization of 'Scope'.
+The class 'ir_Block' is a specialization of 'Statement'.
+The class 'ir_PortAccess' is a specialization of 'Node'.
+The class 'ir_PortWrite' is a specialization of 'Block'.
+The class 'ir_PortWrite' is a specialization of 'PortAccess'.
+The class 'ir_PortRead' is a specialization of 'PortAccess'.
+The class 'ir_PortPeek' is a specialization of 'PortAccess'.
+The class 'ir_Declaration' is a specialization of 'Node'.
+The class 'ir_ForwardDeclaration' is a specialization of 'Declaration'.
+The class 'ir_Variable' is a specialization of 'Declaration'.
+The class 'ir_LambdaExpression' is a specialization of 'Scope'.
+The class 'ir_LambdaExpression' is a specialization of 'Expression'.
+The class 'ir_ProcExpression' is a specialization of 'Scope'.
+The class 'ir_ProcExpression' is a specialization of 'Expression'.
+The class 'ir_IfExpression' is a specialization of 'Expression'.
+The class 'ir_Guard' is a specialization of 'LambdaExpression'.
+The class 'ir_TypeBool' is a specialization of 'Type'.
+The class 'ir_TypeExternal' is a specialization of 'Type'.
+The class 'ir_TypeInt' is a specialization of 'Type'.
+The class 'ir_TypeList' is a specialization of 'Type'.
+The class 'ir_TypeFloat' is a specialization of 'Type'.
+The class 'ir_TypeUint' is a specialization of 'Type'.
+The class 'ir_TypeString' is a specialization of 'Type'.
+The class 'ir_TypeRecord' is a specialization of 'Type'.
+The class 'ir_TypeRecord' is a specialization of 'Node'.
+The class 'ir_TypeUndef' is a specialization of 'Type'.
+The class 'ir_TypeActor' is a specialization of 'Type'.
+The class 'ir_TypeUser' is a specialization of 'Type'.
+The class 'ir_TypeLambda' is a specialization of 'Type'.
+The class 'ir_TypeProc' is a specialization of 'Type'.
+The class 'ir_TypeConstructor' is a specialization of 'Declaration'.
+The class 'ir_TypeDeclaration' is a specialization of 'Declaration'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ir_Declaration' and 'ir_Scope'. From 'ir_Declaration', the role 'ir_Declaration' has cardinality 0..*, and from 'ir_Scope', the role 'ir_Scope' has cardinality 0..*.
+An association connects 'ir_Scope' and 'ir_Scope'. From 'ir_Scope', the role 'ir_Scope3' has cardinality 0..*, and from 'ir_Scope', the role 'ir_Scope1' has cardinality 0..*.
+An association connects 'ir_Annotation' and 'ir_Node'. From 'ir_Annotation', the role 'ir_Annotation' has cardinality 0..*, and from 'ir_Node', the role 'ir_Node' has cardinality 0..*.
+An association connects 'ir_VariableExternal' and 'ir_Type'. From 'ir_VariableExternal', the role 'ir_VariableExternal' has cardinality 0..*, and from 'ir_Type', the role 'ir_Type' has cardinality 0..*.
+An association connects 'ir_Namespace' and 'ir_AbstractActor'. From 'ir_Namespace', the role 'ir_Namespace' has cardinality 0..*, and from 'ir_AbstractActor', the role 'ir_AbstractActor' has cardinality 0..*.
+An association connects 'ir_AbstractActor' and 'ir_TypeActor'. From 'ir_AbstractActor', the role 'ir_AbstractActor8' has cardinality 0..*, and from 'ir_TypeActor', the role 'ir_TypeActor' has cardinality 0..*.
+An association connects 'ir_AbstractActor' and 'ir_Port'. From 'ir_AbstractActor', the role 'ir_AbstractActor10' has cardinality 0..*, and from 'ir_Port', the role 'ir_Port' has cardinality 0..*.
+An association connects 'ir_AbstractActor' and 'ir_Port'. From 'ir_AbstractActor', the role 'ir_AbstractActor12' has cardinality 0..*, and from 'ir_Port', the role 'ir_Port13' has cardinality 0..*.
+An association connects 'ir_AbstractActor' and 'ir_Variable'. From 'ir_AbstractActor', the role 'ir_AbstractActor15' has cardinality 0..*, and from 'ir_Variable', the role 'ir_Variable' has cardinality 0..*.
+An association connects 'ir_Action' and 'ir_Actor'. From 'ir_Action', the role 'ir_Action' has cardinality 0..*, and from 'ir_Actor', the role 'ir_Actor' has cardinality 0..*.
+An association connects 'ir_Action' and 'ir_Actor'. From 'ir_Action', the role 'ir_Action19' has cardinality 0..*, and from 'ir_Actor', the role 'ir_Actor18' has cardinality 0..*.
+An association connects 'ir_Actor' and 'ir_Schedule'. From 'ir_Actor', the role 'ir_Actor21' has cardinality 0..*, and from 'ir_Schedule', the role 'ir_Schedule' has cardinality 0..*.
+An association connects 'ir_Connection' and 'ir_Network'. From 'ir_Connection', the role 'ir_Connection' has cardinality 0..*, and from 'ir_Network', the role 'ir_Network' has cardinality 0..*.
+An association connects 'ir_ActorInstance' and 'ir_Network'. From 'ir_ActorInstance', the role 'ir_ActorInstance' has cardinality 0..*, and from 'ir_Network', the role 'ir_Network24' has cardinality 0..*.
+An association connects 'ir_Action' and 'ir_Guard'. From 'ir_Action', the role 'ir_Action26' has cardinality 0..*, and from 'ir_Guard', the role 'ir_Guard' has cardinality 0..*.
+An association connects 'ir_PortWrite' and 'ir_Action'. From 'ir_PortWrite', the role 'ir_PortWrite' has cardinality 0..*, and from 'ir_Action', the role 'ir_Action28' has cardinality 0..*.
+An association connects 'ir_Action' and 'ir_PortRead'. From 'ir_Action', the role 'ir_Action30' has cardinality 0..*, and from 'ir_PortRead', the role 'ir_PortRead' has cardinality 0..*.
+An association connects 'ir_Action' and 'ir_Statement'. From 'ir_Action', the role 'ir_Action32' has cardinality 0..*, and from 'ir_Statement', the role 'ir_Statement' has cardinality 0..*.
+An association connects 'ir_Port' and 'ir_Type'. From 'ir_Port', the role 'ir_Port34' has cardinality 0..*, and from 'ir_Type', the role 'ir_Type35' has cardinality 0..*.
+An association connects 'ir_PortInstance' and 'ir_ActorInstance'. From 'ir_PortInstance', the role 'ir_PortInstance' has cardinality 0..*, and from 'ir_ActorInstance', the role 'ir_ActorInstance37' has cardinality 0..*.
+An association connects 'ir_ActorInstance' and 'ir_PortInstance'. From 'ir_ActorInstance', the role 'ir_ActorInstance39' has cardinality 0..*, and from 'ir_PortInstance', the role 'ir_PortInstance40' has cardinality 0..*.
+An association connects 'ir_TaggedExpression' and 'ir_ActorInstance'. From 'ir_TaggedExpression', the role 'ir_TaggedExpression' has cardinality 0..*, and from 'ir_ActorInstance', the role 'ir_ActorInstance42' has cardinality 0..*.
+An association connects 'ir_Connection' and 'ir_PortInstance'. From 'ir_Connection', the role 'ir_Connection45' has cardinality 0..*, and from 'ir_PortInstance', the role 'ir_PortInstance44' has cardinality 0..*.
+An association connects 'ir_PortInstance' and 'ir_ActorInstance'. From 'ir_PortInstance', the role 'ir_PortInstance47' has cardinality 0..*, and from 'ir_ActorInstance', the role 'ir_ActorInstance48' has cardinality 0..*.
+An association connects 'ir_Type' and 'ir_Expression'. From 'ir_Type', the role 'ir_Type50' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_Scope'. From 'ir_Expression', the role 'ir_Expression52' has cardinality 0..*, and from 'ir_Scope', the role 'ir_Scope53' has cardinality 0..*.
+An association connects 'ir_TaggedExpression' and 'ir_Expression'. From 'ir_TaggedExpression', the role 'ir_TaggedExpression55' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression56' has cardinality 0..*.
+An association connects 'ir_Declaration' and 'ir_VariableExpression'. From 'ir_Declaration', the role 'ir_Declaration58' has cardinality 0..*, and from 'ir_VariableExpression', the role 'ir_VariableExpression' has cardinality 0..*.
+An association connects 'ir_VariableExpression' and 'ir_Expression'. From 'ir_VariableExpression', the role 'ir_VariableExpression60' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression61' has cardinality 0..*.
+An association connects 'ir_VariableExpression' and 'ir_Member'. From 'ir_VariableExpression', the role 'ir_VariableExpression63' has cardinality 0..*, and from 'ir_Member', the role 'ir_Member' has cardinality 0..*.
+An association connects 'ir_Generator' and 'ir_ListExpression'. From 'ir_Generator', the role 'ir_Generator' has cardinality 0..*, and from 'ir_ListExpression', the role 'ir_ListExpression' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_ListExpression'. From 'ir_Expression', the role 'ir_Expression67' has cardinality 0..*, and from 'ir_ListExpression', the role 'ir_ListExpression66' has cardinality 0..*.
+An association connects 'ir_Generator' and 'ir_Expression'. From 'ir_Generator', the role 'ir_Generator69' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression70' has cardinality 0..*.
+An association connects 'ir_Member' and 'ir_Expression'. From 'ir_Member', the role 'ir_Member72' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression73' has cardinality 0..*.
+An association connects 'ir_Type' and 'ir_Member'. From 'ir_Type', the role 'ir_Type76' has cardinality 0..*, and from 'ir_Member', the role 'ir_Member75' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_BinaryExpression'. From 'ir_Expression', the role 'ir_Expression78' has cardinality 0..*, and from 'ir_BinaryExpression', the role 'ir_BinaryExpression' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_BinaryExpression'. From 'ir_Expression', the role 'ir_Expression81' has cardinality 0..*, and from 'ir_BinaryExpression', the role 'ir_BinaryExpression80' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_UnaryExpression'. From 'ir_Expression', the role 'ir_Expression83' has cardinality 0..*, and from 'ir_UnaryExpression', the role 'ir_UnaryExpression' has cardinality 0..*.
+An association connects 'ir_FunctionCall' and 'ir_Expression'. From 'ir_FunctionCall', the role 'ir_FunctionCall' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression85' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_FunctionCall'. From 'ir_Expression', the role 'ir_Expression88' has cardinality 0..*, and from 'ir_FunctionCall', the role 'ir_FunctionCall87' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_TypeConstructorCall'. From 'ir_Expression', the role 'ir_Expression90' has cardinality 0..*, and from 'ir_TypeConstructorCall', the role 'ir_TypeConstructorCall' has cardinality 0..*.
+An association connects 'ir_Declaration' and 'ir_TypeConstructorCall'. From 'ir_Declaration', the role 'ir_Declaration93' has cardinality 0..*, and from 'ir_TypeConstructorCall', the role 'ir_TypeConstructorCall92' has cardinality 0..*.
+An association connects 'ir_TaggedExpression' and 'ir_Connection'. From 'ir_TaggedExpression', the role 'ir_TaggedExpression96' has cardinality 0..*, and from 'ir_Connection', the role 'ir_Connection95' has cardinality 0..*.
+An association connects 'ir_Point2PointConnection' and 'ir_PortInstance'. From 'ir_Point2PointConnection', the role 'ir_Point2PointConnection' has cardinality 0..*, and from 'ir_PortInstance', the role 'ir_PortInstance98' has cardinality 0..*.
+An association connects 'ir_Point2PointConnection' and 'ir_PortInstance'. From 'ir_Point2PointConnection', the role 'ir_Point2PointConnection100' has cardinality 0..*, and from 'ir_PortInstance', the role 'ir_PortInstance101' has cardinality 0..*.
+An association connects 'ir_FromSource' and 'ir_PortInstance'. From 'ir_FromSource', the role 'ir_FromSource' has cardinality 0..*, and from 'ir_PortInstance', the role 'ir_PortInstance103' has cardinality 0..*.
+An association connects 'ir_Port' and 'ir_FromSource'. From 'ir_Port', the role 'ir_Port106' has cardinality 0..*, and from 'ir_FromSource', the role 'ir_FromSource105' has cardinality 0..*.
+An association connects 'ir_PortInstance' and 'ir_ToSink'. From 'ir_PortInstance', the role 'ir_PortInstance108' has cardinality 0..*, and from 'ir_ToSink', the role 'ir_ToSink' has cardinality 0..*.
+An association connects 'ir_ToSink' and 'ir_Port'. From 'ir_ToSink', the role 'ir_ToSink110' has cardinality 0..*, and from 'ir_Port', the role 'ir_Port111' has cardinality 0..*.
+An association connects 'ir_VariableReference' and 'ir_Variable'. From 'ir_VariableReference', the role 'ir_VariableReference' has cardinality 0..*, and from 'ir_Variable', the role 'ir_Variable113' has cardinality 0..*.
+An association connects 'ir_VariableReference' and 'ir_Expression'. From 'ir_VariableReference', the role 'ir_VariableReference115' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression116' has cardinality 0..*.
+An association connects 'ir_Member' and 'ir_VariableReference'. From 'ir_Member', the role 'ir_Member119' has cardinality 0..*, and from 'ir_VariableReference', the role 'ir_VariableReference118' has cardinality 0..*.
+An association connects 'ir_Type' and 'ir_VariableReference'. From 'ir_Type', the role 'ir_Type122' has cardinality 0..*, and from 'ir_VariableReference', the role 'ir_VariableReference121' has cardinality 0..*.
+An association connects 'ir_VariableReference' and 'ir_Assign'. From 'ir_VariableReference', the role 'ir_VariableReference124' has cardinality 0..*, and from 'ir_Assign', the role 'ir_Assign' has cardinality 0..*.
+An association connects 'ir_Assign' and 'ir_Expression'. From 'ir_Assign', the role 'ir_Assign126' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression127' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_ReturnValue'. From 'ir_Expression', the role 'ir_Expression129' has cardinality 0..*, and from 'ir_ReturnValue', the role 'ir_ReturnValue' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_ProcCall'. From 'ir_Expression', the role 'ir_Expression131' has cardinality 0..*, and from 'ir_ProcCall', the role 'ir_ProcCall' has cardinality 0..*.
+An association connects 'ir_ProcCall' and 'ir_VariableReference'. From 'ir_ProcCall', the role 'ir_ProcCall133' has cardinality 0..*, and from 'ir_VariableReference', the role 'ir_VariableReference134' has cardinality 0..*.
+An association connects 'ir_Declaration' and 'ir_ProcCall'. From 'ir_Declaration', the role 'ir_Declaration137' has cardinality 0..*, and from 'ir_ProcCall', the role 'ir_ProcCall136' has cardinality 0..*.
+An association connects 'ir_WhileLoop' and 'ir_Block'. From 'ir_WhileLoop', the role 'ir_WhileLoop' has cardinality 0..*, and from 'ir_Block', the role 'ir_Block' has cardinality 0..*.
+An association connects 'ir_WhileLoop' and 'ir_Expression'. From 'ir_WhileLoop', the role 'ir_WhileLoop140' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression141' has cardinality 0..*.
+An association connects 'ir_ForEach' and 'ir_Block'. From 'ir_ForEach', the role 'ir_ForEach' has cardinality 0..*, and from 'ir_Block', the role 'ir_Block143' has cardinality 0..*.
+An association connects 'ir_Generator' and 'ir_ForEach'. From 'ir_Generator', the role 'ir_Generator146' has cardinality 0..*, and from 'ir_ForEach', the role 'ir_ForEach145' has cardinality 0..*.
+An association connects 'ir_Block' and 'ir_IfStatement'. From 'ir_Block', the role 'ir_Block148' has cardinality 0..*, and from 'ir_IfStatement', the role 'ir_IfStatement' has cardinality 0..*.
+An association connects 'ir_IfStatement' and 'ir_Block'. From 'ir_IfStatement', the role 'ir_IfStatement150' has cardinality 0..*, and from 'ir_Block', the role 'ir_Block151' has cardinality 0..*.
+An association connects 'ir_IfStatement' and 'ir_Expression'. From 'ir_IfStatement', the role 'ir_IfStatement153' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression154' has cardinality 0..*.
+An association connects 'ir_Block' and 'ir_Statement'. From 'ir_Block', the role 'ir_Block156' has cardinality 0..*, and from 'ir_Statement', the role 'ir_Statement157' has cardinality 0..*.
+An association connects 'ir_Port' and 'ir_PortAccess'. From 'ir_Port', the role 'ir_Port159' has cardinality 0..*, and from 'ir_PortAccess', the role 'ir_PortAccess' has cardinality 0..*.
+An association connects 'ir_PortAccess' and 'ir_Expression'. From 'ir_PortAccess', the role 'ir_PortAccess161' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression162' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_PortWrite'. From 'ir_Expression', the role 'ir_Expression165' has cardinality 0..*, and from 'ir_PortWrite', the role 'ir_PortWrite164' has cardinality 0..*.
+An association connects 'ir_VariableReference' and 'ir_PortRead'. From 'ir_VariableReference', the role 'ir_VariableReference168' has cardinality 0..*, and from 'ir_PortRead', the role 'ir_PortRead167' has cardinality 0..*.
+An association connects 'ir_VariableReference' and 'ir_PortPeek'. From 'ir_VariableReference', the role 'ir_VariableReference170' has cardinality 0..*, and from 'ir_PortPeek', the role 'ir_PortPeek' has cardinality 0..*.
+An association connects 'ir_Scope' and 'ir_Declaration'. From 'ir_Scope', the role 'ir_Scope173' has cardinality 0..*, and from 'ir_Declaration', the role 'ir_Declaration172' has cardinality 0..*.
+An association connects 'ir_TaggedExpression' and 'ir_Declaration'. From 'ir_TaggedExpression', the role 'ir_TaggedExpression176' has cardinality 0..*, and from 'ir_Declaration', the role 'ir_Declaration175' has cardinality 0..*.
+An association connects 'ir_ForwardDeclaration' and 'ir_Declaration'. From 'ir_ForwardDeclaration', the role 'ir_ForwardDeclaration' has cardinality 0..*, and from 'ir_Declaration', the role 'ir_Declaration178' has cardinality 0..*.
+An association connects 'ir_Type' and 'ir_ForwardDeclaration'. From 'ir_Type', the role 'ir_Type181' has cardinality 0..*, and from 'ir_ForwardDeclaration', the role 'ir_ForwardDeclaration180' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_Variable'. From 'ir_Expression', the role 'ir_Expression184' has cardinality 0..*, and from 'ir_Variable', the role 'ir_Variable183' has cardinality 0..*.
+An association connects 'ir_Type' and 'ir_Variable'. From 'ir_Type', the role 'ir_Type187' has cardinality 0..*, and from 'ir_Variable', the role 'ir_Variable186' has cardinality 0..*.
+An association connects 'ir_Variable' and 'ir_LambdaExpression'. From 'ir_Variable', the role 'ir_Variable189' has cardinality 0..*, and from 'ir_LambdaExpression', the role 'ir_LambdaExpression' has cardinality 0..*.
+An association connects 'ir_LambdaExpression' and 'ir_Expression'. From 'ir_LambdaExpression', the role 'ir_LambdaExpression191' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression192' has cardinality 0..*.
+An association connects 'ir_Variable' and 'ir_ProcExpression'. From 'ir_Variable', the role 'ir_Variable194' has cardinality 0..*, and from 'ir_ProcExpression', the role 'ir_ProcExpression' has cardinality 0..*.
+An association connects 'ir_ProcExpression' and 'ir_Variable'. From 'ir_ProcExpression', the role 'ir_ProcExpression196' has cardinality 0..*, and from 'ir_Variable', the role 'ir_Variable197' has cardinality 0..*.
+An association connects 'ir_Block' and 'ir_ProcExpression'. From 'ir_Block', the role 'ir_Block200' has cardinality 0..*, and from 'ir_ProcExpression', the role 'ir_ProcExpression199' has cardinality 0..*.
+An association connects 'ir_IfExpression' and 'ir_Expression'. From 'ir_IfExpression', the role 'ir_IfExpression' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression202' has cardinality 0..*.
+An association connects 'ir_IfExpression' and 'ir_Expression'. From 'ir_IfExpression', the role 'ir_IfExpression204' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression205' has cardinality 0..*.
+An association connects 'ir_IfExpression' and 'ir_Expression'. From 'ir_IfExpression', the role 'ir_IfExpression207' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression208' has cardinality 0..*.
+An association connects 'ir_Guard' and 'ir_PortPeek'. From 'ir_Guard', the role 'ir_Guard210' has cardinality 0..*, and from 'ir_PortPeek', the role 'ir_PortPeek211' has cardinality 0..*.
+An association connects 'ir_TypeExternal' and 'ir_TaggedExpression'. From 'ir_TypeExternal', the role 'ir_TypeExternal' has cardinality 0..*, and from 'ir_TaggedExpression', the role 'ir_TaggedExpression213' has cardinality 0..*.
+An association connects 'ir_TypeInt' and 'ir_Expression'. From 'ir_TypeInt', the role 'ir_TypeInt' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression215' has cardinality 0..*.
+An association connects 'ir_Expression' and 'ir_TypeList'. From 'ir_Expression', the role 'ir_Expression217' has cardinality 0..*, and from 'ir_TypeList', the role 'ir_TypeList' has cardinality 0..*.
+An association connects 'ir_Type' and 'ir_TypeList'. From 'ir_Type', the role 'ir_Type220' has cardinality 0..*, and from 'ir_TypeList', the role 'ir_TypeList219' has cardinality 0..*.
+An association connects 'ir_TypeUint' and 'ir_Expression'. From 'ir_TypeUint', the role 'ir_TypeUint' has cardinality 0..*, and from 'ir_Expression', the role 'ir_Expression222' has cardinality 0..*.
+An association connects 'ir_TypeRecord' and 'ir_Variable'. From 'ir_TypeRecord', the role 'ir_TypeRecord' has cardinality 0..*, and from 'ir_Variable', the role 'ir_Variable224' has cardinality 0..*.
+An association connects 'ir_TypeUser' and 'ir_Declaration'. From 'ir_TypeUser', the role 'ir_TypeUser' has cardinality 0..*, and from 'ir_Declaration', the role 'ir_Declaration226' has cardinality 0..*.
+An association connects 'ir_Type' and 'ir_TypeLambda'. From 'ir_Type', the role 'ir_Type228' has cardinality 0..*, and from 'ir_TypeLambda', the role 'ir_TypeLambda' has cardinality 0..*.
+An association connects 'ir_TypeLambda' and 'ir_Type'. From 'ir_TypeLambda', the role 'ir_TypeLambda230' has cardinality 0..*, and from 'ir_Type', the role 'ir_Type231' has cardinality 0..*.
+An association connects 'ir_TypeProc' and 'ir_Type'. From 'ir_TypeProc', the role 'ir_TypeProc' has cardinality 0..*, and from 'ir_Type', the role 'ir_Type233' has cardinality 0..*.
+An association connects 'ir_TypeProc' and 'ir_Type'. From 'ir_TypeProc', the role 'ir_TypeProc235' has cardinality 0..*, and from 'ir_Type', the role 'ir_Type236' has cardinality 0..*.
+An association connects 'ir_TypeDeclaration' and 'ir_TypeConstructor'. From 'ir_TypeDeclaration', the role 'ir_TypeDeclaration' has cardinality 0..*, and from 'ir_TypeConstructor', the role 'ir_TypeConstructor' has cardinality 0..*.
+An association connects 'ir_Variable' and 'ir_TypeConstructor'. From 'ir_Variable', the role 'ir_Variable240' has cardinality 0..*, and from 'ir_TypeConstructor', the role 'ir_TypeConstructor239' has cardinality 0..*.
+An association connects 'ir_Type' and 'ir_TypeDeclaration'. From 'ir_Type', the role 'ir_Type243' has cardinality 0..*, and from 'ir_TypeDeclaration', the role 'ir_TypeDeclaration242' has cardinality 0..*.
+An association connects 'ir_TypeConstructor' and 'ir_TypeDeclaration'. From 'ir_TypeConstructor', the role 'ir_TypeConstructor246' has cardinality 0..*, and from 'ir_TypeDeclaration', the role 'ir_TypeDeclaration245' has cardinality 0..*.
+An association connects 'ir_State' and 'ir_Schedule'. From 'ir_State', the role 'ir_State' has cardinality 0..*, and from 'ir_Schedule', the role 'ir_Schedule248' has cardinality 0..*.
+An association connects 'ir_Action' and 'ir_Schedule'. From 'ir_Action', the role 'ir_Action251' has cardinality 0..*, and from 'ir_Schedule', the role 'ir_Schedule250' has cardinality 0..*.
+An association connects 'ir_State' and 'ir_Schedule'. From 'ir_State', the role 'ir_State254' has cardinality 0..*, and from 'ir_Schedule', the role 'ir_Schedule253' has cardinality 0..*.
+An association connects 'ir_AnnotationArgument' and 'ir_Annotation'. From 'ir_AnnotationArgument', the role 'ir_AnnotationArgument' has cardinality 0..*, and from 'ir_Annotation', the role 'ir_Annotation256' has cardinality 0..*.

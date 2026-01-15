@@ -1,0 +1,78 @@
+The domain model 'railway2stochasticpetrinet' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'railway2stochasticpetrinet_Railway2StochasticPetriNetTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2stochasticpetrinet_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'TraceLink' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2stochasticpetrinet_RequiredElement2Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2stochasticpetrinet_PetriNetModuleTraceLink' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2stochasticpetrinet_ImmediateTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2stochasticpetrinet_RailwayElement' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2stochasticpetrinet_Route2FailureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2stochasticpetrinet_Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2stochasticpetrinet_RailwayContainer2PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2stochasticpetrinet_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2stochasticpetrinet_RailwayContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2stochasticpetrinet_Route' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2stochasticpetrinet_TraceLink' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2stochasticpetrinet_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'railway2stochasticpetrinet_RequiredElement2FailureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNetModuleTraceLink' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'railway2stochasticpetrinet_PetriNetModuleTraceLink' is a specialization of 'TraceLink'.
+The class 'railway2stochasticpetrinet_Route2FailureModel' is a specialization of 'PetriNetModuleTraceLink'.
+The class 'railway2stochasticpetrinet_RequiredElement2FailureModel' is a specialization of 'PetriNetModuleTraceLink'.
+The class 'railway2stochasticpetrinet_RequiredElement2Connection' is a specialization of 'PetriNetModuleTraceLink'.
+The class 'railway2stochasticpetrinet_RailwayContainer2PetriNet' is a specialization of 'TraceLink'.
+
+Relationships between classes are modeled using associations.
+An association connects 'railway2stochasticpetrinet_Railway2StochasticPetriNetTrace' and 'railway2stochasticpetrinet_TraceLink'. From 'railway2stochasticpetrinet_Railway2StochasticPetriNetTrace', the role 'railway2stochasticpetrinet_Railway2StochasticPetriNetTrace' has cardinality 0..*, and from 'railway2stochasticpetrinet_TraceLink', the role 'railway2stochasticpetrinet_TraceLink' has cardinality 0..*.
+An association connects 'railway2stochasticpetrinet_RailwayContainer' and 'railway2stochasticpetrinet_Railway2StochasticPetriNetTrace'. From 'railway2stochasticpetrinet_RailwayContainer', the role 'railway2stochasticpetrinet_RailwayContainer' has cardinality 0..*, and from 'railway2stochasticpetrinet_Railway2StochasticPetriNetTrace', the role 'railway2stochasticpetrinet_Railway2StochasticPetriNetTrace2' has cardinality 0..*.
+An association connects 'railway2stochasticpetrinet_PetriNetModuleTraceLink' and 'railway2stochasticpetrinet_Node'. From 'railway2stochasticpetrinet_PetriNetModuleTraceLink', the role 'railway2stochasticpetrinet_PetriNetModuleTraceLink' has cardinality 0..*, and from 'railway2stochasticpetrinet_Node', the role 'railway2stochasticpetrinet_Node' has cardinality 0..*.
+An association connects 'railway2stochasticpetrinet_PetriNetModuleTraceLink' and 'railway2stochasticpetrinet_Arc'. From 'railway2stochasticpetrinet_PetriNetModuleTraceLink', the role 'railway2stochasticpetrinet_PetriNetModuleTraceLink5' has cardinality 0..*, and from 'railway2stochasticpetrinet_Arc', the role 'railway2stochasticpetrinet_Arc' has cardinality 0..*.
+An association connects 'railway2stochasticpetrinet_Route' and 'railway2stochasticpetrinet_Route2FailureModel'. From 'railway2stochasticpetrinet_Route', the role 'railway2stochasticpetrinet_Route' has cardinality 0..*, and from 'railway2stochasticpetrinet_Route2FailureModel', the role 'railway2stochasticpetrinet_Route2FailureModel' has cardinality 0..*.
+An association connects 'railway2stochasticpetrinet_Route2FailureModel' and 'railway2stochasticpetrinet_Place'. From 'railway2stochasticpetrinet_Route2FailureModel', the role 'railway2stochasticpetrinet_Route2FailureModel8' has cardinality 0..*, and from 'railway2stochasticpetrinet_Place', the role 'railway2stochasticpetrinet_Place' has cardinality 0..*.
+An association connects 'railway2stochasticpetrinet_Place' and 'railway2stochasticpetrinet_Route2FailureModel'. From 'railway2stochasticpetrinet_Place', the role 'railway2stochasticpetrinet_Place11' has cardinality 0..*, and from 'railway2stochasticpetrinet_Route2FailureModel', the role 'railway2stochasticpetrinet_Route2FailureModel10' has cardinality 0..*.
+An association connects 'railway2stochasticpetrinet_ImmediateTransition' and 'railway2stochasticpetrinet_Route2FailureModel'. From 'railway2stochasticpetrinet_ImmediateTransition', the role 'railway2stochasticpetrinet_ImmediateTransition' has cardinality 0..*, and from 'railway2stochasticpetrinet_Route2FailureModel', the role 'railway2stochasticpetrinet_Route2FailureModel13' has cardinality 0..*.
+An association connects 'railway2stochasticpetrinet_RailwayElement' and 'railway2stochasticpetrinet_RequiredElement2FailureModel'. From 'railway2stochasticpetrinet_RailwayElement', the role 'railway2stochasticpetrinet_RailwayElement' has cardinality 0..*, and from 'railway2stochasticpetrinet_RequiredElement2FailureModel', the role 'railway2stochasticpetrinet_RequiredElement2FailureModel' has cardinality 0..*.
+An association connects 'railway2stochasticpetrinet_Place' and 'railway2stochasticpetrinet_RequiredElement2FailureModel'. From 'railway2stochasticpetrinet_Place', the role 'railway2stochasticpetrinet_Place17' has cardinality 0..*, and from 'railway2stochasticpetrinet_RequiredElement2FailureModel', the role 'railway2stochasticpetrinet_RequiredElement2FailureModel16' has cardinality 0..*.
+An association connects 'railway2stochasticpetrinet_RequiredElement2FailureModel' and 'railway2stochasticpetrinet_Place'. From 'railway2stochasticpetrinet_RequiredElement2FailureModel', the role 'railway2stochasticpetrinet_RequiredElement2FailureModel19' has cardinality 0..*, and from 'railway2stochasticpetrinet_Place', the role 'railway2stochasticpetrinet_Place20' has cardinality 0..*.
+An association connects 'railway2stochasticpetrinet_RequiredElement2Connection' and 'railway2stochasticpetrinet_Route'. From 'railway2stochasticpetrinet_RequiredElement2Connection', the role 'railway2stochasticpetrinet_RequiredElement2Connection' has cardinality 0..*, and from 'railway2stochasticpetrinet_Route', the role 'railway2stochasticpetrinet_Route22' has cardinality 0..*.
+An association connects 'railway2stochasticpetrinet_RailwayElement' and 'railway2stochasticpetrinet_RequiredElement2Connection'. From 'railway2stochasticpetrinet_RailwayElement', the role 'railway2stochasticpetrinet_RailwayElement25' has cardinality 0..*, and from 'railway2stochasticpetrinet_RequiredElement2Connection', the role 'railway2stochasticpetrinet_RequiredElement2Connection24' has cardinality 0..*.
+An association connects 'railway2stochasticpetrinet_RailwayContainer' and 'railway2stochasticpetrinet_RailwayContainer2PetriNet'. From 'railway2stochasticpetrinet_RailwayContainer', the role 'railway2stochasticpetrinet_RailwayContainer27' has cardinality 0..*, and from 'railway2stochasticpetrinet_RailwayContainer2PetriNet', the role 'railway2stochasticpetrinet_RailwayContainer2PetriNet' has cardinality 0..*.
+An association connects 'railway2stochasticpetrinet_RailwayContainer2PetriNet' and 'railway2stochasticpetrinet_PetriNet'. From 'railway2stochasticpetrinet_RailwayContainer2PetriNet', the role 'railway2stochasticpetrinet_RailwayContainer2PetriNet29' has cardinality 0..*, and from 'railway2stochasticpetrinet_PetriNet', the role 'railway2stochasticpetrinet_PetriNet' has cardinality 0..*.

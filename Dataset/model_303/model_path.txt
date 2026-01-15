@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/quratulain-york/epsilon/examples/org.eclipse.epsilon.examples.workflow.standalone/library.ecore

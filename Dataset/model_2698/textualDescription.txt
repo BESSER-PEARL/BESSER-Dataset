@@ -1,0 +1,22 @@
+The domain model 'democea' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'ConceptA' represents an important domain concept.
+It does not declare any attributes.
+
+'democea_ConceptB' represents an important domain concept.
+It does not declare any attributes.
+
+'democea_ConceptC' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'democea_ConceptA' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'democea_ConceptB' is a specialization of 'ConceptA'.
+
+Relationships between classes are modeled using associations.
+An association connects 'democea_ConceptC' and 'democea_ConceptB'. From 'democea_ConceptC', the role 'democea_ConceptC' has cardinality 0..*, and from 'democea_ConceptB', the role 'democea_ConceptB' has cardinality 0..*.
+An association connects 'democea_ConceptB' and 'democea_ConceptC'. From 'democea_ConceptB', the role 'democea_ConceptB3' has cardinality 0..*, and from 'democea_ConceptC', the role 'democea_ConceptC2' has cardinality 0..*.

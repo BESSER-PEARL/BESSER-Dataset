@@ -1,0 +1,47 @@
+The domain model 'wh' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'wh_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_PackageDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Feature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type bool.
+
+'wh_AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'wh_Wh' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'wh_PackageDeclaration' is a specialization of 'AbstractElement'.
+The class 'wh_Import' is a specialization of 'AbstractElement'.
+The class 'wh_Type' is a specialization of 'AbstractElement'.
+The class 'wh_DataType' is a specialization of 'Type'.
+The class 'wh_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'wh_AbstractElement' and 'wh_Wh'. From 'wh_AbstractElement', the role 'wh_AbstractElement' has cardinality 0..*, and from 'wh_Wh', the role 'wh_Wh' has cardinality 0..*.
+An association connects 'wh_AbstractElement' and 'wh_PackageDeclaration'. From 'wh_AbstractElement', the role 'wh_AbstractElement2' has cardinality 0..*, and from 'wh_PackageDeclaration', the role 'wh_PackageDeclaration' has cardinality 0..*.
+An association connects 'wh_Entity' and 'wh_Entity'. From 'wh_Entity', the role 'wh_Entity' has cardinality 0..*, and from 'wh_Entity', the role 'wh_Entity3' has cardinality 0..*.
+An association connects 'wh_Entity' and 'wh_Feature'. From 'wh_Entity', the role 'wh_Entity6' has cardinality 0..*, and from 'wh_Feature', the role 'wh_Feature' has cardinality 0..*.
+An association connects 'wh_Feature' and 'wh_Type'. From 'wh_Feature', the role 'wh_Feature8' has cardinality 0..*, and from 'wh_Type', the role 'wh_Type' has cardinality 0..*.

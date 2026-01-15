@@ -1,0 +1,572 @@
+The domain model 'behavioral_elements' describes the core structural elements and their relationships within the system.
+
+The model defines 121 main class(es).
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_use_cases_ExtensionPoint' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'AssociationRole' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_StateVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_DataValue' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'Message' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_ComponentInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'SendAction' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_activity_graphs_ActivityGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_TimeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'SignalEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_SubsystemInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_Argument' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_CompositeState' represents an important domain concept.
+It has one attribute: 'isConcurrent', which is of type str.
+
+'behavioral_elements_common_behavior_LinkObject' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_collaborations_AssociationEndRole' represents an important domain concept.
+It does not declare any attributes.
+
+'InteractionInstanceSet' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_activity_graphs_ActionState' represents an important domain concept.
+It has one attribute: 'isDynamic', which is of type str.
+
+'CollaborationInstanceSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_Stimulus' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeLink' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_collaborations_Message' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_ActionSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_collaborations_ClassifierRole' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_ChangeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'StateVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_collaborations_InteractionInstanceSet' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_SimpleState' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_SendAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Interaction' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_use_cases_UseCase' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_UninterpretedAction' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_use_cases_Include' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_SignalEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'Instance' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_SubmachineState' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_Action' represents an important domain concept.
+It has one attribute: 'isAsynchronous', which is of type str.
+
+'behavioral_elements_common_behavior_AttributeLink' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_Exception' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_collaborations_CollaborationInstanceSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Include' represents an important domain concept.
+It does not declare any attributes.
+
+'Multiplicity' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_activity_graphs_CallState' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Extend' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'common_behavior_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'Stimulus' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_use_cases_Extend' represents an important domain concept.
+It does not declare any attributes.
+
+'ArgListsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'TimeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtensionPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'UseCase' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_activity_graphs_SubactivityState' represents an important domain concept.
+It has one attribute: 'isDynamic', which is of type str.
+
+'ObjectSetExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_NodeInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_DestroyAction' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_activity_graphs_Partition' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_CallEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Argument' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_use_cases_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassifierRole' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'SubmachineState' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_TerminateAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'Collaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'AssociationEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_State' represents an important domain concept.
+It does not declare any attributes.
+
+'common_behavior_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_activity_graphs_ClassifierInState' represents an important domain concept.
+It does not declare any attributes.
+
+'Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_CreateAction' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_activity_graphs_ObjectFlowState' represents an important domain concept.
+It has one attribute: 'isSynch', which is of type str.
+
+'behavioral_elements_collaborations_Interaction' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_Reception' represents an important domain concept.
+It has the following attributes: 'isLeaf', which is of type str; 'isAbstract', which is of type str; 'specification', which is of type str; 'isRoot', which is of type str.
+
+'behavioral_elements_collaborations_AssociationRole' represents an important domain concept.
+It does not declare any attributes.
+
+'IterationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'core_GeneralizableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Partition' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_ReturnAction' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleState' represents an important domain concept.
+It does not declare any attributes.
+
+'Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_Pseudostate' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'ActionState' represents an important domain concept.
+It does not declare any attributes.
+
+'core_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_StubState' represents an important domain concept.
+It has one attribute: 'referenceState', which is of type str.
+
+'Link' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_collaborations_Collaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_use_cases_UseCaseInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_Instance' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_common_behavior_LinkEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_SynchState' represents an important domain concept.
+It has one attribute: 'bound', which is of type str.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'behavioral_elements_state_machines_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'behavioral_elements_common_behavior_Instance' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_common_behavior_Signal' is a specialization of 'Classifier'.
+The class 'behavioral_elements_common_behavior_Action' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_common_behavior_CreateAction' is a specialization of 'Action'.
+The class 'behavioral_elements_common_behavior_DestroyAction' is a specialization of 'Action'.
+The class 'behavioral_elements_common_behavior_UninterpretedAction' is a specialization of 'Action'.
+The class 'behavioral_elements_common_behavior_AttributeLink' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_common_behavior_Object' is a specialization of 'Instance'.
+The class 'behavioral_elements_common_behavior_Link' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_common_behavior_LinkObject' is a specialization of 'common_behavior_Object'.
+The class 'behavioral_elements_common_behavior_LinkObject' is a specialization of 'common_behavior_Link'.
+The class 'behavioral_elements_common_behavior_DataValue' is a specialization of 'Instance'.
+The class 'behavioral_elements_common_behavior_CallAction' is a specialization of 'Action'.
+The class 'behavioral_elements_common_behavior_SendAction' is a specialization of 'Action'.
+The class 'behavioral_elements_common_behavior_ActionSequence' is a specialization of 'Action'.
+The class 'behavioral_elements_common_behavior_Argument' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_common_behavior_Reception' is a specialization of 'BehavioralFeature'.
+The class 'behavioral_elements_common_behavior_LinkEnd' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_common_behavior_ReturnAction' is a specialization of 'Action'.
+The class 'behavioral_elements_common_behavior_TerminateAction' is a specialization of 'Action'.
+The class 'behavioral_elements_common_behavior_Stimulus' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_common_behavior_Exception' is a specialization of 'Signal'.
+The class 'behavioral_elements_common_behavior_ComponentInstance' is a specialization of 'Instance'.
+The class 'behavioral_elements_common_behavior_NodeInstance' is a specialization of 'Instance'.
+The class 'behavioral_elements_common_behavior_SubsystemInstance' is a specialization of 'Instance'.
+The class 'behavioral_elements_use_cases_UseCase' is a specialization of 'Classifier'.
+The class 'behavioral_elements_use_cases_Actor' is a specialization of 'Classifier'.
+The class 'behavioral_elements_use_cases_UseCaseInstance' is a specialization of 'Instance'.
+The class 'behavioral_elements_use_cases_Extend' is a specialization of 'Relationship'.
+The class 'behavioral_elements_use_cases_Include' is a specialization of 'Relationship'.
+The class 'behavioral_elements_use_cases_ExtensionPoint' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_state_machines_StateMachine' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_state_machines_Event' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_state_machines_StateVertex' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_state_machines_State' is a specialization of 'StateVertex'.
+The class 'behavioral_elements_state_machines_TimeEvent' is a specialization of 'Event'.
+The class 'behavioral_elements_state_machines_CallEvent' is a specialization of 'Event'.
+The class 'behavioral_elements_state_machines_SignalEvent' is a specialization of 'Event'.
+The class 'behavioral_elements_state_machines_Transition' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_state_machines_CompositeState' is a specialization of 'State'.
+The class 'behavioral_elements_state_machines_ChangeEvent' is a specialization of 'Event'.
+The class 'behavioral_elements_state_machines_Guard' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_state_machines_Pseudostate' is a specialization of 'StateVertex'.
+The class 'behavioral_elements_state_machines_SimpleState' is a specialization of 'State'.
+The class 'behavioral_elements_state_machines_SubmachineState' is a specialization of 'CompositeState'.
+The class 'behavioral_elements_state_machines_SynchState' is a specialization of 'StateVertex'.
+The class 'behavioral_elements_state_machines_StubState' is a specialization of 'StateVertex'.
+The class 'behavioral_elements_state_machines_FinalState' is a specialization of 'State'.
+The class 'behavioral_elements_collaborations_Collaboration' is a specialization of 'core_GeneralizableElement'.
+The class 'behavioral_elements_collaborations_Collaboration' is a specialization of 'core_Namespace'.
+The class 'behavioral_elements_collaborations_ClassifierRole' is a specialization of 'Classifier'.
+The class 'behavioral_elements_collaborations_AssociationRole' is a specialization of 'Association'.
+The class 'behavioral_elements_collaborations_AssociationEndRole' is a specialization of 'AssociationEnd'.
+The class 'behavioral_elements_collaborations_Message' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_collaborations_Interaction' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_collaborations_InteractionInstanceSet' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_collaborations_CollaborationInstanceSet' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_activity_graphs_ActivityGraph' is a specialization of 'StateMachine'.
+The class 'behavioral_elements_activity_graphs_Partition' is a specialization of 'ModelElement'.
+The class 'behavioral_elements_activity_graphs_SubactivityState' is a specialization of 'SubmachineState'.
+The class 'behavioral_elements_activity_graphs_ActionState' is a specialization of 'SimpleState'.
+The class 'behavioral_elements_activity_graphs_CallState' is a specialization of 'ActionState'.
+The class 'behavioral_elements_activity_graphs_ObjectFlowState' is a specialization of 'SimpleState'.
+The class 'behavioral_elements_activity_graphs_ClassifierInState' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Classifier' and 'behavioral_elements_common_behavior_Instance'. From 'Classifier', the role 'Classifier' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Instance', the role 'behavioral_elements_common_behavior_Instance' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_Instance' and 'AttributeLink'. From 'behavioral_elements_common_behavior_Instance', the role 'AttributeLink' has cardinality 0..*, and from 'AttributeLink', the role 'common_behavior' has cardinality 0..*.
+An association connects 'LinkEnd' and 'behavioral_elements_common_behavior_Instance'. From 'LinkEnd', the role 'common_behavior3' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Instance', the role 'LinkEnd' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_Instance' and 'AttributeLink'. From 'behavioral_elements_common_behavior_Instance', the role 'AttributeLink5' has cardinality 0..*, and from 'AttributeLink', the role 'common_behavior6' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_Instance' and 'ComponentInstance'. From 'behavioral_elements_common_behavior_Instance', the role 'ComponentInstance' has cardinality 0..*, and from 'ComponentInstance', the role 'common_behavior8' has cardinality 0..*.
+An association connects 'Instance' and 'behavioral_elements_common_behavior_Instance'. From 'Instance', the role 'Instance' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Instance', the role 'behavioral_elements_common_behavior_Instance10' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_Instance' and 'Link'. From 'behavioral_elements_common_behavior_Instance', the role 'behavioral_elements_common_behavior_Instance12' has cardinality 0..*, and from 'Link', the role 'Link' has cardinality 0..*.
+An association connects 'Reception' and 'behavioral_elements_common_behavior_Signal'. From 'Reception', the role 'common_behavior14' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Signal', the role 'Reception' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_Signal' and 'BehavioralFeature'. From 'behavioral_elements_common_behavior_Signal', the role 'BehavioralFeature' has cardinality 0..*, and from 'BehavioralFeature', the role 'foundation.ecorecore' has cardinality 0..*.
+An association connects 'SendAction' and 'behavioral_elements_common_behavior_Signal'. From 'SendAction', the role 'common_behavior17' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Signal', the role 'SendAction' has cardinality 0..*.
+An association connects 'SignalEvent' and 'behavioral_elements_common_behavior_Signal'. From 'SignalEvent', the role 'state_machines' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Signal', the role 'SignalEvent' has cardinality 0..*.
+An association connects 'IterationExpression' and 'behavioral_elements_common_behavior_Action'. From 'IterationExpression', the role 'IterationExpression' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Action', the role 'behavioral_elements_common_behavior_Action' has cardinality 0..*.
+An association connects 'ObjectSetExpression' and 'behavioral_elements_common_behavior_Action'. From 'ObjectSetExpression', the role 'ObjectSetExpression' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Action', the role 'behavioral_elements_common_behavior_Action21' has cardinality 0..*.
+An association connects 'ActionExpression' and 'behavioral_elements_common_behavior_Action'. From 'ActionExpression', the role 'ActionExpression' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Action', the role 'behavioral_elements_common_behavior_Action23' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_Action' and 'Argument'. From 'behavioral_elements_common_behavior_Action', the role 'Argument' has cardinality 0..*, and from 'Argument', the role 'common_behavior25' has cardinality 0..*.
+An association connects 'ActionSequence' and 'behavioral_elements_common_behavior_Action'. From 'ActionSequence', the role 'common_behavior27' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Action', the role 'ActionSequence' has cardinality 0..*.
+An association connects 'Stimulus' and 'behavioral_elements_common_behavior_Action'. From 'Stimulus', the role 'common_behavior29' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Action', the role 'Stimulus' has cardinality 0..*.
+An association connects 'Transition' and 'behavioral_elements_common_behavior_Action'. From 'Transition', the role 'state_machines31' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Action', the role 'Transition' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_CreateAction' and 'Classifier'. From 'behavioral_elements_common_behavior_CreateAction', the role 'Classifier33' has cardinality 0..*, and from 'Classifier', the role 'foundation.ecorecore34' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_AttributeLink' and 'Attribute'. From 'behavioral_elements_common_behavior_AttributeLink', the role 'behavioral_elements_common_behavior_AttributeLink' has cardinality 0..*, and from 'Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_AttributeLink' and 'Instance'. From 'behavioral_elements_common_behavior_AttributeLink', the role 'Instance37' has cardinality 0..*, and from 'Instance', the role 'common_behavior38' has cardinality 0..*.
+An association connects 'Instance' and 'behavioral_elements_common_behavior_AttributeLink'. From 'Instance', the role 'common_behavior41' has cardinality 0..*, and from 'behavioral_elements_common_behavior_AttributeLink', the role 'Instance40' has cardinality 0..*.
+An association connects 'LinkEnd' and 'behavioral_elements_common_behavior_AttributeLink'. From 'LinkEnd', the role 'common_behavior44' has cardinality 0..*, and from 'behavioral_elements_common_behavior_AttributeLink', the role 'LinkEnd43' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_Link' and 'Association'. From 'behavioral_elements_common_behavior_Link', the role 'behavioral_elements_common_behavior_Link' has cardinality 0..*, and from 'Association', the role 'Association' has cardinality 0..*.
+An association connects 'LinkEnd' and 'behavioral_elements_common_behavior_Link'. From 'LinkEnd', the role 'common_behavior48' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Link', the role 'LinkEnd47' has cardinality 0..*.
+An association connects 'Stimulus' and 'behavioral_elements_common_behavior_Link'. From 'Stimulus', the role 'common_behavior51' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Link', the role 'Stimulus50' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_CallAction' and 'Operation'. From 'behavioral_elements_common_behavior_CallAction', the role 'Operation' has cardinality 0..*, and from 'Operation', the role 'foundation.ecorecore53' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_SendAction' and 'Signal'. From 'behavioral_elements_common_behavior_SendAction', the role 'Signal' has cardinality 0..*, and from 'Signal', the role 'common_behavior55' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_ActionSequence' and 'Action'. From 'behavioral_elements_common_behavior_ActionSequence', the role 'Action' has cardinality 0..*, and from 'Action', the role 'common_behavior57' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_Argument' and 'Expression'. From 'behavioral_elements_common_behavior_Argument', the role 'behavioral_elements_common_behavior_Argument' has cardinality 0..*, and from 'Expression', the role 'Expression' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_Argument' and 'Action'. From 'behavioral_elements_common_behavior_Argument', the role 'Action60' has cardinality 0..*, and from 'Action', the role 'common_behavior61' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_Reception' and 'Signal'. From 'behavioral_elements_common_behavior_Reception', the role 'Signal63' has cardinality 0..*, and from 'Signal', the role 'common_behavior64' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_LinkEnd' and 'Instance'. From 'behavioral_elements_common_behavior_LinkEnd', the role 'Instance66' has cardinality 0..*, and from 'Instance', the role 'common_behavior67' has cardinality 0..*.
+An association connects 'Link' and 'behavioral_elements_common_behavior_LinkEnd'. From 'Link', the role 'common_behavior70' has cardinality 0..*, and from 'behavioral_elements_common_behavior_LinkEnd', the role 'Link69' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_LinkEnd' and 'AssociationEnd'. From 'behavioral_elements_common_behavior_LinkEnd', the role 'behavioral_elements_common_behavior_LinkEnd' has cardinality 0..*, and from 'AssociationEnd', the role 'AssociationEnd' has cardinality 0..*.
+An association connects 'AttributeLink' and 'behavioral_elements_common_behavior_LinkEnd'. From 'AttributeLink', the role 'common_behavior74' has cardinality 0..*, and from 'behavioral_elements_common_behavior_LinkEnd', the role 'AttributeLink73' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_Stimulus' and 'Instance'. From 'behavioral_elements_common_behavior_Stimulus', the role 'behavioral_elements_common_behavior_Stimulus' has cardinality 0..*, and from 'Instance', the role 'Instance76' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_Stimulus' and 'Instance'. From 'behavioral_elements_common_behavior_Stimulus', the role 'behavioral_elements_common_behavior_Stimulus78' has cardinality 0..*, and from 'Instance', the role 'Instance79' has cardinality 0..*.
+An association connects 'Instance' and 'behavioral_elements_common_behavior_Stimulus'. From 'Instance', the role 'Instance82' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Stimulus', the role 'behavioral_elements_common_behavior_Stimulus81' has cardinality 0..*.
+An association connects 'Link' and 'behavioral_elements_common_behavior_Stimulus'. From 'Link', the role 'common_behavior85' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Stimulus', the role 'Link84' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_Stimulus' and 'Action'. From 'behavioral_elements_common_behavior_Stimulus', the role 'Action87' has cardinality 0..*, and from 'Action', the role 'common_behavior88' has cardinality 0..*.
+An association connects 'Message' and 'behavioral_elements_common_behavior_Stimulus'. From 'Message', the role 'collaborations' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Stimulus', the role 'Message' has cardinality 0..*.
+An association connects 'InteractionInstanceSet' and 'behavioral_elements_common_behavior_Stimulus'. From 'InteractionInstanceSet', the role 'collaborations91' has cardinality 0..*, and from 'behavioral_elements_common_behavior_Stimulus', the role 'InteractionInstanceSet' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_ComponentInstance' and 'NodeInstance'. From 'behavioral_elements_common_behavior_ComponentInstance', the role 'NodeInstance' has cardinality 0..*, and from 'NodeInstance', the role 'common_behavior93' has cardinality 0..*.
+An association connects 'behavioral_elements_common_behavior_ComponentInstance' and 'Instance'. From 'behavioral_elements_common_behavior_ComponentInstance', the role 'Instance95' has cardinality 0..*, and from 'Instance', the role 'common_behavior96' has cardinality 0..*.
+An association connects 'ComponentInstance' and 'behavioral_elements_common_behavior_NodeInstance'. From 'ComponentInstance', the role 'common_behavior99' has cardinality 0..*, and from 'behavioral_elements_common_behavior_NodeInstance', the role 'ComponentInstance98' has cardinality 0..*.
+An association connects 'behavioral_elements_use_cases_UseCase' and 'Extend'. From 'behavioral_elements_use_cases_UseCase', the role 'Extend' has cardinality 0..*, and from 'Extend', the role 'use_cases' has cardinality 0..*.
+An association connects 'Extend' and 'behavioral_elements_use_cases_UseCase'. From 'Extend', the role 'use_cases103' has cardinality 0..*, and from 'behavioral_elements_use_cases_UseCase', the role 'Extend102' has cardinality 0..*.
+An association connects 'behavioral_elements_use_cases_UseCase' and 'Include'. From 'behavioral_elements_use_cases_UseCase', the role 'Include' has cardinality 0..*, and from 'Include', the role 'use_cases105' has cardinality 0..*.
+An association connects 'behavioral_elements_use_cases_UseCase' and 'Include'. From 'behavioral_elements_use_cases_UseCase', the role 'Include107' has cardinality 0..*, and from 'Include', the role 'use_cases108' has cardinality 0..*.
+An association connects 'ExtensionPoint' and 'behavioral_elements_use_cases_UseCase'. From 'ExtensionPoint', the role 'use_cases110' has cardinality 0..*, and from 'behavioral_elements_use_cases_UseCase', the role 'ExtensionPoint' has cardinality 0..*.
+An association connects 'behavioral_elements_use_cases_Extend' and 'BooleanExpression'. From 'behavioral_elements_use_cases_Extend', the role 'behavioral_elements_use_cases_Extend' has cardinality 0..*, and from 'BooleanExpression', the role 'BooleanExpression' has cardinality 0..*.
+An association connects 'behavioral_elements_use_cases_Extend' and 'UseCase'. From 'behavioral_elements_use_cases_Extend', the role 'UseCase' has cardinality 0..*, and from 'UseCase', the role 'use_cases113' has cardinality 0..*.
+An association connects 'behavioral_elements_use_cases_Extend' and 'UseCase'. From 'behavioral_elements_use_cases_Extend', the role 'UseCase115' has cardinality 0..*, and from 'UseCase', the role 'use_cases116' has cardinality 0..*.
+An association connects 'behavioral_elements_use_cases_Extend' and 'ExtensionPoint'. From 'behavioral_elements_use_cases_Extend', the role 'ExtensionPoint118' has cardinality 0..*, and from 'ExtensionPoint', the role 'use_cases119' has cardinality 0..*.
+An association connects 'UseCase' and 'behavioral_elements_use_cases_Include'. From 'UseCase', the role 'use_cases122' has cardinality 0..*, and from 'behavioral_elements_use_cases_Include', the role 'UseCase121' has cardinality 0..*.
+An association connects 'UseCase' and 'behavioral_elements_use_cases_Include'. From 'UseCase', the role 'use_cases125' has cardinality 0..*, and from 'behavioral_elements_use_cases_Include', the role 'UseCase124' has cardinality 0..*.
+An association connects 'UseCase' and 'behavioral_elements_use_cases_ExtensionPoint'. From 'UseCase', the role 'use_cases128' has cardinality 0..*, and from 'behavioral_elements_use_cases_ExtensionPoint', the role 'UseCase127' has cardinality 0..*.
+An association connects 'behavioral_elements_use_cases_ExtensionPoint' and 'Extend'. From 'behavioral_elements_use_cases_ExtensionPoint', the role 'Extend130' has cardinality 0..*, and from 'Extend', the role 'use_cases131' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_StateMachine' and 'ModelElement'. From 'behavioral_elements_state_machines_StateMachine', the role 'ModelElement' has cardinality 0..*, and from 'ModelElement', the role 'foundation.ecorecore133' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_StateMachine' and 'State'. From 'behavioral_elements_state_machines_StateMachine', the role 'State' has cardinality 0..*, and from 'State', the role 'state_machines135' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_StateMachine' and 'Transition'. From 'behavioral_elements_state_machines_StateMachine', the role 'Transition137' has cardinality 0..*, and from 'Transition', the role 'state_machines138' has cardinality 0..*.
+An association connects 'SubmachineState' and 'behavioral_elements_state_machines_StateMachine'. From 'SubmachineState', the role 'state_machines140' has cardinality 0..*, and from 'behavioral_elements_state_machines_StateMachine', the role 'SubmachineState' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_Event' and 'Parameter'. From 'behavioral_elements_state_machines_Event', the role 'behavioral_elements_state_machines_Event' has cardinality 0..*, and from 'Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'Transition' and 'behavioral_elements_state_machines_Event'. From 'Transition', the role 'state_machines144' has cardinality 0..*, and from 'behavioral_elements_state_machines_Event', the role 'Transition143' has cardinality 0..*.
+An association connects 'CompositeState' and 'behavioral_elements_state_machines_StateVertex'. From 'CompositeState', the role 'state_machines146' has cardinality 0..*, and from 'behavioral_elements_state_machines_StateVertex', the role 'CompositeState' has cardinality 0..*.
+An association connects 'Transition' and 'behavioral_elements_state_machines_StateVertex'. From 'Transition', the role 'state_machines149' has cardinality 0..*, and from 'behavioral_elements_state_machines_StateVertex', the role 'Transition148' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_StateVertex' and 'Transition'. From 'behavioral_elements_state_machines_StateVertex', the role 'Transition151' has cardinality 0..*, and from 'Transition', the role 'state_machines152' has cardinality 0..*.
+An association connects 'Action' and 'behavioral_elements_state_machines_State'. From 'Action', the role 'Action154' has cardinality 0..*, and from 'behavioral_elements_state_machines_State', the role 'behavioral_elements_state_machines_State' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_State' and 'Action'. From 'behavioral_elements_state_machines_State', the role 'behavioral_elements_state_machines_State156' has cardinality 0..*, and from 'Action', the role 'Action157' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_State' and 'StateMachine'. From 'behavioral_elements_state_machines_State', the role 'StateMachine' has cardinality 0..*, and from 'StateMachine', the role 'state_machines159' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_State' and 'Event'. From 'behavioral_elements_state_machines_State', the role 'behavioral_elements_state_machines_State161' has cardinality 0..*, and from 'Event', the role 'Event' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_State' and 'Transition'. From 'behavioral_elements_state_machines_State', the role 'Transition163' has cardinality 0..*, and from 'Transition', the role 'state_machines164' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_State' and 'Action'. From 'behavioral_elements_state_machines_State', the role 'behavioral_elements_state_machines_State166' has cardinality 0..*, and from 'Action', the role 'Action167' has cardinality 0..*.
+An association connects 'TimeExpression' and 'behavioral_elements_state_machines_TimeEvent'. From 'TimeExpression', the role 'TimeExpression' has cardinality 0..*, and from 'behavioral_elements_state_machines_TimeEvent', the role 'behavioral_elements_state_machines_TimeEvent' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_CallEvent' and 'Operation'. From 'behavioral_elements_state_machines_CallEvent', the role 'Operation170' has cardinality 0..*, and from 'Operation', the role 'foundation.ecorecore171' has cardinality 0..*.
+An association connects 'Signal' and 'behavioral_elements_state_machines_SignalEvent'. From 'Signal', the role 'common_behavior174' has cardinality 0..*, and from 'behavioral_elements_state_machines_SignalEvent', the role 'Signal173' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_Transition' and 'Guard'. From 'behavioral_elements_state_machines_Transition', the role 'Guard' has cardinality 0..*, and from 'Guard', the role 'state_machines176' has cardinality 0..*.
+An association connects 'Action' and 'behavioral_elements_state_machines_Transition'. From 'Action', the role 'common_behavior179' has cardinality 0..*, and from 'behavioral_elements_state_machines_Transition', the role 'Action178' has cardinality 0..*.
+An association connects 'State' and 'behavioral_elements_state_machines_Transition'. From 'State', the role 'state_machines182' has cardinality 0..*, and from 'behavioral_elements_state_machines_Transition', the role 'State181' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_Transition' and 'Event'. From 'behavioral_elements_state_machines_Transition', the role 'Event184' has cardinality 0..*, and from 'Event', the role 'state_machines185' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_Transition' and 'StateMachine'. From 'behavioral_elements_state_machines_Transition', the role 'StateMachine187' has cardinality 0..*, and from 'StateMachine', the role 'state_machines188' has cardinality 0..*.
+An association connects 'StateVertex' and 'behavioral_elements_state_machines_Transition'. From 'StateVertex', the role 'state_machines190' has cardinality 0..*, and from 'behavioral_elements_state_machines_Transition', the role 'StateVertex' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_Transition' and 'StateVertex'. From 'behavioral_elements_state_machines_Transition', the role 'StateVertex192' has cardinality 0..*, and from 'StateVertex', the role 'state_machines193' has cardinality 0..*.
+An association connects 'StateVertex' and 'behavioral_elements_state_machines_CompositeState'. From 'StateVertex', the role 'state_machines196' has cardinality 0..*, and from 'behavioral_elements_state_machines_CompositeState', the role 'StateVertex195' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_ChangeEvent' and 'BooleanExpression'. From 'behavioral_elements_state_machines_ChangeEvent', the role 'behavioral_elements_state_machines_ChangeEvent' has cardinality 0..*, and from 'BooleanExpression', the role 'BooleanExpression198' has cardinality 0..*.
+An association connects 'BooleanExpression' and 'behavioral_elements_state_machines_Guard'. From 'BooleanExpression', the role 'BooleanExpression200' has cardinality 0..*, and from 'behavioral_elements_state_machines_Guard', the role 'behavioral_elements_state_machines_Guard' has cardinality 0..*.
+An association connects 'Transition' and 'behavioral_elements_state_machines_Guard'. From 'Transition', the role 'state_machines203' has cardinality 0..*, and from 'behavioral_elements_state_machines_Guard', the role 'Transition202' has cardinality 0..*.
+An association connects 'behavioral_elements_state_machines_SubmachineState' and 'StateMachine'. From 'behavioral_elements_state_machines_SubmachineState', the role 'StateMachine205' has cardinality 0..*, and from 'StateMachine', the role 'state_machines206' has cardinality 0..*.
+An association connects 'Interaction' and 'behavioral_elements_collaborations_Collaboration'. From 'Interaction', the role 'collaborations208' has cardinality 0..*, and from 'behavioral_elements_collaborations_Collaboration', the role 'Interaction' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_Collaboration' and 'Operation'. From 'behavioral_elements_collaborations_Collaboration', the role 'Operation210' has cardinality 0..*, and from 'Operation', the role 'foundation.ecorecore211' has cardinality 0..*.
+An association connects 'ModelElement' and 'behavioral_elements_collaborations_Collaboration'. From 'ModelElement', the role 'ModelElement213' has cardinality 0..*, and from 'behavioral_elements_collaborations_Collaboration', the role 'behavioral_elements_collaborations_Collaboration' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_Collaboration' and 'CollaborationInstanceSet'. From 'behavioral_elements_collaborations_Collaboration', the role 'CollaborationInstanceSet' has cardinality 0..*, and from 'CollaborationInstanceSet', the role 'collaborations215' has cardinality 0..*.
+An association connects 'Collaboration' and 'behavioral_elements_collaborations_Collaboration'. From 'Collaboration', the role 'Collaboration' has cardinality 0..*, and from 'behavioral_elements_collaborations_Collaboration', the role 'behavioral_elements_collaborations_Collaboration217' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_Collaboration' and 'Classifier'. From 'behavioral_elements_collaborations_Collaboration', the role 'Classifier219' has cardinality 0..*, and from 'Classifier', the role 'foundation.ecorecore220' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_ClassifierRole' and 'Multiplicity'. From 'behavioral_elements_collaborations_ClassifierRole', the role 'behavioral_elements_collaborations_ClassifierRole' has cardinality 0..*, and from 'Multiplicity', the role 'Multiplicity' has cardinality 0..*.
+An association connects 'Classifier' and 'behavioral_elements_collaborations_ClassifierRole'. From 'Classifier', the role 'Classifier224' has cardinality 0..*, and from 'behavioral_elements_collaborations_ClassifierRole', the role 'behavioral_elements_collaborations_ClassifierRole223' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_ClassifierRole' and 'Feature'. From 'behavioral_elements_collaborations_ClassifierRole', the role 'behavioral_elements_collaborations_ClassifierRole226' has cardinality 0..*, and from 'Feature', the role 'Feature' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_ClassifierRole' and 'ModelElement'. From 'behavioral_elements_collaborations_ClassifierRole', the role 'behavioral_elements_collaborations_ClassifierRole228' has cardinality 0..*, and from 'ModelElement', the role 'ModelElement229' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_ClassifierRole' and 'Instance'. From 'behavioral_elements_collaborations_ClassifierRole', the role 'behavioral_elements_collaborations_ClassifierRole231' has cardinality 0..*, and from 'Instance', the role 'Instance232' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_AssociationRole' and 'Multiplicity'. From 'behavioral_elements_collaborations_AssociationRole', the role 'behavioral_elements_collaborations_AssociationRole' has cardinality 0..*, and from 'Multiplicity', the role 'Multiplicity234' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_AssociationRole' and 'Association'. From 'behavioral_elements_collaborations_AssociationRole', the role 'behavioral_elements_collaborations_AssociationRole236' has cardinality 0..*, and from 'Association', the role 'Association237' has cardinality 0..*.
+An association connects 'Message' and 'behavioral_elements_collaborations_AssociationRole'. From 'Message', the role 'collaborations240' has cardinality 0..*, and from 'behavioral_elements_collaborations_AssociationRole', the role 'Message239' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_AssociationRole' and 'Link'. From 'behavioral_elements_collaborations_AssociationRole', the role 'behavioral_elements_collaborations_AssociationRole242' has cardinality 0..*, and from 'Link', the role 'Link243' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_AssociationEndRole' and 'Multiplicity'. From 'behavioral_elements_collaborations_AssociationEndRole', the role 'behavioral_elements_collaborations_AssociationEndRole' has cardinality 0..*, and from 'Multiplicity', the role 'Multiplicity245' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_AssociationEndRole' and 'AssociationEnd'. From 'behavioral_elements_collaborations_AssociationEndRole', the role 'behavioral_elements_collaborations_AssociationEndRole247' has cardinality 0..*, and from 'AssociationEnd', the role 'AssociationEnd248' has cardinality 0..*.
+An association connects 'Attribute' and 'behavioral_elements_collaborations_AssociationEndRole'. From 'Attribute', the role 'foundation.ecorecore251' has cardinality 0..*, and from 'behavioral_elements_collaborations_AssociationEndRole', the role 'Attribute250' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_Message' and 'Interaction'. From 'behavioral_elements_collaborations_Message', the role 'Interaction253' has cardinality 0..*, and from 'Interaction', the role 'collaborations254' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_Message' and 'Message'. From 'behavioral_elements_collaborations_Message', the role 'behavioral_elements_collaborations_Message' has cardinality 0..*, and from 'Message', the role 'Message256' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_Message' and 'ClassifierRole'. From 'behavioral_elements_collaborations_Message', the role 'behavioral_elements_collaborations_Message258' has cardinality 0..*, and from 'ClassifierRole', the role 'ClassifierRole' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_Message' and 'ClassifierRole'. From 'behavioral_elements_collaborations_Message', the role 'behavioral_elements_collaborations_Message260' has cardinality 0..*, and from 'ClassifierRole', the role 'ClassifierRole261' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_Message' and 'Message'. From 'behavioral_elements_collaborations_Message', the role 'Message263' has cardinality 0..*, and from 'Message', the role 'collaborations264' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_Message' and 'Message'. From 'behavioral_elements_collaborations_Message', the role 'Message266' has cardinality 0..*, and from 'Message', the role 'collaborations267' has cardinality 0..*.
+An association connects 'AssociationRole' and 'behavioral_elements_collaborations_Message'. From 'AssociationRole', the role 'collaborations269' has cardinality 0..*, and from 'behavioral_elements_collaborations_Message', the role 'AssociationRole' has cardinality 0..*.
+An association connects 'Action' and 'behavioral_elements_collaborations_Message'. From 'Action', the role 'Action272' has cardinality 0..*, and from 'behavioral_elements_collaborations_Message', the role 'behavioral_elements_collaborations_Message271' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_Message' and 'Stimulus'. From 'behavioral_elements_collaborations_Message', the role 'Stimulus274' has cardinality 0..*, and from 'Stimulus', the role 'common_behavior275' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_Interaction' and 'Message'. From 'behavioral_elements_collaborations_Interaction', the role 'Message277' has cardinality 0..*, and from 'Message', the role 'collaborations278' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_Interaction' and 'Collaboration'. From 'behavioral_elements_collaborations_Interaction', the role 'Collaboration280' has cardinality 0..*, and from 'Collaboration', the role 'collaborations281' has cardinality 0..*.
+An association connects 'InteractionInstanceSet' and 'behavioral_elements_collaborations_Interaction'. From 'InteractionInstanceSet', the role 'collaborations284' has cardinality 0..*, and from 'behavioral_elements_collaborations_Interaction', the role 'InteractionInstanceSet283' has cardinality 0..*.
+An association connects 'CollaborationInstanceSet' and 'behavioral_elements_collaborations_InteractionInstanceSet'. From 'CollaborationInstanceSet', the role 'collaborations287' has cardinality 0..*, and from 'behavioral_elements_collaborations_InteractionInstanceSet', the role 'CollaborationInstanceSet286' has cardinality 0..*.
+An association connects 'Interaction' and 'behavioral_elements_collaborations_InteractionInstanceSet'. From 'Interaction', the role 'collaborations290' has cardinality 0..*, and from 'behavioral_elements_collaborations_InteractionInstanceSet', the role 'Interaction289' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_InteractionInstanceSet' and 'Stimulus'. From 'behavioral_elements_collaborations_InteractionInstanceSet', the role 'Stimulus292' has cardinality 0..*, and from 'Stimulus', the role 'common_behavior293' has cardinality 0..*.
+An association connects 'InteractionInstanceSet' and 'behavioral_elements_collaborations_CollaborationInstanceSet'. From 'InteractionInstanceSet', the role 'collaborations296' has cardinality 0..*, and from 'behavioral_elements_collaborations_CollaborationInstanceSet', the role 'InteractionInstanceSet295' has cardinality 0..*.
+An association connects 'behavioral_elements_collaborations_CollaborationInstanceSet' and 'Collaboration'. From 'behavioral_elements_collaborations_CollaborationInstanceSet', the role 'Collaboration298' has cardinality 0..*, and from 'Collaboration', the role 'collaborations299' has cardinality 0..*.
+An association connects 'Instance' and 'behavioral_elements_collaborations_CollaborationInstanceSet'. From 'Instance', the role 'Instance301' has cardinality 0..*, and from 'behavioral_elements_collaborations_CollaborationInstanceSet', the role 'behavioral_elements_collaborations_CollaborationInstanceSet' has cardinality 0..*.
+An association connects 'Link' and 'behavioral_elements_collaborations_CollaborationInstanceSet'. From 'Link', the role 'Link304' has cardinality 0..*, and from 'behavioral_elements_collaborations_CollaborationInstanceSet', the role 'behavioral_elements_collaborations_CollaborationInstanceSet303' has cardinality 0..*.
+An association connects 'ModelElement' and 'behavioral_elements_collaborations_CollaborationInstanceSet'. From 'ModelElement', the role 'ModelElement307' has cardinality 0..*, and from 'behavioral_elements_collaborations_CollaborationInstanceSet', the role 'behavioral_elements_collaborations_CollaborationInstanceSet306' has cardinality 0..*.
+An association connects 'Partition' and 'behavioral_elements_activity_graphs_ActivityGraph'. From 'Partition', the role 'activity_graphs' has cardinality 0..*, and from 'behavioral_elements_activity_graphs_ActivityGraph', the role 'Partition' has cardinality 0..*.
+An association connects 'behavioral_elements_activity_graphs_Partition' and 'ModelElement'. From 'behavioral_elements_activity_graphs_Partition', the role 'behavioral_elements_activity_graphs_Partition' has cardinality 0..*, and from 'ModelElement', the role 'ModelElement310' has cardinality 0..*.
+An association connects 'ActivityGraph' and 'behavioral_elements_activity_graphs_Partition'. From 'ActivityGraph', the role 'activity_graphs312' has cardinality 0..*, and from 'behavioral_elements_activity_graphs_Partition', the role 'ActivityGraph' has cardinality 0..*.
+An association connects 'ArgListsExpression' and 'behavioral_elements_activity_graphs_SubactivityState'. From 'ArgListsExpression', the role 'ArgListsExpression' has cardinality 0..*, and from 'behavioral_elements_activity_graphs_SubactivityState', the role 'behavioral_elements_activity_graphs_SubactivityState' has cardinality 0..*.
+An association connects 'Multiplicity' and 'behavioral_elements_activity_graphs_SubactivityState'. From 'Multiplicity', the role 'Multiplicity316' has cardinality 0..*, and from 'behavioral_elements_activity_graphs_SubactivityState', the role 'behavioral_elements_activity_graphs_SubactivityState315' has cardinality 0..*.
+An association connects 'behavioral_elements_activity_graphs_ActionState' and 'ArgListsExpression'. From 'behavioral_elements_activity_graphs_ActionState', the role 'behavioral_elements_activity_graphs_ActionState' has cardinality 0..*, and from 'ArgListsExpression', the role 'ArgListsExpression318' has cardinality 0..*.
+An association connects 'Multiplicity' and 'behavioral_elements_activity_graphs_ActionState'. From 'Multiplicity', the role 'Multiplicity321' has cardinality 0..*, and from 'behavioral_elements_activity_graphs_ActionState', the role 'behavioral_elements_activity_graphs_ActionState320' has cardinality 0..*.
+An association connects 'Parameter' and 'behavioral_elements_activity_graphs_ObjectFlowState'. From 'Parameter', the role 'Parameter323' has cardinality 0..*, and from 'behavioral_elements_activity_graphs_ObjectFlowState', the role 'behavioral_elements_activity_graphs_ObjectFlowState' has cardinality 0..*.
+An association connects 'behavioral_elements_activity_graphs_ObjectFlowState' and 'Classifier'. From 'behavioral_elements_activity_graphs_ObjectFlowState', the role 'behavioral_elements_activity_graphs_ObjectFlowState325' has cardinality 0..*, and from 'Classifier', the role 'Classifier326' has cardinality 0..*.
+An association connects 'behavioral_elements_activity_graphs_ClassifierInState' and 'Classifier'. From 'behavioral_elements_activity_graphs_ClassifierInState', the role 'behavioral_elements_activity_graphs_ClassifierInState' has cardinality 0..*, and from 'Classifier', the role 'Classifier328' has cardinality 0..*.
+An association connects 'behavioral_elements_activity_graphs_ClassifierInState' and 'State'. From 'behavioral_elements_activity_graphs_ClassifierInState', the role 'behavioral_elements_activity_graphs_ClassifierInState330' has cardinality 0..*, and from 'State', the role 'State331' has cardinality 0..*.

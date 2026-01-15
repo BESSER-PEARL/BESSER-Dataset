@@ -1,0 +1,104 @@
+The domain model 'modeldraw' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'modeldraw_Level' represents an important domain concept.
+It does not declare any attributes.
+
+'modeldraw_NamedItem' represents an important domain concept.
+It does not declare any attributes.
+
+'modeldraw_MutatorDraw' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'metamodel', which is of type str.
+
+'modeldraw_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'modeldraw_Node' represents an important domain concept.
+It has the following attributes: 'shape', which is of type str; 'style', which is of type str; 'type', which is of type str; 'color', which is of type str.
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+'modeldraw_Content' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'NamedItem' represents an important domain concept.
+It does not declare any attributes.
+
+'modeldraw_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'modeldraw_Item' represents an important domain concept.
+It does not declare any attributes.
+
+'modeldraw_Relation' represents an important domain concept.
+It has the following attributes: 'src_decoration', which is of type str; 'tar_decoration', which is of type str.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'modeldraw_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'modeldraw_Information' represents an important domain concept.
+It does not declare any attributes.
+
+'modeldraw_Enumerator' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'modeldraw_EEnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'modeldraw_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'modeldraw_NodeEnumerator' represents an important domain concept.
+It does not declare any attributes.
+
+'modeldraw_BooleanAttribute' represents an important domain concept.
+It has one attribute: 'negation', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'NodeType' defines the following possible values: 'markednode', 'node'.
+The enumeration 'NodeColor' defines a single possible value: 'gray95'.
+The enumeration 'NodeShape' defines the following possible values: 'doublecircle', 'circle', 'record'.
+The enumeration 'Decoration' defines the following possible values: 'triangle', 'empty', 'none', 'diamond', 'odiamond', 'open'.
+The enumeration 'DrawType' defines a single possible value: 'diagram'.
+The enumeration 'NodeStyle' defines the following possible values: 'none', 'underline', 'italic'.
+
+The model also captures inheritance relationships between classes.
+The class 'modeldraw_MutatorDraw' is a specialization of 'Item'.
+The class 'modeldraw_NamedItem' is a specialization of 'Item'.
+The class 'modeldraw_BooleanAttribute' is a specialization of 'Item'.
+The class 'modeldraw_Node' is a specialization of 'NamedItem'.
+The class 'modeldraw_Relation' is a specialization of 'NamedItem'.
+The class 'modeldraw_Edge' is a specialization of 'Relation'.
+The class 'modeldraw_Level' is a specialization of 'Relation'.
+The class 'modeldraw_NodeEnumerator' is a specialization of 'Item'.
+The class 'modeldraw_Information' is a specialization of 'Item'.
+The class 'modeldraw_Content' is a specialization of 'NamedItem'.
+
+Relationships between classes are modeled using associations.
+An association connects 'modeldraw_Item' and 'modeldraw_EClass'. From 'modeldraw_Item', the role 'modeldraw_Item' has cardinality 0..*, and from 'modeldraw_EClass', the role 'modeldraw_EClass' has cardinality 0..*.
+An association connects 'modeldraw_Node' and 'modeldraw_MutatorDraw'. From 'modeldraw_Node', the role 'modeldraw_Node' has cardinality 0..*, and from 'modeldraw_MutatorDraw', the role 'modeldraw_MutatorDraw' has cardinality 0..*.
+An association connects 'modeldraw_Relation' and 'modeldraw_MutatorDraw'. From 'modeldraw_Relation', the role 'modeldraw_Relation' has cardinality 0..*, and from 'modeldraw_MutatorDraw', the role 'modeldraw_MutatorDraw3' has cardinality 0..*.
+An association connects 'modeldraw_Content' and 'modeldraw_MutatorDraw'. From 'modeldraw_Content', the role 'modeldraw_Content' has cardinality 0..*, and from 'modeldraw_MutatorDraw', the role 'modeldraw_MutatorDraw5' has cardinality 0..*.
+An association connects 'modeldraw_EAttribute' and 'modeldraw_NamedItem'. From 'modeldraw_EAttribute', the role 'modeldraw_EAttribute' has cardinality 0..*, and from 'modeldraw_NamedItem', the role 'modeldraw_NamedItem' has cardinality 0..*.
+An association connects 'modeldraw_BooleanAttribute' and 'modeldraw_EAttribute'. From 'modeldraw_BooleanAttribute', the role 'modeldraw_BooleanAttribute' has cardinality 0..*, and from 'modeldraw_EAttribute', the role 'modeldraw_EAttribute8' has cardinality 0..*.
+An association connects 'modeldraw_Node' and 'modeldraw_BooleanAttribute'. From 'modeldraw_Node', the role 'modeldraw_Node10' has cardinality 0..*, and from 'modeldraw_BooleanAttribute', the role 'modeldraw_BooleanAttribute11' has cardinality 0..*.
+An association connects 'modeldraw_EReference' and 'modeldraw_Node'. From 'modeldraw_EReference', the role 'modeldraw_EReference' has cardinality 0..*, and from 'modeldraw_Node', the role 'modeldraw_Node13' has cardinality 0..*.
+An association connects 'modeldraw_EReference' and 'modeldraw_Relation'. From 'modeldraw_EReference', the role 'modeldraw_EReference16' has cardinality 0..*, and from 'modeldraw_Relation', the role 'modeldraw_Relation15' has cardinality 0..*.
+An association connects 'modeldraw_EAttribute' and 'modeldraw_Relation'. From 'modeldraw_EAttribute', the role 'modeldraw_EAttribute19' has cardinality 0..*, and from 'modeldraw_Relation', the role 'modeldraw_Relation18' has cardinality 0..*.
+An association connects 'modeldraw_EAttribute' and 'modeldraw_Relation'. From 'modeldraw_EAttribute', the role 'modeldraw_EAttribute22' has cardinality 0..*, and from 'modeldraw_Relation', the role 'modeldraw_Relation21' has cardinality 0..*.
+An association connects 'modeldraw_EAttribute' and 'modeldraw_Relation'. From 'modeldraw_EAttribute', the role 'modeldraw_EAttribute25' has cardinality 0..*, and from 'modeldraw_Relation', the role 'modeldraw_Relation24' has cardinality 0..*.
+An association connects 'modeldraw_Edge' and 'modeldraw_EReference'. From 'modeldraw_Edge', the role 'modeldraw_Edge' has cardinality 0..*, and from 'modeldraw_EReference', the role 'modeldraw_EReference27' has cardinality 0..*.
+An association connects 'modeldraw_EReference' and 'modeldraw_Edge'. From 'modeldraw_EReference', the role 'modeldraw_EReference30' has cardinality 0..*, and from 'modeldraw_Edge', the role 'modeldraw_Edge29' has cardinality 0..*.
+An association connects 'modeldraw_Level' and 'modeldraw_EReference'. From 'modeldraw_Level', the role 'modeldraw_Level' has cardinality 0..*, and from 'modeldraw_EReference', the role 'modeldraw_EReference32' has cardinality 0..*.
+An association connects 'modeldraw_NodeEnumerator' and 'modeldraw_EAttribute'. From 'modeldraw_NodeEnumerator', the role 'modeldraw_NodeEnumerator' has cardinality 0..*, and from 'modeldraw_EAttribute', the role 'modeldraw_EAttribute34' has cardinality 0..*.
+An association connects 'modeldraw_NodeEnumerator' and 'modeldraw_Enumerator'. From 'modeldraw_NodeEnumerator', the role 'modeldraw_NodeEnumerator36' has cardinality 0..*, and from 'modeldraw_Enumerator', the role 'modeldraw_Enumerator' has cardinality 0..*.
+An association connects 'modeldraw_EEnumLiteral' and 'modeldraw_Enumerator'. From 'modeldraw_EEnumLiteral', the role 'modeldraw_EEnumLiteral' has cardinality 0..*, and from 'modeldraw_Enumerator', the role 'modeldraw_Enumerator38' has cardinality 0..*.
+An association connects 'modeldraw_EReference' and 'modeldraw_Information'. From 'modeldraw_EReference', the role 'modeldraw_EReference40' has cardinality 0..*, and from 'modeldraw_Information', the role 'modeldraw_Information' has cardinality 0..*.
+An association connects 'modeldraw_Information' and 'modeldraw_EAttribute'. From 'modeldraw_Information', the role 'modeldraw_Information42' has cardinality 0..*, and from 'modeldraw_EAttribute', the role 'modeldraw_EAttribute43' has cardinality 0..*.
+An association connects 'modeldraw_NodeEnumerator' and 'modeldraw_Content'. From 'modeldraw_NodeEnumerator', the role 'modeldraw_NodeEnumerator46' has cardinality 0..*, and from 'modeldraw_Content', the role 'modeldraw_Content45' has cardinality 0..*.
+An association connects 'modeldraw_Content' and 'modeldraw_Information'. From 'modeldraw_Content', the role 'modeldraw_Content48' has cardinality 0..*, and from 'modeldraw_Information', the role 'modeldraw_Information49' has cardinality 0..*.

@@ -1,0 +1,112 @@
+The domain model 'webGui' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'webGui_Divide' represents an important domain concept.
+It does not declare any attributes.
+
+'webGui_DomainPathTail' represents an important domain concept.
+It does not declare any attributes.
+
+'webGui_Page' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'name', which is of type str.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'webGui_Feature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'multivalued', which is of type bool.
+
+'webGui_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'webGui_Multiply' represents an important domain concept.
+It does not declare any attributes.
+
+'webGui_WebModel' represents an important domain concept.
+It does not declare any attributes.
+
+'webGui_Add' represents an important domain concept.
+It does not declare any attributes.
+
+'webGui_DomainPath' represents an important domain concept.
+It does not declare any attributes.
+
+'webGui_NumberLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'PageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'webGui_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'webGui_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'webGui_ActionElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'webGui_DisplayElement' represents an important domain concept.
+It does not declare any attributes.
+
+'webGui_DomainModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'webGui_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'webGui_PageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'webGui_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'webGui_Subtract' represents an important domain concept.
+It does not declare any attributes.
+
+'webGui_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'webGui_Entity' is a specialization of 'Type'.
+The class 'webGui_DataType' is a specialization of 'Type'.
+The class 'webGui_ActionElement' is a specialization of 'PageElement'.
+The class 'webGui_DisplayElement' is a specialization of 'PageElement'.
+The class 'webGui_DomainPath' is a specialization of 'Value'.
+The class 'webGui_Value' is a specialization of 'Expression'.
+The class 'webGui_NumberLiteral' is a specialization of 'Value'.
+The class 'webGui_Add' is a specialization of 'Expression'.
+The class 'webGui_Subtract' is a specialization of 'Expression'.
+The class 'webGui_Multiply' is a specialization of 'Expression'.
+The class 'webGui_Divide' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'webGui_DomainModel' and 'webGui_Model'. From 'webGui_DomainModel', the role 'webGui_DomainModel' has cardinality 0..*, and from 'webGui_Model', the role 'webGui_Model' has cardinality 0..*.
+An association connects 'webGui_Model' and 'webGui_WebModel'. From 'webGui_Model', the role 'webGui_Model2' has cardinality 0..*, and from 'webGui_WebModel', the role 'webGui_WebModel' has cardinality 0..*.
+An association connects 'webGui_Type' and 'webGui_DomainModel'. From 'webGui_Type', the role 'webGui_Type' has cardinality 0..*, and from 'webGui_DomainModel', the role 'webGui_DomainModel4' has cardinality 0..*.
+An association connects 'webGui_Feature' and 'webGui_Entity'. From 'webGui_Feature', the role 'webGui_Feature' has cardinality 0..*, and from 'webGui_Entity', the role 'webGui_Entity' has cardinality 0..*.
+An association connects 'webGui_Type' and 'webGui_Feature'. From 'webGui_Type', the role 'webGui_Type8' has cardinality 0..*, and from 'webGui_Feature', the role 'webGui_Feature7' has cardinality 0..*.
+An association connects 'webGui_Feature' and 'webGui_Expression'. From 'webGui_Feature', the role 'webGui_Feature10' has cardinality 0..*, and from 'webGui_Expression', the role 'webGui_Expression' has cardinality 0..*.
+An association connects 'webGui_WebModel' and 'webGui_Page'. From 'webGui_WebModel', the role 'webGui_WebModel12' has cardinality 0..*, and from 'webGui_Page', the role 'webGui_Page' has cardinality 0..*.
+An association connects 'webGui_Entity' and 'webGui_Page'. From 'webGui_Entity', the role 'webGui_Entity15' has cardinality 0..*, and from 'webGui_Page', the role 'webGui_Page14' has cardinality 0..*.
+An association connects 'webGui_Page' and 'webGui_PageElement'. From 'webGui_Page', the role 'webGui_Page17' has cardinality 0..*, and from 'webGui_PageElement', the role 'webGui_PageElement' has cardinality 0..*.
+An association connects 'webGui_DisplayElement' and 'webGui_DomainPath'. From 'webGui_DisplayElement', the role 'webGui_DisplayElement' has cardinality 0..*, and from 'webGui_DomainPath', the role 'webGui_DomainPath' has cardinality 0..*.
+An association connects 'webGui_Feature' and 'webGui_DomainPath'. From 'webGui_Feature', the role 'webGui_Feature21' has cardinality 0..*, and from 'webGui_DomainPath', the role 'webGui_DomainPath20' has cardinality 0..*.
+An association connects 'webGui_DomainPathTail' and 'webGui_DomainPath'. From 'webGui_DomainPathTail', the role 'webGui_DomainPathTail' has cardinality 0..*, and from 'webGui_DomainPath', the role 'webGui_DomainPath23' has cardinality 0..*.
+An association connects 'webGui_Feature' and 'webGui_DomainPathTail'. From 'webGui_Feature', the role 'webGui_Feature26' has cardinality 0..*, and from 'webGui_DomainPathTail', the role 'webGui_DomainPathTail25' has cardinality 0..*.
+An association connects 'webGui_DomainPathTail' and 'webGui_DomainPathTail'. From 'webGui_DomainPathTail', the role 'webGui_DomainPathTail27' has cardinality 0..*, and from 'webGui_DomainPathTail', the role 'webGui_DomainPathTail29' has cardinality 0..*.
+An association connects 'webGui_Add' and 'webGui_Expression'. From 'webGui_Add', the role 'webGui_Add' has cardinality 0..*, and from 'webGui_Expression', the role 'webGui_Expression31' has cardinality 0..*.
+An association connects 'webGui_Add' and 'webGui_Expression'. From 'webGui_Add', the role 'webGui_Add33' has cardinality 0..*, and from 'webGui_Expression', the role 'webGui_Expression34' has cardinality 0..*.
+An association connects 'webGui_Subtract' and 'webGui_Expression'. From 'webGui_Subtract', the role 'webGui_Subtract' has cardinality 0..*, and from 'webGui_Expression', the role 'webGui_Expression36' has cardinality 0..*.
+An association connects 'webGui_Expression' and 'webGui_Subtract'. From 'webGui_Expression', the role 'webGui_Expression39' has cardinality 0..*, and from 'webGui_Subtract', the role 'webGui_Subtract38' has cardinality 0..*.
+An association connects 'webGui_Multiply' and 'webGui_Value'. From 'webGui_Multiply', the role 'webGui_Multiply' has cardinality 0..*, and from 'webGui_Value', the role 'webGui_Value' has cardinality 0..*.
+An association connects 'webGui_Multiply' and 'webGui_Value'. From 'webGui_Multiply', the role 'webGui_Multiply42' has cardinality 0..*, and from 'webGui_Value', the role 'webGui_Value43' has cardinality 0..*.
+An association connects 'webGui_Divide' and 'webGui_Value'. From 'webGui_Divide', the role 'webGui_Divide' has cardinality 0..*, and from 'webGui_Value', the role 'webGui_Value45' has cardinality 0..*.
+An association connects 'webGui_Divide' and 'webGui_Value'. From 'webGui_Divide', the role 'webGui_Divide47' has cardinality 0..*, and from 'webGui_Value', the role 'webGui_Value48' has cardinality 0..*.

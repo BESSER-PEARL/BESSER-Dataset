@@ -1,0 +1,248 @@
+The domain model 'jpdl32' describes the core structural elements and their relationships within the system.
+
+The model defines 32 main class(es).
+
+'jpdl32_SwimlaneType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jpdl32_TimerType' represents an important domain concept.
+It has the following attributes: 'duedate', which is of type str; 'repeat', which is of type str; 'name', which is of type str; 'transition', which is of type str.
+
+'jpdl32_TaskNodeType' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'name', which is of type str; 'description', which is of type str; 'createTasks', which is of type str; 'endTasks', which is of type str; 'async', which is of type str; 'signal', which is of type str.
+
+'jpdl32_MailNodeType' represents an important domain concept.
+It has the following attributes: 'text1', which is of type str; 'subject1', which is of type str; 'template', which is of type str; 'to', which is of type str; 'group', which is of type str; 'description', which is of type str; 'name', which is of type str; 'subject', which is of type str; 'text', which is of type str; 'actors', which is of type str; 'async', which is of type str.
+
+'jpdl32_EventType' represents an important domain concept.
+It has the following attributes: 'actionElements', which is of type str; 'type', which is of type str.
+
+'jpdl32_VariableType' represents an important domain concept.
+It has the following attributes: 'any', which is of type str; 'name', which is of type str; 'access', which is of type str; 'mappedName', which is of type str.
+
+'jpdl32_ScriptType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'acceptPropagatedEvents', which is of type str; 'mixed', which is of type str; 'any', which is of type str.
+
+'jpdl32_ExceptionHandlerType' represents an important domain concept.
+It has the following attributes: 'exceptionClass', which is of type str; 'group', which is of type str.
+
+'jpdl32_ProcessStateType' represents an important domain concept.
+It has the following attributes: 'binding', which is of type str; 'async', which is of type str; 'name', which is of type str; 'description', which is of type str; 'group', which is of type str.
+
+'jpdl32_ForkType' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'group', which is of type str; 'async', which is of type str; 'name', which is of type str.
+
+'jpdl32_TaskType' represents an important domain concept.
+It has the following attributes: 'signalling', which is of type str; 'duedate', which is of type str; 'priority', which is of type str; 'swimlane', which is of type str; 'group', which is of type str; 'name', which is of type str; 'description1', which is of type str; 'blocking', which is of type str; 'notify', which is of type str; 'description', which is of type str.
+
+'jpdl32_ReminderType' represents an important domain concept.
+It has the following attributes: 'duedate', which is of type str; 'repeat', which is of type str.
+
+'jpdl32_StartStateType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str; 'group', which is of type str.
+
+'jpdl32_EndStateType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'group', which is of type str; 'endCompleteProcess', which is of type str; 'description', which is of type str.
+
+'jpdl32_SubProcessType' represents an important domain concept.
+It has the following attributes: 'binding', which is of type str; 'version', which is of type str; 'name', which is of type str.
+
+'jpdl32_ActionType' represents an important domain concept.
+It has the following attributes: 'acceptPropagatedEvents', which is of type str; 'name', which is of type str; 'any', which is of type str; 'expression', which is of type str; 'async', which is of type str; 'mixed', which is of type str; 'class', which is of type str; 'configType', which is of type str; 'refName', which is of type str.
+
+'jpdl32_ConditionType' represents an important domain concept.
+It has the following attributes: 'any', which is of type str; 'expression', which is of type str; 'mixed', which is of type str; 'group', which is of type str.
+
+'jpdl32_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'jpdl32_Delegation' represents an important domain concept.
+It has the following attributes: 'class', which is of type str; 'any', which is of type str; 'mixed', which is of type str; 'configType', which is of type str.
+
+'Delegation' represents an important domain concept.
+It does not declare any attributes.
+
+'jpdl32_TransitionType' represents an important domain concept.
+It has the following attributes: 'to', which is of type str; 'description', which is of type str; 'name', which is of type str; 'group', which is of type str.
+
+'jpdl32_DocumentRoot' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'text', which is of type str; 'recipients', which is of type str; 'to', which is of type str; 'subject', which is of type str; 'template', which is of type str; 'description', which is of type str.
+
+'jpdl32_StateType' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'nodeContentElements', which is of type str; 'name', which is of type str; 'async', which is of type str.
+
+'jpdl32_AssignmentType' represents an important domain concept.
+It has the following attributes: 'pooledActors', which is of type str; 'actorId', which is of type str; 'expression', which is of type str.
+
+'jpdl32_CancelTimerType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jpdl32_JoinType' represents an important domain concept.
+It has the following attributes: 'async', which is of type str; 'description', which is of type str; 'nodeContentElements', which is of type str; 'name', which is of type str.
+
+'jpdl32_MailType' represents an important domain concept.
+It has the following attributes: 'async', which is of type str; 'group', which is of type str; 'name', which is of type str; 'template', which is of type str; 'actors', which is of type str; 'text', which is of type str; 'to', which is of type str; 'subject', which is of type str; 'text1', which is of type str; 'subject1', which is of type str.
+
+'jpdl32_NodeType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str; 'async', which is of type str; 'nodeContentElements', which is of type str.
+
+'jpdl32_ProcessDefinitionType' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'group', which is of type str; 'name', which is of type str.
+
+'jpdl32_DecisionType' represents an important domain concept.
+It has the following attributes: 'expression', which is of type str; 'async', which is of type str; 'name', which is of type str; 'description', which is of type str; 'group', which is of type str.
+
+'jpdl32_CreateTimerType' represents an important domain concept.
+It has the following attributes: 'repeat', which is of type str; 'duedate', which is of type str; 'transition', which is of type str; 'name', which is of type str.
+
+'jpdl32_SuperStateType' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'name', which is of type str; 'description', which is of type str; 'async', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BooleanType' defines the following possible values: 'yes', 'on', 'true', 'false', 'off', 'no'.
+The enumeration 'ConfigType' defines the following possible values: 'configurationProperty', 'constructor', 'field', 'bean'.
+The enumeration 'BindingType' defines the following possible values: 'early', 'late'.
+The enumeration 'SignalType' defines the following possible values: 'firstWait', 'lastWait', 'first', 'never', 'last', 'unsynchronized'.
+The enumeration 'PriorityTypeMember0' defines the following possible values: 'highest', 'normal', 'lowest', 'low', 'high'.
+The enumeration 'TypeTypeMember1' defines the following possible values: 'processEnd', 'taskCreate', 'subprocessEnd', 'subprocessCreated', 'timerCreate', 'nodeEnter', 'afterSignal', 'superstateLeave', 'taskEnd', 'beforeSignal', 'nodeLeave', 'superstateEnter', 'taskStart', 'processStart', 'taskAssign'.
+
+The model also captures inheritance relationships between classes.
+The class 'jpdl32_AssignmentType' is a specialization of 'Delegation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'jpdl32_CreateTimerType' and 'jpdl32_ActionType'. From 'jpdl32_CreateTimerType', the role 'jpdl32_CreateTimerType' has cardinality 0..*, and from 'jpdl32_ActionType', the role 'jpdl32_ActionType' has cardinality 0..*.
+An association connects 'jpdl32_ScriptType' and 'jpdl32_CreateTimerType'. From 'jpdl32_ScriptType', the role 'jpdl32_ScriptType' has cardinality 0..*, and from 'jpdl32_CreateTimerType', the role 'jpdl32_CreateTimerType2' has cardinality 0..*.
+An association connects 'jpdl32_Delegation' and 'jpdl32_DecisionType'. From 'jpdl32_Delegation', the role 'jpdl32_Delegation' has cardinality 0..*, and from 'jpdl32_DecisionType', the role 'jpdl32_DecisionType' has cardinality 0..*.
+An association connects 'jpdl32_DecisionType' and 'jpdl32_EventType'. From 'jpdl32_DecisionType', the role 'jpdl32_DecisionType5' has cardinality 0..*, and from 'jpdl32_EventType', the role 'jpdl32_EventType' has cardinality 0..*.
+An association connects 'jpdl32_DecisionType' and 'jpdl32_ExceptionHandlerType'. From 'jpdl32_DecisionType', the role 'jpdl32_DecisionType7' has cardinality 0..*, and from 'jpdl32_ExceptionHandlerType', the role 'jpdl32_ExceptionHandlerType' has cardinality 0..*.
+An association connects 'jpdl32_DecisionType' and 'jpdl32_TransitionType'. From 'jpdl32_DecisionType', the role 'jpdl32_DecisionType9' has cardinality 0..*, and from 'jpdl32_TransitionType', the role 'jpdl32_TransitionType' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_EStringToStringMapEntry'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot' has cardinality 0..*, and from 'jpdl32_EStringToStringMapEntry', the role 'jpdl32_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_EStringToStringMapEntry'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot12' has cardinality 0..*, and from 'jpdl32_EStringToStringMapEntry', the role 'jpdl32_EStringToStringMapEntry13' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_ActionType'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot15' has cardinality 0..*, and from 'jpdl32_ActionType', the role 'jpdl32_ActionType16' has cardinality 0..*.
+An association connects 'jpdl32_AssignmentType' and 'jpdl32_DocumentRoot'. From 'jpdl32_AssignmentType', the role 'jpdl32_AssignmentType' has cardinality 0..*, and from 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot18' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_CancelTimerType'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot20' has cardinality 0..*, and from 'jpdl32_CancelTimerType', the role 'jpdl32_CancelTimerType' has cardinality 0..*.
+An association connects 'jpdl32_Delegation' and 'jpdl32_DocumentRoot'. From 'jpdl32_Delegation', the role 'jpdl32_Delegation23' has cardinality 0..*, and from 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot22' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_CreateTimerType'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot25' has cardinality 0..*, and from 'jpdl32_CreateTimerType', the role 'jpdl32_CreateTimerType26' has cardinality 0..*.
+An association connects 'jpdl32_DecisionType' and 'jpdl32_DocumentRoot'. From 'jpdl32_DecisionType', the role 'jpdl32_DecisionType29' has cardinality 0..*, and from 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot28' has cardinality 0..*.
+An association connects 'jpdl32_EndStateType' and 'jpdl32_DocumentRoot'. From 'jpdl32_EndStateType', the role 'jpdl32_EndStateType' has cardinality 0..*, and from 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot31' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_EventType'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot33' has cardinality 0..*, and from 'jpdl32_EventType', the role 'jpdl32_EventType34' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_ExceptionHandlerType'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot36' has cardinality 0..*, and from 'jpdl32_ExceptionHandlerType', the role 'jpdl32_ExceptionHandlerType37' has cardinality 0..*.
+An association connects 'jpdl32_ForkType' and 'jpdl32_DocumentRoot'. From 'jpdl32_ForkType', the role 'jpdl32_ForkType' has cardinality 0..*, and from 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot39' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_JoinType'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot41' has cardinality 0..*, and from 'jpdl32_JoinType', the role 'jpdl32_JoinType' has cardinality 0..*.
+An association connects 'jpdl32_MailType' and 'jpdl32_DocumentRoot'. From 'jpdl32_MailType', the role 'jpdl32_MailType' has cardinality 0..*, and from 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot43' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_MailNodeType'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot45' has cardinality 0..*, and from 'jpdl32_MailNodeType', the role 'jpdl32_MailNodeType' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_NodeType'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot47' has cardinality 0..*, and from 'jpdl32_NodeType', the role 'jpdl32_NodeType' has cardinality 0..*.
+An association connects 'jpdl32_ProcessDefinitionType' and 'jpdl32_DocumentRoot'. From 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType' has cardinality 0..*, and from 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot49' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_ProcessStateType'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot51' has cardinality 0..*, and from 'jpdl32_ProcessStateType', the role 'jpdl32_ProcessStateType' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_ScriptType'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot53' has cardinality 0..*, and from 'jpdl32_ScriptType', the role 'jpdl32_ScriptType54' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_StartStateType'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot56' has cardinality 0..*, and from 'jpdl32_StartStateType', the role 'jpdl32_StartStateType' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_StateType'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot58' has cardinality 0..*, and from 'jpdl32_StateType', the role 'jpdl32_StateType' has cardinality 0..*.
+An association connects 'jpdl32_SuperStateType' and 'jpdl32_DocumentRoot'. From 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType' has cardinality 0..*, and from 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot60' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_SwimlaneType'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot62' has cardinality 0..*, and from 'jpdl32_SwimlaneType', the role 'jpdl32_SwimlaneType' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_TaskType'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot64' has cardinality 0..*, and from 'jpdl32_TaskType', the role 'jpdl32_TaskType' has cardinality 0..*.
+An association connects 'jpdl32_TaskNodeType' and 'jpdl32_DocumentRoot'. From 'jpdl32_TaskNodeType', the role 'jpdl32_TaskNodeType' has cardinality 0..*, and from 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot66' has cardinality 0..*.
+An association connects 'jpdl32_TimerType' and 'jpdl32_DocumentRoot'. From 'jpdl32_TimerType', the role 'jpdl32_TimerType' has cardinality 0..*, and from 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot68' has cardinality 0..*.
+An association connects 'jpdl32_TransitionType' and 'jpdl32_DocumentRoot'. From 'jpdl32_TransitionType', the role 'jpdl32_TransitionType71' has cardinality 0..*, and from 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot70' has cardinality 0..*.
+An association connects 'jpdl32_DocumentRoot' and 'jpdl32_VariableType'. From 'jpdl32_DocumentRoot', the role 'jpdl32_DocumentRoot73' has cardinality 0..*, and from 'jpdl32_VariableType', the role 'jpdl32_VariableType' has cardinality 0..*.
+An association connects 'jpdl32_EventType' and 'jpdl32_EndStateType'. From 'jpdl32_EventType', the role 'jpdl32_EventType76' has cardinality 0..*, and from 'jpdl32_EndStateType', the role 'jpdl32_EndStateType75' has cardinality 0..*.
+An association connects 'jpdl32_EndStateType' and 'jpdl32_ExceptionHandlerType'. From 'jpdl32_EndStateType', the role 'jpdl32_EndStateType78' has cardinality 0..*, and from 'jpdl32_ExceptionHandlerType', the role 'jpdl32_ExceptionHandlerType79' has cardinality 0..*.
+An association connects 'jpdl32_ActionType' and 'jpdl32_EventType'. From 'jpdl32_ActionType', the role 'jpdl32_ActionType82' has cardinality 0..*, and from 'jpdl32_EventType', the role 'jpdl32_EventType81' has cardinality 0..*.
+An association connects 'jpdl32_EventType' and 'jpdl32_ScriptType'. From 'jpdl32_EventType', the role 'jpdl32_EventType84' has cardinality 0..*, and from 'jpdl32_ScriptType', the role 'jpdl32_ScriptType85' has cardinality 0..*.
+An association connects 'jpdl32_EventType' and 'jpdl32_CreateTimerType'. From 'jpdl32_EventType', the role 'jpdl32_EventType87' has cardinality 0..*, and from 'jpdl32_CreateTimerType', the role 'jpdl32_CreateTimerType88' has cardinality 0..*.
+An association connects 'jpdl32_CancelTimerType' and 'jpdl32_EventType'. From 'jpdl32_CancelTimerType', the role 'jpdl32_CancelTimerType91' has cardinality 0..*, and from 'jpdl32_EventType', the role 'jpdl32_EventType90' has cardinality 0..*.
+An association connects 'jpdl32_EventType' and 'jpdl32_MailType'. From 'jpdl32_EventType', the role 'jpdl32_EventType93' has cardinality 0..*, and from 'jpdl32_MailType', the role 'jpdl32_MailType94' has cardinality 0..*.
+An association connects 'jpdl32_ActionType' and 'jpdl32_ExceptionHandlerType'. From 'jpdl32_ActionType', the role 'jpdl32_ActionType97' has cardinality 0..*, and from 'jpdl32_ExceptionHandlerType', the role 'jpdl32_ExceptionHandlerType96' has cardinality 0..*.
+An association connects 'jpdl32_ExceptionHandlerType' and 'jpdl32_ScriptType'. From 'jpdl32_ExceptionHandlerType', the role 'jpdl32_ExceptionHandlerType99' has cardinality 0..*, and from 'jpdl32_ScriptType', the role 'jpdl32_ScriptType100' has cardinality 0..*.
+An association connects 'jpdl32_ScriptType' and 'jpdl32_ForkType'. From 'jpdl32_ScriptType', the role 'jpdl32_ScriptType103' has cardinality 0..*, and from 'jpdl32_ForkType', the role 'jpdl32_ForkType102' has cardinality 0..*.
+An association connects 'jpdl32_EventType' and 'jpdl32_ForkType'. From 'jpdl32_EventType', the role 'jpdl32_EventType106' has cardinality 0..*, and from 'jpdl32_ForkType', the role 'jpdl32_ForkType105' has cardinality 0..*.
+An association connects 'jpdl32_ExceptionHandlerType' and 'jpdl32_ForkType'. From 'jpdl32_ExceptionHandlerType', the role 'jpdl32_ExceptionHandlerType109' has cardinality 0..*, and from 'jpdl32_ForkType', the role 'jpdl32_ForkType108' has cardinality 0..*.
+An association connects 'jpdl32_ForkType' and 'jpdl32_TimerType'. From 'jpdl32_ForkType', the role 'jpdl32_ForkType111' has cardinality 0..*, and from 'jpdl32_TimerType', the role 'jpdl32_TimerType112' has cardinality 0..*.
+An association connects 'jpdl32_TransitionType' and 'jpdl32_ForkType'. From 'jpdl32_TransitionType', the role 'jpdl32_TransitionType115' has cardinality 0..*, and from 'jpdl32_ForkType', the role 'jpdl32_ForkType114' has cardinality 0..*.
+An association connects 'jpdl32_EventType' and 'jpdl32_JoinType'. From 'jpdl32_EventType', the role 'jpdl32_EventType118' has cardinality 0..*, and from 'jpdl32_JoinType', the role 'jpdl32_JoinType117' has cardinality 0..*.
+An association connects 'jpdl32_ExceptionHandlerType' and 'jpdl32_JoinType'. From 'jpdl32_ExceptionHandlerType', the role 'jpdl32_ExceptionHandlerType121' has cardinality 0..*, and from 'jpdl32_JoinType', the role 'jpdl32_JoinType120' has cardinality 0..*.
+An association connects 'jpdl32_JoinType' and 'jpdl32_TimerType'. From 'jpdl32_JoinType', the role 'jpdl32_JoinType123' has cardinality 0..*, and from 'jpdl32_TimerType', the role 'jpdl32_TimerType124' has cardinality 0..*.
+An association connects 'jpdl32_JoinType' and 'jpdl32_TransitionType'. From 'jpdl32_JoinType', the role 'jpdl32_JoinType126' has cardinality 0..*, and from 'jpdl32_TransitionType', the role 'jpdl32_TransitionType127' has cardinality 0..*.
+An association connects 'jpdl32_EventType' and 'jpdl32_MailNodeType'. From 'jpdl32_EventType', the role 'jpdl32_EventType130' has cardinality 0..*, and from 'jpdl32_MailNodeType', the role 'jpdl32_MailNodeType129' has cardinality 0..*.
+An association connects 'jpdl32_ExceptionHandlerType' and 'jpdl32_MailNodeType'. From 'jpdl32_ExceptionHandlerType', the role 'jpdl32_ExceptionHandlerType133' has cardinality 0..*, and from 'jpdl32_MailNodeType', the role 'jpdl32_MailNodeType132' has cardinality 0..*.
+An association connects 'jpdl32_TimerType' and 'jpdl32_MailNodeType'. From 'jpdl32_TimerType', the role 'jpdl32_TimerType136' has cardinality 0..*, and from 'jpdl32_MailNodeType', the role 'jpdl32_MailNodeType135' has cardinality 0..*.
+An association connects 'jpdl32_TransitionType' and 'jpdl32_MailNodeType'. From 'jpdl32_TransitionType', the role 'jpdl32_TransitionType139' has cardinality 0..*, and from 'jpdl32_MailNodeType', the role 'jpdl32_MailNodeType138' has cardinality 0..*.
+An association connects 'jpdl32_ActionType' and 'jpdl32_NodeType'. From 'jpdl32_ActionType', the role 'jpdl32_ActionType142' has cardinality 0..*, and from 'jpdl32_NodeType', the role 'jpdl32_NodeType141' has cardinality 0..*.
+An association connects 'jpdl32_ScriptType' and 'jpdl32_NodeType'. From 'jpdl32_ScriptType', the role 'jpdl32_ScriptType145' has cardinality 0..*, and from 'jpdl32_NodeType', the role 'jpdl32_NodeType144' has cardinality 0..*.
+An association connects 'jpdl32_CreateTimerType' and 'jpdl32_NodeType'. From 'jpdl32_CreateTimerType', the role 'jpdl32_CreateTimerType148' has cardinality 0..*, and from 'jpdl32_NodeType', the role 'jpdl32_NodeType147' has cardinality 0..*.
+An association connects 'jpdl32_NodeType' and 'jpdl32_CancelTimerType'. From 'jpdl32_NodeType', the role 'jpdl32_NodeType150' has cardinality 0..*, and from 'jpdl32_CancelTimerType', the role 'jpdl32_CancelTimerType151' has cardinality 0..*.
+An association connects 'jpdl32_NodeType' and 'jpdl32_MailType'. From 'jpdl32_NodeType', the role 'jpdl32_NodeType153' has cardinality 0..*, and from 'jpdl32_MailType', the role 'jpdl32_MailType154' has cardinality 0..*.
+An association connects 'jpdl32_NodeType' and 'jpdl32_EventType'. From 'jpdl32_NodeType', the role 'jpdl32_NodeType156' has cardinality 0..*, and from 'jpdl32_EventType', the role 'jpdl32_EventType157' has cardinality 0..*.
+An association connects 'jpdl32_ExceptionHandlerType' and 'jpdl32_NodeType'. From 'jpdl32_ExceptionHandlerType', the role 'jpdl32_ExceptionHandlerType160' has cardinality 0..*, and from 'jpdl32_NodeType', the role 'jpdl32_NodeType159' has cardinality 0..*.
+An association connects 'jpdl32_NodeType' and 'jpdl32_TimerType'. From 'jpdl32_NodeType', the role 'jpdl32_NodeType162' has cardinality 0..*, and from 'jpdl32_TimerType', the role 'jpdl32_TimerType163' has cardinality 0..*.
+An association connects 'jpdl32_NodeType' and 'jpdl32_TransitionType'. From 'jpdl32_NodeType', the role 'jpdl32_NodeType165' has cardinality 0..*, and from 'jpdl32_TransitionType', the role 'jpdl32_TransitionType166' has cardinality 0..*.
+An association connects 'jpdl32_SwimlaneType' and 'jpdl32_ProcessDefinitionType'. From 'jpdl32_SwimlaneType', the role 'jpdl32_SwimlaneType169' has cardinality 0..*, and from 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType168' has cardinality 0..*.
+An association connects 'jpdl32_StartStateType' and 'jpdl32_ProcessDefinitionType'. From 'jpdl32_StartStateType', the role 'jpdl32_StartStateType172' has cardinality 0..*, and from 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType171' has cardinality 0..*.
+An association connects 'jpdl32_ProcessDefinitionType' and 'jpdl32_NodeType'. From 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType174' has cardinality 0..*, and from 'jpdl32_NodeType', the role 'jpdl32_NodeType175' has cardinality 0..*.
+An association connects 'jpdl32_ProcessDefinitionType' and 'jpdl32_StateType'. From 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType177' has cardinality 0..*, and from 'jpdl32_StateType', the role 'jpdl32_StateType178' has cardinality 0..*.
+An association connects 'jpdl32_ProcessDefinitionType' and 'jpdl32_TaskNodeType'. From 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType180' has cardinality 0..*, and from 'jpdl32_TaskNodeType', the role 'jpdl32_TaskNodeType181' has cardinality 0..*.
+An association connects 'jpdl32_SuperStateType' and 'jpdl32_ProcessDefinitionType'. From 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType184' has cardinality 0..*, and from 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType183' has cardinality 0..*.
+An association connects 'jpdl32_ProcessDefinitionType' and 'jpdl32_ProcessStateType'. From 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType186' has cardinality 0..*, and from 'jpdl32_ProcessStateType', the role 'jpdl32_ProcessStateType187' has cardinality 0..*.
+An association connects 'jpdl32_ProcessDefinitionType' and 'jpdl32_ForkType'. From 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType189' has cardinality 0..*, and from 'jpdl32_ForkType', the role 'jpdl32_ForkType190' has cardinality 0..*.
+An association connects 'jpdl32_JoinType' and 'jpdl32_ProcessDefinitionType'. From 'jpdl32_JoinType', the role 'jpdl32_JoinType193' has cardinality 0..*, and from 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType192' has cardinality 0..*.
+An association connects 'jpdl32_ProcessDefinitionType' and 'jpdl32_DecisionType'. From 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType195' has cardinality 0..*, and from 'jpdl32_DecisionType', the role 'jpdl32_DecisionType196' has cardinality 0..*.
+An association connects 'jpdl32_ProcessDefinitionType' and 'jpdl32_EndStateType'. From 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType198' has cardinality 0..*, and from 'jpdl32_EndStateType', the role 'jpdl32_EndStateType199' has cardinality 0..*.
+An association connects 'jpdl32_ProcessDefinitionType' and 'jpdl32_MailNodeType'. From 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType201' has cardinality 0..*, and from 'jpdl32_MailNodeType', the role 'jpdl32_MailNodeType202' has cardinality 0..*.
+An association connects 'jpdl32_ActionType' and 'jpdl32_ProcessDefinitionType'. From 'jpdl32_ActionType', the role 'jpdl32_ActionType205' has cardinality 0..*, and from 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType204' has cardinality 0..*.
+An association connects 'jpdl32_ScriptType' and 'jpdl32_ProcessDefinitionType'. From 'jpdl32_ScriptType', the role 'jpdl32_ScriptType208' has cardinality 0..*, and from 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType207' has cardinality 0..*.
+An association connects 'jpdl32_ProcessDefinitionType' and 'jpdl32_CreateTimerType'. From 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType210' has cardinality 0..*, and from 'jpdl32_CreateTimerType', the role 'jpdl32_CreateTimerType211' has cardinality 0..*.
+An association connects 'jpdl32_CancelTimerType' and 'jpdl32_ProcessDefinitionType'. From 'jpdl32_CancelTimerType', the role 'jpdl32_CancelTimerType214' has cardinality 0..*, and from 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType213' has cardinality 0..*.
+An association connects 'jpdl32_MailType' and 'jpdl32_ProcessDefinitionType'. From 'jpdl32_MailType', the role 'jpdl32_MailType217' has cardinality 0..*, and from 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType216' has cardinality 0..*.
+An association connects 'jpdl32_EventType' and 'jpdl32_ProcessDefinitionType'. From 'jpdl32_EventType', the role 'jpdl32_EventType220' has cardinality 0..*, and from 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType219' has cardinality 0..*.
+An association connects 'jpdl32_ProcessDefinitionType' and 'jpdl32_ExceptionHandlerType'. From 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType222' has cardinality 0..*, and from 'jpdl32_ExceptionHandlerType', the role 'jpdl32_ExceptionHandlerType223' has cardinality 0..*.
+An association connects 'jpdl32_TaskType' and 'jpdl32_ProcessDefinitionType'. From 'jpdl32_TaskType', the role 'jpdl32_TaskType226' has cardinality 0..*, and from 'jpdl32_ProcessDefinitionType', the role 'jpdl32_ProcessDefinitionType225' has cardinality 0..*.
+An association connects 'jpdl32_ProcessStateType' and 'jpdl32_SubProcessType'. From 'jpdl32_ProcessStateType', the role 'jpdl32_ProcessStateType228' has cardinality 0..*, and from 'jpdl32_SubProcessType', the role 'jpdl32_SubProcessType' has cardinality 0..*.
+An association connects 'jpdl32_ProcessStateType' and 'jpdl32_VariableType'. From 'jpdl32_ProcessStateType', the role 'jpdl32_ProcessStateType230' has cardinality 0..*, and from 'jpdl32_VariableType', the role 'jpdl32_VariableType231' has cardinality 0..*.
+An association connects 'jpdl32_ProcessStateType' and 'jpdl32_EventType'. From 'jpdl32_ProcessStateType', the role 'jpdl32_ProcessStateType233' has cardinality 0..*, and from 'jpdl32_EventType', the role 'jpdl32_EventType234' has cardinality 0..*.
+An association connects 'jpdl32_ProcessStateType' and 'jpdl32_ExceptionHandlerType'. From 'jpdl32_ProcessStateType', the role 'jpdl32_ProcessStateType236' has cardinality 0..*, and from 'jpdl32_ExceptionHandlerType', the role 'jpdl32_ExceptionHandlerType237' has cardinality 0..*.
+An association connects 'jpdl32_ProcessStateType' and 'jpdl32_TimerType'. From 'jpdl32_ProcessStateType', the role 'jpdl32_ProcessStateType239' has cardinality 0..*, and from 'jpdl32_TimerType', the role 'jpdl32_TimerType240' has cardinality 0..*.
+An association connects 'jpdl32_ProcessStateType' and 'jpdl32_TransitionType'. From 'jpdl32_ProcessStateType', the role 'jpdl32_ProcessStateType242' has cardinality 0..*, and from 'jpdl32_TransitionType', the role 'jpdl32_TransitionType243' has cardinality 0..*.
+An association connects 'jpdl32_TaskType' and 'jpdl32_StartStateType'. From 'jpdl32_TaskType', the role 'jpdl32_TaskType246' has cardinality 0..*, and from 'jpdl32_StartStateType', the role 'jpdl32_StartStateType245' has cardinality 0..*.
+An association connects 'jpdl32_TransitionType' and 'jpdl32_StartStateType'. From 'jpdl32_TransitionType', the role 'jpdl32_TransitionType249' has cardinality 0..*, and from 'jpdl32_StartStateType', the role 'jpdl32_StartStateType248' has cardinality 0..*.
+An association connects 'jpdl32_EventType' and 'jpdl32_StartStateType'. From 'jpdl32_EventType', the role 'jpdl32_EventType252' has cardinality 0..*, and from 'jpdl32_StartStateType', the role 'jpdl32_StartStateType251' has cardinality 0..*.
+An association connects 'jpdl32_StartStateType' and 'jpdl32_ExceptionHandlerType'. From 'jpdl32_StartStateType', the role 'jpdl32_StartStateType254' has cardinality 0..*, and from 'jpdl32_ExceptionHandlerType', the role 'jpdl32_ExceptionHandlerType255' has cardinality 0..*.
+An association connects 'jpdl32_StateType' and 'jpdl32_EventType'. From 'jpdl32_StateType', the role 'jpdl32_StateType257' has cardinality 0..*, and from 'jpdl32_EventType', the role 'jpdl32_EventType258' has cardinality 0..*.
+An association connects 'jpdl32_StateType' and 'jpdl32_ExceptionHandlerType'. From 'jpdl32_StateType', the role 'jpdl32_StateType260' has cardinality 0..*, and from 'jpdl32_ExceptionHandlerType', the role 'jpdl32_ExceptionHandlerType261' has cardinality 0..*.
+An association connects 'jpdl32_StateType' and 'jpdl32_TimerType'. From 'jpdl32_StateType', the role 'jpdl32_StateType263' has cardinality 0..*, and from 'jpdl32_TimerType', the role 'jpdl32_TimerType264' has cardinality 0..*.
+An association connects 'jpdl32_TransitionType' and 'jpdl32_StateType'. From 'jpdl32_TransitionType', the role 'jpdl32_TransitionType267' has cardinality 0..*, and from 'jpdl32_StateType', the role 'jpdl32_StateType266' has cardinality 0..*.
+An association connects 'jpdl32_SuperStateType' and 'jpdl32_NodeType'. From 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType269' has cardinality 0..*, and from 'jpdl32_NodeType', the role 'jpdl32_NodeType270' has cardinality 0..*.
+An association connects 'jpdl32_StateType' and 'jpdl32_SuperStateType'. From 'jpdl32_StateType', the role 'jpdl32_StateType273' has cardinality 0..*, and from 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType272' has cardinality 0..*.
+An association connects 'jpdl32_SuperStateType' and 'jpdl32_TaskNodeType'. From 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType275' has cardinality 0..*, and from 'jpdl32_TaskNodeType', the role 'jpdl32_TaskNodeType276' has cardinality 0..*.
+An association connects 'jpdl32_SuperStateType' and 'jpdl32_SuperStateType'. From 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType279' has cardinality 0..*, and from 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType277' has cardinality 0..*.
+An association connects 'jpdl32_ProcessStateType' and 'jpdl32_SuperStateType'. From 'jpdl32_ProcessStateType', the role 'jpdl32_ProcessStateType282' has cardinality 0..*, and from 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType281' has cardinality 0..*.
+An association connects 'jpdl32_ForkType' and 'jpdl32_SuperStateType'. From 'jpdl32_ForkType', the role 'jpdl32_ForkType285' has cardinality 0..*, and from 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType284' has cardinality 0..*.
+An association connects 'jpdl32_SuperStateType' and 'jpdl32_JoinType'. From 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType287' has cardinality 0..*, and from 'jpdl32_JoinType', the role 'jpdl32_JoinType288' has cardinality 0..*.
+An association connects 'jpdl32_SuperStateType' and 'jpdl32_DecisionType'. From 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType290' has cardinality 0..*, and from 'jpdl32_DecisionType', the role 'jpdl32_DecisionType291' has cardinality 0..*.
+An association connects 'jpdl32_EndStateType' and 'jpdl32_SuperStateType'. From 'jpdl32_EndStateType', the role 'jpdl32_EndStateType294' has cardinality 0..*, and from 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType293' has cardinality 0..*.
+An association connects 'jpdl32_SuperStateType' and 'jpdl32_MailNodeType'. From 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType296' has cardinality 0..*, and from 'jpdl32_MailNodeType', the role 'jpdl32_MailNodeType297' has cardinality 0..*.
+An association connects 'jpdl32_EventType' and 'jpdl32_SuperStateType'. From 'jpdl32_EventType', the role 'jpdl32_EventType300' has cardinality 0..*, and from 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType299' has cardinality 0..*.
+An association connects 'jpdl32_ExceptionHandlerType' and 'jpdl32_SuperStateType'. From 'jpdl32_ExceptionHandlerType', the role 'jpdl32_ExceptionHandlerType303' has cardinality 0..*, and from 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType302' has cardinality 0..*.
+An association connects 'jpdl32_SuperStateType' and 'jpdl32_TimerType'. From 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType305' has cardinality 0..*, and from 'jpdl32_TimerType', the role 'jpdl32_TimerType306' has cardinality 0..*.
+An association connects 'jpdl32_TransitionType' and 'jpdl32_SuperStateType'. From 'jpdl32_TransitionType', the role 'jpdl32_TransitionType309' has cardinality 0..*, and from 'jpdl32_SuperStateType', the role 'jpdl32_SuperStateType308' has cardinality 0..*.
+An association connects 'jpdl32_AssignmentType' and 'jpdl32_SwimlaneType'. From 'jpdl32_AssignmentType', the role 'jpdl32_AssignmentType312' has cardinality 0..*, and from 'jpdl32_SwimlaneType', the role 'jpdl32_SwimlaneType311' has cardinality 0..*.
+An association connects 'jpdl32_TaskType' and 'jpdl32_TaskNodeType'. From 'jpdl32_TaskType', the role 'jpdl32_TaskType315' has cardinality 0..*, and from 'jpdl32_TaskNodeType', the role 'jpdl32_TaskNodeType314' has cardinality 0..*.
+An association connects 'jpdl32_TaskNodeType' and 'jpdl32_EventType'. From 'jpdl32_TaskNodeType', the role 'jpdl32_TaskNodeType317' has cardinality 0..*, and from 'jpdl32_EventType', the role 'jpdl32_EventType318' has cardinality 0..*.
+An association connects 'jpdl32_ExceptionHandlerType' and 'jpdl32_TaskNodeType'. From 'jpdl32_ExceptionHandlerType', the role 'jpdl32_ExceptionHandlerType321' has cardinality 0..*, and from 'jpdl32_TaskNodeType', the role 'jpdl32_TaskNodeType320' has cardinality 0..*.
+An association connects 'jpdl32_TaskNodeType' and 'jpdl32_TimerType'. From 'jpdl32_TaskNodeType', the role 'jpdl32_TaskNodeType323' has cardinality 0..*, and from 'jpdl32_TimerType', the role 'jpdl32_TimerType324' has cardinality 0..*.
+An association connects 'jpdl32_TransitionType' and 'jpdl32_TaskNodeType'. From 'jpdl32_TransitionType', the role 'jpdl32_TransitionType327' has cardinality 0..*, and from 'jpdl32_TaskNodeType', the role 'jpdl32_TaskNodeType326' has cardinality 0..*.
+An association connects 'jpdl32_TaskType' and 'jpdl32_AssignmentType'. From 'jpdl32_TaskType', the role 'jpdl32_TaskType329' has cardinality 0..*, and from 'jpdl32_AssignmentType', the role 'jpdl32_AssignmentType330' has cardinality 0..*.
+An association connects 'jpdl32_Delegation' and 'jpdl32_TaskType'. From 'jpdl32_Delegation', the role 'jpdl32_Delegation333' has cardinality 0..*, and from 'jpdl32_TaskType', the role 'jpdl32_TaskType332' has cardinality 0..*.
+An association connects 'jpdl32_TaskType' and 'jpdl32_EventType'. From 'jpdl32_TaskType', the role 'jpdl32_TaskType335' has cardinality 0..*, and from 'jpdl32_EventType', the role 'jpdl32_EventType336' has cardinality 0..*.
+An association connects 'jpdl32_TimerType' and 'jpdl32_TaskType'. From 'jpdl32_TimerType', the role 'jpdl32_TimerType339' has cardinality 0..*, and from 'jpdl32_TaskType', the role 'jpdl32_TaskType338' has cardinality 0..*.
+An association connects 'jpdl32_TaskType' and 'jpdl32_ReminderType'. From 'jpdl32_TaskType', the role 'jpdl32_TaskType341' has cardinality 0..*, and from 'jpdl32_ReminderType', the role 'jpdl32_ReminderType' has cardinality 0..*.
+An association connects 'jpdl32_ActionType' and 'jpdl32_TimerType'. From 'jpdl32_ActionType', the role 'jpdl32_ActionType344' has cardinality 0..*, and from 'jpdl32_TimerType', the role 'jpdl32_TimerType343' has cardinality 0..*.
+An association connects 'jpdl32_ScriptType' and 'jpdl32_TimerType'. From 'jpdl32_ScriptType', the role 'jpdl32_ScriptType347' has cardinality 0..*, and from 'jpdl32_TimerType', the role 'jpdl32_TimerType346' has cardinality 0..*.
+An association connects 'jpdl32_TimerType' and 'jpdl32_CreateTimerType'. From 'jpdl32_TimerType', the role 'jpdl32_TimerType349' has cardinality 0..*, and from 'jpdl32_CreateTimerType', the role 'jpdl32_CreateTimerType350' has cardinality 0..*.
+An association connects 'jpdl32_TimerType' and 'jpdl32_CancelTimerType'. From 'jpdl32_TimerType', the role 'jpdl32_TimerType352' has cardinality 0..*, and from 'jpdl32_CancelTimerType', the role 'jpdl32_CancelTimerType353' has cardinality 0..*.
+An association connects 'jpdl32_TimerType' and 'jpdl32_MailType'. From 'jpdl32_TimerType', the role 'jpdl32_TimerType355' has cardinality 0..*, and from 'jpdl32_MailType', the role 'jpdl32_MailType356' has cardinality 0..*.
+An association connects 'jpdl32_TransitionType' and 'jpdl32_ConditionType'. From 'jpdl32_TransitionType', the role 'jpdl32_TransitionType358' has cardinality 0..*, and from 'jpdl32_ConditionType', the role 'jpdl32_ConditionType' has cardinality 0..*.
+An association connects 'jpdl32_TransitionType' and 'jpdl32_ActionType'. From 'jpdl32_TransitionType', the role 'jpdl32_TransitionType360' has cardinality 0..*, and from 'jpdl32_ActionType', the role 'jpdl32_ActionType361' has cardinality 0..*.
+An association connects 'jpdl32_TransitionType' and 'jpdl32_ScriptType'. From 'jpdl32_TransitionType', the role 'jpdl32_TransitionType363' has cardinality 0..*, and from 'jpdl32_ScriptType', the role 'jpdl32_ScriptType364' has cardinality 0..*.
+An association connects 'jpdl32_TransitionType' and 'jpdl32_CreateTimerType'. From 'jpdl32_TransitionType', the role 'jpdl32_TransitionType366' has cardinality 0..*, and from 'jpdl32_CreateTimerType', the role 'jpdl32_CreateTimerType367' has cardinality 0..*.
+An association connects 'jpdl32_CancelTimerType' and 'jpdl32_TransitionType'. From 'jpdl32_CancelTimerType', the role 'jpdl32_CancelTimerType370' has cardinality 0..*, and from 'jpdl32_TransitionType', the role 'jpdl32_TransitionType369' has cardinality 0..*.
+An association connects 'jpdl32_TransitionType' and 'jpdl32_MailType'. From 'jpdl32_TransitionType', the role 'jpdl32_TransitionType372' has cardinality 0..*, and from 'jpdl32_MailType', the role 'jpdl32_MailType373' has cardinality 0..*.
+An association connects 'jpdl32_ExceptionHandlerType' and 'jpdl32_TransitionType'. From 'jpdl32_ExceptionHandlerType', the role 'jpdl32_ExceptionHandlerType376' has cardinality 0..*, and from 'jpdl32_TransitionType', the role 'jpdl32_TransitionType375' has cardinality 0..*.

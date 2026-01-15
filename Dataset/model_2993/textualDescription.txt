@@ -1,0 +1,70 @@
+The domain model 'remember' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'remember_Node' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str; 'dateCreated', which is of type date; 'nodeType', which is of type str; 'parentNodeId', which is of type str; 'parentNodeType', which is of type str; 'nodeId', which is of type str; 'dateModified', which is of type date; 'sequence', which is of type int; 'markedForDeletion', which is of type bool.
+
+'remember_Customer' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'customerId', which is of type str.
+
+'remember_InvoiceSpecification' represents an important domain concept.
+It has one attribute: 'month', which is of type int.
+
+'remember_Folder' represents an important domain concept.
+It does not declare any attributes.
+
+'remember_TimeSpent' represents an important domain concept.
+It has the following attributes: 'minutes', which is of type int; 'comment', which is of type str; 'date', which is of type date; 'invoiced', which is of type bool; 'timeSpentId', which is of type str.
+
+'remember_Years' represents an important domain concept.
+It does not declare any attributes.
+
+'remember_Task' represents an important domain concept.
+It has the following attributes: 'priority', which is of type str; 'taskId', which is of type int; 'done', which is of type bool; 'budget', which is of type str; 'status', which is of type str; 'text', which is of type str.
+
+'remember_Project' represents an important domain concept.
+It has the following attributes: 'projectId', which is of type str; 'description', which is of type str; 'projectNumber', which is of type str.
+
+'remember_KeyManager' represents an important domain concept.
+It does not declare any attributes.
+
+'remember_KeyIdPair' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'key', which is of type str.
+
+'remember_Customers' represents an important domain concept.
+It does not declare any attributes.
+
+'remember_Year' represents an important domain concept.
+It has one attribute: 'year', which is of type int.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'remember_Folder' is a specialization of 'Node'.
+The class 'remember_Task' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'remember_Folder' and 'remember_Task'. From 'remember_Folder', the role 'parent' has cardinality 0..*, and from 'remember_Task', the role 'Task' has cardinality 0..*.
+An association connects 'remember_Folder' and 'remember_Folder'. From 'remember_Folder', the role 'parent3' has cardinality 0..*, and from 'remember_Folder', the role 'Folder' has cardinality 0..*.
+An association connects 'remember_Folder' and 'remember_Folder'. From 'remember_Folder', the role 'Folder6' has cardinality 0..*, and from 'remember_Folder', the role 'folders' has cardinality 0..*.
+An association connects 'remember_Customers' and 'remember_Folder'. From 'remember_Customers', the role 'remember_Customers' has cardinality 0..*, and from 'remember_Folder', the role 'remember_Folder' has cardinality 0..*.
+An association connects 'remember_Task' and 'remember_Folder'. From 'remember_Task', the role 'Tasks' has cardinality 0..*, and from 'remember_Folder', the role 'Folder9' has cardinality 0..*.
+An association connects 'remember_TimeSpent' and 'remember_Task'. From 'remember_TimeSpent', the role 'TimeSpent' has cardinality 0..*, and from 'remember_Task', the role 'task' has cardinality 0..*.
+An association connects 'remember_Customer' and 'remember_Node'. From 'remember_Customer', the role 'Customer' has cardinality 0..*, and from 'remember_Node', the role 'nodes' has cardinality 0..*.
+An association connects 'remember_Project' and 'remember_Node'. From 'remember_Project', the role 'Project' has cardinality 0..*, and from 'remember_Node', the role 'nodes13' has cardinality 0..*.
+An association connects 'remember_KeyIdPair' and 'remember_KeyManager'. From 'remember_KeyIdPair', the role 'remember_KeyIdPair' has cardinality 0..*, and from 'remember_KeyManager', the role 'remember_KeyManager' has cardinality 0..*.
+An association connects 'remember_Customer' and 'remember_Project'. From 'remember_Customer', the role 'customer' has cardinality 0..*, and from 'remember_Project', the role 'Project16' has cardinality 0..*.
+An association connects 'remember_Customer' and 'remember_Node'. From 'remember_Customer', the role 'customer18' has cardinality 0..*, and from 'remember_Node', the role 'Node' has cardinality 0..*.
+An association connects 'remember_Customer' and 'remember_Project'. From 'remember_Customer', the role 'Customer20' has cardinality 0..*, and from 'remember_Project', the role 'projects' has cardinality 0..*.
+An association connects 'remember_Node' and 'remember_Project'. From 'remember_Node', the role 'Node22' has cardinality 0..*, and from 'remember_Project', the role 'project' has cardinality 0..*.
+An association connects 'remember_Customers' and 'remember_Customer'. From 'remember_Customers', the role 'remember_Customers24' has cardinality 0..*, and from 'remember_Customer', the role 'remember_Customer' has cardinality 0..*.
+An association connects 'remember_TimeSpent' and 'remember_Project'. From 'remember_TimeSpent', the role 'remember_TimeSpent' has cardinality 0..*, and from 'remember_Project', the role 'remember_Project' has cardinality 0..*.
+An association connects 'remember_Task' and 'remember_TimeSpent'. From 'remember_Task', the role 'Task27' has cardinality 0..*, and from 'remember_TimeSpent', the role 'timeSpent' has cardinality 0..*.
+An association connects 'remember_InvoiceSpecification' and 'remember_TimeSpent'. From 'remember_InvoiceSpecification', the role 'InvoiceSpecification' has cardinality 0..*, and from 'remember_TimeSpent', the role 'timeSpent29' has cardinality 0..*.
+An association connects 'remember_Year' and 'remember_InvoiceSpecification'. From 'remember_Year', the role 'year' has cardinality 0..*, and from 'remember_InvoiceSpecification', the role 'InvoiceSpecification31' has cardinality 0..*.
+An association connects 'remember_Year' and 'remember_Years'. From 'remember_Year', the role 'year33' has cardinality 0..*, and from 'remember_Years', the role 'Years' has cardinality 0..*.
+An association connects 'remember_InvoiceSpecification' and 'remember_TimeSpent'. From 'remember_InvoiceSpecification', the role 'invoiceSpecification' has cardinality 0..*, and from 'remember_TimeSpent', the role 'TimeSpent35' has cardinality 0..*.
+An association connects 'remember_InvoiceSpecification' and 'remember_Year'. From 'remember_InvoiceSpecification', the role 'invoiceSpecifications' has cardinality 0..*, and from 'remember_Year', the role 'Year' has cardinality 0..*.
+An association connects 'remember_Year' and 'remember_Years'. From 'remember_Year', the role 'Year38' has cardinality 0..*, and from 'remember_Years', the role 'years' has cardinality 0..*.

@@ -1,0 +1,47 @@
+The domain model 'myTuto' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'myTuto_MyTuto' represents an important domain concept.
+It does not declare any attributes.
+
+'myTuto_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'myTuto_Import' represents an important domain concept.
+It has one attribute: 'importedNameSpace', which is of type str.
+
+'myTuto_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'myTuto_Feature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type bool.
+
+'AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'myTuto_PackageDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myTuto_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myTuto_AbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'myTuto_PackageDeclaration' is a specialization of 'AbstractElement'.
+The class 'myTuto_Import' is a specialization of 'AbstractElement'.
+The class 'myTuto_Type' is a specialization of 'AbstractElement'.
+The class 'myTuto_DataType' is a specialization of 'Type'.
+The class 'myTuto_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myTuto_AbstractElement' and 'myTuto_MyTuto'. From 'myTuto_AbstractElement', the role 'myTuto_AbstractElement' has cardinality 0..*, and from 'myTuto_MyTuto', the role 'myTuto_MyTuto' has cardinality 0..*.
+An association connects 'myTuto_PackageDeclaration' and 'myTuto_AbstractElement'. From 'myTuto_PackageDeclaration', the role 'myTuto_PackageDeclaration' has cardinality 0..*, and from 'myTuto_AbstractElement', the role 'myTuto_AbstractElement2' has cardinality 0..*.
+An association connects 'myTuto_Entity' and 'myTuto_Entity'. From 'myTuto_Entity', the role 'myTuto_Entity3' has cardinality 0..*, and from 'myTuto_Entity', the role 'myTuto_Entity' has cardinality 0..*.
+An association connects 'myTuto_Feature' and 'myTuto_Entity'. From 'myTuto_Feature', the role 'myTuto_Feature' has cardinality 0..*, and from 'myTuto_Entity', the role 'myTuto_Entity6' has cardinality 0..*.
+An association connects 'myTuto_Feature' and 'myTuto_Type'. From 'myTuto_Feature', the role 'myTuto_Feature8' has cardinality 0..*, and from 'myTuto_Type', the role 'myTuto_Type' has cardinality 0..*.

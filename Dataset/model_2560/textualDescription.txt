@@ -1,0 +1,10 @@
+The domain model 'HSVTree' describes the core structural elements and their relationships within the system.
+
+The model defines 1 main class(es).
+
+'HSVTree_HSVNode' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'hsv', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'HSVTree_HSVNode' and 'HSVTree_HSVNode'. From 'HSVTree_HSVNode', the role 'HSVNode' has cardinality 0..*, and from 'HSVTree_HSVNode', the role 'children' has cardinality 0..*.
+An association connects 'HSVTree_HSVNode' and 'HSVTree_HSVNode'. From 'HSVTree_HSVNode', the role 'parent' has cardinality 0..*, and from 'HSVTree_HSVNode', the role 'HSVNode4' has cardinality 0..*.

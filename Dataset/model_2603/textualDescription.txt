@@ -1,0 +1,28 @@
+The domain model 'PersonList' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'PersonList_LivingPlace' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'PersonList_WorkPlace' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'PersonList_Person' represents an important domain concept.
+It has the following attributes: 'firstname', which is of type str; 'lastname', which is of type str; 'gender', which is of type str.
+
+'PersonList_List' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Gender' defines the following possible values: 'Male', 'Female'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PersonList_List' and 'PersonList_Person'. From 'PersonList_List', the role 'list' has cardinality 0..*, and from 'PersonList_Person', the role 'Person' has cardinality 0..*.
+An association connects 'PersonList_List' and 'PersonList_WorkPlace'. From 'PersonList_List', the role 'PersonList_List' has cardinality 0..*, and from 'PersonList_WorkPlace', the role 'PersonList_WorkPlace' has cardinality 0..*.
+An association connects 'PersonList_List' and 'PersonList_LivingPlace'. From 'PersonList_List', the role 'PersonList_List3' has cardinality 0..*, and from 'PersonList_LivingPlace', the role 'PersonList_LivingPlace' has cardinality 0..*.
+An association connects 'PersonList_List' and 'PersonList_Person'. From 'PersonList_List', the role 'List' has cardinality 0..*, and from 'PersonList_Person', the role 'members' has cardinality 0..*.
+An association connects 'PersonList_Person' and 'PersonList_WorkPlace'. From 'PersonList_Person', the role 'persons' has cardinality 0..*, and from 'PersonList_WorkPlace', the role 'WorkPlace' has cardinality 0..*.
+An association connects 'PersonList_LivingPlace' and 'PersonList_Person'. From 'PersonList_LivingPlace', the role 'LivingPlace' has cardinality 0..*, and from 'PersonList_Person', the role 'persons7' has cardinality 0..*.
+An association connects 'PersonList_Person' and 'PersonList_WorkPlace'. From 'PersonList_Person', the role 'Person9' has cardinality 0..*, and from 'PersonList_WorkPlace', the role 'works' has cardinality 0..*.
+An association connects 'PersonList_Person' and 'PersonList_LivingPlace'. From 'PersonList_Person', the role 'Person11' has cardinality 0..*, and from 'PersonList_LivingPlace', the role 'home' has cardinality 0..*.

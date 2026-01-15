@@ -1,0 +1,92 @@
+The domain model 'jointPackage_UML2ER' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'jointPackage_UML2ER_TrgERModel' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_UML2ER_TrgEntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_UML2ER_TrgElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jointPackage_UML2ER_TrgReference' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_UML2ER_SrcPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcClass' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgStrongReference' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgReference' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_UML2ER_TrgWeakReference' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_UML2ER_TrgAttribute' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'SrcProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_UML2ER_JointMM' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_UML2ER_SrcNamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TrgElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_UML2ER_SrcProperty' represents an important domain concept.
+It has the following attributes: 'primitiveType', which is of type str; 'isContainment', which is of type bool.
+
+'jointPackage_UML2ER_TrgFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_UML2ER_SrcClass' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgEntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_UML2ER_TrgStrongReference' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'jointPackage_UML2ER_SrcPackage' is a specialization of 'SrcNamedElement'.
+The class 'jointPackage_UML2ER_SrcClass' is a specialization of 'SrcNamedElement'.
+The class 'jointPackage_UML2ER_SrcProperty' is a specialization of 'SrcNamedElement'.
+The class 'jointPackage_UML2ER_TrgERModel' is a specialization of 'TrgElement'.
+The class 'jointPackage_UML2ER_TrgWeakReference' is a specialization of 'TrgReference'.
+The class 'jointPackage_UML2ER_TrgStrongReference' is a specialization of 'TrgReference'.
+The class 'jointPackage_UML2ER_TrgEntityType' is a specialization of 'TrgElement'.
+The class 'jointPackage_UML2ER_TrgFeature' is a specialization of 'TrgElement'.
+The class 'jointPackage_UML2ER_TrgAttribute' is a specialization of 'TrgFeature'.
+The class 'jointPackage_UML2ER_TrgReference' is a specialization of 'TrgFeature'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SrcPackage' and 'jointPackage_UML2ER_JointMM'. From 'SrcPackage', the role 'SrcPackage' has cardinality 0..*, and from 'jointPackage_UML2ER_JointMM', the role 'jointPackage_UML2ER_JointMM' has cardinality 0..*.
+An association connects 'TrgStrongReference' and 'jointPackage_UML2ER_JointMM'. From 'TrgStrongReference', the role 'TrgStrongReference' has cardinality 0..*, and from 'jointPackage_UML2ER_JointMM', the role 'jointPackage_UML2ER_JointMM2' has cardinality 0..*.
+An association connects 'jointPackage_UML2ER_SrcPackage' and 'SrcClass'. From 'jointPackage_UML2ER_SrcPackage', the role 'jointPackage_UML2ER_SrcPackage' has cardinality 0..*, and from 'SrcClass', the role 'SrcClass' has cardinality 0..*.
+An association connects 'jointPackage_UML2ER_SrcClass' and 'SrcProperty'. From 'jointPackage_UML2ER_SrcClass', the role 'jointPackage_UML2ER_SrcClass' has cardinality 0..*, and from 'SrcProperty', the role 'SrcProperty' has cardinality 0..*.
+An association connects 'SrcClass' and 'jointPackage_UML2ER_SrcClass'. From 'SrcClass', the role 'SrcClass7' has cardinality 0..*, and from 'jointPackage_UML2ER_SrcClass', the role 'jointPackage_UML2ER_SrcClass6' has cardinality 0..*.
+An association connects 'jointPackage_UML2ER_SrcProperty' and 'SrcClass'. From 'jointPackage_UML2ER_SrcProperty', the role 'jointPackage_UML2ER_SrcProperty' has cardinality 0..*, and from 'SrcClass', the role 'SrcClass9' has cardinality 0..*.
+An association connects 'TrgEntityType' and 'jointPackage_UML2ER_TrgERModel'. From 'TrgEntityType', the role 'TrgEntityType' has cardinality 0..*, and from 'jointPackage_UML2ER_TrgERModel', the role 'jointPackage_UML2ER_TrgERModel' has cardinality 0..*.
+An association connects 'jointPackage_UML2ER_TrgEntityType' and 'TrgFeature'. From 'jointPackage_UML2ER_TrgEntityType', the role 'jointPackage_UML2ER_TrgEntityType' has cardinality 0..*, and from 'TrgFeature', the role 'TrgFeature' has cardinality 0..*.
+An association connects 'jointPackage_UML2ER_TrgReference' and 'TrgEntityType'. From 'jointPackage_UML2ER_TrgReference', the role 'jointPackage_UML2ER_TrgReference' has cardinality 0..*, and from 'TrgEntityType', the role 'TrgEntityType13' has cardinality 0..*.

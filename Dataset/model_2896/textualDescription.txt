@@ -1,0 +1,497 @@
+The domain model 'moba' describes the core structural elements and their relationships within the system.
+
+The model defines 103 main class(es).
+
+'moba_MobaMinConstraint' represents an important domain concept.
+It has one attribute: 'filterValue', which is of type float.
+
+'moba_MobaFriend' represents an important domain concept.
+It has the following attributes: 'valueString', which is of type str; 'value', which is of type str.
+
+'moba_MobaGeneratorFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'MobaPropertiesAble' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaRESTPayloadDefinition' represents an important domain concept.
+It has one attribute: 'array', which is of type bool.
+
+'moba_MobaFutureConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'MobaDtoFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaTrigger' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'moba_MobaPushTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaAppUpdateTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaConstantValue' represents an important domain concept.
+It has the following attributes: 'valueConstFunctions', which is of type str; 'valueInt', which is of type str; 'valueDouble', which is of type str; 'valueConstToLowerCase', which is of type bool; 'valueString', which is of type str.
+
+'moba_MobaEntityIndex' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'unique', which is of type bool.
+
+'moba_MobaDtoEmbeddable' represents an important domain concept.
+It has the following attributes: 'transient', which is of type bool; 'alias', which is of type str.
+
+'moba_MobaMinLengthConstraint' represents an important domain concept.
+It has one attribute: 'filterValue', which is of type int.
+
+'moba_MobaEntity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'moba_MobaNFCModule' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'MobaApplicationFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaApplication' represents an important domain concept.
+It has one attribute: 'javaPackage', which is of type str.
+
+'moba_MobaGeneratorSlot' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'moba_MobaMuliplicity' represents an important domain concept.
+It has the following attributes: 'upper', which is of type str; 'lower', which is of type str.
+
+'moba_MobaDeviceStartupTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaSettingsAttribute' represents an important domain concept.
+It has the following attributes: 'domainKey', which is of type bool; 'formatString', which is of type str; 'transient', which is of type bool; 'lazy', which is of type bool; 'domainDescription', which is of type bool.
+
+'MobaFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaQueueReference' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaExternalModule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MobaGeneratorFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaRESTDtoAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_index_MobaIndexEntry' represents an important domain concept.
+It has the following attributes: 'templateDescription', which is of type str; 'templateId', which is of type str; 'templateVersion', which is of type str; 'relativePath', which is of type str; 'filename', which is of type str; 'templateName', which is of type str.
+
+'MobaREST' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaApplicationFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaProject' represents an important domain concept.
+It does not declare any attributes.
+
+'MobaConstraintable' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaQueue' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'moba_MobaData' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaQueueFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaRESTHeader' represents an important domain concept.
+It has the following attributes: 'contentTypeHeader', which is of type bool; 'rawHeader', which is of type bool; 'keyString', which is of type str; 'valueString', which is of type str; 'key', which is of type str; 'value', which is of type str.
+
+'moba_MobaGeofenceTrigger' represents an important domain concept.
+It has one attribute: 'eventType', which is of type str.
+
+'moba_MobaGenerator' represents an important domain concept.
+It has the following attributes: 'active', which is of type bool; 'name', which is of type str.
+
+'moba_MobaPersistenceType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'moba_MobaFeature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MobaIndexEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaDtoFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'MobaModelFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'MobaQueueFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'MobaSettingsFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaTimerTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaEmailTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaTemplate' represents an important domain concept.
+It has one attribute: 'downloadTemplate', which is of type str.
+
+'moba_MobaRESTCrud' represents an important domain concept.
+It has one attribute: 'operations', which is of type str.
+
+'moba_MobaFriendsAble' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaDtoAttribute' represents an important domain concept.
+It has the following attributes: 'lazy', which is of type bool; 'domainDescription', which is of type bool; 'domainKey', which is of type bool; 'transient', which is of type bool; 'formatString', which is of type str; 'alias', which is of type str.
+
+'moba_MobaNotNullConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaEntityEmbeddable' represents an important domain concept.
+It has one attribute: 'transient', which is of type bool.
+
+'moba_MobaServer' represents an important domain concept.
+It has the following attributes: 'urlString', which is of type str; 'name', which is of type str.
+
+'moba_MobaMultiplicityAble' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaMaxConstraint' represents an important domain concept.
+It has one attribute: 'filterValue', which is of type float.
+
+'moba_MobaSMSTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'MobaConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaDtoReference' represents an important domain concept.
+It has the following attributes: 'lazy', which is of type bool; 'transient', which is of type bool; 'alias', which is of type str; 'cascading', which is of type bool.
+
+'MobaFriendsAble' represents an important domain concept.
+It does not declare any attributes.
+
+'MobaMultiplicityAble' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaGeneratorIDFeature' represents an important domain concept.
+It has the following attributes: 'generatorId', which is of type str; 'generatorVersion', which is of type str.
+
+'MobaTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaRegexpConstraint' represents an important domain concept.
+It has one attribute: 'filterString', which is of type str.
+
+'moba_MobaEntityAttribute' represents an important domain concept.
+It has the following attributes: 'domainDescription', which is of type bool; 'domainKey', which is of type bool; 'transient', which is of type bool; 'formatString', which is of type str; 'lazy', which is of type bool.
+
+'MobaRESTAbstractAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaDataType' represents an important domain concept.
+It has the following attributes: 'primitive', which is of type bool; 'numeric', which is of type bool; 'predefined', which is of type bool; 'date', which is of type bool; 'time', which is of type bool; 'dateFormatString', which is of type str; 'array', which is of type bool; 'string', which is of type bool; 'timestamp', which is of type bool; 'bool', which is of type bool; 'name', which is of type str; 'decimal', which is of type bool.
+
+'moba_MobaTransportSerializationType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'moba_MobaRESTCustomService' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+'moba_MobaAuthorization' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'moba_MobaModelFeature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'version', which is of type str; 'id', which is of type str.
+
+'moba_MobaDto' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'moba_MobaRESTWorkflow' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaNullConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaBluetoothModule' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'index_moba_MobaApplication' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaAppInstallTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaPushModule' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaSettingsFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaModel' represents an important domain concept.
+It has one attribute: 'copyright', which is of type str.
+
+'moba_MobaSettings' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'active', which is of type bool.
+
+'moba_MobaConstant' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'moba_MobaEntityFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaPastConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaConstraintable' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaSettingsEntityReference' represents an important domain concept.
+It has the following attributes: 'cascading', which is of type bool; 'transient', which is of type bool; 'lazy', which is of type bool.
+
+'MobaData' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaMaxLengthConstraint' represents an important domain concept.
+It has one attribute: 'filterValue', which is of type int.
+
+'moba_MobaRESTAttribute' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'keyString', which is of type str; 'formatString', which is of type str; 'valueDouble', which is of type str; 'valueString', which is of type str; 'valueInt', which is of type str; 'value', which is of type str.
+
+'moba_MobaREST' represents an important domain concept.
+It has the following attributes: 'path', which is of type str; 'name', which is of type str; 'url', which is of type str; 'bigData', which is of type bool.
+
+'moba_MobaRESTAbstractAttribute' represents an important domain concept.
+It has the following attributes: 'alias', which is of type str; 'aliasString', which is of type str; 'attachment', which is of type bool.
+
+'moba_MobaCache' represents an important domain concept.
+It has the following attributes: 'cacheIntervalInt', which is of type int; 'cacheTypeString', which is of type str; 'name', which is of type str; 'cacheStrategyString', which is of type str.
+
+'moba_MobaEntityReference' represents an important domain concept.
+It has the following attributes: 'transient', which is of type bool; 'lazy', which is of type bool; 'cascading', which is of type bool.
+
+'moba_MobaEnumLiteral' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'default', which is of type bool; 'hidden', which is of type bool; 'literal', which is of type str; 'undefined', which is of type bool; 'value', which is of type int.
+
+'moba_MobaGeneratorMixinFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'MobaEntityFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_MobaDigitsConstraint' represents an important domain concept.
+It has the following attributes: 'filterIntegerValue', which is of type int; 'filterFractionValue', which is of type int.
+
+'MobaExternalModule' represents an important domain concept.
+It does not declare any attributes.
+
+'moba_index_MobaIndex' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'id', which is of type str; 'version', which is of type str; 'name', which is of type str.
+
+'moba_MobaProperty' represents an important domain concept.
+It has the following attributes: 'valueString', which is of type str; 'key', which is of type str; 'value', which is of type str; 'keyString', which is of type str.
+
+'moba_MobaPropertiesAble' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MobaRESTMethods' defines the following possible values: 'PUT', 'GET', 'POST', 'DELETE'.
+The enumeration 'MobaNFCModuleType' defines the following possible values: 'TEXT', 'ID', 'CUSTOM'.
+The enumeration 'MobaConstantValueFunction' defines the following possible values: 'TO_LOWER_CASE', 'TO_FIRST_UPPER_CASE', 'TO_UPPER_CASE', 'TO_FIRST_LOWER_CASE'.
+The enumeration 'MobaGeofenceEvent' defines the following possible values: 'ENTER', 'LEAVE'.
+The enumeration 'MobaUpperBound' defines the following possible values: 'MANY', 'NULL', 'ONE'.
+The enumeration 'MobaBlueToothModuleType' defines the following possible values: 'SPP', 'LE', 'BEACON'.
+The enumeration 'MobaLowerBound' defines the following possible values: 'ZERO', 'ONE', 'ATLEASTONE', 'OPTIONAL', 'MANY'.
+
+The model also captures inheritance relationships between classes.
+The class 'moba_MobaModel' is a specialization of 'MobaFriendsAble'.
+The class 'moba_MobaModelFeature' is a specialization of 'MobaFriendsAble'.
+The class 'moba_MobaProject' is a specialization of 'MobaModelFeature'.
+The class 'moba_MobaApplication' is a specialization of 'MobaModelFeature'.
+The class 'moba_MobaApplicationFeature' is a specialization of 'MobaFriendsAble'.
+The class 'moba_MobaTemplate' is a specialization of 'MobaApplicationFeature'.
+The class 'moba_MobaServer' is a specialization of 'MobaApplicationFeature'.
+The class 'moba_MobaAuthorization' is a specialization of 'MobaApplicationFeature'.
+The class 'moba_MobaTransportSerializationType' is a specialization of 'MobaApplicationFeature'.
+The class 'moba_MobaPersistenceType' is a specialization of 'MobaApplicationFeature'.
+The class 'moba_MobaGenerator' is a specialization of 'MobaApplicationFeature'.
+The class 'moba_MobaGeneratorMixinFeature' is a specialization of 'MobaGeneratorFeature'.
+The class 'moba_MobaGeneratorIDFeature' is a specialization of 'MobaGeneratorFeature'.
+The class 'moba_MobaGeneratorSlot' is a specialization of 'MobaApplicationFeature'.
+The class 'moba_MobaDataType' is a specialization of 'MobaApplicationFeature'.
+The class 'moba_MobaDataType' is a specialization of 'MobaConstraintable'.
+The class 'moba_MobaConstant' is a specialization of 'MobaApplicationFeature'.
+The class 'moba_MobaCache' is a specialization of 'MobaApplicationFeature'.
+The class 'moba_MobaData' is a specialization of 'MobaApplicationFeature'.
+The class 'moba_MobaSettings' is a specialization of 'MobaApplicationFeature'.
+The class 'moba_MobaSettingsFeature' is a specialization of 'MobaFeature'.
+The class 'moba_MobaSettingsAttribute' is a specialization of 'MobaSettingsFeature'.
+The class 'moba_MobaSettingsAttribute' is a specialization of 'MobaMultiplicityAble'.
+The class 'moba_MobaSettingsAttribute' is a specialization of 'MobaConstraintable'.
+The class 'moba_MobaSettingsEntityReference' is a specialization of 'MobaSettingsFeature'.
+The class 'moba_MobaSettingsEntityReference' is a specialization of 'MobaMultiplicityAble'.
+The class 'moba_MobaSettingsEntityReference' is a specialization of 'MobaConstraintable'.
+The class 'moba_MobaEntity' is a specialization of 'MobaData'.
+The class 'moba_MobaDto' is a specialization of 'MobaData'.
+The class 'moba_MobaQueue' is a specialization of 'MobaData'.
+The class 'moba_MobaREST' is a specialization of 'MobaApplicationFeature'.
+The class 'moba_MobaRESTAttribute' is a specialization of 'MobaRESTAbstractAttribute'.
+The class 'moba_MobaRESTDtoAttribute' is a specialization of 'MobaRESTAbstractAttribute'.
+The class 'moba_MobaRESTCustomService' is a specialization of 'MobaREST'.
+The class 'moba_MobaRESTWorkflow' is a specialization of 'MobaREST'.
+The class 'moba_MobaRESTCrud' is a specialization of 'MobaREST'.
+The class 'moba_MobaFeature' is a specialization of 'MobaFriendsAble'.
+The class 'moba_MobaEntityFeature' is a specialization of 'MobaFeature'.
+The class 'moba_MobaEntityAttribute' is a specialization of 'MobaEntityFeature'.
+The class 'moba_MobaEntityAttribute' is a specialization of 'MobaMultiplicityAble'.
+The class 'moba_MobaEntityAttribute' is a specialization of 'MobaConstraintable'.
+The class 'moba_MobaEntityReference' is a specialization of 'MobaEntityFeature'.
+The class 'moba_MobaEntityReference' is a specialization of 'MobaMultiplicityAble'.
+The class 'moba_MobaEntityEmbeddable' is a specialization of 'MobaEntityFeature'.
+The class 'moba_MobaEntityEmbeddable' is a specialization of 'MobaMultiplicityAble'.
+The class 'moba_MobaDtoFeature' is a specialization of 'MobaFeature'.
+The class 'moba_MobaDtoAttribute' is a specialization of 'MobaDtoFeature'.
+The class 'moba_MobaDtoAttribute' is a specialization of 'MobaMultiplicityAble'.
+The class 'moba_MobaDtoAttribute' is a specialization of 'MobaConstraintable'.
+The class 'moba_MobaDtoReference' is a specialization of 'MobaDtoFeature'.
+The class 'moba_MobaDtoReference' is a specialization of 'MobaMultiplicityAble'.
+The class 'moba_MobaDtoEmbeddable' is a specialization of 'MobaDtoFeature'.
+The class 'moba_MobaDtoEmbeddable' is a specialization of 'MobaMultiplicityAble'.
+The class 'moba_MobaQueueFeature' is a specialization of 'MobaFeature'.
+The class 'moba_MobaQueueReference' is a specialization of 'MobaQueueFeature'.
+The class 'moba_MobaRegexpConstraint' is a specialization of 'MobaConstraint'.
+The class 'moba_MobaMinConstraint' is a specialization of 'MobaConstraint'.
+The class 'moba_MobaMaxConstraint' is a specialization of 'MobaConstraint'.
+The class 'moba_MobaFutureConstraint' is a specialization of 'MobaConstraint'.
+The class 'moba_MobaPastConstraint' is a specialization of 'MobaConstraint'.
+The class 'moba_MobaNotNullConstraint' is a specialization of 'MobaConstraint'.
+The class 'moba_MobaNullConstraint' is a specialization of 'MobaConstraint'.
+The class 'moba_MobaMinLengthConstraint' is a specialization of 'MobaConstraint'.
+The class 'moba_MobaMaxLengthConstraint' is a specialization of 'MobaConstraint'.
+The class 'moba_MobaDigitsConstraint' is a specialization of 'MobaConstraint'.
+The class 'moba_MobaEnum' is a specialization of 'MobaApplicationFeature'.
+The class 'moba_MobaTrigger' is a specialization of 'MobaApplicationFeature'.
+The class 'moba_MobaAppInstallTrigger' is a specialization of 'MobaTrigger'.
+The class 'moba_MobaAppUpdateTrigger' is a specialization of 'MobaTrigger'.
+The class 'moba_MobaSMSTrigger' is a specialization of 'MobaTrigger'.
+The class 'moba_MobaDeviceStartupTrigger' is a specialization of 'MobaTrigger'.
+The class 'moba_MobaEmailTrigger' is a specialization of 'MobaTrigger'.
+The class 'moba_MobaTimerTrigger' is a specialization of 'MobaTrigger'.
+The class 'moba_MobaPushTrigger' is a specialization of 'MobaTrigger'.
+The class 'moba_MobaGeofenceTrigger' is a specialization of 'MobaTrigger'.
+The class 'moba_MobaFriendsAble' is a specialization of 'MobaPropertiesAble'.
+The class 'moba_MobaExternalModule' is a specialization of 'MobaApplicationFeature'.
+The class 'moba_MobaBluetoothModule' is a specialization of 'MobaExternalModule'.
+The class 'moba_MobaNFCModule' is a specialization of 'MobaExternalModule'.
+The class 'moba_MobaPushModule' is a specialization of 'MobaExternalModule'.
+
+Relationships between classes are modeled using associations.
+An association connects 'moba_MobaModel' and 'moba_MobaModelFeature'. From 'moba_MobaModel', the role 'moba_MobaModel' has cardinality 0..*, and from 'moba_MobaModelFeature', the role 'moba_MobaModelFeature' has cardinality 0..*.
+An association connects 'moba_MobaApplication' and 'moba_MobaProject'. From 'moba_MobaApplication', the role 'moba_MobaApplication' has cardinality 0..*, and from 'moba_MobaProject', the role 'moba_MobaProject' has cardinality 0..*.
+An association connects 'moba_MobaApplication' and 'moba_MobaProject'. From 'moba_MobaApplication', the role 'moba_MobaApplication4' has cardinality 0..*, and from 'moba_MobaProject', the role 'moba_MobaProject3' has cardinality 0..*.
+An association connects 'moba_MobaApplication' and 'moba_MobaCache'. From 'moba_MobaApplication', the role 'moba_MobaApplication6' has cardinality 0..*, and from 'moba_MobaCache', the role 'moba_MobaCache' has cardinality 0..*.
+An association connects 'moba_MobaApplicationFeature' and 'moba_MobaApplication'. From 'moba_MobaApplicationFeature', the role 'moba_MobaApplicationFeature' has cardinality 0..*, and from 'moba_MobaApplication', the role 'moba_MobaApplication8' has cardinality 0..*.
+An association connects 'moba_MobaTemplate' and 'moba_MobaApplication'. From 'moba_MobaTemplate', the role 'moba_MobaTemplate' has cardinality 0..*, and from 'moba_MobaApplication', the role 'moba_MobaApplication10' has cardinality 0..*.
+An association connects 'moba_MobaServer' and 'moba_MobaConstant'. From 'moba_MobaServer', the role 'moba_MobaServer' has cardinality 0..*, and from 'moba_MobaConstant', the role 'moba_MobaConstant' has cardinality 0..*.
+An association connects 'moba_MobaServer' and 'moba_MobaServer'. From 'moba_MobaServer', the role 'moba_MobaServer14' has cardinality 0..*, and from 'moba_MobaServer', the role 'moba_MobaServer12' has cardinality 0..*.
+An association connects 'moba_MobaServer' and 'moba_MobaREST'. From 'moba_MobaServer', the role 'moba_MobaServer16' has cardinality 0..*, and from 'moba_MobaREST', the role 'moba_MobaREST' has cardinality 0..*.
+An association connects 'moba_MobaAuthorization' and 'moba_MobaServer'. From 'moba_MobaAuthorization', the role 'moba_MobaAuthorization' has cardinality 0..*, and from 'moba_MobaServer', the role 'moba_MobaServer18' has cardinality 0..*.
+An association connects 'moba_MobaGeneratorFeature' and 'moba_MobaGenerator'. From 'moba_MobaGeneratorFeature', the role 'moba_MobaGeneratorFeature' has cardinality 0..*, and from 'moba_MobaGenerator', the role 'moba_MobaGenerator' has cardinality 0..*.
+An association connects 'moba_MobaGeneratorMixinFeature' and 'moba_MobaGenerator'. From 'moba_MobaGeneratorMixinFeature', the role 'moba_MobaGeneratorMixinFeature' has cardinality 0..*, and from 'moba_MobaGenerator', the role 'moba_MobaGenerator21' has cardinality 0..*.
+An association connects 'moba_MobaGeneratorSlot' and 'moba_MobaGeneratorSlot'. From 'moba_MobaGeneratorSlot', the role 'moba_MobaGeneratorSlot22' has cardinality 0..*, and from 'moba_MobaGeneratorSlot', the role 'moba_MobaGeneratorSlot' has cardinality 0..*.
+An association connects 'moba_MobaEnum' and 'moba_MobaDataType'. From 'moba_MobaEnum', the role 'moba_MobaEnum' has cardinality 0..*, and from 'moba_MobaDataType', the role 'moba_MobaDataType' has cardinality 0..*.
+An association connects 'moba_MobaConstant' and 'moba_MobaDataType'. From 'moba_MobaConstant', the role 'moba_MobaConstant27' has cardinality 0..*, and from 'moba_MobaDataType', the role 'moba_MobaDataType26' has cardinality 0..*.
+An association connects 'moba_MobaDataType' and 'moba_MobaDataType'. From 'moba_MobaDataType', the role 'moba_MobaDataType30' has cardinality 0..*, and from 'moba_MobaDataType', the role 'moba_MobaDataType28' has cardinality 0..*.
+An association connects 'moba_MobaConstantValue' and 'moba_MobaConstant'. From 'moba_MobaConstantValue', the role 'moba_MobaConstantValue' has cardinality 0..*, and from 'moba_MobaConstant', the role 'moba_MobaConstant32' has cardinality 0..*.
+An association connects 'moba_MobaConstant' and 'moba_MobaCache'. From 'moba_MobaConstant', the role 'moba_MobaConstant35' has cardinality 0..*, and from 'moba_MobaCache', the role 'moba_MobaCache34' has cardinality 0..*.
+An association connects 'moba_MobaConstant' and 'moba_MobaCache'. From 'moba_MobaConstant', the role 'moba_MobaConstant38' has cardinality 0..*, and from 'moba_MobaCache', the role 'moba_MobaCache37' has cardinality 0..*.
+An association connects 'moba_MobaConstant' and 'moba_MobaCache'. From 'moba_MobaConstant', the role 'moba_MobaConstant41' has cardinality 0..*, and from 'moba_MobaCache', the role 'moba_MobaCache40' has cardinality 0..*.
+An association connects 'moba_MobaCache' and 'moba_MobaPersistenceType'. From 'moba_MobaCache', the role 'moba_MobaCache43' has cardinality 0..*, and from 'moba_MobaPersistenceType', the role 'moba_MobaPersistenceType' has cardinality 0..*.
+An association connects 'moba_MobaConstantValue' and 'moba_MobaConstant'. From 'moba_MobaConstantValue', the role 'moba_MobaConstantValue45' has cardinality 0..*, and from 'moba_MobaConstant', the role 'moba_MobaConstant46' has cardinality 0..*.
+An association connects 'moba_MobaConstantValue' and 'moba_MobaConstantValue'. From 'moba_MobaConstantValue', the role 'moba_MobaConstantValue49' has cardinality 0..*, and from 'moba_MobaConstantValue', the role 'moba_MobaConstantValue47' has cardinality 0..*.
+An association connects 'moba_MobaPropertiesAble' and 'moba_MobaProperty'. From 'moba_MobaPropertiesAble', the role 'moba_MobaPropertiesAble' has cardinality 0..*, and from 'moba_MobaProperty', the role 'moba_MobaProperty' has cardinality 0..*.
+An association connects 'moba_MobaConstant' and 'moba_MobaProperty'. From 'moba_MobaConstant', the role 'moba_MobaConstant53' has cardinality 0..*, and from 'moba_MobaProperty', the role 'moba_MobaProperty52' has cardinality 0..*.
+An association connects 'moba_MobaProperty' and 'moba_MobaConstant'. From 'moba_MobaProperty', the role 'moba_MobaProperty55' has cardinality 0..*, and from 'moba_MobaConstant', the role 'moba_MobaConstant56' has cardinality 0..*.
+An association connects 'moba_MobaSettings' and 'moba_MobaSettings'. From 'moba_MobaSettings', the role 'moba_MobaSettings' has cardinality 0..*, and from 'moba_MobaSettings', the role 'moba_MobaSettings57' has cardinality 0..*.
+An association connects 'moba_MobaSettingsFeature' and 'moba_MobaSettings'. From 'moba_MobaSettingsFeature', the role 'moba_MobaSettingsFeature' has cardinality 0..*, and from 'moba_MobaSettings', the role 'moba_MobaSettings60' has cardinality 0..*.
+An association connects 'moba_MobaSettingsAttribute' and 'moba_MobaDataType'. From 'moba_MobaSettingsAttribute', the role 'moba_MobaSettingsAttribute' has cardinality 0..*, and from 'moba_MobaDataType', the role 'moba_MobaDataType62' has cardinality 0..*.
+An association connects 'moba_MobaConstant' and 'moba_MobaSettingsAttribute'. From 'moba_MobaConstant', the role 'moba_MobaConstant65' has cardinality 0..*, and from 'moba_MobaSettingsAttribute', the role 'moba_MobaSettingsAttribute64' has cardinality 0..*.
+An association connects 'moba_MobaSettingsEntityReference' and 'moba_MobaEntity'. From 'moba_MobaSettingsEntityReference', the role 'moba_MobaSettingsEntityReference' has cardinality 0..*, and from 'moba_MobaEntity', the role 'moba_MobaEntity' has cardinality 0..*.
+An association connects 'moba_MobaEntity' and 'moba_MobaEntity'. From 'moba_MobaEntity', the role 'moba_MobaEntity67' has cardinality 0..*, and from 'moba_MobaEntity', the role 'moba_MobaEntity69' has cardinality 0..*.
+An association connects 'moba_MobaEntity' and 'moba_MobaCache'. From 'moba_MobaEntity', the role 'moba_MobaEntity71' has cardinality 0..*, and from 'moba_MobaCache', the role 'moba_MobaCache72' has cardinality 0..*.
+An association connects 'moba_MobaEntityFeature' and 'moba_MobaEntity'. From 'moba_MobaEntityFeature', the role 'moba_MobaEntityFeature' has cardinality 0..*, and from 'moba_MobaEntity', the role 'moba_MobaEntity74' has cardinality 0..*.
+An association connects 'moba_MobaEntityIndex' and 'moba_MobaEntity'. From 'moba_MobaEntityIndex', the role 'moba_MobaEntityIndex' has cardinality 0..*, and from 'moba_MobaEntity', the role 'moba_MobaEntity76' has cardinality 0..*.
+An association connects 'moba_MobaEntityAttribute' and 'moba_MobaEntityIndex'. From 'moba_MobaEntityAttribute', the role 'moba_MobaEntityAttribute' has cardinality 0..*, and from 'moba_MobaEntityIndex', the role 'moba_MobaEntityIndex78' has cardinality 0..*.
+An association connects 'moba_MobaDto' and 'moba_MobaDto'. From 'moba_MobaDto', the role 'moba_MobaDto' has cardinality 0..*, and from 'moba_MobaDto', the role 'moba_MobaDto79' has cardinality 0..*.
+An association connects 'moba_MobaEntity' and 'moba_MobaDto'. From 'moba_MobaEntity', the role 'moba_MobaEntity83' has cardinality 0..*, and from 'moba_MobaDto', the role 'moba_MobaDto82' has cardinality 0..*.
+An association connects 'moba_MobaDtoFeature' and 'moba_MobaDto'. From 'moba_MobaDtoFeature', the role 'moba_MobaDtoFeature' has cardinality 0..*, and from 'moba_MobaDto', the role 'moba_MobaDto85' has cardinality 0..*.
+An association connects 'moba_MobaDto' and 'moba_MobaTransportSerializationType'. From 'moba_MobaDto', the role 'moba_MobaDto87' has cardinality 0..*, and from 'moba_MobaTransportSerializationType', the role 'moba_MobaTransportSerializationType' has cardinality 0..*.
+An association connects 'moba_MobaQueue' and 'moba_MobaQueue'. From 'moba_MobaQueue', the role 'moba_MobaQueue88' has cardinality 0..*, and from 'moba_MobaQueue', the role 'moba_MobaQueue' has cardinality 0..*.
+An association connects 'moba_MobaCache' and 'moba_MobaQueue'. From 'moba_MobaCache', the role 'moba_MobaCache92' has cardinality 0..*, and from 'moba_MobaQueue', the role 'moba_MobaQueue91' has cardinality 0..*.
+An association connects 'moba_MobaQueueFeature' and 'moba_MobaQueue'. From 'moba_MobaQueueFeature', the role 'moba_MobaQueueFeature' has cardinality 0..*, and from 'moba_MobaQueue', the role 'moba_MobaQueue94' has cardinality 0..*.
+An association connects 'moba_MobaREST' and 'moba_MobaRESTPayloadDefinition'. From 'moba_MobaREST', the role 'moba_MobaREST96' has cardinality 0..*, and from 'moba_MobaRESTPayloadDefinition', the role 'moba_MobaRESTPayloadDefinition' has cardinality 0..*.
+An association connects 'moba_MobaREST' and 'moba_MobaRESTPayloadDefinition'. From 'moba_MobaREST', the role 'moba_MobaREST98' has cardinality 0..*, and from 'moba_MobaRESTPayloadDefinition', the role 'moba_MobaRESTPayloadDefinition99' has cardinality 0..*.
+An association connects 'moba_MobaRESTPayloadDefinition' and 'moba_MobaREST'. From 'moba_MobaRESTPayloadDefinition', the role 'moba_MobaRESTPayloadDefinition102' has cardinality 0..*, and from 'moba_MobaREST', the role 'moba_MobaREST101' has cardinality 0..*.
+An association connects 'moba_MobaRESTPayloadDefinition' and 'moba_MobaREST'. From 'moba_MobaRESTPayloadDefinition', the role 'moba_MobaRESTPayloadDefinition105' has cardinality 0..*, and from 'moba_MobaREST', the role 'moba_MobaREST104' has cardinality 0..*.
+An association connects 'moba_MobaRESTHeader' and 'moba_MobaREST'. From 'moba_MobaRESTHeader', the role 'moba_MobaRESTHeader' has cardinality 0..*, and from 'moba_MobaREST', the role 'moba_MobaREST107' has cardinality 0..*.
+An association connects 'moba_MobaAuthorization' and 'moba_MobaREST'. From 'moba_MobaAuthorization', the role 'moba_MobaAuthorization110' has cardinality 0..*, and from 'moba_MobaREST', the role 'moba_MobaREST109' has cardinality 0..*.
+An association connects 'moba_MobaRESTPayloadDefinition' and 'moba_MobaDto'. From 'moba_MobaRESTPayloadDefinition', the role 'moba_MobaRESTPayloadDefinition112' has cardinality 0..*, and from 'moba_MobaDto', the role 'moba_MobaDto113' has cardinality 0..*.
+An association connects 'moba_MobaTransportSerializationType' and 'moba_MobaRESTPayloadDefinition'. From 'moba_MobaTransportSerializationType', the role 'moba_MobaTransportSerializationType116' has cardinality 0..*, and from 'moba_MobaRESTPayloadDefinition', the role 'moba_MobaRESTPayloadDefinition115' has cardinality 0..*.
+An association connects 'moba_MobaConstant' and 'moba_MobaRESTAbstractAttribute'. From 'moba_MobaConstant', the role 'moba_MobaConstant118' has cardinality 0..*, and from 'moba_MobaRESTAbstractAttribute', the role 'moba_MobaRESTAbstractAttribute' has cardinality 0..*.
+An association connects 'moba_MobaRESTAttribute' and 'moba_MobaDataType'. From 'moba_MobaRESTAttribute', the role 'moba_MobaRESTAttribute' has cardinality 0..*, and from 'moba_MobaDataType', the role 'moba_MobaDataType120' has cardinality 0..*.
+An association connects 'moba_MobaRESTAttribute' and 'moba_MobaConstant'. From 'moba_MobaRESTAttribute', the role 'moba_MobaRESTAttribute122' has cardinality 0..*, and from 'moba_MobaConstant', the role 'moba_MobaConstant123' has cardinality 0..*.
+An association connects 'moba_MobaRESTAttribute' and 'moba_MobaConstant'. From 'moba_MobaRESTAttribute', the role 'moba_MobaRESTAttribute125' has cardinality 0..*, and from 'moba_MobaConstant', the role 'moba_MobaConstant126' has cardinality 0..*.
+An association connects 'moba_MobaConstant' and 'moba_MobaRESTAttribute'. From 'moba_MobaConstant', the role 'moba_MobaConstant129' has cardinality 0..*, and from 'moba_MobaRESTAttribute', the role 'moba_MobaRESTAttribute128' has cardinality 0..*.
+An association connects 'moba_MobaRESTDtoAttribute' and 'moba_MobaDtoFeature'. From 'moba_MobaRESTDtoAttribute', the role 'moba_MobaRESTDtoAttribute' has cardinality 0..*, and from 'moba_MobaDtoFeature', the role 'moba_MobaDtoFeature131' has cardinality 0..*.
+An association connects 'moba_MobaConstant' and 'moba_MobaRESTHeader'. From 'moba_MobaConstant', the role 'moba_MobaConstant134' has cardinality 0..*, and from 'moba_MobaRESTHeader', the role 'moba_MobaRESTHeader133' has cardinality 0..*.
+An association connects 'moba_MobaRESTHeader' and 'moba_MobaConstant'. From 'moba_MobaRESTHeader', the role 'moba_MobaRESTHeader136' has cardinality 0..*, and from 'moba_MobaConstant', the role 'moba_MobaConstant137' has cardinality 0..*.
+An association connects 'moba_MobaRESTAbstractAttribute' and 'moba_MobaRESTCustomService'. From 'moba_MobaRESTAbstractAttribute', the role 'moba_MobaRESTAbstractAttribute139' has cardinality 0..*, and from 'moba_MobaRESTCustomService', the role 'moba_MobaRESTCustomService' has cardinality 0..*.
+An association connects 'moba_MobaRESTCustomService' and 'moba_MobaRESTCustomService'. From 'moba_MobaRESTCustomService', the role 'moba_MobaRESTCustomService140' has cardinality 0..*, and from 'moba_MobaRESTCustomService', the role 'moba_MobaRESTCustomService142' has cardinality 0..*.
+An association connects 'moba_MobaRESTCustomService' and 'moba_MobaRESTAbstractAttribute'. From 'moba_MobaRESTCustomService', the role 'moba_MobaRESTCustomService144' has cardinality 0..*, and from 'moba_MobaRESTAbstractAttribute', the role 'moba_MobaRESTAbstractAttribute145' has cardinality 0..*.
+An association connects 'moba_MobaREST' and 'moba_MobaRESTWorkflow'. From 'moba_MobaREST', the role 'moba_MobaREST147' has cardinality 0..*, and from 'moba_MobaRESTWorkflow', the role 'moba_MobaRESTWorkflow' has cardinality 0..*.
+An association connects 'moba_MobaRESTWorkflow' and 'moba_MobaRESTWorkflow'. From 'moba_MobaRESTWorkflow', the role 'moba_MobaRESTWorkflow148' has cardinality 0..*, and from 'moba_MobaRESTWorkflow', the role 'moba_MobaRESTWorkflow150' has cardinality 0..*.
+An association connects 'moba_MobaRESTCrud' and 'moba_MobaRESTCrud'. From 'moba_MobaRESTCrud', the role 'moba_MobaRESTCrud151' has cardinality 0..*, and from 'moba_MobaRESTCrud', the role 'moba_MobaRESTCrud' has cardinality 0..*.
+An association connects 'moba_MobaDataType' and 'moba_MobaEntityAttribute'. From 'moba_MobaDataType', the role 'moba_MobaDataType155' has cardinality 0..*, and from 'moba_MobaEntityAttribute', the role 'moba_MobaEntityAttribute154' has cardinality 0..*.
+An association connects 'moba_MobaEntityAttribute' and 'moba_MobaConstant'. From 'moba_MobaEntityAttribute', the role 'moba_MobaEntityAttribute157' has cardinality 0..*, and from 'moba_MobaConstant', the role 'moba_MobaConstant158' has cardinality 0..*.
+An association connects 'moba_MobaMuliplicity' and 'moba_MobaMultiplicityAble'. From 'moba_MobaMuliplicity', the role 'moba_MobaMuliplicity' has cardinality 0..*, and from 'moba_MobaMultiplicityAble', the role 'moba_MobaMultiplicityAble' has cardinality 0..*.
+An association connects 'moba_MobaEntityReference' and 'moba_MobaEntity'. From 'moba_MobaEntityReference', the role 'moba_MobaEntityReference' has cardinality 0..*, and from 'moba_MobaEntity', the role 'moba_MobaEntity161' has cardinality 0..*.
+An association connects 'moba_MobaEntityReference' and 'moba_MobaEntityReference'. From 'moba_MobaEntityReference', the role 'moba_MobaEntityReference162' has cardinality 0..*, and from 'moba_MobaEntityReference', the role 'moba_MobaEntityReference164' has cardinality 0..*.
+An association connects 'moba_MobaEntity' and 'moba_MobaEntityEmbeddable'. From 'moba_MobaEntity', the role 'moba_MobaEntity166' has cardinality 0..*, and from 'moba_MobaEntityEmbeddable', the role 'moba_MobaEntityEmbeddable' has cardinality 0..*.
+An association connects 'moba_MobaDtoAttribute' and 'moba_MobaDataType'. From 'moba_MobaDtoAttribute', the role 'moba_MobaDtoAttribute' has cardinality 0..*, and from 'moba_MobaDataType', the role 'moba_MobaDataType168' has cardinality 0..*.
+An association connects 'moba_MobaDtoAttribute' and 'moba_MobaConstant'. From 'moba_MobaDtoAttribute', the role 'moba_MobaDtoAttribute170' has cardinality 0..*, and from 'moba_MobaConstant', the role 'moba_MobaConstant171' has cardinality 0..*.
+An association connects 'moba_MobaDtoReference' and 'moba_MobaDto'. From 'moba_MobaDtoReference', the role 'moba_MobaDtoReference' has cardinality 0..*, and from 'moba_MobaDto', the role 'moba_MobaDto173' has cardinality 0..*.
+An association connects 'moba_MobaDtoReference' and 'moba_MobaDtoReference'. From 'moba_MobaDtoReference', the role 'moba_MobaDtoReference174' has cardinality 0..*, and from 'moba_MobaDtoReference', the role 'moba_MobaDtoReference176' has cardinality 0..*.
+An association connects 'moba_MobaDto' and 'moba_MobaDtoEmbeddable'. From 'moba_MobaDto', the role 'moba_MobaDto178' has cardinality 0..*, and from 'moba_MobaDtoEmbeddable', the role 'moba_MobaDtoEmbeddable' has cardinality 0..*.
+An association connects 'moba_MobaQueueReference' and 'moba_MobaREST'. From 'moba_MobaQueueReference', the role 'moba_MobaQueueReference' has cardinality 0..*, and from 'moba_MobaREST', the role 'moba_MobaREST180' has cardinality 0..*.
+An association connects 'moba_MobaConstraintable' and 'moba_MobaConstraint'. From 'moba_MobaConstraintable', the role 'moba_MobaConstraintable' has cardinality 0..*, and from 'moba_MobaConstraint', the role 'moba_MobaConstraint' has cardinality 0..*.
+An association connects 'moba_MobaConstant' and 'moba_MobaRegexpConstraint'. From 'moba_MobaConstant', the role 'moba_MobaConstant183' has cardinality 0..*, and from 'moba_MobaRegexpConstraint', the role 'moba_MobaRegexpConstraint' has cardinality 0..*.
+An association connects 'moba_MobaConstant' and 'moba_MobaMinConstraint'. From 'moba_MobaConstant', the role 'moba_MobaConstant185' has cardinality 0..*, and from 'moba_MobaMinConstraint', the role 'moba_MobaMinConstraint' has cardinality 0..*.
+An association connects 'moba_MobaConstant' and 'moba_MobaMaxConstraint'. From 'moba_MobaConstant', the role 'moba_MobaConstant187' has cardinality 0..*, and from 'moba_MobaMaxConstraint', the role 'moba_MobaMaxConstraint' has cardinality 0..*.
+An association connects 'moba_MobaMinLengthConstraint' and 'moba_MobaConstant'. From 'moba_MobaMinLengthConstraint', the role 'moba_MobaMinLengthConstraint' has cardinality 0..*, and from 'moba_MobaConstant', the role 'moba_MobaConstant189' has cardinality 0..*.
+An association connects 'moba_MobaConstant' and 'moba_MobaMaxLengthConstraint'. From 'moba_MobaConstant', the role 'moba_MobaConstant191' has cardinality 0..*, and from 'moba_MobaMaxLengthConstraint', the role 'moba_MobaMaxLengthConstraint' has cardinality 0..*.
+An association connects 'moba_MobaDigitsConstraint' and 'moba_MobaConstant'. From 'moba_MobaDigitsConstraint', the role 'moba_MobaDigitsConstraint' has cardinality 0..*, and from 'moba_MobaConstant', the role 'moba_MobaConstant193' has cardinality 0..*.
+An association connects 'moba_MobaConstant' and 'moba_MobaDigitsConstraint'. From 'moba_MobaConstant', the role 'moba_MobaConstant196' has cardinality 0..*, and from 'moba_MobaDigitsConstraint', the role 'moba_MobaDigitsConstraint195' has cardinality 0..*.
+An association connects 'moba_MobaEnum' and 'moba_MobaEnumLiteral'. From 'moba_MobaEnum', the role 'moba_MobaEnum198' has cardinality 0..*, and from 'moba_MobaEnumLiteral', the role 'moba_MobaEnumLiteral' has cardinality 0..*.
+An association connects 'moba_MobaTrigger' and 'moba_MobaTrigger'. From 'moba_MobaTrigger', the role 'moba_MobaTrigger' has cardinality 0..*, and from 'moba_MobaTrigger', the role 'moba_MobaTrigger199' has cardinality 0..*.
+An association connects 'moba_MobaFriend' and 'moba_MobaConstant'. From 'moba_MobaFriend', the role 'moba_MobaFriend' has cardinality 0..*, and from 'moba_MobaConstant', the role 'moba_MobaConstant202' has cardinality 0..*.
+An association connects 'moba_MobaFriend' and 'moba_MobaFriendsAble'. From 'moba_MobaFriend', the role 'moba_MobaFriend204' has cardinality 0..*, and from 'moba_MobaFriendsAble', the role 'moba_MobaFriendsAble' has cardinality 0..*.
+An association connects 'moba_MobaExternalModule' and 'moba_MobaExternalModule'. From 'moba_MobaExternalModule', the role 'moba_MobaExternalModule205' has cardinality 0..*, and from 'moba_MobaExternalModule', the role 'moba_MobaExternalModule' has cardinality 0..*.
+An association connects 'moba_index_MobaIndex' and 'MobaIndexEntry'. From 'moba_index_MobaIndex', the role 'moba_index_MobaIndex' has cardinality 0..*, and from 'MobaIndexEntry', the role 'MobaIndexEntry' has cardinality 0..*.
+An association connects 'moba_index_MobaIndexEntry' and 'index_moba_MobaApplication'. From 'moba_index_MobaIndexEntry', the role 'moba_index_MobaIndexEntry' has cardinality 0..*, and from 'index_moba_MobaApplication', the role 'index_moba_MobaApplication' has cardinality 0..*.

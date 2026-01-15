@@ -1,0 +1,248 @@
+The domain model 'shape' describes the core structural elements and their relationships within the system.
+
+The model defines 53 main class(es).
+
+'shape_AnchorManual' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_PolyLineLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_Description' represents an important domain concept.
+It has the following attributes: 'vAlign', which is of type str; 'style', which is of type str; 'hAlign', which is of type str.
+
+'shape_AnchorPositionPos' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_RoundedRectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_CDLine' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_CompartmentShape' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_Ellipse' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_Line' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_Anchor' represents an important domain concept.
+It does not declare any attributes.
+
+'CompartmentShape' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_Rectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_CommonLayout' represents an important domain concept.
+It has the following attributes: 'heigth', which is of type int; 'xcor', which is of type int; 'width', which is of type int; 'ycor', which is of type int.
+
+'shape_CDPolyline' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_TextBody' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'shape_Text' represents an important domain concept.
+It has one attribute: 'texttype', which is of type str.
+
+'shape_CDText' represents an important domain concept.
+It has one attribute: 'texttype', which is of type str.
+
+'shape_AnchorType' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_Compartment' represents an important domain concept.
+It has one attribute: 'compartmentLayout', which is of type str.
+
+'shape_Polyline' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_Polygon' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_CompartmentRoundedRectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_CDRoundedRectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_AnchorFixPointPosition' represents an important domain concept.
+It has the following attributes: 'xcor', which is of type int; 'ycor', which is of type int.
+
+'shape_ShapeContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_CompartmentEllipse' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_CompartmentPolygon' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_CDPolygon' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_CompartmentRectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_CDEllipse' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_AnchorPredefinied' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'shape_Shape' represents an important domain concept.
+It has one attribute: 'style', which is of type str.
+
+'shape_RoundedRectangleLayout' represents an important domain concept.
+It has the following attributes: 'curveHeight', which is of type int; 'curveWidth', which is of type int.
+
+'ShapeConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'AnchorPositionPos' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_LineLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_CDRectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_Point' represents an important domain concept.
+It has the following attributes: 'xcor', which is of type str; 'curveBefore', which is of type int; 'curveAfter', which is of type int; 'ycor', which is of type str.
+
+'shape_AnchorPosition' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_ConnectionDefinition' represents an important domain concept.
+It has one attribute: 'connectionStyle', which is of type str.
+
+'shape_ShapestyleLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_ShapeConnection' represents an important domain concept.
+It has one attribute: 'style', which is of type str.
+
+'Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_PlacingDefinition' represents an important domain concept.
+It has the following attributes: 'offset', which is of type str; 'angle', which is of type int; 'distance', which is of type int.
+
+'shape_RectangleEllipseLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_AnchorRelativePosition' represents an important domain concept.
+It has the following attributes: 'yoffset', which is of type str; 'xoffset', which is of type str.
+
+'shape_ShapeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'shape_TextLayout' represents an important domain concept.
+It has the following attributes: 'hAlign', which is of type str; 'vAlign', which is of type str.
+
+'shape_ShapeContainerElement' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'name', which is of type str.
+
+'shape_ShapeLayout' represents an important domain concept.
+It has the following attributes: 'stretchH', which is of type str; 'stretchV', which is of type str; 'maxheight', which is of type int; 'maxwidth', which is of type int; 'minwidth', which is of type int; 'proportional', which is of type str; 'minheight', which is of type int.
+
+'shape_CompartmentInfo' represents an important domain concept.
+It has the following attributes: 'stretchH', which is of type str; 'stretchV', which is of type str; 'invisible', which is of type bool; 'margin', which is of type int; 'spacing', which is of type int; 'compartmentLayout', which is of type str.
+
+'ShapeContainerElement' represents an important domain concept.
+It does not declare any attributes.
+
+'AnchorType' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ConnectionStyle' defines the following possible values: 'manhatten', 'freeform'.
+The enumeration 'VAlign' defines the following possible values: 'BOTTOM', 'MIDDLE', 'TOP'.
+The enumeration 'TextType' defines the following possible values: 'default', 'multiline'.
+The enumeration 'CompartmentLayout' defines the following possible values: 'FIT', 'FIXED', 'HORIZONTAL', 'VERTICAL'.
+The enumeration 'HAlign' defines the following possible values: 'RIGHT', 'CENTER', 'LEFT'.
+The enumeration 'AnchorPredefiniedEnum' defines the following possible values: 'center', 'corners'.
+
+The model also captures inheritance relationships between classes.
+The class 'shape_ConnectionDefinition' is a specialization of 'ShapeContainerElement'.
+The class 'shape_ShapeDefinition' is a specialization of 'ShapeContainerElement'.
+The class 'shape_AnchorPredefinied' is a specialization of 'AnchorType'.
+The class 'shape_AnchorManual' is a specialization of 'AnchorType'.
+The class 'shape_AnchorRelativePosition' is a specialization of 'AnchorPositionPos'.
+The class 'shape_AnchorFixPointPosition' is a specialization of 'AnchorPositionPos'.
+The class 'shape_CDLine' is a specialization of 'ShapeConnection'.
+The class 'shape_CDPolyline' is a specialization of 'ShapeConnection'.
+The class 'shape_CDRectangle' is a specialization of 'ShapeConnection'.
+The class 'shape_CDRoundedRectangle' is a specialization of 'ShapeConnection'.
+The class 'shape_CDPolygon' is a specialization of 'ShapeConnection'.
+The class 'shape_CDEllipse' is a specialization of 'ShapeConnection'.
+The class 'shape_CDText' is a specialization of 'ShapeConnection'.
+The class 'shape_Line' is a specialization of 'Shape'.
+The class 'shape_Polyline' is a specialization of 'Shape'.
+The class 'shape_Rectangle' is a specialization of 'Shape'.
+The class 'shape_RoundedRectangle' is a specialization of 'Shape'.
+The class 'shape_Polygon' is a specialization of 'Shape'.
+The class 'shape_Ellipse' is a specialization of 'Shape'.
+The class 'shape_Text' is a specialization of 'Shape'.
+The class 'shape_CompartmentRectangle' is a specialization of 'CompartmentShape'.
+The class 'shape_CompartmentEllipse' is a specialization of 'CompartmentShape'.
+
+Relationships between classes are modeled using associations.
+An association connects 'shape_ShapeContainer' and 'shape_ShapeContainerElement'. From 'shape_ShapeContainer', the role 'shape_ShapeContainer' has cardinality 0..*, and from 'shape_ShapeContainerElement', the role 'shape_ShapeContainerElement' has cardinality 0..*.
+An association connects 'shape_ShapestyleLayout' and 'shape_ConnectionDefinition'. From 'shape_ShapestyleLayout', the role 'shape_ShapestyleLayout' has cardinality 0..*, and from 'shape_ConnectionDefinition', the role 'shape_ConnectionDefinition' has cardinality 0..*.
+An association connects 'shape_ConnectionDefinition' and 'shape_PlacingDefinition'. From 'shape_ConnectionDefinition', the role 'shape_ConnectionDefinition3' has cardinality 0..*, and from 'shape_PlacingDefinition', the role 'shape_PlacingDefinition' has cardinality 0..*.
+An association connects 'shape_ShapeDefinition' and 'shape_ShapeLayout'. From 'shape_ShapeDefinition', the role 'shape_ShapeDefinition' has cardinality 0..*, and from 'shape_ShapeLayout', the role 'shape_ShapeLayout' has cardinality 0..*.
+An association connects 'shape_Shape' and 'shape_ShapeDefinition'. From 'shape_Shape', the role 'shape_Shape' has cardinality 0..*, and from 'shape_ShapeDefinition', the role 'shape_ShapeDefinition6' has cardinality 0..*.
+An association connects 'shape_Description' and 'shape_ShapeDefinition'. From 'shape_Description', the role 'shape_Description' has cardinality 0..*, and from 'shape_ShapeDefinition', the role 'shape_ShapeDefinition8' has cardinality 0..*.
+An association connects 'shape_ShapeDefinition' and 'shape_Anchor'. From 'shape_ShapeDefinition', the role 'shape_ShapeDefinition10' has cardinality 0..*, and from 'shape_Anchor', the role 'shape_Anchor' has cardinality 0..*.
+An association connects 'shape_ShapeConnection' and 'shape_PlacingDefinition'. From 'shape_ShapeConnection', the role 'shape_ShapeConnection' has cardinality 0..*, and from 'shape_PlacingDefinition', the role 'shape_PlacingDefinition12' has cardinality 0..*.
+An association connects 'shape_AnchorType' and 'shape_Anchor'. From 'shape_AnchorType', the role 'shape_AnchorType' has cardinality 0..*, and from 'shape_Anchor', the role 'shape_Anchor14' has cardinality 0..*.
+An association connects 'shape_AnchorManual' and 'shape_AnchorPosition'. From 'shape_AnchorManual', the role 'shape_AnchorManual' has cardinality 0..*, and from 'shape_AnchorPosition', the role 'shape_AnchorPosition' has cardinality 0..*.
+An association connects 'shape_AnchorPosition' and 'shape_AnchorPositionPos'. From 'shape_AnchorPosition', the role 'shape_AnchorPosition17' has cardinality 0..*, and from 'shape_AnchorPositionPos', the role 'shape_AnchorPositionPos' has cardinality 0..*.
+An association connects 'shape_CDLine' and 'shape_LineLayout'. From 'shape_CDLine', the role 'shape_CDLine' has cardinality 0..*, and from 'shape_LineLayout', the role 'shape_LineLayout' has cardinality 0..*.
+An association connects 'shape_PolyLineLayout' and 'shape_CDPolyline'. From 'shape_PolyLineLayout', the role 'shape_PolyLineLayout' has cardinality 0..*, and from 'shape_CDPolyline', the role 'shape_CDPolyline' has cardinality 0..*.
+An association connects 'shape_CDRectangle' and 'shape_RectangleEllipseLayout'. From 'shape_CDRectangle', the role 'shape_CDRectangle' has cardinality 0..*, and from 'shape_RectangleEllipseLayout', the role 'shape_RectangleEllipseLayout' has cardinality 0..*.
+An association connects 'shape_RoundedRectangleLayout' and 'shape_CDRoundedRectangle'. From 'shape_RoundedRectangleLayout', the role 'shape_RoundedRectangleLayout' has cardinality 0..*, and from 'shape_CDRoundedRectangle', the role 'shape_CDRoundedRectangle' has cardinality 0..*.
+An association connects 'shape_CDPolygon' and 'shape_PolyLineLayout'. From 'shape_CDPolygon', the role 'shape_CDPolygon' has cardinality 0..*, and from 'shape_PolyLineLayout', the role 'shape_PolyLineLayout23' has cardinality 0..*.
+An association connects 'shape_CDEllipse' and 'shape_RectangleEllipseLayout'. From 'shape_CDEllipse', the role 'shape_CDEllipse' has cardinality 0..*, and from 'shape_RectangleEllipseLayout', the role 'shape_RectangleEllipseLayout25' has cardinality 0..*.
+An association connects 'shape_TextLayout' and 'shape_CDText'. From 'shape_TextLayout', the role 'shape_TextLayout' has cardinality 0..*, and from 'shape_CDText', the role 'shape_CDText' has cardinality 0..*.
+An association connects 'shape_CDText' and 'shape_TextBody'. From 'shape_CDText', the role 'shape_CDText28' has cardinality 0..*, and from 'shape_TextBody', the role 'shape_TextBody' has cardinality 0..*.
+An association connects 'shape_LineLayout' and 'shape_Line'. From 'shape_LineLayout', the role 'shape_LineLayout30' has cardinality 0..*, and from 'shape_Line', the role 'shape_Line' has cardinality 0..*.
+An association connects 'shape_PolyLineLayout' and 'shape_Polyline'. From 'shape_PolyLineLayout', the role 'shape_PolyLineLayout32' has cardinality 0..*, and from 'shape_Polyline', the role 'shape_Polyline' has cardinality 0..*.
+An association connects 'shape_CompartmentInfo' and 'shape_Rectangle'. From 'shape_CompartmentInfo', the role 'shape_CompartmentInfo' has cardinality 0..*, and from 'shape_Rectangle', the role 'shape_Rectangle' has cardinality 0..*.
+An association connects 'shape_Rectangle' and 'shape_RectangleEllipseLayout'. From 'shape_Rectangle', the role 'shape_Rectangle35' has cardinality 0..*, and from 'shape_RectangleEllipseLayout', the role 'shape_RectangleEllipseLayout36' has cardinality 0..*.
+An association connects 'shape_Shape' and 'shape_Rectangle'. From 'shape_Shape', the role 'shape_Shape39' has cardinality 0..*, and from 'shape_Rectangle', the role 'shape_Rectangle38' has cardinality 0..*.
+An association connects 'shape_RoundedRectangle' and 'shape_RoundedRectangleLayout'. From 'shape_RoundedRectangle', the role 'shape_RoundedRectangle' has cardinality 0..*, and from 'shape_RoundedRectangleLayout', the role 'shape_RoundedRectangleLayout41' has cardinality 0..*.
+An association connects 'shape_Shape' and 'shape_RoundedRectangle'. From 'shape_Shape', the role 'shape_Shape44' has cardinality 0..*, and from 'shape_RoundedRectangle', the role 'shape_RoundedRectangle43' has cardinality 0..*.
+An association connects 'shape_Polygon' and 'shape_PolyLineLayout'. From 'shape_Polygon', the role 'shape_Polygon' has cardinality 0..*, and from 'shape_PolyLineLayout', the role 'shape_PolyLineLayout46' has cardinality 0..*.
+An association connects 'shape_Shape' and 'shape_Polygon'. From 'shape_Shape', the role 'shape_Shape49' has cardinality 0..*, and from 'shape_Polygon', the role 'shape_Polygon48' has cardinality 0..*.
+An association connects 'shape_Ellipse' and 'shape_CompartmentInfo'. From 'shape_Ellipse', the role 'shape_Ellipse' has cardinality 0..*, and from 'shape_CompartmentInfo', the role 'shape_CompartmentInfo51' has cardinality 0..*.
+An association connects 'shape_RectangleEllipseLayout' and 'shape_Ellipse'. From 'shape_RectangleEllipseLayout', the role 'shape_RectangleEllipseLayout54' has cardinality 0..*, and from 'shape_Ellipse', the role 'shape_Ellipse53' has cardinality 0..*.
+An association connects 'shape_Ellipse' and 'shape_Shape'. From 'shape_Ellipse', the role 'shape_Ellipse56' has cardinality 0..*, and from 'shape_Shape', the role 'shape_Shape57' has cardinality 0..*.
+An association connects 'shape_Text' and 'shape_TextLayout'. From 'shape_Text', the role 'shape_Text' has cardinality 0..*, and from 'shape_TextLayout', the role 'shape_TextLayout59' has cardinality 0..*.
+An association connects 'shape_TextBody' and 'shape_Text'. From 'shape_TextBody', the role 'shape_TextBody62' has cardinality 0..*, and from 'shape_Text', the role 'shape_Text61' has cardinality 0..*.
+An association connects 'shape_TextBody' and 'shape_CompartmentInfo'. From 'shape_TextBody', the role 'shape_TextBody65' has cardinality 0..*, and from 'shape_CompartmentInfo', the role 'shape_CompartmentInfo64' has cardinality 0..*.
+An association connects 'shape_Compartment' and 'shape_CompartmentShape'. From 'shape_Compartment', the role 'shape_Compartment' has cardinality 0..*, and from 'shape_CompartmentShape', the role 'shape_CompartmentShape' has cardinality 0..*.
+An association connects 'shape_RectangleEllipseLayout' and 'shape_CompartmentShape'. From 'shape_RectangleEllipseLayout', the role 'shape_RectangleEllipseLayout69' has cardinality 0..*, and from 'shape_CompartmentShape', the role 'shape_CompartmentShape68' has cardinality 0..*.
+An association connects 'shape_TextBody' and 'shape_CompartmentShape'. From 'shape_TextBody', the role 'shape_TextBody72' has cardinality 0..*, and from 'shape_CompartmentShape', the role 'shape_CompartmentShape71' has cardinality 0..*.
+An association connects 'shape_RoundedRectangleLayout' and 'shape_CompartmentRoundedRectangle'. From 'shape_RoundedRectangleLayout', the role 'shape_RoundedRectangleLayout74' has cardinality 0..*, and from 'shape_CompartmentRoundedRectangle', the role 'shape_CompartmentRoundedRectangle' has cardinality 0..*.
+An association connects 'shape_TextBody' and 'shape_CompartmentRoundedRectangle'. From 'shape_TextBody', the role 'shape_TextBody77' has cardinality 0..*, and from 'shape_CompartmentRoundedRectangle', the role 'shape_CompartmentRoundedRectangle76' has cardinality 0..*.
+An association connects 'shape_CompartmentPolygon' and 'shape_PolyLineLayout'. From 'shape_CompartmentPolygon', the role 'shape_CompartmentPolygon' has cardinality 0..*, and from 'shape_PolyLineLayout', the role 'shape_PolyLineLayout79' has cardinality 0..*.
+An association connects 'shape_TextBody' and 'shape_CompartmentPolygon'. From 'shape_TextBody', the role 'shape_TextBody82' has cardinality 0..*, and from 'shape_CompartmentPolygon', the role 'shape_CompartmentPolygon81' has cardinality 0..*.
+An association connects 'shape_Description' and 'shape_TextBody'. From 'shape_Description', the role 'shape_Description84' has cardinality 0..*, and from 'shape_TextBody', the role 'shape_TextBody85' has cardinality 0..*.
+An association connects 'shape_RectangleEllipseLayout' and 'shape_CommonLayout'. From 'shape_RectangleEllipseLayout', the role 'shape_RectangleEllipseLayout87' has cardinality 0..*, and from 'shape_CommonLayout', the role 'shape_CommonLayout' has cardinality 0..*.
+An association connects 'shape_RectangleEllipseLayout' and 'shape_ShapestyleLayout'. From 'shape_RectangleEllipseLayout', the role 'shape_RectangleEllipseLayout89' has cardinality 0..*, and from 'shape_ShapestyleLayout', the role 'shape_ShapestyleLayout90' has cardinality 0..*.
+An association connects 'shape_Point' and 'shape_LineLayout'. From 'shape_Point', the role 'shape_Point' has cardinality 0..*, and from 'shape_LineLayout', the role 'shape_LineLayout92' has cardinality 0..*.
+An association connects 'shape_LineLayout' and 'shape_ShapestyleLayout'. From 'shape_LineLayout', the role 'shape_LineLayout94' has cardinality 0..*, and from 'shape_ShapestyleLayout', the role 'shape_ShapestyleLayout95' has cardinality 0..*.
+An association connects 'shape_PolyLineLayout' and 'shape_Point'. From 'shape_PolyLineLayout', the role 'shape_PolyLineLayout97' has cardinality 0..*, and from 'shape_Point', the role 'shape_Point98' has cardinality 0..*.
+An association connects 'shape_PolyLineLayout' and 'shape_ShapestyleLayout'. From 'shape_PolyLineLayout', the role 'shape_PolyLineLayout100' has cardinality 0..*, and from 'shape_ShapestyleLayout', the role 'shape_ShapestyleLayout101' has cardinality 0..*.
+An association connects 'shape_CommonLayout' and 'shape_RoundedRectangleLayout'. From 'shape_CommonLayout', the role 'shape_CommonLayout104' has cardinality 0..*, and from 'shape_RoundedRectangleLayout', the role 'shape_RoundedRectangleLayout103' has cardinality 0..*.
+An association connects 'shape_RoundedRectangleLayout' and 'shape_ShapestyleLayout'. From 'shape_RoundedRectangleLayout', the role 'shape_RoundedRectangleLayout106' has cardinality 0..*, and from 'shape_ShapestyleLayout', the role 'shape_ShapestyleLayout107' has cardinality 0..*.
+An association connects 'shape_TextLayout' and 'shape_CommonLayout'. From 'shape_TextLayout', the role 'shape_TextLayout109' has cardinality 0..*, and from 'shape_CommonLayout', the role 'shape_CommonLayout110' has cardinality 0..*.
+An association connects 'shape_TextLayout' and 'shape_ShapestyleLayout'. From 'shape_TextLayout', the role 'shape_TextLayout112' has cardinality 0..*, and from 'shape_ShapestyleLayout', the role 'shape_ShapestyleLayout113' has cardinality 0..*.

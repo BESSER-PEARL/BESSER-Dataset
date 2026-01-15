@@ -1,0 +1,59 @@
+The domain model 'test' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'test_ast_D' represents an important domain concept.
+It has the following attributes: 'someQCollection', which is of type str; 'index', which is of type int; 'someOtherBool', which is of type str; 'someCollection', which is of type str; 'someBool', which is of type bool; 'name', which is of type str.
+
+'C' represents an important domain concept.
+It does not declare any attributes.
+
+'test_ntas_B' represents an important domain concept.
+It does not declare any attributes.
+
+'test_ntas_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'test_ast_E' represents an important domain concept.
+It has the following attributes: 'derivedBool', which is of type bool; 'lazyBool', which is of type bool.
+
+'test_ntas_C' represents an important domain concept.
+It has one attribute: 'someTerminal', which is of type str.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'test_ntas_A' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractD' represents an important domain concept.
+It does not declare any attributes.
+
+'D' represents an important domain concept.
+It does not declare any attributes.
+
+'test_ast_AbstractD' represents an important domain concept.
+It has one attribute: 'derivedString', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'test_ast_D' is a specialization of 'AbstractD'.
+The class 'test_ast_E' is a specialization of 'D'.
+
+Relationships between classes are modeled using associations.
+An association connects 'test_ntas_Root' and 'A'. From 'test_ntas_Root', the role 'test_ntas_Root' has cardinality 0..*, and from 'A', the role 'A' has cardinality 0..*.
+An association connects 'test_ntas_Root' and 'B'. From 'test_ntas_Root', the role 'test_ntas_Root2' has cardinality 0..*, and from 'B', the role 'B' has cardinality 0..*.
+An association connects 'test_ntas_Root' and 'C'. From 'test_ntas_Root', the role 'test_ntas_Root4' has cardinality 0..*, and from 'C', the role 'C' has cardinality 0..*.
+An association connects 'test_ntas_Root' and 'D'. From 'test_ntas_Root', the role 'test_ntas_Root6' has cardinality 0..*, and from 'D', the role 'D' has cardinality 0..*.
+An association connects 'test_ntas_Root' and 'A'. From 'test_ntas_Root', the role 'test_ntas_Root8' has cardinality 0..*, and from 'A', the role 'A9' has cardinality 0..*.
+An association connects 'D' and 'test_ast_D'. From 'D', the role 'D11' has cardinality 0..*, and from 'test_ast_D', the role 'test_ast_D' has cardinality 0..*.
+An association connects 'test_ast_D' and 'C'. From 'test_ast_D', the role 'test_ast_D13' has cardinality 0..*, and from 'C', the role 'C14' has cardinality 0..*.
+An association connects 'D' and 'test_ast_D'. From 'D', the role 'D17' has cardinality 0..*, and from 'test_ast_D', the role 'test_ast_D16' has cardinality 0..*.
+An association connects 'C' and 'test_ast_D'. From 'C', the role 'C20' has cardinality 0..*, and from 'test_ast_D', the role 'test_ast_D19' has cardinality 0..*.
+An association connects 'D' and 'test_ast_D'. From 'D', the role 'D23' has cardinality 0..*, and from 'test_ast_D', the role 'test_ast_D22' has cardinality 0..*.
+An association connects 'test_ast_D' and 'C'. From 'test_ast_D', the role 'test_ast_D25' has cardinality 0..*, and from 'C', the role 'C26' has cardinality 0..*.
+An association connects 'A' and 'test_ast_D'. From 'A', the role 'A29' has cardinality 0..*, and from 'test_ast_D', the role 'test_ast_D28' has cardinality 0..*.
+An association connects 'test_ast_D' and 'A'. From 'test_ast_D', the role 'test_ast_D31' has cardinality 0..*, and from 'A', the role 'A32' has cardinality 0..*.
+An association connects 'A' and 'test_ast_AbstractD'. From 'A', the role 'A34' has cardinality 0..*, and from 'test_ast_AbstractD', the role 'test_ast_AbstractD' has cardinality 0..*.

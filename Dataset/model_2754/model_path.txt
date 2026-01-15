@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/haslab/echo/examples/pt.uminho.haslab.echo.examples/metamodels/multiplicities/B_attributes.ecore

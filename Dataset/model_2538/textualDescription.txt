@@ -1,0 +1,51 @@
+The domain model 'compartments' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'compartments_TopNodeB' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'compartments_ChildOfA_C' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'compartments_Canvas' represents an important domain concept.
+It does not declare any attributes.
+
+'compartments_ChildOfAffixed' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'compartments_ChildOfB_G' represents an important domain concept.
+It has one attribute: 'number', which is of type int.
+
+'compartments_TopNode' represents an important domain concept.
+It does not declare any attributes.
+
+'compartments_ChildOfA_D' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'compartments_TopNodeA' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'compartments_ChildOfB_E' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TopNode' represents an important domain concept.
+It does not declare any attributes.
+
+'compartments_ChildOfB_F' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'compartments_TopNodeA' is a specialization of 'TopNode'.
+The class 'compartments_TopNodeB' is a specialization of 'TopNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'compartments_Canvas' and 'compartments_TopNode'. From 'compartments_Canvas', the role 'compartments_Canvas' has cardinality 0..*, and from 'compartments_TopNode', the role 'compartments_TopNode' has cardinality 0..*.
+An association connects 'compartments_TopNodeA' and 'compartments_ChildOfA_C'. From 'compartments_TopNodeA', the role 'compartments_TopNodeA' has cardinality 0..*, and from 'compartments_ChildOfA_C', the role 'compartments_ChildOfA_C' has cardinality 0..*.
+An association connects 'compartments_ChildOfA_D' and 'compartments_TopNodeA'. From 'compartments_ChildOfA_D', the role 'compartments_ChildOfA_D' has cardinality 0..*, and from 'compartments_TopNodeA', the role 'compartments_TopNodeA3' has cardinality 0..*.
+An association connects 'compartments_ChildOfB_E' and 'compartments_TopNodeB'. From 'compartments_ChildOfB_E', the role 'compartments_ChildOfB_E' has cardinality 0..*, and from 'compartments_TopNodeB', the role 'compartments_TopNodeB' has cardinality 0..*.
+An association connects 'compartments_ChildOfB_G' and 'compartments_TopNodeB'. From 'compartments_ChildOfB_G', the role 'compartments_ChildOfB_G' has cardinality 0..*, and from 'compartments_TopNodeB', the role 'compartments_TopNodeB6' has cardinality 0..*.
+An association connects 'compartments_ChildOfB_F' and 'compartments_TopNodeB'. From 'compartments_ChildOfB_F', the role 'compartments_ChildOfB_F' has cardinality 0..*, and from 'compartments_TopNodeB', the role 'compartments_TopNodeB8' has cardinality 0..*.
+An association connects 'compartments_ChildOfA_C' and 'compartments_ChildOfB_E'. From 'compartments_ChildOfA_C', the role 'compartments_ChildOfA_C11' has cardinality 0..*, and from 'compartments_ChildOfB_E', the role 'compartments_ChildOfB_E10' has cardinality 0..*.
+An association connects 'compartments_ChildOfB_G' and 'compartments_ChildOfAffixed'. From 'compartments_ChildOfB_G', the role 'compartments_ChildOfB_G13' has cardinality 0..*, and from 'compartments_ChildOfAffixed', the role 'compartments_ChildOfAffixed' has cardinality 0..*.
+An association connects 'compartments_ChildOfA_D' and 'compartments_ChildOfB_F'. From 'compartments_ChildOfA_D', the role 'compartments_ChildOfA_D16' has cardinality 0..*, and from 'compartments_ChildOfB_F', the role 'compartments_ChildOfB_F15' has cardinality 0..*.

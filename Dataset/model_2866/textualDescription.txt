@@ -1,0 +1,474 @@
+The domain model 'fiacre' describes the core structural elements and their relationships within the system.
+
+The model defines 103 main class(es).
+
+'fiacre_Constr' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_TypeDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Foreach' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_BasicType' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_InlineQueue' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Seq' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_PortDecl' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'out', which is of type bool; 'in', which is of type bool.
+
+'fiacre_Priority' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_RefArg' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_BoolLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'fiacre_InlineArray' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_InfiniteBound' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_WhileStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_ConstantDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_ProcessDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Communication' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_IntType' represents an important domain concept.
+It does not declare any attributes.
+
+'MinBound' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_BinExp' represents an important domain concept.
+It has one attribute: 'binOp', which is of type str.
+
+'fiacre_Queue' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_To' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_NatType' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_InlineRecord' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_FiniteBound' represents an important domain concept.
+It has the following attributes: 'val', which is of type int; 'strict', which is of type bool.
+
+'fiacre_Array' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_ArrayElem' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_TypeId' represents an important domain concept.
+It does not declare any attributes.
+
+'Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'Composition' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Channel' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_ChannelDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'InlineCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_ComponentDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_LabeledType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fiacre_ArrayPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_FieldPattern' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'fiacre_ParamPortDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Synchronization' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_SingleAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Union' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_NodeDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_NullStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Record' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_CondExp' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Instance' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'LabeledType' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fiacre_VarRef' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fiacre_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_NatLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Declaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fiacre_Wait' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_DeterministicAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_LocalVariable' represents an important domain concept.
+It has one attribute: 'constant', which is of type bool.
+
+'NodeDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_UnExp' represents an important domain concept.
+It has one attribute: 'unop', which is of type str.
+
+'fiacre_Par' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_ConstantRef' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Emission' represents an important domain concept.
+It does not declare any attributes.
+
+'Arg' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_ConstrPattern' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fiacre_Select' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_AnyPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_BoolType' represents an important domain concept.
+It does not declare any attributes.
+
+'Communication' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_CaseStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_InlineCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_LocalPortDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_ArgumentVariable' represents an important domain concept.
+It has the following attributes: 'ref', which is of type bool; 'write', which is of type bool; 'read', which is of type bool.
+
+'fiacre_NonDeterministicAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_RecordElem' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'fiacre_ConstrExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fiacre_MinBound' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_ValuedField' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'Channel' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Arg' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicType' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'MaxBound' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Profile' represents an important domain concept.
+It does not declare any attributes.
+
+'PortDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Statement' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'fiacre_InterfacedComp' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Composition' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fiacre_IfStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'fiacre_MaxBound' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'UnOp' defines the following possible values: 'UMINUS', 'UFULL', 'UNOT', 'UDOLLAR', 'DEQUEUE', 'FIRST', 'UEMPTY'.
+The enumeration 'BinOp' defines the following possible values: 'BAND', 'BDIV', 'BLT', 'APPEND', 'BNE', 'BGE', 'ENQUEUE', 'BEQ', 'BMINUS', 'BMUL', 'BOR', 'BADD', 'BMOD', 'BLE', 'BGT'.
+
+The model also captures inheritance relationships between classes.
+The class 'fiacre_NodeDecl' is a specialization of 'Declaration'.
+The class 'fiacre_TypeDecl' is a specialization of 'Declaration'.
+The class 'fiacre_ChannelDecl' is a specialization of 'Declaration'.
+The class 'fiacre_ComponentDecl' is a specialization of 'NodeDecl'.
+The class 'fiacre_ProcessDecl' is a specialization of 'NodeDecl'.
+The class 'fiacre_ArgumentVariable' is a specialization of 'Variable'.
+The class 'fiacre_LocalVariable' is a specialization of 'Variable'.
+The class 'fiacre_Par' is a specialization of 'Composition'.
+The class 'fiacre_Instance' is a specialization of 'Composition'.
+The class 'fiacre_Exp' is a specialization of 'Arg'.
+The class 'fiacre_NullStmt' is a specialization of 'Statement'.
+The class 'fiacre_Assignment' is a specialization of 'Statement'.
+The class 'fiacre_Communication' is a specialization of 'Statement'.
+The class 'fiacre_WhileStmt' is a specialization of 'Statement'.
+The class 'fiacre_IfStmt' is a specialization of 'Statement'.
+The class 'fiacre_Select' is a specialization of 'Statement'.
+The class 'fiacre_To' is a specialization of 'Statement'.
+The class 'fiacre_Wait' is a specialization of 'Statement'.
+The class 'fiacre_DeterministicAssignment' is a specialization of 'Assignment'.
+The class 'fiacre_NonDeterministicAssignment' is a specialization of 'Assignment'.
+The class 'fiacre_UnExp' is a specialization of 'Exp'.
+The class 'fiacre_BinExp' is a specialization of 'Exp'.
+The class 'fiacre_NatLiteral' is a specialization of 'Literal'.
+The class 'fiacre_BoolLiteral' is a specialization of 'Literal'.
+The class 'fiacre_VarRef' is a specialization of 'Pattern'.
+The class 'fiacre_VarRef' is a specialization of 'Exp'.
+The class 'fiacre_ArrayElem' is a specialization of 'Exp'.
+The class 'fiacre_RecordElem' is a specialization of 'Exp'.
+The class 'fiacre_InlineQueue' is a specialization of 'InlineCollection'.
+The class 'fiacre_BasicType' is a specialization of 'Type'.
+The class 'fiacre_BoolType' is a specialization of 'BasicType'.
+The class 'fiacre_NatType' is a specialization of 'BasicType'.
+The class 'fiacre_IntType' is a specialization of 'BasicType'.
+The class 'fiacre_Interval' is a specialization of 'Type'.
+The class 'fiacre_Record' is a specialization of 'Type'.
+The class 'fiacre_Field' is a specialization of 'LabeledType'.
+The class 'fiacre_Array' is a specialization of 'Type'.
+The class 'fiacre_Queue' is a specialization of 'Type'.
+The class 'fiacre_TypeId' is a specialization of 'Type'.
+The class 'fiacre_Profile' is a specialization of 'Channel'.
+The class 'fiacre_InlineArray' is a specialization of 'InlineCollection'.
+The class 'fiacre_InlineRecord' is a specialization of 'Exp'.
+The class 'fiacre_Synchronization' is a specialization of 'Communication'.
+The class 'fiacre_Reception' is a specialization of 'Communication'.
+The class 'fiacre_Emission' is a specialization of 'Communication'.
+The class 'fiacre_Seq' is a specialization of 'Statement'.
+The class 'fiacre_LocalPortDecl' is a specialization of 'PortDecl'.
+The class 'fiacre_ParamPortDecl' is a specialization of 'PortDecl'.
+The class 'fiacre_ConstrExp' is a specialization of 'Exp'.
+The class 'fiacre_Union' is a specialization of 'Type'.
+The class 'fiacre_ConstrPattern' is a specialization of 'Pattern'.
+The class 'fiacre_ArrayPattern' is a specialization of 'Pattern'.
+The class 'fiacre_FieldPattern' is a specialization of 'Pattern'.
+The class 'fiacre_AnyPattern' is a specialization of 'Pattern'.
+The class 'fiacre_Literal' is a specialization of 'Exp'.
+The class 'fiacre_Literal' is a specialization of 'Pattern'.
+The class 'fiacre_CaseStmt' is a specialization of 'Statement'.
+The class 'fiacre_RefArg' is a specialization of 'Arg'.
+The class 'fiacre_ConstantDecl' is a specialization of 'Declaration'.
+The class 'fiacre_ConstantRef' is a specialization of 'Exp'.
+The class 'fiacre_ConstantRef' is a specialization of 'Pattern'.
+The class 'fiacre_InlineCollection' is a specialization of 'Exp'.
+The class 'fiacre_Constr' is a specialization of 'LabeledType'.
+The class 'fiacre_FiniteBound' is a specialization of 'MinBound'.
+The class 'fiacre_FiniteBound' is a specialization of 'MaxBound'.
+The class 'fiacre_InfiniteBound' is a specialization of 'MaxBound'.
+The class 'fiacre_CondExp' is a specialization of 'Exp'.
+The class 'fiacre_Foreach' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fiacre_Declaration' and 'fiacre_Program'. From 'fiacre_Declaration', the role 'fiacre_Declaration' has cardinality 0..*, and from 'fiacre_Program', the role 'fiacre_Program' has cardinality 0..*.
+An association connects 'fiacre_NodeDecl' and 'fiacre_Program'. From 'fiacre_NodeDecl', the role 'fiacre_NodeDecl' has cardinality 0..*, and from 'fiacre_Program', the role 'fiacre_Program2' has cardinality 0..*.
+An association connects 'fiacre_NodeDecl' and 'fiacre_ArgumentVariable'. From 'fiacre_NodeDecl', the role 'fiacre_NodeDecl4' has cardinality 0..*, and from 'fiacre_ArgumentVariable', the role 'fiacre_ArgumentVariable' has cardinality 0..*.
+An association connects 'fiacre_LocalVariable' and 'fiacre_NodeDecl'. From 'fiacre_LocalVariable', the role 'fiacre_LocalVariable' has cardinality 0..*, and from 'fiacre_NodeDecl', the role 'fiacre_NodeDecl6' has cardinality 0..*.
+An association connects 'fiacre_ParamPortDecl' and 'fiacre_NodeDecl'. From 'fiacre_ParamPortDecl', the role 'fiacre_ParamPortDecl' has cardinality 0..*, and from 'fiacre_NodeDecl', the role 'fiacre_NodeDecl8' has cardinality 0..*.
+An association connects 'fiacre_NodeDecl' and 'fiacre_LocalPortDecl'. From 'fiacre_NodeDecl', the role 'fiacre_NodeDecl10' has cardinality 0..*, and from 'fiacre_LocalPortDecl', the role 'fiacre_LocalPortDecl' has cardinality 0..*.
+An association connects 'fiacre_NodeDecl' and 'fiacre_Statement'. From 'fiacre_NodeDecl', the role 'fiacre_NodeDecl12' has cardinality 0..*, and from 'fiacre_Statement', the role 'fiacre_Statement' has cardinality 0..*.
+An association connects 'fiacre_Type' and 'fiacre_TypeDecl'. From 'fiacre_Type', the role 'fiacre_Type' has cardinality 0..*, and from 'fiacre_TypeDecl', the role 'fiacre_TypeDecl' has cardinality 0..*.
+An association connects 'fiacre_ChannelDecl' and 'fiacre_Channel'. From 'fiacre_ChannelDecl', the role 'fiacre_ChannelDecl' has cardinality 0..*, and from 'fiacre_Channel', the role 'fiacre_Channel' has cardinality 0..*.
+An association connects 'fiacre_Composition' and 'fiacre_ComponentDecl'. From 'fiacre_Composition', the role 'fiacre_Composition' has cardinality 0..*, and from 'fiacre_ComponentDecl', the role 'fiacre_ComponentDecl' has cardinality 0..*.
+An association connects 'fiacre_ComponentDecl' and 'fiacre_Priority'. From 'fiacre_ComponentDecl', the role 'fiacre_ComponentDecl17' has cardinality 0..*, and from 'fiacre_Priority', the role 'fiacre_Priority' has cardinality 0..*.
+An association connects 'fiacre_State' and 'fiacre_ProcessDecl'. From 'fiacre_State', the role 'fiacre_State' has cardinality 0..*, and from 'fiacre_ProcessDecl', the role 'fiacre_ProcessDecl' has cardinality 0..*.
+An association connects 'fiacre_ProcessDecl' and 'fiacre_Transition'. From 'fiacre_ProcessDecl', the role 'fiacre_ProcessDecl20' has cardinality 0..*, and from 'fiacre_Transition', the role 'fiacre_Transition' has cardinality 0..*.
+An association connects 'fiacre_PortDecl' and 'fiacre_Channel'. From 'fiacre_PortDecl', the role 'fiacre_PortDecl' has cardinality 0..*, and from 'fiacre_Channel', the role 'fiacre_Channel22' has cardinality 0..*.
+An association connects 'fiacre_Exp' and 'fiacre_LocalVariable'. From 'fiacre_Exp', the role 'fiacre_Exp' has cardinality 0..*, and from 'fiacre_LocalVariable', the role 'fiacre_LocalVariable24' has cardinality 0..*.
+An association connects 'fiacre_InterfacedComp' and 'fiacre_Par'. From 'fiacre_InterfacedComp', the role 'fiacre_InterfacedComp' has cardinality 0..*, and from 'fiacre_Par', the role 'fiacre_Par' has cardinality 0..*.
+An association connects 'fiacre_NodeDecl' and 'fiacre_Instance'. From 'fiacre_NodeDecl', the role 'fiacre_NodeDecl27' has cardinality 0..*, and from 'fiacre_Instance', the role 'fiacre_Instance' has cardinality 0..*.
+An association connects 'fiacre_Instance' and 'fiacre_Arg'. From 'fiacre_Instance', the role 'fiacre_Instance29' has cardinality 0..*, and from 'fiacre_Arg', the role 'fiacre_Arg' has cardinality 0..*.
+An association connects 'fiacre_PortDecl' and 'fiacre_Instance'. From 'fiacre_PortDecl', the role 'fiacre_PortDecl32' has cardinality 0..*, and from 'fiacre_Instance', the role 'fiacre_Instance31' has cardinality 0..*.
+An association connects 'fiacre_InterfacedComp' and 'fiacre_Composition'. From 'fiacre_InterfacedComp', the role 'fiacre_InterfacedComp34' has cardinality 0..*, and from 'fiacre_Composition', the role 'fiacre_Composition35' has cardinality 0..*.
+An association connects 'fiacre_InterfacedComp' and 'fiacre_PortDecl'. From 'fiacre_InterfacedComp', the role 'fiacre_InterfacedComp37' has cardinality 0..*, and from 'fiacre_PortDecl', the role 'fiacre_PortDecl38' has cardinality 0..*.
+An association connects 'fiacre_Transition' and 'fiacre_State'. From 'fiacre_Transition', the role 'fiacre_Transition40' has cardinality 0..*, and from 'fiacre_State', the role 'fiacre_State41' has cardinality 0..*.
+An association connects 'fiacre_Statement' and 'fiacre_Transition'. From 'fiacre_Statement', the role 'fiacre_Statement44' has cardinality 0..*, and from 'fiacre_Transition', the role 'fiacre_Transition43' has cardinality 0..*.
+An association connects 'fiacre_PortDecl' and 'fiacre_Communication'. From 'fiacre_PortDecl', the role 'fiacre_PortDecl46' has cardinality 0..*, and from 'fiacre_Communication', the role 'fiacre_Communication' has cardinality 0..*.
+An association connects 'fiacre_WhileStmt' and 'fiacre_Exp'. From 'fiacre_WhileStmt', the role 'fiacre_WhileStmt' has cardinality 0..*, and from 'fiacre_Exp', the role 'fiacre_Exp48' has cardinality 0..*.
+An association connects 'fiacre_Statement' and 'fiacre_WhileStmt'. From 'fiacre_Statement', the role 'fiacre_Statement51' has cardinality 0..*, and from 'fiacre_WhileStmt', the role 'fiacre_WhileStmt50' has cardinality 0..*.
+An association connects 'fiacre_Exp' and 'fiacre_IfStmt'. From 'fiacre_Exp', the role 'fiacre_Exp53' has cardinality 0..*, and from 'fiacre_IfStmt', the role 'fiacre_IfStmt' has cardinality 0..*.
+An association connects 'fiacre_Statement' and 'fiacre_IfStmt'. From 'fiacre_Statement', the role 'fiacre_Statement56' has cardinality 0..*, and from 'fiacre_IfStmt', the role 'fiacre_IfStmt55' has cardinality 0..*.
+An association connects 'fiacre_Statement' and 'fiacre_IfStmt'. From 'fiacre_Statement', the role 'fiacre_Statement59' has cardinality 0..*, and from 'fiacre_IfStmt', the role 'fiacre_IfStmt58' has cardinality 0..*.
+An association connects 'fiacre_Select' and 'fiacre_Statement'. From 'fiacre_Select', the role 'fiacre_Select' has cardinality 0..*, and from 'fiacre_Statement', the role 'fiacre_Statement61' has cardinality 0..*.
+An association connects 'fiacre_State' and 'fiacre_To'. From 'fiacre_State', the role 'fiacre_State63' has cardinality 0..*, and from 'fiacre_To', the role 'fiacre_To' has cardinality 0..*.
+An association connects 'fiacre_Wait' and 'fiacre_MinBound'. From 'fiacre_Wait', the role 'fiacre_Wait' has cardinality 0..*, and from 'fiacre_MinBound', the role 'fiacre_MinBound' has cardinality 0..*.
+An association connects 'fiacre_MaxBound' and 'fiacre_Wait'. From 'fiacre_MaxBound', the role 'fiacre_MaxBound' has cardinality 0..*, and from 'fiacre_Wait', the role 'fiacre_Wait66' has cardinality 0..*.
+An association connects 'fiacre_DeterministicAssignment' and 'fiacre_SingleAssignment'. From 'fiacre_DeterministicAssignment', the role 'fiacre_DeterministicAssignment' has cardinality 0..*, and from 'fiacre_SingleAssignment', the role 'fiacre_SingleAssignment' has cardinality 0..*.
+An association connects 'fiacre_Pattern' and 'fiacre_NonDeterministicAssignment'. From 'fiacre_Pattern', the role 'fiacre_Pattern' has cardinality 0..*, and from 'fiacre_NonDeterministicAssignment', the role 'fiacre_NonDeterministicAssignment' has cardinality 0..*.
+An association connects 'fiacre_NonDeterministicAssignment' and 'fiacre_Exp'. From 'fiacre_NonDeterministicAssignment', the role 'fiacre_NonDeterministicAssignment70' has cardinality 0..*, and from 'fiacre_Exp', the role 'fiacre_Exp71' has cardinality 0..*.
+An association connects 'fiacre_Pattern' and 'fiacre_SingleAssignment'. From 'fiacre_Pattern', the role 'fiacre_Pattern74' has cardinality 0..*, and from 'fiacre_SingleAssignment', the role 'fiacre_SingleAssignment73' has cardinality 0..*.
+An association connects 'fiacre_Exp' and 'fiacre_SingleAssignment'. From 'fiacre_Exp', the role 'fiacre_Exp77' has cardinality 0..*, and from 'fiacre_SingleAssignment', the role 'fiacre_SingleAssignment76' has cardinality 0..*.
+An association connects 'fiacre_Exp' and 'fiacre_UnExp'. From 'fiacre_Exp', the role 'fiacre_Exp79' has cardinality 0..*, and from 'fiacre_UnExp', the role 'fiacre_UnExp' has cardinality 0..*.
+An association connects 'fiacre_Exp' and 'fiacre_BinExp'. From 'fiacre_Exp', the role 'fiacre_Exp81' has cardinality 0..*, and from 'fiacre_BinExp', the role 'fiacre_BinExp' has cardinality 0..*.
+An association connects 'fiacre_BinExp' and 'fiacre_Exp'. From 'fiacre_BinExp', the role 'fiacre_BinExp83' has cardinality 0..*, and from 'fiacre_Exp', the role 'fiacre_Exp84' has cardinality 0..*.
+An association connects 'fiacre_Variable' and 'fiacre_VarRef'. From 'fiacre_Variable', the role 'fiacre_Variable' has cardinality 0..*, and from 'fiacre_VarRef', the role 'fiacre_VarRef' has cardinality 0..*.
+An association connects 'fiacre_Exp' and 'fiacre_ArrayElem'. From 'fiacre_Exp', the role 'fiacre_Exp87' has cardinality 0..*, and from 'fiacre_ArrayElem', the role 'fiacre_ArrayElem' has cardinality 0..*.
+An association connects 'fiacre_Exp' and 'fiacre_ArrayElem'. From 'fiacre_Exp', the role 'fiacre_Exp90' has cardinality 0..*, and from 'fiacre_ArrayElem', the role 'fiacre_ArrayElem89' has cardinality 0..*.
+An association connects 'fiacre_RecordElem' and 'fiacre_Exp'. From 'fiacre_RecordElem', the role 'fiacre_RecordElem' has cardinality 0..*, and from 'fiacre_Exp', the role 'fiacre_Exp92' has cardinality 0..*.
+An association connects 'fiacre_Interval' and 'fiacre_Exp'. From 'fiacre_Interval', the role 'fiacre_Interval' has cardinality 0..*, and from 'fiacre_Exp', the role 'fiacre_Exp94' has cardinality 0..*.
+An association connects 'fiacre_Interval' and 'fiacre_Exp'. From 'fiacre_Interval', the role 'fiacre_Interval96' has cardinality 0..*, and from 'fiacre_Exp', the role 'fiacre_Exp97' has cardinality 0..*.
+An association connects 'fiacre_Field' and 'fiacre_Record'. From 'fiacre_Field', the role 'fiacre_Field' has cardinality 0..*, and from 'fiacre_Record', the role 'fiacre_Record' has cardinality 0..*.
+An association connects 'fiacre_Exp' and 'fiacre_Array'. From 'fiacre_Exp', the role 'fiacre_Exp100' has cardinality 0..*, and from 'fiacre_Array', the role 'fiacre_Array' has cardinality 0..*.
+An association connects 'fiacre_Array' and 'fiacre_Type'. From 'fiacre_Array', the role 'fiacre_Array102' has cardinality 0..*, and from 'fiacre_Type', the role 'fiacre_Type103' has cardinality 0..*.
+An association connects 'fiacre_Type' and 'fiacre_Queue'. From 'fiacre_Type', the role 'fiacre_Type105' has cardinality 0..*, and from 'fiacre_Queue', the role 'fiacre_Queue' has cardinality 0..*.
+An association connects 'fiacre_Queue' and 'fiacre_Exp'. From 'fiacre_Queue', the role 'fiacre_Queue107' has cardinality 0..*, and from 'fiacre_Exp', the role 'fiacre_Exp108' has cardinality 0..*.
+An association connects 'fiacre_TypeDecl' and 'fiacre_TypeId'. From 'fiacre_TypeDecl', the role 'fiacre_TypeDecl110' has cardinality 0..*, and from 'fiacre_TypeId', the role 'fiacre_TypeId' has cardinality 0..*.
+An association connects 'fiacre_Type' and 'fiacre_Profile'. From 'fiacre_Type', the role 'fiacre_Type112' has cardinality 0..*, and from 'fiacre_Profile', the role 'fiacre_Profile' has cardinality 0..*.
+An association connects 'fiacre_ValuedField' and 'fiacre_InlineRecord'. From 'fiacre_ValuedField', the role 'fiacre_ValuedField' has cardinality 0..*, and from 'fiacre_InlineRecord', the role 'fiacre_InlineRecord' has cardinality 0..*.
+An association connects 'fiacre_ValuedField' and 'fiacre_Exp'. From 'fiacre_ValuedField', the role 'fiacre_ValuedField115' has cardinality 0..*, and from 'fiacre_Exp', the role 'fiacre_Exp116' has cardinality 0..*.
+An association connects 'fiacre_Reception' and 'fiacre_Pattern'. From 'fiacre_Reception', the role 'fiacre_Reception' has cardinality 0..*, and from 'fiacre_Pattern', the role 'fiacre_Pattern118' has cardinality 0..*.
+An association connects 'fiacre_Exp' and 'fiacre_Reception'. From 'fiacre_Exp', the role 'fiacre_Exp121' has cardinality 0..*, and from 'fiacre_Reception', the role 'fiacre_Reception120' has cardinality 0..*.
+An association connects 'fiacre_Emission' and 'fiacre_Exp'. From 'fiacre_Emission', the role 'fiacre_Emission' has cardinality 0..*, and from 'fiacre_Exp', the role 'fiacre_Exp123' has cardinality 0..*.
+An association connects 'fiacre_Seq' and 'fiacre_Statement'. From 'fiacre_Seq', the role 'fiacre_Seq' has cardinality 0..*, and from 'fiacre_Statement', the role 'fiacre_Statement125' has cardinality 0..*.
+An association connects 'fiacre_LocalPortDecl' and 'fiacre_MinBound'. From 'fiacre_LocalPortDecl', the role 'fiacre_LocalPortDecl127' has cardinality 0..*, and from 'fiacre_MinBound', the role 'fiacre_MinBound128' has cardinality 0..*.
+An association connects 'fiacre_LocalPortDecl' and 'fiacre_MaxBound'. From 'fiacre_LocalPortDecl', the role 'fiacre_LocalPortDecl130' has cardinality 0..*, and from 'fiacre_MaxBound', the role 'fiacre_MaxBound131' has cardinality 0..*.
+An association connects 'fiacre_Variable' and 'fiacre_Type'. From 'fiacre_Variable', the role 'fiacre_Variable133' has cardinality 0..*, and from 'fiacre_Type', the role 'fiacre_Type134' has cardinality 0..*.
+An association connects 'fiacre_Priority' and 'fiacre_PortDecl'. From 'fiacre_Priority', the role 'fiacre_Priority136' has cardinality 0..*, and from 'fiacre_PortDecl', the role 'fiacre_PortDecl137' has cardinality 0..*.
+An association connects 'fiacre_PortDecl' and 'fiacre_Priority'. From 'fiacre_PortDecl', the role 'fiacre_PortDecl140' has cardinality 0..*, and from 'fiacre_Priority', the role 'fiacre_Priority139' has cardinality 0..*.
+An association connects 'fiacre_ConstrExp' and 'fiacre_Exp'. From 'fiacre_ConstrExp', the role 'fiacre_ConstrExp' has cardinality 0..*, and from 'fiacre_Exp', the role 'fiacre_Exp142' has cardinality 0..*.
+An association connects 'fiacre_Constr' and 'fiacre_Union'. From 'fiacre_Constr', the role 'fiacre_Constr' has cardinality 0..*, and from 'fiacre_Union', the role 'fiacre_Union' has cardinality 0..*.
+An association connects 'fiacre_ConstrPattern' and 'fiacre_Pattern'. From 'fiacre_ConstrPattern', the role 'fiacre_ConstrPattern' has cardinality 0..*, and from 'fiacre_Pattern', the role 'fiacre_Pattern145' has cardinality 0..*.
+An association connects 'fiacre_Exp' and 'fiacre_ArrayPattern'. From 'fiacre_Exp', the role 'fiacre_Exp147' has cardinality 0..*, and from 'fiacre_ArrayPattern', the role 'fiacre_ArrayPattern' has cardinality 0..*.
+An association connects 'fiacre_ArrayPattern' and 'fiacre_Pattern'. From 'fiacre_ArrayPattern', the role 'fiacre_ArrayPattern149' has cardinality 0..*, and from 'fiacre_Pattern', the role 'fiacre_Pattern150' has cardinality 0..*.
+An association connects 'fiacre_FieldPattern' and 'fiacre_Pattern'. From 'fiacre_FieldPattern', the role 'fiacre_FieldPattern' has cardinality 0..*, and from 'fiacre_Pattern', the role 'fiacre_Pattern152' has cardinality 0..*.
+An association connects 'fiacre_Rule' and 'fiacre_CaseStmt'. From 'fiacre_Rule', the role 'fiacre_Rule' has cardinality 0..*, and from 'fiacre_CaseStmt', the role 'fiacre_CaseStmt' has cardinality 0..*.
+An association connects 'fiacre_CaseStmt' and 'fiacre_Exp'. From 'fiacre_CaseStmt', the role 'fiacre_CaseStmt155' has cardinality 0..*, and from 'fiacre_Exp', the role 'fiacre_Exp156' has cardinality 0..*.
+An association connects 'fiacre_Rule' and 'fiacre_Pattern'. From 'fiacre_Rule', the role 'fiacre_Rule158' has cardinality 0..*, and from 'fiacre_Pattern', the role 'fiacre_Pattern159' has cardinality 0..*.
+An association connects 'fiacre_Statement' and 'fiacre_Rule'. From 'fiacre_Statement', the role 'fiacre_Statement162' has cardinality 0..*, and from 'fiacre_Rule', the role 'fiacre_Rule161' has cardinality 0..*.
+An association connects 'fiacre_RefArg' and 'fiacre_Variable'. From 'fiacre_RefArg', the role 'fiacre_RefArg' has cardinality 0..*, and from 'fiacre_Variable', the role 'fiacre_Variable164' has cardinality 0..*.
+An association connects 'fiacre_Type' and 'fiacre_ConstantDecl'. From 'fiacre_Type', the role 'fiacre_Type166' has cardinality 0..*, and from 'fiacre_ConstantDecl', the role 'fiacre_ConstantDecl' has cardinality 0..*.
+An association connects 'fiacre_ConstantDecl' and 'fiacre_Exp'. From 'fiacre_ConstantDecl', the role 'fiacre_ConstantDecl168' has cardinality 0..*, and from 'fiacre_Exp', the role 'fiacre_Exp169' has cardinality 0..*.
+An association connects 'fiacre_ConstantRef' and 'fiacre_ConstantDecl'. From 'fiacre_ConstantRef', the role 'fiacre_ConstantRef' has cardinality 0..*, and from 'fiacre_ConstantDecl', the role 'fiacre_ConstantDecl171' has cardinality 0..*.
+An association connects 'fiacre_Exp' and 'fiacre_InlineCollection'. From 'fiacre_Exp', the role 'fiacre_Exp173' has cardinality 0..*, and from 'fiacre_InlineCollection', the role 'fiacre_InlineCollection' has cardinality 0..*.
+An association connects 'fiacre_Type' and 'fiacre_LabeledType'. From 'fiacre_Type', the role 'fiacre_Type175' has cardinality 0..*, and from 'fiacre_LabeledType', the role 'fiacre_LabeledType' has cardinality 0..*.
+An association connects 'fiacre_Exp' and 'fiacre_CondExp'. From 'fiacre_Exp', the role 'fiacre_Exp177' has cardinality 0..*, and from 'fiacre_CondExp', the role 'fiacre_CondExp' has cardinality 0..*.
+An association connects 'fiacre_Exp' and 'fiacre_CondExp'. From 'fiacre_Exp', the role 'fiacre_Exp180' has cardinality 0..*, and from 'fiacre_CondExp', the role 'fiacre_CondExp179' has cardinality 0..*.
+An association connects 'fiacre_CondExp' and 'fiacre_Exp'. From 'fiacre_CondExp', the role 'fiacre_CondExp182' has cardinality 0..*, and from 'fiacre_Exp', the role 'fiacre_Exp183' has cardinality 0..*.
+An association connects 'fiacre_Statement' and 'fiacre_Foreach'. From 'fiacre_Statement', the role 'fiacre_Statement185' has cardinality 0..*, and from 'fiacre_Foreach', the role 'fiacre_Foreach' has cardinality 0..*.
+An association connects 'fiacre_LocalVariable' and 'fiacre_Foreach'. From 'fiacre_LocalVariable', the role 'fiacre_LocalVariable188' has cardinality 0..*, and from 'fiacre_Foreach', the role 'fiacre_Foreach187' has cardinality 0..*.

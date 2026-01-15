@@ -1,0 +1,333 @@
+The domain model 'top' describes the core structural elements and their relationships within the system.
+
+The model defines 82 main class(es).
+
+'top_L' represents an important domain concept.
+It does not declare any attributes.
+
+'OChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_E' represents an important domain concept.
+It does not declare any attributes.
+
+'top_WChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_RChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_BChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_DChild' represents an important domain concept.
+It does not declare any attributes.
+
+'PChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_Z' represents an important domain concept.
+It does not declare any attributes.
+
+'top_VChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_Y' represents an important domain concept.
+It does not declare any attributes.
+
+'top_OChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_Q' represents an important domain concept.
+It does not declare any attributes.
+
+'VChild' represents an important domain concept.
+It does not declare any attributes.
+
+'SChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_K' represents an important domain concept.
+It does not declare any attributes.
+
+'top_EChild' represents an important domain concept.
+It does not declare any attributes.
+
+'WChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_SChild' represents an important domain concept.
+It does not declare any attributes.
+
+'UChild' represents an important domain concept.
+It does not declare any attributes.
+
+'LChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_NChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_D' represents an important domain concept.
+It does not declare any attributes.
+
+'top_YChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_MChild' represents an important domain concept.
+It does not declare any attributes.
+
+'QChild' represents an important domain concept.
+It does not declare any attributes.
+
+'MChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_UChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ExprChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_QChild' represents an important domain concept.
+It does not declare any attributes.
+
+'TChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'top_U' represents an important domain concept.
+It does not declare any attributes.
+
+'top_ZChild' represents an important domain concept.
+It does not declare any attributes.
+
+'YChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_TChild' represents an important domain concept.
+It does not declare any attributes.
+
+'GChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_O' represents an important domain concept.
+It does not declare any attributes.
+
+'top_FChild' represents an important domain concept.
+It does not declare any attributes.
+
+'DChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_IChild' represents an important domain concept.
+It does not declare any attributes.
+
+'HChild' represents an important domain concept.
+It does not declare any attributes.
+
+'AChild' represents an important domain concept.
+It does not declare any attributes.
+
+'XChild' represents an important domain concept.
+It does not declare any attributes.
+
+'FChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_S' represents an important domain concept.
+It does not declare any attributes.
+
+'ZChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_G' represents an important domain concept.
+It does not declare any attributes.
+
+'top_H' represents an important domain concept.
+It does not declare any attributes.
+
+'top_R' represents an important domain concept.
+It does not declare any attributes.
+
+'IChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_AChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_J' represents an important domain concept.
+It does not declare any attributes.
+
+'JChild' represents an important domain concept.
+It does not declare any attributes.
+
+'ExprChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_C' represents an important domain concept.
+It does not declare any attributes.
+
+'NChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_N' represents an important domain concept.
+It does not declare any attributes.
+
+'top_LChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_GChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_W' represents an important domain concept.
+It does not declare any attributes.
+
+'top_PChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_I' represents an important domain concept.
+It does not declare any attributes.
+
+'top_CChild' represents an important domain concept.
+It does not declare any attributes.
+
+'KChild' represents an important domain concept.
+It does not declare any attributes.
+
+'EChild' represents an important domain concept.
+It does not declare any attributes.
+
+'CChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'top_P' represents an important domain concept.
+It does not declare any attributes.
+
+'top_A' represents an important domain concept.
+It does not declare any attributes.
+
+'top_T' represents an important domain concept.
+It does not declare any attributes.
+
+'top_V' represents an important domain concept.
+It does not declare any attributes.
+
+'top_M' represents an important domain concept.
+It does not declare any attributes.
+
+'top_KChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_JChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_B' represents an important domain concept.
+It does not declare any attributes.
+
+'top_X' represents an important domain concept.
+It does not declare any attributes.
+
+'top_XChild' represents an important domain concept.
+It does not declare any attributes.
+
+'BChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_F' represents an important domain concept.
+It does not declare any attributes.
+
+'RChild' represents an important domain concept.
+It does not declare any attributes.
+
+'top_HChild' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'top_A' is a specialization of 'ExprChild'.
+The class 'top_AChild' is a specialization of 'ExprChild'.
+The class 'top_B' is a specialization of 'AChild'.
+The class 'top_BChild' is a specialization of 'AChild'.
+The class 'top_C' is a specialization of 'BChild'.
+The class 'top_CChild' is a specialization of 'BChild'.
+The class 'top_D' is a specialization of 'CChild'.
+The class 'top_DChild' is a specialization of 'CChild'.
+The class 'top_E' is a specialization of 'DChild'.
+The class 'top_EChild' is a specialization of 'DChild'.
+The class 'top_F' is a specialization of 'EChild'.
+The class 'top_FChild' is a specialization of 'EChild'.
+The class 'top_G' is a specialization of 'FChild'.
+The class 'top_GChild' is a specialization of 'FChild'.
+The class 'top_H' is a specialization of 'GChild'.
+The class 'top_HChild' is a specialization of 'GChild'.
+The class 'top_I' is a specialization of 'HChild'.
+The class 'top_IChild' is a specialization of 'HChild'.
+The class 'top_J' is a specialization of 'IChild'.
+The class 'top_JChild' is a specialization of 'IChild'.
+The class 'top_K' is a specialization of 'JChild'.
+The class 'top_KChild' is a specialization of 'JChild'.
+The class 'top_L' is a specialization of 'KChild'.
+The class 'top_LChild' is a specialization of 'KChild'.
+The class 'top_M' is a specialization of 'LChild'.
+The class 'top_MChild' is a specialization of 'LChild'.
+The class 'top_N' is a specialization of 'MChild'.
+The class 'top_NChild' is a specialization of 'MChild'.
+The class 'top_O' is a specialization of 'NChild'.
+The class 'top_OChild' is a specialization of 'NChild'.
+The class 'top_P' is a specialization of 'OChild'.
+The class 'top_PChild' is a specialization of 'OChild'.
+The class 'top_Q' is a specialization of 'PChild'.
+The class 'top_QChild' is a specialization of 'PChild'.
+The class 'top_R' is a specialization of 'QChild'.
+The class 'top_RChild' is a specialization of 'QChild'.
+The class 'top_S' is a specialization of 'RChild'.
+The class 'top_SChild' is a specialization of 'RChild'.
+The class 'top_T' is a specialization of 'SChild'.
+The class 'top_TChild' is a specialization of 'SChild'.
+The class 'top_U' is a specialization of 'TChild'.
+The class 'top_UChild' is a specialization of 'TChild'.
+The class 'top_V' is a specialization of 'UChild'.
+The class 'top_VChild' is a specialization of 'UChild'.
+The class 'top_W' is a specialization of 'VChild'.
+The class 'top_WChild' is a specialization of 'VChild'.
+The class 'top_X' is a specialization of 'WChild'.
+The class 'top_XChild' is a specialization of 'WChild'.
+The class 'top_Y' is a specialization of 'XChild'.
+The class 'top_YChild' is a specialization of 'XChild'.
+The class 'top_Z' is a specialization of 'YChild'.
+The class 'top_ZChild' is a specialization of 'YChild'.
+The class 'top_IntegerLiteral' is a specialization of 'ZChild'.
+
+Relationships between classes are modeled using associations.
+An association connects 'top_ExprChild' and 'top_Expr'. From 'top_ExprChild', the role 'top_ExprChild' has cardinality 0..*, and from 'top_Expr', the role 'top_Expr' has cardinality 0..*.
+An association connects 'top_AChild' and 'top_A'. From 'top_AChild', the role 'top_AChild' has cardinality 0..*, and from 'top_A', the role 'top_A' has cardinality 0..*.
+An association connects 'top_B' and 'top_BChild'. From 'top_B', the role 'top_B' has cardinality 0..*, and from 'top_BChild', the role 'top_BChild' has cardinality 0..*.
+An association connects 'top_C' and 'top_CChild'. From 'top_C', the role 'top_C' has cardinality 0..*, and from 'top_CChild', the role 'top_CChild' has cardinality 0..*.
+An association connects 'top_D' and 'top_DChild'. From 'top_D', the role 'top_D' has cardinality 0..*, and from 'top_DChild', the role 'top_DChild' has cardinality 0..*.
+An association connects 'top_E' and 'top_EChild'. From 'top_E', the role 'top_E' has cardinality 0..*, and from 'top_EChild', the role 'top_EChild' has cardinality 0..*.
+An association connects 'top_FChild' and 'top_F'. From 'top_FChild', the role 'top_FChild' has cardinality 0..*, and from 'top_F', the role 'top_F' has cardinality 0..*.
+An association connects 'top_G' and 'top_GChild'. From 'top_G', the role 'top_G' has cardinality 0..*, and from 'top_GChild', the role 'top_GChild' has cardinality 0..*.
+An association connects 'top_H' and 'top_HChild'. From 'top_H', the role 'top_H' has cardinality 0..*, and from 'top_HChild', the role 'top_HChild' has cardinality 0..*.
+An association connects 'top_I' and 'top_IChild'. From 'top_I', the role 'top_I' has cardinality 0..*, and from 'top_IChild', the role 'top_IChild' has cardinality 0..*.
+An association connects 'top_JChild' and 'top_J'. From 'top_JChild', the role 'top_JChild' has cardinality 0..*, and from 'top_J', the role 'top_J' has cardinality 0..*.
+An association connects 'top_KChild' and 'top_K'. From 'top_KChild', the role 'top_KChild' has cardinality 0..*, and from 'top_K', the role 'top_K' has cardinality 0..*.
+An association connects 'top_L' and 'top_LChild'. From 'top_L', the role 'top_L' has cardinality 0..*, and from 'top_LChild', the role 'top_LChild' has cardinality 0..*.
+An association connects 'top_MChild' and 'top_M'. From 'top_MChild', the role 'top_MChild' has cardinality 0..*, and from 'top_M', the role 'top_M' has cardinality 0..*.
+An association connects 'top_N' and 'top_NChild'. From 'top_N', the role 'top_N' has cardinality 0..*, and from 'top_NChild', the role 'top_NChild' has cardinality 0..*.
+An association connects 'top_O' and 'top_OChild'. From 'top_O', the role 'top_O' has cardinality 0..*, and from 'top_OChild', the role 'top_OChild' has cardinality 0..*.
+An association connects 'top_P' and 'top_PChild'. From 'top_P', the role 'top_P' has cardinality 0..*, and from 'top_PChild', the role 'top_PChild' has cardinality 0..*.
+An association connects 'top_QChild' and 'top_Q'. From 'top_QChild', the role 'top_QChild' has cardinality 0..*, and from 'top_Q', the role 'top_Q' has cardinality 0..*.
+An association connects 'top_R' and 'top_RChild'. From 'top_R', the role 'top_R' has cardinality 0..*, and from 'top_RChild', the role 'top_RChild' has cardinality 0..*.
+An association connects 'top_S' and 'top_SChild'. From 'top_S', the role 'top_S' has cardinality 0..*, and from 'top_SChild', the role 'top_SChild' has cardinality 0..*.
+An association connects 'top_T' and 'top_TChild'. From 'top_T', the role 'top_T' has cardinality 0..*, and from 'top_TChild', the role 'top_TChild' has cardinality 0..*.
+An association connects 'top_UChild' and 'top_U'. From 'top_UChild', the role 'top_UChild' has cardinality 0..*, and from 'top_U', the role 'top_U' has cardinality 0..*.
+An association connects 'top_V' and 'top_VChild'. From 'top_V', the role 'top_V' has cardinality 0..*, and from 'top_VChild', the role 'top_VChild' has cardinality 0..*.
+An association connects 'top_WChild' and 'top_W'. From 'top_WChild', the role 'top_WChild' has cardinality 0..*, and from 'top_W', the role 'top_W' has cardinality 0..*.
+An association connects 'top_XChild' and 'top_X'. From 'top_XChild', the role 'top_XChild' has cardinality 0..*, and from 'top_X', the role 'top_X' has cardinality 0..*.
+An association connects 'top_YChild' and 'top_Y'. From 'top_YChild', the role 'top_YChild' has cardinality 0..*, and from 'top_Y', the role 'top_Y' has cardinality 0..*.
+An association connects 'top_ZChild' and 'top_Z'. From 'top_ZChild', the role 'top_ZChild' has cardinality 0..*, and from 'top_Z', the role 'top_Z' has cardinality 0..*.

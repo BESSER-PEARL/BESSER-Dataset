@@ -1,0 +1,47 @@
+The domain model 'containment' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'containment_A' represents an important domain concept.
+It does not declare any attributes.
+
+'containment_C' represents an important domain concept.
+It does not declare any attributes.
+
+'containment_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'containment_H' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'containment_E' represents an important domain concept.
+It does not declare any attributes.
+
+'containment_F' represents an important domain concept.
+It does not declare any attributes.
+
+'containment_G' represents an important domain concept.
+It does not declare any attributes.
+
+'containment_B' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'containment_A' is a specialization of 'Named'.
+The class 'containment_B' is a specialization of 'Named'.
+The class 'containment_C' is a specialization of 'Named'.
+The class 'containment_E' is a specialization of 'Named'.
+The class 'containment_F' is a specialization of 'Named'.
+The class 'containment_G' is a specialization of 'Named'.
+The class 'containment_H' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'containment_A' and 'containment_B'. From 'containment_A', the role 'containment_A' has cardinality 0..*, and from 'containment_B', the role 'containment_B' has cardinality 0..*.
+An association connects 'containment_A' and 'containment_E'. From 'containment_A', the role 'containment_A2' has cardinality 0..*, and from 'containment_E', the role 'containment_E' has cardinality 0..*.
+An association connects 'containment_C' and 'containment_B'. From 'containment_C', the role 'containment_C' has cardinality 0..*, and from 'containment_B', the role 'containment_B4' has cardinality 0..*.
+An association connects 'containment_G' and 'containment_B'. From 'containment_G', the role 'containment_G' has cardinality 0..*, and from 'containment_B', the role 'containment_B6' has cardinality 0..*.
+An association connects 'containment_F' and 'containment_E'. From 'containment_F', the role 'containment_F' has cardinality 0..*, and from 'containment_E', the role 'containment_E8' has cardinality 0..*.
+An association connects 'containment_G' and 'containment_H'. From 'containment_G', the role 'containment_G10' has cardinality 0..*, and from 'containment_H', the role 'containment_H' has cardinality 0..*.

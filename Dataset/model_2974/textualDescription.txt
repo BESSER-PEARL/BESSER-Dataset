@@ -1,0 +1,222 @@
+The domain model 'restbehavior' describes the core structural elements and their relationships within the system.
+
+The model defines 52 main class(es).
+
+'restbehavior_MediaType' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_MtElementReference' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_ExternalLinkReference' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_MTReference' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_StatusCode' represents an important domain concept.
+It has one attribute: 'number', which is of type int.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_AttributeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_MTLinkReference' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_Metadata' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_InternalLink' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_BinaryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_InternalMessage' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'restbehavior_BinOpType' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_Constant' represents an important domain concept.
+It has one attribute: 'stringRepresentation', which is of type str.
+
+'restbehavior_OpType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_CreateAction' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_MessageAction' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_ActionSequence' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_ReturnAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_WritableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_UpdateAction' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_Representation' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'OpType' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_ConditionalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_DeletedState' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_ListRemoveAction' represents an important domain concept.
+It does not declare any attributes.
+
+'WritableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_MediaTypeLink' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_BehaviorSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_Creator' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_ExternalLink' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_InternalLinkReference' represents an important domain concept.
+It does not declare any attributes.
+
+'MTReference' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_MediaTypeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_ListAddAction' represents an important domain concept.
+It does not declare any attributes.
+
+'restbehavior_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'restbehavior_Value' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'restbehavior_InternalMessage' is a specialization of 'Trigger'.
+The class 'restbehavior_MessageAction' is a specialization of 'Action'.
+The class 'restbehavior_ConditionalAction' is a specialization of 'Action'.
+The class 'restbehavior_CreateAction' is a specialization of 'Action'.
+The class 'restbehavior_ListAddAction' is a specialization of 'Action'.
+The class 'restbehavior_ListRemoveAction' is a specialization of 'Action'.
+The class 'restbehavior_ActionSequence' is a specialization of 'Action'.
+The class 'restbehavior_UpdateAction' is a specialization of 'Action'.
+The class 'restbehavior_ReturnAction' is a specialization of 'Action'.
+The class 'restbehavior_Constant' is a specialization of 'Value'.
+The class 'restbehavior_Reference' is a specialization of 'Value'.
+The class 'restbehavior_Operation' is a specialization of 'Value'.
+The class 'restbehavior_BinaryOperation' is a specialization of 'Operation'.
+The class 'restbehavior_BinOpType' is a specialization of 'OpType'.
+The class 'restbehavior_AttributeReference' is a specialization of 'WritableReference'.
+The class 'restbehavior_InternalLinkReference' is a specialization of 'WritableReference'.
+The class 'restbehavior_WritableReference' is a specialization of 'Reference'.
+The class 'restbehavior_MTReference' is a specialization of 'Reference'.
+The class 'restbehavior_MTLinkReference' is a specialization of 'MTReference'.
+The class 'restbehavior_MtElementReference' is a specialization of 'MTReference'.
+The class 'restbehavior_DeletedState' is a specialization of 'State'.
+The class 'restbehavior_ExternalLinkReference' is a specialization of 'WritableReference'.
+
+Relationships between classes are modeled using associations.
+An association connects 'restbehavior_Creator' and 'restbehavior_MediaType'. From 'restbehavior_Creator', the role 'restbehavior_Creator' has cardinality 0..*, and from 'restbehavior_MediaType', the role 'restbehavior_MediaType' has cardinality 0..*.
+An association connects 'restbehavior_Parameter' and 'restbehavior_Creator'. From 'restbehavior_Parameter', the role 'restbehavior_Parameter' has cardinality 0..*, and from 'restbehavior_Creator', the role 'restbehavior_Creator2' has cardinality 0..*.
+An association connects 'restbehavior_BehaviorSpecification' and 'restbehavior_Creator'. From 'restbehavior_BehaviorSpecification', the role 'restbehavior_BehaviorSpecification' has cardinality 0..*, and from 'restbehavior_Creator', the role 'restbehavior_Creator4' has cardinality 0..*.
+An association connects 'restbehavior_BehaviorSpecification' and 'restbehavior_Action'. From 'restbehavior_BehaviorSpecification', the role 'restbehavior_BehaviorSpecification6' has cardinality 0..*, and from 'restbehavior_Action', the role 'restbehavior_Action' has cardinality 0..*.
+An association connects 'restbehavior_BehaviorSpecification' and 'restbehavior_State'. From 'restbehavior_BehaviorSpecification', the role 'restbehavior_BehaviorSpecification8' has cardinality 0..*, and from 'restbehavior_State', the role 'restbehavior_State' has cardinality 0..*.
+An association connects 'restbehavior_State' and 'restbehavior_BehaviorSpecification'. From 'restbehavior_State', the role 'restbehavior_State10' has cardinality 0..*, and from 'restbehavior_BehaviorSpecification', the role 'restbehavior_BehaviorSpecification11' has cardinality 0..*.
+An association connects 'restbehavior_Transition' and 'restbehavior_State'. From 'restbehavior_Transition', the role 'restbehavior_Transition' has cardinality 0..*, and from 'restbehavior_State', the role 'restbehavior_State13' has cardinality 0..*.
+An association connects 'restbehavior_State' and 'restbehavior_Method'. From 'restbehavior_State', the role 'restbehavior_State15' has cardinality 0..*, and from 'restbehavior_Method', the role 'restbehavior_Method' has cardinality 0..*.
+An association connects 'restbehavior_Transition' and 'restbehavior_Trigger'. From 'restbehavior_Transition', the role 'restbehavior_Transition17' has cardinality 0..*, and from 'restbehavior_Trigger', the role 'restbehavior_Trigger' has cardinality 0..*.
+An association connects 'restbehavior_Transition' and 'restbehavior_State'. From 'restbehavior_Transition', the role 'restbehavior_Transition19' has cardinality 0..*, and from 'restbehavior_State', the role 'restbehavior_State20' has cardinality 0..*.
+An association connects 'restbehavior_Transition' and 'restbehavior_Condition'. From 'restbehavior_Transition', the role 'restbehavior_Transition22' has cardinality 0..*, and from 'restbehavior_Condition', the role 'restbehavior_Condition' has cardinality 0..*.
+An association connects 'restbehavior_Transition' and 'restbehavior_BehaviorSpecification'. From 'restbehavior_Transition', the role 'restbehavior_Transition24' has cardinality 0..*, and from 'restbehavior_BehaviorSpecification', the role 'restbehavior_BehaviorSpecification25' has cardinality 0..*.
+An association connects 'restbehavior_Condition' and 'restbehavior_Value'. From 'restbehavior_Condition', the role 'restbehavior_Condition27' has cardinality 0..*, and from 'restbehavior_Value', the role 'restbehavior_Value' has cardinality 0..*.
+An association connects 'restbehavior_InternalMessage' and 'restbehavior_MessageAction'. From 'restbehavior_InternalMessage', the role 'restbehavior_InternalMessage' has cardinality 0..*, and from 'restbehavior_MessageAction', the role 'restbehavior_MessageAction' has cardinality 0..*.
+An association connects 'restbehavior_Condition' and 'restbehavior_ConditionalAction'. From 'restbehavior_Condition', the role 'restbehavior_Condition30' has cardinality 0..*, and from 'restbehavior_ConditionalAction', the role 'restbehavior_ConditionalAction' has cardinality 0..*.
+An association connects 'restbehavior_ConditionalAction' and 'restbehavior_Action'. From 'restbehavior_ConditionalAction', the role 'restbehavior_ConditionalAction32' has cardinality 0..*, and from 'restbehavior_Action', the role 'restbehavior_Action33' has cardinality 0..*.
+An association connects 'restbehavior_ConditionalAction' and 'restbehavior_Action'. From 'restbehavior_ConditionalAction', the role 'restbehavior_ConditionalAction35' has cardinality 0..*, and from 'restbehavior_Action', the role 'restbehavior_Action36' has cardinality 0..*.
+An association connects 'restbehavior_Creator' and 'restbehavior_CreateAction'. From 'restbehavior_Creator', the role 'restbehavior_Creator38' has cardinality 0..*, and from 'restbehavior_CreateAction', the role 'restbehavior_CreateAction' has cardinality 0..*.
+An association connects 'restbehavior_Action' and 'restbehavior_ActionSequence'. From 'restbehavior_Action', the role 'restbehavior_Action40' has cardinality 0..*, and from 'restbehavior_ActionSequence', the role 'restbehavior_ActionSequence' has cardinality 0..*.
+An association connects 'restbehavior_UpdateAction' and 'restbehavior_WritableReference'. From 'restbehavior_UpdateAction', the role 'restbehavior_UpdateAction' has cardinality 0..*, and from 'restbehavior_WritableReference', the role 'restbehavior_WritableReference' has cardinality 0..*.
+An association connects 'restbehavior_Value' and 'restbehavior_UpdateAction'. From 'restbehavior_Value', the role 'restbehavior_Value44' has cardinality 0..*, and from 'restbehavior_UpdateAction', the role 'restbehavior_UpdateAction43' has cardinality 0..*.
+An association connects 'restbehavior_ReturnAction' and 'restbehavior_StatusCode'. From 'restbehavior_ReturnAction', the role 'restbehavior_ReturnAction' has cardinality 0..*, and from 'restbehavior_StatusCode', the role 'restbehavior_StatusCode' has cardinality 0..*.
+An association connects 'restbehavior_ReturnAction' and 'restbehavior_Metadata'. From 'restbehavior_ReturnAction', the role 'restbehavior_ReturnAction47' has cardinality 0..*, and from 'restbehavior_Metadata', the role 'restbehavior_Metadata' has cardinality 0..*.
+An association connects 'restbehavior_Representation' and 'restbehavior_ReturnAction'. From 'restbehavior_Representation', the role 'restbehavior_Representation' has cardinality 0..*, and from 'restbehavior_ReturnAction', the role 'restbehavior_ReturnAction49' has cardinality 0..*.
+An association connects 'restbehavior_DataType' and 'restbehavior_Constant'. From 'restbehavior_DataType', the role 'restbehavior_DataType' has cardinality 0..*, and from 'restbehavior_Constant', the role 'restbehavior_Constant' has cardinality 0..*.
+An association connects 'restbehavior_Value' and 'restbehavior_BinaryOperation'. From 'restbehavior_Value', the role 'restbehavior_Value52' has cardinality 0..*, and from 'restbehavior_BinaryOperation', the role 'restbehavior_BinaryOperation' has cardinality 0..*.
+An association connects 'restbehavior_Value' and 'restbehavior_BinaryOperation'. From 'restbehavior_Value', the role 'restbehavior_Value55' has cardinality 0..*, and from 'restbehavior_BinaryOperation', the role 'restbehavior_BinaryOperation54' has cardinality 0..*.
+An association connects 'restbehavior_BinOpType' and 'restbehavior_BinaryOperation'. From 'restbehavior_BinOpType', the role 'restbehavior_BinOpType' has cardinality 0..*, and from 'restbehavior_BinaryOperation', the role 'restbehavior_BinaryOperation57' has cardinality 0..*.
+An association connects 'restbehavior_DataType' and 'restbehavior_OpType'. From 'restbehavior_DataType', the role 'restbehavior_DataType59' has cardinality 0..*, and from 'restbehavior_OpType', the role 'restbehavior_OpType' has cardinality 0..*.
+An association connects 'restbehavior_BinOpType' and 'restbehavior_DataType'. From 'restbehavior_BinOpType', the role 'restbehavior_BinOpType61' has cardinality 0..*, and from 'restbehavior_DataType', the role 'restbehavior_DataType62' has cardinality 0..*.
+An association connects 'restbehavior_BinOpType' and 'restbehavior_DataType'. From 'restbehavior_BinOpType', the role 'restbehavior_BinOpType64' has cardinality 0..*, and from 'restbehavior_DataType', the role 'restbehavior_DataType65' has cardinality 0..*.
+An association connects 'restbehavior_AttributeReference' and 'restbehavior_Attribute'. From 'restbehavior_AttributeReference', the role 'restbehavior_AttributeReference' has cardinality 0..*, and from 'restbehavior_Attribute', the role 'restbehavior_Attribute' has cardinality 0..*.
+An association connects 'restbehavior_InternalLink' and 'restbehavior_InternalLinkReference'. From 'restbehavior_InternalLink', the role 'restbehavior_InternalLink' has cardinality 0..*, and from 'restbehavior_InternalLinkReference', the role 'restbehavior_InternalLinkReference' has cardinality 0..*.
+An association connects 'restbehavior_WritableReference' and 'restbehavior_InternalLinkReference'. From 'restbehavior_WritableReference', the role 'restbehavior_WritableReference70' has cardinality 0..*, and from 'restbehavior_InternalLinkReference', the role 'restbehavior_InternalLinkReference69' has cardinality 0..*.
+An association connects 'restbehavior_MediaTypeLink' and 'restbehavior_MTLinkReference'. From 'restbehavior_MediaTypeLink', the role 'restbehavior_MediaTypeLink' has cardinality 0..*, and from 'restbehavior_MTLinkReference', the role 'restbehavior_MTLinkReference' has cardinality 0..*.
+An association connects 'restbehavior_MediaTypeElement' and 'restbehavior_MtElementReference'. From 'restbehavior_MediaTypeElement', the role 'restbehavior_MediaTypeElement' has cardinality 0..*, and from 'restbehavior_MtElementReference', the role 'restbehavior_MtElementReference' has cardinality 0..*.
+An association connects 'restbehavior_ExternalLinkReference' and 'restbehavior_ExternalLink'. From 'restbehavior_ExternalLinkReference', the role 'restbehavior_ExternalLinkReference' has cardinality 0..*, and from 'restbehavior_ExternalLink', the role 'restbehavior_ExternalLink' has cardinality 0..*.

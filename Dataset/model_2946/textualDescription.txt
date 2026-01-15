@@ -1,0 +1,31 @@
+The domain model 'slolpBPM' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'slolpBPM_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'slolpBPM_DomainModel' represents an important domain concept.
+It does not declare any attributes.
+
+'slolpBPM_Datatype' represents an important domain concept.
+It does not declare any attributes.
+
+'slolpBPM_Feature' represents an important domain concept.
+It has the following attributes: 'many', which is of type bool; 'name', which is of type str.
+
+'slolpBPM_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'slolpBPM_Datatype' is a specialization of 'Type'.
+The class 'slolpBPM_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'slolpBPM_DomainModel' and 'slolpBPM_Type'. From 'slolpBPM_DomainModel', the role 'slolpBPM_DomainModel' has cardinality 0..*, and from 'slolpBPM_Type', the role 'slolpBPM_Type' has cardinality 0..*.
+An association connects 'slolpBPM_Entity' and 'slolpBPM_Entity'. From 'slolpBPM_Entity', the role 'slolpBPM_Entity1' has cardinality 0..*, and from 'slolpBPM_Entity', the role 'slolpBPM_Entity' has cardinality 0..*.
+An association connects 'slolpBPM_Feature' and 'slolpBPM_Entity'. From 'slolpBPM_Feature', the role 'slolpBPM_Feature' has cardinality 0..*, and from 'slolpBPM_Entity', the role 'slolpBPM_Entity4' has cardinality 0..*.
+An association connects 'slolpBPM_Type' and 'slolpBPM_Feature'. From 'slolpBPM_Type', the role 'slolpBPM_Type7' has cardinality 0..*, and from 'slolpBPM_Feature', the role 'slolpBPM_Feature6' has cardinality 0..*.

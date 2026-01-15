@@ -1,0 +1,20 @@
+The domain model 'simplek' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'simplek_Base' represents an important domain concept.
+It does not declare any attributes.
+
+'simplek_B' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simplek_A' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simplek_Content' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'simplek_Content' and 'simplek_Base'. From 'simplek_Content', the role 'simplek_Content' has cardinality 0..*, and from 'simplek_Base', the role 'simplek_Base' has cardinality 0..*.
+An association connects 'simplek_Content' and 'simplek_A'. From 'simplek_Content', the role 'simplek_Content2' has cardinality 0..*, and from 'simplek_A', the role 'simplek_A' has cardinality 0..*.
+An association connects 'simplek_B' and 'simplek_Content'. From 'simplek_B', the role 'simplek_B' has cardinality 0..*, and from 'simplek_Content', the role 'simplek_Content4' has cardinality 0..*.

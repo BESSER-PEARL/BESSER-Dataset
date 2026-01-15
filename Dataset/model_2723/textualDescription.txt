@@ -1,0 +1,18 @@
+The domain model 'Kasu2' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'Kasu2_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'Kasu2_ClassA' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'Kasu2_ClassB' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Kasu2_ClassB' and 'Kasu2_ClassA'. From 'Kasu2_ClassB', the role 'ClassB' has cardinality 0..*, and from 'Kasu2_ClassA', the role 'C_A' has cardinality 0..*.
+An association connects 'Kasu2_ClassA' and 'Kasu2_Root'. From 'Kasu2_ClassA', the role 'C_A2' has cardinality 0..*, and from 'Kasu2_Root', the role 'Root' has cardinality 0..*.
+An association connects 'Kasu2_ClassA' and 'Kasu2_ClassB'. From 'Kasu2_ClassA', the role 'ClassA' has cardinality 0..*, and from 'Kasu2_ClassB', the role 'C_B' has cardinality 0..*.
+An association connects 'Kasu2_Root' and 'Kasu2_ClassA'. From 'Kasu2_Root', the role 'C_R' has cardinality 0..*, and from 'Kasu2_ClassA', the role 'ClassA5' has cardinality 0..*.

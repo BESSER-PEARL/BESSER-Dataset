@@ -1,0 +1,17 @@
+The domain model 'tracelinks' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'tracelinks_TraceLink' represents an important domain concept.
+It does not declare any attributes.
+
+'tracelinks_TraceLinkEnd' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'id', which is of type str.
+
+'tracelinks_TraceLinksModel' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'tracelinks_TraceLinksModel' and 'tracelinks_TraceLink'. From 'tracelinks_TraceLinksModel', the role 'tracelinks_TraceLinksModel' has cardinality 0..*, and from 'tracelinks_TraceLink', the role 'tracelinks_TraceLink' has cardinality 0..*.
+An association connects 'tracelinks_TraceLink' and 'tracelinks_TraceLinkEnd'. From 'tracelinks_TraceLink', the role 'tracelinks_TraceLink2' has cardinality 0..*, and from 'tracelinks_TraceLinkEnd', the role 'tracelinks_TraceLinkEnd' has cardinality 0..*.
+An association connects 'tracelinks_TraceLink' and 'tracelinks_TraceLinkEnd'. From 'tracelinks_TraceLink', the role 'tracelinks_TraceLink4' has cardinality 0..*, and from 'tracelinks_TraceLinkEnd', the role 'tracelinks_TraceLinkEnd5' has cardinality 0..*.

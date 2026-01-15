@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/gmf-tooling/tests/org.eclipse.gmf.tests.lite/models/library/library.ecore

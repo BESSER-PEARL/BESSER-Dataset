@@ -1,0 +1,47 @@
+The domain model 'testmerge' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'testmerge_B' represents an important domain concept.
+It has one attribute: 'anAttribute', which is of type str.
+
+'AA' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'testmerge_A' represents an important domain concept.
+It does not declare any attributes.
+
+'testmerge_AA' represents an important domain concept.
+It does not declare any attributes.
+
+'testmerge_AAA' represents an important domain concept.
+It does not declare any attributes.
+
+'testmerge_SubB' represents an important domain concept.
+It does not declare any attributes.
+
+'SuperA' represents an important domain concept.
+It does not declare any attributes.
+
+'testmerge_C' represents an important domain concept.
+It does not declare any attributes.
+
+'testmerge_SuperA' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'testmerge_A' is a specialization of 'SuperA'.
+The class 'testmerge_AA' is a specialization of 'A'.
+The class 'testmerge_AAA' is a specialization of 'AA'.
+The class 'testmerge_SubB' is a specialization of 'B'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testmerge_B' and 'testmerge_A'. From 'testmerge_B', the role '1' has cardinality 0..*, and from 'testmerge_A', the role 'unnamed role' has cardinality 0..*.
+An association connects 'testmerge_A' and 'testmerge_B'. From 'testmerge_A', the role '4' has cardinality 0..*, and from 'testmerge_B', the role '3' has cardinality 0..*.
+An association connects 'testmerge_C' and 'testmerge_AAA'. From 'testmerge_C', the role 'testmerge_C' has cardinality 0..*, and from 'testmerge_AAA', the role 'testmerge_AAA' has cardinality 0..*.

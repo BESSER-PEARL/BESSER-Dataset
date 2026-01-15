@@ -1,0 +1,45 @@
+The domain model 'textlink' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'textlink_EmfModelLocation' represents an important domain concept.
+It does not declare any attributes.
+
+'textlink_TraceLinkEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelLocation' represents an important domain concept.
+It does not declare any attributes.
+
+'textlink_ModelLocation' represents an important domain concept.
+It has one attribute: 'propertyName', which is of type str.
+
+'textlink_TextLocation' represents an important domain concept.
+It has one attribute: 'resource', which is of type str.
+
+'textlink_Region' represents an important domain concept.
+It has the following attributes: 'length', which is of type str; 'offset', which is of type str.
+
+'textlink_TraceLink' represents an important domain concept.
+It does not declare any attributes.
+
+'TraceLinkEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'textlink_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'textlink_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'textlink_ModelLocation' is a specialization of 'TraceLinkEnd'.
+The class 'textlink_EmfModelLocation' is a specialization of 'ModelLocation'.
+The class 'textlink_TextLocation' is a specialization of 'TraceLinkEnd'.
+
+Relationships between classes are modeled using associations.
+An association connects 'textlink_TraceLink' and 'textlink_Trace'. From 'textlink_TraceLink', the role 'textlink_TraceLink' has cardinality 0..*, and from 'textlink_Trace', the role 'textlink_Trace' has cardinality 0..*.
+An association connects 'textlink_ModelLocation' and 'textlink_TraceLink'. From 'textlink_ModelLocation', the role 'textlink_ModelLocation' has cardinality 0..*, and from 'textlink_TraceLink', the role 'textlink_TraceLink2' has cardinality 0..*.
+An association connects 'textlink_TextLocation' and 'textlink_TraceLink'. From 'textlink_TextLocation', the role 'textlink_TextLocation' has cardinality 0..*, and from 'textlink_TraceLink', the role 'textlink_TraceLink4' has cardinality 0..*.
+An association connects 'textlink_EmfModelLocation' and 'textlink_EObject'. From 'textlink_EmfModelLocation', the role 'textlink_EmfModelLocation' has cardinality 0..*, and from 'textlink_EObject', the role 'textlink_EObject' has cardinality 0..*.
+An association connects 'textlink_TextLocation' and 'textlink_Region'. From 'textlink_TextLocation', the role 'textlink_TextLocation7' has cardinality 0..*, and from 'textlink_Region', the role 'textlink_Region' has cardinality 0..*.

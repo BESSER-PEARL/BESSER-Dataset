@@ -1,0 +1,224 @@
+The domain model 'migrationmodeler' describes the core structural elements and their relationships within the system.
+
+The model defines 47 main class(es).
+
+'migrationmodeler_EdgeRepresentation' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractRepresentation' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_Layout' represents an important domain concept.
+It has the following attributes: 'height', which is of type int; 'width', which is of type int; 'y', which is of type int; 'x', which is of type int.
+
+'GraphicalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_AbstractNode' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_AbstractNodeRepresentation' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_ShapeContainerStyle' represents an important domain concept.
+It has one attribute: 'shape', which is of type str.
+
+'BorderedStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_BasicLabelStyle' represents an important domain concept.
+It has the following attributes: 'showIcon', which is of type bool; 'iconPath', which is of type str; 'labelSize', which is of type int; 'labelFormat', which is of type str.
+
+'NodeStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_Ellipse' represents an important domain concept.
+It has the following attributes: 'horizontalDiameter', which is of type str; 'verticalDiameter', which is of type str.
+
+'migrationmodeler_Note' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_BorderedRepresentation' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_Filter' represents an important domain concept.
+It has the following attributes: 'activated', which is of type bool; 'id', which is of type str.
+
+'migrationmodeler_Representation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'migrationmodeler_GaugeSection' represents an important domain concept.
+It has the following attributes: 'max', which is of type str; 'value', which is of type str; 'label', which is of type str; 'min', which is of type str.
+
+'migrationmodeler_GaugeCompositeStyle' represents an important domain concept.
+It has one attribute: 'alignment', which is of type str.
+
+'migrationmodeler_Point' represents an important domain concept.
+It has the following attributes: 'x', which is of type int; 'y', which is of type int.
+
+'migrationmodeler_BorderedStyle' represents an important domain concept.
+It has one attribute: 'borderSize', which is of type int.
+
+'migrationmodeler_GraphicalElement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'migrationmodeler_Container' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractNodeRepresentation' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_Dot' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_NodeStyle' represents an important domain concept.
+It has the following attributes: 'labelPosition', which is of type str; 'hideLabelByDefault', which is of type bool.
+
+'migrationmodeler_LabelStyle' represents an important domain concept.
+It has one attribute: 'labelAlignment', which is of type str.
+
+'ContainerStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_ContainerRepresentation' represents an important domain concept.
+It has one attribute: 'autoSized', which is of type bool.
+
+'migrationmodeler_ContainerStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_BundledImage' represents an important domain concept.
+It has one attribute: 'shape', which is of type str.
+
+'migrationmodeler_Bordered' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_FlatContainerStyle' represents an important domain concept.
+It has one attribute: 'backgroundStyle', which is of type str.
+
+'migrationmodeler_AbstractRepresentation' represents an important domain concept.
+It has the following attributes: 'displayed', which is of type bool; 'mappingId', which is of type str; 'hidden', which is of type bool; 'pinned', which is of type bool.
+
+'LabelStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_Square' represents an important domain concept.
+It has the following attributes: 'width', which is of type str; 'height', which is of type str.
+
+'Representation' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_Layer' represents an important domain concept.
+It has the following attributes: 'activated', which is of type bool; 'id', which is of type str.
+
+'migrationmodeler_NodeRepresentation' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_Lozenge' represents an important domain concept.
+It has the following attributes: 'height', which is of type str; 'width', which is of type str.
+
+'migrationmodeler_WorkspaceImage' represents an important domain concept.
+It has one attribute: 'workspacePath', which is of type str.
+
+'migrationmodeler_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicLabelStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_TestCase' represents an important domain concept.
+It does not declare any attributes.
+
+'migrationmodeler_Color' represents an important domain concept.
+It has the following attributes: 'red', which is of type int; 'green', which is of type int; 'blue', which is of type int.
+
+'migrationmodeler_EdgeStyle' represents an important domain concept.
+It has one attribute: 'routingStyle', which is of type str.
+
+'AbstractNode' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'LabelAlignment' defines the following possible values: 'CENTER', 'LEFT', 'RIGHT'.
+The enumeration 'ContainerShape' defines a single possible value: 'parallelogram'.
+The enumeration 'AlignmentKind' defines the following possible values: 'HORIZONTAL', 'VERTICAL', 'SQUARE'.
+The enumeration 'FontFormat' defines the following possible values: 'bold', 'normal', 'bold_italic', 'italic'.
+The enumeration 'LabelPosition' defines the following possible values: 'border', 'node'.
+The enumeration 'BackgroundStyle' defines the following possible values: 'GradientLeftToRight', 'Liquid', 'GradientTopToBottom'.
+The enumeration 'RoutingStyle' defines the following possible values: 'Manhattan', 'Straight', 'Tree'.
+The enumeration 'BundledImageShape' defines the following possible values: 'stroke', 'dot', 'ring', 'triangle', 'square'.
+
+The model also captures inheritance relationships between classes.
+The class 'migrationmodeler_Diagram' is a specialization of 'Representation'.
+The class 'migrationmodeler_AbstractNode' is a specialization of 'GraphicalElement'.
+The class 'migrationmodeler_Node' is a specialization of 'AbstractNode'.
+The class 'migrationmodeler_Bordered' is a specialization of 'AbstractNode'.
+The class 'migrationmodeler_Container' is a specialization of 'GraphicalElement'.
+The class 'migrationmodeler_Edge' is a specialization of 'GraphicalElement'.
+The class 'migrationmodeler_EdgeRepresentation' is a specialization of 'AbstractRepresentation'.
+The class 'migrationmodeler_AbstractNodeRepresentation' is a specialization of 'AbstractRepresentation'.
+The class 'migrationmodeler_NodeRepresentation' is a specialization of 'AbstractNodeRepresentation'.
+The class 'migrationmodeler_BorderedRepresentation' is a specialization of 'AbstractNodeRepresentation'.
+The class 'migrationmodeler_ContainerRepresentation' is a specialization of 'AbstractRepresentation'.
+The class 'migrationmodeler_NodeStyle' is a specialization of 'LabelStyle'.
+The class 'migrationmodeler_NodeStyle' is a specialization of 'BorderedStyle'.
+The class 'migrationmodeler_ContainerStyle' is a specialization of 'LabelStyle'.
+The class 'migrationmodeler_ContainerStyle' is a specialization of 'BorderedStyle'.
+The class 'migrationmodeler_LabelStyle' is a specialization of 'BasicLabelStyle'.
+The class 'migrationmodeler_Dot' is a specialization of 'NodeStyle'.
+The class 'migrationmodeler_FlatContainerStyle' is a specialization of 'ContainerStyle'.
+The class 'migrationmodeler_ShapeContainerStyle' is a specialization of 'ContainerStyle'.
+The class 'migrationmodeler_Square' is a specialization of 'NodeStyle'.
+The class 'migrationmodeler_Ellipse' is a specialization of 'NodeStyle'.
+The class 'migrationmodeler_Lozenge' is a specialization of 'NodeStyle'.
+The class 'migrationmodeler_BundledImage' is a specialization of 'NodeStyle'.
+The class 'migrationmodeler_WorkspaceImage' is a specialization of 'NodeStyle'.
+The class 'migrationmodeler_WorkspaceImage' is a specialization of 'ContainerStyle'.
+The class 'migrationmodeler_GaugeCompositeStyle' is a specialization of 'NodeStyle'.
+The class 'migrationmodeler_Note' is a specialization of 'NodeStyle'.
+
+Relationships between classes are modeled using associations.
+An association connects 'migrationmodeler_Container' and 'migrationmodeler_Diagram'. From 'migrationmodeler_Container', the role 'migrationmodeler_Container' has cardinality 0..*, and from 'migrationmodeler_Diagram', the role 'migrationmodeler_Diagram' has cardinality 0..*.
+An association connects 'migrationmodeler_Node' and 'migrationmodeler_Diagram'. From 'migrationmodeler_Node', the role 'migrationmodeler_Node' has cardinality 0..*, and from 'migrationmodeler_Diagram', the role 'migrationmodeler_Diagram2' has cardinality 0..*.
+An association connects 'migrationmodeler_Diagram' and 'migrationmodeler_Edge'. From 'migrationmodeler_Diagram', the role 'migrationmodeler_Diagram4' has cardinality 0..*, and from 'migrationmodeler_Edge', the role 'migrationmodeler_Edge' has cardinality 0..*.
+An association connects 'migrationmodeler_Filter' and 'migrationmodeler_Diagram'. From 'migrationmodeler_Filter', the role 'migrationmodeler_Filter' has cardinality 0..*, and from 'migrationmodeler_Diagram', the role 'migrationmodeler_Diagram6' has cardinality 0..*.
+An association connects 'migrationmodeler_Diagram' and 'migrationmodeler_Layer'. From 'migrationmodeler_Diagram', the role 'migrationmodeler_Diagram8' has cardinality 0..*, and from 'migrationmodeler_Layer', the role 'migrationmodeler_Layer' has cardinality 0..*.
+An association connects 'migrationmodeler_NodeRepresentation' and 'migrationmodeler_Node'. From 'migrationmodeler_NodeRepresentation', the role 'migrationmodeler_NodeRepresentation' has cardinality 0..*, and from 'migrationmodeler_Node', the role 'migrationmodeler_Node10' has cardinality 0..*.
+An association connects 'migrationmodeler_Bordered' and 'migrationmodeler_BorderedRepresentation'. From 'migrationmodeler_Bordered', the role 'migrationmodeler_Bordered' has cardinality 0..*, and from 'migrationmodeler_BorderedRepresentation', the role 'migrationmodeler_BorderedRepresentation' has cardinality 0..*.
+An association connects 'migrationmodeler_Container' and 'migrationmodeler_ContainerRepresentation'. From 'migrationmodeler_Container', the role 'migrationmodeler_Container13' has cardinality 0..*, and from 'migrationmodeler_ContainerRepresentation', the role 'migrationmodeler_ContainerRepresentation' has cardinality 0..*.
+An association connects 'migrationmodeler_GraphicalElement' and 'migrationmodeler_Container'. From 'migrationmodeler_GraphicalElement', the role 'migrationmodeler_GraphicalElement' has cardinality 0..*, and from 'migrationmodeler_Container', the role 'migrationmodeler_Container15' has cardinality 0..*.
+An association connects 'migrationmodeler_Edge' and 'migrationmodeler_EdgeRepresentation'. From 'migrationmodeler_Edge', the role 'migrationmodeler_Edge17' has cardinality 0..*, and from 'migrationmodeler_EdgeRepresentation', the role 'migrationmodeler_EdgeRepresentation' has cardinality 0..*.
+An association connects 'migrationmodeler_GraphicalElement' and 'migrationmodeler_Edge'. From 'migrationmodeler_GraphicalElement', the role 'migrationmodeler_GraphicalElement20' has cardinality 0..*, and from 'migrationmodeler_Edge', the role 'migrationmodeler_Edge19' has cardinality 0..*.
+An association connects 'migrationmodeler_Edge' and 'migrationmodeler_GraphicalElement'. From 'migrationmodeler_Edge', the role 'migrationmodeler_Edge22' has cardinality 0..*, and from 'migrationmodeler_GraphicalElement', the role 'migrationmodeler_GraphicalElement23' has cardinality 0..*.
+An association connects 'migrationmodeler_AbstractRepresentation' and 'migrationmodeler_Layout'. From 'migrationmodeler_AbstractRepresentation', the role 'migrationmodeler_AbstractRepresentation' has cardinality 0..*, and from 'migrationmodeler_Layout', the role 'migrationmodeler_Layout' has cardinality 0..*.
+An association connects 'migrationmodeler_EdgeRepresentation' and 'migrationmodeler_GraphicalElement'. From 'migrationmodeler_EdgeRepresentation', the role 'migrationmodeler_EdgeRepresentation26' has cardinality 0..*, and from 'migrationmodeler_GraphicalElement', the role 'migrationmodeler_GraphicalElement27' has cardinality 0..*.
+An association connects 'migrationmodeler_GraphicalElement' and 'migrationmodeler_EdgeRepresentation'. From 'migrationmodeler_GraphicalElement', the role 'migrationmodeler_GraphicalElement30' has cardinality 0..*, and from 'migrationmodeler_EdgeRepresentation', the role 'migrationmodeler_EdgeRepresentation29' has cardinality 0..*.
+An association connects 'migrationmodeler_Point' and 'migrationmodeler_EdgeRepresentation'. From 'migrationmodeler_Point', the role 'migrationmodeler_Point' has cardinality 0..*, and from 'migrationmodeler_EdgeRepresentation', the role 'migrationmodeler_EdgeRepresentation32' has cardinality 0..*.
+An association connects 'migrationmodeler_EdgeRepresentation' and 'migrationmodeler_EdgeStyle'. From 'migrationmodeler_EdgeRepresentation', the role 'migrationmodeler_EdgeRepresentation34' has cardinality 0..*, and from 'migrationmodeler_EdgeStyle', the role 'migrationmodeler_EdgeStyle' has cardinality 0..*.
+An association connects 'migrationmodeler_Bordered' and 'migrationmodeler_AbstractNodeRepresentation'. From 'migrationmodeler_Bordered', the role 'migrationmodeler_Bordered36' has cardinality 0..*, and from 'migrationmodeler_AbstractNodeRepresentation', the role 'migrationmodeler_AbstractNodeRepresentation' has cardinality 0..*.
+An association connects 'migrationmodeler_AbstractNodeRepresentation' and 'migrationmodeler_NodeStyle'. From 'migrationmodeler_AbstractNodeRepresentation', the role 'migrationmodeler_AbstractNodeRepresentation38' has cardinality 0..*, and from 'migrationmodeler_NodeStyle', the role 'migrationmodeler_NodeStyle' has cardinality 0..*.
+An association connects 'migrationmodeler_ContainerStyle' and 'migrationmodeler_ContainerRepresentation'. From 'migrationmodeler_ContainerStyle', the role 'migrationmodeler_ContainerStyle' has cardinality 0..*, and from 'migrationmodeler_ContainerRepresentation', the role 'migrationmodeler_ContainerRepresentation40' has cardinality 0..*.
+An association connects 'migrationmodeler_Color' and 'migrationmodeler_EdgeStyle'. From 'migrationmodeler_Color', the role 'migrationmodeler_Color' has cardinality 0..*, and from 'migrationmodeler_EdgeStyle', the role 'migrationmodeler_EdgeStyle42' has cardinality 0..*.
+An association connects 'migrationmodeler_EdgeStyle' and 'migrationmodeler_BasicLabelStyle'. From 'migrationmodeler_EdgeStyle', the role 'migrationmodeler_EdgeStyle44' has cardinality 0..*, and from 'migrationmodeler_BasicLabelStyle', the role 'migrationmodeler_BasicLabelStyle' has cardinality 0..*.
+An association connects 'migrationmodeler_EdgeStyle' and 'migrationmodeler_BasicLabelStyle'. From 'migrationmodeler_EdgeStyle', the role 'migrationmodeler_EdgeStyle46' has cardinality 0..*, and from 'migrationmodeler_BasicLabelStyle', the role 'migrationmodeler_BasicLabelStyle47' has cardinality 0..*.
+An association connects 'migrationmodeler_EdgeStyle' and 'migrationmodeler_BasicLabelStyle'. From 'migrationmodeler_EdgeStyle', the role 'migrationmodeler_EdgeStyle49' has cardinality 0..*, and from 'migrationmodeler_BasicLabelStyle', the role 'migrationmodeler_BasicLabelStyle50' has cardinality 0..*.
+An association connects 'migrationmodeler_Representation' and 'migrationmodeler_TestCase'. From 'migrationmodeler_Representation', the role 'migrationmodeler_Representation' has cardinality 0..*, and from 'migrationmodeler_TestCase', the role 'migrationmodeler_TestCase' has cardinality 0..*.
+An association connects 'migrationmodeler_Color' and 'migrationmodeler_BorderedStyle'. From 'migrationmodeler_Color', the role 'migrationmodeler_Color53' has cardinality 0..*, and from 'migrationmodeler_BorderedStyle', the role 'migrationmodeler_BorderedStyle' has cardinality 0..*.
+An association connects 'migrationmodeler_BasicLabelStyle' and 'migrationmodeler_Color'. From 'migrationmodeler_BasicLabelStyle', the role 'migrationmodeler_BasicLabelStyle55' has cardinality 0..*, and from 'migrationmodeler_Color', the role 'migrationmodeler_Color56' has cardinality 0..*.
+An association connects 'migrationmodeler_Color' and 'migrationmodeler_Dot'. From 'migrationmodeler_Color', the role 'migrationmodeler_Color58' has cardinality 0..*, and from 'migrationmodeler_Dot', the role 'migrationmodeler_Dot' has cardinality 0..*.
+An association connects 'migrationmodeler_Color' and 'migrationmodeler_GaugeSection'. From 'migrationmodeler_Color', the role 'migrationmodeler_Color60' has cardinality 0..*, and from 'migrationmodeler_GaugeSection', the role 'migrationmodeler_GaugeSection' has cardinality 0..*.
+An association connects 'migrationmodeler_Color' and 'migrationmodeler_GaugeSection'. From 'migrationmodeler_Color', the role 'migrationmodeler_Color63' has cardinality 0..*, and from 'migrationmodeler_GaugeSection', the role 'migrationmodeler_GaugeSection62' has cardinality 0..*.
+An association connects 'migrationmodeler_FlatContainerStyle' and 'migrationmodeler_Color'. From 'migrationmodeler_FlatContainerStyle', the role 'migrationmodeler_FlatContainerStyle' has cardinality 0..*, and from 'migrationmodeler_Color', the role 'migrationmodeler_Color65' has cardinality 0..*.
+An association connects 'migrationmodeler_Color' and 'migrationmodeler_FlatContainerStyle'. From 'migrationmodeler_Color', the role 'migrationmodeler_Color68' has cardinality 0..*, and from 'migrationmodeler_FlatContainerStyle', the role 'migrationmodeler_FlatContainerStyle67' has cardinality 0..*.
+An association connects 'migrationmodeler_Color' and 'migrationmodeler_ShapeContainerStyle'. From 'migrationmodeler_Color', the role 'migrationmodeler_Color70' has cardinality 0..*, and from 'migrationmodeler_ShapeContainerStyle', the role 'migrationmodeler_ShapeContainerStyle' has cardinality 0..*.
+An association connects 'migrationmodeler_Color' and 'migrationmodeler_Square'. From 'migrationmodeler_Color', the role 'migrationmodeler_Color72' has cardinality 0..*, and from 'migrationmodeler_Square', the role 'migrationmodeler_Square' has cardinality 0..*.
+An association connects 'migrationmodeler_Color' and 'migrationmodeler_Ellipse'. From 'migrationmodeler_Color', the role 'migrationmodeler_Color74' has cardinality 0..*, and from 'migrationmodeler_Ellipse', the role 'migrationmodeler_Ellipse' has cardinality 0..*.
+An association connects 'migrationmodeler_Color' and 'migrationmodeler_Lozenge'. From 'migrationmodeler_Color', the role 'migrationmodeler_Color76' has cardinality 0..*, and from 'migrationmodeler_Lozenge', the role 'migrationmodeler_Lozenge' has cardinality 0..*.
+An association connects 'migrationmodeler_Color' and 'migrationmodeler_BundledImage'. From 'migrationmodeler_Color', the role 'migrationmodeler_Color78' has cardinality 0..*, and from 'migrationmodeler_BundledImage', the role 'migrationmodeler_BundledImage' has cardinality 0..*.
+An association connects 'migrationmodeler_GaugeSection' and 'migrationmodeler_GaugeCompositeStyle'. From 'migrationmodeler_GaugeSection', the role 'migrationmodeler_GaugeSection80' has cardinality 0..*, and from 'migrationmodeler_GaugeCompositeStyle', the role 'migrationmodeler_GaugeCompositeStyle' has cardinality 0..*.
+An association connects 'migrationmodeler_Note' and 'migrationmodeler_Color'. From 'migrationmodeler_Note', the role 'migrationmodeler_Note' has cardinality 0..*, and from 'migrationmodeler_Color', the role 'migrationmodeler_Color82' has cardinality 0..*.

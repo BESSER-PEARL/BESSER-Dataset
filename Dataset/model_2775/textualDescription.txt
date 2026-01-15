@@ -1,0 +1,86 @@
+The domain model 'testscenario' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'H' represents an important domain concept.
+It does not declare any attributes.
+
+'M' represents an important domain concept.
+It does not declare any attributes.
+
+'testscenario_M' represents an important domain concept.
+It does not declare any attributes.
+
+'testscenario_L' represents an important domain concept.
+It does not declare any attributes.
+
+'D' represents an important domain concept.
+It does not declare any attributes.
+
+'G' represents an important domain concept.
+It does not declare any attributes.
+
+'testscenario_K' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'testscenario_B' represents an important domain concept.
+It does not declare any attributes.
+
+'testscenario_F' represents an important domain concept.
+It does not declare any attributes.
+
+'testscenario_G' represents an important domain concept.
+It does not declare any attributes.
+
+'F' represents an important domain concept.
+It does not declare any attributes.
+
+'C' represents an important domain concept.
+It does not declare any attributes.
+
+'I' represents an important domain concept.
+It does not declare any attributes.
+
+'K' represents an important domain concept.
+It does not declare any attributes.
+
+'testscenario_H' represents an important domain concept.
+It does not declare any attributes.
+
+'testscenario_D' represents an important domain concept.
+It does not declare any attributes.
+
+'testscenario_E' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+'L' represents an important domain concept.
+It does not declare any attributes.
+
+'testscenario_A' represents an important domain concept.
+It does not declare any attributes.
+
+'testscenario_C' represents an important domain concept.
+It does not declare any attributes.
+
+'testscenario_I' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'testscenario_L' is a specialization of 'M'.
+The class 'testscenario_K' is a specialization of 'L'.
+The class 'testscenario_G' is a specialization of 'H'.
+The class 'testscenario_E' is a specialization of 'K'.
+The class 'testscenario_E' is a specialization of 'D'.
+The class 'testscenario_E' is a specialization of 'C'.
+The class 'testscenario_E' is a specialization of 'F'.
+The class 'testscenario_E' is a specialization of 'G'.
+The class 'testscenario_E' is a specialization of 'I'.
+The class 'testscenario_D' is a specialization of 'B'.
+The class 'testscenario_C' is a specialization of 'A'.
+The class 'testscenario_B' is a specialization of 'A'.

@@ -1,0 +1,27 @@
+The domain model 'test' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'test_B' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'test_C' represents an important domain concept.
+It does not declare any attributes.
+
+'test_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'test_A' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'test_B' is a specialization of 'A'.
+
+Relationships between classes are modeled using associations.
+An association connects 'test_B' and 'test_C'. From 'test_B', the role 'test_B' has cardinality 0..*, and from 'test_C', the role 'test_C' has cardinality 0..*.
+An association connects 'test_C' and 'test_A'. From 'test_C', the role 'test_C2' has cardinality 0..*, and from 'test_A', the role 'test_A' has cardinality 0..*.
+An association connects 'test_Program' and 'test_A'. From 'test_Program', the role 'test_Program' has cardinality 0..*, and from 'test_A', the role 'test_A4' has cardinality 0..*.
+An association connects 'test_C' and 'test_Program'. From 'test_C', the role 'test_C7' has cardinality 0..*, and from 'test_Program', the role 'test_Program6' has cardinality 0..*.

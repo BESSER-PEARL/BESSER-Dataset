@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ftrifin/xtext-forms-integration/plugins/org.eclipse.xtext.example.domainmodel/src-gen/org/eclipse/xtext/example/Domainmodel.ecore

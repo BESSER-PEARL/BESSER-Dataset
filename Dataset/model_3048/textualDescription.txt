@@ -1,0 +1,33 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'myDsl_Attribute' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'myDsl_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Type' defines the following possible values: 'string', 'int'.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl_Attribute' is a specialization of 'Feature'.
+The class 'myDsl_Reference' is a specialization of 'Feature'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_Model' and 'myDsl_Entity'. From 'myDsl_Model', the role 'myDsl_Model' has cardinality 0..*, and from 'myDsl_Entity', the role 'myDsl_Entity' has cardinality 0..*.
+An association connects 'myDsl_Entity' and 'myDsl_Feature'. From 'myDsl_Entity', the role 'myDsl_Entity2' has cardinality 0..*, and from 'myDsl_Feature', the role 'myDsl_Feature' has cardinality 0..*.
+An association connects 'myDsl_Entity' and 'myDsl_Reference'. From 'myDsl_Entity', the role 'myDsl_Entity4' has cardinality 0..*, and from 'myDsl_Reference', the role 'myDsl_Reference' has cardinality 0..*.

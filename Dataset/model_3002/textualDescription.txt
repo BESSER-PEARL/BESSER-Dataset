@@ -1,0 +1,392 @@
+The domain model 'amethyst' describes the core structural elements and their relationships within the system.
+
+The model defines 80 main class(es).
+
+'amethyst_TagLoopExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_AbstractType' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_ParenthisedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_TypeCastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_TagLoopInitializerDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_NextStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_MemberAccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_TagExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_Symbol' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'amethyst_FloatType' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_AdditiveExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'amethyst_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'amethyst_EqualityExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'amethyst_ForInitializerDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_RangeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_CharRangeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_CaseElseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_ClassDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_AssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_IndexAccessExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_NewExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_SelfExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_NumberRangeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_FloatLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'amethyst_MatchingExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'amethyst_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_JsCodeStatement' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'amethyst_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_CallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_CharType' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_Module' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'amethyst_ClassType' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_MultiplicativeExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'amethyst_ElseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'amethyst_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'amethyst_RelationalExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'amethyst_IntLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'amethyst_SymbolReference' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_CaseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_CharLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'amethyst_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'Symbol' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_ElseIfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_WhenStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_UnaryMinusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_DefinitionDeclaration' represents an important domain concept.
+It has one attribute: 'static', which is of type bool.
+
+'amethyst_SuperExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_TagAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_ParameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractType' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_DefinitionType' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_NotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_TagDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_ShiftExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'amethyst_PropertyDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_IntType' represents an important domain concept.
+It does not declare any attributes.
+
+'amethyst_InExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'RangeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'amethyst_Symbol' is a specialization of 'Statement'.
+The class 'amethyst_Expression' is a specialization of 'Statement'.
+The class 'amethyst_SymbolReference' is a specialization of 'Expression'.
+The class 'amethyst_Literal' is a specialization of 'Expression'.
+The class 'amethyst_CharLiteral' is a specialization of 'Literal'.
+The class 'amethyst_StringLiteral' is a specialization of 'Literal'.
+The class 'amethyst_IntLiteral' is a specialization of 'Literal'.
+The class 'amethyst_FloatLiteral' is a specialization of 'Literal'.
+The class 'amethyst_BooleanLiteral' is a specialization of 'Literal'.
+The class 'amethyst_NullLiteral' is a specialization of 'Literal'.
+The class 'amethyst_RangeLiteral' is a specialization of 'Literal'.
+The class 'amethyst_Type' is a specialization of 'AbstractType'.
+The class 'amethyst_PrimitiveType' is a specialization of 'Type'.
+The class 'amethyst_CharType' is a specialization of 'PrimitiveType'.
+The class 'amethyst_StringType' is a specialization of 'PrimitiveType'.
+The class 'amethyst_IntType' is a specialization of 'PrimitiveType'.
+The class 'amethyst_FloatType' is a specialization of 'PrimitiveType'.
+The class 'amethyst_BooleanType' is a specialization of 'PrimitiveType'.
+The class 'amethyst_DefinitionType' is a specialization of 'PrimitiveType'.
+The class 'amethyst_AnyType' is a specialization of 'PrimitiveType'.
+The class 'amethyst_ArrayType' is a specialization of 'AbstractType'.
+The class 'amethyst_ClassType' is a specialization of 'Type'.
+The class 'amethyst_VariableDeclaration' is a specialization of 'Symbol'.
+The class 'amethyst_DefinitionDeclaration' is a specialization of 'Symbol'.
+The class 'amethyst_ParameterDeclaration' is a specialization of 'Symbol'.
+The class 'amethyst_ClassDeclaration' is a specialization of 'Symbol'.
+The class 'amethyst_PropertyDeclaration' is a specialization of 'Symbol'.
+The class 'amethyst_TagLoopInitializerDeclaration' is a specialization of 'Symbol'.
+The class 'amethyst_IfStatement' is a specialization of 'Statement'.
+The class 'amethyst_ElseIfStatement' is a specialization of 'Statement'.
+The class 'amethyst_ElseStatement' is a specialization of 'Statement'.
+The class 'amethyst_CaseStatement' is a specialization of 'Statement'.
+The class 'amethyst_CaseElseStatement' is a specialization of 'Statement'.
+The class 'amethyst_WhenStatement' is a specialization of 'Statement'.
+The class 'amethyst_WhileStatement' is a specialization of 'Statement'.
+The class 'amethyst_ForStatement' is a specialization of 'Statement'.
+The class 'amethyst_ForInitializerDeclaration' is a specialization of 'Symbol'.
+The class 'amethyst_BreakStatement' is a specialization of 'Statement'.
+The class 'amethyst_NextStatement' is a specialization of 'Statement'.
+The class 'amethyst_ReturnStatement' is a specialization of 'Statement'.
+The class 'amethyst_JsCodeStatement' is a specialization of 'Statement'.
+The class 'amethyst_AssignmentExpression' is a specialization of 'Expression'.
+The class 'amethyst_IndexAccessExpression' is a specialization of 'Expression'.
+The class 'amethyst_CallExpression' is a specialization of 'Expression'.
+The class 'amethyst_MemberAccessExpression' is a specialization of 'Expression'.
+The class 'amethyst_OrExpression' is a specialization of 'Expression'.
+The class 'amethyst_AndExpression' is a specialization of 'Expression'.
+The class 'amethyst_RelationalExpression' is a specialization of 'Expression'.
+The class 'amethyst_EqualityExpression' is a specialization of 'Expression'.
+The class 'amethyst_ShiftExpression' is a specialization of 'Expression'.
+The class 'amethyst_AdditiveExpression' is a specialization of 'Expression'.
+The class 'amethyst_MultiplicativeExpression' is a specialization of 'Expression'.
+The class 'amethyst_MatchingExpression' is a specialization of 'Expression'.
+The class 'amethyst_InExpression' is a specialization of 'Expression'.
+The class 'amethyst_UnaryMinusExpression' is a specialization of 'Expression'.
+The class 'amethyst_NotExpression' is a specialization of 'Expression'.
+The class 'amethyst_TypeCastExpression' is a specialization of 'Expression'.
+The class 'amethyst_NewExpression' is a specialization of 'Expression'.
+The class 'amethyst_SuperExpression' is a specialization of 'Expression'.
+The class 'amethyst_SelfExpression' is a specialization of 'Expression'.
+The class 'amethyst_ParenthisedExpression' is a specialization of 'Expression'.
+The class 'amethyst_NumberRangeLiteral' is a specialization of 'RangeLiteral'.
+The class 'amethyst_CharRangeLiteral' is a specialization of 'RangeLiteral'.
+
+Relationships between classes are modeled using associations.
+An association connects 'amethyst_Import' and 'amethyst_Module'. From 'amethyst_Import', the role 'amethyst_Import' has cardinality 0..*, and from 'amethyst_Module', the role 'amethyst_Module' has cardinality 0..*.
+An association connects 'amethyst_Module' and 'amethyst_Statement'. From 'amethyst_Module', the role 'amethyst_Module2' has cardinality 0..*, and from 'amethyst_Statement', the role 'amethyst_Statement' has cardinality 0..*.
+An association connects 'amethyst_ClassType' and 'amethyst_TagDeclaration'. From 'amethyst_ClassType', the role 'amethyst_ClassType' has cardinality 0..*, and from 'amethyst_TagDeclaration', the role 'amethyst_TagDeclaration' has cardinality 0..*.
+An association connects 'amethyst_TagLoopExpression' and 'amethyst_TagDeclaration'. From 'amethyst_TagLoopExpression', the role 'amethyst_TagLoopExpression' has cardinality 0..*, and from 'amethyst_TagDeclaration', the role 'amethyst_TagDeclaration5' has cardinality 0..*.
+An association connects 'amethyst_TagAttribute' and 'amethyst_TagDeclaration'. From 'amethyst_TagAttribute', the role 'amethyst_TagAttribute' has cardinality 0..*, and from 'amethyst_TagDeclaration', the role 'amethyst_TagDeclaration7' has cardinality 0..*.
+An association connects 'amethyst_EObject' and 'amethyst_TagDeclaration'. From 'amethyst_EObject', the role 'amethyst_EObject' has cardinality 0..*, and from 'amethyst_TagDeclaration', the role 'amethyst_TagDeclaration9' has cardinality 0..*.
+An association connects 'amethyst_Symbol' and 'amethyst_TagLoopExpression'. From 'amethyst_Symbol', the role 'amethyst_Symbol' has cardinality 0..*, and from 'amethyst_TagLoopExpression', the role 'amethyst_TagLoopExpression11' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_TagLoopExpression'. From 'amethyst_Expression', the role 'amethyst_Expression' has cardinality 0..*, and from 'amethyst_TagLoopExpression', the role 'amethyst_TagLoopExpression13' has cardinality 0..*.
+An association connects 'amethyst_TagExpression' and 'amethyst_Expression'. From 'amethyst_TagExpression', the role 'amethyst_TagExpression' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression15' has cardinality 0..*.
+An association connects 'amethyst_PropertyDeclaration' and 'amethyst_TagAttribute'. From 'amethyst_PropertyDeclaration', the role 'amethyst_PropertyDeclaration' has cardinality 0..*, and from 'amethyst_TagAttribute', the role 'amethyst_TagAttribute17' has cardinality 0..*.
+An association connects 'amethyst_TagAttribute' and 'amethyst_Expression'. From 'amethyst_TagAttribute', the role 'amethyst_TagAttribute19' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression20' has cardinality 0..*.
+An association connects 'amethyst_SymbolReference' and 'amethyst_Symbol'. From 'amethyst_SymbolReference', the role 'amethyst_SymbolReference' has cardinality 0..*, and from 'amethyst_Symbol', the role 'amethyst_Symbol22' has cardinality 0..*.
+An association connects 'amethyst_Type' and 'amethyst_ArrayType'. From 'amethyst_Type', the role 'amethyst_Type' has cardinality 0..*, and from 'amethyst_ArrayType', the role 'amethyst_ArrayType' has cardinality 0..*.
+An association connects 'amethyst_ClassDeclaration' and 'amethyst_ClassType'. From 'amethyst_ClassDeclaration', the role 'amethyst_ClassDeclaration' has cardinality 0..*, and from 'amethyst_ClassType', the role 'amethyst_ClassType25' has cardinality 0..*.
+An association connects 'amethyst_VariableDeclaration' and 'amethyst_AbstractType'. From 'amethyst_VariableDeclaration', the role 'amethyst_VariableDeclaration' has cardinality 0..*, and from 'amethyst_AbstractType', the role 'amethyst_AbstractType' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_VariableDeclaration'. From 'amethyst_Expression', the role 'amethyst_Expression29' has cardinality 0..*, and from 'amethyst_VariableDeclaration', the role 'amethyst_VariableDeclaration28' has cardinality 0..*.
+An association connects 'amethyst_DefinitionDeclaration' and 'amethyst_Symbol'. From 'amethyst_DefinitionDeclaration', the role 'amethyst_DefinitionDeclaration' has cardinality 0..*, and from 'amethyst_Symbol', the role 'amethyst_Symbol31' has cardinality 0..*.
+An association connects 'amethyst_AbstractType' and 'amethyst_DefinitionDeclaration'. From 'amethyst_AbstractType', the role 'amethyst_AbstractType34' has cardinality 0..*, and from 'amethyst_DefinitionDeclaration', the role 'amethyst_DefinitionDeclaration33' has cardinality 0..*.
+An association connects 'amethyst_DefinitionDeclaration' and 'amethyst_Statement'. From 'amethyst_DefinitionDeclaration', the role 'amethyst_DefinitionDeclaration36' has cardinality 0..*, and from 'amethyst_Statement', the role 'amethyst_Statement37' has cardinality 0..*.
+An association connects 'amethyst_ParameterDeclaration' and 'amethyst_AbstractType'. From 'amethyst_ParameterDeclaration', the role 'amethyst_ParameterDeclaration' has cardinality 0..*, and from 'amethyst_AbstractType', the role 'amethyst_AbstractType39' has cardinality 0..*.
+An association connects 'amethyst_ClassDeclaration' and 'amethyst_ClassDeclaration'. From 'amethyst_ClassDeclaration', the role 'amethyst_ClassDeclaration40' has cardinality 0..*, and from 'amethyst_ClassDeclaration', the role 'amethyst_ClassDeclaration42' has cardinality 0..*.
+An association connects 'amethyst_ClassDeclaration' and 'amethyst_Symbol'. From 'amethyst_ClassDeclaration', the role 'amethyst_ClassDeclaration44' has cardinality 0..*, and from 'amethyst_Symbol', the role 'amethyst_Symbol45' has cardinality 0..*.
+An association connects 'amethyst_Symbol' and 'amethyst_ClassDeclaration'. From 'amethyst_Symbol', the role 'amethyst_Symbol48' has cardinality 0..*, and from 'amethyst_ClassDeclaration', the role 'amethyst_ClassDeclaration47' has cardinality 0..*.
+An association connects 'amethyst_TagDeclaration' and 'amethyst_ClassDeclaration'. From 'amethyst_TagDeclaration', the role 'amethyst_TagDeclaration51' has cardinality 0..*, and from 'amethyst_ClassDeclaration', the role 'amethyst_ClassDeclaration50' has cardinality 0..*.
+An association connects 'amethyst_PropertyDeclaration' and 'amethyst_AbstractType'. From 'amethyst_PropertyDeclaration', the role 'amethyst_PropertyDeclaration53' has cardinality 0..*, and from 'amethyst_AbstractType', the role 'amethyst_AbstractType54' has cardinality 0..*.
+An association connects 'amethyst_PropertyDeclaration' and 'amethyst_Expression'. From 'amethyst_PropertyDeclaration', the role 'amethyst_PropertyDeclaration56' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression57' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_IfStatement'. From 'amethyst_Expression', the role 'amethyst_Expression59' has cardinality 0..*, and from 'amethyst_IfStatement', the role 'amethyst_IfStatement' has cardinality 0..*.
+An association connects 'amethyst_IfStatement' and 'amethyst_Statement'. From 'amethyst_IfStatement', the role 'amethyst_IfStatement61' has cardinality 0..*, and from 'amethyst_Statement', the role 'amethyst_Statement62' has cardinality 0..*.
+An association connects 'amethyst_IfStatement' and 'amethyst_Statement'. From 'amethyst_IfStatement', the role 'amethyst_IfStatement64' has cardinality 0..*, and from 'amethyst_Statement', the role 'amethyst_Statement65' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_ElseIfStatement'. From 'amethyst_Expression', the role 'amethyst_Expression67' has cardinality 0..*, and from 'amethyst_ElseIfStatement', the role 'amethyst_ElseIfStatement' has cardinality 0..*.
+An association connects 'amethyst_Statement' and 'amethyst_ElseIfStatement'. From 'amethyst_Statement', the role 'amethyst_Statement70' has cardinality 0..*, and from 'amethyst_ElseIfStatement', the role 'amethyst_ElseIfStatement69' has cardinality 0..*.
+An association connects 'amethyst_ElseIfStatement' and 'amethyst_Statement'. From 'amethyst_ElseIfStatement', the role 'amethyst_ElseIfStatement72' has cardinality 0..*, and from 'amethyst_Statement', the role 'amethyst_Statement73' has cardinality 0..*.
+An association connects 'amethyst_Statement' and 'amethyst_ElseStatement'. From 'amethyst_Statement', the role 'amethyst_Statement75' has cardinality 0..*, and from 'amethyst_ElseStatement', the role 'amethyst_ElseStatement' has cardinality 0..*.
+An association connects 'amethyst_CaseStatement' and 'amethyst_Expression'. From 'amethyst_CaseStatement', the role 'amethyst_CaseStatement' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression77' has cardinality 0..*.
+An association connects 'amethyst_CaseStatement' and 'amethyst_Statement'. From 'amethyst_CaseStatement', the role 'amethyst_CaseStatement79' has cardinality 0..*, and from 'amethyst_Statement', the role 'amethyst_Statement80' has cardinality 0..*.
+An association connects 'amethyst_CaseStatement' and 'amethyst_Statement'. From 'amethyst_CaseStatement', the role 'amethyst_CaseStatement82' has cardinality 0..*, and from 'amethyst_Statement', the role 'amethyst_Statement83' has cardinality 0..*.
+An association connects 'amethyst_CaseElseStatement' and 'amethyst_Statement'. From 'amethyst_CaseElseStatement', the role 'amethyst_CaseElseStatement' has cardinality 0..*, and from 'amethyst_Statement', the role 'amethyst_Statement85' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_WhenStatement'. From 'amethyst_Expression', the role 'amethyst_Expression87' has cardinality 0..*, and from 'amethyst_WhenStatement', the role 'amethyst_WhenStatement' has cardinality 0..*.
+An association connects 'amethyst_Statement' and 'amethyst_WhenStatement'. From 'amethyst_Statement', the role 'amethyst_Statement90' has cardinality 0..*, and from 'amethyst_WhenStatement', the role 'amethyst_WhenStatement89' has cardinality 0..*.
+An association connects 'amethyst_WhileStatement' and 'amethyst_Expression'. From 'amethyst_WhileStatement', the role 'amethyst_WhileStatement' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression92' has cardinality 0..*.
+An association connects 'amethyst_Statement' and 'amethyst_WhileStatement'. From 'amethyst_Statement', the role 'amethyst_Statement95' has cardinality 0..*, and from 'amethyst_WhileStatement', the role 'amethyst_WhileStatement94' has cardinality 0..*.
+An association connects 'amethyst_ForStatement' and 'amethyst_Symbol'. From 'amethyst_ForStatement', the role 'amethyst_ForStatement' has cardinality 0..*, and from 'amethyst_Symbol', the role 'amethyst_Symbol97' has cardinality 0..*.
+An association connects 'amethyst_ForStatement' and 'amethyst_Expression'. From 'amethyst_ForStatement', the role 'amethyst_ForStatement99' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression100' has cardinality 0..*.
+An association connects 'amethyst_Statement' and 'amethyst_ForStatement'. From 'amethyst_Statement', the role 'amethyst_Statement103' has cardinality 0..*, and from 'amethyst_ForStatement', the role 'amethyst_ForStatement102' has cardinality 0..*.
+An association connects 'amethyst_ReturnStatement' and 'amethyst_Expression'. From 'amethyst_ReturnStatement', the role 'amethyst_ReturnStatement' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression105' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_AssignmentExpression'. From 'amethyst_Expression', the role 'amethyst_Expression107' has cardinality 0..*, and from 'amethyst_AssignmentExpression', the role 'amethyst_AssignmentExpression' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_AssignmentExpression'. From 'amethyst_Expression', the role 'amethyst_Expression110' has cardinality 0..*, and from 'amethyst_AssignmentExpression', the role 'amethyst_AssignmentExpression109' has cardinality 0..*.
+An association connects 'amethyst_IndexAccessExpression' and 'amethyst_Expression'. From 'amethyst_IndexAccessExpression', the role 'amethyst_IndexAccessExpression' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression112' has cardinality 0..*.
+An association connects 'amethyst_IndexAccessExpression' and 'amethyst_Expression'. From 'amethyst_IndexAccessExpression', the role 'amethyst_IndexAccessExpression114' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression115' has cardinality 0..*.
+An association connects 'amethyst_CallExpression' and 'amethyst_Expression'. From 'amethyst_CallExpression', the role 'amethyst_CallExpression' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression117' has cardinality 0..*.
+An association connects 'amethyst_CallExpression' and 'amethyst_Expression'. From 'amethyst_CallExpression', the role 'amethyst_CallExpression119' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression120' has cardinality 0..*.
+An association connects 'amethyst_MemberAccessExpression' and 'amethyst_Expression'. From 'amethyst_MemberAccessExpression', the role 'amethyst_MemberAccessExpression' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression122' has cardinality 0..*.
+An association connects 'amethyst_Symbol' and 'amethyst_MemberAccessExpression'. From 'amethyst_Symbol', the role 'amethyst_Symbol125' has cardinality 0..*, and from 'amethyst_MemberAccessExpression', the role 'amethyst_MemberAccessExpression124' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_OrExpression'. From 'amethyst_Expression', the role 'amethyst_Expression127' has cardinality 0..*, and from 'amethyst_OrExpression', the role 'amethyst_OrExpression' has cardinality 0..*.
+An association connects 'amethyst_OrExpression' and 'amethyst_Expression'. From 'amethyst_OrExpression', the role 'amethyst_OrExpression129' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression130' has cardinality 0..*.
+An association connects 'amethyst_AndExpression' and 'amethyst_Expression'. From 'amethyst_AndExpression', the role 'amethyst_AndExpression' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression132' has cardinality 0..*.
+An association connects 'amethyst_AndExpression' and 'amethyst_Expression'. From 'amethyst_AndExpression', the role 'amethyst_AndExpression134' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression135' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_RelationalExpression'. From 'amethyst_Expression', the role 'amethyst_Expression137' has cardinality 0..*, and from 'amethyst_RelationalExpression', the role 'amethyst_RelationalExpression' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_RelationalExpression'. From 'amethyst_Expression', the role 'amethyst_Expression140' has cardinality 0..*, and from 'amethyst_RelationalExpression', the role 'amethyst_RelationalExpression139' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_EqualityExpression'. From 'amethyst_Expression', the role 'amethyst_Expression142' has cardinality 0..*, and from 'amethyst_EqualityExpression', the role 'amethyst_EqualityExpression' has cardinality 0..*.
+An association connects 'amethyst_EqualityExpression' and 'amethyst_Expression'. From 'amethyst_EqualityExpression', the role 'amethyst_EqualityExpression144' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression145' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_ShiftExpression'. From 'amethyst_Expression', the role 'amethyst_Expression147' has cardinality 0..*, and from 'amethyst_ShiftExpression', the role 'amethyst_ShiftExpression' has cardinality 0..*.
+An association connects 'amethyst_ShiftExpression' and 'amethyst_Expression'. From 'amethyst_ShiftExpression', the role 'amethyst_ShiftExpression149' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression150' has cardinality 0..*.
+An association connects 'amethyst_AdditiveExpression' and 'amethyst_Expression'. From 'amethyst_AdditiveExpression', the role 'amethyst_AdditiveExpression' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression152' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_AdditiveExpression'. From 'amethyst_Expression', the role 'amethyst_Expression155' has cardinality 0..*, and from 'amethyst_AdditiveExpression', the role 'amethyst_AdditiveExpression154' has cardinality 0..*.
+An association connects 'amethyst_MultiplicativeExpression' and 'amethyst_Expression'. From 'amethyst_MultiplicativeExpression', the role 'amethyst_MultiplicativeExpression' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression157' has cardinality 0..*.
+An association connects 'amethyst_MultiplicativeExpression' and 'amethyst_Expression'. From 'amethyst_MultiplicativeExpression', the role 'amethyst_MultiplicativeExpression159' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression160' has cardinality 0..*.
+An association connects 'amethyst_MatchingExpression' and 'amethyst_Expression'. From 'amethyst_MatchingExpression', the role 'amethyst_MatchingExpression' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression162' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_MatchingExpression'. From 'amethyst_Expression', the role 'amethyst_Expression165' has cardinality 0..*, and from 'amethyst_MatchingExpression', the role 'amethyst_MatchingExpression164' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_InExpression'. From 'amethyst_Expression', the role 'amethyst_Expression167' has cardinality 0..*, and from 'amethyst_InExpression', the role 'amethyst_InExpression' has cardinality 0..*.
+An association connects 'amethyst_InExpression' and 'amethyst_Expression'. From 'amethyst_InExpression', the role 'amethyst_InExpression169' has cardinality 0..*, and from 'amethyst_Expression', the role 'amethyst_Expression170' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_UnaryMinusExpression'. From 'amethyst_Expression', the role 'amethyst_Expression172' has cardinality 0..*, and from 'amethyst_UnaryMinusExpression', the role 'amethyst_UnaryMinusExpression' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_NotExpression'. From 'amethyst_Expression', the role 'amethyst_Expression174' has cardinality 0..*, and from 'amethyst_NotExpression', the role 'amethyst_NotExpression' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_TypeCastExpression'. From 'amethyst_Expression', the role 'amethyst_Expression176' has cardinality 0..*, and from 'amethyst_TypeCastExpression', the role 'amethyst_TypeCastExpression' has cardinality 0..*.
+An association connects 'amethyst_TypeCastExpression' and 'amethyst_AbstractType'. From 'amethyst_TypeCastExpression', the role 'amethyst_TypeCastExpression178' has cardinality 0..*, and from 'amethyst_AbstractType', the role 'amethyst_AbstractType179' has cardinality 0..*.
+An association connects 'amethyst_ClassType' and 'amethyst_NewExpression'. From 'amethyst_ClassType', the role 'amethyst_ClassType181' has cardinality 0..*, and from 'amethyst_NewExpression', the role 'amethyst_NewExpression' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_NewExpression'. From 'amethyst_Expression', the role 'amethyst_Expression184' has cardinality 0..*, and from 'amethyst_NewExpression', the role 'amethyst_NewExpression183' has cardinality 0..*.
+An association connects 'amethyst_Expression' and 'amethyst_ParenthisedExpression'. From 'amethyst_Expression', the role 'amethyst_Expression186' has cardinality 0..*, and from 'amethyst_ParenthisedExpression', the role 'amethyst_ParenthisedExpression' has cardinality 0..*.
+An association connects 'amethyst_IntLiteral' and 'amethyst_NumberRangeLiteral'. From 'amethyst_IntLiteral', the role 'amethyst_IntLiteral' has cardinality 0..*, and from 'amethyst_NumberRangeLiteral', the role 'amethyst_NumberRangeLiteral' has cardinality 0..*.
+An association connects 'amethyst_NumberRangeLiteral' and 'amethyst_IntLiteral'. From 'amethyst_NumberRangeLiteral', the role 'amethyst_NumberRangeLiteral189' has cardinality 0..*, and from 'amethyst_IntLiteral', the role 'amethyst_IntLiteral190' has cardinality 0..*.
+An association connects 'amethyst_CharRangeLiteral' and 'amethyst_CharLiteral'. From 'amethyst_CharRangeLiteral', the role 'amethyst_CharRangeLiteral' has cardinality 0..*, and from 'amethyst_CharLiteral', the role 'amethyst_CharLiteral' has cardinality 0..*.
+An association connects 'amethyst_CharLiteral' and 'amethyst_CharRangeLiteral'. From 'amethyst_CharLiteral', the role 'amethyst_CharLiteral194' has cardinality 0..*, and from 'amethyst_CharRangeLiteral', the role 'amethyst_CharRangeLiteral193' has cardinality 0..*.

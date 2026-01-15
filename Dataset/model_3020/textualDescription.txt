@@ -1,0 +1,191 @@
+The domain model 'javali' describes the core structural elements and their relationships within the system.
+
+The model defines 35 main class(es).
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_VarExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_VarDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_NewArray' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Multiplication' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'javali_For' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Increment' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Addition' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'javali_Continue' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Record' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Null' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Xor' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_VarAssign' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_ProcCall' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Equality' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'javali_DoWhile' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_And' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_While' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Type' represents an important domain concept.
+It has one attribute: 'arrayDims', which is of type str.
+
+'javali_Decrement' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Procedure' represents an important domain concept.
+It has the following attributes: 'static', which is of type bool; 'void', which is of type bool; 'comment', which is of type str.
+
+'javali_Break' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Constant' represents an important domain concept.
+It has one attribute: 'static', which is of type bool.
+
+'javali_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Identifier' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Relation' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'javali_NewObject' represents an important domain concept.
+It does not declare any attributes.
+
+'javali_Literal' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'javali_IfElse' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'javali_Return' is a specialization of 'Statement'.
+The class 'javali_Break' is a specialization of 'Statement'.
+The class 'javali_Continue' is a specialization of 'Statement'.
+The class 'javali_VarDeclaration' is a specialization of 'Statement'.
+The class 'javali_VarAssign' is a specialization of 'Statement'.
+The class 'javali_IfElse' is a specialization of 'Statement'.
+The class 'javali_While' is a specialization of 'Statement'.
+The class 'javali_For' is a specialization of 'Statement'.
+The class 'javali_DoWhile' is a specialization of 'Statement'.
+The class 'javali_Increment' is a specialization of 'Statement'.
+The class 'javali_Decrement' is a specialization of 'Statement'.
+The class 'javali_Literal' is a specialization of 'Expression'.
+The class 'javali_Null' is a specialization of 'Expression'.
+The class 'javali_VarExpression' is a specialization of 'Expression'.
+The class 'javali_ProcCall' is a specialization of 'Statement'.
+The class 'javali_ProcCall' is a specialization of 'Expression'.
+The class 'javali_NewArray' is a specialization of 'Expression'.
+The class 'javali_NewObject' is a specialization of 'Expression'.
+The class 'javali_Or' is a specialization of 'Expression'.
+The class 'javali_Xor' is a specialization of 'Expression'.
+The class 'javali_And' is a specialization of 'Expression'.
+The class 'javali_Equality' is a specialization of 'Expression'.
+The class 'javali_Relation' is a specialization of 'Expression'.
+The class 'javali_Addition' is a specialization of 'Expression'.
+The class 'javali_Multiplication' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'javali_Constant' and 'javali_Module'. From 'javali_Constant', the role 'javali_Constant' has cardinality 0..*, and from 'javali_Module', the role 'javali_Module' has cardinality 0..*.
+An association connects 'javali_Record' and 'javali_Module'. From 'javali_Record', the role 'javali_Record' has cardinality 0..*, and from 'javali_Module', the role 'javali_Module2' has cardinality 0..*.
+An association connects 'javali_Procedure' and 'javali_Module'. From 'javali_Procedure', the role 'javali_Procedure' has cardinality 0..*, and from 'javali_Module', the role 'javali_Module4' has cardinality 0..*.
+An association connects 'javali_Type' and 'javali_Constant'. From 'javali_Type', the role 'javali_Type' has cardinality 0..*, and from 'javali_Constant', the role 'javali_Constant6' has cardinality 0..*.
+An association connects 'javali_Constant' and 'javali_Identifier'. From 'javali_Constant', the role 'javali_Constant8' has cardinality 0..*, and from 'javali_Identifier', the role 'javali_Identifier' has cardinality 0..*.
+An association connects 'javali_Literal' and 'javali_Constant'. From 'javali_Literal', the role 'javali_Literal' has cardinality 0..*, and from 'javali_Constant', the role 'javali_Constant10' has cardinality 0..*.
+An association connects 'javali_Record' and 'javali_Identifier'. From 'javali_Record', the role 'javali_Record12' has cardinality 0..*, and from 'javali_Identifier', the role 'javali_Identifier13' has cardinality 0..*.
+An association connects 'javali_VarDeclaration' and 'javali_Record'. From 'javali_VarDeclaration', the role 'javali_VarDeclaration' has cardinality 0..*, and from 'javali_Record', the role 'javali_Record15' has cardinality 0..*.
+An association connects 'javali_Procedure' and 'javali_Type'. From 'javali_Procedure', the role 'javali_Procedure17' has cardinality 0..*, and from 'javali_Type', the role 'javali_Type18' has cardinality 0..*.
+An association connects 'javali_Identifier' and 'javali_Procedure'. From 'javali_Identifier', the role 'javali_Identifier21' has cardinality 0..*, and from 'javali_Procedure', the role 'javali_Procedure20' has cardinality 0..*.
+An association connects 'javali_VarDeclaration' and 'javali_Procedure'. From 'javali_VarDeclaration', the role 'javali_VarDeclaration24' has cardinality 0..*, and from 'javali_Procedure', the role 'javali_Procedure23' has cardinality 0..*.
+An association connects 'javali_Block' and 'javali_Procedure'. From 'javali_Block', the role 'javali_Block' has cardinality 0..*, and from 'javali_Procedure', the role 'javali_Procedure26' has cardinality 0..*.
+An association connects 'javali_Statement' and 'javali_Block'. From 'javali_Statement', the role 'javali_Statement' has cardinality 0..*, and from 'javali_Block', the role 'javali_Block28' has cardinality 0..*.
+An association connects 'javali_Expression' and 'javali_Return'. From 'javali_Expression', the role 'javali_Expression' has cardinality 0..*, and from 'javali_Return', the role 'javali_Return' has cardinality 0..*.
+An association connects 'javali_Type' and 'javali_VarDeclaration'. From 'javali_Type', the role 'javali_Type32' has cardinality 0..*, and from 'javali_VarDeclaration', the role 'javali_VarDeclaration31' has cardinality 0..*.
+An association connects 'javali_VarDeclaration' and 'javali_Identifier'. From 'javali_VarDeclaration', the role 'javali_VarDeclaration34' has cardinality 0..*, and from 'javali_Identifier', the role 'javali_Identifier35' has cardinality 0..*.
+An association connects 'javali_VarDeclaration' and 'javali_Expression'. From 'javali_VarDeclaration', the role 'javali_VarDeclaration37' has cardinality 0..*, and from 'javali_Expression', the role 'javali_Expression38' has cardinality 0..*.
+An association connects 'javali_VarExpression' and 'javali_VarAssign'. From 'javali_VarExpression', the role 'javali_VarExpression' has cardinality 0..*, and from 'javali_VarAssign', the role 'javali_VarAssign' has cardinality 0..*.
+An association connects 'javali_Expression' and 'javali_VarAssign'. From 'javali_Expression', the role 'javali_Expression42' has cardinality 0..*, and from 'javali_VarAssign', the role 'javali_VarAssign41' has cardinality 0..*.
+An association connects 'javali_IfElse' and 'javali_Expression'. From 'javali_IfElse', the role 'javali_IfElse' has cardinality 0..*, and from 'javali_Expression', the role 'javali_Expression44' has cardinality 0..*.
+An association connects 'javali_Block' and 'javali_IfElse'. From 'javali_Block', the role 'javali_Block47' has cardinality 0..*, and from 'javali_IfElse', the role 'javali_IfElse46' has cardinality 0..*.
+An association connects 'javali_IfElse' and 'javali_Block'. From 'javali_IfElse', the role 'javali_IfElse49' has cardinality 0..*, and from 'javali_Block', the role 'javali_Block50' has cardinality 0..*.
+An association connects 'javali_Expression' and 'javali_While'. From 'javali_Expression', the role 'javali_Expression52' has cardinality 0..*, and from 'javali_While', the role 'javali_While' has cardinality 0..*.
+An association connects 'javali_Block' and 'javali_While'. From 'javali_Block', the role 'javali_Block55' has cardinality 0..*, and from 'javali_While', the role 'javali_While54' has cardinality 0..*.
+An association connects 'javali_Statement' and 'javali_For'. From 'javali_Statement', the role 'javali_Statement57' has cardinality 0..*, and from 'javali_For', the role 'javali_For' has cardinality 0..*.
+An association connects 'javali_Expression' and 'javali_For'. From 'javali_Expression', the role 'javali_Expression60' has cardinality 0..*, and from 'javali_For', the role 'javali_For59' has cardinality 0..*.
+An association connects 'javali_Statement' and 'javali_For'. From 'javali_Statement', the role 'javali_Statement63' has cardinality 0..*, and from 'javali_For', the role 'javali_For62' has cardinality 0..*.
+An association connects 'javali_Block' and 'javali_For'. From 'javali_Block', the role 'javali_Block66' has cardinality 0..*, and from 'javali_For', the role 'javali_For65' has cardinality 0..*.
+An association connects 'javali_Block' and 'javali_DoWhile'. From 'javali_Block', the role 'javali_Block68' has cardinality 0..*, and from 'javali_DoWhile', the role 'javali_DoWhile' has cardinality 0..*.
+An association connects 'javali_Expression' and 'javali_DoWhile'. From 'javali_Expression', the role 'javali_Expression71' has cardinality 0..*, and from 'javali_DoWhile', the role 'javali_DoWhile70' has cardinality 0..*.
+An association connects 'javali_Increment' and 'javali_Identifier'. From 'javali_Increment', the role 'javali_Increment' has cardinality 0..*, and from 'javali_Identifier', the role 'javali_Identifier73' has cardinality 0..*.
+An association connects 'javali_Decrement' and 'javali_Identifier'. From 'javali_Decrement', the role 'javali_Decrement' has cardinality 0..*, and from 'javali_Identifier', the role 'javali_Identifier75' has cardinality 0..*.
+An association connects 'javali_VarExpression' and 'javali_Identifier'. From 'javali_VarExpression', the role 'javali_VarExpression77' has cardinality 0..*, and from 'javali_Identifier', the role 'javali_Identifier78' has cardinality 0..*.
+An association connects 'javali_Expression' and 'javali_VarExpression'. From 'javali_Expression', the role 'javali_Expression81' has cardinality 0..*, and from 'javali_VarExpression', the role 'javali_VarExpression80' has cardinality 0..*.
+An association connects 'javali_ProcCall' and 'javali_Identifier'. From 'javali_ProcCall', the role 'javali_ProcCall' has cardinality 0..*, and from 'javali_Identifier', the role 'javali_Identifier83' has cardinality 0..*.
+An association connects 'javali_Expression' and 'javali_ProcCall'. From 'javali_Expression', the role 'javali_Expression86' has cardinality 0..*, and from 'javali_ProcCall', the role 'javali_ProcCall85' has cardinality 0..*.
+An association connects 'javali_Identifier' and 'javali_Type'. From 'javali_Identifier', the role 'javali_Identifier89' has cardinality 0..*, and from 'javali_Type', the role 'javali_Type88' has cardinality 0..*.
+An association connects 'javali_Identifier' and 'javali_NewArray'. From 'javali_Identifier', the role 'javali_Identifier91' has cardinality 0..*, and from 'javali_NewArray', the role 'javali_NewArray' has cardinality 0..*.
+An association connects 'javali_Expression' and 'javali_NewArray'. From 'javali_Expression', the role 'javali_Expression94' has cardinality 0..*, and from 'javali_NewArray', the role 'javali_NewArray93' has cardinality 0..*.
+An association connects 'javali_NewObject' and 'javali_Identifier'. From 'javali_NewObject', the role 'javali_NewObject' has cardinality 0..*, and from 'javali_Identifier', the role 'javali_Identifier96' has cardinality 0..*.
+An association connects 'javali_Expression' and 'javali_Or'. From 'javali_Expression', the role 'javali_Expression98' has cardinality 0..*, and from 'javali_Or', the role 'javali_Or' has cardinality 0..*.
+An association connects 'javali_Or' and 'javali_Expression'. From 'javali_Or', the role 'javali_Or100' has cardinality 0..*, and from 'javali_Expression', the role 'javali_Expression101' has cardinality 0..*.
+An association connects 'javali_Expression' and 'javali_Xor'. From 'javali_Expression', the role 'javali_Expression103' has cardinality 0..*, and from 'javali_Xor', the role 'javali_Xor' has cardinality 0..*.
+An association connects 'javali_Xor' and 'javali_Expression'. From 'javali_Xor', the role 'javali_Xor105' has cardinality 0..*, and from 'javali_Expression', the role 'javali_Expression106' has cardinality 0..*.
+An association connects 'javali_And' and 'javali_Expression'. From 'javali_And', the role 'javali_And' has cardinality 0..*, and from 'javali_Expression', the role 'javali_Expression108' has cardinality 0..*.
+An association connects 'javali_And' and 'javali_Expression'. From 'javali_And', the role 'javali_And110' has cardinality 0..*, and from 'javali_Expression', the role 'javali_Expression111' has cardinality 0..*.
+An association connects 'javali_Expression' and 'javali_Equality'. From 'javali_Expression', the role 'javali_Expression113' has cardinality 0..*, and from 'javali_Equality', the role 'javali_Equality' has cardinality 0..*.
+An association connects 'javali_Expression' and 'javali_Equality'. From 'javali_Expression', the role 'javali_Expression116' has cardinality 0..*, and from 'javali_Equality', the role 'javali_Equality115' has cardinality 0..*.
+An association connects 'javali_Relation' and 'javali_Expression'. From 'javali_Relation', the role 'javali_Relation' has cardinality 0..*, and from 'javali_Expression', the role 'javali_Expression118' has cardinality 0..*.
+An association connects 'javali_Expression' and 'javali_Relation'. From 'javali_Expression', the role 'javali_Expression121' has cardinality 0..*, and from 'javali_Relation', the role 'javali_Relation120' has cardinality 0..*.
+An association connects 'javali_Expression' and 'javali_Addition'. From 'javali_Expression', the role 'javali_Expression123' has cardinality 0..*, and from 'javali_Addition', the role 'javali_Addition' has cardinality 0..*.
+An association connects 'javali_Expression' and 'javali_Addition'. From 'javali_Expression', the role 'javali_Expression126' has cardinality 0..*, and from 'javali_Addition', the role 'javali_Addition125' has cardinality 0..*.
+An association connects 'javali_Multiplication' and 'javali_Expression'. From 'javali_Multiplication', the role 'javali_Multiplication' has cardinality 0..*, and from 'javali_Expression', the role 'javali_Expression128' has cardinality 0..*.
+An association connects 'javali_Expression' and 'javali_Multiplication'. From 'javali_Expression', the role 'javali_Expression131' has cardinality 0..*, and from 'javali_Multiplication', the role 'javali_Multiplication130' has cardinality 0..*.

@@ -1,0 +1,1456 @@
+The domain model 'afpText' describes the core structural elements and their relationships within the system.
+
+The model defines 345 main class(es).
+
+'afpText_GBOX' represents an important domain concept.
+It has the following attributes: 'RES', which is of type str; 'XPOS1', which is of type str; 'YPOS0', which is of type str; 'VAXIS', which is of type str; 'YPOS1', which is of type str; 'HAXIS', which is of type str; 'XPOS0', which is of type str.
+
+'afpText_BCP' represents an important domain concept.
+It has one attribute: 'RSName', which is of type str.
+
+'afpText_SamplingRatiosRG' represents an important domain concept.
+It has the following attributes: 'HSAMPLE', which is of type str; 'VSAMPLE', which is of type str.
+
+'afpText_IOC' represents an important domain concept.
+It has the following attributes: 'ConData1', which is of type str; 'ConData2', which is of type str; 'YMap', which is of type str; 'XoaOset', which is of type str; 'YoaOset', which is of type str; 'XoaOrent', which is of type str; 'YoaOrent', which is of type str; 'XMap', which is of type str.
+
+'afpText_ResourceLocalIdentifier' represents an important domain concept.
+It has the following attributes: 'ResType', which is of type str; 'ResLID', which is of type str.
+
+'afpText_ObjectStructuredFieldOffset' represents an important domain concept.
+It has the following attributes: 'SFOffHi', which is of type str; 'SFOff', which is of type str.
+
+'afpText_IPG' represents an important domain concept.
+It has the following attributes: 'IPgFlgs', which is of type str; 'PgName', which is of type str.
+
+'afpText_SetBiLevelImageColor' represents an important domain concept.
+It has the following attributes: 'AREA', which is of type str; 'Reserved', which is of type str; 'NAMECOLR', which is of type str.
+
+'afpText_GAD' represents an important domain concept.
+It has one attribute: 'GOCAdat', which is of type str.
+
+'afpText_EncodingSchemeID' represents an important domain concept.
+It has the following attributes: 'ESidCP', which is of type str; 'ESidUD', which is of type str.
+
+'afpText_GSCP' represents an important domain concept.
+It has the following attributes: 'YPOS', which is of type str; 'XPOS', which is of type str.
+
+'afpText_GRLINERG' represents an important domain concept.
+It has the following attributes: 'XOSSF', which is of type str; 'YOFFS', which is of type str.
+
+'afpText_PGP' represents an important domain concept.
+It has one attribute: 'Constant', which is of type str.
+
+'afpText_BeginSegment' represents an important domain concept.
+It has one attribute: 'SEGNAME', which is of type str.
+
+'afpText_ObjectOriginIdentifier' represents an important domain concept.
+It has the following attributes: 'System', which is of type str; 'SysID', which is of type str; 'DSID', which is of type str; 'MedID', which is of type str.
+
+'afpText_FNPRG' represents an important domain concept.
+It has the following attributes: 'Reserved3', which is of type str; 'MaxAscHt', which is of type str; 'Reserved2', which is of type str; 'Reserved', which is of type str; 'MaxDesDp', which is of type str; 'UscoreWdf', which is of type str; 'CapMHt', which is of type str; 'UscoreWd', which is of type str; 'UscorePos', which is of type str; 'LcHeight', which is of type str; 'Retired', which is of type str.
+
+'afpText_PPORG' represents an important domain concept.
+It has the following attributes: 'ObjType', which is of type str; 'XocaOset', which is of type str; 'YocaOset', which is of type str; 'RGLength', which is of type str; 'ProcFlgs', which is of type str.
+
+'afpText_NOPCS' represents an important domain concept.
+It has one attribute: 'IGNDATA', which is of type str.
+
+'triplet' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_PresentationSpaceResetMixing' represents an important domain concept.
+It has one attribute: 'BgMxFlag', which is of type str.
+
+'afpText_BLN' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_ObjectOffset' represents an important domain concept.
+It has the following attributes: 'ObjOstHi', which is of type str; 'ObjOset', which is of type str; 'ObjTpe', which is of type str.
+
+'afpText_FNI' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_FNIRG' represents an important domain concept.
+It has the following attributes: 'CSpace', which is of type str; 'BSpace', which is of type str; 'Reserved2', which is of type str; 'Reserved', which is of type str; 'FNMCnt', which is of type str; 'DescendDp', which is of type str; 'AscendHt', which is of type str; 'GCGID', which is of type str; 'BaseOset', which is of type str; 'ASpace', which is of type str; 'CharInc', which is of type str.
+
+'afpText_FND' represents an important domain concept.
+It has the following attributes: 'Reserved2', which is of type str; 'MaxHSize', which is of type str; 'FtWtClass', which is of type str; 'NomHSize', which is of type str; 'NomPtSize', which is of type str; 'FGID', which is of type str; 'MaxPtSize', which is of type str; 'DsnSubCls', which is of type str; 'DsnSpcGrp', which is of type str; 'MinPtSize', which is of type str; 'Reserved1', which is of type str; 'MinHSize', which is of type str; 'TypeFcDesc', which is of type str; 'FtDsFlags', which is of type str; 'DsnGenCls', which is of type str; 'FtWdClass', which is of type str; 'GCSID', which is of type str.
+
+'afpText_ImageLUTID' represents an important domain concept.
+It has one attribute: 'LUTID', which is of type str.
+
+'afpText_GSCD' represents an important domain concept.
+It has one attribute: 'DIRECTION', which is of type str.
+
+'afpText_PGPRG' represents an important domain concept.
+It has the following attributes: 'YmOset', which is of type str; 'PGorient', which is of type str; 'SHside', which is of type str; 'PgFlgs', which is of type str; 'PMCid', which is of type str; 'RGLength', which is of type str; 'XmOset', which is of type str.
+
+'afpText_MediumOrientation' represents an important domain concept.
+It has one attribute: 'MedOrient', which is of type str.
+
+'afpText_TileTOC' represents an important domain concept.
+It has one attribute: 'Reserved', which is of type str.
+
+'afpText_LLERG' represents an important domain concept.
+It has the following attributes: 'RGFunct', which is of type str; 'RGLength', which is of type str.
+
+'afpText_IMM' represents an important domain concept.
+It has one attribute: 'MMPName', which is of type str.
+
+'afpText_ObjectFunctionSetSpecification' represents an important domain concept.
+It has the following attributes: 'ArchVrsn', which is of type str; 'OCAFnSet', which is of type str; 'DCAFnSet', which is of type str; 'ObjType', which is of type str.
+
+'afpText_ESU' represents an important domain concept.
+It has one attribute: 'LID', which is of type str.
+
+'afpText_FontFidelity' represents an important domain concept.
+It has one attribute: 'StpFntEx', which is of type str.
+
+'afpText_SVI' represents an important domain concept.
+It has one attribute: 'INCRMENT', which is of type str.
+
+'afpText_MCA' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_GNOP1' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_EOG' represents an important domain concept.
+It has one attribute: 'OEGName', which is of type str.
+
+'afpText_MCARG' represents an important domain concept.
+It has one attribute: 'RGLength', which is of type str.
+
+'afpText_CGCSGID' represents an important domain concept.
+It has the following attributes: 'GCSGID', which is of type str; 'CPGID', which is of type str.
+
+'afpText_GIMD' represents an important domain concept.
+It has one attribute: 'DATA', which is of type str.
+
+'afpText_GSMX' represents an important domain concept.
+It has one attribute: 'MODE', which is of type str.
+
+'afpText_TileSize' represents an important domain concept.
+It has the following attributes: 'THSIZE', which is of type str; 'TVSIZE', which is of type str; 'RELRES', which is of type str.
+
+'afpText_GSAP' represents an important domain concept.
+It has the following attributes: 'S', which is of type str; 'P', which is of type str; 'Q', which is of type str; 'R', which is of type str.
+
+'afpText_TextOrientation' represents an important domain concept.
+It has the following attributes: 'IAxis', which is of type str; 'BAxis', which is of type str.
+
+'afpText_DBR' represents an important domain concept.
+It has the following attributes: 'RWIDTHFRACTION', which is of type str; 'RWIDTH', which is of type str; 'RLENGTH', which is of type str.
+
+'afpText_PagePositionInformation' represents an important domain concept.
+It has one attribute: 'PGPRG', which is of type str.
+
+'afpText_MCC' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_BandImageRG' represents an important domain concept.
+It has one attribute: 'BITCNT', which is of type str.
+
+'afpText_OVS' represents an important domain concept.
+It has the following attributes: 'BYPSIDEN', which is of type str; 'OVERCHAR', which is of type str.
+
+'afpText_MSURG' represents an important domain concept.
+It has the following attributes: 'SUPid', which is of type str; 'Reserved', which is of type str; 'SUPname', which is of type str.
+
+'afpText_FontResolution' represents an important domain concept.
+It has the following attributes: 'RPUnits', which is of type str; 'MetTech', which is of type str; 'RPuBase', which is of type str.
+
+'afpText_IDD' represents an important domain concept.
+It has the following attributes: 'UNITBASE', which is of type str; 'YRESOL', which is of type str; 'XSIZE', which is of type str; 'XRESOL', which is of type str; 'YSIZE', which is of type str.
+
+'afpText_ICP' represents an important domain concept.
+It has the following attributes: 'YCOset', which is of type str; 'YCSize', which is of type str; 'XCOset', which is of type str; 'XCSize', which is of type str; 'YFilSize', which is of type str; 'XFilSize', which is of type str.
+
+'afpText_GCLINE' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_BGR' represents an important domain concept.
+It has one attribute: 'GdoName', which is of type str.
+
+'afpText_GFLTRG' represents an important domain concept.
+It has the following attributes: 'XPOS', which is of type str; 'YPOS', which is of type str.
+
+'afpText_GRLINE' represents an important domain concept.
+It has the following attributes: 'YPOS', which is of type str; 'XPOS', which is of type str.
+
+'afpText_ImageSize' represents an important domain concept.
+It has the following attributes: 'HSIZE', which is of type str; 'VSIZE', which is of type str; 'HRESOL', which is of type str; 'UNITBASE', which is of type str; 'VRESOL', which is of type str.
+
+'afpText_ObjectCount' represents an important domain concept.
+It has the following attributes: 'SobjNmHi', which is of type str; 'SObjNum', which is of type str; 'SubObj', which is of type str.
+
+'afpText_MCF1RG' represents an important domain concept.
+It has the following attributes: 'CPName', which is of type str; 'FCSName', which is of type str; 'CharRot', which is of type str; 'Sectid', which is of type str; 'CFName', which is of type str; 'CFLid', which is of type str.
+
+'afpText_GCFLTRG' represents an important domain concept.
+It has the following attributes: 'XPOS', which is of type str; 'YPOS', which is of type str.
+
+'afpText_GBIMG' represents an important domain concept.
+It has the following attributes: 'RES', which is of type str; 'HEIGHT', which is of type str; 'YPOS', which is of type str; 'WIDTH', which is of type str; 'FORMAT', which is of type str; 'XPOS', which is of type str.
+
+'afpText_LocalDateAndTimeStamp' represents an important domain concept.
+It has the following attributes: 'Second', which is of type str; 'THunYear', which is of type str; 'HundSec', which is of type str; 'Day', which is of type str; 'Minute', which is of type str; 'StampType', which is of type str; 'TenYear', which is of type str; 'Hour', which is of type str.
+
+'afpText_DataObjectFontDescriptor' represents an important domain concept.
+It has the following attributes: 'FontTech', which is of type str; 'CharRot', which is of type str; 'HFS', which is of type str; 'Reserved', which is of type str; 'VFS', which is of type str; 'EncID', which is of type str; 'EncEnv', which is of type str; 'DOFtFlgs', which is of type str.
+
+'afpText_GCCBEZRG' represents an important domain concept.
+It has the following attributes: 'YPOS', which is of type str; 'XPOS', which is of type str.
+
+'afpText_GSCA' represents an important domain concept.
+It has the following attributes: 'YPOS', which is of type str; 'XPOS', which is of type str.
+
+'afpText_FNG' represents an important domain concept.
+It has one attribute: 'PatData', which is of type str.
+
+'afpText_ObjectByteExtent' represents an important domain concept.
+It has the following attributes: 'ByteExtHi', which is of type str; 'ByteExt', which is of type str.
+
+'afpText_FNP' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_MDD' represents an important domain concept.
+It has the following attributes: 'YmBase', which is of type str; 'YmUnits', which is of type str; 'XmBase', which is of type str; 'XmSize', which is of type str; 'XmUnits', which is of type str; 'YmSize', which is of type str; 'MDDFlgs', which is of type str.
+
+'afpText_GSPT' represents an important domain concept.
+It has one attribute: 'PATT', which is of type str.
+
+'afpText_SBI' represents an important domain concept.
+It has one attribute: 'INCRMENT', which is of type str.
+
+'afpText_GSLJ' represents an important domain concept.
+It has one attribute: 'LINEJOIN', which is of type str.
+
+'afpText_GCFLT' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_triplet' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_BIM' represents an important domain concept.
+It has one attribute: 'IdoName', which is of type str.
+
+'afpText_GEIMG' represents an important domain concept.
+It has one attribute: 'DATA', which is of type str.
+
+'afpText_SamplingRatios' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_GLINE' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_PGP1' represents an important domain concept.
+It has the following attributes: 'YOset', which is of type str; 'XOset', which is of type str.
+
+'afpText_GCBEZRG' represents an important domain concept.
+It has the following attributes: 'YPOS', which is of type str; 'XPOS', which is of type str.
+
+'afpText_GSLT' represents an important domain concept.
+It has one attribute: 'LINETYPE', which is of type str.
+
+'afpText_BII' represents an important domain concept.
+It has one attribute: 'ImoName', which is of type str.
+
+'afpText_CPC' represents an important domain concept.
+It has the following attributes: 'VSCharSN', which is of type str; 'DefCharID', which is of type str; 'CPIRGLen', which is of type str; 'PrtFlags', which is of type str; 'VSChar', which is of type str; 'VSFlags', which is of type str.
+
+'afpText_IPO' represents an important domain concept.
+It has the following attributes: 'OvlyName', which is of type str; 'OvlyOrent', which is of type str; 'XolOset', which is of type str; 'YolOset', which is of type str.
+
+'afpText_FNNRG' represents an important domain concept.
+It has the following attributes: 'TSOffset', which is of type str; 'GCGID', which is of type str.
+
+'afpText_GSBMX' represents an important domain concept.
+It has one attribute: 'MODE', which is of type str.
+
+'afpText_TextFidelity' represents an important domain concept.
+It has the following attributes: 'StpTxtEx', which is of type str; 'RepTxtEx', which is of type str.
+
+'afpText_BPT' represents an important domain concept.
+It has one attribute: 'PTdoName', which is of type str.
+
+'afpText_AMI' represents an important domain concept.
+It has one attribute: 'DSPLCMNT', which is of type str.
+
+'afpText_TileSetColor' represents an important domain concept.
+It has the following attributes: 'CVAL3', which is of type str; 'RESERVED', which is of type str; 'CVAL4', which is of type str; 'CVAL2', which is of type str; 'SIZE3', which is of type str; 'SIZE2', which is of type str; 'SIZE1', which is of type str; 'CSPACE', which is of type str; 'SIZE4', which is of type str; 'CVAL1', which is of type str.
+
+'afpText_BeginTransparencyMask' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_GCMRKRG' represents an important domain concept.
+It has the following attributes: 'YPOS', which is of type str; 'XPOS', which is of type str.
+
+'afpText_UniversalDateAndTimeStamp' represents an important domain concept.
+It has the following attributes: 'TimeZone', which is of type str; 'Day', which is of type str; 'Second', which is of type str; 'UTCDiffM', which is of type str; 'UTCDiffH', which is of type str; 'Month', which is of type str; 'YearAD', which is of type str; 'Hour', which is of type str; 'Minute', which is of type str; 'Reserved', which is of type str.
+
+'afpText_BPF' represents an important domain concept.
+It has one attribute: 'PFName', which is of type str.
+
+'afpText_MCCRG' represents an important domain concept.
+It has the following attributes: 'Startnum', which is of type str; 'MMCid', which is of type str; 'Stopnum', which is of type str.
+
+'afpText_MMDRG' represents an important domain concept.
+It has one attribute: 'RGLength', which is of type str.
+
+'afpText_GCLINERG' represents an important domain concept.
+It has the following attributes: 'YPOS', which is of type str; 'XPOS', which is of type str.
+
+'afpText_EFG' represents an important domain concept.
+It has one attribute: 'FEGName', which is of type str.
+
+'afpText_EndTransparencyMask' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_GFLT' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_GSGCH' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_CFI' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_MPSRG' represents an important domain concept.
+It has the following attributes: 'PsegName', which is of type str; 'Reserved', which is of type str.
+
+'afpText_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_NOP' represents an important domain concept.
+It has one attribute: 'UndfData', which is of type str.
+
+'afpText_PresentationSpaceMixingRules' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_LineDataObjectPositionMigration' represents an important domain concept.
+It has one attribute: 'TempOrient', which is of type str.
+
+'afpText_MPORG' represents an important domain concept.
+It has one attribute: 'RGLength', which is of type str.
+
+'afpText_ObjectStructuredFieldExtent' represents an important domain concept.
+It has the following attributes: 'SFExt', which is of type str; 'SFExtHi', which is of type str.
+
+'afpText_GSMS' represents an important domain concept.
+It has one attribute: 'LCID', which is of type str.
+
+'afpText_ExtendedResourceLocalIdentifier' represents an important domain concept.
+It has the following attributes: 'ResType', which is of type str; 'ResLID', which is of type str.
+
+'afpText_GSPCOL' represents an important domain concept.
+It has the following attributes: 'RES1', which is of type str; 'COLSIZE2', which is of type str; 'COLSPCE', which is of type str; 'COLSIZE1', which is of type str; 'COLVALUE', which is of type str; 'COLSIZE3', which is of type str; 'RES2', which is of type str; 'COLSIZE4', which is of type str.
+
+'afpText_CDD' represents an important domain concept.
+It has the following attributes: 'XocSize', which is of type str; 'XocUnits', which is of type str; 'YocBase', which is of type str; 'YocUnits', which is of type str; 'YocSize', which is of type str; 'XocBase', which is of type str.
+
+'afpText_SIM' represents an important domain concept.
+It has one attribute: 'DSPLCMNT', which is of type str.
+
+'afpText_PEC' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_FNC' represents an important domain concept.
+It has the following attributes: 'FNORGLen', which is of type str; 'YftUnits', which is of type str; 'FNNRGLen', which is of type str; 'RPatDCnt', which is of type str; 'FNMRGLen', which is of type str; 'MaxBoxHt', which is of type str; 'YfrUnits', which is of type str; 'PatAlign', which is of type str; 'FntFlags', which is of type str; 'MaxBoxWd', which is of type str; 'FNIRGLen', which is of type str; 'FNPRGLen', which is of type str; 'Reserved2', which is of type str; 'FNNMapCnt', which is of type str; 'XUnitBase', which is of type str; 'PatTech', which is of type str; 'ResXUBase', which is of type str; 'Retired', which is of type str; 'YUnitBase', which is of type str; 'OPatDCnt', which is of type str; 'XfrUnits', which is of type str; 'ResYUBase', which is of type str; 'Reserved1', which is of type str; 'XftUnits', which is of type str; 'FNNDCnt', which is of type str.
+
+'afpText_LNC' represents an important domain concept.
+It has one attribute: 'NumDSC', which is of type str.
+
+'afpText_EDT' represents an important domain concept.
+It has one attribute: 'DocName', which is of type str.
+
+'afpText_LineData' represents an important domain concept.
+It has one attribute: 'linedata', which is of type str.
+
+'afpText_FNN' represents an important domain concept.
+It has one attribute: 'FNNData', which is of type str.
+
+'afpText_RMB' represents an important domain concept.
+It has one attribute: 'INCRMENT', which is of type str.
+
+'afpText_PTD1' represents an important domain concept.
+It has the following attributes: 'RESERVED', which is of type str; 'XPEXTENT', which is of type str; 'YPUNITVL', which is of type str; 'XPUNITVL', which is of type str; 'YPBASE', which is of type str; 'XPBASE', which is of type str; 'YPEXTENT', which is of type str.
+
+'afpText_GEPROL' represents an important domain concept.
+It has one attribute: 'RES', which is of type str.
+
+'afpText_BSG' represents an important domain concept.
+It has one attribute: 'REGName', which is of type str.
+
+'afpText_CPI' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_LND' represents an important domain concept.
+It has the following attributes: 'SupName', which is of type str; 'ChnlCde', which is of type str; 'NLNDsp', which is of type str; 'DataStrt', which is of type str; 'DataLgth', which is of type str; 'TxtColor', which is of type str; 'LNDFlgs', which is of type str; 'FntLID', which is of type str; 'IPos', which is of type str; 'BPos', which is of type str; 'SOLid', which is of type str; 'NLNDccp', which is of type str; 'NLNDskp', which is of type str; 'CCPID', which is of type str; 'NLNDreu', which is of type str; 'SubpgID', which is of type str; 'TxtOrent', which is of type str.
+
+'afpText_EOC' represents an important domain concept.
+It has one attribute: 'ObjCName', which is of type str.
+
+'afpText_RenderingIntent' represents an important domain concept.
+It has the following attributes: 'Reserved2', which is of type str; 'Reserved', which is of type str; 'GOCARI', which is of type str; 'PTOCRI', which is of type str; 'IOCARI', which is of type str; 'OCRI', which is of type str.
+
+'afpText_MGO' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_GCBEZ' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_PGD' represents an important domain concept.
+It has the following attributes: 'YpgUnits', which is of type str; 'XpgUnits', which is of type str; 'XpgSize', which is of type str; 'YpgSize', which is of type str; 'Reserved', which is of type str; 'YpgBase', which is of type str; 'XpgBase', which is of type str.
+
+'afpText_CAT' represents an important domain concept.
+It has one attribute: 'CATData', which is of type str.
+
+'afpText_IPS' represents an important domain concept.
+It has the following attributes: 'XpsOset', which is of type str; 'PsegName', which is of type str; 'YpsOset', which is of type str.
+
+'afpText_BDD' represents an important domain concept.
+It has the following attributes: 'WENE', which is of type str; 'MULT', which is of type str; 'XEXTENT', which is of type str; 'YEXTENT', which is of type str; 'LID', which is of type str; 'Reserved2', which is of type str; 'MODULEWIDTH', which is of type str; 'TYPE', which is of type str; 'ELEMENTHEIGHT', which is of type str; 'XUPUB', which is of type str; 'Reserved', which is of type str; 'YUPUB', which is of type str; 'COLOR', which is of type str; 'UBASE', which is of type str; 'MOD', which is of type str.
+
+'afpText_IOCAFunctionSetIdentification' represents an important domain concept.
+It has the following attributes: 'CATEGORY', which is of type str; 'FCNSET', which is of type str.
+
+'afpText_BSU' represents an important domain concept.
+It has one attribute: 'LID', which is of type str.
+
+'afpText_MDR' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_DescriptorPosition' represents an important domain concept.
+It has one attribute: 'DesPosID', which is of type str.
+
+'afpText_ObjectClassification' represents an important domain concept.
+It has the following attributes: 'ObjTpName', which is of type str; 'StrucFlgs', which is of type str; 'CompName', which is of type str; 'RegObjId', which is of type str; 'ObjLev', which is of type str; 'ObjClass', which is of type str.
+
+'afpText_EndSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_OCD' represents an important domain concept.
+It has one attribute: 'ObjCdat', which is of type str.
+
+'afpText_EMO' represents an important domain concept.
+It has one attribute: 'OvlyName', which is of type str.
+
+'afpText_ExtensionFont' represents an important domain concept.
+It has one attribute: 'GCSGID', which is of type str.
+
+'afpText_RPS' represents an important domain concept.
+It has the following attributes: 'RLENGTH', which is of type str; 'RPTDATA', which is of type str.
+
+'afpText_MetricAdjustment' represents an important domain concept.
+It has the following attributes: 'HBaselineIncrement', which is of type str; 'HUniformIncrement', which is of type str; 'XUPUB', which is of type str; 'VUniformIncrement', which is of type str; 'VBaselineIncrement', which is of type str; 'UnitBase', which is of type str; 'YUPUB', which is of type str.
+
+'afpText_BBC' represents an important domain concept.
+It has one attribute: 'BCdoName', which is of type str.
+
+'structuredField' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_AttributeQualifier' represents an important domain concept.
+It has the following attributes: 'SeqNum', which is of type str; 'LevNum', which is of type str.
+
+'afpText_GSCC' represents an important domain concept.
+It has the following attributes: 'CELLWI', which is of type str; 'CELLHI', which is of type str; 'CELLHFR', which is of type str; 'CELLWFR', which is of type str.
+
+'afpText_FNORG' represents an important domain concept.
+It has the following attributes: 'MaxCharInc', which is of type str; 'Reserved2', which is of type str; 'Reserved3', which is of type str; 'MinASp', which is of type str; 'MaxBExt', which is of type str; 'CharRot', which is of type str; 'DefBInc', which is of type str; 'Reserved', which is of type str; 'FigSpInc', which is of type str; 'NomCharInc', which is of type str; 'OrntFlgs', which is of type str; 'EmSpInc', which is of type str; 'MaxBOset', which is of type str; 'SpCharInc', which is of type str.
+
+'afpText_BDG' represents an important domain concept.
+It has one attribute: 'DEGName', which is of type str.
+
+'afpText_MDRRG' represents an important domain concept.
+It has one attribute: 'RGLength', which is of type str.
+
+'afpText_BDI' represents an important domain concept.
+It has one attribute: 'IndxName', which is of type str.
+
+'afpText_EndTile' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_MediumMapPageNumber' represents an important domain concept.
+It has one attribute: 'PageNum', which is of type str.
+
+'afpText_STC' represents an important domain concept.
+It has the following attributes: 'FRGCOLOR', which is of type str; 'PRECSION', which is of type str.
+
+'afpText_EFM' represents an important domain concept.
+It has one attribute: 'FMName', which is of type str.
+
+'afpText_BeginTile' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_GCRLINERG' represents an important domain concept.
+It has the following attributes: 'XOSSF', which is of type str; 'YOFFS', which is of type str.
+
+'afpText_PTX' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_FNNRG2' represents an important domain concept.
+It has the following attributes: 'TSID', which is of type str; 'TSIDLen', which is of type str.
+
+'afpText_GCCBEZ' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_IEL' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_CMRFidelity' represents an important domain concept.
+It has the following attributes: 'StpCMREx', which is of type str; 'RepCMREx', which is of type str.
+
+'afpText_DeviceAppearance' represents an important domain concept.
+It has the following attributes: 'Reserved', which is of type str; 'DevApp', which is of type str.
+
+'afpText_ColorFidelity' represents an important domain concept.
+It has the following attributes: 'StpCoEx', which is of type str; 'RepCoEx', which is of type str; 'ColSub', which is of type str.
+
+'afpText_GCBIMG' represents an important domain concept.
+It has the following attributes: 'WIDTH', which is of type str; 'RES', which is of type str; 'FORMAT', which is of type str; 'HEIGHT', which is of type str.
+
+'afpText_ObjectByteOffset' represents an important domain concept.
+It has the following attributes: 'DirByHi', which is of type str; 'DirByOff', which is of type str.
+
+'afpText_ObjectContainerPresentationSpaceSize' represents an important domain concept.
+It has one attribute: 'PDFSize', which is of type str.
+
+'afpText_CharacterRotation' represents an important domain concept.
+It has one attribute: 'CharRot', which is of type str.
+
+'afpText_UP3iFinishingOperation' represents an important domain concept.
+It has the following attributes: 'UP3iDat', which is of type str; 'Seqnum', which is of type str.
+
+'afpText_BCA' represents an important domain concept.
+It has one attribute: 'CATName', which is of type str.
+
+'afpText_GCOMT' represents an important domain concept.
+It has one attribute: 'DATA', which is of type str.
+
+'afpText_FontCodedGraphicCharacterSetGlobalIdentifier' represents an important domain concept.
+It has the following attributes: 'GCSGID', which is of type str; 'CPGID', which is of type str.
+
+'afpText_GCFARC' represents an important domain concept.
+It has the following attributes: 'MFR', which is of type str; 'MH', which is of type str.
+
+'afpText_ImageResolution' represents an important domain concept.
+It has the following attributes: 'YBase', which is of type str; 'XBase', which is of type str; 'XResol', which is of type str; 'YResol', which is of type str.
+
+'afpText_MMC' represents an important domain concept.
+It has the following attributes: 'MMCid', which is of type str; 'PARAMETER1', which is of type str.
+
+'afpText_IncludeTile' represents an important domain concept.
+It has one attribute: 'TIRID', which is of type str.
+
+'afpText_FontDescriptorSpecification' represents an important domain concept.
+It has the following attributes: 'FtWdClass', which is of type str; 'FtHeight', which is of type str; 'FtWidth', which is of type str; 'FtUsFlags', which is of type str; 'FtWtClass', which is of type str; 'FtDsFlags', which is of type str.
+
+'afpText_BeginSegmentCommand' represents an important domain concept.
+It has the following attributes: 'FLAG1', which is of type str; 'NAME', which is of type str; 'SEGL', which is of type str; 'LENGTH', which is of type str; 'FLAG2', which is of type str; 'PSNAME', which is of type str.
+
+'afpText_GSCS' represents an important domain concept.
+It has one attribute: 'LCID', which is of type str.
+
+'afpText_LLE' represents an important domain concept.
+It has one attribute: 'LnkType', which is of type str.
+
+'afpText_ResourceSectionNumber' represents an important domain concept.
+It has one attribute: 'ResSNum', which is of type str.
+
+'afpText_EBC' represents an important domain concept.
+It has one attribute: 'BCdoName', which is of type str.
+
+'afpText_GCPARC' represents an important domain concept.
+It has the following attributes: 'XCENT', which is of type str; 'YCENT', which is of type str; 'MFR', which is of type str; 'MH', which is of type str; 'SWEEP', which is of type str; 'START', which is of type str.
+
+'afpText_GFARC' represents an important domain concept.
+It has the following attributes: 'XPOS', which is of type str; 'MFR', which is of type str; 'YPOS', which is of type str; 'MH', which is of type str.
+
+'afpText_EFN' represents an important domain concept.
+It has one attribute: 'RSName', which is of type str.
+
+'afpText_EPS' represents an important domain concept.
+It has one attribute: 'PsegName', which is of type str.
+
+'afpText_MMTRG' represents an important domain concept.
+It has one attribute: 'RGLength', which is of type str.
+
+'afpText_MGORG' represents an important domain concept.
+It has one attribute: 'RGLength', which is of type str.
+
+'afpText_BeginImage' represents an important domain concept.
+It has one attribute: 'OBJTYPE', which is of type str.
+
+'afpText_BFN' represents an important domain concept.
+It has one attribute: 'RSName', which is of type str.
+
+'afpText_CTC' represents an important domain concept.
+It has one attribute: 'ConData', which is of type str.
+
+'afpText_TileTOCRG' represents an important domain concept.
+It has the following attributes: 'DATAPOS', which is of type str; 'COMPR', which is of type str; 'XOFFSET', which is of type str; 'YOFFSET', which is of type str; 'TVSIZE', which is of type str; 'THSIZE', which is of type str; 'RELRES', which is of type str.
+
+'afpText_SIA' represents an important domain concept.
+It has the following attributes: 'ADJSTMNT', which is of type str; 'DIRCTION', which is of type str.
+
+'afpText_SEC' represents an important domain concept.
+It has the following attributes: 'COLSIZE2', which is of type str; 'RESERVED', which is of type str; 'COLSIZE4', which is of type str; 'COLSIZE1', which is of type str; 'COLSPCE', which is of type str; 'COLVALUE', which is of type str; 'COLSIZE3', which is of type str.
+
+'afpText_ImageSubsampling' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_FinishingFidelity' represents an important domain concept.
+It has the following attributes: 'RepFinEx', which is of type str; 'StpFinEx', which is of type str.
+
+'afpText_BFM' represents an important domain concept.
+It has one attribute: 'FMName', which is of type str.
+
+'afpText_OBD' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_PMC' represents an important domain concept.
+It has one attribute: 'PMCid', which is of type str.
+
+'afpText_STO' represents an important domain concept.
+It has the following attributes: 'BORNTION', which is of type str; 'IORNTION', which is of type str.
+
+'afpText_MSU' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_TonerSaver' represents an important domain concept.
+It has one attribute: 'TSvCtrl', which is of type str.
+
+'afpText_MIORG' represents an important domain concept.
+It has one attribute: 'RGLength', which is of type str.
+
+'afpText_DXD' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_ECF' represents an important domain concept.
+It has one attribute: 'RSName', which is of type str.
+
+'afpText_IRD' represents an important domain concept.
+It has one attribute: 'IMdata', which is of type str.
+
+'afpText_BPG' represents an important domain concept.
+It has one attribute: 'PageName', which is of type str.
+
+'afpText_USC' represents an important domain concept.
+It has one attribute: 'BYPSIDEN', which is of type str.
+
+'afpText_FontHorizontalScaleFactor' represents an important domain concept.
+It has one attribute: 'Hscale', which is of type str.
+
+'afpText_TLE' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_FNM' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_DrawingOrderSubset' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_BNG' represents an important domain concept.
+It has one attribute: 'PGrpName', which is of type str.
+
+'afpText_AttributeValue' represents an important domain concept.
+It has the following attributes: 'Reserved0', which is of type str; 'AttVal', which is of type str.
+
+'afpText_ExternalAlgorithm' represents an important domain concept.
+It has one attribute: 'ALGTYPE', which is of type str.
+
+'afpText_GSPS' represents an important domain concept.
+It has one attribute: 'LCID', which is of type str.
+
+'afpText_BRS' represents an important domain concept.
+It has one attribute: 'RSName', which is of type str.
+
+'afpText_GMRK' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_GSLW' represents an important domain concept.
+It has one attribute: 'MH', which is of type str.
+
+'afpText_BFG' represents an important domain concept.
+It has one attribute: 'FEGName', which is of type str.
+
+'afpText_EGR' represents an important domain concept.
+It has one attribute: 'GdoName', which is of type str.
+
+'afpText_MPO' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_BDM' represents an important domain concept.
+It has the following attributes: 'DMName', which is of type str; 'DatFmt', which is of type str.
+
+'afpText_EII' represents an important domain concept.
+It has one attribute: 'ImoName', which is of type str.
+
+'afpText_DIR' represents an important domain concept.
+It has the following attributes: 'RWIDTHFRACTION', which is of type str; 'RLENGTH', which is of type str; 'RWIDTH', which is of type str.
+
+'afpText_CPD' represents an important domain concept.
+It has the following attributes: 'GCSGID', which is of type str; 'GCGIDLen', which is of type str; 'CPGID', which is of type str; 'EncScheme', which is of type str; 'CPDesc', which is of type str; 'NumCdPts', which is of type str.
+
+'afpText_BDX' represents an important domain concept.
+It has one attribute: 'DMXName', which is of type str.
+
+'afpText_MBCRG' represents an important domain concept.
+It has one attribute: 'RGLength', which is of type str.
+
+'afpText_ECP' represents an important domain concept.
+It has one attribute: 'RSName', which is of type str.
+
+'afpText_ResourceObjectType' represents an important domain concept.
+It has the following attributes: 'ConData', which is of type str; 'ObjType', which is of type str.
+
+'afpText_LocaleSelector' represents an important domain concept.
+It has the following attributes: 'LocFlgs', which is of type str; 'LangCode', which is of type str; 'Reserved', which is of type str; 'RegCde', which is of type str; 'ScrptCde', which is of type str; 'VarCde', which is of type str.
+
+'afpText_MediaFidelity' represents an important domain concept.
+It has the following attributes: 'Reserved', which is of type str; 'StpMedEx', which is of type str.
+
+'afpText_EPF' represents an important domain concept.
+It has one attribute: 'PFName', which is of type str.
+
+'afpText_ResourceObjectInclude' represents an important domain concept.
+It has the following attributes: 'XobjOset', which is of type str; 'ObOrent', which is of type str; 'ObjType', which is of type str; 'ObjName', which is of type str; 'YobjOset', which is of type str.
+
+'afpText_CFIRG' represents an important domain concept.
+It has the following attributes: 'SHScale', which is of type str; 'CPName', which is of type str; 'SVSize', which is of type str; 'FCSName', which is of type str; 'Section', which is of type str; 'Reserved', which is of type str.
+
+'afpText_CPIRG' represents an important domain concept.
+It has the following attributes: 'CodePoint', which is of type str; 'PrtFlags', which is of type str; 'GCGID', which is of type str; 'Count', which is of type str.
+
+'afpText_ERG' represents an important domain concept.
+It has one attribute: 'RGrpName', which is of type str.
+
+'afpText_BDA' represents an important domain concept.
+It has the following attributes: 'Data', which is of type str; 'Yoffset', which is of type str; 'Flags', which is of type str; 'Xoffset', which is of type str.
+
+'afpText_ECA' represents an important domain concept.
+It has one attribute: 'CATName', which is of type str.
+
+'afpText_WindowSpecification' represents an important domain concept.
+It has the following attributes: 'YRESOL', which is of type str; 'YBWIND', which is of type str; 'XLWIND', which is of type str; 'FLAGS', which is of type str; 'UBASE', which is of type str; 'YTWIND', which is of type str; 'IMGXYRES', which is of type str; 'XRWIND', which is of type str; 'RES3', which is of type str; 'XRESOL', which is of type str; 'CFORMAT', which is of type str.
+
+'afpText_ImageEncoding' represents an important domain concept.
+It has the following attributes: 'RECID', which is of type str; 'COMPRID', which is of type str; 'BITORDR', which is of type str.
+
+'afpText_GCCHST' represents an important domain concept.
+It has one attribute: 'CP', which is of type str.
+
+'afpText_MCF1' represents an important domain concept.
+It has one attribute: 'RGLength', which is of type str.
+
+'afpText_MMORG' represents an important domain concept.
+It has the following attributes: 'OVLid', which is of type str; 'OVLname', which is of type str; 'Flags', which is of type str.
+
+'afpText_BandImageData' represents an important domain concept.
+It has the following attributes: 'DATA', which is of type str; 'RESERVED', which is of type str; 'BANDNUM', which is of type str.
+
+'afpText_MCDRG' represents an important domain concept.
+It has one attribute: 'RGLength', which is of type str.
+
+'afpText_IDEStructure' represents an important domain concept.
+It has the following attributes: 'SIZE3', which is of type str; 'SIZE2', which is of type str; 'FLAGS', which is of type str; 'SIZE1', which is of type str; 'SIZE4', which is of type str; 'FORMAT', which is of type str.
+
+'afpText_BMM' represents an important domain concept.
+It has one attribute: 'MMName', which is of type str.
+
+'afpText_GSMP' represents an important domain concept.
+It has one attribute: 'PREC', which is of type str.
+
+'afpText_EAG' represents an important domain concept.
+It has one attribute: 'AEGName', which is of type str.
+
+'afpText_AMB' represents an important domain concept.
+It has one attribute: 'DSPLCMNT', which is of type str.
+
+'afpText_GCHST' represents an important domain concept.
+It has the following attributes: 'XPOS', which is of type str; 'YPOS', which is of type str; 'CP', which is of type str.
+
+'afpText_MCFRG' represents an important domain concept.
+It has one attribute: 'RGLength', which is of type str.
+
+'afpText_MMT' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_TRN' represents an important domain concept.
+It has one attribute: 'TRNDATA', which is of type str.
+
+'afpText_MeasurementUnits' represents an important domain concept.
+It has the following attributes: 'YoaUnits', which is of type str; 'XoaUnits', which is of type str; 'XoaBase', which is of type str; 'YoaBase', which is of type str.
+
+'afpText_ResourceUsageAttribute' represents an important domain concept.
+It has one attribute: 'Frequency', which is of type str.
+
+'afpText_FinishingOperation' represents an important domain concept.
+It has the following attributes: 'FOpType', which is of type str; 'RefEdge', which is of type str; 'FOpCnt', which is of type str; 'AxOffst', which is of type str; 'OpPos', which is of type str.
+
+'afpText_EDM' represents an important domain concept.
+It has one attribute: 'DMName', which is of type str.
+
+'afpText_GSCR' represents an important domain concept.
+It has one attribute: 'PREC', which is of type str.
+
+'afpText_ExternalAlgorithmRG' represents an important domain concept.
+It has the following attributes: 'DIRCTN', which is of type str; 'PADALMT', which is of type str; 'PADBDRY', which is of type str.
+
+'afpText_PresentationControl' represents an important domain concept.
+It has one attribute: 'PRSFlg', which is of type str.
+
+'afpText_MPG' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_GSFLW' represents an important domain concept.
+It has the following attributes: 'MFR', which is of type str; 'MH', which is of type str.
+
+'afpText_CFC' represents an important domain concept.
+It has the following attributes: 'Retired1', which is of type str; 'CFIRGLen', which is of type str.
+
+'afpText_GPARC' represents an important domain concept.
+It has the following attributes: 'MFR', which is of type str; 'YCENT', which is of type str; 'SWEEP', which is of type str; 'START', which is of type str; 'XCENT', which is of type str; 'XPOS', which is of type str; 'YPOS', which is of type str; 'MH', which is of type str.
+
+'afpText_BPS' represents an important domain concept.
+It has one attribute: 'PsegName', which is of type str.
+
+'afpText_FNMRG' represents an important domain concept.
+It has the following attributes: 'PatDOset', which is of type str; 'CharBoxHt', which is of type str; 'CharBoxWd', which is of type str.
+
+'afpText_ColorManagementResourceDescriptor' represents an important domain concept.
+It has the following attributes: 'ProcMode', which is of type str; 'CMRScpe', which is of type str.
+
+'afpText_BRG' represents an important domain concept.
+It has one attribute: 'RGrpName', which is of type str.
+
+'afpText_FNO' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_MIO' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_GCRLINE' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_EndImage' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_GSLE' represents an important domain concept.
+It has one attribute: 'LINEEND', which is of type str.
+
+'afpText_BMO' represents an important domain concept.
+It has one attribute: 'OvlyName', which is of type str.
+
+'afpText_PFC' represents an important domain concept.
+It has one attribute: 'PFCFlgs', which is of type str.
+
+'afpText_SCFL' represents an important domain concept.
+It has one attribute: 'LID', which is of type str.
+
+'afpText_GMRKRG' represents an important domain concept.
+It has the following attributes: 'XPOS', which is of type str; 'YPOS', which is of type str.
+
+'afpText_MappingOption' represents an important domain concept.
+It has one attribute: 'MapValue', which is of type str.
+
+'afpText_ESG' represents an important domain concept.
+It has one attribute: 'REGName', which is of type str.
+
+'afpText_MCF' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_PTD' represents an important domain concept.
+It has the following attributes: 'XPBASE', which is of type str; 'YPUNITVL', which is of type str; 'YPBASE', which is of type str; 'XPEXTENT', which is of type str; 'XPUNITVL', which is of type str; 'YPEXTENT', which is of type str; 'RESERVED', which is of type str.
+
+'afpText_BOG' represents an important domain concept.
+It has one attribute: 'OEGName', which is of type str.
+
+'afpText_MODCAInterchangeSet' represents an important domain concept.
+It has the following attributes: 'IStype', which is of type str; 'ISid', which is of type str.
+
+'afpText_ImageData' represents an important domain concept.
+It has one attribute: 'DATA', which is of type str.
+
+'afpText_BandImage' represents an important domain concept.
+It has one attribute: 'BCOUNT', which is of type str.
+
+'afpText_FGD' represents an important domain concept.
+It has one attribute: 'ConData', which is of type str.
+
+'afpText_MediaEjectControl' represents an important domain concept.
+It has the following attributes: 'EjCtrl', which is of type str; 'Reserved', which is of type str.
+
+'afpText_IOB' represents an important domain concept.
+It has the following attributes: 'YocaOset', which is of type str; 'YoaOset', which is of type str; 'ObjName', which is of type str; 'XoaOrent', which is of type str; 'XoaOset', which is of type str; 'YoaOrent', which is of type str; 'ObjType', which is of type str; 'RefCSys', which is of type str; 'XocaOset', which is of type str.
+
+'afpText_MPS' represents an important domain concept.
+It has the following attributes: 'RGLength', which is of type str; 'Reserved', which is of type str.
+
+'afpText_MMD' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_GEAR' represents an important domain concept.
+It has one attribute: 'DATA', which is of type str.
+
+'afpText_PageOverlayConditionalProcessing' represents an important domain concept.
+It has the following attributes: 'Level', which is of type str; 'PgOvType', which is of type str.
+
+'afpText_BCF' represents an important domain concept.
+It has one attribute: 'RSName', which is of type str.
+
+'afpText_PPO' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_BOC' represents an important domain concept.
+It has one attribute: 'ObjCName', which is of type str.
+
+'afpText_TilePosition' represents an important domain concept.
+It has the following attributes: 'XOFFSET', which is of type str; 'YOFFSET', which is of type str.
+
+'afpText_OBP' represents an important domain concept.
+It has the following attributes: 'YoaOset', which is of type str; 'XoaOrent', which is of type str; 'XocaOset', which is of type str; 'RGLength', which is of type str; 'YocaOrent', which is of type str; 'XocaOrent', which is of type str; 'OAPosID', which is of type str; 'YocaOset', which is of type str; 'YoaOrent', which is of type str; 'XoaOset', which is of type str; 'RefCSys', which is of type str.
+
+'afpText_structuredField' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_EMM' represents an important domain concept.
+It has one attribute: 'MMName', which is of type str.
+
+'afpText_ERS' represents an important domain concept.
+It has one attribute: 'RSName', which is of type str.
+
+'afpText_GSCOL' represents an important domain concept.
+It has one attribute: 'COL', which is of type str.
+
+'afpText_GCMRK' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_IDESize' represents an important domain concept.
+It has one attribute: 'IDESZ', which is of type str.
+
+'afpText_MFC' represents an important domain concept.
+It has the following attributes: 'MFCFlgs', which is of type str; 'MFCScpe', which is of type str; 'MedColl', which is of type str.
+
+'afpText_GSMC' represents an important domain concept.
+It has the following attributes: 'CELLHI', which is of type str; 'CELLWI', which is of type str.
+
+'afpText_MMO' represents an important domain concept.
+It has one attribute: 'RGLength', which is of type str.
+
+'afpText_GBAR' represents an important domain concept.
+It has one attribute: 'FLAGS', which is of type str.
+
+'afpText_EDG' represents an important domain concept.
+It has one attribute: 'DEGName', which is of type str.
+
+'afpText_EPG' represents an important domain concept.
+It has one attribute: 'PageName', which is of type str.
+
+'afpText_TBM' represents an important domain concept.
+It has the following attributes: 'PRECSION', which is of type str; 'INCRMENT', which is of type str; 'DIRCTION', which is of type str.
+
+'afpText_EDI' represents an important domain concept.
+It has one attribute: 'IndxName', which is of type str.
+
+'afpText_IPD' represents an important domain concept.
+It has the following attributes: 'IOCAdat', which is of type str; 'imageData', which is of type str.
+
+'afpText_ObjectAreaSize' represents an important domain concept.
+It has the following attributes: 'YoaSize', which is of type str; 'SizeType', which is of type str; 'XoaSize', which is of type str.
+
+'afpText_GDD' represents an important domain concept.
+It has one attribute: 'GOCAdes', which is of type str.
+
+'afpText_CRCResourceManagement' represents an important domain concept.
+It has the following attributes: 'RMValue', which is of type str; 'FmtQual', which is of type str; 'ResClassFlg', which is of type str.
+
+'afpText_BDT' represents an important domain concept.
+It has the following attributes: 'DocName', which is of type str; 'Reserved', which is of type str.
+
+'afpText_BPM' represents an important domain concept.
+It has one attribute: 'PMName', which is of type str.
+
+'afpText_EndSegmentCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_IID' represents an important domain concept.
+It has the following attributes: 'XBase', which is of type str; 'ConData1', which is of type str; 'YCSizeD', which is of type str; 'YBase', which is of type str; 'XUnits', which is of type str; 'YUnits', which is of type str; 'XSize', which is of type str; 'Color', which is of type str; 'YSize', which is of type str; 'XCSizeD', which is of type str; 'ConData2', which is of type str; 'ConData3', which is of type str.
+
+'afpText_Comment' represents an important domain concept.
+It has one attribute: 'Comment', which is of type str.
+
+'afpText_RMI' represents an important domain concept.
+It has one attribute: 'INCRMENT', which is of type str.
+
+'afpText_EPT' represents an important domain concept.
+It has one attribute: 'PTdoName', which is of type str.
+
+'afpText_MBC' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_GCBOX' represents an important domain concept.
+It has the following attributes: 'HAXIS', which is of type str; 'XPOS1', which is of type str; 'YPOS1', which is of type str; 'VAXIS', which is of type str; 'RES', which is of type str.
+
+'afpText_EIM' represents an important domain concept.
+It has one attribute: 'IdoName', which is of type str.
+
+'afpText_GSECOL' represents an important domain concept.
+It has one attribute: 'COLOR', which is of type str.
+
+'afpText_EPM' represents an important domain concept.
+It has one attribute: 'PMName', which is of type str.
+
+'afpText_GSCH' represents an important domain concept.
+It has the following attributes: 'HY', which is of type str; 'HX', which is of type str.
+
+'afpText_MCD' represents an important domain concept.
+It does not declare any attributes.
+
+'afpText_FullyQualifiedName' represents an important domain concept.
+It has the following attributes: 'FQNType', which is of type str; 'FQNFormat', which is of type str; 'FQName', which is of type str.
+
+'afpText_MPGRG' represents an important domain concept.
+It has one attribute: 'RGLength', which is of type str.
+
+'afpText_GLINERG' represents an important domain concept.
+It has the following attributes: 'XPOS', which is of type str; 'YPOS', which is of type str.
+
+'afpText_BAG' represents an important domain concept.
+It has one attribute: 'AEGName', which is of type str.
+
+'afpText_ENG' represents an important domain concept.
+It has one attribute: 'PGrpName', which is of type str.
+
+'afpText_ColorSpecification' represents an important domain concept.
+It has the following attributes: 'ColSize1', which is of type str; 'Color', which is of type str; 'ColSpce', which is of type str; 'ColSize3', which is of type str; 'ColSize4', which is of type str; 'ColSize2', which is of type str.
+
+'afpText_EDX' represents an important domain concept.
+It has one attribute: 'DMXName', which is of type str.
+
+'afpText_MMCRG' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'afpText_GSMT' represents an important domain concept.
+It has one attribute: 'MCPT', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'afpText_LineData' is a specialization of 'structuredField'.
+The class 'afpText_BAG' is a specialization of 'structuredField'.
+The class 'afpText_BBC' is a specialization of 'structuredField'.
+The class 'afpText_BCA' is a specialization of 'structuredField'.
+The class 'afpText_BCF' is a specialization of 'structuredField'.
+The class 'afpText_BCP' is a specialization of 'structuredField'.
+The class 'afpText_BDA' is a specialization of 'structuredField'.
+The class 'afpText_BDD' is a specialization of 'structuredField'.
+The class 'afpText_BDG' is a specialization of 'structuredField'.
+The class 'afpText_BDI' is a specialization of 'structuredField'.
+The class 'afpText_BDM' is a specialization of 'structuredField'.
+The class 'afpText_BDT' is a specialization of 'structuredField'.
+The class 'afpText_BDX' is a specialization of 'structuredField'.
+The class 'afpText_BFG' is a specialization of 'structuredField'.
+The class 'afpText_BFM' is a specialization of 'structuredField'.
+The class 'afpText_BFN' is a specialization of 'structuredField'.
+The class 'afpText_BGR' is a specialization of 'structuredField'.
+The class 'afpText_BII' is a specialization of 'structuredField'.
+The class 'afpText_BIM' is a specialization of 'structuredField'.
+The class 'afpText_BMM' is a specialization of 'structuredField'.
+The class 'afpText_BMO' is a specialization of 'structuredField'.
+The class 'afpText_BNG' is a specialization of 'structuredField'.
+The class 'afpText_BOC' is a specialization of 'structuredField'.
+The class 'afpText_BOG' is a specialization of 'structuredField'.
+The class 'afpText_BPF' is a specialization of 'structuredField'.
+The class 'afpText_BPG' is a specialization of 'structuredField'.
+The class 'afpText_BPM' is a specialization of 'structuredField'.
+The class 'afpText_BPS' is a specialization of 'structuredField'.
+The class 'afpText_BPT' is a specialization of 'structuredField'.
+The class 'afpText_BRG' is a specialization of 'structuredField'.
+The class 'afpText_BRS' is a specialization of 'structuredField'.
+The class 'afpText_BSG' is a specialization of 'structuredField'.
+The class 'afpText_CAT' is a specialization of 'structuredField'.
+The class 'afpText_CDD' is a specialization of 'structuredField'.
+The class 'afpText_CFC' is a specialization of 'structuredField'.
+The class 'afpText_CFI' is a specialization of 'structuredField'.
+The class 'afpText_CPC' is a specialization of 'structuredField'.
+The class 'afpText_CPD' is a specialization of 'structuredField'.
+The class 'afpText_CPI' is a specialization of 'structuredField'.
+The class 'afpText_CTC' is a specialization of 'structuredField'.
+The class 'afpText_DXD' is a specialization of 'structuredField'.
+The class 'afpText_EAG' is a specialization of 'structuredField'.
+The class 'afpText_EBC' is a specialization of 'structuredField'.
+The class 'afpText_ECA' is a specialization of 'structuredField'.
+The class 'afpText_ECF' is a specialization of 'structuredField'.
+The class 'afpText_ECP' is a specialization of 'structuredField'.
+The class 'afpText_EDG' is a specialization of 'structuredField'.
+The class 'afpText_EDI' is a specialization of 'structuredField'.
+The class 'afpText_EDM' is a specialization of 'structuredField'.
+The class 'afpText_EDT' is a specialization of 'structuredField'.
+The class 'afpText_EDX' is a specialization of 'structuredField'.
+The class 'afpText_EFG' is a specialization of 'structuredField'.
+The class 'afpText_EFM' is a specialization of 'structuredField'.
+The class 'afpText_EFN' is a specialization of 'structuredField'.
+The class 'afpText_EGR' is a specialization of 'structuredField'.
+The class 'afpText_EII' is a specialization of 'structuredField'.
+The class 'afpText_EIM' is a specialization of 'structuredField'.
+The class 'afpText_EMM' is a specialization of 'structuredField'.
+The class 'afpText_EMO' is a specialization of 'structuredField'.
+The class 'afpText_ENG' is a specialization of 'structuredField'.
+The class 'afpText_EOC' is a specialization of 'structuredField'.
+The class 'afpText_EOG' is a specialization of 'structuredField'.
+The class 'afpText_EPF' is a specialization of 'structuredField'.
+The class 'afpText_EPG' is a specialization of 'structuredField'.
+The class 'afpText_EPM' is a specialization of 'structuredField'.
+The class 'afpText_EPS' is a specialization of 'structuredField'.
+The class 'afpText_EPT' is a specialization of 'structuredField'.
+The class 'afpText_ERG' is a specialization of 'structuredField'.
+The class 'afpText_ERS' is a specialization of 'structuredField'.
+The class 'afpText_ESG' is a specialization of 'structuredField'.
+The class 'afpText_FNC' is a specialization of 'structuredField'.
+The class 'afpText_FND' is a specialization of 'structuredField'.
+The class 'afpText_FNG' is a specialization of 'structuredField'.
+The class 'afpText_FNI' is a specialization of 'structuredField'.
+The class 'afpText_FNN' is a specialization of 'structuredField'.
+The class 'afpText_FNM' is a specialization of 'structuredField'.
+The class 'afpText_FNO' is a specialization of 'structuredField'.
+The class 'afpText_FNP' is a specialization of 'structuredField'.
+The class 'afpText_GAD' is a specialization of 'structuredField'.
+The class 'afpText_GDD' is a specialization of 'structuredField'.
+The class 'afpText_ICP' is a specialization of 'structuredField'.
+The class 'afpText_IDD' is a specialization of 'structuredField'.
+The class 'afpText_IEL' is a specialization of 'structuredField'.
+The class 'afpText_IID' is a specialization of 'structuredField'.
+The class 'afpText_IMM' is a specialization of 'structuredField'.
+The class 'afpText_IOB' is a specialization of 'structuredField'.
+The class 'afpText_IOC' is a specialization of 'structuredField'.
+The class 'afpText_IPD' is a specialization of 'structuredField'.
+The class 'afpText_IPG' is a specialization of 'structuredField'.
+The class 'afpText_IPO' is a specialization of 'structuredField'.
+The class 'afpText_IPS' is a specialization of 'structuredField'.
+The class 'afpText_IRD' is a specialization of 'structuredField'.
+The class 'afpText_LLE' is a specialization of 'structuredField'.
+The class 'afpText_LNC' is a specialization of 'structuredField'.
+The class 'afpText_LND' is a specialization of 'structuredField'.
+The class 'afpText_MBC' is a specialization of 'structuredField'.
+The class 'afpText_MCA' is a specialization of 'structuredField'.
+The class 'afpText_MCC' is a specialization of 'structuredField'.
+The class 'afpText_MCD' is a specialization of 'structuredField'.
+The class 'afpText_MCF' is a specialization of 'structuredField'.
+The class 'afpText_MCF1' is a specialization of 'structuredField'.
+The class 'afpText_MDD' is a specialization of 'structuredField'.
+The class 'afpText_MDR' is a specialization of 'structuredField'.
+The class 'afpText_MFC' is a specialization of 'structuredField'.
+The class 'afpText_MGO' is a specialization of 'structuredField'.
+The class 'afpText_MIO' is a specialization of 'structuredField'.
+The class 'afpText_MMC' is a specialization of 'structuredField'.
+The class 'afpText_MMD' is a specialization of 'structuredField'.
+The class 'afpText_MMO' is a specialization of 'structuredField'.
+The class 'afpText_MMT' is a specialization of 'structuredField'.
+The class 'afpText_MPG' is a specialization of 'structuredField'.
+The class 'afpText_MPO' is a specialization of 'structuredField'.
+The class 'afpText_MPS' is a specialization of 'structuredField'.
+The class 'afpText_MSU' is a specialization of 'structuredField'.
+The class 'afpText_NOP' is a specialization of 'structuredField'.
+The class 'afpText_OBD' is a specialization of 'structuredField'.
+The class 'afpText_OBP' is a specialization of 'structuredField'.
+The class 'afpText_OCD' is a specialization of 'structuredField'.
+The class 'afpText_PEC' is a specialization of 'structuredField'.
+The class 'afpText_PFC' is a specialization of 'structuredField'.
+The class 'afpText_PGD' is a specialization of 'structuredField'.
+The class 'afpText_PGP' is a specialization of 'structuredField'.
+The class 'afpText_PGP1' is a specialization of 'structuredField'.
+The class 'afpText_PMC' is a specialization of 'structuredField'.
+The class 'afpText_PPO' is a specialization of 'structuredField'.
+The class 'afpText_PTD' is a specialization of 'structuredField'.
+The class 'afpText_PTD1' is a specialization of 'structuredField'.
+The class 'afpText_PTX' is a specialization of 'structuredField'.
+The class 'afpText_TLE' is a specialization of 'structuredField'.
+The class 'afpText_FGD' is a specialization of 'structuredField'.
+The class 'afpText_AMB' is a specialization of 'triplet'.
+The class 'afpText_AMI' is a specialization of 'triplet'.
+The class 'afpText_BLN' is a specialization of 'triplet'.
+The class 'afpText_BSU' is a specialization of 'triplet'.
+The class 'afpText_DBR' is a specialization of 'triplet'.
+The class 'afpText_DIR' is a specialization of 'triplet'.
+The class 'afpText_ESU' is a specialization of 'triplet'.
+The class 'afpText_NOPCS' is a specialization of 'triplet'.
+The class 'afpText_OVS' is a specialization of 'triplet'.
+The class 'afpText_RMB' is a specialization of 'triplet'.
+The class 'afpText_RMI' is a specialization of 'triplet'.
+The class 'afpText_RPS' is a specialization of 'triplet'.
+The class 'afpText_SBI' is a specialization of 'triplet'.
+The class 'afpText_SCFL' is a specialization of 'triplet'.
+The class 'afpText_SEC' is a specialization of 'triplet'.
+The class 'afpText_SIA' is a specialization of 'triplet'.
+The class 'afpText_SIM' is a specialization of 'triplet'.
+The class 'afpText_STC' is a specialization of 'triplet'.
+The class 'afpText_STO' is a specialization of 'triplet'.
+The class 'afpText_SVI' is a specialization of 'triplet'.
+The class 'afpText_TBM' is a specialization of 'triplet'.
+The class 'afpText_TRN' is a specialization of 'triplet'.
+The class 'afpText_USC' is a specialization of 'triplet'.
+The class 'afpText_AttributeQualifier' is a specialization of 'triplet'.
+The class 'afpText_AttributeValue' is a specialization of 'triplet'.
+The class 'afpText_CGCSGID' is a specialization of 'triplet'.
+The class 'afpText_CRCResourceManagement' is a specialization of 'triplet'.
+The class 'afpText_CharacterRotation' is a specialization of 'triplet'.
+The class 'afpText_ColorSpecification' is a specialization of 'triplet'.
+The class 'afpText_Comment' is a specialization of 'triplet'.
+The class 'afpText_DataObjectFontDescriptor' is a specialization of 'triplet'.
+The class 'afpText_DescriptorPosition' is a specialization of 'triplet'.
+The class 'afpText_EncodingSchemeID' is a specialization of 'triplet'.
+The class 'afpText_FontResolution' is a specialization of 'triplet'.
+The class 'afpText_FullyQualifiedName' is a specialization of 'triplet'.
+The class 'afpText_LocalDateAndTimeStamp' is a specialization of 'triplet'.
+The class 'afpText_UniversalDateAndTimeStamp' is a specialization of 'triplet'.
+The class 'afpText_MappingOption' is a specialization of 'triplet'.
+The class 'afpText_MediaEjectControl' is a specialization of 'triplet'.
+The class 'afpText_MediumMapPageNumber' is a specialization of 'triplet'.
+The class 'afpText_MediumOrientation' is a specialization of 'triplet'.
+The class 'afpText_MeasurementUnits' is a specialization of 'triplet'.
+The class 'afpText_MODCAInterchangeSet' is a specialization of 'triplet'.
+The class 'afpText_ObjectAreaSize' is a specialization of 'triplet'.
+The class 'afpText_ObjectClassification' is a specialization of 'triplet'.
+The class 'afpText_ObjectFunctionSetSpecification' is a specialization of 'triplet'.
+The class 'afpText_ObjectOffset' is a specialization of 'triplet'.
+The class 'afpText_ResourceObjectType' is a specialization of 'triplet'.
+The class 'afpText_PagePositionInformation' is a specialization of 'triplet'.
+The class 'afpText_PresentationControl' is a specialization of 'triplet'.
+The class 'afpText_PresentationSpaceResetMixing' is a specialization of 'triplet'.
+The class 'afpText_PresentationSpaceMixingRules' is a specialization of 'triplet'.
+The class 'afpText_ResourceLocalIdentifier' is a specialization of 'triplet'.
+The class 'afpText_ResourceSectionNumber' is a specialization of 'triplet'.
+The class 'afpText_TextOrientation' is a specialization of 'triplet'.
+The class 'afpText_FontHorizontalScaleFactor' is a specialization of 'triplet'.
+The class 'afpText_FontDescriptorSpecification' is a specialization of 'triplet'.
+The class 'afpText_BeginSegment' is a specialization of 'triplet'.
+The class 'afpText_EndSegment' is a specialization of 'triplet'.
+The class 'afpText_BeginTile' is a specialization of 'triplet'.
+The class 'afpText_EndTile' is a specialization of 'triplet'.
+The class 'afpText_BeginTransparencyMask' is a specialization of 'triplet'.
+The class 'afpText_EndTransparencyMask' is a specialization of 'triplet'.
+The class 'afpText_BeginImage' is a specialization of 'triplet'.
+The class 'afpText_EndImage' is a specialization of 'triplet'.
+The class 'afpText_ImageSize' is a specialization of 'triplet'.
+The class 'afpText_ImageEncoding' is a specialization of 'triplet'.
+The class 'afpText_IDESize' is a specialization of 'triplet'.
+The class 'afpText_ImageLUTID' is a specialization of 'triplet'.
+The class 'afpText_BandImage' is a specialization of 'triplet'.
+The class 'afpText_IDEStructure' is a specialization of 'triplet'.
+The class 'afpText_ExternalAlgorithm' is a specialization of 'triplet'.
+The class 'afpText_TilePosition' is a specialization of 'triplet'.
+The class 'afpText_TileSize' is a specialization of 'triplet'.
+The class 'afpText_TileSetColor' is a specialization of 'triplet'.
+The class 'afpText_SetBiLevelImageColor' is a specialization of 'triplet'.
+The class 'afpText_IOCAFunctionSetIdentification' is a specialization of 'triplet'.
+The class 'afpText_ImageData' is a specialization of 'triplet'.
+The class 'afpText_BandImageData' is a specialization of 'triplet'.
+The class 'afpText_IncludeTile' is a specialization of 'triplet'.
+The class 'afpText_ImageSubsampling' is a specialization of 'triplet'.
+The class 'afpText_SamplingRatios' is a specialization of 'triplet'.
+The class 'afpText_TileTOC' is a specialization of 'triplet'.
+The class 'afpText_FNNRG2' is a specialization of 'triplet'.
+The class 'afpText_BeginSegmentCommand' is a specialization of 'triplet'.
+The class 'afpText_EndSegmentCommand' is a specialization of 'triplet'.
+The class 'afpText_GBAR' is a specialization of 'triplet'.
+The class 'afpText_GBIMG' is a specialization of 'triplet'.
+The class 'afpText_GCBIMG' is a specialization of 'triplet'.
+The class 'afpText_GBOX' is a specialization of 'triplet'.
+The class 'afpText_GCBOX' is a specialization of 'triplet'.
+The class 'afpText_GCHST' is a specialization of 'triplet'.
+The class 'afpText_GCCHST' is a specialization of 'triplet'.
+The class 'afpText_GCOMT' is a specialization of 'triplet'.
+The class 'afpText_GEAR' is a specialization of 'triplet'.
+The class 'afpText_GEIMG' is a specialization of 'triplet'.
+The class 'afpText_GEPROL' is a specialization of 'triplet'.
+The class 'afpText_GFLT' is a specialization of 'triplet'.
+The class 'afpText_GCFLT' is a specialization of 'triplet'.
+The class 'afpText_GFARC' is a specialization of 'triplet'.
+The class 'afpText_GCFARC' is a specialization of 'triplet'.
+The class 'afpText_GIMD' is a specialization of 'triplet'.
+The class 'afpText_GLINE' is a specialization of 'triplet'.
+The class 'afpText_GCLINE' is a specialization of 'triplet'.
+The class 'afpText_GMRK' is a specialization of 'triplet'.
+The class 'afpText_GCMRK' is a specialization of 'triplet'.
+The class 'afpText_GNOP1' is a specialization of 'triplet'.
+The class 'afpText_GPARC' is a specialization of 'triplet'.
+The class 'afpText_GCPARC' is a specialization of 'triplet'.
+The class 'afpText_GRLINE' is a specialization of 'triplet'.
+The class 'afpText_GCRLINE' is a specialization of 'triplet'.
+The class 'afpText_GSGCH' is a specialization of 'triplet'.
+The class 'afpText_GSAP' is a specialization of 'triplet'.
+The class 'afpText_GSBMX' is a specialization of 'triplet'.
+The class 'afpText_GSCA' is a specialization of 'triplet'.
+The class 'afpText_GSCC' is a specialization of 'triplet'.
+The class 'afpText_GSCD' is a specialization of 'triplet'.
+The class 'afpText_GSCR' is a specialization of 'triplet'.
+The class 'afpText_GSCS' is a specialization of 'triplet'.
+The class 'afpText_GSCH' is a specialization of 'triplet'.
+The class 'afpText_GSCOL' is a specialization of 'triplet'.
+The class 'afpText_GSCP' is a specialization of 'triplet'.
+The class 'afpText_GSECOL' is a specialization of 'triplet'.
+The class 'afpText_GSFLW' is a specialization of 'triplet'.
+The class 'afpText_GSLT' is a specialization of 'triplet'.
+The class 'afpText_GSLW' is a specialization of 'triplet'.
+The class 'afpText_GSMC' is a specialization of 'triplet'.
+The class 'afpText_GSMP' is a specialization of 'triplet'.
+The class 'afpText_GSMS' is a specialization of 'triplet'.
+The class 'afpText_GSMT' is a specialization of 'triplet'.
+The class 'afpText_GSMX' is a specialization of 'triplet'.
+The class 'afpText_GSPS' is a specialization of 'triplet'.
+The class 'afpText_GSPT' is a specialization of 'triplet'.
+The class 'afpText_GSPCOL' is a specialization of 'triplet'.
+The class 'afpText_GSLE' is a specialization of 'triplet'.
+The class 'afpText_GSLJ' is a specialization of 'triplet'.
+The class 'afpText_GCBEZ' is a specialization of 'triplet'.
+The class 'afpText_GCCBEZ' is a specialization of 'triplet'.
+The class 'afpText_WindowSpecification' is a specialization of 'triplet'.
+The class 'afpText_DrawingOrderSubset' is a specialization of 'triplet'.
+The class 'afpText_TonerSaver' is a specialization of 'triplet'.
+The class 'afpText_ColorFidelity' is a specialization of 'triplet'.
+The class 'afpText_FontFidelity' is a specialization of 'triplet'.
+The class 'afpText_TextFidelity' is a specialization of 'triplet'.
+The class 'afpText_MediaFidelity' is a specialization of 'triplet'.
+The class 'afpText_FinishingFidelity' is a specialization of 'triplet'.
+The class 'afpText_CMRFidelity' is a specialization of 'triplet'.
+The class 'afpText_ObjectByteExtent' is a specialization of 'triplet'.
+The class 'afpText_ObjectByteOffset' is a specialization of 'triplet'.
+The class 'afpText_ObjectStructuredFieldExtent' is a specialization of 'triplet'.
+The class 'afpText_ObjectStructuredFieldOffset' is a specialization of 'triplet'.
+The class 'afpText_ObjectCount' is a specialization of 'triplet'.
+The class 'afpText_ObjectOriginIdentifier' is a specialization of 'triplet'.
+The class 'afpText_LineDataObjectPositionMigration' is a specialization of 'triplet'.
+The class 'afpText_ColorManagementResourceDescriptor' is a specialization of 'triplet'.
+The class 'afpText_ImageResolution' is a specialization of 'triplet'.
+The class 'afpText_ObjectContainerPresentationSpaceSize' is a specialization of 'triplet'.
+The class 'afpText_ExtendedResourceLocalIdentifier' is a specialization of 'triplet'.
+The class 'afpText_MetricAdjustment' is a specialization of 'triplet'.
+The class 'afpText_ExtensionFont' is a specialization of 'triplet'.
+The class 'afpText_RenderingIntent' is a specialization of 'triplet'.
+The class 'afpText_FontCodedGraphicCharacterSetGlobalIdentifier' is a specialization of 'triplet'.
+The class 'afpText_LocaleSelector' is a specialization of 'triplet'.
+The class 'afpText_FinishingOperation' is a specialization of 'triplet'.
+The class 'afpText_UP3iFinishingOperation' is a specialization of 'triplet'.
+The class 'afpText_DeviceAppearance' is a specialization of 'triplet'.
+The class 'afpText_ResourceObjectInclude' is a specialization of 'triplet'.
+The class 'afpText_PageOverlayConditionalProcessing' is a specialization of 'triplet'.
+The class 'afpText_ResourceUsageAttribute' is a specialization of 'triplet'.
+
+Relationships between classes are modeled using associations.
+An association connects 'afpText_Model' and 'afpText_structuredField'. From 'afpText_Model', the role 'afpText_Model' has cardinality 0..*, and from 'afpText_structuredField', the role 'afpText_structuredField' has cardinality 0..*.
+An association connects 'afpText_BAG' and 'afpText_triplet'. From 'afpText_BAG', the role 'afpText_BAG' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_BBC'. From 'afpText_triplet', the role 'afpText_triplet3' has cardinality 0..*, and from 'afpText_BBC', the role 'afpText_BBC' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_BCA'. From 'afpText_triplet', the role 'afpText_triplet5' has cardinality 0..*, and from 'afpText_BCA', the role 'afpText_BCA' has cardinality 0..*.
+An association connects 'afpText_BCP' and 'afpText_triplet'. From 'afpText_BCP', the role 'afpText_BCP' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet7' has cardinality 0..*.
+An association connects 'afpText_BDD' and 'afpText_triplet'. From 'afpText_BDD', the role 'afpText_BDD' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet9' has cardinality 0..*.
+An association connects 'afpText_BDG' and 'afpText_triplet'. From 'afpText_BDG', the role 'afpText_BDG' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet11' has cardinality 0..*.
+An association connects 'afpText_BDI' and 'afpText_triplet'. From 'afpText_BDI', the role 'afpText_BDI' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet13' has cardinality 0..*.
+An association connects 'afpText_BDM' and 'afpText_triplet'. From 'afpText_BDM', the role 'afpText_BDM' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet15' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_BDT'. From 'afpText_triplet', the role 'afpText_triplet17' has cardinality 0..*, and from 'afpText_BDT', the role 'afpText_BDT' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_BFM'. From 'afpText_triplet', the role 'afpText_triplet19' has cardinality 0..*, and from 'afpText_BFM', the role 'afpText_BFM' has cardinality 0..*.
+An association connects 'afpText_BFN' and 'afpText_triplet'. From 'afpText_BFN', the role 'afpText_BFN' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet21' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_BGR'. From 'afpText_triplet', the role 'afpText_triplet23' has cardinality 0..*, and from 'afpText_BGR', the role 'afpText_BGR' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_BIM'. From 'afpText_triplet', the role 'afpText_triplet25' has cardinality 0..*, and from 'afpText_BIM', the role 'afpText_BIM' has cardinality 0..*.
+An association connects 'afpText_BMM' and 'afpText_triplet'. From 'afpText_BMM', the role 'afpText_BMM' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet27' has cardinality 0..*.
+An association connects 'afpText_BMO' and 'afpText_triplet'. From 'afpText_BMO', the role 'afpText_BMO' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet29' has cardinality 0..*.
+An association connects 'afpText_BNG' and 'afpText_triplet'. From 'afpText_BNG', the role 'afpText_BNG' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet31' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_BOC'. From 'afpText_triplet', the role 'afpText_triplet33' has cardinality 0..*, and from 'afpText_BOC', the role 'afpText_BOC' has cardinality 0..*.
+An association connects 'afpText_BOG' and 'afpText_triplet'. From 'afpText_BOG', the role 'afpText_BOG' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet35' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_BPF'. From 'afpText_triplet', the role 'afpText_triplet37' has cardinality 0..*, and from 'afpText_BPF', the role 'afpText_BPF' has cardinality 0..*.
+An association connects 'afpText_BPG' and 'afpText_triplet'. From 'afpText_BPG', the role 'afpText_BPG' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet39' has cardinality 0..*.
+An association connects 'afpText_BPS' and 'afpText_triplet'. From 'afpText_BPS', the role 'afpText_BPS' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet41' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_BPT'. From 'afpText_triplet', the role 'afpText_triplet43' has cardinality 0..*, and from 'afpText_BPT', the role 'afpText_BPT' has cardinality 0..*.
+An association connects 'afpText_BRG' and 'afpText_triplet'. From 'afpText_BRG', the role 'afpText_BRG' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet45' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_BRS'. From 'afpText_triplet', the role 'afpText_triplet47' has cardinality 0..*, and from 'afpText_BRS', the role 'afpText_BRS' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_BSG'. From 'afpText_triplet', the role 'afpText_triplet49' has cardinality 0..*, and from 'afpText_BSG', the role 'afpText_BSG' has cardinality 0..*.
+An association connects 'afpText_CDD' and 'afpText_triplet'. From 'afpText_CDD', the role 'afpText_CDD' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet51' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_CFC'. From 'afpText_triplet', the role 'afpText_triplet53' has cardinality 0..*, and from 'afpText_CFC', the role 'afpText_CFC' has cardinality 0..*.
+An association connects 'afpText_CFIRG' and 'afpText_CFI'. From 'afpText_CFIRG', the role 'afpText_CFIRG' has cardinality 0..*, and from 'afpText_CFI', the role 'afpText_CFI' has cardinality 0..*.
+An association connects 'afpText_CPIRG' and 'afpText_CPI'. From 'afpText_CPIRG', the role 'afpText_CPIRG' has cardinality 0..*, and from 'afpText_CPI', the role 'afpText_CPI' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_EBC'. From 'afpText_triplet', the role 'afpText_triplet57' has cardinality 0..*, and from 'afpText_EBC', the role 'afpText_EBC' has cardinality 0..*.
+An association connects 'afpText_ECA' and 'afpText_triplet'. From 'afpText_ECA', the role 'afpText_ECA' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet59' has cardinality 0..*.
+An association connects 'afpText_EDI' and 'afpText_triplet'. From 'afpText_EDI', the role 'afpText_EDI' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet61' has cardinality 0..*.
+An association connects 'afpText_EDT' and 'afpText_triplet'. From 'afpText_EDT', the role 'afpText_EDT' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet63' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_EGR'. From 'afpText_triplet', the role 'afpText_triplet65' has cardinality 0..*, and from 'afpText_EGR', the role 'afpText_EGR' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_EIM'. From 'afpText_triplet', the role 'afpText_triplet67' has cardinality 0..*, and from 'afpText_EIM', the role 'afpText_EIM' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_EMO'. From 'afpText_triplet', the role 'afpText_triplet69' has cardinality 0..*, and from 'afpText_EMO', the role 'afpText_EMO' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_ENG'. From 'afpText_triplet', the role 'afpText_triplet71' has cardinality 0..*, and from 'afpText_ENG', the role 'afpText_ENG' has cardinality 0..*.
+An association connects 'afpText_EOC' and 'afpText_triplet'. From 'afpText_EOC', the role 'afpText_EOC' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet73' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_EPF'. From 'afpText_triplet', the role 'afpText_triplet75' has cardinality 0..*, and from 'afpText_EPF', the role 'afpText_EPF' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_EPG'. From 'afpText_triplet', the role 'afpText_triplet77' has cardinality 0..*, and from 'afpText_EPG', the role 'afpText_EPG' has cardinality 0..*.
+An association connects 'afpText_EPT' and 'afpText_triplet'. From 'afpText_EPT', the role 'afpText_EPT' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet79' has cardinality 0..*.
+An association connects 'afpText_ERG' and 'afpText_triplet'. From 'afpText_ERG', the role 'afpText_ERG' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet81' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_FNC'. From 'afpText_triplet', the role 'afpText_triplet83' has cardinality 0..*, and from 'afpText_FNC', the role 'afpText_FNC' has cardinality 0..*.
+An association connects 'afpText_FND' and 'afpText_triplet'. From 'afpText_FND', the role 'afpText_FND' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet85' has cardinality 0..*.
+An association connects 'afpText_FNI' and 'afpText_FNIRG'. From 'afpText_FNI', the role 'afpText_FNI' has cardinality 0..*, and from 'afpText_FNIRG', the role 'afpText_FNIRG' has cardinality 0..*.
+An association connects 'afpText_FNM' and 'afpText_FNMRG'. From 'afpText_FNM', the role 'afpText_FNM' has cardinality 0..*, and from 'afpText_FNMRG', the role 'afpText_FNMRG' has cardinality 0..*.
+An association connects 'afpText_FNO' and 'afpText_FNORG'. From 'afpText_FNO', the role 'afpText_FNO' has cardinality 0..*, and from 'afpText_FNORG', the role 'afpText_FNORG' has cardinality 0..*.
+An association connects 'afpText_FNP' and 'afpText_FNPRG'. From 'afpText_FNP', the role 'afpText_FNP' has cardinality 0..*, and from 'afpText_FNPRG', the role 'afpText_FNPRG' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_GDD'. From 'afpText_triplet', the role 'afpText_triplet91' has cardinality 0..*, and from 'afpText_GDD', the role 'afpText_GDD' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_IDD'. From 'afpText_triplet', the role 'afpText_triplet93' has cardinality 0..*, and from 'afpText_IDD', the role 'afpText_IDD' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_IEL'. From 'afpText_triplet', the role 'afpText_triplet95' has cardinality 0..*, and from 'afpText_IEL', the role 'afpText_IEL' has cardinality 0..*.
+An association connects 'afpText_IMM' and 'afpText_triplet'. From 'afpText_IMM', the role 'afpText_IMM' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet97' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_IOB'. From 'afpText_triplet', the role 'afpText_triplet99' has cardinality 0..*, and from 'afpText_IOB', the role 'afpText_IOB' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_IPG'. From 'afpText_triplet', the role 'afpText_triplet101' has cardinality 0..*, and from 'afpText_IPG', the role 'afpText_IPG' has cardinality 0..*.
+An association connects 'afpText_IPO' and 'afpText_triplet'. From 'afpText_IPO', the role 'afpText_IPO' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet103' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_IPS'. From 'afpText_triplet', the role 'afpText_triplet105' has cardinality 0..*, and from 'afpText_IPS', the role 'afpText_IPS' has cardinality 0..*.
+An association connects 'afpText_LLE' and 'afpText_LLERG'. From 'afpText_LLE', the role 'afpText_LLE' has cardinality 0..*, and from 'afpText_LLERG', the role 'afpText_LLERG' has cardinality 0..*.
+An association connects 'afpText_LND' and 'afpText_triplet'. From 'afpText_LND', the role 'afpText_LND' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet108' has cardinality 0..*.
+An association connects 'afpText_MBCRG' and 'afpText_MBC'. From 'afpText_MBCRG', the role 'afpText_MBCRG' has cardinality 0..*, and from 'afpText_MBC', the role 'afpText_MBC' has cardinality 0..*.
+An association connects 'afpText_MCA' and 'afpText_MCARG'. From 'afpText_MCA', the role 'afpText_MCA' has cardinality 0..*, and from 'afpText_MCARG', the role 'afpText_MCARG' has cardinality 0..*.
+An association connects 'afpText_MCC' and 'afpText_MCCRG'. From 'afpText_MCC', the role 'afpText_MCC' has cardinality 0..*, and from 'afpText_MCCRG', the role 'afpText_MCCRG' has cardinality 0..*.
+An association connects 'afpText_MCD' and 'afpText_MCDRG'. From 'afpText_MCD', the role 'afpText_MCD' has cardinality 0..*, and from 'afpText_MCDRG', the role 'afpText_MCDRG' has cardinality 0..*.
+An association connects 'afpText_MCF' and 'afpText_MCFRG'. From 'afpText_MCF', the role 'afpText_MCF' has cardinality 0..*, and from 'afpText_MCFRG', the role 'afpText_MCFRG' has cardinality 0..*.
+An association connects 'afpText_MCF1' and 'afpText_MCF1RG'. From 'afpText_MCF1', the role 'afpText_MCF1' has cardinality 0..*, and from 'afpText_MCF1RG', the role 'afpText_MCF1RG' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_MDD'. From 'afpText_triplet', the role 'afpText_triplet116' has cardinality 0..*, and from 'afpText_MDD', the role 'afpText_MDD' has cardinality 0..*.
+An association connects 'afpText_MDRRG' and 'afpText_MDR'. From 'afpText_MDRRG', the role 'afpText_MDRRG' has cardinality 0..*, and from 'afpText_MDR', the role 'afpText_MDR' has cardinality 0..*.
+An association connects 'afpText_MFC' and 'afpText_triplet'. From 'afpText_MFC', the role 'afpText_MFC' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet119' has cardinality 0..*.
+An association connects 'afpText_MGO' and 'afpText_MGORG'. From 'afpText_MGO', the role 'afpText_MGO' has cardinality 0..*, and from 'afpText_MGORG', the role 'afpText_MGORG' has cardinality 0..*.
+An association connects 'afpText_MIORG' and 'afpText_MIO'. From 'afpText_MIORG', the role 'afpText_MIORG' has cardinality 0..*, and from 'afpText_MIO', the role 'afpText_MIO' has cardinality 0..*.
+An association connects 'afpText_MMCRG' and 'afpText_MMC'. From 'afpText_MMCRG', the role 'afpText_MMCRG' has cardinality 0..*, and from 'afpText_MMC', the role 'afpText_MMC' has cardinality 0..*.
+An association connects 'afpText_MMDRG' and 'afpText_MMD'. From 'afpText_MMDRG', the role 'afpText_MMDRG' has cardinality 0..*, and from 'afpText_MMD', the role 'afpText_MMD' has cardinality 0..*.
+An association connects 'afpText_MMO' and 'afpText_MMORG'. From 'afpText_MMO', the role 'afpText_MMO' has cardinality 0..*, and from 'afpText_MMORG', the role 'afpText_MMORG' has cardinality 0..*.
+An association connects 'afpText_MMTRG' and 'afpText_MMT'. From 'afpText_MMTRG', the role 'afpText_MMTRG' has cardinality 0..*, and from 'afpText_MMT', the role 'afpText_MMT' has cardinality 0..*.
+An association connects 'afpText_MPGRG' and 'afpText_MPG'. From 'afpText_MPGRG', the role 'afpText_MPGRG' has cardinality 0..*, and from 'afpText_MPG', the role 'afpText_MPG' has cardinality 0..*.
+An association connects 'afpText_MPORG' and 'afpText_MPO'. From 'afpText_MPORG', the role 'afpText_MPORG' has cardinality 0..*, and from 'afpText_MPO', the role 'afpText_MPO' has cardinality 0..*.
+An association connects 'afpText_MPSRG' and 'afpText_MPS'. From 'afpText_MPSRG', the role 'afpText_MPSRG' has cardinality 0..*, and from 'afpText_MPS', the role 'afpText_MPS' has cardinality 0..*.
+An association connects 'afpText_MSURG' and 'afpText_MSU'. From 'afpText_MSURG', the role 'afpText_MSURG' has cardinality 0..*, and from 'afpText_MSU', the role 'afpText_MSU' has cardinality 0..*.
+An association connects 'afpText_OBD' and 'afpText_triplet'. From 'afpText_OBD', the role 'afpText_OBD' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet131' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_PEC'. From 'afpText_triplet', the role 'afpText_triplet133' has cardinality 0..*, and from 'afpText_PEC', the role 'afpText_PEC' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_PFC'. From 'afpText_triplet', the role 'afpText_triplet135' has cardinality 0..*, and from 'afpText_PFC', the role 'afpText_PFC' has cardinality 0..*.
+An association connects 'afpText_PGD' and 'afpText_triplet'. From 'afpText_PGD', the role 'afpText_PGD' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet137' has cardinality 0..*.
+An association connects 'afpText_PGP' and 'afpText_PGPRG'. From 'afpText_PGP', the role 'afpText_PGP' has cardinality 0..*, and from 'afpText_PGPRG', the role 'afpText_PGPRG' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_PMC'. From 'afpText_triplet', the role 'afpText_triplet140' has cardinality 0..*, and from 'afpText_PMC', the role 'afpText_PMC' has cardinality 0..*.
+An association connects 'afpText_PPO' and 'afpText_PPORG'. From 'afpText_PPO', the role 'afpText_PPO' has cardinality 0..*, and from 'afpText_PPORG', the role 'afpText_PPORG' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_PTD'. From 'afpText_triplet', the role 'afpText_triplet143' has cardinality 0..*, and from 'afpText_PTD', the role 'afpText_PTD' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_PTX'. From 'afpText_triplet', the role 'afpText_triplet145' has cardinality 0..*, and from 'afpText_PTX', the role 'afpText_PTX' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_TLE'. From 'afpText_triplet', the role 'afpText_triplet147' has cardinality 0..*, and from 'afpText_TLE', the role 'afpText_TLE' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_LLERG'. From 'afpText_triplet', the role 'afpText_triplet150' has cardinality 0..*, and from 'afpText_LLERG', the role 'afpText_LLERG149' has cardinality 0..*.
+An association connects 'afpText_MCFRG' and 'afpText_triplet'. From 'afpText_MCFRG', the role 'afpText_MCFRG152' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet153' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_MBCRG'. From 'afpText_triplet', the role 'afpText_triplet156' has cardinality 0..*, and from 'afpText_MBCRG', the role 'afpText_MBCRG155' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_MCARG'. From 'afpText_triplet', the role 'afpText_triplet159' has cardinality 0..*, and from 'afpText_MCARG', the role 'afpText_MCARG158' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_MCDRG'. From 'afpText_triplet', the role 'afpText_triplet162' has cardinality 0..*, and from 'afpText_MCDRG', the role 'afpText_MCDRG161' has cardinality 0..*.
+An association connects 'afpText_MDRRG' and 'afpText_triplet'. From 'afpText_MDRRG', the role 'afpText_MDRRG164' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet165' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_MGORG'. From 'afpText_triplet', the role 'afpText_triplet168' has cardinality 0..*, and from 'afpText_MGORG', the role 'afpText_MGORG167' has cardinality 0..*.
+An association connects 'afpText_MIORG' and 'afpText_triplet'. From 'afpText_MIORG', the role 'afpText_MIORG170' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet171' has cardinality 0..*.
+An association connects 'afpText_MMDRG' and 'afpText_triplet'. From 'afpText_MMDRG', the role 'afpText_MMDRG173' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet174' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_MMTRG'. From 'afpText_triplet', the role 'afpText_triplet177' has cardinality 0..*, and from 'afpText_MMTRG', the role 'afpText_MMTRG176' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_MPGRG'. From 'afpText_triplet', the role 'afpText_triplet180' has cardinality 0..*, and from 'afpText_MPGRG', the role 'afpText_MPGRG179' has cardinality 0..*.
+An association connects 'afpText_MPORG' and 'afpText_triplet'. From 'afpText_MPORG', the role 'afpText_MPORG182' has cardinality 0..*, and from 'afpText_triplet', the role 'afpText_triplet183' has cardinality 0..*.
+An association connects 'afpText_triplet' and 'afpText_PPORG'. From 'afpText_triplet', the role 'afpText_triplet186' has cardinality 0..*, and from 'afpText_PPORG', the role 'afpText_PPORG185' has cardinality 0..*.
+An association connects 'afpText_BandImage' and 'afpText_BandImageRG'. From 'afpText_BandImage', the role 'afpText_BandImage' has cardinality 0..*, and from 'afpText_BandImageRG', the role 'afpText_BandImageRG' has cardinality 0..*.
+An association connects 'afpText_ExternalAlgorithmRG' and 'afpText_ExternalAlgorithm'. From 'afpText_ExternalAlgorithmRG', the role 'afpText_ExternalAlgorithmRG' has cardinality 0..*, and from 'afpText_ExternalAlgorithm', the role 'afpText_ExternalAlgorithm' has cardinality 0..*.
+An association connects 'afpText_SamplingRatiosRG' and 'afpText_SamplingRatios'. From 'afpText_SamplingRatiosRG', the role 'afpText_SamplingRatiosRG' has cardinality 0..*, and from 'afpText_SamplingRatios', the role 'afpText_SamplingRatios' has cardinality 0..*.
+An association connects 'afpText_TileTOCRG' and 'afpText_TileTOC'. From 'afpText_TileTOCRG', the role 'afpText_TileTOCRG' has cardinality 0..*, and from 'afpText_TileTOC', the role 'afpText_TileTOC' has cardinality 0..*.
+An association connects 'afpText_GFLTRG' and 'afpText_GFLT'. From 'afpText_GFLTRG', the role 'afpText_GFLTRG' has cardinality 0..*, and from 'afpText_GFLT', the role 'afpText_GFLT' has cardinality 0..*.
+An association connects 'afpText_GCFLT' and 'afpText_GCFLTRG'. From 'afpText_GCFLT', the role 'afpText_GCFLT' has cardinality 0..*, and from 'afpText_GCFLTRG', the role 'afpText_GCFLTRG' has cardinality 0..*.
+An association connects 'afpText_GLINERG' and 'afpText_GLINE'. From 'afpText_GLINERG', the role 'afpText_GLINERG' has cardinality 0..*, and from 'afpText_GLINE', the role 'afpText_GLINE' has cardinality 0..*.
+An association connects 'afpText_GCLINERG' and 'afpText_GCLINE'. From 'afpText_GCLINERG', the role 'afpText_GCLINERG' has cardinality 0..*, and from 'afpText_GCLINE', the role 'afpText_GCLINE' has cardinality 0..*.
+An association connects 'afpText_GMRKRG' and 'afpText_GMRK'. From 'afpText_GMRKRG', the role 'afpText_GMRKRG' has cardinality 0..*, and from 'afpText_GMRK', the role 'afpText_GMRK' has cardinality 0..*.
+An association connects 'afpText_GCMRK' and 'afpText_GCMRKRG'. From 'afpText_GCMRK', the role 'afpText_GCMRK' has cardinality 0..*, and from 'afpText_GCMRKRG', the role 'afpText_GCMRKRG' has cardinality 0..*.
+An association connects 'afpText_GRLINERG' and 'afpText_GRLINE'. From 'afpText_GRLINERG', the role 'afpText_GRLINERG' has cardinality 0..*, and from 'afpText_GRLINE', the role 'afpText_GRLINE' has cardinality 0..*.
+An association connects 'afpText_GCRLINE' and 'afpText_GCRLINERG'. From 'afpText_GCRLINE', the role 'afpText_GCRLINE' has cardinality 0..*, and from 'afpText_GCRLINERG', the role 'afpText_GCRLINERG' has cardinality 0..*.
+An association connects 'afpText_GCBEZRG' and 'afpText_GCBEZ'. From 'afpText_GCBEZRG', the role 'afpText_GCBEZRG' has cardinality 0..*, and from 'afpText_GCBEZ', the role 'afpText_GCBEZ' has cardinality 0..*.
+An association connects 'afpText_GCCBEZ' and 'afpText_GCCBEZRG'. From 'afpText_GCCBEZ', the role 'afpText_GCCBEZ' has cardinality 0..*, and from 'afpText_GCCBEZRG', the role 'afpText_GCCBEZRG' has cardinality 0..*.

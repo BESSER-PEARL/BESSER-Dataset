@@ -1,0 +1,38 @@
+The domain model 'minher' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'minher_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'minher_C' represents an important domain concept.
+It does not declare any attributes.
+
+'minher_B' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'minher_A' represents an important domain concept.
+It does not declare any attributes.
+
+'minher_E' represents an important domain concept.
+It does not declare any attributes.
+
+'minher_G' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'minher_B' is a specialization of 'Named'.
+The class 'minher_E' is a specialization of 'B'.
+The class 'minher_G' is a specialization of 'Named'.
+The class 'minher_C' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'minher_B' and 'minher_A'. From 'minher_B', the role 'minher_B' has cardinality 0..*, and from 'minher_A', the role 'minher_A' has cardinality 0..*.
+An association connects 'minher_B' and 'minher_G'. From 'minher_B', the role 'minher_B2' has cardinality 0..*, and from 'minher_G', the role 'minher_G' has cardinality 0..*.
+An association connects 'minher_B' and 'minher_C'. From 'minher_B', the role 'minher_B4' has cardinality 0..*, and from 'minher_C', the role 'minher_C' has cardinality 0..*.

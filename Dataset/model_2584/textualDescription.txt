@@ -1,0 +1,50 @@
+The domain model 'atomic' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'atomic_XAnnotable' represents an important domain concept.
+It does not declare any attributes.
+
+'atomic_ANode' represents an important domain concept.
+It does not declare any attributes.
+
+'XAnnotable' represents an important domain concept.
+It does not declare any attributes.
+
+'atomic_AStructured' represents an important domain concept.
+It does not declare any attributes.
+
+'atomic_AGraph' represents an important domain concept.
+It has one attribute: 'corpus', which is of type str.
+
+'atomic_ATargetEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'atomic_AEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'atomic_AToken' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'ANode' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'atomic_AToken' is a specialization of 'ANode'.
+The class 'atomic_ANode' is a specialization of 'XAnnotable'.
+The class 'atomic_AStructured' is a specialization of 'ANode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'atomic_AGraph' and 'atomic_AToken'. From 'atomic_AGraph', the role 'graph' has cardinality 0..*, and from 'atomic_AToken', the role 'AToken' has cardinality 0..*.
+An association connects 'atomic_AGraph' and 'atomic_AStructured'. From 'atomic_AGraph', the role 'graph2' has cardinality 0..*, and from 'atomic_AStructured', the role 'AStructured' has cardinality 0..*.
+An association connects 'atomic_AEdge' and 'atomic_AGraph'. From 'atomic_AEdge', the role 'AEdge' has cardinality 0..*, and from 'atomic_AGraph', the role 'graph4' has cardinality 0..*.
+An association connects 'atomic_AToken' and 'atomic_AToken'. From 'atomic_AToken', the role 'AToken7' has cardinality 0..*, and from 'atomic_AToken', the role 'previous' has cardinality 0..*.
+An association connects 'atomic_AToken' and 'atomic_AToken'. From 'atomic_AToken', the role 'AToken10' has cardinality 0..*, and from 'atomic_AToken', the role 'next' has cardinality 0..*.
+An association connects 'atomic_AToken' and 'atomic_AGraph'. From 'atomic_AToken', the role 'tokens' has cardinality 0..*, and from 'atomic_AGraph', the role 'AGraph' has cardinality 0..*.
+An association connects 'atomic_ATargetEdge' and 'atomic_ANode'. From 'atomic_ATargetEdge', the role 'atomic_ATargetEdge' has cardinality 0..*, and from 'atomic_ANode', the role 'atomic_ANode' has cardinality 0..*.
+An association connects 'atomic_AGraph' and 'atomic_AStructured'. From 'atomic_AGraph', the role 'AGraph14' has cardinality 0..*, and from 'atomic_AStructured', the role 'structures' has cardinality 0..*.
+An association connects 'atomic_AGraph' and 'atomic_AEdge'. From 'atomic_AGraph', the role 'AGraph16' has cardinality 0..*, and from 'atomic_AEdge', the role 'edges' has cardinality 0..*.
+An association connects 'atomic_ANode' and 'atomic_AEdge'. From 'atomic_ANode', the role 'atomic_ANode18' has cardinality 0..*, and from 'atomic_AEdge', the role 'atomic_AEdge' has cardinality 0..*.
+An association connects 'atomic_AEdge' and 'atomic_ANode'. From 'atomic_AEdge', the role 'atomic_AEdge20' has cardinality 0..*, and from 'atomic_ANode', the role 'atomic_ANode21' has cardinality 0..*.
+An association connects 'atomic_ANode' and 'atomic_ATargetEdge'. From 'atomic_ANode', the role 'atomic_ANode24' has cardinality 0..*, and from 'atomic_ATargetEdge', the role 'atomic_ATargetEdge23' has cardinality 0..*.
+An association connects 'atomic_ATargetEdge' and 'atomic_AGraph'. From 'atomic_ATargetEdge', the role 'atomic_ATargetEdge26' has cardinality 0..*, and from 'atomic_AGraph', the role 'atomic_AGraph' has cardinality 0..*.

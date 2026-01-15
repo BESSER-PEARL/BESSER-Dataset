@@ -1,0 +1,40 @@
+The domain model 'refac' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'refac_N99' represents an important domain concept.
+It does not declare any attributes.
+
+'refac_B' represents an important domain concept.
+It does not declare any attributes.
+
+'refac_C' represents an important domain concept.
+It does not declare any attributes.
+
+'refac_X' represents an important domain concept.
+It does not declare any attributes.
+
+'refac_A' represents an important domain concept.
+It does not declare any attributes.
+
+'refac_W' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'refac_M' represents an important domain concept.
+It does not declare any attributes.
+
+'refac_K' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'refac_B' and 'refac_A'. From 'refac_B', the role 'refac_B' has cardinality 0..*, and from 'refac_A', the role 'refac_A' has cardinality 0..*.
+An association connects 'refac_A' and 'refac_C'. From 'refac_A', the role 'refac_A2' has cardinality 0..*, and from 'refac_C', the role 'refac_C' has cardinality 0..*.
+An association connects 'refac_A' and 'refac_W'. From 'refac_A', the role 'refac_A4' has cardinality 0..*, and from 'refac_W', the role 'refac_W' has cardinality 0..*.
+An association connects 'refac_A' and 'refac_M'. From 'refac_A', the role 'refac_A6' has cardinality 0..*, and from 'refac_M', the role 'refac_M' has cardinality 0..*.
+An association connects 'refac_A' and 'refac_N99'. From 'refac_A', the role 'refac_A8' has cardinality 0..*, and from 'refac_N99', the role 'refac_N99' has cardinality 0..*.
+An association connects 'refac_C' and 'refac_B'. From 'refac_C', the role 'refac_C10' has cardinality 0..*, and from 'refac_B', the role 'refac_B11' has cardinality 0..*.
+An association connects 'refac_X' and 'refac_A'. From 'refac_X', the role 'refac_X' has cardinality 0..*, and from 'refac_A', the role 'refac_A13' has cardinality 0..*.
+An association connects 'refac_X' and 'refac_K'. From 'refac_X', the role 'refac_X15' has cardinality 0..*, and from 'refac_K', the role 'refac_K' has cardinality 0..*.
+An association connects 'refac_C' and 'refac_W'. From 'refac_C', the role 'refac_C18' has cardinality 0..*, and from 'refac_W', the role 'refac_W17' has cardinality 0..*.
+An association connects 'refac_K' and 'refac_M'. From 'refac_K', the role 'refac_K21' has cardinality 0..*, and from 'refac_M', the role 'refac_M20' has cardinality 0..*.
+An association connects 'refac_K' and 'refac_N99'. From 'refac_K', the role 'refac_K24' has cardinality 0..*, and from 'refac_N99', the role 'refac_N9923' has cardinality 0..*.

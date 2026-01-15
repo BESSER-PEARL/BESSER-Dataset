@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/IoTUDresden/proteus/bundles/editor/eu.vicci.process.graphiti/model/sofiagraphics.ecore

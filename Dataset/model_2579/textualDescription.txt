@@ -1,0 +1,88 @@
+The domain model 'events' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'events_AtLeastOne' represents an important domain concept.
+It does not declare any attributes.
+
+'ComplexEventOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'events_FOLLOWS' represents an important domain concept.
+It does not declare any attributes.
+
+'events_EventSource' represents an important domain concept.
+It does not declare any attributes.
+
+'events_EventPattern' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'events_EventModel' represents an important domain concept.
+It does not declare any attributes.
+
+'events_OR' represents an important domain concept.
+It does not declare any attributes.
+
+'events_NEG' represents an important domain concept.
+It does not declare any attributes.
+
+'events_ComplexEventPattern' represents an important domain concept.
+It has one attribute: 'eventContext', which is of type str.
+
+'events_AND' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMultiplicity' represents an important domain concept.
+It does not declare any attributes.
+
+'events_Timewindow' represents an important domain concept.
+It has one attribute: 'time', which is of type str.
+
+'events_AtomicEventPattern' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'events_Event' represents an important domain concept.
+It has the following attributes: 'isProcessed', which is of type bool; 'type', which is of type str; 'timestamp', which is of type str.
+
+'events_Automaton' represents an important domain concept.
+It does not declare any attributes.
+
+'events_Multiplicity' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'events_EventPatternReference' represents an important domain concept.
+It has one attribute: 'parameterSymbolicNames', which is of type str.
+
+'events_Infinite' represents an important domain concept.
+It does not declare any attributes.
+
+'EventPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'events_AbstractMultiplicity' represents an important domain concept.
+It does not declare any attributes.
+
+'events_ComplexEventOperator' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'events_AtomicEventPattern' is a specialization of 'EventPattern'.
+The class 'events_ComplexEventPattern' is a specialization of 'EventPattern'.
+The class 'events_OR' is a specialization of 'ComplexEventOperator'.
+The class 'events_NEG' is a specialization of 'ComplexEventOperator'.
+The class 'events_FOLLOWS' is a specialization of 'ComplexEventOperator'.
+The class 'events_AND' is a specialization of 'ComplexEventOperator'.
+The class 'events_Multiplicity' is a specialization of 'AbstractMultiplicity'.
+The class 'events_Infinite' is a specialization of 'AbstractMultiplicity'.
+The class 'events_AtLeastOne' is a specialization of 'AbstractMultiplicity'.
+
+Relationships between classes are modeled using associations.
+An association connects 'events_EventModel' and 'events_EventPattern'. From 'events_EventModel', the role 'eventModel' has cardinality 0..*, and from 'events_EventPattern', the role 'EventPattern' has cardinality 0..*.
+An association connects 'events_EventPattern' and 'events_EventModel'. From 'events_EventPattern', the role 'eventPatterns' has cardinality 0..*, and from 'events_EventModel', the role 'EventModel' has cardinality 0..*.
+An association connects 'events_Automaton' and 'events_EventPattern'. From 'events_Automaton', the role 'events_Automaton' has cardinality 0..*, and from 'events_EventPattern', the role 'events_EventPattern' has cardinality 0..*.
+An association connects 'events_ComplexEventPattern' and 'events_ComplexEventOperator'. From 'events_ComplexEventPattern', the role 'events_ComplexEventPattern' has cardinality 0..*, and from 'events_ComplexEventOperator', the role 'events_ComplexEventOperator' has cardinality 0..*.
+An association connects 'events_ComplexEventPattern' and 'events_Timewindow'. From 'events_ComplexEventPattern', the role 'events_ComplexEventPattern5' has cardinality 0..*, and from 'events_Timewindow', the role 'events_Timewindow' has cardinality 0..*.
+An association connects 'events_EventPatternReference' and 'events_ComplexEventPattern'. From 'events_EventPatternReference', the role 'events_EventPatternReference' has cardinality 0..*, and from 'events_ComplexEventPattern', the role 'events_ComplexEventPattern7' has cardinality 0..*.
+An association connects 'events_EventPatternReference' and 'events_EventPattern'. From 'events_EventPatternReference', the role 'events_EventPatternReference9' has cardinality 0..*, and from 'events_EventPattern', the role 'events_EventPattern10' has cardinality 0..*.
+An association connects 'events_EventPatternReference' and 'events_AbstractMultiplicity'. From 'events_EventPatternReference', the role 'events_EventPatternReference12' has cardinality 0..*, and from 'events_AbstractMultiplicity', the role 'events_AbstractMultiplicity' has cardinality 0..*.
+An association connects 'events_Event' and 'events_EventSource'. From 'events_Event', the role 'events_Event' has cardinality 0..*, and from 'events_EventSource', the role 'events_EventSource' has cardinality 0..*.

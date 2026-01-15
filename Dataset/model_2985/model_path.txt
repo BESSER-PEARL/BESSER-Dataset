@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/masters-info-nantes/zhuan-hua-tu/org.alma.mde.statemachine/model/generated/Zhu.ecore

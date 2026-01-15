@@ -1,0 +1,41 @@
+The domain model 'test' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'test_C' represents an important domain concept.
+It does not declare any attributes.
+
+'test_ClassB' represents an important domain concept.
+It does not declare any attributes.
+
+'test_F' represents an important domain concept.
+It does not declare any attributes.
+
+'test_H' represents an important domain concept.
+It does not declare any attributes.
+
+'test_I' represents an important domain concept.
+It does not declare any attributes.
+
+'test_E' represents an important domain concept.
+It does not declare any attributes.
+
+'test_ClassA' represents an important domain concept.
+It does not declare any attributes.
+
+'test_D' represents an important domain concept.
+It does not declare any attributes.
+
+'test_G' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'test_ClassB' and 'test_ClassA'. From 'test_ClassB', the role 'test_ClassB' has cardinality 0..*, and from 'test_ClassA', the role 'test_ClassA' has cardinality 0..*.
+An association connects 'test_C' and 'test_ClassA'. From 'test_C', the role 'test_C' has cardinality 0..*, and from 'test_ClassA', the role 'test_ClassA2' has cardinality 0..*.
+An association connects 'test_ClassB' and 'test_E'. From 'test_ClassB', the role 'test_ClassB4' has cardinality 0..*, and from 'test_E', the role 'test_E' has cardinality 0..*.
+An association connects 'test_C' and 'test_I'. From 'test_C', the role 'test_C6' has cardinality 0..*, and from 'test_I', the role 'test_I' has cardinality 0..*.
+An association connects 'test_F' and 'test_D'. From 'test_F', the role 'test_F' has cardinality 0..*, and from 'test_D', the role 'test_D' has cardinality 0..*.
+An association connects 'test_H' and 'test_D'. From 'test_H', the role 'test_H' has cardinality 0..*, and from 'test_D', the role 'test_D9' has cardinality 0..*.
+An association connects 'test_E' and 'test_D'. From 'test_E', the role 'E' has cardinality 0..*, and from 'test_D', the role 'd' has cardinality 0..*.
+An association connects 'test_E' and 'test_D'. From 'test_E', the role 'e' has cardinality 0..*, and from 'test_D', the role 'D' has cardinality 0..*.
+An association connects 'test_I' and 'test_G'. From 'test_I', the role 'test_I13' has cardinality 0..*, and from 'test_G', the role 'test_G' has cardinality 0..*.

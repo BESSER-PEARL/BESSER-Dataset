@@ -1,0 +1,14 @@
+The domain model 'testcontainment' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'testcontainment_B' represents an important domain concept.
+It does not declare any attributes.
+
+'testcontainment_A' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'testcontainment_B' and 'testcontainment_A'. From 'testcontainment_B', the role 'B' has cardinality 0..*, and from 'testcontainment_A', the role 'a' has cardinality 0..*.
+An association connects 'testcontainment_B' and 'testcontainment_A'. From 'testcontainment_B', the role 'testcontainment_B' has cardinality 0..*, and from 'testcontainment_A', the role 'testcontainment_A' has cardinality 0..*.
+An association connects 'testcontainment_A' and 'testcontainment_B'. From 'testcontainment_A', the role 'A' has cardinality 0..*, and from 'testcontainment_B', the role 'bs' has cardinality 0..*.

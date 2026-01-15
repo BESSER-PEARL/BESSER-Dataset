@@ -1,0 +1,25 @@
+The domain model 'c' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'c_A' represents an important domain concept.
+It has the following attributes: 'b', which is of type str; 'x', which is of type str; 'a', which is of type str.
+
+'c_B' represents an important domain concept.
+It has the following attributes: 'c', which is of type float; 'y', which is of type bool.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'c_C' represents an important domain concept.
+It has the following attributes: 'z', which is of type str; 'c', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'c_C' is a specialization of 'A'.
+
+Relationships between classes are modeled using associations.
+An association connects 'c_B' and 'c_A'. From 'c_B', the role 'c_B' has cardinality 0..*, and from 'c_A', the role 'c_A' has cardinality 0..*.
+An association connects 'c_C' and 'c_B'. From 'c_C', the role 'C' has cardinality 0..*, and from 'c_B', the role 'cc' has cardinality 0..*.
+An association connects 'c_B' and 'c_A'. From 'c_B', the role 'c_B3' has cardinality 0..*, and from 'c_A', the role 'c_A4' has cardinality 0..*.
+An association connects 'c_B' and 'c_B'. From 'c_B', the role 'c_B7' has cardinality 0..*, and from 'c_B', the role 'c_B5' has cardinality 0..*.
+An association connects 'c_B' and 'c_C'. From 'c_B', the role 'B' has cardinality 0..*, and from 'c_C', the role 'cc9' has cardinality 0..*.

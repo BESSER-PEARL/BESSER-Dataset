@@ -1,0 +1,66 @@
+####################
+# STRUCTURAL MODEL #
+####################
+
+from besser.BUML.metamodel.structural import (
+    Class, Property, Method, Parameter,
+    BinaryAssociation, Generalization, DomainModel,
+    Enumeration, EnumerationLiteral, Multiplicity,
+    StringType, IntegerType, FloatType, BooleanType,
+    TimeType, DateType, DateTimeType, TimeDeltaType,
+    AnyType, Constraint, AssociationClass, Metadata
+)
+
+# Classes
+inheritance_Superclass = Class(name="inheritance::Superclass")
+inheritance_Subclass1 = Class(name="inheritance::Subclass1")
+Superclass = Class(name="Superclass")
+inheritance_Subclass2 = Class(name="inheritance::Subclass2")
+inheritance_Sub1Subclass = Class(name="inheritance::Sub1Subclass")
+Subclass1 = Class(name="Subclass1")
+inheritance_Subclass3 = Class(name="inheritance::Subclass3")
+inheritance_Sub2Subclass = Class(name="inheritance::Sub2Subclass")
+Subclass2 = Class(name="Subclass2")
+
+# inheritance_Superclass class attributes and methods
+
+# inheritance_Subclass1 class attributes and methods
+
+# Superclass class attributes and methods
+
+# inheritance_Subclass2 class attributes and methods
+
+# inheritance_Sub1Subclass class attributes and methods
+
+# Subclass1 class attributes and methods
+
+# inheritance_Subclass3 class attributes and methods
+
+# inheritance_Sub2Subclass class attributes and methods
+
+# Subclass2 class attributes and methods
+
+# Generalizations
+gen_inheritance_Subclass1_Superclass = Generalization(general=Superclass, specific=inheritance_Subclass1)
+gen_inheritance_Subclass2_Superclass = Generalization(general=Superclass, specific=inheritance_Subclass2)
+gen_inheritance_Sub1Subclass_Subclass1 = Generalization(general=Subclass1, specific=inheritance_Sub1Subclass)
+gen_inheritance_Subclass3_Superclass = Generalization(general=Superclass, specific=inheritance_Subclass3)
+gen_inheritance_Sub2Subclass_Subclass2 = Generalization(general=Subclass2, specific=inheritance_Sub2Subclass)
+
+# Domain Model
+domain_model = DomainModel(
+    name="inheritance",
+    types={inheritance_Superclass, inheritance_Subclass1, Superclass, inheritance_Subclass2, inheritance_Sub1Subclass, Subclass1, inheritance_Subclass3, inheritance_Sub2Subclass, Subclass2},
+    associations={},
+    generalizations={gen_inheritance_Subclass1_Superclass, gen_inheritance_Subclass2_Superclass, gen_inheritance_Sub1Subclass_Subclass1, gen_inheritance_Subclass3_Superclass, gen_inheritance_Sub2Subclass_Subclass2},
+    metadata=None
+)
+
+
+###################### 
+ # PROJECT DEFINITION # 
+ ###################### 
+from besser.BUML.metamodel.project import Project 
+from besser.BUML.metamodel.structural.structural import Metadata
+metadata = Metadata(description="New project")
+project = Project(name="sampleModel",models=[domain_model],owner="User",metadata=metadata)

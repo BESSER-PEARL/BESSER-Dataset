@@ -1,0 +1,36 @@
+The domain model 'semlink' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'semlink_C' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'semlink_G' represents an important domain concept.
+It does not declare any attributes.
+
+'semlink_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'semlink_B' represents an important domain concept.
+It does not declare any attributes.
+
+'semlink_A' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'semlink_G' is a specialization of 'NamedElement'.
+The class 'semlink_A' is a specialization of 'NamedElement'.
+The class 'semlink_C' is a specialization of 'NamedElement'.
+The class 'semlink_B' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'semlink_G' and 'semlink_G'. From 'semlink_G', the role 'semlink_G' has cardinality 0..*, and from 'semlink_G', the role 'semlink_G0' has cardinality 0..*.
+An association connects 'semlink_A' and 'semlink_G'. From 'semlink_A', the role 'semlink_A' has cardinality 0..*, and from 'semlink_G', the role 'semlink_G3' has cardinality 0..*.
+An association connects 'semlink_G' and 'semlink_C'. From 'semlink_G', the role 'semlink_G5' has cardinality 0..*, and from 'semlink_C', the role 'semlink_C' has cardinality 0..*.
+An association connects 'semlink_C' and 'semlink_A'. From 'semlink_C', the role 'semlink_C8' has cardinality 0..*, and from 'semlink_A', the role 'semlink_A7' has cardinality 0..*.
+An association connects 'semlink_B' and 'semlink_A'. From 'semlink_B', the role 'semlink_B' has cardinality 0..*, and from 'semlink_A', the role 'semlink_A10' has cardinality 0..*.
+An association connects 'semlink_A' and 'semlink_B'. From 'semlink_A', the role 'semlink_A13' has cardinality 0..*, and from 'semlink_B', the role 'semlink_B12' has cardinality 0..*.
+An association connects 'semlink_C' and 'semlink_B'. From 'semlink_C', the role 'semlink_C16' has cardinality 0..*, and from 'semlink_B', the role 'semlink_B15' has cardinality 0..*.

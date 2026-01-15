@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/LieberLieber/QvtCodeGenerator/XSDImport2/LL.MDE.Components.XsdImport.Test.Ecore2EnAr/input/simple.ecore

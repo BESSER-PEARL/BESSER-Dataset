@@ -1,0 +1,22 @@
+The domain model 'hExample_6_LHS' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'hExample_6_LHS_model' represents an important domain concept.
+It does not declare any attributes.
+
+'hExample_6_LHS_A' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'hExample_6_LHS_C' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'hExample_6_LHS_B' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'hExample_6_LHS_A' and 'hExample_6_LHS_model'. From 'hExample_6_LHS_A', the role 'hExample_6_LHS_A' has cardinality 0..*, and from 'hExample_6_LHS_model', the role 'hExample_6_LHS_model' has cardinality 0..*.
+An association connects 'hExample_6_LHS_model' and 'hExample_6_LHS_B'. From 'hExample_6_LHS_model', the role 'hExample_6_LHS_model2' has cardinality 0..*, and from 'hExample_6_LHS_B', the role 'hExample_6_LHS_B' has cardinality 0..*.
+An association connects 'hExample_6_LHS_model' and 'hExample_6_LHS_C'. From 'hExample_6_LHS_model', the role 'hExample_6_LHS_model4' has cardinality 0..*, and from 'hExample_6_LHS_C', the role 'hExample_6_LHS_C' has cardinality 0..*.
+An association connects 'hExample_6_LHS_B' and 'hExample_6_LHS_A'. From 'hExample_6_LHS_B', the role 'hExample_6_LHS_B7' has cardinality 0..*, and from 'hExample_6_LHS_A', the role 'hExample_6_LHS_A6' has cardinality 0..*.
+An association connects 'hExample_6_LHS_C' and 'hExample_6_LHS_A'. From 'hExample_6_LHS_C', the role 'hExample_6_LHS_C10' has cardinality 0..*, and from 'hExample_6_LHS_A', the role 'hExample_6_LHS_A9' has cardinality 0..*.

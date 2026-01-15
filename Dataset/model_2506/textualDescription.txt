@@ -1,0 +1,40 @@
+The domain model 'dummy' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'dummy_G' represents an important domain concept.
+It has one attribute: 'gString', which is of type str.
+
+'dummy_E' represents an important domain concept.
+It has one attribute: 'eName', which is of type str.
+
+'dummy_D' represents an important domain concept.
+It has the following attributes: 'm', which is of type float; 'l', which is of type float; 'name', which is of type str.
+
+'dummy_C' represents an important domain concept.
+It has one attribute: 'k', which is of type float.
+
+'dummy_B' represents an important domain concept.
+It has the following attributes: 'z', which is of type float; 'y', which is of type float.
+
+'E' represents an important domain concept.
+It does not declare any attributes.
+
+'dummy_A' represents an important domain concept.
+It has the following attributes: 'en', which is of type str; 'x', which is of type float.
+
+'dummy_F' represents an important domain concept.
+It has the following attributes: 'fString', which is of type str; 'fDouble', which is of type float.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EnumExample' defines the following possible values: 'value3', 'value2', 'value1'.
+
+The model also captures inheritance relationships between classes.
+The class 'dummy_F' is a specialization of 'E'.
+The class 'dummy_G' is a specialization of 'E'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dummy_B' and 'dummy_A'. From 'dummy_B', the role 'dummy_B' has cardinality 0..*, and from 'dummy_A', the role 'dummy_A' has cardinality 0..*.
+An association connects 'dummy_D' and 'dummy_A'. From 'dummy_D', the role 'dummy_D' has cardinality 0..*, and from 'dummy_A', the role 'dummy_A2' has cardinality 0..*.
+An association connects 'dummy_A' and 'dummy_E'. From 'dummy_A', the role 'dummy_A4' has cardinality 0..*, and from 'dummy_E', the role 'dummy_E' has cardinality 0..*.
+An association connects 'dummy_B' and 'dummy_C'. From 'dummy_B', the role 'dummy_B6' has cardinality 0..*, and from 'dummy_C', the role 'dummy_C' has cardinality 0..*.

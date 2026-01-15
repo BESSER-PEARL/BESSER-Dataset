@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gssi/Company2CRM/mm/R1/Company.ecore

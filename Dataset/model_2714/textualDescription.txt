@@ -1,0 +1,16 @@
+The domain model 'Kasu3' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'Kasu3_ClassB' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'Kasu3_ClassC' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'Kasu3_ClassA' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Kasu3_ClassA' and 'Kasu3_ClassB'. From 'Kasu3_ClassA', the role 'Kasu3_ClassA' has cardinality 0..*, and from 'Kasu3_ClassB', the role 'Kasu3_ClassB' has cardinality 0..*.
+An association connects 'Kasu3_ClassA' and 'Kasu3_ClassB'. From 'Kasu3_ClassA', the role 'Kasu3_ClassA3' has cardinality 0..*, and from 'Kasu3_ClassB', the role 'Kasu3_ClassB2' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/francoispfister/diagraph/org.isoe.fwk.xmi.domparser/v125case5.ecore

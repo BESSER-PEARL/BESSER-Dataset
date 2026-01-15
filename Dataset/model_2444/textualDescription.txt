@@ -1,0 +1,21 @@
+The domain model 'fsa' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'fsa_FSA' represents an important domain concept.
+It does not declare any attributes.
+
+'fsa_Transition' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+'fsa_State' represents an important domain concept.
+It has the following attributes: 'accepting', which is of type bool; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsa_State' and 'fsa_FSA'. From 'fsa_State', the role 'fsa_State' has cardinality 0..*, and from 'fsa_FSA', the role 'fsa_FSA' has cardinality 0..*.
+An association connects 'fsa_FSA' and 'fsa_Transition'. From 'fsa_FSA', the role 'fsa_FSA2' has cardinality 0..*, and from 'fsa_Transition', the role 'fsa_Transition' has cardinality 0..*.
+An association connects 'fsa_FSA' and 'fsa_State'. From 'fsa_FSA', the role 'fsa_FSA4' has cardinality 0..*, and from 'fsa_State', the role 'fsa_State5' has cardinality 0..*.
+An association connects 'fsa_State' and 'fsa_Transition'. From 'fsa_State', the role 'fromState' has cardinality 0..*, and from 'fsa_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'fsa_State' and 'fsa_Transition'. From 'fsa_State', the role 'toState' has cardinality 0..*, and from 'fsa_Transition', the role 'Transition8' has cardinality 0..*.
+An association connects 'fsa_State' and 'fsa_Transition'. From 'fsa_State', the role 'State' has cardinality 0..*, and from 'fsa_Transition', the role 'outgoingTransitions' has cardinality 0..*.
+An association connects 'fsa_Transition' and 'fsa_State'. From 'fsa_Transition', the role 'incomingTransitions' has cardinality 0..*, and from 'fsa_State', the role 'State11' has cardinality 0..*.

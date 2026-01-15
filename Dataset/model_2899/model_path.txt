@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/luciuscode/test/org.emftext.language.forms/metamodel/forms.ecore

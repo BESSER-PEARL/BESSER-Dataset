@@ -1,0 +1,1297 @@
+The domain model 'adb' describes the core structural elements and their relationships within the system.
+
+The model defines 287 main class(es).
+
+'TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_FormalTypeDeclaration' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'adb_BlockStatement' represents an important domain concept.
+It has one attribute: 'blockStatementIdentifier', which is of type str.
+
+'Aggregate' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_LibraryUnitSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_SequenceOfStatements' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_SimpleExpression' represents an important domain concept.
+It has the following attributes: 'binaryAddingOperators', which is of type str; 'unaryAddingOperator', which is of type str.
+
+'adb_FormalSubprogramDeclaration' represents an important domain concept.
+It has one attribute: 'abstract', which is of type str.
+
+'ReturnSubtypeIndication' represents an important domain concept.
+It does not declare any attributes.
+
+'ContextItem' represents an important domain concept.
+It does not declare any attributes.
+
+'RecordComponentAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'SelectAlternative' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_UsePackageClause' represents an important domain concept.
+It does not declare any attributes.
+
+'UseClause' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ProtectedOperationDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_AccessToDataInstance' represents an important domain concept.
+It has one attribute: 'constant', which is of type str.
+
+'adb_AssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_NumericLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_GenericFormalParameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ProtectedDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_TaskNames' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_OptVariantPart' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ComponentChoiceList' represents an important domain concept.
+It has the following attributes: 'others', which is of type bool; 'componentSelectorName', which is of type str.
+
+'Body' represents an important domain concept.
+It does not declare any attributes.
+
+'AncestorPart' represents an important domain concept.
+It does not declare any attributes.
+
+'SelectStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'EntryIndex' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ContextClause' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_FormalObjectDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'adb_RecordDefinition' represents an important domain concept.
+It has one attribute: 'null', which is of type str.
+
+'adb_TaskItem' represents an important domain concept.
+It does not declare any attributes.
+
+'BodyStub' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'TriggeringStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ProperBody' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ExplicitGenericActualParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_FormalPart' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_UninitializedComponents' represents an important domain concept.
+It has one attribute: 'box', which is of type bool.
+
+'Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_SubprogramDefault' represents an important domain concept.
+It has one attribute: 'defaultName', which is of type str.
+
+'adb_SubprogramSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Name' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_SubprogramBody' represents an important domain concept.
+It has one attribute: 'endname', which is of type str.
+
+'adb_NullStatement' represents an important domain concept.
+It has one attribute: 'null', which is of type bool.
+
+'adb_ExitStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_FullTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Renaming' represents an important domain concept.
+It has one attribute: 'renamed', which is of type str.
+
+'adb_ConstrainedIndexes' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_DiscreteSubtypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ProtectedElementDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_InterfaceTypeDefinition' represents an important domain concept.
+It has the following attributes: 'task', which is of type bool; 'protected', which is of type bool; 'synchro', which is of type bool; 'limited', which is of type bool.
+
+'adb_AccessSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_DiscreteRange' represents an important domain concept.
+It does not declare any attributes.
+
+'DiscriminantPart' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_EntryIndex' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_UnknownDiscriminantPart' represents an important domain concept.
+It has one attribute: 'box', which is of type bool.
+
+'DeclarativeItem' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_DeltaConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'NewTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_AccessToDataDefinition' represents an important domain concept.
+It has one attribute: 'generalAccessModifier', which is of type str.
+
+'adb_RecordAggregate' represents an important domain concept.
+It does not declare any attributes.
+
+'DiscreteChoice' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_DiscriminantAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_EntryBarrier' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_NamedArrayAggregate' represents an important domain concept.
+It does not declare any attributes.
+
+'GenericItem' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_AccessTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_RangeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ParenthesizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Null' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'adb_TaskDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_SignedIntegerTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ParameterAssociation' represents an important domain concept.
+It has one attribute: 'selectorName', which is of type str.
+
+'adb_TaskBodyStub' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_BasicDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ExceptionHandler' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adb_DefiningIdentifierList' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adb_RealRangeSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_DeclarativeItem' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ObjectDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_DelayAlternative' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_AcceptStatement' represents an important domain concept.
+It has one attribute: 'entryidentifier', which is of type str.
+
+'adb_ComponentList' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_GenericItems' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_OverridingIndicator' represents an important domain concept.
+It has one attribute: 'not', which is of type bool.
+
+'adb_Relation' represents an important domain concept.
+It has one attribute: 'relationalOperator', which is of type str.
+
+'adb_DiscriminantSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_DiscreteChoiceList' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ScalarConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_PrivateExtensionDeclaration' represents an important domain concept.
+It has the following attributes: 'limited', which is of type bool; 'synchronized', which is of type bool; 'abstract', which is of type bool.
+
+'adb_RecordTypeDefinition' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'tagged', which is of type bool; 'limited', which is of type bool.
+
+'adb_SubprogramDeclaration' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'renamedName', which is of type str; 'null', which is of type bool.
+
+'LibraryUnitSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_LoopStatement' represents an important domain concept.
+It has the following attributes: 'sameName', which is of type str; 'name', which is of type str.
+
+'adb_ModularTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_NotNullAccessDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ComponentClause' represents an important domain concept.
+It has one attribute: 'localName', which is of type str.
+
+'LibrarySpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ExplicitGenericActualParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Pragma' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adb_Body' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_SimpleReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_CompositeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ExceptionChoice' represents an important domain concept.
+It has one attribute: 'others', which is of type bool.
+
+'adb_FormalPackageActualPart' represents an important domain concept.
+It has one attribute: 'box', which is of type bool.
+
+'ParenthesizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ProcedureOrEntryCallStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_BodyStub' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adb_GenericAssociation' represents an important domain concept.
+It has one attribute: 'selectorName', which is of type str.
+
+'adb_RecordComponentAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_IndexConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ContextItem' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ProtectedOperationItem' represents an important domain concept.
+It does not declare any attributes.
+
+'RangeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Range' represents an important domain concept.
+It does not declare any attributes.
+
+'SubprogramSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_CaseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_IterationScheme' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_AttributeDesignator' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_FixedPointDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_AcceptAlternative' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ReturnSubtypeIndication' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_FormalTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Range' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_AncestorPart' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_VariantPart' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'BasicDeclarativeItem' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Qualifier' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_InitializedComponents' represents an important domain concept.
+It does not declare any attributes.
+
+'HandledSequenceOfStatements' represents an important domain concept.
+It does not declare any attributes.
+
+'AbortStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_DiscriminantConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_DataInstanceDeclaration' represents an important domain concept.
+It has the following attributes: 'aliased', which is of type bool; 'constant', which is of type bool.
+
+'NotNullAccessDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_EntryBody' represents an important domain concept.
+It has one attribute: 'endid', which is of type str.
+
+'adb_ModClause' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_SubtypeIndication' represents an important domain concept.
+It has one attribute: 'subtypeMark', which is of type str.
+
+'adb_CaseStatementAlternative' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_PackageBodyStub' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_KnownDiscriminantPart' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_FormalPackageDeclaration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'genericPackageName', which is of type str.
+
+'adb_DeclarativeBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_PackageDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adb_PrimaryName' represents an important domain concept.
+It does not declare any attributes.
+
+'DeclarativeBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_RequeueStatement' represents an important domain concept.
+It has one attribute: 'abort', which is of type bool.
+
+'adb_SelectStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_PositionalArrayAggregate' represents an important domain concept.
+It has one attribute: 'othersBox', which is of type bool.
+
+'AbortablePart' represents an important domain concept.
+It does not declare any attributes.
+
+'AccessSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_FormalPrivateTypeDefinition' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'limited', which is of type bool; 'tagged', which is of type bool.
+
+'adb_WithClause' represents an important domain concept.
+It has the following attributes: 'limited', which is of type bool; 'private', which is of type bool.
+
+'adb_EntryIndexSpecification' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adb_LoopParameterSpecification' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'ComponentItem' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_BasicDeclarativeItem' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_DiscreteChoice' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Term' represents an important domain concept.
+It has one attribute: 'multiplyingOperators', which is of type str.
+
+'RecordAggregate' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_PackageDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'RealTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_OptConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_SingleProtectedDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adb_UseTypeClause' represents an important domain concept.
+It has the following attributes: 'typesNames', which is of type str; 'useTypeRefs', which is of type str.
+
+'adb_FullDataTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_EnumerationTypeDefinition' represents an important domain concept.
+It has one attribute: 'enumerationliteralspecifications', which is of type str.
+
+'adb_HandledSequenceOfStatements' represents an important domain concept.
+It does not declare any attributes.
+
+'ProtectedOperationDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_LabelisableStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_RealTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ParameterSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'DiscreteSubtypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_NumberDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayAggregate' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_LibrarySpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_DerivedTypeDefinition' represents an important domain concept.
+It has the following attributes: 'limited', which is of type str; 'abstract', which is of type str.
+
+'adb_SelectiveAccept' represents an important domain concept.
+It does not declare any attributes.
+
+'GenericFormalParameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterEffectiveValue' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Membership' represents an important domain concept.
+It has one attribute: 'not', which is of type bool.
+
+'adb_PrivateTypeDeclaration' represents an important domain concept.
+It has the following attributes: 'tagged', which is of type bool; 'abstract', which is of type bool; 'limited', which is of type bool.
+
+'adb_RecordExtensionPart' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_RecordComponentAssociationList' represents an important domain concept.
+It has one attribute: 'nullRecord', which is of type bool.
+
+'adb_PackageSpecification' represents an important domain concept.
+It has one attribute: 'endname', which is of type str.
+
+'adb_CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_EntityRange' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_IncompleteTypeDeclaration' represents an important domain concept.
+It has one attribute: 'tagged', which is of type bool.
+
+'adb_DiscriminantPart' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Variant' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_SimpleStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'FormalTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_AsynchronousSelect' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ProperBody' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_AccessToSubprogramDefinition' represents an important domain concept.
+It has one attribute: 'protected', which is of type bool.
+
+'adb_TaskBody' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ConditionalEntryCall' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_AnonymousAccessDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'ArrayIndexes' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Mode' represents an important domain concept.
+It has the following attributes: 'out', which is of type bool; 'in', which is of type bool.
+
+'adb_ComponentDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_FormalPackageAssociation' represents an important domain concept.
+It has one attribute: 'genericFormalParameterSelectorName', which is of type str.
+
+'adb_NewTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_FormalDerivedTypeDefinition' represents an important domain concept.
+It has the following attributes: 'limited', which is of type bool; 'synchronized', which is of type bool; 'absract', which is of type str.
+
+'adb_RaiseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_CompoundStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Compilation' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_PragmaArgumentAssociation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adb_Expression' represents an important domain concept.
+It has one attribute: 'booleanOperator', which is of type str.
+
+'adb_UnconstrainedIndexes' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_FloatingPointDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_EntryBodyFormalPart' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Allocator' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ProcedureSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_SelectAlternative' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_DelayStatement' represents an important domain concept.
+It has one attribute: 'until', which is of type str.
+
+'adb_ArrayIndexes' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_PackageBody' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_GenericInstantiation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'genericName', which is of type str.
+
+'adb_OptNullExclusion' represents an important domain concept.
+It has one attribute: 'not_null', which is of type str.
+
+'adb_DigitsConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ExtensionAggregate' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ArrayComponentAssociation' represents an important domain concept.
+It has one attribute: 'box', which is of type bool.
+
+'adb_SeparateSubunit' represents an important domain concept.
+It has one attribute: 'parentUnitName', which is of type str.
+
+'adb_ArrayAggregate' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ProtectedTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_GenericDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'DiscreteRange' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ProtectedElementDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_EntryCallAlternative' represents an important domain concept.
+It does not declare any attributes.
+
+'ProtectedOperationItem' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_InterfaceList' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_AbortablePart' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_LibraryUnitDeclaration' represents an important domain concept.
+It has one attribute: 'private', which is of type bool.
+
+'adb_TimedEntryCall' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ComponentDefinition' represents an important domain concept.
+It has one attribute: 'aliased', which is of type bool.
+
+'adb_EntryDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adb_GuardedAlternative' represents an important domain concept.
+It does not declare any attributes.
+
+'Qualifier' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_IntegerTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_AspectClause' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adb_ExplicitRange' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_FunctionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_SubtypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_TypeDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adb_ExceptionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_AbortStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Aggregate' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_GotoStatement' represents an important domain concept.
+It has one attribute: 'labelId', which is of type str.
+
+'adb_Factor' represents an important domain concept.
+It has the following attributes: 'not', which is of type bool; 'abs', which is of type bool.
+
+'adb_ComponentItem' represents an important domain concept.
+It does not declare any attributes.
+
+'FullTypeDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_DiscriminantSelectors' represents an important domain concept.
+It has one attribute: 'discriminantSelectorName', which is of type str.
+
+'adb_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_TriggeringAlternative' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ParameterAndResultProfile' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ParameterEffectiveValue' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_GenericActualPart' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_QualifiedName' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ExtendedReturnStatement' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'adb_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_Label' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'adb_TriggeringStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_GenericItem' represents an important domain concept.
+It does not declare any attributes.
+
+'ScalarConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ProtectedBody' represents an important domain concept.
+It has the following attributes: 'idTask', which is of type str; 'identifier', which is of type str.
+
+'BasicDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskItem' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_TaskDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'CompoundStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ProtectedBodyStub' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_ArrayTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerTypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'adb_UseClause' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'adb_WithClause' is a specialization of 'ContextItem'.
+The class 'adb_UseClause' is a specialization of 'ContextItem'.
+The class 'adb_UseClause' is a specialization of 'BasicDeclarativeItem'.
+The class 'adb_UseClause' is a specialization of 'GenericItem'.
+The class 'adb_UsePackageClause' is a specialization of 'UseClause'.
+The class 'adb_UseTypeClause' is a specialization of 'UseClause'.
+The class 'adb_LibraryUnitDeclaration' is a specialization of 'Unit'.
+The class 'adb_PackageDeclaration' is a specialization of 'LibraryUnitSpecification'.
+The class 'adb_PackageDeclaration' is a specialization of 'BasicDeclaration'.
+The class 'adb_PackageDefinition' is a specialization of 'PackageDeclaration'.
+The class 'adb_PackageDefinition' is a specialization of 'LibrarySpecification'.
+The class 'adb_Renaming' is a specialization of 'PackageDeclaration'.
+The class 'adb_GenericDeclaration' is a specialization of 'LibraryUnitSpecification'.
+The class 'adb_GenericDeclaration' is a specialization of 'BasicDeclaration'.
+The class 'adb_GenericInstantiation' is a specialization of 'LibraryUnitSpecification'.
+The class 'adb_GenericInstantiation' is a specialization of 'BasicDeclaration'.
+The class 'adb_SubprogramBody' is a specialization of 'Unit'.
+The class 'adb_SubprogramBody' is a specialization of 'DeclarativeBlock'.
+The class 'adb_SubprogramBody' is a specialization of 'ProperBody'.
+The class 'adb_SubprogramBody' is a specialization of 'ProtectedOperationItem'.
+The class 'adb_BasicDeclarativeItem' is a specialization of 'DeclarativeItem'.
+The class 'adb_BasicDeclaration' is a specialization of 'BasicDeclarativeItem'.
+The class 'adb_TaskDeclaration' is a specialization of 'BasicDeclaration'.
+The class 'adb_TypeDeclaration' is a specialization of 'BasicDeclaration'.
+The class 'adb_NewTypeDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'adb_FullTypeDeclaration' is a specialization of 'NewTypeDeclaration'.
+The class 'adb_FullDataTypeDeclaration' is a specialization of 'FullTypeDeclaration'.
+The class 'adb_IncompleteTypeDeclaration' is a specialization of 'NewTypeDeclaration'.
+The class 'adb_PrivateTypeDeclaration' is a specialization of 'NewTypeDeclaration'.
+The class 'adb_PrivateExtensionDeclaration' is a specialization of 'NewTypeDeclaration'.
+The class 'adb_EntryDeclaration' is a specialization of 'TaskItem'.
+The class 'adb_EntryDeclaration' is a specialization of 'ProtectedOperationDeclaration'.
+The class 'adb_ProtectedTypeDeclaration' is a specialization of 'FullTypeDeclaration'.
+The class 'adb_ProtectedOperationDeclaration' is a specialization of 'ProtectedElementDeclaration'.
+The class 'adb_SubprogramDeclaration' is a specialization of 'BasicDeclaration'.
+The class 'adb_SubprogramDeclaration' is a specialization of 'ProtectedOperationDeclaration'.
+The class 'adb_SubprogramDeclaration' is a specialization of 'ProtectedOperationItem'.
+The class 'adb_SubprogramSpecification' is a specialization of 'LibraryUnitSpecification'.
+The class 'adb_SubprogramSpecification' is a specialization of 'LibrarySpecification'.
+The class 'adb_SubprogramSpecification' is a specialization of 'BodyStub'.
+The class 'adb_ProcedureSpecification' is a specialization of 'SubprogramSpecification'.
+The class 'adb_FunctionSpecification' is a specialization of 'SubprogramSpecification'.
+The class 'adb_Body' is a specialization of 'DeclarativeItem'.
+The class 'adb_ProperBody' is a specialization of 'Body'.
+The class 'adb_SequenceOfStatements' is a specialization of 'HandledSequenceOfStatements'.
+The class 'adb_SequenceOfStatements' is a specialization of 'AbortablePart'.
+The class 'adb_SimpleStatement' is a specialization of 'Statement'.
+The class 'adb_CompoundStatement' is a specialization of 'Statement'.
+The class 'adb_NullStatement' is a specialization of 'SimpleStatement'.
+The class 'adb_GenericFormalParameterDeclaration' is a specialization of 'GenericItem'.
+The class 'adb_FormalObjectDeclaration' is a specialization of 'GenericFormalParameterDeclaration'.
+The class 'adb_FormalTypeDeclaration' is a specialization of 'GenericFormalParameterDeclaration'.
+The class 'adb_FormalPrivateTypeDefinition' is a specialization of 'FormalTypeDefinition'.
+The class 'adb_FormalDerivedTypeDefinition' is a specialization of 'FormalTypeDefinition'.
+The class 'adb_FormalSubprogramDeclaration' is a specialization of 'GenericFormalParameterDeclaration'.
+The class 'adb_FormalPackageDeclaration' is a specialization of 'GenericFormalParameterDeclaration'.
+The class 'adb_ExceptionDeclaration' is a specialization of 'BasicDeclaration'.
+The class 'adb_ObjectDeclaration' is a specialization of 'BasicDeclaration'.
+The class 'adb_DataInstanceDeclaration' is a specialization of 'ObjectDeclaration'.
+The class 'adb_SingleProtectedDeclaration' is a specialization of 'ObjectDeclaration'.
+The class 'adb_Pragma' is a specialization of 'ContextItem'.
+The class 'adb_Pragma' is a specialization of 'BasicDeclarativeItem'.
+The class 'adb_Pragma' is a specialization of 'Statement'.
+The class 'adb_SubtypeDeclaration' is a specialization of 'TypeDeclaration'.
+The class 'adb_NumberDeclaration' is a specialization of 'BasicDeclaration'.
+The class 'adb_AssignmentStatement' is a specialization of 'SimpleStatement'.
+The class 'adb_IfStatement' is a specialization of 'CompoundStatement'.
+The class 'adb_CaseStatement' is a specialization of 'CompoundStatement'.
+The class 'adb_LoopStatement' is a specialization of 'CompoundStatement'.
+The class 'adb_BlockStatement' is a specialization of 'DeclarativeBlock'.
+The class 'adb_BlockStatement' is a specialization of 'CompoundStatement'.
+The class 'adb_ExitStatement' is a specialization of 'SimpleStatement'.
+The class 'adb_GotoStatement' is a specialization of 'SimpleStatement'.
+The class 'adb_ProcedureOrEntryCallStatement' is a specialization of 'SimpleStatement'.
+The class 'adb_ProcedureOrEntryCallStatement' is a specialization of 'TriggeringStatement'.
+The class 'adb_SimpleReturnStatement' is a specialization of 'SimpleStatement'.
+The class 'adb_ExtendedReturnStatement' is a specialization of 'CompoundStatement'.
+The class 'adb_PackageBody' is a specialization of 'Unit'.
+The class 'adb_PackageBody' is a specialization of 'DeclarativeBlock'.
+The class 'adb_PackageBody' is a specialization of 'ProperBody'.
+The class 'adb_TaskBody' is a specialization of 'DeclarativeBlock'.
+The class 'adb_TaskBody' is a specialization of 'ProperBody'.
+The class 'adb_ProtectedBody' is a specialization of 'ProperBody'.
+The class 'adb_AcceptStatement' is a specialization of 'CompoundStatement'.
+The class 'adb_EntryBody' is a specialization of 'DeclarativeBlock'.
+The class 'adb_EntryBody' is a specialization of 'ProtectedOperationItem'.
+The class 'adb_RequeueStatement' is a specialization of 'SimpleStatement'.
+The class 'adb_DelayStatement' is a specialization of 'SimpleStatement'.
+The class 'adb_DelayStatement' is a specialization of 'TriggeringStatement'.
+The class 'adb_SelectStatement' is a specialization of 'CompoundStatement'.
+The class 'adb_SelectiveAccept' is a specialization of 'SelectStatement'.
+The class 'adb_AcceptAlternative' is a specialization of 'SelectAlternative'.
+The class 'adb_DelayAlternative' is a specialization of 'SelectAlternative'.
+The class 'adb_TimedEntryCall' is a specialization of 'SelectStatement'.
+The class 'adb_ConditionalEntryCall' is a specialization of 'SelectStatement'.
+The class 'adb_AsynchronousSelect' is a specialization of 'SelectStatement'.
+The class 'adb_AbortStatement' is a specialization of 'SimpleStatement'.
+The class 'adb_TaskNames' is a specialization of 'AbortStatement'.
+The class 'adb_BodyStub' is a specialization of 'Body'.
+The class 'adb_PackageBodyStub' is a specialization of 'BodyStub'.
+The class 'adb_TaskBodyStub' is a specialization of 'BodyStub'.
+The class 'adb_ProtectedBodyStub' is a specialization of 'BodyStub'.
+The class 'adb_SeparateSubunit' is a specialization of 'Unit'.
+The class 'adb_RaiseStatement' is a specialization of 'SimpleStatement'.
+The class 'adb_UnknownDiscriminantPart' is a specialization of 'DiscriminantPart'.
+The class 'adb_KnownDiscriminantPart' is a specialization of 'DiscriminantPart'.
+The class 'adb_InterfaceTypeDefinition' is a specialization of 'FormalTypeDefinition'.
+The class 'adb_InterfaceTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'adb_DerivedTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'adb_AccessTypeDefinition' is a specialization of 'FormalTypeDefinition'.
+The class 'adb_AccessTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'adb_AccessToSubprogramDefinition' is a specialization of 'AccessSpecification'.
+The class 'adb_AccessToSubprogramDefinition' is a specialization of 'NotNullAccessDefinition'.
+The class 'adb_AccessToDataDefinition' is a specialization of 'AccessSpecification'.
+The class 'adb_ArrayTypeDefinition' is a specialization of 'FormalTypeDefinition'.
+The class 'adb_ArrayTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'adb_UnconstrainedIndexes' is a specialization of 'ArrayIndexes'.
+The class 'adb_ConstrainedIndexes' is a specialization of 'ArrayIndexes'.
+The class 'adb_AnonymousAccessDefinition' is a specialization of 'ReturnSubtypeIndication'.
+The class 'adb_AccessToDataInstance' is a specialization of 'NotNullAccessDefinition'.
+The class 'adb_IntegerTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'adb_SignedIntegerTypeDefinition' is a specialization of 'IntegerTypeDefinition'.
+The class 'adb_ModularTypeDefinition' is a specialization of 'IntegerTypeDefinition'.
+The class 'adb_EnumerationTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'adb_RecordTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'adb_ComponentDeclaration' is a specialization of 'ProtectedElementDeclaration'.
+The class 'adb_ComponentDeclaration' is a specialization of 'ComponentItem'.
+The class 'adb_AspectClause' is a specialization of 'BasicDeclarativeItem'.
+The class 'adb_AspectClause' is a specialization of 'TaskItem'.
+The class 'adb_AspectClause' is a specialization of 'ProtectedOperationDeclaration'.
+The class 'adb_AspectClause' is a specialization of 'ProtectedOperationItem'.
+The class 'adb_AspectClause' is a specialization of 'ComponentItem'.
+The class 'adb_RealTypeDefinition' is a specialization of 'TypeDefinition'.
+The class 'adb_FloatingPointDefinition' is a specialization of 'RealTypeDefinition'.
+The class 'adb_FixedPointDefinition' is a specialization of 'RealTypeDefinition'.
+The class 'adb_Expression' is a specialization of 'EntryIndex'.
+The class 'adb_Expression' is a specialization of 'ExplicitGenericActualParameter'.
+The class 'adb_Expression' is a specialization of 'DiscreteChoice'.
+The class 'adb_Expression' is a specialization of 'AncestorPart'.
+The class 'adb_Expression' is a specialization of 'ParameterEffectiveValue'.
+The class 'adb_NumericLiteral' is a specialization of 'Primary'.
+The class 'adb_Null' is a specialization of 'Primary'.
+The class 'adb_StringLiteral' is a specialization of 'Primary'.
+The class 'adb_QualifiedName' is a specialization of 'Primary'.
+The class 'adb_ParenthesizedExpression' is a specialization of 'Primary'.
+The class 'adb_Allocator' is a specialization of 'Primary'.
+The class 'adb_SubtypeIndication' is a specialization of 'ReturnSubtypeIndication'.
+The class 'adb_SubtypeIndication' is a specialization of 'DiscreteSubtypeDefinition'.
+The class 'adb_SubtypeIndication' is a specialization of 'DiscreteRange'.
+The class 'adb_SubtypeIndication' is a specialization of 'DiscreteChoice'.
+The class 'adb_DigitsConstraint' is a specialization of 'ScalarConstraint'.
+The class 'adb_DeltaConstraint' is a specialization of 'ScalarConstraint'.
+The class 'adb_RangeConstraint' is a specialization of 'ScalarConstraint'.
+The class 'adb_DiscriminantConstraint' is a specialization of 'CompositeConstraint'.
+The class 'adb_IndexConstraint' is a specialization of 'CompositeConstraint'.
+The class 'adb_DiscreteRange' is a specialization of 'DiscreteSubtypeDefinition'.
+The class 'adb_Aggregate' is a specialization of 'ParenthesizedExpression'.
+The class 'adb_Aggregate' is a specialization of 'Qualifier'.
+The class 'adb_RecordAggregate' is a specialization of 'Aggregate'.
+The class 'adb_RecordComponentAssociationList' is a specialization of 'RecordAggregate'.
+The class 'adb_InitializedComponents' is a specialization of 'RecordComponentAssociation'.
+The class 'adb_UninitializedComponents' is a specialization of 'RecordComponentAssociation'.
+The class 'adb_ExtensionAggregate' is a specialization of 'Aggregate'.
+The class 'adb_ArrayAggregate' is a specialization of 'Aggregate'.
+The class 'adb_PositionalArrayAggregate' is a specialization of 'ArrayAggregate'.
+The class 'adb_NamedArrayAggregate' is a specialization of 'ArrayAggregate'.
+The class 'adb_Name' is a specialization of 'Interval'.
+The class 'adb_Range' is a specialization of 'Interval'.
+The class 'adb_Range' is a specialization of 'RangeConstraint'.
+The class 'adb_Range' is a specialization of 'DiscreteRange'.
+The class 'adb_Range' is a specialization of 'DiscreteChoice'.
+The class 'adb_Range' is a specialization of 'ParameterEffectiveValue'.
+The class 'adb_EntityRange' is a specialization of 'Range'.
+The class 'adb_ExplicitRange' is a specialization of 'Range'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adb_CompilationUnit' and 'adb_Compilation'. From 'adb_CompilationUnit', the role 'adb_CompilationUnit' has cardinality 0..*, and from 'adb_Compilation', the role 'adb_Compilation' has cardinality 0..*.
+An association connects 'adb_ContextClause' and 'adb_CompilationUnit'. From 'adb_ContextClause', the role 'adb_ContextClause' has cardinality 0..*, and from 'adb_CompilationUnit', the role 'adb_CompilationUnit2' has cardinality 0..*.
+An association connects 'adb_Unit' and 'adb_CompilationUnit'. From 'adb_Unit', the role 'adb_Unit' has cardinality 0..*, and from 'adb_CompilationUnit', the role 'adb_CompilationUnit4' has cardinality 0..*.
+An association connects 'adb_CompilationUnit' and 'adb_Pragma'. From 'adb_CompilationUnit', the role 'adb_CompilationUnit6' has cardinality 0..*, and from 'adb_Pragma', the role 'adb_Pragma' has cardinality 0..*.
+An association connects 'adb_ContextClause' and 'adb_ContextItem'. From 'adb_ContextClause', the role 'adb_ContextClause8' has cardinality 0..*, and from 'adb_ContextItem', the role 'adb_ContextItem' has cardinality 0..*.
+An association connects 'adb_WithClause' and 'adb_LibraryUnitDeclaration'. From 'adb_WithClause', the role 'adb_WithClause' has cardinality 0..*, and from 'adb_LibraryUnitDeclaration', the role 'adb_LibraryUnitDeclaration' has cardinality 0..*.
+An association connects 'adb_LibraryUnitDeclaration' and 'adb_UsePackageClause'. From 'adb_LibraryUnitDeclaration', the role 'adb_LibraryUnitDeclaration11' has cardinality 0..*, and from 'adb_UsePackageClause', the role 'adb_UsePackageClause' has cardinality 0..*.
+An association connects 'adb_LibraryUnitDeclaration' and 'adb_LibraryUnitSpecification'. From 'adb_LibraryUnitDeclaration', the role 'adb_LibraryUnitDeclaration13' has cardinality 0..*, and from 'adb_LibraryUnitSpecification', the role 'adb_LibraryUnitSpecification' has cardinality 0..*.
+An association connects 'adb_PackageDefinition' and 'adb_PackageSpecification'. From 'adb_PackageDefinition', the role 'adb_PackageDefinition' has cardinality 0..*, and from 'adb_PackageSpecification', the role 'adb_PackageSpecification' has cardinality 0..*.
+An association connects 'adb_GenericDeclaration' and 'adb_GenericItems'. From 'adb_GenericDeclaration', the role 'adb_GenericDeclaration' has cardinality 0..*, and from 'adb_GenericItems', the role 'adb_GenericItems' has cardinality 0..*.
+An association connects 'adb_LibrarySpecification' and 'adb_GenericDeclaration'. From 'adb_LibrarySpecification', the role 'adb_LibrarySpecification' has cardinality 0..*, and from 'adb_GenericDeclaration', the role 'adb_GenericDeclaration17' has cardinality 0..*.
+An association connects 'adb_OverridingIndicator' and 'adb_GenericInstantiation'. From 'adb_OverridingIndicator', the role 'adb_OverridingIndicator' has cardinality 0..*, and from 'adb_GenericInstantiation', the role 'adb_GenericInstantiation' has cardinality 0..*.
+An association connects 'adb_GenericActualPart' and 'adb_GenericInstantiation'. From 'adb_GenericActualPart', the role 'adb_GenericActualPart' has cardinality 0..*, and from 'adb_GenericInstantiation', the role 'adb_GenericInstantiation20' has cardinality 0..*.
+An association connects 'adb_PackageSpecification' and 'adb_BasicDeclarativeItem'. From 'adb_PackageSpecification', the role 'adb_PackageSpecification22' has cardinality 0..*, and from 'adb_BasicDeclarativeItem', the role 'adb_BasicDeclarativeItem' has cardinality 0..*.
+An association connects 'adb_BasicDeclarativeItem' and 'adb_PackageSpecification'. From 'adb_BasicDeclarativeItem', the role 'adb_BasicDeclarativeItem25' has cardinality 0..*, and from 'adb_PackageSpecification', the role 'adb_PackageSpecification24' has cardinality 0..*.
+An association connects 'adb_SubprogramBody' and 'adb_SubprogramSpecification'. From 'adb_SubprogramBody', the role 'adb_SubprogramBody' has cardinality 0..*, and from 'adb_SubprogramSpecification', the role 'adb_SubprogramSpecification' has cardinality 0..*.
+An association connects 'adb_DeclarativeBlock' and 'adb_DeclarativeItem'. From 'adb_DeclarativeBlock', the role 'adb_DeclarativeBlock' has cardinality 0..*, and from 'adb_DeclarativeItem', the role 'adb_DeclarativeItem' has cardinality 0..*.
+An association connects 'adb_DeclarativeBlock' and 'adb_HandledSequenceOfStatements'. From 'adb_DeclarativeBlock', the role 'adb_DeclarativeBlock29' has cardinality 0..*, and from 'adb_HandledSequenceOfStatements', the role 'adb_HandledSequenceOfStatements' has cardinality 0..*.
+An association connects 'adb_KnownDiscriminantPart' and 'adb_TaskDeclaration'. From 'adb_KnownDiscriminantPart', the role 'adb_KnownDiscriminantPart' has cardinality 0..*, and from 'adb_TaskDeclaration', the role 'adb_TaskDeclaration' has cardinality 0..*.
+An association connects 'adb_TaskDeclaration' and 'adb_InterfaceList'. From 'adb_TaskDeclaration', the role 'adb_TaskDeclaration32' has cardinality 0..*, and from 'adb_InterfaceList', the role 'adb_InterfaceList' has cardinality 0..*.
+An association connects 'adb_TaskDeclaration' and 'adb_TaskDefinition'. From 'adb_TaskDeclaration', the role 'adb_TaskDeclaration34' has cardinality 0..*, and from 'adb_TaskDefinition', the role 'adb_TaskDefinition' has cardinality 0..*.
+An association connects 'adb_TaskDeclaration' and 'adb_TaskDeclaration'. From 'adb_TaskDeclaration', the role 'adb_TaskDeclaration37' has cardinality 0..*, and from 'adb_TaskDeclaration', the role 'adb_TaskDeclaration35' has cardinality 0..*.
+An association connects 'adb_FullTypeDeclaration' and 'adb_KnownDiscriminantPart'. From 'adb_FullTypeDeclaration', the role 'adb_FullTypeDeclaration' has cardinality 0..*, and from 'adb_KnownDiscriminantPart', the role 'adb_KnownDiscriminantPart39' has cardinality 0..*.
+An association connects 'adb_FullDataTypeDeclaration' and 'adb_TypeDefinition'. From 'adb_FullDataTypeDeclaration', the role 'adb_FullDataTypeDeclaration' has cardinality 0..*, and from 'adb_TypeDefinition', the role 'adb_TypeDefinition' has cardinality 0..*.
+An association connects 'adb_DiscriminantPart' and 'adb_IncompleteTypeDeclaration'. From 'adb_DiscriminantPart', the role 'adb_DiscriminantPart' has cardinality 0..*, and from 'adb_IncompleteTypeDeclaration', the role 'adb_IncompleteTypeDeclaration' has cardinality 0..*.
+An association connects 'adb_DiscriminantPart' and 'adb_PrivateTypeDeclaration'. From 'adb_DiscriminantPart', the role 'adb_DiscriminantPart43' has cardinality 0..*, and from 'adb_PrivateTypeDeclaration', the role 'adb_PrivateTypeDeclaration' has cardinality 0..*.
+An association connects 'adb_DiscriminantPart' and 'adb_PrivateExtensionDeclaration'. From 'adb_DiscriminantPart', the role 'adb_DiscriminantPart45' has cardinality 0..*, and from 'adb_PrivateExtensionDeclaration', the role 'adb_PrivateExtensionDeclaration' has cardinality 0..*.
+An association connects 'adb_SubtypeIndication' and 'adb_PrivateExtensionDeclaration'. From 'adb_SubtypeIndication', the role 'adb_SubtypeIndication' has cardinality 0..*, and from 'adb_PrivateExtensionDeclaration', the role 'adb_PrivateExtensionDeclaration47' has cardinality 0..*.
+An association connects 'adb_InterfaceList' and 'adb_PrivateExtensionDeclaration'. From 'adb_InterfaceList', the role 'adb_InterfaceList50' has cardinality 0..*, and from 'adb_PrivateExtensionDeclaration', the role 'adb_PrivateExtensionDeclaration49' has cardinality 0..*.
+An association connects 'adb_OverridingIndicator' and 'adb_EntryDeclaration'. From 'adb_OverridingIndicator', the role 'adb_OverridingIndicator52' has cardinality 0..*, and from 'adb_EntryDeclaration', the role 'adb_EntryDeclaration' has cardinality 0..*.
+An association connects 'adb_EntryDeclaration' and 'adb_DiscreteSubtypeDefinition'. From 'adb_EntryDeclaration', the role 'adb_EntryDeclaration54' has cardinality 0..*, and from 'adb_DiscreteSubtypeDefinition', the role 'adb_DiscreteSubtypeDefinition' has cardinality 0..*.
+An association connects 'adb_EntryDeclaration' and 'adb_FormalPart'. From 'adb_EntryDeclaration', the role 'adb_EntryDeclaration56' has cardinality 0..*, and from 'adb_FormalPart', the role 'adb_FormalPart' has cardinality 0..*.
+An association connects 'adb_ProtectedTypeDeclaration' and 'adb_InterfaceList'. From 'adb_ProtectedTypeDeclaration', the role 'adb_ProtectedTypeDeclaration' has cardinality 0..*, and from 'adb_InterfaceList', the role 'adb_InterfaceList58' has cardinality 0..*.
+An association connects 'adb_ProtectedDefinition' and 'adb_ProtectedTypeDeclaration'. From 'adb_ProtectedDefinition', the role 'adb_ProtectedDefinition' has cardinality 0..*, and from 'adb_ProtectedTypeDeclaration', the role 'adb_ProtectedTypeDeclaration60' has cardinality 0..*.
+An association connects 'adb_ProtectedElementDeclaration' and 'adb_ProtectedDefinition'. From 'adb_ProtectedElementDeclaration', the role 'adb_ProtectedElementDeclaration' has cardinality 0..*, and from 'adb_ProtectedDefinition', the role 'adb_ProtectedDefinition62' has cardinality 0..*.
+An association connects 'adb_SubprogramSpecification' and 'adb_SubprogramDeclaration'. From 'adb_SubprogramSpecification', the role 'adb_SubprogramSpecification64' has cardinality 0..*, and from 'adb_SubprogramDeclaration', the role 'adb_SubprogramDeclaration' has cardinality 0..*.
+An association connects 'adb_SubprogramSpecification' and 'adb_OverridingIndicator'. From 'adb_SubprogramSpecification', the role 'adb_SubprogramSpecification66' has cardinality 0..*, and from 'adb_OverridingIndicator', the role 'adb_OverridingIndicator67' has cardinality 0..*.
+An association connects 'adb_FormalPart' and 'adb_ProcedureSpecification'. From 'adb_FormalPart', the role 'adb_FormalPart69' has cardinality 0..*, and from 'adb_ProcedureSpecification', the role 'adb_ProcedureSpecification' has cardinality 0..*.
+An association connects 'adb_ParameterAndResultProfile' and 'adb_FunctionSpecification'. From 'adb_ParameterAndResultProfile', the role 'adb_ParameterAndResultProfile' has cardinality 0..*, and from 'adb_FunctionSpecification', the role 'adb_FunctionSpecification' has cardinality 0..*.
+An association connects 'adb_Name' and 'adb_ExceptionChoice'. From 'adb_Name', the role 'adb_Name' has cardinality 0..*, and from 'adb_ExceptionChoice', the role 'adb_ExceptionChoice' has cardinality 0..*.
+An association connects 'adb_ExceptionHandler' and 'adb_ExceptionChoice'. From 'adb_ExceptionHandler', the role 'adb_ExceptionHandler' has cardinality 0..*, and from 'adb_ExceptionChoice', the role 'adb_ExceptionChoice73' has cardinality 0..*.
+An association connects 'adb_SequenceOfStatements' and 'adb_ExceptionHandler'. From 'adb_SequenceOfStatements', the role 'adb_SequenceOfStatements' has cardinality 0..*, and from 'adb_ExceptionHandler', the role 'adb_ExceptionHandler75' has cardinality 0..*.
+An association connects 'adb_ExceptionHandler' and 'adb_SequenceOfStatements'. From 'adb_ExceptionHandler', the role 'adb_ExceptionHandler78' has cardinality 0..*, and from 'adb_SequenceOfStatements', the role 'adb_SequenceOfStatements77' has cardinality 0..*.
+An association connects 'adb_SequenceOfStatements' and 'adb_LabelisableStatement'. From 'adb_SequenceOfStatements', the role 'adb_SequenceOfStatements80' has cardinality 0..*, and from 'adb_LabelisableStatement', the role 'adb_LabelisableStatement' has cardinality 0..*.
+An association connects 'adb_Label' and 'adb_LabelisableStatement'. From 'adb_Label', the role 'adb_Label' has cardinality 0..*, and from 'adb_LabelisableStatement', the role 'adb_LabelisableStatement82' has cardinality 0..*.
+An association connects 'adb_LabelisableStatement' and 'adb_Statement'. From 'adb_LabelisableStatement', the role 'adb_LabelisableStatement84' has cardinality 0..*, and from 'adb_Statement', the role 'adb_Statement' has cardinality 0..*.
+An association connects 'adb_GenericItems' and 'adb_GenericItem'. From 'adb_GenericItems', the role 'adb_GenericItems86' has cardinality 0..*, and from 'adb_GenericItem', the role 'adb_GenericItem' has cardinality 0..*.
+An association connects 'adb_FormalObjectDeclaration' and 'adb_DefiningIdentifierList'. From 'adb_FormalObjectDeclaration', the role 'adb_FormalObjectDeclaration' has cardinality 0..*, and from 'adb_DefiningIdentifierList', the role 'adb_DefiningIdentifierList' has cardinality 0..*.
+An association connects 'adb_Mode' and 'adb_FormalObjectDeclaration'. From 'adb_Mode', the role 'adb_Mode' has cardinality 0..*, and from 'adb_FormalObjectDeclaration', the role 'adb_FormalObjectDeclaration89' has cardinality 0..*.
+An association connects 'adb_OptNullExclusion' and 'adb_FormalObjectDeclaration'. From 'adb_OptNullExclusion', the role 'adb_OptNullExclusion' has cardinality 0..*, and from 'adb_FormalObjectDeclaration', the role 'adb_FormalObjectDeclaration91' has cardinality 0..*.
+An association connects 'adb_FormalObjectDeclaration' and 'adb_Name'. From 'adb_FormalObjectDeclaration', the role 'adb_FormalObjectDeclaration93' has cardinality 0..*, and from 'adb_Name', the role 'adb_Name94' has cardinality 0..*.
+An association connects 'adb_AnonymousAccessDefinition' and 'adb_FormalObjectDeclaration'. From 'adb_AnonymousAccessDefinition', the role 'adb_AnonymousAccessDefinition' has cardinality 0..*, and from 'adb_FormalObjectDeclaration', the role 'adb_FormalObjectDeclaration96' has cardinality 0..*.
+An association connects 'adb_FormalObjectDeclaration' and 'adb_Expression'. From 'adb_FormalObjectDeclaration', the role 'adb_FormalObjectDeclaration98' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression' has cardinality 0..*.
+An association connects 'adb_FormalTypeDeclaration' and 'adb_DiscriminantPart'. From 'adb_FormalTypeDeclaration', the role 'adb_FormalTypeDeclaration' has cardinality 0..*, and from 'adb_DiscriminantPart', the role 'adb_DiscriminantPart100' has cardinality 0..*.
+An association connects 'adb_FormalTypeDefinition' and 'adb_FormalTypeDeclaration'. From 'adb_FormalTypeDefinition', the role 'adb_FormalTypeDefinition' has cardinality 0..*, and from 'adb_FormalTypeDeclaration', the role 'adb_FormalTypeDeclaration102' has cardinality 0..*.
+An association connects 'adb_FormalDerivedTypeDefinition' and 'adb_Name'. From 'adb_FormalDerivedTypeDefinition', the role 'adb_FormalDerivedTypeDefinition' has cardinality 0..*, and from 'adb_Name', the role 'adb_Name104' has cardinality 0..*.
+An association connects 'adb_InterfaceList' and 'adb_FormalDerivedTypeDefinition'. From 'adb_InterfaceList', the role 'adb_InterfaceList107' has cardinality 0..*, and from 'adb_FormalDerivedTypeDefinition', the role 'adb_FormalDerivedTypeDefinition106' has cardinality 0..*.
+An association connects 'adb_SubprogramSpecification' and 'adb_FormalSubprogramDeclaration'. From 'adb_SubprogramSpecification', the role 'adb_SubprogramSpecification109' has cardinality 0..*, and from 'adb_FormalSubprogramDeclaration', the role 'adb_FormalSubprogramDeclaration' has cardinality 0..*.
+An association connects 'adb_FormalSubprogramDeclaration' and 'adb_SubprogramDefault'. From 'adb_FormalSubprogramDeclaration', the role 'adb_FormalSubprogramDeclaration111' has cardinality 0..*, and from 'adb_SubprogramDefault', the role 'adb_SubprogramDefault' has cardinality 0..*.
+An association connects 'adb_FormalPackageActualPart' and 'adb_FormalPackageDeclaration'. From 'adb_FormalPackageActualPart', the role 'adb_FormalPackageActualPart' has cardinality 0..*, and from 'adb_FormalPackageDeclaration', the role 'adb_FormalPackageDeclaration' has cardinality 0..*.
+An association connects 'adb_FormalPackageActualPart' and 'adb_GenericActualPart'. From 'adb_FormalPackageActualPart', the role 'adb_FormalPackageActualPart114' has cardinality 0..*, and from 'adb_GenericActualPart', the role 'adb_GenericActualPart115' has cardinality 0..*.
+An association connects 'adb_FormalPackageActualPart' and 'adb_FormalPackageAssociation'. From 'adb_FormalPackageActualPart', the role 'adb_FormalPackageActualPart117' has cardinality 0..*, and from 'adb_FormalPackageAssociation', the role 'adb_FormalPackageAssociation' has cardinality 0..*.
+An association connects 'adb_GenericAssociation' and 'adb_FormalPackageAssociation'. From 'adb_GenericAssociation', the role 'adb_GenericAssociation' has cardinality 0..*, and from 'adb_FormalPackageAssociation', the role 'adb_FormalPackageAssociation119' has cardinality 0..*.
+An association connects 'adb_ExceptionDeclaration' and 'adb_DefiningIdentifierList'. From 'adb_ExceptionDeclaration', the role 'adb_ExceptionDeclaration' has cardinality 0..*, and from 'adb_DefiningIdentifierList', the role 'adb_DefiningIdentifierList121' has cardinality 0..*.
+An association connects 'adb_ExceptionDeclaration' and 'adb_Name'. From 'adb_ExceptionDeclaration', the role 'adb_ExceptionDeclaration123' has cardinality 0..*, and from 'adb_Name', the role 'adb_Name124' has cardinality 0..*.
+An association connects 'adb_DefiningIdentifierList' and 'adb_DataInstanceDeclaration'. From 'adb_DefiningIdentifierList', the role 'adb_DefiningIdentifierList126' has cardinality 0..*, and from 'adb_DataInstanceDeclaration', the role 'adb_DataInstanceDeclaration' has cardinality 0..*.
+An association connects 'adb_DataInstanceDeclaration' and 'adb_SubtypeIndication'. From 'adb_DataInstanceDeclaration', the role 'adb_DataInstanceDeclaration128' has cardinality 0..*, and from 'adb_SubtypeIndication', the role 'adb_SubtypeIndication129' has cardinality 0..*.
+An association connects 'adb_Expression' and 'adb_DataInstanceDeclaration'. From 'adb_Expression', the role 'adb_Expression132' has cardinality 0..*, and from 'adb_DataInstanceDeclaration', the role 'adb_DataInstanceDeclaration131' has cardinality 0..*.
+An association connects 'adb_DataInstanceDeclaration' and 'adb_Name'. From 'adb_DataInstanceDeclaration', the role 'adb_DataInstanceDeclaration134' has cardinality 0..*, and from 'adb_Name', the role 'adb_Name135' has cardinality 0..*.
+An association connects 'adb_DataInstanceDeclaration' and 'adb_AnonymousAccessDefinition'. From 'adb_DataInstanceDeclaration', the role 'adb_DataInstanceDeclaration137' has cardinality 0..*, and from 'adb_AnonymousAccessDefinition', the role 'adb_AnonymousAccessDefinition138' has cardinality 0..*.
+An association connects 'adb_DataInstanceDeclaration' and 'adb_ArrayTypeDefinition'. From 'adb_DataInstanceDeclaration', the role 'adb_DataInstanceDeclaration140' has cardinality 0..*, and from 'adb_ArrayTypeDefinition', the role 'adb_ArrayTypeDefinition' has cardinality 0..*.
+An association connects 'adb_InterfaceList' and 'adb_SingleProtectedDeclaration'. From 'adb_InterfaceList', the role 'adb_InterfaceList142' has cardinality 0..*, and from 'adb_SingleProtectedDeclaration', the role 'adb_SingleProtectedDeclaration' has cardinality 0..*.
+An association connects 'adb_SingleProtectedDeclaration' and 'adb_ProtectedDefinition'. From 'adb_SingleProtectedDeclaration', the role 'adb_SingleProtectedDeclaration144' has cardinality 0..*, and from 'adb_ProtectedDefinition', the role 'adb_ProtectedDefinition145' has cardinality 0..*.
+An association connects 'adb_Pragma' and 'adb_PragmaArgumentAssociation'. From 'adb_Pragma', the role 'adb_Pragma147' has cardinality 0..*, and from 'adb_PragmaArgumentAssociation', the role 'adb_PragmaArgumentAssociation' has cardinality 0..*.
+An association connects 'adb_PragmaArgumentAssociation' and 'adb_Expression'. From 'adb_PragmaArgumentAssociation', the role 'adb_PragmaArgumentAssociation149' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression150' has cardinality 0..*.
+An association connects 'adb_SubtypeIndication' and 'adb_SubtypeDeclaration'. From 'adb_SubtypeIndication', the role 'adb_SubtypeIndication152' has cardinality 0..*, and from 'adb_SubtypeDeclaration', the role 'adb_SubtypeDeclaration' has cardinality 0..*.
+An association connects 'adb_DefiningIdentifierList' and 'adb_NumberDeclaration'. From 'adb_DefiningIdentifierList', the role 'adb_DefiningIdentifierList154' has cardinality 0..*, and from 'adb_NumberDeclaration', the role 'adb_NumberDeclaration' has cardinality 0..*.
+An association connects 'adb_Expression' and 'adb_NumberDeclaration'. From 'adb_Expression', the role 'adb_Expression157' has cardinality 0..*, and from 'adb_NumberDeclaration', the role 'adb_NumberDeclaration156' has cardinality 0..*.
+An association connects 'adb_AssignmentStatement' and 'adb_Name'. From 'adb_AssignmentStatement', the role 'adb_AssignmentStatement' has cardinality 0..*, and from 'adb_Name', the role 'adb_Name159' has cardinality 0..*.
+An association connects 'adb_Expression' and 'adb_AssignmentStatement'. From 'adb_Expression', the role 'adb_Expression162' has cardinality 0..*, and from 'adb_AssignmentStatement', the role 'adb_AssignmentStatement161' has cardinality 0..*.
+An association connects 'adb_Expression' and 'adb_IfStatement'. From 'adb_Expression', the role 'adb_Expression164' has cardinality 0..*, and from 'adb_IfStatement', the role 'adb_IfStatement' has cardinality 0..*.
+An association connects 'adb_IfStatement' and 'adb_SequenceOfStatements'. From 'adb_IfStatement', the role 'adb_IfStatement166' has cardinality 0..*, and from 'adb_SequenceOfStatements', the role 'adb_SequenceOfStatements167' has cardinality 0..*.
+An association connects 'adb_Expression' and 'adb_IfStatement'. From 'adb_Expression', the role 'adb_Expression170' has cardinality 0..*, and from 'adb_IfStatement', the role 'adb_IfStatement169' has cardinality 0..*.
+An association connects 'adb_SequenceOfStatements' and 'adb_IfStatement'. From 'adb_SequenceOfStatements', the role 'adb_SequenceOfStatements173' has cardinality 0..*, and from 'adb_IfStatement', the role 'adb_IfStatement172' has cardinality 0..*.
+An association connects 'adb_IfStatement' and 'adb_SequenceOfStatements'. From 'adb_IfStatement', the role 'adb_IfStatement175' has cardinality 0..*, and from 'adb_SequenceOfStatements', the role 'adb_SequenceOfStatements176' has cardinality 0..*.
+An association connects 'adb_CaseStatement' and 'adb_Expression'. From 'adb_CaseStatement', the role 'adb_CaseStatement' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression178' has cardinality 0..*.
+An association connects 'adb_CaseStatementAlternative' and 'adb_CaseStatement'. From 'adb_CaseStatementAlternative', the role 'adb_CaseStatementAlternative' has cardinality 0..*, and from 'adb_CaseStatement', the role 'adb_CaseStatement180' has cardinality 0..*.
+An association connects 'adb_CaseStatementAlternative' and 'adb_DiscreteChoiceList'. From 'adb_CaseStatementAlternative', the role 'adb_CaseStatementAlternative182' has cardinality 0..*, and from 'adb_DiscreteChoiceList', the role 'adb_DiscreteChoiceList' has cardinality 0..*.
+An association connects 'adb_CaseStatementAlternative' and 'adb_SequenceOfStatements'. From 'adb_CaseStatementAlternative', the role 'adb_CaseStatementAlternative184' has cardinality 0..*, and from 'adb_SequenceOfStatements', the role 'adb_SequenceOfStatements185' has cardinality 0..*.
+An association connects 'adb_LoopStatement' and 'adb_IterationScheme'. From 'adb_LoopStatement', the role 'adb_LoopStatement' has cardinality 0..*, and from 'adb_IterationScheme', the role 'adb_IterationScheme' has cardinality 0..*.
+An association connects 'adb_SequenceOfStatements' and 'adb_LoopStatement'. From 'adb_SequenceOfStatements', the role 'adb_SequenceOfStatements189' has cardinality 0..*, and from 'adb_LoopStatement', the role 'adb_LoopStatement188' has cardinality 0..*.
+An association connects 'adb_IterationScheme' and 'adb_Expression'. From 'adb_IterationScheme', the role 'adb_IterationScheme191' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression192' has cardinality 0..*.
+An association connects 'adb_IterationScheme' and 'adb_LoopParameterSpecification'. From 'adb_IterationScheme', the role 'adb_IterationScheme194' has cardinality 0..*, and from 'adb_LoopParameterSpecification', the role 'adb_LoopParameterSpecification' has cardinality 0..*.
+An association connects 'adb_LoopParameterSpecification' and 'adb_DiscreteSubtypeDefinition'. From 'adb_LoopParameterSpecification', the role 'adb_LoopParameterSpecification196' has cardinality 0..*, and from 'adb_DiscreteSubtypeDefinition', the role 'adb_DiscreteSubtypeDefinition197' has cardinality 0..*.
+An association connects 'adb_LoopStatement' and 'adb_ExitStatement'. From 'adb_LoopStatement', the role 'adb_LoopStatement199' has cardinality 0..*, and from 'adb_ExitStatement', the role 'adb_ExitStatement' has cardinality 0..*.
+An association connects 'adb_ExitStatement' and 'adb_Expression'. From 'adb_ExitStatement', the role 'adb_ExitStatement201' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression202' has cardinality 0..*.
+An association connects 'adb_ProcedureOrEntryCallStatement' and 'adb_Name'. From 'adb_ProcedureOrEntryCallStatement', the role 'adb_ProcedureOrEntryCallStatement' has cardinality 0..*, and from 'adb_Name', the role 'adb_Name204' has cardinality 0..*.
+An association connects 'adb_SimpleReturnStatement' and 'adb_Expression'. From 'adb_SimpleReturnStatement', the role 'adb_SimpleReturnStatement' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression206' has cardinality 0..*.
+An association connects 'adb_ExtendedReturnStatement' and 'adb_ReturnSubtypeIndication'. From 'adb_ExtendedReturnStatement', the role 'adb_ExtendedReturnStatement' has cardinality 0..*, and from 'adb_ReturnSubtypeIndication', the role 'adb_ReturnSubtypeIndication' has cardinality 0..*.
+An association connects 'adb_ExtendedReturnStatement' and 'adb_Expression'. From 'adb_ExtendedReturnStatement', the role 'adb_ExtendedReturnStatement209' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression210' has cardinality 0..*.
+An association connects 'adb_ExtendedReturnStatement' and 'adb_HandledSequenceOfStatements'. From 'adb_ExtendedReturnStatement', the role 'adb_ExtendedReturnStatement212' has cardinality 0..*, and from 'adb_HandledSequenceOfStatements', the role 'adb_HandledSequenceOfStatements213' has cardinality 0..*.
+An association connects 'adb_PackageDeclaration' and 'adb_PackageBody'. From 'adb_PackageDeclaration', the role 'adb_PackageDeclaration' has cardinality 0..*, and from 'adb_PackageBody', the role 'adb_PackageBody' has cardinality 0..*.
+An association connects 'adb_PackageDeclaration' and 'adb_PackageBody'. From 'adb_PackageDeclaration', the role 'adb_PackageDeclaration217' has cardinality 0..*, and from 'adb_PackageBody', the role 'adb_PackageBody216' has cardinality 0..*.
+An association connects 'adb_TaskItem' and 'adb_TaskDefinition'. From 'adb_TaskItem', the role 'adb_TaskItem' has cardinality 0..*, and from 'adb_TaskDefinition', the role 'adb_TaskDefinition219' has cardinality 0..*.
+An association connects 'adb_TaskDeclaration' and 'adb_TaskBody'. From 'adb_TaskDeclaration', the role 'adb_TaskDeclaration221' has cardinality 0..*, and from 'adb_TaskBody', the role 'adb_TaskBody' has cardinality 0..*.
+An association connects 'adb_TaskDeclaration' and 'adb_TaskBody'. From 'adb_TaskDeclaration', the role 'adb_TaskDeclaration224' has cardinality 0..*, and from 'adb_TaskBody', the role 'adb_TaskBody223' has cardinality 0..*.
+An association connects 'adb_ProtectedOperationItem' and 'adb_ProtectedBody'. From 'adb_ProtectedOperationItem', the role 'adb_ProtectedOperationItem' has cardinality 0..*, and from 'adb_ProtectedBody', the role 'adb_ProtectedBody' has cardinality 0..*.
+An association connects 'adb_AcceptStatement' and 'adb_EntryDeclaration'. From 'adb_AcceptStatement', the role 'adb_AcceptStatement' has cardinality 0..*, and from 'adb_EntryDeclaration', the role 'adb_EntryDeclaration227' has cardinality 0..*.
+An association connects 'adb_EntryIndex' and 'adb_AcceptStatement'. From 'adb_EntryIndex', the role 'adb_EntryIndex' has cardinality 0..*, and from 'adb_AcceptStatement', the role 'adb_AcceptStatement229' has cardinality 0..*.
+An association connects 'adb_FormalPart' and 'adb_AcceptStatement'. From 'adb_FormalPart', the role 'adb_FormalPart232' has cardinality 0..*, and from 'adb_AcceptStatement', the role 'adb_AcceptStatement231' has cardinality 0..*.
+An association connects 'adb_AcceptStatement' and 'adb_HandledSequenceOfStatements'. From 'adb_AcceptStatement', the role 'adb_AcceptStatement234' has cardinality 0..*, and from 'adb_HandledSequenceOfStatements', the role 'adb_HandledSequenceOfStatements235' has cardinality 0..*.
+An association connects 'adb_EntryBody' and 'adb_EntryDeclaration'. From 'adb_EntryBody', the role 'adb_EntryBody' has cardinality 0..*, and from 'adb_EntryDeclaration', the role 'adb_EntryDeclaration237' has cardinality 0..*.
+An association connects 'adb_EntryBodyFormalPart' and 'adb_EntryBody'. From 'adb_EntryBodyFormalPart', the role 'adb_EntryBodyFormalPart' has cardinality 0..*, and from 'adb_EntryBody', the role 'adb_EntryBody239' has cardinality 0..*.
+An association connects 'adb_EntryBarrier' and 'adb_EntryBody'. From 'adb_EntryBarrier', the role 'adb_EntryBarrier' has cardinality 0..*, and from 'adb_EntryBody', the role 'adb_EntryBody241' has cardinality 0..*.
+An association connects 'adb_EntryIndexSpecification' and 'adb_EntryBodyFormalPart'. From 'adb_EntryIndexSpecification', the role 'adb_EntryIndexSpecification' has cardinality 0..*, and from 'adb_EntryBodyFormalPart', the role 'adb_EntryBodyFormalPart243' has cardinality 0..*.
+An association connects 'adb_FormalPart' and 'adb_EntryBodyFormalPart'. From 'adb_FormalPart', the role 'adb_FormalPart246' has cardinality 0..*, and from 'adb_EntryBodyFormalPart', the role 'adb_EntryBodyFormalPart245' has cardinality 0..*.
+An association connects 'adb_Expression' and 'adb_EntryBarrier'. From 'adb_Expression', the role 'adb_Expression249' has cardinality 0..*, and from 'adb_EntryBarrier', the role 'adb_EntryBarrier248' has cardinality 0..*.
+An association connects 'adb_EntryIndexSpecification' and 'adb_DiscreteSubtypeDefinition'. From 'adb_EntryIndexSpecification', the role 'adb_EntryIndexSpecification251' has cardinality 0..*, and from 'adb_DiscreteSubtypeDefinition', the role 'adb_DiscreteSubtypeDefinition252' has cardinality 0..*.
+An association connects 'adb_Name' and 'adb_RequeueStatement'. From 'adb_Name', the role 'adb_Name254' has cardinality 0..*, and from 'adb_RequeueStatement', the role 'adb_RequeueStatement' has cardinality 0..*.
+An association connects 'adb_DelayStatement' and 'adb_Expression'. From 'adb_DelayStatement', the role 'adb_DelayStatement' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression256' has cardinality 0..*.
+An association connects 'adb_Guard' and 'adb_SelectiveAccept'. From 'adb_Guard', the role 'adb_Guard' has cardinality 0..*, and from 'adb_SelectiveAccept', the role 'adb_SelectiveAccept' has cardinality 0..*.
+An association connects 'adb_SelectiveAccept' and 'adb_SelectAlternative'. From 'adb_SelectiveAccept', the role 'adb_SelectiveAccept259' has cardinality 0..*, and from 'adb_SelectAlternative', the role 'adb_SelectAlternative' has cardinality 0..*.
+An association connects 'adb_GuardedAlternative' and 'adb_SelectiveAccept'. From 'adb_GuardedAlternative', the role 'adb_GuardedAlternative' has cardinality 0..*, and from 'adb_SelectiveAccept', the role 'adb_SelectiveAccept261' has cardinality 0..*.
+An association connects 'adb_SequenceOfStatements' and 'adb_SelectiveAccept'. From 'adb_SequenceOfStatements', the role 'adb_SequenceOfStatements264' has cardinality 0..*, and from 'adb_SelectiveAccept', the role 'adb_SelectiveAccept263' has cardinality 0..*.
+An association connects 'adb_Guard' and 'adb_GuardedAlternative'. From 'adb_Guard', the role 'adb_Guard267' has cardinality 0..*, and from 'adb_GuardedAlternative', the role 'adb_GuardedAlternative266' has cardinality 0..*.
+An association connects 'adb_GuardedAlternative' and 'adb_SelectAlternative'. From 'adb_GuardedAlternative', the role 'adb_GuardedAlternative269' has cardinality 0..*, and from 'adb_SelectAlternative', the role 'adb_SelectAlternative270' has cardinality 0..*.
+An association connects 'adb_Guard' and 'adb_Expression'. From 'adb_Guard', the role 'adb_Guard272' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression273' has cardinality 0..*.
+An association connects 'adb_SequenceOfStatements' and 'adb_SelectAlternative'. From 'adb_SequenceOfStatements', the role 'adb_SequenceOfStatements276' has cardinality 0..*, and from 'adb_SelectAlternative', the role 'adb_SelectAlternative275' has cardinality 0..*.
+An association connects 'adb_AcceptAlternative' and 'adb_AcceptStatement'. From 'adb_AcceptAlternative', the role 'adb_AcceptAlternative' has cardinality 0..*, and from 'adb_AcceptStatement', the role 'adb_AcceptStatement278' has cardinality 0..*.
+An association connects 'adb_DelayAlternative' and 'adb_DelayStatement'. From 'adb_DelayAlternative', the role 'adb_DelayAlternative' has cardinality 0..*, and from 'adb_DelayStatement', the role 'adb_DelayStatement280' has cardinality 0..*.
+An association connects 'adb_EntryCallAlternative' and 'adb_TimedEntryCall'. From 'adb_EntryCallAlternative', the role 'adb_EntryCallAlternative' has cardinality 0..*, and from 'adb_TimedEntryCall', the role 'adb_TimedEntryCall' has cardinality 0..*.
+An association connects 'adb_TimedEntryCall' and 'adb_DelayAlternative'. From 'adb_TimedEntryCall', the role 'adb_TimedEntryCall283' has cardinality 0..*, and from 'adb_DelayAlternative', the role 'adb_DelayAlternative284' has cardinality 0..*.
+An association connects 'adb_ProcedureOrEntryCallStatement' and 'adb_EntryCallAlternative'. From 'adb_ProcedureOrEntryCallStatement', the role 'adb_ProcedureOrEntryCallStatement287' has cardinality 0..*, and from 'adb_EntryCallAlternative', the role 'adb_EntryCallAlternative286' has cardinality 0..*.
+An association connects 'adb_EntryCallAlternative' and 'adb_SequenceOfStatements'. From 'adb_EntryCallAlternative', the role 'adb_EntryCallAlternative289' has cardinality 0..*, and from 'adb_SequenceOfStatements', the role 'adb_SequenceOfStatements290' has cardinality 0..*.
+An association connects 'adb_EntryCallAlternative' and 'adb_ConditionalEntryCall'. From 'adb_EntryCallAlternative', the role 'adb_EntryCallAlternative292' has cardinality 0..*, and from 'adb_ConditionalEntryCall', the role 'adb_ConditionalEntryCall' has cardinality 0..*.
+An association connects 'adb_ConditionalEntryCall' and 'adb_SequenceOfStatements'. From 'adb_ConditionalEntryCall', the role 'adb_ConditionalEntryCall294' has cardinality 0..*, and from 'adb_SequenceOfStatements', the role 'adb_SequenceOfStatements295' has cardinality 0..*.
+An association connects 'adb_TriggeringAlternative' and 'adb_AsynchronousSelect'. From 'adb_TriggeringAlternative', the role 'adb_TriggeringAlternative' has cardinality 0..*, and from 'adb_AsynchronousSelect', the role 'adb_AsynchronousSelect' has cardinality 0..*.
+An association connects 'adb_AbortablePart' and 'adb_AsynchronousSelect'. From 'adb_AbortablePart', the role 'adb_AbortablePart' has cardinality 0..*, and from 'adb_AsynchronousSelect', the role 'adb_AsynchronousSelect298' has cardinality 0..*.
+An association connects 'adb_TriggeringAlternative' and 'adb_TriggeringStatement'. From 'adb_TriggeringAlternative', the role 'adb_TriggeringAlternative300' has cardinality 0..*, and from 'adb_TriggeringStatement', the role 'adb_TriggeringStatement' has cardinality 0..*.
+An association connects 'adb_SequenceOfStatements' and 'adb_TriggeringAlternative'. From 'adb_SequenceOfStatements', the role 'adb_SequenceOfStatements303' has cardinality 0..*, and from 'adb_TriggeringAlternative', the role 'adb_TriggeringAlternative302' has cardinality 0..*.
+An association connects 'adb_TaskNames' and 'adb_Name'. From 'adb_TaskNames', the role 'adb_TaskNames' has cardinality 0..*, and from 'adb_Name', the role 'adb_Name305' has cardinality 0..*.
+An association connects 'adb_SeparateSubunit' and 'adb_ProperBody'. From 'adb_SeparateSubunit', the role 'adb_SeparateSubunit' has cardinality 0..*, and from 'adb_ProperBody', the role 'adb_ProperBody' has cardinality 0..*.
+An association connects 'adb_Name' and 'adb_RaiseStatement'. From 'adb_Name', the role 'adb_Name308' has cardinality 0..*, and from 'adb_RaiseStatement', the role 'adb_RaiseStatement' has cardinality 0..*.
+An association connects 'adb_RaiseStatement' and 'adb_Expression'. From 'adb_RaiseStatement', the role 'adb_RaiseStatement310' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression311' has cardinality 0..*.
+An association connects 'adb_GenericActualPart' and 'adb_GenericAssociation'. From 'adb_GenericActualPart', the role 'adb_GenericActualPart313' has cardinality 0..*, and from 'adb_GenericAssociation', the role 'adb_GenericAssociation314' has cardinality 0..*.
+An association connects 'adb_ExplicitGenericActualParameter' and 'adb_GenericAssociation'. From 'adb_ExplicitGenericActualParameter', the role 'adb_ExplicitGenericActualParameter' has cardinality 0..*, and from 'adb_GenericAssociation', the role 'adb_GenericAssociation316' has cardinality 0..*.
+An association connects 'adb_KnownDiscriminantPart' and 'adb_DiscriminantSpecification'. From 'adb_KnownDiscriminantPart', the role 'adb_KnownDiscriminantPart318' has cardinality 0..*, and from 'adb_DiscriminantSpecification', the role 'adb_DiscriminantSpecification' has cardinality 0..*.
+An association connects 'adb_DefiningIdentifierList' and 'adb_DiscriminantSpecification'. From 'adb_DefiningIdentifierList', the role 'adb_DefiningIdentifierList321' has cardinality 0..*, and from 'adb_DiscriminantSpecification', the role 'adb_DiscriminantSpecification320' has cardinality 0..*.
+An association connects 'adb_OptNullExclusion' and 'adb_DiscriminantSpecification'. From 'adb_OptNullExclusion', the role 'adb_OptNullExclusion324' has cardinality 0..*, and from 'adb_DiscriminantSpecification', the role 'adb_DiscriminantSpecification323' has cardinality 0..*.
+An association connects 'adb_NotNullAccessDefinition' and 'adb_DiscriminantSpecification'. From 'adb_NotNullAccessDefinition', the role 'adb_NotNullAccessDefinition' has cardinality 0..*, and from 'adb_DiscriminantSpecification', the role 'adb_DiscriminantSpecification326' has cardinality 0..*.
+An association connects 'adb_DiscriminantSpecification' and 'adb_Name'. From 'adb_DiscriminantSpecification', the role 'adb_DiscriminantSpecification328' has cardinality 0..*, and from 'adb_Name', the role 'adb_Name329' has cardinality 0..*.
+An association connects 'adb_DiscriminantSpecification' and 'adb_Expression'. From 'adb_DiscriminantSpecification', the role 'adb_DiscriminantSpecification331' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression332' has cardinality 0..*.
+An association connects 'adb_InterfaceList' and 'adb_Name'. From 'adb_InterfaceList', the role 'adb_InterfaceList334' has cardinality 0..*, and from 'adb_Name', the role 'adb_Name335' has cardinality 0..*.
+An association connects 'adb_InterfaceList' and 'adb_InterfaceTypeDefinition'. From 'adb_InterfaceList', the role 'adb_InterfaceList337' has cardinality 0..*, and from 'adb_InterfaceTypeDefinition', the role 'adb_InterfaceTypeDefinition' has cardinality 0..*.
+An association connects 'adb_SubtypeIndication' and 'adb_DerivedTypeDefinition'. From 'adb_SubtypeIndication', the role 'adb_SubtypeIndication339' has cardinality 0..*, and from 'adb_DerivedTypeDefinition', the role 'adb_DerivedTypeDefinition' has cardinality 0..*.
+An association connects 'adb_InterfaceList' and 'adb_DerivedTypeDefinition'. From 'adb_InterfaceList', the role 'adb_InterfaceList342' has cardinality 0..*, and from 'adb_DerivedTypeDefinition', the role 'adb_DerivedTypeDefinition341' has cardinality 0..*.
+An association connects 'adb_RecordExtensionPart' and 'adb_DerivedTypeDefinition'. From 'adb_RecordExtensionPart', the role 'adb_RecordExtensionPart' has cardinality 0..*, and from 'adb_DerivedTypeDefinition', the role 'adb_DerivedTypeDefinition344' has cardinality 0..*.
+An association connects 'adb_RecordDefinition' and 'adb_RecordExtensionPart'. From 'adb_RecordDefinition', the role 'adb_RecordDefinition' has cardinality 0..*, and from 'adb_RecordExtensionPart', the role 'adb_RecordExtensionPart346' has cardinality 0..*.
+An association connects 'adb_OptNullExclusion' and 'adb_AccessTypeDefinition'. From 'adb_OptNullExclusion', the role 'adb_OptNullExclusion348' has cardinality 0..*, and from 'adb_AccessTypeDefinition', the role 'adb_AccessTypeDefinition' has cardinality 0..*.
+An association connects 'adb_AccessTypeDefinition' and 'adb_AccessSpecification'. From 'adb_AccessTypeDefinition', the role 'adb_AccessTypeDefinition350' has cardinality 0..*, and from 'adb_AccessSpecification', the role 'adb_AccessSpecification' has cardinality 0..*.
+An association connects 'adb_FormalPart' and 'adb_AccessToSubprogramDefinition'. From 'adb_FormalPart', the role 'adb_FormalPart352' has cardinality 0..*, and from 'adb_AccessToSubprogramDefinition', the role 'adb_AccessToSubprogramDefinition' has cardinality 0..*.
+An association connects 'adb_ParameterAndResultProfile' and 'adb_AccessToSubprogramDefinition'. From 'adb_ParameterAndResultProfile', the role 'adb_ParameterAndResultProfile355' has cardinality 0..*, and from 'adb_AccessToSubprogramDefinition', the role 'adb_AccessToSubprogramDefinition354' has cardinality 0..*.
+An association connects 'adb_AccessToDataDefinition' and 'adb_SubtypeIndication'. From 'adb_AccessToDataDefinition', the role 'adb_AccessToDataDefinition' has cardinality 0..*, and from 'adb_SubtypeIndication', the role 'adb_SubtypeIndication357' has cardinality 0..*.
+An association connects 'adb_ArrayTypeDefinition' and 'adb_ArrayIndexes'. From 'adb_ArrayTypeDefinition', the role 'adb_ArrayTypeDefinition359' has cardinality 0..*, and from 'adb_ArrayIndexes', the role 'adb_ArrayIndexes' has cardinality 0..*.
+An association connects 'adb_ArrayTypeDefinition' and 'adb_ComponentDefinition'. From 'adb_ArrayTypeDefinition', the role 'adb_ArrayTypeDefinition361' has cardinality 0..*, and from 'adb_ComponentDefinition', the role 'adb_ComponentDefinition' has cardinality 0..*.
+An association connects 'adb_Name' and 'adb_UnconstrainedIndexes'. From 'adb_Name', the role 'adb_Name363' has cardinality 0..*, and from 'adb_UnconstrainedIndexes', the role 'adb_UnconstrainedIndexes' has cardinality 0..*.
+An association connects 'adb_DiscreteSubtypeDefinition' and 'adb_ConstrainedIndexes'. From 'adb_DiscreteSubtypeDefinition', the role 'adb_DiscreteSubtypeDefinition365' has cardinality 0..*, and from 'adb_ConstrainedIndexes', the role 'adb_ConstrainedIndexes' has cardinality 0..*.
+An association connects 'adb_SubtypeIndication' and 'adb_ComponentDefinition'. From 'adb_SubtypeIndication', the role 'adb_SubtypeIndication368' has cardinality 0..*, and from 'adb_ComponentDefinition', the role 'adb_ComponentDefinition367' has cardinality 0..*.
+An association connects 'adb_ComponentDefinition' and 'adb_AnonymousAccessDefinition'. From 'adb_ComponentDefinition', the role 'adb_ComponentDefinition370' has cardinality 0..*, and from 'adb_AnonymousAccessDefinition', the role 'adb_AnonymousAccessDefinition371' has cardinality 0..*.
+An association connects 'adb_OptNullExclusion' and 'adb_AnonymousAccessDefinition'. From 'adb_OptNullExclusion', the role 'adb_OptNullExclusion374' has cardinality 0..*, and from 'adb_AnonymousAccessDefinition', the role 'adb_AnonymousAccessDefinition373' has cardinality 0..*.
+An association connects 'adb_AnonymousAccessDefinition' and 'adb_NotNullAccessDefinition'. From 'adb_AnonymousAccessDefinition', the role 'adb_AnonymousAccessDefinition376' has cardinality 0..*, and from 'adb_NotNullAccessDefinition', the role 'adb_NotNullAccessDefinition377' has cardinality 0..*.
+An association connects 'adb_Name' and 'adb_AccessToDataInstance'. From 'adb_Name', the role 'adb_Name379' has cardinality 0..*, and from 'adb_AccessToDataInstance', the role 'adb_AccessToDataInstance' has cardinality 0..*.
+An association connects 'adb_FormalPart' and 'adb_ParameterAndResultProfile'. From 'adb_FormalPart', the role 'adb_FormalPart382' has cardinality 0..*, and from 'adb_ParameterAndResultProfile', the role 'adb_ParameterAndResultProfile381' has cardinality 0..*.
+An association connects 'adb_OptNullExclusion' and 'adb_ParameterAndResultProfile'. From 'adb_OptNullExclusion', the role 'adb_OptNullExclusion385' has cardinality 0..*, and from 'adb_ParameterAndResultProfile', the role 'adb_ParameterAndResultProfile384' has cardinality 0..*.
+An association connects 'adb_ParameterAndResultProfile' and 'adb_Name'. From 'adb_ParameterAndResultProfile', the role 'adb_ParameterAndResultProfile387' has cardinality 0..*, and from 'adb_Name', the role 'adb_Name388' has cardinality 0..*.
+An association connects 'adb_ParameterAndResultProfile' and 'adb_AnonymousAccessDefinition'. From 'adb_ParameterAndResultProfile', the role 'adb_ParameterAndResultProfile390' has cardinality 0..*, and from 'adb_AnonymousAccessDefinition', the role 'adb_AnonymousAccessDefinition391' has cardinality 0..*.
+An association connects 'adb_ParameterSpecification' and 'adb_FormalPart'. From 'adb_ParameterSpecification', the role 'adb_ParameterSpecification' has cardinality 0..*, and from 'adb_FormalPart', the role 'adb_FormalPart393' has cardinality 0..*.
+An association connects 'adb_ParameterSpecification' and 'adb_DefiningIdentifierList'. From 'adb_ParameterSpecification', the role 'adb_ParameterSpecification395' has cardinality 0..*, and from 'adb_DefiningIdentifierList', the role 'adb_DefiningIdentifierList396' has cardinality 0..*.
+An association connects 'adb_ParameterSpecification' and 'adb_Mode'. From 'adb_ParameterSpecification', the role 'adb_ParameterSpecification398' has cardinality 0..*, and from 'adb_Mode', the role 'adb_Mode399' has cardinality 0..*.
+An association connects 'adb_OptNullExclusion' and 'adb_ParameterSpecification'. From 'adb_OptNullExclusion', the role 'adb_OptNullExclusion402' has cardinality 0..*, and from 'adb_ParameterSpecification', the role 'adb_ParameterSpecification401' has cardinality 0..*.
+An association connects 'adb_Name' and 'adb_ParameterSpecification'. From 'adb_Name', the role 'adb_Name405' has cardinality 0..*, and from 'adb_ParameterSpecification', the role 'adb_ParameterSpecification404' has cardinality 0..*.
+An association connects 'adb_AnonymousAccessDefinition' and 'adb_ParameterSpecification'. From 'adb_AnonymousAccessDefinition', the role 'adb_AnonymousAccessDefinition408' has cardinality 0..*, and from 'adb_ParameterSpecification', the role 'adb_ParameterSpecification407' has cardinality 0..*.
+An association connects 'adb_ParameterSpecification' and 'adb_Expression'. From 'adb_ParameterSpecification', the role 'adb_ParameterSpecification410' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression411' has cardinality 0..*.
+An association connects 'adb_SimpleExpression' and 'adb_SignedIntegerTypeDefinition'. From 'adb_SimpleExpression', the role 'adb_SimpleExpression' has cardinality 0..*, and from 'adb_SignedIntegerTypeDefinition', the role 'adb_SignedIntegerTypeDefinition' has cardinality 0..*.
+An association connects 'adb_SimpleExpression' and 'adb_SignedIntegerTypeDefinition'. From 'adb_SimpleExpression', the role 'adb_SimpleExpression415' has cardinality 0..*, and from 'adb_SignedIntegerTypeDefinition', the role 'adb_SignedIntegerTypeDefinition414' has cardinality 0..*.
+An association connects 'adb_Expression' and 'adb_ModularTypeDefinition'. From 'adb_Expression', the role 'adb_Expression417' has cardinality 0..*, and from 'adb_ModularTypeDefinition', the role 'adb_ModularTypeDefinition' has cardinality 0..*.
+An association connects 'adb_RecordTypeDefinition' and 'adb_RecordDefinition'. From 'adb_RecordTypeDefinition', the role 'adb_RecordTypeDefinition' has cardinality 0..*, and from 'adb_RecordDefinition', the role 'adb_RecordDefinition419' has cardinality 0..*.
+An association connects 'adb_RecordDefinition' and 'adb_ComponentList'. From 'adb_RecordDefinition', the role 'adb_RecordDefinition421' has cardinality 0..*, and from 'adb_ComponentList', the role 'adb_ComponentList' has cardinality 0..*.
+An association connects 'adb_ComponentItem' and 'adb_ComponentList'. From 'adb_ComponentItem', the role 'adb_ComponentItem' has cardinality 0..*, and from 'adb_ComponentList', the role 'adb_ComponentList423' has cardinality 0..*.
+An association connects 'adb_OptVariantPart' and 'adb_ComponentList'. From 'adb_OptVariantPart', the role 'adb_OptVariantPart' has cardinality 0..*, and from 'adb_ComponentList', the role 'adb_ComponentList425' has cardinality 0..*.
+An association connects 'adb_VariantPart' and 'adb_OptVariantPart'. From 'adb_VariantPart', the role 'adb_VariantPart' has cardinality 0..*, and from 'adb_OptVariantPart', the role 'adb_OptVariantPart427' has cardinality 0..*.
+An association connects 'adb_ComponentDeclaration' and 'adb_DefiningIdentifierList'. From 'adb_ComponentDeclaration', the role 'adb_ComponentDeclaration' has cardinality 0..*, and from 'adb_DefiningIdentifierList', the role 'adb_DefiningIdentifierList429' has cardinality 0..*.
+An association connects 'adb_ComponentDefinition' and 'adb_ComponentDeclaration'. From 'adb_ComponentDefinition', the role 'adb_ComponentDefinition432' has cardinality 0..*, and from 'adb_ComponentDeclaration', the role 'adb_ComponentDeclaration431' has cardinality 0..*.
+An association connects 'adb_ComponentDeclaration' and 'adb_Expression'. From 'adb_ComponentDeclaration', the role 'adb_ComponentDeclaration434' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression435' has cardinality 0..*.
+An association connects 'adb_AspectClause' and 'adb_Expression'. From 'adb_AspectClause', the role 'adb_AspectClause' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression437' has cardinality 0..*.
+An association connects 'adb_ModClause' and 'adb_AspectClause'. From 'adb_ModClause', the role 'adb_ModClause' has cardinality 0..*, and from 'adb_AspectClause', the role 'adb_AspectClause439' has cardinality 0..*.
+An association connects 'adb_AspectClause' and 'adb_ComponentClause'. From 'adb_AspectClause', the role 'adb_AspectClause441' has cardinality 0..*, and from 'adb_ComponentClause', the role 'adb_ComponentClause' has cardinality 0..*.
+An association connects 'adb_Expression' and 'adb_ModClause'. From 'adb_Expression', the role 'adb_Expression444' has cardinality 0..*, and from 'adb_ModClause', the role 'adb_ModClause443' has cardinality 0..*.
+An association connects 'adb_ComponentClause' and 'adb_Expression'. From 'adb_ComponentClause', the role 'adb_ComponentClause446' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression447' has cardinality 0..*.
+An association connects 'adb_ComponentClause' and 'adb_SimpleExpression'. From 'adb_ComponentClause', the role 'adb_ComponentClause449' has cardinality 0..*, and from 'adb_SimpleExpression', the role 'adb_SimpleExpression450' has cardinality 0..*.
+An association connects 'adb_SimpleExpression' and 'adb_ComponentClause'. From 'adb_SimpleExpression', the role 'adb_SimpleExpression453' has cardinality 0..*, and from 'adb_ComponentClause', the role 'adb_ComponentClause452' has cardinality 0..*.
+An association connects 'adb_Variant' and 'adb_VariantPart'. From 'adb_Variant', the role 'adb_Variant' has cardinality 0..*, and from 'adb_VariantPart', the role 'adb_VariantPart455' has cardinality 0..*.
+An association connects 'adb_DiscreteChoiceList' and 'adb_Variant'. From 'adb_DiscreteChoiceList', the role 'adb_DiscreteChoiceList458' has cardinality 0..*, and from 'adb_Variant', the role 'adb_Variant457' has cardinality 0..*.
+An association connects 'adb_Variant' and 'adb_ComponentList'. From 'adb_Variant', the role 'adb_Variant460' has cardinality 0..*, and from 'adb_ComponentList', the role 'adb_ComponentList461' has cardinality 0..*.
+An association connects 'adb_DiscreteChoiceList' and 'adb_DiscreteChoice'. From 'adb_DiscreteChoiceList', the role 'adb_DiscreteChoiceList463' has cardinality 0..*, and from 'adb_DiscreteChoice', the role 'adb_DiscreteChoice' has cardinality 0..*.
+An association connects 'adb_Expression' and 'adb_RealTypeDefinition'. From 'adb_Expression', the role 'adb_Expression465' has cardinality 0..*, and from 'adb_RealTypeDefinition', the role 'adb_RealTypeDefinition' has cardinality 0..*.
+An association connects 'adb_RealRangeSpecification' and 'adb_RealTypeDefinition'. From 'adb_RealRangeSpecification', the role 'adb_RealRangeSpecification' has cardinality 0..*, and from 'adb_RealTypeDefinition', the role 'adb_RealTypeDefinition467' has cardinality 0..*.
+An association connects 'adb_SimpleExpression' and 'adb_RealRangeSpecification'. From 'adb_SimpleExpression', the role 'adb_SimpleExpression470' has cardinality 0..*, and from 'adb_RealRangeSpecification', the role 'adb_RealRangeSpecification469' has cardinality 0..*.
+An association connects 'adb_SimpleExpression' and 'adb_RealRangeSpecification'. From 'adb_SimpleExpression', the role 'adb_SimpleExpression473' has cardinality 0..*, and from 'adb_RealRangeSpecification', the role 'adb_RealRangeSpecification472' has cardinality 0..*.
+An association connects 'adb_Expression' and 'adb_FixedPointDefinition'. From 'adb_Expression', the role 'adb_Expression475' has cardinality 0..*, and from 'adb_FixedPointDefinition', the role 'adb_FixedPointDefinition' has cardinality 0..*.
+An association connects 'adb_Expression' and 'adb_Relation'. From 'adb_Expression', the role 'adb_Expression477' has cardinality 0..*, and from 'adb_Relation', the role 'adb_Relation' has cardinality 0..*.
+An association connects 'adb_Relation' and 'adb_SimpleExpression'. From 'adb_Relation', the role 'adb_Relation479' has cardinality 0..*, and from 'adb_SimpleExpression', the role 'adb_SimpleExpression480' has cardinality 0..*.
+An association connects 'adb_SimpleExpression' and 'adb_Relation'. From 'adb_SimpleExpression', the role 'adb_SimpleExpression483' has cardinality 0..*, and from 'adb_Relation', the role 'adb_Relation482' has cardinality 0..*.
+An association connects 'adb_Relation' and 'adb_Membership'. From 'adb_Relation', the role 'adb_Relation485' has cardinality 0..*, and from 'adb_Membership', the role 'adb_Membership' has cardinality 0..*.
+An association connects 'adb_Interval' and 'adb_Membership'. From 'adb_Interval', the role 'adb_Interval' has cardinality 0..*, and from 'adb_Membership', the role 'adb_Membership487' has cardinality 0..*.
+An association connects 'adb_Term' and 'adb_SimpleExpression'. From 'adb_Term', the role 'adb_Term' has cardinality 0..*, and from 'adb_SimpleExpression', the role 'adb_SimpleExpression489' has cardinality 0..*.
+An association connects 'adb_Factor' and 'adb_Term'. From 'adb_Factor', the role 'adb_Factor' has cardinality 0..*, and from 'adb_Term', the role 'adb_Term491' has cardinality 0..*.
+An association connects 'adb_Factor' and 'adb_Primary'. From 'adb_Factor', the role 'adb_Factor493' has cardinality 0..*, and from 'adb_Primary', the role 'adb_Primary' has cardinality 0..*.
+An association connects 'adb_Factor' and 'adb_Primary'. From 'adb_Factor', the role 'adb_Factor495' has cardinality 0..*, and from 'adb_Primary', the role 'adb_Primary496' has cardinality 0..*.
+An association connects 'adb_QualifiedName' and 'adb_Name'. From 'adb_QualifiedName', the role 'adb_QualifiedName' has cardinality 0..*, and from 'adb_Name', the role 'adb_Name498' has cardinality 0..*.
+An association connects 'adb_Qualifier' and 'adb_QualifiedName'. From 'adb_Qualifier', the role 'adb_Qualifier' has cardinality 0..*, and from 'adb_QualifiedName', the role 'adb_QualifiedName500' has cardinality 0..*.
+An association connects 'adb_Name' and 'adb_Allocator'. From 'adb_Name', the role 'adb_Name502' has cardinality 0..*, and from 'adb_Allocator', the role 'adb_Allocator' has cardinality 0..*.
+An association connects 'adb_Qualifier' and 'adb_Allocator'. From 'adb_Qualifier', the role 'adb_Qualifier505' has cardinality 0..*, and from 'adb_Allocator', the role 'adb_Allocator504' has cardinality 0..*.
+An association connects 'adb_OptNullExclusion' and 'adb_SubtypeIndication'. From 'adb_OptNullExclusion', the role 'adb_OptNullExclusion508' has cardinality 0..*, and from 'adb_SubtypeIndication', the role 'adb_SubtypeIndication507' has cardinality 0..*.
+An association connects 'adb_SubtypeIndication' and 'adb_OptConstraint'. From 'adb_SubtypeIndication', the role 'adb_SubtypeIndication510' has cardinality 0..*, and from 'adb_OptConstraint', the role 'adb_OptConstraint' has cardinality 0..*.
+An association connects 'adb_OptConstraint' and 'adb_EObject'. From 'adb_OptConstraint', the role 'adb_OptConstraint512' has cardinality 0..*, and from 'adb_EObject', the role 'adb_EObject' has cardinality 0..*.
+An association connects 'adb_SimpleExpression' and 'adb_DigitsConstraint'. From 'adb_SimpleExpression', the role 'adb_SimpleExpression514' has cardinality 0..*, and from 'adb_DigitsConstraint', the role 'adb_DigitsConstraint' has cardinality 0..*.
+An association connects 'adb_RangeConstraint' and 'adb_DigitsConstraint'. From 'adb_RangeConstraint', the role 'adb_RangeConstraint' has cardinality 0..*, and from 'adb_DigitsConstraint', the role 'adb_DigitsConstraint516' has cardinality 0..*.
+An association connects 'adb_DeltaConstraint' and 'adb_SimpleExpression'. From 'adb_DeltaConstraint', the role 'adb_DeltaConstraint' has cardinality 0..*, and from 'adb_SimpleExpression', the role 'adb_SimpleExpression518' has cardinality 0..*.
+An association connects 'adb_DeltaConstraint' and 'adb_RangeConstraint'. From 'adb_DeltaConstraint', the role 'adb_DeltaConstraint520' has cardinality 0..*, and from 'adb_RangeConstraint', the role 'adb_RangeConstraint521' has cardinality 0..*.
+An association connects 'adb_DiscriminantAssociation' and 'adb_DiscriminantConstraint'. From 'adb_DiscriminantAssociation', the role 'adb_DiscriminantAssociation' has cardinality 0..*, and from 'adb_DiscriminantConstraint', the role 'adb_DiscriminantConstraint' has cardinality 0..*.
+An association connects 'adb_DiscreteRange' and 'adb_IndexConstraint'. From 'adb_DiscreteRange', the role 'adb_DiscreteRange' has cardinality 0..*, and from 'adb_IndexConstraint', the role 'adb_IndexConstraint' has cardinality 0..*.
+An association connects 'adb_DiscriminantAssociation' and 'adb_DiscriminantSelectors'. From 'adb_DiscriminantAssociation', the role 'adb_DiscriminantAssociation525' has cardinality 0..*, and from 'adb_DiscriminantSelectors', the role 'adb_DiscriminantSelectors' has cardinality 0..*.
+An association connects 'adb_DiscriminantAssociation' and 'adb_Expression'. From 'adb_DiscriminantAssociation', the role 'adb_DiscriminantAssociation527' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression528' has cardinality 0..*.
+An association connects 'adb_RecordComponentAssociation' and 'adb_RecordComponentAssociationList'. From 'adb_RecordComponentAssociation', the role 'adb_RecordComponentAssociation' has cardinality 0..*, and from 'adb_RecordComponentAssociationList', the role 'adb_RecordComponentAssociationList' has cardinality 0..*.
+An association connects 'adb_RecordComponentAssociation' and 'adb_ComponentChoiceList'. From 'adb_RecordComponentAssociation', the role 'adb_RecordComponentAssociation531' has cardinality 0..*, and from 'adb_ComponentChoiceList', the role 'adb_ComponentChoiceList' has cardinality 0..*.
+An association connects 'adb_Expression' and 'adb_InitializedComponents'. From 'adb_Expression', the role 'adb_Expression533' has cardinality 0..*, and from 'adb_InitializedComponents', the role 'adb_InitializedComponents' has cardinality 0..*.
+An association connects 'adb_ExtensionAggregate' and 'adb_AncestorPart'. From 'adb_ExtensionAggregate', the role 'adb_ExtensionAggregate' has cardinality 0..*, and from 'adb_AncestorPart', the role 'adb_AncestorPart' has cardinality 0..*.
+An association connects 'adb_RecordComponentAssociationList' and 'adb_ExtensionAggregate'. From 'adb_RecordComponentAssociationList', the role 'adb_RecordComponentAssociationList537' has cardinality 0..*, and from 'adb_ExtensionAggregate', the role 'adb_ExtensionAggregate536' has cardinality 0..*.
+An association connects 'adb_PositionalArrayAggregate' and 'adb_Expression'. From 'adb_PositionalArrayAggregate', the role 'adb_PositionalArrayAggregate' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression539' has cardinality 0..*.
+An association connects 'adb_PositionalArrayAggregate' and 'adb_Expression'. From 'adb_PositionalArrayAggregate', the role 'adb_PositionalArrayAggregate541' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression542' has cardinality 0..*.
+An association connects 'adb_ArrayComponentAssociation' and 'adb_NamedArrayAggregate'. From 'adb_ArrayComponentAssociation', the role 'adb_ArrayComponentAssociation' has cardinality 0..*, and from 'adb_NamedArrayAggregate', the role 'adb_NamedArrayAggregate' has cardinality 0..*.
+An association connects 'adb_ArrayComponentAssociation' and 'adb_DiscreteChoiceList'. From 'adb_ArrayComponentAssociation', the role 'adb_ArrayComponentAssociation545' has cardinality 0..*, and from 'adb_DiscreteChoiceList', the role 'adb_DiscreteChoiceList546' has cardinality 0..*.
+An association connects 'adb_ArrayComponentAssociation' and 'adb_Expression'. From 'adb_ArrayComponentAssociation', the role 'adb_ArrayComponentAssociation548' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression549' has cardinality 0..*.
+An association connects 'adb_PrimaryName' and 'adb_Name'. From 'adb_PrimaryName', the role 'adb_PrimaryName' has cardinality 0..*, and from 'adb_Name', the role 'adb_Name551' has cardinality 0..*.
+An association connects 'adb_ParameterAssociation' and 'adb_PrimaryName'. From 'adb_ParameterAssociation', the role 'adb_ParameterAssociation' has cardinality 0..*, and from 'adb_PrimaryName', the role 'adb_PrimaryName553' has cardinality 0..*.
+An association connects 'adb_PrimaryName' and 'adb_PrimaryName'. From 'adb_PrimaryName', the role 'adb_PrimaryName556' has cardinality 0..*, and from 'adb_PrimaryName', the role 'adb_PrimaryName554' has cardinality 0..*.
+An association connects 'adb_Name' and 'adb_PrimaryName'. From 'adb_Name', the role 'adb_Name559' has cardinality 0..*, and from 'adb_PrimaryName', the role 'adb_PrimaryName558' has cardinality 0..*.
+An association connects 'adb_PrimaryName' and 'adb_AttributeDesignator'. From 'adb_PrimaryName', the role 'adb_PrimaryName561' has cardinality 0..*, and from 'adb_AttributeDesignator', the role 'adb_AttributeDesignator' has cardinality 0..*.
+An association connects 'adb_ParameterEffectiveValue' and 'adb_ParameterAssociation'. From 'adb_ParameterEffectiveValue', the role 'adb_ParameterEffectiveValue' has cardinality 0..*, and from 'adb_ParameterAssociation', the role 'adb_ParameterAssociation563' has cardinality 0..*.
+An association connects 'adb_ParenthesizedExpression' and 'adb_AttributeDesignator'. From 'adb_ParenthesizedExpression', the role 'adb_ParenthesizedExpression' has cardinality 0..*, and from 'adb_AttributeDesignator', the role 'adb_AttributeDesignator565' has cardinality 0..*.
+An association connects 'adb_EntityRange' and 'adb_Name'. From 'adb_EntityRange', the role 'adb_EntityRange' has cardinality 0..*, and from 'adb_Name', the role 'adb_Name567' has cardinality 0..*.
+An association connects 'adb_EntityRange' and 'adb_Expression'. From 'adb_EntityRange', the role 'adb_EntityRange569' has cardinality 0..*, and from 'adb_Expression', the role 'adb_Expression570' has cardinality 0..*.
+An association connects 'adb_ExplicitRange' and 'adb_SimpleExpression'. From 'adb_ExplicitRange', the role 'adb_ExplicitRange' has cardinality 0..*, and from 'adb_SimpleExpression', the role 'adb_SimpleExpression572' has cardinality 0..*.
+An association connects 'adb_ExplicitRange' and 'adb_SimpleExpression'. From 'adb_ExplicitRange', the role 'adb_ExplicitRange574' has cardinality 0..*, and from 'adb_SimpleExpression', the role 'adb_SimpleExpression575' has cardinality 0..*.

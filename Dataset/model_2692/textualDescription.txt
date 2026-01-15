@@ -1,0 +1,60 @@
+The domain model 'multiview3' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'multiview3_E' represents an important domain concept.
+It does not declare any attributes.
+
+'multiview3_H' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'multiview3_W' represents an important domain concept.
+It does not declare any attributes.
+
+'multiview3_B' represents an important domain concept.
+It does not declare any attributes.
+
+'multiview3_F' represents an important domain concept.
+It does not declare any attributes.
+
+'multiview3_M' represents an important domain concept.
+It does not declare any attributes.
+
+'multiview3_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'multiview3_C' represents an important domain concept.
+It does not declare any attributes.
+
+'multiview3_K' represents an important domain concept.
+It does not declare any attributes.
+
+'multiview3_A' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'multiview3_A' is a specialization of 'Named'.
+The class 'multiview3_B' is a specialization of 'Named'.
+The class 'multiview3_C' is a specialization of 'Named'.
+The class 'multiview3_E' is a specialization of 'Named'.
+The class 'multiview3_F' is a specialization of 'Named'.
+The class 'multiview3_H' is a specialization of 'Named'.
+The class 'multiview3_K' is a specialization of 'Named'.
+The class 'multiview3_M' is a specialization of 'Named'.
+The class 'multiview3_W' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'multiview3_A' and 'multiview3_B'. From 'multiview3_A', the role 'multiview3_A' has cardinality 0..*, and from 'multiview3_B', the role 'multiview3_B' has cardinality 0..*.
+An association connects 'multiview3_A' and 'multiview3_E'. From 'multiview3_A', the role 'multiview3_A2' has cardinality 0..*, and from 'multiview3_E', the role 'multiview3_E' has cardinality 0..*.
+An association connects 'multiview3_K' and 'multiview3_A'. From 'multiview3_K', the role 'multiview3_K' has cardinality 0..*, and from 'multiview3_A', the role 'multiview3_A4' has cardinality 0..*.
+An association connects 'multiview3_B' and 'multiview3_C'. From 'multiview3_B', the role 'multiview3_B6' has cardinality 0..*, and from 'multiview3_C', the role 'multiview3_C' has cardinality 0..*.
+An association connects 'multiview3_F' and 'multiview3_B'. From 'multiview3_F', the role 'multiview3_F' has cardinality 0..*, and from 'multiview3_B', the role 'multiview3_B8' has cardinality 0..*.
+An association connects 'multiview3_C' and 'multiview3_H'. From 'multiview3_C', the role 'multiview3_C10' has cardinality 0..*, and from 'multiview3_H', the role 'multiview3_H' has cardinality 0..*.
+An association connects 'multiview3_K' and 'multiview3_C'. From 'multiview3_K', the role 'multiview3_K13' has cardinality 0..*, and from 'multiview3_C', the role 'multiview3_C12' has cardinality 0..*.
+An association connects 'multiview3_F' and 'multiview3_E'. From 'multiview3_F', the role 'multiview3_F16' has cardinality 0..*, and from 'multiview3_E', the role 'multiview3_E15' has cardinality 0..*.
+An association connects 'multiview3_W' and 'multiview3_E'. From 'multiview3_W', the role 'multiview3_W' has cardinality 0..*, and from 'multiview3_E', the role 'multiview3_E18' has cardinality 0..*.
+An association connects 'multiview3_F' and 'multiview3_M'. From 'multiview3_F', the role 'multiview3_F20' has cardinality 0..*, and from 'multiview3_M', the role 'multiview3_M' has cardinality 0..*.
+An association connects 'multiview3_C' and 'multiview3_W'. From 'multiview3_C', the role 'multiview3_C23' has cardinality 0..*, and from 'multiview3_W', the role 'multiview3_W22' has cardinality 0..*.

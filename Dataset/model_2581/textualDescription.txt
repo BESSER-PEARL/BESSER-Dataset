@@ -1,0 +1,277 @@
+The domain model 'vql' describes the core structural elements and their relationships within the system.
+
+The model defines 63 main class(es).
+
+'vql_Parameter' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'vql_PatternModel' represents an important domain concept.
+It has one attribute: 'packageName', which is of type str.
+
+'vql_XBooleanLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_JavaType' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_CallableRelation' represents an important domain concept.
+It has one attribute: 'transitive', which is of type str.
+
+'vql_PatternCompositionConstraint' represents an important domain concept.
+It has one attribute: 'negative', which is of type bool.
+
+'vql_AnnotationParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'vql_LiteralValueReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_VariableReference' represents an important domain concept.
+It has the following attributes: 'aggregator', which is of type bool; 'var', which is of type str.
+
+'vql_PatternBody' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'vql_StringValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'vql_Type' represents an important domain concept.
+It has one attribute: 'typename', which is of type str.
+
+'vql_BoolValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'EntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_EntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_ListValue' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_UnaryTypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ComputationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'vql_ValueReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_RelationType' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_CompareConstraint' represents an important domain concept.
+It has one attribute: 'feature', which is of type str.
+
+'vql_NumberValue' represents an important domain concept.
+It has one attribute: 'negative', which is of type bool.
+
+'ValueReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_FunctionEvaluationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_ComputationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_EEnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_JvmType' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryTypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_EClassifierConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_Pattern' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'vql_EnumValue' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_ReferenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_EEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_PatternImport' represents an important domain concept.
+It has one attribute: 'packageName', which is of type str.
+
+'vql_XNumberLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_XExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_VQLImportSection' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_ParameterRef' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralValueReference' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_PackageImport' represents an important domain concept.
+It has one attribute: 'alias', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_ClassType' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationType' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'XImportSection' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_PatternCall' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_AggregatedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_PathExpressionConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_LocalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_CheckConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_Modifiers' represents an important domain concept.
+It has the following attributes: 'private', which is of type bool; 'execution', which is of type str.
+
+'vql_TypeCheckConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_JvmDeclaredType' represents an important domain concept.
+It does not declare any attributes.
+
+'CallableRelation' represents an important domain concept.
+It does not declare any attributes.
+
+'vql_Annotation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CompareFeature' defines the following possible values: 'equality', 'inequality'.
+The enumeration 'ParameterDirection' defines the following possible values: 'inout', 'out', 'in'.
+The enumeration 'ClosureType' defines the following possible values: 'transitive', 'original', 'reflexive_transitive'.
+The enumeration 'ExecutionType' defines the following possible values: 'unspecified', 'incremental', 'search'.
+
+The model also captures inheritance relationships between classes.
+The class 'vql_VQLImportSection' is a specialization of 'XImportSection'.
+The class 'vql_EClassifierConstraint' is a specialization of 'Constraint'.
+The class 'vql_EClassifierConstraint' is a specialization of 'UnaryTypeConstraint'.
+The class 'vql_EnumValue' is a specialization of 'ValueReference'.
+The class 'vql_ClassType' is a specialization of 'EntityType'.
+The class 'vql_ReferenceType' is a specialization of 'RelationType'.
+The class 'vql_Variable' is a specialization of 'Expression'.
+The class 'vql_VariableReference' is a specialization of 'ValueReference'.
+The class 'vql_EntityType' is a specialization of 'Type'.
+The class 'vql_PatternCall' is a specialization of 'CallableRelation'.
+The class 'vql_ValueReference' is a specialization of 'Expression'.
+The class 'vql_LiteralValueReference' is a specialization of 'ValueReference'.
+The class 'vql_ComputationValue' is a specialization of 'ValueReference'.
+The class 'vql_ParameterRef' is a specialization of 'Variable'.
+The class 'vql_Parameter' is a specialization of 'Variable'.
+The class 'vql_LocalVariable' is a specialization of 'Variable'.
+The class 'vql_JavaType' is a specialization of 'EntityType'.
+The class 'vql_RelationType' is a specialization of 'Type'.
+The class 'vql_TypeCheckConstraint' is a specialization of 'Constraint'.
+The class 'vql_TypeCheckConstraint' is a specialization of 'UnaryTypeConstraint'.
+The class 'vql_PatternCompositionConstraint' is a specialization of 'Constraint'.
+The class 'vql_CompareConstraint' is a specialization of 'Constraint'.
+The class 'vql_CheckConstraint' is a specialization of 'Constraint'.
+The class 'vql_PathExpressionConstraint' is a specialization of 'Constraint'.
+The class 'vql_PathExpressionConstraint' is a specialization of 'CallableRelation'.
+The class 'vql_StringValue' is a specialization of 'LiteralValueReference'.
+The class 'vql_NumberValue' is a specialization of 'LiteralValueReference'.
+The class 'vql_BoolValue' is a specialization of 'LiteralValueReference'.
+The class 'vql_ListValue' is a specialization of 'LiteralValueReference'.
+The class 'vql_FunctionEvaluationValue' is a specialization of 'ComputationValue'.
+The class 'vql_AggregatedValue' is a specialization of 'ComputationValue'.
+The class 'vql_UnaryTypeConstraint' is a specialization of 'CallableRelation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'vql_PackageImport' and 'vql_VQLImportSection'. From 'vql_PackageImport', the role 'vql_PackageImport' has cardinality 0..*, and from 'vql_VQLImportSection', the role 'vql_VQLImportSection' has cardinality 0..*.
+An association connects 'vql_VQLImportSection' and 'vql_PatternImport'. From 'vql_VQLImportSection', the role 'vql_VQLImportSection2' has cardinality 0..*, and from 'vql_PatternImport', the role 'vql_PatternImport' has cardinality 0..*.
+An association connects 'vql_EPackage' and 'vql_PackageImport'. From 'vql_EPackage', the role 'vql_EPackage' has cardinality 0..*, and from 'vql_PackageImport', the role 'vql_PackageImport4' has cardinality 0..*.
+An association connects 'vql_PatternImport' and 'vql_Pattern'. From 'vql_PatternImport', the role 'vql_PatternImport6' has cardinality 0..*, and from 'vql_Pattern', the role 'vql_Pattern' has cardinality 0..*.
+An association connects 'vql_Pattern' and 'vql_PatternImport'. From 'vql_Pattern', the role 'vql_Pattern9' has cardinality 0..*, and from 'vql_PatternImport', the role 'vql_PatternImport8' has cardinality 0..*.
+An association connects 'vql_EEnum' and 'vql_EnumValue'. From 'vql_EEnum', the role 'vql_EEnum' has cardinality 0..*, and from 'vql_EnumValue', the role 'vql_EnumValue' has cardinality 0..*.
+An association connects 'vql_EnumValue' and 'vql_EEnumLiteral'. From 'vql_EnumValue', the role 'vql_EnumValue12' has cardinality 0..*, and from 'vql_EEnumLiteral', the role 'vql_EEnumLiteral' has cardinality 0..*.
+An association connects 'vql_VQLImportSection' and 'vql_PatternModel'. From 'vql_VQLImportSection', the role 'vql_VQLImportSection14' has cardinality 0..*, and from 'vql_PatternModel', the role 'vql_PatternModel' has cardinality 0..*.
+An association connects 'vql_PatternModel' and 'vql_Pattern'. From 'vql_PatternModel', the role 'vql_PatternModel16' has cardinality 0..*, and from 'vql_Pattern', the role 'vql_Pattern17' has cardinality 0..*.
+An association connects 'vql_PackageImport' and 'vql_ClassType'. From 'vql_PackageImport', the role 'vql_PackageImport19' has cardinality 0..*, and from 'vql_ClassType', the role 'vql_ClassType' has cardinality 0..*.
+An association connects 'vql_EClassifier' and 'vql_ClassType'. From 'vql_EClassifier', the role 'vql_EClassifier' has cardinality 0..*, and from 'vql_ClassType', the role 'vql_ClassType21' has cardinality 0..*.
+An association connects 'vql_EStructuralFeature' and 'vql_ReferenceType'. From 'vql_EStructuralFeature', the role 'vql_EStructuralFeature' has cardinality 0..*, and from 'vql_ReferenceType', the role 'vql_ReferenceType' has cardinality 0..*.
+An association connects 'vql_Pattern' and 'vql_Annotation'. From 'vql_Pattern', the role 'vql_Pattern24' has cardinality 0..*, and from 'vql_Annotation', the role 'vql_Annotation' has cardinality 0..*.
+An association connects 'vql_Pattern' and 'vql_Modifiers'. From 'vql_Pattern', the role 'vql_Pattern26' has cardinality 0..*, and from 'vql_Modifiers', the role 'vql_Modifiers' has cardinality 0..*.
+An association connects 'vql_Variable' and 'vql_Pattern'. From 'vql_Variable', the role 'vql_Variable' has cardinality 0..*, and from 'vql_Pattern', the role 'vql_Pattern28' has cardinality 0..*.
+An association connects 'vql_PatternBody' and 'vql_Pattern'. From 'vql_PatternBody', the role 'vql_PatternBody' has cardinality 0..*, and from 'vql_Pattern', the role 'vql_Pattern30' has cardinality 0..*.
+An association connects 'vql_AnnotationParameter' and 'vql_Annotation'. From 'vql_AnnotationParameter', the role 'vql_AnnotationParameter' has cardinality 0..*, and from 'vql_Annotation', the role 'vql_Annotation32' has cardinality 0..*.
+An association connects 'vql_AnnotationParameter' and 'vql_ValueReference'. From 'vql_AnnotationParameter', the role 'vql_AnnotationParameter34' has cardinality 0..*, and from 'vql_ValueReference', the role 'vql_ValueReference' has cardinality 0..*.
+An association connects 'vql_Variable' and 'vql_Type'. From 'vql_Variable', the role 'vql_Variable36' has cardinality 0..*, and from 'vql_Type', the role 'vql_Type' has cardinality 0..*.
+An association connects 'vql_Variable' and 'vql_VariableReference'. From 'vql_Variable', the role 'vql_Variable38' has cardinality 0..*, and from 'vql_VariableReference', the role 'vql_VariableReference' has cardinality 0..*.
+An association connects 'vql_PatternBody' and 'vql_Constraint'. From 'vql_PatternBody', the role 'vql_PatternBody40' has cardinality 0..*, and from 'vql_Constraint', the role 'vql_Constraint' has cardinality 0..*.
+An association connects 'vql_PatternBody' and 'vql_Variable'. From 'vql_PatternBody', the role 'vql_PatternBody42' has cardinality 0..*, and from 'vql_Variable', the role 'vql_Variable43' has cardinality 0..*.
+An association connects 'vql_Pattern' and 'vql_PatternCall'. From 'vql_Pattern', the role 'vql_Pattern45' has cardinality 0..*, and from 'vql_PatternCall', the role 'vql_PatternCall' has cardinality 0..*.
+An association connects 'vql_PatternCall' and 'vql_ValueReference'. From 'vql_PatternCall', the role 'vql_PatternCall47' has cardinality 0..*, and from 'vql_ValueReference', the role 'vql_ValueReference48' has cardinality 0..*.
+An association connects 'vql_Variable' and 'vql_ParameterRef'. From 'vql_Variable', the role 'vql_Variable50' has cardinality 0..*, and from 'vql_ParameterRef', the role 'vql_ParameterRef' has cardinality 0..*.
+An association connects 'vql_JavaType' and 'vql_JvmDeclaredType'. From 'vql_JavaType', the role 'vql_JavaType' has cardinality 0..*, and from 'vql_JvmDeclaredType', the role 'vql_JvmDeclaredType' has cardinality 0..*.
+An association connects 'vql_PatternCompositionConstraint' and 'vql_CallableRelation'. From 'vql_PatternCompositionConstraint', the role 'vql_PatternCompositionConstraint' has cardinality 0..*, and from 'vql_CallableRelation', the role 'vql_CallableRelation' has cardinality 0..*.
+An association connects 'vql_CompareConstraint' and 'vql_ValueReference'. From 'vql_CompareConstraint', the role 'vql_CompareConstraint' has cardinality 0..*, and from 'vql_ValueReference', the role 'vql_ValueReference54' has cardinality 0..*.
+An association connects 'vql_CompareConstraint' and 'vql_ValueReference'. From 'vql_CompareConstraint', the role 'vql_CompareConstraint56' has cardinality 0..*, and from 'vql_ValueReference', the role 'vql_ValueReference57' has cardinality 0..*.
+An association connects 'vql_XExpression' and 'vql_CheckConstraint'. From 'vql_XExpression', the role 'vql_XExpression' has cardinality 0..*, and from 'vql_CheckConstraint', the role 'vql_CheckConstraint' has cardinality 0..*.
+An association connects 'vql_ReferenceType' and 'vql_PathExpressionConstraint'. From 'vql_ReferenceType', the role 'vql_ReferenceType60' has cardinality 0..*, and from 'vql_PathExpressionConstraint', the role 'vql_PathExpressionConstraint' has cardinality 0..*.
+An association connects 'vql_ClassType' and 'vql_PathExpressionConstraint'. From 'vql_ClassType', the role 'vql_ClassType63' has cardinality 0..*, and from 'vql_PathExpressionConstraint', the role 'vql_PathExpressionConstraint62' has cardinality 0..*.
+An association connects 'vql_PathExpressionConstraint' and 'vql_VariableReference'. From 'vql_PathExpressionConstraint', the role 'vql_PathExpressionConstraint65' has cardinality 0..*, and from 'vql_VariableReference', the role 'vql_VariableReference66' has cardinality 0..*.
+An association connects 'vql_PathExpressionConstraint' and 'vql_ValueReference'. From 'vql_PathExpressionConstraint', the role 'vql_PathExpressionConstraint68' has cardinality 0..*, and from 'vql_ValueReference', the role 'vql_ValueReference69' has cardinality 0..*.
+An association connects 'vql_XNumberLiteral' and 'vql_NumberValue'. From 'vql_XNumberLiteral', the role 'vql_XNumberLiteral' has cardinality 0..*, and from 'vql_NumberValue', the role 'vql_NumberValue' has cardinality 0..*.
+An association connects 'vql_XBooleanLiteral' and 'vql_BoolValue'. From 'vql_XBooleanLiteral', the role 'vql_XBooleanLiteral' has cardinality 0..*, and from 'vql_BoolValue', the role 'vql_BoolValue' has cardinality 0..*.
+An association connects 'vql_ValueReference' and 'vql_ListValue'. From 'vql_ValueReference', the role 'vql_ValueReference73' has cardinality 0..*, and from 'vql_ListValue', the role 'vql_ListValue' has cardinality 0..*.
+An association connects 'vql_FunctionEvaluationValue' and 'vql_XExpression'. From 'vql_FunctionEvaluationValue', the role 'vql_FunctionEvaluationValue' has cardinality 0..*, and from 'vql_XExpression', the role 'vql_XExpression75' has cardinality 0..*.
+An association connects 'vql_AggregatedValue' and 'vql_JvmDeclaredType'. From 'vql_AggregatedValue', the role 'vql_AggregatedValue' has cardinality 0..*, and from 'vql_JvmDeclaredType', the role 'vql_JvmDeclaredType77' has cardinality 0..*.
+An association connects 'vql_CallableRelation' and 'vql_AggregatedValue'. From 'vql_CallableRelation', the role 'vql_CallableRelation80' has cardinality 0..*, and from 'vql_AggregatedValue', the role 'vql_AggregatedValue79' has cardinality 0..*.
+An association connects 'vql_JvmType' and 'vql_AggregatedValue'. From 'vql_JvmType', the role 'vql_JvmType' has cardinality 0..*, and from 'vql_AggregatedValue', the role 'vql_AggregatedValue82' has cardinality 0..*.
+An association connects 'vql_EntityType' and 'vql_UnaryTypeConstraint'. From 'vql_EntityType', the role 'vql_EntityType' has cardinality 0..*, and from 'vql_UnaryTypeConstraint', the role 'vql_UnaryTypeConstraint' has cardinality 0..*.
+An association connects 'vql_VariableReference' and 'vql_UnaryTypeConstraint'. From 'vql_VariableReference', the role 'vql_VariableReference86' has cardinality 0..*, and from 'vql_UnaryTypeConstraint', the role 'vql_UnaryTypeConstraint85' has cardinality 0..*.

@@ -1,0 +1,31 @@
+The domain model 'domainmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'domainmodel_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_Domainmodel' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'domainmodel_Feature' represents an important domain concept.
+It has the following attributes: 'not', which is of type str; 'key', which is of type str; 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'domainmodel_DataType' is a specialization of 'Type'.
+The class 'domainmodel_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'domainmodel_Type' and 'domainmodel_Domainmodel'. From 'domainmodel_Type', the role 'domainmodel_Type' has cardinality 0..*, and from 'domainmodel_Domainmodel', the role 'domainmodel_Domainmodel' has cardinality 0..*.
+An association connects 'domainmodel_Entity' and 'domainmodel_Entity'. From 'domainmodel_Entity', the role 'domainmodel_Entity1' has cardinality 0..*, and from 'domainmodel_Entity', the role 'domainmodel_Entity' has cardinality 0..*.
+An association connects 'domainmodel_Feature' and 'domainmodel_Entity'. From 'domainmodel_Feature', the role 'domainmodel_Feature' has cardinality 0..*, and from 'domainmodel_Entity', the role 'domainmodel_Entity4' has cardinality 0..*.
+An association connects 'domainmodel_Type' and 'domainmodel_Feature'. From 'domainmodel_Type', the role 'domainmodel_Type7' has cardinality 0..*, and from 'domainmodel_Feature', the role 'domainmodel_Feature6' has cardinality 0..*.

@@ -1,0 +1,170 @@
+The domain model 'conversation' describes the core structural elements and their relationships within the system.
+
+The model defines 36 main class(es).
+
+'conversation_Join' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_Agent' represents an important domain concept.
+It has the following attributes: 'stateMachineType', which is of type str; 'name', which is of type str; 'accessRequirement', which is of type str; 'connectionType', which is of type str.
+
+'conversation_State' represents an important domain concept.
+It has the following attributes: 'requiresExecution', which is of type bool; 'name', which is of type str; 'join', which is of type bool.
+
+'conversation_TypeImport' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_SubscribableByOthers' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_PubliclyPublishable' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PublishableByMe' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_PublishableByMe' represents an important domain concept.
+It does not declare any attributes.
+
+'PublishableByOthers' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_Junction' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_PrivatePubSub' represents an important domain concept.
+It does not declare any attributes.
+
+'PubliclyPublishable' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_Import' represents an important domain concept.
+It has one attribute: 'alias', which is of type str.
+
+'conversation_RestService' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_PubliclySubscribable' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_SubscribableByMe' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_Transition' represents an important domain concept.
+It has one attribute: 'requiresExecution', which is of type bool.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_AgentImport' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_View' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_Projection' represents an important domain concept.
+It does not declare any attributes.
+
+'SubscribableByMe' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_PublicPubSub' represents an important domain concept.
+It does not declare any attributes.
+
+'SubscribableByOthers' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_PublicEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'PubliclySubscribable' represents an important domain concept.
+It does not declare any attributes.
+
+'Import' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_Decision' represents an important domain concept.
+It does not declare any attributes.
+
+'PublicEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_PublishableByOthers' represents an important domain concept.
+It does not declare any attributes.
+
+'conversation_Conversation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'conversation_ProjectionField' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ConnectionType' defines the following possible values: 'dependent', 'independent'.
+The enumeration 'StateMachineType' defines the following possible values: 'stateless', 'infinite', 'finite'.
+
+The model also captures inheritance relationships between classes.
+The class 'conversation_Decision' is a specialization of 'State'.
+The class 'conversation_SubscribableByOthers' is a specialization of 'Event'.
+The class 'conversation_PublishableByOthers' is a specialization of 'Event'.
+The class 'conversation_SubscribableByMe' is a specialization of 'Event'.
+The class 'conversation_PublishableByMe' is a specialization of 'Event'.
+The class 'conversation_PublicEvent' is a specialization of 'Event'.
+The class 'conversation_PubliclyPublishable' is a specialization of 'SubscribableByMe'.
+The class 'conversation_PubliclyPublishable' is a specialization of 'PublishableByOthers'.
+The class 'conversation_PubliclyPublishable' is a specialization of 'PublicEvent'.
+The class 'conversation_PubliclySubscribable' is a specialization of 'PublishableByMe'.
+The class 'conversation_PubliclySubscribable' is a specialization of 'SubscribableByOthers'.
+The class 'conversation_PubliclySubscribable' is a specialization of 'PublicEvent'.
+The class 'conversation_PrivatePubSub' is a specialization of 'PublishableByMe'.
+The class 'conversation_PrivatePubSub' is a specialization of 'SubscribableByMe'.
+The class 'conversation_PublicPubSub' is a specialization of 'PubliclyPublishable'.
+The class 'conversation_PublicPubSub' is a specialization of 'PubliclySubscribable'.
+The class 'conversation_AgentImport' is a specialization of 'Import'.
+The class 'conversation_TypeImport' is a specialization of 'Import'.
+The class 'conversation_Join' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'conversation_Agent' and 'conversation_Conversation'. From 'conversation_Agent', the role 'Agent' has cardinality 0..*, and from 'conversation_Conversation', the role 'parent' has cardinality 0..*.
+An association connects 'conversation_Projection' and 'conversation_Conversation'. From 'conversation_Projection', the role 'conversation_Projection' has cardinality 0..*, and from 'conversation_Conversation', the role 'conversation_Conversation' has cardinality 0..*.
+An association connects 'conversation_Conversation' and 'conversation_RestService'. From 'conversation_Conversation', the role 'conversation_Conversation3' has cardinality 0..*, and from 'conversation_RestService', the role 'conversation_RestService' has cardinality 0..*.
+An association connects 'conversation_Service' and 'conversation_Conversation'. From 'conversation_Service', the role 'conversation_Service' has cardinality 0..*, and from 'conversation_Conversation', the role 'conversation_Conversation5' has cardinality 0..*.
+An association connects 'conversation_Conversation' and 'conversation_TypeImport'. From 'conversation_Conversation', the role 'conversation_Conversation7' has cardinality 0..*, and from 'conversation_TypeImport', the role 'conversation_TypeImport' has cardinality 0..*.
+An association connects 'conversation_AgentImport' and 'conversation_Conversation'. From 'conversation_AgentImport', the role 'conversation_AgentImport' has cardinality 0..*, and from 'conversation_Conversation', the role 'conversation_Conversation9' has cardinality 0..*.
+An association connects 'conversation_View' and 'conversation_Conversation'. From 'conversation_View', the role 'conversation_View' has cardinality 0..*, and from 'conversation_Conversation', the role 'conversation_Conversation11' has cardinality 0..*.
+An association connects 'conversation_Projection' and 'conversation_Agent'. From 'conversation_Projection', the role 'conversation_Projection13' has cardinality 0..*, and from 'conversation_Agent', the role 'conversation_Agent' has cardinality 0..*.
+An association connects 'conversation_StateMachine' and 'conversation_Agent'. From 'conversation_StateMachine', the role 'StateMachine' has cardinality 0..*, and from 'conversation_Agent', the role 'parent15' has cardinality 0..*.
+An association connects 'conversation_Agent' and 'conversation_PubliclySubscribable'. From 'conversation_Agent', the role 'parent17' has cardinality 0..*, and from 'conversation_PubliclySubscribable', the role 'PubliclySubscribable' has cardinality 0..*.
+An association connects 'conversation_Conversation' and 'conversation_Agent'. From 'conversation_Conversation', the role 'Conversation' has cardinality 0..*, and from 'conversation_Agent', the role 'agents' has cardinality 0..*.
+An association connects 'conversation_Projection' and 'conversation_Agent'. From 'conversation_Projection', the role 'conversation_Projection21' has cardinality 0..*, and from 'conversation_Agent', the role 'conversation_Agent20' has cardinality 0..*.
+An association connects 'conversation_StateMachine' and 'conversation_State'. From 'conversation_StateMachine', the role 'conversation_StateMachine' has cardinality 0..*, and from 'conversation_State', the role 'conversation_State' has cardinality 0..*.
+An association connects 'conversation_StateMachine' and 'conversation_State'. From 'conversation_StateMachine', the role 'parent24' has cardinality 0..*, and from 'conversation_State', the role 'State' has cardinality 0..*.
+An association connects 'conversation_StateMachine' and 'conversation_Agent'. From 'conversation_StateMachine', the role 'stateMachine' has cardinality 0..*, and from 'conversation_Agent', the role 'Agent26' has cardinality 0..*.
+An association connects 'conversation_StateMachine' and 'conversation_Transition'. From 'conversation_StateMachine', the role 'conversation_StateMachine28' has cardinality 0..*, and from 'conversation_Transition', the role 'conversation_Transition' has cardinality 0..*.
+An association connects 'conversation_Projection' and 'conversation_Event'. From 'conversation_Projection', the role 'conversation_Projection30' has cardinality 0..*, and from 'conversation_Event', the role 'conversation_Event' has cardinality 0..*.
+An association connects 'conversation_Transition' and 'conversation_State'. From 'conversation_Transition', the role 'conversation_Transition33' has cardinality 0..*, and from 'conversation_State', the role 'conversation_State32' has cardinality 0..*.
+An association connects 'conversation_State' and 'conversation_StateMachine'. From 'conversation_State', the role 'states' has cardinality 0..*, and from 'conversation_StateMachine', the role 'StateMachine35' has cardinality 0..*.
+An association connects 'conversation_State' and 'conversation_Transition'. From 'conversation_State', the role 'conversation_State38' has cardinality 0..*, and from 'conversation_Transition', the role 'conversation_Transition37' has cardinality 0..*.
+An association connects 'conversation_Transition' and 'conversation_SubscribableByOthers'. From 'conversation_Transition', the role 'conversation_Transition40' has cardinality 0..*, and from 'conversation_SubscribableByOthers', the role 'conversation_SubscribableByOthers' has cardinality 0..*.
+An association connects 'conversation_PrivatePubSub' and 'conversation_Transition'. From 'conversation_PrivatePubSub', the role 'PrivatePubSub' has cardinality 0..*, and from 'conversation_Transition', the role 'transition' has cardinality 0..*.
+An association connects 'conversation_PublishableByOthers' and 'conversation_Transition'. From 'conversation_PublishableByOthers', the role 'conversation_PublishableByOthers' has cardinality 0..*, and from 'conversation_Transition', the role 'conversation_Transition43' has cardinality 0..*.
+An association connects 'conversation_PublishableByMe' and 'conversation_Transition'. From 'conversation_PublishableByMe', the role 'conversation_PublishableByMe' has cardinality 0..*, and from 'conversation_Transition', the role 'conversation_Transition45' has cardinality 0..*.
+An association connects 'conversation_ProjectionField' and 'conversation_Transition'. From 'conversation_ProjectionField', the role 'conversation_ProjectionField' has cardinality 0..*, and from 'conversation_Transition', the role 'conversation_Transition47' has cardinality 0..*.
+An association connects 'conversation_Agent' and 'conversation_PubliclySubscribable'. From 'conversation_Agent', the role 'Agent49' has cardinality 0..*, and from 'conversation_PubliclySubscribable', the role 'sendables' has cardinality 0..*.
+An association connects 'conversation_PrivatePubSub' and 'conversation_Transition'. From 'conversation_PrivatePubSub', the role 'causedBy' has cardinality 0..*, and from 'conversation_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'conversation_Agent' and 'conversation_AgentImport'. From 'conversation_Agent', the role 'conversation_Agent53' has cardinality 0..*, and from 'conversation_AgentImport', the role 'conversation_AgentImport52' has cardinality 0..*.
+An association connects 'conversation_Projection' and 'conversation_TypeImport'. From 'conversation_Projection', the role 'conversation_Projection56' has cardinality 0..*, and from 'conversation_TypeImport', the role 'conversation_TypeImport55' has cardinality 0..*.
+An association connects 'conversation_Join' and 'conversation_Junction'. From 'conversation_Join', the role 'conversation_Join' has cardinality 0..*, and from 'conversation_Junction', the role 'conversation_Junction' has cardinality 0..*.
+An association connects 'conversation_Junction' and 'conversation_SubscribableByOthers'. From 'conversation_Junction', the role 'conversation_Junction59' has cardinality 0..*, and from 'conversation_SubscribableByOthers', the role 'conversation_SubscribableByOthers60' has cardinality 0..*.
+An association connects 'conversation_ProjectionField' and 'conversation_Junction'. From 'conversation_ProjectionField', the role 'conversation_ProjectionField63' has cardinality 0..*, and from 'conversation_Junction', the role 'conversation_Junction62' has cardinality 0..*.

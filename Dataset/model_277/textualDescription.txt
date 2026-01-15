@@ -1,0 +1,21 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'library_Book' represents an important domain concept.
+It has the following attributes: 'pages', which is of type int; 'category', which is of type str; 'title', which is of type str.
+
+'library_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookCategory' defines the following possible values: 'ScienceFiction', 'Biography', 'Mystery'.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_Writer' and 'library_Book'. From 'library_Writer', the role 'Writer' has cardinality 0..*, and from 'library_Book', the role 'books' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Writer'. From 'library_Library', the role 'library_Library' has cardinality 0..*, and from 'library_Writer', the role 'library_Writer' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Library'. From 'library_Book', the role 'library_Book' has cardinality 0..*, and from 'library_Library', the role 'library_Library3' has cardinality 0..*.
+An association connects 'library_Writer' and 'library_Book'. From 'library_Writer', the role 'author' has cardinality 0..*, and from 'library_Book', the role 'Book' has cardinality 0..*.

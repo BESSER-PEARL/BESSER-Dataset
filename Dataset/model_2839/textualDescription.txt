@@ -1,0 +1,329 @@
+The domain model 'backtrackingContentAssistTest' describes the core structural elements and their relationships within the system.
+
+The model defines 73 main class(es).
+
+'backtrackingContentAssistTest_Invariant' represents an important domain concept.
+It has one attribute: 'constraintName', which is of type str.
+
+'backtrackingContentAssistTest_NavigatingExp' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_SquareBracketExp' represents an important domain concept.
+It has one attribute: 'pre', which is of type bool.
+
+'backtrackingContentAssistTest_PropertyRef' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_CollectionLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_InvalidLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_StringLiteralExp' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_CollectionLiteralPart' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_OperationRef' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_PathNameExp' represents an important domain concept.
+It has one attribute: 'namespace', which is of type str.
+
+'backtrackingContentAssistTest_Pre' represents an important domain concept.
+It has one attribute: 'constraintName', which is of type str.
+
+'PackageRef' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_PackageRef' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_tuplePart' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'backtrackingContentAssistTest_Definition' represents an important domain concept.
+It has the following attributes: 'static', which is of type bool; 'constraintName', which is of type str; 'constrainedName', which is of type str.
+
+'backtrackingContentAssistTest_ClassifierRef' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_TupleLiteralPart' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'backtrackingContentAssistTest_PrefixExp' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'backtrackingContentAssistTest_PrimitiveLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_Document' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_TypeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationRef' represents an important domain concept.
+It does not declare any attributes.
+
+'NameExp' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_iteratorAccumulator' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'backtrackingContentAssistTest_SimpleNameExp' represents an important domain concept.
+It has one attribute: 'element', which is of type str.
+
+'ClassifierRef' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_ContextDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_SimplePropertyRef' represents an important domain concept.
+It has one attribute: 'feature', which is of type str.
+
+'backtrackingContentAssistTest_TupleType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'backtrackingContentAssistTest_PrimitiveType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'backtrackingContentAssistTest_OclMessageArg' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_OclMessage' represents an important domain concept.
+It has the following attributes: 'op', which is of type str; 'messageName', which is of type str.
+
+'backtrackingContentAssistTest_Der' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_NullLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_SimpleOperationRef' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+'backtrackingContentAssistTest_ClassifierContextDecl' represents an important domain concept.
+It has one attribute: 'selfName', which is of type str.
+
+'backtrackingContentAssistTest_CollectionType' represents an important domain concept.
+It has one attribute: 'typeIdentifier', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_LetVariable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'backtrackingContentAssistTest_TupleLiteralExp' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_NestedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_PropertyContextDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_InfixExp' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'backtrackingContentAssistTest_QualifiedPropertyRef' represents an important domain concept.
+It has one attribute: 'namespace', which is of type str.
+
+'backtrackingContentAssistTest_RoundBracketExp' represents an important domain concept.
+It has one attribute: 'pre', which is of type bool.
+
+'backtrackingContentAssistTest_NumberLiteralExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OclMessageArg' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_QualifiedOperationRef' represents an important domain concept.
+It has one attribute: 'namespace', which is of type str.
+
+'backtrackingContentAssistTest_Body' represents an important domain concept.
+It has one attribute: 'constraintName', which is of type str.
+
+'backtrackingContentAssistTest_SimplePackageRef' represents an important domain concept.
+It has one attribute: 'package', which is of type str.
+
+'backtrackingContentAssistTest_SelfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_LetExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeExp' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_iteratorVariable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NavigatingExp' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_IfExp' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_Post' represents an important domain concept.
+It has one attribute: 'constraintName', which is of type str.
+
+'backtrackingContentAssistTest_Init' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_PreExp' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'backtrackingContentAssistTest_OperationContextDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_PackageDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'ContextDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_BooleanLiteralExp' represents an important domain concept.
+It has one attribute: 'isTrue', which is of type bool.
+
+'backtrackingContentAssistTest_NameExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyRef' represents an important domain concept.
+It does not declare any attributes.
+
+'backtrackingContentAssistTest_QualifiedClassifierRef' represents an important domain concept.
+It has one attribute: 'namespace', which is of type str.
+
+'backtrackingContentAssistTest_SimpleClassifierRef' represents an important domain concept.
+It has one attribute: 'classifier', which is of type str.
+
+'backtrackingContentAssistTest_QualifiedPackageRef' represents an important domain concept.
+It has one attribute: 'namespace', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'backtrackingContentAssistTest_ClassifierContextDecl' is a specialization of 'ContextDecl'.
+The class 'backtrackingContentAssistTest_OperationContextDecl' is a specialization of 'ContextDecl'.
+The class 'backtrackingContentAssistTest_PropertyContextDecl' is a specialization of 'ContextDecl'.
+The class 'backtrackingContentAssistTest_QualifiedClassifierRef' is a specialization of 'ClassifierRef'.
+The class 'backtrackingContentAssistTest_QualifiedOperationRef' is a specialization of 'OperationRef'.
+The class 'backtrackingContentAssistTest_QualifiedPropertyRef' is a specialization of 'PropertyRef'.
+The class 'backtrackingContentAssistTest_QualifiedPackageRef' is a specialization of 'PackageRef'.
+The class 'backtrackingContentAssistTest_SimpleClassifierRef' is a specialization of 'ClassifierRef'.
+The class 'backtrackingContentAssistTest_SimpleOperationRef' is a specialization of 'OperationRef'.
+The class 'backtrackingContentAssistTest_SimplePackageRef' is a specialization of 'PackageRef'.
+The class 'backtrackingContentAssistTest_SimplePropertyRef' is a specialization of 'PropertyRef'.
+The class 'backtrackingContentAssistTest_Expression' is a specialization of 'NavigatingExp'.
+The class 'backtrackingContentAssistTest_Expression' is a specialization of 'OclMessageArg'.
+The class 'backtrackingContentAssistTest_PrimitiveType' is a specialization of 'TypeExp'.
+The class 'backtrackingContentAssistTest_TypeExp' is a specialization of 'Expression'.
+The class 'backtrackingContentAssistTest_CollectionType' is a specialization of 'TypeExp'.
+The class 'backtrackingContentAssistTest_CollectionType' is a specialization of 'CollectionLiteralExp'.
+The class 'backtrackingContentAssistTest_TupleType' is a specialization of 'TypeExp'.
+The class 'backtrackingContentAssistTest_CollectionLiteralExp' is a specialization of 'Expression'.
+The class 'backtrackingContentAssistTest_PrimitiveLiteralExp' is a specialization of 'Expression'.
+The class 'backtrackingContentAssistTest_TupleLiteralExp' is a specialization of 'Expression'.
+The class 'backtrackingContentAssistTest_NumberLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'backtrackingContentAssistTest_StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'backtrackingContentAssistTest_BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'backtrackingContentAssistTest_InvalidLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'backtrackingContentAssistTest_NullLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+The class 'backtrackingContentAssistTest_RoundBracketExp' is a specialization of 'Expression'.
+The class 'backtrackingContentAssistTest_SquareBracketExp' is a specialization of 'Expression'.
+The class 'backtrackingContentAssistTest_PreExp' is a specialization of 'Expression'.
+The class 'backtrackingContentAssistTest_SelfExp' is a specialization of 'Expression'.
+The class 'backtrackingContentAssistTest_NameExp' is a specialization of 'TypeExp'.
+The class 'backtrackingContentAssistTest_PathNameExp' is a specialization of 'NameExp'.
+The class 'backtrackingContentAssistTest_SimpleNameExp' is a specialization of 'NameExp'.
+The class 'backtrackingContentAssistTest_IfExp' is a specialization of 'Expression'.
+The class 'backtrackingContentAssistTest_LetExp' is a specialization of 'Expression'.
+The class 'backtrackingContentAssistTest_InfixExp' is a specialization of 'Expression'.
+The class 'backtrackingContentAssistTest_OclMessage' is a specialization of 'Expression'.
+The class 'backtrackingContentAssistTest_PrefixExp' is a specialization of 'Expression'.
+The class 'backtrackingContentAssistTest_NestedExp' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'backtrackingContentAssistTest_PackageDeclaration' and 'backtrackingContentAssistTest_Document'. From 'backtrackingContentAssistTest_PackageDeclaration', the role 'backtrackingContentAssistTest_PackageDeclaration' has cardinality 0..*, and from 'backtrackingContentAssistTest_Document', the role 'backtrackingContentAssistTest_Document' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_ContextDecl' and 'backtrackingContentAssistTest_Document'. From 'backtrackingContentAssistTest_ContextDecl', the role 'backtrackingContentAssistTest_ContextDecl' has cardinality 0..*, and from 'backtrackingContentAssistTest_Document', the role 'backtrackingContentAssistTest_Document2' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Expression' and 'backtrackingContentAssistTest_Body'. From 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression' has cardinality 0..*, and from 'backtrackingContentAssistTest_Body', the role 'backtrackingContentAssistTest_Body' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_ClassifierContextDecl' and 'backtrackingContentAssistTest_ClassifierRef'. From 'backtrackingContentAssistTest_ClassifierContextDecl', the role 'backtrackingContentAssistTest_ClassifierContextDecl' has cardinality 0..*, and from 'backtrackingContentAssistTest_ClassifierRef', the role 'backtrackingContentAssistTest_ClassifierRef' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Invariant' and 'backtrackingContentAssistTest_ClassifierContextDecl'. From 'backtrackingContentAssistTest_Invariant', the role 'backtrackingContentAssistTest_Invariant' has cardinality 0..*, and from 'backtrackingContentAssistTest_ClassifierContextDecl', the role 'backtrackingContentAssistTest_ClassifierContextDecl6' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_ClassifierContextDecl' and 'backtrackingContentAssistTest_Definition'. From 'backtrackingContentAssistTest_ClassifierContextDecl', the role 'backtrackingContentAssistTest_ClassifierContextDecl8' has cardinality 0..*, and from 'backtrackingContentAssistTest_Definition', the role 'backtrackingContentAssistTest_Definition' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Definition' and 'backtrackingContentAssistTest_Parameter'. From 'backtrackingContentAssistTest_Definition', the role 'backtrackingContentAssistTest_Definition10' has cardinality 0..*, and from 'backtrackingContentAssistTest_Parameter', the role 'backtrackingContentAssistTest_Parameter' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_TypeExp' and 'backtrackingContentAssistTest_Definition'. From 'backtrackingContentAssistTest_TypeExp', the role 'backtrackingContentAssistTest_TypeExp' has cardinality 0..*, and from 'backtrackingContentAssistTest_Definition', the role 'backtrackingContentAssistTest_Definition12' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Definition' and 'backtrackingContentAssistTest_Expression'. From 'backtrackingContentAssistTest_Definition', the role 'backtrackingContentAssistTest_Definition14' has cardinality 0..*, and from 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression15' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Expression' and 'backtrackingContentAssistTest_Der'. From 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression17' has cardinality 0..*, and from 'backtrackingContentAssistTest_Der', the role 'backtrackingContentAssistTest_Der' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Expression' and 'backtrackingContentAssistTest_Init'. From 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression19' has cardinality 0..*, and from 'backtrackingContentAssistTest_Init', the role 'backtrackingContentAssistTest_Init' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Expression' and 'backtrackingContentAssistTest_Invariant'. From 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression22' has cardinality 0..*, and from 'backtrackingContentAssistTest_Invariant', the role 'backtrackingContentAssistTest_Invariant21' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_OperationContextDecl' and 'backtrackingContentAssistTest_OperationRef'. From 'backtrackingContentAssistTest_OperationContextDecl', the role 'backtrackingContentAssistTest_OperationContextDecl' has cardinality 0..*, and from 'backtrackingContentAssistTest_OperationRef', the role 'backtrackingContentAssistTest_OperationRef' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Parameter' and 'backtrackingContentAssistTest_OperationContextDecl'. From 'backtrackingContentAssistTest_Parameter', the role 'backtrackingContentAssistTest_Parameter26' has cardinality 0..*, and from 'backtrackingContentAssistTest_OperationContextDecl', the role 'backtrackingContentAssistTest_OperationContextDecl25' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_TypeExp' and 'backtrackingContentAssistTest_OperationContextDecl'. From 'backtrackingContentAssistTest_TypeExp', the role 'backtrackingContentAssistTest_TypeExp29' has cardinality 0..*, and from 'backtrackingContentAssistTest_OperationContextDecl', the role 'backtrackingContentAssistTest_OperationContextDecl28' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_OperationContextDecl' and 'backtrackingContentAssistTest_Pre'. From 'backtrackingContentAssistTest_OperationContextDecl', the role 'backtrackingContentAssistTest_OperationContextDecl31' has cardinality 0..*, and from 'backtrackingContentAssistTest_Pre', the role 'backtrackingContentAssistTest_Pre' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_OperationContextDecl' and 'backtrackingContentAssistTest_Post'. From 'backtrackingContentAssistTest_OperationContextDecl', the role 'backtrackingContentAssistTest_OperationContextDecl33' has cardinality 0..*, and from 'backtrackingContentAssistTest_Post', the role 'backtrackingContentAssistTest_Post' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_OperationContextDecl' and 'backtrackingContentAssistTest_Body'. From 'backtrackingContentAssistTest_OperationContextDecl', the role 'backtrackingContentAssistTest_OperationContextDecl35' has cardinality 0..*, and from 'backtrackingContentAssistTest_Body', the role 'backtrackingContentAssistTest_Body36' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_PackageDeclaration' and 'backtrackingContentAssistTest_PackageRef'. From 'backtrackingContentAssistTest_PackageDeclaration', the role 'backtrackingContentAssistTest_PackageDeclaration38' has cardinality 0..*, and from 'backtrackingContentAssistTest_PackageRef', the role 'backtrackingContentAssistTest_PackageRef' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_ContextDecl' and 'backtrackingContentAssistTest_PackageDeclaration'. From 'backtrackingContentAssistTest_ContextDecl', the role 'backtrackingContentAssistTest_ContextDecl41' has cardinality 0..*, and from 'backtrackingContentAssistTest_PackageDeclaration', the role 'backtrackingContentAssistTest_PackageDeclaration40' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_TypeExp' and 'backtrackingContentAssistTest_Parameter'. From 'backtrackingContentAssistTest_TypeExp', the role 'backtrackingContentAssistTest_TypeExp44' has cardinality 0..*, and from 'backtrackingContentAssistTest_Parameter', the role 'backtrackingContentAssistTest_Parameter43' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Post' and 'backtrackingContentAssistTest_Expression'. From 'backtrackingContentAssistTest_Post', the role 'backtrackingContentAssistTest_Post46' has cardinality 0..*, and from 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression47' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Pre' and 'backtrackingContentAssistTest_Expression'. From 'backtrackingContentAssistTest_Pre', the role 'backtrackingContentAssistTest_Pre49' has cardinality 0..*, and from 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression50' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_PropertyContextDecl' and 'backtrackingContentAssistTest_PropertyRef'. From 'backtrackingContentAssistTest_PropertyContextDecl', the role 'backtrackingContentAssistTest_PropertyContextDecl' has cardinality 0..*, and from 'backtrackingContentAssistTest_PropertyRef', the role 'backtrackingContentAssistTest_PropertyRef' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_TypeExp' and 'backtrackingContentAssistTest_PropertyContextDecl'. From 'backtrackingContentAssistTest_TypeExp', the role 'backtrackingContentAssistTest_TypeExp54' has cardinality 0..*, and from 'backtrackingContentAssistTest_PropertyContextDecl', the role 'backtrackingContentAssistTest_PropertyContextDecl53' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Init' and 'backtrackingContentAssistTest_PropertyContextDecl'. From 'backtrackingContentAssistTest_Init', the role 'backtrackingContentAssistTest_Init57' has cardinality 0..*, and from 'backtrackingContentAssistTest_PropertyContextDecl', the role 'backtrackingContentAssistTest_PropertyContextDecl56' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_PropertyContextDecl' and 'backtrackingContentAssistTest_Der'. From 'backtrackingContentAssistTest_PropertyContextDecl', the role 'backtrackingContentAssistTest_PropertyContextDecl59' has cardinality 0..*, and from 'backtrackingContentAssistTest_Der', the role 'backtrackingContentAssistTest_Der60' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_ClassifierRef' and 'backtrackingContentAssistTest_QualifiedClassifierRef'. From 'backtrackingContentAssistTest_ClassifierRef', the role 'backtrackingContentAssistTest_ClassifierRef62' has cardinality 0..*, and from 'backtrackingContentAssistTest_QualifiedClassifierRef', the role 'backtrackingContentAssistTest_QualifiedClassifierRef' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_QualifiedOperationRef' and 'backtrackingContentAssistTest_OperationRef'. From 'backtrackingContentAssistTest_QualifiedOperationRef', the role 'backtrackingContentAssistTest_QualifiedOperationRef' has cardinality 0..*, and from 'backtrackingContentAssistTest_OperationRef', the role 'backtrackingContentAssistTest_OperationRef64' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_QualifiedPropertyRef' and 'backtrackingContentAssistTest_PropertyRef'. From 'backtrackingContentAssistTest_QualifiedPropertyRef', the role 'backtrackingContentAssistTest_QualifiedPropertyRef' has cardinality 0..*, and from 'backtrackingContentAssistTest_PropertyRef', the role 'backtrackingContentAssistTest_PropertyRef66' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_QualifiedPackageRef' and 'backtrackingContentAssistTest_PackageRef'. From 'backtrackingContentAssistTest_QualifiedPackageRef', the role 'backtrackingContentAssistTest_QualifiedPackageRef' has cardinality 0..*, and from 'backtrackingContentAssistTest_PackageRef', the role 'backtrackingContentAssistTest_PackageRef68' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_TypeExp' and 'backtrackingContentAssistTest_OclMessageArg'. From 'backtrackingContentAssistTest_TypeExp', the role 'backtrackingContentAssistTest_TypeExp70' has cardinality 0..*, and from 'backtrackingContentAssistTest_OclMessageArg', the role 'backtrackingContentAssistTest_OclMessageArg' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_TupleType' and 'backtrackingContentAssistTest_tuplePart'. From 'backtrackingContentAssistTest_TupleType', the role 'backtrackingContentAssistTest_TupleType' has cardinality 0..*, and from 'backtrackingContentAssistTest_tuplePart', the role 'backtrackingContentAssistTest_tuplePart' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_tuplePart' and 'backtrackingContentAssistTest_TypeExp'. From 'backtrackingContentAssistTest_tuplePart', the role 'backtrackingContentAssistTest_tuplePart73' has cardinality 0..*, and from 'backtrackingContentAssistTest_TypeExp', the role 'backtrackingContentAssistTest_TypeExp74' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_CollectionLiteralExp' and 'backtrackingContentAssistTest_CollectionLiteralPart'. From 'backtrackingContentAssistTest_CollectionLiteralExp', the role 'backtrackingContentAssistTest_CollectionLiteralExp' has cardinality 0..*, and from 'backtrackingContentAssistTest_CollectionLiteralPart', the role 'backtrackingContentAssistTest_CollectionLiteralPart' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Expression' and 'backtrackingContentAssistTest_CollectionLiteralPart'. From 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression78' has cardinality 0..*, and from 'backtrackingContentAssistTest_CollectionLiteralPart', the role 'backtrackingContentAssistTest_CollectionLiteralPart77' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Expression' and 'backtrackingContentAssistTest_CollectionLiteralPart'. From 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression81' has cardinality 0..*, and from 'backtrackingContentAssistTest_CollectionLiteralPart', the role 'backtrackingContentAssistTest_CollectionLiteralPart80' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_TupleLiteralExp' and 'backtrackingContentAssistTest_TupleLiteralPart'. From 'backtrackingContentAssistTest_TupleLiteralExp', the role 'backtrackingContentAssistTest_TupleLiteralExp' has cardinality 0..*, and from 'backtrackingContentAssistTest_TupleLiteralPart', the role 'backtrackingContentAssistTest_TupleLiteralPart' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_TypeExp' and 'backtrackingContentAssistTest_TupleLiteralPart'. From 'backtrackingContentAssistTest_TypeExp', the role 'backtrackingContentAssistTest_TypeExp85' has cardinality 0..*, and from 'backtrackingContentAssistTest_TupleLiteralPart', the role 'backtrackingContentAssistTest_TupleLiteralPart84' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_TupleLiteralPart' and 'backtrackingContentAssistTest_Expression'. From 'backtrackingContentAssistTest_TupleLiteralPart', the role 'backtrackingContentAssistTest_TupleLiteralPart87' has cardinality 0..*, and from 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression88' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_iteratorVariable' and 'backtrackingContentAssistTest_TypeExp'. From 'backtrackingContentAssistTest_iteratorVariable', the role 'backtrackingContentAssistTest_iteratorVariable' has cardinality 0..*, and from 'backtrackingContentAssistTest_TypeExp', the role 'backtrackingContentAssistTest_TypeExp90' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_TypeExp' and 'backtrackingContentAssistTest_iteratorAccumulator'. From 'backtrackingContentAssistTest_TypeExp', the role 'backtrackingContentAssistTest_TypeExp92' has cardinality 0..*, and from 'backtrackingContentAssistTest_iteratorAccumulator', the role 'backtrackingContentAssistTest_iteratorAccumulator' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_iteratorAccumulator' and 'backtrackingContentAssistTest_Expression'. From 'backtrackingContentAssistTest_iteratorAccumulator', the role 'backtrackingContentAssistTest_iteratorAccumulator94' has cardinality 0..*, and from 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression95' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_RoundBracketExp' and 'backtrackingContentAssistTest_NameExp'. From 'backtrackingContentAssistTest_RoundBracketExp', the role 'backtrackingContentAssistTest_RoundBracketExp' has cardinality 0..*, and from 'backtrackingContentAssistTest_NameExp', the role 'backtrackingContentAssistTest_NameExp' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_RoundBracketExp' and 'backtrackingContentAssistTest_iteratorVariable'. From 'backtrackingContentAssistTest_RoundBracketExp', the role 'backtrackingContentAssistTest_RoundBracketExp98' has cardinality 0..*, and from 'backtrackingContentAssistTest_iteratorVariable', the role 'backtrackingContentAssistTest_iteratorVariable99' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_EObject' and 'backtrackingContentAssistTest_RoundBracketExp'. From 'backtrackingContentAssistTest_EObject', the role 'backtrackingContentAssistTest_EObject' has cardinality 0..*, and from 'backtrackingContentAssistTest_RoundBracketExp', the role 'backtrackingContentAssistTest_RoundBracketExp101' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_RoundBracketExp' and 'backtrackingContentAssistTest_Expression'. From 'backtrackingContentAssistTest_RoundBracketExp', the role 'backtrackingContentAssistTest_RoundBracketExp103' has cardinality 0..*, and from 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression104' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_SquareBracketExp' and 'backtrackingContentAssistTest_NameExp'. From 'backtrackingContentAssistTest_SquareBracketExp', the role 'backtrackingContentAssistTest_SquareBracketExp' has cardinality 0..*, and from 'backtrackingContentAssistTest_NameExp', the role 'backtrackingContentAssistTest_NameExp106' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Expression' and 'backtrackingContentAssistTest_SquareBracketExp'. From 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression109' has cardinality 0..*, and from 'backtrackingContentAssistTest_SquareBracketExp', the role 'backtrackingContentAssistTest_SquareBracketExp108' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_NameExp' and 'backtrackingContentAssistTest_PreExp'. From 'backtrackingContentAssistTest_NameExp', the role 'backtrackingContentAssistTest_NameExp111' has cardinality 0..*, and from 'backtrackingContentAssistTest_PreExp', the role 'backtrackingContentAssistTest_PreExp' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_PathNameExp' and 'backtrackingContentAssistTest_NameExp'. From 'backtrackingContentAssistTest_PathNameExp', the role 'backtrackingContentAssistTest_PathNameExp' has cardinality 0..*, and from 'backtrackingContentAssistTest_NameExp', the role 'backtrackingContentAssistTest_NameExp113' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Expression' and 'backtrackingContentAssistTest_IfExp'. From 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression115' has cardinality 0..*, and from 'backtrackingContentAssistTest_IfExp', the role 'backtrackingContentAssistTest_IfExp' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Expression' and 'backtrackingContentAssistTest_IfExp'. From 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression118' has cardinality 0..*, and from 'backtrackingContentAssistTest_IfExp', the role 'backtrackingContentAssistTest_IfExp117' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Expression' and 'backtrackingContentAssistTest_IfExp'. From 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression121' has cardinality 0..*, and from 'backtrackingContentAssistTest_IfExp', the role 'backtrackingContentAssistTest_IfExp120' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_LetVariable' and 'backtrackingContentAssistTest_LetExp'. From 'backtrackingContentAssistTest_LetVariable', the role 'backtrackingContentAssistTest_LetVariable' has cardinality 0..*, and from 'backtrackingContentAssistTest_LetExp', the role 'backtrackingContentAssistTest_LetExp' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Expression' and 'backtrackingContentAssistTest_LetExp'. From 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression125' has cardinality 0..*, and from 'backtrackingContentAssistTest_LetExp', the role 'backtrackingContentAssistTest_LetExp124' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_TypeExp' and 'backtrackingContentAssistTest_LetVariable'. From 'backtrackingContentAssistTest_TypeExp', the role 'backtrackingContentAssistTest_TypeExp128' has cardinality 0..*, and from 'backtrackingContentAssistTest_LetVariable', the role 'backtrackingContentAssistTest_LetVariable127' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_LetVariable' and 'backtrackingContentAssistTest_Expression'. From 'backtrackingContentAssistTest_LetVariable', the role 'backtrackingContentAssistTest_LetVariable130' has cardinality 0..*, and from 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression131' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Expression' and 'backtrackingContentAssistTest_InfixExp'. From 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression133' has cardinality 0..*, and from 'backtrackingContentAssistTest_InfixExp', the role 'backtrackingContentAssistTest_InfixExp' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_NavigatingExp' and 'backtrackingContentAssistTest_InfixExp'. From 'backtrackingContentAssistTest_NavigatingExp', the role 'backtrackingContentAssistTest_NavigatingExp' has cardinality 0..*, and from 'backtrackingContentAssistTest_InfixExp', the role 'backtrackingContentAssistTest_InfixExp135' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_OclMessage' and 'backtrackingContentAssistTest_Expression'. From 'backtrackingContentAssistTest_OclMessage', the role 'backtrackingContentAssistTest_OclMessage' has cardinality 0..*, and from 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression137' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_OclMessageArg' and 'backtrackingContentAssistTest_OclMessage'. From 'backtrackingContentAssistTest_OclMessageArg', the role 'backtrackingContentAssistTest_OclMessageArg140' has cardinality 0..*, and from 'backtrackingContentAssistTest_OclMessage', the role 'backtrackingContentAssistTest_OclMessage139' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_PrefixExp' and 'backtrackingContentAssistTest_Expression'. From 'backtrackingContentAssistTest_PrefixExp', the role 'backtrackingContentAssistTest_PrefixExp' has cardinality 0..*, and from 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression142' has cardinality 0..*.
+An association connects 'backtrackingContentAssistTest_Expression' and 'backtrackingContentAssistTest_NestedExp'. From 'backtrackingContentAssistTest_Expression', the role 'backtrackingContentAssistTest_Expression144' has cardinality 0..*, and from 'backtrackingContentAssistTest_NestedExp', the role 'backtrackingContentAssistTest_NestedExp' has cardinality 0..*.

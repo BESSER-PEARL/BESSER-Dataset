@@ -1,0 +1,21 @@
+The domain model 'testmerge' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'testmerge_C' represents an important domain concept.
+It has one attribute: 'dataType', which is of type str.
+
+'testmerge_E' represents an important domain concept.
+It does not declare any attributes.
+
+'testmerge_F' represents an important domain concept.
+It does not declare any attributes.
+
+'testmerge_D' represents an important domain concept.
+It has one attribute: 'emfDataType', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'testmerge_C' and 'testmerge_D'. From 'testmerge_C', the role '1' has cardinality 0..*, and from 'testmerge_D', the role 'unnamed role' has cardinality 0..*.
+An association connects 'testmerge_D' and 'testmerge_C'. From 'testmerge_D', the role '4' has cardinality 0..*, and from 'testmerge_C', the role '3' has cardinality 0..*.
+An association connects 'testmerge_C' and 'testmerge_E'. From 'testmerge_C', the role 'testmerge_C' has cardinality 0..*, and from 'testmerge_E', the role 'testmerge_E' has cardinality 0..*.
+An association connects 'testmerge_C' and 'testmerge_F'. From 'testmerge_C', the role 'testmerge_C7' has cardinality 0..*, and from 'testmerge_F', the role 'testmerge_F' has cardinality 0..*.

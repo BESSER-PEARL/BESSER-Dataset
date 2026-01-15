@@ -1,0 +1,56 @@
+The domain model 'visualinher' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'visualinher_A' represents an important domain concept.
+It does not declare any attributes.
+
+'visualinher_N' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'visualinher_D' represents an important domain concept.
+It does not declare any attributes.
+
+'visualinher_I' represents an important domain concept.
+It does not declare any attributes.
+
+'visualinher_C' represents an important domain concept.
+It does not declare any attributes.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'N' represents an important domain concept.
+It does not declare any attributes.
+
+'visualinher_S' represents an important domain concept.
+It does not declare any attributes.
+
+'visualinher_R' represents an important domain concept.
+It does not declare any attributes.
+
+'I' represents an important domain concept.
+It does not declare any attributes.
+
+'visualinher_E' represents an important domain concept.
+It does not declare any attributes.
+
+'visualinher_B' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'visualinher_B' is a specialization of 'I'.
+The class 'visualinher_I' is a specialization of 'A'.
+The class 'visualinher_A' is a specialization of 'N'.
+The class 'visualinher_R' is a specialization of 'N'.
+The class 'visualinher_D' is a specialization of 'A'.
+The class 'visualinher_E' is a specialization of 'A'.
+
+Relationships between classes are modeled using associations.
+An association connects 'visualinher_S' and 'visualinher_A'. From 'visualinher_S', the role 'visualinher_S' has cardinality 0..*, and from 'visualinher_A', the role 'visualinher_A' has cardinality 0..*.
+An association connects 'visualinher_S' and 'visualinher_R'. From 'visualinher_S', the role 'visualinher_S2' has cardinality 0..*, and from 'visualinher_R', the role 'visualinher_R' has cardinality 0..*.
+An association connects 'visualinher_E' and 'visualinher_B'. From 'visualinher_E', the role 'visualinher_E' has cardinality 0..*, and from 'visualinher_B', the role 'visualinher_B' has cardinality 0..*.
+An association connects 'visualinher_C' and 'visualinher_I'. From 'visualinher_C', the role 'visualinher_C' has cardinality 0..*, and from 'visualinher_I', the role 'visualinher_I' has cardinality 0..*.
+An association connects 'visualinher_R' and 'visualinher_A'. From 'visualinher_R', the role 'visualinher_R7' has cardinality 0..*, and from 'visualinher_A', the role 'visualinher_A6' has cardinality 0..*.
+An association connects 'visualinher_D' and 'visualinher_A'. From 'visualinher_D', the role 'visualinher_D' has cardinality 0..*, and from 'visualinher_A', the role 'visualinher_A9' has cardinality 0..*.
+An association connects 'visualinher_E' and 'visualinher_D'. From 'visualinher_E', the role 'visualinher_E12' has cardinality 0..*, and from 'visualinher_D', the role 'visualinher_D11' has cardinality 0..*.

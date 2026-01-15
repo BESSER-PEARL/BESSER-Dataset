@@ -1,0 +1,13 @@
+The domain model 'Kasu4' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'Kasu4_ClassB' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'Kasu4_ClassA' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Kasu4_ClassB' and 'Kasu4_ClassA'. From 'Kasu4_ClassB', the role 'Kasu4_ClassB' has cardinality 0..*, and from 'Kasu4_ClassA', the role 'Kasu4_ClassA' has cardinality 0..*.
+An association connects 'Kasu4_ClassA' and 'Kasu4_ClassB'. From 'Kasu4_ClassA', the role 'Kasu4_ClassA3' has cardinality 0..*, and from 'Kasu4_ClassB', the role 'Kasu4_ClassB2' has cardinality 0..*.

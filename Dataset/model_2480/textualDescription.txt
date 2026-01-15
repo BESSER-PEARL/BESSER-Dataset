@@ -1,0 +1,13 @@
+The domain model 'fsm' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'fsm_FSM' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_State' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsm_FSM' and 'fsm_State'. From 'fsm_FSM', the role 'fsm_FSM' has cardinality 0..*, and from 'fsm_State', the role 'fsm_State' has cardinality 0..*.
+An association connects 'fsm_FSM' and 'fsm_FSM'. From 'fsm_FSM', the role 'fsm_FSM1' has cardinality 0..*, and from 'fsm_FSM', the role 'fsm_FSM3' has cardinality 0..*.

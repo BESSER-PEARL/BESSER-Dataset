@@ -1,0 +1,58 @@
+The domain model 'errormanypov' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'errormanypov_K' represents an important domain concept.
+It does not declare any attributes.
+
+'errormanypov_A' represents an important domain concept.
+It does not declare any attributes.
+
+'errormanypov_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'errormanypov_C' represents an important domain concept.
+It does not declare any attributes.
+
+'errormanypov_E' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'errormanypov_B' represents an important domain concept.
+It does not declare any attributes.
+
+'errormanypov_M' represents an important domain concept.
+It does not declare any attributes.
+
+'errormanypov_JK' represents an important domain concept.
+It does not declare any attributes.
+
+'errormanypov_J' represents an important domain concept.
+It does not declare any attributes.
+
+'errormanypov_F' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'errormanypov_A' is a specialization of 'Named'.
+The class 'errormanypov_B' is a specialization of 'Named'.
+The class 'errormanypov_C' is a specialization of 'Named'.
+The class 'errormanypov_E' is a specialization of 'Named'.
+The class 'errormanypov_F' is a specialization of 'Named'.
+The class 'errormanypov_J' is a specialization of 'Named'.
+The class 'errormanypov_K' is a specialization of 'Named'.
+The class 'errormanypov_JK' is a specialization of 'Named'.
+The class 'errormanypov_M' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'errormanypov_A' and 'errormanypov_B'. From 'errormanypov_A', the role 'errormanypov_A' has cardinality 0..*, and from 'errormanypov_B', the role 'errormanypov_B' has cardinality 0..*.
+An association connects 'errormanypov_A' and 'errormanypov_E'. From 'errormanypov_A', the role 'errormanypov_A2' has cardinality 0..*, and from 'errormanypov_E', the role 'errormanypov_E' has cardinality 0..*.
+An association connects 'errormanypov_J' and 'errormanypov_A'. From 'errormanypov_J', the role 'errormanypov_J' has cardinality 0..*, and from 'errormanypov_A', the role 'errormanypov_A4' has cardinality 0..*.
+An association connects 'errormanypov_B' and 'errormanypov_C'. From 'errormanypov_B', the role 'errormanypov_B6' has cardinality 0..*, and from 'errormanypov_C', the role 'errormanypov_C' has cardinality 0..*.
+An association connects 'errormanypov_F' and 'errormanypov_E'. From 'errormanypov_F', the role 'errormanypov_F' has cardinality 0..*, and from 'errormanypov_E', the role 'errormanypov_E8' has cardinality 0..*.
+An association connects 'errormanypov_JK' and 'errormanypov_J'. From 'errormanypov_JK', the role 'errormanypov_JK' has cardinality 0..*, and from 'errormanypov_J', the role 'errormanypov_J10' has cardinality 0..*.
+An association connects 'errormanypov_K' and 'errormanypov_M'. From 'errormanypov_K', the role 'errormanypov_K' has cardinality 0..*, and from 'errormanypov_M', the role 'errormanypov_M' has cardinality 0..*.
+An association connects 'errormanypov_K' and 'errormanypov_C'. From 'errormanypov_K', the role 'errormanypov_K13' has cardinality 0..*, and from 'errormanypov_C', the role 'errormanypov_C14' has cardinality 0..*.
+An association connects 'errormanypov_K' and 'errormanypov_JK'. From 'errormanypov_K', the role 'errormanypov_K17' has cardinality 0..*, and from 'errormanypov_JK', the role 'errormanypov_JK16' has cardinality 0..*.

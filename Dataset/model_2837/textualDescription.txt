@@ -1,0 +1,93 @@
+The domain model 'ck2gfx' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'ck2gfx_ArrowType' represents an important domain concept.
+It has the following attributes: 'type', which is of type int; 'size', which is of type float; 'height', which is of type float; 'effect', which is of type str; 'textureFile', which is of type str; 'heading', which is of type float; 'endAt', which is of type float; 'bodyTexture', which is of type str; 'name', which is of type str.
+
+'ck2gfx_PortraitType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'layers', which is of type str; 'eyeColorIndex', which is of type int; 'effectFile', which is of type str; 'headgearThatHidesHair', which is of type int; 'hairColorIndex', which is of type int.
+
+'ck2gfx_EMFXActorType' represents an important domain concept.
+It has the following attributes: 'cullDistance', which is of type float; 'scale', which is of type float; 'scaleOnCullDistance', which is of type bool; 'attack', which is of type str; 'actorFile', which is of type str; 'name', which is of type str; 'idle', which is of type str; 'useAnimation', which is of type bool; 'move', which is of type str.
+
+'ck2gfx_AnimatedSpriteType' represents an important domain concept.
+It has the following attributes: 'looping', which is of type bool; 'name', which is of type str; 'noOfFrames', which is of type int; 'playOnShow', which is of type bool; 'animationRateFps', which is of type float; 'texturefile', which is of type str.
+
+'ck2gfx_Coordinates' represents an important domain concept.
+It has the following attributes: 'x', which is of type float; 'y', which is of type float.
+
+'ck2gfx_SpriteTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'ck2gfx_Animation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'file', which is of type str; 'defaultAnimationTime', which is of type float.
+
+'ck2gfx_CoatOfArmsType' represents an important domain concept.
+It has the following attributes: 'frame', which is of type str; 'effect', which is of type str; 'mask', which is of type str; 'name', which is of type str; 'sealOverlay', which is of type str.
+
+'ck2gfx_ColorCode' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'ck2gfx_ObjectTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'ck2gfx_BitmapFont' represents an important domain concept.
+It has the following attributes: 'effect', which is of type bool; 'name', which is of type str; 'color', which is of type int; 'fontName', which is of type str.
+
+'ck2gfx_Color' represents an important domain concept.
+It has the following attributes: 'g', which is of type int; 'r', which is of type int; 'b', which is of type int.
+
+'ck2gfx_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ck2gfx_Pdxmesh' represents an important domain concept.
+It has the following attributes: 'cullDistance', which is of type float; 'actorFile', which is of type str; 'scale', which is of type float; 'name', which is of type str; 'scaleOnCullDistance', which is of type bool.
+
+'ck2gfx_CorneredTileSpriteType' represents an important domain concept.
+It has the following attributes: 'texturefile', which is of type str; 'name', which is of type str; 'tilingCenter', which is of type bool; 'loadType', which is of type str; 'allwaysTransparent', which is of type bool; 'noRefCount', which is of type bool.
+
+'ck2gfx_SpriteType' represents an important domain concept.
+It has the following attributes: 'noRefCount', which is of type bool; 'effectFile', which is of type str; 'name', which is of type str; 'allwaysTransparent', which is of type bool; 'transparenceCheck', which is of type bool; 'textureFile', which is of type str; 'canBeLowres', which is of type bool; 'clickSound', which is of type str; 'loadType', which is of type str; 'noOfFrames', which is of type int.
+
+'ck2gfx_MaskedShieldType' represents an important domain concept.
+It has the following attributes: 'effectFile', which is of type str; 'allwaysTransparent', which is of type bool; 'name', which is of type str; 'clickSound', which is of type str; 'textureFile1', which is of type str; 'textureFile2', which is of type str.
+
+'ck2gfx_ProgressbarType' represents an important domain concept.
+It has the following attributes: 'textureFile1', which is of type str; 'horizontal', which is of type bool; 'noRefCount', which is of type bool; 'loadType', which is of type str; 'effectFile', which is of type str; 'allwaysTransparent', which is of type bool; 'name', which is of type str; 'textureFile2', which is of type str; 'maxValue', which is of type float.
+
+'ck2gfx_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'ck2gfx_LineChartType' represents an important domain concept.
+It has the following attributes: 'lineWidth', which is of type int; 'name', which is of type str.
+
+'ck2gfx_CoatOfArmsLayer' represents an important domain concept.
+It has the following attributes: 'mask', which is of type str; 'scale', which is of type float.
+
+'ck2gfx_BitmapFonts' represents an important domain concept.
+It does not declare any attributes.
+
+'ck2gfx_ColorRatio' represents an important domain concept.
+It has the following attributes: 'r', which is of type float; 'b', which is of type float; 'g', which is of type float.
+
+Relationships between classes are modeled using associations.
+An association connects 'ck2gfx_Model' and 'ck2gfx_EObject'. From 'ck2gfx_Model', the role 'ck2gfx_Model' has cardinality 0..*, and from 'ck2gfx_EObject', the role 'ck2gfx_EObject' has cardinality 0..*.
+An association connects 'ck2gfx_SpriteTypes' and 'ck2gfx_EObject'. From 'ck2gfx_SpriteTypes', the role 'ck2gfx_SpriteTypes' has cardinality 0..*, and from 'ck2gfx_EObject', the role 'ck2gfx_EObject2' has cardinality 0..*.
+An association connects 'ck2gfx_Coordinates' and 'ck2gfx_CorneredTileSpriteType'. From 'ck2gfx_Coordinates', the role 'ck2gfx_Coordinates' has cardinality 0..*, and from 'ck2gfx_CorneredTileSpriteType', the role 'ck2gfx_CorneredTileSpriteType' has cardinality 0..*.
+An association connects 'ck2gfx_CorneredTileSpriteType' and 'ck2gfx_Coordinates'. From 'ck2gfx_CorneredTileSpriteType', the role 'ck2gfx_CorneredTileSpriteType5' has cardinality 0..*, and from 'ck2gfx_Coordinates', the role 'ck2gfx_Coordinates6' has cardinality 0..*.
+An association connects 'ck2gfx_ProgressbarType' and 'ck2gfx_ColorRatio'. From 'ck2gfx_ProgressbarType', the role 'ck2gfx_ProgressbarType' has cardinality 0..*, and from 'ck2gfx_ColorRatio', the role 'ck2gfx_ColorRatio' has cardinality 0..*.
+An association connects 'ck2gfx_ColorRatio' and 'ck2gfx_ProgressbarType'. From 'ck2gfx_ColorRatio', the role 'ck2gfx_ColorRatio10' has cardinality 0..*, and from 'ck2gfx_ProgressbarType', the role 'ck2gfx_ProgressbarType9' has cardinality 0..*.
+An association connects 'ck2gfx_ProgressbarType' and 'ck2gfx_Coordinates'. From 'ck2gfx_ProgressbarType', the role 'ck2gfx_ProgressbarType12' has cardinality 0..*, and from 'ck2gfx_Coordinates', the role 'ck2gfx_Coordinates13' has cardinality 0..*.
+An association connects 'ck2gfx_PortraitType' and 'ck2gfx_Color'. From 'ck2gfx_PortraitType', the role 'ck2gfx_PortraitType' has cardinality 0..*, and from 'ck2gfx_Color', the role 'ck2gfx_Color' has cardinality 0..*.
+An association connects 'ck2gfx_Color' and 'ck2gfx_PortraitType'. From 'ck2gfx_Color', the role 'ck2gfx_Color17' has cardinality 0..*, and from 'ck2gfx_PortraitType', the role 'ck2gfx_PortraitType16' has cardinality 0..*.
+An association connects 'ck2gfx_Coordinates' and 'ck2gfx_LineChartType'. From 'ck2gfx_Coordinates', the role 'ck2gfx_Coordinates19' has cardinality 0..*, and from 'ck2gfx_LineChartType', the role 'ck2gfx_LineChartType' has cardinality 0..*.
+An association connects 'ck2gfx_CoatOfArmsType' and 'ck2gfx_CoatOfArmsLayer'. From 'ck2gfx_CoatOfArmsType', the role 'ck2gfx_CoatOfArmsType' has cardinality 0..*, and from 'ck2gfx_CoatOfArmsLayer', the role 'ck2gfx_CoatOfArmsLayer' has cardinality 0..*.
+An association connects 'ck2gfx_CoatOfArmsLayer' and 'ck2gfx_Coordinates'. From 'ck2gfx_CoatOfArmsLayer', the role 'ck2gfx_CoatOfArmsLayer22' has cardinality 0..*, and from 'ck2gfx_Coordinates', the role 'ck2gfx_Coordinates23' has cardinality 0..*.
+An association connects 'ck2gfx_ObjectTypes' and 'ck2gfx_EObject'. From 'ck2gfx_ObjectTypes', the role 'ck2gfx_ObjectTypes' has cardinality 0..*, and from 'ck2gfx_EObject', the role 'ck2gfx_EObject25' has cardinality 0..*.
+An association connects 'ck2gfx_Animation' and 'ck2gfx_EMFXActorType'. From 'ck2gfx_Animation', the role 'ck2gfx_Animation' has cardinality 0..*, and from 'ck2gfx_EMFXActorType', the role 'ck2gfx_EMFXActorType' has cardinality 0..*.
+An association connects 'ck2gfx_ArrowType' and 'ck2gfx_ColorRatio'. From 'ck2gfx_ArrowType', the role 'ck2gfx_ArrowType' has cardinality 0..*, and from 'ck2gfx_ColorRatio', the role 'ck2gfx_ColorRatio28' has cardinality 0..*.
+An association connects 'ck2gfx_ColorRatio' and 'ck2gfx_ArrowType'. From 'ck2gfx_ColorRatio', the role 'ck2gfx_ColorRatio31' has cardinality 0..*, and from 'ck2gfx_ArrowType', the role 'ck2gfx_ArrowType30' has cardinality 0..*.
+An association connects 'ck2gfx_BitmapFont' and 'ck2gfx_BitmapFonts'. From 'ck2gfx_BitmapFont', the role 'ck2gfx_BitmapFont' has cardinality 0..*, and from 'ck2gfx_BitmapFonts', the role 'ck2gfx_BitmapFonts' has cardinality 0..*.
+An association connects 'ck2gfx_ColorCode' and 'ck2gfx_BitmapFont'. From 'ck2gfx_ColorCode', the role 'ck2gfx_ColorCode' has cardinality 0..*, and from 'ck2gfx_BitmapFont', the role 'ck2gfx_BitmapFont34' has cardinality 0..*.
+An association connects 'ck2gfx_Color' and 'ck2gfx_ColorCode'. From 'ck2gfx_Color', the role 'ck2gfx_Color37' has cardinality 0..*, and from 'ck2gfx_ColorCode', the role 'ck2gfx_ColorCode36' has cardinality 0..*.

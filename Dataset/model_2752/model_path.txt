@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/KourdacheHoussam/MetamodelDesignerAssistantTP6/MetaModelDesignerAssistantTP6/model/test.ecore

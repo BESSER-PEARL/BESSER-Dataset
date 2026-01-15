@@ -1,0 +1,49 @@
+The domain model 'generictest' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'SuperReffedClass' represents an important domain concept.
+It does not declare any attributes.
+
+'generictest_GenericSuperClass' represents an important domain concept.
+It does not declare any attributes.
+
+'generictest_TypeArgForRef' represents an important domain concept.
+It does not declare any attributes.
+
+'generictest_TypeArgReferencedOnlyExternally' represents an important domain concept.
+It does not declare any attributes.
+
+'generictest_GenericSuperClassBound' represents an important domain concept.
+It does not declare any attributes.
+
+'generictest_NextGenSuperClass' represents an important domain concept.
+It does not declare any attributes.
+
+'GenericSuperClassBound' represents an important domain concept.
+It does not declare any attributes.
+
+'generictest_SuperReffedClass' represents an important domain concept.
+It does not declare any attributes.
+
+'generictest_Door' represents an important domain concept.
+It does not declare any attributes.
+
+'generictest_TypeArgForGenericSuperClass' represents an important domain concept.
+It does not declare any attributes.
+
+'generictest_GenRef' represents an important domain concept.
+It does not declare any attributes.
+
+'generictest_ReffedClass' represents an important domain concept.
+It does not declare any attributes.
+
+'generictest_NonGenericSuperclass' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'generictest_TypeArgForGenericSuperClass' is a specialization of 'GenericSuperClassBound'.
+The class 'generictest_ReffedClass' is a specialization of 'SuperReffedClass'.
+
+Relationships between classes are modeled using associations.
+An association connects 'generictest_ReffedClass' and 'generictest_Door'. From 'generictest_ReffedClass', the role 'generictest_ReffedClass' has cardinality 0..*, and from 'generictest_Door', the role 'generictest_Door' has cardinality 0..*.

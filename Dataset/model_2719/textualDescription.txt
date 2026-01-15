@@ -1,0 +1,141 @@
+The domain model 'k7' describes the core structural elements and their relationships within the system.
+
+The model defines 32 main class(es).
+
+'k7_P' represents an important domain concept.
+It does not declare any attributes.
+
+'G' represents an important domain concept.
+It does not declare any attributes.
+
+'k7_W' represents an important domain concept.
+It has one attribute: 'w', which is of type str.
+
+'k7_M' represents an important domain concept.
+It does not declare any attributes.
+
+'k7_T1' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'k7_I' represents an important domain concept.
+It does not declare any attributes.
+
+'k7_L1' represents an important domain concept.
+It has the following attributes: 'id2', which is of type int; 'id1', which is of type str.
+
+'k7_Z' represents an important domain concept.
+It has the following attributes: 'z1', which is of type str; 'z2', which is of type str; 'z3', which is of type str.
+
+'k7_Y' represents an important domain concept.
+It has one attribute: 'y', which is of type int.
+
+'k7_G' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'k7_C' represents an important domain concept.
+It does not declare any attributes.
+
+'k7_Q' represents an important domain concept.
+It does not declare any attributes.
+
+'k7_B' represents an important domain concept.
+It does not declare any attributes.
+
+'T2' represents an important domain concept.
+It does not declare any attributes.
+
+'C' represents an important domain concept.
+It does not declare any attributes.
+
+'M' represents an important domain concept.
+It does not declare any attributes.
+
+'k7_A' represents an important domain concept.
+It does not declare any attributes.
+
+'k7_T2' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'k7_X' represents an important domain concept.
+It does not declare any attributes.
+
+'k7_K' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'A' represents an important domain concept.
+It does not declare any attributes.
+
+'k7_N' represents an important domain concept.
+It does not declare any attributes.
+
+'k7_L3' represents an important domain concept.
+It does not declare any attributes.
+
+'P' represents an important domain concept.
+It does not declare any attributes.
+
+'k7_L4' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'k7_DsmlRelation' represents an important domain concept.
+It has the following attributes: 'mandatory', which is of type bool; 'name', which is of type str; 'details', which is of type str.
+
+'k7_J' represents an important domain concept.
+It does not declare any attributes.
+
+'N' represents an important domain concept.
+It does not declare any attributes.
+
+'k7_L2' represents an important domain concept.
+It has the following attributes: 'l1', which is of type int; 'l2', which is of type int.
+
+'J' represents an important domain concept.
+It does not declare any attributes.
+
+'L1' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'k7_A' is a specialization of 'B'.
+The class 'k7_B' is a specialization of 'C'.
+The class 'k7_C' is a specialization of 'G'.
+The class 'k7_M' is a specialization of 'G'.
+The class 'k7_N' is a specialization of 'M'.
+The class 'k7_J' is a specialization of 'A'.
+The class 'k7_P' is a specialization of 'N'.
+The class 'k7_Q' is a specialization of 'P'.
+The class 'k7_I' is a specialization of 'G'.
+The class 'k7_K' is a specialization of 'J'.
+The class 'k7_L3' is a specialization of 'L1'.
+The class 'k7_T1' is a specialization of 'T2'.
+
+Relationships between classes are modeled using associations.
+An association connects 'k7_C' and 'k7_X'. From 'k7_C', the role 'k7_C' has cardinality 0..*, and from 'k7_X', the role 'k7_X' has cardinality 0..*.
+An association connects 'k7_X' and 'k7_P'. From 'k7_X', the role 'k7_X2' has cardinality 0..*, and from 'k7_P', the role 'k7_P' has cardinality 0..*.
+An association connects 'k7_Z' and 'k7_X'. From 'k7_Z', the role 'k7_Z' has cardinality 0..*, and from 'k7_X', the role 'k7_X4' has cardinality 0..*.
+An association connects 'k7_Y' and 'k7_X'. From 'k7_Y', the role 'k7_Y' has cardinality 0..*, and from 'k7_X', the role 'k7_X6' has cardinality 0..*.
+An association connects 'k7_X' and 'k7_W'. From 'k7_X', the role 'k7_X8' has cardinality 0..*, and from 'k7_W', the role 'k7_W' has cardinality 0..*.
+An association connects 'k7_X' and 'k7_L4'. From 'k7_X', the role 'k7_X10' has cardinality 0..*, and from 'k7_L4', the role 'k7_L4' has cardinality 0..*.
+An association connects 'k7_T1' and 'k7_X'. From 'k7_T1', the role 'k7_T1' has cardinality 0..*, and from 'k7_X', the role 'k7_X12' has cardinality 0..*.
+An association connects 'k7_I' and 'k7_B'. From 'k7_I', the role 'k7_I' has cardinality 0..*, and from 'k7_B', the role 'k7_B' has cardinality 0..*.
+An association connects 'k7_B' and 'k7_Y'. From 'k7_B', the role 'k7_B15' has cardinality 0..*, and from 'k7_Y', the role 'k7_Y16' has cardinality 0..*.
+An association connects 'k7_C' and 'k7_M'. From 'k7_C', the role 'k7_C18' has cardinality 0..*, and from 'k7_M', the role 'k7_M' has cardinality 0..*.
+An association connects 'k7_M' and 'k7_L1'. From 'k7_M', the role 'k7_M20' has cardinality 0..*, and from 'k7_L1', the role 'k7_L1' has cardinality 0..*.
+An association connects 'k7_A' and 'k7_P'. From 'k7_A', the role 'k7_A' has cardinality 0..*, and from 'k7_P', the role 'k7_P22' has cardinality 0..*.
+An association connects 'k7_K' and 'k7_P'. From 'k7_K', the role 'k7_K' has cardinality 0..*, and from 'k7_P', the role 'k7_P24' has cardinality 0..*.
+An association connects 'k7_J' and 'k7_P'. From 'k7_J', the role 'k7_J' has cardinality 0..*, and from 'k7_P', the role 'k7_P26' has cardinality 0..*.
+An association connects 'k7_Q' and 'k7_L2'. From 'k7_Q', the role 'k7_Q' has cardinality 0..*, and from 'k7_L2', the role 'k7_L2' has cardinality 0..*.
+An association connects 'k7_C' and 'k7_L1'. From 'k7_C', the role 'k7_C30' has cardinality 0..*, and from 'k7_L1', the role 'k7_L129' has cardinality 0..*.
+An association connects 'k7_L1' and 'k7_M'. From 'k7_L1', the role 'k7_L132' has cardinality 0..*, and from 'k7_M', the role 'k7_M33' has cardinality 0..*.
+An association connects 'k7_L2' and 'k7_Q'. From 'k7_L2', the role 'k7_L235' has cardinality 0..*, and from 'k7_Q', the role 'k7_Q36' has cardinality 0..*.
+An association connects 'k7_K' and 'k7_L2'. From 'k7_K', the role 'k7_K39' has cardinality 0..*, and from 'k7_L2', the role 'k7_L238' has cardinality 0..*.
+An association connects 'k7_L3' and 'k7_Z'. From 'k7_L3', the role 'k7_L3' has cardinality 0..*, and from 'k7_Z', the role 'k7_Z41' has cardinality 0..*.
+An association connects 'k7_L4' and 'k7_P'. From 'k7_L4', the role 'k7_L443' has cardinality 0..*, and from 'k7_P', the role 'k7_P44' has cardinality 0..*.
+An association connects 'k7_L4' and 'k7_A'. From 'k7_L4', the role 'k7_L446' has cardinality 0..*, and from 'k7_A', the role 'k7_A47' has cardinality 0..*.
+An association connects 'k7_T1' and 'k7_DsmlRelation'. From 'k7_T1', the role 'k7_T149' has cardinality 0..*, and from 'k7_DsmlRelation', the role 'k7_DsmlRelation' has cardinality 0..*.
+An association connects 'k7_T1' and 'k7_DsmlRelation'. From 'k7_T1', the role 'k7_T152' has cardinality 0..*, and from 'k7_DsmlRelation', the role 'k7_DsmlRelation51' has cardinality 0..*.
+An association connects 'k7_T2' and 'k7_T1'. From 'k7_T2', the role 'k7_T2' has cardinality 0..*, and from 'k7_T1', the role 'k7_T154' has cardinality 0..*.
+An association connects 'k7_T1' and 'k7_DsmlRelation'. From 'k7_T1', the role 'k7_T156' has cardinality 0..*, and from 'k7_DsmlRelation', the role 'k7_DsmlRelation57' has cardinality 0..*.

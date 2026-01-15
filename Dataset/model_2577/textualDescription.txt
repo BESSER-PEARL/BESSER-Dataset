@@ -1,0 +1,1353 @@
+The domain model 'camel' describes the core structural elements and their relationships within the system.
+
+The model defines 312 main class(es).
+
+'camel_execution_ExecutionModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Communication' represents an important domain concept.
+It does not declare any attributes.
+
+'SoftRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionContext' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_provider_Excludes' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_deployment_DeploymentModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ProvidedCommunicationInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_execution_ExecutionContext' represents an important domain concept.
+It has the following attributes: 'endTime', which is of type date; 'totalCost', which is of type float; 'name', which is of type str; 'startTime', which is of type date.
+
+'SingleValue' represents an important domain concept.
+It does not declare any attributes.
+
+'VMInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_deployment_RequiredHost' represents an important domain concept.
+It does not declare any attributes.
+
+'CloudLocation' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_provider_GroupCardinality' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_scalability_SimpleEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_requirement_QuantitativeHardwareRequirement' represents an important domain concept.
+It has the following attributes: 'minCores', which is of type int; 'maxRAM', which is of type int; 'minCPU', which is of type float; 'maxCores', which is of type int; 'maxCPU', which is of type float; 'minStorage', which is of type int; 'maxStorage', which is of type int; 'minRAM', which is of type int.
+
+'camel_location_GeographicalRegion' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'alternativeNames', which is of type str.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_requirement_QualitativeHardwareRequirement' represents an important domain concept.
+It has the following attributes: 'maxBenchmark', which is of type float; 'minBenchmark', which is of type float.
+
+'Cardinality' represents an important domain concept.
+It does not declare any attributes.
+
+'VM' represents an important domain concept.
+It does not declare any attributes.
+
+'EventInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'execution_camel_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'SecurityCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'execution_camel_Application' represents an important domain concept.
+It does not declare any attributes.
+
+'CommunicationInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'Country' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'GeographicalRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'ProvidedHost' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_deployment_RequiredCommunicationInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'VMRequirementSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Limit' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_provider_Clone' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'camel_organisation_Permission' represents an important domain concept.
+It has the following attributes: 'action', which is of type str; 'name', which is of type str; 'startTime', which is of type date; 'endTime', which is of type date.
+
+'camel_provider_Implies' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_scalability_NonFunctionalEvent' represents an important domain concept.
+It has one attribute: 'isViolation', which is of type bool.
+
+'camel_provider_Constraint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'camel_security_RawSecurityMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_deployment_HostingPort' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_provider_Functional' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'order', which is of type int; 'value', which is of type int.
+
+'camel_deployment_CommunicationPort' represents an important domain concept.
+It has one attribute: 'portNumber', which is of type int.
+
+'MonetaryUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_execution_Measurement' represents an important domain concept.
+It has the following attributes: 'value', which is of type float; 'name', which is of type str; 'rawData', which is of type str; 'measurementTime', which is of type date.
+
+'MetricFormula' represents an important domain concept.
+It does not declare any attributes.
+
+'ProviderModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Location' represents an important domain concept.
+It does not declare any attributes.
+
+'HardwareRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'SecurityModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Clone' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_scalability_FunctionalEvent' represents an important domain concept.
+It has one attribute: 'functionalType', which is of type str.
+
+'camel_execution_ApplicationMeasurement' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_location_Country' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_unit_Dimensionless' represents an important domain concept.
+It does not declare any attributes.
+
+'LocationRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'CloudCredentials' represents an important domain concept.
+It does not declare any attributes.
+
+'MetricCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_deployment_CommunicationPortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_RawMetricContext' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_scalability_EventInstance' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'status', which is of type str; 'layer', which is of type str.
+
+'camel_deployment_VMInstance' represents an important domain concept.
+It has one attribute: 'ip', which is of type str.
+
+'camel_metric_MetricObjectBinding' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SLOAssessment' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_requirement_ProviderRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_scalability_ScalabilityRule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RequirementModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Range' represents an important domain concept.
+It does not declare any attributes.
+
+'Measurement' represents an important domain concept.
+It does not declare any attributes.
+
+'RuleTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_deployment_CommunicationInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'PaaSageCredentials' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_deployment_VM' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_MetricComponentBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_scalability_ScalingAction' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_requirement_OSOrImageRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_unit_CoreUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'HostingInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'RawMetricInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_provider_Requires' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_scalability_VerticalScalingAction' represents an important domain concept.
+It has the following attributes: 'ioUpdate', which is of type int; 'networkUpdate', which is of type int; 'memoryUpdate', which is of type int; 'coreUpdate', which is of type int; 'storageUpdate', which is of type int; 'CPUUpdate', which is of type float.
+
+'camel_metric_Condition' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comparisonOperator', which is of type str; 'validity', which is of type date; 'threshold', which is of type float.
+
+'Hosting' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_requirement_ImageRequirement' represents an important domain concept.
+It has one attribute: 'imageId', which is of type str.
+
+'camel_organisation_OrganisationModel' represents an important domain concept.
+It has one attribute: 'securityLevel', which is of type str.
+
+'camel_security_SecurityProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'RawMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_unit_RequestUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_provider_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'camel_requirement_OSRequirement' represents an important domain concept.
+It has the following attributes: 'os', which is of type str; 'is64os', which is of type bool.
+
+'camel_security_Certifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_unit_MonetaryUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'Scope' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_deployment_VMRequirementSet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'camel_security_SecuritySLO' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_unit_StorageUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeModel' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_unit_ThroughputUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_PropertyCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_requirement_SecurityRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'QualitativeHardwareRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_unit_TimeIntervalUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'MetricContext' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_MetricCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_security_SecurityCapability' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatCardinality' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_unit_TransactionUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_MetricApplicationBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'SecurityControl' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_security_CompositeSecurityMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'InternalComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_requirement_LocationRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_execution_InternalComponentMeasurement' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_security_CompositeSecurityMetricInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'RequiredHostInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_unit_UnitModel' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_deployment_Configuration' represents an important domain concept.
+It has the following attributes: 'downloadCommand', which is of type str; 'configureCommand', which is of type str; 'uploadCommand', which is of type str; 'startCommand', which is of type str; 'stopCommand', which is of type str; 'installCommand', which is of type str.
+
+'camel_requirement_ScaleRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'InternalComponentInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyContext' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_PropertyContext' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_organisation_ResourceFilter' represents an important domain concept.
+It has the following attributes: 'resourcePattern', which is of type str; 'name', which is of type str.
+
+'RequiredCommunicationInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_deployment_ProvidedHostInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'Requires' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_MetricVMBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionRealisation' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'scalability_camel_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_Property' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'type', which is of type str; 'name', which is of type str.
+
+'RequirementGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_MetricInstance' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'camel_deployment_ProvidedCommunication' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_RawMetricInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_organisation_ServiceResourceFilter' represents an important domain concept.
+It has the following attributes: 'serviceURL', which is of type str; 'everyService', which is of type bool.
+
+'camel_provider_Alternative' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_type_TypeModel' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_deployment_RequiredCommunication' represents an important domain concept.
+It has one attribute: 'isMandatory', which is of type bool.
+
+'DeploymentElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeMetricInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_scalability_HorizontalScalingAction' represents an important domain concept.
+It has one attribute: 'count', which is of type int.
+
+'MetricInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_organisation_DataCenter' represents an important domain concept.
+It has the following attributes: 'codeName', which is of type str; 'name', which is of type str.
+
+'Alternative' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_unit_Unit' represents an important domain concept.
+It has the following attributes: 'unit', which is of type str; 'name', which is of type str.
+
+'TimeIntervalUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_requirement_VerticalScaleRequirement' represents an important domain concept.
+It has the following attributes: 'minStorage', which is of type int; 'minRAM', which is of type int; 'maxRAM', which is of type int; 'maxCores', which is of type int; 'maxCPU', which is of type float; 'maxStorage', which is of type int; 'minCores', which is of type int; 'minCPU', which is of type float.
+
+'camel_type_SingleValue' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_organisation_InformationResourceFilter' represents an important domain concept.
+It has the following attributes: 'informationResourcePath', which is of type str; 'everyInformationResource', which is of type bool.
+
+'camel_type_Limit' represents an important domain concept.
+It has one attribute: 'included', which is of type bool.
+
+'camel_metric_Schedule' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'repetitions', which is of type int; 'name', which is of type str; 'interval', which is of type str; 'start', which is of type date; 'end', which is of type date.
+
+'HostingPortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'ScaleRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_requirement_HorizontalScaleRequirement' represents an important domain concept.
+It has the following attributes: 'maxInstances', which is of type int; 'minInstances', which is of type int.
+
+'camel_execution_ActionRealisation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'lowLevelActions', which is of type str; 'startTime', which is of type date; 'endTime', which is of type date.
+
+'ServiceLevelObjective' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_organisation_Role' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'QuantitativeHardwareRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'Organisation' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_organisation_Credentials' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_organisation_UserGroup' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Configuration' represents an important domain concept.
+It does not declare any attributes.
+
+'ProvidedHostInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_scalability_Timer' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'timeValue', which is of type int; 'maxOccurrenceNum', which is of type int; 'type', which is of type str.
+
+'ExecutionContext' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericValue' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutionModel' represents an important domain concept.
+It does not declare any attributes.
+
+'RequiredCommunication' represents an important domain concept.
+It does not declare any attributes.
+
+'CloudProvider' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_CompositeMetricInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_organisation_RoleAssignment' represents an important domain concept.
+It has the following attributes: 'startTime', which is of type date; 'endTime', which is of type date; 'assignmentTime', which is of type date; 'name', which is of type str.
+
+'camel_type_EnumerateValue' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type int.
+
+'camel_provider_Exclusive' represents an important domain concept.
+It does not declare any attributes.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_organisation_PaaSageCredentials' represents an important domain concept.
+It has one attribute: 'password', which is of type str.
+
+'ExternalIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_scalability_Event' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'GroupCardinality' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceFilter' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_type_BoolValue' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'camel_metric_Sensor' represents an important domain concept.
+It has the following attributes: 'isPush', which is of type bool; 'configuration', which is of type str; 'name', which is of type str.
+
+'OrganisationModel' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_organisation_CloudCredentials' represents an important domain concept.
+It has the following attributes: 'publicSSHKey', which is of type str; 'privateSSHKey', which is of type str; 'username', which is of type str; 'password', which is of type str; 'securityGroup', which is of type str; 'name', which is of type str.
+
+'camel_deployment_ComponentInstance' represents an important domain concept.
+It has the following attributes: 'destroyedOn', which is of type date; 'instantiatedOn', which is of type date.
+
+'camel_scalability_ScalabilityModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Schedule' represents an important domain concept.
+It does not declare any attributes.
+
+'Metric' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_Model' represents an important domain concept.
+It has the following attributes: 'importURI', which is of type str; 'name', which is of type str.
+
+'camel_deployment_DeploymentElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'User' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_type_NumericValue' represents an important domain concept.
+It does not declare any attributes.
+
+'UserGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_execution_CommunicationMeasurement' represents an important domain concept.
+It does not declare any attributes.
+
+'Model' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_provider_Scope' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_type_FloatsValue' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'ScalabilityModel' represents an important domain concept.
+It does not declare any attributes.
+
+'CommunicationPort' represents an important domain concept.
+It does not declare any attributes.
+
+'DataCenter' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_type_IntegerValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'HostingPort' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_execution_VMMeasurement' represents an important domain concept.
+It does not declare any attributes.
+
+'MetricObjectBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_deployment_HostingPortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'Window' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_provider_AttributeConstraint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'camel_deployment_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_security_SecurityControl' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'specification', which is of type str.
+
+'camel_type_DoublePrecisionValue' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'camel_provider_Product' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_provider_Instance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_deployment_Communication' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'camel_execution_SLOAssessment' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'assessment', which is of type bool; 'assessmentTime', which is of type date.
+
+'camel_deployment_HostingInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'Role' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_type_NegativeInf' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_deployment_ProvidedCommunicationInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_security_SecurityModel' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_Window' represents an important domain concept.
+It has the following attributes: 'windowType', which is of type str; 'timeSize', which is of type str; 'sizeType', which is of type str; 'measurementSize', which is of type str; 'name', which is of type str.
+
+'RoleAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_requirement_RequirementModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_Application' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'version', which is of type str; 'name', which is of type str.
+
+'camel_type_PositiveInf' represents an important domain concept.
+It does not declare any attributes.
+
+'ProviderRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'Permission' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_provider_ProviderModel' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_deployment_InternalComponent' represents an important domain concept.
+It has one attribute: 'version', which is of type str.
+
+'camel_type_ValueToIncrease' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_MetricFormulaParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'camel_requirement_Requirement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'camel_deployment_InternalComponentInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_execution_RuleTrigger' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'trigerringTime', which is of type date.
+
+'Requirement' represents an important domain concept.
+It does not declare any attributes.
+
+'ScalingAction' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_type_StringsValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'camel_requirement_RequirementGroup' represents an important domain concept.
+It has one attribute: 'requirementOperator', which is of type str.
+
+'camel_metric_ConditionContext' represents an important domain concept.
+It has the following attributes: 'maxQuantity', which is of type float; 'quantifier', which is of type str; 'name', which is of type str; 'isRelative', which is of type bool; 'minQuantity', which is of type float.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_location_CloudLocation' represents an important domain concept.
+It has one attribute: 'isAssignable', which is of type bool.
+
+'camel_provider_Attribute' represents an important domain concept.
+It has the following attributes: 'unitType', which is of type str; 'name', which is of type str.
+
+'camel_deployment_ProvidedHost' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_requirement_HardRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_type_ValueType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'camel_security_SecurityDomain' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'ProvidedCommunication' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_provider_Cardinality' represents an important domain concept.
+It has the following attributes: 'cardinalityMin', which is of type int; 'cardinalityMax', which is of type int.
+
+'camel_metric_MetricFormula' represents an important domain concept.
+It has the following attributes: 'function', which is of type str; 'functionArity', which is of type str; 'functionPattern', which is of type str.
+
+'EventPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'SecurityDomain' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_security_RawSecurityMetricInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_Metric' represents an important domain concept.
+It has the following attributes: 'valueDirection', which is of type str; 'isVariable', which is of type bool; 'layer', which is of type str; 'description', which is of type str.
+
+'Credentials' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_type_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'SecurityRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_CamelModel' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_type_BooleanValueType' represents an important domain concept.
+It has one attribute: 'primitiveType', which is of type str.
+
+'SecurityProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_MetricModel' represents an important domain concept.
+It does not declare any attributes.
+
+'MetricFormulaParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_provider_FeatCardinality' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'requirement_camel_Application' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_organisation_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'Timer' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_type_List' represents an important domain concept.
+It has one attribute: 'primitiveType', which is of type str.
+
+'camel_Action' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'RawSecurityMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_type_StringValueType' represents an important domain concept.
+It has one attribute: 'primitiveType', which is of type str.
+
+'OSOrImageRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'ScalabilityRule' represents an important domain concept.
+It does not declare any attributes.
+
+'metric_camel_Application' represents an important domain concept.
+It does not declare any attributes.
+
+'LocationModel' represents an important domain concept.
+It does not declare any attributes.
+
+'CommunicationPortInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_requirement_OptimisationRequirement' represents an important domain concept.
+It has one attribute: 'optimisationFunction', which is of type str.
+
+'camel_organisation_User' represents an important domain concept.
+It has the following attributes: 'firstName', which is of type str; 'lastName', which is of type str; 'name', which is of type str; 'email', which is of type str; 'www', which is of type str.
+
+'CompositeSecurityMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_type_Range' represents an important domain concept.
+It has one attribute: 'primitiveType', which is of type str.
+
+'camel_location_LocationModel' represents an important domain concept.
+It does not declare any attributes.
+
+'MetricModel' represents an important domain concept.
+It does not declare any attributes.
+
+'UnitModel' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_CompositeMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumerateValue' represents an important domain concept.
+It does not declare any attributes.
+
+'RequiredHost' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_deployment_RequiredHostInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_scalability_EventPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'RawSecurityMetricInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_organisation_CloudProvider' represents an important domain concept.
+It has the following attributes: 'IaaS', which is of type bool; 'SaaS', which is of type bool; 'public', which is of type bool; 'PaaS', which is of type bool.
+
+'camel_metric_RawMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_organisation_Organisation' represents an important domain concept.
+It has the following attributes: 'email', which is of type str; 'name', which is of type str; 'www', which is of type str; 'postalAddress', which is of type str.
+
+'camel_requirement_SoftRequirement' represents an important domain concept.
+It has one attribute: 'priority', which is of type float.
+
+'camel_deployment_Hosting' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_CompositeMetricContext' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_requirement_ServiceLevelObjective' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_location_Location' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'CompositeSecurityMetricInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_scalability_UnaryEventPattern' represents an important domain concept.
+It has the following attributes: 'occurrenceNum', which is of type int; 'operator', which is of type str.
+
+'camel_scalability_BinaryEventPattern' represents an important domain concept.
+It has the following attributes: 'lowerOccurrenceBound', which is of type int; 'upperOccurrenceBound', which is of type int; 'operator', which is of type str.
+
+'camel_type_RangeUnion' represents an important domain concept.
+It has one attribute: 'primitiveType', which is of type str.
+
+'ValueType' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_organisation_ExternalIdentifier' represents an important domain concept.
+It has the following attributes: 'identifier', which is of type str; 'description', which is of type str.
+
+'HardRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+'SecuritySLO' represents an important domain concept.
+It does not declare any attributes.
+
+'DeploymentModel' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_metric_MetricContext' represents an important domain concept.
+It does not declare any attributes.
+
+'camel_requirement_HardwareRequirement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MetricFunctionType' defines the following possible values: 'DERIVATIVE', 'MAX', 'STD', 'MEDIAN', 'PLUS', 'DIV', 'PERCENTILE', 'COUNT', 'MINUS', 'MODE', 'MODULO', 'MIN', 'TIMES', 'MEAN'.
+The enumeration 'SecurityLevel' defines the following possible values: 'HIGH', 'LOW', 'MEDIUM'.
+The enumeration 'MetricFunctionArityType' defines the following possible values: 'N_ARY', 'BINARY', 'UNARY'.
+The enumeration 'LayerType' defines the following possible values: 'SCC', 'IaaS', 'BPM', 'SaaS', 'PaaS'.
+The enumeration 'UnitDimensionType' defines the following possible values: 'THROUGHPUT', 'REQUEST_NUM', 'TIME_INTERVAL', 'STORAGE', 'TRANSACTION_NUM', 'DIMENSIONLESS', 'COST', 'CORE_NUM'.
+The enumeration 'ResourcePattern' defines the following possible values: 'EXACT', 'TREE'.
+The enumeration 'UnitType' defines the following possible values: 'EUROS', 'BYTES', 'BYTES_PER_SECOND', 'PERCENTAGE', 'KILOBYTES', 'MINUTES', 'POUNDS', 'MEGABYTES', 'GIGABYTES', 'DOLLARS', 'MILLISECONDS', 'SECONDS', 'HOURS', 'DAYS', 'WEEKS', 'REQUESTS_PER_SECOND', 'MONTHS', 'REQUESTS', 'TRANSACTIONS', 'TRANSACTIONS_PER_SECOND', 'CORES'.
+The enumeration 'ComparisonOperatorType' defines the following possible values: 'GREATER_THAN', 'GREATER_EQUAL_THAN', 'NOT_EQUAL', 'LESS_THAN', 'LESS_EQUAL_THAN', 'EQUAL'.
+The enumeration 'TypeEnum' defines the following possible values: 'FloatType', 'DoubleType', 'StringType', 'IntType', 'BooleanType'.
+The enumeration 'FunctionPatternType' defines the following possible values: 'MAP', 'REDUCE'.
+The enumeration 'Operator' defines the following possible values: 'select', 'divide', 'add', 'remove', 'multiply'.
+The enumeration 'PropertyType' defines the following possible values: 'ABSTRACT', 'MEASURABLE'.
+The enumeration 'ActionType' defines the following possible values: 'READ', 'EVENT_CREATION', 'WRITE', 'SCALE_OUT', 'SCALE_UP', 'SCALE_DOWN', 'SCALE_IN'.
+The enumeration 'CommunicationType' defines the following possible values: 'ANY', 'REMOTE', 'LOCAL'.
+The enumeration 'OptimisationFunctionType' defines the following possible values: 'MAXIMISE', 'MINIMISE'.
+The enumeration 'ScheduleType' defines the following possible values: 'FIXED_RATE', 'SINGLE_EVENT', 'FIXED_DELAY'.
+The enumeration 'UnaryPatternOperatorType' defines the following possible values: 'EVERY', 'WHEN', 'REPEAT', 'NOT'.
+The enumeration 'TimerType' defines the following possible values: 'WITHIN_MAX', 'WITHIN', 'INTERVAL'.
+The enumeration 'StatusType' defines the following possible values: 'FATAL', 'SUCCESS', 'WARNING', 'CRITICAL'.
+The enumeration 'WindowType' defines the following possible values: 'SLIDING', 'FIXED'.
+The enumeration 'BinaryPatternOperatorType' defines the following possible values: 'XOR', 'REPEAT_UNTIL', 'OR', 'AND', 'PRECEDES'.
+The enumeration 'WindowSizeType' defines the following possible values: 'FIRST_MATCH', 'TIME_ONLY', 'BOTH_MATCH', 'MEASUREMENTS_ONLY'.
+The enumeration 'RequirementOperatorType' defines the following possible values: 'OR', 'XOR', 'AND'.
+The enumeration 'QuantifierType' defines the following possible values: 'ANY', 'ALL', 'SOME'.
+
+The model also captures inheritance relationships between classes.
+The class 'camel_CamelModel' is a specialization of 'Model'.
+The class 'camel_deployment_DeploymentModel' is a specialization of 'Model'.
+The class 'camel_deployment_Component' is a specialization of 'DeploymentElement'.
+The class 'camel_deployment_InternalComponent' is a specialization of 'Component'.
+The class 'camel_deployment_VM' is a specialization of 'Component'.
+The class 'camel_deployment_Configuration' is a specialization of 'DeploymentElement'.
+The class 'camel_deployment_Communication' is a specialization of 'DeploymentElement'.
+The class 'camel_deployment_CommunicationPort' is a specialization of 'DeploymentElement'.
+The class 'camel_deployment_ProvidedCommunication' is a specialization of 'CommunicationPort'.
+The class 'camel_deployment_RequiredCommunication' is a specialization of 'CommunicationPort'.
+The class 'camel_deployment_Hosting' is a specialization of 'DeploymentElement'.
+The class 'camel_deployment_HostingPort' is a specialization of 'DeploymentElement'.
+The class 'camel_deployment_ProvidedHost' is a specialization of 'HostingPort'.
+The class 'camel_deployment_RequiredHost' is a specialization of 'HostingPort'.
+The class 'camel_deployment_ComponentInstance' is a specialization of 'DeploymentElement'.
+The class 'camel_deployment_InternalComponentInstance' is a specialization of 'ComponentInstance'.
+The class 'camel_deployment_VMInstance' is a specialization of 'ComponentInstance'.
+The class 'camel_deployment_CommunicationInstance' is a specialization of 'DeploymentElement'.
+The class 'camel_deployment_CommunicationPortInstance' is a specialization of 'DeploymentElement'.
+The class 'camel_deployment_ProvidedCommunicationInstance' is a specialization of 'CommunicationPortInstance'.
+The class 'camel_deployment_RequiredCommunicationInstance' is a specialization of 'CommunicationPortInstance'.
+The class 'camel_deployment_HostingInstance' is a specialization of 'DeploymentElement'.
+The class 'camel_deployment_HostingPortInstance' is a specialization of 'DeploymentElement'.
+The class 'camel_deployment_ProvidedHostInstance' is a specialization of 'HostingPortInstance'.
+The class 'camel_deployment_RequiredHostInstance' is a specialization of 'HostingPortInstance'.
+The class 'camel_execution_ExecutionModel' is a specialization of 'Model'.
+The class 'camel_execution_ApplicationMeasurement' is a specialization of 'Measurement'.
+The class 'camel_execution_InternalComponentMeasurement' is a specialization of 'Measurement'.
+The class 'camel_execution_CommunicationMeasurement' is a specialization of 'Measurement'.
+The class 'camel_execution_VMMeasurement' is a specialization of 'Measurement'.
+The class 'camel_location_LocationModel' is a specialization of 'Model'.
+The class 'camel_location_CloudLocation' is a specialization of 'Location'.
+The class 'camel_location_GeographicalRegion' is a specialization of 'Location'.
+The class 'camel_location_Country' is a specialization of 'GeographicalRegion'.
+The class 'camel_metric_MetricCondition' is a specialization of 'Condition'.
+The class 'camel_metric_PropertyCondition' is a specialization of 'Condition'.
+The class 'camel_metric_CompositeMetricInstance' is a specialization of 'MetricInstance'.
+The class 'camel_metric_RawMetricInstance' is a specialization of 'MetricInstance'.
+The class 'camel_metric_MetricFormula' is a specialization of 'MetricFormulaParameter'.
+The class 'camel_metric_Metric' is a specialization of 'MetricFormulaParameter'.
+The class 'camel_metric_CompositeMetric' is a specialization of 'Metric'.
+The class 'camel_metric_RawMetric' is a specialization of 'Metric'.
+The class 'camel_metric_MetricApplicationBinding' is a specialization of 'MetricObjectBinding'.
+The class 'camel_metric_MetricComponentBinding' is a specialization of 'MetricObjectBinding'.
+The class 'camel_metric_MetricVMBinding' is a specialization of 'MetricObjectBinding'.
+The class 'camel_metric_MetricModel' is a specialization of 'Model'.
+The class 'camel_metric_MetricContext' is a specialization of 'ConditionContext'.
+The class 'camel_metric_CompositeMetricContext' is a specialization of 'MetricContext'.
+The class 'camel_metric_RawMetricContext' is a specialization of 'MetricContext'.
+The class 'camel_metric_PropertyContext' is a specialization of 'ConditionContext'.
+The class 'camel_organisation_OrganisationModel' is a specialization of 'Model'.
+The class 'camel_organisation_CloudCredentials' is a specialization of 'Credentials'.
+The class 'camel_organisation_Organisation' is a specialization of 'Entity'.
+The class 'camel_organisation_CloudProvider' is a specialization of 'Organisation'.
+The class 'camel_organisation_User' is a specialization of 'Entity'.
+The class 'camel_organisation_InformationResourceFilter' is a specialization of 'ResourceFilter'.
+The class 'camel_organisation_ServiceResourceFilter' is a specialization of 'ResourceFilter'.
+The class 'camel_organisation_PaaSageCredentials' is a specialization of 'Credentials'.
+The class 'camel_provider_ProviderModel' is a specialization of 'Model'.
+The class 'camel_provider_FeatCardinality' is a specialization of 'Cardinality'.
+The class 'camel_provider_GroupCardinality' is a specialization of 'Cardinality'.
+The class 'camel_provider_Excludes' is a specialization of 'Constraint'.
+The class 'camel_provider_Implies' is a specialization of 'Constraint'.
+The class 'camel_provider_Requires' is a specialization of 'Constraint'.
+The class 'camel_provider_Functional' is a specialization of 'Requires'.
+The class 'camel_provider_Alternative' is a specialization of 'Feature'.
+The class 'camel_provider_Exclusive' is a specialization of 'Alternative'.
+The class 'camel_provider_Instance' is a specialization of 'Scope'.
+The class 'camel_provider_Product' is a specialization of 'Scope'.
+The class 'camel_requirement_RequirementModel' is a specialization of 'Model'.
+The class 'camel_requirement_RequirementGroup' is a specialization of 'Requirement'.
+The class 'camel_requirement_HardRequirement' is a specialization of 'Requirement'.
+The class 'camel_requirement_SoftRequirement' is a specialization of 'Requirement'.
+The class 'camel_requirement_ServiceLevelObjective' is a specialization of 'HardRequirement'.
+The class 'camel_requirement_OptimisationRequirement' is a specialization of 'SoftRequirement'.
+The class 'camel_requirement_HardwareRequirement' is a specialization of 'HardRequirement'.
+The class 'camel_requirement_QualitativeHardwareRequirement' is a specialization of 'HardwareRequirement'.
+The class 'camel_requirement_QuantitativeHardwareRequirement' is a specialization of 'HardwareRequirement'.
+The class 'camel_requirement_ProviderRequirement' is a specialization of 'HardRequirement'.
+The class 'camel_requirement_OSOrImageRequirement' is a specialization of 'HardRequirement'.
+The class 'camel_requirement_OSRequirement' is a specialization of 'OSOrImageRequirement'.
+The class 'camel_requirement_ImageRequirement' is a specialization of 'OSOrImageRequirement'.
+The class 'camel_requirement_SecurityRequirement' is a specialization of 'HardRequirement'.
+The class 'camel_requirement_LocationRequirement' is a specialization of 'HardRequirement'.
+The class 'camel_requirement_ScaleRequirement' is a specialization of 'HardRequirement'.
+The class 'camel_requirement_HorizontalScaleRequirement' is a specialization of 'ScaleRequirement'.
+The class 'camel_requirement_VerticalScaleRequirement' is a specialization of 'ScaleRequirement'.
+The class 'camel_scalability_ScalabilityModel' is a specialization of 'Model'.
+The class 'camel_scalability_EventPattern' is a specialization of 'Event'.
+The class 'camel_scalability_BinaryEventPattern' is a specialization of 'EventPattern'.
+The class 'camel_scalability_UnaryEventPattern' is a specialization of 'EventPattern'.
+The class 'camel_scalability_SimpleEvent' is a specialization of 'Event'.
+The class 'camel_scalability_FunctionalEvent' is a specialization of 'SimpleEvent'.
+The class 'camel_scalability_NonFunctionalEvent' is a specialization of 'SimpleEvent'.
+The class 'camel_scalability_ScalingAction' is a specialization of 'Action'.
+The class 'camel_scalability_HorizontalScalingAction' is a specialization of 'ScalingAction'.
+The class 'camel_scalability_VerticalScalingAction' is a specialization of 'ScalingAction'.
+The class 'camel_security_SecurityModel' is a specialization of 'Model'.
+The class 'camel_security_RawSecurityMetricInstance' is a specialization of 'RawMetricInstance'.
+The class 'camel_security_RawSecurityMetric' is a specialization of 'RawMetric'.
+The class 'camel_security_SecurityProperty' is a specialization of 'Property'.
+The class 'camel_security_Certifiable' is a specialization of 'SecurityProperty'.
+The class 'camel_security_SecuritySLO' is a specialization of 'ServiceLevelObjective'.
+The class 'camel_security_CompositeSecurityMetric' is a specialization of 'CompositeMetric'.
+The class 'camel_security_CompositeSecurityMetricInstance' is a specialization of 'CompositeMetricInstance'.
+The class 'camel_type_TypeModel' is a specialization of 'Model'.
+The class 'camel_type_BoolValue' is a specialization of 'SingleValue'.
+The class 'camel_type_EnumerateValue' is a specialization of 'SingleValue'.
+The class 'camel_type_NumericValue' is a specialization of 'SingleValue'.
+The class 'camel_type_IntegerValue' is a specialization of 'NumericValue'.
+The class 'camel_type_FloatsValue' is a specialization of 'NumericValue'.
+The class 'camel_type_DoublePrecisionValue' is a specialization of 'NumericValue'.
+The class 'camel_type_NegativeInf' is a specialization of 'NumericValue'.
+The class 'camel_type_PositiveInf' is a specialization of 'NumericValue'.
+The class 'camel_type_ValueToIncrease' is a specialization of 'NumericValue'.
+The class 'camel_type_StringsValue' is a specialization of 'SingleValue'.
+The class 'camel_type_BooleanValueType' is a specialization of 'ValueType'.
+The class 'camel_type_Enumeration' is a specialization of 'ValueType'.
+The class 'camel_type_List' is a specialization of 'ValueType'.
+The class 'camel_type_Range' is a specialization of 'ValueType'.
+The class 'camel_type_RangeUnion' is a specialization of 'ValueType'.
+The class 'camel_type_StringValueType' is a specialization of 'ValueType'.
+The class 'camel_unit_CoreUnit' is a specialization of 'Unit'.
+The class 'camel_unit_Dimensionless' is a specialization of 'Unit'.
+The class 'camel_unit_MonetaryUnit' is a specialization of 'Unit'.
+The class 'camel_unit_RequestUnit' is a specialization of 'Unit'.
+The class 'camel_unit_StorageUnit' is a specialization of 'Unit'.
+The class 'camel_unit_ThroughputUnit' is a specialization of 'Unit'.
+The class 'camel_unit_TimeIntervalUnit' is a specialization of 'Unit'.
+The class 'camel_unit_TransactionUnit' is a specialization of 'Unit'.
+The class 'camel_unit_UnitModel' is a specialization of 'Model'.
+
+Relationships between classes are modeled using associations.
+An association connects 'camel_Action' and 'camel_CamelModel'. From 'camel_Action', the role 'camel_Action' has cardinality 0..*, and from 'camel_CamelModel', the role 'camel_CamelModel' has cardinality 0..*.
+An association connects 'camel_CamelModel' and 'camel_Application'. From 'camel_CamelModel', the role 'camel_CamelModel2' has cardinality 0..*, and from 'camel_Application', the role 'camel_Application' has cardinality 0..*.
+An association connects 'DeploymentModel' and 'camel_CamelModel'. From 'DeploymentModel', the role 'DeploymentModel' has cardinality 0..*, and from 'camel_CamelModel', the role 'camel_CamelModel4' has cardinality 0..*.
+An association connects 'camel_CamelModel' and 'ExecutionModel'. From 'camel_CamelModel', the role 'camel_CamelModel6' has cardinality 0..*, and from 'ExecutionModel', the role 'ExecutionModel' has cardinality 0..*.
+An association connects 'LocationModel' and 'camel_CamelModel'. From 'LocationModel', the role 'LocationModel' has cardinality 0..*, and from 'camel_CamelModel', the role 'camel_CamelModel8' has cardinality 0..*.
+An association connects 'camel_CamelModel' and 'MetricModel'. From 'camel_CamelModel', the role 'camel_CamelModel10' has cardinality 0..*, and from 'MetricModel', the role 'MetricModel' has cardinality 0..*.
+An association connects 'OrganisationModel' and 'camel_CamelModel'. From 'OrganisationModel', the role 'OrganisationModel' has cardinality 0..*, and from 'camel_CamelModel', the role 'camel_CamelModel12' has cardinality 0..*.
+An association connects 'ProviderModel' and 'camel_CamelModel'. From 'ProviderModel', the role 'ProviderModel' has cardinality 0..*, and from 'camel_CamelModel', the role 'camel_CamelModel14' has cardinality 0..*.
+An association connects 'RequirementModel' and 'camel_CamelModel'. From 'RequirementModel', the role 'RequirementModel' has cardinality 0..*, and from 'camel_CamelModel', the role 'camel_CamelModel16' has cardinality 0..*.
+An association connects 'ScalabilityModel' and 'camel_CamelModel'. From 'ScalabilityModel', the role 'ScalabilityModel' has cardinality 0..*, and from 'camel_CamelModel', the role 'camel_CamelModel18' has cardinality 0..*.
+An association connects 'SecurityModel' and 'camel_CamelModel'. From 'SecurityModel', the role 'SecurityModel' has cardinality 0..*, and from 'camel_CamelModel', the role 'camel_CamelModel20' has cardinality 0..*.
+An association connects 'camel_CamelModel' and 'TypeModel'. From 'camel_CamelModel', the role 'camel_CamelModel22' has cardinality 0..*, and from 'TypeModel', the role 'TypeModel' has cardinality 0..*.
+An association connects 'UnitModel' and 'camel_CamelModel'. From 'UnitModel', the role 'UnitModel' has cardinality 0..*, and from 'camel_CamelModel', the role 'camel_CamelModel24' has cardinality 0..*.
+An association connects 'camel_Application' and 'Entity'. From 'camel_Application', the role 'camel_Application26' has cardinality 0..*, and from 'Entity', the role 'Entity' has cardinality 0..*.
+An association connects 'camel_Application' and 'DeploymentModel'. From 'camel_Application', the role 'camel_Application28' has cardinality 0..*, and from 'DeploymentModel', the role 'DeploymentModel29' has cardinality 0..*.
+An association connects 'camel_deployment_DeploymentModel' and 'InternalComponent'. From 'camel_deployment_DeploymentModel', the role 'camel_deployment_DeploymentModel' has cardinality 0..*, and from 'InternalComponent', the role 'InternalComponent' has cardinality 0..*.
+An association connects 'camel_deployment_DeploymentModel' and 'InternalComponentInstance'. From 'camel_deployment_DeploymentModel', the role 'camel_deployment_DeploymentModel32' has cardinality 0..*, and from 'InternalComponentInstance', the role 'InternalComponentInstance' has cardinality 0..*.
+An association connects 'VM' and 'camel_deployment_DeploymentModel'. From 'VM', the role 'VM' has cardinality 0..*, and from 'camel_deployment_DeploymentModel', the role 'camel_deployment_DeploymentModel34' has cardinality 0..*.
+An association connects 'VMInstance' and 'camel_deployment_DeploymentModel'. From 'VMInstance', the role 'VMInstance' has cardinality 0..*, and from 'camel_deployment_DeploymentModel', the role 'camel_deployment_DeploymentModel36' has cardinality 0..*.
+An association connects 'Communication' and 'camel_deployment_DeploymentModel'. From 'Communication', the role 'Communication' has cardinality 0..*, and from 'camel_deployment_DeploymentModel', the role 'camel_deployment_DeploymentModel38' has cardinality 0..*.
+An association connects 'camel_deployment_DeploymentModel' and 'CommunicationInstance'. From 'camel_deployment_DeploymentModel', the role 'camel_deployment_DeploymentModel40' has cardinality 0..*, and from 'CommunicationInstance', the role 'CommunicationInstance' has cardinality 0..*.
+An association connects 'Hosting' and 'camel_deployment_DeploymentModel'. From 'Hosting', the role 'Hosting' has cardinality 0..*, and from 'camel_deployment_DeploymentModel', the role 'camel_deployment_DeploymentModel42' has cardinality 0..*.
+An association connects 'camel_deployment_DeploymentModel' and 'HostingInstance'. From 'camel_deployment_DeploymentModel', the role 'camel_deployment_DeploymentModel44' has cardinality 0..*, and from 'HostingInstance', the role 'HostingInstance' has cardinality 0..*.
+An association connects 'VMRequirementSet' and 'camel_deployment_DeploymentModel'. From 'VMRequirementSet', the role 'VMRequirementSet' has cardinality 0..*, and from 'camel_deployment_DeploymentModel', the role 'camel_deployment_DeploymentModel46' has cardinality 0..*.
+An association connects 'VMRequirementSet' and 'camel_deployment_DeploymentModel'. From 'VMRequirementSet', the role 'VMRequirementSet49' has cardinality 0..*, and from 'camel_deployment_DeploymentModel', the role 'camel_deployment_DeploymentModel48' has cardinality 0..*.
+An association connects 'camel_deployment_Component' and 'ProvidedCommunication'. From 'camel_deployment_Component', the role 'camel_deployment_Component' has cardinality 0..*, and from 'ProvidedCommunication', the role 'ProvidedCommunication' has cardinality 0..*.
+An association connects 'ProvidedHost' and 'camel_deployment_Component'. From 'ProvidedHost', the role 'ProvidedHost' has cardinality 0..*, and from 'camel_deployment_Component', the role 'camel_deployment_Component52' has cardinality 0..*.
+An association connects 'Configuration' and 'camel_deployment_Component'. From 'Configuration', the role 'Configuration' has cardinality 0..*, and from 'camel_deployment_Component', the role 'camel_deployment_Component54' has cardinality 0..*.
+An association connects 'InternalComponent' and 'camel_deployment_InternalComponent'. From 'InternalComponent', the role 'InternalComponent56' has cardinality 0..*, and from 'camel_deployment_InternalComponent', the role 'camel_deployment_InternalComponent' has cardinality 0..*.
+An association connects 'RequiredCommunication' and 'camel_deployment_InternalComponent'. From 'RequiredCommunication', the role 'RequiredCommunication' has cardinality 0..*, and from 'camel_deployment_InternalComponent', the role 'camel_deployment_InternalComponent58' has cardinality 0..*.
+An association connects 'camel_deployment_InternalComponent' and 'RequiredHost'. From 'camel_deployment_InternalComponent', the role 'camel_deployment_InternalComponent60' has cardinality 0..*, and from 'RequiredHost', the role 'RequiredHost' has cardinality 0..*.
+An association connects 'camel_deployment_VM' and 'VMRequirementSet'. From 'camel_deployment_VM', the role 'camel_deployment_VM' has cardinality 0..*, and from 'VMRequirementSet', the role 'VMRequirementSet62' has cardinality 0..*.
+An association connects 'LocationRequirement' and 'camel_deployment_VMRequirementSet'. From 'LocationRequirement', the role 'LocationRequirement' has cardinality 0..*, and from 'camel_deployment_VMRequirementSet', the role 'camel_deployment_VMRequirementSet' has cardinality 0..*.
+An association connects 'ProviderRequirement' and 'camel_deployment_VMRequirementSet'. From 'ProviderRequirement', the role 'ProviderRequirement' has cardinality 0..*, and from 'camel_deployment_VMRequirementSet', the role 'camel_deployment_VMRequirementSet65' has cardinality 0..*.
+An association connects 'camel_deployment_VMRequirementSet' and 'QualitativeHardwareRequirement'. From 'camel_deployment_VMRequirementSet', the role 'camel_deployment_VMRequirementSet67' has cardinality 0..*, and from 'QualitativeHardwareRequirement', the role 'QualitativeHardwareRequirement' has cardinality 0..*.
+An association connects 'QuantitativeHardwareRequirement' and 'camel_deployment_VMRequirementSet'. From 'QuantitativeHardwareRequirement', the role 'QuantitativeHardwareRequirement' has cardinality 0..*, and from 'camel_deployment_VMRequirementSet', the role 'camel_deployment_VMRequirementSet69' has cardinality 0..*.
+An association connects 'OSOrImageRequirement' and 'camel_deployment_VMRequirementSet'. From 'OSOrImageRequirement', the role 'OSOrImageRequirement' has cardinality 0..*, and from 'camel_deployment_VMRequirementSet', the role 'camel_deployment_VMRequirementSet71' has cardinality 0..*.
+An association connects 'camel_deployment_Communication' and 'ProvidedCommunication'. From 'camel_deployment_Communication', the role 'camel_deployment_Communication' has cardinality 0..*, and from 'ProvidedCommunication', the role 'ProvidedCommunication73' has cardinality 0..*.
+An association connects 'RequiredCommunication' and 'camel_deployment_Communication'. From 'RequiredCommunication', the role 'RequiredCommunication76' has cardinality 0..*, and from 'camel_deployment_Communication', the role 'camel_deployment_Communication75' has cardinality 0..*.
+An association connects 'Configuration' and 'camel_deployment_Communication'. From 'Configuration', the role 'Configuration79' has cardinality 0..*, and from 'camel_deployment_Communication', the role 'camel_deployment_Communication78' has cardinality 0..*.
+An association connects 'Configuration' and 'camel_deployment_Communication'. From 'Configuration', the role 'Configuration82' has cardinality 0..*, and from 'camel_deployment_Communication', the role 'camel_deployment_Communication81' has cardinality 0..*.
+An association connects 'camel_deployment_Hosting' and 'ProvidedHost'. From 'camel_deployment_Hosting', the role 'camel_deployment_Hosting' has cardinality 0..*, and from 'ProvidedHost', the role 'ProvidedHost84' has cardinality 0..*.
+An association connects 'camel_deployment_Hosting' and 'RequiredHost'. From 'camel_deployment_Hosting', the role 'camel_deployment_Hosting86' has cardinality 0..*, and from 'RequiredHost', the role 'RequiredHost87' has cardinality 0..*.
+An association connects 'camel_deployment_Hosting' and 'Configuration'. From 'camel_deployment_Hosting', the role 'camel_deployment_Hosting89' has cardinality 0..*, and from 'Configuration', the role 'Configuration90' has cardinality 0..*.
+An association connects 'Configuration' and 'camel_deployment_Hosting'. From 'Configuration', the role 'Configuration93' has cardinality 0..*, and from 'camel_deployment_Hosting', the role 'camel_deployment_Hosting92' has cardinality 0..*.
+An association connects 'Component' and 'camel_deployment_ComponentInstance'. From 'Component', the role 'Component' has cardinality 0..*, and from 'camel_deployment_ComponentInstance', the role 'camel_deployment_ComponentInstance' has cardinality 0..*.
+An association connects 'ProvidedCommunicationInstance' and 'camel_deployment_ComponentInstance'. From 'ProvidedCommunicationInstance', the role 'ProvidedCommunicationInstance' has cardinality 0..*, and from 'camel_deployment_ComponentInstance', the role 'camel_deployment_ComponentInstance96' has cardinality 0..*.
+An association connects 'ProvidedHostInstance' and 'camel_deployment_ComponentInstance'. From 'ProvidedHostInstance', the role 'ProvidedHostInstance' has cardinality 0..*, and from 'camel_deployment_ComponentInstance', the role 'camel_deployment_ComponentInstance98' has cardinality 0..*.
+An association connects 'RequiredCommunicationInstance' and 'camel_deployment_InternalComponentInstance'. From 'RequiredCommunicationInstance', the role 'RequiredCommunicationInstance' has cardinality 0..*, and from 'camel_deployment_InternalComponentInstance', the role 'camel_deployment_InternalComponentInstance' has cardinality 0..*.
+An association connects 'camel_deployment_InternalComponentInstance' and 'RequiredHostInstance'. From 'camel_deployment_InternalComponentInstance', the role 'camel_deployment_InternalComponentInstance101' has cardinality 0..*, and from 'RequiredHostInstance', the role 'RequiredHostInstance' has cardinality 0..*.
+An association connects 'camel_deployment_VMInstance' and 'Attribute'. From 'camel_deployment_VMInstance', the role 'camel_deployment_VMInstance' has cardinality 0..*, and from 'Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'camel_deployment_VMInstance' and 'SingleValue'. From 'camel_deployment_VMInstance', the role 'camel_deployment_VMInstance104' has cardinality 0..*, and from 'SingleValue', the role 'SingleValue' has cardinality 0..*.
+An association connects 'camel_deployment_CommunicationInstance' and 'Communication'. From 'camel_deployment_CommunicationInstance', the role 'camel_deployment_CommunicationInstance' has cardinality 0..*, and from 'Communication', the role 'Communication106' has cardinality 0..*.
+An association connects 'ProvidedCommunicationInstance' and 'camel_deployment_CommunicationInstance'. From 'ProvidedCommunicationInstance', the role 'ProvidedCommunicationInstance109' has cardinality 0..*, and from 'camel_deployment_CommunicationInstance', the role 'camel_deployment_CommunicationInstance108' has cardinality 0..*.
+An association connects 'camel_deployment_CommunicationInstance' and 'RequiredCommunicationInstance'. From 'camel_deployment_CommunicationInstance', the role 'camel_deployment_CommunicationInstance111' has cardinality 0..*, and from 'RequiredCommunicationInstance', the role 'RequiredCommunicationInstance112' has cardinality 0..*.
+An association connects 'camel_deployment_CommunicationPortInstance' and 'CommunicationPort'. From 'camel_deployment_CommunicationPortInstance', the role 'camel_deployment_CommunicationPortInstance' has cardinality 0..*, and from 'CommunicationPort', the role 'CommunicationPort' has cardinality 0..*.
+An association connects 'camel_deployment_HostingInstance' and 'Hosting'. From 'camel_deployment_HostingInstance', the role 'camel_deployment_HostingInstance' has cardinality 0..*, and from 'Hosting', the role 'Hosting115' has cardinality 0..*.
+An association connects 'camel_deployment_HostingInstance' and 'ProvidedHostInstance'. From 'camel_deployment_HostingInstance', the role 'camel_deployment_HostingInstance117' has cardinality 0..*, and from 'ProvidedHostInstance', the role 'ProvidedHostInstance118' has cardinality 0..*.
+An association connects 'RequiredHostInstance' and 'camel_deployment_HostingInstance'. From 'RequiredHostInstance', the role 'RequiredHostInstance121' has cardinality 0..*, and from 'camel_deployment_HostingInstance', the role 'camel_deployment_HostingInstance120' has cardinality 0..*.
+An association connects 'camel_deployment_HostingPortInstance' and 'HostingPort'. From 'camel_deployment_HostingPortInstance', the role 'camel_deployment_HostingPortInstance' has cardinality 0..*, and from 'HostingPort', the role 'HostingPort' has cardinality 0..*.
+An association connects 'camel_execution_ExecutionModel' and 'ActionRealisation'. From 'camel_execution_ExecutionModel', the role 'camel_execution_ExecutionModel' has cardinality 0..*, and from 'ActionRealisation', the role 'ActionRealisation' has cardinality 0..*.
+An association connects 'camel_execution_ExecutionModel' and 'EventInstance'. From 'camel_execution_ExecutionModel', the role 'camel_execution_ExecutionModel125' has cardinality 0..*, and from 'EventInstance', the role 'EventInstance' has cardinality 0..*.
+An association connects 'camel_execution_ExecutionModel' and 'ExecutionContext'. From 'camel_execution_ExecutionModel', the role 'camel_execution_ExecutionModel127' has cardinality 0..*, and from 'ExecutionContext', the role 'ExecutionContext' has cardinality 0..*.
+An association connects 'Measurement' and 'camel_execution_ExecutionModel'. From 'Measurement', the role 'Measurement' has cardinality 0..*, and from 'camel_execution_ExecutionModel', the role 'camel_execution_ExecutionModel129' has cardinality 0..*.
+An association connects 'camel_execution_ExecutionModel' and 'SLOAssessment'. From 'camel_execution_ExecutionModel', the role 'camel_execution_ExecutionModel131' has cardinality 0..*, and from 'SLOAssessment', the role 'SLOAssessment' has cardinality 0..*.
+An association connects 'RuleTrigger' and 'camel_execution_ExecutionModel'. From 'RuleTrigger', the role 'RuleTrigger' has cardinality 0..*, and from 'camel_execution_ExecutionModel', the role 'camel_execution_ExecutionModel133' has cardinality 0..*.
+An association connects 'camel_execution_ActionRealisation' and 'execution_camel_Action'. From 'camel_execution_ActionRealisation', the role 'camel_execution_ActionRealisation' has cardinality 0..*, and from 'execution_camel_Action', the role 'execution_camel_Action' has cardinality 0..*.
+An association connects 'execution_camel_Application' and 'camel_execution_ExecutionContext'. From 'execution_camel_Application', the role 'execution_camel_Application' has cardinality 0..*, and from 'camel_execution_ExecutionContext', the role 'camel_execution_ExecutionContext' has cardinality 0..*.
+An association connects 'camel_execution_ExecutionContext' and 'MonetaryUnit'. From 'camel_execution_ExecutionContext', the role 'camel_execution_ExecutionContext137' has cardinality 0..*, and from 'MonetaryUnit', the role 'MonetaryUnit' has cardinality 0..*.
+An association connects 'camel_execution_ExecutionContext' and 'DeploymentModel'. From 'camel_execution_ExecutionContext', the role 'camel_execution_ExecutionContext139' has cardinality 0..*, and from 'DeploymentModel', the role 'DeploymentModel140' has cardinality 0..*.
+An association connects 'RequirementGroup' and 'camel_execution_ExecutionContext'. From 'RequirementGroup', the role 'RequirementGroup' has cardinality 0..*, and from 'camel_execution_ExecutionContext', the role 'camel_execution_ExecutionContext142' has cardinality 0..*.
+An association connects 'ExecutionContext' and 'camel_execution_Measurement'. From 'ExecutionContext', the role 'ExecutionContext144' has cardinality 0..*, and from 'camel_execution_Measurement', the role 'camel_execution_Measurement' has cardinality 0..*.
+An association connects 'MetricInstance' and 'camel_execution_Measurement'. From 'MetricInstance', the role 'MetricInstance' has cardinality 0..*, and from 'camel_execution_Measurement', the role 'camel_execution_Measurement146' has cardinality 0..*.
+An association connects 'ServiceLevelObjective' and 'camel_execution_Measurement'. From 'ServiceLevelObjective', the role 'ServiceLevelObjective' has cardinality 0..*, and from 'camel_execution_Measurement', the role 'camel_execution_Measurement148' has cardinality 0..*.
+An association connects 'EventInstance' and 'camel_execution_Measurement'. From 'EventInstance', the role 'EventInstance151' has cardinality 0..*, and from 'camel_execution_Measurement', the role 'camel_execution_Measurement150' has cardinality 0..*.
+An association connects 'camel_execution_ApplicationMeasurement' and 'execution_camel_Application'. From 'camel_execution_ApplicationMeasurement', the role 'camel_execution_ApplicationMeasurement' has cardinality 0..*, and from 'execution_camel_Application', the role 'execution_camel_Application153' has cardinality 0..*.
+An association connects 'InternalComponentInstance' and 'camel_execution_InternalComponentMeasurement'. From 'InternalComponentInstance', the role 'InternalComponentInstance155' has cardinality 0..*, and from 'camel_execution_InternalComponentMeasurement', the role 'camel_execution_InternalComponentMeasurement' has cardinality 0..*.
+An association connects 'camel_execution_CommunicationMeasurement' and 'VMInstance'. From 'camel_execution_CommunicationMeasurement', the role 'camel_execution_CommunicationMeasurement' has cardinality 0..*, and from 'VMInstance', the role 'VMInstance157' has cardinality 0..*.
+An association connects 'camel_execution_CommunicationMeasurement' and 'VMInstance'. From 'camel_execution_CommunicationMeasurement', the role 'camel_execution_CommunicationMeasurement159' has cardinality 0..*, and from 'VMInstance', the role 'VMInstance160' has cardinality 0..*.
+An association connects 'VMInstance' and 'camel_execution_VMMeasurement'. From 'VMInstance', the role 'VMInstance162' has cardinality 0..*, and from 'camel_execution_VMMeasurement', the role 'camel_execution_VMMeasurement' has cardinality 0..*.
+An association connects 'camel_execution_SLOAssessment' and 'ServiceLevelObjective'. From 'camel_execution_SLOAssessment', the role 'camel_execution_SLOAssessment' has cardinality 0..*, and from 'ServiceLevelObjective', the role 'ServiceLevelObjective164' has cardinality 0..*.
+An association connects 'ExecutionContext' and 'camel_execution_SLOAssessment'. From 'ExecutionContext', the role 'ExecutionContext167' has cardinality 0..*, and from 'camel_execution_SLOAssessment', the role 'camel_execution_SLOAssessment166' has cardinality 0..*.
+An association connects 'camel_execution_SLOAssessment' and 'Measurement'. From 'camel_execution_SLOAssessment', the role 'camel_execution_SLOAssessment169' has cardinality 0..*, and from 'Measurement', the role 'Measurement170' has cardinality 0..*.
+An association connects 'ScalabilityRule' and 'camel_execution_RuleTrigger'. From 'ScalabilityRule', the role 'ScalabilityRule' has cardinality 0..*, and from 'camel_execution_RuleTrigger', the role 'camel_execution_RuleTrigger' has cardinality 0..*.
+An association connects 'camel_execution_RuleTrigger' and 'EventInstance'. From 'camel_execution_RuleTrigger', the role 'camel_execution_RuleTrigger173' has cardinality 0..*, and from 'EventInstance', the role 'EventInstance174' has cardinality 0..*.
+An association connects 'ActionRealisation' and 'camel_execution_RuleTrigger'. From 'ActionRealisation', the role 'ActionRealisation177' has cardinality 0..*, and from 'camel_execution_RuleTrigger', the role 'camel_execution_RuleTrigger176' has cardinality 0..*.
+An association connects 'ExecutionContext' and 'camel_execution_RuleTrigger'. From 'ExecutionContext', the role 'ExecutionContext180' has cardinality 0..*, and from 'camel_execution_RuleTrigger', the role 'camel_execution_RuleTrigger179' has cardinality 0..*.
+An association connects 'camel_location_LocationModel' and 'CloudLocation'. From 'camel_location_LocationModel', the role 'camel_location_LocationModel' has cardinality 0..*, and from 'CloudLocation', the role 'CloudLocation' has cardinality 0..*.
+An association connects 'camel_location_LocationModel' and 'Country'. From 'camel_location_LocationModel', the role 'camel_location_LocationModel183' has cardinality 0..*, and from 'Country', the role 'Country' has cardinality 0..*.
+An association connects 'camel_location_LocationModel' and 'GeographicalRegion'. From 'camel_location_LocationModel', the role 'camel_location_LocationModel185' has cardinality 0..*, and from 'GeographicalRegion', the role 'GeographicalRegion' has cardinality 0..*.
+An association connects 'camel_location_CloudLocation' and 'CloudLocation'. From 'camel_location_CloudLocation', the role 'camel_location_CloudLocation' has cardinality 0..*, and from 'CloudLocation', the role 'CloudLocation187' has cardinality 0..*.
+An association connects 'CloudLocation' and 'camel_location_CloudLocation'. From 'CloudLocation', the role 'CloudLocation190' has cardinality 0..*, and from 'camel_location_CloudLocation', the role 'camel_location_CloudLocation189' has cardinality 0..*.
+An association connects 'camel_location_CloudLocation' and 'GeographicalRegion'. From 'camel_location_CloudLocation', the role 'camel_location_CloudLocation192' has cardinality 0..*, and from 'GeographicalRegion', the role 'GeographicalRegion193' has cardinality 0..*.
+An association connects 'camel_location_GeographicalRegion' and 'GeographicalRegion'. From 'camel_location_GeographicalRegion', the role 'camel_location_GeographicalRegion' has cardinality 0..*, and from 'GeographicalRegion', the role 'GeographicalRegion195' has cardinality 0..*.
+An association connects 'MetricContext' and 'camel_metric_MetricCondition'. From 'MetricContext', the role 'MetricContext' has cardinality 0..*, and from 'camel_metric_MetricCondition', the role 'camel_metric_MetricCondition' has cardinality 0..*.
+An association connects 'PropertyContext' and 'camel_metric_PropertyCondition'. From 'PropertyContext', the role 'PropertyContext' has cardinality 0..*, and from 'camel_metric_PropertyCondition', the role 'camel_metric_PropertyCondition' has cardinality 0..*.
+An association connects 'camel_metric_PropertyCondition' and 'MonetaryUnit'. From 'camel_metric_PropertyCondition', the role 'camel_metric_PropertyCondition199' has cardinality 0..*, and from 'MonetaryUnit', the role 'MonetaryUnit200' has cardinality 0..*.
+An association connects 'TimeIntervalUnit' and 'camel_metric_PropertyCondition'. From 'TimeIntervalUnit', the role 'TimeIntervalUnit' has cardinality 0..*, and from 'camel_metric_PropertyCondition', the role 'camel_metric_PropertyCondition202' has cardinality 0..*.
+An association connects 'camel_metric_MetricInstance' and 'Metric'. From 'camel_metric_MetricInstance', the role 'camel_metric_MetricInstance' has cardinality 0..*, and from 'Metric', the role 'Metric' has cardinality 0..*.
+An association connects 'camel_metric_MetricInstance' and 'Schedule'. From 'camel_metric_MetricInstance', the role 'camel_metric_MetricInstance205' has cardinality 0..*, and from 'Schedule', the role 'Schedule' has cardinality 0..*.
+An association connects 'Window' and 'camel_metric_MetricInstance'. From 'Window', the role 'Window' has cardinality 0..*, and from 'camel_metric_MetricInstance', the role 'camel_metric_MetricInstance207' has cardinality 0..*.
+An association connects 'MetricObjectBinding' and 'camel_metric_MetricInstance'. From 'MetricObjectBinding', the role 'MetricObjectBinding' has cardinality 0..*, and from 'camel_metric_MetricInstance', the role 'camel_metric_MetricInstance209' has cardinality 0..*.
+An association connects 'camel_metric_MetricInstance' and 'MetricContext'. From 'camel_metric_MetricInstance', the role 'camel_metric_MetricInstance211' has cardinality 0..*, and from 'MetricContext', the role 'MetricContext212' has cardinality 0..*.
+An association connects 'camel_metric_CompositeMetricInstance' and 'MetricInstance'. From 'camel_metric_CompositeMetricInstance', the role 'camel_metric_CompositeMetricInstance' has cardinality 0..*, and from 'MetricInstance', the role 'MetricInstance214' has cardinality 0..*.
+An association connects 'camel_metric_RawMetricInstance' and 'Sensor'. From 'camel_metric_RawMetricInstance', the role 'camel_metric_RawMetricInstance' has cardinality 0..*, and from 'Sensor', the role 'Sensor' has cardinality 0..*.
+An association connects 'SingleValue' and 'camel_metric_MetricFormulaParameter'. From 'SingleValue', the role 'SingleValue217' has cardinality 0..*, and from 'camel_metric_MetricFormulaParameter', the role 'camel_metric_MetricFormulaParameter' has cardinality 0..*.
+An association connects 'camel_metric_MetricFormula' and 'MetricFormulaParameter'. From 'camel_metric_MetricFormula', the role 'camel_metric_MetricFormula' has cardinality 0..*, and from 'MetricFormulaParameter', the role 'MetricFormulaParameter' has cardinality 0..*.
+An association connects 'ValueType' and 'camel_metric_Metric'. From 'ValueType', the role 'ValueType' has cardinality 0..*, and from 'camel_metric_Metric', the role 'camel_metric_Metric' has cardinality 0..*.
+An association connects 'Unit' and 'camel_metric_Metric'. From 'Unit', the role 'Unit' has cardinality 0..*, and from 'camel_metric_Metric', the role 'camel_metric_Metric221' has cardinality 0..*.
+An association connects 'camel_metric_Metric' and 'Property'. From 'camel_metric_Metric', the role 'camel_metric_Metric223' has cardinality 0..*, and from 'Property', the role 'Property' has cardinality 0..*.
+An association connects 'MetricFormula' and 'camel_metric_CompositeMetric'. From 'MetricFormula', the role 'MetricFormula' has cardinality 0..*, and from 'camel_metric_CompositeMetric', the role 'camel_metric_CompositeMetric' has cardinality 0..*.
+An association connects 'camel_metric_MetricObjectBinding' and 'ExecutionContext'. From 'camel_metric_MetricObjectBinding', the role 'camel_metric_MetricObjectBinding' has cardinality 0..*, and from 'ExecutionContext', the role 'ExecutionContext226' has cardinality 0..*.
+An association connects 'VMInstance' and 'camel_metric_MetricComponentBinding'. From 'VMInstance', the role 'VMInstance228' has cardinality 0..*, and from 'camel_metric_MetricComponentBinding', the role 'camel_metric_MetricComponentBinding' has cardinality 0..*.
+An association connects 'camel_metric_MetricComponentBinding' and 'ComponentInstance'. From 'camel_metric_MetricComponentBinding', the role 'camel_metric_MetricComponentBinding230' has cardinality 0..*, and from 'ComponentInstance', the role 'ComponentInstance' has cardinality 0..*.
+An association connects 'VMInstance' and 'camel_metric_MetricVMBinding'. From 'VMInstance', the role 'VMInstance232' has cardinality 0..*, and from 'camel_metric_MetricVMBinding', the role 'camel_metric_MetricVMBinding' has cardinality 0..*.
+An association connects 'Property' and 'camel_metric_Property'. From 'Property', the role 'Property234' has cardinality 0..*, and from 'camel_metric_Property', the role 'camel_metric_Property' has cardinality 0..*.
+An association connects 'Sensor' and 'camel_metric_Property'. From 'Sensor', the role 'Sensor237' has cardinality 0..*, and from 'camel_metric_Property', the role 'camel_metric_Property236' has cardinality 0..*.
+An association connects 'camel_metric_Schedule' and 'TimeIntervalUnit'. From 'camel_metric_Schedule', the role 'camel_metric_Schedule' has cardinality 0..*, and from 'TimeIntervalUnit', the role 'TimeIntervalUnit239' has cardinality 0..*.
+An association connects 'TimeIntervalUnit' and 'camel_metric_Window'. From 'TimeIntervalUnit', the role 'TimeIntervalUnit241' has cardinality 0..*, and from 'camel_metric_Window', the role 'camel_metric_Window' has cardinality 0..*.
+An association connects 'camel_metric_ConditionContext' and 'Component'. From 'camel_metric_ConditionContext', the role 'camel_metric_ConditionContext' has cardinality 0..*, and from 'Component', the role 'Component243' has cardinality 0..*.
+An association connects 'camel_metric_ConditionContext' and 'metric_camel_Application'. From 'camel_metric_ConditionContext', the role 'camel_metric_ConditionContext245' has cardinality 0..*, and from 'metric_camel_Application', the role 'metric_camel_Application' has cardinality 0..*.
+An association connects 'ConditionContext' and 'camel_metric_MetricModel'. From 'ConditionContext', the role 'ConditionContext' has cardinality 0..*, and from 'camel_metric_MetricModel', the role 'camel_metric_MetricModel' has cardinality 0..*.
+An association connects 'Metric' and 'camel_metric_MetricModel'. From 'Metric', the role 'Metric249' has cardinality 0..*, and from 'camel_metric_MetricModel', the role 'camel_metric_MetricModel248' has cardinality 0..*.
+An association connects 'camel_metric_MetricModel' and 'MetricInstance'. From 'camel_metric_MetricModel', the role 'camel_metric_MetricModel251' has cardinality 0..*, and from 'MetricInstance', the role 'MetricInstance252' has cardinality 0..*.
+An association connects 'Condition' and 'camel_metric_MetricModel'. From 'Condition', the role 'Condition' has cardinality 0..*, and from 'camel_metric_MetricModel', the role 'camel_metric_MetricModel254' has cardinality 0..*.
+An association connects 'Property' and 'camel_metric_MetricModel'. From 'Property', the role 'Property257' has cardinality 0..*, and from 'camel_metric_MetricModel', the role 'camel_metric_MetricModel256' has cardinality 0..*.
+An association connects 'MetricObjectBinding' and 'camel_metric_MetricModel'. From 'MetricObjectBinding', the role 'MetricObjectBinding260' has cardinality 0..*, and from 'camel_metric_MetricModel', the role 'camel_metric_MetricModel259' has cardinality 0..*.
+An association connects 'camel_metric_MetricModel' and 'Window'. From 'camel_metric_MetricModel', the role 'camel_metric_MetricModel262' has cardinality 0..*, and from 'Window', the role 'Window263' has cardinality 0..*.
+An association connects 'camel_metric_MetricModel' and 'Schedule'. From 'camel_metric_MetricModel', the role 'camel_metric_MetricModel265' has cardinality 0..*, and from 'Schedule', the role 'Schedule266' has cardinality 0..*.
+An association connects 'MetricFormulaParameter' and 'camel_metric_MetricModel'. From 'MetricFormulaParameter', the role 'MetricFormulaParameter269' has cardinality 0..*, and from 'camel_metric_MetricModel', the role 'camel_metric_MetricModel268' has cardinality 0..*.
+An association connects 'Sensor' and 'camel_metric_MetricModel'. From 'Sensor', the role 'Sensor272' has cardinality 0..*, and from 'camel_metric_MetricModel', the role 'camel_metric_MetricModel271' has cardinality 0..*.
+An association connects 'camel_metric_MetricModel' and 'Unit'. From 'camel_metric_MetricModel', the role 'camel_metric_MetricModel274' has cardinality 0..*, and from 'Unit', the role 'Unit275' has cardinality 0..*.
+An association connects 'Metric' and 'camel_metric_MetricContext'. From 'Metric', the role 'Metric277' has cardinality 0..*, and from 'camel_metric_MetricContext', the role 'camel_metric_MetricContext' has cardinality 0..*.
+An association connects 'camel_metric_MetricContext' and 'Window'. From 'camel_metric_MetricContext', the role 'camel_metric_MetricContext279' has cardinality 0..*, and from 'Window', the role 'Window280' has cardinality 0..*.
+An association connects 'camel_metric_MetricContext' and 'Schedule'. From 'camel_metric_MetricContext', the role 'camel_metric_MetricContext282' has cardinality 0..*, and from 'Schedule', the role 'Schedule283' has cardinality 0..*.
+An association connects 'camel_metric_CompositeMetricContext' and 'MetricContext'. From 'camel_metric_CompositeMetricContext', the role 'camel_metric_CompositeMetricContext' has cardinality 0..*, and from 'MetricContext', the role 'MetricContext285' has cardinality 0..*.
+An association connects 'Sensor' and 'camel_metric_RawMetricContext'. From 'Sensor', the role 'Sensor287' has cardinality 0..*, and from 'camel_metric_RawMetricContext', the role 'camel_metric_RawMetricContext' has cardinality 0..*.
+An association connects 'camel_metric_PropertyContext' and 'Property'. From 'camel_metric_PropertyContext', the role 'camel_metric_PropertyContext' has cardinality 0..*, and from 'Property', the role 'Property289' has cardinality 0..*.
+An association connects 'Organisation' and 'camel_organisation_OrganisationModel'. From 'Organisation', the role 'Organisation' has cardinality 0..*, and from 'camel_organisation_OrganisationModel', the role 'camel_organisation_OrganisationModel' has cardinality 0..*.
+An association connects 'camel_organisation_OrganisationModel' and 'CloudProvider'. From 'camel_organisation_OrganisationModel', the role 'camel_organisation_OrganisationModel292' has cardinality 0..*, and from 'CloudProvider', the role 'CloudProvider' has cardinality 0..*.
+An association connects 'ExternalIdentifier' and 'camel_organisation_OrganisationModel'. From 'ExternalIdentifier', the role 'ExternalIdentifier' has cardinality 0..*, and from 'camel_organisation_OrganisationModel', the role 'camel_organisation_OrganisationModel294' has cardinality 0..*.
+An association connects 'camel_organisation_OrganisationModel' and 'User'. From 'camel_organisation_OrganisationModel', the role 'camel_organisation_OrganisationModel296' has cardinality 0..*, and from 'User', the role 'User' has cardinality 0..*.
+An association connects 'camel_organisation_OrganisationModel' and 'UserGroup'. From 'camel_organisation_OrganisationModel', the role 'camel_organisation_OrganisationModel298' has cardinality 0..*, and from 'UserGroup', the role 'UserGroup' has cardinality 0..*.
+An association connects 'DataCenter' and 'camel_organisation_OrganisationModel'. From 'DataCenter', the role 'DataCenter' has cardinality 0..*, and from 'camel_organisation_OrganisationModel', the role 'camel_organisation_OrganisationModel300' has cardinality 0..*.
+An association connects 'camel_organisation_OrganisationModel' and 'Role'. From 'camel_organisation_OrganisationModel', the role 'camel_organisation_OrganisationModel302' has cardinality 0..*, and from 'Role', the role 'Role' has cardinality 0..*.
+An association connects 'camel_organisation_OrganisationModel' and 'RoleAssignment'. From 'camel_organisation_OrganisationModel', the role 'camel_organisation_OrganisationModel304' has cardinality 0..*, and from 'RoleAssignment', the role 'RoleAssignment' has cardinality 0..*.
+An association connects 'Permission' and 'camel_organisation_OrganisationModel'. From 'Permission', the role 'Permission' has cardinality 0..*, and from 'camel_organisation_OrganisationModel', the role 'camel_organisation_OrganisationModel306' has cardinality 0..*.
+An association connects 'ResourceFilter' and 'camel_organisation_OrganisationModel'. From 'ResourceFilter', the role 'ResourceFilter' has cardinality 0..*, and from 'camel_organisation_OrganisationModel', the role 'camel_organisation_OrganisationModel308' has cardinality 0..*.
+An association connects 'camel_organisation_CloudCredentials' and 'CloudProvider'. From 'camel_organisation_CloudCredentials', the role 'camel_organisation_CloudCredentials' has cardinality 0..*, and from 'CloudProvider', the role 'CloudProvider310' has cardinality 0..*.
+An association connects 'camel_organisation_DataCenter' and 'Location'. From 'camel_organisation_DataCenter', the role 'camel_organisation_DataCenter' has cardinality 0..*, and from 'Location', the role 'Location' has cardinality 0..*.
+An association connects 'camel_organisation_CloudProvider' and 'ProviderModel'. From 'camel_organisation_CloudProvider', the role 'camel_organisation_CloudProvider' has cardinality 0..*, and from 'ProviderModel', the role 'ProviderModel313' has cardinality 0..*.
+An association connects 'camel_organisation_CloudProvider' and 'SecurityCapability'. From 'camel_organisation_CloudProvider', the role 'camel_organisation_CloudProvider315' has cardinality 0..*, and from 'SecurityCapability', the role 'SecurityCapability' has cardinality 0..*.
+An association connects 'camel_organisation_User' and 'ExternalIdentifier'. From 'camel_organisation_User', the role 'camel_organisation_User' has cardinality 0..*, and from 'ExternalIdentifier', the role 'ExternalIdentifier317' has cardinality 0..*.
+An association connects 'RequirementModel' and 'camel_organisation_User'. From 'RequirementModel', the role 'RequirementModel320' has cardinality 0..*, and from 'camel_organisation_User', the role 'camel_organisation_User319' has cardinality 0..*.
+An association connects 'CloudCredentials' and 'camel_organisation_User'. From 'CloudCredentials', the role 'CloudCredentials' has cardinality 0..*, and from 'camel_organisation_User', the role 'camel_organisation_User322' has cardinality 0..*.
+An association connects 'DeploymentModel' and 'camel_organisation_User'. From 'DeploymentModel', the role 'DeploymentModel325' has cardinality 0..*, and from 'camel_organisation_User', the role 'camel_organisation_User324' has cardinality 0..*.
+An association connects 'camel_organisation_User' and 'PaaSageCredentials'. From 'camel_organisation_User', the role 'camel_organisation_User327' has cardinality 0..*, and from 'PaaSageCredentials', the role 'PaaSageCredentials' has cardinality 0..*.
+An association connects 'camel_organisation_Permission' and 'Role'. From 'camel_organisation_Permission', the role 'camel_organisation_Permission' has cardinality 0..*, and from 'Role', the role 'Role329' has cardinality 0..*.
+An association connects 'ResourceFilter' and 'camel_organisation_Permission'. From 'ResourceFilter', the role 'ResourceFilter332' has cardinality 0..*, and from 'camel_organisation_Permission', the role 'camel_organisation_Permission331' has cardinality 0..*.
+An association connects 'camel_organisation_RoleAssignment' and 'User'. From 'camel_organisation_RoleAssignment', the role 'camel_organisation_RoleAssignment' has cardinality 0..*, and from 'User', the role 'User334' has cardinality 0..*.
+An association connects 'camel_organisation_RoleAssignment' and 'Role'. From 'camel_organisation_RoleAssignment', the role 'camel_organisation_RoleAssignment336' has cardinality 0..*, and from 'Role', the role 'Role337' has cardinality 0..*.
+An association connects 'UserGroup' and 'camel_organisation_RoleAssignment'. From 'UserGroup', the role 'UserGroup340' has cardinality 0..*, and from 'camel_organisation_RoleAssignment', the role 'camel_organisation_RoleAssignment339' has cardinality 0..*.
+An association connects 'User' and 'camel_organisation_UserGroup'. From 'User', the role 'User342' has cardinality 0..*, and from 'camel_organisation_UserGroup', the role 'camel_organisation_UserGroup' has cardinality 0..*.
+An association connects 'camel_provider_ProviderModel' and 'Constraint'. From 'camel_provider_ProviderModel', the role 'camel_provider_ProviderModel' has cardinality 0..*, and from 'Constraint', the role 'Constraint' has cardinality 0..*.
+An association connects 'Feature' and 'camel_provider_ProviderModel'. From 'Feature', the role 'Feature' has cardinality 0..*, and from 'camel_provider_ProviderModel', the role 'camel_provider_ProviderModel345' has cardinality 0..*.
+An association connects 'SingleValue' and 'camel_provider_Attribute'. From 'SingleValue', the role 'SingleValue347' has cardinality 0..*, and from 'camel_provider_Attribute', the role 'camel_provider_Attribute' has cardinality 0..*.
+An association connects 'camel_provider_Attribute' and 'ValueType'. From 'camel_provider_Attribute', the role 'camel_provider_Attribute349' has cardinality 0..*, and from 'ValueType', the role 'ValueType350' has cardinality 0..*.
+An association connects 'Attribute' and 'camel_provider_AttributeConstraint'. From 'Attribute', the role 'Attribute352' has cardinality 0..*, and from 'camel_provider_AttributeConstraint', the role 'camel_provider_AttributeConstraint' has cardinality 0..*.
+An association connects 'camel_provider_AttributeConstraint' and 'Attribute'. From 'camel_provider_AttributeConstraint', the role 'camel_provider_AttributeConstraint354' has cardinality 0..*, and from 'Attribute', the role 'Attribute355' has cardinality 0..*.
+An association connects 'SingleValue' and 'camel_provider_AttributeConstraint'. From 'SingleValue', the role 'SingleValue358' has cardinality 0..*, and from 'camel_provider_AttributeConstraint', the role 'camel_provider_AttributeConstraint357' has cardinality 0..*.
+An association connects 'SingleValue' and 'camel_provider_AttributeConstraint'. From 'SingleValue', the role 'SingleValue361' has cardinality 0..*, and from 'camel_provider_AttributeConstraint', the role 'camel_provider_AttributeConstraint360' has cardinality 0..*.
+An association connects 'camel_provider_Clone' and 'Clone'. From 'camel_provider_Clone', the role 'camel_provider_Clone' has cardinality 0..*, and from 'Clone', the role 'Clone' has cardinality 0..*.
+An association connects 'Feature' and 'camel_provider_Constraint'. From 'Feature', the role 'Feature364' has cardinality 0..*, and from 'camel_provider_Constraint', the role 'camel_provider_Constraint' has cardinality 0..*.
+An association connects 'Feature' and 'camel_provider_Constraint'. From 'Feature', the role 'Feature367' has cardinality 0..*, and from 'camel_provider_Constraint', the role 'camel_provider_Constraint366' has cardinality 0..*.
+An association connects 'camel_provider_Constraint' and 'AttributeConstraint'. From 'camel_provider_Constraint', the role 'camel_provider_Constraint369' has cardinality 0..*, and from 'AttributeConstraint', the role 'AttributeConstraint' has cardinality 0..*.
+An association connects 'Scope' and 'camel_provider_Requires'. From 'Scope', the role 'Scope' has cardinality 0..*, and from 'camel_provider_Requires', the role 'camel_provider_Requires' has cardinality 0..*.
+An association connects 'camel_provider_Requires' and 'Scope'. From 'camel_provider_Requires', the role 'camel_provider_Requires372' has cardinality 0..*, and from 'Scope', the role 'Scope373' has cardinality 0..*.
+An association connects 'FeatCardinality' and 'camel_provider_Requires'. From 'FeatCardinality', the role 'FeatCardinality' has cardinality 0..*, and from 'camel_provider_Requires', the role 'camel_provider_Requires375' has cardinality 0..*.
+An association connects 'FeatCardinality' and 'camel_provider_Requires'. From 'FeatCardinality', the role 'FeatCardinality378' has cardinality 0..*, and from 'camel_provider_Requires', the role 'camel_provider_Requires377' has cardinality 0..*.
+An association connects 'camel_provider_Feature' and 'Attribute'. From 'camel_provider_Feature', the role 'camel_provider_Feature' has cardinality 0..*, and from 'Attribute', the role 'Attribute380' has cardinality 0..*.
+An association connects 'camel_provider_Feature' and 'Feature'. From 'camel_provider_Feature', the role 'camel_provider_Feature382' has cardinality 0..*, and from 'Feature', the role 'Feature383' has cardinality 0..*.
+An association connects 'FeatCardinality' and 'camel_provider_Feature'. From 'FeatCardinality', the role 'FeatCardinality386' has cardinality 0..*, and from 'camel_provider_Feature', the role 'camel_provider_Feature385' has cardinality 0..*.
+An association connects 'camel_provider_Feature' and 'Clone'. From 'camel_provider_Feature', the role 'camel_provider_Feature388' has cardinality 0..*, and from 'Clone', the role 'Clone389' has cardinality 0..*.
+An association connects 'GroupCardinality' and 'camel_provider_Alternative'. From 'GroupCardinality', the role 'GroupCardinality' has cardinality 0..*, and from 'camel_provider_Alternative', the role 'camel_provider_Alternative' has cardinality 0..*.
+An association connects 'Feature' and 'camel_provider_Alternative'. From 'Feature', the role 'Feature393' has cardinality 0..*, and from 'camel_provider_Alternative', the role 'camel_provider_Alternative392' has cardinality 0..*.
+An association connects 'Feature' and 'camel_provider_Instance'. From 'Feature', the role 'Feature395' has cardinality 0..*, and from 'camel_provider_Instance', the role 'camel_provider_Instance' has cardinality 0..*.
+An association connects 'camel_requirement_RequirementModel' and 'Requirement'. From 'camel_requirement_RequirementModel', the role 'camel_requirement_RequirementModel' has cardinality 0..*, and from 'Requirement', the role 'Requirement' has cardinality 0..*.
+An association connects 'Requirement' and 'camel_requirement_RequirementGroup'. From 'Requirement', the role 'Requirement398' has cardinality 0..*, and from 'camel_requirement_RequirementGroup', the role 'camel_requirement_RequirementGroup' has cardinality 0..*.
+An association connects 'camel_requirement_RequirementGroup' and 'requirement_camel_Application'. From 'camel_requirement_RequirementGroup', the role 'camel_requirement_RequirementGroup400' has cardinality 0..*, and from 'requirement_camel_Application', the role 'requirement_camel_Application' has cardinality 0..*.
+An association connects 'camel_requirement_ServiceLevelObjective' and 'Condition'. From 'camel_requirement_ServiceLevelObjective', the role 'camel_requirement_ServiceLevelObjective' has cardinality 0..*, and from 'Condition', the role 'Condition402' has cardinality 0..*.
+An association connects 'camel_requirement_OptimisationRequirement' and 'Metric'. From 'camel_requirement_OptimisationRequirement', the role 'camel_requirement_OptimisationRequirement' has cardinality 0..*, and from 'Metric', the role 'Metric404' has cardinality 0..*.
+An association connects 'Property' and 'camel_requirement_OptimisationRequirement'. From 'Property', the role 'Property407' has cardinality 0..*, and from 'camel_requirement_OptimisationRequirement', the role 'camel_requirement_OptimisationRequirement406' has cardinality 0..*.
+An association connects 'camel_requirement_OptimisationRequirement' and 'requirement_camel_Application'. From 'camel_requirement_OptimisationRequirement', the role 'camel_requirement_OptimisationRequirement409' has cardinality 0..*, and from 'requirement_camel_Application', the role 'requirement_camel_Application410' has cardinality 0..*.
+An association connects 'camel_requirement_OptimisationRequirement' and 'Component'. From 'camel_requirement_OptimisationRequirement', the role 'camel_requirement_OptimisationRequirement412' has cardinality 0..*, and from 'Component', the role 'Component413' has cardinality 0..*.
+An association connects 'camel_requirement_OptimisationRequirement' and 'MetricContext'. From 'camel_requirement_OptimisationRequirement', the role 'camel_requirement_OptimisationRequirement415' has cardinality 0..*, and from 'MetricContext', the role 'MetricContext416' has cardinality 0..*.
+An association connects 'CloudProvider' and 'camel_requirement_ProviderRequirement'. From 'CloudProvider', the role 'CloudProvider418' has cardinality 0..*, and from 'camel_requirement_ProviderRequirement', the role 'camel_requirement_ProviderRequirement' has cardinality 0..*.
+An association connects 'SecurityControl' and 'camel_requirement_SecurityRequirement'. From 'SecurityControl', the role 'SecurityControl' has cardinality 0..*, and from 'camel_requirement_SecurityRequirement', the role 'camel_requirement_SecurityRequirement' has cardinality 0..*.
+An association connects 'requirement_camel_Application' and 'camel_requirement_SecurityRequirement'. From 'requirement_camel_Application', the role 'requirement_camel_Application422' has cardinality 0..*, and from 'camel_requirement_SecurityRequirement', the role 'camel_requirement_SecurityRequirement421' has cardinality 0..*.
+An association connects 'InternalComponent' and 'camel_requirement_SecurityRequirement'. From 'InternalComponent', the role 'InternalComponent425' has cardinality 0..*, and from 'camel_requirement_SecurityRequirement', the role 'camel_requirement_SecurityRequirement424' has cardinality 0..*.
+An association connects 'Location' and 'camel_requirement_LocationRequirement'. From 'Location', the role 'Location427' has cardinality 0..*, and from 'camel_requirement_LocationRequirement', the role 'camel_requirement_LocationRequirement' has cardinality 0..*.
+An association connects 'InternalComponent' and 'camel_requirement_HorizontalScaleRequirement'. From 'InternalComponent', the role 'InternalComponent429' has cardinality 0..*, and from 'camel_requirement_HorizontalScaleRequirement', the role 'camel_requirement_HorizontalScaleRequirement' has cardinality 0..*.
+An association connects 'VM' and 'camel_requirement_VerticalScaleRequirement'. From 'VM', the role 'VM431' has cardinality 0..*, and from 'camel_requirement_VerticalScaleRequirement', the role 'camel_requirement_VerticalScaleRequirement' has cardinality 0..*.
+An association connects 'camel_scalability_ScalabilityModel' and 'ScalabilityRule'. From 'camel_scalability_ScalabilityModel', the role 'camel_scalability_ScalabilityModel' has cardinality 0..*, and from 'ScalabilityRule', the role 'ScalabilityRule433' has cardinality 0..*.
+An association connects 'Event' and 'camel_scalability_ScalabilityModel'. From 'Event', the role 'Event' has cardinality 0..*, and from 'camel_scalability_ScalabilityModel', the role 'camel_scalability_ScalabilityModel435' has cardinality 0..*.
+An association connects 'EventInstance' and 'camel_scalability_ScalabilityModel'. From 'EventInstance', the role 'EventInstance438' has cardinality 0..*, and from 'camel_scalability_ScalabilityModel', the role 'camel_scalability_ScalabilityModel437' has cardinality 0..*.
+An association connects 'ScalingAction' and 'camel_scalability_ScalabilityModel'. From 'ScalingAction', the role 'ScalingAction' has cardinality 0..*, and from 'camel_scalability_ScalabilityModel', the role 'camel_scalability_ScalabilityModel440' has cardinality 0..*.
+An association connects 'EventPattern' and 'camel_scalability_ScalabilityModel'. From 'EventPattern', the role 'EventPattern' has cardinality 0..*, and from 'camel_scalability_ScalabilityModel', the role 'camel_scalability_ScalabilityModel442' has cardinality 0..*.
+An association connects 'camel_scalability_ScalabilityModel' and 'Timer'. From 'camel_scalability_ScalabilityModel', the role 'camel_scalability_ScalabilityModel444' has cardinality 0..*, and from 'Timer', the role 'Timer' has cardinality 0..*.
+An association connects 'camel_scalability_ScalabilityModel' and 'ScaleRequirement'. From 'camel_scalability_ScalabilityModel', the role 'camel_scalability_ScalabilityModel446' has cardinality 0..*, and from 'ScaleRequirement', the role 'ScaleRequirement' has cardinality 0..*.
+An association connects 'Timer' and 'camel_scalability_EventPattern'. From 'Timer', the role 'Timer448' has cardinality 0..*, and from 'camel_scalability_EventPattern', the role 'camel_scalability_EventPattern' has cardinality 0..*.
+An association connects 'camel_scalability_BinaryEventPattern' and 'Event'. From 'camel_scalability_BinaryEventPattern', the role 'camel_scalability_BinaryEventPattern' has cardinality 0..*, and from 'Event', the role 'Event450' has cardinality 0..*.
+An association connects 'camel_scalability_BinaryEventPattern' and 'Event'. From 'camel_scalability_BinaryEventPattern', the role 'camel_scalability_BinaryEventPattern452' has cardinality 0..*, and from 'Event', the role 'Event453' has cardinality 0..*.
+An association connects 'Event' and 'camel_scalability_UnaryEventPattern'. From 'Event', the role 'Event455' has cardinality 0..*, and from 'camel_scalability_UnaryEventPattern', the role 'camel_scalability_UnaryEventPattern' has cardinality 0..*.
+An association connects 'MetricCondition' and 'camel_scalability_NonFunctionalEvent'. From 'MetricCondition', the role 'MetricCondition' has cardinality 0..*, and from 'camel_scalability_NonFunctionalEvent', the role 'camel_scalability_NonFunctionalEvent' has cardinality 0..*.
+An association connects 'camel_scalability_EventInstance' and 'SimpleEvent'. From 'camel_scalability_EventInstance', the role 'camel_scalability_EventInstance' has cardinality 0..*, and from 'SimpleEvent', the role 'SimpleEvent' has cardinality 0..*.
+An association connects 'MetricInstance' and 'camel_scalability_EventInstance'. From 'MetricInstance', the role 'MetricInstance460' has cardinality 0..*, and from 'camel_scalability_EventInstance', the role 'camel_scalability_EventInstance459' has cardinality 0..*.
+An association connects 'camel_scalability_ScalabilityRule' and 'Event'. From 'camel_scalability_ScalabilityRule', the role 'camel_scalability_ScalabilityRule' has cardinality 0..*, and from 'Event', the role 'Event462' has cardinality 0..*.
+An association connects 'scalability_camel_Action' and 'camel_scalability_ScalabilityRule'. From 'scalability_camel_Action', the role 'scalability_camel_Action' has cardinality 0..*, and from 'camel_scalability_ScalabilityRule', the role 'camel_scalability_ScalabilityRule464' has cardinality 0..*.
+An association connects 'Entity' and 'camel_scalability_ScalabilityRule'. From 'Entity', the role 'Entity467' has cardinality 0..*, and from 'camel_scalability_ScalabilityRule', the role 'camel_scalability_ScalabilityRule466' has cardinality 0..*.
+An association connects 'camel_scalability_ScalabilityRule' and 'ScaleRequirement'. From 'camel_scalability_ScalabilityRule', the role 'camel_scalability_ScalabilityRule469' has cardinality 0..*, and from 'ScaleRequirement', the role 'ScaleRequirement470' has cardinality 0..*.
+An association connects 'VM' and 'camel_scalability_ScalingAction'. From 'VM', the role 'VM472' has cardinality 0..*, and from 'camel_scalability_ScalingAction', the role 'camel_scalability_ScalingAction' has cardinality 0..*.
+An association connects 'camel_scalability_HorizontalScalingAction' and 'InternalComponent'. From 'camel_scalability_HorizontalScalingAction', the role 'camel_scalability_HorizontalScalingAction' has cardinality 0..*, and from 'InternalComponent', the role 'InternalComponent474' has cardinality 0..*.
+An association connects 'camel_scalability_Timer' and 'TimeIntervalUnit'. From 'camel_scalability_Timer', the role 'camel_scalability_Timer' has cardinality 0..*, and from 'TimeIntervalUnit', the role 'TimeIntervalUnit476' has cardinality 0..*.
+An association connects 'SecurityControl' and 'camel_security_SecurityModel'. From 'SecurityControl', the role 'SecurityControl478' has cardinality 0..*, and from 'camel_security_SecurityModel', the role 'camel_security_SecurityModel' has cardinality 0..*.
+An association connects 'SecurityRequirement' and 'camel_security_SecurityModel'. From 'SecurityRequirement', the role 'SecurityRequirement' has cardinality 0..*, and from 'camel_security_SecurityModel', the role 'camel_security_SecurityModel480' has cardinality 0..*.
+An association connects 'camel_security_SecurityModel' and 'SecurityProperty'. From 'camel_security_SecurityModel', the role 'camel_security_SecurityModel482' has cardinality 0..*, and from 'SecurityProperty', the role 'SecurityProperty' has cardinality 0..*.
+An association connects 'camel_security_SecurityModel' and 'RawSecurityMetric'. From 'camel_security_SecurityModel', the role 'camel_security_SecurityModel484' has cardinality 0..*, and from 'RawSecurityMetric', the role 'RawSecurityMetric' has cardinality 0..*.
+An association connects 'CompositeSecurityMetric' and 'camel_security_SecurityModel'. From 'CompositeSecurityMetric', the role 'CompositeSecurityMetric' has cardinality 0..*, and from 'camel_security_SecurityModel', the role 'camel_security_SecurityModel486' has cardinality 0..*.
+An association connects 'RawSecurityMetricInstance' and 'camel_security_SecurityModel'. From 'RawSecurityMetricInstance', the role 'RawSecurityMetricInstance' has cardinality 0..*, and from 'camel_security_SecurityModel', the role 'camel_security_SecurityModel488' has cardinality 0..*.
+An association connects 'CompositeSecurityMetricInstance' and 'camel_security_SecurityModel'. From 'CompositeSecurityMetricInstance', the role 'CompositeSecurityMetricInstance' has cardinality 0..*, and from 'camel_security_SecurityModel', the role 'camel_security_SecurityModel490' has cardinality 0..*.
+An association connects 'camel_security_SecurityModel' and 'SecurityDomain'. From 'camel_security_SecurityModel', the role 'camel_security_SecurityModel492' has cardinality 0..*, and from 'SecurityDomain', the role 'SecurityDomain' has cardinality 0..*.
+An association connects 'SecurityCapability' and 'camel_security_SecurityModel'. From 'SecurityCapability', the role 'SecurityCapability495' has cardinality 0..*, and from 'camel_security_SecurityModel', the role 'camel_security_SecurityModel494' has cardinality 0..*.
+An association connects 'SecuritySLO' and 'camel_security_SecurityModel'. From 'SecuritySLO', the role 'SecuritySLO' has cardinality 0..*, and from 'camel_security_SecurityModel', the role 'camel_security_SecurityModel497' has cardinality 0..*.
+An association connects 'camel_security_SecurityDomain' and 'SecurityDomain'. From 'camel_security_SecurityDomain', the role 'camel_security_SecurityDomain' has cardinality 0..*, and from 'SecurityDomain', the role 'SecurityDomain499' has cardinality 0..*.
+An association connects 'camel_security_SecurityControl' and 'SecurityDomain'. From 'camel_security_SecurityControl', the role 'camel_security_SecurityControl' has cardinality 0..*, and from 'SecurityDomain', the role 'SecurityDomain501' has cardinality 0..*.
+An association connects 'camel_security_SecurityControl' and 'SecurityDomain'. From 'camel_security_SecurityControl', the role 'camel_security_SecurityControl503' has cardinality 0..*, and from 'SecurityDomain', the role 'SecurityDomain504' has cardinality 0..*.
+An association connects 'camel_security_SecurityControl' and 'SecurityProperty'. From 'camel_security_SecurityControl', the role 'camel_security_SecurityControl506' has cardinality 0..*, and from 'SecurityProperty', the role 'SecurityProperty507' has cardinality 0..*.
+An association connects 'camel_security_SecurityControl' and 'RawSecurityMetric'. From 'camel_security_SecurityControl', the role 'camel_security_SecurityControl509' has cardinality 0..*, and from 'RawSecurityMetric', the role 'RawSecurityMetric510' has cardinality 0..*.
+An association connects 'camel_security_SecurityControl' and 'CompositeSecurityMetric'. From 'camel_security_SecurityControl', the role 'camel_security_SecurityControl512' has cardinality 0..*, and from 'CompositeSecurityMetric', the role 'CompositeSecurityMetric513' has cardinality 0..*.
+An association connects 'camel_security_SecurityProperty' and 'SecurityDomain'. From 'camel_security_SecurityProperty', the role 'camel_security_SecurityProperty' has cardinality 0..*, and from 'SecurityDomain', the role 'SecurityDomain515' has cardinality 0..*.
+An association connects 'camel_security_SecurityCapability' and 'SecurityControl'. From 'camel_security_SecurityCapability', the role 'camel_security_SecurityCapability' has cardinality 0..*, and from 'SecurityControl', the role 'SecurityControl517' has cardinality 0..*.
+An association connects 'camel_security_SecurityCapability' and 'DataCenter'. From 'camel_security_SecurityCapability', the role 'camel_security_SecurityCapability519' has cardinality 0..*, and from 'DataCenter', the role 'DataCenter520' has cardinality 0..*.
+An association connects 'camel_type_TypeModel' and 'ValueType'. From 'camel_type_TypeModel', the role 'camel_type_TypeModel' has cardinality 0..*, and from 'ValueType', the role 'ValueType522' has cardinality 0..*.
+An association connects 'SingleValue' and 'camel_type_TypeModel'. From 'SingleValue', the role 'SingleValue525' has cardinality 0..*, and from 'camel_type_TypeModel', the role 'camel_type_TypeModel524' has cardinality 0..*.
+An association connects 'NumericValue' and 'camel_type_Limit'. From 'NumericValue', the role 'NumericValue' has cardinality 0..*, and from 'camel_type_Limit', the role 'camel_type_Limit' has cardinality 0..*.
+An association connects 'camel_type_ValueToIncrease' and 'NumericValue'. From 'camel_type_ValueToIncrease', the role 'camel_type_ValueToIncrease' has cardinality 0..*, and from 'NumericValue', the role 'NumericValue528' has cardinality 0..*.
+An association connects 'camel_type_Enumeration' and 'EnumerateValue'. From 'camel_type_Enumeration', the role 'camel_type_Enumeration' has cardinality 0..*, and from 'EnumerateValue', the role 'EnumerateValue' has cardinality 0..*.
+An association connects 'SingleValue' and 'camel_type_List'. From 'SingleValue', the role 'SingleValue531' has cardinality 0..*, and from 'camel_type_List', the role 'camel_type_List' has cardinality 0..*.
+An association connects 'camel_type_List' and 'ValueType'. From 'camel_type_List', the role 'camel_type_List533' has cardinality 0..*, and from 'ValueType', the role 'ValueType534' has cardinality 0..*.
+An association connects 'Limit' and 'camel_type_Range'. From 'Limit', the role 'Limit' has cardinality 0..*, and from 'camel_type_Range', the role 'camel_type_Range' has cardinality 0..*.
+An association connects 'Limit' and 'camel_type_Range'. From 'Limit', the role 'Limit538' has cardinality 0..*, and from 'camel_type_Range', the role 'camel_type_Range537' has cardinality 0..*.
+An association connects 'camel_type_RangeUnion' and 'Range'. From 'camel_type_RangeUnion', the role 'camel_type_RangeUnion' has cardinality 0..*, and from 'Range', the role 'Range' has cardinality 0..*.
+An association connects 'Unit' and 'camel_unit_UnitModel'. From 'Unit', the role 'Unit541' has cardinality 0..*, and from 'camel_unit_UnitModel', the role 'camel_unit_UnitModel' has cardinality 0..*.

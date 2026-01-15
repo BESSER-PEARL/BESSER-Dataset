@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/adilinam/QVTdCaseStudy/org.eclipse.qvtd.xtext.qvtimperative.tests/src/org/eclipse/qvtd/xtext/qvtimperative/tests/Tree2TallTree/Tree.ecore

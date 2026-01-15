@@ -1,0 +1,49 @@
+The domain model 'Triangles' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'Triangles_E_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Triangles_D_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Triangles_C_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Triangles_Container' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractClass' represents an important domain concept.
+It does not declare any attributes.
+
+'Triangles_A_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Triangles_B_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Triangles_AbstractClass' represents an important domain concept.
+It has the following attributes: 'flag', which is of type bool; 'name', which is of type str; 'id', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'Triangles_A_Class' is a specialization of 'AbstractClass'.
+The class 'Triangles_B_Class' is a specialization of 'AbstractClass'.
+The class 'Triangles_C_Class' is a specialization of 'AbstractClass'.
+The class 'Triangles_E_Class' is a specialization of 'AbstractClass'.
+The class 'Triangles_D_Class' is a specialization of 'AbstractClass'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Triangles_Container' and 'Triangles_A_Class'. From 'Triangles_Container', the role 'Triangles_Container' has cardinality 0..*, and from 'Triangles_A_Class', the role 'Triangles_A_Class' has cardinality 0..*.
+An association connects 'Triangles_B_Class' and 'Triangles_Container'. From 'Triangles_B_Class', the role 'Triangles_B_Class' has cardinality 0..*, and from 'Triangles_Container', the role 'Triangles_Container2' has cardinality 0..*.
+An association connects 'Triangles_Container' and 'Triangles_C_Class'. From 'Triangles_Container', the role 'Triangles_Container4' has cardinality 0..*, and from 'Triangles_C_Class', the role 'Triangles_C_Class' has cardinality 0..*.
+An association connects 'Triangles_Container' and 'Triangles_D_Class'. From 'Triangles_Container', the role 'Triangles_Container6' has cardinality 0..*, and from 'Triangles_D_Class', the role 'Triangles_D_Class' has cardinality 0..*.
+An association connects 'Triangles_E_Class' and 'Triangles_Container'. From 'Triangles_E_Class', the role 'Triangles_E_Class' has cardinality 0..*, and from 'Triangles_Container', the role 'Triangles_Container8' has cardinality 0..*.
+An association connects 'Triangles_B_Class' and 'Triangles_A_Class'. From 'Triangles_B_Class', the role 'B_Class' has cardinality 0..*, and from 'Triangles_A_Class', the role 'a' has cardinality 0..*.
+An association connects 'Triangles_A_Class' and 'Triangles_C_Class'. From 'Triangles_A_Class', the role 'a11' has cardinality 0..*, and from 'Triangles_C_Class', the role 'C_Class' has cardinality 0..*.
+An association connects 'Triangles_A_Class' and 'Triangles_B_Class'. From 'Triangles_A_Class', the role 'A_Class' has cardinality 0..*, and from 'Triangles_B_Class', the role 'b' has cardinality 0..*.
+An association connects 'Triangles_B_Class' and 'Triangles_C_Class'. From 'Triangles_B_Class', the role 'b14' has cardinality 0..*, and from 'Triangles_C_Class', the role 'C_Class15' has cardinality 0..*.
+An association connects 'Triangles_C_Class' and 'Triangles_A_Class'. From 'Triangles_C_Class', the role 'c' has cardinality 0..*, and from 'Triangles_A_Class', the role 'A_Class17' has cardinality 0..*.
+An association connects 'Triangles_B_Class' and 'Triangles_C_Class'. From 'Triangles_B_Class', the role 'B_Class20' has cardinality 0..*, and from 'Triangles_C_Class', the role 'c19' has cardinality 0..*.
+An association connects 'Triangles_B_Class' and 'Triangles_E_Class'. From 'Triangles_B_Class', the role 'Triangles_B_Class23' has cardinality 0..*, and from 'Triangles_E_Class', the role 'Triangles_E_Class22' has cardinality 0..*.
+An association connects 'Triangles_A_Class' and 'Triangles_D_Class'. From 'Triangles_A_Class', the role 'Triangles_A_Class26' has cardinality 0..*, and from 'Triangles_D_Class', the role 'Triangles_D_Class25' has cardinality 0..*.

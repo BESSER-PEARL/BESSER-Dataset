@@ -1,0 +1,28 @@
+The domain model 'fsm' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'fsm_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'NoAnnotationSuper' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_FSM' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_NoAnnotationSuper' represents an important domain concept.
+It does not declare any attributes.
+
+'fsm_NoAnnotation' represents an important domain concept.
+It has the following attributes: 'b', which is of type str; 'a', which is of type str.
+
+'fsm_State' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'fsm_NoAnnotation' is a specialization of 'NoAnnotationSuper'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsm_State' and 'fsm_NoAnnotation'. From 'fsm_State', the role 'fsm_State' has cardinality 0..*, and from 'fsm_NoAnnotation', the role 'fsm_NoAnnotation' has cardinality 0..*.
+An association connects 'fsm_FSM' and 'fsm_NoAnnotation'. From 'fsm_FSM', the role 'fsm_FSM' has cardinality 0..*, and from 'fsm_NoAnnotation', the role 'fsm_NoAnnotation2' has cardinality 0..*.

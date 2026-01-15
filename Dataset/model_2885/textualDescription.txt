@@ -1,0 +1,43 @@
+The domain model 'metamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'metamodel_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Feature' represents an important domain concept.
+It has the following attributes: 'mappedBy', which is of type str; 'annotation', which is of type str; 'name', which is of type str.
+
+'metamodel_Query' represents an important domain concept.
+It has the following attributes: 'queryString', which is of type str; 'methodName', which is of type str.
+
+'metamodel_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodel_Datatype' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Annotation' defines the following possible values: 'OneToMany', 'ManyToOne', 'Id', 'ManyToMany', 'OneToOne', 'None', 'ManyToManyMapped'.
+
+The model also captures inheritance relationships between classes.
+The class 'metamodel_Datatype' is a specialization of 'Type'.
+The class 'metamodel_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'metamodel_Model' and 'metamodel_Type'. From 'metamodel_Model', the role 'metamodel_Model' has cardinality 0..*, and from 'metamodel_Type', the role 'metamodel_Type' has cardinality 0..*.
+An association connects 'metamodel_Entity' and 'metamodel_Feature'. From 'metamodel_Entity', the role 'metamodel_Entity' has cardinality 0..*, and from 'metamodel_Feature', the role 'metamodel_Feature' has cardinality 0..*.
+An association connects 'metamodel_Entity' and 'metamodel_Query'. From 'metamodel_Entity', the role 'metamodel_Entity3' has cardinality 0..*, and from 'metamodel_Query', the role 'metamodel_Query' has cardinality 0..*.
+An association connects 'metamodel_Type' and 'metamodel_Feature'. From 'metamodel_Type', the role 'metamodel_Type6' has cardinality 0..*, and from 'metamodel_Feature', the role 'metamodel_Feature5' has cardinality 0..*.
+An association connects 'metamodel_Query' and 'metamodel_Entity'. From 'metamodel_Query', the role 'metamodel_Query8' has cardinality 0..*, and from 'metamodel_Entity', the role 'metamodel_Entity9' has cardinality 0..*.
+An association connects 'metamodel_parameter' and 'metamodel_Query'. From 'metamodel_parameter', the role 'metamodel_parameter' has cardinality 0..*, and from 'metamodel_Query', the role 'metamodel_Query11' has cardinality 0..*.
+An association connects 'metamodel_Type' and 'metamodel_parameter'. From 'metamodel_Type', the role 'metamodel_Type14' has cardinality 0..*, and from 'metamodel_parameter', the role 'metamodel_parameter13' has cardinality 0..*.

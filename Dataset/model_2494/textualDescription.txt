@@ -1,0 +1,6 @@
+The domain model 'fsm' describes the core structural elements and their relationships within the system.
+
+The model defines 1 main class(es).
+
+'fsm_State' represents an important domain concept.
+It has the following attributes: 'b', which is of type bool; 'c', which is of type str; 'l', which is of type str; 'foo', which is of type str; 'i', which is of type int; 'd', which is of type float; 'f', which is of type float.

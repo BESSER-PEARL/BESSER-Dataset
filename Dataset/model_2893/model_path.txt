@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/plugbee/dslforge/examples/org.eclipse.xtext.example.domainmodel/model/generated/Domainmodel.ecore

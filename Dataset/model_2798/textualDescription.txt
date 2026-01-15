@@ -1,0 +1,13 @@
+The domain model 'Tree' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'Tree_Storage' represents an important domain concept.
+It does not declare any attributes.
+
+'Tree_Node' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'Tree_Storage' and 'Tree_Node'. From 'Tree_Storage', the role 'Tree_Storage' has cardinality 0..*, and from 'Tree_Node', the role 'Tree_Node' has cardinality 0..*.
+An association connects 'Tree_Node' and 'Tree_Node'. From 'Tree_Node', the role 'Tree_Node1' has cardinality 0..*, and from 'Tree_Node', the role 'Tree_Node3' has cardinality 0..*.

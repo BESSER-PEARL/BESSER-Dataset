@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/arnobl/kompren/kompren-examples/examples.strictEcore/src/test/java/model/sample.ecore

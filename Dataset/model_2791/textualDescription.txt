@@ -1,0 +1,60 @@
+The domain model 'kreq205' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'kreq205_Bbbb' represents an important domain concept.
+It does not declare any attributes.
+
+'kreq205_Ffff' represents an important domain concept.
+It has one attribute: 'd4', which is of type str.
+
+'kreq205_Rqs' represents an important domain concept.
+It has the following attributes: 'd2', which is of type str; 'a', which is of type bool.
+
+'kreq205_Rrrr' represents an important domain concept.
+It has one attribute: 'd3', which is of type str.
+
+'kreq205_Llll' represents an important domain concept.
+It has one attribute: 'd6', which is of type str.
+
+'SObject' represents an important domain concept.
+It does not declare any attributes.
+
+'kreq205_SObject' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'kreq205_Tttt' represents an important domain concept.
+It does not declare any attributes.
+
+'kreq205_Cccc' represents an important domain concept.
+It has one attribute: 'de1', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'kreq205_Tttt' is a specialization of 'SObject'.
+The class 'kreq205_Rqs' is a specialization of 'SObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'kreq205_Bbbb' and 'kreq205_Rrrr'. From 'kreq205_Bbbb', the role 'kreq205_Bbbb' has cardinality 0..*, and from 'kreq205_Rrrr', the role 'kreq205_Rrrr' has cardinality 0..*.
+An association connects 'kreq205_Bbbb' and 'kreq205_Tttt'. From 'kreq205_Bbbb', the role 'kreq205_Bbbb2' has cardinality 0..*, and from 'kreq205_Tttt', the role 'kreq205_Tttt' has cardinality 0..*.
+An association connects 'kreq205_Bbbb' and 'kreq205_Cccc'. From 'kreq205_Bbbb', the role 'kreq205_Bbbb4' has cardinality 0..*, and from 'kreq205_Cccc', the role 'kreq205_Cccc' has cardinality 0..*.
+An association connects 'kreq205_Ffff' and 'kreq205_Bbbb'. From 'kreq205_Ffff', the role 'kreq205_Ffff' has cardinality 0..*, and from 'kreq205_Bbbb', the role 'kreq205_Bbbb6' has cardinality 0..*.
+An association connects 'kreq205_Rrrr' and 'kreq205_Rqs'. From 'kreq205_Rrrr', the role 'kreq205_Rrrr8' has cardinality 0..*, and from 'kreq205_Rqs', the role 'kreq205_Rqs' has cardinality 0..*.
+An association connects 'kreq205_Rqs' and 'kreq205_Tttt'. From 'kreq205_Rqs', the role 'Rqs' has cardinality 0..*, and from 'kreq205_Tttt', the role 'rts' has cardinality 0..*.
+An association connects 'kreq205_Rqs' and 'kreq205_Tttt'. From 'kreq205_Rqs', the role 'rqs' has cardinality 0..*, and from 'kreq205_Tttt', the role 'Tttt' has cardinality 0..*.
+An association connects 'kreq205_Rqs' and 'kreq205_Rqs'. From 'kreq205_Rqs', the role 'kreq205_Rqs13' has cardinality 0..*, and from 'kreq205_Rqs', the role 'kreq205_Rqs11' has cardinality 0..*.
+An association connects 'kreq205_Rqs' and 'kreq205_Rqs'. From 'kreq205_Rqs', the role 'kreq205_Rqs16' has cardinality 0..*, and from 'kreq205_Rqs', the role 'kreq205_Rqs14' has cardinality 0..*.
+An association connects 'kreq205_Ffff' and 'kreq205_Rqs'. From 'kreq205_Ffff', the role 'Ffff' has cardinality 0..*, and from 'kreq205_Rqs', the role 'isBy' has cardinality 0..*.
+An association connects 'kreq205_Rqs' and 'kreq205_Rqs'. From 'kreq205_Rqs', the role 'kreq205_Rqs18' has cardinality 0..*, and from 'kreq205_Rqs', the role 'kreq205_Rqs20' has cardinality 0..*.
+An association connects 'kreq205_Rqs' and 'kreq205_Cccc'. From 'kreq205_Rqs', the role 'specifiedBy' has cardinality 0..*, and from 'kreq205_Cccc', the role 'Cccc' has cardinality 0..*.
+An association connects 'kreq205_Rqs' and 'kreq205_Ffff'. From 'kreq205_Rqs', the role 'Rqs23' has cardinality 0..*, and from 'kreq205_Ffff', the role 'specs' has cardinality 0..*.
+An association connects 'kreq205_Cccc' and 'kreq205_Ffff'. From 'kreq205_Cccc', the role 'Cccc25' has cardinality 0..*, and from 'kreq205_Ffff', the role 'pfrmis' has cardinality 0..*.
+An association connects 'kreq205_Ffff' and 'kreq205_Ffff'. From 'kreq205_Ffff', the role 'kreq205_Ffff28' has cardinality 0..*, and from 'kreq205_Ffff', the role 'kreq205_Ffff26' has cardinality 0..*.
+An association connects 'kreq205_Ffff' and 'kreq205_Cccc'. From 'kreq205_Ffff', the role 'impf' has cardinality 0..*, and from 'kreq205_Cccc', the role 'Cccc30' has cardinality 0..*.
+An association connects 'kreq205_Rqs' and 'kreq205_Cccc'. From 'kreq205_Rqs', the role 'kreq205_Rqs33' has cardinality 0..*, and from 'kreq205_Cccc', the role 'kreq205_Cccc32' has cardinality 0..*.
+An association connects 'kreq205_Rqs' and 'kreq205_Cccc'. From 'kreq205_Rqs', the role 'Rqs35' has cardinality 0..*, and from 'kreq205_Cccc', the role 'spc' has cardinality 0..*.
+An association connects 'kreq205_Cccc' and 'kreq205_Ffff'. From 'kreq205_Cccc', the role 'dmof' has cardinality 0..*, and from 'kreq205_Ffff', the role 'Ffff37' has cardinality 0..*.
+An association connects 'kreq205_Cccc' and 'kreq205_Cccc'. From 'kreq205_Cccc', the role 'kreq205_Cccc38' has cardinality 0..*, and from 'kreq205_Cccc', the role 'kreq205_Cccc40' has cardinality 0..*.
+An association connects 'kreq205_Ffff' and 'kreq205_Cccc'. From 'kreq205_Ffff', the role 'Ffff42' has cardinality 0..*, and from 'kreq205_Cccc', the role 'alto' has cardinality 0..*.
+An association connects 'kreq205_Llll' and 'kreq205_Cccc'. From 'kreq205_Llll', the role 'kreq205_Llll' has cardinality 0..*, and from 'kreq205_Cccc', the role 'kreq205_Cccc44' has cardinality 0..*.
+An association connects 'kreq205_Llll' and 'kreq205_Cccc'. From 'kreq205_Llll', the role 'kreq205_Llll46' has cardinality 0..*, and from 'kreq205_Cccc', the role 'kreq205_Cccc47' has cardinality 0..*.
+An association connects 'kreq205_Rqs' and 'kreq205_Llll'. From 'kreq205_Rqs', the role 'kreq205_Rqs50' has cardinality 0..*, and from 'kreq205_Llll', the role 'kreq205_Llll49' has cardinality 0..*.

@@ -1,0 +1,26 @@
+The domain model 'rules' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'rules_Rule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rules_RulesLattice' represents an important domain concept.
+It has the following attributes: 'source', which is of type str; 'target', which is of type str.
+
+'rules_Node' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'rules_NodeRelation' represents an important domain concept.
+It has the following attributes: 'relationTgt', which is of type str; 'lowerBound', which is of type int; 'upperBound', which is of type int; 'relation', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'rules_Rule' and 'rules_RulesLattice'. From 'rules_Rule', the role 'rules_Rule' has cardinality 0..*, and from 'rules_RulesLattice', the role 'rules_RulesLattice' has cardinality 0..*.
+An association connects 'rules_Rule' and 'rules_Rule'. From 'rules_Rule', the role 'Rule' has cardinality 0..*, and from 'rules_Rule', the role 'parents' has cardinality 0..*.
+An association connects 'rules_Rule' and 'rules_Rule'. From 'rules_Rule', the role 'Rule5' has cardinality 0..*, and from 'rules_Rule', the role 'children' has cardinality 0..*.
+An association connects 'rules_Rule' and 'rules_Node'. From 'rules_Rule', the role 'rules_Rule7' has cardinality 0..*, and from 'rules_Node', the role 'rules_Node' has cardinality 0..*.
+An association connects 'rules_Rule' and 'rules_Node'. From 'rules_Rule', the role 'rules_Rule9' has cardinality 0..*, and from 'rules_Node', the role 'rules_Node10' has cardinality 0..*.
+An association connects 'rules_Rule' and 'rules_Node'. From 'rules_Rule', the role 'rules_Rule12' has cardinality 0..*, and from 'rules_Node', the role 'rules_Node13' has cardinality 0..*.
+An association connects 'rules_NodeRelation' and 'rules_Node'. From 'rules_NodeRelation', the role 'NodeRelation' has cardinality 0..*, and from 'rules_Node', the role 'source' has cardinality 0..*.
+An association connects 'rules_Node' and 'rules_NodeRelation'. From 'rules_Node', the role 'Node' has cardinality 0..*, and from 'rules_NodeRelation', the role 'relatedNodes' has cardinality 0..*.
+An association connects 'rules_NodeRelation' and 'rules_Node'. From 'rules_NodeRelation', the role 'rules_NodeRelation' has cardinality 0..*, and from 'rules_Node', the role 'rules_Node17' has cardinality 0..*.

@@ -1,0 +1,64 @@
+The domain model 'cevinedit' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'cevinedit_Diagram' represents an important domain concept.
+It has the following attributes: 'modelExtension', which is of type str; 'name', which is of type str.
+
+'cevinedit_CEViNEditRoot' represents an important domain concept.
+It has one attribute: 'sourceMM', which is of type str.
+
+'PersonalizedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cevinedit_LinkEClass' represents an important domain concept.
+It has the following attributes: 'target', which is of type str; 'source', which is of type str.
+
+'cevinedit_NodeEClass' represents an important domain concept.
+It has the following attributes: 'resizable', which is of type bool; 'label', which is of type str; 'brightness', which is of type str; 'labelPlacement', which is of type str; 'size', which is of type str; 'borderWidth', which is of type int; 'figure', which is of type str; 'borderTexture', which is of type str; 'labelFontStyle', which is of type str; 'listPointsPolygon', which is of type str; 'backgroundColor', which is of type str; 'borderColor', which is of type str; 'imagePath', which is of type str.
+
+'cevinedit_PersonalizedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'icon', which is of type str.
+
+'cevinedit_LabelEAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Link' represents an important domain concept.
+It does not declare any attributes.
+
+'cevinedit_AffixedEReferenceCont' represents an important domain concept.
+It does not declare any attributes.
+
+'cevinedit_CompartmentEReferenceCont' represents an important domain concept.
+It has the following attributes: 'layout', which is of type str; 'collapsible', which is of type bool.
+
+'cevinedit_LinkEReferenceNonCont' represents an important domain concept.
+It does not declare any attributes.
+
+'cevinedit_Link' represents an important domain concept.
+It has the following attributes: 'brightness', which is of type str; 'texture', which is of type str; 'labelFontStyle', which is of type str; 'color', which is of type str; 'sourceDecoration', which is of type str; 'label', which is of type str; 'targetDecoration', which is of type str; 'width', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'NodeFigure' defines the following possible values: 'Rectangle', 'Rounded', 'Image', 'Default', 'Ellipse', 'Polygon', 'SVG'.
+The enumeration 'Brightness' defines the following possible values: 'Default', 'Light', 'Dark'.
+The enumeration 'LayoutCompartment' defines the following possible values: 'Free', 'List'.
+The enumeration 'Placement' defines the following possible values: 'External', 'None', 'Internal'.
+The enumeration 'Texture' defines the following possible values: 'Dot', 'Default', 'Solid', 'Dash'.
+The enumeration 'LinkFigure' defines the following possible values: 'FilledClosedArrow', 'FilledRhomb', 'Arrow', 'Square', 'FilledSquare', 'Default', 'Rhomb', 'None', 'ClosedArrow'.
+The enumeration 'FontStyle' defines the following possible values: 'Default', 'Bold', 'Italic'.
+The enumeration 'Color' defines the following possible values: 'Cyan', 'Black', 'Gray', 'Default', 'Green', 'Red', 'Yellow', 'White', 'Orange', 'Blue'.
+
+The model also captures inheritance relationships between classes.
+The class 'cevinedit_NodeEClass' is a specialization of 'PersonalizedElement'.
+The class 'cevinedit_LinkEClass' is a specialization of 'PersonalizedElement'.
+The class 'cevinedit_LinkEClass' is a specialization of 'Link'.
+The class 'cevinedit_CompartmentEReferenceCont' is a specialization of 'PersonalizedElement'.
+The class 'cevinedit_AffixedEReferenceCont' is a specialization of 'PersonalizedElement'.
+The class 'cevinedit_LabelEAttribute' is a specialization of 'PersonalizedElement'.
+The class 'cevinedit_LinkEReferenceNonCont' is a specialization of 'PersonalizedElement'.
+The class 'cevinedit_LinkEReferenceNonCont' is a specialization of 'Link'.
+The class 'cevinedit_Link' is a specialization of 'PersonalizedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cevinedit_Diagram' and 'cevinedit_CEViNEditRoot'. From 'cevinedit_Diagram', the role 'cevinedit_Diagram' has cardinality 0..*, and from 'cevinedit_CEViNEditRoot', the role 'cevinedit_CEViNEditRoot' has cardinality 0..*.
+An association connects 'cevinedit_Diagram' and 'cevinedit_PersonalizedElement'. From 'cevinedit_Diagram', the role 'cevinedit_Diagram2' has cardinality 0..*, and from 'cevinedit_PersonalizedElement', the role 'cevinedit_PersonalizedElement' has cardinality 0..*.

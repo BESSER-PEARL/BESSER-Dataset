@@ -1,0 +1,97 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'library_Addressable' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'library_Employee' represents an important domain concept.
+It does not declare any attributes.
+
+'library_CirculatingItem' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_Periodical' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'issuesPerYear', which is of type int.
+
+'library_VideoCassette' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Library' represents an important domain concept.
+It has the following attributes: 'people', which is of type str; 'name', which is of type str.
+
+'library_Item' represents an important domain concept.
+It has one attribute: 'publicationDate', which is of type date.
+
+'library_Lendable' represents an important domain concept.
+It has one attribute: 'copies', which is of type int.
+
+'Addressable' represents an important domain concept.
+It does not declare any attributes.
+
+'CirculatingItem' represents an important domain concept.
+It does not declare any attributes.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'library_AudioVisualItem' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'damaged', which is of type bool; 'minutesLength', which is of type int.
+
+'library_Book' represents an important domain concept.
+It has the following attributes: 'pages', which is of type int; 'category', which is of type str; 'title', which is of type str.
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+'library_BookOnTape' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Person' represents an important domain concept.
+It has the following attributes: 'firstName', which is of type str; 'lastName', which is of type str.
+
+'AudioVisualItem' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Borrower' represents an important domain concept.
+It does not declare any attributes.
+
+'Lendable' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookCategory' defines the following possible values: 'Mystery', 'Biography', 'ScienceFiction'.
+
+The model also captures inheritance relationships between classes.
+The class 'library_Book' is a specialization of 'CirculatingItem'.
+The class 'library_Library' is a specialization of 'Addressable'.
+The class 'library_Writer' is a specialization of 'Person'.
+The class 'library_CirculatingItem' is a specialization of 'Item'.
+The class 'library_CirculatingItem' is a specialization of 'Lendable'.
+The class 'library_Periodical' is a specialization of 'Item'.
+The class 'library_AudioVisualItem' is a specialization of 'CirculatingItem'.
+The class 'library_BookOnTape' is a specialization of 'AudioVisualItem'.
+The class 'library_VideoCassette' is a specialization of 'AudioVisualItem'.
+The class 'library_Borrower' is a specialization of 'Person'.
+The class 'library_Person' is a specialization of 'Addressable'.
+The class 'library_Employee' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_Book' and 'library_Writer'. From 'library_Book', the role 'books' has cardinality 0..*, and from 'library_Writer', the role 'Writer' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Writer'. From 'library_Library', the role 'library_Library' has cardinality 0..*, and from 'library_Writer', the role 'library_Writer' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Employee'. From 'library_Library', the role 'library_Library3' has cardinality 0..*, and from 'library_Employee', the role 'library_Employee' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Borrower'. From 'library_Library', the role 'library_Library5' has cardinality 0..*, and from 'library_Borrower', the role 'library_Borrower' has cardinality 0..*.
+An association connects 'library_Item' and 'library_Library'. From 'library_Item', the role 'library_Item' has cardinality 0..*, and from 'library_Library', the role 'library_Library7' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Library'. From 'library_Book', the role 'library_Book' has cardinality 0..*, and from 'library_Library', the role 'library_Library9' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Library'. From 'library_Library', the role 'parentBranch' has cardinality 0..*, and from 'library_Library', the role 'Library' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Library'. From 'library_Library', the role 'Library14' has cardinality 0..*, and from 'library_Library', the role 'branches' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Writer'. From 'library_Book', the role 'Book' has cardinality 0..*, and from 'library_Writer', the role 'author' has cardinality 0..*.
+An association connects 'library_Borrower' and 'library_Lendable'. From 'library_Borrower', the role 'Borrower' has cardinality 0..*, and from 'library_Lendable', the role 'borrowed' has cardinality 0..*.
+An association connects 'library_Person' and 'library_BookOnTape'. From 'library_Person', the role 'library_Person' has cardinality 0..*, and from 'library_BookOnTape', the role 'library_BookOnTape' has cardinality 0..*.
+An association connects 'library_BookOnTape' and 'library_Writer'. From 'library_BookOnTape', the role 'library_BookOnTape19' has cardinality 0..*, and from 'library_Writer', the role 'library_Writer20' has cardinality 0..*.
+An association connects 'library_VideoCassette' and 'library_Person'. From 'library_VideoCassette', the role 'library_VideoCassette' has cardinality 0..*, and from 'library_Person', the role 'library_Person22' has cardinality 0..*.
+An association connects 'library_Lendable' and 'library_Borrower'. From 'library_Lendable', the role 'Lendable' has cardinality 0..*, and from 'library_Borrower', the role 'borrowers' has cardinality 0..*.
+An association connects 'library_Employee' and 'library_Employee'. From 'library_Employee', the role 'library_Employee26' has cardinality 0..*, and from 'library_Employee', the role 'library_Employee24' has cardinality 0..*.

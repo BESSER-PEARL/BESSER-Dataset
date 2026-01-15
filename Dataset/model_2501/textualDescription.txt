@@ -1,0 +1,33 @@
+The domain model 'tfsm' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'tfsm_FSM' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_Guard' represents an important domain concept.
+It has one attribute: 'time', which is of type int.
+
+'FSM' represents an important domain concept.
+It does not declare any attributes.
+
+'tfsm_State' represents an important domain concept.
+It has one attribute: 'time', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'tfsm_FSM' is a specialization of 'FSM'.
+The class 'tfsm_State' is a specialization of 'State'.
+The class 'tfsm_Transition' is a specialization of 'Transition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tfsm_State' and 'tfsm_FSM'. From 'tfsm_State', the role 'tfsm_State' has cardinality 0..*, and from 'tfsm_FSM', the role 'tfsm_FSM' has cardinality 0..*.
+An association connects 'tfsm_Transition' and 'tfsm_Guard'. From 'tfsm_Transition', the role 'tfsm_Transition' has cardinality 0..*, and from 'tfsm_Guard', the role 'tfsm_Guard' has cardinality 0..*.

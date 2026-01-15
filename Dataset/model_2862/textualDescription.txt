@@ -1,0 +1,177 @@
+The domain model 'gDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 37 main class(es).
+
+'gDSL_TyVars' represents an important domain concept.
+It does not declare any attributes.
+
+'gDSL_Field' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gDSL_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gDSL_TyElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gDSL_SelectExp' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'gDSL_AExp' represents an important domain concept.
+It has one attribute: 'sym', which is of type str.
+
+'SelectExp' represents an important domain concept.
+It does not declare any attributes.
+
+'CaseExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gDSL_ApplyExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gDSL_ValueDecl' represents an important domain concept.
+It has the following attributes: 'ids', which is of type str; 'name', which is of type str.
+
+'gDSL_PAT' represents an important domain concept.
+It has the following attributes: 'uscore', which is of type str; 'bitpat', which is of type str; 'id', which is of type str; 'int', which is of type str.
+
+'gDSL_AndAlsoExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gDSL_AtomicExp' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'MExp' represents an important domain concept.
+It does not declare any attributes.
+
+'AExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gDSL_ConDecl' represents an important domain concept.
+It does not declare any attributes.
+
+'gDSL_MonadicExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gDSL_MExp' represents an important domain concept.
+It has one attribute: 'sign', which is of type str.
+
+'ClosedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gDSL_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'gDSL_OrElseExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gDSL_Exp' represents an important domain concept.
+It has one attribute: 'mid', which is of type str.
+
+'gDSL_Ty' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type str.
+
+'gDSL_Args' represents an important domain concept.
+It does not declare any attributes.
+
+'gDSL_CONS' represents an important domain concept.
+It has one attribute: 'conName', which is of type str.
+
+'RExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Decl' represents an important domain concept.
+It does not declare any attributes.
+
+'gDSL_Decl' represents an important domain concept.
+It does not declare any attributes.
+
+'ApplyExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gDSL_TyBind' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gDSL_Val' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'mid', which is of type str; 'decPat', which is of type str; 'attr', which is of type str.
+
+'OrElseExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gDSL_DeclExport' represents an important domain concept.
+It does not declare any attributes.
+
+'gDSL_CaseExp' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gDSL_ClosedExp' represents an important domain concept.
+It does not declare any attributes.
+
+'AndAlsoExp' represents an important domain concept.
+It does not declare any attributes.
+
+'gDSL_RExp' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'gDSL_DeclExport' is a specialization of 'Decl'.
+The class 'gDSL_Type' is a specialization of 'Decl'.
+The class 'gDSL_Val' is a specialization of 'Decl'.
+The class 'gDSL_ClosedExp' is a specialization of 'CaseExp'.
+The class 'gDSL_OrElseExp' is a specialization of 'ClosedExp'.
+The class 'gDSL_AndAlsoExp' is a specialization of 'OrElseExp'.
+The class 'gDSL_RExp' is a specialization of 'AndAlsoExp'.
+The class 'gDSL_AExp' is a specialization of 'RExp'.
+The class 'gDSL_MExp' is a specialization of 'AExp'.
+The class 'gDSL_SelectExp' is a specialization of 'MExp'.
+The class 'gDSL_ApplyExp' is a specialization of 'SelectExp'.
+The class 'gDSL_AtomicExp' is a specialization of 'ApplyExp'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gDSL_Decl' and 'gDSL_Model'. From 'gDSL_Decl', the role 'gDSL_Decl' has cardinality 0..*, and from 'gDSL_Model', the role 'gDSL_Model' has cardinality 0..*.
+An association connects 'gDSL_DeclExport' and 'gDSL_Val'. From 'gDSL_DeclExport', the role 'gDSL_DeclExport' has cardinality 0..*, and from 'gDSL_Val', the role 'gDSL_Val' has cardinality 0..*.
+An association connects 'gDSL_DeclExport' and 'gDSL_TyVars'. From 'gDSL_DeclExport', the role 'gDSL_DeclExport3' has cardinality 0..*, and from 'gDSL_TyVars', the role 'gDSL_TyVars' has cardinality 0..*.
+An association connects 'gDSL_Ty' and 'gDSL_DeclExport'. From 'gDSL_Ty', the role 'gDSL_Ty' has cardinality 0..*, and from 'gDSL_DeclExport', the role 'gDSL_DeclExport5' has cardinality 0..*.
+An association connects 'gDSL_TyVars' and 'gDSL_Type'. From 'gDSL_TyVars', the role 'gDSL_TyVars7' has cardinality 0..*, and from 'gDSL_Type', the role 'gDSL_Type' has cardinality 0..*.
+An association connects 'gDSL_ConDecl' and 'gDSL_Type'. From 'gDSL_ConDecl', the role 'gDSL_ConDecl' has cardinality 0..*, and from 'gDSL_Type', the role 'gDSL_Type9' has cardinality 0..*.
+An association connects 'gDSL_Type' and 'gDSL_Ty'. From 'gDSL_Type', the role 'gDSL_Type11' has cardinality 0..*, and from 'gDSL_Ty', the role 'gDSL_Ty12' has cardinality 0..*.
+An association connects 'gDSL_Val' and 'gDSL_Exp'. From 'gDSL_Val', the role 'gDSL_Val14' has cardinality 0..*, and from 'gDSL_Exp', the role 'gDSL_Exp' has cardinality 0..*.
+An association connects 'gDSL_Val' and 'gDSL_Exp'. From 'gDSL_Val', the role 'gDSL_Val16' has cardinality 0..*, and from 'gDSL_Exp', the role 'gDSL_Exp17' has cardinality 0..*.
+An association connects 'gDSL_Type' and 'gDSL_TyVars'. From 'gDSL_Type', the role 'gDSL_Type20' has cardinality 0..*, and from 'gDSL_TyVars', the role 'gDSL_TyVars19' has cardinality 0..*.
+An association connects 'gDSL_ConDecl' and 'gDSL_CONS'. From 'gDSL_ConDecl', the role 'gDSL_ConDecl22' has cardinality 0..*, and from 'gDSL_CONS', the role 'gDSL_CONS' has cardinality 0..*.
+An association connects 'gDSL_Ty' and 'gDSL_ConDecl'. From 'gDSL_Ty', the role 'gDSL_Ty25' has cardinality 0..*, and from 'gDSL_ConDecl', the role 'gDSL_ConDecl24' has cardinality 0..*.
+An association connects 'gDSL_Ty' and 'gDSL_Type'. From 'gDSL_Ty', the role 'gDSL_Ty27' has cardinality 0..*, and from 'gDSL_Type', the role 'gDSL_Type28' has cardinality 0..*.
+An association connects 'gDSL_TyBind' and 'gDSL_Ty'. From 'gDSL_TyBind', the role 'gDSL_TyBind' has cardinality 0..*, and from 'gDSL_Ty', the role 'gDSL_Ty30' has cardinality 0..*.
+An association connects 'gDSL_Ty' and 'gDSL_TyElement'. From 'gDSL_Ty', the role 'gDSL_Ty32' has cardinality 0..*, and from 'gDSL_TyElement', the role 'gDSL_TyElement' has cardinality 0..*.
+An association connects 'gDSL_Ty' and 'gDSL_Ty'. From 'gDSL_Ty', the role 'gDSL_Ty35' has cardinality 0..*, and from 'gDSL_Ty', the role 'gDSL_Ty33' has cardinality 0..*.
+An association connects 'gDSL_Ty' and 'gDSL_Ty'. From 'gDSL_Ty', the role 'gDSL_Ty38' has cardinality 0..*, and from 'gDSL_Ty', the role 'gDSL_Ty36' has cardinality 0..*.
+An association connects 'gDSL_Ty' and 'gDSL_Ty'. From 'gDSL_Ty', the role 'gDSL_Ty39' has cardinality 0..*, and from 'gDSL_Ty', the role 'gDSL_Ty41' has cardinality 0..*.
+An association connects 'gDSL_Ty' and 'gDSL_Ty'. From 'gDSL_Ty', the role 'gDSL_Ty42' has cardinality 0..*, and from 'gDSL_Ty', the role 'gDSL_Ty44' has cardinality 0..*.
+An association connects 'gDSL_Ty' and 'gDSL_Ty'. From 'gDSL_Ty', the role 'gDSL_Ty45' has cardinality 0..*, and from 'gDSL_Ty', the role 'gDSL_Ty47' has cardinality 0..*.
+An association connects 'gDSL_Ty' and 'gDSL_TyBind'. From 'gDSL_Ty', the role 'gDSL_Ty50' has cardinality 0..*, and from 'gDSL_TyBind', the role 'gDSL_TyBind49' has cardinality 0..*.
+An association connects 'gDSL_TyElement' and 'gDSL_Ty'. From 'gDSL_TyElement', the role 'gDSL_TyElement52' has cardinality 0..*, and from 'gDSL_Ty', the role 'gDSL_Ty53' has cardinality 0..*.
+An association connects 'gDSL_Exp' and 'gDSL_CaseExp'. From 'gDSL_Exp', the role 'gDSL_Exp55' has cardinality 0..*, and from 'gDSL_CaseExp', the role 'gDSL_CaseExp' has cardinality 0..*.
+An association connects 'gDSL_CaseExp' and 'gDSL_Exp'. From 'gDSL_CaseExp', the role 'gDSL_CaseExp58' has cardinality 0..*, and from 'gDSL_Exp', the role 'gDSL_Exp57' has cardinality 0..*.
+An association connects 'gDSL_CaseExp' and 'gDSL_ClosedExp'. From 'gDSL_CaseExp', the role 'gDSL_CaseExp60' has cardinality 0..*, and from 'gDSL_ClosedExp', the role 'gDSL_ClosedExp' has cardinality 0..*.
+An association connects 'gDSL_PAT' and 'gDSL_CaseExp'. From 'gDSL_PAT', the role 'gDSL_PAT' has cardinality 0..*, and from 'gDSL_CaseExp', the role 'gDSL_CaseExp62' has cardinality 0..*.
+An association connects 'gDSL_CaseExp' and 'gDSL_Exp'. From 'gDSL_CaseExp', the role 'gDSL_CaseExp64' has cardinality 0..*, and from 'gDSL_Exp', the role 'gDSL_Exp65' has cardinality 0..*.
+An association connects 'gDSL_CaseExp' and 'gDSL_ClosedExp'. From 'gDSL_CaseExp', the role 'gDSL_CaseExp68' has cardinality 0..*, and from 'gDSL_ClosedExp', the role 'gDSL_ClosedExp67' has cardinality 0..*.
+An association connects 'gDSL_CaseExp' and 'gDSL_ClosedExp'. From 'gDSL_CaseExp', the role 'gDSL_CaseExp71' has cardinality 0..*, and from 'gDSL_ClosedExp', the role 'gDSL_ClosedExp70' has cardinality 0..*.
+An association connects 'gDSL_CaseExp' and 'gDSL_ClosedExp'. From 'gDSL_CaseExp', the role 'gDSL_CaseExp74' has cardinality 0..*, and from 'gDSL_ClosedExp', the role 'gDSL_ClosedExp73' has cardinality 0..*.
+An association connects 'gDSL_ClosedExp' and 'gDSL_MonadicExp'. From 'gDSL_ClosedExp', the role 'gDSL_ClosedExp76' has cardinality 0..*, and from 'gDSL_MonadicExp', the role 'gDSL_MonadicExp' has cardinality 0..*.
+An association connects 'gDSL_Exp' and 'gDSL_MonadicExp'. From 'gDSL_Exp', the role 'gDSL_Exp79' has cardinality 0..*, and from 'gDSL_MonadicExp', the role 'gDSL_MonadicExp78' has cardinality 0..*.
+An association connects 'gDSL_OrElseExp' and 'gDSL_AndAlsoExp'. From 'gDSL_OrElseExp', the role 'gDSL_OrElseExp' has cardinality 0..*, and from 'gDSL_AndAlsoExp', the role 'gDSL_AndAlsoExp' has cardinality 0..*.
+An association connects 'gDSL_AndAlsoExp' and 'gDSL_OrElseExp'. From 'gDSL_AndAlsoExp', the role 'gDSL_AndAlsoExp83' has cardinality 0..*, and from 'gDSL_OrElseExp', the role 'gDSL_OrElseExp82' has cardinality 0..*.
+An association connects 'gDSL_AExp' and 'gDSL_AExp'. From 'gDSL_AExp', the role 'gDSL_AExp84' has cardinality 0..*, and from 'gDSL_AExp', the role 'gDSL_AExp' has cardinality 0..*.
+An association connects 'gDSL_MExp' and 'gDSL_MExp'. From 'gDSL_MExp', the role 'gDSL_MExp86' has cardinality 0..*, and from 'gDSL_MExp', the role 'gDSL_MExp' has cardinality 0..*.
+An association connects 'gDSL_ApplyExp' and 'gDSL_SelectExp'. From 'gDSL_ApplyExp', the role 'gDSL_ApplyExp' has cardinality 0..*, and from 'gDSL_SelectExp', the role 'gDSL_SelectExp' has cardinality 0..*.
+An association connects 'gDSL_ApplyExp' and 'gDSL_AtomicExp'. From 'gDSL_ApplyExp', the role 'gDSL_ApplyExp90' has cardinality 0..*, and from 'gDSL_AtomicExp', the role 'gDSL_AtomicExp' has cardinality 0..*.
+An association connects 'gDSL_ApplyExp' and 'gDSL_Args'. From 'gDSL_ApplyExp', the role 'gDSL_ApplyExp92' has cardinality 0..*, and from 'gDSL_Args', the role 'gDSL_Args' has cardinality 0..*.
+An association connects 'gDSL_AtomicExp' and 'gDSL_Args'. From 'gDSL_AtomicExp', the role 'gDSL_AtomicExp95' has cardinality 0..*, and from 'gDSL_Args', the role 'gDSL_Args94' has cardinality 0..*.
+An association connects 'gDSL_AtomicExp' and 'gDSL_Field'. From 'gDSL_AtomicExp', the role 'gDSL_AtomicExp97' has cardinality 0..*, and from 'gDSL_Field', the role 'gDSL_Field' has cardinality 0..*.
+An association connects 'gDSL_AtomicExp' and 'gDSL_Exp'. From 'gDSL_AtomicExp', the role 'gDSL_AtomicExp99' has cardinality 0..*, and from 'gDSL_Exp', the role 'gDSL_Exp100' has cardinality 0..*.
+An association connects 'gDSL_Exp' and 'gDSL_AtomicExp'. From 'gDSL_Exp', the role 'gDSL_Exp103' has cardinality 0..*, and from 'gDSL_AtomicExp', the role 'gDSL_AtomicExp102' has cardinality 0..*.
+An association connects 'gDSL_AtomicExp' and 'gDSL_ValueDecl'. From 'gDSL_AtomicExp', the role 'gDSL_AtomicExp105' has cardinality 0..*, and from 'gDSL_ValueDecl', the role 'gDSL_ValueDecl' has cardinality 0..*.
+An association connects 'gDSL_Field' and 'gDSL_Exp'. From 'gDSL_Field', the role 'gDSL_Field107' has cardinality 0..*, and from 'gDSL_Exp', the role 'gDSL_Exp108' has cardinality 0..*.
+An association connects 'gDSL_Exp' and 'gDSL_ValueDecl'. From 'gDSL_Exp', the role 'gDSL_Exp111' has cardinality 0..*, and from 'gDSL_ValueDecl', the role 'gDSL_ValueDecl110' has cardinality 0..*.
+An association connects 'gDSL_PAT' and 'gDSL_PAT'. From 'gDSL_PAT', the role 'gDSL_PAT114' has cardinality 0..*, and from 'gDSL_PAT', the role 'gDSL_PAT112' has cardinality 0..*.

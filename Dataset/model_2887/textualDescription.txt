@@ -1,0 +1,39 @@
+The domain model 'metamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'metamodel_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Datatype' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'list', which is of type bool.
+
+'metamodel_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodel_HibernateAnnotation' represents an important domain concept.
+It has the following attributes: 'cascade', which is of type str; 'unique', which is of type str; 'annotationType', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'HibernateCascadeTypes' defines the following possible values: 'ALL', 'NONE'.
+The enumeration 'HibernateAnnotationTypes' defines the following possible values: 'ManyToMany', 'OneToMany', 'OneToOne', 'ManyToOne', 'Column'.
+
+The model also captures inheritance relationships between classes.
+The class 'metamodel_Datatype' is a specialization of 'Type'.
+The class 'metamodel_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'metamodel_Model' and 'metamodel_Type'. From 'metamodel_Model', the role 'metamodel_Model' has cardinality 0..*, and from 'metamodel_Type', the role 'metamodel_Type' has cardinality 0..*.
+An association connects 'metamodel_Attribute' and 'metamodel_Entity'. From 'metamodel_Attribute', the role 'metamodel_Attribute' has cardinality 0..*, and from 'metamodel_Entity', the role 'metamodel_Entity' has cardinality 0..*.
+An association connects 'metamodel_Type' and 'metamodel_Attribute'. From 'metamodel_Type', the role 'metamodel_Type4' has cardinality 0..*, and from 'metamodel_Attribute', the role 'metamodel_Attribute3' has cardinality 0..*.
+An association connects 'metamodel_Attribute' and 'metamodel_HibernateAnnotation'. From 'metamodel_Attribute', the role 'metamodel_Attribute6' has cardinality 0..*, and from 'metamodel_HibernateAnnotation', the role 'metamodel_HibernateAnnotation' has cardinality 0..*.
+An association connects 'metamodel_Attribute' and 'metamodel_HibernateAnnotation'. From 'metamodel_Attribute', the role 'metamodel_Attribute9' has cardinality 0..*, and from 'metamodel_HibernateAnnotation', the role 'metamodel_HibernateAnnotation8' has cardinality 0..*.

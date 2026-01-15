@@ -1,0 +1,16 @@
+The domain model 'namespace' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'namespace_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'namespace_XMLNamespaceDocumentRoot' represents an important domain concept.
+It has the following attributes: 'space', which is of type str; 'base', which is of type str; 'lang', which is of type str; 'mixed', which is of type str; 'id', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SpaceType' defines the following possible values: 'preserve', 'default'.
+
+Relationships between classes are modeled using associations.
+An association connects 'namespace_EStringToStringMapEntry' and 'namespace_XMLNamespaceDocumentRoot'. From 'namespace_EStringToStringMapEntry', the role 'namespace_EStringToStringMapEntry' has cardinality 0..*, and from 'namespace_XMLNamespaceDocumentRoot', the role 'namespace_XMLNamespaceDocumentRoot' has cardinality 0..*.
+An association connects 'namespace_EStringToStringMapEntry' and 'namespace_XMLNamespaceDocumentRoot'. From 'namespace_EStringToStringMapEntry', the role 'namespace_EStringToStringMapEntry3' has cardinality 0..*, and from 'namespace_XMLNamespaceDocumentRoot', the role 'namespace_XMLNamespaceDocumentRoot2' has cardinality 0..*.

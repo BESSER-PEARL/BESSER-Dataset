@@ -1,0 +1,36 @@
+The domain model 'TestPackage' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'TestPackage_SuperClass' represents an important domain concept.
+It does not declare any attributes.
+
+'SuperClass' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_UberClass' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_SubPackage_SubTestClass' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_TestInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_SubPackage_SubTestInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_TestClass' represents an important domain concept.
+It does not declare any attributes.
+
+'UberClass' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SubTestEnum' is defined but does not specify any literals.
+The enumeration 'TestEnum' is defined but does not specify any literals.
+
+The model also captures inheritance relationships between classes.
+The class 'TestPackage_TestClass' is a specialization of 'SuperClass'.
+The class 'TestPackage_TestClass' is a specialization of 'UberClass'.
+The class 'TestPackage_TestInterface' is a specialization of 'SuperClass'.

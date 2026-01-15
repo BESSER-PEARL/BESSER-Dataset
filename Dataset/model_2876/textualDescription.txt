@@ -1,0 +1,159 @@
+The domain model 'eol_statements' describes the core structural elements and their relationships within the system.
+
+The model defines 34 main class(es).
+
+'eol_statements_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_ExecutableAnnotationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_ModelDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_SwitchCaseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_ModelDeclarationParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_ExpressionOrStatementBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_SimpleAnnotationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_SwitchCaseDefaultStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_FormalParameterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_AssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_AbortStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_SwitchCaseExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_ThrowStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_BreakAllStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'AssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_SpecialAssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_StringExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_VariableDeclarationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_NameExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'SwitchCaseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_AnnotationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'eol_statements_DeleteStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'eol_statements_ExpressionStatement' is a specialization of 'Statement'.
+The class 'eol_statements_SwitchStatement' is a specialization of 'Statement'.
+The class 'eol_statements_SwitchCaseStatement' is a specialization of 'Statement'.
+The class 'eol_statements_SwitchCaseDefaultStatement' is a specialization of 'SwitchCaseStatement'.
+The class 'eol_statements_SwitchCaseExpressionStatement' is a specialization of 'SwitchCaseStatement'.
+The class 'eol_statements_IfStatement' is a specialization of 'Statement'.
+The class 'eol_statements_ForStatement' is a specialization of 'Statement'.
+The class 'eol_statements_WhileStatement' is a specialization of 'Statement'.
+The class 'eol_statements_ReturnStatement' is a specialization of 'Statement'.
+The class 'eol_statements_ThrowStatement' is a specialization of 'Statement'.
+The class 'eol_statements_DeleteStatement' is a specialization of 'Statement'.
+The class 'eol_statements_AssignmentStatement' is a specialization of 'Statement'.
+The class 'eol_statements_SpecialAssignmentStatement' is a specialization of 'AssignmentStatement'.
+The class 'eol_statements_ContinueStatement' is a specialization of 'Statement'.
+The class 'eol_statements_AbortStatement' is a specialization of 'Statement'.
+The class 'eol_statements_BreakStatement' is a specialization of 'Statement'.
+The class 'eol_statements_BreakAllStatement' is a specialization of 'Statement'.
+The class 'eol_statements_AnnotationStatement' is a specialization of 'Statement'.
+The class 'eol_statements_SimpleAnnotationStatement' is a specialization of 'AnnotationStatement'.
+The class 'eol_statements_ExecutableAnnotationStatement' is a specialization of 'AnnotationStatement'.
+The class 'eol_statements_ModelDeclarationStatement' is a specialization of 'Statement'.
+The class 'eol_statements_VariableDeclarationExpression' is a specialization of 'Expression'.
+The class 'eol_statements_NameExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'eol_statements_ExpressionStatement' and 'eol_statements_Expression'. From 'eol_statements_ExpressionStatement', the role 'eol_statements_ExpressionStatement' has cardinality 0..*, and from 'eol_statements_Expression', the role 'eol_statements_Expression' has cardinality 0..*.
+An association connects 'eol_statements_Expression' and 'eol_statements_SwitchStatement'. From 'eol_statements_Expression', the role 'eol_statements_Expression2' has cardinality 0..*, and from 'eol_statements_SwitchStatement', the role 'eol_statements_SwitchStatement' has cardinality 0..*.
+An association connects 'eol_statements_SwitchStatement' and 'eol_statements_SwitchCaseExpressionStatement'. From 'eol_statements_SwitchStatement', the role 'eol_statements_SwitchStatement4' has cardinality 0..*, and from 'eol_statements_SwitchCaseExpressionStatement', the role 'eol_statements_SwitchCaseExpressionStatement' has cardinality 0..*.
+An association connects 'eol_statements_SwitchCaseDefaultStatement' and 'eol_statements_SwitchStatement'. From 'eol_statements_SwitchCaseDefaultStatement', the role 'eol_statements_SwitchCaseDefaultStatement' has cardinality 0..*, and from 'eol_statements_SwitchStatement', the role 'eol_statements_SwitchStatement6' has cardinality 0..*.
+An association connects 'eol_statements_ExpressionOrStatementBlock' and 'eol_statements_SwitchCaseStatement'. From 'eol_statements_ExpressionOrStatementBlock', the role 'eol_statements_ExpressionOrStatementBlock' has cardinality 0..*, and from 'eol_statements_SwitchCaseStatement', the role 'eol_statements_SwitchCaseStatement' has cardinality 0..*.
+An association connects 'eol_statements_Expression' and 'eol_statements_SwitchCaseExpressionStatement'. From 'eol_statements_Expression', the role 'eol_statements_Expression10' has cardinality 0..*, and from 'eol_statements_SwitchCaseExpressionStatement', the role 'eol_statements_SwitchCaseExpressionStatement9' has cardinality 0..*.
+An association connects 'eol_statements_Expression' and 'eol_statements_IfStatement'. From 'eol_statements_Expression', the role 'eol_statements_Expression12' has cardinality 0..*, and from 'eol_statements_IfStatement', the role 'eol_statements_IfStatement' has cardinality 0..*.
+An association connects 'eol_statements_ExpressionOrStatementBlock' and 'eol_statements_IfStatement'. From 'eol_statements_ExpressionOrStatementBlock', the role 'eol_statements_ExpressionOrStatementBlock15' has cardinality 0..*, and from 'eol_statements_IfStatement', the role 'eol_statements_IfStatement14' has cardinality 0..*.
+An association connects 'eol_statements_IfStatement' and 'eol_statements_ExpressionOrStatementBlock'. From 'eol_statements_IfStatement', the role 'eol_statements_IfStatement17' has cardinality 0..*, and from 'eol_statements_ExpressionOrStatementBlock', the role 'eol_statements_ExpressionOrStatementBlock18' has cardinality 0..*.
+An association connects 'eol_statements_ExpressionOrStatementBlock' and 'eol_statements_IfStatement'. From 'eol_statements_ExpressionOrStatementBlock', the role 'eol_statements_ExpressionOrStatementBlock21' has cardinality 0..*, and from 'eol_statements_IfStatement', the role 'eol_statements_IfStatement20' has cardinality 0..*.
+An association connects 'eol_statements_FormalParameterExpression' and 'eol_statements_ForStatement'. From 'eol_statements_FormalParameterExpression', the role 'eol_statements_FormalParameterExpression' has cardinality 0..*, and from 'eol_statements_ForStatement', the role 'eol_statements_ForStatement' has cardinality 0..*.
+An association connects 'eol_statements_Expression' and 'eol_statements_ForStatement'. From 'eol_statements_Expression', the role 'eol_statements_Expression25' has cardinality 0..*, and from 'eol_statements_ForStatement', the role 'eol_statements_ForStatement24' has cardinality 0..*.
+An association connects 'eol_statements_ForStatement' and 'eol_statements_ExpressionOrStatementBlock'. From 'eol_statements_ForStatement', the role 'eol_statements_ForStatement27' has cardinality 0..*, and from 'eol_statements_ExpressionOrStatementBlock', the role 'eol_statements_ExpressionOrStatementBlock28' has cardinality 0..*.
+An association connects 'eol_statements_WhileStatement' and 'eol_statements_Expression'. From 'eol_statements_WhileStatement', the role 'eol_statements_WhileStatement' has cardinality 0..*, and from 'eol_statements_Expression', the role 'eol_statements_Expression30' has cardinality 0..*.
+An association connects 'eol_statements_WhileStatement' and 'eol_statements_ExpressionOrStatementBlock'. From 'eol_statements_WhileStatement', the role 'eol_statements_WhileStatement32' has cardinality 0..*, and from 'eol_statements_ExpressionOrStatementBlock', the role 'eol_statements_ExpressionOrStatementBlock33' has cardinality 0..*.
+An association connects 'eol_statements_ReturnStatement' and 'eol_statements_Expression'. From 'eol_statements_ReturnStatement', the role 'eol_statements_ReturnStatement' has cardinality 0..*, and from 'eol_statements_Expression', the role 'eol_statements_Expression35' has cardinality 0..*.
+An association connects 'eol_statements_ThrowStatement' and 'eol_statements_Expression'. From 'eol_statements_ThrowStatement', the role 'eol_statements_ThrowStatement' has cardinality 0..*, and from 'eol_statements_Expression', the role 'eol_statements_Expression37' has cardinality 0..*.
+An association connects 'eol_statements_DeleteStatement' and 'eol_statements_Expression'. From 'eol_statements_DeleteStatement', the role 'eol_statements_DeleteStatement' has cardinality 0..*, and from 'eol_statements_Expression', the role 'eol_statements_Expression39' has cardinality 0..*.
+An association connects 'eol_statements_AssignmentStatement' and 'eol_statements_Expression'. From 'eol_statements_AssignmentStatement', the role 'eol_statements_AssignmentStatement' has cardinality 0..*, and from 'eol_statements_Expression', the role 'eol_statements_Expression41' has cardinality 0..*.
+An association connects 'eol_statements_AssignmentStatement' and 'eol_statements_Expression'. From 'eol_statements_AssignmentStatement', the role 'eol_statements_AssignmentStatement43' has cardinality 0..*, and from 'eol_statements_Expression', the role 'eol_statements_Expression44' has cardinality 0..*.
+An association connects 'eol_statements_NameExpression' and 'eol_statements_AnnotationStatement'. From 'eol_statements_NameExpression', the role 'eol_statements_NameExpression' has cardinality 0..*, and from 'eol_statements_AnnotationStatement', the role 'eol_statements_AnnotationStatement' has cardinality 0..*.
+An association connects 'eol_statements_SimpleAnnotationStatement' and 'eol_statements_StringExpression'. From 'eol_statements_SimpleAnnotationStatement', the role 'eol_statements_SimpleAnnotationStatement' has cardinality 0..*, and from 'eol_statements_StringExpression', the role 'eol_statements_StringExpression' has cardinality 0..*.
+An association connects 'eol_statements_ExecutableAnnotationStatement' and 'eol_statements_Expression'. From 'eol_statements_ExecutableAnnotationStatement', the role 'eol_statements_ExecutableAnnotationStatement' has cardinality 0..*, and from 'eol_statements_Expression', the role 'eol_statements_Expression48' has cardinality 0..*.
+An association connects 'eol_statements_ModelDeclarationStatement' and 'eol_statements_VariableDeclarationExpression'. From 'eol_statements_ModelDeclarationStatement', the role 'eol_statements_ModelDeclarationStatement' has cardinality 0..*, and from 'eol_statements_VariableDeclarationExpression', the role 'eol_statements_VariableDeclarationExpression' has cardinality 0..*.
+An association connects 'eol_statements_NameExpression' and 'eol_statements_ModelDeclarationStatement'. From 'eol_statements_NameExpression', the role 'eol_statements_NameExpression52' has cardinality 0..*, and from 'eol_statements_ModelDeclarationStatement', the role 'eol_statements_ModelDeclarationStatement51' has cardinality 0..*.
+An association connects 'eol_statements_ModelDeclarationStatement' and 'eol_statements_VariableDeclarationExpression'. From 'eol_statements_ModelDeclarationStatement', the role 'eol_statements_ModelDeclarationStatement54' has cardinality 0..*, and from 'eol_statements_VariableDeclarationExpression', the role 'eol_statements_VariableDeclarationExpression55' has cardinality 0..*.
+An association connects 'eol_statements_ModelDeclarationStatement' and 'eol_statements_ModelDeclarationParameter'. From 'eol_statements_ModelDeclarationStatement', the role 'eol_statements_ModelDeclarationStatement57' has cardinality 0..*, and from 'eol_statements_ModelDeclarationParameter', the role 'eol_statements_ModelDeclarationParameter' has cardinality 0..*.

@@ -1,0 +1,50 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'library_Review' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'positive', which is of type bool.
+
+'library_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_CommunityRole' represents an important domain concept.
+It has one attribute: 'role', which is of type str.
+
+'library_Book' represents an important domain concept.
+It has the following attributes: 'pages', which is of type int; 'title', which is of type str; 'category', which is of type str.
+
+'library_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_Chapter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_Community' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_Opinion' represents an important domain concept.
+It has the following attributes: 'context', which is of type str; 'text', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookCategory' defines the following possible values: 'ScienceFiction', 'Biography', 'Mystery'.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_Writer' and 'library_Library'. From 'library_Writer', the role 'library_Writer' has cardinality 0..*, and from 'library_Library', the role 'library_Library' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Book'. From 'library_Library', the role 'library_Library2' has cardinality 0..*, and from 'library_Book', the role 'library_Book' has cardinality 0..*.
+An association connects 'library_Library' and 'library_Community'. From 'library_Library', the role 'library' has cardinality 0..*, and from 'library_Community', the role 'Community' has cardinality 0..*.
+An association connects 'library_Writer' and 'library_Book'. From 'library_Writer', the role 'author' has cardinality 0..*, and from 'library_Book', the role 'Book' has cardinality 0..*.
+An association connects 'library_Writer' and 'library_Book'. From 'library_Writer', the role 'library_Writer6' has cardinality 0..*, and from 'library_Book', the role 'library_Book7' has cardinality 0..*.
+An association connects 'library_Opinion' and 'library_Writer'. From 'library_Opinion', the role 'Opinion' has cardinality 0..*, and from 'library_Writer', the role 'writer' has cardinality 0..*.
+An association connects 'library_Writer' and 'library_CommunityRole'. From 'library_Writer', the role 'participants' has cardinality 0..*, and from 'library_CommunityRole', the role 'CommunityRole' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Writer'. From 'library_Book', the role 'books' has cardinality 0..*, and from 'library_Writer', the role 'Writer' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Review'. From 'library_Book', the role 'book' has cardinality 0..*, and from 'library_Review', the role 'Review' has cardinality 0..*.
+An association connects 'library_Chapter' and 'library_Book'. From 'library_Chapter', the role 'library_Chapter' has cardinality 0..*, and from 'library_Book', the role 'library_Book13' has cardinality 0..*.
+An association connects 'library_Opinion' and 'library_Book'. From 'library_Opinion', the role 'Opinion16' has cardinality 0..*, and from 'library_Book', the role 'book15' has cardinality 0..*.
+An association connects 'library_Review' and 'library_Book'. From 'library_Review', the role 'reviews' has cardinality 0..*, and from 'library_Book', the role 'Book18' has cardinality 0..*.
+An association connects 'library_Opinion' and 'library_Writer'. From 'library_Opinion', the role 'opinions' has cardinality 0..*, and from 'library_Writer', the role 'Writer20' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Opinion'. From 'library_Book', the role 'Book23' has cardinality 0..*, and from 'library_Opinion', the role 'opinions22' has cardinality 0..*.
+An association connects 'library_CommunityRole' and 'library_Community'. From 'library_CommunityRole', the role 'CommunityRole25' has cardinality 0..*, and from 'library_Community', the role 'community' has cardinality 0..*.
+An association connects 'library_Community' and 'library_Library'. From 'library_Community', the role 'communities' has cardinality 0..*, and from 'library_Library', the role 'Library' has cardinality 0..*.
+An association connects 'library_Community' and 'library_CommunityRole'. From 'library_Community', the role 'Community28' has cardinality 0..*, and from 'library_CommunityRole', the role 'roles' has cardinality 0..*.
+An association connects 'library_CommunityRole' and 'library_Writer'. From 'library_CommunityRole', the role 'participates' has cardinality 0..*, and from 'library_Writer', the role 'Writer30' has cardinality 0..*.

@@ -1,0 +1,1029 @@
+The domain model 'gmf_all' describes the core structural elements and their relationships within the system.
+
+The model defines 245 main class(es).
+
+'mappings_gmf_all_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'DecorationFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_ToolGroup' represents an important domain concept.
+It has the following attributes: 'collapsible', which is of type bool; 'stack', which is of type bool.
+
+'ItemBase' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_GenericTool' represents an important domain concept.
+It has one attribute: 'toolClass', which is of type str.
+
+'gmf_all_mappings_ReferenceNewElementSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'mappings_gmf_all_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_ConstantColor' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ReferenceNewElementSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'CustomAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_ElementInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_Toolbar' represents an important domain concept.
+It does not declare any attributes.
+
+'Canvas' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_RealFigure' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gmf_all_tooldef_Menu' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'mappings_MenuOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_CustomConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_ScalablePolygon' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_ItemBase' represents an important domain concept.
+It does not declare any attributes.
+
+'FigureDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_GradientFacet' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'NeedsContainment' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_MetricContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'Polyline' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Rectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_CustomClass' represents an important domain concept.
+It has one attribute: 'qualifiedClassName', which is of type str.
+
+'gmf_all_mappings_NeedsContainment' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_InvisibleRectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_AuditedMetricTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_NodeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_ToolContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_MarginBorder' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_Separator' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gmf_all_mappings_Measurable' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_PredefinedMenu' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'AuditRule' represents an important domain concept.
+It does not declare any attributes.
+
+'Insets' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_VerticalLabel' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'gmf_all_gmfgraph_PolylineConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_CustomPin' represents an important domain concept.
+It has the following attributes: 'customOperationName', which is of type str; 'customOperationType', which is of type str.
+
+'mappings_NeedsContainment' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_VisiblePin' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_PinOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_DomainAttributeTarget' represents an important domain concept.
+It has one attribute: 'nullAsError', which is of type bool.
+
+'gmf_all_mappings_OclChoiceLabelMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_Image' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Figure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_LabeledContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'mappings_gmf_all_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_ContributionItem' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'Menu' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Rectangle2D' represents an important domain concept.
+It has the following attributes: 'width', which is of type float; 'x', which is of type float; 'y', which is of type float; 'height', which is of type float.
+
+'gmf_all_tooldef_StyleSelector' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Dimension' represents an important domain concept.
+It has the following attributes: 'dx', which is of type int; 'dy', which is of type int.
+
+'MetricRule' represents an important domain concept.
+It does not declare any attributes.
+
+'Font' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_ContextMenu' represents an important domain concept.
+It does not declare any attributes.
+
+'MainMenu' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_ConnectionFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_GridLayoutData' represents an important domain concept.
+It has the following attributes: 'grabExcessHorizontalSpace', which is of type bool; 'grabExcessVerticalSpace', which is of type bool; 'verticalAlignment', which is of type str; 'horizontalAlignment', which is of type str; 'verticalSpan', which is of type int; 'horizontalIndent', which is of type int; 'horizontalSpan', which is of type int.
+
+'gmf_all_gmfgraph_AbstractFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_LayoutData' represents an important domain concept.
+It does not declare any attributes.
+
+'MenuAction' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_BorderLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_MetricRule' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'lowLimit', which is of type str; 'highLimit', which is of type str.
+
+'Border' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_VisualFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_AppearanceSteward' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Layout' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_MappingEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_CustomClass' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_ToolRegistry' represents an important domain concept.
+It does not declare any attributes.
+
+'Polygon' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkConstraints' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_LabelOffsetFacet' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'x', which is of type int.
+
+'gmf_all_mappings_FeatureInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_BundleImage' represents an important domain concept.
+It has the following attributes: 'bundle', which is of type str; 'path', which is of type str.
+
+'TopNodeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_PolygonDecoration' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_ColorPin' represents an important domain concept.
+It has one attribute: 'backgroundNotForeground', which is of type bool.
+
+'gmf_all_gmfgraph_Node' represents an important domain concept.
+It has the following attributes: 'affixedParentSide', which is of type str; 'resizeConstraint', which is of type str.
+
+'SVGProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'Image' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_LinkConstraints' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Layoutable' represents an important domain concept.
+It does not declare any attributes.
+
+'ContributionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_CustomAttributeOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Shape' represents an important domain concept.
+It has the following attributes: 'lineKind', which is of type str; 'lineWidth', which is of type int; 'outline', which is of type bool; 'xorOutline', which is of type bool; 'xorFill', which is of type bool; 'fill', which is of type bool.
+
+'gmfgraph_CustomAttributeOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_NotationElementTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Font' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_FigureAccessor' represents an important domain concept.
+It has one attribute: 'accessor', which is of type str.
+
+'Measurable' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_GenericStyleSelector' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'gmfgraph_ConnectionFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_NodeMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_AuditContainer' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str; 'id', which is of type str.
+
+'mappings_MappingEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Label' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'gmf_all_mappings_ToolOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_ChildReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_CustomAttribute' represents an important domain concept.
+It has the following attributes: 'directAccess', which is of type bool; 'multiStatementValue', which is of type bool; 'value', which is of type str; 'name', which is of type str.
+
+'gmf_all_gmfgraph_AlignmentFacet' represents an important domain concept.
+It has one attribute: 'alignment', which is of type str.
+
+'gmf_all_gmfgraph_Insets' represents an important domain concept.
+It has the following attributes: 'left', which is of type int; 'bottom', which is of type int; 'right', which is of type int; 'top', which is of type int.
+
+'gmfgraph_Layout' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'Layoutable' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_CustomDecoration' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_RuleBase' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'gmf_all_gmfgraph_Border' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_FigureGallery' represents an important domain concept.
+It has one attribute: 'implementationBundle', which is of type str.
+
+'gmf_all_gmfgraph_DecorationFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_AbstractTool' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'description', which is of type str.
+
+'ChildReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_BorderRef' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_StackLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_FigureDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_ChildAccess' represents an important domain concept.
+It has one attribute: 'accessor', which is of type str.
+
+'tooldef_ContributionItem' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_PolylineDecoration' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_BasicFont' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'height', which is of type int; 'faceName', which is of type str.
+
+'gmf_all_mappings_DomainElementTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'Identity' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_XYLayoutData' represents an important domain concept.
+It does not declare any attributes.
+
+'Figure' represents an important domain concept.
+It does not declare any attributes.
+
+'FigureGallery' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_CenterLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Compartment' represents an important domain concept.
+It has the following attributes: 'collapsible', which is of type bool; 'needsTitle', which is of type bool.
+
+'gmf_all_tooldef_ItemRef' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_CustomFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_MainMenu' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'CanvasMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'RuleBase' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_FeatureValueSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_GeneralFacet' represents an important domain concept.
+It has the following attributes: 'identifier', which is of type str; 'data', which is of type str.
+
+'Rectangle2D' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_Palette' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_PaletteSeparator' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_Border' represents an important domain concept.
+It does not declare any attributes.
+
+'AuditContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_VisualEffectMapping' represents an important domain concept.
+It has one attribute: 'oclExpression', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_PredefinedItem' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'gmf_all_gmfgraph_DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_MenuOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'LabelMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_DiagramLabel' represents an important domain concept.
+It has the following attributes: 'external', which is of type bool; 'elementIcon', which is of type bool.
+
+'gmfgraph_RealFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_PinOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'ContextMenu' represents an important domain concept.
+It does not declare any attributes.
+
+'mappings_gmf_all_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'CustomAttributeOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_XYLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_AbstractFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_Auditable' represents an important domain concept.
+It does not declare any attributes.
+
+'mappings_gmf_all_EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_GridLayout' represents an important domain concept.
+It has the following attributes: 'numColumns', which is of type int; 'equalWidth', which is of type bool.
+
+'gmf_all_tooldef_PopupMenu' represents an important domain concept.
+It has one attribute: 'iD', which is of type str.
+
+'gmf_all_gmfgraph_Identity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gmf_all_gmfgraph_Polygon' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Polyline' represents an important domain concept.
+It does not declare any attributes.
+
+'tooldef_Menu' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_LineBorder' represents an important domain concept.
+It has one attribute: 'width', which is of type int.
+
+'mappings_ToolOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_RGBColor' represents an important domain concept.
+It has the following attributes: 'green', which is of type int; 'red', which is of type int; 'blue', which is of type int.
+
+'ValueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_TopNodeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_StandardTool' represents an important domain concept.
+It has one attribute: 'toolKind', which is of type str.
+
+'AbstractNode' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_CanvasMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'LayoutData' represents an important domain concept.
+It does not declare any attributes.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_AuditRule' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'useInLiveMode', which is of type bool; 'message', which is of type str; 'severity', which is of type str.
+
+'gmf_all_mappings_DiagramElementTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'CompartmentMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_DecorationFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_LabelMapping' represents an important domain concept.
+It has one attribute: 'readOnly', which is of type bool.
+
+'gmf_all_gmfgraph_DefaultSizeFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_SVGFigure' represents an important domain concept.
+It has the following attributes: 'noCanvasHeight', which is of type bool; 'noCanvasWidth', which is of type bool; 'documentURI', which is of type str.
+
+'gmf_all_gmfgraph_CompoundBorder' represents an important domain concept.
+It does not declare any attributes.
+
+'Palette' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_FeatureLabelMapping' represents an important domain concept.
+It has the following attributes: 'editMethod', which is of type str; 'editPattern', which is of type str; 'viewPattern', which is of type str; 'editorPattern', which is of type str; 'viewMethod', which is of type str.
+
+'gmf_all_tooldef_MenuAction' represents an important domain concept.
+It has the following attributes: 'hotKey', which is of type str; 'kind', which is of type str.
+
+'ChildAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'Point' represents an important domain concept.
+It does not declare any attributes.
+
+'Toolbar' represents an important domain concept.
+It does not declare any attributes.
+
+'FigureAccessor' represents an important domain concept.
+It does not declare any attributes.
+
+'mappings_Measurable' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_CustomLayoutData' represents an important domain concept.
+It does not declare any attributes.
+
+'Layout' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_FigureRef' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_LinkMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Color' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_CompartmentMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureSeqInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'Compartment' represents an important domain concept.
+It does not declare any attributes.
+
+'mappings_Auditable' represents an important domain concept.
+It does not declare any attributes.
+
+'ToolContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'StyleSelector' represents an important domain concept.
+It does not declare any attributes.
+
+'RealFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'mappings_AppearanceSteward' represents an important domain concept.
+It does not declare any attributes.
+
+'Auditable' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_Polygon' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_LayoutRef' represents an important domain concept.
+It does not declare any attributes.
+
+'MetricContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Point' represents an important domain concept.
+It has the following attributes: 'x', which is of type int; 'y', which is of type int.
+
+'gmf_all_gmfgraph_FlowLayout' represents an important domain concept.
+It has the following attributes: 'minorAlignment', which is of type str; 'majorSpacing', which is of type int; 'forceSingleLine', which is of type bool; 'majorAlignment', which is of type str; 'minorSpacing', which is of type int; 'matchMinorSize', which is of type bool; 'vertical', which is of type bool.
+
+'gmf_all_mappings_DesignLabelMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_CreationTool' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_LayoutData' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_BorderLayoutData' represents an important domain concept.
+It has the following attributes: 'vertical', which is of type bool; 'alignment', which is of type str.
+
+'gmf_all_mappings_FeatureSeqInitializer' represents an important domain concept.
+It does not declare any attributes.
+
+'Color' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_RoundedRectangle' represents an important domain concept.
+It has the following attributes: 'cornerHeight', which is of type int; 'cornerWidth', which is of type int.
+
+'gmf_all_gmfgraph_CustomFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_SVGProperty' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'callSuper', which is of type bool; 'attribute', which is of type str; 'query', which is of type str; 'getter', which is of type str; 'setter', which is of type str.
+
+'gmf_all_mappings_ValueExpression' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'language', which is of type str; 'langName', which is of type str.
+
+'gmf_all_gmfgraph_AbstractNode' represents an important domain concept.
+It does not declare any attributes.
+
+'tooldef_PredefinedItem' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Canvas' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_mappings_ExpressionLabelMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_tooldef_DefaultImage' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTool' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_CustomBorder' represents an important domain concept.
+It does not declare any attributes.
+
+'Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_Ellipse' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_Polyline' represents an important domain concept.
+It does not declare any attributes.
+
+'gmf_all_gmfgraph_CustomLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualEffectMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'Dimension' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FontStyle' defines the following possible values: 'ITALIC', 'BOLD', 'NORMAL'.
+The enumeration 'ActionKind' defines the following possible values: 'CREATE', 'MODIFY', 'CUSTOM', 'PROPCHANGE', 'PROCESS'.
+The enumeration 'LabelTextAccessMethod' defines the following possible values: 'PRINTF', 'MESSAGE_FORMAT', 'NATIVE', 'REGEXP'.
+The enumeration 'LineKind' defines the following possible values: 'LINE_DASHDOTDOT', 'LINE_DOT', 'LINE_CUSTOM', 'LINE_DASH', 'LINE_SOLID', 'LINE_DASHDOT'.
+The enumeration 'Language' defines the following possible values: 'regexp', 'nregexp', 'literal', 'java', 'ocl'.
+The enumeration 'Alignment' defines the following possible values: 'END', 'FILL', 'BEGINNING', 'CENTER'.
+The enumeration 'SVGPropertyType' defines the following possible values: 'STRING', 'FLOAT', 'COLOR'.
+The enumeration 'Direction' defines the following possible values: 'SOUTH', 'NSEW', 'EAST', 'NORTH_EAST', 'SOUTH_WEST', 'EAST_WEST', 'NORTH_SOUTH', 'SOUTH_EAST', 'WEST', 'NORTH', 'NONE', 'NORTH_WEST'.
+The enumeration 'StandardToolKind' defines the following possible values: 'SELECT', 'ZOOM_IN', 'ZOOM_OUT', 'SELECT_PAN', 'MARQUEE', 'ZOOM_PAN'.
+The enumeration 'AppearanceStyle' defines the following possible values: 'Font', 'Fill', 'Line'.
+The enumeration 'ColorConstants' defines the following possible values: 'black', 'darkGreen', 'darkBlue', 'lightBlue', 'orange', 'yellow', 'cyan', 'blue', 'green', 'red', 'lightGray', 'gray', 'white', 'darkGray', 'lightGreen'.
+The enumeration 'Severity' defines the following possible values: 'INFO', 'WARNING', 'ERROR'.
+
+The model also captures inheritance relationships between classes.
+The class 'gmf_all_mappings_NodeReference' is a specialization of 'NeedsContainment'.
+The class 'gmf_all_mappings_ChildReference' is a specialization of 'NodeReference'.
+The class 'gmf_all_mappings_TopNodeReference' is a specialization of 'NodeReference'.
+The class 'gmf_all_mappings_NodeMapping' is a specialization of 'mappings_MappingEntry'.
+The class 'gmf_all_mappings_NodeMapping' is a specialization of 'mappings_MenuOwner'.
+The class 'gmf_all_mappings_NodeMapping' is a specialization of 'mappings_ToolOwner'.
+The class 'gmf_all_mappings_NodeMapping' is a specialization of 'mappings_AppearanceSteward'.
+The class 'gmf_all_mappings_LinkMapping' is a specialization of 'mappings_MappingEntry'.
+The class 'gmf_all_mappings_LinkMapping' is a specialization of 'mappings_NeedsContainment'.
+The class 'gmf_all_mappings_LinkMapping' is a specialization of 'mappings_MenuOwner'.
+The class 'gmf_all_mappings_LinkMapping' is a specialization of 'mappings_ToolOwner'.
+The class 'gmf_all_mappings_LinkMapping' is a specialization of 'mappings_AppearanceSteward'.
+The class 'gmf_all_mappings_FeatureLabelMapping' is a specialization of 'LabelMapping'.
+The class 'gmf_all_mappings_OclChoiceLabelMapping' is a specialization of 'LabelMapping'.
+The class 'gmf_all_mappings_DesignLabelMapping' is a specialization of 'LabelMapping'.
+The class 'gmf_all_mappings_ExpressionLabelMapping' is a specialization of 'LabelMapping'.
+The class 'gmf_all_mappings_Constraint' is a specialization of 'ValueExpression'.
+The class 'gmf_all_mappings_FeatureSeqInitializer' is a specialization of 'ElementInitializer'.
+The class 'gmf_all_mappings_FeatureValueSpec' is a specialization of 'FeatureInitializer'.
+The class 'gmf_all_mappings_ReferenceNewElementSpec' is a specialization of 'FeatureInitializer'.
+The class 'gmf_all_mappings_AuditRule' is a specialization of 'RuleBase'.
+The class 'gmf_all_mappings_DomainElementTarget' is a specialization of 'mappings_Auditable'.
+The class 'gmf_all_mappings_DomainElementTarget' is a specialization of 'mappings_Measurable'.
+The class 'gmf_all_mappings_DomainAttributeTarget' is a specialization of 'Auditable'.
+The class 'gmf_all_mappings_DiagramElementTarget' is a specialization of 'mappings_Auditable'.
+The class 'gmf_all_mappings_DiagramElementTarget' is a specialization of 'mappings_Measurable'.
+The class 'gmf_all_mappings_NotationElementTarget' is a specialization of 'mappings_Auditable'.
+The class 'gmf_all_mappings_NotationElementTarget' is a specialization of 'mappings_Measurable'.
+The class 'gmf_all_mappings_MetricRule' is a specialization of 'RuleBase'.
+The class 'gmf_all_mappings_AuditedMetricTarget' is a specialization of 'Auditable'.
+The class 'gmf_all_tooldef_ToolContainer' is a specialization of 'AbstractTool'.
+The class 'gmf_all_tooldef_PaletteSeparator' is a specialization of 'AbstractTool'.
+The class 'gmf_all_tooldef_ToolGroup' is a specialization of 'ToolContainer'.
+The class 'gmf_all_tooldef_Palette' is a specialization of 'ToolContainer'.
+The class 'gmf_all_tooldef_StandardTool' is a specialization of 'AbstractTool'.
+The class 'gmf_all_tooldef_CreationTool' is a specialization of 'AbstractTool'.
+The class 'gmf_all_tooldef_GenericTool' is a specialization of 'AbstractTool'.
+The class 'gmf_all_tooldef_Separator' is a specialization of 'ItemBase'.
+The class 'gmf_all_tooldef_PredefinedItem' is a specialization of 'ItemBase'.
+The class 'gmf_all_tooldef_PredefinedMenu' is a specialization of 'tooldef_Menu'.
+The class 'gmf_all_tooldef_PredefinedMenu' is a specialization of 'tooldef_PredefinedItem'.
+The class 'gmf_all_tooldef_ContributionItem' is a specialization of 'ItemBase'.
+The class 'gmf_all_tooldef_MenuAction' is a specialization of 'ContributionItem'.
+The class 'gmf_all_tooldef_ItemRef' is a specialization of 'ItemBase'.
+The class 'gmf_all_tooldef_ContextMenu' is a specialization of 'Menu'.
+The class 'gmf_all_tooldef_PopupMenu' is a specialization of 'tooldef_Menu'.
+The class 'gmf_all_tooldef_PopupMenu' is a specialization of 'tooldef_ContributionItem'.
+The class 'gmf_all_tooldef_MainMenu' is a specialization of 'Menu'.
+The class 'gmf_all_tooldef_Toolbar' is a specialization of 'Menu'.
+The class 'gmf_all_tooldef_DefaultImage' is a specialization of 'Image'.
+The class 'gmf_all_tooldef_BundleImage' is a specialization of 'Image'.
+The class 'gmf_all_tooldef_GenericStyleSelector' is a specialization of 'StyleSelector'.
+The class 'gmf_all_gmfgraph_Canvas' is a specialization of 'Identity'.
+The class 'gmf_all_gmfgraph_FigureGallery' is a specialization of 'Identity'.
+The class 'gmf_all_gmfgraph_DiagramElement' is a specialization of 'Identity'.
+The class 'gmf_all_gmfgraph_AbstractNode' is a specialization of 'DiagramElement'.
+The class 'gmf_all_gmfgraph_Node' is a specialization of 'AbstractNode'.
+The class 'gmf_all_gmfgraph_Connection' is a specialization of 'DiagramElement'.
+The class 'gmf_all_gmfgraph_Compartment' is a specialization of 'DiagramElement'.
+The class 'gmf_all_gmfgraph_DiagramLabel' is a specialization of 'Node'.
+The class 'gmf_all_gmfgraph_GeneralFacet' is a specialization of 'VisualFacet'.
+The class 'gmf_all_gmfgraph_AlignmentFacet' is a specialization of 'VisualFacet'.
+The class 'gmf_all_gmfgraph_GradientFacet' is a specialization of 'VisualFacet'.
+The class 'gmf_all_gmfgraph_LabelOffsetFacet' is a specialization of 'VisualFacet'.
+The class 'gmf_all_gmfgraph_DefaultSizeFacet' is a specialization of 'VisualFacet'.
+The class 'gmf_all_gmfgraph_Figure' is a specialization of 'Layoutable'.
+The class 'gmf_all_gmfgraph_AbstractFigure' is a specialization of 'Figure'.
+The class 'gmf_all_gmfgraph_FigureDescriptor' is a specialization of 'Identity'.
+The class 'gmf_all_gmfgraph_RealFigure' is a specialization of 'gmfgraph_AbstractFigure'.
+The class 'gmf_all_gmfgraph_RealFigure' is a specialization of 'gmfgraph_PinOwner'.
+The class 'gmf_all_gmfgraph_RealFigure' is a specialization of 'gmfgraph_CustomAttributeOwner'.
+The class 'gmf_all_gmfgraph_FigureRef' is a specialization of 'AbstractFigure'.
+The class 'gmf_all_gmfgraph_ConnectionFigure' is a specialization of 'RealFigure'.
+The class 'gmf_all_gmfgraph_DecorationFigure' is a specialization of 'RealFigure'.
+The class 'gmf_all_gmfgraph_Shape' is a specialization of 'RealFigure'.
+The class 'gmf_all_gmfgraph_Label' is a specialization of 'RealFigure'.
+The class 'gmf_all_gmfgraph_LabeledContainer' is a specialization of 'RealFigure'.
+The class 'gmf_all_gmfgraph_VerticalLabel' is a specialization of 'RealFigure'.
+The class 'gmf_all_gmfgraph_Rectangle' is a specialization of 'Shape'.
+The class 'gmf_all_gmfgraph_InvisibleRectangle' is a specialization of 'RealFigure'.
+The class 'gmf_all_gmfgraph_RoundedRectangle' is a specialization of 'Shape'.
+The class 'gmf_all_gmfgraph_Ellipse' is a specialization of 'Shape'.
+The class 'gmf_all_gmfgraph_Polyline' is a specialization of 'Shape'.
+The class 'gmf_all_gmfgraph_Polygon' is a specialization of 'Polyline'.
+The class 'gmf_all_gmfgraph_ScalablePolygon' is a specialization of 'Polygon'.
+The class 'gmf_all_gmfgraph_PolylineConnection' is a specialization of 'gmfgraph_Polyline'.
+The class 'gmf_all_gmfgraph_PolylineConnection' is a specialization of 'gmfgraph_ConnectionFigure'.
+The class 'gmf_all_gmfgraph_PolylineDecoration' is a specialization of 'gmfgraph_Polyline'.
+The class 'gmf_all_gmfgraph_PolylineDecoration' is a specialization of 'gmfgraph_DecorationFigure'.
+The class 'gmf_all_gmfgraph_PolygonDecoration' is a specialization of 'gmfgraph_Polygon'.
+The class 'gmf_all_gmfgraph_PolygonDecoration' is a specialization of 'gmfgraph_DecorationFigure'.
+The class 'gmf_all_gmfgraph_CustomClass' is a specialization of 'CustomAttributeOwner'.
+The class 'gmf_all_gmfgraph_CustomFigure' is a specialization of 'gmfgraph_RealFigure'.
+The class 'gmf_all_gmfgraph_CustomFigure' is a specialization of 'gmfgraph_CustomClass'.
+The class 'gmf_all_gmfgraph_CustomDecoration' is a specialization of 'gmfgraph_CustomFigure'.
+The class 'gmf_all_gmfgraph_CustomDecoration' is a specialization of 'gmfgraph_DecorationFigure'.
+The class 'gmf_all_gmfgraph_CustomConnection' is a specialization of 'gmfgraph_CustomFigure'.
+The class 'gmf_all_gmfgraph_CustomConnection' is a specialization of 'gmfgraph_ConnectionFigure'.
+The class 'gmf_all_gmfgraph_RGBColor' is a specialization of 'Color'.
+The class 'gmf_all_gmfgraph_ConstantColor' is a specialization of 'Color'.
+The class 'gmf_all_gmfgraph_BasicFont' is a specialization of 'Font'.
+The class 'gmf_all_gmfgraph_BorderRef' is a specialization of 'Border'.
+The class 'gmf_all_gmfgraph_LineBorder' is a specialization of 'Border'.
+The class 'gmf_all_gmfgraph_MarginBorder' is a specialization of 'Border'.
+The class 'gmf_all_gmfgraph_CompoundBorder' is a specialization of 'Border'.
+The class 'gmf_all_gmfgraph_CustomBorder' is a specialization of 'gmfgraph_Border'.
+The class 'gmf_all_gmfgraph_CustomBorder' is a specialization of 'gmfgraph_CustomClass'.
+The class 'gmf_all_gmfgraph_CustomLayoutData' is a specialization of 'gmfgraph_LayoutData'.
+The class 'gmf_all_gmfgraph_CustomLayoutData' is a specialization of 'gmfgraph_CustomClass'.
+The class 'gmf_all_gmfgraph_GridLayoutData' is a specialization of 'LayoutData'.
+The class 'gmf_all_gmfgraph_BorderLayoutData' is a specialization of 'LayoutData'.
+The class 'gmf_all_gmfgraph_LayoutRef' is a specialization of 'Layout'.
+The class 'gmf_all_gmfgraph_CustomLayout' is a specialization of 'gmfgraph_Layout'.
+The class 'gmf_all_gmfgraph_CustomLayout' is a specialization of 'gmfgraph_CustomClass'.
+The class 'gmf_all_gmfgraph_GridLayout' is a specialization of 'Layout'.
+The class 'gmf_all_gmfgraph_BorderLayout' is a specialization of 'Layout'.
+The class 'gmf_all_gmfgraph_FlowLayout' is a specialization of 'Layout'.
+The class 'gmf_all_gmfgraph_XYLayout' is a specialization of 'Layout'.
+The class 'gmf_all_gmfgraph_XYLayoutData' is a specialization of 'LayoutData'.
+The class 'gmf_all_gmfgraph_StackLayout' is a specialization of 'Layout'.
+The class 'gmf_all_gmfgraph_CenterLayout' is a specialization of 'Layout'.
+The class 'gmf_all_gmfgraph_SVGFigure' is a specialization of 'RealFigure'.
+The class 'gmf_all_gmfgraph_Pin' is a specialization of 'Identity'.
+The class 'gmf_all_gmfgraph_CustomPin' is a specialization of 'Pin'.
+The class 'gmf_all_gmfgraph_ColorPin' is a specialization of 'Pin'.
+The class 'gmf_all_gmfgraph_VisiblePin' is a specialization of 'Pin'.
+
+Relationships between classes are modeled using associations.
+An association connects 'TopNodeReference' and 'gmf_all_mappings_Mapping'. From 'TopNodeReference', the role 'TopNodeReference' has cardinality 0..*, and from 'gmf_all_mappings_Mapping', the role 'gmf_all_mappings_Mapping' has cardinality 0..*.
+An association connects 'LinkMapping' and 'gmf_all_mappings_Mapping'. From 'LinkMapping', the role 'LinkMapping' has cardinality 0..*, and from 'gmf_all_mappings_Mapping', the role 'gmf_all_mappings_Mapping2' has cardinality 0..*.
+An association connects 'CanvasMapping' and 'gmf_all_mappings_Mapping'. From 'CanvasMapping', the role 'CanvasMapping' has cardinality 0..*, and from 'gmf_all_mappings_Mapping', the role 'gmf_all_mappings_Mapping4' has cardinality 0..*.
+An association connects 'StyleSelector' and 'gmf_all_mappings_Mapping'. From 'StyleSelector', the role 'StyleSelector' has cardinality 0..*, and from 'gmf_all_mappings_Mapping', the role 'gmf_all_mappings_Mapping6' has cardinality 0..*.
+An association connects 'AuditContainer' and 'gmf_all_mappings_Mapping'. From 'AuditContainer', the role 'AuditContainer' has cardinality 0..*, and from 'gmf_all_mappings_Mapping', the role 'gmf_all_mappings_Mapping8' has cardinality 0..*.
+An association connects 'MetricContainer' and 'gmf_all_mappings_Mapping'. From 'MetricContainer', the role 'MetricContainer' has cardinality 0..*, and from 'gmf_all_mappings_Mapping', the role 'gmf_all_mappings_Mapping10' has cardinality 0..*.
+An association connects 'gmf_all_mappings_MappingEntry' and 'mappings_gmf_all_EClass'. From 'gmf_all_mappings_MappingEntry', the role 'gmf_all_mappings_MappingEntry' has cardinality 0..*, and from 'mappings_gmf_all_EClass', the role 'mappings_gmf_all_EClass' has cardinality 0..*.
+An association connects 'Constraint' and 'gmf_all_mappings_MappingEntry'. From 'Constraint', the role 'Constraint' has cardinality 0..*, and from 'gmf_all_mappings_MappingEntry', the role 'gmf_all_mappings_MappingEntry13' has cardinality 0..*.
+An association connects 'ElementInitializer' and 'gmf_all_mappings_MappingEntry'. From 'ElementInitializer', the role 'ElementInitializer' has cardinality 0..*, and from 'gmf_all_mappings_MappingEntry', the role 'gmf_all_mappings_MappingEntry15' has cardinality 0..*.
+An association connects 'LabelMapping' and 'gmf_all_mappings_MappingEntry'. From 'LabelMapping', the role 'mappings' has cardinality 0..*, and from 'gmf_all_mappings_MappingEntry', the role 'LabelMapping' has cardinality 0..*.
+An association connects 'gmf_all_mappings_MappingEntry' and 'CanvasMapping'. From 'gmf_all_mappings_MappingEntry', the role 'gmf_all_mappings_MappingEntry18' has cardinality 0..*, and from 'CanvasMapping', the role 'CanvasMapping19' has cardinality 0..*.
+An association connects 'gmf_all_mappings_MappingEntry' and 'VisualEffectMapping'. From 'gmf_all_mappings_MappingEntry', the role 'VisualEffectMapping' has cardinality 0..*, and from 'VisualEffectMapping', the role 'mappings21' has cardinality 0..*.
+An association connects 'mappings_gmf_all_EReference' and 'gmf_all_mappings_NeedsContainment'. From 'mappings_gmf_all_EReference', the role 'mappings_gmf_all_EReference' has cardinality 0..*, and from 'gmf_all_mappings_NeedsContainment', the role 'gmf_all_mappings_NeedsContainment' has cardinality 0..*.
+An association connects 'mappings_gmf_all_EReference' and 'gmf_all_mappings_NodeReference'. From 'mappings_gmf_all_EReference', the role 'mappings_gmf_all_EReference24' has cardinality 0..*, and from 'gmf_all_mappings_NodeReference', the role 'gmf_all_mappings_NodeReference' has cardinality 0..*.
+An association connects 'NodeMapping' and 'gmf_all_mappings_NodeReference'. From 'NodeMapping', the role 'NodeMapping' has cardinality 0..*, and from 'gmf_all_mappings_NodeReference', the role 'gmf_all_mappings_NodeReference26' has cardinality 0..*.
+An association connects 'gmf_all_mappings_ChildReference' and 'NodeMapping'. From 'gmf_all_mappings_ChildReference', the role 'NodeMapping28' has cardinality 0..*, and from 'NodeMapping', the role 'mappings29' has cardinality 0..*.
+An association connects 'gmf_all_mappings_ChildReference' and 'CompartmentMapping'. From 'gmf_all_mappings_ChildReference', the role 'CompartmentMapping' has cardinality 0..*, and from 'CompartmentMapping', the role 'mappings31' has cardinality 0..*.
+An association connects 'NodeMapping' and 'gmf_all_mappings_ChildReference'. From 'NodeMapping', the role 'NodeMapping33' has cardinality 0..*, and from 'gmf_all_mappings_ChildReference', the role 'gmf_all_mappings_ChildReference' has cardinality 0..*.
+An association connects 'gmf_all_mappings_ChildReference' and 'NodeMapping'. From 'gmf_all_mappings_ChildReference', the role 'gmf_all_mappings_ChildReference35' has cardinality 0..*, and from 'NodeMapping', the role 'NodeMapping36' has cardinality 0..*.
+An association connects 'gmf_all_mappings_TopNodeReference' and 'NodeMapping'. From 'gmf_all_mappings_TopNodeReference', the role 'gmf_all_mappings_TopNodeReference' has cardinality 0..*, and from 'NodeMapping', the role 'NodeMapping38' has cardinality 0..*.
+An association connects 'Node' and 'gmf_all_mappings_NodeMapping'. From 'Node', the role 'Node' has cardinality 0..*, and from 'gmf_all_mappings_NodeMapping', the role 'gmf_all_mappings_NodeMapping' has cardinality 0..*.
+An association connects 'ChildReference' and 'gmf_all_mappings_NodeMapping'. From 'ChildReference', the role 'mappings41' has cardinality 0..*, and from 'gmf_all_mappings_NodeMapping', the role 'ChildReference' has cardinality 0..*.
+An association connects 'CompartmentMapping' and 'gmf_all_mappings_NodeMapping'. From 'CompartmentMapping', the role 'mappings44' has cardinality 0..*, and from 'gmf_all_mappings_NodeMapping', the role 'CompartmentMapping43' has cardinality 0..*.
+An association connects 'Compartment' and 'gmf_all_mappings_CompartmentMapping'. From 'Compartment', the role 'Compartment' has cardinality 0..*, and from 'gmf_all_mappings_CompartmentMapping', the role 'gmf_all_mappings_CompartmentMapping' has cardinality 0..*.
+An association connects 'gmf_all_mappings_CompartmentMapping' and 'NodeMapping'. From 'gmf_all_mappings_CompartmentMapping', the role 'NodeMapping47' has cardinality 0..*, and from 'NodeMapping', the role 'mappings48' has cardinality 0..*.
+An association connects 'gmf_all_mappings_CompartmentMapping' and 'ChildReference'. From 'gmf_all_mappings_CompartmentMapping', the role 'ChildReference50' has cardinality 0..*, and from 'ChildReference', the role 'mappings51' has cardinality 0..*.
+An association connects 'gmf_all_mappings_LinkMapping' and 'Connection'. From 'gmf_all_mappings_LinkMapping', the role 'gmf_all_mappings_LinkMapping' has cardinality 0..*, and from 'Connection', the role 'Connection' has cardinality 0..*.
+An association connects 'mappings_gmf_all_EStructuralFeature' and 'gmf_all_mappings_LinkMapping'. From 'mappings_gmf_all_EStructuralFeature', the role 'mappings_gmf_all_EStructuralFeature' has cardinality 0..*, and from 'gmf_all_mappings_LinkMapping', the role 'gmf_all_mappings_LinkMapping54' has cardinality 0..*.
+An association connects 'gmf_all_mappings_LinkMapping' and 'mappings_gmf_all_EStructuralFeature'. From 'gmf_all_mappings_LinkMapping', the role 'gmf_all_mappings_LinkMapping56' has cardinality 0..*, and from 'mappings_gmf_all_EStructuralFeature', the role 'mappings_gmf_all_EStructuralFeature57' has cardinality 0..*.
+An association connects 'LinkConstraints' and 'gmf_all_mappings_LinkMapping'. From 'LinkConstraints', the role 'mappings59' has cardinality 0..*, and from 'gmf_all_mappings_LinkMapping', the role 'LinkConstraints' has cardinality 0..*.
+An association connects 'Canvas' and 'gmf_all_mappings_CanvasMapping'. From 'Canvas', the role 'Canvas' has cardinality 0..*, and from 'gmf_all_mappings_CanvasMapping', the role 'gmf_all_mappings_CanvasMapping' has cardinality 0..*.
+An association connects 'mappings_gmf_all_EPackage' and 'gmf_all_mappings_CanvasMapping'. From 'mappings_gmf_all_EPackage', the role 'mappings_gmf_all_EPackage' has cardinality 0..*, and from 'gmf_all_mappings_CanvasMapping', the role 'gmf_all_mappings_CanvasMapping62' has cardinality 0..*.
+An association connects 'gmf_all_mappings_CanvasMapping' and 'mappings_gmf_all_EClass'. From 'gmf_all_mappings_CanvasMapping', the role 'gmf_all_mappings_CanvasMapping64' has cardinality 0..*, and from 'mappings_gmf_all_EClass', the role 'mappings_gmf_all_EClass65' has cardinality 0..*.
+An association connects 'gmf_all_mappings_CanvasMapping' and 'Palette'. From 'gmf_all_mappings_CanvasMapping', the role 'gmf_all_mappings_CanvasMapping67' has cardinality 0..*, and from 'Palette', the role 'Palette' has cardinality 0..*.
+An association connects 'gmf_all_mappings_CanvasMapping' and 'MainMenu'. From 'gmf_all_mappings_CanvasMapping', the role 'gmf_all_mappings_CanvasMapping69' has cardinality 0..*, and from 'MainMenu', the role 'MainMenu' has cardinality 0..*.
+An association connects 'Toolbar' and 'gmf_all_mappings_CanvasMapping'. From 'Toolbar', the role 'Toolbar' has cardinality 0..*, and from 'gmf_all_mappings_CanvasMapping', the role 'gmf_all_mappings_CanvasMapping71' has cardinality 0..*.
+An association connects 'gmf_all_mappings_LabelMapping' and 'DiagramLabel'. From 'gmf_all_mappings_LabelMapping', the role 'gmf_all_mappings_LabelMapping' has cardinality 0..*, and from 'DiagramLabel', the role 'DiagramLabel' has cardinality 0..*.
+An association connects 'gmf_all_mappings_LabelMapping' and 'MappingEntry'. From 'gmf_all_mappings_LabelMapping', the role 'MappingEntry' has cardinality 0..*, and from 'MappingEntry', the role 'mappings74' has cardinality 0..*.
+An association connects 'gmf_all_mappings_FeatureLabelMapping' and 'mappings_gmf_all_EAttribute'. From 'gmf_all_mappings_FeatureLabelMapping', the role 'gmf_all_mappings_FeatureLabelMapping' has cardinality 0..*, and from 'mappings_gmf_all_EAttribute', the role 'mappings_gmf_all_EAttribute' has cardinality 0..*.
+An association connects 'gmf_all_mappings_FeatureLabelMapping' and 'mappings_gmf_all_EAttribute'. From 'gmf_all_mappings_FeatureLabelMapping', the role 'gmf_all_mappings_FeatureLabelMapping77' has cardinality 0..*, and from 'mappings_gmf_all_EAttribute', the role 'mappings_gmf_all_EAttribute78' has cardinality 0..*.
+An association connects 'mappings_gmf_all_EStructuralFeature' and 'gmf_all_mappings_OclChoiceLabelMapping'. From 'mappings_gmf_all_EStructuralFeature', the role 'mappings_gmf_all_EStructuralFeature80' has cardinality 0..*, and from 'gmf_all_mappings_OclChoiceLabelMapping', the role 'gmf_all_mappings_OclChoiceLabelMapping' has cardinality 0..*.
+An association connects 'gmf_all_mappings_OclChoiceLabelMapping' and 'ValueExpression'. From 'gmf_all_mappings_OclChoiceLabelMapping', the role 'gmf_all_mappings_OclChoiceLabelMapping82' has cardinality 0..*, and from 'ValueExpression', the role 'ValueExpression' has cardinality 0..*.
+An association connects 'ValueExpression' and 'gmf_all_mappings_OclChoiceLabelMapping'. From 'ValueExpression', the role 'ValueExpression85' has cardinality 0..*, and from 'gmf_all_mappings_OclChoiceLabelMapping', the role 'gmf_all_mappings_OclChoiceLabelMapping84' has cardinality 0..*.
+An association connects 'gmf_all_mappings_ExpressionLabelMapping' and 'ValueExpression'. From 'gmf_all_mappings_ExpressionLabelMapping', the role 'gmf_all_mappings_ExpressionLabelMapping' has cardinality 0..*, and from 'ValueExpression', the role 'ValueExpression87' has cardinality 0..*.
+An association connects 'gmf_all_mappings_ExpressionLabelMapping' and 'ValueExpression'. From 'gmf_all_mappings_ExpressionLabelMapping', the role 'gmf_all_mappings_ExpressionLabelMapping89' has cardinality 0..*, and from 'ValueExpression', the role 'ValueExpression90' has cardinality 0..*.
+An association connects 'gmf_all_mappings_ExpressionLabelMapping' and 'Constraint'. From 'gmf_all_mappings_ExpressionLabelMapping', the role 'gmf_all_mappings_ExpressionLabelMapping92' has cardinality 0..*, and from 'Constraint', the role 'Constraint93' has cardinality 0..*.
+An association connects 'LinkMapping' and 'gmf_all_mappings_LinkConstraints'. From 'LinkMapping', the role 'mappings96' has cardinality 0..*, and from 'gmf_all_mappings_LinkConstraints', the role 'LinkMapping95' has cardinality 0..*.
+An association connects 'Constraint' and 'gmf_all_mappings_LinkConstraints'. From 'Constraint', the role 'Constraint98' has cardinality 0..*, and from 'gmf_all_mappings_LinkConstraints', the role 'gmf_all_mappings_LinkConstraints' has cardinality 0..*.
+An association connects 'gmf_all_mappings_LinkConstraints' and 'Constraint'. From 'gmf_all_mappings_LinkConstraints', the role 'gmf_all_mappings_LinkConstraints100' has cardinality 0..*, and from 'Constraint', the role 'Constraint101' has cardinality 0..*.
+An association connects 'gmf_all_mappings_ElementInitializer' and 'MappingEntry'. From 'gmf_all_mappings_ElementInitializer', the role 'gmf_all_mappings_ElementInitializer' has cardinality 0..*, and from 'MappingEntry', the role 'MappingEntry103' has cardinality 0..*.
+An association connects 'gmf_all_mappings_FeatureSeqInitializer' and 'FeatureInitializer'. From 'gmf_all_mappings_FeatureSeqInitializer', the role 'FeatureInitializer' has cardinality 0..*, and from 'FeatureInitializer', the role 'mappings105' has cardinality 0..*.
+An association connects 'mappings_gmf_all_EClass' and 'gmf_all_mappings_FeatureSeqInitializer'. From 'mappings_gmf_all_EClass', the role 'mappings_gmf_all_EClass107' has cardinality 0..*, and from 'gmf_all_mappings_FeatureSeqInitializer', the role 'gmf_all_mappings_FeatureSeqInitializer' has cardinality 0..*.
+An association connects 'ReferenceNewElementSpec' and 'gmf_all_mappings_FeatureSeqInitializer'. From 'ReferenceNewElementSpec', the role 'mappings109' has cardinality 0..*, and from 'gmf_all_mappings_FeatureSeqInitializer', the role 'ReferenceNewElementSpec' has cardinality 0..*.
+An association connects 'gmf_all_mappings_FeatureInitializer' and 'mappings_gmf_all_EStructuralFeature'. From 'gmf_all_mappings_FeatureInitializer', the role 'gmf_all_mappings_FeatureInitializer' has cardinality 0..*, and from 'mappings_gmf_all_EStructuralFeature', the role 'mappings_gmf_all_EStructuralFeature111' has cardinality 0..*.
+An association connects 'gmf_all_mappings_FeatureInitializer' and 'FeatureSeqInitializer'. From 'gmf_all_mappings_FeatureInitializer', the role 'FeatureSeqInitializer' has cardinality 0..*, and from 'FeatureSeqInitializer', the role 'mappings113' has cardinality 0..*.
+An association connects 'ValueExpression' and 'gmf_all_mappings_FeatureValueSpec'. From 'ValueExpression', the role 'ValueExpression115' has cardinality 0..*, and from 'gmf_all_mappings_FeatureValueSpec', the role 'gmf_all_mappings_FeatureValueSpec' has cardinality 0..*.
+An association connects 'gmf_all_mappings_ReferenceNewElementSpec' and 'FeatureSeqInitializer'. From 'gmf_all_mappings_ReferenceNewElementSpec', the role 'FeatureSeqInitializer117' has cardinality 0..*, and from 'FeatureSeqInitializer', the role 'mappings118' has cardinality 0..*.
+An association connects 'gmf_all_mappings_MenuOwner' and 'ContextMenu'. From 'gmf_all_mappings_MenuOwner', the role 'gmf_all_mappings_MenuOwner' has cardinality 0..*, and from 'ContextMenu', the role 'ContextMenu' has cardinality 0..*.
+An association connects 'gmf_all_mappings_ToolOwner' and 'AbstractTool'. From 'gmf_all_mappings_ToolOwner', the role 'gmf_all_mappings_ToolOwner' has cardinality 0..*, and from 'AbstractTool', the role 'AbstractTool' has cardinality 0..*.
+An association connects 'gmf_all_mappings_AppearanceSteward' and 'StyleSelector'. From 'gmf_all_mappings_AppearanceSteward', the role 'gmf_all_mappings_AppearanceSteward' has cardinality 0..*, and from 'StyleSelector', the role 'StyleSelector122' has cardinality 0..*.
+An association connects 'gmf_all_mappings_AuditContainer' and 'AuditContainer'. From 'gmf_all_mappings_AuditContainer', the role 'AuditContainer124' has cardinality 0..*, and from 'AuditContainer', the role 'mappings125' has cardinality 0..*.
+An association connects 'AuditRule' and 'gmf_all_mappings_AuditContainer'. From 'AuditRule', the role 'mappings127' has cardinality 0..*, and from 'gmf_all_mappings_AuditContainer', the role 'AuditRule' has cardinality 0..*.
+An association connects 'AuditContainer' and 'gmf_all_mappings_AuditContainer'. From 'AuditContainer', the role 'mappings130' has cardinality 0..*, and from 'gmf_all_mappings_AuditContainer', the role 'AuditContainer129' has cardinality 0..*.
+An association connects 'gmf_all_mappings_AuditRule' and 'Constraint'. From 'gmf_all_mappings_AuditRule', the role 'gmf_all_mappings_AuditRule' has cardinality 0..*, and from 'Constraint', the role 'Constraint132' has cardinality 0..*.
+An association connects 'Auditable' and 'gmf_all_mappings_AuditRule'. From 'Auditable', the role 'Auditable' has cardinality 0..*, and from 'gmf_all_mappings_AuditRule', the role 'gmf_all_mappings_AuditRule134' has cardinality 0..*.
+An association connects 'gmf_all_mappings_AuditRule' and 'AuditContainer'. From 'gmf_all_mappings_AuditRule', the role 'AuditContainer136' has cardinality 0..*, and from 'AuditContainer', the role 'mappings137' has cardinality 0..*.
+An association connects 'mappings_gmf_all_EClass' and 'gmf_all_mappings_DomainElementTarget'. From 'mappings_gmf_all_EClass', the role 'mappings_gmf_all_EClass139' has cardinality 0..*, and from 'gmf_all_mappings_DomainElementTarget', the role 'gmf_all_mappings_DomainElementTarget' has cardinality 0..*.
+An association connects 'gmf_all_mappings_DomainAttributeTarget' and 'mappings_gmf_all_EAttribute'. From 'gmf_all_mappings_DomainAttributeTarget', the role 'gmf_all_mappings_DomainAttributeTarget' has cardinality 0..*, and from 'mappings_gmf_all_EAttribute', the role 'mappings_gmf_all_EAttribute141' has cardinality 0..*.
+An association connects 'gmf_all_mappings_DiagramElementTarget' and 'MappingEntry'. From 'gmf_all_mappings_DiagramElementTarget', the role 'gmf_all_mappings_DiagramElementTarget' has cardinality 0..*, and from 'MappingEntry', the role 'MappingEntry143' has cardinality 0..*.
+An association connects 'gmf_all_mappings_NotationElementTarget' and 'mappings_gmf_all_EClass'. From 'gmf_all_mappings_NotationElementTarget', the role 'gmf_all_mappings_NotationElementTarget' has cardinality 0..*, and from 'mappings_gmf_all_EClass', the role 'mappings_gmf_all_EClass145' has cardinality 0..*.
+An association connects 'gmf_all_mappings_MetricContainer' and 'MetricRule'. From 'gmf_all_mappings_MetricContainer', the role 'MetricRule' has cardinality 0..*, and from 'MetricRule', the role 'mappings147' has cardinality 0..*.
+An association connects 'ValueExpression' and 'gmf_all_mappings_MetricRule'. From 'ValueExpression', the role 'ValueExpression149' has cardinality 0..*, and from 'gmf_all_mappings_MetricRule', the role 'gmf_all_mappings_MetricRule' has cardinality 0..*.
+An association connects 'gmf_all_mappings_MetricRule' and 'Measurable'. From 'gmf_all_mappings_MetricRule', the role 'gmf_all_mappings_MetricRule151' has cardinality 0..*, and from 'Measurable', the role 'Measurable' has cardinality 0..*.
+An association connects 'MetricContainer' and 'gmf_all_mappings_MetricRule'. From 'MetricContainer', the role 'mappings154' has cardinality 0..*, and from 'gmf_all_mappings_MetricRule', the role 'MetricContainer153' has cardinality 0..*.
+An association connects 'MetricRule' and 'gmf_all_mappings_AuditedMetricTarget'. From 'MetricRule', the role 'MetricRule156' has cardinality 0..*, and from 'gmf_all_mappings_AuditedMetricTarget', the role 'gmf_all_mappings_AuditedMetricTarget' has cardinality 0..*.
+An association connects 'Pin' and 'gmf_all_mappings_VisualEffectMapping'. From 'Pin', the role 'Pin' has cardinality 0..*, and from 'gmf_all_mappings_VisualEffectMapping', the role 'gmf_all_mappings_VisualEffectMapping' has cardinality 0..*.
+An association connects 'gmf_all_mappings_VisualEffectMapping' and 'MappingEntry'. From 'gmf_all_mappings_VisualEffectMapping', the role 'MappingEntry159' has cardinality 0..*, and from 'MappingEntry', the role 'mappings160' has cardinality 0..*.
+An association connects 'MenuAction' and 'gmf_all_tooldef_ToolRegistry'. From 'MenuAction', the role 'MenuAction' has cardinality 0..*, and from 'gmf_all_tooldef_ToolRegistry', the role 'gmf_all_tooldef_ToolRegistry' has cardinality 0..*.
+An association connects 'gmf_all_tooldef_ToolRegistry' and 'Menu'. From 'gmf_all_tooldef_ToolRegistry', the role 'gmf_all_tooldef_ToolRegistry163' has cardinality 0..*, and from 'Menu', the role 'Menu' has cardinality 0..*.
+An association connects 'gmf_all_tooldef_ToolRegistry' and 'Palette'. From 'gmf_all_tooldef_ToolRegistry', the role 'gmf_all_tooldef_ToolRegistry165' has cardinality 0..*, and from 'Palette', the role 'Palette166' has cardinality 0..*.
+An association connects 'Image' and 'gmf_all_tooldef_AbstractTool'. From 'Image', the role 'Image' has cardinality 0..*, and from 'gmf_all_tooldef_AbstractTool', the role 'gmf_all_tooldef_AbstractTool' has cardinality 0..*.
+An association connects 'gmf_all_tooldef_AbstractTool' and 'Image'. From 'gmf_all_tooldef_AbstractTool', the role 'gmf_all_tooldef_AbstractTool169' has cardinality 0..*, and from 'Image', the role 'Image170' has cardinality 0..*.
+An association connects 'gmf_all_tooldef_ToolContainer' and 'AbstractTool'. From 'gmf_all_tooldef_ToolContainer', the role 'gmf_all_tooldef_ToolContainer' has cardinality 0..*, and from 'AbstractTool', the role 'AbstractTool172' has cardinality 0..*.
+An association connects 'gmf_all_tooldef_ToolGroup' and 'AbstractTool'. From 'gmf_all_tooldef_ToolGroup', the role 'gmf_all_tooldef_ToolGroup' has cardinality 0..*, and from 'AbstractTool', the role 'AbstractTool174' has cardinality 0..*.
+An association connects 'AbstractTool' and 'gmf_all_tooldef_Palette'. From 'AbstractTool', the role 'AbstractTool176' has cardinality 0..*, and from 'gmf_all_tooldef_Palette', the role 'gmf_all_tooldef_Palette' has cardinality 0..*.
+An association connects 'ItemBase' and 'gmf_all_tooldef_Menu'. From 'ItemBase', the role 'ItemBase' has cardinality 0..*, and from 'gmf_all_tooldef_Menu', the role 'gmf_all_tooldef_Menu' has cardinality 0..*.
+An association connects 'gmf_all_tooldef_ContributionItem' and 'Image'. From 'gmf_all_tooldef_ContributionItem', the role 'gmf_all_tooldef_ContributionItem' has cardinality 0..*, and from 'Image', the role 'Image179' has cardinality 0..*.
+An association connects 'ItemBase' and 'gmf_all_tooldef_ItemRef'. From 'ItemBase', the role 'ItemBase181' has cardinality 0..*, and from 'gmf_all_tooldef_ItemRef', the role 'gmf_all_tooldef_ItemRef' has cardinality 0..*.
+An association connects 'gmf_all_tooldef_ContextMenu' and 'MenuAction'. From 'gmf_all_tooldef_ContextMenu', the role 'gmf_all_tooldef_ContextMenu' has cardinality 0..*, and from 'MenuAction', the role 'MenuAction183' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_Canvas' and 'FigureGallery'. From 'gmf_all_gmfgraph_Canvas', the role 'gmf_all_gmfgraph_Canvas' has cardinality 0..*, and from 'FigureGallery', the role 'FigureGallery' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_Canvas' and 'Node'. From 'gmf_all_gmfgraph_Canvas', the role 'gmf_all_gmfgraph_Canvas186' has cardinality 0..*, and from 'Node', the role 'Node187' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_Canvas' and 'Connection'. From 'gmf_all_gmfgraph_Canvas', the role 'gmf_all_gmfgraph_Canvas189' has cardinality 0..*, and from 'Connection', the role 'Connection190' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_Canvas' and 'Compartment'. From 'gmf_all_gmfgraph_Canvas', the role 'gmf_all_gmfgraph_Canvas192' has cardinality 0..*, and from 'Compartment', the role 'Compartment193' has cardinality 0..*.
+An association connects 'DiagramLabel' and 'gmf_all_gmfgraph_Canvas'. From 'DiagramLabel', the role 'DiagramLabel196' has cardinality 0..*, and from 'gmf_all_gmfgraph_Canvas', the role 'gmf_all_gmfgraph_Canvas195' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_FigureGallery' and 'RealFigure'. From 'gmf_all_gmfgraph_FigureGallery', the role 'gmf_all_gmfgraph_FigureGallery' has cardinality 0..*, and from 'RealFigure', the role 'RealFigure' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_FigureGallery' and 'FigureDescriptor'. From 'gmf_all_gmfgraph_FigureGallery', the role 'gmf_all_gmfgraph_FigureGallery199' has cardinality 0..*, and from 'FigureDescriptor', the role 'FigureDescriptor' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_FigureGallery' and 'Border'. From 'gmf_all_gmfgraph_FigureGallery', the role 'gmf_all_gmfgraph_FigureGallery201' has cardinality 0..*, and from 'Border', the role 'Border' has cardinality 0..*.
+An association connects 'Layout' and 'gmf_all_gmfgraph_FigureGallery'. From 'Layout', the role 'Layout' has cardinality 0..*, and from 'gmf_all_gmfgraph_FigureGallery', the role 'gmf_all_gmfgraph_FigureGallery203' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_DiagramElement' and 'FigureDescriptor'. From 'gmf_all_gmfgraph_DiagramElement', the role 'gmf_all_gmfgraph_DiagramElement' has cardinality 0..*, and from 'FigureDescriptor', the role 'FigureDescriptor205' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_DiagramElement' and 'VisualFacet'. From 'gmf_all_gmfgraph_DiagramElement', the role 'gmf_all_gmfgraph_DiagramElement207' has cardinality 0..*, and from 'VisualFacet', the role 'VisualFacet' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_Node' and 'ChildAccess'. From 'gmf_all_gmfgraph_Node', the role 'gmf_all_gmfgraph_Node' has cardinality 0..*, and from 'ChildAccess', the role 'ChildAccess' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_Compartment' and 'ChildAccess'. From 'gmf_all_gmfgraph_Compartment', the role 'gmf_all_gmfgraph_Compartment' has cardinality 0..*, and from 'ChildAccess', the role 'ChildAccess210' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_DiagramLabel' and 'ChildAccess'. From 'gmf_all_gmfgraph_DiagramLabel', the role 'gmf_all_gmfgraph_DiagramLabel' has cardinality 0..*, and from 'ChildAccess', the role 'ChildAccess212' has cardinality 0..*.
+An association connects 'ChildAccess' and 'gmf_all_gmfgraph_DiagramLabel'. From 'ChildAccess', the role 'ChildAccess215' has cardinality 0..*, and from 'gmf_all_gmfgraph_DiagramLabel', the role 'gmf_all_gmfgraph_DiagramLabel214' has cardinality 0..*.
+An association connects 'Dimension' and 'gmf_all_gmfgraph_DefaultSizeFacet'. From 'Dimension', the role 'Dimension' has cardinality 0..*, and from 'gmf_all_gmfgraph_DefaultSizeFacet', the role 'gmf_all_gmfgraph_DefaultSizeFacet' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_Figure' and 'FigureDescriptor'. From 'gmf_all_gmfgraph_Figure', the role 'gmf_all_gmfgraph_Figure' has cardinality 0..*, and from 'FigureDescriptor', the role 'FigureDescriptor218' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_Figure' and 'Color'. From 'gmf_all_gmfgraph_Figure', the role 'gmf_all_gmfgraph_Figure220' has cardinality 0..*, and from 'Color', the role 'Color' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_Figure' and 'Color'. From 'gmf_all_gmfgraph_Figure', the role 'gmf_all_gmfgraph_Figure222' has cardinality 0..*, and from 'Color', the role 'Color223' has cardinality 0..*.
+An association connects 'Dimension' and 'gmf_all_gmfgraph_Figure'. From 'Dimension', the role 'Dimension226' has cardinality 0..*, and from 'gmf_all_gmfgraph_Figure', the role 'gmf_all_gmfgraph_Figure225' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_Figure' and 'Dimension'. From 'gmf_all_gmfgraph_Figure', the role 'gmf_all_gmfgraph_Figure228' has cardinality 0..*, and from 'Dimension', the role 'Dimension229' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_Figure' and 'Dimension'. From 'gmf_all_gmfgraph_Figure', the role 'gmf_all_gmfgraph_Figure231' has cardinality 0..*, and from 'Dimension', the role 'Dimension232' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_Figure' and 'Font'. From 'gmf_all_gmfgraph_Figure', the role 'gmf_all_gmfgraph_Figure234' has cardinality 0..*, and from 'Font', the role 'Font' has cardinality 0..*.
+An association connects 'Insets' and 'gmf_all_gmfgraph_Figure'. From 'Insets', the role 'Insets' has cardinality 0..*, and from 'gmf_all_gmfgraph_Figure', the role 'gmf_all_gmfgraph_Figure236' has cardinality 0..*.
+An association connects 'Border' and 'gmf_all_gmfgraph_Figure'. From 'Border', the role 'Border239' has cardinality 0..*, and from 'gmf_all_gmfgraph_Figure', the role 'gmf_all_gmfgraph_Figure238' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_Figure' and 'Point'. From 'gmf_all_gmfgraph_Figure', the role 'gmf_all_gmfgraph_Figure241' has cardinality 0..*, and from 'Point', the role 'Point' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_Figure' and 'Point'. From 'gmf_all_gmfgraph_Figure', the role 'gmf_all_gmfgraph_Figure243' has cardinality 0..*, and from 'Point', the role 'Point244' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_FigureDescriptor' and 'Figure'. From 'gmf_all_gmfgraph_FigureDescriptor', the role 'gmf_all_gmfgraph_FigureDescriptor' has cardinality 0..*, and from 'Figure', the role 'Figure' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_FigureDescriptor' and 'ChildAccess'. From 'gmf_all_gmfgraph_FigureDescriptor', the role 'ChildAccess247' has cardinality 0..*, and from 'ChildAccess', the role 'gmfgraph' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_ChildAccess' and 'FigureDescriptor'. From 'gmf_all_gmfgraph_ChildAccess', the role 'FigureDescriptor249' has cardinality 0..*, and from 'FigureDescriptor', the role 'gmfgraph250' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_ChildAccess' and 'Figure'. From 'gmf_all_gmfgraph_ChildAccess', the role 'gmf_all_gmfgraph_ChildAccess' has cardinality 0..*, and from 'Figure', the role 'Figure252' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_RealFigure' and 'Figure'. From 'gmf_all_gmfgraph_RealFigure', the role 'gmf_all_gmfgraph_RealFigure' has cardinality 0..*, and from 'Figure', the role 'Figure254' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_FigureRef' and 'RealFigure'. From 'gmf_all_gmfgraph_FigureRef', the role 'gmf_all_gmfgraph_FigureRef' has cardinality 0..*, and from 'RealFigure', the role 'RealFigure256' has cardinality 0..*.
+An association connects 'Figure' and 'gmf_all_gmfgraph_Shape'. From 'Figure', the role 'Figure258' has cardinality 0..*, and from 'gmf_all_gmfgraph_Shape', the role 'gmf_all_gmfgraph_Shape' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_Polyline' and 'Point'. From 'gmf_all_gmfgraph_Polyline', the role 'gmf_all_gmfgraph_Polyline' has cardinality 0..*, and from 'Point', the role 'Point260' has cardinality 0..*.
+An association connects 'DecorationFigure' and 'gmf_all_gmfgraph_PolylineConnection'. From 'DecorationFigure', the role 'DecorationFigure' has cardinality 0..*, and from 'gmf_all_gmfgraph_PolylineConnection', the role 'gmf_all_gmfgraph_PolylineConnection' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_PolylineConnection' and 'DecorationFigure'. From 'gmf_all_gmfgraph_PolylineConnection', the role 'gmf_all_gmfgraph_PolylineConnection263' has cardinality 0..*, and from 'DecorationFigure', the role 'DecorationFigure264' has cardinality 0..*.
+An association connects 'CustomAttribute' and 'gmf_all_gmfgraph_CustomAttributeOwner'. From 'CustomAttribute', the role 'CustomAttribute' has cardinality 0..*, and from 'gmf_all_gmfgraph_CustomAttributeOwner', the role 'gmf_all_gmfgraph_CustomAttributeOwner' has cardinality 0..*.
+An association connects 'RealFigure' and 'gmf_all_gmfgraph_FigureAccessor'. From 'RealFigure', the role 'RealFigure267' has cardinality 0..*, and from 'gmf_all_gmfgraph_FigureAccessor', the role 'gmf_all_gmfgraph_FigureAccessor' has cardinality 0..*.
+An association connects 'FigureAccessor' and 'gmf_all_gmfgraph_CustomFigure'. From 'FigureAccessor', the role 'FigureAccessor' has cardinality 0..*, and from 'gmf_all_gmfgraph_CustomFigure', the role 'gmf_all_gmfgraph_CustomFigure' has cardinality 0..*.
+An association connects 'Border' and 'gmf_all_gmfgraph_BorderRef'. From 'Border', the role 'Border270' has cardinality 0..*, and from 'gmf_all_gmfgraph_BorderRef', the role 'gmf_all_gmfgraph_BorderRef' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_LineBorder' and 'Color'. From 'gmf_all_gmfgraph_LineBorder', the role 'gmf_all_gmfgraph_LineBorder' has cardinality 0..*, and from 'Color', the role 'Color272' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_MarginBorder' and 'Insets'. From 'gmf_all_gmfgraph_MarginBorder', the role 'gmf_all_gmfgraph_MarginBorder' has cardinality 0..*, and from 'Insets', the role 'Insets274' has cardinality 0..*.
+An association connects 'Border' and 'gmf_all_gmfgraph_CompoundBorder'. From 'Border', the role 'Border276' has cardinality 0..*, and from 'gmf_all_gmfgraph_CompoundBorder', the role 'gmf_all_gmfgraph_CompoundBorder' has cardinality 0..*.
+An association connects 'Border' and 'gmf_all_gmfgraph_CompoundBorder'. From 'Border', the role 'Border279' has cardinality 0..*, and from 'gmf_all_gmfgraph_CompoundBorder', the role 'gmf_all_gmfgraph_CompoundBorder278' has cardinality 0..*.
+An association connects 'Layoutable' and 'gmf_all_gmfgraph_LayoutData'. From 'Layoutable', the role 'gmfgraph281' has cardinality 0..*, and from 'gmf_all_gmfgraph_LayoutData', the role 'Layoutable' has cardinality 0..*.
+An association connects 'Dimension' and 'gmf_all_gmfgraph_GridLayoutData'. From 'Dimension', the role 'Dimension283' has cardinality 0..*, and from 'gmf_all_gmfgraph_GridLayoutData', the role 'gmf_all_gmfgraph_GridLayoutData' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_Layoutable' and 'LayoutData'. From 'gmf_all_gmfgraph_Layoutable', the role 'LayoutData' has cardinality 0..*, and from 'LayoutData', the role 'gmfgraph285' has cardinality 0..*.
+An association connects 'Layout' and 'gmf_all_gmfgraph_Layoutable'. From 'Layout', the role 'Layout287' has cardinality 0..*, and from 'gmf_all_gmfgraph_Layoutable', the role 'gmf_all_gmfgraph_Layoutable' has cardinality 0..*.
+An association connects 'Layout' and 'gmf_all_gmfgraph_LayoutRef'. From 'Layout', the role 'Layout289' has cardinality 0..*, and from 'gmf_all_gmfgraph_LayoutRef', the role 'gmf_all_gmfgraph_LayoutRef' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_GridLayout' and 'Dimension'. From 'gmf_all_gmfgraph_GridLayout', the role 'gmf_all_gmfgraph_GridLayout' has cardinality 0..*, and from 'Dimension', the role 'Dimension291' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_GridLayout' and 'Dimension'. From 'gmf_all_gmfgraph_GridLayout', the role 'gmf_all_gmfgraph_GridLayout293' has cardinality 0..*, and from 'Dimension', the role 'Dimension294' has cardinality 0..*.
+An association connects 'Dimension' and 'gmf_all_gmfgraph_BorderLayout'. From 'Dimension', the role 'Dimension296' has cardinality 0..*, and from 'gmf_all_gmfgraph_BorderLayout', the role 'gmf_all_gmfgraph_BorderLayout' has cardinality 0..*.
+An association connects 'Point' and 'gmf_all_gmfgraph_XYLayoutData'. From 'Point', the role 'Point298' has cardinality 0..*, and from 'gmf_all_gmfgraph_XYLayoutData', the role 'gmf_all_gmfgraph_XYLayoutData' has cardinality 0..*.
+An association connects 'Dimension' and 'gmf_all_gmfgraph_XYLayoutData'. From 'Dimension', the role 'Dimension301' has cardinality 0..*, and from 'gmf_all_gmfgraph_XYLayoutData', the role 'gmf_all_gmfgraph_XYLayoutData300' has cardinality 0..*.
+An association connects 'SVGProperty' and 'gmf_all_gmfgraph_SVGFigure'. From 'SVGProperty', the role 'SVGProperty' has cardinality 0..*, and from 'gmf_all_gmfgraph_SVGFigure', the role 'gmf_all_gmfgraph_SVGFigure' has cardinality 0..*.
+An association connects 'gmf_all_gmfgraph_SVGFigure' and 'Rectangle2D'. From 'gmf_all_gmfgraph_SVGFigure', the role 'gmf_all_gmfgraph_SVGFigure304' has cardinality 0..*, and from 'Rectangle2D', the role 'Rectangle2D' has cardinality 0..*.
+An association connects 'Pin' and 'gmf_all_gmfgraph_PinOwner'. From 'Pin', the role 'Pin306' has cardinality 0..*, and from 'gmf_all_gmfgraph_PinOwner', the role 'gmf_all_gmfgraph_PinOwner' has cardinality 0..*.

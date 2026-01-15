@@ -1,0 +1,150 @@
+The domain model 'wikidb119' describes the core structural elements and their relationships within the system.
+
+The model defines 49 main class(es).
+
+'wikidb119_redirect' represents an important domain concept.
+It has the following attributes: 'rd_from', which is of type str; 'rd_title', which is of type str; 'rd_interwiki', which is of type str; 'rd_namespace', which is of type str; 'rd_fragment', which is of type str.
+
+'wikidb119_change_tag' represents an important domain concept.
+It has the following attributes: 'ct_rc_id', which is of type str; 'ct_log_id', which is of type str; 'ct_rev_id', which is of type str; 'ct_params', which is of type str; 'ct_tag', which is of type str.
+
+'wikidb119_tag_summary' represents an important domain concept.
+It has the following attributes: 'ts_log_id', which is of type str; 'ts_tags', which is of type str; 'ts_rev_id', which is of type str; 'ts_rc_id', which is of type str.
+
+'wikidb119_text' represents an important domain concept.
+It has the following attributes: 'old_id', which is of type str; 'old_text', which is of type str; 'old_flags', which is of type str.
+
+'wikidb119_page_restrictions' represents an important domain concept.
+It has the following attributes: 'pr_type', which is of type str; 'pr_expiry', which is of type str; 'pr_cascade', which is of type int; 'pr_id', which is of type str; 'pr_user', which is of type str; 'pr_level', which is of type str; 'pr_page', which is of type str.
+
+'wikidb119_valid_tag' represents an important domain concept.
+It has one attribute: 'vt_tag', which is of type str.
+
+'wikidb119_job' represents an important domain concept.
+It has the following attributes: 'job_namespace', which is of type str; 'job_id', which is of type str; 'job_cmd', which is of type str; 'job_params', which is of type str; 'job_timestamp', which is of type str; 'job_title', which is of type str.
+
+'wikidb119_externallinks' represents an important domain concept.
+It has the following attributes: 'el_to', which is of type str; 'el_index', which is of type str; 'el_from', which is of type str.
+
+'wikidb119_log_search' represents an important domain concept.
+It has the following attributes: 'ls_value', which is of type str; 'ls_log_id', which is of type str; 'ls_field', which is of type str.
+
+'wikidb119_searchindex' represents an important domain concept.
+It has the following attributes: 'si_text', which is of type str; 'si_page', which is of type str; 'si_title', which is of type str.
+
+'wikidb119_image' represents an important domain concept.
+It has the following attributes: 'img_size', which is of type str; 'img_bits', which is of type str; 'img_width', which is of type str; 'img_minor_mime', which is of type str; 'img_sha1', which is of type str; 'img_description', which is of type str; 'img_major_mime', which is of type str; 'img_user_text', which is of type str; 'img_name', which is of type str; 'img_media_type', which is of type str; 'img_height', which is of type str; 'img_timestamp', which is of type str; 'img_metadata', which is of type str; 'img_user', which is of type str.
+
+'wikidb119_imagelinks' represents an important domain concept.
+It has the following attributes: 'il_from', which is of type str; 'il_to', which is of type str.
+
+'wikidb119_updatelog' represents an important domain concept.
+It has the following attributes: 'ul_key', which is of type str; 'ul_value', which is of type str.
+
+'wikidb119_iwlinks' represents an important domain concept.
+It has the following attributes: 'iwl_title', which is of type str; 'iwl_from', which is of type str; 'iwl_prefix', which is of type str.
+
+'wikidb119_ipblocks' represents an important domain concept.
+It has the following attributes: 'ipb_user', which is of type str; 'ipb_by_text', which is of type str; 'ipb_range_start', which is of type str; 'ipb_auto', which is of type int; 'ipb_deleted', which is of type int; 'ipb_reason', which is of type str; 'ipb_create_account', which is of type int; 'ipb_address', which is of type str; 'ipb_range_end', which is of type str; 'ipb_anon_only', which is of type int; 'ipb_timestamp', which is of type str; 'ipb_expiry', which is of type str; 'ipb_by', which is of type str; 'ipb_id', which is of type str; 'ipb_block_email', which is of type int; 'ipb_allow_usertalk', which is of type int; 'ipb_enable_autoblock', which is of type int.
+
+'wikidb119_msg_resource_links' represents an important domain concept.
+It has the following attributes: 'mrl_resource', which is of type str; 'mrl_message', which is of type str.
+
+'wikidb119_watchlist' represents an important domain concept.
+It has the following attributes: 'wl_user', which is of type str; 'wl_title', which is of type str; 'wl_namespace', which is of type str; 'wl_notificationtimestamp', which is of type str.
+
+'wikidb119_recentchanges' represents an important domain concept.
+It has the following attributes: 'rc_moved_to_ns', which is of type int; 'rc_deleted', which is of type int; 'rc_last_oldid', which is of type str; 'rc_minor', which is of type int; 'rc_logid', which is of type str; 'rc_params', which is of type str; 'rc_log_action', which is of type str; 'rc_moved_to_title', which is of type str; 'rc_user', which is of type str; 'rc_old_len', which is of type str; 'rc_this_oldid', which is of type str; 'rc_bot', which is of type int; 'rc_log_type', which is of type str; 'rc_id', which is of type str; 'rc_cur_time', which is of type str; 'rc_type', which is of type int; 'rc_patrolled', which is of type int; 'rc_namespace', which is of type str; 'rc_user_text', which is of type str; 'rc_new_len', which is of type str; 'rc_title', which is of type str; 'rc_cur_id', which is of type str; 'rc_comment', which is of type str; 'rc_new', which is of type int; 'rc_ip', which is of type str; 'rc_timestamp', which is of type str.
+
+'wikidb119_page' represents an important domain concept.
+It has the following attributes: 'page_counter', which is of type str; 'page_len', which is of type str; 'page_id', which is of type str; 'page_touched', which is of type str; 'page_random', which is of type float; 'page_restrictions', which is of type str; 'page_latest', which is of type str; 'page_is_redirect', which is of type int; 'page_title', which is of type str; 'page_namespace', which is of type str; 'page_is_new', which is of type int.
+
+'wikidb119_categorylinks' represents an important domain concept.
+It has the following attributes: 'cl_sortkey_prefix', which is of type str; 'cl_from', which is of type str; 'cl_type', which is of type str; 'cl_timestamp', which is of type date; 'cl_collation', which is of type str; 'cl_to', which is of type str; 'cl_sortkey', which is of type str.
+
+'wikidb119_revision' represents an important domain concept.
+It has the following attributes: 'rev_user', which is of type str; 'rev_minor_edit', which is of type int; 'rev_comment', which is of type str; 'rev_sha1', which is of type str; 'rev_timestamp', which is of type str; 'rev_len', which is of type str; 'rev_deleted', which is of type int; 'rev_parent_id', which is of type str; 'rev_text_id', which is of type str; 'rev_user_text', which is of type str; 'rev_id', which is of type str; 'rev_page', which is of type str.
+
+'wikidb119_site_stats' represents an important domain concept.
+It has the following attributes: 'ss_good_articles', which is of type str; 'ss_total_pages', which is of type str; 'ss_images', which is of type str; 'ss_active_users', which is of type str; 'ss_admins', which is of type str; 'ss_users', which is of type str; 'ss_total_edits', which is of type str; 'ss_row_id', which is of type str; 'ss_total_views', which is of type str.
+
+'wikidb119_module_deps' represents an important domain concept.
+It has the following attributes: 'md_deps', which is of type str; 'md_skin', which is of type str; 'md_module', which is of type str.
+
+'wikidb119_interwiki' represents an important domain concept.
+It has the following attributes: 'iw_local', which is of type int; 'iw_url', which is of type str; 'iw_prefix', which is of type str; 'iw_wikiid', which is of type str; 'iw_api', which is of type str; 'iw_trans', which is of type int.
+
+'wikidb119_user' represents an important domain concept.
+It has the following attributes: 'user_editcount', which is of type str; 'user_newpassword', which is of type str; 'user_name', which is of type str; 'user_real_name', which is of type str; 'user_email_token_expires', which is of type str; 'user_email', which is of type str; 'user_newpass_time', which is of type str; 'user_touched', which is of type str; 'user_email_authenticated', which is of type str; 'user_registration', which is of type str; 'user_password', which is of type str; 'user_email_token', which is of type str; 'user_id', which is of type str; 'user_token', which is of type str.
+
+'wikidb119_querycache' represents an important domain concept.
+It has the following attributes: 'qc_title', which is of type str; 'qc_value', which is of type str; 'qc_namespace', which is of type str; 'qc_type', which is of type str.
+
+'wikidb119_filearchive' represents an important domain concept.
+It has the following attributes: 'fa_user', which is of type str; 'fa_id', which is of type str; 'fa_height', which is of type str; 'fa_major_mime', which is of type str; 'fa_deleted_reason', which is of type str; 'fa_archive_name', which is of type str; 'fa_deleted_timestamp', which is of type str; 'fa_storage_group', which is of type str; 'fa_size', which is of type str; 'fa_user_text', which is of type str; 'fa_bits', which is of type str; 'fa_media_type', which is of type str; 'fa_metadata', which is of type str; 'fa_deleted_user', which is of type str; 'fa_name', which is of type str; 'fa_deleted', which is of type int; 'fa_description', which is of type str; 'fa_width', which is of type str; 'fa_storage_key', which is of type str; 'fa_minor_mime', which is of type str; 'fa_timestamp', which is of type str.
+
+'wikidb119_user_former_groups' represents an important domain concept.
+It has the following attributes: 'ufg_group', which is of type str; 'ufg_user', which is of type str.
+
+'wikidb119_pagelinks' represents an important domain concept.
+It has the following attributes: 'pl_from', which is of type str; 'pl_namespace', which is of type str; 'pl_title', which is of type str.
+
+'wikidb119_logging' represents an important domain concept.
+It has the following attributes: 'log_namespace', which is of type str; 'log_params', which is of type str; 'log_title', which is of type str; 'log_type', which is of type str; 'log_comment', which is of type str; 'log_action', which is of type str; 'log_user_text', which is of type str; 'log_page', which is of type str; 'log_timestamp', which is of type str; 'log_user', which is of type str; 'log_deleted', which is of type int; 'log_id', which is of type str.
+
+'wikidb119_langlinks' represents an important domain concept.
+It has the following attributes: 'll_title', which is of type str; 'll_from', which is of type str; 'll_lang', which is of type str.
+
+'wikidb119_page_props' represents an important domain concept.
+It has the following attributes: 'pp_value', which is of type str; 'pp_page', which is of type str; 'pp_propname', which is of type str.
+
+'wikidb119_external_user' represents an important domain concept.
+It has the following attributes: 'eu_local_id', which is of type str; 'eu_external_id', which is of type str.
+
+'wikidb119_protected_titles' represents an important domain concept.
+It has the following attributes: 'pt_user', which is of type str; 'pt_expiry', which is of type str; 'pt_title', which is of type str; 'pt_timestamp', which is of type str; 'pt_create_perm', which is of type str; 'pt_namespace', which is of type str; 'pt_reason', which is of type str.
+
+'wikidb119_querycache_info' represents an important domain concept.
+It has the following attributes: 'qci_type', which is of type str; 'qci_timestamp', which is of type str.
+
+'wikidb119_querycachetwo' represents an important domain concept.
+It has the following attributes: 'qcc_title', which is of type str; 'qcc_namespace', which is of type str; 'qcc_titletwo', which is of type str; 'qcc_type', which is of type str; 'qcc_value', which is of type str; 'qcc_namespacetwo', which is of type str.
+
+'wikidb119_objectcache' represents an important domain concept.
+It has the following attributes: 'keyname', which is of type str; 'exptime', which is of type date; 'value', which is of type str.
+
+'wikidb119_oldimage' represents an important domain concept.
+It has the following attributes: 'oi_description', which is of type str; 'oi_major_mime', which is of type str; 'oi_deleted', which is of type int; 'oi_media_type', which is of type str; 'oi_timestamp', which is of type str; 'oi_user_text', which is of type str; 'oi_archive_name', which is of type str; 'oi_sha1', which is of type str; 'oi_bits', which is of type str; 'oi_metadata', which is of type str; 'oi_width', which is of type str; 'oi_user', which is of type str; 'oi_name', which is of type str; 'oi_height', which is of type str; 'oi_minor_mime', which is of type str; 'oi_size', which is of type str.
+
+'wikidb119_user_groups' represents an important domain concept.
+It has the following attributes: 'ug_group', which is of type str; 'ug_user', which is of type str.
+
+'wikidb119_category' represents an important domain concept.
+It has the following attributes: 'cat_subcats', which is of type str; 'cat_files', which is of type str; 'cat_id', which is of type str; 'cat_title', which is of type str; 'cat_pages', which is of type str; 'cat_hidden', which is of type int.
+
+'wikidb119_msg_resource' represents an important domain concept.
+It has the following attributes: 'mr_blob', which is of type str; 'mr_resource', which is of type str; 'mr_lang', which is of type str; 'mr_timestamp', which is of type str.
+
+'wikidb119_archive' represents an important domain concept.
+It has the following attributes: 'ar_flags', which is of type str; 'ar_rev_id', which is of type str; 'ar_page_id', which is of type str; 'ar_comment', which is of type str; 'ar_title', which is of type str; 'ar_text', which is of type str; 'ar_namespace', which is of type str; 'ar_user_text', which is of type str; 'ar_minor_edit', which is of type int; 'ar_sha1', which is of type str; 'ar_user', which is of type str; 'ar_len', which is of type str; 'ar_timestamp', which is of type str; 'ar_parent_id', which is of type str; 'ar_deleted', which is of type int; 'ar_text_id', which is of type str.
+
+'wikidb119_user_properties' represents an important domain concept.
+It has the following attributes: 'up_property', which is of type str; 'up_value', which is of type str; 'up_user', which is of type str.
+
+'wikidb119_transcache' represents an important domain concept.
+It has the following attributes: 'tc_contents', which is of type str; 'tc_time', which is of type str; 'tc_url', which is of type str.
+
+'wikidb119_templatelinks' represents an important domain concept.
+It has the following attributes: 'tl_namespace', which is of type str; 'tl_from', which is of type str; 'tl_title', which is of type str.
+
+'wikidb119_hitcounter' represents an important domain concept.
+It has one attribute: 'hc_id', which is of type str.
+
+'wikidb119_l10n_cache' represents an important domain concept.
+It has the following attributes: 'lc_value', which is of type str; 'lc_key', which is of type str; 'lc_lang', which is of type str.
+
+'wikidb119_user_newtalk' represents an important domain concept.
+It has the following attributes: 'user_id', which is of type str; 'user_last_timestamp', which is of type str; 'user_ip', which is of type str.
+
+'wikidb119_uploadstash' represents an important domain concept.
+It has the following attributes: 'us_status', which is of type str; 'us_source_type', which is of type str; 'us_image_width', which is of type str; 'us_mime', which is of type str; 'us_key', which is of type str; 'us_chunk_inx', which is of type str; 'us_path', which is of type str; 'us_user', which is of type str; 'us_timestamp', which is of type str; 'us_size', which is of type str; 'us_orig_path', which is of type str; 'us_image_height', which is of type str; 'us_sha1', which is of type str; 'us_media_type', which is of type str; 'us_image_bits', which is of type int; 'us_id', which is of type str.

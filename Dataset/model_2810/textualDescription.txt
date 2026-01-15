@@ -1,0 +1,270 @@
+The domain model 'krendering' describes the core structural elements and their relationships within the system.
+
+The model defines 63 main class(es).
+
+'krendering_KPointPlacementData' represents an important domain concept.
+It has the following attributes: 'verticalAlignment', which is of type str; 'horizontalMargin', which is of type float; 'verticalMargin', which is of type float; 'minWidth', which is of type float; 'minHeight', which is of type float; 'horizontalAlignment', which is of type str.
+
+'KPlacementData' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KArc' represents an important domain concept.
+It has the following attributes: 'startAngle', which is of type float; 'arcType', which is of type str; 'arcAngle', which is of type float.
+
+'krendering_KRightPosition' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KText' represents an important domain concept.
+It has the following attributes: 'cursorSelectable', which is of type bool; 'text', which is of type str; 'editable', which is of type bool.
+
+'KGraphData' represents an important domain concept.
+It does not declare any attributes.
+
+'KAreaPlacementData' represents an important domain concept.
+It does not declare any attributes.
+
+'KContainerRendering' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KStyleHolder' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'EMapPropertyHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KBackground' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KFontBold' represents an important domain concept.
+It has one attribute: 'bold', which is of type bool.
+
+'krendering_KStyle' represents an important domain concept.
+It has the following attributes: 'propagateToChildren', which is of type bool; 'modifierId', which is of type str; 'selection', which is of type bool.
+
+'krendering_KPosition' represents an important domain concept.
+It does not declare any attributes.
+
+'KPolyline' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KFontItalic' represents an important domain concept.
+It has one attribute: 'italic', which is of type bool.
+
+'krendering_KTextStrikeout' represents an important domain concept.
+It has one attribute: 'struckOut', which is of type str.
+
+'krendering_KGridPlacement' represents an important domain concept.
+It has one attribute: 'numColumns', which is of type int.
+
+'krendering_KImage' represents an important domain concept.
+It has the following attributes: 'imageObject', which is of type str; 'bundleName', which is of type str; 'imagePath', which is of type str.
+
+'krendering_KRoundedBendsPolyline' represents an important domain concept.
+It has one attribute: 'bendRadius', which is of type float.
+
+'krendering_KCustomRendering' represents an important domain concept.
+It has the following attributes: 'bundleName', which is of type str; 'className', which is of type str; 'figureObject', which is of type str.
+
+'krendering_KEllipse' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KDecoratorPlacementData' represents an important domain concept.
+It has the following attributes: 'rotateWithLine', which is of type bool; 'absolute', which is of type float; 'yOffset', which is of type float; 'relative', which is of type float; 'xOffset', which is of type float; 'width', which is of type float; 'height', which is of type float.
+
+'KStyleHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KRenderingLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KLineStyle' represents an important domain concept.
+It has the following attributes: 'dashPattern', which is of type float; 'dashOffset', which is of type float; 'lineStyle', which is of type str.
+
+'krendering_KInvisibility' represents an important domain concept.
+It has one attribute: 'invisible', which is of type bool.
+
+'krendering_KFontName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'KPlacement' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KRendering' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KPlacementData' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KLineWidth' represents an important domain concept.
+It has one attribute: 'lineWidth', which is of type float.
+
+'krendering_KSpline' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KRoundedRectangle' represents an important domain concept.
+It has the following attributes: 'cornerWidth', which is of type float; 'cornerHeight', which is of type float.
+
+'krendering_KPlacement' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KHorizontalAlignment' represents an important domain concept.
+It has one attribute: 'horizontalAlignment', which is of type str.
+
+'krendering_KAction' represents an important domain concept.
+It has the following attributes: 'actionId', which is of type str; 'shiftPressed', which is of type str; 'ctrlCmdPressed', which is of type str; 'altPressed', which is of type str; 'trigger', which is of type str.
+
+'krendering_KTopPosition' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KChildArea' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KRotation' represents an important domain concept.
+It has one attribute: 'rotation', which is of type float.
+
+'krendering_KTextUnderline' represents an important domain concept.
+It has one attribute: 'underline', which is of type str.
+
+'krendering_KXPosition' represents an important domain concept.
+It has the following attributes: 'absolute', which is of type float; 'relative', which is of type float.
+
+'krendering_KPolygon' represents an important domain concept.
+It does not declare any attributes.
+
+'KRendering' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KLeftPosition' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KRenderingRef' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KFontSize' represents an important domain concept.
+It has the following attributes: 'size', which is of type int; 'scaleWithZoom', which is of type bool.
+
+'krendering_KShadow' represents an important domain concept.
+It has the following attributes: 'yOffset', which is of type float; 'blur', which is of type float; 'xOffset', which is of type float.
+
+'krendering_KBottomPosition' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KRectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KLineCap' represents an important domain concept.
+It has one attribute: 'lineCap', which is of type str.
+
+'krendering_KAreaPlacementData' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KVerticalAlignment' represents an important domain concept.
+It has one attribute: 'verticalAlignment', which is of type str.
+
+'krendering_KForeground' represents an important domain concept.
+It does not declare any attributes.
+
+'KStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KLineJoin' represents an important domain concept.
+It has the following attributes: 'lineJoin', which is of type str; 'miterLimit', which is of type float.
+
+'krendering_KContainerRendering' represents an important domain concept.
+It does not declare any attributes.
+
+'krendering_KColoring' represents an important domain concept.
+It has the following attributes: 'targetAlpha', which is of type int; 'alpha', which is of type int; 'gradientAngle', which is of type float.
+
+'krendering_KGridPlacementData' represents an important domain concept.
+It has the following attributes: 'flexibleHeight', which is of type str; 'minCellWidth', which is of type float; 'minCellHeight', which is of type float; 'flexibleWidth', which is of type str.
+
+'krendering_KStyleRef' represents an important domain concept.
+It has one attribute: 'referencedTypes', which is of type str.
+
+'krendering_KColor' represents an important domain concept.
+It has the following attributes: 'green', which is of type int; 'red', which is of type int; 'blue', which is of type int.
+
+'krendering_KYPosition' represents an important domain concept.
+It has the following attributes: 'absolute', which is of type float; 'relative', which is of type float.
+
+'krendering_KPolyline' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Underline' defines the following possible values: 'NONE', 'SINGLE', 'SQUIGGLE', 'DOUBLE', 'LINK', 'ERROR'.
+The enumeration 'LineStyle' defines the following possible values: 'DASHDOTDOT', 'DASHDOT', 'DASH', 'SOLID', 'DOT', 'CUSTOM'.
+The enumeration 'ModifierState' defines the following possible values: 'DONT_CARE', 'NOT_PRESSED', 'PRESSED'.
+The enumeration 'HorizontalAlignment' defines the following possible values: 'LEFT', 'CENTER', 'RIGHT'.
+The enumeration 'Trigger' defines the following possible values: 'MIDDLE_DOUBLECLICK', 'SINGLE_OR_MULTICLICK', 'DOUBLECLICK', 'MIDDLE_SINGLE_OR_MULTICLICK', 'MIDDLE_SINGLECLICK', 'SINGLECLICK'.
+The enumeration 'Arc' defines the following possible values: 'PIE', 'CHORD', 'OPEN'.
+The enumeration 'VerticalAlignment' defines the following possible values: 'BOTTOM', 'TOP', 'CENTER'.
+The enumeration 'LineCap' defines the following possible values: 'CAP_ROUND', 'CAP_SQUARE', 'CAP_FLAT'.
+The enumeration 'LineJoin' defines the following possible values: 'JOIN_ROUND', 'JOIN_MITER', 'JOIN_BEVEL'.
+
+The model also captures inheritance relationships between classes.
+The class 'krendering_KRendering' is a specialization of 'KGraphData'.
+The class 'krendering_KRendering' is a specialization of 'KStyleHolder'.
+The class 'krendering_KEllipse' is a specialization of 'KContainerRendering'.
+The class 'krendering_KRectangle' is a specialization of 'KContainerRendering'.
+The class 'krendering_KRoundedRectangle' is a specialization of 'KContainerRendering'.
+The class 'krendering_KPolyline' is a specialization of 'KContainerRendering'.
+The class 'krendering_KPolygon' is a specialization of 'KPolyline'.
+The class 'krendering_KImage' is a specialization of 'KContainerRendering'.
+The class 'krendering_KDecoratorPlacementData' is a specialization of 'KPlacementData'.
+The class 'krendering_KContainerRendering' is a specialization of 'KRendering'.
+The class 'krendering_KArc' is a specialization of 'KContainerRendering'.
+The class 'krendering_KStyle' is a specialization of 'EMapPropertyHolder'.
+The class 'krendering_KRenderingLibrary' is a specialization of 'KGraphData'.
+The class 'krendering_KRenderingRef' is a specialization of 'KRendering'.
+The class 'krendering_KChildArea' is a specialization of 'KRendering'.
+The class 'krendering_KText' is a specialization of 'KRendering'.
+The class 'krendering_KGridPlacement' is a specialization of 'KPlacement'.
+The class 'krendering_KGridPlacementData' is a specialization of 'KAreaPlacementData'.
+The class 'krendering_KAreaPlacementData' is a specialization of 'KPlacementData'.
+The class 'krendering_KCustomRendering' is a specialization of 'KContainerRendering'.
+The class 'krendering_KLineWidth' is a specialization of 'KStyle'.
+The class 'krendering_KLineStyle' is a specialization of 'KStyle'.
+The class 'krendering_KVerticalAlignment' is a specialization of 'KStyle'.
+The class 'krendering_KHorizontalAlignment' is a specialization of 'KStyle'.
+The class 'krendering_KSpline' is a specialization of 'KPolyline'.
+The class 'krendering_KColoring' is a specialization of 'KStyle'.
+The class 'krendering_KFontBold' is a specialization of 'KStyle'.
+The class 'krendering_KFontItalic' is a specialization of 'KStyle'.
+The class 'krendering_KFontName' is a specialization of 'KStyle'.
+The class 'krendering_KFontSize' is a specialization of 'KStyle'.
+The class 'krendering_KRoundedBendsPolyline' is a specialization of 'KPolyline'.
+The class 'krendering_KRotation' is a specialization of 'KStyle'.
+The class 'krendering_KLineCap' is a specialization of 'KStyle'.
+The class 'krendering_KPointPlacementData' is a specialization of 'KPlacementData'.
+The class 'krendering_KInvisibility' is a specialization of 'KStyle'.
+The class 'krendering_KShadow' is a specialization of 'KStyle'.
+The class 'krendering_KTextUnderline' is a specialization of 'KStyle'.
+The class 'krendering_KStyleRef' is a specialization of 'KStyle'.
+The class 'krendering_KTextStrikeout' is a specialization of 'KStyle'.
+The class 'krendering_KLineJoin' is a specialization of 'KStyle'.
+
+Relationships between classes are modeled using associations.
+An association connects 'krendering_KContainerRendering' and 'krendering_KRendering'. From 'krendering_KContainerRendering', the role 'KContainerRendering' has cardinality 0..*, and from 'krendering_KRendering', the role 'children' has cardinality 0..*.
+An association connects 'krendering_KPlacementData' and 'krendering_KRendering'. From 'krendering_KPlacementData', the role 'krendering_KPlacementData' has cardinality 0..*, and from 'krendering_KRendering', the role 'krendering_KRendering' has cardinality 0..*.
+An association connects 'krendering_KRendering' and 'krendering_KAction'. From 'krendering_KRendering', the role 'krendering_KRendering3' has cardinality 0..*, and from 'krendering_KAction', the role 'krendering_KAction' has cardinality 0..*.
+An association connects 'krendering_KPosition' and 'krendering_KPolyline'. From 'krendering_KPosition', the role 'krendering_KPosition' has cardinality 0..*, and from 'krendering_KPolyline', the role 'krendering_KPolyline' has cardinality 0..*.
+An association connects 'krendering_KRendering' and 'krendering_KPolyline'. From 'krendering_KRendering', the role 'krendering_KRendering7' has cardinality 0..*, and from 'krendering_KPolyline', the role 'krendering_KPolyline6' has cardinality 0..*.
+An association connects 'krendering_KRendering' and 'krendering_KImage'. From 'krendering_KRendering', the role 'krendering_KRendering9' has cardinality 0..*, and from 'krendering_KImage', the role 'krendering_KImage' has cardinality 0..*.
+An association connects 'krendering_KRendering' and 'krendering_KContainerRendering'. From 'krendering_KRendering', the role 'KRendering' has cardinality 0..*, and from 'krendering_KContainerRendering', the role 'parent' has cardinality 0..*.
+An association connects 'krendering_KPlacement' and 'krendering_KContainerRendering'. From 'krendering_KPlacement', the role 'krendering_KPlacement' has cardinality 0..*, and from 'krendering_KContainerRendering', the role 'krendering_KContainerRendering' has cardinality 0..*.
+An association connects 'krendering_KRenderingLibrary' and 'krendering_KStyleHolder'. From 'krendering_KRenderingLibrary', the role 'krendering_KRenderingLibrary' has cardinality 0..*, and from 'krendering_KStyleHolder', the role 'krendering_KStyleHolder' has cardinality 0..*.
+An association connects 'krendering_KRendering' and 'krendering_KRenderingRef'. From 'krendering_KRendering', the role 'krendering_KRendering14' has cardinality 0..*, and from 'krendering_KRenderingRef', the role 'krendering_KRenderingRef' has cardinality 0..*.
+An association connects 'krendering_KGridPlacement' and 'krendering_KPosition'. From 'krendering_KGridPlacement', the role 'krendering_KGridPlacement' has cardinality 0..*, and from 'krendering_KPosition', the role 'krendering_KPosition16' has cardinality 0..*.
+An association connects 'krendering_KGridPlacement' and 'krendering_KPosition'. From 'krendering_KGridPlacement', the role 'krendering_KGridPlacement18' has cardinality 0..*, and from 'krendering_KPosition', the role 'krendering_KPosition19' has cardinality 0..*.
+An association connects 'krendering_KAreaPlacementData' and 'krendering_KPosition'. From 'krendering_KAreaPlacementData', the role 'krendering_KAreaPlacementData' has cardinality 0..*, and from 'krendering_KPosition', the role 'krendering_KPosition21' has cardinality 0..*.
+An association connects 'krendering_KAreaPlacementData' and 'krendering_KPosition'. From 'krendering_KAreaPlacementData', the role 'krendering_KAreaPlacementData23' has cardinality 0..*, and from 'krendering_KPosition', the role 'krendering_KPosition24' has cardinality 0..*.
+An association connects 'krendering_KColoring' and 'krendering_KColor'. From 'krendering_KColoring', the role 'krendering_KColoring' has cardinality 0..*, and from 'krendering_KColor', the role 'krendering_KColor' has cardinality 0..*.
+An association connects 'krendering_KColor' and 'krendering_KColoring'. From 'krendering_KColor', the role 'krendering_KColor28' has cardinality 0..*, and from 'krendering_KColoring', the role 'krendering_KColoring27' has cardinality 0..*.
+An association connects 'krendering_KRotation' and 'krendering_KPosition'. From 'krendering_KRotation', the role 'krendering_KRotation' has cardinality 0..*, and from 'krendering_KPosition', the role 'krendering_KPosition30' has cardinality 0..*.
+An association connects 'krendering_KPointPlacementData' and 'krendering_KPosition'. From 'krendering_KPointPlacementData', the role 'krendering_KPointPlacementData' has cardinality 0..*, and from 'krendering_KPosition', the role 'krendering_KPosition32' has cardinality 0..*.
+An association connects 'krendering_KStyle' and 'krendering_KStyleHolder'. From 'krendering_KStyle', the role 'krendering_KStyle' has cardinality 0..*, and from 'krendering_KStyleHolder', the role 'krendering_KStyleHolder34' has cardinality 0..*.
+An association connects 'krendering_KShadow' and 'krendering_KColor'. From 'krendering_KShadow', the role 'krendering_KShadow' has cardinality 0..*, and from 'krendering_KColor', the role 'krendering_KColor36' has cardinality 0..*.
+An association connects 'krendering_KColor' and 'krendering_KTextUnderline'. From 'krendering_KColor', the role 'krendering_KColor38' has cardinality 0..*, and from 'krendering_KTextUnderline', the role 'krendering_KTextUnderline' has cardinality 0..*.
+An association connects 'krendering_KStyleRef' and 'krendering_KStyleHolder'. From 'krendering_KStyleRef', the role 'krendering_KStyleRef' has cardinality 0..*, and from 'krendering_KStyleHolder', the role 'krendering_KStyleHolder40' has cardinality 0..*.
+An association connects 'krendering_KColor' and 'krendering_KTextStrikeout'. From 'krendering_KColor', the role 'krendering_KColor42' has cardinality 0..*, and from 'krendering_KTextStrikeout', the role 'krendering_KTextStrikeout' has cardinality 0..*.

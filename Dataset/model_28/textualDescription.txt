@@ -1,0 +1,98 @@
+The domain model 'ptnetLoLA' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'ptnetLoLA_Marking' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnetLoLA_Node' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'ptnetLoLA_ArcToPlaceExt' represents an important domain concept.
+It has one attribute: 'probability', which is of type float.
+
+'ptnetLoLA_ArcToTransitionExt' represents an important domain concept.
+It has one attribute: 'probability', which is of type float.
+
+'ptnetLoLA_TransitionExt' represents an important domain concept.
+It has the following attributes: 'maxTime', which is of type int; 'minTime', which is of type int; 'cost', which is of type float; 'probability', which is of type float.
+
+'ptnetLoLA_PlaceExt' represents an important domain concept.
+It has the following attributes: 'isStart', which is of type bool; 'probability', which is of type float.
+
+'ptnetLoLA_RefMarkedPlace' represents an important domain concept.
+It has one attribute: 'token', which is of type int.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnetLoLA_Annotation' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'ptnetLoLA_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnetLoLA_PlaceReference' represents an important domain concept.
+It does not declare any attributes.
+
+'PlaceReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Place' represents an important domain concept.
+It does not declare any attributes.
+
+'ArcToTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnetLoLA_Place' represents an important domain concept.
+It has the following attributes: 'finalMarking', which is of type int; 'token', which is of type int.
+
+'ptnetLoLA_ArcToPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnetLoLA_Arc' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'ArcToPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnetLoLA_PtNet' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnetLoLA_ArcToTransition' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'NodeType' defines the following possible values: 'output', 'inout', 'internal', 'input'.
+
+The model also captures inheritance relationships between classes.
+The class 'ptnetLoLA_Place' is a specialization of 'Node'.
+The class 'ptnetLoLA_Transition' is a specialization of 'Node'.
+The class 'ptnetLoLA_RefMarkedPlace' is a specialization of 'PlaceReference'.
+The class 'ptnetLoLA_ArcToPlace' is a specialization of 'Arc'.
+The class 'ptnetLoLA_ArcToTransition' is a specialization of 'Arc'.
+The class 'ptnetLoLA_TransitionExt' is a specialization of 'Transition'.
+The class 'ptnetLoLA_PlaceExt' is a specialization of 'Place'.
+The class 'ptnetLoLA_ArcToPlaceExt' is a specialization of 'ArcToPlace'.
+The class 'ptnetLoLA_ArcToTransitionExt' is a specialization of 'ArcToTransition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ptnetLoLA_Place' and 'ptnetLoLA_PtNet'. From 'ptnetLoLA_Place', the role 'ptnetLoLA_Place' has cardinality 0..*, and from 'ptnetLoLA_PtNet', the role 'ptnetLoLA_PtNet' has cardinality 0..*.
+An association connects 'ptnetLoLA_Transition' and 'ptnetLoLA_PtNet'. From 'ptnetLoLA_Transition', the role 'ptnetLoLA_Transition' has cardinality 0..*, and from 'ptnetLoLA_PtNet', the role 'ptnetLoLA_PtNet2' has cardinality 0..*.
+An association connects 'ptnetLoLA_PtNet' and 'ptnetLoLA_Marking'. From 'ptnetLoLA_PtNet', the role 'ptnetLoLA_PtNet4' has cardinality 0..*, and from 'ptnetLoLA_Marking', the role 'ptnetLoLA_Marking' has cardinality 0..*.
+An association connects 'ptnetLoLA_PtNet' and 'ptnetLoLA_Annotation'. From 'ptnetLoLA_PtNet', the role 'ptnetLoLA_PtNet6' has cardinality 0..*, and from 'ptnetLoLA_Annotation', the role 'ptnetLoLA_Annotation' has cardinality 0..*.
+An association connects 'ptnetLoLA_PtNet' and 'ptnetLoLA_Arc'. From 'ptnetLoLA_PtNet', the role 'ptnetLoLA_PtNet8' has cardinality 0..*, and from 'ptnetLoLA_Arc', the role 'ptnetLoLA_Arc' has cardinality 0..*.
+An association connects 'ptnetLoLA_Marking' and 'ptnetLoLA_PtNet'. From 'ptnetLoLA_Marking', the role 'ptnetLoLA_Marking11' has cardinality 0..*, and from 'ptnetLoLA_PtNet', the role 'ptnetLoLA_PtNet10' has cardinality 0..*.
+An association connects 'ptnetLoLA_Annotation' and 'ptnetLoLA_Node'. From 'ptnetLoLA_Annotation', the role 'ptnetLoLA_Annotation13' has cardinality 0..*, and from 'ptnetLoLA_Node', the role 'ptnetLoLA_Node' has cardinality 0..*.
+An association connects 'ptnetLoLA_Arc' and 'ptnetLoLA_Node'. From 'ptnetLoLA_Arc', the role 'Arc' has cardinality 0..*, and from 'ptnetLoLA_Node', the role 'target' has cardinality 0..*.
+An association connects 'ptnetLoLA_Arc' and 'ptnetLoLA_Node'. From 'ptnetLoLA_Arc', the role 'Arc16' has cardinality 0..*, and from 'ptnetLoLA_Node', the role 'source' has cardinality 0..*.
+An association connects 'ptnetLoLA_RefMarkedPlace' and 'ptnetLoLA_Marking'. From 'ptnetLoLA_RefMarkedPlace', the role 'ptnetLoLA_RefMarkedPlace' has cardinality 0..*, and from 'ptnetLoLA_Marking', the role 'ptnetLoLA_Marking18' has cardinality 0..*.
+An association connects 'ptnetLoLA_PlaceReference' and 'ptnetLoLA_Place'. From 'ptnetLoLA_PlaceReference', the role 'ptnetLoLA_PlaceReference' has cardinality 0..*, and from 'ptnetLoLA_Place', the role 'ptnetLoLA_Place20' has cardinality 0..*.
+An association connects 'ptnetLoLA_Arc' and 'ptnetLoLA_Node'. From 'ptnetLoLA_Arc', the role 'outgoing' has cardinality 0..*, and from 'ptnetLoLA_Node', the role 'Node' has cardinality 0..*.
+An association connects 'ptnetLoLA_Arc' and 'ptnetLoLA_Node'. From 'ptnetLoLA_Arc', the role 'incoming' has cardinality 0..*, and from 'ptnetLoLA_Node', the role 'Node23' has cardinality 0..*.

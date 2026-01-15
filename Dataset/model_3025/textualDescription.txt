@@ -1,0 +1,817 @@
+The domain model 'dbl' describes the core structural elements and their relationships within the system.
+
+The model defines 182 main class(es).
+
+'dbl_NativeBinding' represents an important domain concept.
+It has the following attributes: 'targetType', which is of type str; 'targetLanguage', which is of type str.
+
+'dbl_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_TerminalExpr' represents an important domain concept.
+It has one attribute: 'terminal', which is of type str.
+
+'LoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_SuperLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'L2RhsExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_MetaLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_VariableAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_PropertyBindingExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpansionPart' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ExpandTextPart' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'dbl_RhsClassifierExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_LessEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'L3Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_TextualSyntaxDef' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Neg' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Cast' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_SetExpansionContextStatement' represents an important domain concept.
+It has one attribute: 'addAfterContext', which is of type bool.
+
+'dbl_Wait' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_L8Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_PropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ExtensibleElement' represents an important domain concept.
+It has the following attributes: 'instanceOfExtensionDefinition', which is of type bool; 'concreteSyntax', which is of type str.
+
+'BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_SaveGenStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_SimpleStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'L1RhsExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstructiveExtensionAtContentExtensionPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ArrayDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_LanguageConstructClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_GreaterEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Function' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'class', which is of type bool.
+
+'dbl_VoidType' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_MetaAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ResumeGenStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'PredefinedId' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_L1RhsExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Variable' represents an important domain concept.
+It has the following attributes: 'class', which is of type bool; 'control', which is of type bool.
+
+'dbl_Construct' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Import' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+'dbl_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_SequenceExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ActiveLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ExtensionDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Advance' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dbl_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_UniqueIdExpr' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'dbl_ExpandExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'L1Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'L2Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_L6Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_CreateObject' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_NotEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_DoubleLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'dbl_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ExpandStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Mod' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstructiveExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_WaitUntil' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_IntPropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_IdPropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'LocalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_SwitchCase' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_DoubleType' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_CodeQuoteExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_TrueLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Construct' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_BoolType' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ParseExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ConstructiveExtensionAtContentExtensionPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_StringType' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_StringPropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_IntType' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_FalseLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'LanguageConceptClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_BooleanPropertyType' represents an important domain concept.
+It has one attribute: 'terminal', which is of type str.
+
+'dbl_QuotedStatements' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_StructuredPropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_And' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ExpandExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_CompositePropertyType' represents an important domain concept.
+It has one attribute: 'list', which is of type bool.
+
+'dbl_LocalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_TimeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_L3RhsExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ReferencePropertyType' represents an important domain concept.
+It has one attribute: 'rawReference', which is of type bool.
+
+'dbl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtensibleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'dbl_QuotedCode' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_L7Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_LocalScopeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_IntLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Yield' represents an important domain concept.
+It does not declare any attributes.
+
+'L8Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_TypeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ClassContent' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredPropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_QuotedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Mul' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_AbstractVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'QuotedCode' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_TsRule' represents an important domain concept.
+It does not declare any attributes.
+
+'RhsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_L1Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Print' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_L2RhsExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_MeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_MetaExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_CallPart' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_PredefinedId' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_TargetStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'L6Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_L3Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_QuotedClassContent' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ModuleContent' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Class' represents an important domain concept.
+It has one attribute: 'active', which is of type bool.
+
+'dbl_Constructor' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Reactivate' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ActivateObject' represents an important domain concept.
+It has one attribute: 'priority', which is of type int.
+
+'dbl_ExpansionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ExtensionSemanticsDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'L5Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'L4Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'LanguageConstructClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_L2Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_TypeAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_SizeOfArray' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_QuotedModuleContent' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_InstanceOf' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_TestStatement' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'dbl_LoopStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Less' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'L7Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ExpansionPart' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_IdExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_SuperClassSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Pattern' represents an important domain concept.
+It has one attribute: 'top', which is of type bool.
+
+'dbl_ContinueStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_L5Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_LanguageConceptClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ExpandVariablePart' represents an important domain concept.
+It does not declare any attributes.
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_L4Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ConstructiveExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_RhsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_ElementAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_Terminate' represents an important domain concept.
+It does not declare any attributes.
+
+'dbl_L9Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableAccess' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'dbl_ExtensibleElement' is a specialization of 'NamedElement'.
+The class 'dbl_ExtensibleElement' is a specialization of 'Construct'.
+The class 'dbl_Module' is a specialization of 'NamedElement'.
+The class 'dbl_Module' is a specialization of 'ConstructiveExtensionAtContentExtensionPoint'.
+The class 'dbl_Module' is a specialization of 'Construct'.
+The class 'dbl_ConstructiveExtension' is a specialization of 'ExtensibleElement'.
+The class 'dbl_ModuleContent' is a specialization of 'ConstructiveExtension'.
+The class 'dbl_ClassContent' is a specialization of 'ConstructiveExtension'.
+The class 'dbl_PrimitiveType' is a specialization of 'Type'.
+The class 'dbl_VoidType' is a specialization of 'PrimitiveType'.
+The class 'dbl_IntType' is a specialization of 'PrimitiveType'.
+The class 'dbl_BoolType' is a specialization of 'PrimitiveType'.
+The class 'dbl_DoubleType' is a specialization of 'PrimitiveType'.
+The class 'dbl_StringType' is a specialization of 'PrimitiveType'.
+The class 'dbl_Function' is a specialization of 'NamedElement'.
+The class 'dbl_Function' is a specialization of 'TypedElement'.
+The class 'dbl_Function' is a specialization of 'LocalScope'.
+The class 'dbl_Class' is a specialization of 'NamedElement'.
+The class 'dbl_Class' is a specialization of 'Type'.
+The class 'dbl_Class' is a specialization of 'ConstructiveExtensionAtContentExtensionPoint'.
+The class 'dbl_Class' is a specialization of 'LanguageConceptClassifier'.
+The class 'dbl_Class' is a specialization of 'Construct'.
+The class 'dbl_Constructor' is a specialization of 'LocalScope'.
+The class 'dbl_AbstractVariable' is a specialization of 'NamedElement'.
+The class 'dbl_AbstractVariable' is a specialization of 'TypedElement'.
+The class 'dbl_Variable' is a specialization of 'AbstractVariable'.
+The class 'dbl_Variable' is a specialization of 'SimpleStatement'.
+The class 'dbl_Parameter' is a specialization of 'AbstractVariable'.
+The class 'dbl_Statement' is a specialization of 'ExtensibleElement'.
+The class 'dbl_LoopStatement' is a specialization of 'Statement'.
+The class 'dbl_SimpleStatement' is a specialization of 'Statement'.
+The class 'dbl_Assignment' is a specialization of 'SimpleStatement'.
+The class 'dbl_FunctionCall' is a specialization of 'SimpleStatement'.
+The class 'dbl_Return' is a specialization of 'SimpleStatement'.
+The class 'dbl_WaitUntil' is a specialization of 'SimpleStatement'.
+The class 'dbl_Terminate' is a specialization of 'SimpleStatement'.
+The class 'dbl_Yield' is a specialization of 'SimpleStatement'.
+The class 'dbl_Wait' is a specialization of 'SimpleStatement'.
+The class 'dbl_Reactivate' is a specialization of 'SimpleStatement'.
+The class 'dbl_ActivateObject' is a specialization of 'SimpleStatement'.
+The class 'dbl_Advance' is a specialization of 'SimpleStatement'.
+The class 'dbl_Print' is a specialization of 'SimpleStatement'.
+The class 'dbl_IfStatement' is a specialization of 'Statement'.
+The class 'dbl_LocalScopeStatement' is a specialization of 'SimpleStatement'.
+The class 'dbl_LocalScopeStatement' is a specialization of 'LocalScope'.
+The class 'dbl_ForStatement' is a specialization of 'LoopStatement'.
+The class 'dbl_ForStatement' is a specialization of 'LocalScope'.
+The class 'dbl_WhileStatement' is a specialization of 'LoopStatement'.
+The class 'dbl_SwitchStatement' is a specialization of 'SimpleStatement'.
+The class 'dbl_BreakStatement' is a specialization of 'SimpleStatement'.
+The class 'dbl_ContinueStatement' is a specialization of 'SimpleStatement'.
+The class 'dbl_Expression' is a specialization of 'TypedElement'.
+The class 'dbl_Expression' is a specialization of 'ExtensibleElement'.
+The class 'dbl_L1Expr' is a specialization of 'Expression'.
+The class 'dbl_L2Expr' is a specialization of 'Expression'.
+The class 'dbl_L3Expr' is a specialization of 'Expression'.
+The class 'dbl_L4Expr' is a specialization of 'Expression'.
+The class 'dbl_L5Expr' is a specialization of 'Expression'.
+The class 'dbl_L6Expr' is a specialization of 'Expression'.
+The class 'dbl_L7Expr' is a specialization of 'Expression'.
+The class 'dbl_L8Expr' is a specialization of 'Expression'.
+The class 'dbl_L9Expr' is a specialization of 'Expression'.
+The class 'dbl_BinaryOperator' is a specialization of 'Expression'.
+The class 'dbl_UnaryOperator' is a specialization of 'Expression'.
+The class 'dbl_Or' is a specialization of 'BinaryOperator'.
+The class 'dbl_Or' is a specialization of 'L8Expr'.
+The class 'dbl_And' is a specialization of 'BinaryOperator'.
+The class 'dbl_And' is a specialization of 'L7Expr'.
+The class 'dbl_NotEqual' is a specialization of 'BinaryOperator'.
+The class 'dbl_NotEqual' is a specialization of 'L6Expr'.
+The class 'dbl_Equal' is a specialization of 'BinaryOperator'.
+The class 'dbl_Equal' is a specialization of 'L6Expr'.
+The class 'dbl_Greater' is a specialization of 'BinaryOperator'.
+The class 'dbl_Greater' is a specialization of 'L5Expr'.
+The class 'dbl_GreaterEqual' is a specialization of 'BinaryOperator'.
+The class 'dbl_GreaterEqual' is a specialization of 'L5Expr'.
+The class 'dbl_Less' is a specialization of 'BinaryOperator'.
+The class 'dbl_Less' is a specialization of 'L5Expr'.
+The class 'dbl_LessEqual' is a specialization of 'BinaryOperator'.
+The class 'dbl_LessEqual' is a specialization of 'L5Expr'.
+The class 'dbl_InstanceOf' is a specialization of 'BinaryOperator'.
+The class 'dbl_InstanceOf' is a specialization of 'L5Expr'.
+The class 'dbl_Plus' is a specialization of 'BinaryOperator'.
+The class 'dbl_Plus' is a specialization of 'L4Expr'.
+The class 'dbl_Minus' is a specialization of 'BinaryOperator'.
+The class 'dbl_Minus' is a specialization of 'L4Expr'.
+The class 'dbl_Mul' is a specialization of 'BinaryOperator'.
+The class 'dbl_Mul' is a specialization of 'L3Expr'.
+The class 'dbl_Mod' is a specialization of 'BinaryOperator'.
+The class 'dbl_Mod' is a specialization of 'L3Expr'.
+The class 'dbl_Div' is a specialization of 'BinaryOperator'.
+The class 'dbl_Div' is a specialization of 'L3Expr'.
+The class 'dbl_Neg' is a specialization of 'UnaryOperator'.
+The class 'dbl_Neg' is a specialization of 'L2Expr'.
+The class 'dbl_Not' is a specialization of 'UnaryOperator'.
+The class 'dbl_Not' is a specialization of 'L2Expr'.
+The class 'dbl_Cast' is a specialization of 'UnaryOperator'.
+The class 'dbl_Cast' is a specialization of 'TypedElement'.
+The class 'dbl_Cast' is a specialization of 'L2Expr'.
+The class 'dbl_CreateObject' is a specialization of 'L1Expr'.
+The class 'dbl_CreateObject' is a specialization of 'TypedElement'.
+The class 'dbl_NullLiteral' is a specialization of 'L1Expr'.
+The class 'dbl_TimeLiteral' is a specialization of 'L1Expr'.
+The class 'dbl_ActiveLiteral' is a specialization of 'L1Expr'.
+The class 'dbl_StringLiteral' is a specialization of 'L1Expr'.
+The class 'dbl_IntLiteral' is a specialization of 'L1Expr'.
+The class 'dbl_TrueLiteral' is a specialization of 'L1Expr'.
+The class 'dbl_FalseLiteral' is a specialization of 'L1Expr'.
+The class 'dbl_DoubleLiteral' is a specialization of 'L1Expr'.
+The class 'dbl_UniqueIdExpr' is a specialization of 'Expression'.
+The class 'dbl_ExpandExpr' is a specialization of 'Expression'.
+The class 'dbl_ParseExpr' is a specialization of 'Expression'.
+The class 'dbl_MeLiteral' is a specialization of 'PredefinedId'.
+The class 'dbl_SuperLiteral' is a specialization of 'PredefinedId'.
+The class 'dbl_MetaLiteral' is a specialization of 'PredefinedId'.
+The class 'dbl_TypeLiteral' is a specialization of 'PredefinedId'.
+The class 'dbl_SizeOfArray' is a specialization of 'PredefinedId'.
+The class 'dbl_IdExpr' is a specialization of 'L1Expr'.
+The class 'dbl_ElementAccess' is a specialization of 'Expression'.
+The class 'dbl_VariableAccess' is a specialization of 'ElementAccess'.
+The class 'dbl_MetaAccess' is a specialization of 'VariableAccess'.
+The class 'dbl_TypeAccess' is a specialization of 'ElementAccess'.
+The class 'dbl_ExtensionDefinition' is a specialization of 'LanguageConceptClassifier'.
+The class 'dbl_ExtensionDefinition' is a specialization of 'ExtensibleElement'.
+The class 'dbl_ExtensionSemanticsDefinition' is a specialization of 'ExtensibleElement'.
+The class 'dbl_ExtensionSemanticsDefinition' is a specialization of 'LocalScope'.
+The class 'dbl_TextualSyntaxDef' is a specialization of 'ExtensibleElement'.
+The class 'dbl_LanguageConstructClassifier' is a specialization of 'NamedElement'.
+The class 'dbl_LanguageConstructClassifier' is a specialization of 'ExtensibleElement'.
+The class 'dbl_LanguageConceptClassifier' is a specialization of 'LanguageConstructClassifier'.
+The class 'dbl_TsRule' is a specialization of 'NamedElement'.
+The class 'dbl_TsRule' is a specialization of 'LanguageConstructClassifier'.
+The class 'dbl_L3RhsExpr' is a specialization of 'RhsExpression'.
+The class 'dbl_L2RhsExpr' is a specialization of 'RhsExpression'.
+The class 'dbl_SequenceExpr' is a specialization of 'L2RhsExpr'.
+The class 'dbl_L1RhsExpr' is a specialization of 'RhsExpression'.
+The class 'dbl_TerminalExpr' is a specialization of 'L1RhsExpr'.
+The class 'dbl_PropertyBindingExpr' is a specialization of 'NamedElement'.
+The class 'dbl_PropertyBindingExpr' is a specialization of 'L1RhsExpr'.
+The class 'dbl_RhsClassifierExpr' is a specialization of 'L1RhsExpr'.
+The class 'dbl_IdPropertyType' is a specialization of 'PropertyType'.
+The class 'dbl_IntPropertyType' is a specialization of 'PropertyType'.
+The class 'dbl_StringPropertyType' is a specialization of 'PropertyType'.
+The class 'dbl_BooleanPropertyType' is a specialization of 'PropertyType'.
+The class 'dbl_StructuredPropertyType' is a specialization of 'PropertyType'.
+The class 'dbl_CompositePropertyType' is a specialization of 'StructuredPropertyType'.
+The class 'dbl_ReferencePropertyType' is a specialization of 'StructuredPropertyType'.
+The class 'dbl_MetaExpr' is a specialization of 'Expression'.
+The class 'dbl_TargetStatement' is a specialization of 'Statement'.
+The class 'dbl_ExpansionStatement' is a specialization of 'Statement'.
+The class 'dbl_ExpandTextPart' is a specialization of 'ExpansionPart'.
+The class 'dbl_ExpandVariablePart' is a specialization of 'ExpansionPart'.
+The class 'dbl_SetExpansionContextStatement' is a specialization of 'SimpleStatement'.
+The class 'dbl_SaveGenStatement' is a specialization of 'SimpleStatement'.
+The class 'dbl_ResumeGenStatement' is a specialization of 'SimpleStatement'.
+The class 'dbl_ExpandExpression' is a specialization of 'Expression'.
+The class 'dbl_ExpandStatement' is a specialization of 'Statement'.
+The class 'dbl_CodeQuoteExpression' is a specialization of 'Expression'.
+The class 'dbl_QuotedExpression' is a specialization of 'QuotedCode'.
+The class 'dbl_QuotedStatements' is a specialization of 'QuotedCode'.
+The class 'dbl_QuotedClassContent' is a specialization of 'QuotedCode'.
+The class 'dbl_QuotedClassContent' is a specialization of 'Class'.
+The class 'dbl_QuotedModuleContent' is a specialization of 'QuotedCode'.
+The class 'dbl_QuotedModuleContent' is a specialization of 'Module'.
+The class 'dbl_Pattern' is a specialization of 'NamedElement'.
+The class 'dbl_TestStatement' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dbl_Construct' and 'dbl_ExpandExpr'. From 'dbl_Construct', the role 'dbl_Construct' has cardinality 0..*, and from 'dbl_ExpandExpr', the role 'dbl_ExpandExpr' has cardinality 0..*.
+An association connects 'dbl_ExtensibleElement' and 'dbl_ExtensibleElement'. From 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement' has cardinality 0..*, and from 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement1' has cardinality 0..*.
+An association connects 'dbl_ExtensibleElement' and 'dbl_ExtensibleElement'. From 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement5' has cardinality 0..*, and from 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement3' has cardinality 0..*.
+An association connects 'dbl_ExtensibleElement' and 'dbl_ExtensibleElement'. From 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement8' has cardinality 0..*, and from 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement6' has cardinality 0..*.
+An association connects 'dbl_ExtensibleElement' and 'dbl_ExtensibleElement'. From 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement11' has cardinality 0..*, and from 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement9' has cardinality 0..*.
+An association connects 'dbl_ExtensibleElement' and 'dbl_ExtensibleElement'. From 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement14' has cardinality 0..*, and from 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement12' has cardinality 0..*.
+An association connects 'dbl_ExtensibleElement' and 'dbl_ExtensibleElement'. From 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement15' has cardinality 0..*, and from 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement17' has cardinality 0..*.
+An association connects 'dbl_ExtensibleElement' and 'dbl_ExtensibleElement'. From 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement18' has cardinality 0..*, and from 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement20' has cardinality 0..*.
+An association connects 'dbl_ExtensibleElement' and 'dbl_ExtensibleElement'. From 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement23' has cardinality 0..*, and from 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement21' has cardinality 0..*.
+An association connects 'dbl_ExtensibleElement' and 'dbl_ExtensibleElement'. From 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement24' has cardinality 0..*, and from 'dbl_ExtensibleElement', the role 'dbl_ExtensibleElement26' has cardinality 0..*.
+An association connects 'dbl_Model' and 'dbl_Import'. From 'dbl_Model', the role 'dbl_Model' has cardinality 0..*, and from 'dbl_Import', the role 'dbl_Import' has cardinality 0..*.
+An association connects 'dbl_Model' and 'dbl_Module'. From 'dbl_Model', the role 'dbl_Model29' has cardinality 0..*, and from 'dbl_Module', the role 'dbl_Module' has cardinality 0..*.
+An association connects 'dbl_Import' and 'dbl_Model'. From 'dbl_Import', the role 'dbl_Import31' has cardinality 0..*, and from 'dbl_Model', the role 'dbl_Model32' has cardinality 0..*.
+An association connects 'dbl_Module' and 'dbl_Class'. From 'dbl_Module', the role 'dbl_Module34' has cardinality 0..*, and from 'dbl_Class', the role 'dbl_Class' has cardinality 0..*.
+An association connects 'dbl_ExtensionDefinition' and 'dbl_Module'. From 'dbl_ExtensionDefinition', the role 'dbl_ExtensionDefinition' has cardinality 0..*, and from 'dbl_Module', the role 'dbl_Module36' has cardinality 0..*.
+An association connects 'dbl_Module' and 'dbl_ExtensionSemanticsDefinition'. From 'dbl_Module', the role 'dbl_Module38' has cardinality 0..*, and from 'dbl_ExtensionSemanticsDefinition', the role 'dbl_ExtensionSemanticsDefinition' has cardinality 0..*.
+An association connects 'dbl_Module' and 'dbl_Function'. From 'dbl_Module', the role 'dbl_Module40' has cardinality 0..*, and from 'dbl_Function', the role 'dbl_Function' has cardinality 0..*.
+An association connects 'dbl_Variable' and 'dbl_Module'. From 'dbl_Variable', the role 'dbl_Variable' has cardinality 0..*, and from 'dbl_Module', the role 'dbl_Module42' has cardinality 0..*.
+An association connects 'dbl_ConstructiveExtensionAtContentExtensionPoint' and 'dbl_ConstructiveExtension'. From 'dbl_ConstructiveExtensionAtContentExtensionPoint', the role 'dbl_ConstructiveExtensionAtContentExtensionPoint' has cardinality 0..*, and from 'dbl_ConstructiveExtension', the role 'dbl_ConstructiveExtension' has cardinality 0..*.
+An association connects 'dbl_Type' and 'dbl_ArrayDimension'. From 'dbl_Type', the role 'dbl_Type' has cardinality 0..*, and from 'dbl_ArrayDimension', the role 'dbl_ArrayDimension' has cardinality 0..*.
+An association connects 'dbl_TypedElement' and 'dbl_PrimitiveType'. From 'dbl_TypedElement', the role 'dbl_TypedElement' has cardinality 0..*, and from 'dbl_PrimitiveType', the role 'dbl_PrimitiveType' has cardinality 0..*.
+An association connects 'dbl_TypedElement' and 'dbl_ArrayDimension'. From 'dbl_TypedElement', the role 'dbl_TypedElement47' has cardinality 0..*, and from 'dbl_ArrayDimension', the role 'dbl_ArrayDimension48' has cardinality 0..*.
+An association connects 'dbl_IdExpr' and 'dbl_TypedElement'. From 'dbl_IdExpr', the role 'dbl_IdExpr' has cardinality 0..*, and from 'dbl_TypedElement', the role 'dbl_TypedElement50' has cardinality 0..*.
+An association connects 'dbl_Expression' and 'dbl_ArrayDimension'. From 'dbl_Expression', the role 'dbl_Expression' has cardinality 0..*, and from 'dbl_ArrayDimension', the role 'dbl_ArrayDimension52' has cardinality 0..*.
+An association connects 'dbl_Function' and 'dbl_Parameter'. From 'dbl_Function', the role 'dbl_Function54' has cardinality 0..*, and from 'dbl_Parameter', the role 'dbl_Parameter' has cardinality 0..*.
+An association connects 'dbl_SuperClassSpecification' and 'dbl_Class'. From 'dbl_SuperClassSpecification', the role 'dbl_SuperClassSpecification' has cardinality 0..*, and from 'dbl_Class', the role 'dbl_Class56' has cardinality 0..*.
+An association connects 'dbl_SuperClassSpecification' and 'dbl_Expression'. From 'dbl_SuperClassSpecification', the role 'dbl_SuperClassSpecification58' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression59' has cardinality 0..*.
+An association connects 'dbl_NativeBinding' and 'dbl_Class'. From 'dbl_NativeBinding', the role 'dbl_NativeBinding' has cardinality 0..*, and from 'dbl_Class', the role 'dbl_Class61' has cardinality 0..*.
+An association connects 'dbl_SuperClassSpecification' and 'dbl_Class'. From 'dbl_SuperClassSpecification', the role 'dbl_SuperClassSpecification64' has cardinality 0..*, and from 'dbl_Class', the role 'dbl_Class63' has cardinality 0..*.
+An association connects 'dbl_Class' and 'dbl_Constructor'. From 'dbl_Class', the role 'owningClass' has cardinality 0..*, and from 'dbl_Constructor', the role 'Constructor' has cardinality 0..*.
+An association connects 'dbl_Variable' and 'dbl_Class'. From 'dbl_Variable', the role 'dbl_Variable68' has cardinality 0..*, and from 'dbl_Class', the role 'dbl_Class67' has cardinality 0..*.
+An association connects 'dbl_Class' and 'dbl_Function'. From 'dbl_Class', the role 'dbl_Class70' has cardinality 0..*, and from 'dbl_Function', the role 'dbl_Function71' has cardinality 0..*.
+An association connects 'dbl_LocalScope' and 'dbl_Class'. From 'dbl_LocalScope', the role 'dbl_LocalScope' has cardinality 0..*, and from 'dbl_Class', the role 'dbl_Class73' has cardinality 0..*.
+An association connects 'dbl_Parameter' and 'dbl_Constructor'. From 'dbl_Parameter', the role 'dbl_Parameter75' has cardinality 0..*, and from 'dbl_Constructor', the role 'dbl_Constructor' has cardinality 0..*.
+An association connects 'dbl_Class' and 'dbl_Constructor'. From 'dbl_Class', the role 'Class' has cardinality 0..*, and from 'dbl_Constructor', the role 'constructors' has cardinality 0..*.
+An association connects 'dbl_Variable' and 'dbl_Expression'. From 'dbl_Variable', the role 'dbl_Variable78' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression79' has cardinality 0..*.
+An association connects 'dbl_VariableAccess' and 'dbl_Assignment'. From 'dbl_VariableAccess', the role 'dbl_VariableAccess' has cardinality 0..*, and from 'dbl_Assignment', the role 'dbl_Assignment' has cardinality 0..*.
+An association connects 'dbl_Assignment' and 'dbl_Expression'. From 'dbl_Assignment', the role 'dbl_Assignment82' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression83' has cardinality 0..*.
+An association connects 'dbl_IdExpr' and 'dbl_FunctionCall'. From 'dbl_IdExpr', the role 'dbl_IdExpr85' has cardinality 0..*, and from 'dbl_FunctionCall', the role 'dbl_FunctionCall' has cardinality 0..*.
+An association connects 'dbl_Return' and 'dbl_Expression'. From 'dbl_Return', the role 'dbl_Return' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression87' has cardinality 0..*.
+An association connects 'dbl_WaitUntil' and 'dbl_Expression'. From 'dbl_WaitUntil', the role 'dbl_WaitUntil' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression89' has cardinality 0..*.
+An association connects 'dbl_Reactivate' and 'dbl_Expression'. From 'dbl_Reactivate', the role 'dbl_Reactivate' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression91' has cardinality 0..*.
+An association connects 'dbl_Expression' and 'dbl_ActivateObject'. From 'dbl_Expression', the role 'dbl_Expression93' has cardinality 0..*, and from 'dbl_ActivateObject', the role 'dbl_ActivateObject' has cardinality 0..*.
+An association connects 'dbl_Expression' and 'dbl_Advance'. From 'dbl_Expression', the role 'dbl_Expression95' has cardinality 0..*, and from 'dbl_Advance', the role 'dbl_Advance' has cardinality 0..*.
+An association connects 'dbl_Print' and 'dbl_Expression'. From 'dbl_Print', the role 'dbl_Print' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression97' has cardinality 0..*.
+An association connects 'dbl_IfStatement' and 'dbl_Expression'. From 'dbl_IfStatement', the role 'dbl_IfStatement' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression99' has cardinality 0..*.
+An association connects 'dbl_Statement' and 'dbl_IfStatement'. From 'dbl_Statement', the role 'dbl_Statement' has cardinality 0..*, and from 'dbl_IfStatement', the role 'dbl_IfStatement101' has cardinality 0..*.
+An association connects 'dbl_Statement' and 'dbl_IfStatement'. From 'dbl_Statement', the role 'dbl_Statement104' has cardinality 0..*, and from 'dbl_IfStatement', the role 'dbl_IfStatement103' has cardinality 0..*.
+An association connects 'dbl_LocalScope' and 'dbl_Statement'. From 'dbl_LocalScope', the role 'dbl_LocalScope106' has cardinality 0..*, and from 'dbl_Statement', the role 'dbl_Statement107' has cardinality 0..*.
+An association connects 'dbl_ForStatement' and 'dbl_Expression'. From 'dbl_ForStatement', the role 'dbl_ForStatement' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression109' has cardinality 0..*.
+An association connects 'dbl_ForStatement' and 'dbl_Assignment'. From 'dbl_ForStatement', the role 'dbl_ForStatement111' has cardinality 0..*, and from 'dbl_Assignment', the role 'dbl_Assignment112' has cardinality 0..*.
+An association connects 'dbl_Statement' and 'dbl_ForStatement'. From 'dbl_Statement', the role 'dbl_Statement115' has cardinality 0..*, and from 'dbl_ForStatement', the role 'dbl_ForStatement114' has cardinality 0..*.
+An association connects 'dbl_Expression' and 'dbl_WhileStatement'. From 'dbl_Expression', the role 'dbl_Expression117' has cardinality 0..*, and from 'dbl_WhileStatement', the role 'dbl_WhileStatement' has cardinality 0..*.
+An association connects 'dbl_WhileStatement' and 'dbl_Statement'. From 'dbl_WhileStatement', the role 'dbl_WhileStatement119' has cardinality 0..*, and from 'dbl_Statement', the role 'dbl_Statement120' has cardinality 0..*.
+An association connects 'dbl_SwitchStatement' and 'dbl_VariableAccess'. From 'dbl_SwitchStatement', the role 'dbl_SwitchStatement' has cardinality 0..*, and from 'dbl_VariableAccess', the role 'dbl_VariableAccess122' has cardinality 0..*.
+An association connects 'dbl_SwitchCase' and 'dbl_SwitchStatement'. From 'dbl_SwitchCase', the role 'dbl_SwitchCase' has cardinality 0..*, and from 'dbl_SwitchStatement', the role 'dbl_SwitchStatement124' has cardinality 0..*.
+An association connects 'dbl_SwitchCase' and 'dbl_SwitchStatement'. From 'dbl_SwitchCase', the role 'dbl_SwitchCase127' has cardinality 0..*, and from 'dbl_SwitchStatement', the role 'dbl_SwitchStatement126' has cardinality 0..*.
+An association connects 'dbl_SwitchCase' and 'dbl_Expression'. From 'dbl_SwitchCase', the role 'dbl_SwitchCase129' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression130' has cardinality 0..*.
+An association connects 'dbl_SwitchCase' and 'dbl_Statement'. From 'dbl_SwitchCase', the role 'dbl_SwitchCase132' has cardinality 0..*, and from 'dbl_Statement', the role 'dbl_Statement133' has cardinality 0..*.
+An association connects 'dbl_BinaryOperator' and 'dbl_Expression'. From 'dbl_BinaryOperator', the role 'dbl_BinaryOperator' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression135' has cardinality 0..*.
+An association connects 'dbl_Expression' and 'dbl_BinaryOperator'. From 'dbl_Expression', the role 'dbl_Expression138' has cardinality 0..*, and from 'dbl_BinaryOperator', the role 'dbl_BinaryOperator137' has cardinality 0..*.
+An association connects 'dbl_UnaryOperator' and 'dbl_Expression'. From 'dbl_UnaryOperator', the role 'dbl_UnaryOperator' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression140' has cardinality 0..*.
+An association connects 'dbl_ExpandExpr' and 'dbl_Expression'. From 'dbl_ExpandExpr', the role 'dbl_ExpandExpr142' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression143' has cardinality 0..*.
+An association connects 'dbl_Construct' and 'dbl_ParseExpr'. From 'dbl_Construct', the role 'dbl_Construct145' has cardinality 0..*, and from 'dbl_ParseExpr', the role 'dbl_ParseExpr' has cardinality 0..*.
+An association connects 'dbl_IdExpr' and 'dbl_IdExpr'. From 'dbl_IdExpr', the role 'dbl_IdExpr146' has cardinality 0..*, and from 'dbl_IdExpr', the role 'dbl_IdExpr148' has cardinality 0..*.
+An association connects 'dbl_IdExpr' and 'dbl_NamedElement'. From 'dbl_IdExpr', the role 'dbl_IdExpr150' has cardinality 0..*, and from 'dbl_NamedElement', the role 'dbl_NamedElement' has cardinality 0..*.
+An association connects 'dbl_PredefinedId' and 'dbl_IdExpr'. From 'dbl_PredefinedId', the role 'dbl_PredefinedId' has cardinality 0..*, and from 'dbl_IdExpr', the role 'dbl_IdExpr152' has cardinality 0..*.
+An association connects 'dbl_IdExpr' and 'dbl_Expression'. From 'dbl_IdExpr', the role 'dbl_IdExpr154' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression155' has cardinality 0..*.
+An association connects 'dbl_IdExpr' and 'dbl_CallPart'. From 'dbl_IdExpr', the role 'dbl_IdExpr157' has cardinality 0..*, and from 'dbl_CallPart', the role 'dbl_CallPart' has cardinality 0..*.
+An association connects 'dbl_Expression' and 'dbl_CallPart'. From 'dbl_Expression', the role 'dbl_Expression160' has cardinality 0..*, and from 'dbl_CallPart', the role 'dbl_CallPart159' has cardinality 0..*.
+An association connects 'dbl_ElementAccess' and 'dbl_IdExpr'. From 'dbl_ElementAccess', the role 'dbl_ElementAccess' has cardinality 0..*, and from 'dbl_IdExpr', the role 'dbl_IdExpr162' has cardinality 0..*.
+An association connects 'dbl_ExtensionDefinition' and 'dbl_LanguageConceptClassifier'. From 'dbl_ExtensionDefinition', the role 'dbl_ExtensionDefinition164' has cardinality 0..*, and from 'dbl_LanguageConceptClassifier', the role 'dbl_LanguageConceptClassifier' has cardinality 0..*.
+An association connects 'dbl_Class' and 'dbl_ExtensionDefinition'. From 'dbl_Class', the role 'dbl_Class167' has cardinality 0..*, and from 'dbl_ExtensionDefinition', the role 'dbl_ExtensionDefinition166' has cardinality 0..*.
+An association connects 'dbl_TextualSyntaxDef' and 'dbl_ExtensionDefinition'. From 'dbl_TextualSyntaxDef', the role 'dbl_TextualSyntaxDef' has cardinality 0..*, and from 'dbl_ExtensionDefinition', the role 'dbl_ExtensionDefinition169' has cardinality 0..*.
+An association connects 'dbl_ExtensionDefinition' and 'dbl_ExtensionSemanticsDefinition'. From 'dbl_ExtensionDefinition', the role 'dbl_ExtensionDefinition172' has cardinality 0..*, and from 'dbl_ExtensionSemanticsDefinition', the role 'dbl_ExtensionSemanticsDefinition171' has cardinality 0..*.
+An association connects 'dbl_TsRule' and 'dbl_TextualSyntaxDef'. From 'dbl_TsRule', the role 'dbl_TsRule' has cardinality 0..*, and from 'dbl_TextualSyntaxDef', the role 'dbl_TextualSyntaxDef174' has cardinality 0..*.
+An association connects 'dbl_TsRule' and 'dbl_TextualSyntaxDef'. From 'dbl_TsRule', the role 'dbl_TsRule177' has cardinality 0..*, and from 'dbl_TextualSyntaxDef', the role 'dbl_TextualSyntaxDef176' has cardinality 0..*.
+An association connects 'dbl_RhsExpression' and 'dbl_TsRule'. From 'dbl_RhsExpression', the role 'dbl_RhsExpression' has cardinality 0..*, and from 'dbl_TsRule', the role 'dbl_TsRule179' has cardinality 0..*.
+An association connects 'dbl_RhsExpression' and 'dbl_SequenceExpr'. From 'dbl_RhsExpression', the role 'dbl_RhsExpression181' has cardinality 0..*, and from 'dbl_SequenceExpr', the role 'dbl_SequenceExpr' has cardinality 0..*.
+An association connects 'dbl_PropertyBindingExpr' and 'dbl_PropertyType'. From 'dbl_PropertyBindingExpr', the role 'dbl_PropertyBindingExpr' has cardinality 0..*, and from 'dbl_PropertyType', the role 'dbl_PropertyType' has cardinality 0..*.
+An association connects 'dbl_LanguageConstructClassifier' and 'dbl_RhsClassifierExpr'. From 'dbl_LanguageConstructClassifier', the role 'dbl_LanguageConstructClassifier' has cardinality 0..*, and from 'dbl_RhsClassifierExpr', the role 'dbl_RhsClassifierExpr' has cardinality 0..*.
+An association connects 'dbl_StructuredPropertyType' and 'dbl_LanguageConstructClassifier'. From 'dbl_StructuredPropertyType', the role 'dbl_StructuredPropertyType' has cardinality 0..*, and from 'dbl_LanguageConstructClassifier', the role 'dbl_LanguageConstructClassifier185' has cardinality 0..*.
+An association connects 'dbl_MetaExpr' and 'dbl_Expression'. From 'dbl_MetaExpr', the role 'dbl_MetaExpr' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression187' has cardinality 0..*.
+An association connects 'dbl_TargetStatement' and 'dbl_Statement'. From 'dbl_TargetStatement', the role 'dbl_TargetStatement' has cardinality 0..*, and from 'dbl_Statement', the role 'dbl_Statement189' has cardinality 0..*.
+An association connects 'dbl_ExpansionStatement' and 'dbl_ExpansionPart'. From 'dbl_ExpansionStatement', the role 'dbl_ExpansionStatement' has cardinality 0..*, and from 'dbl_ExpansionPart', the role 'dbl_ExpansionPart' has cardinality 0..*.
+An association connects 'dbl_ExpansionStatement' and 'dbl_Expression'. From 'dbl_ExpansionStatement', the role 'dbl_ExpansionStatement192' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression193' has cardinality 0..*.
+An association connects 'dbl_ExpandVariablePart' and 'dbl_Expression'. From 'dbl_ExpandVariablePart', the role 'dbl_ExpandVariablePart' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression195' has cardinality 0..*.
+An association connects 'dbl_Expression' and 'dbl_SetExpansionContextStatement'. From 'dbl_Expression', the role 'dbl_Expression197' has cardinality 0..*, and from 'dbl_SetExpansionContextStatement', the role 'dbl_SetExpansionContextStatement' has cardinality 0..*.
+An association connects 'dbl_SaveGenStatement' and 'dbl_Expression'. From 'dbl_SaveGenStatement', the role 'dbl_SaveGenStatement' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression199' has cardinality 0..*.
+An association connects 'dbl_ResumeGenStatement' and 'dbl_Expression'. From 'dbl_ResumeGenStatement', the role 'dbl_ResumeGenStatement' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression201' has cardinality 0..*.
+An association connects 'dbl_ExpandExpression' and 'dbl_Expression'. From 'dbl_ExpandExpression', the role 'dbl_ExpandExpression' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression203' has cardinality 0..*.
+An association connects 'dbl_Expression' and 'dbl_ExpandStatement'. From 'dbl_Expression', the role 'dbl_Expression205' has cardinality 0..*, and from 'dbl_ExpandStatement', the role 'dbl_ExpandStatement' has cardinality 0..*.
+An association connects 'dbl_ExpandStatement' and 'dbl_Expression'. From 'dbl_ExpandStatement', the role 'dbl_ExpandStatement207' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression208' has cardinality 0..*.
+An association connects 'dbl_QuotedCode' and 'dbl_CodeQuoteExpression'. From 'dbl_QuotedCode', the role 'dbl_QuotedCode' has cardinality 0..*, and from 'dbl_CodeQuoteExpression', the role 'dbl_CodeQuoteExpression' has cardinality 0..*.
+An association connects 'dbl_QuotedExpression' and 'dbl_Expression'. From 'dbl_QuotedExpression', the role 'dbl_QuotedExpression' has cardinality 0..*, and from 'dbl_Expression', the role 'dbl_Expression211' has cardinality 0..*.
+An association connects 'dbl_Statement' and 'dbl_QuotedStatements'. From 'dbl_Statement', the role 'dbl_Statement213' has cardinality 0..*, and from 'dbl_QuotedStatements', the role 'dbl_QuotedStatements' has cardinality 0..*.
+An association connects 'dbl_Pattern' and 'dbl_Parameter'. From 'dbl_Pattern', the role 'dbl_Pattern' has cardinality 0..*, and from 'dbl_Parameter', the role 'dbl_Parameter215' has cardinality 0..*.
+An association connects 'dbl_Statement' and 'dbl_Pattern'. From 'dbl_Statement', the role 'dbl_Statement218' has cardinality 0..*, and from 'dbl_Pattern', the role 'dbl_Pattern217' has cardinality 0..*.

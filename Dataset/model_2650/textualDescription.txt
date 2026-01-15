@@ -1,0 +1,98 @@
+The domain model 'UML2' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'UML2_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ExecutionEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Interaction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_UseCase' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ProtocolStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Collaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Stereotype' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Device' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'UML2_StateMachine' is a specialization of 'Behavior'.
+The class 'UML2_Collaboration' is a specialization of 'BehavioredClassifier'.
+The class 'UML2_ProtocolStateMachine' is a specialization of 'StateMachine'.
+The class 'UML2_Stereotype' is a specialization of 'Class'.
+The class 'UML2_Device' is a specialization of 'Node'.
+The class 'UML2_Component' is a specialization of 'Class'.
+The class 'UML2_Node' is a specialization of 'Class'.
+The class 'UML2_ExecutionEnvironment' is a specialization of 'Node'.
+The class 'UML2_Class' is a specialization of 'BehavioredClassifier'.
+The class 'UML2_Operation' is a specialization of 'BehavioralFeature'.
+The class 'UML2_Reception' is a specialization of 'BehavioralFeature'.
+The class 'UML2_Interaction' is a specialization of 'Behavior'.
+The class 'UML2_Activity' is a specialization of 'Behavior'.
+The class 'UML2_AssociationClass' is a specialization of 'Class'.
+The class 'UML2_UseCase' is a specialization of 'BehavioredClassifier'.
+The class 'UML2_Behavior' is a specialization of 'Class'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML2_BehavioralFeature' and 'UML2_Behavior'. From 'UML2_BehavioralFeature', the role 'UML2_BehavioralFeature' has cardinality 0..*, and from 'UML2_Behavior', the role 'UML2_Behavior' has cardinality 0..*.
+An association connects 'UML2_BehavioredClassifier' and 'UML2_Behavior'. From 'UML2_BehavioredClassifier', the role 'UML2_BehavioredClassifier' has cardinality 0..*, and from 'UML2_Behavior', the role 'UML2_Behavior2' has cardinality 0..*.
+An association connects 'UML2_Behavior' and 'UML2_BehavioredClassifier'. From 'UML2_Behavior', the role 'UML2_Behavior5' has cardinality 0..*, and from 'UML2_BehavioredClassifier', the role 'UML2_BehavioredClassifier4' has cardinality 0..*.

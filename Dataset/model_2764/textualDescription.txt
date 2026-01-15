@@ -1,0 +1,29 @@
+The domain model 'tests' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'tests_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'tests_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tests_TypeB' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'tests_TypeA' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'tests_TypeA' is a specialization of 'Named'.
+The class 'tests_TypeB' is a specialization of 'Named'.
+The class 'tests_Root' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tests_TypeB' and 'tests_TypeA'. From 'tests_TypeB', the role 'tests_TypeB' has cardinality 0..*, and from 'tests_TypeA', the role 'tests_TypeA' has cardinality 0..*.
+An association connects 'tests_TypeA' and 'tests_TypeB'. From 'tests_TypeA', the role 'tests_TypeA3' has cardinality 0..*, and from 'tests_TypeB', the role 'tests_TypeB2' has cardinality 0..*.
+An association connects 'tests_TypeA' and 'tests_Root'. From 'tests_TypeA', the role 'tests_TypeA5' has cardinality 0..*, and from 'tests_Root', the role 'tests_Root' has cardinality 0..*.
+An association connects 'tests_TypeB' and 'tests_Root'. From 'tests_TypeB', the role 'tests_TypeB8' has cardinality 0..*, and from 'tests_Root', the role 'tests_Root7' has cardinality 0..*.
