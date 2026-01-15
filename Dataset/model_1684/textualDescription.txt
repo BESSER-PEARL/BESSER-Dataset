@@ -1,0 +1,69 @@
+The domain model 'relationpattern' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'TargetNode' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'relationpattern_World' represents an important domain concept.
+It does not declare any attributes.
+
+'relationpattern_ThingA' represents an important domain concept.
+It has one attribute: 'since', which is of type date.
+
+'SourceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Category' represents an important domain concept.
+It does not declare any attributes.
+
+'relationpattern_Category' represents an important domain concept.
+It has one attribute: 'nom', which is of type str.
+
+'relationpattern_SourceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'relationpattern_ThingB' represents an important domain concept.
+It has one attribute: 'step', which is of type str.
+
+'relationpattern_RelatedTo' represents an important domain concept.
+It does not declare any attributes.
+
+'relationpattern_Arrow' represents an important domain concept.
+It does not declare any attributes.
+
+'relationpattern_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'relationpattern_TargetNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Arrow' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Scale' defines the following possible values: 'four', 'one', 'nothing', 'three', 'two'.
+
+The model also captures inheritance relationships between classes.
+The class 'relationpattern_ThingA' is a specialization of 'SourceNode'.
+The class 'relationpattern_ThingA' is a specialization of 'NamedElement'.
+The class 'relationpattern_ThingB' is a specialization of 'TargetNode'.
+The class 'relationpattern_ThingB' is a specialization of 'NamedElement'.
+The class 'relationpattern_RelatedTo' is a specialization of 'Arrow'.
+The class 'relationpattern_RelatedTo' is a specialization of 'NamedElement'.
+The class 'relationpattern_World' is a specialization of 'Category'.
+
+Relationships between classes are modeled using associations.
+An association connects 'relationpattern_RelatedTo' and 'relationpattern_ThingA'. From 'relationpattern_RelatedTo', the role 'relationpattern_RelatedTo' has cardinality 0..*, and from 'relationpattern_ThingA', the role 'relationpattern_ThingA' has cardinality 0..*.
+An association connects 'relationpattern_RelatedTo' and 'relationpattern_ThingB'. From 'relationpattern_RelatedTo', the role 'relationpattern_RelatedTo2' has cardinality 0..*, and from 'relationpattern_ThingB', the role 'relationpattern_ThingB' has cardinality 0..*.
+An association connects 'relationpattern_World' and 'relationpattern_ThingA'. From 'relationpattern_World', the role 'relationpattern_World' has cardinality 0..*, and from 'relationpattern_ThingA', the role 'relationpattern_ThingA4' has cardinality 0..*.
+An association connects 'relationpattern_World' and 'relationpattern_ThingB'. From 'relationpattern_World', the role 'relationpattern_World6' has cardinality 0..*, and from 'relationpattern_ThingB', the role 'relationpattern_ThingB7' has cardinality 0..*.
+An association connects 'relationpattern_RelatedTo' and 'relationpattern_World'. From 'relationpattern_RelatedTo', the role 'relationpattern_RelatedTo10' has cardinality 0..*, and from 'relationpattern_World', the role 'relationpattern_World9' has cardinality 0..*.
+An association connects 'relationpattern_Arrow' and 'relationpattern_SourceNode'. From 'relationpattern_Arrow', the role 'relationpattern_Arrow' has cardinality 0..*, and from 'relationpattern_SourceNode', the role 'relationpattern_SourceNode' has cardinality 0..*.
+An association connects 'relationpattern_Arrow' and 'relationpattern_TargetNode'. From 'relationpattern_Arrow', the role 'relationpattern_Arrow13' has cardinality 0..*, and from 'relationpattern_TargetNode', the role 'relationpattern_TargetNode' has cardinality 0..*.
+An association connects 'relationpattern_SourceNode' and 'relationpattern_Category'. From 'relationpattern_SourceNode', the role 'relationpattern_SourceNode15' has cardinality 0..*, and from 'relationpattern_Category', the role 'relationpattern_Category' has cardinality 0..*.
+An association connects 'relationpattern_Arrow' and 'relationpattern_Category'. From 'relationpattern_Arrow', the role 'relationpattern_Arrow18' has cardinality 0..*, and from 'relationpattern_Category', the role 'relationpattern_Category17' has cardinality 0..*.
+An association connects 'relationpattern_TargetNode' and 'relationpattern_Category'. From 'relationpattern_TargetNode', the role 'relationpattern_TargetNode21' has cardinality 0..*, and from 'relationpattern_Category', the role 'relationpattern_Category20' has cardinality 0..*.

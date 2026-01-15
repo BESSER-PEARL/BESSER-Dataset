@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/patrickneubauer/XMLIntellEdit/source/at.ac.tuwien.big.xmltext/examples/library3simple.ecore

@@ -1,0 +1,70 @@
+The domain model 'yyk' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'yyk_Alias' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'yyk_Baz' represents an important domain concept.
+It has one attribute: 'zig', which is of type str.
+
+'yyk_Base' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'yyk_Zing' represents an important domain concept.
+It does not declare any attributes.
+
+'yyk_Relation' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'yyk_Bouz' represents an important domain concept.
+It has one attribute: 'bil', which is of type str.
+
+'yyk_Rel' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'yyk_Boul' represents an important domain concept.
+It has one attribute: 'hi', which is of type str.
+
+'yyk_Foo' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'yyk_Bar' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Baz' represents an important domain concept.
+It does not declare any attributes.
+
+'yyk_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'yyk_Output' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'yyk_Base' is a specialization of 'NamedElement'.
+The class 'yyk_Relation' is a specialization of 'NamedElement'.
+The class 'yyk_Baz' is a specialization of 'NamedElement'.
+The class 'yyk_Bouz' is a specialization of 'Baz'.
+The class 'yyk_Boul' is a specialization of 'Baz'.
+The class 'yyk_Zing' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'yyk_Base' and 'yyk_Relation'. From 'yyk_Base', the role 'unnamed role' has cardinality 0..*, and from 'yyk_Relation', the role '1' has cardinality 0..*.
+An association connects 'yyk_Foo' and 'yyk_Base'. From 'yyk_Foo', the role 'yyk_Foo' has cardinality 0..*, and from 'yyk_Base', the role 'yyk_Base' has cardinality 0..*.
+An association connects 'yyk_Output' and 'yyk_Base'. From 'yyk_Output', the role 'yyk_Output' has cardinality 0..*, and from 'yyk_Base', the role 'yyk_Base4' has cardinality 0..*.
+An association connects 'yyk_Baz' and 'yyk_Base'. From 'yyk_Baz', the role 'yyk_Baz' has cardinality 0..*, and from 'yyk_Base', the role 'yyk_Base6' has cardinality 0..*.
+An association connects 'yyk_NamedElement' and 'yyk_Alias'. From 'yyk_NamedElement', the role 'yyk_NamedElement' has cardinality 0..*, and from 'yyk_Alias', the role 'yyk_Alias' has cardinality 0..*.
+An association connects 'yyk_Bar' and 'yyk_NamedElement'. From 'yyk_Bar', the role 'yyk_Bar' has cardinality 0..*, and from 'yyk_NamedElement', the role 'yyk_NamedElement9' has cardinality 0..*.
+An association connects 'yyk_NamedElement' and 'yyk_Rel'. From 'yyk_NamedElement', the role 'yyk_NamedElement11' has cardinality 0..*, and from 'yyk_Rel', the role 'yyk_Rel' has cardinality 0..*.
+An association connects 'yyk_Base' and 'yyk_Relation'. From 'yyk_Base', the role '14' has cardinality 0..*, and from 'yyk_Relation', the role '13' has cardinality 0..*.
+An association connects 'yyk_NamedElement' and 'yyk_Relation'. From 'yyk_NamedElement', the role 'yyk_NamedElement16' has cardinality 0..*, and from 'yyk_Relation', the role 'yyk_Relation' has cardinality 0..*.
+An association connects 'yyk_Relation' and 'yyk_Relation'. From 'yyk_Relation', the role 'yyk_Relation19' has cardinality 0..*, and from 'yyk_Relation', the role 'yyk_Relation17' has cardinality 0..*.
+An association connects 'yyk_Bar' and 'yyk_Output'. From 'yyk_Bar', the role 'yyk_Bar21' has cardinality 0..*, and from 'yyk_Output', the role 'yyk_Output22' has cardinality 0..*.
+An association connects 'yyk_Rel' and 'yyk_NamedElement'. From 'yyk_Rel', the role 'yyk_Rel24' has cardinality 0..*, and from 'yyk_NamedElement', the role 'yyk_NamedElement25' has cardinality 0..*.
+An association connects 'yyk_Relation' and 'yyk_Rel'. From 'yyk_Relation', the role 'yyk_Relation28' has cardinality 0..*, and from 'yyk_Rel', the role 'yyk_Rel27' has cardinality 0..*.
+An association connects 'yyk_Zing' and 'yyk_Baz'. From 'yyk_Zing', the role 'yyk_Zing' has cardinality 0..*, and from 'yyk_Baz', the role 'yyk_Baz30' has cardinality 0..*.
+An association connects 'yyk_Zing' and 'yyk_Bouz'. From 'yyk_Zing', the role 'yyk_Zing32' has cardinality 0..*, and from 'yyk_Bouz', the role 'yyk_Bouz' has cardinality 0..*.

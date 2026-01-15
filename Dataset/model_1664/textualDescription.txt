@@ -1,0 +1,32 @@
+The domain model 'rel2rel' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'rel2rel_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'rel2rel_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'rel2rel_World' represents an important domain concept.
+It does not declare any attributes.
+
+'rel2rel_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Thing' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'rel2rel_Thing' is a specialization of 'NamedElement'.
+The class 'rel2rel_RelatedTo' is a specialization of 'Thing'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rel2rel_World' and 'rel2rel_Thing'. From 'rel2rel_World', the role 'rel2rel_World' has cardinality 0..*, and from 'rel2rel_Thing', the role 'rel2rel_Thing' has cardinality 0..*.
+An association connects 'rel2rel_RelatedTo' and 'rel2rel_Thing'. From 'rel2rel_RelatedTo', the role 'RelatedTo' has cardinality 0..*, and from 'rel2rel_Thing', the role 'fromThing' has cardinality 0..*.
+An association connects 'rel2rel_RelatedTo' and 'rel2rel_Thing'. From 'rel2rel_RelatedTo', the role 'relations' has cardinality 0..*, and from 'rel2rel_Thing', the role 'Thing' has cardinality 0..*.
+An association connects 'rel2rel_Thing' and 'rel2rel_RelatedTo'. From 'rel2rel_Thing', the role 'rel2rel_Thing4' has cardinality 0..*, and from 'rel2rel_RelatedTo', the role 'rel2rel_RelatedTo' has cardinality 0..*.
+An association connects 'rel2rel_RelatedTo' and 'rel2rel_RelatedTo'. From 'rel2rel_RelatedTo', the role 'rel2rel_RelatedTo7' has cardinality 0..*, and from 'rel2rel_RelatedTo', the role 'rel2rel_RelatedTo5' has cardinality 0..*.

@@ -1,0 +1,70 @@
+The domain model 'yyh' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'yyh_Bar' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Baz' represents an important domain concept.
+It does not declare any attributes.
+
+'yyh_Bouz' represents an important domain concept.
+It has one attribute: 'bil', which is of type str.
+
+'yyh_Baz' represents an important domain concept.
+It has one attribute: 'zig', which is of type str.
+
+'yyh_Alias' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'yyh_Boul' represents an important domain concept.
+It has one attribute: 'hi', which is of type str.
+
+'yyh_Output' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'yyh_Boz' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'yyh_Zing' represents an important domain concept.
+It does not declare any attributes.
+
+'yyh_Rel' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'yyh_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'yyh_Base' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'yyh_Foo' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'yyh_Base' is a specialization of 'NamedElement'.
+The class 'yyh_Boz' is a specialization of 'NamedElement'.
+The class 'yyh_Baz' is a specialization of 'NamedElement'.
+The class 'yyh_Bouz' is a specialization of 'Baz'.
+The class 'yyh_Boul' is a specialization of 'Baz'.
+The class 'yyh_Zing' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'yyh_Boz' and 'yyh_Base'. From 'yyh_Boz', the role 'Boz' has cardinality 0..*, and from 'yyh_Base', the role 'fromThing' has cardinality 0..*.
+An association connects 'yyh_Foo' and 'yyh_Base'. From 'yyh_Foo', the role 'yyh_Foo' has cardinality 0..*, and from 'yyh_Base', the role 'yyh_Base' has cardinality 0..*.
+An association connects 'yyh_Base' and 'yyh_Output'. From 'yyh_Base', the role 'yyh_Base3' has cardinality 0..*, and from 'yyh_Output', the role 'yyh_Output' has cardinality 0..*.
+An association connects 'yyh_Base' and 'yyh_Baz'. From 'yyh_Base', the role 'yyh_Base5' has cardinality 0..*, and from 'yyh_Baz', the role 'yyh_Baz' has cardinality 0..*.
+An association connects 'yyh_Alias' and 'yyh_NamedElement'. From 'yyh_Alias', the role 'yyh_Alias' has cardinality 0..*, and from 'yyh_NamedElement', the role 'yyh_NamedElement' has cardinality 0..*.
+An association connects 'yyh_NamedElement' and 'yyh_Bar'. From 'yyh_NamedElement', the role 'yyh_NamedElement8' has cardinality 0..*, and from 'yyh_Bar', the role 'yyh_Bar' has cardinality 0..*.
+An association connects 'yyh_NamedElement' and 'yyh_Rel'. From 'yyh_NamedElement', the role 'yyh_NamedElement10' has cardinality 0..*, and from 'yyh_Rel', the role 'yyh_Rel' has cardinality 0..*.
+An association connects 'yyh_Base' and 'yyh_Boz'. From 'yyh_Base', the role 'Base' has cardinality 0..*, and from 'yyh_Boz', the role 'relations' has cardinality 0..*.
+An association connects 'yyh_Boz' and 'yyh_NamedElement'. From 'yyh_Boz', the role 'yyh_Boz' has cardinality 0..*, and from 'yyh_NamedElement', the role 'yyh_NamedElement13' has cardinality 0..*.
+An association connects 'yyh_Boz' and 'yyh_Boz'. From 'yyh_Boz', the role 'yyh_Boz14' has cardinality 0..*, and from 'yyh_Boz', the role 'yyh_Boz16' has cardinality 0..*.
+An association connects 'yyh_Output' and 'yyh_Bar'. From 'yyh_Output', the role 'yyh_Output19' has cardinality 0..*, and from 'yyh_Bar', the role 'yyh_Bar18' has cardinality 0..*.
+An association connects 'yyh_Rel' and 'yyh_NamedElement'. From 'yyh_Rel', the role 'yyh_Rel21' has cardinality 0..*, and from 'yyh_NamedElement', the role 'yyh_NamedElement22' has cardinality 0..*.
+An association connects 'yyh_Boz' and 'yyh_Rel'. From 'yyh_Boz', the role 'yyh_Boz25' has cardinality 0..*, and from 'yyh_Rel', the role 'yyh_Rel24' has cardinality 0..*.
+An association connects 'yyh_Zing' and 'yyh_Baz'. From 'yyh_Zing', the role 'yyh_Zing' has cardinality 0..*, and from 'yyh_Baz', the role 'yyh_Baz27' has cardinality 0..*.
+An association connects 'yyh_Bouz' and 'yyh_Zing'. From 'yyh_Bouz', the role 'yyh_Bouz' has cardinality 0..*, and from 'yyh_Zing', the role 'yyh_Zing29' has cardinality 0..*.

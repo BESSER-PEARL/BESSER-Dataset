@@ -1,0 +1,132 @@
+The domain model 'graph' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'graph_GGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_GPort' represents an important domain concept.
+It does not declare any attributes.
+
+'GModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_GLabel' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'graph_GIssueMarker' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_GPoint' represents an important domain concept.
+It has the following attributes: 'y', which is of type float; 'x', which is of type float.
+
+'graph_GEdgeLayoutable' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_GLayouting' represents an important domain concept.
+It has one attribute: 'layout', which is of type str.
+
+'graph_GIssue' represents an important domain concept.
+It has the following attributes: 'severity', which is of type str; 'message', which is of type str.
+
+'GLayouting' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_GLayoutOptions' represents an important domain concept.
+It has the following attributes: 'hGap', which is of type str; 'minWidth', which is of type str; 'paddingFactor', which is of type str; 'paddingBottom', which is of type str; 'paddingLeft', which is of type str; 'hAlign', which is of type str; 'minHeight', which is of type str; 'resizeContainer', which is of type bool; 'vAlign', which is of type str; 'vGap', which is of type str; 'paddingTop', which is of type str; 'paddingRight', which is of type str.
+
+'graph_GEdge' represents an important domain concept.
+It has the following attributes: 'routerKind', which is of type str; 'targetId', which is of type str; 'sourceId', which is of type str.
+
+'graph_GBoundsAware' represents an important domain concept.
+It does not declare any attributes.
+
+'GAlignable' represents an important domain concept.
+It does not declare any attributes.
+
+'GShapeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'GBoundsAware' represents an important domain concept.
+It does not declare any attributes.
+
+'GEdgeLayoutable' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_GHtmlRoot' represents an important domain concept.
+It has one attribute: 'classes', which is of type str.
+
+'graph_GCompartment' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_GDimension' represents an important domain concept.
+It has the following attributes: 'height', which is of type float; 'width', which is of type float.
+
+'graph_GModelElement' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'cssClasses', which is of type str; 'trace', which is of type str; 'type', which is of type str.
+
+'graph_GBounds' represents an important domain concept.
+It has the following attributes: 'height', which is of type float; 'y', which is of type float; 'x', which is of type float; 'width', which is of type float.
+
+'graph_GNode' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_GModelRoot' represents an important domain concept.
+It has one attribute: 'revision', which is of type int.
+
+'graph_GPreRenderedElement' represents an important domain concept.
+It has one attribute: 'code', which is of type str.
+
+'GModelRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_GEdgePlacement' represents an important domain concept.
+It has the following attributes: 'offset', which is of type str; 'position', which is of type str; 'side', which is of type str; 'rotate', which is of type bool.
+
+'graph_GButton' represents an important domain concept.
+It has one attribute: 'enabled', which is of type bool.
+
+'graph_GAlignable' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_GShapeElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'GSeverity' defines the following possible values: 'warning', 'info', 'error'.
+
+The model also captures inheritance relationships between classes.
+The class 'graph_GShapeElement' is a specialization of 'GModelElement'.
+The class 'graph_GShapeElement' is a specialization of 'GBoundsAware'.
+The class 'graph_GGraph' is a specialization of 'GModelRoot'.
+The class 'graph_GGraph' is a specialization of 'GBoundsAware'.
+The class 'graph_GModelRoot' is a specialization of 'GModelElement'.
+The class 'graph_GNode' is a specialization of 'GShapeElement'.
+The class 'graph_GNode' is a specialization of 'GEdgeLayoutable'.
+The class 'graph_GNode' is a specialization of 'GLayouting'.
+The class 'graph_GEdge' is a specialization of 'GModelElement'.
+The class 'graph_GCompartment' is a specialization of 'GShapeElement'.
+The class 'graph_GCompartment' is a specialization of 'GLayouting'.
+The class 'graph_GLabel' is a specialization of 'GAlignable'.
+The class 'graph_GLabel' is a specialization of 'GEdgeLayoutable'.
+The class 'graph_GLabel' is a specialization of 'GShapeElement'.
+The class 'graph_GIssueMarker' is a specialization of 'GShapeElement'.
+The class 'graph_GPort' is a specialization of 'GShapeElement'.
+The class 'graph_GButton' is a specialization of 'GShapeElement'.
+The class 'graph_GHtmlRoot' is a specialization of 'GModelRoot'.
+The class 'graph_GPreRenderedElement' is a specialization of 'GModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'graph_GModelElement' and 'graph_GModelElement'. From 'graph_GModelElement', the role 'GModelElement' has cardinality 0..*, and from 'graph_GModelElement', the role 'parent' has cardinality 0..*.
+An association connects 'graph_GModelElement' and 'graph_GModelElement'. From 'graph_GModelElement', the role 'GModelElement4' has cardinality 0..*, and from 'graph_GModelElement', the role 'children' has cardinality 0..*.
+An association connects 'graph_GGraph' and 'graph_GLayoutOptions'. From 'graph_GGraph', the role 'graph_GGraph' has cardinality 0..*, and from 'graph_GLayoutOptions', the role 'graph_GLayoutOptions' has cardinality 0..*.
+An association connects 'graph_GBounds' and 'graph_GModelRoot'. From 'graph_GBounds', the role 'graph_GBounds' has cardinality 0..*, and from 'graph_GModelRoot', the role 'graph_GModelRoot' has cardinality 0..*.
+An association connects 'graph_GPoint' and 'graph_GEdge'. From 'graph_GPoint', the role 'graph_GPoint' has cardinality 0..*, and from 'graph_GEdge', the role 'graph_GEdge' has cardinality 0..*.
+An association connects 'graph_GModelElement' and 'graph_GEdge'. From 'graph_GModelElement', the role 'graph_GModelElement' has cardinality 0..*, and from 'graph_GEdge', the role 'graph_GEdge9' has cardinality 0..*.
+An association connects 'graph_GModelElement' and 'graph_GEdge'. From 'graph_GModelElement', the role 'graph_GModelElement12' has cardinality 0..*, and from 'graph_GEdge', the role 'graph_GEdge11' has cardinality 0..*.
+An association connects 'graph_GIssue' and 'graph_GIssueMarker'. From 'graph_GIssue', the role 'graph_GIssue' has cardinality 0..*, and from 'graph_GIssueMarker', the role 'graph_GIssueMarker' has cardinality 0..*.
+An association connects 'graph_GBoundsAware' and 'graph_GPoint'. From 'graph_GBoundsAware', the role 'graph_GBoundsAware' has cardinality 0..*, and from 'graph_GPoint', the role 'graph_GPoint15' has cardinality 0..*.
+An association connects 'graph_GBoundsAware' and 'graph_GDimension'. From 'graph_GBoundsAware', the role 'graph_GBoundsAware17' has cardinality 0..*, and from 'graph_GDimension', the role 'graph_GDimension' has cardinality 0..*.
+An association connects 'graph_GEdgeLayoutable' and 'graph_GEdgePlacement'. From 'graph_GEdgeLayoutable', the role 'graph_GEdgeLayoutable' has cardinality 0..*, and from 'graph_GEdgePlacement', the role 'graph_GEdgePlacement' has cardinality 0..*.
+An association connects 'graph_GLayouting' and 'graph_GLayoutOptions'. From 'graph_GLayouting', the role 'graph_GLayouting' has cardinality 0..*, and from 'graph_GLayoutOptions', the role 'graph_GLayoutOptions20' has cardinality 0..*.
+An association connects 'graph_GPoint' and 'graph_GAlignable'. From 'graph_GPoint', the role 'graph_GPoint22' has cardinality 0..*, and from 'graph_GAlignable', the role 'graph_GAlignable' has cardinality 0..*.

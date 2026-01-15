@@ -1,0 +1,45 @@
+The domain model 'simple200' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simple200_Transition' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'simple200_State' represents an important domain concept.
+It has the following attributes: 'activity', which is of type str; 'label', which is of type str; 'type', which is of type str.
+
+'simple200_Variable' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type str.
+
+'simple200_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simple200_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'simple200_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'Thing' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simple200_Thing' is a specialization of 'NamedElement'.
+The class 'simple200_RelatedTo' is a specialization of 'NamedElement'.
+The class 'simple200_Variable' is a specialization of 'Thing'.
+The class 'simple200_Transition' is a specialization of 'NamedElement'.
+The class 'simple200_State' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simple200_RelatedTo' and 'simple200_Thing'. From 'simple200_RelatedTo', the role 'RelatedTo' has cardinality 0..*, and from 'simple200_Thing', the role 'fromThing' has cardinality 0..*.
+An association connects 'simple200_RelatedTo' and 'simple200_Thing'. From 'simple200_RelatedTo', the role 'relations' has cardinality 0..*, and from 'simple200_Thing', the role 'Thing' has cardinality 0..*.
+An association connects 'simple200_Thing' and 'simple200_RelatedTo'. From 'simple200_Thing', the role 'simple200_Thing' has cardinality 0..*, and from 'simple200_RelatedTo', the role 'simple200_RelatedTo' has cardinality 0..*.
+An association connects 'simple200_State' and 'simple200_Transition'. From 'simple200_State', the role 'State' has cardinality 0..*, and from 'simple200_Transition', the role 'transitions' has cardinality 0..*.
+An association connects 'simple200_Transition' and 'simple200_State'. From 'simple200_Transition', the role 'simple200_Transition' has cardinality 0..*, and from 'simple200_State', the role 'simple200_State' has cardinality 0..*.
+An association connects 'simple200_State' and 'simple200_State'. From 'simple200_State', the role 'simple200_State5' has cardinality 0..*, and from 'simple200_State', the role 'simple200_State7' has cardinality 0..*.
+An association connects 'simple200_State' and 'simple200_State'. From 'simple200_State', the role 'simple200_State8' has cardinality 0..*, and from 'simple200_State', the role 'simple200_State10' has cardinality 0..*.
+An association connects 'simple200_Variable' and 'simple200_State'. From 'simple200_Variable', the role 'simple200_Variable' has cardinality 0..*, and from 'simple200_State', the role 'simple200_State12' has cardinality 0..*.
+An association connects 'simple200_State' and 'simple200_Transition'. From 'simple200_State', the role 'source' has cardinality 0..*, and from 'simple200_Transition', the role 'Transition' has cardinality 0..*.

@@ -1,0 +1,256 @@
+The domain model 'hlcorestructure' describes the core structural elements and their relationships within the system.
+
+The model defines 47 main class(es).
+
+'hlcorestructure_Declarations' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Sort' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_AnnotationGraphics' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_AnyObject' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_PnObject' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Coordinate' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Graphics' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Coordinate' represents an important domain concept.
+It has the following attributes: 'x', which is of type str; 'y', which is of type str.
+
+'hlcorestructure_Fill' represents an important domain concept.
+It has the following attributes: 'gradientcolor', which is of type str; 'color', which is of type str; 'image', which is of type str; 'gradientrotation', which is of type str.
+
+'hlcorestructure_RefPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Offset' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Name' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'Label' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_HLMarking' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_PetriNetDoc' represents an important domain concept.
+It has one attribute: 'xmlns', which is of type str.
+
+'hlcorestructure_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Term' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_ArcGraphics' represents an important domain concept.
+It does not declare any attributes.
+
+'PlaceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Dimension' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_PlaceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_HLAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'TransitionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'HLCoreAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_HLCoreAnnotation' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'hlcorestructure_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_TransitionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Position' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Line' represents an important domain concept.
+It has the following attributes: 'width', which is of type str; 'color', which is of type str; 'shape', which is of type str; 'style', which is of type str.
+
+'hlcorestructure_PetriNet' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'id', which is of type str.
+
+'Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Page' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_RefTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_NodeGraphics' represents an important domain concept.
+It does not declare any attributes.
+
+'PnObject' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_ToolInfo' represents an important domain concept.
+It has the following attributes: 'tool', which is of type str; 'formattedXMLBuffer', which is of type str; 'toolInfoGrammarURI', which is of type str; 'version', which is of type str.
+
+'hlcorestructure_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'hlcorestructure_Font' represents an important domain concept.
+It has the following attributes: 'rotation', which is of type str; 'weight', which is of type str; 'decoration', which is of type str; 'align', which is of type str; 'family', which is of type str; 'size', which is of type str; 'style', which is of type str.
+
+'Graphics' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'LineShape' defines the following possible values: 'CURVE', 'LINE'.
+The enumeration 'FontAlign' defines the following possible values: 'CENTER', 'RIGHT', 'LEFT'.
+The enumeration 'CSS2FontStyle' defines the following possible values: 'NORMAL', 'OBLIQUE', 'ITALIC'.
+The enumeration 'CSS2FontSize' defines the following possible values: 'XLARGE', 'XSMALL', 'MEDIUM', 'SMALL', 'XXLARGE', 'XXSMALL', 'LARGE'.
+The enumeration 'CSS2FontWeight' defines the following possible values: 'BOLDER', 'BOLD', 'LIGHTER', 'NORMAL'.
+The enumeration 'CSS2FontFamily' defines the following possible values: 'VERDANA', 'TREBUCHET', 'GEORGIA', 'TIMES', 'ARIAL'.
+The enumeration 'FontDecoration' defines the following possible values: 'LINETHROUGH', 'OVERLINE', 'UNDERLINE'.
+The enumeration 'LineStyle' defines the following possible values: 'DASH', 'DOT', 'SOLID'.
+The enumeration 'CSS2Color' defines the following possible values: 'OLIVE', 'AQUA', 'NAVY', 'PURPLE', 'ORANGE', 'RED', 'TEAL', 'GREEN', 'YELLOW', 'MAROON', 'GRAY', 'SILVER', 'FUCHSIA', 'LIME', 'BLACK', 'BLUE', 'WHITE'.
+The enumeration 'Gradient' defines the following possible values: 'HORIZONTAL', 'VERTICAL', 'DIAGONAL'.
+The enumeration 'PNType' defines the following possible values: 'SYMNET', 'PTNET', 'HLPN', 'COREMODEL'.
+
+The model also captures inheritance relationships between classes.
+The class 'hlcorestructure_Page' is a specialization of 'PnObject'.
+The class 'hlcorestructure_Name' is a specialization of 'Annotation'.
+The class 'hlcorestructure_NodeGraphics' is a specialization of 'Graphics'.
+The class 'hlcorestructure_Position' is a specialization of 'Coordinate'.
+The class 'hlcorestructure_Offset' is a specialization of 'Coordinate'.
+The class 'hlcorestructure_Dimension' is a specialization of 'Coordinate'.
+The class 'hlcorestructure_AnnotationGraphics' is a specialization of 'Graphics'.
+The class 'hlcorestructure_ArcGraphics' is a specialization of 'Graphics'.
+The class 'hlcorestructure_Arc' is a specialization of 'PnObject'.
+The class 'hlcorestructure_Node' is a specialization of 'PnObject'.
+The class 'hlcorestructure_PlaceNode' is a specialization of 'Node'.
+The class 'hlcorestructure_TransitionNode' is a specialization of 'Node'.
+The class 'hlcorestructure_Place' is a specialization of 'PlaceNode'.
+The class 'hlcorestructure_RefTransition' is a specialization of 'TransitionNode'.
+The class 'hlcorestructure_Transition' is a specialization of 'TransitionNode'.
+The class 'hlcorestructure_RefPlace' is a specialization of 'PlaceNode'.
+The class 'hlcorestructure_Attribute' is a specialization of 'Label'.
+The class 'hlcorestructure_Annotation' is a specialization of 'Label'.
+The class 'hlcorestructure_HLCoreAnnotation' is a specialization of 'Annotation'.
+The class 'hlcorestructure_Type' is a specialization of 'HLCoreAnnotation'.
+The class 'hlcorestructure_HLMarking' is a specialization of 'HLCoreAnnotation'.
+The class 'hlcorestructure_Condition' is a specialization of 'HLCoreAnnotation'.
+The class 'hlcorestructure_HLAnnotation' is a specialization of 'HLCoreAnnotation'.
+The class 'hlcorestructure_Declaration' is a specialization of 'HLCoreAnnotation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'hlcorestructure_PetriNet' and 'hlcorestructure_PetriNetDoc'. From 'hlcorestructure_PetriNet', the role 'PetriNet' has cardinality 0..*, and from 'hlcorestructure_PetriNetDoc', the role 'containerPetriNetDoc' has cardinality 0..*.
+An association connects 'hlcorestructure_PetriNet' and 'hlcorestructure_Page'. From 'hlcorestructure_PetriNet', the role 'containerPetriNet' has cardinality 0..*, and from 'hlcorestructure_Page', the role 'Page' has cardinality 0..*.
+An association connects 'hlcorestructure_Name' and 'hlcorestructure_PetriNet'. From 'hlcorestructure_Name', the role 'Name' has cardinality 0..*, and from 'hlcorestructure_PetriNet', the role 'containerNamePetriNet' has cardinality 0..*.
+An association connects 'hlcorestructure_PetriNet' and 'hlcorestructure_ToolInfo'. From 'hlcorestructure_PetriNet', the role 'containerPetriNet4' has cardinality 0..*, and from 'hlcorestructure_ToolInfo', the role 'ToolInfo' has cardinality 0..*.
+An association connects 'hlcorestructure_PetriNet' and 'hlcorestructure_PetriNetDoc'. From 'hlcorestructure_PetriNet', the role 'nets' has cardinality 0..*, and from 'hlcorestructure_PetriNetDoc', the role 'PetriNetDoc' has cardinality 0..*.
+An association connects 'hlcorestructure_Declaration' and 'hlcorestructure_PetriNet'. From 'hlcorestructure_Declaration', the role 'Declaration' has cardinality 0..*, and from 'hlcorestructure_PetriNet', the role 'containerDeclarationPetriNet' has cardinality 0..*.
+An association connects 'hlcorestructure_PnObject' and 'hlcorestructure_Page'. From 'hlcorestructure_PnObject', the role 'PnObject' has cardinality 0..*, and from 'hlcorestructure_Page', the role 'containerPage' has cardinality 0..*.
+An association connects 'hlcorestructure_Page' and 'hlcorestructure_PetriNet'. From 'hlcorestructure_Page', the role 'pages' has cardinality 0..*, and from 'hlcorestructure_PetriNet', the role 'PetriNet9' has cardinality 0..*.
+An association connects 'hlcorestructure_Page' and 'hlcorestructure_NodeGraphics'. From 'hlcorestructure_Page', the role 'containerPage11' has cardinality 0..*, and from 'hlcorestructure_NodeGraphics', the role 'NodeGraphics' has cardinality 0..*.
+An association connects 'hlcorestructure_Declaration' and 'hlcorestructure_Page'. From 'hlcorestructure_Declaration', the role 'Declaration13' has cardinality 0..*, and from 'hlcorestructure_Page', the role 'containerDeclarationPage' has cardinality 0..*.
+An association connects 'hlcorestructure_PnObject' and 'hlcorestructure_Name'. From 'hlcorestructure_PnObject', the role 'containerNamePnObject' has cardinality 0..*, and from 'hlcorestructure_Name', the role 'Name15' has cardinality 0..*.
+An association connects 'hlcorestructure_PnObject' and 'hlcorestructure_ToolInfo'. From 'hlcorestructure_PnObject', the role 'containerPnObject' has cardinality 0..*, and from 'hlcorestructure_ToolInfo', the role 'ToolInfo17' has cardinality 0..*.
+An association connects 'hlcorestructure_Page' and 'hlcorestructure_PnObject'. From 'hlcorestructure_Page', the role 'Page19' has cardinality 0..*, and from 'hlcorestructure_PnObject', the role 'objects' has cardinality 0..*.
+An association connects 'hlcorestructure_PetriNet' and 'hlcorestructure_Name'. From 'hlcorestructure_PetriNet', the role 'PetriNet21' has cardinality 0..*, and from 'hlcorestructure_Name', the role 'name' has cardinality 0..*.
+An association connects 'hlcorestructure_Name' and 'hlcorestructure_PnObject'. From 'hlcorestructure_Name', the role 'name23' has cardinality 0..*, and from 'hlcorestructure_PnObject', the role 'PnObject24' has cardinality 0..*.
+An association connects 'hlcorestructure_PetriNet' and 'hlcorestructure_ToolInfo'. From 'hlcorestructure_PetriNet', the role 'PetriNet26' has cardinality 0..*, and from 'hlcorestructure_ToolInfo', the role 'toolspecifics' has cardinality 0..*.
+An association connects 'hlcorestructure_ToolInfo' and 'hlcorestructure_PnObject'. From 'hlcorestructure_ToolInfo', the role 'toolspecifics28' has cardinality 0..*, and from 'hlcorestructure_PnObject', the role 'PnObject29' has cardinality 0..*.
+An association connects 'hlcorestructure_ToolInfo' and 'hlcorestructure_Label'. From 'hlcorestructure_ToolInfo', the role 'toolspecifics31' has cardinality 0..*, and from 'hlcorestructure_Label', the role 'Label' has cardinality 0..*.
+An association connects 'hlcorestructure_ToolInfo' and 'hlcorestructure_AnyObject'. From 'hlcorestructure_ToolInfo', the role 'containerToolInfo' has cardinality 0..*, and from 'hlcorestructure_AnyObject', the role 'AnyObject' has cardinality 0..*.
+An association connects 'hlcorestructure_Label' and 'hlcorestructure_ToolInfo'. From 'hlcorestructure_Label', the role 'containerLabel' has cardinality 0..*, and from 'hlcorestructure_ToolInfo', the role 'ToolInfo34' has cardinality 0..*.
+An association connects 'hlcorestructure_NodeGraphics' and 'hlcorestructure_Position'. From 'hlcorestructure_NodeGraphics', the role 'containerPNodeGraphics' has cardinality 0..*, and from 'hlcorestructure_Position', the role 'Position' has cardinality 0..*.
+An association connects 'hlcorestructure_Dimension' and 'hlcorestructure_NodeGraphics'. From 'hlcorestructure_Dimension', the role 'Dimension' has cardinality 0..*, and from 'hlcorestructure_NodeGraphics', the role 'containerDNodeGraphics' has cardinality 0..*.
+An association connects 'hlcorestructure_Fill' and 'hlcorestructure_NodeGraphics'. From 'hlcorestructure_Fill', the role 'Fill' has cardinality 0..*, and from 'hlcorestructure_NodeGraphics', the role 'containerNodeGraphics' has cardinality 0..*.
+An association connects 'hlcorestructure_NodeGraphics' and 'hlcorestructure_Line'. From 'hlcorestructure_NodeGraphics', the role 'containerNodeGraphics39' has cardinality 0..*, and from 'hlcorestructure_Line', the role 'Line' has cardinality 0..*.
+An association connects 'hlcorestructure_Node' and 'hlcorestructure_NodeGraphics'. From 'hlcorestructure_Node', the role 'Node' has cardinality 0..*, and from 'hlcorestructure_NodeGraphics', the role 'nodegraphics' has cardinality 0..*.
+An association connects 'hlcorestructure_Page' and 'hlcorestructure_NodeGraphics'. From 'hlcorestructure_Page', the role 'Page43' has cardinality 0..*, and from 'hlcorestructure_NodeGraphics', the role 'nodegraphics42' has cardinality 0..*.
+An association connects 'hlcorestructure_ArcGraphics' and 'hlcorestructure_Position'. From 'hlcorestructure_ArcGraphics', the role 'ArcGraphics' has cardinality 0..*, and from 'hlcorestructure_Position', the role 'positions' has cardinality 0..*.
+An association connects 'hlcorestructure_Position' and 'hlcorestructure_NodeGraphics'. From 'hlcorestructure_Position', the role 'position' has cardinality 0..*, and from 'hlcorestructure_NodeGraphics', the role 'NodeGraphics46' has cardinality 0..*.
+An association connects 'hlcorestructure_Offset' and 'hlcorestructure_AnnotationGraphics'. From 'hlcorestructure_Offset', the role 'offset' has cardinality 0..*, and from 'hlcorestructure_AnnotationGraphics', the role 'AnnotationGraphics' has cardinality 0..*.
+An association connects 'hlcorestructure_NodeGraphics' and 'hlcorestructure_Dimension'. From 'hlcorestructure_NodeGraphics', the role 'NodeGraphics49' has cardinality 0..*, and from 'hlcorestructure_Dimension', the role 'dimension' has cardinality 0..*.
+An association connects 'hlcorestructure_AnnotationGraphics' and 'hlcorestructure_Offset'. From 'hlcorestructure_AnnotationGraphics', the role 'containerAnnotationGraphics' has cardinality 0..*, and from 'hlcorestructure_Offset', the role 'Offset' has cardinality 0..*.
+An association connects 'hlcorestructure_Fill' and 'hlcorestructure_AnnotationGraphics'. From 'hlcorestructure_Fill', the role 'Fill53' has cardinality 0..*, and from 'hlcorestructure_AnnotationGraphics', the role 'containerAnnotationGraphics52' has cardinality 0..*.
+An association connects 'hlcorestructure_AnnotationGraphics' and 'hlcorestructure_Line'. From 'hlcorestructure_AnnotationGraphics', the role 'containerAnnotationGraphics55' has cardinality 0..*, and from 'hlcorestructure_Line', the role 'Line56' has cardinality 0..*.
+An association connects 'hlcorestructure_AnnotationGraphics' and 'hlcorestructure_Font'. From 'hlcorestructure_AnnotationGraphics', the role 'containerAnnotationGraphics58' has cardinality 0..*, and from 'hlcorestructure_Font', the role 'Font' has cardinality 0..*.
+An association connects 'hlcorestructure_AnnotationGraphics' and 'hlcorestructure_Annotation'. From 'hlcorestructure_AnnotationGraphics', the role 'annotationgraphics' has cardinality 0..*, and from 'hlcorestructure_Annotation', the role 'Annotation' has cardinality 0..*.
+An association connects 'hlcorestructure_NodeGraphics' and 'hlcorestructure_Fill'. From 'hlcorestructure_NodeGraphics', the role 'NodeGraphics61' has cardinality 0..*, and from 'hlcorestructure_Fill', the role 'fill' has cardinality 0..*.
+An association connects 'hlcorestructure_Fill' and 'hlcorestructure_AnnotationGraphics'. From 'hlcorestructure_Fill', the role 'fill63' has cardinality 0..*, and from 'hlcorestructure_AnnotationGraphics', the role 'AnnotationGraphics64' has cardinality 0..*.
+An association connects 'hlcorestructure_NodeGraphics' and 'hlcorestructure_Line'. From 'hlcorestructure_NodeGraphics', the role 'NodeGraphics66' has cardinality 0..*, and from 'hlcorestructure_Line', the role 'line' has cardinality 0..*.
+An association connects 'hlcorestructure_Line' and 'hlcorestructure_ArcGraphics'. From 'hlcorestructure_Line', the role 'line68' has cardinality 0..*, and from 'hlcorestructure_ArcGraphics', the role 'ArcGraphics69' has cardinality 0..*.
+An association connects 'hlcorestructure_Line' and 'hlcorestructure_AnnotationGraphics'. From 'hlcorestructure_Line', the role 'line71' has cardinality 0..*, and from 'hlcorestructure_AnnotationGraphics', the role 'AnnotationGraphics72' has cardinality 0..*.
+An association connects 'hlcorestructure_Position' and 'hlcorestructure_ArcGraphics'. From 'hlcorestructure_Position', the role 'Position74' has cardinality 0..*, and from 'hlcorestructure_ArcGraphics', the role 'containerArcGraphics' has cardinality 0..*.
+An association connects 'hlcorestructure_Line' and 'hlcorestructure_ArcGraphics'. From 'hlcorestructure_Line', the role 'Line77' has cardinality 0..*, and from 'hlcorestructure_ArcGraphics', the role 'containerArcGraphics76' has cardinality 0..*.
+An association connects 'hlcorestructure_ArcGraphics' and 'hlcorestructure_Arc'. From 'hlcorestructure_ArcGraphics', the role 'arcgraphics' has cardinality 0..*, and from 'hlcorestructure_Arc', the role 'Arc' has cardinality 0..*.
+An association connects 'hlcorestructure_Node' and 'hlcorestructure_Arc'. From 'hlcorestructure_Node', the role 'Node80' has cardinality 0..*, and from 'hlcorestructure_Arc', the role 'OutArcs' has cardinality 0..*.
+An association connects 'hlcorestructure_Arc' and 'hlcorestructure_Node'. From 'hlcorestructure_Arc', the role 'InArcs' has cardinality 0..*, and from 'hlcorestructure_Node', the role 'Node82' has cardinality 0..*.
+An association connects 'hlcorestructure_Arc' and 'hlcorestructure_ArcGraphics'. From 'hlcorestructure_Arc', the role 'containerArc' has cardinality 0..*, and from 'hlcorestructure_ArcGraphics', the role 'ArcGraphics84' has cardinality 0..*.
+An association connects 'hlcorestructure_Arc' and 'hlcorestructure_HLAnnotation'. From 'hlcorestructure_Arc', the role 'containerArc86' has cardinality 0..*, and from 'hlcorestructure_HLAnnotation', the role 'HLAnnotation' has cardinality 0..*.
+An association connects 'hlcorestructure_Arc' and 'hlcorestructure_Node'. From 'hlcorestructure_Arc', the role 'Arc88' has cardinality 0..*, and from 'hlcorestructure_Node', the role 'target' has cardinality 0..*.
+An association connects 'hlcorestructure_Node' and 'hlcorestructure_Arc'. From 'hlcorestructure_Node', the role 'source' has cardinality 0..*, and from 'hlcorestructure_Arc', the role 'Arc90' has cardinality 0..*.
+An association connects 'hlcorestructure_Node' and 'hlcorestructure_NodeGraphics'. From 'hlcorestructure_Node', the role 'containerNode' has cardinality 0..*, and from 'hlcorestructure_NodeGraphics', the role 'NodeGraphics92' has cardinality 0..*.
+An association connects 'hlcorestructure_AnnotationGraphics' and 'hlcorestructure_Font'. From 'hlcorestructure_AnnotationGraphics', the role 'AnnotationGraphics94' has cardinality 0..*, and from 'hlcorestructure_Font', the role 'font' has cardinality 0..*.
+An association connects 'hlcorestructure_RefPlace' and 'hlcorestructure_PlaceNode'. From 'hlcorestructure_RefPlace', the role 'RefPlace' has cardinality 0..*, and from 'hlcorestructure_PlaceNode', the role 'ref' has cardinality 0..*.
+An association connects 'hlcorestructure_RefTransition' and 'hlcorestructure_TransitionNode'. From 'hlcorestructure_RefTransition', the role 'RefTransition' has cardinality 0..*, and from 'hlcorestructure_TransitionNode', the role 'ref97' has cardinality 0..*.
+An association connects 'hlcorestructure_Place' and 'hlcorestructure_Type'. From 'hlcorestructure_Place', the role 'containerPlace' has cardinality 0..*, and from 'hlcorestructure_Type', the role 'Type' has cardinality 0..*.
+An association connects 'hlcorestructure_Place' and 'hlcorestructure_HLMarking'. From 'hlcorestructure_Place', the role 'containerPlace100' has cardinality 0..*, and from 'hlcorestructure_HLMarking', the role 'HLMarking' has cardinality 0..*.
+An association connects 'hlcorestructure_RefTransition' and 'hlcorestructure_TransitionNode'. From 'hlcorestructure_RefTransition', the role 'referencingTransitions' has cardinality 0..*, and from 'hlcorestructure_TransitionNode', the role 'TransitionNode' has cardinality 0..*.
+An association connects 'hlcorestructure_Transition' and 'hlcorestructure_Condition'. From 'hlcorestructure_Transition', the role 'containerTransition' has cardinality 0..*, and from 'hlcorestructure_Condition', the role 'Condition' has cardinality 0..*.
+An association connects 'hlcorestructure_PlaceNode' and 'hlcorestructure_RefPlace'. From 'hlcorestructure_PlaceNode', the role 'PlaceNode' has cardinality 0..*, and from 'hlcorestructure_RefPlace', the role 'referencingPlaces' has cardinality 0..*.
+An association connects 'hlcorestructure_AnnotationGraphics' and 'hlcorestructure_Annotation'. From 'hlcorestructure_AnnotationGraphics', the role 'AnnotationGraphics105' has cardinality 0..*, and from 'hlcorestructure_Annotation', the role 'containerAnnotation' has cardinality 0..*.
+An association connects 'hlcorestructure_AnyObject' and 'hlcorestructure_ToolInfo'. From 'hlcorestructure_AnyObject', the role 'toolInfoModel' has cardinality 0..*, and from 'hlcorestructure_ToolInfo', the role 'ToolInfo107' has cardinality 0..*.
+An association connects 'hlcorestructure_Sort' and 'hlcorestructure_Type'. From 'hlcorestructure_Sort', the role 'terms.ecoreSort' has cardinality 0..*, and from 'hlcorestructure_Type', the role 'containerType' has cardinality 0..*.
+An association connects 'hlcorestructure_Place' and 'hlcorestructure_Type'. From 'hlcorestructure_Place', the role 'Place' has cardinality 0..*, and from 'hlcorestructure_Type', the role 'type' has cardinality 0..*.
+An association connects 'hlcorestructure_HLMarking' and 'hlcorestructure_Term'. From 'hlcorestructure_HLMarking', the role 'containerHLMarking' has cardinality 0..*, and from 'hlcorestructure_Term', the role 'terms.ecoreTerm' has cardinality 0..*.
+An association connects 'hlcorestructure_HLMarking' and 'hlcorestructure_Place'. From 'hlcorestructure_HLMarking', the role 'hlinitialMarking' has cardinality 0..*, and from 'hlcorestructure_Place', the role 'Place112' has cardinality 0..*.
+An association connects 'hlcorestructure_Term' and 'hlcorestructure_Condition'. From 'hlcorestructure_Term', the role 'terms.ecoreTerm114' has cardinality 0..*, and from 'hlcorestructure_Condition', the role 'containerCondition' has cardinality 0..*.
+An association connects 'hlcorestructure_Condition' and 'hlcorestructure_Transition'. From 'hlcorestructure_Condition', the role 'condition' has cardinality 0..*, and from 'hlcorestructure_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'hlcorestructure_Term' and 'hlcorestructure_HLAnnotation'. From 'hlcorestructure_Term', the role 'terms.ecoreTerm117' has cardinality 0..*, and from 'hlcorestructure_HLAnnotation', the role 'containerHLAnnotation' has cardinality 0..*.
+An association connects 'hlcorestructure_HLAnnotation' and 'hlcorestructure_Arc'. From 'hlcorestructure_HLAnnotation', the role 'hlinscription' has cardinality 0..*, and from 'hlcorestructure_Arc', the role 'Arc119' has cardinality 0..*.
+An association connects 'hlcorestructure_Declaration' and 'hlcorestructure_Declarations'. From 'hlcorestructure_Declaration', the role 'containerDeclaration' has cardinality 0..*, and from 'hlcorestructure_Declarations', the role 'terms.ecoreDeclarations' has cardinality 0..*.
+An association connects 'hlcorestructure_Declaration' and 'hlcorestructure_PetriNet'. From 'hlcorestructure_Declaration', the role 'declaration' has cardinality 0..*, and from 'hlcorestructure_PetriNet', the role 'PetriNet122' has cardinality 0..*.
+An association connects 'hlcorestructure_Declaration' and 'hlcorestructure_Page'. From 'hlcorestructure_Declaration', the role 'declaration124' has cardinality 0..*, and from 'hlcorestructure_Page', the role 'Page125' has cardinality 0..*.

@@ -1,0 +1,26 @@
+The domain model 'hbmapkeys' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'hbmapkeys_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'hbmapkeys_Book' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'hbmapkeys_StringToWriterMapEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'hbmapkeys_WriterToCityMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'hbmapkeys_City' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'hbmapkeys_StringToWriterMapEntry' and 'hbmapkeys_Book'. From 'hbmapkeys_StringToWriterMapEntry', the role 'hbmapkeys_StringToWriterMapEntry' has cardinality 0..*, and from 'hbmapkeys_Book', the role 'hbmapkeys_Book' has cardinality 0..*.
+An association connects 'hbmapkeys_Book' and 'hbmapkeys_WriterToCityMapEntry'. From 'hbmapkeys_Book', the role 'hbmapkeys_Book2' has cardinality 0..*, and from 'hbmapkeys_WriterToCityMapEntry', the role 'hbmapkeys_WriterToCityMapEntry' has cardinality 0..*.
+An association connects 'hbmapkeys_Writer' and 'hbmapkeys_City'. From 'hbmapkeys_Writer', the role 'hbmapkeys_Writer' has cardinality 0..*, and from 'hbmapkeys_City', the role 'hbmapkeys_City' has cardinality 0..*.
+An association connects 'hbmapkeys_Writer' and 'hbmapkeys_StringToWriterMapEntry'. From 'hbmapkeys_Writer', the role 'hbmapkeys_Writer6' has cardinality 0..*, and from 'hbmapkeys_StringToWriterMapEntry', the role 'hbmapkeys_StringToWriterMapEntry5' has cardinality 0..*.
+An association connects 'hbmapkeys_Writer' and 'hbmapkeys_WriterToCityMapEntry'. From 'hbmapkeys_Writer', the role 'hbmapkeys_Writer9' has cardinality 0..*, and from 'hbmapkeys_WriterToCityMapEntry', the role 'hbmapkeys_WriterToCityMapEntry8' has cardinality 0..*.
+An association connects 'hbmapkeys_City' and 'hbmapkeys_WriterToCityMapEntry'. From 'hbmapkeys_City', the role 'hbmapkeys_City12' has cardinality 0..*, and from 'hbmapkeys_WriterToCityMapEntry', the role 'hbmapkeys_WriterToCityMapEntry11' has cardinality 0..*.

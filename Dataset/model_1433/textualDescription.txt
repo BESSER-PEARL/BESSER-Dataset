@@ -1,0 +1,13 @@
+The domain model 'GraphMM' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'GraphMM_Node' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str; 'size', which is of type float.
+
+'GraphMM_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'GraphMM_Node' and 'GraphMM_Edge'. From 'GraphMM_Node', the role 'GraphMM_Node' has cardinality 0..*, and from 'GraphMM_Edge', the role 'GraphMM_Edge' has cardinality 0..*.
+An association connects 'GraphMM_Node' and 'GraphMM_Edge'. From 'GraphMM_Node', the role 'GraphMM_Node3' has cardinality 0..*, and from 'GraphMM_Edge', the role 'GraphMM_Edge2' has cardinality 0..*.

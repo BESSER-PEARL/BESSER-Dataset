@@ -1,0 +1,153 @@
+The domain model 'transformr' describes the core structural elements and their relationships within the system.
+
+The model defines 34 main class(es).
+
+'transformr_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_PatternConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'PatternConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_BinaryConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_TypedElement' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'transformr_Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_ForAll' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_Executable' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_And' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_Expression' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'transformr_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_Exists' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'Executable' represents an important domain concept.
+It does not declare any attributes.
+
+'transformr_VariableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'transformr_Graph' is a specialization of 'NamedElement'.
+The class 'transformr_Node' is a specialization of 'GraphElement'.
+The class 'transformr_Edge' is a specialization of 'GraphElement'.
+The class 'transformr_Pattern' is a specialization of 'Graph'.
+The class 'transformr_Rule' is a specialization of 'Pattern'.
+The class 'transformr_Rule' is a specialization of 'Executable'.
+The class 'transformr_GraphElement' is a specialization of 'TypedElement'.
+The class 'transformr_GraphElement' is a specialization of 'NamedElement'.
+The class 'transformr_Attribute' is a specialization of 'TypedElement'.
+The class 'transformr_Attribute' is a specialization of 'NamedElement'.
+The class 'transformr_PatternConstraint' is a specialization of 'Constraint'.
+The class 'transformr_And' is a specialization of 'BinaryConstraint'.
+The class 'transformr_Or' is a specialization of 'BinaryConstraint'.
+The class 'transformr_Not' is a specialization of 'Constraint'.
+The class 'transformr_Exists' is a specialization of 'PatternConstraint'.
+The class 'transformr_ForAll' is a specialization of 'PatternConstraint'.
+The class 'transformr_BinaryConstraint' is a specialization of 'Constraint'.
+The class 'transformr_Variable' is a specialization of 'NamedElement'.
+The class 'transformr_VariableConstraint' is a specialization of 'Expression'.
+The class 'transformr_VariableConstraint' is a specialization of 'Constraint'.
+The class 'transformr_Assignment' is a specialization of 'Expression'.
+The class 'transformr_Executable' is a specialization of 'NamedElement'.
+The class 'transformr_Branch' is a specialization of 'Executable'.
+The class 'transformr_Block' is a specialization of 'Executable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'transformr_Graph' and 'transformr_Node'. From 'transformr_Graph', the role 'transformr_Graph' has cardinality 0..*, and from 'transformr_Node', the role 'transformr_Node' has cardinality 0..*.
+An association connects 'transformr_Edge' and 'transformr_Node'. From 'transformr_Edge', the role 'transformr_Edge' has cardinality 0..*, and from 'transformr_Node', the role 'transformr_Node2' has cardinality 0..*.
+An association connects 'transformr_Node' and 'transformr_Attribute'. From 'transformr_Node', the role 'transformr_Node4' has cardinality 0..*, and from 'transformr_Attribute', the role 'transformr_Attribute' has cardinality 0..*.
+An association connects 'transformr_Edge' and 'transformr_Node'. From 'transformr_Edge', the role 'transformr_Edge6' has cardinality 0..*, and from 'transformr_Node', the role 'transformr_Node7' has cardinality 0..*.
+An association connects 'transformr_Constraint' and 'transformr_Pattern'. From 'transformr_Constraint', the role 'transformr_Constraint' has cardinality 0..*, and from 'transformr_Pattern', the role 'transformr_Pattern' has cardinality 0..*.
+An association connects 'transformr_Pattern' and 'transformr_Variable'. From 'transformr_Pattern', the role 'transformr_Pattern10' has cardinality 0..*, and from 'transformr_Variable', the role 'transformr_Variable' has cardinality 0..*.
+An association connects 'transformr_GraphElement' and 'transformr_Rule'. From 'transformr_GraphElement', the role 'transformr_GraphElement' has cardinality 0..*, and from 'transformr_Rule', the role 'transformr_Rule' has cardinality 0..*.
+An association connects 'transformr_GraphElement' and 'transformr_Rule'. From 'transformr_GraphElement', the role 'transformr_GraphElement14' has cardinality 0..*, and from 'transformr_Rule', the role 'transformr_Rule13' has cardinality 0..*.
+An association connects 'transformr_Rule' and 'transformr_Assignment'. From 'transformr_Rule', the role 'transformr_Rule16' has cardinality 0..*, and from 'transformr_Assignment', the role 'transformr_Assignment' has cardinality 0..*.
+An association connects 'transformr_Pattern' and 'transformr_PatternConstraint'. From 'transformr_Pattern', the role 'transformr_Pattern18' has cardinality 0..*, and from 'transformr_PatternConstraint', the role 'transformr_PatternConstraint' has cardinality 0..*.
+An association connects 'transformr_Constraint' and 'transformr_Not'. From 'transformr_Constraint', the role 'transformr_Constraint20' has cardinality 0..*, and from 'transformr_Not', the role 'transformr_Not' has cardinality 0..*.
+An association connects 'transformr_BinaryConstraint' and 'transformr_Constraint'. From 'transformr_BinaryConstraint', the role 'transformr_BinaryConstraint' has cardinality 0..*, and from 'transformr_Constraint', the role 'transformr_Constraint22' has cardinality 0..*.
+An association connects 'transformr_Constraint' and 'transformr_BinaryConstraint'. From 'transformr_Constraint', the role 'transformr_Constraint25' has cardinality 0..*, and from 'transformr_BinaryConstraint', the role 'transformr_BinaryConstraint24' has cardinality 0..*.
+An association connects 'transformr_Attribute' and 'transformr_Variable'. From 'transformr_Attribute', the role 'transformr_Attribute28' has cardinality 0..*, and from 'transformr_Variable', the role 'transformr_Variable27' has cardinality 0..*.
+An association connects 'transformr_Variable' and 'transformr_Expression'. From 'transformr_Variable', the role 'transformr_Variable30' has cardinality 0..*, and from 'transformr_Expression', the role 'transformr_Expression' has cardinality 0..*.
+An association connects 'transformr_Variable' and 'transformr_Assignment'. From 'transformr_Variable', the role 'transformr_Variable33' has cardinality 0..*, and from 'transformr_Assignment', the role 'transformr_Assignment32' has cardinality 0..*.
+An association connects 'transformr_Pattern' and 'transformr_Branch'. From 'transformr_Pattern', the role 'transformr_Pattern35' has cardinality 0..*, and from 'transformr_Branch', the role 'transformr_Branch' has cardinality 0..*.
+An association connects 'transformr_Executable' and 'transformr_Branch'. From 'transformr_Executable', the role 'transformr_Executable' has cardinality 0..*, and from 'transformr_Branch', the role 'transformr_Branch37' has cardinality 0..*.
+An association connects 'transformr_Executable' and 'transformr_Branch'. From 'transformr_Executable', the role 'transformr_Executable40' has cardinality 0..*, and from 'transformr_Branch', the role 'transformr_Branch39' has cardinality 0..*.
+An association connects 'transformr_Executable' and 'transformr_Block'. From 'transformr_Executable', the role 'transformr_Executable42' has cardinality 0..*, and from 'transformr_Block', the role 'transformr_Block' has cardinality 0..*.

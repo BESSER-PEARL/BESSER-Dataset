@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/dwagelaar/TTC2011/metamodels/graph3.ecore

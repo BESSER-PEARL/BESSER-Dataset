@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipsesource/graphical-lsp/server/glsp-graph/src/main/resources/glsp-graph.ecore

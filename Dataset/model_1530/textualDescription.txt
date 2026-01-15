@@ -1,0 +1,96 @@
+The domain model 'publication102' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'publication102_ReviewNote' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'publication102_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'publication102_Position' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'publication102_Skill' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'Counted' represents an important domain concept.
+It does not declare any attributes.
+
+'publication102_Review' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'publication102_Counted' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'publication102_Write' represents an important domain concept.
+It has one attribute: 'timeSpent', which is of type int.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'Labelled' represents an important domain concept.
+It does not declare any attributes.
+
+'publication102_Collaboration' represents an important domain concept.
+It has one attribute: 'ratio', which is of type int.
+
+'publication102_KnowledgeManager' represents an important domain concept.
+It does not declare any attributes.
+
+'publication102_PaperKeyword' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'publication102_Paper' represents an important domain concept.
+It does not declare any attributes.
+
+'publication102_Labelled' represents an important domain concept.
+It has one attribute: 'lname', which is of type str.
+
+'publication102_Keyword' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'publication102_Researcher' represents an important domain concept.
+It has the following attributes: 'forName', which is of type str; 'name', which is of type str.
+
+'publication102_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'publication102_Paragraph' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'publication102_Paper' is a specialization of 'Named'.
+The class 'publication102_Paragraph' is a specialization of 'Counted'.
+The class 'publication102_Paragraph' is a specialization of 'Named'.
+The class 'publication102_ReviewNote' is a specialization of 'Named'.
+The class 'publication102_Write' is a specialization of 'Labelled'.
+The class 'publication102_Review' is a specialization of 'Labelled'.
+The class 'publication102_PublicationStructure' is a specialization of 'Named'.
+The class 'publication102_Position' is a specialization of 'Named'.
+The class 'publication102_Keyword' is a specialization of 'Named'.
+The class 'publication102_KnowledgeManager' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'publication102_Write' and 'publication102_Researcher'. From 'publication102_Write', the role 'publication102_Write' has cardinality 0..*, and from 'publication102_Researcher', the role 'publication102_Researcher' has cardinality 0..*.
+An association connects 'publication102_Researcher' and 'publication102_Review'. From 'publication102_Researcher', the role 'publication102_Researcher2' has cardinality 0..*, and from 'publication102_Review', the role 'publication102_Review' has cardinality 0..*.
+An association connects 'publication102_Researcher' and 'publication102_Paper'. From 'publication102_Researcher', the role 'authors' has cardinality 0..*, and from 'publication102_Paper', the role 'Paper' has cardinality 0..*.
+An association connects 'publication102_Skill' and 'publication102_Researcher'. From 'publication102_Skill', the role 'publication102_Skill' has cardinality 0..*, and from 'publication102_Researcher', the role 'publication102_Researcher5' has cardinality 0..*.
+An association connects 'publication102_Position' and 'publication102_Researcher'. From 'publication102_Position', the role 'publication102_Position' has cardinality 0..*, and from 'publication102_Researcher', the role 'publication102_Researcher7' has cardinality 0..*.
+An association connects 'publication102_Collaboration' and 'publication102_Researcher'. From 'publication102_Collaboration', the role 'publication102_Collaboration' has cardinality 0..*, and from 'publication102_Researcher', the role 'publication102_Researcher9' has cardinality 0..*.
+An association connects 'publication102_Paper' and 'publication102_Paragraph'. From 'publication102_Paper', the role 'publication102_Paper' has cardinality 0..*, and from 'publication102_Paragraph', the role 'publication102_Paragraph' has cardinality 0..*.
+An association connects 'publication102_Paper' and 'publication102_Researcher'. From 'publication102_Paper', the role 'res_papers' has cardinality 0..*, and from 'publication102_Researcher', the role 'Researcher' has cardinality 0..*.
+An association connects 'publication102_PaperKeyword' and 'publication102_Paper'. From 'publication102_PaperKeyword', the role 'publication102_PaperKeyword' has cardinality 0..*, and from 'publication102_Paper', the role 'publication102_Paper13' has cardinality 0..*.
+An association connects 'publication102_Paper' and 'publication102_Paper'. From 'publication102_Paper', the role 'publication102_Paper16' has cardinality 0..*, and from 'publication102_Paper', the role 'publication102_Paper14' has cardinality 0..*.
+An association connects 'publication102_ReviewNote' and 'publication102_Paragraph'. From 'publication102_ReviewNote', the role 'publication102_ReviewNote' has cardinality 0..*, and from 'publication102_Paragraph', the role 'publication102_Paragraph18' has cardinality 0..*.
+An association connects 'publication102_Write' and 'publication102_Paragraph'. From 'publication102_Write', the role 'publication102_Write20' has cardinality 0..*, and from 'publication102_Paragraph', the role 'publication102_Paragraph21' has cardinality 0..*.
+An association connects 'publication102_Review' and 'publication102_ReviewNote'. From 'publication102_Review', the role 'publication102_Review23' has cardinality 0..*, and from 'publication102_ReviewNote', the role 'publication102_ReviewNote24' has cardinality 0..*.
+An association connects 'publication102_Researcher' and 'publication102_PublicationStructure'. From 'publication102_Researcher', the role 'publication102_Researcher26' has cardinality 0..*, and from 'publication102_PublicationStructure', the role 'publication102_PublicationStructure' has cardinality 0..*.
+An association connects 'publication102_PublicationStructure' and 'publication102_Paper'. From 'publication102_PublicationStructure', the role 'publication102_PublicationStructure28' has cardinality 0..*, and from 'publication102_Paper', the role 'publication102_Paper29' has cardinality 0..*.
+An association connects 'publication102_KnowledgeManager' and 'publication102_PublicationStructure'. From 'publication102_KnowledgeManager', the role 'publication102_KnowledgeManager' has cardinality 0..*, and from 'publication102_PublicationStructure', the role 'publication102_PublicationStructure31' has cardinality 0..*.
+An association connects 'publication102_Position' and 'publication102_PublicationStructure'. From 'publication102_Position', the role 'publication102_Position34' has cardinality 0..*, and from 'publication102_PublicationStructure', the role 'publication102_PublicationStructure33' has cardinality 0..*.
+An association connects 'publication102_Position' and 'publication102_Position'. From 'publication102_Position', the role 'publication102_Position37' has cardinality 0..*, and from 'publication102_Position', the role 'publication102_Position35' has cardinality 0..*.
+An association connects 'publication102_Paper' and 'publication102_Keyword'. From 'publication102_Paper', the role 'publication102_Paper39' has cardinality 0..*, and from 'publication102_Keyword', the role 'publication102_Keyword' has cardinality 0..*.
+An association connects 'publication102_KnowledgeManager' and 'publication102_Keyword'. From 'publication102_KnowledgeManager', the role 'publication102_KnowledgeManager41' has cardinality 0..*, and from 'publication102_Keyword', the role 'publication102_Keyword42' has cardinality 0..*.
+An association connects 'publication102_PaperKeyword' and 'publication102_Keyword'. From 'publication102_PaperKeyword', the role 'publication102_PaperKeyword44' has cardinality 0..*, and from 'publication102_Keyword', the role 'publication102_Keyword45' has cardinality 0..*.
+An association connects 'publication102_Paper' and 'publication102_Collaboration'. From 'publication102_Paper', the role 'publication102_Paper48' has cardinality 0..*, and from 'publication102_Collaboration', the role 'publication102_Collaboration47' has cardinality 0..*.

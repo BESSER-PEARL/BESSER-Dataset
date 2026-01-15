@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/LolloCorte/emf-components/examples/it.rcpvision.emf.components.cdoexample.model/model/Library.ecore

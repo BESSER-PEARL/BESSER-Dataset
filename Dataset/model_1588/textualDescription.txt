@@ -1,0 +1,51 @@
+The domain model 'PN' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'PN_InputArc' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'PN_Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'PN_Transition' represents an important domain concept.
+It has the following attributes: 'maxDelay', which is of type float; 'minDelay', which is of type float.
+
+'PN_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PN_OutputArc' represents an important domain concept.
+It does not declare any attributes.
+
+'PN_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'PN_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PN_PetriNet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Arc' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'PN_Node' is a specialization of 'NamedElement'.
+The class 'PN_Transition' is a specialization of 'Node'.
+The class 'PN_Place' is a specialization of 'Node'.
+The class 'PN_Arc' is a specialization of 'NamedElement'.
+The class 'PN_OutputArc' is a specialization of 'Arc'.
+The class 'PN_InputArc' is a specialization of 'Arc'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PN_PetriNet' and 'PN_NamedElement'. From 'PN_PetriNet', the role 'PN_PetriNet' has cardinality 0..*, and from 'PN_NamedElement', the role 'PN_NamedElement' has cardinality 0..*.
+An association connects 'PN_OutputArc' and 'PN_Transition'. From 'PN_OutputArc', the role 'PN_OutputArc' has cardinality 0..*, and from 'PN_Transition', the role 'PN_Transition' has cardinality 0..*.
+An association connects 'PN_Place' and 'PN_OutputArc'. From 'PN_Place', the role 'PN_Place' has cardinality 0..*, and from 'PN_OutputArc', the role 'PN_OutputArc3' has cardinality 0..*.
+An association connects 'PN_Place' and 'PN_InputArc'. From 'PN_Place', the role 'PN_Place5' has cardinality 0..*, and from 'PN_InputArc', the role 'PN_InputArc' has cardinality 0..*.
+An association connects 'PN_InputArc' and 'PN_Transition'. From 'PN_InputArc', the role 'PN_InputArc7' has cardinality 0..*, and from 'PN_Transition', the role 'PN_Transition8' has cardinality 0..*.

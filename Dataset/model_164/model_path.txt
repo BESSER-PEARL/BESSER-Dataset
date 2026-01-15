@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/sikessle/ecore-texo-server-spray/model/PetriNet.ecore

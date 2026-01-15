@@ -1,0 +1,18 @@
+The domain model 'iupjwq' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'iupjwq_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'iupjwq_World' represents an important domain concept.
+It does not declare any attributes.
+
+'iupjwq_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'iupjwq_World' and 'iupjwq_Thing'. From 'iupjwq_World', the role 'iupjwq_World' has cardinality 0..*, and from 'iupjwq_Thing', the role 'iupjwq_Thing' has cardinality 0..*.
+An association connects 'iupjwq_Thing' and 'iupjwq_RelatedTo'. From 'iupjwq_Thing', the role 'fromThing' has cardinality 0..*, and from 'iupjwq_RelatedTo', the role 'RelatedTo' has cardinality 0..*.
+An association connects 'iupjwq_RelatedTo' and 'iupjwq_Thing'. From 'iupjwq_RelatedTo', the role 'relations' has cardinality 0..*, and from 'iupjwq_Thing', the role 'Thing' has cardinality 0..*.
+An association connects 'iupjwq_RelatedTo' and 'iupjwq_Thing'. From 'iupjwq_RelatedTo', the role 'iupjwq_RelatedTo' has cardinality 0..*, and from 'iupjwq_Thing', the role 'iupjwq_Thing4' has cardinality 0..*.

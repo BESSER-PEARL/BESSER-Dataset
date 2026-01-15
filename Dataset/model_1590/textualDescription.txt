@@ -1,0 +1,35 @@
+The domain model 'petrinet101' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'petrinet101_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet101_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet101_Petrinet' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet101_Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet101_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet101_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'petrinet101_Place' is a specialization of 'Node'.
+The class 'petrinet101_Transition' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'petrinet101_Petrinet' and 'petrinet101_Node'. From 'petrinet101_Petrinet', the role 'petrinet101_Petrinet' has cardinality 0..*, and from 'petrinet101_Node', the role 'petrinet101_Node' has cardinality 0..*.
+An association connects 'petrinet101_Arc' and 'petrinet101_Petrinet'. From 'petrinet101_Arc', the role 'petrinet101_Arc' has cardinality 0..*, and from 'petrinet101_Petrinet', the role 'petrinet101_Petrinet2' has cardinality 0..*.
+An association connects 'petrinet101_Token' and 'petrinet101_Place'. From 'petrinet101_Token', the role 'petrinet101_Token' has cardinality 0..*, and from 'petrinet101_Place', the role 'petrinet101_Place' has cardinality 0..*.
+An association connects 'petrinet101_Node' and 'petrinet101_Arc'. From 'petrinet101_Node', the role 'petrinet101_Node6' has cardinality 0..*, and from 'petrinet101_Arc', the role 'petrinet101_Arc5' has cardinality 0..*.
+An association connects 'petrinet101_Node' and 'petrinet101_Arc'. From 'petrinet101_Node', the role 'petrinet101_Node9' has cardinality 0..*, and from 'petrinet101_Arc', the role 'petrinet101_Arc8' has cardinality 0..*.

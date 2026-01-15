@@ -1,0 +1,34 @@
+The domain model 'workbench101' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'workbench101_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'workbench101_Workbench' represents an important domain concept.
+It has one attribute: 'aprop', which is of type str.
+
+'workbench101_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workbench101_Thoughts' represents an important domain concept.
+It does not declare any attributes.
+
+'workbench101_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'workbench101_Thing' is a specialization of 'NamedElement'.
+The class 'workbench101_RelatedTo' is a specialization of 'NamedElement'.
+The class 'workbench101_Thoughts' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'workbench101_Workbench' and 'workbench101_Thing'. From 'workbench101_Workbench', the role 'workbench101_Workbench' has cardinality 0..*, and from 'workbench101_Thing', the role 'workbench101_Thing' has cardinality 0..*.
+An association connects 'workbench101_Workbench' and 'workbench101_Thoughts'. From 'workbench101_Workbench', the role 'workbench101_Workbench2' has cardinality 0..*, and from 'workbench101_Thoughts', the role 'workbench101_Thoughts' has cardinality 0..*.
+An association connects 'workbench101_RelatedTo' and 'workbench101_Thing'. From 'workbench101_RelatedTo', the role 'RelatedTo' has cardinality 0..*, and from 'workbench101_Thing', the role 'fromThing' has cardinality 0..*.
+An association connects 'workbench101_Thing' and 'workbench101_RelatedTo'. From 'workbench101_Thing', the role 'Thing' has cardinality 0..*, and from 'workbench101_RelatedTo', the role 'relations' has cardinality 0..*.
+An association connects 'workbench101_RelatedTo' and 'workbench101_Thing'. From 'workbench101_RelatedTo', the role 'workbench101_RelatedTo' has cardinality 0..*, and from 'workbench101_Thing', the role 'workbench101_Thing6' has cardinality 0..*.
+An association connects 'workbench101_Thing' and 'workbench101_Thoughts'. From 'workbench101_Thing', the role 'workbench101_Thing9' has cardinality 0..*, and from 'workbench101_Thoughts', the role 'workbench101_Thoughts8' has cardinality 0..*.

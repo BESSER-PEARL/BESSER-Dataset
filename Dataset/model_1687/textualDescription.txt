@@ -1,0 +1,42 @@
+The domain model 'yyf' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'yyf_Alias' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'yyf_Output' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'yyf_Relation' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'yyf_Base' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'yyf_Bar' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'yyf_Foo' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'yyf_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'yyf_Base' is a specialization of 'NamedElement'.
+The class 'yyf_Relation' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'yyf_Base' and 'yyf_Relation'. From 'yyf_Base', the role 'fromThing' has cardinality 0..*, and from 'yyf_Relation', the role 'Relation' has cardinality 0..*.
+An association connects 'yyf_Base' and 'yyf_Foo'. From 'yyf_Base', the role 'yyf_Base' has cardinality 0..*, and from 'yyf_Foo', the role 'yyf_Foo' has cardinality 0..*.
+An association connects 'yyf_Output' and 'yyf_Base'. From 'yyf_Output', the role 'yyf_Output' has cardinality 0..*, and from 'yyf_Base', the role 'yyf_Base3' has cardinality 0..*.
+An association connects 'yyf_NamedElement' and 'yyf_Alias'. From 'yyf_NamedElement', the role 'yyf_NamedElement' has cardinality 0..*, and from 'yyf_Alias', the role 'yyf_Alias' has cardinality 0..*.
+An association connects 'yyf_NamedElement' and 'yyf_Bar'. From 'yyf_NamedElement', the role 'yyf_NamedElement6' has cardinality 0..*, and from 'yyf_Bar', the role 'yyf_Bar' has cardinality 0..*.
+An association connects 'yyf_Base' and 'yyf_Relation'. From 'yyf_Base', the role 'Base' has cardinality 0..*, and from 'yyf_Relation', the role 'relations' has cardinality 0..*.
+An association connects 'yyf_Base' and 'yyf_Relation'. From 'yyf_Base', the role 'yyf_Base9' has cardinality 0..*, and from 'yyf_Relation', the role 'yyf_Relation' has cardinality 0..*.
+An association connects 'yyf_Relation' and 'yyf_Relation'. From 'yyf_Relation', the role 'yyf_Relation10' has cardinality 0..*, and from 'yyf_Relation', the role 'yyf_Relation12' has cardinality 0..*.
+An association connects 'yyf_Output' and 'yyf_Bar'. From 'yyf_Output', the role 'yyf_Output15' has cardinality 0..*, and from 'yyf_Bar', the role 'yyf_Bar14' has cardinality 0..*.

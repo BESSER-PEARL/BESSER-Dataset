@@ -1,0 +1,21 @@
+The domain model 'yyc' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'yyc_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'yyc_Alias' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'yyc_Blias' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'yyc_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'yyc_RelatedTo' and 'yyc_Thing'. From 'yyc_RelatedTo', the role 'RelatedTo' has cardinality 0..*, and from 'yyc_Thing', the role 'fromThing' has cardinality 0..*.
+An association connects 'yyc_RelatedTo' and 'yyc_Thing'. From 'yyc_RelatedTo', the role 'relations' has cardinality 0..*, and from 'yyc_Thing', the role 'Thing' has cardinality 0..*.
+An association connects 'yyc_Alias' and 'yyc_RelatedTo'. From 'yyc_Alias', the role 'yyc_Alias' has cardinality 0..*, and from 'yyc_RelatedTo', the role 'yyc_RelatedTo' has cardinality 0..*.
+An association connects 'yyc_RelatedTo' and 'yyc_Blias'. From 'yyc_RelatedTo', the role 'yyc_RelatedTo4' has cardinality 0..*, and from 'yyc_Blias', the role 'yyc_Blias' has cardinality 0..*.

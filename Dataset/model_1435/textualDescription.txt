@@ -1,0 +1,42 @@
+The domain model 'simplegraph2graph' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'simplegraph2graph_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'simplegraph2graph_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'simplegraph2graph_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'simplegraph2graph_Graph2Graph' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Element2Element' represents an important domain concept.
+It does not declare any attributes.
+
+'simplegraph2graph_Element2Element' represents an important domain concept.
+It does not declare any attributes.
+
+'simplegraph2graph_Node2Node' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'simplegraph2graph_Edge2Edge' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simplegraph2graph_Node2Node' is a specialization of 'Element2Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simplegraph2graph_Graph' and 'simplegraph2graph_Graph2Graph'. From 'simplegraph2graph_Graph', the role 'simplegraph2graph_Graph' has cardinality 0..*, and from 'simplegraph2graph_Graph2Graph', the role 'simplegraph2graph_Graph2Graph' has cardinality 0..*.
+An association connects 'simplegraph2graph_Graph2Graph' and 'simplegraph2graph_Graph'. From 'simplegraph2graph_Graph2Graph', the role 'simplegraph2graph_Graph2Graph2' has cardinality 0..*, and from 'simplegraph2graph_Graph', the role 'simplegraph2graph_Graph3' has cardinality 0..*.
+An association connects 'simplegraph2graph_Graph2Graph' and 'simplegraph2graph_Element2Element'. From 'simplegraph2graph_Graph2Graph', the role 'owner' has cardinality 0..*, and from 'simplegraph2graph_Element2Element', the role 'Element2Element' has cardinality 0..*.
+An association connects 'simplegraph2graph_Element2Element' and 'simplegraph2graph_Graph2Graph'. From 'simplegraph2graph_Element2Element', the role 'element2Element' has cardinality 0..*, and from 'simplegraph2graph_Graph2Graph', the role 'Graph2Graph' has cardinality 0..*.
+An association connects 'simplegraph2graph_Edge' and 'simplegraph2graph_Edge2Edge'. From 'simplegraph2graph_Edge', the role 'simplegraph2graph_Edge' has cardinality 0..*, and from 'simplegraph2graph_Edge2Edge', the role 'simplegraph2graph_Edge2Edge' has cardinality 0..*.
+An association connects 'simplegraph2graph_Edge2Edge' and 'simplegraph2graph_Edge'. From 'simplegraph2graph_Edge2Edge', the role 'simplegraph2graph_Edge2Edge8' has cardinality 0..*, and from 'simplegraph2graph_Edge', the role 'simplegraph2graph_Edge9' has cardinality 0..*.
+An association connects 'simplegraph2graph_Node2Node' and 'simplegraph2graph_Edge2Edge'. From 'simplegraph2graph_Node2Node', the role 'simplegraph2graph_Node2Node' has cardinality 0..*, and from 'simplegraph2graph_Edge2Edge', the role 'simplegraph2graph_Edge2Edge11' has cardinality 0..*.
+An association connects 'simplegraph2graph_Node2Node' and 'simplegraph2graph_Edge2Edge'. From 'simplegraph2graph_Node2Node', the role 'simplegraph2graph_Node2Node14' has cardinality 0..*, and from 'simplegraph2graph_Edge2Edge', the role 'simplegraph2graph_Edge2Edge13' has cardinality 0..*.
+An association connects 'simplegraph2graph_Node' and 'simplegraph2graph_Node2Node'. From 'simplegraph2graph_Node', the role 'simplegraph2graph_Node' has cardinality 0..*, and from 'simplegraph2graph_Node2Node', the role 'simplegraph2graph_Node2Node16' has cardinality 0..*.
+An association connects 'simplegraph2graph_Node2Node' and 'simplegraph2graph_Node'. From 'simplegraph2graph_Node2Node', the role 'simplegraph2graph_Node2Node18' has cardinality 0..*, and from 'simplegraph2graph_Node', the role 'simplegraph2graph_Node19' has cardinality 0..*.

@@ -1,0 +1,34 @@
+The domain model 'petrinet' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'petrinet_Arc' represents an important domain concept.
+It has the following attributes: 'weight', which is of type int; 'name', which is of type str; 'arcType', which is of type str.
+
+'Noeud' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Transition' represents an important domain concept.
+It has the following attributes: 'minTime', which is of type int; 'maxTime', which is of type int.
+
+'petrinet_Place' represents an important domain concept.
+It has one attribute: 'marking', which is of type int.
+
+'petrinet_Noeud' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinet_PetriNet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ArcKindType' defines the following possible values: 'normal', 'read_arc'.
+
+The model also captures inheritance relationships between classes.
+The class 'petrinet_Transition' is a specialization of 'Noeud'.
+The class 'petrinet_Place' is a specialization of 'Noeud'.
+
+Relationships between classes are modeled using associations.
+An association connects 'petrinet_PetriNet' and 'petrinet_Noeud'. From 'petrinet_PetriNet', the role 'petrinet_PetriNet' has cardinality 0..*, and from 'petrinet_Noeud', the role 'petrinet_Noeud' has cardinality 0..*.
+An association connects 'petrinet_Arc' and 'petrinet_PetriNet'. From 'petrinet_Arc', the role 'petrinet_Arc' has cardinality 0..*, and from 'petrinet_PetriNet', the role 'petrinet_PetriNet2' has cardinality 0..*.
+An association connects 'petrinet_Arc' and 'petrinet_Noeud'. From 'petrinet_Arc', the role 'petrinet_Arc4' has cardinality 0..*, and from 'petrinet_Noeud', the role 'petrinet_Noeud5' has cardinality 0..*.
+An association connects 'petrinet_Noeud' and 'petrinet_Arc'. From 'petrinet_Noeud', the role 'petrinet_Noeud8' has cardinality 0..*, and from 'petrinet_Arc', the role 'petrinet_Arc7' has cardinality 0..*.

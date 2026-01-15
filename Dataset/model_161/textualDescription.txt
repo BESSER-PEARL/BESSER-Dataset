@@ -1,0 +1,44 @@
+The domain model 'PetriNetModel' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'PetriNetModel_PObject' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'PetriNetModel_Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'PObject' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNetModel_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PetriNetModel_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNetModel_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNetModel_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNetModel_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'PetriNetModel_Node' is a specialization of 'PObject'.
+The class 'PetriNetModel_Transition' is a specialization of 'Node'.
+The class 'PetriNetModel_Place' is a specialization of 'Node'.
+The class 'PetriNetModel_Arc' is a specialization of 'PObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PetriNetModel_PObject' and 'PetriNetModel_PetriNet'. From 'PetriNetModel_PObject', the role 'PetriNetModel_PObject' has cardinality 0..*, and from 'PetriNetModel_PetriNet', the role 'PetriNetModel_PetriNet' has cardinality 0..*.
+An association connects 'PetriNetModel_Node' and 'PetriNetModel_Arc'. From 'PetriNetModel_Node', the role 'source' has cardinality 0..*, and from 'PetriNetModel_Arc', the role 'Arc' has cardinality 0..*.
+An association connects 'PetriNetModel_Node' and 'PetriNetModel_Arc'. From 'PetriNetModel_Node', the role 'target' has cardinality 0..*, and from 'PetriNetModel_Arc', the role 'Arc3' has cardinality 0..*.
+An association connects 'PetriNetModel_Token' and 'PetriNetModel_Place'. From 'PetriNetModel_Token', the role 'PetriNetModel_Token' has cardinality 0..*, and from 'PetriNetModel_Place', the role 'PetriNetModel_Place' has cardinality 0..*.
+An association connects 'PetriNetModel_Arc' and 'PetriNetModel_Node'. From 'PetriNetModel_Arc', the role 'out' has cardinality 0..*, and from 'PetriNetModel_Node', the role 'Node' has cardinality 0..*.
+An association connects 'PetriNetModel_Node' and 'PetriNetModel_Arc'. From 'PetriNetModel_Node', the role 'Node7' has cardinality 0..*, and from 'PetriNetModel_Arc', the role 'in' has cardinality 0..*.

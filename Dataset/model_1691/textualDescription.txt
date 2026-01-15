@@ -1,0 +1,44 @@
+The domain model 'stuff' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'Thing' represents an important domain concept.
+It does not declare any attributes.
+
+'stuff_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'stuff_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'stuff_Stuff' represents an important domain concept.
+It does not declare any attributes.
+
+'stuff_Bar' represents an important domain concept.
+It does not declare any attributes.
+
+'stuff_Baz' represents an important domain concept.
+It does not declare any attributes.
+
+'stuff_World' represents an important domain concept.
+It does not declare any attributes.
+
+'stuff_Foo' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'stuff_Stuff' is a specialization of 'Thing'.
+The class 'stuff_Bar' is a specialization of 'NamedElement'.
+The class 'stuff_Baz' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'stuff_World' and 'stuff_Thing'. From 'stuff_World', the role 'stuff_World' has cardinality 0..*, and from 'stuff_Thing', the role 'stuff_Thing' has cardinality 0..*.
+An association connects 'stuff_Thing' and 'stuff_Thing'. From 'stuff_Thing', the role 'stuff_Thing1' has cardinality 0..*, and from 'stuff_Thing', the role 'stuff_Thing3' has cardinality 0..*.
+An association connects 'stuff_Stuff' and 'stuff_Foo'. From 'stuff_Stuff', the role 'stuff_Stuff' has cardinality 0..*, and from 'stuff_Foo', the role 'stuff_Foo' has cardinality 0..*.
+An association connects 'stuff_Stuff' and 'stuff_Bar'. From 'stuff_Stuff', the role 'stuff_Stuff6' has cardinality 0..*, and from 'stuff_Bar', the role 'stuff_Bar' has cardinality 0..*.
+An association connects 'stuff_Stuff' and 'stuff_Foo'. From 'stuff_Stuff', the role 'stuff_Stuff9' has cardinality 0..*, and from 'stuff_Foo', the role 'stuff_Foo8' has cardinality 0..*.
+An association connects 'stuff_Foo' and 'stuff_Thing'. From 'stuff_Foo', the role 'stuff_Foo11' has cardinality 0..*, and from 'stuff_Thing', the role 'stuff_Thing12' has cardinality 0..*.
+An association connects 'stuff_Bar' and 'stuff_Baz'. From 'stuff_Bar', the role 'stuff_Bar14' has cardinality 0..*, and from 'stuff_Baz', the role 'stuff_Baz' has cardinality 0..*.

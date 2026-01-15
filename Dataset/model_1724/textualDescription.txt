@@ -1,0 +1,16 @@
+The domain model 'mapkey' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'mapkey_Book' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'mapkey_StringToWriterMapEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'mapkey_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'mapkey_StringToWriterMapEntry' and 'mapkey_Book'. From 'mapkey_StringToWriterMapEntry', the role 'mapkey_StringToWriterMapEntry' has cardinality 0..*, and from 'mapkey_Book', the role 'mapkey_Book' has cardinality 0..*.
+An association connects 'mapkey_StringToWriterMapEntry' and 'mapkey_Writer'. From 'mapkey_StringToWriterMapEntry', the role 'mapkey_StringToWriterMapEntry2' has cardinality 0..*, and from 'mapkey_Writer', the role 'mapkey_Writer' has cardinality 0..*.

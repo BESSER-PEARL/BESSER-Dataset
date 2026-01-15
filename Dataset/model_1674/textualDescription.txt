@@ -1,0 +1,68 @@
+The domain model 'syswb103' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'syswb103_FunctionProperty' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'syswb103_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'syswb103_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'syswb103_System' represents an important domain concept.
+It does not declare any attributes.
+
+'syswb103_Thoughts' represents an important domain concept.
+It does not declare any attributes.
+
+'syswb103_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'syswb103_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'syswb103_Workbench' represents an important domain concept.
+It has one attribute: 'aprop', which is of type str.
+
+'syswb103_PatternCatalog' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'syswb103_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'syswb103_Workbench' is a specialization of 'NamedElement'.
+The class 'syswb103_Thing' is a specialization of 'NamedElement'.
+The class 'syswb103_RelatedTo' is a specialization of 'NamedElement'.
+The class 'syswb103_Thoughts' is a specialization of 'NamedElement'.
+The class 'syswb103_FunctionProperty' is a specialization of 'NamedElement'.
+The class 'syswb103_Component' is a specialization of 'NamedElement'.
+The class 'syswb103_Function' is a specialization of 'NamedElement'.
+The class 'syswb103_System' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'syswb103_Thing' and 'syswb103_Workbench'. From 'syswb103_Thing', the role 'syswb103_Thing' has cardinality 0..*, and from 'syswb103_Workbench', the role 'syswb103_Workbench' has cardinality 0..*.
+An association connects 'syswb103_Thoughts' and 'syswb103_Workbench'. From 'syswb103_Thoughts', the role 'syswb103_Thoughts' has cardinality 0..*, and from 'syswb103_Workbench', the role 'syswb103_Workbench2' has cardinality 0..*.
+An association connects 'syswb103_System' and 'syswb103_Workbench'. From 'syswb103_System', the role 'syswb103_System' has cardinality 0..*, and from 'syswb103_Workbench', the role 'syswb103_Workbench4' has cardinality 0..*.
+An association connects 'syswb103_FunctionProperty' and 'syswb103_Workbench'. From 'syswb103_FunctionProperty', the role 'syswb103_FunctionProperty' has cardinality 0..*, and from 'syswb103_Workbench', the role 'syswb103_Workbench6' has cardinality 0..*.
+An association connects 'syswb103_Workbench' and 'syswb103_PatternCatalog'. From 'syswb103_Workbench', the role 'syswb103_Workbench8' has cardinality 0..*, and from 'syswb103_PatternCatalog', the role 'syswb103_PatternCatalog' has cardinality 0..*.
+An association connects 'syswb103_RelatedTo' and 'syswb103_Thing'. From 'syswb103_RelatedTo', the role 'RelatedTo' has cardinality 0..*, and from 'syswb103_Thing', the role 'fromThing' has cardinality 0..*.
+An association connects 'syswb103_Thing' and 'syswb103_RelatedTo'. From 'syswb103_Thing', the role 'Thing' has cardinality 0..*, and from 'syswb103_RelatedTo', the role 'relations' has cardinality 0..*.
+An association connects 'syswb103_RelatedTo' and 'syswb103_Thing'. From 'syswb103_RelatedTo', the role 'syswb103_RelatedTo' has cardinality 0..*, and from 'syswb103_Thing', the role 'syswb103_Thing12' has cardinality 0..*.
+An association connects 'syswb103_Thoughts' and 'syswb103_Thing'. From 'syswb103_Thoughts', the role 'syswb103_Thoughts14' has cardinality 0..*, and from 'syswb103_Thing', the role 'syswb103_Thing15' has cardinality 0..*.
+An association connects 'syswb103_FunctionProperty' and 'syswb103_FunctionProperty'. From 'syswb103_FunctionProperty', the role 'syswb103_FunctionProperty18' has cardinality 0..*, and from 'syswb103_FunctionProperty', the role 'syswb103_FunctionProperty16' has cardinality 0..*.
+An association connects 'syswb103_Component' and 'syswb103_Component'. From 'syswb103_Component', the role 'syswb103_Component' has cardinality 0..*, and from 'syswb103_Component', the role 'syswb103_Component19' has cardinality 0..*.
+An association connects 'syswb103_Component' and 'syswb103_Component'. From 'syswb103_Component', the role 'syswb103_Component21' has cardinality 0..*, and from 'syswb103_Component', the role 'syswb103_Component23' has cardinality 0..*.
+An association connects 'syswb103_Component' and 'syswb103_Function'. From 'syswb103_Component', the role 'syswb103_Component25' has cardinality 0..*, and from 'syswb103_Function', the role 'syswb103_Function' has cardinality 0..*.
+An association connects 'syswb103_Function' and 'syswb103_Function'. From 'syswb103_Function', the role 'syswb103_Function26' has cardinality 0..*, and from 'syswb103_Function', the role 'syswb103_Function28' has cardinality 0..*.
+An association connects 'syswb103_FunctionProperty' and 'syswb103_Function'. From 'syswb103_FunctionProperty', the role 'syswb103_FunctionProperty31' has cardinality 0..*, and from 'syswb103_Function', the role 'syswb103_Function30' has cardinality 0..*.
+An association connects 'syswb103_Function' and 'syswb103_Function'. From 'syswb103_Function', the role 'syswb103_Function32' has cardinality 0..*, and from 'syswb103_Function', the role 'syswb103_Function34' has cardinality 0..*.
+An association connects 'syswb103_Component' and 'syswb103_Function'. From 'syswb103_Component', the role 'syswb103_Component37' has cardinality 0..*, and from 'syswb103_Function', the role 'syswb103_Function36' has cardinality 0..*.
+An association connects 'syswb103_System' and 'syswb103_Function'. From 'syswb103_System', the role 'syswb103_System39' has cardinality 0..*, and from 'syswb103_Function', the role 'syswb103_Function40' has cardinality 0..*.
+An association connects 'syswb103_Component' and 'syswb103_System'. From 'syswb103_Component', the role 'syswb103_Component43' has cardinality 0..*, and from 'syswb103_System', the role 'syswb103_System42' has cardinality 0..*.
+An association connects 'syswb103_PatternCatalog' and 'syswb103_Function'. From 'syswb103_PatternCatalog', the role 'syswb103_PatternCatalog45' has cardinality 0..*, and from 'syswb103_Function', the role 'syswb103_Function46' has cardinality 0..*.

@@ -1,0 +1,143 @@
+The domain model 'syswbeff1065ok' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'syswbeff1065ok_Item' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'syswbeff1065ok_Thoughts' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'syswbeff1065ok_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff1065ok_ProcessNode' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'syswbeff1065ok_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff1065ok_Port' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'SequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff1065ok_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff1065ok_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff1065ok_OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff1065ok_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'syswbeff1065ok_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff1065ok_SequenceNode' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'tMax', which is of type int; 'tMin', which is of type int.
+
+'syswbeff1065ok_LoopExit' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff1065ok_InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff1065ok_AssociatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'syswbeff1065ok_And' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff1065ok_Description' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'syswbeff1065ok_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff1065ok_FunctionProperty' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'syswbeff1065ok_PatternCatalog' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'syswbeff1065ok_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'syswbeff1065ok_Workbench' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff1065ok_System' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff1065ok_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff1065ok_Function' represents an important domain concept.
+It has one attribute: 'domain', which is of type str.
+
+'ProcessNode' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff1065ok_Iteration' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FunctionDomain' defines the following possible values: 'form', 'space', 'time'.
+
+The model also captures inheritance relationships between classes.
+The class 'syswbeff1065ok_Function' is a specialization of 'SequenceNode'.
+The class 'syswbeff1065ok_Function' is a specialization of 'ProcessNode'.
+The class 'syswbeff1065ok_Sequence' is a specialization of 'SequenceNode'.
+The class 'syswbeff1065ok_And' is a specialization of 'Sequence'.
+The class 'syswbeff1065ok_Or' is a specialization of 'Sequence'.
+The class 'syswbeff1065ok_Start' is a specialization of 'Sequence'.
+The class 'syswbeff1065ok_Final' is a specialization of 'Sequence'.
+The class 'syswbeff1065ok_Loop' is a specialization of 'Sequence'.
+The class 'syswbeff1065ok_InputPort' is a specialization of 'Port'.
+The class 'syswbeff1065ok_Flow' is a specialization of 'ProcessNode'.
+The class 'syswbeff1065ok_OutputPort' is a specialization of 'Port'.
+The class 'syswbeff1065ok_LoopExit' is a specialization of 'Sequence'.
+The class 'syswbeff1065ok_Iteration' is a specialization of 'Sequence'.
+
+Relationships between classes are modeled using associations.
+An association connects 'syswbeff1065ok_Function' and 'syswbeff1065ok_Function'. From 'syswbeff1065ok_Function', the role 'syswbeff1065ok_Function' has cardinality 0..*, and from 'syswbeff1065ok_Function', the role 'syswbeff1065ok_Function0' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Function' and 'syswbeff1065ok_Sequence'. From 'syswbeff1065ok_Function', the role 'syswbeff1065ok_Function3' has cardinality 0..*, and from 'syswbeff1065ok_Sequence', the role 'syswbeff1065ok_Sequence' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Function' and 'syswbeff1065ok_Flow'. From 'syswbeff1065ok_Function', the role 'syswbeff1065ok_Function5' has cardinality 0..*, and from 'syswbeff1065ok_Flow', the role 'syswbeff1065ok_Flow' has cardinality 0..*.
+An association connects 'syswbeff1065ok_OutputPort' and 'syswbeff1065ok_Function'. From 'syswbeff1065ok_OutputPort', the role 'syswbeff1065ok_OutputPort' has cardinality 0..*, and from 'syswbeff1065ok_Function', the role 'syswbeff1065ok_Function7' has cardinality 0..*.
+An association connects 'syswbeff1065ok_InputPort' and 'syswbeff1065ok_Function'. From 'syswbeff1065ok_InputPort', the role 'syswbeff1065ok_InputPort' has cardinality 0..*, and from 'syswbeff1065ok_Function', the role 'syswbeff1065ok_Function9' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Description' and 'syswbeff1065ok_Function'. From 'syswbeff1065ok_Description', the role 'syswbeff1065ok_Description' has cardinality 0..*, and from 'syswbeff1065ok_Function', the role 'syswbeff1065ok_Function11' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Function' and 'syswbeff1065ok_Token'. From 'syswbeff1065ok_Function', the role 'syswbeff1065ok_Function13' has cardinality 0..*, and from 'syswbeff1065ok_Token', the role 'syswbeff1065ok_Token' has cardinality 0..*.
+An association connects 'syswbeff1065ok_FunctionProperty' and 'syswbeff1065ok_Function'. From 'syswbeff1065ok_FunctionProperty', the role 'syswbeff1065ok_FunctionProperty' has cardinality 0..*, and from 'syswbeff1065ok_Function', the role 'syswbeff1065ok_Function15' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Function' and 'syswbeff1065ok_Function'. From 'syswbeff1065ok_Function', the role 'syswbeff1065ok_Function18' has cardinality 0..*, and from 'syswbeff1065ok_Function', the role 'syswbeff1065ok_Function16' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Function' and 'syswbeff1065ok_Component'. From 'syswbeff1065ok_Function', the role 'syswbeff1065ok_Function20' has cardinality 0..*, and from 'syswbeff1065ok_Component', the role 'syswbeff1065ok_Component' has cardinality 0..*.
+An association connects 'syswbeff1065ok_SequenceNode' and 'syswbeff1065ok_SequenceNode'. From 'syswbeff1065ok_SequenceNode', the role 'syswbeff1065ok_SequenceNode21' has cardinality 0..*, and from 'syswbeff1065ok_SequenceNode', the role 'syswbeff1065ok_SequenceNode' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Flow' and 'syswbeff1065ok_InputPort'. From 'syswbeff1065ok_Flow', the role 'syswbeff1065ok_Flow24' has cardinality 0..*, and from 'syswbeff1065ok_InputPort', the role 'syswbeff1065ok_InputPort25' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Flow' and 'syswbeff1065ok_Item'. From 'syswbeff1065ok_Flow', the role 'syswbeff1065ok_Flow27' has cardinality 0..*, and from 'syswbeff1065ok_Item', the role 'syswbeff1065ok_Item' has cardinality 0..*.
+An association connects 'syswbeff1065ok_OutputPort' and 'syswbeff1065ok_Flow'. From 'syswbeff1065ok_OutputPort', the role 'syswbeff1065ok_OutputPort29' has cardinality 0..*, and from 'syswbeff1065ok_Flow', the role 'syswbeff1065ok_Flow30' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Thing' and 'syswbeff1065ok_AssociatedTo'. From 'syswbeff1065ok_Thing', the role 'syswbeff1065ok_Thing' has cardinality 0..*, and from 'syswbeff1065ok_AssociatedTo', the role 'syswbeff1065ok_AssociatedTo' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Thing' and 'syswbeff1065ok_AssociatedTo'. From 'syswbeff1065ok_Thing', the role 'syswbeff1065ok_Thing34' has cardinality 0..*, and from 'syswbeff1065ok_AssociatedTo', the role 'syswbeff1065ok_AssociatedTo33' has cardinality 0..*.
+An association connects 'syswbeff1065ok_AssociatedTo' and 'syswbeff1065ok_Thing'. From 'syswbeff1065ok_AssociatedTo', the role 'syswbeff1065ok_AssociatedTo37' has cardinality 0..*, and from 'syswbeff1065ok_Thing', the role 'syswbeff1065ok_Thing36' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Thing' and 'syswbeff1065ok_Thoughts'. From 'syswbeff1065ok_Thing', the role 'syswbeff1065ok_Thing39' has cardinality 0..*, and from 'syswbeff1065ok_Thoughts', the role 'syswbeff1065ok_Thoughts' has cardinality 0..*.
+An association connects 'syswbeff1065ok_FunctionProperty' and 'syswbeff1065ok_FunctionProperty'. From 'syswbeff1065ok_FunctionProperty', the role 'syswbeff1065ok_FunctionProperty40' has cardinality 0..*, and from 'syswbeff1065ok_FunctionProperty', the role 'syswbeff1065ok_FunctionProperty42' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Component' and 'syswbeff1065ok_Component'. From 'syswbeff1065ok_Component', the role 'syswbeff1065ok_Component43' has cardinality 0..*, and from 'syswbeff1065ok_Component', the role 'syswbeff1065ok_Component45' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Component' and 'syswbeff1065ok_Component'. From 'syswbeff1065ok_Component', the role 'syswbeff1065ok_Component48' has cardinality 0..*, and from 'syswbeff1065ok_Component', the role 'syswbeff1065ok_Component46' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Function' and 'syswbeff1065ok_Component'. From 'syswbeff1065ok_Function', the role 'syswbeff1065ok_Function51' has cardinality 0..*, and from 'syswbeff1065ok_Component', the role 'syswbeff1065ok_Component50' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Function' and 'syswbeff1065ok_System'. From 'syswbeff1065ok_Function', the role 'syswbeff1065ok_Function53' has cardinality 0..*, and from 'syswbeff1065ok_System', the role 'syswbeff1065ok_System' has cardinality 0..*.
+An association connects 'syswbeff1065ok_System' and 'syswbeff1065ok_Component'. From 'syswbeff1065ok_System', the role 'syswbeff1065ok_System55' has cardinality 0..*, and from 'syswbeff1065ok_Component', the role 'syswbeff1065ok_Component56' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Function' and 'syswbeff1065ok_PatternCatalog'. From 'syswbeff1065ok_Function', the role 'syswbeff1065ok_Function58' has cardinality 0..*, and from 'syswbeff1065ok_PatternCatalog', the role 'syswbeff1065ok_PatternCatalog' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Workbench' and 'syswbeff1065ok_Thing'. From 'syswbeff1065ok_Workbench', the role 'syswbeff1065ok_Workbench' has cardinality 0..*, and from 'syswbeff1065ok_Thing', the role 'syswbeff1065ok_Thing60' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Thoughts' and 'syswbeff1065ok_Workbench'. From 'syswbeff1065ok_Thoughts', the role 'syswbeff1065ok_Thoughts63' has cardinality 0..*, and from 'syswbeff1065ok_Workbench', the role 'syswbeff1065ok_Workbench62' has cardinality 0..*.
+An association connects 'syswbeff1065ok_System' and 'syswbeff1065ok_Workbench'. From 'syswbeff1065ok_System', the role 'syswbeff1065ok_System66' has cardinality 0..*, and from 'syswbeff1065ok_Workbench', the role 'syswbeff1065ok_Workbench65' has cardinality 0..*.
+An association connects 'syswbeff1065ok_FunctionProperty' and 'syswbeff1065ok_Workbench'. From 'syswbeff1065ok_FunctionProperty', the role 'syswbeff1065ok_FunctionProperty69' has cardinality 0..*, and from 'syswbeff1065ok_Workbench', the role 'syswbeff1065ok_Workbench68' has cardinality 0..*.
+An association connects 'syswbeff1065ok_Workbench' and 'syswbeff1065ok_PatternCatalog'. From 'syswbeff1065ok_Workbench', the role 'syswbeff1065ok_Workbench71' has cardinality 0..*, and from 'syswbeff1065ok_PatternCatalog', the role 'syswbeff1065ok_PatternCatalog72' has cardinality 0..*.

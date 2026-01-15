@@ -1,0 +1,58 @@
+The domain model 'pnw' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'NetElement' represents an important domain concept.
+It does not declare any attributes.
+
+'pnw_TPEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'pnw_Place' represents an important domain concept.
+It has one attribute: 'noOfTokens', which is of type int.
+
+'pnw_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pnw_Net' represents an important domain concept.
+It has one attribute: 'incrementalID', which is of type str.
+
+'pnw_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'pnw_Edge' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'pnw_NetElement' represents an important domain concept.
+It does not declare any attributes.
+
+'pnw_PTEdge' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'pnw_Net' is a specialization of 'NamedElement'.
+The class 'pnw_Transition' is a specialization of 'NetElement'.
+The class 'pnw_Transition' is a specialization of 'NamedElement'.
+The class 'pnw_Place' is a specialization of 'NetElement'.
+The class 'pnw_Place' is a specialization of 'NamedElement'.
+The class 'pnw_Edge' is a specialization of 'NetElement'.
+The class 'pnw_TPEdge' is a specialization of 'Edge'.
+The class 'pnw_PTEdge' is a specialization of 'Edge'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pnw_NetElement' and 'pnw_Net'. From 'pnw_NetElement', the role 'NetElement' has cardinality 0..*, and from 'pnw_Net', the role 'net' has cardinality 0..*.
+An association connects 'pnw_Net' and 'pnw_NetElement'. From 'pnw_Net', the role 'Net' has cardinality 0..*, and from 'pnw_NetElement', the role 'elements' has cardinality 0..*.
+An association connects 'pnw_Transition' and 'pnw_TPEdge'. From 'pnw_Transition', the role 'fromTransition' has cardinality 0..*, and from 'pnw_TPEdge', the role 'TPEdge' has cardinality 0..*.
+An association connects 'pnw_PTEdge' and 'pnw_Transition'. From 'pnw_PTEdge', the role 'PTEdge' has cardinality 0..*, and from 'pnw_Transition', the role 'toTransition' has cardinality 0..*.
+An association connects 'pnw_PTEdge' and 'pnw_Place'. From 'pnw_PTEdge', the role 'PTEdge5' has cardinality 0..*, and from 'pnw_Place', the role 'fromPlace' has cardinality 0..*.
+An association connects 'pnw_Place' and 'pnw_TPEdge'. From 'pnw_Place', the role 'toPlace' has cardinality 0..*, and from 'pnw_TPEdge', the role 'TPEdge7' has cardinality 0..*.
+An association connects 'pnw_TPEdge' and 'pnw_Transition'. From 'pnw_TPEdge', the role 'outTPEdges' has cardinality 0..*, and from 'pnw_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'pnw_TPEdge' and 'pnw_Place'. From 'pnw_TPEdge', the role 'inTPEdges' has cardinality 0..*, and from 'pnw_Place', the role 'Place' has cardinality 0..*.
+An association connects 'pnw_Place' and 'pnw_PTEdge'. From 'pnw_Place', the role 'Place11' has cardinality 0..*, and from 'pnw_PTEdge', the role 'outPTEdges' has cardinality 0..*.
+An association connects 'pnw_Transition' and 'pnw_PTEdge'. From 'pnw_Transition', the role 'Transition13' has cardinality 0..*, and from 'pnw_PTEdge', the role 'inPTEdges' has cardinality 0..*.

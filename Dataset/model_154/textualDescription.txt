@@ -1,0 +1,37 @@
+The domain model 'petrinetmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'petrinetmodel_Place' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'token', which is of type int.
+
+'petrinetmodel_Edge' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'petrinetmodel_Transition' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'priority', which is of type int; 'token', which is of type int.
+
+'petrinetmodel_EdgeToTransaction' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinetmodel_Petrinet' represents an important domain concept.
+It does not declare any attributes.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinetmodel_EdgeToPlace' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'petrinetmodel_EdgeToPlace' is a specialization of 'Edge'.
+The class 'petrinetmodel_EdgeToTransaction' is a specialization of 'Edge'.
+
+Relationships between classes are modeled using associations.
+An association connects 'petrinetmodel_Petrinet' and 'petrinetmodel_Transition'. From 'petrinetmodel_Petrinet', the role 'petrinetmodel_Petrinet' has cardinality 0..*, and from 'petrinetmodel_Transition', the role 'petrinetmodel_Transition' has cardinality 0..*.
+An association connects 'petrinetmodel_Place' and 'petrinetmodel_Petrinet'. From 'petrinetmodel_Place', the role 'petrinetmodel_Place' has cardinality 0..*, and from 'petrinetmodel_Petrinet', the role 'petrinetmodel_Petrinet2' has cardinality 0..*.
+An association connects 'petrinetmodel_EdgeToPlace' and 'petrinetmodel_Transition'. From 'petrinetmodel_EdgeToPlace', the role 'petrinetmodel_EdgeToPlace' has cardinality 0..*, and from 'petrinetmodel_Transition', the role 'petrinetmodel_Transition4' has cardinality 0..*.
+An association connects 'petrinetmodel_Place' and 'petrinetmodel_Transition'. From 'petrinetmodel_Place', the role 'petrinetmodel_Place7' has cardinality 0..*, and from 'petrinetmodel_Transition', the role 'petrinetmodel_Transition6' has cardinality 0..*.
+An association connects 'petrinetmodel_EdgeToTransaction' and 'petrinetmodel_Place'. From 'petrinetmodel_EdgeToTransaction', the role 'petrinetmodel_EdgeToTransaction' has cardinality 0..*, and from 'petrinetmodel_Place', the role 'petrinetmodel_Place9' has cardinality 0..*.
+An association connects 'petrinetmodel_EdgeToPlace' and 'petrinetmodel_Place'. From 'petrinetmodel_EdgeToPlace', the role 'petrinetmodel_EdgeToPlace11' has cardinality 0..*, and from 'petrinetmodel_Place', the role 'petrinetmodel_Place12' has cardinality 0..*.
+An association connects 'petrinetmodel_EdgeToTransaction' and 'petrinetmodel_Transition'. From 'petrinetmodel_EdgeToTransaction', the role 'petrinetmodel_EdgeToTransaction14' has cardinality 0..*, and from 'petrinetmodel_Transition', the role 'petrinetmodel_Transition15' has cardinality 0..*.

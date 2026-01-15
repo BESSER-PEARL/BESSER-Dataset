@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/spoenemann/xtext-orion/org.xtext.example.statemachine/model/generated/Statemachine.ecore

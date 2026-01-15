@@ -1,0 +1,41 @@
+The domain model 'trialStatemachine' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'trialStatemachine_Statemachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'Region' represents an important domain concept.
+It does not declare any attributes.
+
+'trialStatemachine_Region' represents an important domain concept.
+It has one attribute: 'history', which is of type str.
+
+'trialStatemachine_ComplexState' represents an important domain concept.
+It does not declare any attributes.
+
+'trialStatemachine_Action' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'trialStatemachine_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'trialStatemachine_LabeledTransition' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'trialStatemachine_ComplexState' is a specialization of 'State'.
+The class 'trialStatemachine_Statemachine' is a specialization of 'Region'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trialStatemachine_LabeledTransition' and 'trialStatemachine_State'. From 'trialStatemachine_LabeledTransition', the role 'trialStatemachine_LabeledTransition' has cardinality 0..*, and from 'trialStatemachine_State', the role 'trialStatemachine_State' has cardinality 0..*.
+An association connects 'trialStatemachine_Region' and 'trialStatemachine_ComplexState'. From 'trialStatemachine_Region', the role 'trialStatemachine_Region' has cardinality 0..*, and from 'trialStatemachine_ComplexState', the role 'trialStatemachine_ComplexState' has cardinality 0..*.
+An association connects 'trialStatemachine_Action' and 'trialStatemachine_Statemachine'. From 'trialStatemachine_Action', the role 'trialStatemachine_Action' has cardinality 0..*, and from 'trialStatemachine_Statemachine', the role 'trialStatemachine_Statemachine' has cardinality 0..*.
+An association connects 'trialStatemachine_Region' and 'trialStatemachine_State'. From 'trialStatemachine_Region', the role 'trialStatemachine_Region4' has cardinality 0..*, and from 'trialStatemachine_State', the role 'trialStatemachine_State5' has cardinality 0..*.
+An association connects 'trialStatemachine_State' and 'trialStatemachine_Region'. From 'trialStatemachine_State', the role 'trialStatemachine_State8' has cardinality 0..*, and from 'trialStatemachine_Region', the role 'trialStatemachine_Region7' has cardinality 0..*.
+An association connects 'trialStatemachine_Region' and 'trialStatemachine_State'. From 'trialStatemachine_Region', the role 'trialStatemachine_Region10' has cardinality 0..*, and from 'trialStatemachine_State', the role 'trialStatemachine_State11' has cardinality 0..*.
+An association connects 'trialStatemachine_State' and 'trialStatemachine_LabeledTransition'. From 'trialStatemachine_State', the role 'trialStatemachine_State14' has cardinality 0..*, and from 'trialStatemachine_LabeledTransition', the role 'trialStatemachine_LabeledTransition13' has cardinality 0..*.
+An association connects 'trialStatemachine_Action' and 'trialStatemachine_LabeledTransition'. From 'trialStatemachine_Action', the role 'trialStatemachine_Action17' has cardinality 0..*, and from 'trialStatemachine_LabeledTransition', the role 'trialStatemachine_LabeledTransition16' has cardinality 0..*.

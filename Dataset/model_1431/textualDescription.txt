@@ -1,0 +1,53 @@
+The domain model 'scmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'scmodel_State' represents an important domain concept.
+It does not declare any attributes.
+
+'scmodel_History' represents an important domain concept.
+It has one attribute: 'shallow', which is of type bool.
+
+'scmodel_StateMachine' represents an important domain concept.
+It has the following attributes: 'priority', which is of type float; 'id', which is of type str; 'agentType', which is of type str; 'className', which is of type str; 'uuid', which is of type str; 'language', which is of type str; 'package', which is of type str; 'nextID', which is of type int.
+
+'scmodel_PseudoState' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'scmodel_AbstractState' represents an important domain concept.
+It has the following attributes: 'uuid', which is of type str; 'onExit', which is of type str; 'onEnter', which is of type str; 'onEnterImports', which is of type str; 'onExitImports', which is of type str; 'language', which is of type str; 'id', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'scmodel_Transition' represents an important domain concept.
+It has the following attributes: 'guard', which is of type str; 'triggerTime', which is of type float; 'triggerType', which is of type str; 'messageCheckerConditionLanguage', which is of type str; 'triggerCodeLanguage', which is of type str; 'triggerExpRateCodeImports', which is of type str; 'id', which is of type str; 'guardImports', which is of type str; 'uuid', which is of type str; 'messageCheckerCode', which is of type str; 'triggerTimedCodeImports', which is of type str; 'priority', which is of type float; 'messageCheckerCodeImports', which is of type str; 'outOfBranch', which is of type bool; 'triggerProbCodeImports', which is of type str; 'triggerProbCode', which is of type str; 'messageCheckerClass', which is of type str; 'triggerTimedCode', which is of type str; 'triggerConditionCodeImports', which is of type str; 'defaultTransition', which is of type bool; 'triggerExpRateCode', which is of type str; 'messageCheckerType', which is of type str; 'onTransitionImports', which is of type str; 'triggerConditionCode', which is of type str; 'onTransition', which is of type str; 'selfTransition', which is of type bool.
+
+'scmodel_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'scmodel_CompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MessageCheckerTypes' defines the following possible values: 'conditional', 'unconditional', 'always', 'equals'.
+The enumeration 'PseudoStateTypes' defines the following possible values: 'initial', 'choice', 'entry'.
+The enumeration 'LanguageTypes' defines the following possible values: 'relogo', 'java', 'groovy'.
+The enumeration 'TriggerTypes' defines the following possible values: 'condition', 'timed', 'probability', 'always', 'exponential', 'message'.
+
+The model also captures inheritance relationships between classes.
+The class 'scmodel_State' is a specialization of 'AbstractState'.
+The class 'scmodel_FinalState' is a specialization of 'State'.
+The class 'scmodel_CompositeState' is a specialization of 'AbstractState'.
+The class 'scmodel_PseudoState' is a specialization of 'AbstractState'.
+The class 'scmodel_History' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'scmodel_StateMachine' and 'scmodel_AbstractState'. From 'scmodel_StateMachine', the role 'scmodel_StateMachine' has cardinality 0..*, and from 'scmodel_AbstractState', the role 'scmodel_AbstractState' has cardinality 0..*.
+An association connects 'scmodel_Transition' and 'scmodel_StateMachine'. From 'scmodel_Transition', the role 'scmodel_Transition' has cardinality 0..*, and from 'scmodel_StateMachine', the role 'scmodel_StateMachine2' has cardinality 0..*.
+An association connects 'scmodel_Transition' and 'scmodel_AbstractState'. From 'scmodel_Transition', the role 'scmodel_Transition4' has cardinality 0..*, and from 'scmodel_AbstractState', the role 'scmodel_AbstractState5' has cardinality 0..*.
+An association connects 'scmodel_AbstractState' and 'scmodel_Transition'. From 'scmodel_AbstractState', the role 'scmodel_AbstractState8' has cardinality 0..*, and from 'scmodel_Transition', the role 'scmodel_Transition7' has cardinality 0..*.
+An association connects 'scmodel_CompositeState' and 'scmodel_AbstractState'. From 'scmodel_CompositeState', the role 'scmodel_CompositeState' has cardinality 0..*, and from 'scmodel_AbstractState', the role 'scmodel_AbstractState10' has cardinality 0..*.

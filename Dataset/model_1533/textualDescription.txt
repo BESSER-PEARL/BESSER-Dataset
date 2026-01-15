@@ -1,0 +1,117 @@
+The domain model 'research101' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'research101_Position' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'research101_Write' represents an important domain concept.
+It has one attribute: 'timeSpent', which is of type int.
+
+'research101_Counted' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'Counted' represents an important domain concept.
+It does not declare any attributes.
+
+'research101_ReviewNote' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'research101_Collaboration' represents an important domain concept.
+It has one attribute: 'ratio', which is of type int.
+
+'research101_Labelled' represents an important domain concept.
+It has one attribute: 'lname', which is of type str.
+
+'research101_Paper' represents an important domain concept.
+It does not declare any attributes.
+
+'research101_Keyword' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'research101_Phase' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'research101_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'research101_Skill' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'research101_PublicationProcess' represents an important domain concept.
+It has the following attributes: 'maxTime', which is of type int; 'minTime', which is of type int.
+
+'research101_Researcher' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'forName', which is of type str.
+
+'research101_Review' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'research101_Paragraph' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'research101_PublicationSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'research101_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'research101_Progress' represents an important domain concept.
+It has one attribute: 'percent', which is of type int.
+
+'Labelled' represents an important domain concept.
+It does not declare any attributes.
+
+'research101_PaperKeyword' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'research101_KnowledgeManager' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'research101_PublicationProcess' is a specialization of 'Named'.
+The class 'research101_Paper' is a specialization of 'Named'.
+The class 'research101_Paragraph' is a specialization of 'Counted'.
+The class 'research101_Paragraph' is a specialization of 'Named'.
+The class 'research101_ReviewNote' is a specialization of 'Named'.
+The class 'research101_Progress' is a specialization of 'Labelled'.
+The class 'research101_Write' is a specialization of 'Labelled'.
+The class 'research101_Review' is a specialization of 'Labelled'.
+The class 'research101_PublicationStructure' is a specialization of 'Named'.
+The class 'research101_PublicationSystem' is a specialization of 'Named'.
+The class 'research101_Position' is a specialization of 'Named'.
+The class 'research101_Keyword' is a specialization of 'Named'.
+The class 'research101_KnowledgeManager' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'research101_Phase' and 'research101_PublicationProcess'. From 'research101_Phase', the role 'research101_Phase' has cardinality 0..*, and from 'research101_PublicationProcess', the role 'research101_PublicationProcess' has cardinality 0..*.
+An association connects 'research101_Researcher' and 'research101_Write'. From 'research101_Researcher', the role 'research101_Researcher' has cardinality 0..*, and from 'research101_Write', the role 'research101_Write' has cardinality 0..*.
+An association connects 'research101_Researcher' and 'research101_Review'. From 'research101_Researcher', the role 'research101_Researcher3' has cardinality 0..*, and from 'research101_Review', the role 'research101_Review' has cardinality 0..*.
+An association connects 'research101_Paper' and 'research101_Researcher'. From 'research101_Paper', the role 'Paper' has cardinality 0..*, and from 'research101_Researcher', the role 'authors' has cardinality 0..*.
+An association connects 'research101_Skill' and 'research101_Researcher'. From 'research101_Skill', the role 'research101_Skill' has cardinality 0..*, and from 'research101_Researcher', the role 'research101_Researcher6' has cardinality 0..*.
+An association connects 'research101_Researcher' and 'research101_Position'. From 'research101_Researcher', the role 'research101_Researcher8' has cardinality 0..*, and from 'research101_Position', the role 'research101_Position' has cardinality 0..*.
+An association connects 'research101_Collaboration' and 'research101_Researcher'. From 'research101_Collaboration', the role 'research101_Collaboration' has cardinality 0..*, and from 'research101_Researcher', the role 'research101_Researcher10' has cardinality 0..*.
+An association connects 'research101_Paper' and 'research101_Paragraph'. From 'research101_Paper', the role 'research101_Paper' has cardinality 0..*, and from 'research101_Paragraph', the role 'research101_Paragraph' has cardinality 0..*.
+An association connects 'research101_Paper' and 'research101_Progress'. From 'research101_Paper', the role 'paper' has cardinality 0..*, and from 'research101_Progress', the role 'Progress' has cardinality 0..*.
+An association connects 'research101_Researcher' and 'research101_Paper'. From 'research101_Researcher', the role 'Researcher' has cardinality 0..*, and from 'research101_Paper', the role 'res_papers' has cardinality 0..*.
+An association connects 'research101_PaperKeyword' and 'research101_Paper'. From 'research101_PaperKeyword', the role 'research101_PaperKeyword' has cardinality 0..*, and from 'research101_Paper', the role 'research101_Paper15' has cardinality 0..*.
+An association connects 'research101_Paper' and 'research101_Paper'. From 'research101_Paper', the role 'research101_Paper16' has cardinality 0..*, and from 'research101_Paper', the role 'research101_Paper18' has cardinality 0..*.
+An association connects 'research101_ReviewNote' and 'research101_Paragraph'. From 'research101_ReviewNote', the role 'research101_ReviewNote' has cardinality 0..*, and from 'research101_Paragraph', the role 'research101_Paragraph20' has cardinality 0..*.
+An association connects 'research101_Progress' and 'research101_PublicationProcess'. From 'research101_Progress', the role 'research101_Progress' has cardinality 0..*, and from 'research101_PublicationProcess', the role 'research101_PublicationProcess22' has cardinality 0..*.
+An association connects 'research101_Progress' and 'research101_Paper'. From 'research101_Progress', the role 'progress' has cardinality 0..*, and from 'research101_Paper', the role 'Paper24' has cardinality 0..*.
+An association connects 'research101_Paragraph' and 'research101_Write'. From 'research101_Paragraph', the role 'research101_Paragraph27' has cardinality 0..*, and from 'research101_Write', the role 'research101_Write26' has cardinality 0..*.
+An association connects 'research101_ReviewNote' and 'research101_Review'. From 'research101_ReviewNote', the role 'research101_ReviewNote30' has cardinality 0..*, and from 'research101_Review', the role 'research101_Review29' has cardinality 0..*.
+An association connects 'research101_PublicationStructure' and 'research101_Researcher'. From 'research101_PublicationStructure', the role 'research101_PublicationStructure' has cardinality 0..*, and from 'research101_Researcher', the role 'research101_Researcher32' has cardinality 0..*.
+An association connects 'research101_PublicationStructure' and 'research101_Paper'. From 'research101_PublicationStructure', the role 'research101_PublicationStructure34' has cardinality 0..*, and from 'research101_Paper', the role 'research101_Paper35' has cardinality 0..*.
+An association connects 'research101_PublicationStructure' and 'research101_KnowledgeManager'. From 'research101_PublicationStructure', the role 'research101_PublicationStructure37' has cardinality 0..*, and from 'research101_KnowledgeManager', the role 'research101_KnowledgeManager' has cardinality 0..*.
+An association connects 'research101_PublicationSystem' and 'research101_PublicationProcess'. From 'research101_PublicationSystem', the role 'research101_PublicationSystem' has cardinality 0..*, and from 'research101_PublicationProcess', the role 'research101_PublicationProcess39' has cardinality 0..*.
+An association connects 'research101_PublicationStructure' and 'research101_PublicationSystem'. From 'research101_PublicationStructure', the role 'research101_PublicationStructure42' has cardinality 0..*, and from 'research101_PublicationSystem', the role 'research101_PublicationSystem41' has cardinality 0..*.
+An association connects 'research101_PublicationSystem' and 'research101_Position'. From 'research101_PublicationSystem', the role 'research101_PublicationSystem44' has cardinality 0..*, and from 'research101_Position', the role 'research101_Position45' has cardinality 0..*.
+An association connects 'research101_Position' and 'research101_Position'. From 'research101_Position', the role 'research101_Position46' has cardinality 0..*, and from 'research101_Position', the role 'research101_Position48' has cardinality 0..*.
+An association connects 'research101_Paper' and 'research101_Keyword'. From 'research101_Paper', the role 'research101_Paper50' has cardinality 0..*, and from 'research101_Keyword', the role 'research101_Keyword' has cardinality 0..*.
+An association connects 'research101_KnowledgeManager' and 'research101_Keyword'. From 'research101_KnowledgeManager', the role 'research101_KnowledgeManager52' has cardinality 0..*, and from 'research101_Keyword', the role 'research101_Keyword53' has cardinality 0..*.
+An association connects 'research101_Keyword' and 'research101_PaperKeyword'. From 'research101_Keyword', the role 'research101_Keyword56' has cardinality 0..*, and from 'research101_PaperKeyword', the role 'research101_PaperKeyword55' has cardinality 0..*.
+An association connects 'research101_Collaboration' and 'research101_Paper'. From 'research101_Collaboration', the role 'research101_Collaboration58' has cardinality 0..*, and from 'research101_Paper', the role 'research101_Paper59' has cardinality 0..*.

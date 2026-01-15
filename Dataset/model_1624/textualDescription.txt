@@ -1,0 +1,22 @@
+The domain model 'petrinetv2' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'petrinetv2_Net' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinetv2_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinetv2_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinetv2_Place' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'initialTokens', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'petrinetv2_Place' and 'petrinetv2_Net'. From 'petrinetv2_Place', the role 'petrinetv2_Place' has cardinality 0..*, and from 'petrinetv2_Net', the role 'petrinetv2_Net' has cardinality 0..*.
+An association connects 'petrinetv2_Transition' and 'petrinetv2_Net'. From 'petrinetv2_Transition', the role 'petrinetv2_Transition' has cardinality 0..*, and from 'petrinetv2_Net', the role 'petrinetv2_Net2' has cardinality 0..*.
+An association connects 'petrinetv2_Transition' and 'petrinetv2_Place'. From 'petrinetv2_Transition', the role 'petrinetv2_Transition4' has cardinality 0..*, and from 'petrinetv2_Place', the role 'petrinetv2_Place5' has cardinality 0..*.
+An association connects 'petrinetv2_Place' and 'petrinetv2_Transition'. From 'petrinetv2_Place', the role 'petrinetv2_Place8' has cardinality 0..*, and from 'petrinetv2_Transition', the role 'petrinetv2_Transition7' has cardinality 0..*.
+An association connects 'petrinetv2_Place' and 'petrinetv2_Token'. From 'petrinetv2_Place', the role 'petrinetv2_Place10' has cardinality 0..*, and from 'petrinetv2_Token', the role 'petrinetv2_Token' has cardinality 0..*.

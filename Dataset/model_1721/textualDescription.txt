@@ -1,0 +1,28 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'library_Library' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_Chapter' represents an important domain concept.
+It has the following attributes: 'pages', which is of type int; 'name', which is of type str.
+
+'library_Book' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'library_Content' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Image' represents an important domain concept.
+It does not declare any attributes.
+
+'library_Text' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_Book' and 'library_Library'. From 'library_Book', the role 'library_Book' has cardinality 0..*, and from 'library_Library', the role 'library_Library' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Chapter'. From 'library_Book', the role 'library_Book2' has cardinality 0..*, and from 'library_Chapter', the role 'library_Chapter' has cardinality 0..*.
+An association connects 'library_Content' and 'library_Chapter'. From 'library_Content', the role 'library_Content' has cardinality 0..*, and from 'library_Chapter', the role 'library_Chapter4' has cardinality 0..*.
+An association connects 'library_Text' and 'library_Content'. From 'library_Text', the role 'library_Text' has cardinality 0..*, and from 'library_Content', the role 'library_Content6' has cardinality 0..*.
+An association connects 'library_Content' and 'library_Image'. From 'library_Content', the role 'library_Content8' has cardinality 0..*, and from 'library_Image', the role 'library_Image' has cardinality 0..*.

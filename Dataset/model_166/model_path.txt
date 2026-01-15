@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Fhma/EMU/Tests/org.eclipse.epsilon.emu.engine.test.unit/src/org/eclipse/epsilon/emu/engine/test/unit/resources/PetriNet.ecore

@@ -1,0 +1,18 @@
+The domain model 'Petrinet' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'Petrinet_Place' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'tokens', which is of type int.
+
+'Petrinet_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Petrinet_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'Petrinet_PetriNet' and 'Petrinet_Place'. From 'Petrinet_PetriNet', the role 'Petrinet_PetriNet' has cardinality 0..*, and from 'Petrinet_Place', the role 'Petrinet_Place' has cardinality 0..*.
+An association connects 'Petrinet_PetriNet' and 'Petrinet_Transition'. From 'Petrinet_PetriNet', the role 'Petrinet_PetriNet2' has cardinality 0..*, and from 'Petrinet_Transition', the role 'Petrinet_Transition' has cardinality 0..*.
+An association connects 'Petrinet_Place' and 'Petrinet_Transition'. From 'Petrinet_Place', the role 'Petrinet_Place4' has cardinality 0..*, and from 'Petrinet_Transition', the role 'Petrinet_Transition5' has cardinality 0..*.
+An association connects 'Petrinet_Transition' and 'Petrinet_Place'. From 'Petrinet_Transition', the role 'Petrinet_Transition7' has cardinality 0..*, and from 'Petrinet_Place', the role 'Petrinet_Place8' has cardinality 0..*.

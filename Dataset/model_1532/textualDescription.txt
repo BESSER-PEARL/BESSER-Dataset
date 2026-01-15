@@ -1,0 +1,117 @@
+The domain model 'research' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'Counted' represents an important domain concept.
+It does not declare any attributes.
+
+'research_Keyword' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'research_Paragraph' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'research_PublicationProcess' represents an important domain concept.
+It has the following attributes: 'minTime', which is of type int; 'maxTime', which is of type int.
+
+'research_PublicationSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'research_ReviewNote' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'research_Paper' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'research_KnowledgeManager' represents an important domain concept.
+It does not declare any attributes.
+
+'research_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'research_Collaboration' represents an important domain concept.
+It has one attribute: 'ratio', which is of type int.
+
+'research_Counted' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'research_Labelled' represents an important domain concept.
+It has one attribute: 'lname', which is of type str.
+
+'Labelled' represents an important domain concept.
+It does not declare any attributes.
+
+'research_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'research_Write' represents an important domain concept.
+It has one attribute: 'timeSpent', which is of type int.
+
+'research_Review' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'research_Researcher' represents an important domain concept.
+It has the following attributes: 'forName', which is of type str; 'name', which is of type str.
+
+'research_Position' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'research_Progress' represents an important domain concept.
+It has one attribute: 'percent', which is of type int.
+
+'research_Phase' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'research_PaperKeyword' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'research_Skill' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'research_PublicationProcess' is a specialization of 'Named'.
+The class 'research_Paper' is a specialization of 'Named'.
+The class 'research_Paragraph' is a specialization of 'Counted'.
+The class 'research_Paragraph' is a specialization of 'Named'.
+The class 'research_ReviewNote' is a specialization of 'Named'.
+The class 'research_Progress' is a specialization of 'Labelled'.
+The class 'research_Write' is a specialization of 'Labelled'.
+The class 'research_Review' is a specialization of 'Labelled'.
+The class 'research_PublicationStructure' is a specialization of 'Named'.
+The class 'research_PublicationSystem' is a specialization of 'Named'.
+The class 'research_Position' is a specialization of 'Named'.
+The class 'research_Keyword' is a specialization of 'Named'.
+The class 'research_KnowledgeManager' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'research_Phase' and 'research_PublicationProcess'. From 'research_Phase', the role 'research_Phase' has cardinality 0..*, and from 'research_PublicationProcess', the role 'research_PublicationProcess' has cardinality 0..*.
+An association connects 'research_Researcher' and 'research_Write'. From 'research_Researcher', the role 'research_Researcher' has cardinality 0..*, and from 'research_Write', the role 'research_Write' has cardinality 0..*.
+An association connects 'research_Researcher' and 'research_Review'. From 'research_Researcher', the role 'research_Researcher3' has cardinality 0..*, and from 'research_Review', the role 'research_Review' has cardinality 0..*.
+An association connects 'research_Researcher' and 'research_Paper'. From 'research_Researcher', the role 'authors' has cardinality 0..*, and from 'research_Paper', the role 'Paper' has cardinality 0..*.
+An association connects 'research_Researcher' and 'research_Skill'. From 'research_Researcher', the role 'research_Researcher6' has cardinality 0..*, and from 'research_Skill', the role 'research_Skill' has cardinality 0..*.
+An association connects 'research_Position' and 'research_Researcher'. From 'research_Position', the role 'research_Position' has cardinality 0..*, and from 'research_Researcher', the role 'research_Researcher8' has cardinality 0..*.
+An association connects 'research_Researcher' and 'research_Collaboration'. From 'research_Researcher', the role 'research_Researcher10' has cardinality 0..*, and from 'research_Collaboration', the role 'research_Collaboration' has cardinality 0..*.
+An association connects 'research_Paper' and 'research_Paragraph'. From 'research_Paper', the role 'research_Paper' has cardinality 0..*, and from 'research_Paragraph', the role 'research_Paragraph' has cardinality 0..*.
+An association connects 'research_Paper' and 'research_Progress'. From 'research_Paper', the role 'paper' has cardinality 0..*, and from 'research_Progress', the role 'Progress' has cardinality 0..*.
+An association connects 'research_Paper' and 'research_Researcher'. From 'research_Paper', the role 'res_papers' has cardinality 0..*, and from 'research_Researcher', the role 'Researcher' has cardinality 0..*.
+An association connects 'research_PaperKeyword' and 'research_Paper'. From 'research_PaperKeyword', the role 'research_PaperKeyword' has cardinality 0..*, and from 'research_Paper', the role 'research_Paper15' has cardinality 0..*.
+An association connects 'research_Paper' and 'research_Paper'. From 'research_Paper', the role 'research_Paper18' has cardinality 0..*, and from 'research_Paper', the role 'research_Paper16' has cardinality 0..*.
+An association connects 'research_ReviewNote' and 'research_Paragraph'. From 'research_ReviewNote', the role 'research_ReviewNote' has cardinality 0..*, and from 'research_Paragraph', the role 'research_Paragraph20' has cardinality 0..*.
+An association connects 'research_Progress' and 'research_PublicationProcess'. From 'research_Progress', the role 'research_Progress' has cardinality 0..*, and from 'research_PublicationProcess', the role 'research_PublicationProcess22' has cardinality 0..*.
+An association connects 'research_Paper' and 'research_Progress'. From 'research_Paper', the role 'Paper24' has cardinality 0..*, and from 'research_Progress', the role 'progress' has cardinality 0..*.
+An association connects 'research_Paragraph' and 'research_Write'. From 'research_Paragraph', the role 'research_Paragraph27' has cardinality 0..*, and from 'research_Write', the role 'research_Write26' has cardinality 0..*.
+An association connects 'research_ReviewNote' and 'research_Review'. From 'research_ReviewNote', the role 'research_ReviewNote30' has cardinality 0..*, and from 'research_Review', the role 'research_Review29' has cardinality 0..*.
+An association connects 'research_PublicationStructure' and 'research_Researcher'. From 'research_PublicationStructure', the role 'research_PublicationStructure' has cardinality 0..*, and from 'research_Researcher', the role 'research_Researcher32' has cardinality 0..*.
+An association connects 'research_Paper' and 'research_PublicationStructure'. From 'research_Paper', the role 'research_Paper35' has cardinality 0..*, and from 'research_PublicationStructure', the role 'research_PublicationStructure34' has cardinality 0..*.
+An association connects 'research_KnowledgeManager' and 'research_PublicationStructure'. From 'research_KnowledgeManager', the role 'research_KnowledgeManager' has cardinality 0..*, and from 'research_PublicationStructure', the role 'research_PublicationStructure37' has cardinality 0..*.
+An association connects 'research_PublicationProcess' and 'research_PublicationSystem'. From 'research_PublicationProcess', the role 'research_PublicationProcess39' has cardinality 0..*, and from 'research_PublicationSystem', the role 'research_PublicationSystem' has cardinality 0..*.
+An association connects 'research_PublicationStructure' and 'research_PublicationSystem'. From 'research_PublicationStructure', the role 'research_PublicationStructure42' has cardinality 0..*, and from 'research_PublicationSystem', the role 'research_PublicationSystem41' has cardinality 0..*.
+An association connects 'research_PublicationSystem' and 'research_Position'. From 'research_PublicationSystem', the role 'research_PublicationSystem44' has cardinality 0..*, and from 'research_Position', the role 'research_Position45' has cardinality 0..*.
+An association connects 'research_Position' and 'research_Position'. From 'research_Position', the role 'research_Position48' has cardinality 0..*, and from 'research_Position', the role 'research_Position46' has cardinality 0..*.
+An association connects 'research_Paper' and 'research_Keyword'. From 'research_Paper', the role 'research_Paper50' has cardinality 0..*, and from 'research_Keyword', the role 'research_Keyword' has cardinality 0..*.
+An association connects 'research_Keyword' and 'research_KnowledgeManager'. From 'research_Keyword', the role 'research_Keyword53' has cardinality 0..*, and from 'research_KnowledgeManager', the role 'research_KnowledgeManager52' has cardinality 0..*.
+An association connects 'research_PaperKeyword' and 'research_Keyword'. From 'research_PaperKeyword', the role 'research_PaperKeyword55' has cardinality 0..*, and from 'research_Keyword', the role 'research_Keyword56' has cardinality 0..*.
+An association connects 'research_Collaboration' and 'research_Paper'. From 'research_Collaboration', the role 'research_Collaboration58' has cardinality 0..*, and from 'research_Paper', the role 'research_Paper59' has cardinality 0..*.

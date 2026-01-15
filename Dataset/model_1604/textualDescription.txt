@@ -1,0 +1,43 @@
+The domain model 'petrinetDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'petrinetDsl_Transaction' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinetDsl_Resource' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinetDsl_Storage' represents an important domain concept.
+It has the following attributes: 'capacity', which is of type int; 'count', which is of type int.
+
+'petrinetDsl_TakeStatement' represents an important domain concept.
+It has one attribute: 'count', which is of type int.
+
+'petrinetDsl_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinetDsl_AssureStatement' represents an important domain concept.
+It has one attribute: 'count', which is of type int.
+
+'petrinetDsl_Place' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinetDsl_PutStatement' represents an important domain concept.
+It has one attribute: 'count', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'petrinetDsl_PetriNet' and 'petrinetDsl_Resource'. From 'petrinetDsl_PetriNet', the role 'petrinetDsl_PetriNet' has cardinality 0..*, and from 'petrinetDsl_Resource', the role 'petrinetDsl_Resource' has cardinality 0..*.
+An association connects 'petrinetDsl_PetriNet' and 'petrinetDsl_Place'. From 'petrinetDsl_PetriNet', the role 'petrinetDsl_PetriNet2' has cardinality 0..*, and from 'petrinetDsl_Place', the role 'petrinetDsl_Place' has cardinality 0..*.
+An association connects 'petrinetDsl_Transaction' and 'petrinetDsl_PetriNet'. From 'petrinetDsl_Transaction', the role 'petrinetDsl_Transaction' has cardinality 0..*, and from 'petrinetDsl_PetriNet', the role 'petrinetDsl_PetriNet4' has cardinality 0..*.
+An association connects 'petrinetDsl_Storage' and 'petrinetDsl_Place'. From 'petrinetDsl_Storage', the role 'petrinetDsl_Storage' has cardinality 0..*, and from 'petrinetDsl_Place', the role 'petrinetDsl_Place6' has cardinality 0..*.
+An association connects 'petrinetDsl_Storage' and 'petrinetDsl_Resource'. From 'petrinetDsl_Storage', the role 'petrinetDsl_Storage8' has cardinality 0..*, and from 'petrinetDsl_Resource', the role 'petrinetDsl_Resource9' has cardinality 0..*.
+An association connects 'petrinetDsl_AssureStatement' and 'petrinetDsl_Transaction'. From 'petrinetDsl_AssureStatement', the role 'petrinetDsl_AssureStatement' has cardinality 0..*, and from 'petrinetDsl_Transaction', the role 'petrinetDsl_Transaction11' has cardinality 0..*.
+An association connects 'petrinetDsl_Transaction' and 'petrinetDsl_TakeStatement'. From 'petrinetDsl_Transaction', the role 'petrinetDsl_Transaction13' has cardinality 0..*, and from 'petrinetDsl_TakeStatement', the role 'petrinetDsl_TakeStatement' has cardinality 0..*.
+An association connects 'petrinetDsl_PutStatement' and 'petrinetDsl_Transaction'. From 'petrinetDsl_PutStatement', the role 'petrinetDsl_PutStatement' has cardinality 0..*, and from 'petrinetDsl_Transaction', the role 'petrinetDsl_Transaction15' has cardinality 0..*.
+An association connects 'petrinetDsl_Resource' and 'petrinetDsl_AssureStatement'. From 'petrinetDsl_Resource', the role 'petrinetDsl_Resource18' has cardinality 0..*, and from 'petrinetDsl_AssureStatement', the role 'petrinetDsl_AssureStatement17' has cardinality 0..*.
+An association connects 'petrinetDsl_Place' and 'petrinetDsl_AssureStatement'. From 'petrinetDsl_Place', the role 'petrinetDsl_Place21' has cardinality 0..*, and from 'petrinetDsl_AssureStatement', the role 'petrinetDsl_AssureStatement20' has cardinality 0..*.
+An association connects 'petrinetDsl_Resource' and 'petrinetDsl_TakeStatement'. From 'petrinetDsl_Resource', the role 'petrinetDsl_Resource24' has cardinality 0..*, and from 'petrinetDsl_TakeStatement', the role 'petrinetDsl_TakeStatement23' has cardinality 0..*.
+An association connects 'petrinetDsl_TakeStatement' and 'petrinetDsl_Place'. From 'petrinetDsl_TakeStatement', the role 'petrinetDsl_TakeStatement26' has cardinality 0..*, and from 'petrinetDsl_Place', the role 'petrinetDsl_Place27' has cardinality 0..*.
+An association connects 'petrinetDsl_PutStatement' and 'petrinetDsl_Resource'. From 'petrinetDsl_PutStatement', the role 'petrinetDsl_PutStatement29' has cardinality 0..*, and from 'petrinetDsl_Resource', the role 'petrinetDsl_Resource30' has cardinality 0..*.
+An association connects 'petrinetDsl_Place' and 'petrinetDsl_PutStatement'. From 'petrinetDsl_Place', the role 'petrinetDsl_Place33' has cardinality 0..*, and from 'petrinetDsl_PutStatement', the role 'petrinetDsl_PutStatement32' has cardinality 0..*.

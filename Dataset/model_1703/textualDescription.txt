@@ -1,0 +1,32 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'library_Book' represents an important domain concept.
+It has the following attributes: 'bookURN', which is of type str; 'lastLocation', which is of type str; 'lastHref', which is of type str; 'title', which is of type str; 'collection', which is of type str; 'bookURL', which is of type str; 'author', which is of type str; 'lastOpened', which is of type str.
+
+'library_Bookmark' represents an important domain concept.
+It has the following attributes: 'page', which is of type int; 'id', which is of type str; 'timestamp', which is of type date; 'location', which is of type str; 'href', which is of type str; 'text', which is of type str.
+
+'Bookmark' represents an important domain concept.
+It does not declare any attributes.
+
+'library_TextAnnotation' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'color', which is of type str.
+
+'library_Library' represents an important domain concept.
+It has one attribute: 'version', which is of type str.
+
+'library_Metadata' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AnnotationColor' defines the following possible values: 'Blue', 'Red', 'Purple', 'Underline', 'Green', 'Yellow'.
+
+The model also captures inheritance relationships between classes.
+The class 'library_TextAnnotation' is a specialization of 'Bookmark'.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_Book' and 'library_Library'. From 'library_Book', the role 'library_Book' has cardinality 0..*, and from 'library_Library', the role 'library_Library' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Bookmark'. From 'library_Book', the role 'library_Book2' has cardinality 0..*, and from 'library_Bookmark', the role 'library_Bookmark' has cardinality 0..*.
+An association connects 'library_Book' and 'library_Metadata'. From 'library_Book', the role 'library_Book4' has cardinality 0..*, and from 'library_Metadata', the role 'library_Metadata' has cardinality 0..*.

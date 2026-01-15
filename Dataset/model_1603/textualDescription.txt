@@ -1,0 +1,53 @@
+The domain model 'PetrinetDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'PetrinetDSL_TPEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'PetrinetDSL_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'PetrinetDSL_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'PetrinetDSL_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'PetrinetDSL_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'Petrinet' represents an important domain concept.
+It does not declare any attributes.
+
+'PetrinetDSL_Petrinet' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'PetrinetDSL_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'PetrinetDSL_PTEdge' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'PetrinetDSL_Node' is a specialization of 'Petrinet'.
+The class 'PetrinetDSL_Edge' is a specialization of 'Petrinet'.
+The class 'PetrinetDSL_Token' is a specialization of 'Node'.
+The class 'PetrinetDSL_Transition' is a specialization of 'Node'.
+The class 'PetrinetDSL_Place' is a specialization of 'Node'.
+The class 'PetrinetDSL_PTEdge' is a specialization of 'Edge'.
+The class 'PetrinetDSL_TPEdge' is a specialization of 'Edge'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PetrinetDSL_Petrinet' and 'PetrinetDSL_Petrinet'. From 'PetrinetDSL_Petrinet', the role 'PetrinetDSL_Petrinet' has cardinality 0..*, and from 'PetrinetDSL_Petrinet', the role 'PetrinetDSL_Petrinet0' has cardinality 0..*.
+An association connects 'PetrinetDSL_Token' and 'PetrinetDSL_Place'. From 'PetrinetDSL_Token', the role 'PetrinetDSL_Token' has cardinality 0..*, and from 'PetrinetDSL_Place', the role 'PetrinetDSL_Place' has cardinality 0..*.
+An association connects 'PetrinetDSL_Place' and 'PetrinetDSL_PTEdge'. From 'PetrinetDSL_Place', the role 'PetrinetDSL_Place4' has cardinality 0..*, and from 'PetrinetDSL_PTEdge', the role 'PetrinetDSL_PTEdge' has cardinality 0..*.
+An association connects 'PetrinetDSL_PTEdge' and 'PetrinetDSL_Transition'. From 'PetrinetDSL_PTEdge', the role 'PetrinetDSL_PTEdge6' has cardinality 0..*, and from 'PetrinetDSL_Transition', the role 'PetrinetDSL_Transition' has cardinality 0..*.
+An association connects 'PetrinetDSL_Transition' and 'PetrinetDSL_TPEdge'. From 'PetrinetDSL_Transition', the role 'PetrinetDSL_Transition8' has cardinality 0..*, and from 'PetrinetDSL_TPEdge', the role 'PetrinetDSL_TPEdge' has cardinality 0..*.
+An association connects 'PetrinetDSL_Place' and 'PetrinetDSL_TPEdge'. From 'PetrinetDSL_Place', the role 'PetrinetDSL_Place11' has cardinality 0..*, and from 'PetrinetDSL_TPEdge', the role 'PetrinetDSL_TPEdge10' has cardinality 0..*.

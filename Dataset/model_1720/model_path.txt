@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/christiankerl/org.eclipselab.emf.ecore.protobuf/org.eclipselab.emf.ecore.protobuf.tests/model/library.ecore

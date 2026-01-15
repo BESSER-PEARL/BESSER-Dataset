@@ -1,0 +1,20 @@
+The domain model 'ScaffoldGraph' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'ScaffoldGraph_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'ScaffoldGraph_Edge' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'ScaffoldGraph_Graph' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'ScaffoldGraph_Vertex' and 'ScaffoldGraph_Graph'. From 'ScaffoldGraph_Vertex', the role 'ScaffoldGraph_Vertex' has cardinality 0..*, and from 'ScaffoldGraph_Graph', the role 'ScaffoldGraph_Graph' has cardinality 0..*.
+An association connects 'ScaffoldGraph_Edge' and 'ScaffoldGraph_Graph'. From 'ScaffoldGraph_Edge', the role 'ScaffoldGraph_Edge' has cardinality 0..*, and from 'ScaffoldGraph_Graph', the role 'ScaffoldGraph_Graph2' has cardinality 0..*.
+An association connects 'ScaffoldGraph_Vertex' and 'ScaffoldGraph_Edge'. From 'ScaffoldGraph_Vertex', the role 'EVin' has cardinality 0..*, and from 'ScaffoldGraph_Edge', the role 'Edge' has cardinality 0..*.
+An association connects 'ScaffoldGraph_Vertex' and 'ScaffoldGraph_Edge'. From 'ScaffoldGraph_Vertex', the role 'EVout' has cardinality 0..*, and from 'ScaffoldGraph_Edge', the role 'Edge5' has cardinality 0..*.
+An association connects 'ScaffoldGraph_Vertex' and 'ScaffoldGraph_Edge'. From 'ScaffoldGraph_Vertex', the role 'Vertex' has cardinality 0..*, and from 'ScaffoldGraph_Edge', the role 'VEin' has cardinality 0..*.
+An association connects 'ScaffoldGraph_Vertex' and 'ScaffoldGraph_Edge'. From 'ScaffoldGraph_Vertex', the role 'Vertex8' has cardinality 0..*, and from 'ScaffoldGraph_Edge', the role 'VEout' has cardinality 0..*.

@@ -1,0 +1,39 @@
+The domain model 'pn' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'pn_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'pn_Net' represents an important domain concept.
+It has one attribute: 'incrementalID', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'pn_NetElement' represents an important domain concept.
+It does not declare any attributes.
+
+'pn_Place' represents an important domain concept.
+It has one attribute: 'noOfTokens', which is of type int.
+
+'pn_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NetElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'pn_Net' is a specialization of 'NamedElement'.
+The class 'pn_NetElement' is a specialization of 'NamedElement'.
+The class 'pn_Transition' is a specialization of 'NetElement'.
+The class 'pn_Place' is a specialization of 'NetElement'.
+The class 'pn_Place' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pn_Net' and 'pn_NetElement'. From 'pn_Net', the role 'net' has cardinality 0..*, and from 'pn_NetElement', the role 'NetElement' has cardinality 0..*.
+An association connects 'pn_NetElement' and 'pn_Net'. From 'pn_NetElement', the role 'elements' has cardinality 0..*, and from 'pn_Net', the role 'Net' has cardinality 0..*.
+An association connects 'pn_Place' and 'pn_Transition'. From 'pn_Place', the role 'Place' has cardinality 0..*, and from 'pn_Transition', the role 'srcT2P' has cardinality 0..*.
+An association connects 'pn_Place' and 'pn_Transition'. From 'pn_Place', the role 'Place4' has cardinality 0..*, and from 'pn_Transition', the role 'trgP2T' has cardinality 0..*.
+An association connects 'pn_Place' and 'pn_Transition'. From 'pn_Place', the role 'srcP2T' has cardinality 0..*, and from 'pn_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'pn_Place' and 'pn_Transition'. From 'pn_Place', the role 'trgT2P' has cardinality 0..*, and from 'pn_Transition', the role 'Transition7' has cardinality 0..*.

@@ -1,0 +1,27 @@
+The domain model 'yyb' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'yyb_Alias' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'yyb_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'yyb_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'yyb_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'yyb_Thing' is a specialization of 'NamedElement'.
+The class 'yyb_RelatedTo' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'yyb_Thing' and 'yyb_RelatedTo'. From 'yyb_Thing', the role 'fromThing' has cardinality 0..*, and from 'yyb_RelatedTo', the role 'RelatedTo' has cardinality 0..*.
+An association connects 'yyb_Thing' and 'yyb_RelatedTo'. From 'yyb_Thing', the role 'Thing' has cardinality 0..*, and from 'yyb_RelatedTo', the role 'relations' has cardinality 0..*.
+An association connects 'yyb_RelatedTo' and 'yyb_Alias'. From 'yyb_RelatedTo', the role 'yyb_RelatedTo' has cardinality 0..*, and from 'yyb_Alias', the role 'yyb_Alias' has cardinality 0..*.

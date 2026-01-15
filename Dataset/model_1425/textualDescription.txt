@@ -1,0 +1,57 @@
+The domain model 'statechart' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'statechart_SimpleState' represents an important domain concept.
+It does not declare any attributes.
+
+'statechart_Action' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'statechart_ModelElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statechart_AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'statechart_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'statechart_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'statechart_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'statechart_CompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'statechart_Transition' represents an important domain concept.
+It has the following attributes: 'event', which is of type str; 'guard', which is of type str.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ActionKind' defines the following possible values: 'ENTRY', 'EXIT'.
+
+The model also captures inheritance relationships between classes.
+The class 'statechart_Transition' is a specialization of 'ModelElement'.
+The class 'statechart_AbstractState' is a specialization of 'ModelElement'.
+The class 'statechart_CompositeState' is a specialization of 'AbstractState'.
+The class 'statechart_InitialState' is a specialization of 'AbstractState'.
+The class 'statechart_SimpleState' is a specialization of 'AbstractState'.
+The class 'statechart_FinalState' is a specialization of 'AbstractState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statechart_Transition' and 'statechart_AbstractState'. From 'statechart_Transition', the role 'outgoing' has cardinality 0..*, and from 'statechart_AbstractState', the role 'AbstractState' has cardinality 0..*.
+An association connects 'statechart_AbstractState' and 'statechart_Transition'. From 'statechart_AbstractState', the role 'AbstractState2' has cardinality 0..*, and from 'statechart_Transition', the role 'incoming' has cardinality 0..*.
+An association connects 'statechart_Transition' and 'statechart_AbstractState'. From 'statechart_Transition', the role 'Transition' has cardinality 0..*, and from 'statechart_AbstractState', the role 'to' has cardinality 0..*.
+An association connects 'statechart_Transition' and 'statechart_AbstractState'. From 'statechart_Transition', the role 'Transition5' has cardinality 0..*, and from 'statechart_AbstractState', the role 'from' has cardinality 0..*.
+An association connects 'statechart_AbstractState' and 'statechart_Action'. From 'statechart_AbstractState', the role 'statechart_AbstractState' has cardinality 0..*, and from 'statechart_Action', the role 'statechart_Action' has cardinality 0..*.
+An association connects 'statechart_CompositeState' and 'statechart_AbstractState'. From 'statechart_CompositeState', the role 'statechart_CompositeState' has cardinality 0..*, and from 'statechart_AbstractState', the role 'statechart_AbstractState8' has cardinality 0..*.
+An association connects 'statechart_Transition' and 'statechart_CompositeState'. From 'statechart_Transition', the role 'statechart_Transition' has cardinality 0..*, and from 'statechart_CompositeState', the role 'statechart_CompositeState10' has cardinality 0..*.
+An association connects 'statechart_StateMachine' and 'statechart_CompositeState'. From 'statechart_StateMachine', the role 'statechart_StateMachine' has cardinality 0..*, and from 'statechart_CompositeState', the role 'statechart_CompositeState12' has cardinality 0..*.

@@ -1,0 +1,67 @@
+The domain model 'error3' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'error3_NestedComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'error3_Binding' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'error3_AbstractComponent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'error3_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'error3_World' represents an important domain concept.
+It does not declare any attributes.
+
+'error3_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'error3_Required' represents an important domain concept.
+It has one attribute: 'ir', which is of type str.
+
+'error3_RecursiveComponen' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'error3_Bazbar' represents an important domain concept.
+It has one attribute: 'b', which is of type str.
+
+'error3_Provided' represents an important domain concept.
+It has one attribute: 'ip', which is of type str.
+
+'error3_Level2' represents an important domain concept.
+It does not declare any attributes.
+
+'error3_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'error3_Thing' is a specialization of 'NamedElement'.
+The class 'error3_RelatedTo' is a specialization of 'NamedElement'.
+The class 'error3_Level2' is a specialization of 'AbstractComponent'.
+The class 'error3_NestedComponent' is a specialization of 'AbstractComponent'.
+The class 'error3_RecursiveComponen' is a specialization of 'AbstractComponent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'error3_World' and 'error3_Thing'. From 'error3_World', the role 'error3_World' has cardinality 0..*, and from 'error3_Thing', the role 'error3_Thing' has cardinality 0..*.
+An association connects 'error3_Thing' and 'error3_RelatedTo'. From 'error3_Thing', the role 'fromThing' has cardinality 0..*, and from 'error3_RelatedTo', the role 'RelatedTo' has cardinality 0..*.
+An association connects 'error3_RelatedTo' and 'error3_Thing'. From 'error3_RelatedTo', the role 'relations' has cardinality 0..*, and from 'error3_Thing', the role 'Thing' has cardinality 0..*.
+An association connects 'error3_RelatedTo' and 'error3_Thing'. From 'error3_RelatedTo', the role 'error3_RelatedTo' has cardinality 0..*, and from 'error3_Thing', the role 'error3_Thing4' has cardinality 0..*.
+An association connects 'error3_Required' and 'error3_Binding'. From 'error3_Required', the role 'error3_Required' has cardinality 0..*, and from 'error3_Binding', the role 'error3_Binding' has cardinality 0..*.
+An association connects 'error3_Binding' and 'error3_Required'. From 'error3_Binding', the role 'error3_Binding7' has cardinality 0..*, and from 'error3_Required', the role 'error3_Required8' has cardinality 0..*.
+An association connects 'error3_Provided' and 'error3_Binding'. From 'error3_Provided', the role 'error3_Provided' has cardinality 0..*, and from 'error3_Binding', the role 'error3_Binding10' has cardinality 0..*.
+An association connects 'error3_AbstractComponent' and 'error3_Required'. From 'error3_AbstractComponent', the role 'error3_AbstractComponent' has cardinality 0..*, and from 'error3_Required', the role 'error3_Required12' has cardinality 0..*.
+An association connects 'error3_AbstractComponent' and 'error3_Provided'. From 'error3_AbstractComponent', the role 'error3_AbstractComponent14' has cardinality 0..*, and from 'error3_Provided', the role 'error3_Provided15' has cardinality 0..*.
+An association connects 'error3_Level2' and 'error3_NestedComponent'. From 'error3_Level2', the role 'error3_Level2' has cardinality 0..*, and from 'error3_NestedComponent', the role 'error3_NestedComponent' has cardinality 0..*.
+An association connects 'error3_RecursiveComponen' and 'error3_NestedComponent'. From 'error3_RecursiveComponen', the role 'error3_RecursiveComponen' has cardinality 0..*, and from 'error3_NestedComponent', the role 'error3_NestedComponent18' has cardinality 0..*.
+An association connects 'error3_RecursiveComponen' and 'error3_Bazbar'. From 'error3_RecursiveComponen', the role 'error3_RecursiveComponen20' has cardinality 0..*, and from 'error3_Bazbar', the role 'error3_Bazbar' has cardinality 0..*.
+An association connects 'error3_RecursiveComponen' and 'error3_RecursiveComponen'. From 'error3_RecursiveComponen', the role 'error3_RecursiveComponen21' has cardinality 0..*, and from 'error3_RecursiveComponen', the role 'error3_RecursiveComponen23' has cardinality 0..*.

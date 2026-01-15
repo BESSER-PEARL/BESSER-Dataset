@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/szpatrik/Onlab/model/petrinet.ecore

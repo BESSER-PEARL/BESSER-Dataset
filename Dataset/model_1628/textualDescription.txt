@@ -1,0 +1,18 @@
+The domain model 'petri' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'petri_RedPetri' represents an important domain concept.
+It does not declare any attributes.
+
+'petri_Place' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'tokens', which is of type int.
+
+'petri_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'petri_Transition' and 'petri_Place'. From 'petri_Transition', the role 'petri_Transition' has cardinality 0..*, and from 'petri_Place', the role 'petri_Place' has cardinality 0..*.
+An association connects 'petri_Transition' and 'petri_Place'. From 'petri_Transition', the role 'petri_Transition2' has cardinality 0..*, and from 'petri_Place', the role 'petri_Place3' has cardinality 0..*.
+An association connects 'petri_RedPetri' and 'petri_Place'. From 'petri_RedPetri', the role 'petri_RedPetri' has cardinality 0..*, and from 'petri_Place', the role 'petri_Place5' has cardinality 0..*.
+An association connects 'petri_Transition' and 'petri_RedPetri'. From 'petri_Transition', the role 'petri_Transition8' has cardinality 0..*, and from 'petri_RedPetri', the role 'petri_RedPetri7' has cardinality 0..*.

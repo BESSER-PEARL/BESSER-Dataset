@@ -1,0 +1,52 @@
+The domain model 'syswb106' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'syswb106_PatternCatalog' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'syswb106_System' represents an important domain concept.
+It does not declare any attributes.
+
+'syswb106_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'syswb106_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'syswb106_FunctionProperty' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'syswb106_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'syswb106_Workbench' represents an important domain concept.
+It has one attribute: 'aprop', which is of type str.
+
+'syswb106_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'syswb106_Thoughts' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'syswb106_Workbench' and 'syswb106_Thing'. From 'syswb106_Workbench', the role 'syswb106_Workbench' has cardinality 0..*, and from 'syswb106_Thing', the role 'syswb106_Thing' has cardinality 0..*.
+An association connects 'syswb106_Workbench' and 'syswb106_Thoughts'. From 'syswb106_Workbench', the role 'syswb106_Workbench2' has cardinality 0..*, and from 'syswb106_Thoughts', the role 'syswb106_Thoughts' has cardinality 0..*.
+An association connects 'syswb106_System' and 'syswb106_Workbench'. From 'syswb106_System', the role 'syswb106_System' has cardinality 0..*, and from 'syswb106_Workbench', the role 'syswb106_Workbench4' has cardinality 0..*.
+An association connects 'syswb106_Workbench' and 'syswb106_FunctionProperty'. From 'syswb106_Workbench', the role 'syswb106_Workbench6' has cardinality 0..*, and from 'syswb106_FunctionProperty', the role 'syswb106_FunctionProperty' has cardinality 0..*.
+An association connects 'syswb106_PatternCatalog' and 'syswb106_Workbench'. From 'syswb106_PatternCatalog', the role 'syswb106_PatternCatalog' has cardinality 0..*, and from 'syswb106_Workbench', the role 'syswb106_Workbench8' has cardinality 0..*.
+An association connects 'syswb106_RelatedTo' and 'syswb106_Thing'. From 'syswb106_RelatedTo', the role 'RelatedTo' has cardinality 0..*, and from 'syswb106_Thing', the role 'fromThing' has cardinality 0..*.
+An association connects 'syswb106_Thing' and 'syswb106_RelatedTo'. From 'syswb106_Thing', the role 'Thing' has cardinality 0..*, and from 'syswb106_RelatedTo', the role 'relations' has cardinality 0..*.
+An association connects 'syswb106_RelatedTo' and 'syswb106_Thing'. From 'syswb106_RelatedTo', the role 'syswb106_RelatedTo' has cardinality 0..*, and from 'syswb106_Thing', the role 'syswb106_Thing12' has cardinality 0..*.
+An association connects 'syswb106_Thoughts' and 'syswb106_Thing'. From 'syswb106_Thoughts', the role 'syswb106_Thoughts14' has cardinality 0..*, and from 'syswb106_Thing', the role 'syswb106_Thing15' has cardinality 0..*.
+An association connects 'syswb106_FunctionProperty' and 'syswb106_FunctionProperty'. From 'syswb106_FunctionProperty', the role 'syswb106_FunctionProperty18' has cardinality 0..*, and from 'syswb106_FunctionProperty', the role 'syswb106_FunctionProperty16' has cardinality 0..*.
+An association connects 'syswb106_Component' and 'syswb106_Component'. From 'syswb106_Component', the role 'syswb106_Component19' has cardinality 0..*, and from 'syswb106_Component', the role 'syswb106_Component' has cardinality 0..*.
+An association connects 'syswb106_Component' and 'syswb106_Component'. From 'syswb106_Component', the role 'syswb106_Component23' has cardinality 0..*, and from 'syswb106_Component', the role 'syswb106_Component21' has cardinality 0..*.
+An association connects 'syswb106_Function' and 'syswb106_Component'. From 'syswb106_Function', the role 'syswb106_Function' has cardinality 0..*, and from 'syswb106_Component', the role 'syswb106_Component25' has cardinality 0..*.
+An association connects 'syswb106_Function' and 'syswb106_Function'. From 'syswb106_Function', the role 'syswb106_Function26' has cardinality 0..*, and from 'syswb106_Function', the role 'syswb106_Function28' has cardinality 0..*.
+An association connects 'syswb106_Function' and 'syswb106_FunctionProperty'. From 'syswb106_Function', the role 'syswb106_Function30' has cardinality 0..*, and from 'syswb106_FunctionProperty', the role 'syswb106_FunctionProperty31' has cardinality 0..*.
+An association connects 'syswb106_Function' and 'syswb106_Function'. From 'syswb106_Function', the role 'syswb106_Function34' has cardinality 0..*, and from 'syswb106_Function', the role 'syswb106_Function32' has cardinality 0..*.
+An association connects 'syswb106_Component' and 'syswb106_Function'. From 'syswb106_Component', the role 'syswb106_Component37' has cardinality 0..*, and from 'syswb106_Function', the role 'syswb106_Function36' has cardinality 0..*.
+An association connects 'syswb106_System' and 'syswb106_Function'. From 'syswb106_System', the role 'syswb106_System39' has cardinality 0..*, and from 'syswb106_Function', the role 'syswb106_Function40' has cardinality 0..*.
+An association connects 'syswb106_System' and 'syswb106_Component'. From 'syswb106_System', the role 'syswb106_System42' has cardinality 0..*, and from 'syswb106_Component', the role 'syswb106_Component43' has cardinality 0..*.
+An association connects 'syswb106_Function' and 'syswb106_PatternCatalog'. From 'syswb106_Function', the role 'syswb106_Function46' has cardinality 0..*, and from 'syswb106_PatternCatalog', the role 'syswb106_PatternCatalog45' has cardinality 0..*.

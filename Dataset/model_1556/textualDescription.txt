@@ -1,0 +1,80 @@
+The domain model 'conf' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'conf_System' represents an important domain concept.
+It does not declare any attributes.
+
+'conf_Conference' represents an important domain concept.
+It does not declare any attributes.
+
+'conf_Location' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'conf_Laboratory' represents an important domain concept.
+It does not declare any attributes.
+
+'conf_RevisionNote' represents an important domain concept.
+It does not declare any attributes.
+
+'conf_Contribution' represents an important domain concept.
+It does not declare any attributes.
+
+'conf_SteeringComitee' represents an important domain concept.
+It does not declare any attributes.
+
+'conf_Person' represents an important domain concept.
+It does not declare any attributes.
+
+'conf_Chapter' represents an important domain concept.
+It does not declare any attributes.
+
+'conf_Session' represents an important domain concept.
+It has one attribute: 'year', which is of type str.
+
+'conf_Evaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'conf_Admin' represents an important domain concept.
+It does not declare any attributes.
+
+'conf_ProgramComitee' represents an important domain concept.
+It does not declare any attributes.
+
+'conf_RevisionProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'conf_Researcher' represents an important domain concept.
+It does not declare any attributes.
+
+'conf_Publication' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'conf_Researcher' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'conf_System' and 'conf_Admin'. From 'conf_System', the role 'conf_System' has cardinality 0..*, and from 'conf_Admin', the role 'conf_Admin' has cardinality 0..*.
+An association connects 'conf_Laboratory' and 'conf_System'. From 'conf_Laboratory', the role 'conf_Laboratory' has cardinality 0..*, and from 'conf_System', the role 'conf_System2' has cardinality 0..*.
+An association connects 'conf_System' and 'conf_Conference'. From 'conf_System', the role 'conf_System4' has cardinality 0..*, and from 'conf_Conference', the role 'conf_Conference' has cardinality 0..*.
+An association connects 'conf_RevisionProcess' and 'conf_System'. From 'conf_RevisionProcess', the role 'conf_RevisionProcess' has cardinality 0..*, and from 'conf_System', the role 'conf_System6' has cardinality 0..*.
+An association connects 'conf_Location' and 'conf_Session'. From 'conf_Location', the role 'conf_Location' has cardinality 0..*, and from 'conf_Session', the role 'conf_Session' has cardinality 0..*.
+An association connects 'conf_ProgramComitee' and 'conf_Session'. From 'conf_ProgramComitee', the role 'conf_ProgramComitee' has cardinality 0..*, and from 'conf_Session', the role 'conf_Session9' has cardinality 0..*.
+An association connects 'conf_SteeringComitee' and 'conf_Session'. From 'conf_SteeringComitee', the role 'conf_SteeringComitee' has cardinality 0..*, and from 'conf_Session', the role 'conf_Session11' has cardinality 0..*.
+An association connects 'conf_Session' and 'conf_Contribution'. From 'conf_Session', the role 'conf_Session13' has cardinality 0..*, and from 'conf_Contribution', the role 'conf_Contribution' has cardinality 0..*.
+An association connects 'conf_Admin' and 'conf_Location'. From 'conf_Admin', the role 'conf_Admin15' has cardinality 0..*, and from 'conf_Location', the role 'conf_Location16' has cardinality 0..*.
+An association connects 'conf_Conference' and 'conf_Session'. From 'conf_Conference', the role 'conf_Conference18' has cardinality 0..*, and from 'conf_Session', the role 'conf_Session19' has cardinality 0..*.
+An association connects 'conf_Laboratory' and 'conf_Researcher'. From 'conf_Laboratory', the role 'conf_Laboratory21' has cardinality 0..*, and from 'conf_Researcher', the role 'conf_Researcher' has cardinality 0..*.
+An association connects 'conf_Publication' and 'conf_Laboratory'. From 'conf_Publication', the role 'conf_Publication' has cardinality 0..*, and from 'conf_Laboratory', the role 'conf_Laboratory23' has cardinality 0..*.
+An association connects 'conf_Evaluation' and 'conf_Researcher'. From 'conf_Evaluation', the role 'conf_Evaluation' has cardinality 0..*, and from 'conf_Researcher', the role 'conf_Researcher25' has cardinality 0..*.
+An association connects 'conf_Researcher' and 'conf_Chapter'. From 'conf_Researcher', the role 'conf_Researcher27' has cardinality 0..*, and from 'conf_Chapter', the role 'conf_Chapter' has cardinality 0..*.
+An association connects 'conf_RevisionNote' and 'conf_Researcher'. From 'conf_RevisionNote', the role 'conf_RevisionNote' has cardinality 0..*, and from 'conf_Researcher', the role 'conf_Researcher29' has cardinality 0..*.
+An association connects 'conf_Publication' and 'conf_Chapter'. From 'conf_Publication', the role 'conf_Publication31' has cardinality 0..*, and from 'conf_Chapter', the role 'conf_Chapter32' has cardinality 0..*.
+An association connects 'conf_Chapter' and 'conf_RevisionNote'. From 'conf_Chapter', the role 'conf_Chapter34' has cardinality 0..*, and from 'conf_RevisionNote', the role 'conf_RevisionNote35' has cardinality 0..*.
+An association connects 'conf_Person' and 'conf_SteeringComitee'. From 'conf_Person', the role 'conf_Person' has cardinality 0..*, and from 'conf_SteeringComitee', the role 'conf_SteeringComitee37' has cardinality 0..*.
+An association connects 'conf_ProgramComitee' and 'conf_Person'. From 'conf_ProgramComitee', the role 'conf_ProgramComitee39' has cardinality 0..*, and from 'conf_Person', the role 'conf_Person40' has cardinality 0..*.
+An association connects 'conf_Contribution' and 'conf_Publication'. From 'conf_Contribution', the role 'conf_Contribution42' has cardinality 0..*, and from 'conf_Publication', the role 'conf_Publication43' has cardinality 0..*.
+An association connects 'conf_Evaluation' and 'conf_Publication'. From 'conf_Evaluation', the role 'conf_Evaluation45' has cardinality 0..*, and from 'conf_Publication', the role 'conf_Publication46' has cardinality 0..*.

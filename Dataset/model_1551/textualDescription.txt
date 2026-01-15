@@ -1,0 +1,145 @@
+The domain model 'reviews' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'reviews_Comment' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'description', which is of type str; 'mine', which is of type bool; 'id', which is of type str; 'draft', which is of type bool.
+
+'reviews_Commit' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'subject', which is of type str.
+
+'reviews_Review' represents an important domain concept.
+It does not declare any attributes.
+
+'Location' represents an important domain concept.
+It does not declare any attributes.
+
+'reviews_Repository' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'taskRepositoryUrl', which is of type str; 'taskConnectorKind', which is of type str; 'taskRepository', which is of type str.
+
+'reviews_LineLocation' represents an important domain concept.
+It has the following attributes: 'rangeMax', which is of type int; 'rangeMin', which is of type int.
+
+'reviews_Change' represents an important domain concept.
+It has the following attributes: 'subject', which is of type str; 'state', which is of type str; 'id', which is of type str; 'message', which is of type str; 'key', which is of type str.
+
+'Indexed' represents an important domain concept.
+It does not declare any attributes.
+
+'Change' represents an important domain concept.
+It does not declare any attributes.
+
+'reviews_LineRange' represents an important domain concept.
+It has the following attributes: 'start', which is of type int; 'end', which is of type int.
+
+'reviews_CommentContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'reviews_ApprovalValueMap' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'reviews_Dated' represents an important domain concept.
+It has the following attributes: 'creationDate', which is of type date; 'modificationDate', which is of type date.
+
+'reviews_FileItem' represents an important domain concept.
+It does not declare any attributes.
+
+'ReviewItem' represents an important domain concept.
+It does not declare any attributes.
+
+'reviews_User' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'displayName', which is of type str; 'email', which is of type str.
+
+'reviews_ApprovalType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'key', which is of type str.
+
+'reviews_UserApprovalsMap' represents an important domain concept.
+It does not declare any attributes.
+
+'Dated' represents an important domain concept.
+It does not declare any attributes.
+
+'reviews_ReviewItem' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str; 'reference', which is of type str.
+
+'reviews_FileVersion' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'path', which is of type str; 'binaryContent', which is of type str; 'description', which is of type str; 'fileRevision', which is of type str.
+
+'reviews_ReviewItemSet' represents an important domain concept.
+It has the following attributes: 'revision', which is of type str; 'inNeedOfRetrieval', which is of type bool.
+
+'CommentContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'reviews_RequirementEntry' represents an important domain concept.
+It has one attribute: 'status', which is of type str.
+
+'reviews_ReviewRequirementsMap' represents an important domain concept.
+It does not declare any attributes.
+
+'reviews_Indexed' represents an important domain concept.
+It has one attribute: 'index', which is of type str.
+
+'reviews_Location' represents an important domain concept.
+It does not declare any attributes.
+
+'reviews_ReviewerEntry' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RequirementStatus' defines the following possible values: 'Rejected', 'Satisfied', 'NotSatisfied', 'Optional', 'Unknown', 'Error', 'Closed'.
+The enumeration 'ReviewStatus' defines the following possible values: 'Draft', 'New', 'Submitted', 'Abandoned', 'Merged'.
+
+The model also captures inheritance relationships between classes.
+The class 'reviews_Change' is a specialization of 'Dated'.
+The class 'reviews_Review' is a specialization of 'CommentContainer'.
+The class 'reviews_Review' is a specialization of 'Change'.
+The class 'reviews_Comment' is a specialization of 'Indexed'.
+The class 'reviews_Comment' is a specialization of 'Dated'.
+The class 'reviews_ReviewItem' is a specialization of 'CommentContainer'.
+The class 'reviews_Location' is a specialization of 'Indexed'.
+The class 'reviews_FileItem' is a specialization of 'ReviewItem'.
+The class 'reviews_ReviewItemSet' is a specialization of 'ReviewItem'.
+The class 'reviews_ReviewItemSet' is a specialization of 'Dated'.
+The class 'reviews_LineLocation' is a specialization of 'Location'.
+The class 'reviews_FileVersion' is a specialization of 'ReviewItem'.
+
+Relationships between classes are modeled using associations.
+An association connects 'reviews_CommentContainer' and 'reviews_Comment'. From 'reviews_CommentContainer', the role 'reviews_CommentContainer' has cardinality 0..*, and from 'reviews_Comment', the role 'reviews_Comment' has cardinality 0..*.
+An association connects 'reviews_CommentContainer' and 'reviews_Comment'. From 'reviews_CommentContainer', the role 'item' has cardinality 0..*, and from 'reviews_Comment', the role 'Comment' has cardinality 0..*.
+An association connects 'reviews_Comment' and 'reviews_CommentContainer'. From 'reviews_Comment', the role 'reviews_Comment4' has cardinality 0..*, and from 'reviews_CommentContainer', the role 'reviews_CommentContainer3' has cardinality 0..*.
+An association connects 'reviews_CommentContainer' and 'reviews_Comment'. From 'reviews_CommentContainer', the role 'reviews_CommentContainer6' has cardinality 0..*, and from 'reviews_Comment', the role 'reviews_Comment7' has cardinality 0..*.
+An association connects 'reviews_User' and 'reviews_Change'. From 'reviews_User', the role 'reviews_User' has cardinality 0..*, and from 'reviews_Change', the role 'reviews_Change' has cardinality 0..*.
+An association connects 'reviews_ReviewItemSet' and 'reviews_Review'. From 'reviews_ReviewItemSet', the role 'ReviewItemSet' has cardinality 0..*, and from 'reviews_Review', the role 'parentReview' has cardinality 0..*.
+An association connects 'reviews_Review' and 'reviews_Repository'. From 'reviews_Review', the role 'reviews' has cardinality 0..*, and from 'reviews_Repository', the role 'Repository' has cardinality 0..*.
+An association connects 'reviews_Change' and 'reviews_Review'. From 'reviews_Change', the role 'reviews_Change12' has cardinality 0..*, and from 'reviews_Review', the role 'reviews_Review' has cardinality 0..*.
+An association connects 'reviews_Change' and 'reviews_Review'. From 'reviews_Change', the role 'reviews_Change15' has cardinality 0..*, and from 'reviews_Review', the role 'reviews_Review14' has cardinality 0..*.
+An association connects 'reviews_UserApprovalsMap' and 'reviews_Review'. From 'reviews_UserApprovalsMap', the role 'reviews_UserApprovalsMap' has cardinality 0..*, and from 'reviews_Review', the role 'reviews_Review17' has cardinality 0..*.
+An association connects 'reviews_Review' and 'reviews_ReviewRequirementsMap'. From 'reviews_Review', the role 'reviews_Review19' has cardinality 0..*, and from 'reviews_ReviewRequirementsMap', the role 'reviews_ReviewRequirementsMap' has cardinality 0..*.
+An association connects 'reviews_Comment' and 'reviews_User'. From 'reviews_Comment', the role 'reviews_Comment21' has cardinality 0..*, and from 'reviews_User', the role 'reviews_User22' has cardinality 0..*.
+An association connects 'reviews_Comment' and 'reviews_Comment'. From 'reviews_Comment', the role 'reviews_Comment23' has cardinality 0..*, and from 'reviews_Comment', the role 'reviews_Comment25' has cardinality 0..*.
+An association connects 'reviews_Comment' and 'reviews_Location'. From 'reviews_Comment', the role 'reviews_Comment27' has cardinality 0..*, and from 'reviews_Location', the role 'reviews_Location' has cardinality 0..*.
+An association connects 'reviews_Review' and 'reviews_Comment'. From 'reviews_Review', the role 'reviews_Review30' has cardinality 0..*, and from 'reviews_Comment', the role 'reviews_Comment29' has cardinality 0..*.
+An association connects 'reviews_CommentContainer' and 'reviews_Comment'. From 'reviews_CommentContainer', the role 'CommentContainer' has cardinality 0..*, and from 'reviews_Comment', the role 'comments' has cardinality 0..*.
+An association connects 'reviews_User' and 'reviews_ReviewItem'. From 'reviews_User', the role 'reviews_User33' has cardinality 0..*, and from 'reviews_ReviewItem', the role 'reviews_ReviewItem' has cardinality 0..*.
+An association connects 'reviews_ReviewItem' and 'reviews_User'. From 'reviews_ReviewItem', the role 'reviews_ReviewItem35' has cardinality 0..*, and from 'reviews_User', the role 'reviews_User36' has cardinality 0..*.
+An association connects 'reviews_ReviewItem' and 'reviews_Review'. From 'reviews_ReviewItem', the role 'reviews_ReviewItem38' has cardinality 0..*, and from 'reviews_Review', the role 'reviews_Review39' has cardinality 0..*.
+An association connects 'reviews_ApprovalType' and 'reviews_Repository'. From 'reviews_ApprovalType', the role 'reviews_ApprovalType' has cardinality 0..*, and from 'reviews_Repository', the role 'reviews_Repository' has cardinality 0..*.
+An association connects 'reviews_Repository' and 'reviews_User'. From 'reviews_Repository', the role 'reviews_Repository42' has cardinality 0..*, and from 'reviews_User', the role 'reviews_User43' has cardinality 0..*.
+An association connects 'reviews_Repository' and 'reviews_Review'. From 'reviews_Repository', the role 'repository' has cardinality 0..*, and from 'reviews_Review', the role 'Review' has cardinality 0..*.
+An association connects 'reviews_Repository' and 'reviews_User'. From 'reviews_Repository', the role 'reviews_Repository46' has cardinality 0..*, and from 'reviews_User', the role 'reviews_User47' has cardinality 0..*.
+An association connects 'reviews_FileItem' and 'reviews_FileVersion'. From 'reviews_FileItem', the role 'reviews_FileItem' has cardinality 0..*, and from 'reviews_FileVersion', the role 'reviews_FileVersion' has cardinality 0..*.
+An association connects 'reviews_FileItem' and 'reviews_FileVersion'. From 'reviews_FileItem', the role 'reviews_FileItem50' has cardinality 0..*, and from 'reviews_FileVersion', the role 'reviews_FileVersion51' has cardinality 0..*.
+An association connects 'reviews_ReviewItemSet' and 'reviews_FileItem'. From 'reviews_ReviewItemSet', the role 'ReviewItemSet53' has cardinality 0..*, and from 'reviews_FileItem', the role 'items' has cardinality 0..*.
+An association connects 'reviews_ReviewItemSet' and 'reviews_FileItem'. From 'reviews_ReviewItemSet', the role 'set' has cardinality 0..*, and from 'reviews_FileItem', the role 'FileItem' has cardinality 0..*.
+An association connects 'reviews_Review' and 'reviews_ReviewItemSet'. From 'reviews_Review', the role 'Review56' has cardinality 0..*, and from 'reviews_ReviewItemSet', the role 'sets' has cardinality 0..*.
+An association connects 'reviews_ReviewItemSet' and 'reviews_Commit'. From 'reviews_ReviewItemSet', the role 'reviews_ReviewItemSet' has cardinality 0..*, and from 'reviews_Commit', the role 'reviews_Commit' has cardinality 0..*.
+An association connects 'reviews_LineRange' and 'reviews_LineLocation'. From 'reviews_LineRange', the role 'reviews_LineRange' has cardinality 0..*, and from 'reviews_LineLocation', the role 'reviews_LineLocation' has cardinality 0..*.
+An association connects 'reviews_FileVersion' and 'reviews_FileItem'. From 'reviews_FileVersion', the role 'reviews_FileVersion60' has cardinality 0..*, and from 'reviews_FileItem', the role 'reviews_FileItem61' has cardinality 0..*.
+An association connects 'reviews_UserApprovalsMap' and 'reviews_User'. From 'reviews_UserApprovalsMap', the role 'reviews_UserApprovalsMap63' has cardinality 0..*, and from 'reviews_User', the role 'reviews_User64' has cardinality 0..*.
+An association connects 'reviews_UserApprovalsMap' and 'reviews_ReviewerEntry'. From 'reviews_UserApprovalsMap', the role 'reviews_UserApprovalsMap66' has cardinality 0..*, and from 'reviews_ReviewerEntry', the role 'reviews_ReviewerEntry' has cardinality 0..*.
+An association connects 'reviews_ApprovalValueMap' and 'reviews_ReviewerEntry'. From 'reviews_ApprovalValueMap', the role 'reviews_ApprovalValueMap' has cardinality 0..*, and from 'reviews_ReviewerEntry', the role 'reviews_ReviewerEntry68' has cardinality 0..*.
+An association connects 'reviews_ApprovalValueMap' and 'reviews_ApprovalType'. From 'reviews_ApprovalValueMap', the role 'reviews_ApprovalValueMap70' has cardinality 0..*, and from 'reviews_ApprovalType', the role 'reviews_ApprovalType71' has cardinality 0..*.
+An association connects 'reviews_RequirementEntry' and 'reviews_User'. From 'reviews_RequirementEntry', the role 'reviews_RequirementEntry' has cardinality 0..*, and from 'reviews_User', the role 'reviews_User73' has cardinality 0..*.
+An association connects 'reviews_ReviewRequirementsMap' and 'reviews_ApprovalType'. From 'reviews_ReviewRequirementsMap', the role 'reviews_ReviewRequirementsMap75' has cardinality 0..*, and from 'reviews_ApprovalType', the role 'reviews_ApprovalType76' has cardinality 0..*.
+An association connects 'reviews_RequirementEntry' and 'reviews_ReviewRequirementsMap'. From 'reviews_RequirementEntry', the role 'reviews_RequirementEntry79' has cardinality 0..*, and from 'reviews_ReviewRequirementsMap', the role 'reviews_ReviewRequirementsMap78' has cardinality 0..*.

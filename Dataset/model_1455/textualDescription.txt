@@ -1,0 +1,21 @@
+The domain model 'grapheditormodel' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'grapheditormodel_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'grapheditormodel_Node' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'grapheditormodel_Edge' represents an important domain concept.
+It has one attribute: 'Value', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'grapheditormodel_Graph' and 'grapheditormodel_Node'. From 'grapheditormodel_Graph', the role 'grapheditormodel_Graph' has cardinality 0..*, and from 'grapheditormodel_Node', the role 'grapheditormodel_Node' has cardinality 0..*.
+An association connects 'grapheditormodel_Node' and 'grapheditormodel_Graph'. From 'grapheditormodel_Node', the role 'grapheditormodel_Node3' has cardinality 0..*, and from 'grapheditormodel_Graph', the role 'grapheditormodel_Graph2' has cardinality 0..*.
+An association connects 'grapheditormodel_Node' and 'grapheditormodel_Graph'. From 'grapheditormodel_Node', the role 'grapheditormodel_Node6' has cardinality 0..*, and from 'grapheditormodel_Graph', the role 'grapheditormodel_Graph5' has cardinality 0..*.
+An association connects 'grapheditormodel_Node' and 'grapheditormodel_Edge'. From 'grapheditormodel_Node', the role 'grapheditormodel_Node8' has cardinality 0..*, and from 'grapheditormodel_Edge', the role 'grapheditormodel_Edge' has cardinality 0..*.
+An association connects 'grapheditormodel_Edge' and 'grapheditormodel_Node'. From 'grapheditormodel_Edge', the role 'grapheditormodel_Edge11' has cardinality 0..*, and from 'grapheditormodel_Node', the role 'grapheditormodel_Node10' has cardinality 0..*.
+An association connects 'grapheditormodel_Node' and 'grapheditormodel_Edge'. From 'grapheditormodel_Node', the role 'grapheditormodel_Node14' has cardinality 0..*, and from 'grapheditormodel_Edge', the role 'grapheditormodel_Edge13' has cardinality 0..*.
+An association connects 'grapheditormodel_Edge' and 'grapheditormodel_Node'. From 'grapheditormodel_Edge', the role 'grapheditormodel_Edge16' has cardinality 0..*, and from 'grapheditormodel_Node', the role 'grapheditormodel_Node17' has cardinality 0..*.

@@ -1,0 +1,44 @@
+The domain model 'graphmodelling' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'graphmodelling_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'graphmodelling_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'graphmodelling_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'graphmodelling_Entity' represents an important domain concept.
+It has the following attributes: 'height', which is of type str; 'category', which is of type str; 'text', which is of type str; 'y', which is of type str; 'description', which is of type str; 'accessModifier', which is of type str; 'ID', which is of type str; 'value', which is of type str; 'className', which is of type str; 'name', which is of type str; 'type', which is of type str; 'group', which is of type str; 'width', which is of type str; 'x', which is of type str.
+
+'graphmodelling_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'graphmodelling_ModellingType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'graphmodelling_Node' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'graphmodelling_Graph' is a specialization of 'Entity'.
+The class 'graphmodelling_Node' is a specialization of 'Entity'.
+The class 'graphmodelling_Property' is a specialization of 'Entity'.
+The class 'graphmodelling_Operation' is a specialization of 'Entity'.
+The class 'graphmodelling_Edge' is a specialization of 'Entity'.
+
+Relationships between classes are modeled using associations.
+An association connects 'graphmodelling_Graph' and 'graphmodelling_Node'. From 'graphmodelling_Graph', the role 'graphmodelling_Graph' has cardinality 0..*, and from 'graphmodelling_Node', the role 'graphmodelling_Node' has cardinality 0..*.
+An association connects 'graphmodelling_Graph' and 'graphmodelling_Edge'. From 'graphmodelling_Graph', the role 'graphmodelling_Graph2' has cardinality 0..*, and from 'graphmodelling_Edge', the role 'graphmodelling_Edge' has cardinality 0..*.
+An association connects 'graphmodelling_Node' and 'graphmodelling_Node'. From 'graphmodelling_Node', the role 'graphmodelling_Node5' has cardinality 0..*, and from 'graphmodelling_Node', the role 'graphmodelling_Node3' has cardinality 0..*.
+An association connects 'graphmodelling_Node' and 'graphmodelling_Node'. From 'graphmodelling_Node', the role 'graphmodelling_Node8' has cardinality 0..*, and from 'graphmodelling_Node', the role 'graphmodelling_Node6' has cardinality 0..*.
+An association connects 'graphmodelling_Node' and 'graphmodelling_Property'. From 'graphmodelling_Node', the role 'graphmodelling_Node10' has cardinality 0..*, and from 'graphmodelling_Property', the role 'graphmodelling_Property' has cardinality 0..*.
+An association connects 'graphmodelling_Operation' and 'graphmodelling_Node'. From 'graphmodelling_Operation', the role 'graphmodelling_Operation' has cardinality 0..*, and from 'graphmodelling_Node', the role 'graphmodelling_Node12' has cardinality 0..*.
+An association connects 'graphmodelling_Node' and 'graphmodelling_Edge'. From 'graphmodelling_Node', the role 'graphmodelling_Node15' has cardinality 0..*, and from 'graphmodelling_Edge', the role 'graphmodelling_Edge14' has cardinality 0..*.
+An association connects 'graphmodelling_Node' and 'graphmodelling_Edge'. From 'graphmodelling_Node', the role 'graphmodelling_Node18' has cardinality 0..*, and from 'graphmodelling_Edge', the role 'graphmodelling_Edge17' has cardinality 0..*.

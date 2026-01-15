@@ -1,0 +1,29 @@
+The domain model 'minifsm' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'minifsm_Machine' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'minifsm_Transition' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+'minifsm_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'minifsm_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'minifsm_FinalState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'minifsm_Machine' and 'minifsm_State'. From 'minifsm_Machine', the role 'minifsm_Machine' has cardinality 0..*, and from 'minifsm_State', the role 'minifsm_State' has cardinality 0..*.
+An association connects 'minifsm_Transition' and 'minifsm_Machine'. From 'minifsm_Transition', the role 'minifsm_Transition' has cardinality 0..*, and from 'minifsm_Machine', the role 'minifsm_Machine2' has cardinality 0..*.
+An association connects 'minifsm_State' and 'minifsm_Transition'. From 'minifsm_State', the role 'unnamed role' has cardinality 0..*, and from 'minifsm_Transition', the role '4' has cardinality 0..*.
+An association connects 'minifsm_Transition' and 'minifsm_State'. From 'minifsm_Transition', the role '7' has cardinality 0..*, and from 'minifsm_State', the role '6' has cardinality 0..*.
+An association connects 'minifsm_State' and 'minifsm_Transition'. From 'minifsm_State', the role '10' has cardinality 0..*, and from 'minifsm_Transition', the role '9' has cardinality 0..*.
+An association connects 'minifsm_State' and 'minifsm_Transition'. From 'minifsm_State', the role '13' has cardinality 0..*, and from 'minifsm_Transition', the role '12' has cardinality 0..*.

@@ -1,0 +1,49 @@
+The domain model 'errorstm' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'errorstm_Action' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'errorstm_SimpleState' represents an important domain concept.
+It does not declare any attributes.
+
+'errorstm_AbstractState' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'errorstm_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'errorstm_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'errorstm_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'errorstm_Transition' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'event', which is of type str; 'guard', which is of type str.
+
+'errorstm_CompositeState' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ActionKind' defines the following possible values: 'EXIT', 'ENTRY'.
+
+The model also captures inheritance relationships between classes.
+The class 'errorstm_CompositeState' is a specialization of 'AbstractState'.
+The class 'errorstm_InitialState' is a specialization of 'AbstractState'.
+The class 'errorstm_SimpleState' is a specialization of 'AbstractState'.
+The class 'errorstm_FinalState' is a specialization of 'AbstractState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'errorstm_AbstractState' and 'errorstm_Transition'. From 'errorstm_AbstractState', the role 'AbstractState' has cardinality 0..*, and from 'errorstm_Transition', the role 'outgoing' has cardinality 0..*.
+An association connects 'errorstm_AbstractState' and 'errorstm_Transition'. From 'errorstm_AbstractState', the role 'AbstractState2' has cardinality 0..*, and from 'errorstm_Transition', the role 'incoming' has cardinality 0..*.
+An association connects 'errorstm_Transition' and 'errorstm_AbstractState'. From 'errorstm_Transition', the role 'Transition' has cardinality 0..*, and from 'errorstm_AbstractState', the role 'to' has cardinality 0..*.
+An association connects 'errorstm_AbstractState' and 'errorstm_Transition'. From 'errorstm_AbstractState', the role 'from' has cardinality 0..*, and from 'errorstm_Transition', the role 'Transition5' has cardinality 0..*.
+An association connects 'errorstm_AbstractState' and 'errorstm_Action'. From 'errorstm_AbstractState', the role 'errorstm_AbstractState' has cardinality 0..*, and from 'errorstm_Action', the role 'errorstm_Action' has cardinality 0..*.
+An association connects 'errorstm_CompositeState' and 'errorstm_AbstractState'. From 'errorstm_CompositeState', the role 'errorstm_CompositeState' has cardinality 0..*, and from 'errorstm_AbstractState', the role 'errorstm_AbstractState8' has cardinality 0..*.
+An association connects 'errorstm_CompositeState' and 'errorstm_Transition'. From 'errorstm_CompositeState', the role 'errorstm_CompositeState10' has cardinality 0..*, and from 'errorstm_Transition', the role 'errorstm_Transition' has cardinality 0..*.
+An association connects 'errorstm_CompositeState' and 'errorstm_StateMachine'. From 'errorstm_CompositeState', the role 'errorstm_CompositeState12' has cardinality 0..*, and from 'errorstm_StateMachine', the role 'errorstm_StateMachine' has cardinality 0..*.

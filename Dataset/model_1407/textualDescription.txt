@@ -1,0 +1,40 @@
+The domain model 'hfsm' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'hfsm_State' represents an important domain concept.
+It does not declare any attributes.
+
+'hfsm_AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'hfsm_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'hfsm_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'hfsm_Region' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'hfsm_State' is a specialization of 'AbstractState'.
+The class 'hfsm_Region' is a specialization of 'NamedElement'.
+The class 'hfsm_AbstractState' is a specialization of 'NamedElement'.
+The class 'hfsm_Transition' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'hfsm_State' and 'hfsm_Region'. From 'hfsm_State', the role 'hfsm_State' has cardinality 0..*, and from 'hfsm_Region', the role 'hfsm_Region' has cardinality 0..*.
+An association connects 'hfsm_State' and 'hfsm_Region'. From 'hfsm_State', the role 'hfsm_State3' has cardinality 0..*, and from 'hfsm_Region', the role 'hfsm_Region2' has cardinality 0..*.
+An association connects 'hfsm_Region' and 'hfsm_AbstractState'. From 'hfsm_Region', the role 'ownerRegion' has cardinality 0..*, and from 'hfsm_AbstractState', the role 'AbstractState' has cardinality 0..*.
+An association connects 'hfsm_Transition' and 'hfsm_AbstractState'. From 'hfsm_Transition', the role 'Transition' has cardinality 0..*, and from 'hfsm_AbstractState', the role 'target' has cardinality 0..*.
+An association connects 'hfsm_AbstractState' and 'hfsm_Transition'. From 'hfsm_AbstractState', the role 'source' has cardinality 0..*, and from 'hfsm_Transition', the role 'Transition7' has cardinality 0..*.
+An association connects 'hfsm_AbstractState' and 'hfsm_Region'. From 'hfsm_AbstractState', the role 'subvertex' has cardinality 0..*, and from 'hfsm_Region', the role 'Region' has cardinality 0..*.
+An association connects 'hfsm_Transition' and 'hfsm_AbstractState'. From 'hfsm_Transition', the role 'incoming' has cardinality 0..*, and from 'hfsm_AbstractState', the role 'AbstractState10' has cardinality 0..*.
+An association connects 'hfsm_AbstractState' and 'hfsm_Transition'. From 'hfsm_AbstractState', the role 'AbstractState12' has cardinality 0..*, and from 'hfsm_Transition', the role 'outgoing' has cardinality 0..*.

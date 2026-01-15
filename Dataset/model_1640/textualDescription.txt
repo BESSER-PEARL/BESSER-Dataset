@@ -1,0 +1,27 @@
+The domain model 'kiamacs' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'kiamacs_NodeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'kiamacs_PlusCS' represents an important domain concept.
+It does not declare any attributes.
+
+'kiamacs_TopCS' represents an important domain concept.
+It does not declare any attributes.
+
+'kiamacs_NumCS' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'NodeCS' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'kiamacs_PlusCS' is a specialization of 'NodeCS'.
+The class 'kiamacs_NumCS' is a specialization of 'NodeCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'kiamacs_TopCS' and 'kiamacs_NodeCS'. From 'kiamacs_TopCS', the role 'kiamacs_TopCS' has cardinality 0..*, and from 'kiamacs_NodeCS', the role 'kiamacs_NodeCS' has cardinality 0..*.
+An association connects 'kiamacs_PlusCS' and 'kiamacs_NodeCS'. From 'kiamacs_PlusCS', the role 'kiamacs_PlusCS' has cardinality 0..*, and from 'kiamacs_NodeCS', the role 'kiamacs_NodeCS2' has cardinality 0..*.
+An association connects 'kiamacs_NodeCS' and 'kiamacs_PlusCS'. From 'kiamacs_NodeCS', the role 'kiamacs_NodeCS5' has cardinality 0..*, and from 'kiamacs_PlusCS', the role 'kiamacs_PlusCS4' has cardinality 0..*.

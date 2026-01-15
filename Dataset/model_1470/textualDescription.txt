@@ -1,0 +1,37 @@
+The domain model 'graph' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'graph_DeploymentUnitType' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_DependencyGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_Cause' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'graph_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'graph_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_Dependency' represents an important domain concept.
+It has the following attributes: 'locality', which is of type str; 'id', which is of type str.
+
+'graph_Node' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'graph_Dependency' and 'graph_Cause'. From 'graph_Dependency', the role 'graph_Dependency' has cardinality 0..*, and from 'graph_Cause', the role 'graph_Cause' has cardinality 0..*.
+An association connects 'graph_Dependency' and 'graph_Node'. From 'graph_Dependency', the role 'graph_Dependency2' has cardinality 0..*, and from 'graph_Node', the role 'graph_Node' has cardinality 0..*.
+An association connects 'graph_Dependency' and 'graph_Node'. From 'graph_Dependency', the role 'graph_Dependency4' has cardinality 0..*, and from 'graph_Node', the role 'graph_Node5' has cardinality 0..*.
+An association connects 'graph_Node' and 'graph_DependencyGraph'. From 'graph_Node', the role 'graph_Node7' has cardinality 0..*, and from 'graph_DependencyGraph', the role 'graph_DependencyGraph' has cardinality 0..*.
+An association connects 'graph_DependencyGraph' and 'graph_Dependency'. From 'graph_DependencyGraph', the role 'graph_DependencyGraph9' has cardinality 0..*, and from 'graph_Dependency', the role 'graph_Dependency10' has cardinality 0..*.
+An association connects 'graph_Node' and 'graph_DependencyGraph'. From 'graph_Node', the role 'graph_Node13' has cardinality 0..*, and from 'graph_DependencyGraph', the role 'graph_DependencyGraph12' has cardinality 0..*.
+An association connects 'graph_EStringToStringMapEntry' and 'graph_DocumentRoot'. From 'graph_EStringToStringMapEntry', the role 'graph_EStringToStringMapEntry' has cardinality 0..*, and from 'graph_DocumentRoot', the role 'graph_DocumentRoot' has cardinality 0..*.
+An association connects 'graph_DocumentRoot' and 'graph_EStringToStringMapEntry'. From 'graph_DocumentRoot', the role 'graph_DocumentRoot16' has cardinality 0..*, and from 'graph_EStringToStringMapEntry', the role 'graph_EStringToStringMapEntry17' has cardinality 0..*.
+An association connects 'graph_DependencyGraph' and 'graph_DocumentRoot'. From 'graph_DependencyGraph', the role 'graph_DependencyGraph20' has cardinality 0..*, and from 'graph_DocumentRoot', the role 'graph_DocumentRoot19' has cardinality 0..*.
+An association connects 'graph_DeploymentUnitType' and 'graph_Node'. From 'graph_DeploymentUnitType', the role 'graph_DeploymentUnitType' has cardinality 0..*, and from 'graph_Node', the role 'graph_Node22' has cardinality 0..*.
+An association connects 'graph_Dependency' and 'graph_Node'. From 'graph_Dependency', the role 'graph_Dependency25' has cardinality 0..*, and from 'graph_Node', the role 'graph_Node24' has cardinality 0..*.

@@ -1,0 +1,27 @@
+The domain model 'kiamaas' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'kiamaas_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'kiamaas_Top' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'kiamaas_Num' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'kiamaas_Node' represents an important domain concept.
+It has the following attributes: 'deep', which is of type int; 'height', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'kiamaas_Plus' is a specialization of 'Node'.
+The class 'kiamaas_Num' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'kiamaas_Node' and 'kiamaas_Top'. From 'kiamaas_Node', the role 'kiamaas_Node' has cardinality 0..*, and from 'kiamaas_Top', the role 'kiamaas_Top' has cardinality 0..*.
+An association connects 'kiamaas_Node' and 'kiamaas_Plus'. From 'kiamaas_Node', the role 'kiamaas_Node2' has cardinality 0..*, and from 'kiamaas_Plus', the role 'kiamaas_Plus' has cardinality 0..*.
+An association connects 'kiamaas_Plus' and 'kiamaas_Node'. From 'kiamaas_Plus', the role 'kiamaas_Plus4' has cardinality 0..*, and from 'kiamaas_Node', the role 'kiamaas_Node5' has cardinality 0..*.

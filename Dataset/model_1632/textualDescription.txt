@@ -1,0 +1,20 @@
+The domain model 'PN' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'PN_Place' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PN_Net' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PN_Transition' represents an important domain concept.
+It has one attribute: 'input', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'PN_Net' and 'PN_Place'. From 'PN_Net', the role 'PN_Net' has cardinality 0..*, and from 'PN_Place', the role 'PN_Place' has cardinality 0..*.
+An association connects 'PN_Transition' and 'PN_Net'. From 'PN_Transition', the role 'PN_Transition' has cardinality 0..*, and from 'PN_Net', the role 'PN_Net2' has cardinality 0..*.
+An association connects 'PN_Place' and 'PN_Transition'. From 'PN_Place', the role 'to' has cardinality 0..*, and from 'PN_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'PN_Place' and 'PN_Transition'. From 'PN_Place', the role 'from' has cardinality 0..*, and from 'PN_Transition', the role 'Transition5' has cardinality 0..*.
+An association connects 'PN_Place' and 'PN_Transition'. From 'PN_Place', the role 'Place' has cardinality 0..*, and from 'PN_Transition', the role 'outgoing' has cardinality 0..*.
+An association connects 'PN_Place' and 'PN_Transition'. From 'PN_Place', the role 'Place8' has cardinality 0..*, and from 'PN_Transition', the role 'incoming' has cardinality 0..*.

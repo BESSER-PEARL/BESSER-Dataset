@@ -1,0 +1,38 @@
+The domain model 'tp5' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'tp5_Researcher' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'forName', which is of type str.
+
+'tp5_Skill' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'tp5_Paragraph' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'name', which is of type str; 'content', which is of type str.
+
+'tp5_Collaboration' represents an important domain concept.
+It has one attribute: 'ratio', which is of type int.
+
+'tp5_Paper' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tp5_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'tp5_Position' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'tp5_Researcher' and 'tp5_Paper'. From 'tp5_Researcher', the role 'authors' has cardinality 0..*, and from 'tp5_Paper', the role 'Paper' has cardinality 0..*.
+An association connects 'tp5_Skill' and 'tp5_Researcher'. From 'tp5_Skill', the role 'tp5_Skill' has cardinality 0..*, and from 'tp5_Researcher', the role 'tp5_Researcher' has cardinality 0..*.
+An association connects 'tp5_Position' and 'tp5_Researcher'. From 'tp5_Position', the role 'tp5_Position' has cardinality 0..*, and from 'tp5_Researcher', the role 'tp5_Researcher3' has cardinality 0..*.
+An association connects 'tp5_Researcher' and 'tp5_Collaboration'. From 'tp5_Researcher', the role 'tp5_Researcher5' has cardinality 0..*, and from 'tp5_Collaboration', the role 'tp5_Collaboration' has cardinality 0..*.
+An association connects 'tp5_Paper' and 'tp5_Paragraph'. From 'tp5_Paper', the role 'tp5_Paper' has cardinality 0..*, and from 'tp5_Paragraph', the role 'tp5_Paragraph' has cardinality 0..*.
+An association connects 'tp5_Paper' and 'tp5_Researcher'. From 'tp5_Paper', the role 'res_papers' has cardinality 0..*, and from 'tp5_Researcher', the role 'Researcher' has cardinality 0..*.
+An association connects 'tp5_Paper' and 'tp5_Paper'. From 'tp5_Paper', the role 'tp5_Paper8' has cardinality 0..*, and from 'tp5_Paper', the role 'tp5_Paper10' has cardinality 0..*.
+An association connects 'tp5_PublicationStructure' and 'tp5_Researcher'. From 'tp5_PublicationStructure', the role 'tp5_PublicationStructure' has cardinality 0..*, and from 'tp5_Researcher', the role 'tp5_Researcher12' has cardinality 0..*.
+An association connects 'tp5_Paper' and 'tp5_PublicationStructure'. From 'tp5_Paper', the role 'tp5_Paper15' has cardinality 0..*, and from 'tp5_PublicationStructure', the role 'tp5_PublicationStructure14' has cardinality 0..*.
+An association connects 'tp5_Position' and 'tp5_PublicationStructure'. From 'tp5_Position', the role 'tp5_Position18' has cardinality 0..*, and from 'tp5_PublicationStructure', the role 'tp5_PublicationStructure17' has cardinality 0..*.
+An association connects 'tp5_Position' and 'tp5_Position'. From 'tp5_Position', the role 'tp5_Position19' has cardinality 0..*, and from 'tp5_Position', the role 'tp5_Position21' has cardinality 0..*.
+An association connects 'tp5_Collaboration' and 'tp5_Paper'. From 'tp5_Collaboration', the role 'tp5_Collaboration23' has cardinality 0..*, and from 'tp5_Paper', the role 'tp5_Paper24' has cardinality 0..*.

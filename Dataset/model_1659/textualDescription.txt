@@ -1,0 +1,60 @@
+The domain model 'testcompat103' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'testcompat103_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'testcompat103_EClass1' represents an important domain concept.
+It does not declare any attributes.
+
+'testcompat103_Foo' represents an important domain concept.
+It does not declare any attributes.
+
+'testcompat103_EClass2' represents an important domain concept.
+It does not declare any attributes.
+
+'testcompat103_EClass3' represents an important domain concept.
+It does not declare any attributes.
+
+'testcompat103_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'testcompat103_EClass0' represents an important domain concept.
+It does not declare any attributes.
+
+'testcompat103_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'World' represents an important domain concept.
+It does not declare any attributes.
+
+'testcompat103_World' represents an important domain concept.
+It does not declare any attributes.
+
+'EClass0' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'testcompat103_World' is a specialization of 'NamedElement'.
+The class 'testcompat103_Thing' is a specialization of 'NamedElement'.
+The class 'testcompat103_RelatedTo' is a specialization of 'NamedElement'.
+The class 'testcompat103_Foo' is a specialization of 'NamedElement'.
+The class 'testcompat103_EClass0' is a specialization of 'NamedElement'.
+The class 'testcompat103_EClass1' is a specialization of 'NamedElement'.
+The class 'testcompat103_EClass2' is a specialization of 'EClass0'.
+The class 'testcompat103_EClass3' is a specialization of 'World'.
+
+Relationships between classes are modeled using associations.
+An association connects 'testcompat103_Thing' and 'testcompat103_World'. From 'testcompat103_Thing', the role 'testcompat103_Thing' has cardinality 0..*, and from 'testcompat103_World', the role 'testcompat103_World' has cardinality 0..*.
+An association connects 'testcompat103_World' and 'testcompat103_Foo'. From 'testcompat103_World', the role 'testcompat103_World2' has cardinality 0..*, and from 'testcompat103_Foo', the role 'testcompat103_Foo' has cardinality 0..*.
+An association connects 'testcompat103_EClass0' and 'testcompat103_World'. From 'testcompat103_EClass0', the role 'testcompat103_EClass0' has cardinality 0..*, and from 'testcompat103_World', the role 'testcompat103_World4' has cardinality 0..*.
+An association connects 'testcompat103_World' and 'testcompat103_EClass2'. From 'testcompat103_World', the role 'testcompat103_World6' has cardinality 0..*, and from 'testcompat103_EClass2', the role 'testcompat103_EClass2' has cardinality 0..*.
+An association connects 'testcompat103_Thing' and 'testcompat103_RelatedTo'. From 'testcompat103_Thing', the role 'fromThing' has cardinality 0..*, and from 'testcompat103_RelatedTo', the role 'RelatedTo' has cardinality 0..*.
+An association connects 'testcompat103_RelatedTo' and 'testcompat103_Thing'. From 'testcompat103_RelatedTo', the role 'relations' has cardinality 0..*, and from 'testcompat103_Thing', the role 'Thing' has cardinality 0..*.
+An association connects 'testcompat103_Thing' and 'testcompat103_RelatedTo'. From 'testcompat103_Thing', the role 'testcompat103_Thing10' has cardinality 0..*, and from 'testcompat103_RelatedTo', the role 'testcompat103_RelatedTo' has cardinality 0..*.
+An association connects 'testcompat103_EClass0' and 'testcompat103_EClass1'. From 'testcompat103_EClass0', the role 'testcompat103_EClass012' has cardinality 0..*, and from 'testcompat103_EClass1', the role 'testcompat103_EClass1' has cardinality 0..*.
+An association connects 'testcompat103_EClass3' and 'testcompat103_EClass3'. From 'testcompat103_EClass3', the role 'testcompat103_EClass313' has cardinality 0..*, and from 'testcompat103_EClass3', the role 'testcompat103_EClass3' has cardinality 0..*.

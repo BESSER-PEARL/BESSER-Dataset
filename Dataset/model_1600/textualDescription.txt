@@ -1,0 +1,46 @@
+The domain model 'stochasticpetrinet' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'stochasticpetrinet_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'stochasticpetrinet_Arc' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'stochasticpetrinet_Place' represents an important domain concept.
+It has one attribute: 'tokens', which is of type int.
+
+'stochasticpetrinet_TimedTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'stochasticpetrinet_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'stochasticpetrinet_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'stochasticpetrinet_ImmediateTransition' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ArcKind' defines the following possible values: 'OUTPUT', 'INPUT'.
+
+The model also captures inheritance relationships between classes.
+The class 'stochasticpetrinet_Transition' is a specialization of 'Node'.
+The class 'stochasticpetrinet_Place' is a specialization of 'Node'.
+The class 'stochasticpetrinet_TimedTransition' is a specialization of 'Transition'.
+The class 'stochasticpetrinet_ImmediateTransition' is a specialization of 'Transition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'stochasticpetrinet_PetriNet' and 'stochasticpetrinet_Node'. From 'stochasticpetrinet_PetriNet', the role 'petriNet' has cardinality 0..*, and from 'stochasticpetrinet_Node', the role 'Node' has cardinality 0..*.
+An association connects 'stochasticpetrinet_Arc' and 'stochasticpetrinet_Transition'. From 'stochasticpetrinet_Arc', the role 'Arc' has cardinality 0..*, and from 'stochasticpetrinet_Transition', the role 'transition' has cardinality 0..*.
+An association connects 'stochasticpetrinet_Arc' and 'stochasticpetrinet_Transition'. From 'stochasticpetrinet_Arc', the role 'arcs' has cardinality 0..*, and from 'stochasticpetrinet_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'stochasticpetrinet_Place' and 'stochasticpetrinet_Arc'. From 'stochasticpetrinet_Place', the role 'stochasticpetrinet_Place' has cardinality 0..*, and from 'stochasticpetrinet_Arc', the role 'stochasticpetrinet_Arc' has cardinality 0..*.
+An association connects 'stochasticpetrinet_Node' and 'stochasticpetrinet_PetriNet'. From 'stochasticpetrinet_Node', the role 'nodes' has cardinality 0..*, and from 'stochasticpetrinet_PetriNet', the role 'PetriNet' has cardinality 0..*.

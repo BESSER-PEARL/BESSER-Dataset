@@ -1,0 +1,51 @@
+The domain model 'simpleGraph' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'simpleGraph_GraphElement' represents an important domain concept.
+It has the following attributes: 'generated', which is of type bool; 'id', which is of type int.
+
+'GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Position' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleGraph_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleGraph_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleGraph_Label' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'simpleGraph_Nail' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleGraph_Position' represents an important domain concept.
+It has the following attributes: 'X', which is of type int; 'Y', which is of type int.
+
+'simpleGraph_Parameter' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'simpleGraph_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleGraph_Graph' is a specialization of 'GraphElement'.
+The class 'simpleGraph_Position' is a specialization of 'GraphElement'.
+The class 'simpleGraph_Edge' is a specialization of 'GraphElement'.
+The class 'simpleGraph_Node' is a specialization of 'Position'.
+The class 'simpleGraph_Label' is a specialization of 'Position'.
+The class 'simpleGraph_Nail' is a specialization of 'Position'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleGraph_Graph' and 'simpleGraph_Node'. From 'simpleGraph_Graph', the role 'simpleGraph_Graph' has cardinality 0..*, and from 'simpleGraph_Node', the role 'simpleGraph_Node' has cardinality 0..*.
+An association connects 'simpleGraph_Edge' and 'simpleGraph_Graph'. From 'simpleGraph_Edge', the role 'simpleGraph_Edge' has cardinality 0..*, and from 'simpleGraph_Graph', the role 'simpleGraph_Graph2' has cardinality 0..*.
+An association connects 'simpleGraph_Parameter' and 'simpleGraph_GraphElement'. From 'simpleGraph_Parameter', the role 'simpleGraph_Parameter' has cardinality 0..*, and from 'simpleGraph_GraphElement', the role 'simpleGraph_GraphElement' has cardinality 0..*.
+An association connects 'simpleGraph_Edge' and 'simpleGraph_Node'. From 'simpleGraph_Edge', the role 'simpleGraph_Edge5' has cardinality 0..*, and from 'simpleGraph_Node', the role 'simpleGraph_Node6' has cardinality 0..*.
+An association connects 'simpleGraph_Edge' and 'simpleGraph_Node'. From 'simpleGraph_Edge', the role 'simpleGraph_Edge8' has cardinality 0..*, and from 'simpleGraph_Node', the role 'simpleGraph_Node9' has cardinality 0..*.
+An association connects 'simpleGraph_Edge' and 'simpleGraph_Label'. From 'simpleGraph_Edge', the role 'simpleGraph_Edge11' has cardinality 0..*, and from 'simpleGraph_Label', the role 'simpleGraph_Label' has cardinality 0..*.
+An association connects 'simpleGraph_Edge' and 'simpleGraph_Nail'. From 'simpleGraph_Edge', the role 'simpleGraph_Edge13' has cardinality 0..*, and from 'simpleGraph_Nail', the role 'simpleGraph_Nail' has cardinality 0..*.
+An association connects 'simpleGraph_Label' and 'simpleGraph_Node'. From 'simpleGraph_Label', the role 'simpleGraph_Label16' has cardinality 0..*, and from 'simpleGraph_Node', the role 'simpleGraph_Node15' has cardinality 0..*.

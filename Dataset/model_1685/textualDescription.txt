@@ -1,0 +1,143 @@
+The domain model 'syswbeff106' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'syswbeff106_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'syswbeff106_OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106_System' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106_Function' represents an important domain concept.
+It has one attribute: 'domain', which is of type str.
+
+'syswbeff106_FunctionProperty' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'syswbeff106_Description' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'syswbeff106_SequenceNode' represents an important domain concept.
+It has the following attributes: 'tMin', which is of type int; 'tMax', which is of type int; 'name', which is of type str.
+
+'syswbeff106_Item' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'syswbeff106_Thoughts' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106_PatternCatalog' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'syswbeff106_Port' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'syswbeff106_ProcessNode' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'SequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106_And' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessNode' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'syswbeff106_Workbench' represents an important domain concept.
+It has one attribute: 'aprop', which is of type str.
+
+'syswbeff106_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'syswbeff106_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106_InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106_LoopExit' represents an important domain concept.
+It does not declare any attributes.
+
+'Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106_Iteration' represents an important domain concept.
+It does not declare any attributes.
+
+'syswbeff106_Token' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FunctionDomain' defines the following possible values: 'space', 'time', 'form'.
+
+The model also captures inheritance relationships between classes.
+The class 'syswbeff106_Function' is a specialization of 'SequenceNode'.
+The class 'syswbeff106_Function' is a specialization of 'ProcessNode'.
+The class 'syswbeff106_Sequence' is a specialization of 'SequenceNode'.
+The class 'syswbeff106_And' is a specialization of 'Sequence'.
+The class 'syswbeff106_Or' is a specialization of 'Sequence'.
+The class 'syswbeff106_Start' is a specialization of 'Sequence'.
+The class 'syswbeff106_Final' is a specialization of 'Sequence'.
+The class 'syswbeff106_Loop' is a specialization of 'Sequence'.
+The class 'syswbeff106_InputPort' is a specialization of 'Port'.
+The class 'syswbeff106_Flow' is a specialization of 'ProcessNode'.
+The class 'syswbeff106_OutputPort' is a specialization of 'Port'.
+The class 'syswbeff106_LoopExit' is a specialization of 'Sequence'.
+The class 'syswbeff106_Iteration' is a specialization of 'Sequence'.
+
+Relationships between classes are modeled using associations.
+An association connects 'syswbeff106_Function' and 'syswbeff106_Function'. From 'syswbeff106_Function', the role 'syswbeff106_Function' has cardinality 0..*, and from 'syswbeff106_Function', the role 'syswbeff106_Function0' has cardinality 0..*.
+An association connects 'syswbeff106_Function' and 'syswbeff106_Sequence'. From 'syswbeff106_Function', the role 'syswbeff106_Function3' has cardinality 0..*, and from 'syswbeff106_Sequence', the role 'syswbeff106_Sequence' has cardinality 0..*.
+An association connects 'syswbeff106_Flow' and 'syswbeff106_Function'. From 'syswbeff106_Flow', the role 'syswbeff106_Flow' has cardinality 0..*, and from 'syswbeff106_Function', the role 'syswbeff106_Function5' has cardinality 0..*.
+An association connects 'syswbeff106_OutputPort' and 'syswbeff106_Function'. From 'syswbeff106_OutputPort', the role 'syswbeff106_OutputPort' has cardinality 0..*, and from 'syswbeff106_Function', the role 'syswbeff106_Function7' has cardinality 0..*.
+An association connects 'syswbeff106_InputPort' and 'syswbeff106_Function'. From 'syswbeff106_InputPort', the role 'syswbeff106_InputPort' has cardinality 0..*, and from 'syswbeff106_Function', the role 'syswbeff106_Function9' has cardinality 0..*.
+An association connects 'syswbeff106_Function' and 'syswbeff106_Description'. From 'syswbeff106_Function', the role 'syswbeff106_Function11' has cardinality 0..*, and from 'syswbeff106_Description', the role 'syswbeff106_Description' has cardinality 0..*.
+An association connects 'syswbeff106_Function' and 'syswbeff106_Token'. From 'syswbeff106_Function', the role 'syswbeff106_Function13' has cardinality 0..*, and from 'syswbeff106_Token', the role 'syswbeff106_Token' has cardinality 0..*.
+An association connects 'syswbeff106_FunctionProperty' and 'syswbeff106_Function'. From 'syswbeff106_FunctionProperty', the role 'syswbeff106_FunctionProperty' has cardinality 0..*, and from 'syswbeff106_Function', the role 'syswbeff106_Function15' has cardinality 0..*.
+An association connects 'syswbeff106_Function' and 'syswbeff106_Function'. From 'syswbeff106_Function', the role 'syswbeff106_Function16' has cardinality 0..*, and from 'syswbeff106_Function', the role 'syswbeff106_Function18' has cardinality 0..*.
+An association connects 'syswbeff106_Component' and 'syswbeff106_Function'. From 'syswbeff106_Component', the role 'syswbeff106_Component' has cardinality 0..*, and from 'syswbeff106_Function', the role 'syswbeff106_Function20' has cardinality 0..*.
+An association connects 'syswbeff106_SequenceNode' and 'syswbeff106_SequenceNode'. From 'syswbeff106_SequenceNode', the role 'syswbeff106_SequenceNode21' has cardinality 0..*, and from 'syswbeff106_SequenceNode', the role 'syswbeff106_SequenceNode' has cardinality 0..*.
+An association connects 'syswbeff106_Flow' and 'syswbeff106_InputPort'. From 'syswbeff106_Flow', the role 'syswbeff106_Flow24' has cardinality 0..*, and from 'syswbeff106_InputPort', the role 'syswbeff106_InputPort25' has cardinality 0..*.
+An association connects 'syswbeff106_Item' and 'syswbeff106_Flow'. From 'syswbeff106_Item', the role 'syswbeff106_Item' has cardinality 0..*, and from 'syswbeff106_Flow', the role 'syswbeff106_Flow27' has cardinality 0..*.
+An association connects 'syswbeff106_OutputPort' and 'syswbeff106_Flow'. From 'syswbeff106_OutputPort', the role 'syswbeff106_OutputPort29' has cardinality 0..*, and from 'syswbeff106_Flow', the role 'syswbeff106_Flow30' has cardinality 0..*.
+An association connects 'syswbeff106_RelatedTo' and 'syswbeff106_Thing'. From 'syswbeff106_RelatedTo', the role 'syswbeff106_RelatedTo' has cardinality 0..*, and from 'syswbeff106_Thing', the role 'syswbeff106_Thing' has cardinality 0..*.
+An association connects 'syswbeff106_RelatedTo' and 'syswbeff106_Thing'. From 'syswbeff106_RelatedTo', the role 'syswbeff106_RelatedTo33' has cardinality 0..*, and from 'syswbeff106_Thing', the role 'syswbeff106_Thing34' has cardinality 0..*.
+An association connects 'syswbeff106_RelatedTo' and 'syswbeff106_Thing'. From 'syswbeff106_RelatedTo', the role 'syswbeff106_RelatedTo37' has cardinality 0..*, and from 'syswbeff106_Thing', the role 'syswbeff106_Thing36' has cardinality 0..*.
+An association connects 'syswbeff106_Thing' and 'syswbeff106_Thoughts'. From 'syswbeff106_Thing', the role 'syswbeff106_Thing39' has cardinality 0..*, and from 'syswbeff106_Thoughts', the role 'syswbeff106_Thoughts' has cardinality 0..*.
+An association connects 'syswbeff106_FunctionProperty' and 'syswbeff106_FunctionProperty'. From 'syswbeff106_FunctionProperty', the role 'syswbeff106_FunctionProperty40' has cardinality 0..*, and from 'syswbeff106_FunctionProperty', the role 'syswbeff106_FunctionProperty42' has cardinality 0..*.
+An association connects 'syswbeff106_Component' and 'syswbeff106_Component'. From 'syswbeff106_Component', the role 'syswbeff106_Component43' has cardinality 0..*, and from 'syswbeff106_Component', the role 'syswbeff106_Component45' has cardinality 0..*.
+An association connects 'syswbeff106_Component' and 'syswbeff106_Component'. From 'syswbeff106_Component', the role 'syswbeff106_Component46' has cardinality 0..*, and from 'syswbeff106_Component', the role 'syswbeff106_Component48' has cardinality 0..*.
+An association connects 'syswbeff106_Function' and 'syswbeff106_Component'. From 'syswbeff106_Function', the role 'syswbeff106_Function51' has cardinality 0..*, and from 'syswbeff106_Component', the role 'syswbeff106_Component50' has cardinality 0..*.
+An association connects 'syswbeff106_System' and 'syswbeff106_Function'. From 'syswbeff106_System', the role 'syswbeff106_System' has cardinality 0..*, and from 'syswbeff106_Function', the role 'syswbeff106_Function53' has cardinality 0..*.
+An association connects 'syswbeff106_Component' and 'syswbeff106_System'. From 'syswbeff106_Component', the role 'syswbeff106_Component56' has cardinality 0..*, and from 'syswbeff106_System', the role 'syswbeff106_System55' has cardinality 0..*.
+An association connects 'syswbeff106_Function' and 'syswbeff106_PatternCatalog'. From 'syswbeff106_Function', the role 'syswbeff106_Function58' has cardinality 0..*, and from 'syswbeff106_PatternCatalog', the role 'syswbeff106_PatternCatalog' has cardinality 0..*.
+An association connects 'syswbeff106_Thing' and 'syswbeff106_Workbench'. From 'syswbeff106_Thing', the role 'syswbeff106_Thing60' has cardinality 0..*, and from 'syswbeff106_Workbench', the role 'syswbeff106_Workbench' has cardinality 0..*.
+An association connects 'syswbeff106_Workbench' and 'syswbeff106_Thoughts'. From 'syswbeff106_Workbench', the role 'syswbeff106_Workbench62' has cardinality 0..*, and from 'syswbeff106_Thoughts', the role 'syswbeff106_Thoughts63' has cardinality 0..*.
+An association connects 'syswbeff106_System' and 'syswbeff106_Workbench'. From 'syswbeff106_System', the role 'syswbeff106_System66' has cardinality 0..*, and from 'syswbeff106_Workbench', the role 'syswbeff106_Workbench65' has cardinality 0..*.
+An association connects 'syswbeff106_Workbench' and 'syswbeff106_FunctionProperty'. From 'syswbeff106_Workbench', the role 'syswbeff106_Workbench68' has cardinality 0..*, and from 'syswbeff106_FunctionProperty', the role 'syswbeff106_FunctionProperty69' has cardinality 0..*.
+An association connects 'syswbeff106_PatternCatalog' and 'syswbeff106_Workbench'. From 'syswbeff106_PatternCatalog', the role 'syswbeff106_PatternCatalog72' has cardinality 0..*, and from 'syswbeff106_Workbench', the role 'syswbeff106_Workbench71' has cardinality 0..*.

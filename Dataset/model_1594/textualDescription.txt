@@ -1,0 +1,21 @@
+The domain model 'petrinet' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'petrinet_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinet_Net' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Place' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'initialTokens', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'petrinet_Place' and 'petrinet_Net'. From 'petrinet_Place', the role 'petrinet_Place' has cardinality 0..*, and from 'petrinet_Net', the role 'petrinet_Net' has cardinality 0..*.
+An association connects 'petrinet_Net' and 'petrinet_Transition'. From 'petrinet_Net', the role 'petrinet_Net2' has cardinality 0..*, and from 'petrinet_Transition', the role 'petrinet_Transition' has cardinality 0..*.
+An association connects 'petrinet_Transition' and 'petrinet_Place'. From 'petrinet_Transition', the role 'petrinet_Transition4' has cardinality 0..*, and from 'petrinet_Place', the role 'petrinet_Place5' has cardinality 0..*.
+An association connects 'petrinet_Place' and 'petrinet_Transition'. From 'petrinet_Place', the role 'petrinet_Place8' has cardinality 0..*, and from 'petrinet_Transition', the role 'petrinet_Transition7' has cardinality 0..*.

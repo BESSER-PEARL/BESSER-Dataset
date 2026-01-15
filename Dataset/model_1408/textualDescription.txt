@@ -1,0 +1,40 @@
+The domain model 'hfsmReq' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'hfsmReq_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'hfsmReq_State' represents an important domain concept.
+It does not declare any attributes.
+
+'hfsmReq_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'hfsmReq_AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'hfsmReq_Region' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'hfsmReq_State' is a specialization of 'AbstractState'.
+The class 'hfsmReq_Region' is a specialization of 'NamedElement'.
+The class 'hfsmReq_AbstractState' is a specialization of 'NamedElement'.
+The class 'hfsmReq_Transition' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'hfsmReq_State' and 'hfsmReq_Region'. From 'hfsmReq_State', the role 'hfsmReq_State' has cardinality 0..*, and from 'hfsmReq_Region', the role 'hfsmReq_Region' has cardinality 0..*.
+An association connects 'hfsmReq_Region' and 'hfsmReq_State'. From 'hfsmReq_Region', the role 'hfsmReq_Region2' has cardinality 0..*, and from 'hfsmReq_State', the role 'hfsmReq_State3' has cardinality 0..*.
+An association connects 'hfsmReq_Region' and 'hfsmReq_AbstractState'. From 'hfsmReq_Region', the role 'hfsmReq_Region5' has cardinality 0..*, and from 'hfsmReq_AbstractState', the role 'hfsmReq_AbstractState' has cardinality 0..*.
+An association connects 'hfsmReq_Transition' and 'hfsmReq_AbstractState'. From 'hfsmReq_Transition', the role 'hfsmReq_Transition' has cardinality 0..*, and from 'hfsmReq_AbstractState', the role 'hfsmReq_AbstractState7' has cardinality 0..*.
+An association connects 'hfsmReq_Transition' and 'hfsmReq_AbstractState'. From 'hfsmReq_Transition', the role 'hfsmReq_Transition10' has cardinality 0..*, and from 'hfsmReq_AbstractState', the role 'hfsmReq_AbstractState9' has cardinality 0..*.
+An association connects 'hfsmReq_AbstractState' and 'hfsmReq_Region'. From 'hfsmReq_AbstractState', the role 'hfsmReq_AbstractState12' has cardinality 0..*, and from 'hfsmReq_Region', the role 'hfsmReq_Region13' has cardinality 0..*.
+An association connects 'hfsmReq_AbstractState' and 'hfsmReq_Transition'. From 'hfsmReq_AbstractState', the role 'hfsmReq_AbstractState16' has cardinality 0..*, and from 'hfsmReq_Transition', the role 'hfsmReq_Transition15' has cardinality 0..*.
+An association connects 'hfsmReq_Transition' and 'hfsmReq_AbstractState'. From 'hfsmReq_Transition', the role 'hfsmReq_Transition18' has cardinality 0..*, and from 'hfsmReq_AbstractState', the role 'hfsmReq_AbstractState19' has cardinality 0..*.

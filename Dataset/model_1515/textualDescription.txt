@@ -1,0 +1,32 @@
+The domain model 'mydsl' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'mydsl_FSM' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mydsl_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mydsl_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'mydsl_Transition' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'trigger', which is of type str.
+
+'mydsl_Initial' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mydsl_Initial' is a specialization of 'State'.
+The class 'mydsl_Final' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mydsl_FSM' and 'mydsl_State'. From 'mydsl_FSM', the role 'mydsl_FSM' has cardinality 0..*, and from 'mydsl_State', the role 'mydsl_State' has cardinality 0..*.
+An association connects 'mydsl_FSM' and 'mydsl_Transition'. From 'mydsl_FSM', the role 'mydsl_FSM2' has cardinality 0..*, and from 'mydsl_Transition', the role 'mydsl_Transition' has cardinality 0..*.
+An association connects 'mydsl_FSM' and 'mydsl_Final'. From 'mydsl_FSM', the role 'mydsl_FSM4' has cardinality 0..*, and from 'mydsl_Final', the role 'mydsl_Final' has cardinality 0..*.
+An association connects 'mydsl_Initial' and 'mydsl_FSM'. From 'mydsl_Initial', the role 'mydsl_Initial' has cardinality 0..*, and from 'mydsl_FSM', the role 'mydsl_FSM6' has cardinality 0..*.
+An association connects 'mydsl_Transition' and 'mydsl_State'. From 'mydsl_Transition', the role 'mydsl_Transition8' has cardinality 0..*, and from 'mydsl_State', the role 'mydsl_State9' has cardinality 0..*.

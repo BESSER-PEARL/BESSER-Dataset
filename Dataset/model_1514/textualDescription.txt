@@ -1,0 +1,33 @@
+The domain model 'minifsm' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'minifsm_Transition' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+'minifsm_Initial' represents an important domain concept.
+It does not declare any attributes.
+
+'minifsm_FSM' represents an important domain concept.
+It has one attribute: 'currentEvent', which is of type str.
+
+'minifsm_Terminal' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'minifsm_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'minifsm_Initial' is a specialization of 'State'.
+The class 'minifsm_Terminal' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'minifsm_FSM' and 'minifsm_State'. From 'minifsm_FSM', the role 'minifsm_FSM' has cardinality 0..*, and from 'minifsm_State', the role 'minifsm_State' has cardinality 0..*.
+An association connects 'minifsm_FSM' and 'minifsm_Transition'. From 'minifsm_FSM', the role 'fsm' has cardinality 0..*, and from 'minifsm_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'minifsm_FSM' and 'minifsm_State'. From 'minifsm_FSM', the role 'minifsm_FSM3' has cardinality 0..*, and from 'minifsm_State', the role 'minifsm_State4' has cardinality 0..*.
+An association connects 'minifsm_State' and 'minifsm_Transition'. From 'minifsm_State', the role 'minifsm_State6' has cardinality 0..*, and from 'minifsm_Transition', the role 'minifsm_Transition' has cardinality 0..*.
+An association connects 'minifsm_Transition' and 'minifsm_State'. From 'minifsm_Transition', the role 'minifsm_Transition8' has cardinality 0..*, and from 'minifsm_State', the role 'minifsm_State9' has cardinality 0..*.
+An association connects 'minifsm_FSM' and 'minifsm_Transition'. From 'minifsm_FSM', the role 'FSM' has cardinality 0..*, and from 'minifsm_Transition', the role 'transitions' has cardinality 0..*.

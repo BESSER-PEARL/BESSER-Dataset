@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/patrickneubauer/XMLIntellEdit/xmlintelledit/xmltext/examples/testoutput1.ecore

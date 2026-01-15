@@ -1,0 +1,38 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'model_AssociationNode' represents an important domain concept.
+It has one attribute: 'associationTypeConstraint', which is of type str.
+
+'model_Node' represents an important domain concept.
+It has the following attributes: 'posX', which is of type int; 'posY', which is of type int.
+
+'model_BendPoint' represents an important domain concept.
+It has the following attributes: 'posX', which is of type int; 'posY', which is of type int.
+
+'model_TypeNode' represents an important domain concept.
+It has one attribute: 'topicType', which is of type str.
+
+'model_Edge' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'model_Diagram' represents an important domain concept.
+It has one attribute: 'topicMapSchema', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EdgeType' defines the following possible values: 'IS_A_TYPE', 'ROLE_CONSTRAINT_TYPE', 'AKO_TYPE'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_TypeNode' is a specialization of 'Node'.
+The class 'model_AssociationNode' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Diagram' and 'model_Node'. From 'model_Diagram', the role 'model_Diagram' has cardinality 0..*, and from 'model_Node', the role 'model_Node' has cardinality 0..*.
+An association connects 'model_Diagram' and 'model_Edge'. From 'model_Diagram', the role 'model_Diagram2' has cardinality 0..*, and from 'model_Edge', the role 'model_Edge' has cardinality 0..*.
+An association connects 'model_Edge' and 'model_BendPoint'. From 'model_Edge', the role 'model_Edge4' has cardinality 0..*, and from 'model_BendPoint', the role 'model_BendPoint' has cardinality 0..*.
+An association connects 'model_Edge' and 'model_Node'. From 'model_Edge', the role 'model_Edge6' has cardinality 0..*, and from 'model_Node', the role 'model_Node7' has cardinality 0..*.
+An association connects 'model_Node' and 'model_Edge'. From 'model_Node', the role 'model_Node10' has cardinality 0..*, and from 'model_Edge', the role 'model_Edge9' has cardinality 0..*.

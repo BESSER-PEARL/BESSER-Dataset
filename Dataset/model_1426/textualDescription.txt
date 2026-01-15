@@ -1,0 +1,38 @@
+The domain model 'martinfowlerdsl' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'martinfowlerdsl_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'martinfowlerdsl_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'martinfowlerdsl_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'martinfowlerdsl_AbstractEvent' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'code', which is of type str.
+
+'martinfowlerdsl_Event' represents an important domain concept.
+It has one attribute: 'resetting', which is of type bool.
+
+'martinfowlerdsl_Command' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'martinfowlerdsl_Command' is a specialization of 'AbstractEvent'.
+The class 'martinfowlerdsl_Event' is a specialization of 'AbstractEvent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'martinfowlerdsl_State' and 'martinfowlerdsl_StateMachine'. From 'martinfowlerdsl_State', the role 'martinfowlerdsl_State' has cardinality 0..*, and from 'martinfowlerdsl_StateMachine', the role 'martinfowlerdsl_StateMachine' has cardinality 0..*.
+An association connects 'martinfowlerdsl_State' and 'martinfowlerdsl_StateMachine'. From 'martinfowlerdsl_State', the role 'martinfowlerdsl_State3' has cardinality 0..*, and from 'martinfowlerdsl_StateMachine', the role 'martinfowlerdsl_StateMachine2' has cardinality 0..*.
+An association connects 'martinfowlerdsl_AbstractEvent' and 'martinfowlerdsl_StateMachine'. From 'martinfowlerdsl_AbstractEvent', the role 'martinfowlerdsl_AbstractEvent' has cardinality 0..*, and from 'martinfowlerdsl_StateMachine', the role 'martinfowlerdsl_StateMachine5' has cardinality 0..*.
+An association connects 'martinfowlerdsl_State' and 'martinfowlerdsl_Command'. From 'martinfowlerdsl_State', the role 'martinfowlerdsl_State7' has cardinality 0..*, and from 'martinfowlerdsl_Command', the role 'martinfowlerdsl_Command' has cardinality 0..*.
+An association connects 'martinfowlerdsl_Transition' and 'martinfowlerdsl_State'. From 'martinfowlerdsl_Transition', the role 'Transition' has cardinality 0..*, and from 'martinfowlerdsl_State', the role 'source' has cardinality 0..*.
+An association connects 'martinfowlerdsl_State' and 'martinfowlerdsl_Transition'. From 'martinfowlerdsl_State', the role 'State' has cardinality 0..*, and from 'martinfowlerdsl_Transition', the role 'transitions' has cardinality 0..*.
+An association connects 'martinfowlerdsl_Transition' and 'martinfowlerdsl_State'. From 'martinfowlerdsl_Transition', the role 'martinfowlerdsl_Transition' has cardinality 0..*, and from 'martinfowlerdsl_State', the role 'martinfowlerdsl_State11' has cardinality 0..*.
+An association connects 'martinfowlerdsl_Transition' and 'martinfowlerdsl_Event'. From 'martinfowlerdsl_Transition', the role 'martinfowlerdsl_Transition13' has cardinality 0..*, and from 'martinfowlerdsl_Event', the role 'martinfowlerdsl_Event' has cardinality 0..*.

@@ -1,0 +1,45 @@
+The domain model 'simplestatechart101' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'simplestatechart101_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simplestatechart101_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'simplestatechart101_Variable' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type str.
+
+'simplestatechart101_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simplestatechart101_State' represents an important domain concept.
+It has the following attributes: 'activity', which is of type str; 'type', which is of type str; 'label', which is of type str.
+
+'Thing' represents an important domain concept.
+It does not declare any attributes.
+
+'simplestatechart101_Transition' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'simplestatechart101_Thing' is a specialization of 'NamedElement'.
+The class 'simplestatechart101_RelatedTo' is a specialization of 'NamedElement'.
+The class 'simplestatechart101_Variable' is a specialization of 'Thing'.
+The class 'simplestatechart101_Transition' is a specialization of 'NamedElement'.
+The class 'simplestatechart101_State' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simplestatechart101_RelatedTo' and 'simplestatechart101_Thing'. From 'simplestatechart101_RelatedTo', the role 'RelatedTo' has cardinality 0..*, and from 'simplestatechart101_Thing', the role 'fromThing' has cardinality 0..*.
+An association connects 'simplestatechart101_RelatedTo' and 'simplestatechart101_Thing'. From 'simplestatechart101_RelatedTo', the role 'relations' has cardinality 0..*, and from 'simplestatechart101_Thing', the role 'Thing' has cardinality 0..*.
+An association connects 'simplestatechart101_RelatedTo' and 'simplestatechart101_Thing'. From 'simplestatechart101_RelatedTo', the role 'simplestatechart101_RelatedTo' has cardinality 0..*, and from 'simplestatechart101_Thing', the role 'simplestatechart101_Thing' has cardinality 0..*.
+An association connects 'simplestatechart101_State' and 'simplestatechart101_Transition'. From 'simplestatechart101_State', the role 'simplestatechart101_State' has cardinality 0..*, and from 'simplestatechart101_Transition', the role 'simplestatechart101_Transition' has cardinality 0..*.
+An association connects 'simplestatechart101_State' and 'simplestatechart101_Transition'. From 'simplestatechart101_State', the role 'simplestatechart101_State6' has cardinality 0..*, and from 'simplestatechart101_Transition', the role 'simplestatechart101_Transition5' has cardinality 0..*.
+An association connects 'simplestatechart101_State' and 'simplestatechart101_State'. From 'simplestatechart101_State', the role 'simplestatechart101_State9' has cardinality 0..*, and from 'simplestatechart101_State', the role 'simplestatechart101_State7' has cardinality 0..*.
+An association connects 'simplestatechart101_State' and 'simplestatechart101_State'. From 'simplestatechart101_State', the role 'simplestatechart101_State12' has cardinality 0..*, and from 'simplestatechart101_State', the role 'simplestatechart101_State10' has cardinality 0..*.
+An association connects 'simplestatechart101_Variable' and 'simplestatechart101_State'. From 'simplestatechart101_Variable', the role 'simplestatechart101_Variable' has cardinality 0..*, and from 'simplestatechart101_State', the role 'simplestatechart101_State14' has cardinality 0..*.
+An association connects 'simplestatechart101_State' and 'simplestatechart101_Transition'. From 'simplestatechart101_State', the role 'simplestatechart101_State16' has cardinality 0..*, and from 'simplestatechart101_Transition', the role 'simplestatechart101_Transition17' has cardinality 0..*.

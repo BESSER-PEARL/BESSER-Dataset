@@ -1,0 +1,101 @@
+The domain model 'tp4' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'tp4_Counted' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'tp4_Paragraph' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'tp4_Progress' represents an important domain concept.
+It has one attribute: 'percent', which is of type int.
+
+'tp4_Researcher' represents an important domain concept.
+It has the following attributes: 'forName', which is of type str; 'name', which is of type str.
+
+'tp4_Position' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'tp4_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tp4_PublicationSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'tp4_Write' represents an important domain concept.
+It has one attribute: 'timeSpent', which is of type int.
+
+'tp4_Review' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'tp4_Keyword' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'tp4_Paper' represents an important domain concept.
+It does not declare any attributes.
+
+'tp4_PublicationProcess' represents an important domain concept.
+It has the following attributes: 'maxTime', which is of type int; 'minTime', which is of type int.
+
+'tp4_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'Labelled' represents an important domain concept.
+It does not declare any attributes.
+
+'tp4_Labelled' represents an important domain concept.
+It has one attribute: 'lname', which is of type str.
+
+'tp4_Skill' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'Counted' represents an important domain concept.
+It does not declare any attributes.
+
+'tp4_Phases' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tp4_ReviewNote' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'tp4_PublicationProcess' is a specialization of 'Named'.
+The class 'tp4_Paper' is a specialization of 'Named'.
+The class 'tp4_Paragraph' is a specialization of 'Counted'.
+The class 'tp4_Paragraph' is a specialization of 'Named'.
+The class 'tp4_ReviewNote' is a specialization of 'Named'.
+The class 'tp4_Progress' is a specialization of 'Labelled'.
+The class 'tp4_Write' is a specialization of 'Labelled'.
+The class 'tp4_Review' is a specialization of 'Labelled'.
+The class 'tp4_PublicationStructure' is a specialization of 'Named'.
+The class 'tp4_PublicationSystem' is a specialization of 'Named'.
+The class 'tp4_Position' is a specialization of 'Named'.
+The class 'tp4_Keyword' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tp4_Phases' and 'tp4_PublicationProcess'. From 'tp4_Phases', the role 'tp4_Phases' has cardinality 0..*, and from 'tp4_PublicationProcess', the role 'tp4_PublicationProcess' has cardinality 0..*.
+An association connects 'tp4_Write' and 'tp4_Researcher'. From 'tp4_Write', the role 'tp4_Write' has cardinality 0..*, and from 'tp4_Researcher', the role 'tp4_Researcher' has cardinality 0..*.
+An association connects 'tp4_Researcher' and 'tp4_Review'. From 'tp4_Researcher', the role 'tp4_Researcher3' has cardinality 0..*, and from 'tp4_Review', the role 'tp4_Review' has cardinality 0..*.
+An association connects 'tp4_Paper' and 'tp4_Researcher'. From 'tp4_Paper', the role 'Paper' has cardinality 0..*, and from 'tp4_Researcher', the role 'authors' has cardinality 0..*.
+An association connects 'tp4_Researcher' and 'tp4_Skill'. From 'tp4_Researcher', the role 'tp4_Researcher6' has cardinality 0..*, and from 'tp4_Skill', the role 'tp4_Skill' has cardinality 0..*.
+An association connects 'tp4_Position' and 'tp4_Researcher'. From 'tp4_Position', the role 'tp4_Position' has cardinality 0..*, and from 'tp4_Researcher', the role 'tp4_Researcher8' has cardinality 0..*.
+An association connects 'tp4_Paper' and 'tp4_Paragraph'. From 'tp4_Paper', the role 'tp4_Paper' has cardinality 0..*, and from 'tp4_Paragraph', the role 'tp4_Paragraph' has cardinality 0..*.
+An association connects 'tp4_Paper' and 'tp4_Progress'. From 'tp4_Paper', the role 'paper' has cardinality 0..*, and from 'tp4_Progress', the role 'Progress' has cardinality 0..*.
+An association connects 'tp4_Paper' and 'tp4_Researcher'. From 'tp4_Paper', the role 'res_papers' has cardinality 0..*, and from 'tp4_Researcher', the role 'Researcher' has cardinality 0..*.
+An association connects 'tp4_Keyword' and 'tp4_Paper'. From 'tp4_Keyword', the role 'tp4_Keyword' has cardinality 0..*, and from 'tp4_Paper', the role 'tp4_Paper13' has cardinality 0..*.
+An association connects 'tp4_Paragraph' and 'tp4_ReviewNote'. From 'tp4_Paragraph', the role 'tp4_Paragraph15' has cardinality 0..*, and from 'tp4_ReviewNote', the role 'tp4_ReviewNote' has cardinality 0..*.
+An association connects 'tp4_PublicationProcess' and 'tp4_Progress'. From 'tp4_PublicationProcess', the role 'tp4_PublicationProcess17' has cardinality 0..*, and from 'tp4_Progress', the role 'tp4_Progress' has cardinality 0..*.
+An association connects 'tp4_Progress' and 'tp4_Paper'. From 'tp4_Progress', the role 'progress' has cardinality 0..*, and from 'tp4_Paper', the role 'Paper19' has cardinality 0..*.
+An association connects 'tp4_Write' and 'tp4_Paragraph'. From 'tp4_Write', the role 'tp4_Write21' has cardinality 0..*, and from 'tp4_Paragraph', the role 'tp4_Paragraph22' has cardinality 0..*.
+An association connects 'tp4_ReviewNote' and 'tp4_Review'. From 'tp4_ReviewNote', the role 'tp4_ReviewNote25' has cardinality 0..*, and from 'tp4_Review', the role 'tp4_Review24' has cardinality 0..*.
+An association connects 'tp4_Researcher' and 'tp4_PublicationStructure'. From 'tp4_Researcher', the role 'tp4_Researcher27' has cardinality 0..*, and from 'tp4_PublicationStructure', the role 'tp4_PublicationStructure' has cardinality 0..*.
+An association connects 'tp4_PublicationStructure' and 'tp4_Paper'. From 'tp4_PublicationStructure', the role 'tp4_PublicationStructure29' has cardinality 0..*, and from 'tp4_Paper', the role 'tp4_Paper30' has cardinality 0..*.
+An association connects 'tp4_PublicationSystem' and 'tp4_PublicationProcess'. From 'tp4_PublicationSystem', the role 'tp4_PublicationSystem' has cardinality 0..*, and from 'tp4_PublicationProcess', the role 'tp4_PublicationProcess32' has cardinality 0..*.
+An association connects 'tp4_PublicationSystem' and 'tp4_PublicationStructure'. From 'tp4_PublicationSystem', the role 'tp4_PublicationSystem34' has cardinality 0..*, and from 'tp4_PublicationStructure', the role 'tp4_PublicationStructure35' has cardinality 0..*.
+An association connects 'tp4_Position' and 'tp4_PublicationSystem'. From 'tp4_Position', the role 'tp4_Position38' has cardinality 0..*, and from 'tp4_PublicationSystem', the role 'tp4_PublicationSystem37' has cardinality 0..*.
+An association connects 'tp4_PublicationSystem' and 'tp4_Keyword'. From 'tp4_PublicationSystem', the role 'tp4_PublicationSystem40' has cardinality 0..*, and from 'tp4_Keyword', the role 'tp4_Keyword41' has cardinality 0..*.
+An association connects 'tp4_Position' and 'tp4_Position'. From 'tp4_Position', the role 'tp4_Position44' has cardinality 0..*, and from 'tp4_Position', the role 'tp4_Position42' has cardinality 0..*.

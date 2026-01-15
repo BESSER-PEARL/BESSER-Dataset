@@ -1,0 +1,34 @@
+The domain model 'PetriNet' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'PetriElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_Place' represents an important domain concept.
+It has one attribute: 'nbJetons', which is of type int.
+
+'PetriNet_Arc' represents an important domain concept.
+It has the following attributes: 'arcType', which is of type str; 'poids', which is of type int.
+
+'PetriNet_PetriNet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PetriNet_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_PetriElement' represents an important domain concept.
+It has one attribute: 'nom', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ArcType' defines the following possible values: 'ReadArc', 'Arc'.
+
+The model also captures inheritance relationships between classes.
+The class 'PetriNet_Place' is a specialization of 'PetriElement'.
+The class 'PetriNet_Transition' is a specialization of 'PetriElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PetriNet_PetriElement' and 'PetriNet_Arc'. From 'PetriNet_PetriElement', the role 'PetriNet_PetriElement' has cardinality 0..*, and from 'PetriNet_Arc', the role 'PetriNet_Arc' has cardinality 0..*.
+An association connects 'PetriNet_Arc' and 'PetriNet_PetriElement'. From 'PetriNet_Arc', the role 'PetriNet_Arc2' has cardinality 0..*, and from 'PetriNet_PetriElement', the role 'PetriNet_PetriElement3' has cardinality 0..*.
+An association connects 'PetriNet_PetriNet' and 'PetriNet_Arc'. From 'PetriNet_PetriNet', the role 'PetriNet_PetriNet' has cardinality 0..*, and from 'PetriNet_Arc', the role 'PetriNet_Arc5' has cardinality 0..*.
+An association connects 'PetriNet_PetriElement' and 'PetriNet_PetriNet'. From 'PetriNet_PetriElement', the role 'PetriNet_PetriElement8' has cardinality 0..*, and from 'PetriNet_PetriNet', the role 'PetriNet_PetriNet7' has cardinality 0..*.

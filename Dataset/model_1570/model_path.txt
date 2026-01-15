@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/model-consistency/consistency-examples/graph-model/src/main/old/graph.ecore

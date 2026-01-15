@@ -1,0 +1,248 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 54 main class(es).
+
+'Topic' represents an important domain concept.
+It does not declare any attributes.
+
+'model_R4EDelta' represents an important domain concept.
+It does not declare any attributes.
+
+'model_R4EParticipant' represents an important domain concept.
+It has the following attributes: 'isPartOfDecision', which is of type bool; 'focusArea', which is of type str; 'roles', which is of type str.
+
+'model_R4ECommentType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'model_R4ETextContent' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'ReviewState' represents an important domain concept.
+It does not declare any attributes.
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MapDateToDuration' represents an important domain concept.
+It has the following attributes: 'key', which is of type date; 'value', which is of type str.
+
+'model_R4EIDComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_R4ETextPosition' represents an important domain concept.
+It has the following attributes: 'startPosition', which is of type int; 'endLine', which is of type int; 'length', which is of type int; 'startLine', which is of type int.
+
+'R4EReview' represents an important domain concept.
+It does not declare any attributes.
+
+'R4EComment' represents an important domain concept.
+It does not declare any attributes.
+
+'model_R4EContent' represents an important domain concept.
+It has one attribute: 'info', which is of type str.
+
+'model_MapToAnomalyType' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'model_R4EPosition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_R4EFileContext' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'R4EIDComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Review' represents an important domain concept.
+It does not declare any attributes.
+
+'R4EContent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_R4EAnomaly' represents an important domain concept.
+It has the following attributes: 'fixedByID', which is of type str; 'decidedByID', which is of type str; 'dueDate', which is of type date; 'state', which is of type str; 'followUpByID', which is of type str; 'isImported', which is of type bool; 'rank', which is of type str; 'notAcceptedReason', which is of type str; 'ruleID', which is of type str.
+
+'model_R4EAnomalyTextPosition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_R4EReviewDecision' represents an important domain concept.
+It has the following attributes: 'spentTime', which is of type int; 'value', which is of type str.
+
+'CommentType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_R4EID' represents an important domain concept.
+It has the following attributes: 'userID', which is of type str; 'sequenceID', which is of type int.
+
+'R4ETextPosition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_R4EDesignRule' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MapIDToComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MapKeyToInfoAttributes' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'model_MapNameToReview' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'R4EUser' represents an important domain concept.
+It does not declare any attributes.
+
+'model_R4EReviewState' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'Location' represents an important domain concept.
+It does not declare any attributes.
+
+'model_R4EAnomalyType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'ReviewGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'R4EReviewComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MapUserIDToUserReviews' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'model_R4EMeetingData' represents an important domain concept.
+It has the following attributes: 'duration', which is of type int; 'receivers', which is of type str; 'body', which is of type str; 'startTime', which is of type str; 'sender', which is of type str; 'sentCount', which is of type int; 'location', which is of type str; 'id', which is of type str; 'subject', which is of type str.
+
+'User' represents an important domain concept.
+It does not declare any attributes.
+
+'model_R4EReviewPhaseInfo' represents an important domain concept.
+It has the following attributes: 'phaseOwnerID', which is of type str; 'type', which is of type str; 'startDate', which is of type date; 'endDate', which is of type date.
+
+'R4EPosition' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MapToUsers' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'model_R4EItem' represents an important domain concept.
+It has the following attributes: 'submitted', which is of type date; 'description', which is of type str; 'repositoryRef', which is of type str; 'authorRep', which is of type str; 'ProjectURIs', which is of type str; 'addedById', which is of type str.
+
+'model_R4ETaskReference' represents an important domain concept.
+It does not declare any attributes.
+
+'model_R4EFormalReview' represents an important domain concept.
+It does not declare any attributes.
+
+'model_R4EComment' represents an important domain concept.
+It has one attribute: 'createdOn', which is of type date.
+
+'model_R4EReview' represents an important domain concept.
+It has the following attributes: 'modifiedDate', which is of type date; 'entryCriteria', which is of type str; 'project', which is of type str; 'name', which is of type str; 'type', which is of type str; 'endDate', which is of type date; 'objectives', which is of type str; 'components', which is of type str; 'referenceMaterial', which is of type str; 'extraNotes', which is of type str; 'startDate', which is of type date; 'dueDate', which is of type date.
+
+'model_R4EUserReviews' represents an important domain concept.
+It has the following attributes: 'createdReviews', which is of type str; 'name', which is of type str.
+
+'ReviewComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_R4EReviewComponent' represents an important domain concept.
+It has one attribute: 'assignedTo', which is of type str.
+
+'model_R4EFileVersion' represents an important domain concept.
+It has the following attributes: 'repositoryPath', which is of type str; 'platformURI', which is of type str; 'localVersionID', which is of type str; 'resource', which is of type str; 'fileRevision', which is of type str; 'name', which is of type str; 'versionID', which is of type str.
+
+'model_R4EUser' represents an important domain concept.
+It has the following attributes: 'reviewCompleted', which is of type bool; 'reviewCreatedByMe', which is of type bool; 'groupPaths', which is of type str; 'reviewCompletedCode', which is of type int; 'sequenceIDCounter', which is of type int.
+
+'model_R4EReviewGroup' represents an important domain concept.
+It has the following attributes: 'designRuleLocations', which is of type str; 'folder', which is of type str; 'name', which is of type str; 'defaultEntryCriteria', which is of type str; 'availableProjects', which is of type str; 'availableComponents', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'R4EReviewPhase' defines the following possible values: 'R4E_REVIEW_PHASE_STARTED', 'R4E_REVIEW_PHASE_PREPARATION', 'R4E_REVIEW_PHASE_DECISION', 'R4E_REVIEW_PHASE_COMPLETED', 'R4E_REVIEW_PHASE_REWORK'.
+The enumeration 'R4EDecision' defines the following possible values: 'R4E_REVIEW_DECISION_ACCEPTED_FOLLOWUP', 'R4E_REVIEW_DECISION_REJECTED', 'R4E_REVIEW_DECISION_ACCEPTED', 'R4E_REVIEW_DECISION_NONE'.
+The enumeration 'R4EReviewType' defines the following possible values: 'R4E_REVIEW_TYPE_FORMAL', 'R4E_REVIEW_TYPE_INFORMAL', 'R4E_REVIEW_TYPE_BASIC'.
+The enumeration 'R4EUserRole' defines the following possible values: 'R4E_ROLE_AUTHOR', 'R4E_ROLE_ORGANIZER', 'R4E_ROLE_REVIEWER', 'R4E_ROLE_LEAD'.
+The enumeration 'R4EAnomalyState' defines the following possible values: 'R4E_ANOMALY_STATE_CREATED', 'R4E_ANOMALY_STATE_DUPLICATED', 'R4E_ANOMALY_STATE_VERIFIED', 'R4E_ANOMALY_STATE_ASSIGNED', 'R4E_ANOMALY_STATE_DEFERRED', 'R4E_ANOMALY_STATE_REJECTED', 'R4E_ANOMALY_STATE_ACCEPTED', 'R4E_ANOMALY_STATE_FIXED'.
+The enumeration 'R4EContextType' defines the following possible values: 'R4E_ADDED', 'R4E_MODIFIED', 'R4E_DELETED', 'R4E_REPLACED', 'R4E_UNDEFINED'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_R4EReviewGroup' is a specialization of 'ReviewGroup'.
+The class 'model_R4EReviewGroup' is a specialization of 'R4EReviewComponent'.
+The class 'model_R4EReview' is a specialization of 'Review'.
+The class 'model_R4EReview' is a specialization of 'R4EReviewComponent'.
+The class 'model_R4EAnomaly' is a specialization of 'Topic'.
+The class 'model_R4EAnomaly' is a specialization of 'R4EReviewComponent'.
+The class 'model_R4EAnomaly' is a specialization of 'R4EComment'.
+The class 'model_R4EFormalReview' is a specialization of 'R4EReview'.
+The class 'model_R4ETextPosition' is a specialization of 'R4EPosition'.
+The class 'model_R4EUser' is a specialization of 'User'.
+The class 'model_R4EUser' is a specialization of 'R4EReviewComponent'.
+The class 'model_R4EParticipant' is a specialization of 'R4EUser'.
+The class 'model_R4EItem' is a specialization of 'R4EIDComponent'.
+The class 'model_R4EItem' is a specialization of 'Item'.
+The class 'model_R4ETextContent' is a specialization of 'R4EContent'.
+The class 'model_R4EAnomalyType' is a specialization of 'CommentType'.
+The class 'model_R4ETaskReference' is a specialization of 'TaskReference'.
+The class 'model_R4ETaskReference' is a specialization of 'R4EReviewComponent'.
+The class 'model_R4EReviewState' is a specialization of 'ReviewState'.
+The class 'model_R4EComment' is a specialization of 'Comment'.
+The class 'model_R4EComment' is a specialization of 'R4EReviewComponent'.
+The class 'model_R4EComment' is a specialization of 'R4EIDComponent'.
+The class 'model_R4EReviewComponent' is a specialization of 'ReviewComponent'.
+The class 'model_R4EFileContext' is a specialization of 'R4EIDComponent'.
+The class 'model_R4EDelta' is a specialization of 'R4EIDComponent'.
+The class 'model_R4ECommentType' is a specialization of 'CommentType'.
+The class 'model_R4EContent' is a specialization of 'Location'.
+The class 'model_R4EIDComponent' is a specialization of 'R4EReviewComponent'.
+The class 'model_R4EAnomalyTextPosition' is a specialization of 'R4ETextPosition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_R4EAnomalyType' and 'model_R4EReviewGroup'. From 'model_R4EAnomalyType', the role 'model_R4EAnomalyType' has cardinality 0..*, and from 'model_R4EReviewGroup', the role 'model_R4EReviewGroup' has cardinality 0..*.
+An association connects 'model_MapToAnomalyType' and 'model_R4EReviewGroup'. From 'model_MapToAnomalyType', the role 'model_MapToAnomalyType' has cardinality 0..*, and from 'model_R4EReviewGroup', the role 'model_R4EReviewGroup2' has cardinality 0..*.
+An association connects 'model_MapNameToReview' and 'model_R4EReviewGroup'. From 'model_MapNameToReview', the role 'model_MapNameToReview' has cardinality 0..*, and from 'model_R4EReviewGroup', the role 'model_R4EReviewGroup4' has cardinality 0..*.
+An association connects 'model_MapUserIDToUserReviews' and 'model_R4EReviewGroup'. From 'model_MapUserIDToUserReviews', the role 'model_MapUserIDToUserReviews' has cardinality 0..*, and from 'model_R4EReviewGroup', the role 'model_R4EReviewGroup6' has cardinality 0..*.
+An association connects 'model_R4EReview' and 'model_R4EReviewDecision'. From 'model_R4EReview', the role 'model_R4EReview' has cardinality 0..*, and from 'model_R4EReviewDecision', the role 'model_R4EReviewDecision' has cardinality 0..*.
+An association connects 'model_R4EReview' and 'model_R4EAnomaly'. From 'model_R4EReview', the role 'model_R4EReview9' has cardinality 0..*, and from 'model_R4EAnomaly', the role 'model_R4EAnomaly' has cardinality 0..*.
+An association connects 'model_MapToUsers' and 'model_R4EReview'. From 'model_MapToUsers', the role 'model_MapToUsers' has cardinality 0..*, and from 'model_R4EReview', the role 'model_R4EReview11' has cardinality 0..*.
+An association connects 'model_R4EUser' and 'model_R4EReview'. From 'model_R4EUser', the role 'model_R4EUser' has cardinality 0..*, and from 'model_R4EReview', the role 'model_R4EReview13' has cardinality 0..*.
+An association connects 'model_MapIDToComponent' and 'model_R4EReview'. From 'model_MapIDToComponent', the role 'model_MapIDToComponent' has cardinality 0..*, and from 'model_R4EReview', the role 'model_R4EReview15' has cardinality 0..*.
+An association connects 'model_R4EReview' and 'model_R4EMeetingData'. From 'model_R4EReview', the role 'model_R4EReview17' has cardinality 0..*, and from 'model_R4EMeetingData', the role 'model_R4EMeetingData' has cardinality 0..*.
+An association connects 'model_R4EDesignRule' and 'model_R4EAnomaly'. From 'model_R4EDesignRule', the role 'model_R4EDesignRule' has cardinality 0..*, and from 'model_R4EAnomaly', the role 'model_R4EAnomaly19' has cardinality 0..*.
+An association connects 'model_R4EAnomaly' and 'model_R4EFileVersion'. From 'model_R4EAnomaly', the role 'model_R4EAnomaly21' has cardinality 0..*, and from 'model_R4EFileVersion', the role 'model_R4EFileVersion' has cardinality 0..*.
+An association connects 'model_R4EFormalReview' and 'model_R4EParticipant'. From 'model_R4EFormalReview', the role 'model_R4EFormalReview' has cardinality 0..*, and from 'model_R4EParticipant', the role 'model_R4EParticipant' has cardinality 0..*.
+An association connects 'model_R4EFormalReview' and 'model_R4EReviewPhaseInfo'. From 'model_R4EFormalReview', the role 'model_R4EFormalReview24' has cardinality 0..*, and from 'model_R4EReviewPhaseInfo', the role 'model_R4EReviewPhaseInfo' has cardinality 0..*.
+An association connects 'model_R4EFormalReview' and 'model_R4EReviewPhaseInfo'. From 'model_R4EFormalReview', the role 'model_R4EFormalReview26' has cardinality 0..*, and from 'model_R4EReviewPhaseInfo', the role 'model_R4EReviewPhaseInfo27' has cardinality 0..*.
+An association connects 'model_R4EComment' and 'model_R4EUser'. From 'model_R4EComment', the role 'model_R4EComment' has cardinality 0..*, and from 'model_R4EUser', the role 'model_R4EUser29' has cardinality 0..*.
+An association connects 'model_R4EUser' and 'model_R4EItem'. From 'model_R4EUser', the role 'model_R4EUser31' has cardinality 0..*, and from 'model_R4EItem', the role 'model_R4EItem' has cardinality 0..*.
+An association connects 'model_R4EUser' and 'model_R4EReview'. From 'model_R4EUser', the role 'model_R4EUser33' has cardinality 0..*, and from 'model_R4EReview', the role 'model_R4EReview34' has cardinality 0..*.
+An association connects 'model_R4EID' and 'model_R4EParticipant'. From 'model_R4EID', the role 'model_R4EID' has cardinality 0..*, and from 'model_R4EParticipant', the role 'model_R4EParticipant36' has cardinality 0..*.
+An association connects 'model_MapDateToDuration' and 'model_R4EParticipant'. From 'model_MapDateToDuration', the role 'model_MapDateToDuration' has cardinality 0..*, and from 'model_R4EParticipant', the role 'model_R4EParticipant38' has cardinality 0..*.
+An association connects 'model_R4EFileContext' and 'model_R4EItem'. From 'model_R4EFileContext', the role 'model_R4EFileContext' has cardinality 0..*, and from 'model_R4EItem', the role 'model_R4EItem40' has cardinality 0..*.
+An association connects 'model_MapKeyToInfoAttributes' and 'model_R4EItem'. From 'model_MapKeyToInfoAttributes', the role 'model_MapKeyToInfoAttributes' has cardinality 0..*, and from 'model_R4EItem', the role 'model_R4EItem42' has cardinality 0..*.
+An association connects 'model_R4EAnomaly' and 'model_R4EComment'. From 'model_R4EAnomaly', the role 'model_R4EAnomaly45' has cardinality 0..*, and from 'model_R4EComment', the role 'model_R4EComment44' has cardinality 0..*.
+An association connects 'model_R4EComment' and 'model_MapKeyToInfoAttributes'. From 'model_R4EComment', the role 'model_R4EComment47' has cardinality 0..*, and from 'model_MapKeyToInfoAttributes', the role 'model_MapKeyToInfoAttributes48' has cardinality 0..*.
+An association connects 'model_R4EFileContext' and 'model_R4EDelta'. From 'model_R4EFileContext', the role 'model_R4EFileContext50' has cardinality 0..*, and from 'model_R4EDelta', the role 'model_R4EDelta' has cardinality 0..*.
+An association connects 'model_R4EFileContext' and 'model_R4EFileVersion'. From 'model_R4EFileContext', the role 'model_R4EFileContext52' has cardinality 0..*, and from 'model_R4EFileVersion', the role 'model_R4EFileVersion53' has cardinality 0..*.
+An association connects 'model_R4EFileContext' and 'model_R4EFileVersion'. From 'model_R4EFileContext', the role 'model_R4EFileContext55' has cardinality 0..*, and from 'model_R4EFileVersion', the role 'model_R4EFileVersion56' has cardinality 0..*.
+An association connects 'model_R4EFileContext' and 'model_MapKeyToInfoAttributes'. From 'model_R4EFileContext', the role 'model_R4EFileContext58' has cardinality 0..*, and from 'model_MapKeyToInfoAttributes', the role 'model_MapKeyToInfoAttributes59' has cardinality 0..*.
+An association connects 'model_R4EDelta' and 'model_R4EContent'. From 'model_R4EDelta', the role 'model_R4EDelta61' has cardinality 0..*, and from 'model_R4EContent', the role 'model_R4EContent' has cardinality 0..*.
+An association connects 'model_R4EContent' and 'model_R4EDelta'. From 'model_R4EContent', the role 'model_R4EContent64' has cardinality 0..*, and from 'model_R4EDelta', the role 'model_R4EDelta63' has cardinality 0..*.
+An association connects 'model_MapToAnomalyType' and 'model_R4EAnomalyType'. From 'model_MapToAnomalyType', the role 'model_MapToAnomalyType66' has cardinality 0..*, and from 'model_R4EAnomalyType', the role 'model_R4EAnomalyType67' has cardinality 0..*.
+An association connects 'model_R4EPosition' and 'model_R4EContent'. From 'model_R4EPosition', the role 'model_R4EPosition' has cardinality 0..*, and from 'model_R4EContent', the role 'model_R4EContent69' has cardinality 0..*.
+An association connects 'model_MapKeyToInfoAttributes' and 'model_R4EFileVersion'. From 'model_MapKeyToInfoAttributes', the role 'model_MapKeyToInfoAttributes72' has cardinality 0..*, and from 'model_R4EFileVersion', the role 'model_R4EFileVersion71' has cardinality 0..*.
+An association connects 'model_MapNameToReview' and 'model_R4EReview'. From 'model_MapNameToReview', the role 'model_MapNameToReview74' has cardinality 0..*, and from 'model_R4EReview', the role 'model_R4EReview75' has cardinality 0..*.
+An association connects 'model_R4EUser' and 'model_MapToUsers'. From 'model_R4EUser', the role 'model_R4EUser78' has cardinality 0..*, and from 'model_MapToUsers', the role 'model_MapToUsers77' has cardinality 0..*.
+An association connects 'model_R4EUserReviews' and 'model_MapNameToReview'. From 'model_R4EUserReviews', the role 'model_R4EUserReviews' has cardinality 0..*, and from 'model_MapNameToReview', the role 'model_MapNameToReview80' has cardinality 0..*.
+An association connects 'model_R4EReviewGroup' and 'model_R4EUserReviews'. From 'model_R4EReviewGroup', the role 'model_R4EReviewGroup83' has cardinality 0..*, and from 'model_R4EUserReviews', the role 'model_R4EUserReviews82' has cardinality 0..*.
+An association connects 'model_R4EID' and 'model_R4EIDComponent'. From 'model_R4EID', the role 'model_R4EID85' has cardinality 0..*, and from 'model_R4EIDComponent', the role 'model_R4EIDComponent' has cardinality 0..*.
+An association connects 'model_R4EID' and 'model_MapIDToComponent'. From 'model_R4EID', the role 'model_R4EID88' has cardinality 0..*, and from 'model_MapIDToComponent', the role 'model_MapIDToComponent87' has cardinality 0..*.
+An association connects 'model_MapIDToComponent' and 'model_R4EIDComponent'. From 'model_MapIDToComponent', the role 'model_MapIDToComponent90' has cardinality 0..*, and from 'model_R4EIDComponent', the role 'model_R4EIDComponent91' has cardinality 0..*.
+An association connects 'model_MapUserIDToUserReviews' and 'model_R4EUserReviews'. From 'model_MapUserIDToUserReviews', the role 'model_MapUserIDToUserReviews93' has cardinality 0..*, and from 'model_R4EUserReviews', the role 'model_R4EUserReviews94' has cardinality 0..*.
+An association connects 'model_R4EAnomalyTextPosition' and 'model_R4EFileVersion'. From 'model_R4EAnomalyTextPosition', the role 'model_R4EAnomalyTextPosition' has cardinality 0..*, and from 'model_R4EFileVersion', the role 'model_R4EFileVersion96' has cardinality 0..*.

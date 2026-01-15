@@ -1,0 +1,40 @@
+The domain model 'ptn104' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'ptn104_And' represents an important domain concept.
+It does not declare any attributes.
+
+'ptn104_AbstractTransition' represents an important domain concept.
+It has one attribute: 'guard', which is of type str.
+
+'AbstractNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ptn104_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'ptn104_AbstractNode' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ptn104_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'ptn104_Or' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ptn104_Place' is a specialization of 'AbstractNode'.
+The class 'ptn104_AbstractTransition' is a specialization of 'AbstractNode'.
+The class 'ptn104_Or' is a specialization of 'AbstractTransition'.
+The class 'ptn104_And' is a specialization of 'AbstractTransition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ptn104_Place' and 'ptn104_Place'. From 'ptn104_Place', the role 'ptn104_Place0' has cardinality 0..*, and from 'ptn104_Place', the role 'ptn104_Place' has cardinality 0..*.
+An association connects 'ptn104_AbstractNode' and 'ptn104_Place'. From 'ptn104_AbstractNode', the role 'ptn104_AbstractNode' has cardinality 0..*, and from 'ptn104_Place', the role 'ptn104_Place3' has cardinality 0..*.
+An association connects 'ptn104_AbstractTransition' and 'ptn104_Place'. From 'ptn104_AbstractTransition', the role 'ptn104_AbstractTransition' has cardinality 0..*, and from 'ptn104_Place', the role 'ptn104_Place5' has cardinality 0..*.
+An association connects 'ptn104_Token' and 'ptn104_Place'. From 'ptn104_Token', the role 'ptn104_Token' has cardinality 0..*, and from 'ptn104_Place', the role 'ptn104_Place7' has cardinality 0..*.
+An association connects 'ptn104_AbstractTransition' and 'ptn104_Place'. From 'ptn104_AbstractTransition', the role 'ptn104_AbstractTransition9' has cardinality 0..*, and from 'ptn104_Place', the role 'ptn104_Place10' has cardinality 0..*.

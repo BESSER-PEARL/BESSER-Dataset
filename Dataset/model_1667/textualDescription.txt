@@ -1,0 +1,43 @@
+The domain model 'hello121' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'hello121_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'hello121_Alias' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'hello121_Base' represents an important domain concept.
+It does not declare any attributes.
+
+'hello121_Classoc' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'hello121_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'hello121_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'hello121_Third' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'hello121_Thing' is a specialization of 'NamedElement'.
+The class 'hello121_RelatedTo' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'hello121_Thing' and 'hello121_Base'. From 'hello121_Thing', the role 'hello121_Thing' has cardinality 0..*, and from 'hello121_Base', the role 'hello121_Base' has cardinality 0..*.
+An association connects 'hello121_Base' and 'hello121_Classoc'. From 'hello121_Base', the role 'hello121_Base2' has cardinality 0..*, and from 'hello121_Classoc', the role 'hello121_Classoc' has cardinality 0..*.
+An association connects 'hello121_RelatedTo' and 'hello121_Thing'. From 'hello121_RelatedTo', the role 'RelatedTo' has cardinality 0..*, and from 'hello121_Thing', the role 'fromThing' has cardinality 0..*.
+An association connects 'hello121_Thing' and 'hello121_Third'. From 'hello121_Thing', the role 'hello121_Thing5' has cardinality 0..*, and from 'hello121_Third', the role 'hello121_Third' has cardinality 0..*.
+An association connects 'hello121_Thing' and 'hello121_Classoc'. From 'hello121_Thing', the role 'hello121_Thing7' has cardinality 0..*, and from 'hello121_Classoc', the role 'hello121_Classoc8' has cardinality 0..*.
+An association connects 'hello121_Alias' and 'hello121_NamedElement'. From 'hello121_Alias', the role 'hello121_Alias' has cardinality 0..*, and from 'hello121_NamedElement', the role 'hello121_NamedElement' has cardinality 0..*.
+An association connects 'hello121_RelatedTo' and 'hello121_Thing'. From 'hello121_RelatedTo', the role 'relations' has cardinality 0..*, and from 'hello121_Thing', the role 'Thing' has cardinality 0..*.
+An association connects 'hello121_RelatedTo' and 'hello121_Thing'. From 'hello121_RelatedTo', the role 'hello121_RelatedTo' has cardinality 0..*, and from 'hello121_Thing', the role 'hello121_Thing12' has cardinality 0..*.
+An association connects 'hello121_Classoc' and 'hello121_Third'. From 'hello121_Classoc', the role 'hello121_Classoc14' has cardinality 0..*, and from 'hello121_Third', the role 'hello121_Third15' has cardinality 0..*.
+An association connects 'hello121_Classoc' and 'hello121_Base'. From 'hello121_Classoc', the role 'hello121_Classoc17' has cardinality 0..*, and from 'hello121_Base', the role 'hello121_Base18' has cardinality 0..*.

@@ -1,0 +1,55 @@
+The domain model 'GraphWiki' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'GraphWiki_ArticleGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphWiki_Revision' represents an important domain concept.
+It has the following attributes: 'date', which is of type str; 'text_id', which is of type int; 'user', which is of type str.
+
+'GraphWiki_Graph' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'GraphWiki_ClassificationGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphWiki_Edge' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'GraphWiki_Wiki' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'GraphWiki_CategoryGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphWiki_IndexGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphWiki_Node' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'visits', which is of type int; 'node_id', which is of type int; 'editions', which is of type int; 'type', which is of type str; 'node_namespace', which is of type int.
+
+'Graph' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'GraphWiki_IndexGraph' is a specialization of 'Graph'.
+The class 'GraphWiki_CategoryGraph' is a specialization of 'Graph'.
+The class 'GraphWiki_ArticleGraph' is a specialization of 'Graph'.
+The class 'GraphWiki_ClassificationGraph' is a specialization of 'Graph'.
+
+Relationships between classes are modeled using associations.
+An association connects 'GraphWiki_Wiki' and 'GraphWiki_IndexGraph'. From 'GraphWiki_Wiki', the role 'GraphWiki_Wiki' has cardinality 0..*, and from 'GraphWiki_IndexGraph', the role 'GraphWiki_IndexGraph' has cardinality 0..*.
+An association connects 'GraphWiki_CategoryGraph' and 'GraphWiki_Wiki'. From 'GraphWiki_CategoryGraph', the role 'GraphWiki_CategoryGraph' has cardinality 0..*, and from 'GraphWiki_Wiki', the role 'GraphWiki_Wiki2' has cardinality 0..*.
+An association connects 'GraphWiki_Wiki' and 'GraphWiki_ArticleGraph'. From 'GraphWiki_Wiki', the role 'GraphWiki_Wiki4' has cardinality 0..*, and from 'GraphWiki_ArticleGraph', the role 'GraphWiki_ArticleGraph' has cardinality 0..*.
+An association connects 'GraphWiki_Wiki' and 'GraphWiki_ClassificationGraph'. From 'GraphWiki_Wiki', the role 'GraphWiki_Wiki6' has cardinality 0..*, and from 'GraphWiki_ClassificationGraph', the role 'GraphWiki_ClassificationGraph' has cardinality 0..*.
+An association connects 'GraphWiki_Wiki' and 'GraphWiki_Node'. From 'GraphWiki_Wiki', the role 'GraphWiki_Wiki8' has cardinality 0..*, and from 'GraphWiki_Node', the role 'GraphWiki_Node' has cardinality 0..*.
+An association connects 'GraphWiki_Wiki' and 'GraphWiki_Edge'. From 'GraphWiki_Wiki', the role 'GraphWiki_Wiki10' has cardinality 0..*, and from 'GraphWiki_Edge', the role 'GraphWiki_Edge' has cardinality 0..*.
+An association connects 'GraphWiki_Wiki' and 'GraphWiki_Revision'. From 'GraphWiki_Wiki', the role 'GraphWiki_Wiki12' has cardinality 0..*, and from 'GraphWiki_Revision', the role 'GraphWiki_Revision' has cardinality 0..*.
+An association connects 'GraphWiki_Graph' and 'GraphWiki_Node'. From 'GraphWiki_Graph', the role 'GraphWiki_Graph' has cardinality 0..*, and from 'GraphWiki_Node', the role 'GraphWiki_Node14' has cardinality 0..*.
+An association connects 'GraphWiki_Edge' and 'GraphWiki_Graph'. From 'GraphWiki_Edge', the role 'GraphWiki_Edge17' has cardinality 0..*, and from 'GraphWiki_Graph', the role 'GraphWiki_Graph16' has cardinality 0..*.
+An association connects 'GraphWiki_Revision' and 'GraphWiki_Node'. From 'GraphWiki_Revision', the role 'GraphWiki_Revision20' has cardinality 0..*, and from 'GraphWiki_Node', the role 'GraphWiki_Node19' has cardinality 0..*.
+An association connects 'GraphWiki_Node' and 'GraphWiki_Revision'. From 'GraphWiki_Node', the role 'node' has cardinality 0..*, and from 'GraphWiki_Revision', the role 'Revision' has cardinality 0..*.
+An association connects 'GraphWiki_Edge' and 'GraphWiki_Node'. From 'GraphWiki_Edge', the role 'GraphWiki_Edge23' has cardinality 0..*, and from 'GraphWiki_Node', the role 'GraphWiki_Node24' has cardinality 0..*.
+An association connects 'GraphWiki_Node' and 'GraphWiki_Edge'. From 'GraphWiki_Node', the role 'GraphWiki_Node27' has cardinality 0..*, and from 'GraphWiki_Edge', the role 'GraphWiki_Edge26' has cardinality 0..*.
+An association connects 'GraphWiki_Revision' and 'GraphWiki_Node'. From 'GraphWiki_Revision', the role 'revisions' has cardinality 0..*, and from 'GraphWiki_Node', the role 'Node' has cardinality 0..*.

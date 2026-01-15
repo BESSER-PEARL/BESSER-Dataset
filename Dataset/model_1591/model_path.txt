@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/MDSEGroup/TraceCompaction/Traceconstruction/Petrinet/petrinet.abstractsyntax/petrinet.model/model/petrinet.ecore

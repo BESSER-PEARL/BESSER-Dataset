@@ -1,0 +1,74 @@
+The domain model 'syswb101' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'syswb101_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'syswb101_Thoughts' represents an important domain concept.
+It does not declare any attributes.
+
+'syswb101_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'syswb101_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'syswb101_System' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'syswb101_PatternCatalog' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'syswb101_Named' represents an important domain concept.
+It has one attribute: 'ident', which is of type str.
+
+'syswb101_Workbench' represents an important domain concept.
+It has one attribute: 'aprop', which is of type str.
+
+'syswb101_FunctionProperty' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'syswb101_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'syswb101_Component' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'syswb101_Workbench' is a specialization of 'Named'.
+The class 'syswb101_Thing' is a specialization of 'NamedElement'.
+The class 'syswb101_RelatedTo' is a specialization of 'NamedElement'.
+The class 'syswb101_Thoughts' is a specialization of 'NamedElement'.
+The class 'syswb101_FunctionProperty' is a specialization of 'Named'.
+The class 'syswb101_Component' is a specialization of 'Named'.
+The class 'syswb101_Function' is a specialization of 'Named'.
+The class 'syswb101_System' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'syswb101_Workbench' and 'syswb101_Thing'. From 'syswb101_Workbench', the role 'syswb101_Workbench' has cardinality 0..*, and from 'syswb101_Thing', the role 'syswb101_Thing' has cardinality 0..*.
+An association connects 'syswb101_Thoughts' and 'syswb101_Workbench'. From 'syswb101_Thoughts', the role 'syswb101_Thoughts' has cardinality 0..*, and from 'syswb101_Workbench', the role 'syswb101_Workbench2' has cardinality 0..*.
+An association connects 'syswb101_System' and 'syswb101_Workbench'. From 'syswb101_System', the role 'syswb101_System' has cardinality 0..*, and from 'syswb101_Workbench', the role 'syswb101_Workbench4' has cardinality 0..*.
+An association connects 'syswb101_Workbench' and 'syswb101_FunctionProperty'. From 'syswb101_Workbench', the role 'syswb101_Workbench6' has cardinality 0..*, and from 'syswb101_FunctionProperty', the role 'syswb101_FunctionProperty' has cardinality 0..*.
+An association connects 'syswb101_Workbench' and 'syswb101_PatternCatalog'. From 'syswb101_Workbench', the role 'syswb101_Workbench8' has cardinality 0..*, and from 'syswb101_PatternCatalog', the role 'syswb101_PatternCatalog' has cardinality 0..*.
+An association connects 'syswb101_RelatedTo' and 'syswb101_Thing'. From 'syswb101_RelatedTo', the role 'RelatedTo' has cardinality 0..*, and from 'syswb101_Thing', the role 'fromThing' has cardinality 0..*.
+An association connects 'syswb101_Thing' and 'syswb101_RelatedTo'. From 'syswb101_Thing', the role 'Thing' has cardinality 0..*, and from 'syswb101_RelatedTo', the role 'relations' has cardinality 0..*.
+An association connects 'syswb101_Thing' and 'syswb101_RelatedTo'. From 'syswb101_Thing', the role 'syswb101_Thing12' has cardinality 0..*, and from 'syswb101_RelatedTo', the role 'syswb101_RelatedTo' has cardinality 0..*.
+An association connects 'syswb101_Thoughts' and 'syswb101_Thing'. From 'syswb101_Thoughts', the role 'syswb101_Thoughts14' has cardinality 0..*, and from 'syswb101_Thing', the role 'syswb101_Thing15' has cardinality 0..*.
+An association connects 'syswb101_FunctionProperty' and 'syswb101_FunctionProperty'. From 'syswb101_FunctionProperty', the role 'syswb101_FunctionProperty16' has cardinality 0..*, and from 'syswb101_FunctionProperty', the role 'syswb101_FunctionProperty18' has cardinality 0..*.
+An association connects 'syswb101_Component' and 'syswb101_Component'. From 'syswb101_Component', the role 'syswb101_Component19' has cardinality 0..*, and from 'syswb101_Component', the role 'syswb101_Component' has cardinality 0..*.
+An association connects 'syswb101_Component' and 'syswb101_Component'. From 'syswb101_Component', the role 'syswb101_Component23' has cardinality 0..*, and from 'syswb101_Component', the role 'syswb101_Component21' has cardinality 0..*.
+An association connects 'syswb101_Function' and 'syswb101_Component'. From 'syswb101_Function', the role 'syswb101_Function' has cardinality 0..*, and from 'syswb101_Component', the role 'syswb101_Component25' has cardinality 0..*.
+An association connects 'syswb101_Function' and 'syswb101_Function'. From 'syswb101_Function', the role 'syswb101_Function26' has cardinality 0..*, and from 'syswb101_Function', the role 'syswb101_Function28' has cardinality 0..*.
+An association connects 'syswb101_FunctionProperty' and 'syswb101_Function'. From 'syswb101_FunctionProperty', the role 'syswb101_FunctionProperty31' has cardinality 0..*, and from 'syswb101_Function', the role 'syswb101_Function30' has cardinality 0..*.
+An association connects 'syswb101_Function' and 'syswb101_Function'. From 'syswb101_Function', the role 'syswb101_Function34' has cardinality 0..*, and from 'syswb101_Function', the role 'syswb101_Function32' has cardinality 0..*.
+An association connects 'syswb101_Function' and 'syswb101_Component'. From 'syswb101_Function', the role 'syswb101_Function36' has cardinality 0..*, and from 'syswb101_Component', the role 'syswb101_Component37' has cardinality 0..*.
+An association connects 'syswb101_Function' and 'syswb101_System'. From 'syswb101_Function', the role 'syswb101_Function40' has cardinality 0..*, and from 'syswb101_System', the role 'syswb101_System39' has cardinality 0..*.
+An association connects 'syswb101_System' and 'syswb101_Component'. From 'syswb101_System', the role 'syswb101_System42' has cardinality 0..*, and from 'syswb101_Component', the role 'syswb101_Component43' has cardinality 0..*.
+An association connects 'syswb101_PatternCatalog' and 'syswb101_Function'. From 'syswb101_PatternCatalog', the role 'syswb101_PatternCatalog45' has cardinality 0..*, and from 'syswb101_Function', the role 'syswb101_Function46' has cardinality 0..*.

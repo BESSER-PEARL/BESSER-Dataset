@@ -1,0 +1,44 @@
+The domain model 'hello123' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'hello123_World' represents an important domain concept.
+It does not declare any attributes.
+
+'hello123_Foo' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'hello123_Alias' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'hello123_Property' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'hello123_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'hello123_Bar' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'hello123_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'hello123_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'hello123_Thing' is a specialization of 'NamedElement'.
+The class 'hello123_RelatedTo' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'hello123_Thing' and 'hello123_World'. From 'hello123_Thing', the role 'hello123_Thing' has cardinality 0..*, and from 'hello123_World', the role 'hello123_World' has cardinality 0..*.
+An association connects 'hello123_Thing' and 'hello123_RelatedTo'. From 'hello123_Thing', the role 'fromThing' has cardinality 0..*, and from 'hello123_RelatedTo', the role 'RelatedTo' has cardinality 0..*.
+An association connects 'hello123_Thing' and 'hello123_Property'. From 'hello123_Thing', the role 'hello123_Thing3' has cardinality 0..*, and from 'hello123_Property', the role 'hello123_Property' has cardinality 0..*.
+An association connects 'hello123_Foo' and 'hello123_Thing'. From 'hello123_Foo', the role 'hello123_Foo' has cardinality 0..*, and from 'hello123_Thing', the role 'hello123_Thing5' has cardinality 0..*.
+An association connects 'hello123_Thing' and 'hello123_Bar'. From 'hello123_Thing', the role 'hello123_Thing7' has cardinality 0..*, and from 'hello123_Bar', the role 'hello123_Bar' has cardinality 0..*.
+An association connects 'hello123_NamedElement' and 'hello123_Alias'. From 'hello123_NamedElement', the role 'hello123_NamedElement' has cardinality 0..*, and from 'hello123_Alias', the role 'hello123_Alias' has cardinality 0..*.
+An association connects 'hello123_RelatedTo' and 'hello123_Thing'. From 'hello123_RelatedTo', the role 'relations' has cardinality 0..*, and from 'hello123_Thing', the role 'Thing' has cardinality 0..*.
+An association connects 'hello123_RelatedTo' and 'hello123_Thing'. From 'hello123_RelatedTo', the role 'hello123_RelatedTo' has cardinality 0..*, and from 'hello123_Thing', the role 'hello123_Thing11' has cardinality 0..*.

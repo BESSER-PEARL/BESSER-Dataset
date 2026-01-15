@@ -1,0 +1,55 @@
+The domain model 'tp6' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'tp6_Collaboration' represents an important domain concept.
+It has the following attributes: 'ratio', which is of type int; 'role', which is of type str.
+
+'tp6_Paper' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tp6_Skill' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'tp6_Position' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'tp6_PaperKeywords' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'tp6_Paragraph' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'id', which is of type int; 'name', which is of type str.
+
+'tp6_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'tp6_Researcher' represents an important domain concept.
+It has the following attributes: 'forName', which is of type str; 'name', which is of type str.
+
+'tp6_Keyword' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'description', which is of type str.
+
+'tp6_KnowledgeManager' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Role' defines the following possible values: 'Validateur', 'Revieweur', 'Correcteur', 'Autheur'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tp6_Paper' and 'tp6_Researcher'. From 'tp6_Paper', the role 'Paper' has cardinality 0..*, and from 'tp6_Researcher', the role 'authors' has cardinality 0..*.
+An association connects 'tp6_Skill' and 'tp6_Researcher'. From 'tp6_Skill', the role 'tp6_Skill' has cardinality 0..*, and from 'tp6_Researcher', the role 'tp6_Researcher' has cardinality 0..*.
+An association connects 'tp6_Position' and 'tp6_Researcher'. From 'tp6_Position', the role 'tp6_Position' has cardinality 0..*, and from 'tp6_Researcher', the role 'tp6_Researcher3' has cardinality 0..*.
+An association connects 'tp6_Collaboration' and 'tp6_Researcher'. From 'tp6_Collaboration', the role 'tp6_Collaboration' has cardinality 0..*, and from 'tp6_Researcher', the role 'tp6_Researcher5' has cardinality 0..*.
+An association connects 'tp6_Paper' and 'tp6_Paragraph'. From 'tp6_Paper', the role 'tp6_Paper' has cardinality 0..*, and from 'tp6_Paragraph', the role 'tp6_Paragraph' has cardinality 0..*.
+An association connects 'tp6_Paper' and 'tp6_Researcher'. From 'tp6_Paper', the role 'res_papers' has cardinality 0..*, and from 'tp6_Researcher', the role 'Researcher' has cardinality 0..*.
+An association connects 'tp6_Paper' and 'tp6_Paper'. From 'tp6_Paper', the role 'tp6_Paper10' has cardinality 0..*, and from 'tp6_Paper', the role 'tp6_Paper8' has cardinality 0..*.
+An association connects 'tp6_PaperKeywords' and 'tp6_Paper'. From 'tp6_PaperKeywords', the role 'tp6_PaperKeywords' has cardinality 0..*, and from 'tp6_Paper', the role 'tp6_Paper12' has cardinality 0..*.
+An association connects 'tp6_Researcher' and 'tp6_PublicationStructure'. From 'tp6_Researcher', the role 'tp6_Researcher14' has cardinality 0..*, and from 'tp6_PublicationStructure', the role 'tp6_PublicationStructure' has cardinality 0..*.
+An association connects 'tp6_Paper' and 'tp6_PublicationStructure'. From 'tp6_Paper', the role 'tp6_Paper17' has cardinality 0..*, and from 'tp6_PublicationStructure', the role 'tp6_PublicationStructure16' has cardinality 0..*.
+An association connects 'tp6_Position' and 'tp6_PublicationStructure'. From 'tp6_Position', the role 'tp6_Position20' has cardinality 0..*, and from 'tp6_PublicationStructure', the role 'tp6_PublicationStructure19' has cardinality 0..*.
+An association connects 'tp6_KnowledgeManager' and 'tp6_PublicationStructure'. From 'tp6_KnowledgeManager', the role 'tp6_KnowledgeManager' has cardinality 0..*, and from 'tp6_PublicationStructure', the role 'tp6_PublicationStructure22' has cardinality 0..*.
+An association connects 'tp6_Position' and 'tp6_Position'. From 'tp6_Position', the role 'tp6_Position23' has cardinality 0..*, and from 'tp6_Position', the role 'tp6_Position25' has cardinality 0..*.
+An association connects 'tp6_Collaboration' and 'tp6_Paper'. From 'tp6_Collaboration', the role 'tp6_Collaboration27' has cardinality 0..*, and from 'tp6_Paper', the role 'tp6_Paper28' has cardinality 0..*.
+An association connects 'tp6_Keyword' and 'tp6_Paper'. From 'tp6_Keyword', the role 'tp6_Keyword' has cardinality 0..*, and from 'tp6_Paper', the role 'tp6_Paper30' has cardinality 0..*.
+An association connects 'tp6_PaperKeywords' and 'tp6_Keyword'. From 'tp6_PaperKeywords', the role 'tp6_PaperKeywords32' has cardinality 0..*, and from 'tp6_Keyword', the role 'tp6_Keyword33' has cardinality 0..*.
+An association connects 'tp6_KnowledgeManager' and 'tp6_Keyword'. From 'tp6_KnowledgeManager', the role 'tp6_KnowledgeManager35' has cardinality 0..*, and from 'tp6_Keyword', the role 'tp6_Keyword36' has cardinality 0..*.

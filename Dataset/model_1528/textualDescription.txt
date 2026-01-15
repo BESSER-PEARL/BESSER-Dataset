@@ -1,0 +1,29 @@
+The domain model 'minifsm' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'minifsm_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'minifsm_Transition' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+'minifsm_Machine' represents an important domain concept.
+It does not declare any attributes.
+
+'minifsm_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'minifsm_FinalState' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'minifsm_Machine' and 'minifsm_State'. From 'minifsm_Machine', the role 'minifsm_Machine' has cardinality 0..*, and from 'minifsm_State', the role 'minifsm_State' has cardinality 0..*.
+An association connects 'minifsm_Transition' and 'minifsm_Machine'. From 'minifsm_Transition', the role 'minifsm_Transition' has cardinality 0..*, and from 'minifsm_Machine', the role 'minifsm_Machine2' has cardinality 0..*.
+An association connects 'minifsm_Transition' and 'minifsm_State'. From 'minifsm_Transition', the role 'Transition' has cardinality 0..*, and from 'minifsm_State', the role 'src' has cardinality 0..*.
+An association connects 'minifsm_State' and 'minifsm_Transition'. From 'minifsm_State', the role 'tgt' has cardinality 0..*, and from 'minifsm_Transition', the role 'Transition5' has cardinality 0..*.
+An association connects 'minifsm_Transition' and 'minifsm_State'. From 'minifsm_Transition', the role 'out' has cardinality 0..*, and from 'minifsm_State', the role 'State' has cardinality 0..*.
+An association connects 'minifsm_State' and 'minifsm_Transition'. From 'minifsm_State', the role 'State8' has cardinality 0..*, and from 'minifsm_Transition', the role 'in' has cardinality 0..*.

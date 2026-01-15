@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Lulle74/CDOProofingOfConcepts/elundstrom.model/model/library.ecore

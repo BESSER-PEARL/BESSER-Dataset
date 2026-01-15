@@ -1,0 +1,32 @@
+The domain model 'PetriNet' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'PetriNet_Net' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'PetriNet_Place' is a specialization of 'NamedElement'.
+The class 'PetriNet_Transition' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PetriNet_Place' and 'PetriNet_Net'. From 'PetriNet_Place', the role 'Place' has cardinality 0..*, and from 'PetriNet_Net', the role 'cnet' has cardinality 0..*.
+An association connects 'PetriNet_Transition' and 'PetriNet_Net'. From 'PetriNet_Transition', the role 'Transition' has cardinality 0..*, and from 'PetriNet_Net', the role 'cnet2' has cardinality 0..*.
+An association connects 'PetriNet_Transition' and 'PetriNet_Place'. From 'PetriNet_Transition', the role 'Transition4' has cardinality 0..*, and from 'PetriNet_Place', the role 'prep' has cardinality 0..*.
+An association connects 'PetriNet_Place' and 'PetriNet_Transition'. From 'PetriNet_Place', the role 'postp' has cardinality 0..*, and from 'PetriNet_Transition', the role 'Transition6' has cardinality 0..*.
+An association connects 'PetriNet_Net' and 'PetriNet_Place'. From 'PetriNet_Net', the role 'Net' has cardinality 0..*, and from 'PetriNet_Place', the role 'places' has cardinality 0..*.
+An association connects 'PetriNet_Transition' and 'PetriNet_Place'. From 'PetriNet_Transition', the role 'postt' has cardinality 0..*, and from 'PetriNet_Place', the role 'Place9' has cardinality 0..*.
+An association connects 'PetriNet_Place' and 'PetriNet_Transition'. From 'PetriNet_Place', the role 'Place11' has cardinality 0..*, and from 'PetriNet_Transition', the role 'pret' has cardinality 0..*.
+An association connects 'PetriNet_Transition' and 'PetriNet_Net'. From 'PetriNet_Transition', the role 'transitions' has cardinality 0..*, and from 'PetriNet_Net', the role 'Net13' has cardinality 0..*.

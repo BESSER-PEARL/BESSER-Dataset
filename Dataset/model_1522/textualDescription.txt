@@ -1,0 +1,79 @@
+The domain model 'cpsml' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'cpsml_Fright' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cpsml_IndeVariable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cpsml_Function' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cpsml_Condition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cpsml_DeVariable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cpsml_System' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cpsml_Variable' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'cpsml_Interval' represents an important domain concept.
+It has the following attributes: 'subinterval', which is of type float; 'right', which is of type float; 'name', which is of type str; 'left', which is of type float.
+
+'cpsml_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cpsml_ProbTransition' represents an important domain concept.
+It has one attribute: 'probability', which is of type float.
+
+'cpsml_ODE' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cpsml_Transition' represents an important domain concept.
+It has the following attributes: 'action', which is of type str; 'event', which is of type str; 'name', which is of type str; 'guard', which is of type str.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'cpsml_ComTransition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'cpsml_ComTransition' is a specialization of 'Transition'.
+The class 'cpsml_ProbTransition' is a specialization of 'Transition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cpsml_System' and 'cpsml_Variable'. From 'cpsml_System', the role 'cpsml_System' has cardinality 0..*, and from 'cpsml_Variable', the role 'cpsml_Variable' has cardinality 0..*.
+An association connects 'cpsml_System' and 'cpsml_Variable'. From 'cpsml_System', the role 'cpsml_System2' has cardinality 0..*, and from 'cpsml_Variable', the role 'cpsml_Variable3' has cardinality 0..*.
+An association connects 'cpsml_State' and 'cpsml_System'. From 'cpsml_State', the role 'cpsml_State' has cardinality 0..*, and from 'cpsml_System', the role 'cpsml_System5' has cardinality 0..*.
+An association connects 'cpsml_System' and 'cpsml_Transition'. From 'cpsml_System', the role 'cpsml_System7' has cardinality 0..*, and from 'cpsml_Transition', the role 'cpsml_Transition' has cardinality 0..*.
+An association connects 'cpsml_State' and 'cpsml_System'. From 'cpsml_State', the role 'cpsml_State10' has cardinality 0..*, and from 'cpsml_System', the role 'cpsml_System9' has cardinality 0..*.
+An association connects 'cpsml_System' and 'cpsml_ODE'. From 'cpsml_System', the role 'cpsml_System12' has cardinality 0..*, and from 'cpsml_ODE', the role 'cpsml_ODE' has cardinality 0..*.
+An association connects 'cpsml_State' and 'cpsml_ODE'. From 'cpsml_State', the role 'cpsml_State14' has cardinality 0..*, and from 'cpsml_ODE', the role 'cpsml_ODE15' has cardinality 0..*.
+An association connects 'cpsml_State' and 'cpsml_ComTransition'. From 'cpsml_State', the role 'csrc' has cardinality 0..*, and from 'cpsml_ComTransition', the role 'ComTransition' has cardinality 0..*.
+An association connects 'cpsml_ComTransition' and 'cpsml_State'. From 'cpsml_ComTransition', the role 'ComTransition18' has cardinality 0..*, and from 'cpsml_State', the role 'ctgt' has cardinality 0..*.
+An association connects 'cpsml_ProbTransition' and 'cpsml_State'. From 'cpsml_ProbTransition', the role 'ProbTransition' has cardinality 0..*, and from 'cpsml_State', the role 'psrc' has cardinality 0..*.
+An association connects 'cpsml_ProbTransition' and 'cpsml_State'. From 'cpsml_ProbTransition', the role 'ProbTransition21' has cardinality 0..*, and from 'cpsml_State', the role 'ptgt' has cardinality 0..*.
+An association connects 'cpsml_State' and 'cpsml_State'. From 'cpsml_State', the role 'cpsml_State24' has cardinality 0..*, and from 'cpsml_State', the role 'cpsml_State22' has cardinality 0..*.
+An association connects 'cpsml_State' and 'cpsml_State'. From 'cpsml_State', the role 'cpsml_State27' has cardinality 0..*, and from 'cpsml_State', the role 'cpsml_State25' has cardinality 0..*.
+An association connects 'cpsml_Transition' and 'cpsml_State'. From 'cpsml_Transition', the role 'cpsml_Transition30' has cardinality 0..*, and from 'cpsml_State', the role 'cpsml_State29' has cardinality 0..*.
+An association connects 'cpsml_State' and 'cpsml_ODE'. From 'cpsml_State', the role 'cpsml_State32' has cardinality 0..*, and from 'cpsml_ODE', the role 'cpsml_ODE33' has cardinality 0..*.
+An association connects 'cpsml_Variable' and 'cpsml_State'. From 'cpsml_Variable', the role 'cpsml_Variable36' has cardinality 0..*, and from 'cpsml_State', the role 'cpsml_State35' has cardinality 0..*.
+An association connects 'cpsml_Variable' and 'cpsml_State'. From 'cpsml_Variable', the role 'cpsml_Variable39' has cardinality 0..*, and from 'cpsml_State', the role 'cpsml_State38' has cardinality 0..*.
+An association connects 'cpsml_Transition' and 'cpsml_Variable'. From 'cpsml_Transition', the role 'cpsml_Transition41' has cardinality 0..*, and from 'cpsml_Variable', the role 'cpsml_Variable42' has cardinality 0..*.
+An association connects 'cpsml_State' and 'cpsml_ComTransition'. From 'cpsml_State', the role 'State' has cardinality 0..*, and from 'cpsml_ComTransition', the role 'outgoingComTransitions' has cardinality 0..*.
+An association connects 'cpsml_State' and 'cpsml_ComTransition'. From 'cpsml_State', the role 'State45' has cardinality 0..*, and from 'cpsml_ComTransition', the role 'incomingComTransitions' has cardinality 0..*.
+An association connects 'cpsml_State' and 'cpsml_ProbTransition'. From 'cpsml_State', the role 'State47' has cardinality 0..*, and from 'cpsml_ProbTransition', the role 'outgoingProbTransitions' has cardinality 0..*.
+An association connects 'cpsml_ProbTransition' and 'cpsml_State'. From 'cpsml_ProbTransition', the role 'incomingProbTransitions' has cardinality 0..*, and from 'cpsml_State', the role 'State49' has cardinality 0..*.
+An association connects 'cpsml_ODE' and 'cpsml_Function'. From 'cpsml_ODE', the role 'cpsml_ODE51' has cardinality 0..*, and from 'cpsml_Function', the role 'cpsml_Function' has cardinality 0..*.
+An association connects 'cpsml_ODE' and 'cpsml_Condition'. From 'cpsml_ODE', the role 'cpsml_ODE53' has cardinality 0..*, and from 'cpsml_Condition', the role 'cpsml_Condition' has cardinality 0..*.
+An association connects 'cpsml_ODE' and 'cpsml_Interval'. From 'cpsml_ODE', the role 'cpsml_ODE55' has cardinality 0..*, and from 'cpsml_Interval', the role 'cpsml_Interval' has cardinality 0..*.
+An association connects 'cpsml_Function' and 'cpsml_IndeVariable'. From 'cpsml_Function', the role 'cpsml_Function57' has cardinality 0..*, and from 'cpsml_IndeVariable', the role 'cpsml_IndeVariable' has cardinality 0..*.
+An association connects 'cpsml_DeVariable' and 'cpsml_Function'. From 'cpsml_DeVariable', the role 'cpsml_DeVariable' has cardinality 0..*, and from 'cpsml_Function', the role 'cpsml_Function59' has cardinality 0..*.
+An association connects 'cpsml_Fright' and 'cpsml_Function'. From 'cpsml_Fright', the role 'cpsml_Fright' has cardinality 0..*, and from 'cpsml_Function', the role 'cpsml_Function61' has cardinality 0..*.

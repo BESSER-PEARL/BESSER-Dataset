@@ -1,0 +1,183 @@
+The domain model 'pnmlcoremodel' describes the core structural elements and their relationships within the system.
+
+The model defines 40 main class(es).
+
+'pnmlcoremodel_Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_PlaceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_Line' represents an important domain concept.
+It has the following attributes: 'width', which is of type float; 'shape', which is of type str; 'color', which is of type str; 'style', which is of type str.
+
+'pnmlcoremodel_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_Font' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'rotation', which is of type float; 'size', which is of type str; 'weight', which is of type str; 'family', which is of type str; 'align', which is of type str; 'decoration', which is of type str.
+
+'pnmlcoremodel_PageLabelProxy' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'Label' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_AnyType' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_ArcGraphics' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_RefTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_ToolInfoText' represents an important domain concept.
+It has one attribute: 'info', which is of type str.
+
+'pnmlcoremodel_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'Graphics' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_Name' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'Object' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_RefPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_Coordinate' represents an important domain concept.
+It has the following attributes: 'x', which is of type float; 'y', which is of type float.
+
+'pnmlcoremodel_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_PetriNetDoc' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_NodeGraphics' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_Page' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_Graphics' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_ToolInfo' represents an important domain concept.
+It has the following attributes: 'tool', which is of type str; 'version', which is of type str.
+
+'pnmlcoremodel_TransitionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'TransitionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ID' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_LabelProxy' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'pnmlcoremodel_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_AnnotationGraphics' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_PetriNetType' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_Fill' represents an important domain concept.
+It has the following attributes: 'gradientColor', which is of type str; 'image', which is of type str; 'color', which is of type str; 'gradientrotation', which is of type str.
+
+'pnmlcoremodel_ID' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'PlaceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNetType' represents an important domain concept.
+It does not declare any attributes.
+
+'ToolInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'pnmlcoremodel_EmptyType' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'LineShape' defines the following possible values: 'line', 'curve'.
+
+The model also captures inheritance relationships between classes.
+The class 'pnmlcoremodel_PetriNet' is a specialization of 'ID'.
+The class 'pnmlcoremodel_Page' is a specialization of 'Node'.
+The class 'pnmlcoremodel_Object' is a specialization of 'ID'.
+The class 'pnmlcoremodel_Node' is a specialization of 'Object'.
+The class 'pnmlcoremodel_Arc' is a specialization of 'Object'.
+The class 'pnmlcoremodel_PlaceNode' is a specialization of 'Node'.
+The class 'pnmlcoremodel_TransitionNode' is a specialization of 'Node'.
+The class 'pnmlcoremodel_Place' is a specialization of 'PlaceNode'.
+The class 'pnmlcoremodel_RefPlace' is a specialization of 'PlaceNode'.
+The class 'pnmlcoremodel_RefTransition' is a specialization of 'TransitionNode'.
+The class 'pnmlcoremodel_Transition' is a specialization of 'TransitionNode'.
+The class 'pnmlcoremodel_Name' is a specialization of 'Label'.
+The class 'pnmlcoremodel_ArcGraphics' is a specialization of 'Graphics'.
+The class 'pnmlcoremodel_NodeGraphics' is a specialization of 'Graphics'.
+The class 'pnmlcoremodel_AnnotationGraphics' is a specialization of 'Graphics'.
+The class 'pnmlcoremodel_EmptyType' is a specialization of 'PetriNetType'.
+The class 'pnmlcoremodel_ToolInfoText' is a specialization of 'ToolInfo'.
+The class 'pnmlcoremodel_Attribute' is a specialization of 'Label'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pnmlcoremodel_PetriNetDoc' and 'pnmlcoremodel_PetriNet'. From 'pnmlcoremodel_PetriNetDoc', the role 'pnmlcoremodel_PetriNetDoc' has cardinality 0..*, and from 'pnmlcoremodel_PetriNet', the role 'pnmlcoremodel_PetriNet' has cardinality 0..*.
+An association connects 'pnmlcoremodel_PetriNetType' and 'pnmlcoremodel_PetriNet'. From 'pnmlcoremodel_PetriNetType', the role 'pnmlcoremodel_PetriNetType' has cardinality 0..*, and from 'pnmlcoremodel_PetriNet', the role 'pnmlcoremodel_PetriNet2' has cardinality 0..*.
+An association connects 'pnmlcoremodel_PetriNet' and 'pnmlcoremodel_Name'. From 'pnmlcoremodel_PetriNet', the role 'pnmlcoremodel_PetriNet4' has cardinality 0..*, and from 'pnmlcoremodel_Name', the role 'pnmlcoremodel_Name' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Page' and 'pnmlcoremodel_PetriNet'. From 'pnmlcoremodel_Page', the role 'pnmlcoremodel_Page' has cardinality 0..*, and from 'pnmlcoremodel_PetriNet', the role 'pnmlcoremodel_PetriNet6' has cardinality 0..*.
+An association connects 'pnmlcoremodel_PetriNet' and 'pnmlcoremodel_ToolInfo'. From 'pnmlcoremodel_PetriNet', the role 'pnmlcoremodel_PetriNet8' has cardinality 0..*, and from 'pnmlcoremodel_ToolInfo', the role 'pnmlcoremodel_ToolInfo' has cardinality 0..*.
+An association connects 'pnmlcoremodel_AnyType' and 'pnmlcoremodel_PetriNet'. From 'pnmlcoremodel_AnyType', the role 'pnmlcoremodel_AnyType' has cardinality 0..*, and from 'pnmlcoremodel_PetriNet', the role 'pnmlcoremodel_PetriNet10' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Object' and 'pnmlcoremodel_Page'. From 'pnmlcoremodel_Object', the role 'pnmlcoremodel_Object' has cardinality 0..*, and from 'pnmlcoremodel_Page', the role 'pnmlcoremodel_Page12' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Page' and 'pnmlcoremodel_PageLabelProxy'. From 'pnmlcoremodel_Page', the role 'pnmlcoremodel_Page14' has cardinality 0..*, and from 'pnmlcoremodel_PageLabelProxy', the role 'pnmlcoremodel_PageLabelProxy' has cardinality 0..*.
+An association connects 'pnmlcoremodel_LabelProxy' and 'pnmlcoremodel_Page'. From 'pnmlcoremodel_LabelProxy', the role 'pnmlcoremodel_LabelProxy' has cardinality 0..*, and from 'pnmlcoremodel_Page', the role 'pnmlcoremodel_Page16' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Object' and 'pnmlcoremodel_Name'. From 'pnmlcoremodel_Object', the role 'pnmlcoremodel_Object18' has cardinality 0..*, and from 'pnmlcoremodel_Name', the role 'pnmlcoremodel_Name19' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Object' and 'pnmlcoremodel_ToolInfo'. From 'pnmlcoremodel_Object', the role 'pnmlcoremodel_Object21' has cardinality 0..*, and from 'pnmlcoremodel_ToolInfo', the role 'pnmlcoremodel_ToolInfo22' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Object' and 'pnmlcoremodel_Graphics'. From 'pnmlcoremodel_Object', the role 'pnmlcoremodel_Object24' has cardinality 0..*, and from 'pnmlcoremodel_Graphics', the role 'pnmlcoremodel_Graphics' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Object' and 'pnmlcoremodel_AnyType'. From 'pnmlcoremodel_Object', the role 'pnmlcoremodel_Object26' has cardinality 0..*, and from 'pnmlcoremodel_AnyType', the role 'pnmlcoremodel_AnyType27' has cardinality 0..*.
+An association connects 'pnmlcoremodel_LabelProxy' and 'pnmlcoremodel_Label'. From 'pnmlcoremodel_LabelProxy', the role 'pnmlcoremodel_LabelProxy29' has cardinality 0..*, and from 'pnmlcoremodel_Label', the role 'pnmlcoremodel_Label' has cardinality 0..*.
+An association connects 'pnmlcoremodel_LabelProxy' and 'pnmlcoremodel_Object'. From 'pnmlcoremodel_LabelProxy', the role 'pnmlcoremodel_LabelProxy31' has cardinality 0..*, and from 'pnmlcoremodel_Object', the role 'pnmlcoremodel_Object32' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Node' and 'pnmlcoremodel_Arc'. From 'pnmlcoremodel_Node', the role 'source' has cardinality 0..*, and from 'pnmlcoremodel_Arc', the role 'Arc' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Arc' and 'pnmlcoremodel_Node'. From 'pnmlcoremodel_Arc', the role 'Arc35' has cardinality 0..*, and from 'pnmlcoremodel_Node', the role 'target' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Arc' and 'pnmlcoremodel_Node'. From 'pnmlcoremodel_Arc', the role 'out' has cardinality 0..*, and from 'pnmlcoremodel_Node', the role 'Node' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Node' and 'pnmlcoremodel_Arc'. From 'pnmlcoremodel_Node', the role 'Node38' has cardinality 0..*, and from 'pnmlcoremodel_Arc', the role 'in' has cardinality 0..*.
+An association connects 'pnmlcoremodel_PlaceNode' and 'pnmlcoremodel_RefPlace'. From 'pnmlcoremodel_PlaceNode', the role 'pnmlcoremodel_PlaceNode' has cardinality 0..*, and from 'pnmlcoremodel_RefPlace', the role 'pnmlcoremodel_RefPlace' has cardinality 0..*.
+An association connects 'pnmlcoremodel_RefTransition' and 'pnmlcoremodel_TransitionNode'. From 'pnmlcoremodel_RefTransition', the role 'pnmlcoremodel_RefTransition' has cardinality 0..*, and from 'pnmlcoremodel_TransitionNode', the role 'pnmlcoremodel_TransitionNode' has cardinality 0..*.
+An association connects 'pnmlcoremodel_ToolInfo' and 'pnmlcoremodel_Label'. From 'pnmlcoremodel_ToolInfo', the role 'pnmlcoremodel_ToolInfo43' has cardinality 0..*, and from 'pnmlcoremodel_Label', the role 'pnmlcoremodel_Label42' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Graphics' and 'pnmlcoremodel_Label'. From 'pnmlcoremodel_Graphics', the role 'pnmlcoremodel_Graphics46' has cardinality 0..*, and from 'pnmlcoremodel_Label', the role 'pnmlcoremodel_Label45' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Label' and 'pnmlcoremodel_AnyType'. From 'pnmlcoremodel_Label', the role 'pnmlcoremodel_Label48' has cardinality 0..*, and from 'pnmlcoremodel_AnyType', the role 'pnmlcoremodel_AnyType49' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Line' and 'pnmlcoremodel_ArcGraphics'. From 'pnmlcoremodel_Line', the role 'pnmlcoremodel_Line' has cardinality 0..*, and from 'pnmlcoremodel_ArcGraphics', the role 'pnmlcoremodel_ArcGraphics' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Coordinate' and 'pnmlcoremodel_ArcGraphics'. From 'pnmlcoremodel_Coordinate', the role 'pnmlcoremodel_Coordinate' has cardinality 0..*, and from 'pnmlcoremodel_ArcGraphics', the role 'pnmlcoremodel_ArcGraphics52' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Coordinate' and 'pnmlcoremodel_NodeGraphics'. From 'pnmlcoremodel_Coordinate', the role 'pnmlcoremodel_Coordinate54' has cardinality 0..*, and from 'pnmlcoremodel_NodeGraphics', the role 'pnmlcoremodel_NodeGraphics' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Coordinate' and 'pnmlcoremodel_NodeGraphics'. From 'pnmlcoremodel_Coordinate', the role 'pnmlcoremodel_Coordinate57' has cardinality 0..*, and from 'pnmlcoremodel_NodeGraphics', the role 'pnmlcoremodel_NodeGraphics56' has cardinality 0..*.
+An association connects 'pnmlcoremodel_NodeGraphics' and 'pnmlcoremodel_Line'. From 'pnmlcoremodel_NodeGraphics', the role 'pnmlcoremodel_NodeGraphics59' has cardinality 0..*, and from 'pnmlcoremodel_Line', the role 'pnmlcoremodel_Line60' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Fill' and 'pnmlcoremodel_NodeGraphics'. From 'pnmlcoremodel_Fill', the role 'pnmlcoremodel_Fill' has cardinality 0..*, and from 'pnmlcoremodel_NodeGraphics', the role 'pnmlcoremodel_NodeGraphics62' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Fill' and 'pnmlcoremodel_AnnotationGraphics'. From 'pnmlcoremodel_Fill', the role 'pnmlcoremodel_Fill64' has cardinality 0..*, and from 'pnmlcoremodel_AnnotationGraphics', the role 'pnmlcoremodel_AnnotationGraphics' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Line' and 'pnmlcoremodel_AnnotationGraphics'. From 'pnmlcoremodel_Line', the role 'pnmlcoremodel_Line67' has cardinality 0..*, and from 'pnmlcoremodel_AnnotationGraphics', the role 'pnmlcoremodel_AnnotationGraphics66' has cardinality 0..*.
+An association connects 'pnmlcoremodel_AnnotationGraphics' and 'pnmlcoremodel_Coordinate'. From 'pnmlcoremodel_AnnotationGraphics', the role 'pnmlcoremodel_AnnotationGraphics69' has cardinality 0..*, and from 'pnmlcoremodel_Coordinate', the role 'pnmlcoremodel_Coordinate70' has cardinality 0..*.
+An association connects 'pnmlcoremodel_AnnotationGraphics' and 'pnmlcoremodel_Font'. From 'pnmlcoremodel_AnnotationGraphics', the role 'pnmlcoremodel_AnnotationGraphics72' has cardinality 0..*, and from 'pnmlcoremodel_Font', the role 'pnmlcoremodel_Font' has cardinality 0..*.
+An association connects 'pnmlcoremodel_Label' and 'pnmlcoremodel_PageLabelProxy'. From 'pnmlcoremodel_Label', the role 'pnmlcoremodel_Label75' has cardinality 0..*, and from 'pnmlcoremodel_PageLabelProxy', the role 'pnmlcoremodel_PageLabelProxy74' has cardinality 0..*.

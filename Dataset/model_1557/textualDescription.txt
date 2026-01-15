@@ -1,0 +1,64 @@
+The domain model 'publicationExample' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'publicationExample_Human' represents an important domain concept.
+It does not declare any attributes.
+
+'publicationExample_Publication' represents an important domain concept.
+It does not declare any attributes.
+
+'publicationExample_Books' represents an important domain concept.
+It does not declare any attributes.
+
+'publicationExample_Thesis' represents an important domain concept.
+It does not declare any attributes.
+
+'publicationExample_Other' represents an important domain concept.
+It does not declare any attributes.
+
+'Publication' represents an important domain concept.
+It does not declare any attributes.
+
+'publicationExample_ConferencePaper' represents an important domain concept.
+It does not declare any attributes.
+
+'publicationExample_Editorship' represents an important domain concept.
+It does not declare any attributes.
+
+'publicationExample_WorkshopPaper' represents an important domain concept.
+It does not declare any attributes.
+
+'publicationExample_Humanity' represents an important domain concept.
+It does not declare any attributes.
+
+'Paper' represents an important domain concept.
+It does not declare any attributes.
+
+'publicationExample_Researcher' represents an important domain concept.
+It does not declare any attributes.
+
+'publicationExample_JournalArticle' represents an important domain concept.
+It does not declare any attributes.
+
+'publicationExample_Paper' represents an important domain concept.
+It does not declare any attributes.
+
+'Human' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'publicationExample_Researcher' is a specialization of 'Human'.
+The class 'publicationExample_JournalArticle' is a specialization of 'Publication'.
+The class 'publicationExample_Paper' is a specialization of 'Publication'.
+The class 'publicationExample_WorkshopPaper' is a specialization of 'Paper'.
+The class 'publicationExample_ConferencePaper' is a specialization of 'Paper'.
+The class 'publicationExample_Books' is a specialization of 'Publication'.
+The class 'publicationExample_Thesis' is a specialization of 'Publication'.
+The class 'publicationExample_Other' is a specialization of 'Publication'.
+The class 'publicationExample_Editorship' is a specialization of 'Publication'.
+
+Relationships between classes are modeled using associations.
+An association connects 'publicationExample_Researcher' and 'publicationExample_Publication'. From 'publicationExample_Researcher', the role 'publicationExample_Researcher' has cardinality 0..*, and from 'publicationExample_Publication', the role 'publicationExample_Publication' has cardinality 0..*.
+An association connects 'publicationExample_Humanity' and 'publicationExample_Human'. From 'publicationExample_Humanity', the role 'publicationExample_Humanity' has cardinality 0..*, and from 'publicationExample_Human', the role 'publicationExample_Human' has cardinality 0..*.
+An association connects 'publicationExample_Humanity' and 'publicationExample_Publication'. From 'publicationExample_Humanity', the role 'publicationExample_Humanity3' has cardinality 0..*, and from 'publicationExample_Publication', the role 'publicationExample_Publication4' has cardinality 0..*.

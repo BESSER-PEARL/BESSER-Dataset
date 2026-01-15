@@ -1,0 +1,49 @@
+The domain model 'simpleparts' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleparts_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'simpleparts_World' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleparts_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleparts_Piece' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleparts_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleparts_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'simpleparts_Part' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleparts_Item' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleparts_Thing' is a specialization of 'NamedElement'.
+The class 'simpleparts_RelatedTo' is a specialization of 'NamedElement'.
+The class 'simpleparts_Part' is a specialization of 'NamedElement'.
+The class 'simpleparts_Element' is a specialization of 'NamedElement'.
+The class 'simpleparts_Item' is a specialization of 'NamedElement'.
+The class 'simpleparts_Piece' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleparts_World' and 'simpleparts_Thing'. From 'simpleparts_World', the role 'simpleparts_World' has cardinality 0..*, and from 'simpleparts_Thing', the role 'simpleparts_Thing' has cardinality 0..*.
+An association connects 'simpleparts_Thing' and 'simpleparts_RelatedTo'. From 'simpleparts_Thing', the role 'fromThing' has cardinality 0..*, and from 'simpleparts_RelatedTo', the role 'RelatedTo' has cardinality 0..*.
+An association connects 'simpleparts_Thing' and 'simpleparts_Part'. From 'simpleparts_Thing', the role 'simpleparts_Thing3' has cardinality 0..*, and from 'simpleparts_Part', the role 'simpleparts_Part' has cardinality 0..*.
+An association connects 'simpleparts_Thing' and 'simpleparts_Element'. From 'simpleparts_Thing', the role 'simpleparts_Thing5' has cardinality 0..*, and from 'simpleparts_Element', the role 'simpleparts_Element' has cardinality 0..*.
+An association connects 'simpleparts_Thing' and 'simpleparts_Item'. From 'simpleparts_Thing', the role 'simpleparts_Thing7' has cardinality 0..*, and from 'simpleparts_Item', the role 'simpleparts_Item' has cardinality 0..*.
+An association connects 'simpleparts_Piece' and 'simpleparts_Thing'. From 'simpleparts_Piece', the role 'simpleparts_Piece' has cardinality 0..*, and from 'simpleparts_Thing', the role 'simpleparts_Thing9' has cardinality 0..*.
+An association connects 'simpleparts_RelatedTo' and 'simpleparts_Thing'. From 'simpleparts_RelatedTo', the role 'relations' has cardinality 0..*, and from 'simpleparts_Thing', the role 'Thing' has cardinality 0..*.
+An association connects 'simpleparts_Thing' and 'simpleparts_RelatedTo'. From 'simpleparts_Thing', the role 'simpleparts_Thing12' has cardinality 0..*, and from 'simpleparts_RelatedTo', the role 'simpleparts_RelatedTo' has cardinality 0..*.
+An association connects 'simpleparts_Part' and 'simpleparts_Piece'. From 'simpleparts_Part', the role 'simpleparts_Part15' has cardinality 0..*, and from 'simpleparts_Piece', the role 'simpleparts_Piece14' has cardinality 0..*.

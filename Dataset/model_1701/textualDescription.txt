@@ -1,0 +1,23 @@
+The domain model 'library' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'library_t_book' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'title', which is of type str; 'pages', which is of type int; 'tagName', which is of type str.
+
+'library_t_author' represents an important domain concept.
+It has the following attributes: 'tagName', which is of type str; 'text', which is of type str.
+
+'library_t_library' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'tagName', which is of type str.
+
+'library_t_published' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'tagName', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'library_t_library' and 'library_t_book'. From 'library_t_library', the role 'library_t_library' has cardinality 0..*, and from 'library_t_book', the role 'library_t_book' has cardinality 0..*.
+An association connects 'library_t_library' and 'library_t_book'. From 'library_t_library', the role 'library_t_library3' has cardinality 0..*, and from 'library_t_book', the role 'library_t_book2' has cardinality 0..*.
+An association connects 'library_t_author' and 'library_t_book'. From 'library_t_author', the role 'library_t_author' has cardinality 0..*, and from 'library_t_book', the role 'library_t_book5' has cardinality 0..*.
+An association connects 'library_t_published' and 'library_t_book'. From 'library_t_published', the role 'library_t_published' has cardinality 0..*, and from 'library_t_book', the role 'library_t_book7' has cardinality 0..*.
+An association connects 'library_t_book' and 'library_t_author'. From 'library_t_book', the role 'library_t_book10' has cardinality 0..*, and from 'library_t_author', the role 'library_t_author9' has cardinality 0..*.
+An association connects 'library_t_book' and 'library_t_published'. From 'library_t_book', the role 'library_t_book13' has cardinality 0..*, and from 'library_t_published', the role 'library_t_published12' has cardinality 0..*.

@@ -1,0 +1,28 @@
+The domain model 'PetriNets' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'PetriNets_Place' represents an important domain concept.
+It has the following attributes: 'capacity', which is of type int; 'name', which is of type str; 'numberOfTokens', which is of type int.
+
+'PetriNets_InputArc' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'PetriNets_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PetriNets_PetriNet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PetriNets_OutputArc' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'PetriNets_PetriNet' and 'PetriNets_Place'. From 'PetriNets_PetriNet', the role 'PetriNets_PetriNet' has cardinality 0..*, and from 'PetriNets_Place', the role 'PetriNets_Place' has cardinality 0..*.
+An association connects 'PetriNets_PetriNet' and 'PetriNets_Transition'. From 'PetriNets_PetriNet', the role 'PetriNets_PetriNet2' has cardinality 0..*, and from 'PetriNets_Transition', the role 'PetriNets_Transition' has cardinality 0..*.
+An association connects 'PetriNets_PetriNet' and 'PetriNets_InputArc'. From 'PetriNets_PetriNet', the role 'PetriNets_PetriNet4' has cardinality 0..*, and from 'PetriNets_InputArc', the role 'PetriNets_InputArc' has cardinality 0..*.
+An association connects 'PetriNets_OutputArc' and 'PetriNets_PetriNet'. From 'PetriNets_OutputArc', the role 'PetriNets_OutputArc' has cardinality 0..*, and from 'PetriNets_PetriNet', the role 'PetriNets_PetriNet6' has cardinality 0..*.
+An association connects 'PetriNets_Place' and 'PetriNets_InputArc'. From 'PetriNets_Place', the role 'PetriNets_Place9' has cardinality 0..*, and from 'PetriNets_InputArc', the role 'PetriNets_InputArc8' has cardinality 0..*.
+An association connects 'PetriNets_Transition' and 'PetriNets_InputArc'. From 'PetriNets_Transition', the role 'PetriNets_Transition12' has cardinality 0..*, and from 'PetriNets_InputArc', the role 'PetriNets_InputArc11' has cardinality 0..*.
+An association connects 'PetriNets_OutputArc' and 'PetriNets_Transition'. From 'PetriNets_OutputArc', the role 'PetriNets_OutputArc14' has cardinality 0..*, and from 'PetriNets_Transition', the role 'PetriNets_Transition15' has cardinality 0..*.
+An association connects 'PetriNets_OutputArc' and 'PetriNets_Place'. From 'PetriNets_OutputArc', the role 'PetriNets_OutputArc17' has cardinality 0..*, and from 'PetriNets_Place', the role 'PetriNets_Place18' has cardinality 0..*.

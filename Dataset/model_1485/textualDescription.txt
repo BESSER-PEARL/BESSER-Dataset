@@ -1,0 +1,130 @@
+The domain model 'jointPackage_Grafcet2PetriNet' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'jointPackage_Grafcet2PetriNet_SrcStep' represents an important domain concept.
+It has the following attributes: 'action', which is of type str; 'isActive', which is of type bool; 'isInitial', which is of type bool.
+
+'jointPackage_Grafcet2PetriNet_SrcNamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jointPackage_Grafcet2PetriNet_TrgTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgArc' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Grafcet2PetriNet_TrgElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Grafcet2PetriNet_TrgTransitionToPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Grafcet2PetriNet_SrcConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Grafcet2PetriNet_SrcLocatedElement' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'jointPackage_Grafcet2PetriNet_SrcGrafcet' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Grafcet2PetriNet_TrgPlaceToTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Grafcet2PetriNet_TrgArc' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'jointPackage_Grafcet2PetriNet_SrcElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Grafcet2PetriNet_TrgPetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Grafcet2PetriNet_SrcTransition' represents an important domain concept.
+It has one attribute: 'condition', which is of type str.
+
+'jointPackage_Grafcet2PetriNet_SrcStepToTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Grafcet2PetriNet_TrgPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Grafcet2PetriNet_JointMM' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Grafcet2PetriNet_SrcTransitionToStep' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Grafcet2PetriNet_TrgLocatedElement' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'SrcLocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgLocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Grafcet2PetriNet_TrgNamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'jointPackage_Grafcet2PetriNet_SrcNamedElement' is a specialization of 'SrcLocatedElement'.
+The class 'jointPackage_Grafcet2PetriNet_SrcGrafcet' is a specialization of 'SrcNamedElement'.
+The class 'jointPackage_Grafcet2PetriNet_SrcElement' is a specialization of 'SrcNamedElement'.
+The class 'jointPackage_Grafcet2PetriNet_SrcStep' is a specialization of 'SrcElement'.
+The class 'jointPackage_Grafcet2PetriNet_SrcTransition' is a specialization of 'SrcElement'.
+The class 'jointPackage_Grafcet2PetriNet_SrcConnection' is a specialization of 'SrcNamedElement'.
+The class 'jointPackage_Grafcet2PetriNet_SrcStepToTransition' is a specialization of 'SrcConnection'.
+The class 'jointPackage_Grafcet2PetriNet_SrcTransitionToStep' is a specialization of 'SrcConnection'.
+The class 'jointPackage_Grafcet2PetriNet_TrgNamedElement' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_Grafcet2PetriNet_TrgPetriNet' is a specialization of 'TrgNamedElement'.
+The class 'jointPackage_Grafcet2PetriNet_TrgElement' is a specialization of 'TrgNamedElement'.
+The class 'jointPackage_Grafcet2PetriNet_TrgPlace' is a specialization of 'TrgElement'.
+The class 'jointPackage_Grafcet2PetriNet_TrgTransition' is a specialization of 'TrgElement'.
+The class 'jointPackage_Grafcet2PetriNet_TrgArc' is a specialization of 'TrgNamedElement'.
+The class 'jointPackage_Grafcet2PetriNet_TrgPlaceToTransition' is a specialization of 'TrgArc'.
+The class 'jointPackage_Grafcet2PetriNet_TrgTransitionToPlace' is a specialization of 'TrgArc'.
+
+Relationships between classes are modeled using associations.
+An association connects 'jointPackage_Grafcet2PetriNet_JointMM' and 'jointPackage_Grafcet2PetriNet_SrcGrafcet'. From 'jointPackage_Grafcet2PetriNet_JointMM', the role 'jointPackage_Grafcet2PetriNet_JointMM' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_SrcGrafcet', the role 'jointPackage_Grafcet2PetriNet_SrcGrafcet' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_TrgPetriNet' and 'jointPackage_Grafcet2PetriNet_JointMM'. From 'jointPackage_Grafcet2PetriNet_TrgPetriNet', the role 'jointPackage_Grafcet2PetriNet_TrgPetriNet' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_JointMM', the role 'jointPackage_Grafcet2PetriNet_JointMM2' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_SrcElement' and 'jointPackage_Grafcet2PetriNet_SrcGrafcet'. From 'jointPackage_Grafcet2PetriNet_SrcElement', the role 'SrcElement' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_SrcGrafcet', the role 'grafcet' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_SrcGrafcet' and 'jointPackage_Grafcet2PetriNet_SrcConnection'. From 'jointPackage_Grafcet2PetriNet_SrcGrafcet', the role 'grafcet5' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_SrcConnection', the role 'SrcConnection' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_SrcElement' and 'jointPackage_Grafcet2PetriNet_SrcGrafcet'. From 'jointPackage_Grafcet2PetriNet_SrcElement', the role 'elements' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_SrcGrafcet', the role 'SrcGrafcet' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_SrcStep' and 'jointPackage_Grafcet2PetriNet_SrcTransitionToStep'. From 'jointPackage_Grafcet2PetriNet_SrcStep', the role 'to' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_SrcTransitionToStep', the role 'SrcTransitionToStep' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_SrcStepToTransition' and 'jointPackage_Grafcet2PetriNet_SrcStep'. From 'jointPackage_Grafcet2PetriNet_SrcStepToTransition', the role 'SrcStepToTransition' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_SrcStep', the role 'from' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_SrcStepToTransition' and 'jointPackage_Grafcet2PetriNet_SrcTransition'. From 'jointPackage_Grafcet2PetriNet_SrcStepToTransition', the role 'SrcStepToTransition11' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_SrcTransition', the role 'to10' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_SrcTransition' and 'jointPackage_Grafcet2PetriNet_SrcTransitionToStep'. From 'jointPackage_Grafcet2PetriNet_SrcTransition', the role 'from13' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_SrcTransitionToStep', the role 'SrcTransitionToStep14' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_SrcGrafcet' and 'jointPackage_Grafcet2PetriNet_SrcConnection'. From 'jointPackage_Grafcet2PetriNet_SrcGrafcet', the role 'SrcGrafcet16' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_SrcConnection', the role 'connections' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_SrcStep' and 'jointPackage_Grafcet2PetriNet_SrcStepToTransition'. From 'jointPackage_Grafcet2PetriNet_SrcStep', the role 'SrcStep' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_SrcStepToTransition', the role 'outgoingConnections' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_SrcStepToTransition' and 'jointPackage_Grafcet2PetriNet_SrcTransition'. From 'jointPackage_Grafcet2PetriNet_SrcStepToTransition', the role 'incomingConnections' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_SrcTransition', the role 'SrcTransition' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_SrcTransition' and 'jointPackage_Grafcet2PetriNet_SrcTransitionToStep'. From 'jointPackage_Grafcet2PetriNet_SrcTransition', the role 'SrcTransition21' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_SrcTransitionToStep', the role 'outgoingConnections20' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_SrcTransitionToStep' and 'jointPackage_Grafcet2PetriNet_SrcStep'. From 'jointPackage_Grafcet2PetriNet_SrcTransitionToStep', the role 'incomingConnections23' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_SrcStep', the role 'SrcStep24' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_TrgPetriNet' and 'jointPackage_Grafcet2PetriNet_TrgElement'. From 'jointPackage_Grafcet2PetriNet_TrgPetriNet', the role 'net' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_TrgElement', the role 'TrgElement' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_TrgArc' and 'jointPackage_Grafcet2PetriNet_TrgPetriNet'. From 'jointPackage_Grafcet2PetriNet_TrgArc', the role 'TrgArc' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_TrgPetriNet', the role 'net27' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_TrgElement' and 'jointPackage_Grafcet2PetriNet_TrgPetriNet'. From 'jointPackage_Grafcet2PetriNet_TrgElement', the role 'elements29' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_TrgPetriNet', the role 'TrgPetriNet' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_TrgTransitionToPlace' and 'jointPackage_Grafcet2PetriNet_TrgPlace'. From 'jointPackage_Grafcet2PetriNet_TrgTransitionToPlace', the role 'TrgTransitionToPlace' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_TrgPlace', the role 'to31' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_TrgPlaceToTransition' and 'jointPackage_Grafcet2PetriNet_TrgPlace'. From 'jointPackage_Grafcet2PetriNet_TrgPlaceToTransition', the role 'TrgPlaceToTransition' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_TrgPlace', the role 'from33' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_TrgPlaceToTransition' and 'jointPackage_Grafcet2PetriNet_TrgTransition'. From 'jointPackage_Grafcet2PetriNet_TrgPlaceToTransition', the role 'TrgPlaceToTransition36' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_TrgTransition', the role 'to35' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_TrgTransitionToPlace' and 'jointPackage_Grafcet2PetriNet_TrgTransition'. From 'jointPackage_Grafcet2PetriNet_TrgTransitionToPlace', the role 'TrgTransitionToPlace39' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_TrgTransition', the role 'from38' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_TrgArc' and 'jointPackage_Grafcet2PetriNet_TrgPetriNet'. From 'jointPackage_Grafcet2PetriNet_TrgArc', the role 'arcs' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_TrgPetriNet', the role 'TrgPetriNet41' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_TrgPlace' and 'jointPackage_Grafcet2PetriNet_TrgPlaceToTransition'. From 'jointPackage_Grafcet2PetriNet_TrgPlace', the role 'TrgPlace' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_TrgPlaceToTransition', the role 'outgoingArc' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_TrgTransition' and 'jointPackage_Grafcet2PetriNet_TrgPlaceToTransition'. From 'jointPackage_Grafcet2PetriNet_TrgTransition', the role 'TrgTransition' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_TrgPlaceToTransition', the role 'incomingArc' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_TrgTransition' and 'jointPackage_Grafcet2PetriNet_TrgTransitionToPlace'. From 'jointPackage_Grafcet2PetriNet_TrgTransition', the role 'TrgTransition46' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_TrgTransitionToPlace', the role 'outgoingArc45' has cardinality 0..*.
+An association connects 'jointPackage_Grafcet2PetriNet_TrgPlace' and 'jointPackage_Grafcet2PetriNet_TrgTransitionToPlace'. From 'jointPackage_Grafcet2PetriNet_TrgPlace', the role 'TrgPlace49' has cardinality 0..*, and from 'jointPackage_Grafcet2PetriNet_TrgTransitionToPlace', the role 'incomingArc48' has cardinality 0..*.

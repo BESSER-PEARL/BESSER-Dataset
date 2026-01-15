@@ -1,0 +1,21 @@
+The domain model 'tP1_EM' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'tP1_EM_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tP1_EM_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tP1_EM_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'tP1_EM_StateMachine' and 'tP1_EM_Transition'. From 'tP1_EM_StateMachine', the role 'tP1_EM_StateMachine' has cardinality 0..*, and from 'tP1_EM_Transition', the role 'tP1_EM_Transition' has cardinality 0..*.
+An association connects 'tP1_EM_State' and 'tP1_EM_StateMachine'. From 'tP1_EM_State', the role 'tP1_EM_State' has cardinality 0..*, and from 'tP1_EM_StateMachine', the role 'tP1_EM_StateMachine2' has cardinality 0..*.
+An association connects 'tP1_EM_StateMachine' and 'tP1_EM_State'. From 'tP1_EM_StateMachine', the role 'tP1_EM_StateMachine4' has cardinality 0..*, and from 'tP1_EM_State', the role 'tP1_EM_State5' has cardinality 0..*.
+An association connects 'tP1_EM_Transition' and 'tP1_EM_State'. From 'tP1_EM_Transition', the role 'Transition' has cardinality 0..*, and from 'tP1_EM_State', the role 'to' has cardinality 0..*.
+An association connects 'tP1_EM_State' and 'tP1_EM_Transition'. From 'tP1_EM_State', the role 'from' has cardinality 0..*, and from 'tP1_EM_Transition', the role 'Transition8' has cardinality 0..*.
+An association connects 'tP1_EM_Transition' and 'tP1_EM_State'. From 'tP1_EM_Transition', the role 'incoming' has cardinality 0..*, and from 'tP1_EM_State', the role 'State' has cardinality 0..*.
+An association connects 'tP1_EM_State' and 'tP1_EM_Transition'. From 'tP1_EM_State', the role 'State11' has cardinality 0..*, and from 'tP1_EM_Transition', the role 'outgoing' has cardinality 0..*.

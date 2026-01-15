@@ -1,0 +1,29 @@
+The domain model 'graphs' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'graphs_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'graphs_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'graphs_CompositeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'graphs_Edge' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'graphs_CompositeNode' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'graphs_Graph' and 'graphs_Node'. From 'graphs_Graph', the role 'graphs_Graph' has cardinality 0..*, and from 'graphs_Node', the role 'graphs_Node' has cardinality 0..*.
+An association connects 'graphs_Graph' and 'graphs_Edge'. From 'graphs_Graph', the role 'graphs_Graph2' has cardinality 0..*, and from 'graphs_Edge', the role 'graphs_Edge' has cardinality 0..*.
+An association connects 'graphs_CompositeNode' and 'graphs_Graph'. From 'graphs_CompositeNode', the role 'graphs_CompositeNode' has cardinality 0..*, and from 'graphs_Graph', the role 'graphs_Graph4' has cardinality 0..*.
+An association connects 'graphs_Node' and 'graphs_Edge'. From 'graphs_Node', the role 'graphs_Node7' has cardinality 0..*, and from 'graphs_Edge', the role 'graphs_Edge6' has cardinality 0..*.
+An association connects 'graphs_Edge' and 'graphs_Node'. From 'graphs_Edge', the role 'graphs_Edge9' has cardinality 0..*, and from 'graphs_Node', the role 'graphs_Node10' has cardinality 0..*.
+An association connects 'graphs_Edge' and 'graphs_Node'. From 'graphs_Edge', the role 'graphs_Edge12' has cardinality 0..*, and from 'graphs_Node', the role 'graphs_Node13' has cardinality 0..*.

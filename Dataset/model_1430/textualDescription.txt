@@ -1,0 +1,117 @@
+The domain model 'statemachines' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_almostuml_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_CustomEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_almostuml_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_almostuml_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'Region' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_almostuml_State' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_CustomSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'almostuml_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'almostuml_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_almostuml_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_almostuml_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_almostuml_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_almostuml_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_almostuml_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_almostuml_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_almostuml_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachines_almostuml_Pseudostate' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PseudostateKind' defines the following possible values: 'choice', 'initial', 'fork', 'junction', 'join'.
+
+The model also captures inheritance relationships between classes.
+The class 'statemachines_CustomEvent' is a specialization of 'Event'.
+The class 'statemachines_almostuml_StateMachine' is a specialization of 'NamedElement'.
+The class 'statemachines_almostuml_Region' is a specialization of 'NamedElement'.
+The class 'statemachines_almostuml_State' is a specialization of 'almostuml_NamedElement'.
+The class 'statemachines_almostuml_State' is a specialization of 'almostuml_Vertex'.
+The class 'statemachines_almostuml_Vertex' is a specialization of 'NamedElement'.
+The class 'statemachines_almostuml_Transition' is a specialization of 'NamedElement'.
+The class 'statemachines_almostuml_Trigger' is a specialization of 'NamedElement'.
+The class 'statemachines_almostuml_Behavior' is a specialization of 'NamedElement'.
+The class 'statemachines_almostuml_Event' is a specialization of 'NamedElement'.
+The class 'statemachines_almostuml_FinalState' is a specialization of 'State'.
+The class 'statemachines_almostuml_Pseudostate' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statemachines_CustomSystem' and 'StateMachine'. From 'statemachines_CustomSystem', the role 'statemachines_CustomSystem' has cardinality 0..*, and from 'StateMachine', the role 'StateMachine' has cardinality 0..*.
+An association connects 'statemachines_CustomEvent' and 'statemachines_CustomSystem'. From 'statemachines_CustomEvent', the role 'statemachines_CustomEvent' has cardinality 0..*, and from 'statemachines_CustomSystem', the role 'statemachines_CustomSystem2' has cardinality 0..*.
+An association connects 'statemachines_almostuml_StateMachine' and 'Region'. From 'statemachines_almostuml_StateMachine', the role 'unnamed role' has cardinality 0..*, and from 'Region', the role '4' has cardinality 0..*.
+An association connects 'Vertex' and 'statemachines_almostuml_Region'. From 'Vertex', the role '7' has cardinality 0..*, and from 'statemachines_almostuml_Region', the role '6' has cardinality 0..*.
+An association connects 'Transition' and 'statemachines_almostuml_Region'. From 'Transition', the role 'Transition' has cardinality 0..*, and from 'statemachines_almostuml_Region', the role 'statemachines_almostuml_Region' has cardinality 0..*.
+An association connects 'statemachines_almostuml_Region' and 'StateMachine'. From 'statemachines_almostuml_Region', the role '10' has cardinality 0..*, and from 'StateMachine', the role '11' has cardinality 0..*.
+An association connects 'Behavior' and 'statemachines_almostuml_State'. From 'Behavior', the role 'Behavior' has cardinality 0..*, and from 'statemachines_almostuml_State', the role 'statemachines_almostuml_State' has cardinality 0..*.
+An association connects 'Behavior' and 'statemachines_almostuml_State'. From 'Behavior', the role 'Behavior15' has cardinality 0..*, and from 'statemachines_almostuml_State', the role 'statemachines_almostuml_State14' has cardinality 0..*.
+An association connects 'statemachines_almostuml_State' and 'Behavior'. From 'statemachines_almostuml_State', the role 'statemachines_almostuml_State17' has cardinality 0..*, and from 'Behavior', the role 'Behavior18' has cardinality 0..*.
+An association connects 'Region' and 'statemachines_almostuml_State'. From 'Region', the role 'Region' has cardinality 0..*, and from 'statemachines_almostuml_State', the role 'statemachines_almostuml_State20' has cardinality 0..*.
+An association connects 'statemachines_almostuml_Vertex' and 'Region'. From 'statemachines_almostuml_Vertex', the role '22' has cardinality 0..*, and from 'Region', the role '23' has cardinality 0..*.
+An association connects 'Vertex' and 'statemachines_almostuml_Transition'. From 'Vertex', the role 'Vertex' has cardinality 0..*, and from 'statemachines_almostuml_Transition', the role 'statemachines_almostuml_Transition' has cardinality 0..*.
+An association connects 'Vertex' and 'statemachines_almostuml_Transition'. From 'Vertex', the role 'Vertex27' has cardinality 0..*, and from 'statemachines_almostuml_Transition', the role 'statemachines_almostuml_Transition26' has cardinality 0..*.
+An association connects 'statemachines_almostuml_Transition' and 'Trigger'. From 'statemachines_almostuml_Transition', the role 'statemachines_almostuml_Transition29' has cardinality 0..*, and from 'Trigger', the role 'Trigger' has cardinality 0..*.
+An association connects 'Constraint' and 'statemachines_almostuml_Transition'. From 'Constraint', the role 'Constraint' has cardinality 0..*, and from 'statemachines_almostuml_Transition', the role 'statemachines_almostuml_Transition31' has cardinality 0..*.
+An association connects 'statemachines_almostuml_Transition' and 'Behavior'. From 'statemachines_almostuml_Transition', the role 'statemachines_almostuml_Transition33' has cardinality 0..*, and from 'Behavior', the role 'Behavior34' has cardinality 0..*.
+An association connects 'statemachines_almostuml_Trigger' and 'Event'. From 'statemachines_almostuml_Trigger', the role 'statemachines_almostuml_Trigger' has cardinality 0..*, and from 'Event', the role 'Event' has cardinality 0..*.

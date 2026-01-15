@@ -1,0 +1,22 @@
+The domain model 'PetriNetMM0' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'PetriNetMM0_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNetMM0_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNetMM0_Net' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'PetriNetMM0_Place' and 'PetriNetMM0_Net'. From 'PetriNetMM0_Place', the role 'Place' has cardinality 0..*, and from 'PetriNetMM0_Net', the role 'net' has cardinality 0..*.
+An association connects 'PetriNetMM0_Transition' and 'PetriNetMM0_Net'. From 'PetriNetMM0_Transition', the role 'Transition' has cardinality 0..*, and from 'PetriNetMM0_Net', the role 'net2' has cardinality 0..*.
+An association connects 'PetriNetMM0_Net' and 'PetriNetMM0_Place'. From 'PetriNetMM0_Net', the role 'Net' has cardinality 0..*, and from 'PetriNetMM0_Place', the role 'places' has cardinality 0..*.
+An association connects 'PetriNetMM0_Transition' and 'PetriNetMM0_Place'. From 'PetriNetMM0_Transition', the role 'Transition5' has cardinality 0..*, and from 'PetriNetMM0_Place', the role 'src' has cardinality 0..*.
+An association connects 'PetriNetMM0_Transition' and 'PetriNetMM0_Place'. From 'PetriNetMM0_Transition', the role 'Transition7' has cardinality 0..*, and from 'PetriNetMM0_Place', the role 'dst' has cardinality 0..*.
+An association connects 'PetriNetMM0_Net' and 'PetriNetMM0_Transition'. From 'PetriNetMM0_Net', the role 'Net9' has cardinality 0..*, and from 'PetriNetMM0_Transition', the role 'transitions' has cardinality 0..*.
+An association connects 'PetriNetMM0_Transition' and 'PetriNetMM0_Place'. From 'PetriNetMM0_Transition', the role 'dst11' has cardinality 0..*, and from 'PetriNetMM0_Place', the role 'Place12' has cardinality 0..*.
+An association connects 'PetriNetMM0_Place' and 'PetriNetMM0_Transition'. From 'PetriNetMM0_Place', the role 'Place15' has cardinality 0..*, and from 'PetriNetMM0_Transition', the role 'src14' has cardinality 0..*.

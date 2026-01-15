@@ -1,0 +1,31 @@
+The domain model 'petri_net' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'petri_net_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petri_net_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'petri_net_Arc' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petri_net_PetriNet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petri_net_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'petri_net_Transition' is a specialization of 'Node'.
+The class 'petri_net_Place' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'petri_net_PetriNet' and 'petri_net_Node'. From 'petri_net_PetriNet', the role 'petri_net_PetriNet' has cardinality 0..*, and from 'petri_net_Node', the role 'petri_net_Node' has cardinality 0..*.
+An association connects 'petri_net_PetriNet' and 'petri_net_Arc'. From 'petri_net_PetriNet', the role 'petri_net_PetriNet2' has cardinality 0..*, and from 'petri_net_Arc', the role 'petri_net_Arc' has cardinality 0..*.
+An association connects 'petri_net_Arc' and 'petri_net_Node'. From 'petri_net_Arc', the role 'petri_net_Arc4' has cardinality 0..*, and from 'petri_net_Node', the role 'petri_net_Node5' has cardinality 0..*.
+An association connects 'petri_net_Node' and 'petri_net_Arc'. From 'petri_net_Node', the role 'petri_net_Node8' has cardinality 0..*, and from 'petri_net_Arc', the role 'petri_net_Arc7' has cardinality 0..*.

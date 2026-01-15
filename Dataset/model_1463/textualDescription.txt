@@ -1,0 +1,66 @@
+The domain model 'MetaModelGraph' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'MetaModelGraph_Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'MetaModelGraph_Composition' represents an important domain concept.
+It does not declare any attributes.
+
+'MetaModelGraph_SubGraph' represents an important domain concept.
+It has the following attributes: 'amountOfParentAbstractEClass', which is of type int; 'amountOfRecursionPackages', which is of type int; 'amountOfAbstractEClass', which is of type int; 'amountOfParentEClass', which is of type int; 'height', which is of type int; 'amountEClassesOut', which is of type int; 'amountOfConcreteEClass', which is of type int; 'amountUnits', which is of type int; 'amountRecursionUnits', which is of type int; 'amountPackages', which is of type int.
+
+'MetaModelGraph_Node' represents an important domain concept.
+It has the following attributes: 'icon', which is of type str; 'enumModularNotation', which is of type str; 'insideRecursion', which is of type bool; 'extension', which is of type str.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'MetaModelGraph_Graph' represents an important domain concept.
+It has the following attributes: 'amountEClasses', which is of type int; 'amountConcreteEClass', which is of type int; 'amountAbstractEClasses', which is of type int.
+
+'MetaModelGraph_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'MetaModelGraph_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'MetaModelGraph_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'MetaModelGraph_SubClass' represents an important domain concept.
+It does not declare any attributes.
+
+'MetaModelGraph_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EnumModular' defines the following possible values: 'AbstractPackage', 'RecursionAbstractUnit', 'Default', 'RecursionUnit', 'InsideProject', 'RecursionPackage', 'AbstractUnit', 'Project', 'AbstractPackageUnit', 'Unit', 'Package', 'InsidePackage', 'RecursionAbstractPackage', 'InsideUnit'.
+
+The model also captures inheritance relationships between classes.
+The class 'MetaModelGraph_Composition' is a specialization of 'Relation'.
+The class 'MetaModelGraph_Reference' is a specialization of 'Relation'.
+The class 'MetaModelGraph_SubClass' is a specialization of 'Relation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'MetaModelGraph_Graph' and 'MetaModelGraph_SubGraph'. From 'MetaModelGraph_Graph', the role 'MetaModelGraph_Graph' has cardinality 0..*, and from 'MetaModelGraph_SubGraph', the role 'MetaModelGraph_SubGraph' has cardinality 0..*.
+An association connects 'MetaModelGraph_Graph' and 'MetaModelGraph_EClass'. From 'MetaModelGraph_Graph', the role 'MetaModelGraph_Graph2' has cardinality 0..*, and from 'MetaModelGraph_EClass', the role 'MetaModelGraph_EClass' has cardinality 0..*.
+An association connects 'MetaModelGraph_Graph' and 'MetaModelGraph_EClass'. From 'MetaModelGraph_Graph', the role 'MetaModelGraph_Graph4' has cardinality 0..*, and from 'MetaModelGraph_EClass', the role 'MetaModelGraph_EClass5' has cardinality 0..*.
+An association connects 'MetaModelGraph_Node' and 'MetaModelGraph_SubGraph'. From 'MetaModelGraph_Node', the role 'MetaModelGraph_Node' has cardinality 0..*, and from 'MetaModelGraph_SubGraph', the role 'MetaModelGraph_SubGraph7' has cardinality 0..*.
+An association connects 'MetaModelGraph_SubGraph' and 'MetaModelGraph_Relation'. From 'MetaModelGraph_SubGraph', the role 'MetaModelGraph_SubGraph9' has cardinality 0..*, and from 'MetaModelGraph_Relation', the role 'MetaModelGraph_Relation' has cardinality 0..*.
+An association connects 'MetaModelGraph_SubGraph' and 'MetaModelGraph_EClass'. From 'MetaModelGraph_SubGraph', the role 'MetaModelGraph_SubGraph11' has cardinality 0..*, and from 'MetaModelGraph_EClass', the role 'MetaModelGraph_EClass12' has cardinality 0..*.
+An association connects 'MetaModelGraph_Node' and 'MetaModelGraph_SubGraph'. From 'MetaModelGraph_Node', the role 'MetaModelGraph_Node15' has cardinality 0..*, and from 'MetaModelGraph_SubGraph', the role 'MetaModelGraph_SubGraph14' has cardinality 0..*.
+An association connects 'MetaModelGraph_Node' and 'MetaModelGraph_Composition'. From 'MetaModelGraph_Node', the role 'parentNode' has cardinality 0..*, and from 'MetaModelGraph_Composition', the role 'Composition' has cardinality 0..*.
+An association connects 'MetaModelGraph_Reference' and 'MetaModelGraph_Node'. From 'MetaModelGraph_Reference', the role 'MetaModelGraph_Reference' has cardinality 0..*, and from 'MetaModelGraph_Node', the role 'MetaModelGraph_Node18' has cardinality 0..*.
+An association connects 'MetaModelGraph_Node' and 'MetaModelGraph_SubClass'. From 'MetaModelGraph_Node', the role 'MetaModelGraph_Node20' has cardinality 0..*, and from 'MetaModelGraph_SubClass', the role 'MetaModelGraph_SubClass' has cardinality 0..*.
+An association connects 'MetaModelGraph_Node' and 'MetaModelGraph_EClass'. From 'MetaModelGraph_Node', the role 'MetaModelGraph_Node22' has cardinality 0..*, and from 'MetaModelGraph_EClass', the role 'MetaModelGraph_EClass23' has cardinality 0..*.
+An association connects 'MetaModelGraph_Relation' and 'MetaModelGraph_Node'. From 'MetaModelGraph_Relation', the role 'Relation' has cardinality 0..*, and from 'MetaModelGraph_Node', the role 'target' has cardinality 0..*.
+An association connects 'MetaModelGraph_Node' and 'MetaModelGraph_Node'. From 'MetaModelGraph_Node', the role 'MetaModelGraph_Node27' has cardinality 0..*, and from 'MetaModelGraph_Node', the role 'MetaModelGraph_Node25' has cardinality 0..*.
+An association connects 'MetaModelGraph_Node' and 'MetaModelGraph_SubClass'. From 'MetaModelGraph_Node', the role 'MetaModelGraph_Node29' has cardinality 0..*, and from 'MetaModelGraph_SubClass', the role 'MetaModelGraph_SubClass30' has cardinality 0..*.
+An association connects 'MetaModelGraph_Composition' and 'MetaModelGraph_Node'. From 'MetaModelGraph_Composition', the role 'MetaModelGraph_Composition' has cardinality 0..*, and from 'MetaModelGraph_Node', the role 'MetaModelGraph_Node32' has cardinality 0..*.
+An association connects 'MetaModelGraph_Node' and 'MetaModelGraph_EAttribute'. From 'MetaModelGraph_Node', the role 'MetaModelGraph_Node34' has cardinality 0..*, and from 'MetaModelGraph_EAttribute', the role 'MetaModelGraph_EAttribute' has cardinality 0..*.
+An association connects 'MetaModelGraph_Relation' and 'MetaModelGraph_Node'. From 'MetaModelGraph_Relation', the role 'relations' has cardinality 0..*, and from 'MetaModelGraph_Node', the role 'Node' has cardinality 0..*.
+An association connects 'MetaModelGraph_EReference' and 'MetaModelGraph_Composition'. From 'MetaModelGraph_EReference', the role 'MetaModelGraph_EReference' has cardinality 0..*, and from 'MetaModelGraph_Composition', the role 'MetaModelGraph_Composition37' has cardinality 0..*.
+An association connects 'MetaModelGraph_Node' and 'MetaModelGraph_Composition'. From 'MetaModelGraph_Node', the role 'Node39' has cardinality 0..*, and from 'MetaModelGraph_Composition', the role 'compositions' has cardinality 0..*.
+An association connects 'MetaModelGraph_EReference' and 'MetaModelGraph_Reference'. From 'MetaModelGraph_EReference', the role 'MetaModelGraph_EReference42' has cardinality 0..*, and from 'MetaModelGraph_Reference', the role 'MetaModelGraph_Reference41' has cardinality 0..*.

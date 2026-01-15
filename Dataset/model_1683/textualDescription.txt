@@ -1,0 +1,69 @@
+The domain model 'relationworld' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'relationworld_ThingB' represents an important domain concept.
+It has one attribute: 'step', which is of type str.
+
+'relationworld_Arrow' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'relationworld_TargetNode' represents an important domain concept.
+It does not declare any attributes.
+
+'TargetNode' represents an important domain concept.
+It does not declare any attributes.
+
+'relationworld_ThingA' represents an important domain concept.
+It has one attribute: 'since', which is of type date.
+
+'relationworld_World' represents an important domain concept.
+It does not declare any attributes.
+
+'relationworld_SourceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'relationworld_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Arrow' represents an important domain concept.
+It does not declare any attributes.
+
+'Category' represents an important domain concept.
+It does not declare any attributes.
+
+'relationworld_Category' represents an important domain concept.
+It has one attribute: 'nom', which is of type str.
+
+'relationworld_RelatedTo' represents an important domain concept.
+It does not declare any attributes.
+
+'SourceNode' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Scale' defines the following possible values: 'two', 'four', 'three', 'one', 'nothing'.
+
+The model also captures inheritance relationships between classes.
+The class 'relationworld_ThingA' is a specialization of 'SourceNode'.
+The class 'relationworld_ThingA' is a specialization of 'NamedElement'.
+The class 'relationworld_ThingB' is a specialization of 'TargetNode'.
+The class 'relationworld_ThingB' is a specialization of 'NamedElement'.
+The class 'relationworld_RelatedTo' is a specialization of 'Arrow'.
+The class 'relationworld_RelatedTo' is a specialization of 'NamedElement'.
+The class 'relationworld_World' is a specialization of 'Category'.
+
+Relationships between classes are modeled using associations.
+An association connects 'relationworld_RelatedTo' and 'relationworld_ThingA'. From 'relationworld_RelatedTo', the role 'relationworld_RelatedTo' has cardinality 0..*, and from 'relationworld_ThingA', the role 'relationworld_ThingA' has cardinality 0..*.
+An association connects 'relationworld_ThingB' and 'relationworld_RelatedTo'. From 'relationworld_ThingB', the role 'relationworld_ThingB' has cardinality 0..*, and from 'relationworld_RelatedTo', the role 'relationworld_RelatedTo2' has cardinality 0..*.
+An association connects 'relationworld_World' and 'relationworld_ThingA'. From 'relationworld_World', the role 'relationworld_World' has cardinality 0..*, and from 'relationworld_ThingA', the role 'relationworld_ThingA4' has cardinality 0..*.
+An association connects 'relationworld_ThingB' and 'relationworld_World'. From 'relationworld_ThingB', the role 'relationworld_ThingB7' has cardinality 0..*, and from 'relationworld_World', the role 'relationworld_World6' has cardinality 0..*.
+An association connects 'relationworld_RelatedTo' and 'relationworld_World'. From 'relationworld_RelatedTo', the role 'relationworld_RelatedTo10' has cardinality 0..*, and from 'relationworld_World', the role 'relationworld_World9' has cardinality 0..*.
+An association connects 'relationworld_SourceNode' and 'relationworld_Arrow'. From 'relationworld_SourceNode', the role 'relationworld_SourceNode' has cardinality 0..*, and from 'relationworld_Arrow', the role 'relationworld_Arrow' has cardinality 0..*.
+An association connects 'relationworld_TargetNode' and 'relationworld_Arrow'. From 'relationworld_TargetNode', the role 'relationworld_TargetNode' has cardinality 0..*, and from 'relationworld_Arrow', the role 'relationworld_Arrow13' has cardinality 0..*.
+An association connects 'relationworld_Category' and 'relationworld_SourceNode'. From 'relationworld_Category', the role 'relationworld_Category' has cardinality 0..*, and from 'relationworld_SourceNode', the role 'relationworld_SourceNode15' has cardinality 0..*.
+An association connects 'relationworld_Arrow' and 'relationworld_Category'. From 'relationworld_Arrow', the role 'relationworld_Arrow18' has cardinality 0..*, and from 'relationworld_Category', the role 'relationworld_Category17' has cardinality 0..*.
+An association connects 'relationworld_Category' and 'relationworld_TargetNode'. From 'relationworld_Category', the role 'relationworld_Category20' has cardinality 0..*, and from 'relationworld_TargetNode', the role 'relationworld_TargetNode21' has cardinality 0..*.

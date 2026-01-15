@@ -1,0 +1,57 @@
+The domain model 'petrinet_metamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'petrinet_metamodel_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_metamodel_Place' represents an important domain concept.
+It has the following attributes: 'coordinates', which is of type int; 'fill_colour', which is of type str; 'radius', which is of type int.
+
+'petrinet_metamodel_Arc' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'petrinet_metamodel_Element' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'comments', which is of type str.
+
+'petrinet_metamodel_Rectangle' represents an important domain concept.
+It has one attribute: 'start_end_coordinates', which is of type int.
+
+'petrinet_metamodel_TransToPlaceArc' represents an important domain concept.
+It does not declare any attributes.
+
+'Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_metamodel_PlaceToTransArc' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_metamodel_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'petrinet_metamodel_PetriNet' is a specialization of 'Element'.
+The class 'petrinet_metamodel_Place' is a specialization of 'Element'.
+The class 'petrinet_metamodel_Transition' is a specialization of 'Element'.
+The class 'petrinet_metamodel_PlaceToTransArc' is a specialization of 'Arc'.
+The class 'petrinet_metamodel_TransToPlaceArc' is a specialization of 'Arc'.
+
+Relationships between classes are modeled using associations.
+An association connects 'petrinet_metamodel_Place' and 'petrinet_metamodel_PetriNet'. From 'petrinet_metamodel_Place', the role 'Place' has cardinality 0..*, and from 'petrinet_metamodel_PetriNet', the role 'petrinet' has cardinality 0..*.
+An association connects 'petrinet_metamodel_Transition' and 'petrinet_metamodel_PetriNet'. From 'petrinet_metamodel_Transition', the role 'Transition' has cardinality 0..*, and from 'petrinet_metamodel_PetriNet', the role 'petrinet2' has cardinality 0..*.
+An association connects 'petrinet_metamodel_Arc' and 'petrinet_metamodel_PetriNet'. From 'petrinet_metamodel_Arc', the role 'petrinet_metamodel_Arc' has cardinality 0..*, and from 'petrinet_metamodel_PetriNet', the role 'petrinet_metamodel_PetriNet' has cardinality 0..*.
+An association connects 'petrinet_metamodel_Place' and 'petrinet_metamodel_TransToPlaceArc'. From 'petrinet_metamodel_Place', the role 'target' has cardinality 0..*, and from 'petrinet_metamodel_TransToPlaceArc', the role 'TransToPlaceArc' has cardinality 0..*.
+An association connects 'petrinet_metamodel_Place' and 'petrinet_metamodel_PlaceToTransArc'. From 'petrinet_metamodel_Place', the role 'source' has cardinality 0..*, and from 'petrinet_metamodel_PlaceToTransArc', the role 'PlaceToTransArc' has cardinality 0..*.
+An association connects 'petrinet_metamodel_PetriNet' and 'petrinet_metamodel_Place'. From 'petrinet_metamodel_PetriNet', the role 'PetriNet' has cardinality 0..*, and from 'petrinet_metamodel_Place', the role 'places' has cardinality 0..*.
+An association connects 'petrinet_metamodel_Transition' and 'petrinet_metamodel_PetriNet'. From 'petrinet_metamodel_Transition', the role 'transitions' has cardinality 0..*, and from 'petrinet_metamodel_PetriNet', the role 'PetriNet8' has cardinality 0..*.
+An association connects 'petrinet_metamodel_PlaceToTransArc' and 'petrinet_metamodel_Transition'. From 'petrinet_metamodel_PlaceToTransArc', the role 'PlaceToTransArc11' has cardinality 0..*, and from 'petrinet_metamodel_Transition', the role 'target10' has cardinality 0..*.
+An association connects 'petrinet_metamodel_TransToPlaceArc' and 'petrinet_metamodel_Transition'. From 'petrinet_metamodel_TransToPlaceArc', the role 'TransToPlaceArc14' has cardinality 0..*, and from 'petrinet_metamodel_Transition', the role 'source13' has cardinality 0..*.
+An association connects 'petrinet_metamodel_Rectangle' and 'petrinet_metamodel_Transition'. From 'petrinet_metamodel_Rectangle', the role 'Rectangle' has cardinality 0..*, and from 'petrinet_metamodel_Transition', the role 'belongs_to' has cardinality 0..*.
+An association connects 'petrinet_metamodel_PlaceToTransArc' and 'petrinet_metamodel_Place'. From 'petrinet_metamodel_PlaceToTransArc', the role 'outgoing' has cardinality 0..*, and from 'petrinet_metamodel_Place', the role 'Place17' has cardinality 0..*.
+An association connects 'petrinet_metamodel_Transition' and 'petrinet_metamodel_PlaceToTransArc'. From 'petrinet_metamodel_Transition', the role 'Transition19' has cardinality 0..*, and from 'petrinet_metamodel_PlaceToTransArc', the role 'incoming' has cardinality 0..*.
+An association connects 'petrinet_metamodel_TransToPlaceArc' and 'petrinet_metamodel_Transition'. From 'petrinet_metamodel_TransToPlaceArc', the role 'outgoing21' has cardinality 0..*, and from 'petrinet_metamodel_Transition', the role 'Transition22' has cardinality 0..*.
+An association connects 'petrinet_metamodel_Place' and 'petrinet_metamodel_TransToPlaceArc'. From 'petrinet_metamodel_Place', the role 'Place25' has cardinality 0..*, and from 'petrinet_metamodel_TransToPlaceArc', the role 'incoming24' has cardinality 0..*.
+An association connects 'petrinet_metamodel_Rectangle' and 'petrinet_metamodel_Transition'. From 'petrinet_metamodel_Rectangle', the role 'rectangle' has cardinality 0..*, and from 'petrinet_metamodel_Transition', the role 'Transition27' has cardinality 0..*.

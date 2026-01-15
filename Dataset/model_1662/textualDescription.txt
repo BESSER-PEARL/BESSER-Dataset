@@ -1,0 +1,84 @@
+The domain model 'nested102' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'nested102_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'nested102_EClass8' represents an important domain concept.
+It does not declare any attributes.
+
+'nested102_EClass6' represents an important domain concept.
+It does not declare any attributes.
+
+'nested102_EClass3' represents an important domain concept.
+It does not declare any attributes.
+
+'EClass7' represents an important domain concept.
+It does not declare any attributes.
+
+'nested102_EClass5' represents an important domain concept.
+It does not declare any attributes.
+
+'nested102_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'nested102_EClass7' represents an important domain concept.
+It does not declare any attributes.
+
+'EClass8' represents an important domain concept.
+It does not declare any attributes.
+
+'nested102_EClass0' represents an important domain concept.
+It does not declare any attributes.
+
+'Thing' represents an important domain concept.
+It does not declare any attributes.
+
+'nested102_EClass2' represents an important domain concept.
+It does not declare any attributes.
+
+'nested102_EClass4' represents an important domain concept.
+It does not declare any attributes.
+
+'EClass6' represents an important domain concept.
+It does not declare any attributes.
+
+'nested102_World' represents an important domain concept.
+It does not declare any attributes.
+
+'nested102_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'nested102_EClass1' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'nested102_Thing' is a specialization of 'NamedElement'.
+The class 'nested102_RelatedTo' is a specialization of 'NamedElement'.
+The class 'nested102_EClass0' is a specialization of 'NamedElement'.
+The class 'nested102_EClass1' is a specialization of 'NamedElement'.
+The class 'nested102_EClass2' is a specialization of 'NamedElement'.
+The class 'nested102_EClass3' is a specialization of 'NamedElement'.
+The class 'nested102_EClass4' is a specialization of 'NamedElement'.
+The class 'nested102_EClass5' is a specialization of 'NamedElement'.
+The class 'nested102_EClass5' is a specialization of 'EClass6'.
+The class 'nested102_EClass6' is a specialization of 'EClass7'.
+The class 'nested102_EClass6' is a specialization of 'EClass8'.
+The class 'nested102_EClass7' is a specialization of 'Thing'.
+The class 'nested102_EClass8' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'nested102_Thing' and 'nested102_World'. From 'nested102_Thing', the role 'nested102_Thing' has cardinality 0..*, and from 'nested102_World', the role 'nested102_World' has cardinality 0..*.
+An association connects 'nested102_RelatedTo' and 'nested102_Thing'. From 'nested102_RelatedTo', the role 'RelatedTo' has cardinality 0..*, and from 'nested102_Thing', the role 'fromThing' has cardinality 0..*.
+An association connects 'nested102_EClass0' and 'nested102_Thing'. From 'nested102_EClass0', the role 'nested102_EClass0' has cardinality 0..*, and from 'nested102_Thing', the role 'nested102_Thing3' has cardinality 0..*.
+An association connects 'nested102_RelatedTo' and 'nested102_Thing'. From 'nested102_RelatedTo', the role 'relations' has cardinality 0..*, and from 'nested102_Thing', the role 'Thing' has cardinality 0..*.
+An association connects 'nested102_RelatedTo' and 'nested102_Thing'. From 'nested102_RelatedTo', the role 'nested102_RelatedTo' has cardinality 0..*, and from 'nested102_Thing', the role 'nested102_Thing6' has cardinality 0..*.
+An association connects 'nested102_EClass0' and 'nested102_EClass1'. From 'nested102_EClass0', the role 'nested102_EClass08' has cardinality 0..*, and from 'nested102_EClass1', the role 'nested102_EClass1' has cardinality 0..*.
+An association connects 'nested102_EClass1' and 'nested102_EClass2'. From 'nested102_EClass1', the role 'nested102_EClass110' has cardinality 0..*, and from 'nested102_EClass2', the role 'nested102_EClass2' has cardinality 0..*.
+An association connects 'nested102_EClass3' and 'nested102_EClass2'. From 'nested102_EClass3', the role 'nested102_EClass3' has cardinality 0..*, and from 'nested102_EClass2', the role 'nested102_EClass212' has cardinality 0..*.
+An association connects 'nested102_EClass4' and 'nested102_EClass3'. From 'nested102_EClass4', the role 'nested102_EClass4' has cardinality 0..*, and from 'nested102_EClass3', the role 'nested102_EClass314' has cardinality 0..*.
+An association connects 'nested102_EClass5' and 'nested102_EClass4'. From 'nested102_EClass5', the role 'nested102_EClass5' has cardinality 0..*, and from 'nested102_EClass4', the role 'nested102_EClass416' has cardinality 0..*.

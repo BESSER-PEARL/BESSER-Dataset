@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tobmayr/ame_lab/examples/petrinet/language_workbench/org.modelexecution.xmof.examples.petrinet/model/petrinet.ecore

@@ -1,0 +1,325 @@
+The domain model 'sam' describes the core structural elements and their relationships within the system.
+
+The model defines 65 main class(es).
+
+'TraceableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'MessagePort' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_Gate' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_OutControlPort' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_DataFlow' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'sam_OutDataPort' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_NamedItem' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sam_AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'Gate' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_System' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'AsynchronousGate' represents an important domain concept.
+It does not declare any attributes.
+
+'DataPort' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_MultiPort' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_State' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'MergeGate' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_DataPort' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_InControlPort' represents an important domain concept.
+It does not declare any attributes.
+
+'OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_ControlPort' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_IdentifiedItem' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'requirements', which is of type str.
+
+'sam_ControlMerge' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_AsynchronousGate' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_MergeGate' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_Automaton' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_DataSynchronisation' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_InitialState' represents an important domain concept.
+It does not declare any attributes.
+
+'SplitGate' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_MessageFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_DataStore' represents an important domain concept.
+It does not declare any attributes.
+
+'IdentifiedItem' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_DataMerge' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_InMessagePort' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlPort' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_MessageSplit' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_DataDecomposition' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_Transition' represents an important domain concept.
+It has the following attributes: 'condition', which is of type str; 'emission', which is of type str; 'priority', which is of type str.
+
+'SynchronousGate' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_MacroState' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_DataComposition' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_SynchronousGate' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_InDataPort' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedItem' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_SplitGate' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelContent' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_ModelContent' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_FlowGroup' represents an important domain concept.
+It has one attribute: 'globalComment', which is of type str.
+
+'sam_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'DataSynchronisation' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_MessagePort' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_TraceableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_MessageMerge' represents an important domain concept.
+It does not declare any attributes.
+
+'sam_OutMessagePort' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DataType' defines the following possible values: 'Boolean', 'Float', 'Double', 'Real', 'Integer'.
+
+The model also captures inheritance relationships between classes.
+The class 'sam_AbstractState' is a specialization of 'NamedItem'.
+The class 'sam_Automaton' is a specialization of 'ModelContent'.
+The class 'sam_InitialState' is a specialization of 'State'.
+The class 'sam_MacroState' is a specialization of 'AbstractState'.
+The class 'sam_State' is a specialization of 'AbstractState'.
+The class 'sam_Transition' is a specialization of 'TraceableElement'.
+The class 'sam_ControlPort' is a specialization of 'Port'.
+The class 'sam_DataPort' is a specialization of 'Port'.
+The class 'sam_InControlPort' is a specialization of 'ControlPort'.
+The class 'sam_InControlPort' is a specialization of 'InputPort'.
+The class 'sam_InDataPort' is a specialization of 'DataPort'.
+The class 'sam_InDataPort' is a specialization of 'InputPort'.
+The class 'sam_InputPort' is a specialization of 'Port'.
+The class 'sam_OutControlPort' is a specialization of 'ControlPort'.
+The class 'sam_OutControlPort' is a specialization of 'OutputPort'.
+The class 'sam_OutDataPort' is a specialization of 'DataPort'.
+The class 'sam_OutDataPort' is a specialization of 'OutputPort'.
+The class 'sam_OutputPort' is a specialization of 'Port'.
+The class 'sam_Port' is a specialization of 'NamedItem'.
+The class 'sam_DataComposition' is a specialization of 'DataSynchronisation'.
+The class 'sam_ControlFlow' is a specialization of 'Flow'.
+The class 'sam_DataFlow' is a specialization of 'Flow'.
+The class 'sam_DataStore' is a specialization of 'NamedItem'.
+The class 'sam_DataDecomposition' is a specialization of 'DataSynchronisation'.
+The class 'sam_Flow' is a specialization of 'NamedItem'.
+The class 'sam_System' is a specialization of 'ModelContent'.
+The class 'sam_System' is a specialization of 'TraceableElement'.
+The class 'sam_ModelContent' is a specialization of 'NamedItem'.
+The class 'sam_IdentifiedItem' is a specialization of 'EModelElement'.
+The class 'sam_NamedItem' is a specialization of 'IdentifiedItem'.
+The class 'sam_MultiPort' is a specialization of 'NamedItem'.
+The class 'sam_MessagePort' is a specialization of 'Port'.
+The class 'sam_MessageFlow' is a specialization of 'Flow'.
+The class 'sam_OutMessagePort' is a specialization of 'MessagePort'.
+The class 'sam_OutMessagePort' is a specialization of 'OutputPort'.
+The class 'sam_InMessagePort' is a specialization of 'MessagePort'.
+The class 'sam_InMessagePort' is a specialization of 'InputPort'.
+The class 'sam_FlowGroup' is a specialization of 'ENamedElement'.
+The class 'sam_Gate' is a specialization of 'IdentifiedItem'.
+The class 'sam_AsynchronousGate' is a specialization of 'Gate'.
+The class 'sam_SynchronousGate' is a specialization of 'Gate'.
+The class 'sam_DataSynchronisation' is a specialization of 'SynchronousGate'.
+The class 'sam_SplitGate' is a specialization of 'AsynchronousGate'.
+The class 'sam_MergeGate' is a specialization of 'AsynchronousGate'.
+The class 'sam_MessageSplit' is a specialization of 'SplitGate'.
+The class 'sam_DataMerge' is a specialization of 'MergeGate'.
+The class 'sam_ControlMerge' is a specialization of 'MergeGate'.
+The class 'sam_MessageMerge' is a specialization of 'MergeGate'.
+The class 'sam_TraceableElement' is a specialization of 'NamedItem'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sam_AbstractState' and 'sam_MacroState'. From 'sam_AbstractState', the role 'composition' has cardinality 0..*, and from 'sam_MacroState', the role 'MacroState' has cardinality 0..*.
+An association connects 'sam_AbstractState' and 'sam_Automaton'. From 'sam_AbstractState', the role 'listStates' has cardinality 0..*, and from 'sam_Automaton', the role 'Automaton' has cardinality 0..*.
+An association connects 'sam_Transition' and 'sam_AbstractState'. From 'sam_Transition', the role 'Transition' has cardinality 0..*, and from 'sam_AbstractState', the role 'source' has cardinality 0..*.
+An association connects 'sam_Automaton' and 'sam_Transition'. From 'sam_Automaton', the role 'parentAutomaton' has cardinality 0..*, and from 'sam_Transition', the role 'Transition4' has cardinality 0..*.
+An association connects 'sam_Port' and 'sam_Automaton'. From 'sam_Port', the role 'Port' has cardinality 0..*, and from 'sam_Automaton', the role 'parentAutomaton6' has cardinality 0..*.
+An association connects 'sam_AbstractState' and 'sam_Automaton'. From 'sam_AbstractState', the role 'AbstractState' has cardinality 0..*, and from 'sam_Automaton', the role 'parentAutomaton8' has cardinality 0..*.
+An association connects 'sam_Automaton' and 'sam_Automaton'. From 'sam_Automaton', the role 'sam_Automaton' has cardinality 0..*, and from 'sam_Automaton', the role 'sam_Automaton9' has cardinality 0..*.
+An association connects 'sam_AbstractState' and 'sam_MacroState'. From 'sam_AbstractState', the role 'AbstractState12' has cardinality 0..*, and from 'sam_MacroState', the role 'parentState' has cardinality 0..*.
+An association connects 'sam_Transition' and 'sam_State'. From 'sam_Transition', the role 'Transition14' has cardinality 0..*, and from 'sam_State', the role 'dest' has cardinality 0..*.
+An association connects 'sam_Transition' and 'sam_State'. From 'sam_Transition', the role 'inlink' has cardinality 0..*, and from 'sam_State', the role 'State' has cardinality 0..*.
+An association connects 'sam_Automaton' and 'sam_Transition'. From 'sam_Automaton', the role 'Automaton17' has cardinality 0..*, and from 'sam_Transition', the role 'listTransitions' has cardinality 0..*.
+An association connects 'sam_AbstractState' and 'sam_Transition'. From 'sam_AbstractState', the role 'AbstractState19' has cardinality 0..*, and from 'sam_Transition', the role 'outlink' has cardinality 0..*.
+An association connects 'sam_InControlPort' and 'sam_ControlMerge'. From 'sam_InControlPort', the role 'in' has cardinality 0..*, and from 'sam_ControlMerge', the role 'ControlMerge' has cardinality 0..*.
+An association connects 'sam_InDataPort' and 'sam_DataStore'. From 'sam_InDataPort', the role 'in22' has cardinality 0..*, and from 'sam_DataStore', the role 'DataStore' has cardinality 0..*.
+An association connects 'sam_InDataPort' and 'sam_DataSynchronisation'. From 'sam_InDataPort', the role 'in24' has cardinality 0..*, and from 'sam_DataSynchronisation', the role 'DataSynchronisation' has cardinality 0..*.
+An association connects 'sam_DataMerge' and 'sam_InDataPort'. From 'sam_DataMerge', the role 'DataMerge' has cardinality 0..*, and from 'sam_InDataPort', the role 'in26' has cardinality 0..*.
+An association connects 'sam_OutControlPort' and 'sam_MessageSplit'. From 'sam_OutControlPort', the role 'outControl' has cardinality 0..*, and from 'sam_MessageSplit', the role 'MessageSplit' has cardinality 0..*.
+An association connects 'sam_OutControlPort' and 'sam_ControlMerge'. From 'sam_OutControlPort', the role 'out' has cardinality 0..*, and from 'sam_ControlMerge', the role 'ControlMerge29' has cardinality 0..*.
+An association connects 'sam_DataStore' and 'sam_OutDataPort'. From 'sam_DataStore', the role 'DataStore32' has cardinality 0..*, and from 'sam_OutDataPort', the role 'out31' has cardinality 0..*.
+An association connects 'sam_DataSynchronisation' and 'sam_OutDataPort'. From 'sam_DataSynchronisation', the role 'DataSynchronisation35' has cardinality 0..*, and from 'sam_OutDataPort', the role 'out34' has cardinality 0..*.
+An association connects 'sam_MessageSplit' and 'sam_OutDataPort'. From 'sam_MessageSplit', the role 'MessageSplit37' has cardinality 0..*, and from 'sam_OutDataPort', the role 'outData' has cardinality 0..*.
+An association connects 'sam_OutDataPort' and 'sam_DataMerge'. From 'sam_OutDataPort', the role 'out39' has cardinality 0..*, and from 'sam_DataMerge', the role 'DataMerge40' has cardinality 0..*.
+An association connects 'sam_System' and 'sam_Port'. From 'sam_System', the role 'System' has cardinality 0..*, and from 'sam_Port', the role 'listPorts' has cardinality 0..*.
+An association connects 'sam_Flow' and 'sam_Port'. From 'sam_Flow', the role 'sam_Flow' has cardinality 0..*, and from 'sam_Port', the role 'sam_Port' has cardinality 0..*.
+An association connects 'sam_Port' and 'sam_Flow'. From 'sam_Port', the role 'sam_Port44' has cardinality 0..*, and from 'sam_Flow', the role 'sam_Flow45' has cardinality 0..*.
+An association connects 'sam_Port' and 'sam_Automaton'. From 'sam_Port', the role 'listPorts47' has cardinality 0..*, and from 'sam_Automaton', the role 'Automaton48' has cardinality 0..*.
+An association connects 'sam_MultiPort' and 'sam_Port'. From 'sam_MultiPort', the role 'sam_MultiPort' has cardinality 0..*, and from 'sam_Port', the role 'sam_Port50' has cardinality 0..*.
+An association connects 'sam_Port' and 'sam_Port'. From 'sam_Port', the role 'sam_Port51' has cardinality 0..*, and from 'sam_Port', the role 'sam_Port53' has cardinality 0..*.
+An association connects 'sam_ControlFlow' and 'sam_ControlPort'. From 'sam_ControlFlow', the role 'sam_ControlFlow' has cardinality 0..*, and from 'sam_ControlPort', the role 'sam_ControlPort' has cardinality 0..*.
+An association connects 'sam_ControlPort' and 'sam_ControlFlow'. From 'sam_ControlPort', the role 'sam_ControlPort57' has cardinality 0..*, and from 'sam_ControlFlow', the role 'sam_ControlFlow56' has cardinality 0..*.
+An association connects 'sam_DataFlow' and 'sam_DataPort'. From 'sam_DataFlow', the role 'sam_DataFlow' has cardinality 0..*, and from 'sam_DataPort', the role 'sam_DataPort' has cardinality 0..*.
+An association connects 'sam_DataPort' and 'sam_DataFlow'. From 'sam_DataPort', the role 'sam_DataPort61' has cardinality 0..*, and from 'sam_DataFlow', the role 'sam_DataFlow60' has cardinality 0..*.
+An association connects 'sam_DataStore' and 'sam_System'. From 'sam_DataStore', the role 'listStores' has cardinality 0..*, and from 'sam_System', the role 'System63' has cardinality 0..*.
+An association connects 'sam_InDataPort' and 'sam_DataStore'. From 'sam_InDataPort', the role 'InDataPort' has cardinality 0..*, and from 'sam_DataStore', the role 'parentDataStore' has cardinality 0..*.
+An association connects 'sam_OutDataPort' and 'sam_DataStore'. From 'sam_OutDataPort', the role 'OutDataPort' has cardinality 0..*, and from 'sam_DataStore', the role 'parentDataStore66' has cardinality 0..*.
+An association connects 'sam_System' and 'sam_Flow'. From 'sam_System', the role 'System68' has cardinality 0..*, and from 'sam_Flow', the role 'listFlows' has cardinality 0..*.
+An association connects 'sam_FlowGroup' and 'sam_Flow'. From 'sam_FlowGroup', the role 'FlowGroup' has cardinality 0..*, and from 'sam_Flow', the role 'flows' has cardinality 0..*.
+An association connects 'sam_System' and 'sam_Port'. From 'sam_System', the role 'parentSystem' has cardinality 0..*, and from 'sam_Port', the role 'Port71' has cardinality 0..*.
+An association connects 'sam_System' and 'sam_DataStore'. From 'sam_System', the role 'parentSystem73' has cardinality 0..*, and from 'sam_DataStore', the role 'DataStore74' has cardinality 0..*.
+An association connects 'sam_System' and 'sam_Gate'. From 'sam_System', the role 'parentSystem76' has cardinality 0..*, and from 'sam_Gate', the role 'Gate' has cardinality 0..*.
+An association connects 'sam_System' and 'sam_Flow'. From 'sam_System', the role 'parentSystem78' has cardinality 0..*, and from 'sam_Flow', the role 'Flow' has cardinality 0..*.
+An association connects 'sam_System' and 'sam_ModelContent'. From 'sam_System', the role 'parentSystem80' has cardinality 0..*, and from 'sam_ModelContent', the role 'ModelContent' has cardinality 0..*.
+An association connects 'sam_System' and 'sam_System'. From 'sam_System', the role 'sam_System' has cardinality 0..*, and from 'sam_System', the role 'sam_System81' has cardinality 0..*.
+An association connects 'sam_ModelContent' and 'sam_Model'. From 'sam_ModelContent', the role 'ModelContent84' has cardinality 0..*, and from 'sam_Model', the role 'parentModel' has cardinality 0..*.
+An association connects 'sam_Model' and 'sam_FlowGroup'. From 'sam_Model', the role 'model' has cardinality 0..*, and from 'sam_FlowGroup', the role 'FlowGroup86' has cardinality 0..*.
+An association connects 'sam_EObject' and 'sam_Model'. From 'sam_EObject', the role 'sam_EObject' has cardinality 0..*, and from 'sam_Model', the role 'sam_Model' has cardinality 0..*.
+An association connects 'sam_ModelContent' and 'sam_Model'. From 'sam_ModelContent', the role 'modelContent' has cardinality 0..*, and from 'sam_Model', the role 'Model' has cardinality 0..*.
+An association connects 'sam_System' and 'sam_ModelContent'. From 'sam_System', the role 'System90' has cardinality 0..*, and from 'sam_ModelContent', the role 'listElements' has cardinality 0..*.
+An association connects 'sam_MultiPort' and 'sam_ModelContent'. From 'sam_MultiPort', the role 'MultiPort' has cardinality 0..*, and from 'sam_ModelContent', the role 'parent' has cardinality 0..*.
+An association connects 'sam_Port' and 'sam_MultiPort'. From 'sam_Port', the role 'sam_Port94' has cardinality 0..*, and from 'sam_MultiPort', the role 'sam_MultiPort93' has cardinality 0..*.
+An association connects 'sam_MultiPort' and 'sam_ModelContent'. From 'sam_MultiPort', the role 'listMultiPort' has cardinality 0..*, and from 'sam_ModelContent', the role 'ModelContent96' has cardinality 0..*.
+An association connects 'sam_MultiPort' and 'sam_MultiPort'. From 'sam_MultiPort', the role 'sam_MultiPort99' has cardinality 0..*, and from 'sam_MultiPort', the role 'sam_MultiPort97' has cardinality 0..*.
+An association connects 'sam_MessagePort' and 'sam_MessageFlow'. From 'sam_MessagePort', the role 'sam_MessagePort' has cardinality 0..*, and from 'sam_MessageFlow', the role 'sam_MessageFlow' has cardinality 0..*.
+An association connects 'sam_MessageFlow' and 'sam_MessagePort'. From 'sam_MessageFlow', the role 'sam_MessageFlow102' has cardinality 0..*, and from 'sam_MessagePort', the role 'sam_MessagePort103' has cardinality 0..*.
+An association connects 'sam_OutMessagePort' and 'sam_MessageMerge'. From 'sam_OutMessagePort', the role 'out105' has cardinality 0..*, and from 'sam_MessageMerge', the role 'MessageMerge' has cardinality 0..*.
+An association connects 'sam_MessageSplit' and 'sam_InMessagePort'. From 'sam_MessageSplit', the role 'MessageSplit108' has cardinality 0..*, and from 'sam_InMessagePort', the role 'in107' has cardinality 0..*.
+An association connects 'sam_MessageMerge' and 'sam_InMessagePort'. From 'sam_MessageMerge', the role 'MessageMerge111' has cardinality 0..*, and from 'sam_InMessagePort', the role 'in110' has cardinality 0..*.
+An association connects 'sam_Flow' and 'sam_FlowGroup'. From 'sam_Flow', the role 'Flow113' has cardinality 0..*, and from 'sam_FlowGroup', the role 'group' has cardinality 0..*.
+An association connects 'sam_FlowGroup' and 'sam_Model'. From 'sam_FlowGroup', the role 'flowGroups' has cardinality 0..*, and from 'sam_Model', the role 'Model115' has cardinality 0..*.
+An association connects 'sam_System' and 'sam_Gate'. From 'sam_System', the role 'System117' has cardinality 0..*, and from 'sam_Gate', the role 'listSynchronisation' has cardinality 0..*.
+An association connects 'sam_InDataPort' and 'sam_DataSynchronisation'. From 'sam_InDataPort', the role 'InDataPort119' has cardinality 0..*, and from 'sam_DataSynchronisation', the role 'parentSync' has cardinality 0..*.
+An association connects 'sam_OutDataPort' and 'sam_DataSynchronisation'. From 'sam_OutDataPort', the role 'OutDataPort122' has cardinality 0..*, and from 'sam_DataSynchronisation', the role 'parentSync121' has cardinality 0..*.
+An association connects 'sam_MessageSplit' and 'sam_InMessagePort'. From 'sam_MessageSplit', the role 'split' has cardinality 0..*, and from 'sam_InMessagePort', the role 'InMessagePort' has cardinality 0..*.
+An association connects 'sam_MessageSplit' and 'sam_OutDataPort'. From 'sam_MessageSplit', the role 'split125' has cardinality 0..*, and from 'sam_OutDataPort', the role 'OutDataPort126' has cardinality 0..*.
+An association connects 'sam_MessageSplit' and 'sam_OutControlPort'. From 'sam_MessageSplit', the role 'split128' has cardinality 0..*, and from 'sam_OutControlPort', the role 'OutControlPort' has cardinality 0..*.
+An association connects 'sam_DataMerge' and 'sam_InDataPort'. From 'sam_DataMerge', the role 'merge' has cardinality 0..*, and from 'sam_InDataPort', the role 'InDataPort130' has cardinality 0..*.
+An association connects 'sam_DataMerge' and 'sam_OutDataPort'. From 'sam_DataMerge', the role 'merge132' has cardinality 0..*, and from 'sam_OutDataPort', the role 'OutDataPort133' has cardinality 0..*.
+An association connects 'sam_InControlPort' and 'sam_ControlMerge'. From 'sam_InControlPort', the role 'InControlPort' has cardinality 0..*, and from 'sam_ControlMerge', the role 'merge135' has cardinality 0..*.
+An association connects 'sam_ControlMerge' and 'sam_OutControlPort'. From 'sam_ControlMerge', the role 'merge137' has cardinality 0..*, and from 'sam_OutControlPort', the role 'OutControlPort138' has cardinality 0..*.
+An association connects 'sam_MessageMerge' and 'sam_InMessagePort'. From 'sam_MessageMerge', the role 'merge140' has cardinality 0..*, and from 'sam_InMessagePort', the role 'InMessagePort141' has cardinality 0..*.
+An association connects 'sam_OutMessagePort' and 'sam_MessageMerge'. From 'sam_OutMessagePort', the role 'OutMessagePort' has cardinality 0..*, and from 'sam_MessageMerge', the role 'merge143' has cardinality 0..*.

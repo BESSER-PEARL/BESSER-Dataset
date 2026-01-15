@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset-mtl/repos/dice-project/DICE-Simulation/bundles/es.unizar.disco.pnml.m2m/examples/metamodels/petrinet/placeTransition.ecore

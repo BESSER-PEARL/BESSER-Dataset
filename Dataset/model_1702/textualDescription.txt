@@ -1,0 +1,41 @@
+The domain model 'emapsample' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'emapsample_WriterToBookMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'emapsample_Writer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'emapsample_StringToWriterMapEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'emapsample_Book' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'emapsample_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'emapsample_WriterToNameMapEntry' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'emapsample_BookStore' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'emapsample_BookStore' is a specialization of 'Identifiable'.
+The class 'emapsample_Writer' is a specialization of 'Identifiable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'emapsample_Book' and 'emapsample_StringToWriterMapEntry'. From 'emapsample_Book', the role 'emapsample_Book' has cardinality 0..*, and from 'emapsample_StringToWriterMapEntry', the role 'emapsample_StringToWriterMapEntry' has cardinality 0..*.
+An association connects 'emapsample_WriterToBookMapEntry' and 'emapsample_BookStore'. From 'emapsample_WriterToBookMapEntry', the role 'emapsample_WriterToBookMapEntry' has cardinality 0..*, and from 'emapsample_BookStore', the role 'emapsample_BookStore' has cardinality 0..*.
+An association connects 'emapsample_EStringToStringMapEntry' and 'emapsample_BookStore'. From 'emapsample_EStringToStringMapEntry', the role 'emapsample_EStringToStringMapEntry' has cardinality 0..*, and from 'emapsample_BookStore', the role 'emapsample_BookStore3' has cardinality 0..*.
+An association connects 'emapsample_BookStore' and 'emapsample_WriterToNameMapEntry'. From 'emapsample_BookStore', the role 'emapsample_BookStore5' has cardinality 0..*, and from 'emapsample_WriterToNameMapEntry', the role 'emapsample_WriterToNameMapEntry' has cardinality 0..*.
+An association connects 'emapsample_StringToWriterMapEntry' and 'emapsample_Writer'. From 'emapsample_StringToWriterMapEntry', the role 'emapsample_StringToWriterMapEntry7' has cardinality 0..*, and from 'emapsample_Writer', the role 'emapsample_Writer' has cardinality 0..*.
+An association connects 'emapsample_WriterToBookMapEntry' and 'emapsample_Writer'. From 'emapsample_WriterToBookMapEntry', the role 'emapsample_WriterToBookMapEntry9' has cardinality 0..*, and from 'emapsample_Writer', the role 'emapsample_Writer10' has cardinality 0..*.
+An association connects 'emapsample_Book' and 'emapsample_WriterToBookMapEntry'. From 'emapsample_Book', the role 'emapsample_Book13' has cardinality 0..*, and from 'emapsample_WriterToBookMapEntry', the role 'emapsample_WriterToBookMapEntry12' has cardinality 0..*.
+An association connects 'emapsample_Writer' and 'emapsample_WriterToNameMapEntry'. From 'emapsample_Writer', the role 'emapsample_Writer16' has cardinality 0..*, and from 'emapsample_WriterToNameMapEntry', the role 'emapsample_WriterToNameMapEntry15' has cardinality 0..*.

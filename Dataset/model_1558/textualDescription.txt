@@ -1,0 +1,16 @@
+The domain model 'Paper' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'Paper_Author' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'email', which is of type str.
+
+'Paper_Papers' represents an important domain concept.
+It does not declare any attributes.
+
+'Paper_Paper' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Paper_Papers' and 'Paper_Paper'. From 'Paper_Papers', the role 'Paper_Papers' has cardinality 0..*, and from 'Paper_Paper', the role 'Paper_Paper' has cardinality 0..*.
+An association connects 'Paper_Paper' and 'Paper_Author'. From 'Paper_Paper', the role 'Paper_Paper2' has cardinality 0..*, and from 'Paper_Author', the role 'Paper_Author' has cardinality 0..*.

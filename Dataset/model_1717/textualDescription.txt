@@ -1,0 +1,29 @@
+The domain model 'Library3' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'Library3_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'Library3_CustomerType' represents an important domain concept.
+It has the following attributes: 'borrowedBookId', which is of type str; 'lastName', which is of type str; 'firstName', which is of type str.
+
+'Library3_BookInfoType' represents an important domain concept.
+It has one attribute: 'any', which is of type str.
+
+'Library3_LibraryType' represents an important domain concept.
+It does not declare any attributes.
+
+'Library3_BookType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'pages', which is of type str; 'title', which is of type str; 'author', which is of type str; 'isbn', which is of type str.
+
+'Library3_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'Library3_BookInfoType' and 'Library3_BookType'. From 'Library3_BookInfoType', the role 'Library3_BookInfoType' has cardinality 0..*, and from 'Library3_BookType', the role 'Library3_BookType' has cardinality 0..*.
+An association connects 'Library3_EStringToStringMapEntry' and 'Library3_DocumentRoot'. From 'Library3_EStringToStringMapEntry', the role 'Library3_EStringToStringMapEntry' has cardinality 0..*, and from 'Library3_DocumentRoot', the role 'Library3_DocumentRoot' has cardinality 0..*.
+An association connects 'Library3_DocumentRoot' and 'Library3_EStringToStringMapEntry'. From 'Library3_DocumentRoot', the role 'Library3_DocumentRoot3' has cardinality 0..*, and from 'Library3_EStringToStringMapEntry', the role 'Library3_EStringToStringMapEntry4' has cardinality 0..*.
+An association connects 'Library3_LibraryType' and 'Library3_DocumentRoot'. From 'Library3_LibraryType', the role 'Library3_LibraryType' has cardinality 0..*, and from 'Library3_DocumentRoot', the role 'Library3_DocumentRoot6' has cardinality 0..*.
+An association connects 'Library3_LibraryType' and 'Library3_BookType'. From 'Library3_LibraryType', the role 'Library3_LibraryType8' has cardinality 0..*, and from 'Library3_BookType', the role 'Library3_BookType9' has cardinality 0..*.
+An association connects 'Library3_CustomerType' and 'Library3_LibraryType'. From 'Library3_CustomerType', the role 'Library3_CustomerType' has cardinality 0..*, and from 'Library3_LibraryType', the role 'Library3_LibraryType11' has cardinality 0..*.

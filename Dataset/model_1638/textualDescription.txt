@@ -1,0 +1,38 @@
+The domain model 'kiamacs' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'kiamacs_LeafCS' represents an important domain concept.
+It does not declare any attributes.
+
+'kiamacs_NodeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'kiamacs_BaseCS' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseCS' represents an important domain concept.
+It does not declare any attributes.
+
+'kiamacs_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'kiamacs_CompositeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'kiamacs_TopCS' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'kiamacs_TopCS' is a specialization of 'BaseCS'.
+The class 'kiamacs_NodeCS' is a specialization of 'BaseCS'.
+The class 'kiamacs_CompositeCS' is a specialization of 'NodeCS'.
+The class 'kiamacs_LeafCS' is a specialization of 'NodeCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'kiamacs_TopCS' and 'kiamacs_NodeCS'. From 'kiamacs_TopCS', the role 'kiamacs_TopCS' has cardinality 0..*, and from 'kiamacs_NodeCS', the role 'kiamacs_NodeCS' has cardinality 0..*.
+An association connects 'kiamacs_NodeCS' and 'kiamacs_CompositeCS'. From 'kiamacs_NodeCS', the role 'kiamacs_NodeCS2' has cardinality 0..*, and from 'kiamacs_CompositeCS', the role 'kiamacs_CompositeCS' has cardinality 0..*.
+An association connects 'kiamacs_BaseCS' and 'kiamacs_EObject'. From 'kiamacs_BaseCS', the role 'kiamacs_BaseCS' has cardinality 0..*, and from 'kiamacs_EObject', the role 'kiamacs_EObject' has cardinality 0..*.

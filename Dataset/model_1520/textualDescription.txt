@@ -1,0 +1,22 @@
+The domain model 'sm6' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'sm6_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isFinal', which is of type str.
+
+'sm6_Transition' represents an important domain concept.
+It has one attribute: 'event', which is of type str.
+
+'sm6_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'sm6_State' and 'sm6_StateMachine'. From 'sm6_State', the role 'sm6_State' has cardinality 0..*, and from 'sm6_StateMachine', the role 'sm6_StateMachine' has cardinality 0..*.
+An association connects 'sm6_State' and 'sm6_StateMachine'. From 'sm6_State', the role 'State' has cardinality 0..*, and from 'sm6_StateMachine', the role 'sm' has cardinality 0..*.
+An association connects 'sm6_StateMachine' and 'sm6_Transition'. From 'sm6_StateMachine', the role 'sm6_StateMachine3' has cardinality 0..*, and from 'sm6_Transition', the role 'sm6_Transition' has cardinality 0..*.
+An association connects 'sm6_State' and 'sm6_StateMachine'. From 'sm6_State', the role 'states' has cardinality 0..*, and from 'sm6_StateMachine', the role 'StateMachine' has cardinality 0..*.
+An association connects 'sm6_State' and 'sm6_Transition'. From 'sm6_State', the role 'src' has cardinality 0..*, and from 'sm6_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'sm6_Transition' and 'sm6_State'. From 'sm6_Transition', the role 'Transition7' has cardinality 0..*, and from 'sm6_State', the role 'tgt' has cardinality 0..*.
+An association connects 'sm6_State' and 'sm6_Transition'. From 'sm6_State', the role 'State9' has cardinality 0..*, and from 'sm6_Transition', the role 'outgoing' has cardinality 0..*.
+An association connects 'sm6_State' and 'sm6_Transition'. From 'sm6_State', the role 'State11' has cardinality 0..*, and from 'sm6_Transition', the role 'incoming' has cardinality 0..*.

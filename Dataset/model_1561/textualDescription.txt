@@ -1,0 +1,147 @@
+The domain model 'graph' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'graph_STEMTime' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_URIToNodeMapEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'graph_StaticEdgeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'EdgeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_Decorator' represents an important domain concept.
+It does not declare any attributes.
+
+'DynamicLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'Label' represents an important domain concept.
+It does not declare any attributes.
+
+'StaticLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_UnresolvedIdentifiable' represents an important domain concept.
+It has the following attributes: 'fieldName', which is of type str; 'unresolvedURI', which is of type str.
+
+'NodeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'Modifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_EdgeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_DynamicNodeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_Edge' represents an important domain concept.
+It has the following attributes: 'directed', which is of type bool; 'nodeAURI', which is of type str; 'nodeBURI', which is of type str.
+
+'graph_StaticNodeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_URIToEdgeMapEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'graph_SanityChecker' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_URIToIdentifiableMapEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'graph_Label' represents an important domain concept.
+It has one attribute: 'uRIOfIdentifiableToBeLabeled', which is of type str.
+
+'graph_NodeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_Graph' represents an important domain concept.
+It has the following attributes: 'numDynamicLabels', which is of type int; 'numGraphLabels', which is of type int; 'numNodeLabels', which is of type int; 'numEdges', which is of type int; 'numNodes', which is of type int.
+
+'graph_DynamicEdgeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_LabelValue' represents an important domain concept.
+It does not declare any attributes.
+
+'SanityChecker' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_URIToLabelMapEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'graph_StaticLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_DynamicLabel' represents an important domain concept.
+It has one attribute: 'nextValueValid', which is of type bool.
+
+'graph_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_URIToNodeLabelMapEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'graph_DynamicLabel' is a specialization of 'Label'.
+The class 'graph_DynamicNodeLabel' is a specialization of 'DynamicLabel'.
+The class 'graph_DynamicNodeLabel' is a specialization of 'NodeLabel'.
+The class 'graph_Edge' is a specialization of 'Identifiable'.
+The class 'graph_Edge' is a specialization of 'Modifiable'.
+The class 'graph_Graph' is a specialization of 'Identifiable'.
+The class 'graph_Label' is a specialization of 'Identifiable'.
+The class 'graph_LabelValue' is a specialization of 'SanityChecker'.
+The class 'graph_Node' is a specialization of 'Identifiable'.
+The class 'graph_NodeLabel' is a specialization of 'Label'.
+The class 'graph_StaticNodeLabel' is a specialization of 'NodeLabel'.
+The class 'graph_StaticNodeLabel' is a specialization of 'StaticLabel'.
+The class 'graph_DynamicEdgeLabel' is a specialization of 'DynamicLabel'.
+The class 'graph_DynamicEdgeLabel' is a specialization of 'EdgeLabel'.
+The class 'graph_EdgeLabel' is a specialization of 'Label'.
+The class 'graph_StaticEdgeLabel' is a specialization of 'EdgeLabel'.
+The class 'graph_StaticEdgeLabel' is a specialization of 'StaticLabel'.
+The class 'graph_StaticLabel' is a specialization of 'Label'.
+The class 'graph_StaticLabel' is a specialization of 'Modifiable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'graph_DynamicLabel' and 'graph_LabelValue'. From 'graph_DynamicLabel', the role 'graph_DynamicLabel' has cardinality 0..*, and from 'graph_LabelValue', the role 'graph_LabelValue' has cardinality 0..*.
+An association connects 'graph_DynamicLabel' and 'graph_Decorator'. From 'graph_DynamicLabel', the role 'labelsToUpdate' has cardinality 0..*, and from 'graph_Decorator', the role 'model.ecoreDecorator' has cardinality 0..*.
+An association connects 'graph_Edge' and 'graph_Node'. From 'graph_Edge', the role 'graph_Edge' has cardinality 0..*, and from 'graph_Node', the role 'graph_Node' has cardinality 0..*.
+An association connects 'graph_Edge' and 'graph_Node'. From 'graph_Edge', the role 'graph_Edge4' has cardinality 0..*, and from 'graph_Node', the role 'graph_Node5' has cardinality 0..*.
+An association connects 'graph_Edge' and 'graph_EdgeLabel'. From 'graph_Edge', the role 'edge' has cardinality 0..*, and from 'graph_EdgeLabel', the role 'EdgeLabel' has cardinality 0..*.
+An association connects 'graph_URIToEdgeMapEntry' and 'graph_Graph'. From 'graph_URIToEdgeMapEntry', the role 'graph_URIToEdgeMapEntry' has cardinality 0..*, and from 'graph_Graph', the role 'graph_Graph' has cardinality 0..*.
+An association connects 'graph_URIToNodeMapEntry' and 'graph_Graph'. From 'graph_URIToNodeMapEntry', the role 'graph_URIToNodeMapEntry' has cardinality 0..*, and from 'graph_Graph', the role 'graph_Graph9' has cardinality 0..*.
+An association connects 'graph_Graph' and 'graph_URIToLabelMapEntry'. From 'graph_Graph', the role 'graph_Graph11' has cardinality 0..*, and from 'graph_URIToLabelMapEntry', the role 'graph_URIToLabelMapEntry' has cardinality 0..*.
+An association connects 'graph_Graph' and 'graph_URIToNodeLabelMapEntry'. From 'graph_Graph', the role 'graph_Graph13' has cardinality 0..*, and from 'graph_URIToNodeLabelMapEntry', the role 'graph_URIToNodeLabelMapEntry' has cardinality 0..*.
+An association connects 'graph_Graph' and 'graph_DynamicLabel'. From 'graph_Graph', the role 'graph_Graph15' has cardinality 0..*, and from 'graph_DynamicLabel', the role 'graph_DynamicLabel16' has cardinality 0..*.
+An association connects 'graph_Graph' and 'graph_UnresolvedIdentifiable'. From 'graph_Graph', the role 'graph_Graph18' has cardinality 0..*, and from 'graph_UnresolvedIdentifiable', the role 'graph_UnresolvedIdentifiable' has cardinality 0..*.
+An association connects 'graph_Decorator' and 'graph_Graph'. From 'graph_Decorator', the role 'model.ecoreDecorator20' has cardinality 0..*, and from 'graph_Graph', the role 'graph' has cardinality 0..*.
+An association connects 'graph_STEMTime' and 'graph_Graph'. From 'graph_STEMTime', the role 'graph_STEMTime' has cardinality 0..*, and from 'graph_Graph', the role 'graph_Graph22' has cardinality 0..*.
+An association connects 'graph_LabelValue' and 'graph_Label'. From 'graph_LabelValue', the role 'graph_LabelValue24' has cardinality 0..*, and from 'graph_Label', the role 'graph_Label' has cardinality 0..*.
+An association connects 'graph_Label' and 'graph_Identifiable'. From 'graph_Label', the role 'graph_Label26' has cardinality 0..*, and from 'graph_Identifiable', the role 'graph_Identifiable' has cardinality 0..*.
+An association connects 'graph_Node' and 'graph_Edge'. From 'graph_Node', the role 'graph_Node28' has cardinality 0..*, and from 'graph_Edge', the role 'graph_Edge29' has cardinality 0..*.
+An association connects 'graph_NodeLabel' and 'graph_Node'. From 'graph_NodeLabel', the role 'NodeLabel' has cardinality 0..*, and from 'graph_Node', the role 'node' has cardinality 0..*.
+An association connects 'graph_Node' and 'graph_NodeLabel'. From 'graph_Node', the role 'Node' has cardinality 0..*, and from 'graph_NodeLabel', the role 'labels' has cardinality 0..*.
+An association connects 'graph_Identifiable' and 'graph_UnresolvedIdentifiable'. From 'graph_Identifiable', the role 'graph_Identifiable34' has cardinality 0..*, and from 'graph_UnresolvedIdentifiable', the role 'graph_UnresolvedIdentifiable33' has cardinality 0..*.
+An association connects 'graph_UnresolvedIdentifiable' and 'graph_Identifiable'. From 'graph_UnresolvedIdentifiable', the role 'graph_UnresolvedIdentifiable36' has cardinality 0..*, and from 'graph_Identifiable', the role 'graph_Identifiable37' has cardinality 0..*.
+An association connects 'graph_Identifiable' and 'graph_UnresolvedIdentifiable'. From 'graph_Identifiable', the role 'graph_Identifiable40' has cardinality 0..*, and from 'graph_UnresolvedIdentifiable', the role 'graph_UnresolvedIdentifiable39' has cardinality 0..*.
+An association connects 'graph_UnresolvedIdentifiable' and 'graph_Identifiable'. From 'graph_UnresolvedIdentifiable', the role 'graph_UnresolvedIdentifiable42' has cardinality 0..*, and from 'graph_Identifiable', the role 'graph_Identifiable43' has cardinality 0..*.
+An association connects 'graph_URIToIdentifiableMapEntry' and 'graph_Identifiable'. From 'graph_URIToIdentifiableMapEntry', the role 'graph_URIToIdentifiableMapEntry' has cardinality 0..*, and from 'graph_Identifiable', the role 'graph_Identifiable45' has cardinality 0..*.
+An association connects 'graph_EdgeLabel' and 'graph_Edge'. From 'graph_EdgeLabel', the role 'label' has cardinality 0..*, and from 'graph_Edge', the role 'Edge' has cardinality 0..*.
+An association connects 'graph_Edge' and 'graph_URIToEdgeMapEntry'. From 'graph_Edge', the role 'graph_Edge49' has cardinality 0..*, and from 'graph_URIToEdgeMapEntry', the role 'graph_URIToEdgeMapEntry48' has cardinality 0..*.
+An association connects 'graph_URIToNodeMapEntry' and 'graph_Node'. From 'graph_URIToNodeMapEntry', the role 'graph_URIToNodeMapEntry51' has cardinality 0..*, and from 'graph_Node', the role 'graph_Node52' has cardinality 0..*.
+An association connects 'graph_Label' and 'graph_URIToLabelMapEntry'. From 'graph_Label', the role 'graph_Label55' has cardinality 0..*, and from 'graph_URIToLabelMapEntry', the role 'graph_URIToLabelMapEntry54' has cardinality 0..*.
+An association connects 'graph_URIToNodeLabelMapEntry' and 'graph_NodeLabel'. From 'graph_URIToNodeLabelMapEntry', the role 'graph_URIToNodeLabelMapEntry57' has cardinality 0..*, and from 'graph_NodeLabel', the role 'graph_NodeLabel' has cardinality 0..*.

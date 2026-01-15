@@ -1,0 +1,12 @@
+The domain model 'PetriNets' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'PetriNets_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNets_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNets_Place' represents an important domain concept.
+It does not declare any attributes.

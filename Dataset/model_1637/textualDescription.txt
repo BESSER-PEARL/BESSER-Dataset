@@ -1,0 +1,232 @@
+The domain model 'cpntools' describes the core structural elements and their relationships within the system.
+
+The model defines 49 main class(es).
+
+'cpntools_DiagramElement' represents an important domain concept.
+It has the following attributes: 'fillColour', which is of type str; 'posx', which is of type int; 'fillPattern', which is of type str; 'lineType', which is of type str; 'lineThick', which is of type int; 'lineColour', which is of type str; 'posy', which is of type int; 'fillFilled', which is of type bool.
+
+'cpntools_ColorSet' represents an important domain concept.
+It has the following attributes: 'colorSetType', which is of type str; 'declare', which is of type str; 'timed', which is of type bool; 'idname', which is of type str.
+
+'cpntools_AuxEllipse' represents an important domain concept.
+It has the following attributes: 'width', which is of type int; 'height', which is of type int.
+
+'cpntools_Globbox' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cpntools_Globref' represents an important domain concept.
+It has one attribute: 'idname', which is of type str.
+
+'cpntools_Block' represents an important domain concept.
+It has one attribute: 'idname', which is of type str.
+
+'cpntools_TransTime' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'cpntools_AuxBox' represents an important domain concept.
+It has the following attributes: 'width', which is of type int; 'height', which is of type int.
+
+'cpntools_CompoundColorSet' represents an important domain concept.
+It does not declare any attributes.
+
+'cpntools_Time' represents an important domain concept.
+It does not declare any attributes.
+
+'cpntools_String' represents an important domain concept.
+It has the following attributes: 'with', which is of type str; 'and', which is of type str.
+
+'cpntools_Group' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cpntools_Index' represents an important domain concept.
+It has one attribute: 'with', which is of type str.
+
+'cpntools_Port' represents an important domain concept.
+It has one attribute: 'portType', which is of type str.
+
+'cpntools_TransCond' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'SimpleColorSet' represents an important domain concept.
+It does not declare any attributes.
+
+'cpntools_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cpntools_Product' represents an important domain concept.
+It does not declare any attributes.
+
+'cpntools_Unit' represents an important domain concept.
+It has one attribute: 'with', which is of type str.
+
+'cpntools_Record' represents an important domain concept.
+It does not declare any attributes.
+
+'cpntools_Alias' represents an important domain concept.
+It does not declare any attributes.
+
+'cpntools_SimpleColorSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Auxiliary' represents an important domain concept.
+It does not declare any attributes.
+
+'cpntools_LargeInteger' represents an important domain concept.
+It has one attribute: 'with', which is of type str.
+
+'cpntools_Auxiliary' represents an important domain concept.
+It does not declare any attributes.
+
+'cpntools_Page' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cpntools_Integer' represents an important domain concept.
+It has one attribute: 'with', which is of type str.
+
+'DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cpntools_TransPriority' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'cpntools_Fusion' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cpntools_Place' represents an important domain concept.
+It has the following attributes: 'height', which is of type int; 'width', which is of type int; 'text', which is of type str.
+
+'cpntools_Boolean' represents an important domain concept.
+It has one attribute: 'with', which is of type str.
+
+'ColorSet' represents an important domain concept.
+It does not declare any attributes.
+
+'cpntools_Var' represents an important domain concept.
+It has one attribute: 'idname', which is of type str.
+
+'cpntools_Annot' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'cpntools_Enumerated' represents an important domain concept.
+It has one attribute: 'with', which is of type str.
+
+'cpntools_Union' represents an important domain concept.
+It does not declare any attributes.
+
+'cpntools_Trans' represents an important domain concept.
+It has the following attributes: 'width', which is of type int; 'height', which is of type int; 'text', which is of type str; 'explicit', which is of type bool.
+
+'cpntools_Arc' represents an important domain concept.
+It has the following attributes: 'order', which is of type int; 'orientation', which is of type str; 'currentcyckle', which is of type str; 'headsize', which is of type float.
+
+'CompoundColorSet' represents an important domain concept.
+It does not declare any attributes.
+
+'cpntools_Cpnet' represents an important domain concept.
+It does not declare any attributes.
+
+'cpntools_Subset' represents an important domain concept.
+It does not declare any attributes.
+
+'cpntools_Initmark' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'cpntools_AuxText' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'cpntools_Real' represents an important domain concept.
+It has one attribute: 'with', which is of type str.
+
+'cpntools_Binder' represents an important domain concept.
+It has the following attributes: 'posy', which is of type int; 'width', which is of type int; 'height', which is of type int; 'posx', which is of type int.
+
+'cpntools_Ml' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'cpntools_List' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Orientation' defines the following possible values: 'PtoT', 'undefined', 'TtoP', 'Inhibitor'.
+The enumeration 'Colour16' defines the following possible values: 'Blue', 'Red', 'Black', 'Teal', 'Olive', 'Yellow', 'Purple', 'Lime', 'Gray', 'Green', 'Maroon', 'Fuchsia', 'White', 'Aqua', 'Navy', 'Silver'.
+
+The model also captures inheritance relationships between classes.
+The class 'cpntools_Place' is a specialization of 'DiagramElement'.
+The class 'cpntools_ColorSet' is a specialization of 'Declaration'.
+The class 'cpntools_Initmark' is a specialization of 'DiagramElement'.
+The class 'cpntools_Port' is a specialization of 'DiagramElement'.
+The class 'cpntools_Auxiliary' is a specialization of 'DiagramElement'.
+The class 'cpntools_Var' is a specialization of 'Declaration'.
+The class 'cpntools_Globref' is a specialization of 'Declaration'.
+The class 'cpntools_Ml' is a specialization of 'Declaration'.
+The class 'cpntools_Block' is a specialization of 'Declaration'.
+The class 'cpntools_AuxText' is a specialization of 'Auxiliary'.
+The class 'cpntools_Arc' is a specialization of 'DiagramElement'.
+The class 'cpntools_Trans' is a specialization of 'DiagramElement'.
+The class 'cpntools_TransCond' is a specialization of 'DiagramElement'.
+The class 'cpntools_TransPriority' is a specialization of 'DiagramElement'.
+The class 'cpntools_TransTime' is a specialization of 'DiagramElement'.
+The class 'cpntools_Annot' is a specialization of 'DiagramElement'.
+The class 'cpntools_AuxEllipse' is a specialization of 'Auxiliary'.
+The class 'cpntools_AuxBox' is a specialization of 'Auxiliary'.
+The class 'cpntools_SimpleColorSet' is a specialization of 'ColorSet'.
+The class 'cpntools_CompoundColorSet' is a specialization of 'ColorSet'.
+The class 'cpntools_Unit' is a specialization of 'SimpleColorSet'.
+The class 'cpntools_Boolean' is a specialization of 'SimpleColorSet'.
+The class 'cpntools_Integer' is a specialization of 'SimpleColorSet'.
+The class 'cpntools_LargeInteger' is a specialization of 'SimpleColorSet'.
+The class 'cpntools_Real' is a specialization of 'SimpleColorSet'.
+The class 'cpntools_Time' is a specialization of 'SimpleColorSet'.
+The class 'cpntools_String' is a specialization of 'SimpleColorSet'.
+The class 'cpntools_Enumerated' is a specialization of 'SimpleColorSet'.
+The class 'cpntools_Index' is a specialization of 'SimpleColorSet'.
+The class 'cpntools_Product' is a specialization of 'CompoundColorSet'.
+The class 'cpntools_Record' is a specialization of 'CompoundColorSet'.
+The class 'cpntools_List' is a specialization of 'CompoundColorSet'.
+The class 'cpntools_Union' is a specialization of 'CompoundColorSet'.
+The class 'cpntools_Subset' is a specialization of 'CompoundColorSet'.
+The class 'cpntools_Alias' is a specialization of 'CompoundColorSet'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cpntools_Cpnet' and 'cpntools_Fusion'. From 'cpntools_Cpnet', the role 'cpnet' has cardinality 0..*, and from 'cpntools_Fusion', the role 'Fusion' has cardinality 0..*.
+An association connects 'cpntools_Globbox' and 'cpntools_Cpnet'. From 'cpntools_Globbox', the role 'Globbox' has cardinality 0..*, and from 'cpntools_Cpnet', the role 'cpnet2' has cardinality 0..*.
+An association connects 'cpntools_Binder' and 'cpntools_Cpnet'. From 'cpntools_Binder', the role 'Binder' has cardinality 0..*, and from 'cpntools_Cpnet', the role 'cpnet4' has cardinality 0..*.
+An association connects 'cpntools_Group' and 'cpntools_Page'. From 'cpntools_Group', the role 'Group' has cardinality 0..*, and from 'cpntools_Page', the role 'page' has cardinality 0..*.
+An association connects 'cpntools_Page' and 'cpntools_Place'. From 'cpntools_Page', the role 'page7' has cardinality 0..*, and from 'cpntools_Place', the role 'Place' has cardinality 0..*.
+An association connects 'cpntools_Auxiliary' and 'cpntools_Page'. From 'cpntools_Auxiliary', the role 'Auxiliary' has cardinality 0..*, and from 'cpntools_Page', the role 'page9' has cardinality 0..*.
+An association connects 'cpntools_Trans' and 'cpntools_Page'. From 'cpntools_Trans', the role 'Trans' has cardinality 0..*, and from 'cpntools_Page', the role 'page11' has cardinality 0..*.
+An association connects 'cpntools_Arc' and 'cpntools_Page'. From 'cpntools_Arc', the role 'Arc' has cardinality 0..*, and from 'cpntools_Page', the role 'page13' has cardinality 0..*.
+An association connects 'cpntools_Page' and 'cpntools_Binder'. From 'cpntools_Page', the role 'pages' has cardinality 0..*, and from 'cpntools_Binder', the role 'Binder15' has cardinality 0..*.
+An association connects 'cpntools_Group' and 'cpntools_DiagramElement'. From 'cpntools_Group', the role 'group' has cardinality 0..*, and from 'cpntools_DiagramElement', the role 'DiagramElement' has cardinality 0..*.
+An association connects 'cpntools_Page' and 'cpntools_Group'. From 'cpntools_Page', the role 'Page' has cardinality 0..*, and from 'cpntools_Group', the role 'group18' has cardinality 0..*.
+An association connects 'cpntools_DiagramElement' and 'cpntools_Group'. From 'cpntools_DiagramElement', the role 'groupElms' has cardinality 0..*, and from 'cpntools_Group', the role 'Group20' has cardinality 0..*.
+An association connects 'cpntools_Place' and 'cpntools_ColorSet'. From 'cpntools_Place', the role 'cpntools_Place' has cardinality 0..*, and from 'cpntools_ColorSet', the role 'cpntools_ColorSet' has cardinality 0..*.
+An association connects 'cpntools_Place' and 'cpntools_Initmark'. From 'cpntools_Place', the role 'cpntools_Place23' has cardinality 0..*, and from 'cpntools_Initmark', the role 'cpntools_Initmark' has cardinality 0..*.
+An association connects 'cpntools_Place' and 'cpntools_Port'. From 'cpntools_Place', the role 'cpntools_Place25' has cardinality 0..*, and from 'cpntools_Port', the role 'cpntools_Port' has cardinality 0..*.
+An association connects 'cpntools_Place' and 'cpntools_Fusion'. From 'cpntools_Place', the role 'places' has cardinality 0..*, and from 'cpntools_Fusion', the role 'Fusion27' has cardinality 0..*.
+An association connects 'cpntools_Place' and 'cpntools_Page'. From 'cpntools_Place', the role 'places29' has cardinality 0..*, and from 'cpntools_Page', the role 'Page30' has cardinality 0..*.
+An association connects 'cpntools_Arc' and 'cpntools_Place'. From 'cpntools_Arc', the role 'Arc32' has cardinality 0..*, and from 'cpntools_Place', the role 'place' has cardinality 0..*.
+An association connects 'cpntools_Globbox' and 'cpntools_Declaration'. From 'cpntools_Globbox', the role 'Globbox34' has cardinality 0..*, and from 'cpntools_Declaration', the role 'declarations' has cardinality 0..*.
+An association connects 'cpntools_Declaration' and 'cpntools_Block'. From 'cpntools_Declaration', the role 'declarations36' has cardinality 0..*, and from 'cpntools_Block', the role 'Block' has cardinality 0..*.
+An association connects 'cpntools_Place' and 'cpntools_Fusion'. From 'cpntools_Place', the role 'Place38' has cardinality 0..*, and from 'cpntools_Fusion', the role 'fusion' has cardinality 0..*.
+An association connects 'cpntools_Cpnet' and 'cpntools_Fusion'. From 'cpntools_Cpnet', the role 'Cpnet' has cardinality 0..*, and from 'cpntools_Fusion', the role 'fusions' has cardinality 0..*.
+An association connects 'cpntools_Page' and 'cpntools_Auxiliary'. From 'cpntools_Page', the role 'Page41' has cardinality 0..*, and from 'cpntools_Auxiliary', the role 'auxiliarys' has cardinality 0..*.
+An association connects 'cpntools_Cpnet' and 'cpntools_Globbox'. From 'cpntools_Cpnet', the role 'Cpnet43' has cardinality 0..*, and from 'cpntools_Globbox', the role 'globbox' has cardinality 0..*.
+An association connects 'cpntools_Declaration' and 'cpntools_Globbox'. From 'cpntools_Declaration', the role 'Declaration' has cardinality 0..*, and from 'cpntools_Globbox', the role 'globbox45' has cardinality 0..*.
+An association connects 'cpntools_ColorSet' and 'cpntools_Var'. From 'cpntools_ColorSet', the role 'cpntools_ColorSet47' has cardinality 0..*, and from 'cpntools_Var', the role 'cpntools_Var' has cardinality 0..*.
+An association connects 'cpntools_Block' and 'cpntools_Declaration'. From 'cpntools_Block', the role 'block' has cardinality 0..*, and from 'cpntools_Declaration', the role 'Declaration49' has cardinality 0..*.
+An association connects 'cpntools_Place' and 'cpntools_Arc'. From 'cpntools_Place', the role 'Place51' has cardinality 0..*, and from 'cpntools_Arc', the role 'arcs' has cardinality 0..*.
+An association connects 'cpntools_Arc' and 'cpntools_Trans'. From 'cpntools_Arc', the role 'arcs53' has cardinality 0..*, and from 'cpntools_Trans', the role 'Trans54' has cardinality 0..*.
+An association connects 'cpntools_Arc' and 'cpntools_Annot'. From 'cpntools_Arc', the role 'cpntools_Arc' has cardinality 0..*, and from 'cpntools_Annot', the role 'cpntools_Annot' has cardinality 0..*.
+An association connects 'cpntools_Page' and 'cpntools_Arc'. From 'cpntools_Page', the role 'Page58' has cardinality 0..*, and from 'cpntools_Arc', the role 'arcs57' has cardinality 0..*.
+An association connects 'cpntools_TransCond' and 'cpntools_Trans'. From 'cpntools_TransCond', the role 'cpntools_TransCond' has cardinality 0..*, and from 'cpntools_Trans', the role 'cpntools_Trans' has cardinality 0..*.
+An association connects 'cpntools_Trans' and 'cpntools_Page'. From 'cpntools_Trans', the role 'transs' has cardinality 0..*, and from 'cpntools_Page', the role 'Page61' has cardinality 0..*.
+An association connects 'cpntools_Trans' and 'cpntools_Arc'. From 'cpntools_Trans', the role 'trans' has cardinality 0..*, and from 'cpntools_Arc', the role 'Arc63' has cardinality 0..*.
+An association connects 'cpntools_Trans' and 'cpntools_TransPriority'. From 'cpntools_Trans', the role 'cpntools_Trans65' has cardinality 0..*, and from 'cpntools_TransPriority', the role 'cpntools_TransPriority' has cardinality 0..*.
+An association connects 'cpntools_Trans' and 'cpntools_TransTime'. From 'cpntools_Trans', the role 'cpntools_Trans67' has cardinality 0..*, and from 'cpntools_TransTime', the role 'cpntools_TransTime' has cardinality 0..*.
+An association connects 'cpntools_CompoundColorSet' and 'cpntools_SimpleColorSet'. From 'cpntools_CompoundColorSet', the role 'cpntools_CompoundColorSet' has cardinality 0..*, and from 'cpntools_SimpleColorSet', the role 'cpntools_SimpleColorSet' has cardinality 0..*.
+An association connects 'cpntools_Binder' and 'cpntools_Cpnet'. From 'cpntools_Binder', the role 'binder' has cardinality 0..*, and from 'cpntools_Cpnet', the role 'Cpnet70' has cardinality 0..*.
+An association connects 'cpntools_Page' and 'cpntools_Binder'. From 'cpntools_Page', the role 'Page73' has cardinality 0..*, and from 'cpntools_Binder', the role 'binder72' has cardinality 0..*.

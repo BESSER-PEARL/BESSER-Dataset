@@ -1,0 +1,36 @@
+The domain model 'petri' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'petri_Transition' represents an important domain concept.
+It has one attribute: 'token', which is of type int.
+
+'petri_EdgeToPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'petri_Place' represents an important domain concept.
+It has one attribute: 'token', which is of type int.
+
+'petri_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'petri_Edge' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'petri_EdgeToTransition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'petri_EdgeToPlace' is a specialization of 'Edge'.
+The class 'petri_EdgeToTransition' is a specialization of 'Edge'.
+
+Relationships between classes are modeled using associations.
+An association connects 'petri_PetriNet' and 'petri_Transition'. From 'petri_PetriNet', the role 'petri_PetriNet' has cardinality 0..*, and from 'petri_Transition', the role 'petri_Transition' has cardinality 0..*.
+An association connects 'petri_Place' and 'petri_PetriNet'. From 'petri_Place', the role 'petri_Place' has cardinality 0..*, and from 'petri_PetriNet', the role 'petri_PetriNet2' has cardinality 0..*.
+An association connects 'petri_Place' and 'petri_EdgeToTransition'. From 'petri_Place', the role 'petri_Place4' has cardinality 0..*, and from 'petri_EdgeToTransition', the role 'petri_EdgeToTransition' has cardinality 0..*.
+An association connects 'petri_EdgeToPlace' and 'petri_Transition'. From 'petri_EdgeToPlace', the role 'petri_EdgeToPlace' has cardinality 0..*, and from 'petri_Transition', the role 'petri_Transition6' has cardinality 0..*.
+An association connects 'petri_EdgeToPlace' and 'petri_Place'. From 'petri_EdgeToPlace', the role 'petri_EdgeToPlace8' has cardinality 0..*, and from 'petri_Place', the role 'petri_Place9' has cardinality 0..*.
+An association connects 'petri_EdgeToTransition' and 'petri_Transition'. From 'petri_EdgeToTransition', the role 'petri_EdgeToTransition11' has cardinality 0..*, and from 'petri_Transition', the role 'petri_Transition12' has cardinality 0..*.

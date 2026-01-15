@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/patrickneubauer/XMLIntellEdit/use-cases/AME_2016/XMLTextFramework/library3.ecore

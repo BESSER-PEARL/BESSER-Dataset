@@ -1,0 +1,44 @@
+The domain model 'graphmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'graphmodel_ModellingType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'graphmodel_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'graphmodel_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'graphmodel_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'graphmodel_Entity' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'y', which is of type str; 'ID', which is of type str; 'accessModifier', which is of type str; 'x', which is of type str; 'width', which is of type str; 'className', which is of type str; 'name', which is of type str; 'height', which is of type str; 'group', which is of type str; 'category', which is of type str; 'type', which is of type str; 'text', which is of type str; 'description', which is of type str.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'graphmodel_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'graphmodel_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'graphmodel_Graph' is a specialization of 'Entity'.
+The class 'graphmodel_Node' is a specialization of 'Entity'.
+The class 'graphmodel_Property' is a specialization of 'Entity'.
+The class 'graphmodel_Operation' is a specialization of 'Entity'.
+The class 'graphmodel_Edge' is a specialization of 'Entity'.
+
+Relationships between classes are modeled using associations.
+An association connects 'graphmodel_Node' and 'graphmodel_Graph'. From 'graphmodel_Node', the role 'graphmodel_Node' has cardinality 0..*, and from 'graphmodel_Graph', the role 'graphmodel_Graph' has cardinality 0..*.
+An association connects 'graphmodel_Graph' and 'graphmodel_Edge'. From 'graphmodel_Graph', the role 'graphmodel_Graph2' has cardinality 0..*, and from 'graphmodel_Edge', the role 'graphmodel_Edge' has cardinality 0..*.
+An association connects 'graphmodel_Node' and 'graphmodel_Node'. From 'graphmodel_Node', the role 'graphmodel_Node3' has cardinality 0..*, and from 'graphmodel_Node', the role 'graphmodel_Node5' has cardinality 0..*.
+An association connects 'graphmodel_Node' and 'graphmodel_Node'. From 'graphmodel_Node', the role 'graphmodel_Node6' has cardinality 0..*, and from 'graphmodel_Node', the role 'graphmodel_Node8' has cardinality 0..*.
+An association connects 'graphmodel_Property' and 'graphmodel_Node'. From 'graphmodel_Property', the role 'graphmodel_Property' has cardinality 0..*, and from 'graphmodel_Node', the role 'graphmodel_Node10' has cardinality 0..*.
+An association connects 'graphmodel_Node' and 'graphmodel_Operation'. From 'graphmodel_Node', the role 'graphmodel_Node12' has cardinality 0..*, and from 'graphmodel_Operation', the role 'graphmodel_Operation' has cardinality 0..*.
+An association connects 'graphmodel_Node' and 'graphmodel_Edge'. From 'graphmodel_Node', the role 'graphmodel_Node15' has cardinality 0..*, and from 'graphmodel_Edge', the role 'graphmodel_Edge14' has cardinality 0..*.
+An association connects 'graphmodel_Node' and 'graphmodel_Edge'. From 'graphmodel_Node', the role 'graphmodel_Node18' has cardinality 0..*, and from 'graphmodel_Edge', the role 'graphmodel_Edge17' has cardinality 0..*.

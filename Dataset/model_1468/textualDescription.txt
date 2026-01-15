@@ -1,0 +1,13 @@
+The domain model 'graph3' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'graph3_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'graph3_Node' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'graph3_Node' and 'graph3_Node'. From 'graph3_Node', the role 'graph3_Node' has cardinality 0..*, and from 'graph3_Node', the role 'graph3_Node0' has cardinality 0..*.
+An association connects 'graph3_Graph' and 'graph3_Node'. From 'graph3_Graph', the role 'graph3_Graph' has cardinality 0..*, and from 'graph3_Node', the role 'graph3_Node3' has cardinality 0..*.

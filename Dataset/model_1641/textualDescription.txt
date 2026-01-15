@@ -1,0 +1,27 @@
+The domain model 'kwcs' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'kwcs_TopCS' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'kwcs_BinCS' represents an important domain concept.
+It does not declare any attributes.
+
+'kwcs_TreeCS' represents an important domain concept.
+It does not declare any attributes.
+
+'kwcs_LeafCS' represents an important domain concept.
+It has one attribute: 'val', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'kwcs_BinCS' is a specialization of 'TreeCS'.
+The class 'kwcs_LeafCS' is a specialization of 'TreeCS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'kwcs_TreeCS' and 'kwcs_TopCS'. From 'kwcs_TreeCS', the role 'kwcs_TreeCS' has cardinality 0..*, and from 'kwcs_TopCS', the role 'kwcs_TopCS' has cardinality 0..*.
+An association connects 'kwcs_TreeCS' and 'kwcs_BinCS'. From 'kwcs_TreeCS', the role 'kwcs_TreeCS2' has cardinality 0..*, and from 'kwcs_BinCS', the role 'kwcs_BinCS' has cardinality 0..*.
+An association connects 'kwcs_TreeCS' and 'kwcs_BinCS'. From 'kwcs_TreeCS', the role 'kwcs_TreeCS5' has cardinality 0..*, and from 'kwcs_BinCS', the role 'kwcs_BinCS4' has cardinality 0..*.

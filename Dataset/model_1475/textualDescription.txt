@@ -1,0 +1,22 @@
+The domain model 'mgraph' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'mgraph_MNode' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mgraph_MGraph' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mgraph_MEdge' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'mgraph_MNode' and 'mgraph_MGraph'. From 'mgraph_MNode', the role 'MNode' has cardinality 0..*, and from 'mgraph_MGraph', the role 'graph' has cardinality 0..*.
+An association connects 'mgraph_MEdge' and 'mgraph_MGraph'. From 'mgraph_MEdge', the role 'MEdge' has cardinality 0..*, and from 'mgraph_MGraph', the role 'graph2' has cardinality 0..*.
+An association connects 'mgraph_MEdge' and 'mgraph_MNode'. From 'mgraph_MEdge', the role 'to' has cardinality 0..*, and from 'mgraph_MNode', the role 'MNode4' has cardinality 0..*.
+An association connects 'mgraph_MNode' and 'mgraph_MEdge'. From 'mgraph_MNode', the role 'MNode6' has cardinality 0..*, and from 'mgraph_MEdge', the role 'from' has cardinality 0..*.
+An association connects 'mgraph_MGraph' and 'mgraph_MEdge'. From 'mgraph_MGraph', the role 'MGraph' has cardinality 0..*, and from 'mgraph_MEdge', the role 'edges' has cardinality 0..*.
+An association connects 'mgraph_MNode' and 'mgraph_MGraph'. From 'mgraph_MNode', the role 'nodes' has cardinality 0..*, and from 'mgraph_MGraph', the role 'MGraph9' has cardinality 0..*.
+An association connects 'mgraph_MEdge' and 'mgraph_MNode'. From 'mgraph_MEdge', the role 'MEdge11' has cardinality 0..*, and from 'mgraph_MNode', the role 'outGoing' has cardinality 0..*.
+An association connects 'mgraph_MEdge' and 'mgraph_MNode'. From 'mgraph_MEdge', the role 'MEdge13' has cardinality 0..*, and from 'mgraph_MNode', the role 'inComing' has cardinality 0..*.

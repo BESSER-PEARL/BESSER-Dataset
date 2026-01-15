@@ -1,0 +1,26 @@
+The domain model 'PetriNetSim' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNetSim_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNetSim_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'PetriNetSim_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Place' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'PetriNetSim_PetriNet' is a specialization of 'PetriNet'.
+The class 'PetriNetSim_Place' is a specialization of 'Place'.
+The class 'PetriNetSim_Transition' is a specialization of 'Transition'.

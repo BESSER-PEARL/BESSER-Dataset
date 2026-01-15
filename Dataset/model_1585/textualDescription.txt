@@ -1,0 +1,37 @@
+The domain model 'petrinet' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Petrinet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinet_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'petrinet_Transition' is a specialization of 'Node'.
+The class 'petrinet_Place' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'petrinet_Petrinet' and 'petrinet_Node'. From 'petrinet_Petrinet', the role 'petrinet_Petrinet' has cardinality 0..*, and from 'petrinet_Node', the role 'petrinet_Node' has cardinality 0..*.
+An association connects 'petrinet_Arc' and 'petrinet_Petrinet'. From 'petrinet_Arc', the role 'petrinet_Arc' has cardinality 0..*, and from 'petrinet_Petrinet', the role 'petrinet_Petrinet2' has cardinality 0..*.
+An association connects 'petrinet_Arc' and 'petrinet_Node'. From 'petrinet_Arc', the role 'Arc' has cardinality 0..*, and from 'petrinet_Node', the role 'target' has cardinality 0..*.
+An association connects 'petrinet_Arc' and 'petrinet_Node'. From 'petrinet_Arc', the role 'Arc5' has cardinality 0..*, and from 'petrinet_Node', the role 'source' has cardinality 0..*.
+An association connects 'petrinet_Arc' and 'petrinet_Node'. From 'petrinet_Arc', the role 'out' has cardinality 0..*, and from 'petrinet_Node', the role 'Node' has cardinality 0..*.
+An association connects 'petrinet_Node' and 'petrinet_Arc'. From 'petrinet_Node', the role 'Node8' has cardinality 0..*, and from 'petrinet_Arc', the role 'in' has cardinality 0..*.
+An association connects 'petrinet_Place' and 'petrinet_Token'. From 'petrinet_Place', the role 'petrinet_Place' has cardinality 0..*, and from 'petrinet_Token', the role 'petrinet_Token' has cardinality 0..*.

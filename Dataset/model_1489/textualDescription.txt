@@ -1,0 +1,45 @@
+The domain model 'extendedPetriNets' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'GenericPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'extendedPetriNets_PetriNet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'extendedPetriNets_OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'extendedPetriNets_OutputArc' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'extendedPetriNets_GenericPlace' represents an important domain concept.
+It has the following attributes: 'numberOfTokens', which is of type int; 'capacity', which is of type int; 'name', which is of type str.
+
+'extendedPetriNets_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'extendedPetriNets_Transition' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'name', which is of type str.
+
+'extendedPetriNets_InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'extendedPetriNets_InputArc' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'extendedPetriNets_OutputPort' is a specialization of 'GenericPlace'.
+The class 'extendedPetriNets_InputPort' is a specialization of 'GenericPlace'.
+The class 'extendedPetriNets_Place' is a specialization of 'GenericPlace'.
+
+Relationships between classes are modeled using associations.
+An association connects 'extendedPetriNets_GenericPlace' and 'extendedPetriNets_PetriNet'. From 'extendedPetriNets_GenericPlace', the role 'extendedPetriNets_GenericPlace' has cardinality 0..*, and from 'extendedPetriNets_PetriNet', the role 'extendedPetriNets_PetriNet' has cardinality 0..*.
+An association connects 'extendedPetriNets_PetriNet' and 'extendedPetriNets_Transition'. From 'extendedPetriNets_PetriNet', the role 'extendedPetriNets_PetriNet2' has cardinality 0..*, and from 'extendedPetriNets_Transition', the role 'extendedPetriNets_Transition' has cardinality 0..*.
+An association connects 'extendedPetriNets_PetriNet' and 'extendedPetriNets_InputArc'. From 'extendedPetriNets_PetriNet', the role 'extendedPetriNets_PetriNet4' has cardinality 0..*, and from 'extendedPetriNets_InputArc', the role 'extendedPetriNets_InputArc' has cardinality 0..*.
+An association connects 'extendedPetriNets_OutputArc' and 'extendedPetriNets_PetriNet'. From 'extendedPetriNets_OutputArc', the role 'extendedPetriNets_OutputArc' has cardinality 0..*, and from 'extendedPetriNets_PetriNet', the role 'extendedPetriNets_PetriNet6' has cardinality 0..*.
+An association connects 'extendedPetriNets_Transition' and 'extendedPetriNets_InputArc'. From 'extendedPetriNets_Transition', the role 'extendedPetriNets_Transition9' has cardinality 0..*, and from 'extendedPetriNets_InputArc', the role 'extendedPetriNets_InputArc8' has cardinality 0..*.
+An association connects 'extendedPetriNets_InputArc' and 'extendedPetriNets_GenericPlace'. From 'extendedPetriNets_InputArc', the role 'extendedPetriNets_InputArc11' has cardinality 0..*, and from 'extendedPetriNets_GenericPlace', the role 'extendedPetriNets_GenericPlace12' has cardinality 0..*.
+An association connects 'extendedPetriNets_Transition' and 'extendedPetriNets_OutputArc'. From 'extendedPetriNets_Transition', the role 'extendedPetriNets_Transition15' has cardinality 0..*, and from 'extendedPetriNets_OutputArc', the role 'extendedPetriNets_OutputArc14' has cardinality 0..*.
+An association connects 'extendedPetriNets_GenericPlace' and 'extendedPetriNets_OutputArc'. From 'extendedPetriNets_GenericPlace', the role 'extendedPetriNets_GenericPlace18' has cardinality 0..*, and from 'extendedPetriNets_OutputArc', the role 'extendedPetriNets_OutputArc17' has cardinality 0..*.

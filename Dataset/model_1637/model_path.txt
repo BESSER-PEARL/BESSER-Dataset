@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/abelgomez/cpntools.toolkit/plugins/io.github.abelgomez.cpntools/model/cpntools.ecore

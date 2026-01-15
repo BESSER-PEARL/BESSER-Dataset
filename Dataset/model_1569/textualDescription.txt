@@ -1,0 +1,18 @@
+The domain model 'graphdom' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'graphdom_Graph' represents an important domain concept.
+It has one attribute: 'graphName', which is of type str.
+
+'graphdom_Edge' represents an important domain concept.
+It has the following attributes: 'marked', which is of type bool; 'weight', which is of type int; 'guid', which is of type str.
+
+'graphdom_Node' represents an important domain concept.
+It has the following attributes: 'dominated', which is of type bool; 'grade', which is of type str; 'nodeName', which is of type str; 'dominating', which is of type bool; 'xCoord', which is of type int; 'guid', which is of type str; 'yCoord', which is of type int; 'color', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'graphdom_Node' and 'graphdom_Graph'. From 'graphdom_Node', the role 'graphdom_Node' has cardinality 0..*, and from 'graphdom_Graph', the role 'graphdom_Graph' has cardinality 0..*.
+An association connects 'graphdom_Graph' and 'graphdom_Edge'. From 'graphdom_Graph', the role 'graphdom_Graph2' has cardinality 0..*, and from 'graphdom_Edge', the role 'graphdom_Edge' has cardinality 0..*.
+An association connects 'graphdom_Edge' and 'graphdom_Node'. From 'graphdom_Edge', the role 'Edge' has cardinality 0..*, and from 'graphdom_Node', the role 'connectedNodes' has cardinality 0..*.
+An association connects 'graphdom_Edge' and 'graphdom_Node'. From 'graphdom_Edge', the role 'connectedEdges' has cardinality 0..*, and from 'graphdom_Node', the role 'Node' has cardinality 0..*.

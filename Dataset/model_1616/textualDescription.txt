@@ -1,0 +1,215 @@
+The domain model 'ptnet' describes the core structural elements and their relationships within the system.
+
+The model defines 39 main class(es).
+
+'ptnet_PTArcAnnotation' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'ptnet_AnyObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_Fill' represents an important domain concept.
+It has the following attributes: 'image', which is of type str; 'color', which is of type str; 'gradientrotation', which is of type str; 'gradientcolor', which is of type str.
+
+'ptnet_Dimension' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_Name' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'ptnet_Font' represents an important domain concept.
+It has the following attributes: 'align', which is of type str; 'family', which is of type str; 'weight', which is of type str; 'size', which is of type str; 'decoration', which is of type str; 'rotation', which is of type str; 'style', which is of type str.
+
+'ptnet_RefPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_TransitionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_PetriNet' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'type', which is of type str.
+
+'ptnet_AnnotationGraphics' represents an important domain concept.
+It does not declare any attributes.
+
+'PnObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_PnObject' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'ptnet_RefTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'Graphics' represents an important domain concept.
+It does not declare any attributes.
+
+'Coordinate' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_Coordinate' represents an important domain concept.
+It has the following attributes: 'y', which is of type str; 'x', which is of type str.
+
+'ptnet_Offset' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_ToolInfo' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'formattedXMLBuffer', which is of type str; 'tool', which is of type str; 'toolInfoGrammarURI', which is of type str.
+
+'ptnet_Position' represents an important domain concept.
+It does not declare any attributes.
+
+'Label' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_ArcGraphics' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'TransitionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_PTMarking' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'ptnet_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_PetriNetDoc' represents an important domain concept.
+It has one attribute: 'xmlns', which is of type str.
+
+'ptnet_Line' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'style', which is of type str; 'width', which is of type str; 'shape', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_Graphics' represents an important domain concept.
+It does not declare any attributes.
+
+'Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_NodeGraphics' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'PlaceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_PlaceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'ptnet_Page' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'LineShape' defines the following possible values: 'LINE', 'CURVE'.
+The enumeration 'CSS2FontFamily' defines the following possible values: 'ARIAL', 'TREBUCHET', 'TIMES', 'VERDANA', 'GEORGIA'.
+The enumeration 'PNType' defines the following possible values: 'HLPN', 'PTNET', 'COREMODEL', 'SYMNET'.
+The enumeration 'CSS2FontWeight' defines the following possible values: 'LIGHTER', 'BOLD', 'NORMAL', 'BOLDER'.
+The enumeration 'Gradient' defines the following possible values: 'VERTICAL', 'HORIZONTAL', 'DIAGONAL'.
+The enumeration 'FontAlign' defines the following possible values: 'RIGHT', 'LEFT', 'CENTER'.
+The enumeration 'CSS2Color' defines the following possible values: 'MAROON', 'BLACK', 'BLUE', 'WHITE', 'ORANGE', 'SILVER', 'YELLOW', 'OLIVE', 'GRAY', 'LIME', 'NAVY', 'PURPLE', 'RED', 'TEAL', 'GREEN', 'FUCHSIA', 'AQUA'.
+The enumeration 'CSS2FontStyle' defines the following possible values: 'OBLIQUE', 'ITALIC', 'NORMAL'.
+The enumeration 'LineStyle' defines the following possible values: 'SOLID', 'DOT', 'DASH'.
+The enumeration 'FontDecoration' defines the following possible values: 'OVERLINE', 'LINETHROUGH', 'UNDERLINE'.
+The enumeration 'CSS2FontSize' defines the following possible values: 'LARGE', 'XLARGE', 'MEDIUM', 'XXSMALL', 'XXLARGE', 'XSMALL', 'SMALL'.
+
+The model also captures inheritance relationships between classes.
+The class 'ptnet_PTMarking' is a specialization of 'Annotation'.
+The class 'ptnet_PTArcAnnotation' is a specialization of 'Annotation'.
+The class 'ptnet_Page' is a specialization of 'PnObject'.
+The class 'ptnet_Name' is a specialization of 'Annotation'.
+The class 'ptnet_NodeGraphics' is a specialization of 'Graphics'.
+The class 'ptnet_Position' is a specialization of 'Coordinate'.
+The class 'ptnet_Offset' is a specialization of 'Coordinate'.
+The class 'ptnet_Dimension' is a specialization of 'Coordinate'.
+The class 'ptnet_AnnotationGraphics' is a specialization of 'Graphics'.
+The class 'ptnet_ArcGraphics' is a specialization of 'Graphics'.
+The class 'ptnet_Arc' is a specialization of 'PnObject'.
+The class 'ptnet_Node' is a specialization of 'PnObject'.
+The class 'ptnet_PlaceNode' is a specialization of 'Node'.
+The class 'ptnet_TransitionNode' is a specialization of 'Node'.
+The class 'ptnet_Place' is a specialization of 'PlaceNode'.
+The class 'ptnet_RefTransition' is a specialization of 'TransitionNode'.
+The class 'ptnet_Transition' is a specialization of 'TransitionNode'.
+The class 'ptnet_RefPlace' is a specialization of 'PlaceNode'.
+The class 'ptnet_Attribute' is a specialization of 'Label'.
+The class 'ptnet_Annotation' is a specialization of 'Label'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ptnet_Place' and 'ptnet_PTMarking'. From 'ptnet_Place', the role 'Place' has cardinality 0..*, and from 'ptnet_PTMarking', the role 'initialMarking' has cardinality 0..*.
+An association connects 'ptnet_PTArcAnnotation' and 'ptnet_Arc'. From 'ptnet_PTArcAnnotation', the role 'inscription' has cardinality 0..*, and from 'ptnet_Arc', the role 'Arc' has cardinality 0..*.
+An association connects 'ptnet_PetriNetDoc' and 'ptnet_PetriNet'. From 'ptnet_PetriNetDoc', the role 'containerPetriNetDoc' has cardinality 0..*, and from 'ptnet_PetriNet', the role 'PetriNet' has cardinality 0..*.
+An association connects 'ptnet_PetriNet' and 'ptnet_Page'. From 'ptnet_PetriNet', the role 'containerPetriNet' has cardinality 0..*, and from 'ptnet_Page', the role 'Page' has cardinality 0..*.
+An association connects 'ptnet_Name' and 'ptnet_PetriNet'. From 'ptnet_Name', the role 'Name' has cardinality 0..*, and from 'ptnet_PetriNet', the role 'containerNamePetriNet' has cardinality 0..*.
+An association connects 'ptnet_PetriNet' and 'ptnet_ToolInfo'. From 'ptnet_PetriNet', the role 'containerPetriNet6' has cardinality 0..*, and from 'ptnet_ToolInfo', the role 'ToolInfo' has cardinality 0..*.
+An association connects 'ptnet_PetriNet' and 'ptnet_PetriNetDoc'. From 'ptnet_PetriNet', the role 'nets' has cardinality 0..*, and from 'ptnet_PetriNetDoc', the role 'PetriNetDoc' has cardinality 0..*.
+An association connects 'ptnet_PnObject' and 'ptnet_Page'. From 'ptnet_PnObject', the role 'PnObject' has cardinality 0..*, and from 'ptnet_Page', the role 'containerPage' has cardinality 0..*.
+An association connects 'ptnet_PetriNet' and 'ptnet_Page'. From 'ptnet_PetriNet', the role 'PetriNet10' has cardinality 0..*, and from 'ptnet_Page', the role 'pages' has cardinality 0..*.
+An association connects 'ptnet_NodeGraphics' and 'ptnet_Page'. From 'ptnet_NodeGraphics', the role 'NodeGraphics' has cardinality 0..*, and from 'ptnet_Page', the role 'containerPage12' has cardinality 0..*.
+An association connects 'ptnet_Name' and 'ptnet_PnObject'. From 'ptnet_Name', the role 'Name14' has cardinality 0..*, and from 'ptnet_PnObject', the role 'containerNamePnObject' has cardinality 0..*.
+An association connects 'ptnet_PnObject' and 'ptnet_ToolInfo'. From 'ptnet_PnObject', the role 'containerPnObject' has cardinality 0..*, and from 'ptnet_ToolInfo', the role 'ToolInfo16' has cardinality 0..*.
+An association connects 'ptnet_PnObject' and 'ptnet_Page'. From 'ptnet_PnObject', the role 'objects' has cardinality 0..*, and from 'ptnet_Page', the role 'Page18' has cardinality 0..*.
+An association connects 'ptnet_Name' and 'ptnet_PetriNet'. From 'ptnet_Name', the role 'name' has cardinality 0..*, and from 'ptnet_PetriNet', the role 'PetriNet20' has cardinality 0..*.
+An association connects 'ptnet_PnObject' and 'ptnet_Name'. From 'ptnet_PnObject', the role 'PnObject23' has cardinality 0..*, and from 'ptnet_Name', the role 'name22' has cardinality 0..*.
+An association connects 'ptnet_PetriNet' and 'ptnet_ToolInfo'. From 'ptnet_PetriNet', the role 'PetriNet25' has cardinality 0..*, and from 'ptnet_ToolInfo', the role 'toolspecifics' has cardinality 0..*.
+An association connects 'ptnet_ToolInfo' and 'ptnet_PnObject'. From 'ptnet_ToolInfo', the role 'toolspecifics27' has cardinality 0..*, and from 'ptnet_PnObject', the role 'PnObject28' has cardinality 0..*.
+An association connects 'ptnet_Label' and 'ptnet_ToolInfo'. From 'ptnet_Label', the role 'Label' has cardinality 0..*, and from 'ptnet_ToolInfo', the role 'toolspecifics30' has cardinality 0..*.
+An association connects 'ptnet_AnyObject' and 'ptnet_ToolInfo'. From 'ptnet_AnyObject', the role 'AnyObject' has cardinality 0..*, and from 'ptnet_ToolInfo', the role 'containerToolInfo' has cardinality 0..*.
+An association connects 'ptnet_ToolInfo' and 'ptnet_Label'. From 'ptnet_ToolInfo', the role 'ToolInfo33' has cardinality 0..*, and from 'ptnet_Label', the role 'containerLabel' has cardinality 0..*.
+An association connects 'ptnet_Position' and 'ptnet_NodeGraphics'. From 'ptnet_Position', the role 'Position' has cardinality 0..*, and from 'ptnet_NodeGraphics', the role 'containerPNodeGraphics' has cardinality 0..*.
+An association connects 'ptnet_NodeGraphics' and 'ptnet_Dimension'. From 'ptnet_NodeGraphics', the role 'containerDNodeGraphics' has cardinality 0..*, and from 'ptnet_Dimension', the role 'Dimension' has cardinality 0..*.
+An association connects 'ptnet_Fill' and 'ptnet_NodeGraphics'. From 'ptnet_Fill', the role 'Fill' has cardinality 0..*, and from 'ptnet_NodeGraphics', the role 'containerNodeGraphics' has cardinality 0..*.
+An association connects 'ptnet_Line' and 'ptnet_NodeGraphics'. From 'ptnet_Line', the role 'Line' has cardinality 0..*, and from 'ptnet_NodeGraphics', the role 'containerNodeGraphics38' has cardinality 0..*.
+An association connects 'ptnet_NodeGraphics' and 'ptnet_Node'. From 'ptnet_NodeGraphics', the role 'nodegraphics' has cardinality 0..*, and from 'ptnet_Node', the role 'Node' has cardinality 0..*.
+An association connects 'ptnet_NodeGraphics' and 'ptnet_Page'. From 'ptnet_NodeGraphics', the role 'nodegraphics41' has cardinality 0..*, and from 'ptnet_Page', the role 'Page42' has cardinality 0..*.
+An association connects 'ptnet_Position' and 'ptnet_ArcGraphics'. From 'ptnet_Position', the role 'positions' has cardinality 0..*, and from 'ptnet_ArcGraphics', the role 'ArcGraphics' has cardinality 0..*.
+An association connects 'ptnet_Position' and 'ptnet_NodeGraphics'. From 'ptnet_Position', the role 'position' has cardinality 0..*, and from 'ptnet_NodeGraphics', the role 'NodeGraphics45' has cardinality 0..*.
+An association connects 'ptnet_Offset' and 'ptnet_AnnotationGraphics'. From 'ptnet_Offset', the role 'offset' has cardinality 0..*, and from 'ptnet_AnnotationGraphics', the role 'AnnotationGraphics' has cardinality 0..*.
+An association connects 'ptnet_NodeGraphics' and 'ptnet_Dimension'. From 'ptnet_NodeGraphics', the role 'NodeGraphics48' has cardinality 0..*, and from 'ptnet_Dimension', the role 'dimension' has cardinality 0..*.
+An association connects 'ptnet_AnnotationGraphics' and 'ptnet_Offset'. From 'ptnet_AnnotationGraphics', the role 'containerAnnotationGraphics' has cardinality 0..*, and from 'ptnet_Offset', the role 'Offset' has cardinality 0..*.
+An association connects 'ptnet_AnnotationGraphics' and 'ptnet_Fill'. From 'ptnet_AnnotationGraphics', the role 'containerAnnotationGraphics51' has cardinality 0..*, and from 'ptnet_Fill', the role 'Fill52' has cardinality 0..*.
+An association connects 'ptnet_Line' and 'ptnet_AnnotationGraphics'. From 'ptnet_Line', the role 'Line55' has cardinality 0..*, and from 'ptnet_AnnotationGraphics', the role 'containerAnnotationGraphics54' has cardinality 0..*.
+An association connects 'ptnet_Font' and 'ptnet_AnnotationGraphics'. From 'ptnet_Font', the role 'Font' has cardinality 0..*, and from 'ptnet_AnnotationGraphics', the role 'containerAnnotationGraphics57' has cardinality 0..*.
+An association connects 'ptnet_AnnotationGraphics' and 'ptnet_Annotation'. From 'ptnet_AnnotationGraphics', the role 'annotationgraphics' has cardinality 0..*, and from 'ptnet_Annotation', the role 'Annotation' has cardinality 0..*.
+An association connects 'ptnet_NodeGraphics' and 'ptnet_Fill'. From 'ptnet_NodeGraphics', the role 'NodeGraphics60' has cardinality 0..*, and from 'ptnet_Fill', the role 'fill' has cardinality 0..*.
+An association connects 'ptnet_Fill' and 'ptnet_AnnotationGraphics'. From 'ptnet_Fill', the role 'fill62' has cardinality 0..*, and from 'ptnet_AnnotationGraphics', the role 'AnnotationGraphics63' has cardinality 0..*.
+An association connects 'ptnet_Line' and 'ptnet_NodeGraphics'. From 'ptnet_Line', the role 'line' has cardinality 0..*, and from 'ptnet_NodeGraphics', the role 'NodeGraphics65' has cardinality 0..*.
+An association connects 'ptnet_ArcGraphics' and 'ptnet_Line'. From 'ptnet_ArcGraphics', the role 'ArcGraphics68' has cardinality 0..*, and from 'ptnet_Line', the role 'line67' has cardinality 0..*.
+An association connects 'ptnet_Line' and 'ptnet_AnnotationGraphics'. From 'ptnet_Line', the role 'line70' has cardinality 0..*, and from 'ptnet_AnnotationGraphics', the role 'AnnotationGraphics71' has cardinality 0..*.
+An association connects 'ptnet_ArcGraphics' and 'ptnet_Position'. From 'ptnet_ArcGraphics', the role 'containerArcGraphics' has cardinality 0..*, and from 'ptnet_Position', the role 'Position73' has cardinality 0..*.
+An association connects 'ptnet_Line' and 'ptnet_ArcGraphics'. From 'ptnet_Line', the role 'Line76' has cardinality 0..*, and from 'ptnet_ArcGraphics', the role 'containerArcGraphics75' has cardinality 0..*.
+An association connects 'ptnet_ArcGraphics' and 'ptnet_Arc'. From 'ptnet_ArcGraphics', the role 'arcgraphics' has cardinality 0..*, and from 'ptnet_Arc', the role 'Arc78' has cardinality 0..*.
+An association connects 'ptnet_Arc' and 'ptnet_Node'. From 'ptnet_Arc', the role 'OutArcs' has cardinality 0..*, and from 'ptnet_Node', the role 'Node80' has cardinality 0..*.
+An association connects 'ptnet_Arc' and 'ptnet_Node'. From 'ptnet_Arc', the role 'InArcs' has cardinality 0..*, and from 'ptnet_Node', the role 'Node82' has cardinality 0..*.
+An association connects 'ptnet_Arc' and 'ptnet_ArcGraphics'. From 'ptnet_Arc', the role 'containerArc' has cardinality 0..*, and from 'ptnet_ArcGraphics', the role 'ArcGraphics84' has cardinality 0..*.
+An association connects 'ptnet_PTArcAnnotation' and 'ptnet_Arc'. From 'ptnet_PTArcAnnotation', the role 'PTArcAnnotation' has cardinality 0..*, and from 'ptnet_Arc', the role 'containerArc86' has cardinality 0..*.
+An association connects 'ptnet_Node' and 'ptnet_Arc'. From 'ptnet_Node', the role 'target' has cardinality 0..*, and from 'ptnet_Arc', the role 'Arc88' has cardinality 0..*.
+An association connects 'ptnet_Arc' and 'ptnet_Node'. From 'ptnet_Arc', the role 'Arc90' has cardinality 0..*, and from 'ptnet_Node', the role 'source' has cardinality 0..*.
+An association connects 'ptnet_NodeGraphics' and 'ptnet_Node'. From 'ptnet_NodeGraphics', the role 'NodeGraphics92' has cardinality 0..*, and from 'ptnet_Node', the role 'containerNode' has cardinality 0..*.
+An association connects 'ptnet_Font' and 'ptnet_AnnotationGraphics'. From 'ptnet_Font', the role 'font' has cardinality 0..*, and from 'ptnet_AnnotationGraphics', the role 'AnnotationGraphics94' has cardinality 0..*.
+An association connects 'ptnet_PlaceNode' and 'ptnet_RefPlace'. From 'ptnet_PlaceNode', the role 'ref' has cardinality 0..*, and from 'ptnet_RefPlace', the role 'RefPlace' has cardinality 0..*.
+An association connects 'ptnet_RefTransition' and 'ptnet_TransitionNode'. From 'ptnet_RefTransition', the role 'RefTransition' has cardinality 0..*, and from 'ptnet_TransitionNode', the role 'ref97' has cardinality 0..*.
+An association connects 'ptnet_PTMarking' and 'ptnet_Place'. From 'ptnet_PTMarking', the role 'PTMarking' has cardinality 0..*, and from 'ptnet_Place', the role 'containerPlace' has cardinality 0..*.
+An association connects 'ptnet_RefTransition' and 'ptnet_TransitionNode'. From 'ptnet_RefTransition', the role 'referencingTransitions' has cardinality 0..*, and from 'ptnet_TransitionNode', the role 'TransitionNode' has cardinality 0..*.
+An association connects 'ptnet_PlaceNode' and 'ptnet_RefPlace'. From 'ptnet_PlaceNode', the role 'PlaceNode' has cardinality 0..*, and from 'ptnet_RefPlace', the role 'referencingPlaces' has cardinality 0..*.
+An association connects 'ptnet_Annotation' and 'ptnet_AnnotationGraphics'. From 'ptnet_Annotation', the role 'containerAnnotation' has cardinality 0..*, and from 'ptnet_AnnotationGraphics', the role 'AnnotationGraphics102' has cardinality 0..*.
+An association connects 'ptnet_ToolInfo' and 'ptnet_AnyObject'. From 'ptnet_ToolInfo', the role 'ToolInfo104' has cardinality 0..*, and from 'ptnet_AnyObject', the role 'toolInfoModel' has cardinality 0..*.

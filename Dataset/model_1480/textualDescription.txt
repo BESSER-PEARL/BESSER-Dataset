@@ -1,0 +1,172 @@
+The domain model 'graphpattern' describes the core structural elements and their relationships within the system.
+
+The model defines 34 main class(es).
+
+'graphpattern_Stereotype' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'graphpattern_EObjectList' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'graphpattern_ParameterBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_ValueBinding' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'graphpattern_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_Resource' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_DependencyNode' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_DependencyEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_Matching' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_GraphPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_NodePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'PatternElement' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_EdgePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_Bundle' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_Extendable' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_Profile' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str; 'id', which is of type str.
+
+'graphpattern_DependencyGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'Extendable' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_ObjectBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_AttributePattern' represents an important domain concept.
+It has the following attributes: 'variables', which is of type str; 'value', which is of type str; 'constant', which is of type str.
+
+'graphpattern_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_SubGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'graphpattern_PatternElement' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'graphpattern_GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'graphpattern_GraphPattern' is a specialization of 'PatternElement'.
+The class 'graphpattern_NodePattern' is a specialization of 'GraphElement'.
+The class 'graphpattern_EdgePattern' is a specialization of 'GraphElement'.
+The class 'graphpattern_AttributePattern' is a specialization of 'GraphElement'.
+The class 'graphpattern_Bundle' is a specialization of 'Pattern'.
+The class 'graphpattern_Pattern' is a specialization of 'PatternElement'.
+The class 'graphpattern_PatternElement' is a specialization of 'Extendable'.
+The class 'graphpattern_Parameter' is a specialization of 'PatternElement'.
+The class 'graphpattern_Association' is a specialization of 'PatternElement'.
+The class 'graphpattern_ObjectBinding' is a specialization of 'ParameterBinding'.
+The class 'graphpattern_ValueBinding' is a specialization of 'ParameterBinding'.
+The class 'graphpattern_SubGraph' is a specialization of 'PatternElement'.
+The class 'graphpattern_GraphElement' is a specialization of 'PatternElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'graphpattern_GraphPattern' and 'graphpattern_NodePattern'. From 'graphpattern_GraphPattern', the role 'graphpattern_GraphPattern' has cardinality 0..*, and from 'graphpattern_NodePattern', the role 'graphpattern_NodePattern' has cardinality 0..*.
+An association connects 'graphpattern_Pattern' and 'graphpattern_GraphPattern'. From 'graphpattern_Pattern', the role 'Pattern' has cardinality 0..*, and from 'graphpattern_GraphPattern', the role 'graphs' has cardinality 0..*.
+An association connects 'graphpattern_DependencyGraph' and 'graphpattern_GraphPattern'. From 'graphpattern_DependencyGraph', the role 'DependencyGraph' has cardinality 0..*, and from 'graphpattern_GraphPattern', the role 'graph' has cardinality 0..*.
+An association connects 'graphpattern_GraphPattern' and 'graphpattern_SubGraph'. From 'graphpattern_GraphPattern', the role 'graphpattern_GraphPattern4' has cardinality 0..*, and from 'graphpattern_SubGraph', the role 'graphpattern_SubGraph' has cardinality 0..*.
+An association connects 'graphpattern_NodePattern' and 'graphpattern_EdgePattern'. From 'graphpattern_NodePattern', the role 'source' has cardinality 0..*, and from 'graphpattern_EdgePattern', the role 'EdgePattern' has cardinality 0..*.
+An association connects 'graphpattern_NodePattern' and 'graphpattern_EClass'. From 'graphpattern_NodePattern', the role 'graphpattern_NodePattern7' has cardinality 0..*, and from 'graphpattern_EClass', the role 'graphpattern_EClass' has cardinality 0..*.
+An association connects 'graphpattern_AttributePattern' and 'graphpattern_NodePattern'. From 'graphpattern_AttributePattern', the role 'AttributePattern' has cardinality 0..*, and from 'graphpattern_NodePattern', the role 'node' has cardinality 0..*.
+An association connects 'graphpattern_Matching' and 'graphpattern_NodePattern'. From 'graphpattern_Matching', the role 'Matching' has cardinality 0..*, and from 'graphpattern_NodePattern', the role 'node10' has cardinality 0..*.
+An association connects 'graphpattern_NodePattern' and 'graphpattern_EdgePattern'. From 'graphpattern_NodePattern', the role 'target' has cardinality 0..*, and from 'graphpattern_EdgePattern', the role 'EdgePattern12' has cardinality 0..*.
+An association connects 'graphpattern_Association' and 'graphpattern_NodePattern'. From 'graphpattern_Association', the role 'Association' has cardinality 0..*, and from 'graphpattern_NodePattern', the role 'source14' has cardinality 0..*.
+An association connects 'graphpattern_NodePattern' and 'graphpattern_EdgePattern'. From 'graphpattern_NodePattern', the role 'NodePattern' has cardinality 0..*, and from 'graphpattern_EdgePattern', the role 'incomings' has cardinality 0..*.
+An association connects 'graphpattern_EdgePattern' and 'graphpattern_NodePattern'. From 'graphpattern_EdgePattern', the role 'outgoings' has cardinality 0..*, and from 'graphpattern_NodePattern', the role 'NodePattern17' has cardinality 0..*.
+An association connects 'graphpattern_EdgePattern' and 'graphpattern_EdgePattern'. From 'graphpattern_EdgePattern', the role 'graphpattern_EdgePattern18' has cardinality 0..*, and from 'graphpattern_EdgePattern', the role 'graphpattern_EdgePattern' has cardinality 0..*.
+An association connects 'graphpattern_EReference' and 'graphpattern_EdgePattern'. From 'graphpattern_EReference', the role 'graphpattern_EReference' has cardinality 0..*, and from 'graphpattern_EdgePattern', the role 'graphpattern_EdgePattern21' has cardinality 0..*.
+An association connects 'graphpattern_AttributePattern' and 'graphpattern_EAttribute'. From 'graphpattern_AttributePattern', the role 'graphpattern_AttributePattern' has cardinality 0..*, and from 'graphpattern_EAttribute', the role 'graphpattern_EAttribute' has cardinality 0..*.
+An association connects 'graphpattern_NodePattern' and 'graphpattern_AttributePattern'. From 'graphpattern_NodePattern', the role 'NodePattern24' has cardinality 0..*, and from 'graphpattern_AttributePattern', the role 'attributes' has cardinality 0..*.
+An association connects 'graphpattern_EObject' and 'graphpattern_Matching'. From 'graphpattern_EObject', the role 'graphpattern_EObject' has cardinality 0..*, and from 'graphpattern_Matching', the role 'graphpattern_Matching' has cardinality 0..*.
+An association connects 'graphpattern_Matching' and 'graphpattern_NodePattern'. From 'graphpattern_Matching', the role 'matching' has cardinality 0..*, and from 'graphpattern_NodePattern', the role 'NodePattern27' has cardinality 0..*.
+An association connects 'graphpattern_Profile' and 'graphpattern_Bundle'. From 'graphpattern_Profile', the role 'graphpattern_Profile' has cardinality 0..*, and from 'graphpattern_Bundle', the role 'graphpattern_Bundle' has cardinality 0..*.
+An association connects 'graphpattern_Bundle' and 'graphpattern_EPackage'. From 'graphpattern_Bundle', the role 'graphpattern_Bundle30' has cardinality 0..*, and from 'graphpattern_EPackage', the role 'graphpattern_EPackage' has cardinality 0..*.
+An association connects 'graphpattern_Pattern' and 'graphpattern_GraphPattern'. From 'graphpattern_Pattern', the role 'pattern' has cardinality 0..*, and from 'graphpattern_GraphPattern', the role 'GraphPattern' has cardinality 0..*.
+An association connects 'graphpattern_Parameter' and 'graphpattern_Pattern'. From 'graphpattern_Parameter', the role 'Parameter' has cardinality 0..*, and from 'graphpattern_Pattern', the role 'pattern33' has cardinality 0..*.
+An association connects 'graphpattern_Assignment' and 'graphpattern_Pattern'. From 'graphpattern_Assignment', the role 'Assignment' has cardinality 0..*, and from 'graphpattern_Pattern', the role 'pattern35' has cardinality 0..*.
+An association connects 'graphpattern_Pattern' and 'graphpattern_Bundle'. From 'graphpattern_Pattern', the role 'graphpattern_Pattern' has cardinality 0..*, and from 'graphpattern_Bundle', the role 'graphpattern_Bundle37' has cardinality 0..*.
+An association connects 'graphpattern_Pattern' and 'graphpattern_Pattern'. From 'graphpattern_Pattern', the role 'graphpattern_Pattern40' has cardinality 0..*, and from 'graphpattern_Pattern', the role 'graphpattern_Pattern38' has cardinality 0..*.
+An association connects 'graphpattern_Pattern' and 'graphpattern_Parameter'. From 'graphpattern_Pattern', the role 'Pattern42' has cardinality 0..*, and from 'graphpattern_Parameter', the role 'parameters' has cardinality 0..*.
+An association connects 'graphpattern_EObject' and 'graphpattern_EObjectList'. From 'graphpattern_EObject', the role 'graphpattern_EObject44' has cardinality 0..*, and from 'graphpattern_EObjectList', the role 'graphpattern_EObjectList' has cardinality 0..*.
+An association connects 'graphpattern_DependencyGraph' and 'graphpattern_DependencyNode'. From 'graphpattern_DependencyGraph', the role 'graphpattern_DependencyGraph' has cardinality 0..*, and from 'graphpattern_DependencyNode', the role 'graphpattern_DependencyNode' has cardinality 0..*.
+An association connects 'graphpattern_GraphPattern' and 'graphpattern_DependencyGraph'. From 'graphpattern_GraphPattern', the role 'GraphPattern47' has cardinality 0..*, and from 'graphpattern_DependencyGraph', the role 'dependencyGraph' has cardinality 0..*.
+An association connects 'graphpattern_DependencyNode' and 'graphpattern_DependencyGraph'. From 'graphpattern_DependencyNode', the role 'graphpattern_DependencyNode50' has cardinality 0..*, and from 'graphpattern_DependencyGraph', the role 'graphpattern_DependencyGraph49' has cardinality 0..*.
+An association connects 'graphpattern_DependencyGraph' and 'graphpattern_DependencyEdge'. From 'graphpattern_DependencyGraph', the role 'graphpattern_DependencyGraph52' has cardinality 0..*, and from 'graphpattern_DependencyEdge', the role 'graphpattern_DependencyEdge' has cardinality 0..*.
+An association connects 'graphpattern_DependencyEdge' and 'graphpattern_DependencyNode'. From 'graphpattern_DependencyEdge', the role 'DependencyEdge' has cardinality 0..*, and from 'graphpattern_DependencyNode', the role 'source54' has cardinality 0..*.
+An association connects 'graphpattern_DependencyNode' and 'graphpattern_DependencyEdge'. From 'graphpattern_DependencyNode', the role 'target56' has cardinality 0..*, and from 'graphpattern_DependencyEdge', the role 'DependencyEdge57' has cardinality 0..*.
+An association connects 'graphpattern_NodePattern' and 'graphpattern_DependencyNode'. From 'graphpattern_NodePattern', the role 'graphpattern_NodePattern60' has cardinality 0..*, and from 'graphpattern_DependencyNode', the role 'graphpattern_DependencyNode59' has cardinality 0..*.
+An association connects 'graphpattern_DependencyNode' and 'graphpattern_DependencyEdge'. From 'graphpattern_DependencyNode', the role 'DependencyNode' has cardinality 0..*, and from 'graphpattern_DependencyEdge', the role 'outgoings62' has cardinality 0..*.
+An association connects 'graphpattern_DependencyNode' and 'graphpattern_DependencyEdge'. From 'graphpattern_DependencyNode', the role 'DependencyNode65' has cardinality 0..*, and from 'graphpattern_DependencyEdge', the role 'incomings64' has cardinality 0..*.
+An association connects 'graphpattern_NodePattern' and 'graphpattern_Association'. From 'graphpattern_NodePattern', the role 'NodePattern67' has cardinality 0..*, and from 'graphpattern_Association', the role 'associations' has cardinality 0..*.
+An association connects 'graphpattern_Association' and 'graphpattern_GraphElement'. From 'graphpattern_Association', the role 'graphpattern_Association' has cardinality 0..*, and from 'graphpattern_GraphElement', the role 'graphpattern_GraphElement' has cardinality 0..*.
+An association connects 'graphpattern_Profile' and 'graphpattern_Stereotype'. From 'graphpattern_Profile', the role 'Profile' has cardinality 0..*, and from 'graphpattern_Stereotype', the role 'stereotypes' has cardinality 0..*.
+An association connects 'graphpattern_ParameterBinding' and 'graphpattern_Parameter'. From 'graphpattern_ParameterBinding', the role 'graphpattern_ParameterBinding' has cardinality 0..*, and from 'graphpattern_Parameter', the role 'graphpattern_Parameter' has cardinality 0..*.
+An association connects 'graphpattern_ParameterBinding' and 'graphpattern_Assignment'. From 'graphpattern_ParameterBinding', the role 'graphpattern_ParameterBinding72' has cardinality 0..*, and from 'graphpattern_Assignment', the role 'graphpattern_Assignment' has cardinality 0..*.
+An association connects 'graphpattern_Assignment' and 'graphpattern_Pattern'. From 'graphpattern_Assignment', the role 'assignments' has cardinality 0..*, and from 'graphpattern_Pattern', the role 'Pattern74' has cardinality 0..*.
+An association connects 'graphpattern_ObjectBinding' and 'graphpattern_EObject'. From 'graphpattern_ObjectBinding', the role 'graphpattern_ObjectBinding' has cardinality 0..*, and from 'graphpattern_EObject', the role 'graphpattern_EObject76' has cardinality 0..*.
+An association connects 'graphpattern_SubGraph' and 'graphpattern_GraphElement'. From 'graphpattern_SubGraph', the role 'subgraphs' has cardinality 0..*, and from 'graphpattern_GraphElement', the role 'GraphElement' has cardinality 0..*.
+An association connects 'graphpattern_SubGraph' and 'graphpattern_SubGraph'. From 'graphpattern_SubGraph', the role 'graphpattern_SubGraph80' has cardinality 0..*, and from 'graphpattern_SubGraph', the role 'graphpattern_SubGraph78' has cardinality 0..*.
+An association connects 'graphpattern_SubGraph' and 'graphpattern_GraphElement'. From 'graphpattern_SubGraph', the role 'SubGraph' has cardinality 0..*, and from 'graphpattern_GraphElement', the role 'elements' has cardinality 0..*.
+An association connects 'graphpattern_GraphPattern' and 'graphpattern_GraphElement'. From 'graphpattern_GraphPattern', the role 'graphpattern_GraphPattern84' has cardinality 0..*, and from 'graphpattern_GraphElement', the role 'graphpattern_GraphElement83' has cardinality 0..*.
+An association connects 'graphpattern_Stereotype' and 'graphpattern_Profile'. From 'graphpattern_Stereotype', the role 'Stereotype' has cardinality 0..*, and from 'graphpattern_Profile', the role 'profile' has cardinality 0..*.
+An association connects 'graphpattern_EObject' and 'graphpattern_Resource'. From 'graphpattern_EObject', the role 'graphpattern_EObject87' has cardinality 0..*, and from 'graphpattern_Resource', the role 'graphpattern_Resource' has cardinality 0..*.
+An association connects 'graphpattern_Extendable' and 'graphpattern_Stereotype'. From 'graphpattern_Extendable', the role 'graphpattern_Extendable' has cardinality 0..*, and from 'graphpattern_Stereotype', the role 'graphpattern_Stereotype' has cardinality 0..*.

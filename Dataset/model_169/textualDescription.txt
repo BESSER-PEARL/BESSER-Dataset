@@ -1,0 +1,193 @@
+The domain model 'trace' describes the core structural elements and their relationships within the system.
+
+The model defines 45 main class(es).
+
+'Events_trace_GlobalState' represents an important domain concept.
+It does not declare any attributes.
+
+'Place_tokens_State' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_EventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Net' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_Net_mainExitEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_Net_runExitEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'States_trace_GlobalState' represents an important domain concept.
+It does not declare any attributes.
+
+'Place_addTokenEntryEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'EventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'TracedObjects' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition_fireExitEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Traced_TracedObjects' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_Events' represents an important domain concept.
+It does not declare any attributes.
+
+'Events_trace_Net' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_Place_addTokenExitEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_Transition_isEnabledExitEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'Events_trace_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_Net_mainEntryEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'Place_removeTokenEntryEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_Transition_isEnabledEntryEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_Place_addTokenEntryEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_Place_removeTokenEntryEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_States_Place_tokens_State' represents an important domain concept.
+It has one attribute: 'tokens', which is of type int.
+
+'trace_StaticObjectsPools' represents an important domain concept.
+It does not declare any attributes.
+
+'Place_addTokenExitEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition_isEnabledExitEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'Events_trace_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_Transition_fireEntryEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_Transition_fireExitEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'Net_mainExitEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_Net_runEntryEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_TracedPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Events_Place_removeTokenExitEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'Place_removeTokenExitEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_trace_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition_isEnabledEntryEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_GlobalState' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition_fireEntryEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Net_runExitEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'Net_mainEntryEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'Net_runEntryEventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'Events' represents an important domain concept.
+It does not declare any attributes.
+
+'trace_petrinet_TracedPlace' represents an important domain concept.
+It has the following attributes: 'initialTokens', which is of type int; 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'trace_Events_Net_mainEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+The class 'trace_Events_Net_mainExitEventOccurrence' is a specialization of 'EventOccurrence'.
+The class 'trace_Events_Net_runEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+The class 'trace_Events_Net_runExitEventOccurrence' is a specialization of 'EventOccurrence'.
+The class 'trace_Events_Place_addTokenEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+The class 'trace_Events_Place_addTokenExitEventOccurrence' is a specialization of 'EventOccurrence'.
+The class 'trace_Events_Place_removeTokenEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+The class 'trace_Events_Place_removeTokenExitEventOccurrence' is a specialization of 'EventOccurrence'.
+The class 'trace_Events_Transition_isEnabledEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+The class 'trace_Events_Transition_isEnabledExitEventOccurrence' is a specialization of 'EventOccurrence'.
+The class 'trace_Events_Transition_fireEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+The class 'trace_Events_Transition_fireExitEventOccurrence' is a specialization of 'EventOccurrence'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trace_GlobalState' and 'trace_Trace'. From 'trace_GlobalState', the role 'trace_GlobalState' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace' has cardinality 0..*.
+An association connects 'trace_Trace' and 'Events'. From 'trace_Trace', the role 'trace_Trace2' has cardinality 0..*, and from 'Events', the role 'Events' has cardinality 0..*.
+An association connects 'trace_Trace' and 'TracedObjects'. From 'trace_Trace', the role 'trace_Trace4' has cardinality 0..*, and from 'TracedObjects', the role 'TracedObjects' has cardinality 0..*.
+An association connects 'trace_StaticObjectsPools' and 'trace_Trace'. From 'trace_StaticObjectsPools', the role 'trace_StaticObjectsPools' has cardinality 0..*, and from 'trace_Trace', the role 'trace_Trace6' has cardinality 0..*.
+An association connects 'EventOccurrence' and 'trace_GlobalState'. From 'EventOccurrence', the role 'Events8' has cardinality 0..*, and from 'trace_GlobalState', the role 'EventOccurrence' has cardinality 0..*.
+An association connects 'Place_tokens_State' and 'trace_GlobalState'. From 'Place_tokens_State', the role 'States' has cardinality 0..*, and from 'trace_GlobalState', the role 'Place_tokens_State' has cardinality 0..*.
+An association connects 'trace_StaticObjectsPools' and 'trace_Transition'. From 'trace_StaticObjectsPools', the role 'trace_StaticObjectsPools11' has cardinality 0..*, and from 'trace_Transition', the role 'trace_Transition' has cardinality 0..*.
+An association connects 'trace_StaticObjectsPools' and 'trace_Net'. From 'trace_StaticObjectsPools', the role 'trace_StaticObjectsPools13' has cardinality 0..*, and from 'trace_Net', the role 'trace_Net' has cardinality 0..*.
+An association connects 'trace_Events_EventOccurrence' and 'Events_trace_GlobalState'. From 'trace_Events_EventOccurrence', the role 'eventsTriggeredDuringState' has cardinality 0..*, and from 'Events_trace_GlobalState', the role 'GlobalState' has cardinality 0..*.
+An association connects 'trace_Events_Events' and 'Net_mainEntryEventOccurrence'. From 'trace_Events_Events', the role 'trace_Events_Events' has cardinality 0..*, and from 'Net_mainEntryEventOccurrence', the role 'Net_mainEntryEventOccurrence' has cardinality 0..*.
+An association connects 'Net_mainExitEventOccurrence' and 'trace_Events_Events'. From 'Net_mainExitEventOccurrence', the role 'Net_mainExitEventOccurrence' has cardinality 0..*, and from 'trace_Events_Events', the role 'trace_Events_Events17' has cardinality 0..*.
+An association connects 'Net_runEntryEventOccurrence' and 'trace_Events_Events'. From 'Net_runEntryEventOccurrence', the role 'Net_runEntryEventOccurrence' has cardinality 0..*, and from 'trace_Events_Events', the role 'trace_Events_Events19' has cardinality 0..*.
+An association connects 'Net_runExitEventOccurrence' and 'trace_Events_Events'. From 'Net_runExitEventOccurrence', the role 'Net_runExitEventOccurrence' has cardinality 0..*, and from 'trace_Events_Events', the role 'trace_Events_Events21' has cardinality 0..*.
+An association connects 'trace_Events_Events' and 'Place_addTokenEntryEventOccurrence'. From 'trace_Events_Events', the role 'trace_Events_Events23' has cardinality 0..*, and from 'Place_addTokenEntryEventOccurrence', the role 'Place_addTokenEntryEventOccurrence' has cardinality 0..*.
+An association connects 'Place_addTokenExitEventOccurrence' and 'trace_Events_Events'. From 'Place_addTokenExitEventOccurrence', the role 'Place_addTokenExitEventOccurrence' has cardinality 0..*, and from 'trace_Events_Events', the role 'trace_Events_Events25' has cardinality 0..*.
+An association connects 'trace_Events_Events' and 'Place_removeTokenEntryEventOccurrence'. From 'trace_Events_Events', the role 'trace_Events_Events27' has cardinality 0..*, and from 'Place_removeTokenEntryEventOccurrence', the role 'Place_removeTokenEntryEventOccurrence' has cardinality 0..*.
+An association connects 'Place_removeTokenExitEventOccurrence' and 'trace_Events_Events'. From 'Place_removeTokenExitEventOccurrence', the role 'Place_removeTokenExitEventOccurrence' has cardinality 0..*, and from 'trace_Events_Events', the role 'trace_Events_Events29' has cardinality 0..*.
+An association connects 'Transition_isEnabledEntryEventOccurrence' and 'trace_Events_Events'. From 'Transition_isEnabledEntryEventOccurrence', the role 'Transition_isEnabledEntryEventOccurrence' has cardinality 0..*, and from 'trace_Events_Events', the role 'trace_Events_Events31' has cardinality 0..*.
+An association connects 'trace_Events_Events' and 'Transition_isEnabledExitEventOccurrence'. From 'trace_Events_Events', the role 'trace_Events_Events33' has cardinality 0..*, and from 'Transition_isEnabledExitEventOccurrence', the role 'Transition_isEnabledExitEventOccurrence' has cardinality 0..*.
+An association connects 'Transition_fireEntryEventOccurrence' and 'trace_Events_Events'. From 'Transition_fireEntryEventOccurrence', the role 'Transition_fireEntryEventOccurrence' has cardinality 0..*, and from 'trace_Events_Events', the role 'trace_Events_Events35' has cardinality 0..*.
+An association connects 'trace_Events_Events' and 'Transition_fireExitEventOccurrence'. From 'trace_Events_Events', the role 'trace_Events_Events37' has cardinality 0..*, and from 'Transition_fireExitEventOccurrence', the role 'Transition_fireExitEventOccurrence' has cardinality 0..*.
+An association connects 'trace_Events_Net_mainEntryEventOccurrence' and 'Events_trace_Net'. From 'trace_Events_Net_mainEntryEventOccurrence', the role 'trace_Events_Net_mainEntryEventOccurrence' has cardinality 0..*, and from 'Events_trace_Net', the role 'Events_trace_Net' has cardinality 0..*.
+An association connects 'Net_mainEntryEventOccurrence' and 'trace_Events_Net_mainExitEventOccurrence'. From 'Net_mainEntryEventOccurrence', the role 'Net_mainEntryEventOccurrence40' has cardinality 0..*, and from 'trace_Events_Net_mainExitEventOccurrence', the role 'trace_Events_Net_mainExitEventOccurrence' has cardinality 0..*.
+An association connects 'Events_trace_Net' and 'trace_Events_Net_runEntryEventOccurrence'. From 'Events_trace_Net', the role 'Events_trace_Net42' has cardinality 0..*, and from 'trace_Events_Net_runEntryEventOccurrence', the role 'trace_Events_Net_runEntryEventOccurrence' has cardinality 0..*.
+An association connects 'trace_Events_Net_runExitEventOccurrence' and 'Net_runEntryEventOccurrence'. From 'trace_Events_Net_runExitEventOccurrence', the role 'trace_Events_Net_runExitEventOccurrence' has cardinality 0..*, and from 'Net_runEntryEventOccurrence', the role 'Net_runEntryEventOccurrence44' has cardinality 0..*.
+An association connects 'petrinet_TracedPlace' and 'trace_Events_Place_addTokenEntryEventOccurrence'. From 'petrinet_TracedPlace', the role 'petrinet_TracedPlace' has cardinality 0..*, and from 'trace_Events_Place_addTokenEntryEventOccurrence', the role 'trace_Events_Place_addTokenEntryEventOccurrence' has cardinality 0..*.
+An association connects 'Place_addTokenEntryEventOccurrence' and 'trace_Events_Place_addTokenExitEventOccurrence'. From 'Place_addTokenEntryEventOccurrence', the role 'Place_addTokenEntryEventOccurrence47' has cardinality 0..*, and from 'trace_Events_Place_addTokenExitEventOccurrence', the role 'trace_Events_Place_addTokenExitEventOccurrence' has cardinality 0..*.
+An association connects 'petrinet_TracedPlace' and 'trace_Events_Place_removeTokenEntryEventOccurrence'. From 'petrinet_TracedPlace', the role 'petrinet_TracedPlace49' has cardinality 0..*, and from 'trace_Events_Place_removeTokenEntryEventOccurrence', the role 'trace_Events_Place_removeTokenEntryEventOccurrence' has cardinality 0..*.
+An association connects 'Place_removeTokenEntryEventOccurrence' and 'trace_Events_Place_removeTokenExitEventOccurrence'. From 'Place_removeTokenEntryEventOccurrence', the role 'Place_removeTokenEntryEventOccurrence51' has cardinality 0..*, and from 'trace_Events_Place_removeTokenExitEventOccurrence', the role 'trace_Events_Place_removeTokenExitEventOccurrence' has cardinality 0..*.
+An association connects 'Events_trace_Transition' and 'trace_Events_Transition_isEnabledEntryEventOccurrence'. From 'Events_trace_Transition', the role 'Events_trace_Transition' has cardinality 0..*, and from 'trace_Events_Transition_isEnabledEntryEventOccurrence', the role 'trace_Events_Transition_isEnabledEntryEventOccurrence' has cardinality 0..*.
+An association connects 'trace_Events_Transition_isEnabledExitEventOccurrence' and 'Transition_isEnabledEntryEventOccurrence'. From 'trace_Events_Transition_isEnabledExitEventOccurrence', the role 'trace_Events_Transition_isEnabledExitEventOccurrence' has cardinality 0..*, and from 'Transition_isEnabledEntryEventOccurrence', the role 'Transition_isEnabledEntryEventOccurrence54' has cardinality 0..*.
+An association connects 'trace_Events_Transition_isEnabledExitEventOccurrence' and 'Events_trace_EObject'. From 'trace_Events_Transition_isEnabledExitEventOccurrence', the role 'trace_Events_Transition_isEnabledExitEventOccurrence56' has cardinality 0..*, and from 'Events_trace_EObject', the role 'Events_trace_EObject' has cardinality 0..*.
+An association connects 'trace_Events_Transition_fireEntryEventOccurrence' and 'Events_trace_Transition'. From 'trace_Events_Transition_fireEntryEventOccurrence', the role 'trace_Events_Transition_fireEntryEventOccurrence' has cardinality 0..*, and from 'Events_trace_Transition', the role 'Events_trace_Transition58' has cardinality 0..*.
+An association connects 'Transition_fireEntryEventOccurrence' and 'trace_Events_Transition_fireExitEventOccurrence'. From 'Transition_fireEntryEventOccurrence', the role 'Transition_fireEntryEventOccurrence60' has cardinality 0..*, and from 'trace_Events_Transition_fireExitEventOccurrence', the role 'trace_Events_Transition_fireExitEventOccurrence' has cardinality 0..*.
+An association connects 'trace_States_Place_tokens_State' and 'petrinet_TracedPlace'. From 'trace_States_Place_tokens_State', the role 'petrinet' has cardinality 0..*, and from 'petrinet_TracedPlace', the role 'Traced' has cardinality 0..*.
+An association connects 'States_trace_GlobalState' and 'trace_States_Place_tokens_State'. From 'States_trace_GlobalState', the role 'GlobalState63' has cardinality 0..*, and from 'trace_States_Place_tokens_State', the role 'place_tokens_States' has cardinality 0..*.
+An association connects 'petrinet_TracedPlace' and 'trace_Traced_TracedObjects'. From 'petrinet_TracedPlace', the role 'petrinet_TracedPlace65' has cardinality 0..*, and from 'trace_Traced_TracedObjects', the role 'trace_Traced_TracedObjects' has cardinality 0..*.
+An association connects 'trace_petrinet_TracedPlace' and 'petrinet_trace_Place'. From 'trace_petrinet_TracedPlace', the role 'trace_petrinet_TracedPlace' has cardinality 0..*, and from 'petrinet_trace_Place', the role 'petrinet_trace_Place' has cardinality 0..*.
+An association connects 'trace_petrinet_TracedPlace' and 'Place_tokens_State'. From 'trace_petrinet_TracedPlace', the role 'Place_tokens_State68' has cardinality 0..*, and from 'Place_tokens_State', the role 'States69' has cardinality 0..*.

@@ -1,0 +1,44 @@
+The domain model 'simpleworld101' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'simpleworld101_Thing' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleworld101_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleworld101_Relations' represents an important domain concept.
+It has one attribute: 'since', which is of type int.
+
+'simpleworld101_Element' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'simpleworld101_Person' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'foreName', which is of type str.
+
+'simpleworld101_Part' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'content', which is of type str.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleworld101_World' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleworld101_Thing' is a specialization of 'Named'.
+The class 'simpleworld101_Part' is a specialization of 'Named'.
+The class 'simpleworld101_World' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleworld101_Person' and 'simpleworld101_Relations'. From 'simpleworld101_Person', the role 'simpleworld101_Person' has cardinality 0..*, and from 'simpleworld101_Relations', the role 'simpleworld101_Relations' has cardinality 0..*.
+An association connects 'simpleworld101_Element' and 'simpleworld101_Person'. From 'simpleworld101_Element', the role 'simpleworld101_Element' has cardinality 0..*, and from 'simpleworld101_Person', the role 'simpleworld101_Person2' has cardinality 0..*.
+An association connects 'simpleworld101_Person' and 'simpleworld101_Thing'. From 'simpleworld101_Person', the role 'simpleworld101_Person4' has cardinality 0..*, and from 'simpleworld101_Thing', the role 'simpleworld101_Thing' has cardinality 0..*.
+An association connects 'simpleworld101_Person' and 'simpleworld101_Thing'. From 'simpleworld101_Person', the role 'persons' has cardinality 0..*, and from 'simpleworld101_Thing', the role 'Thing' has cardinality 0..*.
+An association connects 'simpleworld101_Thing' and 'simpleworld101_Part'. From 'simpleworld101_Thing', the role 'simpleworld101_Thing7' has cardinality 0..*, and from 'simpleworld101_Part', the role 'simpleworld101_Part' has cardinality 0..*.
+An association connects 'simpleworld101_Thing' and 'simpleworld101_Person'. From 'simpleworld101_Thing', the role 'things' has cardinality 0..*, and from 'simpleworld101_Person', the role 'Person' has cardinality 0..*.
+An association connects 'simpleworld101_Thing' and 'simpleworld101_Thing'. From 'simpleworld101_Thing', the role 'simpleworld101_Thing11' has cardinality 0..*, and from 'simpleworld101_Thing', the role 'simpleworld101_Thing9' has cardinality 0..*.
+An association connects 'simpleworld101_Part' and 'simpleworld101_Relations'. From 'simpleworld101_Part', the role 'simpleworld101_Part14' has cardinality 0..*, and from 'simpleworld101_Relations', the role 'simpleworld101_Relations13' has cardinality 0..*.
+An association connects 'simpleworld101_World' and 'simpleworld101_Person'. From 'simpleworld101_World', the role 'simpleworld101_World' has cardinality 0..*, and from 'simpleworld101_Person', the role 'simpleworld101_Person16' has cardinality 0..*.
+An association connects 'simpleworld101_World' and 'simpleworld101_Thing'. From 'simpleworld101_World', the role 'simpleworld101_World18' has cardinality 0..*, and from 'simpleworld101_Thing', the role 'simpleworld101_Thing19' has cardinality 0..*.

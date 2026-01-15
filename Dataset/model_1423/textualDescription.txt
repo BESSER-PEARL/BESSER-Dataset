@@ -1,0 +1,75 @@
+The domain model 'statemachine' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'statemachine_Thing' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_ConstantRef' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Command' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'code', which is of type int.
+
+'statemachine_Constant' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statemachine_Event' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'code', which is of type int.
+
+'statemachine_RangeGuard' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_State' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'statemachine_IntLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Statemachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'statemachine_ValueGuard' represents an important domain concept.
+It does not declare any attributes.
+
+'statemachine_Value' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'statemachine_ValueGuard' is a specialization of 'Guard'.
+The class 'statemachine_RangeGuard' is a specialization of 'Guard'.
+The class 'statemachine_ConstantRef' is a specialization of 'Value'.
+The class 'statemachine_IntLiteral' is a specialization of 'Value'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statemachine_Statemachine' and 'statemachine_Event'. From 'statemachine_Statemachine', the role 'statemachine_Statemachine' has cardinality 0..*, and from 'statemachine_Event', the role 'statemachine_Event' has cardinality 0..*.
+An association connects 'statemachine_Event' and 'statemachine_Statemachine'. From 'statemachine_Event', the role 'statemachine_Event3' has cardinality 0..*, and from 'statemachine_Statemachine', the role 'statemachine_Statemachine2' has cardinality 0..*.
+An association connects 'statemachine_Command' and 'statemachine_Statemachine'. From 'statemachine_Command', the role 'statemachine_Command' has cardinality 0..*, and from 'statemachine_Statemachine', the role 'statemachine_Statemachine5' has cardinality 0..*.
+An association connects 'statemachine_Constant' and 'statemachine_Statemachine'. From 'statemachine_Constant', the role 'statemachine_Constant' has cardinality 0..*, and from 'statemachine_Statemachine', the role 'statemachine_Statemachine7' has cardinality 0..*.
+An association connects 'statemachine_State' and 'statemachine_Statemachine'. From 'statemachine_State', the role 'statemachine_State' has cardinality 0..*, and from 'statemachine_Statemachine', the role 'statemachine_Statemachine9' has cardinality 0..*.
+An association connects 'statemachine_Event' and 'statemachine_Guard'. From 'statemachine_Event', the role 'statemachine_Event11' has cardinality 0..*, and from 'statemachine_Guard', the role 'statemachine_Guard' has cardinality 0..*.
+An association connects 'statemachine_Value' and 'statemachine_ValueGuard'. From 'statemachine_Value', the role 'statemachine_Value' has cardinality 0..*, and from 'statemachine_ValueGuard', the role 'statemachine_ValueGuard' has cardinality 0..*.
+An association connects 'statemachine_Value' and 'statemachine_RangeGuard'. From 'statemachine_Value', the role 'statemachine_Value14' has cardinality 0..*, and from 'statemachine_RangeGuard', the role 'statemachine_RangeGuard' has cardinality 0..*.
+An association connects 'statemachine_RangeGuard' and 'statemachine_Value'. From 'statemachine_RangeGuard', the role 'statemachine_RangeGuard16' has cardinality 0..*, and from 'statemachine_Value', the role 'statemachine_Value17' has cardinality 0..*.
+An association connects 'statemachine_ConstantRef' and 'statemachine_Constant'. From 'statemachine_ConstantRef', the role 'statemachine_ConstantRef' has cardinality 0..*, and from 'statemachine_Constant', the role 'statemachine_Constant19' has cardinality 0..*.
+An association connects 'statemachine_Guard' and 'statemachine_Command'. From 'statemachine_Guard', the role 'statemachine_Guard22' has cardinality 0..*, and from 'statemachine_Command', the role 'statemachine_Command21' has cardinality 0..*.
+An association connects 'statemachine_Value' and 'statemachine_Constant'. From 'statemachine_Value', the role 'statemachine_Value25' has cardinality 0..*, and from 'statemachine_Constant', the role 'statemachine_Constant24' has cardinality 0..*.
+An association connects 'statemachine_State' and 'statemachine_Command'. From 'statemachine_State', the role 'statemachine_State27' has cardinality 0..*, and from 'statemachine_Command', the role 'statemachine_Command28' has cardinality 0..*.
+An association connects 'statemachine_State' and 'statemachine_Transition'. From 'statemachine_State', the role 'statemachine_State30' has cardinality 0..*, and from 'statemachine_Transition', the role 'statemachine_Transition' has cardinality 0..*.
+An association connects 'statemachine_Thing' and 'statemachine_State'. From 'statemachine_Thing', the role 'statemachine_Thing' has cardinality 0..*, and from 'statemachine_State', the role 'statemachine_State32' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_Event'. From 'statemachine_Transition', the role 'statemachine_Transition34' has cardinality 0..*, and from 'statemachine_Event', the role 'statemachine_Event35' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_Guard'. From 'statemachine_Transition', the role 'statemachine_Transition37' has cardinality 0..*, and from 'statemachine_Guard', the role 'statemachine_Guard38' has cardinality 0..*.
+An association connects 'statemachine_Transition' and 'statemachine_State'. From 'statemachine_Transition', the role 'statemachine_Transition40' has cardinality 0..*, and from 'statemachine_State', the role 'statemachine_State41' has cardinality 0..*.
+An association connects 'statemachine_Guard' and 'statemachine_Thing'. From 'statemachine_Guard', the role 'statemachine_Guard44' has cardinality 0..*, and from 'statemachine_Thing', the role 'statemachine_Thing43' has cardinality 0..*.

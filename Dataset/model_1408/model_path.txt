@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/damenac/puzzle/examples/modularized-state-machines/fr.inria.diverse.puzzle.examples.hfsm.syntax/models/hfsm-required.ecore

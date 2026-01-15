@@ -1,0 +1,78 @@
+The domain model 'researchvc' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'researchvc_Researcher' represents an important domain concept.
+It has the following attributes: 'forName', which is of type str; 'name', which is of type str.
+
+'researchvc_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'researchvc_Write' represents an important domain concept.
+It has one attribute: 'timeSpent', which is of type int.
+
+'researchvc_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'Counted' represents an important domain concept.
+It does not declare any attributes.
+
+'researchvc_Paragraph' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'researchvc_Counted' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'researchvc_Paper' represents an important domain concept.
+It does not declare any attributes.
+
+'researchvc_Review' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'researchvc_Labelled' represents an important domain concept.
+It has one attribute: 'lname', which is of type str.
+
+'Labelled' represents an important domain concept.
+It does not declare any attributes.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'researchvc_Skill' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'researchvc_ReviewNote' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'researchvc_Keyword' represents an important domain concept.
+It has one attribute: 'word', which is of type str.
+
+'researchvc_PaperKeyword' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'researchvc_Paper' is a specialization of 'Named'.
+The class 'researchvc_Paragraph' is a specialization of 'Counted'.
+The class 'researchvc_Paragraph' is a specialization of 'Named'.
+The class 'researchvc_ReviewNote' is a specialization of 'Named'.
+The class 'researchvc_Write' is a specialization of 'Labelled'.
+The class 'researchvc_Review' is a specialization of 'Labelled'.
+The class 'researchvc_PublicationStructure' is a specialization of 'Named'.
+The class 'researchvc_Keyword' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'researchvc_Researcher' and 'researchvc_Write'. From 'researchvc_Researcher', the role 'researchvc_Researcher' has cardinality 0..*, and from 'researchvc_Write', the role 'researchvc_Write' has cardinality 0..*.
+An association connects 'researchvc_Researcher' and 'researchvc_Review'. From 'researchvc_Researcher', the role 'researchvc_Researcher2' has cardinality 0..*, and from 'researchvc_Review', the role 'researchvc_Review' has cardinality 0..*.
+An association connects 'researchvc_Researcher' and 'researchvc_Paper'. From 'researchvc_Researcher', the role 'authors' has cardinality 0..*, and from 'researchvc_Paper', the role 'Paper' has cardinality 0..*.
+An association connects 'researchvc_Researcher' and 'researchvc_Skill'. From 'researchvc_Researcher', the role 'researchvc_Researcher5' has cardinality 0..*, and from 'researchvc_Skill', the role 'researchvc_Skill' has cardinality 0..*.
+An association connects 'researchvc_Paper' and 'researchvc_Paragraph'. From 'researchvc_Paper', the role 'researchvc_Paper' has cardinality 0..*, and from 'researchvc_Paragraph', the role 'researchvc_Paragraph' has cardinality 0..*.
+An association connects 'researchvc_Researcher' and 'researchvc_Paper'. From 'researchvc_Researcher', the role 'Researcher' has cardinality 0..*, and from 'researchvc_Paper', the role 'res_papers' has cardinality 0..*.
+An association connects 'researchvc_Paper' and 'researchvc_PaperKeyword'. From 'researchvc_Paper', the role 'researchvc_Paper9' has cardinality 0..*, and from 'researchvc_PaperKeyword', the role 'researchvc_PaperKeyword' has cardinality 0..*.
+An association connects 'researchvc_Paper' and 'researchvc_Paper'. From 'researchvc_Paper', the role 'researchvc_Paper10' has cardinality 0..*, and from 'researchvc_Paper', the role 'researchvc_Paper12' has cardinality 0..*.
+An association connects 'researchvc_ReviewNote' and 'researchvc_Paragraph'. From 'researchvc_ReviewNote', the role 'researchvc_ReviewNote' has cardinality 0..*, and from 'researchvc_Paragraph', the role 'researchvc_Paragraph14' has cardinality 0..*.
+An association connects 'researchvc_Paragraph' and 'researchvc_Write'. From 'researchvc_Paragraph', the role 'researchvc_Paragraph17' has cardinality 0..*, and from 'researchvc_Write', the role 'researchvc_Write16' has cardinality 0..*.
+An association connects 'researchvc_ReviewNote' and 'researchvc_Review'. From 'researchvc_ReviewNote', the role 'researchvc_ReviewNote20' has cardinality 0..*, and from 'researchvc_Review', the role 'researchvc_Review19' has cardinality 0..*.
+An association connects 'researchvc_Researcher' and 'researchvc_PublicationStructure'. From 'researchvc_Researcher', the role 'researchvc_Researcher22' has cardinality 0..*, and from 'researchvc_PublicationStructure', the role 'researchvc_PublicationStructure' has cardinality 0..*.
+An association connects 'researchvc_Paper' and 'researchvc_PublicationStructure'. From 'researchvc_Paper', the role 'researchvc_Paper25' has cardinality 0..*, and from 'researchvc_PublicationStructure', the role 'researchvc_PublicationStructure24' has cardinality 0..*.
+An association connects 'researchvc_Keyword' and 'researchvc_PublicationStructure'. From 'researchvc_Keyword', the role 'researchvc_Keyword' has cardinality 0..*, and from 'researchvc_PublicationStructure', the role 'researchvc_PublicationStructure27' has cardinality 0..*.
+An association connects 'researchvc_Keyword' and 'researchvc_PaperKeyword'. From 'researchvc_Keyword', the role 'researchvc_Keyword30' has cardinality 0..*, and from 'researchvc_PaperKeyword', the role 'researchvc_PaperKeyword29' has cardinality 0..*.

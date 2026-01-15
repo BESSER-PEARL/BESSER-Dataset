@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/lip6/pnmlframework/pnmlFw-Low_Level_API_Generation/model/high-level-net/hlcorestructure.ecore

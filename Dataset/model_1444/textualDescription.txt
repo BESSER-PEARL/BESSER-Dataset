@@ -1,0 +1,87 @@
+The domain model 'graph' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'ElkConnectableShape' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_ElkGraphElement' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'graph_ElkEdgeSection' represents an important domain concept.
+It has the following attributes: 'endY', which is of type float; 'startY', which is of type float; 'identifier', which is of type str; 'startX', which is of type float; 'endX', which is of type float.
+
+'graph_EMapPropertyHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_ElkPort' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_ElkEdge' represents an important domain concept.
+It has the following attributes: 'connected', which is of type bool; 'hierarchical', which is of type bool; 'selfloop', which is of type bool; 'hyperedge', which is of type bool.
+
+'EMapPropertyHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_ElkNode' represents an important domain concept.
+It has one attribute: 'hierarchical', which is of type bool.
+
+'ElkGraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ElkShape' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_ElkPropertyToValueMapEntry' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'graph_ElkShape' represents an important domain concept.
+It has the following attributes: 'height', which is of type float; 'x', which is of type float; 'y', which is of type float; 'width', which is of type float.
+
+'graph_IPropertyHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_ElkLabel' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'graph_ElkBendPoint' represents an important domain concept.
+It has the following attributes: 'y', which is of type float; 'x', which is of type float.
+
+'IPropertyHolder' represents an important domain concept.
+It does not declare any attributes.
+
+'graph_ElkConnectableShape' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'graph_EMapPropertyHolder' is a specialization of 'IPropertyHolder'.
+The class 'graph_ElkGraphElement' is a specialization of 'EMapPropertyHolder'.
+The class 'graph_ElkShape' is a specialization of 'ElkGraphElement'.
+The class 'graph_ElkLabel' is a specialization of 'ElkShape'.
+The class 'graph_ElkConnectableShape' is a specialization of 'ElkShape'.
+The class 'graph_ElkNode' is a specialization of 'ElkConnectableShape'.
+The class 'graph_ElkPort' is a specialization of 'ElkConnectableShape'.
+The class 'graph_ElkEdge' is a specialization of 'ElkGraphElement'.
+The class 'graph_ElkEdgeSection' is a specialization of 'EMapPropertyHolder'.
+
+Relationships between classes are modeled using associations.
+An association connects 'graph_ElkPropertyToValueMapEntry' and 'graph_EMapPropertyHolder'. From 'graph_ElkPropertyToValueMapEntry', the role 'graph_ElkPropertyToValueMapEntry' has cardinality 0..*, and from 'graph_EMapPropertyHolder', the role 'graph_EMapPropertyHolder' has cardinality 0..*.
+An association connects 'graph_ElkLabel' and 'graph_ElkGraphElement'. From 'graph_ElkLabel', the role 'ElkLabel' has cardinality 0..*, and from 'graph_ElkGraphElement', the role 'parent' has cardinality 0..*.
+An association connects 'graph_ElkLabel' and 'graph_ElkGraphElement'. From 'graph_ElkLabel', the role 'labels' has cardinality 0..*, and from 'graph_ElkGraphElement', the role 'ElkGraphElement' has cardinality 0..*.
+An association connects 'graph_ElkConnectableShape' and 'graph_ElkEdge'. From 'graph_ElkConnectableShape', the role 'sources' has cardinality 0..*, and from 'graph_ElkEdge', the role 'ElkEdge' has cardinality 0..*.
+An association connects 'graph_ElkConnectableShape' and 'graph_ElkEdge'. From 'graph_ElkConnectableShape', the role 'targets' has cardinality 0..*, and from 'graph_ElkEdge', the role 'ElkEdge5' has cardinality 0..*.
+An association connects 'graph_ElkNode' and 'graph_ElkPort'. From 'graph_ElkNode', the role 'parent7' has cardinality 0..*, and from 'graph_ElkPort', the role 'ElkPort' has cardinality 0..*.
+An association connects 'graph_ElkNode' and 'graph_ElkNode'. From 'graph_ElkNode', the role 'ElkNode' has cardinality 0..*, and from 'graph_ElkNode', the role 'parent10' has cardinality 0..*.
+An association connects 'graph_ElkNode' and 'graph_ElkNode'. From 'graph_ElkNode', the role 'ElkNode13' has cardinality 0..*, and from 'graph_ElkNode', the role 'children' has cardinality 0..*.
+An association connects 'graph_ElkEdge' and 'graph_ElkNode'. From 'graph_ElkEdge', the role 'ElkEdge15' has cardinality 0..*, and from 'graph_ElkNode', the role 'containingNode' has cardinality 0..*.
+An association connects 'graph_ElkPort' and 'graph_ElkNode'. From 'graph_ElkPort', the role 'ports' has cardinality 0..*, and from 'graph_ElkNode', the role 'ElkNode17' has cardinality 0..*.
+An association connects 'graph_ElkEdge' and 'graph_ElkNode'. From 'graph_ElkEdge', the role 'containedEdges' has cardinality 0..*, and from 'graph_ElkNode', the role 'ElkNode19' has cardinality 0..*.
+An association connects 'graph_ElkConnectableShape' and 'graph_ElkEdge'. From 'graph_ElkConnectableShape', the role 'ElkConnectableShape' has cardinality 0..*, and from 'graph_ElkEdge', the role 'outgoingEdges' has cardinality 0..*.
+An association connects 'graph_ElkEdge' and 'graph_ElkConnectableShape'. From 'graph_ElkEdge', the role 'incomingEdges' has cardinality 0..*, and from 'graph_ElkConnectableShape', the role 'ElkConnectableShape22' has cardinality 0..*.
+An association connects 'graph_ElkEdge' and 'graph_ElkEdgeSection'. From 'graph_ElkEdge', the role 'parent24' has cardinality 0..*, and from 'graph_ElkEdgeSection', the role 'ElkEdgeSection' has cardinality 0..*.
+An association connects 'graph_ElkEdgeSection' and 'graph_ElkBendPoint'. From 'graph_ElkEdgeSection', the role 'graph_ElkEdgeSection' has cardinality 0..*, and from 'graph_ElkBendPoint', the role 'graph_ElkBendPoint' has cardinality 0..*.
+An association connects 'graph_ElkEdge' and 'graph_ElkEdgeSection'. From 'graph_ElkEdge', the role 'ElkEdge27' has cardinality 0..*, and from 'graph_ElkEdgeSection', the role 'sections' has cardinality 0..*.
+An association connects 'graph_ElkConnectableShape' and 'graph_ElkEdgeSection'. From 'graph_ElkConnectableShape', the role 'graph_ElkConnectableShape' has cardinality 0..*, and from 'graph_ElkEdgeSection', the role 'graph_ElkEdgeSection29' has cardinality 0..*.
+An association connects 'graph_ElkEdgeSection' and 'graph_ElkConnectableShape'. From 'graph_ElkEdgeSection', the role 'graph_ElkEdgeSection31' has cardinality 0..*, and from 'graph_ElkConnectableShape', the role 'graph_ElkConnectableShape32' has cardinality 0..*.
+An association connects 'graph_ElkEdgeSection' and 'graph_ElkEdgeSection'. From 'graph_ElkEdgeSection', the role 'ElkEdgeSection35' has cardinality 0..*, and from 'graph_ElkEdgeSection', the role 'incomingSections' has cardinality 0..*.
+An association connects 'graph_ElkEdgeSection' and 'graph_ElkEdgeSection'. From 'graph_ElkEdgeSection', the role 'outgoingSections' has cardinality 0..*, and from 'graph_ElkEdgeSection', the role 'ElkEdgeSection38' has cardinality 0..*.

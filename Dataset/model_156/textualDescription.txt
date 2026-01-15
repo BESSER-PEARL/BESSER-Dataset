@@ -1,0 +1,23 @@
+The domain model 'petrinet' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'petrinet_PetriNet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinet_Arc' represents an important domain concept.
+It has the following attributes: 'weight', which is of type int; 'toPlace', which is of type bool.
+
+'petrinet_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinet_Place' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'token', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'petrinet_Transition' and 'petrinet_Place'. From 'petrinet_Transition', the role 'petrinet_Transition' has cardinality 0..*, and from 'petrinet_Place', the role 'petrinet_Place' has cardinality 0..*.
+An association connects 'petrinet_Transition' and 'petrinet_Arc'. From 'petrinet_Transition', the role 'petrinet_Transition2' has cardinality 0..*, and from 'petrinet_Arc', the role 'petrinet_Arc' has cardinality 0..*.
+An association connects 'petrinet_Arc' and 'petrinet_Place'. From 'petrinet_Arc', the role 'petrinet_Arc4' has cardinality 0..*, and from 'petrinet_Place', the role 'petrinet_Place5' has cardinality 0..*.
+An association connects 'petrinet_PetriNet' and 'petrinet_Place'. From 'petrinet_PetriNet', the role 'petrinet_PetriNet' has cardinality 0..*, and from 'petrinet_Place', the role 'petrinet_Place7' has cardinality 0..*.
+An association connects 'petrinet_PetriNet' and 'petrinet_Arc'. From 'petrinet_PetriNet', the role 'petrinet_PetriNet9' has cardinality 0..*, and from 'petrinet_Arc', the role 'petrinet_Arc10' has cardinality 0..*.
+An association connects 'petrinet_PetriNet' and 'petrinet_Transition'. From 'petrinet_PetriNet', the role 'petrinet_PetriNet12' has cardinality 0..*, and from 'petrinet_Transition', the role 'petrinet_Transition13' has cardinality 0..*.

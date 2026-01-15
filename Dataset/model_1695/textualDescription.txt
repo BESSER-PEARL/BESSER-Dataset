@@ -1,0 +1,13 @@
+The domain model 'basic2' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'basic2_World' represents an important domain concept.
+It does not declare any attributes.
+
+'basic2_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'basic2_Thing' and 'basic2_World'. From 'basic2_Thing', the role 'basic2_Thing' has cardinality 0..*, and from 'basic2_World', the role 'basic2_World' has cardinality 0..*.
+An association connects 'basic2_Thing' and 'basic2_Thing'. From 'basic2_Thing', the role 'basic2_Thing3' has cardinality 0..*, and from 'basic2_Thing', the role 'basic2_Thing1' has cardinality 0..*.

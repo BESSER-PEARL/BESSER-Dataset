@@ -1,0 +1,80 @@
+The domain model 'publication105' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'publication105_Position' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'publication105_Paragraph' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'Labelled' represents an important domain concept.
+It does not declare any attributes.
+
+'publication105_Researcher' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'forName', which is of type str.
+
+'publication105_Labelled' represents an important domain concept.
+It has one attribute: 'lname', which is of type str.
+
+'publication105_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'publication105_Review' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'publication105_Counted' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'publication105_Collaboration' represents an important domain concept.
+It has one attribute: 'ratio', which is of type int.
+
+'publication105_Write' represents an important domain concept.
+It has one attribute: 'timeSpent', which is of type int.
+
+'publication105_Skill' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'publication105_ReviewNote' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'publication105_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Counted' represents an important domain concept.
+It does not declare any attributes.
+
+'publication105_Paper' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'publication105_Paper' is a specialization of 'Named'.
+The class 'publication105_Paragraph' is a specialization of 'Counted'.
+The class 'publication105_Paragraph' is a specialization of 'Named'.
+The class 'publication105_ReviewNote' is a specialization of 'Named'.
+The class 'publication105_Write' is a specialization of 'Labelled'.
+The class 'publication105_Review' is a specialization of 'Labelled'.
+The class 'publication105_PublicationStructure' is a specialization of 'Named'.
+The class 'publication105_Position' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'publication105_Write' and 'publication105_Researcher'. From 'publication105_Write', the role 'publication105_Write' has cardinality 0..*, and from 'publication105_Researcher', the role 'publication105_Researcher' has cardinality 0..*.
+An association connects 'publication105_Researcher' and 'publication105_Review'. From 'publication105_Researcher', the role 'publication105_Researcher2' has cardinality 0..*, and from 'publication105_Review', the role 'publication105_Review' has cardinality 0..*.
+An association connects 'publication105_Researcher' and 'publication105_Paper'. From 'publication105_Researcher', the role 'authors' has cardinality 0..*, and from 'publication105_Paper', the role 'Paper' has cardinality 0..*.
+An association connects 'publication105_Skill' and 'publication105_Researcher'. From 'publication105_Skill', the role 'publication105_Skill' has cardinality 0..*, and from 'publication105_Researcher', the role 'publication105_Researcher5' has cardinality 0..*.
+An association connects 'publication105_Researcher' and 'publication105_Position'. From 'publication105_Researcher', the role 'publication105_Researcher7' has cardinality 0..*, and from 'publication105_Position', the role 'publication105_Position' has cardinality 0..*.
+An association connects 'publication105_Researcher' and 'publication105_Collaboration'. From 'publication105_Researcher', the role 'publication105_Researcher9' has cardinality 0..*, and from 'publication105_Collaboration', the role 'publication105_Collaboration' has cardinality 0..*.
+An association connects 'publication105_Paragraph' and 'publication105_Paper'. From 'publication105_Paragraph', the role 'publication105_Paragraph' has cardinality 0..*, and from 'publication105_Paper', the role 'publication105_Paper' has cardinality 0..*.
+An association connects 'publication105_Researcher' and 'publication105_Paper'. From 'publication105_Researcher', the role 'Researcher' has cardinality 0..*, and from 'publication105_Paper', the role 'res_papers' has cardinality 0..*.
+An association connects 'publication105_Paper' and 'publication105_Paper'. From 'publication105_Paper', the role 'publication105_Paper12' has cardinality 0..*, and from 'publication105_Paper', the role 'publication105_Paper14' has cardinality 0..*.
+An association connects 'publication105_ReviewNote' and 'publication105_Paragraph'. From 'publication105_ReviewNote', the role 'publication105_ReviewNote' has cardinality 0..*, and from 'publication105_Paragraph', the role 'publication105_Paragraph16' has cardinality 0..*.
+An association connects 'publication105_Write' and 'publication105_Paragraph'. From 'publication105_Write', the role 'publication105_Write18' has cardinality 0..*, and from 'publication105_Paragraph', the role 'publication105_Paragraph19' has cardinality 0..*.
+An association connects 'publication105_ReviewNote' and 'publication105_Review'. From 'publication105_ReviewNote', the role 'publication105_ReviewNote22' has cardinality 0..*, and from 'publication105_Review', the role 'publication105_Review21' has cardinality 0..*.
+An association connects 'publication105_PublicationStructure' and 'publication105_Researcher'. From 'publication105_PublicationStructure', the role 'publication105_PublicationStructure' has cardinality 0..*, and from 'publication105_Researcher', the role 'publication105_Researcher24' has cardinality 0..*.
+An association connects 'publication105_PublicationStructure' and 'publication105_Paper'. From 'publication105_PublicationStructure', the role 'publication105_PublicationStructure26' has cardinality 0..*, and from 'publication105_Paper', the role 'publication105_Paper27' has cardinality 0..*.
+An association connects 'publication105_PublicationStructure' and 'publication105_Position'. From 'publication105_PublicationStructure', the role 'publication105_PublicationStructure29' has cardinality 0..*, and from 'publication105_Position', the role 'publication105_Position30' has cardinality 0..*.
+An association connects 'publication105_Position' and 'publication105_Position'. From 'publication105_Position', the role 'publication105_Position33' has cardinality 0..*, and from 'publication105_Position', the role 'publication105_Position31' has cardinality 0..*.
+An association connects 'publication105_Paper' and 'publication105_Collaboration'. From 'publication105_Paper', the role 'publication105_Paper36' has cardinality 0..*, and from 'publication105_Collaboration', the role 'publication105_Collaboration35' has cardinality 0..*.

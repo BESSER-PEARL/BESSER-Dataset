@@ -1,0 +1,42 @@
+The domain model 'pnml' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'pnml_ArcPlace2Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'pnml_PNMLDocument' represents an important domain concept.
+It has one attribute: 'location', which is of type str.
+
+'pnml_NetElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pnml_Element' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'id', which is of type str.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'pnml_TransitionElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pnml_ArcTransition2Place' represents an important domain concept.
+It does not declare any attributes.
+
+'pnml_PlaceElement' represents an important domain concept.
+It has the following attributes: 'tokens', which is of type int; 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'pnml_PlaceElement' is a specialization of 'Element'.
+The class 'pnml_TransitionElement' is a specialization of 'Element'.
+The class 'pnml_ArcPlace2Transition' is a specialization of 'Element'.
+The class 'pnml_ArcTransition2Place' is a specialization of 'Element'.
+The class 'pnml_NetElement' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pnml_NetElement' and 'pnml_PNMLDocument'. From 'pnml_NetElement', the role 'pnml_NetElement' has cardinality 0..*, and from 'pnml_PNMLDocument', the role 'pnml_PNMLDocument' has cardinality 0..*.
+An association connects 'pnml_PlaceElement' and 'pnml_ArcPlace2Transition'. From 'pnml_PlaceElement', the role 'pnml_PlaceElement' has cardinality 0..*, and from 'pnml_ArcPlace2Transition', the role 'pnml_ArcPlace2Transition' has cardinality 0..*.
+An association connects 'pnml_ArcPlace2Transition' and 'pnml_TransitionElement'. From 'pnml_ArcPlace2Transition', the role 'pnml_ArcPlace2Transition3' has cardinality 0..*, and from 'pnml_TransitionElement', the role 'pnml_TransitionElement' has cardinality 0..*.
+An association connects 'pnml_PlaceElement' and 'pnml_ArcTransition2Place'. From 'pnml_PlaceElement', the role 'pnml_PlaceElement5' has cardinality 0..*, and from 'pnml_ArcTransition2Place', the role 'pnml_ArcTransition2Place' has cardinality 0..*.
+An association connects 'pnml_ArcTransition2Place' and 'pnml_TransitionElement'. From 'pnml_ArcTransition2Place', the role 'pnml_ArcTransition2Place7' has cardinality 0..*, and from 'pnml_TransitionElement', the role 'pnml_TransitionElement8' has cardinality 0..*.
+An association connects 'pnml_NetElement' and 'pnml_Element'. From 'pnml_NetElement', the role 'pnml_NetElement10' has cardinality 0..*, and from 'pnml_Element', the role 'pnml_Element' has cardinality 0..*.

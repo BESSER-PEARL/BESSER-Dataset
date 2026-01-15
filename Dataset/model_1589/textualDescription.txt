@@ -1,0 +1,32 @@
+The domain model 'petrinet' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'petrinet_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_PNGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Place' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'markings', which is of type str.
+
+'petrinet_Transition' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'petrinet_Arc' represents an important domain concept.
+It has one attribute: 'w', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'petrinet_Place' is a specialization of 'Node'.
+The class 'petrinet_Transition' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'petrinet_Place' and 'petrinet_PNGraph'. From 'petrinet_Place', the role 'petrinet_Place' has cardinality 0..*, and from 'petrinet_PNGraph', the role 'petrinet_PNGraph' has cardinality 0..*.
+An association connects 'petrinet_PNGraph' and 'petrinet_Transition'. From 'petrinet_PNGraph', the role 'petrinet_PNGraph2' has cardinality 0..*, and from 'petrinet_Transition', the role 'petrinet_Transition' has cardinality 0..*.
+An association connects 'petrinet_PNGraph' and 'petrinet_Arc'. From 'petrinet_PNGraph', the role 'petrinet_PNGraph4' has cardinality 0..*, and from 'petrinet_Arc', the role 'petrinet_Arc' has cardinality 0..*.
+An association connects 'petrinet_Node' and 'petrinet_Arc'. From 'petrinet_Node', the role 'petrinet_Node' has cardinality 0..*, and from 'petrinet_Arc', the role 'petrinet_Arc6' has cardinality 0..*.
+An association connects 'petrinet_Arc' and 'petrinet_Node'. From 'petrinet_Arc', the role 'petrinet_Arc8' has cardinality 0..*, and from 'petrinet_Node', the role 'petrinet_Node9' has cardinality 0..*.

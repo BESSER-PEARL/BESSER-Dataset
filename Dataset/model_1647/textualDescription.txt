@@ -1,0 +1,28 @@
+The domain model 'visualworld' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'visualworld_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'visualworld_World' represents an important domain concept.
+It does not declare any attributes.
+
+'visualworld_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'visualworld_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'visualworld_Thing' is a specialization of 'NamedElement'.
+The class 'visualworld_RelatedTo' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'visualworld_World' and 'visualworld_Thing'. From 'visualworld_World', the role 'visualworld_World' has cardinality 0..*, and from 'visualworld_Thing', the role 'visualworld_Thing' has cardinality 0..*.
+An association connects 'visualworld_RelatedTo' and 'visualworld_Thing'. From 'visualworld_RelatedTo', the role 'RelatedTo' has cardinality 0..*, and from 'visualworld_Thing', the role 'fromThing' has cardinality 0..*.
+An association connects 'visualworld_Thing' and 'visualworld_RelatedTo'. From 'visualworld_Thing', the role 'Thing' has cardinality 0..*, and from 'visualworld_RelatedTo', the role 'relations' has cardinality 0..*.
+An association connects 'visualworld_Thing' and 'visualworld_RelatedTo'. From 'visualworld_Thing', the role 'visualworld_Thing4' has cardinality 0..*, and from 'visualworld_RelatedTo', the role 'visualworld_RelatedTo' has cardinality 0..*.

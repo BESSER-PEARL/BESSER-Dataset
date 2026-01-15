@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/wbombardellis/MasterThesis-WilliamBombardelliDaSilva/metamodels/org.wbsilva.mm.statemachine/model/Statemachine.ecore

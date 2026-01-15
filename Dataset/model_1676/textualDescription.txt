@@ -1,0 +1,74 @@
+The domain model 'systemworkbench101' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'systemworkbench101_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'systemworkbench101_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'systemworkbench101_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'systemworkbench101_FunctionProperty' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'systemworkbench101_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'systemworkbench101_Named' represents an important domain concept.
+It has one attribute: 'ident', which is of type str.
+
+'systemworkbench101_System' represents an important domain concept.
+It does not declare any attributes.
+
+'systemworkbench101_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'systemworkbench101_Workbench' represents an important domain concept.
+It has one attribute: 'foobar', which is of type str.
+
+'systemworkbench101_Thoughts' represents an important domain concept.
+It does not declare any attributes.
+
+'systemworkbench101_PatternCatalog' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'systemworkbench101_System' is a specialization of 'Named'.
+The class 'systemworkbench101_Workbench' is a specialization of 'Named'.
+The class 'systemworkbench101_FunctionProperty' is a specialization of 'Named'.
+The class 'systemworkbench101_Function' is a specialization of 'Named'.
+The class 'systemworkbench101_Component' is a specialization of 'Named'.
+The class 'systemworkbench101_RelatedTo' is a specialization of 'NamedElement'.
+The class 'systemworkbench101_Thing' is a specialization of 'NamedElement'.
+The class 'systemworkbench101_Thoughts' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'systemworkbench101_System' and 'systemworkbench101_Function'. From 'systemworkbench101_System', the role 'systemworkbench101_System' has cardinality 0..*, and from 'systemworkbench101_Function', the role 'systemworkbench101_Function' has cardinality 0..*.
+An association connects 'systemworkbench101_Component' and 'systemworkbench101_System'. From 'systemworkbench101_Component', the role 'systemworkbench101_Component' has cardinality 0..*, and from 'systemworkbench101_System', the role 'systemworkbench101_System2' has cardinality 0..*.
+An association connects 'systemworkbench101_System' and 'systemworkbench101_Workbench'. From 'systemworkbench101_System', the role 'systemworkbench101_System4' has cardinality 0..*, and from 'systemworkbench101_Workbench', the role 'systemworkbench101_Workbench' has cardinality 0..*.
+An association connects 'systemworkbench101_Workbench' and 'systemworkbench101_FunctionProperty'. From 'systemworkbench101_Workbench', the role 'systemworkbench101_Workbench6' has cardinality 0..*, and from 'systemworkbench101_FunctionProperty', the role 'systemworkbench101_FunctionProperty' has cardinality 0..*.
+An association connects 'systemworkbench101_PatternCatalog' and 'systemworkbench101_Workbench'. From 'systemworkbench101_PatternCatalog', the role 'systemworkbench101_PatternCatalog' has cardinality 0..*, and from 'systemworkbench101_Workbench', the role 'systemworkbench101_Workbench8' has cardinality 0..*.
+An association connects 'systemworkbench101_Thing' and 'systemworkbench101_Workbench'. From 'systemworkbench101_Thing', the role 'systemworkbench101_Thing' has cardinality 0..*, and from 'systemworkbench101_Workbench', the role 'systemworkbench101_Workbench10' has cardinality 0..*.
+An association connects 'systemworkbench101_Workbench' and 'systemworkbench101_Thoughts'. From 'systemworkbench101_Workbench', the role 'systemworkbench101_Workbench12' has cardinality 0..*, and from 'systemworkbench101_Thoughts', the role 'systemworkbench101_Thoughts' has cardinality 0..*.
+An association connects 'systemworkbench101_FunctionProperty' and 'systemworkbench101_FunctionProperty'. From 'systemworkbench101_FunctionProperty', the role 'systemworkbench101_FunctionProperty15' has cardinality 0..*, and from 'systemworkbench101_FunctionProperty', the role 'systemworkbench101_FunctionProperty13' has cardinality 0..*.
+An association connects 'systemworkbench101_Function' and 'systemworkbench101_Function'. From 'systemworkbench101_Function', the role 'systemworkbench101_Function16' has cardinality 0..*, and from 'systemworkbench101_Function', the role 'systemworkbench101_Function18' has cardinality 0..*.
+An association connects 'systemworkbench101_FunctionProperty' and 'systemworkbench101_Function'. From 'systemworkbench101_FunctionProperty', the role 'systemworkbench101_FunctionProperty21' has cardinality 0..*, and from 'systemworkbench101_Function', the role 'systemworkbench101_Function20' has cardinality 0..*.
+An association connects 'systemworkbench101_Function' and 'systemworkbench101_Function'. From 'systemworkbench101_Function', the role 'systemworkbench101_Function22' has cardinality 0..*, and from 'systemworkbench101_Function', the role 'systemworkbench101_Function24' has cardinality 0..*.
+An association connects 'systemworkbench101_Function' and 'systemworkbench101_Component'. From 'systemworkbench101_Function', the role 'performs' has cardinality 0..*, and from 'systemworkbench101_Component', the role 'Component' has cardinality 0..*.
+An association connects 'systemworkbench101_Component' and 'systemworkbench101_Component'. From 'systemworkbench101_Component', the role 'systemworkbench101_Component28' has cardinality 0..*, and from 'systemworkbench101_Component', the role 'systemworkbench101_Component26' has cardinality 0..*.
+An association connects 'systemworkbench101_Component' and 'systemworkbench101_Component'. From 'systemworkbench101_Component', the role 'systemworkbench101_Component29' has cardinality 0..*, and from 'systemworkbench101_Component', the role 'systemworkbench101_Component31' has cardinality 0..*.
+An association connects 'systemworkbench101_Component' and 'systemworkbench101_Function'. From 'systemworkbench101_Component', the role 'allocatedTo' has cardinality 0..*, and from 'systemworkbench101_Function', the role 'Function' has cardinality 0..*.
+An association connects 'systemworkbench101_PatternCatalog' and 'systemworkbench101_Function'. From 'systemworkbench101_PatternCatalog', the role 'systemworkbench101_PatternCatalog34' has cardinality 0..*, and from 'systemworkbench101_Function', the role 'systemworkbench101_Function35' has cardinality 0..*.
+An association connects 'systemworkbench101_RelatedTo' and 'systemworkbench101_Thing'. From 'systemworkbench101_RelatedTo', the role 'systemworkbench101_RelatedTo' has cardinality 0..*, and from 'systemworkbench101_Thing', the role 'systemworkbench101_Thing37' has cardinality 0..*.
+An association connects 'systemworkbench101_RelatedTo' and 'systemworkbench101_Thing'. From 'systemworkbench101_RelatedTo', the role 'systemworkbench101_RelatedTo39' has cardinality 0..*, and from 'systemworkbench101_Thing', the role 'systemworkbench101_Thing40' has cardinality 0..*.
+An association connects 'systemworkbench101_Thing' and 'systemworkbench101_RelatedTo'. From 'systemworkbench101_Thing', the role 'systemworkbench101_Thing42' has cardinality 0..*, and from 'systemworkbench101_RelatedTo', the role 'systemworkbench101_RelatedTo43' has cardinality 0..*.
+An association connects 'systemworkbench101_Thoughts' and 'systemworkbench101_Thing'. From 'systemworkbench101_Thoughts', the role 'systemworkbench101_Thoughts45' has cardinality 0..*, and from 'systemworkbench101_Thing', the role 'systemworkbench101_Thing46' has cardinality 0..*.

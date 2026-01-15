@@ -1,0 +1,55 @@
+The domain model 'petrinet' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'petrinet_Place' represents an important domain concept.
+It has one attribute: 'tokens', which is of type int.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_InhibitorEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_OutputEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinet_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_InputEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_ReadEdge' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'petrinet_PetriNet' is a specialization of 'NamedElement'.
+The class 'petrinet_Place' is a specialization of 'NamedElement'.
+The class 'petrinet_Transition' is a specialization of 'NamedElement'.
+The class 'petrinet_Edge' is a specialization of 'NamedElement'.
+The class 'petrinet_InputEdge' is a specialization of 'Edge'.
+The class 'petrinet_OutputEdge' is a specialization of 'Edge'.
+The class 'petrinet_InhibitorEdge' is a specialization of 'Edge'.
+The class 'petrinet_ReadEdge' is a specialization of 'Edge'.
+
+Relationships between classes are modeled using associations.
+An association connects 'petrinet_PetriNet' and 'petrinet_Place'. From 'petrinet_PetriNet', the role 'petrinet_PetriNet' has cardinality 0..*, and from 'petrinet_Place', the role 'petrinet_Place' has cardinality 0..*.
+An association connects 'petrinet_PetriNet' and 'petrinet_Transition'. From 'petrinet_PetriNet', the role 'petrinet_PetriNet2' has cardinality 0..*, and from 'petrinet_Transition', the role 'petrinet_Transition' has cardinality 0..*.
+An association connects 'petrinet_PetriNet' and 'petrinet_Edge'. From 'petrinet_PetriNet', the role 'petrinet_PetriNet4' has cardinality 0..*, and from 'petrinet_Edge', the role 'petrinet_Edge' has cardinality 0..*.
+An association connects 'petrinet_Edge' and 'petrinet_Place'. From 'petrinet_Edge', the role 'Edge' has cardinality 0..*, and from 'petrinet_Place', the role 'place' has cardinality 0..*.
+An association connects 'petrinet_Edge' and 'petrinet_Transition'. From 'petrinet_Edge', the role 'Edge7' has cardinality 0..*, and from 'petrinet_Transition', the role 'transition' has cardinality 0..*.
+An association connects 'petrinet_Edge' and 'petrinet_Place'. From 'petrinet_Edge', the role 'edges' has cardinality 0..*, and from 'petrinet_Place', the role 'Place' has cardinality 0..*.
+An association connects 'petrinet_Transition' and 'petrinet_Edge'. From 'petrinet_Transition', the role 'Transition' has cardinality 0..*, and from 'petrinet_Edge', the role 'edges10' has cardinality 0..*.

@@ -1,0 +1,55 @@
+The domain model 'RepresentationGraph' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'RepresentationGraph_ContainerElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RepresentationGraph_Rectangle' represents an important domain concept.
+It has the following attributes: 'height', which is of type str; 'width', which is of type str.
+
+'GraphicElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RepresentationGraph_IconElement' represents an important domain concept.
+It has one attribute: 'filepath', which is of type str.
+
+'RepresentationGraph_Circle' represents an important domain concept.
+It has one attribute: 'radius', which is of type str.
+
+'RepresentationGraph_EdgeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RepresentationGraph_NodeElement' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'RepresentationGraph_GraphicElement' represents an important domain concept.
+It has the following attributes: 'paletteIconPath', which is of type str; 'paletteName', which is of type str; 'color', which is of type str.
+
+'RepresentationGraph_Rhombus' represents an important domain concept.
+It has the following attributes: 'height', which is of type str; 'width', which is of type str.
+
+'RepresentationGraph_Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'ContainerElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'RepresentationGraph_EdgeElement' is a specialization of 'GraphicElement'.
+The class 'RepresentationGraph_NodeElement' is a specialization of 'GraphicElement'.
+The class 'RepresentationGraph_IconElement' is a specialization of 'NodeElement'.
+The class 'RepresentationGraph_Circle' is a specialization of 'ContainerElement'.
+The class 'RepresentationGraph_Rectangle' is a specialization of 'ContainerElement'.
+The class 'RepresentationGraph_ContainerElement' is a specialization of 'NodeElement'.
+The class 'RepresentationGraph_Rhombus' is a specialization of 'ContainerElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'RepresentationGraph_Diagram' and 'RepresentationGraph_GraphicElement'. From 'RepresentationGraph_Diagram', the role 'RepresentationGraph_Diagram' has cardinality 0..*, and from 'RepresentationGraph_GraphicElement', the role 'RepresentationGraph_GraphicElement' has cardinality 0..*.
+An association connects 'RepresentationGraph_NodeElement' and 'RepresentationGraph_EdgeElement'. From 'RepresentationGraph_NodeElement', the role 'RepresentationGraph_NodeElement' has cardinality 0..*, and from 'RepresentationGraph_EdgeElement', the role 'RepresentationGraph_EdgeElement' has cardinality 0..*.
+An association connects 'RepresentationGraph_NodeElement' and 'RepresentationGraph_EdgeElement'. From 'RepresentationGraph_NodeElement', the role 'RepresentationGraph_NodeElement4' has cardinality 0..*, and from 'RepresentationGraph_EdgeElement', the role 'RepresentationGraph_EdgeElement3' has cardinality 0..*.
+An association connects 'RepresentationGraph_NodeElement' and 'RepresentationGraph_NodeElement'. From 'RepresentationGraph_NodeElement', the role 'RepresentationGraph_NodeElement5' has cardinality 0..*, and from 'RepresentationGraph_NodeElement', the role 'RepresentationGraph_NodeElement7' has cardinality 0..*.
+An association connects 'RepresentationGraph_ContainerElement' and 'RepresentationGraph_NodeElement'. From 'RepresentationGraph_ContainerElement', the role 'RepresentationGraph_ContainerElement' has cardinality 0..*, and from 'RepresentationGraph_NodeElement', the role 'RepresentationGraph_NodeElement9' has cardinality 0..*.

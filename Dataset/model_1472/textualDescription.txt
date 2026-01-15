@@ -1,0 +1,105 @@
+The domain model 'GraphConstraint' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'GraphConstraint_QuantifiedGraphCondition' represents an important domain concept.
+It has one attribute: 'quantifier', which is of type str.
+
+'GraphConstraint_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphConstraint_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphConstraint_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphConstraint_EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphConstraint_ElementMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphConstraint_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphConstraint_NestedGraphConstraint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'GraphConstraint_True' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphConstraint_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'NestedGraphCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphConstraint_Formula' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'GraphConstraint_Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphConstraint_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'GraphConstraint_GraphElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'GraphConstraint_NestedGraphCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphConstraint_Attribute' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'op', which is of type str.
+
+'GraphConstraint_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphConstraint_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Operator' defines the following possible values: 'AND', 'IMPLIES', 'NOT', 'OR'.
+The enumeration 'Quantifier' defines the following possible values: 'FORALL', 'EXISTS'.
+
+The model also captures inheritance relationships between classes.
+The class 'GraphConstraint_Node' is a specialization of 'GraphElement'.
+The class 'GraphConstraint_Edge' is a specialization of 'GraphElement'.
+The class 'GraphConstraint_Attribute' is a specialization of 'GraphElement'.
+The class 'GraphConstraint_QuantifiedGraphCondition' is a specialization of 'NestedGraphCondition'.
+The class 'GraphConstraint_True' is a specialization of 'NestedGraphCondition'.
+The class 'GraphConstraint_Formula' is a specialization of 'NestedGraphCondition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'GraphConstraint_Edge' and 'GraphConstraint_Graph'. From 'GraphConstraint_Edge', the role 'GraphConstraint_Edge' has cardinality 0..*, and from 'GraphConstraint_Graph', the role 'GraphConstraint_Graph' has cardinality 0..*.
+An association connects 'GraphConstraint_Node' and 'GraphConstraint_Graph'. From 'GraphConstraint_Node', the role 'GraphConstraint_Node' has cardinality 0..*, and from 'GraphConstraint_Graph', the role 'GraphConstraint_Graph2' has cardinality 0..*.
+An association connects 'GraphConstraint_NestedGraphConstraint' and 'GraphConstraint_EPackage'. From 'GraphConstraint_NestedGraphConstraint', the role 'GraphConstraint_NestedGraphConstraint' has cardinality 0..*, and from 'GraphConstraint_EPackage', the role 'GraphConstraint_EPackage' has cardinality 0..*.
+An association connects 'GraphConstraint_NestedGraphCondition' and 'GraphConstraint_NestedGraphConstraint'. From 'GraphConstraint_NestedGraphCondition', the role 'NestedGraphCondition' has cardinality 0..*, and from 'GraphConstraint_NestedGraphConstraint', the role 'gc' has cardinality 0..*.
+An association connects 'GraphConstraint_NestedGraphConstraint' and 'GraphConstraint_Graph'. From 'GraphConstraint_NestedGraphConstraint', the role 'GraphConstraint_NestedGraphConstraint6' has cardinality 0..*, and from 'GraphConstraint_Graph', the role 'GraphConstraint_Graph7' has cardinality 0..*.
+An association connects 'GraphConstraint_Node' and 'GraphConstraint_Attribute'. From 'GraphConstraint_Node', the role 'GraphConstraint_Node9' has cardinality 0..*, and from 'GraphConstraint_Attribute', the role 'GraphConstraint_Attribute' has cardinality 0..*.
+An association connects 'GraphConstraint_EClass' and 'GraphConstraint_Node'. From 'GraphConstraint_EClass', the role 'GraphConstraint_EClass' has cardinality 0..*, and from 'GraphConstraint_Node', the role 'GraphConstraint_Node11' has cardinality 0..*.
+An association connects 'GraphConstraint_Node' and 'GraphConstraint_Edge'. From 'GraphConstraint_Node', the role 'GraphConstraint_Node14' has cardinality 0..*, and from 'GraphConstraint_Edge', the role 'GraphConstraint_Edge13' has cardinality 0..*.
+An association connects 'GraphConstraint_Edge' and 'GraphConstraint_Node'. From 'GraphConstraint_Edge', the role 'GraphConstraint_Edge16' has cardinality 0..*, and from 'GraphConstraint_Node', the role 'GraphConstraint_Node17' has cardinality 0..*.
+An association connects 'GraphConstraint_EReference' and 'GraphConstraint_Edge'. From 'GraphConstraint_EReference', the role 'GraphConstraint_EReference' has cardinality 0..*, and from 'GraphConstraint_Edge', the role 'GraphConstraint_Edge19' has cardinality 0..*.
+An association connects 'GraphConstraint_Attribute' and 'GraphConstraint_EAttribute'. From 'GraphConstraint_Attribute', the role 'GraphConstraint_Attribute21' has cardinality 0..*, and from 'GraphConstraint_EAttribute', the role 'GraphConstraint_EAttribute' has cardinality 0..*.
+An association connects 'GraphConstraint_Graph' and 'GraphConstraint_Mapping'. From 'GraphConstraint_Graph', the role 'GraphConstraint_Graph23' has cardinality 0..*, and from 'GraphConstraint_Mapping', the role 'GraphConstraint_Mapping' has cardinality 0..*.
+An association connects 'GraphConstraint_Graph' and 'GraphConstraint_Mapping'. From 'GraphConstraint_Graph', the role 'GraphConstraint_Graph26' has cardinality 0..*, and from 'GraphConstraint_Mapping', the role 'GraphConstraint_Mapping25' has cardinality 0..*.
+An association connects 'GraphConstraint_ElementMapping' and 'GraphConstraint_Mapping'. From 'GraphConstraint_ElementMapping', the role 'GraphConstraint_ElementMapping' has cardinality 0..*, and from 'GraphConstraint_Mapping', the role 'GraphConstraint_Mapping28' has cardinality 0..*.
+An association connects 'GraphConstraint_GraphElement' and 'GraphConstraint_ElementMapping'. From 'GraphConstraint_GraphElement', the role 'GraphConstraint_GraphElement' has cardinality 0..*, and from 'GraphConstraint_ElementMapping', the role 'GraphConstraint_ElementMapping30' has cardinality 0..*.
+An association connects 'GraphConstraint_ElementMapping' and 'GraphConstraint_GraphElement'. From 'GraphConstraint_ElementMapping', the role 'GraphConstraint_ElementMapping32' has cardinality 0..*, and from 'GraphConstraint_GraphElement', the role 'GraphConstraint_GraphElement33' has cardinality 0..*.
+An association connects 'GraphConstraint_QuantifiedGraphCondition' and 'GraphConstraint_Graph'. From 'GraphConstraint_QuantifiedGraphCondition', the role 'GraphConstraint_QuantifiedGraphCondition' has cardinality 0..*, and from 'GraphConstraint_Graph', the role 'GraphConstraint_Graph35' has cardinality 0..*.
+An association connects 'GraphConstraint_QuantifiedGraphCondition' and 'GraphConstraint_Graph'. From 'GraphConstraint_QuantifiedGraphCondition', the role 'GraphConstraint_QuantifiedGraphCondition37' has cardinality 0..*, and from 'GraphConstraint_Graph', the role 'GraphConstraint_Graph38' has cardinality 0..*.
+An association connects 'GraphConstraint_QuantifiedGraphCondition' and 'GraphConstraint_Mapping'. From 'GraphConstraint_QuantifiedGraphCondition', the role 'GraphConstraint_QuantifiedGraphCondition40' has cardinality 0..*, and from 'GraphConstraint_Mapping', the role 'GraphConstraint_Mapping41' has cardinality 0..*.
+An association connects 'GraphConstraint_Mapping' and 'GraphConstraint_QuantifiedGraphCondition'. From 'GraphConstraint_Mapping', the role 'GraphConstraint_Mapping44' has cardinality 0..*, and from 'GraphConstraint_QuantifiedGraphCondition', the role 'GraphConstraint_QuantifiedGraphCondition43' has cardinality 0..*.
+An association connects 'GraphConstraint_QuantifiedGraphCondition' and 'GraphConstraint_NestedGraphCondition'. From 'GraphConstraint_QuantifiedGraphCondition', the role 'qgc' has cardinality 0..*, and from 'GraphConstraint_NestedGraphCondition', the role 'NestedGraphCondition46' has cardinality 0..*.
+An association connects 'GraphConstraint_NestedGraphCondition' and 'GraphConstraint_Formula'. From 'GraphConstraint_NestedGraphCondition', the role 'NestedGraphCondition48' has cardinality 0..*, and from 'GraphConstraint_Formula', the role 'formula' has cardinality 0..*.
+An association connects 'GraphConstraint_EDataType' and 'GraphConstraint_Variable'. From 'GraphConstraint_EDataType', the role 'GraphConstraint_EDataType' has cardinality 0..*, and from 'GraphConstraint_Variable', the role 'GraphConstraint_Variable' has cardinality 0..*.
+An association connects 'GraphConstraint_NestedGraphCondition' and 'GraphConstraint_Formula'. From 'GraphConstraint_NestedGraphCondition', the role 'args' has cardinality 0..*, and from 'GraphConstraint_Formula', the role 'Formula' has cardinality 0..*.
+An association connects 'GraphConstraint_QuantifiedGraphCondition' and 'GraphConstraint_NestedGraphCondition'. From 'GraphConstraint_QuantifiedGraphCondition', the role 'QuantifiedGraphCondition' has cardinality 0..*, and from 'GraphConstraint_NestedGraphCondition', the role 'nested' has cardinality 0..*.
+An association connects 'GraphConstraint_NestedGraphConstraint' and 'GraphConstraint_NestedGraphCondition'. From 'GraphConstraint_NestedGraphConstraint', the role 'NestedGraphConstraint' has cardinality 0..*, and from 'GraphConstraint_NestedGraphCondition', the role 'condition' has cardinality 0..*.
+An association connects 'GraphConstraint_Graph' and 'GraphConstraint_NestedGraphCondition'. From 'GraphConstraint_Graph', the role 'GraphConstraint_Graph54' has cardinality 0..*, and from 'GraphConstraint_NestedGraphCondition', the role 'GraphConstraint_NestedGraphCondition' has cardinality 0..*.
+An association connects 'GraphConstraint_NestedGraphCondition' and 'GraphConstraint_Variable'. From 'GraphConstraint_NestedGraphCondition', the role 'GraphConstraint_NestedGraphCondition56' has cardinality 0..*, and from 'GraphConstraint_Variable', the role 'GraphConstraint_Variable57' has cardinality 0..*.

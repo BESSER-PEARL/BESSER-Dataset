@@ -1,0 +1,58 @@
+The domain model 'fsmtest' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'fsmtest_GuardDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmtest_PostconditionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmtest_TransitionDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fsmtest_SeedDeclaration' represents an important domain concept.
+It has one attribute: 'val', which is of type int.
+
+'fsmtest_PreconditionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmtest_SignalDeclaration' represents an important domain concept.
+It has the following attributes: 'port', which is of type str; 'intVal', which is of type int; 'signame', which is of type str; 'strVal', which is of type str.
+
+'fsmtest_StateDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fsmtest_LoopsDeclaration' represents an important domain concept.
+It has one attribute: 'val', which is of type int.
+
+'fsmtest_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'fsmtest_RandomTest' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fsmtest_FsmDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fsmtest_ConditionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'fsmtest_Model' and 'fsmtest_FsmDefinition'. From 'fsmtest_Model', the role 'fsmtest_Model' has cardinality 0..*, and from 'fsmtest_FsmDefinition', the role 'fsmtest_FsmDefinition' has cardinality 0..*.
+An association connects 'fsmtest_RandomTest' and 'fsmtest_Model'. From 'fsmtest_RandomTest', the role 'fsmtest_RandomTest' has cardinality 0..*, and from 'fsmtest_Model', the role 'fsmtest_Model2' has cardinality 0..*.
+An association connects 'fsmtest_StateDeclaration' and 'fsmtest_FsmDefinition'. From 'fsmtest_StateDeclaration', the role 'fsmtest_StateDeclaration' has cardinality 0..*, and from 'fsmtest_FsmDefinition', the role 'fsmtest_FsmDefinition4' has cardinality 0..*.
+An association connects 'fsmtest_RandomTest' and 'fsmtest_FsmDefinition'. From 'fsmtest_RandomTest', the role 'fsmtest_RandomTest6' has cardinality 0..*, and from 'fsmtest_FsmDefinition', the role 'fsmtest_FsmDefinition7' has cardinality 0..*.
+An association connects 'fsmtest_LoopsDeclaration' and 'fsmtest_RandomTest'. From 'fsmtest_LoopsDeclaration', the role 'fsmtest_LoopsDeclaration' has cardinality 0..*, and from 'fsmtest_RandomTest', the role 'fsmtest_RandomTest9' has cardinality 0..*.
+An association connects 'fsmtest_RandomTest' and 'fsmtest_SeedDeclaration'. From 'fsmtest_RandomTest', the role 'fsmtest_RandomTest11' has cardinality 0..*, and from 'fsmtest_SeedDeclaration', the role 'fsmtest_SeedDeclaration' has cardinality 0..*.
+An association connects 'fsmtest_SignalDeclaration' and 'fsmtest_GuardDeclaration'. From 'fsmtest_SignalDeclaration', the role 'fsmtest_SignalDeclaration' has cardinality 0..*, and from 'fsmtest_GuardDeclaration', the role 'fsmtest_GuardDeclaration' has cardinality 0..*.
+An association connects 'fsmtest_TransitionDeclaration' and 'fsmtest_StateDeclaration'. From 'fsmtest_TransitionDeclaration', the role 'fsmtest_TransitionDeclaration' has cardinality 0..*, and from 'fsmtest_StateDeclaration', the role 'fsmtest_StateDeclaration14' has cardinality 0..*.
+An association connects 'fsmtest_TransitionDeclaration' and 'fsmtest_SignalDeclaration'. From 'fsmtest_TransitionDeclaration', the role 'fsmtest_TransitionDeclaration16' has cardinality 0..*, and from 'fsmtest_SignalDeclaration', the role 'fsmtest_SignalDeclaration17' has cardinality 0..*.
+An association connects 'fsmtest_TransitionDeclaration' and 'fsmtest_GuardDeclaration'. From 'fsmtest_TransitionDeclaration', the role 'fsmtest_TransitionDeclaration19' has cardinality 0..*, and from 'fsmtest_GuardDeclaration', the role 'fsmtest_GuardDeclaration20' has cardinality 0..*.
+An association connects 'fsmtest_TransitionDeclaration' and 'fsmtest_PreconditionDeclaration'. From 'fsmtest_TransitionDeclaration', the role 'fsmtest_TransitionDeclaration22' has cardinality 0..*, and from 'fsmtest_PreconditionDeclaration', the role 'fsmtest_PreconditionDeclaration' has cardinality 0..*.
+An association connects 'fsmtest_TransitionDeclaration' and 'fsmtest_PostconditionDeclaration'. From 'fsmtest_TransitionDeclaration', the role 'fsmtest_TransitionDeclaration24' has cardinality 0..*, and from 'fsmtest_PostconditionDeclaration', the role 'fsmtest_PostconditionDeclaration' has cardinality 0..*.
+An association connects 'fsmtest_ConditionDeclaration' and 'fsmtest_SignalDeclaration'. From 'fsmtest_ConditionDeclaration', the role 'fsmtest_ConditionDeclaration' has cardinality 0..*, and from 'fsmtest_SignalDeclaration', the role 'fsmtest_SignalDeclaration26' has cardinality 0..*.
+An association connects 'fsmtest_SignalDeclaration' and 'fsmtest_PreconditionDeclaration'. From 'fsmtest_SignalDeclaration', the role 'fsmtest_SignalDeclaration29' has cardinality 0..*, and from 'fsmtest_PreconditionDeclaration', the role 'fsmtest_PreconditionDeclaration28' has cardinality 0..*.
+An association connects 'fsmtest_PostconditionDeclaration' and 'fsmtest_SignalDeclaration'. From 'fsmtest_PostconditionDeclaration', the role 'fsmtest_PostconditionDeclaration31' has cardinality 0..*, and from 'fsmtest_SignalDeclaration', the role 'fsmtest_SignalDeclaration32' has cardinality 0..*.
+An association connects 'fsmtest_ConditionDeclaration' and 'fsmtest_StateDeclaration'. From 'fsmtest_ConditionDeclaration', the role 'fsmtest_ConditionDeclaration35' has cardinality 0..*, and from 'fsmtest_StateDeclaration', the role 'fsmtest_StateDeclaration34' has cardinality 0..*.
+An association connects 'fsmtest_TransitionDeclaration' and 'fsmtest_StateDeclaration'. From 'fsmtest_TransitionDeclaration', the role 'fsmtest_TransitionDeclaration38' has cardinality 0..*, and from 'fsmtest_StateDeclaration', the role 'fsmtest_StateDeclaration37' has cardinality 0..*.

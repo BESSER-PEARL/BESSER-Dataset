@@ -1,0 +1,43 @@
+The domain model 'helloworld150' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'helloworld150_World' represents an important domain concept.
+It does not declare any attributes.
+
+'helloworld150_Own' represents an important domain concept.
+It has the following attributes: 'since', which is of type str; 'ownerName', which is of type str.
+
+'helloworld150_Person' represents an important domain concept.
+It has the following attributes: 'birthDate', which is of type str; 'forName', which is of type str.
+
+'helloworld150_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'helloworld150_Profession' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'helloworld150_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'helloworld150_Comment' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'helloworld150_Thing' is a specialization of 'NamedElement'.
+The class 'helloworld150_Own' is a specialization of 'NamedElement'.
+The class 'helloworld150_Person' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'helloworld150_World' and 'helloworld150_Thing'. From 'helloworld150_World', the role 'helloworld150_World' has cardinality 0..*, and from 'helloworld150_Thing', the role 'helloworld150_Thing' has cardinality 0..*.
+An association connects 'helloworld150_Person' and 'helloworld150_World'. From 'helloworld150_Person', the role 'helloworld150_Person' has cardinality 0..*, and from 'helloworld150_World', the role 'helloworld150_World2' has cardinality 0..*.
+An association connects 'helloworld150_Profession' and 'helloworld150_World'. From 'helloworld150_Profession', the role 'helloworld150_Profession' has cardinality 0..*, and from 'helloworld150_World', the role 'helloworld150_World4' has cardinality 0..*.
+An association connects 'helloworld150_Thing' and 'helloworld150_Own'. From 'helloworld150_Thing', the role 'thing' has cardinality 0..*, and from 'helloworld150_Own', the role 'Own' has cardinality 0..*.
+An association connects 'helloworld150_Thing' and 'helloworld150_Own'. From 'helloworld150_Thing', the role 'helloworld150_Thing7' has cardinality 0..*, and from 'helloworld150_Own', the role 'helloworld150_Own' has cardinality 0..*.
+An association connects 'helloworld150_NamedElement' and 'helloworld150_Comment'. From 'helloworld150_NamedElement', the role 'helloworld150_NamedElement' has cardinality 0..*, and from 'helloworld150_Comment', the role 'helloworld150_Comment' has cardinality 0..*.
+An association connects 'helloworld150_Thing' and 'helloworld150_Own'. From 'helloworld150_Thing', the role 'Thing' has cardinality 0..*, and from 'helloworld150_Own', the role 'ownership' has cardinality 0..*.
+An association connects 'helloworld150_Person' and 'helloworld150_Own'. From 'helloworld150_Person', the role 'helloworld150_Person12' has cardinality 0..*, and from 'helloworld150_Own', the role 'helloworld150_Own11' has cardinality 0..*.
+An association connects 'helloworld150_Profession' and 'helloworld150_Person'. From 'helloworld150_Profession', the role 'helloworld150_Profession15' has cardinality 0..*, and from 'helloworld150_Person', the role 'helloworld150_Person14' has cardinality 0..*.

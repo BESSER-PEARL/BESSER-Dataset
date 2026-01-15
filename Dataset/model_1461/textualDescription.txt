@@ -1,0 +1,104 @@
+The domain model 'apromore' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'apromore_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'Routing' represents an important domain concept.
+It does not declare any attributes.
+
+'apromore_Split' represents an important domain concept.
+It does not declare any attributes.
+
+'apromore_Routing' represents an important domain concept.
+It does not declare any attributes.
+
+'apromore_Message' represents an important domain concept.
+It does not declare any attributes.
+
+'apromore_Net' represents an important domain concept.
+It has one attribute: 'ident', which is of type int.
+
+'apromore_Node' represents an important domain concept.
+It has the following attributes: 'configurable', which is of type bool; 'name', which is of type str; 'ident', which is of type int.
+
+'Join' represents an important domain concept.
+It does not declare any attributes.
+
+'Split' represents an important domain concept.
+It does not declare any attributes.
+
+'apromore_Time' represents an important domain concept.
+It does not declare any attributes.
+
+'apromore_XORSplit' represents an important domain concept.
+It does not declare any attributes.
+
+'apromore_State' represents an important domain concept.
+It does not declare any attributes.
+
+'apromore_Task' represents an important domain concept.
+It does not declare any attributes.
+
+'apromore_ANDJoin' represents an important domain concept.
+It does not declare any attributes.
+
+'apromore_Edge' represents an important domain concept.
+It has the following attributes: 'default', which is of type bool; 'ident', which is of type int; 'condition', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'apromore_CanonicalProcess' represents an important domain concept.
+It has the following attributes: 'author', which is of type str; 'uri', which is of type str; 'version', which is of type str.
+
+'apromore_ORSplit' represents an important domain concept.
+It does not declare any attributes.
+
+'apromore_ORJoin' represents an important domain concept.
+It does not declare any attributes.
+
+'apromore_XORJoin' represents an important domain concept.
+It does not declare any attributes.
+
+'Work' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'apromore_ANDSplit' represents an important domain concept.
+It does not declare any attributes.
+
+'apromore_Join' represents an important domain concept.
+It does not declare any attributes.
+
+'apromore_Work' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'apromore_Work' is a specialization of 'Node'.
+The class 'apromore_Event' is a specialization of 'Work'.
+The class 'apromore_Message' is a specialization of 'Event'.
+The class 'apromore_Time' is a specialization of 'Event'.
+The class 'apromore_Task' is a specialization of 'Work'.
+The class 'apromore_Routing' is a specialization of 'Node'.
+The class 'apromore_Split' is a specialization of 'Routing'.
+The class 'apromore_ORSplit' is a specialization of 'Split'.
+The class 'apromore_XORSplit' is a specialization of 'Split'.
+The class 'apromore_ANDSplit' is a specialization of 'Split'.
+The class 'apromore_State' is a specialization of 'Routing'.
+The class 'apromore_Join' is a specialization of 'Routing'.
+The class 'apromore_ORJoin' is a specialization of 'Join'.
+The class 'apromore_XORJoin' is a specialization of 'Join'.
+The class 'apromore_ANDJoin' is a specialization of 'Join'.
+
+Relationships between classes are modeled using associations.
+An association connects 'apromore_Net' and 'apromore_CanonicalProcess'. From 'apromore_Net', the role 'apromore_Net' has cardinality 0..*, and from 'apromore_CanonicalProcess', the role 'apromore_CanonicalProcess' has cardinality 0..*.
+An association connects 'apromore_CanonicalProcess' and 'apromore_Net'. From 'apromore_CanonicalProcess', the role 'apromore_CanonicalProcess2' has cardinality 0..*, and from 'apromore_Net', the role 'apromore_Net3' has cardinality 0..*.
+An association connects 'apromore_Node' and 'apromore_Net'. From 'apromore_Node', the role 'apromore_Node' has cardinality 0..*, and from 'apromore_Net', the role 'apromore_Net5' has cardinality 0..*.
+An association connects 'apromore_Net' and 'apromore_Edge'. From 'apromore_Net', the role 'apromore_Net7' has cardinality 0..*, and from 'apromore_Edge', the role 'apromore_Edge' has cardinality 0..*.
+An association connects 'apromore_Node' and 'apromore_Edge'. From 'apromore_Node', the role 'apromore_Node10' has cardinality 0..*, and from 'apromore_Edge', the role 'apromore_Edge9' has cardinality 0..*.
+An association connects 'apromore_Edge' and 'apromore_Node'. From 'apromore_Edge', the role 'apromore_Edge12' has cardinality 0..*, and from 'apromore_Node', the role 'apromore_Node13' has cardinality 0..*.
+An association connects 'apromore_Task' and 'apromore_Net'. From 'apromore_Task', the role 'apromore_Task' has cardinality 0..*, and from 'apromore_Net', the role 'apromore_Net15' has cardinality 0..*.

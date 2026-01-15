@@ -1,0 +1,22 @@
+The domain model 'lit_petriNets' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'lit_petriNets_Place' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'lit_petriNets_Transition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'lit_petriNets_Net' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'lit_petriNets_Net' and 'lit_petriNets_Place'. From 'lit_petriNets_Net', the role 'net' has cardinality 0..*, and from 'lit_petriNets_Place', the role 'Place' has cardinality 0..*.
+An association connects 'lit_petriNets_Transition' and 'lit_petriNets_Net'. From 'lit_petriNets_Transition', the role 'Transition' has cardinality 0..*, and from 'lit_petriNets_Net', the role 'net2' has cardinality 0..*.
+An association connects 'lit_petriNets_Net' and 'lit_petriNets_Place'. From 'lit_petriNets_Net', the role 'Net' has cardinality 0..*, and from 'lit_petriNets_Place', the role 'places' has cardinality 0..*.
+An association connects 'lit_petriNets_Transition' and 'lit_petriNets_Place'. From 'lit_petriNets_Transition', the role 'Transition5' has cardinality 0..*, and from 'lit_petriNets_Place', the role 'dst' has cardinality 0..*.
+An association connects 'lit_petriNets_Transition' and 'lit_petriNets_Place'. From 'lit_petriNets_Transition', the role 'Transition7' has cardinality 0..*, and from 'lit_petriNets_Place', the role 'src' has cardinality 0..*.
+An association connects 'lit_petriNets_Net' and 'lit_petriNets_Transition'. From 'lit_petriNets_Net', the role 'Net9' has cardinality 0..*, and from 'lit_petriNets_Transition', the role 'transitions' has cardinality 0..*.
+An association connects 'lit_petriNets_Place' and 'lit_petriNets_Transition'. From 'lit_petriNets_Place', the role 'Place12' has cardinality 0..*, and from 'lit_petriNets_Transition', the role 'dst11' has cardinality 0..*.
+An association connects 'lit_petriNets_Place' and 'lit_petriNets_Transition'. From 'lit_petriNets_Place', the role 'Place15' has cardinality 0..*, and from 'lit_petriNets_Transition', the role 'src14' has cardinality 0..*.

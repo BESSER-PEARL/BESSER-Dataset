@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/loradd/model-compare-match-engine-playground/org.eclipse.emf.compare.match.playground.tests/data/library/library.ecore

@@ -1,0 +1,19 @@
+The domain model 'complworld' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'complworld_Thing' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'complworld_Mars' represents an important domain concept.
+It does not declare any attributes.
+
+'complworld_World' represents an important domain concept.
+It does not declare any attributes.
+
+'complworld_Satellite' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'complworld_Thing' and 'complworld_World'. From 'complworld_Thing', the role 'complworld_Thing' has cardinality 0..*, and from 'complworld_World', the role 'complworld_World' has cardinality 0..*.
+An association connects 'complworld_Satellite' and 'complworld_Mars'. From 'complworld_Satellite', the role 'complworld_Satellite' has cardinality 0..*, and from 'complworld_Mars', the role 'complworld_Mars' has cardinality 0..*.

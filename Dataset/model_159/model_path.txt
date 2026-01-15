@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/leodejevga/Modellgetriebene-Softwareentwicklung/3/org.xtext.example.petrinet/ueb04_petrinet.ecore

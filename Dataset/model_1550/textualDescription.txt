@@ -1,0 +1,100 @@
+The domain model 'conf101' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'conf101_Chapter' represents an important domain concept.
+It does not declare any attributes.
+
+'conf101_Session' represents an important domain concept.
+It has one attribute: 'year', which is of type str.
+
+'conf101_RevisionProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'conf101_Contribution' represents an important domain concept.
+It does not declare any attributes.
+
+'conf101_SteeringComitee' represents an important domain concept.
+It does not declare any attributes.
+
+'conf101_ProgramComitee' represents an important domain concept.
+It does not declare any attributes.
+
+'conf101_RevisionNote' represents an important domain concept.
+It does not declare any attributes.
+
+'conf101_System' represents an important domain concept.
+It does not declare any attributes.
+
+'conf101_Researcher' represents an important domain concept.
+It does not declare any attributes.
+
+'conf101_Admin' represents an important domain concept.
+It does not declare any attributes.
+
+'conf101_Person' represents an important domain concept.
+It does not declare any attributes.
+
+'conf101_Publication' represents an important domain concept.
+It does not declare any attributes.
+
+'conf101_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'conf101_Laboratory' represents an important domain concept.
+It does not declare any attributes.
+
+'conf101_Conference' represents an important domain concept.
+It does not declare any attributes.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'conf101_Evaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'conf101_Location' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'conf101_System' is a specialization of 'NamedElement'.
+The class 'conf101_Session' is a specialization of 'NamedElement'.
+The class 'conf101_Location' is a specialization of 'NamedElement'.
+The class 'conf101_Admin' is a specialization of 'NamedElement'.
+The class 'conf101_Conference' is a specialization of 'NamedElement'.
+The class 'conf101_Laboratory' is a specialization of 'NamedElement'.
+The class 'conf101_Researcher' is a specialization of 'Person'.
+The class 'conf101_Publication' is a specialization of 'NamedElement'.
+The class 'conf101_Person' is a specialization of 'NamedElement'.
+The class 'conf101_Chapter' is a specialization of 'NamedElement'.
+The class 'conf101_SteeringComitee' is a specialization of 'NamedElement'.
+The class 'conf101_ProgramComitee' is a specialization of 'NamedElement'.
+The class 'conf101_Contribution' is a specialization of 'NamedElement'.
+The class 'conf101_Evaluation' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'conf101_Admin' and 'conf101_System'. From 'conf101_Admin', the role 'conf101_Admin' has cardinality 0..*, and from 'conf101_System', the role 'conf101_System' has cardinality 0..*.
+An association connects 'conf101_Laboratory' and 'conf101_System'. From 'conf101_Laboratory', the role 'conf101_Laboratory' has cardinality 0..*, and from 'conf101_System', the role 'conf101_System2' has cardinality 0..*.
+An association connects 'conf101_System' and 'conf101_Conference'. From 'conf101_System', the role 'conf101_System4' has cardinality 0..*, and from 'conf101_Conference', the role 'conf101_Conference' has cardinality 0..*.
+An association connects 'conf101_System' and 'conf101_RevisionProcess'. From 'conf101_System', the role 'conf101_System6' has cardinality 0..*, and from 'conf101_RevisionProcess', the role 'conf101_RevisionProcess' has cardinality 0..*.
+An association connects 'conf101_Location' and 'conf101_Session'. From 'conf101_Location', the role 'conf101_Location' has cardinality 0..*, and from 'conf101_Session', the role 'conf101_Session' has cardinality 0..*.
+An association connects 'conf101_Session' and 'conf101_ProgramComitee'. From 'conf101_Session', the role 'conf101_Session9' has cardinality 0..*, and from 'conf101_ProgramComitee', the role 'conf101_ProgramComitee' has cardinality 0..*.
+An association connects 'conf101_Session' and 'conf101_SteeringComitee'. From 'conf101_Session', the role 'conf101_Session11' has cardinality 0..*, and from 'conf101_SteeringComitee', the role 'conf101_SteeringComitee' has cardinality 0..*.
+An association connects 'conf101_Contribution' and 'conf101_Session'. From 'conf101_Contribution', the role 'conf101_Contribution' has cardinality 0..*, and from 'conf101_Session', the role 'conf101_Session13' has cardinality 0..*.
+An association connects 'conf101_Admin' and 'conf101_Location'. From 'conf101_Admin', the role 'conf101_Admin15' has cardinality 0..*, and from 'conf101_Location', the role 'conf101_Location16' has cardinality 0..*.
+An association connects 'conf101_Conference' and 'conf101_Session'. From 'conf101_Conference', the role 'conf101_Conference18' has cardinality 0..*, and from 'conf101_Session', the role 'conf101_Session19' has cardinality 0..*.
+An association connects 'conf101_Laboratory' and 'conf101_Researcher'. From 'conf101_Laboratory', the role 'conf101_Laboratory21' has cardinality 0..*, and from 'conf101_Researcher', the role 'conf101_Researcher' has cardinality 0..*.
+An association connects 'conf101_Publication' and 'conf101_Laboratory'. From 'conf101_Publication', the role 'conf101_Publication' has cardinality 0..*, and from 'conf101_Laboratory', the role 'conf101_Laboratory23' has cardinality 0..*.
+An association connects 'conf101_Evaluation' and 'conf101_Researcher'. From 'conf101_Evaluation', the role 'conf101_Evaluation' has cardinality 0..*, and from 'conf101_Researcher', the role 'conf101_Researcher25' has cardinality 0..*.
+An association connects 'conf101_Researcher' and 'conf101_Chapter'. From 'conf101_Researcher', the role 'conf101_Researcher27' has cardinality 0..*, and from 'conf101_Chapter', the role 'conf101_Chapter' has cardinality 0..*.
+An association connects 'conf101_RevisionNote' and 'conf101_Researcher'. From 'conf101_RevisionNote', the role 'conf101_RevisionNote' has cardinality 0..*, and from 'conf101_Researcher', the role 'conf101_Researcher29' has cardinality 0..*.
+An association connects 'conf101_Publication' and 'conf101_Researcher'. From 'conf101_Publication', the role 'conf101_Publication32' has cardinality 0..*, and from 'conf101_Researcher', the role 'conf101_Researcher31' has cardinality 0..*.
+An association connects 'conf101_Chapter' and 'conf101_Publication'. From 'conf101_Chapter', the role 'conf101_Chapter35' has cardinality 0..*, and from 'conf101_Publication', the role 'conf101_Publication34' has cardinality 0..*.
+An association connects 'conf101_RevisionNote' and 'conf101_Chapter'. From 'conf101_RevisionNote', the role 'conf101_RevisionNote38' has cardinality 0..*, and from 'conf101_Chapter', the role 'conf101_Chapter37' has cardinality 0..*.
+An association connects 'conf101_SteeringComitee' and 'conf101_Person'. From 'conf101_SteeringComitee', the role 'conf101_SteeringComitee40' has cardinality 0..*, and from 'conf101_Person', the role 'conf101_Person' has cardinality 0..*.
+An association connects 'conf101_Person' and 'conf101_ProgramComitee'. From 'conf101_Person', the role 'conf101_Person43' has cardinality 0..*, and from 'conf101_ProgramComitee', the role 'conf101_ProgramComitee42' has cardinality 0..*.
+An association connects 'conf101_Contribution' and 'conf101_Publication'. From 'conf101_Contribution', the role 'conf101_Contribution45' has cardinality 0..*, and from 'conf101_Publication', the role 'conf101_Publication46' has cardinality 0..*.
+An association connects 'conf101_Publication' and 'conf101_Evaluation'. From 'conf101_Publication', the role 'conf101_Publication49' has cardinality 0..*, and from 'conf101_Evaluation', the role 'conf101_Evaluation48' has cardinality 0..*.

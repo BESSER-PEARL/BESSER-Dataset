@@ -1,0 +1,32 @@
+The domain model 'mention_graph' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'mention_graph_Node' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'mention_graph_HashTag' represents an important domain concept.
+It has one attribute: 'count', which is of type int.
+
+'mention_graph_MentionGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'mention_graph_User' represents an important domain concept.
+It does not declare any attributes.
+
+'mention_graph_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mention_graph_User' is a specialization of 'Node'.
+The class 'mention_graph_HashTag' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mention_graph_Node' and 'mention_graph_MentionGraph'. From 'mention_graph_Node', the role 'mention_graph_Node' has cardinality 0..*, and from 'mention_graph_MentionGraph', the role 'mention_graph_MentionGraph' has cardinality 0..*.
+An association connects 'mention_graph_MentionGraph' and 'mention_graph_Edge'. From 'mention_graph_MentionGraph', the role 'mention_graph_MentionGraph2' has cardinality 0..*, and from 'mention_graph_Edge', the role 'mention_graph_Edge' has cardinality 0..*.
+An association connects 'mention_graph_User' and 'mention_graph_HashTag'. From 'mention_graph_User', the role 'mention_graph_User' has cardinality 0..*, and from 'mention_graph_HashTag', the role 'mention_graph_HashTag' has cardinality 0..*.
+An association connects 'mention_graph_Edge' and 'mention_graph_Node'. From 'mention_graph_Edge', the role 'mention_graph_Edge5' has cardinality 0..*, and from 'mention_graph_Node', the role 'mention_graph_Node6' has cardinality 0..*.
+An association connects 'mention_graph_Node' and 'mention_graph_Edge'. From 'mention_graph_Node', the role 'mention_graph_Node9' has cardinality 0..*, and from 'mention_graph_Edge', the role 'mention_graph_Edge8' has cardinality 0..*.

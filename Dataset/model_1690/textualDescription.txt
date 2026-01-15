@@ -1,0 +1,28 @@
+The domain model 'mpupkb' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'mpupkb_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'mpupkb_Comment' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'mpupkb_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mpupkb_Own' represents an important domain concept.
+It has the following attributes: 'ownerName', which is of type str; 'since', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mpupkb_Thing' is a specialization of 'NamedElement'.
+The class 'mpupkb_Own' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mpupkb_Own' and 'mpupkb_Thing'. From 'mpupkb_Own', the role 'Own' has cardinality 0..*, and from 'mpupkb_Thing', the role 'thing' has cardinality 0..*.
+An association connects 'mpupkb_Own' and 'mpupkb_Thing'. From 'mpupkb_Own', the role 'mpupkb_Own' has cardinality 0..*, and from 'mpupkb_Thing', the role 'mpupkb_Thing' has cardinality 0..*.
+An association connects 'mpupkb_Comment' and 'mpupkb_NamedElement'. From 'mpupkb_Comment', the role 'mpupkb_Comment' has cardinality 0..*, and from 'mpupkb_NamedElement', the role 'mpupkb_NamedElement' has cardinality 0..*.
+An association connects 'mpupkb_Thing' and 'mpupkb_Own'. From 'mpupkb_Thing', the role 'Thing' has cardinality 0..*, and from 'mpupkb_Own', the role 'ownership' has cardinality 0..*.

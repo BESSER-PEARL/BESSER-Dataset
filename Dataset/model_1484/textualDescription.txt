@@ -1,0 +1,51 @@
+The domain model 'petriNetEMF' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'petriNetEMF_TransitionToPlaceArc' represents an important domain concept.
+It does not declare any attributes.
+
+'petriNetEMF_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'Identification' represents an important domain concept.
+It does not declare any attributes.
+
+'petriNetEMF_Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'petriNetEMF_PlaceToTransitionArc' represents an important domain concept.
+It does not declare any attributes.
+
+'petriNetEMF_Identification' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'ID', which is of type str.
+
+'petriNetEMF_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'petriNetEMF_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'petriNetEMF_PetriNet' is a specialization of 'Identification'.
+The class 'petriNetEMF_Place' is a specialization of 'Identification'.
+The class 'petriNetEMF_Transition' is a specialization of 'Identification'.
+The class 'petriNetEMF_PlaceToTransitionArc' is a specialization of 'Arc'.
+The class 'petriNetEMF_TransitionToPlaceArc' is a specialization of 'Arc'.
+The class 'petriNetEMF_Arc' is a specialization of 'Identification'.
+
+Relationships between classes are modeled using associations.
+An association connects 'petriNetEMF_PetriNet' and 'petriNetEMF_Place'. From 'petriNetEMF_PetriNet', the role 'petriNetEMF_PetriNet' has cardinality 0..*, and from 'petriNetEMF_Place', the role 'petriNetEMF_Place' has cardinality 0..*.
+An association connects 'petriNetEMF_PetriNet' and 'petriNetEMF_Transition'. From 'petriNetEMF_PetriNet', the role 'petriNetEMF_PetriNet2' has cardinality 0..*, and from 'petriNetEMF_Transition', the role 'petriNetEMF_Transition' has cardinality 0..*.
+An association connects 'petriNetEMF_PetriNet' and 'petriNetEMF_Arc'. From 'petriNetEMF_PetriNet', the role 'petriNetEMF_PetriNet4' has cardinality 0..*, and from 'petriNetEMF_Arc', the role 'petriNetEMF_Arc' has cardinality 0..*.
+An association connects 'petriNetEMF_Place' and 'petriNetEMF_PlaceToTransitionArc'. From 'petriNetEMF_Place', the role 'from' has cardinality 0..*, and from 'petriNetEMF_PlaceToTransitionArc', the role 'PlaceToTransitionArc' has cardinality 0..*.
+An association connects 'petriNetEMF_TransitionToPlaceArc' and 'petriNetEMF_Place'. From 'petriNetEMF_TransitionToPlaceArc', the role 'TransitionToPlaceArc' has cardinality 0..*, and from 'petriNetEMF_Place', the role 'to' has cardinality 0..*.
+An association connects 'petriNetEMF_TransitionToPlaceArc' and 'petriNetEMF_Transition'. From 'petriNetEMF_TransitionToPlaceArc', the role 'TransitionToPlaceArc9' has cardinality 0..*, and from 'petriNetEMF_Transition', the role 'from8' has cardinality 0..*.
+An association connects 'petriNetEMF_PlaceToTransitionArc' and 'petriNetEMF_Transition'. From 'petriNetEMF_PlaceToTransitionArc', the role 'PlaceToTransitionArc12' has cardinality 0..*, and from 'petriNetEMF_Transition', the role 'to11' has cardinality 0..*.
+An association connects 'petriNetEMF_Transition' and 'petriNetEMF_PlaceToTransitionArc'. From 'petriNetEMF_Transition', the role 'Transition' has cardinality 0..*, and from 'petriNetEMF_PlaceToTransitionArc', the role 'incomingArcs' has cardinality 0..*.
+An association connects 'petriNetEMF_Place' and 'petriNetEMF_PlaceToTransitionArc'. From 'petriNetEMF_Place', the role 'Place' has cardinality 0..*, and from 'petriNetEMF_PlaceToTransitionArc', the role 'outgoingArcs' has cardinality 0..*.
+An association connects 'petriNetEMF_Transition' and 'petriNetEMF_TransitionToPlaceArc'. From 'petriNetEMF_Transition', the role 'Transition17' has cardinality 0..*, and from 'petriNetEMF_TransitionToPlaceArc', the role 'outgoingArcs16' has cardinality 0..*.
+An association connects 'petriNetEMF_TransitionToPlaceArc' and 'petriNetEMF_Place'. From 'petriNetEMF_TransitionToPlaceArc', the role 'incomingArcs19' has cardinality 0..*, and from 'petriNetEMF_Place', the role 'Place20' has cardinality 0..*.

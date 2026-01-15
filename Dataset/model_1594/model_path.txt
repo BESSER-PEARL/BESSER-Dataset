@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/d-leroy/executable-model-samples/petrinet/fr.inria.diverse.sample.petrinet.model/model/petrinet.ecore

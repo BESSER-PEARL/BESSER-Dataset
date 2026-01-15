@@ -1,0 +1,33 @@
+The domain model 'yye' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'yye_Foo' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'yye_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'yye_Base' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'yye_Relation' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'yye_Alias' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'yye_Base' is a specialization of 'NamedElement'.
+The class 'yye_Relation' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'yye_Relation' and 'yye_Base'. From 'yye_Relation', the role 'Relation' has cardinality 0..*, and from 'yye_Base', the role 'fromThing' has cardinality 0..*.
+An association connects 'yye_Foo' and 'yye_Base'. From 'yye_Foo', the role 'yye_Foo' has cardinality 0..*, and from 'yye_Base', the role 'yye_Base' has cardinality 0..*.
+An association connects 'yye_Alias' and 'yye_NamedElement'. From 'yye_Alias', the role 'yye_Alias' has cardinality 0..*, and from 'yye_NamedElement', the role 'yye_NamedElement' has cardinality 0..*.
+An association connects 'yye_Base' and 'yye_Relation'. From 'yye_Base', the role 'Base' has cardinality 0..*, and from 'yye_Relation', the role 'relations' has cardinality 0..*.
+An association connects 'yye_Relation' and 'yye_Base'. From 'yye_Relation', the role 'yye_Relation' has cardinality 0..*, and from 'yye_Base', the role 'yye_Base5' has cardinality 0..*.
+An association connects 'yye_Relation' and 'yye_Relation'. From 'yye_Relation', the role 'yye_Relation8' has cardinality 0..*, and from 'yye_Relation', the role 'yye_Relation6' has cardinality 0..*.

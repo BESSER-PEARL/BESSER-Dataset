@@ -1,0 +1,73 @@
+The domain model 'researchva' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'Counted' represents an important domain concept.
+It does not declare any attributes.
+
+'researchva_Labelled' represents an important domain concept.
+It has one attribute: 'lname', which is of type str.
+
+'researchva_PublicationStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'researchva_Skill' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'researchva_Write' represents an important domain concept.
+It has one attribute: 'timeSpent', which is of type int.
+
+'researchva_Researcher' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'forName', which is of type str.
+
+'researchva_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Labelled' represents an important domain concept.
+It does not declare any attributes.
+
+'researchva_Keyword' represents an important domain concept.
+It has one attribute: 'word', which is of type str.
+
+'researchva_Review' represents an important domain concept.
+It has one attribute: 'date', which is of type date.
+
+'researchva_ReviewNote' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'researchva_Paragraph' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'researchva_Paper' represents an important domain concept.
+It does not declare any attributes.
+
+'researchva_Counted' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'researchva_Paper' is a specialization of 'Named'.
+The class 'researchva_Paragraph' is a specialization of 'Counted'.
+The class 'researchva_Paragraph' is a specialization of 'Named'.
+The class 'researchva_ReviewNote' is a specialization of 'Named'.
+The class 'researchva_Write' is a specialization of 'Labelled'.
+The class 'researchva_Review' is a specialization of 'Labelled'.
+The class 'researchva_PublicationStructure' is a specialization of 'Named'.
+The class 'researchva_Keyword' is a specialization of 'Named'.
+
+Relationships between classes are modeled using associations.
+An association connects 'researchva_Researcher' and 'researchva_Write'. From 'researchva_Researcher', the role 'researchva_Researcher' has cardinality 0..*, and from 'researchva_Write', the role 'researchva_Write' has cardinality 0..*.
+An association connects 'researchva_Researcher' and 'researchva_Review'. From 'researchva_Researcher', the role 'researchva_Researcher2' has cardinality 0..*, and from 'researchva_Review', the role 'researchva_Review' has cardinality 0..*.
+An association connects 'researchva_Paper' and 'researchva_Researcher'. From 'researchva_Paper', the role 'Paper' has cardinality 0..*, and from 'researchva_Researcher', the role 'authors' has cardinality 0..*.
+An association connects 'researchva_Researcher' and 'researchva_Skill'. From 'researchva_Researcher', the role 'researchva_Researcher5' has cardinality 0..*, and from 'researchva_Skill', the role 'researchva_Skill' has cardinality 0..*.
+An association connects 'researchva_Paper' and 'researchva_Paragraph'. From 'researchva_Paper', the role 'researchva_Paper' has cardinality 0..*, and from 'researchva_Paragraph', the role 'researchva_Paragraph' has cardinality 0..*.
+An association connects 'researchva_Researcher' and 'researchva_Paper'. From 'researchva_Researcher', the role 'Researcher' has cardinality 0..*, and from 'researchva_Paper', the role 'res_papers' has cardinality 0..*.
+An association connects 'researchva_Paper' and 'researchva_Paper'. From 'researchva_Paper', the role 'researchva_Paper8' has cardinality 0..*, and from 'researchva_Paper', the role 'researchva_Paper10' has cardinality 0..*.
+An association connects 'researchva_ReviewNote' and 'researchva_Paragraph'. From 'researchva_ReviewNote', the role 'researchva_ReviewNote' has cardinality 0..*, and from 'researchva_Paragraph', the role 'researchva_Paragraph12' has cardinality 0..*.
+An association connects 'researchva_Write' and 'researchva_Paragraph'. From 'researchva_Write', the role 'researchva_Write14' has cardinality 0..*, and from 'researchva_Paragraph', the role 'researchva_Paragraph15' has cardinality 0..*.
+An association connects 'researchva_ReviewNote' and 'researchva_Review'. From 'researchva_ReviewNote', the role 'researchva_ReviewNote18' has cardinality 0..*, and from 'researchva_Review', the role 'researchva_Review17' has cardinality 0..*.
+An association connects 'researchva_Researcher' and 'researchva_PublicationStructure'. From 'researchva_Researcher', the role 'researchva_Researcher20' has cardinality 0..*, and from 'researchva_PublicationStructure', the role 'researchva_PublicationStructure' has cardinality 0..*.
+An association connects 'researchva_Paper' and 'researchva_PublicationStructure'. From 'researchva_Paper', the role 'researchva_Paper23' has cardinality 0..*, and from 'researchva_PublicationStructure', the role 'researchva_PublicationStructure22' has cardinality 0..*.
+An association connects 'researchva_Keyword' and 'researchva_PublicationStructure'. From 'researchva_Keyword', the role 'researchva_Keyword' has cardinality 0..*, and from 'researchva_PublicationStructure', the role 'researchva_PublicationStructure25' has cardinality 0..*.

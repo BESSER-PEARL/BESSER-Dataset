@@ -1,0 +1,44 @@
+The domain model 'petri' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'petri_PTArc' represents an important domain concept.
+It does not declare any attributes.
+
+'petri_Place' represents an important domain concept.
+It has one attribute: 'tokens', which is of type int.
+
+'petri_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'petri_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petri_Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'petri_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'petri_TPArc' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'petri_Place' is a specialization of 'Node'.
+The class 'petri_Transition' is a specialization of 'Node'.
+The class 'petri_TPArc' is a specialization of 'Arc'.
+The class 'petri_PTArc' is a specialization of 'Arc'.
+
+Relationships between classes are modeled using associations.
+An association connects 'petri_PetriNet' and 'petri_Node'. From 'petri_PetriNet', the role 'petri_PetriNet' has cardinality 0..*, and from 'petri_Node', the role 'petri_Node' has cardinality 0..*.
+An association connects 'petri_Arc' and 'petri_PetriNet'. From 'petri_Arc', the role 'petri_Arc' has cardinality 0..*, and from 'petri_PetriNet', the role 'petri_PetriNet2' has cardinality 0..*.
+An association connects 'petri_TPArc' and 'petri_Transition'. From 'petri_TPArc', the role 'petri_TPArc' has cardinality 0..*, and from 'petri_Transition', the role 'petri_Transition' has cardinality 0..*.
+An association connects 'petri_Place' and 'petri_TPArc'. From 'petri_Place', the role 'petri_Place' has cardinality 0..*, and from 'petri_TPArc', the role 'petri_TPArc5' has cardinality 0..*.
+An association connects 'petri_Place' and 'petri_PTArc'. From 'petri_Place', the role 'petri_Place7' has cardinality 0..*, and from 'petri_PTArc', the role 'petri_PTArc' has cardinality 0..*.
+An association connects 'petri_Transition' and 'petri_PTArc'. From 'petri_Transition', the role 'petri_Transition10' has cardinality 0..*, and from 'petri_PTArc', the role 'petri_PTArc9' has cardinality 0..*.

@@ -1,0 +1,212 @@
+The domain model 'bibtex' describes the core structural elements and their relationships within the system.
+
+The model defines 41 main class(es).
+
+'bibtex_PublisherField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_SeriesField' represents an important domain concept.
+It does not declare any attributes.
+
+'Entry' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_NumberField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_InProceedingsEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_YearValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'bibtex_Entry' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_Person' represents an important domain concept.
+It has the following attributes: 'secondName', which is of type str; 'firstName', which is of type str; 'lastName', which is of type str.
+
+'bibtex_Author' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_Page' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_AuthorField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_VolumeField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_MonthField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_EidField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_Editor' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_NoteField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_Bibliography' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_Keyword' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_AddressField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_JournalField' represents an important domain concept.
+It does not declare any attributes.
+
+'IntValue' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_IntValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'bibtex_PartField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_KeywordField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_BookTitleField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_YearField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_ArticleEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_EditorField' represents an important domain concept.
+It does not declare any attributes.
+
+'Field' represents an important domain concept.
+It does not declare any attributes.
+
+'YearValue' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_ReviewField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_AbstractField' represents an important domain concept.
+It does not declare any attributes.
+
+'StringValue' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_TitleField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_BibtexKeyField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_StringValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'bibtex_PageField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_UrlField' represents an important domain concept.
+It does not declare any attributes.
+
+'bibtex_OrganizationField' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'bibtex_Author' is a specialization of 'Person'.
+The class 'bibtex_Editor' is a specialization of 'Person'.
+The class 'bibtex_Page' is a specialization of 'IntValue'.
+The class 'bibtex_AuthorField' is a specialization of 'Field'.
+The class 'bibtex_EditorField' is a specialization of 'Field'.
+The class 'bibtex_TitleField' is a specialization of 'Field'.
+The class 'bibtex_TitleField' is a specialization of 'StringValue'.
+The class 'bibtex_BookTitleField' is a specialization of 'Field'.
+The class 'bibtex_BookTitleField' is a specialization of 'StringValue'.
+The class 'bibtex_NumberField' is a specialization of 'IntValue'.
+The class 'bibtex_NumberField' is a specialization of 'Field'.
+The class 'bibtex_YearField' is a specialization of 'Field'.
+The class 'bibtex_YearField' is a specialization of 'YearValue'.
+The class 'bibtex_BibtexKeyField' is a specialization of 'Field'.
+The class 'bibtex_BibtexKeyField' is a specialization of 'StringValue'.
+The class 'bibtex_JournalField' is a specialization of 'Field'.
+The class 'bibtex_JournalField' is a specialization of 'StringValue'.
+The class 'bibtex_VolumeField' is a specialization of 'Field'.
+The class 'bibtex_VolumeField' is a specialization of 'IntValue'.
+The class 'bibtex_PageField' is a specialization of 'Field'.
+The class 'bibtex_SeriesField' is a specialization of 'StringValue'.
+The class 'bibtex_SeriesField' is a specialization of 'Field'.
+The class 'bibtex_AddressField' is a specialization of 'Field'.
+The class 'bibtex_AddressField' is a specialization of 'StringValue'.
+The class 'bibtex_MonthField' is a specialization of 'Field'.
+The class 'bibtex_MonthField' is a specialization of 'StringValue'.
+The class 'bibtex_OrganizationField' is a specialization of 'Field'.
+The class 'bibtex_OrganizationField' is a specialization of 'StringValue'.
+The class 'bibtex_NoteField' is a specialization of 'Field'.
+The class 'bibtex_NoteField' is a specialization of 'StringValue'.
+The class 'bibtex_PublisherField' is a specialization of 'Field'.
+The class 'bibtex_PublisherField' is a specialization of 'StringValue'.
+The class 'bibtex_PartField' is a specialization of 'IntValue'.
+The class 'bibtex_PartField' is a specialization of 'Field'.
+The class 'bibtex_EidField' is a specialization of 'Field'.
+The class 'bibtex_EidField' is a specialization of 'StringValue'.
+The class 'bibtex_UrlField' is a specialization of 'StringValue'.
+The class 'bibtex_UrlField' is a specialization of 'Field'.
+The class 'bibtex_Keyword' is a specialization of 'StringValue'.
+The class 'bibtex_KeywordField' is a specialization of 'Field'.
+The class 'bibtex_AbstractField' is a specialization of 'StringValue'.
+The class 'bibtex_AbstractField' is a specialization of 'Field'.
+The class 'bibtex_ReviewField' is a specialization of 'StringValue'.
+The class 'bibtex_ReviewField' is a specialization of 'Field'.
+The class 'bibtex_InProceedingsEntry' is a specialization of 'Entry'.
+The class 'bibtex_ArticleEntry' is a specialization of 'Entry'.
+
+Relationships between classes are modeled using associations.
+An association connects 'bibtex_Author' and 'bibtex_AuthorField'. From 'bibtex_Author', the role 'bibtex_Author' has cardinality 0..*, and from 'bibtex_AuthorField', the role 'bibtex_AuthorField' has cardinality 0..*.
+An association connects 'bibtex_Editor' and 'bibtex_EditorField'. From 'bibtex_Editor', the role 'bibtex_Editor' has cardinality 0..*, and from 'bibtex_EditorField', the role 'bibtex_EditorField' has cardinality 0..*.
+An association connects 'bibtex_PageField' and 'bibtex_Page'. From 'bibtex_PageField', the role 'bibtex_PageField' has cardinality 0..*, and from 'bibtex_Page', the role 'bibtex_Page' has cardinality 0..*.
+An association connects 'bibtex_PageField' and 'bibtex_Page'. From 'bibtex_PageField', the role 'bibtex_PageField4' has cardinality 0..*, and from 'bibtex_Page', the role 'bibtex_Page5' has cardinality 0..*.
+An association connects 'bibtex_Keyword' and 'bibtex_KeywordField'. From 'bibtex_Keyword', the role 'bibtex_Keyword' has cardinality 0..*, and from 'bibtex_KeywordField', the role 'bibtex_KeywordField' has cardinality 0..*.
+An association connects 'bibtex_BibtexKeyField' and 'bibtex_Entry'. From 'bibtex_BibtexKeyField', the role 'bibtex_BibtexKeyField' has cardinality 0..*, and from 'bibtex_Entry', the role 'bibtex_Entry' has cardinality 0..*.
+An association connects 'bibtex_Entry' and 'bibtex_AbstractField'. From 'bibtex_Entry', the role 'bibtex_Entry9' has cardinality 0..*, and from 'bibtex_AbstractField', the role 'bibtex_AbstractField' has cardinality 0..*.
+An association connects 'bibtex_UrlField' and 'bibtex_Entry'. From 'bibtex_UrlField', the role 'bibtex_UrlField' has cardinality 0..*, and from 'bibtex_Entry', the role 'bibtex_Entry11' has cardinality 0..*.
+An association connects 'bibtex_Entry' and 'bibtex_KeywordField'. From 'bibtex_Entry', the role 'bibtex_Entry13' has cardinality 0..*, and from 'bibtex_KeywordField', the role 'bibtex_KeywordField14' has cardinality 0..*.
+An association connects 'bibtex_Entry' and 'bibtex_ReviewField'. From 'bibtex_Entry', the role 'bibtex_Entry16' has cardinality 0..*, and from 'bibtex_ReviewField', the role 'bibtex_ReviewField' has cardinality 0..*.
+An association connects 'bibtex_AuthorField' and 'bibtex_InProceedingsEntry'. From 'bibtex_AuthorField', the role 'bibtex_AuthorField18' has cardinality 0..*, and from 'bibtex_InProceedingsEntry', the role 'bibtex_InProceedingsEntry' has cardinality 0..*.
+An association connects 'bibtex_TitleField' and 'bibtex_InProceedingsEntry'. From 'bibtex_TitleField', the role 'bibtex_TitleField' has cardinality 0..*, and from 'bibtex_InProceedingsEntry', the role 'bibtex_InProceedingsEntry20' has cardinality 0..*.
+An association connects 'bibtex_BookTitleField' and 'bibtex_InProceedingsEntry'. From 'bibtex_BookTitleField', the role 'bibtex_BookTitleField' has cardinality 0..*, and from 'bibtex_InProceedingsEntry', the role 'bibtex_InProceedingsEntry22' has cardinality 0..*.
+An association connects 'bibtex_InProceedingsEntry' and 'bibtex_YearField'. From 'bibtex_InProceedingsEntry', the role 'bibtex_InProceedingsEntry24' has cardinality 0..*, and from 'bibtex_YearField', the role 'bibtex_YearField' has cardinality 0..*.
+An association connects 'bibtex_InProceedingsEntry' and 'bibtex_EditorField'. From 'bibtex_InProceedingsEntry', the role 'bibtex_InProceedingsEntry26' has cardinality 0..*, and from 'bibtex_EditorField', the role 'bibtex_EditorField27' has cardinality 0..*.
+An association connects 'bibtex_InProceedingsEntry' and 'bibtex_PageField'. From 'bibtex_InProceedingsEntry', the role 'bibtex_InProceedingsEntry29' has cardinality 0..*, and from 'bibtex_PageField', the role 'bibtex_PageField30' has cardinality 0..*.
+An association connects 'bibtex_VolumeField' and 'bibtex_InProceedingsEntry'. From 'bibtex_VolumeField', the role 'bibtex_VolumeField' has cardinality 0..*, and from 'bibtex_InProceedingsEntry', the role 'bibtex_InProceedingsEntry32' has cardinality 0..*.
+An association connects 'bibtex_InProceedingsEntry' and 'bibtex_NumberField'. From 'bibtex_InProceedingsEntry', the role 'bibtex_InProceedingsEntry34' has cardinality 0..*, and from 'bibtex_NumberField', the role 'bibtex_NumberField' has cardinality 0..*.
+An association connects 'bibtex_SeriesField' and 'bibtex_InProceedingsEntry'. From 'bibtex_SeriesField', the role 'bibtex_SeriesField' has cardinality 0..*, and from 'bibtex_InProceedingsEntry', the role 'bibtex_InProceedingsEntry36' has cardinality 0..*.
+An association connects 'bibtex_InProceedingsEntry' and 'bibtex_AddressField'. From 'bibtex_InProceedingsEntry', the role 'bibtex_InProceedingsEntry38' has cardinality 0..*, and from 'bibtex_AddressField', the role 'bibtex_AddressField' has cardinality 0..*.
+An association connects 'bibtex_InProceedingsEntry' and 'bibtex_MonthField'. From 'bibtex_InProceedingsEntry', the role 'bibtex_InProceedingsEntry40' has cardinality 0..*, and from 'bibtex_MonthField', the role 'bibtex_MonthField' has cardinality 0..*.
+An association connects 'bibtex_OrganizationField' and 'bibtex_InProceedingsEntry'. From 'bibtex_OrganizationField', the role 'bibtex_OrganizationField' has cardinality 0..*, and from 'bibtex_InProceedingsEntry', the role 'bibtex_InProceedingsEntry42' has cardinality 0..*.
+An association connects 'bibtex_NoteField' and 'bibtex_InProceedingsEntry'. From 'bibtex_NoteField', the role 'bibtex_NoteField' has cardinality 0..*, and from 'bibtex_InProceedingsEntry', the role 'bibtex_InProceedingsEntry44' has cardinality 0..*.
+An association connects 'bibtex_InProceedingsEntry' and 'bibtex_PublisherField'. From 'bibtex_InProceedingsEntry', the role 'bibtex_InProceedingsEntry46' has cardinality 0..*, and from 'bibtex_PublisherField', the role 'bibtex_PublisherField' has cardinality 0..*.
+An association connects 'bibtex_ArticleEntry' and 'bibtex_AuthorField'. From 'bibtex_ArticleEntry', the role 'bibtex_ArticleEntry' has cardinality 0..*, and from 'bibtex_AuthorField', the role 'bibtex_AuthorField48' has cardinality 0..*.
+An association connects 'bibtex_TitleField' and 'bibtex_ArticleEntry'. From 'bibtex_TitleField', the role 'bibtex_TitleField51' has cardinality 0..*, and from 'bibtex_ArticleEntry', the role 'bibtex_ArticleEntry50' has cardinality 0..*.
+An association connects 'bibtex_YearField' and 'bibtex_ArticleEntry'. From 'bibtex_YearField', the role 'bibtex_YearField54' has cardinality 0..*, and from 'bibtex_ArticleEntry', the role 'bibtex_ArticleEntry53' has cardinality 0..*.
+An association connects 'bibtex_ArticleEntry' and 'bibtex_JournalField'. From 'bibtex_ArticleEntry', the role 'bibtex_ArticleEntry56' has cardinality 0..*, and from 'bibtex_JournalField', the role 'bibtex_JournalField' has cardinality 0..*.
+An association connects 'bibtex_ArticleEntry' and 'bibtex_PageField'. From 'bibtex_ArticleEntry', the role 'bibtex_ArticleEntry58' has cardinality 0..*, and from 'bibtex_PageField', the role 'bibtex_PageField59' has cardinality 0..*.
+An association connects 'bibtex_ArticleEntry' and 'bibtex_VolumeField'. From 'bibtex_ArticleEntry', the role 'bibtex_ArticleEntry61' has cardinality 0..*, and from 'bibtex_VolumeField', the role 'bibtex_VolumeField62' has cardinality 0..*.
+An association connects 'bibtex_NumberField' and 'bibtex_ArticleEntry'. From 'bibtex_NumberField', the role 'bibtex_NumberField65' has cardinality 0..*, and from 'bibtex_ArticleEntry', the role 'bibtex_ArticleEntry64' has cardinality 0..*.
+An association connects 'bibtex_ArticleEntry' and 'bibtex_MonthField'. From 'bibtex_ArticleEntry', the role 'bibtex_ArticleEntry67' has cardinality 0..*, and from 'bibtex_MonthField', the role 'bibtex_MonthField68' has cardinality 0..*.
+An association connects 'bibtex_ArticleEntry' and 'bibtex_NoteField'. From 'bibtex_ArticleEntry', the role 'bibtex_ArticleEntry70' has cardinality 0..*, and from 'bibtex_NoteField', the role 'bibtex_NoteField71' has cardinality 0..*.
+An association connects 'bibtex_ArticleEntry' and 'bibtex_PartField'. From 'bibtex_ArticleEntry', the role 'bibtex_ArticleEntry73' has cardinality 0..*, and from 'bibtex_PartField', the role 'bibtex_PartField' has cardinality 0..*.
+An association connects 'bibtex_ArticleEntry' and 'bibtex_EidField'. From 'bibtex_ArticleEntry', the role 'bibtex_ArticleEntry75' has cardinality 0..*, and from 'bibtex_EidField', the role 'bibtex_EidField' has cardinality 0..*.
+An association connects 'bibtex_Entry' and 'bibtex_Bibliography'. From 'bibtex_Entry', the role 'bibtex_Entry77' has cardinality 0..*, and from 'bibtex_Bibliography', the role 'bibtex_Bibliography' has cardinality 0..*.

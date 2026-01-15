@@ -1,0 +1,52 @@
+The domain model 'ktest401' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'ktest401_World' represents an important domain concept.
+It does not declare any attributes.
+
+'ktest401_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'ktest401_EClass1' represents an important domain concept.
+It has the following attributes: 'bar', which is of type str; 'foo', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ktest401_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ktest401_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'ktest401_EClass0' represents an important domain concept.
+It does not declare any attributes.
+
+'ktest401_Line' represents an important domain concept.
+It has the following attributes: 'articleAid', which is of type str; 'quant', which is of type int.
+
+'ktest401_Article' represents an important domain concept.
+It has one attribute: 'aid', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'ktest401_Thing' is a specialization of 'NamedElement'.
+The class 'ktest401_RelatedTo' is a specialization of 'NamedElement'.
+The class 'ktest401_Line' is a specialization of 'NamedElement'.
+The class 'ktest401_Article' is a specialization of 'NamedElement'.
+The class 'ktest401_EClass0' is a specialization of 'NamedElement'.
+The class 'ktest401_EClass1' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ktest401_World' and 'ktest401_Thing'. From 'ktest401_World', the role 'ktest401_World' has cardinality 0..*, and from 'ktest401_Thing', the role 'ktest401_Thing' has cardinality 0..*.
+An association connects 'ktest401_World' and 'ktest401_Article'. From 'ktest401_World', the role 'ktest401_World2' has cardinality 0..*, and from 'ktest401_Article', the role 'ktest401_Article' has cardinality 0..*.
+An association connects 'ktest401_RelatedTo' and 'ktest401_Thing'. From 'ktest401_RelatedTo', the role 'RelatedTo' has cardinality 0..*, and from 'ktest401_Thing', the role 'fromThing' has cardinality 0..*.
+An association connects 'ktest401_Thing' and 'ktest401_Line'. From 'ktest401_Thing', the role 'ktest401_Thing5' has cardinality 0..*, and from 'ktest401_Line', the role 'ktest401_Line' has cardinality 0..*.
+An association connects 'ktest401_Thing' and 'ktest401_EClass0'. From 'ktest401_Thing', the role 'ktest401_Thing7' has cardinality 0..*, and from 'ktest401_EClass0', the role 'ktest401_EClass0' has cardinality 0..*.
+An association connects 'ktest401_Thing' and 'ktest401_RelatedTo'. From 'ktest401_Thing', the role 'Thing' has cardinality 0..*, and from 'ktest401_RelatedTo', the role 'relations' has cardinality 0..*.
+An association connects 'ktest401_Thing' and 'ktest401_RelatedTo'. From 'ktest401_Thing', the role 'ktest401_Thing10' has cardinality 0..*, and from 'ktest401_RelatedTo', the role 'ktest401_RelatedTo' has cardinality 0..*.
+An association connects 'ktest401_RelatedTo' and 'ktest401_EClass1'. From 'ktest401_RelatedTo', the role 'ktest401_RelatedTo12' has cardinality 0..*, and from 'ktest401_EClass1', the role 'ktest401_EClass1' has cardinality 0..*.
+An association connects 'ktest401_Thing' and 'ktest401_Line'. From 'ktest401_Thing', the role 'ktest401_Thing15' has cardinality 0..*, and from 'ktest401_Line', the role 'ktest401_Line14' has cardinality 0..*.
+An association connects 'ktest401_Line' and 'ktest401_Article'. From 'ktest401_Line', the role 'ktest401_Line17' has cardinality 0..*, and from 'ktest401_Article', the role 'ktest401_Article18' has cardinality 0..*.
+An association connects 'ktest401_RelatedTo' and 'ktest401_EClass1'. From 'ktest401_RelatedTo', the role 'ktest401_RelatedTo21' has cardinality 0..*, and from 'ktest401_EClass1', the role 'ktest401_EClass120' has cardinality 0..*.
+An association connects 'ktest401_EClass1' and 'ktest401_EClass0'. From 'ktest401_EClass1', the role 'ktest401_EClass123' has cardinality 0..*, and from 'ktest401_EClass0', the role 'ktest401_EClass024' has cardinality 0..*.

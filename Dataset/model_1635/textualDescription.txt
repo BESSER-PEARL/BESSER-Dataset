@@ -1,0 +1,36 @@
+The domain model 'ptntim101' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'AbstractNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ptntim101_Place' represents an important domain concept.
+It does not declare any attributes.
+
+'ptntim101_AbstractNode' represents an important domain concept.
+It has the following attributes: 'tMax', which is of type int; 'tMin', which is of type int; 'name', which is of type str.
+
+'ptntim101_Transition' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'AbstractTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'ptntim101_AbstractTransition' represents an important domain concept.
+It has one attribute: 'guard', which is of type str.
+
+'ptntim101_Token' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ptntim101_Place' is a specialization of 'AbstractNode'.
+The class 'ptntim101_AbstractTransition' is a specialization of 'AbstractNode'.
+The class 'ptntim101_Transition' is a specialization of 'AbstractTransition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ptntim101_Place' and 'ptntim101_Place'. From 'ptntim101_Place', the role 'ptntim101_Place0' has cardinality 0..*, and from 'ptntim101_Place', the role 'ptntim101_Place' has cardinality 0..*.
+An association connects 'ptntim101_AbstractNode' and 'ptntim101_Place'. From 'ptntim101_AbstractNode', the role 'ptntim101_AbstractNode' has cardinality 0..*, and from 'ptntim101_Place', the role 'ptntim101_Place3' has cardinality 0..*.
+An association connects 'ptntim101_AbstractTransition' and 'ptntim101_Place'. From 'ptntim101_AbstractTransition', the role 'ptntim101_AbstractTransition' has cardinality 0..*, and from 'ptntim101_Place', the role 'ptntim101_Place5' has cardinality 0..*.
+An association connects 'ptntim101_Place' and 'ptntim101_Token'. From 'ptntim101_Place', the role 'ptntim101_Place7' has cardinality 0..*, and from 'ptntim101_Token', the role 'ptntim101_Token' has cardinality 0..*.
+An association connects 'ptntim101_Place' and 'ptntim101_AbstractTransition'. From 'ptntim101_Place', the role 'ptntim101_Place10' has cardinality 0..*, and from 'ptntim101_AbstractTransition', the role 'ptntim101_AbstractTransition9' has cardinality 0..*.

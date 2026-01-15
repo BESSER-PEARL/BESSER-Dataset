@@ -1,0 +1,32 @@
+The domain model 'helloworldsaved' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'helloworldsaved_World' represents an important domain concept.
+It does not declare any attributes.
+
+'helloworldsaved_Thing' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'helloworldsaved_RelatedTo' represents an important domain concept.
+It has one attribute: 'since', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'helloworldsaved_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'helloworldsaved_Alias' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'helloworldsaved_Thing' is a specialization of 'NamedElement'.
+The class 'helloworldsaved_RelatedTo' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'helloworldsaved_World' and 'helloworldsaved_Thing'. From 'helloworldsaved_World', the role 'helloworldsaved_World' has cardinality 0..*, and from 'helloworldsaved_Thing', the role 'helloworldsaved_Thing' has cardinality 0..*.
+An association connects 'helloworldsaved_Thing' and 'helloworldsaved_RelatedTo'. From 'helloworldsaved_Thing', the role 'fromThing' has cardinality 0..*, and from 'helloworldsaved_RelatedTo', the role 'RelatedTo' has cardinality 0..*.
+An association connects 'helloworldsaved_Alias' and 'helloworldsaved_NamedElement'. From 'helloworldsaved_Alias', the role 'helloworldsaved_Alias' has cardinality 0..*, and from 'helloworldsaved_NamedElement', the role 'helloworldsaved_NamedElement' has cardinality 0..*.
+An association connects 'helloworldsaved_RelatedTo' and 'helloworldsaved_Thing'. From 'helloworldsaved_RelatedTo', the role 'relations' has cardinality 0..*, and from 'helloworldsaved_Thing', the role 'Thing' has cardinality 0..*.
+An association connects 'helloworldsaved_Thing' and 'helloworldsaved_RelatedTo'. From 'helloworldsaved_Thing', the role 'helloworldsaved_Thing5' has cardinality 0..*, and from 'helloworldsaved_RelatedTo', the role 'helloworldsaved_RelatedTo' has cardinality 0..*.

@@ -1,0 +1,23 @@
+The domain model 'petrinetv3' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'petrinetv3_Transition' represents an important domain concept.
+It has the following attributes: 'tmax', which is of type int; 'clock', which is of type int; 'tmin', which is of type int; 'name', which is of type str.
+
+'petrinetv3_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinetv3_Net' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinetv3_Place' represents an important domain concept.
+It has the following attributes: 'initialTokens', which is of type int; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'petrinetv3_Place' and 'petrinetv3_Net'. From 'petrinetv3_Place', the role 'petrinetv3_Place' has cardinality 0..*, and from 'petrinetv3_Net', the role 'petrinetv3_Net' has cardinality 0..*.
+An association connects 'petrinetv3_Net' and 'petrinetv3_Transition'. From 'petrinetv3_Net', the role 'parentNet' has cardinality 0..*, and from 'petrinetv3_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'petrinetv3_Transition' and 'petrinetv3_Place'. From 'petrinetv3_Transition', the role 'petrinetv3_Transition' has cardinality 0..*, and from 'petrinetv3_Place', the role 'petrinetv3_Place3' has cardinality 0..*.
+An association connects 'petrinetv3_Transition' and 'petrinetv3_Place'. From 'petrinetv3_Transition', the role 'petrinetv3_Transition5' has cardinality 0..*, and from 'petrinetv3_Place', the role 'petrinetv3_Place6' has cardinality 0..*.
+An association connects 'petrinetv3_Net' and 'petrinetv3_Transition'. From 'petrinetv3_Net', the role 'Net' has cardinality 0..*, and from 'petrinetv3_Transition', the role 'transitions' has cardinality 0..*.
+An association connects 'petrinetv3_Token' and 'petrinetv3_Place'. From 'petrinetv3_Token', the role 'petrinetv3_Token' has cardinality 0..*, and from 'petrinetv3_Place', the role 'petrinetv3_Place9' has cardinality 0..*.

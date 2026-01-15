@@ -1,0 +1,18 @@
+The domain model 'Graph' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'Graph_Vertices' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Graph_Edges' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Graph_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'Graph_Vertices' and 'Graph_Graph'. From 'Graph_Vertices', the role 'Graph_Vertices' has cardinality 0..*, and from 'Graph_Graph', the role 'Graph_Graph' has cardinality 0..*.
+An association connects 'Graph_Graph' and 'Graph_Edges'. From 'Graph_Graph', the role 'Graph_Graph2' has cardinality 0..*, and from 'Graph_Edges', the role 'Graph_Edges' has cardinality 0..*.
+An association connects 'Graph_Vertices' and 'Graph_Edges'. From 'Graph_Vertices', the role 'vertice' has cardinality 0..*, and from 'Graph_Edges', the role 'Edges' has cardinality 0..*.
+An association connects 'Graph_Vertices' and 'Graph_Edges'. From 'Graph_Vertices', the role 'Vertices' has cardinality 0..*, and from 'Graph_Edges', the role 'edge' has cardinality 0..*.
