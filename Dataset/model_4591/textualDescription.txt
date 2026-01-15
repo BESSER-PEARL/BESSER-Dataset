@@ -1,0 +1,86 @@
+The domain model 'minuml2' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'minuml2_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml2_OpaqueExpression' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'language', which is of type str.
+
+'minuml2_ModelElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'minuml2_JoinNode' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml2_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml2_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml2_ObjectFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml2_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml2_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml2_ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml2_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml2_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml2_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml2_OpaqueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'minuml2_ActivityPartition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'minuml2_Activity' is a specialization of 'ModelElement'.
+The class 'minuml2_ActivityPartition' is a specialization of 'ModelElement'.
+The class 'minuml2_ActivityNode' is a specialization of 'ModelElement'.
+The class 'minuml2_OpaqueAction' is a specialization of 'ActivityNode'.
+The class 'minuml2_InitialNode' is a specialization of 'ActivityNode'.
+The class 'minuml2_DecisionNode' is a specialization of 'ActivityNode'.
+The class 'minuml2_ForkNode' is a specialization of 'ActivityNode'.
+The class 'minuml2_JoinNode' is a specialization of 'ActivityNode'.
+The class 'minuml2_ActivityFinalNode' is a specialization of 'ActivityNode'.
+The class 'minuml2_ActivityEdge' is a specialization of 'ModelElement'.
+The class 'minuml2_ControlFlow' is a specialization of 'ActivityEdge'.
+The class 'minuml2_ObjectFlow' is a specialization of 'ActivityEdge'.
+The class 'minuml2_ObjectNode' is a specialization of 'ActivityNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'minuml2_ActivityPartition' and 'minuml2_ModelElement'. From 'minuml2_ActivityPartition', the role 'minuml2_ActivityPartition' has cardinality 0..*, and from 'minuml2_ModelElement', the role 'minuml2_ModelElement' has cardinality 0..*.
+An association connects 'minuml2_Activity' and 'minuml2_ActivityNode'. From 'minuml2_Activity', the role 'minuml2_Activity' has cardinality 0..*, and from 'minuml2_ActivityNode', the role 'minuml2_ActivityNode' has cardinality 0..*.
+An association connects 'minuml2_Activity' and 'minuml2_ActivityEdge'. From 'minuml2_Activity', the role 'minuml2_Activity3' has cardinality 0..*, and from 'minuml2_ActivityEdge', the role 'minuml2_ActivityEdge' has cardinality 0..*.
+An association connects 'minuml2_Activity' and 'minuml2_ActivityPartition'. From 'minuml2_Activity', the role 'minuml2_Activity5' has cardinality 0..*, and from 'minuml2_ActivityPartition', the role 'minuml2_ActivityPartition6' has cardinality 0..*.
+An association connects 'minuml2_ActivityNode' and 'minuml2_ActivityPartition'. From 'minuml2_ActivityNode', the role 'minuml2_ActivityNode9' has cardinality 0..*, and from 'minuml2_ActivityPartition', the role 'minuml2_ActivityPartition8' has cardinality 0..*.
+An association connects 'minuml2_ActivityEdge' and 'minuml2_ActivityPartition'. From 'minuml2_ActivityEdge', the role 'minuml2_ActivityEdge12' has cardinality 0..*, and from 'minuml2_ActivityPartition', the role 'minuml2_ActivityPartition11' has cardinality 0..*.
+An association connects 'minuml2_ActivityNode' and 'minuml2_ActivityEdge'. From 'minuml2_ActivityNode', the role 'source' has cardinality 0..*, and from 'minuml2_ActivityEdge', the role 'ActivityEdge' has cardinality 0..*.
+An association connects 'minuml2_ActivityEdge' and 'minuml2_ActivityNode'. From 'minuml2_ActivityEdge', the role 'ActivityEdge15' has cardinality 0..*, and from 'minuml2_ActivityNode', the role 'target' has cardinality 0..*.
+An association connects 'minuml2_ActivityNode' and 'minuml2_ActivityEdge'. From 'minuml2_ActivityNode', the role 'ActivityNode' has cardinality 0..*, and from 'minuml2_ActivityEdge', the role 'outgoing' has cardinality 0..*.
+An association connects 'minuml2_ActivityNode' and 'minuml2_ActivityEdge'. From 'minuml2_ActivityNode', the role 'ActivityNode18' has cardinality 0..*, and from 'minuml2_ActivityEdge', the role 'incoming' has cardinality 0..*.
+An association connects 'minuml2_ActivityEdge' and 'minuml2_OpaqueExpression'. From 'minuml2_ActivityEdge', the role 'minuml2_ActivityEdge20' has cardinality 0..*, and from 'minuml2_OpaqueExpression', the role 'minuml2_OpaqueExpression' has cardinality 0..*.
+An association connects 'minuml2_ModelElement' and 'minuml2_ObjectFlow'. From 'minuml2_ModelElement', the role 'minuml2_ModelElement22' has cardinality 0..*, and from 'minuml2_ObjectFlow', the role 'minuml2_ObjectFlow' has cardinality 0..*.

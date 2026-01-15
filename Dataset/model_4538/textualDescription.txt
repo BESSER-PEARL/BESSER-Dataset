@@ -1,0 +1,98 @@
+The domain model 'SmartHome' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'SmartHome_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'SmartHome_DigitValue' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'SmartHome_Home' represents an important domain concept.
+It has the following attributes: 'startDay', which is of type float; 'speed', which is of type float.
+
+'SmartHome_Activator' represents an important domain concept.
+It does not declare any attributes.
+
+'SmartHome_Shutter' represents an important domain concept.
+It has one attribute: 'stateInit', which is of type bool.
+
+'SmartHome_PhysicalContext' represents an important domain concept.
+It has the following attributes: 'lightOut', which is of type float; 'lightIn', which is of type float.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SmartHome_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SmartHome_LightSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'SmartHome_RuleComposant' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'SmartHome_Clock' represents an important domain concept.
+It does not declare any attributes.
+
+'SmartHome_AnalValue' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'SmartHome_Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'Activator' represents an important domain concept.
+It does not declare any attributes.
+
+'IotComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'SmartHome_Light' represents an important domain concept.
+It has the following attributes: 'intensity', which is of type float; 'stateInit', which is of type bool.
+
+'SmartHome_IotComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'SmartHome_Room' represents an important domain concept.
+It does not declare any attributes.
+
+'SmartHome_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Operator' defines the following possible values: 'equal', 'inferior', 'superior', 'different'.
+
+The model also captures inheritance relationships between classes.
+The class 'SmartHome_Room' is a specialization of 'NamedElement'.
+The class 'SmartHome_Home' is a specialization of 'NamedElement'.
+The class 'SmartHome_Sensor' is a specialization of 'IotComponent'.
+The class 'SmartHome_Activator' is a specialization of 'IotComponent'.
+The class 'SmartHome_LightSensor' is a specialization of 'Sensor'.
+The class 'SmartHome_Light' is a specialization of 'Activator'.
+The class 'SmartHome_PhysicalContext' is a specialization of 'NamedElement'.
+The class 'SmartHome_Shutter' is a specialization of 'Activator'.
+The class 'SmartHome_Rule' is a specialization of 'NamedElement'.
+The class 'SmartHome_DigitValue' is a specialization of 'Value'.
+The class 'SmartHome_AnalValue' is a specialization of 'Value'.
+The class 'SmartHome_IotComponent' is a specialization of 'NamedElement'.
+The class 'SmartHome_Clock' is a specialization of 'Sensor'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SmartHome_LightSensor' and 'SmartHome_Room'. From 'SmartHome_LightSensor', the role 'SmartHome_LightSensor' has cardinality 0..*, and from 'SmartHome_Room', the role 'SmartHome_Room' has cardinality 0..*.
+An association connects 'SmartHome_Light' and 'SmartHome_Room'. From 'SmartHome_Light', the role 'SmartHome_Light' has cardinality 0..*, and from 'SmartHome_Room', the role 'SmartHome_Room2' has cardinality 0..*.
+An association connects 'SmartHome_Room' and 'SmartHome_PhysicalContext'. From 'SmartHome_Room', the role 'SmartHome_Room4' has cardinality 0..*, and from 'SmartHome_PhysicalContext', the role 'SmartHome_PhysicalContext' has cardinality 0..*.
+An association connects 'SmartHome_Room' and 'SmartHome_Shutter'. From 'SmartHome_Room', the role 'SmartHome_Room6' has cardinality 0..*, and from 'SmartHome_Shutter', the role 'SmartHome_Shutter' has cardinality 0..*.
+An association connects 'SmartHome_Room' and 'SmartHome_Rule'. From 'SmartHome_Room', the role 'SmartHome_Room8' has cardinality 0..*, and from 'SmartHome_Rule', the role 'SmartHome_Rule' has cardinality 0..*.
+An association connects 'SmartHome_Clock' and 'SmartHome_Room'. From 'SmartHome_Clock', the role 'SmartHome_Clock' has cardinality 0..*, and from 'SmartHome_Room', the role 'SmartHome_Room10' has cardinality 0..*.
+An association connects 'SmartHome_Home' and 'SmartHome_Room'. From 'SmartHome_Home', the role 'SmartHome_Home' has cardinality 0..*, and from 'SmartHome_Room', the role 'SmartHome_Room12' has cardinality 0..*.
+An association connects 'SmartHome_Home' and 'SmartHome_Rule'. From 'SmartHome_Home', the role 'SmartHome_Home14' has cardinality 0..*, and from 'SmartHome_Rule', the role 'SmartHome_Rule15' has cardinality 0..*.
+An association connects 'SmartHome_Rule' and 'SmartHome_RuleComposant'. From 'SmartHome_Rule', the role 'SmartHome_Rule17' has cardinality 0..*, and from 'SmartHome_RuleComposant', the role 'SmartHome_RuleComposant' has cardinality 0..*.
+An association connects 'SmartHome_RuleComposant' and 'SmartHome_Rule'. From 'SmartHome_RuleComposant', the role 'SmartHome_RuleComposant20' has cardinality 0..*, and from 'SmartHome_Rule', the role 'SmartHome_Rule19' has cardinality 0..*.
+An association connects 'SmartHome_Value' and 'SmartHome_RuleComposant'. From 'SmartHome_Value', the role 'SmartHome_Value' has cardinality 0..*, and from 'SmartHome_RuleComposant', the role 'SmartHome_RuleComposant22' has cardinality 0..*.
+An association connects 'SmartHome_RuleComposant' and 'SmartHome_IotComponent'. From 'SmartHome_RuleComposant', the role 'SmartHome_RuleComposant24' has cardinality 0..*, and from 'SmartHome_IotComponent', the role 'SmartHome_IotComponent' has cardinality 0..*.

@@ -1,0 +1,105 @@
+The domain model 'gyro' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'gyro_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'gyro_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'Actuate' represents an important domain concept.
+It does not declare any attributes.
+
+'gyro_Motor' represents an important domain concept.
+It has the following attributes: 'leftMotor', which is of type int; 'rightMotor', which is of type int.
+
+'gyro_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'gyro_Parallel' represents an important domain concept.
+It does not declare any attributes.
+
+'gyro_GyroSpecification' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gyro_Waiting' represents an important domain concept.
+It has one attribute: 'time', which is of type int.
+
+'gyro_Actuate' represents an important domain concept.
+It does not declare any attributes.
+
+'gyro_Sibling' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'gyro_StatusChange' represents an important domain concept.
+It has the following attributes: 'changeRunning', which is of type str; 'changeSuccess', which is of type str; 'changeFailure', which is of type str.
+
+'gyro_Sequential' represents an important domain concept.
+It does not declare any attributes.
+
+'gyro_Child' represents an important domain concept.
+It does not declare any attributes.
+
+'gyro_Bumpers' represents an important domain concept.
+It has one attribute: 'bumperKind', which is of type str.
+
+'gyro_Servo' represents an important domain concept.
+It has the following attributes: 'step', which is of type int; 'minimalPosition', which is of type int; 'maximalPosition', which is of type int.
+
+'gyro_Priority' represents an important domain concept.
+It does not declare any attributes.
+
+'gyro_LED' represents an important domain concept.
+It has one attribute: 'status', which is of type str.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'gyro_Distance' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'value', which is of type int.
+
+'gyro_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SuccessState' defines the following possible values: 'Running', 'Success', 'Failure'.
+The enumeration 'RunningState' defines the following possible values: 'Success', 'Failure', 'Running'.
+The enumeration 'LightStatus' defines the following possible values: 'On', 'Off'.
+The enumeration 'BumperKind' defines the following possible values: 'Right', 'Left'.
+The enumeration 'FailureState' defines the following possible values: 'Failure', 'Success', 'Running'.
+The enumeration 'DistanceKind' defines the following possible values: 'Minor', 'Major'.
+
+The model also captures inheritance relationships between classes.
+The class 'gyro_Behavior' is a specialization of 'Node'.
+The class 'gyro_Priority' is a specialization of 'Behavior'.
+The class 'gyro_Parallel' is a specialization of 'Behavior'.
+The class 'gyro_Sequential' is a specialization of 'Behavior'.
+The class 'gyro_StatusChange' is a specialization of 'Behavior'.
+The class 'gyro_Action' is a specialization of 'Node'.
+The class 'gyro_Condition' is a specialization of 'Action'.
+The class 'gyro_Distance' is a specialization of 'Condition'.
+The class 'gyro_Bumpers' is a specialization of 'Condition'.
+The class 'gyro_Waiting' is a specialization of 'Condition'.
+The class 'gyro_Actuate' is a specialization of 'Action'.
+The class 'gyro_Motor' is a specialization of 'Actuate'.
+The class 'gyro_Servo' is a specialization of 'Actuate'.
+The class 'gyro_LED' is a specialization of 'Actuate'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gyro_GyroSpecification' and 'gyro_Node'. From 'gyro_GyroSpecification', the role 'gyro_GyroSpecification' has cardinality 0..*, and from 'gyro_Node', the role 'gyro_Node' has cardinality 0..*.
+An association connects 'gyro_GyroSpecification' and 'gyro_Child'. From 'gyro_GyroSpecification', the role 'gyro_GyroSpecification2' has cardinality 0..*, and from 'gyro_Child', the role 'gyro_Child' has cardinality 0..*.
+An association connects 'gyro_Sibling' and 'gyro_GyroSpecification'. From 'gyro_Sibling', the role 'gyro_Sibling' has cardinality 0..*, and from 'gyro_GyroSpecification', the role 'gyro_GyroSpecification4' has cardinality 0..*.
+An association connects 'gyro_Behavior' and 'gyro_Child'. From 'gyro_Behavior', the role 'gyro_Behavior' has cardinality 0..*, and from 'gyro_Child', the role 'gyro_Child6' has cardinality 0..*.
+An association connects 'gyro_Node' and 'gyro_Child'. From 'gyro_Node', the role 'gyro_Node9' has cardinality 0..*, and from 'gyro_Child', the role 'gyro_Child8' has cardinality 0..*.
+An association connects 'gyro_Node' and 'gyro_Sibling'. From 'gyro_Node', the role 'gyro_Node12' has cardinality 0..*, and from 'gyro_Sibling', the role 'gyro_Sibling11' has cardinality 0..*.
+An association connects 'gyro_Node' and 'gyro_Sibling'. From 'gyro_Node', the role 'gyro_Node15' has cardinality 0..*, and from 'gyro_Sibling', the role 'gyro_Sibling14' has cardinality 0..*.

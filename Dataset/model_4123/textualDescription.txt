@@ -1,0 +1,129 @@
+The domain model 'langage_while' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'langage_while_Assign' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_Ifconfort' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_LExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_If' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_ExprOr' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_Program' represents an important domain concept.
+It has one attribute: 'u', which is of type str.
+
+'langage_while_ExprNot' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_Commands' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_ExprEq' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_VAR' represents an important domain concept.
+It has the following attributes: 'cf', which is of type str; 'bv', which is of type str.
+
+'langage_while_Exprs' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_Command' represents an important domain concept.
+It has one attribute: 'nop', which is of type str.
+
+'langage_while_ExprSimple' represents an important domain concept.
+It has the following attributes: 'nil', which is of type str; 'mot', which is of type str.
+
+'langage_while_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_Vars' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_Foreach' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_SYMB' represents an important domain concept.
+It has the following attributes: 'cf', which is of type str; 'bs', which is of type str.
+
+'langage_while_While' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_ExprAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_For' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_Input' represents an important domain concept.
+It does not declare any attributes.
+
+'langage_while_Output' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'langage_while_Program' and 'langage_while_Model'. From 'langage_while_Program', the role 'langage_while_Program' has cardinality 0..*, and from 'langage_while_Model', the role 'langage_while_Model' has cardinality 0..*.
+An association connects 'langage_while_Function' and 'langage_while_Program'. From 'langage_while_Function', the role 'langage_while_Function' has cardinality 0..*, and from 'langage_while_Program', the role 'langage_while_Program2' has cardinality 0..*.
+An association connects 'langage_while_Program' and 'langage_while_Program'. From 'langage_while_Program', the role 'langage_while_Program3' has cardinality 0..*, and from 'langage_while_Program', the role 'langage_while_Program5' has cardinality 0..*.
+An association connects 'langage_while_SYMB' and 'langage_while_Function'. From 'langage_while_SYMB', the role 'langage_while_SYMB' has cardinality 0..*, and from 'langage_while_Function', the role 'langage_while_Function7' has cardinality 0..*.
+An association connects 'langage_while_Function' and 'langage_while_Definition'. From 'langage_while_Function', the role 'langage_while_Function9' has cardinality 0..*, and from 'langage_while_Definition', the role 'langage_while_Definition' has cardinality 0..*.
+An association connects 'langage_while_Definition' and 'langage_while_Input'. From 'langage_while_Definition', the role 'langage_while_Definition11' has cardinality 0..*, and from 'langage_while_Input', the role 'langage_while_Input' has cardinality 0..*.
+An association connects 'langage_while_Definition' and 'langage_while_Commands'. From 'langage_while_Definition', the role 'langage_while_Definition13' has cardinality 0..*, and from 'langage_while_Commands', the role 'langage_while_Commands' has cardinality 0..*.
+An association connects 'langage_while_Definition' and 'langage_while_Output'. From 'langage_while_Definition', the role 'langage_while_Definition15' has cardinality 0..*, and from 'langage_while_Output', the role 'langage_while_Output' has cardinality 0..*.
+An association connects 'langage_while_VAR' and 'langage_while_Input'. From 'langage_while_VAR', the role 'langage_while_VAR' has cardinality 0..*, and from 'langage_while_Input', the role 'langage_while_Input17' has cardinality 0..*.
+An association connects 'langage_while_Output' and 'langage_while_VAR'. From 'langage_while_Output', the role 'langage_while_Output19' has cardinality 0..*, and from 'langage_while_VAR', the role 'langage_while_VAR20' has cardinality 0..*.
+An association connects 'langage_while_Commands' and 'langage_while_Command'. From 'langage_while_Commands', the role 'langage_while_Commands22' has cardinality 0..*, and from 'langage_while_Command', the role 'langage_while_Command' has cardinality 0..*.
+An association connects 'langage_while_Assign' and 'langage_while_Command'. From 'langage_while_Assign', the role 'langage_while_Assign' has cardinality 0..*, and from 'langage_while_Command', the role 'langage_while_Command24' has cardinality 0..*.
+An association connects 'langage_while_Command' and 'langage_while_While'. From 'langage_while_Command', the role 'langage_while_Command26' has cardinality 0..*, and from 'langage_while_While', the role 'langage_while_While' has cardinality 0..*.
+An association connects 'langage_while_For' and 'langage_while_Command'. From 'langage_while_For', the role 'langage_while_For' has cardinality 0..*, and from 'langage_while_Command', the role 'langage_while_Command28' has cardinality 0..*.
+An association connects 'langage_while_Command' and 'langage_while_If'. From 'langage_while_Command', the role 'langage_while_Command30' has cardinality 0..*, and from 'langage_while_If', the role 'langage_while_If' has cardinality 0..*.
+An association connects 'langage_while_Command' and 'langage_while_Foreach'. From 'langage_while_Command', the role 'langage_while_Command32' has cardinality 0..*, and from 'langage_while_Foreach', the role 'langage_while_Foreach' has cardinality 0..*.
+An association connects 'langage_while_Command' and 'langage_while_Ifconfort'. From 'langage_while_Command', the role 'langage_while_Command34' has cardinality 0..*, and from 'langage_while_Ifconfort', the role 'langage_while_Ifconfort' has cardinality 0..*.
+An association connects 'langage_while_Assign' and 'langage_while_Vars'. From 'langage_while_Assign', the role 'langage_while_Assign36' has cardinality 0..*, and from 'langage_while_Vars', the role 'langage_while_Vars' has cardinality 0..*.
+An association connects 'langage_while_Exprs' and 'langage_while_Assign'. From 'langage_while_Exprs', the role 'langage_while_Exprs' has cardinality 0..*, and from 'langage_while_Assign', the role 'langage_while_Assign38' has cardinality 0..*.
+An association connects 'langage_while_Expr' and 'langage_while_While'. From 'langage_while_Expr', the role 'langage_while_Expr' has cardinality 0..*, and from 'langage_while_While', the role 'langage_while_While40' has cardinality 0..*.
+An association connects 'langage_while_Commands' and 'langage_while_While'. From 'langage_while_Commands', the role 'langage_while_Commands43' has cardinality 0..*, and from 'langage_while_While', the role 'langage_while_While42' has cardinality 0..*.
+An association connects 'langage_while_For' and 'langage_while_Expr'. From 'langage_while_For', the role 'langage_while_For45' has cardinality 0..*, and from 'langage_while_Expr', the role 'langage_while_Expr46' has cardinality 0..*.
+An association connects 'langage_while_For' and 'langage_while_Commands'. From 'langage_while_For', the role 'langage_while_For48' has cardinality 0..*, and from 'langage_while_Commands', the role 'langage_while_Commands49' has cardinality 0..*.
+An association connects 'langage_while_If' and 'langage_while_Expr'. From 'langage_while_If', the role 'langage_while_If51' has cardinality 0..*, and from 'langage_while_Expr', the role 'langage_while_Expr52' has cardinality 0..*.
+An association connects 'langage_while_Commands' and 'langage_while_If'. From 'langage_while_Commands', the role 'langage_while_Commands55' has cardinality 0..*, and from 'langage_while_If', the role 'langage_while_If54' has cardinality 0..*.
+An association connects 'langage_while_If' and 'langage_while_Commands'. From 'langage_while_If', the role 'langage_while_If57' has cardinality 0..*, and from 'langage_while_Commands', the role 'langage_while_Commands58' has cardinality 0..*.
+An association connects 'langage_while_Foreach' and 'langage_while_Expr'. From 'langage_while_Foreach', the role 'langage_while_Foreach60' has cardinality 0..*, and from 'langage_while_Expr', the role 'langage_while_Expr61' has cardinality 0..*.
+An association connects 'langage_while_Foreach' and 'langage_while_Expr'. From 'langage_while_Foreach', the role 'langage_while_Foreach63' has cardinality 0..*, and from 'langage_while_Expr', the role 'langage_while_Expr64' has cardinality 0..*.
+An association connects 'langage_while_Foreach' and 'langage_while_Commands'. From 'langage_while_Foreach', the role 'langage_while_Foreach66' has cardinality 0..*, and from 'langage_while_Commands', the role 'langage_while_Commands67' has cardinality 0..*.
+An association connects 'langage_while_Expr' and 'langage_while_Ifconfort'. From 'langage_while_Expr', the role 'langage_while_Expr70' has cardinality 0..*, and from 'langage_while_Ifconfort', the role 'langage_while_Ifconfort69' has cardinality 0..*.
+An association connects 'langage_while_Ifconfort' and 'langage_while_Commands'. From 'langage_while_Ifconfort', the role 'langage_while_Ifconfort72' has cardinality 0..*, and from 'langage_while_Commands', the role 'langage_while_Commands73' has cardinality 0..*.
+An association connects 'langage_while_VAR' and 'langage_while_Vars'. From 'langage_while_VAR', the role 'langage_while_VAR76' has cardinality 0..*, and from 'langage_while_Vars', the role 'langage_while_Vars75' has cardinality 0..*.
+An association connects 'langage_while_Expr' and 'langage_while_Exprs'. From 'langage_while_Expr', the role 'langage_while_Expr79' has cardinality 0..*, and from 'langage_while_Exprs', the role 'langage_while_Exprs78' has cardinality 0..*.
+An association connects 'langage_while_Expr' and 'langage_while_ExprSimple'. From 'langage_while_Expr', the role 'langage_while_Expr81' has cardinality 0..*, and from 'langage_while_ExprSimple', the role 'langage_while_ExprSimple' has cardinality 0..*.
+An association connects 'langage_while_ExprAnd' and 'langage_while_Expr'. From 'langage_while_ExprAnd', the role 'langage_while_ExprAnd' has cardinality 0..*, and from 'langage_while_Expr', the role 'langage_while_Expr83' has cardinality 0..*.
+An association connects 'langage_while_VAR' and 'langage_while_ExprSimple'. From 'langage_while_VAR', the role 'langage_while_VAR86' has cardinality 0..*, and from 'langage_while_ExprSimple', the role 'langage_while_ExprSimple85' has cardinality 0..*.
+An association connects 'langage_while_ExprSimple' and 'langage_while_SYMB'. From 'langage_while_ExprSimple', the role 'langage_while_ExprSimple88' has cardinality 0..*, and from 'langage_while_SYMB', the role 'langage_while_SYMB89' has cardinality 0..*.
+An association connects 'langage_while_LExpr' and 'langage_while_ExprSimple'. From 'langage_while_LExpr', the role 'langage_while_LExpr' has cardinality 0..*, and from 'langage_while_ExprSimple', the role 'langage_while_ExprSimple91' has cardinality 0..*.
+An association connects 'langage_while_Expr' and 'langage_while_ExprSimple'. From 'langage_while_Expr', the role 'langage_while_Expr94' has cardinality 0..*, and from 'langage_while_ExprSimple', the role 'langage_while_ExprSimple93' has cardinality 0..*.
+An association connects 'langage_while_Expr' and 'langage_while_LExpr'. From 'langage_while_Expr', the role 'langage_while_Expr97' has cardinality 0..*, and from 'langage_while_LExpr', the role 'langage_while_LExpr96' has cardinality 0..*.
+An association connects 'langage_while_ExprOr' and 'langage_while_ExprAnd'. From 'langage_while_ExprOr', the role 'langage_while_ExprOr' has cardinality 0..*, and from 'langage_while_ExprAnd', the role 'langage_while_ExprAnd99' has cardinality 0..*.
+An association connects 'langage_while_ExprOr' and 'langage_while_ExprAnd'. From 'langage_while_ExprOr', the role 'langage_while_ExprOr102' has cardinality 0..*, and from 'langage_while_ExprAnd', the role 'langage_while_ExprAnd101' has cardinality 0..*.
+An association connects 'langage_while_ExprOr' and 'langage_while_ExprNot'. From 'langage_while_ExprOr', the role 'langage_while_ExprOr104' has cardinality 0..*, and from 'langage_while_ExprNot', the role 'langage_while_ExprNot' has cardinality 0..*.
+An association connects 'langage_while_ExprOr' and 'langage_while_ExprNot'. From 'langage_while_ExprOr', the role 'langage_while_ExprOr106' has cardinality 0..*, and from 'langage_while_ExprNot', the role 'langage_while_ExprNot107' has cardinality 0..*.
+An association connects 'langage_while_ExprEq' and 'langage_while_ExprNot'. From 'langage_while_ExprEq', the role 'langage_while_ExprEq' has cardinality 0..*, and from 'langage_while_ExprNot', the role 'langage_while_ExprNot109' has cardinality 0..*.
+An association connects 'langage_while_ExprEq' and 'langage_while_ExprNot'. From 'langage_while_ExprEq', the role 'langage_while_ExprEq112' has cardinality 0..*, and from 'langage_while_ExprNot', the role 'langage_while_ExprNot111' has cardinality 0..*.
+An association connects 'langage_while_ExprSimple' and 'langage_while_ExprEq'. From 'langage_while_ExprSimple', the role 'langage_while_ExprSimple115' has cardinality 0..*, and from 'langage_while_ExprEq', the role 'langage_while_ExprEq114' has cardinality 0..*.
+An association connects 'langage_while_ExprSimple' and 'langage_while_ExprEq'. From 'langage_while_ExprSimple', the role 'langage_while_ExprSimple118' has cardinality 0..*, and from 'langage_while_ExprEq', the role 'langage_while_ExprEq117' has cardinality 0..*.
+An association connects 'langage_while_ExprEq' and 'langage_while_Expr'. From 'langage_while_ExprEq', the role 'langage_while_ExprEq120' has cardinality 0..*, and from 'langage_while_Expr', the role 'langage_while_Expr121' has cardinality 0..*.

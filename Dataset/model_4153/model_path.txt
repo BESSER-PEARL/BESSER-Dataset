@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/cwiscount/mydsl-emf-gen/org.xtext.example.mydsl/model/MyDsl.ecore

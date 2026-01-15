@@ -1,0 +1,21 @@
+The domain model 'properties' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'properties_Employee' represents an important domain concept.
+It has the following attributes: 'hasAge', which is of type int; 'hasSalary', which is of type int.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'properties_Person' represents an important domain concept.
+It does not declare any attributes.
+
+'properties_Address' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'properties_Employee' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'properties_Person' and 'properties_Address'. From 'properties_Person', the role 'properties_Person' has cardinality 0..*, and from 'properties_Address', the role 'properties_Address' has cardinality 0..*.

@@ -1,0 +1,26 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'myDsl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_AbstractGreeting' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_GreetingReference' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Greeting' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractGreeting' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl_Greeting' is a specialization of 'AbstractGreeting'.
+The class 'myDsl_GreetingReference' is a specialization of 'AbstractGreeting'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_Model' and 'myDsl_AbstractGreeting'. From 'myDsl_Model', the role 'myDsl_Model' has cardinality 0..*, and from 'myDsl_AbstractGreeting', the role 'myDsl_AbstractGreeting' has cardinality 0..*.
+An association connects 'myDsl_GreetingReference' and 'myDsl_AbstractGreeting'. From 'myDsl_GreetingReference', the role 'myDsl_GreetingReference' has cardinality 0..*, and from 'myDsl_AbstractGreeting', the role 'myDsl_AbstractGreeting2' has cardinality 0..*.

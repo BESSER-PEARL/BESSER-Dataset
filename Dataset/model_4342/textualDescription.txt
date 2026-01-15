@@ -1,0 +1,85 @@
+The domain model 'migration' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'migration_AttributeSlot' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'migration_MetamodelResource' represents an important domain concept.
+It does not declare any attributes.
+
+'migration_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractResource' represents an important domain concept.
+It does not declare any attributes.
+
+'migration_Model' represents an important domain concept.
+It has one attribute: 'reflection', which is of type bool.
+
+'migration_ReferenceSlot' represents an important domain concept.
+It does not declare any attributes.
+
+'migration_Repository' represents an important domain concept.
+It does not declare any attributes.
+
+'migration_Instance' represents an important domain concept.
+It has the following attributes: 'uuid', which is of type str; 'uri', which is of type str.
+
+'Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'migration_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'migration_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'migration_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'migration_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'migration_Metamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'migration_AbstractResource' represents an important domain concept.
+It has the following attributes: 'encoding', which is of type str; 'uri', which is of type str.
+
+'migration_Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'migration_ModelResource' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'migration_ModelResource' is a specialization of 'AbstractResource'.
+The class 'migration_AttributeSlot' is a specialization of 'Slot'.
+The class 'migration_ReferenceSlot' is a specialization of 'Slot'.
+The class 'migration_MetamodelResource' is a specialization of 'AbstractResource'.
+
+Relationships between classes are modeled using associations.
+An association connects 'migration_Model' and 'migration_Repository'. From 'migration_Model', the role 'Model' has cardinality 0..*, and from 'migration_Repository', the role 'repository' has cardinality 0..*.
+An association connects 'migration_Repository' and 'migration_Metamodel'. From 'migration_Repository', the role 'repository2' has cardinality 0..*, and from 'migration_Metamodel', the role 'Metamodel' has cardinality 0..*.
+An association connects 'migration_Metamodel' and 'migration_Model'. From 'migration_Metamodel', the role 'migration_Metamodel' has cardinality 0..*, and from 'migration_Model', the role 'migration_Model' has cardinality 0..*.
+An association connects 'migration_Type' and 'migration_Model'. From 'migration_Type', the role 'Type' has cardinality 0..*, and from 'migration_Model', the role 'model' has cardinality 0..*.
+An association connects 'migration_Model' and 'migration_ModelResource'. From 'migration_Model', the role 'model6' has cardinality 0..*, and from 'migration_ModelResource', the role 'ModelResource' has cardinality 0..*.
+An association connects 'migration_Repository' and 'migration_Model'. From 'migration_Repository', the role 'Repository' has cardinality 0..*, and from 'migration_Model', the role 'model8' has cardinality 0..*.
+An association connects 'migration_Instance' and 'migration_ModelResource'. From 'migration_Instance', the role 'migration_Instance' has cardinality 0..*, and from 'migration_ModelResource', the role 'migration_ModelResource' has cardinality 0..*.
+An association connects 'migration_ModelResource' and 'migration_Model'. From 'migration_ModelResource', the role 'resources' has cardinality 0..*, and from 'migration_Model', the role 'Model11' has cardinality 0..*.
+An association connects 'migration_EClass' and 'migration_Type'. From 'migration_EClass', the role 'migration_EClass' has cardinality 0..*, and from 'migration_Type', the role 'migration_Type' has cardinality 0..*.
+An association connects 'migration_Instance' and 'migration_Type'. From 'migration_Instance', the role 'Instance' has cardinality 0..*, and from 'migration_Type', the role 'type' has cardinality 0..*.
+An association connects 'migration_Type' and 'migration_Model'. From 'migration_Type', the role 'types' has cardinality 0..*, and from 'migration_Model', the role 'Model15' has cardinality 0..*.
+An association connects 'migration_Instance' and 'migration_Slot'. From 'migration_Instance', the role 'instance' has cardinality 0..*, and from 'migration_Slot', the role 'Slot' has cardinality 0..*.
+An association connects 'migration_Instance' and 'migration_Type'. From 'migration_Instance', the role 'instances' has cardinality 0..*, and from 'migration_Type', the role 'Type18' has cardinality 0..*.
+An association connects 'migration_ReferenceSlot' and 'migration_Instance'. From 'migration_ReferenceSlot', the role 'ReferenceSlot' has cardinality 0..*, and from 'migration_Instance', the role 'values' has cardinality 0..*.
+An association connects 'migration_Slot' and 'migration_Instance'. From 'migration_Slot', the role 'slots' has cardinality 0..*, and from 'migration_Instance', the role 'Instance21' has cardinality 0..*.
+An association connects 'migration_EAttribute' and 'migration_AttributeSlot'. From 'migration_EAttribute', the role 'migration_EAttribute' has cardinality 0..*, and from 'migration_AttributeSlot', the role 'migration_AttributeSlot' has cardinality 0..*.
+An association connects 'migration_ReferenceSlot' and 'migration_EReference'. From 'migration_ReferenceSlot', the role 'migration_ReferenceSlot' has cardinality 0..*, and from 'migration_EReference', the role 'migration_EReference' has cardinality 0..*.
+An association connects 'migration_ReferenceSlot' and 'migration_Instance'. From 'migration_ReferenceSlot', the role 'references' has cardinality 0..*, and from 'migration_Instance', the role 'Instance25' has cardinality 0..*.
+An association connects 'migration_MetamodelResource' and 'migration_Metamodel'. From 'migration_MetamodelResource', the role 'MetamodelResource' has cardinality 0..*, and from 'migration_Metamodel', the role 'metamodel' has cardinality 0..*.
+An association connects 'migration_Repository' and 'migration_Metamodel'. From 'migration_Repository', the role 'Repository29' has cardinality 0..*, and from 'migration_Metamodel', the role 'metamodel28' has cardinality 0..*.
+An association connects 'migration_Metamodel' and 'migration_EPackage'. From 'migration_Metamodel', the role 'migration_Metamodel31' has cardinality 0..*, and from 'migration_EPackage', the role 'migration_EPackage' has cardinality 0..*.
+An association connects 'migration_MetamodelResource' and 'migration_EPackage'. From 'migration_MetamodelResource', the role 'migration_MetamodelResource' has cardinality 0..*, and from 'migration_EPackage', the role 'migration_EPackage33' has cardinality 0..*.
+An association connects 'migration_MetamodelResource' and 'migration_Metamodel'. From 'migration_MetamodelResource', the role 'resources35' has cardinality 0..*, and from 'migration_Metamodel', the role 'Metamodel36' has cardinality 0..*.

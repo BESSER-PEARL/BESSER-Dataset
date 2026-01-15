@@ -1,0 +1,130 @@
+The domain model 'xDrone' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'xDrone_Wait' represents an important domain concept.
+It has one attribute: 'seconds', which is of type str.
+
+'SuperCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'xDrone_Backward' represents an important domain concept.
+It has one attribute: 'distance', which is of type str.
+
+'xDrone_Position' represents an important domain concept.
+It does not declare any attributes.
+
+'xDrone_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'xDrone_Drone' represents an important domain concept.
+It has one attribute: 'rotation', which is of type str.
+
+'xDrone_Vector' represents an important domain concept.
+It has the following attributes: 'y', which is of type str; 'x', which is of type str; 'z', which is of type str.
+
+'xDrone_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'xDrone_GoTo' represents an important domain concept.
+It has one attribute: 'object_name', which is of type str.
+
+'xDrone_RotateL' represents an important domain concept.
+It has one attribute: 'angle', which is of type str.
+
+'xDrone_BackWall' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'xDrone_Forward' represents an important domain concept.
+It has one attribute: 'distance', which is of type str.
+
+'xDrone_Object' represents an important domain concept.
+It has one attribute: 'object_name', which is of type str.
+
+'xDrone_Walls' represents an important domain concept.
+It does not declare any attributes.
+
+'xDrone_Down' represents an important domain concept.
+It has one attribute: 'distance', which is of type str.
+
+'xDrone_RotateR' represents an important domain concept.
+It has one attribute: 'angle', which is of type str.
+
+'xDrone_Origin' represents an important domain concept.
+It does not declare any attributes.
+
+'xDrone_RightWall' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Command' represents an important domain concept.
+It does not declare any attributes.
+
+'xDrone_Left' represents an important domain concept.
+It has one attribute: 'distance', which is of type str.
+
+'xDrone_FrontWall' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'xDrone_Color' represents an important domain concept.
+It has one attribute: 'color_value', which is of type str.
+
+'xDrone_Right' represents an important domain concept.
+It has one attribute: 'distance', which is of type str.
+
+'xDrone_Environment' represents an important domain concept.
+It does not declare any attributes.
+
+'xDrone_SuperCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'xDrone_Up' represents an important domain concept.
+It has one attribute: 'distance', which is of type str.
+
+'xDrone_LeftWall' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'xDrone_Size' represents an important domain concept.
+It does not declare any attributes.
+
+'xDrone_Main' represents an important domain concept.
+It does not declare any attributes.
+
+'xDrone_Fly' represents an important domain concept.
+It has the following attributes: 'takeoff', which is of type str; 'land', which is of type str.
+
+'xDrone_UpWall' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'xDrone_Command' is a specialization of 'SuperCommand'.
+The class 'xDrone_GoTo' is a specialization of 'Command'.
+The class 'xDrone_Up' is a specialization of 'Command'.
+The class 'xDrone_Down' is a specialization of 'Command'.
+The class 'xDrone_Left' is a specialization of 'Command'.
+The class 'xDrone_Right' is a specialization of 'Command'.
+The class 'xDrone_Forward' is a specialization of 'Command'.
+The class 'xDrone_Backward' is a specialization of 'Command'.
+The class 'xDrone_RotateL' is a specialization of 'Command'.
+The class 'xDrone_RotateR' is a specialization of 'Command'.
+The class 'xDrone_Wait' is a specialization of 'Command'.
+
+Relationships between classes are modeled using associations.
+An association connects 'xDrone_Program' and 'xDrone_Main'. From 'xDrone_Program', the role 'xDrone_Program' has cardinality 0..*, and from 'xDrone_Main', the role 'xDrone_Main' has cardinality 0..*.
+An association connects 'xDrone_Main' and 'xDrone_Fly'. From 'xDrone_Main', the role 'xDrone_Main2' has cardinality 0..*, and from 'xDrone_Fly', the role 'xDrone_Fly' has cardinality 0..*.
+An association connects 'xDrone_Main' and 'xDrone_Environment'. From 'xDrone_Main', the role 'xDrone_Main4' has cardinality 0..*, and from 'xDrone_Environment', the role 'xDrone_Environment' has cardinality 0..*.
+An association connects 'xDrone_Fly' and 'xDrone_SuperCommand'. From 'xDrone_Fly', the role 'xDrone_Fly6' has cardinality 0..*, and from 'xDrone_SuperCommand', the role 'xDrone_SuperCommand' has cardinality 0..*.
+An association connects 'xDrone_Environment' and 'xDrone_Drone'. From 'xDrone_Environment', the role 'xDrone_Environment8' has cardinality 0..*, and from 'xDrone_Drone', the role 'xDrone_Drone' has cardinality 0..*.
+An association connects 'xDrone_Walls' and 'xDrone_Environment'. From 'xDrone_Walls', the role 'xDrone_Walls' has cardinality 0..*, and from 'xDrone_Environment', the role 'xDrone_Environment10' has cardinality 0..*.
+An association connects 'xDrone_Object' and 'xDrone_Environment'. From 'xDrone_Object', the role 'xDrone_Object' has cardinality 0..*, and from 'xDrone_Environment', the role 'xDrone_Environment12' has cardinality 0..*.
+An association connects 'xDrone_Position' and 'xDrone_Drone'. From 'xDrone_Position', the role 'xDrone_Position' has cardinality 0..*, and from 'xDrone_Drone', the role 'xDrone_Drone14' has cardinality 0..*.
+An association connects 'xDrone_Origin' and 'xDrone_Object'. From 'xDrone_Origin', the role 'xDrone_Origin' has cardinality 0..*, and from 'xDrone_Object', the role 'xDrone_Object16' has cardinality 0..*.
+An association connects 'xDrone_Size' and 'xDrone_Object'. From 'xDrone_Size', the role 'xDrone_Size' has cardinality 0..*, and from 'xDrone_Object', the role 'xDrone_Object18' has cardinality 0..*.
+An association connects 'xDrone_Color' and 'xDrone_Object'. From 'xDrone_Color', the role 'xDrone_Color' has cardinality 0..*, and from 'xDrone_Object', the role 'xDrone_Object20' has cardinality 0..*.
+An association connects 'xDrone_Vector' and 'xDrone_Origin'. From 'xDrone_Vector', the role 'xDrone_Vector' has cardinality 0..*, and from 'xDrone_Origin', the role 'xDrone_Origin22' has cardinality 0..*.
+An association connects 'xDrone_Vector' and 'xDrone_Size'. From 'xDrone_Vector', the role 'xDrone_Vector25' has cardinality 0..*, and from 'xDrone_Size', the role 'xDrone_Size24' has cardinality 0..*.
+An association connects 'xDrone_Position' and 'xDrone_Vector'. From 'xDrone_Position', the role 'xDrone_Position27' has cardinality 0..*, and from 'xDrone_Vector', the role 'xDrone_Vector28' has cardinality 0..*.
+An association connects 'xDrone_FrontWall' and 'xDrone_Walls'. From 'xDrone_FrontWall', the role 'xDrone_FrontWall' has cardinality 0..*, and from 'xDrone_Walls', the role 'xDrone_Walls30' has cardinality 0..*.
+An association connects 'xDrone_Walls' and 'xDrone_RightWall'. From 'xDrone_Walls', the role 'xDrone_Walls32' has cardinality 0..*, and from 'xDrone_RightWall', the role 'xDrone_RightWall' has cardinality 0..*.
+An association connects 'xDrone_BackWall' and 'xDrone_Walls'. From 'xDrone_BackWall', the role 'xDrone_BackWall' has cardinality 0..*, and from 'xDrone_Walls', the role 'xDrone_Walls34' has cardinality 0..*.
+An association connects 'xDrone_Walls' and 'xDrone_LeftWall'. From 'xDrone_Walls', the role 'xDrone_Walls36' has cardinality 0..*, and from 'xDrone_LeftWall', the role 'xDrone_LeftWall' has cardinality 0..*.
+An association connects 'xDrone_UpWall' and 'xDrone_Walls'. From 'xDrone_UpWall', the role 'xDrone_UpWall' has cardinality 0..*, and from 'xDrone_Walls', the role 'xDrone_Walls38' has cardinality 0..*.

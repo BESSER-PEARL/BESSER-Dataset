@@ -1,0 +1,63 @@
+The domain model 'arduino' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'arduino_Sketch' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'arduino_Loop' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'arduino_Write' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'arduino_Setup' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'arduino_Pin' represents an important domain concept.
+It has the following attributes: 'Direction', which is of type str; 'name', which is of type str.
+
+'Function' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Project' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Read' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'returnValue', which is of type str.
+
+'arduino_DigitalPin' represents an important domain concept.
+It has one attribute: 'number', which is of type str.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DigitalPinNumber' defines the following possible values: 'D5', 'D4', 'D1', 'D0', 'D2'.
+The enumeration 'Direction' defines the following possible values: 'OUTPUT', 'INPUT'.
+
+The model also captures inheritance relationships between classes.
+The class 'arduino_Write' is a specialization of 'Function'.
+The class 'arduino_Read' is a specialization of 'Function'.
+The class 'arduino_DigitalPin' is a specialization of 'Pin'.
+The class 'arduino_Function' is a specialization of 'Instruction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'arduino_Project' and 'arduino_Sketch'. From 'arduino_Project', the role 'arduino_Project' has cardinality 0..*, and from 'arduino_Sketch', the role 'arduino_Sketch' has cardinality 0..*.
+An association connects 'arduino_Sketch' and 'arduino_Setup'. From 'arduino_Sketch', the role 'arduino_Sketch2' has cardinality 0..*, and from 'arduino_Setup', the role 'arduino_Setup' has cardinality 0..*.
+An association connects 'arduino_Loop' and 'arduino_Sketch'. From 'arduino_Loop', the role 'arduino_Loop' has cardinality 0..*, and from 'arduino_Sketch', the role 'arduino_Sketch4' has cardinality 0..*.
+An association connects 'arduino_Sketch' and 'arduino_Instruction'. From 'arduino_Sketch', the role 'arduino_Sketch6' has cardinality 0..*, and from 'arduino_Instruction', the role 'arduino_Instruction' has cardinality 0..*.
+An association connects 'arduino_Instruction' and 'arduino_Instruction'. From 'arduino_Instruction', the role 'arduino_Instruction7' has cardinality 0..*, and from 'arduino_Instruction', the role 'arduino_Instruction9' has cardinality 0..*.
+An association connects 'arduino_Write' and 'arduino_DigitalPin'. From 'arduino_Write', the role 'arduino_Write' has cardinality 0..*, and from 'arduino_DigitalPin', the role 'arduino_DigitalPin' has cardinality 0..*.
+An association connects 'arduino_DigitalPin' and 'arduino_Read'. From 'arduino_DigitalPin', the role 'arduino_DigitalPin12' has cardinality 0..*, and from 'arduino_Read', the role 'arduino_Read' has cardinality 0..*.
+An association connects 'arduino_Setup' and 'arduino_DigitalPin'. From 'arduino_Setup', the role 'arduino_Setup14' has cardinality 0..*, and from 'arduino_DigitalPin', the role 'arduino_DigitalPin15' has cardinality 0..*.
+An association connects 'arduino_Instruction' and 'arduino_Loop'. From 'arduino_Instruction', the role 'arduino_Instruction18' has cardinality 0..*, and from 'arduino_Loop', the role 'arduino_Loop17' has cardinality 0..*.

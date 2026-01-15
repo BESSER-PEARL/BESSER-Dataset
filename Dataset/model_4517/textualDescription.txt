@@ -1,0 +1,52 @@
+The domain model 'Logo' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'Logo_Left' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Right' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_PenUp' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Clear' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_LogoProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Back' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_PenDown' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Forward' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Logo_Back' is a specialization of 'Primitive'.
+The class 'Logo_Forward' is a specialization of 'Primitive'.
+The class 'Logo_Left' is a specialization of 'Primitive'.
+The class 'Logo_Right' is a specialization of 'Primitive'.
+The class 'Logo_PenDown' is a specialization of 'Primitive'.
+The class 'Logo_PenUp' is a specialization of 'Primitive'.
+The class 'Logo_Clear' is a specialization of 'Primitive'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Logo_Primitive' and 'Logo_LogoProgram'. From 'Logo_Primitive', the role 'Logo_Primitive' has cardinality 0..*, and from 'Logo_LogoProgram', the role 'Logo_LogoProgram' has cardinality 0..*.
+An association connects 'Logo_Back' and 'Logo_Expression'. From 'Logo_Back', the role 'Logo_Back' has cardinality 0..*, and from 'Logo_Expression', the role 'Logo_Expression' has cardinality 0..*.
+An association connects 'Logo_Expression' and 'Logo_Forward'. From 'Logo_Expression', the role 'Logo_Expression3' has cardinality 0..*, and from 'Logo_Forward', the role 'Logo_Forward' has cardinality 0..*.
+An association connects 'Logo_Expression' and 'Logo_Left'. From 'Logo_Expression', the role 'Logo_Expression5' has cardinality 0..*, and from 'Logo_Left', the role 'Logo_Left' has cardinality 0..*.
+An association connects 'Logo_Expression' and 'Logo_Right'. From 'Logo_Expression', the role 'Logo_Expression7' has cardinality 0..*, and from 'Logo_Right', the role 'Logo_Right' has cardinality 0..*.

@@ -1,0 +1,98 @@
+The domain model 'dsl' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'dsl_Actor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Projectile' represents an important domain concept.
+It has the following attributes: 'precision', which is of type str; 'speed', which is of type int; 'mass', which is of type int; 'name', which is of type str.
+
+'Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Color' represents an important domain concept.
+It has the following attributes: 'b', which is of type int; 'r', which is of type int; 'a', which is of type int; 'g', which is of type int.
+
+'dsl_LauncherEffect' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ModelActor' represents an important domain concept.
+It has the following attributes: 'modelPath', which is of type str; 'scale', which is of type int.
+
+'dsl_Effect' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Race' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_PersistentEffect' represents an important domain concept.
+It has the following attributes: 'ranges', which is of type str; 'durations', which is of type str; 'periodCount', which is of type int.
+
+'dsl_ParticleActor' represents an important domain concept.
+It has the following attributes: 'emissionBone', which is of type str; 'spritePath', which is of type str; 'perSecond', which is of type int; 'startSize', which is of type str; 'nbRow', which is of type int; 'directionBone', which is of type str; 'maxLife', which is of type str; 'maxCount', which is of type int; 'minLife', which is of type str; 'endSize', which is of type str; 'nbCol', which is of type int; 'add', which is of type str; 'startVariation', which is of type str; 'duration', which is of type int.
+
+'dsl_ActorList' represents an important domain concept.
+It has one attribute: 'trigger', which is of type str.
+
+'dsl_Weapon' represents an important domain concept.
+It has the following attributes: 'range', which is of type str; 'scanRange', which is of type int; 'sourceBone', which is of type str; 'uIName', which is of type str; 'directionBone', which is of type str; 'name', which is of type str; 'period', which is of type int.
+
+'Effect' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_UnitWeaponLink' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_DamageEffect' represents an important domain concept.
+It has one attribute: 'amount', which is of type int.
+
+'dsl_Unit' represents an important domain concept.
+It has the following attributes: 'speed', which is of type str; 'separationRadius', which is of type str; 'uIName', which is of type str; 'mass', which is of type str; 'maxHealth', which is of type int; 'sight', which is of type int; 'radius', which is of type str; 'name', which is of type str.
+
+'dsl_AnimtationActor' represents an important domain concept.
+It has the following attributes: 'speed', which is of type str; 'animName', which is of type str; 'cycle', which is of type str.
+
+'dsl_Turrent' represents an important domain concept.
+It has the following attributes: 'onIdle', which is of type str; 'speed', which is of type int; 'name', which is of type str; 'idleSpeed', which is of type int; 'boneName', which is of type str.
+
+'dsl_Mover' represents an important domain concept.
+It has the following attributes: 'pathfindingMode', which is of type str; 'standingMode', which is of type str; 'heightmap', which is of type str; 'name', which is of type str.
+
+'dsl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'dsl_ModelActor' is a specialization of 'Actor'.
+The class 'dsl_ParticleActor' is a specialization of 'Actor'.
+The class 'dsl_AnimtationActor' is a specialization of 'Actor'.
+The class 'dsl_PersistentEffect' is a specialization of 'Effect'.
+The class 'dsl_DamageEffect' is a specialization of 'Effect'.
+The class 'dsl_LauncherEffect' is a specialization of 'Effect'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dsl_Model' and 'dsl_Weapon'. From 'dsl_Model', the role 'dsl_Model' has cardinality 0..*, and from 'dsl_Weapon', the role 'dsl_Weapon' has cardinality 0..*.
+An association connects 'dsl_Model' and 'dsl_Unit'. From 'dsl_Model', the role 'dsl_Model2' has cardinality 0..*, and from 'dsl_Unit', the role 'dsl_Unit' has cardinality 0..*.
+An association connects 'dsl_Race' and 'dsl_Model'. From 'dsl_Race', the role 'dsl_Race' has cardinality 0..*, and from 'dsl_Model', the role 'dsl_Model4' has cardinality 0..*.
+An association connects 'dsl_Model' and 'dsl_Mover'. From 'dsl_Model', the role 'dsl_Model6' has cardinality 0..*, and from 'dsl_Mover', the role 'dsl_Mover' has cardinality 0..*.
+An association connects 'dsl_Model' and 'dsl_Actor'. From 'dsl_Model', the role 'dsl_Model8' has cardinality 0..*, and from 'dsl_Actor', the role 'dsl_Actor' has cardinality 0..*.
+An association connects 'dsl_Effect' and 'dsl_Model'. From 'dsl_Effect', the role 'dsl_Effect' has cardinality 0..*, and from 'dsl_Model', the role 'dsl_Model10' has cardinality 0..*.
+An association connects 'dsl_Model' and 'dsl_Turrent'. From 'dsl_Model', the role 'dsl_Model12' has cardinality 0..*, and from 'dsl_Turrent', the role 'dsl_Turrent' has cardinality 0..*.
+An association connects 'dsl_Projectile' and 'dsl_Model'. From 'dsl_Projectile', the role 'dsl_Projectile' has cardinality 0..*, and from 'dsl_Model', the role 'dsl_Model14' has cardinality 0..*.
+An association connects 'dsl_ActorList' and 'dsl_ModelActor'. From 'dsl_ActorList', the role 'dsl_ActorList' has cardinality 0..*, and from 'dsl_ModelActor', the role 'dsl_ModelActor' has cardinality 0..*.
+An association connects 'dsl_Color' and 'dsl_ParticleActor'. From 'dsl_Color', the role 'dsl_Color' has cardinality 0..*, and from 'dsl_ParticleActor', the role 'dsl_ParticleActor' has cardinality 0..*.
+An association connects 'dsl_Color' and 'dsl_ParticleActor'. From 'dsl_Color', the role 'dsl_Color19' has cardinality 0..*, and from 'dsl_ParticleActor', the role 'dsl_ParticleActor18' has cardinality 0..*.
+An association connects 'dsl_ActorList' and 'dsl_Actor'. From 'dsl_ActorList', the role 'dsl_ActorList21' has cardinality 0..*, and from 'dsl_Actor', the role 'dsl_Actor22' has cardinality 0..*.
+An association connects 'dsl_Unit' and 'dsl_Race'. From 'dsl_Unit', the role 'dsl_Unit24' has cardinality 0..*, and from 'dsl_Race', the role 'dsl_Race25' has cardinality 0..*.
+An association connects 'dsl_Mover' and 'dsl_Unit'. From 'dsl_Mover', the role 'dsl_Mover28' has cardinality 0..*, and from 'dsl_Unit', the role 'dsl_Unit27' has cardinality 0..*.
+An association connects 'dsl_Unit' and 'dsl_UnitWeaponLink'. From 'dsl_Unit', the role 'dsl_Unit30' has cardinality 0..*, and from 'dsl_UnitWeaponLink', the role 'dsl_UnitWeaponLink' has cardinality 0..*.
+An association connects 'dsl_Unit' and 'dsl_Actor'. From 'dsl_Unit', the role 'dsl_Unit32' has cardinality 0..*, and from 'dsl_Actor', the role 'dsl_Actor33' has cardinality 0..*.
+An association connects 'dsl_UnitWeaponLink' and 'dsl_Weapon'. From 'dsl_UnitWeaponLink', the role 'dsl_UnitWeaponLink35' has cardinality 0..*, and from 'dsl_Weapon', the role 'dsl_Weapon36' has cardinality 0..*.
+An association connects 'dsl_UnitWeaponLink' and 'dsl_Turrent'. From 'dsl_UnitWeaponLink', the role 'dsl_UnitWeaponLink38' has cardinality 0..*, and from 'dsl_Turrent', the role 'dsl_Turrent39' has cardinality 0..*.
+An association connects 'dsl_Weapon' and 'dsl_Effect'. From 'dsl_Weapon', the role 'dsl_Weapon41' has cardinality 0..*, and from 'dsl_Effect', the role 'dsl_Effect42' has cardinality 0..*.
+An association connects 'dsl_Weapon' and 'dsl_Actor'. From 'dsl_Weapon', the role 'dsl_Weapon44' has cardinality 0..*, and from 'dsl_Actor', the role 'dsl_Actor45' has cardinality 0..*.
+An association connects 'dsl_PersistentEffect' and 'dsl_Effect'. From 'dsl_PersistentEffect', the role 'dsl_PersistentEffect' has cardinality 0..*, and from 'dsl_Effect', the role 'dsl_Effect47' has cardinality 0..*.
+An association connects 'dsl_Effect' and 'dsl_LauncherEffect'. From 'dsl_Effect', the role 'dsl_Effect49' has cardinality 0..*, and from 'dsl_LauncherEffect', the role 'dsl_LauncherEffect' has cardinality 0..*.
+An association connects 'dsl_LauncherEffect' and 'dsl_Projectile'. From 'dsl_LauncherEffect', the role 'dsl_LauncherEffect51' has cardinality 0..*, and from 'dsl_Projectile', the role 'dsl_Projectile52' has cardinality 0..*.
+An association connects 'dsl_Mover' and 'dsl_Projectile'. From 'dsl_Mover', the role 'dsl_Mover55' has cardinality 0..*, and from 'dsl_Projectile', the role 'dsl_Projectile54' has cardinality 0..*.
+An association connects 'dsl_Actor' and 'dsl_Projectile'. From 'dsl_Actor', the role 'dsl_Actor58' has cardinality 0..*, and from 'dsl_Projectile', the role 'dsl_Projectile57' has cardinality 0..*.

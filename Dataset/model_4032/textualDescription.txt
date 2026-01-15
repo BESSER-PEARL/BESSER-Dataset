@@ -1,0 +1,238 @@
+The domain model 'UMLMM' describes the core structural elements and their relationships within the system.
+
+The model defines 59 main class(es).
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_DeploymentTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_Classifier' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type str.
+
+'BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DeploymentTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_InterfaceRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UMLMM_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_ParameterableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'EncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_TemplateableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_EncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_StructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLMM_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'UMLMM_Package' is a specialization of 'Namespace'.
+The class 'UMLMM_Package' is a specialization of 'PackageableElement'.
+The class 'UMLMM_Package' is a specialization of 'TemplateableElement'.
+The class 'UMLMM_Interface' is a specialization of 'Classifier'.
+The class 'UMLMM_Model' is a specialization of 'Package'.
+The class 'UMLMM_Class' is a specialization of 'EncapsulatedClassifier'.
+The class 'UMLMM_Class' is a specialization of 'BehavioredClassifier'.
+The class 'UMLMM_Generalization' is a specialization of 'DirectedRelationship'.
+The class 'UMLMM_StructuredClassifier' is a specialization of 'Classifier'.
+The class 'UMLMM_Property' is a specialization of 'StructuralFeature'.
+The class 'UMLMM_Property' is a specialization of 'ConnectableElement'.
+The class 'UMLMM_Property' is a specialization of 'DeploymentTarget'.
+The class 'UMLMM_Classifier' is a specialization of 'Namespace'.
+The class 'UMLMM_Classifier' is a specialization of 'RedefinableElement'.
+The class 'UMLMM_Classifier' is a specialization of 'Type'.
+The class 'UMLMM_Classifier' is a specialization of 'TemplateableElement'.
+The class 'UMLMM_BehavioredClassifier' is a specialization of 'Classifier'.
+The class 'UMLMM_InterfaceRealization' is a specialization of 'Realization'.
+The class 'UMLMM_PackageableElement' is a specialization of 'NamedElement'.
+The class 'UMLMM_PackageableElement' is a specialization of 'ParameterableElement'.
+The class 'UMLMM_NamedElement' is a specialization of 'Element'.
+The class 'UMLMM_Operation' is a specialization of 'BehavioralFeature'.
+The class 'UMLMM_Operation' is a specialization of 'ParameterableElement'.
+The class 'UMLMM_Operation' is a specialization of 'TemplateableElement'.
+The class 'UMLMM_Element' is a specialization of 'EModelElement'.
+The class 'UMLMM_ParameterableElement' is a specialization of 'Element'.
+The class 'UMLMM_Namespace' is a specialization of 'NamedElement'.
+The class 'UMLMM_TemplateableElement' is a specialization of 'Element'.
+The class 'UMLMM_RedefinableElement' is a specialization of 'NamedElement'.
+The class 'UMLMM_Type' is a specialization of 'PackageableElement'.
+The class 'UMLMM_BehavioralFeature' is a specialization of 'Namespace'.
+The class 'UMLMM_BehavioralFeature' is a specialization of 'Feature'.
+The class 'UMLMM_Feature' is a specialization of 'RedefinableElement'.
+The class 'UMLMM_Realization' is a specialization of 'Abstraction'.
+The class 'UMLMM_Abstraction' is a specialization of 'Dependency'.
+The class 'UMLMM_Dependency' is a specialization of 'PackageableElement'.
+The class 'UMLMM_Dependency' is a specialization of 'DirectedRelationship'.
+The class 'UMLMM_DirectedRelationship' is a specialization of 'Relationship'.
+The class 'UMLMM_Relationship' is a specialization of 'Element'.
+The class 'UMLMM_StructuralFeature' is a specialization of 'Feature'.
+The class 'UMLMM_StructuralFeature' is a specialization of 'TypedElement'.
+The class 'UMLMM_StructuralFeature' is a specialization of 'MultiplicityElement'.
+The class 'UMLMM_TypedElement' is a specialization of 'NamedElement'.
+The class 'UMLMM_MultiplicityElement' is a specialization of 'Element'.
+The class 'UMLMM_ConnectableElement' is a specialization of 'TypedElement'.
+The class 'UMLMM_ConnectableElement' is a specialization of 'ParameterableElement'.
+The class 'UMLMM_DeploymentTarget' is a specialization of 'NamedElement'.
+The class 'UMLMM_EncapsulatedClassifier' is a specialization of 'StructuredClassifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UMLMM_PackageableElement' and 'UMLMM_Package'. From 'UMLMM_PackageableElement', the role 'UMLMM_PackageableElement' has cardinality 0..*, and from 'UMLMM_Package', the role 'UMLMM_Package' has cardinality 0..*.
+An association connects 'UMLMM_Class' and 'UMLMM_Operation'. From 'UMLMM_Class', the role 'UMLMM_Class' has cardinality 0..*, and from 'UMLMM_Operation', the role 'UMLMM_Operation' has cardinality 0..*.
+An association connects 'UMLMM_Generalization' and 'UMLMM_Classifier'. From 'UMLMM_Generalization', the role 'UMLMM_Generalization' has cardinality 0..*, and from 'UMLMM_Classifier', the role 'UMLMM_Classifier' has cardinality 0..*.
+An association connects 'UMLMM_StructuredClassifier' and 'UMLMM_Property'. From 'UMLMM_StructuredClassifier', the role 'UMLMM_StructuredClassifier' has cardinality 0..*, and from 'UMLMM_Property', the role 'UMLMM_Property' has cardinality 0..*.
+An association connects 'UMLMM_Generalization' and 'UMLMM_Classifier'. From 'UMLMM_Generalization', the role 'UMLMM_Generalization6' has cardinality 0..*, and from 'UMLMM_Classifier', the role 'UMLMM_Classifier5' has cardinality 0..*.
+An association connects 'UMLMM_InterfaceRealization' and 'UMLMM_BehavioredClassifier'. From 'UMLMM_InterfaceRealization', the role 'UMLMM_InterfaceRealization' has cardinality 0..*, and from 'UMLMM_BehavioredClassifier', the role 'UMLMM_BehavioredClassifier' has cardinality 0..*.

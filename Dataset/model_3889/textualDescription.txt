@@ -1,0 +1,106 @@
+The domain model 'workflow' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'Named' represents an important domain concept.
+It does not declare any attributes.
+
+'EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Fork' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_StateContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_End' represents an important domain concept.
+It does not declare any attributes.
+
+'StateContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_ToState' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_SubProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'ToState' represents an important domain concept.
+It does not declare any attributes.
+
+'FromState' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Decision' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_AbstractState' represents an important domain concept.
+It has one attribute: 'associatedClass', which is of type str.
+
+'workflow_Task' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_FromState' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Workflow' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Join' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_IntermediateState' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Named' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_StateTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateState' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Processing' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'workflow_Named' is a specialization of 'EObject'.
+The class 'workflow_Workflow' is a specialization of 'Named'.
+The class 'workflow_Workflow' is a specialization of 'StateContainer'.
+The class 'workflow_AbstractState' is a specialization of 'Named'.
+The class 'workflow_IntermediateState' is a specialization of 'AbstractState'.
+The class 'workflow_IntermediateState' is a specialization of 'FromState'.
+The class 'workflow_IntermediateState' is a specialization of 'ToState'.
+The class 'workflow_StateTransition' is a specialization of 'Named'.
+The class 'workflow_Start' is a specialization of 'AbstractState'.
+The class 'workflow_Start' is a specialization of 'FromState'.
+The class 'workflow_End' is a specialization of 'AbstractState'.
+The class 'workflow_End' is a specialization of 'ToState'.
+The class 'workflow_Task' is a specialization of 'IntermediateState'.
+The class 'workflow_Processing' is a specialization of 'IntermediateState'.
+The class 'workflow_Decision' is a specialization of 'IntermediateState'.
+The class 'workflow_Fork' is a specialization of 'IntermediateState'.
+The class 'workflow_Join' is a specialization of 'IntermediateState'.
+The class 'workflow_SubProcess' is a specialization of 'StateContainer'.
+The class 'workflow_SubProcess' is a specialization of 'IntermediateState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'workflow_StateTransition' and 'workflow_Workflow'. From 'workflow_StateTransition', the role 'workflow_StateTransition' has cardinality 0..*, and from 'workflow_Workflow', the role 'workflow_Workflow' has cardinality 0..*.
+An association connects 'workflow_StateTransition' and 'workflow_FromState'. From 'workflow_StateTransition', the role 'StateTransition' has cardinality 0..*, and from 'workflow_FromState', the role 'from' has cardinality 0..*.
+An association connects 'workflow_ToState' and 'workflow_StateTransition'. From 'workflow_ToState', the role 'to' has cardinality 0..*, and from 'workflow_StateTransition', the role 'StateTransition3' has cardinality 0..*.
+An association connects 'workflow_Start' and 'workflow_StateContainer'. From 'workflow_Start', the role 'Start' has cardinality 0..*, and from 'workflow_StateContainer', the role 'stateContainer' has cardinality 0..*.
+An association connects 'workflow_StateContainer' and 'workflow_IntermediateState'. From 'workflow_StateContainer', the role 'stateContainer6' has cardinality 0..*, and from 'workflow_IntermediateState', the role 'IntermediateState' has cardinality 0..*.
+An association connects 'workflow_End' and 'workflow_StateContainer'. From 'workflow_End', the role 'End' has cardinality 0..*, and from 'workflow_StateContainer', the role 'stateContainer8' has cardinality 0..*.
+An association connects 'workflow_StateContainer' and 'workflow_IntermediateState'. From 'workflow_StateContainer', the role 'StateContainer' has cardinality 0..*, and from 'workflow_IntermediateState', the role 'states' has cardinality 0..*.
+An association connects 'workflow_StateTransition' and 'workflow_FromState'. From 'workflow_StateTransition', the role 'outboundTransitions' has cardinality 0..*, and from 'workflow_FromState', the role 'FromState' has cardinality 0..*.
+An association connects 'workflow_StateTransition' and 'workflow_ToState'. From 'workflow_StateTransition', the role 'inboundTransitions' has cardinality 0..*, and from 'workflow_ToState', the role 'ToState' has cardinality 0..*.
+An association connects 'workflow_StateContainer' and 'workflow_Start'. From 'workflow_StateContainer', the role 'StateContainer13' has cardinality 0..*, and from 'workflow_Start', the role 'startState' has cardinality 0..*.
+An association connects 'workflow_StateContainer' and 'workflow_End'. From 'workflow_StateContainer', the role 'StateContainer15' has cardinality 0..*, and from 'workflow_End', the role 'endState' has cardinality 0..*.

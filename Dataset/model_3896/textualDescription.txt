@@ -1,0 +1,57 @@
+The domain model 'workflow' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Recipe' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_OutputParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_SimpleCommand' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'workflow_InputParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Workflow' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_Condition' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'expression', which is of type str.
+
+'workflow_Parameter' represents an important domain concept.
+It has the following attributes: 'option', which is of type str; 'data', which is of type str.
+
+'workflow_Statement' represents an important domain concept.
+It has one attribute: 'exec_order', which is of type int.
+
+'workflow_Program' represents an important domain concept.
+It has the following attributes: 'exec_order', which is of type int; 'description', which is of type str; 'name_exec', which is of type str.
+
+'workflow_ForEach' represents an important domain concept.
+It has the following attributes: 'element', which is of type str; 'sequence', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'workflow_Condition' is a specialization of 'Statement'.
+The class 'workflow_SimpleCommand' is a specialization of 'Statement'.
+The class 'workflow_InputParameter' is a specialization of 'Parameter'.
+The class 'workflow_OutputParameter' is a specialization of 'Parameter'.
+The class 'workflow_ForEach' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'workflow_Recipe' and 'workflow_Workflow'. From 'workflow_Recipe', the role 'workflow_Recipe' has cardinality 0..*, and from 'workflow_Workflow', the role 'workflow_Workflow' has cardinality 0..*.
+An association connects 'workflow_Statement' and 'workflow_Recipe'. From 'workflow_Statement', the role 'workflow_Statement' has cardinality 0..*, and from 'workflow_Recipe', the role 'workflow_Recipe2' has cardinality 0..*.
+An association connects 'workflow_Statement' and 'workflow_Condition'. From 'workflow_Statement', the role 'workflow_Statement4' has cardinality 0..*, and from 'workflow_Condition', the role 'workflow_Condition' has cardinality 0..*.
+An association connects 'workflow_Statement' and 'workflow_Condition'. From 'workflow_Statement', the role 'workflow_Statement7' has cardinality 0..*, and from 'workflow_Condition', the role 'workflow_Condition6' has cardinality 0..*.
+An association connects 'workflow_Parameter' and 'workflow_Program'. From 'workflow_Parameter', the role 'workflow_Parameter' has cardinality 0..*, and from 'workflow_Program', the role 'workflow_Program' has cardinality 0..*.
+An association connects 'workflow_Program' and 'workflow_SimpleCommand'. From 'workflow_Program', the role 'workflow_Program10' has cardinality 0..*, and from 'workflow_SimpleCommand', the role 'workflow_SimpleCommand' has cardinality 0..*.
+An association connects 'workflow_InputParameter' and 'workflow_OutputParameter'. From 'workflow_InputParameter', the role 'workflow_InputParameter' has cardinality 0..*, and from 'workflow_OutputParameter', the role 'workflow_OutputParameter' has cardinality 0..*.
+An association connects 'workflow_OutputParameter' and 'workflow_InputParameter'. From 'workflow_OutputParameter', the role 'workflow_OutputParameter13' has cardinality 0..*, and from 'workflow_InputParameter', the role 'workflow_InputParameter14' has cardinality 0..*.
+An association connects 'workflow_Statement' and 'workflow_ForEach'. From 'workflow_Statement', the role 'workflow_Statement16' has cardinality 0..*, and from 'workflow_ForEach', the role 'workflow_ForEach' has cardinality 0..*.

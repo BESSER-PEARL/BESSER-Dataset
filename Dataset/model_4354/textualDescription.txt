@@ -1,0 +1,111 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'model_EmptyStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ChoiceStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'model_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_SwitchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ReferenceExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ParameterDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BreakStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ConstantDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ConstantDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ProcedureDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'model_VariableDeclarationStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ForStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'model_ProcedureDeclaration' is a specialization of 'FunctionDeclaration'.
+The class 'model_Statement' is a specialization of 'Action'.
+The class 'model_EmptyStatement' is a specialization of 'Statement'.
+The class 'model_Block' is a specialization of 'Action'.
+The class 'model_VariableDeclarationStatement' is a specialization of 'Statement'.
+The class 'model_ConstantDeclarationStatement' is a specialization of 'Statement'.
+The class 'model_ExpressionStatement' is a specialization of 'Statement'.
+The class 'model_BreakStatement' is a specialization of 'Statement'.
+The class 'model_ReturnStatement' is a specialization of 'Statement'.
+The class 'model_IfStatement' is a specialization of 'Statement'.
+The class 'model_SwitchStatement' is a specialization of 'Statement'.
+The class 'model_ForStatement' is a specialization of 'Statement'.
+The class 'model_ChoiceStatement' is a specialization of 'Statement'.
+The class 'model_AssignmentStatement' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Block' and 'model_ProcedureDeclaration'. From 'model_Block', the role 'model_Block' has cardinality 0..*, and from 'model_ProcedureDeclaration', the role 'model_ProcedureDeclaration' has cardinality 0..*.
+An association connects 'model_Action' and 'model_Block'. From 'model_Action', the role 'model_Action' has cardinality 0..*, and from 'model_Block', the role 'model_Block2' has cardinality 0..*.
+An association connects 'model_Branch' and 'model_Expression'. From 'model_Branch', the role 'model_Branch' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression' has cardinality 0..*.
+An association connects 'model_Action' and 'model_Branch'. From 'model_Action', the role 'model_Action6' has cardinality 0..*, and from 'model_Branch', the role 'model_Branch5' has cardinality 0..*.
+An association connects 'model_VariableDeclaration' and 'model_VariableDeclarationStatement'. From 'model_VariableDeclaration', the role 'model_VariableDeclaration' has cardinality 0..*, and from 'model_VariableDeclarationStatement', the role 'model_VariableDeclarationStatement' has cardinality 0..*.
+An association connects 'model_ConstantDeclaration' and 'model_ConstantDeclarationStatement'. From 'model_ConstantDeclaration', the role 'model_ConstantDeclaration' has cardinality 0..*, and from 'model_ConstantDeclarationStatement', the role 'model_ConstantDeclarationStatement' has cardinality 0..*.
+An association connects 'model_ExpressionStatement' and 'model_Expression'. From 'model_ExpressionStatement', the role 'model_ExpressionStatement' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression10' has cardinality 0..*.
+An association connects 'model_Expression' and 'model_ReturnStatement'. From 'model_Expression', the role 'model_Expression12' has cardinality 0..*, and from 'model_ReturnStatement', the role 'model_ReturnStatement' has cardinality 0..*.
+An association connects 'model_IfStatement' and 'model_Branch'. From 'model_IfStatement', the role 'model_IfStatement' has cardinality 0..*, and from 'model_Branch', the role 'model_Branch14' has cardinality 0..*.
+An association connects 'model_Expression' and 'model_SwitchStatement'. From 'model_Expression', the role 'model_Expression16' has cardinality 0..*, and from 'model_SwitchStatement', the role 'model_SwitchStatement' has cardinality 0..*.
+An association connects 'model_Branch' and 'model_SwitchStatement'. From 'model_Branch', the role 'model_Branch19' has cardinality 0..*, and from 'model_SwitchStatement', the role 'model_SwitchStatement18' has cardinality 0..*.
+An association connects 'model_ForStatement' and 'model_ParameterDeclaration'. From 'model_ForStatement', the role 'model_ForStatement' has cardinality 0..*, and from 'model_ParameterDeclaration', the role 'model_ParameterDeclaration' has cardinality 0..*.
+An association connects 'model_Expression' and 'model_ForStatement'. From 'model_Expression', the role 'model_Expression23' has cardinality 0..*, and from 'model_ForStatement', the role 'model_ForStatement22' has cardinality 0..*.
+An association connects 'model_Action' and 'model_ForStatement'. From 'model_Action', the role 'model_Action26' has cardinality 0..*, and from 'model_ForStatement', the role 'model_ForStatement25' has cardinality 0..*.
+An association connects 'model_ForStatement' and 'model_Action'. From 'model_ForStatement', the role 'model_ForStatement28' has cardinality 0..*, and from 'model_Action', the role 'model_Action29' has cardinality 0..*.
+An association connects 'model_Branch' and 'model_ChoiceStatement'. From 'model_Branch', the role 'model_Branch31' has cardinality 0..*, and from 'model_ChoiceStatement', the role 'model_ChoiceStatement' has cardinality 0..*.
+An association connects 'model_ReferenceExpression' and 'model_AssignmentStatement'. From 'model_ReferenceExpression', the role 'model_ReferenceExpression' has cardinality 0..*, and from 'model_AssignmentStatement', the role 'model_AssignmentStatement' has cardinality 0..*.
+An association connects 'model_AssignmentStatement' and 'model_Expression'. From 'model_AssignmentStatement', the role 'model_AssignmentStatement34' has cardinality 0..*, and from 'model_Expression', the role 'model_Expression35' has cardinality 0..*.

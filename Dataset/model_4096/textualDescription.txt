@@ -1,0 +1,101 @@
+The domain model 'RDM' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'RDM_TrackElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RDMElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TrackElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RDM_ConnectionPoint' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'Section' represents an important domain concept.
+It does not declare any attributes.
+
+'RDM_Section' represents an important domain concept.
+It does not declare any attributes.
+
+'RDM_Train' represents an important domain concept.
+It has the following attributes: 'maxSpeed', which is of type str; 'headingSpeed', which is of type str.
+
+'Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'RDM_RDMElement' represents an important domain concept.
+It has the following attributes: 'length', which is of type int; 'name', which is of type str.
+
+'RDM_TurnoutSignal' represents an important domain concept.
+It does not declare any attributes.
+
+'RDM_Station' represents an important domain concept.
+It does not declare any attributes.
+
+'RDM_TurnoutDesiredDirection' represents an important domain concept.
+It has one attribute: 'desiredDirection', which is of type str.
+
+'RDM_RailwayDomainModel' represents an important domain concept.
+It does not declare any attributes.
+
+'RDM_Turnout' represents an important domain concept.
+It has the following attributes: 'currentDirection', which is of type str; 'switchingDirection', which is of type str.
+
+'RDM_Route' represents an important domain concept.
+It does not declare any attributes.
+
+'RDM_Signal' represents an important domain concept.
+It has one attribute: 'allowedSpeed', which is of type str.
+
+'RDM_RouteElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Speed' defines the following possible values: 'SIXTY', 'FOURTY', 'ZERO', 'TWENTY'.
+The enumeration 'TurnoutDirection' defines the following possible values: 'STRAIGHT', 'LEFT', 'RIGHT'.
+The enumeration 'ConnectionDirection' defines the following possible values: 'TOP', 'RIGHT', 'STRAIGHT', 'LEFT'.
+
+The model also captures inheritance relationships between classes.
+The class 'RDM_Train' is a specialization of 'RDMElement'.
+The class 'RDM_Signal' is a specialization of 'RDMElement'.
+The class 'RDM_TrackElement' is a specialization of 'RDMElement'.
+The class 'RDM_Route' is a specialization of 'RDMElement'.
+The class 'RDM_Section' is a specialization of 'TrackElement'.
+The class 'RDM_Turnout' is a specialization of 'TrackElement'.
+The class 'RDM_TurnoutDesiredDirection' is a specialization of 'RDMElement'.
+The class 'RDM_Station' is a specialization of 'Section'.
+The class 'RDM_ConnectionPoint' is a specialization of 'RDMElement'.
+The class 'RDM_RouteElement' is a specialization of 'RDMElement'.
+The class 'RDM_TurnoutSignal' is a specialization of 'Signal'.
+
+Relationships between classes are modeled using associations.
+An association connects 'RDM_RailwayDomainModel' and 'RDM_Train'. From 'RDM_RailwayDomainModel', the role 'RDM_RailwayDomainModel' has cardinality 0..*, and from 'RDM_Train', the role 'RDM_Train' has cardinality 0..*.
+An association connects 'RDM_RailwayDomainModel' and 'RDM_Section'. From 'RDM_RailwayDomainModel', the role 'RDM_RailwayDomainModel2' has cardinality 0..*, and from 'RDM_Section', the role 'RDM_Section' has cardinality 0..*.
+An association connects 'RDM_Turnout' and 'RDM_RailwayDomainModel'. From 'RDM_Turnout', the role 'RDM_Turnout' has cardinality 0..*, and from 'RDM_RailwayDomainModel', the role 'RDM_RailwayDomainModel4' has cardinality 0..*.
+An association connects 'RDM_ConnectionPoint' and 'RDM_RailwayDomainModel'. From 'RDM_ConnectionPoint', the role 'RDM_ConnectionPoint' has cardinality 0..*, and from 'RDM_RailwayDomainModel', the role 'RDM_RailwayDomainModel6' has cardinality 0..*.
+An association connects 'RDM_Signal' and 'RDM_RailwayDomainModel'. From 'RDM_Signal', the role 'RDM_Signal' has cardinality 0..*, and from 'RDM_RailwayDomainModel', the role 'RDM_RailwayDomainModel8' has cardinality 0..*.
+An association connects 'RDM_TurnoutDesiredDirection' and 'RDM_RailwayDomainModel'. From 'RDM_TurnoutDesiredDirection', the role 'RDM_TurnoutDesiredDirection' has cardinality 0..*, and from 'RDM_RailwayDomainModel', the role 'RDM_RailwayDomainModel10' has cardinality 0..*.
+An association connects 'RDM_Route' and 'RDM_RailwayDomainModel'. From 'RDM_Route', the role 'RDM_Route' has cardinality 0..*, and from 'RDM_RailwayDomainModel', the role 'RDM_RailwayDomainModel12' has cardinality 0..*.
+An association connects 'RDM_RailwayDomainModel' and 'RDM_RouteElement'. From 'RDM_RailwayDomainModel', the role 'RDM_RailwayDomainModel14' has cardinality 0..*, and from 'RDM_RouteElement', the role 'RDM_RouteElement' has cardinality 0..*.
+An association connects 'RDM_Station' and 'RDM_Train'. From 'RDM_Station', the role 'RDM_Station' has cardinality 0..*, and from 'RDM_Train', the role 'RDM_Train16' has cardinality 0..*.
+An association connects 'RDM_Station' and 'RDM_Train'. From 'RDM_Station', the role 'RDM_Station19' has cardinality 0..*, and from 'RDM_Train', the role 'RDM_Train18' has cardinality 0..*.
+An association connects 'RDM_Train' and 'RDM_Route'. From 'RDM_Train', the role 'RDM_Train21' has cardinality 0..*, and from 'RDM_Route', the role 'RDM_Route22' has cardinality 0..*.
+An association connects 'RDM_Train' and 'RDM_TrackElement'. From 'RDM_Train', the role 'occupiedBy' has cardinality 0..*, and from 'RDM_TrackElement', the role 'TrackElement' has cardinality 0..*.
+An association connects 'RDM_ConnectionPoint' and 'RDM_Signal'. From 'RDM_ConnectionPoint', the role 'ConnectionPoint' has cardinality 0..*, and from 'RDM_Signal', the role 'holds' has cardinality 0..*.
+An association connects 'RDM_TrackElement' and 'RDM_Signal'. From 'RDM_TrackElement', the role 'RDM_TrackElement' has cardinality 0..*, and from 'RDM_Signal', the role 'RDM_Signal26' has cardinality 0..*.
+An association connects 'RDM_TrackElement' and 'RDM_ConnectionPoint'. From 'RDM_TrackElement', the role 'RDM_TrackElement28' has cardinality 0..*, and from 'RDM_ConnectionPoint', the role 'RDM_ConnectionPoint29' has cardinality 0..*.
+An association connects 'RDM_TrackElement' and 'RDM_Train'. From 'RDM_TrackElement', the role 'standsOn' has cardinality 0..*, and from 'RDM_Train', the role 'Train' has cardinality 0..*.
+An association connects 'RDM_RouteElement' and 'RDM_Route'. From 'RDM_RouteElement', the role 'RouteElement' has cardinality 0..*, and from 'RDM_Route', the role 'belongsTo' has cardinality 0..*.
+An association connects 'RDM_TurnoutDesiredDirection' and 'RDM_Turnout'. From 'RDM_TurnoutDesiredDirection', the role 'RDM_TurnoutDesiredDirection33' has cardinality 0..*, and from 'RDM_Turnout', the role 'RDM_Turnout34' has cardinality 0..*.
+An association connects 'RDM_RouteElement' and 'RDM_TurnoutDesiredDirection'. From 'RDM_RouteElement', the role 'RouteElement36' has cardinality 0..*, and from 'RDM_TurnoutDesiredDirection', the role 'desiredDirection' has cardinality 0..*.
+An association connects 'RDM_Station' and 'RDM_Signal'. From 'RDM_Station', the role 'RDM_Station38' has cardinality 0..*, and from 'RDM_Signal', the role 'RDM_Signal39' has cardinality 0..*.
+An association connects 'RDM_Signal' and 'RDM_ConnectionPoint'. From 'RDM_Signal', the role 'Signal' has cardinality 0..*, and from 'RDM_ConnectionPoint', the role 'standsOn41' has cardinality 0..*.
+An association connects 'RDM_TrackElement' and 'RDM_ConnectionPoint'. From 'RDM_TrackElement', the role 'RDM_TrackElement44' has cardinality 0..*, and from 'RDM_ConnectionPoint', the role 'RDM_ConnectionPoint43' has cardinality 0..*.
+An association connects 'RDM_TrackElement' and 'RDM_RouteElement'. From 'RDM_TrackElement', the role 'RDM_TrackElement47' has cardinality 0..*, and from 'RDM_RouteElement', the role 'RDM_RouteElement46' has cardinality 0..*.
+An association connects 'RDM_RouteElement' and 'RDM_TurnoutDesiredDirection'. From 'RDM_RouteElement', the role 'routeElement' has cardinality 0..*, and from 'RDM_TurnoutDesiredDirection', the role 'TurnoutDesiredDirection' has cardinality 0..*.
+An association connects 'RDM_Route' and 'RDM_RouteElement'. From 'RDM_Route', the role 'Route' has cardinality 0..*, and from 'RDM_RouteElement', the role 'firstElement' has cardinality 0..*.
+An association connects 'RDM_RouteElement' and 'RDM_RouteElement'. From 'RDM_RouteElement', the role 'RDM_RouteElement52' has cardinality 0..*, and from 'RDM_RouteElement', the role 'RDM_RouteElement50' has cardinality 0..*.
+An association connects 'RDM_Turnout' and 'RDM_TurnoutSignal'. From 'RDM_Turnout', the role 'RDM_Turnout54' has cardinality 0..*, and from 'RDM_TurnoutSignal', the role 'RDM_TurnoutSignal' has cardinality 0..*.

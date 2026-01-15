@@ -1,0 +1,12 @@
+The domain model 'hello' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'hello_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'hello_Greeting' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'hello_Model' and 'hello_Greeting'. From 'hello_Model', the role 'hello_Model' has cardinality 0..*, and from 'hello_Greeting', the role 'hello_Greeting' has cardinality 0..*.

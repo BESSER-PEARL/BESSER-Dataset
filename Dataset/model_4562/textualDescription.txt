@@ -1,0 +1,119 @@
+The domain model 'Legolang' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'Legolang_controlflow_and' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_controlflow_ExprBool' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_controlflow_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_Robot_display' represents an important domain concept.
+It does not declare any attributes.
+
+'opBinaire' represents an important domain concept.
+It does not declare any attributes.
+
+'controlflow_ExprBool' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_controlflow_si' represents an important domain concept.
+It does not declare any attributes.
+
+'tantqueue' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_controlflow_operator' represents an important domain concept.
+It does not declare any attributes.
+
+'controlflow_operator' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_Robot_bip' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_controlflow_tantqueue' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_Robot_turn' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_controlflow_not' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_controlflow_opUnaire' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_controlflow_opBinaire' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_Robot_move' represents an important domain concept.
+It does not declare any attributes.
+
+'OrderRobot' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_controlflow_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'ExprBool' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_Robot_OrderRobot' represents an important domain concept.
+It does not declare any attributes.
+
+'opUnaire' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_Robot_hasTurned' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_Robot_stopEngine' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_Robot_obstacle' represents an important domain concept.
+It does not declare any attributes.
+
+'Legolang_Robot_turnAngle' represents an important domain concept.
+It does not declare any attributes.
+
+'operator' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Legolang_Robot_move' is a specialization of 'OrderRobot'.
+The class 'Legolang_Robot_bip' is a specialization of 'OrderRobot'.
+The class 'Legolang_Robot_turn' is a specialization of 'OrderRobot'.
+The class 'Legolang_Robot_stopEngine' is a specialization of 'OrderRobot'.
+The class 'Legolang_Robot_display' is a specialization of 'OrderRobot'.
+The class 'Legolang_Robot_turnAngle' is a specialization of 'OrderRobot'.
+The class 'Legolang_Robot_obstacle' is a specialization of 'OrderRobot'.
+The class 'Legolang_Robot_hasTurned' is a specialization of 'OrderRobot'.
+The class 'Legolang_controlflow_tantqueue' is a specialization of 'Expr'.
+The class 'Legolang_controlflow_si' is a specialization of 'Expr'.
+The class 'Legolang_controlflow_opUnaire' is a specialization of 'controlflow_operator'.
+The class 'Legolang_controlflow_opUnaire' is a specialization of 'controlflow_ExprBool'.
+The class 'Legolang_controlflow_opBinaire' is a specialization of 'operator'.
+The class 'Legolang_controlflow_not' is a specialization of 'opUnaire'.
+The class 'Legolang_controlflow_and' is a specialization of 'opBinaire'.
+The class 'Legolang_controlflow_ExprBool' is a specialization of 'Expr'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Expr' and 'Legolang_Robot_OrderRobot'. From 'Expr', the role 'Expr' has cardinality 0..*, and from 'Legolang_Robot_OrderRobot', the role 'Legolang_Robot_OrderRobot' has cardinality 0..*.
+An association connects 'Expr' and 'Legolang_controlflow_tantqueue'. From 'Expr', the role 'Expr2' has cardinality 0..*, and from 'Legolang_controlflow_tantqueue', the role 'Legolang_controlflow_tantqueue' has cardinality 0..*.
+An association connects 'Legolang_controlflow_tantqueue' and 'ExprBool'. From 'Legolang_controlflow_tantqueue', the role 'Legolang_controlflow_tantqueue4' has cardinality 0..*, and from 'ExprBool', the role 'ExprBool' has cardinality 0..*.
+An association connects 'Legolang_controlflow_si' and 'ExprBool'. From 'Legolang_controlflow_si', the role 'Legolang_controlflow_si' has cardinality 0..*, and from 'ExprBool', the role 'ExprBool6' has cardinality 0..*.
+An association connects 'Expr' and 'Legolang_controlflow_si'. From 'Expr', the role 'Expr9' has cardinality 0..*, and from 'Legolang_controlflow_si', the role 'Legolang_controlflow_si8' has cardinality 0..*.
+An association connects 'tantqueue' and 'Legolang_controlflow_Expr'. From 'tantqueue', the role 'tantqueue' has cardinality 0..*, and from 'Legolang_controlflow_Expr', the role 'Legolang_controlflow_Expr' has cardinality 0..*.
+An association connects 'Legolang_controlflow_Expr' and 'OrderRobot'. From 'Legolang_controlflow_Expr', the role 'Legolang_controlflow_Expr12' has cardinality 0..*, and from 'OrderRobot', the role 'OrderRobot' has cardinality 0..*.
+An association connects 'opBinaire' and 'Legolang_controlflow_opBinaire'. From 'opBinaire', the role 'opBinaire' has cardinality 0..*, and from 'Legolang_controlflow_opBinaire', the role 'Legolang_controlflow_opBinaire' has cardinality 0..*.
+An association connects 'Legolang_controlflow_opBinaire' and 'ExprBool'. From 'Legolang_controlflow_opBinaire', the role 'Legolang_controlflow_opBinaire15' has cardinality 0..*, and from 'ExprBool', the role 'ExprBool16' has cardinality 0..*.
+An association connects 'ExprBool' and 'Legolang_controlflow_opBinaire'. From 'ExprBool', the role 'ExprBool19' has cardinality 0..*, and from 'Legolang_controlflow_opBinaire', the role 'Legolang_controlflow_opBinaire18' has cardinality 0..*.
+An association connects 'tantqueue' and 'Legolang_controlflow_ExprBool'. From 'tantqueue', the role 'tantqueue21' has cardinality 0..*, and from 'Legolang_controlflow_ExprBool', the role 'Legolang_controlflow_ExprBool' has cardinality 0..*.
+An association connects 'Legolang_controlflow_Program' and 'Expr'. From 'Legolang_controlflow_Program', the role 'Legolang_controlflow_Program' has cardinality 0..*, and from 'Expr', the role 'Expr23' has cardinality 0..*.

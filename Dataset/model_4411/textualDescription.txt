@@ -1,0 +1,224 @@
+The domain model 'arduino' describes the core structural elements and their relationships within the system.
+
+The model defines 47 main class(es).
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Delay' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'unit', which is of type str.
+
+'arduino_InputModule' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MathOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_ParameterDefinition' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'arduino_MathOperator' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'arduino_Value' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'arduino_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Module' represents an important domain concept.
+It has the following attributes: 'level', which is of type bool; 'image', which is of type str; 'kind', which is of type str; 'library', which is of type str.
+
+'BooleanOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Sketch' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Pin' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'Utilities' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_BooleanOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Project' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_DigitalPin' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_ModuleInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Set' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Status' represents an important domain concept.
+It has one attribute: 'status', which is of type bool.
+
+'arduino_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Function' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'arduino_Utilities' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_ParameterCall' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_While' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_NumericalOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'Control' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Hardware' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_IO' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Level' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Control' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_OutputModule' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Repeat' represents an important domain concept.
+It has one attribute: 'iteration', which is of type int.
+
+'arduino_If' represents an important domain concept.
+It does not declare any attributes.
+
+'ModuleInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Platform' represents an important domain concept.
+It has one attribute: 'image', which is of type str.
+
+'arduino_AnalogPin' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'OperatorKind' defines the following possible values: 'div', 'upper', 'lowerOrEqual', 'max', 'pourcent', 'min', 'diff', 'plus', 'mul', 'not', 'upperOrEqual', 'and', 'or', 'equal', 'minus', 'lower'.
+The enumeration 'ModuleKind' defines the following possible values: 'analog', 'digital'.
+The enumeration 'ParameterType' defines the following possible values: 'Level', 'Constant', 'Status', 'Sensor', 'Delay'.
+The enumeration 'Time' defines the following possible values: 'MicroSecond', 'MilliSecond'.
+The enumeration 'Library' defines the following possible values: 'music', 'servo', 'none'.
+
+The model also captures inheritance relationships between classes.
+The class 'arduino_Hardware' is a specialization of 'NamedElement'.
+The class 'arduino_Platform' is a specialization of 'NamedElement'.
+The class 'arduino_Module' is a specialization of 'NamedElement'.
+The class 'arduino_DigitalPin' is a specialization of 'Pin'.
+The class 'arduino_AnalogPin' is a specialization of 'Pin'.
+The class 'arduino_Sketch' is a specialization of 'NamedElement'.
+The class 'arduino_Sketch' is a specialization of 'Instruction'.
+The class 'arduino_Status' is a specialization of 'ModuleInstruction'.
+The class 'arduino_Status' is a specialization of 'Value'.
+The class 'arduino_Level' is a specialization of 'ModuleInstruction'.
+The class 'arduino_ModuleInstruction' is a specialization of 'Instruction'.
+The class 'arduino_ModuleInstruction' is a specialization of 'Parameter'.
+The class 'arduino_Control' is a specialization of 'Instruction'.
+The class 'arduino_Utilities' is a specialization of 'Instruction'.
+The class 'arduino_Utilities' is a specialization of 'Parameter'.
+The class 'arduino_IO' is a specialization of 'Instruction'.
+The class 'arduino_Delay' is a specialization of 'Utilities'.
+The class 'arduino_InputModule' is a specialization of 'Module'.
+The class 'arduino_OutputModule' is a specialization of 'Module'.
+The class 'arduino_Repeat' is a specialization of 'Control'.
+The class 'arduino_Sensor' is a specialization of 'ModuleInstruction'.
+The class 'arduino_Sensor' is a specialization of 'BooleanOperator'.
+The class 'arduino_While' is a specialization of 'Control'.
+The class 'arduino_MathOperator' is a specialization of 'Value'.
+The class 'arduino_MathOperator' is a specialization of 'Instruction'.
+The class 'arduino_Variable' is a specialization of 'Value'.
+The class 'arduino_Variable' is a specialization of 'Instruction'.
+The class 'arduino_Set' is a specialization of 'Instruction'.
+The class 'arduino_NumericalOperator' is a specialization of 'MathOperator'.
+The class 'arduino_BooleanOperator' is a specialization of 'MathOperator'.
+The class 'arduino_Value' is a specialization of 'Instruction'.
+The class 'arduino_Value' is a specialization of 'Parameter'.
+The class 'arduino_Constant' is a specialization of 'Value'.
+The class 'arduino_If' is a specialization of 'Control'.
+The class 'arduino_FunctionCall' is a specialization of 'Instruction'.
+The class 'arduino_ParameterCall' is a specialization of 'Instruction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'arduino_Platform' and 'arduino_Hardware'. From 'arduino_Platform', the role 'arduino_Platform' has cardinality 0..*, and from 'arduino_Hardware', the role 'arduino_Hardware' has cardinality 0..*.
+An association connects 'arduino_Module' and 'arduino_Hardware'. From 'arduino_Module', the role 'arduino_Module' has cardinality 0..*, and from 'arduino_Hardware', the role 'arduino_Hardware2' has cardinality 0..*.
+An association connects 'arduino_Connector' and 'arduino_Hardware'. From 'arduino_Connector', the role 'arduino_Connector' has cardinality 0..*, and from 'arduino_Hardware', the role 'arduino_Hardware4' has cardinality 0..*.
+An association connects 'arduino_DigitalPin' and 'arduino_Platform'. From 'arduino_DigitalPin', the role 'arduino_DigitalPin' has cardinality 0..*, and from 'arduino_Platform', the role 'arduino_Platform6' has cardinality 0..*.
+An association connects 'arduino_AnalogPin' and 'arduino_Platform'. From 'arduino_AnalogPin', the role 'arduino_AnalogPin' has cardinality 0..*, and from 'arduino_Platform', the role 'arduino_Platform8' has cardinality 0..*.
+An association connects 'arduino_Sketch' and 'arduino_Hardware'. From 'arduino_Sketch', the role 'arduino_Sketch' has cardinality 0..*, and from 'arduino_Hardware', the role 'arduino_Hardware10' has cardinality 0..*.
+An association connects 'arduino_Sketch' and 'arduino_Instruction'. From 'arduino_Sketch', the role 'arduino_Sketch12' has cardinality 0..*, and from 'arduino_Instruction', the role 'arduino_Instruction' has cardinality 0..*.
+An association connects 'arduino_Sketch' and 'arduino_Function'. From 'arduino_Sketch', the role 'arduino_Sketch14' has cardinality 0..*, and from 'arduino_Function', the role 'arduino_Function' has cardinality 0..*.
+An association connects 'arduino_Project' and 'arduino_Hardware'. From 'arduino_Project', the role 'arduino_Project' has cardinality 0..*, and from 'arduino_Hardware', the role 'arduino_Hardware16' has cardinality 0..*.
+An association connects 'arduino_Project' and 'arduino_Sketch'. From 'arduino_Project', the role 'arduino_Project18' has cardinality 0..*, and from 'arduino_Sketch', the role 'arduino_Sketch19' has cardinality 0..*.
+An association connects 'arduino_Module' and 'arduino_Project'. From 'arduino_Module', the role 'arduino_Module22' has cardinality 0..*, and from 'arduino_Project', the role 'arduino_Project21' has cardinality 0..*.
+An association connects 'arduino_Project' and 'arduino_Platform'. From 'arduino_Project', the role 'arduino_Project24' has cardinality 0..*, and from 'arduino_Platform', the role 'arduino_Platform25' has cardinality 0..*.
+An association connects 'arduino_Instruction' and 'arduino_Instruction'. From 'arduino_Instruction', the role 'arduino_Instruction28' has cardinality 0..*, and from 'arduino_Instruction', the role 'arduino_Instruction26' has cardinality 0..*.
+An association connects 'arduino_Instruction' and 'arduino_Instruction'. From 'arduino_Instruction', the role 'arduino_Instruction31' has cardinality 0..*, and from 'arduino_Instruction', the role 'arduino_Instruction29' has cardinality 0..*.
+An association connects 'arduino_Status' and 'arduino_Sensor'. From 'arduino_Status', the role 'status' has cardinality 0..*, and from 'arduino_Sensor', the role 'Sensor' has cardinality 0..*.
+An association connects 'arduino_Level' and 'arduino_Value'. From 'arduino_Level', the role 'arduino_Level' has cardinality 0..*, and from 'arduino_Value', the role 'arduino_Value' has cardinality 0..*.
+An association connects 'arduino_Module' and 'arduino_ModuleInstruction'. From 'arduino_Module', the role 'arduino_Module35' has cardinality 0..*, and from 'arduino_ModuleInstruction', the role 'arduino_ModuleInstruction' has cardinality 0..*.
+An association connects 'arduino_Control' and 'arduino_Instruction'. From 'arduino_Control', the role 'arduino_Control' has cardinality 0..*, and from 'arduino_Instruction', the role 'arduino_Instruction37' has cardinality 0..*.
+An association connects 'arduino_Pin' and 'arduino_Connector'. From 'arduino_Pin', the role 'arduino_Pin' has cardinality 0..*, and from 'arduino_Connector', the role 'arduino_Connector39' has cardinality 0..*.
+An association connects 'arduino_Connector' and 'arduino_Module'. From 'arduino_Connector', the role 'arduino_Connector41' has cardinality 0..*, and from 'arduino_Module', the role 'arduino_Module42' has cardinality 0..*.
+An association connects 'arduino_Sensor' and 'arduino_Status'. From 'arduino_Sensor', the role 'sensor' has cardinality 0..*, and from 'arduino_Status', the role 'Status' has cardinality 0..*.
+An association connects 'arduino_While' and 'arduino_BooleanOperator'. From 'arduino_While', the role 'arduino_While' has cardinality 0..*, and from 'arduino_BooleanOperator', the role 'arduino_BooleanOperator' has cardinality 0..*.
+An association connects 'arduino_MathOperator' and 'arduino_Value'. From 'arduino_MathOperator', the role 'arduino_MathOperator' has cardinality 0..*, and from 'arduino_Value', the role 'arduino_Value46' has cardinality 0..*.
+An association connects 'arduino_MathOperator' and 'arduino_Value'. From 'arduino_MathOperator', the role 'arduino_MathOperator48' has cardinality 0..*, and from 'arduino_Value', the role 'arduino_Value49' has cardinality 0..*.
+An association connects 'arduino_Variable' and 'arduino_Set'. From 'arduino_Variable', the role 'arduino_Variable' has cardinality 0..*, and from 'arduino_Set', the role 'arduino_Set' has cardinality 0..*.
+An association connects 'arduino_Value' and 'arduino_Set'. From 'arduino_Value', the role 'arduino_Value53' has cardinality 0..*, and from 'arduino_Set', the role 'arduino_Set52' has cardinality 0..*.
+An association connects 'arduino_BooleanOperator' and 'arduino_If'. From 'arduino_BooleanOperator', the role 'arduino_BooleanOperator55' has cardinality 0..*, and from 'arduino_If', the role 'arduino_If' has cardinality 0..*.
+An association connects 'arduino_ParameterDefinition' and 'arduino_Function'. From 'arduino_ParameterDefinition', the role 'arduino_ParameterDefinition' has cardinality 0..*, and from 'arduino_Function', the role 'arduino_Function57' has cardinality 0..*.
+An association connects 'arduino_Function' and 'arduino_Instruction'. From 'arduino_Function', the role 'arduino_Function59' has cardinality 0..*, and from 'arduino_Instruction', the role 'arduino_Instruction60' has cardinality 0..*.
+An association connects 'arduino_ParameterDefinition' and 'arduino_Parameter'. From 'arduino_ParameterDefinition', the role 'arduino_ParameterDefinition62' has cardinality 0..*, and from 'arduino_Parameter', the role 'arduino_Parameter' has cardinality 0..*.
+An association connects 'arduino_FunctionCall' and 'arduino_Function'. From 'arduino_FunctionCall', the role 'arduino_FunctionCall' has cardinality 0..*, and from 'arduino_Function', the role 'arduino_Function64' has cardinality 0..*.
+An association connects 'arduino_FunctionCall' and 'arduino_Parameter'. From 'arduino_FunctionCall', the role 'arduino_FunctionCall66' has cardinality 0..*, and from 'arduino_Parameter', the role 'arduino_Parameter67' has cardinality 0..*.
+An association connects 'arduino_ParameterCall' and 'arduino_ParameterDefinition'. From 'arduino_ParameterCall', the role 'arduino_ParameterCall' has cardinality 0..*, and from 'arduino_ParameterDefinition', the role 'arduino_ParameterDefinition69' has cardinality 0..*.

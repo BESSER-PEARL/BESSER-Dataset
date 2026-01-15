@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/fuinorg/xsample/org.fuin.xsample.dsl/model/generated/XSampleDsl.ecore

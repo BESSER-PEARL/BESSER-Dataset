@@ -1,0 +1,162 @@
+The domain model 'robot' describes the core structural elements and their relationships within the system.
+
+The model defines 36 main class(es).
+
+'robot_TurnLeft' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Echo' represents an important domain concept.
+It has one attribute: 'param', which is of type str.
+
+'robot_Backward' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_TBoolean' represents an important domain concept.
+It has one attribute: 'Value', which is of type str.
+
+'robot_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Values' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_While' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Var' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'robot_Operator' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'robot_Alternative' represents an important domain concept.
+It does not declare any attributes.
+
+'Values' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_TInteger' represents an important domain concept.
+It has one attribute: 'Value', which is of type str.
+
+'Movement' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_TString' represents an important domain concept.
+It has one attribute: 'Value', which is of type str.
+
+'robot_Mission' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Whenever' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Stop' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Affectation' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Forward' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Compare' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_TurnRight' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Different' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Variable' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Sensor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'robot_Movement' represents an important domain concept.
+It has one attribute: 'duration', which is of type float.
+
+'robot_Sleep' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_TFloat' represents an important domain concept.
+It has one attribute: 'Value', which is of type str.
+
+'Var' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EOperator' defines the following possible values: 'GT', 'LTE', 'GTE', 'DIFF', 'EQ', 'OR', 'LT', 'AND'.
+The enumeration 'ESensor' defines the following possible values: 'lightFLB', 'distanceFRB', 'lightFRB', 'distanceR', 'lightFLF', 'lightR', 'lightBR', 'distanceFRF', 'distanceL', 'lightBL', 'distanceFLB', 'lightL', 'distanceFLF', 'distanceBL', 'lightFRF', 'distanceBR'.
+
+The model also captures inheritance relationships between classes.
+The class 'robot_Sequence' is a specialization of 'Operation'.
+The class 'robot_Movement' is a specialization of 'Operation'.
+The class 'robot_Forward' is a specialization of 'Movement'.
+The class 'robot_Backward' is a specialization of 'Movement'.
+The class 'robot_TurnLeft' is a specialization of 'Movement'.
+The class 'robot_TurnRight' is a specialization of 'Movement'.
+The class 'robot_Alternative' is a specialization of 'Operation'.
+The class 'robot_Event' is a specialization of 'Operation'.
+The class 'robot_Sensor' is a specialization of 'Values'.
+The class 'robot_TInteger' is a specialization of 'Values'.
+The class 'robot_TString' is a specialization of 'Values'.
+The class 'robot_TFloat' is a specialization of 'Values'.
+The class 'robot_TBoolean' is a specialization of 'Values'.
+The class 'robot_Different' is a specialization of 'Operator'.
+The class 'robot_Echo' is a specialization of 'Operation'.
+The class 'robot_Var' is a specialization of 'Operation'.
+The class 'robot_Variable' is a specialization of 'Values'.
+The class 'robot_Stop' is a specialization of 'Movement'.
+The class 'robot_Sleep' is a specialization of 'Movement'.
+The class 'robot_Whenever' is a specialization of 'Operation'.
+The class 'robot_Affectation' is a specialization of 'Var'.
+The class 'robot_Declaration' is a specialization of 'Var'.
+The class 'robot_While' is a specialization of 'Operation'.
+The class 'robot_Value' is a specialization of 'Condition'.
+The class 'robot_Compare' is a specialization of 'Condition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'robot_Mission' and 'robot_Sequence'. From 'robot_Mission', the role 'robot_Mission' has cardinality 0..*, and from 'robot_Sequence', the role 'robot_Sequence' has cardinality 0..*.
+An association connects 'robot_Sequence' and 'robot_Operation'. From 'robot_Sequence', the role 'robot_Sequence2' has cardinality 0..*, and from 'robot_Operation', the role 'robot_Operation' has cardinality 0..*.
+An association connects 'robot_Operation' and 'robot_Alternative'. From 'robot_Operation', the role 'robot_Operation4' has cardinality 0..*, and from 'robot_Alternative', the role 'robot_Alternative' has cardinality 0..*.
+An association connects 'robot_Alternative' and 'robot_Operation'. From 'robot_Alternative', the role 'robot_Alternative6' has cardinality 0..*, and from 'robot_Operation', the role 'robot_Operation7' has cardinality 0..*.
+An association connects 'robot_Condition' and 'robot_Alternative'. From 'robot_Condition', the role 'robot_Condition' has cardinality 0..*, and from 'robot_Alternative', the role 'robot_Alternative9' has cardinality 0..*.
+An association connects 'robot_Event' and 'robot_Operation'. From 'robot_Event', the role 'robot_Event' has cardinality 0..*, and from 'robot_Operation', the role 'robot_Operation11' has cardinality 0..*.
+An association connects 'robot_Event' and 'robot_Operation'. From 'robot_Event', the role 'robot_Event13' has cardinality 0..*, and from 'robot_Operation', the role 'robot_Operation14' has cardinality 0..*.
+An association connects 'robot_Condition' and 'robot_Event'. From 'robot_Condition', the role 'robot_Condition17' has cardinality 0..*, and from 'robot_Event', the role 'robot_Event16' has cardinality 0..*.
+An association connects 'robot_Var' and 'robot_Values'. From 'robot_Var', the role 'robot_Var' has cardinality 0..*, and from 'robot_Values', the role 'robot_Values' has cardinality 0..*.
+An association connects 'robot_Condition' and 'robot_Whenever'. From 'robot_Condition', the role 'robot_Condition20' has cardinality 0..*, and from 'robot_Whenever', the role 'robot_Whenever' has cardinality 0..*.
+An association connects 'robot_Operation' and 'robot_Whenever'. From 'robot_Operation', the role 'robot_Operation23' has cardinality 0..*, and from 'robot_Whenever', the role 'robot_Whenever22' has cardinality 0..*.
+An association connects 'robot_Operation' and 'robot_Whenever'. From 'robot_Operation', the role 'robot_Operation26' has cardinality 0..*, and from 'robot_Whenever', the role 'robot_Whenever25' has cardinality 0..*.
+An association connects 'robot_While' and 'robot_Operation'. From 'robot_While', the role 'robot_While' has cardinality 0..*, and from 'robot_Operation', the role 'robot_Operation28' has cardinality 0..*.
+An association connects 'robot_While' and 'robot_Condition'. From 'robot_While', the role 'robot_While30' has cardinality 0..*, and from 'robot_Condition', the role 'robot_Condition31' has cardinality 0..*.
+An association connects 'robot_Value' and 'robot_Values'. From 'robot_Value', the role 'robot_Value' has cardinality 0..*, and from 'robot_Values', the role 'robot_Values33' has cardinality 0..*.
+An association connects 'robot_Operator' and 'robot_Compare'. From 'robot_Operator', the role 'robot_Operator' has cardinality 0..*, and from 'robot_Compare', the role 'robot_Compare' has cardinality 0..*.
+An association connects 'robot_Condition' and 'robot_Compare'. From 'robot_Condition', the role 'robot_Condition37' has cardinality 0..*, and from 'robot_Compare', the role 'robot_Compare36' has cardinality 0..*.
+An association connects 'robot_Condition' and 'robot_Compare'. From 'robot_Condition', the role 'robot_Condition40' has cardinality 0..*, and from 'robot_Compare', the role 'robot_Compare39' has cardinality 0..*.

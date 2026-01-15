@@ -1,0 +1,73 @@
+The domain model 'B' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'B_Any' represents an important domain concept.
+It does not declare any attributes.
+
+'B_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'B_Machine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'B_Begin' represents an important domain concept.
+It does not declare any attributes.
+
+'B_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'B_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'B_Skip' represents an important domain concept.
+It does not declare any attributes.
+
+'B_SET' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'B_VariableList' represents an important domain concept.
+It has one attribute: 'size', which is of type str.
+
+'B_Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'B_Expression' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'B_If' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'B_Predicate' is a specialization of 'Expression'.
+The class 'B_Any' is a specialization of 'Expression'.
+The class 'B_Action' is a specialization of 'Expression'.
+The class 'B_If' is a specialization of 'Expression'.
+The class 'B_Skip' is a specialization of 'Expression'.
+The class 'B_Begin' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'B_Machine' and 'B_Machine'. From 'B_Machine', the role 'B_Machine0' has cardinality 0..*, and from 'B_Machine', the role 'B_Machine' has cardinality 0..*.
+An association connects 'B_Machine' and 'B_SET'. From 'B_Machine', the role 'B_Machine3' has cardinality 0..*, and from 'B_SET', the role 'B_SET' has cardinality 0..*.
+An association connects 'B_Machine' and 'B_Operation'. From 'B_Machine', the role 'B_Machine5' has cardinality 0..*, and from 'B_Operation', the role 'B_Operation' has cardinality 0..*.
+An association connects 'B_Machine' and 'B_Predicate'. From 'B_Machine', the role 'B_Machine7' has cardinality 0..*, and from 'B_Predicate', the role 'B_Predicate' has cardinality 0..*.
+An association connects 'B_Machine' and 'B_Variable'. From 'B_Machine', the role 'B_Machine9' has cardinality 0..*, and from 'B_Variable', the role 'B_Variable' has cardinality 0..*.
+An association connects 'B_Action' and 'B_Machine'. From 'B_Action', the role 'B_Action' has cardinality 0..*, and from 'B_Machine', the role 'B_Machine11' has cardinality 0..*.
+An association connects 'B_Expression' and 'B_Operation'. From 'B_Expression', the role 'B_Expression' has cardinality 0..*, and from 'B_Operation', the role 'B_Operation13' has cardinality 0..*.
+An association connects 'B_VariableList' and 'B_Operation'. From 'B_VariableList', the role 'B_VariableList' has cardinality 0..*, and from 'B_Operation', the role 'B_Operation15' has cardinality 0..*.
+An association connects 'B_Operation' and 'B_VariableList'. From 'B_Operation', the role 'B_Operation17' has cardinality 0..*, and from 'B_VariableList', the role 'B_VariableList18' has cardinality 0..*.
+An association connects 'B_Predicate' and 'B_Operation'. From 'B_Predicate', the role 'B_Predicate21' has cardinality 0..*, and from 'B_Operation', the role 'B_Operation20' has cardinality 0..*.
+An association connects 'B_Variable' and 'B_Variable'. From 'B_Variable', the role 'B_Variable22' has cardinality 0..*, and from 'B_Variable', the role 'B_Variable24' has cardinality 0..*.
+An association connects 'B_Predicate' and 'B_Variable'. From 'B_Predicate', the role 'B_Predicate27' has cardinality 0..*, and from 'B_Variable', the role 'B_Variable26' has cardinality 0..*.
+An association connects 'B_Variable' and 'B_VariableList'. From 'B_Variable', the role 'B_Variable30' has cardinality 0..*, and from 'B_VariableList', the role 'B_VariableList29' has cardinality 0..*.
+An association connects 'B_VariableList' and 'B_Variable'. From 'B_VariableList', the role 'B_VariableList32' has cardinality 0..*, and from 'B_Variable', the role 'B_Variable33' has cardinality 0..*.
+An association connects 'B_Variable' and 'B_Any'. From 'B_Variable', the role 'B_Variable35' has cardinality 0..*, and from 'B_Any', the role 'B_Any' has cardinality 0..*.
+An association connects 'B_Predicate' and 'B_Any'. From 'B_Predicate', the role 'B_Predicate38' has cardinality 0..*, and from 'B_Any', the role 'B_Any37' has cardinality 0..*.
+An association connects 'B_Any' and 'B_Expression'. From 'B_Any', the role 'B_Any40' has cardinality 0..*, and from 'B_Expression', the role 'B_Expression41' has cardinality 0..*.
+An association connects 'B_If' and 'B_Expression'. From 'B_If', the role 'B_If' has cardinality 0..*, and from 'B_Expression', the role 'B_Expression43' has cardinality 0..*.
+An association connects 'B_Expression' and 'B_If'. From 'B_Expression', the role 'B_Expression46' has cardinality 0..*, and from 'B_If', the role 'B_If45' has cardinality 0..*.
+An association connects 'B_If' and 'B_Predicate'. From 'B_If', the role 'B_If48' has cardinality 0..*, and from 'B_Predicate', the role 'B_Predicate49' has cardinality 0..*.
+An association connects 'B_Begin' and 'B_Expression'. From 'B_Begin', the role 'B_Begin' has cardinality 0..*, and from 'B_Expression', the role 'B_Expression51' has cardinality 0..*.

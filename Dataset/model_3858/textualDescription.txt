@@ -1,0 +1,33 @@
+The domain model 'grammarSql' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'grammarSql_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'grammarSql_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'grammarSql_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'grammarSql_Column' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str; 'isNotNull', which is of type bool.
+
+'grammarSql_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'grammarSql_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'grammarSql_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'grammarSql_Model' and 'grammarSql_Table'. From 'grammarSql_Model', the role 'grammarSql_Model' has cardinality 0..*, and from 'grammarSql_Table', the role 'grammarSql_Table' has cardinality 0..*.
+An association connects 'grammarSql_EObject' and 'grammarSql_Table'. From 'grammarSql_EObject', the role 'grammarSql_EObject' has cardinality 0..*, and from 'grammarSql_Table', the role 'grammarSql_Table2' has cardinality 0..*.
+An association connects 'grammarSql_Column' and 'grammarSql_PrimaryKey'. From 'grammarSql_Column', the role 'grammarSql_Column' has cardinality 0..*, and from 'grammarSql_PrimaryKey', the role 'grammarSql_PrimaryKey' has cardinality 0..*.
+An association connects 'grammarSql_ForeignKey' and 'grammarSql_Column'. From 'grammarSql_ForeignKey', the role 'grammarSql_ForeignKey' has cardinality 0..*, and from 'grammarSql_Column', the role 'grammarSql_Column5' has cardinality 0..*.
+An association connects 'grammarSql_ForeignKey' and 'grammarSql_Reference'. From 'grammarSql_ForeignKey', the role 'grammarSql_ForeignKey7' has cardinality 0..*, and from 'grammarSql_Reference', the role 'grammarSql_Reference' has cardinality 0..*.
+An association connects 'grammarSql_Table' and 'grammarSql_Reference'. From 'grammarSql_Table', the role 'grammarSql_Table10' has cardinality 0..*, and from 'grammarSql_Reference', the role 'grammarSql_Reference9' has cardinality 0..*.
+An association connects 'grammarSql_Reference' and 'grammarSql_Column'. From 'grammarSql_Reference', the role 'grammarSql_Reference12' has cardinality 0..*, and from 'grammarSql_Column', the role 'grammarSql_Column13' has cardinality 0..*.

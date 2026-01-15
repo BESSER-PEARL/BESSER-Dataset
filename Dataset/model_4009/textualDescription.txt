@@ -1,0 +1,23 @@
+The domain model 'class' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'class_Association' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'class_Clazz' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'class_ClassDiagram' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'class_Attribute' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'class_ClassDiagram' and 'class_Clazz'. From 'class_ClassDiagram', the role 'class_ClassDiagram' has cardinality 0..*, and from 'class_Clazz', the role 'class_Clazz' has cardinality 0..*.
+An association connects 'class_Association' and 'class_ClassDiagram'. From 'class_Association', the role 'class_Association' has cardinality 0..*, and from 'class_ClassDiagram', the role 'class_ClassDiagram2' has cardinality 0..*.
+An association connects 'class_Clazz' and 'class_Attribute'. From 'class_Clazz', the role 'class_Clazz4' has cardinality 0..*, and from 'class_Attribute', the role 'class_Attribute' has cardinality 0..*.
+An association connects 'class_Clazz' and 'class_Clazz'. From 'class_Clazz', the role 'class_Clazz5' has cardinality 0..*, and from 'class_Clazz', the role 'class_Clazz7' has cardinality 0..*.
+An association connects 'class_Clazz' and 'class_Association'. From 'class_Clazz', the role 'class_Clazz10' has cardinality 0..*, and from 'class_Association', the role 'class_Association9' has cardinality 0..*.
+An association connects 'class_Clazz' and 'class_Association'. From 'class_Clazz', the role 'class_Clazz13' has cardinality 0..*, and from 'class_Association', the role 'class_Association12' has cardinality 0..*.

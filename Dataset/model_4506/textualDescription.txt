@@ -1,0 +1,79 @@
+The domain model 'smartHome' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'smartHome_BooleanSensorType' represents an important domain concept.
+It does not declare any attributes.
+
+'smartHome_SensorType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'smartHome_IntegerCondition' represents an important domain concept.
+It has the following attributes: 'operand', which is of type int; 'operator', which is of type str.
+
+'smartHome_AnalogSensorType' represents an important domain concept.
+It does not declare any attributes.
+
+'SensorType' represents an important domain concept.
+It does not declare any attributes.
+
+'smartHome_BooleanCondition' represents an important domain concept.
+It has the following attributes: 'operand', which is of type bool; 'operator', which is of type str.
+
+'smartHome_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'smartHome_Duration' represents an important domain concept.
+It has the following attributes: 'unit', which is of type str; 'value', which is of type int.
+
+'smartHome_Event' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'smartHome_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'smartHome_BooleanSensor' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'smartHome_IntegerSensor' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'smartHome_SmartHome' represents an important domain concept.
+It does not declare any attributes.
+
+'Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'smartHome_Location' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'smartHome_Sensor' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'dataFile', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'IntegerOperator' defines the following possible values: 'SUPERIOR', 'EQUALS', 'INFERIOR'.
+The enumeration 'BooleanOperator' defines the following possible values: 'IS', 'IS_NOT'.
+The enumeration 'DurationUnit' defines the following possible values: 'MINUTE', 'SECOND'.
+
+The model also captures inheritance relationships between classes.
+The class 'smartHome_IntegerSensor' is a specialization of 'Sensor'.
+The class 'smartHome_BooleanSensor' is a specialization of 'Sensor'.
+The class 'smartHome_AnalogSensorType' is a specialization of 'SensorType'.
+The class 'smartHome_BooleanSensorType' is a specialization of 'SensorType'.
+The class 'smartHome_BooleanCondition' is a specialization of 'Condition'.
+The class 'smartHome_IntegerCondition' is a specialization of 'Condition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'smartHome_SensorType' and 'smartHome_Sensor'. From 'smartHome_SensorType', the role 'smartHome_SensorType' has cardinality 0..*, and from 'smartHome_Sensor', the role 'smartHome_Sensor' has cardinality 0..*.
+An association connects 'smartHome_Location' and 'smartHome_Sensor'. From 'smartHome_Location', the role 'smartHome_Location' has cardinality 0..*, and from 'smartHome_Sensor', the role 'smartHome_Sensor2' has cardinality 0..*.
+An association connects 'smartHome_Location' and 'smartHome_SmartHome'. From 'smartHome_Location', the role 'smartHome_Location4' has cardinality 0..*, and from 'smartHome_SmartHome', the role 'smartHome_SmartHome' has cardinality 0..*.
+An association connects 'smartHome_SmartHome' and 'smartHome_SensorType'. From 'smartHome_SmartHome', the role 'smartHome_SmartHome6' has cardinality 0..*, and from 'smartHome_SensorType', the role 'smartHome_SensorType7' has cardinality 0..*.
+An association connects 'smartHome_SmartHome' and 'smartHome_Rule'. From 'smartHome_SmartHome', the role 'smartHome_SmartHome9' has cardinality 0..*, and from 'smartHome_Rule', the role 'smartHome_Rule' has cardinality 0..*.
+An association connects 'smartHome_Condition' and 'smartHome_Rule'. From 'smartHome_Condition', the role 'smartHome_Condition' has cardinality 0..*, and from 'smartHome_Rule', the role 'smartHome_Rule11' has cardinality 0..*.
+An association connects 'smartHome_Event' and 'smartHome_Rule'. From 'smartHome_Event', the role 'smartHome_Event' has cardinality 0..*, and from 'smartHome_Rule', the role 'smartHome_Rule13' has cardinality 0..*.
+An association connects 'smartHome_Rule' and 'smartHome_Duration'. From 'smartHome_Rule', the role 'smartHome_Rule15' has cardinality 0..*, and from 'smartHome_Duration', the role 'smartHome_Duration' has cardinality 0..*.
+An association connects 'smartHome_BooleanSensor' and 'smartHome_BooleanCondition'. From 'smartHome_BooleanSensor', the role 'smartHome_BooleanSensor' has cardinality 0..*, and from 'smartHome_BooleanCondition', the role 'smartHome_BooleanCondition' has cardinality 0..*.
+An association connects 'smartHome_IntegerCondition' and 'smartHome_IntegerSensor'. From 'smartHome_IntegerCondition', the role 'smartHome_IntegerCondition' has cardinality 0..*, and from 'smartHome_IntegerSensor', the role 'smartHome_IntegerSensor' has cardinality 0..*.

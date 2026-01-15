@@ -1,0 +1,139 @@
+The domain model 'failureLogic' describes the core structural elements and their relationships within the system.
+
+The model defines 29 main class(es).
+
+'failureLogic_FMEA_FMEA' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'failureLogic_FailureLogicPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'failureLogic_FailureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'failureLogic_ProbDistParam' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'failureLogic_FTA_FaultTree' represents an important domain concept.
+It does not declare any attributes.
+
+'failureLogic_Markov_State' represents an important domain concept.
+It has the following attributes: 'isFailState', which is of type bool; 'isInitialState', which is of type bool.
+
+'FMEA_failureLogic_Failure' represents an important domain concept.
+It does not declare any attributes.
+
+'Markov_failureLogic_ProbDist' represents an important domain concept.
+It does not declare any attributes.
+
+'failureLogic_FMEA_FMEDAEntry' represents an important domain concept.
+It has one attribute: 'diagnosisRate', which is of type float.
+
+'failureLogic_Failure' represents an important domain concept.
+It has the following attributes: 'originType', which is of type str; 'failureRate', which is of type float; 'failureClass', which is of type str; 'isCcf', which is of type bool.
+
+'FailureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'FMEA_failureLogic_ProbDist' represents an important domain concept.
+It does not declare any attributes.
+
+'Cause' represents an important domain concept.
+It does not declare any attributes.
+
+'failureLogic_Markov_MarkovChain' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'failureLogic_ProbDist' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Markov_failureLogic_Failure' represents an important domain concept.
+It does not declare any attributes.
+
+'failureLogic_FMEA_FMEAEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'failureLogic_MinimalCutSets' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseElement' represents an important domain concept.
+It does not declare any attributes.
+
+'failureLogic_FTA_Cause' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'FTA_failureLogic_Failure' represents an important domain concept.
+It does not declare any attributes.
+
+'FMEAEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'failureLogic_Markov_Transition' represents an important domain concept.
+It has one attribute: 'transition', which is of type float.
+
+'failureLogic_SecurityViolation' represents an important domain concept.
+It does not declare any attributes.
+
+'failureLogic_FTA_Gate' represents an important domain concept.
+It has one attribute: 'gateType', which is of type str.
+
+'failureLogic_MinimalCutset' represents an important domain concept.
+It does not declare any attributes.
+
+'Failure' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'GateType' defines the following possible values: 'AND', 'POR', 'SAND', 'InputEvent', 'NOT', 'XOR', 'VOTE', 'OR', 'OutputEvent', 'PAND'.
+The enumeration 'FMEAType' defines the following possible values: 'FMEDA', 'FMEA'.
+The enumeration 'CauseType' defines the following possible values: 'Gate', 'InputEvent', 'OutputEvent', 'BasicEvent'.
+The enumeration 'FailureOriginType' defines the following possible values: 'Output', 'Internal', 'Input'.
+
+The model also captures inheritance relationships between classes.
+The class 'failureLogic_Failure' is a specialization of 'BaseElement'.
+The class 'failureLogic_SecurityViolation' is a specialization of 'Failure'.
+The class 'failureLogic_FailureModel' is a specialization of 'BaseElement'.
+The class 'failureLogic_MinimalCutSets' is a specialization of 'BaseElement'.
+The class 'failureLogic_MinimalCutset' is a specialization of 'BaseElement'.
+The class 'failureLogic_ProbDist' is a specialization of 'BaseElement'.
+The class 'failureLogic_ProbDistParam' is a specialization of 'BaseElement'.
+The class 'failureLogic_FTA_FaultTree' is a specialization of 'FailureModel'.
+The class 'failureLogic_FTA_Cause' is a specialization of 'BaseElement'.
+The class 'failureLogic_FTA_Gate' is a specialization of 'Cause'.
+The class 'failureLogic_Markov_MarkovChain' is a specialization of 'FailureModel'.
+The class 'failureLogic_Markov_State' is a specialization of 'BaseElement'.
+The class 'failureLogic_Markov_Transition' is a specialization of 'BaseElement'.
+The class 'failureLogic_FMEA_FMEA' is a specialization of 'FailureModel'.
+The class 'failureLogic_FMEA_FMEAEntry' is a specialization of 'BaseElement'.
+The class 'failureLogic_FMEA_FMEDAEntry' is a specialization of 'FMEAEntry'.
+
+Relationships between classes are modeled using associations.
+An association connects 'failureLogic_FailureLogicPackage' and 'failureLogic_FailureModel'. From 'failureLogic_FailureLogicPackage', the role 'failureLogic_FailureLogicPackage' has cardinality 0..*, and from 'failureLogic_FailureModel', the role 'failureLogic_FailureModel' has cardinality 0..*.
+An association connects 'failureLogic_ProbDist' and 'failureLogic_Failure'. From 'failureLogic_ProbDist', the role 'failureLogic_ProbDist' has cardinality 0..*, and from 'failureLogic_Failure', the role 'failureLogic_Failure' has cardinality 0..*.
+An association connects 'failureLogic_Failure' and 'failureLogic_Failure'. From 'failureLogic_Failure', the role 'failureLogic_Failure4' has cardinality 0..*, and from 'failureLogic_Failure', the role 'failureLogic_Failure2' has cardinality 0..*.
+An association connects 'failureLogic_FailureModel' and 'failureLogic_MinimalCutSets'. From 'failureLogic_FailureModel', the role 'failureLogic_FailureModel6' has cardinality 0..*, and from 'failureLogic_MinimalCutSets', the role 'failureLogic_MinimalCutSets' has cardinality 0..*.
+An association connects 'failureLogic_Failure' and 'failureLogic_FailureModel'. From 'failureLogic_Failure', the role 'failureLogic_Failure9' has cardinality 0..*, and from 'failureLogic_FailureModel', the role 'failureLogic_FailureModel8' has cardinality 0..*.
+An association connects 'failureLogic_FailureModel' and 'failureLogic_FailureModel'. From 'failureLogic_FailureModel', the role 'failureLogic_FailureModel10' has cardinality 0..*, and from 'failureLogic_FailureModel', the role 'failureLogic_FailureModel12' has cardinality 0..*.
+An association connects 'failureLogic_MinimalCutSets' and 'failureLogic_MinimalCutset'. From 'failureLogic_MinimalCutSets', the role 'failureLogic_MinimalCutSets14' has cardinality 0..*, and from 'failureLogic_MinimalCutset', the role 'failureLogic_MinimalCutset' has cardinality 0..*.
+An association connects 'failureLogic_MinimalCutSets' and 'failureLogic_Failure'. From 'failureLogic_MinimalCutSets', the role 'failureLogic_MinimalCutSets16' has cardinality 0..*, and from 'failureLogic_Failure', the role 'failureLogic_Failure17' has cardinality 0..*.
+An association connects 'failureLogic_MinimalCutset' and 'failureLogic_Failure'. From 'failureLogic_MinimalCutset', the role 'failureLogic_MinimalCutset19' has cardinality 0..*, and from 'failureLogic_Failure', the role 'failureLogic_Failure20' has cardinality 0..*.
+An association connects 'failureLogic_ProbDist' and 'failureLogic_ProbDistParam'. From 'failureLogic_ProbDist', the role 'failureLogic_ProbDist22' has cardinality 0..*, and from 'failureLogic_ProbDistParam', the role 'failureLogic_ProbDistParam' has cardinality 0..*.
+An association connects 'Cause' and 'failureLogic_FTA_FaultTree'. From 'Cause', the role 'Cause' has cardinality 0..*, and from 'failureLogic_FTA_FaultTree', the role 'failureLogic_FTA_FaultTree' has cardinality 0..*.
+An association connects 'failureLogic_FTA_Cause' and 'FTA_failureLogic_Failure'. From 'failureLogic_FTA_Cause', the role 'failureLogic_FTA_Cause' has cardinality 0..*, and from 'FTA_failureLogic_Failure', the role 'FTA_failureLogic_Failure' has cardinality 0..*.
+An association connects 'Cause' and 'failureLogic_FTA_Gate'. From 'Cause', the role 'Cause26' has cardinality 0..*, and from 'failureLogic_FTA_Gate', the role 'failureLogic_FTA_Gate' has cardinality 0..*.
+An association connects 'Transition' and 'failureLogic_Markov_MarkovChain'. From 'Transition', the role 'Transition' has cardinality 0..*, and from 'failureLogic_Markov_MarkovChain', the role 'failureLogic_Markov_MarkovChain' has cardinality 0..*.
+An association connects 'failureLogic_Markov_MarkovChain' and 'State'. From 'failureLogic_Markov_MarkovChain', the role 'failureLogic_Markov_MarkovChain29' has cardinality 0..*, and from 'State', the role 'State' has cardinality 0..*.
+An association connects 'Markov_failureLogic_Failure' and 'failureLogic_Markov_State'. From 'Markov_failureLogic_Failure', the role 'Markov_failureLogic_Failure' has cardinality 0..*, and from 'failureLogic_Markov_State', the role 'failureLogic_Markov_State' has cardinality 0..*.
+An association connects 'failureLogic_Markov_Transition' and 'Markov_failureLogic_ProbDist'. From 'failureLogic_Markov_Transition', the role 'failureLogic_Markov_Transition' has cardinality 0..*, and from 'Markov_failureLogic_ProbDist', the role 'Markov_failureLogic_ProbDist' has cardinality 0..*.
+An association connects 'State' and 'failureLogic_Markov_Transition'. From 'State', the role 'State34' has cardinality 0..*, and from 'failureLogic_Markov_Transition', the role 'failureLogic_Markov_Transition33' has cardinality 0..*.
+An association connects 'failureLogic_Markov_Transition' and 'State'. From 'failureLogic_Markov_Transition', the role 'failureLogic_Markov_Transition36' has cardinality 0..*, and from 'State', the role 'State37' has cardinality 0..*.
+An association connects 'failureLogic_FMEA_FMEA' and 'FMEAEntry'. From 'failureLogic_FMEA_FMEA', the role 'failureLogic_FMEA_FMEA' has cardinality 0..*, and from 'FMEAEntry', the role 'FMEAEntry' has cardinality 0..*.
+An association connects 'FMEA_failureLogic_Failure' and 'failureLogic_FMEA_FMEAEntry'. From 'FMEA_failureLogic_Failure', the role 'FMEA_failureLogic_Failure' has cardinality 0..*, and from 'failureLogic_FMEA_FMEAEntry', the role 'failureLogic_FMEA_FMEAEntry' has cardinality 0..*.
+An association connects 'FMEA_failureLogic_Failure' and 'failureLogic_FMEA_FMEAEntry'. From 'FMEA_failureLogic_Failure', the role 'FMEA_failureLogic_Failure42' has cardinality 0..*, and from 'failureLogic_FMEA_FMEAEntry', the role 'failureLogic_FMEA_FMEAEntry41' has cardinality 0..*.
+An association connects 'failureLogic_FMEA_FMEDAEntry' and 'FMEA_failureLogic_ProbDist'. From 'failureLogic_FMEA_FMEDAEntry', the role 'failureLogic_FMEA_FMEDAEntry' has cardinality 0..*, and from 'FMEA_failureLogic_ProbDist', the role 'FMEA_failureLogic_ProbDist' has cardinality 0..*.

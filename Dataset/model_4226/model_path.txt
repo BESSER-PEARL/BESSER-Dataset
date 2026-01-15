@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/JoshuaGhost/lecture_slides/Folien_und_Literaturen/1/Model-based_Software_Engineering-Dokumente/company.ecore

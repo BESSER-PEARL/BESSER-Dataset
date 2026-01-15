@@ -1,0 +1,133 @@
+The domain model 'db' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'db_DBResource' represents an important domain concept.
+It has the following attributes: 'lastModified', which is of type date; 'lastUpdated', which is of type date; 'id', which is of type int; 'name', which is of type str.
+
+'config_Entitlement' represents an important domain concept.
+It does not declare any attributes.
+
+'DBResource' represents an important domain concept.
+It does not declare any attributes.
+
+'db_Query' represents an important domain concept.
+It has the following attributes: 'queryType', which is of type str; 'catalog', which is of type str; 'querySql', which is of type str.
+
+'db_Variable' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'defaultValue', which is of type str; 'type', which is of type str; 'scope', which is of type str.
+
+'db_SafiResultSet' represents an important domain concept.
+It has the following attributes: 'holdabilityMode', which is of type str; 'useCache', which is of type bool; 'scrollable', which is of type bool; 'readOnly', which is of type bool; 'scrollMode', which is of type str.
+
+'db_config_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'db_config_ServerResource' represents an important domain concept.
+It has the following attributes: 'lastUpdated', which is of type date; 'lastModified', which is of type date; 'id', which is of type int; 'description', which is of type str; 'name', which is of type str.
+
+'db_DBDriver' represents an important domain concept.
+It has the following attributes: 'guideUrl', which is of type str; 'websiteUrl', which is of type str; 'jars', which is of type str; 'urlRegexPattern', which is of type str; 'defaultPort', which is of type int; 'driverClassName', which is of type str; 'default', which is of type bool; 'pooling', which is of type bool; 'exampleUrl', which is of type str.
+
+'config_User' represents an important domain concept.
+It does not declare any attributes.
+
+'db_QueryParameter' represents an important domain concept.
+It has one attribute: 'dataType', which is of type str.
+
+'db_config_Entitlement' represents an important domain concept.
+It does not declare any attributes.
+
+'db_config_TelephonySubsystem' represents an important domain concept.
+It has the following attributes: 'visibleSafiServerIP', which is of type str; 'managerName', which is of type str; 'hostname', which is of type str; 'private', which is of type bool; 'platformId', which is of type str; 'versionId', which is of type str; 'promptDirectory', which is of type str; 'managerPassword', which is of type str; 'running', which is of type bool; 'enabled', which is of type bool; 'managerPort', which is of type int.
+
+'db_SafiDriverManager' represents an important domain concept.
+It does not declare any attributes.
+
+'db_config_Saflet' represents an important domain concept.
+It has the following attributes: 'subsystemId', which is of type str; 'code', which is of type str.
+
+'config_Saflet' represents an important domain concept.
+It does not declare any attributes.
+
+'config_Prompt' represents an important domain concept.
+It does not declare any attributes.
+
+'ServerResource' represents an important domain concept.
+It does not declare any attributes.
+
+'config_SafiServer' represents an important domain concept.
+It does not declare any attributes.
+
+'config_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'db_config_Prompt' represents an important domain concept.
+It has the following attributes: 'extension', which is of type str; 'system', which is of type bool.
+
+'db_config_SafiServer' represents an important domain concept.
+It has the following attributes: 'bindIP', which is of type str; 'dbPort', which is of type int; 'debug', which is of type bool; 'running', which is of type bool; 'managementPort', which is of type int.
+
+'db_DBConnection' represents an important domain concept.
+It has the following attributes: 'properties', which is of type str; 'maxIdleTime', which is of type int; 'transactionMode', which is of type str; 'acquireIncrement', which is of type int; 'url', which is of type str; 'password', which is of type str; 'minPoolSize', which is of type int; 'user', which is of type str; 'maxPoolSize', which is of type int; 'loginTimeout', which is of type int.
+
+'db_config_SFTPInfo' represents an important domain concept.
+It has the following attributes: 'sftpPassword', which is of type str; 'sftpUser', which is of type str; 'sftpPort', which is of type int.
+
+'config_SafletProject' represents an important domain concept.
+It does not declare any attributes.
+
+'db_config_SafletProject' represents an important domain concept.
+It has one attribute: 'enabled', which is of type bool.
+
+'db_config_User' represents an important domain concept.
+It has the following attributes: 'lastname', which is of type str; 'firstname', which is of type str; 'password', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RSHoldabilityMode' defines the following possible values: 'CloseCursorsOverCommit', 'HoldCursorsOverCommit'.
+The enumeration 'RSScrollMode' defines the following possible values: 'ForwardOnly', 'ScrollInsensitive', 'ScrollSensitive'.
+The enumeration 'SynchMode' defines the following possible values: 'Synch', 'ReadOnly'.
+The enumeration 'SQLDataType' defines the following possible values: 'Long', 'Integer', 'Clob', 'Boolean', 'Time', 'Object', 'Date', 'Array', 'Double', 'Text', 'Blob', 'DateTime'.
+The enumeration 'TransactionMode' defines the following possible values: 'ReadCommitted', 'RepeatableRead', 'ReadUncommitted', 'Serializable', 'None'.
+The enumeration 'VariableType' defines the following possible values: 'Date', 'Object', 'Datetime', 'Boolean', 'Text', 'Decimal', 'Time', 'Integer', 'Array'.
+The enumeration 'VariableScope' defines the following possible values: 'Runtime', 'Global', 'Local'.
+The enumeration 'QueryType' defines the following possible values: 'SPUpdate', 'SPSelect', 'Select', 'Update'.
+
+The model also captures inheritance relationships between classes.
+The class 'db_DBConnection' is a specialization of 'DBResource'.
+The class 'db_DBDriver' is a specialization of 'DBResource'.
+The class 'db_Query' is a specialization of 'DBResource'.
+The class 'db_QueryParameter' is a specialization of 'DBResource'.
+The class 'db_SafiDriverManager' is a specialization of 'DBResource'.
+The class 'db_SafiResultSet' is a specialization of 'DBResource'.
+The class 'db_config_SafiServer' is a specialization of 'ServerResource'.
+The class 'db_config_Role' is a specialization of 'ServerResource'.
+The class 'db_config_Entitlement' is a specialization of 'ServerResource'.
+The class 'db_config_User' is a specialization of 'ServerResource'.
+The class 'db_config_Saflet' is a specialization of 'ServerResource'.
+The class 'db_config_SafletProject' is a specialization of 'ServerResource'.
+The class 'db_config_Prompt' is a specialization of 'ServerResource'.
+The class 'db_config_TelephonySubsystem' is a specialization of 'ServerResource'.
+
+Relationships between classes are modeled using associations.
+An association connects 'db_DBDriver' and 'db_DBConnection'. From 'db_DBDriver', the role 'DBDriver' has cardinality 0..*, and from 'db_DBConnection', the role 'connections' has cardinality 0..*.
+An association connects 'db_DBConnection' and 'db_Query'. From 'db_DBConnection', the role 'connection' has cardinality 0..*, and from 'db_Query', the role 'Query' has cardinality 0..*.
+An association connects 'db_DBDriver' and 'db_DBConnection'. From 'db_DBDriver', the role 'driver' has cardinality 0..*, and from 'db_DBConnection', the role 'DBConnection' has cardinality 0..*.
+An association connects 'db_DBDriver' and 'db_SafiDriverManager'. From 'db_DBDriver', the role 'drivers' has cardinality 0..*, and from 'db_SafiDriverManager', the role 'SafiDriverManager' has cardinality 0..*.
+An association connects 'db_QueryParameter' and 'db_Query'. From 'db_QueryParameter', the role 'QueryParameter' has cardinality 0..*, and from 'db_Query', the role 'query' has cardinality 0..*.
+An association connects 'db_DBConnection' and 'db_Query'. From 'db_DBConnection', the role 'DBConnection6' has cardinality 0..*, and from 'db_Query', the role 'queries' has cardinality 0..*.
+An association connects 'db_Query' and 'db_SafiResultSet'. From 'db_Query', the role 'query8' has cardinality 0..*, and from 'db_SafiResultSet', the role 'SafiResultSet' has cardinality 0..*.
+An association connects 'db_QueryParameter' and 'db_Query'. From 'db_QueryParameter', the role 'parameters' has cardinality 0..*, and from 'db_Query', the role 'Query10' has cardinality 0..*.
+An association connects 'db_DBDriver' and 'db_SafiDriverManager'. From 'db_DBDriver', the role 'DBDriver12' has cardinality 0..*, and from 'db_SafiDriverManager', the role 'driverManager' has cardinality 0..*.
+An association connects 'db_Query' and 'db_SafiResultSet'. From 'db_Query', the role 'Query14' has cardinality 0..*, and from 'db_SafiResultSet', the role 'resultSets' has cardinality 0..*.
+An association connects 'config_User' and 'db_config_ServerResource'. From 'config_User', the role 'config_User' has cardinality 0..*, and from 'db_config_ServerResource', the role 'db_config_ServerResource' has cardinality 0..*.
+An association connects 'config_User' and 'db_config_ServerResource'. From 'config_User', the role 'config_User18' has cardinality 0..*, and from 'db_config_ServerResource', the role 'db_config_ServerResource17' has cardinality 0..*.
+An association connects 'config_User' and 'db_config_SafiServer'. From 'config_User', the role 'config_User20' has cardinality 0..*, and from 'db_config_SafiServer', the role 'db_config_SafiServer' has cardinality 0..*.
+An association connects 'db_config_SafiServer' and 'config_User'. From 'db_config_SafiServer', the role 'db_config_SafiServer22' has cardinality 0..*, and from 'config_User', the role 'config_User23' has cardinality 0..*.
+An association connects 'db_config_Role' and 'config_Entitlement'. From 'db_config_Role', the role 'db_config_Role' has cardinality 0..*, and from 'config_Entitlement', the role 'config_Entitlement' has cardinality 0..*.
+An association connects 'config_Role' and 'db_config_User'. From 'config_Role', the role 'config_Role' has cardinality 0..*, and from 'db_config_User', the role 'db_config_User' has cardinality 0..*.
+An association connects 'config_SafletProject' and 'db_config_Saflet'. From 'config_SafletProject', the role 'server' has cardinality 0..*, and from 'db_config_Saflet', the role 'config' has cardinality 0..*.
+An association connects 'config_Saflet' and 'db_config_SafletProject'. From 'config_Saflet', the role 'server29' has cardinality 0..*, and from 'db_config_SafletProject', the role 'config28' has cardinality 0..*.
+An association connects 'db_config_SafletProject' and 'config_Prompt'. From 'db_config_SafletProject', the role 'config31' has cardinality 0..*, and from 'config_Prompt', the role 'server32' has cardinality 0..*.
+An association connects 'db_config_Prompt' and 'config_SafletProject'. From 'db_config_Prompt', the role 'config34' has cardinality 0..*, and from 'config_SafletProject', the role 'server35' has cardinality 0..*.
+An association connects 'db_config_TelephonySubsystem' and 'config_SafiServer'. From 'db_config_TelephonySubsystem', the role 'db_config_TelephonySubsystem' has cardinality 0..*, and from 'config_SafiServer', the role 'config_SafiServer' has cardinality 0..*.

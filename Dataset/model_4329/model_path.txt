@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/modisco/modisco-models/org.eclipse.modisco.omg.smm/src/main/resources/model/SMM-1.0.Beta2.ecore

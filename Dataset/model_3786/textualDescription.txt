@@ -1,0 +1,12 @@
+The domain model 'c' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'c_C' represents an important domain concept.
+It does not declare any attributes.
+
+'B' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'c_C' is a specialization of 'B'.

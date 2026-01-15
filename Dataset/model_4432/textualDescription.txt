@@ -1,0 +1,41 @@
+The domain model 'mindstorms' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_GoForward' represents an important domain concept.
+It has one attribute: 'cm', which is of type int.
+
+'mindstorms_Choreography' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mindstorms_Release' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Rotate' represents an important domain concept.
+It has the following attributes: 'degrees', which is of type int; 'random', which is of type bool.
+
+'mindstorms_Grab' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mindstorms_Choreography' is a specialization of 'Instruction'.
+The class 'mindstorms_Action' is a specialization of 'Instruction'.
+The class 'mindstorms_Grab' is a specialization of 'Action'.
+The class 'mindstorms_Release' is a specialization of 'Action'.
+The class 'mindstorms_Rotate' is a specialization of 'Action'.
+The class 'mindstorms_GoForward' is a specialization of 'Action'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mindstorms_Instruction' and 'mindstorms_Choreography'. From 'mindstorms_Instruction', the role 'mindstorms_Instruction' has cardinality 0..*, and from 'mindstorms_Choreography', the role 'mindstorms_Choreography' has cardinality 0..*.

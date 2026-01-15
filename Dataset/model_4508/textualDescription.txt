@@ -1,0 +1,83 @@
+The domain model 'pyrep' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'pyrep_Wheel' represents an important domain concept.
+It has the following attributes: 'radius', which is of type str; 'name', which is of type str.
+
+'pyrep_Robot' represents an important domain concept.
+It has the following attributes: 'port', which is of type int; 'name', which is of type str.
+
+'pyrep_AbstractCrossMove' represents an important domain concept.
+It does not declare any attributes.
+
+'DataMove' represents an important domain concept.
+It does not declare any attributes.
+
+'pyrep_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'pyrep_IP' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'ip', which is of type str.
+
+'pyrep_AbstractDataMove' represents an important domain concept.
+It does not declare any attributes.
+
+'pyrep_MoveCollection' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'concurrent', which is of type bool.
+
+'pyrep_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'pyrep_Environment' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractDataMove' represents an important domain concept.
+It does not declare any attributes.
+
+'pyrep_TypeSensor' represents an important domain concept.
+It has one attribute: 'typeName', which is of type str.
+
+'pyrep_DataMove' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type bool; 'velocity', which is of type str.
+
+'pyrep_Move' represents an important domain concept.
+It has one attribute: 'distance', which is of type str.
+
+'pyrep_AbstractMove' represents an important domain concept.
+It does not declare any attributes.
+
+'pyrep_Turn' represents an important domain concept.
+It does not declare any attributes.
+
+'pyrep_Sensor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'pyrep_Environment' is a specialization of 'Entity'.
+The class 'pyrep_Robot' is a specialization of 'Entity'.
+The class 'pyrep_IP' is a specialization of 'Entity'.
+The class 'pyrep_Wheel' is a specialization of 'Entity'.
+The class 'pyrep_MoveCollection' is a specialization of 'Entity'.
+The class 'pyrep_AbstractMove' is a specialization of 'AbstractDataMove'.
+The class 'pyrep_AbstractCrossMove' is a specialization of 'AbstractDataMove'.
+The class 'pyrep_DataMove' is a specialization of 'Entity'.
+The class 'pyrep_Move' is a specialization of 'DataMove'.
+The class 'pyrep_Turn' is a specialization of 'DataMove'.
+The class 'pyrep_Sensor' is a specialization of 'Entity'.
+The class 'pyrep_TypeSensor' is a specialization of 'Entity'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pyrep_Entity' and 'pyrep_Model'. From 'pyrep_Entity', the role 'pyrep_Entity' has cardinality 0..*, and from 'pyrep_Model', the role 'pyrep_Model' has cardinality 0..*.
+An association connects 'pyrep_Environment' and 'pyrep_IP'. From 'pyrep_Environment', the role 'pyrep_Environment' has cardinality 0..*, and from 'pyrep_IP', the role 'pyrep_IP' has cardinality 0..*.
+An association connects 'pyrep_Environment' and 'pyrep_Robot'. From 'pyrep_Environment', the role 'pyrep_Environment3' has cardinality 0..*, and from 'pyrep_Robot', the role 'pyrep_Robot' has cardinality 0..*.
+An association connects 'pyrep_MoveCollection' and 'pyrep_Environment'. From 'pyrep_MoveCollection', the role 'pyrep_MoveCollection' has cardinality 0..*, and from 'pyrep_Environment', the role 'pyrep_Environment5' has cardinality 0..*.
+An association connects 'pyrep_Wheel' and 'pyrep_Robot'. From 'pyrep_Wheel', the role 'pyrep_Wheel' has cardinality 0..*, and from 'pyrep_Robot', the role 'pyrep_Robot7' has cardinality 0..*.
+An association connects 'pyrep_Robot' and 'pyrep_MoveCollection'. From 'pyrep_Robot', the role 'pyrep_Robot10' has cardinality 0..*, and from 'pyrep_MoveCollection', the role 'pyrep_MoveCollection9' has cardinality 0..*.
+An association connects 'pyrep_AbstractDataMove' and 'pyrep_MoveCollection'. From 'pyrep_AbstractDataMove', the role 'pyrep_AbstractDataMove' has cardinality 0..*, and from 'pyrep_MoveCollection', the role 'pyrep_MoveCollection12' has cardinality 0..*.
+An association connects 'pyrep_AbstractMove' and 'pyrep_DataMove'. From 'pyrep_AbstractMove', the role 'pyrep_AbstractMove' has cardinality 0..*, and from 'pyrep_DataMove', the role 'pyrep_DataMove' has cardinality 0..*.
+An association connects 'pyrep_DataMove' and 'pyrep_AbstractCrossMove'. From 'pyrep_DataMove', the role 'pyrep_DataMove15' has cardinality 0..*, and from 'pyrep_AbstractCrossMove', the role 'pyrep_AbstractCrossMove' has cardinality 0..*.
+An association connects 'pyrep_Sensor' and 'pyrep_TypeSensor'. From 'pyrep_Sensor', the role 'pyrep_Sensor' has cardinality 0..*, and from 'pyrep_TypeSensor', the role 'pyrep_TypeSensor' has cardinality 0..*.

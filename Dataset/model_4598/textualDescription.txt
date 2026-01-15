@@ -1,0 +1,135 @@
+The domain model 'dot' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'Commentable' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_AttributeStatement' represents an important domain concept.
+It has one attribute: 'context', which is of type str.
+
+'dot_Target' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+'dot_EdgeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_AList' represents an important domain concept.
+It does not declare any attributes.
+
+'Connectable' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_Attribute' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'dot_Graph' represents an important domain concept.
+It has the following attributes: 'strict', which is of type str; 'type', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_AbstractGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_AssignmentStatement' represents an important domain concept.
+It has the following attributes: 'left', which is of type str; 'right', which is of type str.
+
+'dot_Connectable' represents an important domain concept.
+It does not declare any attributes.
+
+'Attributable' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_StatementList' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_Commentable' represents an important domain concept.
+It has one attribute: 'comments', which is of type str.
+
+'dot_NodeID' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_Identifiable' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dot_AttributeList' represents an important domain concept.
+It does not declare any attributes.
+
+'StrictIdentifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_Port' represents an important domain concept.
+It has one attribute: 'compass', which is of type str.
+
+'dot_StrictIdentifiable' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'AbstractGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_NodeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_Subgraph' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'dot_Attributable' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Compass' defines the following possible values: 'NORTH_WEST', 'NORTH_EAST', 'APPROPRIATE', 'EAST', 'SOUTH_WEST', 'SOUTH', 'SOUTH_EAST', 'CENTER', 'NORTH', 'WEST'.
+
+The model also captures inheritance relationships between classes.
+The class 'dot_AbstractGraph' is a specialization of 'Identifiable'.
+The class 'dot_AList' is a specialization of 'Commentable'.
+The class 'dot_AssignmentStatement' is a specialization of 'Statement'.
+The class 'dot_AssignmentStatement' is a specialization of 'Commentable'.
+The class 'dot_Attribute' is a specialization of 'Commentable'.
+The class 'dot_AttributeList' is a specialization of 'Commentable'.
+The class 'dot_AttributeStatement' is a specialization of 'Statement'.
+The class 'dot_AttributeStatement' is a specialization of 'Commentable'.
+The class 'dot_AttributeStatement' is a specialization of 'Attributable'.
+The class 'dot_EdgeStatement' is a specialization of 'Statement'.
+The class 'dot_EdgeStatement' is a specialization of 'Attributable'.
+The class 'dot_EdgeStatement' is a specialization of 'Commentable'.
+The class 'dot_Graph' is a specialization of 'AbstractGraph'.
+The class 'dot_Graph' is a specialization of 'Commentable'.
+The class 'dot_NodeStatement' is a specialization of 'Statement'.
+The class 'dot_NodeStatement' is a specialization of 'Attributable'.
+The class 'dot_NodeStatement' is a specialization of 'Attribute'.
+The class 'dot_NodeID' is a specialization of 'Connectable'.
+The class 'dot_NodeID' is a specialization of 'StrictIdentifiable'.
+The class 'dot_NodeID' is a specialization of 'Commentable'.
+The class 'dot_Port' is a specialization of 'Identifiable'.
+The class 'dot_Port' is a specialization of 'Commentable'.
+The class 'dot_StatementList' is a specialization of 'Commentable'.
+The class 'dot_Subgraph' is a specialization of 'AbstractGraph'.
+The class 'dot_Subgraph' is a specialization of 'Connectable'.
+The class 'dot_Subgraph' is a specialization of 'Commentable'.
+The class 'dot_Target' is a specialization of 'Commentable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dot_AbstractGraph' and 'dot_StatementList'. From 'dot_AbstractGraph', the role 'dot_AbstractGraph' has cardinality 0..*, and from 'dot_StatementList', the role 'dot_StatementList' has cardinality 0..*.
+An association connects 'dot_AList' and 'dot_Attribute'. From 'dot_AList', the role 'dot_AList' has cardinality 0..*, and from 'dot_Attribute', the role 'dot_Attribute' has cardinality 0..*.
+An association connects 'dot_AList' and 'dot_AList'. From 'dot_AList', the role 'dot_AList2' has cardinality 0..*, and from 'dot_AList', the role 'dot_AList4' has cardinality 0..*.
+An association connects 'dot_AttributeList' and 'dot_Attributable'. From 'dot_AttributeList', the role 'dot_AttributeList' has cardinality 0..*, and from 'dot_Attributable', the role 'dot_Attributable' has cardinality 0..*.
+An association connects 'dot_AList' and 'dot_AttributeList'. From 'dot_AList', the role 'dot_AList8' has cardinality 0..*, and from 'dot_AttributeList', the role 'dot_AttributeList7' has cardinality 0..*.
+An association connects 'dot_AttributeList' and 'dot_AttributeList'. From 'dot_AttributeList', the role 'dot_AttributeList9' has cardinality 0..*, and from 'dot_AttributeList', the role 'dot_AttributeList11' has cardinality 0..*.
+An association connects 'dot_Connectable' and 'dot_EdgeStatement'. From 'dot_Connectable', the role 'dot_Connectable' has cardinality 0..*, and from 'dot_EdgeStatement', the role 'dot_EdgeStatement' has cardinality 0..*.
+An association connects 'dot_Target' and 'dot_EdgeStatement'. From 'dot_Target', the role 'dot_Target' has cardinality 0..*, and from 'dot_EdgeStatement', the role 'dot_EdgeStatement14' has cardinality 0..*.
+An association connects 'dot_NodeStatement' and 'dot_NodeID'. From 'dot_NodeStatement', the role 'dot_NodeStatement' has cardinality 0..*, and from 'dot_NodeID', the role 'dot_NodeID' has cardinality 0..*.
+An association connects 'dot_NodeID' and 'dot_Port'. From 'dot_NodeID', the role 'dot_NodeID17' has cardinality 0..*, and from 'dot_Port', the role 'dot_Port' has cardinality 0..*.
+An association connects 'dot_Statement' and 'dot_StatementList'. From 'dot_Statement', the role 'dot_Statement' has cardinality 0..*, and from 'dot_StatementList', the role 'dot_StatementList19' has cardinality 0..*.
+An association connects 'dot_StatementList' and 'dot_StatementList'. From 'dot_StatementList', the role 'dot_StatementList22' has cardinality 0..*, and from 'dot_StatementList', the role 'dot_StatementList20' has cardinality 0..*.
+An association connects 'dot_Target' and 'dot_Target'. From 'dot_Target', the role 'dot_Target23' has cardinality 0..*, and from 'dot_Target', the role 'dot_Target25' has cardinality 0..*.
+An association connects 'dot_Connectable' and 'dot_Target'. From 'dot_Connectable', the role 'dot_Connectable28' has cardinality 0..*, and from 'dot_Target', the role 'dot_Target27' has cardinality 0..*.

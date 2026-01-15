@@ -1,0 +1,140 @@
+The domain model 'behaviour' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'behaviour_Message' represents an important domain concept.
+It has the following attributes: 'needResponse', which is of type bool; 'timestamp', which is of type date.
+
+'behaviour_CapabilityProperties' represents an important domain concept.
+It does not declare any attributes.
+
+'CommunicationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Capability' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_BehaviourContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_DynamicRobot' represents an important domain concept.
+It has one attribute: 'status', which is of type str.
+
+'behaviour_Robot' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_MessageRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyKeyContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_DetectedObject' represents an important domain concept.
+It has one attribute: 'obstacle', which is of type bool.
+
+'behaviour_RobotCollaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_UnicastCommunication' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_AreaObject' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_CommunicationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_TaskExecution' represents an important domain concept.
+It has one attribute: 'status', which is of type str.
+
+'behaviour_TaskDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Task' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_TaskRequirement' represents an important domain concept.
+It has one attribute: 'participants', which is of type int.
+
+'behaviour_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_MeasureValue' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_BehaviouralPropertyKeyContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_MulticastCommunication' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_BroadcastCommunication' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TaskExecutionStatus' defines the following possible values: 'Finished', 'Waiting', 'InProgress', 'Suspended', 'Ready'.
+The enumeration 'RobotStatus' defines the following possible values: 'TurnedOff', 'Executing', 'Waiting', 'Ready'.
+
+The model also captures inheritance relationships between classes.
+The class 'behaviour_Message' is a specialization of 'NamedElement'.
+The class 'behaviour_CommunicationAction' is a specialization of 'Action'.
+The class 'behaviour_UnicastCommunication' is a specialization of 'CommunicationAction'.
+The class 'behaviour_MulticastCommunication' is a specialization of 'CommunicationAction'.
+The class 'behaviour_BroadcastCommunication' is a specialization of 'CommunicationAction'.
+The class 'behaviour_MessageRepository' is a specialization of 'NamedElement'.
+The class 'behaviour_Action' is a specialization of 'NamedElement'.
+The class 'behaviour_TaskExecution' is a specialization of 'NamedElement'.
+The class 'behaviour_DynamicRobot' is a specialization of 'NamedElement'.
+The class 'behaviour_TaskRequirement' is a specialization of 'NamedElement'.
+The class 'behaviour_BehaviouralPropertyKeyContainer' is a specialization of 'PropertyKeyContainer'.
+
+Relationships between classes are modeled using associations.
+An association connects 'behaviour_DynamicRobot' and 'behaviour_BehaviourContainer'. From 'behaviour_DynamicRobot', the role 'behaviour_DynamicRobot' has cardinality 0..*, and from 'behaviour_BehaviourContainer', the role 'behaviour_BehaviourContainer' has cardinality 0..*.
+An association connects 'behaviour_BehaviourContainer' and 'behaviour_TaskExecution'. From 'behaviour_BehaviourContainer', the role 'behaviour_BehaviourContainer2' has cardinality 0..*, and from 'behaviour_TaskExecution', the role 'behaviour_TaskExecution' has cardinality 0..*.
+An association connects 'behaviour_TaskRequirement' and 'behaviour_BehaviourContainer'. From 'behaviour_TaskRequirement', the role 'behaviour_TaskRequirement' has cardinality 0..*, and from 'behaviour_BehaviourContainer', the role 'behaviour_BehaviourContainer4' has cardinality 0..*.
+An association connects 'behaviour_BehaviourContainer' and 'behaviour_BehaviouralPropertyKeyContainer'. From 'behaviour_BehaviourContainer', the role 'behaviour_BehaviourContainer6' has cardinality 0..*, and from 'behaviour_BehaviouralPropertyKeyContainer', the role 'behaviour_BehaviouralPropertyKeyContainer' has cardinality 0..*.
+An association connects 'behaviour_Message' and 'behaviour_TaskExecution'. From 'behaviour_Message', the role 'behaviour_Message' has cardinality 0..*, and from 'behaviour_TaskExecution', the role 'behaviour_TaskExecution8' has cardinality 0..*.
+An association connects 'behaviour_Property' and 'behaviour_Message'. From 'behaviour_Property', the role 'behaviour_Property' has cardinality 0..*, and from 'behaviour_Message', the role 'behaviour_Message10' has cardinality 0..*.
+An association connects 'behaviour_Message' and 'behaviour_AreaObject'. From 'behaviour_Message', the role 'behaviour_Message12' has cardinality 0..*, and from 'behaviour_AreaObject', the role 'behaviour_AreaObject' has cardinality 0..*.
+An association connects 'behaviour_MeasureValue' and 'behaviour_Message'. From 'behaviour_MeasureValue', the role 'behaviour_MeasureValue' has cardinality 0..*, and from 'behaviour_Message', the role 'behaviour_Message14' has cardinality 0..*.
+An association connects 'behaviour_Message' and 'behaviour_Message'. From 'behaviour_Message', the role 'behaviour_Message17' has cardinality 0..*, and from 'behaviour_Message', the role 'behaviour_Message15' has cardinality 0..*.
+An association connects 'behaviour_Message' and 'behaviour_CommunicationAction'. From 'behaviour_Message', the role 'behaviour_Message19' has cardinality 0..*, and from 'behaviour_CommunicationAction', the role 'behaviour_CommunicationAction' has cardinality 0..*.
+An association connects 'behaviour_DynamicRobot' and 'behaviour_UnicastCommunication'. From 'behaviour_DynamicRobot', the role 'behaviour_DynamicRobot21' has cardinality 0..*, and from 'behaviour_UnicastCommunication', the role 'behaviour_UnicastCommunication' has cardinality 0..*.
+An association connects 'behaviour_MulticastCommunication' and 'behaviour_DynamicRobot'. From 'behaviour_MulticastCommunication', the role 'behaviour_MulticastCommunication' has cardinality 0..*, and from 'behaviour_DynamicRobot', the role 'behaviour_DynamicRobot23' has cardinality 0..*.
+An association connects 'behaviour_DynamicRobot' and 'behaviour_BroadcastCommunication'. From 'behaviour_DynamicRobot', the role 'behaviour_DynamicRobot25' has cardinality 0..*, and from 'behaviour_BroadcastCommunication', the role 'behaviour_BroadcastCommunication' has cardinality 0..*.
+An association connects 'behaviour_MessageRepository' and 'behaviour_DynamicRobot'. From 'behaviour_MessageRepository', the role 'messageRepository' has cardinality 0..*, and from 'behaviour_DynamicRobot', the role 'DynamicRobot' has cardinality 0..*.
+An association connects 'behaviour_MessageRepository' and 'behaviour_Message'. From 'behaviour_MessageRepository', the role 'behaviour_MessageRepository' has cardinality 0..*, and from 'behaviour_Message', the role 'behaviour_Message28' has cardinality 0..*.
+An association connects 'behaviour_MessageRepository' and 'behaviour_Message'. From 'behaviour_MessageRepository', the role 'behaviour_MessageRepository30' has cardinality 0..*, and from 'behaviour_Message', the role 'behaviour_Message31' has cardinality 0..*.
+An association connects 'behaviour_Action' and 'behaviour_Property'. From 'behaviour_Action', the role 'behaviour_Action' has cardinality 0..*, and from 'behaviour_Property', the role 'behaviour_Property33' has cardinality 0..*.
+An association connects 'behaviour_TaskExecution' and 'behaviour_Action'. From 'behaviour_TaskExecution', the role 'behaviour_TaskExecution36' has cardinality 0..*, and from 'behaviour_Action', the role 'behaviour_Action35' has cardinality 0..*.
+An association connects 'behaviour_Action' and 'behaviour_Task'. From 'behaviour_Action', the role 'behaviour_Action38' has cardinality 0..*, and from 'behaviour_Task', the role 'behaviour_Task' has cardinality 0..*.
+An association connects 'behaviour_DynamicRobot' and 'behaviour_TaskExecution'. From 'behaviour_DynamicRobot', the role 'behaviour_DynamicRobot41' has cardinality 0..*, and from 'behaviour_TaskExecution', the role 'behaviour_TaskExecution40' has cardinality 0..*.
+An association connects 'behaviour_MeasureValue' and 'behaviour_TaskExecution'. From 'behaviour_MeasureValue', the role 'behaviour_MeasureValue44' has cardinality 0..*, and from 'behaviour_TaskExecution', the role 'behaviour_TaskExecution43' has cardinality 0..*.
+An association connects 'behaviour_TaskExecution' and 'behaviour_Task'. From 'behaviour_TaskExecution', the role 'behaviour_TaskExecution46' has cardinality 0..*, and from 'behaviour_Task', the role 'behaviour_Task47' has cardinality 0..*.
+An association connects 'behaviour_TaskRequirement' and 'behaviour_TaskExecution'. From 'behaviour_TaskRequirement', the role 'TaskRequirement' has cardinality 0..*, and from 'behaviour_TaskExecution', the role 'taskExecution' has cardinality 0..*.
+An association connects 'behaviour_RobotCollaboration' and 'behaviour_DynamicRobot'. From 'behaviour_RobotCollaboration', the role 'behaviour_RobotCollaboration' has cardinality 0..*, and from 'behaviour_DynamicRobot', the role 'behaviour_DynamicRobot50' has cardinality 0..*.
+An association connects 'behaviour_MeasureValue' and 'behaviour_RobotCollaboration'. From 'behaviour_MeasureValue', the role 'behaviour_MeasureValue53' has cardinality 0..*, and from 'behaviour_RobotCollaboration', the role 'behaviour_RobotCollaboration52' has cardinality 0..*.
+An association connects 'behaviour_RobotCollaboration' and 'behaviour_Property'. From 'behaviour_RobotCollaboration', the role 'behaviour_RobotCollaboration55' has cardinality 0..*, and from 'behaviour_Property', the role 'behaviour_Property56' has cardinality 0..*.
+An association connects 'behaviour_AreaObject' and 'behaviour_DetectedObject'. From 'behaviour_AreaObject', the role 'behaviour_AreaObject58' has cardinality 0..*, and from 'behaviour_DetectedObject', the role 'behaviour_DetectedObject' has cardinality 0..*.
+An association connects 'behaviour_Robot' and 'behaviour_DynamicRobot'. From 'behaviour_Robot', the role 'behaviour_Robot' has cardinality 0..*, and from 'behaviour_DynamicRobot', the role 'behaviour_DynamicRobot60' has cardinality 0..*.
+An association connects 'behaviour_DynamicRobot' and 'behaviour_DetectedObject'. From 'behaviour_DynamicRobot', the role 'behaviour_DynamicRobot62' has cardinality 0..*, and from 'behaviour_DetectedObject', the role 'behaviour_DetectedObject63' has cardinality 0..*.
+An association connects 'behaviour_RobotCollaboration' and 'behaviour_DynamicRobot'. From 'behaviour_RobotCollaboration', the role 'behaviour_RobotCollaboration66' has cardinality 0..*, and from 'behaviour_DynamicRobot', the role 'behaviour_DynamicRobot65' has cardinality 0..*.
+An association connects 'behaviour_MessageRepository' and 'behaviour_DynamicRobot'. From 'behaviour_MessageRepository', the role 'MessageRepository' has cardinality 0..*, and from 'behaviour_DynamicRobot', the role 'robot' has cardinality 0..*.
+An association connects 'behaviour_DynamicRobot' and 'behaviour_Action'. From 'behaviour_DynamicRobot', the role 'behaviour_DynamicRobot69' has cardinality 0..*, and from 'behaviour_Action', the role 'behaviour_Action70' has cardinality 0..*.
+An association connects 'behaviour_TaskExecution' and 'behaviour_DynamicRobot'. From 'behaviour_TaskExecution', the role 'behaviour_TaskExecution73' has cardinality 0..*, and from 'behaviour_DynamicRobot', the role 'behaviour_DynamicRobot72' has cardinality 0..*.
+An association connects 'behaviour_TaskRequirement' and 'behaviour_TaskExecution'. From 'behaviour_TaskRequirement', the role 'requirement' has cardinality 0..*, and from 'behaviour_TaskExecution', the role 'TaskExecution' has cardinality 0..*.
+An association connects 'behaviour_TaskExecution' and 'behaviour_TaskRequirement'. From 'behaviour_TaskExecution', the role 'behaviour_TaskExecution77' has cardinality 0..*, and from 'behaviour_TaskRequirement', the role 'behaviour_TaskRequirement76' has cardinality 0..*.
+An association connects 'behaviour_Property' and 'behaviour_TaskRequirement'. From 'behaviour_Property', the role 'behaviour_Property80' has cardinality 0..*, and from 'behaviour_TaskRequirement', the role 'behaviour_TaskRequirement79' has cardinality 0..*.
+An association connects 'behaviour_TaskRequirement' and 'behaviour_Capability'. From 'behaviour_TaskRequirement', the role 'behaviour_TaskRequirement82' has cardinality 0..*, and from 'behaviour_Capability', the role 'behaviour_Capability' has cardinality 0..*.
+An association connects 'behaviour_TaskRequirement' and 'behaviour_CapabilityProperties'. From 'behaviour_TaskRequirement', the role 'behaviour_TaskRequirement84' has cardinality 0..*, and from 'behaviour_CapabilityProperties', the role 'behaviour_CapabilityProperties' has cardinality 0..*.
+An association connects 'behaviour_TaskRequirement' and 'behaviour_TaskDescriptor'. From 'behaviour_TaskRequirement', the role 'behaviour_TaskRequirement86' has cardinality 0..*, and from 'behaviour_TaskDescriptor', the role 'behaviour_TaskDescriptor' has cardinality 0..*.
+An association connects 'behaviour_TaskRequirement' and 'behaviour_Task'. From 'behaviour_TaskRequirement', the role 'behaviour_TaskRequirement88' has cardinality 0..*, and from 'behaviour_Task', the role 'behaviour_Task89' has cardinality 0..*.

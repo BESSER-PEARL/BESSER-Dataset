@@ -1,0 +1,1576 @@
+The domain model 'CompleteDSLPckg' describes the core structural elements and their relationships within the system.
+
+The model defines 295 main class(es).
+
+'StructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_InterfaceRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ChangeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_AnyReceiveEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Usage' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Continuation' represents an important domain concept.
+It has one attribute: 'setting', which is of type bool.
+
+'CompleteDSLPckg_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'isUnique', which is of type bool; 'lower', which is of type int; 'isOrdered', which is of type bool; 'upper', which is of type int.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ReadLinkObjectEndAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CreateLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ConnectorEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OpaqueBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_CallBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ExecutionEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ExecutionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Include' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_TestIdentityAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'InteractionFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Manifestation' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_InteractionOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_VariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_InteractionConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'WriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ConsiderIgnoreFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Activity' represents an important domain concept.
+It has the following attributes: 'isSingleExecution', which is of type bool; 'isReadOnly', which is of type bool.
+
+'CompleteDSLPckg_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_SendObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_TimeEvent' represents an important domain concept.
+It has one attribute: 'isRelative', which is of type bool.
+
+'CompleteDSLPckg_Deployment' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_BehaviorExecutionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_OpaqueBehavior' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'body', which is of type str.
+
+'CompleteDSLPckg_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_AcceptCallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Behavior' represents an important domain concept.
+It has one attribute: 'isReentrant', which is of type bool.
+
+'CompleteDSLPckg_LiteralUnilimitedNatural' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ParameterSet' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_DeploymentSpecification' represents an important domain concept.
+It has the following attributes: 'executionLocation', which is of type str; 'deploymentLocation', which is of type str.
+
+'CompleteDSLPckg_AddVariableValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_RemoveStructuralFeatureValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ClearVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_JoinNode' represents an important domain concept.
+It has one attribute: 'isCombineDuplicate', which is of type bool.
+
+'CompleteDSLPckg_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_StartObjectBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ProtocolConformance' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_PartDecomposition' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ValuePin' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_UnmarshallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_StructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_GeneralOrdering' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_CollaborationUse' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ReplyAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_MessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_FlowFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_InstanceValue' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Comment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'CompleteDSLPckg_LiteralInteger' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ReadSelfAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Message' represents an important domain concept.
+It has the following attributes: 'messageKind', which is of type str; 'messageSort', which is of type str.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_TimeInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_UseCase' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_QualifierValue' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ProtocolTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_TimeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_RemoveVariableValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ReadVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_CentralBufferNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_AddStructuralFeatureValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ReclassifyObjectAction' represents an important domain concept.
+It has one attribute: 'isReplaceAll', which is of type bool.
+
+'MessageEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_LoopNode' represents an important domain concept.
+It has one attribute: 'isTestedFirst', which is of type bool.
+
+'WriteVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_StructuredActivityNode' represents an important domain concept.
+It has one attribute: 'mustIsolate', which is of type bool.
+
+'CompleteDSLPckg_SequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Property' represents an important domain concept.
+It has the following attributes: 'isDerived', which is of type bool; 'isDerivedUnion', which is of type bool; 'default', which is of type str; 'isID', which is of type bool; 'isComposite', which is of type bool; 'aggregation', which is of type str.
+
+'CompleteDSLPckg_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ObjectFlow' represents an important domain concept.
+It has the following attributes: 'isControlType', which is of type bool; 'isMulticast', which is of type bool; 'ordering', which is of type str; 'isMultireceive', which is of type bool.
+
+'InteractionUse' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ExpansionRegion' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'CompleteDSLPckg_ExtensionPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_LinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ReadLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ComponentRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'CentralBufferNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_LiteralBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_DestroyLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_DurationInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_TimeConstraint' represents an important domain concept.
+It has one attribute: 'firstEvent', which is of type bool.
+
+'CompleteDSLPckg_DeployedArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_BroadcastSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_StructuralFeature' represents an important domain concept.
+It has one attribute: 'isReadOnly', which is of type bool.
+
+'CompleteDSLPckg_NamedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'qualifiedName', which is of type str; 'visibility', which is of type str.
+
+'ActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_OccurenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Port' represents an important domain concept.
+It has the following attributes: 'isService', which is of type bool; 'isBehavior', which is of type bool; 'isConjugated', which is of type bool.
+
+'LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ActionInputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Component' represents an important domain concept.
+It has one attribute: 'isIndirectlyInstantiated', which is of type bool.
+
+'CompleteDSLPckg_CommunicationPath' represents an important domain concept.
+It does not declare any attributes.
+
+'OccurenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ReadExtendAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ExceptionHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_OpaqueAction' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'language', which is of type str.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ValueSpecificationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ProtocolStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ExecutionOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_LiteralString' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_CallEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_PackageMerge' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_TimeObservation' represents an important domain concept.
+It has one attribute: 'firstEvent', which is of type bool.
+
+'CompleteDSLPckg_LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Extend' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_StateInvariant' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DeployedArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_WriteVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_InteractionFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_DurationConstraint' represents an important domain concept.
+It has one attribute: 'firstEvent', which is of type bool.
+
+'CompleteDSLPckg_ReadStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Clause' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_StartClassifierBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_DurationObservation' represents an important domain concept.
+It has one attribute: 'firstEvent', which is of type bool.
+
+'CompleteDSLPckg_Generalization' represents an important domain concept.
+It has one attribute: 'isSubstitutable', which is of type bool.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_GeneralizationSet' represents an important domain concept.
+It has the following attributes: 'isDisjoint', which is of type bool; 'isCovering', which is of type bool.
+
+'AcceptEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ActivityPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_MessageOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Transition' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'CompleteDSLPckg_CreateLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Observation' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Operation' represents an important domain concept.
+It has the following attributes: 'isUnique', which is of type bool; 'isOrdered', which is of type bool; 'lower', which is of type int; 'isQuery', which is of type bool; 'upper', which is of type int.
+
+'CompleteDSLPckg_ActionExecutionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ClearStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_LinkEndCreationData' represents an important domain concept.
+It has one attribute: 'isReplaceAll', which is of type bool.
+
+'CompleteDSLPckg_CombinedFragment' represents an important domain concept.
+It has one attribute: 'interactionOperator', which is of type str.
+
+'CompleteDSLPckg_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_IntervalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Observation' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_EncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_SendSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CombinedFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_MessageEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_DestroyObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ConnectionPointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_LiteralReal' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Lifeline' represents an important domain concept.
+It does not declare any attributes.
+
+'DeploymentTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_FunctionBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_CreateObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Package' represents an important domain concept.
+It has one attribute: 'URI', which is of type str.
+
+'CompleteDSLPckg_Classifier' represents an important domain concept.
+It has the following attributes: 'isFinalSpecialization', which is of type bool; 'isAbstract', which is of type bool.
+
+'CompleteDSLPckg_DeploymentTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_LiteralNull' represents an important domain concept.
+It does not declare any attributes.
+
+'IntervalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Connector' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'EncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Artifact' represents an important domain concept.
+It has one attribute: 'fileName', which is of type str.
+
+'CompleteDSLPckg_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_LinkEndDestructionData' represents an important domain concept.
+It has one attribute: 'isDestroyDuplicates', which is of type bool.
+
+'CompleteDSLPckg_Gate' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_InteractionUse' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_RedefinableElement' represents an important domain concept.
+It has one attribute: 'isLeaf', which is of type bool.
+
+'CompleteDSLPckg_DataStoreNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_AcceptEventAction' represents an important domain concept.
+It has one attribute: 'isUnmarshall', which is of type bool.
+
+'CompleteDSLPckg_State' represents an important domain concept.
+It has the following attributes: 'isOrthogonal', which is of type bool; 'isSubmachineState', which is of type bool; 'isSimple', which is of type bool; 'isComposite', which is of type bool.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ElementImport' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'alias', which is of type str.
+
+'CompleteDSLPckg_Collaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Expression' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_OpaqueExpression' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'language', which is of type str.
+
+'Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Duration' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Substitution' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ReadlsClassifiedObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_PackageImport' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'CompleteDSLPckg_Parameter' represents an important domain concept.
+It has one attribute: 'default', which is of type str.
+
+'CompleteDSLPckg_CreateLinkObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ReduceAction' represents an important domain concept.
+It has one attribute: 'isOrdered', which is of type bool.
+
+'CompleteDSLPckg_Feature' represents an important domain concept.
+It has one attribute: 'isStatic', which is of type bool.
+
+'CompleteDSLPckg_DestructionOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_SignalEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_WriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_RaiseExceptionAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Interaction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_CallAction' represents an important domain concept.
+It has one attribute: 'isSynchronous', which is of type bool.
+
+'CompleteDSLPckg_InterruptibleActivityRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ConditionalNode' represents an important domain concept.
+It has the following attributes: 'isDeterminate', which is of type bool; 'isAssumed', which is of type bool.
+
+'CompleteDSLPckg_Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_CallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Association' represents an important domain concept.
+It has one attribute: 'isDerived', which is of type bool.
+
+'CompleteDSLPckg_Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ReadLinkObjectEndQualifierAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ExpansionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ActivityParameterNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteDSLPckg_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CallConcurrencyFeature' defines the following possible values: 'guarded', 'sequential', 'concurrent'.
+The enumeration 'ParameterEffectKind' defines the following possible values: 'update', 'create', 'read', 'delete'.
+The enumeration 'ExpansionKind' defines the following possible values: 'iterative', 'stream', 'parallel'.
+The enumeration 'VisibilityKind' defines the following possible values: 'public', 'private', 'protected', 'package'.
+The enumeration 'MessageSort' defines the following possible values: 'asynchSignal', 'synchCall', 'deleteMessage', 'reply', 'createMessage', 'asynchCall'.
+The enumeration 'ObjectNodeOrderingKind' defines the following possible values: 'unordered', 'FIFO', 'ordered', 'LIFO'.
+The enumeration 'ConnectorKind' defines the following possible values: 'delegation', 'assembly'.
+The enumeration 'TransitionKind' defines the following possible values: 'internal', 'external'.
+The enumeration 'InteractionOperandKind' defines the following possible values: 'critical', 'consider', 'break', 'ignore', 'par', 'alt', 'seq', 'neg', 'strict', 'assert', 'loop', 'opt'.
+The enumeration 'MessageKind' defines the following possible values: 'unknown', 'found', 'lost', 'complete'.
+The enumeration 'AggregationKind' defines the following possible values: 'shared', 'composite', 'none'.
+
+The model also captures inheritance relationships between classes.
+The class 'CompleteDSLPckg_NamedElement' is a specialization of 'Element'.
+The class 'CompleteDSLPckg_Namespace' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_PackageableElement' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_ElementImport' is a specialization of 'DirectedRelationship'.
+The class 'CompleteDSLPckg_PackageImport' is a specialization of 'DirectedRelationship'.
+The class 'CompleteDSLPckg_Package' is a specialization of 'Namespace'.
+The class 'CompleteDSLPckg_Package' is a specialization of 'PackageableElement'.
+The class 'CompleteDSLPckg_Comment' is a specialization of 'Element'.
+The class 'CompleteDSLPckg_Relationship' is a specialization of 'Element'.
+The class 'CompleteDSLPckg_DirectedRelationship' is a specialization of 'Relationship'.
+The class 'CompleteDSLPckg_MultiplicityElement' is a specialization of 'Element'.
+The class 'CompleteDSLPckg_ValueSpecification' is a specialization of 'TypedElement'.
+The class 'CompleteDSLPckg_ValueSpecification' is a specialization of 'PackageableElement'.
+The class 'CompleteDSLPckg_TypedElement' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_Type' is a specialization of 'PackageableElement'.
+The class 'CompleteDSLPckg_Expression' is a specialization of 'ValueSpecification'.
+The class 'CompleteDSLPckg_OpaqueExpression' is a specialization of 'ValueSpecification'.
+The class 'CompleteDSLPckg_LiteralSpecification' is a specialization of 'ValueSpecification'.
+The class 'CompleteDSLPckg_LiteralNull' is a specialization of 'LiteralSpecification'.
+The class 'CompleteDSLPckg_LiteralBoolean' is a specialization of 'LiteralSpecification'.
+The class 'CompleteDSLPckg_LiteralInteger' is a specialization of 'LiteralSpecification'.
+The class 'CompleteDSLPckg_LiteralReal' is a specialization of 'LiteralSpecification'.
+The class 'CompleteDSLPckg_LiteralString' is a specialization of 'LiteralSpecification'.
+The class 'CompleteDSLPckg_LiteralUnilimitedNatural' is a specialization of 'LiteralSpecification'.
+The class 'CompleteDSLPckg_InstanceSpecification' is a specialization of 'PackageableElement'.
+The class 'CompleteDSLPckg_Constraint' is a specialization of 'PackageableElement'.
+The class 'CompleteDSLPckg_Slot' is a specialization of 'Element'.
+The class 'CompleteDSLPckg_RedefinableElement' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_Classifier' is a specialization of 'RedefinableElement'.
+The class 'CompleteDSLPckg_Classifier' is a specialization of 'Namespace'.
+The class 'CompleteDSLPckg_Classifier' is a specialization of 'Type'.
+The class 'CompleteDSLPckg_Feature' is a specialization of 'RedefinableElement'.
+The class 'CompleteDSLPckg_StructuralFeature' is a specialization of 'Feature'.
+The class 'CompleteDSLPckg_StructuralFeature' is a specialization of 'MultiplicityElement'.
+The class 'CompleteDSLPckg_StructuralFeature' is a specialization of 'TypedElement'.
+The class 'CompleteDSLPckg_Property' is a specialization of 'StructuralFeature'.
+The class 'CompleteDSLPckg_Property' is a specialization of 'ConnectableElement'.
+The class 'CompleteDSLPckg_Property' is a specialization of 'DeploymentTarget'.
+The class 'CompleteDSLPckg_Generalization' is a specialization of 'DirectedRelationship'.
+The class 'CompleteDSLPckg_BehavioralFeature' is a specialization of 'Feature'.
+The class 'CompleteDSLPckg_BehavioralFeature' is a specialization of 'Namespace'.
+The class 'CompleteDSLPckg_Parameter' is a specialization of 'TypedElement'.
+The class 'CompleteDSLPckg_Operation' is a specialization of 'BehavioralFeature'.
+The class 'CompleteDSLPckg_Class' is a specialization of 'Classifier'.
+The class 'CompleteDSLPckg_Class' is a specialization of 'BehavioredClassifier'.
+The class 'CompleteDSLPckg_Class' is a specialization of 'StructuredClassifier'.
+The class 'CompleteDSLPckg_Class' is a specialization of 'EncapsulatedClassifier'.
+The class 'CompleteDSLPckg_Association' is a specialization of 'Relationship'.
+The class 'CompleteDSLPckg_Association' is a specialization of 'Classifier'.
+The class 'CompleteDSLPckg_DataType' is a specialization of 'Classifier'.
+The class 'CompleteDSLPckg_PrimitiveType' is a specialization of 'DataType'.
+The class 'CompleteDSLPckg_Enumeration' is a specialization of 'DataType'.
+The class 'CompleteDSLPckg_EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+The class 'CompleteDSLPckg_PackageMerge' is a specialization of 'DirectedRelationship'.
+The class 'CompleteDSLPckg_Dependency' is a specialization of 'PackageableElement'.
+The class 'CompleteDSLPckg_Dependency' is a specialization of 'DirectedRelationship'.
+The class 'CompleteDSLPckg_Usage' is a specialization of 'Dependency'.
+The class 'CompleteDSLPckg_Abstraction' is a specialization of 'Dependency'.
+The class 'CompleteDSLPckg_Realization' is a specialization of 'Abstraction'.
+The class 'CompleteDSLPckg_Substitution' is a specialization of 'Realization'.
+The class 'CompleteDSLPckg_Interface' is a specialization of 'Classifier'.
+The class 'CompleteDSLPckg_InterfaceRealization' is a specialization of 'Realization'.
+The class 'CompleteDSLPckg_BehavioredClassifier' is a specialization of 'Classifier'.
+The class 'CompleteDSLPckg_AssociationClass' is a specialization of 'Class'.
+The class 'CompleteDSLPckg_AssociationClass' is a specialization of 'Association'.
+The class 'CompleteDSLPckg_GeneralizationSet' is a specialization of 'PackageableElement'.
+The class 'CompleteDSLPckg_Behavior' is a specialization of 'Class'.
+The class 'CompleteDSLPckg_OpaqueBehavior' is a specialization of 'Behavior'.
+The class 'CompleteDSLPckg_FunctionBehavior' is a specialization of 'OpaqueBehavior'.
+The class 'CompleteDSLPckg_Signal' is a specialization of 'Classifier'.
+The class 'CompleteDSLPckg_Reception' is a specialization of 'BehavioralFeature'.
+The class 'CompleteDSLPckg_Trigger' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_Event' is a specialization of 'PackageableElement'.
+The class 'CompleteDSLPckg_MessageEvent' is a specialization of 'Event'.
+The class 'CompleteDSLPckg_AnyReceiveEvent' is a specialization of 'MessageEvent'.
+The class 'CompleteDSLPckg_SignalEvent' is a specialization of 'MessageEvent'.
+The class 'CompleteDSLPckg_CallEvent' is a specialization of 'MessageEvent'.
+The class 'CompleteDSLPckg_ChangeEvent' is a specialization of 'Event'.
+The class 'CompleteDSLPckg_TimeExpression' is a specialization of 'ValueSpecification'.
+The class 'CompleteDSLPckg_Observation' is a specialization of 'PackageableElement'.
+The class 'CompleteDSLPckg_TimeObservation' is a specialization of 'Observation'.
+The class 'CompleteDSLPckg_DurationObservation' is a specialization of 'Observation'.
+The class 'CompleteDSLPckg_Duration' is a specialization of 'ValueSpecification'.
+The class 'CompleteDSLPckg_Interval' is a specialization of 'ValueSpecification'.
+The class 'CompleteDSLPckg_TimeInterval' is a specialization of 'Interval'.
+The class 'CompleteDSLPckg_DurationInterval' is a specialization of 'Interval'.
+The class 'CompleteDSLPckg_IntervalConstraint' is a specialization of 'Constraint'.
+The class 'CompleteDSLPckg_TimeConstraint' is a specialization of 'IntervalConstraint'.
+The class 'CompleteDSLPckg_DurationConstraint' is a specialization of 'IntervalConstraint'.
+The class 'CompleteDSLPckg_Component' is a specialization of 'Class'.
+The class 'CompleteDSLPckg_Component' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_ComponentRealization' is a specialization of 'Realization'.
+The class 'CompleteDSLPckg_Connector' is a specialization of 'Feature'.
+The class 'CompleteDSLPckg_ConnectableElement' is a specialization of 'TypedElement'.
+The class 'CompleteDSLPckg_StructuredClassifier' is a specialization of 'Classifier'.
+The class 'CompleteDSLPckg_Port' is a specialization of 'Property'.
+The class 'CompleteDSLPckg_EncapsulatedClassifier' is a specialization of 'StructuredClassifier'.
+The class 'CompleteDSLPckg_Collaboration' is a specialization of 'StructuredClassifier'.
+The class 'CompleteDSLPckg_Collaboration' is a specialization of 'BehavioredClassifier'.
+The class 'CompleteDSLPckg_CollaborationUse' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_Variable' is a specialization of 'ConnectableElement'.
+The class 'CompleteDSLPckg_Variable' is a specialization of 'MultiplicityElement'.
+The class 'CompleteDSLPckg_Variable' is a specialization of 'TypedElement'.
+The class 'CompleteDSLPckg_Artifact' is a specialization of 'Classifier'.
+The class 'CompleteDSLPckg_Artifact' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_Artifact' is a specialization of 'DeployedArtifact'.
+The class 'CompleteDSLPckg_Manifestation' is a specialization of 'Abstraction'.
+The class 'CompleteDSLPckg_Node' is a specialization of 'Class'.
+The class 'CompleteDSLPckg_Node' is a specialization of 'DeploymentTarget'.
+The class 'CompleteDSLPckg_Device' is a specialization of 'Node'.
+The class 'CompleteDSLPckg_ExecutionEnvironment' is a specialization of 'Node'.
+The class 'CompleteDSLPckg_CommunicationPath' is a specialization of 'Association'.
+The class 'CompleteDSLPckg_DeploymentTarget' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_Deployment' is a specialization of 'Dependency'.
+The class 'CompleteDSLPckg_DeployedArtifact' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_DeploymentSpecification' is a specialization of 'Artifact'.
+The class 'CompleteDSLPckg_Action' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_OpaqueAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_InputPin' is a specialization of 'Pin'.
+The class 'CompleteDSLPckg_OutputPin' is a specialization of 'Pin'.
+The class 'CompleteDSLPckg_Pin' is a specialization of 'TypedElement'.
+The class 'CompleteDSLPckg_Pin' is a specialization of 'MultiplicityElement'.
+The class 'CompleteDSLPckg_ValuePin' is a specialization of 'InputPin'.
+The class 'CompleteDSLPckg_CallAction' is a specialization of 'InvocationAction'.
+The class 'CompleteDSLPckg_CallBehaviorAction' is a specialization of 'CallAction'.
+The class 'CompleteDSLPckg_SendSignalAction' is a specialization of 'InvocationAction'.
+The class 'CompleteDSLPckg_BroadcastSignalAction' is a specialization of 'InvocationAction'.
+The class 'CompleteDSLPckg_SendObjectAction' is a specialization of 'InvocationAction'.
+The class 'CompleteDSLPckg_CreateObjectAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_DestroyObjectAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_TestIdentityAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_ReadSelfAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_ValueSpecificationAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_StructuralFeatureAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_ReadStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'CompleteDSLPckg_WriteStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'CompleteDSLPckg_AddStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'CompleteDSLPckg_RemoveStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'CompleteDSLPckg_ClearStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'CompleteDSLPckg_LinkAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_LinkEndData' is a specialization of 'Element'.
+The class 'CompleteDSLPckg_ReadLinkAction' is a specialization of 'LinkAction'.
+The class 'CompleteDSLPckg_WriteLinkAction' is a specialization of 'LinkAction'.
+The class 'CompleteDSLPckg_CreateLinkAction' is a specialization of 'WriteLinkAction'.
+The class 'CompleteDSLPckg_LinkEndCreationData' is a specialization of 'LinkEndData'.
+The class 'CompleteDSLPckg_DestroyLinkAction' is a specialization of 'WriteLinkAction'.
+The class 'CompleteDSLPckg_LinkEndDestructionData' is a specialization of 'LinkEndData'.
+The class 'CompleteDSLPckg_ReplyAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_UnmarshallAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_AcceptEventAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_AcceptCallAction' is a specialization of 'AcceptEventAction'.
+The class 'CompleteDSLPckg_ReadExtendAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_ReclassifyObjectAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_StartClassifierBehaviorAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_StartObjectBehaviorAction' is a specialization of 'CallAction'.
+The class 'CompleteDSLPckg_QualifierValue' is a specialization of 'Element'.
+The class 'CompleteDSLPckg_ReadLinkObjectEndAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_ReadLinkObjectEndQualifierAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_CreateLinkObjectAction' is a specialization of 'CreateLinkAction'.
+The class 'CompleteDSLPckg_ReduceAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_VariableAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_ReadVariableAction' is a specialization of 'VariableAction'.
+The class 'CompleteDSLPckg_WriteVariableAction' is a specialization of 'VariableAction'.
+The class 'CompleteDSLPckg_AddVariableValueAction' is a specialization of 'WriteVariableAction'.
+The class 'CompleteDSLPckg_RemoveVariableValueAction' is a specialization of 'WriteVariableAction'.
+The class 'CompleteDSLPckg_ClearVariableAction' is a specialization of 'VariableAction'.
+The class 'CompleteDSLPckg_RaiseExceptionAction' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_ActionInputPin' is a specialization of 'InputPin'.
+The class 'CompleteDSLPckg_StateMachine' is a specialization of 'Behavior'.
+The class 'CompleteDSLPckg_Region' is a specialization of 'Namespace'.
+The class 'CompleteDSLPckg_Region' is a specialization of 'RedefinableElement'.
+The class 'CompleteDSLPckg_Vertex' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_Transition' is a specialization of 'Namespace'.
+The class 'CompleteDSLPckg_Transition' is a specialization of 'RedefinableElement'.
+The class 'CompleteDSLPckg_Pseudostate' is a specialization of 'Vertex'.
+The class 'CompleteDSLPckg_ConnectionPointReference' is a specialization of 'Vertex'.
+The class 'CompleteDSLPckg_State' is a specialization of 'Vertex'.
+The class 'CompleteDSLPckg_State' is a specialization of 'RedefinableElement'.
+The class 'CompleteDSLPckg_State' is a specialization of 'Namespace'.
+The class 'CompleteDSLPckg_FinalState' is a specialization of 'State'.
+The class 'CompleteDSLPckg_ProtocolStateMachine' is a specialization of 'StateMachine'.
+The class 'CompleteDSLPckg_ProtocolConformance' is a specialization of 'DirectedRelationship'.
+The class 'CompleteDSLPckg_ProtocolTransition' is a specialization of 'Transition'.
+The class 'CompleteDSLPckg_Activity' is a specialization of 'Behavior'.
+The class 'CompleteDSLPckg_ActivityNode' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_ActivityNode' is a specialization of 'RedefinableElement'.
+The class 'CompleteDSLPckg_ActivityGroup' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_ObjectNode' is a specialization of 'ActivityNode'.
+The class 'CompleteDSLPckg_ObjectNode' is a specialization of 'TypedElement'.
+The class 'CompleteDSLPckg_ActivityParameterNode' is a specialization of 'ObjectNode'.
+The class 'CompleteDSLPckg_ControlNode' is a specialization of 'ActivityNode'.
+The class 'CompleteDSLPckg_ActivityFinalNode' is a specialization of 'ControlNode'.
+The class 'CompleteDSLPckg_ActivityFinalNode' is a specialization of 'FinalNode'.
+The class 'CompleteDSLPckg_InitialNode' is a specialization of 'ControlNode'.
+The class 'CompleteDSLPckg_ActivityEdge' is a specialization of 'RedefinableElement'.
+The class 'CompleteDSLPckg_ControlFlow' is a specialization of 'ActivityEdge'.
+The class 'CompleteDSLPckg_ObjectFlow' is a specialization of 'ActivityEdge'.
+The class 'CompleteDSLPckg_CentralBufferNode' is a specialization of 'ObjectNode'.
+The class 'CompleteDSLPckg_FinalNode' is a specialization of 'ControlNode'.
+The class 'CompleteDSLPckg_FlowFinalNode' is a specialization of 'FinalNode'.
+The class 'CompleteDSLPckg_ForkNode' is a specialization of 'ControlNode'.
+The class 'CompleteDSLPckg_JoinNode' is a specialization of 'ControlNode'.
+The class 'CompleteDSLPckg_MergeNode' is a specialization of 'ControlNode'.
+The class 'CompleteDSLPckg_DecisionNode' is a specialization of 'ControlNode'.
+The class 'CompleteDSLPckg_ActivityPartition' is a specialization of 'ActivityGroup'.
+The class 'CompleteDSLPckg_DataStoreNode' is a specialization of 'CentralBufferNode'.
+The class 'CompleteDSLPckg_ParameterSet' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_InterruptibleActivityRegion' is a specialization of 'ActivityGroup'.
+The class 'CompleteDSLPckg_StructuredActivityNode' is a specialization of 'Namespace'.
+The class 'CompleteDSLPckg_StructuredActivityNode' is a specialization of 'ExecutableNode'.
+The class 'CompleteDSLPckg_StructuredActivityNode' is a specialization of 'ActivityGroup'.
+The class 'CompleteDSLPckg_StructuredActivityNode' is a specialization of 'Action'.
+The class 'CompleteDSLPckg_ExecutableNode' is a specialization of 'ActivityNode'.
+The class 'CompleteDSLPckg_LoopNode' is a specialization of 'StructuredActivityNode'.
+The class 'CompleteDSLPckg_ConditionalNode' is a specialization of 'StructuredActivityNode'.
+The class 'CompleteDSLPckg_Clause' is a specialization of 'Element'.
+The class 'CompleteDSLPckg_SequenceNode' is a specialization of 'StructuredActivityNode'.
+The class 'CompleteDSLPckg_ExceptionHandler' is a specialization of 'Element'.
+The class 'CompleteDSLPckg_ExpansionRegion' is a specialization of 'StructuredActivityNode'.
+The class 'CompleteDSLPckg_ExpansionNode' is a specialization of 'ObjectNode'.
+The class 'CompleteDSLPckg_InteractionFragment' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_ExecutionSpecification' is a specialization of 'InteractionFragment'.
+The class 'CompleteDSLPckg_OccurenceSpecification' is a specialization of 'InteractionFragment'.
+The class 'CompleteDSLPckg_StateInvariant' is a specialization of 'InteractionFragment'.
+The class 'CompleteDSLPckg_Interaction' is a specialization of 'Behavior'.
+The class 'CompleteDSLPckg_Interaction' is a specialization of 'InteractionFragment'.
+The class 'CompleteDSLPckg_Lifeline' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_Message' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_MessageEnd' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_ExecutionOccurrenceSpecification' is a specialization of 'OccurenceSpecification'.
+The class 'CompleteDSLPckg_MessageOccurrenceSpecification' is a specialization of 'OccurenceSpecification'.
+The class 'CompleteDSLPckg_DestructionOccurrenceSpecification' is a specialization of 'MessageOccurrenceSpecification'.
+The class 'CompleteDSLPckg_BehaviorExecutionSpecification' is a specialization of 'ExecutionSpecification'.
+The class 'CompleteDSLPckg_ActionExecutionSpecification' is a specialization of 'ExecutionSpecification'.
+The class 'CompleteDSLPckg_GeneralOrdering' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_InteractionOperand' is a specialization of 'Namespace'.
+The class 'CompleteDSLPckg_ConsiderIgnoreFragment' is a specialization of 'CombinedFragment'.
+The class 'CompleteDSLPckg_Continuation' is a specialization of 'InteractionFragment'.
+The class 'CompleteDSLPckg_InteractionConstraint' is a specialization of 'Constraint'.
+The class 'CompleteDSLPckg_Gate' is a specialization of 'MessageEnd'.
+The class 'CompleteDSLPckg_InteractionUse' is a specialization of 'InteractionFragment'.
+The class 'CompleteDSLPckg_PartDecomposition' is a specialization of 'InteractionUse'.
+The class 'CompleteDSLPckg_Actor' is a specialization of 'BehavioredClassifier'.
+The class 'CompleteDSLPckg_UseCase' is a specialization of 'BehavioredClassifier'.
+The class 'CompleteDSLPckg_ExtensionPoint' is a specialization of 'RedefinableElement'.
+The class 'CompleteDSLPckg_Extend' is a specialization of 'NamedElement'.
+The class 'CompleteDSLPckg_Extend' is a specialization of 'DirectedRelationship'.
+The class 'CompleteDSLPckg_Include' is a specialization of 'DirectedRelationship'.
+The class 'CompleteDSLPckg_Include' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'CompleteDSLPckg_Element' and 'CompleteDSLPckg_Comment'. From 'CompleteDSLPckg_Element', the role 'unnamed role' has cardinality 0..*, and from 'CompleteDSLPckg_Comment', the role '1' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Element' and 'CompleteDSLPckg_Element'. From 'CompleteDSLPckg_Element', the role '4' has cardinality 0..*, and from 'CompleteDSLPckg_Element', the role '5' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Element' and 'CompleteDSLPckg_Element'. From 'CompleteDSLPckg_Element', the role '8' has cardinality 0..*, and from 'CompleteDSLPckg_Element', the role '9' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Namespace' and 'CompleteDSLPckg_NamedElement'. From 'CompleteDSLPckg_Namespace', the role '12' has cardinality 0..*, and from 'CompleteDSLPckg_NamedElement', the role '11' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Dependency' and 'CompleteDSLPckg_NamedElement'. From 'CompleteDSLPckg_Dependency', the role '15' has cardinality 0..*, and from 'CompleteDSLPckg_NamedElement', the role '14' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Namespace' and 'CompleteDSLPckg_PackageableElement'. From 'CompleteDSLPckg_Namespace', the role 'CompleteDSLPckg_Namespace' has cardinality 0..*, and from 'CompleteDSLPckg_PackageableElement', the role 'CompleteDSLPckg_PackageableElement' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Namespace' and 'CompleteDSLPckg_NamedElement'. From 'CompleteDSLPckg_Namespace', the role 'CompleteDSLPckg_Namespace18' has cardinality 0..*, and from 'CompleteDSLPckg_NamedElement', the role 'CompleteDSLPckg_NamedElement' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Namespace' and 'CompleteDSLPckg_NamedElement'. From 'CompleteDSLPckg_Namespace', the role '20' has cardinality 0..*, and from 'CompleteDSLPckg_NamedElement', the role '21' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Namespace' and 'CompleteDSLPckg_ElementImport'. From 'CompleteDSLPckg_Namespace', the role '23' has cardinality 0..*, and from 'CompleteDSLPckg_ElementImport', the role '24' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Namespace' and 'CompleteDSLPckg_PackageImport'. From 'CompleteDSLPckg_Namespace', the role '26' has cardinality 0..*, and from 'CompleteDSLPckg_PackageImport', the role '27' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Constraint' and 'CompleteDSLPckg_Namespace'. From 'CompleteDSLPckg_Constraint', the role '30' has cardinality 0..*, and from 'CompleteDSLPckg_Namespace', the role '29' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_PackageableElement' and 'CompleteDSLPckg_ElementImport'. From 'CompleteDSLPckg_PackageableElement', the role 'CompleteDSLPckg_PackageableElement32' has cardinality 0..*, and from 'CompleteDSLPckg_ElementImport', the role 'CompleteDSLPckg_ElementImport' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ElementImport' and 'CompleteDSLPckg_Namespace'. From 'CompleteDSLPckg_ElementImport', the role '34' has cardinality 0..*, and from 'CompleteDSLPckg_Namespace', the role '35' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_PackageImport' and 'CompleteDSLPckg_Package'. From 'CompleteDSLPckg_PackageImport', the role 'CompleteDSLPckg_PackageImport' has cardinality 0..*, and from 'CompleteDSLPckg_Package', the role 'CompleteDSLPckg_Package' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_PackageImport' and 'CompleteDSLPckg_Namespace'. From 'CompleteDSLPckg_PackageImport', the role '38' has cardinality 0..*, and from 'CompleteDSLPckg_Namespace', the role '39' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Package' and 'CompleteDSLPckg_Package'. From 'CompleteDSLPckg_Package', the role '42' has cardinality 0..*, and from 'CompleteDSLPckg_Package', the role '43' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Package' and 'CompleteDSLPckg_Package'. From 'CompleteDSLPckg_Package', the role '47' has cardinality 0..*, and from 'CompleteDSLPckg_Package', the role '46' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Package' and 'CompleteDSLPckg_PackageableElement'. From 'CompleteDSLPckg_Package', the role 'CompleteDSLPckg_Package49' has cardinality 0..*, and from 'CompleteDSLPckg_PackageableElement', the role 'CompleteDSLPckg_PackageableElement50' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Type' and 'CompleteDSLPckg_Package'. From 'CompleteDSLPckg_Type', the role '53' has cardinality 0..*, and from 'CompleteDSLPckg_Package', the role '52' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_PackageMerge' and 'CompleteDSLPckg_Package'. From 'CompleteDSLPckg_PackageMerge', the role '56' has cardinality 0..*, and from 'CompleteDSLPckg_Package', the role '55' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Comment' and 'CompleteDSLPckg_Element'. From 'CompleteDSLPckg_Comment', the role '58' has cardinality 0..*, and from 'CompleteDSLPckg_Element', the role '59' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Element' and 'CompleteDSLPckg_Comment'. From 'CompleteDSLPckg_Element', the role 'CompleteDSLPckg_Element' has cardinality 0..*, and from 'CompleteDSLPckg_Comment', the role 'CompleteDSLPckg_Comment' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Element' and 'CompleteDSLPckg_Relationship'. From 'CompleteDSLPckg_Element', the role 'CompleteDSLPckg_Element62' has cardinality 0..*, and from 'CompleteDSLPckg_Relationship', the role 'CompleteDSLPckg_Relationship' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Element' and 'CompleteDSLPckg_DirectedRelationship'. From 'CompleteDSLPckg_Element', the role 'CompleteDSLPckg_Element64' has cardinality 0..*, and from 'CompleteDSLPckg_DirectedRelationship', the role 'CompleteDSLPckg_DirectedRelationship' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Element' and 'CompleteDSLPckg_DirectedRelationship'. From 'CompleteDSLPckg_Element', the role 'CompleteDSLPckg_Element67' has cardinality 0..*, and from 'CompleteDSLPckg_DirectedRelationship', the role 'CompleteDSLPckg_DirectedRelationship66' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_MultiplicityElement' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_MultiplicityElement', the role '69' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role '70' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_MultiplicityElement' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_MultiplicityElement', the role '72' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role '73' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_MultiplicityElement' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_MultiplicityElement', the role '76' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role '75' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_MultiplicityElement' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_MultiplicityElement', the role '79' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role '78' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Constraint' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_Constraint', the role '82' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role '81' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Slot' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_Slot', the role '85' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role '84' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InstanceSpecification' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_InstanceSpecification', the role '88' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role '87' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_TypedElement' and 'CompleteDSLPckg_Type'. From 'CompleteDSLPckg_TypedElement', the role 'CompleteDSLPckg_TypedElement' has cardinality 0..*, and from 'CompleteDSLPckg_Type', the role 'CompleteDSLPckg_Type' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Package' and 'CompleteDSLPckg_Type'. From 'CompleteDSLPckg_Package', the role '92' has cardinality 0..*, and from 'CompleteDSLPckg_Type', the role '91' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ValueSpecification' and 'CompleteDSLPckg_Expression'. From 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification' has cardinality 0..*, and from 'CompleteDSLPckg_Expression', the role 'CompleteDSLPckg_Expression' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Parameter' and 'CompleteDSLPckg_OpaqueExpression'. From 'CompleteDSLPckg_Parameter', the role 'CompleteDSLPckg_Parameter' has cardinality 0..*, and from 'CompleteDSLPckg_OpaqueExpression', the role 'CompleteDSLPckg_OpaqueExpression' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Behavior' and 'CompleteDSLPckg_OpaqueExpression'. From 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior' has cardinality 0..*, and from 'CompleteDSLPckg_OpaqueExpression', the role 'CompleteDSLPckg_OpaqueExpression96' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InstanceSpecification' and 'CompleteDSLPckg_InstanceValue'. From 'CompleteDSLPckg_InstanceSpecification', the role 'CompleteDSLPckg_InstanceSpecification' has cardinality 0..*, and from 'CompleteDSLPckg_InstanceValue', the role 'CompleteDSLPckg_InstanceValue' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Slot' and 'CompleteDSLPckg_InstanceSpecification'. From 'CompleteDSLPckg_Slot', the role '100' has cardinality 0..*, and from 'CompleteDSLPckg_InstanceSpecification', the role '99' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InstanceSpecification' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_InstanceSpecification', the role '102' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role '103' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InstanceSpecification' and 'CompleteDSLPckg_Classifier'. From 'CompleteDSLPckg_InstanceSpecification', the role 'CompleteDSLPckg_InstanceSpecification105' has cardinality 0..*, and from 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Namespace' and 'CompleteDSLPckg_Constraint'. From 'CompleteDSLPckg_Namespace', the role '108' has cardinality 0..*, and from 'CompleteDSLPckg_Constraint', the role '107' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Constraint' and 'CompleteDSLPckg_Element'. From 'CompleteDSLPckg_Constraint', the role 'CompleteDSLPckg_Constraint' has cardinality 0..*, and from 'CompleteDSLPckg_Element', the role 'CompleteDSLPckg_Element110' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ValueSpecification' and 'CompleteDSLPckg_Constraint'. From 'CompleteDSLPckg_ValueSpecification', the role '113' has cardinality 0..*, and from 'CompleteDSLPckg_Constraint', the role '112' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InstanceSpecification' and 'CompleteDSLPckg_Slot'. From 'CompleteDSLPckg_InstanceSpecification', the role '116' has cardinality 0..*, and from 'CompleteDSLPckg_Slot', the role '115' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ValueSpecification' and 'CompleteDSLPckg_Slot'. From 'CompleteDSLPckg_ValueSpecification', the role '119' has cardinality 0..*, and from 'CompleteDSLPckg_Slot', the role '118' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Slot' and 'CompleteDSLPckg_StructuralFeature'. From 'CompleteDSLPckg_Slot', the role 'CompleteDSLPckg_Slot' has cardinality 0..*, and from 'CompleteDSLPckg_StructuralFeature', the role 'CompleteDSLPckg_StructuralFeature' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_RedefinableElement' and 'CompleteDSLPckg_RedefinableElement'. From 'CompleteDSLPckg_RedefinableElement', the role 'CompleteDSLPckg_RedefinableElement121' has cardinality 0..*, and from 'CompleteDSLPckg_RedefinableElement', the role 'CompleteDSLPckg_RedefinableElement' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_RedefinableElement' and 'CompleteDSLPckg_Classifier'. From 'CompleteDSLPckg_RedefinableElement', the role 'CompleteDSLPckg_RedefinableElement124' has cardinality 0..*, and from 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier125' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_NamedElement' and 'CompleteDSLPckg_Classifier'. From 'CompleteDSLPckg_NamedElement', the role 'CompleteDSLPckg_NamedElement128' has cardinality 0..*, and from 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier127' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Classifier' and 'CompleteDSLPckg_Feature'. From 'CompleteDSLPckg_Classifier', the role '130' has cardinality 0..*, and from 'CompleteDSLPckg_Feature', the role '131' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Property' and 'CompleteDSLPckg_Classifier'. From 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property' has cardinality 0..*, and from 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier133' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Classifier' and 'CompleteDSLPckg_Classifier'. From 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier136' has cardinality 0..*, and from 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier134' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Classifier' and 'CompleteDSLPckg_Classifier'. From 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier137' has cardinality 0..*, and from 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier139' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Generalization' and 'CompleteDSLPckg_Classifier'. From 'CompleteDSLPckg_Generalization', the role '142' has cardinality 0..*, and from 'CompleteDSLPckg_Classifier', the role '141' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Substitution' and 'CompleteDSLPckg_Classifier'. From 'CompleteDSLPckg_Substitution', the role '145' has cardinality 0..*, and from 'CompleteDSLPckg_Classifier', the role '144' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Classifier' and 'CompleteDSLPckg_GeneralizationSet'. From 'CompleteDSLPckg_Classifier', the role '147' has cardinality 0..*, and from 'CompleteDSLPckg_GeneralizationSet', the role '148' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_CollaborationUse' and 'CompleteDSLPckg_Classifier'. From 'CompleteDSLPckg_CollaborationUse', the role 'CompleteDSLPckg_CollaborationUse' has cardinality 0..*, and from 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier150' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_CollaborationUse' and 'CompleteDSLPckg_Classifier'. From 'CompleteDSLPckg_CollaborationUse', the role 'CompleteDSLPckg_CollaborationUse153' has cardinality 0..*, and from 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier152' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Feature' and 'CompleteDSLPckg_Classifier'. From 'CompleteDSLPckg_Feature', the role '155' has cardinality 0..*, and from 'CompleteDSLPckg_Classifier', the role '156' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Class' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_Class', the role '159' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role '158' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Property' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property162' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property160' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ValueSpecification' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification165' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property164' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Property' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property168' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property166' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Property' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property171' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property169' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Association' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_Association', the role '174' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role '173' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Property' and 'CompleteDSLPckg_Association'. From 'CompleteDSLPckg_Property', the role '176' has cardinality 0..*, and from 'CompleteDSLPckg_Association', the role '177' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_DataType' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_DataType', the role '180' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role '179' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Interface' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_Interface', the role '183' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role '182' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Property' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_Property', the role '186' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role '187' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Property' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_Property', the role '190' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role '191' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Classifier' and 'CompleteDSLPckg_Generalization'. From 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier193' has cardinality 0..*, and from 'CompleteDSLPckg_Generalization', the role 'CompleteDSLPckg_Generalization' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Classifier' and 'CompleteDSLPckg_Generalization'. From 'CompleteDSLPckg_Classifier', the role '196' has cardinality 0..*, and from 'CompleteDSLPckg_Generalization', the role '195' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Generalization' and 'CompleteDSLPckg_GeneralizationSet'. From 'CompleteDSLPckg_Generalization', the role '198' has cardinality 0..*, and from 'CompleteDSLPckg_GeneralizationSet', the role '199' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_BehavioralFeature' and 'CompleteDSLPckg_Parameter'. From 'CompleteDSLPckg_BehavioralFeature', the role 'CompleteDSLPckg_BehavioralFeature' has cardinality 0..*, and from 'CompleteDSLPckg_Parameter', the role 'CompleteDSLPckg_Parameter201' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_BehavioralFeature' and 'CompleteDSLPckg_Type'. From 'CompleteDSLPckg_BehavioralFeature', the role 'CompleteDSLPckg_BehavioralFeature203' has cardinality 0..*, and from 'CompleteDSLPckg_Type', the role 'CompleteDSLPckg_Type204' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Parameter' and 'CompleteDSLPckg_BehavioralFeature'. From 'CompleteDSLPckg_Parameter', the role 'CompleteDSLPckg_Parameter206' has cardinality 0..*, and from 'CompleteDSLPckg_BehavioralFeature', the role 'CompleteDSLPckg_BehavioralFeature207' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Parameter' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_Parameter', the role 'CompleteDSLPckg_Parameter209' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification210' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Type' and 'CompleteDSLPckg_Operation'. From 'CompleteDSLPckg_Type', the role 'CompleteDSLPckg_Type212' has cardinality 0..*, and from 'CompleteDSLPckg_Operation', the role 'CompleteDSLPckg_Operation' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Operation' and 'CompleteDSLPckg_Constraint'. From 'CompleteDSLPckg_Operation', the role 'CompleteDSLPckg_Operation214' has cardinality 0..*, and from 'CompleteDSLPckg_Constraint', the role 'CompleteDSLPckg_Constraint215' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Operation' and 'CompleteDSLPckg_Constraint'. From 'CompleteDSLPckg_Operation', the role 'CompleteDSLPckg_Operation217' has cardinality 0..*, and from 'CompleteDSLPckg_Constraint', the role 'CompleteDSLPckg_Constraint218' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Operation' and 'CompleteDSLPckg_Constraint'. From 'CompleteDSLPckg_Operation', the role 'CompleteDSLPckg_Operation220' has cardinality 0..*, and from 'CompleteDSLPckg_Constraint', the role 'CompleteDSLPckg_Constraint221' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Class' and 'CompleteDSLPckg_Operation'. From 'CompleteDSLPckg_Class', the role '224' has cardinality 0..*, and from 'CompleteDSLPckg_Operation', the role '223' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_DataType' and 'CompleteDSLPckg_Operation'. From 'CompleteDSLPckg_DataType', the role '227' has cardinality 0..*, and from 'CompleteDSLPckg_Operation', the role '226' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Operation' and 'CompleteDSLPckg_Interface'. From 'CompleteDSLPckg_Operation', the role '229' has cardinality 0..*, and from 'CompleteDSLPckg_Interface', the role '230' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Class' and 'CompleteDSLPckg_Classifier'. From 'CompleteDSLPckg_Class', the role 'CompleteDSLPckg_Class' has cardinality 0..*, and from 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier232' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Class' and 'CompleteDSLPckg_Operation'. From 'CompleteDSLPckg_Class', the role '234' has cardinality 0..*, and from 'CompleteDSLPckg_Operation', the role '235' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Class' and 'CompleteDSLPckg_Class'. From 'CompleteDSLPckg_Class', the role 'CompleteDSLPckg_Class238' has cardinality 0..*, and from 'CompleteDSLPckg_Class', the role 'CompleteDSLPckg_Class236' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Class' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_Class', the role '240' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role '241' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Reception' and 'CompleteDSLPckg_Class'. From 'CompleteDSLPckg_Reception', the role 'CompleteDSLPckg_Reception' has cardinality 0..*, and from 'CompleteDSLPckg_Class', the role 'CompleteDSLPckg_Class243' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Association' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_Association', the role 'CompleteDSLPckg_Association' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property245' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Association' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_Association', the role '247' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role '248' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Association' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_Association', the role '250' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role '251' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Property' and 'CompleteDSLPckg_DataType'. From 'CompleteDSLPckg_Property', the role '254' has cardinality 0..*, and from 'CompleteDSLPckg_DataType', the role '253' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Operation' and 'CompleteDSLPckg_DataType'. From 'CompleteDSLPckg_Operation', the role '257' has cardinality 0..*, and from 'CompleteDSLPckg_DataType', the role '256' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Enumeration' and 'CompleteDSLPckg_EnumerationLiteral'. From 'CompleteDSLPckg_Enumeration', the role '259' has cardinality 0..*, and from 'CompleteDSLPckg_EnumerationLiteral', the role '260' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_EnumerationLiteral' and 'CompleteDSLPckg_Enumeration'. From 'CompleteDSLPckg_EnumerationLiteral', the role '262' has cardinality 0..*, and from 'CompleteDSLPckg_Enumeration', the role '263' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_PackageMerge' and 'CompleteDSLPckg_Package'. From 'CompleteDSLPckg_PackageMerge', the role '265' has cardinality 0..*, and from 'CompleteDSLPckg_Package', the role '266' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_PackageMerge' and 'CompleteDSLPckg_Package'. From 'CompleteDSLPckg_PackageMerge', the role 'CompleteDSLPckg_PackageMerge' has cardinality 0..*, and from 'CompleteDSLPckg_Package', the role 'CompleteDSLPckg_Package268' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Dependency' and 'CompleteDSLPckg_NamedElement'. From 'CompleteDSLPckg_Dependency', the role '270' has cardinality 0..*, and from 'CompleteDSLPckg_NamedElement', the role '271' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_NamedElement' and 'CompleteDSLPckg_Dependency'. From 'CompleteDSLPckg_NamedElement', the role 'CompleteDSLPckg_NamedElement273' has cardinality 0..*, and from 'CompleteDSLPckg_Dependency', the role 'CompleteDSLPckg_Dependency' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Abstraction' and 'CompleteDSLPckg_OpaqueExpression'. From 'CompleteDSLPckg_Abstraction', the role 'CompleteDSLPckg_Abstraction' has cardinality 0..*, and from 'CompleteDSLPckg_OpaqueExpression', the role 'CompleteDSLPckg_OpaqueExpression275' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Classifier' and 'CompleteDSLPckg_Substitution'. From 'CompleteDSLPckg_Classifier', the role '278' has cardinality 0..*, and from 'CompleteDSLPckg_Substitution', the role '277' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Substitution' and 'CompleteDSLPckg_Classifier'. From 'CompleteDSLPckg_Substitution', the role 'CompleteDSLPckg_Substitution' has cardinality 0..*, and from 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier280' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Classifier' and 'CompleteDSLPckg_Interface'. From 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier282' has cardinality 0..*, and from 'CompleteDSLPckg_Interface', the role 'CompleteDSLPckg_Interface' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Interface' and 'CompleteDSLPckg_Interface'. From 'CompleteDSLPckg_Interface', the role 'CompleteDSLPckg_Interface283' has cardinality 0..*, and from 'CompleteDSLPckg_Interface', the role 'CompleteDSLPckg_Interface285' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Interface' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_Interface', the role '287' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role '288' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Operation' and 'CompleteDSLPckg_Interface'. From 'CompleteDSLPckg_Operation', the role '291' has cardinality 0..*, and from 'CompleteDSLPckg_Interface', the role '290' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Reception' and 'CompleteDSLPckg_Interface'. From 'CompleteDSLPckg_Reception', the role 'CompleteDSLPckg_Reception294' has cardinality 0..*, and from 'CompleteDSLPckg_Interface', the role 'CompleteDSLPckg_Interface293' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InterfaceRealization' and 'CompleteDSLPckg_BehavioredClassifier'. From 'CompleteDSLPckg_InterfaceRealization', the role '296' has cardinality 0..*, and from 'CompleteDSLPckg_BehavioredClassifier', the role '297' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InterfaceRealization' and 'CompleteDSLPckg_Interface'. From 'CompleteDSLPckg_InterfaceRealization', the role 'CompleteDSLPckg_InterfaceRealization' has cardinality 0..*, and from 'CompleteDSLPckg_Interface', the role 'CompleteDSLPckg_Interface299' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InterfaceRealization' and 'CompleteDSLPckg_BehavioredClassifier'. From 'CompleteDSLPckg_InterfaceRealization', the role '302' has cardinality 0..*, and from 'CompleteDSLPckg_BehavioredClassifier', the role '301' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_BehavioredClassifier' and 'CompleteDSLPckg_Behavior'. From 'CompleteDSLPckg_BehavioredClassifier', the role 'CompleteDSLPckg_BehavioredClassifier' has cardinality 0..*, and from 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior304' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Behavior' and 'CompleteDSLPckg_BehavioredClassifier'. From 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior307' has cardinality 0..*, and from 'CompleteDSLPckg_BehavioredClassifier', the role 'CompleteDSLPckg_BehavioredClassifier306' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_GeneralizationSet' and 'CompleteDSLPckg_Classifier'. From 'CompleteDSLPckg_GeneralizationSet', the role '309' has cardinality 0..*, and from 'CompleteDSLPckg_Classifier', the role '310' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Generalization' and 'CompleteDSLPckg_GeneralizationSet'. From 'CompleteDSLPckg_Generalization', the role '313' has cardinality 0..*, and from 'CompleteDSLPckg_GeneralizationSet', the role '312' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Behavior' and 'CompleteDSLPckg_BehavioredClassifier'. From 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior315' has cardinality 0..*, and from 'CompleteDSLPckg_BehavioredClassifier', the role 'CompleteDSLPckg_BehavioredClassifier316' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Behavior' and 'CompleteDSLPckg_Behavior'. From 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior319' has cardinality 0..*, and from 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior317' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Behavior' and 'CompleteDSLPckg_BehavioralFeature'. From 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior321' has cardinality 0..*, and from 'CompleteDSLPckg_BehavioralFeature', the role 'CompleteDSLPckg_BehavioralFeature322' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Parameter' and 'CompleteDSLPckg_Behavior'. From 'CompleteDSLPckg_Parameter', the role 'CompleteDSLPckg_Parameter325' has cardinality 0..*, and from 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior324' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Constraint' and 'CompleteDSLPckg_Behavior'. From 'CompleteDSLPckg_Constraint', the role 'CompleteDSLPckg_Constraint328' has cardinality 0..*, and from 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior327' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Behavior' and 'CompleteDSLPckg_Constraint'. From 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior330' has cardinality 0..*, and from 'CompleteDSLPckg_Constraint', the role 'CompleteDSLPckg_Constraint331' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Signal' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_Signal', the role 'CompleteDSLPckg_Signal' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property333' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Reception' and 'CompleteDSLPckg_Signal'. From 'CompleteDSLPckg_Reception', the role 'CompleteDSLPckg_Reception335' has cardinality 0..*, and from 'CompleteDSLPckg_Signal', the role 'CompleteDSLPckg_Signal336' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Trigger' and 'CompleteDSLPckg_Event'. From 'CompleteDSLPckg_Trigger', the role 'CompleteDSLPckg_Trigger' has cardinality 0..*, and from 'CompleteDSLPckg_Event', the role 'CompleteDSLPckg_Event' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_SignalEvent' and 'CompleteDSLPckg_Signal'. From 'CompleteDSLPckg_SignalEvent', the role 'CompleteDSLPckg_SignalEvent' has cardinality 0..*, and from 'CompleteDSLPckg_Signal', the role 'CompleteDSLPckg_Signal339' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_CallEvent' and 'CompleteDSLPckg_Operation'. From 'CompleteDSLPckg_CallEvent', the role 'CompleteDSLPckg_CallEvent' has cardinality 0..*, and from 'CompleteDSLPckg_Operation', the role 'CompleteDSLPckg_Operation341' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ValueSpecification' and 'CompleteDSLPckg_ChangeEvent'. From 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification343' has cardinality 0..*, and from 'CompleteDSLPckg_ChangeEvent', the role 'CompleteDSLPckg_ChangeEvent' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_TimeEvent' and 'CompleteDSLPckg_TimeExpression'. From 'CompleteDSLPckg_TimeEvent', the role 'CompleteDSLPckg_TimeEvent' has cardinality 0..*, and from 'CompleteDSLPckg_TimeExpression', the role 'CompleteDSLPckg_TimeExpression' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_TimeExpression' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_TimeExpression', the role 'CompleteDSLPckg_TimeExpression346' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification347' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_TimeExpression' and 'CompleteDSLPckg_Observation'. From 'CompleteDSLPckg_TimeExpression', the role 'CompleteDSLPckg_TimeExpression349' has cardinality 0..*, and from 'CompleteDSLPckg_Observation', the role 'CompleteDSLPckg_Observation' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_NamedElement' and 'CompleteDSLPckg_TimeObservation'. From 'CompleteDSLPckg_NamedElement', the role 'CompleteDSLPckg_NamedElement351' has cardinality 0..*, and from 'CompleteDSLPckg_TimeObservation', the role 'CompleteDSLPckg_TimeObservation' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_NamedElement' and 'CompleteDSLPckg_DurationObservation'. From 'CompleteDSLPckg_NamedElement', the role 'CompleteDSLPckg_NamedElement353' has cardinality 0..*, and from 'CompleteDSLPckg_DurationObservation', the role 'CompleteDSLPckg_DurationObservation' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ValueSpecification' and 'CompleteDSLPckg_Duration'. From 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification355' has cardinality 0..*, and from 'CompleteDSLPckg_Duration', the role 'CompleteDSLPckg_Duration' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Observation' and 'CompleteDSLPckg_Duration'. From 'CompleteDSLPckg_Observation', the role 'CompleteDSLPckg_Observation358' has cardinality 0..*, and from 'CompleteDSLPckg_Duration', the role 'CompleteDSLPckg_Duration357' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ValueSpecification' and 'CompleteDSLPckg_Interval'. From 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification360' has cardinality 0..*, and from 'CompleteDSLPckg_Interval', the role 'CompleteDSLPckg_Interval' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Interval' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_Interval', the role 'CompleteDSLPckg_Interval362' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification363' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_TimeInterval' and 'CompleteDSLPckg_TimeExpression'. From 'CompleteDSLPckg_TimeInterval', the role 'CompleteDSLPckg_TimeInterval' has cardinality 0..*, and from 'CompleteDSLPckg_TimeExpression', the role 'CompleteDSLPckg_TimeExpression365' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_TimeInterval' and 'CompleteDSLPckg_TimeExpression'. From 'CompleteDSLPckg_TimeInterval', the role 'CompleteDSLPckg_TimeInterval367' has cardinality 0..*, and from 'CompleteDSLPckg_TimeExpression', the role 'CompleteDSLPckg_TimeExpression368' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_DurationInterval' and 'CompleteDSLPckg_Duration'. From 'CompleteDSLPckg_DurationInterval', the role 'CompleteDSLPckg_DurationInterval' has cardinality 0..*, and from 'CompleteDSLPckg_Duration', the role 'CompleteDSLPckg_Duration370' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Duration' and 'CompleteDSLPckg_DurationInterval'. From 'CompleteDSLPckg_Duration', the role 'CompleteDSLPckg_Duration373' has cardinality 0..*, and from 'CompleteDSLPckg_DurationInterval', the role 'CompleteDSLPckg_DurationInterval372' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_TimeConstraint' and 'CompleteDSLPckg_TimeInterval'. From 'CompleteDSLPckg_TimeConstraint', the role 'CompleteDSLPckg_TimeConstraint' has cardinality 0..*, and from 'CompleteDSLPckg_TimeInterval', the role 'CompleteDSLPckg_TimeInterval375' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_DurationInterval' and 'CompleteDSLPckg_DurationConstraint'. From 'CompleteDSLPckg_DurationInterval', the role 'CompleteDSLPckg_DurationInterval377' has cardinality 0..*, and from 'CompleteDSLPckg_DurationConstraint', the role 'CompleteDSLPckg_DurationConstraint' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Interface' and 'CompleteDSLPckg_Component'. From 'CompleteDSLPckg_Interface', the role 'CompleteDSLPckg_Interface379' has cardinality 0..*, and from 'CompleteDSLPckg_Component', the role 'CompleteDSLPckg_Component' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Component' and 'CompleteDSLPckg_Interface'. From 'CompleteDSLPckg_Component', the role 'CompleteDSLPckg_Component381' has cardinality 0..*, and from 'CompleteDSLPckg_Interface', the role 'CompleteDSLPckg_Interface382' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ComponentRealization' and 'CompleteDSLPckg_Component'. From 'CompleteDSLPckg_ComponentRealization', the role 'CompleteDSLPckg_ComponentRealization' has cardinality 0..*, and from 'CompleteDSLPckg_Component', the role 'CompleteDSLPckg_Component384' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Component' and 'CompleteDSLPckg_PackageableElement'. From 'CompleteDSLPckg_Component', the role 'CompleteDSLPckg_Component386' has cardinality 0..*, and from 'CompleteDSLPckg_PackageableElement', the role 'CompleteDSLPckg_PackageableElement387' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ComponentRealization' and 'CompleteDSLPckg_Component'. From 'CompleteDSLPckg_ComponentRealization', the role 'CompleteDSLPckg_ComponentRealization389' has cardinality 0..*, and from 'CompleteDSLPckg_Component', the role 'CompleteDSLPckg_Component390' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Classifier' and 'CompleteDSLPckg_ComponentRealization'. From 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier393' has cardinality 0..*, and from 'CompleteDSLPckg_ComponentRealization', the role 'CompleteDSLPckg_ComponentRealization392' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ConnectorEnd' and 'CompleteDSLPckg_Connector'. From 'CompleteDSLPckg_ConnectorEnd', the role 'CompleteDSLPckg_ConnectorEnd' has cardinality 0..*, and from 'CompleteDSLPckg_Connector', the role 'CompleteDSLPckg_Connector' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Behavior' and 'CompleteDSLPckg_Connector'. From 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior397' has cardinality 0..*, and from 'CompleteDSLPckg_Connector', the role 'CompleteDSLPckg_Connector396' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Connector' and 'CompleteDSLPckg_Connector'. From 'CompleteDSLPckg_Connector', the role 'CompleteDSLPckg_Connector400' has cardinality 0..*, and from 'CompleteDSLPckg_Connector', the role 'CompleteDSLPckg_Connector398' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ConnectorEnd' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_ConnectorEnd', the role 'CompleteDSLPckg_ConnectorEnd402' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property403' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ConnectableElement' and 'CompleteDSLPckg_ConnectorEnd'. From 'CompleteDSLPckg_ConnectableElement', the role 'CompleteDSLPckg_ConnectableElement' has cardinality 0..*, and from 'CompleteDSLPckg_ConnectorEnd', the role 'CompleteDSLPckg_ConnectorEnd405' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ConnectorEnd' and 'CompleteDSLPckg_Association'. From 'CompleteDSLPckg_ConnectorEnd', the role 'CompleteDSLPckg_ConnectorEnd407' has cardinality 0..*, and from 'CompleteDSLPckg_Association', the role 'CompleteDSLPckg_Association408' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Property' and 'CompleteDSLPckg_ConnectorEnd'. From 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property411' has cardinality 0..*, and from 'CompleteDSLPckg_ConnectorEnd', the role 'CompleteDSLPckg_ConnectorEnd410' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ConnectableElement' and 'CompleteDSLPckg_ConnectorEnd'. From 'CompleteDSLPckg_ConnectableElement', the role 'CompleteDSLPckg_ConnectableElement413' has cardinality 0..*, and from 'CompleteDSLPckg_ConnectorEnd', the role 'CompleteDSLPckg_ConnectorEnd414' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_StructuredClassifier' and 'CompleteDSLPckg_Connector'. From 'CompleteDSLPckg_StructuredClassifier', the role 'CompleteDSLPckg_StructuredClassifier' has cardinality 0..*, and from 'CompleteDSLPckg_Connector', the role 'CompleteDSLPckg_Connector416' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_StructuredClassifier' and 'CompleteDSLPckg_ConnectableElement'. From 'CompleteDSLPckg_StructuredClassifier', the role 'CompleteDSLPckg_StructuredClassifier418' has cardinality 0..*, and from 'CompleteDSLPckg_ConnectableElement', the role 'CompleteDSLPckg_ConnectableElement419' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Property' and 'CompleteDSLPckg_StructuredClassifier'. From 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property422' has cardinality 0..*, and from 'CompleteDSLPckg_StructuredClassifier', the role 'CompleteDSLPckg_StructuredClassifier421' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Property' and 'CompleteDSLPckg_StructuredClassifier'. From 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property425' has cardinality 0..*, and from 'CompleteDSLPckg_StructuredClassifier', the role 'CompleteDSLPckg_StructuredClassifier424' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Port' and 'CompleteDSLPckg_Interface'. From 'CompleteDSLPckg_Port', the role 'CompleteDSLPckg_Port' has cardinality 0..*, and from 'CompleteDSLPckg_Interface', the role 'CompleteDSLPckg_Interface427' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Port' and 'CompleteDSLPckg_Interface'. From 'CompleteDSLPckg_Port', the role 'CompleteDSLPckg_Port429' has cardinality 0..*, and from 'CompleteDSLPckg_Interface', the role 'CompleteDSLPckg_Interface430' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Port' and 'CompleteDSLPckg_Port'. From 'CompleteDSLPckg_Port', the role 'CompleteDSLPckg_Port431' has cardinality 0..*, and from 'CompleteDSLPckg_Port', the role 'CompleteDSLPckg_Port433' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_EncapsulatedClassifier' and 'CompleteDSLPckg_Port'. From 'CompleteDSLPckg_EncapsulatedClassifier', the role 'CompleteDSLPckg_EncapsulatedClassifier' has cardinality 0..*, and from 'CompleteDSLPckg_Port', the role 'CompleteDSLPckg_Port435' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Collaboration' and 'CompleteDSLPckg_ConnectableElement'. From 'CompleteDSLPckg_Collaboration', the role 'CompleteDSLPckg_Collaboration' has cardinality 0..*, and from 'CompleteDSLPckg_ConnectableElement', the role 'CompleteDSLPckg_ConnectableElement437' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_CollaborationUse' and 'CompleteDSLPckg_Collaboration'. From 'CompleteDSLPckg_CollaborationUse', the role 'CompleteDSLPckg_CollaborationUse439' has cardinality 0..*, and from 'CompleteDSLPckg_Collaboration', the role 'CompleteDSLPckg_Collaboration440' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Dependency' and 'CompleteDSLPckg_CollaborationUse'. From 'CompleteDSLPckg_Dependency', the role 'CompleteDSLPckg_Dependency443' has cardinality 0..*, and from 'CompleteDSLPckg_CollaborationUse', the role 'CompleteDSLPckg_CollaborationUse442' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Port' and 'CompleteDSLPckg_InvocationAction'. From 'CompleteDSLPckg_Port', the role 'CompleteDSLPckg_Port445' has cardinality 0..*, and from 'CompleteDSLPckg_InvocationAction', the role 'CompleteDSLPckg_InvocationAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Operation' and 'CompleteDSLPckg_Artifact'. From 'CompleteDSLPckg_Operation', the role 'CompleteDSLPckg_Operation447' has cardinality 0..*, and from 'CompleteDSLPckg_Artifact', the role 'CompleteDSLPckg_Artifact' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Artifact' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_Artifact', the role 'CompleteDSLPckg_Artifact449' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property450' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Artifact' and 'CompleteDSLPckg_Artifact'. From 'CompleteDSLPckg_Artifact', the role 'CompleteDSLPckg_Artifact453' has cardinality 0..*, and from 'CompleteDSLPckg_Artifact', the role 'CompleteDSLPckg_Artifact451' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Artifact' and 'CompleteDSLPckg_Manifestation'. From 'CompleteDSLPckg_Artifact', the role 'CompleteDSLPckg_Artifact455' has cardinality 0..*, and from 'CompleteDSLPckg_Manifestation', the role 'CompleteDSLPckg_Manifestation' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Manifestation' and 'CompleteDSLPckg_PackageableElement'. From 'CompleteDSLPckg_Manifestation', the role 'CompleteDSLPckg_Manifestation457' has cardinality 0..*, and from 'CompleteDSLPckg_PackageableElement', the role 'CompleteDSLPckg_PackageableElement458' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Node' and 'CompleteDSLPckg_Node'. From 'CompleteDSLPckg_Node', the role 'CompleteDSLPckg_Node' has cardinality 0..*, and from 'CompleteDSLPckg_Node', the role 'CompleteDSLPckg_Node459' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_DeploymentTarget' and 'CompleteDSLPckg_PackageableElement'. From 'CompleteDSLPckg_DeploymentTarget', the role 'CompleteDSLPckg_DeploymentTarget' has cardinality 0..*, and from 'CompleteDSLPckg_PackageableElement', the role 'CompleteDSLPckg_PackageableElement462' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Deployment' and 'CompleteDSLPckg_DeploymentTarget'. From 'CompleteDSLPckg_Deployment', the role 'CompleteDSLPckg_Deployment' has cardinality 0..*, and from 'CompleteDSLPckg_DeploymentTarget', the role 'CompleteDSLPckg_DeploymentTarget464' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_DeploymentTarget' and 'CompleteDSLPckg_Deployment'. From 'CompleteDSLPckg_DeploymentTarget', the role 'CompleteDSLPckg_DeploymentTarget467' has cardinality 0..*, and from 'CompleteDSLPckg_Deployment', the role 'CompleteDSLPckg_Deployment466' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Deployment' and 'CompleteDSLPckg_DeployedArtifact'. From 'CompleteDSLPckg_Deployment', the role 'CompleteDSLPckg_Deployment469' has cardinality 0..*, and from 'CompleteDSLPckg_DeployedArtifact', the role 'CompleteDSLPckg_DeployedArtifact' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Deployment' and 'CompleteDSLPckg_DeploymentSpecification'. From 'CompleteDSLPckg_Deployment', the role 'CompleteDSLPckg_Deployment471' has cardinality 0..*, and from 'CompleteDSLPckg_DeploymentSpecification', the role 'CompleteDSLPckg_DeploymentSpecification' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Deployment' and 'CompleteDSLPckg_DeploymentSpecification'. From 'CompleteDSLPckg_Deployment', the role 'CompleteDSLPckg_Deployment474' has cardinality 0..*, and from 'CompleteDSLPckg_DeploymentSpecification', the role 'CompleteDSLPckg_DeploymentSpecification473' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Classifier' and 'CompleteDSLPckg_Action'. From 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier476' has cardinality 0..*, and from 'CompleteDSLPckg_Action', the role 'CompleteDSLPckg_Action' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InputPin' and 'CompleteDSLPckg_Action'. From 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin' has cardinality 0..*, and from 'CompleteDSLPckg_Action', the role 'CompleteDSLPckg_Action478' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Action' and 'CompleteDSLPckg_OutputPin'. From 'CompleteDSLPckg_Action', the role 'CompleteDSLPckg_Action480' has cardinality 0..*, and from 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InputPin' and 'CompleteDSLPckg_OpaqueAction'. From 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin482' has cardinality 0..*, and from 'CompleteDSLPckg_OpaqueAction', the role 'CompleteDSLPckg_OpaqueAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OutputPin' and 'CompleteDSLPckg_OpaqueAction'. From 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin485' has cardinality 0..*, and from 'CompleteDSLPckg_OpaqueAction', the role 'CompleteDSLPckg_OpaqueAction484' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ValueSpecification' and 'CompleteDSLPckg_ValuePin'. From 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification487' has cardinality 0..*, and from 'CompleteDSLPckg_ValuePin', the role 'CompleteDSLPckg_ValuePin' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OutputPin' and 'CompleteDSLPckg_CallAction'. From 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin489' has cardinality 0..*, and from 'CompleteDSLPckg_CallAction', the role 'CompleteDSLPckg_CallAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_CallBehaviorAction' and 'CompleteDSLPckg_Behavior'. From 'CompleteDSLPckg_CallBehaviorAction', the role 'CompleteDSLPckg_CallBehaviorAction' has cardinality 0..*, and from 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior491' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_CallOperationAction' and 'CompleteDSLPckg_Operation'. From 'CompleteDSLPckg_CallOperationAction', the role 'CompleteDSLPckg_CallOperationAction' has cardinality 0..*, and from 'CompleteDSLPckg_Operation', the role 'CompleteDSLPckg_Operation493' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_CallOperationAction' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_CallOperationAction', the role 'CompleteDSLPckg_CallOperationAction495' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin496' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InputPin' and 'CompleteDSLPckg_SendSignalAction'. From 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin498' has cardinality 0..*, and from 'CompleteDSLPckg_SendSignalAction', the role 'CompleteDSLPckg_SendSignalAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Signal' and 'CompleteDSLPckg_SendSignalAction'. From 'CompleteDSLPckg_Signal', the role 'CompleteDSLPckg_Signal501' has cardinality 0..*, and from 'CompleteDSLPckg_SendSignalAction', the role 'CompleteDSLPckg_SendSignalAction500' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_BroadcastSignalAction' and 'CompleteDSLPckg_Signal'. From 'CompleteDSLPckg_BroadcastSignalAction', the role 'CompleteDSLPckg_BroadcastSignalAction' has cardinality 0..*, and from 'CompleteDSLPckg_Signal', the role 'CompleteDSLPckg_Signal503' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_SendObjectAction' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_SendObjectAction', the role 'CompleteDSLPckg_SendObjectAction' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin505' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_SendObjectAction' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_SendObjectAction', the role 'CompleteDSLPckg_SendObjectAction507' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin508' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Classifier' and 'CompleteDSLPckg_CreateObjectAction'. From 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier510' has cardinality 0..*, and from 'CompleteDSLPckg_CreateObjectAction', the role 'CompleteDSLPckg_CreateObjectAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OutputPin' and 'CompleteDSLPckg_CreateObjectAction'. From 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin513' has cardinality 0..*, and from 'CompleteDSLPckg_CreateObjectAction', the role 'CompleteDSLPckg_CreateObjectAction512' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InputPin' and 'CompleteDSLPckg_DestroyObjectAction'. From 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin515' has cardinality 0..*, and from 'CompleteDSLPckg_DestroyObjectAction', the role 'CompleteDSLPckg_DestroyObjectAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_TestIdentityAction' and 'CompleteDSLPckg_OutputPin'. From 'CompleteDSLPckg_TestIdentityAction', the role 'CompleteDSLPckg_TestIdentityAction' has cardinality 0..*, and from 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin517' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_TestIdentityAction' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_TestIdentityAction', the role 'CompleteDSLPckg_TestIdentityAction519' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin520' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InputPin' and 'CompleteDSLPckg_TestIdentityAction'. From 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin523' has cardinality 0..*, and from 'CompleteDSLPckg_TestIdentityAction', the role 'CompleteDSLPckg_TestIdentityAction522' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OutputPin' and 'CompleteDSLPckg_ReadSelfAction'. From 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin525' has cardinality 0..*, and from 'CompleteDSLPckg_ReadSelfAction', the role 'CompleteDSLPckg_ReadSelfAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ValueSpecificationAction' and 'CompleteDSLPckg_OutputPin'. From 'CompleteDSLPckg_ValueSpecificationAction', the role 'CompleteDSLPckg_ValueSpecificationAction' has cardinality 0..*, and from 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin527' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ValueSpecificationAction' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_ValueSpecificationAction', the role 'CompleteDSLPckg_ValueSpecificationAction529' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification530' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_StructuralFeatureAction' and 'CompleteDSLPckg_StructuralFeature'. From 'CompleteDSLPckg_StructuralFeatureAction', the role 'CompleteDSLPckg_StructuralFeatureAction' has cardinality 0..*, and from 'CompleteDSLPckg_StructuralFeature', the role 'CompleteDSLPckg_StructuralFeature532' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_StructuralFeatureAction' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_StructuralFeatureAction', the role 'CompleteDSLPckg_StructuralFeatureAction534' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin535' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OutputPin' and 'CompleteDSLPckg_ReadStructuralFeatureAction'. From 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin537' has cardinality 0..*, and from 'CompleteDSLPckg_ReadStructuralFeatureAction', the role 'CompleteDSLPckg_ReadStructuralFeatureAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_WriteStructuralFeatureAction' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_WriteStructuralFeatureAction', the role 'CompleteDSLPckg_WriteStructuralFeatureAction' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin539' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OutputPin' and 'CompleteDSLPckg_WriteStructuralFeatureAction'. From 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin542' has cardinality 0..*, and from 'CompleteDSLPckg_WriteStructuralFeatureAction', the role 'CompleteDSLPckg_WriteStructuralFeatureAction541' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InputPin' and 'CompleteDSLPckg_AddStructuralFeatureValueAction'. From 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin544' has cardinality 0..*, and from 'CompleteDSLPckg_AddStructuralFeatureValueAction', the role 'CompleteDSLPckg_AddStructuralFeatureValueAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_RemoveStructuralFeatureValueAction' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_RemoveStructuralFeatureValueAction', the role 'CompleteDSLPckg_RemoveStructuralFeatureValueAction' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin546' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ClearStructuralFeatureAction' and 'CompleteDSLPckg_OutputPin'. From 'CompleteDSLPckg_ClearStructuralFeatureAction', the role 'CompleteDSLPckg_ClearStructuralFeatureAction' has cardinality 0..*, and from 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin548' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_LinkAction' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_LinkAction', the role 'CompleteDSLPckg_LinkAction' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin550' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_LinkEndData' and 'CompleteDSLPckg_LinkAction'. From 'CompleteDSLPckg_LinkEndData', the role 'CompleteDSLPckg_LinkEndData' has cardinality 0..*, and from 'CompleteDSLPckg_LinkAction', the role 'CompleteDSLPckg_LinkAction552' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InputPin' and 'CompleteDSLPckg_LinkEndData'. From 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin555' has cardinality 0..*, and from 'CompleteDSLPckg_LinkEndData', the role 'CompleteDSLPckg_LinkEndData554' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Property' and 'CompleteDSLPckg_LinkEndData'. From 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property558' has cardinality 0..*, and from 'CompleteDSLPckg_LinkEndData', the role 'CompleteDSLPckg_LinkEndData557' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_LinkEndData' and 'CompleteDSLPckg_QualifierValue'. From 'CompleteDSLPckg_LinkEndData', the role 'CompleteDSLPckg_LinkEndData560' has cardinality 0..*, and from 'CompleteDSLPckg_QualifierValue', the role 'CompleteDSLPckg_QualifierValue' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ReadLinkAction' and 'CompleteDSLPckg_OutputPin'. From 'CompleteDSLPckg_ReadLinkAction', the role 'CompleteDSLPckg_ReadLinkAction' has cardinality 0..*, and from 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin562' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InputPin' and 'CompleteDSLPckg_LinkEndCreationData'. From 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin564' has cardinality 0..*, and from 'CompleteDSLPckg_LinkEndCreationData', the role 'CompleteDSLPckg_LinkEndCreationData' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_LinkEndDestructionData' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_LinkEndDestructionData', the role 'CompleteDSLPckg_LinkEndDestructionData' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin566' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InputPin' and 'CompleteDSLPckg_ReplyAction'. From 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin568' has cardinality 0..*, and from 'CompleteDSLPckg_ReplyAction', the role 'CompleteDSLPckg_ReplyAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ReplyAction' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_ReplyAction', the role 'CompleteDSLPckg_ReplyAction570' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin571' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ReplyAction' and 'CompleteDSLPckg_Trigger'. From 'CompleteDSLPckg_ReplyAction', the role 'CompleteDSLPckg_ReplyAction573' has cardinality 0..*, and from 'CompleteDSLPckg_Trigger', the role 'CompleteDSLPckg_Trigger574' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_UnmarshallAction' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_UnmarshallAction', the role 'CompleteDSLPckg_UnmarshallAction' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin576' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_UnmarshallAction' and 'CompleteDSLPckg_Classifier'. From 'CompleteDSLPckg_UnmarshallAction', the role 'CompleteDSLPckg_UnmarshallAction578' has cardinality 0..*, and from 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier579' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_UnmarshallAction' and 'CompleteDSLPckg_OutputPin'. From 'CompleteDSLPckg_UnmarshallAction', the role 'CompleteDSLPckg_UnmarshallAction581' has cardinality 0..*, and from 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin582' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OutputPin' and 'CompleteDSLPckg_AcceptEventAction'. From 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin584' has cardinality 0..*, and from 'CompleteDSLPckg_AcceptEventAction', the role 'CompleteDSLPckg_AcceptEventAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_AcceptEventAction' and 'CompleteDSLPckg_Trigger'. From 'CompleteDSLPckg_AcceptEventAction', the role 'CompleteDSLPckg_AcceptEventAction586' has cardinality 0..*, and from 'CompleteDSLPckg_Trigger', the role 'CompleteDSLPckg_Trigger587' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OutputPin' and 'CompleteDSLPckg_AcceptCallAction'. From 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin589' has cardinality 0..*, and from 'CompleteDSLPckg_AcceptCallAction', the role 'CompleteDSLPckg_AcceptCallAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OutputPin' and 'CompleteDSLPckg_ReadExtendAction'. From 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin591' has cardinality 0..*, and from 'CompleteDSLPckg_ReadExtendAction', the role 'CompleteDSLPckg_ReadExtendAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Classifier' and 'CompleteDSLPckg_ReadExtendAction'. From 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier594' has cardinality 0..*, and from 'CompleteDSLPckg_ReadExtendAction', the role 'CompleteDSLPckg_ReadExtendAction593' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InputPin' and 'CompleteDSLPckg_ReclassifyObjectAction'. From 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin596' has cardinality 0..*, and from 'CompleteDSLPckg_ReclassifyObjectAction', the role 'CompleteDSLPckg_ReclassifyObjectAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Classifier' and 'CompleteDSLPckg_ReclassifyObjectAction'. From 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier599' has cardinality 0..*, and from 'CompleteDSLPckg_ReclassifyObjectAction', the role 'CompleteDSLPckg_ReclassifyObjectAction598' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Classifier' and 'CompleteDSLPckg_ReclassifyObjectAction'. From 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier602' has cardinality 0..*, and from 'CompleteDSLPckg_ReclassifyObjectAction', the role 'CompleteDSLPckg_ReclassifyObjectAction601' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ReadlsClassifiedObjectAction' and 'CompleteDSLPckg_OutputPin'. From 'CompleteDSLPckg_ReadlsClassifiedObjectAction', the role 'CompleteDSLPckg_ReadlsClassifiedObjectAction' has cardinality 0..*, and from 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin604' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InputPin' and 'CompleteDSLPckg_ReadlsClassifiedObjectAction'. From 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin607' has cardinality 0..*, and from 'CompleteDSLPckg_ReadlsClassifiedObjectAction', the role 'CompleteDSLPckg_ReadlsClassifiedObjectAction606' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_StartClassifierBehaviorAction' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_StartClassifierBehaviorAction', the role 'CompleteDSLPckg_StartClassifierBehaviorAction' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin609' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_StartObjectBehaviorAction' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_StartObjectBehaviorAction', the role 'CompleteDSLPckg_StartObjectBehaviorAction' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin611' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_QualifierValue' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_QualifierValue', the role 'CompleteDSLPckg_QualifierValue613' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property614' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_QualifierValue' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_QualifierValue', the role 'CompleteDSLPckg_QualifierValue616' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin617' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ReadLinkObjectEndAction' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_ReadLinkObjectEndAction', the role 'CompleteDSLPckg_ReadLinkObjectEndAction' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property619' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ReadLinkObjectEndAction' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_ReadLinkObjectEndAction', the role 'CompleteDSLPckg_ReadLinkObjectEndAction621' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin622' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ReadLinkObjectEndAction' and 'CompleteDSLPckg_OutputPin'. From 'CompleteDSLPckg_ReadLinkObjectEndAction', the role 'CompleteDSLPckg_ReadLinkObjectEndAction624' has cardinality 0..*, and from 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin625' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InputPin' and 'CompleteDSLPckg_ReadLinkObjectEndQualifierAction'. From 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin627' has cardinality 0..*, and from 'CompleteDSLPckg_ReadLinkObjectEndQualifierAction', the role 'CompleteDSLPckg_ReadLinkObjectEndQualifierAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OutputPin' and 'CompleteDSLPckg_ReadLinkObjectEndQualifierAction'. From 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin630' has cardinality 0..*, and from 'CompleteDSLPckg_ReadLinkObjectEndQualifierAction', the role 'CompleteDSLPckg_ReadLinkObjectEndQualifierAction629' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ReadLinkObjectEndQualifierAction' and 'CompleteDSLPckg_Property'. From 'CompleteDSLPckg_ReadLinkObjectEndQualifierAction', the role 'CompleteDSLPckg_ReadLinkObjectEndQualifierAction632' has cardinality 0..*, and from 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property633' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OutputPin' and 'CompleteDSLPckg_CreateLinkObjectAction'. From 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin635' has cardinality 0..*, and from 'CompleteDSLPckg_CreateLinkObjectAction', the role 'CompleteDSLPckg_CreateLinkObjectAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ReduceAction' and 'CompleteDSLPckg_OutputPin'. From 'CompleteDSLPckg_ReduceAction', the role 'CompleteDSLPckg_ReduceAction' has cardinality 0..*, and from 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin637' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InputPin' and 'CompleteDSLPckg_ReduceAction'. From 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin640' has cardinality 0..*, and from 'CompleteDSLPckg_ReduceAction', the role 'CompleteDSLPckg_ReduceAction639' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ReduceAction' and 'CompleteDSLPckg_Behavior'. From 'CompleteDSLPckg_ReduceAction', the role 'CompleteDSLPckg_ReduceAction642' has cardinality 0..*, and from 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior643' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_VariableAction' and 'CompleteDSLPckg_Variable'. From 'CompleteDSLPckg_VariableAction', the role 'CompleteDSLPckg_VariableAction' has cardinality 0..*, and from 'CompleteDSLPckg_Variable', the role 'CompleteDSLPckg_Variable' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OutputPin' and 'CompleteDSLPckg_ReadVariableAction'. From 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin646' has cardinality 0..*, and from 'CompleteDSLPckg_ReadVariableAction', the role 'CompleteDSLPckg_ReadVariableAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_WriteVariableAction' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_WriteVariableAction', the role 'CompleteDSLPckg_WriteVariableAction' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin648' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InputPin' and 'CompleteDSLPckg_AddVariableValueAction'. From 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin650' has cardinality 0..*, and from 'CompleteDSLPckg_AddVariableValueAction', the role 'CompleteDSLPckg_AddVariableValueAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InputPin' and 'CompleteDSLPckg_RemoveVariableValueAction'. From 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin652' has cardinality 0..*, and from 'CompleteDSLPckg_RemoveVariableValueAction', the role 'CompleteDSLPckg_RemoveVariableValueAction' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_RaiseExceptionAction' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_RaiseExceptionAction', the role 'CompleteDSLPckg_RaiseExceptionAction' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin654' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Action' and 'CompleteDSLPckg_ActionInputPin'. From 'CompleteDSLPckg_Action', the role 'CompleteDSLPckg_Action656' has cardinality 0..*, and from 'CompleteDSLPckg_ActionInputPin', the role 'CompleteDSLPckg_ActionInputPin' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Region' and 'CompleteDSLPckg_StateMachine'. From 'CompleteDSLPckg_Region', the role 'CompleteDSLPckg_Region' has cardinality 0..*, and from 'CompleteDSLPckg_StateMachine', the role 'CompleteDSLPckg_StateMachine' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Pseudostate' and 'CompleteDSLPckg_StateMachine'. From 'CompleteDSLPckg_Pseudostate', the role 'CompleteDSLPckg_Pseudostate' has cardinality 0..*, and from 'CompleteDSLPckg_StateMachine', the role 'CompleteDSLPckg_StateMachine659' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_StateMachine' and 'CompleteDSLPckg_State'. From 'CompleteDSLPckg_StateMachine', the role 'CompleteDSLPckg_StateMachine661' has cardinality 0..*, and from 'CompleteDSLPckg_State', the role 'CompleteDSLPckg_State' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_StateMachine' and 'CompleteDSLPckg_StateMachine'. From 'CompleteDSLPckg_StateMachine', the role 'CompleteDSLPckg_StateMachine664' has cardinality 0..*, and from 'CompleteDSLPckg_StateMachine', the role 'CompleteDSLPckg_StateMachine662' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Vertex' and 'CompleteDSLPckg_Region'. From 'CompleteDSLPckg_Vertex', the role 'CompleteDSLPckg_Vertex' has cardinality 0..*, and from 'CompleteDSLPckg_Region', the role 'CompleteDSLPckg_Region666' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Region' and 'CompleteDSLPckg_StateMachine'. From 'CompleteDSLPckg_Region', the role 'CompleteDSLPckg_Region668' has cardinality 0..*, and from 'CompleteDSLPckg_StateMachine', the role 'CompleteDSLPckg_StateMachine669' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Region' and 'CompleteDSLPckg_Transition'. From 'CompleteDSLPckg_Region', the role 'CompleteDSLPckg_Region671' has cardinality 0..*, and from 'CompleteDSLPckg_Transition', the role 'CompleteDSLPckg_Transition' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Region' and 'CompleteDSLPckg_State'. From 'CompleteDSLPckg_Region', the role 'CompleteDSLPckg_Region673' has cardinality 0..*, and from 'CompleteDSLPckg_State', the role 'CompleteDSLPckg_State674' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Region' and 'CompleteDSLPckg_Region'. From 'CompleteDSLPckg_Region', the role 'CompleteDSLPckg_Region675' has cardinality 0..*, and from 'CompleteDSLPckg_Region', the role 'CompleteDSLPckg_Region677' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Vertex' and 'CompleteDSLPckg_Transition'. From 'CompleteDSLPckg_Vertex', the role 'CompleteDSLPckg_Vertex679' has cardinality 0..*, and from 'CompleteDSLPckg_Transition', the role 'CompleteDSLPckg_Transition680' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Vertex' and 'CompleteDSLPckg_Transition'. From 'CompleteDSLPckg_Vertex', the role 'CompleteDSLPckg_Vertex682' has cardinality 0..*, and from 'CompleteDSLPckg_Transition', the role 'CompleteDSLPckg_Transition683' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Region' and 'CompleteDSLPckg_Vertex'. From 'CompleteDSLPckg_Region', the role 'CompleteDSLPckg_Region686' has cardinality 0..*, and from 'CompleteDSLPckg_Vertex', the role 'CompleteDSLPckg_Vertex685' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Transition' and 'CompleteDSLPckg_Vertex'. From 'CompleteDSLPckg_Transition', the role 'CompleteDSLPckg_Transition688' has cardinality 0..*, and from 'CompleteDSLPckg_Vertex', the role 'CompleteDSLPckg_Vertex689' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Vertex' and 'CompleteDSLPckg_Transition'. From 'CompleteDSLPckg_Vertex', the role 'CompleteDSLPckg_Vertex692' has cardinality 0..*, and from 'CompleteDSLPckg_Transition', the role 'CompleteDSLPckg_Transition691' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Transition' and 'CompleteDSLPckg_Behavior'. From 'CompleteDSLPckg_Transition', the role 'CompleteDSLPckg_Transition694' has cardinality 0..*, and from 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior695' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Transition' and 'CompleteDSLPckg_Trigger'. From 'CompleteDSLPckg_Transition', the role 'CompleteDSLPckg_Transition697' has cardinality 0..*, and from 'CompleteDSLPckg_Trigger', the role 'CompleteDSLPckg_Trigger698' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Transition' and 'CompleteDSLPckg_Constraint'. From 'CompleteDSLPckg_Transition', the role 'CompleteDSLPckg_Transition700' has cardinality 0..*, and from 'CompleteDSLPckg_Constraint', the role 'CompleteDSLPckg_Constraint701' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Region' and 'CompleteDSLPckg_Transition'. From 'CompleteDSLPckg_Region', the role 'CompleteDSLPckg_Region704' has cardinality 0..*, and from 'CompleteDSLPckg_Transition', the role 'CompleteDSLPckg_Transition703' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Transition' and 'CompleteDSLPckg_Transition'. From 'CompleteDSLPckg_Transition', the role 'CompleteDSLPckg_Transition705' has cardinality 0..*, and from 'CompleteDSLPckg_Transition', the role 'CompleteDSLPckg_Transition707' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Pseudostate' and 'CompleteDSLPckg_State'. From 'CompleteDSLPckg_Pseudostate', the role 'CompleteDSLPckg_Pseudostate709' has cardinality 0..*, and from 'CompleteDSLPckg_State', the role 'CompleteDSLPckg_State710' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Pseudostate' and 'CompleteDSLPckg_ConnectionPointReference'. From 'CompleteDSLPckg_Pseudostate', the role 'CompleteDSLPckg_Pseudostate712' has cardinality 0..*, and from 'CompleteDSLPckg_ConnectionPointReference', the role 'CompleteDSLPckg_ConnectionPointReference' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Pseudostate' and 'CompleteDSLPckg_ConnectionPointReference'. From 'CompleteDSLPckg_Pseudostate', the role 'CompleteDSLPckg_Pseudostate715' has cardinality 0..*, and from 'CompleteDSLPckg_ConnectionPointReference', the role 'CompleteDSLPckg_ConnectionPointReference714' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ConnectionPointReference' and 'CompleteDSLPckg_State'. From 'CompleteDSLPckg_ConnectionPointReference', the role 'CompleteDSLPckg_ConnectionPointReference717' has cardinality 0..*, and from 'CompleteDSLPckg_State', the role 'CompleteDSLPckg_State718' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ConnectionPointReference' and 'CompleteDSLPckg_State'. From 'CompleteDSLPckg_ConnectionPointReference', the role 'CompleteDSLPckg_ConnectionPointReference721' has cardinality 0..*, and from 'CompleteDSLPckg_State', the role 'CompleteDSLPckg_State720' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_State' and 'CompleteDSLPckg_Pseudostate'. From 'CompleteDSLPckg_State', the role 'CompleteDSLPckg_State723' has cardinality 0..*, and from 'CompleteDSLPckg_Pseudostate', the role 'CompleteDSLPckg_Pseudostate724' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_StateMachine' and 'CompleteDSLPckg_State'. From 'CompleteDSLPckg_StateMachine', the role 'CompleteDSLPckg_StateMachine727' has cardinality 0..*, and from 'CompleteDSLPckg_State', the role 'CompleteDSLPckg_State726' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_State' and 'CompleteDSLPckg_Region'. From 'CompleteDSLPckg_State', the role 'CompleteDSLPckg_State729' has cardinality 0..*, and from 'CompleteDSLPckg_Region', the role 'CompleteDSLPckg_Region730' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_State' and 'CompleteDSLPckg_Trigger'. From 'CompleteDSLPckg_State', the role 'CompleteDSLPckg_State732' has cardinality 0..*, and from 'CompleteDSLPckg_Trigger', the role 'CompleteDSLPckg_Trigger733' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_State' and 'CompleteDSLPckg_Behavior'. From 'CompleteDSLPckg_State', the role 'CompleteDSLPckg_State735' has cardinality 0..*, and from 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior736' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_State' and 'CompleteDSLPckg_Behavior'. From 'CompleteDSLPckg_State', the role 'CompleteDSLPckg_State738' has cardinality 0..*, and from 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior739' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_State' and 'CompleteDSLPckg_Behavior'. From 'CompleteDSLPckg_State', the role 'CompleteDSLPckg_State741' has cardinality 0..*, and from 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior742' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Constraint' and 'CompleteDSLPckg_State'. From 'CompleteDSLPckg_Constraint', the role 'CompleteDSLPckg_Constraint745' has cardinality 0..*, and from 'CompleteDSLPckg_State', the role 'CompleteDSLPckg_State744' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_State' and 'CompleteDSLPckg_State'. From 'CompleteDSLPckg_State', the role 'CompleteDSLPckg_State748' has cardinality 0..*, and from 'CompleteDSLPckg_State', the role 'CompleteDSLPckg_State746' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ProtocolConformance' and 'CompleteDSLPckg_ProtocolStateMachine'. From 'CompleteDSLPckg_ProtocolConformance', the role 'CompleteDSLPckg_ProtocolConformance' has cardinality 0..*, and from 'CompleteDSLPckg_ProtocolStateMachine', the role 'CompleteDSLPckg_ProtocolStateMachine' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ProtocolStateMachine' and 'CompleteDSLPckg_ProtocolConformance'. From 'CompleteDSLPckg_ProtocolStateMachine', the role 'CompleteDSLPckg_ProtocolStateMachine752' has cardinality 0..*, and from 'CompleteDSLPckg_ProtocolConformance', the role 'CompleteDSLPckg_ProtocolConformance751' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ProtocolStateMachine' and 'CompleteDSLPckg_ProtocolConformance'. From 'CompleteDSLPckg_ProtocolStateMachine', the role 'CompleteDSLPckg_ProtocolStateMachine755' has cardinality 0..*, and from 'CompleteDSLPckg_ProtocolConformance', the role 'CompleteDSLPckg_ProtocolConformance754' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Constraint' and 'CompleteDSLPckg_ProtocolTransition'. From 'CompleteDSLPckg_Constraint', the role 'CompleteDSLPckg_Constraint757' has cardinality 0..*, and from 'CompleteDSLPckg_ProtocolTransition', the role 'CompleteDSLPckg_ProtocolTransition' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Constraint' and 'CompleteDSLPckg_ProtocolTransition'. From 'CompleteDSLPckg_Constraint', the role 'CompleteDSLPckg_Constraint760' has cardinality 0..*, and from 'CompleteDSLPckg_ProtocolTransition', the role 'CompleteDSLPckg_ProtocolTransition759' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ProtocolTransition' and 'CompleteDSLPckg_Operation'. From 'CompleteDSLPckg_ProtocolTransition', the role 'CompleteDSLPckg_ProtocolTransition762' has cardinality 0..*, and from 'CompleteDSLPckg_Operation', the role 'CompleteDSLPckg_Operation763' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Activity' and 'CompleteDSLPckg_ActivityNode'. From 'CompleteDSLPckg_Activity', the role 'CompleteDSLPckg_Activity' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityNode', the role 'CompleteDSLPckg_ActivityNode' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Activity' and 'CompleteDSLPckg_ActivityGroup'. From 'CompleteDSLPckg_Activity', the role 'CompleteDSLPckg_Activity766' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityGroup', the role 'CompleteDSLPckg_ActivityGroup' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityEdge' and 'CompleteDSLPckg_Activity'. From 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge' has cardinality 0..*, and from 'CompleteDSLPckg_Activity', the role 'CompleteDSLPckg_Activity768' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Activity' and 'CompleteDSLPckg_ActivityPartition'. From 'CompleteDSLPckg_Activity', the role 'CompleteDSLPckg_Activity770' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityPartition', the role 'CompleteDSLPckg_ActivityPartition' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Activity' and 'CompleteDSLPckg_StructuredActivityNode'. From 'CompleteDSLPckg_Activity', the role 'CompleteDSLPckg_Activity772' has cardinality 0..*, and from 'CompleteDSLPckg_StructuredActivityNode', the role 'CompleteDSLPckg_StructuredActivityNode' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Activity' and 'CompleteDSLPckg_Variable'. From 'CompleteDSLPckg_Activity', the role 'CompleteDSLPckg_Activity774' has cardinality 0..*, and from 'CompleteDSLPckg_Variable', the role 'CompleteDSLPckg_Variable775' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityNode' and 'CompleteDSLPckg_ActivityGroup'. From 'CompleteDSLPckg_ActivityNode', the role 'CompleteDSLPckg_ActivityNode777' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityGroup', the role 'CompleteDSLPckg_ActivityGroup778' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityNode' and 'CompleteDSLPckg_ActivityNode'. From 'CompleteDSLPckg_ActivityNode', the role 'CompleteDSLPckg_ActivityNode779' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityNode', the role 'CompleteDSLPckg_ActivityNode781' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityEdge' and 'CompleteDSLPckg_ActivityNode'. From 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge784' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityNode', the role 'CompleteDSLPckg_ActivityNode783' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityNode' and 'CompleteDSLPckg_ActivityEdge'. From 'CompleteDSLPckg_ActivityNode', the role 'CompleteDSLPckg_ActivityNode786' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge787' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityPartition' and 'CompleteDSLPckg_ActivityNode'. From 'CompleteDSLPckg_ActivityPartition', the role 'CompleteDSLPckg_ActivityPartition790' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityNode', the role 'CompleteDSLPckg_ActivityNode789' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InterruptibleActivityRegion' and 'CompleteDSLPckg_ActivityNode'. From 'CompleteDSLPckg_InterruptibleActivityRegion', the role 'CompleteDSLPckg_InterruptibleActivityRegion' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityNode', the role 'CompleteDSLPckg_ActivityNode792' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_StructuredActivityNode' and 'CompleteDSLPckg_ActivityNode'. From 'CompleteDSLPckg_StructuredActivityNode', the role 'CompleteDSLPckg_StructuredActivityNode795' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityNode', the role 'CompleteDSLPckg_ActivityNode794' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityGroup' and 'CompleteDSLPckg_ActivityGroup'. From 'CompleteDSLPckg_ActivityGroup', the role 'CompleteDSLPckg_ActivityGroup798' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityGroup', the role 'CompleteDSLPckg_ActivityGroup796' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityGroup' and 'CompleteDSLPckg_ActivityGroup'. From 'CompleteDSLPckg_ActivityGroup', the role 'CompleteDSLPckg_ActivityGroup799' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityGroup', the role 'CompleteDSLPckg_ActivityGroup801' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Activity' and 'CompleteDSLPckg_ActivityGroup'. From 'CompleteDSLPckg_Activity', the role 'CompleteDSLPckg_Activity804' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityGroup', the role 'CompleteDSLPckg_ActivityGroup803' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityGroup' and 'CompleteDSLPckg_ActivityNode'. From 'CompleteDSLPckg_ActivityGroup', the role 'CompleteDSLPckg_ActivityGroup806' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityNode', the role 'CompleteDSLPckg_ActivityNode807' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityGroup' and 'CompleteDSLPckg_ActivityEdge'. From 'CompleteDSLPckg_ActivityGroup', the role 'CompleteDSLPckg_ActivityGroup809' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge810' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Parameter' and 'CompleteDSLPckg_ActivityParameterNode'. From 'CompleteDSLPckg_Parameter', the role 'CompleteDSLPckg_Parameter812' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityParameterNode', the role 'CompleteDSLPckg_ActivityParameterNode' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityNode' and 'CompleteDSLPckg_ActivityEdge'. From 'CompleteDSLPckg_ActivityNode', the role 'CompleteDSLPckg_ActivityNode815' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge814' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityNode' and 'CompleteDSLPckg_ActivityEdge'. From 'CompleteDSLPckg_ActivityNode', the role 'CompleteDSLPckg_ActivityNode818' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge817' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityEdge' and 'CompleteDSLPckg_ActivityEdge'. From 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge821' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge819' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityEdge' and 'CompleteDSLPckg_ActivityGroup'. From 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge823' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityGroup', the role 'CompleteDSLPckg_ActivityGroup824' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityEdge' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge826' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification827' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityPartition' and 'CompleteDSLPckg_ActivityEdge'. From 'CompleteDSLPckg_ActivityPartition', the role 'CompleteDSLPckg_ActivityPartition830' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge829' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityEdge' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge832' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification833' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityEdge' and 'CompleteDSLPckg_InterruptibleActivityRegion'. From 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge835' has cardinality 0..*, and from 'CompleteDSLPckg_InterruptibleActivityRegion', the role 'CompleteDSLPckg_InterruptibleActivityRegion836' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_StructuredActivityNode' and 'CompleteDSLPckg_ActivityEdge'. From 'CompleteDSLPckg_StructuredActivityNode', the role 'CompleteDSLPckg_StructuredActivityNode839' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge838' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ObjectFlow' and 'CompleteDSLPckg_Behavior'. From 'CompleteDSLPckg_ObjectFlow', the role 'CompleteDSLPckg_ObjectFlow' has cardinality 0..*, and from 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior841' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Behavior' and 'CompleteDSLPckg_ObjectFlow'. From 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior844' has cardinality 0..*, and from 'CompleteDSLPckg_ObjectFlow', the role 'CompleteDSLPckg_ObjectFlow843' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ObjectFlow' and 'CompleteDSLPckg_State'. From 'CompleteDSLPckg_ObjectFlow', the role 'CompleteDSLPckg_ObjectFlow846' has cardinality 0..*, and from 'CompleteDSLPckg_State', the role 'CompleteDSLPckg_State847' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ValueSpecification' and 'CompleteDSLPckg_JoinNode'. From 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification849' has cardinality 0..*, and from 'CompleteDSLPckg_JoinNode', the role 'CompleteDSLPckg_JoinNode' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_DecisionNode' and 'CompleteDSLPckg_ObjectFlow'. From 'CompleteDSLPckg_DecisionNode', the role 'CompleteDSLPckg_DecisionNode' has cardinality 0..*, and from 'CompleteDSLPckg_ObjectFlow', the role 'CompleteDSLPckg_ObjectFlow851' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_DecisionNode' and 'CompleteDSLPckg_Behavior'. From 'CompleteDSLPckg_DecisionNode', the role 'CompleteDSLPckg_DecisionNode853' has cardinality 0..*, and from 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior854' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityEdge' and 'CompleteDSLPckg_ActivityPartition'. From 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge857' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityPartition', the role 'CompleteDSLPckg_ActivityPartition856' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityPartition' and 'CompleteDSLPckg_ActivityPartition'. From 'CompleteDSLPckg_ActivityPartition', the role 'CompleteDSLPckg_ActivityPartition860' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityPartition', the role 'CompleteDSLPckg_ActivityPartition858' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityPartition' and 'CompleteDSLPckg_ActivityPartition'. From 'CompleteDSLPckg_ActivityPartition', the role 'CompleteDSLPckg_ActivityPartition861' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityPartition', the role 'CompleteDSLPckg_ActivityPartition863' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Element' and 'CompleteDSLPckg_ActivityPartition'. From 'CompleteDSLPckg_Element', the role 'CompleteDSLPckg_Element866' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityPartition', the role 'CompleteDSLPckg_ActivityPartition865' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityNode' and 'CompleteDSLPckg_ActivityPartition'. From 'CompleteDSLPckg_ActivityNode', the role 'CompleteDSLPckg_ActivityNode869' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityPartition', the role 'CompleteDSLPckg_ActivityPartition868' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Parameter' and 'CompleteDSLPckg_ParameterSet'. From 'CompleteDSLPckg_Parameter', the role 'CompleteDSLPckg_Parameter871' has cardinality 0..*, and from 'CompleteDSLPckg_ParameterSet', the role 'CompleteDSLPckg_ParameterSet' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Constraint' and 'CompleteDSLPckg_ParameterSet'. From 'CompleteDSLPckg_Constraint', the role 'CompleteDSLPckg_Constraint874' has cardinality 0..*, and from 'CompleteDSLPckg_ParameterSet', the role 'CompleteDSLPckg_ParameterSet873' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityEdge' and 'CompleteDSLPckg_InterruptibleActivityRegion'. From 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge877' has cardinality 0..*, and from 'CompleteDSLPckg_InterruptibleActivityRegion', the role 'CompleteDSLPckg_InterruptibleActivityRegion876' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityNode' and 'CompleteDSLPckg_InterruptibleActivityRegion'. From 'CompleteDSLPckg_ActivityNode', the role 'CompleteDSLPckg_ActivityNode880' has cardinality 0..*, and from 'CompleteDSLPckg_InterruptibleActivityRegion', the role 'CompleteDSLPckg_InterruptibleActivityRegion879' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Activity' and 'CompleteDSLPckg_StructuredActivityNode'. From 'CompleteDSLPckg_Activity', the role 'CompleteDSLPckg_Activity883' has cardinality 0..*, and from 'CompleteDSLPckg_StructuredActivityNode', the role 'CompleteDSLPckg_StructuredActivityNode882' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Variable' and 'CompleteDSLPckg_StructuredActivityNode'. From 'CompleteDSLPckg_Variable', the role 'CompleteDSLPckg_Variable886' has cardinality 0..*, and from 'CompleteDSLPckg_StructuredActivityNode', the role 'CompleteDSLPckg_StructuredActivityNode885' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ActivityNode' and 'CompleteDSLPckg_StructuredActivityNode'. From 'CompleteDSLPckg_ActivityNode', the role 'CompleteDSLPckg_ActivityNode889' has cardinality 0..*, and from 'CompleteDSLPckg_StructuredActivityNode', the role 'CompleteDSLPckg_StructuredActivityNode888' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_StructuredActivityNode' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_StructuredActivityNode', the role 'CompleteDSLPckg_StructuredActivityNode891' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin892' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_StructuredActivityNode' and 'CompleteDSLPckg_ActivityEdge'. From 'CompleteDSLPckg_StructuredActivityNode', the role 'CompleteDSLPckg_StructuredActivityNode894' has cardinality 0..*, and from 'CompleteDSLPckg_ActivityEdge', the role 'CompleteDSLPckg_ActivityEdge895' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_StructuredActivityNode' and 'CompleteDSLPckg_OutputPin'. From 'CompleteDSLPckg_StructuredActivityNode', the role 'CompleteDSLPckg_StructuredActivityNode897' has cardinality 0..*, and from 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin898' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExceptionHandler' and 'CompleteDSLPckg_ExecutableNode'. From 'CompleteDSLPckg_ExceptionHandler', the role 'CompleteDSLPckg_ExceptionHandler' has cardinality 0..*, and from 'CompleteDSLPckg_ExecutableNode', the role 'CompleteDSLPckg_ExecutableNode' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_LoopNode' and 'CompleteDSLPckg_ExecutableNode'. From 'CompleteDSLPckg_LoopNode', the role 'CompleteDSLPckg_LoopNode' has cardinality 0..*, and from 'CompleteDSLPckg_ExecutableNode', the role 'CompleteDSLPckg_ExecutableNode901' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExecutableNode' and 'CompleteDSLPckg_LoopNode'. From 'CompleteDSLPckg_ExecutableNode', the role 'CompleteDSLPckg_ExecutableNode904' has cardinality 0..*, and from 'CompleteDSLPckg_LoopNode', the role 'CompleteDSLPckg_LoopNode903' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExecutableNode' and 'CompleteDSLPckg_LoopNode'. From 'CompleteDSLPckg_ExecutableNode', the role 'CompleteDSLPckg_ExecutableNode907' has cardinality 0..*, and from 'CompleteDSLPckg_LoopNode', the role 'CompleteDSLPckg_LoopNode906' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_LoopNode' and 'CompleteDSLPckg_OutputPin'. From 'CompleteDSLPckg_LoopNode', the role 'CompleteDSLPckg_LoopNode909' has cardinality 0..*, and from 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin910' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_LoopNode' and 'CompleteDSLPckg_InputPin'. From 'CompleteDSLPckg_LoopNode', the role 'CompleteDSLPckg_LoopNode912' has cardinality 0..*, and from 'CompleteDSLPckg_InputPin', the role 'CompleteDSLPckg_InputPin913' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OutputPin' and 'CompleteDSLPckg_LoopNode'. From 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin916' has cardinality 0..*, and from 'CompleteDSLPckg_LoopNode', the role 'CompleteDSLPckg_LoopNode915' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OutputPin' and 'CompleteDSLPckg_LoopNode'. From 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin919' has cardinality 0..*, and from 'CompleteDSLPckg_LoopNode', the role 'CompleteDSLPckg_LoopNode918' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_LoopNode' and 'CompleteDSLPckg_OutputPin'. From 'CompleteDSLPckg_LoopNode', the role 'CompleteDSLPckg_LoopNode921' has cardinality 0..*, and from 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin922' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Clause' and 'CompleteDSLPckg_ConditionalNode'. From 'CompleteDSLPckg_Clause', the role 'CompleteDSLPckg_Clause' has cardinality 0..*, and from 'CompleteDSLPckg_ConditionalNode', the role 'CompleteDSLPckg_ConditionalNode' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExecutableNode' and 'CompleteDSLPckg_ConditionalNode'. From 'CompleteDSLPckg_ExecutableNode', the role 'CompleteDSLPckg_ExecutableNode926' has cardinality 0..*, and from 'CompleteDSLPckg_ConditionalNode', the role 'CompleteDSLPckg_ConditionalNode925' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ConditionalNode' and 'CompleteDSLPckg_ExecutableNode'. From 'CompleteDSLPckg_ConditionalNode', the role 'CompleteDSLPckg_ConditionalNode928' has cardinality 0..*, and from 'CompleteDSLPckg_ExecutableNode', the role 'CompleteDSLPckg_ExecutableNode929' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ConditionalNode' and 'CompleteDSLPckg_OutputPin'. From 'CompleteDSLPckg_ConditionalNode', the role 'CompleteDSLPckg_ConditionalNode931' has cardinality 0..*, and from 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin932' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Clause' and 'CompleteDSLPckg_Clause'. From 'CompleteDSLPckg_Clause', the role 'CompleteDSLPckg_Clause935' has cardinality 0..*, and from 'CompleteDSLPckg_Clause', the role 'CompleteDSLPckg_Clause933' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Clause' and 'CompleteDSLPckg_Clause'. From 'CompleteDSLPckg_Clause', the role 'CompleteDSLPckg_Clause938' has cardinality 0..*, and from 'CompleteDSLPckg_Clause', the role 'CompleteDSLPckg_Clause936' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OutputPin' and 'CompleteDSLPckg_Clause'. From 'CompleteDSLPckg_OutputPin', the role 'CompleteDSLPckg_OutputPin941' has cardinality 0..*, and from 'CompleteDSLPckg_Clause', the role 'CompleteDSLPckg_Clause940' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExecutableNode' and 'CompleteDSLPckg_SequenceNode'. From 'CompleteDSLPckg_ExecutableNode', the role 'CompleteDSLPckg_ExecutableNode943' has cardinality 0..*, and from 'CompleteDSLPckg_SequenceNode', the role 'CompleteDSLPckg_SequenceNode' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExecutableNode' and 'CompleteDSLPckg_ExceptionHandler'. From 'CompleteDSLPckg_ExecutableNode', the role 'CompleteDSLPckg_ExecutableNode946' has cardinality 0..*, and from 'CompleteDSLPckg_ExceptionHandler', the role 'CompleteDSLPckg_ExceptionHandler945' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExceptionHandler' and 'CompleteDSLPckg_ExecutableNode'. From 'CompleteDSLPckg_ExceptionHandler', the role 'CompleteDSLPckg_ExceptionHandler948' has cardinality 0..*, and from 'CompleteDSLPckg_ExecutableNode', the role 'CompleteDSLPckg_ExecutableNode949' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExceptionHandler' and 'CompleteDSLPckg_ObjectNode'. From 'CompleteDSLPckg_ExceptionHandler', the role 'CompleteDSLPckg_ExceptionHandler951' has cardinality 0..*, and from 'CompleteDSLPckg_ObjectNode', the role 'CompleteDSLPckg_ObjectNode' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExceptionHandler' and 'CompleteDSLPckg_Classifier'. From 'CompleteDSLPckg_ExceptionHandler', the role 'CompleteDSLPckg_ExceptionHandler953' has cardinality 0..*, and from 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier954' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExpansionRegion' and 'CompleteDSLPckg_ExpansionNode'. From 'CompleteDSLPckg_ExpansionRegion', the role 'CompleteDSLPckg_ExpansionRegion' has cardinality 0..*, and from 'CompleteDSLPckg_ExpansionNode', the role 'CompleteDSLPckg_ExpansionNode' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExpansionNode' and 'CompleteDSLPckg_ExpansionRegion'. From 'CompleteDSLPckg_ExpansionNode', the role 'CompleteDSLPckg_ExpansionNode958' has cardinality 0..*, and from 'CompleteDSLPckg_ExpansionRegion', the role 'CompleteDSLPckg_ExpansionRegion957' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExpansionNode' and 'CompleteDSLPckg_ExpansionRegion'. From 'CompleteDSLPckg_ExpansionNode', the role 'CompleteDSLPckg_ExpansionNode960' has cardinality 0..*, and from 'CompleteDSLPckg_ExpansionRegion', the role 'CompleteDSLPckg_ExpansionRegion961' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExpansionRegion' and 'CompleteDSLPckg_ExpansionNode'. From 'CompleteDSLPckg_ExpansionRegion', the role 'CompleteDSLPckg_ExpansionRegion964' has cardinality 0..*, and from 'CompleteDSLPckg_ExpansionNode', the role 'CompleteDSLPckg_ExpansionNode963' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InteractionFragment' and 'CompleteDSLPckg_Lifeline'. From 'CompleteDSLPckg_InteractionFragment', the role 'CompleteDSLPckg_InteractionFragment' has cardinality 0..*, and from 'CompleteDSLPckg_Lifeline', the role 'CompleteDSLPckg_Lifeline' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_GeneralOrdering' and 'CompleteDSLPckg_InteractionFragment'. From 'CompleteDSLPckg_GeneralOrdering', the role 'CompleteDSLPckg_GeneralOrdering' has cardinality 0..*, and from 'CompleteDSLPckg_InteractionFragment', the role 'CompleteDSLPckg_InteractionFragment967' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InteractionOperand' and 'CompleteDSLPckg_InteractionFragment'. From 'CompleteDSLPckg_InteractionOperand', the role 'CompleteDSLPckg_InteractionOperand' has cardinality 0..*, and from 'CompleteDSLPckg_InteractionFragment', the role 'CompleteDSLPckg_InteractionFragment969' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OccurenceSpecification' and 'CompleteDSLPckg_ExecutionSpecification'. From 'CompleteDSLPckg_OccurenceSpecification', the role 'CompleteDSLPckg_OccurenceSpecification' has cardinality 0..*, and from 'CompleteDSLPckg_ExecutionSpecification', the role 'CompleteDSLPckg_ExecutionSpecification' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExecutionSpecification' and 'CompleteDSLPckg_OccurenceSpecification'. From 'CompleteDSLPckg_ExecutionSpecification', the role 'CompleteDSLPckg_ExecutionSpecification972' has cardinality 0..*, and from 'CompleteDSLPckg_OccurenceSpecification', the role 'CompleteDSLPckg_OccurenceSpecification973' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OccurenceSpecification' and 'CompleteDSLPckg_GeneralOrdering'. From 'CompleteDSLPckg_OccurenceSpecification', the role 'CompleteDSLPckg_OccurenceSpecification975' has cardinality 0..*, and from 'CompleteDSLPckg_GeneralOrdering', the role 'CompleteDSLPckg_GeneralOrdering976' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OccurenceSpecification' and 'CompleteDSLPckg_GeneralOrdering'. From 'CompleteDSLPckg_OccurenceSpecification', the role 'CompleteDSLPckg_OccurenceSpecification978' has cardinality 0..*, and from 'CompleteDSLPckg_GeneralOrdering', the role 'CompleteDSLPckg_GeneralOrdering979' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Constraint' and 'CompleteDSLPckg_StateInvariant'. From 'CompleteDSLPckg_Constraint', the role 'CompleteDSLPckg_Constraint981' has cardinality 0..*, and from 'CompleteDSLPckg_StateInvariant', the role 'CompleteDSLPckg_StateInvariant' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Interaction' and 'CompleteDSLPckg_InteractionFragment'. From 'CompleteDSLPckg_Interaction', the role 'CompleteDSLPckg_Interaction' has cardinality 0..*, and from 'CompleteDSLPckg_InteractionFragment', the role 'CompleteDSLPckg_InteractionFragment983' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Lifeline' and 'CompleteDSLPckg_Interaction'. From 'CompleteDSLPckg_Lifeline', the role 'CompleteDSLPckg_Lifeline986' has cardinality 0..*, and from 'CompleteDSLPckg_Interaction', the role 'CompleteDSLPckg_Interaction985' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Interaction' and 'CompleteDSLPckg_Action'. From 'CompleteDSLPckg_Interaction', the role 'CompleteDSLPckg_Interaction988' has cardinality 0..*, and from 'CompleteDSLPckg_Action', the role 'CompleteDSLPckg_Action989' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Gate' and 'CompleteDSLPckg_Interaction'. From 'CompleteDSLPckg_Gate', the role 'CompleteDSLPckg_Gate' has cardinality 0..*, and from 'CompleteDSLPckg_Interaction', the role 'CompleteDSLPckg_Interaction991' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InteractionFragment' and 'CompleteDSLPckg_Lifeline'. From 'CompleteDSLPckg_InteractionFragment', the role 'CompleteDSLPckg_InteractionFragment994' has cardinality 0..*, and from 'CompleteDSLPckg_Lifeline', the role 'CompleteDSLPckg_Lifeline993' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Interaction' and 'CompleteDSLPckg_Lifeline'. From 'CompleteDSLPckg_Interaction', the role 'CompleteDSLPckg_Interaction997' has cardinality 0..*, and from 'CompleteDSLPckg_Lifeline', the role 'CompleteDSLPckg_Lifeline996' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ConnectableElement' and 'CompleteDSLPckg_Lifeline'. From 'CompleteDSLPckg_ConnectableElement', the role 'CompleteDSLPckg_ConnectableElement1000' has cardinality 0..*, and from 'CompleteDSLPckg_Lifeline', the role 'CompleteDSLPckg_Lifeline999' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ValueSpecification' and 'CompleteDSLPckg_Lifeline'. From 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification1003' has cardinality 0..*, and from 'CompleteDSLPckg_Lifeline', the role 'CompleteDSLPckg_Lifeline1002' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Lifeline' and 'CompleteDSLPckg_PartDecomposition'. From 'CompleteDSLPckg_Lifeline', the role 'CompleteDSLPckg_Lifeline1005' has cardinality 0..*, and from 'CompleteDSLPckg_PartDecomposition', the role 'CompleteDSLPckg_PartDecomposition' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Message' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_Message', the role 'CompleteDSLPckg_Message' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification1007' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Message' and 'CompleteDSLPckg_Connector'. From 'CompleteDSLPckg_Message', the role 'CompleteDSLPckg_Message1009' has cardinality 0..*, and from 'CompleteDSLPckg_Connector', the role 'CompleteDSLPckg_Connector1010' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Message' and 'CompleteDSLPckg_NamedElement'. From 'CompleteDSLPckg_Message', the role 'CompleteDSLPckg_Message1012' has cardinality 0..*, and from 'CompleteDSLPckg_NamedElement', the role 'CompleteDSLPckg_NamedElement1013' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Message' and 'CompleteDSLPckg_MessageEnd'. From 'CompleteDSLPckg_Message', the role 'CompleteDSLPckg_Message1015' has cardinality 0..*, and from 'CompleteDSLPckg_MessageEnd', the role 'CompleteDSLPckg_MessageEnd' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_MessageEnd' and 'CompleteDSLPckg_Message'. From 'CompleteDSLPckg_MessageEnd', the role 'CompleteDSLPckg_MessageEnd1018' has cardinality 0..*, and from 'CompleteDSLPckg_Message', the role 'CompleteDSLPckg_Message1017' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_MessageEnd' and 'CompleteDSLPckg_Message'. From 'CompleteDSLPckg_MessageEnd', the role 'CompleteDSLPckg_MessageEnd1020' has cardinality 0..*, and from 'CompleteDSLPckg_Message', the role 'CompleteDSLPckg_Message1021' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExecutionSpecification' and 'CompleteDSLPckg_ExecutionOccurrenceSpecification'. From 'CompleteDSLPckg_ExecutionSpecification', the role 'CompleteDSLPckg_ExecutionSpecification1023' has cardinality 0..*, and from 'CompleteDSLPckg_ExecutionOccurrenceSpecification', the role 'CompleteDSLPckg_ExecutionOccurrenceSpecification' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Behavior' and 'CompleteDSLPckg_BehaviorExecutionSpecification'. From 'CompleteDSLPckg_Behavior', the role 'CompleteDSLPckg_Behavior1025' has cardinality 0..*, and from 'CompleteDSLPckg_BehaviorExecutionSpecification', the role 'CompleteDSLPckg_BehaviorExecutionSpecification' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Action' and 'CompleteDSLPckg_ActionExecutionSpecification'. From 'CompleteDSLPckg_Action', the role 'CompleteDSLPckg_Action1027' has cardinality 0..*, and from 'CompleteDSLPckg_ActionExecutionSpecification', the role 'CompleteDSLPckg_ActionExecutionSpecification' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_OccurenceSpecification' and 'CompleteDSLPckg_GeneralOrdering'. From 'CompleteDSLPckg_OccurenceSpecification', the role 'CompleteDSLPckg_OccurenceSpecification1030' has cardinality 0..*, and from 'CompleteDSLPckg_GeneralOrdering', the role 'CompleteDSLPckg_GeneralOrdering1029' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_GeneralOrdering' and 'CompleteDSLPckg_OccurenceSpecification'. From 'CompleteDSLPckg_GeneralOrdering', the role 'CompleteDSLPckg_GeneralOrdering1032' has cardinality 0..*, and from 'CompleteDSLPckg_OccurenceSpecification', the role 'CompleteDSLPckg_OccurenceSpecification1033' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InteractionOperand' and 'CompleteDSLPckg_InteractionFragment'. From 'CompleteDSLPckg_InteractionOperand', the role 'CompleteDSLPckg_InteractionOperand1035' has cardinality 0..*, and from 'CompleteDSLPckg_InteractionFragment', the role 'CompleteDSLPckg_InteractionFragment1036' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InteractionOperand' and 'CompleteDSLPckg_InteractionConstraint'. From 'CompleteDSLPckg_InteractionOperand', the role 'CompleteDSLPckg_InteractionOperand1038' has cardinality 0..*, and from 'CompleteDSLPckg_InteractionConstraint', the role 'CompleteDSLPckg_InteractionConstraint' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InteractionOperand' and 'CompleteDSLPckg_CombinedFragment'. From 'CompleteDSLPckg_InteractionOperand', the role 'CompleteDSLPckg_InteractionOperand1040' has cardinality 0..*, and from 'CompleteDSLPckg_CombinedFragment', the role 'CompleteDSLPckg_CombinedFragment' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_CombinedFragment' and 'CompleteDSLPckg_Gate'. From 'CompleteDSLPckg_CombinedFragment', the role 'CompleteDSLPckg_CombinedFragment1042' has cardinality 0..*, and from 'CompleteDSLPckg_Gate', the role 'CompleteDSLPckg_Gate1043' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ConsiderIgnoreFragment' and 'CompleteDSLPckg_NamedElement'. From 'CompleteDSLPckg_ConsiderIgnoreFragment', the role 'CompleteDSLPckg_ConsiderIgnoreFragment' has cardinality 0..*, and from 'CompleteDSLPckg_NamedElement', the role 'CompleteDSLPckg_NamedElement1045' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InteractionConstraint' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_InteractionConstraint', the role 'CompleteDSLPckg_InteractionConstraint1047' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification1048' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InteractionConstraint' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_InteractionConstraint', the role 'CompleteDSLPckg_InteractionConstraint1050' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification1051' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InteractionUse' and 'CompleteDSLPckg_Gate'. From 'CompleteDSLPckg_InteractionUse', the role 'CompleteDSLPckg_InteractionUse' has cardinality 0..*, and from 'CompleteDSLPckg_Gate', the role 'CompleteDSLPckg_Gate1053' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_InteractionUse' and 'CompleteDSLPckg_ValueSpecification'. From 'CompleteDSLPckg_InteractionUse', the role 'CompleteDSLPckg_InteractionUse1055' has cardinality 0..*, and from 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification1056' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ValueSpecification' and 'CompleteDSLPckg_InteractionUse'. From 'CompleteDSLPckg_ValueSpecification', the role 'CompleteDSLPckg_ValueSpecification1059' has cardinality 0..*, and from 'CompleteDSLPckg_InteractionUse', the role 'CompleteDSLPckg_InteractionUse1058' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Property' and 'CompleteDSLPckg_InteractionUse'. From 'CompleteDSLPckg_Property', the role 'CompleteDSLPckg_Property1062' has cardinality 0..*, and from 'CompleteDSLPckg_InteractionUse', the role 'CompleteDSLPckg_InteractionUse1061' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Interaction' and 'CompleteDSLPckg_InteractionUse'. From 'CompleteDSLPckg_Interaction', the role 'CompleteDSLPckg_Interaction1065' has cardinality 0..*, and from 'CompleteDSLPckg_InteractionUse', the role 'CompleteDSLPckg_InteractionUse1064' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Classifier' and 'CompleteDSLPckg_UseCase'. From 'CompleteDSLPckg_Classifier', the role 'CompleteDSLPckg_Classifier1067' has cardinality 0..*, and from 'CompleteDSLPckg_UseCase', the role 'CompleteDSLPckg_UseCase' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExtensionPoint' and 'CompleteDSLPckg_UseCase'. From 'CompleteDSLPckg_ExtensionPoint', the role 'CompleteDSLPckg_ExtensionPoint' has cardinality 0..*, and from 'CompleteDSLPckg_UseCase', the role 'CompleteDSLPckg_UseCase1069' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Extend' and 'CompleteDSLPckg_UseCase'. From 'CompleteDSLPckg_Extend', the role 'CompleteDSLPckg_Extend' has cardinality 0..*, and from 'CompleteDSLPckg_UseCase', the role 'CompleteDSLPckg_UseCase1071' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Include' and 'CompleteDSLPckg_UseCase'. From 'CompleteDSLPckg_Include', the role 'CompleteDSLPckg_Include' has cardinality 0..*, and from 'CompleteDSLPckg_UseCase', the role 'CompleteDSLPckg_UseCase1073' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExtensionPoint' and 'CompleteDSLPckg_UseCase'. From 'CompleteDSLPckg_ExtensionPoint', the role 'CompleteDSLPckg_ExtensionPoint1075' has cardinality 0..*, and from 'CompleteDSLPckg_UseCase', the role 'CompleteDSLPckg_UseCase1076' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_ExtensionPoint' and 'CompleteDSLPckg_Extend'. From 'CompleteDSLPckg_ExtensionPoint', the role 'CompleteDSLPckg_ExtensionPoint1079' has cardinality 0..*, and from 'CompleteDSLPckg_Extend', the role 'CompleteDSLPckg_Extend1078' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_UseCase' and 'CompleteDSLPckg_Extend'. From 'CompleteDSLPckg_UseCase', the role 'CompleteDSLPckg_UseCase1082' has cardinality 0..*, and from 'CompleteDSLPckg_Extend', the role 'CompleteDSLPckg_Extend1081' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_Constraint' and 'CompleteDSLPckg_Extend'. From 'CompleteDSLPckg_Constraint', the role 'CompleteDSLPckg_Constraint1085' has cardinality 0..*, and from 'CompleteDSLPckg_Extend', the role 'CompleteDSLPckg_Extend1084' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_UseCase' and 'CompleteDSLPckg_Extend'. From 'CompleteDSLPckg_UseCase', the role 'CompleteDSLPckg_UseCase1088' has cardinality 0..*, and from 'CompleteDSLPckg_Extend', the role 'CompleteDSLPckg_Extend1087' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_UseCase' and 'CompleteDSLPckg_Include'. From 'CompleteDSLPckg_UseCase', the role 'CompleteDSLPckg_UseCase1091' has cardinality 0..*, and from 'CompleteDSLPckg_Include', the role 'CompleteDSLPckg_Include1090' has cardinality 0..*.
+An association connects 'CompleteDSLPckg_UseCase' and 'CompleteDSLPckg_Include'. From 'CompleteDSLPckg_UseCase', the role 'CompleteDSLPckg_UseCase1094' has cardinality 0..*, and from 'CompleteDSLPckg_Include', the role 'CompleteDSLPckg_Include1093' has cardinality 0..*.

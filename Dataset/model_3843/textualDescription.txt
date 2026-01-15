@@ -1,0 +1,23 @@
+The domain model 'RDBMS' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'RDBMS_Table' represents an important domain concept.
+It has the following attributes: 'is_local', which is of type bool; 'name', which is of type str.
+
+'RDBMS_Schema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RDBMS_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'RDBMS_Column' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'RDBMS_Table' and 'RDBMS_Schema'. From 'RDBMS_Table', the role 'RDBMS_Table' has cardinality 0..*, and from 'RDBMS_Schema', the role 'RDBMS_Schema' has cardinality 0..*.
+An association connects 'RDBMS_Table' and 'RDBMS_Column'. From 'RDBMS_Table', the role 'RDBMS_Table2' has cardinality 0..*, and from 'RDBMS_Column', the role 'RDBMS_Column' has cardinality 0..*.
+An association connects 'RDBMS_Table' and 'RDBMS_ForeignKey'. From 'RDBMS_Table', the role 'RDBMS_Table4' has cardinality 0..*, and from 'RDBMS_ForeignKey', the role 'RDBMS_ForeignKey' has cardinality 0..*.
+An association connects 'RDBMS_Column' and 'RDBMS_Table'. From 'RDBMS_Column', the role 'RDBMS_Column7' has cardinality 0..*, and from 'RDBMS_Table', the role 'RDBMS_Table6' has cardinality 0..*.
+An association connects 'RDBMS_Column' and 'RDBMS_ForeignKey'. From 'RDBMS_Column', the role 'RDBMS_Column10' has cardinality 0..*, and from 'RDBMS_ForeignKey', the role 'RDBMS_ForeignKey9' has cardinality 0..*.
+An association connects 'RDBMS_Table' and 'RDBMS_ForeignKey'. From 'RDBMS_Table', the role 'RDBMS_Table13' has cardinality 0..*, and from 'RDBMS_ForeignKey', the role 'RDBMS_ForeignKey12' has cardinality 0..*.

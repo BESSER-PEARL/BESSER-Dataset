@@ -1,0 +1,60 @@
+The domain model 'hutn' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'hutn_ContainmentSlot' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Object' represents an important domain concept.
+It does not declare any attributes.
+
+'hutn_ClassObjectSlot' represents an important domain concept.
+It does not declare any attributes.
+
+'hutn_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'hutn_Object' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'identifier', which is of type str.
+
+'hutn_AttributeSlot' represents an important domain concept.
+It does not declare any attributes.
+
+'hutn_ClassObject' represents an important domain concept.
+It does not declare any attributes.
+
+'hutn_PackageObject' represents an important domain concept.
+It does not declare any attributes.
+
+'hutn_ModelElement' represents an important domain concept.
+It has the following attributes: 'line', which is of type int; 'col', which is of type int.
+
+'hutn_NsUri' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'hutn_ReferenceSlot' represents an important domain concept.
+It does not declare any attributes.
+
+'hutn_Slot' represents an important domain concept.
+It has the following attributes: 'feature', which is of type str; 'values', which is of type str.
+
+'hutn_Spec' represents an important domain concept.
+It has the following attributes: 'modelFile', which is of type str; 'sourceFile', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'hutn_NsUri' is a specialization of 'ModelElement'.
+The class 'hutn_Object' is a specialization of 'ModelElement'.
+The class 'hutn_PackageObject' is a specialization of 'Object'.
+The class 'hutn_ClassObject' is a specialization of 'Object'.
+The class 'hutn_Slot' is a specialization of 'ModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'hutn_NsUri' and 'hutn_Spec'. From 'hutn_NsUri', the role 'hutn_NsUri' has cardinality 0..*, and from 'hutn_Spec', the role 'hutn_Spec' has cardinality 0..*.
+An association connects 'hutn_Spec' and 'hutn_PackageObject'. From 'hutn_Spec', the role 'hutn_Spec2' has cardinality 0..*, and from 'hutn_PackageObject', the role 'hutn_PackageObject' has cardinality 0..*.
+An association connects 'hutn_PackageObject' and 'hutn_EPackage'. From 'hutn_PackageObject', the role 'hutn_PackageObject4' has cardinality 0..*, and from 'hutn_EPackage', the role 'hutn_EPackage' has cardinality 0..*.
+An association connects 'hutn_ClassObject' and 'hutn_PackageObject'. From 'hutn_ClassObject', the role 'hutn_ClassObject' has cardinality 0..*, and from 'hutn_PackageObject', the role 'hutn_PackageObject6' has cardinality 0..*.
+An association connects 'hutn_Slot' and 'hutn_ClassObject'. From 'hutn_Slot', the role 'slots' has cardinality 0..*, and from 'hutn_ClassObject', the role 'ClassObject' has cardinality 0..*.
+An association connects 'hutn_ContainmentSlot' and 'hutn_ClassObject'. From 'hutn_ContainmentSlot', the role 'hutn_ContainmentSlot' has cardinality 0..*, and from 'hutn_ClassObject', the role 'hutn_ClassObject9' has cardinality 0..*.

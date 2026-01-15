@@ -1,0 +1,255 @@
+The domain model 'arduino' describes the core structural elements and their relationships within the system.
+
+The model defines 64 main class(es).
+
+'Cabeca_Modificavel' represents an important domain concept.
+It does not declare any attributes.
+
+'LED' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Mover_Tras_Tempo' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Acoes_Condicionais' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Mover_Frente' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Rodar_Direita_Tempo' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Distancia_Infra_Vermelhos' represents an important domain concept.
+It has one attribute: 'distancia', which is of type int.
+
+'Acao' represents an important domain concept.
+It does not declare any attributes.
+
+'Condicao' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Ligar_Cores_Arco_Iris' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Mover_Frente_Tempo' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Virar_para_X_Graus' represents an important domain concept.
+It does not declare any attributes.
+
+'Cabeca' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Verde' represents an important domain concept.
+It does not declare any attributes.
+
+'Acoes_Modificaveis' represents an important domain concept.
+It does not declare any attributes.
+
+'Verde' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Desligar_Intermitencia' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Virar_Max_Esq' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Virar_Esquerda' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'Acoes_Predefinidas' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Parar' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Cabeca_Modificavel' represents an important domain concept.
+It has one attribute: 'graus', which is of type int.
+
+'arduino_Desligar_Cor' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Virar_Direita' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Fim' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'Varias_Cores' represents an important domain concept.
+It does not declare any attributes.
+
+'Unica_Cor' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Desligar_LED_Verde' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Desligar_Cores' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Parar_Tempo' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Virar_45_Drt' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Acao' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Cabeca' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Ligar_LED_Verde' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'Acoes_Condicionais' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Centrar' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Robo' represents an important domain concept.
+It has one attribute: 'Nome', which is of type str.
+
+'arduino_Varias_Cores' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_While' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'Corpo_Modificavel' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Unica_Cor' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Inicio' represents an important domain concept.
+It has the following attributes: 'evitarObstaculo', which is of type bool; 'nome', which is of type str.
+
+'arduino_Acoes_Predefinidas' represents an important domain concept.
+It does not declare any attributes.
+
+'Tricolor' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Mover_Tras' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Mover_Aleatoriamente' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Corpo' represents an important domain concept.
+It has one attribute: 'evitarObstaculo', which is of type bool.
+
+'arduino_Virar_45_Esq' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Ligar_Vermelho' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Acoes_Modificaveis' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Corpo_Modificavel' represents an important domain concept.
+It has the following attributes: 'evitarObstaculo', which is of type bool; 'tempo', which is of type int.
+
+'arduino_Ligar_Verde' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'Corpo' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Virar_Max_Drt' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Bumper_Pressionado' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Ligar_Intermitencia' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Ligar_Azul' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_If' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_Rodar_Esquerda_Tempo' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Transicoes' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Tricolor' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Condicao' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Ligar_Cores_Policia' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'arduino_LED' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'arduino_Virar_Esquerda' is a specialization of 'Corpo'.
+The class 'arduino_Mover_Frente' is a specialization of 'Corpo'.
+The class 'arduino_Mover_Tras' is a specialization of 'Corpo'.
+The class 'arduino_Virar_Direita' is a specialization of 'Corpo'.
+The class 'arduino_Rodar_Esquerda_Tempo' is a specialization of 'Corpo_Modificavel'.
+The class 'arduino_Rodar_Direita_Tempo' is a specialization of 'Corpo_Modificavel'.
+The class 'arduino_Acoes_Predefinidas' is a specialization of 'Acao'.
+The class 'arduino_Acoes_Modificaveis' is a specialization of 'Acao'.
+The class 'arduino_Mover_Frente_Tempo' is a specialization of 'Corpo_Modificavel'.
+The class 'arduino_Mover_Tras_Tempo' is a specialization of 'Corpo_Modificavel'.
+The class 'arduino_Virar_para_X_Graus' is a specialization of 'Cabeca_Modificavel'.
+The class 'arduino_Virar_Max_Drt' is a specialization of 'Cabeca'.
+The class 'arduino_Virar_Max_Esq' is a specialization of 'Cabeca'.
+The class 'arduino_Centrar' is a specialization of 'Cabeca'.
+The class 'arduino_Virar_45_Esq' is a specialization of 'Cabeca'.
+The class 'arduino_Virar_45_Drt' is a specialization of 'Cabeca'.
+The class 'arduino_Mover_Aleatoriamente' is a specialization of 'Corpo'.
+The class 'arduino_LED' is a specialization of 'Acoes_Predefinidas'.
+The class 'arduino_Verde' is a specialization of 'LED'.
+The class 'arduino_Tricolor' is a specialization of 'LED'.
+The class 'arduino_Ligar_LED_Verde' is a specialization of 'Verde'.
+The class 'arduino_Desligar_LED_Verde' is a specialization of 'Verde'.
+The class 'arduino_Ligar_Intermitencia' is a specialization of 'Verde'.
+The class 'arduino_Desligar_Intermitencia' is a specialization of 'Verde'.
+The class 'arduino_Varias_Cores' is a specialization of 'Tricolor'.
+The class 'arduino_Unica_Cor' is a specialization of 'Tricolor'.
+The class 'arduino_Ligar_Cores_Policia' is a specialization of 'Varias_Cores'.
+The class 'arduino_Ligar_Cores_Arco_Iris' is a specialization of 'Varias_Cores'.
+The class 'arduino_Ligar_Azul' is a specialization of 'Unica_Cor'.
+The class 'arduino_Ligar_Verde' is a specialization of 'Unica_Cor'.
+The class 'arduino_Ligar_Vermelho' is a specialization of 'Unica_Cor'.
+The class 'arduino_Desligar_Cor' is a specialization of 'Unica_Cor'.
+The class 'arduino_Desligar_Cores' is a specialization of 'Varias_Cores'.
+The class 'arduino_Acoes_Condicionais' is a specialization of 'Acao'.
+The class 'arduino_While' is a specialization of 'Acoes_Condicionais'.
+The class 'arduino_If' is a specialization of 'Acoes_Condicionais'.
+The class 'arduino_Bumper_Pressionado' is a specialization of 'Condicao'.
+The class 'arduino_Distancia_Infra_Vermelhos' is a specialization of 'Condicao'.
+The class 'arduino_Corpo' is a specialization of 'Acoes_Predefinidas'.
+The class 'arduino_Corpo_Modificavel' is a specialization of 'Acoes_Modificaveis'.
+The class 'arduino_Cabeca' is a specialization of 'Acoes_Predefinidas'.
+The class 'arduino_Cabeca_Modificavel' is a specialization of 'Acoes_Modificaveis'.
+The class 'arduino_Inicio' is a specialization of 'Acao'.
+The class 'arduino_Fim' is a specialization of 'Acao'.
+The class 'arduino_Parar' is a specialization of 'Corpo'.
+The class 'arduino_Parar_Tempo' is a specialization of 'Corpo_Modificavel'.
+
+Relationships between classes are modeled using associations.
+An association connects 'arduino_Robo' and 'arduino_Acao'. From 'arduino_Robo', the role 'arduino_Robo' has cardinality 0..*, and from 'arduino_Acao', the role 'arduino_Acao' has cardinality 0..*.
+An association connects 'arduino_Robo' and 'arduino_Transicoes'. From 'arduino_Robo', the role 'arduino_Robo2' has cardinality 0..*, and from 'arduino_Transicoes', the role 'arduino_Transicoes' has cardinality 0..*.
+An association connects 'arduino_Condicao' and 'arduino_Robo'. From 'arduino_Condicao', the role 'arduino_Condicao' has cardinality 0..*, and from 'arduino_Robo', the role 'arduino_Robo4' has cardinality 0..*.
+An association connects 'arduino_Transicoes' and 'arduino_Acao'. From 'arduino_Transicoes', the role 'Transicoes' has cardinality 0..*, and from 'arduino_Acao', the role 'Acao_de_Saida' has cardinality 0..*.
+An association connects 'arduino_Transicoes' and 'arduino_Acao'. From 'arduino_Transicoes', the role 'Transicoes7' has cardinality 0..*, and from 'arduino_Acao', the role 'Acao_de_Entrada' has cardinality 0..*.
+An association connects 'arduino_Transicoes' and 'arduino_Acao'. From 'arduino_Transicoes', the role 'Transicao_de_Saida' has cardinality 0..*, and from 'arduino_Acao', the role 'Acao' has cardinality 0..*.
+An association connects 'arduino_Transicoes' and 'arduino_Acao'. From 'arduino_Transicoes', the role 'Transicao_de_Entrada' has cardinality 0..*, and from 'arduino_Acao', the role 'Acao10' has cardinality 0..*.
+An association connects 'arduino_Condicao' and 'arduino_Acoes_Condicionais'. From 'arduino_Condicao', the role 'arduino_Condicao12' has cardinality 0..*, and from 'arduino_Acoes_Condicionais', the role 'arduino_Acoes_Condicionais' has cardinality 0..*.
+An association connects 'arduino_While' and 'arduino_Acao'. From 'arduino_While', the role 'arduino_While' has cardinality 0..*, and from 'arduino_Acao', the role 'arduino_Acao14' has cardinality 0..*.
+An association connects 'arduino_Acao' and 'arduino_If'. From 'arduino_Acao', the role 'arduino_Acao16' has cardinality 0..*, and from 'arduino_If', the role 'arduino_If' has cardinality 0..*.

@@ -1,0 +1,22 @@
+The domain model 'UML2' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Property' represents an important domain concept.
+It has the following attributes: 'isComposite', which is of type bool; 'aggregation', which is of type str.
+
+'UML2_ExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Port' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AggregationKind' defines the following possible values: 'shared', 'composite', 'none'.
+
+The model also captures inheritance relationships between classes.
+The class 'UML2_ExtensionEnd' is a specialization of 'Property'.
+The class 'UML2_Port' is a specialization of 'Property'.

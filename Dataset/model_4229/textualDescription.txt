@@ -1,0 +1,22 @@
+The domain model 'CompanyLanguage' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'CompanyLanguage_Admin' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'CompanyLanguage_CEO' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'CompanyLanguage_Employee' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'CompanyLanguage_Company' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'CompanyLanguage_Admin' and 'CompanyLanguage_CEO'. From 'CompanyLanguage_Admin', the role 'CompanyLanguage_Admin' has cardinality 0..*, and from 'CompanyLanguage_CEO', the role 'CompanyLanguage_CEO' has cardinality 0..*.
+An association connects 'CompanyLanguage_Employee' and 'CompanyLanguage_CEO'. From 'CompanyLanguage_Employee', the role 'CompanyLanguage_Employee' has cardinality 0..*, and from 'CompanyLanguage_CEO', the role 'CompanyLanguage_CEO2' has cardinality 0..*.
+An association connects 'CompanyLanguage_Employee' and 'CompanyLanguage_Company'. From 'CompanyLanguage_Employee', the role 'CompanyLanguage_Employee4' has cardinality 0..*, and from 'CompanyLanguage_Company', the role 'CompanyLanguage_Company' has cardinality 0..*.
+An association connects 'CompanyLanguage_CEO' and 'CompanyLanguage_Company'. From 'CompanyLanguage_CEO', the role 'CompanyLanguage_CEO7' has cardinality 0..*, and from 'CompanyLanguage_Company', the role 'CompanyLanguage_Company6' has cardinality 0..*.
+An association connects 'CompanyLanguage_Company' and 'CompanyLanguage_Admin'. From 'CompanyLanguage_Company', the role 'CompanyLanguage_Company9' has cardinality 0..*, and from 'CompanyLanguage_Admin', the role 'CompanyLanguage_Admin10' has cardinality 0..*.

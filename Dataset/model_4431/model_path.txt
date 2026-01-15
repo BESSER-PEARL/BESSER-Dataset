@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/antoniogarmendia/gallery-graphical-dsls-emfStencil/mindstorms-robot-editor/plugins/org.miso.mindstorms.sample/mindstorms-sample.ecore

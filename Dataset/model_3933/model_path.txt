@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/DevBoost/OntoMoPP/Extensions/org.emftext.ontomopp.modelsync.test/metamodel/document.ecore

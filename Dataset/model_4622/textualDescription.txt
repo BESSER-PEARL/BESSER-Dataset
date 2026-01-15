@@ -1,0 +1,402 @@
+The domain model 'gmfgraph' describes the core structural elements and their relationships within the system.
+
+The model defines 90 main class(es).
+
+'gmfgraph_Polyline' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_Shape' represents an important domain concept.
+It has the following attributes: 'lineKind', which is of type str; 'lineWidth', which is of type int; 'xorOutline', which is of type bool; 'fill', which is of type bool; 'outline', which is of type bool; 'xorFill', which is of type bool.
+
+'gmfgraph_CustomLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_GridLayout' represents an important domain concept.
+It has the following attributes: 'numColumns', which is of type int; 'equalWidth', which is of type bool.
+
+'Identity' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_FigureAccessor' represents an important domain concept.
+It has one attribute: 'accessor', which is of type str.
+
+'gmfgraph_Layoutable' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_CompoundBorder' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_CustomConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_Layout' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_CustomBorder' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_CustomFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_BorderLayoutData' represents an important domain concept.
+It has the following attributes: 'vertical', which is of type bool; 'alignment', which is of type str.
+
+'AbstractFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_Insets' represents an important domain concept.
+It has the following attributes: 'top', which is of type int; 'bottom', which is of type int; 'left', which is of type int; 'right', which is of type int.
+
+'gmfgraph_Compartment' represents an important domain concept.
+It has the following attributes: 'collapsible', which is of type bool; 'needsTitle', which is of type bool.
+
+'gmfgraph_PolylineConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_BorderLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'Color' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_BorderRef' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_ConstantColor' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'gmfgraph_LayoutRef' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_Dimension' represents an important domain concept.
+It has the following attributes: 'dy', which is of type int; 'dx', which is of type int.
+
+'gmfgraph_Node' represents an important domain concept.
+It has the following attributes: 'resizeConstraint', which is of type str; 'affixedParentSide', which is of type str.
+
+'gmfgraph_CustomDecoration' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractNode' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_Canvas' represents an important domain concept.
+It does not declare any attributes.
+
+'CustomFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_XYLayoutData' represents an important domain concept.
+It does not declare any attributes.
+
+'Polyline' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_ChildAccess' represents an important domain concept.
+It has one attribute: 'accessor', which is of type str.
+
+'gmfgraph_Color' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_PolylineDecoration' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_FlowLayout' represents an important domain concept.
+It has the following attributes: 'minorSpacing', which is of type int; 'forceSingleLine', which is of type bool; 'vertical', which is of type bool; 'majorAlignment', which is of type str; 'minorAlignment', which is of type str; 'matchMinorSize', which is of type bool; 'majorSpacing', which is of type int.
+
+'gmfgraph_CustomClass' represents an important domain concept.
+It has one attribute: 'qualifiedClassName', which is of type str.
+
+'gmfgraph_DiagramLabel' represents an important domain concept.
+It has the following attributes: 'external', which is of type bool; 'elementIcon', which is of type bool.
+
+'gmfgraph_PolygonDecoration' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_Figure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_LineBorder' represents an important domain concept.
+It has one attribute: 'width', which is of type int.
+
+'gmfgraph_MarginBorder' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_RoundedRectangle' represents an important domain concept.
+It has the following attributes: 'cornerWidth', which is of type int; 'cornerHeight', which is of type int.
+
+'gmfgraph_FigureRef' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_VisualFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'Polygon' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_ConnectionFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_ScalablePolygon' represents an important domain concept.
+It does not declare any attributes.
+
+'Font' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_RGBColor' represents an important domain concept.
+It has the following attributes: 'green', which is of type int; 'blue', which is of type int; 'red', which is of type int.
+
+'gmfgraph_CustomAttribute' represents an important domain concept.
+It has the following attributes: 'directAccess', which is of type bool; 'multiStatementValue', which is of type bool; 'name', which is of type str; 'value', which is of type str.
+
+'gmfgraph_Identity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gmfgraph_DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RealFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_DefaultSizeFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_AbstractNode' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_Font' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_Label' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'gmfgraph_XYLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_BasicFont' represents an important domain concept.
+It has the following attributes: 'faceName', which is of type str; 'style', which is of type str; 'height', which is of type int.
+
+'gmfgraph_GridLayoutData' represents an important domain concept.
+It has the following attributes: 'verticalSpan', which is of type int; 'grabExcessHorizontalSpace', which is of type bool; 'grabExcessVerticalSpace', which is of type bool; 'verticalAlignment', which is of type str; 'horizontalSpan', which is of type int; 'horizontalAlignment', which is of type str; 'horizontalIndent', which is of type int.
+
+'gmfgraph_DecorationFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_StackLayout' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualFacet' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_LayoutData' represents an important domain concept.
+It does not declare any attributes.
+
+'Figure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_RealFigure' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gmfgraph_FigureDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'LayoutData' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_AbstractFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_Polygon' represents an important domain concept.
+It does not declare any attributes.
+
+'Border' represents an important domain concept.
+It does not declare any attributes.
+
+'Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_GeneralFacet' represents an important domain concept.
+It has the following attributes: 'data', which is of type str; 'identifier', which is of type str.
+
+'gmfgraph_GradientFacet' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'Layout' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_Point' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'x', which is of type int.
+
+'gmfgraph_AlignmentFacet' represents an important domain concept.
+It has one attribute: 'alignment', which is of type str.
+
+'gmfgraph_Border' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_LabelOffsetFacet' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'x', which is of type int.
+
+'gmfgraph_LabeledContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Layoutable' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_FigureGallery' represents an important domain concept.
+It has one attribute: 'implementationBundle', which is of type str.
+
+'gmfgraph_Rectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'CustomClass' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_CustomLayoutData' represents an important domain concept.
+It does not declare any attributes.
+
+'gmfgraph_Ellipse' represents an important domain concept.
+It does not declare any attributes.
+
+'DecorationFigure' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectionFigure' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ColorConstants' defines the following possible values: 'darkGreen', 'lightBlue', 'black', 'red', 'orange', 'lightGreen', 'yellow', 'gray', 'green', 'darkBlue', 'white', 'cyan', 'blue', 'darkGray', 'lightGray'.
+The enumeration 'Alignment' defines the following possible values: 'FILL', 'END', 'CENTER', 'BEGINNING'.
+The enumeration 'FontStyle' defines the following possible values: 'BOLD', 'NORMAL', 'ITALIC'.
+The enumeration 'LineKind' defines the following possible values: 'LINE_SOLID', 'LINE_CUSTOM', 'LINE_DOT', 'LINE_DASH', 'LINE_DASHDOTDOT', 'LINE_DASHDOT'.
+The enumeration 'Direction' defines the following possible values: 'WEST', 'SOUTH', 'NONE', 'EAST', 'SOUTH_WEST', 'NORTH', 'NORTH_EAST', 'EAST_WEST', 'NSEW', 'SOUTH_EAST', 'NORTH_WEST', 'NORTH_SOUTH'.
+
+The model also captures inheritance relationships between classes.
+The class 'gmfgraph_Canvas' is a specialization of 'Identity'.
+The class 'gmfgraph_FigureGallery' is a specialization of 'Identity'.
+The class 'gmfgraph_DiagramElement' is a specialization of 'Identity'.
+The class 'gmfgraph_Node' is a specialization of 'AbstractNode'.
+The class 'gmfgraph_Connection' is a specialization of 'DiagramElement'.
+The class 'gmfgraph_Compartment' is a specialization of 'DiagramElement'.
+The class 'gmfgraph_DiagramLabel' is a specialization of 'Node'.
+The class 'gmfgraph_GeneralFacet' is a specialization of 'VisualFacet'.
+The class 'gmfgraph_AlignmentFacet' is a specialization of 'VisualFacet'.
+The class 'gmfgraph_GradientFacet' is a specialization of 'VisualFacet'.
+The class 'gmfgraph_LabelOffsetFacet' is a specialization of 'VisualFacet'.
+The class 'gmfgraph_Figure' is a specialization of 'Layoutable'.
+The class 'gmfgraph_FigureRef' is a specialization of 'AbstractFigure'.
+The class 'gmfgraph_ConnectionFigure' is a specialization of 'RealFigure'.
+The class 'gmfgraph_DecorationFigure' is a specialization of 'RealFigure'.
+The class 'gmfgraph_Shape' is a specialization of 'RealFigure'.
+The class 'gmfgraph_Label' is a specialization of 'RealFigure'.
+The class 'gmfgraph_LabeledContainer' is a specialization of 'RealFigure'.
+The class 'gmfgraph_Rectangle' is a specialization of 'Shape'.
+The class 'gmfgraph_RoundedRectangle' is a specialization of 'Shape'.
+The class 'gmfgraph_Ellipse' is a specialization of 'Shape'.
+The class 'gmfgraph_Polyline' is a specialization of 'Shape'.
+The class 'gmfgraph_Polygon' is a specialization of 'Polyline'.
+The class 'gmfgraph_PolylineConnection' is a specialization of 'Polyline'.
+The class 'gmfgraph_PolylineConnection' is a specialization of 'ConnectionFigure'.
+The class 'gmfgraph_PolylineDecoration' is a specialization of 'Polyline'.
+The class 'gmfgraph_PolylineDecoration' is a specialization of 'DecorationFigure'.
+The class 'gmfgraph_PolygonDecoration' is a specialization of 'Polygon'.
+The class 'gmfgraph_PolygonDecoration' is a specialization of 'DecorationFigure'.
+The class 'gmfgraph_CustomFigure' is a specialization of 'RealFigure'.
+The class 'gmfgraph_CustomFigure' is a specialization of 'CustomClass'.
+The class 'gmfgraph_CustomDecoration' is a specialization of 'CustomFigure'.
+The class 'gmfgraph_CustomDecoration' is a specialization of 'DecorationFigure'.
+The class 'gmfgraph_CustomConnection' is a specialization of 'CustomFigure'.
+The class 'gmfgraph_CustomConnection' is a specialization of 'ConnectionFigure'.
+The class 'gmfgraph_RGBColor' is a specialization of 'Color'.
+The class 'gmfgraph_ConstantColor' is a specialization of 'Color'.
+The class 'gmfgraph_BasicFont' is a specialization of 'Font'.
+The class 'gmfgraph_LineBorder' is a specialization of 'Border'.
+The class 'gmfgraph_MarginBorder' is a specialization of 'Border'.
+The class 'gmfgraph_CompoundBorder' is a specialization of 'Border'.
+The class 'gmfgraph_CustomBorder' is a specialization of 'Border'.
+The class 'gmfgraph_CustomBorder' is a specialization of 'CustomClass'.
+The class 'gmfgraph_CustomLayoutData' is a specialization of 'LayoutData'.
+The class 'gmfgraph_CustomLayoutData' is a specialization of 'CustomClass'.
+The class 'gmfgraph_GridLayoutData' is a specialization of 'LayoutData'.
+The class 'gmfgraph_BorderLayoutData' is a specialization of 'LayoutData'.
+The class 'gmfgraph_CustomLayout' is a specialization of 'Layout'.
+The class 'gmfgraph_CustomLayout' is a specialization of 'CustomClass'.
+The class 'gmfgraph_GridLayout' is a specialization of 'Layout'.
+The class 'gmfgraph_BorderLayout' is a specialization of 'Layout'.
+The class 'gmfgraph_FlowLayout' is a specialization of 'Layout'.
+The class 'gmfgraph_XYLayout' is a specialization of 'Layout'.
+The class 'gmfgraph_XYLayoutData' is a specialization of 'LayoutData'.
+The class 'gmfgraph_StackLayout' is a specialization of 'Layout'.
+The class 'gmfgraph_ScalablePolygon' is a specialization of 'Polygon'.
+The class 'gmfgraph_DefaultSizeFacet' is a specialization of 'VisualFacet'.
+The class 'gmfgraph_AbstractNode' is a specialization of 'DiagramElement'.
+The class 'gmfgraph_RealFigure' is a specialization of 'AbstractFigure'.
+The class 'gmfgraph_AbstractFigure' is a specialization of 'Figure'.
+The class 'gmfgraph_FigureDescriptor' is a specialization of 'Identity'.
+The class 'gmfgraph_BorderRef' is a specialization of 'Border'.
+The class 'gmfgraph_LayoutRef' is a specialization of 'Layout'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gmfgraph_Canvas' and 'gmfgraph_FigureGallery'. From 'gmfgraph_Canvas', the role 'gmfgraph_Canvas' has cardinality 0..*, and from 'gmfgraph_FigureGallery', the role 'gmfgraph_FigureGallery' has cardinality 0..*.
+An association connects 'gmfgraph_Node' and 'gmfgraph_Canvas'. From 'gmfgraph_Node', the role 'gmfgraph_Node' has cardinality 0..*, and from 'gmfgraph_Canvas', the role 'gmfgraph_Canvas2' has cardinality 0..*.
+An association connects 'gmfgraph_Connection' and 'gmfgraph_Canvas'. From 'gmfgraph_Connection', the role 'gmfgraph_Connection' has cardinality 0..*, and from 'gmfgraph_Canvas', the role 'gmfgraph_Canvas4' has cardinality 0..*.
+An association connects 'gmfgraph_Canvas' and 'gmfgraph_Compartment'. From 'gmfgraph_Canvas', the role 'gmfgraph_Canvas6' has cardinality 0..*, and from 'gmfgraph_Compartment', the role 'gmfgraph_Compartment' has cardinality 0..*.
+An association connects 'gmfgraph_DiagramLabel' and 'gmfgraph_Canvas'. From 'gmfgraph_DiagramLabel', the role 'gmfgraph_DiagramLabel' has cardinality 0..*, and from 'gmfgraph_Canvas', the role 'gmfgraph_Canvas8' has cardinality 0..*.
+An association connects 'gmfgraph_RealFigure' and 'gmfgraph_FigureGallery'. From 'gmfgraph_RealFigure', the role 'gmfgraph_RealFigure' has cardinality 0..*, and from 'gmfgraph_FigureGallery', the role 'gmfgraph_FigureGallery10' has cardinality 0..*.
+An association connects 'gmfgraph_FigureGallery' and 'gmfgraph_FigureDescriptor'. From 'gmfgraph_FigureGallery', the role 'gmfgraph_FigureGallery12' has cardinality 0..*, and from 'gmfgraph_FigureDescriptor', the role 'gmfgraph_FigureDescriptor' has cardinality 0..*.
+An association connects 'gmfgraph_FigureGallery' and 'gmfgraph_Border'. From 'gmfgraph_FigureGallery', the role 'gmfgraph_FigureGallery14' has cardinality 0..*, and from 'gmfgraph_Border', the role 'gmfgraph_Border' has cardinality 0..*.
+An association connects 'gmfgraph_FigureGallery' and 'gmfgraph_Layout'. From 'gmfgraph_FigureGallery', the role 'gmfgraph_FigureGallery16' has cardinality 0..*, and from 'gmfgraph_Layout', the role 'gmfgraph_Layout' has cardinality 0..*.
+An association connects 'gmfgraph_FigureDescriptor' and 'gmfgraph_DiagramElement'. From 'gmfgraph_FigureDescriptor', the role 'gmfgraph_FigureDescriptor18' has cardinality 0..*, and from 'gmfgraph_DiagramElement', the role 'gmfgraph_DiagramElement' has cardinality 0..*.
+An association connects 'gmfgraph_VisualFacet' and 'gmfgraph_DiagramElement'. From 'gmfgraph_VisualFacet', the role 'gmfgraph_VisualFacet' has cardinality 0..*, and from 'gmfgraph_DiagramElement', the role 'gmfgraph_DiagramElement20' has cardinality 0..*.
+An association connects 'gmfgraph_Node' and 'gmfgraph_ChildAccess'. From 'gmfgraph_Node', the role 'gmfgraph_Node22' has cardinality 0..*, and from 'gmfgraph_ChildAccess', the role 'gmfgraph_ChildAccess' has cardinality 0..*.
+An association connects 'gmfgraph_Compartment' and 'gmfgraph_ChildAccess'. From 'gmfgraph_Compartment', the role 'gmfgraph_Compartment24' has cardinality 0..*, and from 'gmfgraph_ChildAccess', the role 'gmfgraph_ChildAccess25' has cardinality 0..*.
+An association connects 'gmfgraph_DiagramLabel' and 'gmfgraph_ChildAccess'. From 'gmfgraph_DiagramLabel', the role 'gmfgraph_DiagramLabel27' has cardinality 0..*, and from 'gmfgraph_ChildAccess', the role 'gmfgraph_ChildAccess28' has cardinality 0..*.
+An association connects 'gmfgraph_ChildAccess' and 'gmfgraph_DiagramLabel'. From 'gmfgraph_ChildAccess', the role 'gmfgraph_ChildAccess31' has cardinality 0..*, and from 'gmfgraph_DiagramLabel', the role 'gmfgraph_DiagramLabel30' has cardinality 0..*.
+An association connects 'gmfgraph_Figure' and 'gmfgraph_Color'. From 'gmfgraph_Figure', the role 'gmfgraph_Figure' has cardinality 0..*, and from 'gmfgraph_Color', the role 'gmfgraph_Color' has cardinality 0..*.
+An association connects 'gmfgraph_Figure' and 'gmfgraph_Color'. From 'gmfgraph_Figure', the role 'gmfgraph_Figure34' has cardinality 0..*, and from 'gmfgraph_Color', the role 'gmfgraph_Color35' has cardinality 0..*.
+An association connects 'gmfgraph_Dimension' and 'gmfgraph_Figure'. From 'gmfgraph_Dimension', the role 'gmfgraph_Dimension' has cardinality 0..*, and from 'gmfgraph_Figure', the role 'gmfgraph_Figure37' has cardinality 0..*.
+An association connects 'gmfgraph_Figure' and 'gmfgraph_Dimension'. From 'gmfgraph_Figure', the role 'gmfgraph_Figure39' has cardinality 0..*, and from 'gmfgraph_Dimension', the role 'gmfgraph_Dimension40' has cardinality 0..*.
+An association connects 'gmfgraph_Figure' and 'gmfgraph_Dimension'. From 'gmfgraph_Figure', the role 'gmfgraph_Figure42' has cardinality 0..*, and from 'gmfgraph_Dimension', the role 'gmfgraph_Dimension43' has cardinality 0..*.
+An association connects 'gmfgraph_Figure' and 'gmfgraph_Font'. From 'gmfgraph_Figure', the role 'gmfgraph_Figure45' has cardinality 0..*, and from 'gmfgraph_Font', the role 'gmfgraph_Font' has cardinality 0..*.
+An association connects 'gmfgraph_Figure' and 'gmfgraph_Insets'. From 'gmfgraph_Figure', the role 'gmfgraph_Figure47' has cardinality 0..*, and from 'gmfgraph_Insets', the role 'gmfgraph_Insets' has cardinality 0..*.
+An association connects 'gmfgraph_Border' and 'gmfgraph_Figure'. From 'gmfgraph_Border', the role 'gmfgraph_Border50' has cardinality 0..*, and from 'gmfgraph_Figure', the role 'gmfgraph_Figure49' has cardinality 0..*.
+An association connects 'gmfgraph_Point' and 'gmfgraph_Figure'. From 'gmfgraph_Point', the role 'gmfgraph_Point' has cardinality 0..*, and from 'gmfgraph_Figure', the role 'gmfgraph_Figure52' has cardinality 0..*.
+An association connects 'gmfgraph_Point' and 'gmfgraph_Figure'. From 'gmfgraph_Point', the role 'gmfgraph_Point55' has cardinality 0..*, and from 'gmfgraph_Figure', the role 'gmfgraph_Figure54' has cardinality 0..*.
+An association connects 'gmfgraph_FigureDescriptor' and 'gmfgraph_Figure'. From 'gmfgraph_FigureDescriptor', the role 'gmfgraph_FigureDescriptor58' has cardinality 0..*, and from 'gmfgraph_Figure', the role 'gmfgraph_Figure57' has cardinality 0..*.
+An association connects 'gmfgraph_RealFigure' and 'gmfgraph_FigureRef'. From 'gmfgraph_RealFigure', the role 'gmfgraph_RealFigure60' has cardinality 0..*, and from 'gmfgraph_FigureRef', the role 'gmfgraph_FigureRef' has cardinality 0..*.
+An association connects 'gmfgraph_Shape' and 'gmfgraph_Figure'. From 'gmfgraph_Shape', the role 'gmfgraph_Shape' has cardinality 0..*, and from 'gmfgraph_Figure', the role 'gmfgraph_Figure62' has cardinality 0..*.
+An association connects 'gmfgraph_Point' and 'gmfgraph_Polyline'. From 'gmfgraph_Point', the role 'gmfgraph_Point64' has cardinality 0..*, and from 'gmfgraph_Polyline', the role 'gmfgraph_Polyline' has cardinality 0..*.
+An association connects 'gmfgraph_PolylineConnection' and 'gmfgraph_DecorationFigure'. From 'gmfgraph_PolylineConnection', the role 'gmfgraph_PolylineConnection' has cardinality 0..*, and from 'gmfgraph_DecorationFigure', the role 'gmfgraph_DecorationFigure' has cardinality 0..*.
+An association connects 'gmfgraph_PolylineConnection' and 'gmfgraph_DecorationFigure'. From 'gmfgraph_PolylineConnection', the role 'gmfgraph_PolylineConnection67' has cardinality 0..*, and from 'gmfgraph_DecorationFigure', the role 'gmfgraph_DecorationFigure68' has cardinality 0..*.
+An association connects 'gmfgraph_CustomAttribute' and 'gmfgraph_CustomClass'. From 'gmfgraph_CustomAttribute', the role 'gmfgraph_CustomAttribute' has cardinality 0..*, and from 'gmfgraph_CustomClass', the role 'gmfgraph_CustomClass' has cardinality 0..*.
+An association connects 'gmfgraph_FigureAccessor' and 'gmfgraph_RealFigure'. From 'gmfgraph_FigureAccessor', the role 'gmfgraph_FigureAccessor' has cardinality 0..*, and from 'gmfgraph_RealFigure', the role 'gmfgraph_RealFigure71' has cardinality 0..*.
+An association connects 'gmfgraph_CustomFigure' and 'gmfgraph_FigureAccessor'. From 'gmfgraph_CustomFigure', the role 'gmfgraph_CustomFigure' has cardinality 0..*, and from 'gmfgraph_FigureAccessor', the role 'gmfgraph_FigureAccessor73' has cardinality 0..*.
+An association connects 'gmfgraph_Color' and 'gmfgraph_LineBorder'. From 'gmfgraph_Color', the role 'gmfgraph_Color75' has cardinality 0..*, and from 'gmfgraph_LineBorder', the role 'gmfgraph_LineBorder' has cardinality 0..*.
+An association connects 'gmfgraph_Insets' and 'gmfgraph_MarginBorder'. From 'gmfgraph_Insets', the role 'gmfgraph_Insets77' has cardinality 0..*, and from 'gmfgraph_MarginBorder', the role 'gmfgraph_MarginBorder' has cardinality 0..*.
+An association connects 'gmfgraph_Border' and 'gmfgraph_CompoundBorder'. From 'gmfgraph_Border', the role 'gmfgraph_Border79' has cardinality 0..*, and from 'gmfgraph_CompoundBorder', the role 'gmfgraph_CompoundBorder' has cardinality 0..*.
+An association connects 'gmfgraph_Border' and 'gmfgraph_CompoundBorder'. From 'gmfgraph_Border', the role 'gmfgraph_Border82' has cardinality 0..*, and from 'gmfgraph_CompoundBorder', the role 'gmfgraph_CompoundBorder81' has cardinality 0..*.
+An association connects 'gmfgraph_LayoutData' and 'gmfgraph_Layoutable'. From 'gmfgraph_LayoutData', the role 'layoutData' has cardinality 0..*, and from 'gmfgraph_Layoutable', the role 'Layoutable' has cardinality 0..*.
+An association connects 'gmfgraph_GridLayoutData' and 'gmfgraph_Dimension'. From 'gmfgraph_GridLayoutData', the role 'gmfgraph_GridLayoutData' has cardinality 0..*, and from 'gmfgraph_Dimension', the role 'gmfgraph_Dimension85' has cardinality 0..*.
+An association connects 'gmfgraph_Layoutable' and 'gmfgraph_LayoutData'. From 'gmfgraph_Layoutable', the role 'owner' has cardinality 0..*, and from 'gmfgraph_LayoutData', the role 'LayoutData' has cardinality 0..*.
+An association connects 'gmfgraph_Layout' and 'gmfgraph_Layoutable'. From 'gmfgraph_Layout', the role 'gmfgraph_Layout88' has cardinality 0..*, and from 'gmfgraph_Layoutable', the role 'gmfgraph_Layoutable' has cardinality 0..*.
+An association connects 'gmfgraph_GridLayout' and 'gmfgraph_Dimension'. From 'gmfgraph_GridLayout', the role 'gmfgraph_GridLayout' has cardinality 0..*, and from 'gmfgraph_Dimension', the role 'gmfgraph_Dimension90' has cardinality 0..*.
+An association connects 'gmfgraph_Dimension' and 'gmfgraph_GridLayout'. From 'gmfgraph_Dimension', the role 'gmfgraph_Dimension93' has cardinality 0..*, and from 'gmfgraph_GridLayout', the role 'gmfgraph_GridLayout92' has cardinality 0..*.
+An association connects 'gmfgraph_Dimension' and 'gmfgraph_BorderLayout'. From 'gmfgraph_Dimension', the role 'gmfgraph_Dimension95' has cardinality 0..*, and from 'gmfgraph_BorderLayout', the role 'gmfgraph_BorderLayout' has cardinality 0..*.
+An association connects 'gmfgraph_XYLayoutData' and 'gmfgraph_Point'. From 'gmfgraph_XYLayoutData', the role 'gmfgraph_XYLayoutData' has cardinality 0..*, and from 'gmfgraph_Point', the role 'gmfgraph_Point97' has cardinality 0..*.
+An association connects 'gmfgraph_Dimension' and 'gmfgraph_XYLayoutData'. From 'gmfgraph_Dimension', the role 'gmfgraph_Dimension100' has cardinality 0..*, and from 'gmfgraph_XYLayoutData', the role 'gmfgraph_XYLayoutData99' has cardinality 0..*.
+An association connects 'gmfgraph_Dimension' and 'gmfgraph_DefaultSizeFacet'. From 'gmfgraph_Dimension', the role 'gmfgraph_Dimension102' has cardinality 0..*, and from 'gmfgraph_DefaultSizeFacet', the role 'gmfgraph_DefaultSizeFacet' has cardinality 0..*.
+An association connects 'gmfgraph_Figure' and 'gmfgraph_RealFigure'. From 'gmfgraph_Figure', the role 'gmfgraph_Figure105' has cardinality 0..*, and from 'gmfgraph_RealFigure', the role 'gmfgraph_RealFigure104' has cardinality 0..*.
+An association connects 'gmfgraph_Figure' and 'gmfgraph_FigureDescriptor'. From 'gmfgraph_Figure', the role 'gmfgraph_Figure108' has cardinality 0..*, and from 'gmfgraph_FigureDescriptor', the role 'gmfgraph_FigureDescriptor107' has cardinality 0..*.
+An association connects 'gmfgraph_ChildAccess' and 'gmfgraph_FigureDescriptor'. From 'gmfgraph_ChildAccess', the role 'ChildAccess' has cardinality 0..*, and from 'gmfgraph_FigureDescriptor', the role 'owner110' has cardinality 0..*.
+An association connects 'gmfgraph_ChildAccess' and 'gmfgraph_FigureDescriptor'. From 'gmfgraph_ChildAccess', the role 'accessors' has cardinality 0..*, and from 'gmfgraph_FigureDescriptor', the role 'FigureDescriptor' has cardinality 0..*.
+An association connects 'gmfgraph_ChildAccess' and 'gmfgraph_Figure'. From 'gmfgraph_ChildAccess', the role 'gmfgraph_ChildAccess113' has cardinality 0..*, and from 'gmfgraph_Figure', the role 'gmfgraph_Figure114' has cardinality 0..*.
+An association connects 'gmfgraph_BorderRef' and 'gmfgraph_Border'. From 'gmfgraph_BorderRef', the role 'gmfgraph_BorderRef' has cardinality 0..*, and from 'gmfgraph_Border', the role 'gmfgraph_Border116' has cardinality 0..*.
+An association connects 'gmfgraph_Layout' and 'gmfgraph_LayoutRef'. From 'gmfgraph_Layout', the role 'gmfgraph_Layout118' has cardinality 0..*, and from 'gmfgraph_LayoutRef', the role 'gmfgraph_LayoutRef' has cardinality 0..*.

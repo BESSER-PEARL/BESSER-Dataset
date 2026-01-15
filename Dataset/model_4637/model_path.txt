@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/SOM-Research/collaboro/plugins/fr.inria.atlanmod.collaboro.notation.cdo/model/notation.ecore

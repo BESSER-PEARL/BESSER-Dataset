@@ -1,0 +1,58 @@
+The domain model 'metrics' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'metrics_MetricRetentionRules' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_MetricAggregationRule' represents an important domain concept.
+It has the following attributes: 'intervalHint', which is of type str; 'period', which is of type str.
+
+'metrics_MetricSource' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Base' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_Metric' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metrics_Addon' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_MetricRetentionRule' represents an important domain concept.
+It has the following attributes: 'period', which is of type str; 'intervalHint', which is of type str.
+
+'Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_MetricAggregationRules' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_MetricRetentionPeriods' represents an important domain concept.
+It has one attribute: 'metricRetentionPeriods', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FixedMetricRetentionPeriod' defines the following possible values: 'OneWeek', 'OneMonth', 'OneYear', 'Always'.
+
+The model also captures inheritance relationships between classes.
+The class 'metrics_Metric' is a specialization of 'Base'.
+The class 'metrics_MetricAggregationRule' is a specialization of 'Rule'.
+The class 'metrics_MetricRetentionRule' is a specialization of 'Rule'.
+The class 'metrics_MetricSource' is a specialization of 'Base'.
+
+Relationships between classes are modeled using associations.
+An association connects 'metrics_Metric' and 'metrics_Addon'. From 'metrics_Metric', the role 'metrics_Metric' has cardinality 0..*, and from 'metrics_Addon', the role 'metrics_Addon' has cardinality 0..*.
+An association connects 'metrics_MetricSource' and 'metrics_Addon'. From 'metrics_MetricSource', the role 'metrics_MetricSource' has cardinality 0..*, and from 'metrics_Addon', the role 'metrics_Addon2' has cardinality 0..*.
+An association connects 'metrics_Addon' and 'metrics_MetricRetentionRules'. From 'metrics_Addon', the role 'metrics_Addon4' has cardinality 0..*, and from 'metrics_MetricRetentionRules', the role 'metrics_MetricRetentionRules' has cardinality 0..*.
+An association connects 'metrics_Addon' and 'metrics_MetricAggregationRules'. From 'metrics_Addon', the role 'metrics_Addon6' has cardinality 0..*, and from 'metrics_MetricAggregationRules', the role 'metrics_MetricAggregationRules' has cardinality 0..*.
+An association connects 'metrics_MetricAggregationRules' and 'metrics_Metric'. From 'metrics_MetricAggregationRules', the role 'metrics_MetricAggregationRules9' has cardinality 0..*, and from 'metrics_Metric', the role 'metrics_Metric8' has cardinality 0..*.
+An association connects 'metrics_MetricRetentionRules' and 'metrics_Metric'. From 'metrics_MetricRetentionRules', the role 'metrics_MetricRetentionRules12' has cardinality 0..*, and from 'metrics_Metric', the role 'metrics_Metric11' has cardinality 0..*.
+An association connects 'metrics_MetricAggregationRule' and 'metrics_EObject'. From 'metrics_MetricAggregationRule', the role 'metrics_MetricAggregationRule' has cardinality 0..*, and from 'metrics_EObject', the role 'metrics_EObject' has cardinality 0..*.
+An association connects 'metrics_MetricAggregationRules' and 'metrics_MetricAggregationRule'. From 'metrics_MetricAggregationRules', the role 'metrics_MetricAggregationRules15' has cardinality 0..*, and from 'metrics_MetricAggregationRule', the role 'metrics_MetricAggregationRule16' has cardinality 0..*.
+An association connects 'metrics_MetricRetentionRules' and 'metrics_MetricRetentionRule'. From 'metrics_MetricRetentionRules', the role 'metrics_MetricRetentionRules18' has cardinality 0..*, and from 'metrics_MetricRetentionRule', the role 'metrics_MetricRetentionRule' has cardinality 0..*.
+An association connects 'metrics_MetricAggregationRules' and 'metrics_MetricSource'. From 'metrics_MetricAggregationRules', the role 'metrics_MetricAggregationRules21' has cardinality 0..*, and from 'metrics_MetricSource', the role 'metrics_MetricSource20' has cardinality 0..*.
+An association connects 'metrics_MetricRetentionRules' and 'metrics_MetricSource'. From 'metrics_MetricRetentionRules', the role 'metrics_MetricRetentionRules24' has cardinality 0..*, and from 'metrics_MetricSource', the role 'metrics_MetricSource23' has cardinality 0..*.

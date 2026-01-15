@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/YangZhou91/ECSE429_Project/ca.mcgill.sel.core/model/CORE.ecore

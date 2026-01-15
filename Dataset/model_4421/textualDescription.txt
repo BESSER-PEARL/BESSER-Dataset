@@ -1,0 +1,76 @@
+The domain model 'ArduinoMetamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'Analog' represents an important domain concept.
+It does not declare any attributes.
+
+'ArduinoMetamodel_PWM' represents an important domain concept.
+It does not declare any attributes.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'ArduinoMetamodel_Project' represents an important domain concept.
+It does not declare any attributes.
+
+'ArduinoMetamodel_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'ArduinoMetamodel_Pin' represents an important domain concept.
+It has the following attributes: 'pinMode', which is of type str; 'label', which is of type str.
+
+'ArduinoMetamodel_FiniteStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'ArduinoMetamodel_Instruccion' represents an important domain concept.
+It has one attribute: 'codigo', which is of type str.
+
+'Instruccion' represents an important domain concept.
+It does not declare any attributes.
+
+'ArduinoMetamodel_delay' represents an important domain concept.
+It does not declare any attributes.
+
+'ArduinoMetamodel_Digital' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'ArduinoMetamodel_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'ArduinoMetamodel_ArduinoBoardUNO' represents an important domain concept.
+It does not declare any attributes.
+
+'ArduinoMetamodel_Analog' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'ArduinoMetamodel_State' represents an important domain concept.
+It has the following attributes: 'isInitial', which is of type bool; 'name', which is of type str.
+
+'ArduinoMetamodel_Metodo' represents an important domain concept.
+It has one attribute: 'nombre', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AnalogID' defines the following possible values: 'A6', 'A2', 'A0', 'A4', 'A5', 'A3', 'A1'.
+The enumeration 'PinMode' defines the following possible values: 'INPUT_PULLUP', 'INPUT', 'OUTPUT'.
+The enumeration 'DigitalID' defines the following possible values: 'D12', 'D2', 'D13', 'D8', 'D7', 'D4'.
+
+The model also captures inheritance relationships between classes.
+The class 'ArduinoMetamodel_Digital' is a specialization of 'Pin'.
+The class 'ArduinoMetamodel_Analog' is a specialization of 'Pin'.
+The class 'ArduinoMetamodel_PWM' is a specialization of 'Analog'.
+The class 'ArduinoMetamodel_delay' is a specialization of 'Instruccion'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ArduinoMetamodel_Project' and 'ArduinoMetamodel_ArduinoBoardUNO'. From 'ArduinoMetamodel_Project', the role 'ArduinoMetamodel_Project' has cardinality 0..*, and from 'ArduinoMetamodel_ArduinoBoardUNO', the role 'ArduinoMetamodel_ArduinoBoardUNO' has cardinality 0..*.
+An association connects 'ArduinoMetamodel_Metodo' and 'ArduinoMetamodel_Project'. From 'ArduinoMetamodel_Metodo', the role 'ArduinoMetamodel_Metodo' has cardinality 0..*, and from 'ArduinoMetamodel_Project', the role 'ArduinoMetamodel_Project2' has cardinality 0..*.
+An association connects 'ArduinoMetamodel_Project' and 'ArduinoMetamodel_FiniteStateMachine'. From 'ArduinoMetamodel_Project', the role 'ArduinoMetamodel_Project4' has cardinality 0..*, and from 'ArduinoMetamodel_FiniteStateMachine', the role 'ArduinoMetamodel_FiniteStateMachine' has cardinality 0..*.
+An association connects 'ArduinoMetamodel_ArduinoBoardUNO' and 'ArduinoMetamodel_Digital'. From 'ArduinoMetamodel_ArduinoBoardUNO', the role 'ArduinoMetamodel_ArduinoBoardUNO6' has cardinality 0..*, and from 'ArduinoMetamodel_Digital', the role 'ArduinoMetamodel_Digital' has cardinality 0..*.
+An association connects 'ArduinoMetamodel_ArduinoBoardUNO' and 'ArduinoMetamodel_Analog'. From 'ArduinoMetamodel_ArduinoBoardUNO', the role 'ArduinoMetamodel_ArduinoBoardUNO8' has cardinality 0..*, and from 'ArduinoMetamodel_Analog', the role 'ArduinoMetamodel_Analog' has cardinality 0..*.
+An association connects 'ArduinoMetamodel_Metodo' and 'ArduinoMetamodel_Instruccion'. From 'ArduinoMetamodel_Metodo', the role 'ArduinoMetamodel_Metodo10' has cardinality 0..*, and from 'ArduinoMetamodel_Instruccion', the role 'ArduinoMetamodel_Instruccion' has cardinality 0..*.
+An association connects 'ArduinoMetamodel_State' and 'ArduinoMetamodel_Transition'. From 'ArduinoMetamodel_State', the role 'target' has cardinality 0..*, and from 'ArduinoMetamodel_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'ArduinoMetamodel_Transition' and 'ArduinoMetamodel_State'. From 'ArduinoMetamodel_Transition', the role 'Transition13' has cardinality 0..*, and from 'ArduinoMetamodel_State', the role 'source' has cardinality 0..*.
+An association connects 'ArduinoMetamodel_Transition' and 'ArduinoMetamodel_Action'. From 'ArduinoMetamodel_Transition', the role 'ArduinoMetamodel_Transition' has cardinality 0..*, and from 'ArduinoMetamodel_Action', the role 'ArduinoMetamodel_Action' has cardinality 0..*.
+An association connects 'ArduinoMetamodel_State' and 'ArduinoMetamodel_Transition'. From 'ArduinoMetamodel_State', the role 'State' has cardinality 0..*, and from 'ArduinoMetamodel_Transition', the role 'outgoing' has cardinality 0..*.
+An association connects 'ArduinoMetamodel_Transition' and 'ArduinoMetamodel_State'. From 'ArduinoMetamodel_Transition', the role 'incoming' has cardinality 0..*, and from 'ArduinoMetamodel_State', the role 'State17' has cardinality 0..*.
+An association connects 'ArduinoMetamodel_State' and 'ArduinoMetamodel_FiniteStateMachine'. From 'ArduinoMetamodel_State', the role 'ArduinoMetamodel_State' has cardinality 0..*, and from 'ArduinoMetamodel_FiniteStateMachine', the role 'ArduinoMetamodel_FiniteStateMachine19' has cardinality 0..*.

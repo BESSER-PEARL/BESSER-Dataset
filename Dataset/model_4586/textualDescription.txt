@@ -1,0 +1,204 @@
+The domain model 'ActivitiesProv' describes the core structural elements and their relationships within the system.
+
+The model defines 40 main class(es).
+
+'FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_ExceptionHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_Clause' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_InterruptibleActivityRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_ActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_ConditionalNode' represents an important domain concept.
+It has the following attributes: 'isAssumed', which is of type bool; 'isDeterminate', which is of type bool.
+
+'ActivitiesProv_JoinNode' represents an important domain concept.
+It has one attribute: 'isCombineDuplicate', which is of type bool.
+
+'ActivitiesProv_CentralBufferNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_FlowFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_LoopNode' represents an important domain concept.
+It has one attribute: 'isTestedFirst', which is of type bool.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_ExpansionRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_ActivityParameterNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_ExpansionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_SequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_ActivityPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_DataStoreNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CentralBufferNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_StructuredActivityNode' represents an important domain concept.
+It has one attribute: 'mustIsolate', which is of type bool.
+
+'ActivitiesProv_Activity' represents an important domain concept.
+It has the following attributes: 'isSingleExecution', which is of type bool; 'isReadOnly', which is of type bool.
+
+'ActivitiesProv_ParameterSet' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivitiesProv_ObjectFlow' represents an important domain concept.
+It has the following attributes: 'isMulticast', which is of type bool; 'isMultireceive', which is of type bool; 'isControlType', which is of type bool.
+
+The model also captures inheritance relationships between classes.
+The class 'ActivitiesProv_ObjectNode' is a specialization of 'ActivityNode'.
+The class 'ActivitiesProv_ActivityParameterNode' is a specialization of 'ObjectNode'.
+The class 'ActivitiesProv_ControlNode' is a specialization of 'ActivityNode'.
+The class 'ActivitiesProv_ActivityFinalNode' is a specialization of 'ControlNode'.
+The class 'ActivitiesProv_ActivityFinalNode' is a specialization of 'FinalNode'.
+The class 'ActivitiesProv_InitialNode' is a specialization of 'ControlNode'.
+The class 'ActivitiesProv_ControlFlow' is a specialization of 'ActivityEdge'.
+The class 'ActivitiesProv_ObjectFlow' is a specialization of 'ActivityEdge'.
+The class 'ActivitiesProv_CentralBufferNode' is a specialization of 'ObjectNode'.
+The class 'ActivitiesProv_FinalNode' is a specialization of 'ControlNode'.
+The class 'ActivitiesProv_FlowFinalNode' is a specialization of 'FinalNode'.
+The class 'ActivitiesProv_ForkNode' is a specialization of 'ControlNode'.
+The class 'ActivitiesProv_JoinNode' is a specialization of 'ControlNode'.
+The class 'ActivitiesProv_MergeNode' is a specialization of 'ControlNode'.
+The class 'ActivitiesProv_DecisionNode' is a specialization of 'ControlNode'.
+The class 'ActivitiesProv_ActivityPartition' is a specialization of 'ActivityGroup'.
+The class 'ActivitiesProv_DataStoreNode' is a specialization of 'CentralBufferNode'.
+The class 'ActivitiesProv_InterruptibleActivityRegion' is a specialization of 'ActivityGroup'.
+The class 'ActivitiesProv_StructuredActivityNode' is a specialization of 'ExecutableNode'.
+The class 'ActivitiesProv_StructuredActivityNode' is a specialization of 'ActivityGroup'.
+The class 'ActivitiesProv_ExecutableNode' is a specialization of 'ActivityNode'.
+The class 'ActivitiesProv_LoopNode' is a specialization of 'StructuredActivityNode'.
+The class 'ActivitiesProv_ConditionalNode' is a specialization of 'StructuredActivityNode'.
+The class 'ActivitiesProv_SequenceNode' is a specialization of 'StructuredActivityNode'.
+The class 'ActivitiesProv_ExpansionRegion' is a specialization of 'StructuredActivityNode'.
+The class 'ActivitiesProv_ExpansionNode' is a specialization of 'ObjectNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ActivitiesProv_Activity' and 'ActivitiesProv_ActivityNode'. From 'ActivitiesProv_Activity', the role 'ActivitiesProv_Activity' has cardinality 0..*, and from 'ActivitiesProv_ActivityNode', the role 'ActivitiesProv_ActivityNode' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityGroup' and 'ActivitiesProv_Activity'. From 'ActivitiesProv_ActivityGroup', the role 'ActivitiesProv_ActivityGroup' has cardinality 0..*, and from 'ActivitiesProv_Activity', the role 'ActivitiesProv_Activity2' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityEdge' and 'ActivitiesProv_Activity'. From 'ActivitiesProv_ActivityEdge', the role 'ActivitiesProv_ActivityEdge' has cardinality 0..*, and from 'ActivitiesProv_Activity', the role 'ActivitiesProv_Activity4' has cardinality 0..*.
+An association connects 'ActivitiesProv_Activity' and 'ActivitiesProv_ActivityPartition'. From 'ActivitiesProv_Activity', the role 'ActivitiesProv_Activity6' has cardinality 0..*, and from 'ActivitiesProv_ActivityPartition', the role 'ActivitiesProv_ActivityPartition' has cardinality 0..*.
+An association connects 'ActivitiesProv_StructuredActivityNode' and 'ActivitiesProv_Activity'. From 'ActivitiesProv_StructuredActivityNode', the role 'ActivitiesProv_StructuredActivityNode' has cardinality 0..*, and from 'ActivitiesProv_Activity', the role 'ActivitiesProv_Activity8' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityNode' and 'ActivitiesProv_ActivityGroup'. From 'ActivitiesProv_ActivityNode', the role 'ActivitiesProv_ActivityNode10' has cardinality 0..*, and from 'ActivitiesProv_ActivityGroup', the role 'ActivitiesProv_ActivityGroup11' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityNode' and 'ActivitiesProv_ActivityNode'. From 'ActivitiesProv_ActivityNode', the role 'ActivitiesProv_ActivityNode12' has cardinality 0..*, and from 'ActivitiesProv_ActivityNode', the role 'ActivitiesProv_ActivityNode14' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityEdge' and 'ActivitiesProv_ActivityNode'. From 'ActivitiesProv_ActivityEdge', the role 'ActivitiesProv_ActivityEdge17' has cardinality 0..*, and from 'ActivitiesProv_ActivityNode', the role 'ActivitiesProv_ActivityNode16' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityEdge' and 'ActivitiesProv_ActivityNode'. From 'ActivitiesProv_ActivityEdge', the role 'ActivitiesProv_ActivityEdge20' has cardinality 0..*, and from 'ActivitiesProv_ActivityNode', the role 'ActivitiesProv_ActivityNode19' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityPartition' and 'ActivitiesProv_ActivityNode'. From 'ActivitiesProv_ActivityPartition', the role 'ActivitiesProv_ActivityPartition23' has cardinality 0..*, and from 'ActivitiesProv_ActivityNode', the role 'ActivitiesProv_ActivityNode22' has cardinality 0..*.
+An association connects 'ActivitiesProv_InterruptibleActivityRegion' and 'ActivitiesProv_ActivityNode'. From 'ActivitiesProv_InterruptibleActivityRegion', the role 'ActivitiesProv_InterruptibleActivityRegion' has cardinality 0..*, and from 'ActivitiesProv_ActivityNode', the role 'ActivitiesProv_ActivityNode25' has cardinality 0..*.
+An association connects 'ActivitiesProv_StructuredActivityNode' and 'ActivitiesProv_ActivityNode'. From 'ActivitiesProv_StructuredActivityNode', the role 'ActivitiesProv_StructuredActivityNode28' has cardinality 0..*, and from 'ActivitiesProv_ActivityNode', the role 'ActivitiesProv_ActivityNode27' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityGroup' and 'ActivitiesProv_ActivityGroup'. From 'ActivitiesProv_ActivityGroup', the role 'ActivitiesProv_ActivityGroup29' has cardinality 0..*, and from 'ActivitiesProv_ActivityGroup', the role 'ActivitiesProv_ActivityGroup31' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityGroup' and 'ActivitiesProv_ActivityGroup'. From 'ActivitiesProv_ActivityGroup', the role 'ActivitiesProv_ActivityGroup34' has cardinality 0..*, and from 'ActivitiesProv_ActivityGroup', the role 'ActivitiesProv_ActivityGroup32' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityGroup' and 'ActivitiesProv_Activity'. From 'ActivitiesProv_ActivityGroup', the role 'ActivitiesProv_ActivityGroup36' has cardinality 0..*, and from 'ActivitiesProv_Activity', the role 'ActivitiesProv_Activity37' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityGroup' and 'ActivitiesProv_ActivityNode'. From 'ActivitiesProv_ActivityGroup', the role 'ActivitiesProv_ActivityGroup39' has cardinality 0..*, and from 'ActivitiesProv_ActivityNode', the role 'ActivitiesProv_ActivityNode40' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityEdge' and 'ActivitiesProv_ActivityGroup'. From 'ActivitiesProv_ActivityEdge', the role 'ActivitiesProv_ActivityEdge43' has cardinality 0..*, and from 'ActivitiesProv_ActivityGroup', the role 'ActivitiesProv_ActivityGroup42' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityNode' and 'ActivitiesProv_ActivityEdge'. From 'ActivitiesProv_ActivityNode', the role 'ActivitiesProv_ActivityNode46' has cardinality 0..*, and from 'ActivitiesProv_ActivityEdge', the role 'ActivitiesProv_ActivityEdge45' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityNode' and 'ActivitiesProv_ActivityEdge'. From 'ActivitiesProv_ActivityNode', the role 'ActivitiesProv_ActivityNode49' has cardinality 0..*, and from 'ActivitiesProv_ActivityEdge', the role 'ActivitiesProv_ActivityEdge48' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityEdge' and 'ActivitiesProv_ActivityEdge'. From 'ActivitiesProv_ActivityEdge', the role 'ActivitiesProv_ActivityEdge50' has cardinality 0..*, and from 'ActivitiesProv_ActivityEdge', the role 'ActivitiesProv_ActivityEdge52' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityGroup' and 'ActivitiesProv_ActivityEdge'. From 'ActivitiesProv_ActivityGroup', the role 'ActivitiesProv_ActivityGroup55' has cardinality 0..*, and from 'ActivitiesProv_ActivityEdge', the role 'ActivitiesProv_ActivityEdge54' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityPartition' and 'ActivitiesProv_ActivityEdge'. From 'ActivitiesProv_ActivityPartition', the role 'ActivitiesProv_ActivityPartition58' has cardinality 0..*, and from 'ActivitiesProv_ActivityEdge', the role 'ActivitiesProv_ActivityEdge57' has cardinality 0..*.
+An association connects 'ActivitiesProv_InterruptibleActivityRegion' and 'ActivitiesProv_ActivityEdge'. From 'ActivitiesProv_InterruptibleActivityRegion', the role 'ActivitiesProv_InterruptibleActivityRegion61' has cardinality 0..*, and from 'ActivitiesProv_ActivityEdge', the role 'ActivitiesProv_ActivityEdge60' has cardinality 0..*.
+An association connects 'ActivitiesProv_StructuredActivityNode' and 'ActivitiesProv_ActivityEdge'. From 'ActivitiesProv_StructuredActivityNode', the role 'ActivitiesProv_StructuredActivityNode64' has cardinality 0..*, and from 'ActivitiesProv_ActivityEdge', the role 'ActivitiesProv_ActivityEdge63' has cardinality 0..*.
+An association connects 'ActivitiesProv_ObjectFlow' and 'ActivitiesProv_DecisionNode'. From 'ActivitiesProv_ObjectFlow', the role 'ActivitiesProv_ObjectFlow' has cardinality 0..*, and from 'ActivitiesProv_DecisionNode', the role 'ActivitiesProv_DecisionNode' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityEdge' and 'ActivitiesProv_ActivityPartition'. From 'ActivitiesProv_ActivityEdge', the role 'ActivitiesProv_ActivityEdge68' has cardinality 0..*, and from 'ActivitiesProv_ActivityPartition', the role 'ActivitiesProv_ActivityPartition67' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityPartition' and 'ActivitiesProv_ActivityPartition'. From 'ActivitiesProv_ActivityPartition', the role 'ActivitiesProv_ActivityPartition71' has cardinality 0..*, and from 'ActivitiesProv_ActivityPartition', the role 'ActivitiesProv_ActivityPartition69' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityPartition' and 'ActivitiesProv_ActivityPartition'. From 'ActivitiesProv_ActivityPartition', the role 'ActivitiesProv_ActivityPartition74' has cardinality 0..*, and from 'ActivitiesProv_ActivityPartition', the role 'ActivitiesProv_ActivityPartition72' has cardinality 0..*.
+An association connects 'ActivitiesProv_ActivityPartition' and 'ActivitiesProv_ActivityNode'. From 'ActivitiesProv_ActivityPartition', the role 'ActivitiesProv_ActivityPartition76' has cardinality 0..*, and from 'ActivitiesProv_ActivityNode', the role 'ActivitiesProv_ActivityNode77' has cardinality 0..*.
+An association connects 'ActivitiesProv_InterruptibleActivityRegion' and 'ActivitiesProv_ActivityEdge'. From 'ActivitiesProv_InterruptibleActivityRegion', the role 'ActivitiesProv_InterruptibleActivityRegion79' has cardinality 0..*, and from 'ActivitiesProv_ActivityEdge', the role 'ActivitiesProv_ActivityEdge80' has cardinality 0..*.
+An association connects 'ActivitiesProv_InterruptibleActivityRegion' and 'ActivitiesProv_ActivityNode'. From 'ActivitiesProv_InterruptibleActivityRegion', the role 'ActivitiesProv_InterruptibleActivityRegion82' has cardinality 0..*, and from 'ActivitiesProv_ActivityNode', the role 'ActivitiesProv_ActivityNode83' has cardinality 0..*.
+An association connects 'ActivitiesProv_Activity' and 'ActivitiesProv_StructuredActivityNode'. From 'ActivitiesProv_Activity', the role 'ActivitiesProv_Activity86' has cardinality 0..*, and from 'ActivitiesProv_StructuredActivityNode', the role 'ActivitiesProv_StructuredActivityNode85' has cardinality 0..*.
+An association connects 'ActivitiesProv_StructuredActivityNode' and 'ActivitiesProv_ActivityNode'. From 'ActivitiesProv_StructuredActivityNode', the role 'ActivitiesProv_StructuredActivityNode88' has cardinality 0..*, and from 'ActivitiesProv_ActivityNode', the role 'ActivitiesProv_ActivityNode89' has cardinality 0..*.
+An association connects 'ActivitiesProv_StructuredActivityNode' and 'ActivitiesProv_ActivityEdge'. From 'ActivitiesProv_StructuredActivityNode', the role 'ActivitiesProv_StructuredActivityNode91' has cardinality 0..*, and from 'ActivitiesProv_ActivityEdge', the role 'ActivitiesProv_ActivityEdge92' has cardinality 0..*.
+An association connects 'ActivitiesProv_ExceptionHandler' and 'ActivitiesProv_ExecutableNode'. From 'ActivitiesProv_ExceptionHandler', the role 'ActivitiesProv_ExceptionHandler' has cardinality 0..*, and from 'ActivitiesProv_ExecutableNode', the role 'ActivitiesProv_ExecutableNode' has cardinality 0..*.
+An association connects 'ActivitiesProv_LoopNode' and 'ActivitiesProv_ExecutableNode'. From 'ActivitiesProv_LoopNode', the role 'ActivitiesProv_LoopNode' has cardinality 0..*, and from 'ActivitiesProv_ExecutableNode', the role 'ActivitiesProv_ExecutableNode95' has cardinality 0..*.
+An association connects 'ActivitiesProv_ExecutableNode' and 'ActivitiesProv_LoopNode'. From 'ActivitiesProv_ExecutableNode', the role 'ActivitiesProv_ExecutableNode98' has cardinality 0..*, and from 'ActivitiesProv_LoopNode', the role 'ActivitiesProv_LoopNode97' has cardinality 0..*.
+An association connects 'ActivitiesProv_LoopNode' and 'ActivitiesProv_ExecutableNode'. From 'ActivitiesProv_LoopNode', the role 'ActivitiesProv_LoopNode100' has cardinality 0..*, and from 'ActivitiesProv_ExecutableNode', the role 'ActivitiesProv_ExecutableNode101' has cardinality 0..*.
+An association connects 'ActivitiesProv_ConditionalNode' and 'ActivitiesProv_Clause'. From 'ActivitiesProv_ConditionalNode', the role 'ActivitiesProv_ConditionalNode' has cardinality 0..*, and from 'ActivitiesProv_Clause', the role 'ActivitiesProv_Clause' has cardinality 0..*.
+An association connects 'ActivitiesProv_ExecutableNode' and 'ActivitiesProv_ConditionalNode'. From 'ActivitiesProv_ExecutableNode', the role 'ActivitiesProv_ExecutableNode105' has cardinality 0..*, and from 'ActivitiesProv_ConditionalNode', the role 'ActivitiesProv_ConditionalNode104' has cardinality 0..*.
+An association connects 'ActivitiesProv_ConditionalNode' and 'ActivitiesProv_ExecutableNode'. From 'ActivitiesProv_ConditionalNode', the role 'ActivitiesProv_ConditionalNode107' has cardinality 0..*, and from 'ActivitiesProv_ExecutableNode', the role 'ActivitiesProv_ExecutableNode108' has cardinality 0..*.
+An association connects 'ActivitiesProv_Clause' and 'ActivitiesProv_Clause'. From 'ActivitiesProv_Clause', the role 'ActivitiesProv_Clause109' has cardinality 0..*, and from 'ActivitiesProv_Clause', the role 'ActivitiesProv_Clause111' has cardinality 0..*.
+An association connects 'ActivitiesProv_Clause' and 'ActivitiesProv_Clause'. From 'ActivitiesProv_Clause', the role 'ActivitiesProv_Clause112' has cardinality 0..*, and from 'ActivitiesProv_Clause', the role 'ActivitiesProv_Clause114' has cardinality 0..*.
+An association connects 'ActivitiesProv_SequenceNode' and 'ActivitiesProv_ExecutableNode'. From 'ActivitiesProv_SequenceNode', the role 'ActivitiesProv_SequenceNode' has cardinality 0..*, and from 'ActivitiesProv_ExecutableNode', the role 'ActivitiesProv_ExecutableNode116' has cardinality 0..*.
+An association connects 'ActivitiesProv_ExceptionHandler' and 'ActivitiesProv_ExecutableNode'. From 'ActivitiesProv_ExceptionHandler', the role 'ActivitiesProv_ExceptionHandler118' has cardinality 0..*, and from 'ActivitiesProv_ExecutableNode', the role 'ActivitiesProv_ExecutableNode119' has cardinality 0..*.
+An association connects 'ActivitiesProv_ExecutableNode' and 'ActivitiesProv_ExceptionHandler'. From 'ActivitiesProv_ExecutableNode', the role 'ActivitiesProv_ExecutableNode122' has cardinality 0..*, and from 'ActivitiesProv_ExceptionHandler', the role 'ActivitiesProv_ExceptionHandler121' has cardinality 0..*.
+An association connects 'ActivitiesProv_ExceptionHandler' and 'ActivitiesProv_ObjectNode'. From 'ActivitiesProv_ExceptionHandler', the role 'ActivitiesProv_ExceptionHandler124' has cardinality 0..*, and from 'ActivitiesProv_ObjectNode', the role 'ActivitiesProv_ObjectNode' has cardinality 0..*.
+An association connects 'ActivitiesProv_ExpansionRegion' and 'ActivitiesProv_ExpansionNode'. From 'ActivitiesProv_ExpansionRegion', the role 'ActivitiesProv_ExpansionRegion' has cardinality 0..*, and from 'ActivitiesProv_ExpansionNode', the role 'ActivitiesProv_ExpansionNode' has cardinality 0..*.
+An association connects 'ActivitiesProv_ExpansionRegion' and 'ActivitiesProv_ExpansionNode'. From 'ActivitiesProv_ExpansionRegion', the role 'ActivitiesProv_ExpansionRegion127' has cardinality 0..*, and from 'ActivitiesProv_ExpansionNode', the role 'ActivitiesProv_ExpansionNode128' has cardinality 0..*.
+An association connects 'ActivitiesProv_ExpansionNode' and 'ActivitiesProv_ExpansionRegion'. From 'ActivitiesProv_ExpansionNode', the role 'ActivitiesProv_ExpansionNode130' has cardinality 0..*, and from 'ActivitiesProv_ExpansionRegion', the role 'ActivitiesProv_ExpansionRegion131' has cardinality 0..*.
+An association connects 'ActivitiesProv_ExpansionRegion' and 'ActivitiesProv_ExpansionNode'. From 'ActivitiesProv_ExpansionRegion', the role 'ActivitiesProv_ExpansionRegion134' has cardinality 0..*, and from 'ActivitiesProv_ExpansionNode', the role 'ActivitiesProv_ExpansionNode133' has cardinality 0..*.

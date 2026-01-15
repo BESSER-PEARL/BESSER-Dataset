@@ -1,0 +1,78 @@
+The domain model 'SmartHouse' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'SmartHouse_Heating' represents an important domain concept.
+It has the following attributes: 'level', which is of type int; 'name', which is of type str.
+
+'SmartHouse_CoffeeMaker' represents an important domain concept.
+It has the following attributes: 'loaded', which is of type bool; 'on', which is of type bool; 'warming', which is of type bool.
+
+'SmartHouse_WaterHeater' represents an important domain concept.
+It has the following attributes: 'boost', which is of type bool; 'temp', which is of type str; 'on', which is of type bool.
+
+'SmartHouse_Cooker' represents an important domain concept.
+It has one attribute: 'on', which is of type bool.
+
+'SmartHouse_Security' represents an important domain concept.
+It has one attribute: 'on', which is of type bool.
+
+'SmartHouse_EV' represents an important domain concept.
+It has the following attributes: 'pluged', which is of type bool; 'name', which is of type str; 'charging', which is of type bool; 'level', which is of type str.
+
+'SmartHouse_Light' represents an important domain concept.
+It has one attribute: 'level', which is of type str.
+
+'SmartHouse_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SmartHouse_Projector' represents an important domain concept.
+It has the following attributes: 'volume', which is of type str; 'on', which is of type bool; 'brightness', which is of type str.
+
+'SmartHouse_Gate' represents an important domain concept.
+It has one attribute: 'outlocked', which is of type bool.
+
+'SmartHouse_Sensor' represents an important domain concept.
+It has the following attributes: 'battery', which is of type str; 'circle', which is of type str; 'air', which is of type bool; 'temp', which is of type bool; 'brightness', which is of type bool.
+
+'SmartHouse_WashingMachine' represents an important domain concept.
+It has the following attributes: 'on', which is of type bool; 'loaded', which is of type bool.
+
+'SmartHouse_AirConditioner' represents an important domain concept.
+It has the following attributes: 'level', which is of type str; 'freshAir', which is of type bool.
+
+'SmartHouse_House' represents an important domain concept.
+It has the following attributes: 'outtemp', which is of type str; 'name', which is of type str; 'time', which is of type str; 'eprice', which is of type str.
+
+'SmartHouse_Room' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'air', which is of type int; 'temp', which is of type float; 'bright', which is of type str.
+
+'SmartHouse_Window' represents an important domain concept.
+It has the following attributes: 'opened', which is of type bool; 'curtainOn', which is of type bool; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'SmartHouse_House' and 'SmartHouse_Room'. From 'SmartHouse_House', the role 'house' has cardinality 0..*, and from 'SmartHouse_Room', the role 'Room' has cardinality 0..*.
+An association connects 'SmartHouse_Person' and 'SmartHouse_House'. From 'SmartHouse_Person', the role 'SmartHouse_Person' has cardinality 0..*, and from 'SmartHouse_House', the role 'SmartHouse_House' has cardinality 0..*.
+An association connects 'SmartHouse_House' and 'SmartHouse_WaterHeater'. From 'SmartHouse_House', the role 'house3' has cardinality 0..*, and from 'SmartHouse_WaterHeater', the role 'WaterHeater' has cardinality 0..*.
+An association connects 'SmartHouse_EV' and 'SmartHouse_House'. From 'SmartHouse_EV', the role 'EV' has cardinality 0..*, and from 'SmartHouse_House', the role 'house5' has cardinality 0..*.
+An association connects 'SmartHouse_Gate' and 'SmartHouse_House'. From 'SmartHouse_Gate', the role 'Gate' has cardinality 0..*, and from 'SmartHouse_House', the role 'house7' has cardinality 0..*.
+An association connects 'SmartHouse_House' and 'SmartHouse_Security'. From 'SmartHouse_House', the role 'house9' has cardinality 0..*, and from 'SmartHouse_Security', the role 'Security' has cardinality 0..*.
+An association connects 'SmartHouse_House' and 'SmartHouse_Gate'. From 'SmartHouse_House', the role 'House' has cardinality 0..*, and from 'SmartHouse_Gate', the role 'gate' has cardinality 0..*.
+An association connects 'SmartHouse_House' and 'SmartHouse_Security'. From 'SmartHouse_House', the role 'House12' has cardinality 0..*, and from 'SmartHouse_Security', the role 'sec' has cardinality 0..*.
+An association connects 'SmartHouse_House' and 'SmartHouse_WaterHeater'. From 'SmartHouse_House', the role 'House14' has cardinality 0..*, and from 'SmartHouse_WaterHeater', the role 'wh' has cardinality 0..*.
+An association connects 'SmartHouse_House' and 'SmartHouse_EV'. From 'SmartHouse_House', the role 'House16' has cardinality 0..*, and from 'SmartHouse_EV', the role 'ev' has cardinality 0..*.
+An association connects 'SmartHouse_House' and 'SmartHouse_Room'. From 'SmartHouse_House', the role 'House18' has cardinality 0..*, and from 'SmartHouse_Room', the role 'room' has cardinality 0..*.
+An association connects 'SmartHouse_Room' and 'SmartHouse_Window'. From 'SmartHouse_Room', the role 'SmartHouse_Room' has cardinality 0..*, and from 'SmartHouse_Window', the role 'SmartHouse_Window' has cardinality 0..*.
+An association connects 'SmartHouse_Room' and 'SmartHouse_Heating'. From 'SmartHouse_Room', the role 'SmartHouse_Room21' has cardinality 0..*, and from 'SmartHouse_Heating', the role 'SmartHouse_Heating' has cardinality 0..*.
+An association connects 'SmartHouse_Room' and 'SmartHouse_Light'. From 'SmartHouse_Room', the role 'SmartHouse_Room23' has cardinality 0..*, and from 'SmartHouse_Light', the role 'SmartHouse_Light' has cardinality 0..*.
+An association connects 'SmartHouse_AirConditioner' and 'SmartHouse_Room'. From 'SmartHouse_AirConditioner', the role 'AirConditioner' has cardinality 0..*, and from 'SmartHouse_Room', the role 'room25' has cardinality 0..*.
+An association connects 'SmartHouse_Room' and 'SmartHouse_Person'. From 'SmartHouse_Room', the role 'SmartHouse_Room27' has cardinality 0..*, and from 'SmartHouse_Person', the role 'SmartHouse_Person28' has cardinality 0..*.
+An association connects 'SmartHouse_Sensor' and 'SmartHouse_Room'. From 'SmartHouse_Sensor', the role 'SmartHouse_Sensor' has cardinality 0..*, and from 'SmartHouse_Room', the role 'SmartHouse_Room30' has cardinality 0..*.
+An association connects 'SmartHouse_Projector' and 'SmartHouse_Room'. From 'SmartHouse_Projector', the role 'Projector' has cardinality 0..*, and from 'SmartHouse_Room', the role 'room32' has cardinality 0..*.
+An association connects 'SmartHouse_Cooker' and 'SmartHouse_Room'. From 'SmartHouse_Cooker', the role 'SmartHouse_Cooker' has cardinality 0..*, and from 'SmartHouse_Room', the role 'SmartHouse_Room34' has cardinality 0..*.
+An association connects 'SmartHouse_Room' and 'SmartHouse_WashingMachine'. From 'SmartHouse_Room', the role 'room36' has cardinality 0..*, and from 'SmartHouse_WashingMachine', the role 'WashingMachine' has cardinality 0..*.
+An association connects 'SmartHouse_CoffeeMaker' and 'SmartHouse_Room'. From 'SmartHouse_CoffeeMaker', the role 'CoffeeMaker' has cardinality 0..*, and from 'SmartHouse_Room', the role 'room38' has cardinality 0..*.
+An association connects 'SmartHouse_Room' and 'SmartHouse_AirConditioner'. From 'SmartHouse_Room', the role 'Room40' has cardinality 0..*, and from 'SmartHouse_AirConditioner', the role 'ac' has cardinality 0..*.
+An association connects 'SmartHouse_Projector' and 'SmartHouse_Room'. From 'SmartHouse_Projector', the role 'projector' has cardinality 0..*, and from 'SmartHouse_Room', the role 'Room42' has cardinality 0..*.
+An association connects 'SmartHouse_Room' and 'SmartHouse_WashingMachine'. From 'SmartHouse_Room', the role 'Room44' has cardinality 0..*, and from 'SmartHouse_WashingMachine', the role 'wm' has cardinality 0..*.
+An association connects 'SmartHouse_Room' and 'SmartHouse_CoffeeMaker'. From 'SmartHouse_Room', the role 'Room46' has cardinality 0..*, and from 'SmartHouse_CoffeeMaker', the role 'cm' has cardinality 0..*.

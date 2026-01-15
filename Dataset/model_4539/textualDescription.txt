@@ -1,0 +1,118 @@
+The domain model 'House2' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'House2_LessThanCondition' represents an important domain concept.
+It has one attribute: 'threshold', which is of type float.
+
+'House2_Lamp' represents an important domain concept.
+It has one attribute: 'isOn', which is of type bool.
+
+'House2_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'House2_House' represents an important domain concept.
+It does not declare any attributes.
+
+'Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'House2_ControlRule' represents an important domain concept.
+It does not declare any attributes.
+
+'House2_TwilightSwitch' represents an important domain concept.
+It has one attribute: 'active', which is of type bool.
+
+'Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'House2_Room' represents an important domain concept.
+It does not declare any attributes.
+
+'House2_RollerBlind' represents an important domain concept.
+It has one attribute: 'isUp', which is of type bool.
+
+'House2_Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'House2_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'House2_Container' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'House2_RainSensor' represents an important domain concept.
+It has one attribute: 'active', which is of type bool.
+
+'House2_GreaterThanCondition' represents an important domain concept.
+It has one attribute: 'threshold', which is of type float.
+
+'Container' represents an important domain concept.
+It does not declare any attributes.
+
+'House2_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'House2_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'House2_BooleanAction' represents an important domain concept.
+It has one attribute: 'switchTo', which is of type bool.
+
+'House2_Boiler' represents an important domain concept.
+It has one attribute: 'isOn', which is of type bool.
+
+'House2_ValueAction' represents an important domain concept.
+It has one attribute: 'switchToValue', which is of type float.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'House2_EqualCondition' represents an important domain concept.
+It has the following attributes: 'boolcond', which is of type bool; 'valuecond', which is of type float.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'House2_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'House2_TemperatureSensor' represents an important domain concept.
+It has one attribute: 'temp', which is of type float.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'House2_House' is a specialization of 'Container'.
+The class 'House2_House' is a specialization of 'Element'.
+The class 'House2_Room' is a specialization of 'Container'.
+The class 'House2_Container' is a specialization of 'NamedElement'.
+The class 'House2_Element' is a specialization of 'NamedElement'.
+The class 'House2_Sensor' is a specialization of 'NamedElement'.
+The class 'House2_Actor' is a specialization of 'NamedElement'.
+The class 'House2_TemperatureSensor' is a specialization of 'Sensor'.
+The class 'House2_TwilightSwitch' is a specialization of 'Sensor'.
+The class 'House2_Boiler' is a specialization of 'Actor'.
+The class 'House2_RollerBlind' is a specialization of 'Actor'.
+The class 'House2_LessThanCondition' is a specialization of 'Condition'.
+The class 'House2_GreaterThanCondition' is a specialization of 'Condition'.
+The class 'House2_Lamp' is a specialization of 'Actor'.
+The class 'House2_EqualCondition' is a specialization of 'Condition'.
+The class 'House2_RainSensor' is a specialization of 'Sensor'.
+The class 'House2_BooleanAction' is a specialization of 'Action'.
+The class 'House2_ValueAction' is a specialization of 'Action'.
+
+Relationships between classes are modeled using associations.
+An association connects 'House2_House' and 'House2_Room'. From 'House2_House', the role 'House2_House' has cardinality 0..*, and from 'House2_Room', the role 'House2_Room' has cardinality 0..*.
+An association connects 'House2_ControlRule' and 'House2_House'. From 'House2_ControlRule', the role 'House2_ControlRule' has cardinality 0..*, and from 'House2_House', the role 'House2_House2' has cardinality 0..*.
+An association connects 'House2_Element' and 'House2_Container'. From 'House2_Element', the role 'House2_Element' has cardinality 0..*, and from 'House2_Container', the role 'House2_Container' has cardinality 0..*.
+An association connects 'House2_Container' and 'House2_Sensor'. From 'House2_Container', the role 'House2_Container5' has cardinality 0..*, and from 'House2_Sensor', the role 'House2_Sensor' has cardinality 0..*.
+An association connects 'House2_Container' and 'House2_Actor'. From 'House2_Container', the role 'House2_Container7' has cardinality 0..*, and from 'House2_Actor', the role 'House2_Actor' has cardinality 0..*.
+An association connects 'House2_ControlRule' and 'House2_Condition'. From 'House2_ControlRule', the role 'House2_ControlRule9' has cardinality 0..*, and from 'House2_Condition', the role 'House2_Condition' has cardinality 0..*.
+An association connects 'House2_Action' and 'House2_ControlRule'. From 'House2_Action', the role 'House2_Action' has cardinality 0..*, and from 'House2_ControlRule', the role 'House2_ControlRule11' has cardinality 0..*.
+An association connects 'House2_Sensor' and 'House2_Condition'. From 'House2_Sensor', the role 'House2_Sensor14' has cardinality 0..*, and from 'House2_Condition', the role 'House2_Condition13' has cardinality 0..*.
+An association connects 'House2_Action' and 'House2_Actor'. From 'House2_Action', the role 'House2_Action16' has cardinality 0..*, and from 'House2_Actor', the role 'House2_Actor17' has cardinality 0..*.

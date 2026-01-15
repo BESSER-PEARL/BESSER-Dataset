@@ -1,0 +1,17 @@
+The domain model 'demo_model' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'demo_model_Address' represents an important domain concept.
+It has the following attributes: 'state', which is of type str; 'zipcode', which is of type int; 'street', which is of type str; 'country', which is of type str; 'city', which is of type str.
+
+'demo_model_Employee' represents an important domain concept.
+It has the following attributes: 'firstname', which is of type str; 'position', which is of type str; 'lastname', which is of type str; 'phone', which is of type str; 'email', which is of type str; 'birthday', which is of type date.
+
+'demo_model_Company' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'demo_model_Employee' and 'demo_model_Company'. From 'demo_model_Employee', the role 'Employee' has cardinality 0..*, and from 'demo_model_Company', the role 'company' has cardinality 0..*.
+An association connects 'demo_model_Company' and 'demo_model_Employee'. From 'demo_model_Company', the role 'Company' has cardinality 0..*, and from 'demo_model_Employee', the role 'employees' has cardinality 0..*.
+An association connects 'demo_model_Employee' and 'demo_model_Address'. From 'demo_model_Employee', the role 'demo_model_Employee' has cardinality 0..*, and from 'demo_model_Address', the role 'demo_model_Address' has cardinality 0..*.

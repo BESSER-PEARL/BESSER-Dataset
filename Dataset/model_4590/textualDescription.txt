@@ -1,0 +1,115 @@
+The domain model 'activitydiagram' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'activitydiagram_ActionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_ActivityParameterNode' represents an important domain concept.
+It has one attribute: 'parameter', which is of type str.
+
+'activitydiagram_TimeEventNode' represents an important domain concept.
+It has one attribute: 'cycle', which is of type str.
+
+'activitydiagram_ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_AcceptSignalNode' represents an important domain concept.
+It has one attribute: 'signalId', which is of type str.
+
+'activitydiagram_ActivityNode' represents an important domain concept.
+It has one attribute: 'current', which is of type bool.
+
+'activitydiagram_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_DataStoreNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_FlowFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_SignalNode' represents an important domain concept.
+It has one attribute: 'signalId', which is of type str.
+
+'activitydiagram_ActivityEdge' represents an important domain concept.
+It has one attribute: 'guard', which is of type bool.
+
+'activitydiagram_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_ExpansionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_JoinNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activitydiagram_ADElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ADElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'activitydiagram_Activity' is a specialization of 'ADElement'.
+The class 'activitydiagram_ActivityNode' is a specialization of 'ADElement'.
+The class 'activitydiagram_ActivityEdge' is a specialization of 'ADElement'.
+The class 'activitydiagram_ActionNode' is a specialization of 'ActivityNode'.
+The class 'activitydiagram_ControlNode' is a specialization of 'ActivityNode'.
+The class 'activitydiagram_ObjectNode' is a specialization of 'ActivityNode'.
+The class 'activitydiagram_SignalNode' is a specialization of 'ActivityNode'.
+The class 'activitydiagram_InitialNode' is a specialization of 'ControlNode'.
+The class 'activitydiagram_FinalNode' is a specialization of 'ControlNode'.
+The class 'activitydiagram_ForkNode' is a specialization of 'ControlNode'.
+The class 'activitydiagram_JoinNode' is a specialization of 'ControlNode'.
+The class 'activitydiagram_MergeNode' is a specialization of 'ControlNode'.
+The class 'activitydiagram_DecisionNode' is a specialization of 'ControlNode'.
+The class 'activitydiagram_AcceptSignalNode' is a specialization of 'ActivityNode'.
+The class 'activitydiagram_TimeEventNode' is a specialization of 'ActivityNode'.
+The class 'activitydiagram_ActivityFinalNode' is a specialization of 'FinalNode'.
+The class 'activitydiagram_FlowFinalNode' is a specialization of 'FinalNode'.
+The class 'activitydiagram_ActivityParameterNode' is a specialization of 'ObjectNode'.
+The class 'activitydiagram_DataStoreNode' is a specialization of 'ObjectNode'.
+The class 'activitydiagram_Pin' is a specialization of 'ObjectNode'.
+The class 'activitydiagram_ExpansionNode' is a specialization of 'ObjectNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'activitydiagram_Activity' and 'activitydiagram_ADElement'. From 'activitydiagram_Activity', the role 'activityDiag' has cardinality 0..*, and from 'activitydiagram_ADElement', the role 'ADElement' has cardinality 0..*.
+An association connects 'activitydiagram_ADElement' and 'activitydiagram_Activity'. From 'activitydiagram_ADElement', the role 'contains' has cardinality 0..*, and from 'activitydiagram_Activity', the role 'Activity' has cardinality 0..*.
+An association connects 'activitydiagram_ActivityNode' and 'activitydiagram_ActivityEdge'. From 'activitydiagram_ActivityNode', the role 'source' has cardinality 0..*, and from 'activitydiagram_ActivityEdge', the role 'ActivityEdge' has cardinality 0..*.
+An association connects 'activitydiagram_ActivityEdge' and 'activitydiagram_ActivityNode'. From 'activitydiagram_ActivityEdge', the role 'ActivityEdge4' has cardinality 0..*, and from 'activitydiagram_ActivityNode', the role 'target' has cardinality 0..*.
+An association connects 'activitydiagram_ActivityNode' and 'activitydiagram_ActivityEdge'. From 'activitydiagram_ActivityNode', the role 'ActivityNode' has cardinality 0..*, and from 'activitydiagram_ActivityEdge', the role 'sedges' has cardinality 0..*.
+An association connects 'activitydiagram_ActivityEdge' and 'activitydiagram_ActivityNode'. From 'activitydiagram_ActivityEdge', the role 'tedges' has cardinality 0..*, and from 'activitydiagram_ActivityNode', the role 'ActivityNode7' has cardinality 0..*.

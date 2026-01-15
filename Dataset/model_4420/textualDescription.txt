@@ -1,0 +1,99 @@
+The domain model 'robo' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'Command' represents an important domain concept.
+It does not declare any attributes.
+
+'robo_command_Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'robo_Program' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'robo_expression_Operation' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'robo_command_Drive' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'robo_command_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'robo_Robot' represents an important domain concept.
+It does not declare any attributes.
+
+'robo_Motor' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'speed', which is of type float; 'port', which is of type str; 'reversed', which is of type bool.
+
+'robo_condition_Comparison' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'robo_expression_Literal' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'robo_condition_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'robo_Setup' represents an important domain concept.
+It does not declare any attributes.
+
+'robo_command_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'robo_Sensor' represents an important domain concept.
+It has the following attributes: 'mode', which is of type str; 'type', which is of type str; 'port', which is of type str; 'name', which is of type str.
+
+'robo_command_Assignment' represents an important domain concept.
+It has one attribute: 'variable', which is of type str.
+
+'robo_expression_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'robo_expression_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SensorPort' defines the following possible values: 'S2', 'S1', 'S4', 'S3'.
+The enumeration 'MotorType' defines the following possible values: 'MEDIUM', 'LARGE'.
+The enumeration 'SensorType' defines a single possible value: 'COLOR'.
+The enumeration 'ComparisonOperator' defines the following possible values: 'LESS_OR_EQUAL', 'LESS', 'EQUAL', 'UNEQUAL', 'GREATER', 'GREATER_OR_EQUAL'.
+The enumeration 'SensorMode' defines the following possible values: 'RED', 'COLOR_ID', 'AMBIENT'.
+The enumeration 'MotorPort' defines the following possible values: 'C', 'D', 'A', 'B'.
+The enumeration 'Direction' defines the following possible values: 'LEFT', 'BACKWARD', 'FORWARD', 'RIGHT'.
+The enumeration 'ExprOperation' defines the following possible values: 'DIVIDE', 'MULTIPLY', 'PLUS', 'MINUS'.
+
+The model also captures inheritance relationships between classes.
+The class 'robo_command_Drive' is a specialization of 'Command'.
+The class 'robo_command_Loop' is a specialization of 'Command'.
+The class 'robo_command_Branch' is a specialization of 'Command'.
+The class 'robo_command_Assignment' is a specialization of 'Command'.
+The class 'robo_expression_Variable' is a specialization of 'Expr'.
+The class 'robo_expression_Operation' is a specialization of 'Expr'.
+The class 'robo_expression_Literal' is a specialization of 'Expr'.
+The class 'robo_condition_Comparison' is a specialization of 'Condition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'robo_Program' and 'robo_Robot'. From 'robo_Program', the role 'robo_Program' has cardinality 0..*, and from 'robo_Robot', the role 'robo_Robot' has cardinality 0..*.
+An association connects 'robo_Robot' and 'robo_Setup'. From 'robo_Robot', the role 'robo_Robot2' has cardinality 0..*, and from 'robo_Setup', the role 'robo_Setup' has cardinality 0..*.
+An association connects 'robo_Motor' and 'robo_Setup'. From 'robo_Motor', the role 'robo_Motor' has cardinality 0..*, and from 'robo_Setup', the role 'robo_Setup4' has cardinality 0..*.
+An association connects 'robo_Setup' and 'robo_Motor'. From 'robo_Setup', the role 'robo_Setup6' has cardinality 0..*, and from 'robo_Motor', the role 'robo_Motor7' has cardinality 0..*.
+An association connects 'robo_Sensor' and 'robo_Setup'. From 'robo_Sensor', the role 'robo_Sensor' has cardinality 0..*, and from 'robo_Setup', the role 'robo_Setup9' has cardinality 0..*.
+An association connects 'Command' and 'robo_Program'. From 'Command', the role 'Command' has cardinality 0..*, and from 'robo_Program', the role 'robo_Program11' has cardinality 0..*.
+An association connects 'Expr' and 'robo_command_Drive'. From 'Expr', the role 'Expr' has cardinality 0..*, and from 'robo_command_Drive', the role 'robo_command_Drive' has cardinality 0..*.
+An association connects 'Condition' and 'robo_command_Drive'. From 'Condition', the role 'Condition' has cardinality 0..*, and from 'robo_command_Drive', the role 'robo_command_Drive14' has cardinality 0..*.
+An association connects 'Condition' and 'robo_command_Loop'. From 'Condition', the role 'Condition16' has cardinality 0..*, and from 'robo_command_Loop', the role 'robo_command_Loop' has cardinality 0..*.
+An association connects 'Command' and 'robo_command_Loop'. From 'Command', the role 'Command19' has cardinality 0..*, and from 'robo_command_Loop', the role 'robo_command_Loop18' has cardinality 0..*.
+An association connects 'Condition' and 'robo_command_Branch'. From 'Condition', the role 'Condition21' has cardinality 0..*, and from 'robo_command_Branch', the role 'robo_command_Branch' has cardinality 0..*.
+An association connects 'robo_command_Branch' and 'Command'. From 'robo_command_Branch', the role 'robo_command_Branch23' has cardinality 0..*, and from 'Command', the role 'Command24' has cardinality 0..*.
+An association connects 'Expr' and 'robo_command_Assignment'. From 'Expr', the role 'Expr26' has cardinality 0..*, and from 'robo_command_Assignment', the role 'robo_command_Assignment' has cardinality 0..*.
+An association connects 'Expr' and 'robo_expression_Operation'. From 'Expr', the role 'Expr28' has cardinality 0..*, and from 'robo_expression_Operation', the role 'robo_expression_Operation' has cardinality 0..*.
+An association connects 'Expr' and 'robo_expression_Operation'. From 'Expr', the role 'Expr31' has cardinality 0..*, and from 'robo_expression_Operation', the role 'robo_expression_Operation30' has cardinality 0..*.
+An association connects 'robo_condition_Comparison' and 'Expr'. From 'robo_condition_Comparison', the role 'robo_condition_Comparison' has cardinality 0..*, and from 'Expr', the role 'Expr33' has cardinality 0..*.
+An association connects 'robo_condition_Comparison' and 'Expr'. From 'robo_condition_Comparison', the role 'robo_condition_Comparison35' has cardinality 0..*, and from 'Expr', the role 'Expr36' has cardinality 0..*.

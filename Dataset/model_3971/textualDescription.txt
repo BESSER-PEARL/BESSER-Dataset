@@ -1,0 +1,165 @@
+The domain model 'standard' describes the core structural elements and their relationships within the system.
+
+The model defines 42 main class(es).
+
+'standard_Send' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_ImplementationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Focus' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_ModelLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_File' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Destroy' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_BuildComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Subsystem' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Usage' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Implement' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Utility' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Auxiliary' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Instantiate' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Refine' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Call' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Metamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Derive' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Responsibility' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Process' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Script' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Framework' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Create' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_SystemModel' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Executable' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Document' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Specification' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Source' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'standard_Metaclass' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'standard_Class' and 'standard_Auxiliary'. From 'standard_Class', the role 'standard_Class' has cardinality 0..*, and from 'standard_Auxiliary', the role 'standard_Auxiliary' has cardinality 0..*.
+An association connects 'standard_BuildComponent' and 'standard_Component'. From 'standard_BuildComponent', the role 'standard_BuildComponent' has cardinality 0..*, and from 'standard_Component', the role 'standard_Component' has cardinality 0..*.
+An association connects 'standard_Create' and 'standard_BehavioralFeature'. From 'standard_Create', the role 'standard_Create' has cardinality 0..*, and from 'standard_BehavioralFeature', the role 'standard_BehavioralFeature' has cardinality 0..*.
+An association connects 'standard_Create' and 'standard_Usage'. From 'standard_Create', the role 'standard_Create4' has cardinality 0..*, and from 'standard_Usage', the role 'standard_Usage' has cardinality 0..*.
+An association connects 'standard_Call' and 'standard_Usage'. From 'standard_Call', the role 'standard_Call' has cardinality 0..*, and from 'standard_Usage', the role 'standard_Usage6' has cardinality 0..*.
+An association connects 'standard_Abstraction' and 'standard_Derive'. From 'standard_Abstraction', the role 'standard_Abstraction' has cardinality 0..*, and from 'standard_Derive', the role 'standard_Derive' has cardinality 0..*.
+An association connects 'standard_Destroy' and 'standard_BehavioralFeature'. From 'standard_Destroy', the role 'standard_Destroy' has cardinality 0..*, and from 'standard_BehavioralFeature', the role 'standard_BehavioralFeature9' has cardinality 0..*.
+An association connects 'standard_Focus' and 'standard_Class'. From 'standard_Focus', the role 'standard_Focus' has cardinality 0..*, and from 'standard_Class', the role 'standard_Class11' has cardinality 0..*.
+An association connects 'standard_Framework' and 'standard_Package'. From 'standard_Framework', the role 'standard_Framework' has cardinality 0..*, and from 'standard_Package', the role 'standard_Package' has cardinality 0..*.
+An association connects 'standard_Implement' and 'standard_Component'. From 'standard_Implement', the role 'standard_Implement' has cardinality 0..*, and from 'standard_Component', the role 'standard_Component14' has cardinality 0..*.
+An association connects 'standard_ImplementationClass' and 'standard_Class'. From 'standard_ImplementationClass', the role 'standard_ImplementationClass' has cardinality 0..*, and from 'standard_Class', the role 'standard_Class16' has cardinality 0..*.
+An association connects 'standard_Instantiate' and 'standard_Usage'. From 'standard_Instantiate', the role 'standard_Instantiate' has cardinality 0..*, and from 'standard_Usage', the role 'standard_Usage18' has cardinality 0..*.
+An association connects 'standard_Metaclass' and 'standard_Class'. From 'standard_Metaclass', the role 'standard_Metaclass' has cardinality 0..*, and from 'standard_Class', the role 'standard_Class20' has cardinality 0..*.
+An association connects 'standard_ModelLibrary' and 'standard_Package'. From 'standard_ModelLibrary', the role 'standard_ModelLibrary' has cardinality 0..*, and from 'standard_Package', the role 'standard_Package22' has cardinality 0..*.
+An association connects 'standard_Refine' and 'standard_Abstraction'. From 'standard_Refine', the role 'standard_Refine' has cardinality 0..*, and from 'standard_Abstraction', the role 'standard_Abstraction24' has cardinality 0..*.
+An association connects 'standard_Usage' and 'standard_Responsibility'. From 'standard_Usage', the role 'standard_Usage26' has cardinality 0..*, and from 'standard_Responsibility', the role 'standard_Responsibility' has cardinality 0..*.
+An association connects 'standard_Artifact' and 'standard_Script'. From 'standard_Artifact', the role 'standard_Artifact' has cardinality 0..*, and from 'standard_Script', the role 'standard_Script' has cardinality 0..*.
+An association connects 'standard_Send' and 'standard_Usage'. From 'standard_Send', the role 'standard_Send' has cardinality 0..*, and from 'standard_Usage', the role 'standard_Usage29' has cardinality 0..*.
+An association connects 'standard_Trace' and 'standard_Abstraction'. From 'standard_Trace', the role 'standard_Trace' has cardinality 0..*, and from 'standard_Abstraction', the role 'standard_Abstraction31' has cardinality 0..*.
+An association connects 'standard_Class' and 'standard_Type'. From 'standard_Class', the role 'standard_Class33' has cardinality 0..*, and from 'standard_Type', the role 'standard_Type' has cardinality 0..*.
+An association connects 'standard_Class' and 'standard_Utility'. From 'standard_Class', the role 'standard_Class35' has cardinality 0..*, and from 'standard_Utility', the role 'standard_Utility' has cardinality 0..*.
+An association connects 'standard_Document' and 'standard_Artifact'. From 'standard_Document', the role 'standard_Document' has cardinality 0..*, and from 'standard_Artifact', the role 'standard_Artifact37' has cardinality 0..*.
+An association connects 'standard_Entity' and 'standard_Component'. From 'standard_Entity', the role 'standard_Entity' has cardinality 0..*, and from 'standard_Component', the role 'standard_Component39' has cardinality 0..*.
+An association connects 'standard_Artifact' and 'standard_Executable'. From 'standard_Artifact', the role 'standard_Artifact41' has cardinality 0..*, and from 'standard_Executable', the role 'standard_Executable' has cardinality 0..*.
+An association connects 'standard_File' and 'standard_Artifact'. From 'standard_File', the role 'standard_File' has cardinality 0..*, and from 'standard_Artifact', the role 'standard_Artifact43' has cardinality 0..*.
+An association connects 'standard_Artifact' and 'standard_Library'. From 'standard_Artifact', the role 'standard_Artifact45' has cardinality 0..*, and from 'standard_Library', the role 'standard_Library' has cardinality 0..*.
+An association connects 'standard_Component' and 'standard_Process'. From 'standard_Component', the role 'standard_Component47' has cardinality 0..*, and from 'standard_Process', the role 'standard_Process' has cardinality 0..*.
+An association connects 'standard_Realization' and 'standard_Classifier'. From 'standard_Realization', the role 'standard_Realization' has cardinality 0..*, and from 'standard_Classifier', the role 'standard_Classifier' has cardinality 0..*.
+An association connects 'standard_Service' and 'standard_Component'. From 'standard_Service', the role 'standard_Service' has cardinality 0..*, and from 'standard_Component', the role 'standard_Component50' has cardinality 0..*.
+An association connects 'standard_Source' and 'standard_Artifact'. From 'standard_Source', the role 'standard_Source' has cardinality 0..*, and from 'standard_Artifact', the role 'standard_Artifact52' has cardinality 0..*.
+An association connects 'standard_Specification' and 'standard_Classifier'. From 'standard_Specification', the role 'standard_Specification' has cardinality 0..*, and from 'standard_Classifier', the role 'standard_Classifier54' has cardinality 0..*.
+An association connects 'standard_Component' and 'standard_Subsystem'. From 'standard_Component', the role 'standard_Component56' has cardinality 0..*, and from 'standard_Subsystem', the role 'standard_Subsystem' has cardinality 0..*.
+An association connects 'standard_Model' and 'standard_Metamodel'. From 'standard_Model', the role 'standard_Model' has cardinality 0..*, and from 'standard_Metamodel', the role 'standard_Metamodel' has cardinality 0..*.
+An association connects 'standard_SystemModel' and 'standard_Model'. From 'standard_SystemModel', the role 'standard_SystemModel' has cardinality 0..*, and from 'standard_Model', the role 'standard_Model59' has cardinality 0..*.

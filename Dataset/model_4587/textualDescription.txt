@@ -1,0 +1,153 @@
+The domain model 'PiServiceComposition' describes the core structural elements and their relationships within the system.
+
+The model defines 32 main class(es).
+
+'PiServiceComposition_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_Rule' represents an important domain concept.
+It has the following attributes: 'action', which is of type str; 'condition', which is of type str; 'event', which is of type str; 'name', which is of type str.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_BussinessCollaborator' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_ObjectFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_ServiceActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_Variable' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'PiServiceComposition_ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_Action' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'PiServiceComposition_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PiServiceComposition_Policy' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PiServiceComposition_CompositionServiceModel' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_ActivityPartition' represents an important domain concept.
+It has the following attributes: 'isExternal', which is of type bool; 'isDimension', which is of type bool.
+
+'PiServiceComposition_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PiServiceComposition_JoinNode' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ActionType' defines the following possible values: 'AOP', 'WS'.
+The enumeration 'EventType' defines the following possible values: 'POST', 'TIME', 'PRE'.
+
+The model also captures inheritance relationships between classes.
+The class 'PiServiceComposition_Activity' is a specialization of 'NamedElement'.
+The class 'PiServiceComposition_ActivityPartition' is a specialization of 'NamedElement'.
+The class 'PiServiceComposition_ActivityEdge' is a specialization of 'NamedElement'.
+The class 'PiServiceComposition_ControlFlow' is a specialization of 'ActivityEdge'.
+The class 'PiServiceComposition_ObjectFlow' is a specialization of 'ActivityEdge'.
+The class 'PiServiceComposition_ActivityNode' is a specialization of 'NamedElement'.
+The class 'PiServiceComposition_ExecutableNode' is a specialization of 'ActivityNode'.
+The class 'PiServiceComposition_ControlNode' is a specialization of 'ActivityNode'.
+The class 'PiServiceComposition_ObjectNode' is a specialization of 'ActivityNode'.
+The class 'PiServiceComposition_InitialNode' is a specialization of 'ControlNode'.
+The class 'PiServiceComposition_FinalNode' is a specialization of 'ControlNode'.
+The class 'PiServiceComposition_ForkNode' is a specialization of 'ControlNode'.
+The class 'PiServiceComposition_JoinNode' is a specialization of 'ControlNode'.
+The class 'PiServiceComposition_DecisionNode' is a specialization of 'ControlNode'.
+The class 'PiServiceComposition_MergeNode' is a specialization of 'ControlNode'.
+The class 'PiServiceComposition_ActivityFinalNode' is a specialization of 'FinalNode'.
+The class 'PiServiceComposition_ServiceActivity' is a specialization of 'Activity'.
+The class 'PiServiceComposition_Action' is a specialization of 'ExecutableNode'.
+The class 'PiServiceComposition_BussinessCollaborator' is a specialization of 'ActivityPartition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PiServiceComposition_CompositionServiceModel' and 'PiServiceComposition_ActivityPartition'. From 'PiServiceComposition_CompositionServiceModel', the role 'PiServiceComposition_CompositionServiceModel' has cardinality 0..*, and from 'PiServiceComposition_ActivityPartition', the role 'PiServiceComposition_ActivityPartition' has cardinality 0..*.
+An association connects 'PiServiceComposition_CompositionServiceModel' and 'PiServiceComposition_Activity'. From 'PiServiceComposition_CompositionServiceModel', the role 'PiServiceComposition_CompositionServiceModel2' has cardinality 0..*, and from 'PiServiceComposition_Activity', the role 'PiServiceComposition_Activity' has cardinality 0..*.
+An association connects 'PiServiceComposition_ActivityEdge' and 'PiServiceComposition_CompositionServiceModel'. From 'PiServiceComposition_ActivityEdge', the role 'PiServiceComposition_ActivityEdge' has cardinality 0..*, and from 'PiServiceComposition_CompositionServiceModel', the role 'PiServiceComposition_CompositionServiceModel4' has cardinality 0..*.
+An association connects 'PiServiceComposition_Policy' and 'PiServiceComposition_CompositionServiceModel'. From 'PiServiceComposition_Policy', the role 'PiServiceComposition_Policy' has cardinality 0..*, and from 'PiServiceComposition_CompositionServiceModel', the role 'PiServiceComposition_CompositionServiceModel6' has cardinality 0..*.
+An association connects 'PiServiceComposition_Variable' and 'PiServiceComposition_CompositionServiceModel'. From 'PiServiceComposition_Variable', the role 'PiServiceComposition_Variable' has cardinality 0..*, and from 'PiServiceComposition_CompositionServiceModel', the role 'PiServiceComposition_CompositionServiceModel8' has cardinality 0..*.
+An association connects 'PiServiceComposition_ActivityNode' and 'PiServiceComposition_Activity'. From 'PiServiceComposition_ActivityNode', the role 'PiServiceComposition_ActivityNode' has cardinality 0..*, and from 'PiServiceComposition_Activity', the role 'PiServiceComposition_Activity10' has cardinality 0..*.
+An association connects 'PiServiceComposition_ActivityPartition' and 'PiServiceComposition_ActivityPartition'. From 'PiServiceComposition_ActivityPartition', the role 'PiServiceComposition_ActivityPartition13' has cardinality 0..*, and from 'PiServiceComposition_ActivityPartition', the role 'PiServiceComposition_ActivityPartition11' has cardinality 0..*.
+An association connects 'PiServiceComposition_ActivityEdge' and 'PiServiceComposition_ActivityPartition'. From 'PiServiceComposition_ActivityEdge', the role 'ActivityEdge' has cardinality 0..*, and from 'PiServiceComposition_ActivityPartition', the role 'partition' has cardinality 0..*.
+An association connects 'PiServiceComposition_ActivityPartition' and 'PiServiceComposition_ActivityNode'. From 'PiServiceComposition_ActivityPartition', the role 'partition16' has cardinality 0..*, and from 'PiServiceComposition_ActivityNode', the role 'ActivityNode' has cardinality 0..*.
+An association connects 'PiServiceComposition_ActivityNode' and 'PiServiceComposition_ActivityEdge'. From 'PiServiceComposition_ActivityNode', the role 'ActivityNode18' has cardinality 0..*, and from 'PiServiceComposition_ActivityEdge', the role 'incoming' has cardinality 0..*.
+An association connects 'PiServiceComposition_ActivityNode' and 'PiServiceComposition_ActivityEdge'. From 'PiServiceComposition_ActivityNode', the role 'ActivityNode20' has cardinality 0..*, and from 'PiServiceComposition_ActivityEdge', the role 'outgoing' has cardinality 0..*.
+An association connects 'PiServiceComposition_ActivityEdge' and 'PiServiceComposition_ActivityEdge'. From 'PiServiceComposition_ActivityEdge', the role 'PiServiceComposition_ActivityEdge23' has cardinality 0..*, and from 'PiServiceComposition_ActivityEdge', the role 'PiServiceComposition_ActivityEdge21' has cardinality 0..*.
+An association connects 'PiServiceComposition_ActivityPartition' and 'PiServiceComposition_ActivityEdge'. From 'PiServiceComposition_ActivityPartition', the role 'ActivityPartition' has cardinality 0..*, and from 'PiServiceComposition_ActivityEdge', the role 'edges' has cardinality 0..*.
+An association connects 'PiServiceComposition_Activity' and 'PiServiceComposition_ActivityNode'. From 'PiServiceComposition_Activity', the role 'PiServiceComposition_Activity27' has cardinality 0..*, and from 'PiServiceComposition_ActivityNode', the role 'PiServiceComposition_ActivityNode26' has cardinality 0..*.
+An association connects 'PiServiceComposition_ActivityEdge' and 'PiServiceComposition_ActivityNode'. From 'PiServiceComposition_ActivityEdge', the role 'ActivityEdge29' has cardinality 0..*, and from 'PiServiceComposition_ActivityNode', the role 'target' has cardinality 0..*.
+An association connects 'PiServiceComposition_ActivityNode' and 'PiServiceComposition_ActivityEdge'. From 'PiServiceComposition_ActivityNode', the role 'source' has cardinality 0..*, and from 'PiServiceComposition_ActivityEdge', the role 'ActivityEdge31' has cardinality 0..*.
+An association connects 'PiServiceComposition_ActivityNode' and 'PiServiceComposition_ActivityNode'. From 'PiServiceComposition_ActivityNode', the role 'PiServiceComposition_ActivityNode32' has cardinality 0..*, and from 'PiServiceComposition_ActivityNode', the role 'PiServiceComposition_ActivityNode34' has cardinality 0..*.
+An association connects 'PiServiceComposition_ActivityNode' and 'PiServiceComposition_ActivityPartition'. From 'PiServiceComposition_ActivityNode', the role 'nodes' has cardinality 0..*, and from 'PiServiceComposition_ActivityPartition', the role 'ActivityPartition36' has cardinality 0..*.
+An association connects 'PiServiceComposition_Action' and 'PiServiceComposition_ServiceActivity'. From 'PiServiceComposition_Action', the role 'PiServiceComposition_Action' has cardinality 0..*, and from 'PiServiceComposition_ServiceActivity', the role 'PiServiceComposition_ServiceActivity' has cardinality 0..*.
+An association connects 'PiServiceComposition_Policy' and 'PiServiceComposition_ServiceActivity'. From 'PiServiceComposition_Policy', the role 'PiServiceComposition_Policy40' has cardinality 0..*, and from 'PiServiceComposition_ServiceActivity', the role 'PiServiceComposition_ServiceActivity39' has cardinality 0..*.
+An association connects 'PiServiceComposition_Policy' and 'PiServiceComposition_Action'. From 'PiServiceComposition_Policy', the role 'Policy' has cardinality 0..*, and from 'PiServiceComposition_Action', the role 'action' has cardinality 0..*.
+An association connects 'PiServiceComposition_Policy' and 'PiServiceComposition_BussinessCollaborator'. From 'PiServiceComposition_Policy', the role 'Policy43' has cardinality 0..*, and from 'PiServiceComposition_BussinessCollaborator', the role 'typeOperation' has cardinality 0..*.
+An association connects 'PiServiceComposition_Rule' and 'PiServiceComposition_Policy'. From 'PiServiceComposition_Rule', the role 'contains' has cardinality 0..*, and from 'PiServiceComposition_Policy', the role 'Policy45' has cardinality 0..*.
+An association connects 'PiServiceComposition_Policy' and 'PiServiceComposition_Rule'. From 'PiServiceComposition_Policy', the role 'policy' has cardinality 0..*, and from 'PiServiceComposition_Rule', the role 'Rule' has cardinality 0..*.
+An association connects 'PiServiceComposition_Variable' and 'PiServiceComposition_Policy'. From 'PiServiceComposition_Variable', the role 'PiServiceComposition_Variable49' has cardinality 0..*, and from 'PiServiceComposition_Policy', the role 'PiServiceComposition_Policy48' has cardinality 0..*.
+An association connects 'PiServiceComposition_BussinessCollaborator' and 'PiServiceComposition_Policy'. From 'PiServiceComposition_BussinessCollaborator', the role 'BussinessCollaborator' has cardinality 0..*, and from 'PiServiceComposition_Policy', the role 'hasPolices' has cardinality 0..*.
+An association connects 'PiServiceComposition_Policy' and 'PiServiceComposition_Action'. From 'PiServiceComposition_Policy', the role 'definePolices' has cardinality 0..*, and from 'PiServiceComposition_Action', the role 'Action' has cardinality 0..*.

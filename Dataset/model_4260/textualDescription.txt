@@ -1,0 +1,38 @@
+The domain model 'organizationchart' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'organizationchart_Organization' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'organizationchart_Employee' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'firstname', which is of type str; 'lastname', which is of type str; 'trigraph', which is of type str.
+
+'organizationchart_Function' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'organizationchart_OrganizationalStructure' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'organizationchart_Location' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StructureType' defines the following possible values: 'businessUnit', 'department', 'team', 'service', 'division'.
+
+Relationships between classes are modeled using associations.
+An association connects 'organizationchart_Employee' and 'organizationchart_Employee'. From 'organizationchart_Employee', the role 'manager' has cardinality 0..*, and from 'organizationchart_Employee', the role 'Employee' has cardinality 0..*.
+An association connects 'organizationchart_OrganizationalStructure' and 'organizationchart_Employee'. From 'organizationchart_OrganizationalStructure', the role 'OrganizationalStructure' has cardinality 0..*, and from 'organizationchart_Employee', the role 'employees' has cardinality 0..*.
+An association connects 'organizationchart_Location' and 'organizationchart_Employee'. From 'organizationchart_Location', the role 'Location' has cardinality 0..*, and from 'organizationchart_Employee', the role 'employees4' has cardinality 0..*.
+An association connects 'organizationchart_Employee' and 'organizationchart_Employee'. From 'organizationchart_Employee', the role 'manages' has cardinality 0..*, and from 'organizationchart_Employee', the role 'Employee7' has cardinality 0..*.
+An association connects 'organizationchart_Employee' and 'organizationchart_Function'. From 'organizationchart_Employee', the role 'isPerformedBy' has cardinality 0..*, and from 'organizationchart_Function', the role 'Function' has cardinality 0..*.
+An association connects 'organizationchart_Employee' and 'organizationchart_OrganizationalStructure'. From 'organizationchart_Employee', the role 'manager10' has cardinality 0..*, and from 'organizationchart_OrganizationalStructure', the role 'OrganizationalStructure11' has cardinality 0..*.
+An association connects 'organizationchart_Organization' and 'organizationchart_Employee'. From 'organizationchart_Organization', the role 'organizationchart_Organization' has cardinality 0..*, and from 'organizationchart_Employee', the role 'organizationchart_Employee' has cardinality 0..*.
+An association connects 'organizationchart_OrganizationalStructure' and 'organizationchart_Organization'. From 'organizationchart_OrganizationalStructure', the role 'organizationchart_OrganizationalStructure' has cardinality 0..*, and from 'organizationchart_Organization', the role 'organizationchart_Organization14' has cardinality 0..*.
+An association connects 'organizationchart_Organization' and 'organizationchart_Location'. From 'organizationchart_Organization', the role 'organizationchart_Organization16' has cardinality 0..*, and from 'organizationchart_Location', the role 'organizationchart_Location' has cardinality 0..*.
+An association connects 'organizationchart_OrganizationalStructure' and 'organizationchart_Employee'. From 'organizationchart_OrganizationalStructure', the role 'belongsTo' has cardinality 0..*, and from 'organizationchart_Employee', the role 'Employee18' has cardinality 0..*.
+An association connects 'organizationchart_OrganizationalStructure' and 'organizationchart_OrganizationalStructure'. From 'organizationchart_OrganizationalStructure', the role 'organizationchart_OrganizationalStructure21' has cardinality 0..*, and from 'organizationchart_OrganizationalStructure', the role 'organizationchart_OrganizationalStructure19' has cardinality 0..*.
+An association connects 'organizationchart_OrganizationalStructure' and 'organizationchart_Function'. From 'organizationchart_OrganizationalStructure', the role 'organizationchart_OrganizationalStructure23' has cardinality 0..*, and from 'organizationchart_Function', the role 'organizationchart_Function' has cardinality 0..*.
+An association connects 'organizationchart_Employee' and 'organizationchart_OrganizationalStructure'. From 'organizationchart_Employee', the role 'Employee25' has cardinality 0..*, and from 'organizationchart_OrganizationalStructure', the role 'leads' has cardinality 0..*.
+An association connects 'organizationchart_Employee' and 'organizationchart_Location'. From 'organizationchart_Employee', the role 'Employee27' has cardinality 0..*, and from 'organizationchart_Location', the role 'location' has cardinality 0..*.
+An association connects 'organizationchart_Employee' and 'organizationchart_Function'. From 'organizationchart_Employee', the role 'Employee29' has cardinality 0..*, and from 'organizationchart_Function', the role 'performs' has cardinality 0..*.

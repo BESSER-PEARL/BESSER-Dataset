@@ -1,0 +1,93 @@
+The domain model 'arduino' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'arduino_Port5V' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_PortIO7' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_TxPort' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_PortVIN' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Bench' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'arduino_RstPort' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_GndPort' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Port9V' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_AREFPort' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Arduino' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'ver', which is of type str; 'name', which is of type str; 'status', which is of type str; 'series', which is of type str; 'firmataMode', which is of type str; 'lockedPin', which is of type str; 'synchronizing', which is of type bool; 'kind', which is of type str; 'board', which is of type str; 'comm', which is of type str.
+
+'arduino_Port' represents an important domain concept.
+It has the following attributes: 'map', which is of type str; 'channel', which is of type int; 'report', which is of type str; 'name', which is of type str.
+
+'arduino_AnalogPort' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'arduino_RxPort' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Port3V3' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_DigitalPort' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ARDUINO_BOARD_KIND' defines the following possible values: 'BT_ATMEGA_168', 'LILYPAD_168', 'UNKNOWN', 'MINI_328P', 'ATMEGA_8', 'MINI_168', 'ATMEGA_168'.
+The enumeration 'ARDUINO_VER_BRAND_NAME' defines the following possible values: 'UNKNOWN', 'ARDUINO_DIECIMILA', 'ARDUINO_DUEMILANOVE', 'ARDUINO_NANO', 'ARDUINO_MINI', 'FUNNEL_IO', 'ARDUINO_PRO', 'ARDUINO_LEONARDO', 'LILYPAD', 'ARDUINO_UNO'.
+The enumeration 'ARDUINO_BOARD_UID' defines the following possible values: 'UNO_ATMEGA328', 'LEONARDO_ATMEGA32U4', 'FUNNEL_IO_ATMEGA328P', 'DUEMILANOVE_ATMEGA_328', 'LILIPAD_ATMEGA_328V', 'NANO_30_ATMEGA328', 'MINI_PRO_ATMEGA_168', 'PRO_ATMEGA_168', 'PRO_MINI_ATMEGA_168', 'DIECIMILA_ATMEGA328', 'PRO_ATMEGA_328', 'BT_ATMEGA_168', 'MINI_ATMEGA_168', 'MEGA_ATMEGA_1280', 'DIECMILA_ATMEGA_168', 'PLACEHOLDER_VOID_BOARD', 'DUEMILANOVE_ATMEGA_168', 'NANO_23_ATMEGA168', 'DIECIMILA_ATMEGA_328P'.
+The enumeration 'ARDUINO_FIRMWARE_MODE' defines the following possible values: 'ARDUINO_FIRMATA_V22_SERVO', 'ARDUINO_FIRMATA_V20_SERVO', 'ARDUINO_FIRMATA_V10', 'ARDUINO_FIRMATA_V20', 'ARDUINO_FIRMATA_V11_SERVO', 'ARDUINO_FIRMATA_V10_SERVO', 'ARDUINO_FIRMATA_V11', 'ARDUINO_FIRMATA_V22_I2C', 'ARDUINO_FIRMATA_V22', 'ARDUINO_FIRMATA_V23_SERVO', 'ARDUINO_FIRMATA_V21', 'ARDUINO_FIRMATA_V10_I2C', 'ARDUINO_FIRMATA_V21_SERVO', 'ARDUINO_FIRMATA_V21_I2C', 'ARDUINO_FIRMATA_V20_I2C', 'ARDUINO_FIRMATA_V23', 'ARDUINO_FIRMATA_V11_I2C', 'ARDUINO_FIRMATA_V23_I2C', 'ARDUINO_DEFAULT'.
+The enumeration 'PIN_MODE' defines the following possible values: 'SHIFT', 'SERVO', 'ANALOG', 'OUTPUT', 'PWM', 'I2C', 'INPUT', 'UNKNOWN'.
+The enumeration 'PIN_MAPPING' defines the following possible values: 'PIN_TX_I', 'PIN_D3', 'PIN_TX', 'PIN_D28', 'PIN_A18', 'PIN_AREF', 'PIN_A0', 'PIN_A7', 'PIN_D18', 'PIN_D46', 'PIN_D25', 'PIN_D4', 'PIN_A15', 'PIN_D48', 'PIN_D22', 'PIN_RX', 'PIN_3V3_1', 'PIN_D29', 'PIN_GND_3V', 'PIN_D2', 'PIN_5V', 'PIN_A1', 'PIN_A17', 'PIN_A5', 'PIN_A4', 'PIN_IO7', 'PIN_D6', 'PIN_D30', 'PIN_D52', 'PIN_D43', 'PIN_GND_9V', 'PIN_D17', 'PIN_D27', 'PIN_RST', 'UNKNOWN', 'PIN_A23', 'PIN_A9', 'PIN_D33', 'PIN_D21', 'PIN_D37', 'PIN_A10', 'PIN_A16', 'PIN_A6', 'PIN_D20', 'PIN_D8', 'PIN_D13', 'PIN_D44', 'PIN_D51', 'PIN_A11', 'PIN_A12', 'PIN_A3', 'PIN_D15', 'PIN_TX_O', 'PIN_A22', 'PIN_D12', 'PIN_D32', 'PIN_D31', 'PIN_D47', 'PIN_VIN', 'PIN_D41', 'PIN_A8', 'PIN_D7', 'PIN_A19', 'PIN_D5', 'PIN_D10', 'PIN_9V', 'PIN_D35', 'PIN_A14', 'PIN_D26', 'PIN_3V3_2', 'PIN_A20', 'PIN_D19', 'PIN_A21', 'PIN_D39', 'PIN_D14', 'PIN_D49', 'PIN_D38', 'PIN_A13', 'PIN_D45', 'PIN_D42', 'PIN_D23', 'PIN_D16', 'PIN_D11', 'PIN_GND_D', 'PIN_D40', 'PIN_D24', 'PIN_D9', 'PIN_D36', 'PIN_A2', 'PIN_D50', 'PIN_A24', 'PIN_D34'.
+The enumeration 'ARDUINO_ATMEGA_168_SERIES' defines the following possible values: '_168_ATMEGA_1280', '_168_ATMEGA_168', '_168_ATMEGA_328_PRO_8MHz', 'UNKNOWN', '_168_NG', '_168_ATMEGA_328', '_168_PRO', '_168_ATMEGA_32U4', '_168_ATMEGA_DIECIMILA'.
+The enumeration 'ARDUINO_REPORT_MODE' defines the following possible values: 'ACTIVATE', 'DEACTIVATE'.
+The enumeration 'ARDUINO_STATUS_MODE' defines the following possible values: 'TRANSMITTING', 'DISCONNECTED', 'CONNECTED'.
+The enumeration 'PWM_MODE' defines the following possible values: 'NONE', 'HIGH', 'LOW', 'UNKNOWN'.
+The enumeration 'ARDUINO_COMM' defines the following possible values: 'USB', 'UART', 'MINI_USB', 'NONE', 'XBEE_SERIES_1', 'ETHERNET', 'XBEE_PRO', 'BLUETOOTH'.
+
+The model also captures inheritance relationships between classes.
+The class 'arduino_DigitalPort' is a specialization of 'Port'.
+The class 'arduino_AnalogPort' is a specialization of 'Port'.
+The class 'arduino_RxPort' is a specialization of 'Port'.
+The class 'arduino_TxPort' is a specialization of 'Port'.
+The class 'arduino_GndPort' is a specialization of 'Port'.
+The class 'arduino_Port3V3' is a specialization of 'Port'.
+The class 'arduino_RstPort' is a specialization of 'Port'.
+The class 'arduino_Port5V' is a specialization of 'Port'.
+The class 'arduino_Port9V' is a specialization of 'Port'.
+The class 'arduino_PortIO7' is a specialization of 'Port'.
+The class 'arduino_AREFPort' is a specialization of 'Port'.
+The class 'arduino_PortVIN' is a specialization of 'Port'.
+
+Relationships between classes are modeled using associations.
+An association connects 'arduino_DigitalPort' and 'arduino_Arduino'. From 'arduino_DigitalPort', the role 'arduino_DigitalPort' has cardinality 0..*, and from 'arduino_Arduino', the role 'arduino_Arduino' has cardinality 0..*.
+An association connects 'arduino_AnalogPort' and 'arduino_Arduino'. From 'arduino_AnalogPort', the role 'arduino_AnalogPort' has cardinality 0..*, and from 'arduino_Arduino', the role 'arduino_Arduino2' has cardinality 0..*.
+An association connects 'arduino_TxPort' and 'arduino_Arduino'. From 'arduino_TxPort', the role 'arduino_TxPort' has cardinality 0..*, and from 'arduino_Arduino', the role 'arduino_Arduino4' has cardinality 0..*.
+An association connects 'arduino_Arduino' and 'arduino_GndPort'. From 'arduino_Arduino', the role 'arduino_Arduino6' has cardinality 0..*, and from 'arduino_GndPort', the role 'arduino_GndPort' has cardinality 0..*.
+An association connects 'arduino_RxPort' and 'arduino_Arduino'. From 'arduino_RxPort', the role 'arduino_RxPort' has cardinality 0..*, and from 'arduino_Arduino', the role 'arduino_Arduino8' has cardinality 0..*.
+An association connects 'arduino_Arduino' and 'arduino_Port3V3'. From 'arduino_Arduino', the role 'arduino_Arduino10' has cardinality 0..*, and from 'arduino_Port3V3', the role 'arduino_Port3V3' has cardinality 0..*.
+An association connects 'arduino_RstPort' and 'arduino_Arduino'. From 'arduino_RstPort', the role 'arduino_RstPort' has cardinality 0..*, and from 'arduino_Arduino', the role 'arduino_Arduino12' has cardinality 0..*.
+An association connects 'arduino_Arduino' and 'arduino_Port9V'. From 'arduino_Arduino', the role 'arduino_Arduino14' has cardinality 0..*, and from 'arduino_Port9V', the role 'arduino_Port9V' has cardinality 0..*.
+An association connects 'arduino_Port5V' and 'arduino_Arduino'. From 'arduino_Port5V', the role 'arduino_Port5V' has cardinality 0..*, and from 'arduino_Arduino', the role 'arduino_Arduino16' has cardinality 0..*.
+An association connects 'arduino_PortIO7' and 'arduino_Arduino'. From 'arduino_PortIO7', the role 'arduino_PortIO7' has cardinality 0..*, and from 'arduino_Arduino', the role 'arduino_Arduino18' has cardinality 0..*.
+An association connects 'arduino_PortVIN' and 'arduino_Arduino'. From 'arduino_PortVIN', the role 'arduino_PortVIN' has cardinality 0..*, and from 'arduino_Arduino', the role 'arduino_Arduino20' has cardinality 0..*.
+An association connects 'arduino_AREFPort' and 'arduino_Arduino'. From 'arduino_AREFPort', the role 'arduino_AREFPort' has cardinality 0..*, and from 'arduino_Arduino', the role 'arduino_Arduino22' has cardinality 0..*.
+An association connects 'arduino_Bench' and 'arduino_Arduino'. From 'arduino_Bench', the role 'arduino_Bench' has cardinality 0..*, and from 'arduino_Arduino', the role 'arduino_Arduino24' has cardinality 0..*.

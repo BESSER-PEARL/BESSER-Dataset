@@ -1,0 +1,312 @@
+The domain model 'uml2CD' describes the core structural elements and their relationships within the system.
+
+The model defines 60 main class(es).
+
+'uml2CD_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_RedefinableElement' represents an important domain concept.
+It has one attribute: 'isLeaf', which is of type bool.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_DirectRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Typpee' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'uml2CD_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Typpee' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'DirectRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Operation' represents an important domain concept.
+It has one attribute: 'isQuery', which is of type bool.
+
+'uml2CD_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Classifier' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'uml2CD_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_PackageMerge' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Association' represents an important domain concept.
+It has one attribute: 'isDerived', which is of type bool.
+
+'uml2CD_Parameter' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_PackageImport' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_InterfaceRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Substitution' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Usage' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Generalization' represents an important domain concept.
+It has one attribute: 'isSubstitutable', which is of type bool.
+
+'uml2CD_ElementImport' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_GeneralizationSet' represents an important domain concept.
+It has the following attributes: 'isCovering', which is of type bool; 'isDisjoint', which is of type bool.
+
+'uml2CD_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml2CD_Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AggregationKind' defines the following possible values: 'none', 'shared', 'composite'.
+The enumeration 'ParameterDirectionKind' defines the following possible values: 'out', 'inout', 'in', 'return'.
+The enumeration 'VisibilityKind' defines the following possible values: 'protected', 'package', 'private', 'public'.
+
+The model also captures inheritance relationships between classes.
+The class 'uml2CD_Relationship' is a specialization of 'Element'.
+The class 'uml2CD_DirectRelationship' is a specialization of 'Relationship'.
+The class 'uml2CD_NamedElement' is a specialization of 'Element'.
+The class 'uml2CD_PackageableElement' is a specialization of 'NamedElement'.
+The class 'uml2CD_Namespace' is a specialization of 'NamedElement'.
+The class 'uml2CD_ElementImport' is a specialization of 'DirectRelationship'.
+The class 'uml2CD_PackageImport' is a specialization of 'DirectRelationship'.
+The class 'uml2CD_Package' is a specialization of 'PackageableElement'.
+The class 'uml2CD_Package' is a specialization of 'Namespace'.
+The class 'uml2CD_MultiplicityElement' is a specialization of 'Element'.
+The class 'uml2CD_ValueSpecification' is a specialization of 'TypedElement'.
+The class 'uml2CD_ValueSpecification' is a specialization of 'PackageableElement'.
+The class 'uml2CD_TypedElement' is a specialization of 'NamedElement'.
+The class 'uml2CD_Typpee' is a specialization of 'PackageableElement'.
+The class 'uml2CD_Constraint' is a specialization of 'PackageableElement'.
+The class 'uml2CD_Generalization' is a specialization of 'DirectRelationship'.
+The class 'uml2CD_Classifier' is a specialization of 'Typpee'.
+The class 'uml2CD_Classifier' is a specialization of 'Namespace'.
+The class 'uml2CD_StructuralFeature' is a specialization of 'Feature'.
+The class 'uml2CD_StructuralFeature' is a specialization of 'TypedElement'.
+The class 'uml2CD_StructuralFeature' is a specialization of 'MultiplicityElement'.
+The class 'uml2CD_BehavioralFeature' is a specialization of 'Feature'.
+The class 'uml2CD_BehavioralFeature' is a specialization of 'Namespace'.
+The class 'uml2CD_Parameter' is a specialization of 'TypedElement'.
+The class 'uml2CD_Parameter' is a specialization of 'MultiplicityElement'.
+The class 'uml2CD_Operation' is a specialization of 'BehavioralFeature'.
+The class 'uml2CD_Class' is a specialization of 'Classifier'.
+The class 'uml2CD_DataType' is a specialization of 'Classifier'.
+The class 'uml2CD_Property' is a specialization of 'StructuralFeature'.
+The class 'uml2CD_Association' is a specialization of 'Classifier'.
+The class 'uml2CD_Association' is a specialization of 'Relationship'.
+The class 'uml2CD_PrimitiveType' is a specialization of 'DataType'.
+The class 'uml2CD_Enumeration' is a specialization of 'DataType'.
+The class 'uml2CD_EnumerationLiteral' is a specialization of 'ValueSpecification'.
+The class 'uml2CD_PackageMerge' is a specialization of 'DirectRelationship'.
+The class 'uml2CD_Dependency' is a specialization of 'DirectRelationship'.
+The class 'uml2CD_Dependency' is a specialization of 'PackageableElement'.
+The class 'uml2CD_Abstraction' is a specialization of 'Dependency'.
+The class 'uml2CD_Usage' is a specialization of 'Dependency'.
+The class 'uml2CD_Realization' is a specialization of 'Abstraction'.
+The class 'uml2CD_Substitution' is a specialization of 'Realization'.
+The class 'uml2CD_Interface' is a specialization of 'Classifier'.
+The class 'uml2CD_InterfaceRealization' is a specialization of 'Realization'.
+The class 'uml2CD_AssociationClass' is a specialization of 'Association'.
+The class 'uml2CD_AssociationClass' is a specialization of 'Class'.
+The class 'uml2CD_RedefinableElement' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'uml2CD_Element' and 'uml2CD_Comment'. From 'uml2CD_Element', the role 'owningElement' has cardinality 0..*, and from 'uml2CD_Comment', the role 'Comment' has cardinality 0..*.
+An association connects 'uml2CD_Element' and 'uml2CD_Element'. From 'uml2CD_Element', the role 'Element' has cardinality 0..*, and from 'uml2CD_Element', the role 'ownedElement' has cardinality 0..*.
+An association connects 'uml2CD_Element' and 'uml2CD_Element'. From 'uml2CD_Element', the role 'owner' has cardinality 0..*, and from 'uml2CD_Element', the role 'Element5' has cardinality 0..*.
+An association connects 'uml2CD_Comment' and 'uml2CD_Element'. From 'uml2CD_Comment', the role 'ownedComment' has cardinality 0..*, and from 'uml2CD_Element', the role 'Element7' has cardinality 0..*.
+An association connects 'uml2CD_Element' and 'uml2CD_Relationship'. From 'uml2CD_Element', the role 'uml2CD_Element' has cardinality 0..*, and from 'uml2CD_Relationship', the role 'uml2CD_Relationship' has cardinality 0..*.
+An association connects 'uml2CD_Element' and 'uml2CD_DirectRelationship'. From 'uml2CD_Element', the role 'uml2CD_Element10' has cardinality 0..*, and from 'uml2CD_DirectRelationship', the role 'uml2CD_DirectRelationship' has cardinality 0..*.
+An association connects 'uml2CD_DirectRelationship' and 'uml2CD_Element'. From 'uml2CD_DirectRelationship', the role 'uml2CD_DirectRelationship12' has cardinality 0..*, and from 'uml2CD_Element', the role 'uml2CD_Element13' has cardinality 0..*.
+An association connects 'uml2CD_Namespace' and 'uml2CD_NamedElement'. From 'uml2CD_Namespace', the role 'uml2CD_Namespace' has cardinality 0..*, and from 'uml2CD_NamedElement', the role 'uml2CD_NamedElement' has cardinality 0..*.
+An association connects 'uml2CD_NamedElement' and 'uml2CD_Dependency'. From 'uml2CD_NamedElement', the role 'supplier' has cardinality 0..*, and from 'uml2CD_Dependency', the role 'Dependency' has cardinality 0..*.
+An association connects 'uml2CD_NamedElement' and 'uml2CD_Dependency'. From 'uml2CD_NamedElement', the role 'client' has cardinality 0..*, and from 'uml2CD_Dependency', the role 'Dependency17' has cardinality 0..*.
+An association connects 'uml2CD_PackageableElement' and 'uml2CD_Package'. From 'uml2CD_PackageableElement', the role 'packagedElement' has cardinality 0..*, and from 'uml2CD_Package', the role 'Package' has cardinality 0..*.
+An association connects 'uml2CD_Namespace' and 'uml2CD_PackageableElement'. From 'uml2CD_Namespace', the role 'uml2CD_Namespace20' has cardinality 0..*, and from 'uml2CD_PackageableElement', the role 'uml2CD_PackageableElement' has cardinality 0..*.
+An association connects 'uml2CD_PackageImport' and 'uml2CD_Namespace'. From 'uml2CD_PackageImport', the role 'PackageImport' has cardinality 0..*, and from 'uml2CD_Namespace', the role 'importingNamespace' has cardinality 0..*.
+An association connects 'uml2CD_ElementImport' and 'uml2CD_Namespace'. From 'uml2CD_ElementImport', the role 'ElementImport' has cardinality 0..*, and from 'uml2CD_Namespace', the role 'importingNamespace23' has cardinality 0..*.
+An association connects 'uml2CD_Namespace' and 'uml2CD_Constraint'. From 'uml2CD_Namespace', the role 'context' has cardinality 0..*, and from 'uml2CD_Constraint', the role 'Constraint' has cardinality 0..*.
+An association connects 'uml2CD_ElementImport' and 'uml2CD_PackageableElement'. From 'uml2CD_ElementImport', the role 'uml2CD_ElementImport' has cardinality 0..*, and from 'uml2CD_PackageableElement', the role 'uml2CD_PackageableElement26' has cardinality 0..*.
+An association connects 'uml2CD_Namespace' and 'uml2CD_ElementImport'. From 'uml2CD_Namespace', the role 'Namespace' has cardinality 0..*, and from 'uml2CD_ElementImport', the role 'elementImport' has cardinality 0..*.
+An association connects 'uml2CD_Package' and 'uml2CD_PackageImport'. From 'uml2CD_Package', the role 'uml2CD_Package' has cardinality 0..*, and from 'uml2CD_PackageImport', the role 'uml2CD_PackageImport' has cardinality 0..*.
+An association connects 'uml2CD_PackageImport' and 'uml2CD_Namespace'. From 'uml2CD_PackageImport', the role 'packageImport' has cardinality 0..*, and from 'uml2CD_Namespace', the role 'Namespace30' has cardinality 0..*.
+An association connects 'uml2CD_Package' and 'uml2CD_Package'. From 'uml2CD_Package', the role 'nestedPackage' has cardinality 0..*, and from 'uml2CD_Package', the role 'Package33' has cardinality 0..*.
+An association connects 'uml2CD_Package' and 'uml2CD_Package'. From 'uml2CD_Package', the role 'nestingPackage' has cardinality 0..*, and from 'uml2CD_Package', the role 'Package36' has cardinality 0..*.
+An association connects 'uml2CD_PackageableElement' and 'uml2CD_Package'. From 'uml2CD_PackageableElement', the role 'PackageableElement' has cardinality 0..*, and from 'uml2CD_Package', the role 'owningPackage' has cardinality 0..*.
+An association connects 'uml2CD_Package' and 'uml2CD_PackageMerge'. From 'uml2CD_Package', the role 'receivingPackage' has cardinality 0..*, and from 'uml2CD_PackageMerge', the role 'PackageMerge' has cardinality 0..*.
+An association connects 'uml2CD_MultiplicityElement' and 'uml2CD_ValueSpecification'. From 'uml2CD_MultiplicityElement', the role 'owningLower' has cardinality 0..*, and from 'uml2CD_ValueSpecification', the role 'ValueSpecification' has cardinality 0..*.
+An association connects 'uml2CD_MultiplicityElement' and 'uml2CD_ValueSpecification'. From 'uml2CD_MultiplicityElement', the role 'owningUpper' has cardinality 0..*, and from 'uml2CD_ValueSpecification', the role 'ValueSpecification41' has cardinality 0..*.
+An association connects 'uml2CD_MultiplicityElement' and 'uml2CD_ValueSpecification'. From 'uml2CD_MultiplicityElement', the role 'MultiplicityElement' has cardinality 0..*, and from 'uml2CD_ValueSpecification', the role 'lowerValue' has cardinality 0..*.
+An association connects 'uml2CD_MultiplicityElement' and 'uml2CD_ValueSpecification'. From 'uml2CD_MultiplicityElement', the role 'MultiplicityElement44' has cardinality 0..*, and from 'uml2CD_ValueSpecification', the role 'upperValue' has cardinality 0..*.
+An association connects 'uml2CD_Constraint' and 'uml2CD_ValueSpecification'. From 'uml2CD_Constraint', the role 'Constraint46' has cardinality 0..*, and from 'uml2CD_ValueSpecification', the role 'specification' has cardinality 0..*.
+An association connects 'uml2CD_Parameter' and 'uml2CD_ValueSpecification'. From 'uml2CD_Parameter', the role 'Parameter' has cardinality 0..*, and from 'uml2CD_ValueSpecification', the role 'defaultValue' has cardinality 0..*.
+An association connects 'uml2CD_Property' and 'uml2CD_ValueSpecification'. From 'uml2CD_Property', the role 'Property' has cardinality 0..*, and from 'uml2CD_ValueSpecification', the role 'defaultValue49' has cardinality 0..*.
+An association connects 'uml2CD_Typpee' and 'uml2CD_TypedElement'. From 'uml2CD_Typpee', the role 'uml2CD_Typpee' has cardinality 0..*, and from 'uml2CD_TypedElement', the role 'uml2CD_TypedElement' has cardinality 0..*.
+An association connects 'uml2CD_Element' and 'uml2CD_Constraint'. From 'uml2CD_Element', the role 'uml2CD_Element52' has cardinality 0..*, and from 'uml2CD_Constraint', the role 'uml2CD_Constraint' has cardinality 0..*.
+An association connects 'uml2CD_Constraint' and 'uml2CD_ValueSpecification'. From 'uml2CD_Constraint', the role 'owningConstraint' has cardinality 0..*, and from 'uml2CD_ValueSpecification', the role 'ValueSpecification54' has cardinality 0..*.
+An association connects 'uml2CD_Constraint' and 'uml2CD_Namespace'. From 'uml2CD_Constraint', the role 'ownedRule' has cardinality 0..*, and from 'uml2CD_Namespace', the role 'Namespace56' has cardinality 0..*.
+An association connects 'uml2CD_Generalization' and 'uml2CD_Classifier'. From 'uml2CD_Generalization', the role 'uml2CD_Generalization' has cardinality 0..*, and from 'uml2CD_Classifier', the role 'uml2CD_Classifier' has cardinality 0..*.
+An association connects 'uml2CD_Classifier' and 'uml2CD_Generalization'. From 'uml2CD_Classifier', the role 'Classifier' has cardinality 0..*, and from 'uml2CD_Generalization', the role 'generalization' has cardinality 0..*.
+An association connects 'uml2CD_Generalization' and 'uml2CD_GeneralizationSet'. From 'uml2CD_Generalization', the role 'generalization60' has cardinality 0..*, and from 'uml2CD_GeneralizationSet', the role 'GeneralizationSet' has cardinality 0..*.
+An association connects 'uml2CD_Classifier' and 'uml2CD_Generalization'. From 'uml2CD_Classifier', the role 'specific' has cardinality 0..*, and from 'uml2CD_Generalization', the role 'Generalization' has cardinality 0..*.
+An association connects 'uml2CD_Classifier' and 'uml2CD_Feature'. From 'uml2CD_Classifier', the role 'featuringClassifier' has cardinality 0..*, and from 'uml2CD_Feature', the role 'Feature' has cardinality 0..*.
+An association connects 'uml2CD_Classifier' and 'uml2CD_Class'. From 'uml2CD_Classifier', the role 'nestedClassifier' has cardinality 0..*, and from 'uml2CD_Class', the role 'Class' has cardinality 0..*.
+An association connects 'uml2CD_GeneralizationSet' and 'uml2CD_Classifier'. From 'uml2CD_GeneralizationSet', the role 'GeneralizationSet65' has cardinality 0..*, and from 'uml2CD_Classifier', the role 'powertype' has cardinality 0..*.
+An association connects 'uml2CD_Classifier' and 'uml2CD_Substitution'. From 'uml2CD_Classifier', the role 'substitutingClassifier' has cardinality 0..*, and from 'uml2CD_Substitution', the role 'Substitution' has cardinality 0..*.
+An association connects 'uml2CD_Feature' and 'uml2CD_Classifier'. From 'uml2CD_Feature', the role 'feature' has cardinality 0..*, and from 'uml2CD_Classifier', the role 'Classifier68' has cardinality 0..*.
+An association connects 'uml2CD_Parameter' and 'uml2CD_BehavioralFeature'. From 'uml2CD_Parameter', the role 'Parameter70' has cardinality 0..*, and from 'uml2CD_BehavioralFeature', the role 'ownerFormalParam' has cardinality 0..*.
+An association connects 'uml2CD_Typpee' and 'uml2CD_BehavioralFeature'. From 'uml2CD_Typpee', the role 'uml2CD_Typpee72' has cardinality 0..*, and from 'uml2CD_BehavioralFeature', the role 'uml2CD_BehavioralFeature' has cardinality 0..*.
+An association connects 'uml2CD_Parameter' and 'uml2CD_BehavioralFeature'. From 'uml2CD_Parameter', the role 'ownedParameter' has cardinality 0..*, and from 'uml2CD_BehavioralFeature', the role 'BehavioralFeature' has cardinality 0..*.
+An association connects 'uml2CD_Parameter' and 'uml2CD_ValueSpecification'. From 'uml2CD_Parameter', the role 'owningParameter' has cardinality 0..*, and from 'uml2CD_ValueSpecification', the role 'ValueSpecification75' has cardinality 0..*.
+An association connects 'uml2CD_Operation' and 'uml2CD_Operation'. From 'uml2CD_Operation', the role 'uml2CD_Operation76' has cardinality 0..*, and from 'uml2CD_Operation', the role 'uml2CD_Operation' has cardinality 0..*.
+An association connects 'uml2CD_Operation' and 'uml2CD_Class'. From 'uml2CD_Operation', the role 'ownedOperation' has cardinality 0..*, and from 'uml2CD_Class', the role 'Class79' has cardinality 0..*.
+An association connects 'uml2CD_Class' and 'uml2CD_Class'. From 'uml2CD_Class', the role 'uml2CD_Class80' has cardinality 0..*, and from 'uml2CD_Class', the role 'uml2CD_Class' has cardinality 0..*.
+An association connects 'uml2CD_Classifier' and 'uml2CD_Class'. From 'uml2CD_Classifier', the role 'Classifier84' has cardinality 0..*, and from 'uml2CD_Class', the role 'Class83' has cardinality 0..*.
+An association connects 'uml2CD_Class' and 'uml2CD_Operation'. From 'uml2CD_Class', the role 'Class86' has cardinality 0..*, and from 'uml2CD_Operation', the role 'Operation' has cardinality 0..*.
+An association connects 'uml2CD_Class' and 'uml2CD_Property'. From 'uml2CD_Class', the role 'Class88' has cardinality 0..*, and from 'uml2CD_Property', the role 'Property89' has cardinality 0..*.
+An association connects 'uml2CD_ValueSpecification' and 'uml2CD_Property'. From 'uml2CD_ValueSpecification', the role 'ValueSpecification91' has cardinality 0..*, and from 'uml2CD_Property', the role 'owningProperty' has cardinality 0..*.
+An association connects 'uml2CD_Class' and 'uml2CD_Property'. From 'uml2CD_Class', the role 'Class93' has cardinality 0..*, and from 'uml2CD_Property', the role 'ownedAttribute' has cardinality 0..*.
+An association connects 'uml2CD_Property' and 'uml2CD_Association'. From 'uml2CD_Property', the role 'memberEnd' has cardinality 0..*, and from 'uml2CD_Association', the role 'Association' has cardinality 0..*.
+An association connects 'uml2CD_Property' and 'uml2CD_Association'. From 'uml2CD_Property', the role 'ownedEnd' has cardinality 0..*, and from 'uml2CD_Association', the role 'Association96' has cardinality 0..*.
+An association connects 'uml2CD_Property' and 'uml2CD_Property'. From 'uml2CD_Property', the role 'Property99' has cardinality 0..*, and from 'uml2CD_Property', the role 'associationEnd' has cardinality 0..*.
+An association connects 'uml2CD_Property' and 'uml2CD_Property'. From 'uml2CD_Property', the role 'Property102' has cardinality 0..*, and from 'uml2CD_Property', the role 'qualifier' has cardinality 0..*.
+An association connects 'uml2CD_Property' and 'uml2CD_Association'. From 'uml2CD_Property', the role 'Property104' has cardinality 0..*, and from 'uml2CD_Association', the role 'association' has cardinality 0..*.
+An association connects 'uml2CD_Association' and 'uml2CD_Property'. From 'uml2CD_Association', the role 'owningAssociation' has cardinality 0..*, and from 'uml2CD_Property', the role 'Property106' has cardinality 0..*.
+An association connects 'uml2CD_Enumeration' and 'uml2CD_EnumerationLiteral'. From 'uml2CD_Enumeration', the role 'enumeration' has cardinality 0..*, and from 'uml2CD_EnumerationLiteral', the role 'EnumerationLiteral' has cardinality 0..*.
+An association connects 'uml2CD_EnumerationLiteral' and 'uml2CD_Enumeration'. From 'uml2CD_EnumerationLiteral', the role 'ownedLiteral' has cardinality 0..*, and from 'uml2CD_Enumeration', the role 'Enumeration' has cardinality 0..*.
+An association connects 'uml2CD_PackageMerge' and 'uml2CD_Package'. From 'uml2CD_PackageMerge', the role 'packageMerge' has cardinality 0..*, and from 'uml2CD_Package', the role 'Package110' has cardinality 0..*.
+An association connects 'uml2CD_Package' and 'uml2CD_PackageMerge'. From 'uml2CD_Package', the role 'uml2CD_Package112' has cardinality 0..*, and from 'uml2CD_PackageMerge', the role 'uml2CD_PackageMerge' has cardinality 0..*.
+An association connects 'uml2CD_NamedElement' and 'uml2CD_Dependency'. From 'uml2CD_NamedElement', the role 'NamedElement' has cardinality 0..*, and from 'uml2CD_Dependency', the role 'supplierDependency' has cardinality 0..*.
+An association connects 'uml2CD_Dependency' and 'uml2CD_NamedElement'. From 'uml2CD_Dependency', the role 'clientDependency' has cardinality 0..*, and from 'uml2CD_NamedElement', the role 'NamedElement115' has cardinality 0..*.
+An association connects 'uml2CD_Substitution' and 'uml2CD_Classifier'. From 'uml2CD_Substitution', the role 'uml2CD_Substitution' has cardinality 0..*, and from 'uml2CD_Classifier', the role 'uml2CD_Classifier117' has cardinality 0..*.
+An association connects 'uml2CD_Classifier' and 'uml2CD_Substitution'. From 'uml2CD_Classifier', the role 'Classifier119' has cardinality 0..*, and from 'uml2CD_Substitution', the role 'substitution' has cardinality 0..*.
+An association connects 'uml2CD_Interface' and 'uml2CD_Interface'. From 'uml2CD_Interface', the role 'uml2CD_Interface' has cardinality 0..*, and from 'uml2CD_Interface', the role 'uml2CD_Interface120' has cardinality 0..*.
+An association connects 'uml2CD_InterfaceRealization' and 'uml2CD_Interface'. From 'uml2CD_InterfaceRealization', the role 'uml2CD_InterfaceRealization' has cardinality 0..*, and from 'uml2CD_Interface', the role 'uml2CD_Interface123' has cardinality 0..*.
+An association connects 'uml2CD_GeneralizationSet' and 'uml2CD_Generalization'. From 'uml2CD_GeneralizationSet', the role 'generalizationSet' has cardinality 0..*, and from 'uml2CD_Generalization', the role 'Generalization125' has cardinality 0..*.
+An association connects 'uml2CD_Classifier' and 'uml2CD_GeneralizationSet'. From 'uml2CD_Classifier', the role 'Classifier127' has cardinality 0..*, and from 'uml2CD_GeneralizationSet', the role 'powertypeExtent' has cardinality 0..*.
+An association connects 'uml2CD_RedefinableElement' and 'uml2CD_RedefinableElement'. From 'uml2CD_RedefinableElement', the role 'uml2CD_RedefinableElement' has cardinality 0..*, and from 'uml2CD_RedefinableElement', the role 'uml2CD_RedefinableElement128' has cardinality 0..*.

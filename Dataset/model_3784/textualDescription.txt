@@ -1,0 +1,9 @@
+The domain model 'd' describes the core structural elements and their relationships within the system.
+
+The model defines 1 main class(es).
+
+'d_D' represents an important domain concept.
+It has the following attributes: 'atts', which is of type str; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'd_D' and 'd_D'. From 'd_D', the role 'd_D' has cardinality 0..*, and from 'd_D', the role 'd_D0' has cardinality 0..*.

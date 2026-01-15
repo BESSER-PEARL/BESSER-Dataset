@@ -1,0 +1,43 @@
+The domain model 'companies' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'CSTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'companies_department' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'companies_CSTrace' represents an important domain concept.
+It does not declare any attributes.
+
+'companies_Visitable' represents an important domain concept.
+It does not declare any attributes.
+
+'companies_company' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'companies_employee' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'address', which is of type str; 'mentor', which is of type str; 'salary', which is of type float.
+
+'companies_department_employees' represents an important domain concept.
+It does not declare any attributes.
+
+'companies_department_manager' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'companies_company' is a specialization of 'CSTrace'.
+The class 'companies_department' is a specialization of 'CSTrace'.
+The class 'companies_department_manager' is a specialization of 'CSTrace'.
+The class 'companies_department_employees' is a specialization of 'CSTrace'.
+The class 'companies_employee' is a specialization of 'CSTrace'.
+
+Relationships between classes are modeled using associations.
+An association connects 'companies_department' and 'companies_company'. From 'companies_department', the role 'companies_department' has cardinality 0..*, and from 'companies_company', the role 'companies_company' has cardinality 0..*.
+An association connects 'companies_department_manager' and 'companies_department'. From 'companies_department_manager', the role 'companies_department_manager' has cardinality 0..*, and from 'companies_department', the role 'companies_department2' has cardinality 0..*.
+An association connects 'companies_department_employees' and 'companies_department'. From 'companies_department_employees', the role 'companies_department_employees' has cardinality 0..*, and from 'companies_department', the role 'companies_department4' has cardinality 0..*.
+An association connects 'companies_department' and 'companies_department'. From 'companies_department', the role 'companies_department7' has cardinality 0..*, and from 'companies_department', the role 'companies_department5' has cardinality 0..*.
+An association connects 'companies_employee' and 'companies_department_manager'. From 'companies_employee', the role 'companies_employee' has cardinality 0..*, and from 'companies_department_manager', the role 'companies_department_manager9' has cardinality 0..*.
+An association connects 'companies_employee' and 'companies_department_employees'. From 'companies_employee', the role 'companies_employee12' has cardinality 0..*, and from 'companies_department_employees', the role 'companies_department_employees11' has cardinality 0..*.
+An association connects 'companies_CSTrace' and 'companies_Visitable'. From 'companies_CSTrace', the role 'companies_CSTrace' has cardinality 0..*, and from 'companies_Visitable', the role 'companies_Visitable' has cardinality 0..*.

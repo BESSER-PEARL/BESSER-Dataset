@@ -1,0 +1,32 @@
+The domain model 'sql' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'sql_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_SelectQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sql_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'sql_Table' is a specialization of 'NamedElement'.
+The class 'sql_Column' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sql_SelectQuery' and 'sql_Model'. From 'sql_SelectQuery', the role 'sql_SelectQuery' has cardinality 0..*, and from 'sql_Model', the role 'sql_Model' has cardinality 0..*.
+An association connects 'sql_Model' and 'sql_Table'. From 'sql_Model', the role 'sql_Model2' has cardinality 0..*, and from 'sql_Table', the role 'sql_Table' has cardinality 0..*.
+An association connects 'sql_Table' and 'sql_Column'. From 'sql_Table', the role 'sql_Table4' has cardinality 0..*, and from 'sql_Column', the role 'sql_Column' has cardinality 0..*.
+An association connects 'sql_Table' and 'sql_SelectQuery'. From 'sql_Table', the role 'sql_Table7' has cardinality 0..*, and from 'sql_SelectQuery', the role 'sql_SelectQuery6' has cardinality 0..*.
+An association connects 'sql_Column' and 'sql_SelectQuery'. From 'sql_Column', the role 'sql_Column10' has cardinality 0..*, and from 'sql_SelectQuery', the role 'sql_SelectQuery9' has cardinality 0..*.

@@ -1,0 +1,150 @@
+The domain model 'VisualInterface' describes the core structural elements and their relationships within the system.
+
+The model defines 33 main class(es).
+
+'Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualInterface_BorderContainer' represents an important domain concept.
+It has the following attributes: 'verticalSpacing', which is of type int; 'horizontalSpacing', which is of type int.
+
+'VisualInterface_SystemCursor' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'VisualInterface_Text' represents an important domain concept.
+It has the following attributes: 'fontItalic', which is of type bool; 'fontBold', which is of type bool; 'text', which is of type str; 'fontSize', which is of type int; 'textAlignment', which is of type str; 'fontName', which is of type str; 'labelAlignment', which is of type str; 'textPlacement', which is of type str; 'iconAlignment', which is of type str.
+
+'VisualInterface_StackContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualInterface_StringToStringMap' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'VisualInterface_Dimension' represents an important domain concept.
+It has the following attributes: 'height', which is of type float; 'width', which is of type float.
+
+'Child' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualInterface_BorderChild' represents an important domain concept.
+It has one attribute: 'alignment', which is of type str.
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualInterface_FigureContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualInterface_Shape' represents an important domain concept.
+It has the following attributes: 'lineWidth', which is of type float; 'alpha', which is of type str; 'antialias', which is of type str; 'outline', which is of type bool; 'fill', which is of type bool.
+
+'VisualInterface_Symbol' represents an important domain concept.
+It has the following attributes: 'scriptModules', which is of type str; 'onUpdate', which is of type str; 'onDispose', which is of type str; 'onInit', which is of type str; 'backgroundColor', which is of type str.
+
+'VisualInterface_GridChild' represents an important domain concept.
+It has the following attributes: 'verticalAlignment', which is of type str; 'heightHint', which is of type str; 'horizontalAlignment', which is of type str; 'spanCols', which is of type int; 'spanRows', which is of type str; 'widthHint', which is of type str; 'grabVerticalSpace', which is of type bool; 'grabHorizontalSpace', which is of type bool.
+
+'VisualInterface_XYContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualInterface_Position' represents an important domain concept.
+It has the following attributes: 'x', which is of type float; 'y', which is of type float.
+
+'VisualInterface_Cursor' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualInterface_Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualInterface_Line' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualInterface_SymbolReference' represents an important domain concept.
+It has the following attributes: 'onCreateProperties', which is of type str; 'zoom', which is of type str; 'uri', which is of type str.
+
+'VisualInterface_Image' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'VisualInterface_Child' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'VisualInterface_GridContainer' represents an important domain concept.
+It has the following attributes: 'equalWidth', which is of type bool; 'columns', which is of type int; 'marginHeight', which is of type int; 'marginWidth', which is of type int; 'horizontalSpacing', which is of type int; 'verticalSpacing', which is of type int.
+
+'Cursor' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualInterface_Arc' represents an important domain concept.
+It has the following attributes: 'start', which is of type int; 'length', which is of type int.
+
+'VisualInterface_Container' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualInterface_Rectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualInterface_XYChild' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualInterface_Figure' represents an important domain concept.
+It has the following attributes: 'border', which is of type str; 'toolTip', which is of type str; 'foregroundColor', which is of type str; 'onClick', which is of type str; 'backgroundColor', which is of type str; 'onDoubleClick', which is of type str; 'visible', which is of type bool; 'opaque', which is of type str.
+
+'Container' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualInterface_Primitive' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Figure' represents an important domain concept.
+It does not declare any attributes.
+
+'VisualInterface_Ellipse' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Orientation' defines the following possible values: 'WEST', 'NORTH', 'SOUTH', 'EAST'.
+The enumeration 'Alignment' defines the following possible values: 'RIGHT', 'LEFT', 'CENTER', 'TOP', 'BOTTOM'.
+The enumeration 'SystemCursorType' defines the following possible values: 'ARROW', 'HAND'.
+The enumeration 'GridAlignment' defines the following possible values: 'BEGINNING', 'CENTER', 'END', 'FILL'.
+
+The model also captures inheritance relationships between classes.
+The class 'VisualInterface_Container' is a specialization of 'Primitive'.
+The class 'VisualInterface_Shape' is a specialization of 'Figure'.
+The class 'VisualInterface_Rectangle' is a specialization of 'Shape'.
+The class 'VisualInterface_Text' is a specialization of 'Figure'.
+The class 'VisualInterface_XYChild' is a specialization of 'Child'.
+The class 'VisualInterface_XYContainer' is a specialization of 'Container'.
+The class 'VisualInterface_Line' is a specialization of 'Shape'.
+The class 'VisualInterface_Figure' is a specialization of 'Primitive'.
+The class 'VisualInterface_SymbolReference' is a specialization of 'Primitive'.
+The class 'VisualInterface_SystemCursor' is a specialization of 'Cursor'.
+The class 'VisualInterface_GridContainer' is a specialization of 'Container'.
+The class 'VisualInterface_BorderContainer' is a specialization of 'Container'.
+The class 'VisualInterface_BorderChild' is a specialization of 'Child'.
+The class 'VisualInterface_GridChild' is a specialization of 'Child'.
+The class 'VisualInterface_FigureContainer' is a specialization of 'Figure'.
+The class 'VisualInterface_Image' is a specialization of 'Figure'.
+The class 'VisualInterface_Ellipse' is a specialization of 'Shape'.
+The class 'VisualInterface_Arc' is a specialization of 'Shape'.
+The class 'VisualInterface_StackContainer' is a specialization of 'Container'.
+
+Relationships between classes are modeled using associations.
+An association connects 'VisualInterface_Primitive' and 'VisualInterface_Symbol'. From 'VisualInterface_Primitive', the role 'VisualInterface_Primitive' has cardinality 0..*, and from 'VisualInterface_Symbol', the role 'VisualInterface_Symbol' has cardinality 0..*.
+An association connects 'VisualInterface_StringToStringMap' and 'VisualInterface_Symbol'. From 'VisualInterface_StringToStringMap', the role 'VisualInterface_StringToStringMap' has cardinality 0..*, and from 'VisualInterface_Symbol', the role 'VisualInterface_Symbol2' has cardinality 0..*.
+An association connects 'VisualInterface_Cursor' and 'VisualInterface_Symbol'. From 'VisualInterface_Cursor', the role 'VisualInterface_Cursor' has cardinality 0..*, and from 'VisualInterface_Symbol', the role 'VisualInterface_Symbol4' has cardinality 0..*.
+An association connects 'VisualInterface_Dimension' and 'VisualInterface_Symbol'. From 'VisualInterface_Dimension', the role 'VisualInterface_Dimension' has cardinality 0..*, and from 'VisualInterface_Symbol', the role 'VisualInterface_Symbol6' has cardinality 0..*.
+An association connects 'VisualInterface_Connection' and 'VisualInterface_Symbol'. From 'VisualInterface_Connection', the role 'VisualInterface_Connection' has cardinality 0..*, and from 'VisualInterface_Symbol', the role 'VisualInterface_Symbol8' has cardinality 0..*.
+An association connects 'VisualInterface_Child' and 'VisualInterface_Primitive'. From 'VisualInterface_Child', the role 'VisualInterface_Child' has cardinality 0..*, and from 'VisualInterface_Primitive', the role 'VisualInterface_Primitive10' has cardinality 0..*.
+An association connects 'VisualInterface_XYChild' and 'VisualInterface_Position'. From 'VisualInterface_XYChild', the role 'VisualInterface_XYChild' has cardinality 0..*, and from 'VisualInterface_Position', the role 'VisualInterface_Position' has cardinality 0..*.
+An association connects 'VisualInterface_Dimension' and 'VisualInterface_XYChild'. From 'VisualInterface_Dimension', the role 'VisualInterface_Dimension14' has cardinality 0..*, and from 'VisualInterface_XYChild', the role 'VisualInterface_XYChild13' has cardinality 0..*.
+An association connects 'VisualInterface_XYChild' and 'VisualInterface_XYContainer'. From 'VisualInterface_XYChild', the role 'VisualInterface_XYChild16' has cardinality 0..*, and from 'VisualInterface_XYContainer', the role 'VisualInterface_XYContainer' has cardinality 0..*.
+An association connects 'VisualInterface_Position' and 'VisualInterface_Line'. From 'VisualInterface_Position', the role 'VisualInterface_Position18' has cardinality 0..*, and from 'VisualInterface_Line', the role 'VisualInterface_Line' has cardinality 0..*.
+An association connects 'VisualInterface_Figure' and 'VisualInterface_Dimension'. From 'VisualInterface_Figure', the role 'VisualInterface_Figure' has cardinality 0..*, and from 'VisualInterface_Dimension', the role 'VisualInterface_Dimension20' has cardinality 0..*.
+An association connects 'VisualInterface_Figure' and 'VisualInterface_Cursor'. From 'VisualInterface_Figure', the role 'VisualInterface_Figure22' has cardinality 0..*, and from 'VisualInterface_Cursor', the role 'VisualInterface_Cursor23' has cardinality 0..*.
+An association connects 'VisualInterface_SymbolReference' and 'VisualInterface_StringToStringMap'. From 'VisualInterface_SymbolReference', the role 'VisualInterface_SymbolReference' has cardinality 0..*, and from 'VisualInterface_StringToStringMap', the role 'VisualInterface_StringToStringMap25' has cardinality 0..*.
+An association connects 'VisualInterface_GridContainer' and 'VisualInterface_GridChild'. From 'VisualInterface_GridContainer', the role 'VisualInterface_GridContainer' has cardinality 0..*, and from 'VisualInterface_GridChild', the role 'VisualInterface_GridChild' has cardinality 0..*.
+An association connects 'VisualInterface_BorderContainer' and 'VisualInterface_BorderChild'. From 'VisualInterface_BorderContainer', the role 'VisualInterface_BorderContainer' has cardinality 0..*, and from 'VisualInterface_BorderChild', the role 'VisualInterface_BorderChild' has cardinality 0..*.
+An association connects 'VisualInterface_FigureContainer' and 'VisualInterface_Primitive'. From 'VisualInterface_FigureContainer', the role 'VisualInterface_FigureContainer' has cardinality 0..*, and from 'VisualInterface_Primitive', the role 'VisualInterface_Primitive29' has cardinality 0..*.
+An association connects 'VisualInterface_Connection' and 'VisualInterface_Primitive'. From 'VisualInterface_Connection', the role 'VisualInterface_Connection31' has cardinality 0..*, and from 'VisualInterface_Primitive', the role 'VisualInterface_Primitive32' has cardinality 0..*.
+An association connects 'VisualInterface_Primitive' and 'VisualInterface_Connection'. From 'VisualInterface_Primitive', the role 'VisualInterface_Primitive35' has cardinality 0..*, and from 'VisualInterface_Connection', the role 'VisualInterface_Connection34' has cardinality 0..*.
+An association connects 'VisualInterface_StackContainer' and 'VisualInterface_Primitive'. From 'VisualInterface_StackContainer', the role 'VisualInterface_StackContainer' has cardinality 0..*, and from 'VisualInterface_Primitive', the role 'VisualInterface_Primitive37' has cardinality 0..*.

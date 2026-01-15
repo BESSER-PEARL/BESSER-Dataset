@@ -1,0 +1,690 @@
+The domain model 'jointPackage_CPL2SPL' describes the core structural elements and their relationships within the system.
+
+The model defines 160 main class(es).
+
+'jointPackage_CPL2SPL_TrgVariablePlace' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcTimeSwitch' represents an important domain concept.
+It has the following attributes: 'tzurl', which is of type str; 'tzid', which is of type str.
+
+'jointPackage_CPL2SPL_TrgFunctionCallStat' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_JointMM' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgSetStat' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcSwitch' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgSelectMember' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcSignallingAction' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcIncoming' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcSubAction' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgPropertyCallPlace' represents an important domain concept.
+It has one attribute: 'propName', which is of type str.
+
+'jointPackage_CPL2SPL_SrcAddressSwitch' represents an important domain concept.
+It has the following attributes: 'subField', which is of type str; 'field', which is of type str.
+
+'jointPackage_CPL2SPL_TrgIfStat' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcDefault' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcOtherwise' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgDeclarationStat' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgTypeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgResponseConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcDefault' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgServerErrorResponse' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgVariablePlace' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcLanguageSwitch' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgBlockExp' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgRedirectionErrorResponse' represents an important domain concept.
+It has one attribute: 'errorKind', which is of type str.
+
+'SrcFailure' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgContinueStat' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgBooleanConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'SrcNotPresent' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcSubAction' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'jointPackage_CPL2SPL_TrgMethodName' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcOutgoing' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcBusy' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgLocatedElement' represents an important domain concept.
+It has the following attributes: 'commentsAfter', which is of type str; 'commentsBefore', which is of type str; 'location', which is of type str.
+
+'jointPackage_CPL2SPL_TrgRequestURIExp' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgFunctionCallExp' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgSuccessResponse' represents an important domain concept.
+It has one attribute: 'successKind', which is of type str.
+
+'jointPackage_CPL2SPL_TrgBreakStat' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcIncoming' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgBranch' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgSIPMethodName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jointPackage_CPL2SPL_SrcCPLModel' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcSwitch' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcNodeContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgEvent' represents an important domain concept.
+It has one attribute: 'eventId', which is of type str.
+
+'TrgVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgConstantExp' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcReject' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgSession' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcRedirection' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgFunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgWithExp' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcSwitchedPriority' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcNode' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgClientErrorResponse' represents an important domain concept.
+It has one attribute: 'errorKind', which is of type str.
+
+'jointPackage_CPL2SPL_TrgOperatorExp' represents an important domain concept.
+It has one attribute: 'opName', which is of type str.
+
+'jointPackage_CPL2SPL_TrgReturnStat' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcNode' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgNamedBranch' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgSequenceType' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'modifier', which is of type str; 'size', which is of type int.
+
+'jointPackage_CPL2SPL_SrcOtherwise' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgPopExp' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgTypeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcFailure' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgWhenHeader' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgService' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgPlace' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgPushStat' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcNoAnswer' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcNodeContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgStructureDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgDefinedType' represents an important domain concept.
+It has one attribute: 'typeName', which is of type str.
+
+'SrcSwitchedAddress' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcSwitchedString' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcStringSwitch' represents an important domain concept.
+It has one attribute: 'field', which is of type str.
+
+'SrcOutgoing' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgGlobalErrorResponse' represents an important domain concept.
+It has one attribute: 'errorKind', which is of type str.
+
+'jointPackage_CPL2SPL_SrcNoAnswer' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcSwitchedLanguage' represents an important domain concept.
+It has one attribute: 'matches', which is of type str.
+
+'jointPackage_CPL2SPL_SrcLocation' represents an important domain concept.
+It has the following attributes: 'clear', which is of type str; 'priority', which is of type str; 'url', which is of type str.
+
+'jointPackage_CPL2SPL_TrgHeadedMessageField' represents an important domain concept.
+It has one attribute: 'headerId', which is of type str.
+
+'jointPackage_CPL2SPL_TrgService' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jointPackage_CPL2SPL_TrgSelectDefault' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcSwitchedAddress' represents an important domain concept.
+It has the following attributes: 'subDomainOf', which is of type str; 'contains', which is of type str; 'is', which is of type str.
+
+'jointPackage_CPL2SPL_TrgReasonExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgSelectMember' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgRegistration' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcSwitchedLanguage' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcSwitchedTime' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcProxy' represents an important domain concept.
+It has the following attributes: 'timeout', which is of type str; 'recurse', which is of type str; 'ordering', which is of type str.
+
+'jointPackage_CPL2SPL_SrcSwitchedTime' represents an important domain concept.
+It has the following attributes: 'dtstart', which is of type str; 'byYearDay', which is of type str; 'byMonth', which is of type str; 'freq', which is of type str; 'dtend', which is of type str; 'byWeekNo', which is of type str; 'byMinute', which is of type str; 'byDay', which is of type str; 'count', which is of type str; 'byMonthDay', which is of type str; 'byHour', which is of type str; 'bySetPos', which is of type str; 'until', which is of type str; 'wkst', which is of type str; 'interval', which is of type str; 'bySecond', which is of type str; 'duration', which is of type str.
+
+'TrgMethodName' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgSession' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgForeachStat' represents an important domain concept.
+It has one attribute: 'iteratorName', which is of type str.
+
+'jointPackage_CPL2SPL_TrgLocalFunctionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgSelectCase' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgErrorResponse' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgDialog' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgServerErrorResponse' represents an important domain concept.
+It has one attribute: 'errorKind', which is of type str.
+
+'jointPackage_CPL2SPL_SrcSubCall' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'jointPackage_CPL2SPL_SrcNotPresent' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgFunctionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgStructureProperty' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TrgSelectCase' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcSignallingAction' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcBusy' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgSelectStat' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgFunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgControlMethodName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jointPackage_CPL2SPL_TrgForwardExp' represents an important domain concept.
+It has one attribute: 'isParallel', which is of type bool.
+
+'TrgMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgVariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgWhenHeader' represents an important domain concept.
+It has one attribute: 'headerId', which is of type str.
+
+'jointPackage_CPL2SPL_TrgSequenceConstant' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgLocatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgRemoteFunctionDeclaration' represents an important domain concept.
+It has one attribute: 'functionLocation', which is of type str.
+
+'TrgMessageField' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgMessageField' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgCompoundStat' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgDefaultBranch' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcReject' represents an important domain concept.
+It has the following attributes: 'status', which is of type str; 'reason', which is of type str.
+
+'jointPackage_CPL2SPL_SrcSwitchedPriority' represents an important domain concept.
+It has the following attributes: 'equal', which is of type str; 'greater', which is of type str; 'less', which is of type str.
+
+'jointPackage_CPL2SPL_TrgIntegerConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'jointPackage_CPL2SPL_TrgFunctionDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgBranch' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcAction' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcCPL' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgReasonMessageField' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcPrioritySwitch' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgSelectDefault' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgBODYExp' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgResponse' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_SrcSwitchedString' represents an important domain concept.
+It has the following attributes: 'is', which is of type str; 'contains', which is of type str.
+
+'jointPackage_CPL2SPL_TrgURIConstant' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'jointPackage_CPL2SPL_TrgSimpleType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'jointPackage_CPL2SPL_TrgNamedBranch' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TrgErrorResponse' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgResponse' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgMethod' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'jointPackage_CPL2SPL_SrcRedirect' represents an important domain concept.
+It has one attribute: 'permanent', which is of type str.
+
+'jointPackage_CPL2SPL_TrgWhenStat' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_CPL2SPL_TrgStringConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'jointPackage_CPL2SPL_TrgSIPHeaderPlace' represents an important domain concept.
+It has one attribute: 'header', which is of type str.
+
+'jointPackage_CPL2SPL_TrgDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SrcRedirection' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ServerErrorKind' defines the following possible values: 'VERSION_NOT_SUPPORTED', 'SERVICE_UNAVAILABLE', 'SERVER_TIMEOUT', 'SERVER_INTERNAL_ERROR', 'NOT_IMPLEMENTED', 'MESSAGE_TOO_LARGE', 'BAD_GATEWAY'.
+The enumeration 'SIPHeader' defines the following possible values: 'VIA', 'TO', 'CONTACT', 'MAX_FORWARDS', 'CSEQ', 'EVENT', 'FROM', 'SUBSCRIPTION_STATE', 'CALL_ID'.
+The enumeration 'FunctionLocation' defines the following possible values: 'local', 'remote'.
+The enumeration 'GlobalErrorKind' defines the following possible values: 'DECLINE', 'DOES_NOT_EXIST_ANYWHERE', 'NOT_ACCEPTABLE', 'BUSY_EVERYWHERE'.
+The enumeration 'Direction' defines the following possible values: 'in', 'out', 'inout'.
+The enumeration 'RedirectionErrorKind' defines the following possible values: 'MOVED_PERMANENTLY', 'USE_PROXY', 'MULTIPLE_CHOICES', 'MOVED_TEMPORARILY', 'ALTERNATIVE_SERVICE'.
+The enumeration 'SuccessKind' defines the following possible values: 'OK', 'ACCEPTED'.
+The enumeration 'Modifier' defines the following possible values: 'FIFO', 'LIFO'.
+The enumeration 'ClientErrorKind' defines the following possible values: 'UNSUPPORTED_URI_SCHEME', 'UNSUPPORTED_MEDIA_TYPE', 'LOOP_DETECTED', 'UNDECIPHERABLE', 'UNAUTHORIZED', 'TOO_MANY_HOPS', 'GONE', 'TEMPORARILY_UNAVAILABLE', 'REQUEST_TIMEOUT', 'REQUEST_TERMINATED', 'REQUEST_PENDING', 'REQUEST_ENTITY_TOO_LARGE', 'REQUESTURI_TOO_LONG', 'PROXY_AUTHENTICATION_REQUIRED', 'PAYMENT_REQUIRED', 'NOT_FOUND', 'NOT_ACCEPTABLE', 'NOT_ACCEPTABLE_HERE', 'INTERVAL_TOO_BRIEF', 'FORBIDDEN', 'EXTENSION_REQUIRED', 'BAD_REQUEST', 'BUSY_HERE', 'CALL_OR_TRANSACTION_DOES_NOT_EXIST', 'BAD_EXTENSION', 'METHOD_NOT_ALLOWED', 'AMBIGUOUS', 'ADDRESS_INCOMPLETE'.
+The enumeration 'SIPMethod' defines the following possible values: 'REACK', 'RESUBSCRIBE', 'REREGISTER', 'OPTIONS', 'SUBSCRIBE', 'REGISTER', 'NOTIFY', 'CANCEL', 'BYE', 'INVITE', 'REINVITE', 'ACK'.
+The enumeration 'ControlMethod' defines the following possible values: 'unsubscribe', 'unregister', 'undeploy', 'uninvite', 'deploy'.
+The enumeration 'PrimitiveType' defines the following possible values: 'request', 'uri', 'time', 'int', 'bool', 'void', 'string', 'response'.
+
+The model also captures inheritance relationships between classes.
+The class 'jointPackage_CPL2SPL_SrcCPL' is a specialization of 'SrcElement'.
+The class 'jointPackage_CPL2SPL_SrcAddressSwitch' is a specialization of 'SrcSwitch'.
+The class 'jointPackage_CPL2SPL_SrcStringSwitch' is a specialization of 'SrcSwitch'.
+The class 'jointPackage_CPL2SPL_SrcLanguageSwitch' is a specialization of 'SrcSwitch'.
+The class 'jointPackage_CPL2SPL_SrcTimeSwitch' is a specialization of 'SrcSwitch'.
+The class 'jointPackage_CPL2SPL_SrcPrioritySwitch' is a specialization of 'SrcSwitch'.
+The class 'jointPackage_CPL2SPL_SrcProxy' is a specialization of 'SrcSignallingAction'.
+The class 'jointPackage_CPL2SPL_SrcRedirect' is a specialization of 'SrcSignallingAction'.
+The class 'jointPackage_CPL2SPL_SrcReject' is a specialization of 'SrcSignallingAction'.
+The class 'jointPackage_CPL2SPL_SrcNodeContainer' is a specialization of 'SrcElement'.
+The class 'jointPackage_CPL2SPL_SrcSubAction' is a specialization of 'SrcNodeContainer'.
+The class 'jointPackage_CPL2SPL_SrcOutgoing' is a specialization of 'SrcNodeContainer'.
+The class 'jointPackage_CPL2SPL_SrcIncoming' is a specialization of 'SrcNodeContainer'.
+The class 'jointPackage_CPL2SPL_SrcNotPresent' is a specialization of 'SrcNodeContainer'.
+The class 'jointPackage_CPL2SPL_SrcOtherwise' is a specialization of 'SrcNodeContainer'.
+The class 'jointPackage_CPL2SPL_SrcSwitchedAddress' is a specialization of 'SrcNodeContainer'.
+The class 'jointPackage_CPL2SPL_SrcSwitchedString' is a specialization of 'SrcNodeContainer'.
+The class 'jointPackage_CPL2SPL_SrcSwitchedLanguage' is a specialization of 'SrcNodeContainer'.
+The class 'jointPackage_CPL2SPL_SrcSwitchedTime' is a specialization of 'SrcNodeContainer'.
+The class 'jointPackage_CPL2SPL_SrcSwitchedPriority' is a specialization of 'SrcNodeContainer'.
+The class 'jointPackage_CPL2SPL_SrcBusy' is a specialization of 'SrcNodeContainer'.
+The class 'jointPackage_CPL2SPL_SrcNoAnswer' is a specialization of 'SrcNodeContainer'.
+The class 'jointPackage_CPL2SPL_SrcRedirection' is a specialization of 'SrcNodeContainer'.
+The class 'jointPackage_CPL2SPL_SrcFailure' is a specialization of 'SrcNodeContainer'.
+The class 'jointPackage_CPL2SPL_SrcDefault' is a specialization of 'SrcNodeContainer'.
+The class 'jointPackage_CPL2SPL_SrcNode' is a specialization of 'SrcElement'.
+The class 'jointPackage_CPL2SPL_SrcSwitch' is a specialization of 'SrcNode'.
+The class 'jointPackage_CPL2SPL_SrcLocation' is a specialization of 'SrcNode'.
+The class 'jointPackage_CPL2SPL_SrcLocation' is a specialization of 'SrcNodeContainer'.
+The class 'jointPackage_CPL2SPL_SrcSubCall' is a specialization of 'SrcNode'.
+The class 'jointPackage_CPL2SPL_SrcAction' is a specialization of 'SrcNode'.
+The class 'jointPackage_CPL2SPL_SrcSignallingAction' is a specialization of 'SrcAction'.
+The class 'jointPackage_CPL2SPL_TrgProgram' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_CPL2SPL_TrgStructureProperty' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_CPL2SPL_TrgClientErrorResponse' is a specialization of 'TrgErrorResponse'.
+The class 'jointPackage_CPL2SPL_TrgGlobalErrorResponse' is a specialization of 'TrgErrorResponse'.
+The class 'jointPackage_CPL2SPL_TrgRedirectionErrorResponse' is a specialization of 'TrgErrorResponse'.
+The class 'jointPackage_CPL2SPL_TrgServerErrorResponse' is a specialization of 'TrgErrorResponse'.
+The class 'jointPackage_CPL2SPL_TrgService' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_CPL2SPL_TrgSession' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_CPL2SPL_TrgRegistration' is a specialization of 'TrgSession'.
+The class 'jointPackage_CPL2SPL_TrgDialog' is a specialization of 'TrgSession'.
+The class 'jointPackage_CPL2SPL_TrgEvent' is a specialization of 'TrgSession'.
+The class 'jointPackage_CPL2SPL_TrgMethod' is a specialization of 'TrgSession'.
+The class 'jointPackage_CPL2SPL_TrgArgument' is a specialization of 'TrgVariableDeclaration'.
+The class 'jointPackage_CPL2SPL_TrgMethodName' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_CPL2SPL_TrgSIPMethodName' is a specialization of 'TrgMethodName'.
+The class 'jointPackage_CPL2SPL_TrgControlMethodName' is a specialization of 'TrgMethodName'.
+The class 'jointPackage_CPL2SPL_TrgBranch' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_CPL2SPL_TrgDefaultBranch' is a specialization of 'TrgBranch'.
+The class 'jointPackage_CPL2SPL_TrgNamedBranch' is a specialization of 'TrgBranch'.
+The class 'jointPackage_CPL2SPL_TrgTypeExpression' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_CPL2SPL_TrgSimpleType' is a specialization of 'TrgTypeExpression'.
+The class 'jointPackage_CPL2SPL_TrgSequenceType' is a specialization of 'TrgTypeExpression'.
+The class 'jointPackage_CPL2SPL_TrgDefinedType' is a specialization of 'TrgTypeExpression'.
+The class 'jointPackage_CPL2SPL_TrgDeclaration' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_CPL2SPL_TrgVariableDeclaration' is a specialization of 'TrgDeclaration'.
+The class 'jointPackage_CPL2SPL_TrgFunctionDeclaration' is a specialization of 'TrgDeclaration'.
+The class 'jointPackage_CPL2SPL_TrgRemoteFunctionDeclaration' is a specialization of 'TrgFunctionDeclaration'.
+The class 'jointPackage_CPL2SPL_TrgLocalFunctionDeclaration' is a specialization of 'TrgFunctionDeclaration'.
+The class 'jointPackage_CPL2SPL_TrgStructureDeclaration' is a specialization of 'TrgDeclaration'.
+The class 'jointPackage_CPL2SPL_TrgFunctionCall' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_CPL2SPL_TrgStatement' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_CPL2SPL_TrgCompoundStat' is a specialization of 'TrgStatement'.
+The class 'jointPackage_CPL2SPL_TrgSetStat' is a specialization of 'TrgStatement'.
+The class 'jointPackage_CPL2SPL_TrgDeclarationStat' is a specialization of 'TrgStatement'.
+The class 'jointPackage_CPL2SPL_TrgReturnStat' is a specialization of 'TrgStatement'.
+The class 'jointPackage_CPL2SPL_TrgIfStat' is a specialization of 'TrgStatement'.
+The class 'jointPackage_CPL2SPL_TrgWhenStat' is a specialization of 'TrgStatement'.
+The class 'jointPackage_CPL2SPL_TrgForeachStat' is a specialization of 'TrgStatement'.
+The class 'jointPackage_CPL2SPL_TrgSelectStat' is a specialization of 'TrgStatement'.
+The class 'jointPackage_CPL2SPL_TrgFunctionCallStat' is a specialization of 'TrgStatement'.
+The class 'jointPackage_CPL2SPL_TrgContinueStat' is a specialization of 'TrgStatement'.
+The class 'jointPackage_CPL2SPL_TrgBreakStat' is a specialization of 'TrgStatement'.
+The class 'jointPackage_CPL2SPL_TrgPushStat' is a specialization of 'TrgStatement'.
+The class 'jointPackage_CPL2SPL_TrgWhenHeader' is a specialization of 'TrgVariableDeclaration'.
+The class 'jointPackage_CPL2SPL_TrgSelectMember' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_CPL2SPL_TrgSelectDefault' is a specialization of 'TrgSelectMember'.
+The class 'jointPackage_CPL2SPL_TrgSelectCase' is a specialization of 'TrgSelectMember'.
+The class 'jointPackage_CPL2SPL_TrgExpression' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_CPL2SPL_TrgConstantExp' is a specialization of 'TrgExpression'.
+The class 'jointPackage_CPL2SPL_TrgOperatorExp' is a specialization of 'TrgExpression'.
+The class 'jointPackage_CPL2SPL_TrgForwardExp' is a specialization of 'TrgExpression'.
+The class 'jointPackage_CPL2SPL_TrgWithExp' is a specialization of 'TrgExpression'.
+The class 'jointPackage_CPL2SPL_TrgBlockExp' is a specialization of 'TrgExpression'.
+The class 'jointPackage_CPL2SPL_TrgReasonExp' is a specialization of 'TrgExpression'.
+The class 'jointPackage_CPL2SPL_TrgBODYExp' is a specialization of 'TrgExpression'.
+The class 'jointPackage_CPL2SPL_TrgRequestURIExp' is a specialization of 'TrgExpression'.
+The class 'jointPackage_CPL2SPL_TrgPopExp' is a specialization of 'TrgExpression'.
+The class 'jointPackage_CPL2SPL_TrgFunctionCallExp' is a specialization of 'TrgExpression'.
+The class 'jointPackage_CPL2SPL_TrgPlace' is a specialization of 'TrgExpression'.
+The class 'jointPackage_CPL2SPL_TrgSIPHeaderPlace' is a specialization of 'TrgPlace'.
+The class 'jointPackage_CPL2SPL_TrgVariablePlace' is a specialization of 'TrgPlace'.
+The class 'jointPackage_CPL2SPL_TrgPropertyCallPlace' is a specialization of 'TrgVariablePlace'.
+The class 'jointPackage_CPL2SPL_TrgVariable' is a specialization of 'TrgVariablePlace'.
+The class 'jointPackage_CPL2SPL_TrgMessageField' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_CPL2SPL_TrgReasonMessageField' is a specialization of 'TrgMessageField'.
+The class 'jointPackage_CPL2SPL_TrgHeadedMessageField' is a specialization of 'TrgMessageField'.
+The class 'jointPackage_CPL2SPL_TrgConstant' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_CPL2SPL_TrgBooleanConstant' is a specialization of 'TrgConstant'.
+The class 'jointPackage_CPL2SPL_TrgIntegerConstant' is a specialization of 'TrgConstant'.
+The class 'jointPackage_CPL2SPL_TrgStringConstant' is a specialization of 'TrgConstant'.
+The class 'jointPackage_CPL2SPL_TrgURIConstant' is a specialization of 'TrgConstant'.
+The class 'jointPackage_CPL2SPL_TrgSequenceConstant' is a specialization of 'TrgConstant'.
+The class 'jointPackage_CPL2SPL_TrgResponseConstant' is a specialization of 'TrgConstant'.
+The class 'jointPackage_CPL2SPL_TrgResponse' is a specialization of 'TrgLocatedElement'.
+The class 'jointPackage_CPL2SPL_TrgSuccessResponse' is a specialization of 'TrgResponse'.
+The class 'jointPackage_CPL2SPL_TrgErrorResponse' is a specialization of 'TrgResponse'.
+
+Relationships between classes are modeled using associations.
+An association connects 'jointPackage_CPL2SPL_JointMM' and 'SrcReject'. From 'jointPackage_CPL2SPL_JointMM', the role 'jointPackage_CPL2SPL_JointMM' has cardinality 0..*, and from 'SrcReject', the role 'SrcReject' has cardinality 0..*.
+An association connects 'TrgServerErrorResponse' and 'jointPackage_CPL2SPL_JointMM'. From 'TrgServerErrorResponse', the role 'TrgServerErrorResponse' has cardinality 0..*, and from 'jointPackage_CPL2SPL_JointMM', the role 'jointPackage_CPL2SPL_JointMM2' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_SrcCPLModel' and 'SrcElement'. From 'jointPackage_CPL2SPL_SrcCPLModel', the role 'jointPackage_CPL2SPL_SrcCPLModel' has cardinality 0..*, and from 'SrcElement', the role 'SrcElement' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_SrcCPL' and 'SrcSubAction'. From 'jointPackage_CPL2SPL_SrcCPL', the role 'jointPackage_CPL2SPL_SrcCPL' has cardinality 0..*, and from 'SrcSubAction', the role 'SrcSubAction' has cardinality 0..*.
+An association connects 'SrcOutgoing' and 'jointPackage_CPL2SPL_SrcCPL'. From 'SrcOutgoing', the role 'SrcOutgoing' has cardinality 0..*, and from 'jointPackage_CPL2SPL_SrcCPL', the role 'jointPackage_CPL2SPL_SrcCPL6' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_SrcCPL' and 'SrcIncoming'. From 'jointPackage_CPL2SPL_SrcCPL', the role 'jointPackage_CPL2SPL_SrcCPL8' has cardinality 0..*, and from 'SrcIncoming', the role 'SrcIncoming' has cardinality 0..*.
+An association connects 'SrcSwitchedAddress' and 'jointPackage_CPL2SPL_SrcAddressSwitch'. From 'SrcSwitchedAddress', the role 'SrcSwitchedAddress' has cardinality 0..*, and from 'jointPackage_CPL2SPL_SrcAddressSwitch', the role 'jointPackage_CPL2SPL_SrcAddressSwitch' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_SrcStringSwitch' and 'SrcSwitchedString'. From 'jointPackage_CPL2SPL_SrcStringSwitch', the role 'jointPackage_CPL2SPL_SrcStringSwitch' has cardinality 0..*, and from 'SrcSwitchedString', the role 'SrcSwitchedString' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_SrcLanguageSwitch' and 'SrcSwitchedLanguage'. From 'jointPackage_CPL2SPL_SrcLanguageSwitch', the role 'jointPackage_CPL2SPL_SrcLanguageSwitch' has cardinality 0..*, and from 'SrcSwitchedLanguage', the role 'SrcSwitchedLanguage' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_SrcTimeSwitch' and 'SrcSwitchedTime'. From 'jointPackage_CPL2SPL_SrcTimeSwitch', the role 'jointPackage_CPL2SPL_SrcTimeSwitch' has cardinality 0..*, and from 'SrcSwitchedTime', the role 'SrcSwitchedTime' has cardinality 0..*.
+An association connects 'SrcSwitchedPriority' and 'jointPackage_CPL2SPL_SrcPrioritySwitch'. From 'SrcSwitchedPriority', the role 'SrcSwitchedPriority' has cardinality 0..*, and from 'jointPackage_CPL2SPL_SrcPrioritySwitch', the role 'jointPackage_CPL2SPL_SrcPrioritySwitch' has cardinality 0..*.
+An association connects 'SrcBusy' and 'jointPackage_CPL2SPL_SrcProxy'. From 'SrcBusy', the role 'SrcBusy' has cardinality 0..*, and from 'jointPackage_CPL2SPL_SrcProxy', the role 'jointPackage_CPL2SPL_SrcProxy' has cardinality 0..*.
+An association connects 'SrcNoAnswer' and 'jointPackage_CPL2SPL_SrcProxy'. From 'SrcNoAnswer', the role 'SrcNoAnswer' has cardinality 0..*, and from 'jointPackage_CPL2SPL_SrcProxy', the role 'jointPackage_CPL2SPL_SrcProxy16' has cardinality 0..*.
+An association connects 'SrcRedirection' and 'jointPackage_CPL2SPL_SrcProxy'. From 'SrcRedirection', the role 'SrcRedirection' has cardinality 0..*, and from 'jointPackage_CPL2SPL_SrcProxy', the role 'jointPackage_CPL2SPL_SrcProxy18' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_SrcProxy' and 'SrcFailure'. From 'jointPackage_CPL2SPL_SrcProxy', the role 'jointPackage_CPL2SPL_SrcProxy20' has cardinality 0..*, and from 'SrcFailure', the role 'SrcFailure' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_SrcProxy' and 'SrcDefault'. From 'jointPackage_CPL2SPL_SrcProxy', the role 'jointPackage_CPL2SPL_SrcProxy22' has cardinality 0..*, and from 'SrcDefault', the role 'SrcDefault' has cardinality 0..*.
+An association connects 'SrcNode' and 'jointPackage_CPL2SPL_SrcNodeContainer'. From 'SrcNode', the role 'SrcNode' has cardinality 0..*, and from 'jointPackage_CPL2SPL_SrcNodeContainer', the role 'jointPackage_CPL2SPL_SrcNodeContainer' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_SrcSwitch' and 'SrcNotPresent'. From 'jointPackage_CPL2SPL_SrcSwitch', the role 'jointPackage_CPL2SPL_SrcSwitch' has cardinality 0..*, and from 'SrcNotPresent', the role 'SrcNotPresent' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_SrcSwitch' and 'SrcOtherwise'. From 'jointPackage_CPL2SPL_SrcSwitch', the role 'jointPackage_CPL2SPL_SrcSwitch26' has cardinality 0..*, and from 'SrcOtherwise', the role 'SrcOtherwise' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgProgram' and 'TrgService'. From 'jointPackage_CPL2SPL_TrgProgram', the role 'jointPackage_CPL2SPL_TrgProgram' has cardinality 0..*, and from 'TrgService', the role 'TrgService' has cardinality 0..*.
+An association connects 'TrgTypeExpression' and 'jointPackage_CPL2SPL_TrgStructureProperty'. From 'TrgTypeExpression', the role 'TrgTypeExpression' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgStructureProperty', the role 'jointPackage_CPL2SPL_TrgStructureProperty' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgService' and 'TrgDeclaration'. From 'jointPackage_CPL2SPL_TrgService', the role 'jointPackage_CPL2SPL_TrgService' has cardinality 0..*, and from 'TrgDeclaration', the role 'TrgDeclaration' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgService' and 'TrgSession'. From 'jointPackage_CPL2SPL_TrgService', the role 'jointPackage_CPL2SPL_TrgService31' has cardinality 0..*, and from 'TrgSession', the role 'TrgSession' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgRegistration' and 'TrgDeclaration'. From 'jointPackage_CPL2SPL_TrgRegistration', the role 'jointPackage_CPL2SPL_TrgRegistration' has cardinality 0..*, and from 'TrgDeclaration', the role 'TrgDeclaration33' has cardinality 0..*.
+An association connects 'TrgSession' and 'jointPackage_CPL2SPL_TrgRegistration'. From 'TrgSession', the role 'TrgSession36' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgRegistration', the role 'jointPackage_CPL2SPL_TrgRegistration35' has cardinality 0..*.
+An association connects 'TrgDeclaration' and 'jointPackage_CPL2SPL_TrgDialog'. From 'TrgDeclaration', the role 'TrgDeclaration38' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgDialog', the role 'jointPackage_CPL2SPL_TrgDialog' has cardinality 0..*.
+An association connects 'TrgMethod' and 'jointPackage_CPL2SPL_TrgDialog'. From 'TrgMethod', the role 'TrgMethod' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgDialog', the role 'jointPackage_CPL2SPL_TrgDialog40' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgEvent' and 'TrgDeclaration'. From 'jointPackage_CPL2SPL_TrgEvent', the role 'jointPackage_CPL2SPL_TrgEvent' has cardinality 0..*, and from 'TrgDeclaration', the role 'TrgDeclaration42' has cardinality 0..*.
+An association connects 'TrgMethod' and 'jointPackage_CPL2SPL_TrgEvent'. From 'TrgMethod', the role 'TrgMethod45' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgEvent', the role 'jointPackage_CPL2SPL_TrgEvent44' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgMethod' and 'TrgTypeExpression'. From 'jointPackage_CPL2SPL_TrgMethod', the role 'jointPackage_CPL2SPL_TrgMethod' has cardinality 0..*, and from 'TrgTypeExpression', the role 'TrgTypeExpression47' has cardinality 0..*.
+An association connects 'TrgMethodName' and 'jointPackage_CPL2SPL_TrgMethod'. From 'TrgMethodName', the role 'TrgMethodName' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgMethod', the role 'jointPackage_CPL2SPL_TrgMethod49' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgMethod' and 'TrgArgument'. From 'jointPackage_CPL2SPL_TrgMethod', the role 'jointPackage_CPL2SPL_TrgMethod51' has cardinality 0..*, and from 'TrgArgument', the role 'TrgArgument' has cardinality 0..*.
+An association connects 'TrgStatement' and 'jointPackage_CPL2SPL_TrgMethod'. From 'TrgStatement', the role 'TrgStatement' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgMethod', the role 'jointPackage_CPL2SPL_TrgMethod53' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgMethod' and 'TrgBranch'. From 'jointPackage_CPL2SPL_TrgMethod', the role 'jointPackage_CPL2SPL_TrgMethod55' has cardinality 0..*, and from 'TrgBranch', the role 'TrgBranch' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgBranch' and 'TrgStatement'. From 'jointPackage_CPL2SPL_TrgBranch', the role 'jointPackage_CPL2SPL_TrgBranch' has cardinality 0..*, and from 'TrgStatement', the role 'TrgStatement57' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgVariableDeclaration' and 'TrgTypeExpression'. From 'jointPackage_CPL2SPL_TrgVariableDeclaration', the role 'jointPackage_CPL2SPL_TrgVariableDeclaration' has cardinality 0..*, and from 'TrgTypeExpression', the role 'TrgTypeExpression59' has cardinality 0..*.
+An association connects 'TrgExpression' and 'jointPackage_CPL2SPL_TrgVariableDeclaration'. From 'TrgExpression', the role 'TrgExpression' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgVariableDeclaration', the role 'jointPackage_CPL2SPL_TrgVariableDeclaration61' has cardinality 0..*.
+An association connects 'TrgTypeExpression' and 'jointPackage_CPL2SPL_TrgFunctionDeclaration'. From 'TrgTypeExpression', the role 'TrgTypeExpression63' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgFunctionDeclaration', the role 'jointPackage_CPL2SPL_TrgFunctionDeclaration' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgFunctionDeclaration' and 'TrgArgument'. From 'jointPackage_CPL2SPL_TrgFunctionDeclaration', the role 'jointPackage_CPL2SPL_TrgFunctionDeclaration65' has cardinality 0..*, and from 'TrgArgument', the role 'TrgArgument66' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgLocalFunctionDeclaration' and 'TrgStatement'. From 'jointPackage_CPL2SPL_TrgLocalFunctionDeclaration', the role 'jointPackage_CPL2SPL_TrgLocalFunctionDeclaration' has cardinality 0..*, and from 'TrgStatement', the role 'TrgStatement68' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgStructureDeclaration' and 'TrgArgument'. From 'jointPackage_CPL2SPL_TrgStructureDeclaration', the role 'jointPackage_CPL2SPL_TrgStructureDeclaration' has cardinality 0..*, and from 'TrgArgument', the role 'TrgArgument70' has cardinality 0..*.
+An association connects 'TrgFunctionDeclaration' and 'jointPackage_CPL2SPL_TrgFunctionCall'. From 'TrgFunctionDeclaration', the role 'TrgFunctionDeclaration' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgFunctionCall', the role 'jointPackage_CPL2SPL_TrgFunctionCall' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgFunctionCall' and 'TrgExpression'. From 'jointPackage_CPL2SPL_TrgFunctionCall', the role 'jointPackage_CPL2SPL_TrgFunctionCall73' has cardinality 0..*, and from 'TrgExpression', the role 'TrgExpression74' has cardinality 0..*.
+An association connects 'TrgStatement' and 'jointPackage_CPL2SPL_TrgCompoundStat'. From 'TrgStatement', the role 'TrgStatement76' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgCompoundStat', the role 'jointPackage_CPL2SPL_TrgCompoundStat' has cardinality 0..*.
+An association connects 'TrgPlace' and 'jointPackage_CPL2SPL_TrgSetStat'. From 'TrgPlace', the role 'TrgPlace' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgSetStat', the role 'jointPackage_CPL2SPL_TrgSetStat' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgSetStat' and 'TrgExpression'. From 'jointPackage_CPL2SPL_TrgSetStat', the role 'jointPackage_CPL2SPL_TrgSetStat79' has cardinality 0..*, and from 'TrgExpression', the role 'TrgExpression80' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgDeclarationStat' and 'TrgDeclaration'. From 'jointPackage_CPL2SPL_TrgDeclarationStat', the role 'jointPackage_CPL2SPL_TrgDeclarationStat' has cardinality 0..*, and from 'TrgDeclaration', the role 'TrgDeclaration82' has cardinality 0..*.
+An association connects 'TrgExpression' and 'jointPackage_CPL2SPL_TrgReturnStat'. From 'TrgExpression', the role 'TrgExpression84' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgReturnStat', the role 'jointPackage_CPL2SPL_TrgReturnStat' has cardinality 0..*.
+An association connects 'TrgNamedBranch' and 'jointPackage_CPL2SPL_TrgReturnStat'. From 'TrgNamedBranch', the role 'TrgNamedBranch' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgReturnStat', the role 'jointPackage_CPL2SPL_TrgReturnStat86' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgIfStat' and 'TrgExpression'. From 'jointPackage_CPL2SPL_TrgIfStat', the role 'jointPackage_CPL2SPL_TrgIfStat' has cardinality 0..*, and from 'TrgExpression', the role 'TrgExpression88' has cardinality 0..*.
+An association connects 'TrgStatement' and 'jointPackage_CPL2SPL_TrgIfStat'. From 'TrgStatement', the role 'TrgStatement91' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgIfStat', the role 'jointPackage_CPL2SPL_TrgIfStat90' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgIfStat' and 'TrgStatement'. From 'jointPackage_CPL2SPL_TrgIfStat', the role 'jointPackage_CPL2SPL_TrgIfStat93' has cardinality 0..*, and from 'TrgStatement', the role 'TrgStatement94' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgWhenStat' and 'TrgVariable'. From 'jointPackage_CPL2SPL_TrgWhenStat', the role 'jointPackage_CPL2SPL_TrgWhenStat' has cardinality 0..*, and from 'TrgVariable', the role 'TrgVariable' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgWhenStat' and 'TrgWhenHeader'. From 'jointPackage_CPL2SPL_TrgWhenStat', the role 'jointPackage_CPL2SPL_TrgWhenStat97' has cardinality 0..*, and from 'TrgWhenHeader', the role 'TrgWhenHeader' has cardinality 0..*.
+An association connects 'TrgStatement' and 'jointPackage_CPL2SPL_TrgWhenStat'. From 'TrgStatement', the role 'TrgStatement100' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgWhenStat', the role 'jointPackage_CPL2SPL_TrgWhenStat99' has cardinality 0..*.
+An association connects 'TrgStatement' and 'jointPackage_CPL2SPL_TrgWhenStat'. From 'TrgStatement', the role 'TrgStatement103' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgWhenStat', the role 'jointPackage_CPL2SPL_TrgWhenStat102' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgForeachStat' and 'TrgExpression'. From 'jointPackage_CPL2SPL_TrgForeachStat', the role 'jointPackage_CPL2SPL_TrgForeachStat' has cardinality 0..*, and from 'TrgExpression', the role 'TrgExpression105' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgForeachStat' and 'TrgStatement'. From 'jointPackage_CPL2SPL_TrgForeachStat', the role 'jointPackage_CPL2SPL_TrgForeachStat107' has cardinality 0..*, and from 'TrgStatement', the role 'TrgStatement108' has cardinality 0..*.
+An association connects 'TrgExpression' and 'jointPackage_CPL2SPL_TrgSelectStat'. From 'TrgExpression', the role 'TrgExpression110' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgSelectStat', the role 'jointPackage_CPL2SPL_TrgSelectStat' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgSelectStat' and 'TrgSelectCase'. From 'jointPackage_CPL2SPL_TrgSelectStat', the role 'jointPackage_CPL2SPL_TrgSelectStat112' has cardinality 0..*, and from 'TrgSelectCase', the role 'TrgSelectCase' has cardinality 0..*.
+An association connects 'TrgSelectDefault' and 'jointPackage_CPL2SPL_TrgSelectStat'. From 'TrgSelectDefault', the role 'TrgSelectDefault' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgSelectStat', the role 'jointPackage_CPL2SPL_TrgSelectStat114' has cardinality 0..*.
+An association connects 'TrgFunctionCall' and 'jointPackage_CPL2SPL_TrgFunctionCallStat'. From 'TrgFunctionCall', the role 'TrgFunctionCall' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgFunctionCallStat', the role 'jointPackage_CPL2SPL_TrgFunctionCallStat' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgPushStat' and 'TrgPlace'. From 'jointPackage_CPL2SPL_TrgPushStat', the role 'jointPackage_CPL2SPL_TrgPushStat' has cardinality 0..*, and from 'TrgPlace', the role 'TrgPlace117' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgPushStat' and 'TrgExpression'. From 'jointPackage_CPL2SPL_TrgPushStat', the role 'jointPackage_CPL2SPL_TrgPushStat119' has cardinality 0..*, and from 'TrgExpression', the role 'TrgExpression120' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgWhenHeader' and 'TrgConstant'. From 'jointPackage_CPL2SPL_TrgWhenHeader', the role 'jointPackage_CPL2SPL_TrgWhenHeader' has cardinality 0..*, and from 'TrgConstant', the role 'TrgConstant' has cardinality 0..*.
+An association connects 'TrgStatement' and 'jointPackage_CPL2SPL_TrgSelectMember'. From 'TrgStatement', the role 'TrgStatement123' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgSelectMember', the role 'jointPackage_CPL2SPL_TrgSelectMember' has cardinality 0..*.
+An association connects 'TrgConstant' and 'jointPackage_CPL2SPL_TrgSelectCase'. From 'TrgConstant', the role 'TrgConstant125' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgSelectCase', the role 'jointPackage_CPL2SPL_TrgSelectCase' has cardinality 0..*.
+An association connects 'TrgConstant' and 'jointPackage_CPL2SPL_TrgConstantExp'. From 'TrgConstant', the role 'TrgConstant127' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgConstantExp', the role 'jointPackage_CPL2SPL_TrgConstantExp' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgOperatorExp' and 'TrgExpression'. From 'jointPackage_CPL2SPL_TrgOperatorExp', the role 'jointPackage_CPL2SPL_TrgOperatorExp' has cardinality 0..*, and from 'TrgExpression', the role 'TrgExpression129' has cardinality 0..*.
+An association connects 'TrgExpression' and 'jointPackage_CPL2SPL_TrgOperatorExp'. From 'TrgExpression', the role 'TrgExpression132' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgOperatorExp', the role 'jointPackage_CPL2SPL_TrgOperatorExp131' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgForwardExp' and 'TrgExpression'. From 'jointPackage_CPL2SPL_TrgForwardExp', the role 'jointPackage_CPL2SPL_TrgForwardExp' has cardinality 0..*, and from 'TrgExpression', the role 'TrgExpression134' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgWithExp' and 'TrgExpression'. From 'jointPackage_CPL2SPL_TrgWithExp', the role 'jointPackage_CPL2SPL_TrgWithExp' has cardinality 0..*, and from 'TrgExpression', the role 'TrgExpression136' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgWithExp' and 'TrgMessageField'. From 'jointPackage_CPL2SPL_TrgWithExp', the role 'jointPackage_CPL2SPL_TrgWithExp138' has cardinality 0..*, and from 'TrgMessageField', the role 'TrgMessageField' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgBlockExp' and 'TrgExpression'. From 'jointPackage_CPL2SPL_TrgBlockExp', the role 'jointPackage_CPL2SPL_TrgBlockExp' has cardinality 0..*, and from 'TrgExpression', the role 'TrgExpression140' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgPopExp' and 'TrgPlace'. From 'jointPackage_CPL2SPL_TrgPopExp', the role 'jointPackage_CPL2SPL_TrgPopExp' has cardinality 0..*, and from 'TrgPlace', the role 'TrgPlace142' has cardinality 0..*.
+An association connects 'TrgFunctionCall' and 'jointPackage_CPL2SPL_TrgFunctionCallExp'. From 'TrgFunctionCall', the role 'TrgFunctionCall144' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgFunctionCallExp', the role 'jointPackage_CPL2SPL_TrgFunctionCallExp' has cardinality 0..*.
+An association connects 'TrgVariablePlace' and 'jointPackage_CPL2SPL_TrgPropertyCallPlace'. From 'TrgVariablePlace', the role 'TrgVariablePlace' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgPropertyCallPlace', the role 'jointPackage_CPL2SPL_TrgPropertyCallPlace' has cardinality 0..*.
+An association connects 'jointPackage_CPL2SPL_TrgVariable' and 'TrgDeclaration'. From 'jointPackage_CPL2SPL_TrgVariable', the role 'jointPackage_CPL2SPL_TrgVariable' has cardinality 0..*, and from 'TrgDeclaration', the role 'TrgDeclaration147' has cardinality 0..*.
+An association connects 'TrgExpression' and 'jointPackage_CPL2SPL_TrgMessageField'. From 'TrgExpression', the role 'TrgExpression149' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgMessageField', the role 'jointPackage_CPL2SPL_TrgMessageField' has cardinality 0..*.
+An association connects 'TrgConstant' and 'jointPackage_CPL2SPL_TrgSequenceConstant'. From 'TrgConstant', the role 'TrgConstant151' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgSequenceConstant', the role 'jointPackage_CPL2SPL_TrgSequenceConstant' has cardinality 0..*.
+An association connects 'TrgResponse' and 'jointPackage_CPL2SPL_TrgResponseConstant'. From 'TrgResponse', the role 'TrgResponse' has cardinality 0..*, and from 'jointPackage_CPL2SPL_TrgResponseConstant', the role 'jointPackage_CPL2SPL_TrgResponseConstant' has cardinality 0..*.

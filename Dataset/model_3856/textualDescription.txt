@@ -1,0 +1,572 @@
+The domain model 'sql' describes the core structural elements and their relationships within the system.
+
+The model defines 148 main class(es).
+
+'sql_sqlDataTypes_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_having_HavingExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_term_BooleanTermFalse' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_column_ColumnOperationCount' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_condition_ConditionOperationGreater' represents an important domain concept.
+It does not declare any attributes.
+
+'value_ValueOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_orderBy_OrderByParameterDesc' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_expression_ExpressionOperationNot' represents an important domain concept.
+It does not declare any attributes.
+
+'column_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_sqlDataTypes_Date' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_set_SetOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_condition_ConditionOperationLessEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_condition_InCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_set_SetOperationIntersect' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_sqlDataTypes_Float' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_column_ColumnOperationSum' represents an important domain concept.
+It does not declare any attributes.
+
+'from_TableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_set_SetOperationMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_set_SetOperationExcept' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_column_Column' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'from_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_term_SimpleTermFloat' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_term_CountStarTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_orderBy_OrderByExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'parameter_SelectParameterDistinct' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_column_ColumnOperationSome' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_condition_SimpleCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'orderBy_OrderByParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_orderBy_OrderByParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'value_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_from_JoinOperationLeft' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_set_SetExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_condition_OperationCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_value_ValueFrontOperationPlus' represents an important domain concept.
+It does not declare any attributes.
+
+'ColumnOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'OrderByParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'term_Term' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_expression_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'set_SetExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_term_StarTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'Date' represents an important domain concept.
+It does not declare any attributes.
+
+'column_SingleColumnExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_condition_ConditionOperationLesser' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_term_NullTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_value_ValueFrontOperationMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_term_SimpleTerm' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'sql_term_ColumnTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_where_WhereExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_expression_ExpressionOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_value_ConditionValue' represents an important domain concept.
+It does not declare any attributes.
+
+'condition_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_sqlDataTypes_Double' represents an important domain concept.
+It does not declare any attributes.
+
+'column_ColumnOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'SelectParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'JoinOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_value_ValueOperationParallel' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_condition_ExistsCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueFrontOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_column_ColumnOperationMin' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_condition_ConditionOperationGreatEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'value_ValueFrontOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_limit_LimitExpression' represents an important domain concept.
+It has the following attributes: 'limit', which is of type str; 'offset', which is of type str.
+
+'Term' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_parameter_SelectParameterAll' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_expression_ExpressionOperationOr' represents an important domain concept.
+It does not declare any attributes.
+
+'parameter_SelectParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_value_ValueOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_orderBy_OrderByAliasExpression' represents an important domain concept.
+It has one attribute: 'alias', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_column_ColumnExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_orderBy_OrderByColumnExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'OrderByExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_ExpressionOperationNot' represents an important domain concept.
+It does not declare any attributes.
+
+'from_FromExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'having_HavingExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_sqlDataTypes_TimeStamp' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_sqlDataTypes_Integer' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_expression_AndOrExpressionOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'SelectExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_parameter_SelectParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'limit_LimitExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_column_SingleColumnExpression' represents an important domain concept.
+It has one attribute: 'alias', which is of type str.
+
+'sql_term_Term' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_condition_LikeCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_condition_ConditionOperationEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_column_ColumnOperationAvg' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_from_FromExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'from_JoinTableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_parameter_SelectParameterDistinct' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_value_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_from_JoinOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_condition_IsNullCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_column_ColumnOperationEvery' represents an important domain concept.
+It does not declare any attributes.
+
+'set_SetOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'orderBy_OrderByExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_value_SimpleValue' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_expression_SimpleExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_sqlDataTypes_Boolean' represents an important domain concept.
+It does not declare any attributes.
+
+'SetOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_from_TableExpression' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'sql_term_BooleanTermTrue' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_from_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sql_sqlDataTypes_String' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_term_SimpleTermInteger' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_from_JoinOperationInner' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_orderBy_OrderBySelectExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_column_ColumnOperationMax' represents an important domain concept.
+It does not declare any attributes.
+
+'column_ColumnExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'from_TableListExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_select_SelectExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_condition_ConditionOperationUnEqual2' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_condition_ConditionOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_value_ValueFrontOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_condition_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'condition_ConditionOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_orderBy_OrderByParameterAsc' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_set_SetOperationUnion' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_value_FunctionValue' represents an important domain concept.
+It has one attribute: 'functionName', which is of type str.
+
+'sql_value_ValueOperationMultiply' represents an important domain concept.
+It does not declare any attributes.
+
+'where_WhereExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_value_ValueOperationDivide' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_term_BooleanTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_from_TableListExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_condition_BetweenCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'AndOrExpressionOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_from_JoinOperationOuter' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_condition_ConditionOperationUnEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_expression_ExpressionOperationAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_term_SimpleTermString' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_sqlDataTypes_Real' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_term_SimpleTermChar' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_AndOrExpressionOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_column_ColumnOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_from_JoinTableExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'from_JoinOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_groupBy_GroupByExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'groupBy_GroupByExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'sql_from_JoinOperationRight' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'sql_sqlDataTypes_String' is a specialization of 'DataType'.
+The class 'sql_sqlDataTypes_Boolean' is a specialization of 'DataType'.
+The class 'sql_sqlDataTypes_Real' is a specialization of 'DataType'.
+The class 'sql_sqlDataTypes_Date' is a specialization of 'DataType'.
+The class 'sql_sqlDataTypes_TimeStamp' is a specialization of 'Date'.
+The class 'sql_sqlDataTypes_Integer' is a specialization of 'DataType'.
+The class 'sql_sqlDataTypes_Float' is a specialization of 'DataType'.
+The class 'sql_sqlDataTypes_Double' is a specialization of 'DataType'.
+The class 'sql_parameter_SelectParameterAll' is a specialization of 'SelectParameter'.
+The class 'sql_parameter_SelectParameterDistinct' is a specialization of 'SelectParameter'.
+The class 'sql_column_ColumnOperationCount' is a specialization of 'ColumnOperation'.
+The class 'sql_column_ColumnOperationMin' is a specialization of 'ColumnOperation'.
+The class 'sql_column_ColumnOperationMax' is a specialization of 'ColumnOperation'.
+The class 'sql_column_ColumnOperationSum' is a specialization of 'ColumnOperation'.
+The class 'sql_column_ColumnOperationAvg' is a specialization of 'ColumnOperation'.
+The class 'sql_column_ColumnOperationEvery' is a specialization of 'ColumnOperation'.
+The class 'sql_column_ColumnOperationSome' is a specialization of 'ColumnOperation'.
+The class 'sql_from_JoinOperationInner' is a specialization of 'JoinOperation'.
+The class 'sql_from_JoinOperationLeft' is a specialization of 'JoinOperation'.
+The class 'sql_from_JoinOperationRight' is a specialization of 'JoinOperation'.
+The class 'sql_from_JoinOperationOuter' is a specialization of 'JoinOperation'.
+The class 'sql_orderBy_OrderByColumnExpression' is a specialization of 'OrderByExpression'.
+The class 'sql_orderBy_OrderByAliasExpression' is a specialization of 'OrderByExpression'.
+The class 'sql_orderBy_OrderBySelectExpression' is a specialization of 'OrderByExpression'.
+The class 'sql_orderBy_OrderByParameterAsc' is a specialization of 'OrderByParameter'.
+The class 'sql_orderBy_OrderByParameterDesc' is a specialization of 'OrderByParameter'.
+The class 'sql_set_SetOperationUnion' is a specialization of 'SetOperation'.
+The class 'sql_set_SetOperationMinus' is a specialization of 'SetOperation'.
+The class 'sql_set_SetOperationExcept' is a specialization of 'SetOperation'.
+The class 'sql_set_SetOperationIntersect' is a specialization of 'SetOperation'.
+The class 'sql_expression_SimpleExpression' is a specialization of 'Expression'.
+The class 'sql_expression_AndOrExpressionOperation' is a specialization of 'ExpressionOperation'.
+The class 'sql_expression_ExpressionOperationNot' is a specialization of 'ExpressionOperation'.
+The class 'sql_expression_ExpressionOperationAnd' is a specialization of 'AndOrExpressionOperation'.
+The class 'sql_expression_ExpressionOperationOr' is a specialization of 'AndOrExpressionOperation'.
+The class 'sql_condition_SimpleCondition' is a specialization of 'Condition'.
+The class 'sql_condition_OperationCondition' is a specialization of 'SimpleCondition'.
+The class 'sql_condition_IsNullCondition' is a specialization of 'SimpleCondition'.
+The class 'sql_condition_ExistsCondition' is a specialization of 'SimpleCondition'.
+The class 'sql_condition_BetweenCondition' is a specialization of 'SimpleCondition'.
+The class 'sql_condition_InCondition' is a specialization of 'SimpleCondition'.
+The class 'sql_condition_LikeCondition' is a specialization of 'SimpleCondition'.
+The class 'sql_condition_ConditionOperationEqual' is a specialization of 'ConditionOperation'.
+The class 'sql_condition_ConditionOperationLesser' is a specialization of 'ConditionOperation'.
+The class 'sql_condition_ConditionOperationLessEqual' is a specialization of 'ConditionOperation'.
+The class 'sql_condition_ConditionOperationGreater' is a specialization of 'ConditionOperation'.
+The class 'sql_condition_ConditionOperationGreatEqual' is a specialization of 'ConditionOperation'.
+The class 'sql_condition_ConditionOperationUnEqual' is a specialization of 'ConditionOperation'.
+The class 'sql_condition_ConditionOperationUnEqual2' is a specialization of 'ConditionOperation'.
+The class 'sql_value_ValueFrontOperation' is a specialization of 'ValueOperation'.
+The class 'sql_value_ValueFrontOperationPlus' is a specialization of 'ValueFrontOperation'.
+The class 'sql_value_ValueFrontOperationMinus' is a specialization of 'ValueFrontOperation'.
+The class 'sql_value_ValueOperationMultiply' is a specialization of 'ValueOperation'.
+The class 'sql_value_ValueOperationDivide' is a specialization of 'ValueOperation'.
+The class 'sql_value_ValueOperationParallel' is a specialization of 'ValueOperation'.
+The class 'sql_value_SimpleValue' is a specialization of 'Value'.
+The class 'sql_value_ConditionValue' is a specialization of 'Value'.
+The class 'sql_value_FunctionValue' is a specialization of 'Value'.
+The class 'sql_term_BooleanTerm' is a specialization of 'Term'.
+The class 'sql_term_BooleanTermTrue' is a specialization of 'BooleanTerm'.
+The class 'sql_term_BooleanTermFalse' is a specialization of 'BooleanTerm'.
+The class 'sql_term_NullTerm' is a specialization of 'Term'.
+The class 'sql_term_ColumnTerm' is a specialization of 'Term'.
+The class 'sql_term_SimpleTerm' is a specialization of 'Term'.
+The class 'sql_term_SimpleTermString' is a specialization of 'SimpleTerm'.
+The class 'sql_term_SimpleTermFloat' is a specialization of 'SimpleTerm'.
+The class 'sql_term_SimpleTermInteger' is a specialization of 'SimpleTerm'.
+The class 'sql_term_SimpleTermChar' is a specialization of 'SimpleTerm'.
+The class 'sql_term_CountStarTerm' is a specialization of 'Term'.
+The class 'sql_term_StarTerm' is a specialization of 'Term'.
+
+Relationships between classes are modeled using associations.
+An association connects 'parameter_SelectParameter' and 'sql_select_SelectExpression'. From 'parameter_SelectParameter', the role 'parameter_SelectParameter' has cardinality 0..*, and from 'sql_select_SelectExpression', the role 'sql_select_SelectExpression' has cardinality 0..*.
+An association connects 'sql_select_SelectExpression' and 'column_ColumnExpression'. From 'sql_select_SelectExpression', the role 'sql_select_SelectExpression2' has cardinality 0..*, and from 'column_ColumnExpression', the role 'column_ColumnExpression' has cardinality 0..*.
+An association connects 'sql_select_SelectExpression' and 'from_FromExpression'. From 'sql_select_SelectExpression', the role 'sql_select_SelectExpression4' has cardinality 0..*, and from 'from_FromExpression', the role 'from_FromExpression' has cardinality 0..*.
+An association connects 'where_WhereExpression' and 'sql_select_SelectExpression'. From 'where_WhereExpression', the role 'where_WhereExpression' has cardinality 0..*, and from 'sql_select_SelectExpression', the role 'sql_select_SelectExpression6' has cardinality 0..*.
+An association connects 'sql_select_SelectExpression' and 'groupBy_GroupByExpression'. From 'sql_select_SelectExpression', the role 'sql_select_SelectExpression8' has cardinality 0..*, and from 'groupBy_GroupByExpression', the role 'groupBy_GroupByExpression' has cardinality 0..*.
+An association connects 'having_HavingExpression' and 'sql_select_SelectExpression'. From 'having_HavingExpression', the role 'having_HavingExpression' has cardinality 0..*, and from 'sql_select_SelectExpression', the role 'sql_select_SelectExpression10' has cardinality 0..*.
+An association connects 'set_SetExpression' and 'sql_select_SelectExpression'. From 'set_SetExpression', the role 'set_SetExpression' has cardinality 0..*, and from 'sql_select_SelectExpression', the role 'sql_select_SelectExpression12' has cardinality 0..*.
+An association connects 'orderBy_OrderByExpression' and 'sql_select_SelectExpression'. From 'orderBy_OrderByExpression', the role 'orderBy_OrderByExpression' has cardinality 0..*, and from 'sql_select_SelectExpression', the role 'sql_select_SelectExpression14' has cardinality 0..*.
+An association connects 'sql_select_SelectExpression' and 'limit_LimitExpression'. From 'sql_select_SelectExpression', the role 'sql_select_SelectExpression16' has cardinality 0..*, and from 'limit_LimitExpression', the role 'limit_LimitExpression' has cardinality 0..*.
+An association connects 'column_SingleColumnExpression' and 'sql_column_ColumnExpression'. From 'column_SingleColumnExpression', the role 'column_SingleColumnExpression' has cardinality 0..*, and from 'sql_column_ColumnExpression', the role 'sql_column_ColumnExpression' has cardinality 0..*.
+An association connects 'sql_column_SingleColumnExpression' and 'expression_Expression'. From 'sql_column_SingleColumnExpression', the role 'sql_column_SingleColumnExpression' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression' has cardinality 0..*.
+An association connects 'column_ColumnOperation' and 'sql_column_SingleColumnExpression'. From 'column_ColumnOperation', the role 'column_ColumnOperation' has cardinality 0..*, and from 'sql_column_SingleColumnExpression', the role 'sql_column_SingleColumnExpression20' has cardinality 0..*.
+An association connects 'sql_column_SingleColumnExpression' and 'parameter_SelectParameter'. From 'sql_column_SingleColumnExpression', the role 'sql_column_SingleColumnExpression22' has cardinality 0..*, and from 'parameter_SelectParameter', the role 'parameter_SelectParameter23' has cardinality 0..*.
+An association connects 'from_TableListExpression' and 'sql_from_FromExpression'. From 'from_TableListExpression', the role 'from_TableListExpression' has cardinality 0..*, and from 'sql_from_FromExpression', the role 'sql_from_FromExpression' has cardinality 0..*.
+An association connects 'sql_from_TableExpression' and 'SelectExpression'. From 'sql_from_TableExpression', the role 'sql_from_TableExpression' has cardinality 0..*, and from 'SelectExpression', the role 'SelectExpression' has cardinality 0..*.
+An association connects 'from_Table' and 'sql_from_TableExpression'. From 'from_Table', the role 'from_Table' has cardinality 0..*, and from 'sql_from_TableExpression', the role 'sql_from_TableExpression27' has cardinality 0..*.
+An association connects 'from_TableExpression' and 'sql_from_TableListExpression'. From 'from_TableExpression', the role 'from_TableExpression' has cardinality 0..*, and from 'sql_from_TableListExpression', the role 'sql_from_TableListExpression' has cardinality 0..*.
+An association connects 'sql_from_TableListExpression' and 'from_JoinTableExpression'. From 'sql_from_TableListExpression', the role 'sql_from_TableListExpression30' has cardinality 0..*, and from 'from_JoinTableExpression', the role 'from_JoinTableExpression' has cardinality 0..*.
+An association connects 'from_JoinOperation' and 'sql_from_JoinTableExpression'. From 'from_JoinOperation', the role 'from_JoinOperation' has cardinality 0..*, and from 'sql_from_JoinTableExpression', the role 'sql_from_JoinTableExpression' has cardinality 0..*.
+An association connects 'from_TableExpression' and 'sql_from_JoinTableExpression'. From 'from_TableExpression', the role 'from_TableExpression34' has cardinality 0..*, and from 'sql_from_JoinTableExpression', the role 'sql_from_JoinTableExpression33' has cardinality 0..*.
+An association connects 'expression_Expression' and 'sql_from_JoinTableExpression'. From 'expression_Expression', the role 'expression_Expression37' has cardinality 0..*, and from 'sql_from_JoinTableExpression', the role 'sql_from_JoinTableExpression36' has cardinality 0..*.
+An association connects 'sql_where_WhereExpression' and 'expression_Expression'. From 'sql_where_WhereExpression', the role 'sql_where_WhereExpression' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression39' has cardinality 0..*.
+An association connects 'sql_orderBy_OrderByExpression' and 'orderBy_OrderByParameter'. From 'sql_orderBy_OrderByExpression', the role 'sql_orderBy_OrderByExpression' has cardinality 0..*, and from 'orderBy_OrderByParameter', the role 'orderBy_OrderByParameter' has cardinality 0..*.
+An association connects 'column_Column' and 'sql_orderBy_OrderByColumnExpression'. From 'column_Column', the role 'column_Column' has cardinality 0..*, and from 'sql_orderBy_OrderByColumnExpression', the role 'sql_orderBy_OrderByColumnExpression' has cardinality 0..*.
+An association connects 'SelectExpression' and 'sql_orderBy_OrderBySelectExpression'. From 'SelectExpression', the role 'SelectExpression43' has cardinality 0..*, and from 'sql_orderBy_OrderBySelectExpression', the role 'sql_orderBy_OrderBySelectExpression' has cardinality 0..*.
+An association connects 'sql_groupBy_GroupByExpression' and 'expression_Expression'. From 'sql_groupBy_GroupByExpression', the role 'sql_groupBy_GroupByExpression' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression45' has cardinality 0..*.
+An association connects 'expression_Expression' and 'sql_having_HavingExpression'. From 'expression_Expression', the role 'expression_Expression47' has cardinality 0..*, and from 'sql_having_HavingExpression', the role 'sql_having_HavingExpression' has cardinality 0..*.
+An association connects 'SelectExpression' and 'sql_set_SetExpression'. From 'SelectExpression', the role 'SelectExpression49' has cardinality 0..*, and from 'sql_set_SetExpression', the role 'sql_set_SetExpression' has cardinality 0..*.
+An association connects 'set_SetOperation' and 'sql_set_SetExpression'. From 'set_SetOperation', the role 'set_SetOperation' has cardinality 0..*, and from 'sql_set_SetExpression', the role 'sql_set_SetExpression51' has cardinality 0..*.
+An association connects 'sql_set_SetOperationUnion' and 'parameter_SelectParameter'. From 'sql_set_SetOperationUnion', the role 'sql_set_SetOperationUnion' has cardinality 0..*, and from 'parameter_SelectParameter', the role 'parameter_SelectParameter53' has cardinality 0..*.
+An association connects 'parameter_SelectParameterDistinct' and 'sql_set_SetOperationMinus'. From 'parameter_SelectParameterDistinct', the role 'parameter_SelectParameterDistinct' has cardinality 0..*, and from 'sql_set_SetOperationMinus', the role 'sql_set_SetOperationMinus' has cardinality 0..*.
+An association connects 'parameter_SelectParameterDistinct' and 'sql_set_SetOperationExcept'. From 'parameter_SelectParameterDistinct', the role 'parameter_SelectParameterDistinct56' has cardinality 0..*, and from 'sql_set_SetOperationExcept', the role 'sql_set_SetOperationExcept' has cardinality 0..*.
+An association connects 'parameter_SelectParameterDistinct' and 'sql_set_SetOperationIntersect'. From 'parameter_SelectParameterDistinct', the role 'parameter_SelectParameterDistinct58' has cardinality 0..*, and from 'sql_set_SetOperationIntersect', the role 'sql_set_SetOperationIntersect' has cardinality 0..*.
+An association connects 'sql_expression_SimpleExpression' and 'expression_AndOrExpressionOperation'. From 'sql_expression_SimpleExpression', the role 'sql_expression_SimpleExpression' has cardinality 0..*, and from 'expression_AndOrExpressionOperation', the role 'expression_AndOrExpressionOperation' has cardinality 0..*.
+An association connects 'condition_Condition' and 'sql_expression_SimpleExpression'. From 'condition_Condition', the role 'condition_Condition' has cardinality 0..*, and from 'sql_expression_SimpleExpression', the role 'sql_expression_SimpleExpression61' has cardinality 0..*.
+An association connects 'sql_expression_SimpleExpression' and 'expression_ExpressionOperationNot'. From 'sql_expression_SimpleExpression', the role 'sql_expression_SimpleExpression63' has cardinality 0..*, and from 'expression_ExpressionOperationNot', the role 'expression_ExpressionOperationNot' has cardinality 0..*.
+An association connects 'value_Value' and 'sql_condition_SimpleCondition'. From 'value_Value', the role 'value_Value' has cardinality 0..*, and from 'sql_condition_SimpleCondition', the role 'sql_condition_SimpleCondition' has cardinality 0..*.
+An association connects 'sql_condition_OperationCondition' and 'condition_ConditionOperation'. From 'sql_condition_OperationCondition', the role 'sql_condition_OperationCondition' has cardinality 0..*, and from 'condition_ConditionOperation', the role 'condition_ConditionOperation' has cardinality 0..*.
+An association connects 'expression_ExpressionOperationNot' and 'sql_condition_IsNullCondition'. From 'expression_ExpressionOperationNot', the role 'expression_ExpressionOperationNot67' has cardinality 0..*, and from 'sql_condition_IsNullCondition', the role 'sql_condition_IsNullCondition' has cardinality 0..*.
+An association connects 'sql_condition_ExistsCondition' and 'SelectExpression'. From 'sql_condition_ExistsCondition', the role 'sql_condition_ExistsCondition' has cardinality 0..*, and from 'SelectExpression', the role 'SelectExpression69' has cardinality 0..*.
+An association connects 'SelectExpression' and 'sql_condition_InCondition'. From 'SelectExpression', the role 'SelectExpression71' has cardinality 0..*, and from 'sql_condition_InCondition', the role 'sql_condition_InCondition' has cardinality 0..*.
+An association connects 'expression_ExpressionOperationNot' and 'sql_condition_InCondition'. From 'expression_ExpressionOperationNot', the role 'expression_ExpressionOperationNot74' has cardinality 0..*, and from 'sql_condition_InCondition', the role 'sql_condition_InCondition73' has cardinality 0..*.
+An association connects 'expression_ExpressionOperationNot' and 'sql_condition_LikeCondition'. From 'expression_ExpressionOperationNot', the role 'expression_ExpressionOperationNot76' has cardinality 0..*, and from 'sql_condition_LikeCondition', the role 'sql_condition_LikeCondition' has cardinality 0..*.
+An association connects 'sql_value_SimpleValue' and 'term_Term'. From 'sql_value_SimpleValue', the role 'sql_value_SimpleValue' has cardinality 0..*, and from 'term_Term', the role 'term_Term' has cardinality 0..*.
+An association connects 'value_ValueOperation' and 'sql_value_SimpleValue'. From 'value_ValueOperation', the role 'value_ValueOperation' has cardinality 0..*, and from 'sql_value_SimpleValue', the role 'sql_value_SimpleValue79' has cardinality 0..*.
+An association connects 'sql_value_SimpleValue' and 'value_ValueFrontOperation'. From 'sql_value_SimpleValue', the role 'sql_value_SimpleValue81' has cardinality 0..*, and from 'value_ValueFrontOperation', the role 'value_ValueFrontOperation' has cardinality 0..*.
+An association connects 'condition_Condition' and 'sql_value_ConditionValue'. From 'condition_Condition', the role 'condition_Condition83' has cardinality 0..*, and from 'sql_value_ConditionValue', the role 'sql_value_ConditionValue' has cardinality 0..*.
+An association connects 'value_Value' and 'sql_value_FunctionValue'. From 'value_Value', the role 'value_Value85' has cardinality 0..*, and from 'sql_value_FunctionValue', the role 'sql_value_FunctionValue' has cardinality 0..*.
+An association connects 'from_Table' and 'sql_term_ColumnTerm'. From 'from_Table', the role 'from_Table87' has cardinality 0..*, and from 'sql_term_ColumnTerm', the role 'sql_term_ColumnTerm' has cardinality 0..*.
+An association connects 'column_Column' and 'sql_term_ColumnTerm'. From 'column_Column', the role 'column_Column90' has cardinality 0..*, and from 'sql_term_ColumnTerm', the role 'sql_term_ColumnTerm89' has cardinality 0..*.
+An association connects 'sql_term_ColumnTerm' and 'column_Column'. From 'sql_term_ColumnTerm', the role 'sql_term_ColumnTerm92' has cardinality 0..*, and from 'column_Column', the role 'column_Column93' has cardinality 0..*.

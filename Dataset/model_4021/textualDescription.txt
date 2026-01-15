@@ -1,0 +1,58 @@
+The domain model 'classmm' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'NamedElt' represents an important domain concept.
+It does not declare any attributes.
+
+'classmm_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'classmm_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'classmm_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'classmm_Class' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'isAbstract', which is of type bool.
+
+'classmm_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'classmm_NamedElt' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'classmm_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'classmm_Attribute' represents an important domain concept.
+It has the following attributes: 'multivalued', which is of type bool; 'visibility', which is of type str.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Visibility' defines the following possible values: 'public', 'private', 'package', 'protected'.
+
+The model also captures inheritance relationships between classes.
+The class 'classmm_Classifier' is a specialization of 'NamedElt'.
+The class 'classmm_DataType' is a specialization of 'Classifier'.
+The class 'classmm_Class' is a specialization of 'Classifier'.
+The class 'classmm_Attribute' is a specialization of 'NamedElt'.
+The class 'classmm_Package' is a specialization of 'NamedElt'.
+The class 'classmm_Method' is a specialization of 'NamedElt'.
+The class 'classmm_Parameter' is a specialization of 'NamedElt'.
+
+Relationships between classes are modeled using associations.
+An association connects 'classmm_Attribute' and 'classmm_Class'. From 'classmm_Attribute', the role 'Attribute' has cardinality 0..*, and from 'classmm_Class', the role 'owner' has cardinality 0..*.
+An association connects 'classmm_Class' and 'classmm_Class'. From 'classmm_Class', the role 'classmm_Class1' has cardinality 0..*, and from 'classmm_Class', the role 'classmm_Class' has cardinality 0..*.
+An association connects 'classmm_Package' and 'classmm_Class'. From 'classmm_Package', the role 'Package' has cardinality 0..*, and from 'classmm_Class', the role 'classes' has cardinality 0..*.
+An association connects 'classmm_Class' and 'classmm_Method'. From 'classmm_Class', the role 'owner5' has cardinality 0..*, and from 'classmm_Method', the role 'Method' has cardinality 0..*.
+An association connects 'classmm_Attribute' and 'classmm_Classifier'. From 'classmm_Attribute', the role 'classmm_Attribute' has cardinality 0..*, and from 'classmm_Classifier', the role 'classmm_Classifier' has cardinality 0..*.
+An association connects 'classmm_Attribute' and 'classmm_Class'. From 'classmm_Attribute', the role 'att' has cardinality 0..*, and from 'classmm_Class', the role 'Class' has cardinality 0..*.
+An association connects 'classmm_Package' and 'classmm_Class'. From 'classmm_Package', the role 'package' has cardinality 0..*, and from 'classmm_Class', the role 'Class9' has cardinality 0..*.
+An association connects 'classmm_Class' and 'classmm_Method'. From 'classmm_Class', the role 'Class11' has cardinality 0..*, and from 'classmm_Method', the role 'methods' has cardinality 0..*.
+An association connects 'classmm_Parameter' and 'classmm_Method'. From 'classmm_Parameter', the role 'Parameter' has cardinality 0..*, and from 'classmm_Method', the role 'owner13' has cardinality 0..*.
+An association connects 'classmm_Classifier' and 'classmm_Parameter'. From 'classmm_Classifier', the role 'classmm_Classifier15' has cardinality 0..*, and from 'classmm_Parameter', the role 'classmm_Parameter' has cardinality 0..*.
+An association connects 'classmm_Method' and 'classmm_Parameter'. From 'classmm_Method', the role 'Method17' has cardinality 0..*, and from 'classmm_Parameter', the role 'params' has cardinality 0..*.

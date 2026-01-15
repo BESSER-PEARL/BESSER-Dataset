@@ -1,0 +1,36 @@
+The domain model 'test' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'test_TestElement' represents an important domain concept.
+It does not declare any attributes.
+
+'test_NamedElement' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'test_TestPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'test_TestElementWrapper' represents an important domain concept.
+It does not declare any attributes.
+
+'test_Root' represents an important domain concept.
+It has one attribute: 'ttt', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'test_TestClassDelegate' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'test_TestElement' is a specialization of 'NamedElement'.
+The class 'test_TestPolicy' is a specialization of 'NamedElement'.
+The class 'test_TestElementWrapper' is a specialization of 'NamedElement'.
+The class 'test_TestClassDelegate' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'test_Root' and 'test_TestElement'. From 'test_Root', the role 'test_Root' has cardinality 0..*, and from 'test_TestElement', the role 'test_TestElement' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestPolicy'. From 'test_TestElement', the role 'test_TestElement2' has cardinality 0..*, and from 'test_TestPolicy', the role 'test_TestPolicy' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestClassDelegate'. From 'test_TestElement', the role 'test_TestElement4' has cardinality 0..*, and from 'test_TestClassDelegate', the role 'test_TestClassDelegate' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElementWrapper'. From 'test_TestElement', the role 'test_TestElement6' has cardinality 0..*, and from 'test_TestElementWrapper', the role 'test_TestElementWrapper' has cardinality 0..*.

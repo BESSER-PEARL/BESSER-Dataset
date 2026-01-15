@@ -1,0 +1,1 @@
+{'classes': 217, 'enumerations': 8, 'attributes': 65, 'functions': 129, 'generalisations': 128}

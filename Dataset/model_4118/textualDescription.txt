@@ -1,0 +1,101 @@
+The domain model 'whileComp' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'whileComp_While' represents an important domain concept.
+It does not declare any attributes.
+
+'whileComp_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'whileComp_ExprSimple' represents an important domain concept.
+It has the following attributes: 'valeur', which is of type str; 'ope', which is of type str; 'call', which is of type str.
+
+'whileComp_List' represents an important domain concept.
+It has one attribute: 'list', which is of type str.
+
+'whileComp_Nil2' represents an important domain concept.
+It has one attribute: 'nil', which is of type str.
+
+'whileComp_Nop' represents an important domain concept.
+It has one attribute: 'nop', which is of type str.
+
+'whileComp_Write' represents an important domain concept.
+It has one attribute: 'variable', which is of type str.
+
+'whileComp_Not' represents an important domain concept.
+It has one attribute: 'not', which is of type str.
+
+'whileComp_Tl' represents an important domain concept.
+It has one attribute: 'tl', which is of type str.
+
+'whileComp_Hd' represents an important domain concept.
+It has one attribute: 'hd', which is of type str.
+
+'whileComp_Affectation' represents an important domain concept.
+It has one attribute: 'affectations', which is of type str.
+
+'whileComp_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'whileComp_Read' represents an important domain concept.
+It has one attribute: 'variable', which is of type str.
+
+'whileComp_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'whileComp_Foreach' represents an important domain concept.
+It does not declare any attributes.
+
+'whileComp_If' represents an important domain concept.
+It does not declare any attributes.
+
+'whileComp_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'whileComp_Cons' represents an important domain concept.
+It has one attribute: 'cons', which is of type str.
+
+'whileComp_Commands' represents an important domain concept.
+It does not declare any attributes.
+
+'whileComp_Function' represents an important domain concept.
+It has one attribute: 'function', which is of type str.
+
+'whileComp_For' represents an important domain concept.
+It does not declare any attributes.
+
+'whileComp_Lexpr' represents an important domain concept.
+It does not declare any attributes.
+
+'whileComp_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'whileComp_Program' and 'whileComp_Function'. From 'whileComp_Program', the role 'whileComp_Program' has cardinality 0..*, and from 'whileComp_Function', the role 'whileComp_Function' has cardinality 0..*.
+An association connects 'whileComp_Definition' and 'whileComp_Function'. From 'whileComp_Definition', the role 'whileComp_Definition' has cardinality 0..*, and from 'whileComp_Function', the role 'whileComp_Function2' has cardinality 0..*.
+An association connects 'whileComp_Definition' and 'whileComp_Read'. From 'whileComp_Definition', the role 'whileComp_Definition4' has cardinality 0..*, and from 'whileComp_Read', the role 'whileComp_Read' has cardinality 0..*.
+An association connects 'whileComp_Definition' and 'whileComp_Commands'. From 'whileComp_Definition', the role 'whileComp_Definition6' has cardinality 0..*, and from 'whileComp_Commands', the role 'whileComp_Commands' has cardinality 0..*.
+An association connects 'whileComp_Definition' and 'whileComp_Write'. From 'whileComp_Definition', the role 'whileComp_Definition8' has cardinality 0..*, and from 'whileComp_Write', the role 'whileComp_Write' has cardinality 0..*.
+An association connects 'whileComp_Expr' and 'whileComp_Affectation'. From 'whileComp_Expr', the role 'whileComp_Expr' has cardinality 0..*, and from 'whileComp_Affectation', the role 'whileComp_Affectation' has cardinality 0..*.
+An association connects 'whileComp_Command' and 'whileComp_Commands'. From 'whileComp_Command', the role 'whileComp_Command' has cardinality 0..*, and from 'whileComp_Commands', the role 'whileComp_Commands11' has cardinality 0..*.
+An association connects 'whileComp_Commands' and 'whileComp_Command'. From 'whileComp_Commands', the role 'whileComp_Commands13' has cardinality 0..*, and from 'whileComp_Command', the role 'whileComp_Command14' has cardinality 0..*.
+An association connects 'whileComp_Command' and 'whileComp_EObject'. From 'whileComp_Command', the role 'whileComp_Command16' has cardinality 0..*, and from 'whileComp_EObject', the role 'whileComp_EObject' has cardinality 0..*.
+An association connects 'whileComp_Foreach' and 'whileComp_Expr'. From 'whileComp_Foreach', the role 'whileComp_Foreach' has cardinality 0..*, and from 'whileComp_Expr', the role 'whileComp_Expr18' has cardinality 0..*.
+An association connects 'whileComp_Foreach' and 'whileComp_Expr'. From 'whileComp_Foreach', the role 'whileComp_Foreach20' has cardinality 0..*, and from 'whileComp_Expr', the role 'whileComp_Expr21' has cardinality 0..*.
+An association connects 'whileComp_Foreach' and 'whileComp_Commands'. From 'whileComp_Foreach', the role 'whileComp_Foreach23' has cardinality 0..*, and from 'whileComp_Commands', the role 'whileComp_Commands24' has cardinality 0..*.
+An association connects 'whileComp_Expr' and 'whileComp_If'. From 'whileComp_Expr', the role 'whileComp_Expr26' has cardinality 0..*, and from 'whileComp_If', the role 'whileComp_If' has cardinality 0..*.
+An association connects 'whileComp_If' and 'whileComp_Commands'. From 'whileComp_If', the role 'whileComp_If28' has cardinality 0..*, and from 'whileComp_Commands', the role 'whileComp_Commands29' has cardinality 0..*.
+An association connects 'whileComp_If' and 'whileComp_Commands'. From 'whileComp_If', the role 'whileComp_If31' has cardinality 0..*, and from 'whileComp_Commands', the role 'whileComp_Commands32' has cardinality 0..*.
+An association connects 'whileComp_Expr' and 'whileComp_For'. From 'whileComp_Expr', the role 'whileComp_Expr34' has cardinality 0..*, and from 'whileComp_For', the role 'whileComp_For' has cardinality 0..*.
+An association connects 'whileComp_For' and 'whileComp_Commands'. From 'whileComp_For', the role 'whileComp_For36' has cardinality 0..*, and from 'whileComp_Commands', the role 'whileComp_Commands37' has cardinality 0..*.
+An association connects 'whileComp_While' and 'whileComp_Expr'. From 'whileComp_While', the role 'whileComp_While' has cardinality 0..*, and from 'whileComp_Expr', the role 'whileComp_Expr39' has cardinality 0..*.
+An association connects 'whileComp_While' and 'whileComp_Commands'. From 'whileComp_While', the role 'whileComp_While41' has cardinality 0..*, and from 'whileComp_Commands', the role 'whileComp_Commands42' has cardinality 0..*.
+An association connects 'whileComp_ExprSimple' and 'whileComp_Expr'. From 'whileComp_ExprSimple', the role 'whileComp_ExprSimple' has cardinality 0..*, and from 'whileComp_Expr', the role 'whileComp_Expr44' has cardinality 0..*.
+An association connects 'whileComp_ExprSimple' and 'whileComp_Lexpr'. From 'whileComp_ExprSimple', the role 'whileComp_ExprSimple46' has cardinality 0..*, and from 'whileComp_Lexpr', the role 'whileComp_Lexpr' has cardinality 0..*.
+An association connects 'whileComp_Expr' and 'whileComp_ExprSimple'. From 'whileComp_Expr', the role 'whileComp_Expr49' has cardinality 0..*, and from 'whileComp_ExprSimple', the role 'whileComp_ExprSimple48' has cardinality 0..*.
+An association connects 'whileComp_Not' and 'whileComp_ExprSimple'. From 'whileComp_Not', the role 'whileComp_Not' has cardinality 0..*, and from 'whileComp_ExprSimple', the role 'whileComp_ExprSimple51' has cardinality 0..*.
+An association connects 'whileComp_Expr' and 'whileComp_ExprSimple'. From 'whileComp_Expr', the role 'whileComp_Expr54' has cardinality 0..*, and from 'whileComp_ExprSimple', the role 'whileComp_ExprSimple53' has cardinality 0..*.
+An association connects 'whileComp_ExprSimple' and 'whileComp_Expr'. From 'whileComp_ExprSimple', the role 'whileComp_ExprSimple56' has cardinality 0..*, and from 'whileComp_Expr', the role 'whileComp_Expr57' has cardinality 0..*.
+An association connects 'whileComp_Lexpr' and 'whileComp_Expr'. From 'whileComp_Lexpr', the role 'whileComp_Lexpr59' has cardinality 0..*, and from 'whileComp_Expr', the role 'whileComp_Expr60' has cardinality 0..*.
+An association connects 'whileComp_Lexpr' and 'whileComp_Lexpr'. From 'whileComp_Lexpr', the role 'whileComp_Lexpr61' has cardinality 0..*, and from 'whileComp_Lexpr', the role 'whileComp_Lexpr63' has cardinality 0..*.

@@ -1,0 +1,60 @@
+The domain model 'Train5' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'Train5_RoutePart' represents an important domain concept.
+It does not declare any attributes.
+
+'Train5_Segment' represents an important domain concept.
+It does not declare any attributes.
+
+'Train5_Station' represents an important domain concept.
+It does not declare any attributes.
+
+'Train5_Route' represents an important domain concept.
+It has the following attributes: 'speed', which is of type str; 'currentIndex', which is of type str; 'leftOver', which is of type str.
+
+'Train5_Switch' represents an important domain concept.
+It does not declare any attributes.
+
+'TrackElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Train5_RailwayDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'Train5_NamedElement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Train5_SensorNetwork' represents an important domain concept.
+It does not declare any attributes.
+
+'Train5_TrackElement' represents an important domain concept.
+It has the following attributes: 'length', which is of type str; 'State', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Signal' defines the following possible values: 'STOP', 'Go', 'Failure'.
+
+The model also captures inheritance relationships between classes.
+The class 'Train5_TrackElement' is a specialization of 'NamedElement'.
+The class 'Train5_Route' is a specialization of 'NamedElement'.
+The class 'Train5_Switch' is a specialization of 'TrackElement'.
+The class 'Train5_Segment' is a specialization of 'TrackElement'.
+The class 'Train5_Station' is a specialization of 'TrackElement'.
+The class 'Train5_SensorNetwork' is a specialization of 'NamedElement'.
+The class 'Train5_RoutePart' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Train5_TrackElement' and 'Train5_Route'. From 'Train5_TrackElement', the role 'Train5_TrackElement' has cardinality 0..*, and from 'Train5_Route', the role 'Train5_Route' has cardinality 0..*.
+An association connects 'Train5_Route' and 'Train5_RoutePart'. From 'Train5_Route', the role 'Train5_Route2' has cardinality 0..*, and from 'Train5_RoutePart', the role 'Train5_RoutePart' has cardinality 0..*.
+An association connects 'Train5_Switch' and 'Train5_Segment'. From 'Train5_Switch', the role 'Train5_Switch' has cardinality 0..*, and from 'Train5_Segment', the role 'Train5_Segment' has cardinality 0..*.
+An association connects 'Train5_Switch' and 'Train5_SensorNetwork'. From 'Train5_Switch', the role 'Train5_Switch5' has cardinality 0..*, and from 'Train5_SensorNetwork', the role 'Train5_SensorNetwork' has cardinality 0..*.
+An association connects 'Train5_TrackElement' and 'Train5_RailwayDiagram'. From 'Train5_TrackElement', the role 'Train5_TrackElement7' has cardinality 0..*, and from 'Train5_RailwayDiagram', the role 'Train5_RailwayDiagram' has cardinality 0..*.
+An association connects 'Train5_SensorNetwork' and 'Train5_RailwayDiagram'. From 'Train5_SensorNetwork', the role 'Train5_SensorNetwork10' has cardinality 0..*, and from 'Train5_RailwayDiagram', the role 'Train5_RailwayDiagram9' has cardinality 0..*.
+An association connects 'Train5_RailwayDiagram' and 'Train5_Route'. From 'Train5_RailwayDiagram', the role 'Train5_RailwayDiagram12' has cardinality 0..*, and from 'Train5_Route', the role 'Train5_Route13' has cardinality 0..*.
+An association connects 'Train5_RoutePart' and 'Train5_RoutePart'. From 'Train5_RoutePart', the role 'Train5_RoutePart16' has cardinality 0..*, and from 'Train5_RoutePart', the role 'Train5_RoutePart14' has cardinality 0..*.
+An association connects 'Train5_TrackElement' and 'Train5_RoutePart'. From 'Train5_TrackElement', the role 'Train5_TrackElement19' has cardinality 0..*, and from 'Train5_RoutePart', the role 'Train5_RoutePart18' has cardinality 0..*.
+An association connects 'Train5_RoutePart' and 'Train5_RoutePart'. From 'Train5_RoutePart', the role 'Train5_RoutePart20' has cardinality 0..*, and from 'Train5_RoutePart', the role 'Train5_RoutePart22' has cardinality 0..*.

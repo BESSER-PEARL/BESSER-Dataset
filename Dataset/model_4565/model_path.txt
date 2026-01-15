@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/roboidstudio/embedded/org.roboid.robot.model/model/robot.ecore

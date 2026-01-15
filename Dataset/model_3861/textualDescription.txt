@@ -1,0 +1,51 @@
+The domain model 'internal' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'EObjectTreeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'internal_treeproxy_EObjectTreeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'treeproxy_internal_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'internal_treeproxy_EReferenceTreeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TreeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'internal_treeproxy_EAttributeTreeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'treeproxy_internal_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'treeproxy_internal_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'internal_treeproxy_TreeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'internal_treeproxy_EStructuralFeatureTreeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EStructuralFeatureTreeElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'internal_treeproxy_EObjectTreeElement' is a specialization of 'TreeElement'.
+The class 'internal_treeproxy_EReferenceTreeElement' is a specialization of 'EStructuralFeatureTreeElement'.
+The class 'internal_treeproxy_EAttributeTreeElement' is a specialization of 'EStructuralFeatureTreeElement'.
+The class 'internal_treeproxy_EStructuralFeatureTreeElement' is a specialization of 'TreeElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'internal_treeproxy_EObjectTreeElement' and 'treeproxy_internal_EObject'. From 'internal_treeproxy_EObjectTreeElement', the role 'internal_treeproxy_EObjectTreeElement' has cardinality 0..*, and from 'treeproxy_internal_EObject', the role 'treeproxy_internal_EObject' has cardinality 0..*.
+An association connects 'internal_treeproxy_EObjectTreeElement' and 'EStructuralFeatureTreeElement'. From 'internal_treeproxy_EObjectTreeElement', the role 'EStructuralFeatureTreeElement' has cardinality 0..*, and from 'EStructuralFeatureTreeElement', the role 'treeproxy' has cardinality 0..*.
+An association connects 'EStructuralFeatureTreeElement' and 'internal_treeproxy_EObjectTreeElement'. From 'EStructuralFeatureTreeElement', the role 'treeproxy4' has cardinality 0..*, and from 'internal_treeproxy_EObjectTreeElement', the role 'EStructuralFeatureTreeElement3' has cardinality 0..*.
+An association connects 'internal_treeproxy_EReferenceTreeElement' and 'treeproxy_internal_EReference'. From 'internal_treeproxy_EReferenceTreeElement', the role 'internal_treeproxy_EReferenceTreeElement' has cardinality 0..*, and from 'treeproxy_internal_EReference', the role 'treeproxy_internal_EReference' has cardinality 0..*.
+An association connects 'internal_treeproxy_EAttributeTreeElement' and 'treeproxy_internal_EAttribute'. From 'internal_treeproxy_EAttributeTreeElement', the role 'internal_treeproxy_EAttributeTreeElement' has cardinality 0..*, and from 'treeproxy_internal_EAttribute', the role 'treeproxy_internal_EAttribute' has cardinality 0..*.
+An association connects 'internal_treeproxy_EStructuralFeatureTreeElement' and 'EObjectTreeElement'. From 'internal_treeproxy_EStructuralFeatureTreeElement', the role 'EObjectTreeElement' has cardinality 0..*, and from 'EObjectTreeElement', the role 'treeproxy8' has cardinality 0..*.
+An association connects 'internal_treeproxy_EStructuralFeatureTreeElement' and 'EObjectTreeElement'. From 'internal_treeproxy_EStructuralFeatureTreeElement', the role 'EObjectTreeElement10' has cardinality 0..*, and from 'EObjectTreeElement', the role 'treeproxy11' has cardinality 0..*.

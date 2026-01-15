@@ -1,0 +1,36 @@
+The domain model 'wh' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'wh_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Output' represents an important domain concept.
+It has one attribute: 'variable', which is of type str.
+
+'wh_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Function' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'wh_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Commands' represents an important domain concept.
+It has one attribute: 'command', which is of type str.
+
+'wh_Input' represents an important domain concept.
+It has one attribute: 'variable', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'wh_Program' and 'wh_Model'. From 'wh_Program', the role 'wh_Program' has cardinality 0..*, and from 'wh_Model', the role 'wh_Model' has cardinality 0..*.
+An association connects 'wh_Program' and 'wh_Function'. From 'wh_Program', the role 'wh_Program2' has cardinality 0..*, and from 'wh_Function', the role 'wh_Function' has cardinality 0..*.
+An association connects 'wh_Program' and 'wh_Program'. From 'wh_Program', the role 'wh_Program5' has cardinality 0..*, and from 'wh_Program', the role 'wh_Program3' has cardinality 0..*.
+An association connects 'wh_Function' and 'wh_Definition'. From 'wh_Function', the role 'wh_Function7' has cardinality 0..*, and from 'wh_Definition', the role 'wh_Definition' has cardinality 0..*.
+An association connects 'wh_Definition' and 'wh_Input'. From 'wh_Definition', the role 'wh_Definition9' has cardinality 0..*, and from 'wh_Input', the role 'wh_Input' has cardinality 0..*.
+An association connects 'wh_Commands' and 'wh_Definition'. From 'wh_Commands', the role 'wh_Commands' has cardinality 0..*, and from 'wh_Definition', the role 'wh_Definition11' has cardinality 0..*.
+An association connects 'wh_Definition' and 'wh_Output'. From 'wh_Definition', the role 'wh_Definition13' has cardinality 0..*, and from 'wh_Output', the role 'wh_Output' has cardinality 0..*.
+An association connects 'wh_Input' and 'wh_Input'. From 'wh_Input', the role 'wh_Input16' has cardinality 0..*, and from 'wh_Input', the role 'wh_Input14' has cardinality 0..*.
+An association connects 'wh_Output' and 'wh_Output'. From 'wh_Output', the role 'wh_Output17' has cardinality 0..*, and from 'wh_Output', the role 'wh_Output19' has cardinality 0..*.
+An association connects 'wh_Commands' and 'wh_Commands'. From 'wh_Commands', the role 'wh_Commands20' has cardinality 0..*, and from 'wh_Commands', the role 'wh_Commands22' has cardinality 0..*.

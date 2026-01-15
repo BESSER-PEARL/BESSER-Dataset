@@ -1,0 +1,114 @@
+The domain model 'OO_concept' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'OO_concept_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_concept_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_concept_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_concept_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_concept_Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_concept_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_concept_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_concept_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_concept_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_concept_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_concept_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_concept_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_concept_NamedElement' represents an important domain concept.
+It has the following attributes: 'isAbstract', which is of type bool; 'visibility', which is of type str; 'name', which is of type str.
+
+'OO_concept_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_concept_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'OO_concept_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VisibilityKind' defines the following possible values: 'package', 'protected', 'private', 'public'.
+
+The model also captures inheritance relationships between classes.
+The class 'OO_concept_Package' is a specialization of 'PackageableElement'.
+The class 'OO_concept_Package' is a specialization of 'NamedElement'.
+The class 'OO_concept_Class' is a specialization of 'PackageableElement'.
+The class 'OO_concept_Class' is a specialization of 'Classifier'.
+The class 'OO_concept_Class' is a specialization of 'Type'.
+The class 'OO_concept_Model' is a specialization of 'Package'.
+The class 'OO_concept_Operation' is a specialization of 'TypedElement'.
+The class 'OO_concept_Operation' is a specialization of 'BehavioralFeature'.
+The class 'OO_concept_Feature' is a specialization of 'NamedElement'.
+The class 'OO_concept_Property' is a specialization of 'TypedElement'.
+The class 'OO_concept_Property' is a specialization of 'Feature'.
+The class 'OO_concept_Parameter' is a specialization of 'TypedElement'.
+The class 'OO_concept_Dependency' is a specialization of 'PackageableElement'.
+The class 'OO_concept_TypedElement' is a specialization of 'NamedElement'.
+The class 'OO_concept_Type' is a specialization of 'NamedElement'.
+The class 'OO_concept_BehavioralFeature' is a specialization of 'Feature'.
+The class 'OO_concept_Behavior' is a specialization of 'Class'.
+
+Relationships between classes are modeled using associations.
+An association connects 'OO_concept_Package' and 'OO_concept_PackageableElement'. From 'OO_concept_Package', the role 'OO_concept_Package' has cardinality 0..*, and from 'OO_concept_PackageableElement', the role 'OO_concept_PackageableElement' has cardinality 0..*.
+An association connects 'OO_concept_Class' and 'OO_concept_Operation'. From 'OO_concept_Class', the role 'OO_concept_Class' has cardinality 0..*, and from 'OO_concept_Operation', the role 'OO_concept_Operation' has cardinality 0..*.
+An association connects 'OO_concept_Property' and 'OO_concept_Class'. From 'OO_concept_Property', the role 'OO_concept_Property' has cardinality 0..*, and from 'OO_concept_Class', the role 'OO_concept_Class3' has cardinality 0..*.
+An association connects 'OO_concept_Class' and 'OO_concept_Classifier'. From 'OO_concept_Class', the role 'OO_concept_Class5' has cardinality 0..*, and from 'OO_concept_Classifier', the role 'OO_concept_Classifier' has cardinality 0..*.
+An association connects 'OO_concept_Parameter' and 'OO_concept_Operation'. From 'OO_concept_Parameter', the role 'OO_concept_Parameter' has cardinality 0..*, and from 'OO_concept_Operation', the role 'OO_concept_Operation7' has cardinality 0..*.
+An association connects 'OO_concept_Generalization' and 'OO_concept_Classifier'. From 'OO_concept_Generalization', the role 'OO_concept_Generalization' has cardinality 0..*, and from 'OO_concept_Classifier', the role 'OO_concept_Classifier9' has cardinality 0..*.
+An association connects 'OO_concept_Generalization' and 'OO_concept_Classifier'. From 'OO_concept_Generalization', the role 'generalization' has cardinality 0..*, and from 'OO_concept_Classifier', the role 'Classifier' has cardinality 0..*.
+An association connects 'OO_concept_Dependency' and 'OO_concept_NamedElement'. From 'OO_concept_Dependency', the role 'OO_concept_Dependency' has cardinality 0..*, and from 'OO_concept_NamedElement', the role 'OO_concept_NamedElement' has cardinality 0..*.
+An association connects 'OO_concept_Dependency' and 'OO_concept_NamedElement'. From 'OO_concept_Dependency', the role 'OO_concept_Dependency13' has cardinality 0..*, and from 'OO_concept_NamedElement', the role 'OO_concept_NamedElement14' has cardinality 0..*.
+An association connects 'OO_concept_Classifier' and 'OO_concept_Generalization'. From 'OO_concept_Classifier', the role 'specific' has cardinality 0..*, and from 'OO_concept_Generalization', the role 'Generalization' has cardinality 0..*.
+An association connects 'OO_concept_Type' and 'OO_concept_TypedElement'. From 'OO_concept_Type', the role 'OO_concept_Type' has cardinality 0..*, and from 'OO_concept_TypedElement', the role 'OO_concept_TypedElement' has cardinality 0..*.
+An association connects 'OO_concept_Behavior' and 'OO_concept_BehavioralFeature'. From 'OO_concept_Behavior', the role 'OO_concept_Behavior' has cardinality 0..*, and from 'OO_concept_BehavioralFeature', the role 'OO_concept_BehavioralFeature' has cardinality 0..*.

@@ -1,0 +1,113 @@
+The domain model 'iot' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'iot_IterativeLoop' represents an important domain concept.
+It has the following attributes: 'operator', which is of type str; 'var', which is of type str.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_IfPort' represents an important domain concept.
+It has the following attributes: 'operator', which is of type str; 'condition', which is of type bool; 'var', which is of type str.
+
+'iot_RequiredPort' represents an important domain concept.
+It has the following attributes: 'UUID', which is of type str; 'method', which is of type str; 'name', which is of type str; 'args', which is of type str.
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_ProvidedPort' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'UUID', which is of type str.
+
+'iot_ThenPort' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Actuator' represents an important domain concept.
+It has one attribute: 'toggle', which is of type bool.
+
+'Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Controller' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Snippet' represents an important domain concept.
+It has one attribute: 'scriptPath', which is of type str.
+
+'iot_Sensor' represents an important domain concept.
+It has one attribute: 'script', which is of type str.
+
+'RequiredPort' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Branching' represents an important domain concept.
+It does not declare any attributes.
+
+'Hardware' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Hardware' represents an important domain concept.
+It has the following attributes: 'timeInterval', which is of type int; 'pinNumber', which is of type int; 'type', which is of type str; 'mode', which is of type bool.
+
+'iot_Iteration' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_ElsePort' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Software' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_ConditionPort' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Sequence' represents an important domain concept.
+It does not declare any attributes.
+
+'Iteration' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_CounterLoop' represents an important domain concept.
+It has one attribute: 'counter', which is of type int.
+
+'iot_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Item' represents an important domain concept.
+It has the following attributes: 'UUID', which is of type str; 'newThread', which is of type bool; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Operator' defines the following possible values: 'EQ', 'NE', 'LE', 'LT', 'GT', 'GE'.
+
+The model also captures inheritance relationships between classes.
+The class 'iot_Software' is a specialization of 'Component'.
+The class 'iot_Hardware' is a specialization of 'Component'.
+The class 'iot_CounterLoop' is a specialization of 'Iteration'.
+The class 'iot_IfPort' is a specialization of 'RequiredPort'.
+The class 'iot_Actuator' is a specialization of 'Hardware'.
+The class 'iot_IterativeLoop' is a specialization of 'Iteration'.
+The class 'iot_Branching' is a specialization of 'Controller'.
+The class 'iot_Iteration' is a specialization of 'Controller'.
+The class 'iot_Sensor' is a specialization of 'Hardware'.
+The class 'iot_Sequence' is a specialization of 'Controller'.
+The class 'iot_Component' is a specialization of 'Item'.
+The class 'iot_Controller' is a specialization of 'Item'.
+The class 'iot_Snippet' is a specialization of 'Component'.
+The class 'iot_ConditionPort' is a specialization of 'RequiredPort'.
+The class 'iot_ThenPort' is a specialization of 'RequiredPort'.
+The class 'iot_ElsePort' is a specialization of 'RequiredPort'.
+
+Relationships between classes are modeled using associations.
+An association connects 'iot_Software' and 'iot_Item'. From 'iot_Software', the role 'iot_Software' has cardinality 0..*, and from 'iot_Item', the role 'iot_Item' has cardinality 0..*.
+An association connects 'iot_ConditionPort' and 'iot_IterativeLoop'. From 'iot_ConditionPort', the role 'iot_ConditionPort' has cardinality 0..*, and from 'iot_IterativeLoop', the role 'iot_IterativeLoop' has cardinality 0..*.
+An association connects 'iot_ProvidedPort' and 'iot_Item'. From 'iot_ProvidedPort', the role 'iot_ProvidedPort' has cardinality 0..*, and from 'iot_Item', the role 'iot_Item3' has cardinality 0..*.
+An association connects 'iot_Branching' and 'iot_IfPort'. From 'iot_Branching', the role 'iot_Branching' has cardinality 0..*, and from 'iot_IfPort', the role 'iot_IfPort' has cardinality 0..*.
+An association connects 'iot_ThenPort' and 'iot_Branching'. From 'iot_ThenPort', the role 'iot_ThenPort' has cardinality 0..*, and from 'iot_Branching', the role 'iot_Branching6' has cardinality 0..*.
+An association connects 'iot_Branching' and 'iot_ElsePort'. From 'iot_Branching', the role 'iot_Branching8' has cardinality 0..*, and from 'iot_ElsePort', the role 'iot_ElsePort' has cardinality 0..*.
+An association connects 'iot_RequiredPort' and 'iot_Iteration'. From 'iot_RequiredPort', the role 'iot_RequiredPort' has cardinality 0..*, and from 'iot_Iteration', the role 'iot_Iteration' has cardinality 0..*.
+An association connects 'iot_RequiredPort' and 'iot_Sequence'. From 'iot_RequiredPort', the role 'iot_RequiredPort11' has cardinality 0..*, and from 'iot_Sequence', the role 'iot_Sequence' has cardinality 0..*.
+An association connects 'iot_RequiredPort' and 'iot_Component'. From 'iot_RequiredPort', the role 'iot_RequiredPort13' has cardinality 0..*, and from 'iot_Component', the role 'iot_Component' has cardinality 0..*.
+An association connects 'iot_Component' and 'iot_ProvidedPort'. From 'iot_Component', the role 'iot_Component15' has cardinality 0..*, and from 'iot_ProvidedPort', the role 'iot_ProvidedPort16' has cardinality 0..*.
+An association connects 'iot_ProvidedPort' and 'iot_Controller'. From 'iot_ProvidedPort', the role 'iot_ProvidedPort18' has cardinality 0..*, and from 'iot_Controller', the role 'iot_Controller' has cardinality 0..*.
+An association connects 'iot_ProvidedPort' and 'iot_RequiredPort'. From 'iot_ProvidedPort', the role 'iot_ProvidedPort21' has cardinality 0..*, and from 'iot_RequiredPort', the role 'iot_RequiredPort20' has cardinality 0..*.

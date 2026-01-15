@@ -1,0 +1,77 @@
+The domain model 'expressions' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'expressions_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Number' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'expressions_Mul' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ParameterAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Neg' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Function' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'expressions_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'expressions_Number' is a specialization of 'Expression'.
+The class 'expressions_ParameterAccess' is a specialization of 'Expression'.
+The class 'expressions_BinaryOperator' is a specialization of 'Expression'.
+The class 'expressions_UnaryOperator' is a specialization of 'Expression'.
+The class 'expressions_Plus' is a specialization of 'BinaryOperator'.
+The class 'expressions_Minus' is a specialization of 'BinaryOperator'.
+The class 'expressions_Mul' is a specialization of 'BinaryOperator'.
+The class 'expressions_Div' is a specialization of 'BinaryOperator'.
+The class 'expressions_Neg' is a specialization of 'UnaryOperator'.
+The class 'expressions_FunctionCall' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'expressions_Parameter' and 'expressions_Function'. From 'expressions_Parameter', the role 'expressions_Parameter' has cardinality 0..*, and from 'expressions_Function', the role 'expressions_Function' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_Function'. From 'expressions_Expression', the role 'expressions_Expression' has cardinality 0..*, and from 'expressions_Function', the role 'expressions_Function2' has cardinality 0..*.
+An association connects 'expressions_ParameterAccess' and 'expressions_Parameter'. From 'expressions_ParameterAccess', the role 'expressions_ParameterAccess' has cardinality 0..*, and from 'expressions_Parameter', the role 'expressions_Parameter4' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_BinaryOperator'. From 'expressions_Expression', the role 'expressions_Expression6' has cardinality 0..*, and from 'expressions_BinaryOperator', the role 'expressions_BinaryOperator' has cardinality 0..*.
+An association connects 'expressions_BinaryOperator' and 'expressions_Expression'. From 'expressions_BinaryOperator', the role 'expressions_BinaryOperator8' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression9' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_UnaryOperator'. From 'expressions_Expression', the role 'expressions_Expression11' has cardinality 0..*, and from 'expressions_UnaryOperator', the role 'expressions_UnaryOperator' has cardinality 0..*.
+An association connects 'expressions_FunctionCall' and 'expressions_Function'. From 'expressions_FunctionCall', the role 'expressions_FunctionCall' has cardinality 0..*, and from 'expressions_Function', the role 'expressions_Function13' has cardinality 0..*.
+An association connects 'expressions_FunctionCall' and 'expressions_Expression'. From 'expressions_FunctionCall', the role 'expressions_FunctionCall15' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression16' has cardinality 0..*.
+An association connects 'expressions_Function' and 'expressions_Model'. From 'expressions_Function', the role 'expressions_Function18' has cardinality 0..*, and from 'expressions_Model', the role 'expressions_Model' has cardinality 0..*.

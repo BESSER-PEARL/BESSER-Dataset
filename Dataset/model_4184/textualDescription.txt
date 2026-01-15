@@ -1,0 +1,12 @@
+The domain model 'kobold' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'kobold_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'kobold_Greeting' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'kobold_Model' and 'kobold_Greeting'. From 'kobold_Model', the role 'kobold_Model' has cardinality 0..*, and from 'kobold_Greeting', the role 'kobold_Greeting' has cardinality 0..*.

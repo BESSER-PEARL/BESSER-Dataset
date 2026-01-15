@@ -1,0 +1,57 @@
+The domain model 'umlMM' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'UMLModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlMM_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'umlMM_PackageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlMM_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'umlMM_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'umlMM_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'umlMM_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlMM_UMLModelElement' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'name', which is of type str.
+
+'umlMM_PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'umlMM_Association' is a specialization of 'PackageElement'.
+The class 'umlMM_Attribute' is a specialization of 'UMLModelElement'.
+The class 'umlMM_Class' is a specialization of 'Classifier'.
+The class 'umlMM_Classifier' is a specialization of 'PackageElement'.
+The class 'umlMM_Package' is a specialization of 'UMLModelElement'.
+The class 'umlMM_PackageElement' is a specialization of 'UMLModelElement'.
+The class 'umlMM_PrimitiveDataType' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'umlMM_Class' and 'umlMM_Association'. From 'umlMM_Class', the role 'Class' has cardinality 0..*, and from 'umlMM_Association', the role 'reverse' has cardinality 0..*.
+An association connects 'umlMM_Association' and 'umlMM_Class'. From 'umlMM_Association', the role 'forward' has cardinality 0..*, and from 'umlMM_Class', the role 'Class2' has cardinality 0..*.
+An association connects 'umlMM_Class' and 'umlMM_Attribute'. From 'umlMM_Class', the role 'Class4' has cardinality 0..*, and from 'umlMM_Attribute', the role 'attribute' has cardinality 0..*.
+An association connects 'umlMM_Classifier' and 'umlMM_Attribute'. From 'umlMM_Classifier', the role 'umlMM_Classifier' has cardinality 0..*, and from 'umlMM_Attribute', the role 'umlMM_Attribute' has cardinality 0..*.
+An association connects 'umlMM_Class' and 'umlMM_Attribute'. From 'umlMM_Class', the role 'owner' has cardinality 0..*, and from 'umlMM_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'umlMM_Class' and 'umlMM_Class'. From 'umlMM_Class', the role 'umlMM_Class' has cardinality 0..*, and from 'umlMM_Class', the role 'umlMM_Class7' has cardinality 0..*.
+An association connects 'umlMM_Association' and 'umlMM_Class'. From 'umlMM_Association', the role 'Association' has cardinality 0..*, and from 'umlMM_Class', the role 'destination' has cardinality 0..*.
+An association connects 'umlMM_Class' and 'umlMM_Association'. From 'umlMM_Class', the role 'source' has cardinality 0..*, and from 'umlMM_Association', the role 'Association11' has cardinality 0..*.
+An association connects 'umlMM_PackageElement' and 'umlMM_Package'. From 'umlMM_PackageElement', the role 'PackageElement' has cardinality 0..*, and from 'umlMM_Package', the role 'namespace' has cardinality 0..*.
+An association connects 'umlMM_Package' and 'umlMM_PackageElement'. From 'umlMM_Package', the role 'Package' has cardinality 0..*, and from 'umlMM_PackageElement', the role 'elements' has cardinality 0..*.

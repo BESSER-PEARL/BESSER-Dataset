@@ -1,0 +1,60 @@
+The domain model 'actionpak1' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'actionpak1_IncomingCall2' represents an important domain concept.
+It has one attribute: 'callName', which is of type str.
+
+'call_CallSource1' represents an important domain concept.
+It does not declare any attributes.
+
+'actionpak1_UnscheduleSaflet' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterizedInitiator' represents an important domain concept.
+It does not declare any attributes.
+
+'actionstep_ParameterizedInitiator' represents an important domain concept.
+It does not declare any attributes.
+
+'DynamicValue' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterizedActionstep' represents an important domain concept.
+It does not declare any attributes.
+
+'actionpak1_InvokeSaflet2' represents an important domain concept.
+It has one attribute: 'labelText', which is of type str.
+
+'actionpak1_ActionstepTest' represents an important domain concept.
+It does not declare any attributes.
+
+'actionpak1_ScheduleSaflet' represents an important domain concept.
+It does not declare any attributes.
+
+'actionpak1_CustomInitiator' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionStep' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'actionpak1_ActionstepTest' is a specialization of 'ActionStep'.
+The class 'actionpak1_CustomInitiator' is a specialization of 'ParameterizedInitiator'.
+The class 'actionpak1_IncomingCall2' is a specialization of 'actionstep_ParameterizedInitiator'.
+The class 'actionpak1_IncomingCall2' is a specialization of 'call_CallSource1'.
+The class 'actionpak1_InvokeSaflet2' is a specialization of 'ParameterizedActionstep'.
+The class 'actionpak1_ScheduleSaflet' is a specialization of 'ParameterizedActionstep'.
+The class 'actionpak1_UnscheduleSaflet' is a specialization of 'ActionStep'.
+
+Relationships between classes are modeled using associations.
+An association connects 'actionpak1_ActionstepTest' and 'DynamicValue'. From 'actionpak1_ActionstepTest', the role 'actionpak1_ActionstepTest' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue' has cardinality 0..*.
+An association connects 'actionpak1_InvokeSaflet2' and 'DynamicValue'. From 'actionpak1_InvokeSaflet2', the role 'actionpak1_InvokeSaflet2' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue2' has cardinality 0..*.
+An association connects 'DynamicValue' and 'actionpak1_ScheduleSaflet'. From 'DynamicValue', the role 'DynamicValue4' has cardinality 0..*, and from 'actionpak1_ScheduleSaflet', the role 'actionpak1_ScheduleSaflet' has cardinality 0..*.
+An association connects 'actionpak1_ScheduleSaflet' and 'DynamicValue'. From 'actionpak1_ScheduleSaflet', the role 'actionpak1_ScheduleSaflet6' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue7' has cardinality 0..*.
+An association connects 'actionpak1_ScheduleSaflet' and 'DynamicValue'. From 'actionpak1_ScheduleSaflet', the role 'actionpak1_ScheduleSaflet9' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue10' has cardinality 0..*.
+An association connects 'DynamicValue' and 'actionpak1_ScheduleSaflet'. From 'DynamicValue', the role 'DynamicValue13' has cardinality 0..*, and from 'actionpak1_ScheduleSaflet', the role 'actionpak1_ScheduleSaflet12' has cardinality 0..*.
+An association connects 'actionpak1_ScheduleSaflet' and 'DynamicValue'. From 'actionpak1_ScheduleSaflet', the role 'actionpak1_ScheduleSaflet15' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue16' has cardinality 0..*.
+An association connects 'DynamicValue' and 'actionpak1_ScheduleSaflet'. From 'DynamicValue', the role 'DynamicValue19' has cardinality 0..*, and from 'actionpak1_ScheduleSaflet', the role 'actionpak1_ScheduleSaflet18' has cardinality 0..*.
+An association connects 'DynamicValue' and 'actionpak1_ScheduleSaflet'. From 'DynamicValue', the role 'DynamicValue22' has cardinality 0..*, and from 'actionpak1_ScheduleSaflet', the role 'actionpak1_ScheduleSaflet21' has cardinality 0..*.
+An association connects 'DynamicValue' and 'actionpak1_UnscheduleSaflet'. From 'DynamicValue', the role 'DynamicValue24' has cardinality 0..*, and from 'actionpak1_UnscheduleSaflet', the role 'actionpak1_UnscheduleSaflet' has cardinality 0..*.

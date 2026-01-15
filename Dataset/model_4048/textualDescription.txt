@@ -1,0 +1,34 @@
+The domain model 'necsis14_classdiagram' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'necsis14_classdiagram_ClassDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'necsis14_classdiagram_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'necsis14_classdiagram_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'necsis14_classdiagram_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'necsis14_classdiagram_Association' represents an important domain concept.
+It has the following attributes: 'upperBound', which is of type int; 'lowerBound', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'necsis14_classdiagram_Class' is a specialization of 'NamedElement'.
+The class 'necsis14_classdiagram_Association' is a specialization of 'NamedElement'.
+The class 'necsis14_classdiagram_Attribute' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'necsis14_classdiagram_ClassDiagram' and 'necsis14_classdiagram_Class'. From 'necsis14_classdiagram_ClassDiagram', the role 'necsis14_classdiagram_ClassDiagram' has cardinality 0..*, and from 'necsis14_classdiagram_Class', the role 'necsis14_classdiagram_Class' has cardinality 0..*.
+An association connects 'necsis14_classdiagram_Association' and 'necsis14_classdiagram_ClassDiagram'. From 'necsis14_classdiagram_Association', the role 'necsis14_classdiagram_Association' has cardinality 0..*, and from 'necsis14_classdiagram_ClassDiagram', the role 'necsis14_classdiagram_ClassDiagram2' has cardinality 0..*.
+An association connects 'necsis14_classdiagram_Class' and 'necsis14_classdiagram_Class'. From 'necsis14_classdiagram_Class', the role 'necsis14_classdiagram_Class3' has cardinality 0..*, and from 'necsis14_classdiagram_Class', the role 'necsis14_classdiagram_Class5' has cardinality 0..*.
+An association connects 'necsis14_classdiagram_Class' and 'necsis14_classdiagram_Attribute'. From 'necsis14_classdiagram_Class', the role 'necsis14_classdiagram_Class7' has cardinality 0..*, and from 'necsis14_classdiagram_Attribute', the role 'necsis14_classdiagram_Attribute' has cardinality 0..*.
+An association connects 'necsis14_classdiagram_Class' and 'necsis14_classdiagram_Association'. From 'necsis14_classdiagram_Class', the role 'necsis14_classdiagram_Class10' has cardinality 0..*, and from 'necsis14_classdiagram_Association', the role 'necsis14_classdiagram_Association9' has cardinality 0..*.
+An association connects 'necsis14_classdiagram_Class' and 'necsis14_classdiagram_Association'. From 'necsis14_classdiagram_Class', the role 'necsis14_classdiagram_Class13' has cardinality 0..*, and from 'necsis14_classdiagram_Association', the role 'necsis14_classdiagram_Association12' has cardinality 0..*.

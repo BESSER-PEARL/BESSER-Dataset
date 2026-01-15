@@ -1,0 +1,66 @@
+The domain model 'sihuhu' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'Rail' represents an important domain concept.
+It does not declare any attributes.
+
+'sihuhu_SwitchConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'sihuhu_Rail' represents an important domain concept.
+It does not declare any attributes.
+
+'sihuhu_Signal' represents an important domain concept.
+It has one attribute: 'enabled', which is of type bool.
+
+'sihuhu_Train' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TrackElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sihuhu_TrackElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sihuhu_Switch' represents an important domain concept.
+It does not declare any attributes.
+
+'sihuhu_World' represents an important domain concept.
+It does not declare any attributes.
+
+'sihuhu_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sihuhu_Track' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'sihuhu_World' is a specialization of 'NamedElement'.
+The class 'sihuhu_Track' is a specialization of 'NamedElement'.
+The class 'sihuhu_TrackElement' is a specialization of 'NamedElement'.
+The class 'sihuhu_Rail' is a specialization of 'TrackElement'.
+The class 'sihuhu_Switch' is a specialization of 'TrackElement'.
+The class 'sihuhu_SwitchConnection' is a specialization of 'Rail'.
+The class 'sihuhu_Train' is a specialization of 'NamedElement'.
+The class 'sihuhu_Signal' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sihuhu_Track' and 'sihuhu_World'. From 'sihuhu_Track', the role 'sihuhu_Track' has cardinality 0..*, and from 'sihuhu_World', the role 'sihuhu_World' has cardinality 0..*.
+An association connects 'sihuhu_World' and 'sihuhu_Train'. From 'sihuhu_World', the role 'sihuhu_World2' has cardinality 0..*, and from 'sihuhu_Train', the role 'sihuhu_Train' has cardinality 0..*.
+An association connects 'sihuhu_Rail' and 'sihuhu_Track'. From 'sihuhu_Rail', the role 'sihuhu_Rail' has cardinality 0..*, and from 'sihuhu_Track', the role 'sihuhu_Track4' has cardinality 0..*.
+An association connects 'sihuhu_Switch' and 'sihuhu_Track'. From 'sihuhu_Switch', the role 'sihuhu_Switch' has cardinality 0..*, and from 'sihuhu_Track', the role 'sihuhu_Track6' has cardinality 0..*.
+An association connects 'sihuhu_Train' and 'sihuhu_TrackElement'. From 'sihuhu_Train', the role 'Train' has cardinality 0..*, and from 'sihuhu_TrackElement', the role 'onTracks' has cardinality 0..*.
+An association connects 'sihuhu_Signal' and 'sihuhu_Rail'. From 'sihuhu_Signal', the role 'sihuhu_Signal' has cardinality 0..*, and from 'sihuhu_Rail', the role 'sihuhu_Rail9' has cardinality 0..*.
+An association connects 'sihuhu_Signal' and 'sihuhu_Rail'. From 'sihuhu_Signal', the role 'sihuhu_Signal12' has cardinality 0..*, and from 'sihuhu_Rail', the role 'sihuhu_Rail11' has cardinality 0..*.
+An association connects 'sihuhu_Rail' and 'sihuhu_TrackElement'. From 'sihuhu_Rail', the role 'sihuhu_Rail14' has cardinality 0..*, and from 'sihuhu_TrackElement', the role 'sihuhu_TrackElement' has cardinality 0..*.
+An association connects 'sihuhu_TrackElement' and 'sihuhu_Rail'. From 'sihuhu_TrackElement', the role 'sihuhu_TrackElement17' has cardinality 0..*, and from 'sihuhu_Rail', the role 'sihuhu_Rail16' has cardinality 0..*.
+An association connects 'sihuhu_SwitchConnection' and 'sihuhu_Switch'. From 'sihuhu_SwitchConnection', the role 'sihuhu_SwitchConnection' has cardinality 0..*, and from 'sihuhu_Switch', the role 'sihuhu_Switch19' has cardinality 0..*.
+An association connects 'sihuhu_Switch' and 'sihuhu_Rail'. From 'sihuhu_Switch', the role 'sihuhu_Switch21' has cardinality 0..*, and from 'sihuhu_Rail', the role 'sihuhu_Rail22' has cardinality 0..*.
+An association connects 'sihuhu_Switch' and 'sihuhu_SwitchConnection'. From 'sihuhu_Switch', the role 'sihuhu_Switch24' has cardinality 0..*, and from 'sihuhu_SwitchConnection', the role 'sihuhu_SwitchConnection25' has cardinality 0..*.
+An association connects 'sihuhu_TrackElement' and 'sihuhu_Train'. From 'sihuhu_TrackElement', the role 'sihuhu_TrackElement28' has cardinality 0..*, and from 'sihuhu_Train', the role 'sihuhu_Train27' has cardinality 0..*.
+An association connects 'sihuhu_TrackElement' and 'sihuhu_Train'. From 'sihuhu_TrackElement', the role 'TrackElement' has cardinality 0..*, and from 'sihuhu_Train', the role 'train' has cardinality 0..*.
+An association connects 'sihuhu_Signal' and 'sihuhu_Rail'. From 'sihuhu_Signal', the role 'sihuhu_Signal31' has cardinality 0..*, and from 'sihuhu_Rail', the role 'sihuhu_Rail32' has cardinality 0..*.

@@ -1,0 +1,13 @@
+The domain model 'ecore' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'ecore_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ecore_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'ecore_EClass' and 'ecore_EPackage'. From 'ecore_EClass', the role 'myClasses' has cardinality 0..*, and from 'ecore_EPackage', the role 'EPackage' has cardinality 0..*.
+An association connects 'ecore_EClass' and 'ecore_EPackage'. From 'ecore_EClass', the role 'EClass' has cardinality 0..*, and from 'ecore_EPackage', the role 'conflictingOpposite' has cardinality 0..*.

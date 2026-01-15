@@ -1,0 +1,182 @@
+The domain model 'roverDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 36 main class(es).
+
+'roverDSL_ForwardAction' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_SubRoutineAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_FreeAction' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_Static' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'roverDSL_BSensorLiteral' represents an important domain concept.
+It has one attribute: 'sensor', which is of type str.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_SoundAction' represents an important domain concept.
+It has one attribute: 'sound', which is of type str.
+
+'roverDSL_WHILEExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_MeasureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_ExpressionBinComp' represents an important domain concept.
+It has one attribute: 'bcomp', which is of type str.
+
+'roverDSL_Implementation' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_SSpeedAction' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_Global' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ValueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_BVLiteral' represents an important domain concept.
+It has the following attributes: 'aValue', which is of type int; 'neg', which is of type bool.
+
+'roverDSL_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_Motor' represents an important domain concept.
+It has one attribute: 'm', which is of type str.
+
+'roverDSL_SAccelerationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_ShowAction' represents an important domain concept.
+It has the following attributes: 'string', which is of type str; 'sensor', which is of type str.
+
+'roverDSL_BVBracket' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_SubRoutine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'roverDSL_ValueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_ValExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_RotateAction' represents an important domain concept.
+It has one attribute: 'blocking', which is of type bool.
+
+'roverDSL_BNotExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_ExpressionBinOp' represents an important domain concept.
+It has one attribute: 'bop', which is of type str.
+
+'roverDSL_BVarLiteral' represents an important domain concept.
+It has one attribute: 'var', which is of type str.
+
+'roverDSL_BehaviorName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'roverDSL_AssignExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_BBLiteral' represents an important domain concept.
+It has one attribute: 'bValue', which is of type bool.
+
+'roverDSL_ColorLiteral' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+'roverDSL_Robot' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_IFExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'roverDSL_StopAction' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CompareOp' defines the following possible values: 'NEQ', 'LEQ', 'GT', 'LT', 'EQ', 'GEQ'.
+The enumeration 'EMotor' defines the following possible values: 'RIGHTMOTOR', 'LEFTMOTOR'.
+The enumeration 'BBinaryOp' defines the following possible values: 'AND', 'OR'.
+The enumeration 'Sound' defines the following possible values: 'BEEP', 'BUZZ'.
+The enumeration 'Sensor' defines the following possible values: 'REARULTRASONICSENSOR', 'ANGLESENSOR', 'RIGHTLIGHTSENSOR', 'FRONTULTRASONICSENSOR', 'TOUCHSENSORL', 'TOUCHSENSORR', 'COLORIDSENSOR', 'LEFTLIGHTSENSOR'.
+The enumeration 'Color' defines the following possible values: 'BROWN', 'YELLOW', 'GRAY', 'LIGHT_GRAY', 'BLACK', 'DARK_GRAY', 'MAGENTA', 'PINK', 'ORANGE', 'RED', 'GREEN', 'WHITE', 'BLUE', 'CYAN'.
+
+The model also captures inheritance relationships between classes.
+The class 'roverDSL_ValExpr' is a specialization of 'Expression'.
+The class 'roverDSL_IFExpression' is a specialization of 'Expression'.
+The class 'roverDSL_WHILEExpression' is a specialization of 'Expression'.
+The class 'roverDSL_AssignExpression' is a specialization of 'Expression'.
+The class 'roverDSL_Action' is a specialization of 'Expression'.
+The class 'roverDSL_ForwardAction' is a specialization of 'Action'.
+The class 'roverDSL_RotateAction' is a specialization of 'Action'.
+The class 'roverDSL_StopAction' is a specialization of 'Action'.
+The class 'roverDSL_SAccelerationAction' is a specialization of 'Action'.
+The class 'roverDSL_SSpeedAction' is a specialization of 'Action'.
+The class 'roverDSL_SubRoutineAction' is a specialization of 'Action'.
+The class 'roverDSL_MeasureAction' is a specialization of 'Action'.
+The class 'roverDSL_ShowAction' is a specialization of 'Action'.
+The class 'roverDSL_SoundAction' is a specialization of 'Action'.
+The class 'roverDSL_FreeAction' is a specialization of 'Action'.
+The class 'roverDSL_BNotExpr' is a specialization of 'ValueExpression'.
+The class 'roverDSL_BVLiteral' is a specialization of 'ValueExpression'.
+The class 'roverDSL_BBLiteral' is a specialization of 'ValueExpression'.
+The class 'roverDSL_BVarLiteral' is a specialization of 'ValueExpression'.
+The class 'roverDSL_BSensorLiteral' is a specialization of 'ValueExpression'.
+The class 'roverDSL_BVBracket' is a specialization of 'ValueExpression'.
+The class 'roverDSL_ColorLiteral' is a specialization of 'ValueExpression'.
+The class 'roverDSL_ExpressionBinOp' is a specialization of 'ValueExpression'.
+The class 'roverDSL_ExpressionBinComp' is a specialization of 'ValueExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'roverDSL_Robot' and 'roverDSL_BehaviorName'. From 'roverDSL_Robot', the role 'roverDSL_Robot' has cardinality 0..*, and from 'roverDSL_BehaviorName', the role 'roverDSL_BehaviorName' has cardinality 0..*.
+An association connects 'roverDSL_Global' and 'roverDSL_Robot'. From 'roverDSL_Global', the role 'roverDSL_Global' has cardinality 0..*, and from 'roverDSL_Robot', the role 'roverDSL_Robot2' has cardinality 0..*.
+An association connects 'roverDSL_Static' and 'roverDSL_Robot'. From 'roverDSL_Static', the role 'roverDSL_Static' has cardinality 0..*, and from 'roverDSL_Robot', the role 'roverDSL_Robot4' has cardinality 0..*.
+An association connects 'roverDSL_Robot' and 'roverDSL_ValueExpression'. From 'roverDSL_Robot', the role 'roverDSL_Robot6' has cardinality 0..*, and from 'roverDSL_ValueExpression', the role 'roverDSL_ValueExpression' has cardinality 0..*.
+An association connects 'roverDSL_Robot' and 'roverDSL_Implementation'. From 'roverDSL_Robot', the role 'roverDSL_Robot8' has cardinality 0..*, and from 'roverDSL_Implementation', the role 'roverDSL_Implementation' has cardinality 0..*.
+An association connects 'roverDSL_Robot' and 'roverDSL_SubRoutine'. From 'roverDSL_Robot', the role 'roverDSL_Robot10' has cardinality 0..*, and from 'roverDSL_SubRoutine', the role 'roverDSL_SubRoutine' has cardinality 0..*.
+An association connects 'roverDSL_ValueExpression' and 'roverDSL_Static'. From 'roverDSL_ValueExpression', the role 'roverDSL_ValueExpression13' has cardinality 0..*, and from 'roverDSL_Static', the role 'roverDSL_Static12' has cardinality 0..*.
+An association connects 'roverDSL_BehaviorName' and 'roverDSL_Implementation'. From 'roverDSL_BehaviorName', the role 'roverDSL_BehaviorName16' has cardinality 0..*, and from 'roverDSL_Implementation', the role 'roverDSL_Implementation15' has cardinality 0..*.
+An association connects 'roverDSL_ValueExpression' and 'roverDSL_Implementation'. From 'roverDSL_ValueExpression', the role 'roverDSL_ValueExpression19' has cardinality 0..*, and from 'roverDSL_Implementation', the role 'roverDSL_Implementation18' has cardinality 0..*.
+An association connects 'roverDSL_Expression' and 'roverDSL_Implementation'. From 'roverDSL_Expression', the role 'roverDSL_Expression' has cardinality 0..*, and from 'roverDSL_Implementation', the role 'roverDSL_Implementation21' has cardinality 0..*.
+An association connects 'roverDSL_SubRoutine' and 'roverDSL_Expression'. From 'roverDSL_SubRoutine', the role 'roverDSL_SubRoutine23' has cardinality 0..*, and from 'roverDSL_Expression', the role 'roverDSL_Expression24' has cardinality 0..*.
+An association connects 'roverDSL_ValExpr' and 'roverDSL_ValueExpression'. From 'roverDSL_ValExpr', the role 'roverDSL_ValExpr' has cardinality 0..*, and from 'roverDSL_ValueExpression', the role 'roverDSL_ValueExpression26' has cardinality 0..*.
+An association connects 'roverDSL_ValueExpression' and 'roverDSL_IFExpression'. From 'roverDSL_ValueExpression', the role 'roverDSL_ValueExpression28' has cardinality 0..*, and from 'roverDSL_IFExpression', the role 'roverDSL_IFExpression' has cardinality 0..*.
+An association connects 'roverDSL_IFExpression' and 'roverDSL_Expression'. From 'roverDSL_IFExpression', the role 'roverDSL_IFExpression30' has cardinality 0..*, and from 'roverDSL_Expression', the role 'roverDSL_Expression31' has cardinality 0..*.
+An association connects 'roverDSL_IFExpression' and 'roverDSL_Expression'. From 'roverDSL_IFExpression', the role 'roverDSL_IFExpression33' has cardinality 0..*, and from 'roverDSL_Expression', the role 'roverDSL_Expression34' has cardinality 0..*.
+An association connects 'roverDSL_ValueExpression' and 'roverDSL_WHILEExpression'. From 'roverDSL_ValueExpression', the role 'roverDSL_ValueExpression36' has cardinality 0..*, and from 'roverDSL_WHILEExpression', the role 'roverDSL_WHILEExpression' has cardinality 0..*.
+An association connects 'roverDSL_Expression' and 'roverDSL_WHILEExpression'. From 'roverDSL_Expression', the role 'roverDSL_Expression39' has cardinality 0..*, and from 'roverDSL_WHILEExpression', the role 'roverDSL_WHILEExpression38' has cardinality 0..*.
+An association connects 'roverDSL_Global' and 'roverDSL_AssignExpression'. From 'roverDSL_Global', the role 'roverDSL_Global41' has cardinality 0..*, and from 'roverDSL_AssignExpression', the role 'roverDSL_AssignExpression' has cardinality 0..*.
+An association connects 'roverDSL_ValueExpression' and 'roverDSL_AssignExpression'. From 'roverDSL_ValueExpression', the role 'roverDSL_ValueExpression44' has cardinality 0..*, and from 'roverDSL_AssignExpression', the role 'roverDSL_AssignExpression43' has cardinality 0..*.
+An association connects 'roverDSL_Motor' and 'roverDSL_ForwardAction'. From 'roverDSL_Motor', the role 'roverDSL_Motor' has cardinality 0..*, and from 'roverDSL_ForwardAction', the role 'roverDSL_ForwardAction' has cardinality 0..*.
+An association connects 'roverDSL_RotateAction' and 'roverDSL_Motor'. From 'roverDSL_RotateAction', the role 'roverDSL_RotateAction' has cardinality 0..*, and from 'roverDSL_Motor', the role 'roverDSL_Motor47' has cardinality 0..*.
+An association connects 'roverDSL_RotateAction' and 'roverDSL_ValueExpression'. From 'roverDSL_RotateAction', the role 'roverDSL_RotateAction49' has cardinality 0..*, and from 'roverDSL_ValueExpression', the role 'roverDSL_ValueExpression50' has cardinality 0..*.
+An association connects 'roverDSL_StopAction' and 'roverDSL_Motor'. From 'roverDSL_StopAction', the role 'roverDSL_StopAction' has cardinality 0..*, and from 'roverDSL_Motor', the role 'roverDSL_Motor52' has cardinality 0..*.
+An association connects 'roverDSL_Motor' and 'roverDSL_SAccelerationAction'. From 'roverDSL_Motor', the role 'roverDSL_Motor54' has cardinality 0..*, and from 'roverDSL_SAccelerationAction', the role 'roverDSL_SAccelerationAction' has cardinality 0..*.
+An association connects 'roverDSL_SAccelerationAction' and 'roverDSL_ValueExpression'. From 'roverDSL_SAccelerationAction', the role 'roverDSL_SAccelerationAction56' has cardinality 0..*, and from 'roverDSL_ValueExpression', the role 'roverDSL_ValueExpression57' has cardinality 0..*.
+An association connects 'roverDSL_SSpeedAction' and 'roverDSL_Motor'. From 'roverDSL_SSpeedAction', the role 'roverDSL_SSpeedAction' has cardinality 0..*, and from 'roverDSL_Motor', the role 'roverDSL_Motor59' has cardinality 0..*.
+An association connects 'roverDSL_ValueExpression' and 'roverDSL_SSpeedAction'. From 'roverDSL_ValueExpression', the role 'roverDSL_ValueExpression62' has cardinality 0..*, and from 'roverDSL_SSpeedAction', the role 'roverDSL_SSpeedAction61' has cardinality 0..*.
+An association connects 'roverDSL_SubRoutineAction' and 'roverDSL_SubRoutine'. From 'roverDSL_SubRoutineAction', the role 'roverDSL_SubRoutineAction' has cardinality 0..*, and from 'roverDSL_SubRoutine', the role 'roverDSL_SubRoutine64' has cardinality 0..*.
+An association connects 'roverDSL_Motor' and 'roverDSL_FreeAction'. From 'roverDSL_Motor', the role 'roverDSL_Motor66' has cardinality 0..*, and from 'roverDSL_FreeAction', the role 'roverDSL_FreeAction' has cardinality 0..*.
+An association connects 'roverDSL_ValueExpression' and 'roverDSL_BNotExpr'. From 'roverDSL_ValueExpression', the role 'roverDSL_ValueExpression68' has cardinality 0..*, and from 'roverDSL_BNotExpr', the role 'roverDSL_BNotExpr' has cardinality 0..*.
+An association connects 'roverDSL_ValueExpression' and 'roverDSL_BVBracket'. From 'roverDSL_ValueExpression', the role 'roverDSL_ValueExpression70' has cardinality 0..*, and from 'roverDSL_BVBracket', the role 'roverDSL_BVBracket' has cardinality 0..*.
+An association connects 'roverDSL_ExpressionBinOp' and 'roverDSL_ValueExpression'. From 'roverDSL_ExpressionBinOp', the role 'roverDSL_ExpressionBinOp' has cardinality 0..*, and from 'roverDSL_ValueExpression', the role 'roverDSL_ValueExpression72' has cardinality 0..*.
+An association connects 'roverDSL_ValueExpression' and 'roverDSL_ExpressionBinOp'. From 'roverDSL_ValueExpression', the role 'roverDSL_ValueExpression75' has cardinality 0..*, and from 'roverDSL_ExpressionBinOp', the role 'roverDSL_ExpressionBinOp74' has cardinality 0..*.
+An association connects 'roverDSL_ExpressionBinComp' and 'roverDSL_ValueExpression'. From 'roverDSL_ExpressionBinComp', the role 'roverDSL_ExpressionBinComp' has cardinality 0..*, and from 'roverDSL_ValueExpression', the role 'roverDSL_ValueExpression77' has cardinality 0..*.
+An association connects 'roverDSL_ExpressionBinComp' and 'roverDSL_ValueExpression'. From 'roverDSL_ExpressionBinComp', the role 'roverDSL_ExpressionBinComp79' has cardinality 0..*, and from 'roverDSL_ValueExpression', the role 'roverDSL_ValueExpression80' has cardinality 0..*.

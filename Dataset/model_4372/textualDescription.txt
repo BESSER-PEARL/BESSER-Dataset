@@ -1,0 +1,66 @@
+The domain model 'expressions' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_And' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_All' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'expressions_Implies' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Any' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Number' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Neg' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'expressions_BinaryOperator' is a specialization of 'Expression'.
+The class 'expressions_UnaryOperator' is a specialization of 'Expression'.
+The class 'expressions_Implies' is a specialization of 'BinaryOperator'.
+The class 'expressions_Or' is a specialization of 'BinaryOperator'.
+The class 'expressions_And' is a specialization of 'BinaryOperator'.
+The class 'expressions_Neg' is a specialization of 'UnaryOperator'.
+The class 'expressions_Feature' is a specialization of 'Expression'.
+The class 'expressions_All' is a specialization of 'UnaryOperator'.
+The class 'expressions_Number' is a specialization of 'UnaryOperator'.
+The class 'expressions_Any' is a specialization of 'UnaryOperator'.
+
+Relationships between classes are modeled using associations.
+An association connects 'expressions_BinaryOperator' and 'expressions_Expression'. From 'expressions_BinaryOperator', the role 'expressions_BinaryOperator' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression' has cardinality 0..*.
+An association connects 'expressions_BinaryOperator' and 'expressions_Expression'. From 'expressions_BinaryOperator', the role 'expressions_BinaryOperator2' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression3' has cardinality 0..*.
+An association connects 'expressions_UnaryOperator' and 'expressions_Expression'. From 'expressions_UnaryOperator', the role 'expressions_UnaryOperator' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression5' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_Model'. From 'expressions_Expression', the role 'expressions_Expression7' has cardinality 0..*, and from 'expressions_Model', the role 'expressions_Model' has cardinality 0..*.

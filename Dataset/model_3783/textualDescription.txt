@@ -1,0 +1,69 @@
+The domain model 'test' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'test_StringToTestElementMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'test_TypeWithFeatureMapNonContainment' represents an important domain concept.
+It has one attribute: 'map', which is of type str.
+
+'test_TypeWithFeatureMapContainment' represents an important domain concept.
+It has one attribute: 'mapContainment', which is of type str.
+
+'test_TestElement' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'featureMapEntries', which is of type str; 'strings', which is of type str; 'name', which is of type str.
+
+'test_TestElementToTestElementMap' represents an important domain concept.
+It does not declare any attributes.
+
+'TestType' represents an important domain concept.
+It does not declare any attributes.
+
+'test_StringToStringMap' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'test_TestElementToStringMap' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'test_TestType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'test_TestElement' is a specialization of 'EObject'.
+The class 'test_TypeWithFeatureMapNonContainment' is a specialization of 'TestType'.
+The class 'test_TypeWithFeatureMapContainment' is a specialization of 'TestType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'test_TestElement' has cardinality 0..*, and from 'test_TestElement', the role 'test_TestElement0' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'TestElement' has cardinality 0..*, and from 'test_TestElement', the role 'container' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'test_TestElement4' has cardinality 0..*, and from 'test_TestElement', the role 'test_TestElement6' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'srefContainer' has cardinality 0..*, and from 'test_TestElement', the role 'TestElement9' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'test_TestElement10' has cardinality 0..*, and from 'test_TestElement', the role 'test_TestElement12' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'containedElements' has cardinality 0..*, and from 'test_TestElement', the role 'TestElement15' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'containedElement' has cardinality 0..*, and from 'test_TestElement', the role 'TestElement18' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElementToTestElementMap'. From 'test_TestElement', the role 'test_TestElement20' has cardinality 0..*, and from 'test_TestElementToTestElementMap', the role 'test_TestElementToTestElementMap' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_StringToStringMap'. From 'test_TestElement', the role 'test_TestElement22' has cardinality 0..*, and from 'test_StringToStringMap', the role 'test_StringToStringMap' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElementToStringMap'. From 'test_TestElement', the role 'test_TestElement24' has cardinality 0..*, and from 'test_TestElementToStringMap', the role 'test_TestElementToStringMap' has cardinality 0..*.
+An association connects 'test_StringToTestElementMap' and 'test_TestElement'. From 'test_StringToTestElementMap', the role 'test_StringToTestElementMap' has cardinality 0..*, and from 'test_TestElement', the role 'test_TestElement26' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'TestElement29' has cardinality 0..*, and from 'test_TestElement', the role 'nonContained_1ToN' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'TestElement32' has cardinality 0..*, and from 'test_TestElement', the role 'nonContained_NTo1' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'nonContained_MToN' has cardinality 0..*, and from 'test_TestElement', the role 'TestElement35' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'nonContained_NToM' has cardinality 0..*, and from 'test_TestElement', the role 'TestElement38' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'TestElement41' has cardinality 0..*, and from 'test_TestElement', the role 'container2' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'containedElements2' has cardinality 0..*, and from 'test_TestElement', the role 'TestElement44' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'test_TestElement45' has cardinality 0..*, and from 'test_TestElement', the role 'test_TestElement47' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'test_TestElement50' has cardinality 0..*, and from 'test_TestElement', the role 'test_TestElement48' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'test_TestElement53' has cardinality 0..*, and from 'test_TestElement', the role 'test_TestElement51' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElement'. From 'test_TestElement', the role 'test_TestElement56' has cardinality 0..*, and from 'test_TestElement', the role 'test_TestElement54' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElementToStringMap'. From 'test_TestElement', the role 'test_TestElement59' has cardinality 0..*, and from 'test_TestElementToStringMap', the role 'test_TestElementToStringMap58' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_TestElementToTestElementMap'. From 'test_TestElement', the role 'test_TestElement62' has cardinality 0..*, and from 'test_TestElementToTestElementMap', the role 'test_TestElementToTestElementMap61' has cardinality 0..*.
+An association connects 'test_TestElementToTestElementMap' and 'test_TestElement'. From 'test_TestElementToTestElementMap', the role 'test_TestElementToTestElementMap64' has cardinality 0..*, and from 'test_TestElement', the role 'test_TestElement65' has cardinality 0..*.
+An association connects 'test_TestElement' and 'test_StringToTestElementMap'. From 'test_TestElement', the role 'test_TestElement68' has cardinality 0..*, and from 'test_StringToTestElementMap', the role 'test_StringToTestElementMap67' has cardinality 0..*.
+An association connects 'test_TestType' and 'test_TypeWithFeatureMapNonContainment'. From 'test_TestType', the role 'test_TestType' has cardinality 0..*, and from 'test_TypeWithFeatureMapNonContainment', the role 'test_TypeWithFeatureMapNonContainment' has cardinality 0..*.
+An association connects 'test_TypeWithFeatureMapNonContainment' and 'test_TestType'. From 'test_TypeWithFeatureMapNonContainment', the role 'test_TypeWithFeatureMapNonContainment71' has cardinality 0..*, and from 'test_TestType', the role 'test_TestType72' has cardinality 0..*.
+An association connects 'test_TestType' and 'test_TypeWithFeatureMapContainment'. From 'test_TestType', the role 'test_TestType74' has cardinality 0..*, and from 'test_TypeWithFeatureMapContainment', the role 'test_TypeWithFeatureMapContainment' has cardinality 0..*.
+An association connects 'test_TypeWithFeatureMapContainment' and 'test_TestType'. From 'test_TypeWithFeatureMapContainment', the role 'test_TypeWithFeatureMapContainment76' has cardinality 0..*, and from 'test_TestType', the role 'test_TestType77' has cardinality 0..*.

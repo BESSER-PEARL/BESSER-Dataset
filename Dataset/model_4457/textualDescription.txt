@@ -1,0 +1,105 @@
+The domain model 'farrusco' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'farrusco_Filho' represents an important domain concept.
+It does not declare any attributes.
+
+'Actuate' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_Motor' represents an important domain concept.
+It has the following attributes: 'Motor_Esquerdo', which is of type int; 'Motor_Direito', which is of type int; 'Nome', which is of type str.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_Robot' represents an important domain concept.
+It has one attribute: 'Nome', which is of type str.
+
+'farrusco_Prioridade' represents an important domain concept.
+It has one attribute: 'Nome', which is of type str.
+
+'farrusco_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_Bumpers' represents an important domain concept.
+It has the following attributes: 'Nome', which is of type str; 'Bumper_Esquerdo_ou_Direito', which is of type str.
+
+'farrusco_LED' represents an important domain concept.
+It has the following attributes: 'Ligado_ou_Desligado', which is of type str; 'Nome', which is of type str.
+
+'farrusco_Paralelo' represents an important domain concept.
+It has one attribute: 'Nome', which is of type str.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_Sequencial' represents an important domain concept.
+It has one attribute: 'Nome', which is of type str.
+
+'farrusco_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_Servo' represents an important domain concept.
+It has the following attributes: 'Nome', which is of type str; 'Posicao_Maxima', which is of type int; 'Passo_a_Passo', which is of type int; 'Posicao_Minima', which is of type int.
+
+'farrusco_Espera' represents an important domain concept.
+It has the following attributes: 'Tempo', which is of type int; 'Nome', which is of type str.
+
+'farrusco_Actuate' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_Irmao' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_Distancia' represents an important domain concept.
+It has the following attributes: 'Menor_Maior', which is of type str; 'distancia', which is of type int; 'Nome', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_AlterarEstado' represents an important domain concept.
+It has the following attributes: 'Nome', which is of type str; 'Alterar_Falha', which is of type str; 'Alterar_Decorrer', which is of type str; 'Alterar_Sucesso', which is of type str.
+
+'farrusco_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EscolhaBumper' defines the following possible values: 'Direito', 'Esquerdo'.
+The enumeration 'EstadoDaLuz' defines the following possible values: 'Ligado', 'Desligado'.
+The enumeration 'TipoDistancia' defines the following possible values: 'Maior', 'Menor'.
+The enumeration 'EstadoSucesso' defines the following possible values: 'Decorrer', 'Falha', 'Sucesso'.
+The enumeration 'EstadoDecorrer' defines the following possible values: 'Sucesso', 'Decorrer', 'Falha'.
+The enumeration 'EstadoFalha' defines the following possible values: 'Sucesso', 'Falha', 'Decorrer'.
+
+The model also captures inheritance relationships between classes.
+The class 'farrusco_Behavior' is a specialization of 'Node'.
+The class 'farrusco_Prioridade' is a specialization of 'Behavior'.
+The class 'farrusco_Paralelo' is a specialization of 'Behavior'.
+The class 'farrusco_Sequencial' is a specialization of 'Behavior'.
+The class 'farrusco_AlterarEstado' is a specialization of 'Behavior'.
+The class 'farrusco_Action' is a specialization of 'Node'.
+The class 'farrusco_Condition' is a specialization of 'Action'.
+The class 'farrusco_Distancia' is a specialization of 'Condition'.
+The class 'farrusco_Bumpers' is a specialization of 'Condition'.
+The class 'farrusco_Espera' is a specialization of 'Condition'.
+The class 'farrusco_Actuate' is a specialization of 'Action'.
+The class 'farrusco_Motor' is a specialization of 'Actuate'.
+The class 'farrusco_Servo' is a specialization of 'Actuate'.
+The class 'farrusco_LED' is a specialization of 'Actuate'.
+
+Relationships between classes are modeled using associations.
+An association connects 'farrusco_Robot' and 'farrusco_Node'. From 'farrusco_Robot', the role 'farrusco_Robot' has cardinality 0..*, and from 'farrusco_Node', the role 'farrusco_Node' has cardinality 0..*.
+An association connects 'farrusco_Filho' and 'farrusco_Robot'. From 'farrusco_Filho', the role 'farrusco_Filho' has cardinality 0..*, and from 'farrusco_Robot', the role 'farrusco_Robot2' has cardinality 0..*.
+An association connects 'farrusco_Robot' and 'farrusco_Irmao'. From 'farrusco_Robot', the role 'farrusco_Robot4' has cardinality 0..*, and from 'farrusco_Irmao', the role 'farrusco_Irmao' has cardinality 0..*.
+An association connects 'farrusco_Behavior' and 'farrusco_Filho'. From 'farrusco_Behavior', the role 'farrusco_Behavior' has cardinality 0..*, and from 'farrusco_Filho', the role 'farrusco_Filho6' has cardinality 0..*.
+An association connects 'farrusco_Node' and 'farrusco_Filho'. From 'farrusco_Node', the role 'farrusco_Node9' has cardinality 0..*, and from 'farrusco_Filho', the role 'farrusco_Filho8' has cardinality 0..*.
+An association connects 'farrusco_Node' and 'farrusco_Irmao'. From 'farrusco_Node', the role 'farrusco_Node12' has cardinality 0..*, and from 'farrusco_Irmao', the role 'farrusco_Irmao11' has cardinality 0..*.
+An association connects 'farrusco_Node' and 'farrusco_Irmao'. From 'farrusco_Node', the role 'farrusco_Node15' has cardinality 0..*, and from 'farrusco_Irmao', the role 'farrusco_Irmao14' has cardinality 0..*.

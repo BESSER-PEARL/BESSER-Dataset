@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/manuelleduc/minilang/fr.inria.diverse.minilang.melange/model-gen/MinilangLanguageMT.ecore

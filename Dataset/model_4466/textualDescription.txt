@@ -1,0 +1,118 @@
+The domain model 'RobotProjectModel' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'RobotProjectModel_Call' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotProjectModel_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'Angle' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotProjectModel_DetectedObjectIs' represents an important domain concept.
+It has one attribute: 'rightOperand', which is of type str.
+
+'RobotProjectModel_Distance' represents an important domain concept.
+It has one attribute: 'distanceUnit', which is of type str.
+
+'RobotProjectModel_Robot' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotProjectModel_MoveStraight' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotProjectModel_Grab' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotProjectModel_Angle' represents an important domain concept.
+It has one attribute: 'angleUnit', which is of type str.
+
+'RobotProjectModel_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotProjectModel_Duration' represents an important domain concept.
+It has one attribute: 'timeUnit', which is of type str.
+
+'RobotProjectModel_TimedInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotProjectModel_Release' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotProjectModel_InstructionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotProjectModel_Turn' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotProjectModel_HomeDirection' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotProjectModel_If' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotProjectModel_Amount' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'Amount' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotProjectModel_Function' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TimedInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotProjectModel_SensorActivation' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotProjectModel_Wait' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotProjectModel_Print' represents an important domain concept.
+It has one attribute: 'string', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AngleUnit' defines a single possible value: 'DEGREES'.
+The enumeration 'TimeUnit' defines the following possible values: 'MILLISECONDS', 'SECONDS'.
+The enumeration 'DistanceUnit' defines a single possible value: 'CENTIMETERS'.
+The enumeration 'DetectedType' defines the following possible values: 'WALL', 'BALL', 'NULL'.
+
+The model also captures inheritance relationships between classes.
+The class 'RobotProjectModel_MoveStraight' is a specialization of 'TimedInstruction'.
+The class 'RobotProjectModel_TimedInstruction' is a specialization of 'Instruction'.
+The class 'RobotProjectModel_Turn' is a specialization of 'TimedInstruction'.
+The class 'RobotProjectModel_Duration' is a specialization of 'Amount'.
+The class 'RobotProjectModel_Function' is a specialization of 'Instruction'.
+The class 'RobotProjectModel_Call' is a specialization of 'Instruction'.
+The class 'RobotProjectModel_Distance' is a specialization of 'Amount'.
+The class 'RobotProjectModel_Angle' is a specialization of 'Amount'.
+The class 'RobotProjectModel_SensorActivation' is a specialization of 'Condition'.
+The class 'RobotProjectModel_Grab' is a specialization of 'Instruction'.
+The class 'RobotProjectModel_Release' is a specialization of 'Instruction'.
+The class 'RobotProjectModel_Wait' is a specialization of 'TimedInstruction'.
+The class 'RobotProjectModel_If' is a specialization of 'Instruction'.
+The class 'RobotProjectModel_InstructionBlock' is a specialization of 'Instruction'.
+The class 'RobotProjectModel_DetectedObjectIs' is a specialization of 'Condition'.
+The class 'RobotProjectModel_HomeDirection' is a specialization of 'Angle'.
+The class 'RobotProjectModel_Print' is a specialization of 'Instruction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'RobotProjectModel_MoveStraight' and 'RobotProjectModel_Distance'. From 'RobotProjectModel_MoveStraight', the role 'RobotProjectModel_MoveStraight' has cardinality 0..*, and from 'RobotProjectModel_Distance', the role 'RobotProjectModel_Distance' has cardinality 0..*.
+An association connects 'RobotProjectModel_Instruction' and 'RobotProjectModel_Robot'. From 'RobotProjectModel_Instruction', the role 'RobotProjectModel_Instruction' has cardinality 0..*, and from 'RobotProjectModel_Robot', the role 'RobotProjectModel_Robot' has cardinality 0..*.
+An association connects 'RobotProjectModel_TimedInstruction' and 'RobotProjectModel_Duration'. From 'RobotProjectModel_TimedInstruction', the role 'RobotProjectModel_TimedInstruction' has cardinality 0..*, and from 'RobotProjectModel_Duration', the role 'RobotProjectModel_Duration' has cardinality 0..*.
+An association connects 'RobotProjectModel_Turn' and 'RobotProjectModel_Angle'. From 'RobotProjectModel_Turn', the role 'RobotProjectModel_Turn' has cardinality 0..*, and from 'RobotProjectModel_Angle', the role 'RobotProjectModel_Angle' has cardinality 0..*.
+An association connects 'RobotProjectModel_InstructionBlock' and 'RobotProjectModel_Function'. From 'RobotProjectModel_InstructionBlock', the role 'RobotProjectModel_InstructionBlock' has cardinality 0..*, and from 'RobotProjectModel_Function', the role 'RobotProjectModel_Function' has cardinality 0..*.
+An association connects 'RobotProjectModel_Call' and 'RobotProjectModel_Function'. From 'RobotProjectModel_Call', the role 'RobotProjectModel_Call' has cardinality 0..*, and from 'RobotProjectModel_Function', the role 'RobotProjectModel_Function6' has cardinality 0..*.
+An association connects 'RobotProjectModel_If' and 'RobotProjectModel_Condition'. From 'RobotProjectModel_If', the role 'RobotProjectModel_If' has cardinality 0..*, and from 'RobotProjectModel_Condition', the role 'RobotProjectModel_Condition' has cardinality 0..*.
+An association connects 'RobotProjectModel_If' and 'RobotProjectModel_InstructionBlock'. From 'RobotProjectModel_If', the role 'RobotProjectModel_If9' has cardinality 0..*, and from 'RobotProjectModel_InstructionBlock', the role 'RobotProjectModel_InstructionBlock10' has cardinality 0..*.
+An association connects 'RobotProjectModel_InstructionBlock' and 'RobotProjectModel_If'. From 'RobotProjectModel_InstructionBlock', the role 'RobotProjectModel_InstructionBlock13' has cardinality 0..*, and from 'RobotProjectModel_If', the role 'RobotProjectModel_If12' has cardinality 0..*.
+An association connects 'RobotProjectModel_InstructionBlock' and 'RobotProjectModel_Instruction'. From 'RobotProjectModel_InstructionBlock', the role 'RobotProjectModel_InstructionBlock15' has cardinality 0..*, and from 'RobotProjectModel_Instruction', the role 'RobotProjectModel_Instruction16' has cardinality 0..*.

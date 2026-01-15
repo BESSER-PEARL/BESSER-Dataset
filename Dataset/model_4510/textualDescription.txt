@@ -1,0 +1,106 @@
+The domain model 'arduinoml' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'arduinoml_AMLState' represents an important domain concept.
+It does not declare any attributes.
+
+'Brick' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoml_DigitalAction' represents an important domain concept.
+It has one attribute: 'dState', which is of type str.
+
+'arduinoml_AnalogCondition' represents an important domain concept.
+It has the following attributes: 'aComp', which is of type str; 'value', which is of type int.
+
+'arduinoml_AMLMachine' represents an important domain concept.
+It has one attribute: 'frequency', which is of type int.
+
+'arduinoml_AnalogSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoml_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'arduinoml_DigitalCondition' represents an important domain concept.
+It has one attribute: 'dState', which is of type str.
+
+'arduinoml_Brick' represents an important domain concept.
+It has one attribute: 'pin', which is of type int.
+
+'arduinoml_DigitalSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoml_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoml_TimeCondition' represents an important domain concept.
+It has the following attributes: 'time', which is of type int; 'tComp', which is of type str.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoml_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoml_AnalogActuator' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoml_AnalogAction' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoml_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoml_AnalogActionSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoml_DigitalActuator' represents an important domain concept.
+It does not declare any attributes.
+
+'AnalogAction' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoml_AnalogActionValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AnalogComparison' defines the following possible values: 'EQUAL', 'GREATER', 'GREATEREQ', 'LOWEREQ', 'LOWER'.
+The enumeration 'DigitalState' defines the following possible values: 'ON', 'OFF'.
+The enumeration 'TimeComparison' defines the following possible values: 'BEFORE', 'AFTER'.
+
+The model also captures inheritance relationships between classes.
+The class 'arduinoml_AMLState' is a specialization of 'NamedElement'.
+The class 'arduinoml_Brick' is a specialization of 'NamedElement'.
+The class 'arduinoml_DigitalSensor' is a specialization of 'Brick'.
+The class 'arduinoml_DigitalActuator' is a specialization of 'Brick'.
+The class 'arduinoml_AnalogSensor' is a specialization of 'Brick'.
+The class 'arduinoml_AnalogActuator' is a specialization of 'Brick'.
+The class 'arduinoml_DigitalCondition' is a specialization of 'Condition'.
+The class 'arduinoml_DigitalAction' is a specialization of 'Action'.
+The class 'arduinoml_TimeCondition' is a specialization of 'Condition'.
+The class 'arduinoml_AnalogCondition' is a specialization of 'Condition'.
+The class 'arduinoml_AnalogAction' is a specialization of 'Action'.
+The class 'arduinoml_AnalogActionValue' is a specialization of 'AnalogAction'.
+The class 'arduinoml_AnalogActionSensor' is a specialization of 'AnalogAction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'arduinoml_Brick' and 'arduinoml_AMLMachine'. From 'arduinoml_Brick', the role 'arduinoml_Brick' has cardinality 0..*, and from 'arduinoml_AMLMachine', the role 'arduinoml_AMLMachine' has cardinality 0..*.
+An association connects 'arduinoml_AMLState' and 'arduinoml_AMLMachine'. From 'arduinoml_AMLState', the role 'arduinoml_AMLState' has cardinality 0..*, and from 'arduinoml_AMLMachine', the role 'arduinoml_AMLMachine2' has cardinality 0..*.
+An association connects 'arduinoml_AMLMachine' and 'arduinoml_AMLState'. From 'arduinoml_AMLMachine', the role 'arduinoml_AMLMachine4' has cardinality 0..*, and from 'arduinoml_AMLState', the role 'arduinoml_AMLState5' has cardinality 0..*.
+An association connects 'arduinoml_Transition' and 'arduinoml_AMLState'. From 'arduinoml_Transition', the role 'arduinoml_Transition' has cardinality 0..*, and from 'arduinoml_AMLState', the role 'arduinoml_AMLState7' has cardinality 0..*.
+An association connects 'arduinoml_AMLState' and 'arduinoml_Action'. From 'arduinoml_AMLState', the role 'arduinoml_AMLState9' has cardinality 0..*, and from 'arduinoml_Action', the role 'arduinoml_Action' has cardinality 0..*.
+An association connects 'arduinoml_Transition' and 'arduinoml_AMLState'. From 'arduinoml_Transition', the role 'arduinoml_Transition11' has cardinality 0..*, and from 'arduinoml_AMLState', the role 'arduinoml_AMLState12' has cardinality 0..*.
+An association connects 'arduinoml_Transition' and 'arduinoml_Condition'. From 'arduinoml_Transition', the role 'arduinoml_Transition14' has cardinality 0..*, and from 'arduinoml_Condition', the role 'arduinoml_Condition' has cardinality 0..*.
+An association connects 'arduinoml_DigitalSensor' and 'arduinoml_DigitalCondition'. From 'arduinoml_DigitalSensor', the role 'arduinoml_DigitalSensor' has cardinality 0..*, and from 'arduinoml_DigitalCondition', the role 'arduinoml_DigitalCondition' has cardinality 0..*.
+An association connects 'arduinoml_DigitalActuator' and 'arduinoml_DigitalAction'. From 'arduinoml_DigitalActuator', the role 'arduinoml_DigitalActuator' has cardinality 0..*, and from 'arduinoml_DigitalAction', the role 'arduinoml_DigitalAction' has cardinality 0..*.
+An association connects 'arduinoml_AnalogCondition' and 'arduinoml_AnalogSensor'. From 'arduinoml_AnalogCondition', the role 'arduinoml_AnalogCondition' has cardinality 0..*, and from 'arduinoml_AnalogSensor', the role 'arduinoml_AnalogSensor' has cardinality 0..*.
+An association connects 'arduinoml_AnalogAction' and 'arduinoml_AnalogActuator'. From 'arduinoml_AnalogAction', the role 'arduinoml_AnalogAction' has cardinality 0..*, and from 'arduinoml_AnalogActuator', the role 'arduinoml_AnalogActuator' has cardinality 0..*.
+An association connects 'arduinoml_AnalogActionSensor' and 'arduinoml_AnalogSensor'. From 'arduinoml_AnalogActionSensor', the role 'arduinoml_AnalogActionSensor' has cardinality 0..*, and from 'arduinoml_AnalogSensor', the role 'arduinoml_AnalogSensor20' has cardinality 0..*.

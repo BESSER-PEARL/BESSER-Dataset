@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/akki55/useme/examples/gyro/org.gyro.metamodel/model/gyro.ecore

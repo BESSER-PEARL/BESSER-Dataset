@@ -1,0 +1,46 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'myDsl_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Property' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Datatype' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Namespace' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_File' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'myDsl_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl_Import' is a specialization of 'Element'.
+The class 'myDsl_Namespace' is a specialization of 'Element'.
+The class 'myDsl_Type' is a specialization of 'Element'.
+The class 'myDsl_Entity' is a specialization of 'Type'.
+The class 'myDsl_Datatype' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_File' and 'myDsl_Element'. From 'myDsl_File', the role 'myDsl_File' has cardinality 0..*, and from 'myDsl_Element', the role 'myDsl_Element' has cardinality 0..*.
+An association connects 'myDsl_Namespace' and 'myDsl_Element'. From 'myDsl_Namespace', the role 'myDsl_Namespace' has cardinality 0..*, and from 'myDsl_Element', the role 'myDsl_Element2' has cardinality 0..*.
+An association connects 'myDsl_Entity' and 'myDsl_Property'. From 'myDsl_Entity', the role 'myDsl_Entity' has cardinality 0..*, and from 'myDsl_Property', the role 'myDsl_Property' has cardinality 0..*.
+An association connects 'myDsl_Property' and 'myDsl_Type'. From 'myDsl_Property', the role 'myDsl_Property5' has cardinality 0..*, and from 'myDsl_Type', the role 'myDsl_Type' has cardinality 0..*.

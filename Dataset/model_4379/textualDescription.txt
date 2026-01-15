@@ -1,0 +1,57 @@
+The domain model 'euml' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'euml_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Relations' represents an important domain concept.
+It does not declare any attributes.
+
+'euml_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'euml_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'euml_Relations' represents an important domain concept.
+It does not declare any attributes.
+
+'euml_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'euml_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'euml_Dependecy' represents an important domain concept.
+It does not declare any attributes.
+
+'euml_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'euml_Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'euml_Package' is a specialization of 'NamedElement'.
+The class 'euml_Class' is a specialization of 'NamedElement'.
+The class 'euml_Dependecy' is a specialization of 'Relations'.
+The class 'euml_Attribute' is a specialization of 'NamedElement'.
+The class 'euml_Operation' is a specialization of 'NamedElement'.
+The class 'euml_Generalization' is a specialization of 'Relations'.
+The class 'euml_Realization' is a specialization of 'Relations'.
+
+Relationships between classes are modeled using associations.
+An association connects 'euml_Package' and 'euml_Class'. From 'euml_Package', the role 'euml_Package' has cardinality 0..*, and from 'euml_Class', the role 'euml_Class' has cardinality 0..*.
+An association connects 'euml_Package' and 'euml_Package'. From 'euml_Package', the role 'euml_Package1' has cardinality 0..*, and from 'euml_Package', the role 'euml_Package3' has cardinality 0..*.
+An association connects 'euml_Class' and 'euml_Dependecy'. From 'euml_Class', the role 'euml_Class5' has cardinality 0..*, and from 'euml_Dependecy', the role 'euml_Dependecy' has cardinality 0..*.
+An association connects 'euml_Class' and 'euml_Attribute'. From 'euml_Class', the role 'euml_Class7' has cardinality 0..*, and from 'euml_Attribute', the role 'euml_Attribute' has cardinality 0..*.
+An association connects 'euml_Class' and 'euml_Operation'. From 'euml_Class', the role 'euml_Class9' has cardinality 0..*, and from 'euml_Operation', the role 'euml_Operation' has cardinality 0..*.
+An association connects 'euml_Class' and 'euml_Realization'. From 'euml_Class', the role 'euml_Class11' has cardinality 0..*, and from 'euml_Realization', the role 'euml_Realization' has cardinality 0..*.
+An association connects 'euml_Class' and 'euml_Generalization'. From 'euml_Class', the role 'euml_Class13' has cardinality 0..*, and from 'euml_Generalization', the role 'euml_Generalization' has cardinality 0..*.
+An association connects 'euml_Attribute' and 'euml_Class'. From 'euml_Attribute', the role 'euml_Attribute15' has cardinality 0..*, and from 'euml_Class', the role 'euml_Class16' has cardinality 0..*.
+An association connects 'euml_Operation' and 'euml_Class'. From 'euml_Operation', the role 'euml_Operation18' has cardinality 0..*, and from 'euml_Class', the role 'euml_Class19' has cardinality 0..*.
+An association connects 'euml_NamedElement' and 'euml_Relations'. From 'euml_NamedElement', the role 'euml_NamedElement' has cardinality 0..*, and from 'euml_Relations', the role 'euml_Relations' has cardinality 0..*.

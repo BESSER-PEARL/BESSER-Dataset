@@ -1,0 +1,32 @@
+The domain model 'expression' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'expression_Expression' represents an important domain concept.
+It has one attribute: 'calculatedValue', which is of type float.
+
+'expression_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_IntegerExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'expression_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'expression_BinaryExpression' is a specialization of 'Expression'.
+The class 'expression_IntegerExpression' is a specialization of 'Expression'.
+The class 'expression_UnaryExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'expression_Expression' and 'expression_BinaryExpression'. From 'expression_Expression', the role 'expression_Expression' has cardinality 0..*, and from 'expression_BinaryExpression', the role 'expression_BinaryExpression' has cardinality 0..*.
+An association connects 'expression_Expression' and 'expression_BinaryExpression'. From 'expression_Expression', the role 'expression_Expression3' has cardinality 0..*, and from 'expression_BinaryExpression', the role 'expression_BinaryExpression2' has cardinality 0..*.
+An association connects 'expression_UnaryExpression' and 'expression_Expression'. From 'expression_UnaryExpression', the role 'expression_UnaryExpression' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression5' has cardinality 0..*.
+An association connects 'expression_ExpressionStatement' and 'expression_Expression'. From 'expression_ExpressionStatement', the role 'expression_ExpressionStatement' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression7' has cardinality 0..*.

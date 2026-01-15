@@ -1,0 +1,162 @@
+The domain model 'soopl' describes the core structural elements and their relationships within the system.
+
+The model defines 34 main class(es).
+
+'soopl_Class' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'soopl_ParameterBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_CallMethodOfProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_Property' represents an important domain concept.
+It has the following attributes: 'upperBound', which is of type int; 'lowerBound', which is of type int; 'multiValued', which is of type bool.
+
+'soopl_StateImplementationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_CallMethodOfParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_StatefulClass' represents an important domain concept.
+It does not declare any attributes.
+
+'Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_ComplexTypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Method' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_CallMethodAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CallMethodAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_SimpleTypeProperty' represents an important domain concept.
+It has one attribute: 'dataType', which is of type str.
+
+'soopl_IsInStateCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_StateClass' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_TransitionMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_SimpleTypeParameter' represents an important domain concept.
+It has one attribute: 'dataType', which is of type str.
+
+'soopl_PropertyIsInState' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_AssignProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_ParameterIsInState' represents an important domain concept.
+It does not declare any attributes.
+
+'IsInStateCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'soopl_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'soopl_ComplexTypeProperty' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DataType' defines the following possible values: 'Boolean', 'String', 'Integer'.
+
+The model also captures inheritance relationships between classes.
+The class 'soopl_Package' is a specialization of 'NamedElement'.
+The class 'soopl_Class' is a specialization of 'NamedElement'.
+The class 'soopl_StatefulClass' is a specialization of 'Class'.
+The class 'soopl_StateClass' is a specialization of 'Class'.
+The class 'soopl_StateImplementationClass' is a specialization of 'Class'.
+The class 'soopl_SimpleTypeProperty' is a specialization of 'Property'.
+The class 'soopl_ComplexTypeProperty' is a specialization of 'Property'.
+The class 'soopl_Method' is a specialization of 'NamedElement'.
+The class 'soopl_TransitionMethod' is a specialization of 'Method'.
+The class 'soopl_Property' is a specialization of 'NamedElement'.
+The class 'soopl_Parameter' is a specialization of 'NamedElement'.
+The class 'soopl_SimpleTypeParameter' is a specialization of 'Parameter'.
+The class 'soopl_ComplexTypeParameter' is a specialization of 'Parameter'.
+The class 'soopl_CallMethodAction' is a specialization of 'Action'.
+The class 'soopl_IsInStateCondition' is a specialization of 'Guard'.
+The class 'soopl_PropertyIsInState' is a specialization of 'IsInStateCondition'.
+The class 'soopl_ParameterIsInState' is a specialization of 'IsInStateCondition'.
+The class 'soopl_CallMethodOfProperty' is a specialization of 'CallMethodAction'.
+The class 'soopl_CallMethodOfParameter' is a specialization of 'CallMethodAction'.
+The class 'soopl_AssignProperty' is a specialization of 'Action'.
+
+Relationships between classes are modeled using associations.
+An association connects 'soopl_Class' and 'soopl_Package'. From 'soopl_Class', the role 'soopl_Class' has cardinality 0..*, and from 'soopl_Package', the role 'soopl_Package' has cardinality 0..*.
+An association connects 'soopl_Package' and 'soopl_Package'. From 'soopl_Package', the role 'parentPackage' has cardinality 0..*, and from 'soopl_Package', the role 'Package' has cardinality 0..*.
+An association connects 'soopl_Package' and 'soopl_Package'. From 'soopl_Package', the role 'packages' has cardinality 0..*, and from 'soopl_Package', the role 'Package5' has cardinality 0..*.
+An association connects 'soopl_Class' and 'soopl_Method'. From 'soopl_Class', the role 'soopl_Class7' has cardinality 0..*, and from 'soopl_Method', the role 'soopl_Method' has cardinality 0..*.
+An association connects 'soopl_Class' and 'soopl_Property'. From 'soopl_Class', the role 'soopl_Class9' has cardinality 0..*, and from 'soopl_Property', the role 'soopl_Property' has cardinality 0..*.
+An association connects 'soopl_Class' and 'soopl_Class'. From 'soopl_Class', the role 'soopl_Class10' has cardinality 0..*, and from 'soopl_Class', the role 'soopl_Class12' has cardinality 0..*.
+An association connects 'soopl_StateImplementationClass' and 'soopl_StatefulClass'. From 'soopl_StateImplementationClass', the role 'soopl_StateImplementationClass' has cardinality 0..*, and from 'soopl_StatefulClass', the role 'soopl_StatefulClass' has cardinality 0..*.
+An association connects 'soopl_StatefulClass' and 'soopl_StateClass'. From 'soopl_StatefulClass', the role 'soopl_StatefulClass15' has cardinality 0..*, and from 'soopl_StateClass', the role 'soopl_StateClass' has cardinality 0..*.
+An association connects 'soopl_StateClass' and 'soopl_StatefulClass'. From 'soopl_StateClass', the role 'soopl_StateClass17' has cardinality 0..*, and from 'soopl_StatefulClass', the role 'soopl_StatefulClass18' has cardinality 0..*.
+An association connects 'soopl_StateImplementationClass' and 'soopl_Method'. From 'soopl_StateImplementationClass', the role 'soopl_StateImplementationClass20' has cardinality 0..*, and from 'soopl_Method', the role 'soopl_Method21' has cardinality 0..*.
+An association connects 'soopl_StateImplementationClass' and 'soopl_StateClass'. From 'soopl_StateImplementationClass', the role 'soopl_StateImplementationClass23' has cardinality 0..*, and from 'soopl_StateClass', the role 'soopl_StateClass24' has cardinality 0..*.
+An association connects 'soopl_ComplexTypeProperty' and 'soopl_Class'. From 'soopl_ComplexTypeProperty', the role 'soopl_ComplexTypeProperty' has cardinality 0..*, and from 'soopl_Class', the role 'soopl_Class26' has cardinality 0..*.
+An association connects 'soopl_ComplexTypeProperty' and 'soopl_ComplexTypeProperty'. From 'soopl_ComplexTypeProperty', the role 'soopl_ComplexTypeProperty27' has cardinality 0..*, and from 'soopl_ComplexTypeProperty', the role 'soopl_ComplexTypeProperty29' has cardinality 0..*.
+An association connects 'soopl_Parameter' and 'soopl_Method'. From 'soopl_Parameter', the role 'soopl_Parameter' has cardinality 0..*, and from 'soopl_Method', the role 'soopl_Method31' has cardinality 0..*.
+An association connects 'soopl_Transition' and 'soopl_TransitionMethod'. From 'soopl_Transition', the role 'soopl_Transition' has cardinality 0..*, and from 'soopl_TransitionMethod', the role 'soopl_TransitionMethod' has cardinality 0..*.
+An association connects 'soopl_Action' and 'soopl_Transition'. From 'soopl_Action', the role 'soopl_Action' has cardinality 0..*, and from 'soopl_Transition', the role 'soopl_Transition34' has cardinality 0..*.
+An association connects 'soopl_Guard' and 'soopl_Transition'. From 'soopl_Guard', the role 'soopl_Guard' has cardinality 0..*, and from 'soopl_Transition', the role 'soopl_Transition36' has cardinality 0..*.
+An association connects 'soopl_Transition' and 'soopl_StateImplementationClass'. From 'soopl_Transition', the role 'soopl_Transition38' has cardinality 0..*, and from 'soopl_StateImplementationClass', the role 'soopl_StateImplementationClass39' has cardinality 0..*.
+An association connects 'soopl_Class' and 'soopl_ComplexTypeParameter'. From 'soopl_Class', the role 'soopl_Class41' has cardinality 0..*, and from 'soopl_ComplexTypeParameter', the role 'soopl_ComplexTypeParameter' has cardinality 0..*.
+An association connects 'soopl_CallMethodAction' and 'soopl_Method'. From 'soopl_CallMethodAction', the role 'soopl_CallMethodAction' has cardinality 0..*, and from 'soopl_Method', the role 'soopl_Method43' has cardinality 0..*.
+An association connects 'soopl_ParameterBinding' and 'soopl_CallMethodAction'. From 'soopl_ParameterBinding', the role 'soopl_ParameterBinding' has cardinality 0..*, and from 'soopl_CallMethodAction', the role 'soopl_CallMethodAction45' has cardinality 0..*.
+An association connects 'soopl_ParameterBinding' and 'soopl_Property'. From 'soopl_ParameterBinding', the role 'soopl_ParameterBinding47' has cardinality 0..*, and from 'soopl_Property', the role 'soopl_Property48' has cardinality 0..*.
+An association connects 'soopl_Parameter' and 'soopl_ParameterBinding'. From 'soopl_Parameter', the role 'soopl_Parameter51' has cardinality 0..*, and from 'soopl_ParameterBinding', the role 'soopl_ParameterBinding50' has cardinality 0..*.
+An association connects 'soopl_IsInStateCondition' and 'soopl_StateImplementationClass'. From 'soopl_IsInStateCondition', the role 'soopl_IsInStateCondition' has cardinality 0..*, and from 'soopl_StateImplementationClass', the role 'soopl_StateImplementationClass53' has cardinality 0..*.
+An association connects 'soopl_PropertyIsInState' and 'soopl_ComplexTypeProperty'. From 'soopl_PropertyIsInState', the role 'soopl_PropertyIsInState' has cardinality 0..*, and from 'soopl_ComplexTypeProperty', the role 'soopl_ComplexTypeProperty55' has cardinality 0..*.
+An association connects 'soopl_ParameterIsInState' and 'soopl_Parameter'. From 'soopl_ParameterIsInState', the role 'soopl_ParameterIsInState' has cardinality 0..*, and from 'soopl_Parameter', the role 'soopl_Parameter57' has cardinality 0..*.
+An association connects 'soopl_CallMethodOfProperty' and 'soopl_ComplexTypeProperty'. From 'soopl_CallMethodOfProperty', the role 'soopl_CallMethodOfProperty' has cardinality 0..*, and from 'soopl_ComplexTypeProperty', the role 'soopl_ComplexTypeProperty59' has cardinality 0..*.
+An association connects 'soopl_Parameter' and 'soopl_CallMethodOfParameter'. From 'soopl_Parameter', the role 'soopl_Parameter61' has cardinality 0..*, and from 'soopl_CallMethodOfParameter', the role 'soopl_CallMethodOfParameter' has cardinality 0..*.
+An association connects 'soopl_AssignProperty' and 'soopl_Parameter'. From 'soopl_AssignProperty', the role 'soopl_AssignProperty' has cardinality 0..*, and from 'soopl_Parameter', the role 'soopl_Parameter63' has cardinality 0..*.
+An association connects 'soopl_AssignProperty' and 'soopl_ComplexTypeProperty'. From 'soopl_AssignProperty', the role 'soopl_AssignProperty65' has cardinality 0..*, and from 'soopl_ComplexTypeProperty', the role 'soopl_ComplexTypeProperty66' has cardinality 0..*.

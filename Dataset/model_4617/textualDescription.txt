@@ -1,0 +1,79 @@
+The domain model 'Elements' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'Elements_IdentifiedElement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Elements_Element' represents an important domain concept.
+It has the following attributes: 'values', which is of type int; 'value', which is of type int.
+
+'Elements_StrictElement' represents an important domain concept.
+It has the following attributes: 'sValues', which is of type int; 'sValue', which is of type int.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'IdentifiedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Elements_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Elements_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'Elements_Root' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Elements_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'Elements_ReferencingNode' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Elements_NamedElement' is a specialization of 'IdentifiedElement'.
+The class 'Elements_Root' is a specialization of 'IdentifiedElement'.
+The class 'Elements_Element' is a specialization of 'NamedElement'.
+The class 'Elements_StrictElement' is a specialization of 'Element'.
+The class 'Elements_Node' is a specialization of 'NamedElement'.
+The class 'Elements_Edge' is a specialization of 'NamedElement'.
+The class 'Elements_ReferencingNode' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Elements_Root' and 'Elements_NamedElement'. From 'Elements_Root', the role 'Elements_Root' has cardinality 0..*, and from 'Elements_NamedElement', the role 'Elements_NamedElement' has cardinality 0..*.
+An association connects 'Elements_Element' and 'Elements_Element'. From 'Elements_Element', the role 'Elements_Element1' has cardinality 0..*, and from 'Elements_Element', the role 'Elements_Element' has cardinality 0..*.
+An association connects 'Elements_Element' and 'Elements_Element'. From 'Elements_Element', the role 'Elements_Element5' has cardinality 0..*, and from 'Elements_Element', the role 'Elements_Element3' has cardinality 0..*.
+An association connects 'Elements_Element' and 'Elements_Element'. From 'Elements_Element', the role 'upFromManyContent' has cardinality 0..*, and from 'Elements_Element', the role 'Element' has cardinality 0..*.
+An association connects 'Elements_Element' and 'Elements_Element'. From 'Elements_Element', the role 'Element10' has cardinality 0..*, and from 'Elements_Element', the role 'manyContentWithUp' has cardinality 0..*.
+An association connects 'Elements_Element' and 'Elements_Element'. From 'Elements_Element', the role 'upFromSingleContent' has cardinality 0..*, and from 'Elements_Element', the role 'Element13' has cardinality 0..*.
+An association connects 'Elements_Element' and 'Elements_Element'. From 'Elements_Element', the role 'singleContentWithUp' has cardinality 0..*, and from 'Elements_Element', the role 'Element16' has cardinality 0..*.
+An association connects 'Elements_Element' and 'Elements_Element'. From 'Elements_Element', the role 'Elements_Element17' has cardinality 0..*, and from 'Elements_Element', the role 'Elements_Element19' has cardinality 0..*.
+An association connects 'Elements_Element' and 'Elements_Element'. From 'Elements_Element', the role 'Elements_Element22' has cardinality 0..*, and from 'Elements_Element', the role 'Elements_Element20' has cardinality 0..*.
+An association connects 'Elements_Element' and 'Elements_Element'. From 'Elements_Element', the role 'singleFromSingleRef2' has cardinality 0..*, and from 'Elements_Element', the role 'Element25' has cardinality 0..*.
+An association connects 'Elements_Element' and 'Elements_Element'. From 'Elements_Element', the role 'Element28' has cardinality 0..*, and from 'Elements_Element', the role 'singleFromSingleRef1' has cardinality 0..*.
+An association connects 'Elements_Element' and 'Elements_Element'. From 'Elements_Element', the role 'Element31' has cardinality 0..*, and from 'Elements_Element', the role 'singleFromManyRef' has cardinality 0..*.
+An association connects 'Elements_Element' and 'Elements_Element'. From 'Elements_Element', the role 'Element34' has cardinality 0..*, and from 'Elements_Element', the role 'manyFromSingleRef' has cardinality 0..*.
+An association connects 'Elements_Element' and 'Elements_Element'. From 'Elements_Element', the role 'Element37' has cardinality 0..*, and from 'Elements_Element', the role 'manyFromManyRef2' has cardinality 0..*.
+An association connects 'Elements_Element' and 'Elements_Element'. From 'Elements_Element', the role 'manyFromManyRef1' has cardinality 0..*, and from 'Elements_Element', the role 'Element40' has cardinality 0..*.
+An association connects 'Elements_StrictElement' and 'Elements_Element'. From 'Elements_StrictElement', the role 'Elements_StrictElement' has cardinality 0..*, and from 'Elements_Element', the role 'Elements_Element42' has cardinality 0..*.
+An association connects 'Elements_Element' and 'Elements_StrictElement'. From 'Elements_Element', the role 'Elements_Element45' has cardinality 0..*, and from 'Elements_StrictElement', the role 'Elements_StrictElement44' has cardinality 0..*.
+An association connects 'Elements_Element' and 'Elements_StrictElement'. From 'Elements_Element', the role 'Elements_Element48' has cardinality 0..*, and from 'Elements_StrictElement', the role 'Elements_StrictElement47' has cardinality 0..*.
+An association connects 'Elements_StrictElement' and 'Elements_Element'. From 'Elements_StrictElement', the role 'Elements_StrictElement50' has cardinality 0..*, and from 'Elements_Element', the role 'Elements_Element51' has cardinality 0..*.
+An association connects 'Elements_StrictElement' and 'Elements_StrictElement'. From 'Elements_StrictElement', the role 'StrictElement' has cardinality 0..*, and from 'Elements_StrictElement', the role 'sSingleFromManyRef' has cardinality 0..*.
+An association connects 'Elements_StrictElement' and 'Elements_StrictElement'. From 'Elements_StrictElement', the role 'StrictElement56' has cardinality 0..*, and from 'Elements_StrictElement', the role 'sManyFromSingleRef' has cardinality 0..*.
+An association connects 'Elements_StrictElement' and 'Elements_StrictElement'. From 'Elements_StrictElement', the role 'sManyFromManyRef2' has cardinality 0..*, and from 'Elements_StrictElement', the role 'StrictElement59' has cardinality 0..*.
+An association connects 'Elements_StrictElement' and 'Elements_StrictElement'. From 'Elements_StrictElement', the role 'StrictElement62' has cardinality 0..*, and from 'Elements_StrictElement', the role 'sManyFromManyRef1' has cardinality 0..*.
+An association connects 'Elements_Edge' and 'Elements_Node'. From 'Elements_Edge', the role 'Edge' has cardinality 0..*, and from 'Elements_Node', the role 'target' has cardinality 0..*.
+An association connects 'Elements_Node' and 'Elements_Edge'. From 'Elements_Node', the role 'source' has cardinality 0..*, and from 'Elements_Edge', the role 'Edge65' has cardinality 0..*.
+An association connects 'Elements_NamedElement' and 'Elements_Node'. From 'Elements_NamedElement', the role 'Elements_NamedElement67' has cardinality 0..*, and from 'Elements_Node', the role 'Elements_Node' has cardinality 0..*.
+An association connects 'Elements_Node' and 'Elements_Edge'. From 'Elements_Node', the role 'Node' has cardinality 0..*, and from 'Elements_Edge', the role 'incoming' has cardinality 0..*.
+An association connects 'Elements_Edge' and 'Elements_Node'. From 'Elements_Edge', the role 'outgoing' has cardinality 0..*, and from 'Elements_Node', the role 'Node70' has cardinality 0..*.
+An association connects 'Elements_Node' and 'Elements_ReferencingNode'. From 'Elements_Node', the role 'Elements_Node72' has cardinality 0..*, and from 'Elements_ReferencingNode', the role 'Elements_ReferencingNode' has cardinality 0..*.

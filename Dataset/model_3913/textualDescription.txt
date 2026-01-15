@@ -1,0 +1,379 @@
+The domain model 'cm' describes the core structural elements and their relationships within the system.
+
+The model defines 88 main class(es).
+
+'cm_repository_CollectionDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Role' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_repository_ProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceProvidingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_seff_ProbabilisticBranchTransition' represents an important domain concept.
+It has one attribute: 'branchProbability', which is of type float.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_composition_InterfaceProvidingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_composition_AssemblyContext' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_composition_Identifier' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'ProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_composition_ProvidedDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_repository_CompositeDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_composition_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_repository_ComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_composition_System' represents an important domain concept.
+It does not declare any attributes.
+
+'Repository' represents an important domain concept.
+It does not declare any attributes.
+
+'ComposedStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_seff_BranchAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ProbabilisticBranchTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_InterfaceRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_seff_Automaton' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_composition_NamedElement' represents an important domain concept.
+It has one attribute: 'entityName', which is of type str.
+
+'RequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_ServiceEffectSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_repository_Repository' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'cm_repository_RepositoryComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'RepositoryComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_repository_PrimitiveDataType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'InnerDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'Signature' represents an important domain concept.
+It does not declare any attributes.
+
+'Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'repository_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'repository_ComponentTypeImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_composition_ComposedStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_seff_StopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_composition_SubSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_repository_CompositeComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_Automaton' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_seff_InternalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_ComposedStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_ComposedProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'InternalBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_seff_InternalBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_repository_ComponentTypeImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_repository_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'DelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'repository_RepositoryComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_composition_InterfaceProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceEffectSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_repository_InnerDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_InterfaceProvidingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_composition_ComposedProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'AssemblyContext' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_repository_ExceptionType' represents an important domain concept.
+It has the following attributes: 'message', which is of type str; 'name', which is of type str.
+
+'cm_repository_Signature' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_composition_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_InterfaceProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_composition_DelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_seff_StartAction' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractAction' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_repository_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_seff_ExternalCallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_seff_ServiceEffectSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ComponentTypeImplementation' represents an important domain concept.
+It does not declare any attributes.
+
+'Automaton' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_seff_AbstractAction' represents an important domain concept.
+It does not declare any attributes.
+
+'BranchAction' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_composition_AssemblyConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_seff_SimpleBehaviorSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_repository_RequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_repository_BasicComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_repository_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cm_repository_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ExceptionType' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_composition_InterfaceRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'cm_composition_RequiredDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PrimitiveType' defines the following possible values: 'INT', 'CHAR', 'STRING', 'LONG', 'BYTE', 'BOOL', 'DOUBLE'.
+
+The model also captures inheritance relationships between classes.
+The class 'cm_repository_BasicComponent' is a specialization of 'ComponentTypeImplementation'.
+The class 'cm_repository_ComponentTypeImplementation' is a specialization of 'RepositoryComponent'.
+The class 'cm_repository_RepositoryComponent' is a specialization of 'InterfaceProvidingRequiringEntity'.
+The class 'cm_repository_ComponentType' is a specialization of 'RepositoryComponent'.
+The class 'cm_repository_ProvidedRole' is a specialization of 'Role'.
+The class 'cm_repository_Role' is a specialization of 'Entity'.
+The class 'cm_repository_Repository' is a specialization of 'Entity'.
+The class 'cm_repository_Interface' is a specialization of 'Entity'.
+The class 'cm_repository_Signature' is a specialization of 'Entity'.
+The class 'cm_repository_RequiredRole' is a specialization of 'Role'.
+The class 'cm_repository_CompositeComponent' is a specialization of 'composition_ComposedProvidingRequiringEntity'.
+The class 'cm_repository_CompositeComponent' is a specialization of 'repository_ComponentTypeImplementation'.
+The class 'cm_repository_PrimitiveDataType' is a specialization of 'DataType'.
+The class 'cm_repository_CollectionDataType' is a specialization of 'composition_Entity'.
+The class 'cm_repository_CollectionDataType' is a specialization of 'repository_DataType'.
+The class 'cm_repository_CompositeDataType' is a specialization of 'composition_Entity'.
+The class 'cm_repository_CompositeDataType' is a specialization of 'repository_DataType'.
+The class 'cm_repository_InnerDeclaration' is a specialization of 'NamedElement'.
+The class 'cm_composition_DelegationConnector' is a specialization of 'Connector'.
+The class 'cm_composition_Connector' is a specialization of 'Entity'.
+The class 'cm_composition_ComposedStructure' is a specialization of 'Entity'.
+The class 'cm_composition_ProvidedDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'cm_composition_RequiredDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'cm_composition_AssemblyConnector' is a specialization of 'Connector'.
+The class 'cm_composition_AssemblyContext' is a specialization of 'Entity'.
+The class 'cm_composition_System' is a specialization of 'composition_Entity'.
+The class 'cm_composition_System' is a specialization of 'composition_ComposedProvidingRequiringEntity'.
+The class 'cm_composition_SubSystem' is a specialization of 'composition_ComposedProvidingRequiringEntity'.
+The class 'cm_composition_SubSystem' is a specialization of 'repository_RepositoryComponent'.
+The class 'cm_composition_InterfaceProvidingRequiringEntity' is a specialization of 'composition_InterfaceProvidingEntity'.
+The class 'cm_composition_InterfaceProvidingRequiringEntity' is a specialization of 'composition_InterfaceRequiringEntity'.
+The class 'cm_composition_InterfaceProvidingEntity' is a specialization of 'Entity'.
+The class 'cm_composition_InterfaceRequiringEntity' is a specialization of 'Entity'.
+The class 'cm_composition_ComposedProvidingRequiringEntity' is a specialization of 'composition_ComposedStructure'.
+The class 'cm_composition_ComposedProvidingRequiringEntity' is a specialization of 'composition_InterfaceProvidingRequiringEntity'.
+The class 'cm_composition_Entity' is a specialization of 'composition_NamedElement'.
+The class 'cm_composition_Entity' is a specialization of 'composition_Identifier'.
+The class 'cm_seff_AbstractAction' is a specialization of 'Entity'.
+The class 'cm_seff_StartAction' is a specialization of 'AbstractAction'.
+The class 'cm_seff_StopAction' is a specialization of 'AbstractAction'.
+The class 'cm_seff_ExternalCallAction' is a specialization of 'AbstractAction'.
+The class 'cm_seff_BranchAction' is a specialization of 'AbstractAction'.
+The class 'cm_seff_ProbabilisticBranchTransition' is a specialization of 'composition_Entity'.
+The class 'cm_seff_ProbabilisticBranchTransition' is a specialization of 'seff_Automaton'.
+The class 'cm_seff_SimpleBehaviorSpecification' is a specialization of 'seff_ServiceEffectSpecification'.
+The class 'cm_seff_SimpleBehaviorSpecification' is a specialization of 'seff_Automaton'.
+The class 'cm_seff_InternalAction' is a specialization of 'AbstractAction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ServiceEffectSpecification' and 'cm_repository_BasicComponent'. From 'ServiceEffectSpecification', the role 'seff' has cardinality 0..*, and from 'cm_repository_BasicComponent', the role 'ServiceEffectSpecification' has cardinality 0..*.
+An association connects 'cm_repository_ComponentTypeImplementation' and 'ComponentType'. From 'cm_repository_ComponentTypeImplementation', the role 'cm_repository_ComponentTypeImplementation' has cardinality 0..*, and from 'ComponentType', the role 'ComponentType' has cardinality 0..*.
+An association connects 'cm_repository_RepositoryComponent' and 'Repository'. From 'cm_repository_RepositoryComponent', the role 'Repository' has cardinality 0..*, and from 'Repository', the role 'repository' has cardinality 0..*.
+An association connects 'cm_repository_ProvidedRole' and 'InterfaceProvidingEntity'. From 'cm_repository_ProvidedRole', the role 'InterfaceProvidingEntity' has cardinality 0..*, and from 'InterfaceProvidingEntity', the role 'composition' has cardinality 0..*.
+An association connects 'Interface' and 'cm_repository_ProvidedRole'. From 'Interface', the role 'Interface' has cardinality 0..*, and from 'cm_repository_ProvidedRole', the role 'cm_repository_ProvidedRole' has cardinality 0..*.
+An association connects 'cm_repository_Parameter' and 'DataType'. From 'cm_repository_Parameter', the role 'cm_repository_Parameter' has cardinality 0..*, and from 'DataType', the role 'DataType' has cardinality 0..*.
+An association connects 'cm_repository_Parameter' and 'Signature'. From 'cm_repository_Parameter', the role 'Signature' has cardinality 0..*, and from 'Signature', the role 'repository7' has cardinality 0..*.
+An association connects 'Repository' and 'cm_repository_DataType'. From 'Repository', the role 'repository10' has cardinality 0..*, and from 'cm_repository_DataType', the role 'Repository9' has cardinality 0..*.
+An association connects 'RepositoryComponent' and 'cm_repository_Repository'. From 'RepositoryComponent', the role 'repository12' has cardinality 0..*, and from 'cm_repository_Repository', the role 'RepositoryComponent' has cardinality 0..*.
+An association connects 'cm_repository_Repository' and 'Interface'. From 'cm_repository_Repository', the role 'Interface14' has cardinality 0..*, and from 'Interface', the role 'repository15' has cardinality 0..*.
+An association connects 'cm_repository_Repository' and 'DataType'. From 'cm_repository_Repository', the role 'DataType17' has cardinality 0..*, and from 'DataType', the role 'repository18' has cardinality 0..*.
+An association connects 'cm_repository_Interface' and 'Interface'. From 'cm_repository_Interface', the role 'cm_repository_Interface' has cardinality 0..*, and from 'Interface', the role 'Interface20' has cardinality 0..*.
+An association connects 'cm_repository_Interface' and 'Repository'. From 'cm_repository_Interface', the role 'Repository22' has cardinality 0..*, and from 'Repository', the role 'repository23' has cardinality 0..*.
+An association connects 'cm_repository_Interface' and 'Signature'. From 'cm_repository_Interface', the role 'Signature25' has cardinality 0..*, and from 'Signature', the role 'repository26' has cardinality 0..*.
+An association connects 'ExceptionType' and 'cm_repository_Signature'. From 'ExceptionType', the role 'ExceptionType' has cardinality 0..*, and from 'cm_repository_Signature', the role 'cm_repository_Signature' has cardinality 0..*.
+An association connects 'cm_repository_Signature' and 'Parameter'. From 'cm_repository_Signature', the role 'Parameter' has cardinality 0..*, and from 'Parameter', the role 'repository29' has cardinality 0..*.
+An association connects 'DataType' and 'cm_repository_Signature'. From 'DataType', the role 'DataType32' has cardinality 0..*, and from 'cm_repository_Signature', the role 'cm_repository_Signature31' has cardinality 0..*.
+An association connects 'cm_repository_Signature' and 'Interface'. From 'cm_repository_Signature', the role 'Interface34' has cardinality 0..*, and from 'Interface', the role 'repository35' has cardinality 0..*.
+An association connects 'cm_repository_RequiredRole' and 'InterfaceRequiringEntity'. From 'cm_repository_RequiredRole', the role 'InterfaceRequiringEntity' has cardinality 0..*, and from 'InterfaceRequiringEntity', the role 'composition37' has cardinality 0..*.
+An association connects 'Interface' and 'cm_repository_RequiredRole'. From 'Interface', the role 'Interface39' has cardinality 0..*, and from 'cm_repository_RequiredRole', the role 'cm_repository_RequiredRole' has cardinality 0..*.
+An association connects 'DataType' and 'cm_repository_CollectionDataType'. From 'DataType', the role 'DataType41' has cardinality 0..*, and from 'cm_repository_CollectionDataType', the role 'cm_repository_CollectionDataType' has cardinality 0..*.
+An association connects 'cm_repository_CompositeDataType' and 'CompositeDataType'. From 'cm_repository_CompositeDataType', the role 'cm_repository_CompositeDataType' has cardinality 0..*, and from 'CompositeDataType', the role 'CompositeDataType' has cardinality 0..*.
+An association connects 'cm_repository_CompositeDataType' and 'InnerDeclaration'. From 'cm_repository_CompositeDataType', the role 'InnerDeclaration' has cardinality 0..*, and from 'InnerDeclaration', the role 'repository44' has cardinality 0..*.
+An association connects 'DataType' and 'cm_repository_InnerDeclaration'. From 'DataType', the role 'DataType46' has cardinality 0..*, and from 'cm_repository_InnerDeclaration', the role 'cm_repository_InnerDeclaration' has cardinality 0..*.
+An association connects 'CompositeDataType' and 'cm_repository_InnerDeclaration'. From 'CompositeDataType', the role 'repository49' has cardinality 0..*, and from 'cm_repository_InnerDeclaration', the role 'CompositeDataType48' has cardinality 0..*.
+An association connects 'cm_composition_Connector' and 'ComposedStructure'. From 'cm_composition_Connector', the role 'ComposedStructure' has cardinality 0..*, and from 'ComposedStructure', the role 'composition51' has cardinality 0..*.
+An association connects 'cm_composition_ComposedStructure' and 'AssemblyContext'. From 'cm_composition_ComposedStructure', the role 'AssemblyContext' has cardinality 0..*, and from 'AssemblyContext', the role 'composition53' has cardinality 0..*.
+An association connects 'Connector' and 'cm_composition_ComposedStructure'. From 'Connector', the role 'composition55' has cardinality 0..*, and from 'cm_composition_ComposedStructure', the role 'Connector' has cardinality 0..*.
+An association connects 'cm_composition_ProvidedDelegationConnector' and 'ProvidedRole'. From 'cm_composition_ProvidedDelegationConnector', the role 'cm_composition_ProvidedDelegationConnector' has cardinality 0..*, and from 'ProvidedRole', the role 'ProvidedRole' has cardinality 0..*.
+An association connects 'cm_composition_ProvidedDelegationConnector' and 'ProvidedRole'. From 'cm_composition_ProvidedDelegationConnector', the role 'cm_composition_ProvidedDelegationConnector58' has cardinality 0..*, and from 'ProvidedRole', the role 'ProvidedRole59' has cardinality 0..*.
+An association connects 'AssemblyContext' and 'cm_composition_ProvidedDelegationConnector'. From 'AssemblyContext', the role 'AssemblyContext62' has cardinality 0..*, and from 'cm_composition_ProvidedDelegationConnector', the role 'cm_composition_ProvidedDelegationConnector61' has cardinality 0..*.
+An association connects 'RequiredRole' and 'cm_composition_RequiredDelegationConnector'. From 'RequiredRole', the role 'RequiredRole' has cardinality 0..*, and from 'cm_composition_RequiredDelegationConnector', the role 'cm_composition_RequiredDelegationConnector' has cardinality 0..*.
+An association connects 'cm_composition_RequiredDelegationConnector' and 'RequiredRole'. From 'cm_composition_RequiredDelegationConnector', the role 'cm_composition_RequiredDelegationConnector65' has cardinality 0..*, and from 'RequiredRole', the role 'RequiredRole66' has cardinality 0..*.
+An association connects 'cm_composition_RequiredDelegationConnector' and 'AssemblyContext'. From 'cm_composition_RequiredDelegationConnector', the role 'cm_composition_RequiredDelegationConnector68' has cardinality 0..*, and from 'AssemblyContext', the role 'AssemblyContext69' has cardinality 0..*.
+An association connects 'cm_composition_AssemblyConnector' and 'AssemblyContext'. From 'cm_composition_AssemblyConnector', the role 'cm_composition_AssemblyConnector' has cardinality 0..*, and from 'AssemblyContext', the role 'AssemblyContext71' has cardinality 0..*.
+An association connects 'cm_composition_AssemblyConnector' and 'AssemblyContext'. From 'cm_composition_AssemblyConnector', the role 'cm_composition_AssemblyConnector73' has cardinality 0..*, and from 'AssemblyContext', the role 'AssemblyContext74' has cardinality 0..*.
+An association connects 'cm_composition_AssemblyConnector' and 'ProvidedRole'. From 'cm_composition_AssemblyConnector', the role 'cm_composition_AssemblyConnector76' has cardinality 0..*, and from 'ProvidedRole', the role 'ProvidedRole77' has cardinality 0..*.
+An association connects 'cm_composition_AssemblyConnector' and 'RequiredRole'. From 'cm_composition_AssemblyConnector', the role 'cm_composition_AssemblyConnector79' has cardinality 0..*, and from 'RequiredRole', the role 'RequiredRole80' has cardinality 0..*.
+An association connects 'ComposedStructure' and 'cm_composition_AssemblyContext'. From 'ComposedStructure', the role 'composition83' has cardinality 0..*, and from 'cm_composition_AssemblyContext', the role 'ComposedStructure82' has cardinality 0..*.
+An association connects 'RepositoryComponent' and 'cm_composition_AssemblyContext'. From 'RepositoryComponent', the role 'RepositoryComponent85' has cardinality 0..*, and from 'cm_composition_AssemblyContext', the role 'cm_composition_AssemblyContext' has cardinality 0..*.
+An association connects 'ProvidedRole' and 'cm_composition_InterfaceProvidingEntity'. From 'ProvidedRole', the role 'repository88' has cardinality 0..*, and from 'cm_composition_InterfaceProvidingEntity', the role 'ProvidedRole87' has cardinality 0..*.
+An association connects 'RequiredRole' and 'cm_composition_InterfaceRequiringEntity'. From 'RequiredRole', the role 'repository91' has cardinality 0..*, and from 'cm_composition_InterfaceRequiringEntity', the role 'RequiredRole90' has cardinality 0..*.
+An association connects 'Signature' and 'cm_seff_ServiceEffectSpecification'. From 'Signature', the role 'Signature93' has cardinality 0..*, and from 'cm_seff_ServiceEffectSpecification', the role 'cm_seff_ServiceEffectSpecification' has cardinality 0..*.
+An association connects 'BasicComponent' and 'cm_seff_ServiceEffectSpecification'. From 'BasicComponent', the role 'repository95' has cardinality 0..*, and from 'cm_seff_ServiceEffectSpecification', the role 'BasicComponent' has cardinality 0..*.
+An association connects 'cm_seff_ServiceEffectSpecification' and 'InternalBehaviour'. From 'cm_seff_ServiceEffectSpecification', the role 'InternalBehaviour' has cardinality 0..*, and from 'InternalBehaviour', the role 'seff97' has cardinality 0..*.
+An association connects 'ServiceEffectSpecification' and 'cm_seff_InternalBehaviour'. From 'ServiceEffectSpecification', the role 'seff100' has cardinality 0..*, and from 'cm_seff_InternalBehaviour', the role 'ServiceEffectSpecification99' has cardinality 0..*.
+An association connects 'cm_seff_InternalBehaviour' and 'ProbabilisticBranchTransition'. From 'cm_seff_InternalBehaviour', the role 'cm_seff_InternalBehaviour' has cardinality 0..*, and from 'ProbabilisticBranchTransition', the role 'ProbabilisticBranchTransition' has cardinality 0..*.
+An association connects 'AbstractAction' and 'cm_seff_InternalBehaviour'. From 'AbstractAction', the role 'seff103' has cardinality 0..*, and from 'cm_seff_InternalBehaviour', the role 'AbstractAction' has cardinality 0..*.
+An association connects 'AbstractAction' and 'cm_seff_AbstractAction'. From 'AbstractAction', the role 'seff106' has cardinality 0..*, and from 'cm_seff_AbstractAction', the role 'AbstractAction105' has cardinality 0..*.
+An association connects 'AbstractAction' and 'cm_seff_AbstractAction'. From 'AbstractAction', the role 'seff109' has cardinality 0..*, and from 'cm_seff_AbstractAction', the role 'AbstractAction108' has cardinality 0..*.
+An association connects 'cm_seff_AbstractAction' and 'InternalBehaviour'. From 'cm_seff_AbstractAction', the role 'InternalBehaviour111' has cardinality 0..*, and from 'InternalBehaviour', the role 'seff112' has cardinality 0..*.
+An association connects 'Automaton' and 'cm_seff_AbstractAction'. From 'Automaton', the role 'seff114' has cardinality 0..*, and from 'cm_seff_AbstractAction', the role 'Automaton' has cardinality 0..*.
+An association connects 'cm_seff_ExternalCallAction' and 'Signature'. From 'cm_seff_ExternalCallAction', the role 'cm_seff_ExternalCallAction' has cardinality 0..*, and from 'Signature', the role 'Signature116' has cardinality 0..*.
+An association connects 'RequiredRole' and 'cm_seff_ExternalCallAction'. From 'RequiredRole', the role 'RequiredRole119' has cardinality 0..*, and from 'cm_seff_ExternalCallAction', the role 'cm_seff_ExternalCallAction118' has cardinality 0..*.
+An association connects 'cm_seff_BranchAction' and 'ProbabilisticBranchTransition'. From 'cm_seff_BranchAction', the role 'ProbabilisticBranchTransition121' has cardinality 0..*, and from 'ProbabilisticBranchTransition', the role 'seff122' has cardinality 0..*.
+An association connects 'BranchAction' and 'cm_seff_ProbabilisticBranchTransition'. From 'BranchAction', the role 'seff124' has cardinality 0..*, and from 'cm_seff_ProbabilisticBranchTransition', the role 'BranchAction' has cardinality 0..*.
+An association connects 'ProbabilisticBranchTransition' and 'cm_seff_SimpleBehaviorSpecification'. From 'ProbabilisticBranchTransition', the role 'ProbabilisticBranchTransition126' has cardinality 0..*, and from 'cm_seff_SimpleBehaviorSpecification', the role 'cm_seff_SimpleBehaviorSpecification' has cardinality 0..*.
+An association connects 'AbstractAction' and 'cm_seff_Automaton'. From 'AbstractAction', the role 'seff129' has cardinality 0..*, and from 'cm_seff_Automaton', the role 'AbstractAction128' has cardinality 0..*.

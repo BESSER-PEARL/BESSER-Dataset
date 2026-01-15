@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ecsoya/org.soyatec.tooling/toolings/org.soyatec.tooling.di/model/di.ecore

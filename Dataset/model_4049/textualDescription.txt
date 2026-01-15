@@ -1,0 +1,45 @@
+The domain model 'necsis14_classdiagram' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'necsis14_classdiagram_Association' represents an important domain concept.
+It has the following attributes: 'upperBound', which is of type int; 'lowerBound', which is of type int.
+
+'necsis14_classdiagram__QColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'necsis14_classdiagram_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'necsis14_classdiagram_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'necsis14_classdiagram_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'necsis14_classdiagram__QTable' represents an important domain concept.
+It does not declare any attributes.
+
+'necsis14_classdiagram_ClassDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'necsis14_classdiagram_Class' is a specialization of 'NamedElement'.
+The class 'necsis14_classdiagram_Association' is a specialization of 'NamedElement'.
+The class 'necsis14_classdiagram_Attribute' is a specialization of 'NamedElement'.
+The class 'necsis14_classdiagram__QTable' is a specialization of 'NamedElement'.
+The class 'necsis14_classdiagram__QColumn' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'necsis14_classdiagram_Class' and 'necsis14_classdiagram_ClassDiagram'. From 'necsis14_classdiagram_Class', the role 'necsis14_classdiagram_Class' has cardinality 0..*, and from 'necsis14_classdiagram_ClassDiagram', the role 'necsis14_classdiagram_ClassDiagram' has cardinality 0..*.
+An association connects 'necsis14_classdiagram_ClassDiagram' and 'necsis14_classdiagram_Association'. From 'necsis14_classdiagram_ClassDiagram', the role 'necsis14_classdiagram_ClassDiagram2' has cardinality 0..*, and from 'necsis14_classdiagram_Association', the role 'necsis14_classdiagram_Association' has cardinality 0..*.
+An association connects 'necsis14_classdiagram__QTable' and 'necsis14_classdiagram_ClassDiagram'. From 'necsis14_classdiagram__QTable', the role 'necsis14_classdiagram__QTable' has cardinality 0..*, and from 'necsis14_classdiagram_ClassDiagram', the role 'necsis14_classdiagram_ClassDiagram4' has cardinality 0..*.
+An association connects 'necsis14_classdiagram_Class' and 'necsis14_classdiagram_Class'. From 'necsis14_classdiagram_Class', the role 'necsis14_classdiagram_Class7' has cardinality 0..*, and from 'necsis14_classdiagram_Class', the role 'necsis14_classdiagram_Class5' has cardinality 0..*.
+An association connects 'necsis14_classdiagram_Attribute' and 'necsis14_classdiagram_Class'. From 'necsis14_classdiagram_Attribute', the role 'necsis14_classdiagram_Attribute' has cardinality 0..*, and from 'necsis14_classdiagram_Class', the role 'necsis14_classdiagram_Class9' has cardinality 0..*.
+An association connects 'necsis14_classdiagram_Class' and 'necsis14_classdiagram_Association'. From 'necsis14_classdiagram_Class', the role 'necsis14_classdiagram_Class12' has cardinality 0..*, and from 'necsis14_classdiagram_Association', the role 'necsis14_classdiagram_Association11' has cardinality 0..*.
+An association connects 'necsis14_classdiagram_Association' and 'necsis14_classdiagram_Class'. From 'necsis14_classdiagram_Association', the role 'necsis14_classdiagram_Association14' has cardinality 0..*, and from 'necsis14_classdiagram_Class', the role 'necsis14_classdiagram_Class15' has cardinality 0..*.
+An association connects 'necsis14_classdiagram__QColumn' and 'necsis14_classdiagram__QTable'. From 'necsis14_classdiagram__QColumn', the role 'necsis14_classdiagram__QColumn' has cardinality 0..*, and from 'necsis14_classdiagram__QTable', the role 'necsis14_classdiagram__QTable17' has cardinality 0..*.
+An association connects 'necsis14_classdiagram__QColumn' and 'necsis14_classdiagram__QTable'. From 'necsis14_classdiagram__QColumn', the role 'necsis14_classdiagram__QColumn20' has cardinality 0..*, and from 'necsis14_classdiagram__QTable', the role 'necsis14_classdiagram__QTable19' has cardinality 0..*.

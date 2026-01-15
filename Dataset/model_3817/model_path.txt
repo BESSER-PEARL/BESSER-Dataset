@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/mohrndorf/dfa-example/de.hu.berlin.dfa.model/model/dfamodel.ecore

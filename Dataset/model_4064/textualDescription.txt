@@ -1,0 +1,59 @@
+The domain model 'simpleuml' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'simpleuml_PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_PackageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_UMLModelElement' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'name', which is of type str.
+
+'simpleuml_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleuml_Attribute' is a specialization of 'UMLModelElement'.
+The class 'simpleuml_Association' is a specialization of 'PackageElement'.
+The class 'simpleuml_Class' is a specialization of 'Classifier'.
+The class 'simpleuml_Classifier' is a specialization of 'PackageElement'.
+The class 'simpleuml_Package' is a specialization of 'UMLModelElement'.
+The class 'simpleuml_PackageElement' is a specialization of 'UMLModelElement'.
+The class 'simpleuml_PrimitiveDataType' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleuml_Attribute' and 'simpleuml_Classifier'. From 'simpleuml_Attribute', the role 'typeOpposite' has cardinality 0..*, and from 'simpleuml_Classifier', the role 'Classifier' has cardinality 0..*.
+An association connects 'simpleuml_Class' and 'simpleuml_Attribute'. From 'simpleuml_Class', the role 'Class' has cardinality 0..*, and from 'simpleuml_Attribute', the role 'attributes' has cardinality 0..*.
+An association connects 'simpleuml_Association' and 'simpleuml_Class'. From 'simpleuml_Association', the role 'forward' has cardinality 0..*, and from 'simpleuml_Class', the role 'Class3' has cardinality 0..*.
+An association connects 'simpleuml_Association' and 'simpleuml_Class'. From 'simpleuml_Association', the role 'simpleuml_Association' has cardinality 0..*, and from 'simpleuml_Class', the role 'simpleuml_Class' has cardinality 0..*.
+An association connects 'simpleuml_Class' and 'simpleuml_Class'. From 'simpleuml_Class', the role 'generalOpposite' has cardinality 0..*, and from 'simpleuml_Class', the role 'Class7' has cardinality 0..*.
+An association connects 'simpleuml_Class' and 'simpleuml_Association'. From 'simpleuml_Class', the role 'source' has cardinality 0..*, and from 'simpleuml_Association', the role 'Association' has cardinality 0..*.
+An association connects 'simpleuml_Class' and 'simpleuml_Attribute'. From 'simpleuml_Class', the role 'owner' has cardinality 0..*, and from 'simpleuml_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'simpleuml_Association' and 'simpleuml_Class'. From 'simpleuml_Association', the role 'simpleuml_Association12' has cardinality 0..*, and from 'simpleuml_Class', the role 'simpleuml_Class11' has cardinality 0..*.
+An association connects 'simpleuml_Class' and 'simpleuml_Class'. From 'simpleuml_Class', the role 'Class15' has cardinality 0..*, and from 'simpleuml_Class', the role 'general' has cardinality 0..*.
+An association connects 'simpleuml_Attribute' and 'simpleuml_Classifier'. From 'simpleuml_Attribute', the role 'Attribute17' has cardinality 0..*, and from 'simpleuml_Classifier', the role 'type' has cardinality 0..*.
+An association connects 'simpleuml_Package' and 'simpleuml_PackageElement'. From 'simpleuml_Package', the role 'namespace' has cardinality 0..*, and from 'simpleuml_PackageElement', the role 'PackageElement' has cardinality 0..*.
+An association connects 'simpleuml_Package' and 'simpleuml_PackageElement'. From 'simpleuml_Package', the role 'Package' has cardinality 0..*, and from 'simpleuml_PackageElement', the role 'elements' has cardinality 0..*.

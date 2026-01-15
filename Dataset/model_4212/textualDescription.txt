@@ -1,0 +1,33 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'myDsl_Lambda' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Operation' represents an important domain concept.
+It has the following attributes: 'value2', which is of type int; 'op', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Define' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Conditional' represents an important domain concept.
+It has the following attributes: 'value2', which is of type int; 'value3', which is of type int; 'name', which is of type str.
+
+'myDsl_Expression' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl_Define' is a specialization of 'Expression'.
+The class 'myDsl_Lambda' is a specialization of 'Expression'.
+The class 'myDsl_Conditional' is a specialization of 'Expression'.
+The class 'myDsl_Operation' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_Model' and 'myDsl_Expression'. From 'myDsl_Model', the role 'myDsl_Model' has cardinality 0..*, and from 'myDsl_Expression', the role 'myDsl_Expression' has cardinality 0..*.

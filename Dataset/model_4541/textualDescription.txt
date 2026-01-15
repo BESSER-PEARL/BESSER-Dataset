@@ -1,0 +1,227 @@
+The domain model 'units' describes the core structural elements and their relationships within the system.
+
+The model defines 52 main class(es).
+
+'units_AngleEquals' represents an important domain concept.
+It does not declare any attributes.
+
+'AngleOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'QuantityHomogenousOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'units_LengthDistinct' represents an important domain concept.
+It does not declare any attributes.
+
+'units_QuantityArithmeticOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'units_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'units_LengthAdd' represents an important domain concept.
+It does not declare any attributes.
+
+'units_QuantityScalarOperation' represents an important domain concept.
+It has one attribute: 'rhs', which is of type float.
+
+'units_AngleDistinct' represents an important domain concept.
+It does not declare any attributes.
+
+'units_Meter' represents an important domain concept.
+It does not declare any attributes.
+
+'units_LengthSmaller' represents an important domain concept.
+It does not declare any attributes.
+
+'units_Millimeter' represents an important domain concept.
+It does not declare any attributes.
+
+'MetricSystemUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'units_QuantityComparisonOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'Quantity' represents an important domain concept.
+It does not declare any attributes.
+
+'units_MetricSystemUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'QuantityOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'units_AngleSmaller' represents an important domain concept.
+It does not declare any attributes.
+
+'units_LengthSubtract' represents an important domain concept.
+It does not declare any attributes.
+
+'units_Quantity' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'units_LengthScalarMultiply' represents an important domain concept.
+It does not declare any attributes.
+
+'units_AngleScalarDivide' represents an important domain concept.
+It does not declare any attributes.
+
+'units_AngleGreater' represents an important domain concept.
+It does not declare any attributes.
+
+'units_QuantityOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'units_LengthOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'units_Length' represents an important domain concept.
+It does not declare any attributes.
+
+'units_AngleAdd' represents an important domain concept.
+It does not declare any attributes.
+
+'units_AngleUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'units_LengthGreater' represents an important domain concept.
+It does not declare any attributes.
+
+'units_AngleSubtract' represents an important domain concept.
+It does not declare any attributes.
+
+'units_Foot' represents an important domain concept.
+It does not declare any attributes.
+
+'units_Degree' represents an important domain concept.
+It does not declare any attributes.
+
+'units_Turn' represents an important domain concept.
+It does not declare any attributes.
+
+'LengthUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'units_QuantityHomogenousOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'units_AngleOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'units_Inch' represents an important domain concept.
+It does not declare any attributes.
+
+'units_Angle' represents an important domain concept.
+It does not declare any attributes.
+
+'AngleUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'units_LengthEquals' represents an important domain concept.
+It does not declare any attributes.
+
+'units_AngleScalarMultiply' represents an important domain concept.
+It does not declare any attributes.
+
+'units_Yard' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperialSystemUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'units_Centimeter' represents an important domain concept.
+It does not declare any attributes.
+
+'LengthOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'units_LengthUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'units_LengthScalarDivide' represents an important domain concept.
+It does not declare any attributes.
+
+'units_Radian' represents an important domain concept.
+It does not declare any attributes.
+
+'units_Gradian' represents an important domain concept.
+It does not declare any attributes.
+
+'units_ImperialSystemUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'QuantityScalarOperation' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'units_LengthUnit' is a specialization of 'Unit'.
+The class 'units_Centimeter' is a specialization of 'MetricSystemUnit'.
+The class 'units_Centimeter' is a specialization of 'LengthUnit'.
+The class 'units_Millimeter' is a specialization of 'MetricSystemUnit'.
+The class 'units_Millimeter' is a specialization of 'LengthUnit'.
+The class 'units_Meter' is a specialization of 'MetricSystemUnit'.
+The class 'units_Meter' is a specialization of 'LengthUnit'.
+The class 'units_Foot' is a specialization of 'ImperialSystemUnit'.
+The class 'units_Foot' is a specialization of 'LengthUnit'.
+The class 'units_Inch' is a specialization of 'ImperialSystemUnit'.
+The class 'units_Inch' is a specialization of 'LengthUnit'.
+The class 'units_Yard' is a specialization of 'ImperialSystemUnit'.
+The class 'units_Yard' is a specialization of 'LengthUnit'.
+The class 'units_MetricSystemUnit' is a specialization of 'Unit'.
+The class 'units_ImperialSystemUnit' is a specialization of 'Unit'.
+The class 'units_AngleUnit' is a specialization of 'Unit'.
+The class 'units_Radian' is a specialization of 'AngleUnit'.
+The class 'units_Degree' is a specialization of 'AngleUnit'.
+The class 'units_Turn' is a specialization of 'AngleUnit'.
+The class 'units_Gradian' is a specialization of 'AngleUnit'.
+The class 'units_Length' is a specialization of 'Quantity'.
+The class 'units_Angle' is a specialization of 'Quantity'.
+The class 'units_LengthOperation' is a specialization of 'QuantityOperation'.
+The class 'units_LengthAdd' is a specialization of 'LengthOperation'.
+The class 'units_LengthAdd' is a specialization of 'QuantityHomogenousOperation'.
+The class 'units_LengthSubtract' is a specialization of 'LengthOperation'.
+The class 'units_LengthSubtract' is a specialization of 'QuantityHomogenousOperation'.
+The class 'units_LengthScalarMultiply' is a specialization of 'LengthOperation'.
+The class 'units_LengthScalarMultiply' is a specialization of 'QuantityScalarOperation'.
+The class 'units_LengthScalarDivide' is a specialization of 'LengthOperation'.
+The class 'units_LengthScalarDivide' is a specialization of 'QuantityScalarOperation'.
+The class 'units_LengthEquals' is a specialization of 'LengthOperation'.
+The class 'units_LengthEquals' is a specialization of 'QuantityHomogenousOperation'.
+The class 'units_LengthDistinct' is a specialization of 'LengthOperation'.
+The class 'units_LengthDistinct' is a specialization of 'QuantityHomogenousOperation'.
+The class 'units_LengthSmaller' is a specialization of 'LengthOperation'.
+The class 'units_LengthSmaller' is a specialization of 'QuantityHomogenousOperation'.
+The class 'units_LengthGreater' is a specialization of 'LengthOperation'.
+The class 'units_LengthGreater' is a specialization of 'QuantityHomogenousOperation'.
+The class 'units_AngleOperation' is a specialization of 'QuantityOperation'.
+The class 'units_AngleAdd' is a specialization of 'AngleOperation'.
+The class 'units_AngleAdd' is a specialization of 'QuantityHomogenousOperation'.
+The class 'units_AngleSubtract' is a specialization of 'AngleOperation'.
+The class 'units_AngleSubtract' is a specialization of 'QuantityHomogenousOperation'.
+The class 'units_AngleScalarMultiply' is a specialization of 'AngleOperation'.
+The class 'units_AngleScalarMultiply' is a specialization of 'QuantityScalarOperation'.
+The class 'units_AngleScalarDivide' is a specialization of 'AngleOperation'.
+The class 'units_AngleScalarDivide' is a specialization of 'QuantityScalarOperation'.
+The class 'units_AngleEquals' is a specialization of 'AngleOperation'.
+The class 'units_AngleEquals' is a specialization of 'QuantityHomogenousOperation'.
+The class 'units_AngleDistinct' is a specialization of 'AngleOperation'.
+The class 'units_AngleDistinct' is a specialization of 'QuantityHomogenousOperation'.
+The class 'units_AngleSmaller' is a specialization of 'AngleOperation'.
+The class 'units_AngleSmaller' is a specialization of 'QuantityHomogenousOperation'.
+The class 'units_AngleGreater' is a specialization of 'AngleOperation'.
+The class 'units_AngleGreater' is a specialization of 'QuantityHomogenousOperation'.
+The class 'units_QuantityArithmeticOperation' is a specialization of 'QuantityOperation'.
+The class 'units_QuantityComparisonOperation' is a specialization of 'QuantityOperation'.
+The class 'units_QuantityHomogenousOperation' is a specialization of 'QuantityOperation'.
+The class 'units_QuantityScalarOperation' is a specialization of 'QuantityOperation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'units_Unit' and 'units_Quantity'. From 'units_Unit', the role 'units_Unit' has cardinality 0..*, and from 'units_Quantity', the role 'units_Quantity' has cardinality 0..*.
+An association connects 'units_QuantityHomogenousOperation' and 'units_Quantity'. From 'units_QuantityHomogenousOperation', the role 'units_QuantityHomogenousOperation' has cardinality 0..*, and from 'units_Quantity', the role 'units_Quantity2' has cardinality 0..*.
+An association connects 'units_Quantity' and 'units_QuantityHomogenousOperation'. From 'units_Quantity', the role 'units_Quantity5' has cardinality 0..*, and from 'units_QuantityHomogenousOperation', the role 'units_QuantityHomogenousOperation4' has cardinality 0..*.
+An association connects 'units_QuantityScalarOperation' and 'units_Quantity'. From 'units_QuantityScalarOperation', the role 'units_QuantityScalarOperation' has cardinality 0..*, and from 'units_Quantity', the role 'units_Quantity7' has cardinality 0..*.

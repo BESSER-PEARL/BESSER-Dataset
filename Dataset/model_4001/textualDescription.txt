@@ -1,0 +1,66 @@
+The domain model 'tallerE1Java' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'tallerE1Java_DAOClass' represents an important domain concept.
+It does not declare any attributes.
+
+'tallerE1Java_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'tallerE1Java_Attribute' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'name', which is of type str.
+
+'tallerE1Java_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tallerE1Java_Package' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tallerE1Java_EntityClass' represents an important domain concept.
+It does not declare any attributes.
+
+'tallerE1Java_Container' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'tallerE1Java_Annotation' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'content', which is of type str.
+
+'tallerE1Java_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'tallerE1Java_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'tallerE1Java_TestClass' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Visibility' defines the following possible values: 'private', 'public'.
+
+The model also captures inheritance relationships between classes.
+The class 'tallerE1Java_Class' is a specialization of 'Type'.
+The class 'tallerE1Java_PrimitiveType' is a specialization of 'Type'.
+The class 'tallerE1Java_Container' is a specialization of 'Type'.
+The class 'tallerE1Java_EntityClass' is a specialization of 'Class'.
+The class 'tallerE1Java_DAOClass' is a specialization of 'Class'.
+The class 'tallerE1Java_TestClass' is a specialization of 'Class'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tallerE1Java_Package' and 'tallerE1Java_Program'. From 'tallerE1Java_Package', the role 'tallerE1Java_Package' has cardinality 0..*, and from 'tallerE1Java_Program', the role 'tallerE1Java_Program' has cardinality 0..*.
+An association connects 'tallerE1Java_PrimitiveType' and 'tallerE1Java_Program'. From 'tallerE1Java_PrimitiveType', the role 'tallerE1Java_PrimitiveType' has cardinality 0..*, and from 'tallerE1Java_Program', the role 'tallerE1Java_Program2' has cardinality 0..*.
+An association connects 'tallerE1Java_Container' and 'tallerE1Java_Program'. From 'tallerE1Java_Container', the role 'tallerE1Java_Container' has cardinality 0..*, and from 'tallerE1Java_Program', the role 'tallerE1Java_Program4' has cardinality 0..*.
+An association connects 'tallerE1Java_Package' and 'tallerE1Java_Class'. From 'tallerE1Java_Package', the role 'tallerE1Java_Package6' has cardinality 0..*, and from 'tallerE1Java_Class', the role 'tallerE1Java_Class' has cardinality 0..*.
+An association connects 'tallerE1Java_Class' and 'tallerE1Java_Attribute'. From 'tallerE1Java_Class', the role 'tallerE1Java_Class8' has cardinality 0..*, and from 'tallerE1Java_Attribute', the role 'tallerE1Java_Attribute' has cardinality 0..*.
+An association connects 'tallerE1Java_Type' and 'tallerE1Java_Attribute'. From 'tallerE1Java_Type', the role 'tallerE1Java_Type' has cardinality 0..*, and from 'tallerE1Java_Attribute', the role 'tallerE1Java_Attribute10' has cardinality 0..*.
+An association connects 'tallerE1Java_Attribute' and 'tallerE1Java_Annotation'. From 'tallerE1Java_Attribute', the role 'tallerE1Java_Attribute12' has cardinality 0..*, and from 'tallerE1Java_Annotation', the role 'tallerE1Java_Annotation' has cardinality 0..*.
+An association connects 'tallerE1Java_Container' and 'tallerE1Java_Type'. From 'tallerE1Java_Container', the role 'tallerE1Java_Container14' has cardinality 0..*, and from 'tallerE1Java_Type', the role 'tallerE1Java_Type15' has cardinality 0..*.
+An association connects 'tallerE1Java_EntityClass' and 'tallerE1Java_DAOClass'. From 'tallerE1Java_EntityClass', the role 'tallerE1Java_EntityClass' has cardinality 0..*, and from 'tallerE1Java_DAOClass', the role 'tallerE1Java_DAOClass' has cardinality 0..*.
+An association connects 'tallerE1Java_TestClass' and 'tallerE1Java_DAOClass'. From 'tallerE1Java_TestClass', the role 'tallerE1Java_TestClass' has cardinality 0..*, and from 'tallerE1Java_DAOClass', the role 'tallerE1Java_DAOClass18' has cardinality 0..*.
+An association connects 'tallerE1Java_EntityClass' and 'tallerE1Java_TestClass'. From 'tallerE1Java_EntityClass', the role 'tallerE1Java_EntityClass21' has cardinality 0..*, and from 'tallerE1Java_TestClass', the role 'tallerE1Java_TestClass20' has cardinality 0..*.

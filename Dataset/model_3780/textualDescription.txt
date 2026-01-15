@@ -1,0 +1,66 @@
+The domain model 'assignment6_model' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'assignment6_model_IntegerValueDependency' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'assignment6_model_IsSelectedDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment6_model_SimpleFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment6_model_Feature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'mandatory', which is of type bool; 'selected', which is of type bool.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment6_model_Group' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'groupType', which is of type str.
+
+'assignment6_model_Configurator' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment6_model_BinaryDependency' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'UnaryDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment6_model_UnaryDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment6_model_Dependency' represents an important domain concept.
+It has one attribute: 'not', which is of type bool.
+
+'assignment6_model_IntegerFeature' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'minValue', which is of type int; 'step', which is of type int; 'maxValue', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BinaryOperator' defines the following possible values: 'OR', 'AND'.
+The enumeration 'GroupType' defines the following possible values: 'XOR', 'OR'.
+
+The model also captures inheritance relationships between classes.
+The class 'assignment6_model_SimpleFeature' is a specialization of 'Feature'.
+The class 'assignment6_model_IntegerFeature' is a specialization of 'Feature'.
+The class 'assignment6_model_UnaryDependency' is a specialization of 'Dependency'.
+The class 'assignment6_model_BinaryDependency' is a specialization of 'Dependency'.
+The class 'assignment6_model_IsSelectedDependency' is a specialization of 'UnaryDependency'.
+The class 'assignment6_model_IntegerValueDependency' is a specialization of 'UnaryDependency'.
+
+Relationships between classes are modeled using associations.
+An association connects 'assignment6_model_Feature' and 'assignment6_model_Configurator'. From 'assignment6_model_Feature', the role 'assignment6_model_Feature' has cardinality 0..*, and from 'assignment6_model_Configurator', the role 'assignment6_model_Configurator' has cardinality 0..*.
+An association connects 'assignment6_model_Group' and 'assignment6_model_Configurator'. From 'assignment6_model_Group', the role 'assignment6_model_Group' has cardinality 0..*, and from 'assignment6_model_Configurator', the role 'assignment6_model_Configurator2' has cardinality 0..*.
+An association connects 'assignment6_model_Feature' and 'assignment6_model_Feature'. From 'assignment6_model_Feature', the role 'assignment6_model_Feature3' has cardinality 0..*, and from 'assignment6_model_Feature', the role 'assignment6_model_Feature5' has cardinality 0..*.
+An association connects 'assignment6_model_Group' and 'assignment6_model_Feature'. From 'assignment6_model_Group', the role 'assignment6_model_Group8' has cardinality 0..*, and from 'assignment6_model_Feature', the role 'assignment6_model_Feature7' has cardinality 0..*.
+An association connects 'assignment6_model_Feature' and 'assignment6_model_Dependency'. From 'assignment6_model_Feature', the role 'assignment6_model_Feature10' has cardinality 0..*, and from 'assignment6_model_Dependency', the role 'assignment6_model_Dependency' has cardinality 0..*.
+An association connects 'assignment6_model_Group' and 'assignment6_model_SimpleFeature'. From 'assignment6_model_Group', the role 'assignment6_model_Group12' has cardinality 0..*, and from 'assignment6_model_SimpleFeature', the role 'assignment6_model_SimpleFeature' has cardinality 0..*.
+An association connects 'assignment6_model_Dependency' and 'assignment6_model_BinaryDependency'. From 'assignment6_model_Dependency', the role 'assignment6_model_Dependency14' has cardinality 0..*, and from 'assignment6_model_BinaryDependency', the role 'assignment6_model_BinaryDependency' has cardinality 0..*.
+An association connects 'assignment6_model_Dependency' and 'assignment6_model_BinaryDependency'. From 'assignment6_model_Dependency', the role 'assignment6_model_Dependency17' has cardinality 0..*, and from 'assignment6_model_BinaryDependency', the role 'assignment6_model_BinaryDependency16' has cardinality 0..*.
+An association connects 'assignment6_model_IsSelectedDependency' and 'assignment6_model_Feature'. From 'assignment6_model_IsSelectedDependency', the role 'assignment6_model_IsSelectedDependency' has cardinality 0..*, and from 'assignment6_model_Feature', the role 'assignment6_model_Feature19' has cardinality 0..*.
+An association connects 'assignment6_model_IntegerFeature' and 'assignment6_model_IntegerValueDependency'. From 'assignment6_model_IntegerFeature', the role 'assignment6_model_IntegerFeature' has cardinality 0..*, and from 'assignment6_model_IntegerValueDependency', the role 'assignment6_model_IntegerValueDependency' has cardinality 0..*.

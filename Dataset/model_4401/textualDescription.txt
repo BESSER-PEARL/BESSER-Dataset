@@ -1,0 +1,180 @@
+The domain model 'mt' describes the core structural elements and their relationships within the system.
+
+The model defines 42 main class(es).
+
+'mt_core_FilePath' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Script' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_statements_Text' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'mt_Resource' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'FilePath' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_core_Parameter' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'mt_statements_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_core_ScriptDescriptor' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'type', which is of type str.
+
+'mt_statements_Comment' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ScriptDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_expressions_DoubleLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'mt_expressions_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_expressions_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_expressions_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_ResourceSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Method' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_expressions_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'mt_expressions_CallSet' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_expressions_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'mt_statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_core_Template' represents an important domain concept.
+It has the following attributes: 'endTag', which is of type str; 'beginTag', which is of type str.
+
+'mt_statements_For' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_core_Method' represents an important domain concept.
+It has the following attributes: 'return', which is of type str; 'name', which is of type str.
+
+'mt_expressions_Call' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'prefix', which is of type str.
+
+'Call' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_expressions_Parenthesis' represents an important domain concept.
+It does not declare any attributes.
+
+'ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_expressions_Operator' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'If' represents an important domain concept.
+It does not declare any attributes.
+
+'Resource' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_core_Script' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_core_Metamodel' represents an important domain concept.
+It has one attribute: 'packageClass', which is of type str.
+
+'mt_expressions_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'mt_statements_If' represents an important domain concept.
+It does not declare any attributes.
+
+'mt_core_ASTNode' represents an important domain concept.
+It has the following attributes: 'end', which is of type int; 'begin', which is of type int.
+
+'mt_core_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'core_mt_Resource' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mt_core_Template' is a specialization of 'Resource'.
+The class 'mt_core_Script' is a specialization of 'ASTNode'.
+The class 'mt_core_ScriptDescriptor' is a specialization of 'ASTNode'.
+The class 'mt_core_FilePath' is a specialization of 'ASTNode'.
+The class 'mt_core_Metamodel' is a specialization of 'Resource'.
+The class 'mt_core_Service' is a specialization of 'Resource'.
+The class 'mt_expressions_Expression' is a specialization of 'ASTNode'.
+The class 'mt_expressions_CallSet' is a specialization of 'Expression'.
+The class 'mt_expressions_Call' is a specialization of 'ASTNode'.
+The class 'mt_expressions_Not' is a specialization of 'Expression'.
+The class 'mt_expressions_Operator' is a specialization of 'Expression'.
+The class 'mt_expressions_Parenthesis' is a specialization of 'Expression'.
+The class 'mt_expressions_Literal' is a specialization of 'Expression'.
+The class 'mt_expressions_StringLiteral' is a specialization of 'Literal'.
+The class 'mt_expressions_IntegerLiteral' is a specialization of 'Literal'.
+The class 'mt_expressions_DoubleLiteral' is a specialization of 'Literal'.
+The class 'mt_expressions_BooleanLiteral' is a specialization of 'Literal'.
+The class 'mt_expressions_NullLiteral' is a specialization of 'Literal'.
+The class 'mt_statements_Statement' is a specialization of 'ASTNode'.
+The class 'mt_statements_Comment' is a specialization of 'Statement'.
+The class 'mt_statements_If' is a specialization of 'Statement'.
+The class 'mt_statements_For' is a specialization of 'Statement'.
+The class 'mt_statements_Feature' is a specialization of 'Statement'.
+The class 'mt_statements_Text' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mt_ResourceSet' and 'mt_Resource'. From 'mt_ResourceSet', the role 'mt_ResourceSet' has cardinality 0..*, and from 'mt_Resource', the role 'mt_Resource' has cardinality 0..*.
+An association connects 'mt_core_Template' and 'core_mt_Resource'. From 'mt_core_Template', the role 'mt_core_Template' has cardinality 0..*, and from 'core_mt_Resource', the role 'core_mt_Resource' has cardinality 0..*.
+An association connects 'mt_core_Template' and 'Script'. From 'mt_core_Template', the role 'mt_core_Template3' has cardinality 0..*, and from 'Script', the role 'Script' has cardinality 0..*.
+An association connects 'ScriptDescriptor' and 'mt_core_Script'. From 'ScriptDescriptor', the role 'ScriptDescriptor' has cardinality 0..*, and from 'mt_core_Script', the role 'mt_core_Script' has cardinality 0..*.
+An association connects 'mt_core_Script' and 'Statement'. From 'mt_core_Script', the role 'mt_core_Script6' has cardinality 0..*, and from 'Statement', the role 'Statement' has cardinality 0..*.
+An association connects 'FilePath' and 'mt_core_ScriptDescriptor'. From 'FilePath', the role 'FilePath' has cardinality 0..*, and from 'mt_core_ScriptDescriptor', the role 'mt_core_ScriptDescriptor' has cardinality 0..*.
+An association connects 'Expression' and 'mt_core_ScriptDescriptor'. From 'Expression', the role 'Expression' has cardinality 0..*, and from 'mt_core_ScriptDescriptor', the role 'mt_core_ScriptDescriptor9' has cardinality 0..*.
+An association connects 'mt_core_FilePath' and 'Statement'. From 'mt_core_FilePath', the role 'mt_core_FilePath' has cardinality 0..*, and from 'Statement', the role 'Statement11' has cardinality 0..*.
+An association connects 'Method' and 'mt_core_Service'. From 'Method', the role 'Method' has cardinality 0..*, and from 'mt_core_Service', the role 'mt_core_Service' has cardinality 0..*.
+An association connects 'Parameter' and 'mt_core_Method'. From 'Parameter', the role 'Parameter' has cardinality 0..*, and from 'mt_core_Method', the role 'mt_core_Method' has cardinality 0..*.
+An association connects 'Call' and 'mt_expressions_CallSet'. From 'Call', the role 'Call' has cardinality 0..*, and from 'mt_expressions_CallSet', the role 'mt_expressions_CallSet' has cardinality 0..*.
+An association connects 'mt_expressions_Call' and 'Expression'. From 'mt_expressions_Call', the role 'mt_expressions_Call' has cardinality 0..*, and from 'Expression', the role 'Expression16' has cardinality 0..*.
+An association connects 'mt_expressions_Call' and 'Expression'. From 'mt_expressions_Call', the role 'mt_expressions_Call18' has cardinality 0..*, and from 'Expression', the role 'Expression19' has cardinality 0..*.
+An association connects 'mt_expressions_Not' and 'Expression'. From 'mt_expressions_Not', the role 'mt_expressions_Not' has cardinality 0..*, and from 'Expression', the role 'Expression21' has cardinality 0..*.
+An association connects 'mt_expressions_Operator' and 'Expression'. From 'mt_expressions_Operator', the role 'mt_expressions_Operator' has cardinality 0..*, and from 'Expression', the role 'Expression23' has cardinality 0..*.
+An association connects 'mt_expressions_Parenthesis' and 'Expression'. From 'mt_expressions_Parenthesis', the role 'mt_expressions_Parenthesis' has cardinality 0..*, and from 'Expression', the role 'Expression25' has cardinality 0..*.
+An association connects 'mt_statements_If' and 'Expression'. From 'mt_statements_If', the role 'mt_statements_If' has cardinality 0..*, and from 'Expression', the role 'Expression27' has cardinality 0..*.
+An association connects 'mt_statements_If' and 'Statement'. From 'mt_statements_If', the role 'mt_statements_If29' has cardinality 0..*, and from 'Statement', the role 'Statement30' has cardinality 0..*.
+An association connects 'Statement' and 'mt_statements_If'. From 'Statement', the role 'Statement33' has cardinality 0..*, and from 'mt_statements_If', the role 'mt_statements_If32' has cardinality 0..*.
+An association connects 'If' and 'mt_statements_If'. From 'If', the role 'If' has cardinality 0..*, and from 'mt_statements_If', the role 'mt_statements_If35' has cardinality 0..*.
+An association connects 'mt_statements_For' and 'Expression'. From 'mt_statements_For', the role 'mt_statements_For' has cardinality 0..*, and from 'Expression', the role 'Expression37' has cardinality 0..*.
+An association connects 'mt_statements_For' and 'Statement'. From 'mt_statements_For', the role 'mt_statements_For39' has cardinality 0..*, and from 'Statement', the role 'Statement40' has cardinality 0..*.
+An association connects 'mt_statements_Feature' and 'Expression'. From 'mt_statements_Feature', the role 'mt_statements_Feature' has cardinality 0..*, and from 'Expression', the role 'Expression42' has cardinality 0..*.

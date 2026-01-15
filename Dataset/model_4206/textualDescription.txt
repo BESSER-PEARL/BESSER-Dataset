@@ -1,0 +1,31 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'myDsl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'Greeting' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Greeting' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'myDsl_Define' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Expressao' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl_Selecao' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl_Expressao' is a specialization of 'Greeting'.
+The class 'myDsl_Selecao' is a specialization of 'Greeting'.
+The class 'myDsl_Define' is a specialization of 'Greeting'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_Model' and 'myDsl_Greeting'. From 'myDsl_Model', the role 'myDsl_Model' has cardinality 0..*, and from 'myDsl_Greeting', the role 'myDsl_Greeting' has cardinality 0..*.
+An association connects 'myDsl_Expressao' and 'myDsl_Greeting'. From 'myDsl_Expressao', the role 'myDsl_Expressao' has cardinality 0..*, and from 'myDsl_Greeting', the role 'myDsl_Greeting2' has cardinality 0..*.
+An association connects 'myDsl_Selecao' and 'myDsl_Define'. From 'myDsl_Selecao', the role 'myDsl_Selecao' has cardinality 0..*, and from 'myDsl_Define', the role 'myDsl_Define' has cardinality 0..*.

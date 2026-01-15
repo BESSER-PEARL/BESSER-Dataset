@@ -1,0 +1,62 @@
+The domain model 'ConceptASE' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'ConceptASE_SwitchPosition' represents an important domain concept.
+It has one attribute: 'SwitchPosition_switchState', which is of type str.
+
+'ConceptASE_IndividualContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'Thing' represents an important domain concept.
+It does not declare any attributes.
+
+'Trackelement' represents an important domain concept.
+It does not declare any attributes.
+
+'ConceptASE_Trackelement' represents an important domain concept.
+It does not declare any attributes.
+
+'ConceptASE_Segment' represents an important domain concept.
+It has the following attributes: 'Segment_length', which is of type int; 'Segment_height', which is of type int.
+
+'ConceptASE_Thing' represents an important domain concept.
+It does not declare any attributes.
+
+'ConceptASE_Switch' represents an important domain concept.
+It has one attribute: 'Switch_actualState', which is of type str.
+
+'ConceptASE_Signal' represents an important domain concept.
+It has one attribute: 'Signal_actualState', which is of type str.
+
+'ConceptASE_Sensor' represents an important domain concept.
+It has one attribute: 'Sensor_year', which is of type int.
+
+'ConceptASE_Route' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SignalStateKind' defines the following possible values: 'SignalStateKind_STOP', 'SignalStateKind_GO', 'SignalStateKind_FAILURE'.
+The enumeration 'SwitchStateKind' defines the following possible values: 'PointStateKind_STRAIGHT', 'PointStateKind_LEFT', 'PointStateKind_FAILURE', 'PointStateKind_RIGHT'.
+
+The model also captures inheritance relationships between classes.
+The class 'ConceptASE_Segment' is a specialization of 'Trackelement'.
+The class 'ConceptASE_Trackelement' is a specialization of 'Thing'.
+The class 'ConceptASE_Switch' is a specialization of 'Trackelement'.
+The class 'ConceptASE_Route' is a specialization of 'Thing'.
+The class 'ConceptASE_Signal' is a specialization of 'Thing'.
+The class 'ConceptASE_SwitchPosition' is a specialization of 'Thing'.
+The class 'ConceptASE_Sensor' is a specialization of 'Thing'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ConceptASE_Sensor' and 'ConceptASE_Trackelement'. From 'ConceptASE_Sensor', the role 'Sensor' has cardinality 0..*, and from 'ConceptASE_Trackelement', the role 'Sensor_trackElement' has cardinality 0..*.
+An association connects 'ConceptASE_Trackelement' and 'ConceptASE_Trackelement'. From 'ConceptASE_Trackelement', the role 'ConceptASE_Trackelement1' has cardinality 0..*, and from 'ConceptASE_Trackelement', the role 'ConceptASE_Trackelement' has cardinality 0..*.
+An association connects 'ConceptASE_Switch' and 'ConceptASE_SwitchPosition'. From 'ConceptASE_Switch', the role 'SwitchPosition_switch' has cardinality 0..*, and from 'ConceptASE_SwitchPosition', the role 'SwitchPosition' has cardinality 0..*.
+An association connects 'ConceptASE_Signal' and 'ConceptASE_Route'. From 'ConceptASE_Signal', the role 'ConceptASE_Signal' has cardinality 0..*, and from 'ConceptASE_Route', the role 'ConceptASE_Route' has cardinality 0..*.
+An association connects 'ConceptASE_Route' and 'ConceptASE_SwitchPosition'. From 'ConceptASE_Route', the role 'SwitchPosition_route' has cardinality 0..*, and from 'ConceptASE_SwitchPosition', the role 'SwitchPosition6' has cardinality 0..*.
+An association connects 'ConceptASE_Signal' and 'ConceptASE_Route'. From 'ConceptASE_Signal', the role 'ConceptASE_Signal9' has cardinality 0..*, and from 'ConceptASE_Route', the role 'ConceptASE_Route8' has cardinality 0..*.
+An association connects 'ConceptASE_Sensor' and 'ConceptASE_Route'. From 'ConceptASE_Sensor', the role 'ConceptASE_Sensor' has cardinality 0..*, and from 'ConceptASE_Route', the role 'ConceptASE_Route11' has cardinality 0..*.
+An association connects 'ConceptASE_Switch' and 'ConceptASE_SwitchPosition'. From 'ConceptASE_Switch', the role 'Switch' has cardinality 0..*, and from 'ConceptASE_SwitchPosition', the role 'Switch_switchPosition' has cardinality 0..*.
+An association connects 'ConceptASE_SwitchPosition' and 'ConceptASE_Route'. From 'ConceptASE_SwitchPosition', the role 'Route_switchPosition' has cardinality 0..*, and from 'ConceptASE_Route', the role 'Route' has cardinality 0..*.
+An association connects 'ConceptASE_Sensor' and 'ConceptASE_Trackelement'. From 'ConceptASE_Sensor', the role 'TrackElement_sensor' has cardinality 0..*, and from 'ConceptASE_Trackelement', the role 'Trackelement' has cardinality 0..*.
+An association connects 'ConceptASE_Thing' and 'ConceptASE_IndividualContainer'. From 'ConceptASE_Thing', the role 'ConceptASE_Thing' has cardinality 0..*, and from 'ConceptASE_IndividualContainer', the role 'ConceptASE_IndividualContainer' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset-mtl/repos/artist-project/ARTIST/source/Tooling/migration/integrated environment/eu.artist.moola.eclipse/test/resources/Metamodels/Company.ecore

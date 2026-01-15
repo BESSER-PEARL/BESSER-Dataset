@@ -1,0 +1,259 @@
+The domain model 'PolicyEngine' describes the core structural elements and their relationships within the system.
+
+The model defines 53 main class(es).
+
+'PolicyEngine_Room' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'HasActuators' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_BinaryOps' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'PolicyEngine_Time' represents an important domain concept.
+It has the following attributes: 'minutes', which is of type str; 'hours', which is of type str.
+
+'Actuator' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_AccessControl' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_Building' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_LightSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_Id' represents an important domain concept.
+It does not declare any attributes.
+
+'Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_CO2Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_Actuator' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_TouchSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'HasIntegerValue' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_SensorComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_Schedule' represents an important domain concept.
+It has one attribute: 'weekdays', which is of type str.
+
+'PolicyEngine_Policy' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_RoomUsage' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_If' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_UnaryOp' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'PolicyEngine_MeetingScheduleSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_InfraredLightSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_ActuatorComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_LightSwitchActuator' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_RadiatorActuator' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_SmokeSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_Floor' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_MotionSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_HumiditySensor' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_HasActuators' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_HumidifierActuator' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_CalendarSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'HasSensors' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_CTS' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_HasSensors' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_TemperatureSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_RoomActuators' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_WindowActuator' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_ResetExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_DoorActuator' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_TimeExpression' represents an important domain concept.
+It has one attribute: 'TimeBound', which is of type int.
+
+'PolicyEngine_HasIntegerValue' represents an important domain concept.
+It has one attribute: 'valueState', which is of type int.
+
+'PolicyEngine_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_Timer' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_PressureSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_AudioAlarmActuator' represents an important domain concept.
+It does not declare any attributes.
+
+'PolicyEngine_State' represents an important domain concept.
+It has one attribute: 'valueState', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Weekdays' defines the following possible values: 'TUESDAY', 'THURSDAY', 'SATURDAY', 'SUNDAY', 'FRIDAY', 'MONDAY', 'WEDNESDAY'.
+The enumeration 'CompOps' defines the following possible values: 'NOTEQUAL', 'LESS', 'EQUAL', 'LESSOREQUAL', 'GREATEROREQUAL', 'GREATER'.
+
+The model also captures inheritance relationships between classes.
+The class 'PolicyEngine_Building' is a specialization of 'NamedElement'.
+The class 'PolicyEngine_Model' is a specialization of 'NamedElement'.
+The class 'PolicyEngine_LightSwitchActuator' is a specialization of 'Actuator'.
+The class 'PolicyEngine_Sensor' is a specialization of 'HasIntegerValue'.
+The class 'PolicyEngine_Actuator' is a specialization of 'HasIntegerValue'.
+The class 'PolicyEngine_SensorComponent' is a specialization of 'HasSensors'.
+The class 'PolicyEngine_SensorComponent' is a specialization of 'NamedElement'.
+The class 'PolicyEngine_MotionSensor' is a specialization of 'Sensor'.
+The class 'PolicyEngine_TemperatureSensor' is a specialization of 'Sensor'.
+The class 'PolicyEngine_PressureSensor' is a specialization of 'Sensor'.
+The class 'PolicyEngine_TouchSensor' is a specialization of 'Sensor'.
+The class 'PolicyEngine_WindowActuator' is a specialization of 'Actuator'.
+The class 'PolicyEngine_HumidifierActuator' is a specialization of 'Actuator'.
+The class 'PolicyEngine_LightSensor' is a specialization of 'Sensor'.
+The class 'PolicyEngine_DoorActuator' is a specialization of 'Actuator'.
+The class 'PolicyEngine_RadiatorActuator' is a specialization of 'Actuator'.
+The class 'PolicyEngine_SmokeSensor' is a specialization of 'Sensor'.
+The class 'PolicyEngine_CO2Sensor' is a specialization of 'Sensor'.
+The class 'PolicyEngine_InfraredLightSensor' is a specialization of 'Sensor'.
+The class 'PolicyEngine_HumiditySensor' is a specialization of 'Sensor'.
+The class 'PolicyEngine_AudioAlarmActuator' is a specialization of 'Actuator'.
+The class 'PolicyEngine_Room' is a specialization of 'NamedElement'.
+The class 'PolicyEngine_Floor' is a specialization of 'NamedElement'.
+The class 'PolicyEngine_ActuatorComponent' is a specialization of 'HasActuators'.
+The class 'PolicyEngine_ActuatorComponent' is a specialization of 'NamedElement'.
+The class 'PolicyEngine_Policy' is a specialization of 'NamedElement'.
+The class 'PolicyEngine_State' is a specialization of 'NamedElement'.
+The class 'PolicyEngine_Timer' is a specialization of 'NamedElement'.
+The class 'PolicyEngine_Schedule' is a specialization of 'NamedElement'.
+The class 'PolicyEngine_TimeExpression' is a specialization of 'Expression'.
+The class 'PolicyEngine_ResetExpression' is a specialization of 'Expression'.
+The class 'PolicyEngine_RoomUsage' is a specialization of 'Expression'.
+The class 'PolicyEngine_BinaryOps' is a specialization of 'Expression'.
+The class 'PolicyEngine_UnaryOp' is a specialization of 'Expression'.
+The class 'PolicyEngine_Id' is a specialization of 'Expression'.
+The class 'PolicyEngine_Id' is a specialization of 'NamedElement'.
+The class 'PolicyEngine_RoomActuators' is a specialization of 'Expression'.
+The class 'PolicyEngine_Constant' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PolicyEngine_CTS' and 'PolicyEngine_Building'. From 'PolicyEngine_CTS', the role 'PolicyEngine_CTS' has cardinality 0..*, and from 'PolicyEngine_Building', the role 'PolicyEngine_Building' has cardinality 0..*.
+An association connects 'PolicyEngine_Building' and 'PolicyEngine_AccessControl'. From 'PolicyEngine_Building', the role 'PolicyEngine_Building2' has cardinality 0..*, and from 'PolicyEngine_AccessControl', the role 'PolicyEngine_AccessControl' has cardinality 0..*.
+An association connects 'PolicyEngine_Building' and 'PolicyEngine_CalendarSystem'. From 'PolicyEngine_Building', the role 'PolicyEngine_Building4' has cardinality 0..*, and from 'PolicyEngine_CalendarSystem', the role 'PolicyEngine_CalendarSystem' has cardinality 0..*.
+An association connects 'PolicyEngine_Building' and 'PolicyEngine_MeetingScheduleSystem'. From 'PolicyEngine_Building', the role 'PolicyEngine_Building6' has cardinality 0..*, and from 'PolicyEngine_MeetingScheduleSystem', the role 'PolicyEngine_MeetingScheduleSystem' has cardinality 0..*.
+An association connects 'PolicyEngine_Building' and 'PolicyEngine_Floor'. From 'PolicyEngine_Building', the role 'PolicyEngine_Building8' has cardinality 0..*, and from 'PolicyEngine_Floor', the role 'PolicyEngine_Floor' has cardinality 0..*.
+An association connects 'PolicyEngine_Timer' and 'PolicyEngine_Building'. From 'PolicyEngine_Timer', the role 'PolicyEngine_Timer' has cardinality 0..*, and from 'PolicyEngine_Building', the role 'PolicyEngine_Building10' has cardinality 0..*.
+An association connects 'PolicyEngine_Model' and 'PolicyEngine_Building'. From 'PolicyEngine_Model', the role 'PolicyEngine_Model' has cardinality 0..*, and from 'PolicyEngine_Building', the role 'PolicyEngine_Building12' has cardinality 0..*.
+An association connects 'PolicyEngine_Model' and 'PolicyEngine_Room'. From 'PolicyEngine_Model', the role 'PolicyEngine_Model14' has cardinality 0..*, and from 'PolicyEngine_Room', the role 'PolicyEngine_Room' has cardinality 0..*.
+An association connects 'PolicyEngine_Policy' and 'PolicyEngine_Model'. From 'PolicyEngine_Policy', the role 'PolicyEngine_Policy' has cardinality 0..*, and from 'PolicyEngine_Model', the role 'PolicyEngine_Model16' has cardinality 0..*.
+An association connects 'PolicyEngine_State' and 'PolicyEngine_Model'. From 'PolicyEngine_State', the role 'PolicyEngine_State' has cardinality 0..*, and from 'PolicyEngine_Model', the role 'PolicyEngine_Model18' has cardinality 0..*.
+An association connects 'PolicyEngine_Timer' and 'PolicyEngine_Model'. From 'PolicyEngine_Timer', the role 'PolicyEngine_Timer21' has cardinality 0..*, and from 'PolicyEngine_Model', the role 'PolicyEngine_Model20' has cardinality 0..*.
+An association connects 'PolicyEngine_Model' and 'PolicyEngine_Schedule'. From 'PolicyEngine_Model', the role 'PolicyEngine_Model23' has cardinality 0..*, and from 'PolicyEngine_Schedule', the role 'PolicyEngine_Schedule' has cardinality 0..*.
+An association connects 'PolicyEngine_Sensor' and 'PolicyEngine_CTS'. From 'PolicyEngine_Sensor', the role 'PolicyEngine_Sensor' has cardinality 0..*, and from 'PolicyEngine_CTS', the role 'PolicyEngine_CTS25' has cardinality 0..*.
+An association connects 'PolicyEngine_CTS' and 'PolicyEngine_Actuator'. From 'PolicyEngine_CTS', the role 'PolicyEngine_CTS27' has cardinality 0..*, and from 'PolicyEngine_Actuator', the role 'PolicyEngine_Actuator' has cardinality 0..*.
+An association connects 'PolicyEngine_Sensor' and 'PolicyEngine_AccessControl'. From 'PolicyEngine_Sensor', the role 'PolicyEngine_Sensor30' has cardinality 0..*, and from 'PolicyEngine_AccessControl', the role 'PolicyEngine_AccessControl29' has cardinality 0..*.
+An association connects 'PolicyEngine_Actuator' and 'PolicyEngine_AccessControl'. From 'PolicyEngine_Actuator', the role 'PolicyEngine_Actuator33' has cardinality 0..*, and from 'PolicyEngine_AccessControl', the role 'PolicyEngine_AccessControl32' has cardinality 0..*.
+An association connects 'PolicyEngine_HasSensors' and 'PolicyEngine_Sensor'. From 'PolicyEngine_HasSensors', the role 'PolicyEngine_HasSensors' has cardinality 0..*, and from 'PolicyEngine_Sensor', the role 'PolicyEngine_Sensor35' has cardinality 0..*.
+An association connects 'PolicyEngine_Actuator' and 'PolicyEngine_HasActuators'. From 'PolicyEngine_Actuator', the role 'PolicyEngine_Actuator37' has cardinality 0..*, and from 'PolicyEngine_HasActuators', the role 'PolicyEngine_HasActuators' has cardinality 0..*.
+An association connects 'PolicyEngine_Room' and 'PolicyEngine_SensorComponent'. From 'PolicyEngine_Room', the role 'PolicyEngine_Room39' has cardinality 0..*, and from 'PolicyEngine_SensorComponent', the role 'PolicyEngine_SensorComponent' has cardinality 0..*.
+An association connects 'PolicyEngine_ActuatorComponent' and 'PolicyEngine_Room'. From 'PolicyEngine_ActuatorComponent', the role 'PolicyEngine_ActuatorComponent' has cardinality 0..*, and from 'PolicyEngine_Room', the role 'PolicyEngine_Room41' has cardinality 0..*.
+An association connects 'PolicyEngine_Room' and 'PolicyEngine_Room'. From 'PolicyEngine_Room', the role 'PolicyEngine_Room42' has cardinality 0..*, and from 'PolicyEngine_Room', the role 'PolicyEngine_Room44' has cardinality 0..*.
+An association connects 'PolicyEngine_Room' and 'PolicyEngine_Timer'. From 'PolicyEngine_Room', the role 'PolicyEngine_Room46' has cardinality 0..*, and from 'PolicyEngine_Timer', the role 'PolicyEngine_Timer47' has cardinality 0..*.
+An association connects 'PolicyEngine_Room' and 'PolicyEngine_Policy'. From 'PolicyEngine_Room', the role 'PolicyEngine_Room49' has cardinality 0..*, and from 'PolicyEngine_Policy', the role 'PolicyEngine_Policy50' has cardinality 0..*.
+An association connects 'PolicyEngine_Schedule' and 'PolicyEngine_Room'. From 'PolicyEngine_Schedule', the role 'PolicyEngine_Schedule53' has cardinality 0..*, and from 'PolicyEngine_Room', the role 'PolicyEngine_Room52' has cardinality 0..*.
+An association connects 'PolicyEngine_Room' and 'PolicyEngine_Floor'. From 'PolicyEngine_Room', the role 'PolicyEngine_Room56' has cardinality 0..*, and from 'PolicyEngine_Floor', the role 'PolicyEngine_Floor55' has cardinality 0..*.
+An association connects 'PolicyEngine_Floor' and 'PolicyEngine_Timer'. From 'PolicyEngine_Floor', the role 'PolicyEngine_Floor58' has cardinality 0..*, and from 'PolicyEngine_Timer', the role 'PolicyEngine_Timer59' has cardinality 0..*.
+An association connects 'PolicyEngine_Policy' and 'PolicyEngine_Actuator'. From 'PolicyEngine_Policy', the role 'PolicyEngine_Policy61' has cardinality 0..*, and from 'PolicyEngine_Actuator', the role 'PolicyEngine_Actuator62' has cardinality 0..*.
+An association connects 'PolicyEngine_Sensor' and 'PolicyEngine_Policy'. From 'PolicyEngine_Sensor', the role 'PolicyEngine_Sensor65' has cardinality 0..*, and from 'PolicyEngine_Policy', the role 'PolicyEngine_Policy64' has cardinality 0..*.
+An association connects 'PolicyEngine_If' and 'PolicyEngine_Policy'. From 'PolicyEngine_If', the role 'PolicyEngine_If' has cardinality 0..*, and from 'PolicyEngine_Policy', the role 'PolicyEngine_Policy67' has cardinality 0..*.
+An association connects 'PolicyEngine_Timer' and 'PolicyEngine_Policy'. From 'PolicyEngine_Timer', the role 'PolicyEngine_Timer70' has cardinality 0..*, and from 'PolicyEngine_Policy', the role 'PolicyEngine_Policy69' has cardinality 0..*.
+An association connects 'PolicyEngine_Policy' and 'PolicyEngine_State'. From 'PolicyEngine_Policy', the role 'PolicyEngine_Policy72' has cardinality 0..*, and from 'PolicyEngine_State', the role 'PolicyEngine_State73' has cardinality 0..*.
+An association connects 'PolicyEngine_Schedule' and 'PolicyEngine_Policy'. From 'PolicyEngine_Schedule', the role 'PolicyEngine_Schedule76' has cardinality 0..*, and from 'PolicyEngine_Policy', the role 'PolicyEngine_Policy75' has cardinality 0..*.
+An association connects 'PolicyEngine_Room' and 'PolicyEngine_Policy'. From 'PolicyEngine_Room', the role 'PolicyEngine_Room79' has cardinality 0..*, and from 'PolicyEngine_Policy', the role 'PolicyEngine_Policy78' has cardinality 0..*.
+An association connects 'PolicyEngine_State' and 'PolicyEngine_Policy'. From 'PolicyEngine_State', the role 'PolicyEngine_State82' has cardinality 0..*, and from 'PolicyEngine_Policy', the role 'PolicyEngine_Policy81' has cardinality 0..*.
+An association connects 'PolicyEngine_State' and 'PolicyEngine_Expression'. From 'PolicyEngine_State', the role 'PolicyEngine_State84' has cardinality 0..*, and from 'PolicyEngine_Expression', the role 'PolicyEngine_Expression' has cardinality 0..*.
+An association connects 'PolicyEngine_Time' and 'PolicyEngine_Schedule'. From 'PolicyEngine_Time', the role 'PolicyEngine_Time' has cardinality 0..*, and from 'PolicyEngine_Schedule', the role 'PolicyEngine_Schedule86' has cardinality 0..*.
+An association connects 'PolicyEngine_Time' and 'PolicyEngine_Schedule'. From 'PolicyEngine_Time', the role 'PolicyEngine_Time89' has cardinality 0..*, and from 'PolicyEngine_Schedule', the role 'PolicyEngine_Schedule88' has cardinality 0..*.
+An association connects 'PolicyEngine_If' and 'PolicyEngine_Expression'. From 'PolicyEngine_If', the role 'PolicyEngine_If91' has cardinality 0..*, and from 'PolicyEngine_Expression', the role 'PolicyEngine_Expression92' has cardinality 0..*.
+An association connects 'PolicyEngine_If' and 'PolicyEngine_Expression'. From 'PolicyEngine_If', the role 'PolicyEngine_If94' has cardinality 0..*, and from 'PolicyEngine_Expression', the role 'PolicyEngine_Expression95' has cardinality 0..*.
+An association connects 'PolicyEngine_If' and 'PolicyEngine_If'. From 'PolicyEngine_If', the role 'PolicyEngine_If96' has cardinality 0..*, and from 'PolicyEngine_If', the role 'PolicyEngine_If98' has cardinality 0..*.
+An association connects 'PolicyEngine_Expression' and 'PolicyEngine_If'. From 'PolicyEngine_Expression', the role 'PolicyEngine_Expression101' has cardinality 0..*, and from 'PolicyEngine_If', the role 'PolicyEngine_If100' has cardinality 0..*.
+An association connects 'PolicyEngine_Timer' and 'PolicyEngine_TimeExpression'. From 'PolicyEngine_Timer', the role 'PolicyEngine_Timer103' has cardinality 0..*, and from 'PolicyEngine_TimeExpression', the role 'PolicyEngine_TimeExpression' has cardinality 0..*.
+An association connects 'PolicyEngine_Timer' and 'PolicyEngine_ResetExpression'. From 'PolicyEngine_Timer', the role 'PolicyEngine_Timer105' has cardinality 0..*, and from 'PolicyEngine_ResetExpression', the role 'PolicyEngine_ResetExpression' has cardinality 0..*.
+An association connects 'PolicyEngine_Sensor' and 'PolicyEngine_RoomUsage'. From 'PolicyEngine_Sensor', the role 'PolicyEngine_Sensor107' has cardinality 0..*, and from 'PolicyEngine_RoomUsage', the role 'PolicyEngine_RoomUsage' has cardinality 0..*.
+An association connects 'PolicyEngine_Actuator' and 'PolicyEngine_RoomUsage'. From 'PolicyEngine_Actuator', the role 'PolicyEngine_Actuator110' has cardinality 0..*, and from 'PolicyEngine_RoomUsage', the role 'PolicyEngine_RoomUsage109' has cardinality 0..*.
+An association connects 'PolicyEngine_RoomUsage' and 'PolicyEngine_State'. From 'PolicyEngine_RoomUsage', the role 'PolicyEngine_RoomUsage112' has cardinality 0..*, and from 'PolicyEngine_State', the role 'PolicyEngine_State113' has cardinality 0..*.
+An association connects 'PolicyEngine_Expression' and 'PolicyEngine_BinaryOps'. From 'PolicyEngine_Expression', the role 'PolicyEngine_Expression115' has cardinality 0..*, and from 'PolicyEngine_BinaryOps', the role 'PolicyEngine_BinaryOps' has cardinality 0..*.
+An association connects 'PolicyEngine_BinaryOps' and 'PolicyEngine_Expression'. From 'PolicyEngine_BinaryOps', the role 'PolicyEngine_BinaryOps117' has cardinality 0..*, and from 'PolicyEngine_Expression', the role 'PolicyEngine_Expression118' has cardinality 0..*.
+An association connects 'PolicyEngine_Expression' and 'PolicyEngine_UnaryOp'. From 'PolicyEngine_Expression', the role 'PolicyEngine_Expression120' has cardinality 0..*, and from 'PolicyEngine_UnaryOp', the role 'PolicyEngine_UnaryOp' has cardinality 0..*.
+An association connects 'PolicyEngine_RoomActuators' and 'PolicyEngine_Room'. From 'PolicyEngine_RoomActuators', the role 'PolicyEngine_RoomActuators' has cardinality 0..*, and from 'PolicyEngine_Room', the role 'PolicyEngine_Room122' has cardinality 0..*.
+An association connects 'PolicyEngine_ActuatorComponent' and 'PolicyEngine_RoomActuators'. From 'PolicyEngine_ActuatorComponent', the role 'PolicyEngine_ActuatorComponent125' has cardinality 0..*, and from 'PolicyEngine_RoomActuators', the role 'PolicyEngine_RoomActuators124' has cardinality 0..*.

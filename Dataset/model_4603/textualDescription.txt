@@ -1,0 +1,364 @@
+The domain model 'henshin_text' describes the core structural elements and their relationships within the system.
+
+The model defines 78 main class(es).
+
+'henshin_text_Rollback' represents an important domain concept.
+It has one attribute: 'rollback', which is of type bool.
+
+'henshin_text_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_NumberValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'henshin_text_NotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_InjectiveMatching' represents an important domain concept.
+It has one attribute: 'injectiveMatching', which is of type bool.
+
+'henshin_text_ComparisonExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'henshin_text_MulOrDivExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_JavaAttributeValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'henshin_text_EPackageImport' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_ConditionalUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_JavaImport' represents an important domain concept.
+It has one attribute: 'packagename', which is of type str.
+
+'henshin_text_Attribute' represents an important domain concept.
+It has the following attributes: 'update', which is of type str; 'actiontype', which is of type str.
+
+'henshin_text_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'UnitElement' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_ConditionNodeTypes' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'henshin_text_BoolValue' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'henshin_text_SequentialProperties' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_Edges' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_MultiRuleReuseNode' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_EqualityExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'henshin_text_ConditionGraph' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'henshin_text_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_ParameterValue' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_StringValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'henshin_text_GraphElements' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_Match' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_RuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_ConditionEdges' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_CheckDangling' represents an important domain concept.
+It has one attribute: 'checkDangling', which is of type bool.
+
+'henshin_text_JavaClassValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'RuleNodeTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_ConditionGraphElements' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_NaturalValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'SequentialProperties' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_Edge' represents an important domain concept.
+It has one attribute: 'actiontype', which is of type str.
+
+'henshin_text_PriorityUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_BracketExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_ParameterType' represents an important domain concept.
+It has one attribute: 'enumType', which is of type str.
+
+'henshin_text_ModelElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'henshin_text_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_Conditions' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_UnitElement' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_ORorXOR' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'henshin_text_ConditionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_IndependentUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_Call' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_ConditionGraphRef' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_Formula' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_Node' represents an important domain concept.
+It has one attribute: 'actiontype', which is of type str.
+
+'RuleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_IntegerValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'henshin_text_ConditionReuseNode' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_ConditionEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_OrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'henshin_text_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_MinusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_Logic' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionNodeTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionGraphElements' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_AND' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_List' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_MultiRule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'henshin_text_LoopUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_RuleNodeTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'Logic' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_Strict' represents an important domain concept.
+It has one attribute: 'strict', which is of type bool.
+
+'henshin_text_PlusExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphElements' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_IteratedUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'henshin_text_Model' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Type' defines the following possible values: 'eChar', 'eEnumerator', 'eJavaObject', 'eDiagnosticChain', 'eShortObject', 'eJavaClass', 'eBigDecimal', 'eLong', 'eTreeIterator', 'eByteArray', 'eShort', 'eFloat', 'eFeatureMap', 'eString', 'eLongObject', 'eByte', 'eByteObject', 'eBoolean', 'eResource', 'eFeatureMapEntry', 'eDouble', 'eInt', 'eIntegerObject', 'eFloatObject', 'eBooleanObject', 'eBigInteger', 'eEList', 'eDate', 'eMap', 'eDoubleObject', 'eInvocationTargetException', 'eCharacterObject', 'eResourceSet'.
+
+The model also captures inheritance relationships between classes.
+The class 'henshin_text_JavaImport' is a specialization of 'RuleElement'.
+The class 'henshin_text_CheckDangling' is a specialization of 'RuleElement'.
+The class 'henshin_text_InjectiveMatching' is a specialization of 'RuleElement'.
+The class 'henshin_text_Conditions' is a specialization of 'RuleElement'.
+The class 'henshin_text_Graph' is a specialization of 'RuleElement'.
+The class 'henshin_text_Edges' is a specialization of 'GraphElements'.
+The class 'henshin_text_Node' is a specialization of 'GraphElements'.
+The class 'henshin_text_Node' is a specialization of 'RuleNodeTypes'.
+The class 'henshin_text_Node' is a specialization of 'ConditionNodeTypes'.
+The class 'henshin_text_MultiRuleReuseNode' is a specialization of 'GraphElements'.
+The class 'henshin_text_MultiRuleReuseNode' is a specialization of 'RuleNodeTypes'.
+The class 'henshin_text_MultiRule' is a specialization of 'GraphElements'.
+The class 'henshin_text_Formula' is a specialization of 'GraphElements'.
+The class 'henshin_text_Formula' is a specialization of 'ConditionGraphElements'.
+The class 'henshin_text_ConditionEdges' is a specialization of 'ConditionGraphElements'.
+The class 'henshin_text_ConditionNode' is a specialization of 'ConditionGraphElements'.
+The class 'henshin_text_ConditionNode' is a specialization of 'ConditionNodeTypes'.
+The class 'henshin_text_ConditionReuseNode' is a specialization of 'ConditionGraphElements'.
+The class 'henshin_text_SequentialProperties' is a specialization of 'UnitElement'.
+The class 'henshin_text_Strict' is a specialization of 'SequentialProperties'.
+The class 'henshin_text_Rollback' is a specialization of 'SequentialProperties'.
+The class 'henshin_text_IndependentUnit' is a specialization of 'UnitElement'.
+The class 'henshin_text_ConditionalUnit' is a specialization of 'UnitElement'.
+The class 'henshin_text_PriorityUnit' is a specialization of 'UnitElement'.
+The class 'henshin_text_IteratedUnit' is a specialization of 'UnitElement'.
+The class 'henshin_text_LoopUnit' is a specialization of 'UnitElement'.
+The class 'henshin_text_Rule' is a specialization of 'ModelElement'.
+The class 'henshin_text_Unit' is a specialization of 'ModelElement'.
+The class 'henshin_text_ORorXOR' is a specialization of 'Logic'.
+The class 'henshin_text_AND' is a specialization of 'Logic'.
+The class 'henshin_text_Not' is a specialization of 'Logic'.
+The class 'henshin_text_ConditionGraphRef' is a specialization of 'Logic'.
+The class 'henshin_text_Call' is a specialization of 'UnitElement'.
+The class 'henshin_text_OrExpression' is a specialization of 'Expression'.
+The class 'henshin_text_AndExpression' is a specialization of 'Expression'.
+The class 'henshin_text_EqualityExpression' is a specialization of 'Expression'.
+The class 'henshin_text_ComparisonExpression' is a specialization of 'Expression'.
+The class 'henshin_text_PlusExpression' is a specialization of 'Expression'.
+The class 'henshin_text_MinusExpression' is a specialization of 'Expression'.
+The class 'henshin_text_MulOrDivExpression' is a specialization of 'Expression'.
+The class 'henshin_text_BracketExpression' is a specialization of 'Expression'.
+The class 'henshin_text_NotExpression' is a specialization of 'Expression'.
+The class 'henshin_text_ParameterValue' is a specialization of 'Expression'.
+The class 'henshin_text_JavaClassValue' is a specialization of 'Expression'.
+The class 'henshin_text_JavaAttributeValue' is a specialization of 'Expression'.
+The class 'henshin_text_StringValue' is a specialization of 'Expression'.
+The class 'henshin_text_NumberValue' is a specialization of 'Expression'.
+The class 'henshin_text_IntegerValue' is a specialization of 'Expression'.
+The class 'henshin_text_NaturalValue' is a specialization of 'Expression'.
+The class 'henshin_text_BoolValue' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'henshin_text_EPackageImport' and 'henshin_text_Model'. From 'henshin_text_EPackageImport', the role 'henshin_text_EPackageImport' has cardinality 0..*, and from 'henshin_text_Model', the role 'henshin_text_Model' has cardinality 0..*.
+An association connects 'henshin_text_ModelElement' and 'henshin_text_Model'. From 'henshin_text_ModelElement', the role 'henshin_text_ModelElement' has cardinality 0..*, and from 'henshin_text_Model', the role 'henshin_text_Model2' has cardinality 0..*.
+An association connects 'henshin_text_EPackage' and 'henshin_text_EPackageImport'. From 'henshin_text_EPackage', the role 'henshin_text_EPackage' has cardinality 0..*, and from 'henshin_text_EPackageImport', the role 'henshin_text_EPackageImport4' has cardinality 0..*.
+An association connects 'henshin_text_Parameter' and 'henshin_text_ModelElement'. From 'henshin_text_Parameter', the role 'henshin_text_Parameter' has cardinality 0..*, and from 'henshin_text_ModelElement', the role 'henshin_text_ModelElement6' has cardinality 0..*.
+An association connects 'henshin_text_Conditions' and 'henshin_text_Expression'. From 'henshin_text_Conditions', the role 'henshin_text_Conditions' has cardinality 0..*, and from 'henshin_text_Expression', the role 'henshin_text_Expression' has cardinality 0..*.
+An association connects 'henshin_text_GraphElements' and 'henshin_text_Graph'. From 'henshin_text_GraphElements', the role 'henshin_text_GraphElements' has cardinality 0..*, and from 'henshin_text_Graph', the role 'henshin_text_Graph' has cardinality 0..*.
+An association connects 'henshin_text_Edges' and 'henshin_text_Edge'. From 'henshin_text_Edges', the role 'henshin_text_Edges' has cardinality 0..*, and from 'henshin_text_Edge', the role 'henshin_text_Edge' has cardinality 0..*.
+An association connects 'henshin_text_RuleNodeTypes' and 'henshin_text_Edge'. From 'henshin_text_RuleNodeTypes', the role 'henshin_text_RuleNodeTypes' has cardinality 0..*, and from 'henshin_text_Edge', the role 'henshin_text_Edge11' has cardinality 0..*.
+An association connects 'henshin_text_RuleNodeTypes' and 'henshin_text_Edge'. From 'henshin_text_RuleNodeTypes', the role 'henshin_text_RuleNodeTypes14' has cardinality 0..*, and from 'henshin_text_Edge', the role 'henshin_text_Edge13' has cardinality 0..*.
+An association connects 'henshin_text_EReference' and 'henshin_text_Edge'. From 'henshin_text_EReference', the role 'henshin_text_EReference' has cardinality 0..*, and from 'henshin_text_Edge', the role 'henshin_text_Edge16' has cardinality 0..*.
+An association connects 'henshin_text_Node' and 'henshin_text_EClass'. From 'henshin_text_Node', the role 'henshin_text_Node' has cardinality 0..*, and from 'henshin_text_EClass', the role 'henshin_text_EClass' has cardinality 0..*.
+An association connects 'henshin_text_Node' and 'henshin_text_Attribute'. From 'henshin_text_Node', the role 'henshin_text_Node19' has cardinality 0..*, and from 'henshin_text_Attribute', the role 'henshin_text_Attribute' has cardinality 0..*.
+An association connects 'henshin_text_Node' and 'henshin_text_MultiRuleReuseNode'. From 'henshin_text_Node', the role 'henshin_text_Node21' has cardinality 0..*, and from 'henshin_text_MultiRuleReuseNode', the role 'henshin_text_MultiRuleReuseNode' has cardinality 0..*.
+An association connects 'henshin_text_MultiRuleReuseNode' and 'henshin_text_Attribute'. From 'henshin_text_MultiRuleReuseNode', the role 'henshin_text_MultiRuleReuseNode23' has cardinality 0..*, and from 'henshin_text_Attribute', the role 'henshin_text_Attribute24' has cardinality 0..*.
+An association connects 'henshin_text_EAttribute' and 'henshin_text_Attribute'. From 'henshin_text_EAttribute', the role 'henshin_text_EAttribute' has cardinality 0..*, and from 'henshin_text_Attribute', the role 'henshin_text_Attribute26' has cardinality 0..*.
+An association connects 'henshin_text_Expression' and 'henshin_text_Attribute'. From 'henshin_text_Expression', the role 'henshin_text_Expression29' has cardinality 0..*, and from 'henshin_text_Attribute', the role 'henshin_text_Attribute28' has cardinality 0..*.
+An association connects 'henshin_text_MultiRule' and 'henshin_text_RuleElement'. From 'henshin_text_MultiRule', the role 'henshin_text_MultiRule' has cardinality 0..*, and from 'henshin_text_RuleElement', the role 'henshin_text_RuleElement' has cardinality 0..*.
+An association connects 'henshin_text_Logic' and 'henshin_text_Formula'. From 'henshin_text_Logic', the role 'henshin_text_Logic' has cardinality 0..*, and from 'henshin_text_Formula', the role 'henshin_text_Formula' has cardinality 0..*.
+An association connects 'henshin_text_ConditionGraph' and 'henshin_text_Formula'. From 'henshin_text_ConditionGraph', the role 'henshin_text_ConditionGraph' has cardinality 0..*, and from 'henshin_text_Formula', the role 'henshin_text_Formula33' has cardinality 0..*.
+An association connects 'henshin_text_ConditionGraph' and 'henshin_text_ConditionGraphElements'. From 'henshin_text_ConditionGraph', the role 'henshin_text_ConditionGraph35' has cardinality 0..*, and from 'henshin_text_ConditionGraphElements', the role 'henshin_text_ConditionGraphElements' has cardinality 0..*.
+An association connects 'henshin_text_ConditionEdge' and 'henshin_text_ConditionEdges'. From 'henshin_text_ConditionEdge', the role 'henshin_text_ConditionEdge' has cardinality 0..*, and from 'henshin_text_ConditionEdges', the role 'henshin_text_ConditionEdges' has cardinality 0..*.
+An association connects 'henshin_text_ConditionNodeTypes' and 'henshin_text_ConditionEdge'. From 'henshin_text_ConditionNodeTypes', the role 'henshin_text_ConditionNodeTypes' has cardinality 0..*, and from 'henshin_text_ConditionEdge', the role 'henshin_text_ConditionEdge38' has cardinality 0..*.
+An association connects 'henshin_text_ConditionEdge' and 'henshin_text_ConditionNodeTypes'. From 'henshin_text_ConditionEdge', the role 'henshin_text_ConditionEdge40' has cardinality 0..*, and from 'henshin_text_ConditionNodeTypes', the role 'henshin_text_ConditionNodeTypes41' has cardinality 0..*.
+An association connects 'henshin_text_EReference' and 'henshin_text_ConditionEdge'. From 'henshin_text_EReference', the role 'henshin_text_EReference44' has cardinality 0..*, and from 'henshin_text_ConditionEdge', the role 'henshin_text_ConditionEdge43' has cardinality 0..*.
+An association connects 'henshin_text_ConditionNode' and 'henshin_text_EClass'. From 'henshin_text_ConditionNode', the role 'henshin_text_ConditionNode' has cardinality 0..*, and from 'henshin_text_EClass', the role 'henshin_text_EClass46' has cardinality 0..*.
+An association connects 'henshin_text_ConditionNode' and 'henshin_text_Match'. From 'henshin_text_ConditionNode', the role 'henshin_text_ConditionNode48' has cardinality 0..*, and from 'henshin_text_Match', the role 'henshin_text_Match' has cardinality 0..*.
+An association connects 'henshin_text_ConditionReuseNode' and 'henshin_text_ConditionNodeTypes'. From 'henshin_text_ConditionReuseNode', the role 'henshin_text_ConditionReuseNode' has cardinality 0..*, and from 'henshin_text_ConditionNodeTypes', the role 'henshin_text_ConditionNodeTypes50' has cardinality 0..*.
+An association connects 'henshin_text_Match' and 'henshin_text_ConditionReuseNode'. From 'henshin_text_Match', the role 'henshin_text_Match53' has cardinality 0..*, and from 'henshin_text_ConditionReuseNode', the role 'henshin_text_ConditionReuseNode52' has cardinality 0..*.
+An association connects 'henshin_text_Match' and 'henshin_text_EAttribute'. From 'henshin_text_Match', the role 'henshin_text_Match55' has cardinality 0..*, and from 'henshin_text_EAttribute', the role 'henshin_text_EAttribute56' has cardinality 0..*.
+An association connects 'henshin_text_Match' and 'henshin_text_Expression'. From 'henshin_text_Match', the role 'henshin_text_Match58' has cardinality 0..*, and from 'henshin_text_Expression', the role 'henshin_text_Expression59' has cardinality 0..*.
+An association connects 'henshin_text_UnitElement' and 'henshin_text_UnitElement'. From 'henshin_text_UnitElement', the role 'henshin_text_UnitElement60' has cardinality 0..*, and from 'henshin_text_UnitElement', the role 'henshin_text_UnitElement' has cardinality 0..*.
+An association connects 'henshin_text_UnitElement' and 'henshin_text_List'. From 'henshin_text_UnitElement', the role 'henshin_text_UnitElement63' has cardinality 0..*, and from 'henshin_text_List', the role 'henshin_text_List' has cardinality 0..*.
+An association connects 'henshin_text_List' and 'henshin_text_IndependentUnit'. From 'henshin_text_List', the role 'henshin_text_List65' has cardinality 0..*, and from 'henshin_text_IndependentUnit', the role 'henshin_text_IndependentUnit' has cardinality 0..*.
+An association connects 'henshin_text_ConditionalUnit' and 'henshin_text_UnitElement'. From 'henshin_text_ConditionalUnit', the role 'henshin_text_ConditionalUnit' has cardinality 0..*, and from 'henshin_text_UnitElement', the role 'henshin_text_UnitElement67' has cardinality 0..*.
+An association connects 'henshin_text_UnitElement' and 'henshin_text_ConditionalUnit'. From 'henshin_text_UnitElement', the role 'henshin_text_UnitElement70' has cardinality 0..*, and from 'henshin_text_ConditionalUnit', the role 'henshin_text_ConditionalUnit69' has cardinality 0..*.
+An association connects 'henshin_text_UnitElement' and 'henshin_text_ConditionalUnit'. From 'henshin_text_UnitElement', the role 'henshin_text_UnitElement73' has cardinality 0..*, and from 'henshin_text_ConditionalUnit', the role 'henshin_text_ConditionalUnit72' has cardinality 0..*.
+An association connects 'henshin_text_List' and 'henshin_text_PriorityUnit'. From 'henshin_text_List', the role 'henshin_text_List75' has cardinality 0..*, and from 'henshin_text_PriorityUnit', the role 'henshin_text_PriorityUnit' has cardinality 0..*.
+An association connects 'henshin_text_IteratedUnit' and 'henshin_text_Expression'. From 'henshin_text_IteratedUnit', the role 'henshin_text_IteratedUnit' has cardinality 0..*, and from 'henshin_text_Expression', the role 'henshin_text_Expression77' has cardinality 0..*.
+An association connects 'henshin_text_UnitElement' and 'henshin_text_IteratedUnit'. From 'henshin_text_UnitElement', the role 'henshin_text_UnitElement80' has cardinality 0..*, and from 'henshin_text_IteratedUnit', the role 'henshin_text_IteratedUnit79' has cardinality 0..*.
+An association connects 'henshin_text_UnitElement' and 'henshin_text_LoopUnit'. From 'henshin_text_UnitElement', the role 'henshin_text_UnitElement82' has cardinality 0..*, and from 'henshin_text_LoopUnit', the role 'henshin_text_LoopUnit' has cardinality 0..*.
+An association connects 'henshin_text_Parameter' and 'henshin_text_ParameterType'. From 'henshin_text_Parameter', the role 'henshin_text_Parameter84' has cardinality 0..*, and from 'henshin_text_ParameterType', the role 'henshin_text_ParameterType' has cardinality 0..*.
+An association connects 'henshin_text_ParameterType' and 'henshin_text_EClass'. From 'henshin_text_ParameterType', the role 'henshin_text_ParameterType86' has cardinality 0..*, and from 'henshin_text_EClass', the role 'henshin_text_EClass87' has cardinality 0..*.
+An association connects 'henshin_text_RuleElement' and 'henshin_text_Rule'. From 'henshin_text_RuleElement', the role 'henshin_text_RuleElement89' has cardinality 0..*, and from 'henshin_text_Rule', the role 'henshin_text_Rule' has cardinality 0..*.
+An association connects 'henshin_text_UnitElement' and 'henshin_text_Unit'. From 'henshin_text_UnitElement', the role 'henshin_text_UnitElement91' has cardinality 0..*, and from 'henshin_text_Unit', the role 'henshin_text_Unit' has cardinality 0..*.
+An association connects 'henshin_text_ORorXOR' and 'henshin_text_Logic'. From 'henshin_text_ORorXOR', the role 'henshin_text_ORorXOR' has cardinality 0..*, and from 'henshin_text_Logic', the role 'henshin_text_Logic93' has cardinality 0..*.
+An association connects 'henshin_text_Logic' and 'henshin_text_ORorXOR'. From 'henshin_text_Logic', the role 'henshin_text_Logic96' has cardinality 0..*, and from 'henshin_text_ORorXOR', the role 'henshin_text_ORorXOR95' has cardinality 0..*.
+An association connects 'henshin_text_Logic' and 'henshin_text_AND'. From 'henshin_text_Logic', the role 'henshin_text_Logic98' has cardinality 0..*, and from 'henshin_text_AND', the role 'henshin_text_AND' has cardinality 0..*.
+An association connects 'henshin_text_Logic' and 'henshin_text_AND'. From 'henshin_text_Logic', the role 'henshin_text_Logic101' has cardinality 0..*, and from 'henshin_text_AND', the role 'henshin_text_AND100' has cardinality 0..*.
+An association connects 'henshin_text_Logic' and 'henshin_text_Not'. From 'henshin_text_Logic', the role 'henshin_text_Logic103' has cardinality 0..*, and from 'henshin_text_Not', the role 'henshin_text_Not' has cardinality 0..*.
+An association connects 'henshin_text_ConditionGraph' and 'henshin_text_ConditionGraphRef'. From 'henshin_text_ConditionGraph', the role 'henshin_text_ConditionGraph105' has cardinality 0..*, and from 'henshin_text_ConditionGraphRef', the role 'henshin_text_ConditionGraphRef' has cardinality 0..*.
+An association connects 'henshin_text_Call' and 'henshin_text_ModelElement'. From 'henshin_text_Call', the role 'henshin_text_Call' has cardinality 0..*, and from 'henshin_text_ModelElement', the role 'henshin_text_ModelElement107' has cardinality 0..*.
+An association connects 'henshin_text_Call' and 'henshin_text_Parameter'. From 'henshin_text_Call', the role 'henshin_text_Call109' has cardinality 0..*, and from 'henshin_text_Parameter', the role 'henshin_text_Parameter110' has cardinality 0..*.
+An association connects 'henshin_text_Expression' and 'henshin_text_OrExpression'. From 'henshin_text_Expression', the role 'henshin_text_Expression112' has cardinality 0..*, and from 'henshin_text_OrExpression', the role 'henshin_text_OrExpression' has cardinality 0..*.
+An association connects 'henshin_text_Expression' and 'henshin_text_OrExpression'. From 'henshin_text_Expression', the role 'henshin_text_Expression115' has cardinality 0..*, and from 'henshin_text_OrExpression', the role 'henshin_text_OrExpression114' has cardinality 0..*.
+An association connects 'henshin_text_Expression' and 'henshin_text_AndExpression'. From 'henshin_text_Expression', the role 'henshin_text_Expression117' has cardinality 0..*, and from 'henshin_text_AndExpression', the role 'henshin_text_AndExpression' has cardinality 0..*.
+An association connects 'henshin_text_AndExpression' and 'henshin_text_Expression'. From 'henshin_text_AndExpression', the role 'henshin_text_AndExpression119' has cardinality 0..*, and from 'henshin_text_Expression', the role 'henshin_text_Expression120' has cardinality 0..*.
+An association connects 'henshin_text_EqualityExpression' and 'henshin_text_Expression'. From 'henshin_text_EqualityExpression', the role 'henshin_text_EqualityExpression' has cardinality 0..*, and from 'henshin_text_Expression', the role 'henshin_text_Expression122' has cardinality 0..*.
+An association connects 'henshin_text_Expression' and 'henshin_text_EqualityExpression'. From 'henshin_text_Expression', the role 'henshin_text_Expression125' has cardinality 0..*, and from 'henshin_text_EqualityExpression', the role 'henshin_text_EqualityExpression124' has cardinality 0..*.
+An association connects 'henshin_text_ComparisonExpression' and 'henshin_text_Expression'. From 'henshin_text_ComparisonExpression', the role 'henshin_text_ComparisonExpression' has cardinality 0..*, and from 'henshin_text_Expression', the role 'henshin_text_Expression127' has cardinality 0..*.
+An association connects 'henshin_text_ComparisonExpression' and 'henshin_text_Expression'. From 'henshin_text_ComparisonExpression', the role 'henshin_text_ComparisonExpression129' has cardinality 0..*, and from 'henshin_text_Expression', the role 'henshin_text_Expression130' has cardinality 0..*.
+An association connects 'henshin_text_PlusExpression' and 'henshin_text_Expression'. From 'henshin_text_PlusExpression', the role 'henshin_text_PlusExpression' has cardinality 0..*, and from 'henshin_text_Expression', the role 'henshin_text_Expression132' has cardinality 0..*.
+An association connects 'henshin_text_PlusExpression' and 'henshin_text_Expression'. From 'henshin_text_PlusExpression', the role 'henshin_text_PlusExpression134' has cardinality 0..*, and from 'henshin_text_Expression', the role 'henshin_text_Expression135' has cardinality 0..*.
+An association connects 'henshin_text_Expression' and 'henshin_text_MinusExpression'. From 'henshin_text_Expression', the role 'henshin_text_Expression137' has cardinality 0..*, and from 'henshin_text_MinusExpression', the role 'henshin_text_MinusExpression' has cardinality 0..*.
+An association connects 'henshin_text_Expression' and 'henshin_text_MinusExpression'. From 'henshin_text_Expression', the role 'henshin_text_Expression140' has cardinality 0..*, and from 'henshin_text_MinusExpression', the role 'henshin_text_MinusExpression139' has cardinality 0..*.
+An association connects 'henshin_text_Expression' and 'henshin_text_MulOrDivExpression'. From 'henshin_text_Expression', the role 'henshin_text_Expression142' has cardinality 0..*, and from 'henshin_text_MulOrDivExpression', the role 'henshin_text_MulOrDivExpression' has cardinality 0..*.
+An association connects 'henshin_text_MulOrDivExpression' and 'henshin_text_Expression'. From 'henshin_text_MulOrDivExpression', the role 'henshin_text_MulOrDivExpression144' has cardinality 0..*, and from 'henshin_text_Expression', the role 'henshin_text_Expression145' has cardinality 0..*.
+An association connects 'henshin_text_Expression' and 'henshin_text_BracketExpression'. From 'henshin_text_Expression', the role 'henshin_text_Expression147' has cardinality 0..*, and from 'henshin_text_BracketExpression', the role 'henshin_text_BracketExpression' has cardinality 0..*.
+An association connects 'henshin_text_Expression' and 'henshin_text_NotExpression'. From 'henshin_text_Expression', the role 'henshin_text_Expression149' has cardinality 0..*, and from 'henshin_text_NotExpression', the role 'henshin_text_NotExpression' has cardinality 0..*.
+An association connects 'henshin_text_Parameter' and 'henshin_text_ParameterValue'. From 'henshin_text_Parameter', the role 'henshin_text_Parameter151' has cardinality 0..*, and from 'henshin_text_ParameterValue', the role 'henshin_text_ParameterValue' has cardinality 0..*.
+An association connects 'henshin_text_Expression' and 'henshin_text_JavaClassValue'. From 'henshin_text_Expression', the role 'henshin_text_Expression153' has cardinality 0..*, and from 'henshin_text_JavaClassValue', the role 'henshin_text_JavaClassValue' has cardinality 0..*.

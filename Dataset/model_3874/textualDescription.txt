@@ -1,0 +1,68 @@
+The domain model 'fl' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'fl_EqualExp' represents an important domain concept.
+It does not declare any attributes.
+
+'fl_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'fl_Argument' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fl_Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'fl_LiteralExp' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'fl_PlusExp' represents an important domain concept.
+It does not declare any attributes.
+
+'fl_IfThenElseExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'fl_ApplyExp' represents an important domain concept.
+It does not declare any attributes.
+
+'fl_ArgumentExp' represents an important domain concept.
+It does not declare any attributes.
+
+'fl_BinaryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'fl_MinusExp' represents an important domain concept.
+It does not declare any attributes.
+
+'fl_Function' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'fl_LiteralExp' is a specialization of 'Exp'.
+The class 'fl_ArgumentExp' is a specialization of 'Exp'.
+The class 'fl_IfThenElseExp' is a specialization of 'Exp'.
+The class 'fl_ApplyExp' is a specialization of 'Exp'.
+The class 'fl_BinaryExp' is a specialization of 'Exp'.
+The class 'fl_PlusExp' is a specialization of 'BinaryExp'.
+The class 'fl_MinusExp' is a specialization of 'BinaryExp'.
+The class 'fl_EqualExp' is a specialization of 'BinaryExp'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fl_Function' and 'fl_Program'. From 'fl_Function', the role 'fl_Function' has cardinality 0..*, and from 'fl_Program', the role 'fl_Program' has cardinality 0..*.
+An association connects 'fl_Argument' and 'fl_Function'. From 'fl_Argument', the role 'fl_Argument' has cardinality 0..*, and from 'fl_Function', the role 'fl_Function2' has cardinality 0..*.
+An association connects 'fl_Exp' and 'fl_Function'. From 'fl_Exp', the role 'fl_Exp' has cardinality 0..*, and from 'fl_Function', the role 'fl_Function4' has cardinality 0..*.
+An association connects 'fl_ArgumentExp' and 'fl_Argument'. From 'fl_ArgumentExp', the role 'fl_ArgumentExp' has cardinality 0..*, and from 'fl_Argument', the role 'fl_Argument6' has cardinality 0..*.
+An association connects 'fl_Exp' and 'fl_IfThenElseExp'. From 'fl_Exp', the role 'fl_Exp8' has cardinality 0..*, and from 'fl_IfThenElseExp', the role 'fl_IfThenElseExp' has cardinality 0..*.
+An association connects 'fl_IfThenElseExp' and 'fl_Exp'. From 'fl_IfThenElseExp', the role 'fl_IfThenElseExp10' has cardinality 0..*, and from 'fl_Exp', the role 'fl_Exp11' has cardinality 0..*.
+An association connects 'fl_IfThenElseExp' and 'fl_Exp'. From 'fl_IfThenElseExp', the role 'fl_IfThenElseExp13' has cardinality 0..*, and from 'fl_Exp', the role 'fl_Exp14' has cardinality 0..*.
+An association connects 'fl_ApplyExp' and 'fl_Function'. From 'fl_ApplyExp', the role 'fl_ApplyExp' has cardinality 0..*, and from 'fl_Function', the role 'fl_Function16' has cardinality 0..*.
+An association connects 'fl_ApplyExp' and 'fl_Exp'. From 'fl_ApplyExp', the role 'fl_ApplyExp18' has cardinality 0..*, and from 'fl_Exp', the role 'fl_Exp19' has cardinality 0..*.
+An association connects 'fl_BinaryExp' and 'fl_Exp'. From 'fl_BinaryExp', the role 'fl_BinaryExp' has cardinality 0..*, and from 'fl_Exp', the role 'fl_Exp21' has cardinality 0..*.
+An association connects 'fl_Exp' and 'fl_BinaryExp'. From 'fl_Exp', the role 'fl_Exp24' has cardinality 0..*, and from 'fl_BinaryExp', the role 'fl_BinaryExp23' has cardinality 0..*.

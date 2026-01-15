@@ -1,0 +1,110 @@
+The domain model 'RefinementsEcore' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'RefinementsEcore_EParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'RefinementsEcore_EAttribute' represents an important domain concept.
+It has one attribute: 'iD', which is of type int.
+
+'RefinementsEcore_EDataType' represents an important domain concept.
+It has one attribute: 'serializable', which is of type bool.
+
+'RefinementsEcore_EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefinementsEcore_EStructuralFeature' represents an important domain concept.
+It has the following attributes: 'volatile', which is of type bool; 'unsettable', which is of type bool; 'derived', which is of type bool; 'transient', which is of type bool; 'changeable', which is of type bool; 'defaultValueLiteral', which is of type str.
+
+'ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefinementsEcore_EClassifier' represents an important domain concept.
+It has the following attributes: 'instanceClass', which is of type str; 'instanceClassName', which is of type str; 'instanceTypeName', which is of type str.
+
+'RefinementsEcore_EEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'RefinementsEcore_EEnumLiteral' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'literal', which is of type str.
+
+'RefinementsEcore_ENamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RefinementsEcore_EClass' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'interface', which is of type bool.
+
+'EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefinementsEcore_EOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'ETypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RefinementsEcore_ETypedElement' represents an important domain concept.
+It has the following attributes: 'lowerBound', which is of type int; 'ordered', which is of type bool; 'required', which is of type bool; 'upperBound', which is of type int; 'many', which is of type bool; 'unique', which is of type bool.
+
+'EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'RefinementsEcore_EAnnotation' represents an important domain concept.
+It has one attribute: 'source', which is of type str.
+
+'RefinementsEcore_EPackage' represents an important domain concept.
+It has the following attributes: 'nsPrefix', which is of type str; 'nsURI', which is of type str.
+
+'RefinementsEcore_EReference' represents an important domain concept.
+It has the following attributes: 'containment', which is of type bool; 'container', which is of type bool; 'resolveProxies', which is of type bool.
+
+The model also captures inheritance relationships between classes.
+The class 'RefinementsEcore_EAttribute' is a specialization of 'EStructuralFeature'.
+The class 'RefinementsEcore_EAnnotation' is a specialization of 'EModelElement'.
+The class 'RefinementsEcore_EClass' is a specialization of 'EClassifier'.
+The class 'RefinementsEcore_EClassifier' is a specialization of 'ENamedElement'.
+The class 'RefinementsEcore_EDataType' is a specialization of 'EClassifier'.
+The class 'RefinementsEcore_EEnum' is a specialization of 'EDataType'.
+The class 'RefinementsEcore_EEnumLiteral' is a specialization of 'ENamedElement'.
+The class 'RefinementsEcore_ENamedElement' is a specialization of 'EModelElement'.
+The class 'RefinementsEcore_EOperation' is a specialization of 'ETypedElement'.
+The class 'RefinementsEcore_EPackage' is a specialization of 'ENamedElement'.
+The class 'RefinementsEcore_EParameter' is a specialization of 'ETypedElement'.
+The class 'RefinementsEcore_EReference' is a specialization of 'EStructuralFeature'.
+The class 'RefinementsEcore_EStructuralFeature' is a specialization of 'ETypedElement'.
+The class 'RefinementsEcore_ETypedElement' is a specialization of 'ENamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'RefinementsEcore_EDataType' and 'RefinementsEcore_EAttribute'. From 'RefinementsEcore_EDataType', the role 'RefinementsEcore_EDataType' has cardinality 0..*, and from 'RefinementsEcore_EAttribute', the role 'RefinementsEcore_EAttribute' has cardinality 0..*.
+An association connects 'RefinementsEcore_EAttribute' and 'RefinementsEcore_EAttribute'. From 'RefinementsEcore_EAttribute', the role 'RefinementsEcore_EAttribute1' has cardinality 0..*, and from 'RefinementsEcore_EAttribute', the role 'RefinementsEcore_EAttribute3' has cardinality 0..*.
+An association connects 'RefinementsEcore_EModelElement' and 'RefinementsEcore_EAnnotation'. From 'RefinementsEcore_EModelElement', the role 'EModelElement' has cardinality 0..*, and from 'RefinementsEcore_EAnnotation', the role 'eAnnotations' has cardinality 0..*.
+An association connects 'RefinementsEcore_EClass' and 'RefinementsEcore_EClass'. From 'RefinementsEcore_EClass', the role 'RefinementsEcore_EClass5' has cardinality 0..*, and from 'RefinementsEcore_EClass', the role 'RefinementsEcore_EClass' has cardinality 0..*.
+An association connects 'RefinementsEcore_EClass' and 'RefinementsEcore_EOperation'. From 'RefinementsEcore_EClass', the role 'eContainingClass' has cardinality 0..*, and from 'RefinementsEcore_EOperation', the role 'EOperation' has cardinality 0..*.
+An association connects 'RefinementsEcore_EClass' and 'RefinementsEcore_EReference'. From 'RefinementsEcore_EClass', the role 'RefinementsEcore_EClass9' has cardinality 0..*, and from 'RefinementsEcore_EReference', the role 'RefinementsEcore_EReference' has cardinality 0..*.
+An association connects 'RefinementsEcore_EAttribute' and 'RefinementsEcore_EClass'. From 'RefinementsEcore_EAttribute', the role 'RefinementsEcore_EAttribute12' has cardinality 0..*, and from 'RefinementsEcore_EClass', the role 'RefinementsEcore_EClass11' has cardinality 0..*.
+An association connects 'RefinementsEcore_EAttribute' and 'RefinementsEcore_EClass'. From 'RefinementsEcore_EAttribute', the role 'RefinementsEcore_EAttribute15' has cardinality 0..*, and from 'RefinementsEcore_EClass', the role 'RefinementsEcore_EClass14' has cardinality 0..*.
+An association connects 'RefinementsEcore_EStructuralFeature' and 'RefinementsEcore_EClass'. From 'RefinementsEcore_EStructuralFeature', the role 'EStructuralFeature' has cardinality 0..*, and from 'RefinementsEcore_EClass', the role 'eContainingClass17' has cardinality 0..*.
+An association connects 'RefinementsEcore_EPackage' and 'RefinementsEcore_EClassifier'. From 'RefinementsEcore_EPackage', the role 'EPackage' has cardinality 0..*, and from 'RefinementsEcore_EClassifier', the role 'eClassifiers' has cardinality 0..*.
+An association connects 'RefinementsEcore_EEnum' and 'RefinementsEcore_EEnumLiteral'. From 'RefinementsEcore_EEnum', the role 'eEnum' has cardinality 0..*, and from 'RefinementsEcore_EEnumLiteral', the role 'EEnumLiteral' has cardinality 0..*.
+An association connects 'RefinementsEcore_EEnum' and 'RefinementsEcore_EEnumLiteral'. From 'RefinementsEcore_EEnum', the role 'EEnum' has cardinality 0..*, and from 'RefinementsEcore_EEnumLiteral', the role 'eLiterals' has cardinality 0..*.
+An association connects 'RefinementsEcore_EModelElement' and 'RefinementsEcore_EAnnotation'. From 'RefinementsEcore_EModelElement', the role 'eModelElement' has cardinality 0..*, and from 'RefinementsEcore_EAnnotation', the role 'EAnnotation' has cardinality 0..*.
+An association connects 'RefinementsEcore_EOperation' and 'RefinementsEcore_EClass'. From 'RefinementsEcore_EOperation', the role 'eOperations' has cardinality 0..*, and from 'RefinementsEcore_EClass', the role 'EClass' has cardinality 0..*.
+An association connects 'RefinementsEcore_EParameter' and 'RefinementsEcore_EOperation'. From 'RefinementsEcore_EParameter', the role 'EParameter' has cardinality 0..*, and from 'RefinementsEcore_EOperation', the role 'eOperation' has cardinality 0..*.
+An association connects 'RefinementsEcore_EClassifier' and 'RefinementsEcore_EOperation'. From 'RefinementsEcore_EClassifier', the role 'RefinementsEcore_EClassifier' has cardinality 0..*, and from 'RefinementsEcore_EOperation', the role 'RefinementsEcore_EOperation' has cardinality 0..*.
+An association connects 'RefinementsEcore_EPackage' and 'RefinementsEcore_EClassifier'. From 'RefinementsEcore_EPackage', the role 'ePackage' has cardinality 0..*, and from 'RefinementsEcore_EClassifier', the role 'EClassifier' has cardinality 0..*.
+An association connects 'RefinementsEcore_EPackage' and 'RefinementsEcore_EPackage'. From 'RefinementsEcore_EPackage', the role 'eSuperPackage' has cardinality 0..*, and from 'RefinementsEcore_EPackage', the role 'EPackage28' has cardinality 0..*.
+An association connects 'RefinementsEcore_EPackage' and 'RefinementsEcore_EPackage'. From 'RefinementsEcore_EPackage', the role 'eSubpackages' has cardinality 0..*, and from 'RefinementsEcore_EPackage', the role 'EPackage31' has cardinality 0..*.
+An association connects 'RefinementsEcore_EOperation' and 'RefinementsEcore_EParameter'. From 'RefinementsEcore_EOperation', the role 'EOperation33' has cardinality 0..*, and from 'RefinementsEcore_EParameter', the role 'eParameters' has cardinality 0..*.
+An association connects 'RefinementsEcore_EReference' and 'RefinementsEcore_EReference'. From 'RefinementsEcore_EReference', the role 'RefinementsEcore_EReference36' has cardinality 0..*, and from 'RefinementsEcore_EReference', the role 'RefinementsEcore_EReference34' has cardinality 0..*.
+An association connects 'RefinementsEcore_EReference' and 'RefinementsEcore_EClass'. From 'RefinementsEcore_EReference', the role 'RefinementsEcore_EReference38' has cardinality 0..*, and from 'RefinementsEcore_EClass', the role 'RefinementsEcore_EClass39' has cardinality 0..*.
+An association connects 'RefinementsEcore_EAttribute' and 'RefinementsEcore_EReference'. From 'RefinementsEcore_EAttribute', the role 'RefinementsEcore_EAttribute42' has cardinality 0..*, and from 'RefinementsEcore_EReference', the role 'RefinementsEcore_EReference41' has cardinality 0..*.
+An association connects 'RefinementsEcore_EReference' and 'RefinementsEcore_EReference'. From 'RefinementsEcore_EReference', the role 'RefinementsEcore_EReference43' has cardinality 0..*, and from 'RefinementsEcore_EReference', the role 'RefinementsEcore_EReference45' has cardinality 0..*.
+An association connects 'RefinementsEcore_EStructuralFeature' and 'RefinementsEcore_EClass'. From 'RefinementsEcore_EStructuralFeature', the role 'eStructuralFeatures' has cardinality 0..*, and from 'RefinementsEcore_EClass', the role 'EClass47' has cardinality 0..*.
+An association connects 'RefinementsEcore_EClassifier' and 'RefinementsEcore_ETypedElement'. From 'RefinementsEcore_EClassifier', the role 'RefinementsEcore_EClassifier49' has cardinality 0..*, and from 'RefinementsEcore_ETypedElement', the role 'RefinementsEcore_ETypedElement' has cardinality 0..*.

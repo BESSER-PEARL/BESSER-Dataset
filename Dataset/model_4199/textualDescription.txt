@@ -1,0 +1,16 @@
+The domain model 'a' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'a_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'a_PackageDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'a_Greeting' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'a_Model' and 'a_PackageDeclaration'. From 'a_Model', the role 'a_Model' has cardinality 0..*, and from 'a_PackageDeclaration', the role 'a_PackageDeclaration' has cardinality 0..*.
+An association connects 'a_PackageDeclaration' and 'a_Greeting'. From 'a_PackageDeclaration', the role 'a_PackageDeclaration2' has cardinality 0..*, and from 'a_Greeting', the role 'a_Greeting' has cardinality 0..*.

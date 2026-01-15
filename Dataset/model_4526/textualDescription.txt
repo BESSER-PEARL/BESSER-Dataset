@@ -1,0 +1,82 @@
+The domain model 'helloWeb' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'helloWeb_SuperCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'helloWeb_Forward' represents an important domain concept.
+It has one attribute: 'distance', which is of type str.
+
+'helloWeb_Left' represents an important domain concept.
+It has one attribute: 'distance', which is of type str.
+
+'helloWeb_RotateR' represents an important domain concept.
+It has one attribute: 'angle', which is of type int.
+
+'SuperCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'helloWeb_Snapshot' represents an important domain concept.
+It has one attribute: 'image_name', which is of type str.
+
+'helloWeb_FeatureMatch' represents an important domain concept.
+It has one attribute: 'image_name', which is of type str.
+
+'helloWeb_Main' represents an important domain concept.
+It has the following attributes: 'takeoff', which is of type str; 'land', which is of type str.
+
+'helloWeb_RecordedFlight' represents an important domain concept.
+It has one attribute: 'video_name', which is of type str.
+
+'helloWeb_Right' represents an important domain concept.
+It has one attribute: 'distance', which is of type str.
+
+'helloWeb_UserFunction' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'helloWeb_RotateL' represents an important domain concept.
+It has one attribute: 'angle', which is of type int.
+
+'helloWeb_Wait' represents an important domain concept.
+It has one attribute: 'seconds', which is of type str.
+
+'helloWeb_FunctionName' represents an important domain concept.
+It has one attribute: 'func_name', which is of type str.
+
+'helloWeb_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'helloWeb_Backward' represents an important domain concept.
+It has one attribute: 'distance', which is of type str.
+
+'Command' represents an important domain concept.
+It does not declare any attributes.
+
+'helloWeb_Down' represents an important domain concept.
+It has one attribute: 'distance', which is of type str.
+
+'helloWeb_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'helloWeb_Up' represents an important domain concept.
+It has one attribute: 'distance', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'helloWeb_Command' is a specialization of 'SuperCommand'.
+The class 'helloWeb_Snapshot' is a specialization of 'Command'.
+The class 'helloWeb_Up' is a specialization of 'Command'.
+The class 'helloWeb_Down' is a specialization of 'Command'.
+The class 'helloWeb_Left' is a specialization of 'Command'.
+The class 'helloWeb_Right' is a specialization of 'Command'.
+The class 'helloWeb_Forward' is a specialization of 'Command'.
+The class 'helloWeb_Backward' is a specialization of 'Command'.
+The class 'helloWeb_RotateL' is a specialization of 'Command'.
+The class 'helloWeb_RotateR' is a specialization of 'Command'.
+The class 'helloWeb_Wait' is a specialization of 'Command'.
+The class 'helloWeb_FunctionName' is a specialization of 'SuperCommand'.
+
+Relationships between classes are modeled using associations.
+An association connects 'helloWeb_Main' and 'helloWeb_Program'. From 'helloWeb_Main', the role 'helloWeb_Main' has cardinality 0..*, and from 'helloWeb_Program', the role 'helloWeb_Program' has cardinality 0..*.
+An association connects 'helloWeb_SuperCommand' and 'helloWeb_Main'. From 'helloWeb_SuperCommand', the role 'helloWeb_SuperCommand' has cardinality 0..*, and from 'helloWeb_Main', the role 'helloWeb_Main2' has cardinality 0..*.
+An association connects 'helloWeb_UserFunction' and 'helloWeb_Command'. From 'helloWeb_UserFunction', the role 'helloWeb_UserFunction' has cardinality 0..*, and from 'helloWeb_Command', the role 'helloWeb_Command' has cardinality 0..*.

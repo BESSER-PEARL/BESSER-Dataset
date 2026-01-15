@@ -1,0 +1,156 @@
+The domain model 'types' describes the core structural elements and their relationships within the system.
+
+The model defines 34 main class(es).
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'types_TypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeSpecifier' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_EnumerationType' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ParameterizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterizedType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'types_AnnotatableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageMember' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Property' represents an important domain concept.
+It has the following attributes: 'readonly', which is of type bool; 'const', which is of type bool; 'external', which is of type bool.
+
+'types_Event' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'types_Type' represents an important domain concept.
+It has the following attributes: 'visible', which is of type bool; 'abstract', which is of type bool.
+
+'types_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'types_PackageMember' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'types_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_RangeConstraint' represents an important domain concept.
+It has the following attributes: 'lowerBound', which is of type str; 'upperBound', which is of type str.
+
+'types_TypeAlias' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Domain' represents an important domain concept.
+It has one attribute: 'domainID', which is of type str.
+
+'types_TypeSpecifier' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ComplexType' represents an important domain concept.
+It does not declare any attributes.
+
+'types_Enumerator' represents an important domain concept.
+It has one attribute: 'literalValue', which is of type int.
+
+'types_TypeConstraint' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'AnnotatableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'types_ArrayTypeSpecifier' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Direction' defines the following possible values: 'LOCAL', 'IN', 'OUT'.
+
+The model also captures inheritance relationships between classes.
+The class 'types_Package' is a specialization of 'NamedElement'.
+The class 'types_Type' is a specialization of 'PackageMember'.
+The class 'types_Declaration' is a specialization of 'TypedElement'.
+The class 'types_Declaration' is a specialization of 'NamedElement'.
+The class 'types_Declaration' is a specialization of 'PackageMember'.
+The class 'types_Operation' is a specialization of 'Declaration'.
+The class 'types_Property' is a specialization of 'Declaration'.
+The class 'types_Parameter' is a specialization of 'TypedElement'.
+The class 'types_Parameter' is a specialization of 'NamedElement'.
+The class 'types_Parameter' is a specialization of 'AnnotatableElement'.
+The class 'types_Event' is a specialization of 'Declaration'.
+The class 'types_EnumerationType' is a specialization of 'PrimitiveType'.
+The class 'types_PrimitiveType' is a specialization of 'Type'.
+The class 'types_ComplexType' is a specialization of 'ParameterizedType'.
+The class 'types_Enumerator' is a specialization of 'Declaration'.
+The class 'types_TypeParameter' is a specialization of 'Type'.
+The class 'types_ParameterizedType' is a specialization of 'Type'.
+The class 'types_PackageMember' is a specialization of 'NamedElement'.
+The class 'types_PackageMember' is a specialization of 'AnnotatableElement'.
+The class 'types_RangeConstraint' is a specialization of 'TypeConstraint'.
+The class 'types_TypeAlias' is a specialization of 'TypedElement'.
+The class 'types_TypeAlias' is a specialization of 'Type'.
+The class 'types_Annotation' is a specialization of 'PackageMember'.
+The class 'types_ArrayTypeSpecifier' is a specialization of 'TypeSpecifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'types_PackageMember' and 'types_Package'. From 'types_PackageMember', the role 'types_PackageMember' has cardinality 0..*, and from 'types_Package', the role 'types_Package' has cardinality 0..*.
+An association connects 'types_Domain' and 'types_Package'. From 'types_Domain', the role 'types_Domain' has cardinality 0..*, and from 'types_Package', the role 'types_Package2' has cardinality 0..*.
+An association connects 'types_Package' and 'types_Package'. From 'types_Package', the role 'types_Package5' has cardinality 0..*, and from 'types_Package', the role 'types_Package3' has cardinality 0..*.
+An association connects 'types_TypeConstraint' and 'types_Type'. From 'types_TypeConstraint', the role 'types_TypeConstraint' has cardinality 0..*, and from 'types_Type', the role 'types_Type' has cardinality 0..*.
+An association connects 'types_Operation' and 'types_Parameter'. From 'types_Operation', the role 'owningOperation' has cardinality 0..*, and from 'types_Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'types_Parameter' and 'types_Operation'. From 'types_Parameter', the role 'parameters' has cardinality 0..*, and from 'types_Operation', the role 'Operation' has cardinality 0..*.
+An association connects 'types_Type' and 'types_TypedElement'. From 'types_Type', the role 'types_Type10' has cardinality 0..*, and from 'types_TypedElement', the role 'types_TypedElement' has cardinality 0..*.
+An association connects 'types_TypedElement' and 'types_TypeSpecifier'. From 'types_TypedElement', the role 'types_TypedElement12' has cardinality 0..*, and from 'types_TypeSpecifier', the role 'types_TypeSpecifier' has cardinality 0..*.
+An association connects 'types_TypeSpecifier' and 'types_Type'. From 'types_TypeSpecifier', the role 'types_TypeSpecifier14' has cardinality 0..*, and from 'types_Type', the role 'types_Type15' has cardinality 0..*.
+An association connects 'types_TypeSpecifier' and 'types_TypeSpecifier'. From 'types_TypeSpecifier', the role 'types_TypeSpecifier18' has cardinality 0..*, and from 'types_TypeSpecifier', the role 'types_TypeSpecifier16' has cardinality 0..*.
+An association connects 'types_EnumerationType' and 'types_Enumerator'. From 'types_EnumerationType', the role 'owningEnumeration' has cardinality 0..*, and from 'types_Enumerator', the role 'Enumerator' has cardinality 0..*.
+An association connects 'types_PrimitiveType' and 'types_PrimitiveType'. From 'types_PrimitiveType', the role 'types_PrimitiveType' has cardinality 0..*, and from 'types_PrimitiveType', the role 'types_PrimitiveType20' has cardinality 0..*.
+An association connects 'types_Declaration' and 'types_ComplexType'. From 'types_Declaration', the role 'types_Declaration' has cardinality 0..*, and from 'types_ComplexType', the role 'types_ComplexType' has cardinality 0..*.
+An association connects 'types_ComplexType' and 'types_ComplexType'. From 'types_ComplexType', the role 'types_ComplexType23' has cardinality 0..*, and from 'types_ComplexType', the role 'types_ComplexType25' has cardinality 0..*.
+An association connects 'types_Enumerator' and 'types_EnumerationType'. From 'types_Enumerator', the role 'enumerator' has cardinality 0..*, and from 'types_EnumerationType', the role 'EnumerationType' has cardinality 0..*.
+An association connects 'types_Type' and 'types_TypeParameter'. From 'types_Type', the role 'types_Type28' has cardinality 0..*, and from 'types_TypeParameter', the role 'types_TypeParameter' has cardinality 0..*.
+An association connects 'types_ParameterizedType' and 'types_TypeParameter'. From 'types_ParameterizedType', the role 'types_ParameterizedType' has cardinality 0..*, and from 'types_TypeParameter', the role 'types_TypeParameter30' has cardinality 0..*.
+An association connects 'types_Annotation' and 'types_Property'. From 'types_Annotation', the role 'types_Annotation' has cardinality 0..*, and from 'types_Property', the role 'types_Property' has cardinality 0..*.
+An association connects 'types_Annotation' and 'types_EObject'. From 'types_Annotation', the role 'types_Annotation33' has cardinality 0..*, and from 'types_EObject', the role 'types_EObject' has cardinality 0..*.
+An association connects 'types_AnnotatableElement' and 'types_Annotation'. From 'types_AnnotatableElement', the role 'types_AnnotatableElement' has cardinality 0..*, and from 'types_Annotation', the role 'types_Annotation35' has cardinality 0..*.

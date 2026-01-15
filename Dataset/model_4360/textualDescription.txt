@@ -1,0 +1,222 @@
+The domain model 'mpl' describes the core structural elements and their relationships within the system.
+
+The model defines 50 main class(es).
+
+'mpl_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_If' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mpl_VariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_ParenExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_LE' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_SubtractExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_LiteralValue' represents an important domain concept.
+It has one attribute: 'rawValue', which is of type int.
+
+'mpl_FunctionalUnit' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mpl_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_LT' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_For' represents an important domain concept.
+It has one attribute: 'downwards', which is of type str.
+
+'mpl_AddExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_GT' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_DivisionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_NE' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_NegateExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionalUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_Form' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_MultiplyExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_EQ' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_MPLModel' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_Comparison' represents an important domain concept.
+It does not declare any attributes.
+
+'ComparisonOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_Procedure' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_OperationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_GE' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_While' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_ComparisonOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'Form' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_TraceCall' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'AtomicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_AtomicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_InputExpression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mpl_Program' is a specialization of 'FunctionalUnit'.
+The class 'mpl_Assignment' is a specialization of 'Form'.
+The class 'mpl_ExpressionStatement' is a specialization of 'Form'.
+The class 'mpl_AtomicExpression' is a specialization of 'Expression'.
+The class 'mpl_LiteralValue' is a specialization of 'AtomicExpression'.
+The class 'mpl_VariableReference' is a specialization of 'AtomicExpression'.
+The class 'mpl_ArithmeticExpression' is a specialization of 'Expression'.
+The class 'mpl_AddExpression' is a specialization of 'ArithmeticExpression'.
+The class 'mpl_SubtractExpression' is a specialization of 'ArithmeticExpression'.
+The class 'mpl_MultiplyExpression' is a specialization of 'ArithmeticExpression'.
+The class 'mpl_DivisionExpression' is a specialization of 'ArithmeticExpression'.
+The class 'mpl_UnaryExpression' is a specialization of 'Expression'.
+The class 'mpl_NegateExpression' is a specialization of 'UnaryExpression'.
+The class 'mpl_ParenExpression' is a specialization of 'UnaryExpression'.
+The class 'mpl_InputExpression' is a specialization of 'Expression'.
+The class 'mpl_EQ' is a specialization of 'ComparisonOperator'.
+The class 'mpl_NE' is a specialization of 'ComparisonOperator'.
+The class 'mpl_GT' is a specialization of 'ComparisonOperator'.
+The class 'mpl_LT' is a specialization of 'ComparisonOperator'.
+The class 'mpl_GE' is a specialization of 'ComparisonOperator'.
+The class 'mpl_LE' is a specialization of 'ComparisonOperator'.
+The class 'mpl_If' is a specialization of 'Form'.
+The class 'mpl_Loop' is a specialization of 'Form'.
+The class 'mpl_While' is a specialization of 'Loop'.
+The class 'mpl_For' is a specialization of 'Loop'.
+The class 'mpl_Operation' is a specialization of 'FunctionalUnit'.
+The class 'mpl_Function' is a specialization of 'Operation'.
+The class 'mpl_Procedure' is a specialization of 'Operation'.
+The class 'mpl_Return' is a specialization of 'Form'.
+The class 'mpl_OperationExpression' is a specialization of 'Expression'.
+The class 'mpl_TraceCall' is a specialization of 'Form'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mpl_MPLModel' and 'mpl_Program'. From 'mpl_MPLModel', the role 'mpl_MPLModel' has cardinality 0..*, and from 'mpl_Program', the role 'mpl_Program' has cardinality 0..*.
+An association connects 'mpl_MPLModel' and 'mpl_Operation'. From 'mpl_MPLModel', the role 'mpl_MPLModel2' has cardinality 0..*, and from 'mpl_Operation', the role 'mpl_Operation' has cardinality 0..*.
+An association connects 'mpl_VariableDeclaration' and 'mpl_FunctionalUnit'. From 'mpl_VariableDeclaration', the role 'mpl_VariableDeclaration' has cardinality 0..*, and from 'mpl_FunctionalUnit', the role 'mpl_FunctionalUnit' has cardinality 0..*.
+An association connects 'mpl_FunctionalUnit' and 'mpl_Block'. From 'mpl_FunctionalUnit', the role 'mpl_FunctionalUnit5' has cardinality 0..*, and from 'mpl_Block', the role 'mpl_Block' has cardinality 0..*.
+An association connects 'mpl_VariableDeclaration' and 'mpl_Variable'. From 'mpl_VariableDeclaration', the role 'mpl_VariableDeclaration7' has cardinality 0..*, and from 'mpl_Variable', the role 'mpl_Variable' has cardinality 0..*.
+An association connects 'mpl_VariableDeclaration' and 'mpl_Expression'. From 'mpl_VariableDeclaration', the role 'mpl_VariableDeclaration9' has cardinality 0..*, and from 'mpl_Expression', the role 'mpl_Expression' has cardinality 0..*.
+An association connects 'mpl_Block' and 'mpl_Statement'. From 'mpl_Block', the role 'mpl_Block11' has cardinality 0..*, and from 'mpl_Statement', the role 'mpl_Statement' has cardinality 0..*.
+An association connects 'mpl_Statement' and 'mpl_Form'. From 'mpl_Statement', the role 'mpl_Statement13' has cardinality 0..*, and from 'mpl_Form', the role 'mpl_Form' has cardinality 0..*.
+An association connects 'mpl_VariableReference' and 'mpl_Assignment'. From 'mpl_VariableReference', the role 'mpl_VariableReference' has cardinality 0..*, and from 'mpl_Assignment', the role 'mpl_Assignment' has cardinality 0..*.
+An association connects 'mpl_Expression' and 'mpl_Assignment'. From 'mpl_Expression', the role 'mpl_Expression17' has cardinality 0..*, and from 'mpl_Assignment', the role 'mpl_Assignment16' has cardinality 0..*.
+An association connects 'mpl_Expression' and 'mpl_ExpressionStatement'. From 'mpl_Expression', the role 'mpl_Expression19' has cardinality 0..*, and from 'mpl_ExpressionStatement', the role 'mpl_ExpressionStatement' has cardinality 0..*.
+An association connects 'mpl_Variable' and 'mpl_VariableReference'. From 'mpl_Variable', the role 'mpl_Variable22' has cardinality 0..*, and from 'mpl_VariableReference', the role 'mpl_VariableReference21' has cardinality 0..*.
+An association connects 'mpl_Expression' and 'mpl_ArithmeticExpression'. From 'mpl_Expression', the role 'mpl_Expression24' has cardinality 0..*, and from 'mpl_ArithmeticExpression', the role 'mpl_ArithmeticExpression' has cardinality 0..*.
+An association connects 'mpl_ArithmeticExpression' and 'mpl_Expression'. From 'mpl_ArithmeticExpression', the role 'mpl_ArithmeticExpression26' has cardinality 0..*, and from 'mpl_Expression', the role 'mpl_Expression27' has cardinality 0..*.
+An association connects 'mpl_UnaryExpression' and 'mpl_Expression'. From 'mpl_UnaryExpression', the role 'mpl_UnaryExpression' has cardinality 0..*, and from 'mpl_Expression', the role 'mpl_Expression29' has cardinality 0..*.
+An association connects 'mpl_InputExpression' and 'mpl_LiteralValue'. From 'mpl_InputExpression', the role 'mpl_InputExpression' has cardinality 0..*, and from 'mpl_LiteralValue', the role 'mpl_LiteralValue' has cardinality 0..*.
+An association connects 'mpl_InputExpression' and 'mpl_LiteralValue'. From 'mpl_InputExpression', the role 'mpl_InputExpression32' has cardinality 0..*, and from 'mpl_LiteralValue', the role 'mpl_LiteralValue33' has cardinality 0..*.
+An association connects 'mpl_Expression' and 'mpl_Comparison'. From 'mpl_Expression', the role 'mpl_Expression35' has cardinality 0..*, and from 'mpl_Comparison', the role 'mpl_Comparison' has cardinality 0..*.
+An association connects 'mpl_ComparisonOperator' and 'mpl_Comparison'. From 'mpl_ComparisonOperator', the role 'mpl_ComparisonOperator' has cardinality 0..*, and from 'mpl_Comparison', the role 'mpl_Comparison37' has cardinality 0..*.
+An association connects 'mpl_Expression' and 'mpl_Comparison'. From 'mpl_Expression', the role 'mpl_Expression40' has cardinality 0..*, and from 'mpl_Comparison', the role 'mpl_Comparison39' has cardinality 0..*.
+An association connects 'mpl_If' and 'mpl_Comparison'. From 'mpl_If', the role 'mpl_If' has cardinality 0..*, and from 'mpl_Comparison', the role 'mpl_Comparison42' has cardinality 0..*.
+An association connects 'mpl_Block' and 'mpl_If'. From 'mpl_Block', the role 'mpl_Block45' has cardinality 0..*, and from 'mpl_If', the role 'mpl_If44' has cardinality 0..*.
+An association connects 'mpl_Block' and 'mpl_If'. From 'mpl_Block', the role 'mpl_Block48' has cardinality 0..*, and from 'mpl_If', the role 'mpl_If47' has cardinality 0..*.
+An association connects 'mpl_Loop' and 'mpl_Block'. From 'mpl_Loop', the role 'mpl_Loop' has cardinality 0..*, and from 'mpl_Block', the role 'mpl_Block50' has cardinality 0..*.
+An association connects 'mpl_While' and 'mpl_Comparison'. From 'mpl_While', the role 'mpl_While' has cardinality 0..*, and from 'mpl_Comparison', the role 'mpl_Comparison52' has cardinality 0..*.
+An association connects 'mpl_For' and 'mpl_Assignment'. From 'mpl_For', the role 'mpl_For' has cardinality 0..*, and from 'mpl_Assignment', the role 'mpl_Assignment54' has cardinality 0..*.
+An association connects 'mpl_For' and 'mpl_Expression'. From 'mpl_For', the role 'mpl_For56' has cardinality 0..*, and from 'mpl_Expression', the role 'mpl_Expression57' has cardinality 0..*.
+An association connects 'mpl_Operation' and 'mpl_Variable'. From 'mpl_Operation', the role 'mpl_Operation59' has cardinality 0..*, and from 'mpl_Variable', the role 'mpl_Variable60' has cardinality 0..*.
+An association connects 'mpl_Comparison' and 'mpl_Operation'. From 'mpl_Comparison', the role 'mpl_Comparison63' has cardinality 0..*, and from 'mpl_Operation', the role 'mpl_Operation62' has cardinality 0..*.
+An association connects 'mpl_Comparison' and 'mpl_Operation'. From 'mpl_Comparison', the role 'mpl_Comparison66' has cardinality 0..*, and from 'mpl_Operation', the role 'mpl_Operation65' has cardinality 0..*.
+An association connects 'mpl_Expression' and 'mpl_Return'. From 'mpl_Expression', the role 'mpl_Expression68' has cardinality 0..*, and from 'mpl_Return', the role 'mpl_Return' has cardinality 0..*.
+An association connects 'mpl_OperationExpression' and 'mpl_Operation'. From 'mpl_OperationExpression', the role 'mpl_OperationExpression' has cardinality 0..*, and from 'mpl_Operation', the role 'mpl_Operation70' has cardinality 0..*.
+An association connects 'mpl_OperationExpression' and 'mpl_Expression'. From 'mpl_OperationExpression', the role 'mpl_OperationExpression72' has cardinality 0..*, and from 'mpl_Expression', the role 'mpl_Expression73' has cardinality 0..*.
+An association connects 'mpl_VariableReference' and 'mpl_TraceCall'. From 'mpl_VariableReference', the role 'mpl_VariableReference75' has cardinality 0..*, and from 'mpl_TraceCall', the role 'mpl_TraceCall' has cardinality 0..*.

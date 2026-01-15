@@ -1,0 +1,49 @@
+The domain model 'di' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'di_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'di_Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Style' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'di_Bendpoint' represents an important domain concept.
+It has the following attributes: 'sourceX', which is of type str; 'sourceY', which is of type str; 'targetY', which is of type str; 'targetX', which is of type str.
+
+'di_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'di_View' represents an important domain concept.
+It has the following attributes: 'targetConnector', which is of type str; 'definition', which is of type str; 'context', which is of type str; 'id', which is of type str; 'sourceConnector', which is of type str.
+
+'di_Connector' represents an important domain concept.
+It has the following attributes: 'target', which is of type str; 'source', which is of type str.
+
+'View' represents an important domain concept.
+It does not declare any attributes.
+
+'di_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'di_Connector' is a specialization of 'View'.
+The class 'di_Diagram' is a specialization of 'View'.
+The class 'di_Node' is a specialization of 'View'.
+
+Relationships between classes are modeled using associations.
+An association connects 'di_Connector' and 'di_Bendpoint'. From 'di_Connector', the role 'di_Connector' has cardinality 0..*, and from 'di_Bendpoint', the role 'di_Bendpoint' has cardinality 0..*.
+An association connects 'di_Connector' and 'di_Diagram'. From 'di_Connector', the role 'di_Connector2' has cardinality 0..*, and from 'di_Diagram', the role 'di_Diagram' has cardinality 0..*.
+An association connects 'di_EStringToStringMapEntry' and 'di_DocumentRoot'. From 'di_EStringToStringMapEntry', the role 'di_EStringToStringMapEntry' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot' has cardinality 0..*.
+An association connects 'di_EStringToStringMapEntry' and 'di_DocumentRoot'. From 'di_EStringToStringMapEntry', the role 'di_EStringToStringMapEntry6' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot5' has cardinality 0..*.
+An association connects 'di_Bendpoint' and 'di_DocumentRoot'. From 'di_Bendpoint', the role 'di_Bendpoint9' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot8' has cardinality 0..*.
+An association connects 'di_Connector' and 'di_DocumentRoot'. From 'di_Connector', the role 'di_Connector12' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot11' has cardinality 0..*.
+An association connects 'di_DocumentRoot' and 'di_View'. From 'di_DocumentRoot', the role 'di_DocumentRoot14' has cardinality 0..*, and from 'di_View', the role 'di_View' has cardinality 0..*.
+An association connects 'di_Diagram' and 'di_DocumentRoot'. From 'di_Diagram', the role 'di_Diagram17' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot16' has cardinality 0..*.
+An association connects 'di_Node' and 'di_DocumentRoot'. From 'di_Node', the role 'di_Node' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot19' has cardinality 0..*.
+An association connects 'di_Style' and 'di_DocumentRoot'. From 'di_Style', the role 'di_Style' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot21' has cardinality 0..*.
+An association connects 'di_View' and 'di_Style'. From 'di_View', the role 'di_View23' has cardinality 0..*, and from 'di_Style', the role 'di_Style24' has cardinality 0..*.
+An association connects 'di_View' and 'di_Node'. From 'di_View', the role 'di_View26' has cardinality 0..*, and from 'di_Node', the role 'di_Node27' has cardinality 0..*.

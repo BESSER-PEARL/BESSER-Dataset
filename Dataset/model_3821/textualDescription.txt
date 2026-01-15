@@ -1,0 +1,174 @@
+The domain model 'expressions' describes the core structural elements and their relationships within the system.
+
+The model defines 37 main class(es).
+
+'expressions_AssignmentExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_TypeCastExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_LogicalRelationExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'expressions_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ArgumentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_LogicalOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_FloatLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'expressions_NumericalAddSubtractExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'expressions_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_HexLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'expressions_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_BoolLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'expressions_BitwiseXorExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_BitwiseAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ParenthesizedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_DoubleLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'expressions_ElementReferenceExpression' represents an important domain concept.
+It has the following attributes: 'operationCall', which is of type bool; 'arrayAccess', which is of type bool.
+
+'expressions_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_BitwiseOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_LogicalAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_NumericalMultiplyDivideExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'expressions_PrimitiveValueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_IntLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'expressions_FeatureCall' represents an important domain concept.
+It has the following attributes: 'operationCall', which is of type bool; 'arrayAccess', which is of type bool.
+
+'expressions_ShiftExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'expressions_NumericalUnaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'expressions_LogicalNotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'expressions_ArgumentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_NullLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AssignmentOperator' defines the following possible values: 'addAssign', 'assign', 'rightShiftAssign', 'xorAssign', 'multAssign', 'leftShiftAssign', 'divAssign', 'orAssign', 'andAssign', 'subAssign', 'modAssign'.
+The enumeration 'ShiftOperator' defines the following possible values: 'left', 'right'.
+The enumeration 'BitwiseOperator' defines the following possible values: 'xor', 'and', 'or'.
+The enumeration 'UnaryOperator' defines the following possible values: 'complement', 'positive', 'negative'.
+The enumeration 'RelationalOperator' defines the following possible values: 'smallerEqual', 'greater', 'notEquals', 'equals', 'smaller', 'greaterEqual'.
+The enumeration 'AdditiveOperator' defines the following possible values: 'plus', 'minus'.
+The enumeration 'LogicalOperator' defines the following possible values: 'or', 'and', 'not'.
+The enumeration 'MultiplicativeOperator' defines the following possible values: 'div', 'mod', 'mul'.
+
+The model also captures inheritance relationships between classes.
+The class 'expressions_BinaryExpression' is a specialization of 'Expression'.
+The class 'expressions_UnaryExpression' is a specialization of 'Expression'.
+The class 'expressions_ArgumentExpression' is a specialization of 'Expression'.
+The class 'expressions_BoolLiteral' is a specialization of 'Literal'.
+The class 'expressions_IntLiteral' is a specialization of 'Literal'.
+The class 'expressions_DoubleLiteral' is a specialization of 'Literal'.
+The class 'expressions_FloatLiteral' is a specialization of 'Literal'.
+The class 'expressions_HexLiteral' is a specialization of 'Literal'.
+The class 'expressions_StringLiteral' is a specialization of 'Literal'.
+The class 'expressions_NullLiteral' is a specialization of 'Literal'.
+The class 'expressions_AssignmentExpression' is a specialization of 'Expression'.
+The class 'expressions_ConditionalExpression' is a specialization of 'Expression'.
+The class 'expressions_LogicalOrExpression' is a specialization of 'BinaryExpression'.
+The class 'expressions_LogicalAndExpression' is a specialization of 'BinaryExpression'.
+The class 'expressions_LogicalNotExpression' is a specialization of 'UnaryExpression'.
+The class 'expressions_BitwiseXorExpression' is a specialization of 'BinaryExpression'.
+The class 'expressions_BitwiseOrExpression' is a specialization of 'BinaryExpression'.
+The class 'expressions_BitwiseAndExpression' is a specialization of 'BinaryExpression'.
+The class 'expressions_LogicalRelationExpression' is a specialization of 'BinaryExpression'.
+The class 'expressions_ShiftExpression' is a specialization of 'BinaryExpression'.
+The class 'expressions_NumericalAddSubtractExpression' is a specialization of 'BinaryExpression'.
+The class 'expressions_NumericalMultiplyDivideExpression' is a specialization of 'BinaryExpression'.
+The class 'expressions_NumericalUnaryExpression' is a specialization of 'UnaryExpression'.
+The class 'expressions_PrimitiveValueExpression' is a specialization of 'Expression'.
+The class 'expressions_FeatureCall' is a specialization of 'ArgumentExpression'.
+The class 'expressions_ElementReferenceExpression' is a specialization of 'ArgumentExpression'.
+The class 'expressions_ParenthesizedExpression' is a specialization of 'Expression'.
+The class 'expressions_TypeCastExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'expressions_BinaryExpression' and 'expressions_Expression'. From 'expressions_BinaryExpression', the role 'expressions_BinaryExpression' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_BinaryExpression'. From 'expressions_Expression', the role 'expressions_Expression3' has cardinality 0..*, and from 'expressions_BinaryExpression', the role 'expressions_BinaryExpression2' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_UnaryExpression'. From 'expressions_Expression', the role 'expressions_Expression5' has cardinality 0..*, and from 'expressions_UnaryExpression', the role 'expressions_UnaryExpression' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_ArgumentExpression'. From 'expressions_Expression', the role 'expressions_Expression7' has cardinality 0..*, and from 'expressions_ArgumentExpression', the role 'expressions_ArgumentExpression' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_AssignmentExpression'. From 'expressions_Expression', the role 'expressions_Expression9' has cardinality 0..*, and from 'expressions_AssignmentExpression', the role 'expressions_AssignmentExpression' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_AssignmentExpression'. From 'expressions_Expression', the role 'expressions_Expression12' has cardinality 0..*, and from 'expressions_AssignmentExpression', the role 'expressions_AssignmentExpression11' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_ConditionalExpression'. From 'expressions_Expression', the role 'expressions_Expression14' has cardinality 0..*, and from 'expressions_ConditionalExpression', the role 'expressions_ConditionalExpression' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_ConditionalExpression'. From 'expressions_Expression', the role 'expressions_Expression17' has cardinality 0..*, and from 'expressions_ConditionalExpression', the role 'expressions_ConditionalExpression16' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_ConditionalExpression'. From 'expressions_Expression', the role 'expressions_Expression20' has cardinality 0..*, and from 'expressions_ConditionalExpression', the role 'expressions_ConditionalExpression19' has cardinality 0..*.
+An association connects 'expressions_Literal' and 'expressions_PrimitiveValueExpression'. From 'expressions_Literal', the role 'expressions_Literal' has cardinality 0..*, and from 'expressions_PrimitiveValueExpression', the role 'expressions_PrimitiveValueExpression' has cardinality 0..*.
+An association connects 'expressions_FeatureCall' and 'expressions_Expression'. From 'expressions_FeatureCall', the role 'expressions_FeatureCall' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression23' has cardinality 0..*.
+An association connects 'expressions_EObject' and 'expressions_FeatureCall'. From 'expressions_EObject', the role 'expressions_EObject' has cardinality 0..*, and from 'expressions_FeatureCall', the role 'expressions_FeatureCall25' has cardinality 0..*.
+An association connects 'expressions_FeatureCall' and 'expressions_Expression'. From 'expressions_FeatureCall', the role 'expressions_FeatureCall27' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression28' has cardinality 0..*.
+An association connects 'expressions_ElementReferenceExpression' and 'expressions_EObject'. From 'expressions_ElementReferenceExpression', the role 'expressions_ElementReferenceExpression' has cardinality 0..*, and from 'expressions_EObject', the role 'expressions_EObject30' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_ElementReferenceExpression'. From 'expressions_Expression', the role 'expressions_Expression33' has cardinality 0..*, and from 'expressions_ElementReferenceExpression', the role 'expressions_ElementReferenceExpression32' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_ParenthesizedExpression'. From 'expressions_Expression', the role 'expressions_Expression35' has cardinality 0..*, and from 'expressions_ParenthesizedExpression', the role 'expressions_ParenthesizedExpression' has cardinality 0..*.
+An association connects 'expressions_TypeCastExpression' and 'expressions_Expression'. From 'expressions_TypeCastExpression', the role 'expressions_TypeCastExpression' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression37' has cardinality 0..*.
+An association connects 'expressions_TypeCastExpression' and 'expressions_Type'. From 'expressions_TypeCastExpression', the role 'expressions_TypeCastExpression39' has cardinality 0..*, and from 'expressions_Type', the role 'expressions_Type' has cardinality 0..*.

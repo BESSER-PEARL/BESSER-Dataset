@@ -1,0 +1,105 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'model_And' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Column' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_GreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Exists' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TableAlias' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_NotExists' represents an important domain concept.
+It does not declare any attributes.
+
+'model_From' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BooleanOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'ComparisonOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LessThan' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Select' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Comparison' represents an important domain concept.
+It has the following attributes: 'lhs', which is of type str; 'rhs', which is of type str.
+
+'model_ColumnAlias' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_Equals' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ComparisonOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'model_NotEquals' represents an important domain concept.
+It does not declare any attributes.
+
+'Existence' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Union' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_Existence' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Where' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'model_Equals' is a specialization of 'ComparisonOperator'.
+The class 'model_GreaterThan' is a specialization of 'ComparisonOperator'.
+The class 'model_LessThan' is a specialization of 'ComparisonOperator'.
+The class 'model_NotEquals' is a specialization of 'ComparisonOperator'.
+The class 'model_And' is a specialization of 'BooleanOperation'.
+The class 'model_Or' is a specialization of 'BooleanOperation'.
+The class 'model_Comparison' is a specialization of 'Condition'.
+The class 'model_Existence' is a specialization of 'Condition'.
+The class 'model_Exists' is a specialization of 'Existence'.
+The class 'model_NotExists' is a specialization of 'Existence'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Select' and 'model_Column'. From 'model_Select', the role 'model_Select' has cardinality 0..*, and from 'model_Column', the role 'model_Column' has cardinality 0..*.
+An association connects 'model_From' and 'model_Select'. From 'model_From', the role 'model_From' has cardinality 0..*, and from 'model_Select', the role 'model_Select2' has cardinality 0..*.
+An association connects 'model_Select' and 'model_Where'. From 'model_Select', the role 'model_Select4' has cardinality 0..*, and from 'model_Where', the role 'model_Where' has cardinality 0..*.
+An association connects 'model_Union' and 'model_Select'. From 'model_Union', the role 'model_Union' has cardinality 0..*, and from 'model_Select', the role 'model_Select6' has cardinality 0..*.
+An association connects 'model_Column' and 'model_ColumnAlias'. From 'model_Column', the role 'model_Column8' has cardinality 0..*, and from 'model_ColumnAlias', the role 'model_ColumnAlias' has cardinality 0..*.
+An association connects 'model_From' and 'model_Table'. From 'model_From', the role 'model_From10' has cardinality 0..*, and from 'model_Table', the role 'model_Table' has cardinality 0..*.
+An association connects 'model_TableAlias' and 'model_Table'. From 'model_TableAlias', the role 'model_TableAlias' has cardinality 0..*, and from 'model_Table', the role 'model_Table12' has cardinality 0..*.
+An association connects 'model_Condition' and 'model_Where'. From 'model_Condition', the role 'model_Condition' has cardinality 0..*, and from 'model_Where', the role 'model_Where14' has cardinality 0..*.
+An association connects 'model_Condition' and 'model_BooleanOperation'. From 'model_Condition', the role 'model_Condition16' has cardinality 0..*, and from 'model_BooleanOperation', the role 'model_BooleanOperation' has cardinality 0..*.
+An association connects 'model_Select' and 'model_Union'. From 'model_Select', the role 'model_Select19' has cardinality 0..*, and from 'model_Union', the role 'model_Union18' has cardinality 0..*.
+An association connects 'model_Condition' and 'model_BooleanOperation'. From 'model_Condition', the role 'model_Condition21' has cardinality 0..*, and from 'model_BooleanOperation', the role 'model_BooleanOperation22' has cardinality 0..*.
+An association connects 'model_ComparisonOperator' and 'model_Comparison'. From 'model_ComparisonOperator', the role 'model_ComparisonOperator' has cardinality 0..*, and from 'model_Comparison', the role 'model_Comparison' has cardinality 0..*.
+An association connects 'model_Existence' and 'model_Select'. From 'model_Existence', the role 'model_Existence' has cardinality 0..*, and from 'model_Select', the role 'model_Select25' has cardinality 0..*.

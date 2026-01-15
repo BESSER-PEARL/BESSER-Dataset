@@ -1,0 +1,202 @@
+The domain model 'siple' describes the core structural elements and their relationships within the system.
+
+The model defines 45 main class(es).
+
+'siple_Read' represents an important domain concept.
+It has one attribute: 'Type', which is of type str.
+
+'siple_ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_ProcedureDeclaration' represents an important domain concept.
+It has one attribute: 'ReturnType', which is of type str.
+
+'siple_And' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_UMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'DeclaredType', which is of type str.
+
+'siple_LesserThanEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_LesserThan' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_Addition' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_Expression' represents an important domain concept.
+It has one attribute: 'Type', which is of type str.
+
+'siple_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_ProcedureCall' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_GreaterThanEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_While' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_If' represents an important domain concept.
+It does not declare any attributes.
+
+'EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_Constant' represents an important domain concept.
+It has the following attributes: 'AsInteger', which is of type str; 'AsReal', which is of type str; 'AsBoolean', which is of type str; 'Lexem', which is of type str.
+
+'siple_Dereference' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_Subtraction' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_Declaration' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Type', which is of type str; 'IsParameterDeclaration', which is of type bool.
+
+'siple_NestedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_VariableAssignment' represents an important domain concept.
+It has one attribute: 'Type', which is of type str.
+
+'siple_Write' represents an important domain concept.
+It has one attribute: 'Type', which is of type str.
+
+'siple_LogicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_GreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_RealCoercion' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_ProcedureReturn' represents an important domain concept.
+It has one attribute: 'Type', which is of type str.
+
+'siple_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'siple_Reference' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'siple_Block' is a specialization of 'Statement'.
+The class 'siple_If' is a specialization of 'Statement'.
+The class 'siple_While' is a specialization of 'Statement'.
+The class 'siple_VariableAssignment' is a specialization of 'Statement'.
+The class 'siple_ProcedureReturn' is a specialization of 'Statement'.
+The class 'siple_Write' is a specialization of 'Statement'.
+The class 'siple_Read' is a specialization of 'Statement'.
+The class 'siple_Declaration' is a specialization of 'Statement'.
+The class 'siple_VariableDeclaration' is a specialization of 'Declaration'.
+The class 'siple_ProcedureDeclaration' is a specialization of 'Declaration'.
+The class 'siple_Expression' is a specialization of 'Statement'.
+The class 'siple_Constant' is a specialization of 'Expression'.
+The class 'siple_Reference' is a specialization of 'Expression'.
+The class 'siple_ProcedureCall' is a specialization of 'Expression'.
+The class 'siple_NestedExpression' is a specialization of 'Expression'.
+The class 'siple_UnaryExpression' is a specialization of 'Expression'.
+The class 'siple_Not' is a specialization of 'UnaryExpression'.
+The class 'siple_UMinus' is a specialization of 'UnaryExpression'.
+The class 'siple_RealCoercion' is a specialization of 'UnaryExpression'.
+The class 'siple_Dereference' is a specialization of 'UnaryExpression'.
+The class 'siple_BinaryExpression' is a specialization of 'Expression'.
+The class 'siple_LogicExpression' is a specialization of 'BinaryExpression'.
+The class 'siple_And' is a specialization of 'LogicExpression'.
+The class 'siple_Or' is a specialization of 'LogicExpression'.
+The class 'siple_EqualityExpression' is a specialization of 'BinaryExpression'.
+The class 'siple_Equal' is a specialization of 'EqualityExpression'.
+The class 'siple_GreaterThan' is a specialization of 'EqualityExpression'.
+The class 'siple_LesserThan' is a specialization of 'EqualityExpression'.
+The class 'siple_GreaterThanEqual' is a specialization of 'EqualityExpression'.
+The class 'siple_LesserThanEqual' is a specialization of 'EqualityExpression'.
+The class 'siple_ArithmeticExpression' is a specialization of 'BinaryExpression'.
+The class 'siple_Addition' is a specialization of 'ArithmeticExpression'.
+The class 'siple_Subtraction' is a specialization of 'ArithmeticExpression'.
+The class 'siple_Multiplication' is a specialization of 'ArithmeticExpression'.
+The class 'siple_Division' is a specialization of 'ArithmeticExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'siple_Declaration' and 'siple_CompilationUnit'. From 'siple_Declaration', the role 'siple_Declaration' has cardinality 0..*, and from 'siple_CompilationUnit', the role 'siple_CompilationUnit' has cardinality 0..*.
+An association connects 'siple_CompilationUnit' and 'siple_ProcedureDeclaration'. From 'siple_CompilationUnit', the role 'siple_CompilationUnit2' has cardinality 0..*, and from 'siple_ProcedureDeclaration', the role 'siple_ProcedureDeclaration' has cardinality 0..*.
+An association connects 'siple_Statement' and 'siple_ProcedureDeclaration'. From 'siple_Statement', the role 'siple_Statement' has cardinality 0..*, and from 'siple_ProcedureDeclaration', the role 'siple_ProcedureDeclaration4' has cardinality 0..*.
+An association connects 'siple_Statement' and 'siple_Block'. From 'siple_Statement', the role 'siple_Statement6' has cardinality 0..*, and from 'siple_Block', the role 'siple_Block' has cardinality 0..*.
+An association connects 'siple_ProcedureDeclaration' and 'siple_Block'. From 'siple_ProcedureDeclaration', the role 'siple_ProcedureDeclaration9' has cardinality 0..*, and from 'siple_Block', the role 'siple_Block8' has cardinality 0..*.
+An association connects 'siple_Expression' and 'siple_If'. From 'siple_Expression', the role 'siple_Expression' has cardinality 0..*, and from 'siple_If', the role 'siple_If' has cardinality 0..*.
+An association connects 'siple_Block' and 'siple_If'. From 'siple_Block', the role 'siple_Block13' has cardinality 0..*, and from 'siple_If', the role 'siple_If12' has cardinality 0..*.
+An association connects 'siple_If' and 'siple_Block'. From 'siple_If', the role 'siple_If15' has cardinality 0..*, and from 'siple_Block', the role 'siple_Block16' has cardinality 0..*.
+An association connects 'siple_While' and 'siple_Expression'. From 'siple_While', the role 'siple_While' has cardinality 0..*, and from 'siple_Expression', the role 'siple_Expression18' has cardinality 0..*.
+An association connects 'siple_Block' and 'siple_While'. From 'siple_Block', the role 'siple_Block21' has cardinality 0..*, and from 'siple_While', the role 'siple_While20' has cardinality 0..*.
+An association connects 'siple_VariableAssignment' and 'siple_Expression'. From 'siple_VariableAssignment', the role 'siple_VariableAssignment' has cardinality 0..*, and from 'siple_Expression', the role 'siple_Expression23' has cardinality 0..*.
+An association connects 'siple_Expression' and 'siple_VariableAssignment'. From 'siple_Expression', the role 'siple_Expression26' has cardinality 0..*, and from 'siple_VariableAssignment', the role 'siple_VariableAssignment25' has cardinality 0..*.
+An association connects 'siple_ProcedureReturn' and 'siple_Expression'. From 'siple_ProcedureReturn', the role 'siple_ProcedureReturn' has cardinality 0..*, and from 'siple_Expression', the role 'siple_Expression28' has cardinality 0..*.
+An association connects 'siple_Write' and 'siple_Expression'. From 'siple_Write', the role 'siple_Write' has cardinality 0..*, and from 'siple_Expression', the role 'siple_Expression30' has cardinality 0..*.
+An association connects 'siple_Read' and 'siple_Expression'. From 'siple_Read', the role 'siple_Read' has cardinality 0..*, and from 'siple_Expression', the role 'siple_Expression32' has cardinality 0..*.
+An association connects 'siple_VariableDeclaration' and 'siple_ProcedureDeclaration'. From 'siple_VariableDeclaration', the role 'siple_VariableDeclaration' has cardinality 0..*, and from 'siple_ProcedureDeclaration', the role 'siple_ProcedureDeclaration34' has cardinality 0..*.
+An association connects 'siple_ProcedureDeclaration' and 'siple_Block'. From 'siple_ProcedureDeclaration', the role 'siple_ProcedureDeclaration36' has cardinality 0..*, and from 'siple_Block', the role 'siple_Block37' has cardinality 0..*.
+An association connects 'siple_Declaration' and 'siple_Reference'. From 'siple_Declaration', the role 'siple_Declaration39' has cardinality 0..*, and from 'siple_Reference', the role 'siple_Reference' has cardinality 0..*.
+An association connects 'siple_ProcedureCall' and 'siple_Expression'. From 'siple_ProcedureCall', the role 'siple_ProcedureCall' has cardinality 0..*, and from 'siple_Expression', the role 'siple_Expression41' has cardinality 0..*.
+An association connects 'siple_Expression' and 'siple_ProcedureCall'. From 'siple_Expression', the role 'siple_Expression44' has cardinality 0..*, and from 'siple_ProcedureCall', the role 'siple_ProcedureCall43' has cardinality 0..*.
+An association connects 'siple_ProcedureDeclaration' and 'siple_ProcedureCall'. From 'siple_ProcedureDeclaration', the role 'siple_ProcedureDeclaration47' has cardinality 0..*, and from 'siple_ProcedureCall', the role 'siple_ProcedureCall46' has cardinality 0..*.
+An association connects 'siple_NestedExpression' and 'siple_Expression'. From 'siple_NestedExpression', the role 'siple_NestedExpression' has cardinality 0..*, and from 'siple_Expression', the role 'siple_Expression49' has cardinality 0..*.
+An association connects 'siple_Expression' and 'siple_UnaryExpression'. From 'siple_Expression', the role 'siple_Expression51' has cardinality 0..*, and from 'siple_UnaryExpression', the role 'siple_UnaryExpression' has cardinality 0..*.
+An association connects 'siple_BinaryExpression' and 'siple_Expression'. From 'siple_BinaryExpression', the role 'siple_BinaryExpression' has cardinality 0..*, and from 'siple_Expression', the role 'siple_Expression53' has cardinality 0..*.
+An association connects 'siple_Expression' and 'siple_BinaryExpression'. From 'siple_Expression', the role 'siple_Expression56' has cardinality 0..*, and from 'siple_BinaryExpression', the role 'siple_BinaryExpression55' has cardinality 0..*.

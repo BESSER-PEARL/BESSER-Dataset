@@ -1,0 +1,130 @@
+The domain model 'expressions' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'expressions_LE' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Quantity' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'Function' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_GE' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ComparisonOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_ComparisonOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Any' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Neg' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_All' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_L' represents an important domain concept.
+It does not declare any attributes.
+
+'QuantifyOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Number' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'expressions_E' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_D' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Count' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_And' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_QuantifyOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Implies' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_G' represents an important domain concept.
+It does not declare any attributes.
+
+'ComparisonOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'ComparisonOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_Function' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'expressions_BinaryOperator' is a specialization of 'Expression'.
+The class 'expressions_UnaryOperator' is a specialization of 'Expression'.
+The class 'expressions_Implies' is a specialization of 'BinaryOperator'.
+The class 'expressions_Or' is a specialization of 'BinaryOperator'.
+The class 'expressions_And' is a specialization of 'BinaryOperator'.
+The class 'expressions_Neg' is a specialization of 'UnaryOperator'.
+The class 'expressions_Feature' is a specialization of 'Expression'.
+The class 'expressions_All' is a specialization of 'QuantifyOperator'.
+The class 'expressions_Number' is a specialization of 'QuantifyOperator'.
+The class 'expressions_Any' is a specialization of 'QuantifyOperator'.
+The class 'expressions_ComparisonOperator' is a specialization of 'Expression'.
+The class 'expressions_GE' is a specialization of 'ComparisonOperator'.
+The class 'expressions_G' is a specialization of 'ComparisonOperator'.
+The class 'expressions_LE' is a specialization of 'ComparisonOperator'.
+The class 'expressions_L' is a specialization of 'ComparisonOperator'.
+The class 'expressions_E' is a specialization of 'ComparisonOperator'.
+The class 'expressions_D' is a specialization of 'ComparisonOperator'.
+The class 'expressions_ComparisonOperand' is a specialization of 'Expression'.
+The class 'expressions_Quantity' is a specialization of 'ComparisonOperand'.
+The class 'expressions_Function' is a specialization of 'ComparisonOperand'.
+The class 'expressions_Count' is a specialization of 'Function'.
+The class 'expressions_QuantifyOperator' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'expressions_BinaryOperator' and 'expressions_Expression'. From 'expressions_BinaryOperator', the role 'expressions_BinaryOperator' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression' has cardinality 0..*.
+An association connects 'expressions_BinaryOperator' and 'expressions_Expression'. From 'expressions_BinaryOperator', the role 'expressions_BinaryOperator2' has cardinality 0..*, and from 'expressions_Expression', the role 'expressions_Expression3' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_UnaryOperator'. From 'expressions_Expression', the role 'expressions_Expression5' has cardinality 0..*, and from 'expressions_UnaryOperator', the role 'expressions_UnaryOperator' has cardinality 0..*.
+An association connects 'expressions_Expression' and 'expressions_Model'. From 'expressions_Expression', the role 'expressions_Expression7' has cardinality 0..*, and from 'expressions_Model', the role 'expressions_Model' has cardinality 0..*.
+An association connects 'expressions_ComparisonOperator' and 'expressions_ComparisonOperand'. From 'expressions_ComparisonOperator', the role 'expressions_ComparisonOperator' has cardinality 0..*, and from 'expressions_ComparisonOperand', the role 'expressions_ComparisonOperand' has cardinality 0..*.
+An association connects 'expressions_ComparisonOperand' and 'expressions_ComparisonOperator'. From 'expressions_ComparisonOperand', the role 'expressions_ComparisonOperand11' has cardinality 0..*, and from 'expressions_ComparisonOperator', the role 'expressions_ComparisonOperator10' has cardinality 0..*.
+An association connects 'expressions_Function' and 'expressions_Feature'. From 'expressions_Function', the role 'expressions_Function' has cardinality 0..*, and from 'expressions_Feature', the role 'expressions_Feature' has cardinality 0..*.
+An association connects 'expressions_QuantifyOperator' and 'expressions_Feature'. From 'expressions_QuantifyOperator', the role 'expressions_QuantifyOperator' has cardinality 0..*, and from 'expressions_Feature', the role 'expressions_Feature14' has cardinality 0..*.

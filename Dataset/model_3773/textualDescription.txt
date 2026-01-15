@@ -1,0 +1,41 @@
+The domain model 'features' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'FeatureSetDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'features_FeatureSetDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'features_FeatureDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'features_FeatureSet' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'identifier', which is of type str; 'name', which is of type str.
+
+'features_Feature' represents an important domain concept.
+It has the following attributes: 'identifier', which is of type str; 'provider', which is of type str; 'name', which is of type str; 'description', which is of type str.
+
+'features_FeatureVersion' represents an important domain concept.
+It has the following attributes: 'news', which is of type str; 'version', which is of type str.
+
+'FeatureDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'features_FeatureVersionDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureVersionDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'features_FeatureSet' is a specialization of 'FeatureSetDescriptor'.
+The class 'features_Feature' is a specialization of 'FeatureDescriptor'.
+The class 'features_FeatureVersion' is a specialization of 'FeatureVersionDescriptor'.
+
+Relationships between classes are modeled using associations.
+An association connects 'features_Feature' and 'features_FeatureSet'. From 'features_Feature', the role 'Feature' has cardinality 0..*, and from 'features_FeatureSet', the role 'featureSet' has cardinality 0..*.
+An association connects 'features_FeatureSet' and 'features_Feature'. From 'features_FeatureSet', the role 'FeatureSet' has cardinality 0..*, and from 'features_Feature', the role 'features' has cardinality 0..*.
+An association connects 'features_Feature' and 'features_FeatureVersion'. From 'features_Feature', the role 'feature' has cardinality 0..*, and from 'features_FeatureVersion', the role 'FeatureVersion' has cardinality 0..*.
+An association connects 'features_FeatureVersion' and 'features_Feature'. From 'features_FeatureVersion', the role 'featureVersions' has cardinality 0..*, and from 'features_Feature', the role 'Feature4' has cardinality 0..*.

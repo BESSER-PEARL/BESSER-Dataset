@@ -1,0 +1,160 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 35 main class(es).
+
+'model_SystemCursor' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'model_BorderChild' represents an important domain concept.
+It has one attribute: 'alignment', which is of type str.
+
+'model_Line' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Container' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Symbol' represents an important domain concept.
+It has the following attributes: 'scriptModules', which is of type str; 'onDispose', which is of type str; 'backgroundImage', which is of type str; 'backgroundColor', which is of type str; 'onInit', which is of type str; 'onUpdate', which is of type str.
+
+'model_FigureContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Primitive' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_Dimension' represents an important domain concept.
+It has the following attributes: 'height', which is of type float; 'width', which is of type float.
+
+'model_Position' represents an important domain concept.
+It has the following attributes: 'y', which is of type float; 'x', which is of type float.
+
+'model_Arc' represents an important domain concept.
+It has the following attributes: 'length', which is of type int; 'start', which is of type int.
+
+'model_Text' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'fontItalic', which is of type bool; 'labelAlignment', which is of type str; 'alpha', which is of type str; 'textPlacement', which is of type str; 'fontName', which is of type str; 'fontBold', which is of type bool; 'textAlignment', which is of type str; 'iconAlignment', which is of type str; 'fontSize', which is of type int.
+
+'model_Cursor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_GridChild' represents an important domain concept.
+It has the following attributes: 'grabVerticalSpace', which is of type bool; 'widthHint', which is of type str; 'horizontalAlignment', which is of type str; 'verticalAlignment', which is of type str; 'grabHorizontalSpace', which is of type bool; 'spanCols', which is of type int; 'heightHint', which is of type str; 'spanRows', which is of type str.
+
+'model_XYChild' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RoundedRectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'model_SymbolReference' represents an important domain concept.
+It has the following attributes: 'uri', which is of type str; 'zoom', which is of type str; 'onCreateProperties', which is of type str.
+
+'Cursor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Polygon' represents an important domain concept.
+It does not declare any attributes.
+
+'model_XYContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'Figure' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BorderContainer' represents an important domain concept.
+It has the following attributes: 'verticalSpacing', which is of type int; 'horizontalSpacing', which is of type int.
+
+'model_Ellipse' represents an important domain concept.
+It does not declare any attributes.
+
+'Child' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Image' represents an important domain concept.
+It has the following attributes: 'imageAlignment', which is of type str; 'uri', which is of type str.
+
+'model_StackContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'Container' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'model_StringToStringMap' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'model_Shape' represents an important domain concept.
+It has the following attributes: 'antialias', which is of type str; 'alpha', which is of type str; 'outline', which is of type bool; 'lineWidth', which is of type float; 'fill', which is of type bool.
+
+'model_GridContainer' represents an important domain concept.
+It has the following attributes: 'equalWidth', which is of type bool; 'marginWidth', which is of type int; 'horizontalSpacing', which is of type int; 'marginHeight', which is of type int; 'verticalSpacing', which is of type int; 'columns', which is of type int.
+
+'model_Child' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_Rectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Figure' represents an important domain concept.
+It has the following attributes: 'onDoubleClick', which is of type str; 'onMouseIn', which is of type str; 'onMouseDrag', which is of type str; 'opaque', which is of type str; 'visible', which is of type bool; 'border', which is of type str; 'onClick', which is of type str; 'onMouseMove', which is of type str; 'backgroundColor', which is of type str; 'onMouseHover', which is of type str; 'onMouseOut', which is of type str; 'toolTip', which is of type str; 'foregroundColor', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Orientation' defines the following possible values: 'EAST', 'NORTH', 'SOUTH', 'WEST'.
+The enumeration 'SystemCursorType' defines the following possible values: 'ARROW', 'HAND'.
+The enumeration 'Alignment' defines the following possible values: 'CENTER', 'RIGHT', 'BOTTOM', 'TOP', 'LEFT'.
+The enumeration 'GridAlignment' defines the following possible values: 'BEGINNING', 'END', 'CENTER', 'FILL'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_Container' is a specialization of 'Primitive'.
+The class 'model_Shape' is a specialization of 'Figure'.
+The class 'model_Rectangle' is a specialization of 'Shape'.
+The class 'model_Text' is a specialization of 'Figure'.
+The class 'model_XYChild' is a specialization of 'Child'.
+The class 'model_XYContainer' is a specialization of 'Container'.
+The class 'model_Line' is a specialization of 'Shape'.
+The class 'model_Figure' is a specialization of 'Primitive'.
+The class 'model_SymbolReference' is a specialization of 'Primitive'.
+The class 'model_SystemCursor' is a specialization of 'Cursor'.
+The class 'model_GridContainer' is a specialization of 'Container'.
+The class 'model_BorderContainer' is a specialization of 'Container'.
+The class 'model_BorderChild' is a specialization of 'Child'.
+The class 'model_GridChild' is a specialization of 'Child'.
+The class 'model_FigureContainer' is a specialization of 'Figure'.
+The class 'model_Image' is a specialization of 'Figure'.
+The class 'model_Ellipse' is a specialization of 'Shape'.
+The class 'model_Arc' is a specialization of 'Shape'.
+The class 'model_StackContainer' is a specialization of 'Container'.
+The class 'model_Polygon' is a specialization of 'Shape'.
+The class 'model_RoundedRectangle' is a specialization of 'Shape'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Symbol' and 'model_Primitive'. From 'model_Symbol', the role 'model_Symbol' has cardinality 0..*, and from 'model_Primitive', the role 'model_Primitive' has cardinality 0..*.
+An association connects 'model_Symbol' and 'model_StringToStringMap'. From 'model_Symbol', the role 'model_Symbol2' has cardinality 0..*, and from 'model_StringToStringMap', the role 'model_StringToStringMap' has cardinality 0..*.
+An association connects 'model_Symbol' and 'model_Cursor'. From 'model_Symbol', the role 'model_Symbol4' has cardinality 0..*, and from 'model_Cursor', the role 'model_Cursor' has cardinality 0..*.
+An association connects 'model_Symbol' and 'model_Dimension'. From 'model_Symbol', the role 'model_Symbol6' has cardinality 0..*, and from 'model_Dimension', the role 'model_Dimension' has cardinality 0..*.
+An association connects 'model_Symbol' and 'model_Connection'. From 'model_Symbol', the role 'model_Symbol8' has cardinality 0..*, and from 'model_Connection', the role 'model_Connection' has cardinality 0..*.
+An association connects 'model_Primitive' and 'model_Child'. From 'model_Primitive', the role 'model_Primitive10' has cardinality 0..*, and from 'model_Child', the role 'model_Child' has cardinality 0..*.
+An association connects 'model_XYChild' and 'model_Position'. From 'model_XYChild', the role 'model_XYChild' has cardinality 0..*, and from 'model_Position', the role 'model_Position' has cardinality 0..*.
+An association connects 'model_XYChild' and 'model_Dimension'. From 'model_XYChild', the role 'model_XYChild13' has cardinality 0..*, and from 'model_Dimension', the role 'model_Dimension14' has cardinality 0..*.
+An association connects 'model_XYChild' and 'model_XYContainer'. From 'model_XYChild', the role 'model_XYChild16' has cardinality 0..*, and from 'model_XYContainer', the role 'model_XYContainer' has cardinality 0..*.
+An association connects 'model_Position' and 'model_Line'. From 'model_Position', the role 'model_Position18' has cardinality 0..*, and from 'model_Line', the role 'model_Line' has cardinality 0..*.
+An association connects 'model_Dimension' and 'model_Figure'. From 'model_Dimension', the role 'model_Dimension20' has cardinality 0..*, and from 'model_Figure', the role 'model_Figure' has cardinality 0..*.
+An association connects 'model_Cursor' and 'model_Figure'. From 'model_Cursor', the role 'model_Cursor23' has cardinality 0..*, and from 'model_Figure', the role 'model_Figure22' has cardinality 0..*.
+An association connects 'model_SymbolReference' and 'model_StringToStringMap'. From 'model_SymbolReference', the role 'model_SymbolReference' has cardinality 0..*, and from 'model_StringToStringMap', the role 'model_StringToStringMap25' has cardinality 0..*.
+An association connects 'model_GridContainer' and 'model_GridChild'. From 'model_GridContainer', the role 'model_GridContainer' has cardinality 0..*, and from 'model_GridChild', the role 'model_GridChild' has cardinality 0..*.
+An association connects 'model_BorderContainer' and 'model_BorderChild'. From 'model_BorderContainer', the role 'model_BorderContainer' has cardinality 0..*, and from 'model_BorderChild', the role 'model_BorderChild' has cardinality 0..*.
+An association connects 'model_Primitive' and 'model_FigureContainer'. From 'model_Primitive', the role 'model_Primitive29' has cardinality 0..*, and from 'model_FigureContainer', the role 'model_FigureContainer' has cardinality 0..*.
+An association connects 'model_Connection' and 'model_Primitive'. From 'model_Connection', the role 'model_Connection31' has cardinality 0..*, and from 'model_Primitive', the role 'model_Primitive32' has cardinality 0..*.
+An association connects 'model_Connection' and 'model_Primitive'. From 'model_Connection', the role 'model_Connection34' has cardinality 0..*, and from 'model_Primitive', the role 'model_Primitive35' has cardinality 0..*.
+An association connects 'model_StackContainer' and 'model_Primitive'. From 'model_StackContainer', the role 'model_StackContainer' has cardinality 0..*, and from 'model_Primitive', the role 'model_Primitive37' has cardinality 0..*.
+An association connects 'model_Position' and 'model_Polygon'. From 'model_Position', the role 'model_Position39' has cardinality 0..*, and from 'model_Polygon', the role 'model_Polygon' has cardinality 0..*.
+An association connects 'model_Dimension' and 'model_RoundedRectangle'. From 'model_Dimension', the role 'model_Dimension41' has cardinality 0..*, and from 'model_RoundedRectangle', the role 'model_RoundedRectangle' has cardinality 0..*.

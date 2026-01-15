@@ -1,0 +1,81 @@
+The domain model 'drones' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'drones_Mission' represents an important domain concept.
+It does not declare any attributes.
+
+'FieldObject' represents an important domain concept.
+It does not declare any attributes.
+
+'drones_Drone' represents an important domain concept.
+It has the following attributes: 'maxPayload', which is of type float; 'communicationRange', which is of type float; 'maxSpeed', which is of type float; 'memory', which is of type int; 'cpuFrequency', which is of type int; 'minSpeed', which is of type float.
+
+'drones_Parameter' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'drones_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drones_FieldObject' represents an important domain concept.
+It does not declare any attributes.
+
+'drones_ImmovableObject' represents an important domain concept.
+It does not declare any attributes.
+
+'drones_Battery' represents an important domain concept.
+It has the following attributes: 'lifeTime', which is of type float; 'rechargeRate', which is of type float; 'remainingLifeTime', which is of type float; 'charge', which is of type float.
+
+'drones_Action' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'range', which is of type float; 'operation', which is of type str; 'value', which is of type str.
+
+'drones_TemporalContainmentProxy' represents an important domain concept.
+It does not declare any attributes.
+
+'drones_ChargeStation' represents an important domain concept.
+It does not declare any attributes.
+
+'SizedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'drones_SizedElement' represents an important domain concept.
+It has the following attributes: 'length', which is of type float; 'x', which is of type float; 'z', which is of type float; 'height', which is of type float; 'y', which is of type float; 'width', which is of type float.
+
+'ImmovableObject' represents an important domain concept.
+It does not declare any attributes.
+
+'TemporalContainmentProxy' represents an important domain concept.
+It does not declare any attributes.
+
+'drones_MovableObject' represents an important domain concept.
+It has one attribute: 'weight', which is of type float.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ActionKind' defines the following possible values: 'SET', 'SUBTRACT', 'ADD'.
+
+The model also captures inheritance relationships between classes.
+The class 'drones_FieldObject' is a specialization of 'NamedElement'.
+The class 'drones_FieldObject' is a specialization of 'SizedElement'.
+The class 'drones_Drone' is a specialization of 'NamedElement'.
+The class 'drones_Drone' is a specialization of 'SizedElement'.
+The class 'drones_Battery' is a specialization of 'TemporalContainmentProxy'.
+The class 'drones_ChargeStation' is a specialization of 'ImmovableObject'.
+The class 'drones_Mission' is a specialization of 'NamedElement'.
+The class 'drones_Parameter' is a specialization of 'TemporalContainmentProxy'.
+The class 'drones_Action' is a specialization of 'TemporalContainmentProxy'.
+The class 'drones_Action' is a specialization of 'NamedElement'.
+The class 'drones_MovableObject' is a specialization of 'FieldObject'.
+The class 'drones_ImmovableObject' is a specialization of 'FieldObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'drones_FieldObject' and 'drones_Parameter'. From 'drones_FieldObject', the role 'drones_FieldObject' has cardinality 0..*, and from 'drones_Parameter', the role 'drones_Parameter' has cardinality 0..*.
+An association connects 'drones_Battery' and 'drones_Drone'. From 'drones_Battery', the role 'drones_Battery' has cardinality 0..*, and from 'drones_Drone', the role 'drones_Drone' has cardinality 0..*.
+An association connects 'drones_ChargeStation' and 'drones_Drone'. From 'drones_ChargeStation', the role 'drones_ChargeStation' has cardinality 0..*, and from 'drones_Drone', the role 'drones_Drone3' has cardinality 0..*.
+An association connects 'drones_Action' and 'drones_Drone'. From 'drones_Action', the role 'drones_Action' has cardinality 0..*, and from 'drones_Drone', the role 'drones_Drone5' has cardinality 0..*.
+An association connects 'drones_Mission' and 'drones_FieldObject'. From 'drones_Mission', the role 'drones_Mission' has cardinality 0..*, and from 'drones_FieldObject', the role 'drones_FieldObject7' has cardinality 0..*.
+An association connects 'drones_Mission' and 'drones_Drone'. From 'drones_Mission', the role 'drones_Mission9' has cardinality 0..*, and from 'drones_Drone', the role 'drones_Drone10' has cardinality 0..*.
+An association connects 'drones_TemporalContainmentProxy' and 'drones_Mission'. From 'drones_TemporalContainmentProxy', the role 'drones_TemporalContainmentProxy' has cardinality 0..*, and from 'drones_Mission', the role 'drones_Mission12' has cardinality 0..*.
+An association connects 'drones_Action' and 'drones_Mission'. From 'drones_Action', the role 'drones_Action15' has cardinality 0..*, and from 'drones_Mission', the role 'drones_Mission14' has cardinality 0..*.

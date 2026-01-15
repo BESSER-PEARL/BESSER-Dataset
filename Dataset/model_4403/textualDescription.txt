@@ -1,0 +1,199 @@
+The domain model 'spinefm' describes the core structural elements and their relationships within the system.
+
+The model defines 45 main class(es).
+
+'spinefm_ActionModel_ActionSelect' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'spinefm_ActionModel_RestrictionFunction' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'spinefm_ProcessModel_LocalContext' represents an important domain concept.
+It does not declare any attributes.
+
+'spinefm_MSPLModel_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'upperBound', which is of type int; 'lowerBound', which is of type int; 'id', which is of type str.
+
+'spinefm_MSPLModel_DEAssociationEnd' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'DEAssociationEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'ConfigurationProcessStep' represents an important domain concept.
+It does not declare any attributes.
+
+'LocalContext' represents an important domain concept.
+It does not declare any attributes.
+
+'ConfigurationState' represents an important domain concept.
+It does not declare any attributes.
+
+'spinefm_FMModel_FeatureModel' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'spinefm_ConfigurationModel_CompositeConfiguration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'spinefm_FMModel_Feature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'spinefm_MSPLModel_DomainElement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'spinefm_ActionModel_Action' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'type', which is of type str.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Link' represents an important domain concept.
+It does not declare any attributes.
+
+'DEAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'Configuration' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'spinefm_ProcessModel_GlobalContext' represents an important domain concept.
+It does not declare any attributes.
+
+'spinefm_ActionModel_ActionAddCTConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'spinefm_ProcessModel_DeletedContextInformations' represents an important domain concept.
+It has one attribute: 'deletedContext', which is of type str.
+
+'Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'spinefm_ProcessModel_ConfigurationProcessStep' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'userConfig', which is of type bool; 'id', which is of type str.
+
+'RestrictionFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'MultipleSoftwareProductLine' represents an important domain concept.
+It does not declare any attributes.
+
+'Group' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainElement' represents an important domain concept.
+It does not declare any attributes.
+
+'spinefm_ActionModel_ActionDeselect' represents an important domain concept.
+It does not declare any attributes.
+
+'spinefm_FMModel_Constraint' represents an important domain concept.
+It has one attribute: 'Rule', which is of type str.
+
+'spinefm_ActionModel_Rule' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'spinefm_MSPLModel_DEAssociation' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'FeatureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Context' represents an important domain concept.
+It does not declare any attributes.
+
+'GlobalContext' represents an important domain concept.
+It does not declare any attributes.
+
+'spinefm_MSPLModel_MultipleSoftwareProductLine' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'spinefm_ConfigurationModel_Link' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'spinefm_ConfigurationModel_Configuration' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'description', which is of type str.
+
+'spinefm_FMModel_Group' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'spinefm_ActionModel_ConfigurationState' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'spinefm_ProcessModel_Context' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'spinefm_ProcessModel_ContextManager' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ActionType' defines the following possible values: 'FM', 'MANUAL', 'AUTOMATIC'.
+The enumeration 'GroupState' defines the following possible values: 'MUTEX', 'OPTIONAL', 'MANDATORY', 'ALTERNATIVE', 'OR'.
+
+The model also captures inheritance relationships between classes.
+The class 'spinefm_ProcessModel_GlobalContext' is a specialization of 'Context'.
+The class 'spinefm_ProcessModel_LocalContext' is a specialization of 'Context'.
+The class 'spinefm_ActionModel_ActionSelect' is a specialization of 'Action'.
+The class 'spinefm_ActionModel_ActionDeselect' is a specialization of 'Action'.
+The class 'spinefm_ActionModel_ActionAddCTConstraint' is a specialization of 'Action'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Feature' and 'spinefm_FMModel_FeatureModel'. From 'Feature', the role 'Feature' has cardinality 0..*, and from 'spinefm_FMModel_FeatureModel', the role 'spinefm_FMModel_FeatureModel' has cardinality 0..*.
+An association connects 'spinefm_FMModel_FeatureModel' and 'Constraint'. From 'spinefm_FMModel_FeatureModel', the role 'spinefm_FMModel_FeatureModel2' has cardinality 0..*, and from 'Constraint', the role 'Constraint' has cardinality 0..*.
+An association connects 'spinefm_FMModel_Feature' and 'Group'. From 'spinefm_FMModel_Feature', the role 'spinefm_FMModel_Feature' has cardinality 0..*, and from 'Group', the role 'Group' has cardinality 0..*.
+An association connects 'spinefm_FMModel_Group' and 'Feature'. From 'spinefm_FMModel_Group', the role 'spinefm_FMModel_Group' has cardinality 0..*, and from 'Feature', the role 'Feature5' has cardinality 0..*.
+An association connects 'spinefm_MSPLModel_MultipleSoftwareProductLine' and 'DomainElement'. From 'spinefm_MSPLModel_MultipleSoftwareProductLine', the role 'spinefm_MSPLModel_MultipleSoftwareProductLine' has cardinality 0..*, and from 'DomainElement', the role 'DomainElement' has cardinality 0..*.
+An association connects 'DEAssociation' and 'spinefm_MSPLModel_MultipleSoftwareProductLine'. From 'DEAssociation', the role 'DEAssociation' has cardinality 0..*, and from 'spinefm_MSPLModel_MultipleSoftwareProductLine', the role 'spinefm_MSPLModel_MultipleSoftwareProductLine8' has cardinality 0..*.
+An association connects 'spinefm_MSPLModel_DEAssociation' and 'RestrictionFunction'. From 'spinefm_MSPLModel_DEAssociation', the role 'spinefm_MSPLModel_DEAssociation' has cardinality 0..*, and from 'RestrictionFunction', the role 'RestrictionFunction' has cardinality 0..*.
+An association connects 'spinefm_MSPLModel_DEAssociation' and 'DEAssociationEnd'. From 'spinefm_MSPLModel_DEAssociation', the role 'spinefm_MSPLModel_DEAssociation11' has cardinality 0..*, and from 'DEAssociationEnd', the role 'DEAssociationEnd' has cardinality 0..*.
+An association connects 'DEAssociationEnd' and 'spinefm_MSPLModel_DEAssociation'. From 'DEAssociationEnd', the role 'DEAssociationEnd14' has cardinality 0..*, and from 'spinefm_MSPLModel_DEAssociation', the role 'spinefm_MSPLModel_DEAssociation13' has cardinality 0..*.
+An association connects 'DEAssociation' and 'spinefm_MSPLModel_DEAssociation'. From 'DEAssociation', the role 'DEAssociation17' has cardinality 0..*, and from 'spinefm_MSPLModel_DEAssociation', the role 'spinefm_MSPLModel_DEAssociation16' has cardinality 0..*.
+An association connects 'MultiplicityElement' and 'spinefm_MSPLModel_DEAssociationEnd'. From 'MultiplicityElement', the role 'MultiplicityElement' has cardinality 0..*, and from 'spinefm_MSPLModel_DEAssociationEnd', the role 'spinefm_MSPLModel_DEAssociationEnd' has cardinality 0..*.
+An association connects 'spinefm_MSPLModel_DEAssociationEnd' and 'DomainElement'. From 'spinefm_MSPLModel_DEAssociationEnd', the role 'spinefm_MSPLModel_DEAssociationEnd20' has cardinality 0..*, and from 'DomainElement', the role 'DomainElement21' has cardinality 0..*.
+An association connects 'MultiplicityElement' and 'spinefm_MSPLModel_DomainElement'. From 'MultiplicityElement', the role 'MultiplicityElement23' has cardinality 0..*, and from 'spinefm_MSPLModel_DomainElement', the role 'spinefm_MSPLModel_DomainElement' has cardinality 0..*.
+An association connects 'spinefm_MSPLModel_DomainElement' and 'FeatureModel'. From 'spinefm_MSPLModel_DomainElement', the role 'spinefm_MSPLModel_DomainElement25' has cardinality 0..*, and from 'FeatureModel', the role 'FeatureModel' has cardinality 0..*.
+An association connects 'DEAssociation' and 'spinefm_MSPLModel_DomainElement'. From 'DEAssociation', the role 'DEAssociation28' has cardinality 0..*, and from 'spinefm_MSPLModel_DomainElement', the role 'spinefm_MSPLModel_DomainElement27' has cardinality 0..*.
+An association connects 'ConfigurationProcessStep' and 'spinefm_ConfigurationModel_Configuration'. From 'ConfigurationProcessStep', the role 'ProcessModel' has cardinality 0..*, and from 'spinefm_ConfigurationModel_Configuration', the role 'ConfigurationProcessStep' has cardinality 0..*.
+An association connects 'Link' and 'spinefm_ConfigurationModel_Configuration'. From 'Link', the role 'Link' has cardinality 0..*, and from 'spinefm_ConfigurationModel_Configuration', the role 'spinefm_ConfigurationModel_Configuration' has cardinality 0..*.
+An association connects 'ConfigurationState' and 'spinefm_ConfigurationModel_Configuration'. From 'ConfigurationState', the role 'ConfigurationState' has cardinality 0..*, and from 'spinefm_ConfigurationModel_Configuration', the role 'spinefm_ConfigurationModel_Configuration32' has cardinality 0..*.
+An association connects 'DomainElement' and 'spinefm_ConfigurationModel_Configuration'. From 'DomainElement', the role 'DomainElement35' has cardinality 0..*, and from 'spinefm_ConfigurationModel_Configuration', the role 'spinefm_ConfigurationModel_Configuration34' has cardinality 0..*.
+An association connects 'spinefm_ConfigurationModel_Configuration' and 'ConfigurationProcessStep'. From 'spinefm_ConfigurationModel_Configuration', the role 'spinefm_ConfigurationModel_Configuration37' has cardinality 0..*, and from 'ConfigurationProcessStep', the role 'ConfigurationProcessStep38' has cardinality 0..*.
+An association connects 'spinefm_ConfigurationModel_Link' and 'Configuration'. From 'spinefm_ConfigurationModel_Link', the role 'spinefm_ConfigurationModel_Link' has cardinality 0..*, and from 'Configuration', the role 'Configuration' has cardinality 0..*.
+An association connects 'spinefm_ConfigurationModel_Link' and 'DEAssociation'. From 'spinefm_ConfigurationModel_Link', the role 'spinefm_ConfigurationModel_Link41' has cardinality 0..*, and from 'DEAssociation', the role 'DEAssociation42' has cardinality 0..*.
+An association connects 'spinefm_ConfigurationModel_Link' and 'Configuration'. From 'spinefm_ConfigurationModel_Link', the role 'spinefm_ConfigurationModel_Link44' has cardinality 0..*, and from 'Configuration', the role 'Configuration45' has cardinality 0..*.
+An association connects 'Configuration' and 'spinefm_ConfigurationModel_CompositeConfiguration'. From 'Configuration', the role 'Configuration47' has cardinality 0..*, and from 'spinefm_ConfigurationModel_CompositeConfiguration', the role 'spinefm_ConfigurationModel_CompositeConfiguration' has cardinality 0..*.
+An association connects 'spinefm_ConfigurationModel_CompositeConfiguration' and 'Link'. From 'spinefm_ConfigurationModel_CompositeConfiguration', the role 'spinefm_ConfigurationModel_CompositeConfiguration49' has cardinality 0..*, and from 'Link', the role 'Link50' has cardinality 0..*.
+An association connects 'MultipleSoftwareProductLine' and 'spinefm_ConfigurationModel_CompositeConfiguration'. From 'MultipleSoftwareProductLine', the role 'MultipleSoftwareProductLine' has cardinality 0..*, and from 'spinefm_ConfigurationModel_CompositeConfiguration', the role 'spinefm_ConfigurationModel_CompositeConfiguration52' has cardinality 0..*.
+An association connects 'Action' and 'spinefm_ProcessModel_ConfigurationProcessStep'. From 'Action', the role 'Action' has cardinality 0..*, and from 'spinefm_ProcessModel_ConfigurationProcessStep', the role 'spinefm_ProcessModel_ConfigurationProcessStep' has cardinality 0..*.
+An association connects 'DomainElement' and 'spinefm_ProcessModel_ConfigurationProcessStep'. From 'DomainElement', the role 'DomainElement56' has cardinality 0..*, and from 'spinefm_ProcessModel_ConfigurationProcessStep', the role 'spinefm_ProcessModel_ConfigurationProcessStep55' has cardinality 0..*.
+An association connects 'spinefm_ProcessModel_ConfigurationProcessStep' and 'Action'. From 'spinefm_ProcessModel_ConfigurationProcessStep', the role 'spinefm_ProcessModel_ConfigurationProcessStep58' has cardinality 0..*, and from 'Action', the role 'Action59' has cardinality 0..*.
+An association connects 'spinefm_ProcessModel_ConfigurationProcessStep' and 'Context'. From 'spinefm_ProcessModel_ConfigurationProcessStep', the role 'spinefm_ProcessModel_ConfigurationProcessStep61' has cardinality 0..*, and from 'Context', the role 'Context' has cardinality 0..*.
+An association connects 'Configuration' and 'spinefm_ProcessModel_ConfigurationProcessStep'. From 'Configuration', the role 'ConfigurationModel' has cardinality 0..*, and from 'spinefm_ProcessModel_ConfigurationProcessStep', the role 'Configuration63' has cardinality 0..*.
+An association connects 'spinefm_ProcessModel_Context' and 'ConfigurationProcessStep'. From 'spinefm_ProcessModel_Context', the role 'spinefm_ProcessModel_Context' has cardinality 0..*, and from 'ConfigurationProcessStep', the role 'ConfigurationProcessStep65' has cardinality 0..*.
+An association connects 'spinefm_ProcessModel_GlobalContext' and 'CompositeConfiguration'. From 'spinefm_ProcessModel_GlobalContext', the role 'spinefm_ProcessModel_GlobalContext' has cardinality 0..*, and from 'CompositeConfiguration', the role 'CompositeConfiguration' has cardinality 0..*.
+An association connects 'spinefm_ProcessModel_LocalContext' and 'Configuration'. From 'spinefm_ProcessModel_LocalContext', the role 'spinefm_ProcessModel_LocalContext' has cardinality 0..*, and from 'Configuration', the role 'Configuration68' has cardinality 0..*.
+An association connects 'MultipleSoftwareProductLine' and 'spinefm_ProcessModel_ContextManager'. From 'MultipleSoftwareProductLine', the role 'MultipleSoftwareProductLine70' has cardinality 0..*, and from 'spinefm_ProcessModel_ContextManager', the role 'spinefm_ProcessModel_ContextManager' has cardinality 0..*.
+An association connects 'spinefm_ProcessModel_ContextManager' and 'GlobalContext'. From 'spinefm_ProcessModel_ContextManager', the role 'spinefm_ProcessModel_ContextManager72' has cardinality 0..*, and from 'GlobalContext', the role 'GlobalContext' has cardinality 0..*.
+An association connects 'spinefm_ProcessModel_ContextManager' and 'LocalContext'. From 'spinefm_ProcessModel_ContextManager', the role 'spinefm_ProcessModel_ContextManager74' has cardinality 0..*, and from 'LocalContext', the role 'LocalContext' has cardinality 0..*.
+An association connects 'Context' and 'spinefm_ProcessModel_DeletedContextInformations'. From 'Context', the role 'Context76' has cardinality 0..*, and from 'spinefm_ProcessModel_DeletedContextInformations', the role 'spinefm_ProcessModel_DeletedContextInformations' has cardinality 0..*.
+An association connects 'Rule' and 'spinefm_ActionModel_RestrictionFunction'. From 'Rule', the role 'Rule' has cardinality 0..*, and from 'spinefm_ActionModel_RestrictionFunction', the role 'spinefm_ActionModel_RestrictionFunction' has cardinality 0..*.
+An association connects 'RestrictionFunction' and 'spinefm_ActionModel_RestrictionFunction'. From 'RestrictionFunction', the role 'RestrictionFunction80' has cardinality 0..*, and from 'spinefm_ActionModel_RestrictionFunction', the role 'spinefm_ActionModel_RestrictionFunction79' has cardinality 0..*.
+An association connects 'Feature' and 'spinefm_ActionModel_ConfigurationState'. From 'Feature', the role 'Feature82' has cardinality 0..*, and from 'spinefm_ActionModel_ConfigurationState', the role 'spinefm_ActionModel_ConfigurationState' has cardinality 0..*.
+An association connects 'Feature' and 'spinefm_ActionModel_ConfigurationState'. From 'Feature', the role 'Feature85' has cardinality 0..*, and from 'spinefm_ActionModel_ConfigurationState', the role 'spinefm_ActionModel_ConfigurationState84' has cardinality 0..*.
+An association connects 'FeatureModel' and 'spinefm_ActionModel_ConfigurationState'. From 'FeatureModel', the role 'FeatureModel88' has cardinality 0..*, and from 'spinefm_ActionModel_ConfigurationState', the role 'spinefm_ActionModel_ConfigurationState87' has cardinality 0..*.
+An association connects 'spinefm_ActionModel_Rule' and 'Action'. From 'spinefm_ActionModel_Rule', the role 'spinefm_ActionModel_Rule' has cardinality 0..*, and from 'Action', the role 'Action90' has cardinality 0..*.
+An association connects 'ConfigurationState' and 'spinefm_ActionModel_Rule'. From 'ConfigurationState', the role 'ConfigurationState93' has cardinality 0..*, and from 'spinefm_ActionModel_Rule', the role 'spinefm_ActionModel_Rule92' has cardinality 0..*.
+An association connects 'spinefm_ActionModel_Action' and 'Feature'. From 'spinefm_ActionModel_Action', the role 'spinefm_ActionModel_Action' has cardinality 0..*, and from 'Feature', the role 'Feature95' has cardinality 0..*.
+An association connects 'FeatureModel' and 'spinefm_ActionModel_Action'. From 'FeatureModel', the role 'FeatureModel98' has cardinality 0..*, and from 'spinefm_ActionModel_Action', the role 'spinefm_ActionModel_Action97' has cardinality 0..*.
+An association connects 'spinefm_ActionModel_ActionAddCTConstraint' and 'Constraint'. From 'spinefm_ActionModel_ActionAddCTConstraint', the role 'spinefm_ActionModel_ActionAddCTConstraint' has cardinality 0..*, and from 'Constraint', the role 'Constraint100' has cardinality 0..*.

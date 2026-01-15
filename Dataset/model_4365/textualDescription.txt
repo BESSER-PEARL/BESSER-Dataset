@@ -1,0 +1,134 @@
+The domain model 'mil' describes the core structural elements and their relationships within the system.
+
+The model defines 32 main class(es).
+
+'mil_GtInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_RetInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_InpInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_AddInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_JmpInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_GeqInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'PrtInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_DivInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_LtInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_StoreInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_MulInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_ErrInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_LoadInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_ConstantInteger' represents an important domain concept.
+It has one attribute: 'rawValue', which is of type int.
+
+'mil_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_CalInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_YldInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_RegisterReference' represents an important domain concept.
+It has one attribute: 'address', which is of type str.
+
+'JumpInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_SubInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_JumpInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_NegInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_LeqInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_EqInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_MILModel' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_NeqInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_LabelInstruction' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'mil_PrtInstruction' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'mil_JpcInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mil_LoadInstruction' is a specialization of 'Instruction'.
+The class 'mil_StoreInstruction' is a specialization of 'Instruction'.
+The class 'mil_AddInstruction' is a specialization of 'Instruction'.
+The class 'mil_SubInstruction' is a specialization of 'Instruction'.
+The class 'mil_MulInstruction' is a specialization of 'Instruction'.
+The class 'mil_DivInstruction' is a specialization of 'Instruction'.
+The class 'mil_NegInstruction' is a specialization of 'Instruction'.
+The class 'mil_EqInstruction' is a specialization of 'Instruction'.
+The class 'mil_NeqInstruction' is a specialization of 'Instruction'.
+The class 'mil_LtInstruction' is a specialization of 'Instruction'.
+The class 'mil_LeqInstruction' is a specialization of 'Instruction'.
+The class 'mil_GtInstruction' is a specialization of 'Instruction'.
+The class 'mil_GeqInstruction' is a specialization of 'Instruction'.
+The class 'mil_JumpInstruction' is a specialization of 'Instruction'.
+The class 'mil_JmpInstruction' is a specialization of 'JumpInstruction'.
+The class 'mil_JpcInstruction' is a specialization of 'JumpInstruction'.
+The class 'mil_CalInstruction' is a specialization of 'JumpInstruction'.
+The class 'mil_RetInstruction' is a specialization of 'Instruction'.
+The class 'mil_LabelInstruction' is a specialization of 'Instruction'.
+The class 'mil_YldInstruction' is a specialization of 'Instruction'.
+The class 'mil_PrtInstruction' is a specialization of 'Instruction'.
+The class 'mil_InpInstruction' is a specialization of 'Instruction'.
+The class 'mil_ErrInstruction' is a specialization of 'PrtInstruction'.
+The class 'mil_ConstantInteger' is a specialization of 'Value'.
+The class 'mil_RegisterReference' is a specialization of 'Value'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mil_Instruction' and 'mil_MILModel'. From 'mil_Instruction', the role 'mil_Instruction' has cardinality 0..*, and from 'mil_MILModel', the role 'mil_MILModel' has cardinality 0..*.
+An association connects 'mil_Value' and 'mil_LoadInstruction'. From 'mil_Value', the role 'mil_Value' has cardinality 0..*, and from 'mil_LoadInstruction', the role 'mil_LoadInstruction' has cardinality 0..*.
+An association connects 'mil_RegisterReference' and 'mil_StoreInstruction'. From 'mil_RegisterReference', the role 'mil_RegisterReference' has cardinality 0..*, and from 'mil_StoreInstruction', the role 'mil_StoreInstruction' has cardinality 0..*.
+An association connects 'mil_LabelInstruction' and 'mil_JumpInstruction'. From 'mil_LabelInstruction', the role 'mil_LabelInstruction' has cardinality 0..*, and from 'mil_JumpInstruction', the role 'mil_JumpInstruction' has cardinality 0..*.
+An association connects 'mil_InpInstruction' and 'mil_ConstantInteger'. From 'mil_InpInstruction', the role 'mil_InpInstruction' has cardinality 0..*, and from 'mil_ConstantInteger', the role 'mil_ConstantInteger' has cardinality 0..*.
+An association connects 'mil_InpInstruction' and 'mil_ConstantInteger'. From 'mil_InpInstruction', the role 'mil_InpInstruction6' has cardinality 0..*, and from 'mil_ConstantInteger', the role 'mil_ConstantInteger7' has cardinality 0..*.

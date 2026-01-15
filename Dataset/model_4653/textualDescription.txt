@@ -1,0 +1,88 @@
+The domain model 'di' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'di_Bounds' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'di_LabeledEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Style' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'di_DiagramElement' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'anyAttribute', which is of type str.
+
+'di_Plane' represents an important domain concept.
+It has one attribute: 'diagramElementGroup', which is of type str.
+
+'di_Point' represents an important domain concept.
+It does not declare any attributes.
+
+'di_ExtensionType' represents an important domain concept.
+It has one attribute: 'any', which is of type str.
+
+'di_Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Diagram' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'documentation', which is of type str; 'id', which is of type str; 'resolution', which is of type str.
+
+'di_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'di_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'di_LabeledShape' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'di_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'di_Edge' is a specialization of 'DiagramElement'.
+The class 'di_Label' is a specialization of 'Node'.
+The class 'di_LabeledEdge' is a specialization of 'Edge'.
+The class 'di_LabeledShape' is a specialization of 'Shape'.
+The class 'di_Node' is a specialization of 'DiagramElement'.
+The class 'di_Plane' is a specialization of 'Node'.
+The class 'di_Shape' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'di_DiagramElement' and 'di_ExtensionType'. From 'di_DiagramElement', the role 'di_DiagramElement' has cardinality 0..*, and from 'di_ExtensionType', the role 'di_ExtensionType' has cardinality 0..*.
+An association connects 'di_Point' and 'di_Edge'. From 'di_Point', the role 'di_Point' has cardinality 0..*, and from 'di_Edge', the role 'di_Edge' has cardinality 0..*.
+An association connects 'di_Bounds' and 'di_Label'. From 'di_Bounds', the role 'di_Bounds' has cardinality 0..*, and from 'di_Label', the role 'di_Label' has cardinality 0..*.
+An association connects 'di_Plane' and 'di_DiagramElement'. From 'di_Plane', the role 'di_Plane' has cardinality 0..*, and from 'di_DiagramElement', the role 'di_DiagramElement4' has cardinality 0..*.
+An association connects 'di_Shape' and 'di_Bounds'. From 'di_Shape', the role 'di_Shape' has cardinality 0..*, and from 'di_Bounds', the role 'di_Bounds6' has cardinality 0..*.
+An association connects 'di_EStringToStringMapEntry' and 'di_DocumentRoot'. From 'di_EStringToStringMapEntry', the role 'di_EStringToStringMapEntry' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot' has cardinality 0..*.
+An association connects 'di_EStringToStringMapEntry' and 'di_DocumentRoot'. From 'di_EStringToStringMapEntry', the role 'di_EStringToStringMapEntry10' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot9' has cardinality 0..*.
+An association connects 'di_DiagramElement' and 'di_DocumentRoot'. From 'di_DiagramElement', the role 'di_DiagramElement13' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot12' has cardinality 0..*.
+An association connects 'di_DocumentRoot' and 'di_Diagram'. From 'di_DocumentRoot', the role 'di_DocumentRoot15' has cardinality 0..*, and from 'di_Diagram', the role 'di_Diagram' has cardinality 0..*.
+An association connects 'di_DocumentRoot' and 'di_Edge'. From 'di_DocumentRoot', the role 'di_DocumentRoot17' has cardinality 0..*, and from 'di_Edge', the role 'di_Edge18' has cardinality 0..*.
+An association connects 'di_Label' and 'di_DocumentRoot'. From 'di_Label', the role 'di_Label21' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot20' has cardinality 0..*.
+An association connects 'di_LabeledEdge' and 'di_DocumentRoot'. From 'di_LabeledEdge', the role 'di_LabeledEdge' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot23' has cardinality 0..*.
+An association connects 'di_LabeledShape' and 'di_DocumentRoot'. From 'di_LabeledShape', the role 'di_LabeledShape' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot25' has cardinality 0..*.
+An association connects 'di_DocumentRoot' and 'di_Node'. From 'di_DocumentRoot', the role 'di_DocumentRoot27' has cardinality 0..*, and from 'di_Node', the role 'di_Node' has cardinality 0..*.
+An association connects 'di_Plane' and 'di_DocumentRoot'. From 'di_Plane', the role 'di_Plane30' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot29' has cardinality 0..*.
+An association connects 'di_DocumentRoot' and 'di_Shape'. From 'di_DocumentRoot', the role 'di_DocumentRoot32' has cardinality 0..*, and from 'di_Shape', the role 'di_Shape33' has cardinality 0..*.
+An association connects 'di_Style' and 'di_DocumentRoot'. From 'di_Style', the role 'di_Style' has cardinality 0..*, and from 'di_DocumentRoot', the role 'di_DocumentRoot35' has cardinality 0..*.

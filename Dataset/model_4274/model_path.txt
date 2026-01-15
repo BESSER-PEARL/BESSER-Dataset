@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/unicase-ls1/unicase/other/LABCourseSS11/emfstore/org.eclipse.emf.emfstore.examplemodel/model/bowling.ecore

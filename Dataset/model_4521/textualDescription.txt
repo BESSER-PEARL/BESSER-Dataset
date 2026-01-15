@@ -1,0 +1,40 @@
+The domain model 'PrimitivesProv' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'PrimitivesProv_Right' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitivesProv_LogoProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitivesProv_Left' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitivesProv_Forward' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitivesProv_Back' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitivesProv_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitivesProv_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'PrimitivesProv_Primitive' is a specialization of 'Instruction'.
+The class 'PrimitivesProv_Forward' is a specialization of 'Primitive'.
+The class 'PrimitivesProv_Back' is a specialization of 'Primitive'.
+The class 'PrimitivesProv_Left' is a specialization of 'Primitive'.
+The class 'PrimitivesProv_Right' is a specialization of 'Primitive'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PrimitivesProv_LogoProgram' and 'PrimitivesProv_Instruction'. From 'PrimitivesProv_LogoProgram', the role 'PrimitivesProv_LogoProgram' has cardinality 0..*, and from 'PrimitivesProv_Instruction', the role 'PrimitivesProv_Instruction' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/damenac/puzzle/examples/demo-ICSR/puzzle.examples.fsm.uml.metamodel/models/originalCompositeFSM.ecore

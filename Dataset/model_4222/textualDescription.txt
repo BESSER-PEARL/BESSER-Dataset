@@ -1,0 +1,30 @@
+The domain model 'organization' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'organization_core_Cass' represents an important domain concept.
+It does not declare any attributes.
+
+'organization_Company' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'organization_Employee' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'organization_ABase' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'ABase' represents an important domain concept.
+It does not declare any attributes.
+
+'organization_Department' represents an important domain concept.
+It has one attribute: 'number', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'organization_Employee' is a specialization of 'ABase'.
+The class 'organization_Company' is a specialization of 'ABase'.
+The class 'organization_Department' is a specialization of 'ABase'.
+
+Relationships between classes are modeled using associations.
+An association connects 'organization_Department' and 'organization_Company'. From 'organization_Department', the role 'organization_Department' has cardinality 0..*, and from 'organization_Company', the role 'organization_Company' has cardinality 0..*.
+An association connects 'organization_Department' and 'organization_Employee'. From 'organization_Department', the role 'organization_Department2' has cardinality 0..*, and from 'organization_Employee', the role 'organization_Employee' has cardinality 0..*.

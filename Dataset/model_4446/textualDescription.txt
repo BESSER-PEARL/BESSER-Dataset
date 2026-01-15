@@ -1,0 +1,359 @@
+The domain model 'ioT' describes the core structural elements and their relationships within the system.
+
+The model defines 85 main class(es).
+
+'ioT_TIMEUNIT' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_AND' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_WEEKS' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_ItemVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_False' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_ReadVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_UnixSerialAddress' represents an important domain concept.
+It does not declare any attributes.
+
+'Address' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_Comparison' represents an important domain concept.
+It does not declare any attributes.
+
+'TIMEUNIT' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_LT' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_Address' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Bool' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_ToVar' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_MINUTES' represents an important domain concept.
+It does not declare any attributes.
+
+'VarOrList' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionRight' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_ExpressionLeft' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_IpAddress' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_EQL' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_ClearListAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_VarAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_BoolExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_GT' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_IoTDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_IntExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'ioT_MILLISECONDS' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_ReadConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_NE' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_ReadSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_ExternalOf' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_DAYS' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_GE' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_ExternalRight' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_ExternalDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ioT_SECONDS' represents an important domain concept.
+It does not declare any attributes.
+
+'Config' represents an important domain concept.
+It does not declare any attributes.
+
+'Device' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ComparisonOp' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_Bool' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_EQ' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_Declaration' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'ioT_ConnectionConfig' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'ioT_ElseBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_VarOrList' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ioT_AddToList' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_True' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_WifiStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_ConnectStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_Config' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ioT_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_SendCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_OR' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_ItemInt' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'ioT_HUMIDITY' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_LEDAction' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'ioT_LE' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_Device' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ioT_ArrowCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_PyList' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_TEMPERATURE' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionLeft' represents an important domain concept.
+It does not declare any attributes.
+
+'SENSOR' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_ComparisonOp' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'ioT_ControllerDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_ExpressionRight' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_LIGHTSENSOR' represents an important domain concept.
+It does not declare any attributes.
+
+'Comparison' represents an important domain concept.
+It does not declare any attributes.
+
+'Command' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_WindowsSerialAddress' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_ItemBool' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_ListenStatement' represents an important domain concept.
+It has the following attributes: 'port', which is of type int; 'ip', which is of type str.
+
+'ioT_HOURS' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_SENSOR' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_DeviceConfig' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ioT_ControllerDevice' is a specialization of 'Device'.
+The class 'ioT_IoTDevice' is a specialization of 'Device'.
+The class 'ioT_Action' is a specialization of 'Command'.
+The class 'ioT_Expression' is a specialization of 'ExpressionLeft'.
+The class 'ioT_BoolExpression' is a specialization of 'Expression'.
+The class 'ioT_IntExpression' is a specialization of 'Expression'.
+The class 'ioT_ReadVariable' is a specialization of 'ExpressionLeft'.
+The class 'ioT_ReadConnection' is a specialization of 'ExpressionLeft'.
+The class 'ioT_ExternalOf' is a specialization of 'ExpressionLeft'.
+The class 'ioT_ReadSensor' is a specialization of 'ExpressionLeft'.
+The class 'ioT_Block' is a specialization of 'ExpressionRight'.
+The class 'ioT_ExternalRight' is a specialization of 'ExpressionRight'.
+The class 'ioT_DeviceConfig' is a specialization of 'Config'.
+The class 'ioT_ConnectionConfig' is a specialization of 'Config'.
+The class 'ioT_IpAddress' is a specialization of 'Address'.
+The class 'ioT_WindowsSerialAddress' is a specialization of 'Address'.
+The class 'ioT_UnixSerialAddress' is a specialization of 'Address'.
+The class 'ioT_Variable' is a specialization of 'VarOrList'.
+The class 'ioT_PyList' is a specialization of 'VarOrList'.
+The class 'ioT_MILLISECONDS' is a specialization of 'TIMEUNIT'.
+The class 'ioT_SECONDS' is a specialization of 'TIMEUNIT'.
+The class 'ioT_MINUTES' is a specialization of 'TIMEUNIT'.
+The class 'ioT_HOURS' is a specialization of 'TIMEUNIT'.
+The class 'ioT_DAYS' is a specialization of 'TIMEUNIT'.
+The class 'ioT_WEEKS' is a specialization of 'TIMEUNIT'.
+The class 'ioT_ClearListAction' is a specialization of 'Action'.
+The class 'ioT_LEDAction' is a specialization of 'Action'.
+The class 'ioT_ArrowCommand' is a specialization of 'Command'.
+The class 'ioT_VarAccess' is a specialization of 'Expression'.
+The class 'ioT_LIGHTSENSOR' is a specialization of 'SENSOR'.
+The class 'ioT_TEMPERATURE' is a specialization of 'SENSOR'.
+The class 'ioT_HUMIDITY' is a specialization of 'SENSOR'.
+The class 'ioT_ToVar' is a specialization of 'ExpressionRight'.
+The class 'ioT_AddToList' is a specialization of 'ExpressionRight'.
+The class 'ioT_SendCommand' is a specialization of 'ExpressionRight'.
+The class 'ioT_IfStatement' is a specialization of 'Command'.
+The class 'ioT_OR' is a specialization of 'Comparison'.
+The class 'ioT_AND' is a specialization of 'Comparison'.
+The class 'ioT_EQL' is a specialization of 'Comparison'.
+The class 'ioT_ItemVariable' is a specialization of 'Comparison'.
+The class 'ioT_ItemInt' is a specialization of 'Comparison'.
+The class 'ioT_ItemBool' is a specialization of 'Comparison'.
+The class 'ioT_GT' is a specialization of 'ComparisonOp'.
+The class 'ioT_LT' is a specialization of 'ComparisonOp'.
+The class 'ioT_LE' is a specialization of 'ComparisonOp'.
+The class 'ioT_GE' is a specialization of 'ComparisonOp'.
+The class 'ioT_EQ' is a specialization of 'ComparisonOp'.
+The class 'ioT_NE' is a specialization of 'ComparisonOp'.
+The class 'ioT_True' is a specialization of 'Bool'.
+The class 'ioT_False' is a specialization of 'Bool'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ioT_Model' and 'ioT_ExternalDeclaration'. From 'ioT_Model', the role 'ioT_Model' has cardinality 0..*, and from 'ioT_ExternalDeclaration', the role 'ioT_ExternalDeclaration' has cardinality 0..*.
+An association connects 'ioT_Config' and 'ioT_Model'. From 'ioT_Config', the role 'ioT_Config' has cardinality 0..*, and from 'ioT_Model', the role 'ioT_Model2' has cardinality 0..*.
+An association connects 'ioT_Model' and 'ioT_Device'. From 'ioT_Model', the role 'ioT_Model4' has cardinality 0..*, and from 'ioT_Device', the role 'ioT_Device' has cardinality 0..*.
+An association connects 'ioT_Declaration' and 'ioT_Config'. From 'ioT_Declaration', the role 'ioT_Declaration' has cardinality 0..*, and from 'ioT_Config', the role 'ioT_Config6' has cardinality 0..*.
+An association connects 'ioT_Device' and 'ioT_Program'. From 'ioT_Device', the role 'ioT_Device8' has cardinality 0..*, and from 'ioT_Program', the role 'ioT_Program' has cardinality 0..*.
+An association connects 'ioT_WifiStatement' and 'ioT_Program'. From 'ioT_WifiStatement', the role 'ioT_WifiStatement' has cardinality 0..*, and from 'ioT_Program', the role 'ioT_Program10' has cardinality 0..*.
+An association connects 'ioT_ConnectStatement' and 'ioT_Program'. From 'ioT_ConnectStatement', the role 'ioT_ConnectStatement' has cardinality 0..*, and from 'ioT_Program', the role 'ioT_Program12' has cardinality 0..*.
+An association connects 'ioT_VarOrList' and 'ioT_Program'. From 'ioT_VarOrList', the role 'ioT_VarOrList' has cardinality 0..*, and from 'ioT_Program', the role 'ioT_Program14' has cardinality 0..*.
+An association connects 'ioT_Program' and 'ioT_ListenStatement'. From 'ioT_Program', the role 'ioT_Program16' has cardinality 0..*, and from 'ioT_ListenStatement', the role 'ioT_ListenStatement' has cardinality 0..*.
+An association connects 'ioT_Loop' and 'ioT_Program'. From 'ioT_Loop', the role 'ioT_Loop' has cardinality 0..*, and from 'ioT_Program', the role 'ioT_Program18' has cardinality 0..*.
+An association connects 'ioT_ExpressionRight' and 'ioT_ListenStatement'. From 'ioT_ExpressionRight', the role 'ioT_ExpressionRight' has cardinality 0..*, and from 'ioT_ListenStatement', the role 'ioT_ListenStatement20' has cardinality 0..*.
+An association connects 'ioT_WifiStatement' and 'ioT_ConnectionConfig'. From 'ioT_WifiStatement', the role 'ioT_WifiStatement22' has cardinality 0..*, and from 'ioT_ConnectionConfig', the role 'ioT_ConnectionConfig' has cardinality 0..*.
+An association connects 'ioT_Device' and 'ioT_ConnectStatement'. From 'ioT_Device', the role 'ioT_Device25' has cardinality 0..*, and from 'ioT_ConnectStatement', the role 'ioT_ConnectStatement24' has cardinality 0..*.
+An association connects 'ioT_Address' and 'ioT_ConnectStatement'. From 'ioT_Address', the role 'ioT_Address' has cardinality 0..*, and from 'ioT_ConnectStatement', the role 'ioT_ConnectStatement27' has cardinality 0..*.
+An association connects 'ioT_ConnectStatement' and 'ioT_ConnectionConfig'. From 'ioT_ConnectStatement', the role 'ioT_ConnectStatement29' has cardinality 0..*, and from 'ioT_ConnectionConfig', the role 'ioT_ConnectionConfig30' has cardinality 0..*.
+An association connects 'ioT_Expression' and 'ioT_Loop'. From 'ioT_Expression', the role 'ioT_Expression' has cardinality 0..*, and from 'ioT_Loop', the role 'ioT_Loop32' has cardinality 0..*.
+An association connects 'ioT_Loop' and 'ioT_TIMEUNIT'. From 'ioT_Loop', the role 'ioT_Loop34' has cardinality 0..*, and from 'ioT_TIMEUNIT', the role 'ioT_TIMEUNIT' has cardinality 0..*.
+An association connects 'ioT_Loop' and 'ioT_Command'. From 'ioT_Loop', the role 'ioT_Loop36' has cardinality 0..*, and from 'ioT_Command', the role 'ioT_Command' has cardinality 0..*.
+An association connects 'ioT_BoolExpression' and 'ioT_Bool'. From 'ioT_BoolExpression', the role 'ioT_BoolExpression' has cardinality 0..*, and from 'ioT_Bool', the role 'ioT_Bool' has cardinality 0..*.
+An association connects 'ioT_ReadVariable' and 'ioT_Variable'. From 'ioT_ReadVariable', the role 'ioT_ReadVariable' has cardinality 0..*, and from 'ioT_Variable', the role 'ioT_Variable' has cardinality 0..*.
+An association connects 'ioT_ReadConnection' and 'ioT_Device'. From 'ioT_ReadConnection', the role 'ioT_ReadConnection' has cardinality 0..*, and from 'ioT_Device', the role 'ioT_Device40' has cardinality 0..*.
+An association connects 'ioT_ExternalOf' and 'ioT_ExternalDeclaration'. From 'ioT_ExternalOf', the role 'ioT_ExternalOf' has cardinality 0..*, and from 'ioT_ExternalDeclaration', the role 'ioT_ExternalDeclaration42' has cardinality 0..*.
+An association connects 'ioT_VarOrList' and 'ioT_ExternalOf'. From 'ioT_VarOrList', the role 'ioT_VarOrList45' has cardinality 0..*, and from 'ioT_ExternalOf', the role 'ioT_ExternalOf44' has cardinality 0..*.
+An association connects 'ioT_SENSOR' and 'ioT_ReadSensor'. From 'ioT_SENSOR', the role 'ioT_SENSOR' has cardinality 0..*, and from 'ioT_ReadSensor', the role 'ioT_ReadSensor' has cardinality 0..*.
+An association connects 'ioT_Command' and 'ioT_Block'. From 'ioT_Command', the role 'ioT_Command48' has cardinality 0..*, and from 'ioT_Block', the role 'ioT_Block' has cardinality 0..*.
+An association connects 'ioT_ExternalDeclaration' and 'ioT_ExternalRight'. From 'ioT_ExternalDeclaration', the role 'ioT_ExternalDeclaration50' has cardinality 0..*, and from 'ioT_ExternalRight', the role 'ioT_ExternalRight' has cardinality 0..*.
+An association connects 'ioT_ElseBlock' and 'ioT_Command'. From 'ioT_ElseBlock', the role 'ioT_ElseBlock' has cardinality 0..*, and from 'ioT_Command', the role 'ioT_Command52' has cardinality 0..*.
+An association connects 'ioT_Expression' and 'ioT_Variable'. From 'ioT_Expression', the role 'ioT_Expression55' has cardinality 0..*, and from 'ioT_Variable', the role 'ioT_Variable54' has cardinality 0..*.
+An association connects 'ioT_ClearListAction' and 'ioT_PyList'. From 'ioT_ClearListAction', the role 'ioT_ClearListAction' has cardinality 0..*, and from 'ioT_PyList', the role 'ioT_PyList' has cardinality 0..*.
+An association connects 'ioT_ArrowCommand' and 'ioT_ExpressionLeft'. From 'ioT_ArrowCommand', the role 'ioT_ArrowCommand' has cardinality 0..*, and from 'ioT_ExpressionLeft', the role 'ioT_ExpressionLeft' has cardinality 0..*.
+An association connects 'ioT_ExpressionRight' and 'ioT_ArrowCommand'. From 'ioT_ExpressionRight', the role 'ioT_ExpressionRight60' has cardinality 0..*, and from 'ioT_ArrowCommand', the role 'ioT_ArrowCommand59' has cardinality 0..*.
+An association connects 'ioT_VarOrList' and 'ioT_VarAccess'. From 'ioT_VarOrList', the role 'ioT_VarOrList62' has cardinality 0..*, and from 'ioT_VarAccess', the role 'ioT_VarAccess' has cardinality 0..*.
+An association connects 'ioT_Variable' and 'ioT_ToVar'. From 'ioT_Variable', the role 'ioT_Variable64' has cardinality 0..*, and from 'ioT_ToVar', the role 'ioT_ToVar' has cardinality 0..*.
+An association connects 'ioT_PyList' and 'ioT_AddToList'. From 'ioT_PyList', the role 'ioT_PyList66' has cardinality 0..*, and from 'ioT_AddToList', the role 'ioT_AddToList' has cardinality 0..*.
+An association connects 'ioT_SendCommand' and 'ioT_Device'. From 'ioT_SendCommand', the role 'ioT_SendCommand' has cardinality 0..*, and from 'ioT_Device', the role 'ioT_Device68' has cardinality 0..*.
+An association connects 'ioT_IfStatement' and 'ioT_Comparison'. From 'ioT_IfStatement', the role 'ioT_IfStatement' has cardinality 0..*, and from 'ioT_Comparison', the role 'ioT_Comparison' has cardinality 0..*.
+An association connects 'ioT_IfStatement' and 'ioT_Command'. From 'ioT_IfStatement', the role 'ioT_IfStatement71' has cardinality 0..*, and from 'ioT_Command', the role 'ioT_Command72' has cardinality 0..*.
+An association connects 'ioT_ElseBlock' and 'ioT_IfStatement'. From 'ioT_ElseBlock', the role 'ioT_ElseBlock75' has cardinality 0..*, and from 'ioT_IfStatement', the role 'ioT_IfStatement74' has cardinality 0..*.
+An association connects 'ioT_OR' and 'ioT_Comparison'. From 'ioT_OR', the role 'ioT_OR' has cardinality 0..*, and from 'ioT_Comparison', the role 'ioT_Comparison77' has cardinality 0..*.
+An association connects 'ioT_Comparison' and 'ioT_OR'. From 'ioT_Comparison', the role 'ioT_Comparison80' has cardinality 0..*, and from 'ioT_OR', the role 'ioT_OR79' has cardinality 0..*.
+An association connects 'ioT_Comparison' and 'ioT_AND'. From 'ioT_Comparison', the role 'ioT_Comparison82' has cardinality 0..*, and from 'ioT_AND', the role 'ioT_AND' has cardinality 0..*.
+An association connects 'ioT_AND' and 'ioT_Comparison'. From 'ioT_AND', the role 'ioT_AND84' has cardinality 0..*, and from 'ioT_Comparison', the role 'ioT_Comparison85' has cardinality 0..*.
+An association connects 'ioT_EQL' and 'ioT_Comparison'. From 'ioT_EQL', the role 'ioT_EQL' has cardinality 0..*, and from 'ioT_Comparison', the role 'ioT_Comparison87' has cardinality 0..*.
+An association connects 'ioT_EQL' and 'ioT_ComparisonOp'. From 'ioT_EQL', the role 'ioT_EQL89' has cardinality 0..*, and from 'ioT_ComparisonOp', the role 'ioT_ComparisonOp' has cardinality 0..*.
+An association connects 'ioT_Comparison' and 'ioT_EQL'. From 'ioT_Comparison', the role 'ioT_Comparison92' has cardinality 0..*, and from 'ioT_EQL', the role 'ioT_EQL91' has cardinality 0..*.
+An association connects 'ioT_ItemVariable' and 'ioT_Variable'. From 'ioT_ItemVariable', the role 'ioT_ItemVariable' has cardinality 0..*, and from 'ioT_Variable', the role 'ioT_Variable94' has cardinality 0..*.
+An association connects 'ioT_Bool' and 'ioT_ItemBool'. From 'ioT_Bool', the role 'ioT_Bool96' has cardinality 0..*, and from 'ioT_ItemBool', the role 'ioT_ItemBool' has cardinality 0..*.

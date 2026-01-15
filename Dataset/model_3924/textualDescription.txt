@@ -1,0 +1,281 @@
+The domain model 'applauseDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 56 main class(es).
+
+'StringFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'View' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_StringUrlConform' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_ViewForAllSections' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_CollectionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_TableView' represents an important domain concept.
+It does not declare any attributes.
+
+'CollectionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_TypeDescription' represents an important domain concept.
+It has one attribute: 'many', which is of type bool.
+
+'PredefinedParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_DetailsView' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_WebView' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_CollectionIterator' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'applauseDsl_ViewAction' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_Property' represents an important domain concept.
+It has one attribute: 'derived', which is of type bool.
+
+'CollectionFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_StringFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_StringConcat' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ViewAction' represents an important domain concept.
+It does not declare any attributes.
+
+'SectionedView' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_ActionDelegate' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_View' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'applauseDsl_SimpleType' represents an important domain concept.
+It has one attribute: 'platformType', which is of type str.
+
+'applauseDsl_SectionedView' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_SectionCell' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'applauseDsl_Application' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'tabbarApplication', which is of type bool.
+
+'applauseDsl_NavigationBarItem' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'ScalarExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_Button' represents an important domain concept.
+It has one attribute: 'handler', which is of type str.
+
+'applauseDsl_CollectionFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_PredefinedParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_StringSplit' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_ObjectReference' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_SectionId' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_ScalarExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_CollectionLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_ApplauseModel' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_StringReplace' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'applauseDsl_ContentProvider' represents an important domain concept.
+It has the following attributes: 'resolver', which is of type bool; 'xml', which is of type bool; 'name', which is of type str; 'many', which is of type bool; 'html', which is of type bool.
+
+'applauseDsl_ExternalOpen' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_ProviderConstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_ViewSection' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_Constant' represents an important domain concept.
+It has one attribute: 'language', which is of type str.
+
+'applauseDsl_ViewHeader' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_CustomView' represents an important domain concept.
+It has one attribute: 'objclass', which is of type str.
+
+'VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_ViewCall' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Position' defines the following possible values: 'default', 'center', 'right'.
+The enumeration 'CellType' defines the following possible values: 'default', 'value2', 'subtitle', 'defaultWithDisclosure', 'maps', 'double'.
+
+The model also captures inheritance relationships between classes.
+The class 'applauseDsl_NavigationBarItem' is a specialization of 'ModelElement'.
+The class 'applauseDsl_VariableDeclaration' is a specialization of 'ModelElement'.
+The class 'applauseDsl_Parameter' is a specialization of 'VariableDeclaration'.
+The class 'applauseDsl_ObjectReference' is a specialization of 'Expression'.
+The class 'applauseDsl_ObjectReference' is a specialization of 'ScalarExpression'.
+The class 'applauseDsl_ObjectReference' is a specialization of 'CollectionExpression'.
+The class 'applauseDsl_StringLiteral' is a specialization of 'Expression'.
+The class 'applauseDsl_StringLiteral' is a specialization of 'ScalarExpression'.
+The class 'applauseDsl_SectionId' is a specialization of 'PredefinedParameter'.
+The class 'applauseDsl_StringFunction' is a specialization of 'Expression'.
+The class 'applauseDsl_StringFunction' is a specialization of 'ScalarExpression'.
+The class 'applauseDsl_CollectionLiteral' is a specialization of 'Expression'.
+The class 'applauseDsl_CollectionLiteral' is a specialization of 'CollectionExpression'.
+The class 'applauseDsl_CollectionFunction' is a specialization of 'Expression'.
+The class 'applauseDsl_CollectionFunction' is a specialization of 'CollectionExpression'.
+The class 'applauseDsl_Type' is a specialization of 'ModelElement'.
+The class 'applauseDsl_SimpleType' is a specialization of 'Type'.
+The class 'applauseDsl_Entity' is a specialization of 'Type'.
+The class 'applauseDsl_Property' is a specialization of 'VariableDeclaration'.
+The class 'applauseDsl_ContentProvider' is a specialization of 'ModelElement'.
+The class 'applauseDsl_View' is a specialization of 'ModelElement'.
+The class 'applauseDsl_SectionedView' is a specialization of 'View'.
+The class 'applauseDsl_TableView' is a specialization of 'SectionedView'.
+The class 'applauseDsl_DetailsView' is a specialization of 'SectionedView'.
+The class 'applauseDsl_WebView' is a specialization of 'View'.
+The class 'applauseDsl_CustomView' is a specialization of 'View'.
+The class 'applauseDsl_CollectionIterator' is a specialization of 'VariableDeclaration'.
+The class 'applauseDsl_ActionDelegate' is a specialization of 'ViewAction'.
+The class 'applauseDsl_ExternalOpen' is a specialization of 'ViewAction'.
+The class 'applauseDsl_ViewCall' is a specialization of 'ViewAction'.
+The class 'applauseDsl_StringConcat' is a specialization of 'StringFunction'.
+The class 'applauseDsl_StringReplace' is a specialization of 'StringFunction'.
+The class 'applauseDsl_StringUrlConform' is a specialization of 'StringFunction'.
+The class 'applauseDsl_StringSplit' is a specialization of 'CollectionFunction'.
+The class 'applauseDsl_Constant' is a specialization of 'VariableDeclaration'.
+
+Relationships between classes are modeled using associations.
+An association connects 'applauseDsl_Application' and 'applauseDsl_ApplauseModel'. From 'applauseDsl_Application', the role 'applauseDsl_Application' has cardinality 0..*, and from 'applauseDsl_ApplauseModel', the role 'applauseDsl_ApplauseModel' has cardinality 0..*.
+An association connects 'applauseDsl_ApplauseModel' and 'applauseDsl_ModelElement'. From 'applauseDsl_ApplauseModel', the role 'applauseDsl_ApplauseModel2' has cardinality 0..*, and from 'applauseDsl_ModelElement', the role 'applauseDsl_ModelElement' has cardinality 0..*.
+An association connects 'applauseDsl_NavigationBarItem' and 'applauseDsl_ScalarExpression'. From 'applauseDsl_NavigationBarItem', the role 'applauseDsl_NavigationBarItem' has cardinality 0..*, and from 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression' has cardinality 0..*.
+An association connects 'applauseDsl_ScalarExpression' and 'applauseDsl_NavigationBarItem'. From 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression6' has cardinality 0..*, and from 'applauseDsl_NavigationBarItem', the role 'applauseDsl_NavigationBarItem5' has cardinality 0..*.
+An association connects 'applauseDsl_TypeDescription' and 'applauseDsl_Type'. From 'applauseDsl_TypeDescription', the role 'applauseDsl_TypeDescription' has cardinality 0..*, and from 'applauseDsl_Type', the role 'applauseDsl_Type' has cardinality 0..*.
+An association connects 'applauseDsl_TypeDescription' and 'applauseDsl_Parameter'. From 'applauseDsl_TypeDescription', the role 'applauseDsl_TypeDescription9' has cardinality 0..*, and from 'applauseDsl_Parameter', the role 'applauseDsl_Parameter' has cardinality 0..*.
+An association connects 'applauseDsl_VariableDeclaration' and 'applauseDsl_ObjectReference'. From 'applauseDsl_VariableDeclaration', the role 'applauseDsl_VariableDeclaration' has cardinality 0..*, and from 'applauseDsl_ObjectReference', the role 'applauseDsl_ObjectReference' has cardinality 0..*.
+An association connects 'applauseDsl_ObjectReference' and 'applauseDsl_ObjectReference'. From 'applauseDsl_ObjectReference', the role 'applauseDsl_ObjectReference13' has cardinality 0..*, and from 'applauseDsl_ObjectReference', the role 'applauseDsl_ObjectReference11' has cardinality 0..*.
+An association connects 'applauseDsl_CollectionLiteral' and 'applauseDsl_ScalarExpression'. From 'applauseDsl_CollectionLiteral', the role 'applauseDsl_CollectionLiteral' has cardinality 0..*, and from 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression15' has cardinality 0..*.
+An association connects 'applauseDsl_ScalarExpression' and 'applauseDsl_Application'. From 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression18' has cardinality 0..*, and from 'applauseDsl_Application', the role 'applauseDsl_Application17' has cardinality 0..*.
+An association connects 'applauseDsl_Application' and 'applauseDsl_ScalarExpression'. From 'applauseDsl_Application', the role 'applauseDsl_Application20' has cardinality 0..*, and from 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression21' has cardinality 0..*.
+An association connects 'applauseDsl_ViewCall' and 'applauseDsl_Application'. From 'applauseDsl_ViewCall', the role 'applauseDsl_ViewCall' has cardinality 0..*, and from 'applauseDsl_Application', the role 'applauseDsl_Application23' has cardinality 0..*.
+An association connects 'applauseDsl_Application' and 'applauseDsl_Button'. From 'applauseDsl_Application', the role 'applauseDsl_Application25' has cardinality 0..*, and from 'applauseDsl_Button', the role 'applauseDsl_Button' has cardinality 0..*.
+An association connects 'applauseDsl_ScalarExpression' and 'applauseDsl_Button'. From 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression28' has cardinality 0..*, and from 'applauseDsl_Button', the role 'applauseDsl_Button27' has cardinality 0..*.
+An association connects 'applauseDsl_ScalarExpression' and 'applauseDsl_Button'. From 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression31' has cardinality 0..*, and from 'applauseDsl_Button', the role 'applauseDsl_Button30' has cardinality 0..*.
+An association connects 'applauseDsl_Button' and 'applauseDsl_ViewCall'. From 'applauseDsl_Button', the role 'applauseDsl_Button33' has cardinality 0..*, and from 'applauseDsl_ViewCall', the role 'applauseDsl_ViewCall34' has cardinality 0..*.
+An association connects 'applauseDsl_Entity' and 'applauseDsl_Entity'. From 'applauseDsl_Entity', the role 'applauseDsl_Entity' has cardinality 0..*, and from 'applauseDsl_Entity', the role 'applauseDsl_Entity35' has cardinality 0..*.
+An association connects 'applauseDsl_Entity' and 'applauseDsl_Property'. From 'applauseDsl_Entity', the role 'applauseDsl_Entity38' has cardinality 0..*, and from 'applauseDsl_Property', the role 'applauseDsl_Property' has cardinality 0..*.
+An association connects 'applauseDsl_TypeDescription' and 'applauseDsl_Property'. From 'applauseDsl_TypeDescription', the role 'applauseDsl_TypeDescription41' has cardinality 0..*, and from 'applauseDsl_Property', the role 'applauseDsl_Property40' has cardinality 0..*.
+An association connects 'applauseDsl_Parameter' and 'applauseDsl_ContentProvider'. From 'applauseDsl_Parameter', the role 'applauseDsl_Parameter43' has cardinality 0..*, and from 'applauseDsl_ContentProvider', the role 'applauseDsl_ContentProvider' has cardinality 0..*.
+An association connects 'applauseDsl_Type' and 'applauseDsl_ContentProvider'. From 'applauseDsl_Type', the role 'applauseDsl_Type46' has cardinality 0..*, and from 'applauseDsl_ContentProvider', the role 'applauseDsl_ContentProvider45' has cardinality 0..*.
+An association connects 'applauseDsl_ContentProvider' and 'applauseDsl_ScalarExpression'. From 'applauseDsl_ContentProvider', the role 'applauseDsl_ContentProvider48' has cardinality 0..*, and from 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression49' has cardinality 0..*.
+An association connects 'applauseDsl_ContentProvider' and 'applauseDsl_ScalarExpression'. From 'applauseDsl_ContentProvider', the role 'applauseDsl_ContentProvider51' has cardinality 0..*, and from 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression52' has cardinality 0..*.
+An association connects 'applauseDsl_ProviderConstruction' and 'applauseDsl_ContentProvider'. From 'applauseDsl_ProviderConstruction', the role 'applauseDsl_ProviderConstruction' has cardinality 0..*, and from 'applauseDsl_ContentProvider', the role 'applauseDsl_ContentProvider54' has cardinality 0..*.
+An association connects 'applauseDsl_Expression' and 'applauseDsl_ProviderConstruction'. From 'applauseDsl_Expression', the role 'applauseDsl_Expression' has cardinality 0..*, and from 'applauseDsl_ProviderConstruction', the role 'applauseDsl_ProviderConstruction56' has cardinality 0..*.
+An association connects 'applauseDsl_PredefinedParameter' and 'applauseDsl_ProviderConstruction'. From 'applauseDsl_PredefinedParameter', the role 'applauseDsl_PredefinedParameter' has cardinality 0..*, and from 'applauseDsl_ProviderConstruction', the role 'applauseDsl_ProviderConstruction58' has cardinality 0..*.
+An association connects 'applauseDsl_ScalarExpression' and 'applauseDsl_View'. From 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression60' has cardinality 0..*, and from 'applauseDsl_View', the role 'applauseDsl_View' has cardinality 0..*.
+An association connects 'applauseDsl_View' and 'applauseDsl_Button'. From 'applauseDsl_View', the role 'applauseDsl_View62' has cardinality 0..*, and from 'applauseDsl_Button', the role 'applauseDsl_Button63' has cardinality 0..*.
+An association connects 'applauseDsl_View' and 'applauseDsl_VariableDeclaration'. From 'applauseDsl_View', the role 'applauseDsl_View65' has cardinality 0..*, and from 'applauseDsl_VariableDeclaration', the role 'applauseDsl_VariableDeclaration66' has cardinality 0..*.
+An association connects 'applauseDsl_SectionedView' and 'applauseDsl_Parameter'. From 'applauseDsl_SectionedView', the role 'applauseDsl_SectionedView' has cardinality 0..*, and from 'applauseDsl_Parameter', the role 'applauseDsl_Parameter68' has cardinality 0..*.
+An association connects 'applauseDsl_SectionedView' and 'applauseDsl_SectionedView'. From 'applauseDsl_SectionedView', the role 'applauseDsl_SectionedView69' has cardinality 0..*, and from 'applauseDsl_SectionedView', the role 'applauseDsl_SectionedView71' has cardinality 0..*.
+An association connects 'applauseDsl_ViewForAllSections' and 'applauseDsl_SectionedView'. From 'applauseDsl_ViewForAllSections', the role 'applauseDsl_ViewForAllSections' has cardinality 0..*, and from 'applauseDsl_SectionedView', the role 'applauseDsl_SectionedView73' has cardinality 0..*.
+An association connects 'applauseDsl_SectionedView' and 'applauseDsl_ViewSection'. From 'applauseDsl_SectionedView', the role 'applauseDsl_SectionedView75' has cardinality 0..*, and from 'applauseDsl_ViewSection', the role 'applauseDsl_ViewSection' has cardinality 0..*.
+An association connects 'applauseDsl_DetailsView' and 'applauseDsl_ViewHeader'. From 'applauseDsl_DetailsView', the role 'applauseDsl_DetailsView' has cardinality 0..*, and from 'applauseDsl_ViewHeader', the role 'applauseDsl_ViewHeader' has cardinality 0..*.
+An association connects 'applauseDsl_ViewHeader' and 'applauseDsl_WebView'. From 'applauseDsl_ViewHeader', the role 'applauseDsl_ViewHeader78' has cardinality 0..*, and from 'applauseDsl_WebView', the role 'applauseDsl_WebView' has cardinality 0..*.
+An association connects 'applauseDsl_ViewForAllSections' and 'applauseDsl_WebView'. From 'applauseDsl_ViewForAllSections', the role 'applauseDsl_ViewForAllSections81' has cardinality 0..*, and from 'applauseDsl_WebView', the role 'applauseDsl_WebView80' has cardinality 0..*.
+An association connects 'applauseDsl_WebView' and 'applauseDsl_ViewSection'. From 'applauseDsl_WebView', the role 'applauseDsl_WebView83' has cardinality 0..*, and from 'applauseDsl_ViewSection', the role 'applauseDsl_ViewSection84' has cardinality 0..*.
+An association connects 'applauseDsl_CustomView' and 'applauseDsl_Parameter'. From 'applauseDsl_CustomView', the role 'applauseDsl_CustomView' has cardinality 0..*, and from 'applauseDsl_Parameter', the role 'applauseDsl_Parameter86' has cardinality 0..*.
+An association connects 'applauseDsl_ScalarExpression' and 'applauseDsl_ViewHeader'. From 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression89' has cardinality 0..*, and from 'applauseDsl_ViewHeader', the role 'applauseDsl_ViewHeader88' has cardinality 0..*.
+An association connects 'applauseDsl_ScalarExpression' and 'applauseDsl_ViewHeader'. From 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression92' has cardinality 0..*, and from 'applauseDsl_ViewHeader', the role 'applauseDsl_ViewHeader91' has cardinality 0..*.
+An association connects 'applauseDsl_ViewHeader' and 'applauseDsl_ScalarExpression'. From 'applauseDsl_ViewHeader', the role 'applauseDsl_ViewHeader94' has cardinality 0..*, and from 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression95' has cardinality 0..*.
+An association connects 'applauseDsl_ScalarExpression' and 'applauseDsl_ViewHeader'. From 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression98' has cardinality 0..*, and from 'applauseDsl_ViewHeader', the role 'applauseDsl_ViewHeader97' has cardinality 0..*.
+An association connects 'applauseDsl_ScalarExpression' and 'applauseDsl_ViewSection'. From 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression101' has cardinality 0..*, and from 'applauseDsl_ViewSection', the role 'applauseDsl_ViewSection100' has cardinality 0..*.
+An association connects 'applauseDsl_ViewSection' and 'applauseDsl_SectionCell'. From 'applauseDsl_ViewSection', the role 'applauseDsl_ViewSection103' has cardinality 0..*, and from 'applauseDsl_SectionCell', the role 'applauseDsl_SectionCell' has cardinality 0..*.
+An association connects 'applauseDsl_ViewForAllSections' and 'applauseDsl_ScalarExpression'. From 'applauseDsl_ViewForAllSections', the role 'applauseDsl_ViewForAllSections105' has cardinality 0..*, and from 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression106' has cardinality 0..*.
+An association connects 'applauseDsl_ProviderConstruction' and 'applauseDsl_ViewForAllSections'. From 'applauseDsl_ProviderConstruction', the role 'applauseDsl_ProviderConstruction109' has cardinality 0..*, and from 'applauseDsl_ViewForAllSections', the role 'applauseDsl_ViewForAllSections108' has cardinality 0..*.
+An association connects 'applauseDsl_ViewForAllSections' and 'applauseDsl_SectionCell'. From 'applauseDsl_ViewForAllSections', the role 'applauseDsl_ViewForAllSections111' has cardinality 0..*, and from 'applauseDsl_SectionCell', the role 'applauseDsl_SectionCell112' has cardinality 0..*.
+An association connects 'applauseDsl_CollectionIterator' and 'applauseDsl_SectionCell'. From 'applauseDsl_CollectionIterator', the role 'applauseDsl_CollectionIterator' has cardinality 0..*, and from 'applauseDsl_SectionCell', the role 'applauseDsl_SectionCell114' has cardinality 0..*.
+An association connects 'applauseDsl_SectionCell' and 'applauseDsl_ScalarExpression'. From 'applauseDsl_SectionCell', the role 'applauseDsl_SectionCell116' has cardinality 0..*, and from 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression117' has cardinality 0..*.
+An association connects 'applauseDsl_SectionCell' and 'applauseDsl_ScalarExpression'. From 'applauseDsl_SectionCell', the role 'applauseDsl_SectionCell119' has cardinality 0..*, and from 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression120' has cardinality 0..*.
+An association connects 'applauseDsl_ScalarExpression' and 'applauseDsl_SectionCell'. From 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression123' has cardinality 0..*, and from 'applauseDsl_SectionCell', the role 'applauseDsl_SectionCell122' has cardinality 0..*.
+An association connects 'applauseDsl_ScalarExpression' and 'applauseDsl_SectionCell'. From 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression126' has cardinality 0..*, and from 'applauseDsl_SectionCell', the role 'applauseDsl_SectionCell125' has cardinality 0..*.
+An association connects 'applauseDsl_SectionCell' and 'applauseDsl_ViewAction'. From 'applauseDsl_SectionCell', the role 'applauseDsl_SectionCell128' has cardinality 0..*, and from 'applauseDsl_ViewAction', the role 'applauseDsl_ViewAction' has cardinality 0..*.
+An association connects 'applauseDsl_SectionCell' and 'applauseDsl_ViewAction'. From 'applauseDsl_SectionCell', the role 'applauseDsl_SectionCell130' has cardinality 0..*, and from 'applauseDsl_ViewAction', the role 'applauseDsl_ViewAction131' has cardinality 0..*.
+An association connects 'applauseDsl_CollectionIterator' and 'applauseDsl_CollectionExpression'. From 'applauseDsl_CollectionIterator', the role 'applauseDsl_CollectionIterator133' has cardinality 0..*, and from 'applauseDsl_CollectionExpression', the role 'applauseDsl_CollectionExpression' has cardinality 0..*.
+An association connects 'applauseDsl_ExternalOpen' and 'applauseDsl_ScalarExpression'. From 'applauseDsl_ExternalOpen', the role 'applauseDsl_ExternalOpen' has cardinality 0..*, and from 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression135' has cardinality 0..*.
+An association connects 'applauseDsl_View' and 'applauseDsl_ViewCall'. From 'applauseDsl_View', the role 'applauseDsl_View138' has cardinality 0..*, and from 'applauseDsl_ViewCall', the role 'applauseDsl_ViewCall137' has cardinality 0..*.
+An association connects 'applauseDsl_ProviderConstruction' and 'applauseDsl_ViewCall'. From 'applauseDsl_ProviderConstruction', the role 'applauseDsl_ProviderConstruction141' has cardinality 0..*, and from 'applauseDsl_ViewCall', the role 'applauseDsl_ViewCall140' has cardinality 0..*.
+An association connects 'applauseDsl_ViewCall' and 'applauseDsl_ObjectReference'. From 'applauseDsl_ViewCall', the role 'applauseDsl_ViewCall143' has cardinality 0..*, and from 'applauseDsl_ObjectReference', the role 'applauseDsl_ObjectReference144' has cardinality 0..*.
+An association connects 'applauseDsl_StringConcat' and 'applauseDsl_ScalarExpression'. From 'applauseDsl_StringConcat', the role 'applauseDsl_StringConcat' has cardinality 0..*, and from 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression146' has cardinality 0..*.
+An association connects 'applauseDsl_StringReplace' and 'applauseDsl_ScalarExpression'. From 'applauseDsl_StringReplace', the role 'applauseDsl_StringReplace' has cardinality 0..*, and from 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression148' has cardinality 0..*.
+An association connects 'applauseDsl_StringReplace' and 'applauseDsl_ScalarExpression'. From 'applauseDsl_StringReplace', the role 'applauseDsl_StringReplace150' has cardinality 0..*, and from 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression151' has cardinality 0..*.
+An association connects 'applauseDsl_ScalarExpression' and 'applauseDsl_StringReplace'. From 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression154' has cardinality 0..*, and from 'applauseDsl_StringReplace', the role 'applauseDsl_StringReplace153' has cardinality 0..*.
+An association connects 'applauseDsl_StringUrlConform' and 'applauseDsl_ScalarExpression'. From 'applauseDsl_StringUrlConform', the role 'applauseDsl_StringUrlConform' has cardinality 0..*, and from 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression156' has cardinality 0..*.
+An association connects 'applauseDsl_ScalarExpression' and 'applauseDsl_StringSplit'. From 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression158' has cardinality 0..*, and from 'applauseDsl_StringSplit', the role 'applauseDsl_StringSplit' has cardinality 0..*.
+An association connects 'applauseDsl_ScalarExpression' and 'applauseDsl_StringSplit'. From 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression161' has cardinality 0..*, and from 'applauseDsl_StringSplit', the role 'applauseDsl_StringSplit160' has cardinality 0..*.
+An association connects 'applauseDsl_ScalarExpression' and 'applauseDsl_Constant'. From 'applauseDsl_ScalarExpression', the role 'applauseDsl_ScalarExpression163' has cardinality 0..*, and from 'applauseDsl_Constant', the role 'applauseDsl_Constant' has cardinality 0..*.

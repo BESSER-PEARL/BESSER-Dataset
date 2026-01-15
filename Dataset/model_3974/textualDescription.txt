@@ -1,0 +1,23 @@
+The domain model 'l3' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'l3_SystemModel' represents an important domain concept.
+It does not declare any attributes.
+
+'l3_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'l3_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'l3_BuildComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'l3_Metamodel' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'l3_Component' and 'l3_BuildComponent'. From 'l3_Component', the role 'l3_Component' has cardinality 0..*, and from 'l3_BuildComponent', the role 'l3_BuildComponent' has cardinality 0..*.
+An association connects 'l3_Metamodel' and 'l3_Model'. From 'l3_Metamodel', the role 'l3_Metamodel' has cardinality 0..*, and from 'l3_Model', the role 'l3_Model' has cardinality 0..*.
+An association connects 'l3_Model' and 'l3_SystemModel'. From 'l3_Model', the role 'l3_Model3' has cardinality 0..*, and from 'l3_SystemModel', the role 'l3_SystemModel' has cardinality 0..*.

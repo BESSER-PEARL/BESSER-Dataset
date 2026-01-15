@@ -1,0 +1,1100 @@
+The domain model 'bpmnprof' describes the core structural elements and their relationships within the system.
+
+The model defines 217 main class(es).
+
+'bpmnprof_DataStoreNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ItemAwareElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_State' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_BPMNAssociation' represents an important domain concept.
+It has one attribute: 'associationDirection', which is of type str.
+
+'bpmnprof_BPMNCollaboration' represents an important domain concept.
+It has one attribute: 'isClosed', which is of type str.
+
+'bpmnprof_BPMNProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_GlobalTask' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_EventBasedGateway' represents an important domain concept.
+It has the following attributes: 'eventGatewayType', which is of type str; 'instantiate', which is of type str.
+
+'bpmnprof_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_StandardLoopCharacteristics' represents an important domain concept.
+It has the following attributes: 'loopMaximum', which is of type str; 'testBefore', which is of type str.
+
+'bpmnprof_ChangeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_LoopNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ConversationNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_PartnerRole' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_SubProcess' represents an important domain concept.
+It has one attribute: 'triggeredByEvent', which is of type str.
+
+'bpmnprof_ActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_LaneSet' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_CallableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_InputSet' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowElementsContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_DataObjectReference' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_PartnerEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_BPMNOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_DataInput' represents an important domain concept.
+It has one attribute: 'isCollection', which is of type str.
+
+'bpmnprof_CompensateEventDefinition' represents an important domain concept.
+It has one attribute: 'waitForCompletion', which is of type str.
+
+'bpmnprof_ParticipantAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Performer' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_BPMNInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_CorrelationPropertyBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_TimerEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_DataStore' represents an important domain concept.
+It has the following attributes: 'capacity', which is of type str; 'isUnlimited', which is of type str.
+
+'bpmnprof_CallConversation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_StructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'ThrowEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ResourceRole' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_BPMNProcess' represents an important domain concept.
+It has the following attributes: 'isClosed', which is of type str; 'processType', which is of type str; 'isExecutable', which is of type str.
+
+'bpmnprof_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_SequenceFlow' represents an important domain concept.
+It has one attribute: 'isImmediate', which is of type str.
+
+'bpmnprof_ConditionalEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_SendObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Task' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ParameterSet' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_SubConversation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_CallBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ExpansionRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_GlobalBusinessRuleTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'bpmnprof_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_FlowNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_LoopCharacteristics' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ErrorEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ParticipantMultiplicity' represents an important domain concept.
+It has the following attributes: 'minimum', which is of type str; 'maximum', which is of type str.
+
+'bpmnprof_BoundaryEvent' represents an important domain concept.
+It has one attribute: 'cancelActivity', which is of type str.
+
+'bpmnprof_CollaborationUse' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ImplicitThrowEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_HumanPerformer' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_CatchEvent' represents an important domain concept.
+It has one attribute: 'parallelMultiple', which is of type str.
+
+'bpmnprof_DataAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Conversation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_CorrelationProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_EndEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_MessageEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Category' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Resource' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_EventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_FlowElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_BPMNExtension' represents an important domain concept.
+It has one attribute: 'mustUnderstand', which is of type str.
+
+'bpmnprof_Monitoring' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_CallEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'DataAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_EscalationEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ServiceTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'bpmnprof_DataOutputAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Escalation' represents an important domain concept.
+It has one attribute: 'escalationCode', which is of type str.
+
+'bpmnprof_UserTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'bpmnprof_OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ObjectFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ConversationLink' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ActivityPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_MultiInstanceLoopCharacteristics' represents an important domain concept.
+It has the following attributes: 'behavior', which is of type str; 'isSequential', which is of type str.
+
+'BaseElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ResourceParameterBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ExtensionAttributeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement' represents an important domain concept.
+It does not declare any attributes.
+
+'InteractionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_RootElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_AcceptEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_PotentialOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_InputOutputSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ThrowEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Error' represents an important domain concept.
+It has one attribute: 'errorCode', which is of type str.
+
+'bpmnprof_Rendering' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_BPMNSignal' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_CategoryValue' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Participant' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_PackageImport' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_TextAnnotation' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'textFormat', which is of type str.
+
+'bpmnprof_GlobalConversation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_SendTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'bpmnprof_ReceiveTask' represents an important domain concept.
+It has the following attributes: 'instantiate', which is of type str; 'implementation', which is of type str.
+
+'GlobalTask' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_GlobalScriptTask' represents an important domain concept.
+It has the following attributes: 'script', which is of type str; 'scriptFormat', which is of type str.
+
+'bpmnprof_InclusiveGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_LinkEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_FlowFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'SubProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'NonExclusiveGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ExtensionAttributeDefinition' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'isReference', which is of type str.
+
+'bpmnprof_CorrelationSubscription' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ComplexBehaviorDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_OutputSet' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_MessageFlowAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_BPMNArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ItemDefinition' represents an important domain concept.
+It has the following attributes: 'itemKind', which is of type str; 'isCollection', which is of type str.
+
+'bpmnprof_Collaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_InputOutputBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_SignalEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'ItemDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_IntermediateCatchEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Import' represents an important domain concept.
+It has the following attributes: 'importType', which is of type str; 'namespace', which is of type str; 'location', which is of type str.
+
+'BPMNArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_CallActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_BusinessRuleTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'CallableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_CorrelationPropertyRetrievalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_MessageFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'CatchEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_StartEvent' represents an important domain concept.
+It has one attribute: 'isInterrupting', which is of type str.
+
+'bpmnprof_BPMNMessage' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_InteractionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Transaction' represents an important domain concept.
+It has one attribute: 'method', which is of type str.
+
+'FlowNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_IntermediateThrowEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'EventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Performer' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_TerminateEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_BPMNActivity' represents an important domain concept.
+It has the following attributes: 'completionQuantity', which is of type str; 'startQuantity', which is of type str; 'isForCompensation', which is of type str.
+
+'bpmnprof_Lane' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Stereotype' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Documentation' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'textFormat', which is of type str.
+
+'bpmnprof_ActivityParameterNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_FlowElementsContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_OpaqueBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_BPMNRelationship' represents an important domain concept.
+It has the following attributes: 'direction', which is of type str; 'type', which is of type str.
+
+'BPMNCollaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_DataStoreReference' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Gateway' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_InformationFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ResourceAssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_CallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Definitions' represents an important domain concept.
+It has the following attributes: 'exporter', which is of type str; 'targetNamespace', which is of type str; 'expressionLanguage', which is of type str; 'exporterVersion', which is of type str; 'typeLanguage', which is of type str.
+
+'bpmnprof_DataState' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Image' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_InterruptibleActivityRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'ItemAwareElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_BaseElement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'bpmnprof_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_BPMNExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_GlobalManualTask' represents an important domain concept.
+It does not declare any attributes.
+
+'HumanPerformer' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopCharacteristics' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_JoinNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_OpaqueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Auditing' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ManualTask' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_GlobalUserTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'Task' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ExtensionDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ScriptTask' represents an important domain concept.
+It has the following attributes: 'scriptFormat', which is of type str; 'script', which is of type str.
+
+'bpmnprof_AdHocSubProcess' represents an important domain concept.
+It has the following attributes: 'ordering', which is of type str; 'cancelRemainingInstances', which is of type str.
+
+'ResourceRole' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_FormalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ResourceParameter' represents an important domain concept.
+It has one attribute: 'isRequired', which is of type str.
+
+'bpmnprof_CancelEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Gateway' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ExclusiveGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_DataObject' represents an important domain concept.
+It has one attribute: 'isCollection', which is of type str.
+
+'bpmnprof_CorrelationKey' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ComplexGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_NonExclusiveGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_DataInputAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_BPMNEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ConversationNode' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_ParallelGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'bpmnprof_DataOutput' represents an important domain concept.
+It has one attribute: 'isCollection', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MultiInstanceBehavior' defines the following possible values: 'all', 'none', 'one', 'complex'.
+The enumeration 'EventBasedGatewayType' defines the following possible values: 'parallel', 'exclusive'.
+The enumeration 'AdHocOrdering' defines the following possible values: 'sequential', 'parallel'.
+The enumeration 'AssociationDirection' defines the following possible values: 'both', 'one', 'none'.
+The enumeration 'ItemKind' defines the following possible values: 'physical', 'information'.
+The enumeration 'GatewayDirection' defines the following possible values: 'converging', 'diverging', 'mixed', 'unspecified'.
+The enumeration 'RelationshipDirection' defines the following possible values: 'none', 'both', 'backward', 'forward'.
+The enumeration 'ProcessType' defines the following possible values: 'none', 'private', 'public'.
+
+The model also captures inheritance relationships between classes.
+The class 'bpmnprof_InclusiveGateway' is a specialization of 'NonExclusiveGateway'.
+The class 'bpmnprof_NonExclusiveGateway' is a specialization of 'Gateway'.
+The class 'bpmnprof_Gateway' is a specialization of 'FlowNode'.
+The class 'bpmnprof_FlowNode' is a specialization of 'FlowElement'.
+The class 'bpmnprof_FlowElement' is a specialization of 'BaseElement'.
+The class 'bpmnprof_Documentation' is a specialization of 'BaseElement'.
+The class 'bpmnprof_BPMNAssociation' is a specialization of 'BPMNArtifact'.
+The class 'bpmnprof_BPMNArtifact' is a specialization of 'BaseElement'.
+The class 'bpmnprof_Auditing' is a specialization of 'BaseElement'.
+The class 'bpmnprof_Monitoring' is a specialization of 'BaseElement'.
+The class 'bpmnprof_CategoryValue' is a specialization of 'BaseElement'.
+The class 'bpmnprof_FlowElementsContainer' is a specialization of 'BaseElement'.
+The class 'bpmnprof_LaneSet' is a specialization of 'BaseElement'.
+The class 'bpmnprof_Lane' is a specialization of 'BaseElement'.
+The class 'bpmnprof_SequenceFlow' is a specialization of 'FlowElement'.
+The class 'bpmnprof_BPMNExpression' is a specialization of 'BaseElement'.
+The class 'bpmnprof_EventBasedGateway' is a specialization of 'Gateway'.
+The class 'bpmnprof_ParallelGateway' is a specialization of 'NonExclusiveGateway'.
+The class 'bpmnprof_ComplexGateway' is a specialization of 'NonExclusiveGateway'.
+The class 'bpmnprof_ExclusiveGateway' is a specialization of 'Gateway'.
+The class 'bpmnprof_RootElement' is a specialization of 'BaseElement'.
+The class 'bpmnprof_Definitions' is a specialization of 'BaseElement'.
+The class 'bpmnprof_BPMNRelationship' is a specialization of 'BaseElement'.
+The class 'bpmnprof_BPMNProcess' is a specialization of 'CallableElement'.
+The class 'bpmnprof_BPMNProcess' is a specialization of 'FlowElementsContainer'.
+The class 'bpmnprof_CallableElement' is a specialization of 'RootElement'.
+The class 'bpmnprof_InputOutputSpecification' is a specialization of 'BaseElement'.
+The class 'bpmnprof_DataInput' is a specialization of 'ItemAwareElement'.
+The class 'bpmnprof_ItemAwareElement' is a specialization of 'BaseElement'.
+The class 'bpmnprof_DataState' is a specialization of 'BaseElement'.
+The class 'bpmnprof_ItemDefinition' is a specialization of 'RootElement'.
+The class 'bpmnprof_InputSet' is a specialization of 'BaseElement'.
+The class 'bpmnprof_DataOutput' is a specialization of 'ItemAwareElement'.
+The class 'bpmnprof_OutputSet' is a specialization of 'BaseElement'.
+The class 'bpmnprof_BPMNInterface' is a specialization of 'RootElement'.
+The class 'bpmnprof_BPMNOperation' is a specialization of 'BaseElement'.
+The class 'bpmnprof_BPMNMessage' is a specialization of 'ItemDefinition'.
+The class 'bpmnprof_Error' is a specialization of 'ItemDefinition'.
+The class 'bpmnprof_InputOutputBinding' is a specialization of 'BaseElement'.
+The class 'bpmnprof_BPMNCollaboration' is a specialization of 'RootElement'.
+The class 'bpmnprof_ParticipantAssociation' is a specialization of 'BaseElement'.
+The class 'bpmnprof_Participant' is a specialization of 'BaseElement'.
+The class 'bpmnprof_ConversationLink' is a specialization of 'BaseElement'.
+The class 'bpmnprof_ParticipantMultiplicity' is a specialization of 'BaseElement'.
+The class 'bpmnprof_PartnerEntity' is a specialization of 'RootElement'.
+The class 'bpmnprof_PartnerRole' is a specialization of 'RootElement'.
+The class 'bpmnprof_MessageFlowAssociation' is a specialization of 'BaseElement'.
+The class 'bpmnprof_MessageFlow' is a specialization of 'BaseElement'.
+The class 'bpmnprof_ConversationNode' is a specialization of 'InteractionNode'.
+The class 'bpmnprof_CorrelationKey' is a specialization of 'BaseElement'.
+The class 'bpmnprof_CorrelationProperty' is a specialization of 'BaseElement'.
+The class 'bpmnprof_CorrelationPropertyRetrievalExpression' is a specialization of 'BaseElement'.
+The class 'bpmnprof_FormalExpression' is a specialization of 'BPMNExpression'.
+The class 'bpmnprof_CorrelationSubscription' is a specialization of 'BaseElement'.
+The class 'bpmnprof_CorrelationPropertyBinding' is a specialization of 'BaseElement'.
+The class 'bpmnprof_BPMNProperty' is a specialization of 'ItemAwareElement'.
+The class 'bpmnprof_ResourceRole' is a specialization of 'BaseElement'.
+The class 'bpmnprof_ResourceAssignmentExpression' is a specialization of 'BPMNExpression'.
+The class 'bpmnprof_Resource' is a specialization of 'ItemDefinition'.
+The class 'bpmnprof_ResourceParameter' is a specialization of 'BaseElement'.
+The class 'bpmnprof_ResourceParameterBinding' is a specialization of 'BaseElement'.
+The class 'bpmnprof_GlobalScriptTask' is a specialization of 'GlobalTask'.
+The class 'bpmnprof_GlobalTask' is a specialization of 'CallableElement'.
+The class 'bpmnprof_GlobalBusinessRuleTask' is a specialization of 'GlobalTask'.
+The class 'bpmnprof_CompensateEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmnprof_EventDefinition' is a specialization of 'RootElement'.
+The class 'bpmnprof_BPMNActivity' is a specialization of 'FlowNode'.
+The class 'bpmnprof_BoundaryEvent' is a specialization of 'CatchEvent'.
+The class 'bpmnprof_CatchEvent' is a specialization of 'BPMNEvent'.
+The class 'bpmnprof_BPMNEvent' is a specialization of 'FlowNode'.
+The class 'bpmnprof_DataOutputAssociation' is a specialization of 'DataAssociation'.
+The class 'bpmnprof_DataAssociation' is a specialization of 'BaseElement'.
+The class 'bpmnprof_Assignment' is a specialization of 'BaseElement'.
+The class 'bpmnprof_DataInputAssociation' is a specialization of 'DataAssociation'.
+The class 'bpmnprof_LoopCharacteristics' is a specialization of 'BaseElement'.
+The class 'bpmnprof_EscalationEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmnprof_Escalation' is a specialization of 'ItemDefinition'.
+The class 'bpmnprof_TimerEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmnprof_SignalEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmnprof_BPMNSignal' is a specialization of 'ItemDefinition'.
+The class 'bpmnprof_EndEvent' is a specialization of 'ThrowEvent'.
+The class 'bpmnprof_ThrowEvent' is a specialization of 'BPMNEvent'.
+The class 'bpmnprof_MessageEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmnprof_StartEvent' is a specialization of 'CatchEvent'.
+The class 'bpmnprof_ConditionalEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmnprof_LinkEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmnprof_ErrorEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmnprof_IntermediateCatchEvent' is a specialization of 'CatchEvent'.
+The class 'bpmnprof_IntermediateThrowEvent' is a specialization of 'ThrowEvent'.
+The class 'bpmnprof_TerminateEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmnprof_ImplicitThrowEvent' is a specialization of 'ThrowEvent'.
+The class 'bpmnprof_CancelEventDefinition' is a specialization of 'EventDefinition'.
+The class 'bpmnprof_TextAnnotation' is a specialization of 'BPMNArtifact'.
+The class 'bpmnprof_Category' is a specialization of 'RootElement'.
+The class 'bpmnprof_Group' is a specialization of 'BPMNArtifact'.
+The class 'bpmnprof_DataObjectReference' is a specialization of 'FlowElement'.
+The class 'bpmnprof_DataObjectReference' is a specialization of 'ItemAwareElement'.
+The class 'bpmnprof_DataObject' is a specialization of 'FlowElement'.
+The class 'bpmnprof_DataObject' is a specialization of 'ItemAwareElement'.
+The class 'bpmnprof_DataStore' is a specialization of 'RootElement'.
+The class 'bpmnprof_DataStoreReference' is a specialization of 'FlowElement'.
+The class 'bpmnprof_DataStoreReference' is a specialization of 'ItemAwareElement'.
+The class 'bpmnprof_UserTask' is a specialization of 'Task'.
+The class 'bpmnprof_Task' is a specialization of 'BPMNActivity'.
+The class 'bpmnprof_Rendering' is a specialization of 'BaseElement'.
+The class 'bpmnprof_HumanPerformer' is a specialization of 'Performer'.
+The class 'bpmnprof_Performer' is a specialization of 'ResourceRole'.
+The class 'bpmnprof_GlobalUserTask' is a specialization of 'GlobalTask'.
+The class 'bpmnprof_GlobalManualTask' is a specialization of 'GlobalTask'.
+The class 'bpmnprof_ManualTask' is a specialization of 'Task'.
+The class 'bpmnprof_PotentialOwner' is a specialization of 'HumanPerformer'.
+The class 'bpmnprof_SubConversation' is a specialization of 'ConversationNode'.
+The class 'bpmnprof_GlobalConversation' is a specialization of 'BPMNCollaboration'.
+The class 'bpmnprof_CallConversation' is a specialization of 'ConversationNode'.
+The class 'bpmnprof_Conversation' is a specialization of 'ConversationNode'.
+The class 'bpmnprof_SubProcess' is a specialization of 'BPMNActivity'.
+The class 'bpmnprof_SubProcess' is a specialization of 'FlowElementsContainer'.
+The class 'bpmnprof_CallActivity' is a specialization of 'BPMNActivity'.
+The class 'bpmnprof_BusinessRuleTask' is a specialization of 'Task'.
+The class 'bpmnprof_ComplexBehaviorDefinition' is a specialization of 'BaseElement'.
+The class 'bpmnprof_AdHocSubProcess' is a specialization of 'SubProcess'.
+The class 'bpmnprof_ScriptTask' is a specialization of 'Task'.
+The class 'bpmnprof_SendTask' is a specialization of 'Task'.
+The class 'bpmnprof_Transaction' is a specialization of 'SubProcess'.
+The class 'bpmnprof_StandardLoopCharacteristics' is a specialization of 'LoopCharacteristics'.
+The class 'bpmnprof_ReceiveTask' is a specialization of 'Task'.
+The class 'bpmnprof_ServiceTask' is a specialization of 'Task'.
+The class 'bpmnprof_MultiInstanceLoopCharacteristics' is a specialization of 'LoopCharacteristics'.
+
+Relationships between classes are modeled using associations.
+An association connects 'bpmnprof_InclusiveGateway' and 'bpmnprof_SequenceFlow'. From 'bpmnprof_InclusiveGateway', the role 'bpmnprof_InclusiveGateway' has cardinality 0..*, and from 'bpmnprof_SequenceFlow', the role 'bpmnprof_SequenceFlow' has cardinality 0..*.
+An association connects 'bpmnprof_NonExclusiveGateway' and 'bpmnprof_JoinNode'. From 'bpmnprof_NonExclusiveGateway', the role 'bpmnprof_NonExclusiveGateway' has cardinality 0..*, and from 'bpmnprof_JoinNode', the role 'bpmnprof_JoinNode' has cardinality 0..*.
+An association connects 'bpmnprof_NonExclusiveGateway' and 'bpmnprof_ForkNode'. From 'bpmnprof_NonExclusiveGateway', the role 'bpmnprof_NonExclusiveGateway3' has cardinality 0..*, and from 'bpmnprof_ForkNode', the role 'bpmnprof_ForkNode' has cardinality 0..*.
+An association connects 'bpmnprof_Gateway' and 'bpmnprof_ControlNode'. From 'bpmnprof_Gateway', the role 'bpmnprof_Gateway' has cardinality 0..*, and from 'bpmnprof_ControlNode', the role 'bpmnprof_ControlNode' has cardinality 0..*.
+An association connects 'bpmnprof_ActivityGroup' and 'bpmnprof_Gateway'. From 'bpmnprof_ActivityGroup', the role 'bpmnprof_ActivityGroup' has cardinality 0..*, and from 'bpmnprof_Gateway', the role 'bpmnprof_Gateway6' has cardinality 0..*.
+An association connects 'bpmnprof_FlowNode' and 'bpmnprof_ActivityNode'. From 'bpmnprof_FlowNode', the role 'bpmnprof_FlowNode' has cardinality 0..*, and from 'bpmnprof_ActivityNode', the role 'bpmnprof_ActivityNode' has cardinality 0..*.
+An association connects 'bpmnprof_FlowElement' and 'bpmnprof_Auditing'. From 'bpmnprof_FlowElement', the role 'bpmnprof_FlowElement' has cardinality 0..*, and from 'bpmnprof_Auditing', the role 'bpmnprof_Auditing' has cardinality 0..*.
+An association connects 'bpmnprof_FlowElement' and 'bpmnprof_Monitoring'. From 'bpmnprof_FlowElement', the role 'bpmnprof_FlowElement10' has cardinality 0..*, and from 'bpmnprof_Monitoring', the role 'bpmnprof_Monitoring' has cardinality 0..*.
+An association connects 'bpmnprof_CategoryValue' and 'bpmnprof_FlowElement'. From 'bpmnprof_CategoryValue', the role 'CategoryValue' has cardinality 0..*, and from 'bpmnprof_FlowElement', the role 'categorizedFlowElements' has cardinality 0..*.
+An association connects 'bpmnprof_FlowElementsContainer' and 'bpmnprof_FlowElement'. From 'bpmnprof_FlowElementsContainer', the role 'FlowElementsContainer' has cardinality 0..*, and from 'bpmnprof_FlowElement', the role 'flowElements' has cardinality 0..*.
+An association connects 'bpmnprof_ExtensionAttributeValue' and 'bpmnprof_BaseElement'. From 'bpmnprof_ExtensionAttributeValue', the role 'bpmnprof_ExtensionAttributeValue' has cardinality 0..*, and from 'bpmnprof_BaseElement', the role 'bpmnprof_BaseElement' has cardinality 0..*.
+An association connects 'bpmnprof_BaseElement' and 'bpmnprof_Element'. From 'bpmnprof_BaseElement', the role 'bpmnprof_BaseElement15' has cardinality 0..*, and from 'bpmnprof_Element', the role 'bpmnprof_Element' has cardinality 0..*.
+An association connects 'bpmnprof_Documentation' and 'bpmnprof_BaseElement'. From 'bpmnprof_Documentation', the role 'bpmnprof_Documentation' has cardinality 0..*, and from 'bpmnprof_BaseElement', the role 'bpmnprof_BaseElement17' has cardinality 0..*.
+An association connects 'bpmnprof_BaseElement' and 'bpmnprof_ExtensionDefinition'. From 'bpmnprof_BaseElement', the role 'bpmnprof_BaseElement19' has cardinality 0..*, and from 'bpmnprof_ExtensionDefinition', the role 'bpmnprof_ExtensionDefinition' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNAssociation' and 'bpmnprof_BaseElement'. From 'bpmnprof_BPMNAssociation', the role 'BPMNAssociation' has cardinality 0..*, and from 'bpmnprof_BaseElement', the role 'sourceRef' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNAssociation' and 'bpmnprof_BaseElement'. From 'bpmnprof_BPMNAssociation', the role 'BPMNAssociation22' has cardinality 0..*, and from 'bpmnprof_BaseElement', the role 'targetRef' has cardinality 0..*.
+An association connects 'bpmnprof_ExtensionAttributeValue' and 'bpmnprof_Slot'. From 'bpmnprof_ExtensionAttributeValue', the role 'bpmnprof_ExtensionAttributeValue24' has cardinality 0..*, and from 'bpmnprof_Slot', the role 'bpmnprof_Slot' has cardinality 0..*.
+An association connects 'bpmnprof_ExtensionAttributeValue' and 'bpmnprof_Element'. From 'bpmnprof_ExtensionAttributeValue', the role 'bpmnprof_ExtensionAttributeValue26' has cardinality 0..*, and from 'bpmnprof_Element', the role 'bpmnprof_Element27' has cardinality 0..*.
+An association connects 'bpmnprof_ExtensionAttributeValue' and 'bpmnprof_ExtensionAttributeDefinition'. From 'bpmnprof_ExtensionAttributeValue', the role 'bpmnprof_ExtensionAttributeValue29' has cardinality 0..*, and from 'bpmnprof_ExtensionAttributeDefinition', the role 'bpmnprof_ExtensionAttributeDefinition' has cardinality 0..*.
+An association connects 'bpmnprof_Property' and 'bpmnprof_ExtensionAttributeDefinition'. From 'bpmnprof_Property', the role 'bpmnprof_Property' has cardinality 0..*, and from 'bpmnprof_ExtensionAttributeDefinition', the role 'bpmnprof_ExtensionAttributeDefinition31' has cardinality 0..*.
+An association connects 'bpmnprof_Comment' and 'bpmnprof_Documentation'. From 'bpmnprof_Comment', the role 'bpmnprof_Comment' has cardinality 0..*, and from 'bpmnprof_Documentation', the role 'bpmnprof_Documentation33' has cardinality 0..*.
+An association connects 'bpmnprof_ExtensionDefinition' and 'bpmnprof_Stereotype'. From 'bpmnprof_ExtensionDefinition', the role 'bpmnprof_ExtensionDefinition35' has cardinality 0..*, and from 'bpmnprof_Stereotype', the role 'bpmnprof_Stereotype' has cardinality 0..*.
+An association connects 'bpmnprof_ExtensionAttributeDefinition' and 'bpmnprof_ExtensionDefinition'. From 'bpmnprof_ExtensionAttributeDefinition', the role 'bpmnprof_ExtensionAttributeDefinition38' has cardinality 0..*, and from 'bpmnprof_ExtensionDefinition', the role 'bpmnprof_ExtensionDefinition37' has cardinality 0..*.
+An association connects 'bpmnprof_Dependency' and 'bpmnprof_BPMNAssociation'. From 'bpmnprof_Dependency', the role 'bpmnprof_Dependency' has cardinality 0..*, and from 'bpmnprof_BPMNAssociation', the role 'bpmnprof_BPMNAssociation' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNAssociation' and 'bpmnprof_BaseElement'. From 'bpmnprof_BPMNAssociation', the role 'incoming' has cardinality 0..*, and from 'bpmnprof_BaseElement', the role 'BaseElement' has cardinality 0..*.
+An association connects 'bpmnprof_BaseElement' and 'bpmnprof_BPMNAssociation'. From 'bpmnprof_BaseElement', the role 'BaseElement42' has cardinality 0..*, and from 'bpmnprof_BPMNAssociation', the role 'outgoing' has cardinality 0..*.
+An association connects 'bpmnprof_Auditing' and 'bpmnprof_Class'. From 'bpmnprof_Auditing', the role 'bpmnprof_Auditing44' has cardinality 0..*, and from 'bpmnprof_Class', the role 'bpmnprof_Class' has cardinality 0..*.
+An association connects 'bpmnprof_Class' and 'bpmnprof_Monitoring'. From 'bpmnprof_Class', the role 'bpmnprof_Class47' has cardinality 0..*, and from 'bpmnprof_Monitoring', the role 'bpmnprof_Monitoring46' has cardinality 0..*.
+An association connects 'bpmnprof_CategoryValue' and 'bpmnprof_EnumerationLiteral'. From 'bpmnprof_CategoryValue', the role 'bpmnprof_CategoryValue' has cardinality 0..*, and from 'bpmnprof_EnumerationLiteral', the role 'bpmnprof_EnumerationLiteral' has cardinality 0..*.
+An association connects 'bpmnprof_FlowElement' and 'bpmnprof_CategoryValue'. From 'bpmnprof_FlowElement', the role 'FlowElement' has cardinality 0..*, and from 'bpmnprof_CategoryValue', the role '_categoryValueRef' has cardinality 0..*.
+An association connects 'bpmnprof_LaneSet' and 'bpmnprof_FlowElementsContainer'. From 'bpmnprof_LaneSet', the role 'LaneSet' has cardinality 0..*, and from 'bpmnprof_FlowElementsContainer', the role 'flowElementsContainer' has cardinality 0..*.
+An association connects 'bpmnprof_FlowElement' and 'bpmnprof_FlowElementsContainer'. From 'bpmnprof_FlowElement', the role 'FlowElement52' has cardinality 0..*, and from 'bpmnprof_FlowElementsContainer', the role 'container' has cardinality 0..*.
+An association connects 'bpmnprof_LaneSet' and 'bpmnprof_ActivityPartition'. From 'bpmnprof_LaneSet', the role 'bpmnprof_LaneSet' has cardinality 0..*, and from 'bpmnprof_ActivityPartition', the role 'bpmnprof_ActivityPartition' has cardinality 0..*.
+An association connects 'bpmnprof_LaneSet' and 'bpmnprof_Lane'. From 'bpmnprof_LaneSet', the role 'laneSet' has cardinality 0..*, and from 'bpmnprof_Lane', the role 'Lane' has cardinality 0..*.
+An association connects 'bpmnprof_LaneSet' and 'bpmnprof_Lane'. From 'bpmnprof_LaneSet', the role 'bpmnprof_LaneSet56' has cardinality 0..*, and from 'bpmnprof_Lane', the role 'bpmnprof_Lane' has cardinality 0..*.
+An association connects 'bpmnprof_LaneSet' and 'bpmnprof_FlowElementsContainer'. From 'bpmnprof_LaneSet', the role 'laneSets' has cardinality 0..*, and from 'bpmnprof_FlowElementsContainer', the role 'FlowElementsContainer58' has cardinality 0..*.
+An association connects 'bpmnprof_ActivityPartition' and 'bpmnprof_Lane'. From 'bpmnprof_ActivityPartition', the role 'bpmnprof_ActivityPartition61' has cardinality 0..*, and from 'bpmnprof_Lane', the role 'bpmnprof_Lane60' has cardinality 0..*.
+An association connects 'bpmnprof_Lane' and 'bpmnprof_Element'. From 'bpmnprof_Lane', the role 'bpmnprof_Lane63' has cardinality 0..*, and from 'bpmnprof_Element', the role 'bpmnprof_Element64' has cardinality 0..*.
+An association connects 'bpmnprof_FlowNode' and 'bpmnprof_Lane'. From 'bpmnprof_FlowNode', the role 'bpmnprof_FlowNode67' has cardinality 0..*, and from 'bpmnprof_Lane', the role 'bpmnprof_Lane66' has cardinality 0..*.
+An association connects 'bpmnprof_BaseElement' and 'bpmnprof_Lane'. From 'bpmnprof_BaseElement', the role 'bpmnprof_BaseElement70' has cardinality 0..*, and from 'bpmnprof_Lane', the role 'bpmnprof_Lane69' has cardinality 0..*.
+An association connects 'bpmnprof_LaneSet' and 'bpmnprof_Lane'. From 'bpmnprof_LaneSet', the role 'bpmnprof_LaneSet73' has cardinality 0..*, and from 'bpmnprof_Lane', the role 'bpmnprof_Lane72' has cardinality 0..*.
+An association connects 'bpmnprof_LaneSet' and 'bpmnprof_Lane'. From 'bpmnprof_LaneSet', the role 'LaneSet75' has cardinality 0..*, and from 'bpmnprof_Lane', the role 'lanes' has cardinality 0..*.
+An association connects 'bpmnprof_SequenceFlow' and 'bpmnprof_ControlFlow'. From 'bpmnprof_SequenceFlow', the role 'bpmnprof_SequenceFlow77' has cardinality 0..*, and from 'bpmnprof_ControlFlow', the role 'bpmnprof_ControlFlow' has cardinality 0..*.
+An association connects 'bpmnprof_SequenceFlow' and 'bpmnprof_BPMNExpression'. From 'bpmnprof_SequenceFlow', the role 'bpmnprof_SequenceFlow79' has cardinality 0..*, and from 'bpmnprof_BPMNExpression', the role 'bpmnprof_BPMNExpression' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNExpression' and 'bpmnprof_OpaqueExpression'. From 'bpmnprof_BPMNExpression', the role 'bpmnprof_BPMNExpression81' has cardinality 0..*, and from 'bpmnprof_OpaqueExpression', the role 'bpmnprof_OpaqueExpression' has cardinality 0..*.
+An association connects 'bpmnprof_EventBasedGateway' and 'bpmnprof_ForkNode'. From 'bpmnprof_EventBasedGateway', the role 'bpmnprof_EventBasedGateway' has cardinality 0..*, and from 'bpmnprof_ForkNode', the role 'bpmnprof_ForkNode83' has cardinality 0..*.
+An association connects 'bpmnprof_EventBasedGateway' and 'bpmnprof_StructuredActivityNode'. From 'bpmnprof_EventBasedGateway', the role 'bpmnprof_EventBasedGateway85' has cardinality 0..*, and from 'bpmnprof_StructuredActivityNode', the role 'bpmnprof_StructuredActivityNode' has cardinality 0..*.
+An association connects 'bpmnprof_InterruptibleActivityRegion' and 'bpmnprof_EventBasedGateway'. From 'bpmnprof_InterruptibleActivityRegion', the role 'bpmnprof_InterruptibleActivityRegion' has cardinality 0..*, and from 'bpmnprof_EventBasedGateway', the role 'bpmnprof_EventBasedGateway87' has cardinality 0..*.
+An association connects 'bpmnprof_SequenceFlow' and 'bpmnprof_ComplexGateway'. From 'bpmnprof_SequenceFlow', the role 'bpmnprof_SequenceFlow89' has cardinality 0..*, and from 'bpmnprof_ComplexGateway', the role 'bpmnprof_ComplexGateway' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNExpression' and 'bpmnprof_ComplexGateway'. From 'bpmnprof_BPMNExpression', the role 'bpmnprof_BPMNExpression92' has cardinality 0..*, and from 'bpmnprof_ComplexGateway', the role 'bpmnprof_ComplexGateway91' has cardinality 0..*.
+An association connects 'bpmnprof_DecisionNode' and 'bpmnprof_ExclusiveGateway'. From 'bpmnprof_DecisionNode', the role 'bpmnprof_DecisionNode' has cardinality 0..*, and from 'bpmnprof_ExclusiveGateway', the role 'bpmnprof_ExclusiveGateway' has cardinality 0..*.
+An association connects 'bpmnprof_MergeNode' and 'bpmnprof_ExclusiveGateway'. From 'bpmnprof_MergeNode', the role 'bpmnprof_MergeNode' has cardinality 0..*, and from 'bpmnprof_ExclusiveGateway', the role 'bpmnprof_ExclusiveGateway95' has cardinality 0..*.
+An association connects 'bpmnprof_SequenceFlow' and 'bpmnprof_ExclusiveGateway'. From 'bpmnprof_SequenceFlow', the role 'bpmnprof_SequenceFlow98' has cardinality 0..*, and from 'bpmnprof_ExclusiveGateway', the role 'bpmnprof_ExclusiveGateway97' has cardinality 0..*.
+An association connects 'bpmnprof_RootElement' and 'bpmnprof_PackageableElement'. From 'bpmnprof_RootElement', the role 'bpmnprof_RootElement' has cardinality 0..*, and from 'bpmnprof_PackageableElement', the role 'bpmnprof_PackageableElement' has cardinality 0..*.
+An association connects 'bpmnprof_RootElement' and 'bpmnprof_Definitions'. From 'bpmnprof_RootElement', the role 'rootElements' has cardinality 0..*, and from 'bpmnprof_Definitions', the role 'Definitions' has cardinality 0..*.
+An association connects 'bpmnprof_Definitions' and 'bpmnprof_Package'. From 'bpmnprof_Definitions', the role 'bpmnprof_Definitions' has cardinality 0..*, and from 'bpmnprof_Package', the role 'bpmnprof_Package' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNExtension' and 'bpmnprof_Definitions'. From 'bpmnprof_BPMNExtension', the role 'bpmnprof_BPMNExtension' has cardinality 0..*, and from 'bpmnprof_Definitions', the role 'bpmnprof_Definitions103' has cardinality 0..*.
+An association connects 'bpmnprof_Definitions' and 'bpmnprof_Import'. From 'bpmnprof_Definitions', the role 'bpmnprof_Definitions105' has cardinality 0..*, and from 'bpmnprof_Import', the role 'bpmnprof_Import' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNRelationship' and 'bpmnprof_Definitions'. From 'bpmnprof_BPMNRelationship', the role 'bpmnprof_BPMNRelationship' has cardinality 0..*, and from 'bpmnprof_Definitions', the role 'bpmnprof_Definitions107' has cardinality 0..*.
+An association connects 'bpmnprof_RootElement' and 'bpmnprof_Definitions'. From 'bpmnprof_RootElement', the role 'RootElement' has cardinality 0..*, and from 'bpmnprof_Definitions', the role 'definition' has cardinality 0..*.
+An association connects 'bpmnprof_Stereotype' and 'bpmnprof_BPMNExtension'. From 'bpmnprof_Stereotype', the role 'bpmnprof_Stereotype111' has cardinality 0..*, and from 'bpmnprof_BPMNExtension', the role 'bpmnprof_BPMNExtension110' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNExtension' and 'bpmnprof_ExtensionDefinition'. From 'bpmnprof_BPMNExtension', the role 'bpmnprof_BPMNExtension113' has cardinality 0..*, and from 'bpmnprof_ExtensionDefinition', the role 'bpmnprof_ExtensionDefinition114' has cardinality 0..*.
+An association connects 'bpmnprof_PackageImport' and 'bpmnprof_Import'. From 'bpmnprof_PackageImport', the role 'bpmnprof_PackageImport' has cardinality 0..*, and from 'bpmnprof_Import', the role 'bpmnprof_Import116' has cardinality 0..*.
+An association connects 'bpmnprof_Definitions' and 'bpmnprof_Import'. From 'bpmnprof_Definitions', the role 'bpmnprof_Definitions119' has cardinality 0..*, and from 'bpmnprof_Import', the role 'bpmnprof_Import118' has cardinality 0..*.
+An association connects 'bpmnprof_Constraint' and 'bpmnprof_BPMNRelationship'. From 'bpmnprof_Constraint', the role 'bpmnprof_Constraint' has cardinality 0..*, and from 'bpmnprof_BPMNRelationship', the role 'bpmnprof_BPMNRelationship121' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNRelationship' and 'bpmnprof_Element'. From 'bpmnprof_BPMNRelationship', the role 'bpmnprof_BPMNRelationship123' has cardinality 0..*, and from 'bpmnprof_Element', the role 'bpmnprof_Element124' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNRelationship' and 'bpmnprof_Element'. From 'bpmnprof_BPMNRelationship', the role 'bpmnprof_BPMNRelationship126' has cardinality 0..*, and from 'bpmnprof_Element', the role 'bpmnprof_Element127' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNRelationship' and 'bpmnprof_Definitions'. From 'bpmnprof_BPMNRelationship', the role 'bpmnprof_BPMNRelationship129' has cardinality 0..*, and from 'bpmnprof_Definitions', the role 'bpmnprof_Definitions130' has cardinality 0..*.
+An association connects 'bpmnprof_Auditing' and 'bpmnprof_BPMNProcess'. From 'bpmnprof_Auditing', the role 'bpmnprof_Auditing132' has cardinality 0..*, and from 'bpmnprof_BPMNProcess', the role 'bpmnprof_BPMNProcess' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNCollaboration' and 'bpmnprof_BPMNProcess'. From 'bpmnprof_BPMNCollaboration', the role 'bpmnprof_BPMNCollaboration' has cardinality 0..*, and from 'bpmnprof_BPMNProcess', the role 'bpmnprof_BPMNProcess134' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNProcess' and 'bpmnprof_Activity'. From 'bpmnprof_BPMNProcess', the role 'bpmnprof_BPMNProcess136' has cardinality 0..*, and from 'bpmnprof_Activity', the role 'bpmnprof_Activity' has cardinality 0..*.
+An association connects 'bpmnprof_CorrelationSubscription' and 'bpmnprof_BPMNProcess'. From 'bpmnprof_CorrelationSubscription', the role 'bpmnprof_CorrelationSubscription' has cardinality 0..*, and from 'bpmnprof_BPMNProcess', the role 'bpmnprof_BPMNProcess138' has cardinality 0..*.
+An association connects 'bpmnprof_Monitoring' and 'bpmnprof_BPMNProcess'. From 'bpmnprof_Monitoring', the role 'bpmnprof_Monitoring141' has cardinality 0..*, and from 'bpmnprof_BPMNProcess', the role 'bpmnprof_BPMNProcess140' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNProcess' and 'bpmnprof_BPMNProcess'. From 'bpmnprof_BPMNProcess', the role 'bpmnprof_BPMNProcess142' has cardinality 0..*, and from 'bpmnprof_BPMNProcess', the role 'bpmnprof_BPMNProcess144' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNProcess' and 'bpmnprof_BPMNProperty'. From 'bpmnprof_BPMNProcess', the role 'bpmnprof_BPMNProcess146' has cardinality 0..*, and from 'bpmnprof_BPMNProperty', the role 'bpmnprof_BPMNProperty' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNProcess' and 'bpmnprof_ResourceRole'. From 'bpmnprof_BPMNProcess', the role 'process' has cardinality 0..*, and from 'bpmnprof_ResourceRole', the role 'ResourceRole' has cardinality 0..*.
+An association connects 'bpmnprof_Behavior' and 'bpmnprof_CallableElement'. From 'bpmnprof_Behavior', the role 'bpmnprof_Behavior' has cardinality 0..*, and from 'bpmnprof_CallableElement', the role 'bpmnprof_CallableElement' has cardinality 0..*.
+An association connects 'bpmnprof_InputOutputSpecification' and 'bpmnprof_CallableElement'. From 'bpmnprof_InputOutputSpecification', the role 'bpmnprof_InputOutputSpecification' has cardinality 0..*, and from 'bpmnprof_CallableElement', the role 'bpmnprof_CallableElement150' has cardinality 0..*.
+An association connects 'bpmnprof_CallableElement' and 'bpmnprof_BPMNInterface'. From 'bpmnprof_CallableElement', the role 'bpmnprof_CallableElement152' has cardinality 0..*, and from 'bpmnprof_BPMNInterface', the role 'bpmnprof_BPMNInterface' has cardinality 0..*.
+An association connects 'bpmnprof_InputOutputBinding' and 'bpmnprof_CallableElement'. From 'bpmnprof_InputOutputBinding', the role 'bpmnprof_InputOutputBinding' has cardinality 0..*, and from 'bpmnprof_CallableElement', the role 'bpmnprof_CallableElement154' has cardinality 0..*.
+An association connects 'bpmnprof_InputOutputSpecification' and 'bpmnprof_Behavior'. From 'bpmnprof_InputOutputSpecification', the role 'bpmnprof_InputOutputSpecification156' has cardinality 0..*, and from 'bpmnprof_Behavior', the role 'bpmnprof_Behavior157' has cardinality 0..*.
+An association connects 'bpmnprof_InputOutputSpecification' and 'bpmnprof_Action'. From 'bpmnprof_InputOutputSpecification', the role 'bpmnprof_InputOutputSpecification159' has cardinality 0..*, and from 'bpmnprof_Action', the role 'bpmnprof_Action' has cardinality 0..*.
+An association connects 'bpmnprof_InputOutputSpecification' and 'bpmnprof_DataInput'. From 'bpmnprof_InputOutputSpecification', the role 'bpmnprof_InputOutputSpecification161' has cardinality 0..*, and from 'bpmnprof_DataInput', the role 'bpmnprof_DataInput' has cardinality 0..*.
+An association connects 'bpmnprof_DataOutput' and 'bpmnprof_InputOutputSpecification'. From 'bpmnprof_DataOutput', the role 'bpmnprof_DataOutput' has cardinality 0..*, and from 'bpmnprof_InputOutputSpecification', the role 'bpmnprof_InputOutputSpecification163' has cardinality 0..*.
+An association connects 'bpmnprof_InputSet' and 'bpmnprof_InputOutputSpecification'. From 'bpmnprof_InputSet', the role 'bpmnprof_InputSet' has cardinality 0..*, and from 'bpmnprof_InputOutputSpecification', the role 'bpmnprof_InputOutputSpecification165' has cardinality 0..*.
+An association connects 'bpmnprof_OutputSet' and 'bpmnprof_InputOutputSpecification'. From 'bpmnprof_OutputSet', the role 'bpmnprof_OutputSet' has cardinality 0..*, and from 'bpmnprof_InputOutputSpecification', the role 'bpmnprof_InputOutputSpecification167' has cardinality 0..*.
+An association connects 'bpmnprof_InputPin' and 'bpmnprof_DataInput'. From 'bpmnprof_InputPin', the role 'bpmnprof_InputPin' has cardinality 0..*, and from 'bpmnprof_DataInput', the role 'bpmnprof_DataInput169' has cardinality 0..*.
+An association connects 'bpmnprof_Parameter' and 'bpmnprof_DataInput'. From 'bpmnprof_Parameter', the role 'bpmnprof_Parameter' has cardinality 0..*, and from 'bpmnprof_DataInput', the role 'bpmnprof_DataInput171' has cardinality 0..*.
+An association connects 'bpmnprof_DataInput' and 'bpmnprof_ActivityParameterNode'. From 'bpmnprof_DataInput', the role 'bpmnprof_DataInput173' has cardinality 0..*, and from 'bpmnprof_ActivityParameterNode', the role 'bpmnprof_ActivityParameterNode' has cardinality 0..*.
+An association connects 'bpmnprof_DataInput' and 'bpmnprof_InputSet'. From 'bpmnprof_DataInput', the role 'dataInputRefs' has cardinality 0..*, and from 'bpmnprof_InputSet', the role 'InputSet' has cardinality 0..*.
+An association connects 'bpmnprof_DataInput' and 'bpmnprof_InputSet'. From 'bpmnprof_DataInput', the role 'optionalInputRefs' has cardinality 0..*, and from 'bpmnprof_InputSet', the role 'InputSet176' has cardinality 0..*.
+An association connects 'bpmnprof_InputSet' and 'bpmnprof_DataInput'. From 'bpmnprof_InputSet', the role 'InputSet178' has cardinality 0..*, and from 'bpmnprof_DataInput', the role 'whileExecutingInputRefs' has cardinality 0..*.
+An association connects 'bpmnprof_ItemAwareElement' and 'bpmnprof_DataState'. From 'bpmnprof_ItemAwareElement', the role 'bpmnprof_ItemAwareElement' has cardinality 0..*, and from 'bpmnprof_DataState', the role 'bpmnprof_DataState' has cardinality 0..*.
+An association connects 'bpmnprof_ItemAwareElement' and 'bpmnprof_TypedElement'. From 'bpmnprof_ItemAwareElement', the role 'bpmnprof_ItemAwareElement181' has cardinality 0..*, and from 'bpmnprof_TypedElement', the role 'bpmnprof_TypedElement' has cardinality 0..*.
+An association connects 'bpmnprof_ItemDefinition' and 'bpmnprof_ItemAwareElement'. From 'bpmnprof_ItemDefinition', the role 'bpmnprof_ItemDefinition' has cardinality 0..*, and from 'bpmnprof_ItemAwareElement', the role 'bpmnprof_ItemAwareElement183' has cardinality 0..*.
+An association connects 'bpmnprof_State' and 'bpmnprof_DataState'. From 'bpmnprof_State', the role 'bpmnprof_State' has cardinality 0..*, and from 'bpmnprof_DataState', the role 'bpmnprof_DataState185' has cardinality 0..*.
+An association connects 'bpmnprof_Class' and 'bpmnprof_ItemDefinition'. From 'bpmnprof_Class', the role 'bpmnprof_Class188' has cardinality 0..*, and from 'bpmnprof_ItemDefinition', the role 'bpmnprof_ItemDefinition187' has cardinality 0..*.
+An association connects 'bpmnprof_ItemDefinition' and 'bpmnprof_Element'. From 'bpmnprof_ItemDefinition', the role 'bpmnprof_ItemDefinition190' has cardinality 0..*, and from 'bpmnprof_Element', the role 'bpmnprof_Element191' has cardinality 0..*.
+An association connects 'bpmnprof_ItemDefinition' and 'bpmnprof_Import'. From 'bpmnprof_ItemDefinition', the role 'bpmnprof_ItemDefinition193' has cardinality 0..*, and from 'bpmnprof_Import', the role 'bpmnprof_Import194' has cardinality 0..*.
+An association connects 'bpmnprof_InputSet' and 'bpmnprof_ParameterSet'. From 'bpmnprof_InputSet', the role 'bpmnprof_InputSet196' has cardinality 0..*, and from 'bpmnprof_ParameterSet', the role 'bpmnprof_ParameterSet' has cardinality 0..*.
+An association connects 'bpmnprof_DataInput' and 'bpmnprof_InputSet'. From 'bpmnprof_DataInput', the role 'DataInput' has cardinality 0..*, and from 'bpmnprof_InputSet', the role 'inputSetWithOptional' has cardinality 0..*.
+An association connects 'bpmnprof_DataInput' and 'bpmnprof_InputSet'. From 'bpmnprof_DataInput', the role 'DataInput199' has cardinality 0..*, and from 'bpmnprof_InputSet', the role 'inputSetWithWhileExecuting' has cardinality 0..*.
+An association connects 'bpmnprof_InputSet' and 'bpmnprof_DataInput'. From 'bpmnprof_InputSet', the role 'inputSetRefs' has cardinality 0..*, and from 'bpmnprof_DataInput', the role 'DataInput201' has cardinality 0..*.
+An association connects 'bpmnprof_DataOutput' and 'bpmnprof_OutputPin'. From 'bpmnprof_DataOutput', the role 'bpmnprof_DataOutput203' has cardinality 0..*, and from 'bpmnprof_OutputPin', the role 'bpmnprof_OutputPin' has cardinality 0..*.
+An association connects 'bpmnprof_Parameter' and 'bpmnprof_DataOutput'. From 'bpmnprof_Parameter', the role 'bpmnprof_Parameter206' has cardinality 0..*, and from 'bpmnprof_DataOutput', the role 'bpmnprof_DataOutput205' has cardinality 0..*.
+An association connects 'bpmnprof_ActivityParameterNode' and 'bpmnprof_DataOutput'. From 'bpmnprof_ActivityParameterNode', the role 'bpmnprof_ActivityParameterNode209' has cardinality 0..*, and from 'bpmnprof_DataOutput', the role 'bpmnprof_DataOutput208' has cardinality 0..*.
+An association connects 'bpmnprof_DataOutput' and 'bpmnprof_OutputSet'. From 'bpmnprof_DataOutput', the role 'dataOutputRefs' has cardinality 0..*, and from 'bpmnprof_OutputSet', the role 'OutputSet' has cardinality 0..*.
+An association connects 'bpmnprof_OutputSet' and 'bpmnprof_DataOutput'. From 'bpmnprof_OutputSet', the role 'bpmnprof_OutputSet213' has cardinality 0..*, and from 'bpmnprof_DataOutput', the role 'bpmnprof_DataOutput212' has cardinality 0..*.
+An association connects 'bpmnprof_DataOutput' and 'bpmnprof_OutputSet'. From 'bpmnprof_DataOutput', the role 'bpmnprof_DataOutput215' has cardinality 0..*, and from 'bpmnprof_OutputSet', the role 'bpmnprof_OutputSet216' has cardinality 0..*.
+An association connects 'bpmnprof_ParameterSet' and 'bpmnprof_OutputSet'. From 'bpmnprof_ParameterSet', the role 'bpmnprof_ParameterSet219' has cardinality 0..*, and from 'bpmnprof_OutputSet', the role 'bpmnprof_OutputSet218' has cardinality 0..*.
+An association connects 'bpmnprof_OutputSet' and 'bpmnprof_DataOutput'. From 'bpmnprof_OutputSet', the role 'bpmnprof_OutputSet221' has cardinality 0..*, and from 'bpmnprof_DataOutput', the role 'bpmnprof_DataOutput222' has cardinality 0..*.
+An association connects 'bpmnprof_DataOutput' and 'bpmnprof_OutputSet'. From 'bpmnprof_DataOutput', the role 'bpmnprof_DataOutput225' has cardinality 0..*, and from 'bpmnprof_OutputSet', the role 'bpmnprof_OutputSet224' has cardinality 0..*.
+An association connects 'bpmnprof_OutputSet' and 'bpmnprof_DataOutput'. From 'bpmnprof_OutputSet', the role 'outputSetRefs' has cardinality 0..*, and from 'bpmnprof_DataOutput', the role 'DataOutput' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNInterface' and 'bpmnprof_Interface'. From 'bpmnprof_BPMNInterface', the role 'bpmnprof_BPMNInterface228' has cardinality 0..*, and from 'bpmnprof_Interface', the role 'bpmnprof_Interface' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNInterface' and 'bpmnprof_Element'. From 'bpmnprof_BPMNInterface', the role 'bpmnprof_BPMNInterface230' has cardinality 0..*, and from 'bpmnprof_Element', the role 'bpmnprof_Element231' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNOperation' and 'bpmnprof_BPMNInterface'. From 'bpmnprof_BPMNOperation', the role 'bpmnprof_BPMNOperation' has cardinality 0..*, and from 'bpmnprof_BPMNInterface', the role 'bpmnprof_BPMNInterface233' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNInterface' and 'bpmnprof_CallableElement'. From 'bpmnprof_BPMNInterface', the role 'bpmnprof_BPMNInterface235' has cardinality 0..*, and from 'bpmnprof_CallableElement', the role 'bpmnprof_CallableElement236' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNOperation' and 'bpmnprof_Operation'. From 'bpmnprof_BPMNOperation', the role 'bpmnprof_BPMNOperation238' has cardinality 0..*, and from 'bpmnprof_Operation', the role 'bpmnprof_Operation' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNOperation' and 'bpmnprof_Element'. From 'bpmnprof_BPMNOperation', the role 'bpmnprof_BPMNOperation240' has cardinality 0..*, and from 'bpmnprof_Element', the role 'bpmnprof_Element241' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNOperation' and 'bpmnprof_BPMNMessage'. From 'bpmnprof_BPMNOperation', the role 'bpmnprof_BPMNOperation243' has cardinality 0..*, and from 'bpmnprof_BPMNMessage', the role 'bpmnprof_BPMNMessage' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNOperation' and 'bpmnprof_BPMNMessage'. From 'bpmnprof_BPMNOperation', the role 'bpmnprof_BPMNOperation245' has cardinality 0..*, and from 'bpmnprof_BPMNMessage', the role 'bpmnprof_BPMNMessage246' has cardinality 0..*.
+An association connects 'bpmnprof_Error' and 'bpmnprof_BPMNOperation'. From 'bpmnprof_Error', the role 'bpmnprof_Error' has cardinality 0..*, and from 'bpmnprof_BPMNOperation', the role 'bpmnprof_BPMNOperation248' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNMessage' and 'bpmnprof_ItemDefinition'. From 'bpmnprof_BPMNMessage', the role 'bpmnprof_BPMNMessage250' has cardinality 0..*, and from 'bpmnprof_ItemDefinition', the role 'bpmnprof_ItemDefinition251' has cardinality 0..*.
+An association connects 'bpmnprof_InputSet' and 'bpmnprof_InputOutputBinding'. From 'bpmnprof_InputSet', the role 'bpmnprof_InputSet254' has cardinality 0..*, and from 'bpmnprof_InputOutputBinding', the role 'bpmnprof_InputOutputBinding253' has cardinality 0..*.
+An association connects 'bpmnprof_OutputSet' and 'bpmnprof_InputOutputBinding'. From 'bpmnprof_OutputSet', the role 'bpmnprof_OutputSet257' has cardinality 0..*, and from 'bpmnprof_InputOutputBinding', the role 'bpmnprof_InputOutputBinding256' has cardinality 0..*.
+An association connects 'bpmnprof_InputOutputBinding' and 'bpmnprof_BPMNOperation'. From 'bpmnprof_InputOutputBinding', the role 'bpmnprof_InputOutputBinding259' has cardinality 0..*, and from 'bpmnprof_BPMNOperation', the role 'bpmnprof_BPMNOperation260' has cardinality 0..*.
+An association connects 'bpmnprof_Dependency' and 'bpmnprof_InputOutputBinding'. From 'bpmnprof_Dependency', the role 'bpmnprof_Dependency263' has cardinality 0..*, and from 'bpmnprof_InputOutputBinding', the role 'bpmnprof_InputOutputBinding262' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNCollaboration' and 'bpmnprof_ParticipantAssociation'. From 'bpmnprof_BPMNCollaboration', the role 'bpmnprof_BPMNCollaboration265' has cardinality 0..*, and from 'bpmnprof_ParticipantAssociation', the role 'bpmnprof_ParticipantAssociation' has cardinality 0..*.
+An association connects 'bpmnprof_ConversationLink' and 'bpmnprof_BPMNCollaboration'. From 'bpmnprof_ConversationLink', the role 'ConversationLink' has cardinality 0..*, and from 'bpmnprof_BPMNCollaboration', the role 'collaboration' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNCollaboration' and 'bpmnprof_MessageFlowAssociation'. From 'bpmnprof_BPMNCollaboration', the role 'bpmnprof_BPMNCollaboration268' has cardinality 0..*, and from 'bpmnprof_MessageFlowAssociation', the role 'bpmnprof_MessageFlowAssociation' has cardinality 0..*.
+An association connects 'bpmnprof_MessageFlow' and 'bpmnprof_BPMNCollaboration'. From 'bpmnprof_MessageFlow', the role 'bpmnprof_MessageFlow' has cardinality 0..*, and from 'bpmnprof_BPMNCollaboration', the role 'bpmnprof_BPMNCollaboration270' has cardinality 0..*.
+An association connects 'bpmnprof_Collaboration' and 'bpmnprof_BPMNCollaboration'. From 'bpmnprof_Collaboration', the role 'bpmnprof_Collaboration' has cardinality 0..*, and from 'bpmnprof_BPMNCollaboration', the role 'bpmnprof_BPMNCollaboration272' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNCollaboration' and 'bpmnprof_ConversationNode'. From 'bpmnprof_BPMNCollaboration', the role 'bpmnprof_BPMNCollaboration274' has cardinality 0..*, and from 'bpmnprof_ConversationNode', the role 'bpmnprof_ConversationNode' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNCollaboration' and 'bpmnprof_CorrelationKey'. From 'bpmnprof_BPMNCollaboration', the role 'bpmnprof_BPMNCollaboration276' has cardinality 0..*, and from 'bpmnprof_CorrelationKey', the role 'bpmnprof_CorrelationKey' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNCollaboration' and 'bpmnprof_Participant'. From 'bpmnprof_BPMNCollaboration', the role 'bpmnprof_BPMNCollaboration278' has cardinality 0..*, and from 'bpmnprof_Participant', the role 'bpmnprof_Participant' has cardinality 0..*.
+An association connects 'bpmnprof_ParticipantAssociation' and 'bpmnprof_Dependency'. From 'bpmnprof_ParticipantAssociation', the role 'bpmnprof_ParticipantAssociation280' has cardinality 0..*, and from 'bpmnprof_Dependency', the role 'bpmnprof_Dependency281' has cardinality 0..*.
+An association connects 'bpmnprof_ParticipantAssociation' and 'bpmnprof_Participant'. From 'bpmnprof_ParticipantAssociation', the role 'bpmnprof_ParticipantAssociation283' has cardinality 0..*, and from 'bpmnprof_Participant', the role 'bpmnprof_Participant284' has cardinality 0..*.
+An association connects 'bpmnprof_ParticipantAssociation' and 'bpmnprof_Participant'. From 'bpmnprof_ParticipantAssociation', the role 'bpmnprof_ParticipantAssociation286' has cardinality 0..*, and from 'bpmnprof_Participant', the role 'bpmnprof_Participant287' has cardinality 0..*.
+An association connects 'bpmnprof_Property' and 'bpmnprof_Participant'. From 'bpmnprof_Property', the role 'bpmnprof_Property290' has cardinality 0..*, and from 'bpmnprof_Participant', the role 'bpmnprof_Participant289' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNProcess' and 'bpmnprof_Participant'. From 'bpmnprof_BPMNProcess', the role 'bpmnprof_BPMNProcess293' has cardinality 0..*, and from 'bpmnprof_Participant', the role 'bpmnprof_Participant292' has cardinality 0..*.
+An association connects 'bpmnprof_ParticipantMultiplicity' and 'bpmnprof_Participant'. From 'bpmnprof_ParticipantMultiplicity', the role 'bpmnprof_ParticipantMultiplicity' has cardinality 0..*, and from 'bpmnprof_Participant', the role 'bpmnprof_Participant295' has cardinality 0..*.
+An association connects 'bpmnprof_PartnerEntity' and 'bpmnprof_Participant'. From 'bpmnprof_PartnerEntity', the role 'PartnerEntity' has cardinality 0..*, and from 'bpmnprof_Participant', the role 'participantRef' has cardinality 0..*.
+An association connects 'bpmnprof_PartnerRole' and 'bpmnprof_Participant'. From 'bpmnprof_PartnerRole', the role 'PartnerRole' has cardinality 0..*, and from 'bpmnprof_Participant', the role 'participantRef298' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNInterface' and 'bpmnprof_Participant'. From 'bpmnprof_BPMNInterface', the role 'bpmnprof_BPMNInterface301' has cardinality 0..*, and from 'bpmnprof_Participant', the role 'bpmnprof_Participant300' has cardinality 0..*.
+An association connects 'bpmnprof_Element' and 'bpmnprof_InteractionNode'. From 'bpmnprof_Element', the role 'bpmnprof_Element303' has cardinality 0..*, and from 'bpmnprof_InteractionNode', the role 'bpmnprof_InteractionNode' has cardinality 0..*.
+An association connects 'bpmnprof_ConversationLink' and 'bpmnprof_InteractionNode'. From 'bpmnprof_ConversationLink', the role 'ConversationLink306' has cardinality 0..*, and from 'bpmnprof_InteractionNode', the role 'sourceRef305' has cardinality 0..*.
+An association connects 'bpmnprof_ConversationLink' and 'bpmnprof_InteractionNode'. From 'bpmnprof_ConversationLink', the role 'ConversationLink309' has cardinality 0..*, and from 'bpmnprof_InteractionNode', the role 'targetRef308' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNCollaboration' and 'bpmnprof_ConversationLink'. From 'bpmnprof_BPMNCollaboration', the role 'BPMNCollaboration' has cardinality 0..*, and from 'bpmnprof_ConversationLink', the role 'conversationLinks' has cardinality 0..*.
+An association connects 'bpmnprof_Dependency' and 'bpmnprof_ConversationLink'. From 'bpmnprof_Dependency', the role 'bpmnprof_Dependency312' has cardinality 0..*, and from 'bpmnprof_ConversationLink', the role 'bpmnprof_ConversationLink' has cardinality 0..*.
+An association connects 'bpmnprof_ConversationLink' and 'bpmnprof_InteractionNode'. From 'bpmnprof_ConversationLink', the role 'incomingConversationLinks' has cardinality 0..*, and from 'bpmnprof_InteractionNode', the role 'InteractionNode' has cardinality 0..*.
+An association connects 'bpmnprof_ConversationLink' and 'bpmnprof_InteractionNode'. From 'bpmnprof_ConversationLink', the role 'outgoingConversationLinks' has cardinality 0..*, and from 'bpmnprof_InteractionNode', the role 'InteractionNode315' has cardinality 0..*.
+An association connects 'bpmnprof_ParticipantMultiplicity' and 'bpmnprof_MultiplicityElement'. From 'bpmnprof_ParticipantMultiplicity', the role 'bpmnprof_ParticipantMultiplicity317' has cardinality 0..*, and from 'bpmnprof_MultiplicityElement', the role 'bpmnprof_MultiplicityElement' has cardinality 0..*.
+An association connects 'bpmnprof_InstanceSpecification' and 'bpmnprof_PartnerEntity'. From 'bpmnprof_InstanceSpecification', the role 'bpmnprof_InstanceSpecification' has cardinality 0..*, and from 'bpmnprof_PartnerEntity', the role 'bpmnprof_PartnerEntity' has cardinality 0..*.
+An association connects 'bpmnprof_PartnerEntity' and 'bpmnprof_Participant'. From 'bpmnprof_PartnerEntity', the role 'partnerEntityRef' has cardinality 0..*, and from 'bpmnprof_Participant', the role 'Participant' has cardinality 0..*.
+An association connects 'bpmnprof_Class' and 'bpmnprof_PartnerRole'. From 'bpmnprof_Class', the role 'bpmnprof_Class321' has cardinality 0..*, and from 'bpmnprof_PartnerRole', the role 'bpmnprof_PartnerRole' has cardinality 0..*.
+An association connects 'bpmnprof_Participant' and 'bpmnprof_PartnerRole'. From 'bpmnprof_Participant', the role 'Participant323' has cardinality 0..*, and from 'bpmnprof_PartnerRole', the role 'partnerRoleRef' has cardinality 0..*.
+An association connects 'bpmnprof_MessageFlowAssociation' and 'bpmnprof_Dependency'. From 'bpmnprof_MessageFlowAssociation', the role 'bpmnprof_MessageFlowAssociation325' has cardinality 0..*, and from 'bpmnprof_Dependency', the role 'bpmnprof_Dependency326' has cardinality 0..*.
+An association connects 'bpmnprof_MessageFlow' and 'bpmnprof_MessageFlowAssociation'. From 'bpmnprof_MessageFlow', the role 'bpmnprof_MessageFlow329' has cardinality 0..*, and from 'bpmnprof_MessageFlowAssociation', the role 'bpmnprof_MessageFlowAssociation328' has cardinality 0..*.
+An association connects 'bpmnprof_MessageFlowAssociation' and 'bpmnprof_MessageFlow'. From 'bpmnprof_MessageFlowAssociation', the role 'bpmnprof_MessageFlowAssociation331' has cardinality 0..*, and from 'bpmnprof_MessageFlow', the role 'bpmnprof_MessageFlow332' has cardinality 0..*.
+An association connects 'bpmnprof_InformationFlow' and 'bpmnprof_MessageFlow'. From 'bpmnprof_InformationFlow', the role 'bpmnprof_InformationFlow' has cardinality 0..*, and from 'bpmnprof_MessageFlow', the role 'bpmnprof_MessageFlow334' has cardinality 0..*.
+An association connects 'bpmnprof_MessageFlow' and 'bpmnprof_InteractionNode'. From 'bpmnprof_MessageFlow', the role 'bpmnprof_MessageFlow336' has cardinality 0..*, and from 'bpmnprof_InteractionNode', the role 'bpmnprof_InteractionNode337' has cardinality 0..*.
+An association connects 'bpmnprof_InteractionNode' and 'bpmnprof_MessageFlow'. From 'bpmnprof_InteractionNode', the role 'bpmnprof_InteractionNode340' has cardinality 0..*, and from 'bpmnprof_MessageFlow', the role 'bpmnprof_MessageFlow339' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNMessage' and 'bpmnprof_MessageFlow'. From 'bpmnprof_BPMNMessage', the role 'bpmnprof_BPMNMessage343' has cardinality 0..*, and from 'bpmnprof_MessageFlow', the role 'bpmnprof_MessageFlow342' has cardinality 0..*.
+An association connects 'bpmnprof_ConversationNode' and 'bpmnprof_InformationFlow'. From 'bpmnprof_ConversationNode', the role 'bpmnprof_ConversationNode345' has cardinality 0..*, and from 'bpmnprof_InformationFlow', the role 'bpmnprof_InformationFlow346' has cardinality 0..*.
+An association connects 'bpmnprof_ConversationNode' and 'bpmnprof_MessageFlow'. From 'bpmnprof_ConversationNode', the role 'bpmnprof_ConversationNode348' has cardinality 0..*, and from 'bpmnprof_MessageFlow', the role 'bpmnprof_MessageFlow349' has cardinality 0..*.
+An association connects 'bpmnprof_CorrelationKey' and 'bpmnprof_ConversationNode'. From 'bpmnprof_CorrelationKey', the role 'bpmnprof_CorrelationKey352' has cardinality 0..*, and from 'bpmnprof_ConversationNode', the role 'bpmnprof_ConversationNode351' has cardinality 0..*.
+An association connects 'bpmnprof_ConversationNode' and 'bpmnprof_Participant'. From 'bpmnprof_ConversationNode', the role 'bpmnprof_ConversationNode354' has cardinality 0..*, and from 'bpmnprof_Participant', the role 'bpmnprof_Participant355' has cardinality 0..*.
+An association connects 'bpmnprof_CorrelationKey' and 'bpmnprof_Class'. From 'bpmnprof_CorrelationKey', the role 'bpmnprof_CorrelationKey357' has cardinality 0..*, and from 'bpmnprof_Class', the role 'bpmnprof_Class358' has cardinality 0..*.
+An association connects 'bpmnprof_CorrelationKey' and 'bpmnprof_CorrelationProperty'. From 'bpmnprof_CorrelationKey', the role 'bpmnprof_CorrelationKey360' has cardinality 0..*, and from 'bpmnprof_CorrelationProperty', the role 'bpmnprof_CorrelationProperty' has cardinality 0..*.
+An association connects 'bpmnprof_Property' and 'bpmnprof_CorrelationProperty'. From 'bpmnprof_Property', the role 'bpmnprof_Property363' has cardinality 0..*, and from 'bpmnprof_CorrelationProperty', the role 'bpmnprof_CorrelationProperty362' has cardinality 0..*.
+An association connects 'bpmnprof_CorrelationProperty' and 'bpmnprof_ItemDefinition'. From 'bpmnprof_CorrelationProperty', the role 'bpmnprof_CorrelationProperty365' has cardinality 0..*, and from 'bpmnprof_ItemDefinition', the role 'bpmnprof_ItemDefinition366' has cardinality 0..*.
+An association connects 'bpmnprof_CorrelationPropertyRetrievalExpression' and 'bpmnprof_CorrelationProperty'. From 'bpmnprof_CorrelationPropertyRetrievalExpression', the role 'bpmnprof_CorrelationPropertyRetrievalExpression' has cardinality 0..*, and from 'bpmnprof_CorrelationProperty', the role 'bpmnprof_CorrelationProperty368' has cardinality 0..*.
+An association connects 'bpmnprof_Dependency' and 'bpmnprof_CorrelationPropertyRetrievalExpression'. From 'bpmnprof_Dependency', the role 'bpmnprof_Dependency371' has cardinality 0..*, and from 'bpmnprof_CorrelationPropertyRetrievalExpression', the role 'bpmnprof_CorrelationPropertyRetrievalExpression370' has cardinality 0..*.
+An association connects 'bpmnprof_CorrelationPropertyRetrievalExpression' and 'bpmnprof_BPMNMessage'. From 'bpmnprof_CorrelationPropertyRetrievalExpression', the role 'bpmnprof_CorrelationPropertyRetrievalExpression373' has cardinality 0..*, and from 'bpmnprof_BPMNMessage', the role 'bpmnprof_BPMNMessage374' has cardinality 0..*.
+An association connects 'bpmnprof_FormalExpression' and 'bpmnprof_CorrelationPropertyRetrievalExpression'. From 'bpmnprof_FormalExpression', the role 'bpmnprof_FormalExpression' has cardinality 0..*, and from 'bpmnprof_CorrelationPropertyRetrievalExpression', the role 'bpmnprof_CorrelationPropertyRetrievalExpression376' has cardinality 0..*.
+An association connects 'bpmnprof_ItemDefinition' and 'bpmnprof_FormalExpression'. From 'bpmnprof_ItemDefinition', the role 'bpmnprof_ItemDefinition379' has cardinality 0..*, and from 'bpmnprof_FormalExpression', the role 'bpmnprof_FormalExpression378' has cardinality 0..*.
+An association connects 'bpmnprof_Class' and 'bpmnprof_CorrelationSubscription'. From 'bpmnprof_Class', the role 'bpmnprof_Class382' has cardinality 0..*, and from 'bpmnprof_CorrelationSubscription', the role 'bpmnprof_CorrelationSubscription381' has cardinality 0..*.
+An association connects 'bpmnprof_CorrelationKey' and 'bpmnprof_CorrelationSubscription'. From 'bpmnprof_CorrelationKey', the role 'bpmnprof_CorrelationKey385' has cardinality 0..*, and from 'bpmnprof_CorrelationSubscription', the role 'bpmnprof_CorrelationSubscription384' has cardinality 0..*.
+An association connects 'bpmnprof_CorrelationPropertyBinding' and 'bpmnprof_CorrelationSubscription'. From 'bpmnprof_CorrelationPropertyBinding', the role 'bpmnprof_CorrelationPropertyBinding' has cardinality 0..*, and from 'bpmnprof_CorrelationSubscription', the role 'bpmnprof_CorrelationSubscription387' has cardinality 0..*.
+An association connects 'bpmnprof_CorrelationPropertyBinding' and 'bpmnprof_Property'. From 'bpmnprof_CorrelationPropertyBinding', the role 'bpmnprof_CorrelationPropertyBinding389' has cardinality 0..*, and from 'bpmnprof_Property', the role 'bpmnprof_Property390' has cardinality 0..*.
+An association connects 'bpmnprof_CorrelationPropertyBinding' and 'bpmnprof_FormalExpression'. From 'bpmnprof_CorrelationPropertyBinding', the role 'bpmnprof_CorrelationPropertyBinding392' has cardinality 0..*, and from 'bpmnprof_FormalExpression', the role 'bpmnprof_FormalExpression393' has cardinality 0..*.
+An association connects 'bpmnprof_CorrelationProperty' and 'bpmnprof_CorrelationPropertyBinding'. From 'bpmnprof_CorrelationProperty', the role 'bpmnprof_CorrelationProperty396' has cardinality 0..*, and from 'bpmnprof_CorrelationPropertyBinding', the role 'bpmnprof_CorrelationPropertyBinding395' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNProperty' and 'bpmnprof_DataStoreNode'. From 'bpmnprof_BPMNProperty', the role 'bpmnprof_BPMNProperty398' has cardinality 0..*, and from 'bpmnprof_DataStoreNode', the role 'bpmnprof_DataStoreNode' has cardinality 0..*.
+An association connects 'bpmnprof_Property' and 'bpmnprof_BPMNProperty'. From 'bpmnprof_Property', the role 'bpmnprof_Property401' has cardinality 0..*, and from 'bpmnprof_BPMNProperty', the role 'bpmnprof_BPMNProperty400' has cardinality 0..*.
+An association connects 'bpmnprof_ResourceRole' and 'bpmnprof_Property'. From 'bpmnprof_ResourceRole', the role 'bpmnprof_ResourceRole' has cardinality 0..*, and from 'bpmnprof_Property', the role 'bpmnprof_Property403' has cardinality 0..*.
+An association connects 'bpmnprof_ResourceAssignmentExpression' and 'bpmnprof_ResourceRole'. From 'bpmnprof_ResourceAssignmentExpression', the role 'bpmnprof_ResourceAssignmentExpression' has cardinality 0..*, and from 'bpmnprof_ResourceRole', the role 'bpmnprof_ResourceRole405' has cardinality 0..*.
+An association connects 'bpmnprof_Resource' and 'bpmnprof_ResourceRole'. From 'bpmnprof_Resource', the role 'bpmnprof_Resource' has cardinality 0..*, and from 'bpmnprof_ResourceRole', the role 'bpmnprof_ResourceRole407' has cardinality 0..*.
+An association connects 'bpmnprof_ResourceRole' and 'bpmnprof_ResourceParameterBinding'. From 'bpmnprof_ResourceRole', the role 'bpmnprof_ResourceRole409' has cardinality 0..*, and from 'bpmnprof_ResourceParameterBinding', the role 'bpmnprof_ResourceParameterBinding' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNProcess' and 'bpmnprof_ResourceRole'. From 'bpmnprof_BPMNProcess', the role 'BPMNProcess' has cardinality 0..*, and from 'bpmnprof_ResourceRole', the role 'resources' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNExpression' and 'bpmnprof_ResourceAssignmentExpression'. From 'bpmnprof_BPMNExpression', the role 'bpmnprof_BPMNExpression413' has cardinality 0..*, and from 'bpmnprof_ResourceAssignmentExpression', the role 'bpmnprof_ResourceAssignmentExpression412' has cardinality 0..*.
+An association connects 'bpmnprof_ResourceParameter' and 'bpmnprof_Resource'. From 'bpmnprof_ResourceParameter', the role 'bpmnprof_ResourceParameter' has cardinality 0..*, and from 'bpmnprof_Resource', the role 'bpmnprof_Resource415' has cardinality 0..*.
+An association connects 'bpmnprof_Property' and 'bpmnprof_ResourceParameter'. From 'bpmnprof_Property', the role 'bpmnprof_Property418' has cardinality 0..*, and from 'bpmnprof_ResourceParameter', the role 'bpmnprof_ResourceParameter417' has cardinality 0..*.
+An association connects 'bpmnprof_ResourceParameter' and 'bpmnprof_ItemDefinition'. From 'bpmnprof_ResourceParameter', the role 'bpmnprof_ResourceParameter420' has cardinality 0..*, and from 'bpmnprof_ItemDefinition', the role 'bpmnprof_ItemDefinition421' has cardinality 0..*.
+An association connects 'bpmnprof_Slot' and 'bpmnprof_ResourceParameterBinding'. From 'bpmnprof_Slot', the role 'bpmnprof_Slot424' has cardinality 0..*, and from 'bpmnprof_ResourceParameterBinding', the role 'bpmnprof_ResourceParameterBinding423' has cardinality 0..*.
+An association connects 'bpmnprof_ResourceParameter' and 'bpmnprof_ResourceParameterBinding'. From 'bpmnprof_ResourceParameter', the role 'bpmnprof_ResourceParameter427' has cardinality 0..*, and from 'bpmnprof_ResourceParameterBinding', the role 'bpmnprof_ResourceParameterBinding426' has cardinality 0..*.
+An association connects 'bpmnprof_ResourceParameterBinding' and 'bpmnprof_BPMNExpression'. From 'bpmnprof_ResourceParameterBinding', the role 'bpmnprof_ResourceParameterBinding429' has cardinality 0..*, and from 'bpmnprof_BPMNExpression', the role 'bpmnprof_BPMNExpression430' has cardinality 0..*.
+An association connects 'bpmnprof_OpaqueBehavior' and 'bpmnprof_GlobalTask'. From 'bpmnprof_OpaqueBehavior', the role 'bpmnprof_OpaqueBehavior' has cardinality 0..*, and from 'bpmnprof_GlobalTask', the role 'bpmnprof_GlobalTask' has cardinality 0..*.
+An association connects 'bpmnprof_GlobalTask' and 'bpmnprof_ResourceRole'. From 'bpmnprof_GlobalTask', the role 'bpmnprof_GlobalTask433' has cardinality 0..*, and from 'bpmnprof_ResourceRole', the role 'bpmnprof_ResourceRole434' has cardinality 0..*.
+An association connects 'bpmnprof_CompensateEventDefinition' and 'bpmnprof_BPMNActivity'. From 'bpmnprof_CompensateEventDefinition', the role 'bpmnprof_CompensateEventDefinition' has cardinality 0..*, and from 'bpmnprof_BPMNActivity', the role 'bpmnprof_BPMNActivity' has cardinality 0..*.
+An association connects 'bpmnprof_CallEvent' and 'bpmnprof_CompensateEventDefinition'. From 'bpmnprof_CallEvent', the role 'bpmnprof_CallEvent' has cardinality 0..*, and from 'bpmnprof_CompensateEventDefinition', the role 'bpmnprof_CompensateEventDefinition437' has cardinality 0..*.
+An association connects 'bpmnprof_Event' and 'bpmnprof_EventDefinition'. From 'bpmnprof_Event', the role 'bpmnprof_Event' has cardinality 0..*, and from 'bpmnprof_EventDefinition', the role 'bpmnprof_EventDefinition' has cardinality 0..*.
+An association connects 'bpmnprof_Action' and 'bpmnprof_BPMNActivity'. From 'bpmnprof_Action', the role 'bpmnprof_Action441' has cardinality 0..*, and from 'bpmnprof_BPMNActivity', the role 'bpmnprof_BPMNActivity440' has cardinality 0..*.
+An association connects 'bpmnprof_Class' and 'bpmnprof_BPMNActivity'. From 'bpmnprof_Class', the role 'bpmnprof_Class444' has cardinality 0..*, and from 'bpmnprof_BPMNActivity', the role 'bpmnprof_BPMNActivity443' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNActivity' and 'bpmnprof_BPMNProperty'. From 'bpmnprof_BPMNActivity', the role 'bpmnprof_BPMNActivity446' has cardinality 0..*, and from 'bpmnprof_BPMNProperty', the role 'bpmnprof_BPMNProperty447' has cardinality 0..*.
+An association connects 'bpmnprof_SequenceFlow' and 'bpmnprof_BPMNActivity'. From 'bpmnprof_SequenceFlow', the role 'bpmnprof_SequenceFlow450' has cardinality 0..*, and from 'bpmnprof_BPMNActivity', the role 'bpmnprof_BPMNActivity449' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNActivity' and 'bpmnprof_BoundaryEvent'. From 'bpmnprof_BPMNActivity', the role 'bpmnprof_BPMNActivity452' has cardinality 0..*, and from 'bpmnprof_BoundaryEvent', the role 'bpmnprof_BoundaryEvent' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNActivity' and 'bpmnprof_DataInputAssociation'. From 'bpmnprof_BPMNActivity', the role 'bpmnprof_BPMNActivity454' has cardinality 0..*, and from 'bpmnprof_DataInputAssociation', the role 'bpmnprof_DataInputAssociation' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNActivity' and 'bpmnprof_DataOutputAssociation'. From 'bpmnprof_BPMNActivity', the role 'bpmnprof_BPMNActivity456' has cardinality 0..*, and from 'bpmnprof_DataOutputAssociation', the role 'bpmnprof_DataOutputAssociation' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNActivity' and 'bpmnprof_LoopCharacteristics'. From 'bpmnprof_BPMNActivity', the role 'bpmnprof_BPMNActivity458' has cardinality 0..*, and from 'bpmnprof_LoopCharacteristics', the role 'bpmnprof_LoopCharacteristics' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNActivity' and 'bpmnprof_ResourceRole'. From 'bpmnprof_BPMNActivity', the role 'bpmnprof_BPMNActivity460' has cardinality 0..*, and from 'bpmnprof_ResourceRole', the role 'bpmnprof_ResourceRole461' has cardinality 0..*.
+An association connects 'bpmnprof_BoundaryEvent' and 'bpmnprof_BPMNActivity'. From 'bpmnprof_BoundaryEvent', the role 'bpmnprof_BoundaryEvent463' has cardinality 0..*, and from 'bpmnprof_BPMNActivity', the role 'bpmnprof_BPMNActivity464' has cardinality 0..*.
+An association connects 'bpmnprof_CatchEvent' and 'bpmnprof_AcceptEventAction'. From 'bpmnprof_CatchEvent', the role 'bpmnprof_CatchEvent' has cardinality 0..*, and from 'bpmnprof_AcceptEventAction', the role 'bpmnprof_AcceptEventAction' has cardinality 0..*.
+An association connects 'bpmnprof_CatchEvent' and 'bpmnprof_InitialNode'. From 'bpmnprof_CatchEvent', the role 'bpmnprof_CatchEvent467' has cardinality 0..*, and from 'bpmnprof_InitialNode', the role 'bpmnprof_InitialNode' has cardinality 0..*.
+An association connects 'bpmnprof_DataOutputAssociation' and 'bpmnprof_CatchEvent'. From 'bpmnprof_DataOutputAssociation', the role 'bpmnprof_DataOutputAssociation470' has cardinality 0..*, and from 'bpmnprof_CatchEvent', the role 'bpmnprof_CatchEvent469' has cardinality 0..*.
+An association connects 'bpmnprof_Class' and 'bpmnprof_BPMNEvent'. From 'bpmnprof_Class', the role 'bpmnprof_Class472' has cardinality 0..*, and from 'bpmnprof_BPMNEvent', the role 'bpmnprof_BPMNEvent' has cardinality 0..*.
+An association connects 'bpmnprof_EventDefinition' and 'bpmnprof_BPMNEvent'. From 'bpmnprof_EventDefinition', the role 'bpmnprof_EventDefinition475' has cardinality 0..*, and from 'bpmnprof_BPMNEvent', the role 'bpmnprof_BPMNEvent474' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNProperty' and 'bpmnprof_BPMNEvent'. From 'bpmnprof_BPMNProperty', the role 'bpmnprof_BPMNProperty478' has cardinality 0..*, and from 'bpmnprof_BPMNEvent', the role 'bpmnprof_BPMNEvent477' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNEvent' and 'bpmnprof_EventDefinition'. From 'bpmnprof_BPMNEvent', the role 'bpmnprof_BPMNEvent480' has cardinality 0..*, and from 'bpmnprof_EventDefinition', the role 'bpmnprof_EventDefinition481' has cardinality 0..*.
+An association connects 'bpmnprof_ObjectFlow' and 'bpmnprof_DataAssociation'. From 'bpmnprof_ObjectFlow', the role 'bpmnprof_ObjectFlow' has cardinality 0..*, and from 'bpmnprof_DataAssociation', the role 'bpmnprof_DataAssociation' has cardinality 0..*.
+An association connects 'bpmnprof_DataAssociation' and 'bpmnprof_ItemAwareElement'. From 'bpmnprof_DataAssociation', the role 'bpmnprof_DataAssociation484' has cardinality 0..*, and from 'bpmnprof_ItemAwareElement', the role 'bpmnprof_ItemAwareElement485' has cardinality 0..*.
+An association connects 'bpmnprof_ItemAwareElement' and 'bpmnprof_DataAssociation'. From 'bpmnprof_ItemAwareElement', the role 'bpmnprof_ItemAwareElement488' has cardinality 0..*, and from 'bpmnprof_DataAssociation', the role 'bpmnprof_DataAssociation487' has cardinality 0..*.
+An association connects 'bpmnprof_DataAssociation' and 'bpmnprof_FormalExpression'. From 'bpmnprof_DataAssociation', the role 'bpmnprof_DataAssociation490' has cardinality 0..*, and from 'bpmnprof_FormalExpression', the role 'bpmnprof_FormalExpression491' has cardinality 0..*.
+An association connects 'bpmnprof_DataAssociation' and 'bpmnprof_Assignment'. From 'bpmnprof_DataAssociation', the role 'bpmnprof_DataAssociation493' has cardinality 0..*, and from 'bpmnprof_Assignment', the role 'bpmnprof_Assignment' has cardinality 0..*.
+An association connects 'bpmnprof_Assignment' and 'bpmnprof_Dependency'. From 'bpmnprof_Assignment', the role 'bpmnprof_Assignment495' has cardinality 0..*, and from 'bpmnprof_Dependency', the role 'bpmnprof_Dependency496' has cardinality 0..*.
+An association connects 'bpmnprof_Assignment' and 'bpmnprof_BPMNExpression'. From 'bpmnprof_Assignment', the role 'bpmnprof_Assignment498' has cardinality 0..*, and from 'bpmnprof_BPMNExpression', the role 'bpmnprof_BPMNExpression499' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNExpression' and 'bpmnprof_Assignment'. From 'bpmnprof_BPMNExpression', the role 'bpmnprof_BPMNExpression502' has cardinality 0..*, and from 'bpmnprof_Assignment', the role 'bpmnprof_Assignment501' has cardinality 0..*.
+An association connects 'bpmnprof_StructuredActivityNode' and 'bpmnprof_LoopCharacteristics'. From 'bpmnprof_StructuredActivityNode', the role 'bpmnprof_StructuredActivityNode505' has cardinality 0..*, and from 'bpmnprof_LoopCharacteristics', the role 'bpmnprof_LoopCharacteristics504' has cardinality 0..*.
+An association connects 'bpmnprof_Escalation' and 'bpmnprof_EscalationEventDefinition'. From 'bpmnprof_Escalation', the role 'bpmnprof_Escalation' has cardinality 0..*, and from 'bpmnprof_EscalationEventDefinition', the role 'bpmnprof_EscalationEventDefinition' has cardinality 0..*.
+An association connects 'bpmnprof_EscalationEventDefinition' and 'bpmnprof_CallEvent'. From 'bpmnprof_EscalationEventDefinition', the role 'bpmnprof_EscalationEventDefinition508' has cardinality 0..*, and from 'bpmnprof_CallEvent', the role 'bpmnprof_CallEvent509' has cardinality 0..*.
+An association connects 'bpmnprof_TimerEventDefinition' and 'bpmnprof_BPMNExpression'. From 'bpmnprof_TimerEventDefinition', the role 'bpmnprof_TimerEventDefinition' has cardinality 0..*, and from 'bpmnprof_BPMNExpression', the role 'bpmnprof_BPMNExpression511' has cardinality 0..*.
+An association connects 'bpmnprof_TimerEventDefinition' and 'bpmnprof_BPMNExpression'. From 'bpmnprof_TimerEventDefinition', the role 'bpmnprof_TimerEventDefinition513' has cardinality 0..*, and from 'bpmnprof_BPMNExpression', the role 'bpmnprof_BPMNExpression514' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNExpression' and 'bpmnprof_TimerEventDefinition'. From 'bpmnprof_BPMNExpression', the role 'bpmnprof_BPMNExpression517' has cardinality 0..*, and from 'bpmnprof_TimerEventDefinition', the role 'bpmnprof_TimerEventDefinition516' has cardinality 0..*.
+An association connects 'bpmnprof_ChangeEvent' and 'bpmnprof_TimerEventDefinition'. From 'bpmnprof_ChangeEvent', the role 'bpmnprof_ChangeEvent' has cardinality 0..*, and from 'bpmnprof_TimerEventDefinition', the role 'bpmnprof_TimerEventDefinition519' has cardinality 0..*.
+An association connects 'bpmnprof_SignalEventDefinition' and 'bpmnprof_BPMNSignal'. From 'bpmnprof_SignalEventDefinition', the role 'bpmnprof_SignalEventDefinition' has cardinality 0..*, and from 'bpmnprof_BPMNSignal', the role 'bpmnprof_BPMNSignal' has cardinality 0..*.
+An association connects 'bpmnprof_SignalEventDefinition' and 'bpmnprof_CallEvent'. From 'bpmnprof_SignalEventDefinition', the role 'bpmnprof_SignalEventDefinition522' has cardinality 0..*, and from 'bpmnprof_CallEvent', the role 'bpmnprof_CallEvent523' has cardinality 0..*.
+An association connects 'bpmnprof_FinalNode' and 'bpmnprof_EndEvent'. From 'bpmnprof_FinalNode', the role 'bpmnprof_FinalNode' has cardinality 0..*, and from 'bpmnprof_EndEvent', the role 'bpmnprof_EndEvent' has cardinality 0..*.
+An association connects 'bpmnprof_CallOperationAction' and 'bpmnprof_ThrowEvent'. From 'bpmnprof_CallOperationAction', the role 'bpmnprof_CallOperationAction' has cardinality 0..*, and from 'bpmnprof_ThrowEvent', the role 'bpmnprof_ThrowEvent' has cardinality 0..*.
+An association connects 'bpmnprof_FlowFinalNode' and 'bpmnprof_ThrowEvent'. From 'bpmnprof_FlowFinalNode', the role 'bpmnprof_FlowFinalNode' has cardinality 0..*, and from 'bpmnprof_ThrowEvent', the role 'bpmnprof_ThrowEvent527' has cardinality 0..*.
+An association connects 'bpmnprof_ThrowEvent' and 'bpmnprof_DataInputAssociation'. From 'bpmnprof_ThrowEvent', the role 'bpmnprof_ThrowEvent529' has cardinality 0..*, and from 'bpmnprof_DataInputAssociation', the role 'bpmnprof_DataInputAssociation530' has cardinality 0..*.
+An association connects 'bpmnprof_MessageEventDefinition' and 'bpmnprof_BPMNMessage'. From 'bpmnprof_MessageEventDefinition', the role 'bpmnprof_MessageEventDefinition' has cardinality 0..*, and from 'bpmnprof_BPMNMessage', the role 'bpmnprof_BPMNMessage532' has cardinality 0..*.
+An association connects 'bpmnprof_MessageEventDefinition' and 'bpmnprof_BPMNOperation'. From 'bpmnprof_MessageEventDefinition', the role 'bpmnprof_MessageEventDefinition534' has cardinality 0..*, and from 'bpmnprof_BPMNOperation', the role 'bpmnprof_BPMNOperation535' has cardinality 0..*.
+An association connects 'bpmnprof_MessageEventDefinition' and 'bpmnprof_CallEvent'. From 'bpmnprof_MessageEventDefinition', the role 'bpmnprof_MessageEventDefinition537' has cardinality 0..*, and from 'bpmnprof_CallEvent', the role 'bpmnprof_CallEvent538' has cardinality 0..*.
+An association connects 'bpmnprof_ConditionalEventDefinition' and 'bpmnprof_ChangeEvent'. From 'bpmnprof_ConditionalEventDefinition', the role 'bpmnprof_ConditionalEventDefinition' has cardinality 0..*, and from 'bpmnprof_ChangeEvent', the role 'bpmnprof_ChangeEvent540' has cardinality 0..*.
+An association connects 'bpmnprof_ConditionalEventDefinition' and 'bpmnprof_BPMNExpression'. From 'bpmnprof_ConditionalEventDefinition', the role 'bpmnprof_ConditionalEventDefinition542' has cardinality 0..*, and from 'bpmnprof_BPMNExpression', the role 'bpmnprof_BPMNExpression543' has cardinality 0..*.
+An association connects 'bpmnprof_LinkEventDefinition' and 'bpmnprof_LinkEventDefinition'. From 'bpmnprof_LinkEventDefinition', the role 'source' has cardinality 0..*, and from 'bpmnprof_LinkEventDefinition', the role 'LinkEventDefinition' has cardinality 0..*.
+An association connects 'bpmnprof_LinkEventDefinition' and 'bpmnprof_LinkEventDefinition'. From 'bpmnprof_LinkEventDefinition', the role '_target' has cardinality 0..*, and from 'bpmnprof_LinkEventDefinition', the role 'LinkEventDefinition548' has cardinality 0..*.
+An association connects 'bpmnprof_LinkEventDefinition' and 'bpmnprof_CallEvent'. From 'bpmnprof_LinkEventDefinition', the role 'bpmnprof_LinkEventDefinition' has cardinality 0..*, and from 'bpmnprof_CallEvent', the role 'bpmnprof_CallEvent550' has cardinality 0..*.
+An association connects 'bpmnprof_Error' and 'bpmnprof_ErrorEventDefinition'. From 'bpmnprof_Error', the role 'bpmnprof_Error552' has cardinality 0..*, and from 'bpmnprof_ErrorEventDefinition', the role 'bpmnprof_ErrorEventDefinition' has cardinality 0..*.
+An association connects 'bpmnprof_ErrorEventDefinition' and 'bpmnprof_CallEvent'. From 'bpmnprof_ErrorEventDefinition', the role 'bpmnprof_ErrorEventDefinition554' has cardinality 0..*, and from 'bpmnprof_CallEvent', the role 'bpmnprof_CallEvent555' has cardinality 0..*.
+An association connects 'bpmnprof_IntermediateThrowEvent' and 'bpmnprof_SendObjectAction'. From 'bpmnprof_IntermediateThrowEvent', the role 'bpmnprof_IntermediateThrowEvent' has cardinality 0..*, and from 'bpmnprof_SendObjectAction', the role 'bpmnprof_SendObjectAction' has cardinality 0..*.
+An association connects 'bpmnprof_CallEvent' and 'bpmnprof_TerminateEventDefinition'. From 'bpmnprof_CallEvent', the role 'bpmnprof_CallEvent558' has cardinality 0..*, and from 'bpmnprof_TerminateEventDefinition', the role 'bpmnprof_TerminateEventDefinition' has cardinality 0..*.
+An association connects 'bpmnprof_CancelEventDefinition' and 'bpmnprof_CallEvent'. From 'bpmnprof_CancelEventDefinition', the role 'bpmnprof_CancelEventDefinition' has cardinality 0..*, and from 'bpmnprof_CallEvent', the role 'bpmnprof_CallEvent560' has cardinality 0..*.
+An association connects 'bpmnprof_TextAnnotation' and 'bpmnprof_Comment'. From 'bpmnprof_TextAnnotation', the role 'bpmnprof_TextAnnotation' has cardinality 0..*, and from 'bpmnprof_Comment', the role 'bpmnprof_Comment562' has cardinality 0..*.
+An association connects 'bpmnprof_Category' and 'bpmnprof_Enumeration'. From 'bpmnprof_Category', the role 'bpmnprof_Category' has cardinality 0..*, and from 'bpmnprof_Enumeration', the role 'bpmnprof_Enumeration' has cardinality 0..*.
+An association connects 'bpmnprof_Category' and 'bpmnprof_CategoryValue'. From 'bpmnprof_Category', the role 'bpmnprof_Category565' has cardinality 0..*, and from 'bpmnprof_CategoryValue', the role 'bpmnprof_CategoryValue566' has cardinality 0..*.
+An association connects 'bpmnprof_Group' and 'bpmnprof_ActivityPartition'. From 'bpmnprof_Group', the role 'bpmnprof_Group' has cardinality 0..*, and from 'bpmnprof_ActivityPartition', the role 'bpmnprof_ActivityPartition568' has cardinality 0..*.
+An association connects 'bpmnprof_CategoryValue' and 'bpmnprof_Group'. From 'bpmnprof_CategoryValue', the role 'bpmnprof_CategoryValue571' has cardinality 0..*, and from 'bpmnprof_Group', the role 'bpmnprof_Group570' has cardinality 0..*.
+An association connects 'bpmnprof_DataObjectReference' and 'bpmnprof_DataObject'. From 'bpmnprof_DataObjectReference', the role 'bpmnprof_DataObjectReference' has cardinality 0..*, and from 'bpmnprof_DataObject', the role 'bpmnprof_DataObject' has cardinality 0..*.
+An association connects 'bpmnprof_DataObjectReference' and 'bpmnprof_DataStoreNode'. From 'bpmnprof_DataObjectReference', the role 'bpmnprof_DataObjectReference574' has cardinality 0..*, and from 'bpmnprof_DataStoreNode', the role 'bpmnprof_DataStoreNode575' has cardinality 0..*.
+An association connects 'bpmnprof_DataStoreNode' and 'bpmnprof_DataObject'. From 'bpmnprof_DataStoreNode', the role 'bpmnprof_DataStoreNode578' has cardinality 0..*, and from 'bpmnprof_DataObject', the role 'bpmnprof_DataObject577' has cardinality 0..*.
+An association connects 'bpmnprof_DataStore' and 'bpmnprof_Class'. From 'bpmnprof_DataStore', the role 'bpmnprof_DataStore' has cardinality 0..*, and from 'bpmnprof_Class', the role 'bpmnprof_Class580' has cardinality 0..*.
+An association connects 'bpmnprof_DataStore' and 'bpmnprof_ItemDefinition'. From 'bpmnprof_DataStore', the role 'bpmnprof_DataStore582' has cardinality 0..*, and from 'bpmnprof_ItemDefinition', the role 'bpmnprof_ItemDefinition583' has cardinality 0..*.
+An association connects 'bpmnprof_DataStore' and 'bpmnprof_DataStoreReference'. From 'bpmnprof_DataStore', the role 'bpmnprof_DataStore585' has cardinality 0..*, and from 'bpmnprof_DataStoreReference', the role 'bpmnprof_DataStoreReference' has cardinality 0..*.
+An association connects 'bpmnprof_DataStoreReference' and 'bpmnprof_DataStoreNode'. From 'bpmnprof_DataStoreReference', the role 'bpmnprof_DataStoreReference587' has cardinality 0..*, and from 'bpmnprof_DataStoreNode', the role 'bpmnprof_DataStoreNode588' has cardinality 0..*.
+An association connects 'bpmnprof_OpaqueAction' and 'bpmnprof_UserTask'. From 'bpmnprof_OpaqueAction', the role 'bpmnprof_OpaqueAction' has cardinality 0..*, and from 'bpmnprof_UserTask', the role 'bpmnprof_UserTask' has cardinality 0..*.
+An association connects 'bpmnprof_UserTask' and 'bpmnprof_Rendering'. From 'bpmnprof_UserTask', the role 'bpmnprof_UserTask591' has cardinality 0..*, and from 'bpmnprof_Rendering', the role 'bpmnprof_Rendering' has cardinality 0..*.
+An association connects 'bpmnprof_InputOutputSpecification' and 'bpmnprof_Task'. From 'bpmnprof_InputOutputSpecification', the role 'bpmnprof_InputOutputSpecification593' has cardinality 0..*, and from 'bpmnprof_Task', the role 'bpmnprof_Task' has cardinality 0..*.
+An association connects 'bpmnprof_Rendering' and 'bpmnprof_Image'. From 'bpmnprof_Rendering', the role 'bpmnprof_Rendering595' has cardinality 0..*, and from 'bpmnprof_Image', the role 'bpmnprof_Image' has cardinality 0..*.
+An association connects 'bpmnprof_Rendering' and 'bpmnprof_GlobalUserTask'. From 'bpmnprof_Rendering', the role 'bpmnprof_Rendering597' has cardinality 0..*, and from 'bpmnprof_GlobalUserTask', the role 'bpmnprof_GlobalUserTask' has cardinality 0..*.
+An association connects 'bpmnprof_OpaqueAction' and 'bpmnprof_ManualTask'. From 'bpmnprof_OpaqueAction', the role 'bpmnprof_OpaqueAction599' has cardinality 0..*, and from 'bpmnprof_ManualTask', the role 'bpmnprof_ManualTask' has cardinality 0..*.
+An association connects 'bpmnprof_ConversationNode' and 'bpmnprof_SubConversation'. From 'bpmnprof_ConversationNode', the role 'bpmnprof_ConversationNode601' has cardinality 0..*, and from 'bpmnprof_SubConversation', the role 'bpmnprof_SubConversation' has cardinality 0..*.
+An association connects 'bpmnprof_CollaborationUse' and 'bpmnprof_CallConversation'. From 'bpmnprof_CollaborationUse', the role 'bpmnprof_CollaborationUse' has cardinality 0..*, and from 'bpmnprof_CallConversation', the role 'bpmnprof_CallConversation' has cardinality 0..*.
+An association connects 'bpmnprof_CallConversation' and 'bpmnprof_BPMNCollaboration'. From 'bpmnprof_CallConversation', the role 'bpmnprof_CallConversation604' has cardinality 0..*, and from 'bpmnprof_BPMNCollaboration', the role 'bpmnprof_BPMNCollaboration605' has cardinality 0..*.
+An association connects 'bpmnprof_CallConversation' and 'bpmnprof_ParticipantAssociation'. From 'bpmnprof_CallConversation', the role 'bpmnprof_CallConversation607' has cardinality 0..*, and from 'bpmnprof_ParticipantAssociation', the role 'bpmnprof_ParticipantAssociation608' has cardinality 0..*.
+An association connects 'bpmnprof_StructuredActivityNode' and 'bpmnprof_SubProcess'. From 'bpmnprof_StructuredActivityNode', the role 'bpmnprof_StructuredActivityNode610' has cardinality 0..*, and from 'bpmnprof_SubProcess', the role 'bpmnprof_SubProcess' has cardinality 0..*.
+An association connects 'bpmnprof_SubProcess' and 'bpmnprof_LaneSet'. From 'bpmnprof_SubProcess', the role 'bpmnprof_SubProcess612' has cardinality 0..*, and from 'bpmnprof_LaneSet', the role 'bpmnprof_LaneSet613' has cardinality 0..*.
+An association connects 'bpmnprof_CallBehaviorAction' and 'bpmnprof_CallActivity'. From 'bpmnprof_CallBehaviorAction', the role 'bpmnprof_CallBehaviorAction' has cardinality 0..*, and from 'bpmnprof_CallActivity', the role 'bpmnprof_CallActivity' has cardinality 0..*.
+An association connects 'bpmnprof_CallableElement' and 'bpmnprof_CallActivity'. From 'bpmnprof_CallableElement', the role 'bpmnprof_CallableElement617' has cardinality 0..*, and from 'bpmnprof_CallActivity', the role 'bpmnprof_CallActivity616' has cardinality 0..*.
+An association connects 'bpmnprof_BusinessRuleTask' and 'bpmnprof_OpaqueAction'. From 'bpmnprof_BusinessRuleTask', the role 'bpmnprof_BusinessRuleTask' has cardinality 0..*, and from 'bpmnprof_OpaqueAction', the role 'bpmnprof_OpaqueAction619' has cardinality 0..*.
+An association connects 'bpmnprof_ComplexBehaviorDefinition' and 'bpmnprof_FormalExpression'. From 'bpmnprof_ComplexBehaviorDefinition', the role 'bpmnprof_ComplexBehaviorDefinition' has cardinality 0..*, and from 'bpmnprof_FormalExpression', the role 'bpmnprof_FormalExpression621' has cardinality 0..*.
+An association connects 'bpmnprof_ComplexBehaviorDefinition' and 'bpmnprof_ImplicitThrowEvent'. From 'bpmnprof_ComplexBehaviorDefinition', the role 'bpmnprof_ComplexBehaviorDefinition623' has cardinality 0..*, and from 'bpmnprof_ImplicitThrowEvent', the role 'bpmnprof_ImplicitThrowEvent' has cardinality 0..*.
+An association connects 'bpmnprof_ControlFlow' and 'bpmnprof_ComplexBehaviorDefinition'. From 'bpmnprof_ControlFlow', the role 'bpmnprof_ControlFlow626' has cardinality 0..*, and from 'bpmnprof_ComplexBehaviorDefinition', the role 'bpmnprof_ComplexBehaviorDefinition625' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNExpression' and 'bpmnprof_AdHocSubProcess'. From 'bpmnprof_BPMNExpression', the role 'bpmnprof_BPMNExpression628' has cardinality 0..*, and from 'bpmnprof_AdHocSubProcess', the role 'bpmnprof_AdHocSubProcess' has cardinality 0..*.
+An association connects 'bpmnprof_ScriptTask' and 'bpmnprof_OpaqueAction'. From 'bpmnprof_ScriptTask', the role 'bpmnprof_ScriptTask' has cardinality 0..*, and from 'bpmnprof_OpaqueAction', the role 'bpmnprof_OpaqueAction630' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNMessage' and 'bpmnprof_SendTask'. From 'bpmnprof_BPMNMessage', the role 'bpmnprof_BPMNMessage632' has cardinality 0..*, and from 'bpmnprof_SendTask', the role 'bpmnprof_SendTask' has cardinality 0..*.
+An association connects 'bpmnprof_SendTask' and 'bpmnprof_CallOperationAction'. From 'bpmnprof_SendTask', the role 'bpmnprof_SendTask634' has cardinality 0..*, and from 'bpmnprof_CallOperationAction', the role 'bpmnprof_CallOperationAction635' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNOperation' and 'bpmnprof_SendTask'. From 'bpmnprof_BPMNOperation', the role 'bpmnprof_BPMNOperation638' has cardinality 0..*, and from 'bpmnprof_SendTask', the role 'bpmnprof_SendTask637' has cardinality 0..*.
+An association connects 'bpmnprof_StandardLoopCharacteristics' and 'bpmnprof_LoopNode'. From 'bpmnprof_StandardLoopCharacteristics', the role 'bpmnprof_StandardLoopCharacteristics' has cardinality 0..*, and from 'bpmnprof_LoopNode', the role 'bpmnprof_LoopNode' has cardinality 0..*.
+An association connects 'bpmnprof_StandardLoopCharacteristics' and 'bpmnprof_BPMNExpression'. From 'bpmnprof_StandardLoopCharacteristics', the role 'bpmnprof_StandardLoopCharacteristics641' has cardinality 0..*, and from 'bpmnprof_BPMNExpression', the role 'bpmnprof_BPMNExpression642' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNMessage' and 'bpmnprof_ReceiveTask'. From 'bpmnprof_BPMNMessage', the role 'bpmnprof_BPMNMessage644' has cardinality 0..*, and from 'bpmnprof_ReceiveTask', the role 'bpmnprof_ReceiveTask' has cardinality 0..*.
+An association connects 'bpmnprof_AcceptEventAction' and 'bpmnprof_ReceiveTask'. From 'bpmnprof_AcceptEventAction', the role 'bpmnprof_AcceptEventAction647' has cardinality 0..*, and from 'bpmnprof_ReceiveTask', the role 'bpmnprof_ReceiveTask646' has cardinality 0..*.
+An association connects 'bpmnprof_ReceiveTask' and 'bpmnprof_BPMNOperation'. From 'bpmnprof_ReceiveTask', the role 'bpmnprof_ReceiveTask649' has cardinality 0..*, and from 'bpmnprof_BPMNOperation', the role 'bpmnprof_BPMNOperation650' has cardinality 0..*.
+An association connects 'bpmnprof_ServiceTask' and 'bpmnprof_CallOperationAction'. From 'bpmnprof_ServiceTask', the role 'bpmnprof_ServiceTask' has cardinality 0..*, and from 'bpmnprof_CallOperationAction', the role 'bpmnprof_CallOperationAction652' has cardinality 0..*.
+An association connects 'bpmnprof_ServiceTask' and 'bpmnprof_BPMNOperation'. From 'bpmnprof_ServiceTask', the role 'bpmnprof_ServiceTask654' has cardinality 0..*, and from 'bpmnprof_BPMNOperation', the role 'bpmnprof_BPMNOperation655' has cardinality 0..*.
+An association connects 'bpmnprof_BPMNExpression' and 'bpmnprof_MultiInstanceLoopCharacteristics'. From 'bpmnprof_BPMNExpression', the role 'bpmnprof_BPMNExpression657' has cardinality 0..*, and from 'bpmnprof_MultiInstanceLoopCharacteristics', the role 'bpmnprof_MultiInstanceLoopCharacteristics' has cardinality 0..*.
+An association connects 'bpmnprof_MultiInstanceLoopCharacteristics' and 'bpmnprof_BPMNExpression'. From 'bpmnprof_MultiInstanceLoopCharacteristics', the role 'bpmnprof_MultiInstanceLoopCharacteristics659' has cardinality 0..*, and from 'bpmnprof_BPMNExpression', the role 'bpmnprof_BPMNExpression660' has cardinality 0..*.
+An association connects 'bpmnprof_ExpansionRegion' and 'bpmnprof_MultiInstanceLoopCharacteristics'. From 'bpmnprof_ExpansionRegion', the role 'bpmnprof_ExpansionRegion' has cardinality 0..*, and from 'bpmnprof_MultiInstanceLoopCharacteristics', the role 'bpmnprof_MultiInstanceLoopCharacteristics662' has cardinality 0..*.
+An association connects 'bpmnprof_MultiInstanceLoopCharacteristics' and 'bpmnprof_ItemAwareElement'. From 'bpmnprof_MultiInstanceLoopCharacteristics', the role 'bpmnprof_MultiInstanceLoopCharacteristics664' has cardinality 0..*, and from 'bpmnprof_ItemAwareElement', the role 'bpmnprof_ItemAwareElement665' has cardinality 0..*.
+An association connects 'bpmnprof_MultiInstanceLoopCharacteristics' and 'bpmnprof_ItemAwareElement'. From 'bpmnprof_MultiInstanceLoopCharacteristics', the role 'bpmnprof_MultiInstanceLoopCharacteristics667' has cardinality 0..*, and from 'bpmnprof_ItemAwareElement', the role 'bpmnprof_ItemAwareElement668' has cardinality 0..*.
+An association connects 'bpmnprof_MultiInstanceLoopCharacteristics' and 'bpmnprof_DataOutput'. From 'bpmnprof_MultiInstanceLoopCharacteristics', the role 'bpmnprof_MultiInstanceLoopCharacteristics670' has cardinality 0..*, and from 'bpmnprof_DataOutput', the role 'bpmnprof_DataOutput671' has cardinality 0..*.
+An association connects 'bpmnprof_MultiInstanceLoopCharacteristics' and 'bpmnprof_DataInput'. From 'bpmnprof_MultiInstanceLoopCharacteristics', the role 'bpmnprof_MultiInstanceLoopCharacteristics673' has cardinality 0..*, and from 'bpmnprof_DataInput', the role 'bpmnprof_DataInput674' has cardinality 0..*.
+An association connects 'bpmnprof_EventDefinition' and 'bpmnprof_MultiInstanceLoopCharacteristics'. From 'bpmnprof_EventDefinition', the role 'bpmnprof_EventDefinition677' has cardinality 0..*, and from 'bpmnprof_MultiInstanceLoopCharacteristics', the role 'bpmnprof_MultiInstanceLoopCharacteristics676' has cardinality 0..*.
+An association connects 'bpmnprof_MultiInstanceLoopCharacteristics' and 'bpmnprof_EventDefinition'. From 'bpmnprof_MultiInstanceLoopCharacteristics', the role 'bpmnprof_MultiInstanceLoopCharacteristics679' has cardinality 0..*, and from 'bpmnprof_EventDefinition', the role 'bpmnprof_EventDefinition680' has cardinality 0..*.
+An association connects 'bpmnprof_ComplexBehaviorDefinition' and 'bpmnprof_MultiInstanceLoopCharacteristics'. From 'bpmnprof_ComplexBehaviorDefinition', the role 'bpmnprof_ComplexBehaviorDefinition683' has cardinality 0..*, and from 'bpmnprof_MultiInstanceLoopCharacteristics', the role 'bpmnprof_MultiInstanceLoopCharacteristics682' has cardinality 0..*.

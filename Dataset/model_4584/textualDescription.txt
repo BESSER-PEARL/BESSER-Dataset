@@ -1,0 +1,181 @@
+The domain model 'activity' describes the core structural elements and their relationships within the system.
+
+The model defines 43 main class(es).
+
+'activity_ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_CentralBufferNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_InterruptibleActivityRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_ActivityGroup' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'activity_AcceptTimeEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_ActivityPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_FlowFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_JoinNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_ObjectFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_InterruptEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_NamedElement' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'qualifiedName', which is of type str.
+
+'activity_ActivityParameterNode' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_SendSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_DataStoreNode' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_AcceptEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'activity_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'activity_ActivityParameterNode' is a specialization of 'Activity'.
+The class 'activity_ActivityEdge' is a specialization of 'NamedElement'.
+The class 'activity_ActivityNode' is a specialization of 'NamedElement'.
+The class 'activity_ActivityPartition' is a specialization of 'ActivityGroup'.
+The class 'activity_InterruptibleActivityRegion' is a specialization of 'ActivityGroup'.
+The class 'activity_ActivityGroup' is a specialization of 'Activity'.
+The class 'activity_ControlNode' is a specialization of 'ActivityNode'.
+The class 'activity_InitialNode' is a specialization of 'ControlNode'.
+The class 'activity_FinalNode' is a specialization of 'ControlNode'.
+The class 'activity_ForkNode' is a specialization of 'ControlNode'.
+The class 'activity_JoinNode' is a specialization of 'ControlNode'.
+The class 'activity_Connector' is a specialization of 'ControlNode'.
+The class 'activity_MergeNode' is a specialization of 'ControlNode'.
+The class 'activity_DecisionNode' is a specialization of 'ControlNode'.
+The class 'activity_FlowFinalNode' is a specialization of 'FinalNode'.
+The class 'activity_ActivityFinalNode' is a specialization of 'FinalNode'.
+The class 'activity_ExecutableNode' is a specialization of 'ActivityNode'.
+The class 'activity_Action' is a specialization of 'ExecutableNode'.
+The class 'activity_SendSignalAction' is a specialization of 'ExecutableNode'.
+The class 'activity_AcceptTimeEventAction' is a specialization of 'ExecutableNode'.
+The class 'activity_AcceptEventAction' is a specialization of 'ExecutableNode'.
+The class 'activity_InputPin' is a specialization of 'Pin'.
+The class 'activity_OutputPin' is a specialization of 'Pin'.
+The class 'activity_ObjectNode' is a specialization of 'ActivityNode'.
+The class 'activity_Pin' is a specialization of 'ObjectNode'.
+The class 'activity_Object' is a specialization of 'ObjectNode'.
+The class 'activity_CentralBufferNode' is a specialization of 'ObjectNode'.
+The class 'activity_DataStoreNode' is a specialization of 'ObjectNode'.
+The class 'activity_ControlFlow' is a specialization of 'ActivityEdge'.
+The class 'activity_ObjectFlow' is a specialization of 'ActivityEdge'.
+The class 'activity_InterruptEdge' is a specialization of 'ActivityEdge'.
+
+Relationships between classes are modeled using associations.
+An association connects 'activity_Activity' and 'activity_ActivityEdge'. From 'activity_Activity', the role 'activity_Activity' has cardinality 0..*, and from 'activity_ActivityEdge', the role 'activity_ActivityEdge' has cardinality 0..*.
+An association connects 'activity_Activity' and 'activity_ActivityNode'. From 'activity_Activity', the role 'activity_Activity2' has cardinality 0..*, and from 'activity_ActivityNode', the role 'activity_ActivityNode' has cardinality 0..*.
+An association connects 'activity_ActivityParameterNode' and 'activity_Activity'. From 'activity_ActivityParameterNode', the role 'activity_ActivityParameterNode' has cardinality 0..*, and from 'activity_Activity', the role 'activity_Activity4' has cardinality 0..*.
+An association connects 'activity_Activity' and 'activity_ActivityPartition'. From 'activity_Activity', the role 'activity_Activity6' has cardinality 0..*, and from 'activity_ActivityPartition', the role 'activity_ActivityPartition' has cardinality 0..*.
+An association connects 'activity_ActivityGroup' and 'activity_Activity'. From 'activity_ActivityGroup', the role 'activity_ActivityGroup' has cardinality 0..*, and from 'activity_Activity', the role 'activity_Activity8' has cardinality 0..*.
+An association connects 'activity_ActivityParameterNode' and 'activity_ActivityNode'. From 'activity_ActivityParameterNode', the role 'activity_ActivityParameterNode10' has cardinality 0..*, and from 'activity_ActivityNode', the role 'activity_ActivityNode11' has cardinality 0..*.
+An association connects 'activity_ActivityNode' and 'activity_ActivityEdge'. From 'activity_ActivityNode', the role 'ActivityNode' has cardinality 0..*, and from 'activity_ActivityEdge', the role 'incoming' has cardinality 0..*.
+An association connects 'activity_ActivityNode' and 'activity_ActivityEdge'. From 'activity_ActivityNode', the role 'ActivityNode14' has cardinality 0..*, and from 'activity_ActivityEdge', the role 'outgoing' has cardinality 0..*.
+An association connects 'activity_ActivityEdge' and 'activity_ActivityNode'. From 'activity_ActivityEdge', the role 'ActivityEdge' has cardinality 0..*, and from 'activity_ActivityNode', the role 'target' has cardinality 0..*.
+An association connects 'activity_ActivityEdge' and 'activity_ActivityNode'. From 'activity_ActivityEdge', the role 'ActivityEdge17' has cardinality 0..*, and from 'activity_ActivityNode', the role 'source' has cardinality 0..*.
+An association connects 'activity_ActivityPartition' and 'activity_ActivityPartition'. From 'activity_ActivityPartition', the role 'activity_ActivityPartition20' has cardinality 0..*, and from 'activity_ActivityPartition', the role 'activity_ActivityPartition18' has cardinality 0..*.
+An association connects 'activity_Connector' and 'activity_Connector'. From 'activity_Connector', the role 'activity_Connector21' has cardinality 0..*, and from 'activity_Connector', the role 'activity_Connector' has cardinality 0..*.
+An association connects 'activity_Action' and 'activity_OutputPin'. From 'activity_Action', the role 'activity_Action' has cardinality 0..*, and from 'activity_OutputPin', the role 'activity_OutputPin' has cardinality 0..*.
+An association connects 'activity_InputPin' and 'activity_Action'. From 'activity_InputPin', the role 'activity_InputPin' has cardinality 0..*, and from 'activity_Action', the role 'activity_Action25' has cardinality 0..*.

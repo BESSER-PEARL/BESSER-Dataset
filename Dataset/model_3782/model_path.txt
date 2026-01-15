@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atischenko/atgen/plugins/org.eclipse.atischenko.generator.tests/model/TestModel.ecore

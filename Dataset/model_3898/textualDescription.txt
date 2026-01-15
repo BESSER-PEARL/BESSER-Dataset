@@ -1,0 +1,22 @@
+The domain model 'extlibrary' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'extlibrary_Book' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_Item' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_Borrower' represents an important domain concept.
+It does not declare any attributes.
+
+'extlibrary_Borrowable' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BookCategory' is defined but does not specify any literals.
+
+Relationships between classes are modeled using associations.
+An association connects 'extlibrary_Borrowable' and 'extlibrary_Borrower'. From 'extlibrary_Borrowable', the role 'extlibrary_Borrowable' has cardinality 0..*, and from 'extlibrary_Borrower', the role 'extlibrary_Borrower' has cardinality 0..*.
+An association connects 'extlibrary_Borrowable' and 'extlibrary_Borrower'. From 'extlibrary_Borrowable', the role 'extlibrary_Borrowable3' has cardinality 0..*, and from 'extlibrary_Borrower', the role 'extlibrary_Borrower2' has cardinality 0..*.

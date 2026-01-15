@@ -1,0 +1,55 @@
+The domain model 'roc' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'roc_Action' represents an important domain concept.
+It has one attribute: 'intensity', which is of type str.
+
+'roc_SingleAction' represents an important domain concept.
+It has one attribute: 'actionName', which is of type str.
+
+'roc_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'roc_LeftRightDirection' represents an important domain concept.
+It has the following attributes: 'left', which is of type str; 'right', which is of type str.
+
+'roc_DirectedAction' represents an important domain concept.
+It does not declare any attributes.
+
+'roc_Movement' represents an important domain concept.
+It does not declare any attributes.
+
+'roc_LeftRightDirectedAction' represents an important domain concept.
+It has one attribute: 'tiltHead', which is of type str.
+
+'roc_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'roc_Motion' represents an important domain concept.
+It has the following attributes: 'durationUnit', which is of type str; 'duration', which is of type str.
+
+'roc_Direction' represents an important domain concept.
+It has the following attributes: 'LEFT', which is of type str; 'RIGHT', which is of type str; 'UP', which is of type str; 'DOWN', which is of type str.
+
+'roc_FullDirectedAction' represents an important domain concept.
+It has the following attributes: 'turnHead', which is of type str; 'turnEyes', which is of type str.
+
+'roc_CompleteAction' represents an important domain concept.
+It has one attribute: 'actionName', which is of type str.
+
+'roc_Speed' represents an important domain concept.
+It has the following attributes: 'FULL', which is of type str; 'SLOW', which is of type str; 'NORMAL', which is of type str; 'SLOWEST', which is of type str; 'FAST', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DurationUnit' defines the following possible values: 'SECONDS', 'MINUTES', 'MILLISECONDS'.
+The enumeration 'Intensity' defines the following possible values: 'A', 'D', 'B', 'C', 'E'.
+
+Relationships between classes are modeled using associations.
+An association connects 'roc_Movement' and 'roc_Program'. From 'roc_Movement', the role 'roc_Movement' has cardinality 0..*, and from 'roc_Program', the role 'roc_Program' has cardinality 0..*.
+An association connects 'roc_Motion' and 'roc_Movement'. From 'roc_Motion', the role 'roc_Motion' has cardinality 0..*, and from 'roc_Movement', the role 'roc_Movement2' has cardinality 0..*.
+An association connects 'roc_Motion' and 'roc_Action'. From 'roc_Motion', the role 'roc_Motion4' has cardinality 0..*, and from 'roc_Action', the role 'roc_Action' has cardinality 0..*.
+An association connects 'roc_Speed' and 'roc_Motion'. From 'roc_Speed', the role 'roc_Speed' has cardinality 0..*, and from 'roc_Motion', the role 'roc_Motion6' has cardinality 0..*.
+An association connects 'roc_Action' and 'roc_EObject'. From 'roc_Action', the role 'roc_Action8' has cardinality 0..*, and from 'roc_EObject', the role 'roc_EObject' has cardinality 0..*.
+An association connects 'roc_DirectedAction' and 'roc_EObject'. From 'roc_DirectedAction', the role 'roc_DirectedAction' has cardinality 0..*, and from 'roc_EObject', the role 'roc_EObject10' has cardinality 0..*.
+An association connects 'roc_EObject' and 'roc_DirectedAction'. From 'roc_EObject', the role 'roc_EObject13' has cardinality 0..*, and from 'roc_DirectedAction', the role 'roc_DirectedAction12' has cardinality 0..*.

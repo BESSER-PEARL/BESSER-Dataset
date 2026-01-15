@@ -1,0 +1,51 @@
+The domain model 'dtmc' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'dtmc_InvokedTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'dtmc_Dtmc' represents an important domain concept.
+It does not declare any attributes.
+
+'dtmc_SynchronizedTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'dtmc_Transition' represents an important domain concept.
+It has one attribute: 'probability', which is of type str.
+
+'dtmc_CallTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'dtmc_Node' represents an important domain concept.
+It has the following attributes: 'isFail', which is of type bool; 'isStart', which is of type bool; 'isEnd', which is of type bool.
+
+'dtmc_StandardTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'dtmc_Module' represents an important domain concept.
+It has one attribute: 'isAutonomous', which is of type bool.
+
+The model also captures inheritance relationships between classes.
+The class 'dtmc_SynchronizedTransition' is a specialization of 'Transition'.
+The class 'dtmc_CallTransition' is a specialization of 'Transition'.
+The class 'dtmc_InvokedTransition' is a specialization of 'Transition'.
+The class 'dtmc_StandardTransition' is a specialization of 'Transition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dtmc_Dtmc' and 'dtmc_Module'. From 'dtmc_Dtmc', the role 'dtmc_Dtmc' has cardinality 0..*, and from 'dtmc_Module', the role 'dtmc_Module' has cardinality 0..*.
+An association connects 'dtmc_Node' and 'dtmc_Module'. From 'dtmc_Node', the role 'nodes' has cardinality 0..*, and from 'dtmc_Module', the role 'Module' has cardinality 0..*.
+An association connects 'dtmc_Transition' and 'dtmc_Node'. From 'dtmc_Transition', the role 'Transition' has cardinality 0..*, and from 'dtmc_Node', the role '_from' has cardinality 0..*.
+An association connects 'dtmc_Node' and 'dtmc_Transition'. From 'dtmc_Node', the role '_to' has cardinality 0..*, and from 'dtmc_Transition', the role 'Transition4' has cardinality 0..*.
+An association connects 'dtmc_Transition' and 'dtmc_Node'. From 'dtmc_Transition', the role 'outTransitions' has cardinality 0..*, and from 'dtmc_Node', the role 'Node' has cardinality 0..*.
+An association connects 'dtmc_Transition' and 'dtmc_Node'. From 'dtmc_Transition', the role 'inTransitions' has cardinality 0..*, and from 'dtmc_Node', the role 'Node7' has cardinality 0..*.
+An association connects 'dtmc_Transition' and 'dtmc_Module'. From 'dtmc_Transition', the role 'transitions' has cardinality 0..*, and from 'dtmc_Module', the role 'Module9' has cardinality 0..*.
+An association connects 'dtmc_SynchronizedTransition' and 'dtmc_SynchronizedTransition'. From 'dtmc_SynchronizedTransition', the role 'SynchronizedTransition' has cardinality 0..*, and from 'dtmc_SynchronizedTransition', the role 'synchedWith' has cardinality 0..*.
+An association connects 'dtmc_SynchronizedTransition' and 'dtmc_SynchronizedTransition'. From 'dtmc_SynchronizedTransition', the role 'syncWith' has cardinality 0..*, and from 'dtmc_SynchronizedTransition', the role 'SynchronizedTransition14' has cardinality 0..*.
+An association connects 'dtmc_Node' and 'dtmc_Module'. From 'dtmc_Node', the role 'Node16' has cardinality 0..*, and from 'dtmc_Module', the role 'module' has cardinality 0..*.
+An association connects 'dtmc_Module' and 'dtmc_Transition'. From 'dtmc_Module', the role 'module18' has cardinality 0..*, and from 'dtmc_Transition', the role 'Transition19' has cardinality 0..*.
+An association connects 'dtmc_CallTransition' and 'dtmc_InvokedTransition'. From 'dtmc_CallTransition', the role 'callTransition' has cardinality 0..*, and from 'dtmc_InvokedTransition', the role 'InvokedTransition' has cardinality 0..*.
+An association connects 'dtmc_InvokedTransition' and 'dtmc_CallTransition'. From 'dtmc_InvokedTransition', the role 'invokedTransition' has cardinality 0..*, and from 'dtmc_CallTransition', the role 'CallTransition' has cardinality 0..*.

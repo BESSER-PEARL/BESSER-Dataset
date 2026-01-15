@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Hettwein/ConquestGeneration/ConquestGeneration/testmodel/model/bowling.ecore

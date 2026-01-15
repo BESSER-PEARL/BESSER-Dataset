@@ -1,0 +1,134 @@
+The domain model 'railDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'railDsl_Platform' represents an important domain concept.
+It has one attribute: 'length', which is of type float.
+
+'railDsl_RouteObject' represents an important domain concept.
+It has the following attributes: 'error', which is of type bool; 'speedLimit', which is of type str.
+
+'railDsl_LevelCrossing' represents an important domain concept.
+It has the following attributes: 'length', which is of type float; 'closed', which is of type bool.
+
+'railDsl_Point' represents an important domain concept.
+It has the following attributes: 'selectedOutput', which is of type int; 'locked', which is of type bool; 'selectedInput', which is of type int; 'kind', which is of type str.
+
+'railDsl_TrainRoutePoint' represents an important domain concept.
+It has the following attributes: 'selectedInput', which is of type int; 'selectedOutput', which is of type int.
+
+'railDsl_TrackObject' represents an important domain concept.
+It has one attribute: 'length', which is of type float.
+
+'RouteObject' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'railDsl_SegmentPosition' represents an important domain concept.
+It has the following attributes: 'position', which is of type float; 'atEnd', which is of type bool; 'side', which is of type str; 'atStart', which is of type bool; 'orientation', which is of type str.
+
+'SegmentObject' represents an important domain concept.
+It does not declare any attributes.
+
+'railDsl_Segment' represents an important domain concept.
+It does not declare any attributes.
+
+'railDsl_Train' represents an important domain concept.
+It has the following attributes: 'speed', which is of type float; 'acceleration', which is of type float; 'length', which is of type float.
+
+'TrainRouteObject' represents an important domain concept.
+It does not declare any attributes.
+
+'railDsl_Signal' represents an important domain concept.
+It has the following attributes: 'shunting', which is of type bool; 'main', which is of type bool.
+
+'railDsl_TrainRouteObject' represents an important domain concept.
+It has one attribute: 'speedLimit', which is of type str.
+
+'railDsl_TrainRouteSegment' represents an important domain concept.
+It does not declare any attributes.
+
+'TrackObject' represents an important domain concept.
+It does not declare any attributes.
+
+'railDsl_SegmentObject' represents an important domain concept.
+It does not declare any attributes.
+
+'railDsl_Station' represents an important domain concept.
+It does not declare any attributes.
+
+'railDsl_Track' represents an important domain concept.
+It does not declare any attributes.
+
+'railDsl_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'railDsl_TrainSegment' represents an important domain concept.
+It has one attribute: 'length', which is of type float.
+
+'railDsl_TrainRoute' represents an important domain concept.
+It has the following attributes: 'locked', which is of type bool; 'kind', which is of type str.
+
+'railDsl_Derailer' represents an important domain concept.
+It has one attribute: 'active', which is of type bool.
+
+'railDsl_Vertex' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'railDsl_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VertexKind' defines the following possible values: 'TrackEnd', 'StationBorder', 'InnerVertex'.
+The enumeration 'TrainRouteKind' defines the following possible values: 'Shunting', 'Main'.
+The enumeration 'Orientation' defines the following possible values: 'Forwards', 'Backwards'.
+The enumeration 'SpeedLimit' defines the following possible values: 'Max', 'Stop', 'Speed80', 'Speed120', 'Speed40'.
+The enumeration 'PointKind' defines the following possible values: 'FixedCrossing', 'SingleSlipPoint', 'SimplePoint', 'DoublePoint', 'DoubleSlipPoint'.
+The enumeration 'Side' defines the following possible values: 'Both', 'Right', 'Left'.
+
+The model also captures inheritance relationships between classes.
+The class 'railDsl_Station' is a specialization of 'NamedElement'.
+The class 'railDsl_Declaration' is a specialization of 'NamedElement'.
+The class 'railDsl_TrackObject' is a specialization of 'Declaration'.
+The class 'railDsl_TrackObject' is a specialization of 'RouteObject'.
+The class 'railDsl_Vertex' is a specialization of 'Declaration'.
+The class 'railDsl_Segment' is a specialization of 'TrackObject'.
+The class 'railDsl_SegmentObject' is a specialization of 'NamedElement'.
+The class 'railDsl_SegmentObject' is a specialization of 'RouteObject'.
+The class 'railDsl_Derailer' is a specialization of 'SegmentObject'.
+The class 'railDsl_LevelCrossing' is a specialization of 'SegmentObject'.
+The class 'railDsl_Signal' is a specialization of 'SegmentObject'.
+The class 'railDsl_Platform' is a specialization of 'SegmentObject'.
+The class 'railDsl_Point' is a specialization of 'TrackObject'.
+The class 'railDsl_Track' is a specialization of 'Declaration'.
+The class 'railDsl_Train' is a specialization of 'Declaration'.
+The class 'railDsl_TrainRoute' is a specialization of 'Declaration'.
+The class 'railDsl_TrainRoutePoint' is a specialization of 'TrainRouteObject'.
+The class 'railDsl_TrainRouteSegment' is a specialization of 'TrainRouteObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'railDsl_Declaration' and 'railDsl_Station'. From 'railDsl_Declaration', the role 'railDsl_Declaration' has cardinality 0..*, and from 'railDsl_Station', the role 'railDsl_Station' has cardinality 0..*.
+An association connects 'railDsl_Vertex' and 'railDsl_Segment'. From 'railDsl_Vertex', the role 'railDsl_Vertex' has cardinality 0..*, and from 'railDsl_Segment', the role 'railDsl_Segment' has cardinality 0..*.
+An association connects 'railDsl_Vertex' and 'railDsl_Segment'. From 'railDsl_Vertex', the role 'railDsl_Vertex4' has cardinality 0..*, and from 'railDsl_Segment', the role 'railDsl_Segment3' has cardinality 0..*.
+An association connects 'railDsl_Segment' and 'railDsl_SegmentObject'. From 'railDsl_Segment', the role 'railDsl_Segment6' has cardinality 0..*, and from 'railDsl_SegmentObject', the role 'railDsl_SegmentObject' has cardinality 0..*.
+An association connects 'railDsl_SegmentObject' and 'railDsl_SegmentPosition'. From 'railDsl_SegmentObject', the role 'railDsl_SegmentObject8' has cardinality 0..*, and from 'railDsl_SegmentPosition', the role 'railDsl_SegmentPosition' has cardinality 0..*.
+An association connects 'railDsl_Signal' and 'railDsl_Signal'. From 'railDsl_Signal', the role 'railDsl_Signal9' has cardinality 0..*, and from 'railDsl_Signal', the role 'railDsl_Signal' has cardinality 0..*.
+An association connects 'railDsl_SegmentPosition' and 'railDsl_Segment'. From 'railDsl_SegmentPosition', the role 'railDsl_SegmentPosition12' has cardinality 0..*, and from 'railDsl_Segment', the role 'railDsl_Segment13' has cardinality 0..*.
+An association connects 'railDsl_Point' and 'railDsl_Vertex'. From 'railDsl_Point', the role 'railDsl_Point' has cardinality 0..*, and from 'railDsl_Vertex', the role 'railDsl_Vertex15' has cardinality 0..*.
+An association connects 'railDsl_Vertex' and 'railDsl_Point'. From 'railDsl_Vertex', the role 'railDsl_Vertex18' has cardinality 0..*, and from 'railDsl_Point', the role 'railDsl_Point17' has cardinality 0..*.
+An association connects 'railDsl_TrackObject' and 'railDsl_Track'. From 'railDsl_TrackObject', the role 'railDsl_TrackObject' has cardinality 0..*, and from 'railDsl_Track', the role 'railDsl_Track' has cardinality 0..*.
+An association connects 'railDsl_TrainSegment' and 'railDsl_Train'. From 'railDsl_TrainSegment', the role 'railDsl_TrainSegment' has cardinality 0..*, and from 'railDsl_Train', the role 'railDsl_Train' has cardinality 0..*.
+An association connects 'railDsl_Train' and 'railDsl_SegmentPosition'. From 'railDsl_Train', the role 'railDsl_Train22' has cardinality 0..*, and from 'railDsl_SegmentPosition', the role 'railDsl_SegmentPosition23' has cardinality 0..*.
+An association connects 'railDsl_SegmentPosition' and 'railDsl_TrainSegment'. From 'railDsl_SegmentPosition', the role 'railDsl_SegmentPosition26' has cardinality 0..*, and from 'railDsl_TrainSegment', the role 'railDsl_TrainSegment25' has cardinality 0..*.
+An association connects 'railDsl_TrainRoute' and 'railDsl_TrainRouteObject'. From 'railDsl_TrainRoute', the role 'railDsl_TrainRoute' has cardinality 0..*, and from 'railDsl_TrainRouteObject', the role 'railDsl_TrainRouteObject' has cardinality 0..*.
+An association connects 'railDsl_TrainRoute' and 'railDsl_Signal'. From 'railDsl_TrainRoute', the role 'railDsl_TrainRoute29' has cardinality 0..*, and from 'railDsl_Signal', the role 'railDsl_Signal30' has cardinality 0..*.
+An association connects 'railDsl_TrainRoute' and 'railDsl_Signal'. From 'railDsl_TrainRoute', the role 'railDsl_TrainRoute32' has cardinality 0..*, and from 'railDsl_Signal', the role 'railDsl_Signal33' has cardinality 0..*.
+An association connects 'railDsl_TrainRoute' and 'railDsl_TrainRouteObject'. From 'railDsl_TrainRoute', the role 'railDsl_TrainRoute35' has cardinality 0..*, and from 'railDsl_TrainRouteObject', the role 'railDsl_TrainRouteObject36' has cardinality 0..*.
+An association connects 'railDsl_TrainRoute' and 'railDsl_TrainRoute'. From 'railDsl_TrainRoute', the role 'railDsl_TrainRoute37' has cardinality 0..*, and from 'railDsl_TrainRoute', the role 'railDsl_TrainRoute39' has cardinality 0..*.
+An association connects 'railDsl_TrainRoutePoint' and 'railDsl_Point'. From 'railDsl_TrainRoutePoint', the role 'railDsl_TrainRoutePoint' has cardinality 0..*, and from 'railDsl_Point', the role 'railDsl_Point41' has cardinality 0..*.
+An association connects 'railDsl_Segment' and 'railDsl_TrainRouteSegment'. From 'railDsl_Segment', the role 'railDsl_Segment43' has cardinality 0..*, and from 'railDsl_TrainRouteSegment', the role 'railDsl_TrainRouteSegment' has cardinality 0..*.

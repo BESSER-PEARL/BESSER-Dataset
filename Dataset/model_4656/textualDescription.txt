@@ -1,0 +1,80 @@
+The domain model 'di' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'di_Plane' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Bounds' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Point' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'di_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Diagram' represents an important domain concept.
+It has the following attributes: 'resolution', which is of type float; 'documentation', which is of type str; 'name', which is of type str.
+
+'DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Style' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'di_LabeledShape' represents an important domain concept.
+It does not declare any attributes.
+
+'di_DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'di_LabeledEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'di_Node' is a specialization of 'DiagramElement'.
+The class 'di_Edge' is a specialization of 'DiagramElement'.
+The class 'di_Shape' is a specialization of 'Node'.
+The class 'di_LabeledEdge' is a specialization of 'Edge'.
+The class 'di_Label' is a specialization of 'Node'.
+The class 'di_LabeledShape' is a specialization of 'Shape'.
+The class 'di_Plane' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'di_DiagramElement' and 'di_Diagram'. From 'di_DiagramElement', the role 'rootElement' has cardinality 0..*, and from 'di_Diagram', the role 'Diagram' has cardinality 0..*.
+An association connects 'di_DiagramElement' and 'di_DiagramElement'. From 'di_DiagramElement', the role 'ownedElement' has cardinality 0..*, and from 'di_DiagramElement', the role 'DiagramElement' has cardinality 0..*.
+An association connects 'di_DiagramElement' and 'di_DiagramElement'. From 'di_DiagramElement', the role 'owningElement' has cardinality 0..*, and from 'di_DiagramElement', the role 'DiagramElement5' has cardinality 0..*.
+An association connects 'di_DiagramElement' and 'di_EObject'. From 'di_DiagramElement', the role 'di_DiagramElement' has cardinality 0..*, and from 'di_EObject', the role 'di_EObject' has cardinality 0..*.
+An association connects 'di_DiagramElement' and 'di_Style'. From 'di_DiagramElement', the role 'di_DiagramElement8' has cardinality 0..*, and from 'di_Style', the role 'di_Style' has cardinality 0..*.
+An association connects 'di_Style' and 'di_Diagram'. From 'di_Style', the role 'di_Style10' has cardinality 0..*, and from 'di_Diagram', the role 'di_Diagram' has cardinality 0..*.
+An association connects 'di_Diagram' and 'di_DiagramElement'. From 'di_Diagram', the role 'owningDiagram' has cardinality 0..*, and from 'di_DiagramElement', the role 'DiagramElement12' has cardinality 0..*.
+An association connects 'di_Edge' and 'di_DiagramElement'. From 'di_Edge', the role 'di_Edge' has cardinality 0..*, and from 'di_DiagramElement', the role 'di_DiagramElement14' has cardinality 0..*.
+An association connects 'di_DiagramElement' and 'di_Edge'. From 'di_DiagramElement', the role 'di_DiagramElement17' has cardinality 0..*, and from 'di_Edge', the role 'di_Edge16' has cardinality 0..*.
+An association connects 'di_Point' and 'di_Edge'. From 'di_Point', the role 'di_Point' has cardinality 0..*, and from 'di_Edge', the role 'di_Edge19' has cardinality 0..*.
+An association connects 'di_Shape' and 'di_Bounds'. From 'di_Shape', the role 'di_Shape' has cardinality 0..*, and from 'di_Bounds', the role 'di_Bounds' has cardinality 0..*.
+An association connects 'di_LabeledEdge' and 'di_Label'. From 'di_LabeledEdge', the role 'di_LabeledEdge' has cardinality 0..*, and from 'di_Label', the role 'di_Label' has cardinality 0..*.
+An association connects 'di_Label' and 'di_Bounds'. From 'di_Label', the role 'di_Label23' has cardinality 0..*, and from 'di_Bounds', the role 'di_Bounds24' has cardinality 0..*.
+An association connects 'di_Label' and 'di_LabeledShape'. From 'di_Label', the role 'di_Label26' has cardinality 0..*, and from 'di_LabeledShape', the role 'di_LabeledShape' has cardinality 0..*.
+An association connects 'di_DiagramElement' and 'di_Plane'. From 'di_DiagramElement', the role 'di_DiagramElement28' has cardinality 0..*, and from 'di_Plane', the role 'di_Plane' has cardinality 0..*.

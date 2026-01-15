@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Bynaryman/COMP-Python/21-11-2016/org.xtext.comp/model/generated/Wh.ecore

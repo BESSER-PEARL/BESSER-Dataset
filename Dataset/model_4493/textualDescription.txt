@@ -1,0 +1,41 @@
+The domain model 'dSL' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'dSL_Action' represents an important domain concept.
+It has the following attributes: 'driveDirection', which is of type bool; 'driveDistance', which is of type bool; 'steer', which is of type bool; 'blinkLights', which is of type bool; 'probeLake', which is of type bool; 'showLakes', which is of type bool; 'direction', which is of type str.
+
+'dSL_Condition' represents an important domain concept.
+It has the following attributes: 'atLake', which is of type bool; 'isProbed', which is of type bool; 'collision', which is of type bool; 'allLakes', which is of type bool; 'not', which is of type bool.
+
+'dSL_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_Angle' represents an important domain concept.
+It has the following attributes: 'away', which is of type bool; 'value', which is of type int.
+
+'dSL_Specification' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_ActionList' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_Distance' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'dSL_ConditionList' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Direction' defines the following possible values: 'BACKWARD', 'FORWARD'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dSL_Specification' and 'dSL_Rule'. From 'dSL_Specification', the role 'dSL_Specification' has cardinality 0..*, and from 'dSL_Rule', the role 'dSL_Rule' has cardinality 0..*.
+An association connects 'dSL_Rule' and 'dSL_ConditionList'. From 'dSL_Rule', the role 'dSL_Rule2' has cardinality 0..*, and from 'dSL_ConditionList', the role 'dSL_ConditionList' has cardinality 0..*.
+An association connects 'dSL_ActionList' and 'dSL_Rule'. From 'dSL_ActionList', the role 'dSL_ActionList' has cardinality 0..*, and from 'dSL_Rule', the role 'dSL_Rule4' has cardinality 0..*.
+An association connects 'dSL_ConditionList' and 'dSL_Condition'. From 'dSL_ConditionList', the role 'dSL_ConditionList6' has cardinality 0..*, and from 'dSL_Condition', the role 'dSL_Condition' has cardinality 0..*.
+An association connects 'dSL_Condition' and 'dSL_Condition'. From 'dSL_Condition', the role 'dSL_Condition9' has cardinality 0..*, and from 'dSL_Condition', the role 'dSL_Condition7' has cardinality 0..*.
+An association connects 'dSL_Condition' and 'dSL_Distance'. From 'dSL_Condition', the role 'dSL_Condition11' has cardinality 0..*, and from 'dSL_Distance', the role 'dSL_Distance' has cardinality 0..*.
+An association connects 'dSL_Action' and 'dSL_ActionList'. From 'dSL_Action', the role 'dSL_Action' has cardinality 0..*, and from 'dSL_ActionList', the role 'dSL_ActionList13' has cardinality 0..*.
+An association connects 'dSL_Distance' and 'dSL_Action'. From 'dSL_Distance', the role 'dSL_Distance16' has cardinality 0..*, and from 'dSL_Action', the role 'dSL_Action15' has cardinality 0..*.
+An association connects 'dSL_Action' and 'dSL_Angle'. From 'dSL_Action', the role 'dSL_Action18' has cardinality 0..*, and from 'dSL_Angle', the role 'dSL_Angle' has cardinality 0..*.

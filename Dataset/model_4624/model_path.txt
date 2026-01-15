@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/neoscada/hmi/org.eclipse.scada.vi.model/model/VisualInterface.ecore

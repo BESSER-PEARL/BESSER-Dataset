@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/dgu123/thomaskipar-emf4cpp-extensions/emf4cpp/emf4cpp/emf4cpp.tests/company/company.ecore

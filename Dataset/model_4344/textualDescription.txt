@@ -1,0 +1,257 @@
+The domain model 'mid' describes the core structural elements and their relationships within the system.
+
+The model defines 60 main class(es).
+
+'mid_ExtendibleElement' represents an important domain concept.
+It has the following attributes: 'level', which is of type str; 'metatypeUri', which is of type str; 'dynamic', which is of type bool; 'uri', which is of type str; 'name', which is of type str.
+
+'mid_relationship_ExtendibleElementReference' represents an important domain concept.
+It has one attribute: 'modifiable', which is of type bool.
+
+'mid_relationship_Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'operator_mid_ModelEndpoint' represents an important domain concept.
+It does not declare any attributes.
+
+'GenericEndpoint' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtendibleElementReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtendibleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_relationship_BinaryMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'relationship_mid_ExtendibleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_ModelEndpoint' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_relationship_ModelElementEndpoint' represents an important domain concept.
+It does not declare any attributes.
+
+'relationship_mid_ModelEndpoint' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_relationship_MappingReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElementEndpoint' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_GenericElement' represents an important domain concept.
+It has one attribute: 'abstract', which is of type bool.
+
+'mid_operator_ConversionOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_relationship_ModelEndpointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_ExtendibleElementConstraint' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'implementation', which is of type str.
+
+'ExtendibleElementConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElementEndpointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Model' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElementReference' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_relationship_ModelElementEndpointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ConversionOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_editor_Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'operator_mid_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingReference' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_relationship_ModelRel' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_operator_OperatorConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'GenericElement' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_EMFInfo' represents an important domain concept.
+It has the following attributes: 'relatedClassName', which is of type str; 'featureName', which is of type str; 'attribute', which is of type bool; 'className', which is of type str.
+
+'mid_operator_OperatorGeneric' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_operator_WorkflowOperator' represents an important domain concept.
+It has one attribute: 'midUri', which is of type str.
+
+'OperatorConstraintRule' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_operator_OperatorInput' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_Model' represents an important domain concept.
+It has the following attributes: 'origin', which is of type str; 'fileExtension', which is of type str.
+
+'mid_operator_RandomOperator' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_operator_OperatorConstraintRule' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_MID' represents an important domain concept.
+It has one attribute: 'level', which is of type str.
+
+'ModelRel' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_operator_Operator' represents an important domain concept.
+It has the following attributes: 'updateMID', which is of type bool; 'inputSubdir', which is of type str; 'executionTime', which is of type str; 'commutative', which is of type bool.
+
+'ModelEndpointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_relationship_BinaryMappingReference' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_operator_OperatorConstraintParameter' represents an important domain concept.
+It has one attribute: 'endpointIndex', which is of type int.
+
+'operator_mid_GenericElement' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_editor_Editor' represents an important domain concept.
+It has the following attributes: 'modelUri', which is of type str; 'wizardDialogClass', which is of type str; 'wizardId', which is of type str; 'fileExtensions', which is of type str; 'id', which is of type str.
+
+'mid_relationship_ModelElementReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtendibleElementEndpoint' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_ExtendibleElementEndpoint' represents an important domain concept.
+It has the following attributes: 'upperBound', which is of type int; 'lowerBound', which is of type int.
+
+'OperatorConstraintParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_relationship_BinaryModelRel' represents an important domain concept.
+It does not declare any attributes.
+
+'Editor' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_operator_GenericEndpoint' represents an important domain concept.
+It has one attribute: 'metatargetUri', which is of type str.
+
+'relationship_mid_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_relationship_ExtendibleElementEndpointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtendibleElementEndpointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'mid_EStringToExtendibleElementMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ModelOrigin' defines the following possible values: 'IMPORTED', 'CREATED'.
+The enumeration 'MIDLevel' defines the following possible values: 'INSTANCES', 'WORKFLOWS', 'TYPES'.
+
+The model also captures inheritance relationships between classes.
+The class 'mid_ExtendibleElementEndpoint' is a specialization of 'ExtendibleElement'.
+The class 'mid_Model' is a specialization of 'GenericElement'.
+The class 'mid_ModelElement' is a specialization of 'ExtendibleElement'.
+The class 'mid_ModelEndpoint' is a specialization of 'ExtendibleElementEndpoint'.
+The class 'mid_GenericElement' is a specialization of 'ExtendibleElement'.
+The class 'mid_relationship_ModelRel' is a specialization of 'Model'.
+The class 'mid_relationship_BinaryModelRel' is a specialization of 'ModelRel'.
+The class 'mid_relationship_ExtendibleElementEndpointReference' is a specialization of 'ExtendibleElementReference'.
+The class 'mid_relationship_ModelEndpointReference' is a specialization of 'ExtendibleElementEndpointReference'.
+The class 'mid_relationship_ModelElementReference' is a specialization of 'ExtendibleElementReference'.
+The class 'mid_relationship_Mapping' is a specialization of 'ExtendibleElement'.
+The class 'mid_relationship_BinaryMapping' is a specialization of 'Mapping'.
+The class 'mid_relationship_ModelElementEndpoint' is a specialization of 'ExtendibleElementEndpoint'.
+The class 'mid_relationship_MappingReference' is a specialization of 'ExtendibleElementReference'.
+The class 'mid_relationship_BinaryMappingReference' is a specialization of 'MappingReference'.
+The class 'mid_relationship_ModelElementEndpointReference' is a specialization of 'ExtendibleElementEndpointReference'.
+The class 'mid_editor_Editor' is a specialization of 'ExtendibleElement'.
+The class 'mid_editor_Diagram' is a specialization of 'Editor'.
+The class 'mid_operator_Operator' is a specialization of 'GenericElement'.
+The class 'mid_operator_ConversionOperator' is a specialization of 'Operator'.
+The class 'mid_operator_RandomOperator' is a specialization of 'Operator'.
+The class 'mid_operator_WorkflowOperator' is a specialization of 'Operator'.
+The class 'mid_operator_GenericEndpoint' is a specialization of 'ExtendibleElementEndpoint'.
+The class 'mid_operator_OperatorConstraint' is a specialization of 'ExtendibleElementConstraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mid_MID' and 'mid_Model'. From 'mid_MID', the role 'mid_MID' has cardinality 0..*, and from 'mid_Model', the role 'mid_Model' has cardinality 0..*.
+An association connects 'mid_MID' and 'Editor'. From 'mid_MID', the role 'mid_MID2' has cardinality 0..*, and from 'Editor', the role 'Editor' has cardinality 0..*.
+An association connects 'Operator' and 'mid_MID'. From 'Operator', the role 'Operator' has cardinality 0..*, and from 'mid_MID', the role 'mid_MID4' has cardinality 0..*.
+An association connects 'mid_EStringToExtendibleElementMap' and 'mid_MID'. From 'mid_EStringToExtendibleElementMap', the role 'mid_EStringToExtendibleElementMap' has cardinality 0..*, and from 'mid_MID', the role 'mid_MID6' has cardinality 0..*.
+An association connects 'mid_ExtendibleElement' and 'mid_EStringToExtendibleElementMap'. From 'mid_ExtendibleElement', the role 'mid_ExtendibleElement' has cardinality 0..*, and from 'mid_EStringToExtendibleElementMap', the role 'mid_EStringToExtendibleElementMap8' has cardinality 0..*.
+An association connects 'mid_ExtendibleElement' and 'mid_ExtendibleElement'. From 'mid_ExtendibleElement', the role 'mid_ExtendibleElement9' has cardinality 0..*, and from 'mid_ExtendibleElement', the role 'mid_ExtendibleElement11' has cardinality 0..*.
+An association connects 'mid_ExtendibleElement' and 'mid_ExtendibleElementConstraint'. From 'mid_ExtendibleElement', the role 'mid_ExtendibleElement13' has cardinality 0..*, and from 'mid_ExtendibleElementConstraint', the role 'mid_ExtendibleElementConstraint' has cardinality 0..*.
+An association connects 'mid_ExtendibleElement' and 'mid_ExtendibleElementEndpoint'. From 'mid_ExtendibleElement', the role 'mid_ExtendibleElement15' has cardinality 0..*, and from 'mid_ExtendibleElementEndpoint', the role 'mid_ExtendibleElementEndpoint' has cardinality 0..*.
+An association connects 'mid_Model' and 'Editor'. From 'mid_Model', the role 'mid_Model17' has cardinality 0..*, and from 'Editor', the role 'Editor18' has cardinality 0..*.
+An association connects 'mid_ModelElement' and 'mid_Model'. From 'mid_ModelElement', the role 'mid_ModelElement' has cardinality 0..*, and from 'mid_Model', the role 'mid_Model20' has cardinality 0..*.
+An association connects 'ConversionOperator' and 'mid_Model'. From 'ConversionOperator', the role 'ConversionOperator' has cardinality 0..*, and from 'mid_Model', the role 'mid_Model22' has cardinality 0..*.
+An association connects 'mid_EMFInfo' and 'mid_ModelElement'. From 'mid_EMFInfo', the role 'mid_EMFInfo' has cardinality 0..*, and from 'mid_ModelElement', the role 'mid_ModelElement24' has cardinality 0..*.
+An association connects 'relationship_mid_ModelEndpoint' and 'mid_relationship_ModelRel'. From 'relationship_mid_ModelEndpoint', the role 'relationship_mid_ModelEndpoint' has cardinality 0..*, and from 'mid_relationship_ModelRel', the role 'mid_relationship_ModelRel' has cardinality 0..*.
+An association connects 'mid_relationship_ModelRel' and 'Mapping'. From 'mid_relationship_ModelRel', the role 'mid_relationship_ModelRel27' has cardinality 0..*, and from 'Mapping', the role 'Mapping' has cardinality 0..*.
+An association connects 'ModelEndpointReference' and 'mid_relationship_ModelRel'. From 'ModelEndpointReference', the role 'ModelEndpointReference' has cardinality 0..*, and from 'mid_relationship_ModelRel', the role 'mid_relationship_ModelRel29' has cardinality 0..*.
+An association connects 'mid_relationship_ModelRel' and 'MappingReference'. From 'mid_relationship_ModelRel', the role 'mid_relationship_ModelRel31' has cardinality 0..*, and from 'MappingReference', the role 'MappingReference' has cardinality 0..*.
+An association connects 'mid_relationship_BinaryModelRel' and 'relationship_mid_Model'. From 'mid_relationship_BinaryModelRel', the role 'mid_relationship_BinaryModelRel' has cardinality 0..*, and from 'relationship_mid_Model', the role 'relationship_mid_Model' has cardinality 0..*.
+An association connects 'relationship_mid_Model' and 'mid_relationship_BinaryModelRel'. From 'relationship_mid_Model', the role 'relationship_mid_Model35' has cardinality 0..*, and from 'mid_relationship_BinaryModelRel', the role 'mid_relationship_BinaryModelRel34' has cardinality 0..*.
+An association connects 'mid_relationship_ExtendibleElementReference' and 'relationship_mid_ExtendibleElement'. From 'mid_relationship_ExtendibleElementReference', the role 'mid_relationship_ExtendibleElementReference' has cardinality 0..*, and from 'relationship_mid_ExtendibleElement', the role 'relationship_mid_ExtendibleElement' has cardinality 0..*.
+An association connects 'mid_relationship_ExtendibleElementReference' and 'relationship_mid_ExtendibleElement'. From 'mid_relationship_ExtendibleElementReference', the role 'mid_relationship_ExtendibleElementReference38' has cardinality 0..*, and from 'relationship_mid_ExtendibleElement', the role 'relationship_mid_ExtendibleElement39' has cardinality 0..*.
+An association connects 'ExtendibleElementReference' and 'mid_relationship_ExtendibleElementReference'. From 'ExtendibleElementReference', the role 'ExtendibleElementReference' has cardinality 0..*, and from 'mid_relationship_ExtendibleElementReference', the role 'mid_relationship_ExtendibleElementReference41' has cardinality 0..*.
+An association connects 'mid_relationship_ModelEndpointReference' and 'ModelElementReference'. From 'mid_relationship_ModelEndpointReference', the role 'mid_relationship_ModelEndpointReference' has cardinality 0..*, and from 'ModelElementReference', the role 'ModelElementReference' has cardinality 0..*.
+An association connects 'mid_relationship_ModelElementReference' and 'ModelElementEndpointReference'. From 'mid_relationship_ModelElementReference', the role 'ModelElementEndpointReference' has cardinality 0..*, and from 'ModelElementEndpointReference', the role 'relationship' has cardinality 0..*.
+An association connects 'ModelElementEndpoint' and 'mid_relationship_Mapping'. From 'ModelElementEndpoint', the role 'ModelElementEndpoint' has cardinality 0..*, and from 'mid_relationship_Mapping', the role 'mid_relationship_Mapping' has cardinality 0..*.
+An association connects 'ModelElementEndpointReference' and 'mid_relationship_Mapping'. From 'ModelElementEndpointReference', the role 'ModelElementEndpointReference47' has cardinality 0..*, and from 'mid_relationship_Mapping', the role 'mid_relationship_Mapping46' has cardinality 0..*.
+An association connects 'ModelElementEndpointReference' and 'mid_relationship_MappingReference'. From 'ModelElementEndpointReference', the role 'ModelElementEndpointReference49' has cardinality 0..*, and from 'mid_relationship_MappingReference', the role 'mid_relationship_MappingReference' has cardinality 0..*.
+An association connects 'mid_relationship_BinaryMappingReference' and 'ModelElementReference'. From 'mid_relationship_BinaryMappingReference', the role 'mid_relationship_BinaryMappingReference' has cardinality 0..*, and from 'ModelElementReference', the role 'ModelElementReference51' has cardinality 0..*.
+An association connects 'ModelElementReference' and 'mid_relationship_BinaryMappingReference'. From 'ModelElementReference', the role 'ModelElementReference54' has cardinality 0..*, and from 'mid_relationship_BinaryMappingReference', the role 'mid_relationship_BinaryMappingReference53' has cardinality 0..*.
+An association connects 'ModelElementReference' and 'mid_relationship_ModelElementEndpointReference'. From 'ModelElementReference', the role 'relationship57' has cardinality 0..*, and from 'mid_relationship_ModelElementEndpointReference', the role 'ModelElementReference56' has cardinality 0..*.
+An association connects 'mid_operator_Operator' and 'operator_mid_ModelEndpoint'. From 'mid_operator_Operator', the role 'mid_operator_Operator' has cardinality 0..*, and from 'operator_mid_ModelEndpoint', the role 'operator_mid_ModelEndpoint' has cardinality 0..*.
+An association connects 'operator_mid_ModelEndpoint' and 'mid_operator_Operator'. From 'operator_mid_ModelEndpoint', the role 'operator_mid_ModelEndpoint61' has cardinality 0..*, and from 'mid_operator_Operator', the role 'mid_operator_Operator60' has cardinality 0..*.
+An association connects 'GenericEndpoint' and 'mid_operator_Operator'. From 'GenericEndpoint', the role 'GenericEndpoint' has cardinality 0..*, and from 'mid_operator_Operator', the role 'mid_operator_Operator63' has cardinality 0..*.
+An association connects 'mid_operator_Operator' and 'Operator'. From 'mid_operator_Operator', the role 'mid_operator_Operator65' has cardinality 0..*, and from 'Operator', the role 'Operator66' has cardinality 0..*.
+An association connects 'mid_operator_OperatorInput' and 'operator_mid_Model'. From 'mid_operator_OperatorInput', the role 'mid_operator_OperatorInput' has cardinality 0..*, and from 'operator_mid_Model', the role 'operator_mid_Model' has cardinality 0..*.
+An association connects 'mid_operator_OperatorInput' and 'ConversionOperator'. From 'mid_operator_OperatorInput', the role 'mid_operator_OperatorInput69' has cardinality 0..*, and from 'ConversionOperator', the role 'ConversionOperator70' has cardinality 0..*.
+An association connects 'mid_operator_OperatorInput' and 'operator_mid_ModelEndpoint'. From 'mid_operator_OperatorInput', the role 'mid_operator_OperatorInput72' has cardinality 0..*, and from 'operator_mid_ModelEndpoint', the role 'operator_mid_ModelEndpoint73' has cardinality 0..*.
+An association connects 'mid_operator_OperatorGeneric' and 'operator_mid_GenericElement'. From 'mid_operator_OperatorGeneric', the role 'mid_operator_OperatorGeneric' has cardinality 0..*, and from 'operator_mid_GenericElement', the role 'operator_mid_GenericElement' has cardinality 0..*.
+An association connects 'GenericEndpoint' and 'mid_operator_OperatorGeneric'. From 'GenericEndpoint', the role 'GenericEndpoint77' has cardinality 0..*, and from 'mid_operator_OperatorGeneric', the role 'mid_operator_OperatorGeneric76' has cardinality 0..*.
+An association connects 'mid_operator_OperatorConstraint' and 'OperatorConstraintRule'. From 'mid_operator_OperatorConstraint', the role 'mid_operator_OperatorConstraint' has cardinality 0..*, and from 'OperatorConstraintRule', the role 'OperatorConstraintRule' has cardinality 0..*.
+An association connects 'mid_operator_OperatorConstraintRule' and 'OperatorConstraintParameter'. From 'mid_operator_OperatorConstraintRule', the role 'mid_operator_OperatorConstraintRule' has cardinality 0..*, and from 'OperatorConstraintParameter', the role 'OperatorConstraintParameter' has cardinality 0..*.
+An association connects 'OperatorConstraintParameter' and 'mid_operator_OperatorConstraintRule'. From 'OperatorConstraintParameter', the role 'OperatorConstraintParameter82' has cardinality 0..*, and from 'mid_operator_OperatorConstraintRule', the role 'mid_operator_OperatorConstraintRule81' has cardinality 0..*.
+An association connects 'mid_operator_OperatorConstraintParameter' and 'ModelEndpointReference'. From 'mid_operator_OperatorConstraintParameter', the role 'mid_operator_OperatorConstraintParameter' has cardinality 0..*, and from 'ModelEndpointReference', the role 'ModelEndpointReference84' has cardinality 0..*.

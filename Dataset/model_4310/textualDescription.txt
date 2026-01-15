@@ -1,0 +1,29 @@
+The domain model 'metric' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'metric_AggregatedRealMetric' represents an important domain concept.
+It has the following attributes: 'median', which is of type float; 'average', which is of type float; 'maximum', which is of type float; 'minimum', which is of type float; 'standardDeviation', which is of type float.
+
+'metric_AggregatedIntegerMetric' represents an important domain concept.
+It has the following attributes: 'standardDeviation', which is of type float; 'average', which is of type float; 'minimum', which is of type str; 'maximum', which is of type str; 'median', which is of type str.
+
+'metric_Container' represents an important domain concept.
+It does not declare any attributes.
+
+'metric_SimpleMetric' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'metric_Metric' represents an important domain concept.
+It has the following attributes: 'code', which is of type str; 'name', which is of type str; 'description', which is of type str.
+
+'Metric' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'metric_AggregatedIntegerMetric' is a specialization of 'Metric'.
+The class 'metric_AggregatedRealMetric' is a specialization of 'Metric'.
+The class 'metric_SimpleMetric' is a specialization of 'Metric'.
+
+Relationships between classes are modeled using associations.
+An association connects 'metric_Metric' and 'metric_Container'. From 'metric_Metric', the role 'metric_Metric' has cardinality 0..*, and from 'metric_Container', the role 'metric_Container' has cardinality 0..*.

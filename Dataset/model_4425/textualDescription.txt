@@ -1,0 +1,134 @@
+The domain model 'iotw' describes the core structural elements and their relationships within the system.
+
+The model defines 30 main class(es).
+
+'iotw_OutputDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'iotw_Device' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Device' represents an important domain concept.
+It does not declare any attributes.
+
+'iotw_StateSchema' represents an important domain concept.
+It does not declare any attributes.
+
+'iotw_StateComponent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Mainboard' represents an important domain concept.
+It does not declare any attributes.
+
+'iotw_BluetoothHC06' represents an important domain concept.
+It has the following attributes: 'pinGND', which is of type str; 'pinVCC', which is of type str; 'pinRXD', which is of type str; 'pinTXD', which is of type str.
+
+'Connectivity' represents an important domain concept.
+It does not declare any attributes.
+
+'iotw_Decision' represents an important domain concept.
+It does not declare any attributes.
+
+'iotw_StartPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'iotw_Component' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'constraints', which is of type str.
+
+'iotw_Keypad4x4' represents an important domain concept.
+It has the following attributes: 'pin2', which is of type str; 'pin4', which is of type str; 'nameButtonB', which is of type str; 'nameButton4', which is of type str; 'nameButton7', which is of type str; 'nameButtonC', which is of type str; 'pin1', which is of type str; 'pin3', which is of type str; 'pin6', which is of type str; 'nameButton9', which is of type str; 'pin7', which is of type str; 'pin8', which is of type str; 'nameButton6', which is of type str; 'cols', which is of type int; 'nameButtonAsterisk', which is of type str; 'nameButtonA', which is of type str; 'nameButton5', which is of type str; 'pin5', which is of type str; 'nameButton2', which is of type str; 'rows', which is of type int; 'keys', which is of type str; 'nameButtonHash', which is of type str; 'nameButton0', which is of type str; 'nameButton8', which is of type str; 'nameButton1', which is of type str; 'nameButtonD', which is of type str; 'nameButton3', which is of type str.
+
+'iotw_EndPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'iotw_IODevice' represents an important domain concept.
+It does not declare any attributes.
+
+'iotw_LED' represents an important domain concept.
+It has the following attributes: 'pin2', which is of type str; 'pin1', which is of type str.
+
+'iotw_InputDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'StateComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'iotw_WifiESP8266' represents an important domain concept.
+It has the following attributes: 'mode', which is of type str; 'port', which is of type int; 'pinRX', which is of type str; 'sSID_AccessPoint', which is of type str; 'idConnection', which is of type str; 'pinVcc', which is of type str; 'protocol', which is of type str; 'password_AccessPoint', which is of type str; 'baud', which is of type str; 'connectedChannel', which is of type str; 'pinTX', which is of type str; 'pinCHPD', which is of type str; 'iP', which is of type str; 'sSID_ST', which is of type str; 'password_ST', which is of type str; 'pinGND', which is of type str.
+
+'InputDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'iotw_I2CLCD' represents an important domain concept.
+It has the following attributes: 'pinVcc', which is of type str; 'pinSCL', which is of type str; 'type', which is of type str; 'pinSDA', which is of type str; 'pinGND', which is of type str.
+
+'iotw_Connectivity' represents an important domain concept.
+It does not declare any attributes.
+
+'iotw_StateFrame' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'iotw_ArduinoUNOR3' represents an important domain concept.
+It has the following attributes: 'pin2', which is of type str; 'pinA0', which is of type str; 'pinA1', which is of type str; 'pin5', which is of type str; 'pin1', which is of type str; 'pin13', which is of type str; 'pin7', which is of type str; 'pin11', which is of type str; 'pin10', which is of type str; 'pin8', which is of type str; 'pinA2', which is of type str; 'pinA4', which is of type str; 'pinA3', which is of type str; 'pin0', which is of type str; 'pin3', which is of type str; 'pin6', which is of type str; 'pinA5', which is of type str; 'pin12', which is of type str; 'pin9', which is of type str; 'pin4', which is of type str.
+
+'iotw_Mainboard' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iotw_Button' represents an important domain concept.
+It has one attribute: 'pin1', which is of type str.
+
+'iotw_Buzzer' represents an important domain concept.
+It has the following attributes: 'Time', which is of type int; 'pin1', which is of type str; 'pin2', which is of type str; 'Tone', which is of type int.
+
+'OutputDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'IODevice' represents an important domain concept.
+It does not declare any attributes.
+
+'iotw_Connection' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'label', which is of type str; 'routerKind', which is of type str; 'bendpoints', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ListConnectionChannel' defines the following possible values: 'Single', 'Multiple'.
+The enumeration 'ConnectionKind' defines the following possible values: 'OUTSIDE_FLOW', 'STATE_FLOW'.
+The enumeration 'WifiMode' defines the following possible values: 'Station', 'Access_Point', 'Both'.
+The enumeration 'RouterKind' defines the following possible values: 'MANHATTAN', 'BENDPOINT'.
+The enumeration 'ListProtocol' defines the following possible values: 'TCP', 'UDP'.
+The enumeration 'WifiIDConnection' defines the following possible values: 'id_0', 'id_3', 'id_2', 'id_1', 'id_4'.
+The enumeration 'ListBaud' defines the following possible values: 'baud_115200', 'baud_230400', 'baud_19200', 'baud_57600', 'baud_250000', 'baud_38400', 'baud_9600', 'baud_74880'.
+The enumeration 'I2CLCDType' defines the following possible values: 'I2CLCD2004', 'I2CLCD1602'.
+
+The model also captures inheritance relationships between classes.
+The class 'iotw_StateComponent' is a specialization of 'Component'.
+The class 'iotw_Device' is a specialization of 'Component'.
+The class 'iotw_IODevice' is a specialization of 'Device'.
+The class 'iotw_InputDevice' is a specialization of 'IODevice'.
+The class 'iotw_OutputDevice' is a specialization of 'IODevice'.
+The class 'iotw_Connectivity' is a specialization of 'Device'.
+The class 'iotw_ArduinoUNOR3' is a specialization of 'Mainboard'.
+The class 'iotw_Keypad4x4' is a specialization of 'InputDevice'.
+The class 'iotw_Button' is a specialization of 'InputDevice'.
+The class 'iotw_LED' is a specialization of 'OutputDevice'.
+The class 'iotw_I2CLCD' is a specialization of 'OutputDevice'.
+The class 'iotw_Buzzer' is a specialization of 'OutputDevice'.
+The class 'iotw_BluetoothHC06' is a specialization of 'Connectivity'.
+The class 'iotw_WifiESP8266' is a specialization of 'Connectivity'.
+The class 'iotw_StateFrame' is a specialization of 'StateComponent'.
+The class 'iotw_Decision' is a specialization of 'StateComponent'.
+The class 'iotw_StartPoint' is a specialization of 'StateComponent'.
+The class 'iotw_EndPoint' is a specialization of 'StateComponent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'iotw_Component' and 'iotw_Connection'. From 'iotw_Component', the role 'iotw_Component' has cardinality 0..*, and from 'iotw_Connection', the role 'iotw_Connection' has cardinality 0..*.
+An association connects 'iotw_Component' and 'iotw_Connection'. From 'iotw_Component', the role 'iotw_Component3' has cardinality 0..*, and from 'iotw_Connection', the role 'iotw_Connection2' has cardinality 0..*.
+An association connects 'iotw_Connection' and 'iotw_StateSchema'. From 'iotw_Connection', the role 'connnections' has cardinality 0..*, and from 'iotw_StateSchema', the role 'StateSchema' has cardinality 0..*.
+An association connects 'iotw_StateSchema' and 'iotw_StateComponent'. From 'iotw_StateSchema', the role 'iotw_StateSchema' has cardinality 0..*, and from 'iotw_StateComponent', the role 'iotw_StateComponent' has cardinality 0..*.
+An association connects 'iotw_StateSchema' and 'iotw_Connection'. From 'iotw_StateSchema', the role 'stateSchema' has cardinality 0..*, and from 'iotw_Connection', the role 'Connection' has cardinality 0..*.
+An association connects 'iotw_Connection' and 'iotw_StateComponent'. From 'iotw_Connection', the role 'iotw_Connection9' has cardinality 0..*, and from 'iotw_StateComponent', the role 'iotw_StateComponent8' has cardinality 0..*.
+An association connects 'iotw_Connection' and 'iotw_StateComponent'. From 'iotw_Connection', the role 'iotw_Connection12' has cardinality 0..*, and from 'iotw_StateComponent', the role 'iotw_StateComponent11' has cardinality 0..*.
+An association connects 'iotw_Device' and 'iotw_Mainboard'. From 'iotw_Device', the role 'devices' has cardinality 0..*, and from 'iotw_Mainboard', the role 'Mainboard' has cardinality 0..*.
+An association connects 'iotw_Mainboard' and 'iotw_Device'. From 'iotw_Mainboard', the role 'mainboard' has cardinality 0..*, and from 'iotw_Device', the role 'Device' has cardinality 0..*.

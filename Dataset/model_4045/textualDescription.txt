@@ -1,0 +1,201 @@
+The domain model 'uml' describes the core structural elements and their relationships within the system.
+
+The model defines 48 main class(es).
+
+'uml_UML_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_InterfaceRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_ActivityNode' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UML_StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UML_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_CallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_OpaqueExpression' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'language', which is of type str.
+
+'UML_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_ConnectorEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UML_RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'uml_UML_RedefinableElement' is a specialization of 'UML_NamedElement'.
+The class 'uml_UML_Feature' is a specialization of 'UML_RedefinableElement'.
+The class 'uml_UML_Namespace' is a specialization of 'UML_NamedElement'.
+The class 'uml_UML_Package' is a specialization of 'UML_Namespace'.
+The class 'uml_UML_PackageableElement' is a specialization of 'UML_NamedElement'.
+The class 'uml_UML_BehavioralFeature' is a specialization of 'UML_Namespace'.
+The class 'uml_UML_BehavioralFeature' is a specialization of 'UML_Feature'.
+The class 'uml_UML_StructuralFeature' is a specialization of 'UML_Feature'.
+The class 'uml_UML_StructuralFeature' is a specialization of 'UML_TypedElement'.
+The class 'uml_UML_Type' is a specialization of 'UML_PackageableElement'.
+The class 'uml_UML_TypedElement' is a specialization of 'UML_NamedElement'.
+The class 'uml_UML_Classifier' is a specialization of 'UML_Namespace'.
+The class 'uml_UML_Classifier' is a specialization of 'UML_Type'.
+The class 'uml_UML_Interface' is a specialization of 'UML_Classifier'.
+The class 'uml_UML_BehavioredClassifier' is a specialization of 'UML_Classifier'.
+The class 'uml_UML_Operation' is a specialization of 'UML_BehavioralFeature'.
+The class 'uml_UML_Class' is a specialization of 'UML_BehavioredClassifier'.
+The class 'uml_UML_Property' is a specialization of 'UML_StructuralFeature'.
+The class 'uml_UML_Property' is a specialization of 'UML_ConnectableElement'.
+The class 'uml_UML_Port' is a specialization of 'UML_Property'.
+The class 'uml_UML_Behavior' is a specialization of 'UML_Class'.
+The class 'uml_UML_Activity' is a specialization of 'UML_Behavior'.
+The class 'uml_UML_ConnectableElement' is a specialization of 'UML_TypedElement'.
+The class 'uml_UML_Connector' is a specialization of 'UML_Feature'.
+The class 'uml_UML_CallOperationAction' is a specialization of 'UML_Action'.
+The class 'uml_UML_Action' is a specialization of 'UML_ActivityNode'.
+The class 'uml_UML_OpaqueExpression' is a specialization of 'UML_ValueSpecification'.
+The class 'uml_UML_Constraint' is a specialization of 'UML_PackageableElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'uml_UML_Constraint' and 'uml_UML_Namespace'. From 'uml_UML_Constraint', the role 'uml_UML_Constraint' has cardinality 0..*, and from 'uml_UML_Namespace', the role 'uml_UML_Namespace' has cardinality 0..*.
+An association connects 'uml_UML_Package' and 'uml_UML_PackageableElement'. From 'uml_UML_Package', the role 'uml_UML_Package' has cardinality 0..*, and from 'uml_UML_PackageableElement', the role 'uml_UML_PackageableElement' has cardinality 0..*.
+An association connects 'uml_UML_Type' and 'uml_UML_TypedElement'. From 'uml_UML_Type', the role 'uml_UML_Type' has cardinality 0..*, and from 'uml_UML_TypedElement', the role 'uml_UML_TypedElement' has cardinality 0..*.
+An association connects 'uml_UML_Classifier' and 'uml_UML_Feature'. From 'uml_UML_Classifier', the role 'uml_UML_Classifier' has cardinality 0..*, and from 'uml_UML_Feature', the role 'uml_UML_Feature' has cardinality 0..*.
+An association connects 'uml_UML_Interface' and 'uml_UML_Operation'. From 'uml_UML_Interface', the role 'uml_UML_Interface' has cardinality 0..*, and from 'uml_UML_Operation', the role 'uml_UML_Operation' has cardinality 0..*.
+An association connects 'uml_UML_Property' and 'uml_UML_Interface'. From 'uml_UML_Property', the role 'uml_UML_Property' has cardinality 0..*, and from 'uml_UML_Interface', the role 'uml_UML_Interface6' has cardinality 0..*.
+An association connects 'uml_UML_Interface' and 'uml_UML_InterfaceRealization'. From 'uml_UML_Interface', the role 'uml_UML_Interface8' has cardinality 0..*, and from 'uml_UML_InterfaceRealization', the role 'uml_UML_InterfaceRealization' has cardinality 0..*.
+An association connects 'uml_UML_BehavioredClassifier' and 'uml_UML_InterfaceRealization'. From 'uml_UML_BehavioredClassifier', the role 'uml_UML_BehavioredClassifier' has cardinality 0..*, and from 'uml_UML_InterfaceRealization', the role 'uml_UML_InterfaceRealization10' has cardinality 0..*.
+An association connects 'uml_UML_Behavior' and 'uml_UML_BehavioredClassifier'. From 'uml_UML_Behavior', the role 'uml_UML_Behavior' has cardinality 0..*, and from 'uml_UML_BehavioredClassifier', the role 'uml_UML_BehavioredClassifier12' has cardinality 0..*.
+An association connects 'uml_UML_Operation' and 'uml_UML_Class'. From 'uml_UML_Operation', the role 'uml_UML_Operation14' has cardinality 0..*, and from 'uml_UML_Class', the role 'uml_UML_Class' has cardinality 0..*.
+An association connects 'uml_UML_Class' and 'uml_UML_Classifier'. From 'uml_UML_Class', the role 'uml_UML_Class16' has cardinality 0..*, and from 'uml_UML_Classifier', the role 'uml_UML_Classifier17' has cardinality 0..*.
+An association connects 'uml_UML_Property' and 'uml_UML_Class'. From 'uml_UML_Property', the role 'uml_UML_Property20' has cardinality 0..*, and from 'uml_UML_Class', the role 'uml_UML_Class19' has cardinality 0..*.
+An association connects 'uml_UML_Activity' and 'uml_UML_ActivityEdge'. From 'uml_UML_Activity', the role 'uml_UML_Activity' has cardinality 0..*, and from 'uml_UML_ActivityEdge', the role 'uml_UML_ActivityEdge' has cardinality 0..*.
+An association connects 'uml_UML_ActivityNode' and 'uml_UML_Activity'. From 'uml_UML_ActivityNode', the role 'uml_UML_ActivityNode' has cardinality 0..*, and from 'uml_UML_Activity', the role 'uml_UML_Activity23' has cardinality 0..*.
+An association connects 'uml_UML_ConnectorEnd' and 'uml_UML_Connector'. From 'uml_UML_ConnectorEnd', the role 'uml_UML_ConnectorEnd' has cardinality 0..*, and from 'uml_UML_Connector', the role 'uml_UML_Connector' has cardinality 0..*.
+An association connects 'uml_UML_Operation' and 'uml_UML_CallOperationAction'. From 'uml_UML_Operation', the role 'uml_UML_Operation26' has cardinality 0..*, and from 'uml_UML_CallOperationAction', the role 'uml_UML_CallOperationAction' has cardinality 0..*.
+An association connects 'uml_UML_ActivityNode' and 'uml_UML_ActivityNode'. From 'uml_UML_ActivityNode', the role 'uml_UML_ActivityNode27' has cardinality 0..*, and from 'uml_UML_ActivityNode', the role 'uml_UML_ActivityNode29' has cardinality 0..*.
+An association connects 'uml_UML_ActivityNode' and 'uml_UML_ActivityEdge'. From 'uml_UML_ActivityNode', the role 'uml_UML_ActivityNode31' has cardinality 0..*, and from 'uml_UML_ActivityEdge', the role 'uml_UML_ActivityEdge32' has cardinality 0..*.
+An association connects 'uml_UML_ActivityEdge' and 'uml_UML_ActivityNode'. From 'uml_UML_ActivityEdge', the role 'uml_UML_ActivityEdge34' has cardinality 0..*, and from 'uml_UML_ActivityNode', the role 'uml_UML_ActivityNode35' has cardinality 0..*.
+An association connects 'uml_UML_ActivityEdge' and 'uml_UML_ActivityNode'. From 'uml_UML_ActivityEdge', the role 'uml_UML_ActivityEdge37' has cardinality 0..*, and from 'uml_UML_ActivityNode', the role 'uml_UML_ActivityNode38' has cardinality 0..*.
+An association connects 'uml_UML_Constraint' and 'uml_UML_OpaqueExpression'. From 'uml_UML_Constraint', the role 'uml_UML_Constraint40' has cardinality 0..*, and from 'uml_UML_OpaqueExpression', the role 'uml_UML_OpaqueExpression' has cardinality 0..*.
+An association connects 'uml_UML_ConnectableElement' and 'uml_UML_ConnectorEnd'. From 'uml_UML_ConnectableElement', the role 'uml_UML_ConnectableElement' has cardinality 0..*, and from 'uml_UML_ConnectorEnd', the role 'uml_UML_ConnectorEnd42' has cardinality 0..*.

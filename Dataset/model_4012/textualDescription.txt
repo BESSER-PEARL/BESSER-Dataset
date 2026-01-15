@@ -1,0 +1,16 @@
+The domain model 'Data' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'Data_Attribut' represents an important domain concept.
+It has the following attributes: 'Static', which is of type bool; 'Name', which is of type str; 'Type', which is of type str; 'Visibility', which is of type str.
+
+'Data_Class' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'Data_Model' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Data_Class' and 'Data_Attribut'. From 'Data_Class', the role 'Data_Class' has cardinality 0..*, and from 'Data_Attribut', the role 'Data_Attribut' has cardinality 0..*.
+An association connects 'Data_Model' and 'Data_Class'. From 'Data_Model', the role 'Data_Model' has cardinality 0..*, and from 'Data_Class', the role 'Data_Class2' has cardinality 0..*.

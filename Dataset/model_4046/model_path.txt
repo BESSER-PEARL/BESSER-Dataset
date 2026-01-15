@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Tagpower/SmallUML/SmallUML/model/smalluml.ecore

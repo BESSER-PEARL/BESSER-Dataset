@@ -1,0 +1,63 @@
+The domain model 'genericsql' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'genericsql_NamedElement' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'name', which is of type str.
+
+'genericsql_ForeignKey' represents an important domain concept.
+It does not declare any attributes.
+
+'genericsql_Unique' represents an important domain concept.
+It does not declare any attributes.
+
+'genericsql_PrimaryKey' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'genericsql_Check' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'genericsql_DataBase' represents an important domain concept.
+It does not declare any attributes.
+
+'genericsql_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'genericsql_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'genericsql_Field' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'unique', which is of type bool; 'notNull', which is of type bool; 'specificType', which is of type str; 'defaultValue', which is of type str; 'autoIcrement', which is of type bool; 'size', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Type' defines the following possible values: 'double', 'byteArray', 'boolean', 'varchar', 'int', 'undefined', 'date', 'bigInt'.
+
+The model also captures inheritance relationships between classes.
+The class 'genericsql_DataBase' is a specialization of 'NamedElement'.
+The class 'genericsql_Table' is a specialization of 'NamedElement'.
+The class 'genericsql_PrimaryKey' is a specialization of 'NamedElement'.
+The class 'genericsql_ForeignKey' is a specialization of 'NamedElement'.
+The class 'genericsql_Field' is a specialization of 'NamedElement'.
+The class 'genericsql_Check' is a specialization of 'Constraint'.
+The class 'genericsql_Unique' is a specialization of 'Constraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'genericsql_Table' and 'genericsql_DataBase'. From 'genericsql_Table', the role 'Table' has cardinality 0..*, and from 'genericsql_DataBase', the role 'database' has cardinality 0..*.
+An association connects 'genericsql_PrimaryKey' and 'genericsql_Table'. From 'genericsql_PrimaryKey', the role 'PrimaryKey' has cardinality 0..*, and from 'genericsql_Table', the role 'table' has cardinality 0..*.
+An association connects 'genericsql_ForeignKey' and 'genericsql_Table'. From 'genericsql_ForeignKey', the role 'ForeignKey' has cardinality 0..*, and from 'genericsql_Table', the role 'table3' has cardinality 0..*.
+An association connects 'genericsql_Table' and 'genericsql_Field'. From 'genericsql_Table', the role 'table5' has cardinality 0..*, and from 'genericsql_Field', the role 'Field' has cardinality 0..*.
+An association connects 'genericsql_Constraint' and 'genericsql_Table'. From 'genericsql_Constraint', the role 'genericsql_Constraint' has cardinality 0..*, and from 'genericsql_Table', the role 'genericsql_Table' has cardinality 0..*.
+An association connects 'genericsql_Table' and 'genericsql_DataBase'. From 'genericsql_Table', the role 'tables' has cardinality 0..*, and from 'genericsql_DataBase', the role 'DataBase' has cardinality 0..*.
+An association connects 'genericsql_Field' and 'genericsql_PrimaryKey'. From 'genericsql_Field', the role 'genericsql_Field' has cardinality 0..*, and from 'genericsql_PrimaryKey', the role 'genericsql_PrimaryKey' has cardinality 0..*.
+An association connects 'genericsql_PrimaryKey' and 'genericsql_Table'. From 'genericsql_PrimaryKey', the role 'primaryKey' has cardinality 0..*, and from 'genericsql_Table', the role 'Table10' has cardinality 0..*.
+An association connects 'genericsql_Field' and 'genericsql_ForeignKey'. From 'genericsql_Field', the role 'genericsql_Field12' has cardinality 0..*, and from 'genericsql_ForeignKey', the role 'genericsql_ForeignKey' has cardinality 0..*.
+An association connects 'genericsql_ForeignKey' and 'genericsql_Table'. From 'genericsql_ForeignKey', the role 'foreignKeys' has cardinality 0..*, and from 'genericsql_Table', the role 'Table14' has cardinality 0..*.
+An association connects 'genericsql_PrimaryKey' and 'genericsql_ForeignKey'. From 'genericsql_PrimaryKey', the role 'genericsql_PrimaryKey17' has cardinality 0..*, and from 'genericsql_ForeignKey', the role 'genericsql_ForeignKey16' has cardinality 0..*.
+An association connects 'genericsql_Field' and 'genericsql_Table'. From 'genericsql_Field', the role 'fields' has cardinality 0..*, and from 'genericsql_Table', the role 'Table19' has cardinality 0..*.
+An association connects 'genericsql_Constraint' and 'genericsql_Field'. From 'genericsql_Constraint', the role 'genericsql_Constraint21' has cardinality 0..*, and from 'genericsql_Field', the role 'genericsql_Field22' has cardinality 0..*.

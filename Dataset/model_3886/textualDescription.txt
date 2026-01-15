@@ -1,0 +1,240 @@
+The domain model 'gama' describes the core structural elements and their relationships within the system.
+
+The model defines 43 main class(es).
+
+'gama_EAspect' represents an important domain concept.
+It has the following attributes: 'defineGamlCode', which is of type bool; 'gamlCode', which is of type str.
+
+'ESpecies' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_ELayerAspect' represents an important domain concept.
+It has the following attributes: 'empty', which is of type str; 'rotate', which is of type str; 'width', which is of type str; 'radius', which is of type str; 'heigth', which is of type str; 'shapeType', which is of type str; 'type', which is of type str; 'color', which is of type str; 'text', which is of type str; 'points', which is of type str; 'imageSize', which is of type str; 'texture', which is of type str; 'size', which is of type str; 'path', which is of type str; 'gamlCode', which is of type str; 'shape', which is of type str; 'at', which is of type str; 'isColorCst', which is of type str; 'depth', which is of type str; 'expression', which is of type str; 'colorRBG', which is of type str; 'textSize', which is of type str.
+
+'gama_EGUIExperiment' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EGamaLink' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_ELayer' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'grid', which is of type str; 'type', which is of type str; 'isColorCst', which is of type str; 'species', which is of type str; 'color', which is of type str; 'file', which is of type str; 'colorRBG', which is of type str; 'size', which is of type str; 'showLines', which is of type bool; 'agents', which is of type str; 'gamlCode', which is of type str; 'aspect', which is of type str; 'chart_type', which is of type str.
+
+'gama_EParameter' represents an important domain concept.
+It has the following attributes: 'min', which is of type str; 'step', which is of type str; 'category', which is of type str; 'max', which is of type str; 'init', which is of type str; 'variable', which is of type str; 'among', which is of type str.
+
+'gama_EExperiment' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EGamaObject' represents an important domain concept.
+It has the following attributes: 'colorPicto', which is of type str; 'hasError', which is of type str; 'error', which is of type str; 'name', which is of type str.
+
+'gama_EFacet' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'gama_EPerceiveLink' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EReflexLink' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EDisplay' represents an important domain concept.
+It has the following attributes: 'gamlCode', which is of type str; 'layerList', which is of type str; 'defineGamlCode', which is of type bool.
+
+'gama_EEquation' represents an important domain concept.
+It has one attribute: 'gamlCode', which is of type str.
+
+'gama_ETaskLink' represents an important domain concept.
+It does not declare any attributes.
+
+'EExperiment' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EAspectLink' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EPlan' represents an important domain concept.
+It has one attribute: 'gamlCode', which is of type str.
+
+'gama_ESubSpeciesLink' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EChartLayer' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'value', which is of type str; 'style', which is of type str.
+
+'gama_EVariable' represents an important domain concept.
+It has the following attributes: 'hasError', which is of type str; 'min', which is of type str; 'name', which is of type str; 'max', which is of type str; 'init', which is of type str; 'update', which is of type str; 'error', which is of type str; 'type', which is of type str; 'function', which is of type str.
+
+'gama_ERuleLink' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EGrid' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EState' represents an important domain concept.
+It has one attribute: 'gamlCode', which is of type str.
+
+'gama_ERule' represents an important domain concept.
+It has one attribute: 'gamlCode', which is of type str.
+
+'gama_EWorldAgent' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EPerceive' represents an important domain concept.
+It has one attribute: 'gamlCode', which is of type str.
+
+'gama_EEquationLink' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EReflex' represents an important domain concept.
+It has one attribute: 'gamlCode', which is of type str.
+
+'gama_EPlanLink' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EAction' represents an important domain concept.
+It has the following attributes: 'gamlCode', which is of type str; 'returnType', which is of type str.
+
+'EGamaLink' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EStateLink' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EExperimentLink' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EMonitor' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'EGamaObject' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_ESpecies' represents an important domain concept.
+It has the following attributes: 'reflexList', which is of type str; 'init', which is of type str; 'skills', which is of type str.
+
+'gama_EActionLink' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EInheritLink' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EBatchExperiment' represents an important domain concept.
+It does not declare any attributes.
+
+'gama_EGamaModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gama_ETask' represents an important domain concept.
+It has one attribute: 'gamlCode', which is of type str.
+
+'gama_EDisplayLink' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'gama_ESpecies' is a specialization of 'EGamaObject'.
+The class 'gama_EAction' is a specialization of 'EGamaObject'.
+The class 'gama_EAspect' is a specialization of 'EGamaObject'.
+The class 'gama_EReflex' is a specialization of 'EGamaObject'.
+The class 'gama_EExperiment' is a specialization of 'ESpecies'.
+The class 'gama_EGUIExperiment' is a specialization of 'EExperiment'.
+The class 'gama_EBatchExperiment' is a specialization of 'EExperiment'.
+The class 'gama_ESubSpeciesLink' is a specialization of 'EGamaLink'.
+The class 'gama_EActionLink' is a specialization of 'EGamaLink'.
+The class 'gama_EAspectLink' is a specialization of 'EGamaLink'.
+The class 'gama_EReflexLink' is a specialization of 'EGamaLink'.
+The class 'gama_EDisplayLink' is a specialization of 'EGamaLink'.
+The class 'gama_EDisplay' is a specialization of 'EGamaObject'.
+The class 'gama_EWorldAgent' is a specialization of 'ESpecies'.
+The class 'gama_ELayer' is a specialization of 'EGamaObject'.
+The class 'gama_EExperimentLink' is a specialization of 'EGamaLink'.
+The class 'gama_ELayerAspect' is a specialization of 'EGamaObject'.
+The class 'gama_EInheritLink' is a specialization of 'EGamaLink'.
+The class 'gama_EChartLayer' is a specialization of 'EGamaObject'.
+The class 'gama_EParameter' is a specialization of 'EGamaObject'.
+The class 'gama_EMonitor' is a specialization of 'EGamaObject'.
+The class 'gama_EPlan' is a specialization of 'EGamaObject'.
+The class 'gama_EState' is a specialization of 'EGamaObject'.
+The class 'gama_ETask' is a specialization of 'EGamaObject'.
+The class 'gama_EPlanLink' is a specialization of 'EGamaLink'.
+The class 'gama_EStateLink' is a specialization of 'EGamaLink'.
+The class 'gama_ETaskLink' is a specialization of 'EGamaLink'.
+The class 'gama_EGrid' is a specialization of 'ESpecies'.
+The class 'gama_EPerceive' is a specialization of 'EGamaObject'.
+The class 'gama_EPerceiveLink' is a specialization of 'EGamaLink'.
+The class 'gama_ERule' is a specialization of 'EGamaObject'.
+The class 'gama_ERuleLink' is a specialization of 'EGamaLink'.
+The class 'gama_EEquation' is a specialization of 'EGamaObject'.
+The class 'gama_EEquationLink' is a specialization of 'EGamaLink'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gama_EGamaModel' and 'gama_EGamaObject'. From 'gama_EGamaModel', the role 'model' has cardinality 0..*, and from 'gama_EGamaObject', the role 'EGamaObject' has cardinality 0..*.
+An association connects 'gama_EGamaLink' and 'gama_EGamaModel'. From 'gama_EGamaLink', the role 'EGamaLink' has cardinality 0..*, and from 'gama_EGamaModel', the role 'model2' has cardinality 0..*.
+An association connects 'gama_EGamaObject' and 'gama_EGamaModel'. From 'gama_EGamaObject', the role 'objects' has cardinality 0..*, and from 'gama_EGamaModel', the role 'EGamaModel' has cardinality 0..*.
+An association connects 'gama_EFacet' and 'gama_EGamaObject'. From 'gama_EFacet', the role 'gama_EFacet' has cardinality 0..*, and from 'gama_EGamaObject', the role 'gama_EGamaObject' has cardinality 0..*.
+An association connects 'gama_EVariable' and 'gama_ESpecies'. From 'gama_EVariable', the role 'gama_EVariable' has cardinality 0..*, and from 'gama_ESpecies', the role 'gama_ESpecies' has cardinality 0..*.
+An association connects 'gama_EExperimentLink' and 'gama_ESpecies'. From 'gama_EExperimentLink', the role 'gama_EExperimentLink' has cardinality 0..*, and from 'gama_ESpecies', the role 'gama_ESpecies7' has cardinality 0..*.
+An association connects 'gama_EAspectLink' and 'gama_ESpecies'. From 'gama_EAspectLink', the role 'gama_EAspectLink' has cardinality 0..*, and from 'gama_ESpecies', the role 'gama_ESpecies9' has cardinality 0..*.
+An association connects 'gama_ESpecies' and 'gama_EActionLink'. From 'gama_ESpecies', the role 'gama_ESpecies11' has cardinality 0..*, and from 'gama_EActionLink', the role 'gama_EActionLink' has cardinality 0..*.
+An association connects 'gama_EReflexLink' and 'gama_ESpecies'. From 'gama_EReflexLink', the role 'gama_EReflexLink' has cardinality 0..*, and from 'gama_ESpecies', the role 'gama_ESpecies13' has cardinality 0..*.
+An association connects 'gama_ESpecies' and 'gama_ESubSpeciesLink'. From 'gama_ESpecies', the role 'gama_ESpecies15' has cardinality 0..*, and from 'gama_ESubSpeciesLink', the role 'gama_ESubSpeciesLink' has cardinality 0..*.
+An association connects 'gama_ESpecies' and 'gama_ESubSpeciesLink'. From 'gama_ESpecies', the role 'gama_ESpecies17' has cardinality 0..*, and from 'gama_ESubSpeciesLink', the role 'gama_ESubSpeciesLink18' has cardinality 0..*.
+An association connects 'gama_ESpecies' and 'gama_ESpecies'. From 'gama_ESpecies', the role 'gama_ESpecies19' has cardinality 0..*, and from 'gama_ESpecies', the role 'gama_ESpecies21' has cardinality 0..*.
+An association connects 'gama_EInheritLink' and 'gama_ESpecies'. From 'gama_EInheritLink', the role 'gama_EInheritLink' has cardinality 0..*, and from 'gama_ESpecies', the role 'gama_ESpecies23' has cardinality 0..*.
+An association connects 'gama_ESpecies' and 'gama_EPlanLink'. From 'gama_ESpecies', the role 'gama_ESpecies25' has cardinality 0..*, and from 'gama_EPlanLink', the role 'gama_EPlanLink' has cardinality 0..*.
+An association connects 'gama_ESpecies' and 'gama_EStateLink'. From 'gama_ESpecies', the role 'gama_ESpecies27' has cardinality 0..*, and from 'gama_EStateLink', the role 'gama_EStateLink' has cardinality 0..*.
+An association connects 'gama_ESpecies' and 'gama_ETaskLink'. From 'gama_ESpecies', the role 'gama_ESpecies29' has cardinality 0..*, and from 'gama_ETaskLink', the role 'gama_ETaskLink' has cardinality 0..*.
+An association connects 'gama_EPerceiveLink' and 'gama_ESpecies'. From 'gama_EPerceiveLink', the role 'gama_EPerceiveLink' has cardinality 0..*, and from 'gama_ESpecies', the role 'gama_ESpecies31' has cardinality 0..*.
+An association connects 'gama_ERuleLink' and 'gama_ESpecies'. From 'gama_ERuleLink', the role 'gama_ERuleLink' has cardinality 0..*, and from 'gama_ESpecies', the role 'gama_ESpecies33' has cardinality 0..*.
+An association connects 'gama_EEquationLink' and 'gama_ESpecies'. From 'gama_EEquationLink', the role 'gama_EEquationLink' has cardinality 0..*, and from 'gama_ESpecies', the role 'gama_ESpecies35' has cardinality 0..*.
+An association connects 'gama_EAction' and 'gama_EActionLink'. From 'gama_EAction', the role 'gama_EAction' has cardinality 0..*, and from 'gama_EActionLink', the role 'gama_EActionLink37' has cardinality 0..*.
+An association connects 'gama_EVariable' and 'gama_EAction'. From 'gama_EVariable', the role 'gama_EVariable40' has cardinality 0..*, and from 'gama_EAction', the role 'gama_EAction39' has cardinality 0..*.
+An association connects 'gama_EAspectLink' and 'gama_EAspect'. From 'gama_EAspectLink', the role 'gama_EAspectLink42' has cardinality 0..*, and from 'gama_EAspect', the role 'gama_EAspect' has cardinality 0..*.
+An association connects 'gama_EAspect' and 'gama_ELayerAspect'. From 'gama_EAspect', the role 'gama_EAspect44' has cardinality 0..*, and from 'gama_ELayerAspect', the role 'gama_ELayerAspect' has cardinality 0..*.
+An association connects 'gama_EReflexLink' and 'gama_EReflex'. From 'gama_EReflexLink', the role 'gama_EReflexLink46' has cardinality 0..*, and from 'gama_EReflex', the role 'gama_EReflex' has cardinality 0..*.
+An association connects 'gama_EExperimentLink' and 'gama_EExperiment'. From 'gama_EExperimentLink', the role 'gama_EExperimentLink48' has cardinality 0..*, and from 'gama_EExperiment', the role 'gama_EExperiment' has cardinality 0..*.
+An association connects 'gama_EDisplayLink' and 'gama_EExperiment'. From 'gama_EDisplayLink', the role 'gama_EDisplayLink' has cardinality 0..*, and from 'gama_EExperiment', the role 'gama_EExperiment50' has cardinality 0..*.
+An association connects 'gama_EParameter' and 'gama_EExperiment'. From 'gama_EParameter', the role 'gama_EParameter' has cardinality 0..*, and from 'gama_EExperiment', the role 'gama_EExperiment52' has cardinality 0..*.
+An association connects 'gama_EMonitor' and 'gama_EExperiment'. From 'gama_EMonitor', the role 'gama_EMonitor' has cardinality 0..*, and from 'gama_EExperiment', the role 'gama_EExperiment54' has cardinality 0..*.
+An association connects 'gama_EGamaObject' and 'gama_EGamaLink'. From 'gama_EGamaObject', the role 'gama_EGamaObject56' has cardinality 0..*, and from 'gama_EGamaLink', the role 'gama_EGamaLink' has cardinality 0..*.
+An association connects 'gama_EGamaLink' and 'gama_EGamaObject'. From 'gama_EGamaLink', the role 'gama_EGamaLink58' has cardinality 0..*, and from 'gama_EGamaObject', the role 'gama_EGamaObject59' has cardinality 0..*.
+An association connects 'gama_EGamaLink' and 'gama_EGamaModel'. From 'gama_EGamaLink', the role 'links' has cardinality 0..*, and from 'gama_EGamaModel', the role 'EGamaModel61' has cardinality 0..*.
+An association connects 'gama_ESpecies' and 'gama_ESubSpeciesLink'. From 'gama_ESpecies', the role 'gama_ESpecies64' has cardinality 0..*, and from 'gama_ESubSpeciesLink', the role 'gama_ESubSpeciesLink63' has cardinality 0..*.
+An association connects 'gama_ESubSpeciesLink' and 'gama_ESpecies'. From 'gama_ESubSpeciesLink', the role 'gama_ESubSpeciesLink66' has cardinality 0..*, and from 'gama_ESpecies', the role 'gama_ESpecies67' has cardinality 0..*.
+An association connects 'gama_EAction' and 'gama_EActionLink'. From 'gama_EAction', the role 'gama_EAction70' has cardinality 0..*, and from 'gama_EActionLink', the role 'gama_EActionLink69' has cardinality 0..*.
+An association connects 'gama_ESpecies' and 'gama_EActionLink'. From 'gama_ESpecies', the role 'gama_ESpecies73' has cardinality 0..*, and from 'gama_EActionLink', the role 'gama_EActionLink72' has cardinality 0..*.
+An association connects 'gama_EAspectLink' and 'gama_EAspect'. From 'gama_EAspectLink', the role 'gama_EAspectLink75' has cardinality 0..*, and from 'gama_EAspect', the role 'gama_EAspect76' has cardinality 0..*.
+An association connects 'gama_ESpecies' and 'gama_EAspectLink'. From 'gama_ESpecies', the role 'gama_ESpecies79' has cardinality 0..*, and from 'gama_EAspectLink', the role 'gama_EAspectLink78' has cardinality 0..*.
+An association connects 'gama_EReflex' and 'gama_EReflexLink'. From 'gama_EReflex', the role 'gama_EReflex82' has cardinality 0..*, and from 'gama_EReflexLink', the role 'gama_EReflexLink81' has cardinality 0..*.
+An association connects 'gama_EReflexLink' and 'gama_ESpecies'. From 'gama_EReflexLink', the role 'gama_EReflexLink84' has cardinality 0..*, and from 'gama_ESpecies', the role 'gama_ESpecies85' has cardinality 0..*.
+An association connects 'gama_EDisplayLink' and 'gama_EGUIExperiment'. From 'gama_EDisplayLink', the role 'gama_EDisplayLink87' has cardinality 0..*, and from 'gama_EGUIExperiment', the role 'gama_EGUIExperiment' has cardinality 0..*.
+An association connects 'gama_EDisplay' and 'gama_EDisplayLink'. From 'gama_EDisplay', the role 'gama_EDisplay' has cardinality 0..*, and from 'gama_EDisplayLink', the role 'gama_EDisplayLink89' has cardinality 0..*.
+An association connects 'gama_ELayer' and 'gama_EDisplay'. From 'gama_ELayer', the role 'gama_ELayer' has cardinality 0..*, and from 'gama_EDisplay', the role 'gama_EDisplay91' has cardinality 0..*.
+An association connects 'gama_EDisplay' and 'gama_EDisplayLink'. From 'gama_EDisplay', the role 'gama_EDisplay93' has cardinality 0..*, and from 'gama_EDisplayLink', the role 'gama_EDisplayLink94' has cardinality 0..*.
+An association connects 'gama_EGamaObject' and 'gama_EVariable'. From 'gama_EGamaObject', the role 'gama_EGamaObject97' has cardinality 0..*, and from 'gama_EVariable', the role 'gama_EVariable96' has cardinality 0..*.
+An association connects 'gama_ELayer' and 'gama_EDisplay'. From 'gama_ELayer', the role 'gama_ELayer99' has cardinality 0..*, and from 'gama_EDisplay', the role 'gama_EDisplay100' has cardinality 0..*.
+An association connects 'gama_EChartLayer' and 'gama_ELayer'. From 'gama_EChartLayer', the role 'gama_EChartLayer' has cardinality 0..*, and from 'gama_ELayer', the role 'gama_ELayer102' has cardinality 0..*.
+An association connects 'gama_ESpecies' and 'gama_EExperimentLink'. From 'gama_ESpecies', the role 'gama_ESpecies105' has cardinality 0..*, and from 'gama_EExperimentLink', the role 'gama_EExperimentLink104' has cardinality 0..*.
+An association connects 'gama_EExperiment' and 'gama_EExperimentLink'. From 'gama_EExperiment', the role 'gama_EExperiment108' has cardinality 0..*, and from 'gama_EExperimentLink', the role 'gama_EExperimentLink107' has cardinality 0..*.
+An association connects 'gama_ELayerAspect' and 'gama_EAspect'. From 'gama_ELayerAspect', the role 'gama_ELayerAspect110' has cardinality 0..*, and from 'gama_EAspect', the role 'gama_EAspect111' has cardinality 0..*.
+An association connects 'gama_ESpecies' and 'gama_EInheritLink'. From 'gama_ESpecies', the role 'gama_ESpecies114' has cardinality 0..*, and from 'gama_EInheritLink', the role 'gama_EInheritLink113' has cardinality 0..*.
+An association connects 'gama_ESpecies' and 'gama_EInheritLink'. From 'gama_ESpecies', the role 'gama_ESpecies117' has cardinality 0..*, and from 'gama_EInheritLink', the role 'gama_EInheritLink116' has cardinality 0..*.
+An association connects 'gama_EFacet' and 'gama_EGamaObject'. From 'gama_EFacet', the role 'gama_EFacet119' has cardinality 0..*, and from 'gama_EGamaObject', the role 'gama_EGamaObject120' has cardinality 0..*.
+An association connects 'gama_EPlan' and 'gama_EPlanLink'. From 'gama_EPlan', the role 'gama_EPlan' has cardinality 0..*, and from 'gama_EPlanLink', the role 'gama_EPlanLink122' has cardinality 0..*.
+An association connects 'gama_EState' and 'gama_EStateLink'. From 'gama_EState', the role 'gama_EState' has cardinality 0..*, and from 'gama_EStateLink', the role 'gama_EStateLink124' has cardinality 0..*.
+An association connects 'gama_ETask' and 'gama_ETaskLink'. From 'gama_ETask', the role 'gama_ETask' has cardinality 0..*, and from 'gama_ETaskLink', the role 'gama_ETaskLink126' has cardinality 0..*.
+An association connects 'gama_EPlan' and 'gama_EPlanLink'. From 'gama_EPlan', the role 'gama_EPlan129' has cardinality 0..*, and from 'gama_EPlanLink', the role 'gama_EPlanLink128' has cardinality 0..*.
+An association connects 'gama_EPlanLink' and 'gama_ESpecies'. From 'gama_EPlanLink', the role 'gama_EPlanLink131' has cardinality 0..*, and from 'gama_ESpecies', the role 'gama_ESpecies132' has cardinality 0..*.
+An association connects 'gama_EStateLink' and 'gama_EState'. From 'gama_EStateLink', the role 'gama_EStateLink134' has cardinality 0..*, and from 'gama_EState', the role 'gama_EState135' has cardinality 0..*.
+An association connects 'gama_ESpecies' and 'gama_EStateLink'. From 'gama_ESpecies', the role 'gama_ESpecies138' has cardinality 0..*, and from 'gama_EStateLink', the role 'gama_EStateLink137' has cardinality 0..*.
+An association connects 'gama_ETaskLink' and 'gama_ETask'. From 'gama_ETaskLink', the role 'gama_ETaskLink140' has cardinality 0..*, and from 'gama_ETask', the role 'gama_ETask141' has cardinality 0..*.
+An association connects 'gama_ETaskLink' and 'gama_ESpecies'. From 'gama_ETaskLink', the role 'gama_ETaskLink143' has cardinality 0..*, and from 'gama_ESpecies', the role 'gama_ESpecies144' has cardinality 0..*.
+An association connects 'gama_EPerceiveLink' and 'gama_EPerceive'. From 'gama_EPerceiveLink', the role 'gama_EPerceiveLink146' has cardinality 0..*, and from 'gama_EPerceive', the role 'gama_EPerceive' has cardinality 0..*.
+An association connects 'gama_EPerceiveLink' and 'gama_EPerceive'. From 'gama_EPerceiveLink', the role 'gama_EPerceiveLink148' has cardinality 0..*, and from 'gama_EPerceive', the role 'gama_EPerceive149' has cardinality 0..*.
+An association connects 'gama_EPerceiveLink' and 'gama_ESpecies'. From 'gama_EPerceiveLink', the role 'gama_EPerceiveLink151' has cardinality 0..*, and from 'gama_ESpecies', the role 'gama_ESpecies152' has cardinality 0..*.
+An association connects 'gama_ERuleLink' and 'gama_ERule'. From 'gama_ERuleLink', the role 'gama_ERuleLink154' has cardinality 0..*, and from 'gama_ERule', the role 'gama_ERule' has cardinality 0..*.
+An association connects 'gama_ERuleLink' and 'gama_ERule'. From 'gama_ERuleLink', the role 'gama_ERuleLink156' has cardinality 0..*, and from 'gama_ERule', the role 'gama_ERule157' has cardinality 0..*.
+An association connects 'gama_ERuleLink' and 'gama_ESpecies'. From 'gama_ERuleLink', the role 'gama_ERuleLink159' has cardinality 0..*, and from 'gama_ESpecies', the role 'gama_ESpecies160' has cardinality 0..*.
+An association connects 'gama_EEquation' and 'gama_EEquationLink'. From 'gama_EEquation', the role 'gama_EEquation' has cardinality 0..*, and from 'gama_EEquationLink', the role 'gama_EEquationLink162' has cardinality 0..*.
+An association connects 'gama_EEquationLink' and 'gama_EEquation'. From 'gama_EEquationLink', the role 'gama_EEquationLink164' has cardinality 0..*, and from 'gama_EEquation', the role 'gama_EEquation165' has cardinality 0..*.
+An association connects 'gama_EEquationLink' and 'gama_ESpecies'. From 'gama_EEquationLink', the role 'gama_EEquationLink167' has cardinality 0..*, and from 'gama_ESpecies', the role 'gama_ESpecies168' has cardinality 0..*.

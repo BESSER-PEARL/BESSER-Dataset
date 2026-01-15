@@ -1,0 +1,412 @@
+The domain model 'workflow' describes the core structural elements and their relationships within the system.
+
+The model defines 92 main class(es).
+
+'workflow_GlobalAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'CaseAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_CaseC' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_EnumFieldAtom' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_TaskAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Process' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_Place' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'Document' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_CoreModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_ActivityC' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_LessThanOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_ActivityAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_DocumentType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_Atom' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_RuntimeInformation' represents an important domain concept.
+It has one attribute: 'caseIdCount', which is of type str.
+
+'workflow_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_ProcessDocument' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_Agent' represents an important domain concept.
+It has the following attributes: 'username', which is of type str; 'name', which is of type str; 'password', which is of type str.
+
+'workflow_ControlAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'DocumentCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_TaskI' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_ActivityI' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_EnumField' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_ConstantAtom' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'workflow_String2DocumentMap' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Arc' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_CaseO' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_CaseAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Case' represents an important domain concept.
+It has the following attributes: 'client', which is of type str; 'finished', which is of type bool; 'started', which is of type bool; 'id', which is of type str.
+
+'workflow_Organisation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Atom' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_ProcessO' represents an important domain concept.
+It does not declare any attributes.
+
+'Control' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Information' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_CaseI' represents an important domain concept.
+It does not declare any attributes.
+
+'RuntimeModelAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'GlobalAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Activity' represents an important domain concept.
+It has the following attributes: 'started', which is of type bool; 'finished', which is of type bool.
+
+'RuntimeGlobalAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_RuntimeCoreModel' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_AgentContainer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_DefaultDocumentDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'DocumentDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_GreaterThanOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_InformationRuntimeAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_TaskC' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_TaskO' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_DocumentDescriptor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_DocumentCondition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_RuntimeGlobalAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_DefaultDocumentCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_WorkflowEngine' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_EnumFieldValue' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_InformationAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_DocumentContainer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_State' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_EnumLiteral' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ModelAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_EqualToOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_ActivityO' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'DocumentType' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_ProcessAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Task' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TaskC' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_FieldValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'workflow_Role' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_EnumLiteralAtom' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_DocumentTypeContainer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_Marking' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_DocumentDescrAtom' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_DefaultDocument' represents an important domain concept.
+It has one attribute: 'placeholder', which is of type bool.
+
+'ActivityAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Control' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_UnequalToOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_RuntimeModelAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_OrganisationAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_DefaultDocumentType' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Field' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_DotOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_ModelRegistry' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Document' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'workflow_ModelAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_FieldAtom' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'workflow_TaskO' is a specialization of 'TaskAspect'.
+The class 'workflow_ActivityO' is a specialization of 'ActivityAspect'.
+The class 'workflow_TaskC' is a specialization of 'TaskAspect'.
+The class 'workflow_ActivityC' is a specialization of 'ActivityAspect'.
+The class 'workflow_Control' is a specialization of 'ProcessAspect'.
+The class 'workflow_CaseC' is a specialization of 'CaseAspect'.
+The class 'workflow_PetriNet' is a specialization of 'Control'.
+The class 'workflow_Transition' is a specialization of 'TaskC'.
+The class 'workflow_Marking' is a specialization of 'State'.
+The class 'workflow_Information' is a specialization of 'ProcessAspect'.
+The class 'workflow_TaskI' is a specialization of 'TaskAspect'.
+The class 'workflow_ActivityI' is a specialization of 'ActivityAspect'.
+The class 'workflow_CaseI' is a specialization of 'CaseAspect'.
+The class 'workflow_OrganisationAspect' is a specialization of 'ModelAspect'.
+The class 'workflow_ControlAspect' is a specialization of 'ModelAspect'.
+The class 'workflow_ProcessO' is a specialization of 'ProcessAspect'.
+The class 'workflow_DefaultDocumentType' is a specialization of 'DocumentType'.
+The class 'workflow_DefaultDocument' is a specialization of 'Document'.
+The class 'workflow_InformationAspect' is a specialization of 'ModelAspect'.
+The class 'workflow_CaseO' is a specialization of 'CaseAspect'.
+The class 'workflow_InformationRuntimeAspect' is a specialization of 'RuntimeModelAspect'.
+The class 'workflow_DefaultDocumentDescriptor' is a specialization of 'DocumentDescriptor'.
+The class 'workflow_Atom' is a specialization of 'Expression'.
+The class 'workflow_Operator' is a specialization of 'Expression'.
+The class 'workflow_DocumentDescrAtom' is a specialization of 'Atom'.
+The class 'workflow_FieldAtom' is a specialization of 'Atom'.
+The class 'workflow_ConstantAtom' is a specialization of 'Atom'.
+The class 'workflow_DotOperator' is a specialization of 'Operator'.
+The class 'workflow_EqualToOperator' is a specialization of 'Operator'.
+The class 'workflow_DefaultDocumentCondition' is a specialization of 'DocumentCondition'.
+The class 'workflow_LessThanOperator' is a specialization of 'Operator'.
+The class 'workflow_GreaterThanOperator' is a specialization of 'Operator'.
+The class 'workflow_EnumFieldAtom' is a specialization of 'Atom'.
+The class 'workflow_EnumLiteralAtom' is a specialization of 'Atom'.
+The class 'workflow_UnequalToOperator' is a specialization of 'Operator'.
+The class 'workflow_AgentContainer' is a specialization of 'RuntimeGlobalAspect'.
+The class 'workflow_Organisation' is a specialization of 'GlobalAspect'.
+The class 'workflow_DocumentTypeContainer' is a specialization of 'GlobalAspect'.
+The class 'workflow_DocumentContainer' is a specialization of 'RuntimeGlobalAspect'.
+
+Relationships between classes are modeled using associations.
+An association connects 'workflow_Role' and 'workflow_TaskO'. From 'workflow_Role', the role 'workflow_Role' has cardinality 0..*, and from 'workflow_TaskO', the role 'workflow_TaskO' has cardinality 0..*.
+An association connects 'workflow_TaskO' and 'workflow_TaskO'. From 'workflow_TaskO', the role 'workflow_TaskO3' has cardinality 0..*, and from 'workflow_TaskO', the role 'workflow_TaskO1' has cardinality 0..*.
+An association connects 'workflow_Agent' and 'workflow_ActivityO'. From 'workflow_Agent', the role 'Agent' has cardinality 0..*, and from 'workflow_ActivityO', the role 'active' has cardinality 0..*.
+An association connects 'workflow_Case' and 'workflow_CaseAspect'. From 'workflow_Case', the role 'core' has cardinality 0..*, and from 'workflow_CaseAspect', the role 'CaseAspect' has cardinality 0..*.
+An association connects 'workflow_Activity' and 'workflow_Case'. From 'workflow_Activity', the role 'workflow_Activity' has cardinality 0..*, and from 'workflow_Case', the role 'workflow_Case' has cardinality 0..*.
+An association connects 'workflow_Process' and 'workflow_Case'. From 'workflow_Process', the role 'workflow_Process' has cardinality 0..*, and from 'workflow_Case', the role 'workflow_Case8' has cardinality 0..*.
+An association connects 'workflow_RuntimeCoreModel' and 'workflow_Case'. From 'workflow_RuntimeCoreModel', the role 'RuntimeCoreModel' has cardinality 0..*, and from 'workflow_Case', the role 'cases' has cardinality 0..*.
+An association connects 'workflow_Activity' and 'workflow_ActivityAspect'. From 'workflow_Activity', the role 'core11' has cardinality 0..*, and from 'workflow_ActivityAspect', the role 'ActivityAspect' has cardinality 0..*.
+An association connects 'workflow_Task' and 'workflow_Activity'. From 'workflow_Task', the role 'workflow_Task' has cardinality 0..*, and from 'workflow_Activity', the role 'workflow_Activity13' has cardinality 0..*.
+An association connects 'workflow_Activity' and 'workflow_ActivityAspect'. From 'workflow_Activity', the role 'workflow_Activity15' has cardinality 0..*, and from 'workflow_ActivityAspect', the role 'workflow_ActivityAspect' has cardinality 0..*.
+An association connects 'workflow_Role' and 'workflow_Agent'. From 'workflow_Role', the role 'workflow_Role17' has cardinality 0..*, and from 'workflow_Agent', the role 'workflow_Agent' has cardinality 0..*.
+An association connects 'workflow_ActivityO' and 'workflow_Agent'. From 'workflow_ActivityO', the role 'ActivityO' has cardinality 0..*, and from 'workflow_Agent', the role 'assignedTo' has cardinality 0..*.
+An association connects 'workflow_Role' and 'workflow_Agent'. From 'workflow_Role', the role 'workflow_Role21' has cardinality 0..*, and from 'workflow_Agent', the role 'workflow_Agent20' has cardinality 0..*.
+An association connects 'workflow_ActivityC' and 'workflow_CaseC'. From 'workflow_ActivityC', the role 'workflow_ActivityC' has cardinality 0..*, and from 'workflow_CaseC', the role 'workflow_CaseC' has cardinality 0..*.
+An association connects 'workflow_State' and 'workflow_CaseC'. From 'workflow_State', the role 'workflow_State' has cardinality 0..*, and from 'workflow_CaseC', the role 'workflow_CaseC24' has cardinality 0..*.
+An association connects 'workflow_Arc' and 'workflow_PetriNet'. From 'workflow_Arc', the role 'workflow_Arc' has cardinality 0..*, and from 'workflow_PetriNet', the role 'workflow_PetriNet' has cardinality 0..*.
+An association connects 'workflow_Place' and 'workflow_PetriNet'. From 'workflow_Place', the role 'workflow_Place' has cardinality 0..*, and from 'workflow_PetriNet', the role 'workflow_PetriNet27' has cardinality 0..*.
+An association connects 'workflow_PetriNet' and 'workflow_Place'. From 'workflow_PetriNet', the role 'workflow_PetriNet29' has cardinality 0..*, and from 'workflow_Place', the role 'workflow_Place30' has cardinality 0..*.
+An association connects 'workflow_Place' and 'workflow_PetriNet'. From 'workflow_Place', the role 'workflow_Place33' has cardinality 0..*, and from 'workflow_PetriNet', the role 'workflow_PetriNet32' has cardinality 0..*.
+An association connects 'workflow_Transition' and 'workflow_Arc'. From 'workflow_Transition', the role 'sourceTransition' has cardinality 0..*, and from 'workflow_Arc', the role 'Arc' has cardinality 0..*.
+An association connects 'workflow_Transition' and 'workflow_Arc'. From 'workflow_Transition', the role 'targetTransition' has cardinality 0..*, and from 'workflow_Arc', the role 'Arc36' has cardinality 0..*.
+An association connects 'workflow_Place' and 'workflow_Arc'. From 'workflow_Place', the role 'Place' has cardinality 0..*, and from 'workflow_Arc', the role 'out' has cardinality 0..*.
+An association connects 'workflow_Place' and 'workflow_Arc'. From 'workflow_Place', the role 'Place39' has cardinality 0..*, and from 'workflow_Arc', the role 'in' has cardinality 0..*.
+An association connects 'workflow_Arc' and 'workflow_Transition'. From 'workflow_Arc', the role 'out41' has cardinality 0..*, and from 'workflow_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'workflow_Transition' and 'workflow_Arc'. From 'workflow_Transition', the role 'Transition44' has cardinality 0..*, and from 'workflow_Arc', the role 'in43' has cardinality 0..*.
+An association connects 'workflow_Arc' and 'workflow_Place'. From 'workflow_Arc', the role 'Arc46' has cardinality 0..*, and from 'workflow_Place', the role 'targetPlace' has cardinality 0..*.
+An association connects 'workflow_Arc' and 'workflow_Place'. From 'workflow_Arc', the role 'Arc48' has cardinality 0..*, and from 'workflow_Place', the role 'sourcePlace' has cardinality 0..*.
+An association connects 'workflow_Token' and 'workflow_Marking'. From 'workflow_Token', the role 'workflow_Token' has cardinality 0..*, and from 'workflow_Marking', the role 'workflow_Marking' has cardinality 0..*.
+An association connects 'workflow_Marking' and 'workflow_PetriNet'. From 'workflow_Marking', the role 'workflow_Marking51' has cardinality 0..*, and from 'workflow_PetriNet', the role 'workflow_PetriNet52' has cardinality 0..*.
+An association connects 'workflow_Token' and 'workflow_Place'. From 'workflow_Token', the role 'workflow_Token54' has cardinality 0..*, and from 'workflow_Place', the role 'workflow_Place55' has cardinality 0..*.
+An association connects 'workflow_WorkflowEngine' and 'workflow_ModelRegistry'. From 'workflow_WorkflowEngine', the role 'WorkflowEngine' has cardinality 0..*, and from 'workflow_ModelRegistry', the role 'modelRegistry' has cardinality 0..*.
+An association connects 'workflow_ModelRegistry' and 'workflow_CoreModel'. From 'workflow_ModelRegistry', the role 'modelRegistry58' has cardinality 0..*, and from 'workflow_CoreModel', the role 'CoreModel' has cardinality 0..*.
+An association connects 'workflow_GlobalAspect' and 'workflow_ModelRegistry'. From 'workflow_GlobalAspect', the role 'GlobalAspect' has cardinality 0..*, and from 'workflow_ModelRegistry', the role 'modelRegistry60' has cardinality 0..*.
+An association connects 'workflow_ProcessDocument' and 'workflow_Information'. From 'workflow_ProcessDocument', the role 'workflow_ProcessDocument' has cardinality 0..*, and from 'workflow_Information', the role 'workflow_Information' has cardinality 0..*.
+An association connects 'workflow_TaskI' and 'workflow_DocumentDescriptor'. From 'workflow_TaskI', the role 'workflow_TaskI' has cardinality 0..*, and from 'workflow_DocumentDescriptor', the role 'workflow_DocumentDescriptor' has cardinality 0..*.
+An association connects 'workflow_TaskI' and 'workflow_DocumentDescriptor'. From 'workflow_TaskI', the role 'workflow_TaskI64' has cardinality 0..*, and from 'workflow_DocumentDescriptor', the role 'workflow_DocumentDescriptor65' has cardinality 0..*.
+An association connects 'workflow_DocumentCondition' and 'workflow_TaskI'. From 'workflow_DocumentCondition', the role 'workflow_DocumentCondition' has cardinality 0..*, and from 'workflow_TaskI', the role 'workflow_TaskI67' has cardinality 0..*.
+An association connects 'workflow_TaskI' and 'workflow_DocumentCondition'. From 'workflow_TaskI', the role 'workflow_TaskI69' has cardinality 0..*, and from 'workflow_DocumentCondition', the role 'workflow_DocumentCondition70' has cardinality 0..*.
+An association connects 'workflow_DocumentDescriptor' and 'workflow_DocumentType'. From 'workflow_DocumentDescriptor', the role 'workflow_DocumentDescriptor72' has cardinality 0..*, and from 'workflow_DocumentType', the role 'workflow_DocumentType' has cardinality 0..*.
+An association connects 'workflow_DocumentDescriptor' and 'workflow_ProcessDocument'. From 'workflow_DocumentDescriptor', the role 'workflow_DocumentDescriptor74' has cardinality 0..*, and from 'workflow_ProcessDocument', the role 'workflow_ProcessDocument75' has cardinality 0..*.
+An association connects 'workflow_ActivityI' and 'workflow_Document'. From 'workflow_ActivityI', the role 'workflow_ActivityI' has cardinality 0..*, and from 'workflow_Document', the role 'workflow_Document' has cardinality 0..*.
+An association connects 'workflow_ActivityI' and 'workflow_Document'. From 'workflow_ActivityI', the role 'workflow_ActivityI78' has cardinality 0..*, and from 'workflow_Document', the role 'workflow_Document79' has cardinality 0..*.
+An association connects 'workflow_Document' and 'workflow_DocumentType'. From 'workflow_Document', the role 'workflow_Document81' has cardinality 0..*, and from 'workflow_DocumentType', the role 'workflow_DocumentType82' has cardinality 0..*.
+An association connects 'workflow_String2DocumentMap' and 'workflow_CaseI'. From 'workflow_String2DocumentMap', the role 'workflow_String2DocumentMap' has cardinality 0..*, and from 'workflow_CaseI', the role 'workflow_CaseI' has cardinality 0..*.
+An association connects 'workflow_ProcessAspect' and 'workflow_ModelAspect'. From 'workflow_ProcessAspect', the role 'workflow_ProcessAspect' has cardinality 0..*, and from 'workflow_ModelAspect', the role 'workflow_ModelAspect' has cardinality 0..*.
+An association connects 'workflow_TaskAspect' and 'workflow_ProcessAspect'. From 'workflow_TaskAspect', the role 'workflow_TaskAspect' has cardinality 0..*, and from 'workflow_ProcessAspect', the role 'workflow_ProcessAspect86' has cardinality 0..*.
+An association connects 'workflow_Process' and 'workflow_ProcessAspect'. From 'workflow_Process', the role 'Process' has cardinality 0..*, and from 'workflow_ProcessAspect', the role 'aspects' has cardinality 0..*.
+An association connects 'workflow_TaskAspect' and 'workflow_Task'. From 'workflow_TaskAspect', the role 'aspects89' has cardinality 0..*, and from 'workflow_Task', the role 'Task' has cardinality 0..*.
+An association connects 'workflow_CaseAspect' and 'workflow_ProcessAspect'. From 'workflow_CaseAspect', the role 'workflow_CaseAspect' has cardinality 0..*, and from 'workflow_ProcessAspect', the role 'workflow_ProcessAspect91' has cardinality 0..*.
+An association connects 'workflow_Case' and 'workflow_CaseAspect'. From 'workflow_Case', the role 'Case' has cardinality 0..*, and from 'workflow_CaseAspect', the role 'aspects93' has cardinality 0..*.
+An association connects 'workflow_ActivityAspect' and 'workflow_TaskAspect'. From 'workflow_ActivityAspect', the role 'workflow_ActivityAspect95' has cardinality 0..*, and from 'workflow_TaskAspect', the role 'workflow_TaskAspect96' has cardinality 0..*.
+An association connects 'workflow_ActivityAspect' and 'workflow_Activity'. From 'workflow_ActivityAspect', the role 'aspects98' has cardinality 0..*, and from 'workflow_Activity', the role 'Activity' has cardinality 0..*.
+An association connects 'workflow_ModelAspect' and 'workflow_CoreModel'. From 'workflow_ModelAspect', the role 'workflow_ModelAspect100' has cardinality 0..*, and from 'workflow_CoreModel', the role 'workflow_CoreModel' has cardinality 0..*.
+An association connects 'workflow_Process' and 'workflow_CoreModel'. From 'workflow_Process', the role 'Process102' has cardinality 0..*, and from 'workflow_CoreModel', the role 'coreModel' has cardinality 0..*.
+An association connects 'workflow_CoreModel' and 'workflow_ModelRegistry'. From 'workflow_CoreModel', the role 'coreModels' has cardinality 0..*, and from 'workflow_ModelRegistry', the role 'ModelRegistry' has cardinality 0..*.
+An association connects 'workflow_Task' and 'workflow_Process'. From 'workflow_Task', the role 'workflow_Task106' has cardinality 0..*, and from 'workflow_Process', the role 'workflow_Process105' has cardinality 0..*.
+An association connects 'workflow_Process' and 'workflow_CoreModel'. From 'workflow_Process', the role 'process' has cardinality 0..*, and from 'workflow_CoreModel', the role 'CoreModel108' has cardinality 0..*.
+An association connects 'workflow_Process' and 'workflow_ProcessAspect'. From 'workflow_Process', the role 'core110' has cardinality 0..*, and from 'workflow_ProcessAspect', the role 'ProcessAspect' has cardinality 0..*.
+An association connects 'workflow_TaskAspect' and 'workflow_Task'. From 'workflow_TaskAspect', the role 'TaskAspect' has cardinality 0..*, and from 'workflow_Task', the role 'core112' has cardinality 0..*.
+An association connects 'workflow_RuntimeModelAspect' and 'workflow_RuntimeCoreModel'. From 'workflow_RuntimeModelAspect', the role 'workflow_RuntimeModelAspect' has cardinality 0..*, and from 'workflow_RuntimeCoreModel', the role 'workflow_RuntimeCoreModel' has cardinality 0..*.
+An association connects 'workflow_RuntimeCoreModel' and 'workflow_Case'. From 'workflow_RuntimeCoreModel', the role 'runtimeCoreModel' has cardinality 0..*, and from 'workflow_Case', the role 'Case115' has cardinality 0..*.
+An association connects 'workflow_CoreModel' and 'workflow_RuntimeCoreModel'. From 'workflow_CoreModel', the role 'workflow_CoreModel118' has cardinality 0..*, and from 'workflow_RuntimeCoreModel', the role 'workflow_RuntimeCoreModel117' has cardinality 0..*.
+An association connects 'workflow_ModelRegistry' and 'workflow_WorkflowEngine'. From 'workflow_ModelRegistry', the role 'ModelRegistry120' has cardinality 0..*, and from 'workflow_WorkflowEngine', the role 'engine' has cardinality 0..*.
+An association connects 'workflow_RuntimeCoreModel' and 'workflow_WorkflowEngine'. From 'workflow_RuntimeCoreModel', the role 'workflow_RuntimeCoreModel122' has cardinality 0..*, and from 'workflow_WorkflowEngine', the role 'workflow_WorkflowEngine' has cardinality 0..*.
+An association connects 'workflow_WorkflowEngine' and 'workflow_RuntimeGlobalAspect'. From 'workflow_WorkflowEngine', the role 'engine124' has cardinality 0..*, and from 'workflow_RuntimeGlobalAspect', the role 'RuntimeGlobalAspect' has cardinality 0..*.
+An association connects 'workflow_ProcessO' and 'workflow_Role'. From 'workflow_ProcessO', the role 'workflow_ProcessO' has cardinality 0..*, and from 'workflow_Role', the role 'workflow_Role126' has cardinality 0..*.
+An association connects 'workflow_DefaultDocumentType' and 'workflow_Field'. From 'workflow_DefaultDocumentType', the role 'workflow_DefaultDocumentType' has cardinality 0..*, and from 'workflow_Field', the role 'workflow_Field' has cardinality 0..*.
+An association connects 'workflow_EnumField' and 'workflow_DefaultDocumentType'. From 'workflow_EnumField', the role 'workflow_EnumField' has cardinality 0..*, and from 'workflow_DefaultDocumentType', the role 'workflow_DefaultDocumentType129' has cardinality 0..*.
+An association connects 'workflow_FieldValue' and 'workflow_DefaultDocument'. From 'workflow_FieldValue', the role 'workflow_FieldValue' has cardinality 0..*, and from 'workflow_DefaultDocument', the role 'workflow_DefaultDocument' has cardinality 0..*.
+An association connects 'workflow_EnumFieldValue' and 'workflow_DefaultDocument'. From 'workflow_EnumFieldValue', the role 'workflow_EnumFieldValue' has cardinality 0..*, and from 'workflow_DefaultDocument', the role 'workflow_DefaultDocument132' has cardinality 0..*.
+An association connects 'workflow_Field' and 'workflow_FieldValue'. From 'workflow_Field', the role 'workflow_Field135' has cardinality 0..*, and from 'workflow_FieldValue', the role 'workflow_FieldValue134' has cardinality 0..*.
+An association connects 'workflow_Agent' and 'workflow_CaseO'. From 'workflow_Agent', the role 'workflow_Agent137' has cardinality 0..*, and from 'workflow_CaseO', the role 'workflow_CaseO' has cardinality 0..*.
+An association connects 'workflow_ProcessDocument' and 'workflow_DocumentType'. From 'workflow_ProcessDocument', the role 'workflow_ProcessDocument139' has cardinality 0..*, and from 'workflow_DocumentType', the role 'workflow_DocumentType140' has cardinality 0..*.
+An association connects 'workflow_Document' and 'workflow_String2DocumentMap'. From 'workflow_Document', the role 'workflow_Document143' has cardinality 0..*, and from 'workflow_String2DocumentMap', the role 'workflow_String2DocumentMap142' has cardinality 0..*.
+An association connects 'workflow_Operator' and 'workflow_Expression'. From 'workflow_Operator', the role 'workflow_Operator' has cardinality 0..*, and from 'workflow_Expression', the role 'workflow_Expression' has cardinality 0..*.
+An association connects 'workflow_DocumentDescriptor' and 'workflow_DocumentDescrAtom'. From 'workflow_DocumentDescriptor', the role 'workflow_DocumentDescriptor146' has cardinality 0..*, and from 'workflow_DocumentDescrAtom', the role 'workflow_DocumentDescrAtom' has cardinality 0..*.
+An association connects 'workflow_FieldAtom' and 'workflow_Field'. From 'workflow_FieldAtom', the role 'workflow_FieldAtom' has cardinality 0..*, and from 'workflow_Field', the role 'workflow_Field148' has cardinality 0..*.
+An association connects 'workflow_Expression' and 'workflow_DefaultDocumentCondition'. From 'workflow_Expression', the role 'workflow_Expression150' has cardinality 0..*, and from 'workflow_DefaultDocumentCondition', the role 'workflow_DefaultDocumentCondition' has cardinality 0..*.
+An association connects 'workflow_EnumField' and 'workflow_EnumLiteral'. From 'workflow_EnumField', the role 'workflow_EnumField152' has cardinality 0..*, and from 'workflow_EnumLiteral', the role 'workflow_EnumLiteral' has cardinality 0..*.
+An association connects 'workflow_EnumField' and 'workflow_EnumLiteral'. From 'workflow_EnumField', the role 'workflow_EnumField154' has cardinality 0..*, and from 'workflow_EnumLiteral', the role 'workflow_EnumLiteral155' has cardinality 0..*.
+An association connects 'workflow_EnumField' and 'workflow_EnumFieldValue'. From 'workflow_EnumField', the role 'workflow_EnumField158' has cardinality 0..*, and from 'workflow_EnumFieldValue', the role 'workflow_EnumFieldValue157' has cardinality 0..*.
+An association connects 'workflow_EnumLiteral' and 'workflow_EnumFieldValue'. From 'workflow_EnumLiteral', the role 'workflow_EnumLiteral161' has cardinality 0..*, and from 'workflow_EnumFieldValue', the role 'workflow_EnumFieldValue160' has cardinality 0..*.
+An association connects 'workflow_EnumFieldAtom' and 'workflow_EnumField'. From 'workflow_EnumFieldAtom', the role 'workflow_EnumFieldAtom' has cardinality 0..*, and from 'workflow_EnumField', the role 'workflow_EnumField163' has cardinality 0..*.
+An association connects 'workflow_EnumLiteralAtom' and 'workflow_EnumLiteral'. From 'workflow_EnumLiteralAtom', the role 'workflow_EnumLiteralAtom' has cardinality 0..*, and from 'workflow_EnumLiteral', the role 'workflow_EnumLiteral165' has cardinality 0..*.
+An association connects 'workflow_AgentContainer' and 'workflow_Agent'. From 'workflow_AgentContainer', the role 'workflow_AgentContainer' has cardinality 0..*, and from 'workflow_Agent', the role 'workflow_Agent167' has cardinality 0..*.
+An association connects 'workflow_Role' and 'workflow_Organisation'. From 'workflow_Role', the role 'workflow_Role169' has cardinality 0..*, and from 'workflow_Organisation', the role 'workflow_Organisation' has cardinality 0..*.
+An association connects 'workflow_ModelRegistry' and 'workflow_GlobalAspect'. From 'workflow_ModelRegistry', the role 'ModelRegistry171' has cardinality 0..*, and from 'workflow_GlobalAspect', the role 'globalAspects' has cardinality 0..*.
+An association connects 'workflow_WorkflowEngine' and 'workflow_RuntimeGlobalAspect'. From 'workflow_WorkflowEngine', the role 'WorkflowEngine173' has cardinality 0..*, and from 'workflow_RuntimeGlobalAspect', the role 'runtimeGlobalAspects' has cardinality 0..*.
+An association connects 'workflow_DocumentTypeContainer' and 'workflow_DocumentType'. From 'workflow_DocumentTypeContainer', the role 'workflow_DocumentTypeContainer' has cardinality 0..*, and from 'workflow_DocumentType', the role 'workflow_DocumentType175' has cardinality 0..*.
+An association connects 'workflow_Document' and 'workflow_DocumentContainer'. From 'workflow_Document', the role 'workflow_Document177' has cardinality 0..*, and from 'workflow_DocumentContainer', the role 'workflow_DocumentContainer' has cardinality 0..*.

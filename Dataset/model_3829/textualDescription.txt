@@ -1,0 +1,36 @@
+The domain model 'TestPackage' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'TestPackage_SubPackage_SubTestInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_UberClass' represents an important domain concept.
+It does not declare any attributes.
+
+'UberClass' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_SuperClass' represents an important domain concept.
+It does not declare any attributes.
+
+'SuperClass' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_TestInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'TestPackage_TestClass' represents an important domain concept.
+It has the following attributes: 'testStringAttr', which is of type str; 'testAttr6', which is of type int; 'testBooleanAttr', which is of type bool; 'testAttr5', which is of type int; 'testAttr', which is of type date; 'testAttr1', which is of type int; 'testAttr8', which is of type int; 'testRealAttr', which is of type str; 'testAttr2', which is of type int; 'testIntAttr', which is of type int; 'testAttr3', which is of type int; 'testAttr4', which is of type int; 'testUnlimitedNaturalAttr', which is of type str; 'testAttr7', which is of type int.
+
+'TestPackage_SubPackage_SubTestClass' represents an important domain concept.
+It has the following attributes: 'testBooleanAttr', which is of type bool; 'testRealAttr', which is of type str; 'testStringAttr', which is of type str; 'testIntAttr', which is of type int; 'testAttr', which is of type date.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SubTestEnum' is defined but does not specify any literals.
+The enumeration 'TestEnum' is defined but does not specify any literals.
+
+The model also captures inheritance relationships between classes.
+The class 'TestPackage_TestClass' is a specialization of 'SuperClass'.
+The class 'TestPackage_TestClass' is a specialization of 'UberClass'.
+The class 'TestPackage_TestInterface' is a specialization of 'SuperClass'.

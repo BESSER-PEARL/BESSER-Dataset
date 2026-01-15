@@ -1,0 +1,97 @@
+The domain model 'datatype' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'datatype_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'datatype_ConstraintRule' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'datatype_BooleanPropertyAttribute' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type bool.
+
+'datatype_PrimitivePropertyType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'datatype_Presence' represents an important domain concept.
+It has one attribute: 'mandatory', which is of type bool.
+
+'PropertyAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'datatype_ComplexPrimitivePropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'datatype_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'datatype_DictionaryPropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'datatype_Property' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'multiplicity', which is of type bool; 'extension', which is of type bool; 'description', which is of type str.
+
+'datatype_Constraint' represents an important domain concept.
+It has the following attributes: 'constraintValues', which is of type str; 'type', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'datatype_ObjectPropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'datatype_EnumLiteralPropertyAttribute' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'datatype_PropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'datatype_Enum' represents an important domain concept.
+It does not declare any attributes.
+
+'datatype_EnumLiteral' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str.
+
+'datatype_PropertyAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ComplexPrimitivePropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'Model' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EnumLiteralPropertyAttributeType' defines a single possible value: 'measurementUnit'.
+The enumeration 'PrimitiveType' defines the following possible values: 'int', 'byte', 'double', 'long', 'boolean', 'string', 'datetime', 'base64Binary', 'short', 'float'.
+The enumeration 'BooleanPropertyAttributeType' defines the following possible values: 'readable', 'eventable', 'writable'.
+The enumeration 'ConstraintIntervalType' defines the following possible values: 'scaling', 'nullable', 'regex', 'mimetype', 'max', 'default', 'strlen', 'min'.
+
+The model also captures inheritance relationships between classes.
+The class 'datatype_Entity' is a specialization of 'Type'.
+The class 'datatype_PrimitivePropertyType' is a specialization of 'PropertyType'.
+The class 'datatype_ObjectPropertyType' is a specialization of 'PropertyType'.
+The class 'datatype_Enum' is a specialization of 'Type'.
+The class 'datatype_Type' is a specialization of 'Model'.
+The class 'datatype_BooleanPropertyAttribute' is a specialization of 'PropertyAttribute'.
+The class 'datatype_EnumLiteralPropertyAttribute' is a specialization of 'PropertyAttribute'.
+The class 'datatype_ComplexPrimitivePropertyType' is a specialization of 'PropertyType'.
+The class 'datatype_DictionaryPropertyType' is a specialization of 'ComplexPrimitivePropertyType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'datatype_Entity' and 'datatype_Entity'. From 'datatype_Entity', the role 'datatype_Entity0' has cardinality 0..*, and from 'datatype_Entity', the role 'datatype_Entity' has cardinality 0..*.
+An association connects 'datatype_Property' and 'datatype_Entity'. From 'datatype_Property', the role 'datatype_Property' has cardinality 0..*, and from 'datatype_Entity', the role 'datatype_Entity3' has cardinality 0..*.
+An association connects 'datatype_Presence' and 'datatype_Property'. From 'datatype_Presence', the role 'datatype_Presence' has cardinality 0..*, and from 'datatype_Property', the role 'datatype_Property5' has cardinality 0..*.
+An association connects 'datatype_ConstraintRule' and 'datatype_Property'. From 'datatype_ConstraintRule', the role 'datatype_ConstraintRule' has cardinality 0..*, and from 'datatype_Property', the role 'datatype_Property7' has cardinality 0..*.
+An association connects 'datatype_Property' and 'datatype_PropertyType'. From 'datatype_Property', the role 'datatype_Property9' has cardinality 0..*, and from 'datatype_PropertyType', the role 'datatype_PropertyType' has cardinality 0..*.
+An association connects 'datatype_PropertyAttribute' and 'datatype_Property'. From 'datatype_PropertyAttribute', the role 'datatype_PropertyAttribute' has cardinality 0..*, and from 'datatype_Property', the role 'datatype_Property11' has cardinality 0..*.
+An association connects 'datatype_Type' and 'datatype_ObjectPropertyType'. From 'datatype_Type', the role 'datatype_Type' has cardinality 0..*, and from 'datatype_ObjectPropertyType', the role 'datatype_ObjectPropertyType' has cardinality 0..*.
+An association connects 'datatype_Enum' and 'datatype_EnumLiteral'. From 'datatype_Enum', the role 'datatype_Enum' has cardinality 0..*, and from 'datatype_EnumLiteral', the role 'datatype_EnumLiteral' has cardinality 0..*.
+An association connects 'datatype_EnumLiteral' and 'datatype_EnumLiteralPropertyAttribute'. From 'datatype_EnumLiteral', the role 'datatype_EnumLiteral15' has cardinality 0..*, and from 'datatype_EnumLiteralPropertyAttribute', the role 'datatype_EnumLiteralPropertyAttribute' has cardinality 0..*.
+An association connects 'datatype_Constraint' and 'datatype_ConstraintRule'. From 'datatype_Constraint', the role 'datatype_Constraint' has cardinality 0..*, and from 'datatype_ConstraintRule', the role 'datatype_ConstraintRule17' has cardinality 0..*.
+An association connects 'datatype_PropertyType' and 'datatype_DictionaryPropertyType'. From 'datatype_PropertyType', the role 'datatype_PropertyType19' has cardinality 0..*, and from 'datatype_DictionaryPropertyType', the role 'datatype_DictionaryPropertyType' has cardinality 0..*.
+An association connects 'datatype_PropertyType' and 'datatype_DictionaryPropertyType'. From 'datatype_PropertyType', the role 'datatype_PropertyType22' has cardinality 0..*, and from 'datatype_DictionaryPropertyType', the role 'datatype_DictionaryPropertyType21' has cardinality 0..*.

@@ -1,0 +1,45 @@
+The domain model 'mathDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'mathDSL_Multi' represents an important domain concept.
+It does not declare any attributes.
+
+'mathDSL_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'mathDSL_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'mathDSL_NumberLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'mathDSL_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'mathDSL_Math' represents an important domain concept.
+It does not declare any attributes.
+
+'mathDSL_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mathDSL_Plus' is a specialization of 'Expression'.
+The class 'mathDSL_Minus' is a specialization of 'Expression'.
+The class 'mathDSL_Multi' is a specialization of 'Expression'.
+The class 'mathDSL_Div' is a specialization of 'Expression'.
+The class 'mathDSL_NumberLiteral' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mathDSL_Expression' and 'mathDSL_Math'. From 'mathDSL_Expression', the role 'mathDSL_Expression' has cardinality 0..*, and from 'mathDSL_Math', the role 'mathDSL_Math' has cardinality 0..*.
+An association connects 'mathDSL_Expression' and 'mathDSL_Plus'. From 'mathDSL_Expression', the role 'mathDSL_Expression2' has cardinality 0..*, and from 'mathDSL_Plus', the role 'mathDSL_Plus' has cardinality 0..*.
+An association connects 'mathDSL_Plus' and 'mathDSL_Expression'. From 'mathDSL_Plus', the role 'mathDSL_Plus4' has cardinality 0..*, and from 'mathDSL_Expression', the role 'mathDSL_Expression5' has cardinality 0..*.
+An association connects 'mathDSL_Minus' and 'mathDSL_Expression'. From 'mathDSL_Minus', the role 'mathDSL_Minus' has cardinality 0..*, and from 'mathDSL_Expression', the role 'mathDSL_Expression7' has cardinality 0..*.
+An association connects 'mathDSL_Minus' and 'mathDSL_Expression'. From 'mathDSL_Minus', the role 'mathDSL_Minus9' has cardinality 0..*, and from 'mathDSL_Expression', the role 'mathDSL_Expression10' has cardinality 0..*.
+An association connects 'mathDSL_Expression' and 'mathDSL_Multi'. From 'mathDSL_Expression', the role 'mathDSL_Expression12' has cardinality 0..*, and from 'mathDSL_Multi', the role 'mathDSL_Multi' has cardinality 0..*.
+An association connects 'mathDSL_Multi' and 'mathDSL_Expression'. From 'mathDSL_Multi', the role 'mathDSL_Multi14' has cardinality 0..*, and from 'mathDSL_Expression', the role 'mathDSL_Expression15' has cardinality 0..*.
+An association connects 'mathDSL_Div' and 'mathDSL_Expression'. From 'mathDSL_Div', the role 'mathDSL_Div' has cardinality 0..*, and from 'mathDSL_Expression', the role 'mathDSL_Expression17' has cardinality 0..*.
+An association connects 'mathDSL_Expression' and 'mathDSL_Div'. From 'mathDSL_Expression', the role 'mathDSL_Expression20' has cardinality 0..*, and from 'mathDSL_Div', the role 'mathDSL_Div19' has cardinality 0..*.

@@ -1,0 +1,498 @@
+The domain model 'jcl' describes the core structural elements and their relationships within the system.
+
+The model defines 124 main class(es).
+
+'jcl_parameters_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_parameters_UserID' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'commons_IncompleteElement' represents an important domain concept.
+It does not declare any attributes.
+
+'conditions_PrimaryCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_ProcedureStepElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_expressions_Abend' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_parameters_TypeRun' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ReturnCode' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_parameters_DatasetName' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_operators_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_statements_Condition' represents an important domain concept.
+It has the following attributes: 'elseName', which is of type str; 'endName', which is of type str.
+
+'jcl_parameters_Other' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ConditionalAndExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_commons_IncompleteElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_statements_Output' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_members_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'members_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_conditions_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_expressions_RelationalExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_conditions_PrimaryCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_parameters_JobClass' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_conditions_ReturnCode' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_conditions_Even' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimaryCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_parameters_Bytes' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'jcl_commons_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RelationalExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_conditions_NestedCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_operators_NotEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_procedures_Procedure' represents an important domain concept.
+It has one attribute: 'endName', which is of type str.
+
+'statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_references_ReferenceableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_waters_Water' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'parameters_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_expressions_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'containers_JCLRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_operators_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_statements_EndControl' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_statements_Execute' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_statements_StatementContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_parameters_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_statements_JCLLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_parameters_AccountInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecuteProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'Execute' represents an important domain concept.
+It does not declare any attributes.
+
+'PhraseableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_references_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalOrExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_operators_LessThan' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_expressions_ConditionalAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_statements_Control' represents an important domain concept.
+It has one attribute: 'endName', which is of type str.
+
+'jcl_operators_And' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_expressions_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_expressions_UnaryExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_conditions_RelationalCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_operators_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_expressions_Run' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_literals_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'jcl_statements_Set' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_operators_RelationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_parameters_Display' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'jcl_expressions_ConditionalOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_statements_DataDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_expressions_ConditionalOrExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_StatementContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_parameters_MessageLevel' represents an important domain concept.
+It has the following attributes: 'statements', which is of type int; 'messages', which is of type int.
+
+'jcl_operators_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_operators_Negate' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_statements_Input' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_literals_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_expressions_ConditionalAndExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_commons_ProcedureStepElement' represents an important domain concept.
+It has one attribute: 'procStepName', which is of type str.
+
+'PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_parameters_AddressSpace' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'jcl_parameters_Priority' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'jcl_references_ElementReference' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_operators_LessEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_references_IdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_statements_ExecuteProgram' represents an important domain concept.
+It has one attribute: 'programName', which is of type str.
+
+'jcl_parameters_MessageClass' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'jcl_statements_ExecuteProcedure' represents an important domain concept.
+It has one attribute: 'procedureName', which is of type str.
+
+'Water' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_conditions_Only' represents an important domain concept.
+It does not declare any attributes.
+
+'ReferenceableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_literals_SpecialLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'LogicOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_containers_JobUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_parameters_Argument' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'jcl_expressions_RelationalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_commons_CommentableElement' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'jcl_containers_JCLRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_operators_LogicOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'references_ElementReference' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_operators_GreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+'Or' represents an important domain concept.
+It does not declare any attributes.
+
+'conditions_ReturnCode' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_literals_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'jcl_expressions_PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'literals_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_statements_Include' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_parameters_Password' represents an important domain concept.
+It has the following attributes: 'old', which is of type str; 'new', which is of type str.
+
+'commons_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'And' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_operators_GreaterEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'IdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_statements_Command' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'jcl_commons_PhraseableElement' represents an important domain concept.
+It has one attribute: 'isPhrase', which is of type bool.
+
+'EndControl' represents an important domain concept.
+It does not declare any attributes.
+
+'jcl_expressions_NestedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AdressSpaceEnum' defines the following possible values: 'virtual', 'real'.
+The enumeration 'TypeRunEnum' defines the following possible values: 'jclhold', 'hold', 'scan', 'copy'.
+
+The model also captures inheritance relationships between classes.
+The class 'jcl_parameters_Display' is a specialization of 'Parameter'.
+The class 'jcl_parameters_JobClass' is a specialization of 'Parameter'.
+The class 'jcl_parameters_MessageClass' is a specialization of 'Parameter'.
+The class 'jcl_parameters_Password' is a specialization of 'Parameter'.
+The class 'jcl_parameters_Priority' is a specialization of 'Parameter'.
+The class 'jcl_parameters_UserID' is a specialization of 'Parameter'.
+The class 'jcl_parameters_MessageLevel' is a specialization of 'Parameter'.
+The class 'jcl_parameters_TypeRun' is a specialization of 'Parameter'.
+The class 'jcl_parameters_AddressSpace' is a specialization of 'parameters_Parameter'.
+The class 'jcl_parameters_AddressSpace' is a specialization of 'commons_ProcedureStepElement'.
+The class 'jcl_parameters_Bytes' is a specialization of 'Parameter'.
+The class 'jcl_parameters_AccountInfo' is a specialization of 'parameters_Parameter'.
+The class 'jcl_parameters_AccountInfo' is a specialization of 'commons_ProcedureStepElement'.
+The class 'jcl_parameters_Argument' is a specialization of 'parameters_Parameter'.
+The class 'jcl_parameters_Argument' is a specialization of 'commons_ProcedureStepElement'.
+The class 'jcl_parameters_Condition' is a specialization of 'parameters_Parameter'.
+The class 'jcl_parameters_Condition' is a specialization of 'commons_ProcedureStepElement'.
+The class 'jcl_parameters_DatasetName' is a specialization of 'Parameter'.
+The class 'jcl_parameters_Other' is a specialization of 'parameters_Parameter'.
+The class 'jcl_parameters_Other' is a specialization of 'commons_NamedElement'.
+The class 'jcl_parameters_Other' is a specialization of 'commons_ProcedureStepElement'.
+The class 'jcl_statements_Statement' is a specialization of 'commons_NamedElement'.
+The class 'jcl_statements_Statement' is a specialization of 'members_Member'.
+The class 'jcl_statements_Execute' is a specialization of 'Statement'.
+The class 'jcl_statements_Condition' is a specialization of 'statements_StatementContainer'.
+The class 'jcl_statements_Condition' is a specialization of 'statements_Statement'.
+The class 'jcl_statements_DataDefinition' is a specialization of 'statements_Statement'.
+The class 'jcl_statements_DataDefinition' is a specialization of 'commons_ProcedureStepElement'.
+The class 'jcl_statements_Set' is a specialization of 'Statement'.
+The class 'jcl_statements_Input' is a specialization of 'Statement'.
+The class 'jcl_statements_Output' is a specialization of 'Statement'.
+The class 'jcl_statements_JCLLibrary' is a specialization of 'Statement'.
+The class 'jcl_statements_Control' is a specialization of 'Statement'.
+The class 'jcl_statements_Include' is a specialization of 'Statement'.
+The class 'jcl_statements_Command' is a specialization of 'Statement'.
+The class 'jcl_statements_ExecuteProgram' is a specialization of 'Execute'.
+The class 'jcl_statements_ExecuteProcedure' is a specialization of 'Execute'.
+The class 'jcl_statements_EndControl' is a specialization of 'Statement'.
+The class 'jcl_containers_JobUnit' is a specialization of 'commons_NamedElement'.
+The class 'jcl_containers_JobUnit' is a specialization of 'containers_JCLRoot'.
+The class 'jcl_containers_JobUnit' is a specialization of 'commons_IncompleteElement'.
+The class 'jcl_expressions_RelationalExpression' is a specialization of 'ConditionalAndExpressionChild'.
+The class 'jcl_expressions_ConditionalExpression' is a specialization of 'Expression'.
+The class 'jcl_expressions_ConditionalOrExpression' is a specialization of 'ConditionalExpression'.
+The class 'jcl_expressions_ConditionalOrExpressionChild' is a specialization of 'ConditionalExpression'.
+The class 'jcl_expressions_ConditionalAndExpression' is a specialization of 'ConditionalOrExpressionChild'.
+The class 'jcl_expressions_ConditionalAndExpressionChild' is a specialization of 'ConditionalOrExpressionChild'.
+The class 'jcl_expressions_RelationalExpressionChild' is a specialization of 'ConditionalAndExpressionChild'.
+The class 'jcl_expressions_UnaryExpressionChild' is a specialization of 'RelationalExpressionChild'.
+The class 'jcl_expressions_UnaryExpression' is a specialization of 'RelationalExpressionChild'.
+The class 'jcl_expressions_NestedExpression' is a specialization of 'PrimaryExpression'.
+The class 'jcl_expressions_PrimaryExpression' is a specialization of 'UnaryExpressionChild'.
+The class 'jcl_expressions_Abend' is a specialization of 'expressions_PrimaryExpression'.
+The class 'jcl_expressions_Abend' is a specialization of 'commons_ProcedureStepElement'.
+The class 'jcl_expressions_Run' is a specialization of 'expressions_PrimaryExpression'.
+The class 'jcl_expressions_Run' is a specialization of 'commons_ProcedureStepElement'.
+The class 'jcl_operators_Operator' is a specialization of 'PhraseableElement'.
+The class 'jcl_operators_GreaterThan' is a specialization of 'RelationOperator'.
+The class 'jcl_operators_GreaterEqual' is a specialization of 'RelationOperator'.
+The class 'jcl_operators_Equal' is a specialization of 'RelationOperator'.
+The class 'jcl_operators_LessThan' is a specialization of 'RelationOperator'.
+The class 'jcl_operators_LessEqual' is a specialization of 'RelationOperator'.
+The class 'jcl_operators_NotEqual' is a specialization of 'RelationOperator'.
+The class 'jcl_operators_UnaryOperator' is a specialization of 'Operator'.
+The class 'jcl_operators_RelationOperator' is a specialization of 'Operator'.
+The class 'jcl_operators_Negate' is a specialization of 'UnaryOperator'.
+The class 'jcl_operators_LogicOperator' is a specialization of 'Operator'.
+The class 'jcl_operators_And' is a specialization of 'LogicOperator'.
+The class 'jcl_operators_Or' is a specialization of 'LogicOperator'.
+The class 'jcl_literals_IntegerLiteral' is a specialization of 'literals_Literal'.
+The class 'jcl_literals_IntegerLiteral' is a specialization of 'expressions_PrimaryExpression'.
+The class 'jcl_literals_IntegerLiteral' is a specialization of 'conditions_ReturnCode'.
+The class 'jcl_literals_StringLiteral' is a specialization of 'Literal'.
+The class 'jcl_literals_SpecialLiteral' is a specialization of 'Literal'.
+The class 'jcl_references_ElementReference' is a specialization of 'Reference'.
+The class 'jcl_references_IdentifierReference' is a specialization of 'references_ElementReference'.
+The class 'jcl_references_IdentifierReference' is a specialization of 'expressions_PrimaryExpression'.
+The class 'jcl_references_IdentifierReference' is a specialization of 'conditions_ReturnCode'.
+The class 'jcl_conditions_Even' is a specialization of 'PrimaryCondition'.
+The class 'jcl_conditions_Only' is a specialization of 'PrimaryCondition'.
+The class 'jcl_conditions_PrimaryCondition' is a specialization of 'Condition'.
+The class 'jcl_conditions_NestedCondition' is a specialization of 'PrimaryCondition'.
+The class 'jcl_conditions_RelationalCondition' is a specialization of 'conditions_PrimaryCondition'.
+The class 'jcl_conditions_RelationalCondition' is a specialization of 'references_ElementReference'.
+The class 'jcl_procedures_Procedure' is a specialization of 'containers_JCLRoot'.
+The class 'jcl_procedures_Procedure' is a specialization of 'commons_NamedElement'.
+The class 'jcl_procedures_Procedure' is a specialization of 'members_Member'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Water' and 'jcl_commons_IncompleteElement'. From 'Water', the role 'Water' has cardinality 0..*, and from 'jcl_commons_IncompleteElement', the role 'jcl_commons_IncompleteElement' has cardinality 0..*.
+An association connects 'jcl_parameters_AccountInfo' and 'Literal'. From 'jcl_parameters_AccountInfo', the role 'jcl_parameters_AccountInfo' has cardinality 0..*, and from 'Literal', the role 'Literal' has cardinality 0..*.
+An association connects 'jcl_parameters_Condition' and 'Condition'. From 'jcl_parameters_Condition', the role 'jcl_parameters_Condition' has cardinality 0..*, and from 'Condition', the role 'Condition' has cardinality 0..*.
+An association connects 'jcl_statements_Statement' and 'Parameter'. From 'jcl_statements_Statement', the role 'jcl_statements_Statement' has cardinality 0..*, and from 'Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'jcl_statements_StatementContainer' and 'Statement'. From 'jcl_statements_StatementContainer', the role 'jcl_statements_StatementContainer' has cardinality 0..*, and from 'Statement', the role 'Statement' has cardinality 0..*.
+An association connects 'Statement' and 'jcl_statements_Condition'. From 'Statement', the role 'Statement6' has cardinality 0..*, and from 'jcl_statements_Condition', the role 'jcl_statements_Condition' has cardinality 0..*.
+An association connects 'Expression' and 'jcl_statements_Condition'. From 'Expression', the role 'Expression' has cardinality 0..*, and from 'jcl_statements_Condition', the role 'jcl_statements_Condition8' has cardinality 0..*.
+An association connects 'jcl_statements_Control' and 'EndControl'. From 'jcl_statements_Control', the role 'jcl_statements_Control' has cardinality 0..*, and from 'EndControl', the role 'EndControl' has cardinality 0..*.
+An association connects 'jcl_containers_JCLRoot' and 'Member'. From 'jcl_containers_JCLRoot', the role 'jcl_containers_JCLRoot' has cardinality 0..*, and from 'Member', the role 'Member' has cardinality 0..*.
+An association connects 'Parameter' and 'jcl_containers_JobUnit'. From 'Parameter', the role 'Parameter12' has cardinality 0..*, and from 'jcl_containers_JobUnit', the role 'jcl_containers_JobUnit' has cardinality 0..*.
+An association connects 'jcl_containers_JobUnit' and 'Literal'. From 'jcl_containers_JobUnit', the role 'jcl_containers_JobUnit14' has cardinality 0..*, and from 'Literal', the role 'Literal15' has cardinality 0..*.
+An association connects 'jcl_containers_JobUnit' and 'ExecuteProgram'. From 'jcl_containers_JobUnit', the role 'jcl_containers_JobUnit17' has cardinality 0..*, and from 'ExecuteProgram', the role 'ExecuteProgram' has cardinality 0..*.
+An association connects 'jcl_expressions_RelationalExpression' and 'RelationalExpressionChild'. From 'jcl_expressions_RelationalExpression', the role 'jcl_expressions_RelationalExpression' has cardinality 0..*, and from 'RelationalExpressionChild', the role 'RelationalExpressionChild' has cardinality 0..*.
+An association connects 'jcl_expressions_RelationalExpression' and 'RelationOperator'. From 'jcl_expressions_RelationalExpression', the role 'jcl_expressions_RelationalExpression20' has cardinality 0..*, and from 'RelationOperator', the role 'RelationOperator' has cardinality 0..*.
+An association connects 'jcl_expressions_ConditionalOrExpression' and 'ConditionalOrExpressionChild'. From 'jcl_expressions_ConditionalOrExpression', the role 'jcl_expressions_ConditionalOrExpression' has cardinality 0..*, and from 'ConditionalOrExpressionChild', the role 'ConditionalOrExpressionChild' has cardinality 0..*.
+An association connects 'jcl_expressions_ConditionalOrExpression' and 'Or'. From 'jcl_expressions_ConditionalOrExpression', the role 'jcl_expressions_ConditionalOrExpression23' has cardinality 0..*, and from 'Or', the role 'Or' has cardinality 0..*.
+An association connects 'ConditionalAndExpressionChild' and 'jcl_expressions_ConditionalAndExpression'. From 'ConditionalAndExpressionChild', the role 'ConditionalAndExpressionChild' has cardinality 0..*, and from 'jcl_expressions_ConditionalAndExpression', the role 'jcl_expressions_ConditionalAndExpression' has cardinality 0..*.
+An association connects 'jcl_expressions_ConditionalAndExpression' and 'And'. From 'jcl_expressions_ConditionalAndExpression', the role 'jcl_expressions_ConditionalAndExpression26' has cardinality 0..*, and from 'And', the role 'And' has cardinality 0..*.
+An association connects 'UnaryExpressionChild' and 'jcl_expressions_UnaryExpression'. From 'UnaryExpressionChild', the role 'UnaryExpressionChild' has cardinality 0..*, and from 'jcl_expressions_UnaryExpression', the role 'jcl_expressions_UnaryExpression' has cardinality 0..*.
+An association connects 'jcl_expressions_UnaryExpression' and 'UnaryOperator'. From 'jcl_expressions_UnaryExpression', the role 'jcl_expressions_UnaryExpression29' has cardinality 0..*, and from 'UnaryOperator', the role 'UnaryOperator' has cardinality 0..*.
+An association connects 'jcl_expressions_NestedExpression' and 'Expression'. From 'jcl_expressions_NestedExpression', the role 'jcl_expressions_NestedExpression' has cardinality 0..*, and from 'Expression', the role 'Expression31' has cardinality 0..*.
+An association connects 'IdentifierReference' and 'jcl_expressions_Abend'. From 'IdentifierReference', the role 'IdentifierReference' has cardinality 0..*, and from 'jcl_expressions_Abend', the role 'jcl_expressions_Abend' has cardinality 0..*.
+An association connects 'IdentifierReference' and 'jcl_expressions_Run'. From 'IdentifierReference', the role 'IdentifierReference34' has cardinality 0..*, and from 'jcl_expressions_Run', the role 'jcl_expressions_Run' has cardinality 0..*.
+An association connects 'jcl_references_Reference' and 'Reference'. From 'jcl_references_Reference', the role 'jcl_references_Reference' has cardinality 0..*, and from 'Reference', the role 'Reference' has cardinality 0..*.
+An association connects 'jcl_references_ElementReference' and 'ReferenceableElement'. From 'jcl_references_ElementReference', the role 'jcl_references_ElementReference' has cardinality 0..*, and from 'ReferenceableElement', the role 'ReferenceableElement' has cardinality 0..*.
+An association connects 'Condition' and 'jcl_conditions_NestedCondition'. From 'Condition', the role 'Condition38' has cardinality 0..*, and from 'jcl_conditions_NestedCondition', the role 'jcl_conditions_NestedCondition' has cardinality 0..*.
+An association connects 'jcl_conditions_RelationalCondition' and 'RelationOperator'. From 'jcl_conditions_RelationalCondition', the role 'jcl_conditions_RelationalCondition' has cardinality 0..*, and from 'RelationOperator', the role 'RelationOperator40' has cardinality 0..*.
+An association connects 'jcl_conditions_RelationalCondition' and 'ReturnCode'. From 'jcl_conditions_RelationalCondition', the role 'jcl_conditions_RelationalCondition42' has cardinality 0..*, and from 'ReturnCode', the role 'ReturnCode' has cardinality 0..*.

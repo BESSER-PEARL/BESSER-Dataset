@@ -1,0 +1,132 @@
+The domain model 'metrics' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'metrics_Mapping' represents an important domain concept.
+It has the following attributes: 'intervalHint', which is of type str; 'headerRow', which is of type str; 'firstDataRow', which is of type str.
+
+'metrics_Metric' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'measurementKind', which is of type str; 'measurementPoint', which is of type str.
+
+'metrics_MetricAggregationRules' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_MappingColumn' represents an important domain concept.
+It has one attribute: 'column', which is of type str.
+
+'Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_RuleSet' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_MetricRetentionPeriods' represents an important domain concept.
+It has one attribute: 'metricRetentionPeriods', which is of type str.
+
+'metrics_MappingCSV' represents an important domain concept.
+It has the following attributes: 'delimiter', which is of type str; 'filterPattern', which is of type str.
+
+'metrics_ValueDataKind' represents an important domain concept.
+It has the following attributes: 'valueKind', which is of type str; 'kindHint', which is of type str; 'format', which is of type str.
+
+'metrics_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_MetricSource' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'metricLocation', which is of type str; 'filterPattern', which is of type str.
+
+'metrics_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_MappingXLS' represents an important domain concept.
+It has the following attributes: 'filterPattern', which is of type str; 'sheetNumber', which is of type str.
+
+'metrics_MappingRecord' represents an important domain concept.
+It has the following attributes: 'column', which is of type str; 'count', which is of type str; 'message', which is of type str.
+
+'metrics_IdentifierDataKind' represents an important domain concept.
+It has the following attributes: 'pattern', which is of type str; 'objectProperty', which is of type str; 'objectKind', which is of type str.
+
+'metrics_MappingRDBMS' represents an important domain concept.
+It has the following attributes: 'timeFormat', which is of type str; 'user', which is of type str; 'dateTimeFormat', which is of type str; 'query', which is of type str; 'password', which is of type str; 'dateFormat', which is of type str; 'databaseType', which is of type str.
+
+'metrics_DateTimeRange' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_MetricValueRange' represents an important domain concept.
+It has the following attributes: 'kindHint', which is of type str; 'intervalHint', which is of type str.
+
+'Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_MetricAggregationRule' represents an important domain concept.
+It does not declare any attributes.
+
+'Base' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_MetricRetentionRules' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_MetricRetentionRule' represents an important domain concept.
+It has the following attributes: 'intervalHint', which is of type str; 'period', which is of type str.
+
+'DataKind' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_MappingExternal' represents an important domain concept.
+It has the following attributes: 'classURI', which is of type str; 'pluginID', which is of type str.
+
+'metrics_DataKind' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_MappingStatistic' represents an important domain concept.
+It has the following attributes: 'intervalEstimate', which is of type str; 'message', which is of type str; 'totalRecords', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FixedMetricRetentionPeriod' defines the following possible values: 'OneMonth', 'OneYear', 'OneWeek', 'Always'.
+The enumeration 'DatabaseTypeType' defines the following possible values: 'Oracle', 'Postgres'.
+The enumeration 'ObjectKindType' defines the following possible values: 'FUNCTION', 'NODE', 'EQUIPMENT', 'RELATIONSHIP'.
+The enumeration 'KindHintType' defines the following possible values: 'BH', 'AVG'.
+The enumeration 'ValueKindType' defines the following possible values: 'INTERVAL', 'NULL', 'TIME', 'METRIC', 'DATETIME', 'DATE'.
+
+The model also captures inheritance relationships between classes.
+The class 'metrics_IdentifierDataKind' is a specialization of 'DataKind'.
+The class 'metrics_Mapping' is a specialization of 'Base'.
+The class 'metrics_MappingColumn' is a specialization of 'Base'.
+The class 'metrics_MappingCSV' is a specialization of 'Mapping'.
+The class 'metrics_MappingExternal' is a specialization of 'Mapping'.
+The class 'metrics_MappingRDBMS' is a specialization of 'Mapping'.
+The class 'metrics_MappingRecord' is a specialization of 'Base'.
+The class 'metrics_MappingStatistic' is a specialization of 'Base'.
+The class 'metrics_MappingXLS' is a specialization of 'Mapping'.
+The class 'metrics_Metric' is a specialization of 'Base'.
+The class 'metrics_MetricAggregationRule' is a specialization of 'Rule'.
+The class 'metrics_MetricRetentionRule' is a specialization of 'Rule'.
+The class 'metrics_MetricSource' is a specialization of 'Base'.
+The class 'metrics_ValueDataKind' is a specialization of 'DataKind'.
+
+Relationships between classes are modeled using associations.
+An association connects 'metrics_Mapping' and 'metrics_MappingColumn'. From 'metrics_Mapping', the role 'metrics_Mapping' has cardinality 0..*, and from 'metrics_MappingColumn', the role 'metrics_MappingColumn' has cardinality 0..*.
+An association connects 'metrics_MappingColumn' and 'metrics_Mapping'. From 'metrics_MappingColumn', the role 'metrics_MappingColumn3' has cardinality 0..*, and from 'metrics_Mapping', the role 'metrics_Mapping2' has cardinality 0..*.
+An association connects 'metrics_MappingColumn' and 'metrics_DataKind'. From 'metrics_MappingColumn', the role 'metrics_MappingColumn5' has cardinality 0..*, and from 'metrics_DataKind', the role 'metrics_DataKind' has cardinality 0..*.
+An association connects 'metrics_MappingRecord' and 'metrics_MappingStatistic'. From 'metrics_MappingRecord', the role 'metrics_MappingRecord' has cardinality 0..*, and from 'metrics_MappingStatistic', the role 'metrics_MappingStatistic' has cardinality 0..*.
+An association connects 'metrics_MappingStatistic' and 'metrics_DateTimeRange'. From 'metrics_MappingStatistic', the role 'metrics_MappingStatistic8' has cardinality 0..*, and from 'metrics_DateTimeRange', the role 'metrics_DateTimeRange' has cardinality 0..*.
+An association connects 'metrics_MappingStatistic' and 'metrics_DateTimeRange'. From 'metrics_MappingStatistic', the role 'metrics_MappingStatistic10' has cardinality 0..*, and from 'metrics_DateTimeRange', the role 'metrics_DateTimeRange11' has cardinality 0..*.
+An association connects 'metrics_MappingStatistic' and 'metrics_MappingStatistic'. From 'metrics_MappingStatistic', the role 'metrics_MappingStatistic14' has cardinality 0..*, and from 'metrics_MappingStatistic', the role 'metrics_MappingStatistic12' has cardinality 0..*.
+An association connects 'metrics_Metric' and 'metrics_Metric'. From 'metrics_Metric', the role 'metrics_Metric15' has cardinality 0..*, and from 'metrics_Metric', the role 'metrics_Metric' has cardinality 0..*.
+An association connects 'metrics_Expression' and 'metrics_Metric'. From 'metrics_Expression', the role 'metrics_Expression' has cardinality 0..*, and from 'metrics_Metric', the role 'metrics_Metric18' has cardinality 0..*.
+An association connects 'metrics_MetricSource' and 'metrics_Metric'. From 'metrics_MetricSource', the role 'metrics_MetricSource' has cardinality 0..*, and from 'metrics_Metric', the role 'metrics_Metric20' has cardinality 0..*.
+An association connects 'metrics_Unit' and 'metrics_Metric'. From 'metrics_Unit', the role 'metrics_Unit' has cardinality 0..*, and from 'metrics_Metric', the role 'metrics_Metric22' has cardinality 0..*.
+An association connects 'metrics_MetricAggregationRule' and 'metrics_Expression'. From 'metrics_MetricAggregationRule', the role 'metrics_MetricAggregationRule' has cardinality 0..*, and from 'metrics_Expression', the role 'metrics_Expression24' has cardinality 0..*.
+An association connects 'metrics_MetricAggregationRules' and 'metrics_MetricAggregationRule'. From 'metrics_MetricAggregationRules', the role 'metrics_MetricAggregationRules' has cardinality 0..*, and from 'metrics_MetricAggregationRule', the role 'metrics_MetricAggregationRule26' has cardinality 0..*.
+An association connects 'metrics_MetricRetentionRules' and 'metrics_MetricRetentionRule'. From 'metrics_MetricRetentionRules', the role 'metrics_MetricRetentionRules' has cardinality 0..*, and from 'metrics_MetricRetentionRule', the role 'metrics_MetricRetentionRule' has cardinality 0..*.
+An association connects 'metrics_MetricSource' and 'metrics_Mapping'. From 'metrics_MetricSource', the role 'metrics_MetricSource29' has cardinality 0..*, and from 'metrics_Mapping', the role 'metrics_Mapping30' has cardinality 0..*.
+An association connects 'metrics_MappingStatistic' and 'metrics_MetricSource'. From 'metrics_MappingStatistic', the role 'metrics_MappingStatistic33' has cardinality 0..*, and from 'metrics_MetricSource', the role 'metrics_MetricSource32' has cardinality 0..*.
+An association connects 'metrics_MetricSource' and 'metrics_RuleSet'. From 'metrics_MetricSource', the role 'metrics_MetricSource35' has cardinality 0..*, and from 'metrics_RuleSet', the role 'metrics_RuleSet' has cardinality 0..*.
+An association connects 'metrics_MetricSource' and 'metrics_RuleSet'. From 'metrics_MetricSource', the role 'metrics_MetricSource37' has cardinality 0..*, and from 'metrics_RuleSet', the role 'metrics_RuleSet38' has cardinality 0..*.
+An association connects 'metrics_MetricValueRange' and 'metrics_Value'. From 'metrics_MetricValueRange', the role 'metrics_MetricValueRange' has cardinality 0..*, and from 'metrics_Value', the role 'metrics_Value' has cardinality 0..*.
+An association connects 'metrics_Metric' and 'metrics_ValueDataKind'. From 'metrics_Metric', the role 'metrics_Metric41' has cardinality 0..*, and from 'metrics_ValueDataKind', the role 'metrics_ValueDataKind' has cardinality 0..*.

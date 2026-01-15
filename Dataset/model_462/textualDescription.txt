@@ -1,0 +1,839 @@
+The domain model 'fUML' describes the core structural elements and their relationships within the system.
+
+The model defines 186 main class(es).
+
+'Kernel_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_BasicActions_SendSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Communications_SignalEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActions_AddStructuralFeatureValueAction' represents an important domain concept.
+It has one attribute: 'replaceAll', which is of type bool.
+
+'fUML_CompleteActions_ReclassifyObjectAction' represents an important domain concept.
+It has one attribute: 'replaceAll', which is of type bool.
+
+'fUML_IntermediateActivities_Activity' represents an important domain concept.
+It has one attribute: 'readOnly', which is of type bool.
+
+'IntermediateActivities_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicActions_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_Association' represents an important domain concept.
+It has one attribute: 'derived', which is of type bool.
+
+'fUML_CompleteActions_ReadExtentAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActions_ReadSelfAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteStructuredActivities_StructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_BasicActions_InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_LiteralBoolean' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'fUML_IntermediateActions_LinkEndDestructionData' represents an important domain concept.
+It has one attribute: 'destroyDuplicates', which is of type bool.
+
+'fUML_Kernel_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'ordered', which is of type bool; 'lower', which is of type int; 'upper', which is of type int; 'unique', which is of type bool.
+
+'fUML_Kernel_NamedElement' represents an important domain concept.
+It has the following attributes: 'qualifiedName', which is of type str; 'visibility', which is of type str; 'name', which is of type str.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_CompleteActions_ReduceAction' represents an important domain concept.
+It has one attribute: 'ordered', which is of type bool.
+
+'fUML_CompleteStructuredActivities_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_LiteralNull' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActivities_JoinNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_BasicBehaviors_OpaqueBehavior' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'body', which is of type str.
+
+'fUML_CompleteStructuredActivities_LoopNode' represents an important domain concept.
+It has one attribute: 'testedFirst', which is of type bool.
+
+'fUML_IntermediateActivities_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActions_DestroyLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtraStructuredActivities_ExpansionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActivities_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActivities_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_LiteralInteger' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActions_DestroyObjectAction' represents an important domain concept.
+It has the following attributes: 'destroyLinks', which is of type bool; 'destroyOwnedObjects', which is of type bool.
+
+'fUML_IntermediateActivities_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_Generalization' represents an important domain concept.
+It has one attribute: 'substitutable', which is of type bool.
+
+'fUML_Kernel_StructuralFeature' represents an important domain concept.
+It has one attribute: 'readOnly', which is of type bool.
+
+'fUML_IntermediateActions_CreateLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Communications_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActions_ValueSpecificationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActions_LinkEndCreationData' represents an important domain concept.
+It has one attribute: 'replaceAll', which is of type bool.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActions_RemoveStructuralFeatureValueAction' represents an important domain concept.
+It has one attribute: 'removeDuplicates', which is of type bool.
+
+'Kernel_RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_Operation' represents an important domain concept.
+It has the following attributes: 'ordered', which is of type bool; 'lower', which is of type int; 'unique', which is of type bool; 'upper', which is of type int; 'query', which is of type bool.
+
+'fUML_IntermediateActions_CreateObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_BasicBehaviors_Behavior' represents an important domain concept.
+It has one attribute: 'reentrant', which is of type bool.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActivities_ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicActions_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_BasicActions_Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'OpaqueBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActivities_ActivityParameterNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteStructuredActivities_Clause' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_RedefinableElement' represents an important domain concept.
+It has one attribute: 'leaf', which is of type bool.
+
+'fUML_BasicBehaviors_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_PackageImport' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'BasicBehaviors_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_ObjectFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_BasicBehaviors_FunctionBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActivities_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActions_LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicBehaviors_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActions_LinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Communications_Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Communications_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_ExtraStructuredActivities_ExpansionRegion' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'WriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_BasicActions_CallBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_CompleteStructuredActivities_ConditionalNode' represents an important domain concept.
+It has the following attributes: 'assured', which is of type bool; 'determinate', which is of type bool.
+
+'fUML_IntermediateActions_ReadStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_CompleteActions_StartClassifierBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_CompleteActions_AcceptEventAction' represents an important domain concept.
+It has one attribute: 'unmarshall', which is of type bool.
+
+'fUML_Kernel_ElementImport' represents an important domain concept.
+It has the following attributes: 'alias', which is of type str; 'visibility', which is of type str.
+
+'Kernel_PackageImport' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActions_LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActions_ClearAssociationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActivities_ObjectFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_ExtraStructuredActivities_ExpansionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_BasicActions_Action' represents an important domain concept.
+It has one attribute: 'locallyReentrant', which is of type bool.
+
+'fUML_Kernel_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_BasicActions_CallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_BasicActions_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActions_StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_BasicActions_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_Classifier' represents an important domain concept.
+It has the following attributes: 'finalSpecialization', which is of type bool; 'abstract', which is of type bool.
+
+'fUML_Communications_MessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_ElementImport' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_CompleteActions_ReadIsClassifiedObjectAction' represents an important domain concept.
+It has one attribute: 'direct', which is of type bool.
+
+'Kernel_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteStructuredActivities_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_Class' represents an important domain concept.
+It has one attribute: 'active', which is of type bool.
+
+'fUML_Kernel_Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActions_WriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Communications_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActions_TestIdentityAction' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Communications_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_InstanceValue' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Communications_Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActivities_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_BasicActions_CallAction' represents an important domain concept.
+It has one attribute: 'synchronous', which is of type bool.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActivities_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActions_WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_Comment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'Kernel_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActivities_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_Feature' represents an important domain concept.
+It has one attribute: 'static', which is of type bool.
+
+'BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Communications_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtraStructuredActivities_ExpansionRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_CompleteStructuredActivities_StructuredActivityNode' represents an important domain concept.
+It has one attribute: 'mustIsolate', which is of type bool.
+
+'fUML_Kernel_Parameter' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'Kernel_Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_CompleteActions_StartObjectBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_Property' represents an important domain concept.
+It has the following attributes: 'derived', which is of type bool; 'derivedUnion', which is of type bool; 'composite', which is of type bool; 'aggregation', which is of type str.
+
+'fUML_Kernel_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_BehavioralFeature' represents an important domain concept.
+It has the following attributes: 'concurrency', which is of type str; 'abstract', which is of type bool.
+
+'CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActions_ClearStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActivities_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Communications_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_IntermediateActions_ReadLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_LiteralString' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'fUML_IntermediateActivities_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fUML_Kernel_LiteralUnlimitedNatural' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'fUML_CompleteStructuredActivities_Clause' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'CallConcurrencyKind' defines a single possible value: 'sequential'.
+The enumeration 'AggregationKind' defines the following possible values: 'none', 'composite', 'shared'.
+The enumeration 'VisibilityKind' defines the following possible values: 'protected', 'package', 'public', 'private'.
+The enumeration 'ExpansionKind' defines the following possible values: 'parallel', 'stream', 'iterative'.
+The enumeration 'ParameterDirectionKind' defines the following possible values: 'in', 'return', 'out', 'inout'.
+
+The model also captures inheritance relationships between classes.
+The class 'fUML_BasicBehaviors_OpaqueBehavior' is a specialization of 'Behavior'.
+The class 'fUML_BasicBehaviors_Behavior' is a specialization of 'Class'.
+The class 'fUML_BasicBehaviors_BehavioredClassifier' is a specialization of 'Classifier'.
+The class 'fUML_BasicBehaviors_FunctionBehavior' is a specialization of 'OpaqueBehavior'.
+The class 'fUML_Communications_Trigger' is a specialization of 'NamedElement'.
+The class 'fUML_Communications_Event' is a specialization of 'PackageableElement'.
+The class 'fUML_Communications_Signal' is a specialization of 'Classifier'.
+The class 'fUML_Communications_SignalEvent' is a specialization of 'MessageEvent'.
+The class 'fUML_Communications_MessageEvent' is a specialization of 'Event'.
+The class 'fUML_Communications_Reception' is a specialization of 'BehavioralFeature'.
+The class 'fUML_Kernel_ValueSpecification' is a specialization of 'TypedElement'.
+The class 'fUML_Kernel_TypedElement' is a specialization of 'NamedElement'.
+The class 'fUML_Kernel_NamedElement' is a specialization of 'Element'.
+The class 'fUML_Kernel_Namespace' is a specialization of 'NamedElement'.
+The class 'fUML_Kernel_ElementImport' is a specialization of 'Element'.
+The class 'fUML_Kernel_PackageableElement' is a specialization of 'NamedElement'.
+The class 'fUML_Kernel_PackageImport' is a specialization of 'Element'.
+The class 'fUML_Kernel_Package' is a specialization of 'Kernel_Namespace'.
+The class 'fUML_Kernel_Package' is a specialization of 'Kernel_PackageableElement'.
+The class 'fUML_Kernel_Type' is a specialization of 'PackageableElement'.
+The class 'fUML_Kernel_StructuralFeature' is a specialization of 'Kernel_Feature'.
+The class 'fUML_Kernel_StructuralFeature' is a specialization of 'Kernel_MultiplicityElement'.
+The class 'fUML_Kernel_StructuralFeature' is a specialization of 'Kernel_TypedElement'.
+The class 'fUML_Kernel_Feature' is a specialization of 'RedefinableElement'.
+The class 'fUML_Kernel_RedefinableElement' is a specialization of 'NamedElement'.
+The class 'fUML_Kernel_Classifier' is a specialization of 'Kernel_Namespace'.
+The class 'fUML_Kernel_Classifier' is a specialization of 'Kernel_Type'.
+The class 'fUML_Kernel_Generalization' is a specialization of 'Element'.
+The class 'fUML_Kernel_Property' is a specialization of 'StructuralFeature'.
+The class 'fUML_Kernel_Association' is a specialization of 'Classifier'.
+The class 'fUML_Kernel_DataType' is a specialization of 'Classifier'.
+The class 'fUML_Kernel_MultiplicityElement' is a specialization of 'Element'.
+The class 'fUML_Kernel_BehavioralFeature' is a specialization of 'Feature'.
+The class 'fUML_Kernel_Parameter' is a specialization of 'Kernel_MultiplicityElement'.
+The class 'fUML_Kernel_Parameter' is a specialization of 'Kernel_TypedElement'.
+The class 'fUML_Kernel_Operation' is a specialization of 'BehavioralFeature'.
+The class 'fUML_Kernel_InstanceSpecification' is a specialization of 'NamedElement'.
+The class 'fUML_Kernel_Slot' is a specialization of 'Element'.
+The class 'fUML_Kernel_InstanceValue' is a specialization of 'ValueSpecification'.
+The class 'fUML_Kernel_LiteralBoolean' is a specialization of 'LiteralSpecification'.
+The class 'fUML_Kernel_LiteralSpecification' is a specialization of 'ValueSpecification'.
+The class 'fUML_Kernel_LiteralInteger' is a specialization of 'LiteralSpecification'.
+The class 'fUML_Kernel_LiteralNull' is a specialization of 'LiteralSpecification'.
+The class 'fUML_Kernel_LiteralString' is a specialization of 'LiteralSpecification'.
+The class 'fUML_Kernel_LiteralUnlimitedNatural' is a specialization of 'LiteralSpecification'.
+The class 'fUML_Kernel_PrimitiveType' is a specialization of 'DataType'.
+The class 'fUML_Kernel_Enumeration' is a specialization of 'DataType'.
+The class 'fUML_Kernel_EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+The class 'fUML_Kernel_Class' is a specialization of 'BehavioredClassifier'.
+The class 'fUML_IntermediateActivities_ObjectFlow' is a specialization of 'ActivityEdge'.
+The class 'fUML_IntermediateActivities_ActivityEdge' is a specialization of 'RedefinableElement'.
+The class 'fUML_IntermediateActivities_Activity' is a specialization of 'Behavior'.
+The class 'fUML_IntermediateActivities_ActivityNode' is a specialization of 'RedefinableElement'.
+The class 'fUML_IntermediateActivities_ObjectNode' is a specialization of 'IntermediateActivities_ActivityNode'.
+The class 'fUML_IntermediateActivities_ObjectNode' is a specialization of 'Kernel_TypedElement'.
+The class 'fUML_IntermediateActivities_MergeNode' is a specialization of 'ControlNode'.
+The class 'fUML_IntermediateActivities_ControlNode' is a specialization of 'ActivityNode'.
+The class 'fUML_IntermediateActivities_JoinNode' is a specialization of 'ControlNode'.
+The class 'fUML_IntermediateActivities_InitialNode' is a specialization of 'ControlNode'.
+The class 'fUML_IntermediateActivities_FinalNode' is a specialization of 'ControlNode'.
+The class 'fUML_IntermediateActivities_ForkNode' is a specialization of 'ControlNode'.
+The class 'fUML_IntermediateActivities_ControlFlow' is a specialization of 'ActivityEdge'.
+The class 'fUML_IntermediateActivities_DecisionNode' is a specialization of 'ControlNode'.
+The class 'fUML_IntermediateActivities_ActivityFinalNode' is a specialization of 'FinalNode'.
+The class 'fUML_IntermediateActivities_ActivityParameterNode' is a specialization of 'ObjectNode'.
+The class 'fUML_CompleteStructuredActivities_LoopNode' is a specialization of 'StructuredActivityNode'.
+The class 'fUML_CompleteStructuredActivities_ExecutableNode' is a specialization of 'ActivityNode'.
+The class 'fUML_CompleteStructuredActivities_Clause' is a specialization of 'Element'.
+The class 'fUML_CompleteStructuredActivities_ConditionalNode' is a specialization of 'StructuredActivityNode'.
+The class 'fUML_CompleteStructuredActivities_StructuredActivityNode' is a specialization of 'Action'.
+The class 'fUML_ExtraStructuredActivities_ExpansionNode' is a specialization of 'ObjectNode'.
+The class 'fUML_ExtraStructuredActivities_ExpansionRegion' is a specialization of 'StructuredActivityNode'.
+The class 'fUML_IntermediateActions_StructuralFeatureAction' is a specialization of 'Action'.
+The class 'fUML_IntermediateActions_TestIdentityAction' is a specialization of 'Action'.
+The class 'fUML_IntermediateActions_ValueSpecificationAction' is a specialization of 'Action'.
+The class 'fUML_IntermediateActions_WriteLinkAction' is a specialization of 'LinkAction'.
+The class 'fUML_IntermediateActions_LinkAction' is a specialization of 'Action'.
+The class 'fUML_IntermediateActions_LinkEndData' is a specialization of 'Element'.
+The class 'fUML_IntermediateActions_WriteStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'fUML_IntermediateActions_RemoveStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'fUML_IntermediateActions_ReadLinkAction' is a specialization of 'LinkAction'.
+The class 'fUML_IntermediateActions_ReadSelfAction' is a specialization of 'Action'.
+The class 'fUML_IntermediateActions_ReadStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'fUML_IntermediateActions_LinkEndCreationData' is a specialization of 'LinkEndData'.
+The class 'fUML_IntermediateActions_LinkEndDestructionData' is a specialization of 'LinkEndData'.
+The class 'fUML_IntermediateActions_ClearAssociationAction' is a specialization of 'Action'.
+The class 'fUML_IntermediateActions_ClearStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'fUML_IntermediateActions_CreateLinkAction' is a specialization of 'WriteLinkAction'.
+The class 'fUML_IntermediateActions_CreateObjectAction' is a specialization of 'Action'.
+The class 'fUML_IntermediateActions_DestroyLinkAction' is a specialization of 'WriteLinkAction'.
+The class 'fUML_IntermediateActions_DestroyObjectAction' is a specialization of 'Action'.
+The class 'fUML_IntermediateActions_AddStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'fUML_CompleteActions_StartClassifierBehaviorAction' is a specialization of 'Action'.
+The class 'fUML_CompleteActions_StartObjectBehaviorAction' is a specialization of 'CallAction'.
+The class 'fUML_CompleteActions_ReduceAction' is a specialization of 'Action'.
+The class 'fUML_CompleteActions_ReadExtentAction' is a specialization of 'Action'.
+The class 'fUML_CompleteActions_ReadIsClassifiedObjectAction' is a specialization of 'Action'.
+The class 'fUML_CompleteActions_ReclassifyObjectAction' is a specialization of 'Action'.
+The class 'fUML_CompleteActions_AcceptEventAction' is a specialization of 'Action'.
+The class 'fUML_BasicActions_Action' is a specialization of 'ExecutableNode'.
+The class 'fUML_BasicActions_InputPin' is a specialization of 'Pin'.
+The class 'fUML_BasicActions_Pin' is a specialization of 'IntermediateActivities_ObjectNode'.
+The class 'fUML_BasicActions_Pin' is a specialization of 'Kernel_MultiplicityElement'.
+The class 'fUML_BasicActions_CallAction' is a specialization of 'InvocationAction'.
+The class 'fUML_BasicActions_InvocationAction' is a specialization of 'Action'.
+The class 'fUML_BasicActions_SendSignalAction' is a specialization of 'InvocationAction'.
+The class 'fUML_BasicActions_CallBehaviorAction' is a specialization of 'CallAction'.
+The class 'fUML_BasicActions_CallOperationAction' is a specialization of 'CallAction'.
+The class 'fUML_BasicActions_OutputPin' is a specialization of 'Pin'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fUML_BasicBehaviors_Behavior' and 'Kernel_BehavioralFeature'. From 'fUML_BasicBehaviors_Behavior', the role 'Classes' has cardinality 0..*, and from 'Kernel_BehavioralFeature', the role 'Syntax' has cardinality 0..*.
+An association connects 'Kernel_Parameter' and 'fUML_BasicBehaviors_Behavior'. From 'Kernel_Parameter', the role 'Kernel_Parameter' has cardinality 0..*, and from 'fUML_BasicBehaviors_Behavior', the role 'fUML_BasicBehaviors_Behavior' has cardinality 0..*.
+An association connects 'fUML_BasicBehaviors_Behavior' and 'BasicBehaviors_BehavioredClassifier'. From 'fUML_BasicBehaviors_Behavior', the role 'fUML_BasicBehaviors_Behavior3' has cardinality 0..*, and from 'BasicBehaviors_BehavioredClassifier', the role 'BasicBehaviors_BehavioredClassifier' has cardinality 0..*.
+An association connects 'fUML_BasicBehaviors_BehavioredClassifier' and 'BasicBehaviors_Behavior'. From 'fUML_BasicBehaviors_BehavioredClassifier', the role 'fUML_BasicBehaviors_BehavioredClassifier' has cardinality 0..*, and from 'BasicBehaviors_Behavior', the role 'BasicBehaviors_Behavior' has cardinality 0..*.
+An association connects 'fUML_BasicBehaviors_BehavioredClassifier' and 'BasicBehaviors_Behavior'. From 'fUML_BasicBehaviors_BehavioredClassifier', the role 'fUML_BasicBehaviors_BehavioredClassifier6' has cardinality 0..*, and from 'BasicBehaviors_Behavior', the role 'BasicBehaviors_Behavior7' has cardinality 0..*.
+An association connects 'fUML_Communications_Trigger' and 'Communications_Event'. From 'fUML_Communications_Trigger', the role 'fUML_Communications_Trigger' has cardinality 0..*, and from 'Communications_Event', the role 'Communications_Event' has cardinality 0..*.
+An association connects 'fUML_Communications_Signal' and 'Kernel_Property'. From 'fUML_Communications_Signal', the role 'fUML_Communications_Signal' has cardinality 0..*, and from 'Kernel_Property', the role 'Kernel_Property' has cardinality 0..*.
+An association connects 'Communications_Signal' and 'fUML_Communications_SignalEvent'. From 'Communications_Signal', the role 'Communications_Signal' has cardinality 0..*, and from 'fUML_Communications_SignalEvent', the role 'fUML_Communications_SignalEvent' has cardinality 0..*.
+An association connects 'fUML_Communications_Reception' and 'Communications_Signal'. From 'fUML_Communications_Reception', the role 'fUML_Communications_Reception' has cardinality 0..*, and from 'Communications_Signal', the role 'Communications_Signal12' has cardinality 0..*.
+An association connects 'Kernel_Type' and 'fUML_Kernel_TypedElement'. From 'Kernel_Type', the role 'Kernel_Type' has cardinality 0..*, and from 'fUML_Kernel_TypedElement', the role 'fUML_Kernel_TypedElement' has cardinality 0..*.
+An association connects 'Kernel_Namespace' and 'fUML_Kernel_NamedElement'. From 'Kernel_Namespace', the role 'Syntax16' has cardinality 0..*, and from 'fUML_Kernel_NamedElement', the role 'Classes15' has cardinality 0..*.
+An association connects 'Kernel_Element' and 'fUML_Kernel_Element'. From 'Kernel_Element', the role 'Syntax19' has cardinality 0..*, and from 'fUML_Kernel_Element', the role 'Classes18' has cardinality 0..*.
+An association connects 'fUML_Kernel_Element' and 'Kernel_Element'. From 'fUML_Kernel_Element', the role 'Classes21' has cardinality 0..*, and from 'Kernel_Element', the role 'Syntax22' has cardinality 0..*.
+An association connects 'Kernel_Comment' and 'fUML_Kernel_Element'. From 'Kernel_Comment', the role 'Kernel_Comment' has cardinality 0..*, and from 'fUML_Kernel_Element', the role 'fUML_Kernel_Element' has cardinality 0..*.
+An association connects 'fUML_Kernel_Comment' and 'Kernel_Element'. From 'fUML_Kernel_Comment', the role 'fUML_Kernel_Comment' has cardinality 0..*, and from 'Kernel_Element', the role 'Kernel_Element' has cardinality 0..*.
+An association connects 'fUML_Kernel_Namespace' and 'Kernel_NamedElement'. From 'fUML_Kernel_Namespace', the role 'fUML_Kernel_Namespace' has cardinality 0..*, and from 'Kernel_NamedElement', the role 'Kernel_NamedElement' has cardinality 0..*.
+An association connects 'Kernel_ElementImport' and 'fUML_Kernel_Namespace'. From 'Kernel_ElementImport', the role 'Syntax28' has cardinality 0..*, and from 'fUML_Kernel_Namespace', the role 'Classes27' has cardinality 0..*.
+An association connects 'Kernel_PackageImport' and 'fUML_Kernel_Namespace'. From 'Kernel_PackageImport', the role 'Syntax31' has cardinality 0..*, and from 'fUML_Kernel_Namespace', the role 'Classes30' has cardinality 0..*.
+An association connects 'fUML_Kernel_Namespace' and 'Kernel_PackageableElement'. From 'fUML_Kernel_Namespace', the role 'fUML_Kernel_Namespace33' has cardinality 0..*, and from 'Kernel_PackageableElement', the role 'Kernel_PackageableElement' has cardinality 0..*.
+An association connects 'fUML_Kernel_Namespace' and 'Kernel_NamedElement'. From 'fUML_Kernel_Namespace', the role 'Classes35' has cardinality 0..*, and from 'Kernel_NamedElement', the role 'Syntax36' has cardinality 0..*.
+An association connects 'fUML_Kernel_ElementImport' and 'Kernel_PackageableElement'. From 'fUML_Kernel_ElementImport', the role 'fUML_Kernel_ElementImport' has cardinality 0..*, and from 'Kernel_PackageableElement', the role 'Kernel_PackageableElement38' has cardinality 0..*.
+An association connects 'fUML_Kernel_ElementImport' and 'Kernel_Namespace'. From 'fUML_Kernel_ElementImport', the role 'Classes40' has cardinality 0..*, and from 'Kernel_Namespace', the role 'Syntax41' has cardinality 0..*.
+An association connects 'fUML_Kernel_PackageImport' and 'Kernel_Package'. From 'fUML_Kernel_PackageImport', the role 'fUML_Kernel_PackageImport' has cardinality 0..*, and from 'Kernel_Package', the role 'Kernel_Package' has cardinality 0..*.
+An association connects 'Kernel_Namespace' and 'fUML_Kernel_PackageImport'. From 'Kernel_Namespace', the role 'Syntax45' has cardinality 0..*, and from 'fUML_Kernel_PackageImport', the role 'Classes44' has cardinality 0..*.
+An association connects 'fUML_Kernel_Package' and 'Kernel_PackageableElement'. From 'fUML_Kernel_Package', the role 'fUML_Kernel_Package' has cardinality 0..*, and from 'Kernel_PackageableElement', the role 'Kernel_PackageableElement47' has cardinality 0..*.
+An association connects 'Kernel_Type' and 'fUML_Kernel_Package'. From 'Kernel_Type', the role 'Syntax50' has cardinality 0..*, and from 'fUML_Kernel_Package', the role 'Classes49' has cardinality 0..*.
+An association connects 'Kernel_Package' and 'fUML_Kernel_Package'. From 'Kernel_Package', the role 'Syntax53' has cardinality 0..*, and from 'fUML_Kernel_Package', the role 'Classes52' has cardinality 0..*.
+An association connects 'Kernel_Package' and 'fUML_Kernel_Package'. From 'Kernel_Package', the role 'Syntax56' has cardinality 0..*, and from 'fUML_Kernel_Package', the role 'Classes55' has cardinality 0..*.
+An association connects 'Kernel_Package' and 'fUML_Kernel_Type'. From 'Kernel_Package', the role 'Syntax59' has cardinality 0..*, and from 'fUML_Kernel_Type', the role 'Classes58' has cardinality 0..*.
+An association connects 'fUML_Kernel_Feature' and 'Kernel_Classifier'. From 'fUML_Kernel_Feature', the role 'Classes61' has cardinality 0..*, and from 'Kernel_Classifier', the role 'Syntax62' has cardinality 0..*.
+An association connects 'Kernel_RedefinableElement' and 'fUML_Kernel_RedefinableElement'. From 'Kernel_RedefinableElement', the role 'Kernel_RedefinableElement' has cardinality 0..*, and from 'fUML_Kernel_RedefinableElement', the role 'fUML_Kernel_RedefinableElement' has cardinality 0..*.
+An association connects 'Kernel_Classifier' and 'fUML_Kernel_RedefinableElement'. From 'Kernel_Classifier', the role 'Kernel_Classifier' has cardinality 0..*, and from 'fUML_Kernel_RedefinableElement', the role 'fUML_Kernel_RedefinableElement65' has cardinality 0..*.
+An association connects 'fUML_Kernel_Classifier' and 'Kernel_Generalization'. From 'fUML_Kernel_Classifier', the role 'Classes67' has cardinality 0..*, and from 'Kernel_Generalization', the role 'Syntax68' has cardinality 0..*.
+An association connects 'Kernel_Feature' and 'fUML_Kernel_Classifier'. From 'Kernel_Feature', the role 'Syntax71' has cardinality 0..*, and from 'fUML_Kernel_Classifier', the role 'Classes70' has cardinality 0..*.
+An association connects 'fUML_Kernel_Classifier' and 'Kernel_NamedElement'. From 'fUML_Kernel_Classifier', the role 'fUML_Kernel_Classifier' has cardinality 0..*, and from 'Kernel_NamedElement', the role 'Kernel_NamedElement73' has cardinality 0..*.
+An association connects 'Kernel_Property' and 'fUML_Kernel_Classifier'. From 'Kernel_Property', the role 'Kernel_Property76' has cardinality 0..*, and from 'fUML_Kernel_Classifier', the role 'fUML_Kernel_Classifier75' has cardinality 0..*.
+An association connects 'Kernel_Classifier' and 'fUML_Kernel_Classifier'. From 'Kernel_Classifier', the role 'Kernel_Classifier79' has cardinality 0..*, and from 'fUML_Kernel_Classifier', the role 'fUML_Kernel_Classifier78' has cardinality 0..*.
+An association connects 'Kernel_Classifier' and 'fUML_Kernel_Generalization'. From 'Kernel_Classifier', the role 'Kernel_Classifier81' has cardinality 0..*, and from 'fUML_Kernel_Generalization', the role 'fUML_Kernel_Generalization' has cardinality 0..*.
+An association connects 'Kernel_Classifier' and 'fUML_Kernel_Generalization'. From 'Kernel_Classifier', the role 'Syntax84' has cardinality 0..*, and from 'fUML_Kernel_Generalization', the role 'Classes83' has cardinality 0..*.
+An association connects 'fUML_Kernel_Property' and 'Kernel_Association'. From 'fUML_Kernel_Property', the role 'Classes86' has cardinality 0..*, and from 'Kernel_Association', the role 'Syntax87' has cardinality 0..*.
+An association connects 'fUML_Kernel_Property' and 'Kernel_Association'. From 'fUML_Kernel_Property', the role 'Classes89' has cardinality 0..*, and from 'Kernel_Association', the role 'Syntax90' has cardinality 0..*.
+An association connects 'Kernel_DataType' and 'fUML_Kernel_Property'. From 'Kernel_DataType', the role 'Syntax93' has cardinality 0..*, and from 'fUML_Kernel_Property', the role 'Classes92' has cardinality 0..*.
+An association connects 'Kernel_Class' and 'fUML_Kernel_Property'. From 'Kernel_Class', the role 'Syntax96' has cardinality 0..*, and from 'fUML_Kernel_Property', the role 'Classes95' has cardinality 0..*.
+An association connects 'Kernel_Property' and 'fUML_Kernel_Property'. From 'Kernel_Property', the role 'Kernel_Property98' has cardinality 0..*, and from 'fUML_Kernel_Property', the role 'fUML_Kernel_Property' has cardinality 0..*.
+An association connects 'Kernel_Type' and 'fUML_Kernel_Association'. From 'Kernel_Type', the role 'Kernel_Type100' has cardinality 0..*, and from 'fUML_Kernel_Association', the role 'fUML_Kernel_Association' has cardinality 0..*.
+An association connects 'fUML_Kernel_Association' and 'Kernel_Property'. From 'fUML_Kernel_Association', the role 'Classes102' has cardinality 0..*, and from 'Kernel_Property', the role 'Syntax103' has cardinality 0..*.
+An association connects 'Kernel_Property' and 'fUML_Kernel_Association'. From 'Kernel_Property', the role 'Kernel_Property106' has cardinality 0..*, and from 'fUML_Kernel_Association', the role 'fUML_Kernel_Association105' has cardinality 0..*.
+An association connects 'Kernel_Property' and 'fUML_Kernel_Association'. From 'Kernel_Property', the role 'Syntax109' has cardinality 0..*, and from 'fUML_Kernel_Association', the role 'Classes108' has cardinality 0..*.
+An association connects 'Kernel_Property' and 'fUML_Kernel_DataType'. From 'Kernel_Property', the role 'Syntax112' has cardinality 0..*, and from 'fUML_Kernel_DataType', the role 'Classes111' has cardinality 0..*.
+An association connects 'fUML_Kernel_MultiplicityElement' and 'Kernel_ValueSpecification'. From 'fUML_Kernel_MultiplicityElement', the role 'fUML_Kernel_MultiplicityElement' has cardinality 0..*, and from 'Kernel_ValueSpecification', the role 'Kernel_ValueSpecification' has cardinality 0..*.
+An association connects 'fUML_Kernel_MultiplicityElement' and 'Kernel_ValueSpecification'. From 'fUML_Kernel_MultiplicityElement', the role 'fUML_Kernel_MultiplicityElement115' has cardinality 0..*, and from 'Kernel_ValueSpecification', the role 'Kernel_ValueSpecification116' has cardinality 0..*.
+An association connects 'fUML_Kernel_BehavioralFeature' and 'Kernel_Parameter'. From 'fUML_Kernel_BehavioralFeature', the role 'fUML_Kernel_BehavioralFeature' has cardinality 0..*, and from 'Kernel_Parameter', the role 'Kernel_Parameter118' has cardinality 0..*.
+An association connects 'fUML_Kernel_BehavioralFeature' and 'BasicBehaviors_Behavior'. From 'fUML_Kernel_BehavioralFeature', the role 'CommonBehaviors' has cardinality 0..*, and from 'BasicBehaviors_Behavior', the role 'Syntax120' has cardinality 0..*.
+An association connects 'fUML_Kernel_Operation' and 'Kernel_Class'. From 'fUML_Kernel_Operation', the role 'Classes122' has cardinality 0..*, and from 'Kernel_Class', the role 'Syntax123' has cardinality 0..*.
+An association connects 'Kernel_Operation' and 'fUML_Kernel_Operation'. From 'Kernel_Operation', the role 'Kernel_Operation' has cardinality 0..*, and from 'fUML_Kernel_Operation', the role 'fUML_Kernel_Operation' has cardinality 0..*.
+An association connects 'fUML_Kernel_Operation' and 'Kernel_Type'. From 'fUML_Kernel_Operation', the role 'fUML_Kernel_Operation126' has cardinality 0..*, and from 'Kernel_Type', the role 'Kernel_Type127' has cardinality 0..*.
+An association connects 'fUML_Kernel_InstanceSpecification' and 'Kernel_Classifier'. From 'fUML_Kernel_InstanceSpecification', the role 'fUML_Kernel_InstanceSpecification' has cardinality 0..*, and from 'Kernel_Classifier', the role 'Kernel_Classifier129' has cardinality 0..*.
+An association connects 'Kernel_Slot' and 'fUML_Kernel_InstanceSpecification'. From 'Kernel_Slot', the role 'Syntax132' has cardinality 0..*, and from 'fUML_Kernel_InstanceSpecification', the role 'Classes131' has cardinality 0..*.
+An association connects 'fUML_Kernel_Slot' and 'Kernel_StructuralFeature'. From 'fUML_Kernel_Slot', the role 'fUML_Kernel_Slot' has cardinality 0..*, and from 'Kernel_StructuralFeature', the role 'Kernel_StructuralFeature' has cardinality 0..*.
+An association connects 'fUML_Kernel_Slot' and 'Kernel_ValueSpecification'. From 'fUML_Kernel_Slot', the role 'fUML_Kernel_Slot135' has cardinality 0..*, and from 'Kernel_ValueSpecification', the role 'Kernel_ValueSpecification136' has cardinality 0..*.
+An association connects 'Kernel_InstanceSpecification' and 'fUML_Kernel_Slot'. From 'Kernel_InstanceSpecification', the role 'Syntax139' has cardinality 0..*, and from 'fUML_Kernel_Slot', the role 'Classes138' has cardinality 0..*.
+An association connects 'fUML_Kernel_InstanceValue' and 'Kernel_InstanceSpecification'. From 'fUML_Kernel_InstanceValue', the role 'fUML_Kernel_InstanceValue' has cardinality 0..*, and from 'Kernel_InstanceSpecification', the role 'Kernel_InstanceSpecification' has cardinality 0..*.
+An association connects 'fUML_Kernel_Enumeration' and 'Kernel_EnumerationLiteral'. From 'fUML_Kernel_Enumeration', the role 'Classes142' has cardinality 0..*, and from 'Kernel_EnumerationLiteral', the role 'Syntax143' has cardinality 0..*.
+An association connects 'Kernel_Enumeration' and 'fUML_Kernel_EnumerationLiteral'. From 'Kernel_Enumeration', the role 'Syntax146' has cardinality 0..*, and from 'fUML_Kernel_EnumerationLiteral', the role 'Classes145' has cardinality 0..*.
+An association connects 'Kernel_Property' and 'fUML_Kernel_Class'. From 'Kernel_Property', the role 'Syntax149' has cardinality 0..*, and from 'fUML_Kernel_Class', the role 'Classes148' has cardinality 0..*.
+An association connects 'fUML_Kernel_Class' and 'Kernel_Operation'. From 'fUML_Kernel_Class', the role 'Classes151' has cardinality 0..*, and from 'Kernel_Operation', the role 'Syntax152' has cardinality 0..*.
+An association connects 'Kernel_Class' and 'fUML_Kernel_Class'. From 'Kernel_Class', the role 'Kernel_Class' has cardinality 0..*, and from 'fUML_Kernel_Class', the role 'fUML_Kernel_Class' has cardinality 0..*.
+An association connects 'Communications_Reception' and 'fUML_Kernel_Class'. From 'Communications_Reception', the role 'Communications_Reception' has cardinality 0..*, and from 'fUML_Kernel_Class', the role 'fUML_Kernel_Class155' has cardinality 0..*.
+An association connects 'fUML_Kernel_Class' and 'Kernel_Classifier'. From 'fUML_Kernel_Class', the role 'fUML_Kernel_Class157' has cardinality 0..*, and from 'Kernel_Classifier', the role 'Kernel_Classifier158' has cardinality 0..*.
+An association connects 'IntermediateActivities_Activity' and 'fUML_IntermediateActivities_ActivityEdge'. From 'IntermediateActivities_Activity', the role 'Syntax160' has cardinality 0..*, and from 'fUML_IntermediateActivities_ActivityEdge', the role 'Activities' has cardinality 0..*.
+An association connects 'fUML_IntermediateActivities_ActivityEdge' and 'IntermediateActivities_ActivityNode'. From 'fUML_IntermediateActivities_ActivityEdge', the role 'Activities162' has cardinality 0..*, and from 'IntermediateActivities_ActivityNode', the role 'Syntax163' has cardinality 0..*.
+An association connects 'fUML_IntermediateActivities_ActivityEdge' and 'IntermediateActivities_ActivityNode'. From 'fUML_IntermediateActivities_ActivityEdge', the role 'Activities165' has cardinality 0..*, and from 'IntermediateActivities_ActivityNode', the role 'Syntax166' has cardinality 0..*.
+An association connects 'fUML_IntermediateActivities_ActivityEdge' and 'CompleteStructuredActivities_StructuredActivityNode'. From 'fUML_IntermediateActivities_ActivityEdge', the role 'Activities168' has cardinality 0..*, and from 'CompleteStructuredActivities_StructuredActivityNode', the role 'Syntax169' has cardinality 0..*.
+An association connects 'fUML_IntermediateActivities_ActivityEdge' and 'Kernel_ValueSpecification'. From 'fUML_IntermediateActivities_ActivityEdge', the role 'fUML_IntermediateActivities_ActivityEdge' has cardinality 0..*, and from 'Kernel_ValueSpecification', the role 'Kernel_ValueSpecification171' has cardinality 0..*.
+An association connects 'IntermediateActivities_ActivityNode' and 'fUML_IntermediateActivities_Activity'. From 'IntermediateActivities_ActivityNode', the role 'Syntax174' has cardinality 0..*, and from 'fUML_IntermediateActivities_Activity', the role 'Activities173' has cardinality 0..*.
+An association connects 'IntermediateActivities_ActivityEdge' and 'fUML_IntermediateActivities_Activity'. From 'IntermediateActivities_ActivityEdge', the role 'Syntax177' has cardinality 0..*, and from 'fUML_IntermediateActivities_Activity', the role 'Activities176' has cardinality 0..*.
+An association connects 'fUML_IntermediateActivities_ActivityNode' and 'CompleteStructuredActivities_StructuredActivityNode'. From 'fUML_IntermediateActivities_ActivityNode', the role 'Activities179' has cardinality 0..*, and from 'CompleteStructuredActivities_StructuredActivityNode', the role 'Syntax180' has cardinality 0..*.
+An association connects 'IntermediateActivities_Activity' and 'fUML_IntermediateActivities_ActivityNode'. From 'IntermediateActivities_Activity', the role 'Syntax183' has cardinality 0..*, and from 'fUML_IntermediateActivities_ActivityNode', the role 'Activities182' has cardinality 0..*.
+An association connects 'fUML_IntermediateActivities_ActivityNode' and 'IntermediateActivities_ActivityEdge'. From 'fUML_IntermediateActivities_ActivityNode', the role 'Activities185' has cardinality 0..*, and from 'IntermediateActivities_ActivityEdge', the role 'Syntax186' has cardinality 0..*.
+An association connects 'IntermediateActivities_ActivityEdge' and 'fUML_IntermediateActivities_ActivityNode'. From 'IntermediateActivities_ActivityEdge', the role 'Syntax189' has cardinality 0..*, and from 'fUML_IntermediateActivities_ActivityNode', the role 'Activities188' has cardinality 0..*.
+An association connects 'BasicBehaviors_Behavior' and 'fUML_IntermediateActivities_DecisionNode'. From 'BasicBehaviors_Behavior', the role 'BasicBehaviors_Behavior191' has cardinality 0..*, and from 'fUML_IntermediateActivities_DecisionNode', the role 'fUML_IntermediateActivities_DecisionNode' has cardinality 0..*.
+An association connects 'IntermediateActivities_ObjectFlow' and 'fUML_IntermediateActivities_DecisionNode'. From 'IntermediateActivities_ObjectFlow', the role 'IntermediateActivities_ObjectFlow' has cardinality 0..*, and from 'fUML_IntermediateActivities_DecisionNode', the role 'fUML_IntermediateActivities_DecisionNode193' has cardinality 0..*.
+An association connects 'fUML_IntermediateActivities_ActivityParameterNode' and 'Kernel_Parameter'. From 'fUML_IntermediateActivities_ActivityParameterNode', the role 'fUML_IntermediateActivities_ActivityParameterNode' has cardinality 0..*, and from 'Kernel_Parameter', the role 'Kernel_Parameter195' has cardinality 0..*.
+An association connects 'fUML_CompleteStructuredActivities_LoopNode' and 'BasicActions_OutputPin'. From 'fUML_CompleteStructuredActivities_LoopNode', the role 'fUML_CompleteStructuredActivities_LoopNode' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin' has cardinality 0..*.
+An association connects 'CompleteStructuredActivities_ExecutableNode' and 'fUML_CompleteStructuredActivities_LoopNode'. From 'CompleteStructuredActivities_ExecutableNode', the role 'CompleteStructuredActivities_ExecutableNode' has cardinality 0..*, and from 'fUML_CompleteStructuredActivities_LoopNode', the role 'fUML_CompleteStructuredActivities_LoopNode198' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fUML_CompleteStructuredActivities_LoopNode'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin201' has cardinality 0..*, and from 'fUML_CompleteStructuredActivities_LoopNode', the role 'fUML_CompleteStructuredActivities_LoopNode200' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fUML_CompleteStructuredActivities_LoopNode'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin' has cardinality 0..*, and from 'fUML_CompleteStructuredActivities_LoopNode', the role 'fUML_CompleteStructuredActivities_LoopNode203' has cardinality 0..*.
+An association connects 'CompleteStructuredActivities_ExecutableNode' and 'fUML_CompleteStructuredActivities_LoopNode'. From 'CompleteStructuredActivities_ExecutableNode', the role 'CompleteStructuredActivities_ExecutableNode206' has cardinality 0..*, and from 'fUML_CompleteStructuredActivities_LoopNode', the role 'fUML_CompleteStructuredActivities_LoopNode205' has cardinality 0..*.
+An association connects 'fUML_CompleteStructuredActivities_LoopNode' and 'BasicActions_OutputPin'. From 'fUML_CompleteStructuredActivities_LoopNode', the role 'fUML_CompleteStructuredActivities_LoopNode208' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin209' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fUML_CompleteStructuredActivities_LoopNode'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin212' has cardinality 0..*, and from 'fUML_CompleteStructuredActivities_LoopNode', the role 'fUML_CompleteStructuredActivities_LoopNode211' has cardinality 0..*.
+An association connects 'fUML_CompleteStructuredActivities_LoopNode' and 'CompleteStructuredActivities_ExecutableNode'. From 'fUML_CompleteStructuredActivities_LoopNode', the role 'fUML_CompleteStructuredActivities_LoopNode214' has cardinality 0..*, and from 'CompleteStructuredActivities_ExecutableNode', the role 'CompleteStructuredActivities_ExecutableNode215' has cardinality 0..*.
+An association connects 'fUML_CompleteStructuredActivities_Clause' and 'CompleteStructuredActivities_ExecutableNode'. From 'fUML_CompleteStructuredActivities_Clause', the role 'fUML_CompleteStructuredActivities_Clause' has cardinality 0..*, and from 'CompleteStructuredActivities_ExecutableNode', the role 'CompleteStructuredActivities_ExecutableNode217' has cardinality 0..*.
+An association connects 'fUML_CompleteStructuredActivities_Clause' and 'CompleteStructuredActivities_ExecutableNode'. From 'fUML_CompleteStructuredActivities_Clause', the role 'fUML_CompleteStructuredActivities_Clause219' has cardinality 0..*, and from 'CompleteStructuredActivities_ExecutableNode', the role 'CompleteStructuredActivities_ExecutableNode220' has cardinality 0..*.
+An association connects 'fUML_CompleteStructuredActivities_Clause' and 'CompleteStructuredActivities_Clause'. From 'fUML_CompleteStructuredActivities_Clause', the role 'Activities222' has cardinality 0..*, and from 'CompleteStructuredActivities_Clause', the role 'Syntax223' has cardinality 0..*.
+An association connects 'fUML_CompleteStructuredActivities_Clause' and 'CompleteStructuredActivities_Clause'. From 'fUML_CompleteStructuredActivities_Clause', the role 'Activities225' has cardinality 0..*, and from 'CompleteStructuredActivities_Clause', the role 'Syntax226' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fUML_CompleteStructuredActivities_Clause'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin229' has cardinality 0..*, and from 'fUML_CompleteStructuredActivities_Clause', the role 'fUML_CompleteStructuredActivities_Clause228' has cardinality 0..*.
+An association connects 'fUML_CompleteStructuredActivities_Clause' and 'BasicActions_OutputPin'. From 'fUML_CompleteStructuredActivities_Clause', the role 'fUML_CompleteStructuredActivities_Clause231' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin232' has cardinality 0..*.
+An association connects 'CompleteStructuredActivities_Clause' and 'fUML_CompleteStructuredActivities_ConditionalNode'. From 'CompleteStructuredActivities_Clause', the role 'CompleteStructuredActivities_Clause' has cardinality 0..*, and from 'fUML_CompleteStructuredActivities_ConditionalNode', the role 'fUML_CompleteStructuredActivities_ConditionalNode' has cardinality 0..*.
+An association connects 'fUML_CompleteStructuredActivities_ConditionalNode' and 'BasicActions_OutputPin'. From 'fUML_CompleteStructuredActivities_ConditionalNode', the role 'fUML_CompleteStructuredActivities_ConditionalNode235' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin236' has cardinality 0..*.
+An association connects 'IntermediateActivities_ActivityNode' and 'fUML_CompleteStructuredActivities_StructuredActivityNode'. From 'IntermediateActivities_ActivityNode', the role 'Syntax239' has cardinality 0..*, and from 'fUML_CompleteStructuredActivities_StructuredActivityNode', the role 'Activities238' has cardinality 0..*.
+An association connects 'fUML_CompleteStructuredActivities_StructuredActivityNode' and 'IntermediateActivities_ActivityEdge'. From 'fUML_CompleteStructuredActivities_StructuredActivityNode', the role 'Activities241' has cardinality 0..*, and from 'IntermediateActivities_ActivityEdge', the role 'Syntax242' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fUML_CompleteStructuredActivities_StructuredActivityNode'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin244' has cardinality 0..*, and from 'fUML_CompleteStructuredActivities_StructuredActivityNode', the role 'fUML_CompleteStructuredActivities_StructuredActivityNode' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fUML_CompleteStructuredActivities_StructuredActivityNode'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin247' has cardinality 0..*, and from 'fUML_CompleteStructuredActivities_StructuredActivityNode', the role 'fUML_CompleteStructuredActivities_StructuredActivityNode246' has cardinality 0..*.
+An association connects 'ExtraStructuredActivities_ExpansionRegion' and 'fUML_ExtraStructuredActivities_ExpansionNode'. From 'ExtraStructuredActivities_ExpansionRegion', the role 'Syntax250' has cardinality 0..*, and from 'fUML_ExtraStructuredActivities_ExpansionNode', the role 'Activities249' has cardinality 0..*.
+An association connects 'ExtraStructuredActivities_ExpansionRegion' and 'fUML_ExtraStructuredActivities_ExpansionNode'. From 'ExtraStructuredActivities_ExpansionRegion', the role 'Syntax253' has cardinality 0..*, and from 'fUML_ExtraStructuredActivities_ExpansionNode', the role 'Activities252' has cardinality 0..*.
+An association connects 'ExtraStructuredActivities_ExpansionNode' and 'fUML_ExtraStructuredActivities_ExpansionRegion'. From 'ExtraStructuredActivities_ExpansionNode', the role 'Syntax256' has cardinality 0..*, and from 'fUML_ExtraStructuredActivities_ExpansionRegion', the role 'Activities255' has cardinality 0..*.
+An association connects 'ExtraStructuredActivities_ExpansionNode' and 'fUML_ExtraStructuredActivities_ExpansionRegion'. From 'ExtraStructuredActivities_ExpansionNode', the role 'Syntax259' has cardinality 0..*, and from 'fUML_ExtraStructuredActivities_ExpansionRegion', the role 'Activities258' has cardinality 0..*.
+An association connects 'Kernel_StructuralFeature' and 'fUML_IntermediateActions_StructuralFeatureAction'. From 'Kernel_StructuralFeature', the role 'Kernel_StructuralFeature261' has cardinality 0..*, and from 'fUML_IntermediateActions_StructuralFeatureAction', the role 'fUML_IntermediateActions_StructuralFeatureAction' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fUML_IntermediateActions_StructuralFeatureAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin264' has cardinality 0..*, and from 'fUML_IntermediateActions_StructuralFeatureAction', the role 'fUML_IntermediateActions_StructuralFeatureAction263' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fUML_IntermediateActions_TestIdentityAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin266' has cardinality 0..*, and from 'fUML_IntermediateActions_TestIdentityAction', the role 'fUML_IntermediateActions_TestIdentityAction' has cardinality 0..*.
+An association connects 'fUML_IntermediateActions_TestIdentityAction' and 'BasicActions_OutputPin'. From 'fUML_IntermediateActions_TestIdentityAction', the role 'fUML_IntermediateActions_TestIdentityAction268' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin269' has cardinality 0..*.
+An association connects 'fUML_IntermediateActions_TestIdentityAction' and 'BasicActions_InputPin'. From 'fUML_IntermediateActions_TestIdentityAction', the role 'fUML_IntermediateActions_TestIdentityAction271' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin272' has cardinality 0..*.
+An association connects 'Kernel_ValueSpecification' and 'fUML_IntermediateActions_ValueSpecificationAction'. From 'Kernel_ValueSpecification', the role 'Kernel_ValueSpecification274' has cardinality 0..*, and from 'fUML_IntermediateActions_ValueSpecificationAction', the role 'fUML_IntermediateActions_ValueSpecificationAction' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fUML_IntermediateActions_ValueSpecificationAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin277' has cardinality 0..*, and from 'fUML_IntermediateActions_ValueSpecificationAction', the role 'fUML_IntermediateActions_ValueSpecificationAction276' has cardinality 0..*.
+An association connects 'fUML_IntermediateActions_LinkAction' and 'IntermediateActions_LinkEndData'. From 'fUML_IntermediateActions_LinkAction', the role 'fUML_IntermediateActions_LinkAction' has cardinality 0..*, and from 'IntermediateActions_LinkEndData', the role 'IntermediateActions_LinkEndData' has cardinality 0..*.
+An association connects 'fUML_IntermediateActions_LinkAction' and 'BasicActions_InputPin'. From 'fUML_IntermediateActions_LinkAction', the role 'fUML_IntermediateActions_LinkAction280' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin281' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fUML_IntermediateActions_LinkEndData'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin283' has cardinality 0..*, and from 'fUML_IntermediateActions_LinkEndData', the role 'fUML_IntermediateActions_LinkEndData' has cardinality 0..*.
+An association connects 'Kernel_Property' and 'fUML_IntermediateActions_LinkEndData'. From 'Kernel_Property', the role 'Kernel_Property286' has cardinality 0..*, and from 'fUML_IntermediateActions_LinkEndData', the role 'fUML_IntermediateActions_LinkEndData285' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fUML_IntermediateActions_WriteStructuralFeatureAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin288' has cardinality 0..*, and from 'fUML_IntermediateActions_WriteStructuralFeatureAction', the role 'fUML_IntermediateActions_WriteStructuralFeatureAction' has cardinality 0..*.
+An association connects 'fUML_IntermediateActions_WriteStructuralFeatureAction' and 'BasicActions_OutputPin'. From 'fUML_IntermediateActions_WriteStructuralFeatureAction', the role 'fUML_IntermediateActions_WriteStructuralFeatureAction290' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin291' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fUML_IntermediateActions_RemoveStructuralFeatureValueAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin293' has cardinality 0..*, and from 'fUML_IntermediateActions_RemoveStructuralFeatureValueAction', the role 'fUML_IntermediateActions_RemoveStructuralFeatureValueAction' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fUML_IntermediateActions_ReadLinkAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin295' has cardinality 0..*, and from 'fUML_IntermediateActions_ReadLinkAction', the role 'fUML_IntermediateActions_ReadLinkAction' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fUML_IntermediateActions_ReadSelfAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin297' has cardinality 0..*, and from 'fUML_IntermediateActions_ReadSelfAction', the role 'fUML_IntermediateActions_ReadSelfAction' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fUML_IntermediateActions_ReadStructuralFeatureAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin299' has cardinality 0..*, and from 'fUML_IntermediateActions_ReadStructuralFeatureAction', the role 'fUML_IntermediateActions_ReadStructuralFeatureAction' has cardinality 0..*.
+An association connects 'fUML_IntermediateActions_LinkEndCreationData' and 'BasicActions_InputPin'. From 'fUML_IntermediateActions_LinkEndCreationData', the role 'fUML_IntermediateActions_LinkEndCreationData' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin301' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fUML_IntermediateActions_LinkEndDestructionData'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin303' has cardinality 0..*, and from 'fUML_IntermediateActions_LinkEndDestructionData', the role 'fUML_IntermediateActions_LinkEndDestructionData' has cardinality 0..*.
+An association connects 'fUML_IntermediateActions_ClearAssociationAction' and 'Kernel_Association'. From 'fUML_IntermediateActions_ClearAssociationAction', the role 'fUML_IntermediateActions_ClearAssociationAction' has cardinality 0..*, and from 'Kernel_Association', the role 'Kernel_Association' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fUML_IntermediateActions_ClearAssociationAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin307' has cardinality 0..*, and from 'fUML_IntermediateActions_ClearAssociationAction', the role 'fUML_IntermediateActions_ClearAssociationAction306' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fUML_IntermediateActions_ClearStructuralFeatureAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin309' has cardinality 0..*, and from 'fUML_IntermediateActions_ClearStructuralFeatureAction', the role 'fUML_IntermediateActions_ClearStructuralFeatureAction' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fUML_IntermediateActions_CreateObjectAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin311' has cardinality 0..*, and from 'fUML_IntermediateActions_CreateObjectAction', the role 'fUML_IntermediateActions_CreateObjectAction' has cardinality 0..*.
+An association connects 'fUML_IntermediateActions_CreateObjectAction' and 'Kernel_Classifier'. From 'fUML_IntermediateActions_CreateObjectAction', the role 'fUML_IntermediateActions_CreateObjectAction313' has cardinality 0..*, and from 'Kernel_Classifier', the role 'Kernel_Classifier314' has cardinality 0..*.
+An association connects 'fUML_IntermediateActions_DestroyObjectAction' and 'BasicActions_InputPin'. From 'fUML_IntermediateActions_DestroyObjectAction', the role 'fUML_IntermediateActions_DestroyObjectAction' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin316' has cardinality 0..*.
+An association connects 'fUML_IntermediateActions_AddStructuralFeatureValueAction' and 'BasicActions_InputPin'. From 'fUML_IntermediateActions_AddStructuralFeatureValueAction', the role 'fUML_IntermediateActions_AddStructuralFeatureValueAction' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin318' has cardinality 0..*.
+An association connects 'fUML_CompleteActions_StartClassifierBehaviorAction' and 'BasicActions_InputPin'. From 'fUML_CompleteActions_StartClassifierBehaviorAction', the role 'fUML_CompleteActions_StartClassifierBehaviorAction' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin320' has cardinality 0..*.
+An association connects 'fUML_CompleteActions_StartObjectBehaviorAction' and 'BasicActions_InputPin'. From 'fUML_CompleteActions_StartObjectBehaviorAction', the role 'fUML_CompleteActions_StartObjectBehaviorAction' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin322' has cardinality 0..*.
+An association connects 'fUML_CompleteActions_ReduceAction' and 'BasicBehaviors_Behavior'. From 'fUML_CompleteActions_ReduceAction', the role 'fUML_CompleteActions_ReduceAction' has cardinality 0..*, and from 'BasicBehaviors_Behavior', the role 'BasicBehaviors_Behavior324' has cardinality 0..*.
+An association connects 'fUML_CompleteActions_ReduceAction' and 'BasicActions_OutputPin'. From 'fUML_CompleteActions_ReduceAction', the role 'fUML_CompleteActions_ReduceAction326' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin327' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fUML_CompleteActions_ReduceAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin330' has cardinality 0..*, and from 'fUML_CompleteActions_ReduceAction', the role 'fUML_CompleteActions_ReduceAction329' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fUML_CompleteActions_ReadExtentAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin332' has cardinality 0..*, and from 'fUML_CompleteActions_ReadExtentAction', the role 'fUML_CompleteActions_ReadExtentAction' has cardinality 0..*.
+An association connects 'fUML_CompleteActions_ReadExtentAction' and 'Kernel_Classifier'. From 'fUML_CompleteActions_ReadExtentAction', the role 'fUML_CompleteActions_ReadExtentAction334' has cardinality 0..*, and from 'Kernel_Classifier', the role 'Kernel_Classifier335' has cardinality 0..*.
+An association connects 'fUML_CompleteActions_ReadIsClassifiedObjectAction' and 'Kernel_Classifier'. From 'fUML_CompleteActions_ReadIsClassifiedObjectAction', the role 'fUML_CompleteActions_ReadIsClassifiedObjectAction' has cardinality 0..*, and from 'Kernel_Classifier', the role 'Kernel_Classifier337' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fUML_CompleteActions_ReadIsClassifiedObjectAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin340' has cardinality 0..*, and from 'fUML_CompleteActions_ReadIsClassifiedObjectAction', the role 'fUML_CompleteActions_ReadIsClassifiedObjectAction339' has cardinality 0..*.
+An association connects 'fUML_CompleteActions_ReadIsClassifiedObjectAction' and 'BasicActions_InputPin'. From 'fUML_CompleteActions_ReadIsClassifiedObjectAction', the role 'fUML_CompleteActions_ReadIsClassifiedObjectAction342' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin343' has cardinality 0..*.
+An association connects 'fUML_CompleteActions_ReclassifyObjectAction' and 'Kernel_Classifier'. From 'fUML_CompleteActions_ReclassifyObjectAction', the role 'fUML_CompleteActions_ReclassifyObjectAction' has cardinality 0..*, and from 'Kernel_Classifier', the role 'Kernel_Classifier345' has cardinality 0..*.
+An association connects 'fUML_CompleteActions_ReclassifyObjectAction' and 'BasicActions_InputPin'. From 'fUML_CompleteActions_ReclassifyObjectAction', the role 'fUML_CompleteActions_ReclassifyObjectAction347' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin348' has cardinality 0..*.
+An association connects 'fUML_CompleteActions_ReclassifyObjectAction' and 'Kernel_Classifier'. From 'fUML_CompleteActions_ReclassifyObjectAction', the role 'fUML_CompleteActions_ReclassifyObjectAction350' has cardinality 0..*, and from 'Kernel_Classifier', the role 'Kernel_Classifier351' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fUML_CompleteActions_AcceptEventAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin353' has cardinality 0..*, and from 'fUML_CompleteActions_AcceptEventAction', the role 'fUML_CompleteActions_AcceptEventAction' has cardinality 0..*.
+An association connects 'fUML_CompleteActions_AcceptEventAction' and 'Communications_Trigger'. From 'fUML_CompleteActions_AcceptEventAction', the role 'fUML_CompleteActions_AcceptEventAction355' has cardinality 0..*, and from 'Communications_Trigger', the role 'Communications_Trigger' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fUML_BasicActions_Action'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin357' has cardinality 0..*, and from 'fUML_BasicActions_Action', the role 'fUML_BasicActions_Action' has cardinality 0..*.
+An association connects 'Kernel_Classifier' and 'fUML_BasicActions_Action'. From 'Kernel_Classifier', the role 'Kernel_Classifier360' has cardinality 0..*, and from 'fUML_BasicActions_Action', the role 'fUML_BasicActions_Action359' has cardinality 0..*.
+An association connects 'fUML_BasicActions_Action' and 'BasicActions_InputPin'. From 'fUML_BasicActions_Action', the role 'fUML_BasicActions_Action362' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin363' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fUML_BasicActions_CallAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin365' has cardinality 0..*, and from 'fUML_BasicActions_CallAction', the role 'fUML_BasicActions_CallAction' has cardinality 0..*.
+An association connects 'fUML_BasicActions_InvocationAction' and 'BasicActions_InputPin'. From 'fUML_BasicActions_InvocationAction', the role 'fUML_BasicActions_InvocationAction' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin367' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fUML_BasicActions_SendSignalAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin369' has cardinality 0..*, and from 'fUML_BasicActions_SendSignalAction', the role 'fUML_BasicActions_SendSignalAction' has cardinality 0..*.
+An association connects 'Communications_Signal' and 'fUML_BasicActions_SendSignalAction'. From 'Communications_Signal', the role 'Communications_Signal372' has cardinality 0..*, and from 'fUML_BasicActions_SendSignalAction', the role 'fUML_BasicActions_SendSignalAction371' has cardinality 0..*.
+An association connects 'BasicBehaviors_Behavior' and 'fUML_BasicActions_CallBehaviorAction'. From 'BasicBehaviors_Behavior', the role 'BasicBehaviors_Behavior374' has cardinality 0..*, and from 'fUML_BasicActions_CallBehaviorAction', the role 'fUML_BasicActions_CallBehaviorAction' has cardinality 0..*.
+An association connects 'fUML_BasicActions_CallOperationAction' and 'Kernel_Operation'. From 'fUML_BasicActions_CallOperationAction', the role 'fUML_BasicActions_CallOperationAction' has cardinality 0..*, and from 'Kernel_Operation', the role 'Kernel_Operation376' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fUML_BasicActions_CallOperationAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin379' has cardinality 0..*, and from 'fUML_BasicActions_CallOperationAction', the role 'fUML_BasicActions_CallOperationAction378' has cardinality 0..*.

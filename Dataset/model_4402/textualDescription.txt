@@ -1,0 +1,59 @@
+The domain model 'featureModel' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'featureModel_RelationFeature' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'upperBound', which is of type int; 'lowerBound', which is of type int.
+
+'featureModel_Project' represents an important domain concept.
+It has the following attributes: 'validatedOCL', which is of type bool; 'validatedTEF', which is of type bool; 'numberOfProducts', which is of type int; 'nameConfigFile', which is of type str; 'nameConstraintsFile', which is of type str.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_TypedValue' represents an important domain concept.
+It has the following attributes: 'stringValue', which is of type str; 'integerValue', which is of type str; 'floatValue', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_RelationFG' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_FeatureGroup' represents an important domain concept.
+It has the following attributes: 'upperBound', which is of type int; 'lowerBound', which is of type int; 'type', which is of type str.
+
+'featureModel_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'featureModel_Feature' represents an important domain concept.
+It has the following attributes: 'valueType', which is of type str; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FeatureGroupType' defines the following possible values: 'XORGROUP', 'SIMPLEGROUP', 'ORGROUP'.
+The enumeration 'ValueType' defines the following possible values: 'FEATURE', 'NONE', 'FLOAT', 'INTEGER', 'STRING'.
+The enumeration 'FeatureType' defines the following possible values: 'SIMPLE', 'MANDATORY', 'OPTIONAL'.
+
+The model also captures inheritance relationships between classes.
+The class 'featureModel_Feature' is a specialization of 'Node'.
+The class 'featureModel_FeatureGroup' is a specialization of 'Node'.
+The class 'featureModel_RelationFG' is a specialization of 'Relation'.
+The class 'featureModel_RelationFeature' is a specialization of 'Relation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'featureModel_TypedValue' and 'featureModel_Feature'. From 'featureModel_TypedValue', the role 'featureModel_TypedValue' has cardinality 0..*, and from 'featureModel_Feature', the role 'featureModel_Feature' has cardinality 0..*.
+An association connects 'featureModel_Feature' and 'featureModel_Node'. From 'featureModel_Feature', the role 'featureModel_Feature2' has cardinality 0..*, and from 'featureModel_Node', the role 'featureModel_Node' has cardinality 0..*.
+An association connects 'featureModel_Feature' and 'featureModel_Feature'. From 'featureModel_Feature', the role 'featureModel_Feature3' has cardinality 0..*, and from 'featureModel_Feature', the role 'featureModel_Feature5' has cardinality 0..*.
+An association connects 'featureModel_Feature' and 'featureModel_Feature'. From 'featureModel_Feature', the role 'featureModel_Feature6' has cardinality 0..*, and from 'featureModel_Feature', the role 'featureModel_Feature8' has cardinality 0..*.
+An association connects 'featureModel_TypedValue' and 'featureModel_Feature'. From 'featureModel_TypedValue', the role 'featureModel_TypedValue10' has cardinality 0..*, and from 'featureModel_Feature', the role 'featureModel_Feature11' has cardinality 0..*.
+An association connects 'featureModel_Node' and 'featureModel_Project'. From 'featureModel_Node', the role 'featureModel_Node13' has cardinality 0..*, and from 'featureModel_Project', the role 'featureModel_Project' has cardinality 0..*.
+An association connects 'featureModel_Relation' and 'featureModel_Project'. From 'featureModel_Relation', the role 'featureModel_Relation' has cardinality 0..*, and from 'featureModel_Project', the role 'featureModel_Project15' has cardinality 0..*.
+An association connects 'featureModel_FeatureGroup' and 'featureModel_Feature'. From 'featureModel_FeatureGroup', the role 'featureModel_FeatureGroup' has cardinality 0..*, and from 'featureModel_Feature', the role 'featureModel_Feature17' has cardinality 0..*.
+An association connects 'featureModel_Node' and 'featureModel_Node'. From 'featureModel_Node', the role 'featureModel_Node20' has cardinality 0..*, and from 'featureModel_Node', the role 'featureModel_Node18' has cardinality 0..*.
+An association connects 'featureModel_RelationFG' and 'featureModel_Node'. From 'featureModel_RelationFG', the role 'featureModel_RelationFG' has cardinality 0..*, and from 'featureModel_Node', the role 'featureModel_Node22' has cardinality 0..*.
+An association connects 'featureModel_RelationFG' and 'featureModel_Node'. From 'featureModel_RelationFG', the role 'featureModel_RelationFG24' has cardinality 0..*, and from 'featureModel_Node', the role 'featureModel_Node25' has cardinality 0..*.
+An association connects 'featureModel_Feature' and 'featureModel_RelationFeature'. From 'featureModel_Feature', the role 'featureModel_Feature27' has cardinality 0..*, and from 'featureModel_RelationFeature', the role 'featureModel_RelationFeature' has cardinality 0..*.
+An association connects 'featureModel_RelationFeature' and 'featureModel_Feature'. From 'featureModel_RelationFeature', the role 'featureModel_RelationFeature29' has cardinality 0..*, and from 'featureModel_Feature', the role 'featureModel_Feature30' has cardinality 0..*.

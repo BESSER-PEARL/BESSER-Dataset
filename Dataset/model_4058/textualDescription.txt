@@ -1,0 +1,55 @@
+The domain model 'classDiagram' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'ModelingConcept' represents an important domain concept.
+It does not declare any attributes.
+
+'classDiagram_Attribute' represents an important domain concept.
+It has the following attributes: 'isStatic', which is of type bool; 'accessModifier', which is of type str.
+
+'classDiagram_Function' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'accessModifier', which is of type str; 'isAbstract', which is of type bool; 'isStatic', which is of type bool.
+
+'classDiagram_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'classDiagram_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'classDiagram_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'classDiagram_Class' represents an important domain concept.
+It has the following attributes: 'isAbstract', which is of type bool; 'accessModifier', which is of type str; 'isStatic', which is of type bool.
+
+'classDiagram_ModelingConcept' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'classDiagram_ClassModel' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AccessModifier' defines the following possible values: 'protected', 'public', 'private', 'default'.
+
+The model also captures inheritance relationships between classes.
+The class 'classDiagram_Package' is a specialization of 'ModelingConcept'.
+The class 'classDiagram_Class' is a specialization of 'Classifier'.
+The class 'classDiagram_Attribute' is a specialization of 'ModelingConcept'.
+The class 'classDiagram_Type' is a specialization of 'Classifier'.
+The class 'classDiagram_Classifier' is a specialization of 'ModelingConcept'.
+The class 'classDiagram_Function' is a specialization of 'ModelingConcept'.
+
+Relationships between classes are modeled using associations.
+An association connects 'classDiagram_Package' and 'classDiagram_ClassModel'. From 'classDiagram_Package', the role 'classDiagram_Package' has cardinality 0..*, and from 'classDiagram_ClassModel', the role 'classDiagram_ClassModel' has cardinality 0..*.
+An association connects 'classDiagram_ModelingConcept' and 'classDiagram_Package'. From 'classDiagram_ModelingConcept', the role 'classDiagram_ModelingConcept' has cardinality 0..*, and from 'classDiagram_Package', the role 'classDiagram_Package2' has cardinality 0..*.
+An association connects 'classDiagram_Attribute' and 'classDiagram_Class'. From 'classDiagram_Attribute', the role 'classDiagram_Attribute' has cardinality 0..*, and from 'classDiagram_Class', the role 'classDiagram_Class' has cardinality 0..*.
+An association connects 'classDiagram_Class' and 'classDiagram_Class'. From 'classDiagram_Class', the role 'subtypes' has cardinality 0..*, and from 'classDiagram_Class', the role 'Class' has cardinality 0..*.
+An association connects 'classDiagram_Class' and 'classDiagram_Class'. From 'classDiagram_Class', the role 'supertypes' has cardinality 0..*, and from 'classDiagram_Class', the role 'Class8' has cardinality 0..*.
+An association connects 'classDiagram_Class' and 'classDiagram_Function'. From 'classDiagram_Class', the role 'classDiagram_Class10' has cardinality 0..*, and from 'classDiagram_Function', the role 'classDiagram_Function' has cardinality 0..*.
+An association connects 'classDiagram_Classifier' and 'classDiagram_Attribute'. From 'classDiagram_Classifier', the role 'classDiagram_Classifier' has cardinality 0..*, and from 'classDiagram_Attribute', the role 'classDiagram_Attribute12' has cardinality 0..*.
+An association connects 'classDiagram_Classifier' and 'classDiagram_Function'. From 'classDiagram_Classifier', the role 'classDiagram_Classifier15' has cardinality 0..*, and from 'classDiagram_Function', the role 'classDiagram_Function14' has cardinality 0..*.
+An association connects 'classDiagram_Function' and 'classDiagram_Attribute'. From 'classDiagram_Function', the role 'classDiagram_Function17' has cardinality 0..*, and from 'classDiagram_Attribute', the role 'classDiagram_Attribute18' has cardinality 0..*.

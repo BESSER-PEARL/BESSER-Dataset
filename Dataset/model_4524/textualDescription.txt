@@ -1,0 +1,113 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'model_Stop' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RotorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Ending' represents an important domain concept.
+It does not declare any attributes.
+
+'model_StartOver' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ActionsList' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ContinuosAction' represents an important domain concept.
+It has one attribute: 'duration', which is of type float.
+
+'model_EventListener' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'ContinuosAction' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RandomAction' represents an important domain concept.
+It has one attribute: 'isRandom', which is of type bool.
+
+'model_Wait' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Repeat' represents an important domain concept.
+It does not declare any attributes.
+
+'RandomAction' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Tapped' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'RotorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Turn' represents an important domain concept.
+It has the following attributes: 'degrees', which is of type float; 'direction', which is of type str.
+
+'ActionsList' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Main' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Ending' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Move' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'model_RoboProse' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Obstacle' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TURN_DIRECTION' defines the following possible values: 'LEFT', 'RIGHT'.
+The enumeration 'MOVE_DIRECTION' defines the following possible values: 'BACKWARDS', 'FORWARDS'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_Main' is a specialization of 'ActionsList'.
+The class 'model_EventListener' is a specialization of 'ActionsList'.
+The class 'model_RotorAction' is a specialization of 'Action'.
+The class 'model_Move' is a specialization of 'RotorAction'.
+The class 'model_Move' is a specialization of 'ContinuosAction'.
+The class 'model_Move' is a specialization of 'RandomAction'.
+The class 'model_Turn' is a specialization of 'RotorAction'.
+The class 'model_Turn' is a specialization of 'ContinuosAction'.
+The class 'model_Turn' is a specialization of 'RandomAction'.
+The class 'model_Stop' is a specialization of 'ContinuosAction'.
+The class 'model_Repeat' is a specialization of 'Ending'.
+The class 'model_StartOver' is a specialization of 'Ending'.
+The class 'model_Wait' is a specialization of 'Ending'.
+The class 'model_Obstacle' is a specialization of 'Event'.
+The class 'model_Tapped' is a specialization of 'Event'.
+The class 'model_ContinuosAction' is a specialization of 'Action'.
+The class 'model_RandomAction' is a specialization of 'Action'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_RoboProse' and 'model_Root'. From 'model_RoboProse', the role 'model_RoboProse' has cardinality 0..*, and from 'model_Root', the role 'model_Root' has cardinality 0..*.
+An association connects 'model_RoboProse' and 'model_Main'. From 'model_RoboProse', the role 'model_RoboProse2' has cardinality 0..*, and from 'model_Main', the role 'model_Main' has cardinality 0..*.
+An association connects 'model_RoboProse' and 'model_EventListener'. From 'model_RoboProse', the role 'model_RoboProse4' has cardinality 0..*, and from 'model_EventListener', the role 'model_EventListener' has cardinality 0..*.
+An association connects 'model_EventListener' and 'model_EventListener'. From 'model_EventListener', the role 'model_EventListener7' has cardinality 0..*, and from 'model_EventListener', the role 'model_EventListener5' has cardinality 0..*.
+An association connects 'model_Event' and 'model_EventListener'. From 'model_Event', the role 'model_Event' has cardinality 0..*, and from 'model_EventListener', the role 'model_EventListener9' has cardinality 0..*.
+An association connects 'model_Action' and 'model_ActionsList'. From 'model_Action', the role 'model_Action' has cardinality 0..*, and from 'model_ActionsList', the role 'model_ActionsList' has cardinality 0..*.
+An association connects 'model_Ending' and 'model_ActionsList'. From 'model_Ending', the role 'model_Ending' has cardinality 0..*, and from 'model_ActionsList', the role 'model_ActionsList12' has cardinality 0..*.

@@ -1,0 +1,168 @@
+The domain model 'soaml' describes the core structural elements and their relationships within the system.
+
+The model defines 42 main class(es).
+
+'soaml_Port' represents an important domain concept.
+It has one attribute: 'connectorRequired', which is of type str.
+
+'soaml_Property' represents an important domain concept.
+It has one attribute: 'isID', which is of type str.
+
+'soaml_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_ServiceInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Agent' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Collaboration' represents an important domain concept.
+It has one attribute: 'isStrict', which is of type str.
+
+'soaml_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_FreeFormDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Attachment' represents an important domain concept.
+It has the following attributes: 'encoding', which is of type str; 'mimeType', which is of type str.
+
+'Collaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Expose' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_ServiceContract' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Milestone' represents an important domain concept.
+It has one attribute: 'progress', which is of type str.
+
+'soaml_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Consumer' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Capability' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_FreeFormValue' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_ServiceArchitecture' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_NodeDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_CategoryValue' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_ServiceChannel' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_MotivationRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'Participant' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Request' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Provider' represents an important domain concept.
+It does not declare any attributes.
+
+'FreeFormValue' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Categorization' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_CollaborationUse' represents an important domain concept.
+It has one attribute: 'isStrict', which is of type str.
+
+'soaml_MessageType' represents an important domain concept.
+It has one attribute: 'encoding', which is of type str.
+
+'soaml_Category' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Catalog' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Participant' represents an important domain concept.
+It does not declare any attributes.
+
+'soaml_Class' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'soaml_ServiceArchitecture' is a specialization of 'Collaboration'.
+The class 'soaml_ServiceContract' is a specialization of 'Collaboration'.
+The class 'soaml_Agent' is a specialization of 'Participant'.
+The class 'soaml_Catalog' is a specialization of 'NodeDescriptor'.
+The class 'soaml_Category' is a specialization of 'NodeDescriptor'.
+The class 'soaml_CategoryValue' is a specialization of 'FreeFormValue'.
+
+Relationships between classes are modeled using associations.
+An association connects 'soaml_Collaboration' and 'soaml_Collaboration'. From 'soaml_Collaboration', the role 'soaml_Collaboration' has cardinality 0..*, and from 'soaml_Collaboration', the role 'soaml_Collaboration0' has cardinality 0..*.
+An association connects 'soaml_CollaborationUse' and 'soaml_CollaborationUse'. From 'soaml_CollaborationUse', the role 'soaml_CollaborationUse' has cardinality 0..*, and from 'soaml_CollaborationUse', the role 'soaml_CollaborationUse2' has cardinality 0..*.
+An association connects 'soaml_Interface' and 'soaml_Consumer'. From 'soaml_Interface', the role 'soaml_Interface' has cardinality 0..*, and from 'soaml_Consumer', the role 'soaml_Consumer' has cardinality 0..*.
+An association connects 'soaml_Class' and 'soaml_Consumer'. From 'soaml_Class', the role 'soaml_Class' has cardinality 0..*, and from 'soaml_Consumer', the role 'soaml_Consumer6' has cardinality 0..*.
+An association connects 'soaml_Interface' and 'soaml_Provider'. From 'soaml_Interface', the role 'soaml_Interface8' has cardinality 0..*, and from 'soaml_Provider', the role 'soaml_Provider' has cardinality 0..*.
+An association connects 'soaml_Provider' and 'soaml_Class'. From 'soaml_Provider', the role 'soaml_Provider10' has cardinality 0..*, and from 'soaml_Class', the role 'soaml_Class11' has cardinality 0..*.
+An association connects 'soaml_Realization' and 'soaml_MotivationRealization'. From 'soaml_Realization', the role 'soaml_Realization' has cardinality 0..*, and from 'soaml_MotivationRealization', the role 'soaml_MotivationRealization' has cardinality 0..*.
+An association connects 'soaml_ServiceInterface' and 'soaml_Interface'. From 'soaml_ServiceInterface', the role 'soaml_ServiceInterface' has cardinality 0..*, and from 'soaml_Interface', the role 'soaml_Interface14' has cardinality 0..*.
+An association connects 'soaml_ServiceInterface' and 'soaml_Class'. From 'soaml_ServiceInterface', the role 'soaml_ServiceInterface16' has cardinality 0..*, and from 'soaml_Class', the role 'soaml_Class17' has cardinality 0..*.
+An association connects 'soaml_Participant' and 'soaml_Class'. From 'soaml_Participant', the role 'soaml_Participant' has cardinality 0..*, and from 'soaml_Class', the role 'soaml_Class19' has cardinality 0..*.
+An association connects 'soaml_Port' and 'soaml_Port'. From 'soaml_Port', the role 'soaml_Port' has cardinality 0..*, and from 'soaml_Port', the role 'soaml_Port20' has cardinality 0..*.
+An association connects 'soaml_Port' and 'soaml_Request'. From 'soaml_Port', the role 'soaml_Port23' has cardinality 0..*, and from 'soaml_Request', the role 'soaml_Request' has cardinality 0..*.
+An association connects 'soaml_Service' and 'soaml_Port'. From 'soaml_Service', the role 'soaml_Service' has cardinality 0..*, and from 'soaml_Port', the role 'soaml_Port25' has cardinality 0..*.
+An association connects 'soaml_ServiceChannel' and 'soaml_Connector'. From 'soaml_ServiceChannel', the role 'soaml_ServiceChannel' has cardinality 0..*, and from 'soaml_Connector', the role 'soaml_Connector' has cardinality 0..*.
+An association connects 'soaml_Property' and 'soaml_Property'. From 'soaml_Property', the role 'soaml_Property' has cardinality 0..*, and from 'soaml_Property', the role 'soaml_Property27' has cardinality 0..*.
+An association connects 'soaml_Attachment' and 'soaml_Property'. From 'soaml_Attachment', the role 'soaml_Attachment' has cardinality 0..*, and from 'soaml_Property', the role 'soaml_Property30' has cardinality 0..*.
+An association connects 'soaml_MessageType' and 'soaml_Class'. From 'soaml_MessageType', the role 'soaml_MessageType' has cardinality 0..*, and from 'soaml_Class', the role 'soaml_Class32' has cardinality 0..*.
+An association connects 'soaml_DataType' and 'soaml_MessageType'. From 'soaml_DataType', the role 'soaml_DataType' has cardinality 0..*, and from 'soaml_MessageType', the role 'soaml_MessageType34' has cardinality 0..*.
+An association connects 'soaml_MessageType' and 'soaml_Signal'. From 'soaml_MessageType', the role 'soaml_MessageType36' has cardinality 0..*, and from 'soaml_Signal', the role 'soaml_Signal' has cardinality 0..*.
+An association connects 'soaml_ValueSpecification' and 'soaml_Milestone'. From 'soaml_ValueSpecification', the role 'soaml_ValueSpecification' has cardinality 0..*, and from 'soaml_Milestone', the role 'soaml_Milestone' has cardinality 0..*.
+An association connects 'soaml_Milestone' and 'soaml_Signal'. From 'soaml_Milestone', the role 'soaml_Milestone39' has cardinality 0..*, and from 'soaml_Signal', the role 'soaml_Signal40' has cardinality 0..*.
+An association connects 'soaml_Comment' and 'soaml_Milestone'. From 'soaml_Comment', the role 'soaml_Comment' has cardinality 0..*, and from 'soaml_Milestone', the role 'soaml_Milestone42' has cardinality 0..*.
+An association connects 'soaml_Class' and 'soaml_Capability'. From 'soaml_Class', the role 'soaml_Class44' has cardinality 0..*, and from 'soaml_Capability', the role 'soaml_Capability' has cardinality 0..*.
+An association connects 'soaml_Expose' and 'soaml_Dependency'. From 'soaml_Expose', the role 'soaml_Expose' has cardinality 0..*, and from 'soaml_Dependency', the role 'soaml_Dependency' has cardinality 0..*.
+An association connects 'soaml_NodeDescriptor' and 'soaml_Artifact'. From 'soaml_NodeDescriptor', the role 'soaml_NodeDescriptor' has cardinality 0..*, and from 'soaml_Artifact', the role 'soaml_Artifact' has cardinality 0..*.
+An association connects 'soaml_Package' and 'soaml_Catalog'. From 'soaml_Package', the role 'soaml_Package' has cardinality 0..*, and from 'soaml_Catalog', the role 'soaml_Catalog' has cardinality 0..*.
+An association connects 'soaml_FreeFormDescriptor' and 'soaml_Property'. From 'soaml_FreeFormDescriptor', the role 'soaml_FreeFormDescriptor' has cardinality 0..*, and from 'soaml_Property', the role 'soaml_Property49' has cardinality 0..*.
+An association connects 'soaml_FreeFormValue' and 'soaml_ValueSpecification'. From 'soaml_FreeFormValue', the role 'soaml_FreeFormValue' has cardinality 0..*, and from 'soaml_ValueSpecification', the role 'soaml_ValueSpecification51' has cardinality 0..*.
+An association connects 'soaml_Categorization' and 'soaml_Dependency'. From 'soaml_Categorization', the role 'soaml_Categorization' has cardinality 0..*, and from 'soaml_Dependency', the role 'soaml_Dependency53' has cardinality 0..*.

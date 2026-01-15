@@ -1,0 +1,26 @@
+The domain model 'statesmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'statesmodel_ActivityNodeExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'statesmodel_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'statesmodel_State' represents an important domain concept.
+It does not declare any attributes.
+
+'statesmodel_ValueSnapshot' represents an important domain concept.
+It does not declare any attributes.
+
+'statesmodel_StatesModel' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'statesmodel_State' and 'statesmodel_StatesModel'. From 'statesmodel_State', the role 'statesmodel_State' has cardinality 0..*, and from 'statesmodel_StatesModel', the role 'statesmodel_StatesModel' has cardinality 0..*.
+An association connects 'statesmodel_Transition' and 'statesmodel_StatesModel'. From 'statesmodel_Transition', the role 'statesmodel_Transition' has cardinality 0..*, and from 'statesmodel_StatesModel', the role 'statesmodel_StatesModel2' has cardinality 0..*.
+An association connects 'statesmodel_ValueSnapshot' and 'statesmodel_State'. From 'statesmodel_ValueSnapshot', the role 'statesmodel_ValueSnapshot' has cardinality 0..*, and from 'statesmodel_State', the role 'statesmodel_State4' has cardinality 0..*.
+An association connects 'statesmodel_Transition' and 'statesmodel_State'. From 'statesmodel_Transition', the role 'statesmodel_Transition6' has cardinality 0..*, and from 'statesmodel_State', the role 'statesmodel_State7' has cardinality 0..*.
+An association connects 'statesmodel_Transition' and 'statesmodel_State'. From 'statesmodel_Transition', the role 'statesmodel_Transition9' has cardinality 0..*, and from 'statesmodel_State', the role 'statesmodel_State10' has cardinality 0..*.
+An association connects 'statesmodel_ActivityNodeExecution' and 'statesmodel_Transition'. From 'statesmodel_ActivityNodeExecution', the role 'statesmodel_ActivityNodeExecution' has cardinality 0..*, and from 'statesmodel_Transition', the role 'statesmodel_Transition12' has cardinality 0..*.

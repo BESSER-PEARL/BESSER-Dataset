@@ -1,0 +1,461 @@
+The domain model 'notation' describes the core structural elements and their relationships within the system.
+
+The model defines 108 main class(es).
+
+'SortingStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'FilteringStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'ImageStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_PropertyValue' represents an important domain concept.
+It has one attribute: 'rawValue', which is of type str.
+
+'notation_BasicSemanticCompartment' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Bendpoints' represents an important domain concept.
+It does not declare any attributes.
+
+'FillStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_BooleanListValueStyle' represents an important domain concept.
+It has one attribute: 'booleanListValue', which is of type str.
+
+'notation_EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_MultiDiagramLinkStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_ListValueStyle' represents an important domain concept.
+It has one attribute: 'rawValuesList', which is of type str.
+
+'Style' represents an important domain concept.
+It does not declare any attributes.
+
+'DataTypeStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'RoundedCornersStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'CanonicalStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Guide' represents an important domain concept.
+It has one attribute: 'position', which is of type int.
+
+'notation_RoundedCornersStyle' represents an important domain concept.
+It has one attribute: 'roundedBendpointsRadius', which is of type int.
+
+'notation_PropertiesSetStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_FillStyle' represents an important domain concept.
+It has the following attributes: 'gradient', which is of type str; 'fillColor', which is of type int; 'transparency', which is of type int.
+
+'DrawerStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_DiagramStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_DoubleListValueStyle' represents an important domain concept.
+It has one attribute: 'doubleListValue', which is of type str.
+
+'notation_StringToPropertyValueMapEntry' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'notation_StringValueStyle' represents an important domain concept.
+It has one attribute: 'stringValue', which is of type str.
+
+'Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectorStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'LayoutConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_IntListValueStyle' represents an important domain concept.
+It has one attribute: 'intListValue', which is of type int.
+
+'notation_Style' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_ImageStyle' represents an important domain concept.
+It has the following attributes: 'antiAlias', which is of type str; 'maintainAspectRatio', which is of type str.
+
+'notation_ImageBufferStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_RelativeBendpoints' represents an important domain concept.
+It has one attribute: 'points', which is of type str.
+
+'notation_Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_TextStyle' represents an important domain concept.
+It has one attribute: 'textAlignment', which is of type str.
+
+'notation_SingleValueStyle' represents an important domain concept.
+It has one attribute: 'rawValue', which is of type str.
+
+'notation_DoubleValueStyle' represents an important domain concept.
+It has one attribute: 'doubleValue', which is of type float.
+
+'DiagramLinkStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_SemanticListCompartment' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_IdentityAnchor' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'notation_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_CanonicalStyle' represents an important domain concept.
+It has one attribute: 'canonical', which is of type bool.
+
+'notation_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Compartment' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Diagram' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'measurementUnit', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_DescriptionStyle' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'notation_Location' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'x', which is of type int.
+
+'notation_LineStyle' represents an important domain concept.
+It has the following attributes: 'lineWidth', which is of type int; 'lineColor', which is of type int.
+
+'notation_DrawerStyle' represents an important domain concept.
+It has one attribute: 'collapsed', which is of type bool.
+
+'StringObjectConverter' represents an important domain concept.
+It does not declare any attributes.
+
+'Size' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_NamedStyle' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Bendpoints' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_ArrowStyle' represents an important domain concept.
+It has the following attributes: 'arrowTarget', which is of type str; 'arrowSource', which is of type str.
+
+'DecorationNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ShapeStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_ByteArrayValueStyle' represents an important domain concept.
+It has one attribute: 'byteArrayValue', which is of type str.
+
+'notation_Size' represents an important domain concept.
+It has the following attributes: 'width', which is of type int; 'height', which is of type int.
+
+'PageStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicSemanticCompartment' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Ratio' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'notation_LayoutConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Image' represents an important domain concept.
+It has one attribute: 'data', which is of type str.
+
+'notation_Anchor' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_EObjectValueStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_LineTypeStyle' represents an important domain concept.
+It has one attribute: 'lineType', which is of type str.
+
+'notation_DataTypeStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_ConnectorStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'DescriptionStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'Anchor' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_SortingStyle' represents an important domain concept.
+It has the following attributes: 'sortingKeys', which is of type str; 'sorting', which is of type str.
+
+'NamedStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_StringListValueStyle' represents an important domain concept.
+It has one attribute: 'stringListValue', which is of type str.
+
+'Location' represents an important domain concept.
+It does not declare any attributes.
+
+'TitleStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_FilteringStyle' represents an important domain concept.
+It has the following attributes: 'filtering', which is of type str; 'filteringKeys', which is of type str.
+
+'notation_Bounds' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_ListCompartment' represents an important domain concept.
+It does not declare any attributes.
+
+'View' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_View' represents an important domain concept.
+It has the following attributes: 'mutable', which is of type bool; 'type', which is of type str; 'visible', which is of type bool.
+
+'notation_StringObjectConverter' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_ShapeStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_HintedDiagramLinkStyle' represents an important domain concept.
+It has one attribute: 'hint', which is of type str.
+
+'notation_BasicDecorationNode' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_StandardDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_RoutingStyle' represents an important domain concept.
+It has the following attributes: 'jumpLinksReverse', which is of type bool; 'smoothness', which is of type str; 'routing', which is of type str; 'closestDistance', which is of type bool; 'avoidObstructions', which is of type bool; 'jumpLinkStatus', which is of type str; 'jumpLinkType', which is of type str.
+
+'notation_GuideStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_FontStyle' represents an important domain concept.
+It has the following attributes: 'fontColor', which is of type int; 'italic', which is of type bool; 'fontName', which is of type str; 'fontHeight', which is of type int; 'underline', which is of type bool; 'bold', which is of type bool; 'strikeThrough', which is of type bool.
+
+'BasicCompartment' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_DecorationNode' represents an important domain concept.
+It does not declare any attributes.
+
+'RoutingStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'FontStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'LineStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_DiagramLinkStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_BooleanValueStyle' represents an important domain concept.
+It has one attribute: 'booleanValue', which is of type bool.
+
+'notation_BasicCompartment' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_NodeEntry' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'notation_EObjectListValueStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'GuideStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_IntValueStyle' represents an important domain concept.
+It has one attribute: 'intValue', which is of type int.
+
+'notation_TitleStyle' represents an important domain concept.
+It has one attribute: 'showTitle', which is of type bool.
+
+'notation_PageStyle' represents an important domain concept.
+It has the following attributes: 'pageHeight', which is of type int; 'pageY', which is of type int; 'pageWidth', which is of type int; 'pageX', which is of type int.
+
+'BasicDecorationNode' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MeasurementUnit' defines the following possible values: 'Himetric', 'Pixel'.
+The enumeration 'TextAlignment' defines the following possible values: 'Center', 'Right', 'Left'.
+The enumeration 'ArrowType' defines the following possible values: 'SolidArrow', 'None', 'OpenArrow'.
+The enumeration 'JumpLinkType' defines the following possible values: 'Chamfered', 'Square', 'Semicircle'.
+The enumeration 'Filtering' defines the following possible values: 'None', 'Manual', 'Automatic'.
+The enumeration 'Alignment' defines the following possible values: 'Top', 'Center', 'Right', 'Left', 'Bottom'.
+The enumeration 'Routing' defines the following possible values: 'Rectilinear', 'Manual', 'Tree'.
+The enumeration 'LineType' defines the following possible values: 'Dash', 'Dot', 'DashDot', 'Double', 'Solid', 'DashDotDot'.
+The enumeration 'Smoothness' defines the following possible values: 'None', 'More', 'Normal', 'Less'.
+The enumeration 'GradientStyle' defines the following possible values: 'Horizontal', 'Vertical'.
+The enumeration 'SortingDirection' defines the following possible values: 'Ascending', 'Descending'.
+The enumeration 'Sorting' defines the following possible values: 'None', 'Manual', 'Automatic'.
+The enumeration 'JumpLinkStatus' defines the following possible values: 'Below', 'All', 'None', 'Above'.
+
+The model also captures inheritance relationships between classes.
+The class 'notation_Edge' is a specialization of 'View'.
+The class 'notation_Node' is a specialization of 'View'.
+The class 'notation_FillStyle' is a specialization of 'Style'.
+The class 'notation_LineStyle' is a specialization of 'Style'.
+The class 'notation_FontStyle' is a specialization of 'Style'.
+The class 'notation_TitleStyle' is a specialization of 'Style'.
+The class 'notation_SortingStyle' is a specialization of 'Style'.
+The class 'notation_DescriptionStyle' is a specialization of 'Style'.
+The class 'notation_Size' is a specialization of 'LayoutConstraint'.
+The class 'notation_Location' is a specialization of 'LayoutConstraint'.
+The class 'notation_Bounds' is a specialization of 'Location'.
+The class 'notation_Bounds' is a specialization of 'Size'.
+The class 'notation_Ratio' is a specialization of 'LayoutConstraint'.
+The class 'notation_IdentityAnchor' is a specialization of 'Anchor'.
+The class 'notation_RoutingStyle' is a specialization of 'RoundedCornersStyle'.
+The class 'notation_View' is a specialization of 'EModelElement'.
+The class 'notation_RelativeBendpoints' is a specialization of 'Bendpoints'.
+The class 'notation_Diagram' is a specialization of 'View'.
+The class 'notation_CanonicalStyle' is a specialization of 'Style'.
+The class 'notation_ShapeStyle' is a specialization of 'FontStyle'.
+The class 'notation_ShapeStyle' is a specialization of 'DescriptionStyle'.
+The class 'notation_ShapeStyle' is a specialization of 'FillStyle'.
+The class 'notation_ShapeStyle' is a specialization of 'LineStyle'.
+The class 'notation_ShapeStyle' is a specialization of 'RoundedCornersStyle'.
+The class 'notation_ConnectorStyle' is a specialization of 'RoutingStyle'.
+The class 'notation_ConnectorStyle' is a specialization of 'LineStyle'.
+The class 'notation_PageStyle' is a specialization of 'Style'.
+The class 'notation_DrawerStyle' is a specialization of 'Style'.
+The class 'notation_GuideStyle' is a specialization of 'Style'.
+The class 'notation_FilteringStyle' is a specialization of 'Style'.
+The class 'notation_DiagramStyle' is a specialization of 'PageStyle'.
+The class 'notation_DiagramStyle' is a specialization of 'GuideStyle'.
+The class 'notation_DiagramStyle' is a specialization of 'DescriptionStyle'.
+The class 'notation_ImageStyle' is a specialization of 'Style'.
+The class 'notation_ImageBufferStyle' is a specialization of 'ImageStyle'.
+The class 'notation_PropertiesSetStyle' is a specialization of 'NamedStyle'.
+The class 'notation_PropertyValue' is a specialization of 'StringObjectConverter'.
+The class 'notation_SingleValueStyle' is a specialization of 'DataTypeStyle'.
+The class 'notation_ListValueStyle' is a specialization of 'DataTypeStyle'.
+The class 'notation_NamedStyle' is a specialization of 'Style'.
+The class 'notation_DataTypeStyle' is a specialization of 'NamedStyle'.
+The class 'notation_DataTypeStyle' is a specialization of 'StringObjectConverter'.
+The class 'notation_IntValueStyle' is a specialization of 'NamedStyle'.
+The class 'notation_IntListValueStyle' is a specialization of 'NamedStyle'.
+The class 'notation_BooleanValueStyle' is a specialization of 'NamedStyle'.
+The class 'notation_DoubleValueStyle' is a specialization of 'NamedStyle'.
+The class 'notation_DoubleListValueStyle' is a specialization of 'NamedStyle'.
+The class 'notation_StringValueStyle' is a specialization of 'NamedStyle'.
+The class 'notation_StringListValueStyle' is a specialization of 'NamedStyle'.
+The class 'notation_EObjectValueStyle' is a specialization of 'NamedStyle'.
+The class 'notation_EObjectListValueStyle' is a specialization of 'NamedStyle'.
+The class 'notation_ByteArrayValueStyle' is a specialization of 'NamedStyle'.
+The class 'notation_BooleanListValueStyle' is a specialization of 'NamedStyle'.
+The class 'notation_HintedDiagramLinkStyle' is a specialization of 'DiagramLinkStyle'.
+The class 'notation_HintedDiagramLinkStyle' is a specialization of 'Style'.
+The class 'notation_DiagramLinkStyle' is a specialization of 'Style'.
+The class 'notation_MultiDiagramLinkStyle' is a specialization of 'Style'.
+The class 'notation_TextStyle' is a specialization of 'Style'.
+The class 'notation_LineTypeStyle' is a specialization of 'Style'.
+The class 'notation_ArrowStyle' is a specialization of 'Style'.
+The class 'notation_Shape' is a specialization of 'Node'.
+The class 'notation_Shape' is a specialization of 'ShapeStyle'.
+The class 'notation_Compartment' is a specialization of 'BasicCompartment'.
+The class 'notation_Compartment' is a specialization of 'CanonicalStyle'.
+The class 'notation_Compartment' is a specialization of 'TitleStyle'.
+The class 'notation_ListCompartment' is a specialization of 'BasicCompartment'.
+The class 'notation_ListCompartment' is a specialization of 'SortingStyle'.
+The class 'notation_ListCompartment' is a specialization of 'FilteringStyle'.
+The class 'notation_ListCompartment' is a specialization of 'TitleStyle'.
+The class 'notation_Connector' is a specialization of 'Edge'.
+The class 'notation_Connector' is a specialization of 'ConnectorStyle'.
+The class 'notation_StandardDiagram' is a specialization of 'Diagram'.
+The class 'notation_StandardDiagram' is a specialization of 'DiagramStyle'.
+The class 'notation_DecorationNode' is a specialization of 'BasicDecorationNode'.
+The class 'notation_BasicDecorationNode' is a specialization of 'Node'.
+The class 'notation_BasicCompartment' is a specialization of 'DecorationNode'.
+The class 'notation_BasicCompartment' is a specialization of 'DrawerStyle'.
+The class 'notation_BasicSemanticCompartment' is a specialization of 'BasicDecorationNode'.
+The class 'notation_BasicSemanticCompartment' is a specialization of 'DrawerStyle'.
+The class 'notation_SemanticListCompartment' is a specialization of 'BasicSemanticCompartment'.
+The class 'notation_SemanticListCompartment' is a specialization of 'SortingStyle'.
+The class 'notation_SemanticListCompartment' is a specialization of 'FilteringStyle'.
+The class 'notation_SemanticListCompartment' is a specialization of 'TitleStyle'.
+The class 'notation_RoundedCornersStyle' is a specialization of 'Style'.
+
+Relationships between classes are modeled using associations.
+An association connects 'notation_Edge' and 'notation_View'. From 'notation_Edge', the role 'sourceEdges' has cardinality 0..*, and from 'notation_View', the role 'View' has cardinality 0..*.
+An association connects 'notation_View' and 'notation_Edge'. From 'notation_View', the role 'View2' has cardinality 0..*, and from 'notation_Edge', the role 'targetEdges' has cardinality 0..*.
+An association connects 'notation_Edge' and 'notation_Bendpoints'. From 'notation_Edge', the role 'notation_Edge' has cardinality 0..*, and from 'notation_Bendpoints', the role 'notation_Bendpoints' has cardinality 0..*.
+An association connects 'notation_Anchor' and 'notation_Edge'. From 'notation_Anchor', the role 'notation_Anchor' has cardinality 0..*, and from 'notation_Edge', the role 'notation_Edge5' has cardinality 0..*.
+An association connects 'notation_Edge' and 'notation_Anchor'. From 'notation_Edge', the role 'notation_Edge7' has cardinality 0..*, and from 'notation_Anchor', the role 'notation_Anchor8' has cardinality 0..*.
+An association connects 'notation_Node' and 'notation_LayoutConstraint'. From 'notation_Node', the role 'notation_Node' has cardinality 0..*, and from 'notation_LayoutConstraint', the role 'notation_LayoutConstraint' has cardinality 0..*.
+An association connects 'notation_SortingStyle' and 'notation_EObject'. From 'notation_SortingStyle', the role 'notation_SortingStyle' has cardinality 0..*, and from 'notation_EObject', the role 'notation_EObject' has cardinality 0..*.
+An association connects 'notation_Edge' and 'notation_View'. From 'notation_Edge', the role 'Edge' has cardinality 0..*, and from 'notation_View', the role 'source' has cardinality 0..*.
+An association connects 'notation_Edge' and 'notation_View'. From 'notation_Edge', the role 'Edge13' has cardinality 0..*, and from 'notation_View', the role 'target' has cardinality 0..*.
+An association connects 'notation_Node' and 'notation_View'. From 'notation_Node', the role 'notation_Node15' has cardinality 0..*, and from 'notation_View', the role 'notation_View' has cardinality 0..*.
+An association connects 'notation_View' and 'notation_Style'. From 'notation_View', the role 'notation_View17' has cardinality 0..*, and from 'notation_Style', the role 'notation_Style' has cardinality 0..*.
+An association connects 'notation_EObject' and 'notation_View'. From 'notation_EObject', the role 'notation_EObject20' has cardinality 0..*, and from 'notation_View', the role 'notation_View19' has cardinality 0..*.
+An association connects 'notation_Diagram' and 'notation_View'. From 'notation_Diagram', the role 'notation_Diagram' has cardinality 0..*, and from 'notation_View', the role 'notation_View22' has cardinality 0..*.
+An association connects 'notation_View' and 'notation_Node'. From 'notation_View', the role 'notation_View24' has cardinality 0..*, and from 'notation_Node', the role 'notation_Node25' has cardinality 0..*.
+An association connects 'notation_Diagram' and 'notation_Edge'. From 'notation_Diagram', the role 'notation_Diagram27' has cardinality 0..*, and from 'notation_Edge', the role 'notation_Edge28' has cardinality 0..*.
+An association connects 'notation_Edge' and 'notation_Diagram'. From 'notation_Edge', the role 'notation_Edge31' has cardinality 0..*, and from 'notation_Diagram', the role 'notation_Diagram30' has cardinality 0..*.
+An association connects 'notation_Guide' and 'notation_GuideStyle'. From 'notation_Guide', the role 'notation_Guide' has cardinality 0..*, and from 'notation_GuideStyle', the role 'notation_GuideStyle' has cardinality 0..*.
+An association connects 'notation_GuideStyle' and 'notation_Guide'. From 'notation_GuideStyle', the role 'notation_GuideStyle34' has cardinality 0..*, and from 'notation_Guide', the role 'notation_Guide35' has cardinality 0..*.
+An association connects 'notation_NodeEntry' and 'notation_Guide'. From 'notation_NodeEntry', the role 'notation_NodeEntry' has cardinality 0..*, and from 'notation_Guide', the role 'notation_Guide37' has cardinality 0..*.
+An association connects 'notation_Node' and 'notation_NodeEntry'. From 'notation_Node', the role 'notation_Node40' has cardinality 0..*, and from 'notation_NodeEntry', the role 'notation_NodeEntry39' has cardinality 0..*.
+An association connects 'notation_EObject' and 'notation_FilteringStyle'. From 'notation_EObject', the role 'notation_EObject42' has cardinality 0..*, and from 'notation_FilteringStyle', the role 'notation_FilteringStyle' has cardinality 0..*.
+An association connects 'notation_ImageStyle' and 'notation_Bounds'. From 'notation_ImageStyle', the role 'notation_ImageStyle' has cardinality 0..*, and from 'notation_Bounds', the role 'notation_Bounds' has cardinality 0..*.
+An association connects 'notation_ImageBufferStyle' and 'notation_Image'. From 'notation_ImageBufferStyle', the role 'notation_ImageBufferStyle' has cardinality 0..*, and from 'notation_Image', the role 'notation_Image' has cardinality 0..*.
+An association connects 'notation_StringToPropertyValueMapEntry' and 'notation_PropertiesSetStyle'. From 'notation_StringToPropertyValueMapEntry', the role 'notation_StringToPropertyValueMapEntry' has cardinality 0..*, and from 'notation_PropertiesSetStyle', the role 'notation_PropertiesSetStyle' has cardinality 0..*.
+An association connects 'notation_StringToPropertyValueMapEntry' and 'notation_PropertyValue'. From 'notation_StringToPropertyValueMapEntry', the role 'notation_StringToPropertyValueMapEntry47' has cardinality 0..*, and from 'notation_PropertyValue', the role 'notation_PropertyValue' has cardinality 0..*.
+An association connects 'notation_EDataType' and 'notation_PropertyValue'. From 'notation_EDataType', the role 'notation_EDataType' has cardinality 0..*, and from 'notation_PropertyValue', the role 'notation_PropertyValue49' has cardinality 0..*.
+An association connects 'notation_EDataType' and 'notation_DataTypeStyle'. From 'notation_EDataType', the role 'notation_EDataType51' has cardinality 0..*, and from 'notation_DataTypeStyle', the role 'notation_DataTypeStyle' has cardinality 0..*.
+An association connects 'notation_EObjectValueStyle' and 'notation_EObject'. From 'notation_EObjectValueStyle', the role 'notation_EObjectValueStyle' has cardinality 0..*, and from 'notation_EObject', the role 'notation_EObject53' has cardinality 0..*.
+An association connects 'notation_EObjectListValueStyle' and 'notation_EObject'. From 'notation_EObjectListValueStyle', the role 'notation_EObjectListValueStyle' has cardinality 0..*, and from 'notation_EObject', the role 'notation_EObject55' has cardinality 0..*.
+An association connects 'notation_DiagramLinkStyle' and 'notation_Diagram'. From 'notation_DiagramLinkStyle', the role 'notation_DiagramLinkStyle' has cardinality 0..*, and from 'notation_Diagram', the role 'notation_Diagram57' has cardinality 0..*.
+An association connects 'notation_Diagram' and 'notation_MultiDiagramLinkStyle'. From 'notation_Diagram', the role 'notation_Diagram59' has cardinality 0..*, and from 'notation_MultiDiagramLinkStyle', the role 'notation_MultiDiagramLinkStyle' has cardinality 0..*.

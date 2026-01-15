@@ -1,0 +1,107 @@
+The domain model 'kmLogo' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'kmLogo_PenUp' represents an important domain concept.
+It does not declare any attributes.
+
+'kmLogo_VarReference' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'kmLogo_Left' represents an important domain concept.
+It does not declare any attributes.
+
+'kmLogo_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'kmLogo_Clear' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'kmLogo_VarDecl' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'kmLogo_PenDown' represents an important domain concept.
+It does not declare any attributes.
+
+'kmLogo_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'kmLogo_RelationalExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'kmLogo_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'kmLogo_IntegerLit' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'kmLogo_StringLit' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'kmLogo_ArithmeticExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'kmLogo_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'kmLogo_Right' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'kmLogo_Forward' represents an important domain concept.
+It does not declare any attributes.
+
+'kmLogo_LogoProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'kmLogo_Back' represents an important domain concept.
+It does not declare any attributes.
+
+'kmLogo_BoolLit' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RelationalOperator' defines the following possible values: 'greaterThanOrEqualTo', 'equals', 'lessThan', 'greaterThan', 'lessThanOrEqualTo', 'notEqual'.
+The enumeration 'ArithmeticOperator' defines the following possible values: 'plus', 'div', 'minus', 'mult'.
+
+The model also captures inheritance relationships between classes.
+The class 'kmLogo_Primitive' is a specialization of 'Instruction'.
+The class 'kmLogo_Back' is a specialization of 'Primitive'.
+The class 'kmLogo_Forward' is a specialization of 'Primitive'.
+The class 'kmLogo_Left' is a specialization of 'Primitive'.
+The class 'kmLogo_Right' is a specialization of 'Primitive'.
+The class 'kmLogo_PenDown' is a specialization of 'Primitive'.
+The class 'kmLogo_PenUp' is a specialization of 'Primitive'.
+The class 'kmLogo_Clear' is a specialization of 'Primitive'.
+The class 'kmLogo_Literal' is a specialization of 'Expression'.
+The class 'kmLogo_IntegerLit' is a specialization of 'Literal'.
+The class 'kmLogo_StringLit' is a specialization of 'Literal'.
+The class 'kmLogo_BoolLit' is a specialization of 'Literal'.
+The class 'kmLogo_ArithmeticExpression' is a specialization of 'Expression'.
+The class 'kmLogo_RelationalExpression' is a specialization of 'Expression'.
+The class 'kmLogo_VarReference' is a specialization of 'Expression'.
+The class 'kmLogo_VarDecl' is a specialization of 'Instruction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'kmLogo_VarDecl' and 'kmLogo_LogoProgram'. From 'kmLogo_VarDecl', the role 'kmLogo_VarDecl' has cardinality 0..*, and from 'kmLogo_LogoProgram', the role 'kmLogo_LogoProgram' has cardinality 0..*.
+An association connects 'kmLogo_LogoProgram' and 'kmLogo_Instruction'. From 'kmLogo_LogoProgram', the role 'kmLogo_LogoProgram2' has cardinality 0..*, and from 'kmLogo_Instruction', the role 'kmLogo_Instruction' has cardinality 0..*.
+An association connects 'kmLogo_Back' and 'kmLogo_Expression'. From 'kmLogo_Back', the role 'kmLogo_Back' has cardinality 0..*, and from 'kmLogo_Expression', the role 'kmLogo_Expression' has cardinality 0..*.
+An association connects 'kmLogo_Forward' and 'kmLogo_Expression'. From 'kmLogo_Forward', the role 'kmLogo_Forward' has cardinality 0..*, and from 'kmLogo_Expression', the role 'kmLogo_Expression5' has cardinality 0..*.
+An association connects 'kmLogo_Expression' and 'kmLogo_Left'. From 'kmLogo_Expression', the role 'kmLogo_Expression7' has cardinality 0..*, and from 'kmLogo_Left', the role 'kmLogo_Left' has cardinality 0..*.
+An association connects 'kmLogo_Expression' and 'kmLogo_Right'. From 'kmLogo_Expression', the role 'kmLogo_Expression9' has cardinality 0..*, and from 'kmLogo_Right', the role 'kmLogo_Right' has cardinality 0..*.
+An association connects 'kmLogo_ArithmeticExpression' and 'kmLogo_Expression'. From 'kmLogo_ArithmeticExpression', the role 'kmLogo_ArithmeticExpression' has cardinality 0..*, and from 'kmLogo_Expression', the role 'kmLogo_Expression11' has cardinality 0..*.
+An association connects 'kmLogo_Expression' and 'kmLogo_ArithmeticExpression'. From 'kmLogo_Expression', the role 'kmLogo_Expression14' has cardinality 0..*, and from 'kmLogo_ArithmeticExpression', the role 'kmLogo_ArithmeticExpression13' has cardinality 0..*.
+An association connects 'kmLogo_Expression' and 'kmLogo_RelationalExpression'. From 'kmLogo_Expression', the role 'kmLogo_Expression16' has cardinality 0..*, and from 'kmLogo_RelationalExpression', the role 'kmLogo_RelationalExpression' has cardinality 0..*.
+An association connects 'kmLogo_Expression' and 'kmLogo_RelationalExpression'. From 'kmLogo_Expression', the role 'kmLogo_Expression19' has cardinality 0..*, and from 'kmLogo_RelationalExpression', the role 'kmLogo_RelationalExpression18' has cardinality 0..*.
+An association connects 'kmLogo_Expression' and 'kmLogo_VarDecl'. From 'kmLogo_Expression', the role 'kmLogo_Expression22' has cardinality 0..*, and from 'kmLogo_VarDecl', the role 'kmLogo_VarDecl21' has cardinality 0..*.

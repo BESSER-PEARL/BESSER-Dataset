@@ -1,0 +1,78 @@
+The domain model 'mission' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'mission_LineTask' represents an important domain concept.
+It does not declare any attributes.
+
+'mission_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mission_Coordinate' represents an important domain concept.
+It has the following attributes: 'longitude', which is of type float; 'altitude', which is of type float; 'latitude', which is of type float.
+
+'ControlTask' represents an important domain concept.
+It does not declare any attributes.
+
+'mission_PointTask' represents an important domain concept.
+It does not declare any attributes.
+
+'mission_Join' represents an important domain concept.
+It does not declare any attributes.
+
+'mission_ControlTask' represents an important domain concept.
+It does not declare any attributes.
+
+'mission_Drone' represents an important domain concept.
+It has the following attributes: 'returnHome', which is of type bool; 'type', which is of type str.
+
+'mission_Fork' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'mission_Swarm' represents an important domain concept.
+It does not declare any attributes.
+
+'mission_PolygonTask' represents an important domain concept.
+It does not declare any attributes.
+
+'Task' represents an important domain concept.
+It does not declare any attributes.
+
+'mission_TaskDependency' represents an important domain concept.
+It does not declare any attributes.
+
+'mission_Task' represents an important domain concept.
+It does not declare any attributes.
+
+'mission_Mission' represents an important domain concept.
+It has one attribute: 'crs', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'mission_Mission' is a specialization of 'NamedElement'.
+The class 'mission_Drone' is a specialization of 'NamedElement'.
+The class 'mission_Task' is a specialization of 'NamedElement'.
+The class 'mission_ControlTask' is a specialization of 'Task'.
+The class 'mission_Fork' is a specialization of 'ControlTask'.
+The class 'mission_Join' is a specialization of 'ControlTask'.
+The class 'mission_TaskDependency' is a specialization of 'NamedElement'.
+The class 'mission_PolygonTask' is a specialization of 'Task'.
+The class 'mission_PointTask' is a specialization of 'Task'.
+The class 'mission_LineTask' is a specialization of 'Task'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mission_Task' and 'mission_Mission'. From 'mission_Task', the role 'mission_Task' has cardinality 0..*, and from 'mission_Mission', the role 'mission_Mission' has cardinality 0..*.
+An association connects 'mission_Mission' and 'mission_TaskDependency'. From 'mission_Mission', the role 'mission_Mission2' has cardinality 0..*, and from 'mission_TaskDependency', the role 'mission_TaskDependency' has cardinality 0..*.
+An association connects 'mission_Mission' and 'mission_Swarm'. From 'mission_Mission', the role 'mission_Mission4' has cardinality 0..*, and from 'mission_Swarm', the role 'mission_Swarm' has cardinality 0..*.
+An association connects 'mission_Swarm' and 'mission_Drone'. From 'mission_Swarm', the role 'mission_Swarm6' has cardinality 0..*, and from 'mission_Drone', the role 'mission_Drone' has cardinality 0..*.
+An association connects 'mission_Drone' and 'mission_Coordinate'. From 'mission_Drone', the role 'mission_Drone8' has cardinality 0..*, and from 'mission_Coordinate', the role 'mission_Coordinate' has cardinality 0..*.
+An association connects 'mission_Coordinate' and 'mission_ControlTask'. From 'mission_Coordinate', the role 'mission_Coordinate10' has cardinality 0..*, and from 'mission_ControlTask', the role 'mission_ControlTask' has cardinality 0..*.
+An association connects 'mission_TaskDependency' and 'mission_Task'. From 'mission_TaskDependency', the role 'mission_TaskDependency12' has cardinality 0..*, and from 'mission_Task', the role 'mission_Task13' has cardinality 0..*.
+An association connects 'mission_TaskDependency' and 'mission_Task'. From 'mission_TaskDependency', the role 'mission_TaskDependency15' has cardinality 0..*, and from 'mission_Task', the role 'mission_Task16' has cardinality 0..*.
+An association connects 'mission_PolygonTask' and 'mission_Coordinate'. From 'mission_PolygonTask', the role 'mission_PolygonTask' has cardinality 0..*, and from 'mission_Coordinate', the role 'mission_Coordinate18' has cardinality 0..*.
+An association connects 'mission_PolygonTask' and 'mission_Coordinate'. From 'mission_PolygonTask', the role 'mission_PolygonTask20' has cardinality 0..*, and from 'mission_Coordinate', the role 'mission_Coordinate21' has cardinality 0..*.
+An association connects 'mission_PointTask' and 'mission_Coordinate'. From 'mission_PointTask', the role 'mission_PointTask' has cardinality 0..*, and from 'mission_Coordinate', the role 'mission_Coordinate23' has cardinality 0..*.
+An association connects 'mission_Coordinate' and 'mission_LineTask'. From 'mission_Coordinate', the role 'mission_Coordinate25' has cardinality 0..*, and from 'mission_LineTask', the role 'mission_LineTask' has cardinality 0..*.
+An association connects 'mission_LineTask' and 'mission_Coordinate'. From 'mission_LineTask', the role 'mission_LineTask27' has cardinality 0..*, and from 'mission_Coordinate', the role 'mission_Coordinate28' has cardinality 0..*.

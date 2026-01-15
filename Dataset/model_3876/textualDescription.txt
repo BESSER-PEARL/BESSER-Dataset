@@ -1,0 +1,60 @@
+The domain model 'fl' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'fl_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'fl_Literal' represents an important domain concept.
+It has one attribute: 'info', which is of type str.
+
+'fl_ProgramType' represents an important domain concept.
+It does not declare any attributes.
+
+'fl_Apply' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fl_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'fl_IfThenElse' represents an important domain concept.
+It does not declare any attributes.
+
+'fl_Argument' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fl_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'fl_Function' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'arg', which is of type str.
+
+'fl_Binary' represents an important domain concept.
+It has one attribute: 'ops', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Ops' defines the following possible values: 'Minus', 'Plus', 'Equal'.
+
+The model also captures inheritance relationships between classes.
+The class 'fl_Apply' is a specialization of 'Expr'.
+The class 'fl_Argument' is a specialization of 'Expr'.
+The class 'fl_Binary' is a specialization of 'Expr'.
+The class 'fl_IfThenElse' is a specialization of 'Expr'.
+The class 'fl_Literal' is a specialization of 'Expr'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fl_Apply' and 'fl_Expr'. From 'fl_Apply', the role 'fl_Apply' has cardinality 0..*, and from 'fl_Expr', the role 'fl_Expr' has cardinality 0..*.
+An association connects 'fl_Expr' and 'fl_Binary'. From 'fl_Expr', the role 'fl_Expr2' has cardinality 0..*, and from 'fl_Binary', the role 'fl_Binary' has cardinality 0..*.
+An association connects 'fl_Binary' and 'fl_Expr'. From 'fl_Binary', the role 'fl_Binary4' has cardinality 0..*, and from 'fl_Expr', the role 'fl_Expr5' has cardinality 0..*.
+An association connects 'fl_EStringToStringMapEntry' and 'fl_DocumentRoot'. From 'fl_EStringToStringMapEntry', the role 'fl_EStringToStringMapEntry' has cardinality 0..*, and from 'fl_DocumentRoot', the role 'fl_DocumentRoot' has cardinality 0..*.
+An association connects 'fl_DocumentRoot' and 'fl_EStringToStringMapEntry'. From 'fl_DocumentRoot', the role 'fl_DocumentRoot8' has cardinality 0..*, and from 'fl_EStringToStringMapEntry', the role 'fl_EStringToStringMapEntry9' has cardinality 0..*.
+An association connects 'fl_Expr' and 'fl_DocumentRoot'. From 'fl_Expr', the role 'fl_Expr12' has cardinality 0..*, and from 'fl_DocumentRoot', the role 'fl_DocumentRoot11' has cardinality 0..*.
+An association connects 'fl_DocumentRoot' and 'fl_ProgramType'. From 'fl_DocumentRoot', the role 'fl_DocumentRoot14' has cardinality 0..*, and from 'fl_ProgramType', the role 'fl_ProgramType' has cardinality 0..*.
+An association connects 'fl_Expr' and 'fl_Function'. From 'fl_Expr', the role 'fl_Expr16' has cardinality 0..*, and from 'fl_Function', the role 'fl_Function' has cardinality 0..*.
+An association connects 'fl_IfThenElse' and 'fl_Expr'. From 'fl_IfThenElse', the role 'fl_IfThenElse' has cardinality 0..*, and from 'fl_Expr', the role 'fl_Expr18' has cardinality 0..*.
+An association connects 'fl_Expr' and 'fl_IfThenElse'. From 'fl_Expr', the role 'fl_Expr21' has cardinality 0..*, and from 'fl_IfThenElse', the role 'fl_IfThenElse20' has cardinality 0..*.
+An association connects 'fl_IfThenElse' and 'fl_Expr'. From 'fl_IfThenElse', the role 'fl_IfThenElse23' has cardinality 0..*, and from 'fl_Expr', the role 'fl_Expr24' has cardinality 0..*.
+An association connects 'fl_ProgramType' and 'fl_Function'. From 'fl_ProgramType', the role 'fl_ProgramType26' has cardinality 0..*, and from 'fl_Function', the role 'fl_Function27' has cardinality 0..*.

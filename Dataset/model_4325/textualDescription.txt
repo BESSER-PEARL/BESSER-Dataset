@@ -1,0 +1,44 @@
+The domain model 'qualitymodel' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'qualitymodel_Preference' represents an important domain concept.
+It has the following attributes: 'weight', which is of type float; 'threshold', which is of type float.
+
+'qualitymodel_HistoricalData' represents an important domain concept.
+It has the following attributes: 'instant', which is of type str; 'value', which is of type float.
+
+'qualitymodel_CompositeAttribute' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'qualitymodel_ConfigurationProfile' represents an important domain concept.
+It has one attribute: 'ID', which is of type int.
+
+'qualitymodel_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'qualitymodel_Metric' represents an important domain concept.
+It has the following attributes: 'descriptionName', which is of type str; 'data', which is of type str; 'resourceName', which is of type str; 'probeName', which is of type str.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'qualitymodel_LeafAttribute' represents an important domain concept.
+It has the following attributes: 'numSamples', which is of type int; 'operator', which is of type str; 'normalizationKind', which is of type str; 'normalizationMax', which is of type float; 'normalizationMin', which is of type float.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AttributeAggregationOperator' defines the following possible values: 'SIMULTANEITY', 'REPLACEABILITY', 'NEUTRALITY'.
+The enumeration 'MetricNormalizationKind' defines the following possible values: 'COST', 'BENEFIT'.
+The enumeration 'MetricAggregationOperator' defines the following possible values: 'MINIMUM', 'SUM', 'MAXIMUM', 'AVERAGE'.
+
+The model also captures inheritance relationships between classes.
+The class 'qualitymodel_CompositeAttribute' is a specialization of 'Attribute'.
+The class 'qualitymodel_LeafAttribute' is a specialization of 'Attribute'.
+
+Relationships between classes are modeled using associations.
+An association connects 'qualitymodel_Metric' and 'qualitymodel_LeafAttribute'. From 'qualitymodel_Metric', the role 'qualitymodel_Metric' has cardinality 0..*, and from 'qualitymodel_LeafAttribute', the role 'qualitymodel_LeafAttribute' has cardinality 0..*.
+An association connects 'qualitymodel_Attribute' and 'qualitymodel_CompositeAttribute'. From 'qualitymodel_Attribute', the role 'qualitymodel_Attribute' has cardinality 0..*, and from 'qualitymodel_CompositeAttribute', the role 'qualitymodel_CompositeAttribute' has cardinality 0..*.
+An association connects 'qualitymodel_Attribute' and 'qualitymodel_HistoricalData'. From 'qualitymodel_Attribute', the role 'qualitymodel_Attribute3' has cardinality 0..*, and from 'qualitymodel_HistoricalData', the role 'qualitymodel_HistoricalData' has cardinality 0..*.
+An association connects 'qualitymodel_Attribute' and 'qualitymodel_Preference'. From 'qualitymodel_Attribute', the role 'qualitymodel_Attribute5' has cardinality 0..*, and from 'qualitymodel_Preference', the role 'qualitymodel_Preference' has cardinality 0..*.
+An association connects 'qualitymodel_ConfigurationProfile' and 'qualitymodel_Preference'. From 'qualitymodel_ConfigurationProfile', the role 'qualitymodel_ConfigurationProfile' has cardinality 0..*, and from 'qualitymodel_Preference', the role 'qualitymodel_Preference7' has cardinality 0..*.
+An association connects 'qualitymodel_Metric' and 'qualitymodel_ConfigurationProfile'. From 'qualitymodel_Metric', the role 'qualitymodel_Metric10' has cardinality 0..*, and from 'qualitymodel_ConfigurationProfile', the role 'qualitymodel_ConfigurationProfile9' has cardinality 0..*.

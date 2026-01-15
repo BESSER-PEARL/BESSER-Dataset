@@ -1,0 +1,273 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 57 main class(es).
+
+'AbstractCardinalityConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ReifierConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ScopedReifiableTopicType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RoleType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_OnoObject' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'ScopedTopicType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractRegExpTopicType' represents an important domain concept.
+It has one attribute: 'regExp', which is of type str.
+
+'model_TopicType' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'name', which is of type str; 'kind', which is of type str; 'idType', which is of type str; 'locators', which is of type str; 'identifiers', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractRegExpConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TMCLConstruct' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'description', which is of type str; 'see_also', which is of type str.
+
+'model_Bendpoint' represents an important domain concept.
+It has the following attributes: 'posY', which is of type int; 'posX', which is of type int.
+
+'model_File' represents an important domain concept.
+It has the following attributes: 'notes', which is of type str; 'dirty', which is of type bool; 'filename', which is of type str.
+
+'ReifiableTopicType' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractUniqueValueTopicType' represents an important domain concept.
+It has one attribute: 'unique', which is of type bool.
+
+'model_NameType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MappingElement' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'AbstractRegExpTopicType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_OccurrenceType' represents an important domain concept.
+It has one attribute: 'dataType', which is of type str.
+
+'model_ScopedTopicType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Comment' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'width', which is of type int; 'height', which is of type int.
+
+'model_SubjectIdentifierConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractTypedCardinalityConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AssociationNode' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RolePlayerConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AssociationType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_RoleCombinationConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractRegExpConstraint' represents an important domain concept.
+It has one attribute: 'regexp', which is of type str.
+
+'model_AbstractConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Edge' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'model_ItemIdentifierConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TopicMapSchema' represents an important domain concept.
+It has the following attributes: 'includes', which is of type str; 'schemaResource', which is of type str; 'name', which is of type str; 'version', which is of type str; 'baseLocator', which is of type str.
+
+'AbstractUniqueValueTopicType' represents an important domain concept.
+It does not declare any attributes.
+
+'TopicType' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTypedConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ScopeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AbstractTypedConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LabelPos' represents an important domain concept.
+It has the following attributes: 'posX', which is of type int; 'posY', which is of type int.
+
+'model_SubjectLocatorConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Node' represents an important domain concept.
+It has the following attributes: 'posX', which is of type int; 'posY', which is of type int.
+
+'model_ReifiableTopicType' represents an important domain concept.
+It does not declare any attributes.
+
+'TMCLConstruct' represents an important domain concept.
+It does not declare any attributes.
+
+'ScopedReifiableTopicType' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Diagram' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'OnoObject' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DomainDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'model_OccurrenceTypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTypedCardinalityConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TypeNode' represents an important domain concept.
+It has one attribute: 'image', which is of type str.
+
+'model_AbstractCardinalityConstraint' represents an important domain concept.
+It has the following attributes: 'cardMin', which is of type str; 'cardMax', which is of type str.
+
+'model_TopicReifiesConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Annotation' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'model_RoleConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AssociationTypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'model_NameTypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TopicId' defines the following possible values: 'IDENTIFIER', 'SUBJECT_IDENTIFIER', 'SUBJECT_LOCATOR', 'ITEM_IDENTIFIER'.
+The enumeration 'EdgeType' defines the following possible values: 'AKO_TYPE', 'ROLE_CONSTRAINT_TYPE', 'IS_ATYPE'.
+The enumeration 'KindOfTopicType' defines the following possible values: 'RoleType', 'OccurrenceType', 'NoType', 'ScopeType', 'AssociationType', 'TopicType', 'NameType'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_TopicType' is a specialization of 'TMCLConstruct'.
+The class 'model_AbstractRegExpConstraint' is a specialization of 'AbstractConstraint'.
+The class 'model_OccurrenceTypeConstraint' is a specialization of 'AbstractTypedCardinalityConstraint'.
+The class 'model_NameTypeConstraint' is a specialization of 'AbstractTypedCardinalityConstraint'.
+The class 'model_RolePlayerConstraint' is a specialization of 'AbstractCardinalityConstraint'.
+The class 'model_TopicMapSchema' is a specialization of 'TMCLConstruct'.
+The class 'model_SubjectLocatorConstraint' is a specialization of 'AbstractRegExpConstraint'.
+The class 'model_SubjectLocatorConstraint' is a specialization of 'AbstractCardinalityConstraint'.
+The class 'model_SubjectIdentifierConstraint' is a specialization of 'AbstractRegExpConstraint'.
+The class 'model_SubjectIdentifierConstraint' is a specialization of 'AbstractCardinalityConstraint'.
+The class 'model_AssociationTypeConstraint' is a specialization of 'AbstractTypedConstraint'.
+The class 'model_MappingElement' is a specialization of 'OnoObject'.
+The class 'model_Node' is a specialization of 'OnoObject'.
+The class 'model_TypeNode' is a specialization of 'Node'.
+The class 'model_Bendpoint' is a specialization of 'OnoObject'.
+The class 'model_Edge' is a specialization of 'OnoObject'.
+The class 'model_AssociationNode' is a specialization of 'Node'.
+The class 'model_Diagram' is a specialization of 'OnoObject'.
+The class 'model_File' is a specialization of 'OnoObject'.
+The class 'model_ScopeConstraint' is a specialization of 'AbstractTypedCardinalityConstraint'.
+The class 'model_AbstractCardinalityConstraint' is a specialization of 'AbstractConstraint'.
+The class 'model_LabelPos' is a specialization of 'OnoObject'.
+The class 'model_AbstractTypedConstraint' is a specialization of 'AbstractConstraint'.
+The class 'model_ScopedTopicType' is a specialization of 'TopicType'.
+The class 'model_AssociationType' is a specialization of 'ScopedTopicType'.
+The class 'model_AssociationType' is a specialization of 'ScopedReifiableTopicType'.
+The class 'model_OccurrenceType' is a specialization of 'ScopedTopicType'.
+The class 'model_OccurrenceType' is a specialization of 'ScopedReifiableTopicType'.
+The class 'model_OccurrenceType' is a specialization of 'AbstractRegExpTopicType'.
+The class 'model_OccurrenceType' is a specialization of 'AbstractUniqueValueTopicType'.
+The class 'model_RoleConstraint' is a specialization of 'AbstractTypedCardinalityConstraint'.
+The class 'model_RoleType' is a specialization of 'TopicType'.
+The class 'model_RoleCombinationConstraint' is a specialization of 'AbstractConstraint'.
+The class 'model_NameType' is a specialization of 'ScopedTopicType'.
+The class 'model_NameType' is a specialization of 'ScopedReifiableTopicType'.
+The class 'model_NameType' is a specialization of 'AbstractRegExpTopicType'.
+The class 'model_NameType' is a specialization of 'AbstractUniqueValueTopicType'.
+The class 'model_AbstractTypedCardinalityConstraint' is a specialization of 'AbstractCardinalityConstraint'.
+The class 'model_AbstractTypedCardinalityConstraint' is a specialization of 'AbstractTypedConstraint'.
+The class 'model_Comment' is a specialization of 'Node'.
+The class 'model_TMCLConstruct' is a specialization of 'OnoObject'.
+The class 'model_ReifierConstraint' is a specialization of 'AbstractTypedCardinalityConstraint'.
+The class 'model_ReifiableTopicType' is a specialization of 'TopicType'.
+The class 'model_ScopedReifiableTopicType' is a specialization of 'ScopedTopicType'.
+The class 'model_ScopedReifiableTopicType' is a specialization of 'ReifiableTopicType'.
+The class 'model_Annotation' is a specialization of 'OnoObject'.
+The class 'model_AbstractRegExpTopicType' is a specialization of 'TopicType'.
+The class 'model_AbstractConstraint' is a specialization of 'TMCLConstruct'.
+The class 'model_TopicReifiesConstraint' is a specialization of 'AbstractTypedCardinalityConstraint'.
+The class 'model_DomainDiagram' is a specialization of 'Diagram'.
+The class 'model_AbstractUniqueValueTopicType' is a specialization of 'TopicType'.
+The class 'model_ItemIdentifierConstraint' is a specialization of 'AbstractRegExpConstraint'.
+The class 'model_ItemIdentifierConstraint' is a specialization of 'AbstractCardinalityConstraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_TopicType' and 'model_TopicType'. From 'model_TopicType', the role 'model_TopicType0' has cardinality 0..*, and from 'model_TopicType', the role 'model_TopicType' has cardinality 0..*.
+An association connects 'model_TopicType' and 'model_TopicType'. From 'model_TopicType', the role 'model_TopicType2' has cardinality 0..*, and from 'model_TopicType', the role 'model_TopicType4' has cardinality 0..*.
+An association connects 'model_OccurrenceTypeConstraint' and 'model_TopicType'. From 'model_OccurrenceTypeConstraint', the role 'model_OccurrenceTypeConstraint' has cardinality 0..*, and from 'model_TopicType', the role 'model_TopicType6' has cardinality 0..*.
+An association connects 'model_NameTypeConstraint' and 'model_TopicType'. From 'model_NameTypeConstraint', the role 'model_NameTypeConstraint' has cardinality 0..*, and from 'model_TopicType', the role 'model_TopicType8' has cardinality 0..*.
+An association connects 'model_SubjectIdentifierConstraint' and 'model_TopicType'. From 'model_SubjectIdentifierConstraint', the role 'model_SubjectIdentifierConstraint' has cardinality 0..*, and from 'model_TopicType', the role 'model_TopicType10' has cardinality 0..*.
+An association connects 'model_SubjectLocatorConstraint' and 'model_TopicType'. From 'model_SubjectLocatorConstraint', the role 'model_SubjectLocatorConstraint' has cardinality 0..*, and from 'model_TopicType', the role 'model_TopicType12' has cardinality 0..*.
+An association connects 'model_TopicType' and 'model_TopicType'. From 'model_TopicType', the role 'model_TopicType13' has cardinality 0..*, and from 'model_TopicType', the role 'model_TopicType15' has cardinality 0..*.
+An association connects 'model_TopicType' and 'model_TopicReifiesConstraint'. From 'model_TopicType', the role 'model_TopicType17' has cardinality 0..*, and from 'model_TopicReifiesConstraint', the role 'model_TopicReifiesConstraint' has cardinality 0..*.
+An association connects 'model_ItemIdentifierConstraint' and 'model_TopicType'. From 'model_ItemIdentifierConstraint', the role 'model_ItemIdentifierConstraint' has cardinality 0..*, and from 'model_TopicType', the role 'model_TopicType19' has cardinality 0..*.
+An association connects 'model_RolePlayerConstraint' and 'model_TopicType'. From 'model_RolePlayerConstraint', the role 'model_RolePlayerConstraint' has cardinality 0..*, and from 'model_TopicType', the role 'model_TopicType21' has cardinality 0..*.
+An association connects 'model_RoleConstraint' and 'model_RolePlayerConstraint'. From 'model_RoleConstraint', the role 'model_RoleConstraint' has cardinality 0..*, and from 'model_RolePlayerConstraint', the role 'model_RolePlayerConstraint23' has cardinality 0..*.
+An association connects 'model_TopicType' and 'model_TopicMapSchema'. From 'model_TopicType', the role 'model_TopicType25' has cardinality 0..*, and from 'model_TopicMapSchema', the role 'model_TopicMapSchema' has cardinality 0..*.
+An association connects 'model_AssociationTypeConstraint' and 'model_TopicMapSchema'. From 'model_AssociationTypeConstraint', the role 'model_AssociationTypeConstraint' has cardinality 0..*, and from 'model_TopicMapSchema', the role 'model_TopicMapSchema27' has cardinality 0..*.
+An association connects 'model_MappingElement' and 'model_TopicMapSchema'. From 'model_MappingElement', the role 'model_MappingElement' has cardinality 0..*, and from 'model_TopicMapSchema', the role 'model_TopicMapSchema29' has cardinality 0..*.
+An association connects 'model_AssociationTypeConstraint' and 'model_RolePlayerConstraint'. From 'model_AssociationTypeConstraint', the role 'model_AssociationTypeConstraint31' has cardinality 0..*, and from 'model_RolePlayerConstraint', the role 'model_RolePlayerConstraint32' has cardinality 0..*.
+An association connects 'model_TypeNode' and 'model_TopicType'. From 'model_TypeNode', the role 'model_TypeNode' has cardinality 0..*, and from 'model_TopicType', the role 'model_TopicType34' has cardinality 0..*.
+An association connects 'model_Bendpoint' and 'model_Edge'. From 'model_Bendpoint', the role 'model_Bendpoint' has cardinality 0..*, and from 'model_Edge', the role 'model_Edge' has cardinality 0..*.
+An association connects 'model_Node' and 'model_Edge'. From 'model_Node', the role 'model_Node' has cardinality 0..*, and from 'model_Edge', the role 'model_Edge37' has cardinality 0..*.
+An association connects 'model_Edge' and 'model_Node'. From 'model_Edge', the role 'model_Edge39' has cardinality 0..*, and from 'model_Node', the role 'model_Node40' has cardinality 0..*.
+An association connects 'model_Edge' and 'model_RolePlayerConstraint'. From 'model_Edge', the role 'model_Edge42' has cardinality 0..*, and from 'model_RolePlayerConstraint', the role 'model_RolePlayerConstraint43' has cardinality 0..*.
+An association connects 'model_LabelPos' and 'model_Edge'. From 'model_LabelPos', the role 'model_LabelPos' has cardinality 0..*, and from 'model_Edge', the role 'model_Edge45' has cardinality 0..*.
+An association connects 'model_AssociationNode' and 'model_AssociationTypeConstraint'. From 'model_AssociationNode', the role 'model_AssociationNode' has cardinality 0..*, and from 'model_AssociationTypeConstraint', the role 'model_AssociationTypeConstraint47' has cardinality 0..*.
+An association connects 'model_Edge' and 'model_Diagram'. From 'model_Edge', the role 'model_Edge49' has cardinality 0..*, and from 'model_Diagram', the role 'model_Diagram' has cardinality 0..*.
+An association connects 'model_Diagram' and 'model_Node'. From 'model_Diagram', the role 'model_Diagram51' has cardinality 0..*, and from 'model_Node', the role 'model_Node52' has cardinality 0..*.
+An association connects 'model_Diagram' and 'model_Comment'. From 'model_Diagram', the role 'model_Diagram54' has cardinality 0..*, and from 'model_Comment', the role 'model_Comment' has cardinality 0..*.
+An association connects 'model_Diagram' and 'model_File'. From 'model_Diagram', the role 'model_Diagram56' has cardinality 0..*, and from 'model_File', the role 'model_File' has cardinality 0..*.
+An association connects 'model_File' and 'model_TopicMapSchema'. From 'model_File', the role 'model_File58' has cardinality 0..*, and from 'model_TopicMapSchema', the role 'model_TopicMapSchema59' has cardinality 0..*.
+An association connects 'model_TopicType' and 'model_AbstractTypedConstraint'. From 'model_TopicType', the role 'model_TopicType61' has cardinality 0..*, and from 'model_AbstractTypedConstraint', the role 'model_AbstractTypedConstraint' has cardinality 0..*.
+An association connects 'model_ScopeConstraint' and 'model_ScopedTopicType'. From 'model_ScopeConstraint', the role 'model_ScopeConstraint' has cardinality 0..*, and from 'model_ScopedTopicType', the role 'model_ScopedTopicType' has cardinality 0..*.
+An association connects 'model_RoleConstraint' and 'model_AssociationType'. From 'model_RoleConstraint', the role 'model_RoleConstraint64' has cardinality 0..*, and from 'model_AssociationType', the role 'model_AssociationType' has cardinality 0..*.
+An association connects 'model_AssociationType' and 'model_RoleCombinationConstraint'. From 'model_AssociationType', the role 'model_AssociationType66' has cardinality 0..*, and from 'model_RoleCombinationConstraint', the role 'model_RoleCombinationConstraint' has cardinality 0..*.
+An association connects 'model_RoleCombinationConstraint' and 'model_TopicType'. From 'model_RoleCombinationConstraint', the role 'model_RoleCombinationConstraint68' has cardinality 0..*, and from 'model_TopicType', the role 'model_TopicType69' has cardinality 0..*.
+An association connects 'model_RoleCombinationConstraint' and 'model_TopicType'. From 'model_RoleCombinationConstraint', the role 'model_RoleCombinationConstraint71' has cardinality 0..*, and from 'model_TopicType', the role 'model_TopicType72' has cardinality 0..*.
+An association connects 'model_TopicType' and 'model_RoleCombinationConstraint'. From 'model_TopicType', the role 'model_TopicType75' has cardinality 0..*, and from 'model_RoleCombinationConstraint', the role 'model_RoleCombinationConstraint74' has cardinality 0..*.
+An association connects 'model_RoleCombinationConstraint' and 'model_TopicType'. From 'model_RoleCombinationConstraint', the role 'model_RoleCombinationConstraint77' has cardinality 0..*, and from 'model_TopicType', the role 'model_TopicType78' has cardinality 0..*.
+An association connects 'model_Annotation' and 'model_TMCLConstruct'. From 'model_Annotation', the role 'model_Annotation' has cardinality 0..*, and from 'model_TMCLConstruct', the role 'model_TMCLConstruct' has cardinality 0..*.
+An association connects 'model_ReifierConstraint' and 'model_ReifiableTopicType'. From 'model_ReifierConstraint', the role 'model_ReifierConstraint' has cardinality 0..*, and from 'model_ReifiableTopicType', the role 'model_ReifiableTopicType' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/dstrueber/bigtrafo/de.bigtrafo.measurement.compactness/model/RuleSetMetrics.ecore

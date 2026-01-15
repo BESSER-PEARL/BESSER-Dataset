@@ -1,0 +1,35 @@
+The domain model 'dbmddandroid' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dbmddandroid_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dbmddandroid_DBScheme' represents an important domain concept.
+It does not declare any attributes.
+
+'dbmddandroid_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'dbmddandroid_Relation' represents an important domain concept.
+It has the following attributes: 'maxTargetMultiplicity', which is of type int; 'minSourceMultiplicity', which is of type int; 'minTargetMultiplicity', which is of type int; 'maxSourceMultiplicity', which is of type int.
+
+'dbmddandroid_Column' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'dbmddandroid_DBScheme' is a specialization of 'NamedElement'.
+The class 'dbmddandroid_Table' is a specialization of 'NamedElement'.
+The class 'dbmddandroid_Column' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dbmddandroid_DBScheme' and 'dbmddandroid_Table'. From 'dbmddandroid_DBScheme', the role 'dbmddandroid_DBScheme' has cardinality 0..*, and from 'dbmddandroid_Table', the role 'dbmddandroid_Table' has cardinality 0..*.
+An association connects 'dbmddandroid_DBScheme' and 'dbmddandroid_Relation'. From 'dbmddandroid_DBScheme', the role 'dbmddandroid_DBScheme2' has cardinality 0..*, and from 'dbmddandroid_Relation', the role 'dbmddandroid_Relation' has cardinality 0..*.
+An association connects 'dbmddandroid_Table' and 'dbmddandroid_Column'. From 'dbmddandroid_Table', the role 'dbmddandroid_Table4' has cardinality 0..*, and from 'dbmddandroid_Column', the role 'dbmddandroid_Column' has cardinality 0..*.
+An association connects 'dbmddandroid_Table' and 'dbmddandroid_Relation'. From 'dbmddandroid_Table', the role 'source' has cardinality 0..*, and from 'dbmddandroid_Relation', the role 'Relation' has cardinality 0..*.
+An association connects 'dbmddandroid_Relation' and 'dbmddandroid_Table'. From 'dbmddandroid_Relation', the role 'Relation7' has cardinality 0..*, and from 'dbmddandroid_Table', the role 'target' has cardinality 0..*.
+An association connects 'dbmddandroid_Table' and 'dbmddandroid_Relation'. From 'dbmddandroid_Table', the role 'Table' has cardinality 0..*, and from 'dbmddandroid_Relation', the role 'outRelation' has cardinality 0..*.
+An association connects 'dbmddandroid_Relation' and 'dbmddandroid_Table'. From 'dbmddandroid_Relation', the role 'inRelation' has cardinality 0..*, and from 'dbmddandroid_Table', the role 'Table10' has cardinality 0..*.

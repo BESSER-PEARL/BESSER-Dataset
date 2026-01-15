@@ -1,0 +1,38 @@
+The domain model 'UML2' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_LinkEndCreationData' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_QualifierValue' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'UML2_ExtensionEnd' is a specialization of 'Property'.
+The class 'UML2_LinkEndCreationData' is a specialization of 'LinkEndData'.
+The class 'UML2_Port' is a specialization of 'Property'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML2_Property' and 'UML2_LinkEndData'. From 'UML2_Property', the role 'UML2_Property' has cardinality 0..*, and from 'UML2_LinkEndData', the role 'UML2_LinkEndData' has cardinality 0..*.
+An association connects 'UML2_LinkEndData' and 'UML2_QualifierValue'. From 'UML2_LinkEndData', the role 'UML2_LinkEndData2' has cardinality 0..*, and from 'UML2_QualifierValue', the role 'UML2_QualifierValue' has cardinality 0..*.
+An association connects 'UML2_Property' and 'UML2_Property'. From 'UML2_Property', the role 'UML2_Property3' has cardinality 0..*, and from 'UML2_Property', the role 'UML2_Property5' has cardinality 0..*.
+An association connects 'UML2_QualifierValue' and 'UML2_Property'. From 'UML2_QualifierValue', the role 'UML2_QualifierValue7' has cardinality 0..*, and from 'UML2_Property', the role 'UML2_Property8' has cardinality 0..*.

@@ -1,0 +1,41 @@
+The domain model 'UML2' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_CommunicationPath' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'UML2_Port' is a specialization of 'Property'.
+The class 'UML2_AssociationClass' is a specialization of 'Association'.
+The class 'UML2_ExtensionEnd' is a specialization of 'Property'.
+The class 'UML2_Extension' is a specialization of 'Association'.
+The class 'UML2_CommunicationPath' is a specialization of 'Association'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML2_Association' and 'UML2_Property'. From 'UML2_Association', the role 'UML2_Association' has cardinality 0..*, and from 'UML2_Property', the role 'UML2_Property' has cardinality 0..*.
+An association connects 'UML2_Property' and 'UML2_Association'. From 'UML2_Property', the role 'UML2_Property3' has cardinality 0..*, and from 'UML2_Association', the role 'UML2_Association2' has cardinality 0..*.

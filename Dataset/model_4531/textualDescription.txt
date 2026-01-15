@@ -1,0 +1,139 @@
+The domain model 'drone' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'drone_MeasureValue' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'drone_Equipment' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_TaskDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_CapabilityProperties' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_MeasureDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_Mission' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_Task' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_MeasureConversion' represents an important domain concept.
+It has one attribute: 'rate', which is of type float.
+
+'drone_Capability' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_RobotMissionContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_PropertyKeyContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_PropertyValue' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_PropertyKey' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_AreaObject' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drone_Coordinate' represents an important domain concept.
+It has the following attributes: 'altitude', which is of type float; 'latitude', which is of type float; 'longitude', which is of type float.
+
+'drone_Robot' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_StringValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'PropertyValue' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_Battery' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_Position' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_Size' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'drone_Mission' is a specialization of 'NamedElement'.
+The class 'drone_Task' is a specialization of 'NamedElement'.
+The class 'drone_AreaObject' is a specialization of 'NamedElement'.
+The class 'drone_Robot' is a specialization of 'NamedElement'.
+The class 'drone_StringValue' is a specialization of 'PropertyValue'.
+The class 'drone_Equipment' is a specialization of 'NamedElement'.
+The class 'drone_MeasureValue' is a specialization of 'PropertyValue'.
+The class 'drone_MeasureDimension' is a specialization of 'NamedElement'.
+The class 'drone_PropertyKeyContainer' is a specialization of 'NamedElement'.
+The class 'drone_PropertyKey' is a specialization of 'NamedElement'.
+The class 'drone_Capability' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'drone_Mission' and 'drone_Task'. From 'drone_Mission', the role 'mission' has cardinality 0..*, and from 'drone_Task', the role 'Task' has cardinality 0..*.
+An association connects 'drone_Task' and 'drone_Mission'. From 'drone_Task', the role 'tasks' has cardinality 0..*, and from 'drone_Mission', the role 'Mission' has cardinality 0..*.
+An association connects 'drone_TaskDescriptor' and 'drone_Task'. From 'drone_TaskDescriptor', the role 'TaskDescriptor' has cardinality 0..*, and from 'drone_Task', the role 'task' has cardinality 0..*.
+An association connects 'drone_AreaObject' and 'drone_TaskDescriptor'. From 'drone_AreaObject', the role 'drone_AreaObject' has cardinality 0..*, and from 'drone_TaskDescriptor', the role 'drone_TaskDescriptor' has cardinality 0..*.
+An association connects 'drone_Property' and 'drone_TaskDescriptor'. From 'drone_Property', the role 'drone_Property' has cardinality 0..*, and from 'drone_TaskDescriptor', the role 'drone_TaskDescriptor5' has cardinality 0..*.
+An association connects 'drone_TaskDescriptor' and 'drone_Task'. From 'drone_TaskDescriptor', the role 'descriptor' has cardinality 0..*, and from 'drone_Task', the role 'Task7' has cardinality 0..*.
+An association connects 'drone_Position' and 'drone_Coordinate'. From 'drone_Position', the role 'drone_Position' has cardinality 0..*, and from 'drone_Coordinate', the role 'drone_Coordinate' has cardinality 0..*.
+An association connects 'drone_Property' and 'drone_Position'. From 'drone_Property', the role 'drone_Property11' has cardinality 0..*, and from 'drone_Position', the role 'drone_Position10' has cardinality 0..*.
+An association connects 'drone_AreaObject' and 'drone_Position'. From 'drone_AreaObject', the role 'drone_AreaObject13' has cardinality 0..*, and from 'drone_Position', the role 'drone_Position14' has cardinality 0..*.
+An association connects 'drone_Size' and 'drone_AreaObject'. From 'drone_Size', the role 'drone_Size' has cardinality 0..*, and from 'drone_AreaObject', the role 'drone_AreaObject16' has cardinality 0..*.
+An association connects 'drone_Property' and 'drone_AreaObject'. From 'drone_Property', the role 'drone_Property19' has cardinality 0..*, and from 'drone_AreaObject', the role 'drone_AreaObject18' has cardinality 0..*.
+An association connects 'drone_PropertyValue' and 'drone_Property'. From 'drone_PropertyValue', the role 'drone_PropertyValue' has cardinality 0..*, and from 'drone_Property', the role 'drone_Property21' has cardinality 0..*.
+An association connects 'drone_PropertyKey' and 'drone_Property'. From 'drone_PropertyKey', the role 'drone_PropertyKey' has cardinality 0..*, and from 'drone_Property', the role 'drone_Property23' has cardinality 0..*.
+An association connects 'drone_Position' and 'drone_Robot'. From 'drone_Position', the role 'drone_Position25' has cardinality 0..*, and from 'drone_Robot', the role 'drone_Robot' has cardinality 0..*.
+An association connects 'drone_Size' and 'drone_Robot'. From 'drone_Size', the role 'drone_Size28' has cardinality 0..*, and from 'drone_Robot', the role 'drone_Robot27' has cardinality 0..*.
+An association connects 'drone_Robot' and 'drone_Battery'. From 'drone_Robot', the role 'drone_Robot30' has cardinality 0..*, and from 'drone_Battery', the role 'drone_Battery' has cardinality 0..*.
+An association connects 'drone_Robot' and 'drone_Equipment'. From 'drone_Robot', the role 'drone_Robot32' has cardinality 0..*, and from 'drone_Equipment', the role 'drone_Equipment' has cardinality 0..*.
+An association connects 'drone_Robot' and 'drone_Task'. From 'drone_Robot', the role 'drone_Robot34' has cardinality 0..*, and from 'drone_Task', the role 'drone_Task' has cardinality 0..*.
+An association connects 'drone_Property' and 'drone_Robot'. From 'drone_Property', the role 'drone_Property37' has cardinality 0..*, and from 'drone_Robot', the role 'drone_Robot36' has cardinality 0..*.
+An association connects 'drone_MeasureValue' and 'drone_Robot'. From 'drone_MeasureValue', the role 'drone_MeasureValue' has cardinality 0..*, and from 'drone_Robot', the role 'drone_Robot39' has cardinality 0..*.
+An association connects 'drone_Robot' and 'drone_MeasureValue'. From 'drone_Robot', the role 'drone_Robot41' has cardinality 0..*, and from 'drone_MeasureValue', the role 'drone_MeasureValue42' has cardinality 0..*.
+An association connects 'drone_Mission' and 'drone_Robot'. From 'drone_Mission', the role 'drone_Mission' has cardinality 0..*, and from 'drone_Robot', the role 'drone_Robot44' has cardinality 0..*.
+An association connects 'drone_Robot' and 'drone_Capability'. From 'drone_Robot', the role 'drone_Robot46' has cardinality 0..*, and from 'drone_Capability', the role 'drone_Capability' has cardinality 0..*.
+An association connects 'drone_Robot' and 'drone_CapabilityProperties'. From 'drone_Robot', the role 'drone_Robot48' has cardinality 0..*, and from 'drone_CapabilityProperties', the role 'drone_CapabilityProperties' has cardinality 0..*.
+An association connects 'drone_MeasureValue' and 'drone_Size'. From 'drone_MeasureValue', the role 'drone_MeasureValue51' has cardinality 0..*, and from 'drone_Size', the role 'drone_Size50' has cardinality 0..*.
+An association connects 'drone_MeasureValue' and 'drone_Size'. From 'drone_MeasureValue', the role 'drone_MeasureValue54' has cardinality 0..*, and from 'drone_Size', the role 'drone_Size53' has cardinality 0..*.
+An association connects 'drone_Size' and 'drone_MeasureValue'. From 'drone_Size', the role 'drone_Size56' has cardinality 0..*, and from 'drone_MeasureValue', the role 'drone_MeasureValue57' has cardinality 0..*.
+An association connects 'drone_MeasureValue' and 'drone_Battery'. From 'drone_MeasureValue', the role 'drone_MeasureValue60' has cardinality 0..*, and from 'drone_Battery', the role 'drone_Battery59' has cardinality 0..*.
+An association connects 'drone_MeasureValue' and 'drone_Battery'. From 'drone_MeasureValue', the role 'drone_MeasureValue63' has cardinality 0..*, and from 'drone_Battery', the role 'drone_Battery62' has cardinality 0..*.
+An association connects 'drone_MeasureValue' and 'drone_Battery'. From 'drone_MeasureValue', the role 'drone_MeasureValue66' has cardinality 0..*, and from 'drone_Battery', the role 'drone_Battery65' has cardinality 0..*.
+An association connects 'drone_Battery' and 'drone_Property'. From 'drone_Battery', the role 'drone_Battery68' has cardinality 0..*, and from 'drone_Property', the role 'drone_Property69' has cardinality 0..*.
+An association connects 'drone_Property' and 'drone_Equipment'. From 'drone_Property', the role 'drone_Property72' has cardinality 0..*, and from 'drone_Equipment', the role 'drone_Equipment71' has cardinality 0..*.
+An association connects 'drone_Equipment' and 'drone_Capability'. From 'drone_Equipment', the role 'drone_Equipment74' has cardinality 0..*, and from 'drone_Capability', the role 'drone_Capability75' has cardinality 0..*.
+An association connects 'drone_MeasureValue' and 'drone_MeasureDimension'. From 'drone_MeasureValue', the role 'drone_MeasureValue77' has cardinality 0..*, and from 'drone_MeasureDimension', the role 'drone_MeasureDimension' has cardinality 0..*.
+An association connects 'drone_MeasureConversion' and 'drone_MeasureDimension'. From 'drone_MeasureConversion', the role 'drone_MeasureConversion' has cardinality 0..*, and from 'drone_MeasureDimension', the role 'drone_MeasureDimension79' has cardinality 0..*.
+An association connects 'drone_MeasureDimension' and 'drone_MeasureConversion'. From 'drone_MeasureDimension', the role 'drone_MeasureDimension81' has cardinality 0..*, and from 'drone_MeasureConversion', the role 'drone_MeasureConversion82' has cardinality 0..*.
+An association connects 'drone_RobotMissionContainer' and 'drone_Mission'. From 'drone_RobotMissionContainer', the role 'drone_RobotMissionContainer' has cardinality 0..*, and from 'drone_Mission', the role 'drone_Mission84' has cardinality 0..*.
+An association connects 'drone_RobotMissionContainer' and 'drone_Robot'. From 'drone_RobotMissionContainer', the role 'drone_RobotMissionContainer86' has cardinality 0..*, and from 'drone_Robot', the role 'drone_Robot87' has cardinality 0..*.
+An association connects 'drone_RobotMissionContainer' and 'drone_MeasureDimension'. From 'drone_RobotMissionContainer', the role 'drone_RobotMissionContainer89' has cardinality 0..*, and from 'drone_MeasureDimension', the role 'drone_MeasureDimension90' has cardinality 0..*.
+An association connects 'drone_RobotMissionContainer' and 'drone_AreaObject'. From 'drone_RobotMissionContainer', the role 'drone_RobotMissionContainer92' has cardinality 0..*, and from 'drone_AreaObject', the role 'drone_AreaObject93' has cardinality 0..*.
+An association connects 'drone_RobotMissionContainer' and 'drone_Capability'. From 'drone_RobotMissionContainer', the role 'drone_RobotMissionContainer95' has cardinality 0..*, and from 'drone_Capability', the role 'drone_Capability96' has cardinality 0..*.
+An association connects 'drone_PropertyKeyContainer' and 'drone_RobotMissionContainer'. From 'drone_PropertyKeyContainer', the role 'drone_PropertyKeyContainer' has cardinality 0..*, and from 'drone_RobotMissionContainer', the role 'drone_RobotMissionContainer98' has cardinality 0..*.
+An association connects 'drone_EObject' and 'drone_RobotMissionContainer'. From 'drone_EObject', the role 'drone_EObject' has cardinality 0..*, and from 'drone_RobotMissionContainer', the role 'drone_RobotMissionContainer100' has cardinality 0..*.
+An association connects 'drone_PropertyKey' and 'drone_PropertyKeyContainer'. From 'drone_PropertyKey', the role 'drone_PropertyKey103' has cardinality 0..*, and from 'drone_PropertyKeyContainer', the role 'drone_PropertyKeyContainer102' has cardinality 0..*.
+An association connects 'drone_CapabilityProperties' and 'drone_Property'. From 'drone_CapabilityProperties', the role 'drone_CapabilityProperties105' has cardinality 0..*, and from 'drone_Property', the role 'drone_Property106' has cardinality 0..*.
+An association connects 'drone_CapabilityProperties' and 'drone_Capability'. From 'drone_CapabilityProperties', the role 'drone_CapabilityProperties108' has cardinality 0..*, and from 'drone_Capability', the role 'drone_Capability109' has cardinality 0..*.

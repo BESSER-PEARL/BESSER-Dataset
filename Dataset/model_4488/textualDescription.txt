@@ -1,0 +1,150 @@
+The domain model 'dSL' describes the core structural elements and their relationships within the system.
+
+The model defines 33 main class(es).
+
+'dSL_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_RotatePoints' represents an important domain concept.
+It has one attribute: 'degrees', which is of type int.
+
+'dSL_ORexpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_MoveAction' represents an important domain concept.
+It has one attribute: 'dir', which is of type str.
+
+'RotateMovementAction' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_RightRotatePoint' represents an important domain concept.
+It has one attribute: 'rightdir', which is of type str.
+
+'dSL_ExpressionBracket' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_LeftMovementAction' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_MovementAction' represents an important domain concept.
+It has one attribute: 'actionenum', which is of type str.
+
+'Actions' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_RotateMovementAction' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_EndCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_Behavior' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dSL_EndWhen' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'times', which is of type int.
+
+'dSL_RightMovementAction' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_DepthLiteral' represents an important domain concept.
+It has one attribute: 'back', which is of type str.
+
+'dSL_DistanceLiteral' represents an important domain concept.
+It has one attribute: 'distance', which is of type int.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_MeasurementAction' represents an important domain concept.
+It has one attribute: 'measure', which is of type str.
+
+'dSL_ColorLiteral' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+'dSL_EdgeLiteral' represents an important domain concept.
+It has one attribute: 'edge', which is of type str.
+
+'dSL_MiddleRotatePoint' represents an important domain concept.
+It has one attribute: 'middledir', which is of type str.
+
+'dSL_TouchLiteral' represents an important domain concept.
+It has one attribute: 'touch', which is of type str.
+
+'dSL_ANDexpression' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_EndAfter' represents an important domain concept.
+It has one attribute: 'time', which is of type int.
+
+'EndCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_Mission' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dSL_Actions' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_MarsRoverExpedition' represents an important domain concept.
+It does not declare any attributes.
+
+'RotatePoints' represents an important domain concept.
+It does not declare any attributes.
+
+'dSL_LeftRotatePoint' represents an important domain concept.
+It has one attribute: 'leftdir', which is of type str.
+
+'dSL_TrueLiteral' represents an important domain concept.
+It has one attribute: 't', which is of type str.
+
+'dSL_BehaviorName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EdgeEnum' defines the following possible values: 'FRONTLEFT', 'BACK', 'FRONTRIGHT'.
+The enumeration 'LREnum' defines the following possible values: 'LEFT', 'RIGHT'.
+The enumeration 'FBEnum' defines the following possible values: 'FORWARD', 'BACKWARD'.
+The enumeration 'BackEnum' defines a single possible value: 'BACK'.
+The enumeration 'TouchEnum' defines the following possible values: 'LEFT', 'RIGHT'.
+The enumeration 'Tenum' defines a single possible value: 'TRUE'.
+The enumeration 'ColorEnum' defines the following possible values: 'BLUE', 'WHITE', 'NONE', 'GREEN', 'YELLOW', 'BLACK', 'BROWN', 'RED'.
+The enumeration 'MAEnum' defines a single possible value: 'MEASURE'.
+The enumeration 'ActionEnum' defines the following possible values: 'FORWARD', 'STOP', 'BACKWARD'.
+
+The model also captures inheritance relationships between classes.
+The class 'dSL_EndAfter' is a specialization of 'EndCondition'.
+The class 'dSL_MoveAction' is a specialization of 'Actions'.
+The class 'dSL_MeasurementAction' is a specialization of 'Actions'.
+The class 'dSL_LeftMovementAction' is a specialization of 'Actions'.
+The class 'dSL_RightMovementAction' is a specialization of 'Actions'.
+The class 'dSL_RotateMovementAction' is a specialization of 'Actions'.
+The class 'dSL_RotatePoints' is a specialization of 'RotateMovementAction'.
+The class 'dSL_LeftRotatePoint' is a specialization of 'RotatePoints'.
+The class 'dSL_RightRotatePoint' is a specialization of 'RotatePoints'.
+The class 'dSL_MiddleRotatePoint' is a specialization of 'RotatePoints'.
+The class 'dSL_TrueLiteral' is a specialization of 'Expression'.
+The class 'dSL_ExpressionBracket' is a specialization of 'Expression'.
+The class 'dSL_DepthLiteral' is a specialization of 'Expression'.
+The class 'dSL_TouchLiteral' is a specialization of 'Expression'.
+The class 'dSL_ColorLiteral' is a specialization of 'Expression'.
+The class 'dSL_DistanceLiteral' is a specialization of 'Expression'.
+The class 'dSL_EdgeLiteral' is a specialization of 'Expression'.
+The class 'dSL_ANDexpression' is a specialization of 'Expression'.
+The class 'dSL_ORexpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dSL_Mission' and 'dSL_MarsRoverExpedition'. From 'dSL_Mission', the role 'dSL_Mission' has cardinality 0..*, and from 'dSL_MarsRoverExpedition', the role 'dSL_MarsRoverExpedition' has cardinality 0..*.
+An association connects 'dSL_MarsRoverExpedition' and 'dSL_Behavior'. From 'dSL_MarsRoverExpedition', the role 'dSL_MarsRoverExpedition2' has cardinality 0..*, and from 'dSL_Behavior', the role 'dSL_Behavior' has cardinality 0..*.
+An association connects 'dSL_Mission' and 'dSL_BehaviorName'. From 'dSL_Mission', the role 'dSL_Mission4' has cardinality 0..*, and from 'dSL_BehaviorName', the role 'dSL_BehaviorName' has cardinality 0..*.
+An association connects 'dSL_Mission' and 'dSL_EndCondition'. From 'dSL_Mission', the role 'dSL_Mission6' has cardinality 0..*, and from 'dSL_EndCondition', the role 'dSL_EndCondition' has cardinality 0..*.
+An association connects 'dSL_EndCondition' and 'dSL_EndWhen'. From 'dSL_EndCondition', the role 'dSL_EndCondition8' has cardinality 0..*, and from 'dSL_EndWhen', the role 'dSL_EndWhen' has cardinality 0..*.
+An association connects 'dSL_Behavior' and 'dSL_Expression'. From 'dSL_Behavior', the role 'dSL_Behavior10' has cardinality 0..*, and from 'dSL_Expression', the role 'dSL_Expression' has cardinality 0..*.
+An association connects 'dSL_Behavior' and 'dSL_Actions'. From 'dSL_Behavior', the role 'dSL_Behavior12' has cardinality 0..*, and from 'dSL_Actions', the role 'dSL_Actions' has cardinality 0..*.
+An association connects 'dSL_MovementAction' and 'dSL_LeftMovementAction'. From 'dSL_MovementAction', the role 'dSL_MovementAction' has cardinality 0..*, and from 'dSL_LeftMovementAction', the role 'dSL_LeftMovementAction' has cardinality 0..*.
+An association connects 'dSL_RightMovementAction' and 'dSL_MovementAction'. From 'dSL_RightMovementAction', the role 'dSL_RightMovementAction' has cardinality 0..*, and from 'dSL_MovementAction', the role 'dSL_MovementAction15' has cardinality 0..*.
+An association connects 'dSL_ExpressionBracket' and 'dSL_Expression'. From 'dSL_ExpressionBracket', the role 'dSL_ExpressionBracket' has cardinality 0..*, and from 'dSL_Expression', the role 'dSL_Expression17' has cardinality 0..*.
+An association connects 'dSL_Expression' and 'dSL_ANDexpression'. From 'dSL_Expression', the role 'dSL_Expression19' has cardinality 0..*, and from 'dSL_ANDexpression', the role 'dSL_ANDexpression' has cardinality 0..*.
+An association connects 'dSL_ANDexpression' and 'dSL_Expression'. From 'dSL_ANDexpression', the role 'dSL_ANDexpression21' has cardinality 0..*, and from 'dSL_Expression', the role 'dSL_Expression22' has cardinality 0..*.
+An association connects 'dSL_Expression' and 'dSL_ORexpression'. From 'dSL_Expression', the role 'dSL_Expression24' has cardinality 0..*, and from 'dSL_ORexpression', the role 'dSL_ORexpression' has cardinality 0..*.
+An association connects 'dSL_ORexpression' and 'dSL_Expression'. From 'dSL_ORexpression', the role 'dSL_ORexpression26' has cardinality 0..*, and from 'dSL_Expression', the role 'dSL_Expression27' has cardinality 0..*.

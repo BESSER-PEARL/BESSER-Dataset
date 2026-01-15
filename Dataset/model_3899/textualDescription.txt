@@ -1,0 +1,347 @@
+The domain model 'executablemodelingprofile' describes the core structural elements and their relationships within the system.
+
+The model defines 88 main class(es).
+
+'executablemodelingprofile_LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_OpaqueBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XNamespace' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_State' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'XTypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XActionBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'XFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XProtocolContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'XClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XPart' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XProtocol' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XMultiplicityElement' represents an important domain concept.
+It has the following attributes: 'isDescending', which is of type str; 'isOrderedByValue', which is of type str.
+
+'executablemodelingprofile_XAssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XEncapsulatedClassifier' represents an important domain concept.
+It has one attribute: 'isExternal', which is of type str.
+
+'executablemodelingprofile_XProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XGeneralizationSet' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XSignal' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XReception' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XPseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_ConnectorEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XTypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'XVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XVertex' represents an important domain concept.
+It does not declare any attributes.
+
+'XDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XOpaqueBehavior' represents an important domain concept.
+It has one attribute: 'isExternal', which is of type str.
+
+'executablemodelingprofile_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XGeneralization' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'XActionBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'XNamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XPort' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'XMultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'XNamespace' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XClass' represents an important domain concept.
+It has one attribute: 'isExternal', which is of type str.
+
+'executablemodelingprofile_XMessageSet' represents an important domain concept.
+It has one attribute: 'messageKind', which is of type str.
+
+'executablemodelingprofile_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'XBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'XAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XConstrainedType' represents an important domain concept.
+It has the following attributes: 'isUpperBoundExclusive', which is of type str; 'isLowerBoundExclusive', which is of type str.
+
+'executablemodelingprofile_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_GeneralizationSet' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XConnectorEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XState' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_XEnumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'executablemodelingprofile_EncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'XMessageKind' defines the following possible values: 'inout', 'in', 'out'.
+
+The model also captures inheritance relationships between classes.
+The class 'executablemodelingprofile_XOperation' is a specialization of 'XFeature'.
+The class 'executablemodelingprofile_XOperation' is a specialization of 'XNamespace'.
+The class 'executablemodelingprofile_XNamespace' is a specialization of 'XNamedElement'.
+The class 'executablemodelingprofile_XFeature' is a specialization of 'XNamedElement'.
+The class 'executablemodelingprofile_XClassifier' is a specialization of 'XNamespace'.
+The class 'executablemodelingprofile_XBehavior' is a specialization of 'XNamespace'.
+The class 'executablemodelingprofile_XEncapsulatedClassifier' is a specialization of 'XClassifier'.
+The class 'executablemodelingprofile_XProtocol' is a specialization of 'XClassifier'.
+The class 'executablemodelingprofile_XSignal' is a specialization of 'XClassifier'.
+The class 'executablemodelingprofile_XDataType' is a specialization of 'XClassifier'.
+The class 'executablemodelingprofile_XParameter' is a specialization of 'XTypedElement'.
+The class 'executablemodelingprofile_XProperty' is a specialization of 'XMultiplicityElement'.
+The class 'executablemodelingprofile_XProperty' is a specialization of 'XFeature'.
+The class 'executablemodelingprofile_XProperty' is a specialization of 'XTypedElement'.
+The class 'executablemodelingprofile_XReception' is a specialization of 'XFeature'.
+The class 'executablemodelingprofile_XPart' is a specialization of 'XFeature'.
+The class 'executablemodelingprofile_XPart' is a specialization of 'XTypedElement'.
+The class 'executablemodelingprofile_XPort' is a specialization of 'XFeature'.
+The class 'executablemodelingprofile_XConnector' is a specialization of 'XFeature'.
+The class 'executablemodelingprofile_XMessageSet' is a specialization of 'XClassifier'.
+The class 'executablemodelingprofile_XEnumeration' is a specialization of 'XDataType'.
+The class 'executablemodelingprofile_XAssociationClass' is a specialization of 'XClassifier'.
+The class 'executablemodelingprofile_XAssociationClass' is a specialization of 'XAssociation'.
+The class 'executablemodelingprofile_XStateMachine' is a specialization of 'XBehavior'.
+The class 'executablemodelingprofile_XState' is a specialization of 'XVertex'.
+The class 'executablemodelingprofile_XPseudostate' is a specialization of 'XVertex'.
+The class 'executablemodelingprofile_XActivity' is a specialization of 'XActionBehavior'.
+The class 'executablemodelingprofile_XActionBehavior' is a specialization of 'XBehavior'.
+The class 'executablemodelingprofile_XConstraint' is a specialization of 'XNamedElement'.
+The class 'executablemodelingprofile_XOpaqueBehavior' is a specialization of 'XActionBehavior'.
+The class 'executablemodelingprofile_XConstrainedType' is a specialization of 'XClassifier'.
+The class 'executablemodelingprofile_XClass' is a specialization of 'XClassifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'executablemodelingprofile_XOperation' and 'executablemodelingprofile_Operation'. From 'executablemodelingprofile_XOperation', the role 'executablemodelingprofile_XOperation' has cardinality 0..*, and from 'executablemodelingprofile_Operation', the role 'executablemodelingprofile_Operation' has cardinality 0..*.
+An association connects 'executablemodelingprofile_Namespace' and 'executablemodelingprofile_XNamespace'. From 'executablemodelingprofile_Namespace', the role 'executablemodelingprofile_Namespace' has cardinality 0..*, and from 'executablemodelingprofile_XNamespace', the role 'executablemodelingprofile_XNamespace' has cardinality 0..*.
+An association connects 'executablemodelingprofile_NamedElement' and 'executablemodelingprofile_XNamedElement'. From 'executablemodelingprofile_NamedElement', the role 'executablemodelingprofile_NamedElement' has cardinality 0..*, and from 'executablemodelingprofile_XNamedElement', the role 'executablemodelingprofile_XNamedElement' has cardinality 0..*.
+An association connects 'executablemodelingprofile_Feature' and 'executablemodelingprofile_XFeature'. From 'executablemodelingprofile_Feature', the role 'executablemodelingprofile_Feature' has cardinality 0..*, and from 'executablemodelingprofile_XFeature', the role 'executablemodelingprofile_XFeature' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XAssociation' and 'executablemodelingprofile_Association'. From 'executablemodelingprofile_XAssociation', the role 'executablemodelingprofile_XAssociation' has cardinality 0..*, and from 'executablemodelingprofile_Association', the role 'executablemodelingprofile_Association' has cardinality 0..*.
+An association connects 'executablemodelingprofile_Classifier' and 'executablemodelingprofile_XClassifier'. From 'executablemodelingprofile_Classifier', the role 'executablemodelingprofile_Classifier' has cardinality 0..*, and from 'executablemodelingprofile_XClassifier', the role 'executablemodelingprofile_XClassifier' has cardinality 0..*.
+An association connects 'executablemodelingprofile_Behavior' and 'executablemodelingprofile_XBehavior'. From 'executablemodelingprofile_Behavior', the role 'executablemodelingprofile_Behavior' has cardinality 0..*, and from 'executablemodelingprofile_XBehavior', the role 'executablemodelingprofile_XBehavior' has cardinality 0..*.
+An association connects 'executablemodelingprofile_EncapsulatedClassifier' and 'executablemodelingprofile_XEncapsulatedClassifier'. From 'executablemodelingprofile_EncapsulatedClassifier', the role 'executablemodelingprofile_EncapsulatedClassifier' has cardinality 0..*, and from 'executablemodelingprofile_XEncapsulatedClassifier', the role 'executablemodelingprofile_XEncapsulatedClassifier' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XProtocol' and 'executablemodelingprofile_BehavioredClassifier'. From 'executablemodelingprofile_XProtocol', the role 'executablemodelingprofile_XProtocol' has cardinality 0..*, and from 'executablemodelingprofile_BehavioredClassifier', the role 'executablemodelingprofile_BehavioredClassifier' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XSignal' and 'executablemodelingprofile_Signal'. From 'executablemodelingprofile_XSignal', the role 'executablemodelingprofile_XSignal' has cardinality 0..*, and from 'executablemodelingprofile_Signal', the role 'executablemodelingprofile_Signal' has cardinality 0..*.
+An association connects 'executablemodelingprofile_DataType' and 'executablemodelingprofile_XDataType'. From 'executablemodelingprofile_DataType', the role 'executablemodelingprofile_DataType' has cardinality 0..*, and from 'executablemodelingprofile_XDataType', the role 'executablemodelingprofile_XDataType' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XParameter' and 'executablemodelingprofile_Parameter'. From 'executablemodelingprofile_XParameter', the role 'executablemodelingprofile_XParameter' has cardinality 0..*, and from 'executablemodelingprofile_Parameter', the role 'executablemodelingprofile_Parameter' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XTypedElement' and 'executablemodelingprofile_TypedElement'. From 'executablemodelingprofile_XTypedElement', the role 'executablemodelingprofile_XTypedElement' has cardinality 0..*, and from 'executablemodelingprofile_TypedElement', the role 'executablemodelingprofile_TypedElement' has cardinality 0..*.
+An association connects 'executablemodelingprofile_Property' and 'executablemodelingprofile_XProperty'. From 'executablemodelingprofile_Property', the role 'executablemodelingprofile_Property' has cardinality 0..*, and from 'executablemodelingprofile_XProperty', the role 'executablemodelingprofile_XProperty' has cardinality 0..*.
+An association connects 'executablemodelingprofile_MultiplicityElement' and 'executablemodelingprofile_XMultiplicityElement'. From 'executablemodelingprofile_MultiplicityElement', the role 'executablemodelingprofile_MultiplicityElement' has cardinality 0..*, and from 'executablemodelingprofile_XMultiplicityElement', the role 'executablemodelingprofile_XMultiplicityElement' has cardinality 0..*.
+An association connects 'executablemodelingprofile_Property' and 'executablemodelingprofile_XMultiplicityElement'. From 'executablemodelingprofile_Property', the role 'executablemodelingprofile_Property17' has cardinality 0..*, and from 'executablemodelingprofile_XMultiplicityElement', the role 'executablemodelingprofile_XMultiplicityElement16' has cardinality 0..*.
+An association connects 'executablemodelingprofile_Reception' and 'executablemodelingprofile_XReception'. From 'executablemodelingprofile_Reception', the role 'executablemodelingprofile_Reception' has cardinality 0..*, and from 'executablemodelingprofile_XReception', the role 'executablemodelingprofile_XReception' has cardinality 0..*.
+An association connects 'executablemodelingprofile_Property' and 'executablemodelingprofile_XPart'. From 'executablemodelingprofile_Property', the role 'executablemodelingprofile_Property20' has cardinality 0..*, and from 'executablemodelingprofile_XPart', the role 'executablemodelingprofile_XPart' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XPort' and 'executablemodelingprofile_Port'. From 'executablemodelingprofile_XPort', the role 'executablemodelingprofile_XPort' has cardinality 0..*, and from 'executablemodelingprofile_Port', the role 'executablemodelingprofile_Port' has cardinality 0..*.
+An association connects 'executablemodelingprofile_Connector' and 'executablemodelingprofile_XConnector'. From 'executablemodelingprofile_Connector', the role 'executablemodelingprofile_Connector' has cardinality 0..*, and from 'executablemodelingprofile_XConnector', the role 'executablemodelingprofile_XConnector' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XProtocolContainer' and 'executablemodelingprofile_Package'. From 'executablemodelingprofile_XProtocolContainer', the role 'executablemodelingprofile_XProtocolContainer' has cardinality 0..*, and from 'executablemodelingprofile_Package', the role 'executablemodelingprofile_Package' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XMessageSet' and 'executablemodelingprofile_Interface'. From 'executablemodelingprofile_XMessageSet', the role 'executablemodelingprofile_XMessageSet' has cardinality 0..*, and from 'executablemodelingprofile_Interface', the role 'executablemodelingprofile_Interface' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XEnumeration' and 'executablemodelingprofile_Enumeration'. From 'executablemodelingprofile_XEnumeration', the role 'executablemodelingprofile_XEnumeration' has cardinality 0..*, and from 'executablemodelingprofile_Enumeration', the role 'executablemodelingprofile_Enumeration' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XAssociationClass' and 'executablemodelingprofile_AssociationClass'. From 'executablemodelingprofile_XAssociationClass', the role 'executablemodelingprofile_XAssociationClass' has cardinality 0..*, and from 'executablemodelingprofile_AssociationClass', the role 'executablemodelingprofile_AssociationClass' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XTrigger' and 'executablemodelingprofile_Trigger'. From 'executablemodelingprofile_XTrigger', the role 'executablemodelingprofile_XTrigger' has cardinality 0..*, and from 'executablemodelingprofile_Trigger', the role 'executablemodelingprofile_Trigger' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XStateMachine' and 'executablemodelingprofile_StateMachine'. From 'executablemodelingprofile_XStateMachine', the role 'executablemodelingprofile_XStateMachine' has cardinality 0..*, and from 'executablemodelingprofile_StateMachine', the role 'executablemodelingprofile_StateMachine' has cardinality 0..*.
+An association connects 'executablemodelingprofile_Region' and 'executablemodelingprofile_XRegion'. From 'executablemodelingprofile_Region', the role 'executablemodelingprofile_Region' has cardinality 0..*, and from 'executablemodelingprofile_XRegion', the role 'executablemodelingprofile_XRegion' has cardinality 0..*.
+An association connects 'executablemodelingprofile_State' and 'executablemodelingprofile_XState'. From 'executablemodelingprofile_State', the role 'executablemodelingprofile_State' has cardinality 0..*, and from 'executablemodelingprofile_XState', the role 'executablemodelingprofile_XState' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XVertex' and 'executablemodelingprofile_Vertex'. From 'executablemodelingprofile_XVertex', the role 'executablemodelingprofile_XVertex' has cardinality 0..*, and from 'executablemodelingprofile_Vertex', the role 'executablemodelingprofile_Vertex' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XPseudostate' and 'executablemodelingprofile_Pseudostate'. From 'executablemodelingprofile_XPseudostate', the role 'executablemodelingprofile_XPseudostate' has cardinality 0..*, and from 'executablemodelingprofile_Pseudostate', the role 'executablemodelingprofile_Pseudostate' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XTransition' and 'executablemodelingprofile_Transition'. From 'executablemodelingprofile_XTransition', the role 'executablemodelingprofile_XTransition' has cardinality 0..*, and from 'executablemodelingprofile_Transition', the role 'executablemodelingprofile_Transition' has cardinality 0..*.
+An association connects 'executablemodelingprofile_Activity' and 'executablemodelingprofile_XActivity'. From 'executablemodelingprofile_Activity', the role 'executablemodelingprofile_Activity' has cardinality 0..*, and from 'executablemodelingprofile_XActivity', the role 'executablemodelingprofile_XActivity' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XConstraint' and 'executablemodelingprofile_Constraint'. From 'executablemodelingprofile_XConstraint', the role 'executablemodelingprofile_XConstraint' has cardinality 0..*, and from 'executablemodelingprofile_Constraint', the role 'executablemodelingprofile_Constraint' has cardinality 0..*.
+An association connects 'executablemodelingprofile_OpaqueBehavior' and 'executablemodelingprofile_XOpaqueBehavior'. From 'executablemodelingprofile_OpaqueBehavior', the role 'executablemodelingprofile_OpaqueBehavior' has cardinality 0..*, and from 'executablemodelingprofile_XOpaqueBehavior', the role 'executablemodelingprofile_XOpaqueBehavior' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XConstrainedType' and 'executablemodelingprofile_PrimitiveType'. From 'executablemodelingprofile_XConstrainedType', the role 'executablemodelingprofile_XConstrainedType' has cardinality 0..*, and from 'executablemodelingprofile_PrimitiveType', the role 'executablemodelingprofile_PrimitiveType' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XConstrainedType' and 'executablemodelingprofile_LiteralSpecification'. From 'executablemodelingprofile_XConstrainedType', the role 'executablemodelingprofile_XConstrainedType39' has cardinality 0..*, and from 'executablemodelingprofile_LiteralSpecification', the role 'executablemodelingprofile_LiteralSpecification' has cardinality 0..*.
+An association connects 'executablemodelingprofile_LiteralSpecification' and 'executablemodelingprofile_XConstrainedType'. From 'executablemodelingprofile_LiteralSpecification', the role 'executablemodelingprofile_LiteralSpecification42' has cardinality 0..*, and from 'executablemodelingprofile_XConstrainedType', the role 'executablemodelingprofile_XConstrainedType41' has cardinality 0..*.
+An association connects 'executablemodelingprofile_XGeneralization' and 'executablemodelingprofile_Generalization'. From 'executablemodelingprofile_XGeneralization', the role 'executablemodelingprofile_XGeneralization' has cardinality 0..*, and from 'executablemodelingprofile_Generalization', the role 'executablemodelingprofile_Generalization' has cardinality 0..*.
+An association connects 'executablemodelingprofile_GeneralizationSet' and 'executablemodelingprofile_XGeneralizationSet'. From 'executablemodelingprofile_GeneralizationSet', the role 'executablemodelingprofile_GeneralizationSet' has cardinality 0..*, and from 'executablemodelingprofile_XGeneralizationSet', the role 'executablemodelingprofile_XGeneralizationSet' has cardinality 0..*.
+An association connects 'executablemodelingprofile_Class' and 'executablemodelingprofile_XClass'. From 'executablemodelingprofile_Class', the role 'executablemodelingprofile_Class' has cardinality 0..*, and from 'executablemodelingprofile_XClass', the role 'executablemodelingprofile_XClass' has cardinality 0..*.
+An association connects 'executablemodelingprofile_ConnectorEnd' and 'executablemodelingprofile_XConnectorEnd'. From 'executablemodelingprofile_ConnectorEnd', the role 'executablemodelingprofile_ConnectorEnd' has cardinality 0..*, and from 'executablemodelingprofile_XConnectorEnd', the role 'executablemodelingprofile_XConnectorEnd' has cardinality 0..*.

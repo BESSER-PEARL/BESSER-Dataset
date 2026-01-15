@@ -1,0 +1,93 @@
+The domain model 'ioT' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'ioT_ServerTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_DestinationTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_FetchData' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_System' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_Server' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ioT_FetchDataCondition' represents an important domain concept.
+It has one attribute: 'condition', which is of type str.
+
+'ioT_DeviceType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ioT_SensorTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_Ip' represents an important domain concept.
+It has one attribute: 'ip', which is of type int.
+
+'ioT_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_Device' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ioT_Time' represents an important domain concept.
+It has one attribute: 'time', which is of type int.
+
+'ioT_Method' represents an important domain concept.
+It has the following attributes: 'parameters', which is of type str; 'name', which is of type str.
+
+'ioT_Sensor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ioT_SensorGroup' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ioT_SensorType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ioT_ServerType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ioT_Portnumber' represents an important domain concept.
+It has one attribute: 'number', which is of type int.
+
+'ioT_Destination' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ioT_FetchDataExpression' represents an important domain concept.
+It has one attribute: 'timeUnit', which is of type str.
+
+'ioT_DestinationType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ioT_SensorGetMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'ioT_DeviceTypes' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'ioT_System' and 'ioT_EObject'. From 'ioT_System', the role 'ioT_System' has cardinality 0..*, and from 'ioT_EObject', the role 'ioT_EObject' has cardinality 0..*.
+An association connects 'ioT_SensorType' and 'ioT_SensorTypes'. From 'ioT_SensorType', the role 'ioT_SensorType' has cardinality 0..*, and from 'ioT_SensorTypes', the role 'ioT_SensorTypes' has cardinality 0..*.
+An association connects 'ioT_Sensor' and 'ioT_SensorType'. From 'ioT_Sensor', the role 'ioT_Sensor' has cardinality 0..*, and from 'ioT_SensorType', the role 'ioT_SensorType3' has cardinality 0..*.
+An association connects 'ioT_SensorGroup' and 'ioT_Sensor'. From 'ioT_SensorGroup', the role 'ioT_SensorGroup' has cardinality 0..*, and from 'ioT_Sensor', the role 'ioT_Sensor5' has cardinality 0..*.
+An association connects 'ioT_Method' and 'ioT_SensorGetMethod'. From 'ioT_Method', the role 'ioT_Method' has cardinality 0..*, and from 'ioT_SensorGetMethod', the role 'ioT_SensorGetMethod' has cardinality 0..*.
+An association connects 'ioT_SensorType' and 'ioT_SensorGetMethod'. From 'ioT_SensorType', the role 'ioT_SensorType9' has cardinality 0..*, and from 'ioT_SensorGetMethod', the role 'ioT_SensorGetMethod8' has cardinality 0..*.
+An association connects 'ioT_DeviceType' and 'ioT_DeviceTypes'. From 'ioT_DeviceType', the role 'ioT_DeviceType' has cardinality 0..*, and from 'ioT_DeviceTypes', the role 'ioT_DeviceTypes' has cardinality 0..*.
+An association connects 'ioT_Device' and 'ioT_DeviceType'. From 'ioT_Device', the role 'ioT_Device' has cardinality 0..*, and from 'ioT_DeviceType', the role 'ioT_DeviceType12' has cardinality 0..*.
+An association connects 'ioT_Device' and 'ioT_EObject'. From 'ioT_Device', the role 'ioT_Device14' has cardinality 0..*, and from 'ioT_EObject', the role 'ioT_EObject15' has cardinality 0..*.
+An association connects 'ioT_ServerType' and 'ioT_ServerTypes'. From 'ioT_ServerType', the role 'ioT_ServerType' has cardinality 0..*, and from 'ioT_ServerTypes', the role 'ioT_ServerTypes' has cardinality 0..*.
+An association connects 'ioT_ServerType' and 'ioT_Server'. From 'ioT_ServerType', the role 'ioT_ServerType18' has cardinality 0..*, and from 'ioT_Server', the role 'ioT_Server' has cardinality 0..*.
+An association connects 'ioT_Server' and 'ioT_Ip'. From 'ioT_Server', the role 'ioT_Server20' has cardinality 0..*, and from 'ioT_Ip', the role 'ioT_Ip' has cardinality 0..*.
+An association connects 'ioT_Portnumber' and 'ioT_Server'. From 'ioT_Portnumber', the role 'ioT_Portnumber' has cardinality 0..*, and from 'ioT_Server', the role 'ioT_Server22' has cardinality 0..*.
+An association connects 'ioT_DestinationType' and 'ioT_DestinationTypes'. From 'ioT_DestinationType', the role 'ioT_DestinationType' has cardinality 0..*, and from 'ioT_DestinationTypes', the role 'ioT_DestinationTypes' has cardinality 0..*.
+An association connects 'ioT_DestinationType' and 'ioT_Destination'. From 'ioT_DestinationType', the role 'ioT_DestinationType25' has cardinality 0..*, and from 'ioT_Destination', the role 'ioT_Destination' has cardinality 0..*.
+An association connects 'ioT_FetchData' and 'ioT_EObject'. From 'ioT_FetchData', the role 'ioT_FetchData' has cardinality 0..*, and from 'ioT_EObject', the role 'ioT_EObject27' has cardinality 0..*.
+An association connects 'ioT_EObject' and 'ioT_FetchData'. From 'ioT_EObject', the role 'ioT_EObject30' has cardinality 0..*, and from 'ioT_FetchData', the role 'ioT_FetchData29' has cardinality 0..*.
+An association connects 'ioT_FetchData' and 'ioT_EObject'. From 'ioT_FetchData', the role 'ioT_FetchData32' has cardinality 0..*, and from 'ioT_EObject', the role 'ioT_EObject33' has cardinality 0..*.
+An association connects 'ioT_Time' and 'ioT_FetchDataExpression'. From 'ioT_Time', the role 'ioT_Time' has cardinality 0..*, and from 'ioT_FetchDataExpression', the role 'ioT_FetchDataExpression' has cardinality 0..*.

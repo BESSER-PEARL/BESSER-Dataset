@@ -1,0 +1,70 @@
+The domain model 'uml' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'uml_generalClass' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_primitiveDataType' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'oID', which is of type str; 'name', which is of type str.
+
+'uml_attributes' represents an important domain concept.
+It has one attribute: 'group', which is of type str.
+
+'uml_attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'oID', which is of type str; 'kind', which is of type str.
+
+'uml_UML' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_class_' represents an important domain concept.
+It has the following attributes: 'oID', which is of type str; 'kind', which is of type str; 'name', which is of type str.
+
+'uml_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'uml_package_' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'oID', which is of type str; 'name', which is of type str.
+
+'uml_classifiersAndAssociations' represents an important domain concept.
+It has one attribute: 'group', which is of type str.
+
+'uml_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_packages' represents an important domain concept.
+It has one attribute: 'group', which is of type str.
+
+'uml_association' represents an important domain concept.
+It has the following attributes: 'destination', which is of type str; 'kind', which is of type str; 'name', which is of type str; 'oID', which is of type str; 'source', which is of type str.
+
+'uml_ownerClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'uml_ownerClassifier' and 'uml_attribute'. From 'uml_ownerClassifier', the role 'uml_ownerClassifier' has cardinality 0..*, and from 'uml_attribute', the role 'uml_attribute' has cardinality 0..*.
+An association connects 'uml_attribute' and 'uml_attributes'. From 'uml_attribute', the role 'uml_attribute2' has cardinality 0..*, and from 'uml_attributes', the role 'uml_attributes' has cardinality 0..*.
+An association connects 'uml_generalClass' and 'uml_class_'. From 'uml_generalClass', the role 'uml_generalClass' has cardinality 0..*, and from 'uml_class_', the role 'uml_class_' has cardinality 0..*.
+An association connects 'uml_class_' and 'uml_attributes'. From 'uml_class_', the role 'uml_class_5' has cardinality 0..*, and from 'uml_attributes', the role 'uml_attributes6' has cardinality 0..*.
+An association connects 'uml_classifiersAndAssociations' and 'uml_class_'. From 'uml_classifiersAndAssociations', the role 'uml_classifiersAndAssociations' has cardinality 0..*, and from 'uml_class_', the role 'uml_class_8' has cardinality 0..*.
+An association connects 'uml_classifiersAndAssociations' and 'uml_primitiveDataType'. From 'uml_classifiersAndAssociations', the role 'uml_classifiersAndAssociations10' has cardinality 0..*, and from 'uml_primitiveDataType', the role 'uml_primitiveDataType' has cardinality 0..*.
+An association connects 'uml_classifiersAndAssociations' and 'uml_association'. From 'uml_classifiersAndAssociations', the role 'uml_classifiersAndAssociations12' has cardinality 0..*, and from 'uml_association', the role 'uml_association' has cardinality 0..*.
+An association connects 'uml_EStringToStringMapEntry' and 'uml_DocumentRoot'. From 'uml_EStringToStringMapEntry', the role 'uml_EStringToStringMapEntry' has cardinality 0..*, and from 'uml_DocumentRoot', the role 'uml_DocumentRoot' has cardinality 0..*.
+An association connects 'uml_DocumentRoot' and 'uml_EStringToStringMapEntry'. From 'uml_DocumentRoot', the role 'uml_DocumentRoot15' has cardinality 0..*, and from 'uml_EStringToStringMapEntry', the role 'uml_EStringToStringMapEntry16' has cardinality 0..*.
+An association connects 'uml_DocumentRoot' and 'uml_association'. From 'uml_DocumentRoot', the role 'uml_DocumentRoot18' has cardinality 0..*, and from 'uml_association', the role 'uml_association19' has cardinality 0..*.
+An association connects 'uml_attribute' and 'uml_DocumentRoot'. From 'uml_attribute', the role 'uml_attribute22' has cardinality 0..*, and from 'uml_DocumentRoot', the role 'uml_DocumentRoot21' has cardinality 0..*.
+An association connects 'uml_DocumentRoot' and 'uml_attributes'. From 'uml_DocumentRoot', the role 'uml_DocumentRoot24' has cardinality 0..*, and from 'uml_attributes', the role 'uml_attributes25' has cardinality 0..*.
+An association connects 'uml_DocumentRoot' and 'uml_class_'. From 'uml_DocumentRoot', the role 'uml_DocumentRoot27' has cardinality 0..*, and from 'uml_class_', the role 'uml_class_28' has cardinality 0..*.
+An association connects 'uml_classifiersAndAssociations' and 'uml_DocumentRoot'. From 'uml_classifiersAndAssociations', the role 'uml_classifiersAndAssociations31' has cardinality 0..*, and from 'uml_DocumentRoot', the role 'uml_DocumentRoot30' has cardinality 0..*.
+An association connects 'uml_generalClass' and 'uml_DocumentRoot'. From 'uml_generalClass', the role 'uml_generalClass34' has cardinality 0..*, and from 'uml_DocumentRoot', the role 'uml_DocumentRoot33' has cardinality 0..*.
+An association connects 'uml_ownerClassifier' and 'uml_DocumentRoot'. From 'uml_ownerClassifier', the role 'uml_ownerClassifier37' has cardinality 0..*, and from 'uml_DocumentRoot', the role 'uml_DocumentRoot36' has cardinality 0..*.
+An association connects 'uml_DocumentRoot' and 'uml_package_'. From 'uml_DocumentRoot', the role 'uml_DocumentRoot39' has cardinality 0..*, and from 'uml_package_', the role 'uml_package_' has cardinality 0..*.
+An association connects 'uml_packages' and 'uml_DocumentRoot'. From 'uml_packages', the role 'uml_packages' has cardinality 0..*, and from 'uml_DocumentRoot', the role 'uml_DocumentRoot41' has cardinality 0..*.
+An association connects 'uml_DocumentRoot' and 'uml_primitiveDataType'. From 'uml_DocumentRoot', the role 'uml_DocumentRoot43' has cardinality 0..*, and from 'uml_primitiveDataType', the role 'uml_primitiveDataType44' has cardinality 0..*.
+An association connects 'uml_DocumentRoot' and 'uml_UML'. From 'uml_DocumentRoot', the role 'uml_DocumentRoot46' has cardinality 0..*, and from 'uml_UML', the role 'uml_UML' has cardinality 0..*.
+An association connects 'uml_class_' and 'uml_generalClass'. From 'uml_class_', the role 'uml_class_49' has cardinality 0..*, and from 'uml_generalClass', the role 'uml_generalClass48' has cardinality 0..*.
+An association connects 'uml_ownerClassifier' and 'uml_class_'. From 'uml_ownerClassifier', the role 'uml_ownerClassifier51' has cardinality 0..*, and from 'uml_class_', the role 'uml_class_52' has cardinality 0..*.
+An association connects 'uml_ownerClassifier' and 'uml_primitiveDataType'. From 'uml_ownerClassifier', the role 'uml_ownerClassifier54' has cardinality 0..*, and from 'uml_primitiveDataType', the role 'uml_primitiveDataType55' has cardinality 0..*.
+An association connects 'uml_package_' and 'uml_classifiersAndAssociations'. From 'uml_package_', the role 'uml_package_57' has cardinality 0..*, and from 'uml_classifiersAndAssociations', the role 'uml_classifiersAndAssociations58' has cardinality 0..*.
+An association connects 'uml_package_' and 'uml_packages'. From 'uml_package_', the role 'uml_package_61' has cardinality 0..*, and from 'uml_packages', the role 'uml_packages60' has cardinality 0..*.
+An association connects 'uml_UML' and 'uml_packages'. From 'uml_UML', the role 'uml_UML63' has cardinality 0..*, and from 'uml_packages', the role 'uml_packages64' has cardinality 0..*.

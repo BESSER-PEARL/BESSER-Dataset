@@ -1,0 +1,71 @@
+The domain model 'design' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'design_Classifier' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'accessModifier', which is of type str.
+
+'design_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'design_Aggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'design_Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'design_Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'design_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'design_Operation' represents an important domain concept.
+It has the following attributes: 'returnType', which is of type str; 'name', which is of type str.
+
+'design_Composition' represents an important domain concept.
+It does not declare any attributes.
+
+'design_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'design_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'design_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'design_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'design_Design' represents an important domain concept.
+It has one attribute: 'language', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AccessModifiers' defines the following possible values: 'private', 'protected', 'public'.
+The enumeration 'Types' defines the following possible values: 'int', 'boolean', 'float', 'void', 'double', 'long', 'string'.
+The enumeration 'Languages' defines the following possible values: 'CS', 'CPP', 'Java', 'Python'.
+
+The model also captures inheritance relationships between classes.
+The class 'design_Class' is a specialization of 'Classifier'.
+The class 'design_Association' is a specialization of 'Relation'.
+The class 'design_Generalization' is a specialization of 'Relation'.
+The class 'design_Dependency' is a specialization of 'Relation'.
+The class 'design_Composition' is a specialization of 'Relation'.
+The class 'design_Aggregation' is a specialization of 'Relation'.
+The class 'design_Realization' is a specialization of 'Relation'.
+The class 'design_Interface' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'design_Classifier' and 'design_Design'. From 'design_Classifier', the role 'design_Classifier' has cardinality 0..*, and from 'design_Design', the role 'design_Design' has cardinality 0..*.
+An association connects 'design_Design' and 'design_Relation'. From 'design_Design', the role 'design_Design2' has cardinality 0..*, and from 'design_Relation', the role 'design_Relation' has cardinality 0..*.
+An association connects 'design_Relation' and 'design_Classifier'. From 'design_Relation', the role 'design_Relation4' has cardinality 0..*, and from 'design_Classifier', the role 'design_Classifier5' has cardinality 0..*.
+An association connects 'design_Classifier' and 'design_Relation'. From 'design_Classifier', the role 'design_Classifier8' has cardinality 0..*, and from 'design_Relation', the role 'design_Relation7' has cardinality 0..*.
+An association connects 'design_Classifier' and 'design_Attribute'. From 'design_Classifier', the role 'design_Classifier10' has cardinality 0..*, and from 'design_Attribute', the role 'design_Attribute' has cardinality 0..*.
+An association connects 'design_Classifier' and 'design_Operation'. From 'design_Classifier', the role 'design_Classifier12' has cardinality 0..*, and from 'design_Operation', the role 'design_Operation' has cardinality 0..*.

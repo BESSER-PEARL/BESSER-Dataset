@@ -1,0 +1,83 @@
+The domain model 'PyDslRep' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'PyDslRep_Environment' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PyDslRep_Robot' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'port', which is of type int.
+
+'PyDslRep_IP' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'ip', which is of type str.
+
+'PyDslRep_MoveCollection' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'concurrent', which is of type bool.
+
+'PyDslRep_AbstractDataMove' represents an important domain concept.
+It does not declare any attributes.
+
+'PyDslRep_Move' represents an important domain concept.
+It has one attribute: 'distance', which is of type str.
+
+'PyDslRep_DataMove' represents an important domain concept.
+It has the following attributes: 'name', which is of type bool; 'type', which is of type str; 'velocity', which is of type str.
+
+'PyDslRep_TypeSensor' represents an important domain concept.
+It has one attribute: 'typeName', which is of type str.
+
+'PyDslRep_AbstractCrossMove' represents an important domain concept.
+It does not declare any attributes.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'DataMove' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractDataMove' represents an important domain concept.
+It does not declare any attributes.
+
+'PyDslRep_Sensor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PyDslRep_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'PyDslRep_AbstractMove' represents an important domain concept.
+It does not declare any attributes.
+
+'PyDslRep_Turn' represents an important domain concept.
+It does not declare any attributes.
+
+'PyDslRep_Wheel' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'radius', which is of type str.
+
+'PyDslRep_Model' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'PyDslRep_Environment' is a specialization of 'Entity'.
+The class 'PyDslRep_Robot' is a specialization of 'Entity'.
+The class 'PyDslRep_IP' is a specialization of 'Entity'.
+The class 'PyDslRep_Wheel' is a specialization of 'Entity'.
+The class 'PyDslRep_MoveCollection' is a specialization of 'Entity'.
+The class 'PyDslRep_AbstractMove' is a specialization of 'AbstractDataMove'.
+The class 'PyDslRep_AbstractCrossMove' is a specialization of 'AbstractDataMove'.
+The class 'PyDslRep_DataMove' is a specialization of 'Entity'.
+The class 'PyDslRep_Move' is a specialization of 'DataMove'.
+The class 'PyDslRep_Turn' is a specialization of 'DataMove'.
+The class 'PyDslRep_Sensor' is a specialization of 'Entity'.
+The class 'PyDslRep_TypeSensor' is a specialization of 'Entity'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PyDslRep_Model' and 'PyDslRep_Entity'. From 'PyDslRep_Model', the role 'PyDslRep_Model' has cardinality 0..*, and from 'PyDslRep_Entity', the role 'PyDslRep_Entity' has cardinality 0..*.
+An association connects 'PyDslRep_IP' and 'PyDslRep_Environment'. From 'PyDslRep_IP', the role 'PyDslRep_IP' has cardinality 0..*, and from 'PyDslRep_Environment', the role 'PyDslRep_Environment' has cardinality 0..*.
+An association connects 'PyDslRep_Robot' and 'PyDslRep_Environment'. From 'PyDslRep_Robot', the role 'PyDslRep_Robot' has cardinality 0..*, and from 'PyDslRep_Environment', the role 'PyDslRep_Environment3' has cardinality 0..*.
+An association connects 'PyDslRep_Environment' and 'PyDslRep_MoveCollection'. From 'PyDslRep_Environment', the role 'PyDslRep_Environment5' has cardinality 0..*, and from 'PyDslRep_MoveCollection', the role 'PyDslRep_MoveCollection' has cardinality 0..*.
+An association connects 'PyDslRep_Wheel' and 'PyDslRep_Robot'. From 'PyDslRep_Wheel', the role 'PyDslRep_Wheel' has cardinality 0..*, and from 'PyDslRep_Robot', the role 'PyDslRep_Robot7' has cardinality 0..*.
+An association connects 'PyDslRep_Robot' and 'PyDslRep_MoveCollection'. From 'PyDslRep_Robot', the role 'PyDslRep_Robot10' has cardinality 0..*, and from 'PyDslRep_MoveCollection', the role 'PyDslRep_MoveCollection9' has cardinality 0..*.
+An association connects 'PyDslRep_AbstractDataMove' and 'PyDslRep_MoveCollection'. From 'PyDslRep_AbstractDataMove', the role 'PyDslRep_AbstractDataMove' has cardinality 0..*, and from 'PyDslRep_MoveCollection', the role 'PyDslRep_MoveCollection12' has cardinality 0..*.
+An association connects 'PyDslRep_AbstractMove' and 'PyDslRep_DataMove'. From 'PyDslRep_AbstractMove', the role 'PyDslRep_AbstractMove' has cardinality 0..*, and from 'PyDslRep_DataMove', the role 'PyDslRep_DataMove' has cardinality 0..*.
+An association connects 'PyDslRep_AbstractCrossMove' and 'PyDslRep_DataMove'. From 'PyDslRep_AbstractCrossMove', the role 'PyDslRep_AbstractCrossMove' has cardinality 0..*, and from 'PyDslRep_DataMove', the role 'PyDslRep_DataMove15' has cardinality 0..*.
+An association connects 'PyDslRep_Sensor' and 'PyDslRep_TypeSensor'. From 'PyDslRep_Sensor', the role 'PyDslRep_Sensor' has cardinality 0..*, and from 'PyDslRep_TypeSensor', the role 'PyDslRep_TypeSensor' has cardinality 0..*.

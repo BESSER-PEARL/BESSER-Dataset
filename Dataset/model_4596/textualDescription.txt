@@ -1,0 +1,85 @@
+The domain model 'dot' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'edgeRHS' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_edge_stmt_node' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_attr_stmt' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'dot_attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'dot_stmt' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_edge_stmt_subgraph' represents an important domain concept.
+It does not declare any attributes.
+
+'stmt' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_node_stmt' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dot_edgeRHS' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'dot_subgraph' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dot_a_list' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'dot_edgeRHS_subgraph' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_graphvizmodel' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_attr_list' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_graph' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'strict', which is of type bool; 'name', which is of type str.
+
+'dot_edgeRHS_node' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_node_id' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'edgeop' defines the following possible values: 'directed', 'undirected'.
+The enumeration 'graphtype' defines the following possible values: 'graph', 'digraph'.
+The enumeration 'attributetype' defines the following possible values: 'node', 'edge', 'graph'.
+
+The model also captures inheritance relationships between classes.
+The class 'dot_edge_stmt_node' is a specialization of 'stmt'.
+The class 'dot_edge_stmt_subgraph' is a specialization of 'stmt'.
+The class 'dot_node_stmt' is a specialization of 'stmt'.
+The class 'dot_attribute' is a specialization of 'stmt'.
+The class 'dot_attr_stmt' is a specialization of 'stmt'.
+The class 'dot_subgraph' is a specialization of 'stmt'.
+The class 'dot_edgeRHS_node' is a specialization of 'edgeRHS'.
+The class 'dot_edgeRHS_subgraph' is a specialization of 'edgeRHS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dot_graphvizmodel' and 'dot_graph'. From 'dot_graphvizmodel', the role 'dot_graphvizmodel' has cardinality 0..*, and from 'dot_graph', the role 'dot_graph' has cardinality 0..*.
+An association connects 'dot_graph' and 'dot_stmt'. From 'dot_graph', the role 'dot_graph2' has cardinality 0..*, and from 'dot_stmt', the role 'dot_stmt' has cardinality 0..*.
+An association connects 'dot_edge_stmt_node' and 'dot_node_id'. From 'dot_edge_stmt_node', the role 'dot_edge_stmt_node' has cardinality 0..*, and from 'dot_node_id', the role 'dot_node_id' has cardinality 0..*.
+An association connects 'dot_edge_stmt_node' and 'dot_edgeRHS'. From 'dot_edge_stmt_node', the role 'dot_edge_stmt_node5' has cardinality 0..*, and from 'dot_edgeRHS', the role 'dot_edgeRHS' has cardinality 0..*.
+An association connects 'dot_edge_stmt_node' and 'dot_attr_list'. From 'dot_edge_stmt_node', the role 'dot_edge_stmt_node7' has cardinality 0..*, and from 'dot_attr_list', the role 'dot_attr_list' has cardinality 0..*.
+An association connects 'dot_subgraph' and 'dot_edge_stmt_subgraph'. From 'dot_subgraph', the role 'dot_subgraph' has cardinality 0..*, and from 'dot_edge_stmt_subgraph', the role 'dot_edge_stmt_subgraph' has cardinality 0..*.
+An association connects 'dot_edgeRHS' and 'dot_edge_stmt_subgraph'. From 'dot_edgeRHS', the role 'dot_edgeRHS11' has cardinality 0..*, and from 'dot_edge_stmt_subgraph', the role 'dot_edge_stmt_subgraph10' has cardinality 0..*.
+An association connects 'dot_attr_list' and 'dot_edge_stmt_subgraph'. From 'dot_attr_list', the role 'dot_attr_list14' has cardinality 0..*, and from 'dot_edge_stmt_subgraph', the role 'dot_edge_stmt_subgraph13' has cardinality 0..*.
+An association connects 'dot_attr_list' and 'dot_node_stmt'. From 'dot_attr_list', the role 'dot_attr_list16' has cardinality 0..*, and from 'dot_node_stmt', the role 'dot_node_stmt' has cardinality 0..*.
+An association connects 'dot_attr_stmt' and 'dot_attr_list'. From 'dot_attr_stmt', the role 'dot_attr_stmt' has cardinality 0..*, and from 'dot_attr_list', the role 'dot_attr_list18' has cardinality 0..*.
+An association connects 'dot_a_list' and 'dot_attr_list'. From 'dot_a_list', the role 'dot_a_list' has cardinality 0..*, and from 'dot_attr_list', the role 'dot_attr_list20' has cardinality 0..*.
+An association connects 'dot_subgraph' and 'dot_stmt'. From 'dot_subgraph', the role 'dot_subgraph22' has cardinality 0..*, and from 'dot_stmt', the role 'dot_stmt23' has cardinality 0..*.
+An association connects 'dot_edgeRHS_node' and 'dot_node_id'. From 'dot_edgeRHS_node', the role 'dot_edgeRHS_node' has cardinality 0..*, and from 'dot_node_id', the role 'dot_node_id25' has cardinality 0..*.
+An association connects 'dot_subgraph' and 'dot_edgeRHS_subgraph'. From 'dot_subgraph', the role 'dot_subgraph27' has cardinality 0..*, and from 'dot_edgeRHS_subgraph', the role 'dot_edgeRHS_subgraph' has cardinality 0..*.

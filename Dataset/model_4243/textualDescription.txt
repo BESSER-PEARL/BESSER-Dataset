@@ -1,0 +1,13 @@
+The domain model 'properties' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'properties_Department' represents an important domain concept.
+It does not declare any attributes.
+
+'properties_Employee' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'properties_Employee' and 'properties_Department'. From 'properties_Employee', the role 'properties_Employee' has cardinality 0..*, and from 'properties_Department', the role 'properties_Department' has cardinality 0..*.
+An association connects 'properties_Employee' and 'properties_Department'. From 'properties_Employee', the role 'properties_Employee2' has cardinality 0..*, and from 'properties_Department', the role 'properties_Department3' has cardinality 0..*.

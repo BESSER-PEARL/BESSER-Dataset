@@ -1,0 +1,96 @@
+The domain model 'behaviour' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'behaviour_FieldObject' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_PlaceObject' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Pause' represents an important domain concept.
+It has one attribute: 'duration', which is of type float.
+
+'behaviour_MoveTo' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_While' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'behaviour_Drone' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_MovableObject' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Instruct' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_WaitForMessage' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'timeout', which is of type float.
+
+'behaviour_SendMessage' represents an important domain concept.
+It has one attribute: 'messageType', which is of type str.
+
+'behaviour_Lift' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_PerformAction' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Choice' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Condition' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str; 'operation', which is of type str.
+
+'behaviour_DroneBehaviour' represents an important domain concept.
+It has one attribute: 'canBeInterrupted', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ConditionKind' defines the following possible values: 'EQUALS', 'NOT_EQUALS', 'GREATER_THAN', 'LESSER_THAN'.
+
+The model also captures inheritance relationships between classes.
+The class 'behaviour_DroneBehaviour' is a specialization of 'NamedElement'.
+The class 'behaviour_MoveTo' is a specialization of 'Instruction'.
+The class 'behaviour_Pause' is a specialization of 'Instruction'.
+The class 'behaviour_PerformAction' is a specialization of 'Instruction'.
+The class 'behaviour_Choice' is a specialization of 'Instruction'.
+The class 'behaviour_WaitForMessage' is a specialization of 'Instruction'.
+The class 'behaviour_While' is a specialization of 'Instruction'.
+The class 'behaviour_Instruct' is a specialization of 'Instruction'.
+The class 'behaviour_Lift' is a specialization of 'Instruction'.
+The class 'behaviour_PlaceObject' is a specialization of 'Instruction'.
+The class 'behaviour_SendMessage' is a specialization of 'Instruction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'behaviour_DroneBehaviour' and 'behaviour_Instruction'. From 'behaviour_DroneBehaviour', the role 'behaviour_DroneBehaviour' has cardinality 0..*, and from 'behaviour_Instruction', the role 'behaviour_Instruction' has cardinality 0..*.
+An association connects 'behaviour_DroneBehaviour' and 'behaviour_Drone'. From 'behaviour_DroneBehaviour', the role 'behaviour_DroneBehaviour2' has cardinality 0..*, and from 'behaviour_Drone', the role 'behaviour_Drone' has cardinality 0..*.
+An association connects 'behaviour_FieldObject' and 'behaviour_MoveTo'. From 'behaviour_FieldObject', the role 'behaviour_FieldObject' has cardinality 0..*, and from 'behaviour_MoveTo', the role 'behaviour_MoveTo' has cardinality 0..*.
+An association connects 'behaviour_PerformAction' and 'behaviour_Action'. From 'behaviour_PerformAction', the role 'behaviour_PerformAction' has cardinality 0..*, and from 'behaviour_Action', the role 'behaviour_Action' has cardinality 0..*.
+An association connects 'behaviour_FieldObject' and 'behaviour_PerformAction'. From 'behaviour_FieldObject', the role 'behaviour_FieldObject7' has cardinality 0..*, and from 'behaviour_PerformAction', the role 'behaviour_PerformAction6' has cardinality 0..*.
+An association connects 'behaviour_Choice' and 'behaviour_Condition'. From 'behaviour_Choice', the role 'behaviour_Choice' has cardinality 0..*, and from 'behaviour_Condition', the role 'behaviour_Condition' has cardinality 0..*.
+An association connects 'behaviour_Instruction' and 'behaviour_Choice'. From 'behaviour_Instruction', the role 'behaviour_Instruction11' has cardinality 0..*, and from 'behaviour_Choice', the role 'behaviour_Choice10' has cardinality 0..*.
+An association connects 'behaviour_Instruction' and 'behaviour_Choice'. From 'behaviour_Instruction', the role 'behaviour_Instruction14' has cardinality 0..*, and from 'behaviour_Choice', the role 'behaviour_Choice13' has cardinality 0..*.
+An association connects 'behaviour_FieldObject' and 'behaviour_Condition'. From 'behaviour_FieldObject', the role 'behaviour_FieldObject17' has cardinality 0..*, and from 'behaviour_Condition', the role 'behaviour_Condition16' has cardinality 0..*.
+An association connects 'behaviour_Instruction' and 'behaviour_WaitForMessage'. From 'behaviour_Instruction', the role 'behaviour_Instruction19' has cardinality 0..*, and from 'behaviour_WaitForMessage', the role 'behaviour_WaitForMessage' has cardinality 0..*.
+An association connects 'behaviour_WaitForMessage' and 'behaviour_Instruction'. From 'behaviour_WaitForMessage', the role 'behaviour_WaitForMessage21' has cardinality 0..*, and from 'behaviour_Instruction', the role 'behaviour_Instruction22' has cardinality 0..*.
+An association connects 'behaviour_While' and 'behaviour_Instruction'. From 'behaviour_While', the role 'behaviour_While' has cardinality 0..*, and from 'behaviour_Instruction', the role 'behaviour_Instruction24' has cardinality 0..*.
+An association connects 'behaviour_Condition' and 'behaviour_While'. From 'behaviour_Condition', the role 'behaviour_Condition27' has cardinality 0..*, and from 'behaviour_While', the role 'behaviour_While26' has cardinality 0..*.
+An association connects 'behaviour_Instruction' and 'behaviour_Instruct'. From 'behaviour_Instruction', the role 'behaviour_Instruction29' has cardinality 0..*, and from 'behaviour_Instruct', the role 'behaviour_Instruct' has cardinality 0..*.
+An association connects 'behaviour_Lift' and 'behaviour_MovableObject'. From 'behaviour_Lift', the role 'behaviour_Lift' has cardinality 0..*, and from 'behaviour_MovableObject', the role 'behaviour_MovableObject' has cardinality 0..*.

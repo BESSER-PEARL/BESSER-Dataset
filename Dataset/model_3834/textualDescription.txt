@@ -1,0 +1,17 @@
+The domain model 'database' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'database_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'database_DB' represents an important domain concept.
+It does not declare any attributes.
+
+'database_Table' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'database_Table' and 'database_DB'. From 'database_Table', the role 'database_Table' has cardinality 0..*, and from 'database_DB', the role 'database_DB' has cardinality 0..*.
+An association connects 'database_Column' and 'database_Table'. From 'database_Column', the role 'database_Column' has cardinality 0..*, and from 'database_Table', the role 'database_Table2' has cardinality 0..*.
+An association connects 'database_Table' and 'database_Column'. From 'database_Table', the role 'database_Table5' has cardinality 0..*, and from 'database_Column', the role 'database_Column4' has cardinality 0..*.

@@ -1,0 +1,44 @@
+The domain model 'db' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'db_CriticsReviewType' represents an important domain concept.
+It has the following attributes: 'rating', which is of type str; 'reviewedBy', which is of type str.
+
+'db_MovieType' represents an important domain concept.
+It has the following attributes: 'iD', which is of type str; 'title', which is of type str; 'any', which is of type str; 'actors', which is of type str; 'genre', which is of type str; 'criticsReviewGroup', which is of type str; 'director', which is of type str; 'summary', which is of type str.
+
+'db_CustomerReviewType' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'db_DocumentRoot' represents an important domain concept.
+It has the following attributes: 'specialFeatures', which is of type str; 'mixed', which is of type str; 'language', which is of type str.
+
+'db_CustomerType' represents an important domain concept.
+It does not declare any attributes.
+
+'CriticsReviewType' represents an important domain concept.
+It does not declare any attributes.
+
+'db_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'db_MovieDBType' represents an important domain concept.
+It has the following attributes: 'movieDBFeatureMap', which is of type str; 'comment', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'GenreTypes' defines the following possible values: 'Classics', 'Horror', 'Documentary', 'NewRelease', 'Drama', 'SciFi', 'Comedy', 'Romance', 'Thriller', 'Family', 'Action', 'Animation'.
+
+The model also captures inheritance relationships between classes.
+The class 'db_CustomerReviewType' is a specialization of 'CriticsReviewType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'db_DocumentRoot' and 'db_EStringToStringMapEntry'. From 'db_DocumentRoot', the role 'db_DocumentRoot' has cardinality 0..*, and from 'db_EStringToStringMapEntry', the role 'db_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'db_EStringToStringMapEntry' and 'db_DocumentRoot'. From 'db_EStringToStringMapEntry', the role 'db_EStringToStringMapEntry3' has cardinality 0..*, and from 'db_DocumentRoot', the role 'db_DocumentRoot2' has cardinality 0..*.
+An association connects 'db_DocumentRoot' and 'db_CustomerType'. From 'db_DocumentRoot', the role 'db_DocumentRoot5' has cardinality 0..*, and from 'db_CustomerType', the role 'db_CustomerType' has cardinality 0..*.
+An association connects 'db_DocumentRoot' and 'db_CriticsReviewType'. From 'db_DocumentRoot', the role 'db_DocumentRoot7' has cardinality 0..*, and from 'db_CriticsReviewType', the role 'db_CriticsReviewType' has cardinality 0..*.
+An association connects 'db_CustomerReviewType' and 'db_DocumentRoot'. From 'db_CustomerReviewType', the role 'db_CustomerReviewType' has cardinality 0..*, and from 'db_DocumentRoot', the role 'db_DocumentRoot9' has cardinality 0..*.
+An association connects 'db_MovieDBType' and 'db_DocumentRoot'. From 'db_MovieDBType', the role 'db_MovieDBType' has cardinality 0..*, and from 'db_DocumentRoot', the role 'db_DocumentRoot11' has cardinality 0..*.
+An association connects 'db_MovieDBType' and 'db_MovieType'. From 'db_MovieDBType', the role 'db_MovieDBType13' has cardinality 0..*, and from 'db_MovieType', the role 'db_MovieType' has cardinality 0..*.
+An association connects 'db_MovieType' and 'db_CriticsReviewType'. From 'db_MovieType', the role 'db_MovieType15' has cardinality 0..*, and from 'db_CriticsReviewType', the role 'db_CriticsReviewType16' has cardinality 0..*.
+An association connects 'db_CustomerType' and 'db_MovieType'. From 'db_CustomerType', the role 'db_CustomerType19' has cardinality 0..*, and from 'db_MovieType', the role 'db_MovieType18' has cardinality 0..*.

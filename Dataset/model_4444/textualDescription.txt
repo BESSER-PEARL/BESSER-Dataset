@@ -1,0 +1,82 @@
+The domain model 'arduinoML' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoML_State' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoML_TransitionMode' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoML_Digital' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoML_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'arduinoML_Transition' represents an important domain concept.
+It has the following attributes: 'a_values', which is of type int; 'd_values', which is of type str; 'comp', which is of type str; 'unit', which is of type str; 'time', which is of type int.
+
+'arduinoML_App' represents an important domain concept.
+It has one attribute: 'monitoring', which is of type bool.
+
+'arduinoML_Actuator' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoML_Brick' represents an important domain concept.
+It has one attribute: 'pin', which is of type int.
+
+'arduinoML_Mode' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoML_Action' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'arduinoML_TransitionState' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Brick' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoML_Analog' represents an important domain concept.
+It has one attribute: 'debug', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Compare' defines the following possible values: 'einf', 'inf', 'equal', 'esup', 'sup'.
+The enumeration 'Signal' defines the following possible values: 'LOW', 'HIGH'.
+The enumeration 'Time_unit' defines the following possible values: 'ms', 's', 'min'.
+
+The model also captures inheritance relationships between classes.
+The class 'arduinoML_Brick' is a specialization of 'NamedElement'.
+The class 'arduinoML_Actuator' is a specialization of 'Brick'.
+The class 'arduinoML_Digital' is a specialization of 'Brick'.
+The class 'arduinoML_App' is a specialization of 'NamedElement'.
+The class 'arduinoML_State' is a specialization of 'NamedElement'.
+The class 'arduinoML_Analog' is a specialization of 'Brick'.
+The class 'arduinoML_Mode' is a specialization of 'NamedElement'.
+The class 'arduinoML_TransitionState' is a specialization of 'Transition'.
+The class 'arduinoML_TransitionMode' is a specialization of 'Transition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'arduinoML_App' and 'arduinoML_Mode'. From 'arduinoML_App', the role 'arduinoML_App' has cardinality 0..*, and from 'arduinoML_Mode', the role 'arduinoML_Mode' has cardinality 0..*.
+An association connects 'arduinoML_Mode' and 'arduinoML_App'. From 'arduinoML_Mode', the role 'arduinoML_Mode3' has cardinality 0..*, and from 'arduinoML_App', the role 'arduinoML_App2' has cardinality 0..*.
+An association connects 'arduinoML_App' and 'arduinoML_Brick'. From 'arduinoML_App', the role 'arduinoML_App5' has cardinality 0..*, and from 'arduinoML_Brick', the role 'arduinoML_Brick' has cardinality 0..*.
+An association connects 'arduinoML_Action' and 'arduinoML_State'. From 'arduinoML_Action', the role 'arduinoML_Action' has cardinality 0..*, and from 'arduinoML_State', the role 'arduinoML_State' has cardinality 0..*.
+An association connects 'arduinoML_TransitionState' and 'arduinoML_State'. From 'arduinoML_TransitionState', the role 'TransitionState' has cardinality 0..*, and from 'arduinoML_State', the role 'state' has cardinality 0..*.
+An association connects 'arduinoML_Actuator' and 'arduinoML_Action'. From 'arduinoML_Actuator', the role 'arduinoML_Actuator' has cardinality 0..*, and from 'arduinoML_Action', the role 'arduinoML_Action9' has cardinality 0..*.
+An association connects 'arduinoML_Transition' and 'arduinoML_Digital'. From 'arduinoML_Transition', the role 'arduinoML_Transition' has cardinality 0..*, and from 'arduinoML_Digital', the role 'arduinoML_Digital' has cardinality 0..*.
+An association connects 'arduinoML_Analog' and 'arduinoML_Transition'. From 'arduinoML_Analog', the role 'arduinoML_Analog' has cardinality 0..*, and from 'arduinoML_Transition', the role 'arduinoML_Transition12' has cardinality 0..*.
+An association connects 'arduinoML_Brick' and 'arduinoML_Mode'. From 'arduinoML_Brick', the role 'arduinoML_Brick15' has cardinality 0..*, and from 'arduinoML_Mode', the role 'arduinoML_Mode14' has cardinality 0..*.
+An association connects 'arduinoML_Mode' and 'arduinoML_State'. From 'arduinoML_Mode', the role 'arduinoML_Mode17' has cardinality 0..*, and from 'arduinoML_State', the role 'arduinoML_State18' has cardinality 0..*.
+An association connects 'arduinoML_Mode' and 'arduinoML_State'. From 'arduinoML_Mode', the role 'arduinoML_Mode20' has cardinality 0..*, and from 'arduinoML_State', the role 'arduinoML_State21' has cardinality 0..*.
+An association connects 'arduinoML_TransitionMode' and 'arduinoML_Mode'. From 'arduinoML_TransitionMode', the role 'TransitionMode' has cardinality 0..*, and from 'arduinoML_Mode', the role 'mode' has cardinality 0..*.
+An association connects 'arduinoML_TransitionState' and 'arduinoML_State'. From 'arduinoML_TransitionState', the role 'arduinoML_TransitionState' has cardinality 0..*, and from 'arduinoML_State', the role 'arduinoML_State24' has cardinality 0..*.
+An association connects 'arduinoML_State' and 'arduinoML_TransitionState'. From 'arduinoML_State', the role 'State' has cardinality 0..*, and from 'arduinoML_TransitionState', the role 'transitions_state' has cardinality 0..*.
+An association connects 'arduinoML_Mode' and 'arduinoML_TransitionMode'. From 'arduinoML_Mode', the role 'Mode' has cardinality 0..*, and from 'arduinoML_TransitionMode', the role 'transitions_mode' has cardinality 0..*.
+An association connects 'arduinoML_Mode' and 'arduinoML_TransitionMode'. From 'arduinoML_Mode', the role 'arduinoML_Mode28' has cardinality 0..*, and from 'arduinoML_TransitionMode', the role 'arduinoML_TransitionMode' has cardinality 0..*.

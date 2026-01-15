@@ -1,0 +1,32 @@
+The domain model 'RDBMS' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'FKey' represents an important domain concept.
+It does not declare any attributes.
+
+'RDBMS_Column' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'RDBMS_Table' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'tipo', which is of type str.
+
+'RDBMS_FKey' represents an important domain concept.
+It does not declare any attributes.
+
+'Table' represents an important domain concept.
+It does not declare any attributes.
+
+'Column' represents an important domain concept.
+It does not declare any attributes.
+
+'RDBMS_Schema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'RDBMS_Table' and 'FKey'. From 'RDBMS_Table', the role 'RDBMS_Table' has cardinality 0..*, and from 'FKey', the role 'FKey' has cardinality 0..*.
+An association connects 'RDBMS_Table' and 'Column'. From 'RDBMS_Table', the role 'RDBMS_Table2' has cardinality 0..*, and from 'Column', the role 'Column' has cardinality 0..*.
+An association connects 'Column' and 'RDBMS_Table'. From 'Column', the role 'Column5' has cardinality 0..*, and from 'RDBMS_Table', the role 'RDBMS_Table4' has cardinality 0..*.
+An association connects 'RDBMS_FKey' and 'Table'. From 'RDBMS_FKey', the role 'RDBMS_FKey' has cardinality 0..*, and from 'Table', the role 'Table' has cardinality 0..*.
+An association connects 'Column' and 'RDBMS_FKey'. From 'Column', the role 'Column9' has cardinality 0..*, and from 'RDBMS_FKey', the role 'RDBMS_FKey8' has cardinality 0..*.
+An association connects 'Table' and 'RDBMS_Schema'. From 'Table', the role 'Table11' has cardinality 0..*, and from 'RDBMS_Schema', the role 'RDBMS_Schema' has cardinality 0..*.

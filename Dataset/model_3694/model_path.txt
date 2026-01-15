@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/sunwuliang/SlicingProject2.0/ClassModelSlicing/slices/SlicedUML2WithIDInsMATLABonlyBinaryAssociationCanBeAggregations.ecore

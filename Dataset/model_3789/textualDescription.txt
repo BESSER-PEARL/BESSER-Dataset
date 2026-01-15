@@ -1,0 +1,64 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'model_TraceStackframe' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TestCaseElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TestProblem' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TestContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'TraceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Metadata' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'TestElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TestContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TestProblem' represents an important domain concept.
+It has the following attributes: 'message', which is of type str; 'problemType', which is of type str.
+
+'model_ComparisonProblem' represents an important domain concept.
+It has the following attributes: 'actual', which is of type str; 'expected', which is of type str.
+
+'model_TestElement' represents an important domain concept.
+It has the following attributes: 'progressState', which is of type str; 'endTimestamp', which is of type str; 'testState', which is of type str; 'elementUnderTest', which is of type str; 'name', which is of type str; 'startTimestamp', which is of type str; 'target', which is of type str; 'description', which is of type str.
+
+'model_TestRoot' represents an important domain concept.
+It has one attribute: 'testRunner', which is of type str.
+
+'model_TraceElement' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'model_TraceException' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ProblemType' defines the following possible values: 'ASSERTION', 'ERROR', 'ASSUMPTION'.
+The enumeration 'TestState' defines the following possible values: 'PASS', 'IGNORED', 'FAILURE', 'NOT_RUN', 'ERROR'.
+The enumeration 'ProgressState' defines the following possible values: 'RUNNING', 'NOT_STARTED', 'STOPPED', 'COMPLETED'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_TestContainer' is a specialization of 'TestElement'.
+The class 'model_TestCaseElement' is a specialization of 'TestElement'.
+The class 'model_TestRoot' is a specialization of 'TestContainer'.
+The class 'model_ComparisonProblem' is a specialization of 'TestProblem'.
+The class 'model_TraceException' is a specialization of 'TraceElement'.
+The class 'model_TraceStackframe' is a specialization of 'TraceElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_TestContainer' and 'model_TestElement'. From 'model_TestContainer', the role 'TestContainer' has cardinality 0..*, and from 'model_TestElement', the role 'children' has cardinality 0..*.
+An association connects 'model_TestElement' and 'model_TestProblem'. From 'model_TestElement', the role 'model_TestElement' has cardinality 0..*, and from 'model_TestProblem', the role 'model_TestProblem' has cardinality 0..*.
+An association connects 'model_TestContainer' and 'model_TestElement'. From 'model_TestContainer', the role 'parent' has cardinality 0..*, and from 'model_TestElement', the role 'TestElement' has cardinality 0..*.
+An association connects 'model_TraceElement' and 'model_TestProblem'. From 'model_TraceElement', the role 'model_TraceElement' has cardinality 0..*, and from 'model_TestProblem', the role 'model_TestProblem4' has cardinality 0..*.

@@ -1,0 +1,16 @@
+The domain model 'company' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'company_Person' represents an important domain concept.
+It has the following attributes: 'age', which is of type int; 'gender', which is of type str; 'name', which is of type str; 'isUnemployed', which is of type bool; 'lastname', which is of type str; 'salary', which is of type int.
+
+'company_Company' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'numberOfManager', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Gender' defines the following possible values: 'female', 'male'.
+
+Relationships between classes are modeled using associations.
+An association connects 'company_Person' and 'company_Company'. From 'company_Person', the role 'manager' has cardinality 0..*, and from 'company_Company', the role 'Company' has cardinality 0..*.
+An association connects 'company_Person' and 'company_Company'. From 'company_Person', the role 'Person' has cardinality 0..*, and from 'company_Company', the role 'managerCompanies' has cardinality 0..*.

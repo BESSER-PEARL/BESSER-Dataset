@@ -1,0 +1,135 @@
+The domain model 'eel' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'eel_Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'MeasureBinaryProductOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'eel_Sample' represents an important domain concept.
+It does not declare any attributes.
+
+'MeasureValue' represents an important domain concept.
+It does not declare any attributes.
+
+'eel_Variable' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str; 'vibility', which is of type str.
+
+'MeasurementUncertaintyInformation' represents an important domain concept.
+It does not declare any attributes.
+
+'eel_RealTimeDuration' represents an important domain concept.
+It does not declare any attributes.
+
+'eel_Integral' represents an important domain concept.
+It has one attribute: 'function', which is of type str.
+
+'eel_MeasureBinaryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'eel_MeasureCast' represents an important domain concept.
+It does not declare any attributes.
+
+'eel_TypedMeasure' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'eel_MeasureBinaryProductOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'eel_Measure' represents an important domain concept.
+It has the following attributes: 'targetOperation', which is of type str; 'name', which is of type str; 'subname', which is of type str; 'targetClass', which is of type str.
+
+'MeasureUnboundOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'eel_MeasureOCL' represents an important domain concept.
+It has one attribute: 'oclQuery', which is of type str.
+
+'eel_NormalDistribution' represents an important domain concept.
+It has the following attributes: 'meanValue', which is of type str; 'standardDeviation', which is of type str.
+
+'eel_Sampling' represents an important domain concept.
+It has one attribute: 'measurementProcedure', which is of type str.
+
+'TypedMeasure' represents an important domain concept.
+It does not declare any attributes.
+
+'eel_MeasureAttribute' represents an important domain concept.
+It has one attribute: 'att', which is of type str.
+
+'eel_MeasurementUncertainty' represents an important domain concept.
+It has one attribute: 'standardUncertainty', which is of type str.
+
+'eel_MeasurementUncertaintyInformation' represents an important domain concept.
+It does not declare any attributes.
+
+'eel_MeasureUnboundOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'eel_Platform' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eel_PowerComputation' represents an important domain concept.
+It does not declare any attributes.
+
+'eel_MeasureUnboundSumOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'eel_EnergyComputation' represents an important domain concept.
+It does not declare any attributes.
+
+'eel_MeasureUnboundProductOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'Measure' represents an important domain concept.
+It does not declare any attributes.
+
+'eel_MeasureBinarySumOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'eel_MeasureValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'MeasureBinaryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Type' defines the following possible values: 'Duration', 'Power', 'Voltage', 'Current', 'Energy', 'Frequency', 'Scalar'.
+The enumeration 'Visibility' defines the following possible values: 'GLOBAL', 'LOCAL'.
+
+The model also captures inheritance relationships between classes.
+The class 'eel_TypedMeasure' is a specialization of 'Measure'.
+The class 'eel_MeasureValue' is a specialization of 'TypedMeasure'.
+The class 'eel_MeasureOCL' is a specialization of 'MeasureValue'.
+The class 'eel_MeasureAttribute' is a specialization of 'MeasureValue'.
+The class 'eel_MeasureCast' is a specialization of 'TypedMeasure'.
+The class 'eel_MeasureBinaryOperation' is a specialization of 'TypedMeasure'.
+The class 'eel_MeasureBinaryProductOperation' is a specialization of 'MeasureBinaryOperation'.
+The class 'eel_MeasureBinarySumOperation' is a specialization of 'MeasureBinaryOperation'.
+The class 'eel_EnergyComputation' is a specialization of 'MeasureBinaryProductOperation'.
+The class 'eel_PowerComputation' is a specialization of 'MeasureBinaryProductOperation'.
+The class 'eel_RealTimeDuration' is a specialization of 'MeasureValue'.
+The class 'eel_MeasureUnboundOperation' is a specialization of 'TypedMeasure'.
+The class 'eel_MeasureUnboundSumOperation' is a specialization of 'MeasureUnboundOperation'.
+The class 'eel_MeasureUnboundProductOperation' is a specialization of 'MeasureUnboundOperation'.
+The class 'eel_NormalDistribution' is a specialization of 'MeasurementUncertaintyInformation'.
+The class 'eel_Interval' is a specialization of 'MeasurementUncertaintyInformation'.
+The class 'eel_Sampling' is a specialization of 'MeasurementUncertaintyInformation'.
+The class 'eel_Integral' is a specialization of 'MeasurementUncertaintyInformation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'eel_Platform' and 'eel_Variable'. From 'eel_Platform', the role 'eel_Platform' has cardinality 0..*, and from 'eel_Variable', the role 'eel_Variable' has cardinality 0..*.
+An association connects 'eel_Platform' and 'eel_Measure'. From 'eel_Platform', the role 'eel_Platform2' has cardinality 0..*, and from 'eel_Measure', the role 'eel_Measure' has cardinality 0..*.
+An association connects 'eel_Measure' and 'eel_MeasurementUncertainty'. From 'eel_Measure', the role 'eel_Measure4' has cardinality 0..*, and from 'eel_MeasurementUncertainty', the role 'eel_MeasurementUncertainty' has cardinality 0..*.
+An association connects 'eel_Measure' and 'eel_MeasureCast'. From 'eel_Measure', the role 'eel_Measure6' has cardinality 0..*, and from 'eel_MeasureCast', the role 'eel_MeasureCast' has cardinality 0..*.
+An association connects 'eel_Measure' and 'eel_MeasureBinaryOperation'. From 'eel_Measure', the role 'eel_Measure8' has cardinality 0..*, and from 'eel_MeasureBinaryOperation', the role 'eel_MeasureBinaryOperation' has cardinality 0..*.
+An association connects 'eel_Measure' and 'eel_MeasureBinaryOperation'. From 'eel_Measure', the role 'eel_Measure11' has cardinality 0..*, and from 'eel_MeasureBinaryOperation', the role 'eel_MeasureBinaryOperation10' has cardinality 0..*.
+An association connects 'eel_Measure' and 'eel_MeasureUnboundOperation'. From 'eel_Measure', the role 'eel_Measure13' has cardinality 0..*, and from 'eel_MeasureUnboundOperation', the role 'eel_MeasureUnboundOperation' has cardinality 0..*.
+An association connects 'eel_MeasurementUncertainty' and 'eel_MeasurementUncertaintyInformation'. From 'eel_MeasurementUncertainty', the role 'eel_MeasurementUncertainty15' has cardinality 0..*, and from 'eel_MeasurementUncertaintyInformation', the role 'eel_MeasurementUncertaintyInformation' has cardinality 0..*.
+An association connects 'eel_Interval' and 'eel_Measure'. From 'eel_Interval', the role 'eel_Interval' has cardinality 0..*, and from 'eel_Measure', the role 'eel_Measure17' has cardinality 0..*.
+An association connects 'eel_Interval' and 'eel_Measure'. From 'eel_Interval', the role 'eel_Interval19' has cardinality 0..*, and from 'eel_Measure', the role 'eel_Measure20' has cardinality 0..*.
+An association connects 'eel_Sampling' and 'eel_Sample'. From 'eel_Sampling', the role 'eel_Sampling' has cardinality 0..*, and from 'eel_Sample', the role 'eel_Sample' has cardinality 0..*.
+An association connects 'eel_Interval' and 'eel_Integral'. From 'eel_Interval', the role 'eel_Interval23' has cardinality 0..*, and from 'eel_Integral', the role 'eel_Integral' has cardinality 0..*.
+An association connects 'eel_Sample' and 'eel_Measure'. From 'eel_Sample', the role 'eel_Sample25' has cardinality 0..*, and from 'eel_Measure', the role 'eel_Measure26' has cardinality 0..*.

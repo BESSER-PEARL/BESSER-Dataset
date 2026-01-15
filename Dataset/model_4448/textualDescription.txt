@@ -1,0 +1,18 @@
+The domain model 'iot' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'iot_Board' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Arduino' represents an important domain concept.
+It has the following attributes: 'model', which is of type str; 'pins', which is of type int.
+
+'iot_Motor' represents an important domain concept.
+It has the following attributes: 'pins', which is of type int; 'library', which is of type str; 'degrees', which is of type str; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'iot_Arduino' and 'iot_Board'. From 'iot_Arduino', the role 'iot_Arduino' has cardinality 0..*, and from 'iot_Board', the role 'iot_Board' has cardinality 0..*.
+An association connects 'iot_Motor' and 'iot_Board'. From 'iot_Motor', the role 'iot_Motor' has cardinality 0..*, and from 'iot_Board', the role 'iot_Board2' has cardinality 0..*.
+An association connects 'iot_Motor' and 'iot_Arduino'. From 'iot_Motor', the role 'iot_Motor5' has cardinality 0..*, and from 'iot_Arduino', the role 'iot_Arduino4' has cardinality 0..*.
+An association connects 'iot_Motor' and 'iot_Motor'. From 'iot_Motor', the role 'iot_Motor6' has cardinality 0..*, and from 'iot_Motor', the role 'iot_Motor8' has cardinality 0..*.

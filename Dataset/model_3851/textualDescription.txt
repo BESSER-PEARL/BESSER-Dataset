@@ -1,0 +1,84 @@
+The domain model 'dDL' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'dDL_Comment' represents an important domain concept.
+It has the following attributes: 'columnId', which is of type str; 'string', which is of type str.
+
+'dDL_Column' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'number', which is of type int.
+
+'dDL_Colname' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dDL_TYPE' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'dDL_Tabname' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'basename', which is of type str.
+
+'dDL_Primary_key' represents an important domain concept.
+It does not declare any attributes.
+
+'dDL_Key' represents an important domain concept.
+It does not declare any attributes.
+
+'dDL_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'Key' represents an important domain concept.
+It does not declare any attributes.
+
+'dDL_Data_definition' represents an important domain concept.
+It does not declare any attributes.
+
+'dDL_Alter_table' represents an important domain concept.
+It has the following attributes: 'add', which is of type str; 'enable', which is of type str; 'id', which is of type str.
+
+'dDL_ISNULL' represents an important domain concept.
+It has the following attributes: 'null', which is of type bool; 'nonNull', which is of type bool.
+
+'dDL_Unique_key' represents an important domain concept.
+It does not declare any attributes.
+
+'dDL_Sequence_options' represents an important domain concept.
+It has the following attributes: 'nominvalue', which is of type str; 'increment', which is of type str; 'nomaxvalue', which is of type str; 'start', which is of type str; 'nocache', which is of type str; 'nocycle', which is of type str; 'order', which is of type str; 'noorder', which is of type str; 'maxvalue', which is of type str; 'cache', which is of type str; 'minvalue', which is of type str; 'cycle', which is of type str.
+
+'dDL_Foreign_key' represents an important domain concept.
+It does not declare any attributes.
+
+'dDL_Create_sequence' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dDL_Constraint' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dDL_Create_table' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'dDL_Create_table' is a specialization of 'Definition'.
+The class 'dDL_Alter_table' is a specialization of 'Definition'.
+The class 'dDL_Comment' is a specialization of 'Definition'.
+The class 'dDL_Create_sequence' is a specialization of 'Definition'.
+The class 'dDL_Primary_key' is a specialization of 'Key'.
+The class 'dDL_Unique_key' is a specialization of 'Key'.
+The class 'dDL_Foreign_key' is a specialization of 'Key'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dDL_Definition' and 'dDL_Data_definition'. From 'dDL_Definition', the role 'dDL_Definition' has cardinality 0..*, and from 'dDL_Data_definition', the role 'dDL_Data_definition' has cardinality 0..*.
+An association connects 'dDL_Create_table' and 'dDL_Column'. From 'dDL_Create_table', the role 'dDL_Create_table' has cardinality 0..*, and from 'dDL_Column', the role 'dDL_Column' has cardinality 0..*.
+An association connects 'dDL_Create_table' and 'dDL_Constraint'. From 'dDL_Create_table', the role 'dDL_Create_table3' has cardinality 0..*, and from 'dDL_Constraint', the role 'dDL_Constraint' has cardinality 0..*.
+An association connects 'dDL_TYPE' and 'dDL_Column'. From 'dDL_TYPE', the role 'dDL_TYPE' has cardinality 0..*, and from 'dDL_Column', the role 'dDL_Column5' has cardinality 0..*.
+An association connects 'dDL_ISNULL' and 'dDL_Column'. From 'dDL_ISNULL', the role 'dDL_ISNULL' has cardinality 0..*, and from 'dDL_Column', the role 'dDL_Column7' has cardinality 0..*.
+An association connects 'dDL_Alter_table' and 'dDL_Tabname'. From 'dDL_Alter_table', the role 'dDL_Alter_table' has cardinality 0..*, and from 'dDL_Tabname', the role 'dDL_Tabname' has cardinality 0..*.
+An association connects 'dDL_Alter_table' and 'dDL_Constraint'. From 'dDL_Alter_table', the role 'dDL_Alter_table10' has cardinality 0..*, and from 'dDL_Constraint', the role 'dDL_Constraint11' has cardinality 0..*.
+An association connects 'dDL_Comment' and 'dDL_Tabname'. From 'dDL_Comment', the role 'dDL_Comment' has cardinality 0..*, and from 'dDL_Tabname', the role 'dDL_Tabname13' has cardinality 0..*.
+An association connects 'dDL_Comment' and 'dDL_Colname'. From 'dDL_Comment', the role 'dDL_Comment15' has cardinality 0..*, and from 'dDL_Colname', the role 'dDL_Colname' has cardinality 0..*.
+An association connects 'dDL_Sequence_options' and 'dDL_Create_sequence'. From 'dDL_Sequence_options', the role 'dDL_Sequence_options' has cardinality 0..*, and from 'dDL_Create_sequence', the role 'dDL_Create_sequence' has cardinality 0..*.
+An association connects 'dDL_Key' and 'dDL_Constraint'. From 'dDL_Key', the role 'dDL_Key' has cardinality 0..*, and from 'dDL_Constraint', the role 'dDL_Constraint18' has cardinality 0..*.
+An association connects 'dDL_Colname' and 'dDL_Key'. From 'dDL_Colname', the role 'dDL_Colname21' has cardinality 0..*, and from 'dDL_Key', the role 'dDL_Key20' has cardinality 0..*.
+An association connects 'dDL_Tabname' and 'dDL_Foreign_key'. From 'dDL_Tabname', the role 'dDL_Tabname23' has cardinality 0..*, and from 'dDL_Foreign_key', the role 'dDL_Foreign_key' has cardinality 0..*.

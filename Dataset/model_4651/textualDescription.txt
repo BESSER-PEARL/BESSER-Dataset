@@ -1,0 +1,59 @@
+The domain model 'di' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'di_Point' represents an important domain concept.
+It does not declare any attributes.
+
+'Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Style' represents an important domain concept.
+It has the following attributes: 'fontStrikeThrough', which is of type str; 'fillOpacity', which is of type str; 'strokeWidth', which is of type str; 'fontUnderline', which is of type str; 'fontSize', which is of type str; 'fontBold', which is of type str; 'fontItalic', which is of type str; 'strokeOpacity', which is of type str; 'fontName', which is of type str; 'strokeDashLength', which is of type str.
+
+'di_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Bounds' represents an important domain concept.
+It does not declare any attributes.
+
+'di_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Color' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Fill' represents an important domain concept.
+It does not declare any attributes.
+
+'di_DiagramElement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'di_Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Diagram' represents an important domain concept.
+It has the following attributes: 'resolution', which is of type str; 'documentation', which is of type str; 'name', which is of type str.
+
+'DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'di_Edge' is a specialization of 'DiagramElement'.
+The class 'di_Diagram' is a specialization of 'Shape'.
+The class 'di_Shape' is a specialization of 'DiagramElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'di_DiagramElement' and 'di_DiagramElement'. From 'di_DiagramElement', the role 'DiagramElement' has cardinality 0..*, and from 'di_DiagramElement', the role 'ownedElement' has cardinality 0..*.
+An association connects 'di_DiagramElement' and 'di_DiagramElement'. From 'di_DiagramElement', the role 'owningElement' has cardinality 0..*, and from 'di_DiagramElement', the role 'DiagramElement4' has cardinality 0..*.
+An association connects 'di_DiagramElement' and 'di_Style'. From 'di_DiagramElement', the role 'di_DiagramElement' has cardinality 0..*, and from 'di_Style', the role 'di_Style' has cardinality 0..*.
+An association connects 'di_Style' and 'di_DiagramElement'. From 'di_Style', the role 'di_Style8' has cardinality 0..*, and from 'di_DiagramElement', the role 'di_DiagramElement7' has cardinality 0..*.
+An association connects 'di_EObject' and 'di_DiagramElement'. From 'di_EObject', the role 'di_EObject' has cardinality 0..*, and from 'di_DiagramElement', the role 'di_DiagramElement10' has cardinality 0..*.
+An association connects 'di_DiagramElement' and 'di_Edge'. From 'di_DiagramElement', the role 'di_DiagramElement12' has cardinality 0..*, and from 'di_Edge', the role 'di_Edge' has cardinality 0..*.
+An association connects 'di_DiagramElement' and 'di_Edge'. From 'di_DiagramElement', the role 'di_DiagramElement15' has cardinality 0..*, and from 'di_Edge', the role 'di_Edge14' has cardinality 0..*.
+An association connects 'di_Point' and 'di_Edge'. From 'di_Point', the role 'di_Point' has cardinality 0..*, and from 'di_Edge', the role 'di_Edge17' has cardinality 0..*.
+An association connects 'di_Bounds' and 'di_Shape'. From 'di_Bounds', the role 'di_Bounds' has cardinality 0..*, and from 'di_Shape', the role 'di_Shape' has cardinality 0..*.
+An association connects 'di_Fill' and 'di_Style'. From 'di_Fill', the role 'di_Fill' has cardinality 0..*, and from 'di_Style', the role 'di_Style20' has cardinality 0..*.
+An association connects 'di_Color' and 'di_Style'. From 'di_Color', the role 'di_Color' has cardinality 0..*, and from 'di_Style', the role 'di_Style22' has cardinality 0..*.
+An association connects 'di_Style' and 'di_Color'. From 'di_Style', the role 'di_Style24' has cardinality 0..*, and from 'di_Color', the role 'di_Color25' has cardinality 0..*.
+An association connects 'di_Color' and 'di_Style'. From 'di_Color', the role 'di_Color28' has cardinality 0..*, and from 'di_Style', the role 'di_Style27' has cardinality 0..*.

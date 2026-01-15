@@ -1,0 +1,140 @@
+The domain model 'arduino' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'arduino_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_While' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_ModuleSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_PushButton' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_If' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_OutputModule' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_WaitFor' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Board' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Sketch' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_BinaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Control' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Led' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_UnaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ModuleSet' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'arduino_Project' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_ModuleGet' represents an important domain concept.
+It does not declare any attributes.
+
+'InputModule' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Module' represents an important domain concept.
+It has one attribute: 'level', which is of type str.
+
+'arduino_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Control' represents an important domain concept.
+It does not declare any attributes.
+
+'OutputModule' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Constant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'arduino_Delay' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'arduino_SetLed' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_InputModule' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'UnaryOperatorKind' defines the following possible values: 'neg', 'minus'.
+The enumeration 'BinaryOperatorKind' defines the following possible values: 'le', 'mod', 'min', 'div', 'ge', 'gt', 'neq', 'mul', 'sub', 'lt', 'add', 'eq', 'max'.
+
+The model also captures inheritance relationships between classes.
+The class 'arduino_Project' is a specialization of 'NamedElement'.
+The class 'arduino_Board' is a specialization of 'NamedElement'.
+The class 'arduino_Module' is a specialization of 'NamedElement'.
+The class 'arduino_OutputModule' is a specialization of 'Module'.
+The class 'arduino_Led' is a specialization of 'OutputModule'.
+The class 'arduino_InputModule' is a specialization of 'Module'.
+The class 'arduino_PushButton' is a specialization of 'InputModule'.
+The class 'arduino_Sketch' is a specialization of 'NamedElement'.
+The class 'arduino_Control' is a specialization of 'Instruction'.
+The class 'arduino_If' is a specialization of 'Control'.
+The class 'arduino_While' is a specialization of 'Control'.
+The class 'arduino_ModuleSet' is a specialization of 'Instruction'.
+The class 'arduino_SetLed' is a specialization of 'ModuleSet'.
+The class 'arduino_Delay' is a specialization of 'Instruction'.
+The class 'arduino_WaitFor' is a specialization of 'Instruction'.
+The class 'arduino_Constant' is a specialization of 'Expression'.
+The class 'arduino_UnaryExpression' is a specialization of 'Expression'.
+The class 'arduino_BinaryExpression' is a specialization of 'Expression'.
+The class 'arduino_ModuleGet' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'arduino_Board' and 'arduino_Project'. From 'arduino_Board', the role 'arduino_Board' has cardinality 0..*, and from 'arduino_Project', the role 'arduino_Project' has cardinality 0..*.
+An association connects 'arduino_Project' and 'arduino_Sketch'. From 'arduino_Project', the role 'arduino_Project2' has cardinality 0..*, and from 'arduino_Sketch', the role 'arduino_Sketch' has cardinality 0..*.
+An association connects 'arduino_Module' and 'arduino_Board'. From 'arduino_Module', the role 'arduino_Module' has cardinality 0..*, and from 'arduino_Board', the role 'arduino_Board4' has cardinality 0..*.
+An association connects 'arduino_Block' and 'arduino_Sketch'. From 'arduino_Block', the role 'arduino_Block' has cardinality 0..*, and from 'arduino_Sketch', the role 'arduino_Sketch6' has cardinality 0..*.
+An association connects 'arduino_Instruction' and 'arduino_Block'. From 'arduino_Instruction', the role 'arduino_Instruction' has cardinality 0..*, and from 'arduino_Block', the role 'arduino_Block8' has cardinality 0..*.
+An association connects 'arduino_Control' and 'arduino_Block'. From 'arduino_Control', the role 'arduino_Control' has cardinality 0..*, and from 'arduino_Block', the role 'arduino_Block10' has cardinality 0..*.
+An association connects 'arduino_If' and 'arduino_Expression'. From 'arduino_If', the role 'arduino_If' has cardinality 0..*, and from 'arduino_Expression', the role 'arduino_Expression' has cardinality 0..*.
+An association connects 'arduino_Block' and 'arduino_If'. From 'arduino_Block', the role 'arduino_Block14' has cardinality 0..*, and from 'arduino_If', the role 'arduino_If13' has cardinality 0..*.
+An association connects 'arduino_While' and 'arduino_Expression'. From 'arduino_While', the role 'arduino_While' has cardinality 0..*, and from 'arduino_Expression', the role 'arduino_Expression16' has cardinality 0..*.
+An association connects 'arduino_ModuleSet' and 'arduino_Expression'. From 'arduino_ModuleSet', the role 'arduino_ModuleSet' has cardinality 0..*, and from 'arduino_Expression', the role 'arduino_Expression18' has cardinality 0..*.
+An association connects 'arduino_SetLed' and 'arduino_Led'. From 'arduino_SetLed', the role 'arduino_SetLed' has cardinality 0..*, and from 'arduino_Led', the role 'arduino_Led' has cardinality 0..*.
+An association connects 'arduino_Module' and 'arduino_WaitFor'. From 'arduino_Module', the role 'arduino_Module21' has cardinality 0..*, and from 'arduino_WaitFor', the role 'arduino_WaitFor' has cardinality 0..*.
+An association connects 'arduino_Constant' and 'arduino_WaitFor'. From 'arduino_Constant', the role 'arduino_Constant' has cardinality 0..*, and from 'arduino_WaitFor', the role 'arduino_WaitFor23' has cardinality 0..*.
+An association connects 'arduino_Expression' and 'arduino_UnaryExpression'. From 'arduino_Expression', the role 'arduino_Expression25' has cardinality 0..*, and from 'arduino_UnaryExpression', the role 'arduino_UnaryExpression' has cardinality 0..*.
+An association connects 'arduino_BinaryExpression' and 'arduino_Expression'. From 'arduino_BinaryExpression', the role 'arduino_BinaryExpression' has cardinality 0..*, and from 'arduino_Expression', the role 'arduino_Expression27' has cardinality 0..*.
+An association connects 'arduino_BinaryExpression' and 'arduino_Expression'. From 'arduino_BinaryExpression', the role 'arduino_BinaryExpression29' has cardinality 0..*, and from 'arduino_Expression', the role 'arduino_Expression30' has cardinality 0..*.
+An association connects 'arduino_Module' and 'arduino_ModuleGet'. From 'arduino_Module', the role 'arduino_Module32' has cardinality 0..*, and from 'arduino_ModuleGet', the role 'arduino_ModuleGet' has cardinality 0..*.

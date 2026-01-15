@@ -1,0 +1,73 @@
+The domain model 'fuzzyAutomaton' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'fuzzyAutomaton_TransitionFeature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'fuzzyAutomaton_VarTransformation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fuzzyAutomaton_Variable' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str.
+
+'fuzzyAutomaton_FuzzyRelation' represents an important domain concept.
+It has the following attributes: 'expression3', which is of type str; 'tFRelation', which is of type str; 'expression1', which is of type str; 'delta', which is of type str; 'expression2', which is of type str.
+
+'fuzzyAutomaton_VarUpdate' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'fuzzyAutomaton_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'fuzzyAutomaton_Action' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fuzzyAutomaton_VariableSet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'fuzzyAutomaton_Output' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'fuzzyAutomaton_FuzzyConstraint' represents an important domain concept.
+It has the following attributes: 'tNorm', which is of type str; 'name', which is of type str.
+
+'fuzzyAutomaton_FuzzyAutomaton' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'tNorm', which is of type str.
+
+'fuzzyAutomaton_Input' represents an important domain concept.
+It does not declare any attributes.
+
+'fuzzyAutomaton_State' represents an important domain concept.
+It has one attribute: 'isInitial', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FuzzyRelationType' defines the following possible values: 'TERN', 'GTE', 'EQ', 'LTE'.
+The enumeration 'TNormType' defines the following possible values: 'GODEL', 'HAMACHER'.
+
+The model also captures inheritance relationships between classes.
+The class 'fuzzyAutomaton_Input' is a specialization of 'Action'.
+The class 'fuzzyAutomaton_Output' is a specialization of 'Action'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fuzzyAutomaton_State' and 'fuzzyAutomaton_FuzzyAutomaton'. From 'fuzzyAutomaton_State', the role 'fuzzyAutomaton_State' has cardinality 0..*, and from 'fuzzyAutomaton_FuzzyAutomaton', the role 'fuzzyAutomaton_FuzzyAutomaton' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_Transition' and 'fuzzyAutomaton_FuzzyAutomaton'. From 'fuzzyAutomaton_Transition', the role 'fuzzyAutomaton_Transition' has cardinality 0..*, and from 'fuzzyAutomaton_FuzzyAutomaton', the role 'fuzzyAutomaton_FuzzyAutomaton2' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_FuzzyAutomaton' and 'fuzzyAutomaton_VariableSet'. From 'fuzzyAutomaton_FuzzyAutomaton', the role 'fuzzyAutomaton_FuzzyAutomaton4' has cardinality 0..*, and from 'fuzzyAutomaton_VariableSet', the role 'fuzzyAutomaton_VariableSet' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_TransitionFeature' and 'fuzzyAutomaton_FuzzyAutomaton'. From 'fuzzyAutomaton_TransitionFeature', the role 'fuzzyAutomaton_TransitionFeature' has cardinality 0..*, and from 'fuzzyAutomaton_FuzzyAutomaton', the role 'fuzzyAutomaton_FuzzyAutomaton6' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_State' and 'fuzzyAutomaton_Transition'. From 'fuzzyAutomaton_State', the role 'target' has cardinality 0..*, and from 'fuzzyAutomaton_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_State' and 'fuzzyAutomaton_Transition'. From 'fuzzyAutomaton_State', the role 'source' has cardinality 0..*, and from 'fuzzyAutomaton_Transition', the role 'Transition9' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_State' and 'fuzzyAutomaton_Transition'. From 'fuzzyAutomaton_State', the role 'State' has cardinality 0..*, and from 'fuzzyAutomaton_Transition', the role 'outgoing' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_State' and 'fuzzyAutomaton_Transition'. From 'fuzzyAutomaton_State', the role 'State12' has cardinality 0..*, and from 'fuzzyAutomaton_Transition', the role 'incoming' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_Transition' and 'fuzzyAutomaton_TransitionFeature'. From 'fuzzyAutomaton_Transition', the role 'featureToTransition' has cardinality 0..*, and from 'fuzzyAutomaton_TransitionFeature', the role 'TransitionFeature' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_VariableSet' and 'fuzzyAutomaton_Variable'. From 'fuzzyAutomaton_VariableSet', the role 'fuzzyAutomaton_VariableSet15' has cardinality 0..*, and from 'fuzzyAutomaton_Variable', the role 'fuzzyAutomaton_Variable' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_Transition' and 'fuzzyAutomaton_TransitionFeature'. From 'fuzzyAutomaton_Transition', the role 'Transition17' has cardinality 0..*, and from 'fuzzyAutomaton_TransitionFeature', the role 'feature' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_Action' and 'fuzzyAutomaton_TransitionFeature'. From 'fuzzyAutomaton_Action', the role 'fuzzyAutomaton_Action' has cardinality 0..*, and from 'fuzzyAutomaton_TransitionFeature', the role 'fuzzyAutomaton_TransitionFeature19' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_FuzzyConstraint' and 'fuzzyAutomaton_TransitionFeature'. From 'fuzzyAutomaton_FuzzyConstraint', the role 'fuzzyAutomaton_FuzzyConstraint' has cardinality 0..*, and from 'fuzzyAutomaton_TransitionFeature', the role 'fuzzyAutomaton_TransitionFeature21' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_TransitionFeature' and 'fuzzyAutomaton_VarTransformation'. From 'fuzzyAutomaton_TransitionFeature', the role 'fuzzyAutomaton_TransitionFeature23' has cardinality 0..*, and from 'fuzzyAutomaton_VarTransformation', the role 'fuzzyAutomaton_VarTransformation' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_Input' and 'fuzzyAutomaton_Variable'. From 'fuzzyAutomaton_Input', the role 'fuzzyAutomaton_Input' has cardinality 0..*, and from 'fuzzyAutomaton_Variable', the role 'fuzzyAutomaton_Variable25' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_FuzzyConstraint' and 'fuzzyAutomaton_FuzzyRelation'. From 'fuzzyAutomaton_FuzzyConstraint', the role 'fuzzyAutomaton_FuzzyConstraint27' has cardinality 0..*, and from 'fuzzyAutomaton_FuzzyRelation', the role 'fuzzyAutomaton_FuzzyRelation' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_VarTransformation' and 'fuzzyAutomaton_VarUpdate'. From 'fuzzyAutomaton_VarTransformation', the role 'fuzzyAutomaton_VarTransformation29' has cardinality 0..*, and from 'fuzzyAutomaton_VarUpdate', the role 'fuzzyAutomaton_VarUpdate' has cardinality 0..*.
+An association connects 'fuzzyAutomaton_VarUpdate' and 'fuzzyAutomaton_Variable'. From 'fuzzyAutomaton_VarUpdate', the role 'fuzzyAutomaton_VarUpdate31' has cardinality 0..*, and from 'fuzzyAutomaton_Variable', the role 'fuzzyAutomaton_Variable32' has cardinality 0..*.

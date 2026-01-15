@@ -1,0 +1,501 @@
+The domain model 'Classes' describes the core structural elements and their relationships within the system.
+
+The model defines 107 main class(es).
+
+'Kernel_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_LiteralBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_NamedElement' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'name', which is of type str; 'qualifiedName', which is of type str.
+
+'Kernel_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_LiteralUnilimitedNatural' represents an important domain concept.
+It does not declare any attributes.
+
+'Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_PackageMerge' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_Generalization' represents an important domain concept.
+It has one attribute: 'isSubstitutable', which is of type bool.
+
+'Classes_AssociationClasses_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Interfaces_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Interfaces_InterfaceRealization' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_ElementImport' represents an important domain concept.
+It has the following attributes: 'alias', which is of type str; 'visibility', which is of type str.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_Comment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'Kernel_DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_Operation' represents an important domain concept.
+It has the following attributes: 'lower', which is of type int; 'upper', which is of type int; 'isQuery', which is of type bool; 'isOrdered', which is of type bool; 'isUnique', which is of type bool.
+
+'Kernel_RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_Association' represents an important domain concept.
+It has one attribute: 'isDerived', which is of type bool.
+
+'Kernel_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_Classifier' represents an important domain concept.
+It has the following attributes: 'isFinalSpecialization', which is of type bool; 'isAbstract', which is of type bool.
+
+'OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageImport' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageMerge' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'Substitution' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_LiteralInteger' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_OpaqueExpression' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'body', which is of type str.
+
+'Classes_Kernel_Property' represents an important domain concept.
+It has the following attributes: 'default', which is of type str; 'aggregation', which is of type str; 'isDerived', which is of type bool; 'isDerivedUnion', which is of type bool; 'isComposite', which is of type bool; 'isID', which is of type bool.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_InstanceValue' represents an important domain concept.
+It does not declare any attributes.
+
+'GeneralizationSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Dependencies_Substitution' represents an important domain concept.
+It does not declare any attributes.
+
+'DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_RedefinableElement' represents an important domain concept.
+It has one attribute: 'isLeaf', which is of type bool.
+
+'Classes_Interfaces_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Dependencies_Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_Parameter' represents an important domain concept.
+It has one attribute: 'default', which is of type str.
+
+'InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Dependencies_Usage' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_StructuralFeature' represents an important domain concept.
+It has one attribute: 'isReadOnly', which is of type bool.
+
+'Kernel_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_LiteralNull' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'lower', which is of type int; 'upper', which is of type int; 'isUnique', which is of type bool; 'isOrdered', which is of type bool.
+
+'Classes_Kernel_Expression' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'Classes_Kernel_LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Dependencies_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_LiteralReal' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_Package' represents an important domain concept.
+It has one attribute: 'URI', which is of type str.
+
+'Classes_PowerTypes_GeneralizationSet' represents an important domain concept.
+It has the following attributes: 'isDisjoint', which is of type bool; 'isCovering', which is of type bool.
+
+'Classes_Kernel_LiteralString' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementImport' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Dependencies_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_PackageImport' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'Classes_Kernel_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Classes_Kernel_Feature' represents an important domain concept.
+It has one attribute: 'isStatic', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VisibilityKind' defines the following possible values: 'private', 'public', 'protected', 'package'.
+The enumeration 'AggregationKind' defines the following possible values: 'composite', 'none', 'shared'.
+
+The model also captures inheritance relationships between classes.
+The class 'Classes_Kernel_NamedElement' is a specialization of 'Element'.
+The class 'Classes_Kernel_Namespace' is a specialization of 'NamedElement'.
+The class 'Classes_Kernel_PackageableElement' is a specialization of 'NamedElement'.
+The class 'Classes_Kernel_ElementImport' is a specialization of 'DirectedRelationship'.
+The class 'Classes_Kernel_PackageImport' is a specialization of 'DirectedRelationship'.
+The class 'Classes_Kernel_Package' is a specialization of 'Kernel_Namespace'.
+The class 'Classes_Kernel_Package' is a specialization of 'Kernel_PackageableElement'.
+The class 'Classes_Kernel_Comment' is a specialization of 'Element'.
+The class 'Classes_Kernel_Relationship' is a specialization of 'Element'.
+The class 'Classes_Kernel_DirectedRelationship' is a specialization of 'Relationship'.
+The class 'Classes_Kernel_MultiplicityElement' is a specialization of 'Element'.
+The class 'Classes_Kernel_ValueSpecification' is a specialization of 'Kernel_TypedElement'.
+The class 'Classes_Kernel_ValueSpecification' is a specialization of 'Kernel_PackageableElement'.
+The class 'Classes_Kernel_TypedElement' is a specialization of 'NamedElement'.
+The class 'Classes_Kernel_Type' is a specialization of 'PackageableElement'.
+The class 'Classes_Kernel_Expression' is a specialization of 'ValueSpecification'.
+The class 'Classes_Kernel_OpaqueExpression' is a specialization of 'ValueSpecification'.
+The class 'Classes_Kernel_LiteralSpecification' is a specialization of 'ValueSpecification'.
+The class 'Classes_Kernel_LiteralNull' is a specialization of 'LiteralSpecification'.
+The class 'Classes_Kernel_LiteralBoolean' is a specialization of 'LiteralSpecification'.
+The class 'Classes_Kernel_LiteralInteger' is a specialization of 'LiteralSpecification'.
+The class 'Classes_Kernel_LiteralReal' is a specialization of 'LiteralSpecification'.
+The class 'Classes_Kernel_LiteralString' is a specialization of 'LiteralSpecification'.
+The class 'Classes_Kernel_LiteralUnilimitedNatural' is a specialization of 'LiteralSpecification'.
+The class 'Classes_Kernel_InstanceSpecification' is a specialization of 'PackageableElement'.
+The class 'Classes_Kernel_Constraint' is a specialization of 'PackageableElement'.
+The class 'Classes_Kernel_Slot' is a specialization of 'Element'.
+The class 'Classes_Kernel_RedefinableElement' is a specialization of 'NamedElement'.
+The class 'Classes_Kernel_Classifier' is a specialization of 'Kernel_RedefinableElement'.
+The class 'Classes_Kernel_Classifier' is a specialization of 'Kernel_Namespace'.
+The class 'Classes_Kernel_Classifier' is a specialization of 'Kernel_Type'.
+The class 'Classes_Kernel_Feature' is a specialization of 'RedefinableElement'.
+The class 'Classes_Kernel_StructuralFeature' is a specialization of 'Kernel_Feature'.
+The class 'Classes_Kernel_StructuralFeature' is a specialization of 'Kernel_MultiplicityElement'.
+The class 'Classes_Kernel_StructuralFeature' is a specialization of 'Kernel_TypedElement'.
+The class 'Classes_Kernel_Property' is a specialization of 'StructuralFeature'.
+The class 'Classes_Kernel_Generalization' is a specialization of 'DirectedRelationship'.
+The class 'Classes_Kernel_BehavioralFeature' is a specialization of 'Kernel_Feature'.
+The class 'Classes_Kernel_BehavioralFeature' is a specialization of 'Kernel_Namespace'.
+The class 'Classes_Kernel_Parameter' is a specialization of 'TypedElement'.
+The class 'Classes_Kernel_Operation' is a specialization of 'BehavioralFeature'.
+The class 'Classes_Kernel_Class' is a specialization of 'Classifier'.
+The class 'Classes_Kernel_Association' is a specialization of 'Kernel_Relationship'.
+The class 'Classes_Kernel_Association' is a specialization of 'Kernel_Classifier'.
+The class 'Classes_Kernel_DataType' is a specialization of 'Classifier'.
+The class 'Classes_Kernel_PrimitiveType' is a specialization of 'DataType'.
+The class 'Classes_Kernel_Enumeration' is a specialization of 'DataType'.
+The class 'Classes_Kernel_EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+The class 'Classes_Kernel_PackageMerge' is a specialization of 'DirectedRelationship'.
+The class 'Classes_Dependencies_Dependency' is a specialization of 'Kernel_PackageableElement'.
+The class 'Classes_Dependencies_Dependency' is a specialization of 'Kernel_DirectedRelationship'.
+The class 'Classes_Dependencies_Usage' is a specialization of 'Dependency'.
+The class 'Classes_Dependencies_Abstraction' is a specialization of 'Dependency'.
+The class 'Classes_Dependencies_Realization' is a specialization of 'Abstraction'.
+The class 'Classes_Dependencies_Substitution' is a specialization of 'Realization'.
+The class 'Classes_Interfaces_Interface' is a specialization of 'Classifier'.
+The class 'Classes_Interfaces_InterfaceRealization' is a specialization of 'Realization'.
+The class 'Classes_Interfaces_BehavioredClassifier' is a specialization of 'Classifier'.
+The class 'Classes_AssociationClasses_AssociationClass' is a specialization of 'Kernel_Class'.
+The class 'Classes_AssociationClasses_AssociationClass' is a specialization of 'Kernel_Association'.
+The class 'Classes_PowerTypes_GeneralizationSet' is a specialization of 'PackageableElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Comment' and 'Classes_Kernel_Element'. From 'Comment', the role 'Kernel' has cardinality 0..*, and from 'Classes_Kernel_Element', the role 'Comment' has cardinality 0..*.
+An association connects 'Classes_Kernel_Element' and 'Element'. From 'Classes_Kernel_Element', the role 'Element' has cardinality 0..*, and from 'Element', the role 'Kernel2' has cardinality 0..*.
+An association connects 'Element' and 'Classes_Kernel_Element'. From 'Element', the role 'Kernel5' has cardinality 0..*, and from 'Classes_Kernel_Element', the role 'Element4' has cardinality 0..*.
+An association connects 'Classes_Kernel_NamedElement' and 'Namespace'. From 'Classes_Kernel_NamedElement', the role 'Namespace' has cardinality 0..*, and from 'Namespace', the role 'Kernel7' has cardinality 0..*.
+An association connects 'Dependency' and 'Classes_Kernel_NamedElement'. From 'Dependency', the role 'Dependencies' has cardinality 0..*, and from 'Classes_Kernel_NamedElement', the role 'Dependency' has cardinality 0..*.
+An association connects 'PackageableElement' and 'Classes_Kernel_Namespace'. From 'PackageableElement', the role 'PackageableElement' has cardinality 0..*, and from 'Classes_Kernel_Namespace', the role 'Classes_Kernel_Namespace' has cardinality 0..*.
+An association connects 'Classes_Kernel_Namespace' and 'NamedElement'. From 'Classes_Kernel_Namespace', the role 'Classes_Kernel_Namespace11' has cardinality 0..*, and from 'NamedElement', the role 'NamedElement' has cardinality 0..*.
+An association connects 'Classes_Kernel_Namespace' and 'NamedElement'. From 'Classes_Kernel_Namespace', the role 'NamedElement13' has cardinality 0..*, and from 'NamedElement', the role 'Kernel14' has cardinality 0..*.
+An association connects 'ElementImport' and 'Classes_Kernel_Namespace'. From 'ElementImport', the role 'Kernel16' has cardinality 0..*, and from 'Classes_Kernel_Namespace', the role 'ElementImport' has cardinality 0..*.
+An association connects 'Classes_Kernel_Namespace' and 'PackageImport'. From 'Classes_Kernel_Namespace', the role 'PackageImport' has cardinality 0..*, and from 'PackageImport', the role 'Kernel18' has cardinality 0..*.
+An association connects 'Classes_Kernel_Namespace' and 'Constraint'. From 'Classes_Kernel_Namespace', the role 'Constraint' has cardinality 0..*, and from 'Constraint', the role 'Kernel20' has cardinality 0..*.
+An association connects 'Classes_Kernel_ElementImport' and 'PackageableElement'. From 'Classes_Kernel_ElementImport', the role 'Classes_Kernel_ElementImport' has cardinality 0..*, and from 'PackageableElement', the role 'PackageableElement22' has cardinality 0..*.
+An association connects 'Classes_Kernel_ElementImport' and 'Namespace'. From 'Classes_Kernel_ElementImport', the role 'Namespace24' has cardinality 0..*, and from 'Namespace', the role 'Kernel25' has cardinality 0..*.
+An association connects 'Package' and 'Classes_Kernel_PackageImport'. From 'Package', the role 'Package' has cardinality 0..*, and from 'Classes_Kernel_PackageImport', the role 'Classes_Kernel_PackageImport' has cardinality 0..*.
+An association connects 'Namespace' and 'Classes_Kernel_PackageImport'. From 'Namespace', the role 'Kernel29' has cardinality 0..*, and from 'Classes_Kernel_PackageImport', the role 'Namespace28' has cardinality 0..*.
+An association connects 'Package' and 'Classes_Kernel_Package'. From 'Package', the role 'Kernel32' has cardinality 0..*, and from 'Classes_Kernel_Package', the role 'Package31' has cardinality 0..*.
+An association connects 'Package' and 'Classes_Kernel_Package'. From 'Package', the role 'Kernel35' has cardinality 0..*, and from 'Classes_Kernel_Package', the role 'Package34' has cardinality 0..*.
+An association connects 'Classes_Kernel_Package' and 'PackageableElement'. From 'Classes_Kernel_Package', the role 'Classes_Kernel_Package' has cardinality 0..*, and from 'PackageableElement', the role 'PackageableElement37' has cardinality 0..*.
+An association connects 'Type' and 'Classes_Kernel_Package'. From 'Type', the role 'Kernel39' has cardinality 0..*, and from 'Classes_Kernel_Package', the role 'Type' has cardinality 0..*.
+An association connects 'PackageMerge' and 'Classes_Kernel_Package'. From 'PackageMerge', the role 'Kernel41' has cardinality 0..*, and from 'Classes_Kernel_Package', the role 'PackageMerge' has cardinality 0..*.
+An association connects 'Element' and 'Classes_Kernel_Comment'. From 'Element', the role 'Kernel44' has cardinality 0..*, and from 'Classes_Kernel_Comment', the role 'Element43' has cardinality 0..*.
+An association connects 'Classes_Kernel_Comment' and 'Element'. From 'Classes_Kernel_Comment', the role 'Classes_Kernel_Comment' has cardinality 0..*, and from 'Element', the role 'Element46' has cardinality 0..*.
+An association connects 'Element' and 'Classes_Kernel_Relationship'. From 'Element', the role 'Element48' has cardinality 0..*, and from 'Classes_Kernel_Relationship', the role 'Classes_Kernel_Relationship' has cardinality 0..*.
+An association connects 'Element' and 'Classes_Kernel_DirectedRelationship'. From 'Element', the role 'Element50' has cardinality 0..*, and from 'Classes_Kernel_DirectedRelationship', the role 'Classes_Kernel_DirectedRelationship' has cardinality 0..*.
+An association connects 'Classes_Kernel_DirectedRelationship' and 'Element'. From 'Classes_Kernel_DirectedRelationship', the role 'Classes_Kernel_DirectedRelationship52' has cardinality 0..*, and from 'Element', the role 'Element53' has cardinality 0..*.
+An association connects 'Classes_Kernel_MultiplicityElement' and 'ValueSpecification'. From 'Classes_Kernel_MultiplicityElement', the role 'ValueSpecification' has cardinality 0..*, and from 'ValueSpecification', the role 'Kernel55' has cardinality 0..*.
+An association connects 'ValueSpecification' and 'Classes_Kernel_MultiplicityElement'. From 'ValueSpecification', the role 'Kernel58' has cardinality 0..*, and from 'Classes_Kernel_MultiplicityElement', the role 'ValueSpecification57' has cardinality 0..*.
+An association connects 'Classes_Kernel_ValueSpecification' and 'MultiplicityElement'. From 'Classes_Kernel_ValueSpecification', the role 'MultiplicityElement' has cardinality 0..*, and from 'MultiplicityElement', the role 'Kernel60' has cardinality 0..*.
+An association connects 'MultiplicityElement' and 'Classes_Kernel_ValueSpecification'. From 'MultiplicityElement', the role 'Kernel63' has cardinality 0..*, and from 'Classes_Kernel_ValueSpecification', the role 'MultiplicityElement62' has cardinality 0..*.
+An association connects 'Classes_Kernel_ValueSpecification' and 'Constraint'. From 'Classes_Kernel_ValueSpecification', the role 'Constraint65' has cardinality 0..*, and from 'Constraint', the role 'Kernel66' has cardinality 0..*.
+An association connects 'Classes_Kernel_ValueSpecification' and 'Slot'. From 'Classes_Kernel_ValueSpecification', the role 'Slot' has cardinality 0..*, and from 'Slot', the role 'Kernel68' has cardinality 0..*.
+An association connects 'Classes_Kernel_ValueSpecification' and 'InstanceSpecification'. From 'Classes_Kernel_ValueSpecification', the role 'InstanceSpecification' has cardinality 0..*, and from 'InstanceSpecification', the role 'Kernel70' has cardinality 0..*.
+An association connects 'Type' and 'Classes_Kernel_TypedElement'. From 'Type', the role 'Type72' has cardinality 0..*, and from 'Classes_Kernel_TypedElement', the role 'Classes_Kernel_TypedElement' has cardinality 0..*.
+An association connects 'Classes_Kernel_Type' and 'Package'. From 'Classes_Kernel_Type', the role 'Package74' has cardinality 0..*, and from 'Package', the role 'Kernel75' has cardinality 0..*.
+An association connects 'Classes_Kernel_Expression' and 'ValueSpecification'. From 'Classes_Kernel_Expression', the role 'Classes_Kernel_Expression' has cardinality 0..*, and from 'ValueSpecification', the role 'ValueSpecification77' has cardinality 0..*.
+An association connects 'Classes_Kernel_InstanceValue' and 'InstanceSpecification'. From 'Classes_Kernel_InstanceValue', the role 'Classes_Kernel_InstanceValue' has cardinality 0..*, and from 'InstanceSpecification', the role 'InstanceSpecification79' has cardinality 0..*.
+An association connects 'Slot' and 'Classes_Kernel_InstanceSpecification'. From 'Slot', the role 'Kernel82' has cardinality 0..*, and from 'Classes_Kernel_InstanceSpecification', the role 'Slot81' has cardinality 0..*.
+An association connects 'ValueSpecification' and 'Classes_Kernel_InstanceSpecification'. From 'ValueSpecification', the role 'Kernel85' has cardinality 0..*, and from 'Classes_Kernel_InstanceSpecification', the role 'ValueSpecification84' has cardinality 0..*.
+An association connects 'Classifier' and 'Classes_Kernel_InstanceSpecification'. From 'Classifier', the role 'Classifier' has cardinality 0..*, and from 'Classes_Kernel_InstanceSpecification', the role 'Classes_Kernel_InstanceSpecification' has cardinality 0..*.
+An association connects 'Classes_Kernel_Constraint' and 'Namespace'. From 'Classes_Kernel_Constraint', the role 'Namespace88' has cardinality 0..*, and from 'Namespace', the role 'Kernel89' has cardinality 0..*.
+An association connects 'Element' and 'Classes_Kernel_Constraint'. From 'Element', the role 'Element91' has cardinality 0..*, and from 'Classes_Kernel_Constraint', the role 'Classes_Kernel_Constraint' has cardinality 0..*.
+An association connects 'ValueSpecification' and 'Classes_Kernel_Constraint'. From 'ValueSpecification', the role 'Kernel94' has cardinality 0..*, and from 'Classes_Kernel_Constraint', the role 'ValueSpecification93' has cardinality 0..*.
+An association connects 'InstanceSpecification' and 'Classes_Kernel_Slot'. From 'InstanceSpecification', the role 'Kernel97' has cardinality 0..*, and from 'Classes_Kernel_Slot', the role 'InstanceSpecification96' has cardinality 0..*.
+An association connects 'ValueSpecification' and 'Classes_Kernel_Slot'. From 'ValueSpecification', the role 'Kernel100' has cardinality 0..*, and from 'Classes_Kernel_Slot', the role 'ValueSpecification99' has cardinality 0..*.
+An association connects 'Classes_Kernel_Slot' and 'StructuralFeature'. From 'Classes_Kernel_Slot', the role 'Classes_Kernel_Slot' has cardinality 0..*, and from 'StructuralFeature', the role 'StructuralFeature' has cardinality 0..*.
+An association connects 'RedefinableElement' and 'Classes_Kernel_RedefinableElement'. From 'RedefinableElement', the role 'RedefinableElement' has cardinality 0..*, and from 'Classes_Kernel_RedefinableElement', the role 'Classes_Kernel_RedefinableElement' has cardinality 0..*.
+An association connects 'Classes_Kernel_RedefinableElement' and 'Classifier'. From 'Classes_Kernel_RedefinableElement', the role 'Classes_Kernel_RedefinableElement104' has cardinality 0..*, and from 'Classifier', the role 'Classifier105' has cardinality 0..*.
+An association connects 'Classes_Kernel_Classifier' and 'NamedElement'. From 'Classes_Kernel_Classifier', the role 'Classes_Kernel_Classifier' has cardinality 0..*, and from 'NamedElement', the role 'NamedElement107' has cardinality 0..*.
+An association connects 'Classes_Kernel_Classifier' and 'Feature'. From 'Classes_Kernel_Classifier', the role 'Feature' has cardinality 0..*, and from 'Feature', the role 'Kernel109' has cardinality 0..*.
+An association connects 'Classes_Kernel_Classifier' and 'Property'. From 'Classes_Kernel_Classifier', the role 'Classes_Kernel_Classifier111' has cardinality 0..*, and from 'Property', the role 'Property' has cardinality 0..*.
+An association connects 'Classifier' and 'Classes_Kernel_Classifier'. From 'Classifier', the role 'Classifier114' has cardinality 0..*, and from 'Classes_Kernel_Classifier', the role 'Classes_Kernel_Classifier113' has cardinality 0..*.
+An association connects 'Classifier' and 'Classes_Kernel_Classifier'. From 'Classifier', the role 'Classifier117' has cardinality 0..*, and from 'Classes_Kernel_Classifier', the role 'Classes_Kernel_Classifier116' has cardinality 0..*.
+An association connects 'Generalization' and 'Classes_Kernel_Classifier'. From 'Generalization', the role 'Kernel119' has cardinality 0..*, and from 'Classes_Kernel_Classifier', the role 'Generalization' has cardinality 0..*.
+An association connects 'Classes_Kernel_Classifier' and 'Substitution'. From 'Classes_Kernel_Classifier', the role 'Substitution' has cardinality 0..*, and from 'Substitution', the role 'Dependencies121' has cardinality 0..*.
+An association connects 'Classes_Kernel_Classifier' and 'GeneralizationSet'. From 'Classes_Kernel_Classifier', the role 'GeneralizationSet' has cardinality 0..*, and from 'GeneralizationSet', the role 'PowerTypes' has cardinality 0..*.
+An association connects 'Classes_Kernel_Feature' and 'Classifier'. From 'Classes_Kernel_Feature', the role 'Classifier124' has cardinality 0..*, and from 'Classifier', the role 'Kernel125' has cardinality 0..*.
+An association connects 'Class' and 'Classes_Kernel_Property'. From 'Class', the role 'Kernel127' has cardinality 0..*, and from 'Classes_Kernel_Property', the role 'Class' has cardinality 0..*.
+An association connects 'Property' and 'Classes_Kernel_Property'. From 'Property', the role 'Property129' has cardinality 0..*, and from 'Classes_Kernel_Property', the role 'Classes_Kernel_Property' has cardinality 0..*.
+An association connects 'Classes_Kernel_Property' and 'ValueSpecification'. From 'Classes_Kernel_Property', the role 'Classes_Kernel_Property131' has cardinality 0..*, and from 'ValueSpecification', the role 'ValueSpecification132' has cardinality 0..*.
+An association connects 'Property' and 'Classes_Kernel_Property'. From 'Property', the role 'Property135' has cardinality 0..*, and from 'Classes_Kernel_Property', the role 'Classes_Kernel_Property134' has cardinality 0..*.
+An association connects 'Property' and 'Classes_Kernel_Property'. From 'Property', the role 'Property138' has cardinality 0..*, and from 'Classes_Kernel_Property', the role 'Classes_Kernel_Property137' has cardinality 0..*.
+An association connects 'Association' and 'Classes_Kernel_Property'. From 'Association', the role 'Kernel140' has cardinality 0..*, and from 'Classes_Kernel_Property', the role 'Association' has cardinality 0..*.
+An association connects 'Classes_Kernel_Property' and 'Association'. From 'Classes_Kernel_Property', the role 'Association142' has cardinality 0..*, and from 'Association', the role 'Kernel143' has cardinality 0..*.
+An association connects 'DataType' and 'Classes_Kernel_Property'. From 'DataType', the role 'Kernel145' has cardinality 0..*, and from 'Classes_Kernel_Property', the role 'DataType' has cardinality 0..*.
+An association connects 'Interface' and 'Classes_Kernel_Property'. From 'Interface', the role 'Interfaces' has cardinality 0..*, and from 'Classes_Kernel_Property', the role 'Interface' has cardinality 0..*.
+An association connects 'Property' and 'Classes_Kernel_Property'. From 'Property', the role 'Kernel149' has cardinality 0..*, and from 'Classes_Kernel_Property', the role 'Property148' has cardinality 0..*.
+An association connects 'Classes_Kernel_Property' and 'Property'. From 'Classes_Kernel_Property', the role 'Property151' has cardinality 0..*, and from 'Property', the role 'Kernel152' has cardinality 0..*.
+An association connects 'Classifier' and 'Classes_Kernel_Generalization'. From 'Classifier', the role 'Classifier154' has cardinality 0..*, and from 'Classes_Kernel_Generalization', the role 'Classes_Kernel_Generalization' has cardinality 0..*.
+An association connects 'Classifier' and 'Classes_Kernel_Generalization'. From 'Classifier', the role 'Kernel157' has cardinality 0..*, and from 'Classes_Kernel_Generalization', the role 'Classifier156' has cardinality 0..*.
+An association connects 'GeneralizationSet' and 'Classes_Kernel_Generalization'. From 'GeneralizationSet', the role 'PowerTypes160' has cardinality 0..*, and from 'Classes_Kernel_Generalization', the role 'GeneralizationSet159' has cardinality 0..*.
+An association connects 'Parameter' and 'Classes_Kernel_BehavioralFeature'. From 'Parameter', the role 'Parameter' has cardinality 0..*, and from 'Classes_Kernel_BehavioralFeature', the role 'Classes_Kernel_BehavioralFeature' has cardinality 0..*.
+An association connects 'Type' and 'Classes_Kernel_BehavioralFeature'. From 'Type', the role 'Type164' has cardinality 0..*, and from 'Classes_Kernel_BehavioralFeature', the role 'Classes_Kernel_BehavioralFeature163' has cardinality 0..*.
+An association connects 'Classes_Kernel_Parameter' and 'BehavioralFeature'. From 'Classes_Kernel_Parameter', the role 'Classes_Kernel_Parameter' has cardinality 0..*, and from 'BehavioralFeature', the role 'BehavioralFeature' has cardinality 0..*.
+An association connects 'Classes_Kernel_Parameter' and 'ValueSpecification'. From 'Classes_Kernel_Parameter', the role 'Classes_Kernel_Parameter167' has cardinality 0..*, and from 'ValueSpecification', the role 'ValueSpecification168' has cardinality 0..*.
+An association connects 'Classes_Kernel_Operation' and 'Type'. From 'Classes_Kernel_Operation', the role 'Classes_Kernel_Operation' has cardinality 0..*, and from 'Type', the role 'Type170' has cardinality 0..*.
+An association connects 'Constraint' and 'Classes_Kernel_Operation'. From 'Constraint', the role 'Constraint173' has cardinality 0..*, and from 'Classes_Kernel_Operation', the role 'Classes_Kernel_Operation172' has cardinality 0..*.
+An association connects 'Classes_Kernel_Operation' and 'Constraint'. From 'Classes_Kernel_Operation', the role 'Classes_Kernel_Operation175' has cardinality 0..*, and from 'Constraint', the role 'Constraint176' has cardinality 0..*.
+An association connects 'Classes_Kernel_Operation' and 'Constraint'. From 'Classes_Kernel_Operation', the role 'Classes_Kernel_Operation178' has cardinality 0..*, and from 'Constraint', the role 'Constraint179' has cardinality 0..*.
+An association connects 'Classes_Kernel_Operation' and 'Class'. From 'Classes_Kernel_Operation', the role 'Class181' has cardinality 0..*, and from 'Class', the role 'Kernel182' has cardinality 0..*.
+An association connects 'Classes_Kernel_Operation' and 'DataType'. From 'Classes_Kernel_Operation', the role 'DataType184' has cardinality 0..*, and from 'DataType', the role 'Kernel185' has cardinality 0..*.
+An association connects 'Classes_Kernel_Operation' and 'Interface'. From 'Classes_Kernel_Operation', the role 'Interface187' has cardinality 0..*, and from 'Interface', the role 'Interfaces188' has cardinality 0..*.
+An association connects 'Classes_Kernel_Class' and 'Classifier'. From 'Classes_Kernel_Class', the role 'Classes_Kernel_Class' has cardinality 0..*, and from 'Classifier', the role 'Classifier190' has cardinality 0..*.
+An association connects 'Operation' and 'Classes_Kernel_Class'. From 'Operation', the role 'Kernel192' has cardinality 0..*, and from 'Classes_Kernel_Class', the role 'Operation' has cardinality 0..*.
+An association connects 'Classes_Kernel_Class' and 'Class'. From 'Classes_Kernel_Class', the role 'Classes_Kernel_Class194' has cardinality 0..*, and from 'Class', the role 'Class195' has cardinality 0..*.
+An association connects 'Classes_Kernel_Class' and 'Property'. From 'Classes_Kernel_Class', the role 'Property197' has cardinality 0..*, and from 'Property', the role 'Kernel198' has cardinality 0..*.
+An association connects 'Property' and 'Classes_Kernel_Association'. From 'Property', the role 'Property200' has cardinality 0..*, and from 'Classes_Kernel_Association', the role 'Classes_Kernel_Association' has cardinality 0..*.
+An association connects 'Property' and 'Classes_Kernel_Association'. From 'Property', the role 'Kernel203' has cardinality 0..*, and from 'Classes_Kernel_Association', the role 'Property202' has cardinality 0..*.
+An association connects 'Classes_Kernel_Association' and 'Property'. From 'Classes_Kernel_Association', the role 'Property205' has cardinality 0..*, and from 'Property', the role 'Kernel206' has cardinality 0..*.
+An association connects 'Classes_Kernel_DataType' and 'Property'. From 'Classes_Kernel_DataType', the role 'Property208' has cardinality 0..*, and from 'Property', the role 'Kernel209' has cardinality 0..*.
+An association connects 'Classes_Kernel_DataType' and 'Operation'. From 'Classes_Kernel_DataType', the role 'Operation211' has cardinality 0..*, and from 'Operation', the role 'Kernel212' has cardinality 0..*.
+An association connects 'EnumerationLiteral' and 'Classes_Kernel_Enumeration'. From 'EnumerationLiteral', the role 'Kernel214' has cardinality 0..*, and from 'Classes_Kernel_Enumeration', the role 'EnumerationLiteral' has cardinality 0..*.
+An association connects 'Enumeration' and 'Classes_Kernel_EnumerationLiteral'. From 'Enumeration', the role 'Kernel216' has cardinality 0..*, and from 'Classes_Kernel_EnumerationLiteral', the role 'Enumeration' has cardinality 0..*.
+An association connects 'Package' and 'Classes_Kernel_PackageMerge'. From 'Package', the role 'Kernel219' has cardinality 0..*, and from 'Classes_Kernel_PackageMerge', the role 'Package218' has cardinality 0..*.
+An association connects 'Classes_Kernel_PackageMerge' and 'Package'. From 'Classes_Kernel_PackageMerge', the role 'Classes_Kernel_PackageMerge' has cardinality 0..*, and from 'Package', the role 'Package221' has cardinality 0..*.
+An association connects 'Classes_Dependencies_Dependency' and 'NamedElement'. From 'Classes_Dependencies_Dependency', the role 'NamedElement223' has cardinality 0..*, and from 'NamedElement', the role 'Kernel224' has cardinality 0..*.
+An association connects 'Classes_Dependencies_Dependency' and 'NamedElement'. From 'Classes_Dependencies_Dependency', the role 'Classes_Dependencies_Dependency' has cardinality 0..*, and from 'NamedElement', the role 'NamedElement226' has cardinality 0..*.
+An association connects 'Classes_Dependencies_Abstraction' and 'OpaqueExpression'. From 'Classes_Dependencies_Abstraction', the role 'Classes_Dependencies_Abstraction' has cardinality 0..*, and from 'OpaqueExpression', the role 'OpaqueExpression' has cardinality 0..*.
+An association connects 'Classes_Dependencies_Substitution' and 'Classifier'. From 'Classes_Dependencies_Substitution', the role 'Classifier229' has cardinality 0..*, and from 'Classifier', the role 'Kernel230' has cardinality 0..*.
+An association connects 'Classes_Dependencies_Substitution' and 'Classifier'. From 'Classes_Dependencies_Substitution', the role 'Classes_Dependencies_Substitution' has cardinality 0..*, and from 'Classifier', the role 'Classifier232' has cardinality 0..*.
+An association connects 'Classifier' and 'Classes_Interfaces_Interface'. From 'Classifier', the role 'Classifier234' has cardinality 0..*, and from 'Classes_Interfaces_Interface', the role 'Classes_Interfaces_Interface' has cardinality 0..*.
+An association connects 'Interface' and 'Classes_Interfaces_Interface'. From 'Interface', the role 'Interface237' has cardinality 0..*, and from 'Classes_Interfaces_Interface', the role 'Classes_Interfaces_Interface236' has cardinality 0..*.
+An association connects 'Classes_Interfaces_Interface' and 'Property'. From 'Classes_Interfaces_Interface', the role 'Property239' has cardinality 0..*, and from 'Property', the role 'Kernel240' has cardinality 0..*.
+An association connects 'Operation' and 'Classes_Interfaces_Interface'. From 'Operation', the role 'Kernel243' has cardinality 0..*, and from 'Classes_Interfaces_Interface', the role 'Operation242' has cardinality 0..*.
+An association connects 'BehavioredClassifier' and 'Classes_Interfaces_InterfaceRealization'. From 'BehavioredClassifier', the role 'Interfaces245' has cardinality 0..*, and from 'Classes_Interfaces_InterfaceRealization', the role 'BehavioredClassifier' has cardinality 0..*.
+An association connects 'Classes_Interfaces_InterfaceRealization' and 'Interface'. From 'Classes_Interfaces_InterfaceRealization', the role 'Classes_Interfaces_InterfaceRealization' has cardinality 0..*, and from 'Interface', the role 'Interface247' has cardinality 0..*.
+An association connects 'Classes_Interfaces_BehavioredClassifier' and 'InterfaceRealization'. From 'Classes_Interfaces_BehavioredClassifier', the role 'InterfaceRealization' has cardinality 0..*, and from 'InterfaceRealization', the role 'Interfaces249' has cardinality 0..*.
+An association connects 'Classes_PowerTypes_GeneralizationSet' and 'Classifier'. From 'Classes_PowerTypes_GeneralizationSet', the role 'Classifier251' has cardinality 0..*, and from 'Classifier', the role 'Kernel252' has cardinality 0..*.
+An association connects 'Generalization' and 'Classes_PowerTypes_GeneralizationSet'. From 'Generalization', the role 'Kernel255' has cardinality 0..*, and from 'Classes_PowerTypes_GeneralizationSet', the role 'Generalization254' has cardinality 0..*.

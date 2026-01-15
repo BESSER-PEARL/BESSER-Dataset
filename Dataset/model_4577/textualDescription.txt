@@ -1,0 +1,581 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 125 main class(es).
+
+'myDsl_atomic_type_specifier' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_identifier_listR' represents an important domain concept.
+It does not declare any attributes.
+
+'shift_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_postfix_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'declarator' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_labeled_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_designation' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_direct_declarator' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_declarator' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_abstract_declarator' represents an important domain concept.
+It does not declare any attributes.
+
+'designator' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_type_name' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_struct_declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_StringC' represents an important domain concept.
+It has one attribute: 'string', which is of type str.
+
+'myDsl_parameter_declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'static_assert_declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'constant_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_multiplicative_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_external_declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'parameter_type_list' represents an important domain concept.
+It does not declare any attributes.
+
+'primary_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_block_item_list' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_shift_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_direct_declaratorR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_inclusive_or_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_conditional_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_translation_unit' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_parameter_list' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_shift_expressionR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_designator_listR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_parameter_type_list' represents an important domain concept.
+It does not declare any attributes.
+
+'struct_declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'init_declarator' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_additive_expressionR' represents an important domain concept.
+It does not declare any attributes.
+
+'conditional_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_argument_expression_listR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_and_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_type_qualifier_list' represents an important domain concept.
+It has one attribute: 'Type_qualifier', which is of type str.
+
+'expression_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_expressionR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_struct_declaration_listR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_type_qualifier_listR' represents an important domain concept.
+It has one attribute: 'Type_qualifier', which is of type str.
+
+'myDsl_designator_list' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_logical_and_expressionR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_block_item' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_identifier_list' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_compound_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_init_declarator_list' represents an important domain concept.
+It does not declare any attributes.
+
+'labeled_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_translation_unitR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_argument_expression_list' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_logical_or_expressionR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_additive_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'struct_declarator' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_equality_expressionR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_declaration_specifiers' represents an important domain concept.
+It has the following attributes: 'Type_qualifier', which is of type str; 'Storage_class_specifier', which is of type str.
+
+'myDsl_static_assert_declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_unary_expression' represents an important domain concept.
+It has one attribute: 'Unary_operator', which is of type str.
+
+'myDsl_assignment_expression' represents an important domain concept.
+It has one attribute: 'Assignment_operator', which is of type str.
+
+'compound_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_cast_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_block_item_listR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_jump_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_logical_or_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_initializer_listR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_type_specifier' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_specifier_qualifier_list' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_constant_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'cast_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_exclusive_or_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_function_definition' represents an important domain concept.
+It does not declare any attributes.
+
+'unary_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'struct_or_union_specifier' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_expression_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_equality_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_inclusive_or_expressionR' represents an important domain concept.
+It does not declare any attributes.
+
+'atomic_type_specifier' represents an important domain concept.
+It does not declare any attributes.
+
+'identifier_list' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_init_declarator_listR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_struct_or_union_specifier' represents an important domain concept.
+It has one attribute: 'Struct_or_union', which is of type str.
+
+'myDsl_logical_and_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_and_expressionR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_primary_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'type_name' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_iteration_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'abstract_declarator' represents an important domain concept.
+It does not declare any attributes.
+
+'jump_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_IDENTIFIER' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'postfix_expressionR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_exclusive_or_expressionR' represents an important domain concept.
+It does not declare any attributes.
+
+'type_specifier' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_selection_statement' represents an important domain concept.
+It does not declare any attributes.
+
+'designation' represents an important domain concept.
+It does not declare any attributes.
+
+'external_declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_struct_declarator_list' represents an important domain concept.
+It does not declare any attributes.
+
+'initializer' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_parameter_listR' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_multiplicative_expressionR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_relational_expressionR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_pointer' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_struct_declarator' represents an important domain concept.
+It does not declare any attributes.
+
+'pointer' represents an important domain concept.
+It does not declare any attributes.
+
+'block_item' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_declaration_listR' represents an important domain concept.
+It does not declare any attributes.
+
+'declaration_specifiers' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_designator' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_declaration_list' represents an important domain concept.
+It does not declare any attributes.
+
+'direct_declarator' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_init_declarator' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_initializer' represents an important domain concept.
+It does not declare any attributes.
+
+'identifier_listR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_postfix_expressionR' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_initializer_list' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_relational_expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_struct_declaration_list' represents an important domain concept.
+It does not declare any attributes.
+
+'parameter_declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_struct_declarator_listR' represents an important domain concept.
+It does not declare any attributes.
+
+'statement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl_function_definition' is a specialization of 'external_declaration'.
+The class 'myDsl_declarator' is a specialization of 'init_declarator'.
+The class 'myDsl_declarator' is a specialization of 'struct_declarator'.
+The class 'myDsl_type_qualifier_list' is a specialization of 'pointer'.
+The class 'myDsl_direct_declarator' is a specialization of 'declarator'.
+The class 'myDsl_parameter_list' is a specialization of 'parameter_type_list'.
+The class 'myDsl_compound_statement' is a specialization of 'statement'.
+The class 'myDsl_block_item_list' is a specialization of 'compound_statement'.
+The class 'myDsl_statement' is a specialization of 'block_item'.
+The class 'myDsl_jump_statement' is a specialization of 'statement'.
+The class 'myDsl_labeled_statement' is a specialization of 'statement'.
+The class 'myDsl_iteration_statement' is a specialization of 'statement'.
+The class 'myDsl_declaration' is a specialization of 'external_declaration'.
+The class 'myDsl_declaration' is a specialization of 'block_item'.
+The class 'myDsl_declaration_specifiers' is a specialization of 'parameter_declaration'.
+The class 'myDsl_selection_statement' is a specialization of 'statement'.
+The class 'myDsl_expression_statement' is a specialization of 'statement'.
+The class 'myDsl_expression' is a specialization of 'jump_statement'.
+The class 'myDsl_expression' is a specialization of 'expression_statement'.
+The class 'myDsl_expression' is a specialization of 'primary_expression'.
+The class 'myDsl_conditional_expression' is a specialization of 'assignment_expression'.
+The class 'myDsl_conditional_expression' is a specialization of 'constant_expression'.
+The class 'myDsl_logical_or_expression' is a specialization of 'conditional_expression'.
+The class 'myDsl_additive_expression' is a specialization of 'shift_expression'.
+The class 'myDsl_assignment_expression' is a specialization of 'initializer'.
+The class 'myDsl_unary_expression' is a specialization of 'cast_expression'.
+The class 'myDsl_postfix_expression' is a specialization of 'unary_expression'.
+The class 'myDsl_initializer_list' is a specialization of 'initializer'.
+The class 'myDsl_designator_list' is a specialization of 'designation'.
+The class 'myDsl_constant_expression' is a specialization of 'designator'.
+The class 'myDsl_constant_expression' is a specialization of 'struct_declarator'.
+The class 'myDsl_constant_expression' is a specialization of 'static_assert_declaration'.
+The class 'myDsl_type_name' is a specialization of 'atomic_type_specifier'.
+The class 'myDsl_specifier_qualifier_list' is a specialization of 'type_name'.
+The class 'myDsl_specifier_qualifier_list' is a specialization of 'struct_declaration'.
+The class 'myDsl_static_assert_declaration' is a specialization of 'declaration'.
+The class 'myDsl_static_assert_declaration' is a specialization of 'struct_declaration'.
+The class 'myDsl_struct_or_union_specifier' is a specialization of 'type_specifier'.
+The class 'myDsl_atomic_type_specifier' is a specialization of 'type_specifier'.
+The class 'myDsl_pointer' is a specialization of 'abstract_declarator'.
+The class 'myDsl_IDENTIFIER' is a specialization of 'direct_declarator'.
+The class 'myDsl_IDENTIFIER' is a specialization of 'identifier_list'.
+The class 'myDsl_IDENTIFIER' is a specialization of 'identifier_listR'.
+The class 'myDsl_IDENTIFIER' is a specialization of 'jump_statement'.
+The class 'myDsl_IDENTIFIER' is a specialization of 'labeled_statement'.
+The class 'myDsl_IDENTIFIER' is a specialization of 'designator'.
+The class 'myDsl_IDENTIFIER' is a specialization of 'struct_or_union_specifier'.
+The class 'myDsl_IDENTIFIER' is a specialization of 'postfix_expressionR'.
+The class 'myDsl_IDENTIFIER' is a specialization of 'primary_expression'.
+The class 'myDsl_type_specifier' is a specialization of 'declaration_specifiers'.
+The class 'myDsl_StringC' is a specialization of 'primary_expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_Model' and 'myDsl_translation_unit'. From 'myDsl_Model', the role 'myDsl_Model' has cardinality 0..*, and from 'myDsl_translation_unit', the role 'myDsl_translation_unit' has cardinality 0..*.
+An association connects 'myDsl_external_declaration' and 'myDsl_translation_unit'. From 'myDsl_external_declaration', the role 'myDsl_external_declaration' has cardinality 0..*, and from 'myDsl_translation_unit', the role 'myDsl_translation_unit2' has cardinality 0..*.
+An association connects 'myDsl_translation_unit' and 'myDsl_translation_unitR'. From 'myDsl_translation_unit', the role 'myDsl_translation_unit4' has cardinality 0..*, and from 'myDsl_translation_unitR', the role 'myDsl_translation_unitR' has cardinality 0..*.
+An association connects 'myDsl_external_declaration' and 'myDsl_translation_unitR'. From 'myDsl_external_declaration', the role 'myDsl_external_declaration7' has cardinality 0..*, and from 'myDsl_translation_unitR', the role 'myDsl_translation_unitR6' has cardinality 0..*.
+An association connects 'myDsl_translation_unitR' and 'myDsl_translation_unitR'. From 'myDsl_translation_unitR', the role 'myDsl_translation_unitR8' has cardinality 0..*, and from 'myDsl_translation_unitR', the role 'myDsl_translation_unitR10' has cardinality 0..*.
+An association connects 'myDsl_external_declaration' and 'myDsl_declaration_specifiers'. From 'myDsl_external_declaration', the role 'myDsl_external_declaration12' has cardinality 0..*, and from 'myDsl_declaration_specifiers', the role 'myDsl_declaration_specifiers' has cardinality 0..*.
+An association connects 'myDsl_declarator' and 'myDsl_function_definition'. From 'myDsl_declarator', the role 'myDsl_declarator' has cardinality 0..*, and from 'myDsl_function_definition', the role 'myDsl_function_definition' has cardinality 0..*.
+An association connects 'myDsl_function_definition' and 'myDsl_declaration_list'. From 'myDsl_function_definition', the role 'myDsl_function_definition15' has cardinality 0..*, and from 'myDsl_declaration_list', the role 'myDsl_declaration_list' has cardinality 0..*.
+An association connects 'myDsl_compound_statement' and 'myDsl_function_definition'. From 'myDsl_compound_statement', the role 'myDsl_compound_statement' has cardinality 0..*, and from 'myDsl_function_definition', the role 'myDsl_function_definition17' has cardinality 0..*.
+An association connects 'myDsl_pointer' and 'myDsl_declarator'. From 'myDsl_pointer', the role 'myDsl_pointer' has cardinality 0..*, and from 'myDsl_declarator', the role 'myDsl_declarator19' has cardinality 0..*.
+An association connects 'myDsl_declarator' and 'myDsl_direct_declarator'. From 'myDsl_declarator', the role 'myDsl_declarator21' has cardinality 0..*, and from 'myDsl_direct_declarator', the role 'myDsl_direct_declarator' has cardinality 0..*.
+An association connects 'myDsl_type_qualifier_listR' and 'myDsl_type_qualifier_list'. From 'myDsl_type_qualifier_listR', the role 'myDsl_type_qualifier_listR' has cardinality 0..*, and from 'myDsl_type_qualifier_list', the role 'myDsl_type_qualifier_list' has cardinality 0..*.
+An association connects 'myDsl_type_qualifier_listR' and 'myDsl_type_qualifier_listR'. From 'myDsl_type_qualifier_listR', the role 'myDsl_type_qualifier_listR25' has cardinality 0..*, and from 'myDsl_type_qualifier_listR', the role 'myDsl_type_qualifier_listR23' has cardinality 0..*.
+An association connects 'myDsl_direct_declaratorR' and 'myDsl_direct_declarator'. From 'myDsl_direct_declaratorR', the role 'myDsl_direct_declaratorR' has cardinality 0..*, and from 'myDsl_direct_declarator', the role 'myDsl_direct_declarator27' has cardinality 0..*.
+An association connects 'myDsl_direct_declaratorR' and 'myDsl_direct_declaratorR'. From 'myDsl_direct_declaratorR', the role 'myDsl_direct_declaratorR28' has cardinality 0..*, and from 'myDsl_direct_declaratorR', the role 'myDsl_direct_declaratorR30' has cardinality 0..*.
+An association connects 'myDsl_type_qualifier_list' and 'myDsl_direct_declaratorR'. From 'myDsl_type_qualifier_list', the role 'myDsl_type_qualifier_list33' has cardinality 0..*, and from 'myDsl_direct_declaratorR', the role 'myDsl_direct_declaratorR32' has cardinality 0..*.
+An association connects 'myDsl_direct_declaratorR' and 'myDsl_assignment_expression'. From 'myDsl_direct_declaratorR', the role 'myDsl_direct_declaratorR35' has cardinality 0..*, and from 'myDsl_assignment_expression', the role 'myDsl_assignment_expression' has cardinality 0..*.
+An association connects 'myDsl_direct_declaratorR' and 'myDsl_parameter_type_list'. From 'myDsl_direct_declaratorR', the role 'myDsl_direct_declaratorR37' has cardinality 0..*, and from 'myDsl_parameter_type_list', the role 'myDsl_parameter_type_list' has cardinality 0..*.
+An association connects 'myDsl_direct_declaratorR' and 'myDsl_identifier_list'. From 'myDsl_direct_declaratorR', the role 'myDsl_direct_declaratorR39' has cardinality 0..*, and from 'myDsl_identifier_list', the role 'myDsl_identifier_list' has cardinality 0..*.
+An association connects 'myDsl_parameter_list' and 'myDsl_parameter_declaration'. From 'myDsl_parameter_list', the role 'myDsl_parameter_list' has cardinality 0..*, and from 'myDsl_parameter_declaration', the role 'myDsl_parameter_declaration' has cardinality 0..*.
+An association connects 'myDsl_parameter_listR' and 'myDsl_parameter_list'. From 'myDsl_parameter_listR', the role 'myDsl_parameter_listR' has cardinality 0..*, and from 'myDsl_parameter_list', the role 'myDsl_parameter_list42' has cardinality 0..*.
+An association connects 'myDsl_parameter_declaration' and 'myDsl_parameter_listR'. From 'myDsl_parameter_declaration', the role 'myDsl_parameter_declaration45' has cardinality 0..*, and from 'myDsl_parameter_listR', the role 'myDsl_parameter_listR44' has cardinality 0..*.
+An association connects 'myDsl_parameter_listR' and 'myDsl_parameter_listR'. From 'myDsl_parameter_listR', the role 'myDsl_parameter_listR46' has cardinality 0..*, and from 'myDsl_parameter_listR', the role 'myDsl_parameter_listR48' has cardinality 0..*.
+An association connects 'myDsl_parameter_declaration' and 'myDsl_declaration_specifiers'. From 'myDsl_parameter_declaration', the role 'myDsl_parameter_declaration50' has cardinality 0..*, and from 'myDsl_declaration_specifiers', the role 'myDsl_declaration_specifiers51' has cardinality 0..*.
+An association connects 'myDsl_declarator' and 'myDsl_parameter_declaration'. From 'myDsl_declarator', the role 'myDsl_declarator54' has cardinality 0..*, and from 'myDsl_parameter_declaration', the role 'myDsl_parameter_declaration53' has cardinality 0..*.
+An association connects 'myDsl_declaration_specifiers' and 'myDsl_parameter_declaration'. From 'myDsl_declaration_specifiers', the role 'myDsl_declaration_specifiers57' has cardinality 0..*, and from 'myDsl_parameter_declaration', the role 'myDsl_parameter_declaration56' has cardinality 0..*.
+An association connects 'myDsl_abstract_declarator' and 'myDsl_parameter_declaration'. From 'myDsl_abstract_declarator', the role 'myDsl_abstract_declarator' has cardinality 0..*, and from 'myDsl_parameter_declaration', the role 'myDsl_parameter_declaration59' has cardinality 0..*.
+An association connects 'myDsl_declaration' and 'myDsl_declaration_list'. From 'myDsl_declaration', the role 'myDsl_declaration' has cardinality 0..*, and from 'myDsl_declaration_list', the role 'myDsl_declaration_list61' has cardinality 0..*.
+An association connects 'myDsl_declaration_listR' and 'myDsl_declaration_list'. From 'myDsl_declaration_listR', the role 'myDsl_declaration_listR' has cardinality 0..*, and from 'myDsl_declaration_list', the role 'myDsl_declaration_list63' has cardinality 0..*.
+An association connects 'myDsl_declaration' and 'myDsl_declaration_listR'. From 'myDsl_declaration', the role 'myDsl_declaration66' has cardinality 0..*, and from 'myDsl_declaration_listR', the role 'myDsl_declaration_listR65' has cardinality 0..*.
+An association connects 'myDsl_declaration_listR' and 'myDsl_declaration_listR'. From 'myDsl_declaration_listR', the role 'myDsl_declaration_listR69' has cardinality 0..*, and from 'myDsl_declaration_listR', the role 'myDsl_declaration_listR67' has cardinality 0..*.
+An association connects 'myDsl_block_item' and 'myDsl_block_item_list'. From 'myDsl_block_item', the role 'myDsl_block_item' has cardinality 0..*, and from 'myDsl_block_item_list', the role 'myDsl_block_item_list' has cardinality 0..*.
+An association connects 'myDsl_block_item_listR' and 'myDsl_block_item_list'. From 'myDsl_block_item_listR', the role 'myDsl_block_item_listR' has cardinality 0..*, and from 'myDsl_block_item_list', the role 'myDsl_block_item_list72' has cardinality 0..*.
+An association connects 'myDsl_block_item' and 'myDsl_block_item_listR'. From 'myDsl_block_item', the role 'myDsl_block_item75' has cardinality 0..*, and from 'myDsl_block_item_listR', the role 'myDsl_block_item_listR74' has cardinality 0..*.
+An association connects 'myDsl_block_item_listR' and 'myDsl_block_item_listR'. From 'myDsl_block_item_listR', the role 'myDsl_block_item_listR76' has cardinality 0..*, and from 'myDsl_block_item_listR', the role 'myDsl_block_item_listR78' has cardinality 0..*.
+An association connects 'myDsl_labeled_statement' and 'myDsl_constant_expression'. From 'myDsl_labeled_statement', the role 'myDsl_labeled_statement' has cardinality 0..*, and from 'myDsl_constant_expression', the role 'myDsl_constant_expression' has cardinality 0..*.
+An association connects 'myDsl_labeled_statement' and 'myDsl_statement'. From 'myDsl_labeled_statement', the role 'myDsl_labeled_statement81' has cardinality 0..*, and from 'myDsl_statement', the role 'myDsl_statement' has cardinality 0..*.
+An association connects 'myDsl_labeled_statement' and 'myDsl_statement'. From 'myDsl_labeled_statement', the role 'myDsl_labeled_statement83' has cardinality 0..*, and from 'myDsl_statement', the role 'myDsl_statement84' has cardinality 0..*.
+An association connects 'myDsl_iteration_statement' and 'myDsl_expression'. From 'myDsl_iteration_statement', the role 'myDsl_iteration_statement' has cardinality 0..*, and from 'myDsl_expression', the role 'myDsl_expression' has cardinality 0..*.
+An association connects 'myDsl_statement' and 'myDsl_iteration_statement'. From 'myDsl_statement', the role 'myDsl_statement88' has cardinality 0..*, and from 'myDsl_iteration_statement', the role 'myDsl_iteration_statement87' has cardinality 0..*.
+An association connects 'myDsl_expression_statement' and 'myDsl_iteration_statement'. From 'myDsl_expression_statement', the role 'myDsl_expression_statement' has cardinality 0..*, and from 'myDsl_iteration_statement', the role 'myDsl_iteration_statement90' has cardinality 0..*.
+An association connects 'myDsl_declaration' and 'myDsl_iteration_statement'. From 'myDsl_declaration', the role 'myDsl_declaration93' has cardinality 0..*, and from 'myDsl_iteration_statement', the role 'myDsl_iteration_statement92' has cardinality 0..*.
+An association connects 'myDsl_init_declarator_list' and 'myDsl_declaration'. From 'myDsl_init_declarator_list', the role 'myDsl_init_declarator_list' has cardinality 0..*, and from 'myDsl_declaration', the role 'myDsl_declaration95' has cardinality 0..*.
+An association connects 'myDsl_init_declarator_list' and 'myDsl_init_declarator'. From 'myDsl_init_declarator_list', the role 'myDsl_init_declarator_list97' has cardinality 0..*, and from 'myDsl_init_declarator', the role 'myDsl_init_declarator' has cardinality 0..*.
+An association connects 'myDsl_init_declarator_list' and 'myDsl_init_declarator_listR'. From 'myDsl_init_declarator_list', the role 'myDsl_init_declarator_list99' has cardinality 0..*, and from 'myDsl_init_declarator_listR', the role 'myDsl_init_declarator_listR' has cardinality 0..*.
+An association connects 'myDsl_declarator' and 'myDsl_init_declarator'. From 'myDsl_declarator', the role 'myDsl_declarator102' has cardinality 0..*, and from 'myDsl_init_declarator', the role 'myDsl_init_declarator101' has cardinality 0..*.
+An association connects 'myDsl_initializer' and 'myDsl_init_declarator'. From 'myDsl_initializer', the role 'myDsl_initializer' has cardinality 0..*, and from 'myDsl_init_declarator', the role 'myDsl_init_declarator104' has cardinality 0..*.
+An association connects 'myDsl_init_declarator' and 'myDsl_init_declarator_listR'. From 'myDsl_init_declarator', the role 'myDsl_init_declarator107' has cardinality 0..*, and from 'myDsl_init_declarator_listR', the role 'myDsl_init_declarator_listR106' has cardinality 0..*.
+An association connects 'myDsl_init_declarator_listR' and 'myDsl_init_declarator_listR'. From 'myDsl_init_declarator_listR', the role 'myDsl_init_declarator_listR110' has cardinality 0..*, and from 'myDsl_init_declarator_listR', the role 'myDsl_init_declarator_listR108' has cardinality 0..*.
+An association connects 'myDsl_declaration_specifiers' and 'myDsl_declaration_specifiers'. From 'myDsl_declaration_specifiers', the role 'myDsl_declaration_specifiers113' has cardinality 0..*, and from 'myDsl_declaration_specifiers', the role 'myDsl_declaration_specifiers111' has cardinality 0..*.
+An association connects 'myDsl_declaration_specifiers' and 'myDsl_declaration_specifiers'. From 'myDsl_declaration_specifiers', the role 'myDsl_declaration_specifiers116' has cardinality 0..*, and from 'myDsl_declaration_specifiers', the role 'myDsl_declaration_specifiers114' has cardinality 0..*.
+An association connects 'myDsl_expression' and 'myDsl_selection_statement'. From 'myDsl_expression', the role 'myDsl_expression118' has cardinality 0..*, and from 'myDsl_selection_statement', the role 'myDsl_selection_statement' has cardinality 0..*.
+An association connects 'myDsl_selection_statement' and 'myDsl_statement'. From 'myDsl_selection_statement', the role 'myDsl_selection_statement120' has cardinality 0..*, and from 'myDsl_statement', the role 'myDsl_statement121' has cardinality 0..*.
+An association connects 'myDsl_assignment_expression' and 'myDsl_expression'. From 'myDsl_assignment_expression', the role 'myDsl_assignment_expression124' has cardinality 0..*, and from 'myDsl_expression', the role 'myDsl_expression123' has cardinality 0..*.
+An association connects 'myDsl_expression' and 'myDsl_expressionR'. From 'myDsl_expression', the role 'myDsl_expression126' has cardinality 0..*, and from 'myDsl_expressionR', the role 'myDsl_expressionR' has cardinality 0..*.
+An association connects 'myDsl_expressionR' and 'myDsl_assignment_expression'. From 'myDsl_expressionR', the role 'myDsl_expressionR128' has cardinality 0..*, and from 'myDsl_assignment_expression', the role 'myDsl_assignment_expression129' has cardinality 0..*.
+An association connects 'myDsl_expressionR' and 'myDsl_expressionR'. From 'myDsl_expressionR', the role 'myDsl_expressionR130' has cardinality 0..*, and from 'myDsl_expressionR', the role 'myDsl_expressionR132' has cardinality 0..*.
+An association connects 'myDsl_logical_or_expression' and 'myDsl_conditional_expression'. From 'myDsl_logical_or_expression', the role 'myDsl_logical_or_expression' has cardinality 0..*, and from 'myDsl_conditional_expression', the role 'myDsl_conditional_expression' has cardinality 0..*.
+An association connects 'myDsl_conditional_expression' and 'myDsl_expression'. From 'myDsl_conditional_expression', the role 'myDsl_conditional_expression135' has cardinality 0..*, and from 'myDsl_expression', the role 'myDsl_expression136' has cardinality 0..*.
+An association connects 'myDsl_logical_and_expression' and 'myDsl_logical_or_expression'. From 'myDsl_logical_and_expression', the role 'myDsl_logical_and_expression' has cardinality 0..*, and from 'myDsl_logical_or_expression', the role 'myDsl_logical_or_expression138' has cardinality 0..*.
+An association connects 'myDsl_logical_or_expression' and 'myDsl_logical_or_expressionR'. From 'myDsl_logical_or_expression', the role 'myDsl_logical_or_expression140' has cardinality 0..*, and from 'myDsl_logical_or_expressionR', the role 'myDsl_logical_or_expressionR' has cardinality 0..*.
+An association connects 'myDsl_logical_or_expressionR' and 'myDsl_logical_and_expression'. From 'myDsl_logical_or_expressionR', the role 'myDsl_logical_or_expressionR142' has cardinality 0..*, and from 'myDsl_logical_and_expression', the role 'myDsl_logical_and_expression143' has cardinality 0..*.
+An association connects 'myDsl_logical_or_expressionR' and 'myDsl_logical_or_expressionR'. From 'myDsl_logical_or_expressionR', the role 'myDsl_logical_or_expressionR144' has cardinality 0..*, and from 'myDsl_logical_or_expressionR', the role 'myDsl_logical_or_expressionR146' has cardinality 0..*.
+An association connects 'myDsl_logical_and_expression' and 'myDsl_inclusive_or_expression'. From 'myDsl_logical_and_expression', the role 'myDsl_logical_and_expression148' has cardinality 0..*, and from 'myDsl_inclusive_or_expression', the role 'myDsl_inclusive_or_expression' has cardinality 0..*.
+An association connects 'myDsl_logical_and_expression' and 'myDsl_logical_and_expressionR'. From 'myDsl_logical_and_expression', the role 'myDsl_logical_and_expression150' has cardinality 0..*, and from 'myDsl_logical_and_expressionR', the role 'myDsl_logical_and_expressionR' has cardinality 0..*.
+An association connects 'myDsl_inclusive_or_expression' and 'myDsl_logical_and_expressionR'. From 'myDsl_inclusive_or_expression', the role 'myDsl_inclusive_or_expression153' has cardinality 0..*, and from 'myDsl_logical_and_expressionR', the role 'myDsl_logical_and_expressionR152' has cardinality 0..*.
+An association connects 'myDsl_logical_and_expressionR' and 'myDsl_logical_and_expressionR'. From 'myDsl_logical_and_expressionR', the role 'myDsl_logical_and_expressionR154' has cardinality 0..*, and from 'myDsl_logical_and_expressionR', the role 'myDsl_logical_and_expressionR156' has cardinality 0..*.
+An association connects 'myDsl_inclusive_or_expression' and 'myDsl_exclusive_or_expression'. From 'myDsl_inclusive_or_expression', the role 'myDsl_inclusive_or_expression158' has cardinality 0..*, and from 'myDsl_exclusive_or_expression', the role 'myDsl_exclusive_or_expression' has cardinality 0..*.
+An association connects 'myDsl_inclusive_or_expressionR' and 'myDsl_inclusive_or_expression'. From 'myDsl_inclusive_or_expressionR', the role 'myDsl_inclusive_or_expressionR' has cardinality 0..*, and from 'myDsl_inclusive_or_expression', the role 'myDsl_inclusive_or_expression160' has cardinality 0..*.
+An association connects 'myDsl_exclusive_or_expression' and 'myDsl_inclusive_or_expressionR'. From 'myDsl_exclusive_or_expression', the role 'myDsl_exclusive_or_expression163' has cardinality 0..*, and from 'myDsl_inclusive_or_expressionR', the role 'myDsl_inclusive_or_expressionR162' has cardinality 0..*.
+An association connects 'myDsl_inclusive_or_expressionR' and 'myDsl_inclusive_or_expressionR'. From 'myDsl_inclusive_or_expressionR', the role 'myDsl_inclusive_or_expressionR166' has cardinality 0..*, and from 'myDsl_inclusive_or_expressionR', the role 'myDsl_inclusive_or_expressionR164' has cardinality 0..*.
+An association connects 'myDsl_exclusive_or_expression' and 'myDsl_and_expression'. From 'myDsl_exclusive_or_expression', the role 'myDsl_exclusive_or_expression168' has cardinality 0..*, and from 'myDsl_and_expression', the role 'myDsl_and_expression' has cardinality 0..*.
+An association connects 'myDsl_exclusive_or_expressionR' and 'myDsl_exclusive_or_expression'. From 'myDsl_exclusive_or_expressionR', the role 'myDsl_exclusive_or_expressionR' has cardinality 0..*, and from 'myDsl_exclusive_or_expression', the role 'myDsl_exclusive_or_expression170' has cardinality 0..*.
+An association connects 'myDsl_and_expression' and 'myDsl_exclusive_or_expressionR'. From 'myDsl_and_expression', the role 'myDsl_and_expression173' has cardinality 0..*, and from 'myDsl_exclusive_or_expressionR', the role 'myDsl_exclusive_or_expressionR172' has cardinality 0..*.
+An association connects 'myDsl_exclusive_or_expressionR' and 'myDsl_exclusive_or_expressionR'. From 'myDsl_exclusive_or_expressionR', the role 'myDsl_exclusive_or_expressionR176' has cardinality 0..*, and from 'myDsl_exclusive_or_expressionR', the role 'myDsl_exclusive_or_expressionR174' has cardinality 0..*.
+An association connects 'myDsl_and_expressionR' and 'myDsl_equality_expression'. From 'myDsl_and_expressionR', the role 'myDsl_and_expressionR' has cardinality 0..*, and from 'myDsl_equality_expression', the role 'myDsl_equality_expression' has cardinality 0..*.
+An association connects 'myDsl_and_expressionR' and 'myDsl_and_expressionR'. From 'myDsl_and_expressionR', the role 'myDsl_and_expressionR180' has cardinality 0..*, and from 'myDsl_and_expressionR', the role 'myDsl_and_expressionR178' has cardinality 0..*.
+An association connects 'myDsl_equality_expression' and 'myDsl_and_expression'. From 'myDsl_equality_expression', the role 'myDsl_equality_expression183' has cardinality 0..*, and from 'myDsl_and_expression', the role 'myDsl_and_expression182' has cardinality 0..*.
+An association connects 'myDsl_and_expression' and 'myDsl_and_expressionR'. From 'myDsl_and_expression', the role 'myDsl_and_expression185' has cardinality 0..*, and from 'myDsl_and_expressionR', the role 'myDsl_and_expressionR186' has cardinality 0..*.
+An association connects 'myDsl_relational_expression' and 'myDsl_equality_expression'. From 'myDsl_relational_expression', the role 'myDsl_relational_expression' has cardinality 0..*, and from 'myDsl_equality_expression', the role 'myDsl_equality_expression188' has cardinality 0..*.
+An association connects 'myDsl_equality_expressionR' and 'myDsl_equality_expression'. From 'myDsl_equality_expressionR', the role 'myDsl_equality_expressionR' has cardinality 0..*, and from 'myDsl_equality_expression', the role 'myDsl_equality_expression190' has cardinality 0..*.
+An association connects 'myDsl_equality_expressionR' and 'myDsl_relational_expression'. From 'myDsl_equality_expressionR', the role 'myDsl_equality_expressionR192' has cardinality 0..*, and from 'myDsl_relational_expression', the role 'myDsl_relational_expression193' has cardinality 0..*.
+An association connects 'myDsl_equality_expressionR' and 'myDsl_equality_expressionR'. From 'myDsl_equality_expressionR', the role 'myDsl_equality_expressionR196' has cardinality 0..*, and from 'myDsl_equality_expressionR', the role 'myDsl_equality_expressionR194' has cardinality 0..*.
+An association connects 'myDsl_shift_expression' and 'myDsl_relational_expression'. From 'myDsl_shift_expression', the role 'myDsl_shift_expression' has cardinality 0..*, and from 'myDsl_relational_expression', the role 'myDsl_relational_expression198' has cardinality 0..*.
+An association connects 'myDsl_relational_expressionR' and 'myDsl_relational_expression'. From 'myDsl_relational_expressionR', the role 'myDsl_relational_expressionR' has cardinality 0..*, and from 'myDsl_relational_expression', the role 'myDsl_relational_expression200' has cardinality 0..*.
+An association connects 'myDsl_relational_expressionR' and 'myDsl_shift_expression'. From 'myDsl_relational_expressionR', the role 'myDsl_relational_expressionR202' has cardinality 0..*, and from 'myDsl_shift_expression', the role 'myDsl_shift_expression203' has cardinality 0..*.
+An association connects 'myDsl_relational_expressionR' and 'myDsl_relational_expressionR'. From 'myDsl_relational_expressionR', the role 'myDsl_relational_expressionR206' has cardinality 0..*, and from 'myDsl_relational_expressionR', the role 'myDsl_relational_expressionR204' has cardinality 0..*.
+An association connects 'myDsl_shift_expressionR' and 'myDsl_additive_expression'. From 'myDsl_shift_expressionR', the role 'myDsl_shift_expressionR' has cardinality 0..*, and from 'myDsl_additive_expression', the role 'myDsl_additive_expression' has cardinality 0..*.
+An association connects 'myDsl_shift_expressionR' and 'myDsl_shift_expressionR'. From 'myDsl_shift_expressionR', the role 'myDsl_shift_expressionR210' has cardinality 0..*, and from 'myDsl_shift_expressionR', the role 'myDsl_shift_expressionR208' has cardinality 0..*.
+An association connects 'myDsl_additive_expression' and 'myDsl_shift_expressionR'. From 'myDsl_additive_expression', the role 'myDsl_additive_expression212' has cardinality 0..*, and from 'myDsl_shift_expressionR', the role 'myDsl_shift_expressionR213' has cardinality 0..*.
+An association connects 'myDsl_multiplicative_expression' and 'myDsl_additive_expression'. From 'myDsl_multiplicative_expression', the role 'myDsl_multiplicative_expression' has cardinality 0..*, and from 'myDsl_additive_expression', the role 'myDsl_additive_expression215' has cardinality 0..*.
+An association connects 'myDsl_additive_expressionR' and 'myDsl_additive_expression'. From 'myDsl_additive_expressionR', the role 'myDsl_additive_expressionR' has cardinality 0..*, and from 'myDsl_additive_expression', the role 'myDsl_additive_expression217' has cardinality 0..*.
+An association connects 'myDsl_additive_expressionR' and 'myDsl_multiplicative_expression'. From 'myDsl_additive_expressionR', the role 'myDsl_additive_expressionR219' has cardinality 0..*, and from 'myDsl_multiplicative_expression', the role 'myDsl_multiplicative_expression220' has cardinality 0..*.
+An association connects 'myDsl_additive_expressionR' and 'myDsl_additive_expressionR'. From 'myDsl_additive_expressionR', the role 'myDsl_additive_expressionR221' has cardinality 0..*, and from 'myDsl_additive_expressionR', the role 'myDsl_additive_expressionR223' has cardinality 0..*.
+An association connects 'myDsl_cast_expression' and 'myDsl_multiplicative_expressionR'. From 'myDsl_cast_expression', the role 'myDsl_cast_expression' has cardinality 0..*, and from 'myDsl_multiplicative_expressionR', the role 'myDsl_multiplicative_expressionR' has cardinality 0..*.
+An association connects 'myDsl_multiplicative_expressionR' and 'myDsl_multiplicative_expressionR'. From 'myDsl_multiplicative_expressionR', the role 'myDsl_multiplicative_expressionR227' has cardinality 0..*, and from 'myDsl_multiplicative_expressionR', the role 'myDsl_multiplicative_expressionR225' has cardinality 0..*.
+An association connects 'myDsl_multiplicative_expression' and 'myDsl_cast_expression'. From 'myDsl_multiplicative_expression', the role 'myDsl_multiplicative_expression229' has cardinality 0..*, and from 'myDsl_cast_expression', the role 'myDsl_cast_expression230' has cardinality 0..*.
+An association connects 'myDsl_multiplicative_expression' and 'myDsl_multiplicative_expressionR'. From 'myDsl_multiplicative_expression', the role 'myDsl_multiplicative_expression232' has cardinality 0..*, and from 'myDsl_multiplicative_expressionR', the role 'myDsl_multiplicative_expressionR233' has cardinality 0..*.
+An association connects 'myDsl_unary_expression' and 'myDsl_assignment_expression'. From 'myDsl_unary_expression', the role 'myDsl_unary_expression' has cardinality 0..*, and from 'myDsl_assignment_expression', the role 'myDsl_assignment_expression235' has cardinality 0..*.
+An association connects 'myDsl_assignment_expression' and 'myDsl_assignment_expression'. From 'myDsl_assignment_expression', the role 'myDsl_assignment_expression236' has cardinality 0..*, and from 'myDsl_assignment_expression', the role 'myDsl_assignment_expression238' has cardinality 0..*.
+An association connects 'myDsl_cast_expression' and 'myDsl_type_name'. From 'myDsl_cast_expression', the role 'myDsl_cast_expression240' has cardinality 0..*, and from 'myDsl_type_name', the role 'myDsl_type_name' has cardinality 0..*.
+An association connects 'myDsl_cast_expression' and 'myDsl_cast_expression'. From 'myDsl_cast_expression', the role 'myDsl_cast_expression243' has cardinality 0..*, and from 'myDsl_cast_expression', the role 'myDsl_cast_expression241' has cardinality 0..*.
+An association connects 'myDsl_unary_expression' and 'myDsl_cast_expression'. From 'myDsl_unary_expression', the role 'myDsl_unary_expression245' has cardinality 0..*, and from 'myDsl_cast_expression', the role 'myDsl_cast_expression246' has cardinality 0..*.
+An association connects 'myDsl_postfix_expression' and 'myDsl_primary_expression'. From 'myDsl_postfix_expression', the role 'myDsl_postfix_expression' has cardinality 0..*, and from 'myDsl_primary_expression', the role 'myDsl_primary_expression' has cardinality 0..*.
+An association connects 'myDsl_postfix_expressionR' and 'myDsl_postfix_expression'. From 'myDsl_postfix_expressionR', the role 'myDsl_postfix_expressionR' has cardinality 0..*, and from 'myDsl_postfix_expression', the role 'myDsl_postfix_expression249' has cardinality 0..*.
+An association connects 'myDsl_postfix_expression' and 'myDsl_initializer_list'. From 'myDsl_postfix_expression', the role 'myDsl_postfix_expression251' has cardinality 0..*, and from 'myDsl_initializer_list', the role 'myDsl_initializer_list' has cardinality 0..*.
+An association connects 'myDsl_designation' and 'myDsl_initializer_list'. From 'myDsl_designation', the role 'myDsl_designation' has cardinality 0..*, and from 'myDsl_initializer_list', the role 'myDsl_initializer_list253' has cardinality 0..*.
+An association connects 'myDsl_initializer_list' and 'myDsl_initializer'. From 'myDsl_initializer_list', the role 'myDsl_initializer_list255' has cardinality 0..*, and from 'myDsl_initializer', the role 'myDsl_initializer256' has cardinality 0..*.
+An association connects 'myDsl_initializer_list' and 'myDsl_initializer_listR'. From 'myDsl_initializer_list', the role 'myDsl_initializer_list258' has cardinality 0..*, and from 'myDsl_initializer_listR', the role 'myDsl_initializer_listR' has cardinality 0..*.
+An association connects 'myDsl_initializer_listR' and 'myDsl_initializer_list'. From 'myDsl_initializer_listR', the role 'myDsl_initializer_listR261' has cardinality 0..*, and from 'myDsl_initializer_list', the role 'myDsl_initializer_list260' has cardinality 0..*.
+An association connects 'myDsl_designation' and 'myDsl_initializer_listR'. From 'myDsl_designation', the role 'myDsl_designation264' has cardinality 0..*, and from 'myDsl_initializer_listR', the role 'myDsl_initializer_listR263' has cardinality 0..*.
+An association connects 'myDsl_initializer' and 'myDsl_initializer_listR'. From 'myDsl_initializer', the role 'myDsl_initializer267' has cardinality 0..*, and from 'myDsl_initializer_listR', the role 'myDsl_initializer_listR266' has cardinality 0..*.
+An association connects 'myDsl_initializer_listR' and 'myDsl_initializer_listR'. From 'myDsl_initializer_listR', the role 'myDsl_initializer_listR270' has cardinality 0..*, and from 'myDsl_initializer_listR', the role 'myDsl_initializer_listR268' has cardinality 0..*.
+An association connects 'myDsl_designator' and 'myDsl_designator_list'. From 'myDsl_designator', the role 'myDsl_designator' has cardinality 0..*, and from 'myDsl_designator_list', the role 'myDsl_designator_list' has cardinality 0..*.
+An association connects 'myDsl_designator_listR' and 'myDsl_designator_list'. From 'myDsl_designator_listR', the role 'myDsl_designator_listR' has cardinality 0..*, and from 'myDsl_designator_list', the role 'myDsl_designator_list273' has cardinality 0..*.
+An association connects 'myDsl_designator_listR' and 'myDsl_designator'. From 'myDsl_designator_listR', the role 'myDsl_designator_listR275' has cardinality 0..*, and from 'myDsl_designator', the role 'myDsl_designator276' has cardinality 0..*.
+An association connects 'myDsl_designator_listR' and 'myDsl_designator_listR'. From 'myDsl_designator_listR', the role 'myDsl_designator_listR279' has cardinality 0..*, and from 'myDsl_designator_listR', the role 'myDsl_designator_listR277' has cardinality 0..*.
+An association connects 'myDsl_type_name' and 'myDsl_specifier_qualifier_list'. From 'myDsl_type_name', the role 'myDsl_type_name281' has cardinality 0..*, and from 'myDsl_specifier_qualifier_list', the role 'myDsl_specifier_qualifier_list' has cardinality 0..*.
+An association connects 'myDsl_abstract_declarator' and 'myDsl_type_name'. From 'myDsl_abstract_declarator', the role 'myDsl_abstract_declarator284' has cardinality 0..*, and from 'myDsl_type_name', the role 'myDsl_type_name283' has cardinality 0..*.
+An association connects 'myDsl_type_specifier' and 'myDsl_specifier_qualifier_list'. From 'myDsl_type_specifier', the role 'myDsl_type_specifier' has cardinality 0..*, and from 'myDsl_specifier_qualifier_list', the role 'myDsl_specifier_qualifier_list286' has cardinality 0..*.
+An association connects 'myDsl_specifier_qualifier_list' and 'myDsl_specifier_qualifier_list'. From 'myDsl_specifier_qualifier_list', the role 'myDsl_specifier_qualifier_list289' has cardinality 0..*, and from 'myDsl_specifier_qualifier_list', the role 'myDsl_specifier_qualifier_list287' has cardinality 0..*.
+An association connects 'myDsl_struct_declarator_list' and 'myDsl_struct_declarator'. From 'myDsl_struct_declarator_list', the role 'myDsl_struct_declarator_list' has cardinality 0..*, and from 'myDsl_struct_declarator', the role 'myDsl_struct_declarator' has cardinality 0..*.
+An association connects 'myDsl_struct_declarator_listR' and 'myDsl_struct_declarator_list'. From 'myDsl_struct_declarator_listR', the role 'myDsl_struct_declarator_listR' has cardinality 0..*, and from 'myDsl_struct_declarator_list', the role 'myDsl_struct_declarator_list292' has cardinality 0..*.
+An association connects 'myDsl_struct_declaration' and 'myDsl_struct_declaration_list'. From 'myDsl_struct_declaration', the role 'myDsl_struct_declaration' has cardinality 0..*, and from 'myDsl_struct_declaration_list', the role 'myDsl_struct_declaration_list' has cardinality 0..*.
+An association connects 'myDsl_struct_declaration_listR' and 'myDsl_struct_declaration_list'. From 'myDsl_struct_declaration_listR', the role 'myDsl_struct_declaration_listR' has cardinality 0..*, and from 'myDsl_struct_declaration_list', the role 'myDsl_struct_declaration_list295' has cardinality 0..*.
+An association connects 'myDsl_struct_declaration' and 'myDsl_struct_declaration_listR'. From 'myDsl_struct_declaration', the role 'myDsl_struct_declaration298' has cardinality 0..*, and from 'myDsl_struct_declaration_listR', the role 'myDsl_struct_declaration_listR297' has cardinality 0..*.
+An association connects 'myDsl_struct_declaration_listR' and 'myDsl_struct_declaration_listR'. From 'myDsl_struct_declaration_listR', the role 'myDsl_struct_declaration_listR301' has cardinality 0..*, and from 'myDsl_struct_declaration_listR', the role 'myDsl_struct_declaration_listR299' has cardinality 0..*.
+An association connects 'myDsl_specifier_qualifier_list' and 'myDsl_struct_declaration'. From 'myDsl_specifier_qualifier_list', the role 'myDsl_specifier_qualifier_list304' has cardinality 0..*, and from 'myDsl_struct_declaration', the role 'myDsl_struct_declaration303' has cardinality 0..*.
+An association connects 'myDsl_struct_declaration' and 'myDsl_struct_declarator_list'. From 'myDsl_struct_declaration', the role 'myDsl_struct_declaration306' has cardinality 0..*, and from 'myDsl_struct_declarator_list', the role 'myDsl_struct_declarator_list307' has cardinality 0..*.
+An association connects 'myDsl_struct_declarator_listR' and 'myDsl_struct_declarator'. From 'myDsl_struct_declarator_listR', the role 'myDsl_struct_declarator_listR309' has cardinality 0..*, and from 'myDsl_struct_declarator', the role 'myDsl_struct_declarator310' has cardinality 0..*.
+An association connects 'myDsl_struct_declarator_listR' and 'myDsl_struct_declarator_listR'. From 'myDsl_struct_declarator_listR', the role 'myDsl_struct_declarator_listR313' has cardinality 0..*, and from 'myDsl_struct_declarator_listR', the role 'myDsl_struct_declarator_listR311' has cardinality 0..*.
+An association connects 'myDsl_declarator' and 'myDsl_struct_declarator'. From 'myDsl_declarator', the role 'myDsl_declarator316' has cardinality 0..*, and from 'myDsl_struct_declarator', the role 'myDsl_struct_declarator315' has cardinality 0..*.
+An association connects 'myDsl_constant_expression' and 'myDsl_struct_declarator'. From 'myDsl_constant_expression', the role 'myDsl_constant_expression319' has cardinality 0..*, and from 'myDsl_struct_declarator', the role 'myDsl_struct_declarator318' has cardinality 0..*.
+An association connects 'myDsl_struct_declaration_list' and 'myDsl_struct_or_union_specifier'. From 'myDsl_struct_declaration_list', the role 'myDsl_struct_declaration_list321' has cardinality 0..*, and from 'myDsl_struct_or_union_specifier', the role 'myDsl_struct_or_union_specifier' has cardinality 0..*.
+An association connects 'myDsl_struct_or_union_specifier' and 'myDsl_IDENTIFIER'. From 'myDsl_struct_or_union_specifier', the role 'myDsl_struct_or_union_specifier323' has cardinality 0..*, and from 'myDsl_IDENTIFIER', the role 'myDsl_IDENTIFIER' has cardinality 0..*.
+An association connects 'myDsl_expression' and 'myDsl_postfix_expressionR'. From 'myDsl_expression', the role 'myDsl_expression326' has cardinality 0..*, and from 'myDsl_postfix_expressionR', the role 'myDsl_postfix_expressionR325' has cardinality 0..*.
+An association connects 'myDsl_postfix_expressionR' and 'myDsl_EObject'. From 'myDsl_postfix_expressionR', the role 'myDsl_postfix_expressionR328' has cardinality 0..*, and from 'myDsl_EObject', the role 'myDsl_EObject' has cardinality 0..*.
+An association connects 'myDsl_argument_expression_list' and 'myDsl_postfix_expressionR'. From 'myDsl_argument_expression_list', the role 'myDsl_argument_expression_list' has cardinality 0..*, and from 'myDsl_postfix_expressionR', the role 'myDsl_postfix_expressionR330' has cardinality 0..*.
+An association connects 'myDsl_assignment_expression' and 'myDsl_argument_expression_list'. From 'myDsl_assignment_expression', the role 'myDsl_assignment_expression333' has cardinality 0..*, and from 'myDsl_argument_expression_list', the role 'myDsl_argument_expression_list332' has cardinality 0..*.
+An association connects 'myDsl_argument_expression_listR' and 'myDsl_argument_expression_list'. From 'myDsl_argument_expression_listR', the role 'myDsl_argument_expression_listR' has cardinality 0..*, and from 'myDsl_argument_expression_list', the role 'myDsl_argument_expression_list335' has cardinality 0..*.
+An association connects 'myDsl_argument_expression_listR' and 'myDsl_assignment_expression'. From 'myDsl_argument_expression_listR', the role 'myDsl_argument_expression_listR337' has cardinality 0..*, and from 'myDsl_assignment_expression', the role 'myDsl_assignment_expression338' has cardinality 0..*.
+An association connects 'myDsl_argument_expression_listR' and 'myDsl_argument_expression_listR'. From 'myDsl_argument_expression_listR', the role 'myDsl_argument_expression_listR341' has cardinality 0..*, and from 'myDsl_argument_expression_listR', the role 'myDsl_argument_expression_listR339' has cardinality 0..*.
+An association connects 'myDsl_pointer' and 'myDsl_type_qualifier_list'. From 'myDsl_pointer', the role 'myDsl_pointer343' has cardinality 0..*, and from 'myDsl_type_qualifier_list', the role 'myDsl_type_qualifier_list344' has cardinality 0..*.
+An association connects 'myDsl_pointer' and 'myDsl_pointer'. From 'myDsl_pointer', the role 'myDsl_pointer347' has cardinality 0..*, and from 'myDsl_pointer', the role 'myDsl_pointer345' has cardinality 0..*.
+An association connects 'myDsl_IDENTIFIER' and 'myDsl_direct_declaratorR'. From 'myDsl_IDENTIFIER', the role 'myDsl_IDENTIFIER349' has cardinality 0..*, and from 'myDsl_direct_declaratorR', the role 'myDsl_direct_declaratorR350' has cardinality 0..*.
+An association connects 'myDsl_identifier_listR' and 'myDsl_IDENTIFIER'. From 'myDsl_identifier_listR', the role 'myDsl_identifier_listR' has cardinality 0..*, and from 'myDsl_IDENTIFIER', the role 'myDsl_IDENTIFIER352' has cardinality 0..*.
+An association connects 'myDsl_statement' and 'myDsl_IDENTIFIER'. From 'myDsl_statement', the role 'myDsl_statement355' has cardinality 0..*, and from 'myDsl_IDENTIFIER', the role 'myDsl_IDENTIFIER354' has cardinality 0..*.
+An association connects 'myDsl_declaration_specifiers' and 'myDsl_type_specifier'. From 'myDsl_declaration_specifiers', the role 'myDsl_declaration_specifiers358' has cardinality 0..*, and from 'myDsl_type_specifier', the role 'myDsl_type_specifier357' has cardinality 0..*.

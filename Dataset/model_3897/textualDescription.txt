@@ -1,0 +1,348 @@
+The domain model 'behaviour' describes the core structural elements and their relationships within the system.
+
+The model defines 81 main class(es).
+
+'PrimitiveActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_UnaryLocationFunction' represents an important domain concept.
+It has one attribute: 'functionName', which is of type str.
+
+'behaviour_End' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_StringConstantExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'behaviour_UnaryNumericFunction' represents an important domain concept.
+It has one attribute: 'functionName', which is of type str.
+
+'behaviour_UnaryStringFunction' represents an important domain concept.
+It has one attribute: 'functionName', which is of type str.
+
+'ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_PrimitiveExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Reproduce' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_While' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_MonthDuration' represents an important domain concept.
+It has one attribute: 'month', which is of type str.
+
+'behaviour_Behavior' represents an important domain concept.
+It has the following attributes: 'frequency', which is of type str; 'behaviorName', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_ComparisonBooleanFunction' represents an important domain concept.
+It has one attribute: 'functionName', which is of type str.
+
+'behaviour_NameLocationExpression' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'BinaryFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Type' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'behaviour_Add' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_LocationSetPrimitive' represents an important domain concept.
+It has one attribute: 'primitive', which is of type str.
+
+'behaviour_BinaryArithmeticFunction' represents an important domain concept.
+It has one attribute: 'functionName', which is of type str.
+
+'behaviour_BinaryLocationFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_ActivityDiagramBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'TimeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_EquationBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_BinaryBooleanFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_NumericPrimitive' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableClass' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Fork' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_FunctionCallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Duration' represents an important domain concept.
+It has one attribute: 'durationTime', which is of type int.
+
+'behaviour_IntConstantExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'behaviour_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_LocationPrimitive' represents an important domain concept.
+It has one attribute: 'primitive', which is of type str.
+
+'behaviour_ParameterClass' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_EntitySetPrimitive' represents an important domain concept.
+It has one attribute: 'primitive', which is of type str.
+
+'behaviour_CoordinateLocationExpression' represents an important domain concept.
+It has the following attributes: 'x', which is of type float; 'y', which is of type float.
+
+'behaviour_EntityPrimive' represents an important domain concept.
+It has one attribute: 'primitive', which is of type str.
+
+'behaviour_Join' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_NamedFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'LocationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Duration' represents an important domain concept.
+It does not declare any attributes.
+
+'Function' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Merge' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_VariableClass' represents an important domain concept.
+It has one attribute: 'variableName', which is of type str.
+
+'behaviour_Decision' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_FloatConstantExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'behaviour_UnconditionedEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_LocationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_PrimitiveActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstantExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Die' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_UnaryFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_BooleanPrimitive' represents an important domain concept.
+It has one attribute: 'primitive', which is of type str.
+
+'behaviour_FalseEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_AttributeClass' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Equation' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryBooleanFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_OccupationBooleanFunction' represents an important domain concept.
+It has one attribute: 'functionName', which is of type str.
+
+'behaviour_Move' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_TimeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_LogicBooleanFunction' represents an important domain concept.
+It has one attribute: 'functionName', which is of type str.
+
+'behaviour_ConstantExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_TrueEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_BinaryFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_UnaryEntityFunction' represents an important domain concept.
+It has one attribute: 'functionName', which is of type str.
+
+'behaviour_EntityClass' represents an important domain concept.
+It has one attribute: 'entityName', which is of type str.
+
+'behaviour_AnonymousFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Remove' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'LogicBooleanFunctionEnum' defines the following possible values: 'OR', 'NOT', 'AND'.
+The enumeration 'BooleanPrimitiveEnum' defines the following possible values: 'true', 'false'.
+The enumeration 'UnaryEntityFunctionEnum' defines a single possible value: 'oneof'.
+The enumeration 'EntityPrimitiveEnum' defines a single possible value: 'oneOf'.
+The enumeration 'UnaryNumericFunctionEnum' defines a single possible value: 'random'.
+The enumeration 'OccupationBooleanFunctionEnum' defines a single possible value: 'Occupied'.
+The enumeration 'EntitySetPrimiveEnum' defines the following possible values: 'all', 'neighbours'.
+The enumeration 'LocationSetPrimiveEnum' defines the following possible values: 'space', 'neighbourhood'.
+The enumeration 'ArithmeticFunctionEnum' defines the following possible values: 'Times', 'Sum', 'Minus', 'Division'.
+The enumeration 'UnaryLocationEnum' defines the following possible values: 'oneof', 'toplocation', 'oneofneighbour'.
+The enumeration 'DurationTypeEnum' defines the following possible values: 'monthly', 'weekly'.
+The enumeration 'WeekDaysEnum' defines the following possible values: 'sunday', 'monday', 'wednesday', 'saturday', 'tuesday', 'thursday', 'friday'.
+The enumeration 'MonthsEnum' defines the following possible values: 'September', 'January', 'December', 'Februrary', 'May', 'July', 'March', 'October', 'August', 'April', 'November', 'June'.
+The enumeration 'TypeEnum' defines the following possible values: 'float', 'entityset', 'boolean', 'entity', 'string', 'locationset', 'location', 'int'.
+The enumeration 'ComparisonBooleanFunctionEnum' defines the following possible values: 'LessThan', 'Equal', 'LessOrEqualThan', 'GreaterThan', 'GreaterOrEequalThan', 'NotEqual'.
+The enumeration 'LocationPrimiveEnum' defines the following possible values: 'right', 'here', 'left', 'bottom', 'top'.
+The enumeration 'UnaryStringFunctionEnum' defines a single possible value: 'Get'.
+The enumeration 'UnaryLocationFunctionEnum' defines the following possible values: 'BottomRightLocation', 'TopLeftLocation', 'RandomLocation', 'TopLocation', 'TopRightLocation', 'BottomLeftLocation', 'OneOf', 'RightLocation', 'BottomLocation', 'LeftLocation', 'RandomNeighbourhoodLocation'.
+
+The model also captures inheritance relationships between classes.
+The class 'behaviour_VariableClass' is a specialization of 'Expression'.
+The class 'behaviour_AttributeClass' is a specialization of 'VariableClass'.
+The class 'behaviour_ParameterClass' is a specialization of 'VariableClass'.
+The class 'behaviour_FunctionCallExpression' is a specialization of 'Expression'.
+The class 'behaviour_ConstantExpression' is a specialization of 'Expression'.
+The class 'behaviour_IntConstantExpression' is a specialization of 'ConstantExpression'.
+The class 'behaviour_StringConstantExpression' is a specialization of 'ConstantExpression'.
+The class 'behaviour_FloatConstantExpression' is a specialization of 'ConstantExpression'.
+The class 'behaviour_PrimitiveExpression' is a specialization of 'Expression'.
+The class 'behaviour_EntityPrimive' is a specialization of 'PrimitiveExpression'.
+The class 'behaviour_LocationPrimitive' is a specialization of 'PrimitiveExpression'.
+The class 'behaviour_LocationSetPrimitive' is a specialization of 'PrimitiveExpression'.
+The class 'behaviour_EntitySetPrimitive' is a specialization of 'PrimitiveExpression'.
+The class 'behaviour_BooleanPrimitive' is a specialization of 'PrimitiveExpression'.
+The class 'behaviour_LocationExpression' is a specialization of 'Expression'.
+The class 'behaviour_EquationBehaviour' is a specialization of 'Behavior'.
+The class 'behaviour_ActivityDiagramBehavior' is a specialization of 'Behavior'.
+The class 'behaviour_ActivityDiagramBehavior' is a specialization of 'ExecutableNode'.
+The class 'behaviour_AnonymousFunction' is a specialization of 'Function'.
+The class 'behaviour_NamedFunction' is a specialization of 'Function'.
+The class 'behaviour_UnconditionedEdge' is a specialization of 'Edge'.
+The class 'behaviour_UnaryStringFunction' is a specialization of 'UnaryFunction'.
+The class 'behaviour_UnaryLocationFunction' is a specialization of 'UnaryFunction'.
+The class 'behaviour_BinaryBooleanFunction' is a specialization of 'BinaryFunction'.
+The class 'behaviour_BinaryArithmeticFunction' is a specialization of 'BinaryFunction'.
+The class 'behaviour_UnaryNumericFunction' is a specialization of 'UnaryFunction'.
+The class 'behaviour_ComparisonBooleanFunction' is a specialization of 'BinaryBooleanFunction'.
+The class 'behaviour_OccupationBooleanFunction' is a specialization of 'BinaryBooleanFunction'.
+The class 'behaviour_LogicBooleanFunction' is a specialization of 'BinaryBooleanFunction'.
+The class 'behaviour_ControlNode' is a specialization of 'Node'.
+The class 'behaviour_ExecutableNode' is a specialization of 'Node'.
+The class 'behaviour_TimeExpression' is a specialization of 'ControlNode'.
+The class 'behaviour_Decision' is a specialization of 'ControlNode'.
+The class 'behaviour_Join' is a specialization of 'ControlNode'.
+The class 'behaviour_Start' is a specialization of 'ControlNode'.
+The class 'behaviour_End' is a specialization of 'ControlNode'.
+The class 'behaviour_Fork' is a specialization of 'ControlNode'.
+The class 'behaviour_Merge' is a specialization of 'ControlNode'.
+The class 'behaviour_PrimitiveActivity' is a specialization of 'ExecutableNode'.
+The class 'behaviour_Move' is a specialization of 'PrimitiveActivity'.
+The class 'behaviour_Die' is a specialization of 'PrimitiveActivity'.
+The class 'behaviour_Reproduce' is a specialization of 'PrimitiveActivity'.
+The class 'behaviour_Add' is a specialization of 'PrimitiveActivity'.
+The class 'behaviour_Remove' is a specialization of 'PrimitiveActivity'.
+The class 'behaviour_While' is a specialization of 'TimeExpression'.
+The class 'behaviour_TrueEdge' is a specialization of 'Edge'.
+The class 'behaviour_FalseEdge' is a specialization of 'Edge'.
+The class 'behaviour_UnaryEntityFunction' is a specialization of 'UnaryFunction'.
+The class 'behaviour_NameLocationExpression' is a specialization of 'LocationExpression'.
+The class 'behaviour_CoordinateLocationExpression' is a specialization of 'LocationExpression'.
+The class 'behaviour_MonthDuration' is a specialization of 'Duration'.
+The class 'behaviour_BinaryFunction' is a specialization of 'NamedFunction'.
+The class 'behaviour_UnaryFunction' is a specialization of 'NamedFunction'.
+The class 'behaviour_BinaryLocationFunction' is a specialization of 'BinaryFunction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'behaviour_Type' and 'behaviour_VariableClass'. From 'behaviour_Type', the role 'behaviour_Type' has cardinality 0..*, and from 'behaviour_VariableClass', the role 'behaviour_VariableClass' has cardinality 0..*.
+An association connects 'behaviour_VariableClass' and 'behaviour_FunctionCallExpression'. From 'behaviour_VariableClass', the role 'behaviour_VariableClass2' has cardinality 0..*, and from 'behaviour_FunctionCallExpression', the role 'behaviour_FunctionCallExpression' has cardinality 0..*.
+An association connects 'behaviour_Function' and 'behaviour_FunctionCallExpression'. From 'behaviour_Function', the role 'behaviour_Function' has cardinality 0..*, and from 'behaviour_FunctionCallExpression', the role 'behaviour_FunctionCallExpression4' has cardinality 0..*.
+An association connects 'behaviour_Type' and 'behaviour_Function'. From 'behaviour_Type', the role 'behaviour_Type7' has cardinality 0..*, and from 'behaviour_Function', the role 'behaviour_Function6' has cardinality 0..*.
+An association connects 'behaviour_Function' and 'behaviour_Type'. From 'behaviour_Function', the role 'behaviour_Function9' has cardinality 0..*, and from 'behaviour_Type', the role 'behaviour_Type10' has cardinality 0..*.
+An association connects 'behaviour_EntityClass' and 'behaviour_Behavior'. From 'behaviour_EntityClass', the role 'behaviour_EntityClass' has cardinality 0..*, and from 'behaviour_Behavior', the role 'behaviour_Behavior' has cardinality 0..*.
+An association connects 'behaviour_AttributeClass' and 'behaviour_EntityClass'. From 'behaviour_AttributeClass', the role 'behaviour_AttributeClass' has cardinality 0..*, and from 'behaviour_EntityClass', the role 'behaviour_EntityClass13' has cardinality 0..*.
+An association connects 'behaviour_Duration' and 'behaviour_Behavior'. From 'behaviour_Duration', the role 'behaviour_Duration' has cardinality 0..*, and from 'behaviour_Behavior', the role 'behaviour_Behavior15' has cardinality 0..*.
+An association connects 'behaviour_Duration' and 'behaviour_Behavior'. From 'behaviour_Duration', the role 'behaviour_Duration18' has cardinality 0..*, and from 'behaviour_Behavior', the role 'behaviour_Behavior17' has cardinality 0..*.
+An association connects 'behaviour_ParameterClass' and 'behaviour_Behavior'. From 'behaviour_ParameterClass', the role 'behaviour_ParameterClass' has cardinality 0..*, and from 'behaviour_Behavior', the role 'behaviour_Behavior20' has cardinality 0..*.
+An association connects 'behaviour_Equation' and 'behaviour_EquationBehaviour'. From 'behaviour_Equation', the role 'behaviour_Equation' has cardinality 0..*, and from 'behaviour_EquationBehaviour', the role 'behaviour_EquationBehaviour' has cardinality 0..*.
+An association connects 'behaviour_Start' and 'behaviour_ActivityDiagramBehavior'. From 'behaviour_Start', the role 'behaviour_Start' has cardinality 0..*, and from 'behaviour_ActivityDiagramBehavior', the role 'behaviour_ActivityDiagramBehavior' has cardinality 0..*.
+An association connects 'behaviour_End' and 'behaviour_ActivityDiagramBehavior'. From 'behaviour_End', the role 'behaviour_End' has cardinality 0..*, and from 'behaviour_ActivityDiagramBehavior', the role 'behaviour_ActivityDiagramBehavior24' has cardinality 0..*.
+An association connects 'behaviour_ActivityDiagramBehavior' and 'behaviour_Edge'. From 'behaviour_ActivityDiagramBehavior', the role 'behaviour_ActivityDiagramBehavior26' has cardinality 0..*, and from 'behaviour_Edge', the role 'behaviour_Edge' has cardinality 0..*.
+An association connects 'behaviour_ActivityDiagramBehavior' and 'behaviour_Node'. From 'behaviour_ActivityDiagramBehavior', the role 'behaviour_ActivityDiagramBehavior28' has cardinality 0..*, and from 'behaviour_Node', the role 'behaviour_Node' has cardinality 0..*.
+An association connects 'behaviour_Equation' and 'behaviour_AttributeClass'. From 'behaviour_Equation', the role 'behaviour_Equation30' has cardinality 0..*, and from 'behaviour_AttributeClass', the role 'behaviour_AttributeClass31' has cardinality 0..*.
+An association connects 'behaviour_Expression' and 'behaviour_Equation'. From 'behaviour_Expression', the role 'behaviour_Expression' has cardinality 0..*, and from 'behaviour_Equation', the role 'behaviour_Equation33' has cardinality 0..*.
+An association connects 'behaviour_Node' and 'behaviour_Edge'. From 'behaviour_Node', the role 'behaviour_Node36' has cardinality 0..*, and from 'behaviour_Edge', the role 'behaviour_Edge35' has cardinality 0..*.
+An association connects 'behaviour_Node' and 'behaviour_Edge'. From 'behaviour_Node', the role 'behaviour_Node39' has cardinality 0..*, and from 'behaviour_Edge', the role 'behaviour_Edge38' has cardinality 0..*.
+An association connects 'behaviour_Expression' and 'behaviour_TimeExpression'. From 'behaviour_Expression', the role 'behaviour_Expression41' has cardinality 0..*, and from 'behaviour_TimeExpression', the role 'behaviour_TimeExpression' has cardinality 0..*.
+An association connects 'behaviour_Expression' and 'behaviour_Decision'. From 'behaviour_Expression', the role 'behaviour_Expression43' has cardinality 0..*, and from 'behaviour_Decision', the role 'behaviour_Decision' has cardinality 0..*.
+An association connects 'behaviour_Move' and 'behaviour_Expression'. From 'behaviour_Move', the role 'behaviour_Move' has cardinality 0..*, and from 'behaviour_Expression', the role 'behaviour_Expression45' has cardinality 0..*.
+An association connects 'behaviour_Add' and 'behaviour_AttributeClass'. From 'behaviour_Add', the role 'behaviour_Add' has cardinality 0..*, and from 'behaviour_AttributeClass', the role 'behaviour_AttributeClass47' has cardinality 0..*.
+An association connects 'behaviour_AttributeClass' and 'behaviour_Remove'. From 'behaviour_AttributeClass', the role 'behaviour_AttributeClass49' has cardinality 0..*, and from 'behaviour_Remove', the role 'behaviour_Remove' has cardinality 0..*.

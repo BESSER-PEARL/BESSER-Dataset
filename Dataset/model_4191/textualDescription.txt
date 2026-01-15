@@ -1,0 +1,12 @@
+The domain model 'testLanguage' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'testLanguage_Greeting' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'testLanguage_Model' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'testLanguage_Greeting' and 'testLanguage_Model'. From 'testLanguage_Greeting', the role 'testLanguage_Greeting' has cardinality 0..*, and from 'testLanguage_Model', the role 'testLanguage_Model' has cardinality 0..*.

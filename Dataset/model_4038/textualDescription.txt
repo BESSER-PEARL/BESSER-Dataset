@@ -1,0 +1,62 @@
+The domain model 'classdiagram' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'classdiagram_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'classdiagram_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'classdiagram_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'classdiagram_TypedElement' represents an important domain concept.
+It has one attribute: 'public', which is of type bool.
+
+'classdiagram_Dependency' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'classdiagram_ClassDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'classdiagram_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'classdiagram_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'classdiagram_Class' is a specialization of 'NamedElement'.
+The class 'classdiagram_Attribute' is a specialization of 'TypedElement'.
+The class 'classdiagram_Operation' is a specialization of 'TypedElement'.
+The class 'classdiagram_TypedElement' is a specialization of 'NamedElement'.
+The class 'classdiagram_Association' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'classdiagram_ClassDiagram' and 'classdiagram_Class'. From 'classdiagram_ClassDiagram', the role 'classdiagram_ClassDiagram' has cardinality 0..*, and from 'classdiagram_Class', the role 'classdiagram_Class' has cardinality 0..*.
+An association connects 'classdiagram_Dependency' and 'classdiagram_ClassDiagram'. From 'classdiagram_Dependency', the role 'classdiagram_Dependency' has cardinality 0..*, and from 'classdiagram_ClassDiagram', the role 'classdiagram_ClassDiagram2' has cardinality 0..*.
+An association connects 'classdiagram_ClassDiagram' and 'classdiagram_Association'. From 'classdiagram_ClassDiagram', the role 'classdiagram_ClassDiagram4' has cardinality 0..*, and from 'classdiagram_Association', the role 'classdiagram_Association' has cardinality 0..*.
+An association connects 'classdiagram_Attribute' and 'classdiagram_Class'. From 'classdiagram_Attribute', the role 'Attribute' has cardinality 0..*, and from 'classdiagram_Class', the role 'owner' has cardinality 0..*.
+An association connects 'classdiagram_Operation' and 'classdiagram_Class'. From 'classdiagram_Operation', the role 'Operation' has cardinality 0..*, and from 'classdiagram_Class', the role 'owner7' has cardinality 0..*.
+An association connects 'classdiagram_Dependency' and 'classdiagram_Class'. From 'classdiagram_Dependency', the role 'Dependency' has cardinality 0..*, and from 'classdiagram_Class', the role 'dependee' has cardinality 0..*.
+An association connects 'classdiagram_Class' and 'classdiagram_Dependency'. From 'classdiagram_Class', the role 'depender' has cardinality 0..*, and from 'classdiagram_Dependency', the role 'Dependency10' has cardinality 0..*.
+An association connects 'classdiagram_Class' and 'classdiagram_Class'. From 'classdiagram_Class', the role 'nested' has cardinality 0..*, and from 'classdiagram_Class', the role 'Class' has cardinality 0..*.
+An association connects 'classdiagram_Class' and 'classdiagram_Class'. From 'classdiagram_Class', the role 'Class15' has cardinality 0..*, and from 'classdiagram_Class', the role 'nestedIn' has cardinality 0..*.
+An association connects 'classdiagram_Class' and 'classdiagram_Class'. From 'classdiagram_Class', the role 'subclasses' has cardinality 0..*, and from 'classdiagram_Class', the role 'Class18' has cardinality 0..*.
+An association connects 'classdiagram_Class' and 'classdiagram_Class'. From 'classdiagram_Class', the role 'superclass' has cardinality 0..*, and from 'classdiagram_Class', the role 'Class21' has cardinality 0..*.
+An association connects 'classdiagram_Association' and 'classdiagram_Class'. From 'classdiagram_Association', the role 'Association' has cardinality 0..*, and from 'classdiagram_Class', the role 'source' has cardinality 0..*.
+An association connects 'classdiagram_Class' and 'classdiagram_Association'. From 'classdiagram_Class', the role 'target' has cardinality 0..*, and from 'classdiagram_Association', the role 'Association24' has cardinality 0..*.
+An association connects 'classdiagram_Class' and 'classdiagram_Attribute'. From 'classdiagram_Class', the role 'Class26' has cardinality 0..*, and from 'classdiagram_Attribute', the role 'ownedAttributes' has cardinality 0..*.
+An association connects 'classdiagram_Operation' and 'classdiagram_Class'. From 'classdiagram_Operation', the role 'ownedOperations' has cardinality 0..*, and from 'classdiagram_Class', the role 'Class28' has cardinality 0..*.
+An association connects 'classdiagram_Dependency' and 'classdiagram_Class'. From 'classdiagram_Dependency', the role 'dependenciesAsDependee' has cardinality 0..*, and from 'classdiagram_Class', the role 'Class30' has cardinality 0..*.
+An association connects 'classdiagram_Dependency' and 'classdiagram_Class'. From 'classdiagram_Dependency', the role 'dependenciesAsDepender' has cardinality 0..*, and from 'classdiagram_Class', the role 'Class32' has cardinality 0..*.
+An association connects 'classdiagram_Class' and 'classdiagram_TypedElement'. From 'classdiagram_Class', the role 'classdiagram_Class34' has cardinality 0..*, and from 'classdiagram_TypedElement', the role 'classdiagram_TypedElement' has cardinality 0..*.
+An association connects 'classdiagram_Association' and 'classdiagram_Class'. From 'classdiagram_Association', the role 'associationsAsSource' has cardinality 0..*, and from 'classdiagram_Class', the role 'Class36' has cardinality 0..*.
+An association connects 'classdiagram_Association' and 'classdiagram_Class'. From 'classdiagram_Association', the role 'associationsAsTarget' has cardinality 0..*, and from 'classdiagram_Class', the role 'Class38' has cardinality 0..*.

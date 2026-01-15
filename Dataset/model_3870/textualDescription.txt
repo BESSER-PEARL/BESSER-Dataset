@@ -1,0 +1,388 @@
+The domain model 'ram' describes the core structural elements and their relationships within the system.
+
+The model defines 85 main class(es).
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_InteractionFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_RAny' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_RChar' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_TemporaryProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_Operation' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'static', which is of type bool; 'partial', which is of type bool; 'abstract', which is of type bool.
+
+'ram_REnum' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_InteractionOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_Mapping' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_MessageViewReference' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_MessageOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ImplementationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_Gate' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMessageView' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_ElementMap' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_AspectMessageView' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_RInt' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_ObjectType' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_MessageView' represents an important domain concept.
+It does not declare any attributes.
+
+'RCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_RVoid' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_Aspect' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_DestructionOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_Interaction' represents an important domain concept.
+It does not declare any attributes.
+
+'TemporaryProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_StructuralFeatureValue' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'InteractionFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_FragmentContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_OccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_Property' represents an important domain concept.
+It has the following attributes: 'lowerBound', which is of type int; 'referenceType', which is of type str; 'upperBound', which is of type int.
+
+'ram_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_Class' represents an important domain concept.
+It has the following attributes: 'partial', which is of type bool; 'abstract', which is of type bool.
+
+'MappableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_OpaqueExpression' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'language', which is of type str.
+
+'ram_REnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_LiteralBoolean' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'ram_ContainerMap' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_MappableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_AssociationEnd' represents an important domain concept.
+It has one attribute: 'navigable', which is of type bool.
+
+'ram_OriginalBehaviorExecution' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_RSet' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_ImplementationClass' represents an important domain concept.
+It has one attribute: 'instanceClassName', which is of type str.
+
+'ram_LiteralInteger' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'OccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_ParameterValue' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_AbstractMessageView' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_MessageEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_ExecutionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_Message' represents an important domain concept.
+It has the following attributes: 'selfMessage', which is of type bool; 'messageSort', which is of type str.
+
+'ram_Lifeline' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_RList' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_Instantiation' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'ram_RBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_StructuralView' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_CombinedFragment' represents an important domain concept.
+It has one attribute: 'interactionOperator', which is of type str.
+
+'ram_LayoutElement' represents an important domain concept.
+It has the following attributes: 'x', which is of type float; 'y', which is of type float.
+
+'ObjectType' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_RString' represents an important domain concept.
+It does not declare any attributes.
+
+'FragmentContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_LiteralString' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ram_RCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_Layout' represents an important domain concept.
+It does not declare any attributes.
+
+'ram_StructuralFeature' represents an important domain concept.
+It has one attribute: 'static', which is of type bool.
+
+'ram_ParameterValueMapping' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'InstantiationType' defines the following possible values: 'Extends', 'Depends'.
+The enumeration 'ReferenceType' defines the following possible values: 'Aggregation', 'Composition', 'Regular'.
+The enumeration 'MessageSort' defines the following possible values: 'deleteMessage', 'createMessage', 'reply', 'synchCall'.
+The enumeration 'Visibility' defines the following possible values: 'private', 'public', 'protected', 'package'.
+The enumeration 'InteractionOperatorKind' defines the following possible values: 'disruptable', 'loop', 'critical', 'opt', 'alt'.
+
+The model also captures inheritance relationships between classes.
+The class 'ram_Aspect' is a specialization of 'NamedElement'.
+The class 'ram_MappableElement' is a specialization of 'NamedElement'.
+The class 'ram_Class' is a specialization of 'Classifier'.
+The class 'ram_AssociationEnd' is a specialization of 'Property'.
+The class 'ram_Association' is a specialization of 'NamedElement'.
+The class 'ram_Operation' is a specialization of 'NamedElement'.
+The class 'ram_Operation' is a specialization of 'MappableElement'.
+The class 'ram_Attribute' is a specialization of 'StructuralFeature'.
+The class 'ram_Attribute' is a specialization of 'TemporaryProperty'.
+The class 'ram_Type' is a specialization of 'NamedElement'.
+The class 'ram_Parameter' is a specialization of 'TypedElement'.
+The class 'ram_PrimitiveType' is a specialization of 'Type'.
+The class 'ram_PrimitiveType' is a specialization of 'ImplementationClass'.
+The class 'ram_ObjectType' is a specialization of 'Type'.
+The class 'ram_ObjectType' is a specialization of 'MappableElement'.
+The class 'ram_RVoid' is a specialization of 'Type'.
+The class 'ram_RBoolean' is a specialization of 'PrimitiveType'.
+The class 'ram_RInt' is a specialization of 'PrimitiveType'.
+The class 'ram_RChar' is a specialization of 'PrimitiveType'.
+The class 'ram_RString' is a specialization of 'PrimitiveType'.
+The class 'ram_RAny' is a specialization of 'Type'.
+The class 'ram_REnum' is a specialization of 'PrimitiveType'.
+The class 'ram_REnumLiteral' is a specialization of 'NamedElement'.
+The class 'ram_MessageView' is a specialization of 'AbstractMessageView'.
+The class 'ram_MessageViewReference' is a specialization of 'AbstractMessageView'.
+The class 'ram_Interaction' is a specialization of 'FragmentContainer'.
+The class 'ram_AspectMessageView' is a specialization of 'AbstractMessageView'.
+The class 'ram_AspectMessageView' is a specialization of 'NamedElement'.
+The class 'ram_MessageOccurrenceSpecification' is a specialization of 'OccurrenceSpecification'.
+The class 'ram_MessageOccurrenceSpecification' is a specialization of 'MessageEnd'.
+The class 'ram_OccurrenceSpecification' is a specialization of 'InteractionFragment'.
+The class 'ram_DestructionOccurrenceSpecification' is a specialization of 'MessageOccurrenceSpecification'.
+The class 'ram_CombinedFragment' is a specialization of 'InteractionFragment'.
+The class 'ram_OriginalBehaviorExecution' is a specialization of 'InteractionFragment'.
+The class 'ram_ExecutionStatement' is a specialization of 'InteractionFragment'.
+The class 'ram_InteractionOperand' is a specialization of 'FragmentContainer'.
+The class 'ram_StructuralFeatureValue' is a specialization of 'ValueSpecification'.
+The class 'ram_ParameterValue' is a specialization of 'ValueSpecification'.
+The class 'ram_OpaqueExpression' is a specialization of 'ValueSpecification'.
+The class 'ram_LiteralSpecification' is a specialization of 'ValueSpecification'.
+The class 'ram_LiteralString' is a specialization of 'LiteralSpecification'.
+The class 'ram_LiteralInteger' is a specialization of 'LiteralSpecification'.
+The class 'ram_RCollection' is a specialization of 'Type'.
+The class 'ram_RCollection' is a specialization of 'ImplementationClass'.
+The class 'ram_RSet' is a specialization of 'RCollection'.
+The class 'ram_RList' is a specialization of 'RCollection'.
+The class 'ram_Classifier' is a specialization of 'ObjectType'.
+The class 'ram_ImplementationClass' is a specialization of 'Classifier'.
+The class 'ram_StructuralFeature' is a specialization of 'TypedElement'.
+The class 'ram_Reference' is a specialization of 'Property'.
+The class 'ram_Reference' is a specialization of 'TemporaryProperty'.
+The class 'ram_Property' is a specialization of 'StructuralFeature'.
+The class 'ram_TypedElement' is a specialization of 'NamedElement'.
+The class 'ram_Gate' is a specialization of 'MessageEnd'.
+The class 'ram_Gate' is a specialization of 'NamedElement'.
+The class 'ram_LiteralBoolean' is a specialization of 'LiteralSpecification'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ram_Aspect' and 'ram_StructuralView'. From 'ram_Aspect', the role 'ram_Aspect' has cardinality 0..*, and from 'ram_StructuralView', the role 'ram_StructuralView' has cardinality 0..*.
+An association connects 'ram_MappableElement' and 'ram_Aspect'. From 'ram_MappableElement', the role 'ram_MappableElement' has cardinality 0..*, and from 'ram_Aspect', the role 'ram_Aspect2' has cardinality 0..*.
+An association connects 'ram_Aspect' and 'ram_AbstractMessageView'. From 'ram_Aspect', the role 'ram_Aspect4' has cardinality 0..*, and from 'ram_AbstractMessageView', the role 'ram_AbstractMessageView' has cardinality 0..*.
+An association connects 'ram_Aspect' and 'ram_Instantiation'. From 'ram_Aspect', the role 'ram_Aspect6' has cardinality 0..*, and from 'ram_Instantiation', the role 'ram_Instantiation' has cardinality 0..*.
+An association connects 'ram_Aspect' and 'ram_Layout'. From 'ram_Aspect', the role 'ram_Aspect8' has cardinality 0..*, and from 'ram_Layout', the role 'ram_Layout' has cardinality 0..*.
+An association connects 'ram_Classifier' and 'ram_StructuralView'. From 'ram_Classifier', the role 'ram_Classifier' has cardinality 0..*, and from 'ram_StructuralView', the role 'ram_StructuralView10' has cardinality 0..*.
+An association connects 'ram_StructuralView' and 'ram_Association'. From 'ram_StructuralView', the role 'ram_StructuralView12' has cardinality 0..*, and from 'ram_Association', the role 'ram_Association' has cardinality 0..*.
+An association connects 'ram_StructuralView' and 'ram_Type'. From 'ram_StructuralView', the role 'ram_StructuralView14' has cardinality 0..*, and from 'ram_Type', the role 'ram_Type' has cardinality 0..*.
+An association connects 'ram_AssociationEnd' and 'ram_Class'. From 'ram_AssociationEnd', the role 'AssociationEnd' has cardinality 0..*, and from 'ram_Class', the role 'myClass' has cardinality 0..*.
+An association connects 'ram_Attribute' and 'ram_Class'. From 'ram_Attribute', the role 'ram_Attribute' has cardinality 0..*, and from 'ram_Class', the role 'ram_Class' has cardinality 0..*.
+An association connects 'ram_Classifier' and 'ram_Class'. From 'ram_Classifier', the role 'ram_Classifier19' has cardinality 0..*, and from 'ram_Class', the role 'ram_Class18' has cardinality 0..*.
+An association connects 'ram_Association' and 'ram_AssociationEnd'. From 'ram_Association', the role 'Association' has cardinality 0..*, and from 'ram_AssociationEnd', the role 'ends' has cardinality 0..*.
+An association connects 'ram_Class' and 'ram_AssociationEnd'. From 'ram_Class', the role 'Class' has cardinality 0..*, and from 'ram_AssociationEnd', the role 'associationEnds' has cardinality 0..*.
+An association connects 'ram_Association' and 'ram_AssociationEnd'. From 'ram_Association', the role 'assoc' has cardinality 0..*, and from 'ram_AssociationEnd', the role 'AssociationEnd23' has cardinality 0..*.
+An association connects 'ram_Mapping' and 'ram_Instantiation'. From 'ram_Mapping', the role 'ram_Mapping' has cardinality 0..*, and from 'ram_Instantiation', the role 'ram_Instantiation25' has cardinality 0..*.
+An association connects 'ram_Instantiation' and 'ram_Aspect'. From 'ram_Instantiation', the role 'ram_Instantiation27' has cardinality 0..*, and from 'ram_Aspect', the role 'ram_Aspect28' has cardinality 0..*.
+An association connects 'ram_MappableElement' and 'ram_Mapping'. From 'ram_MappableElement', the role 'ram_MappableElement31' has cardinality 0..*, and from 'ram_Mapping', the role 'ram_Mapping30' has cardinality 0..*.
+An association connects 'ram_MappableElement' and 'ram_Mapping'. From 'ram_MappableElement', the role 'ram_MappableElement34' has cardinality 0..*, and from 'ram_Mapping', the role 'ram_Mapping33' has cardinality 0..*.
+An association connects 'ram_Operation' and 'ram_Type'. From 'ram_Operation', the role 'ram_Operation' has cardinality 0..*, and from 'ram_Type', the role 'ram_Type36' has cardinality 0..*.
+An association connects 'ram_Operation' and 'ram_Parameter'. From 'ram_Operation', the role 'ram_Operation38' has cardinality 0..*, and from 'ram_Parameter', the role 'ram_Parameter' has cardinality 0..*.
+An association connects 'ram_PrimitiveType' and 'ram_Attribute'. From 'ram_PrimitiveType', the role 'ram_PrimitiveType' has cardinality 0..*, and from 'ram_Attribute', the role 'ram_Attribute40' has cardinality 0..*.
+An association connects 'ram_Parameter' and 'ram_Type'. From 'ram_Parameter', the role 'ram_Parameter42' has cardinality 0..*, and from 'ram_Type', the role 'ram_Type43' has cardinality 0..*.
+An association connects 'ram_REnumLiteral' and 'ram_REnum'. From 'ram_REnumLiteral', the role 'REnumLiteral' has cardinality 0..*, and from 'ram_REnum', the role 'enum' has cardinality 0..*.
+An association connects 'ram_REnumLiteral' and 'ram_REnum'. From 'ram_REnumLiteral', the role 'literals' has cardinality 0..*, and from 'ram_REnum', the role 'REnum' has cardinality 0..*.
+An association connects 'ram_AbstractMessageView' and 'ram_AspectMessageView'. From 'ram_AbstractMessageView', the role 'ram_AbstractMessageView47' has cardinality 0..*, and from 'ram_AspectMessageView', the role 'ram_AspectMessageView' has cardinality 0..*.
+An association connects 'ram_Operation' and 'ram_MessageView'. From 'ram_Operation', the role 'ram_Operation49' has cardinality 0..*, and from 'ram_MessageView', the role 'ram_MessageView' has cardinality 0..*.
+An association connects 'ram_Interaction' and 'ram_MessageView'. From 'ram_Interaction', the role 'ram_Interaction' has cardinality 0..*, and from 'ram_MessageView', the role 'ram_MessageView51' has cardinality 0..*.
+An association connects 'ram_MessageView' and 'ram_MessageViewReference'. From 'ram_MessageView', the role 'ram_MessageView53' has cardinality 0..*, and from 'ram_MessageViewReference', the role 'ram_MessageViewReference' has cardinality 0..*.
+An association connects 'ram_Lifeline' and 'ram_Interaction'. From 'ram_Lifeline', the role 'ram_Lifeline' has cardinality 0..*, and from 'ram_Interaction', the role 'ram_Interaction55' has cardinality 0..*.
+An association connects 'ram_Message' and 'ram_Interaction'. From 'ram_Message', the role 'Message' has cardinality 0..*, and from 'ram_Interaction', the role 'interaction' has cardinality 0..*.
+An association connects 'ram_Reference' and 'ram_Interaction'. From 'ram_Reference', the role 'ram_Reference' has cardinality 0..*, and from 'ram_Interaction', the role 'ram_Interaction58' has cardinality 0..*.
+An association connects 'ram_Interaction' and 'ram_Gate'. From 'ram_Interaction', the role 'ram_Interaction60' has cardinality 0..*, and from 'ram_Gate', the role 'ram_Gate' has cardinality 0..*.
+An association connects 'ram_AspectMessageView' and 'ram_Operation'. From 'ram_AspectMessageView', the role 'ram_AspectMessageView62' has cardinality 0..*, and from 'ram_Operation', the role 'ram_Operation63' has cardinality 0..*.
+An association connects 'ram_Interaction' and 'ram_AspectMessageView'. From 'ram_Interaction', the role 'ram_Interaction66' has cardinality 0..*, and from 'ram_AspectMessageView', the role 'ram_AspectMessageView65' has cardinality 0..*.
+An association connects 'ram_TypedElement' and 'ram_Lifeline'. From 'ram_TypedElement', the role 'ram_TypedElement' has cardinality 0..*, and from 'ram_Lifeline', the role 'ram_Lifeline68' has cardinality 0..*.
+An association connects 'ram_Lifeline' and 'ram_TemporaryProperty'. From 'ram_Lifeline', the role 'ram_Lifeline70' has cardinality 0..*, and from 'ram_TemporaryProperty', the role 'ram_TemporaryProperty' has cardinality 0..*.
+An association connects 'ram_Lifeline' and 'ram_InteractionFragment'. From 'ram_Lifeline', the role 'covered' has cardinality 0..*, and from 'ram_InteractionFragment', the role 'InteractionFragment' has cardinality 0..*.
+An association connects 'ram_MessageEnd' and 'ram_Message'. From 'ram_MessageEnd', the role 'ram_MessageEnd' has cardinality 0..*, and from 'ram_Message', the role 'ram_Message' has cardinality 0..*.
+An association connects 'ram_MessageEnd' and 'ram_Message'. From 'ram_MessageEnd', the role 'ram_MessageEnd75' has cardinality 0..*, and from 'ram_Message', the role 'ram_Message74' has cardinality 0..*.
+An association connects 'ram_Message' and 'ram_Operation'. From 'ram_Message', the role 'ram_Message77' has cardinality 0..*, and from 'ram_Operation', the role 'ram_Operation78' has cardinality 0..*.
+An association connects 'ram_Message' and 'ram_StructuralFeature'. From 'ram_Message', the role 'ram_Message80' has cardinality 0..*, and from 'ram_StructuralFeature', the role 'ram_StructuralFeature' has cardinality 0..*.
+An association connects 'ram_Message' and 'ram_ParameterValueMapping'. From 'ram_Message', the role 'ram_Message82' has cardinality 0..*, and from 'ram_ParameterValueMapping', the role 'ram_ParameterValueMapping' has cardinality 0..*.
+An association connects 'ram_Message' and 'ram_Interaction'. From 'ram_Message', the role 'messages' has cardinality 0..*, and from 'ram_Interaction', the role 'Interaction' has cardinality 0..*.
+An association connects 'ram_ValueSpecification' and 'ram_Message'. From 'ram_ValueSpecification', the role 'ram_ValueSpecification' has cardinality 0..*, and from 'ram_Message', the role 'ram_Message85' has cardinality 0..*.
+An association connects 'ram_MessageEnd' and 'ram_Message'. From 'ram_MessageEnd', the role 'ram_MessageEnd87' has cardinality 0..*, and from 'ram_Message', the role 'ram_Message88' has cardinality 0..*.
+An association connects 'ram_Lifeline' and 'ram_InteractionFragment'. From 'ram_Lifeline', the role 'Lifeline' has cardinality 0..*, and from 'ram_InteractionFragment', the role 'coveredBy' has cardinality 0..*.
+An association connects 'ram_FragmentContainer' and 'ram_InteractionFragment'. From 'ram_FragmentContainer', the role 'FragmentContainer' has cardinality 0..*, and from 'ram_InteractionFragment', the role 'fragments' has cardinality 0..*.
+An association connects 'ram_CombinedFragment' and 'ram_InteractionOperand'. From 'ram_CombinedFragment', the role 'ram_CombinedFragment' has cardinality 0..*, and from 'ram_InteractionOperand', the role 'ram_InteractionOperand' has cardinality 0..*.
+An association connects 'ram_ExecutionStatement' and 'ram_ValueSpecification'. From 'ram_ExecutionStatement', the role 'ram_ExecutionStatement' has cardinality 0..*, and from 'ram_ValueSpecification', the role 'ram_ValueSpecification93' has cardinality 0..*.
+An association connects 'ram_ValueSpecification' and 'ram_InteractionOperand'. From 'ram_ValueSpecification', the role 'ram_ValueSpecification96' has cardinality 0..*, and from 'ram_InteractionOperand', the role 'ram_InteractionOperand95' has cardinality 0..*.
+An association connects 'ram_StructuralFeature' and 'ram_StructuralFeatureValue'. From 'ram_StructuralFeature', the role 'ram_StructuralFeature98' has cardinality 0..*, and from 'ram_StructuralFeatureValue', the role 'ram_StructuralFeatureValue' has cardinality 0..*.
+An association connects 'ram_Parameter' and 'ram_ParameterValueMapping'. From 'ram_Parameter', the role 'ram_Parameter101' has cardinality 0..*, and from 'ram_ParameterValueMapping', the role 'ram_ParameterValueMapping100' has cardinality 0..*.
+An association connects 'ram_ValueSpecification' and 'ram_ParameterValueMapping'. From 'ram_ValueSpecification', the role 'ram_ValueSpecification104' has cardinality 0..*, and from 'ram_ParameterValueMapping', the role 'ram_ParameterValueMapping103' has cardinality 0..*.
+An association connects 'ram_ParameterValue' and 'ram_Parameter'. From 'ram_ParameterValue', the role 'ram_ParameterValue' has cardinality 0..*, and from 'ram_Parameter', the role 'ram_Parameter106' has cardinality 0..*.
+An association connects 'ram_FragmentContainer' and 'ram_InteractionFragment'. From 'ram_FragmentContainer', the role 'container' has cardinality 0..*, and from 'ram_InteractionFragment', the role 'InteractionFragment108' has cardinality 0..*.
+An association connects 'ram_RCollection' and 'ram_ObjectType'. From 'ram_RCollection', the role 'ram_RCollection' has cardinality 0..*, and from 'ram_ObjectType', the role 'ram_ObjectType' has cardinality 0..*.
+An association connects 'ram_ContainerMap' and 'ram_Layout'. From 'ram_ContainerMap', the role 'ram_ContainerMap' has cardinality 0..*, and from 'ram_Layout', the role 'ram_Layout111' has cardinality 0..*.
+An association connects 'ram_ContainerMap' and 'ram_EObject'. From 'ram_ContainerMap', the role 'ram_ContainerMap113' has cardinality 0..*, and from 'ram_EObject', the role 'ram_EObject' has cardinality 0..*.
+An association connects 'ram_ContainerMap' and 'ram_ElementMap'. From 'ram_ContainerMap', the role 'ram_ContainerMap115' has cardinality 0..*, and from 'ram_ElementMap', the role 'ram_ElementMap' has cardinality 0..*.
+An association connects 'ram_EObject' and 'ram_ElementMap'. From 'ram_EObject', the role 'ram_EObject118' has cardinality 0..*, and from 'ram_ElementMap', the role 'ram_ElementMap117' has cardinality 0..*.
+An association connects 'ram_LayoutElement' and 'ram_ElementMap'. From 'ram_LayoutElement', the role 'ram_LayoutElement' has cardinality 0..*, and from 'ram_ElementMap', the role 'ram_ElementMap120' has cardinality 0..*.
+An association connects 'ram_Classifier' and 'ram_Operation'. From 'ram_Classifier', the role 'ram_Classifier122' has cardinality 0..*, and from 'ram_Operation', the role 'ram_Operation123' has cardinality 0..*.
+An association connects 'ram_Reference' and 'ram_ObjectType'. From 'ram_Reference', the role 'ram_Reference125' has cardinality 0..*, and from 'ram_ObjectType', the role 'ram_ObjectType126' has cardinality 0..*.

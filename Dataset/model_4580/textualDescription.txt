@@ -1,0 +1,139 @@
+The domain model 'dsl' describes the core structural elements and their relationships within the system.
+
+The model defines 33 main class(es).
+
+'dsl_SmsLeadSms' represents an important domain concept.
+It has the following attributes: 'url', which is of type str; 'dbSrc', which is of type str; 'privateKey', which is of type str; 'value', which is of type str; 'account', which is of type str; 'sender', which is of type str; 'dryrunNumber', which is of type str.
+
+'dsl_GooglecontactSelectAll' represents an important domain concept.
+It has the following attributes: 'ptwelveFile', which is of type str; 'dbSrc', which is of type str; 'project', which is of type str; 'impersonatedUser', which is of type str; 'account', which is of type str; 'value', which is of type str; 'privateKey', which is of type str.
+
+'dsl_Dropfile' represents an important domain concept.
+It has one attribute: 'target', which is of type str.
+
+'dsl_SlackPUT' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'team', which is of type str; 'channel', which is of type str.
+
+'dsl_FirebaseReactiveNotification' represents an important domain concept.
+It has the following attributes: 'url', which is of type str; 'fbjson', which is of type str; 'classFqn', which is of type str; 'groupPath', which is of type str; 'dbSrc', which is of type str.
+
+'dsl_Fetch' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'source', which is of type str.
+
+'dsl_FirebaseDatabasePut' represents an important domain concept.
+It has the following attributes: 'dbSrc', which is of type str; 'groupPath', which is of type str; 'classFqn', which is of type str; 'url', which is of type str; 'fbjson', which is of type str; 'value', which is of type str.
+
+'dsl_Doozle' represents an important domain concept.
+It has the following attributes: 'target', which is of type str; 'value', which is of type str; 'on', which is of type str.
+
+'dsl_ExecJava' represents an important domain concept.
+It has the following attributes: 'dbSrc', which is of type str; 'value', which is of type str; 'classFqn', which is of type str.
+
+'dsl_Transform' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'on', which is of type str.
+
+'dsl_GooglecalPUT' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'project', which is of type str; 'dbSrc', which is of type str; 'account', which is of type str; 'ptwelveFile', which is of type str; 'privateKey', which is of type str; 'impersonatedUser', which is of type str.
+
+'dsl_Expression' represents an important domain concept.
+It has the following attributes: 'operator', which is of type str; 'rhs', which is of type str; 'lhs', which is of type str.
+
+'dsl_Copydata' represents an important domain concept.
+It has the following attributes: 'to', which is of type str; 'source', which is of type str; 'value', which is of type str.
+
+'dsl_Catch' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_ClickSendSms' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'userid', which is of type str; 'securityKey', which is of type str; 'target', which is of type str.
+
+'dsl_TrelloPUT' represents an important domain concept.
+It has the following attributes: 'authtoken', which is of type str; 'useraccount', which is of type str; 'list', which is of type str; 'value', which is of type str; 'source', which is of type str; 'key', which is of type str.
+
+'dsl_TrelloGET' represents an important domain concept.
+It has the following attributes: 'useraccount', which is of type str; 'value', which is of type str; 'authtoken', which is of type str; 'key', which is of type str; 'board', which is of type str; 'target', which is of type str.
+
+'dsl_Callprocess' represents an important domain concept.
+It has the following attributes: 'source', which is of type str; 'target', which is of type str; 'value', which is of type str; 'datasource', which is of type str.
+
+'dsl_FBFormDownload' represents an important domain concept.
+It has the following attributes: 'target', which is of type str; 'accessToken', which is of type str; 'accountId', which is of type str; 'appSecret', which is of type str; 'value', which is of type str; 'formId', which is of type str.
+
+'dsl_Updatedaudit' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'datasource', which is of type str; 'logsink', which is of type str.
+
+'dsl_RestPart' represents an important domain concept.
+It has the following attributes: 'partName', which is of type str; 'partData', which is of type str.
+
+'dsl_WriteCsv' represents an important domain concept.
+It has the following attributes: 'to', which is of type str; 'source', which is of type str; 'delim', which is of type str; 'value', which is of type str.
+
+'dsl_Action' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Rest' represents an important domain concept.
+It has the following attributes: 'parentName', which is of type str; 'headerdatafrom', which is of type str; 'postdatafrom', which is of type str; 'url', which is of type str; 'method', which is of type str; 'ackdata', which is of type str; 'resourcedatafrom', which is of type str; 'headerdata', which is of type str; 'parentdata', which is of type str; 'authtoken', which is of type str; 'ackdatato', which is of type str; 'urldata', which is of type str.
+
+'dsl_SendMail' represents an important domain concept.
+It has the following attributes: 'dbSrc', which is of type str; 'impersonatedUser', which is of type str; 'privateKey', which is of type str; 'value', which is of type str; 'dryrunMail', which is of type str.
+
+'dsl_Finally' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_GooglecontactPUT' represents an important domain concept.
+It has the following attributes: 'privateKey', which is of type str; 'project', which is of type str; 'value', which is of type str; 'account', which is of type str; 'impersonatedUser', which is of type str; 'dbSrc', which is of type str; 'ptwelveFile', which is of type str.
+
+'dsl_FBCLead' represents an important domain concept.
+It has the following attributes: 'accessToken', which is of type str; 'target', which is of type str; 'campaignId', which is of type str; 'value', which is of type str; 'accountId', which is of type str; 'appSecret', which is of type str.
+
+'dsl_Process' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_LoadCsv' represents an important domain concept.
+It has the following attributes: 'source', which is of type str; 'value', which is of type str; 'delim', which is of type str; 'to', which is of type str.
+
+'dsl_Abort' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'dsl_Try' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'dsl_ExecJava' is a specialization of 'Action'.
+The class 'dsl_FirebaseDatabasePut' is a specialization of 'Action'.
+The class 'dsl_FirebaseReactiveNotification' is a specialization of 'Action'.
+The class 'dsl_SmsLeadSms' is a specialization of 'Action'.
+The class 'dsl_Abort' is a specialization of 'Action'.
+The class 'dsl_GooglecontactSelectAll' is a specialization of 'Action'.
+The class 'dsl_SendMail' is a specialization of 'Action'.
+The class 'dsl_GooglecontactPUT' is a specialization of 'Action'.
+The class 'dsl_GooglecalPUT' is a specialization of 'Action'.
+The class 'dsl_FBCLead' is a specialization of 'Action'.
+The class 'dsl_FBFormDownload' is a specialization of 'Action'.
+The class 'dsl_Dropfile' is a specialization of 'Action'.
+The class 'dsl_Doozle' is a specialization of 'Action'.
+The class 'dsl_Rest' is a specialization of 'Action'.
+The class 'dsl_TrelloGET' is a specialization of 'Action'.
+The class 'dsl_TrelloPUT' is a specialization of 'Action'.
+The class 'dsl_Fetch' is a specialization of 'Action'.
+The class 'dsl_Callprocess' is a specialization of 'Action'.
+The class 'dsl_Updatedaudit' is a specialization of 'Action'.
+The class 'dsl_ClickSendSms' is a specialization of 'Action'.
+The class 'dsl_SlackPUT' is a specialization of 'Action'.
+The class 'dsl_Copydata' is a specialization of 'Action'.
+The class 'dsl_WriteCsv' is a specialization of 'Action'.
+The class 'dsl_LoadCsv' is a specialization of 'Action'.
+The class 'dsl_Transform' is a specialization of 'Action'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dsl_Process' and 'dsl_Try'. From 'dsl_Process', the role 'dsl_Process' has cardinality 0..*, and from 'dsl_Try', the role 'dsl_Try' has cardinality 0..*.
+An association connects 'dsl_Process' and 'dsl_Catch'. From 'dsl_Process', the role 'dsl_Process2' has cardinality 0..*, and from 'dsl_Catch', the role 'dsl_Catch' has cardinality 0..*.
+An association connects 'dsl_Process' and 'dsl_Finally'. From 'dsl_Process', the role 'dsl_Process4' has cardinality 0..*, and from 'dsl_Finally', the role 'dsl_Finally' has cardinality 0..*.
+An association connects 'dsl_Action' and 'dsl_Try'. From 'dsl_Action', the role 'dsl_Action' has cardinality 0..*, and from 'dsl_Try', the role 'dsl_Try6' has cardinality 0..*.
+An association connects 'dsl_Finally' and 'dsl_Action'. From 'dsl_Finally', the role 'dsl_Finally8' has cardinality 0..*, and from 'dsl_Action', the role 'dsl_Action9' has cardinality 0..*.
+An association connects 'dsl_Action' and 'dsl_Catch'. From 'dsl_Action', the role 'dsl_Action12' has cardinality 0..*, and from 'dsl_Catch', the role 'dsl_Catch11' has cardinality 0..*.
+An association connects 'dsl_Expression' and 'dsl_Action'. From 'dsl_Expression', the role 'dsl_Expression' has cardinality 0..*, and from 'dsl_Action', the role 'dsl_Action14' has cardinality 0..*.
+An association connects 'dsl_Rest' and 'dsl_RestPart'. From 'dsl_Rest', the role 'dsl_Rest' has cardinality 0..*, and from 'dsl_RestPart', the role 'dsl_RestPart' has cardinality 0..*.

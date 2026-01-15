@@ -1,0 +1,71 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'model_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Ozobot' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Move' represents an important domain concept.
+It has the following attributes: 'velocity', which is of type str; 'distance', which is of type int.
+
+'model_Light' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+'model_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_OzobotProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'Command' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Rotate' represents an important domain concept.
+It has the following attributes: 'angle', which is of type float; 'direction', which is of type str; 'velocity', which is of type str.
+
+'model_Wait' represents an important domain concept.
+It has one attribute: 'time', which is of type int.
+
+'model_Repeat' represents an important domain concept.
+It has one attribute: 'count', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Direction' defines the following possible values: 'left', 'right'.
+The enumeration 'Velocity' defines the following possible values: 'fast', 'very_slow', 'slow', 'very_fast', 'medium'.
+The enumeration 'Color' defines the following possible values: 'yellow', 'blue', 'red', 'green', 'none'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_OzobotProgram' is a specialization of 'NamedElement'.
+The class 'model_Command' is a specialization of 'NamedElement'.
+The class 'model_Move' is a specialization of 'Command'.
+The class 'model_Light' is a specialization of 'Command'.
+The class 'model_Rotate' is a specialization of 'Command'.
+The class 'model_Wait' is a specialization of 'Command'.
+The class 'model_Repeat' is a specialization of 'Command'.
+The class 'model_Ozobot' is a specialization of 'NamedElement'.
+The class 'model_Block' is a specialization of 'NamedElement'.
+The class 'model_Transition' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_OzobotProgram' and 'model_Block'. From 'model_OzobotProgram', the role 'model_OzobotProgram' has cardinality 0..*, and from 'model_Block', the role 'model_Block' has cardinality 0..*.
+An association connects 'model_Command' and 'model_OzobotProgram'. From 'model_Command', the role 'model_Command' has cardinality 0..*, and from 'model_OzobotProgram', the role 'model_OzobotProgram2' has cardinality 0..*.
+An association connects 'model_Command' and 'model_Transition'. From 'model_Command', the role 'source' has cardinality 0..*, and from 'model_Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'model_Transition' and 'model_Command'. From 'model_Transition', the role 'Transition5' has cardinality 0..*, and from 'model_Command', the role 'target' has cardinality 0..*.
+An association connects 'model_Block' and 'model_Repeat'. From 'model_Block', the role 'model_Block7' has cardinality 0..*, and from 'model_Repeat', the role 'model_Repeat' has cardinality 0..*.
+An association connects 'model_OzobotProgram' and 'model_Ozobot'. From 'model_OzobotProgram', the role 'model_OzobotProgram9' has cardinality 0..*, and from 'model_Ozobot', the role 'model_Ozobot' has cardinality 0..*.
+An association connects 'model_Command' and 'model_Block'. From 'model_Command', the role 'model_Command12' has cardinality 0..*, and from 'model_Block', the role 'model_Block11' has cardinality 0..*.
+An association connects 'model_Block' and 'model_Transition'. From 'model_Block', the role 'model_Block14' has cardinality 0..*, and from 'model_Transition', the role 'model_Transition' has cardinality 0..*.
+An association connects 'model_Transition' and 'model_Command'. From 'model_Transition', the role 'outgoing' has cardinality 0..*, and from 'model_Command', the role 'Command' has cardinality 0..*.
+An association connects 'model_Transition' and 'model_Command'. From 'model_Transition', the role 'incoming' has cardinality 0..*, and from 'model_Command', the role 'Command17' has cardinality 0..*.

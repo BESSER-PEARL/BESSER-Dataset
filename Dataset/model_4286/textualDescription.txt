@@ -1,0 +1,67 @@
+The domain model 'hockeyleague' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'HockeyleagueObject' represents an important domain concept.
+It does not declare any attributes.
+
+'hockeyleague_Player' represents an important domain concept.
+It has the following attributes: 'shot', which is of type str; 'heightMesurement', which is of type str; 'birthdate', which is of type str; 'heightValue', which is of type int; 'weightMesurement', which is of type str; 'number', which is of type int; 'birthplace', which is of type str; 'weightValue', which is of type int.
+
+'hockeyleague_Goalie' represents an important domain concept.
+It does not declare any attributes.
+
+'hockeyleague_Team' represents an important domain concept.
+It does not declare any attributes.
+
+'hockeyleague_PlayerStats' represents an important domain concept.
+It has the following attributes: 'penaltyMinutes', which is of type int; 'gamesPlayedIn', which is of type int; 'powerPlayGoals', which is of type int; 'assists', which is of type int; 'shots', which is of type int; 'gameWinningGoals', which is of type int; 'points', which is of type int; 'shortHandedGoals', which is of type int; 'goals', which is of type int; 'shotPercentage', which is of type float; 'year', which is of type str; 'plusMinus', which is of type int.
+
+'hockeyleague_GoalieStats' represents an important domain concept.
+It has the following attributes: 'ties', which is of type int; 'minutesPlayedIn', which is of type int; 'emptyNetGoals', which is of type int; 'saves', which is of type int; 'losses', which is of type int; 'goals', which is of type int; 'wins', which is of type int; 'goalsAgainst', which is of type int; 'shutouts', which is of type int; 'penaltyMinutes', which is of type int; 'year', which is of type str; 'points', which is of type int; 'goalsAgainstAverage', which is of type float; 'assists', which is of type int; 'gamesPlayedIn', which is of type int.
+
+'hockeyleague_Arena' represents an important domain concept.
+It has the following attributes: 'address', which is of type str; 'capacity', which is of type int.
+
+'Player' represents an important domain concept.
+It does not declare any attributes.
+
+'hockeyleague_HockeyleagueObject' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'hockeyleague_Forward' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'hockeyleague_League' represents an important domain concept.
+It has one attribute: 'headoffice', which is of type str.
+
+'hockeyleague_Defence' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DefencePositionKind' defines the following possible values: 'right_defence', 'left_defence'.
+The enumeration 'ShotKind' defines the following possible values: 'left', 'right'.
+The enumeration 'WeightKind' defines the following possible values: 'pounds', 'kilograms'.
+The enumeration 'HeightKind' defines the following possible values: 'centimeters', 'inches'.
+The enumeration 'ForwardPositionKind' defines the following possible values: 'center', 'right_wing', 'left_wing'.
+
+The model also captures inheritance relationships between classes.
+The class 'hockeyleague_Arena' is a specialization of 'HockeyleagueObject'.
+The class 'hockeyleague_Defence' is a specialization of 'Player'.
+The class 'hockeyleague_Forward' is a specialization of 'Player'.
+The class 'hockeyleague_Goalie' is a specialization of 'Player'.
+The class 'hockeyleague_League' is a specialization of 'HockeyleagueObject'.
+The class 'hockeyleague_Player' is a specialization of 'HockeyleagueObject'.
+The class 'hockeyleague_Team' is a specialization of 'HockeyleagueObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'hockeyleague_Defence' and 'hockeyleague_PlayerStats'. From 'hockeyleague_Defence', the role 'hockeyleague_Defence' has cardinality 0..*, and from 'hockeyleague_PlayerStats', the role 'hockeyleague_PlayerStats' has cardinality 0..*.
+An association connects 'hockeyleague_PlayerStats' and 'hockeyleague_Forward'. From 'hockeyleague_PlayerStats', the role 'hockeyleague_PlayerStats2' has cardinality 0..*, and from 'hockeyleague_Forward', the role 'hockeyleague_Forward' has cardinality 0..*.
+An association connects 'hockeyleague_Goalie' and 'hockeyleague_GoalieStats'. From 'hockeyleague_Goalie', the role 'hockeyleague_Goalie' has cardinality 0..*, and from 'hockeyleague_GoalieStats', the role 'hockeyleague_GoalieStats' has cardinality 0..*.
+An association connects 'hockeyleague_Team' and 'hockeyleague_GoalieStats'. From 'hockeyleague_Team', the role 'hockeyleague_Team' has cardinality 0..*, and from 'hockeyleague_GoalieStats', the role 'hockeyleague_GoalieStats5' has cardinality 0..*.
+An association connects 'hockeyleague_League' and 'hockeyleague_Team'. From 'hockeyleague_League', the role 'hockeyleague_League' has cardinality 0..*, and from 'hockeyleague_Team', the role 'hockeyleague_Team7' has cardinality 0..*.
+An association connects 'hockeyleague_Team' and 'hockeyleague_PlayerStats'. From 'hockeyleague_Team', the role 'hockeyleague_Team10' has cardinality 0..*, and from 'hockeyleague_PlayerStats', the role 'hockeyleague_PlayerStats9' has cardinality 0..*.
+An association connects 'hockeyleague_Team' and 'hockeyleague_Forward'. From 'hockeyleague_Team', the role 'hockeyleague_Team12' has cardinality 0..*, and from 'hockeyleague_Forward', the role 'hockeyleague_Forward13' has cardinality 0..*.
+An association connects 'hockeyleague_Defence' and 'hockeyleague_Team'. From 'hockeyleague_Defence', the role 'hockeyleague_Defence16' has cardinality 0..*, and from 'hockeyleague_Team', the role 'hockeyleague_Team15' has cardinality 0..*.
+An association connects 'hockeyleague_Goalie' and 'hockeyleague_Team'. From 'hockeyleague_Goalie', the role 'hockeyleague_Goalie19' has cardinality 0..*, and from 'hockeyleague_Team', the role 'hockeyleague_Team18' has cardinality 0..*.
+An association connects 'hockeyleague_Arena' and 'hockeyleague_Team'. From 'hockeyleague_Arena', the role 'hockeyleague_Arena' has cardinality 0..*, and from 'hockeyleague_Team', the role 'hockeyleague_Team21' has cardinality 0..*.

@@ -1,0 +1,378 @@
+The domain model 'gaml' describes the core structural elements and their relationships within the system.
+
+The model defines 83 main class(es).
+
+'gaml_S_If' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_S_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_speciesOrGridDisplayStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'EquationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_Unary' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'gaml_BooleanLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_ExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_TypeRef' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_Entry' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_S_Other' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_S_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'VarDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_BinaryOperator' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'gaml_S_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'TerminalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_UnitFakeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_Facet' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'GamlDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_EquationRef' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_DoubleLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_S_Display' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gaml_S_Do' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_UnitName' represents an important domain concept.
+It does not declare any attributes.
+
+'S_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_Statement' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'firstFacet', which is of type str.
+
+'gaml_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'S_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_ExperimentFileStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_S_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_S_Global' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_StringLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_TypeInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_ArgumentPair' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'gaml_VarFakeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_Unit' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'gaml_Pragma' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gaml_S_Experiment' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_TerminalExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'gaml_StandaloneBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_EquationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_ActionFakeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_ActionRef' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_S_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_If' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'gaml_S_Set' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_Parameter' represents an important domain concept.
+It has one attribute: 'builtInFacetKey', which is of type str.
+
+'gaml_IntLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_S_Species' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_Array' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_S_Try' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_S_Reflex' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_ArgumentDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_ActionDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_TypeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_S_Equations' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_SkillRef' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_S_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_Access' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'ActionDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_SkillFakeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_ReservedLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_ActionArguments' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_StringEvaluator' represents an important domain concept.
+It has one attribute: 'toto', which is of type str.
+
+'gaml_Import' represents an important domain concept.
+It has one attribute: 'importURI', which is of type str.
+
+'gaml_VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_HeadlessExperiment' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'key', which is of type str; 'importURI', which is of type str; 'firstFacet', which is of type str.
+
+'gaml_Point' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'S_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_EquationFakeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Entry' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_S_DirectAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_GamlDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gaml_VarDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_S_Solve' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_TypeFakeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'gaml_S_Var' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'gaml_StandaloneBlock' is a specialization of 'Entry'.
+The class 'gaml_StringEvaluator' is a specialization of 'Entry'.
+The class 'gaml_Model' is a specialization of 'Entry'.
+The class 'gaml_Model' is a specialization of 'VarDefinition'.
+The class 'gaml_Import' is a specialization of 'VarDefinition'.
+The class 'gaml_ExperimentFileStructure' is a specialization of 'Entry'.
+The class 'gaml_S_Global' is a specialization of 'Statement'.
+The class 'gaml_S_Species' is a specialization of 'Statement'.
+The class 'gaml_S_Species' is a specialization of 'S_Declaration'.
+The class 'gaml_S_Species' is a specialization of 'TypeDefinition'.
+The class 'gaml_S_Experiment' is a specialization of 'Statement'.
+The class 'gaml_S_Experiment' is a specialization of 'VarDefinition'.
+The class 'gaml_S_Do' is a specialization of 'Statement'.
+The class 'gaml_S_Loop' is a specialization of 'S_Declaration'.
+The class 'gaml_S_If' is a specialization of 'Statement'.
+The class 'gaml_S_Try' is a specialization of 'Statement'.
+The class 'gaml_S_Other' is a specialization of 'Statement'.
+The class 'gaml_S_Return' is a specialization of 'Statement'.
+The class 'gaml_S_Declaration' is a specialization of 'Statement'.
+The class 'gaml_S_Declaration' is a specialization of 'VarDefinition'.
+The class 'gaml_S_Reflex' is a specialization of 'S_Declaration'.
+The class 'gaml_S_Definition' is a specialization of 'S_Declaration'.
+The class 'gaml_S_Definition' is a specialization of 'ActionDefinition'.
+The class 'gaml_S_Assignment' is a specialization of 'Statement'.
+The class 'gaml_S_DirectAssignment' is a specialization of 'S_Assignment'.
+The class 'gaml_S_Set' is a specialization of 'S_Assignment'.
+The class 'gaml_S_Equations' is a specialization of 'Statement'.
+The class 'gaml_S_Equations' is a specialization of 'EquationDefinition'.
+The class 'gaml_S_Solve' is a specialization of 'Statement'.
+The class 'gaml_S_Display' is a specialization of 'Statement'.
+The class 'gaml_speciesOrGridDisplayStatement' is a specialization of 'Statement'.
+The class 'gaml_ArgumentDefinition' is a specialization of 'VarDefinition'.
+The class 'gaml_Facet' is a specialization of 'VarDefinition'.
+The class 'gaml_ArgumentPair' is a specialization of 'Expression'.
+The class 'gaml_ExpressionList' is a specialization of 'Expression'.
+The class 'gaml_VariableRef' is a specialization of 'Expression'.
+The class 'gaml_EquationDefinition' is a specialization of 'GamlDefinition'.
+The class 'gaml_TypeDefinition' is a specialization of 'GamlDefinition'.
+The class 'gaml_TypeDefinition' is a specialization of 'ActionDefinition'.
+The class 'gaml_VarDefinition' is a specialization of 'GamlDefinition'.
+The class 'gaml_ActionDefinition' is a specialization of 'GamlDefinition'.
+The class 'gaml_UnitFakeDefinition' is a specialization of 'GamlDefinition'.
+The class 'gaml_TypeFakeDefinition' is a specialization of 'TypeDefinition'.
+The class 'gaml_ActionFakeDefinition' is a specialization of 'ActionDefinition'.
+The class 'gaml_SkillFakeDefinition' is a specialization of 'GamlDefinition'.
+The class 'gaml_VarFakeDefinition' is a specialization of 'VarDefinition'.
+The class 'gaml_EquationFakeDefinition' is a specialization of 'EquationDefinition'.
+The class 'gaml_TerminalExpression' is a specialization of 'Expression'.
+The class 'gaml_StringLiteral' is a specialization of 'TerminalExpression'.
+The class 'gaml_S_Action' is a specialization of 'S_Definition'.
+The class 'gaml_S_Var' is a specialization of 'S_Definition'.
+The class 'gaml_BinaryOperator' is a specialization of 'Expression'.
+The class 'gaml_If' is a specialization of 'Expression'.
+The class 'gaml_Unit' is a specialization of 'Expression'.
+The class 'gaml_Unary' is a specialization of 'Expression'.
+The class 'gaml_Access' is a specialization of 'Expression'.
+The class 'gaml_Array' is a specialization of 'Expression'.
+The class 'gaml_Point' is a specialization of 'Expression'.
+The class 'gaml_Function' is a specialization of 'Expression'.
+The class 'gaml_Parameter' is a specialization of 'Expression'.
+The class 'gaml_UnitName' is a specialization of 'Expression'.
+The class 'gaml_TypeRef' is a specialization of 'Expression'.
+The class 'gaml_SkillRef' is a specialization of 'Expression'.
+The class 'gaml_ActionRef' is a specialization of 'Expression'.
+The class 'gaml_EquationRef' is a specialization of 'Expression'.
+The class 'gaml_IntLiteral' is a specialization of 'TerminalExpression'.
+The class 'gaml_DoubleLiteral' is a specialization of 'TerminalExpression'.
+The class 'gaml_BooleanLiteral' is a specialization of 'TerminalExpression'.
+The class 'gaml_ReservedLiteral' is a specialization of 'TerminalExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gaml_Block' and 'gaml_StandaloneBlock'. From 'gaml_Block', the role 'gaml_Block' has cardinality 0..*, and from 'gaml_StandaloneBlock', the role 'gaml_StandaloneBlock' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_StringEvaluator'. From 'gaml_Expression', the role 'gaml_Expression' has cardinality 0..*, and from 'gaml_StringEvaluator', the role 'gaml_StringEvaluator' has cardinality 0..*.
+An association connects 'gaml_Model' and 'gaml_Pragma'. From 'gaml_Model', the role 'gaml_Model' has cardinality 0..*, and from 'gaml_Pragma', the role 'gaml_Pragma' has cardinality 0..*.
+An association connects 'gaml_Import' and 'gaml_Model'. From 'gaml_Import', the role 'gaml_Import' has cardinality 0..*, and from 'gaml_Model', the role 'gaml_Model4' has cardinality 0..*.
+An association connects 'gaml_Block' and 'gaml_Model'. From 'gaml_Block', the role 'gaml_Block7' has cardinality 0..*, and from 'gaml_Model', the role 'gaml_Model6' has cardinality 0..*.
+An association connects 'gaml_Block' and 'gaml_Statement'. From 'gaml_Block', the role 'gaml_Block9' has cardinality 0..*, and from 'gaml_Statement', the role 'gaml_Statement' has cardinality 0..*.
+An association connects 'gaml_HeadlessExperiment' and 'gaml_ExperimentFileStructure'. From 'gaml_HeadlessExperiment', the role 'gaml_HeadlessExperiment' has cardinality 0..*, and from 'gaml_ExperimentFileStructure', the role 'gaml_ExperimentFileStructure' has cardinality 0..*.
+An association connects 'gaml_HeadlessExperiment' and 'gaml_Facet'. From 'gaml_HeadlessExperiment', the role 'gaml_HeadlessExperiment12' has cardinality 0..*, and from 'gaml_Facet', the role 'gaml_Facet' has cardinality 0..*.
+An association connects 'gaml_HeadlessExperiment' and 'gaml_Block'. From 'gaml_HeadlessExperiment', the role 'gaml_HeadlessExperiment14' has cardinality 0..*, and from 'gaml_Block', the role 'gaml_Block15' has cardinality 0..*.
+An association connects 'gaml_Statement' and 'gaml_Expression'. From 'gaml_Statement', the role 'gaml_Statement17' has cardinality 0..*, and from 'gaml_Expression', the role 'gaml_Expression18' has cardinality 0..*.
+An association connects 'gaml_Facet' and 'gaml_Statement'. From 'gaml_Facet', the role 'gaml_Facet21' has cardinality 0..*, and from 'gaml_Statement', the role 'gaml_Statement20' has cardinality 0..*.
+An association connects 'gaml_Block' and 'gaml_Statement'. From 'gaml_Block', the role 'gaml_Block24' has cardinality 0..*, and from 'gaml_Statement', the role 'gaml_Statement23' has cardinality 0..*.
+An association connects 'gaml_EObject' and 'gaml_S_If'. From 'gaml_EObject', the role 'gaml_EObject' has cardinality 0..*, and from 'gaml_S_If', the role 'gaml_S_If' has cardinality 0..*.
+An association connects 'gaml_Block' and 'gaml_S_Try'. From 'gaml_Block', the role 'gaml_Block27' has cardinality 0..*, and from 'gaml_S_Try', the role 'gaml_S_Try' has cardinality 0..*.
+An association connects 'gaml_S_Definition' and 'gaml_Expression'. From 'gaml_S_Definition', the role 'gaml_S_Definition' has cardinality 0..*, and from 'gaml_Expression', the role 'gaml_Expression29' has cardinality 0..*.
+An association connects 'gaml_ActionArguments' and 'gaml_S_Definition'. From 'gaml_ActionArguments', the role 'gaml_ActionArguments' has cardinality 0..*, and from 'gaml_S_Definition', the role 'gaml_S_Definition31' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_S_Assignment'. From 'gaml_Expression', the role 'gaml_Expression33' has cardinality 0..*, and from 'gaml_S_Assignment', the role 'gaml_S_Assignment' has cardinality 0..*.
+An association connects 'gaml_S_Equations' and 'gaml_S_Assignment'. From 'gaml_S_Equations', the role 'gaml_S_Equations' has cardinality 0..*, and from 'gaml_S_Assignment', the role 'gaml_S_Assignment35' has cardinality 0..*.
+An association connects 'gaml_ArgumentDefinition' and 'gaml_ActionArguments'. From 'gaml_ArgumentDefinition', the role 'gaml_ArgumentDefinition' has cardinality 0..*, and from 'gaml_ActionArguments', the role 'gaml_ActionArguments37' has cardinality 0..*.
+An association connects 'gaml_ArgumentDefinition' and 'gaml_Expression'. From 'gaml_ArgumentDefinition', the role 'gaml_ArgumentDefinition39' has cardinality 0..*, and from 'gaml_Expression', the role 'gaml_Expression40' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_ArgumentDefinition'. From 'gaml_Expression', the role 'gaml_Expression43' has cardinality 0..*, and from 'gaml_ArgumentDefinition', the role 'gaml_ArgumentDefinition42' has cardinality 0..*.
+An association connects 'gaml_Facet' and 'gaml_Expression'. From 'gaml_Facet', the role 'gaml_Facet45' has cardinality 0..*, and from 'gaml_Expression', the role 'gaml_Expression46' has cardinality 0..*.
+An association connects 'gaml_Block' and 'gaml_Facet'. From 'gaml_Block', the role 'gaml_Block49' has cardinality 0..*, and from 'gaml_Facet', the role 'gaml_Facet48' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_ArgumentPair'. From 'gaml_Expression', the role 'gaml_Expression51' has cardinality 0..*, and from 'gaml_ArgumentPair', the role 'gaml_ArgumentPair' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_ExpressionList'. From 'gaml_Expression', the role 'gaml_Expression53' has cardinality 0..*, and from 'gaml_ExpressionList', the role 'gaml_ExpressionList' has cardinality 0..*.
+An association connects 'gaml_VarDefinition' and 'gaml_VariableRef'. From 'gaml_VarDefinition', the role 'gaml_VarDefinition' has cardinality 0..*, and from 'gaml_VariableRef', the role 'gaml_VariableRef' has cardinality 0..*.
+An association connects 'gaml_TypeInfo' and 'gaml_Expression'. From 'gaml_TypeInfo', the role 'gaml_TypeInfo' has cardinality 0..*, and from 'gaml_Expression', the role 'gaml_Expression56' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_TypeInfo'. From 'gaml_Expression', the role 'gaml_Expression59' has cardinality 0..*, and from 'gaml_TypeInfo', the role 'gaml_TypeInfo58' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_BinaryOperator'. From 'gaml_Expression', the role 'gaml_Expression61' has cardinality 0..*, and from 'gaml_BinaryOperator', the role 'gaml_BinaryOperator' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_BinaryOperator'. From 'gaml_Expression', the role 'gaml_Expression64' has cardinality 0..*, and from 'gaml_BinaryOperator', the role 'gaml_BinaryOperator63' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_If'. From 'gaml_Expression', the role 'gaml_Expression66' has cardinality 0..*, and from 'gaml_If', the role 'gaml_If' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_If'. From 'gaml_Expression', the role 'gaml_Expression69' has cardinality 0..*, and from 'gaml_If', the role 'gaml_If68' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_If'. From 'gaml_Expression', the role 'gaml_Expression72' has cardinality 0..*, and from 'gaml_If', the role 'gaml_If71' has cardinality 0..*.
+An association connects 'gaml_Unit' and 'gaml_Expression'. From 'gaml_Unit', the role 'gaml_Unit' has cardinality 0..*, and from 'gaml_Expression', the role 'gaml_Expression74' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_Unit'. From 'gaml_Expression', the role 'gaml_Expression77' has cardinality 0..*, and from 'gaml_Unit', the role 'gaml_Unit76' has cardinality 0..*.
+An association connects 'gaml_Unary' and 'gaml_Expression'. From 'gaml_Unary', the role 'gaml_Unary' has cardinality 0..*, and from 'gaml_Expression', the role 'gaml_Expression79' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_Access'. From 'gaml_Expression', the role 'gaml_Expression81' has cardinality 0..*, and from 'gaml_Access', the role 'gaml_Access' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_Access'. From 'gaml_Expression', the role 'gaml_Expression84' has cardinality 0..*, and from 'gaml_Access', the role 'gaml_Access83' has cardinality 0..*.
+An association connects 'gaml_Array' and 'gaml_ExpressionList'. From 'gaml_Array', the role 'gaml_Array' has cardinality 0..*, and from 'gaml_ExpressionList', the role 'gaml_ExpressionList86' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_Point'. From 'gaml_Expression', the role 'gaml_Expression88' has cardinality 0..*, and from 'gaml_Point', the role 'gaml_Point' has cardinality 0..*.
+An association connects 'gaml_Point' and 'gaml_Expression'. From 'gaml_Point', the role 'gaml_Point90' has cardinality 0..*, and from 'gaml_Expression', the role 'gaml_Expression91' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_Point'. From 'gaml_Expression', the role 'gaml_Expression94' has cardinality 0..*, and from 'gaml_Point', the role 'gaml_Point93' has cardinality 0..*.
+An association connects 'gaml_Expression' and 'gaml_Function'. From 'gaml_Expression', the role 'gaml_Expression96' has cardinality 0..*, and from 'gaml_Function', the role 'gaml_Function' has cardinality 0..*.
+An association connects 'gaml_Function' and 'gaml_TypeInfo'. From 'gaml_Function', the role 'gaml_Function98' has cardinality 0..*, and from 'gaml_TypeInfo', the role 'gaml_TypeInfo99' has cardinality 0..*.
+An association connects 'gaml_Function' and 'gaml_ExpressionList'. From 'gaml_Function', the role 'gaml_Function101' has cardinality 0..*, and from 'gaml_ExpressionList', the role 'gaml_ExpressionList102' has cardinality 0..*.
+An association connects 'gaml_Parameter' and 'gaml_VariableRef'. From 'gaml_Parameter', the role 'gaml_Parameter' has cardinality 0..*, and from 'gaml_VariableRef', the role 'gaml_VariableRef104' has cardinality 0..*.
+An association connects 'gaml_Parameter' and 'gaml_Expression'. From 'gaml_Parameter', the role 'gaml_Parameter106' has cardinality 0..*, and from 'gaml_Expression', the role 'gaml_Expression107' has cardinality 0..*.
+An association connects 'gaml_UnitFakeDefinition' and 'gaml_UnitName'. From 'gaml_UnitFakeDefinition', the role 'gaml_UnitFakeDefinition' has cardinality 0..*, and from 'gaml_UnitName', the role 'gaml_UnitName' has cardinality 0..*.
+An association connects 'gaml_TypeRef' and 'gaml_TypeDefinition'. From 'gaml_TypeRef', the role 'gaml_TypeRef' has cardinality 0..*, and from 'gaml_TypeDefinition', the role 'gaml_TypeDefinition' has cardinality 0..*.
+An association connects 'gaml_TypeInfo' and 'gaml_TypeRef'. From 'gaml_TypeInfo', the role 'gaml_TypeInfo112' has cardinality 0..*, and from 'gaml_TypeRef', the role 'gaml_TypeRef111' has cardinality 0..*.
+An association connects 'gaml_SkillFakeDefinition' and 'gaml_SkillRef'. From 'gaml_SkillFakeDefinition', the role 'gaml_SkillFakeDefinition' has cardinality 0..*, and from 'gaml_SkillRef', the role 'gaml_SkillRef' has cardinality 0..*.
+An association connects 'gaml_ActionRef' and 'gaml_ActionDefinition'. From 'gaml_ActionRef', the role 'gaml_ActionRef' has cardinality 0..*, and from 'gaml_ActionDefinition', the role 'gaml_ActionDefinition' has cardinality 0..*.
+An association connects 'gaml_EquationRef' and 'gaml_EquationDefinition'. From 'gaml_EquationRef', the role 'gaml_EquationRef' has cardinality 0..*, and from 'gaml_EquationDefinition', the role 'gaml_EquationDefinition' has cardinality 0..*.

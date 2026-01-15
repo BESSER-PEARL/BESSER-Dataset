@@ -1,0 +1,123 @@
+The domain model 'entityrelationship' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'entityrelationship_Entity' represents an important domain concept.
+It has the following attributes: 'type_entity', which is of type str; 'name_entity', which is of type str.
+
+'Elements_with_Attributes' represents an important domain concept.
+It does not declare any attributes.
+
+'entityrelationship_Relationship' represents an important domain concept.
+It has the following attributes: 'order', which is of type int; 'cardinality', which is of type str; 'type_relationship', which is of type str; 'name_relationship', which is of type str.
+
+'entityrelationship_Connection_Generalization_Entity' represents an important domain concept.
+It has the following attributes: 'maximum_cardinality', which is of type str; 'minimum_cardinality', which is of type str.
+
+'entityrelationship_Relationships_Restriction' represents an important domain concept.
+It has one attribute: 'type_restriction', which is of type str.
+
+'entityrelationship_Connection_E_R_Restriction' represents an important domain concept.
+It has one attribute: 'type_restriction', which is of type str.
+
+'entityrelationship_Attribute_Composite' represents an important domain concept.
+It has the following attributes: 'identifier_at_composite', which is of type str; 'name_at_composite', which is of type str.
+
+'Connection_EntityRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'entityrelationship_Attribute' represents an important domain concept.
+It has the following attributes: 'name_attribute', which is of type str; 'identifier', which is of type str.
+
+'entityrelationship_Connection_Entity2Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'entityrelationship_Connection_EntityRelationship' represents an important domain concept.
+It has the following attributes: 'maximum_cardinality', which is of type str; 'role', which is of type str; 'minimum_cardinality', which is of type str.
+
+'entityrelationship_Connection_ConnectionEntityRelationship2Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'entityrelationship_Connection_With_Attribute' represents an important domain concept.
+It has one attribute: 'type_attribute', which is of type str.
+
+'entityrelationship_Elements_with_Attributes' represents an important domain concept.
+It does not declare any attributes.
+
+'entityrelationship_Connection_Relationship2Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'entityrelationship_Generalization' represents an important domain concept.
+It has the following attributes: 'restriction_inheritance_2', which is of type str; 'restriction_inheritance_1', which is of type str.
+
+'entityrelationship_Entity_Relationship_Model' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TypeAttribute' defines the following possible values: 'Optional', 'Composite', 'Dependence_in_identification', 'Derived', 'Normal', 'Multivalued'.
+The enumeration 'TypeRestriction' defines the following possible values: 'Inclusion', 'Exclusion'.
+The enumeration 'TypeRestrictionInheritance1' defines the following possible values: 'Partial', 'Total'.
+The enumeration 'TypeRelationship' defines the following possible values: 'Weak_dependence_in_existence', 'Weak_dependence_in_identification', 'Regular'.
+The enumeration 'TypeRestriction2' defines the following possible values: 'Inclusiveness', 'Exclusiveness'.
+The enumeration 'TypeIdentifier' defines the following possible values: 'AlternativeIdentifier', 'NoIdentifier', 'PrimaryIdentifier'.
+The enumeration 'TypeEntity' defines the following possible values: 'Regular', 'Weak'.
+The enumeration 'TypeRestrictionInheritance2' defines the following possible values: 'Exclusive', 'Overlapped'.
+
+The model also captures inheritance relationships between classes.
+The class 'entityrelationship_Entity' is a specialization of 'Elements_with_Attributes'.
+The class 'entityrelationship_Relationship' is a specialization of 'Elements_with_Attributes'.
+The class 'entityrelationship_Connection_Entity2Relationship' is a specialization of 'Connection_EntityRelationship'.
+The class 'entityrelationship_Connection_Relationship2Entity' is a specialization of 'Connection_EntityRelationship'.
+
+Relationships between classes are modeled using associations.
+An association connects 'entityrelationship_Elements_with_Attributes' and 'entityrelationship_Entity_Relationship_Model'. From 'entityrelationship_Elements_with_Attributes', the role 'Elements_with_Attributes' has cardinality 0..*, and from 'entityrelationship_Entity_Relationship_Model', the role 'inEntityRelationshipModel' has cardinality 0..*.
+An association connects 'entityrelationship_Relationships_Restriction' and 'entityrelationship_Entity_Relationship_Model'. From 'entityrelationship_Relationships_Restriction', the role 'Relationships_Restriction' has cardinality 0..*, and from 'entityrelationship_Entity_Relationship_Model', the role 'inEntityRelationshipModel2' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_Entity2Relationship' and 'entityrelationship_Entity_Relationship_Model'. From 'entityrelationship_Connection_Entity2Relationship', the role 'Connection_Entity2Relationship' has cardinality 0..*, and from 'entityrelationship_Entity_Relationship_Model', the role 'inEntityRelationshipModel4' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_Relationship2Entity' and 'entityrelationship_Entity_Relationship_Model'. From 'entityrelationship_Connection_Relationship2Entity', the role 'Connection_Relationship2Entity' has cardinality 0..*, and from 'entityrelationship_Entity_Relationship_Model', the role 'inEntityRelationshipModel6' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_ConnectionEntityRelationship2Attribute' and 'entityrelationship_Entity_Relationship_Model'. From 'entityrelationship_Connection_ConnectionEntityRelationship2Attribute', the role 'Connection_ConnectionEntityRelationship2Attribute' has cardinality 0..*, and from 'entityrelationship_Entity_Relationship_Model', the role 'inEntityRelationshipModel8' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_Generalization_Entity' and 'entityrelationship_Entity_Relationship_Model'. From 'entityrelationship_Connection_Generalization_Entity', the role 'Connection_Generalization_Entity' has cardinality 0..*, and from 'entityrelationship_Entity_Relationship_Model', the role 'inEntityRelationshipModel10' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_E_R_Restriction' and 'entityrelationship_Entity_Relationship_Model'. From 'entityrelationship_Connection_E_R_Restriction', the role 'Connection_E_R_Restriction' has cardinality 0..*, and from 'entityrelationship_Entity_Relationship_Model', the role 'inEntityRelationshipModel12' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_With_Attribute' and 'entityrelationship_Entity_Relationship_Model'. From 'entityrelationship_Connection_With_Attribute', the role 'Connection_With_Attribute' has cardinality 0..*, and from 'entityrelationship_Entity_Relationship_Model', the role 'inEntityRelationshipModel14' has cardinality 0..*.
+An association connects 'entityrelationship_Attribute' and 'entityrelationship_Entity_Relationship_Model'. From 'entityrelationship_Attribute', the role 'entityrelationship_Attribute' has cardinality 0..*, and from 'entityrelationship_Entity_Relationship_Model', the role 'entityrelationship_Entity_Relationship_Model' has cardinality 0..*.
+An association connects 'entityrelationship_Generalization' and 'entityrelationship_Entity_Relationship_Model'. From 'entityrelationship_Generalization', the role 'Generalization' has cardinality 0..*, and from 'entityrelationship_Entity_Relationship_Model', the role 'inEntityRelationshipModel17' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_With_Attribute' and 'entityrelationship_Elements_with_Attributes'. From 'entityrelationship_Connection_With_Attribute', the role 'Connection_With_Attribute19' has cardinality 0..*, and from 'entityrelationship_Elements_with_Attributes', the role 'element' has cardinality 0..*.
+An association connects 'entityrelationship_Entity_Relationship_Model' and 'entityrelationship_Elements_with_Attributes'. From 'entityrelationship_Entity_Relationship_Model', the role 'Entity_Relationship_Model' has cardinality 0..*, and from 'entityrelationship_Elements_with_Attributes', the role 'ERM_Has_E' has cardinality 0..*.
+An association connects 'entityrelationship_Entity' and 'entityrelationship_Connection_Entity2Relationship'. From 'entityrelationship_Entity', the role 'source_entity' has cardinality 0..*, and from 'entityrelationship_Connection_Entity2Relationship', the role 'Connection_Entity2Relationship22' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_Relationship2Entity' and 'entityrelationship_Entity'. From 'entityrelationship_Connection_Relationship2Entity', the role 'Connection_Relationship2Entity24' has cardinality 0..*, and from 'entityrelationship_Entity', the role 'target_entity' has cardinality 0..*.
+An association connects 'entityrelationship_Generalization' and 'entityrelationship_Entity'. From 'entityrelationship_Generalization', the role 'Generalization26' has cardinality 0..*, and from 'entityrelationship_Entity', the role 'subclasses' has cardinality 0..*.
+An association connects 'entityrelationship_Relationships_Restriction' and 'entityrelationship_Relationship'. From 'entityrelationship_Relationships_Restriction', the role 'entityrelationship_Relationships_Restriction' has cardinality 0..*, and from 'entityrelationship_Relationship', the role 'entityrelationship_Relationship' has cardinality 0..*.
+An association connects 'entityrelationship_Relationship' and 'entityrelationship_Relationships_Restriction'. From 'entityrelationship_Relationship', the role 'target_relationship' has cardinality 0..*, and from 'entityrelationship_Relationships_Restriction', the role 'Relationships_Restriction29' has cardinality 0..*.
+An association connects 'entityrelationship_Relationship' and 'entityrelationship_Connection_Entity2Relationship'. From 'entityrelationship_Relationship', the role 'target_relationship31' has cardinality 0..*, and from 'entityrelationship_Connection_Entity2Relationship', the role 'Connection_Entity2Relationship32' has cardinality 0..*.
+An association connects 'entityrelationship_Relationship' and 'entityrelationship_Connection_Relationship2Entity'. From 'entityrelationship_Relationship', the role 'source_relationship' has cardinality 0..*, and from 'entityrelationship_Connection_Relationship2Entity', the role 'Connection_Relationship2Entity34' has cardinality 0..*.
+An association connects 'entityrelationship_Attribute_Composite' and 'entityrelationship_Attribute'. From 'entityrelationship_Attribute_Composite', the role 'Attribute_Composite' has cardinality 0..*, and from 'entityrelationship_Attribute', the role 'inAttribute' has cardinality 0..*.
+An association connects 'entityrelationship_Attribute' and 'entityrelationship_Attribute'. From 'entityrelationship_Attribute', the role 'Attribute' has cardinality 0..*, and from 'entityrelationship_Attribute', the role 'inAttribute38' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_With_Attribute' and 'entityrelationship_Attribute'. From 'entityrelationship_Connection_With_Attribute', the role 'Connection_With_Attribute40' has cardinality 0..*, and from 'entityrelationship_Attribute', the role 'connection_attribute' has cardinality 0..*.
+An association connects 'entityrelationship_Attribute' and 'entityrelationship_Attribute'. From 'entityrelationship_Attribute', the role 'Attribute43' has cardinality 0..*, and from 'entityrelationship_Attribute', the role 'attributes_identification' has cardinality 0..*.
+An association connects 'entityrelationship_Attribute' and 'entityrelationship_Entity_Relationship_Model'. From 'entityrelationship_Attribute', the role 'entityrelationship_Attribute45' has cardinality 0..*, and from 'entityrelationship_Entity_Relationship_Model', the role 'entityrelationship_Entity_Relationship_Model46' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_ConnectionEntityRelationship2Attribute' and 'entityrelationship_Attribute'. From 'entityrelationship_Connection_ConnectionEntityRelationship2Attribute', the role 'Connection_ConnectionEntityRelationship2Attribute48' has cardinality 0..*, and from 'entityrelationship_Attribute', the role 'target_attribute' has cardinality 0..*.
+An association connects 'entityrelationship_Attribute' and 'entityrelationship_Attribute_Composite'. From 'entityrelationship_Attribute', the role 'entityrelationship_Attribute50' has cardinality 0..*, and from 'entityrelationship_Attribute_Composite', the role 'entityrelationship_Attribute_Composite' has cardinality 0..*.
+An association connects 'entityrelationship_Attribute' and 'entityrelationship_Attribute_Composite'. From 'entityrelationship_Attribute', the role 'Attribute52' has cardinality 0..*, and from 'entityrelationship_Attribute_Composite', the role 'attributes_composites' has cardinality 0..*.
+An association connects 'entityrelationship_Relationship' and 'entityrelationship_Relationships_Restriction'. From 'entityrelationship_Relationship', the role 'entityrelationship_Relationship55' has cardinality 0..*, and from 'entityrelationship_Relationships_Restriction', the role 'entityrelationship_Relationships_Restriction54' has cardinality 0..*.
+An association connects 'entityrelationship_Relationships_Restriction' and 'entityrelationship_Relationship'. From 'entityrelationship_Relationships_Restriction', the role 'target_restrictions' has cardinality 0..*, and from 'entityrelationship_Relationship', the role 'Relationship' has cardinality 0..*.
+An association connects 'entityrelationship_Entity_Relationship_Model' and 'entityrelationship_Relationships_Restriction'. From 'entityrelationship_Entity_Relationship_Model', the role 'Entity_Relationship_Model58' has cardinality 0..*, and from 'entityrelationship_Relationships_Restriction', the role 'ERM_Has_Rt' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_E_R_Restriction' and 'entityrelationship_Connection_EntityRelationship'. From 'entityrelationship_Connection_E_R_Restriction', the role 'entityrelationship_Connection_E_R_Restriction' has cardinality 0..*, and from 'entityrelationship_Connection_EntityRelationship', the role 'entityrelationship_Connection_EntityRelationship' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_EntityRelationship' and 'entityrelationship_Connection_E_R_Restriction'. From 'entityrelationship_Connection_EntityRelationship', the role 'entityrelationship_Connection_EntityRelationship62' has cardinality 0..*, and from 'entityrelationship_Connection_E_R_Restriction', the role 'entityrelationship_Connection_E_R_Restriction61' has cardinality 0..*.
+An association connects 'entityrelationship_Entity_Relationship_Model' and 'entityrelationship_Connection_E_R_Restriction'. From 'entityrelationship_Entity_Relationship_Model', the role 'Entity_Relationship_Model64' has cardinality 0..*, and from 'entityrelationship_Connection_E_R_Restriction', the role 'ERM_Has_Rt2' has cardinality 0..*.
+An association connects 'entityrelationship_Generalization' and 'entityrelationship_Entity'. From 'entityrelationship_Generalization', the role 'subclass_generalizations' has cardinality 0..*, and from 'entityrelationship_Entity', the role 'Entity' has cardinality 0..*.
+An association connects 'entityrelationship_Generalization' and 'entityrelationship_Entity'. From 'entityrelationship_Generalization', the role 'entityrelationship_Generalization' has cardinality 0..*, and from 'entityrelationship_Entity', the role 'entityrelationship_Entity' has cardinality 0..*.
+An association connects 'entityrelationship_Entity_Relationship_Model' and 'entityrelationship_Generalization'. From 'entityrelationship_Entity_Relationship_Model', the role 'Entity_Relationship_Model68' has cardinality 0..*, and from 'entityrelationship_Generalization', the role 'ERM_Has_G' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_With_Attribute' and 'entityrelationship_Attribute'. From 'entityrelationship_Connection_With_Attribute', the role 'connected' has cardinality 0..*, and from 'entityrelationship_Attribute', the role 'Attribute70' has cardinality 0..*.
+An association connects 'entityrelationship_Elements_with_Attributes' and 'entityrelationship_Connection_With_Attribute'. From 'entityrelationship_Elements_with_Attributes', the role 'Elements_with_Attributes72' has cardinality 0..*, and from 'entityrelationship_Connection_With_Attribute', the role 'connected_with_attribute' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_With_Attribute' and 'entityrelationship_Entity_Relationship_Model'. From 'entityrelationship_Connection_With_Attribute', the role 'ERM_Has_CEA' has cardinality 0..*, and from 'entityrelationship_Entity_Relationship_Model', the role 'Entity_Relationship_Model74' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_Generalization_Entity' and 'entityrelationship_Generalization'. From 'entityrelationship_Connection_Generalization_Entity', the role 'entityrelationship_Connection_Generalization_Entity' has cardinality 0..*, and from 'entityrelationship_Generalization', the role 'entityrelationship_Generalization76' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_Generalization_Entity' and 'entityrelationship_Entity'. From 'entityrelationship_Connection_Generalization_Entity', the role 'entityrelationship_Connection_Generalization_Entity78' has cardinality 0..*, and from 'entityrelationship_Entity', the role 'entityrelationship_Entity79' has cardinality 0..*.
+An association connects 'entityrelationship_Entity_Relationship_Model' and 'entityrelationship_Connection_Generalization_Entity'. From 'entityrelationship_Entity_Relationship_Model', the role 'Entity_Relationship_Model81' has cardinality 0..*, and from 'entityrelationship_Connection_Generalization_Entity', the role 'ERM_Has_Gen' has cardinality 0..*.
+An association connects 'entityrelationship_Entity' and 'entityrelationship_Connection_Entity2Relationship'. From 'entityrelationship_Entity', the role 'Entity83' has cardinality 0..*, and from 'entityrelationship_Connection_Entity2Relationship', the role 'entity_connected_to_entity2relationship' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_Entity2Relationship' and 'entityrelationship_Relationship'. From 'entityrelationship_Connection_Entity2Relationship', the role 'relationship_connected_to_entity2relationship' has cardinality 0..*, and from 'entityrelationship_Relationship', the role 'Relationship85' has cardinality 0..*.
+An association connects 'entityrelationship_Entity_Relationship_Model' and 'entityrelationship_Connection_Entity2Relationship'. From 'entityrelationship_Entity_Relationship_Model', the role 'Entity_Relationship_Model87' has cardinality 0..*, and from 'entityrelationship_Connection_Entity2Relationship', the role 'ERM_Has_ConnectionEntity2Relationship' has cardinality 0..*.
+An association connects 'entityrelationship_Relationship' and 'entityrelationship_Connection_Relationship2Entity'. From 'entityrelationship_Relationship', the role 'Relationship89' has cardinality 0..*, and from 'entityrelationship_Connection_Relationship2Entity', the role 'relationship_connected_to_relationship2entity' has cardinality 0..*.
+An association connects 'entityrelationship_Entity' and 'entityrelationship_Connection_Relationship2Entity'. From 'entityrelationship_Entity', the role 'Entity91' has cardinality 0..*, and from 'entityrelationship_Connection_Relationship2Entity', the role 'entity_connected_to_relationship2entity' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_Relationship2Entity' and 'entityrelationship_Entity_Relationship_Model'. From 'entityrelationship_Connection_Relationship2Entity', the role 'ERM_Has_ConnectionRelationship2Entity' has cardinality 0..*, and from 'entityrelationship_Entity_Relationship_Model', the role 'Entity_Relationship_Model93' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_ConnectionEntityRelationship2Attribute' and 'entityrelationship_Connection_EntityRelationship'. From 'entityrelationship_Connection_ConnectionEntityRelationship2Attribute', the role 'entityrelationship_Connection_ConnectionEntityRelationship2Attribute' has cardinality 0..*, and from 'entityrelationship_Connection_EntityRelationship', the role 'entityrelationship_Connection_EntityRelationship95' has cardinality 0..*.
+An association connects 'entityrelationship_Connection_ConnectionEntityRelationship2Attribute' and 'entityrelationship_Attribute'. From 'entityrelationship_Connection_ConnectionEntityRelationship2Attribute', the role 'attribute_connected_to_conection_entityrelationship_to_attribute' has cardinality 0..*, and from 'entityrelationship_Attribute', the role 'Attribute97' has cardinality 0..*.
+An association connects 'entityrelationship_Entity_Relationship_Model' and 'entityrelationship_Connection_ConnectionEntityRelationship2Attribute'. From 'entityrelationship_Entity_Relationship_Model', the role 'Entity_Relationship_Model99' has cardinality 0..*, and from 'entityrelationship_Connection_ConnectionEntityRelationship2Attribute', the role 'ERM_HasConnectionEntityRelationship2Attribute' has cardinality 0..*.

@@ -1,0 +1,66 @@
+The domain model 'platoon' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'platoon_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Command' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_FollowVehicle' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_LeadingVehicle' represents an important domain concept.
+It does not declare any attributes.
+
+'Vehicle' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_HeadwayConstraint' represents an important domain concept.
+It has the following attributes: 'max', which is of type int; 'min', which is of type int.
+
+'platoon_Platoon' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_TurnCommand' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Vehicle' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'platoon_World' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Constraints' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_ForwardCommand' represents an important domain concept.
+It has one attribute: 'distance', which is of type int.
+
+'platoon_Route' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'platoon_FollowVehicle' is a specialization of 'Vehicle'.
+The class 'platoon_LeadingVehicle' is a specialization of 'Vehicle'.
+The class 'platoon_ForwardCommand' is a specialization of 'Command'.
+The class 'platoon_TurnCommand' is a specialization of 'Command'.
+The class 'platoon_HeadwayConstraint' is a specialization of 'Constraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'platoon_LeadingVehicle' and 'platoon_Platoon'. From 'platoon_LeadingVehicle', the role 'platoon_LeadingVehicle' has cardinality 0..*, and from 'platoon_Platoon', the role 'platoon_Platoon' has cardinality 0..*.
+An association connects 'platoon_Platoon' and 'platoon_FollowVehicle'. From 'platoon_Platoon', the role 'platoon_Platoon2' has cardinality 0..*, and from 'platoon_FollowVehicle', the role 'platoon_FollowVehicle' has cardinality 0..*.
+An association connects 'platoon_Route' and 'platoon_Command'. From 'platoon_Route', the role 'platoon_Route' has cardinality 0..*, and from 'platoon_Command', the role 'platoon_Command' has cardinality 0..*.
+An association connects 'platoon_Vehicle' and 'platoon_FollowVehicle'. From 'platoon_Vehicle', the role 'platoon_Vehicle' has cardinality 0..*, and from 'platoon_FollowVehicle', the role 'platoon_FollowVehicle5' has cardinality 0..*.
+An association connects 'platoon_LeadingVehicle' and 'platoon_Route'. From 'platoon_LeadingVehicle', the role 'platoon_LeadingVehicle7' has cardinality 0..*, and from 'platoon_Route', the role 'platoon_Route8' has cardinality 0..*.
+An association connects 'platoon_World' and 'platoon_Platoon'. From 'platoon_World', the role 'platoon_World' has cardinality 0..*, and from 'platoon_Platoon', the role 'platoon_Platoon10' has cardinality 0..*.
+An association connects 'platoon_World' and 'platoon_Route'. From 'platoon_World', the role 'platoon_World12' has cardinality 0..*, and from 'platoon_Route', the role 'platoon_Route13' has cardinality 0..*.
+An association connects 'platoon_World' and 'platoon_Constraints'. From 'platoon_World', the role 'platoon_World15' has cardinality 0..*, and from 'platoon_Constraints', the role 'platoon_Constraints' has cardinality 0..*.
+An association connects 'platoon_Constraint' and 'platoon_Constraints'. From 'platoon_Constraint', the role 'platoon_Constraint' has cardinality 0..*, and from 'platoon_Constraints', the role 'platoon_Constraints17' has cardinality 0..*.

@@ -1,0 +1,47 @@
+The domain model 'feature' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'feature_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_EvidenceCode' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_SimpleOntologyTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_SimpleFeature' represents an important domain concept.
+It has one attribute: 'valueString', which is of type str.
+
+'feature_FeatureSet' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_SimpleIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'feature_AnnotatedSimpleFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'feature_AnnotatedSimpleFeature' is a specialization of 'SimpleFeature'.
+The class 'feature_Feature' is a specialization of 'SimpleFeature'.
+The class 'feature_FeatureSet' is a specialization of 'SimpleFeature'.
+The class 'feature_SimpleFeature' is a specialization of 'SimpleIdentifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'feature_AnnotatedSimpleFeature' and 'feature_SimpleIdentifier'. From 'feature_AnnotatedSimpleFeature', the role 'feature_AnnotatedSimpleFeature' has cardinality 0..*, and from 'feature_SimpleIdentifier', the role 'feature_SimpleIdentifier' has cardinality 0..*.
+An association connects 'feature_Value' and 'feature_Feature'. From 'feature_Value', the role 'feature_Value' has cardinality 0..*, and from 'feature_Feature', the role 'feature_Feature' has cardinality 0..*.
+An association connects 'feature_SimpleOntologyTerm' and 'feature_Feature'. From 'feature_SimpleOntologyTerm', the role 'feature_SimpleOntologyTerm' has cardinality 0..*, and from 'feature_Feature', the role 'feature_Feature3' has cardinality 0..*.
+An association connects 'feature_Feature' and 'feature_EvidenceCode'. From 'feature_Feature', the role 'feature_Feature5' has cardinality 0..*, and from 'feature_EvidenceCode', the role 'feature_EvidenceCode' has cardinality 0..*.
+An association connects 'feature_FeatureSet' and 'feature_SimpleFeature'. From 'feature_FeatureSet', the role 'feature_FeatureSet' has cardinality 0..*, and from 'feature_SimpleFeature', the role 'feature_SimpleFeature' has cardinality 0..*.
+An association connects 'feature_SimpleFeature' and 'feature_SimpleOntologyTerm'. From 'feature_SimpleFeature', the role 'feature_SimpleFeature8' has cardinality 0..*, and from 'feature_SimpleOntologyTerm', the role 'feature_SimpleOntologyTerm9' has cardinality 0..*.

@@ -1,0 +1,34 @@
+The domain model 'ctmc' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'ctmc_Transition' represents an important domain concept.
+It has the following attributes: 'prob', which is of type float; 'rate', which is of type float.
+
+'ctmc_Label' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ctmc_CTMC' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ctmc_State' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'exitRate', which is of type float.
+
+'IDBase' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ctmc_CTMC' is a specialization of 'IDBase'.
+The class 'ctmc_State' is a specialization of 'IDBase'.
+The class 'ctmc_Transition' is a specialization of 'IDBase'.
+The class 'ctmc_Label' is a specialization of 'IDBase'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ctmc_State' and 'ctmc_CTMC'. From 'ctmc_State', the role 'ctmc_State' has cardinality 0..*, and from 'ctmc_CTMC', the role 'ctmc_CTMC' has cardinality 0..*.
+An association connects 'ctmc_CTMC' and 'ctmc_State'. From 'ctmc_CTMC', the role 'ctmc_CTMC2' has cardinality 0..*, and from 'ctmc_State', the role 'ctmc_State3' has cardinality 0..*.
+An association connects 'ctmc_Transition' and 'ctmc_State'. From 'ctmc_Transition', the role 'Transition' has cardinality 0..*, and from 'ctmc_State', the role 'to' has cardinality 0..*.
+An association connects 'ctmc_Transition' and 'ctmc_State'. From 'ctmc_Transition', the role 'Transition6' has cardinality 0..*, and from 'ctmc_State', the role 'from' has cardinality 0..*.
+An association connects 'ctmc_Label' and 'ctmc_State'. From 'ctmc_Label', the role 'Label' has cardinality 0..*, and from 'ctmc_State', the role 'state' has cardinality 0..*.
+An association connects 'ctmc_State' and 'ctmc_Transition'. From 'ctmc_State', the role 'State' has cardinality 0..*, and from 'ctmc_Transition', the role 'outgoing' has cardinality 0..*.
+An association connects 'ctmc_Transition' and 'ctmc_State'. From 'ctmc_Transition', the role 'incoming' has cardinality 0..*, and from 'ctmc_State', the role 'State10' has cardinality 0..*.
+An association connects 'ctmc_State' and 'ctmc_Label'. From 'ctmc_State', the role 'State12' has cardinality 0..*, and from 'ctmc_Label', the role 'labels' has cardinality 0..*.

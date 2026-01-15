@@ -1,0 +1,59 @@
+The domain model 'SimpleUML' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'UmlPackageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleUML_UmlAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleUML_UmlPrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleUML_UmlClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleUML_UmlPackageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleUML_UmlAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleUML_UmlClass' represents an important domain concept.
+It does not declare any attributes.
+
+'UmlClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UmlModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleUML_UmlModelElement' represents an important domain concept.
+It has the following attributes: 'umlName', which is of type str; 'umlKind', which is of type str; 'id', which is of type str.
+
+'SimpleUML_UmlPackage' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'SimpleUML_UmlAssociation' is a specialization of 'UmlPackageElement'.
+The class 'SimpleUML_UmlAttribute' is a specialization of 'UmlModelElement'.
+The class 'SimpleUML_UmlClass' is a specialization of 'UmlClassifier'.
+The class 'SimpleUML_UmlClassifier' is a specialization of 'UmlPackageElement'.
+The class 'SimpleUML_UmlPackage' is a specialization of 'UmlModelElement'.
+The class 'SimpleUML_UmlPackageElement' is a specialization of 'UmlModelElement'.
+The class 'SimpleUML_UmlPrimitiveDataType' is a specialization of 'UmlClassifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SimpleUML_UmlAssociation' and 'SimpleUML_UmlClass'. From 'SimpleUML_UmlAssociation', the role 'umlForward' has cardinality 0..*, and from 'SimpleUML_UmlClass', the role 'UmlClass' has cardinality 0..*.
+An association connects 'SimpleUML_UmlClass' and 'SimpleUML_UmlAssociation'. From 'SimpleUML_UmlClass', the role 'UmlClass2' has cardinality 0..*, and from 'SimpleUML_UmlAssociation', the role 'umlReverse' has cardinality 0..*.
+An association connects 'SimpleUML_UmlAttribute' and 'SimpleUML_UmlClass'. From 'SimpleUML_UmlAttribute', the role 'umlAttribute' has cardinality 0..*, and from 'SimpleUML_UmlClass', the role 'UmlClass4' has cardinality 0..*.
+An association connects 'SimpleUML_UmlClassifier' and 'SimpleUML_UmlAttribute'. From 'SimpleUML_UmlClassifier', the role 'UmlClassifier' has cardinality 0..*, and from 'SimpleUML_UmlAttribute', the role 'umlAttribute1' has cardinality 0..*.
+An association connects 'SimpleUML_UmlClass' and 'SimpleUML_UmlAssociation'. From 'SimpleUML_UmlClass', the role 'umlDestination' has cardinality 0..*, and from 'SimpleUML_UmlAssociation', the role 'UmlAssociation' has cardinality 0..*.
+An association connects 'SimpleUML_UmlAssociation' and 'SimpleUML_UmlClass'. From 'SimpleUML_UmlAssociation', the role 'UmlAssociation8' has cardinality 0..*, and from 'SimpleUML_UmlClass', the role 'umlSource' has cardinality 0..*.
+An association connects 'SimpleUML_UmlAttribute' and 'SimpleUML_UmlClass'. From 'SimpleUML_UmlAttribute', the role 'UmlAttribute' has cardinality 0..*, and from 'SimpleUML_UmlClass', the role 'umlOwner' has cardinality 0..*.
+An association connects 'SimpleUML_UmlClass' and 'SimpleUML_UmlClass'. From 'SimpleUML_UmlClass', the role 'umlSpecific' has cardinality 0..*, and from 'SimpleUML_UmlClass', the role 'UmlClass12' has cardinality 0..*.
+An association connects 'SimpleUML_UmlClass' and 'SimpleUML_UmlClass'. From 'SimpleUML_UmlClass', the role 'UmlClass15' has cardinality 0..*, and from 'SimpleUML_UmlClass', the role 'umlGeneral' has cardinality 0..*.
+An association connects 'SimpleUML_UmlAttribute' and 'SimpleUML_UmlClassifier'. From 'SimpleUML_UmlAttribute', the role 'UmlAttribute17' has cardinality 0..*, and from 'SimpleUML_UmlClassifier', the role 'umlType' has cardinality 0..*.
+An association connects 'SimpleUML_UmlPackage' and 'SimpleUML_UmlPackageElement'. From 'SimpleUML_UmlPackage', the role 'umlNamespace' has cardinality 0..*, and from 'SimpleUML_UmlPackageElement', the role 'UmlPackageElement' has cardinality 0..*.
+An association connects 'SimpleUML_UmlPackageElement' and 'SimpleUML_UmlPackage'. From 'SimpleUML_UmlPackageElement', the role 'umlOwnedElement' has cardinality 0..*, and from 'SimpleUML_UmlPackage', the role 'UmlPackage' has cardinality 0..*.

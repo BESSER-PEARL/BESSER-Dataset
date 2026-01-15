@@ -1,0 +1,241 @@
+The domain model 'tortugaDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 57 main class(es).
+
+'tortugaDSL_DRAWING_SENTENCE' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_CLEAR' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_RIGHT' represents an important domain concept.
+It does not declare any attributes.
+
+'COLOREABLE' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_FONT_SPEC' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_BOLD' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_EXPRESSION' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_ITALIC' represents an important domain concept.
+It does not declare any attributes.
+
+'REFERENCIABLE' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_PENCOLOR' represents an important domain concept.
+It does not declare any attributes.
+
+'DRAWING_SENTENCE' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_CONTENT' represents an important domain concept.
+It does not declare any attributes.
+
+'SENTENCE' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_MOVE' represents an important domain concept.
+It does not declare any attributes.
+
+'BOOLEAN_EXPRESSION' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_CONTROL_SENTENCES' represents an important domain concept.
+It does not declare any attributes.
+
+'CONTROL_SENTENCES' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_FONT_STYLE' represents an important domain concept.
+It does not declare any attributes.
+
+'MOVE' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_DIVIDE' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_VALUE' represents an important domain concept.
+It has one attribute: 'val', which is of type float.
+
+'EXPRESSION' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_FontStyleValues' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_HOME' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_DRAW_STRING' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'tortugaDSL_REFERENCIABLE' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tortugaDSL_PARAM' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_PLAIN' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_COLOR_SPEC' represents an important domain concept.
+It does not declare any attributes.
+
+'FontStyleValues' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_IF' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_COLOREABLE' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+'tortugaDSL_EQUALS' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_FONT_SIZE' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_TO' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tortugaDSL_MULTIPLY' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_SUM' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_PROCEDURE_CALL' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_LESSER_THAN' represents an important domain concept.
+It does not declare any attributes.
+
+'OPERATION' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_REPEAT' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_GREATER_THAN' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_SUBTRACT' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_SENTENCE' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_CANVAS_COLOR' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_VARIABLE_REF' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_LEFT' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_SET_Y' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_TortugaProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_BOOLEAN_EXPRESSION' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_FORWARD' represents an important domain concept.
+It does not declare any attributes.
+
+'FONT_SPEC' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_PENUP' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_OPERATION' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_SET_X' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_MAKE' represents an important domain concept.
+It does not declare any attributes.
+
+'tortugaDSL_PENDOWN' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'tortugaDSL_MOVE' is a specialization of 'SENTENCE'.
+The class 'tortugaDSL_FORWARD' is a specialization of 'MOVE'.
+The class 'tortugaDSL_LEFT' is a specialization of 'MOVE'.
+The class 'tortugaDSL_RIGHT' is a specialization of 'MOVE'.
+The class 'tortugaDSL_SET_X' is a specialization of 'MOVE'.
+The class 'tortugaDSL_SET_Y' is a specialization of 'MOVE'.
+The class 'tortugaDSL_DRAWING_SENTENCE' is a specialization of 'SENTENCE'.
+The class 'tortugaDSL_PENDOWN' is a specialization of 'DRAWING_SENTENCE'.
+The class 'tortugaDSL_PENUP' is a specialization of 'DRAWING_SENTENCE'.
+The class 'tortugaDSL_COLOREABLE' is a specialization of 'DRAWING_SENTENCE'.
+The class 'tortugaDSL_PENCOLOR' is a specialization of 'COLOREABLE'.
+The class 'tortugaDSL_CANVAS_COLOR' is a specialization of 'COLOREABLE'.
+The class 'tortugaDSL_FONT_SPEC' is a specialization of 'DRAWING_SENTENCE'.
+The class 'tortugaDSL_FONT_SIZE' is a specialization of 'FONT_SPEC'.
+The class 'tortugaDSL_FONT_STYLE' is a specialization of 'FONT_SPEC'.
+The class 'tortugaDSL_CLEAR' is a specialization of 'DRAWING_SENTENCE'.
+The class 'tortugaDSL_HOME' is a specialization of 'DRAWING_SENTENCE'.
+The class 'tortugaDSL_DRAW_STRING' is a specialization of 'DRAWING_SENTENCE'.
+The class 'tortugaDSL_MAKE' is a specialization of 'SENTENCE'.
+The class 'tortugaDSL_MAKE' is a specialization of 'REFERENCIABLE'.
+The class 'tortugaDSL_VARIABLE_REF' is a specialization of 'EXPRESSION'.
+The class 'tortugaDSL_VALUE' is a specialization of 'EXPRESSION'.
+The class 'tortugaDSL_CONTENT' is a specialization of 'SENTENCE'.
+The class 'tortugaDSL_OPERATION' is a specialization of 'SENTENCE'.
+The class 'tortugaDSL_SUM' is a specialization of 'OPERATION'.
+The class 'tortugaDSL_SUBTRACT' is a specialization of 'OPERATION'.
+The class 'tortugaDSL_MULTIPLY' is a specialization of 'OPERATION'.
+The class 'tortugaDSL_DIVIDE' is a specialization of 'OPERATION'.
+The class 'tortugaDSL_CONTROL_SENTENCES' is a specialization of 'SENTENCE'.
+The class 'tortugaDSL_REPEAT' is a specialization of 'CONTROL_SENTENCES'.
+The class 'tortugaDSL_TO' is a specialization of 'CONTROL_SENTENCES'.
+The class 'tortugaDSL_PARAM' is a specialization of 'REFERENCIABLE'.
+The class 'tortugaDSL_PROCEDURE_CALL' is a specialization of 'SENTENCE'.
+The class 'tortugaDSL_IF' is a specialization of 'CONTROL_SENTENCES'.
+The class 'tortugaDSL_EQUALS' is a specialization of 'BOOLEAN_EXPRESSION'.
+The class 'tortugaDSL_GREATER_THAN' is a specialization of 'BOOLEAN_EXPRESSION'.
+The class 'tortugaDSL_LESSER_THAN' is a specialization of 'BOOLEAN_EXPRESSION'.
+The class 'tortugaDSL_BOLD' is a specialization of 'FontStyleValues'.
+The class 'tortugaDSL_ITALIC' is a specialization of 'FontStyleValues'.
+The class 'tortugaDSL_PLAIN' is a specialization of 'FontStyleValues'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tortugaDSL_TortugaProgram' and 'tortugaDSL_SENTENCE'. From 'tortugaDSL_TortugaProgram', the role 'tortugaDSL_TortugaProgram' has cardinality 0..*, and from 'tortugaDSL_SENTENCE', the role 'tortugaDSL_SENTENCE' has cardinality 0..*.
+An association connects 'tortugaDSL_EXPRESSION' and 'tortugaDSL_MOVE'. From 'tortugaDSL_EXPRESSION', the role 'tortugaDSL_EXPRESSION' has cardinality 0..*, and from 'tortugaDSL_MOVE', the role 'tortugaDSL_MOVE' has cardinality 0..*.
+An association connects 'tortugaDSL_COLOREABLE' and 'tortugaDSL_COLOR_SPEC'. From 'tortugaDSL_COLOREABLE', the role 'tortugaDSL_COLOREABLE' has cardinality 0..*, and from 'tortugaDSL_COLOR_SPEC', the role 'tortugaDSL_COLOR_SPEC' has cardinality 0..*.
+An association connects 'tortugaDSL_COLOR_SPEC' and 'tortugaDSL_EXPRESSION'. From 'tortugaDSL_COLOR_SPEC', the role 'tortugaDSL_COLOR_SPEC4' has cardinality 0..*, and from 'tortugaDSL_EXPRESSION', the role 'tortugaDSL_EXPRESSION5' has cardinality 0..*.
+An association connects 'tortugaDSL_EXPRESSION' and 'tortugaDSL_COLOR_SPEC'. From 'tortugaDSL_EXPRESSION', the role 'tortugaDSL_EXPRESSION8' has cardinality 0..*, and from 'tortugaDSL_COLOR_SPEC', the role 'tortugaDSL_COLOR_SPEC7' has cardinality 0..*.
+An association connects 'tortugaDSL_EXPRESSION' and 'tortugaDSL_COLOR_SPEC'. From 'tortugaDSL_EXPRESSION', the role 'tortugaDSL_EXPRESSION11' has cardinality 0..*, and from 'tortugaDSL_COLOR_SPEC', the role 'tortugaDSL_COLOR_SPEC10' has cardinality 0..*.
+An association connects 'tortugaDSL_EXPRESSION' and 'tortugaDSL_COLOR_SPEC'. From 'tortugaDSL_EXPRESSION', the role 'tortugaDSL_EXPRESSION14' has cardinality 0..*, and from 'tortugaDSL_COLOR_SPEC', the role 'tortugaDSL_COLOR_SPEC13' has cardinality 0..*.
+An association connects 'tortugaDSL_FONT_SIZE' and 'tortugaDSL_EXPRESSION'. From 'tortugaDSL_FONT_SIZE', the role 'tortugaDSL_FONT_SIZE' has cardinality 0..*, and from 'tortugaDSL_EXPRESSION', the role 'tortugaDSL_EXPRESSION16' has cardinality 0..*.
+An association connects 'tortugaDSL_FONT_STYLE' and 'tortugaDSL_FontStyleValues'. From 'tortugaDSL_FONT_STYLE', the role 'tortugaDSL_FONT_STYLE' has cardinality 0..*, and from 'tortugaDSL_FontStyleValues', the role 'tortugaDSL_FontStyleValues' has cardinality 0..*.
+An association connects 'tortugaDSL_EXPRESSION' and 'tortugaDSL_MAKE'. From 'tortugaDSL_EXPRESSION', the role 'tortugaDSL_EXPRESSION19' has cardinality 0..*, and from 'tortugaDSL_MAKE', the role 'tortugaDSL_MAKE' has cardinality 0..*.
+An association connects 'tortugaDSL_VARIABLE_REF' and 'tortugaDSL_REFERENCIABLE'. From 'tortugaDSL_VARIABLE_REF', the role 'tortugaDSL_VARIABLE_REF' has cardinality 0..*, and from 'tortugaDSL_REFERENCIABLE', the role 'tortugaDSL_REFERENCIABLE' has cardinality 0..*.
+An association connects 'tortugaDSL_MAKE' and 'tortugaDSL_CONTENT'. From 'tortugaDSL_MAKE', the role 'tortugaDSL_MAKE22' has cardinality 0..*, and from 'tortugaDSL_CONTENT', the role 'tortugaDSL_CONTENT' has cardinality 0..*.
+An association connects 'tortugaDSL_MAKE' and 'tortugaDSL_OPERATION'. From 'tortugaDSL_MAKE', the role 'tortugaDSL_MAKE24' has cardinality 0..*, and from 'tortugaDSL_OPERATION', the role 'tortugaDSL_OPERATION' has cardinality 0..*.
+An association connects 'tortugaDSL_EXPRESSION' and 'tortugaDSL_OPERATION'. From 'tortugaDSL_EXPRESSION', the role 'tortugaDSL_EXPRESSION27' has cardinality 0..*, and from 'tortugaDSL_OPERATION', the role 'tortugaDSL_OPERATION26' has cardinality 0..*.
+An association connects 'tortugaDSL_OPERATION' and 'tortugaDSL_EXPRESSION'. From 'tortugaDSL_OPERATION', the role 'tortugaDSL_OPERATION29' has cardinality 0..*, and from 'tortugaDSL_EXPRESSION', the role 'tortugaDSL_EXPRESSION30' has cardinality 0..*.
+An association connects 'tortugaDSL_SENTENCE' and 'tortugaDSL_CONTROL_SENTENCES'. From 'tortugaDSL_SENTENCE', the role 'tortugaDSL_SENTENCE32' has cardinality 0..*, and from 'tortugaDSL_CONTROL_SENTENCES', the role 'tortugaDSL_CONTROL_SENTENCES' has cardinality 0..*.
+An association connects 'tortugaDSL_REPEAT' and 'tortugaDSL_EXPRESSION'. From 'tortugaDSL_REPEAT', the role 'tortugaDSL_REPEAT' has cardinality 0..*, and from 'tortugaDSL_EXPRESSION', the role 'tortugaDSL_EXPRESSION34' has cardinality 0..*.
+An association connects 'tortugaDSL_TO' and 'tortugaDSL_PARAM'. From 'tortugaDSL_TO', the role 'tortugaDSL_TO' has cardinality 0..*, and from 'tortugaDSL_PARAM', the role 'tortugaDSL_PARAM' has cardinality 0..*.
+An association connects 'tortugaDSL_PROCEDURE_CALL' and 'tortugaDSL_TO'. From 'tortugaDSL_PROCEDURE_CALL', the role 'tortugaDSL_PROCEDURE_CALL' has cardinality 0..*, and from 'tortugaDSL_TO', the role 'tortugaDSL_TO37' has cardinality 0..*.
+An association connects 'tortugaDSL_PROCEDURE_CALL' and 'tortugaDSL_EXPRESSION'. From 'tortugaDSL_PROCEDURE_CALL', the role 'tortugaDSL_PROCEDURE_CALL39' has cardinality 0..*, and from 'tortugaDSL_EXPRESSION', the role 'tortugaDSL_EXPRESSION40' has cardinality 0..*.
+An association connects 'tortugaDSL_IF' and 'tortugaDSL_BOOLEAN_EXPRESSION'. From 'tortugaDSL_IF', the role 'tortugaDSL_IF' has cardinality 0..*, and from 'tortugaDSL_BOOLEAN_EXPRESSION', the role 'tortugaDSL_BOOLEAN_EXPRESSION' has cardinality 0..*.
+An association connects 'tortugaDSL_BOOLEAN_EXPRESSION' and 'tortugaDSL_EXPRESSION'. From 'tortugaDSL_BOOLEAN_EXPRESSION', the role 'tortugaDSL_BOOLEAN_EXPRESSION43' has cardinality 0..*, and from 'tortugaDSL_EXPRESSION', the role 'tortugaDSL_EXPRESSION44' has cardinality 0..*.
+An association connects 'tortugaDSL_BOOLEAN_EXPRESSION' and 'tortugaDSL_EXPRESSION'. From 'tortugaDSL_BOOLEAN_EXPRESSION', the role 'tortugaDSL_BOOLEAN_EXPRESSION46' has cardinality 0..*, and from 'tortugaDSL_EXPRESSION', the role 'tortugaDSL_EXPRESSION47' has cardinality 0..*.

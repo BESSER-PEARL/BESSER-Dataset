@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/basilfx/xtext-standalone-maven-build/org.xtext.example.mydsl/model/generated/MyDsl.ecore

@@ -1,0 +1,443 @@
+The domain model 'b' describes the core structural elements and their relationships within the system.
+
+The model defines 91 main class(es).
+
+'b_DefinitionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Invariant' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Arg' represents an important domain concept.
+It does not declare any attributes.
+
+'b_InvariantExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_TypeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'b_CondAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'b_CondMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Call' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Set' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Range' represents an important domain concept.
+It has one attribute: 'lowerBound', which is of type int.
+
+'b_Pre' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Sets' represents an important domain concept.
+It does not declare any attributes.
+
+'PropertyExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_ReturnTypeExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_ArgMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'b_BeginBody' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'b_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'b_IfCond' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Body' represents an important domain concept.
+It does not declare any attributes.
+
+'b_BoolTest' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Skip' represents an important domain concept.
+It does not declare any attributes.
+
+'b_ConcreteVariables' represents an important domain concept.
+It does not declare any attributes.
+
+'Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Neg' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'b_LocalOperations' represents an important domain concept.
+It does not declare any attributes.
+
+'b_CondNeg' represents an important domain concept.
+It does not declare any attributes.
+
+'b_If' represents an important domain concept.
+It does not declare any attributes.
+
+'b_PrimitiveType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Arg' represents an important domain concept.
+It does not declare any attributes.
+
+'b_IntLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'b_Assertions' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Machine' represents an important domain concept.
+It does not declare any attributes.
+
+'ReturnExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Operation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'b_InitialisationExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_ImplyExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Begin' represents an important domain concept.
+It does not declare any attributes.
+
+'b_AndExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_ReturnExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Ref' represents an important domain concept.
+It does not declare any attributes.
+
+'b_ConstantExpr' represents an important domain concept.
+It has one attribute: 'constant', which is of type str.
+
+'b_PreExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_BoolLiteral' represents an important domain concept.
+It has the following attributes: 'constant', which is of type str; 'value', which is of type str.
+
+'b_PropertyExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_ReturnOr' represents an important domain concept.
+It does not declare any attributes.
+
+'ReturnTypeExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_CondEq' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Operations' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Imports' represents an important domain concept.
+It does not declare any attributes.
+
+'b_PropertyRange' represents an important domain concept.
+It does not declare any attributes.
+
+'b_CaseExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_ConcreteConstants' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Abstraction' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'b_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Implementation' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Assign' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Definitions' represents an important domain concept.
+It does not declare any attributes.
+
+'b_NegExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_ValueExpr' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'b_Definition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'b_LogicalExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'b_ReturnTuple' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicalExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Values' represents an important domain concept.
+It does not declare any attributes.
+
+'b_InequalityExpr' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'b_CondLessThan' represents an important domain concept.
+It does not declare any attributes.
+
+'b_EqualExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_AssertionExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_PropertyTyped' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Seq' represents an important domain concept.
+It does not declare any attributes.
+
+'Return' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Properties' represents an important domain concept.
+It does not declare any attributes.
+
+'b_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Sees' represents an important domain concept.
+It does not declare any attributes.
+
+'b_SimpleCall' represents an important domain concept.
+It does not declare any attributes.
+
+'b_FinalExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Initialisation' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Var' represents an important domain concept.
+It does not declare any attributes.
+
+'BeginBody' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Body' represents an important domain concept.
+It does not declare any attributes.
+
+'b_Case' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BoolLiteralEnum' defines the following possible values: 'FALSE', 'TRUE'.
+The enumeration 'PrimitiveTypeEnum' defines the following possible values: 'NAT', 'STRING', 'BOOL', 'NAT1', 'INT'.
+The enumeration 'InequalityOp' defines the following possible values: 'LESS', 'GREATER', 'LESS_EQ', 'GREATER_EQ'.
+
+The model also captures inheritance relationships between classes.
+The class 'b_Machine' is a specialization of 'Abstraction'.
+The class 'b_Implementation' is a specialization of 'Abstraction'.
+The class 'b_DefinitionCall' is a specialization of 'LogicalExpr'.
+The class 'b_IntLiteral' is a specialization of 'LogicalExpr'.
+The class 'b_IntLiteral' is a specialization of 'Condition'.
+The class 'b_IntLiteral' is a specialization of 'Arg'.
+The class 'b_Skip' is a specialization of 'Body'.
+The class 'b_Skip' is a specialization of 'Expr'.
+The class 'b_If' is a specialization of 'Body'.
+The class 'b_If' is a specialization of 'Expr'.
+The class 'b_If' is a specialization of 'FinalExpr'.
+The class 'b_Pre' is a specialization of 'Body'.
+The class 'b_Var' is a specialization of 'Body'.
+The class 'b_Var' is a specialization of 'Expr'.
+The class 'b_Var' is a specialization of 'FinalExpr'.
+The class 'b_Begin' is a specialization of 'Body'.
+The class 'b_Assign' is a specialization of 'Expr'.
+The class 'b_Assign' is a specialization of 'Statement'.
+The class 'b_Return' is a specialization of 'Expr'.
+The class 'b_Return' is a specialization of 'FinalExpr'.
+The class 'b_ReturnTypeExpr' is a specialization of 'Return'.
+The class 'b_Case' is a specialization of 'Expr'.
+The class 'b_Case' is a specialization of 'FinalExpr'.
+The class 'b_Seq' is a specialization of 'Body'.
+The class 'b_Seq' is a specialization of 'BeginBody'.
+The class 'b_FinalExpr' is a specialization of 'BeginBody'.
+The class 'b_Call' is a specialization of 'Expr'.
+The class 'b_Call' is a specialization of 'Statement'.
+The class 'b_PrimitiveType' is a specialization of 'Type'.
+The class 'b_Ref' is a specialization of 'Type'.
+The class 'b_Ref' is a specialization of 'LogicalExpr'.
+The class 'b_Ref' is a specialization of 'Condition'.
+The class 'b_Ref' is a specialization of 'ReturnExpr'.
+The class 'b_Ref' is a specialization of 'Arg'.
+The class 'b_PropertyTyped' is a specialization of 'PropertyExpr'.
+The class 'b_PropertyRange' is a specialization of 'PropertyExpr'.
+The class 'b_AndExpr' is a specialization of 'LogicalExpr'.
+The class 'b_ImplyExpr' is a specialization of 'LogicalExpr'.
+The class 'b_InequalityExpr' is a specialization of 'LogicalExpr'.
+The class 'b_EqualExpr' is a specialization of 'LogicalExpr'.
+The class 'b_NegExpr' is a specialization of 'LogicalExpr'.
+The class 'b_BoolTest' is a specialization of 'LogicalExpr'.
+The class 'b_BoolTest' is a specialization of 'ReturnExpr'.
+The class 'b_TypeConstraint' is a specialization of 'LogicalExpr'.
+The class 'b_ConstantExpr' is a specialization of 'LogicalExpr'.
+The class 'b_CondAnd' is a specialization of 'Condition'.
+The class 'b_CondEq' is a specialization of 'Condition'.
+The class 'b_CondLessThan' is a specialization of 'Condition'.
+The class 'b_CondMinus' is a specialization of 'Condition'.
+The class 'b_CondNeg' is a specialization of 'Condition'.
+The class 'b_BoolLiteral' is a specialization of 'Condition'.
+The class 'b_BoolLiteral' is a specialization of 'ReturnExpr'.
+The class 'b_BoolLiteral' is a specialization of 'Arg'.
+The class 'b_ReturnTuple' is a specialization of 'Return'.
+The class 'b_ReturnOr' is a specialization of 'ReturnTypeExpr'.
+The class 'b_Neg' is a specialization of 'ReturnExpr'.
+The class 'b_ArgMinus' is a specialization of 'Arg'.
+The class 'b_StringLiteral' is a specialization of 'Arg'.
+
+Relationships between classes are modeled using associations.
+An association connects 'b_Sees' and 'b_Abstraction'. From 'b_Sees', the role 'b_Sees' has cardinality 0..*, and from 'b_Abstraction', the role 'b_Abstraction' has cardinality 0..*.
+An association connects 'b_ConcreteConstants' and 'b_Abstraction'. From 'b_ConcreteConstants', the role 'b_ConcreteConstants' has cardinality 0..*, and from 'b_Abstraction', the role 'b_Abstraction2' has cardinality 0..*.
+An association connects 'b_Abstraction' and 'b_Definitions'. From 'b_Abstraction', the role 'b_Abstraction4' has cardinality 0..*, and from 'b_Definitions', the role 'b_Definitions' has cardinality 0..*.
+An association connects 'b_Abstraction' and 'b_Properties'. From 'b_Abstraction', the role 'b_Abstraction6' has cardinality 0..*, and from 'b_Properties', the role 'b_Properties' has cardinality 0..*.
+An association connects 'b_Operations' and 'b_Abstraction'. From 'b_Operations', the role 'b_Operations' has cardinality 0..*, and from 'b_Abstraction', the role 'b_Abstraction8' has cardinality 0..*.
+An association connects 'b_Machine' and 'b_ConcreteVariables'. From 'b_Machine', the role 'b_Machine' has cardinality 0..*, and from 'b_ConcreteVariables', the role 'b_ConcreteVariables' has cardinality 0..*.
+An association connects 'b_Invariant' and 'b_Machine'. From 'b_Invariant', the role 'b_Invariant' has cardinality 0..*, and from 'b_Machine', the role 'b_Machine11' has cardinality 0..*.
+An association connects 'b_Machine' and 'b_Initialisation'. From 'b_Machine', the role 'b_Machine13' has cardinality 0..*, and from 'b_Initialisation', the role 'b_Initialisation' has cardinality 0..*.
+An association connects 'b_Machine' and 'b_Assertions'. From 'b_Machine', the role 'b_Machine15' has cardinality 0..*, and from 'b_Assertions', the role 'b_Assertions' has cardinality 0..*.
+An association connects 'b_Sets' and 'b_Machine'. From 'b_Sets', the role 'b_Sets' has cardinality 0..*, and from 'b_Machine', the role 'b_Machine17' has cardinality 0..*.
+An association connects 'b_Machine' and 'b_Implementation'. From 'b_Machine', the role 'b_Machine19' has cardinality 0..*, and from 'b_Implementation', the role 'b_Implementation' has cardinality 0..*.
+An association connects 'b_Imports' and 'b_Implementation'. From 'b_Imports', the role 'b_Imports' has cardinality 0..*, and from 'b_Implementation', the role 'b_Implementation21' has cardinality 0..*.
+An association connects 'b_Values' and 'b_Implementation'. From 'b_Values', the role 'b_Values' has cardinality 0..*, and from 'b_Implementation', the role 'b_Implementation23' has cardinality 0..*.
+An association connects 'b_Implementation' and 'b_LocalOperations'. From 'b_Implementation', the role 'b_Implementation25' has cardinality 0..*, and from 'b_LocalOperations', the role 'b_LocalOperations' has cardinality 0..*.
+An association connects 'b_Sees' and 'b_Abstraction'. From 'b_Sees', the role 'b_Sees27' has cardinality 0..*, and from 'b_Abstraction', the role 'b_Abstraction28' has cardinality 0..*.
+An association connects 'b_Imports' and 'b_Abstraction'. From 'b_Imports', the role 'b_Imports30' has cardinality 0..*, and from 'b_Abstraction', the role 'b_Abstraction31' has cardinality 0..*.
+An association connects 'b_Values' and 'b_ValueExpr'. From 'b_Values', the role 'b_Values33' has cardinality 0..*, and from 'b_ValueExpr', the role 'b_ValueExpr' has cardinality 0..*.
+An association connects 'b_ValueExpr' and 'b_Variable'. From 'b_ValueExpr', the role 'b_ValueExpr35' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable' has cardinality 0..*.
+An association connects 'b_ConcreteVariables' and 'b_Variable'. From 'b_ConcreteVariables', the role 'b_ConcreteVariables37' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable38' has cardinality 0..*.
+An association connects 'b_Variable' and 'b_ConcreteConstants'. From 'b_Variable', the role 'b_Variable41' has cardinality 0..*, and from 'b_ConcreteConstants', the role 'b_ConcreteConstants40' has cardinality 0..*.
+An association connects 'b_InvariantExpr' and 'b_Invariant'. From 'b_InvariantExpr', the role 'b_InvariantExpr' has cardinality 0..*, and from 'b_Invariant', the role 'b_Invariant43' has cardinality 0..*.
+An association connects 'b_Variable' and 'b_InvariantExpr'. From 'b_Variable', the role 'b_Variable46' has cardinality 0..*, and from 'b_InvariantExpr', the role 'b_InvariantExpr45' has cardinality 0..*.
+An association connects 'b_Type' and 'b_InvariantExpr'. From 'b_Type', the role 'b_Type' has cardinality 0..*, and from 'b_InvariantExpr', the role 'b_InvariantExpr48' has cardinality 0..*.
+An association connects 'b_InitialisationExpr' and 'b_Initialisation'. From 'b_InitialisationExpr', the role 'b_InitialisationExpr' has cardinality 0..*, and from 'b_Initialisation', the role 'b_Initialisation50' has cardinality 0..*.
+An association connects 'b_Variable' and 'b_InitialisationExpr'. From 'b_Variable', the role 'b_Variable53' has cardinality 0..*, and from 'b_InitialisationExpr', the role 'b_InitialisationExpr52' has cardinality 0..*.
+An association connects 'b_InitialisationExpr' and 'b_Type'. From 'b_InitialisationExpr', the role 'b_InitialisationExpr55' has cardinality 0..*, and from 'b_Type', the role 'b_Type56' has cardinality 0..*.
+An association connects 'b_PropertyExpr' and 'b_Properties'. From 'b_PropertyExpr', the role 'b_PropertyExpr' has cardinality 0..*, and from 'b_Properties', the role 'b_Properties58' has cardinality 0..*.
+An association connects 'b_PropertyExpr' and 'b_Properties'. From 'b_PropertyExpr', the role 'b_PropertyExpr61' has cardinality 0..*, and from 'b_Properties', the role 'b_Properties60' has cardinality 0..*.
+An association connects 'b_Variable' and 'b_PropertyExpr'. From 'b_Variable', the role 'b_Variable64' has cardinality 0..*, and from 'b_PropertyExpr', the role 'b_PropertyExpr63' has cardinality 0..*.
+An association connects 'b_Range' and 'b_Variable'. From 'b_Range', the role 'b_Range' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable66' has cardinality 0..*.
+An association connects 'b_Assertions' and 'b_AssertionExpr'. From 'b_Assertions', the role 'b_Assertions68' has cardinality 0..*, and from 'b_AssertionExpr', the role 'b_AssertionExpr' has cardinality 0..*.
+An association connects 'b_AssertionExpr' and 'b_Variable'. From 'b_AssertionExpr', the role 'b_AssertionExpr70' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable71' has cardinality 0..*.
+An association connects 'b_Type' and 'b_AssertionExpr'. From 'b_Type', the role 'b_Type74' has cardinality 0..*, and from 'b_AssertionExpr', the role 'b_AssertionExpr73' has cardinality 0..*.
+An association connects 'b_Definitions' and 'b_Definition'. From 'b_Definitions', the role 'b_Definitions76' has cardinality 0..*, and from 'b_Definition', the role 'b_Definition' has cardinality 0..*.
+An association connects 'b_Definition' and 'b_Variable'. From 'b_Definition', the role 'b_Definition78' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable79' has cardinality 0..*.
+An association connects 'b_Definition' and 'b_LogicalExpr'. From 'b_Definition', the role 'b_Definition81' has cardinality 0..*, and from 'b_LogicalExpr', the role 'b_LogicalExpr' has cardinality 0..*.
+An association connects 'b_DefinitionCall' and 'b_Definition'. From 'b_DefinitionCall', the role 'b_DefinitionCall' has cardinality 0..*, and from 'b_Definition', the role 'b_Definition83' has cardinality 0..*.
+An association connects 'b_Arg' and 'b_DefinitionCall'. From 'b_Arg', the role 'b_Arg' has cardinality 0..*, and from 'b_DefinitionCall', the role 'b_DefinitionCall85' has cardinality 0..*.
+An association connects 'b_Set' and 'b_Sets'. From 'b_Set', the role 'b_Set' has cardinality 0..*, and from 'b_Sets', the role 'b_Sets87' has cardinality 0..*.
+An association connects 'b_Set' and 'b_Variable'. From 'b_Set', the role 'b_Set89' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable90' has cardinality 0..*.
+An association connects 'b_Set' and 'b_Variable'. From 'b_Set', the role 'b_Set92' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable93' has cardinality 0..*.
+An association connects 'b_Operations' and 'b_Operation'. From 'b_Operations', the role 'b_Operations95' has cardinality 0..*, and from 'b_Operation', the role 'b_Operation' has cardinality 0..*.
+An association connects 'b_Variable' and 'b_Operation'. From 'b_Variable', the role 'b_Variable98' has cardinality 0..*, and from 'b_Operation', the role 'b_Operation97' has cardinality 0..*.
+An association connects 'b_Operation' and 'b_Variable'. From 'b_Operation', the role 'b_Operation100' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable101' has cardinality 0..*.
+An association connects 'b_Body' and 'b_Operation'. From 'b_Body', the role 'b_Body' has cardinality 0..*, and from 'b_Operation', the role 'b_Operation103' has cardinality 0..*.
+An association connects 'b_IfCond' and 'b_If'. From 'b_IfCond', the role 'b_IfCond' has cardinality 0..*, and from 'b_If', the role 'b_If' has cardinality 0..*.
+An association connects 'b_Expr' and 'b_If'. From 'b_Expr', the role 'b_Expr' has cardinality 0..*, and from 'b_If', the role 'b_If106' has cardinality 0..*.
+An association connects 'b_Condition' and 'b_IfCond'. From 'b_Condition', the role 'b_Condition' has cardinality 0..*, and from 'b_IfCond', the role 'b_IfCond108' has cardinality 0..*.
+An association connects 'b_Expr' and 'b_IfCond'. From 'b_Expr', the role 'b_Expr111' has cardinality 0..*, and from 'b_IfCond', the role 'b_IfCond110' has cardinality 0..*.
+An association connects 'b_PreExpr' and 'b_Pre'. From 'b_PreExpr', the role 'b_PreExpr' has cardinality 0..*, and from 'b_Pre', the role 'b_Pre' has cardinality 0..*.
+An association connects 'b_Expr' and 'b_Pre'. From 'b_Expr', the role 'b_Expr115' has cardinality 0..*, and from 'b_Pre', the role 'b_Pre114' has cardinality 0..*.
+An association connects 'b_PreExpr' and 'b_Variable'. From 'b_PreExpr', the role 'b_PreExpr117' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable118' has cardinality 0..*.
+An association connects 'b_Type' and 'b_PreExpr'. From 'b_Type', the role 'b_Type121' has cardinality 0..*, and from 'b_PreExpr', the role 'b_PreExpr120' has cardinality 0..*.
+An association connects 'b_Var' and 'b_Variable'. From 'b_Var', the role 'b_Var' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable123' has cardinality 0..*.
+An association connects 'b_Seq' and 'b_Var'. From 'b_Seq', the role 'b_Seq' has cardinality 0..*, and from 'b_Var', the role 'b_Var125' has cardinality 0..*.
+An association connects 'b_Begin' and 'b_BeginBody'. From 'b_Begin', the role 'b_Begin' has cardinality 0..*, and from 'b_BeginBody', the role 'b_BeginBody' has cardinality 0..*.
+An association connects 'b_Assign' and 'b_Variable'. From 'b_Assign', the role 'b_Assign' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable128' has cardinality 0..*.
+An association connects 'b_ReturnExpr' and 'b_Assign'. From 'b_ReturnExpr', the role 'b_ReturnExpr' has cardinality 0..*, and from 'b_Assign', the role 'b_Assign130' has cardinality 0..*.
+An association connects 'b_ReturnTypeExpr' and 'b_Variable'. From 'b_ReturnTypeExpr', the role 'b_ReturnTypeExpr' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable132' has cardinality 0..*.
+An association connects 'b_ReturnTypeExpr' and 'b_Type'. From 'b_ReturnTypeExpr', the role 'b_ReturnTypeExpr134' has cardinality 0..*, and from 'b_Type', the role 'b_Type135' has cardinality 0..*.
+An association connects 'b_Case' and 'b_Variable'. From 'b_Case', the role 'b_Case' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable137' has cardinality 0..*.
+An association connects 'b_Case' and 'b_CaseExpr'. From 'b_Case', the role 'b_Case139' has cardinality 0..*, and from 'b_CaseExpr', the role 'b_CaseExpr' has cardinality 0..*.
+An association connects 'b_Variable' and 'b_CaseExpr'. From 'b_Variable', the role 'b_Variable142' has cardinality 0..*, and from 'b_CaseExpr', the role 'b_CaseExpr141' has cardinality 0..*.
+An association connects 'b_CaseExpr' and 'b_Expr'. From 'b_CaseExpr', the role 'b_CaseExpr144' has cardinality 0..*, and from 'b_Expr', the role 'b_Expr145' has cardinality 0..*.
+An association connects 'b_Seq' and 'b_EObject'. From 'b_Seq', the role 'b_Seq147' has cardinality 0..*, and from 'b_EObject', the role 'b_EObject' has cardinality 0..*.
+An association connects 'b_Call' and 'b_Variable'. From 'b_Call', the role 'b_Call' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable149' has cardinality 0..*.
+An association connects 'b_Call' and 'b_Operation'. From 'b_Call', the role 'b_Call151' has cardinality 0..*, and from 'b_Operation', the role 'b_Operation152' has cardinality 0..*.
+An association connects 'b_Arg' and 'b_Call'. From 'b_Arg', the role 'b_Arg155' has cardinality 0..*, and from 'b_Call', the role 'b_Call154' has cardinality 0..*.
+An association connects 'b_SimpleCall' and 'b_Operation'. From 'b_SimpleCall', the role 'b_SimpleCall' has cardinality 0..*, and from 'b_Operation', the role 'b_Operation157' has cardinality 0..*.
+An association connects 'b_Arg' and 'b_SimpleCall'. From 'b_Arg', the role 'b_Arg160' has cardinality 0..*, and from 'b_SimpleCall', the role 'b_SimpleCall159' has cardinality 0..*.
+An association connects 'b_LocalOperations' and 'b_Operation'. From 'b_LocalOperations', the role 'b_LocalOperations162' has cardinality 0..*, and from 'b_Operation', the role 'b_Operation163' has cardinality 0..*.
+An association connects 'b_Ref' and 'b_Variable'. From 'b_Ref', the role 'b_Ref' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable165' has cardinality 0..*.
+An association connects 'b_Ref' and 'b_Variable'. From 'b_Ref', the role 'b_Ref167' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable168' has cardinality 0..*.
+An association connects 'b_PropertyTyped' and 'b_Type'. From 'b_PropertyTyped', the role 'b_PropertyTyped' has cardinality 0..*, and from 'b_Type', the role 'b_Type170' has cardinality 0..*.
+An association connects 'b_Range' and 'b_PropertyRange'. From 'b_Range', the role 'b_Range172' has cardinality 0..*, and from 'b_PropertyRange', the role 'b_PropertyRange' has cardinality 0..*.
+An association connects 'b_AndExpr' and 'b_LogicalExpr'. From 'b_AndExpr', the role 'b_AndExpr' has cardinality 0..*, and from 'b_LogicalExpr', the role 'b_LogicalExpr174' has cardinality 0..*.
+An association connects 'b_ImplyExpr' and 'b_LogicalExpr'. From 'b_ImplyExpr', the role 'b_ImplyExpr' has cardinality 0..*, and from 'b_LogicalExpr', the role 'b_LogicalExpr176' has cardinality 0..*.
+An association connects 'b_LogicalExpr' and 'b_ImplyExpr'. From 'b_LogicalExpr', the role 'b_LogicalExpr179' has cardinality 0..*, and from 'b_ImplyExpr', the role 'b_ImplyExpr178' has cardinality 0..*.
+An association connects 'b_LogicalExpr' and 'b_InequalityExpr'. From 'b_LogicalExpr', the role 'b_LogicalExpr181' has cardinality 0..*, and from 'b_InequalityExpr', the role 'b_InequalityExpr' has cardinality 0..*.
+An association connects 'b_InequalityExpr' and 'b_LogicalExpr'. From 'b_InequalityExpr', the role 'b_InequalityExpr183' has cardinality 0..*, and from 'b_LogicalExpr', the role 'b_LogicalExpr184' has cardinality 0..*.
+An association connects 'b_LogicalExpr' and 'b_EqualExpr'. From 'b_LogicalExpr', the role 'b_LogicalExpr186' has cardinality 0..*, and from 'b_EqualExpr', the role 'b_EqualExpr' has cardinality 0..*.
+An association connects 'b_EqualExpr' and 'b_LogicalExpr'. From 'b_EqualExpr', the role 'b_EqualExpr188' has cardinality 0..*, and from 'b_LogicalExpr', the role 'b_LogicalExpr189' has cardinality 0..*.
+An association connects 'b_NegExpr' and 'b_LogicalExpr'. From 'b_NegExpr', the role 'b_NegExpr' has cardinality 0..*, and from 'b_LogicalExpr', the role 'b_LogicalExpr191' has cardinality 0..*.
+An association connects 'b_LogicalExpr' and 'b_BoolTest'. From 'b_LogicalExpr', the role 'b_LogicalExpr193' has cardinality 0..*, and from 'b_BoolTest', the role 'b_BoolTest' has cardinality 0..*.
+An association connects 'b_Variable' and 'b_TypeConstraint'. From 'b_Variable', the role 'b_Variable195' has cardinality 0..*, and from 'b_TypeConstraint', the role 'b_TypeConstraint' has cardinality 0..*.
+An association connects 'b_Type' and 'b_TypeConstraint'. From 'b_Type', the role 'b_Type198' has cardinality 0..*, and from 'b_TypeConstraint', the role 'b_TypeConstraint197' has cardinality 0..*.
+An association connects 'b_CondAnd' and 'b_Condition'. From 'b_CondAnd', the role 'b_CondAnd' has cardinality 0..*, and from 'b_Condition', the role 'b_Condition200' has cardinality 0..*.
+An association connects 'b_CondEq' and 'b_Condition'. From 'b_CondEq', the role 'b_CondEq' has cardinality 0..*, and from 'b_Condition', the role 'b_Condition202' has cardinality 0..*.
+An association connects 'b_CondEq' and 'b_Condition'. From 'b_CondEq', the role 'b_CondEq204' has cardinality 0..*, and from 'b_Condition', the role 'b_Condition205' has cardinality 0..*.
+An association connects 'b_CondLessThan' and 'b_Condition'. From 'b_CondLessThan', the role 'b_CondLessThan' has cardinality 0..*, and from 'b_Condition', the role 'b_Condition207' has cardinality 0..*.
+An association connects 'b_CondLessThan' and 'b_Condition'. From 'b_CondLessThan', the role 'b_CondLessThan209' has cardinality 0..*, and from 'b_Condition', the role 'b_Condition210' has cardinality 0..*.
+An association connects 'b_Condition' and 'b_CondMinus'. From 'b_Condition', the role 'b_Condition212' has cardinality 0..*, and from 'b_CondMinus', the role 'b_CondMinus' has cardinality 0..*.
+An association connects 'b_CondMinus' and 'b_Condition'. From 'b_CondMinus', the role 'b_CondMinus214' has cardinality 0..*, and from 'b_Condition', the role 'b_Condition215' has cardinality 0..*.
+An association connects 'b_CondNeg' and 'b_Condition'. From 'b_CondNeg', the role 'b_CondNeg' has cardinality 0..*, and from 'b_Condition', the role 'b_Condition217' has cardinality 0..*.
+An association connects 'b_ReturnTuple' and 'b_Variable'. From 'b_ReturnTuple', the role 'b_ReturnTuple' has cardinality 0..*, and from 'b_Variable', the role 'b_Variable219' has cardinality 0..*.
+An association connects 'b_LogicalExpr' and 'b_ReturnTuple'. From 'b_LogicalExpr', the role 'b_LogicalExpr222' has cardinality 0..*, and from 'b_ReturnTuple', the role 'b_ReturnTuple221' has cardinality 0..*.
+An association connects 'b_ReturnTypeExpr' and 'b_ReturnOr'. From 'b_ReturnTypeExpr', the role 'b_ReturnTypeExpr224' has cardinality 0..*, and from 'b_ReturnOr', the role 'b_ReturnOr' has cardinality 0..*.
+An association connects 'b_ReturnExpr' and 'b_Neg'. From 'b_ReturnExpr', the role 'b_ReturnExpr226' has cardinality 0..*, and from 'b_Neg', the role 'b_Neg' has cardinality 0..*.
+An association connects 'b_ArgMinus' and 'b_Arg'. From 'b_ArgMinus', the role 'b_ArgMinus' has cardinality 0..*, and from 'b_Arg', the role 'b_Arg228' has cardinality 0..*.
+An association connects 'b_Arg' and 'b_ArgMinus'. From 'b_Arg', the role 'b_Arg231' has cardinality 0..*, and from 'b_ArgMinus', the role 'b_ArgMinus230' has cardinality 0..*.

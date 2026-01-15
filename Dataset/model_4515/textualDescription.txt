@@ -1,0 +1,92 @@
+The domain model 'smarthome' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'smarthome_DigitalSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_AnalogSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_NamedEntity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'smarthome_Room' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_Home' represents an important domain concept.
+It has one attribute: 'fileEvents', which is of type str.
+
+'Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_SensorPredicate' represents an important domain concept.
+It has the following attributes: 'operator', which is of type str; 'value', which is of type float.
+
+'smarthome_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_PersonPredicate' represents an important domain concept.
+It has one attribute: 'activity', which is of type str.
+
+'smarthome_Mode' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_Duration' represents an important domain concept.
+It has the following attributes: 'time', which is of type int; 'precision', which is of type str.
+
+'Predicate' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_Person' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_Pattern' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_CSVSensor' represents an important domain concept.
+It has one attribute: 'file', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Operator' defines the following possible values: 'superior', 'inferior', 'equal'.
+The enumeration 'Precision' defines the following possible values: 's', 'ms', 'm'.
+The enumeration 'Activity' defines the following possible values: 'sitting', 'laying', 'standing'.
+
+The model also captures inheritance relationships between classes.
+The class 'smarthome_Sensor' is a specialization of 'NamedEntity'.
+The class 'smarthome_AnalogSensor' is a specialization of 'Sensor'.
+The class 'smarthome_DigitalSensor' is a specialization of 'Sensor'.
+The class 'smarthome_Tag' is a specialization of 'NamedEntity'.
+The class 'smarthome_Room' is a specialization of 'NamedEntity'.
+The class 'smarthome_Pattern' is a specialization of 'NamedEntity'.
+The class 'smarthome_Person' is a specialization of 'NamedEntity'.
+The class 'smarthome_SensorPredicate' is a specialization of 'Predicate'.
+The class 'smarthome_PersonPredicate' is a specialization of 'Predicate'.
+
+Relationships between classes are modeled using associations.
+An association connects 'smarthome_Room' and 'smarthome_Home'. From 'smarthome_Room', the role 'smarthome_Room' has cardinality 0..*, and from 'smarthome_Home', the role 'smarthome_Home' has cardinality 0..*.
+An association connects 'smarthome_Person' and 'smarthome_Home'. From 'smarthome_Person', the role 'smarthome_Person' has cardinality 0..*, and from 'smarthome_Home', the role 'smarthome_Home2' has cardinality 0..*.
+An association connects 'smarthome_Home' and 'smarthome_Pattern'. From 'smarthome_Home', the role 'smarthome_Home4' has cardinality 0..*, and from 'smarthome_Pattern', the role 'smarthome_Pattern' has cardinality 0..*.
+An association connects 'smarthome_Home' and 'smarthome_NamedEntity'. From 'smarthome_Home', the role 'smarthome_Home6' has cardinality 0..*, and from 'smarthome_NamedEntity', the role 'smarthome_NamedEntity' has cardinality 0..*.
+An association connects 'smarthome_Room' and 'smarthome_Sensor'. From 'smarthome_Room', the role 'smarthome_Room8' has cardinality 0..*, and from 'smarthome_Sensor', the role 'smarthome_Sensor' has cardinality 0..*.
+An association connects 'smarthome_Rule' and 'smarthome_Pattern'. From 'smarthome_Rule', the role 'smarthome_Rule' has cardinality 0..*, and from 'smarthome_Pattern', the role 'smarthome_Pattern10' has cardinality 0..*.
+An association connects 'smarthome_Predicate' and 'smarthome_Rule'. From 'smarthome_Predicate', the role 'smarthome_Predicate' has cardinality 0..*, and from 'smarthome_Rule', the role 'smarthome_Rule12' has cardinality 0..*.
+An association connects 'smarthome_Rule' and 'smarthome_Duration'. From 'smarthome_Rule', the role 'smarthome_Rule14' has cardinality 0..*, and from 'smarthome_Duration', the role 'smarthome_Duration' has cardinality 0..*.
+An association connects 'smarthome_Person' and 'smarthome_Tag'. From 'smarthome_Person', the role 'smarthome_Person16' has cardinality 0..*, and from 'smarthome_Tag', the role 'smarthome_Tag' has cardinality 0..*.
+An association connects 'smarthome_Tag' and 'smarthome_Person'. From 'smarthome_Tag', the role 'smarthome_Tag19' has cardinality 0..*, and from 'smarthome_Person', the role 'smarthome_Person18' has cardinality 0..*.
+An association connects 'smarthome_Person' and 'smarthome_Tag'. From 'smarthome_Person', the role 'smarthome_Person21' has cardinality 0..*, and from 'smarthome_Tag', the role 'smarthome_Tag22' has cardinality 0..*.
+An association connects 'smarthome_Tag' and 'smarthome_Person'. From 'smarthome_Tag', the role 'smarthome_Tag25' has cardinality 0..*, and from 'smarthome_Person', the role 'smarthome_Person24' has cardinality 0..*.
+An association connects 'smarthome_SensorPredicate' and 'smarthome_Sensor'. From 'smarthome_SensorPredicate', the role 'smarthome_SensorPredicate' has cardinality 0..*, and from 'smarthome_Sensor', the role 'smarthome_Sensor27' has cardinality 0..*.
+An association connects 'smarthome_Person' and 'smarthome_PersonPredicate'. From 'smarthome_Person', the role 'smarthome_Person29' has cardinality 0..*, and from 'smarthome_PersonPredicate', the role 'smarthome_PersonPredicate' has cardinality 0..*.

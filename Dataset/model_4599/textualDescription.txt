@@ -1,0 +1,73 @@
+The domain model 'dot' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_RecordNode' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_Assignment' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'dot_Settings' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'dot_InnerNode' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_StringToStringMapEntry' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'dot_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_Identifiable' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'dot_Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_AttributedItem' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributedItem' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SettingsType' defines the following possible values: 'NODE', 'GRAPH', 'EDGE'.
+
+The model also captures inheritance relationships between classes.
+The class 'dot_Graph' is a specialization of 'Identifiable'.
+The class 'dot_Graph' is a specialization of 'Statement'.
+The class 'dot_Node' is a specialization of 'Identifiable'.
+The class 'dot_Node' is a specialization of 'Statement'.
+The class 'dot_Node' is a specialization of 'AttributedItem'.
+The class 'dot_RecordNode' is a specialization of 'Node'.
+The class 'dot_Edge' is a specialization of 'Statement'.
+The class 'dot_Edge' is a specialization of 'AttributedItem'.
+The class 'dot_Settings' is a specialization of 'Statement'.
+The class 'dot_Settings' is a specialization of 'AttributedItem'.
+The class 'dot_InnerNode' is a specialization of 'Node'.
+The class 'dot_Assignment' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dot_Statement' and 'dot_Graph'. From 'dot_Statement', the role 'dot_Statement' has cardinality 0..*, and from 'dot_Graph', the role 'dot_Graph' has cardinality 0..*.
+An association connects 'dot_InnerNode' and 'dot_RecordNode'. From 'dot_InnerNode', the role 'InnerNode' has cardinality 0..*, and from 'dot_RecordNode', the role 'recordNode' has cardinality 0..*.
+An association connects 'dot_Node' and 'dot_Edge'. From 'dot_Node', the role 'dot_Node' has cardinality 0..*, and from 'dot_Edge', the role 'dot_Edge' has cardinality 0..*.
+An association connects 'dot_Edge' and 'dot_Node'. From 'dot_Edge', the role 'dot_Edge4' has cardinality 0..*, and from 'dot_Node', the role 'dot_Node5' has cardinality 0..*.
+An association connects 'dot_AttributedItem' and 'dot_StringToStringMapEntry'. From 'dot_AttributedItem', the role 'dot_AttributedItem' has cardinality 0..*, and from 'dot_StringToStringMapEntry', the role 'dot_StringToStringMapEntry' has cardinality 0..*.
+An association connects 'dot_InnerNode' and 'dot_RecordNode'. From 'dot_InnerNode', the role 'innerNodes' has cardinality 0..*, and from 'dot_RecordNode', the role 'RecordNode' has cardinality 0..*.

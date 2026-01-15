@@ -1,0 +1,385 @@
+The domain model 'qm' describes the core structural elements and their relationships within the system.
+
+The model defines 85 main class(es).
+
+'qm_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'Instrument' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_FactorAggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_Specialization' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_Source' represents an important domain concept.
+It does not declare any attributes.
+
+'FactorAggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'Ranking' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_MeasureEvaluation' represents an important domain concept.
+It has one attribute: 'range', which is of type str.
+
+'qm_QIESLAggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FormBasedEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_FormBasedEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'LinearFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'FormBasedMeasureAggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_TextAggregation' represents an important domain concept.
+It has one attribute: 'specification', which is of type str.
+
+'qm_Evaluation' represents an important domain concept.
+It has the following attributes: 'maximumPoints', which is of type int; 'completeness', which is of type int.
+
+'qm_QualityModelResult' represents an important domain concept.
+It has the following attributes: 'system', which is of type str; 'date', which is of type date.
+
+'qm_DescribedElement' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'qm_MeasureRankingEvaluationResult' represents an important domain concept.
+It has one attribute: 'ratioAffected', which is of type float.
+
+'qm_ManualEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_LinearDecreasingFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_NumberMeanMeasureAggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_NormalizationMeasure' represents an important domain concept.
+It does not declare any attributes.
+
+'Evaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_Measurement' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_MeasureRefinement' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_CharacterizingElement' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_FactorRefinement' represents an important domain concept.
+It does not declare any attributes.
+
+'MeasurementResult' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_AnnotationBase' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_MultiMeasureEvaluationResult' represents an important domain concept.
+It does not declare any attributes.
+
+'Result' represents an important domain concept.
+It does not declare any attributes.
+
+'MeasureEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_NamedElement' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'name', which is of type str.
+
+'MeasureAggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_Instrument' represents an important domain concept.
+It does not declare any attributes.
+
+'AnnotatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CharacterizingElement' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_Impact' represents an important domain concept.
+It has the following attributes: 'justification', which is of type str; 'effect', which is of type str.
+
+'MultiMeasureEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_MultiMeasureEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_Entity' represents an important domain concept.
+It has the following attributes: 'useCase', which is of type bool; 'stakeholder', which is of type bool.
+
+'TextEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_FindingMessage' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'message', which is of type str.
+
+'qm_TaggedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_SingleMeasureEvaluationResult' represents an important domain concept.
+It has one attribute: 'ratioAffected', which is of type float.
+
+'qm_SingleMeasureEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_DoubleInterval' represents an important domain concept.
+It has the following attributes: 'upper', which is of type float; 'lower', which is of type float.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MeasurementMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_Decomposition' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_Annotation' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'qm_Measure' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'qm_Result' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'DescribedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_ManualInstrument' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_FormBasedMeasureAggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_Tag' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_WeightedSumMultiMeasureEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_MeasureRanking' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_AnnotatedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_MeasurementResult' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_Tool' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_MeasurementMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_Factor' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_FindingsUnionMeasureAggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_ToolBasedInstrument' represents an important domain concept.
+It has one attribute: 'metric', which is of type str.
+
+'qm_MeasureAggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'TextAggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'Measure' represents an important domain concept.
+It does not declare any attributes.
+
+'Function' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_WeightedSumFactorAggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_QualityModel' represents an important domain concept.
+It has the following attributes: 'schoolGradeBoundary6', which is of type str; 'schoolGradeBoundary5', which is of type str; 'schoolGradeBoundary2', which is of type str; 'schoolGradeBoundary4', which is of type str; 'schoolGradeBoundary3', which is of type str.
+
+'qm_LinearIncreasingFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_FindingsMeasurementResult' represents an important domain concept.
+It has the following attributes: 'findings', which is of type str; 'count', which is of type int.
+
+'qm_EvaluationResult' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_QualityModelElement' represents an important domain concept.
+It has one attribute: 'qualifiedName', which is of type str.
+
+'TaggedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_QIESLEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_Ranking' represents an important domain concept.
+It has the following attributes: 'rank', which is of type int; 'weight', which is of type float.
+
+'qm_NumberMeasurementResult' represents an important domain concept.
+It does not declare any attributes.
+
+'EvaluationResult' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_FactorRanking' represents an important domain concept.
+It does not declare any attributes.
+
+'qm_TextEvaluation' represents an important domain concept.
+It has one attribute: 'specification', which is of type str.
+
+'qm_LinearFunction' represents an important domain concept.
+It has the following attributes: 'upperBound', which is of type float; 'lowerBound', which is of type float.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Type' defines the following possible values: 'NONE', 'NUMBER', 'FINDINGS'.
+The enumeration 'Effect' defines the following possible values: 'POSITIVE', 'NEGATIVE'.
+
+The model also captures inheritance relationships between classes.
+The class 'qm_QualityModel' is a specialization of 'NamedElement'.
+The class 'qm_Source' is a specialization of 'NamedElement'.
+The class 'qm_DescribedElement' is a specialization of 'AnnotatedElement'.
+The class 'qm_NamedElement' is a specialization of 'DescribedElement'.
+The class 'qm_AnnotatedElement' is a specialization of 'TaggedElement'.
+The class 'qm_Tag' is a specialization of 'NamedElement'.
+The class 'qm_TaggedElement' is a specialization of 'QualityModelElement'.
+The class 'qm_Entity' is a specialization of 'NamedElement'.
+The class 'qm_Specialization' is a specialization of 'AnnotatedElement'.
+The class 'qm_Decomposition' is a specialization of 'AnnotatedElement'.
+The class 'qm_CharacterizingElement' is a specialization of 'NamedElement'.
+The class 'qm_Factor' is a specialization of 'CharacterizingElement'.
+The class 'qm_Impact' is a specialization of 'AnnotatedElement'.
+The class 'qm_Evaluation' is a specialization of 'NamedElement'.
+The class 'qm_FactorRefinement' is a specialization of 'AnnotatedElement'.
+The class 'qm_Measurement' is a specialization of 'AnnotatedElement'.
+The class 'qm_MeasureRefinement' is a specialization of 'AnnotatedElement'.
+The class 'qm_Measure' is a specialization of 'CharacterizingElement'.
+The class 'qm_MeasurementMethod' is a specialization of 'AnnotatedElement'.
+The class 'qm_MeasureAggregation' is a specialization of 'MeasurementMethod'.
+The class 'qm_MeasureAggregation' is a specialization of 'NamedElement'.
+The class 'qm_Instrument' is a specialization of 'MeasurementMethod'.
+The class 'qm_ManualInstrument' is a specialization of 'Instrument'.
+The class 'qm_ManualInstrument' is a specialization of 'NamedElement'.
+The class 'qm_ToolBasedInstrument' is a specialization of 'Instrument'.
+The class 'qm_Tool' is a specialization of 'NamedElement'.
+The class 'qm_QIESLEvaluation' is a specialization of 'TextEvaluation'.
+The class 'qm_TextEvaluation' is a specialization of 'Evaluation'.
+The class 'qm_FormBasedEvaluation' is a specialization of 'Evaluation'.
+The class 'qm_SingleMeasureEvaluation' is a specialization of 'FormBasedEvaluation'.
+The class 'qm_SingleMeasureEvaluation' is a specialization of 'MeasureEvaluation'.
+The class 'qm_FactorAggregation' is a specialization of 'FormBasedEvaluation'.
+The class 'qm_NormalizationMeasure' is a specialization of 'Measure'.
+The class 'qm_QIESLAggregation' is a specialization of 'TextAggregation'.
+The class 'qm_TextAggregation' is a specialization of 'MeasureAggregation'.
+The class 'qm_FormBasedMeasureAggregation' is a specialization of 'MeasureAggregation'.
+The class 'qm_FactorRanking' is a specialization of 'Ranking'.
+The class 'qm_LinearFunction' is a specialization of 'Function'.
+The class 'qm_LinearIncreasingFunction' is a specialization of 'LinearFunction'.
+The class 'qm_LinearDecreasingFunction' is a specialization of 'LinearFunction'.
+The class 'qm_WeightedSumFactorAggregation' is a specialization of 'FactorAggregation'.
+The class 'qm_FindingsUnionMeasureAggregation' is a specialization of 'FormBasedMeasureAggregation'.
+The class 'qm_NumberMeanMeasureAggregation' is a specialization of 'FormBasedMeasureAggregation'.
+The class 'qm_ManualEvaluation' is a specialization of 'Evaluation'.
+The class 'qm_MultiMeasureEvaluation' is a specialization of 'FormBasedEvaluation'.
+The class 'qm_WeightedSumMultiMeasureEvaluation' is a specialization of 'MultiMeasureEvaluation'.
+The class 'qm_MeasureRanking' is a specialization of 'MeasureEvaluation'.
+The class 'qm_MeasureRanking' is a specialization of 'Ranking'.
+The class 'qm_MeasurementResult' is a specialization of 'Result'.
+The class 'qm_NumberMeasurementResult' is a specialization of 'MeasurementResult'.
+The class 'qm_FindingsMeasurementResult' is a specialization of 'MeasurementResult'.
+The class 'qm_EvaluationResult' is a specialization of 'Result'.
+The class 'qm_SingleMeasureEvaluationResult' is a specialization of 'EvaluationResult'.
+The class 'qm_MultiMeasureEvaluationResult' is a specialization of 'EvaluationResult'.
+
+Relationships between classes are modeled using associations.
+An association connects 'qm_QualityModel' and 'qm_Entity'. From 'qm_QualityModel', the role 'qualityModel' has cardinality 0..*, and from 'qm_Entity', the role 'Entity' has cardinality 0..*.
+An association connects 'qm_QualityModel' and 'qm_Factor'. From 'qm_QualityModel', the role 'qualityModel2' has cardinality 0..*, and from 'qm_Factor', the role 'Factor' has cardinality 0..*.
+An association connects 'qm_Evaluation' and 'qm_QualityModel'. From 'qm_Evaluation', the role 'Evaluation' has cardinality 0..*, and from 'qm_QualityModel', the role 'qualityModel4' has cardinality 0..*.
+An association connects 'qm_Measure' and 'qm_QualityModel'. From 'qm_Measure', the role 'Measure' has cardinality 0..*, and from 'qm_QualityModel', the role 'qualityModel6' has cardinality 0..*.
+An association connects 'qm_MeasurementMethod' and 'qm_QualityModel'. From 'qm_MeasurementMethod', the role 'MeasurementMethod' has cardinality 0..*, and from 'qm_QualityModel', the role 'qualityModel8' has cardinality 0..*.
+An association connects 'qm_QualityModel' and 'qm_Tool'. From 'qm_QualityModel', the role 'qualityModel10' has cardinality 0..*, and from 'qm_Tool', the role 'Tool' has cardinality 0..*.
+An association connects 'qm_QualityModel' and 'qm_Tag'. From 'qm_QualityModel', the role 'qualityModel12' has cardinality 0..*, and from 'qm_Tag', the role 'Tag' has cardinality 0..*.
+An association connects 'qm_Source' and 'qm_QualityModel'. From 'qm_Source', the role 'Source' has cardinality 0..*, and from 'qm_QualityModel', the role 'qualityModel14' has cardinality 0..*.
+An association connects 'qm_QualityModel' and 'qm_QualityModel'. From 'qm_QualityModel', the role 'qm_QualityModel' has cardinality 0..*, and from 'qm_QualityModel', the role 'qm_QualityModel15' has cardinality 0..*.
+An association connects 'qm_Source' and 'qm_QualityModelElement'. From 'qm_Source', the role 'qm_Source' has cardinality 0..*, and from 'qm_QualityModelElement', the role 'qm_QualityModelElement' has cardinality 0..*.
+An association connects 'qm_Source' and 'qm_QualityModel'. From 'qm_Source', the role 'sources' has cardinality 0..*, and from 'qm_QualityModel', the role 'QualityModel' has cardinality 0..*.
+An association connects 'qm_Annotation' and 'qm_AnnotatedElement'. From 'qm_Annotation', the role 'qm_Annotation' has cardinality 0..*, and from 'qm_AnnotatedElement', the role 'qm_AnnotatedElement' has cardinality 0..*.
+An association connects 'qm_AnnotationBase' and 'qm_AnnotatedElement'. From 'qm_AnnotationBase', the role 'qm_AnnotationBase' has cardinality 0..*, and from 'qm_AnnotatedElement', the role 'qm_AnnotatedElement21' has cardinality 0..*.
+An association connects 'qm_Tag' and 'qm_QualityModel'. From 'qm_Tag', the role 'tags' has cardinality 0..*, and from 'qm_QualityModel', the role 'QualityModel23' has cardinality 0..*.
+An association connects 'qm_Tag' and 'qm_TaggedElement'. From 'qm_Tag', the role 'qm_Tag' has cardinality 0..*, and from 'qm_TaggedElement', the role 'qm_TaggedElement' has cardinality 0..*.
+An association connects 'qm_Entity' and 'qm_Specialization'. From 'qm_Entity', the role 'child' has cardinality 0..*, and from 'qm_Specialization', the role 'Specialization' has cardinality 0..*.
+An association connects 'qm_Entity' and 'qm_Entity'. From 'qm_Entity', the role 'qm_Entity26' has cardinality 0..*, and from 'qm_Entity', the role 'qm_Entity' has cardinality 0..*.
+An association connects 'qm_Decomposition' and 'qm_Entity'. From 'qm_Decomposition', the role 'Decomposition' has cardinality 0..*, and from 'qm_Entity', the role 'child29' has cardinality 0..*.
+An association connects 'qm_Entity' and 'qm_Entity'. From 'qm_Entity', the role 'qm_Entity30' has cardinality 0..*, and from 'qm_Entity', the role 'qm_Entity32' has cardinality 0..*.
+An association connects 'qm_Entity' and 'qm_QualityModel'. From 'qm_Entity', the role 'entities' has cardinality 0..*, and from 'qm_QualityModel', the role 'QualityModel34' has cardinality 0..*.
+An association connects 'qm_Entity' and 'qm_Specialization'. From 'qm_Entity', the role 'qm_Entity36' has cardinality 0..*, and from 'qm_Specialization', the role 'qm_Specialization' has cardinality 0..*.
+An association connects 'qm_Specialization' and 'qm_Entity'. From 'qm_Specialization', the role 'isA' has cardinality 0..*, and from 'qm_Entity', the role 'Entity38' has cardinality 0..*.
+An association connects 'qm_Decomposition' and 'qm_Entity'. From 'qm_Decomposition', the role 'qm_Decomposition' has cardinality 0..*, and from 'qm_Entity', the role 'qm_Entity40' has cardinality 0..*.
+An association connects 'qm_Entity' and 'qm_Decomposition'. From 'qm_Entity', the role 'Entity42' has cardinality 0..*, and from 'qm_Decomposition', the role 'partOf' has cardinality 0..*.
+An association connects 'qm_CharacterizingElement' and 'qm_Entity'. From 'qm_CharacterizingElement', the role 'qm_CharacterizingElement' has cardinality 0..*, and from 'qm_Entity', the role 'qm_Entity44' has cardinality 0..*.
+An association connects 'qm_Impact' and 'qm_Factor'. From 'qm_Impact', the role 'Impact' has cardinality 0..*, and from 'qm_Factor', the role 'source' has cardinality 0..*.
+An association connects 'qm_Factor' and 'qm_Factor'. From 'qm_Factor', the role 'qm_Factor46' has cardinality 0..*, and from 'qm_Factor', the role 'qm_Factor' has cardinality 0..*.
+An association connects 'qm_Factor' and 'qm_FactorRefinement'. From 'qm_Factor', the role 'child49' has cardinality 0..*, and from 'qm_FactorRefinement', the role 'FactorRefinement' has cardinality 0..*.
+An association connects 'qm_Factor' and 'qm_Factor'. From 'qm_Factor', the role 'qm_Factor52' has cardinality 0..*, and from 'qm_Factor', the role 'qm_Factor50' has cardinality 0..*.
+An association connects 'qm_Factor' and 'qm_QualityModel'. From 'qm_Factor', the role 'factors' has cardinality 0..*, and from 'qm_QualityModel', the role 'QualityModel54' has cardinality 0..*.
+An association connects 'qm_Impact' and 'qm_Factor'. From 'qm_Impact', the role 'influences' has cardinality 0..*, and from 'qm_Factor', the role 'Factor56' has cardinality 0..*.
+An association connects 'qm_Impact' and 'qm_Factor'. From 'qm_Impact', the role 'qm_Impact' has cardinality 0..*, and from 'qm_Factor', the role 'qm_Factor58' has cardinality 0..*.
+An association connects 'qm_Evaluation' and 'qm_Factor'. From 'qm_Evaluation', the role 'qm_Evaluation' has cardinality 0..*, and from 'qm_Factor', the role 'qm_Factor60' has cardinality 0..*.
+An association connects 'qm_Evaluation' and 'qm_QualityModel'. From 'qm_Evaluation', the role 'evaluations' has cardinality 0..*, and from 'qm_QualityModel', the role 'QualityModel62' has cardinality 0..*.
+An association connects 'qm_FactorRefinement' and 'qm_Factor'. From 'qm_FactorRefinement', the role 'refines' has cardinality 0..*, and from 'qm_Factor', the role 'Factor64' has cardinality 0..*.
+An association connects 'qm_FactorRefinement' and 'qm_Factor'. From 'qm_FactorRefinement', the role 'qm_FactorRefinement' has cardinality 0..*, and from 'qm_Factor', the role 'qm_Factor66' has cardinality 0..*.
+An association connects 'qm_Measurement' and 'qm_Factor'. From 'qm_Measurement', the role 'qm_Measurement' has cardinality 0..*, and from 'qm_Factor', the role 'qm_Factor68' has cardinality 0..*.
+An association connects 'qm_Measure' and 'qm_Measurement'. From 'qm_Measure', the role 'Measure70' has cardinality 0..*, and from 'qm_Measurement', the role 'measures' has cardinality 0..*.
+An association connects 'qm_MeasureRefinement' and 'qm_Measure'. From 'qm_MeasureRefinement', the role 'qm_MeasureRefinement' has cardinality 0..*, and from 'qm_Measure', the role 'qm_Measure' has cardinality 0..*.
+An association connects 'qm_MeasureRefinement' and 'qm_Measure'. From 'qm_MeasureRefinement', the role 'refines73' has cardinality 0..*, and from 'qm_Measure', the role 'Measure74' has cardinality 0..*.
+An association connects 'qm_Measurement' and 'qm_Measure'. From 'qm_Measurement', the role 'Measurement' has cardinality 0..*, and from 'qm_Measure', the role 'child76' has cardinality 0..*.
+An association connects 'qm_Factor' and 'qm_Measure'. From 'qm_Factor', the role 'qm_Factor79' has cardinality 0..*, and from 'qm_Measure', the role 'qm_Measure78' has cardinality 0..*.
+An association connects 'qm_QualityModel' and 'qm_Measure'. From 'qm_QualityModel', the role 'QualityModel82' has cardinality 0..*, and from 'qm_Measure', the role 'measures81' has cardinality 0..*.
+An association connects 'qm_MeasureRefinement' and 'qm_Measure'. From 'qm_MeasureRefinement', the role 'MeasureRefinement' has cardinality 0..*, and from 'qm_Measure', the role 'child84' has cardinality 0..*.
+An association connects 'qm_Measure' and 'qm_Measure'. From 'qm_Measure', the role 'qm_Measure85' has cardinality 0..*, and from 'qm_Measure', the role 'qm_Measure87' has cardinality 0..*.
+An association connects 'qm_Measure' and 'qm_MeasurementMethod'. From 'qm_Measure', the role 'qm_Measure89' has cardinality 0..*, and from 'qm_MeasurementMethod', the role 'qm_MeasurementMethod' has cardinality 0..*.
+An association connects 'qm_MeasurementMethod' and 'qm_QualityModel'. From 'qm_MeasurementMethod', the role 'measurementMethods' has cardinality 0..*, and from 'qm_QualityModel', the role 'QualityModel91' has cardinality 0..*.
+An association connects 'qm_ToolBasedInstrument' and 'qm_Tool'. From 'qm_ToolBasedInstrument', the role 'qm_ToolBasedInstrument' has cardinality 0..*, and from 'qm_Tool', the role 'qm_Tool' has cardinality 0..*.
+An association connects 'qm_Tool' and 'qm_QualityModel'. From 'qm_Tool', the role 'tools' has cardinality 0..*, and from 'qm_QualityModel', the role 'QualityModel94' has cardinality 0..*.
+An association connects 'qm_Factor' and 'qm_FactorRanking'. From 'qm_Factor', the role 'qm_Factor96' has cardinality 0..*, and from 'qm_FactorRanking', the role 'qm_FactorRanking' has cardinality 0..*.
+An association connects 'qm_WeightedSumFactorAggregation' and 'qm_FactorRanking'. From 'qm_WeightedSumFactorAggregation', the role 'qm_WeightedSumFactorAggregation' has cardinality 0..*, and from 'qm_FactorRanking', the role 'qm_FactorRanking98' has cardinality 0..*.
+An association connects 'qm_Measure' and 'qm_MeasureEvaluation'. From 'qm_Measure', the role 'qm_Measure100' has cardinality 0..*, and from 'qm_MeasureEvaluation', the role 'qm_MeasureEvaluation' has cardinality 0..*.
+An association connects 'qm_NormalizationMeasure' and 'qm_MeasureEvaluation'. From 'qm_NormalizationMeasure', the role 'qm_NormalizationMeasure' has cardinality 0..*, and from 'qm_MeasureEvaluation', the role 'qm_MeasureEvaluation102' has cardinality 0..*.
+An association connects 'qm_MeasureEvaluation' and 'qm_Function'. From 'qm_MeasureEvaluation', the role 'qm_MeasureEvaluation104' has cardinality 0..*, and from 'qm_Function', the role 'qm_Function' has cardinality 0..*.
+An association connects 'qm_MeasureRanking' and 'qm_WeightedSumMultiMeasureEvaluation'. From 'qm_MeasureRanking', the role 'qm_MeasureRanking' has cardinality 0..*, and from 'qm_WeightedSumMultiMeasureEvaluation', the role 'qm_WeightedSumMultiMeasureEvaluation' has cardinality 0..*.
+An association connects 'qm_QualityModelResult' and 'qm_MeasurementResult'. From 'qm_QualityModelResult', the role 'qm_QualityModelResult' has cardinality 0..*, and from 'qm_MeasurementResult', the role 'qm_MeasurementResult' has cardinality 0..*.
+An association connects 'qm_QualityModelResult' and 'qm_EvaluationResult'. From 'qm_QualityModelResult', the role 'qm_QualityModelResult108' has cardinality 0..*, and from 'qm_EvaluationResult', the role 'qm_EvaluationResult' has cardinality 0..*.
+An association connects 'qm_MeasurementResult' and 'qm_MeasurementMethod'. From 'qm_MeasurementResult', the role 'qm_MeasurementResult110' has cardinality 0..*, and from 'qm_MeasurementMethod', the role 'qm_MeasurementMethod111' has cardinality 0..*.
+An association connects 'qm_NumberMeasurementResult' and 'qm_DoubleInterval'. From 'qm_NumberMeasurementResult', the role 'qm_NumberMeasurementResult' has cardinality 0..*, and from 'qm_DoubleInterval', the role 'qm_DoubleInterval' has cardinality 0..*.
+An association connects 'qm_FindingMessage' and 'qm_FindingsMeasurementResult'. From 'qm_FindingMessage', the role 'qm_FindingMessage' has cardinality 0..*, and from 'qm_FindingsMeasurementResult', the role 'qm_FindingsMeasurementResult' has cardinality 0..*.
+An association connects 'qm_DoubleInterval' and 'qm_EvaluationResult'. From 'qm_DoubleInterval', the role 'qm_DoubleInterval116' has cardinality 0..*, and from 'qm_EvaluationResult', the role 'qm_EvaluationResult115' has cardinality 0..*.
+An association connects 'qm_Evaluation' and 'qm_EvaluationResult'. From 'qm_Evaluation', the role 'qm_Evaluation119' has cardinality 0..*, and from 'qm_EvaluationResult', the role 'qm_EvaluationResult118' has cardinality 0..*.
+An association connects 'qm_MultiMeasureEvaluationResult' and 'qm_MeasureRankingEvaluationResult'. From 'qm_MultiMeasureEvaluationResult', the role 'qm_MultiMeasureEvaluationResult' has cardinality 0..*, and from 'qm_MeasureRankingEvaluationResult', the role 'qm_MeasureRankingEvaluationResult' has cardinality 0..*.
+An association connects 'qm_MeasureRankingEvaluationResult' and 'qm_DoubleInterval'. From 'qm_MeasureRankingEvaluationResult', the role 'qm_MeasureRankingEvaluationResult122' has cardinality 0..*, and from 'qm_DoubleInterval', the role 'qm_DoubleInterval123' has cardinality 0..*.
+An association connects 'qm_MeasureRankingEvaluationResult' and 'qm_MeasureRanking'. From 'qm_MeasureRankingEvaluationResult', the role 'qm_MeasureRankingEvaluationResult125' has cardinality 0..*, and from 'qm_MeasureRanking', the role 'qm_MeasureRanking126' has cardinality 0..*.

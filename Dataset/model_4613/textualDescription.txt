@@ -1,0 +1,947 @@
+The domain model 'viewpoint' describes the core structural elements and their relationships within the system.
+
+The model defines 237 main class(es).
+
+'viewpoint_description_Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'RepresentationElementMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_EditMaskVariables' represents an important domain concept.
+It has one attribute: 'mask', which is of type str.
+
+'RepresentationExtensionDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_UserColor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'viewpoint_description_InteractiveVariableDescription' represents an important domain concept.
+It has one attribute: 'userDocumentation', which is of type str.
+
+'viewpoint_tool_InitialContainerDropOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_JavaExtension' represents an important domain concept.
+It has one attribute: 'qualifiedClassName', which is of type str.
+
+'viewpoint_tool_For' represents an important domain concept.
+It has the following attributes: 'iteratorName', which is of type str; 'expression', which is of type str.
+
+'viewpoint_description_Environment' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_NameVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'DMappingBased' represents an important domain concept.
+It does not declare any attributes.
+
+'Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_VSMElementCustomization' represents an important domain concept.
+It has one attribute: 'predicateExpression', which is of type str.
+
+'tool_Case' represents an important domain concept.
+It does not declare any attributes.
+
+'DocumentedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'description_DModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_FeatureExtensionDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_DView' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_SelectionWizardDescription' represents an important domain concept.
+It has the following attributes: 'iconPath', which is of type str; 'windowTitle', which is of type str; 'windowImagePath', which is of type str.
+
+'DStylizable' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_InitialNodeCreationOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_RepresentationElementMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'SubVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_UIState' represents an important domain concept.
+It has one attribute: 'inverseSelectionOrder', which is of type bool.
+
+'viewpoint_BasicLabelStyle' represents an important domain concept.
+It has the following attributes: 'labelSize', which is of type int; 'labelColor', which is of type str; 'showIcon', which is of type bool; 'labelFormat', which is of type str; 'iconPath', which is of type str.
+
+'viewpoint_tool_SwitchChild' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_Switch' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_DModel' represents an important domain concept.
+It does not declare any attributes.
+
+'MenuItemDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'style_StyleDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_Decoration' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_Customization' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_ContainerModelOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_Default' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_TypedVariable' represents an important domain concept.
+It has one attribute: 'defaultValueExpression', which is of type str.
+
+'viewpoint_tool_MoveElement' represents an important domain concept.
+It has the following attributes: 'featureName', which is of type str; 'newContainerExpression', which is of type str.
+
+'description_viewpoint_EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_DecorationDescriptionsSet' represents an important domain concept.
+It does not declare any attributes.
+
+'style_LabelBorderStyleDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_EAttributeCustomization' represents an important domain concept.
+It has the following attributes: 'attributeName', which is of type str; 'value', which is of type str.
+
+'FeatureExtensionDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_IdentifiedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'label', which is of type str.
+
+'viewpoint_tool_AcceleoVariable' represents an important domain concept.
+It has one attribute: 'computationExpression', which is of type str.
+
+'tool_ToolFilterDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'ValidationRule' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_SessionManagerEObject' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_ExternalJavaAction' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'DAnnotationEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_Unset' represents an important domain concept.
+It has the following attributes: 'featureName', which is of type str; 'elementExpression', which is of type str.
+
+'viewpoint_style_LabelBorderStyleDescription' represents an important domain concept.
+It has the following attributes: 'cornerHeight', which is of type int; 'cornerWidth', which is of type int; 'id', which is of type str; 'name', which is of type str.
+
+'viewpoint_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'FixedColor' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_VSMElementCustomizationReuse' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'InformationSection' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_DModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_validation_SemanticValidationRule' represents an important domain concept.
+It has one attribute: 'targetClass', which is of type str.
+
+'EStructuralFeatureCustomization' represents an important domain concept.
+It does not declare any attributes.
+
+'DResource' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_ModelOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_MetaModelExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_ElementSelectVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractToolDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_MetamodelExtensionSetting' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_SelectContainerVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_ToolEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_ElementDeleteVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_validation_ViewValidationRule' represents an important domain concept.
+It does not declare any attributes.
+
+'ToolEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_ColorDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_ComputedColor' represents an important domain concept.
+It has the following attributes: 'green', which is of type str; 'red', which is of type str; 'blue', which is of type str.
+
+'viewpoint_description_SelectionDescription' represents an important domain concept.
+It has the following attributes: 'candidatesExpression', which is of type str; 'rootExpression', which is of type str; 'multiple', which is of type bool; 'message', which is of type str; 'tree', which is of type bool; 'childrenExpression', which is of type str.
+
+'tool_ContainerViewVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'validation_ValidationSet' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_DRepresentationElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'description_viewpoint_EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_DFile' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_MappingBasedToolDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_Viewpoint' represents an important domain concept.
+It has the following attributes: 'icon', which is of type str; 'conflicts', which is of type str; 'modelFileExtension', which is of type str; 'customizes', which is of type str; 'reuses', which is of type str.
+
+'SytemColorsPalette' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_MenuItemOrRef' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_DialogVariable' represents an important domain concept.
+It has one attribute: 'dialogPrompt', which is of type str.
+
+'viewpoint_validation_ValidationRule' represents an important domain concept.
+It has the following attributes: 'level', which is of type str; 'message', which is of type str.
+
+'tool_VariableContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_ColorStep' represents an important domain concept.
+It has one attribute: 'associatedValue', which is of type str.
+
+'viewpoint_tool_CreateInstance' represents an important domain concept.
+It has the following attributes: 'referenceName', which is of type str; 'typeName', which is of type str; 'variableName', which is of type str.
+
+'viewpoint_description_ConditionalStyleDescription' represents an important domain concept.
+It has one attribute: 'predicateExpression', which is of type str.
+
+'viewpoint_validation_ValidationFix' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'viewpoint_description_SytemColorsPalette' represents an important domain concept.
+It does not declare any attributes.
+
+'description_ColorDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'description_InteractiveVariableDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_ElementSelectVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_EndUserDocumentedElement' represents an important domain concept.
+It has one attribute: 'endUserDocumentation', which is of type str.
+
+'viewpoint_tool_VariableContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'MetamodelExtensionSetting' represents an important domain concept.
+It does not declare any attributes.
+
+'description_FixedColor' represents an important domain concept.
+It does not declare any attributes.
+
+'DAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_AbstractMappingImport' represents an important domain concept.
+It has the following attributes: 'hideSubMappings', which is of type bool; 'inheritsAncestorFilters', which is of type bool.
+
+'viewpoint_description_SemanticBasedDecoration' represents an important domain concept.
+It has one attribute: 'domainClass', which is of type str.
+
+'DecorationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'Customizable' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_DRepresentation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Viewpoint' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_ExternalJavaAction' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_DResourceContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_validation_ValidationSet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'AbstractVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'DView' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_style_LabelStyleDescription' represents an important domain concept.
+It has one attribute: 'labelAlignment', which is of type str.
+
+'viewpoint_tool_InitEdgeCreationOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_DRefreshable' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_SystemColor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'viewpoint_DStylizable' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_MenuItemOrRef' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_SelectModelElementVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_DResource' represents an important domain concept.
+It has the following attributes: 'path', which is of type str; 'name', which is of type str.
+
+'viewpoint_tool_If' represents an important domain concept.
+It has one attribute: 'conditionExpression', which is of type str.
+
+'viewpoint_style_BasicLabelStyleDescription' represents an important domain concept.
+It has the following attributes: 'iconPath', which is of type str; 'labelFormat', which is of type str; 'showIcon', which is of type bool; 'labelExpression', which is of type str; 'labelSize', which is of type int.
+
+'description_SelectionDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_ElementVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'description_UserColor' represents an important domain concept.
+It does not declare any attributes.
+
+'IdentifiedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_SetObject' represents an important domain concept.
+It has one attribute: 'featureName', which is of type str.
+
+'viewpoint_description_PasteTargetDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_RepresentationImportDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'description_EndUserDocumentedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'IVSMElementCustomization' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_UserColorsPalette' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tool_ModelOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_style_LabelBorderStyles' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_ExternalJavaActionParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_RepresentationTemplate' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'viewpoint_DProject' represents an important domain concept.
+It does not declare any attributes.
+
+'MenuItemOrRef' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_validation_RuleAudit' represents an important domain concept.
+It has one attribute: 'auditExpression', which is of type str.
+
+'viewpoint_description_DecorationDescription' represents an important domain concept.
+It has the following attributes: 'preconditionExpression', which is of type str; 'decoratorPath', which is of type str; 'name', which is of type str; 'position', which is of type str.
+
+'tool_DropContainerVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_AbstractToolDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_PopupMenu' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_SubVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'description_viewpoint_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_InitialOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'description_IdentifiedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_EReferenceCustomization' represents an important domain concept.
+It has one attribute: 'referenceName', which is of type str.
+
+'RepresentationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_SetValue' represents an important domain concept.
+It has the following attributes: 'featureName', which is of type str; 'valueExpression', which is of type str.
+
+'viewpoint_tool_Case' represents an important domain concept.
+It has one attribute: 'conditionExpression', which is of type str.
+
+'viewpoint_tool_RepresentationCreationDescription' represents an important domain concept.
+It has the following attributes: 'browseExpression', which is of type str; 'titleExpression', which is of type str.
+
+'viewpoint_DFolder' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_PaneBasedSelectionWizardDescription' represents an important domain concept.
+It has the following attributes: 'iconPath', which is of type str; 'rootExpression', which is of type str; 'selectedValuesMessage', which is of type str; 'preSelectedCandidatesExpression', which is of type str; 'choiceOfValuesMessage', which is of type str; 'message', which is of type str; 'candidatesExpression', which is of type str; 'childrenExpression', which is of type str; 'windowImagePath', which is of type str; 'windowTitle', which is of type str; 'tree', which is of type bool.
+
+'style_LabelBorderStyles' represents an important domain concept.
+It does not declare any attributes.
+
+'DSemanticDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'DFile' represents an important domain concept.
+It does not declare any attributes.
+
+'description_AbstractVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'description_viewpoint_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_DAnnotationEntry' represents an important domain concept.
+It has the following attributes: 'details', which is of type str; 'source', which is of type str.
+
+'viewpoint_DAnalysisSessionEObject' represents an important domain concept.
+It has the following attributes: 'open', which is of type bool; 'controlledResources', which is of type str; 'resources', which is of type str; 'synchronizationStatus', which is of type str.
+
+'viewpoint_tool_DeleteView' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_style_StyleDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_ToolFilterDescription' represents an important domain concept.
+It has the following attributes: 'precondition', which is of type str; 'elementsToListen', which is of type str.
+
+'viewpoint_DSemanticDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'MappingBasedToolDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_RepresentationCreationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_audit_InformationSection' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_FeatureChangeListener' represents an important domain concept.
+It does not declare any attributes.
+
+'ColorDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_ElementVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'ColorStep' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_MenuItemDescriptionReference' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_RepresentationExtensionDescription' represents an important domain concept.
+It has the following attributes: 'viewpointURI', which is of type str; 'representationName', which is of type str; 'name', which is of type str.
+
+'viewpoint_DRepresentationContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_FeatureChangeListener' represents an important domain concept.
+It has the following attributes: 'domainClass', which is of type str; 'featureName', which is of type str.
+
+'UserColorsPalette' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_LabelStyle' represents an important domain concept.
+It has one attribute: 'labelAlignment', which is of type str.
+
+'tool_InitialOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_Style' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicLabelStyleDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_ChangeContext' represents an important domain concept.
+It has one attribute: 'browseExpression', which is of type str.
+
+'description_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_DropContainerVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'UserColor' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_MenuItemDescription' represents an important domain concept.
+It has one attribute: 'icon', which is of type str.
+
+'viewpoint_DMappingBased' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_DAnnotation' represents an important domain concept.
+It has one attribute: 'source', which is of type str.
+
+'viewpoint_tool_ToolDescription' represents an important domain concept.
+It has one attribute: 'iconPath', which is of type str.
+
+'DRefreshable' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_IVSMElementCustomization' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'validation_ValidationFix' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_Group' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'version', which is of type str.
+
+'viewpoint_description_EStructuralFeatureCustomization' represents an important domain concept.
+It has one attribute: 'applyOnAll', which is of type bool.
+
+'viewpoint_DAnalysisCustomData' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'viewpoint_style_TooltipStyleDescription' represents an important domain concept.
+It has one attribute: 'tooltipExpression', which is of type str.
+
+'viewpoint_tool_Default' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_AbstractToolDescription' represents an important domain concept.
+It has the following attributes: 'precondition', which is of type str; 'elementsToSelect', which is of type str; 'forceRefresh', which is of type bool; 'inverseSelectionOrder', which is of type bool.
+
+'viewpoint_tool_PasteDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_AnnotationEntry' represents an important domain concept.
+It has one attribute: 'source', which is of type str.
+
+'RepresentationTemplate' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_ExternalJavaActionParameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'viewpoint_description_UserFixedColor' represents an important domain concept.
+It does not declare any attributes.
+
+'SwitchChild' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_viewpoint_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_RepresentationDescription' represents an important domain concept.
+It has the following attributes: 'initialisation', which is of type bool; 'titleExpression', which is of type str; 'showOnStartup', which is of type bool.
+
+'viewpoint_description_AbstractVariable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SystemColor' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_ExternalJavaActionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'description_DocumentedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_InterpolatedColor' represents an important domain concept.
+It has the following attributes: 'minValueComputationExpression', which is of type str; 'maxValueComputationExpression', which is of type str; 'colorValueComputationExpression', which is of type str.
+
+'viewpoint_description_FixedColor' represents an important domain concept.
+It has the following attributes: 'blue', which is of type int; 'green', which is of type int; 'red', which is of type int.
+
+'tool_ElementViewVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_PasteDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_OperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_ElementDropVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_RepresentationNavigationDescription' represents an important domain concept.
+It has the following attributes: 'navigationNameExpression', which is of type str; 'browseExpression', which is of type str.
+
+'tool_ContainerModelOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_ElementViewVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_RepresentationNavigationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_ContainerViewVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'description_SubVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_RemoveElement' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_tool_ToolEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_SelectContainerVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_audit_TemplateInformationSection' represents an important domain concept.
+It has one attribute: 'templatePath', which is of type str.
+
+'tool_MenuItemDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'ContainerModelOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'DResourceContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_description_DocumentedElement' represents an important domain concept.
+It has one attribute: 'documentation', which is of type str.
+
+'AnnotationEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_DFeatureExtension' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_Customizable' represents an important domain concept.
+It has one attribute: 'customFeatures', which is of type str.
+
+'validation_RuleAudit' represents an important domain concept.
+It does not declare any attributes.
+
+'viewpoint_DAnalysis' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'semanticResources', which is of type str.
+
+'tool_NameVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'validation_ValidationRule' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicLabelStyle' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SystemColors' defines the following possible values: 'black', 'dark_green', 'dark_red', 'purple', 'dark_blue', 'dark_orange', 'dark_gray', 'light_gray', 'white', 'light_yellow', 'dark_purple', 'chocolate', 'dark_yellow', 'light_purple', 'yellow', 'green', 'light_chocolate', 'light_orange', 'orange', 'gray', 'light_green', 'red', 'light_blue', 'dark_chocolate', 'light_red', 'blue'.
+The enumeration 'LabelAlignment' defines the following possible values: 'CENTER', 'RIGHT', 'LEFT'.
+The enumeration 'DragSource' defines the following possible values: 'BOTH', 'DIAGRAM', 'PROJECT_EXPLORER'.
+The enumeration 'Position' defines the following possible values: 'EAST', 'NORTH', 'SOUTH', 'CENTER', 'NORTH_EAST', 'SOUTH_EAST', 'SOUTH_WEST', 'NORTH_WEST', 'WEST'.
+The enumeration 'ERROR_LEVEL' defines the following possible values: 'ERROR', 'INFO', 'WARNING'.
+The enumeration 'FontFormat' defines the following possible values: 'italic', 'underline', 'strike_through', 'bold'.
+The enumeration 'SyncStatus' defines the following possible values: 'sync', 'dirty'.
+
+The model also captures inheritance relationships between classes.
+The class 'viewpoint_DRepresentationContainer' is a specialization of 'DView'.
+The class 'viewpoint_DRepresentation' is a specialization of 'description_DocumentedElement'.
+The class 'viewpoint_DRepresentation' is a specialization of 'DRefreshable'.
+The class 'viewpoint_DRepresentation' is a specialization of 'description_DModelElement'.
+The class 'viewpoint_DRepresentationElement' is a specialization of 'DMappingBased'.
+The class 'viewpoint_DRepresentationElement' is a specialization of 'DStylizable'.
+The class 'viewpoint_DRepresentationElement' is a specialization of 'DRefreshable'.
+The class 'viewpoint_DRepresentationElement' is a specialization of 'DSemanticDecorator'.
+The class 'viewpoint_DView' is a specialization of 'DRefreshable'.
+The class 'viewpoint_LabelStyle' is a specialization of 'BasicLabelStyle'.
+The class 'viewpoint_Style' is a specialization of 'DRefreshable'.
+The class 'viewpoint_Style' is a specialization of 'Customizable'.
+The class 'viewpoint_DFile' is a specialization of 'DResource'.
+The class 'viewpoint_DResourceContainer' is a specialization of 'DResource'.
+The class 'viewpoint_DProject' is a specialization of 'DResourceContainer'.
+The class 'viewpoint_DFolder' is a specialization of 'DResourceContainer'.
+The class 'viewpoint_DModel' is a specialization of 'DFile'.
+The class 'viewpoint_BasicLabelStyle' is a specialization of 'Customizable'.
+The class 'viewpoint_description_Group' is a specialization of 'description_DModelElement'.
+The class 'viewpoint_description_Group' is a specialization of 'description_DocumentedElement'.
+The class 'viewpoint_description_Viewpoint' is a specialization of 'description_DocumentedElement'.
+The class 'viewpoint_description_Viewpoint' is a specialization of 'description_Component'.
+The class 'viewpoint_description_Viewpoint' is a specialization of 'description_EndUserDocumentedElement'.
+The class 'viewpoint_description_Viewpoint' is a specialization of 'description_IdentifiedElement'.
+The class 'viewpoint_description_RepresentationDescription' is a specialization of 'description_DocumentedElement'.
+The class 'viewpoint_description_RepresentationDescription' is a specialization of 'description_EndUserDocumentedElement'.
+The class 'viewpoint_description_RepresentationDescription' is a specialization of 'description_IdentifiedElement'.
+The class 'viewpoint_description_RepresentationImportDescription' is a specialization of 'RepresentationDescription'.
+The class 'viewpoint_description_RepresentationElementMapping' is a specialization of 'IdentifiedElement'.
+The class 'viewpoint_description_SemanticBasedDecoration' is a specialization of 'DecorationDescription'.
+The class 'viewpoint_description_VSMElementCustomization' is a specialization of 'IVSMElementCustomization'.
+The class 'viewpoint_description_VSMElementCustomizationReuse' is a specialization of 'IVSMElementCustomization'.
+The class 'viewpoint_description_EAttributeCustomization' is a specialization of 'EStructuralFeatureCustomization'.
+The class 'viewpoint_description_EReferenceCustomization' is a specialization of 'EStructuralFeatureCustomization'.
+The class 'viewpoint_description_SystemColor' is a specialization of 'FixedColor'.
+The class 'viewpoint_description_InterpolatedColor' is a specialization of 'description_ColorDescription'.
+The class 'viewpoint_description_InterpolatedColor' is a specialization of 'description_UserColor'.
+The class 'viewpoint_description_FixedColor' is a specialization of 'ColorDescription'.
+The class 'viewpoint_description_UserFixedColor' is a specialization of 'description_FixedColor'.
+The class 'viewpoint_description_UserFixedColor' is a specialization of 'description_UserColor'.
+The class 'viewpoint_description_ComputedColor' is a specialization of 'description_UserColor'.
+The class 'viewpoint_description_ComputedColor' is a specialization of 'description_ColorDescription'.
+The class 'viewpoint_description_SubVariable' is a specialization of 'AbstractVariable'.
+The class 'viewpoint_description_TypedVariable' is a specialization of 'description_InteractiveVariableDescription'.
+The class 'viewpoint_description_TypedVariable' is a specialization of 'description_SubVariable'.
+The class 'viewpoint_style_LabelStyleDescription' is a specialization of 'BasicLabelStyleDescription'.
+The class 'viewpoint_tool_ToolEntry' is a specialization of 'description_DocumentedElement'.
+The class 'viewpoint_tool_ToolEntry' is a specialization of 'description_IdentifiedElement'.
+The class 'viewpoint_tool_AbstractToolDescription' is a specialization of 'ToolEntry'.
+The class 'viewpoint_tool_MappingBasedToolDescription' is a specialization of 'AbstractToolDescription'.
+The class 'viewpoint_tool_ToolDescription' is a specialization of 'MappingBasedToolDescription'.
+The class 'viewpoint_tool_PasteDescription' is a specialization of 'MappingBasedToolDescription'.
+The class 'viewpoint_tool_SelectionWizardDescription' is a specialization of 'tool_AbstractToolDescription'.
+The class 'viewpoint_tool_SelectionWizardDescription' is a specialization of 'description_SelectionDescription'.
+The class 'viewpoint_tool_PaneBasedSelectionWizardDescription' is a specialization of 'AbstractToolDescription'.
+The class 'viewpoint_tool_RepresentationCreationDescription' is a specialization of 'AbstractToolDescription'.
+The class 'viewpoint_tool_RepresentationNavigationDescription' is a specialization of 'AbstractToolDescription'.
+The class 'viewpoint_tool_MenuItemDescription' is a specialization of 'tool_AbstractToolDescription'.
+The class 'viewpoint_tool_MenuItemDescription' is a specialization of 'tool_MenuItemOrRef'.
+The class 'viewpoint_tool_MenuItemDescriptionReference' is a specialization of 'MenuItemOrRef'.
+The class 'viewpoint_tool_OperationAction' is a specialization of 'MenuItemDescription'.
+The class 'viewpoint_tool_ExternalJavaAction' is a specialization of 'tool_MenuItemDescription'.
+The class 'viewpoint_tool_ExternalJavaAction' is a specialization of 'tool_ContainerModelOperation'.
+The class 'viewpoint_tool_ExternalJavaActionCall' is a specialization of 'tool_MenuItemDescription'.
+The class 'viewpoint_tool_ExternalJavaActionCall' is a specialization of 'tool_ContainerModelOperation'.
+The class 'viewpoint_tool_PopupMenu' is a specialization of 'AbstractToolDescription'.
+The class 'viewpoint_tool_AcceleoVariable' is a specialization of 'tool_VariableContainer'.
+The class 'viewpoint_tool_AcceleoVariable' is a specialization of 'description_SubVariable'.
+The class 'viewpoint_tool_DialogVariable' is a specialization of 'AbstractVariable'.
+The class 'viewpoint_tool_ElementDropVariable' is a specialization of 'description_AbstractVariable'.
+The class 'viewpoint_tool_ElementDropVariable' is a specialization of 'tool_VariableContainer'.
+The class 'viewpoint_tool_ElementSelectVariable' is a specialization of 'AbstractVariable'.
+The class 'viewpoint_tool_ElementVariable' is a specialization of 'description_AbstractVariable'.
+The class 'viewpoint_tool_ElementVariable' is a specialization of 'tool_VariableContainer'.
+The class 'viewpoint_tool_ElementViewVariable' is a specialization of 'description_AbstractVariable'.
+The class 'viewpoint_tool_ElementViewVariable' is a specialization of 'tool_VariableContainer'.
+The class 'viewpoint_tool_ElementDeleteVariable' is a specialization of 'description_AbstractVariable'.
+The class 'viewpoint_tool_ElementDeleteVariable' is a specialization of 'tool_VariableContainer'.
+The class 'viewpoint_tool_DropContainerVariable' is a specialization of 'description_AbstractVariable'.
+The class 'viewpoint_tool_DropContainerVariable' is a specialization of 'tool_VariableContainer'.
+The class 'viewpoint_tool_SelectContainerVariable' is a specialization of 'description_AbstractVariable'.
+The class 'viewpoint_tool_SelectContainerVariable' is a specialization of 'tool_VariableContainer'.
+The class 'viewpoint_tool_ContainerViewVariable' is a specialization of 'description_AbstractVariable'.
+The class 'viewpoint_tool_ContainerViewVariable' is a specialization of 'tool_VariableContainer'.
+The class 'viewpoint_tool_SelectModelElementVariable' is a specialization of 'description_SubVariable'.
+The class 'viewpoint_tool_SelectModelElementVariable' is a specialization of 'description_SelectionDescription'.
+The class 'viewpoint_tool_SelectModelElementVariable' is a specialization of 'description_InteractiveVariableDescription'.
+The class 'viewpoint_tool_ContainerModelOperation' is a specialization of 'ModelOperation'.
+The class 'viewpoint_tool_CreateInstance' is a specialization of 'ContainerModelOperation'.
+The class 'viewpoint_tool_ChangeContext' is a specialization of 'ContainerModelOperation'.
+The class 'viewpoint_tool_SetValue' is a specialization of 'ContainerModelOperation'.
+The class 'viewpoint_tool_SetObject' is a specialization of 'ContainerModelOperation'.
+The class 'viewpoint_tool_Unset' is a specialization of 'ContainerModelOperation'.
+The class 'viewpoint_tool_MoveElement' is a specialization of 'ContainerModelOperation'.
+The class 'viewpoint_tool_RemoveElement' is a specialization of 'ContainerModelOperation'.
+The class 'viewpoint_tool_For' is a specialization of 'ContainerModelOperation'.
+The class 'viewpoint_tool_If' is a specialization of 'ContainerModelOperation'.
+The class 'viewpoint_tool_DeleteView' is a specialization of 'ContainerModelOperation'.
+The class 'viewpoint_tool_NameVariable' is a specialization of 'AbstractVariable'.
+The class 'viewpoint_tool_Case' is a specialization of 'SwitchChild'.
+The class 'viewpoint_tool_Default' is a specialization of 'SwitchChild'.
+The class 'viewpoint_tool_Switch' is a specialization of 'ModelOperation'.
+The class 'viewpoint_validation_ValidationSet' is a specialization of 'DocumentedElement'.
+The class 'viewpoint_validation_ValidationRule' is a specialization of 'IdentifiedElement'.
+The class 'viewpoint_validation_SemanticValidationRule' is a specialization of 'ValidationRule'.
+The class 'viewpoint_validation_ViewValidationRule' is a specialization of 'ValidationRule'.
+The class 'viewpoint_audit_TemplateInformationSection' is a specialization of 'InformationSection'.
+
+Relationships between classes are modeled using associations.
+An association connects 'viewpoint_DAnalysis' and 'viewpoint_DAnalysis'. From 'viewpoint_DAnalysis', the role 'viewpoint_DAnalysis' has cardinality 0..*, and from 'viewpoint_DAnalysis', the role 'viewpoint_DAnalysis0' has cardinality 0..*.
+An association connects 'viewpoint_DAnalysis' and 'viewpoint_EObject'. From 'viewpoint_DAnalysis', the role 'viewpoint_DAnalysis3' has cardinality 0..*, and from 'viewpoint_EObject', the role 'viewpoint_EObject' has cardinality 0..*.
+An association connects 'viewpoint_DAnalysis' and 'DAnnotationEntry'. From 'viewpoint_DAnalysis', the role 'viewpoint_DAnalysis5' has cardinality 0..*, and from 'DAnnotationEntry', the role 'DAnnotationEntry' has cardinality 0..*.
+An association connects 'viewpoint_DView' and 'viewpoint_DAnalysis'. From 'viewpoint_DView', the role 'viewpoint_DView' has cardinality 0..*, and from 'viewpoint_DAnalysis', the role 'viewpoint_DAnalysis7' has cardinality 0..*.
+An association connects 'viewpoint_DView' and 'viewpoint_DAnalysis'. From 'viewpoint_DView', the role 'viewpoint_DView10' has cardinality 0..*, and from 'viewpoint_DAnalysis', the role 'viewpoint_DAnalysis9' has cardinality 0..*.
+An association connects 'viewpoint_DAnalysis' and 'viewpoint_DFeatureExtension'. From 'viewpoint_DAnalysis', the role 'viewpoint_DAnalysis12' has cardinality 0..*, and from 'viewpoint_DFeatureExtension', the role 'viewpoint_DFeatureExtension' has cardinality 0..*.
+An association connects 'viewpoint_DFeatureExtension' and 'FeatureExtensionDescription'. From 'viewpoint_DFeatureExtension', the role 'viewpoint_DFeatureExtension14' has cardinality 0..*, and from 'FeatureExtensionDescription', the role 'FeatureExtensionDescription' has cardinality 0..*.
+An association connects 'viewpoint_DRepresentationContainer' and 'viewpoint_EObject'. From 'viewpoint_DRepresentationContainer', the role 'viewpoint_DRepresentationContainer' has cardinality 0..*, and from 'viewpoint_EObject', the role 'viewpoint_EObject16' has cardinality 0..*.
+An association connects 'viewpoint_EObject' and 'viewpoint_DSemanticDecorator'. From 'viewpoint_EObject', the role 'viewpoint_EObject18' has cardinality 0..*, and from 'viewpoint_DSemanticDecorator', the role 'viewpoint_DSemanticDecorator' has cardinality 0..*.
+An association connects 'viewpoint_DRepresentation' and 'viewpoint_DRepresentationElement'. From 'viewpoint_DRepresentation', the role 'viewpoint_DRepresentation' has cardinality 0..*, and from 'viewpoint_DRepresentationElement', the role 'viewpoint_DRepresentationElement' has cardinality 0..*.
+An association connects 'viewpoint_DRepresentation' and 'viewpoint_DRepresentationElement'. From 'viewpoint_DRepresentation', the role 'viewpoint_DRepresentation21' has cardinality 0..*, and from 'viewpoint_DRepresentationElement', the role 'viewpoint_DRepresentationElement22' has cardinality 0..*.
+An association connects 'viewpoint_DRepresentation' and 'AnnotationEntry'. From 'viewpoint_DRepresentation', the role 'viewpoint_DRepresentation24' has cardinality 0..*, and from 'AnnotationEntry', the role 'AnnotationEntry' has cardinality 0..*.
+An association connects 'viewpoint_DRepresentation' and 'viewpoint_UIState'. From 'viewpoint_DRepresentation', the role 'viewpoint_DRepresentation26' has cardinality 0..*, and from 'viewpoint_UIState', the role 'viewpoint_UIState' has cardinality 0..*.
+An association connects 'viewpoint_DRepresentationElement' and 'viewpoint_EObject'. From 'viewpoint_DRepresentationElement', the role 'viewpoint_DRepresentationElement28' has cardinality 0..*, and from 'viewpoint_EObject', the role 'viewpoint_EObject29' has cardinality 0..*.
+An association connects 'viewpoint_DRepresentation' and 'viewpoint_DView'. From 'viewpoint_DRepresentation', the role 'viewpoint_DRepresentation32' has cardinality 0..*, and from 'viewpoint_DView', the role 'viewpoint_DView31' has cardinality 0..*.
+An association connects 'viewpoint_DView' and 'viewpoint_MetaModelExtension'. From 'viewpoint_DView', the role 'viewpoint_DView34' has cardinality 0..*, and from 'viewpoint_MetaModelExtension', the role 'viewpoint_MetaModelExtension' has cardinality 0..*.
+An association connects 'Viewpoint' and 'viewpoint_DView'. From 'Viewpoint', the role 'Viewpoint' has cardinality 0..*, and from 'viewpoint_DView', the role 'viewpoint_DView36' has cardinality 0..*.
+An association connects 'viewpoint_EObject' and 'viewpoint_MetaModelExtension'. From 'viewpoint_EObject', the role 'viewpoint_EObject39' has cardinality 0..*, and from 'viewpoint_MetaModelExtension', the role 'viewpoint_MetaModelExtension38' has cardinality 0..*.
+An association connects 'viewpoint_Decoration' and 'DecorationDescription'. From 'viewpoint_Decoration', the role 'viewpoint_Decoration' has cardinality 0..*, and from 'DecorationDescription', the role 'DecorationDescription' has cardinality 0..*.
+An association connects 'viewpoint_EObject' and 'viewpoint_DAnalysisCustomData'. From 'viewpoint_EObject', the role 'viewpoint_EObject42' has cardinality 0..*, and from 'viewpoint_DAnalysisCustomData', the role 'viewpoint_DAnalysisCustomData' has cardinality 0..*.
+An association connects 'style_StyleDescription' and 'viewpoint_Style'. From 'style_StyleDescription', the role 'style_StyleDescription' has cardinality 0..*, and from 'viewpoint_Style', the role 'viewpoint_Style' has cardinality 0..*.
+An association connects 'Viewpoint' and 'viewpoint_DAnalysisSessionEObject'. From 'Viewpoint', the role 'Viewpoint45' has cardinality 0..*, and from 'viewpoint_DAnalysisSessionEObject', the role 'viewpoint_DAnalysisSessionEObject' has cardinality 0..*.
+An association connects 'viewpoint_DAnalysisSessionEObject' and 'viewpoint_DAnalysis'. From 'viewpoint_DAnalysisSessionEObject', the role 'viewpoint_DAnalysisSessionEObject47' has cardinality 0..*, and from 'viewpoint_DAnalysis', the role 'viewpoint_DAnalysis48' has cardinality 0..*.
+An association connects 'viewpoint_DAnalysisSessionEObject' and 'viewpoint_SessionManagerEObject'. From 'viewpoint_DAnalysisSessionEObject', the role 'viewpoint_DAnalysisSessionEObject50' has cardinality 0..*, and from 'viewpoint_SessionManagerEObject', the role 'viewpoint_SessionManagerEObject' has cardinality 0..*.
+An association connects 'viewpoint_DResourceContainer' and 'viewpoint_DResource'. From 'viewpoint_DResourceContainer', the role 'viewpoint_DResourceContainer' has cardinality 0..*, and from 'viewpoint_DResource', the role 'viewpoint_DResource' has cardinality 0..*.
+An association connects 'viewpoint_EObject' and 'viewpoint_UIState'. From 'viewpoint_EObject', the role 'viewpoint_EObject54' has cardinality 0..*, and from 'viewpoint_UIState', the role 'viewpoint_UIState53' has cardinality 0..*.
+An association connects 'viewpoint_description_Group' and 'Viewpoint'. From 'viewpoint_description_Group', the role 'viewpoint_description_Group' has cardinality 0..*, and from 'Viewpoint', the role 'Viewpoint56' has cardinality 0..*.
+An association connects 'SytemColorsPalette' and 'viewpoint_description_Group'. From 'SytemColorsPalette', the role 'SytemColorsPalette' has cardinality 0..*, and from 'viewpoint_description_Group', the role 'viewpoint_description_Group58' has cardinality 0..*.
+An association connects 'viewpoint_description_Group' and 'UserColorsPalette'. From 'viewpoint_description_Group', the role 'viewpoint_description_Group60' has cardinality 0..*, and from 'UserColorsPalette', the role 'UserColorsPalette' has cardinality 0..*.
+An association connects 'Extension' and 'viewpoint_description_Group'. From 'Extension', the role 'Extension' has cardinality 0..*, and from 'viewpoint_description_Group', the role 'viewpoint_description_Group62' has cardinality 0..*.
+An association connects 'viewpoint_description_Viewpoint' and 'validation_ValidationSet'. From 'viewpoint_description_Viewpoint', the role 'viewpoint_description_Viewpoint' has cardinality 0..*, and from 'validation_ValidationSet', the role 'validation_ValidationSet' has cardinality 0..*.
+An association connects 'viewpoint_description_Viewpoint' and 'RepresentationDescription'. From 'viewpoint_description_Viewpoint', the role 'viewpoint_description_Viewpoint65' has cardinality 0..*, and from 'RepresentationDescription', the role 'RepresentationDescription' has cardinality 0..*.
+An association connects 'viewpoint_description_Viewpoint' and 'RepresentationExtensionDescription'. From 'viewpoint_description_Viewpoint', the role 'viewpoint_description_Viewpoint67' has cardinality 0..*, and from 'RepresentationExtensionDescription', the role 'RepresentationExtensionDescription' has cardinality 0..*.
+An association connects 'JavaExtension' and 'viewpoint_description_Viewpoint'. From 'JavaExtension', the role 'JavaExtension' has cardinality 0..*, and from 'viewpoint_description_Viewpoint', the role 'viewpoint_description_Viewpoint69' has cardinality 0..*.
+An association connects 'MetamodelExtensionSetting' and 'viewpoint_description_Viewpoint'. From 'MetamodelExtensionSetting', the role 'MetamodelExtensionSetting' has cardinality 0..*, and from 'viewpoint_description_Viewpoint', the role 'viewpoint_description_Viewpoint71' has cardinality 0..*.
+An association connects 'viewpoint_description_Viewpoint' and 'FeatureExtensionDescription'. From 'viewpoint_description_Viewpoint', the role 'viewpoint_description_Viewpoint73' has cardinality 0..*, and from 'FeatureExtensionDescription', the role 'FeatureExtensionDescription74' has cardinality 0..*.
+An association connects 'RepresentationTemplate' and 'viewpoint_description_Viewpoint'. From 'RepresentationTemplate', the role 'RepresentationTemplate' has cardinality 0..*, and from 'viewpoint_description_Viewpoint', the role 'viewpoint_description_Viewpoint76' has cardinality 0..*.
+An association connects 'viewpoint_description_RepresentationDescription' and 'description_viewpoint_EPackage'. From 'viewpoint_description_RepresentationDescription', the role 'viewpoint_description_RepresentationDescription' has cardinality 0..*, and from 'description_viewpoint_EPackage', the role 'description_viewpoint_EPackage' has cardinality 0..*.
+An association connects 'RepresentationDescription' and 'viewpoint_description_RepresentationTemplate'. From 'RepresentationDescription', the role 'RepresentationDescription79' has cardinality 0..*, and from 'viewpoint_description_RepresentationTemplate', the role 'viewpoint_description_RepresentationTemplate' has cardinality 0..*.
+An association connects 'viewpoint_description_RepresentationExtensionDescription' and 'description_viewpoint_EPackage'. From 'viewpoint_description_RepresentationExtensionDescription', the role 'viewpoint_description_RepresentationExtensionDescription' has cardinality 0..*, and from 'description_viewpoint_EPackage', the role 'description_viewpoint_EPackage81' has cardinality 0..*.
+An association connects 'viewpoint_description_MetamodelExtensionSetting' and 'description_viewpoint_EObject'. From 'viewpoint_description_MetamodelExtensionSetting', the role 'viewpoint_description_MetamodelExtensionSetting' has cardinality 0..*, and from 'description_viewpoint_EObject', the role 'description_viewpoint_EObject' has cardinality 0..*.
+An association connects 'tool_RepresentationCreationDescription' and 'viewpoint_description_RepresentationElementMapping'. From 'tool_RepresentationCreationDescription', the role 'tool_RepresentationCreationDescription' has cardinality 0..*, and from 'viewpoint_description_RepresentationElementMapping', the role 'viewpoint_description_RepresentationElementMapping' has cardinality 0..*.
+An association connects 'viewpoint_description_RepresentationElementMapping' and 'tool_RepresentationNavigationDescription'. From 'viewpoint_description_RepresentationElementMapping', the role 'viewpoint_description_RepresentationElementMapping85' has cardinality 0..*, and from 'tool_RepresentationNavigationDescription', the role 'tool_RepresentationNavigationDescription' has cardinality 0..*.
+An association connects 'viewpoint_description_DModelElement' and 'DAnnotation'. From 'viewpoint_description_DModelElement', the role 'viewpoint_description_DModelElement' has cardinality 0..*, and from 'DAnnotation', the role 'DAnnotation' has cardinality 0..*.
+An association connects 'viewpoint_description_DAnnotation' and 'description_viewpoint_EStringToStringMapEntry'. From 'viewpoint_description_DAnnotation', the role 'viewpoint_description_DAnnotation' has cardinality 0..*, and from 'description_viewpoint_EStringToStringMapEntry', the role 'description_viewpoint_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'tool_PasteDescription' and 'viewpoint_description_PasteTargetDescription'. From 'tool_PasteDescription', the role 'tool_PasteDescription' has cardinality 0..*, and from 'viewpoint_description_PasteTargetDescription', the role 'viewpoint_description_PasteTargetDescription' has cardinality 0..*.
+An association connects 'DecorationDescription' and 'viewpoint_description_DecorationDescriptionsSet'. From 'DecorationDescription', the role 'DecorationDescription90' has cardinality 0..*, and from 'viewpoint_description_DecorationDescriptionsSet', the role 'viewpoint_description_DecorationDescriptionsSet' has cardinality 0..*.
+An association connects 'viewpoint_description_Customization' and 'IVSMElementCustomization'. From 'viewpoint_description_Customization', the role 'viewpoint_description_Customization' has cardinality 0..*, and from 'IVSMElementCustomization', the role 'IVSMElementCustomization' has cardinality 0..*.
+An association connects 'viewpoint_description_VSMElementCustomization' and 'EStructuralFeatureCustomization'. From 'viewpoint_description_VSMElementCustomization', the role 'viewpoint_description_VSMElementCustomization' has cardinality 0..*, and from 'EStructuralFeatureCustomization', the role 'EStructuralFeatureCustomization' has cardinality 0..*.
+An association connects 'viewpoint_description_VSMElementCustomizationReuse' and 'EStructuralFeatureCustomization'. From 'viewpoint_description_VSMElementCustomizationReuse', the role 'viewpoint_description_VSMElementCustomizationReuse' has cardinality 0..*, and from 'EStructuralFeatureCustomization', the role 'EStructuralFeatureCustomization94' has cardinality 0..*.
+An association connects 'description_viewpoint_EObject' and 'viewpoint_description_VSMElementCustomizationReuse'. From 'description_viewpoint_EObject', the role 'description_viewpoint_EObject97' has cardinality 0..*, and from 'viewpoint_description_VSMElementCustomizationReuse', the role 'viewpoint_description_VSMElementCustomizationReuse96' has cardinality 0..*.
+An association connects 'description_viewpoint_EObject' and 'viewpoint_description_EStructuralFeatureCustomization'. From 'description_viewpoint_EObject', the role 'description_viewpoint_EObject99' has cardinality 0..*, and from 'viewpoint_description_EStructuralFeatureCustomization', the role 'viewpoint_description_EStructuralFeatureCustomization' has cardinality 0..*.
+An association connects 'viewpoint_description_EReferenceCustomization' and 'description_viewpoint_EObject'. From 'viewpoint_description_EReferenceCustomization', the role 'viewpoint_description_EReferenceCustomization' has cardinality 0..*, and from 'description_viewpoint_EObject', the role 'description_viewpoint_EObject101' has cardinality 0..*.
+An association connects 'ColorStep' and 'viewpoint_description_InterpolatedColor'. From 'ColorStep', the role 'ColorStep' has cardinality 0..*, and from 'viewpoint_description_InterpolatedColor', the role 'viewpoint_description_InterpolatedColor' has cardinality 0..*.
+An association connects 'FixedColor' and 'viewpoint_description_ColorStep'. From 'FixedColor', the role 'FixedColor' has cardinality 0..*, and from 'viewpoint_description_ColorStep', the role 'viewpoint_description_ColorStep' has cardinality 0..*.
+An association connects 'SytemColorsPalette' and 'viewpoint_description_Environment'. From 'SytemColorsPalette', the role 'SytemColorsPalette105' has cardinality 0..*, and from 'viewpoint_description_Environment', the role 'viewpoint_description_Environment' has cardinality 0..*.
+An association connects 'tool_ToolEntry' and 'viewpoint_description_Environment'. From 'tool_ToolEntry', the role 'tool_ToolEntry' has cardinality 0..*, and from 'viewpoint_description_Environment', the role 'viewpoint_description_Environment107' has cardinality 0..*.
+An association connects 'viewpoint_description_Environment' and 'style_LabelBorderStyles'. From 'viewpoint_description_Environment', the role 'viewpoint_description_Environment109' has cardinality 0..*, and from 'style_LabelBorderStyles', the role 'style_LabelBorderStyles' has cardinality 0..*.
+An association connects 'SystemColor' and 'viewpoint_description_SytemColorsPalette'. From 'SystemColor', the role 'SystemColor' has cardinality 0..*, and from 'viewpoint_description_SytemColorsPalette', the role 'viewpoint_description_SytemColorsPalette' has cardinality 0..*.
+An association connects 'UserColor' and 'viewpoint_description_UserColorsPalette'. From 'UserColor', the role 'UserColor' has cardinality 0..*, and from 'viewpoint_description_UserColorsPalette', the role 'viewpoint_description_UserColorsPalette' has cardinality 0..*.
+An association connects 'description_viewpoint_EObject' and 'viewpoint_description_AnnotationEntry'. From 'description_viewpoint_EObject', the role 'description_viewpoint_EObject113' has cardinality 0..*, and from 'viewpoint_description_AnnotationEntry', the role 'viewpoint_description_AnnotationEntry' has cardinality 0..*.
+An association connects 'viewpoint_description_TypedVariable' and 'description_viewpoint_EDataType'. From 'viewpoint_description_TypedVariable', the role 'viewpoint_description_TypedVariable' has cardinality 0..*, and from 'description_viewpoint_EDataType', the role 'description_viewpoint_EDataType' has cardinality 0..*.
+An association connects 'ColorDescription' and 'viewpoint_style_BasicLabelStyleDescription'. From 'ColorDescription', the role 'ColorDescription' has cardinality 0..*, and from 'viewpoint_style_BasicLabelStyleDescription', the role 'viewpoint_style_BasicLabelStyleDescription' has cardinality 0..*.
+An association connects 'viewpoint_style_LabelBorderStyles' and 'style_LabelBorderStyleDescription'. From 'viewpoint_style_LabelBorderStyles', the role 'viewpoint_style_LabelBorderStyles' has cardinality 0..*, and from 'style_LabelBorderStyleDescription', the role 'style_LabelBorderStyleDescription' has cardinality 0..*.
+An association connects 'viewpoint_tool_AbstractToolDescription' and 'tool_ToolFilterDescription'. From 'viewpoint_tool_AbstractToolDescription', the role 'viewpoint_tool_AbstractToolDescription' has cardinality 0..*, and from 'tool_ToolFilterDescription', the role 'tool_ToolFilterDescription' has cardinality 0..*.
+An association connects 'tool_ElementVariable' and 'viewpoint_tool_ToolDescription'. From 'tool_ElementVariable', the role 'tool_ElementVariable' has cardinality 0..*, and from 'viewpoint_tool_ToolDescription', the role 'viewpoint_tool_ToolDescription' has cardinality 0..*.
+An association connects 'viewpoint_tool_ToolDescription' and 'tool_ElementViewVariable'. From 'viewpoint_tool_ToolDescription', the role 'viewpoint_tool_ToolDescription120' has cardinality 0..*, and from 'tool_ElementViewVariable', the role 'tool_ElementViewVariable' has cardinality 0..*.
+An association connects 'viewpoint_tool_ToolDescription' and 'tool_InitialOperation'. From 'viewpoint_tool_ToolDescription', the role 'viewpoint_tool_ToolDescription122' has cardinality 0..*, and from 'tool_InitialOperation', the role 'tool_InitialOperation' has cardinality 0..*.
+An association connects 'tool_DropContainerVariable' and 'viewpoint_tool_PasteDescription'. From 'tool_DropContainerVariable', the role 'tool_DropContainerVariable' has cardinality 0..*, and from 'viewpoint_tool_PasteDescription', the role 'viewpoint_tool_PasteDescription' has cardinality 0..*.
+An association connects 'tool_ContainerViewVariable' and 'viewpoint_tool_PasteDescription'. From 'tool_ContainerViewVariable', the role 'tool_ContainerViewVariable' has cardinality 0..*, and from 'viewpoint_tool_PasteDescription', the role 'viewpoint_tool_PasteDescription125' has cardinality 0..*.
+An association connects 'tool_ElementViewVariable' and 'viewpoint_tool_PasteDescription'. From 'tool_ElementViewVariable', the role 'tool_ElementViewVariable128' has cardinality 0..*, and from 'viewpoint_tool_PasteDescription', the role 'viewpoint_tool_PasteDescription127' has cardinality 0..*.
+An association connects 'tool_ElementVariable' and 'viewpoint_tool_PasteDescription'. From 'tool_ElementVariable', the role 'tool_ElementVariable131' has cardinality 0..*, and from 'viewpoint_tool_PasteDescription', the role 'viewpoint_tool_PasteDescription130' has cardinality 0..*.
+An association connects 'viewpoint_tool_PasteDescription' and 'tool_InitialOperation'. From 'viewpoint_tool_PasteDescription', the role 'viewpoint_tool_PasteDescription133' has cardinality 0..*, and from 'tool_InitialOperation', the role 'tool_InitialOperation134' has cardinality 0..*.
+An association connects 'viewpoint_tool_SelectionWizardDescription' and 'tool_ElementSelectVariable'. From 'viewpoint_tool_SelectionWizardDescription', the role 'viewpoint_tool_SelectionWizardDescription' has cardinality 0..*, and from 'tool_ElementSelectVariable', the role 'tool_ElementSelectVariable' has cardinality 0..*.
+An association connects 'viewpoint_tool_SelectionWizardDescription' and 'tool_ContainerViewVariable'. From 'viewpoint_tool_SelectionWizardDescription', the role 'viewpoint_tool_SelectionWizardDescription137' has cardinality 0..*, and from 'tool_ContainerViewVariable', the role 'tool_ContainerViewVariable138' has cardinality 0..*.
+An association connects 'tool_SelectContainerVariable' and 'viewpoint_tool_SelectionWizardDescription'. From 'tool_SelectContainerVariable', the role 'tool_SelectContainerVariable' has cardinality 0..*, and from 'viewpoint_tool_SelectionWizardDescription', the role 'viewpoint_tool_SelectionWizardDescription140' has cardinality 0..*.
+An association connects 'tool_InitialOperation' and 'viewpoint_tool_SelectionWizardDescription'. From 'tool_InitialOperation', the role 'tool_InitialOperation143' has cardinality 0..*, and from 'viewpoint_tool_SelectionWizardDescription', the role 'viewpoint_tool_SelectionWizardDescription142' has cardinality 0..*.
+An association connects 'tool_ElementSelectVariable' and 'viewpoint_tool_PaneBasedSelectionWizardDescription'. From 'tool_ElementSelectVariable', the role 'tool_ElementSelectVariable145' has cardinality 0..*, and from 'viewpoint_tool_PaneBasedSelectionWizardDescription', the role 'viewpoint_tool_PaneBasedSelectionWizardDescription' has cardinality 0..*.
+An association connects 'tool_ContainerViewVariable' and 'viewpoint_tool_PaneBasedSelectionWizardDescription'. From 'tool_ContainerViewVariable', the role 'tool_ContainerViewVariable148' has cardinality 0..*, and from 'viewpoint_tool_PaneBasedSelectionWizardDescription', the role 'viewpoint_tool_PaneBasedSelectionWizardDescription147' has cardinality 0..*.
+An association connects 'viewpoint_tool_PaneBasedSelectionWizardDescription' and 'tool_SelectContainerVariable'. From 'viewpoint_tool_PaneBasedSelectionWizardDescription', the role 'viewpoint_tool_PaneBasedSelectionWizardDescription150' has cardinality 0..*, and from 'tool_SelectContainerVariable', the role 'tool_SelectContainerVariable151' has cardinality 0..*.
+An association connects 'tool_InitialOperation' and 'viewpoint_tool_PaneBasedSelectionWizardDescription'. From 'tool_InitialOperation', the role 'tool_InitialOperation154' has cardinality 0..*, and from 'viewpoint_tool_PaneBasedSelectionWizardDescription', the role 'viewpoint_tool_PaneBasedSelectionWizardDescription153' has cardinality 0..*.
+An association connects 'viewpoint_tool_RepresentationCreationDescription' and 'RepresentationDescription'. From 'viewpoint_tool_RepresentationCreationDescription', the role 'viewpoint_tool_RepresentationCreationDescription' has cardinality 0..*, and from 'RepresentationDescription', the role 'RepresentationDescription156' has cardinality 0..*.
+An association connects 'viewpoint_tool_RepresentationCreationDescription' and 'tool_InitialOperation'. From 'viewpoint_tool_RepresentationCreationDescription', the role 'viewpoint_tool_RepresentationCreationDescription158' has cardinality 0..*, and from 'tool_InitialOperation', the role 'tool_InitialOperation159' has cardinality 0..*.
+An association connects 'viewpoint_tool_RepresentationCreationDescription' and 'tool_ContainerViewVariable'. From 'viewpoint_tool_RepresentationCreationDescription', the role 'viewpoint_tool_RepresentationCreationDescription161' has cardinality 0..*, and from 'tool_ContainerViewVariable', the role 'tool_ContainerViewVariable162' has cardinality 0..*.
+An association connects 'tool_NameVariable' and 'viewpoint_tool_RepresentationCreationDescription'. From 'tool_NameVariable', the role 'tool_NameVariable' has cardinality 0..*, and from 'viewpoint_tool_RepresentationCreationDescription', the role 'viewpoint_tool_RepresentationCreationDescription164' has cardinality 0..*.
+An association connects 'RepresentationDescription' and 'viewpoint_tool_RepresentationNavigationDescription'. From 'RepresentationDescription', the role 'RepresentationDescription166' has cardinality 0..*, and from 'viewpoint_tool_RepresentationNavigationDescription', the role 'viewpoint_tool_RepresentationNavigationDescription' has cardinality 0..*.
+An association connects 'viewpoint_tool_RepresentationNavigationDescription' and 'tool_ContainerViewVariable'. From 'viewpoint_tool_RepresentationNavigationDescription', the role 'viewpoint_tool_RepresentationNavigationDescription168' has cardinality 0..*, and from 'tool_ContainerViewVariable', the role 'tool_ContainerViewVariable169' has cardinality 0..*.
+An association connects 'viewpoint_tool_RepresentationNavigationDescription' and 'tool_ElementSelectVariable'. From 'viewpoint_tool_RepresentationNavigationDescription', the role 'viewpoint_tool_RepresentationNavigationDescription171' has cardinality 0..*, and from 'tool_ElementSelectVariable', the role 'tool_ElementSelectVariable172' has cardinality 0..*.
+An association connects 'viewpoint_tool_RepresentationNavigationDescription' and 'tool_NameVariable'. From 'viewpoint_tool_RepresentationNavigationDescription', the role 'viewpoint_tool_RepresentationNavigationDescription174' has cardinality 0..*, and from 'tool_NameVariable', the role 'tool_NameVariable175' has cardinality 0..*.
+An association connects 'viewpoint_tool_MenuItemDescriptionReference' and 'tool_MenuItemDescription'. From 'viewpoint_tool_MenuItemDescriptionReference', the role 'viewpoint_tool_MenuItemDescriptionReference' has cardinality 0..*, and from 'tool_MenuItemDescription', the role 'tool_MenuItemDescription' has cardinality 0..*.
+An association connects 'tool_ContainerViewVariable' and 'viewpoint_tool_OperationAction'. From 'tool_ContainerViewVariable', the role 'tool_ContainerViewVariable178' has cardinality 0..*, and from 'viewpoint_tool_OperationAction', the role 'viewpoint_tool_OperationAction' has cardinality 0..*.
+An association connects 'tool_InitialOperation' and 'viewpoint_tool_OperationAction'. From 'tool_InitialOperation', the role 'tool_InitialOperation181' has cardinality 0..*, and from 'viewpoint_tool_OperationAction', the role 'viewpoint_tool_OperationAction180' has cardinality 0..*.
+An association connects 'viewpoint_tool_ExternalJavaAction' and 'tool_ExternalJavaActionParameter'. From 'viewpoint_tool_ExternalJavaAction', the role 'viewpoint_tool_ExternalJavaAction' has cardinality 0..*, and from 'tool_ExternalJavaActionParameter', the role 'tool_ExternalJavaActionParameter' has cardinality 0..*.
+An association connects 'tool_ExternalJavaAction' and 'viewpoint_tool_ExternalJavaActionCall'. From 'tool_ExternalJavaAction', the role 'tool_ExternalJavaAction' has cardinality 0..*, and from 'viewpoint_tool_ExternalJavaActionCall', the role 'viewpoint_tool_ExternalJavaActionCall' has cardinality 0..*.
+An association connects 'viewpoint_tool_PopupMenu' and 'tool_MenuItemDescription'. From 'viewpoint_tool_PopupMenu', the role 'viewpoint_tool_PopupMenu' has cardinality 0..*, and from 'tool_MenuItemDescription', the role 'tool_MenuItemDescription185' has cardinality 0..*.
+An association connects 'SubVariable' and 'viewpoint_tool_VariableContainer'. From 'SubVariable', the role 'SubVariable' has cardinality 0..*, and from 'viewpoint_tool_VariableContainer', the role 'viewpoint_tool_VariableContainer' has cardinality 0..*.
+An association connects 'viewpoint_tool_ContainerModelOperation' and 'tool_ModelOperation'. From 'viewpoint_tool_ContainerModelOperation', the role 'viewpoint_tool_ContainerModelOperation' has cardinality 0..*, and from 'tool_ModelOperation', the role 'tool_ModelOperation' has cardinality 0..*.
+An association connects 'tool_ModelOperation' and 'viewpoint_tool_InitialNodeCreationOperation'. From 'tool_ModelOperation', the role 'tool_ModelOperation189' has cardinality 0..*, and from 'viewpoint_tool_InitialNodeCreationOperation', the role 'viewpoint_tool_InitialNodeCreationOperation' has cardinality 0..*.
+An association connects 'tool_ModelOperation' and 'viewpoint_tool_InitialOperation'. From 'tool_ModelOperation', the role 'tool_ModelOperation191' has cardinality 0..*, and from 'viewpoint_tool_InitialOperation', the role 'viewpoint_tool_InitialOperation' has cardinality 0..*.
+An association connects 'tool_ModelOperation' and 'viewpoint_tool_InitEdgeCreationOperation'. From 'tool_ModelOperation', the role 'tool_ModelOperation193' has cardinality 0..*, and from 'viewpoint_tool_InitEdgeCreationOperation', the role 'viewpoint_tool_InitEdgeCreationOperation' has cardinality 0..*.
+An association connects 'viewpoint_tool_InitialContainerDropOperation' and 'tool_ModelOperation'. From 'viewpoint_tool_InitialContainerDropOperation', the role 'viewpoint_tool_InitialContainerDropOperation' has cardinality 0..*, and from 'tool_ModelOperation', the role 'tool_ModelOperation195' has cardinality 0..*.
+An association connects 'viewpoint_tool_SetObject' and 'tool_viewpoint_EObject'. From 'viewpoint_tool_SetObject', the role 'viewpoint_tool_SetObject' has cardinality 0..*, and from 'tool_viewpoint_EObject', the role 'tool_viewpoint_EObject' has cardinality 0..*.
+An association connects 'viewpoint_tool_ToolFilterDescription' and 'tool_FeatureChangeListener'. From 'viewpoint_tool_ToolFilterDescription', the role 'viewpoint_tool_ToolFilterDescription' has cardinality 0..*, and from 'tool_FeatureChangeListener', the role 'tool_FeatureChangeListener' has cardinality 0..*.
+An association connects 'viewpoint_tool_SwitchChild' and 'tool_ModelOperation'. From 'viewpoint_tool_SwitchChild', the role 'viewpoint_tool_SwitchChild' has cardinality 0..*, and from 'tool_ModelOperation', the role 'tool_ModelOperation199' has cardinality 0..*.
+An association connects 'tool_Case' and 'viewpoint_tool_Switch'. From 'tool_Case', the role 'tool_Case' has cardinality 0..*, and from 'viewpoint_tool_Switch', the role 'viewpoint_tool_Switch' has cardinality 0..*.
+An association connects 'tool_Default' and 'viewpoint_tool_Switch'. From 'tool_Default', the role 'tool_Default' has cardinality 0..*, and from 'viewpoint_tool_Switch', the role 'viewpoint_tool_Switch202' has cardinality 0..*.
+An association connects 'viewpoint_validation_ValidationSet' and 'validation_ValidationRule'. From 'viewpoint_validation_ValidationSet', the role 'viewpoint_validation_ValidationSet' has cardinality 0..*, and from 'validation_ValidationRule', the role 'validation_ValidationRule' has cardinality 0..*.
+An association connects 'validation_ValidationRule' and 'viewpoint_validation_ValidationSet'. From 'validation_ValidationRule', the role 'validation_ValidationRule206' has cardinality 0..*, and from 'viewpoint_validation_ValidationSet', the role 'viewpoint_validation_ValidationSet205' has cardinality 0..*.
+An association connects 'validation_ValidationRule' and 'viewpoint_validation_ValidationSet'. From 'validation_ValidationRule', the role 'validation_ValidationRule209' has cardinality 0..*, and from 'viewpoint_validation_ValidationSet', the role 'viewpoint_validation_ValidationSet208' has cardinality 0..*.
+An association connects 'validation_RuleAudit' and 'viewpoint_validation_ValidationRule'. From 'validation_RuleAudit', the role 'validation_RuleAudit' has cardinality 0..*, and from 'viewpoint_validation_ValidationRule', the role 'viewpoint_validation_ValidationRule' has cardinality 0..*.
+An association connects 'viewpoint_validation_ValidationRule' and 'validation_ValidationFix'. From 'viewpoint_validation_ValidationRule', the role 'viewpoint_validation_ValidationRule212' has cardinality 0..*, and from 'validation_ValidationFix', the role 'validation_ValidationFix' has cardinality 0..*.
+An association connects 'viewpoint_validation_ViewValidationRule' and 'RepresentationElementMapping'. From 'viewpoint_validation_ViewValidationRule', the role 'viewpoint_validation_ViewValidationRule' has cardinality 0..*, and from 'RepresentationElementMapping', the role 'RepresentationElementMapping' has cardinality 0..*.
+An association connects 'tool_InitialOperation' and 'viewpoint_validation_ValidationFix'. From 'tool_InitialOperation', the role 'tool_InitialOperation215' has cardinality 0..*, and from 'viewpoint_validation_ValidationFix', the role 'viewpoint_validation_ValidationFix' has cardinality 0..*.

@@ -1,0 +1,228 @@
+The domain model 'stext' describes the core structural elements and their relationships within the system.
+
+The model defines 56 main class(es).
+
+'stext_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_BuiltinEventSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_StatechartScope' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_LocalReaction' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_DefRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_Scope' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_ActiveStateReferenceExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_TypeAliasDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_TransitionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_ReactionEffect' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_EventValueReferenceExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ScopedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_ImportScope' represents an important domain concept.
+It does not declare any attributes.
+
+'Effect' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_EventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_StateSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_StatechartRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_OperationDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_ReactionTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_EventRaisingExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'DefRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_TransitionRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_State' represents an important domain concept.
+It does not declare any attributes.
+
+'TypeAlias' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_EventSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_RegularEventSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'BuiltinEventSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_VariableDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EventSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_StateRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_StatechartSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_TransitionReaction' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_SimpleScope' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_DefaultTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'Reaction' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_ExitPointSpec' represents an important domain concept.
+It has one attribute: 'exitpoint', which is of type str.
+
+'stext_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_ExitEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_InterfaceScope' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_TimeEventSpec' represents an important domain concept.
+It has the following attributes: 'unit', which is of type str; 'type', which is of type str.
+
+'Scope' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_EntryPointSpec' represents an important domain concept.
+It has one attribute: 'entrypoint', which is of type str.
+
+'StatechartScope' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_AlwaysEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'ReactionProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_EntryEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'stext_InternalScope' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TimeEventType' defines the following possible values: 'after', 'every'.
+The enumeration 'TimeUnit' defines the following possible values: 'millisecond', 'nanosecond', 'microsecond', 'second'.
+
+The model also captures inheritance relationships between classes.
+The class 'stext_StatechartRoot' is a specialization of 'DefRoot'.
+The class 'stext_StateRoot' is a specialization of 'DefRoot'.
+The class 'stext_TransitionRoot' is a specialization of 'DefRoot'.
+The class 'stext_StatechartSpecification' is a specialization of 'ScopedElement'.
+The class 'stext_StatechartScope' is a specialization of 'Scope'.
+The class 'stext_InterfaceScope' is a specialization of 'StatechartScope'.
+The class 'stext_InterfaceScope' is a specialization of 'NamedElement'.
+The class 'stext_InternalScope' is a specialization of 'StatechartScope'.
+The class 'stext_ImportScope' is a specialization of 'StatechartScope'.
+The class 'stext_EventDefinition' is a specialization of 'Event'.
+The class 'stext_VariableDefinition' is a specialization of 'Property'.
+The class 'stext_OperationDefinition' is a specialization of 'Operation'.
+The class 'stext_TypeAliasDefinition' is a specialization of 'TypeAlias'.
+The class 'stext_TypeAliasDefinition' is a specialization of 'Declaration'.
+The class 'stext_LocalReaction' is a specialization of 'Reaction'.
+The class 'stext_TransitionReaction' is a specialization of 'Reaction'.
+The class 'stext_EntryPointSpec' is a specialization of 'ReactionProperty'.
+The class 'stext_ExitPointSpec' is a specialization of 'ReactionProperty'.
+The class 'stext_RegularEventSpec' is a specialization of 'EventSpec'.
+The class 'stext_TimeEventSpec' is a specialization of 'EventSpec'.
+The class 'stext_BuiltinEventSpec' is a specialization of 'EventSpec'.
+The class 'stext_EntryEvent' is a specialization of 'BuiltinEventSpec'.
+The class 'stext_ExitEvent' is a specialization of 'BuiltinEventSpec'.
+The class 'stext_AlwaysEvent' is a specialization of 'BuiltinEventSpec'.
+The class 'stext_SimpleScope' is a specialization of 'Scope'.
+The class 'stext_ReactionTrigger' is a specialization of 'Trigger'.
+The class 'stext_DefaultTrigger' is a specialization of 'Trigger'.
+The class 'stext_ReactionEffect' is a specialization of 'Effect'.
+The class 'stext_EventRaisingExpression' is a specialization of 'Expression'.
+The class 'stext_EventValueReferenceExpression' is a specialization of 'Expression'.
+The class 'stext_ActiveStateReferenceExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'stext_Root' and 'stext_DefRoot'. From 'stext_Root', the role 'stext_Root' has cardinality 0..*, and from 'stext_DefRoot', the role 'stext_DefRoot' has cardinality 0..*.
+An association connects 'stext_StatechartRoot' and 'stext_StatechartSpecification'. From 'stext_StatechartRoot', the role 'stext_StatechartRoot' has cardinality 0..*, and from 'stext_StatechartSpecification', the role 'stext_StatechartSpecification' has cardinality 0..*.
+An association connects 'stext_StateRoot' and 'stext_StateSpecification'. From 'stext_StateRoot', the role 'stext_StateRoot' has cardinality 0..*, and from 'stext_StateSpecification', the role 'stext_StateSpecification' has cardinality 0..*.
+An association connects 'stext_TransitionSpecification' and 'stext_TransitionRoot'. From 'stext_TransitionSpecification', the role 'stext_TransitionSpecification' has cardinality 0..*, and from 'stext_TransitionRoot', the role 'stext_TransitionRoot' has cardinality 0..*.
+An association connects 'stext_StateSpecification' and 'stext_Scope'. From 'stext_StateSpecification', the role 'stext_StateSpecification5' has cardinality 0..*, and from 'stext_Scope', the role 'stext_Scope' has cardinality 0..*.
+An association connects 'stext_TransitionSpecification' and 'stext_TransitionReaction'. From 'stext_TransitionSpecification', the role 'stext_TransitionSpecification7' has cardinality 0..*, and from 'stext_TransitionReaction', the role 'stext_TransitionReaction' has cardinality 0..*.
+An association connects 'stext_Package' and 'stext_ImportScope'. From 'stext_Package', the role 'stext_Package' has cardinality 0..*, and from 'stext_ImportScope', the role 'stext_ImportScope' has cardinality 0..*.
+An association connects 'stext_VariableDefinition' and 'stext_Expression'. From 'stext_VariableDefinition', the role 'stext_VariableDefinition' has cardinality 0..*, and from 'stext_Expression', the role 'stext_Expression' has cardinality 0..*.
+An association connects 'stext_Expression' and 'stext_Guard'. From 'stext_Expression', the role 'stext_Expression11' has cardinality 0..*, and from 'stext_Guard', the role 'stext_Guard' has cardinality 0..*.
+An association connects 'stext_RegularEventSpec' and 'stext_Expression'. From 'stext_RegularEventSpec', the role 'stext_RegularEventSpec' has cardinality 0..*, and from 'stext_Expression', the role 'stext_Expression13' has cardinality 0..*.
+An association connects 'stext_TimeEventSpec' and 'stext_Expression'. From 'stext_TimeEventSpec', the role 'stext_TimeEventSpec' has cardinality 0..*, and from 'stext_Expression', the role 'stext_Expression15' has cardinality 0..*.
+An association connects 'stext_EventSpec' and 'stext_ReactionTrigger'. From 'stext_EventSpec', the role 'stext_EventSpec' has cardinality 0..*, and from 'stext_ReactionTrigger', the role 'stext_ReactionTrigger' has cardinality 0..*.
+An association connects 'stext_ReactionTrigger' and 'stext_Guard'. From 'stext_ReactionTrigger', the role 'stext_ReactionTrigger18' has cardinality 0..*, and from 'stext_Guard', the role 'stext_Guard19' has cardinality 0..*.
+An association connects 'stext_Expression' and 'stext_ReactionEffect'. From 'stext_Expression', the role 'stext_Expression21' has cardinality 0..*, and from 'stext_ReactionEffect', the role 'stext_ReactionEffect' has cardinality 0..*.
+An association connects 'stext_Expression' and 'stext_EventRaisingExpression'. From 'stext_Expression', the role 'stext_Expression23' has cardinality 0..*, and from 'stext_EventRaisingExpression', the role 'stext_EventRaisingExpression' has cardinality 0..*.
+An association connects 'stext_EventRaisingExpression' and 'stext_Expression'. From 'stext_EventRaisingExpression', the role 'stext_EventRaisingExpression25' has cardinality 0..*, and from 'stext_Expression', the role 'stext_Expression26' has cardinality 0..*.
+An association connects 'stext_Expression' and 'stext_EventValueReferenceExpression'. From 'stext_Expression', the role 'stext_Expression28' has cardinality 0..*, and from 'stext_EventValueReferenceExpression', the role 'stext_EventValueReferenceExpression' has cardinality 0..*.
+An association connects 'stext_State' and 'stext_ActiveStateReferenceExpression'. From 'stext_State', the role 'stext_State' has cardinality 0..*, and from 'stext_ActiveStateReferenceExpression', the role 'stext_ActiveStateReferenceExpression' has cardinality 0..*.

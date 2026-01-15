@@ -1,0 +1,24 @@
+The domain model 'chartDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'chartDsl_Project' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'projectType', which is of type str.
+
+'chartDsl_Employee' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'chartDsl_Company' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'chartDsl_Task' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ProjectType' defines the following possible values: 'Regie', 'Development'.
+
+Relationships between classes are modeled using associations.
+An association connects 'chartDsl_Employee' and 'chartDsl_Company'. From 'chartDsl_Employee', the role 'chartDsl_Employee' has cardinality 0..*, and from 'chartDsl_Company', the role 'chartDsl_Company' has cardinality 0..*.
+An association connects 'chartDsl_Project' and 'chartDsl_Company'. From 'chartDsl_Project', the role 'chartDsl_Project' has cardinality 0..*, and from 'chartDsl_Company', the role 'chartDsl_Company2' has cardinality 0..*.
+An association connects 'chartDsl_Project' and 'chartDsl_Task'. From 'chartDsl_Project', the role 'chartDsl_Project4' has cardinality 0..*, and from 'chartDsl_Task', the role 'chartDsl_Task' has cardinality 0..*.
+An association connects 'chartDsl_Employee' and 'chartDsl_Task'. From 'chartDsl_Employee', the role 'chartDsl_Employee7' has cardinality 0..*, and from 'chartDsl_Task', the role 'chartDsl_Task6' has cardinality 0..*.

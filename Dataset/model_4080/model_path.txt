@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/NishitShetty/m2m-quality/de.upb.m2m.quality.casestudies/metamodel/UML2RDBMS/SimpleUML.ecore

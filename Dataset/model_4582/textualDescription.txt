@@ -1,0 +1,45 @@
+The domain model 'device' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'Fonctionnalite' represents an important domain concept.
+It does not declare any attributes.
+
+'device_Device' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'device_Capture' represents an important domain concept.
+It does not declare any attributes.
+
+'EJavaObject' represents an important domain concept.
+It does not declare any attributes.
+
+'device_Fonctionnalite' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'device_Types' represents an important domain concept.
+It does not declare any attributes.
+
+'device_EJavaObject' represents an important domain concept.
+It does not declare any attributes.
+
+'device_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'device_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'device_Parametre' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'device_Capture' is a specialization of 'Fonctionnalite'.
+The class 'device_Action' is a specialization of 'Fonctionnalite'.
+The class 'device_Object' is a specialization of 'EJavaObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'device_Types' and 'device_Device'. From 'device_Types', the role 'device_Types' has cardinality 0..*, and from 'device_Device', the role 'device_Device' has cardinality 0..*.
+An association connects 'device_Fonctionnalite' and 'device_Device'. From 'device_Fonctionnalite', the role 'device_Fonctionnalite' has cardinality 0..*, and from 'device_Device', the role 'device_Device2' has cardinality 0..*.
+An association connects 'device_Fonctionnalite' and 'device_Parametre'. From 'device_Fonctionnalite', the role 'device_Fonctionnalite4' has cardinality 0..*, and from 'device_Parametre', the role 'device_Parametre' has cardinality 0..*.
+An association connects 'device_Parametre' and 'device_EJavaObject'. From 'device_Parametre', the role 'device_Parametre6' has cardinality 0..*, and from 'device_EJavaObject', the role 'device_EJavaObject' has cardinality 0..*.
+An association connects 'device_EJavaObject' and 'device_Action'. From 'device_EJavaObject', the role 'device_EJavaObject8' has cardinality 0..*, and from 'device_Action', the role 'device_Action' has cardinality 0..*.

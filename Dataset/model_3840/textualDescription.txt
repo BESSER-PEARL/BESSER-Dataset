@@ -1,0 +1,23 @@
+The domain model 'target' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'target_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'target_Database' represents an important domain concept.
+It does not declare any attributes.
+
+'target_FKey' represents an important domain concept.
+It does not declare any attributes.
+
+'target_Column' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'target_Table' and 'target_FKey'. From 'target_Table', the role 'target_Table' has cardinality 0..*, and from 'target_FKey', the role 'target_FKey' has cardinality 0..*.
+An association connects 'target_Table' and 'target_Column'. From 'target_Table', the role 'target_Table2' has cardinality 0..*, and from 'target_Column', the role 'target_Column' has cardinality 0..*.
+An association connects 'target_Column' and 'target_Table'. From 'target_Column', the role 'target_Column5' has cardinality 0..*, and from 'target_Table', the role 'target_Table4' has cardinality 0..*.
+An association connects 'target_Column' and 'target_FKey'. From 'target_Column', the role 'target_Column8' has cardinality 0..*, and from 'target_FKey', the role 'target_FKey7' has cardinality 0..*.
+An association connects 'target_Table' and 'target_FKey'. From 'target_Table', the role 'target_Table11' has cardinality 0..*, and from 'target_FKey', the role 'target_FKey10' has cardinality 0..*.
+An association connects 'target_Table' and 'target_Database'. From 'target_Table', the role 'target_Table13' has cardinality 0..*, and from 'target_Database', the role 'target_Database' has cardinality 0..*.

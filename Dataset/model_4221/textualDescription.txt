@@ -1,0 +1,18 @@
+The domain model '_101companies' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'_101companies_Company' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'totalSalary', which is of type float.
+
+'_101companies_Employee' represents an important domain concept.
+It has the following attributes: 'salary', which is of type float; 'address', which is of type str; 'name', which is of type str.
+
+'_101companies_Department' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'totalSalary', which is of type float.
+
+Relationships between classes are modeled using associations.
+An association connects '_101companies_Department' and '_101companies_Company'. From '_101companies_Department', the role '_101companies_Department' has cardinality 0..*, and from '_101companies_Company', the role '_101companies_Company' has cardinality 0..*.
+An association connects '_101companies_Department' and '_101companies_Employee'. From '_101companies_Department', the role '_101companies_Department2' has cardinality 0..*, and from '_101companies_Employee', the role '_101companies_Employee' has cardinality 0..*.
+An association connects '_101companies_Employee' and '_101companies_Department'. From '_101companies_Employee', the role '_101companies_Employee5' has cardinality 0..*, and from '_101companies_Department', the role '_101companies_Department4' has cardinality 0..*.
+An association connects '_101companies_Department' and '_101companies_Department'. From '_101companies_Department', the role '_101companies_Department6' has cardinality 0..*, and from '_101companies_Department', the role '_101companies_Department8' has cardinality 0..*.

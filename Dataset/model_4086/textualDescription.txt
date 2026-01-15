@@ -1,0 +1,63 @@
+The domain model 'classDiagram' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'classDiagram_UMLElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UMLDiagramItem' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLIncrement' represents an important domain concept.
+It does not declare any attributes.
+
+'classDiagram_UMLIncrement' represents an important domain concept.
+It does not declare any attributes.
+
+'classDiagram_UMLStereotype' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'classDiagram_UMLCardinality' represents an important domain concept.
+It has one attribute: 'cardString', which is of type str.
+
+'classDiagram_UMLClass' represents an important domain concept.
+It does not declare any attributes.
+
+'classDiagram_UMLClassDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'classDiagram_UMLAssoc' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLElement' represents an important domain concept.
+It does not declare any attributes.
+
+'classDiagram_UMLDiagramItem' represents an important domain concept.
+It does not declare any attributes.
+
+'classDiagram_UMLRole' represents an important domain concept.
+It has one attribute: 'adornment', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'classDiagram_UMLAssoc' is a specialization of 'UMLDiagramItem'.
+The class 'classDiagram_UMLCardinality' is a specialization of 'UMLIncrement'.
+The class 'classDiagram_UMLClassDiagram' is a specialization of 'UMLElement'.
+The class 'classDiagram_UMLClass' is a specialization of 'UMLDiagramItem'.
+The class 'classDiagram_UMLDiagramItem' is a specialization of 'UMLIncrement'.
+The class 'classDiagram_UMLIncrement' is a specialization of 'UMLElement'.
+The class 'classDiagram_UMLRole' is a specialization of 'UMLIncrement'.
+The class 'classDiagram_UMLStereotype' is a specialization of 'UMLIncrement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'classDiagram_UMLAssoc' and 'classDiagram_UMLRole'. From 'classDiagram_UMLAssoc', the role 'revLeftRole' has cardinality 0..*, and from 'classDiagram_UMLRole', the role 'UMLRole' has cardinality 0..*.
+An association connects 'classDiagram_UMLAssoc' and 'classDiagram_UMLRole'. From 'classDiagram_UMLAssoc', the role 'revRightRole' has cardinality 0..*, and from 'classDiagram_UMLRole', the role 'UMLRole2' has cardinality 0..*.
+An association connects 'classDiagram_UMLCardinality' and 'classDiagram_UMLRole'. From 'classDiagram_UMLCardinality', the role 'card' has cardinality 0..*, and from 'classDiagram_UMLRole', the role 'UMLRole4' has cardinality 0..*.
+An association connects 'classDiagram_UMLElement' and 'classDiagram_UMLClassDiagram'. From 'classDiagram_UMLElement', the role 'UMLElement' has cardinality 0..*, and from 'classDiagram_UMLClassDiagram', the role 'diagram' has cardinality 0..*.
+An association connects 'classDiagram_UMLRole' and 'classDiagram_UMLClass'. From 'classDiagram_UMLRole', the role 'UMLRole7' has cardinality 0..*, and from 'classDiagram_UMLClass', the role 'target' has cardinality 0..*.
+An association connects 'classDiagram_UMLClassDiagram' and 'classDiagram_UMLElement'. From 'classDiagram_UMLClassDiagram', the role 'UMLClassDiagram' has cardinality 0..*, and from 'classDiagram_UMLElement', the role 'elements' has cardinality 0..*.
+An association connects 'classDiagram_UMLIncrement' and 'classDiagram_UMLStereotype'. From 'classDiagram_UMLIncrement', the role 'increment' has cardinality 0..*, and from 'classDiagram_UMLStereotype', the role 'UMLStereotype' has cardinality 0..*.
+An association connects 'classDiagram_UMLRole' and 'classDiagram_UMLCardinality'. From 'classDiagram_UMLRole', the role 'revCard' has cardinality 0..*, and from 'classDiagram_UMLCardinality', the role 'UMLCardinality' has cardinality 0..*.
+An association connects 'classDiagram_UMLRole' and 'classDiagram_UMLAssoc'. From 'classDiagram_UMLRole', the role 'leftRole' has cardinality 0..*, and from 'classDiagram_UMLAssoc', the role 'UMLAssoc' has cardinality 0..*.
+An association connects 'classDiagram_UMLAssoc' and 'classDiagram_UMLRole'. From 'classDiagram_UMLAssoc', the role 'UMLAssoc13' has cardinality 0..*, and from 'classDiagram_UMLRole', the role 'rightRole' has cardinality 0..*.
+An association connects 'classDiagram_UMLClass' and 'classDiagram_UMLRole'. From 'classDiagram_UMLClass', the role 'UMLClass' has cardinality 0..*, and from 'classDiagram_UMLRole', the role 'roles' has cardinality 0..*.
+An association connects 'classDiagram_UMLStereotype' and 'classDiagram_UMLIncrement'. From 'classDiagram_UMLStereotype', the role 'stereotypes' has cardinality 0..*, and from 'classDiagram_UMLIncrement', the role 'UMLIncrement' has cardinality 0..*.

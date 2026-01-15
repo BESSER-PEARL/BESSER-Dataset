@@ -1,0 +1,77 @@
+The domain model 'UML2' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ValuePin' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_MultiplicityElement' represents an important domain concept.
+It has one attribute: 'upper', which is of type str.
+
+'UML2_ConnectorEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Parameter' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ParameterDirectionKind' defines the following possible values: 'return', 'in', 'out', 'inout'.
+
+The model also captures inheritance relationships between classes.
+The class 'UML2_Variable' is a specialization of 'MultiplicityElement'.
+The class 'UML2_Parameter' is a specialization of 'MultiplicityElement'.
+The class 'UML2_InputPin' is a specialization of 'Pin'.
+The class 'UML2_StructuralFeature' is a specialization of 'MultiplicityElement'.
+The class 'UML2_OutputPin' is a specialization of 'Pin'.
+The class 'UML2_Property' is a specialization of 'StructuralFeature'.
+The class 'UML2_Pin' is a specialization of 'MultiplicityElement'.
+The class 'UML2_Operation' is a specialization of 'MultiplicityElement'.
+The class 'UML2_ExtensionEnd' is a specialization of 'Property'.
+The class 'UML2_ValuePin' is a specialization of 'InputPin'.
+The class 'UML2_ConnectorEnd' is a specialization of 'MultiplicityElement'.
+The class 'UML2_Port' is a specialization of 'Property'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML2_Operation' and 'UML2_Parameter'. From 'UML2_Operation', the role 'UML2_Operation' has cardinality 0..*, and from 'UML2_Parameter', the role 'UML2_Parameter' has cardinality 0..*.

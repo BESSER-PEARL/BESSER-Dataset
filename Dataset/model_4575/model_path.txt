@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ForgingAhead/ECA-Verifier-sensinact/org.eclipse.sensinact.studio/xtext/org.eclipse.sensinact.studio.language.sensinact/model/generated/Sensinact.ecore

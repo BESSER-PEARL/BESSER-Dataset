@@ -1,0 +1,1221 @@
+The domain model 'UML2WithID' describes the core structural elements and their relationships within the system.
+
+The model defines 264 main class(es).
+
+'UML2WithID_Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_JoinNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ReadLinkObjectEndAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ObjectFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Usage' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Manifestation' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ConnectionPointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_CreateLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ReadLinkObjectEndQualifierAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Message' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Substitution' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ParameterSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_DataStoreNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_TimeInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_EventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_PartDecomposition' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ExtensionPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_CollaborationOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_StateInvariant' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ExecutionEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ReadStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'DeploymentTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_InteractionFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_InteractionConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'EventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_TimeObservationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_PrimitiveFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ReadExtentAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_LinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_AcceptCallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_StartOwnedBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_WriteVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ParameterableClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_DestroyLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_CallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_LiteralInteger' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'IntervalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ProtocolStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ReclassifyObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_TemplateableClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_RedefinableTemplateSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'WriteVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_RemoveVariableValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ReadVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_MessageEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ExecutionOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_InformationItem' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Interaction' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_DurationInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_AddVariableValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Element' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'UML2WithID_AnyTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_CommunicationPath' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ApplyFunctionAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ClearAssociationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Permission' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_CentralBufferNode' represents an important domain concept.
+It does not declare any attributes.
+
+'AcceptEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'WriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_BroadcastSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ClearVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_NamedElement' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'UML2WithID_CreateObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_CallTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_LiteralBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Stop' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_CreateLinkObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ExpansionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_GeneralOrdering' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ValuePin' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_DeployedArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_CombinedFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_InteractionOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_DeploymentTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ChangeTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Collaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ExpansionRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_IntervalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Continuation' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_RemoveStructuralFeatureValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Duration' represents an important domain concept.
+It does not declare any attributes.
+
+'Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Implementation' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_State' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_StructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_TimeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ReadIsClassifiedObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ReadLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_AddStructuralFeatureValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Include' represents an important domain concept.
+It does not declare any attributes.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_LiteralUnlimitedNatural' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ConditionalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ReplyAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ProtocolTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ClearStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_DeploymentSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_AcceptEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_DurationObservationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Profile' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_InstanceValue' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_TimeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Stereotype' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_LoopNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_UseCase' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_GeneralizationSet' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Extend' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_TimeTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'InteractionOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_CallBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_DurationConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Lifeline' represents an important domain concept.
+It does not declare any attributes.
+
+'Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_MessageTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Deployment' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_TestIdentityAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CreateLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_WriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_InteractionOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_LiteralNull' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'DeployedArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_LiteralString' represents an important domain concept.
+It does not declare any attributes.
+
+'EncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_DestroyObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ReadSelfAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_InformationFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Gate' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ActivityPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_StructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_FlowFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_RaiseExceptionAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_EncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_SendObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ActivityParameterNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_SendSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'InteractionFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'CentralBufferNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_VariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_SignalTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VisibilityKind' defines the following possible values: 'private', 'public', 'package', 'protected'.
+
+The model also captures inheritance relationships between classes.
+The class 'UML2WithID_ReplyAction' is a specialization of 'Action'.
+The class 'UML2WithID_ReplyAction' is a specialization of 'Element'.
+The class 'UML2WithID_Behavior' is a specialization of 'Class'.
+The class 'UML2WithID_Behavior' is a specialization of 'Element'.
+The class 'UML2WithID_ParameterSet' is a specialization of 'NamedElement'.
+The class 'UML2WithID_ParameterSet' is a specialization of 'Element'.
+The class 'UML2WithID_ConnectionPointReference' is a specialization of 'Vertex'.
+The class 'UML2WithID_ConnectionPointReference' is a specialization of 'Element'.
+The class 'UML2WithID_InformationItem' is a specialization of 'Classifier'.
+The class 'UML2WithID_InformationItem' is a specialization of 'Element'.
+The class 'UML2WithID_CallOperationAction' is a specialization of 'CallAction'.
+The class 'UML2WithID_CallOperationAction' is a specialization of 'Element'.
+The class 'UML2WithID_CallAction' is a specialization of 'InvocationAction'.
+The class 'UML2WithID_CallAction' is a specialization of 'Element'.
+The class 'UML2WithID_Parameter' is a specialization of 'ConnectableElement'.
+The class 'UML2WithID_Parameter' is a specialization of 'TypedElement'.
+The class 'UML2WithID_Parameter' is a specialization of 'Element'.
+The class 'UML2WithID_ActivityParameterNode' is a specialization of 'ObjectNode'.
+The class 'UML2WithID_ActivityParameterNode' is a specialization of 'Element'.
+The class 'UML2WithID_Action' is a specialization of 'ExecutableNode'.
+The class 'UML2WithID_Action' is a specialization of 'Element'.
+The class 'UML2WithID_AcceptCallAction' is a specialization of 'AcceptEventAction'.
+The class 'UML2WithID_AcceptCallAction' is a specialization of 'Element'.
+The class 'UML2WithID_LiteralNull' is a specialization of 'LiteralSpecification'.
+The class 'UML2WithID_LiteralNull' is a specialization of 'Element'.
+The class 'UML2WithID_ConditionalNode' is a specialization of 'StructuredActivityNode'.
+The class 'UML2WithID_ConditionalNode' is a specialization of 'Element'.
+The class 'UML2WithID_ExecutionOccurrence' is a specialization of 'InteractionFragment'.
+The class 'UML2WithID_ExecutionOccurrence' is a specialization of 'Element'.
+The class 'UML2WithID_Property' is a specialization of 'StructuralFeature'.
+The class 'UML2WithID_Property' is a specialization of 'ConnectableElement'.
+The class 'UML2WithID_Property' is a specialization of 'DeploymentTarget'.
+The class 'UML2WithID_Property' is a specialization of 'Element'.
+The class 'UML2WithID_ClearStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'UML2WithID_ClearStructuralFeatureAction' is a specialization of 'Element'.
+The class 'UML2WithID_DeploymentSpecification' is a specialization of 'Artifact'.
+The class 'UML2WithID_DeploymentSpecification' is a specialization of 'Element'.
+The class 'UML2WithID_BehavioredClassifier' is a specialization of 'Classifier'.
+The class 'UML2WithID_BehavioredClassifier' is a specialization of 'Element'.
+The class 'UML2WithID_CreateObjectAction' is a specialization of 'Action'.
+The class 'UML2WithID_CreateObjectAction' is a specialization of 'Element'.
+The class 'UML2WithID_ReadLinkObjectEndQualifierAction' is a specialization of 'Action'.
+The class 'UML2WithID_ReadLinkObjectEndQualifierAction' is a specialization of 'Element'.
+The class 'UML2WithID_Class' is a specialization of 'BehavioredClassifier'.
+The class 'UML2WithID_Class' is a specialization of 'EncapsulatedClassifier'.
+The class 'UML2WithID_Class' is a specialization of 'Element'.
+The class 'UML2WithID_EventOccurrence' is a specialization of 'InteractionFragment'.
+The class 'UML2WithID_EventOccurrence' is a specialization of 'MessageEnd'.
+The class 'UML2WithID_EventOccurrence' is a specialization of 'Element'.
+The class 'UML2WithID_AddVariableValueAction' is a specialization of 'WriteVariableAction'.
+The class 'UML2WithID_AddVariableValueAction' is a specialization of 'Element'.
+The class 'UML2WithID_ExtensionEnd' is a specialization of 'Property'.
+The class 'UML2WithID_ExtensionEnd' is a specialization of 'Element'.
+The class 'UML2WithID_Lifeline' is a specialization of 'NamedElement'.
+The class 'UML2WithID_Lifeline' is a specialization of 'Element'.
+The class 'UML2WithID_ExtensionPoint' is a specialization of 'RedefinableElement'.
+The class 'UML2WithID_ExtensionPoint' is a specialization of 'Element'.
+The class 'UML2WithID_FlowFinalNode' is a specialization of 'FinalNode'.
+The class 'UML2WithID_FlowFinalNode' is a specialization of 'Element'.
+The class 'UML2WithID_Continuation' is a specialization of 'InteractionFragment'.
+The class 'UML2WithID_Continuation' is a specialization of 'Element'.
+The class 'UML2WithID_ActivityNode' is a specialization of 'RedefinableElement'.
+The class 'UML2WithID_ActivityNode' is a specialization of 'Element'.
+The class 'UML2WithID_RemoveVariableValueAction' is a specialization of 'WriteVariableAction'.
+The class 'UML2WithID_RemoveVariableValueAction' is a specialization of 'Element'.
+The class 'UML2WithID_CallBehaviorAction' is a specialization of 'CallAction'.
+The class 'UML2WithID_CallBehaviorAction' is a specialization of 'Element'.
+The class 'UML2WithID_InitialNode' is a specialization of 'ControlNode'.
+The class 'UML2WithID_InitialNode' is a specialization of 'Element'.
+The class 'UML2WithID_Device' is a specialization of 'Node'.
+The class 'UML2WithID_Device' is a specialization of 'Element'.
+The class 'UML2WithID_ConnectableElement' is a specialization of 'NamedElement'.
+The class 'UML2WithID_ConnectableElement' is a specialization of 'Element'.
+The class 'UML2WithID_TimeConstraint' is a specialization of 'IntervalConstraint'.
+The class 'UML2WithID_TimeConstraint' is a specialization of 'Element'.
+The class 'UML2WithID_ProtocolStateMachine' is a specialization of 'StateMachine'.
+The class 'UML2WithID_ProtocolStateMachine' is a specialization of 'Element'.
+The class 'UML2WithID_Include' is a specialization of 'NamedElement'.
+The class 'UML2WithID_Include' is a specialization of 'Element'.
+The class 'UML2WithID_Vertex' is a specialization of 'NamedElement'.
+The class 'UML2WithID_Vertex' is a specialization of 'Element'.
+The class 'UML2WithID_Manifestation' is a specialization of 'Abstraction'.
+The class 'UML2WithID_Manifestation' is a specialization of 'Element'.
+The class 'UML2WithID_OpaqueExpression' is a specialization of 'ValueSpecification'.
+The class 'UML2WithID_OpaqueExpression' is a specialization of 'Element'.
+The class 'UML2WithID_ForkNode' is a specialization of 'ControlNode'.
+The class 'UML2WithID_ForkNode' is a specialization of 'Element'.
+The class 'UML2WithID_ReadLinkAction' is a specialization of 'LinkAction'.
+The class 'UML2WithID_ReadLinkAction' is a specialization of 'Element'.
+The class 'UML2WithID_Package' is a specialization of 'Namespace'.
+The class 'UML2WithID_Package' is a specialization of 'PackageableElement'.
+The class 'UML2WithID_Package' is a specialization of 'Element'.
+The class 'UML2WithID_StateMachine' is a specialization of 'Behavior'.
+The class 'UML2WithID_StateMachine' is a specialization of 'Element'.
+The class 'UML2WithID_ClearAssociationAction' is a specialization of 'Action'.
+The class 'UML2WithID_ClearAssociationAction' is a specialization of 'Element'.
+The class 'UML2WithID_ActivityPartition' is a specialization of 'NamedElement'.
+The class 'UML2WithID_ActivityPartition' is a specialization of 'Element'.
+The class 'UML2WithID_Type' is a specialization of 'PackageableElement'.
+The class 'UML2WithID_Type' is a specialization of 'Element'.
+The class 'UML2WithID_Constraint' is a specialization of 'PackageableElement'.
+The class 'UML2WithID_Constraint' is a specialization of 'Element'.
+The class 'UML2WithID_CreateLinkObjectAction' is a specialization of 'CreateLinkAction'.
+The class 'UML2WithID_CreateLinkObjectAction' is a specialization of 'Element'.
+The class 'UML2WithID_ExecutableNode' is a specialization of 'ActivityNode'.
+The class 'UML2WithID_ExecutableNode' is a specialization of 'Element'.
+The class 'UML2WithID_RemoveStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'UML2WithID_RemoveStructuralFeatureValueAction' is a specialization of 'Element'.
+The class 'UML2WithID_Artifact' is a specialization of 'Classifier'.
+The class 'UML2WithID_Artifact' is a specialization of 'DeployedArtifact'.
+The class 'UML2WithID_Artifact' is a specialization of 'Element'.
+The class 'UML2WithID_RedefinableTemplateSignature' is a specialization of 'RedefinableElement'.
+The class 'UML2WithID_RedefinableTemplateSignature' is a specialization of 'Element'.
+The class 'UML2WithID_Actor' is a specialization of 'Classifier'.
+The class 'UML2WithID_Actor' is a specialization of 'Element'.
+The class 'UML2WithID_InteractionFragment' is a specialization of 'NamedElement'.
+The class 'UML2WithID_InteractionFragment' is a specialization of 'Element'.
+The class 'UML2WithID_RaiseExceptionAction' is a specialization of 'Action'.
+The class 'UML2WithID_RaiseExceptionAction' is a specialization of 'Element'.
+The class 'UML2WithID_LiteralInteger' is a specialization of 'LiteralSpecification'.
+The class 'UML2WithID_LiteralInteger' is a specialization of 'Element'.
+The class 'UML2WithID_CommunicationPath' is a specialization of 'Association'.
+The class 'UML2WithID_CommunicationPath' is a specialization of 'Element'.
+The class 'UML2WithID_LiteralSpecification' is a specialization of 'ValueSpecification'.
+The class 'UML2WithID_LiteralSpecification' is a specialization of 'Element'.
+The class 'UML2WithID_Namespace' is a specialization of 'NamedElement'.
+The class 'UML2WithID_Namespace' is a specialization of 'Element'.
+The class 'UML2WithID_InvocationAction' is a specialization of 'Action'.
+The class 'UML2WithID_InvocationAction' is a specialization of 'Element'.
+The class 'UML2WithID_LoopNode' is a specialization of 'StructuredActivityNode'.
+The class 'UML2WithID_LoopNode' is a specialization of 'Element'.
+The class 'UML2WithID_ReadSelfAction' is a specialization of 'Action'.
+The class 'UML2WithID_ReadSelfAction' is a specialization of 'Element'.
+The class 'UML2WithID_SendSignalAction' is a specialization of 'InvocationAction'.
+The class 'UML2WithID_SendSignalAction' is a specialization of 'Element'.
+The class 'UML2WithID_ExpansionNode' is a specialization of 'ObjectNode'.
+The class 'UML2WithID_ExpansionNode' is a specialization of 'Element'.
+The class 'UML2WithID_BroadcastSignalAction' is a specialization of 'InvocationAction'.
+The class 'UML2WithID_BroadcastSignalAction' is a specialization of 'Element'.
+The class 'UML2WithID_TypedElement' is a specialization of 'NamedElement'.
+The class 'UML2WithID_TypedElement' is a specialization of 'Element'.
+The class 'UML2WithID_CombinedFragment' is a specialization of 'InteractionFragment'.
+The class 'UML2WithID_CombinedFragment' is a specialization of 'Element'.
+The class 'UML2WithID_Region' is a specialization of 'Namespace'.
+The class 'UML2WithID_Region' is a specialization of 'RedefinableElement'.
+The class 'UML2WithID_Region' is a specialization of 'Element'.
+The class 'UML2WithID_StructuredActivityNode' is a specialization of 'Action'.
+The class 'UML2WithID_StructuredActivityNode' is a specialization of 'Namespace'.
+The class 'UML2WithID_StructuredActivityNode' is a specialization of 'Element'.
+The class 'UML2WithID_Abstraction' is a specialization of 'Dependency'.
+The class 'UML2WithID_Abstraction' is a specialization of 'Element'.
+The class 'UML2WithID_InputPin' is a specialization of 'Pin'.
+The class 'UML2WithID_InputPin' is a specialization of 'Element'.
+The class 'UML2WithID_OutputPin' is a specialization of 'Pin'.
+The class 'UML2WithID_OutputPin' is a specialization of 'Element'.
+The class 'UML2WithID_RedefinableElement' is a specialization of 'NamedElement'.
+The class 'UML2WithID_RedefinableElement' is a specialization of 'Element'.
+The class 'UML2WithID_EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+The class 'UML2WithID_EnumerationLiteral' is a specialization of 'Element'.
+The class 'UML2WithID_CallTrigger' is a specialization of 'MessageTrigger'.
+The class 'UML2WithID_CallTrigger' is a specialization of 'Element'.
+The class 'UML2WithID_AssociationClass' is a specialization of 'Class'.
+The class 'UML2WithID_AssociationClass' is a specialization of 'Association'.
+The class 'UML2WithID_AssociationClass' is a specialization of 'Element'.
+The class 'UML2WithID_Dependency' is a specialization of 'PackageableElement'.
+The class 'UML2WithID_Dependency' is a specialization of 'Element'.
+The class 'UML2WithID_WriteVariableAction' is a specialization of 'VariableAction'.
+The class 'UML2WithID_WriteVariableAction' is a specialization of 'Element'.
+The class 'UML2WithID_TimeExpression' is a specialization of 'ValueSpecification'.
+The class 'UML2WithID_TimeExpression' is a specialization of 'Element'.
+The class 'UML2WithID_ReadVariableAction' is a specialization of 'VariableAction'.
+The class 'UML2WithID_ReadVariableAction' is a specialization of 'Element'.
+The class 'UML2WithID_AddStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'UML2WithID_AddStructuralFeatureValueAction' is a specialization of 'Element'.
+The class 'UML2WithID_ExpansionRegion' is a specialization of 'StructuredActivityNode'.
+The class 'UML2WithID_ExpansionRegion' is a specialization of 'Element'.
+The class 'UML2WithID_Interval' is a specialization of 'ValueSpecification'.
+The class 'UML2WithID_Interval' is a specialization of 'Element'.
+The class 'UML2WithID_Stop' is a specialization of 'EventOccurrence'.
+The class 'UML2WithID_Stop' is a specialization of 'Element'.
+The class 'UML2WithID_MergeNode' is a specialization of 'ControlNode'.
+The class 'UML2WithID_MergeNode' is a specialization of 'Element'.
+The class 'UML2WithID_SendObjectAction' is a specialization of 'InvocationAction'.
+The class 'UML2WithID_SendObjectAction' is a specialization of 'Element'.
+The class 'UML2WithID_SignalTrigger' is a specialization of 'MessageTrigger'.
+The class 'UML2WithID_SignalTrigger' is a specialization of 'Element'.
+The class 'UML2WithID_UseCase' is a specialization of 'BehavioredClassifier'.
+The class 'UML2WithID_UseCase' is a specialization of 'Element'.
+The class 'UML2WithID_GeneralOrdering' is a specialization of 'NamedElement'.
+The class 'UML2WithID_GeneralOrdering' is a specialization of 'Element'.
+The class 'UML2WithID_Pseudostate' is a specialization of 'Vertex'.
+The class 'UML2WithID_Pseudostate' is a specialization of 'Element'.
+The class 'UML2WithID_AcceptEventAction' is a specialization of 'Action'.
+The class 'UML2WithID_AcceptEventAction' is a specialization of 'Element'.
+The class 'UML2WithID_ActivityEdge' is a specialization of 'RedefinableElement'.
+The class 'UML2WithID_ActivityEdge' is a specialization of 'Element'.
+The class 'UML2WithID_ClearVariableAction' is a specialization of 'VariableAction'.
+The class 'UML2WithID_ClearVariableAction' is a specialization of 'Element'.
+The class 'UML2WithID_DataStoreNode' is a specialization of 'CentralBufferNode'.
+The class 'UML2WithID_DataStoreNode' is a specialization of 'Element'.
+The class 'UML2WithID_GeneralizationSet' is a specialization of 'PackageableElement'.
+The class 'UML2WithID_GeneralizationSet' is a specialization of 'Element'.
+The class 'UML2WithID_ParameterableClassifier' is a specialization of 'Classifier'.
+The class 'UML2WithID_ParameterableClassifier' is a specialization of 'Element'.
+The class 'UML2WithID_ApplyFunctionAction' is a specialization of 'Action'.
+The class 'UML2WithID_ApplyFunctionAction' is a specialization of 'Element'.
+The class 'UML2WithID_Extension' is a specialization of 'Association'.
+The class 'UML2WithID_Extension' is a specialization of 'Element'.
+The class 'UML2WithID_InstanceValue' is a specialization of 'ValueSpecification'.
+The class 'UML2WithID_InstanceValue' is a specialization of 'Element'.
+The class 'UML2WithID_ControlFlow' is a specialization of 'ActivityEdge'.
+The class 'UML2WithID_ControlFlow' is a specialization of 'Element'.
+The class 'UML2WithID_InteractionConstraint' is a specialization of 'Constraint'.
+The class 'UML2WithID_InteractionConstraint' is a specialization of 'Element'.
+The class 'UML2WithID_Usage' is a specialization of 'Dependency'.
+The class 'UML2WithID_Usage' is a specialization of 'Element'.
+The class 'UML2WithID_Trigger' is a specialization of 'NamedElement'.
+The class 'UML2WithID_Trigger' is a specialization of 'Element'.
+The class 'UML2WithID_PrimitiveType' is a specialization of 'DataType'.
+The class 'UML2WithID_PrimitiveType' is a specialization of 'Element'.
+The class 'UML2WithID_Signal' is a specialization of 'Classifier'.
+The class 'UML2WithID_Signal' is a specialization of 'Element'.
+The class 'UML2WithID_Pin' is a specialization of 'ObjectNode'.
+The class 'UML2WithID_Pin' is a specialization of 'Element'.
+The class 'UML2WithID_Stereotype' is a specialization of 'Class'.
+The class 'UML2WithID_Stereotype' is a specialization of 'Element'.
+The class 'UML2WithID_DecisionNode' is a specialization of 'ControlNode'.
+The class 'UML2WithID_DecisionNode' is a specialization of 'Element'.
+The class 'UML2WithID_Implementation' is a specialization of 'Realization'.
+The class 'UML2WithID_Implementation' is a specialization of 'Element'.
+The class 'UML2WithID_ReadExtentAction' is a specialization of 'Action'.
+The class 'UML2WithID_ReadExtentAction' is a specialization of 'Element'.
+The class 'UML2WithID_Interaction' is a specialization of 'Behavior'.
+The class 'UML2WithID_Interaction' is a specialization of 'InteractionFragment'.
+The class 'UML2WithID_Interaction' is a specialization of 'Element'.
+The class 'UML2WithID_Association' is a specialization of 'Classifier'.
+The class 'UML2WithID_Association' is a specialization of 'Element'.
+The class 'UML2WithID_InteractionOperand' is a specialization of 'Namespace'.
+The class 'UML2WithID_InteractionOperand' is a specialization of 'InteractionFragment'.
+The class 'UML2WithID_InteractionOperand' is a specialization of 'Element'.
+The class 'UML2WithID_IntervalConstraint' is a specialization of 'Constraint'.
+The class 'UML2WithID_IntervalConstraint' is a specialization of 'Element'.
+The class 'UML2WithID_LiteralBoolean' is a specialization of 'LiteralSpecification'.
+The class 'UML2WithID_LiteralBoolean' is a specialization of 'Element'.
+The class 'UML2WithID_InstanceSpecification' is a specialization of 'PackageableElement'.
+The class 'UML2WithID_InstanceSpecification' is a specialization of 'DeploymentTarget'.
+The class 'UML2WithID_InstanceSpecification' is a specialization of 'DeployedArtifact'.
+The class 'UML2WithID_InstanceSpecification' is a specialization of 'Element'.
+The class 'UML2WithID_Gate' is a specialization of 'MessageEnd'.
+The class 'UML2WithID_Gate' is a specialization of 'Element'.
+The class 'UML2WithID_Collaboration' is a specialization of 'BehavioredClassifier'.
+The class 'UML2WithID_Collaboration' is a specialization of 'StructuredClassifier'.
+The class 'UML2WithID_Collaboration' is a specialization of 'Element'.
+The class 'UML2WithID_NamedElement' is a specialization of 'Element'.
+The class 'UML2WithID_Port' is a specialization of 'Property'.
+The class 'UML2WithID_Port' is a specialization of 'Element'.
+The class 'UML2WithID_BehavioralFeature' is a specialization of 'Namespace'.
+The class 'UML2WithID_BehavioralFeature' is a specialization of 'Feature'.
+The class 'UML2WithID_BehavioralFeature' is a specialization of 'Element'.
+The class 'UML2WithID_StructuredClassifier' is a specialization of 'Classifier'.
+The class 'UML2WithID_StructuredClassifier' is a specialization of 'Element'.
+The class 'UML2WithID_ReadIsClassifiedObjectAction' is a specialization of 'Action'.
+The class 'UML2WithID_ReadIsClassifiedObjectAction' is a specialization of 'Element'.
+The class 'UML2WithID_PackageableElement' is a specialization of 'NamedElement'.
+The class 'UML2WithID_PackageableElement' is a specialization of 'Element'.
+The class 'UML2WithID_CreateLinkAction' is a specialization of 'WriteLinkAction'.
+The class 'UML2WithID_CreateLinkAction' is a specialization of 'Element'.
+The class 'UML2WithID_FinalNode' is a specialization of 'ControlNode'.
+The class 'UML2WithID_FinalNode' is a specialization of 'Element'.
+The class 'UML2WithID_LiteralString' is a specialization of 'LiteralSpecification'.
+The class 'UML2WithID_LiteralString' is a specialization of 'Element'.
+The class 'UML2WithID_EncapsulatedClassifier' is a specialization of 'StructuredClassifier'.
+The class 'UML2WithID_EncapsulatedClassifier' is a specialization of 'Element'.
+The class 'UML2WithID_Transition' is a specialization of 'RedefinableElement'.
+The class 'UML2WithID_Transition' is a specialization of 'Element'.
+The class 'UML2WithID_ExecutionEnvironment' is a specialization of 'Node'.
+The class 'UML2WithID_ExecutionEnvironment' is a specialization of 'Element'.
+The class 'UML2WithID_WriteLinkAction' is a specialization of 'LinkAction'.
+The class 'UML2WithID_WriteLinkAction' is a specialization of 'Element'.
+The class 'UML2WithID_LiteralUnlimitedNatural' is a specialization of 'LiteralSpecification'.
+The class 'UML2WithID_LiteralUnlimitedNatural' is a specialization of 'Element'.
+The class 'UML2WithID_ValuePin' is a specialization of 'InputPin'.
+The class 'UML2WithID_ValuePin' is a specialization of 'Element'.
+The class 'UML2WithID_StartOwnedBehaviorAction' is a specialization of 'Action'.
+The class 'UML2WithID_StartOwnedBehaviorAction' is a specialization of 'Element'.
+The class 'UML2WithID_Expression' is a specialization of 'OpaqueExpression'.
+The class 'UML2WithID_Expression' is a specialization of 'Element'.
+The class 'UML2WithID_CollaborationOccurrence' is a specialization of 'NamedElement'.
+The class 'UML2WithID_CollaborationOccurrence' is a specialization of 'Element'.
+The class 'UML2WithID_DestroyObjectAction' is a specialization of 'Action'.
+The class 'UML2WithID_DestroyObjectAction' is a specialization of 'Element'.
+The class 'UML2WithID_Feature' is a specialization of 'RedefinableElement'.
+The class 'UML2WithID_Feature' is a specialization of 'Element'.
+The class 'UML2WithID_DurationObservationAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'UML2WithID_DurationObservationAction' is a specialization of 'Element'.
+The class 'UML2WithID_ControlNode' is a specialization of 'ActivityNode'.
+The class 'UML2WithID_ControlNode' is a specialization of 'Element'.
+The class 'UML2WithID_TimeInterval' is a specialization of 'Interval'.
+The class 'UML2WithID_TimeInterval' is a specialization of 'Element'.
+The class 'UML2WithID_Component' is a specialization of 'Class'.
+The class 'UML2WithID_Component' is a specialization of 'Element'.
+The class 'UML2WithID_InteractionOccurrence' is a specialization of 'InteractionFragment'.
+The class 'UML2WithID_InteractionOccurrence' is a specialization of 'Element'.
+The class 'UML2WithID_Reception' is a specialization of 'BehavioralFeature'.
+The class 'UML2WithID_Reception' is a specialization of 'Element'.
+The class 'UML2WithID_Message' is a specialization of 'NamedElement'.
+The class 'UML2WithID_Message' is a specialization of 'Element'.
+The class 'UML2WithID_WriteStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'UML2WithID_WriteStructuralFeatureAction' is a specialization of 'Element'.
+The class 'UML2WithID_ReadLinkObjectEndAction' is a specialization of 'Action'.
+The class 'UML2WithID_ReadLinkObjectEndAction' is a specialization of 'Element'.
+The class 'UML2WithID_Variable' is a specialization of 'ConnectableElement'.
+The class 'UML2WithID_Variable' is a specialization of 'TypedElement'.
+The class 'UML2WithID_Variable' is a specialization of 'Element'.
+The class 'UML2WithID_TemplateableClassifier' is a specialization of 'Classifier'.
+The class 'UML2WithID_TemplateableClassifier' is a specialization of 'Element'.
+The class 'UML2WithID_Activity' is a specialization of 'Behavior'.
+The class 'UML2WithID_Activity' is a specialization of 'Element'.
+The class 'UML2WithID_AnyTrigger' is a specialization of 'MessageTrigger'.
+The class 'UML2WithID_AnyTrigger' is a specialization of 'Element'.
+The class 'UML2WithID_Realization' is a specialization of 'Abstraction'.
+The class 'UML2WithID_Realization' is a specialization of 'Element'.
+The class 'UML2WithID_StructuralFeatureAction' is a specialization of 'Action'.
+The class 'UML2WithID_StructuralFeatureAction' is a specialization of 'Element'.
+The class 'UML2WithID_Node' is a specialization of 'Class'.
+The class 'UML2WithID_Node' is a specialization of 'DeploymentTarget'.
+The class 'UML2WithID_Node' is a specialization of 'Element'.
+The class 'UML2WithID_ReclassifyObjectAction' is a specialization of 'Action'.
+The class 'UML2WithID_ReclassifyObjectAction' is a specialization of 'Element'.
+The class 'UML2WithID_ProtocolTransition' is a specialization of 'Transition'.
+The class 'UML2WithID_ProtocolTransition' is a specialization of 'Element'.
+The class 'UML2WithID_ChangeTrigger' is a specialization of 'Trigger'.
+The class 'UML2WithID_ChangeTrigger' is a specialization of 'Element'.
+The class 'UML2WithID_Duration' is a specialization of 'ValueSpecification'.
+The class 'UML2WithID_Duration' is a specialization of 'Element'.
+The class 'UML2WithID_TimeTrigger' is a specialization of 'Trigger'.
+The class 'UML2WithID_TimeTrigger' is a specialization of 'Element'.
+The class 'UML2WithID_DeploymentTarget' is a specialization of 'NamedElement'.
+The class 'UML2WithID_DeploymentTarget' is a specialization of 'Element'.
+The class 'UML2WithID_Operation' is a specialization of 'BehavioralFeature'.
+The class 'UML2WithID_Operation' is a specialization of 'TypedElement'.
+The class 'UML2WithID_Operation' is a specialization of 'Element'.
+The class 'UML2WithID_MessageEnd' is a specialization of 'NamedElement'.
+The class 'UML2WithID_MessageEnd' is a specialization of 'Element'.
+The class 'UML2WithID_Extend' is a specialization of 'NamedElement'.
+The class 'UML2WithID_Extend' is a specialization of 'Element'.
+The class 'UML2WithID_DeployedArtifact' is a specialization of 'NamedElement'.
+The class 'UML2WithID_DeployedArtifact' is a specialization of 'Element'.
+The class 'UML2WithID_StateInvariant' is a specialization of 'InteractionFragment'.
+The class 'UML2WithID_StateInvariant' is a specialization of 'Element'.
+The class 'UML2WithID_Connector' is a specialization of 'Feature'.
+The class 'UML2WithID_Connector' is a specialization of 'Element'.
+The class 'UML2WithID_ReadStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'UML2WithID_ReadStructuralFeatureAction' is a specialization of 'Element'.
+The class 'UML2WithID_TimeObservationAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'UML2WithID_TimeObservationAction' is a specialization of 'Element'.
+The class 'UML2WithID_DurationInterval' is a specialization of 'Interval'.
+The class 'UML2WithID_DurationInterval' is a specialization of 'Element'.
+The class 'UML2WithID_Permission' is a specialization of 'Dependency'.
+The class 'UML2WithID_Permission' is a specialization of 'Element'.
+The class 'UML2WithID_PartDecomposition' is a specialization of 'InteractionOccurrence'.
+The class 'UML2WithID_PartDecomposition' is a specialization of 'Element'.
+The class 'UML2WithID_Substitution' is a specialization of 'Realization'.
+The class 'UML2WithID_Substitution' is a specialization of 'Element'.
+The class 'UML2WithID_ValueSpecification' is a specialization of 'TypedElement'.
+The class 'UML2WithID_ValueSpecification' is a specialization of 'Element'.
+The class 'UML2WithID_DataType' is a specialization of 'Classifier'.
+The class 'UML2WithID_DataType' is a specialization of 'Element'.
+The class 'UML2WithID_InformationFlow' is a specialization of 'PackageableElement'.
+The class 'UML2WithID_InformationFlow' is a specialization of 'Element'.
+The class 'UML2WithID_Enumeration' is a specialization of 'DataType'.
+The class 'UML2WithID_Enumeration' is a specialization of 'Element'.
+The class 'UML2WithID_VariableAction' is a specialization of 'Action'.
+The class 'UML2WithID_VariableAction' is a specialization of 'Element'.
+The class 'UML2WithID_CentralBufferNode' is a specialization of 'ObjectNode'.
+The class 'UML2WithID_CentralBufferNode' is a specialization of 'Element'.
+The class 'UML2WithID_ObjectNode' is a specialization of 'ActivityNode'.
+The class 'UML2WithID_ObjectNode' is a specialization of 'TypedElement'.
+The class 'UML2WithID_ObjectNode' is a specialization of 'Element'.
+The class 'UML2WithID_LinkAction' is a specialization of 'Action'.
+The class 'UML2WithID_LinkAction' is a specialization of 'Element'.
+The class 'UML2WithID_Interface' is a specialization of 'Classifier'.
+The class 'UML2WithID_Interface' is a specialization of 'Element'.
+The class 'UML2WithID_PrimitiveFunction' is a specialization of 'PackageableElement'.
+The class 'UML2WithID_PrimitiveFunction' is a specialization of 'Element'.
+The class 'UML2WithID_ActivityFinalNode' is a specialization of 'FinalNode'.
+The class 'UML2WithID_ActivityFinalNode' is a specialization of 'Element'.
+The class 'UML2WithID_State' is a specialization of 'Namespace'.
+The class 'UML2WithID_State' is a specialization of 'RedefinableElement'.
+The class 'UML2WithID_State' is a specialization of 'Vertex'.
+The class 'UML2WithID_State' is a specialization of 'Element'.
+The class 'UML2WithID_FinalState' is a specialization of 'State'.
+The class 'UML2WithID_FinalState' is a specialization of 'Element'.
+The class 'UML2WithID_JoinNode' is a specialization of 'ControlNode'.
+The class 'UML2WithID_JoinNode' is a specialization of 'Element'.
+The class 'UML2WithID_DestroyLinkAction' is a specialization of 'WriteLinkAction'.
+The class 'UML2WithID_DestroyLinkAction' is a specialization of 'Element'.
+The class 'UML2WithID_Model' is a specialization of 'Package'.
+The class 'UML2WithID_Model' is a specialization of 'Element'.
+The class 'UML2WithID_Classifier' is a specialization of 'Namespace'.
+The class 'UML2WithID_Classifier' is a specialization of 'Type'.
+The class 'UML2WithID_Classifier' is a specialization of 'RedefinableElement'.
+The class 'UML2WithID_Classifier' is a specialization of 'Element'.
+The class 'UML2WithID_StructuralFeature' is a specialization of 'Feature'.
+The class 'UML2WithID_StructuralFeature' is a specialization of 'TypedElement'.
+The class 'UML2WithID_StructuralFeature' is a specialization of 'Element'.
+The class 'UML2WithID_MessageTrigger' is a specialization of 'Trigger'.
+The class 'UML2WithID_MessageTrigger' is a specialization of 'Element'.
+The class 'UML2WithID_ObjectFlow' is a specialization of 'ActivityEdge'.
+The class 'UML2WithID_ObjectFlow' is a specialization of 'Element'.
+The class 'UML2WithID_DurationConstraint' is a specialization of 'IntervalConstraint'.
+The class 'UML2WithID_DurationConstraint' is a specialization of 'Element'.
+The class 'UML2WithID_TestIdentityAction' is a specialization of 'Action'.
+The class 'UML2WithID_TestIdentityAction' is a specialization of 'Element'.
+The class 'UML2WithID_Deployment' is a specialization of 'Dependency'.
+The class 'UML2WithID_Deployment' is a specialization of 'Element'.
+The class 'UML2WithID_Profile' is a specialization of 'Package'.
+The class 'UML2WithID_Profile' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML2WithID_Namespace' and 'UML2WithID_NamedElement'. From 'UML2WithID_Namespace', the role 'UML2WithID_Namespace' has cardinality 0..*, and from 'UML2WithID_NamedElement', the role 'UML2WithID_NamedElement' has cardinality 0..*.

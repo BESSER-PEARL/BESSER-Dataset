@@ -1,0 +1,36 @@
+The domain model 'office' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'office_OfficeModel' represents an important domain concept.
+It does not declare any attributes.
+
+'office_Office' represents an important domain concept.
+It does not declare any attributes.
+
+'office_OfficeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'OfficeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'office_Employee' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'office_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'office_OfficeModel' is a specialization of 'NamedElement'.
+The class 'office_Employee' is a specialization of 'OfficeElement'.
+The class 'office_Office' is a specialization of 'OfficeElement'.
+The class 'office_OfficeElement' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'office_OfficeElement' and 'office_OfficeModel'. From 'office_OfficeElement', the role 'office_OfficeElement' has cardinality 0..*, and from 'office_OfficeModel', the role 'office_OfficeModel' has cardinality 0..*.
+An association connects 'office_Office' and 'office_Employee'. From 'office_Office', the role 'Office' has cardinality 0..*, and from 'office_Employee', the role 'employees' has cardinality 0..*.
+An association connects 'office_Employee' and 'office_Employee'. From 'office_Employee', the role 'office_Employee' has cardinality 0..*, and from 'office_Employee', the role 'office_Employee2' has cardinality 0..*.
+An association connects 'office_Employee' and 'office_Office'. From 'office_Employee', the role 'Employee' has cardinality 0..*, and from 'office_Office', the role 'worksIn' has cardinality 0..*.

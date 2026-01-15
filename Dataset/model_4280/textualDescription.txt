@@ -1,0 +1,33 @@
+The domain model 'bowling' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'bowling_Game' represents an important domain concept.
+It has the following attributes: 'frames', which is of type int; 'date', which is of type date.
+
+'bowling_Player' represents an important domain concept.
+It has the following attributes: 'lastname', which is of type str; 'firstname', which is of type str; 'height', which is of type float; 'isProfessional', which is of type bool; 'street', which is of type str; 'city', which is of type str; 'dateOfBirth', which is of type date; 'streetnumber', which is of type int.
+
+'bowling_Tournament' represents an important domain concept.
+It has the following attributes: 'title', which is of type str; 'type', which is of type str.
+
+'bowling_Playerlist' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bowling_Matchup' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TournamentType' defines the following possible values: 'Amateur', 'Pro'.
+
+Relationships between classes are modeled using associations.
+An association connects 'bowling_Game' and 'bowling_Player'. From 'bowling_Game', the role 'Game' has cardinality 0..*, and from 'bowling_Player', the role 'player' has cardinality 0..*.
+An association connects 'bowling_Playerlist' and 'bowling_Player'. From 'bowling_Playerlist', the role 'Playerlist' has cardinality 0..*, and from 'bowling_Player', the role 'player2' has cardinality 0..*.
+An association connects 'bowling_Game' and 'bowling_Player'. From 'bowling_Game', the role 'game' has cardinality 0..*, and from 'bowling_Player', the role 'Player' has cardinality 0..*.
+An association connects 'bowling_Game' and 'bowling_Matchup'. From 'bowling_Game', the role 'game5' has cardinality 0..*, and from 'bowling_Matchup', the role 'Matchup' has cardinality 0..*.
+An association connects 'bowling_Game' and 'bowling_Matchup'. From 'bowling_Game', the role 'Game7' has cardinality 0..*, and from 'bowling_Matchup', the role 'matchup' has cardinality 0..*.
+An association connects 'bowling_Matchup' and 'bowling_Tournament'. From 'bowling_Matchup', the role 'matchups' has cardinality 0..*, and from 'bowling_Tournament', the role 'Tournament' has cardinality 0..*.
+An association connects 'bowling_Player' and 'bowling_Playerlist'. From 'bowling_Player', the role 'Player10' has cardinality 0..*, and from 'bowling_Playerlist', the role 'playerlist' has cardinality 0..*.
+An association connects 'bowling_Playerlist' and 'bowling_Tournament'. From 'bowling_Playerlist', the role 'playerlist12' has cardinality 0..*, and from 'bowling_Tournament', the role 'Tournament13' has cardinality 0..*.
+An association connects 'bowling_Tournament' and 'bowling_Matchup'. From 'bowling_Tournament', the role 'tournament' has cardinality 0..*, and from 'bowling_Matchup', the role 'Matchup15' has cardinality 0..*.
+An association connects 'bowling_Playerlist' and 'bowling_Tournament'. From 'bowling_Playerlist', the role 'Playerlist18' has cardinality 0..*, and from 'bowling_Tournament', the role 'tournament17' has cardinality 0..*.

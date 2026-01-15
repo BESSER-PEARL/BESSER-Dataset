@@ -1,0 +1,82 @@
+The domain model 'assignment2' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'ExpMinusPlus' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment2_Mult' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpMultDiv' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment2_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment2_Parenthesis' represents an important domain concept.
+It does not declare any attributes.
+
+'Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpPM' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment2_ExpMD' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment2_ExpMinusPlus' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment2_Number' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'assignment2_ExpMultDiv' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment2_Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment2_ExpPM' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment2_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment2_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment2_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpMD' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment2_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment2_MathExp' represents an important domain concept.
+It does not declare any attributes.
+
+'assignment2_Exp' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'assignment2_ExpMultDiv' is a specialization of 'ExpMinusPlus'.
+The class 'assignment2_Primary' is a specialization of 'ExpMultDiv'.
+The class 'assignment2_Parenthesis' is a specialization of 'Primary'.
+The class 'assignment2_Number' is a specialization of 'Primary'.
+The class 'assignment2_Exp' is a specialization of 'ExpMultDiv'.
+The class 'assignment2_Plus' is a specialization of 'ExpPM'.
+The class 'assignment2_Minus' is a specialization of 'ExpPM'.
+The class 'assignment2_Mult' is a specialization of 'ExpMD'.
+The class 'assignment2_Div' is a specialization of 'ExpMD'.
+
+Relationships between classes are modeled using associations.
+An association connects 'assignment2_MathExp' and 'assignment2_Model'. From 'assignment2_MathExp', the role 'assignment2_MathExp' has cardinality 0..*, and from 'assignment2_Model', the role 'assignment2_Model' has cardinality 0..*.
+An association connects 'assignment2_MathExp' and 'assignment2_ExpMinusPlus'. From 'assignment2_MathExp', the role 'assignment2_MathExp2' has cardinality 0..*, and from 'assignment2_ExpMinusPlus', the role 'assignment2_ExpMinusPlus' has cardinality 0..*.
+An association connects 'assignment2_ExpMinusPlus' and 'assignment2_ExpMinusPlus'. From 'assignment2_ExpMinusPlus', the role 'assignment2_ExpMinusPlus5' has cardinality 0..*, and from 'assignment2_ExpMinusPlus', the role 'assignment2_ExpMinusPlus3' has cardinality 0..*.
+An association connects 'assignment2_EObject' and 'assignment2_ExpMinusPlus'. From 'assignment2_EObject', the role 'assignment2_EObject' has cardinality 0..*, and from 'assignment2_ExpMinusPlus', the role 'assignment2_ExpMinusPlus7' has cardinality 0..*.
+An association connects 'assignment2_ExpMinusPlus' and 'assignment2_ExpMultDiv'. From 'assignment2_ExpMinusPlus', the role 'assignment2_ExpMinusPlus9' has cardinality 0..*, and from 'assignment2_ExpMultDiv', the role 'assignment2_ExpMultDiv' has cardinality 0..*.
+An association connects 'assignment2_Parenthesis' and 'assignment2_ExpMinusPlus'. From 'assignment2_Parenthesis', the role 'assignment2_Parenthesis' has cardinality 0..*, and from 'assignment2_ExpMinusPlus', the role 'assignment2_ExpMinusPlus11' has cardinality 0..*.

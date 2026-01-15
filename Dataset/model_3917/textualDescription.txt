@@ -1,0 +1,47 @@
+The domain model 'entities' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'entities_Import' represents an important domain concept.
+It has one attribute: 'importURI', which is of type str.
+
+'entities_Property' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type bool.
+
+'entities_SimpleProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'entities_SimpleType' is a specialization of 'Type'.
+The class 'entities_Entity' is a specialization of 'Type'.
+The class 'entities_SimpleProperty' is a specialization of 'Property'.
+The class 'entities_Reference' is a specialization of 'Property'.
+
+Relationships between classes are modeled using associations.
+An association connects 'entities_Import' and 'entities_Model'. From 'entities_Import', the role 'entities_Import' has cardinality 0..*, and from 'entities_Model', the role 'entities_Model' has cardinality 0..*.
+An association connects 'entities_Type' and 'entities_Model'. From 'entities_Type', the role 'entities_Type' has cardinality 0..*, and from 'entities_Model', the role 'entities_Model2' has cardinality 0..*.
+An association connects 'entities_Entity' and 'entities_Entity'. From 'entities_Entity', the role 'entities_Entity' has cardinality 0..*, and from 'entities_Entity', the role 'entities_Entity3' has cardinality 0..*.
+An association connects 'entities_Entity' and 'entities_Property'. From 'entities_Entity', the role 'entities_Entity6' has cardinality 0..*, and from 'entities_Property', the role 'entities_Property' has cardinality 0..*.
+An association connects 'entities_SimpleProperty' and 'entities_SimpleType'. From 'entities_SimpleProperty', the role 'entities_SimpleProperty' has cardinality 0..*, and from 'entities_SimpleType', the role 'entities_SimpleType' has cardinality 0..*.
+An association connects 'entities_Entity' and 'entities_Reference'. From 'entities_Entity', the role 'entities_Entity9' has cardinality 0..*, and from 'entities_Reference', the role 'entities_Reference' has cardinality 0..*.

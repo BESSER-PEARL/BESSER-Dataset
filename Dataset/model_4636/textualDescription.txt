@@ -1,0 +1,107 @@
+The domain model 'notation' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'notation_Rectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'NotationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Figure' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Value' represents an important domain concept.
+It has one attribute: 'separator', which is of type str.
+
+'notation_ReferenceValue' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Line' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphicalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TextualElement' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Keyword' represents an important domain concept.
+It does not declare any attributes.
+
+'IdElement' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_SyntaxOf' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_AttributeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_NotationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_IdElement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'notation_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_TextualElement' represents an important domain concept.
+It has one attribute: 'fill', which is of type str.
+
+'notation_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_GraphicalElement' represents an important domain concept.
+It has the following attributes: 'height', which is of type int; 'width', which is of type int; 'fill', which is of type str; 'y', which is of type int; 'stroke', which is of type str; 'x', which is of type int.
+
+'Figure' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Composite' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Image' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'notation_Token' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Color' defines the following possible values: 'GREEN', 'WHITE', 'BLACK', 'RED', 'ORANGE', 'BLUE', 'YELLOW'.
+
+The model also captures inheritance relationships between classes.
+The class 'notation_NotationElement' is a specialization of 'IdElement'.
+The class 'notation_GraphicalElement' is a specialization of 'NotationElement'.
+The class 'notation_Image' is a specialization of 'GraphicalElement'.
+The class 'notation_Figure' is a specialization of 'GraphicalElement'.
+The class 'notation_Rectangle' is a specialization of 'Figure'.
+The class 'notation_Line' is a specialization of 'GraphicalElement'.
+The class 'notation_Label' is a specialization of 'GraphicalElement'.
+The class 'notation_TextualElement' is a specialization of 'NotationElement'.
+The class 'notation_Token' is a specialization of 'TextualElement'.
+The class 'notation_Keyword' is a specialization of 'TextualElement'.
+The class 'notation_Value' is a specialization of 'TextualElement'.
+The class 'notation_AttributeValue' is a specialization of 'Value'.
+The class 'notation_ReferenceValue' is a specialization of 'Value'.
+The class 'notation_SyntaxOf' is a specialization of 'NotationElement'.
+The class 'notation_Composite' is a specialization of 'NotationElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'notation_Label' and 'notation_TextualElement'. From 'notation_Label', the role 'notation_Label' has cardinality 0..*, and from 'notation_TextualElement', the role 'notation_TextualElement' has cardinality 0..*.
+An association connects 'notation_EAttribute' and 'notation_Value'. From 'notation_EAttribute', the role 'notation_EAttribute' has cardinality 0..*, and from 'notation_Value', the role 'notation_Value' has cardinality 0..*.
+An association connects 'notation_ReferenceValue' and 'notation_EReference'. From 'notation_ReferenceValue', the role 'notation_ReferenceValue' has cardinality 0..*, and from 'notation_EReference', the role 'notation_EReference' has cardinality 0..*.
+An association connects 'notation_SyntaxOf' and 'notation_EReference'. From 'notation_SyntaxOf', the role 'notation_SyntaxOf' has cardinality 0..*, and from 'notation_EReference', the role 'notation_EReference4' has cardinality 0..*.
+An association connects 'notation_NotationElement' and 'notation_SyntaxOf'. From 'notation_NotationElement', the role 'notation_NotationElement' has cardinality 0..*, and from 'notation_SyntaxOf', the role 'notation_SyntaxOf6' has cardinality 0..*.
+An association connects 'notation_NotationElement' and 'notation_Composite'. From 'notation_NotationElement', the role 'notation_NotationElement8' has cardinality 0..*, and from 'notation_Composite', the role 'notation_Composite' has cardinality 0..*.
+An association connects 'notation_NotationElement' and 'notation_Definition'. From 'notation_NotationElement', the role 'notation_NotationElement10' has cardinality 0..*, and from 'notation_Definition', the role 'notation_Definition' has cardinality 0..*.

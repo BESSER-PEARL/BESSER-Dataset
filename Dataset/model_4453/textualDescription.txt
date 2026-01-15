@@ -1,0 +1,254 @@
+The domain model 'arduinoDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 56 main class(es).
+
+'arduinoDSL_And' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Smoothing' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'arduinoDSL_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Smaller' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'arduinoDSL_Mult' represents an important domain concept.
+It does not declare any attributes.
+
+'NumberExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_NodeDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_ElseStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_NotEquals' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Board' represents an important domain concept.
+It has one attribute: 'b', which is of type str.
+
+'arduinoDSL_VariableDeclaration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'arduinoDSL_GreaterThanEquals' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_NumberLiteral' represents an important domain concept.
+It has the following attributes: 'floatVal', which is of type str; 'intVal', which is of type int.
+
+'arduinoDSL_AndOr' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Rate' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'arduinoDSL_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'arduinoDSL_Mod' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Range' represents an important domain concept.
+It has the following attributes: 'high', which is of type float; 'low', which is of type float.
+
+'arduinoDSL_NumberExpressionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_State' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'BooleanOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_VarRef' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_BooleanOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Comparison' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Rule' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'arduinoDSL_Delta' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_SimpleStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'arduinoDSL_SmallerThanEquals' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_CompareOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'CompareOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_NumberExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_ElseIfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_RuleBody' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_BooleanExpressionBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Equals' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Map' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_ComponentBody' represents an important domain concept.
+It has the following attributes: 'pin', which is of type int; 'type', which is of type str; 'io', which is of type str.
+
+'arduinoDSL_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'arduinoDSL_Cast' represents an important domain concept.
+It has one attribute: 'castType', which is of type str.
+
+'arduinoDSL_VariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'arduinoDSL_BooleanExpressionBlock' is a specialization of 'BooleanExpression'.
+The class 'arduinoDSL_NumberExpressionBlock' is a specialization of 'NumberExpression'.
+The class 'arduinoDSL_Value' is a specialization of 'NumberExpression'.
+The class 'arduinoDSL_Attribute' is a specialization of 'Value'.
+The class 'arduinoDSL_Delta' is a specialization of 'Value'.
+The class 'arduinoDSL_NumberLiteral' is a specialization of 'Value'.
+The class 'arduinoDSL_Assignment' is a specialization of 'SimpleStatement'.
+The class 'arduinoDSL_VariableDeclaration' is a specialization of 'SimpleStatement'.
+The class 'arduinoDSL_VariableReference' is a specialization of 'Value'.
+The class 'arduinoDSL_VariableReference' is a specialization of 'SimpleStatement'.
+The class 'arduinoDSL_AndOr' is a specialization of 'BooleanExpression'.
+The class 'arduinoDSL_Comparison' is a specialization of 'BooleanExpression'.
+The class 'arduinoDSL_And' is a specialization of 'BooleanOperator'.
+The class 'arduinoDSL_Or' is a specialization of 'BooleanOperator'.
+The class 'arduinoDSL_Equals' is a specialization of 'CompareOperator'.
+The class 'arduinoDSL_NotEquals' is a specialization of 'CompareOperator'.
+The class 'arduinoDSL_GreaterThanEquals' is a specialization of 'CompareOperator'.
+The class 'arduinoDSL_Greater' is a specialization of 'CompareOperator'.
+The class 'arduinoDSL_SmallerThanEquals' is a specialization of 'CompareOperator'.
+The class 'arduinoDSL_Smaller' is a specialization of 'CompareOperator'.
+The class 'arduinoDSL_Plus' is a specialization of 'NumberExpression'.
+The class 'arduinoDSL_Minus' is a specialization of 'NumberExpression'.
+The class 'arduinoDSL_Mult' is a specialization of 'NumberExpression'.
+The class 'arduinoDSL_Div' is a specialization of 'NumberExpression'.
+The class 'arduinoDSL_Mod' is a specialization of 'NumberExpression'.
+The class 'arduinoDSL_IfStatement' is a specialization of 'SimpleStatement'.
+The class 'arduinoDSL_ElseIfStatement' is a specialization of 'SimpleStatement'.
+The class 'arduinoDSL_ElseStatement' is a specialization of 'SimpleStatement'.
+The class 'arduinoDSL_VarRef' is a specialization of 'VariableReference'.
+
+Relationships between classes are modeled using associations.
+An association connects 'arduinoDSL_Program' and 'arduinoDSL_EObject'. From 'arduinoDSL_Program', the role 'arduinoDSL_Program' has cardinality 0..*, and from 'arduinoDSL_EObject', the role 'arduinoDSL_EObject' has cardinality 0..*.
+An association connects 'arduinoDSL_BooleanExpression' and 'arduinoDSL_Rule'. From 'arduinoDSL_BooleanExpression', the role 'arduinoDSL_BooleanExpression' has cardinality 0..*, and from 'arduinoDSL_Rule', the role 'arduinoDSL_Rule' has cardinality 0..*.
+An association connects 'arduinoDSL_RuleBody' and 'arduinoDSL_Rule'. From 'arduinoDSL_RuleBody', the role 'arduinoDSL_RuleBody' has cardinality 0..*, and from 'arduinoDSL_Rule', the role 'arduinoDSL_Rule3' has cardinality 0..*.
+An association connects 'arduinoDSL_BooleanExpressionBlock' and 'arduinoDSL_BooleanExpression'. From 'arduinoDSL_BooleanExpressionBlock', the role 'arduinoDSL_BooleanExpressionBlock' has cardinality 0..*, and from 'arduinoDSL_BooleanExpression', the role 'arduinoDSL_BooleanExpression5' has cardinality 0..*.
+An association connects 'arduinoDSL_NumberExpressionBlock' and 'arduinoDSL_NumberExpression'. From 'arduinoDSL_NumberExpressionBlock', the role 'arduinoDSL_NumberExpressionBlock' has cardinality 0..*, and from 'arduinoDSL_NumberExpression', the role 'arduinoDSL_NumberExpression' has cardinality 0..*.
+An association connects 'arduinoDSL_Attribute' and 'arduinoDSL_Node'. From 'arduinoDSL_Attribute', the role 'arduinoDSL_Attribute' has cardinality 0..*, and from 'arduinoDSL_Node', the role 'arduinoDSL_Node' has cardinality 0..*.
+An association connects 'arduinoDSL_Component' and 'arduinoDSL_Attribute'. From 'arduinoDSL_Component', the role 'arduinoDSL_Component' has cardinality 0..*, and from 'arduinoDSL_Attribute', the role 'arduinoDSL_Attribute9' has cardinality 0..*.
+An association connects 'arduinoDSL_Attribute' and 'arduinoDSL_Delta'. From 'arduinoDSL_Attribute', the role 'arduinoDSL_Attribute11' has cardinality 0..*, and from 'arduinoDSL_Delta', the role 'arduinoDSL_Delta' has cardinality 0..*.
+An association connects 'arduinoDSL_RuleBody' and 'arduinoDSL_SimpleStatement'. From 'arduinoDSL_RuleBody', the role 'arduinoDSL_RuleBody13' has cardinality 0..*, and from 'arduinoDSL_SimpleStatement', the role 'arduinoDSL_SimpleStatement' has cardinality 0..*.
+An association connects 'arduinoDSL_Attribute' and 'arduinoDSL_Assignment'. From 'arduinoDSL_Attribute', the role 'arduinoDSL_Attribute15' has cardinality 0..*, and from 'arduinoDSL_Assignment', the role 'arduinoDSL_Assignment' has cardinality 0..*.
+An association connects 'arduinoDSL_EObject' and 'arduinoDSL_Assignment'. From 'arduinoDSL_EObject', the role 'arduinoDSL_EObject18' has cardinality 0..*, and from 'arduinoDSL_Assignment', the role 'arduinoDSL_Assignment17' has cardinality 0..*.
+An association connects 'arduinoDSL_VariableDeclaration' and 'arduinoDSL_Cast'. From 'arduinoDSL_VariableDeclaration', the role 'arduinoDSL_VariableDeclaration' has cardinality 0..*, and from 'arduinoDSL_Cast', the role 'arduinoDSL_Cast' has cardinality 0..*.
+An association connects 'arduinoDSL_EObject' and 'arduinoDSL_VariableDeclaration'. From 'arduinoDSL_EObject', the role 'arduinoDSL_EObject22' has cardinality 0..*, and from 'arduinoDSL_VariableDeclaration', the role 'arduinoDSL_VariableDeclaration21' has cardinality 0..*.
+An association connects 'arduinoDSL_NodeDefinition' and 'arduinoDSL_Board'. From 'arduinoDSL_NodeDefinition', the role 'arduinoDSL_NodeDefinition' has cardinality 0..*, and from 'arduinoDSL_Board', the role 'arduinoDSL_Board' has cardinality 0..*.
+An association connects 'arduinoDSL_NodeDefinition' and 'arduinoDSL_Node'. From 'arduinoDSL_NodeDefinition', the role 'arduinoDSL_NodeDefinition25' has cardinality 0..*, and from 'arduinoDSL_Node', the role 'arduinoDSL_Node26' has cardinality 0..*.
+An association connects 'arduinoDSL_Node' and 'arduinoDSL_Component'. From 'arduinoDSL_Node', the role 'arduinoDSL_Node28' has cardinality 0..*, and from 'arduinoDSL_Component', the role 'arduinoDSL_Component29' has cardinality 0..*.
+An association connects 'arduinoDSL_ComponentBody' and 'arduinoDSL_Component'. From 'arduinoDSL_ComponentBody', the role 'arduinoDSL_ComponentBody' has cardinality 0..*, and from 'arduinoDSL_Component', the role 'arduinoDSL_Component31' has cardinality 0..*.
+An association connects 'arduinoDSL_ComponentBody' and 'arduinoDSL_Rate'. From 'arduinoDSL_ComponentBody', the role 'arduinoDSL_ComponentBody33' has cardinality 0..*, and from 'arduinoDSL_Rate', the role 'arduinoDSL_Rate' has cardinality 0..*.
+An association connects 'arduinoDSL_ComponentBody' and 'arduinoDSL_Map'. From 'arduinoDSL_ComponentBody', the role 'arduinoDSL_ComponentBody35' has cardinality 0..*, and from 'arduinoDSL_Map', the role 'arduinoDSL_Map' has cardinality 0..*.
+An association connects 'arduinoDSL_Smoothing' and 'arduinoDSL_ComponentBody'. From 'arduinoDSL_Smoothing', the role 'arduinoDSL_Smoothing' has cardinality 0..*, and from 'arduinoDSL_ComponentBody', the role 'arduinoDSL_ComponentBody37' has cardinality 0..*.
+An association connects 'arduinoDSL_Range' and 'arduinoDSL_Map'. From 'arduinoDSL_Range', the role 'arduinoDSL_Range' has cardinality 0..*, and from 'arduinoDSL_Map', the role 'arduinoDSL_Map39' has cardinality 0..*.
+An association connects 'arduinoDSL_Range' and 'arduinoDSL_Map'. From 'arduinoDSL_Range', the role 'arduinoDSL_Range42' has cardinality 0..*, and from 'arduinoDSL_Map', the role 'arduinoDSL_Map41' has cardinality 0..*.
+An association connects 'arduinoDSL_BooleanExpression' and 'arduinoDSL_AndOr'. From 'arduinoDSL_BooleanExpression', the role 'arduinoDSL_BooleanExpression44' has cardinality 0..*, and from 'arduinoDSL_AndOr', the role 'arduinoDSL_AndOr' has cardinality 0..*.
+An association connects 'arduinoDSL_AndOr' and 'arduinoDSL_BooleanOperator'. From 'arduinoDSL_AndOr', the role 'arduinoDSL_AndOr46' has cardinality 0..*, and from 'arduinoDSL_BooleanOperator', the role 'arduinoDSL_BooleanOperator' has cardinality 0..*.
+An association connects 'arduinoDSL_BooleanExpression' and 'arduinoDSL_AndOr'. From 'arduinoDSL_BooleanExpression', the role 'arduinoDSL_BooleanExpression49' has cardinality 0..*, and from 'arduinoDSL_AndOr', the role 'arduinoDSL_AndOr48' has cardinality 0..*.
+An association connects 'arduinoDSL_NumberExpression' and 'arduinoDSL_Comparison'. From 'arduinoDSL_NumberExpression', the role 'arduinoDSL_NumberExpression51' has cardinality 0..*, and from 'arduinoDSL_Comparison', the role 'arduinoDSL_Comparison' has cardinality 0..*.
+An association connects 'arduinoDSL_Comparison' and 'arduinoDSL_CompareOperator'. From 'arduinoDSL_Comparison', the role 'arduinoDSL_Comparison53' has cardinality 0..*, and from 'arduinoDSL_CompareOperator', the role 'arduinoDSL_CompareOperator' has cardinality 0..*.
+An association connects 'arduinoDSL_NumberExpression' and 'arduinoDSL_Comparison'. From 'arduinoDSL_NumberExpression', the role 'arduinoDSL_NumberExpression56' has cardinality 0..*, and from 'arduinoDSL_Comparison', the role 'arduinoDSL_Comparison55' has cardinality 0..*.
+An association connects 'arduinoDSL_Plus' and 'arduinoDSL_NumberExpression'. From 'arduinoDSL_Plus', the role 'arduinoDSL_Plus' has cardinality 0..*, and from 'arduinoDSL_NumberExpression', the role 'arduinoDSL_NumberExpression58' has cardinality 0..*.
+An association connects 'arduinoDSL_NumberExpression' and 'arduinoDSL_Plus'. From 'arduinoDSL_NumberExpression', the role 'arduinoDSL_NumberExpression61' has cardinality 0..*, and from 'arduinoDSL_Plus', the role 'arduinoDSL_Plus60' has cardinality 0..*.
+An association connects 'arduinoDSL_Minus' and 'arduinoDSL_NumberExpression'. From 'arduinoDSL_Minus', the role 'arduinoDSL_Minus' has cardinality 0..*, and from 'arduinoDSL_NumberExpression', the role 'arduinoDSL_NumberExpression63' has cardinality 0..*.
+An association connects 'arduinoDSL_Minus' and 'arduinoDSL_NumberExpression'. From 'arduinoDSL_Minus', the role 'arduinoDSL_Minus65' has cardinality 0..*, and from 'arduinoDSL_NumberExpression', the role 'arduinoDSL_NumberExpression66' has cardinality 0..*.
+An association connects 'arduinoDSL_Mult' and 'arduinoDSL_NumberExpression'. From 'arduinoDSL_Mult', the role 'arduinoDSL_Mult' has cardinality 0..*, and from 'arduinoDSL_NumberExpression', the role 'arduinoDSL_NumberExpression68' has cardinality 0..*.
+An association connects 'arduinoDSL_Mult' and 'arduinoDSL_NumberExpression'. From 'arduinoDSL_Mult', the role 'arduinoDSL_Mult70' has cardinality 0..*, and from 'arduinoDSL_NumberExpression', the role 'arduinoDSL_NumberExpression71' has cardinality 0..*.
+An association connects 'arduinoDSL_Div' and 'arduinoDSL_NumberExpression'. From 'arduinoDSL_Div', the role 'arduinoDSL_Div' has cardinality 0..*, and from 'arduinoDSL_NumberExpression', the role 'arduinoDSL_NumberExpression73' has cardinality 0..*.
+An association connects 'arduinoDSL_NumberExpression' and 'arduinoDSL_Div'. From 'arduinoDSL_NumberExpression', the role 'arduinoDSL_NumberExpression76' has cardinality 0..*, and from 'arduinoDSL_Div', the role 'arduinoDSL_Div75' has cardinality 0..*.
+An association connects 'arduinoDSL_NumberExpression' and 'arduinoDSL_Mod'. From 'arduinoDSL_NumberExpression', the role 'arduinoDSL_NumberExpression78' has cardinality 0..*, and from 'arduinoDSL_Mod', the role 'arduinoDSL_Mod' has cardinality 0..*.
+An association connects 'arduinoDSL_NumberExpression' and 'arduinoDSL_Mod'. From 'arduinoDSL_NumberExpression', the role 'arduinoDSL_NumberExpression81' has cardinality 0..*, and from 'arduinoDSL_Mod', the role 'arduinoDSL_Mod80' has cardinality 0..*.
+An association connects 'arduinoDSL_BooleanExpression' and 'arduinoDSL_IfStatement'. From 'arduinoDSL_BooleanExpression', the role 'arduinoDSL_BooleanExpression83' has cardinality 0..*, and from 'arduinoDSL_IfStatement', the role 'arduinoDSL_IfStatement' has cardinality 0..*.
+An association connects 'arduinoDSL_SimpleStatement' and 'arduinoDSL_IfStatement'. From 'arduinoDSL_SimpleStatement', the role 'arduinoDSL_SimpleStatement86' has cardinality 0..*, and from 'arduinoDSL_IfStatement', the role 'arduinoDSL_IfStatement85' has cardinality 0..*.
+An association connects 'arduinoDSL_SimpleStatement' and 'arduinoDSL_IfStatement'. From 'arduinoDSL_SimpleStatement', the role 'arduinoDSL_SimpleStatement89' has cardinality 0..*, and from 'arduinoDSL_IfStatement', the role 'arduinoDSL_IfStatement88' has cardinality 0..*.
+An association connects 'arduinoDSL_SimpleStatement' and 'arduinoDSL_IfStatement'. From 'arduinoDSL_SimpleStatement', the role 'arduinoDSL_SimpleStatement92' has cardinality 0..*, and from 'arduinoDSL_IfStatement', the role 'arduinoDSL_IfStatement91' has cardinality 0..*.
+An association connects 'arduinoDSL_ElseIfStatement' and 'arduinoDSL_BooleanExpression'. From 'arduinoDSL_ElseIfStatement', the role 'arduinoDSL_ElseIfStatement' has cardinality 0..*, and from 'arduinoDSL_BooleanExpression', the role 'arduinoDSL_BooleanExpression94' has cardinality 0..*.
+An association connects 'arduinoDSL_ElseIfStatement' and 'arduinoDSL_SimpleStatement'. From 'arduinoDSL_ElseIfStatement', the role 'arduinoDSL_ElseIfStatement96' has cardinality 0..*, and from 'arduinoDSL_SimpleStatement', the role 'arduinoDSL_SimpleStatement97' has cardinality 0..*.
+An association connects 'arduinoDSL_SimpleStatement' and 'arduinoDSL_ElseIfStatement'. From 'arduinoDSL_SimpleStatement', the role 'arduinoDSL_SimpleStatement100' has cardinality 0..*, and from 'arduinoDSL_ElseIfStatement', the role 'arduinoDSL_ElseIfStatement99' has cardinality 0..*.
+An association connects 'arduinoDSL_ElseIfStatement' and 'arduinoDSL_SimpleStatement'. From 'arduinoDSL_ElseIfStatement', the role 'arduinoDSL_ElseIfStatement102' has cardinality 0..*, and from 'arduinoDSL_SimpleStatement', the role 'arduinoDSL_SimpleStatement103' has cardinality 0..*.
+An association connects 'arduinoDSL_SimpleStatement' and 'arduinoDSL_ElseStatement'. From 'arduinoDSL_SimpleStatement', the role 'arduinoDSL_SimpleStatement105' has cardinality 0..*, and from 'arduinoDSL_ElseStatement', the role 'arduinoDSL_ElseStatement' has cardinality 0..*.
+An association connects 'arduinoDSL_VariableDeclaration' and 'arduinoDSL_VarRef'. From 'arduinoDSL_VariableDeclaration', the role 'arduinoDSL_VariableDeclaration107' has cardinality 0..*, and from 'arduinoDSL_VarRef', the role 'arduinoDSL_VarRef' has cardinality 0..*.
+An association connects 'arduinoDSL_VarRef' and 'arduinoDSL_Cast'. From 'arduinoDSL_VarRef', the role 'arduinoDSL_VarRef109' has cardinality 0..*, and from 'arduinoDSL_Cast', the role 'arduinoDSL_Cast110' has cardinality 0..*.
+An association connects 'arduinoDSL_VarRef' and 'arduinoDSL_EObject'. From 'arduinoDSL_VarRef', the role 'arduinoDSL_VarRef112' has cardinality 0..*, and from 'arduinoDSL_EObject', the role 'arduinoDSL_EObject113' has cardinality 0..*.

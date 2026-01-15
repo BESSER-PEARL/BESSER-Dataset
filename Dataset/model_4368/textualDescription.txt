@@ -1,0 +1,165 @@
+The domain model 'klangexpr' describes the core structural elements and their relationships within the system.
+
+The model defines 38 main class(es).
+
+'klangexpr_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_If' represents an important domain concept.
+It does not declare any attributes.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'klangexpr_GreaterThanOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_WhileLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_FunctionCall' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'klangexpr_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_Sleep' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_ForeverLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_UnaryMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_And' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_DoubleLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'klangexpr_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_ToInt' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_VariableReference' represents an important domain concept.
+It has one attribute: 'variableName', which is of type str.
+
+'klangexpr_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'klangexpr_Yield' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_ToDouble' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_LessThan' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_LessThanOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'klangexpr_VariableAssignment' represents an important domain concept.
+It has one attribute: 'variableName', which is of type str.
+
+'UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_GreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_SendMessage' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'klangexpr_Divide' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'klangexpr_Multiply' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'klangexpr_WhileLoop' is a specialization of 'Statement'.
+The class 'klangexpr_If' is a specialization of 'Statement'.
+The class 'klangexpr_ForeverLoop' is a specialization of 'Statement'.
+The class 'klangexpr_Yield' is a specialization of 'Statement'.
+The class 'klangexpr_VariableAssignment' is a specialization of 'Statement'.
+The class 'klangexpr_Or' is a specialization of 'BinaryOperator'.
+The class 'klangexpr_And' is a specialization of 'BinaryOperator'.
+The class 'klangexpr_Plus' is a specialization of 'BinaryOperator'.
+The class 'klangexpr_Minus' is a specialization of 'BinaryOperator'.
+The class 'klangexpr_Multiply' is a specialization of 'BinaryOperator'.
+The class 'klangexpr_Divide' is a specialization of 'BinaryOperator'.
+The class 'klangexpr_LessThan' is a specialization of 'BinaryOperator'.
+The class 'klangexpr_Equal' is a specialization of 'BinaryOperator'.
+The class 'klangexpr_GreaterThan' is a specialization of 'BinaryOperator'.
+The class 'klangexpr_Not' is a specialization of 'UnaryOperator'.
+The class 'klangexpr_BooleanLiteral' is a specialization of 'Expression'.
+The class 'klangexpr_DoubleLiteral' is a specialization of 'Expression'.
+The class 'klangexpr_StringLiteral' is a specialization of 'Expression'.
+The class 'klangexpr_VariableReference' is a specialization of 'Expression'.
+The class 'klangexpr_UnaryOperator' is a specialization of 'Operator'.
+The class 'klangexpr_BinaryOperator' is a specialization of 'Operator'.
+The class 'klangexpr_FunctionCall' is a specialization of 'Expression'.
+The class 'klangexpr_FunctionCall' is a specialization of 'Statement'.
+The class 'klangexpr_IntegerLiteral' is a specialization of 'Expression'.
+The class 'klangexpr_UnaryMinus' is a specialization of 'UnaryOperator'.
+The class 'klangexpr_ToDouble' is a specialization of 'UnaryOperator'.
+The class 'klangexpr_ToInt' is a specialization of 'UnaryOperator'.
+The class 'klangexpr_Operator' is a specialization of 'Expression'.
+The class 'klangexpr_Sleep' is a specialization of 'Statement'.
+The class 'klangexpr_SendMessage' is a specialization of 'Statement'.
+The class 'klangexpr_LessThanOrEqual' is a specialization of 'BinaryOperator'.
+The class 'klangexpr_GreaterThanOrEqual' is a specialization of 'BinaryOperator'.
+
+Relationships between classes are modeled using associations.
+An association connects 'klangexpr_WhileLoop' and 'klangexpr_Expression'. From 'klangexpr_WhileLoop', the role 'klangexpr_WhileLoop' has cardinality 0..*, and from 'klangexpr_Expression', the role 'klangexpr_Expression' has cardinality 0..*.
+An association connects 'klangexpr_Statement' and 'klangexpr_WhileLoop'. From 'klangexpr_Statement', the role 'klangexpr_Statement' has cardinality 0..*, and from 'klangexpr_WhileLoop', the role 'klangexpr_WhileLoop2' has cardinality 0..*.
+An association connects 'klangexpr_If' and 'klangexpr_Expression'. From 'klangexpr_If', the role 'klangexpr_If' has cardinality 0..*, and from 'klangexpr_Expression', the role 'klangexpr_Expression4' has cardinality 0..*.
+An association connects 'klangexpr_Statement' and 'klangexpr_If'. From 'klangexpr_Statement', the role 'klangexpr_Statement7' has cardinality 0..*, and from 'klangexpr_If', the role 'klangexpr_If6' has cardinality 0..*.
+An association connects 'klangexpr_Statement' and 'klangexpr_If'. From 'klangexpr_Statement', the role 'klangexpr_Statement10' has cardinality 0..*, and from 'klangexpr_If', the role 'klangexpr_If9' has cardinality 0..*.
+An association connects 'klangexpr_ForeverLoop' and 'klangexpr_Statement'. From 'klangexpr_ForeverLoop', the role 'klangexpr_ForeverLoop' has cardinality 0..*, and from 'klangexpr_Statement', the role 'klangexpr_Statement12' has cardinality 0..*.
+An association connects 'klangexpr_Expression' and 'klangexpr_VariableAssignment'. From 'klangexpr_Expression', the role 'klangexpr_Expression14' has cardinality 0..*, and from 'klangexpr_VariableAssignment', the role 'klangexpr_VariableAssignment' has cardinality 0..*.
+An association connects 'klangexpr_Expression' and 'klangexpr_UnaryOperator'. From 'klangexpr_Expression', the role 'klangexpr_Expression16' has cardinality 0..*, and from 'klangexpr_UnaryOperator', the role 'klangexpr_UnaryOperator' has cardinality 0..*.
+An association connects 'klangexpr_Expression' and 'klangexpr_BinaryOperator'. From 'klangexpr_Expression', the role 'klangexpr_Expression18' has cardinality 0..*, and from 'klangexpr_BinaryOperator', the role 'klangexpr_BinaryOperator' has cardinality 0..*.
+An association connects 'klangexpr_Expression' and 'klangexpr_BinaryOperator'. From 'klangexpr_Expression', the role 'klangexpr_Expression21' has cardinality 0..*, and from 'klangexpr_BinaryOperator', the role 'klangexpr_BinaryOperator20' has cardinality 0..*.
+An association connects 'klangexpr_Expression' and 'klangexpr_FunctionCall'. From 'klangexpr_Expression', the role 'klangexpr_Expression23' has cardinality 0..*, and from 'klangexpr_FunctionCall', the role 'klangexpr_FunctionCall' has cardinality 0..*.
+An association connects 'klangexpr_Sleep' and 'klangexpr_Expression'. From 'klangexpr_Sleep', the role 'klangexpr_Sleep' has cardinality 0..*, and from 'klangexpr_Expression', the role 'klangexpr_Expression25' has cardinality 0..*.

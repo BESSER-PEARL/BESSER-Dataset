@@ -1,0 +1,137 @@
+The domain model 'classmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 29 main class(es).
+
+'classmodel_Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'classmodel_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'classmodel_Aggregation' represents an important domain concept.
+It has the following attributes: 'headVisibility', which is of type str; 'tailVisibility', which is of type str; 'headLabel', which is of type str; 'headNavigable', which is of type bool; 'tailLabel', which is of type str; 'tailNavigable', which is of type bool.
+
+'classmodel_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'classmodel_Composition' represents an important domain concept.
+It has the following attributes: 'headNavigable', which is of type bool; 'tailLabel', which is of type str; 'headVisibility', which is of type str; 'tailVisibility', which is of type str; 'headLabel', which is of type str; 'tailNavigable', which is of type bool.
+
+'classmodel_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'classmodel_Relationship' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'classmodel_Package' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'classmodel_Classifier' represents an important domain concept.
+It has one attribute: 'constraint', which is of type str.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'classmodel_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'classmodel_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'classmodel_Type' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'classmodel_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'classmodel_Multiplicity' represents an important domain concept.
+It has the following attributes: 'lower', which is of type str; 'upper', which is of type str.
+
+'classmodel_Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'classmodel_Attribute' represents an important domain concept.
+It has the following attributes: 'implicit', which is of type str; 'static', which is of type bool.
+
+'classmodel_Association' represents an important domain concept.
+It has the following attributes: 'tailVisibility', which is of type str; 'tailNavigable', which is of type bool; 'headNavigable', which is of type bool; 'headVisibility', which is of type str; 'headLabel', which is of type str; 'tailLabel', which is of type str.
+
+'classmodel_Array' represents an important domain concept.
+It does not declare any attributes.
+
+'classmodel_Import' represents an important domain concept.
+It has one attribute: 'importURI', which is of type str.
+
+'classmodel_Datatype' represents an important domain concept.
+It does not declare any attributes.
+
+'classmodel_Feature' represents an important domain concept.
+It has the following attributes: 'constraint', which is of type str; 'visibility', which is of type str; 'name', which is of type str; 'value', which is of type str.
+
+'classmodel_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'classmodel_Parameter' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'implicit', which is of type str.
+
+'classmodel_Operation' represents an important domain concept.
+It has the following attributes: 'static', which is of type bool; 'body', which is of type str.
+
+'classmodel_Enumeration' represents an important domain concept.
+It has one attribute: 'constraint', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Visibility' defines the following possible values: 'PUBLIC', 'PACKAGE_PRIVATE', 'PRIVATE', 'PROTECTED'.
+
+The model also captures inheritance relationships between classes.
+The class 'classmodel_Entity' is a specialization of 'Element'.
+The class 'classmodel_Datatype' is a specialization of 'Entity'.
+The class 'classmodel_Package' is a specialization of 'Element'.
+The class 'classmodel_Classifier' is a specialization of 'Entity'.
+The class 'classmodel_Enumeration' is a specialization of 'Entity'.
+The class 'classmodel_Relationship' is a specialization of 'Element'.
+The class 'classmodel_Association' is a specialization of 'Relationship'.
+The class 'classmodel_Aggregation' is a specialization of 'Relationship'.
+The class 'classmodel_Composition' is a specialization of 'Relationship'.
+The class 'classmodel_Generalization' is a specialization of 'Relationship'.
+The class 'classmodel_Dependency' is a specialization of 'Relationship'.
+The class 'classmodel_Realization' is a specialization of 'Relationship'.
+The class 'classmodel_Constant' is a specialization of 'Feature'.
+The class 'classmodel_Operation' is a specialization of 'Feature'.
+The class 'classmodel_Attribute' is a specialization of 'Feature'.
+
+Relationships between classes are modeled using associations.
+An association connects 'classmodel_Model' and 'classmodel_Import'. From 'classmodel_Model', the role 'classmodel_Model' has cardinality 0..*, and from 'classmodel_Import', the role 'classmodel_Import' has cardinality 0..*.
+An association connects 'classmodel_Element' and 'classmodel_Model'. From 'classmodel_Element', the role 'classmodel_Element' has cardinality 0..*, and from 'classmodel_Model', the role 'classmodel_Model2' has cardinality 0..*.
+An association connects 'classmodel_Element' and 'classmodel_Annotation'. From 'classmodel_Element', the role 'classmodel_Element4' has cardinality 0..*, and from 'classmodel_Annotation', the role 'classmodel_Annotation' has cardinality 0..*.
+An association connects 'classmodel_Element' and 'classmodel_Package'. From 'classmodel_Element', the role 'classmodel_Element6' has cardinality 0..*, and from 'classmodel_Package', the role 'classmodel_Package' has cardinality 0..*.
+An association connects 'classmodel_Classifier' and 'classmodel_Type'. From 'classmodel_Classifier', the role 'classmodel_Classifier' has cardinality 0..*, and from 'classmodel_Type', the role 'classmodel_Type' has cardinality 0..*.
+An association connects 'classmodel_Classifier' and 'classmodel_Type'. From 'classmodel_Classifier', the role 'classmodel_Classifier9' has cardinality 0..*, and from 'classmodel_Type', the role 'classmodel_Type10' has cardinality 0..*.
+An association connects 'classmodel_Classifier' and 'classmodel_Feature'. From 'classmodel_Classifier', the role 'classmodel_Classifier12' has cardinality 0..*, and from 'classmodel_Feature', the role 'classmodel_Feature' has cardinality 0..*.
+An association connects 'classmodel_Type' and 'classmodel_Entity'. From 'classmodel_Type', the role 'classmodel_Type14' has cardinality 0..*, and from 'classmodel_Entity', the role 'classmodel_Entity' has cardinality 0..*.
+An association connects 'classmodel_Enumeration' and 'classmodel_Type'. From 'classmodel_Enumeration', the role 'classmodel_Enumeration' has cardinality 0..*, and from 'classmodel_Type', the role 'classmodel_Type16' has cardinality 0..*.
+An association connects 'classmodel_Enumeration' and 'classmodel_Feature'. From 'classmodel_Enumeration', the role 'classmodel_Enumeration18' has cardinality 0..*, and from 'classmodel_Feature', the role 'classmodel_Feature19' has cardinality 0..*.
+An association connects 'classmodel_Entity' and 'classmodel_Relationship'. From 'classmodel_Entity', the role 'classmodel_Entity21' has cardinality 0..*, and from 'classmodel_Relationship', the role 'classmodel_Relationship' has cardinality 0..*.
+An association connects 'classmodel_Relationship' and 'classmodel_Entity'. From 'classmodel_Relationship', the role 'classmodel_Relationship23' has cardinality 0..*, and from 'classmodel_Entity', the role 'classmodel_Entity24' has cardinality 0..*.
+An association connects 'classmodel_Association' and 'classmodel_Multiplicity'. From 'classmodel_Association', the role 'classmodel_Association' has cardinality 0..*, and from 'classmodel_Multiplicity', the role 'classmodel_Multiplicity' has cardinality 0..*.
+An association connects 'classmodel_Multiplicity' and 'classmodel_Association'. From 'classmodel_Multiplicity', the role 'classmodel_Multiplicity28' has cardinality 0..*, and from 'classmodel_Association', the role 'classmodel_Association27' has cardinality 0..*.
+An association connects 'classmodel_Multiplicity' and 'classmodel_Aggregation'. From 'classmodel_Multiplicity', the role 'classmodel_Multiplicity30' has cardinality 0..*, and from 'classmodel_Aggregation', the role 'classmodel_Aggregation' has cardinality 0..*.
+An association connects 'classmodel_Aggregation' and 'classmodel_Multiplicity'. From 'classmodel_Aggregation', the role 'classmodel_Aggregation32' has cardinality 0..*, and from 'classmodel_Multiplicity', the role 'classmodel_Multiplicity33' has cardinality 0..*.
+An association connects 'classmodel_Composition' and 'classmodel_Multiplicity'. From 'classmodel_Composition', the role 'classmodel_Composition' has cardinality 0..*, and from 'classmodel_Multiplicity', the role 'classmodel_Multiplicity35' has cardinality 0..*.
+An association connects 'classmodel_Composition' and 'classmodel_Multiplicity'. From 'classmodel_Composition', the role 'classmodel_Composition37' has cardinality 0..*, and from 'classmodel_Multiplicity', the role 'classmodel_Multiplicity38' has cardinality 0..*.
+An association connects 'classmodel_Parameter' and 'classmodel_Operation'. From 'classmodel_Parameter', the role 'classmodel_Parameter' has cardinality 0..*, and from 'classmodel_Operation', the role 'classmodel_Operation' has cardinality 0..*.
+An association connects 'classmodel_Reference' and 'classmodel_Operation'. From 'classmodel_Reference', the role 'classmodel_Reference' has cardinality 0..*, and from 'classmodel_Operation', the role 'classmodel_Operation41' has cardinality 0..*.
+An association connects 'classmodel_Reference' and 'classmodel_Parameter'. From 'classmodel_Reference', the role 'classmodel_Reference44' has cardinality 0..*, and from 'classmodel_Parameter', the role 'classmodel_Parameter43' has cardinality 0..*.
+An association connects 'classmodel_Reference' and 'classmodel_Attribute'. From 'classmodel_Reference', the role 'classmodel_Reference46' has cardinality 0..*, and from 'classmodel_Attribute', the role 'classmodel_Attribute' has cardinality 0..*.
+An association connects 'classmodel_Entity' and 'classmodel_Reference'. From 'classmodel_Entity', the role 'classmodel_Entity49' has cardinality 0..*, and from 'classmodel_Reference', the role 'classmodel_Reference48' has cardinality 0..*.
+An association connects 'classmodel_Reference' and 'classmodel_Array'. From 'classmodel_Reference', the role 'classmodel_Reference51' has cardinality 0..*, and from 'classmodel_Array', the role 'classmodel_Array' has cardinality 0..*.
+An association connects 'classmodel_Multiplicity' and 'classmodel_Array'. From 'classmodel_Multiplicity', the role 'classmodel_Multiplicity54' has cardinality 0..*, and from 'classmodel_Array', the role 'classmodel_Array53' has cardinality 0..*.

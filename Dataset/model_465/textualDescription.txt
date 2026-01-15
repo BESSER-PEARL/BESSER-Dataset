@@ -1,0 +1,948 @@
+The domain model 'fuml' describes the core structural elements and their relationships within the system.
+
+The model defines 214 main class(es).
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_LinkEndDestructionData' represents an important domain concept.
+It has one attribute: 'destroyDuplicates', which is of type bool.
+
+'fuml_IntermediateActivities_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteStructuredActivities_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_BasicBehaviors_Behavior' represents an important domain concept.
+It has one attribute: 'reentrant', which is of type bool.
+
+'MessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_BooleanValue' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'fuml_Kernel_BehavioralFeature' represents an important domain concept.
+It has the following attributes: 'concurrency', which is of type str; 'abstract', which is of type bool.
+
+'fuml_BasicActions_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_ClearAssociationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_Comment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'fuml_IntermediateActivities_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_ReadSelfAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Communications_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_CompleteActions_StartClassifierBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Communications_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_Operation' represents an important domain concept.
+It has the following attributes: 'ordered', which is of type bool; 'upper', which is of type int; 'query', which is of type bool; 'lower', which is of type int; 'unique', which is of type bool.
+
+'fuml_CompleteStructuredActivities_ConditionalNode' represents an important domain concept.
+It has the following attributes: 'determinate', which is of type bool; 'assured', which is of type bool.
+
+'fuml_IntermediateActions_TestIdentityAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'upper', which is of type int; 'unique', which is of type bool; 'ordered', which is of type bool; 'lower', which is of type int.
+
+'fuml_IntermediateActivities_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_BasicBehaviors_OpaqueBehavior' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'body', which is of type str.
+
+'fuml_BasicActions_CallBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_LiteralUnlimitedNatural' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'fuml_Kernel_LiteralInteger' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'fuml_CompleteStructuredActivities_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_StructuredValue' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActivities_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_ElementImport' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_ExtraStructuredActivities_ExpansionRegion' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'fuml_IntermediateActivities_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_ExtraStructuredActivities_ExpansionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_LiteralString' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Kernel_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_CompoundValue' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Communications_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_BasicBehaviors_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_CompleteActions_AcceptEventAction' represents an important domain concept.
+It has one attribute: 'unmarshall', which is of type bool.
+
+'fuml_Kernel_Property' represents an important domain concept.
+It has the following attributes: 'composite', which is of type bool; 'derived', which is of type bool; 'aggregation', which is of type str; 'derivedUnion', which is of type bool.
+
+'fuml_BasicBehaviors_FunctionBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'OpaqueBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActivities_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_BasicActions_InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_CompleteStructuredActivities_Clause' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_CompleteStructuredActivities_LoopNode' represents an important domain concept.
+It has one attribute: 'testedFirst', which is of type bool.
+
+'Kernel_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_WriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_CompleteActions_ReadExtentAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_PackageImport' represents an important domain concept.
+It does not declare any attributes.
+
+'InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_Association' represents an important domain concept.
+It has one attribute: 'derived', which is of type bool.
+
+'fuml_Kernel_StringValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'fuml_IntermediateActivities_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Communications_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_BasicActions_Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_FeatureValue' represents an important domain concept.
+It has one attribute: 'position', which is of type int.
+
+'PrimitiveValue' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_InstanceValue' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtraStructuredActivities_ExpansionRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'Communications_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'Communications_Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Communications_SignalEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_CreateObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_CompleteActions_ReadIsClassifiedObjectAction' represents an important domain concept.
+It has one attribute: 'direct', which is of type bool.
+
+'fuml_IntermediateActions_LinkEndCreationData' represents an important domain concept.
+It has one attribute: 'replaceAll', which is of type bool.
+
+'fuml_Kernel_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicBehaviors_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Communications_MessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActivities_Activity' represents an important domain concept.
+It has one attribute: 'readOnly', which is of type bool.
+
+'IntermediateActions_LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_UnlimitedNaturalValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'fuml_IntermediateActivities_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Communications_Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicActions_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_LociL1_Locus' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_Generalization' represents an important domain concept.
+It has one attribute: 'substitutable', which is of type bool.
+
+'WriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_LiteralNull' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_CompleteActions_ReduceAction' represents an important domain concept.
+It has one attribute: 'ordered', which is of type bool.
+
+'fuml_BasicActions_CallAction' represents an important domain concept.
+It has one attribute: 'synchronous', which is of type bool.
+
+'Kernel_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_ClearStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_IntegerValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActivities_JoinNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_CreateLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_FeatureValue' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_Feature' represents an important domain concept.
+It has one attribute: 'static', which is of type bool.
+
+'fuml_IntermediateActions_ReadStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_RemoveStructuralFeatureValueAction' represents an important domain concept.
+It has one attribute: 'removeDuplicates', which is of type bool.
+
+'Kernel_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_LiteralBoolean' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'fuml_BasicActions_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_RedefinableElement' represents an important domain concept.
+It has one attribute: 'leaf', which is of type bool.
+
+'fuml_IntermediateActivities_ObjectFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_LinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_NamedElement' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'qualifiedName', which is of type str; 'name', which is of type str.
+
+'Kernel_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActivities_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_AddStructuralFeatureValueAction' represents an important domain concept.
+It has one attribute: 'replaceAll', which is of type bool.
+
+'fuml_Kernel_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_ReadLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_ExtensionalValue' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_DestroyObjectAction' represents an important domain concept.
+It has the following attributes: 'destroyOwnedObjects', which is of type bool; 'destroyLinks', which is of type bool.
+
+'ExtensionalValue' represents an important domain concept.
+It does not declare any attributes.
+
+'CompoundValue' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_ObjectFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtraStructuredActivities_ExpansionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_PackageImport' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'fuml_Kernel_ElementImport' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'alias', which is of type str.
+
+'fuml_LociL1_SemanticVisitor' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_CompleteActions_ReclassifyObjectAction' represents an important domain concept.
+It has one attribute: 'replaceAll', which is of type bool.
+
+'fuml_Kernel_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_CompleteStructuredActivities_StructuredActivityNode' represents an important domain concept.
+It has one attribute: 'mustIsolate', which is of type bool.
+
+'fuml_BasicActions_CallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_PrimitiveValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_Class' represents an important domain concept.
+It has one attribute: 'active', which is of type bool.
+
+'IntermediateActivities_ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_Parameter' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'fuml_IntermediateActivities_ActivityParameterNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_BasicActions_SendSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicBehaviors_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteStructuredActivities_StructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicActions_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_ExtensionalValue' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_DataValue' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Communications_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'SemanticVisitor' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_DestroyLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActivities_ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActions_ValueSpecificationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_Classifier' represents an important domain concept.
+It has the following attributes: 'finalSpecialization', which is of type bool; 'abstract', which is of type bool.
+
+'fuml_Kernel_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_IntermediateActivities_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_CompleteActions_StartObjectBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_Kernel_StructuralFeature' represents an important domain concept.
+It has one attribute: 'readOnly', which is of type bool.
+
+'fuml_Kernel_EnumerationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Kernel_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteStructuredActivities_Clause' represents an important domain concept.
+It does not declare any attributes.
+
+'fuml_BasicActions_Action' represents an important domain concept.
+It has one attribute: 'locallyReentrant', which is of type bool.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ParameterDirectionKind' defines the following possible values: 'in', 'inout', 'out', 'return'.
+The enumeration 'AggregationKind' defines the following possible values: 'none', 'composite', 'shared'.
+The enumeration 'VisibilityKind' defines the following possible values: 'package', 'public', 'protected', 'private'.
+The enumeration 'CallConcurrencyKind' defines a single possible value: 'sequential'.
+The enumeration 'ExpansionKind' defines the following possible values: 'parallel', 'stream', 'iterative'.
+
+The model also captures inheritance relationships between classes.
+The class 'fuml_BasicBehaviors_OpaqueBehavior' is a specialization of 'Behavior'.
+The class 'fuml_BasicBehaviors_Behavior' is a specialization of 'Class'.
+The class 'fuml_BasicBehaviors_BehavioredClassifier' is a specialization of 'Classifier'.
+The class 'fuml_BasicBehaviors_FunctionBehavior' is a specialization of 'OpaqueBehavior'.
+The class 'fuml_Communications_Trigger' is a specialization of 'NamedElement'.
+The class 'fuml_Communications_Event' is a specialization of 'PackageableElement'.
+The class 'fuml_Communications_Signal' is a specialization of 'Classifier'.
+The class 'fuml_Communications_SignalEvent' is a specialization of 'MessageEvent'.
+The class 'fuml_Communications_MessageEvent' is a specialization of 'Event'.
+The class 'fuml_Communications_Reception' is a specialization of 'BehavioralFeature'.
+The class 'fuml_Kernel_ValueSpecification' is a specialization of 'TypedElement'.
+The class 'fuml_Kernel_TypedElement' is a specialization of 'NamedElement'.
+The class 'fuml_Kernel_NamedElement' is a specialization of 'Element'.
+The class 'fuml_Kernel_Namespace' is a specialization of 'NamedElement'.
+The class 'fuml_Kernel_ElementImport' is a specialization of 'Element'.
+The class 'fuml_Kernel_PackageableElement' is a specialization of 'NamedElement'.
+The class 'fuml_Kernel_PackageImport' is a specialization of 'Element'.
+The class 'fuml_Kernel_Package' is a specialization of 'Kernel_Namespace'.
+The class 'fuml_Kernel_Package' is a specialization of 'Kernel_PackageableElement'.
+The class 'fuml_Kernel_Type' is a specialization of 'PackageableElement'.
+The class 'fuml_Kernel_StructuralFeature' is a specialization of 'Kernel_Feature'.
+The class 'fuml_Kernel_StructuralFeature' is a specialization of 'Kernel_MultiplicityElement'.
+The class 'fuml_Kernel_StructuralFeature' is a specialization of 'Kernel_TypedElement'.
+The class 'fuml_Kernel_Feature' is a specialization of 'RedefinableElement'.
+The class 'fuml_Kernel_RedefinableElement' is a specialization of 'NamedElement'.
+The class 'fuml_Kernel_Classifier' is a specialization of 'Kernel_Namespace'.
+The class 'fuml_Kernel_Classifier' is a specialization of 'Kernel_Type'.
+The class 'fuml_Kernel_Generalization' is a specialization of 'Element'.
+The class 'fuml_Kernel_Property' is a specialization of 'StructuralFeature'.
+The class 'fuml_Kernel_Association' is a specialization of 'Classifier'.
+The class 'fuml_Kernel_DataType' is a specialization of 'Classifier'.
+The class 'fuml_Kernel_MultiplicityElement' is a specialization of 'Element'.
+The class 'fuml_Kernel_BehavioralFeature' is a specialization of 'Feature'.
+The class 'fuml_Kernel_Parameter' is a specialization of 'Kernel_MultiplicityElement'.
+The class 'fuml_Kernel_Parameter' is a specialization of 'Kernel_TypedElement'.
+The class 'fuml_Kernel_Operation' is a specialization of 'BehavioralFeature'.
+The class 'fuml_Kernel_InstanceSpecification' is a specialization of 'NamedElement'.
+The class 'fuml_Kernel_Slot' is a specialization of 'Element'.
+The class 'fuml_Kernel_InstanceValue' is a specialization of 'ValueSpecification'.
+The class 'fuml_Kernel_LiteralBoolean' is a specialization of 'LiteralSpecification'.
+The class 'fuml_Kernel_LiteralSpecification' is a specialization of 'ValueSpecification'.
+The class 'fuml_Kernel_LiteralInteger' is a specialization of 'LiteralSpecification'.
+The class 'fuml_Kernel_LiteralNull' is a specialization of 'LiteralSpecification'.
+The class 'fuml_Kernel_LiteralString' is a specialization of 'LiteralSpecification'.
+The class 'fuml_Kernel_LiteralUnlimitedNatural' is a specialization of 'LiteralSpecification'.
+The class 'fuml_Kernel_PrimitiveType' is a specialization of 'DataType'.
+The class 'fuml_Kernel_Enumeration' is a specialization of 'DataType'.
+The class 'fuml_Kernel_EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+The class 'fuml_Kernel_Class' is a specialization of 'BehavioredClassifier'.
+The class 'fuml_IntermediateActivities_ObjectFlow' is a specialization of 'ActivityEdge'.
+The class 'fuml_IntermediateActivities_ActivityEdge' is a specialization of 'RedefinableElement'.
+The class 'fuml_IntermediateActivities_Activity' is a specialization of 'Behavior'.
+The class 'fuml_IntermediateActivities_ActivityNode' is a specialization of 'RedefinableElement'.
+The class 'fuml_IntermediateActivities_ObjectNode' is a specialization of 'IntermediateActivities_ActivityNode'.
+The class 'fuml_IntermediateActivities_ObjectNode' is a specialization of 'Kernel_TypedElement'.
+The class 'fuml_IntermediateActivities_MergeNode' is a specialization of 'ControlNode'.
+The class 'fuml_IntermediateActivities_ControlNode' is a specialization of 'ActivityNode'.
+The class 'fuml_IntermediateActivities_JoinNode' is a specialization of 'ControlNode'.
+The class 'fuml_IntermediateActivities_InitialNode' is a specialization of 'ControlNode'.
+The class 'fuml_IntermediateActivities_FinalNode' is a specialization of 'ControlNode'.
+The class 'fuml_IntermediateActivities_ForkNode' is a specialization of 'ControlNode'.
+The class 'fuml_IntermediateActivities_ControlFlow' is a specialization of 'ActivityEdge'.
+The class 'fuml_IntermediateActivities_DecisionNode' is a specialization of 'ControlNode'.
+The class 'fuml_IntermediateActivities_ActivityFinalNode' is a specialization of 'FinalNode'.
+The class 'fuml_IntermediateActivities_ActivityParameterNode' is a specialization of 'ObjectNode'.
+The class 'fuml_CompleteStructuredActivities_LoopNode' is a specialization of 'StructuredActivityNode'.
+The class 'fuml_CompleteStructuredActivities_ExecutableNode' is a specialization of 'ActivityNode'.
+The class 'fuml_CompleteStructuredActivities_Clause' is a specialization of 'Element'.
+The class 'fuml_CompleteStructuredActivities_ConditionalNode' is a specialization of 'StructuredActivityNode'.
+The class 'fuml_CompleteStructuredActivities_StructuredActivityNode' is a specialization of 'Action'.
+The class 'fuml_ExtraStructuredActivities_ExpansionNode' is a specialization of 'ObjectNode'.
+The class 'fuml_ExtraStructuredActivities_ExpansionRegion' is a specialization of 'StructuredActivityNode'.
+The class 'fuml_IntermediateActions_StructuralFeatureAction' is a specialization of 'Action'.
+The class 'fuml_IntermediateActions_TestIdentityAction' is a specialization of 'Action'.
+The class 'fuml_IntermediateActions_ValueSpecificationAction' is a specialization of 'Action'.
+The class 'fuml_IntermediateActions_WriteLinkAction' is a specialization of 'LinkAction'.
+The class 'fuml_IntermediateActions_LinkAction' is a specialization of 'Action'.
+The class 'fuml_IntermediateActions_LinkEndData' is a specialization of 'Element'.
+The class 'fuml_IntermediateActions_WriteStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'fuml_IntermediateActions_RemoveStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'fuml_IntermediateActions_ReadLinkAction' is a specialization of 'LinkAction'.
+The class 'fuml_IntermediateActions_ReadSelfAction' is a specialization of 'Action'.
+The class 'fuml_IntermediateActions_ReadStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'fuml_IntermediateActions_LinkEndCreationData' is a specialization of 'LinkEndData'.
+The class 'fuml_IntermediateActions_LinkEndDestructionData' is a specialization of 'LinkEndData'.
+The class 'fuml_IntermediateActions_ClearAssociationAction' is a specialization of 'Action'.
+The class 'fuml_IntermediateActions_ClearStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'fuml_IntermediateActions_CreateLinkAction' is a specialization of 'WriteLinkAction'.
+The class 'fuml_IntermediateActions_CreateObjectAction' is a specialization of 'Action'.
+The class 'fuml_IntermediateActions_DestroyLinkAction' is a specialization of 'WriteLinkAction'.
+The class 'fuml_IntermediateActions_DestroyObjectAction' is a specialization of 'Action'.
+The class 'fuml_IntermediateActions_AddStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'fuml_CompleteActions_StartClassifierBehaviorAction' is a specialization of 'Action'.
+The class 'fuml_CompleteActions_StartObjectBehaviorAction' is a specialization of 'CallAction'.
+The class 'fuml_CompleteActions_ReduceAction' is a specialization of 'Action'.
+The class 'fuml_CompleteActions_ReadExtentAction' is a specialization of 'Action'.
+The class 'fuml_CompleteActions_ReadIsClassifiedObjectAction' is a specialization of 'Action'.
+The class 'fuml_CompleteActions_ReclassifyObjectAction' is a specialization of 'Action'.
+The class 'fuml_CompleteActions_AcceptEventAction' is a specialization of 'Action'.
+The class 'fuml_BasicActions_Action' is a specialization of 'ExecutableNode'.
+The class 'fuml_BasicActions_InputPin' is a specialization of 'Pin'.
+The class 'fuml_BasicActions_Pin' is a specialization of 'IntermediateActivities_ObjectNode'.
+The class 'fuml_BasicActions_Pin' is a specialization of 'Kernel_MultiplicityElement'.
+The class 'fuml_BasicActions_CallAction' is a specialization of 'InvocationAction'.
+The class 'fuml_BasicActions_InvocationAction' is a specialization of 'Action'.
+The class 'fuml_BasicActions_SendSignalAction' is a specialization of 'InvocationAction'.
+The class 'fuml_BasicActions_CallBehaviorAction' is a specialization of 'CallAction'.
+The class 'fuml_BasicActions_CallOperationAction' is a specialization of 'CallAction'.
+The class 'fuml_BasicActions_OutputPin' is a specialization of 'Pin'.
+The class 'fuml_Kernel_StructuredValue' is a specialization of 'Value'.
+The class 'fuml_Kernel_UnlimitedNaturalValue' is a specialization of 'PrimitiveValue'.
+The class 'fuml_Kernel_PrimitiveValue' is a specialization of 'Value'.
+The class 'fuml_Kernel_StringValue' is a specialization of 'PrimitiveValue'.
+The class 'fuml_Kernel_Reference' is a specialization of 'StructuredValue'.
+The class 'fuml_Kernel_Object' is a specialization of 'ExtensionalValue'.
+The class 'fuml_Kernel_ExtensionalValue' is a specialization of 'CompoundValue'.
+The class 'fuml_Kernel_CompoundValue' is a specialization of 'StructuredValue'.
+The class 'fuml_Kernel_Link' is a specialization of 'ExtensionalValue'.
+The class 'fuml_Kernel_IntegerValue' is a specialization of 'PrimitiveValue'.
+The class 'fuml_Kernel_EnumerationValue' is a specialization of 'Value'.
+The class 'fuml_Kernel_DataValue' is a specialization of 'CompoundValue'.
+The class 'fuml_Kernel_BooleanValue' is a specialization of 'PrimitiveValue'.
+The class 'fuml_Kernel_Value' is a specialization of 'SemanticVisitor'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Kernel_BehavioralFeature' and 'fuml_BasicBehaviors_Behavior'. From 'Kernel_BehavioralFeature', the role 'Syntax' has cardinality 0..*, and from 'fuml_BasicBehaviors_Behavior', the role 'Classes' has cardinality 0..*.
+An association connects 'Kernel_Parameter' and 'fuml_BasicBehaviors_Behavior'. From 'Kernel_Parameter', the role 'Kernel_Parameter' has cardinality 0..*, and from 'fuml_BasicBehaviors_Behavior', the role 'fuml_BasicBehaviors_Behavior' has cardinality 0..*.
+An association connects 'BasicBehaviors_BehavioredClassifier' and 'fuml_BasicBehaviors_Behavior'. From 'BasicBehaviors_BehavioredClassifier', the role 'BasicBehaviors_BehavioredClassifier' has cardinality 0..*, and from 'fuml_BasicBehaviors_Behavior', the role 'fuml_BasicBehaviors_Behavior3' has cardinality 0..*.
+An association connects 'BasicBehaviors_Behavior' and 'fuml_BasicBehaviors_BehavioredClassifier'. From 'BasicBehaviors_Behavior', the role 'BasicBehaviors_Behavior' has cardinality 0..*, and from 'fuml_BasicBehaviors_BehavioredClassifier', the role 'fuml_BasicBehaviors_BehavioredClassifier' has cardinality 0..*.
+An association connects 'fuml_BasicBehaviors_BehavioredClassifier' and 'BasicBehaviors_Behavior'. From 'fuml_BasicBehaviors_BehavioredClassifier', the role 'fuml_BasicBehaviors_BehavioredClassifier6' has cardinality 0..*, and from 'BasicBehaviors_Behavior', the role 'BasicBehaviors_Behavior7' has cardinality 0..*.
+An association connects 'fuml_Communications_Trigger' and 'Communications_Event'. From 'fuml_Communications_Trigger', the role 'fuml_Communications_Trigger' has cardinality 0..*, and from 'Communications_Event', the role 'Communications_Event' has cardinality 0..*.
+An association connects 'fuml_Communications_Signal' and 'Kernel_Property'. From 'fuml_Communications_Signal', the role 'fuml_Communications_Signal' has cardinality 0..*, and from 'Kernel_Property', the role 'Kernel_Property' has cardinality 0..*.
+An association connects 'fuml_Communications_SignalEvent' and 'Communications_Signal'. From 'fuml_Communications_SignalEvent', the role 'fuml_Communications_SignalEvent' has cardinality 0..*, and from 'Communications_Signal', the role 'Communications_Signal' has cardinality 0..*.
+An association connects 'fuml_Communications_Reception' and 'Communications_Signal'. From 'fuml_Communications_Reception', the role 'fuml_Communications_Reception' has cardinality 0..*, and from 'Communications_Signal', the role 'Communications_Signal12' has cardinality 0..*.
+An association connects 'Kernel_Type' and 'fuml_Kernel_TypedElement'. From 'Kernel_Type', the role 'Kernel_Type' has cardinality 0..*, and from 'fuml_Kernel_TypedElement', the role 'fuml_Kernel_TypedElement' has cardinality 0..*.
+An association connects 'Kernel_Namespace' and 'fuml_Kernel_NamedElement'. From 'Kernel_Namespace', the role 'Syntax16' has cardinality 0..*, and from 'fuml_Kernel_NamedElement', the role 'Classes15' has cardinality 0..*.
+An association connects 'fuml_Kernel_Element' and 'Kernel_Element'. From 'fuml_Kernel_Element', the role 'Classes18' has cardinality 0..*, and from 'Kernel_Element', the role 'Syntax19' has cardinality 0..*.
+An association connects 'Kernel_Element' and 'fuml_Kernel_Element'. From 'Kernel_Element', the role 'Syntax22' has cardinality 0..*, and from 'fuml_Kernel_Element', the role 'Classes21' has cardinality 0..*.
+An association connects 'Kernel_Comment' and 'fuml_Kernel_Element'. From 'Kernel_Comment', the role 'Kernel_Comment' has cardinality 0..*, and from 'fuml_Kernel_Element', the role 'fuml_Kernel_Element' has cardinality 0..*.
+An association connects 'fuml_Kernel_Comment' and 'Kernel_Element'. From 'fuml_Kernel_Comment', the role 'fuml_Kernel_Comment' has cardinality 0..*, and from 'Kernel_Element', the role 'Kernel_Element' has cardinality 0..*.
+An association connects 'Kernel_NamedElement' and 'fuml_Kernel_Namespace'. From 'Kernel_NamedElement', the role 'Kernel_NamedElement' has cardinality 0..*, and from 'fuml_Kernel_Namespace', the role 'fuml_Kernel_Namespace' has cardinality 0..*.
+An association connects 'fuml_Kernel_Namespace' and 'Kernel_ElementImport'. From 'fuml_Kernel_Namespace', the role 'Classes27' has cardinality 0..*, and from 'Kernel_ElementImport', the role 'Syntax28' has cardinality 0..*.
+An association connects 'fuml_Kernel_Namespace' and 'Kernel_PackageImport'. From 'fuml_Kernel_Namespace', the role 'Classes30' has cardinality 0..*, and from 'Kernel_PackageImport', the role 'Syntax31' has cardinality 0..*.
+An association connects 'Kernel_PackageableElement' and 'fuml_Kernel_Namespace'. From 'Kernel_PackageableElement', the role 'Kernel_PackageableElement' has cardinality 0..*, and from 'fuml_Kernel_Namespace', the role 'fuml_Kernel_Namespace33' has cardinality 0..*.
+An association connects 'fuml_Kernel_Namespace' and 'Kernel_NamedElement'. From 'fuml_Kernel_Namespace', the role 'Classes35' has cardinality 0..*, and from 'Kernel_NamedElement', the role 'Syntax36' has cardinality 0..*.
+An association connects 'Kernel_PackageableElement' and 'fuml_Kernel_ElementImport'. From 'Kernel_PackageableElement', the role 'Kernel_PackageableElement38' has cardinality 0..*, and from 'fuml_Kernel_ElementImport', the role 'fuml_Kernel_ElementImport' has cardinality 0..*.
+An association connects 'Kernel_Namespace' and 'fuml_Kernel_ElementImport'. From 'Kernel_Namespace', the role 'Syntax41' has cardinality 0..*, and from 'fuml_Kernel_ElementImport', the role 'Classes40' has cardinality 0..*.
+An association connects 'fuml_Kernel_PackageImport' and 'Kernel_Package'. From 'fuml_Kernel_PackageImport', the role 'fuml_Kernel_PackageImport' has cardinality 0..*, and from 'Kernel_Package', the role 'Kernel_Package' has cardinality 0..*.
+An association connects 'Kernel_Namespace' and 'fuml_Kernel_PackageImport'. From 'Kernel_Namespace', the role 'Syntax45' has cardinality 0..*, and from 'fuml_Kernel_PackageImport', the role 'Classes44' has cardinality 0..*.
+An association connects 'Kernel_PackageableElement' and 'fuml_Kernel_Package'. From 'Kernel_PackageableElement', the role 'Kernel_PackageableElement47' has cardinality 0..*, and from 'fuml_Kernel_Package', the role 'fuml_Kernel_Package' has cardinality 0..*.
+An association connects 'fuml_Kernel_Package' and 'Kernel_Type'. From 'fuml_Kernel_Package', the role 'Classes49' has cardinality 0..*, and from 'Kernel_Type', the role 'Syntax50' has cardinality 0..*.
+An association connects 'Kernel_Package' and 'fuml_Kernel_Package'. From 'Kernel_Package', the role 'Syntax53' has cardinality 0..*, and from 'fuml_Kernel_Package', the role 'Classes52' has cardinality 0..*.
+An association connects 'Kernel_Package' and 'fuml_Kernel_Package'. From 'Kernel_Package', the role 'Syntax56' has cardinality 0..*, and from 'fuml_Kernel_Package', the role 'Classes55' has cardinality 0..*.
+An association connects 'fuml_Kernel_Type' and 'Kernel_Package'. From 'fuml_Kernel_Type', the role 'Classes58' has cardinality 0..*, and from 'Kernel_Package', the role 'Syntax59' has cardinality 0..*.
+An association connects 'Kernel_Classifier' and 'fuml_Kernel_Feature'. From 'Kernel_Classifier', the role 'Syntax62' has cardinality 0..*, and from 'fuml_Kernel_Feature', the role 'Classes61' has cardinality 0..*.
+An association connects 'fuml_Kernel_RedefinableElement' and 'Kernel_RedefinableElement'. From 'fuml_Kernel_RedefinableElement', the role 'fuml_Kernel_RedefinableElement' has cardinality 0..*, and from 'Kernel_RedefinableElement', the role 'Kernel_RedefinableElement' has cardinality 0..*.
+An association connects 'fuml_Kernel_RedefinableElement' and 'Kernel_Classifier'. From 'fuml_Kernel_RedefinableElement', the role 'fuml_Kernel_RedefinableElement65' has cardinality 0..*, and from 'Kernel_Classifier', the role 'Kernel_Classifier' has cardinality 0..*.
+An association connects 'fuml_Kernel_Classifier' and 'Kernel_Generalization'. From 'fuml_Kernel_Classifier', the role 'Classes67' has cardinality 0..*, and from 'Kernel_Generalization', the role 'Syntax68' has cardinality 0..*.
+An association connects 'Kernel_Feature' and 'fuml_Kernel_Classifier'. From 'Kernel_Feature', the role 'Syntax71' has cardinality 0..*, and from 'fuml_Kernel_Classifier', the role 'Classes70' has cardinality 0..*.
+An association connects 'fuml_Kernel_Classifier' and 'Kernel_NamedElement'. From 'fuml_Kernel_Classifier', the role 'fuml_Kernel_Classifier' has cardinality 0..*, and from 'Kernel_NamedElement', the role 'Kernel_NamedElement73' has cardinality 0..*.
+An association connects 'fuml_Kernel_Classifier' and 'Kernel_Property'. From 'fuml_Kernel_Classifier', the role 'fuml_Kernel_Classifier75' has cardinality 0..*, and from 'Kernel_Property', the role 'Kernel_Property76' has cardinality 0..*.
+An association connects 'fuml_Kernel_Classifier' and 'Kernel_Classifier'. From 'fuml_Kernel_Classifier', the role 'fuml_Kernel_Classifier78' has cardinality 0..*, and from 'Kernel_Classifier', the role 'Kernel_Classifier79' has cardinality 0..*.
+An association connects 'Kernel_Classifier' and 'fuml_Kernel_Generalization'. From 'Kernel_Classifier', the role 'Kernel_Classifier81' has cardinality 0..*, and from 'fuml_Kernel_Generalization', the role 'fuml_Kernel_Generalization' has cardinality 0..*.
+An association connects 'Kernel_Classifier' and 'fuml_Kernel_Generalization'. From 'Kernel_Classifier', the role 'Syntax84' has cardinality 0..*, and from 'fuml_Kernel_Generalization', the role 'Classes83' has cardinality 0..*.
+An association connects 'Kernel_Association' and 'fuml_Kernel_Property'. From 'Kernel_Association', the role 'Syntax87' has cardinality 0..*, and from 'fuml_Kernel_Property', the role 'Classes86' has cardinality 0..*.
+An association connects 'Kernel_Association' and 'fuml_Kernel_Property'. From 'Kernel_Association', the role 'Syntax90' has cardinality 0..*, and from 'fuml_Kernel_Property', the role 'Classes89' has cardinality 0..*.
+An association connects 'fuml_Kernel_Property' and 'Kernel_DataType'. From 'fuml_Kernel_Property', the role 'Classes92' has cardinality 0..*, and from 'Kernel_DataType', the role 'Syntax93' has cardinality 0..*.
+An association connects 'Kernel_Class' and 'fuml_Kernel_Property'. From 'Kernel_Class', the role 'Syntax96' has cardinality 0..*, and from 'fuml_Kernel_Property', the role 'Classes95' has cardinality 0..*.
+An association connects 'Kernel_Property' and 'fuml_Kernel_Property'. From 'Kernel_Property', the role 'Kernel_Property98' has cardinality 0..*, and from 'fuml_Kernel_Property', the role 'fuml_Kernel_Property' has cardinality 0..*.
+An association connects 'Kernel_Type' and 'fuml_Kernel_Association'. From 'Kernel_Type', the role 'Kernel_Type100' has cardinality 0..*, and from 'fuml_Kernel_Association', the role 'fuml_Kernel_Association' has cardinality 0..*.
+An association connects 'Kernel_Property' and 'fuml_Kernel_Association'. From 'Kernel_Property', the role 'Syntax103' has cardinality 0..*, and from 'fuml_Kernel_Association', the role 'Classes102' has cardinality 0..*.
+An association connects 'fuml_Kernel_Association' and 'Kernel_Property'. From 'fuml_Kernel_Association', the role 'fuml_Kernel_Association105' has cardinality 0..*, and from 'Kernel_Property', the role 'Kernel_Property106' has cardinality 0..*.
+An association connects 'Kernel_Property' and 'fuml_Kernel_Association'. From 'Kernel_Property', the role 'Syntax109' has cardinality 0..*, and from 'fuml_Kernel_Association', the role 'Classes108' has cardinality 0..*.
+An association connects 'Kernel_Property' and 'fuml_Kernel_DataType'. From 'Kernel_Property', the role 'Syntax112' has cardinality 0..*, and from 'fuml_Kernel_DataType', the role 'Classes111' has cardinality 0..*.
+An association connects 'fuml_Kernel_MultiplicityElement' and 'Kernel_ValueSpecification'. From 'fuml_Kernel_MultiplicityElement', the role 'fuml_Kernel_MultiplicityElement' has cardinality 0..*, and from 'Kernel_ValueSpecification', the role 'Kernel_ValueSpecification' has cardinality 0..*.
+An association connects 'fuml_Kernel_MultiplicityElement' and 'Kernel_ValueSpecification'. From 'fuml_Kernel_MultiplicityElement', the role 'fuml_Kernel_MultiplicityElement115' has cardinality 0..*, and from 'Kernel_ValueSpecification', the role 'Kernel_ValueSpecification116' has cardinality 0..*.
+An association connects 'Kernel_Parameter' and 'fuml_Kernel_BehavioralFeature'. From 'Kernel_Parameter', the role 'Kernel_Parameter118' has cardinality 0..*, and from 'fuml_Kernel_BehavioralFeature', the role 'fuml_Kernel_BehavioralFeature' has cardinality 0..*.
+An association connects 'BasicBehaviors_Behavior' and 'fuml_Kernel_BehavioralFeature'. From 'BasicBehaviors_Behavior', the role 'Syntax120' has cardinality 0..*, and from 'fuml_Kernel_BehavioralFeature', the role 'CommonBehaviors' has cardinality 0..*.
+An association connects 'Kernel_Class' and 'fuml_Kernel_Operation'. From 'Kernel_Class', the role 'Syntax123' has cardinality 0..*, and from 'fuml_Kernel_Operation', the role 'Classes122' has cardinality 0..*.
+An association connects 'Kernel_Operation' and 'fuml_Kernel_Operation'. From 'Kernel_Operation', the role 'Kernel_Operation' has cardinality 0..*, and from 'fuml_Kernel_Operation', the role 'fuml_Kernel_Operation' has cardinality 0..*.
+An association connects 'fuml_Kernel_Operation' and 'Kernel_Type'. From 'fuml_Kernel_Operation', the role 'fuml_Kernel_Operation126' has cardinality 0..*, and from 'Kernel_Type', the role 'Kernel_Type127' has cardinality 0..*.
+An association connects 'Kernel_Classifier' and 'fuml_Kernel_InstanceSpecification'. From 'Kernel_Classifier', the role 'Kernel_Classifier129' has cardinality 0..*, and from 'fuml_Kernel_InstanceSpecification', the role 'fuml_Kernel_InstanceSpecification' has cardinality 0..*.
+An association connects 'fuml_Kernel_InstanceSpecification' and 'Kernel_Slot'. From 'fuml_Kernel_InstanceSpecification', the role 'Classes131' has cardinality 0..*, and from 'Kernel_Slot', the role 'Syntax132' has cardinality 0..*.
+An association connects 'fuml_Kernel_Slot' and 'Kernel_StructuralFeature'. From 'fuml_Kernel_Slot', the role 'fuml_Kernel_Slot' has cardinality 0..*, and from 'Kernel_StructuralFeature', the role 'Kernel_StructuralFeature' has cardinality 0..*.
+An association connects 'Kernel_ValueSpecification' and 'fuml_Kernel_Slot'. From 'Kernel_ValueSpecification', the role 'Kernel_ValueSpecification136' has cardinality 0..*, and from 'fuml_Kernel_Slot', the role 'fuml_Kernel_Slot135' has cardinality 0..*.
+An association connects 'Kernel_InstanceSpecification' and 'fuml_Kernel_Slot'. From 'Kernel_InstanceSpecification', the role 'Syntax139' has cardinality 0..*, and from 'fuml_Kernel_Slot', the role 'Classes138' has cardinality 0..*.
+An association connects 'fuml_Kernel_InstanceValue' and 'Kernel_InstanceSpecification'. From 'fuml_Kernel_InstanceValue', the role 'fuml_Kernel_InstanceValue' has cardinality 0..*, and from 'Kernel_InstanceSpecification', the role 'Kernel_InstanceSpecification' has cardinality 0..*.
+An association connects 'Kernel_EnumerationLiteral' and 'fuml_Kernel_Enumeration'. From 'Kernel_EnumerationLiteral', the role 'Syntax143' has cardinality 0..*, and from 'fuml_Kernel_Enumeration', the role 'Classes142' has cardinality 0..*.
+An association connects 'Kernel_Enumeration' and 'fuml_Kernel_EnumerationLiteral'. From 'Kernel_Enumeration', the role 'Syntax146' has cardinality 0..*, and from 'fuml_Kernel_EnumerationLiteral', the role 'Classes145' has cardinality 0..*.
+An association connects 'Kernel_Property' and 'fuml_Kernel_Class'. From 'Kernel_Property', the role 'Syntax149' has cardinality 0..*, and from 'fuml_Kernel_Class', the role 'Classes148' has cardinality 0..*.
+An association connects 'fuml_Kernel_Class' and 'Kernel_Operation'. From 'fuml_Kernel_Class', the role 'Classes151' has cardinality 0..*, and from 'Kernel_Operation', the role 'Syntax152' has cardinality 0..*.
+An association connects 'Kernel_Class' and 'fuml_Kernel_Class'. From 'Kernel_Class', the role 'Kernel_Class' has cardinality 0..*, and from 'fuml_Kernel_Class', the role 'fuml_Kernel_Class' has cardinality 0..*.
+An association connects 'fuml_Kernel_Class' and 'Communications_Reception'. From 'fuml_Kernel_Class', the role 'fuml_Kernel_Class155' has cardinality 0..*, and from 'Communications_Reception', the role 'Communications_Reception' has cardinality 0..*.
+An association connects 'Kernel_Classifier' and 'fuml_Kernel_Class'. From 'Kernel_Classifier', the role 'Kernel_Classifier158' has cardinality 0..*, and from 'fuml_Kernel_Class', the role 'fuml_Kernel_Class157' has cardinality 0..*.
+An association connects 'fuml_IntermediateActivities_ActivityEdge' and 'IntermediateActivities_Activity'. From 'fuml_IntermediateActivities_ActivityEdge', the role 'Activities' has cardinality 0..*, and from 'IntermediateActivities_Activity', the role 'Syntax160' has cardinality 0..*.
+An association connects 'IntermediateActivities_ActivityNode' and 'fuml_IntermediateActivities_ActivityEdge'. From 'IntermediateActivities_ActivityNode', the role 'Syntax163' has cardinality 0..*, and from 'fuml_IntermediateActivities_ActivityEdge', the role 'Activities162' has cardinality 0..*.
+An association connects 'IntermediateActivities_ActivityNode' and 'fuml_IntermediateActivities_ActivityEdge'. From 'IntermediateActivities_ActivityNode', the role 'Syntax166' has cardinality 0..*, and from 'fuml_IntermediateActivities_ActivityEdge', the role 'Activities165' has cardinality 0..*.
+An association connects 'fuml_IntermediateActivities_ActivityEdge' and 'CompleteStructuredActivities_StructuredActivityNode'. From 'fuml_IntermediateActivities_ActivityEdge', the role 'Activities168' has cardinality 0..*, and from 'CompleteStructuredActivities_StructuredActivityNode', the role 'Syntax169' has cardinality 0..*.
+An association connects 'Kernel_ValueSpecification' and 'fuml_IntermediateActivities_ActivityEdge'. From 'Kernel_ValueSpecification', the role 'Kernel_ValueSpecification171' has cardinality 0..*, and from 'fuml_IntermediateActivities_ActivityEdge', the role 'fuml_IntermediateActivities_ActivityEdge' has cardinality 0..*.
+An association connects 'fuml_IntermediateActivities_Activity' and 'IntermediateActivities_ActivityNode'. From 'fuml_IntermediateActivities_Activity', the role 'Activities173' has cardinality 0..*, and from 'IntermediateActivities_ActivityNode', the role 'Syntax174' has cardinality 0..*.
+An association connects 'IntermediateActivities_ActivityEdge' and 'fuml_IntermediateActivities_Activity'. From 'IntermediateActivities_ActivityEdge', the role 'Syntax177' has cardinality 0..*, and from 'fuml_IntermediateActivities_Activity', the role 'Activities176' has cardinality 0..*.
+An association connects 'fuml_IntermediateActivities_ActivityNode' and 'CompleteStructuredActivities_StructuredActivityNode'. From 'fuml_IntermediateActivities_ActivityNode', the role 'Activities179' has cardinality 0..*, and from 'CompleteStructuredActivities_StructuredActivityNode', the role 'Syntax180' has cardinality 0..*.
+An association connects 'IntermediateActivities_Activity' and 'fuml_IntermediateActivities_ActivityNode'. From 'IntermediateActivities_Activity', the role 'Syntax183' has cardinality 0..*, and from 'fuml_IntermediateActivities_ActivityNode', the role 'Activities182' has cardinality 0..*.
+An association connects 'fuml_IntermediateActivities_ActivityNode' and 'IntermediateActivities_ActivityEdge'. From 'fuml_IntermediateActivities_ActivityNode', the role 'Activities185' has cardinality 0..*, and from 'IntermediateActivities_ActivityEdge', the role 'Syntax186' has cardinality 0..*.
+An association connects 'IntermediateActivities_ActivityEdge' and 'fuml_IntermediateActivities_ActivityNode'. From 'IntermediateActivities_ActivityEdge', the role 'Syntax189' has cardinality 0..*, and from 'fuml_IntermediateActivities_ActivityNode', the role 'Activities188' has cardinality 0..*.
+An association connects 'fuml_IntermediateActivities_DecisionNode' and 'BasicBehaviors_Behavior'. From 'fuml_IntermediateActivities_DecisionNode', the role 'fuml_IntermediateActivities_DecisionNode' has cardinality 0..*, and from 'BasicBehaviors_Behavior', the role 'BasicBehaviors_Behavior191' has cardinality 0..*.
+An association connects 'fuml_IntermediateActivities_DecisionNode' and 'IntermediateActivities_ObjectFlow'. From 'fuml_IntermediateActivities_DecisionNode', the role 'fuml_IntermediateActivities_DecisionNode193' has cardinality 0..*, and from 'IntermediateActivities_ObjectFlow', the role 'IntermediateActivities_ObjectFlow' has cardinality 0..*.
+An association connects 'fuml_IntermediateActivities_ActivityParameterNode' and 'Kernel_Parameter'. From 'fuml_IntermediateActivities_ActivityParameterNode', the role 'fuml_IntermediateActivities_ActivityParameterNode' has cardinality 0..*, and from 'Kernel_Parameter', the role 'Kernel_Parameter195' has cardinality 0..*.
+An association connects 'fuml_CompleteStructuredActivities_LoopNode' and 'BasicActions_OutputPin'. From 'fuml_CompleteStructuredActivities_LoopNode', the role 'fuml_CompleteStructuredActivities_LoopNode' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin' has cardinality 0..*.
+An association connects 'CompleteStructuredActivities_ExecutableNode' and 'fuml_CompleteStructuredActivities_LoopNode'. From 'CompleteStructuredActivities_ExecutableNode', the role 'CompleteStructuredActivities_ExecutableNode' has cardinality 0..*, and from 'fuml_CompleteStructuredActivities_LoopNode', the role 'fuml_CompleteStructuredActivities_LoopNode198' has cardinality 0..*.
+An association connects 'fuml_CompleteStructuredActivities_LoopNode' and 'BasicActions_OutputPin'. From 'fuml_CompleteStructuredActivities_LoopNode', the role 'fuml_CompleteStructuredActivities_LoopNode200' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin201' has cardinality 0..*.
+An association connects 'fuml_CompleteStructuredActivities_LoopNode' and 'BasicActions_InputPin'. From 'fuml_CompleteStructuredActivities_LoopNode', the role 'fuml_CompleteStructuredActivities_LoopNode203' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin' has cardinality 0..*.
+An association connects 'fuml_CompleteStructuredActivities_LoopNode' and 'CompleteStructuredActivities_ExecutableNode'. From 'fuml_CompleteStructuredActivities_LoopNode', the role 'fuml_CompleteStructuredActivities_LoopNode205' has cardinality 0..*, and from 'CompleteStructuredActivities_ExecutableNode', the role 'CompleteStructuredActivities_ExecutableNode206' has cardinality 0..*.
+An association connects 'fuml_CompleteStructuredActivities_LoopNode' and 'BasicActions_OutputPin'. From 'fuml_CompleteStructuredActivities_LoopNode', the role 'fuml_CompleteStructuredActivities_LoopNode208' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin209' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fuml_CompleteStructuredActivities_LoopNode'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin212' has cardinality 0..*, and from 'fuml_CompleteStructuredActivities_LoopNode', the role 'fuml_CompleteStructuredActivities_LoopNode211' has cardinality 0..*.
+An association connects 'CompleteStructuredActivities_ExecutableNode' and 'fuml_CompleteStructuredActivities_LoopNode'. From 'CompleteStructuredActivities_ExecutableNode', the role 'CompleteStructuredActivities_ExecutableNode215' has cardinality 0..*, and from 'fuml_CompleteStructuredActivities_LoopNode', the role 'fuml_CompleteStructuredActivities_LoopNode214' has cardinality 0..*.
+An association connects 'CompleteStructuredActivities_ExecutableNode' and 'fuml_CompleteStructuredActivities_Clause'. From 'CompleteStructuredActivities_ExecutableNode', the role 'CompleteStructuredActivities_ExecutableNode217' has cardinality 0..*, and from 'fuml_CompleteStructuredActivities_Clause', the role 'fuml_CompleteStructuredActivities_Clause' has cardinality 0..*.
+An association connects 'fuml_CompleteStructuredActivities_Clause' and 'CompleteStructuredActivities_ExecutableNode'. From 'fuml_CompleteStructuredActivities_Clause', the role 'fuml_CompleteStructuredActivities_Clause219' has cardinality 0..*, and from 'CompleteStructuredActivities_ExecutableNode', the role 'CompleteStructuredActivities_ExecutableNode220' has cardinality 0..*.
+An association connects 'fuml_CompleteStructuredActivities_Clause' and 'CompleteStructuredActivities_Clause'. From 'fuml_CompleteStructuredActivities_Clause', the role 'Activities222' has cardinality 0..*, and from 'CompleteStructuredActivities_Clause', the role 'Syntax223' has cardinality 0..*.
+An association connects 'CompleteStructuredActivities_Clause' and 'fuml_CompleteStructuredActivities_Clause'. From 'CompleteStructuredActivities_Clause', the role 'Syntax226' has cardinality 0..*, and from 'fuml_CompleteStructuredActivities_Clause', the role 'Activities225' has cardinality 0..*.
+An association connects 'fuml_CompleteStructuredActivities_Clause' and 'BasicActions_OutputPin'. From 'fuml_CompleteStructuredActivities_Clause', the role 'fuml_CompleteStructuredActivities_Clause228' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin229' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fuml_CompleteStructuredActivities_Clause'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin232' has cardinality 0..*, and from 'fuml_CompleteStructuredActivities_Clause', the role 'fuml_CompleteStructuredActivities_Clause231' has cardinality 0..*.
+An association connects 'fuml_CompleteStructuredActivities_ConditionalNode' and 'CompleteStructuredActivities_Clause'. From 'fuml_CompleteStructuredActivities_ConditionalNode', the role 'fuml_CompleteStructuredActivities_ConditionalNode' has cardinality 0..*, and from 'CompleteStructuredActivities_Clause', the role 'CompleteStructuredActivities_Clause' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fuml_CompleteStructuredActivities_ConditionalNode'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin236' has cardinality 0..*, and from 'fuml_CompleteStructuredActivities_ConditionalNode', the role 'fuml_CompleteStructuredActivities_ConditionalNode235' has cardinality 0..*.
+An association connects 'fuml_CompleteStructuredActivities_StructuredActivityNode' and 'IntermediateActivities_ActivityNode'. From 'fuml_CompleteStructuredActivities_StructuredActivityNode', the role 'Activities238' has cardinality 0..*, and from 'IntermediateActivities_ActivityNode', the role 'Syntax239' has cardinality 0..*.
+An association connects 'IntermediateActivities_ActivityEdge' and 'fuml_CompleteStructuredActivities_StructuredActivityNode'. From 'IntermediateActivities_ActivityEdge', the role 'Syntax242' has cardinality 0..*, and from 'fuml_CompleteStructuredActivities_StructuredActivityNode', the role 'Activities241' has cardinality 0..*.
+An association connects 'fuml_CompleteStructuredActivities_StructuredActivityNode' and 'BasicActions_OutputPin'. From 'fuml_CompleteStructuredActivities_StructuredActivityNode', the role 'fuml_CompleteStructuredActivities_StructuredActivityNode' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin244' has cardinality 0..*.
+An association connects 'fuml_CompleteStructuredActivities_StructuredActivityNode' and 'BasicActions_InputPin'. From 'fuml_CompleteStructuredActivities_StructuredActivityNode', the role 'fuml_CompleteStructuredActivities_StructuredActivityNode246' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin247' has cardinality 0..*.
+An association connects 'fuml_ExtraStructuredActivities_ExpansionNode' and 'ExtraStructuredActivities_ExpansionRegion'. From 'fuml_ExtraStructuredActivities_ExpansionNode', the role 'Activities249' has cardinality 0..*, and from 'ExtraStructuredActivities_ExpansionRegion', the role 'Syntax250' has cardinality 0..*.
+An association connects 'ExtraStructuredActivities_ExpansionRegion' and 'fuml_ExtraStructuredActivities_ExpansionNode'. From 'ExtraStructuredActivities_ExpansionRegion', the role 'Syntax253' has cardinality 0..*, and from 'fuml_ExtraStructuredActivities_ExpansionNode', the role 'Activities252' has cardinality 0..*.
+An association connects 'ExtraStructuredActivities_ExpansionNode' and 'fuml_ExtraStructuredActivities_ExpansionRegion'. From 'ExtraStructuredActivities_ExpansionNode', the role 'Syntax256' has cardinality 0..*, and from 'fuml_ExtraStructuredActivities_ExpansionRegion', the role 'Activities255' has cardinality 0..*.
+An association connects 'fuml_ExtraStructuredActivities_ExpansionRegion' and 'ExtraStructuredActivities_ExpansionNode'. From 'fuml_ExtraStructuredActivities_ExpansionRegion', the role 'Activities258' has cardinality 0..*, and from 'ExtraStructuredActivities_ExpansionNode', the role 'Syntax259' has cardinality 0..*.
+An association connects 'fuml_IntermediateActions_StructuralFeatureAction' and 'Kernel_StructuralFeature'. From 'fuml_IntermediateActions_StructuralFeatureAction', the role 'fuml_IntermediateActions_StructuralFeatureAction' has cardinality 0..*, and from 'Kernel_StructuralFeature', the role 'Kernel_StructuralFeature261' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fuml_IntermediateActions_StructuralFeatureAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin264' has cardinality 0..*, and from 'fuml_IntermediateActions_StructuralFeatureAction', the role 'fuml_IntermediateActions_StructuralFeatureAction263' has cardinality 0..*.
+An association connects 'fuml_IntermediateActions_TestIdentityAction' and 'BasicActions_InputPin'. From 'fuml_IntermediateActions_TestIdentityAction', the role 'fuml_IntermediateActions_TestIdentityAction' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin266' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fuml_IntermediateActions_TestIdentityAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin269' has cardinality 0..*, and from 'fuml_IntermediateActions_TestIdentityAction', the role 'fuml_IntermediateActions_TestIdentityAction268' has cardinality 0..*.
+An association connects 'fuml_IntermediateActions_TestIdentityAction' and 'BasicActions_InputPin'. From 'fuml_IntermediateActions_TestIdentityAction', the role 'fuml_IntermediateActions_TestIdentityAction271' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin272' has cardinality 0..*.
+An association connects 'Kernel_ValueSpecification' and 'fuml_IntermediateActions_ValueSpecificationAction'. From 'Kernel_ValueSpecification', the role 'Kernel_ValueSpecification274' has cardinality 0..*, and from 'fuml_IntermediateActions_ValueSpecificationAction', the role 'fuml_IntermediateActions_ValueSpecificationAction' has cardinality 0..*.
+An association connects 'fuml_IntermediateActions_ValueSpecificationAction' and 'BasicActions_OutputPin'. From 'fuml_IntermediateActions_ValueSpecificationAction', the role 'fuml_IntermediateActions_ValueSpecificationAction276' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin277' has cardinality 0..*.
+An association connects 'IntermediateActions_LinkEndData' and 'fuml_IntermediateActions_LinkAction'. From 'IntermediateActions_LinkEndData', the role 'IntermediateActions_LinkEndData' has cardinality 0..*, and from 'fuml_IntermediateActions_LinkAction', the role 'fuml_IntermediateActions_LinkAction' has cardinality 0..*.
+An association connects 'fuml_IntermediateActions_LinkAction' and 'BasicActions_InputPin'. From 'fuml_IntermediateActions_LinkAction', the role 'fuml_IntermediateActions_LinkAction280' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin281' has cardinality 0..*.
+An association connects 'fuml_IntermediateActions_LinkEndData' and 'BasicActions_InputPin'. From 'fuml_IntermediateActions_LinkEndData', the role 'fuml_IntermediateActions_LinkEndData' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin283' has cardinality 0..*.
+An association connects 'Kernel_Property' and 'fuml_IntermediateActions_LinkEndData'. From 'Kernel_Property', the role 'Kernel_Property286' has cardinality 0..*, and from 'fuml_IntermediateActions_LinkEndData', the role 'fuml_IntermediateActions_LinkEndData285' has cardinality 0..*.
+An association connects 'fuml_IntermediateActions_WriteStructuralFeatureAction' and 'BasicActions_InputPin'. From 'fuml_IntermediateActions_WriteStructuralFeatureAction', the role 'fuml_IntermediateActions_WriteStructuralFeatureAction' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin288' has cardinality 0..*.
+An association connects 'fuml_IntermediateActions_WriteStructuralFeatureAction' and 'BasicActions_OutputPin'. From 'fuml_IntermediateActions_WriteStructuralFeatureAction', the role 'fuml_IntermediateActions_WriteStructuralFeatureAction290' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin291' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fuml_IntermediateActions_RemoveStructuralFeatureValueAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin293' has cardinality 0..*, and from 'fuml_IntermediateActions_RemoveStructuralFeatureValueAction', the role 'fuml_IntermediateActions_RemoveStructuralFeatureValueAction' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fuml_IntermediateActions_ReadLinkAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin295' has cardinality 0..*, and from 'fuml_IntermediateActions_ReadLinkAction', the role 'fuml_IntermediateActions_ReadLinkAction' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fuml_IntermediateActions_ReadSelfAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin297' has cardinality 0..*, and from 'fuml_IntermediateActions_ReadSelfAction', the role 'fuml_IntermediateActions_ReadSelfAction' has cardinality 0..*.
+An association connects 'fuml_IntermediateActions_ReadStructuralFeatureAction' and 'BasicActions_OutputPin'. From 'fuml_IntermediateActions_ReadStructuralFeatureAction', the role 'fuml_IntermediateActions_ReadStructuralFeatureAction' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin299' has cardinality 0..*.
+An association connects 'fuml_IntermediateActions_LinkEndCreationData' and 'BasicActions_InputPin'. From 'fuml_IntermediateActions_LinkEndCreationData', the role 'fuml_IntermediateActions_LinkEndCreationData' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin301' has cardinality 0..*.
+An association connects 'fuml_IntermediateActions_LinkEndDestructionData' and 'BasicActions_InputPin'. From 'fuml_IntermediateActions_LinkEndDestructionData', the role 'fuml_IntermediateActions_LinkEndDestructionData' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin303' has cardinality 0..*.
+An association connects 'fuml_IntermediateActions_ClearAssociationAction' and 'Kernel_Association'. From 'fuml_IntermediateActions_ClearAssociationAction', the role 'fuml_IntermediateActions_ClearAssociationAction' has cardinality 0..*, and from 'Kernel_Association', the role 'Kernel_Association' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fuml_IntermediateActions_ClearAssociationAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin307' has cardinality 0..*, and from 'fuml_IntermediateActions_ClearAssociationAction', the role 'fuml_IntermediateActions_ClearAssociationAction306' has cardinality 0..*.
+An association connects 'fuml_IntermediateActions_ClearStructuralFeatureAction' and 'BasicActions_OutputPin'. From 'fuml_IntermediateActions_ClearStructuralFeatureAction', the role 'fuml_IntermediateActions_ClearStructuralFeatureAction' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin309' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fuml_IntermediateActions_CreateObjectAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin311' has cardinality 0..*, and from 'fuml_IntermediateActions_CreateObjectAction', the role 'fuml_IntermediateActions_CreateObjectAction' has cardinality 0..*.
+An association connects 'Kernel_Classifier' and 'fuml_IntermediateActions_CreateObjectAction'. From 'Kernel_Classifier', the role 'Kernel_Classifier314' has cardinality 0..*, and from 'fuml_IntermediateActions_CreateObjectAction', the role 'fuml_IntermediateActions_CreateObjectAction313' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fuml_IntermediateActions_DestroyObjectAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin316' has cardinality 0..*, and from 'fuml_IntermediateActions_DestroyObjectAction', the role 'fuml_IntermediateActions_DestroyObjectAction' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fuml_IntermediateActions_AddStructuralFeatureValueAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin318' has cardinality 0..*, and from 'fuml_IntermediateActions_AddStructuralFeatureValueAction', the role 'fuml_IntermediateActions_AddStructuralFeatureValueAction' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fuml_CompleteActions_StartClassifierBehaviorAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin320' has cardinality 0..*, and from 'fuml_CompleteActions_StartClassifierBehaviorAction', the role 'fuml_CompleteActions_StartClassifierBehaviorAction' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fuml_CompleteActions_StartObjectBehaviorAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin322' has cardinality 0..*, and from 'fuml_CompleteActions_StartObjectBehaviorAction', the role 'fuml_CompleteActions_StartObjectBehaviorAction' has cardinality 0..*.
+An association connects 'BasicBehaviors_Behavior' and 'fuml_CompleteActions_ReduceAction'. From 'BasicBehaviors_Behavior', the role 'BasicBehaviors_Behavior324' has cardinality 0..*, and from 'fuml_CompleteActions_ReduceAction', the role 'fuml_CompleteActions_ReduceAction' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fuml_CompleteActions_ReduceAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin327' has cardinality 0..*, and from 'fuml_CompleteActions_ReduceAction', the role 'fuml_CompleteActions_ReduceAction326' has cardinality 0..*.
+An association connects 'fuml_CompleteActions_ReduceAction' and 'BasicActions_InputPin'. From 'fuml_CompleteActions_ReduceAction', the role 'fuml_CompleteActions_ReduceAction329' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin330' has cardinality 0..*.
+An association connects 'fuml_CompleteActions_ReadExtentAction' and 'BasicActions_OutputPin'. From 'fuml_CompleteActions_ReadExtentAction', the role 'fuml_CompleteActions_ReadExtentAction' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin332' has cardinality 0..*.
+An association connects 'Kernel_Classifier' and 'fuml_CompleteActions_ReadExtentAction'. From 'Kernel_Classifier', the role 'Kernel_Classifier335' has cardinality 0..*, and from 'fuml_CompleteActions_ReadExtentAction', the role 'fuml_CompleteActions_ReadExtentAction334' has cardinality 0..*.
+An association connects 'Kernel_Classifier' and 'fuml_CompleteActions_ReadIsClassifiedObjectAction'. From 'Kernel_Classifier', the role 'Kernel_Classifier337' has cardinality 0..*, and from 'fuml_CompleteActions_ReadIsClassifiedObjectAction', the role 'fuml_CompleteActions_ReadIsClassifiedObjectAction' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fuml_CompleteActions_ReadIsClassifiedObjectAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin340' has cardinality 0..*, and from 'fuml_CompleteActions_ReadIsClassifiedObjectAction', the role 'fuml_CompleteActions_ReadIsClassifiedObjectAction339' has cardinality 0..*.
+An association connects 'fuml_CompleteActions_ReadIsClassifiedObjectAction' and 'BasicActions_InputPin'. From 'fuml_CompleteActions_ReadIsClassifiedObjectAction', the role 'fuml_CompleteActions_ReadIsClassifiedObjectAction342' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin343' has cardinality 0..*.
+An association connects 'Kernel_Classifier' and 'fuml_CompleteActions_ReclassifyObjectAction'. From 'Kernel_Classifier', the role 'Kernel_Classifier345' has cardinality 0..*, and from 'fuml_CompleteActions_ReclassifyObjectAction', the role 'fuml_CompleteActions_ReclassifyObjectAction' has cardinality 0..*.
+An association connects 'fuml_CompleteActions_ReclassifyObjectAction' and 'BasicActions_InputPin'. From 'fuml_CompleteActions_ReclassifyObjectAction', the role 'fuml_CompleteActions_ReclassifyObjectAction347' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin348' has cardinality 0..*.
+An association connects 'fuml_CompleteActions_ReclassifyObjectAction' and 'Kernel_Classifier'. From 'fuml_CompleteActions_ReclassifyObjectAction', the role 'fuml_CompleteActions_ReclassifyObjectAction350' has cardinality 0..*, and from 'Kernel_Classifier', the role 'Kernel_Classifier351' has cardinality 0..*.
+An association connects 'BasicActions_OutputPin' and 'fuml_CompleteActions_AcceptEventAction'. From 'BasicActions_OutputPin', the role 'BasicActions_OutputPin353' has cardinality 0..*, and from 'fuml_CompleteActions_AcceptEventAction', the role 'fuml_CompleteActions_AcceptEventAction' has cardinality 0..*.
+An association connects 'fuml_CompleteActions_AcceptEventAction' and 'Communications_Trigger'. From 'fuml_CompleteActions_AcceptEventAction', the role 'fuml_CompleteActions_AcceptEventAction355' has cardinality 0..*, and from 'Communications_Trigger', the role 'Communications_Trigger' has cardinality 0..*.
+An association connects 'fuml_BasicActions_Action' and 'BasicActions_OutputPin'. From 'fuml_BasicActions_Action', the role 'fuml_BasicActions_Action' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin357' has cardinality 0..*.
+An association connects 'fuml_BasicActions_Action' and 'Kernel_Classifier'. From 'fuml_BasicActions_Action', the role 'fuml_BasicActions_Action359' has cardinality 0..*, and from 'Kernel_Classifier', the role 'Kernel_Classifier360' has cardinality 0..*.
+An association connects 'fuml_BasicActions_Action' and 'BasicActions_InputPin'. From 'fuml_BasicActions_Action', the role 'fuml_BasicActions_Action362' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin363' has cardinality 0..*.
+An association connects 'fuml_BasicActions_CallAction' and 'BasicActions_OutputPin'. From 'fuml_BasicActions_CallAction', the role 'fuml_BasicActions_CallAction' has cardinality 0..*, and from 'BasicActions_OutputPin', the role 'BasicActions_OutputPin365' has cardinality 0..*.
+An association connects 'fuml_BasicActions_InvocationAction' and 'BasicActions_InputPin'. From 'fuml_BasicActions_InvocationAction', the role 'fuml_BasicActions_InvocationAction' has cardinality 0..*, and from 'BasicActions_InputPin', the role 'BasicActions_InputPin367' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fuml_BasicActions_SendSignalAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin369' has cardinality 0..*, and from 'fuml_BasicActions_SendSignalAction', the role 'fuml_BasicActions_SendSignalAction' has cardinality 0..*.
+An association connects 'fuml_BasicActions_SendSignalAction' and 'Communications_Signal'. From 'fuml_BasicActions_SendSignalAction', the role 'fuml_BasicActions_SendSignalAction371' has cardinality 0..*, and from 'Communications_Signal', the role 'Communications_Signal372' has cardinality 0..*.
+An association connects 'fuml_BasicActions_CallBehaviorAction' and 'BasicBehaviors_Behavior'. From 'fuml_BasicActions_CallBehaviorAction', the role 'fuml_BasicActions_CallBehaviorAction' has cardinality 0..*, and from 'BasicBehaviors_Behavior', the role 'BasicBehaviors_Behavior374' has cardinality 0..*.
+An association connects 'fuml_BasicActions_CallOperationAction' and 'Kernel_Operation'. From 'fuml_BasicActions_CallOperationAction', the role 'fuml_BasicActions_CallOperationAction' has cardinality 0..*, and from 'Kernel_Operation', the role 'Kernel_Operation376' has cardinality 0..*.
+An association connects 'BasicActions_InputPin' and 'fuml_BasicActions_CallOperationAction'. From 'BasicActions_InputPin', the role 'BasicActions_InputPin379' has cardinality 0..*, and from 'fuml_BasicActions_CallOperationAction', the role 'fuml_BasicActions_CallOperationAction378' has cardinality 0..*.
+An association connects 'fuml_Kernel_FeatureValue' and 'Kernel_StructuralFeature'. From 'fuml_Kernel_FeatureValue', the role 'fuml_Kernel_FeatureValue' has cardinality 0..*, and from 'Kernel_StructuralFeature', the role 'Kernel_StructuralFeature381' has cardinality 0..*.
+An association connects 'fuml_Kernel_FeatureValue' and 'Kernel_Value'. From 'fuml_Kernel_FeatureValue', the role 'fuml_Kernel_FeatureValue383' has cardinality 0..*, and from 'Kernel_Value', the role 'Kernel_Value' has cardinality 0..*.
+An association connects 'fuml_Kernel_PrimitiveValue' and 'Kernel_PrimitiveType'. From 'fuml_Kernel_PrimitiveValue', the role 'fuml_Kernel_PrimitiveValue' has cardinality 0..*, and from 'Kernel_PrimitiveType', the role 'Kernel_PrimitiveType' has cardinality 0..*.
+An association connects 'Kernel_Object' and 'fuml_Kernel_Reference'. From 'Kernel_Object', the role 'Kernel_Object' has cardinality 0..*, and from 'fuml_Kernel_Reference', the role 'fuml_Kernel_Reference' has cardinality 0..*.
+An association connects 'fuml_Kernel_Object' and 'Kernel_Class'. From 'fuml_Kernel_Object', the role 'fuml_Kernel_Object' has cardinality 0..*, and from 'Kernel_Class', the role 'Kernel_Class387' has cardinality 0..*.
+An association connects 'Kernel_FeatureValue' and 'fuml_Kernel_CompoundValue'. From 'Kernel_FeatureValue', the role 'Kernel_FeatureValue' has cardinality 0..*, and from 'fuml_Kernel_CompoundValue', the role 'fuml_Kernel_CompoundValue' has cardinality 0..*.
+An association connects 'Kernel_Association' and 'fuml_Kernel_Link'. From 'Kernel_Association', the role 'Kernel_Association390' has cardinality 0..*, and from 'fuml_Kernel_Link', the role 'fuml_Kernel_Link' has cardinality 0..*.
+An association connects 'Kernel_EnumerationLiteral' and 'fuml_Kernel_EnumerationValue'. From 'Kernel_EnumerationLiteral', the role 'Kernel_EnumerationLiteral' has cardinality 0..*, and from 'fuml_Kernel_EnumerationValue', the role 'fuml_Kernel_EnumerationValue' has cardinality 0..*.
+An association connects 'fuml_Kernel_EnumerationValue' and 'Kernel_Enumeration'. From 'fuml_Kernel_EnumerationValue', the role 'fuml_Kernel_EnumerationValue393' has cardinality 0..*, and from 'Kernel_Enumeration', the role 'Kernel_Enumeration' has cardinality 0..*.
+An association connects 'Kernel_DataType' and 'fuml_Kernel_DataValue'. From 'Kernel_DataType', the role 'Kernel_DataType' has cardinality 0..*, and from 'fuml_Kernel_DataValue', the role 'fuml_Kernel_DataValue' has cardinality 0..*.
+An association connects 'Kernel_ExtensionalValue' and 'fuml_LociL1_Locus'. From 'Kernel_ExtensionalValue', the role 'Kernel_ExtensionalValue' has cardinality 0..*, and from 'fuml_LociL1_Locus', the role 'fuml_LociL1_Locus' has cardinality 0..*.

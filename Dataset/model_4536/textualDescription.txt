@@ -1,0 +1,59 @@
+The domain model 'turtlebotmission' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'turtlebotmission_LineTask' represents an important domain concept.
+It does not declare any attributes.
+
+'turtlebotmission_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'turtlebotmission_ReturnToStartTask' represents an important domain concept.
+It does not declare any attributes.
+
+'Task' represents an important domain concept.
+It does not declare any attributes.
+
+'turtlebotmission_Task' represents an important domain concept.
+It does not declare any attributes.
+
+'turtlebotmission_Area' represents an important domain concept.
+It has the following attributes: 'ymax', which is of type int; 'xmax', which is of type int.
+
+'turtlebotmission_TurtleBot' represents an important domain concept.
+It does not declare any attributes.
+
+'turtlebotmission_ShortestPathTask' represents an important domain concept.
+It does not declare any attributes.
+
+'turtlebotmission_WaypointType' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'turtlebotmission_WayPoint' represents an important domain concept.
+It has the following attributes: 'coord_x', which is of type int; 'coord_y', which is of type int.
+
+'turtlebotmission_Mission' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'turtlebotmission_TurtleBot' is a specialization of 'NamedElement'.
+The class 'turtlebotmission_WaypointType' is a specialization of 'NamedElement'.
+The class 'turtlebotmission_WayPoint' is a specialization of 'NamedElement'.
+The class 'turtlebotmission_Mission' is a specialization of 'NamedElement'.
+The class 'turtlebotmission_LineTask' is a specialization of 'Task'.
+The class 'turtlebotmission_ShortestPathTask' is a specialization of 'Task'.
+The class 'turtlebotmission_ReturnToStartTask' is a specialization of 'Task'.
+
+Relationships between classes are modeled using associations.
+An association connects 'turtlebotmission_TurtleBot' and 'turtlebotmission_Area'. From 'turtlebotmission_TurtleBot', the role 'turtlebotmission_TurtleBot' has cardinality 0..*, and from 'turtlebotmission_Area', the role 'turtlebotmission_Area' has cardinality 0..*.
+An association connects 'turtlebotmission_WaypointType' and 'turtlebotmission_TurtleBot'. From 'turtlebotmission_WaypointType', the role 'turtlebotmission_WaypointType' has cardinality 0..*, and from 'turtlebotmission_TurtleBot', the role 'turtlebotmission_TurtleBot2' has cardinality 0..*.
+An association connects 'turtlebotmission_WayPoint' and 'turtlebotmission_TurtleBot'. From 'turtlebotmission_WayPoint', the role 'turtlebotmission_WayPoint' has cardinality 0..*, and from 'turtlebotmission_TurtleBot', the role 'turtlebotmission_TurtleBot4' has cardinality 0..*.
+An association connects 'turtlebotmission_TurtleBot' and 'turtlebotmission_WayPoint'. From 'turtlebotmission_TurtleBot', the role 'turtlebotmission_TurtleBot6' has cardinality 0..*, and from 'turtlebotmission_WayPoint', the role 'turtlebotmission_WayPoint7' has cardinality 0..*.
+An association connects 'turtlebotmission_Mission' and 'turtlebotmission_TurtleBot'. From 'turtlebotmission_Mission', the role 'turtlebotmission_Mission' has cardinality 0..*, and from 'turtlebotmission_TurtleBot', the role 'turtlebotmission_TurtleBot9' has cardinality 0..*.
+An association connects 'turtlebotmission_WayPoint' and 'turtlebotmission_WaypointType'. From 'turtlebotmission_WayPoint', the role 'turtlebotmission_WayPoint11' has cardinality 0..*, and from 'turtlebotmission_WaypointType', the role 'turtlebotmission_WaypointType12' has cardinality 0..*.
+An association connects 'turtlebotmission_Task' and 'turtlebotmission_Mission'. From 'turtlebotmission_Task', the role 'turtlebotmission_Task' has cardinality 0..*, and from 'turtlebotmission_Mission', the role 'turtlebotmission_Mission14' has cardinality 0..*.
+An association connects 'turtlebotmission_WayPoint' and 'turtlebotmission_LineTask'. From 'turtlebotmission_WayPoint', the role 'turtlebotmission_WayPoint16' has cardinality 0..*, and from 'turtlebotmission_LineTask', the role 'turtlebotmission_LineTask' has cardinality 0..*.
+An association connects 'turtlebotmission_ShortestPathTask' and 'turtlebotmission_WayPoint'. From 'turtlebotmission_ShortestPathTask', the role 'turtlebotmission_ShortestPathTask' has cardinality 0..*, and from 'turtlebotmission_WayPoint', the role 'turtlebotmission_WayPoint18' has cardinality 0..*.

@@ -1,0 +1,63 @@
+The domain model 'smarthome' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'smarthome_SmartHome' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'smarthome_ContactItem' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_StateChangeConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_NumberItem' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_EvaluatingNode' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_DimmerItem' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_State' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'smarthome_Item' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'smarthome_Command' represents an important domain concept.
+It has one attribute: 'command', which is of type str.
+
+'smarthome_SwitchItem' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_CommandConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'smarthome_FilterConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'smarthome_ContactItem' is a specialization of 'Item'.
+The class 'smarthome_SwitchItem' is a specialization of 'Item'.
+The class 'smarthome_DimmerItem' is a specialization of 'Item'.
+The class 'smarthome_NumberItem' is a specialization of 'Item'.
+
+Relationships between classes are modeled using associations.
+An association connects 'smarthome_Item' and 'smarthome_SmartHome'. From 'smarthome_Item', the role 'smarthome_Item' has cardinality 0..*, and from 'smarthome_SmartHome', the role 'smarthome_SmartHome' has cardinality 0..*.
+An association connects 'smarthome_EvaluatingNode' and 'smarthome_SmartHome'. From 'smarthome_EvaluatingNode', the role 'smarthome_EvaluatingNode' has cardinality 0..*, and from 'smarthome_SmartHome', the role 'smarthome_SmartHome2' has cardinality 0..*.
+An association connects 'smarthome_Item' and 'smarthome_State'. From 'smarthome_Item', the role 'smarthome_Item4' has cardinality 0..*, and from 'smarthome_State', the role 'smarthome_State' has cardinality 0..*.
+An association connects 'smarthome_Item' and 'smarthome_Command'. From 'smarthome_Item', the role 'smarthome_Item6' has cardinality 0..*, and from 'smarthome_Command', the role 'smarthome_Command' has cardinality 0..*.
+An association connects 'smarthome_EvaluatingNode' and 'smarthome_StateChangeConnection'. From 'smarthome_EvaluatingNode', the role 'smarthome_EvaluatingNode8' has cardinality 0..*, and from 'smarthome_StateChangeConnection', the role 'smarthome_StateChangeConnection' has cardinality 0..*.
+An association connects 'smarthome_EvaluatingNode' and 'smarthome_CommandConnection'. From 'smarthome_EvaluatingNode', the role 'smarthome_EvaluatingNode10' has cardinality 0..*, and from 'smarthome_CommandConnection', the role 'smarthome_CommandConnection' has cardinality 0..*.
+An association connects 'smarthome_EvaluatingNode' and 'smarthome_FilterConnection'. From 'smarthome_EvaluatingNode', the role 'smarthome_EvaluatingNode12' has cardinality 0..*, and from 'smarthome_FilterConnection', the role 'smarthome_FilterConnection' has cardinality 0..*.
+An association connects 'smarthome_Item' and 'smarthome_CommandConnection'. From 'smarthome_Item', the role 'smarthome_Item15' has cardinality 0..*, and from 'smarthome_CommandConnection', the role 'smarthome_CommandConnection14' has cardinality 0..*.
+An association connects 'smarthome_CommandConnection' and 'smarthome_Command'. From 'smarthome_CommandConnection', the role 'smarthome_CommandConnection17' has cardinality 0..*, and from 'smarthome_Command', the role 'smarthome_Command18' has cardinality 0..*.
+An association connects 'smarthome_State' and 'smarthome_StateChangeConnection'. From 'smarthome_State', the role 'smarthome_State21' has cardinality 0..*, and from 'smarthome_StateChangeConnection', the role 'smarthome_StateChangeConnection20' has cardinality 0..*.
+An association connects 'smarthome_StateChangeConnection' and 'smarthome_Item'. From 'smarthome_StateChangeConnection', the role 'smarthome_StateChangeConnection23' has cardinality 0..*, and from 'smarthome_Item', the role 'smarthome_Item24' has cardinality 0..*.
+An association connects 'smarthome_FilterConnection' and 'smarthome_State'. From 'smarthome_FilterConnection', the role 'smarthome_FilterConnection26' has cardinality 0..*, and from 'smarthome_State', the role 'smarthome_State27' has cardinality 0..*.
+An association connects 'smarthome_Item' and 'smarthome_FilterConnection'. From 'smarthome_Item', the role 'smarthome_Item30' has cardinality 0..*, and from 'smarthome_FilterConnection', the role 'smarthome_FilterConnection29' has cardinality 0..*.

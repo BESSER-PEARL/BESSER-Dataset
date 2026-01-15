@@ -1,0 +1,153 @@
+The domain model 'logoASM' describes the core structural elements and their relationships within the system.
+
+The model defines 34 main class(es).
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Right' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Clear' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_If' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_ProcCall' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Equals' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Forward' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_LogoProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_ParameterCall' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Mult' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Repeat' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Constant' represents an important domain concept.
+It has one attribute: 'integerValue', which is of type int.
+
+'logoASM_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_PenUp' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_PenDown' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Back' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_ControlStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_BinaryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExp' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_ProcDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'logoASM_While' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Lower' represents an important domain concept.
+It does not declare any attributes.
+
+'logoASM_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'logoASM_Left' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'logoASM_Primitive' is a specialization of 'Instruction'.
+The class 'logoASM_Back' is a specialization of 'Primitive'.
+The class 'logoASM_Forward' is a specialization of 'Primitive'.
+The class 'logoASM_Left' is a specialization of 'Primitive'.
+The class 'logoASM_Right' is a specialization of 'Primitive'.
+The class 'logoASM_PenDown' is a specialization of 'Primitive'.
+The class 'logoASM_PenUp' is a specialization of 'Primitive'.
+The class 'logoASM_Clear' is a specialization of 'Primitive'.
+The class 'logoASM_Expression' is a specialization of 'Instruction'.
+The class 'logoASM_BinaryExp' is a specialization of 'Expression'.
+The class 'logoASM_Constant' is a specialization of 'Expression'.
+The class 'logoASM_ProcCall' is a specialization of 'Expression'.
+The class 'logoASM_ProcDeclaration' is a specialization of 'Instruction'.
+The class 'logoASM_Block' is a specialization of 'Instruction'.
+The class 'logoASM_If' is a specialization of 'ControlStructure'.
+The class 'logoASM_ControlStructure' is a specialization of 'Instruction'.
+The class 'logoASM_Repeat' is a specialization of 'ControlStructure'.
+The class 'logoASM_While' is a specialization of 'ControlStructure'.
+The class 'logoASM_ParameterCall' is a specialization of 'Expression'.
+The class 'logoASM_Plus' is a specialization of 'BinaryExp'.
+The class 'logoASM_Minus' is a specialization of 'BinaryExp'.
+The class 'logoASM_Mult' is a specialization of 'BinaryExp'.
+The class 'logoASM_Div' is a specialization of 'BinaryExp'.
+The class 'logoASM_Equals' is a specialization of 'BinaryExp'.
+The class 'logoASM_Greater' is a specialization of 'BinaryExp'.
+The class 'logoASM_Lower' is a specialization of 'BinaryExp'.
+
+Relationships between classes are modeled using associations.
+An association connects 'logoASM_Expression' and 'logoASM_Back'. From 'logoASM_Expression', the role 'logoASM_Expression' has cardinality 0..*, and from 'logoASM_Back', the role 'logoASM_Back' has cardinality 0..*.
+An association connects 'logoASM_Expression' and 'logoASM_Forward'. From 'logoASM_Expression', the role 'logoASM_Expression2' has cardinality 0..*, and from 'logoASM_Forward', the role 'logoASM_Forward' has cardinality 0..*.
+An association connects 'logoASM_Expression' and 'logoASM_Left'. From 'logoASM_Expression', the role 'logoASM_Expression4' has cardinality 0..*, and from 'logoASM_Left', the role 'logoASM_Left' has cardinality 0..*.
+An association connects 'logoASM_Right' and 'logoASM_Expression'. From 'logoASM_Right', the role 'logoASM_Right' has cardinality 0..*, and from 'logoASM_Expression', the role 'logoASM_Expression6' has cardinality 0..*.
+An association connects 'logoASM_BinaryExp' and 'logoASM_Expression'. From 'logoASM_BinaryExp', the role 'logoASM_BinaryExp' has cardinality 0..*, and from 'logoASM_Expression', the role 'logoASM_Expression8' has cardinality 0..*.
+An association connects 'logoASM_BinaryExp' and 'logoASM_Expression'. From 'logoASM_BinaryExp', the role 'logoASM_BinaryExp10' has cardinality 0..*, and from 'logoASM_Expression', the role 'logoASM_Expression11' has cardinality 0..*.
+An association connects 'logoASM_ProcCall' and 'logoASM_Expression'. From 'logoASM_ProcCall', the role 'logoASM_ProcCall' has cardinality 0..*, and from 'logoASM_Expression', the role 'logoASM_Expression13' has cardinality 0..*.
+An association connects 'logoASM_ProcDeclaration' and 'logoASM_ProcCall'. From 'logoASM_ProcDeclaration', the role 'logoASM_ProcDeclaration' has cardinality 0..*, and from 'logoASM_ProcCall', the role 'logoASM_ProcCall15' has cardinality 0..*.
+An association connects 'logoASM_ProcDeclaration' and 'logoASM_Parameter'. From 'logoASM_ProcDeclaration', the role 'logoASM_ProcDeclaration17' has cardinality 0..*, and from 'logoASM_Parameter', the role 'logoASM_Parameter' has cardinality 0..*.
+An association connects 'logoASM_Instruction' and 'logoASM_ProcDeclaration'. From 'logoASM_Instruction', the role 'logoASM_Instruction' has cardinality 0..*, and from 'logoASM_ProcDeclaration', the role 'logoASM_ProcDeclaration19' has cardinality 0..*.
+An association connects 'logoASM_Instruction' and 'logoASM_Block'. From 'logoASM_Instruction', the role 'logoASM_Instruction21' has cardinality 0..*, and from 'logoASM_Block', the role 'logoASM_Block' has cardinality 0..*.
+An association connects 'logoASM_Block' and 'logoASM_If'. From 'logoASM_Block', the role 'logoASM_Block23' has cardinality 0..*, and from 'logoASM_If', the role 'logoASM_If' has cardinality 0..*.
+An association connects 'logoASM_If' and 'logoASM_Block'. From 'logoASM_If', the role 'logoASM_If25' has cardinality 0..*, and from 'logoASM_Block', the role 'logoASM_Block26' has cardinality 0..*.
+An association connects 'logoASM_Expression' and 'logoASM_ControlStructure'. From 'logoASM_Expression', the role 'logoASM_Expression28' has cardinality 0..*, and from 'logoASM_ControlStructure', the role 'logoASM_ControlStructure' has cardinality 0..*.
+An association connects 'logoASM_Block' and 'logoASM_Repeat'. From 'logoASM_Block', the role 'logoASM_Block30' has cardinality 0..*, and from 'logoASM_Repeat', the role 'logoASM_Repeat' has cardinality 0..*.
+An association connects 'logoASM_Block' and 'logoASM_While'. From 'logoASM_Block', the role 'logoASM_Block32' has cardinality 0..*, and from 'logoASM_While', the role 'logoASM_While' has cardinality 0..*.
+An association connects 'logoASM_ParameterCall' and 'logoASM_Parameter'. From 'logoASM_ParameterCall', the role 'logoASM_ParameterCall' has cardinality 0..*, and from 'logoASM_Parameter', the role 'logoASM_Parameter34' has cardinality 0..*.
+An association connects 'logoASM_Instruction' and 'logoASM_LogoProgram'. From 'logoASM_Instruction', the role 'logoASM_Instruction36' has cardinality 0..*, and from 'logoASM_LogoProgram', the role 'logoASM_LogoProgram' has cardinality 0..*.

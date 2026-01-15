@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/mbats/minidrone/plugins/fr.obeo.dsl.minidrone/model/minidrone.ecore

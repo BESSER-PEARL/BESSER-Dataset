@@ -1,0 +1,501 @@
+The domain model 'ecoreDiff' describes the core structural elements and their relationships within the system.
+
+The model defines 113 main class(es).
+
+'EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedETypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'EParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedEObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedETypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_EStringToStringMapEntry' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_EEnumLiteral' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'instance', which is of type str; 'literal', which is of type str.
+
+'ecoreDiff_AddedETypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_EEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedEOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_EDataType' represents an important domain concept.
+It has one attribute: 'serializable', which is of type bool.
+
+'ecoreDiff_EClass' represents an important domain concept.
+It has the following attributes: 'interface', which is of type bool; 'abstract', which is of type bool.
+
+'ecoreDiff_DeletedEStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'EEnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedEClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'EPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEStructuralFeature_Wildcard' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedETypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DifferenceModel' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEClassifier_Wildcard' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_EAttribute' represents an important domain concept.
+It has one attribute: 'iD', which is of type bool.
+
+'ecoreDiff_ChangedEGenericType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ETypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedEReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedEEnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEClassifier_Wildcard' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedEStructuralFeature_Wildcard' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedEAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedEClassifier_Wildcard' represents an important domain concept.
+It does not declare any attributes.
+
+'EClassifier_Wildcard' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_EStructuralFeature_Wildcard' represents an important domain concept.
+It does not declare any attributes.
+
+'DifferenceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedEPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'EAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'EGenericType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_EStructuralFeature' represents an important domain concept.
+It has the following attributes: 'changeable', which is of type bool; 'defaultValueLiteral', which is of type str; 'defaultValue', which is of type str; 'unsettable', which is of type bool; 'transient', which is of type bool; 'derived', which is of type bool; 'volatile', which is of type bool.
+
+'ecoreDiff_EFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_EOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEStructuralFeature_Wildcard' represents an important domain concept.
+It does not declare any attributes.
+
+'EDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_EAnnotation' represents an important domain concept.
+It has one attribute: 'source', which is of type str.
+
+'ecoreDiff_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ETypedElement' represents an important domain concept.
+It has the following attributes: 'upperBound', which is of type int; 'ordered', which is of type bool; 'required', which is of type str; 'unique', which is of type bool; 'many', which is of type bool; 'lowerBound', which is of type int.
+
+'ecoreDiff_EModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'EStructuralFeature_Wildcard' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedETypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_EGenericType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ETypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedEAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedETypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_EClassifier' represents an important domain concept.
+It has the following attributes: 'instanceClassName', which is of type str; 'defaultValue', which is of type str; 'instanceClass', which is of type str; 'instanceTypeName', which is of type str.
+
+'ecoreDiff_ChangedEAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEGenericType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_EReference' represents an important domain concept.
+It has the following attributes: 'container', which is of type bool; 'containment', which is of type bool; 'resolveProxies', which is of type bool.
+
+'EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'ETypeParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'EFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ENamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ecoreDiff_DeletedEModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DifferenceElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'EEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEEnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_EClassifier_Wildcard' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_EParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_EPackage' represents an important domain concept.
+It has the following attributes: 'nsPrefix', which is of type str; 'nsURI', which is of type str.
+
+'ecoreDiff_DeletedEDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedEClass' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'EStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedEParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedEStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_ChangedEEnumLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedEGenericType' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedEFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_AddedEClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ecoreDiff_DeletedEEnum' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ecoreDiff_EAnnotation' is a specialization of 'EModelElement'.
+The class 'ecoreDiff_EClass' is a specialization of 'EClassifier'.
+The class 'ecoreDiff_EClassifier' is a specialization of 'ENamedElement'.
+The class 'ecoreDiff_ENamedElement' is a specialization of 'EModelElement'.
+The class 'ecoreDiff_EPackage' is a specialization of 'ENamedElement'.
+The class 'ecoreDiff_EFactory' is a specialization of 'EModelElement'.
+The class 'ecoreDiff_EDataType' is a specialization of 'EClassifier'.
+The class 'ecoreDiff_ETypeParameter' is a specialization of 'ENamedElement'.
+The class 'ecoreDiff_EGenericType' is a specialization of 'EObject'.
+The class 'ecoreDiff_EOperation' is a specialization of 'ETypedElement'.
+The class 'ecoreDiff_ETypedElement' is a specialization of 'ENamedElement'.
+The class 'ecoreDiff_EParameter' is a specialization of 'ETypedElement'.
+The class 'ecoreDiff_EAttribute' is a specialization of 'EStructuralFeature'.
+The class 'ecoreDiff_EStructuralFeature' is a specialization of 'ETypedElement'.
+The class 'ecoreDiff_EReference' is a specialization of 'EStructuralFeature'.
+The class 'ecoreDiff_EEnum' is a specialization of 'EDataType'.
+The class 'ecoreDiff_EEnumLiteral' is a specialization of 'ENamedElement'.
+The class 'ecoreDiff_EModelElement' is a specialization of 'EObject'.
+The class 'ecoreDiff_EModelElement' is a specialization of 'DifferenceElement'.
+The class 'ecoreDiff_AddedEAnnotation' is a specialization of 'EAnnotation'.
+The class 'ecoreDiff_DeletedEAnnotation' is a specialization of 'EAnnotation'.
+The class 'ecoreDiff_ChangedEAnnotation' is a specialization of 'EAnnotation'.
+The class 'ecoreDiff_AddedEStringToStringMapEntry' is a specialization of 'EStringToStringMapEntry'.
+The class 'ecoreDiff_DeletedEStringToStringMapEntry' is a specialization of 'EStringToStringMapEntry'.
+The class 'ecoreDiff_ChangedEStringToStringMapEntry' is a specialization of 'EStringToStringMapEntry'.
+The class 'ecoreDiff_AddedEObject' is a specialization of 'EObject'.
+The class 'ecoreDiff_DeletedEObject' is a specialization of 'EObject'.
+The class 'ecoreDiff_ChangedEObject' is a specialization of 'EObject'.
+The class 'ecoreDiff_AddedEClass' is a specialization of 'EClass'.
+The class 'ecoreDiff_DeletedEClass' is a specialization of 'EClass'.
+The class 'ecoreDiff_ChangedEClass' is a specialization of 'EClass'.
+The class 'ecoreDiff_AddedEClassifier' is a specialization of 'EClassifier'.
+The class 'ecoreDiff_DeletedEClassifier' is a specialization of 'EClassifier'.
+The class 'ecoreDiff_ChangedEClassifier' is a specialization of 'EClassifier'.
+The class 'ecoreDiff_AddedENamedElement' is a specialization of 'ENamedElement'.
+The class 'ecoreDiff_DeletedENamedElement' is a specialization of 'ENamedElement'.
+The class 'ecoreDiff_ChangedENamedElement' is a specialization of 'ENamedElement'.
+The class 'ecoreDiff_AddedEPackage' is a specialization of 'EPackage'.
+The class 'ecoreDiff_DeletedEPackage' is a specialization of 'EPackage'.
+The class 'ecoreDiff_ChangedEPackage' is a specialization of 'EPackage'.
+The class 'ecoreDiff_AddedEFactory' is a specialization of 'EFactory'.
+The class 'ecoreDiff_DeletedEFactory' is a specialization of 'EFactory'.
+The class 'ecoreDiff_ChangedEFactory' is a specialization of 'EFactory'.
+The class 'ecoreDiff_AddedEDataType' is a specialization of 'EDataType'.
+The class 'ecoreDiff_DeletedEDataType' is a specialization of 'EDataType'.
+The class 'ecoreDiff_ChangedEDataType' is a specialization of 'EDataType'.
+The class 'ecoreDiff_AddedETypeParameter' is a specialization of 'ETypeParameter'.
+The class 'ecoreDiff_DeletedETypeParameter' is a specialization of 'ETypeParameter'.
+The class 'ecoreDiff_ChangedETypeParameter' is a specialization of 'ETypeParameter'.
+The class 'ecoreDiff_AddedEGenericType' is a specialization of 'EGenericType'.
+The class 'ecoreDiff_DeletedEGenericType' is a specialization of 'EGenericType'.
+The class 'ecoreDiff_ChangedEGenericType' is a specialization of 'EGenericType'.
+The class 'ecoreDiff_AddedEClassifier_Wildcard' is a specialization of 'EClassifier_Wildcard'.
+The class 'ecoreDiff_DeletedEClassifier_Wildcard' is a specialization of 'EClassifier_Wildcard'.
+The class 'ecoreDiff_ChangedEClassifier_Wildcard' is a specialization of 'EClassifier_Wildcard'.
+The class 'ecoreDiff_AddedEOperation' is a specialization of 'EOperation'.
+The class 'ecoreDiff_DeletedEOperation' is a specialization of 'EOperation'.
+The class 'ecoreDiff_ChangedEOperation' is a specialization of 'EOperation'.
+The class 'ecoreDiff_AddedETypedElement' is a specialization of 'ETypedElement'.
+The class 'ecoreDiff_DeletedETypedElement' is a specialization of 'ETypedElement'.
+The class 'ecoreDiff_ChangedETypedElement' is a specialization of 'ETypedElement'.
+The class 'ecoreDiff_AddedEParameter' is a specialization of 'EParameter'.
+The class 'ecoreDiff_DeletedEParameter' is a specialization of 'EParameter'.
+The class 'ecoreDiff_ChangedEParameter' is a specialization of 'EParameter'.
+The class 'ecoreDiff_AddedEAttribute' is a specialization of 'EAttribute'.
+The class 'ecoreDiff_DeletedEAttribute' is a specialization of 'EAttribute'.
+The class 'ecoreDiff_ChangedEAttribute' is a specialization of 'EAttribute'.
+The class 'ecoreDiff_AddedEStructuralFeature' is a specialization of 'EStructuralFeature'.
+The class 'ecoreDiff_DeletedEStructuralFeature' is a specialization of 'EStructuralFeature'.
+The class 'ecoreDiff_ChangedEStructuralFeature' is a specialization of 'EStructuralFeature'.
+The class 'ecoreDiff_AddedEStructuralFeature_Wildcard' is a specialization of 'EStructuralFeature_Wildcard'.
+The class 'ecoreDiff_DeletedEStructuralFeature_Wildcard' is a specialization of 'EStructuralFeature_Wildcard'.
+The class 'ecoreDiff_ChangedEStructuralFeature_Wildcard' is a specialization of 'EStructuralFeature_Wildcard'.
+The class 'ecoreDiff_AddedEReference' is a specialization of 'EReference'.
+The class 'ecoreDiff_DeletedEReference' is a specialization of 'EReference'.
+The class 'ecoreDiff_ChangedEReference' is a specialization of 'EReference'.
+The class 'ecoreDiff_AddedEEnum' is a specialization of 'EEnum'.
+The class 'ecoreDiff_DeletedEEnum' is a specialization of 'EEnum'.
+The class 'ecoreDiff_ChangedEEnum' is a specialization of 'EEnum'.
+The class 'ecoreDiff_AddedEEnumLiteral' is a specialization of 'EEnumLiteral'.
+The class 'ecoreDiff_DeletedEEnumLiteral' is a specialization of 'EEnumLiteral'.
+The class 'ecoreDiff_ChangedEEnumLiteral' is a specialization of 'EEnumLiteral'.
+The class 'ecoreDiff_AddedEModelElement' is a specialization of 'EModelElement'.
+The class 'ecoreDiff_DeletedEModelElement' is a specialization of 'EModelElement'.
+The class 'ecoreDiff_ChangedEModelElement' is a specialization of 'EModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ecoreDiff_EStringToStringMapEntry' and 'ecoreDiff_EAnnotation'. From 'ecoreDiff_EStringToStringMapEntry', the role 'ecoreDiff_EStringToStringMapEntry' has cardinality 0..*, and from 'ecoreDiff_EAnnotation', the role 'ecoreDiff_EAnnotation' has cardinality 0..*.
+An association connects 'ecoreDiff_EModelElement' and 'ecoreDiff_EAnnotation'. From 'ecoreDiff_EModelElement', the role '2' has cardinality 0..*, and from 'ecoreDiff_EAnnotation', the role 'unnamed role' has cardinality 0..*.
+An association connects 'ecoreDiff_EObject' and 'ecoreDiff_EAnnotation'. From 'ecoreDiff_EObject', the role 'ecoreDiff_EObject' has cardinality 0..*, and from 'ecoreDiff_EAnnotation', the role 'ecoreDiff_EAnnotation4' has cardinality 0..*.
+An association connects 'ecoreDiff_EObject' and 'ecoreDiff_EAnnotation'. From 'ecoreDiff_EObject', the role 'ecoreDiff_EObject7' has cardinality 0..*, and from 'ecoreDiff_EAnnotation', the role 'ecoreDiff_EAnnotation6' has cardinality 0..*.
+An association connects 'ecoreDiff_EClass' and 'ecoreDiff_EClass'. From 'ecoreDiff_EClass', the role 'ecoreDiff_EClass' has cardinality 0..*, and from 'ecoreDiff_EClass', the role 'ecoreDiff_EClass8' has cardinality 0..*.
+An association connects 'ecoreDiff_EClass' and 'ecoreDiff_EOperation'. From 'ecoreDiff_EClass', the role '11' has cardinality 0..*, and from 'ecoreDiff_EOperation', the role '12' has cardinality 0..*.
+An association connects 'ecoreDiff_EAttribute' and 'ecoreDiff_EClass'. From 'ecoreDiff_EAttribute', the role 'ecoreDiff_EAttribute' has cardinality 0..*, and from 'ecoreDiff_EClass', the role 'ecoreDiff_EClass14' has cardinality 0..*.
+An association connects 'ecoreDiff_EClass' and 'ecoreDiff_EStructuralFeature'. From 'ecoreDiff_EClass', the role '16' has cardinality 0..*, and from 'ecoreDiff_EStructuralFeature', the role '17' has cardinality 0..*.
+An association connects 'ecoreDiff_EClass' and 'ecoreDiff_EReference'. From 'ecoreDiff_EClass', the role 'ecoreDiff_EClass19' has cardinality 0..*, and from 'ecoreDiff_EReference', the role 'ecoreDiff_EReference' has cardinality 0..*.
+An association connects 'ecoreDiff_EClass' and 'ecoreDiff_EReference'. From 'ecoreDiff_EClass', the role 'ecoreDiff_EClass21' has cardinality 0..*, and from 'ecoreDiff_EReference', the role 'ecoreDiff_EReference22' has cardinality 0..*.
+An association connects 'ecoreDiff_EAttribute' and 'ecoreDiff_EClass'. From 'ecoreDiff_EAttribute', the role 'ecoreDiff_EAttribute25' has cardinality 0..*, and from 'ecoreDiff_EClass', the role 'ecoreDiff_EClass24' has cardinality 0..*.
+An association connects 'ecoreDiff_EReference' and 'ecoreDiff_EClass'. From 'ecoreDiff_EReference', the role 'ecoreDiff_EReference28' has cardinality 0..*, and from 'ecoreDiff_EClass', the role 'ecoreDiff_EClass27' has cardinality 0..*.
+An association connects 'ecoreDiff_EOperation' and 'ecoreDiff_EClass'. From 'ecoreDiff_EOperation', the role 'ecoreDiff_EOperation' has cardinality 0..*, and from 'ecoreDiff_EClass', the role 'ecoreDiff_EClass30' has cardinality 0..*.
+An association connects 'ecoreDiff_EStructuralFeature' and 'ecoreDiff_EClass'. From 'ecoreDiff_EStructuralFeature', the role 'ecoreDiff_EStructuralFeature' has cardinality 0..*, and from 'ecoreDiff_EClass', the role 'ecoreDiff_EClass32' has cardinality 0..*.
+An association connects 'ecoreDiff_EClass' and 'ecoreDiff_EClass'. From 'ecoreDiff_EClass', the role 'ecoreDiff_EClass35' has cardinality 0..*, and from 'ecoreDiff_EClass', the role 'ecoreDiff_EClass33' has cardinality 0..*.
+An association connects 'ecoreDiff_EClass' and 'ecoreDiff_EAttribute'. From 'ecoreDiff_EClass', the role 'ecoreDiff_EClass37' has cardinality 0..*, and from 'ecoreDiff_EAttribute', the role 'ecoreDiff_EAttribute38' has cardinality 0..*.
+An association connects 'ecoreDiff_EClass' and 'ecoreDiff_EGenericType'. From 'ecoreDiff_EClass', the role 'ecoreDiff_EClass40' has cardinality 0..*, and from 'ecoreDiff_EGenericType', the role 'ecoreDiff_EGenericType' has cardinality 0..*.
+An association connects 'ecoreDiff_EClass' and 'ecoreDiff_EGenericType'. From 'ecoreDiff_EClass', the role 'ecoreDiff_EClass42' has cardinality 0..*, and from 'ecoreDiff_EGenericType', the role 'ecoreDiff_EGenericType43' has cardinality 0..*.
+An association connects 'ecoreDiff_EClassifier' and 'ecoreDiff_EPackage'. From 'ecoreDiff_EClassifier', the role '45' has cardinality 0..*, and from 'ecoreDiff_EPackage', the role '46' has cardinality 0..*.
+An association connects 'ecoreDiff_ETypeParameter' and 'ecoreDiff_EClassifier'. From 'ecoreDiff_ETypeParameter', the role 'ecoreDiff_ETypeParameter' has cardinality 0..*, and from 'ecoreDiff_EClassifier', the role 'ecoreDiff_EClassifier' has cardinality 0..*.
+An association connects 'ecoreDiff_EFactory' and 'ecoreDiff_EPackage'. From 'ecoreDiff_EFactory', the role '50' has cardinality 0..*, and from 'ecoreDiff_EPackage', the role '49' has cardinality 0..*.
+An association connects 'ecoreDiff_EPackage' and 'ecoreDiff_EPackage'. From 'ecoreDiff_EPackage', the role '53' has cardinality 0..*, and from 'ecoreDiff_EPackage', the role '54' has cardinality 0..*.
+An association connects 'ecoreDiff_EPackage' and 'ecoreDiff_EPackage'. From 'ecoreDiff_EPackage', the role '57' has cardinality 0..*, and from 'ecoreDiff_EPackage', the role '58' has cardinality 0..*.
+An association connects 'ecoreDiff_EPackage' and 'ecoreDiff_EClassifier'. From 'ecoreDiff_EPackage', the role '60' has cardinality 0..*, and from 'ecoreDiff_EClassifier', the role '61' has cardinality 0..*.
+An association connects 'ecoreDiff_EFactory' and 'ecoreDiff_EPackage'. From 'ecoreDiff_EFactory', the role '63' has cardinality 0..*, and from 'ecoreDiff_EPackage', the role '64' has cardinality 0..*.
+An association connects 'ecoreDiff_EGenericType' and 'ecoreDiff_ETypeParameter'. From 'ecoreDiff_EGenericType', the role 'ecoreDiff_EGenericType67' has cardinality 0..*, and from 'ecoreDiff_ETypeParameter', the role 'ecoreDiff_ETypeParameter66' has cardinality 0..*.
+An association connects 'ecoreDiff_EGenericType' and 'ecoreDiff_EGenericType'. From 'ecoreDiff_EGenericType', the role 'ecoreDiff_EGenericType68' has cardinality 0..*, and from 'ecoreDiff_EGenericType', the role 'ecoreDiff_EGenericType70' has cardinality 0..*.
+An association connects 'ecoreDiff_EGenericType' and 'ecoreDiff_EGenericType'. From 'ecoreDiff_EGenericType', the role 'ecoreDiff_EGenericType73' has cardinality 0..*, and from 'ecoreDiff_EGenericType', the role 'ecoreDiff_EGenericType71' has cardinality 0..*.
+An association connects 'ecoreDiff_EClassifier' and 'ecoreDiff_EGenericType'. From 'ecoreDiff_EClassifier', the role 'ecoreDiff_EClassifier76' has cardinality 0..*, and from 'ecoreDiff_EGenericType', the role 'ecoreDiff_EGenericType75' has cardinality 0..*.
+An association connects 'ecoreDiff_EGenericType' and 'ecoreDiff_EGenericType'. From 'ecoreDiff_EGenericType', the role 'ecoreDiff_EGenericType77' has cardinality 0..*, and from 'ecoreDiff_EGenericType', the role 'ecoreDiff_EGenericType79' has cardinality 0..*.
+An association connects 'ecoreDiff_ETypeParameter' and 'ecoreDiff_EGenericType'. From 'ecoreDiff_ETypeParameter', the role 'ecoreDiff_ETypeParameter82' has cardinality 0..*, and from 'ecoreDiff_EGenericType', the role 'ecoreDiff_EGenericType81' has cardinality 0..*.
+An association connects 'ecoreDiff_EGenericType' and 'ecoreDiff_EClassifier'. From 'ecoreDiff_EGenericType', the role 'ecoreDiff_EGenericType84' has cardinality 0..*, and from 'ecoreDiff_EClassifier', the role 'ecoreDiff_EClassifier85' has cardinality 0..*.
+An association connects 'ecoreDiff_ETypeParameter' and 'ecoreDiff_EOperation'. From 'ecoreDiff_ETypeParameter', the role 'ecoreDiff_ETypeParameter88' has cardinality 0..*, and from 'ecoreDiff_EOperation', the role 'ecoreDiff_EOperation87' has cardinality 0..*.
+An association connects 'ecoreDiff_EParameter' and 'ecoreDiff_EOperation'. From 'ecoreDiff_EParameter', the role '91' has cardinality 0..*, and from 'ecoreDiff_EOperation', the role '90' has cardinality 0..*.
+An association connects 'ecoreDiff_EClassifier' and 'ecoreDiff_EOperation'. From 'ecoreDiff_EClassifier', the role 'ecoreDiff_EClassifier94' has cardinality 0..*, and from 'ecoreDiff_EOperation', the role 'ecoreDiff_EOperation93' has cardinality 0..*.
+An association connects 'ecoreDiff_EOperation' and 'ecoreDiff_EGenericType'. From 'ecoreDiff_EOperation', the role 'ecoreDiff_EOperation96' has cardinality 0..*, and from 'ecoreDiff_EGenericType', the role 'ecoreDiff_EGenericType97' has cardinality 0..*.
+An association connects 'ecoreDiff_EClass' and 'ecoreDiff_EOperation'. From 'ecoreDiff_EClass', the role '100' has cardinality 0..*, and from 'ecoreDiff_EOperation', the role '99' has cardinality 0..*.
+An association connects 'ecoreDiff_ETypedElement' and 'ecoreDiff_EGenericType'. From 'ecoreDiff_ETypedElement', the role 'ecoreDiff_ETypedElement' has cardinality 0..*, and from 'ecoreDiff_EGenericType', the role 'ecoreDiff_EGenericType102' has cardinality 0..*.
+An association connects 'ecoreDiff_EOperation' and 'ecoreDiff_EParameter'. From 'ecoreDiff_EOperation', the role '105' has cardinality 0..*, and from 'ecoreDiff_EParameter', the role '104' has cardinality 0..*.
+An association connects 'ecoreDiff_EDataType' and 'ecoreDiff_EAttribute'. From 'ecoreDiff_EDataType', the role 'ecoreDiff_EDataType' has cardinality 0..*, and from 'ecoreDiff_EAttribute', the role 'ecoreDiff_EAttribute107' has cardinality 0..*.
+An association connects 'ecoreDiff_EStructuralFeature' and 'ecoreDiff_EClass'. From 'ecoreDiff_EStructuralFeature', the role '109' has cardinality 0..*, and from 'ecoreDiff_EClass', the role '110' has cardinality 0..*.
+An association connects 'ecoreDiff_EReference' and 'ecoreDiff_EReference'. From 'ecoreDiff_EReference', the role 'ecoreDiff_EReference113' has cardinality 0..*, and from 'ecoreDiff_EReference', the role 'ecoreDiff_EReference111' has cardinality 0..*.
+An association connects 'ecoreDiff_EClass' and 'ecoreDiff_EReference'. From 'ecoreDiff_EClass', the role 'ecoreDiff_EClass116' has cardinality 0..*, and from 'ecoreDiff_EReference', the role 'ecoreDiff_EReference115' has cardinality 0..*.
+An association connects 'ecoreDiff_EAttribute' and 'ecoreDiff_EReference'. From 'ecoreDiff_EAttribute', the role 'ecoreDiff_EAttribute119' has cardinality 0..*, and from 'ecoreDiff_EReference', the role 'ecoreDiff_EReference118' has cardinality 0..*.
+An association connects 'ecoreDiff_EEnum' and 'ecoreDiff_EEnumLiteral'. From 'ecoreDiff_EEnum', the role '121' has cardinality 0..*, and from 'ecoreDiff_EEnumLiteral', the role '122' has cardinality 0..*.
+An association connects 'ecoreDiff_EEnumLiteral' and 'ecoreDiff_EEnum'. From 'ecoreDiff_EEnumLiteral', the role '124' has cardinality 0..*, and from 'ecoreDiff_EEnum', the role '125' has cardinality 0..*.
+An association connects 'ecoreDiff_EAnnotation' and 'ecoreDiff_EModelElement'. From 'ecoreDiff_EAnnotation', the role '128' has cardinality 0..*, and from 'ecoreDiff_EModelElement', the role '127' has cardinality 0..*.
+An association connects 'ecoreDiff_DifferenceModel' and 'ecoreDiff_DifferenceElement'. From 'ecoreDiff_DifferenceModel', the role 'ecoreDiff_DifferenceModel' has cardinality 0..*, and from 'ecoreDiff_DifferenceElement', the role 'ecoreDiff_DifferenceElement' has cardinality 0..*.
+An association connects 'ecoreDiff_ChangedEAnnotation' and 'ecoreDiff_EAnnotation'. From 'ecoreDiff_ChangedEAnnotation', the role 'ecoreDiff_ChangedEAnnotation' has cardinality 0..*, and from 'ecoreDiff_EAnnotation', the role 'ecoreDiff_EAnnotation131' has cardinality 0..*.
+An association connects 'ecoreDiff_ChangedEStringToStringMapEntry' and 'ecoreDiff_EStringToStringMapEntry'. From 'ecoreDiff_ChangedEStringToStringMapEntry', the role 'ecoreDiff_ChangedEStringToStringMapEntry' has cardinality 0..*, and from 'ecoreDiff_EStringToStringMapEntry', the role 'ecoreDiff_EStringToStringMapEntry133' has cardinality 0..*.
+An association connects 'ecoreDiff_EObject' and 'ecoreDiff_ChangedEObject'. From 'ecoreDiff_EObject', the role 'ecoreDiff_EObject135' has cardinality 0..*, and from 'ecoreDiff_ChangedEObject', the role 'ecoreDiff_ChangedEObject' has cardinality 0..*.
+An association connects 'ecoreDiff_EClass' and 'ecoreDiff_ChangedEClass'. From 'ecoreDiff_EClass', the role 'ecoreDiff_EClass137' has cardinality 0..*, and from 'ecoreDiff_ChangedEClass', the role 'ecoreDiff_ChangedEClass' has cardinality 0..*.
+An association connects 'ecoreDiff_ChangedEClassifier' and 'ecoreDiff_EClassifier'. From 'ecoreDiff_ChangedEClassifier', the role 'ecoreDiff_ChangedEClassifier' has cardinality 0..*, and from 'ecoreDiff_EClassifier', the role 'ecoreDiff_EClassifier139' has cardinality 0..*.
+An association connects 'ecoreDiff_ChangedENamedElement' and 'ecoreDiff_ENamedElement'. From 'ecoreDiff_ChangedENamedElement', the role 'ecoreDiff_ChangedENamedElement' has cardinality 0..*, and from 'ecoreDiff_ENamedElement', the role 'ecoreDiff_ENamedElement' has cardinality 0..*.
+An association connects 'ecoreDiff_EPackage' and 'ecoreDiff_ChangedEPackage'. From 'ecoreDiff_EPackage', the role 'ecoreDiff_EPackage' has cardinality 0..*, and from 'ecoreDiff_ChangedEPackage', the role 'ecoreDiff_ChangedEPackage' has cardinality 0..*.
+An association connects 'ecoreDiff_ChangedEFactory' and 'ecoreDiff_EFactory'. From 'ecoreDiff_ChangedEFactory', the role 'ecoreDiff_ChangedEFactory' has cardinality 0..*, and from 'ecoreDiff_EFactory', the role 'ecoreDiff_EFactory' has cardinality 0..*.
+An association connects 'ecoreDiff_ChangedEDataType' and 'ecoreDiff_EDataType'. From 'ecoreDiff_ChangedEDataType', the role 'ecoreDiff_ChangedEDataType' has cardinality 0..*, and from 'ecoreDiff_EDataType', the role 'ecoreDiff_EDataType144' has cardinality 0..*.
+An association connects 'ecoreDiff_ChangedETypeParameter' and 'ecoreDiff_ETypeParameter'. From 'ecoreDiff_ChangedETypeParameter', the role 'ecoreDiff_ChangedETypeParameter' has cardinality 0..*, and from 'ecoreDiff_ETypeParameter', the role 'ecoreDiff_ETypeParameter146' has cardinality 0..*.
+An association connects 'ecoreDiff_EGenericType' and 'ecoreDiff_ChangedEGenericType'. From 'ecoreDiff_EGenericType', the role 'ecoreDiff_EGenericType148' has cardinality 0..*, and from 'ecoreDiff_ChangedEGenericType', the role 'ecoreDiff_ChangedEGenericType' has cardinality 0..*.
+An association connects 'ecoreDiff_EClassifier_Wildcard' and 'ecoreDiff_ChangedEClassifier_Wildcard'. From 'ecoreDiff_EClassifier_Wildcard', the role 'ecoreDiff_EClassifier_Wildcard' has cardinality 0..*, and from 'ecoreDiff_ChangedEClassifier_Wildcard', the role 'ecoreDiff_ChangedEClassifier_Wildcard' has cardinality 0..*.
+An association connects 'ecoreDiff_EOperation' and 'ecoreDiff_ChangedEOperation'. From 'ecoreDiff_EOperation', the role 'ecoreDiff_EOperation151' has cardinality 0..*, and from 'ecoreDiff_ChangedEOperation', the role 'ecoreDiff_ChangedEOperation' has cardinality 0..*.
+An association connects 'ecoreDiff_ChangedETypedElement' and 'ecoreDiff_ETypedElement'. From 'ecoreDiff_ChangedETypedElement', the role 'ecoreDiff_ChangedETypedElement' has cardinality 0..*, and from 'ecoreDiff_ETypedElement', the role 'ecoreDiff_ETypedElement153' has cardinality 0..*.
+An association connects 'ecoreDiff_EParameter' and 'ecoreDiff_ChangedEParameter'. From 'ecoreDiff_EParameter', the role 'ecoreDiff_EParameter' has cardinality 0..*, and from 'ecoreDiff_ChangedEParameter', the role 'ecoreDiff_ChangedEParameter' has cardinality 0..*.
+An association connects 'ecoreDiff_EAttribute' and 'ecoreDiff_ChangedEAttribute'. From 'ecoreDiff_EAttribute', the role 'ecoreDiff_EAttribute156' has cardinality 0..*, and from 'ecoreDiff_ChangedEAttribute', the role 'ecoreDiff_ChangedEAttribute' has cardinality 0..*.
+An association connects 'ecoreDiff_ChangedEStructuralFeature' and 'ecoreDiff_EStructuralFeature'. From 'ecoreDiff_ChangedEStructuralFeature', the role 'ecoreDiff_ChangedEStructuralFeature' has cardinality 0..*, and from 'ecoreDiff_EStructuralFeature', the role 'ecoreDiff_EStructuralFeature158' has cardinality 0..*.
+An association connects 'ecoreDiff_EStructuralFeature_Wildcard' and 'ecoreDiff_ChangedEStructuralFeature_Wildcard'. From 'ecoreDiff_EStructuralFeature_Wildcard', the role 'ecoreDiff_EStructuralFeature_Wildcard' has cardinality 0..*, and from 'ecoreDiff_ChangedEStructuralFeature_Wildcard', the role 'ecoreDiff_ChangedEStructuralFeature_Wildcard' has cardinality 0..*.
+An association connects 'ecoreDiff_ChangedEReference' and 'ecoreDiff_EReference'. From 'ecoreDiff_ChangedEReference', the role 'ecoreDiff_ChangedEReference' has cardinality 0..*, and from 'ecoreDiff_EReference', the role 'ecoreDiff_EReference161' has cardinality 0..*.
+An association connects 'ecoreDiff_EEnum' and 'ecoreDiff_ChangedEEnum'. From 'ecoreDiff_EEnum', the role 'ecoreDiff_EEnum' has cardinality 0..*, and from 'ecoreDiff_ChangedEEnum', the role 'ecoreDiff_ChangedEEnum' has cardinality 0..*.
+An association connects 'ecoreDiff_ChangedEEnumLiteral' and 'ecoreDiff_EEnumLiteral'. From 'ecoreDiff_ChangedEEnumLiteral', the role 'ecoreDiff_ChangedEEnumLiteral' has cardinality 0..*, and from 'ecoreDiff_EEnumLiteral', the role 'ecoreDiff_EEnumLiteral' has cardinality 0..*.
+An association connects 'ecoreDiff_ChangedEModelElement' and 'ecoreDiff_EModelElement'. From 'ecoreDiff_ChangedEModelElement', the role 'ecoreDiff_ChangedEModelElement' has cardinality 0..*, and from 'ecoreDiff_EModelElement', the role 'ecoreDiff_EModelElement' has cardinality 0..*.

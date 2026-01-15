@@ -1,0 +1,69 @@
+The domain model 'sql4csv' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'sql4csv_ValueEquality' represents an important domain concept.
+It has one attribute: 'right', which is of type str.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sql4csv_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sql4csv_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'sql4csv_AndCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sql4csv_Equality' represents an important domain concept.
+It does not declare any attributes.
+
+'sql4csv_OrCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sql4csv_Query' represents an important domain concept.
+It does not declare any attributes.
+
+'sql4csv_SQL4CSV' represents an important domain concept.
+It does not declare any attributes.
+
+'sql4csv_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'sql4csv_ColumnEquality' represents an important domain concept.
+It does not declare any attributes.
+
+'sql4csv_BinaryCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sql4csv_Column' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sql4csv_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'sql4csv_Equality' is a specialization of 'Condition'.
+The class 'sql4csv_BinaryCondition' is a specialization of 'Condition'.
+The class 'sql4csv_AndCondition' is a specialization of 'BinaryCondition'.
+The class 'sql4csv_OrCondition' is a specialization of 'BinaryCondition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sql4csv_SQL4CSV' and 'sql4csv_Program'. From 'sql4csv_SQL4CSV', the role 'sql4csv_SQL4CSV' has cardinality 0..*, and from 'sql4csv_Program', the role 'sql4csv_Program' has cardinality 0..*.
+An association connects 'sql4csv_Program' and 'sql4csv_Query'. From 'sql4csv_Program', the role 'sql4csv_Program2' has cardinality 0..*, and from 'sql4csv_Query', the role 'sql4csv_Query' has cardinality 0..*.
+An association connects 'sql4csv_Column' and 'sql4csv_Query'. From 'sql4csv_Column', the role 'sql4csv_Column' has cardinality 0..*, and from 'sql4csv_Query', the role 'sql4csv_Query4' has cardinality 0..*.
+An association connects 'sql4csv_Query' and 'sql4csv_Column'. From 'sql4csv_Query', the role 'sql4csv_Query6' has cardinality 0..*, and from 'sql4csv_Column', the role 'sql4csv_Column7' has cardinality 0..*.
+An association connects 'sql4csv_Query' and 'sql4csv_Table'. From 'sql4csv_Query', the role 'sql4csv_Query9' has cardinality 0..*, and from 'sql4csv_Table', the role 'sql4csv_Table' has cardinality 0..*.
+An association connects 'sql4csv_Query' and 'sql4csv_Table'. From 'sql4csv_Query', the role 'sql4csv_Query11' has cardinality 0..*, and from 'sql4csv_Table', the role 'sql4csv_Table12' has cardinality 0..*.
+An association connects 'sql4csv_Condition' and 'sql4csv_Query'. From 'sql4csv_Condition', the role 'sql4csv_Condition' has cardinality 0..*, and from 'sql4csv_Query', the role 'sql4csv_Query14' has cardinality 0..*.
+An association connects 'sql4csv_Column' and 'sql4csv_Table'. From 'sql4csv_Column', the role 'sql4csv_Column16' has cardinality 0..*, and from 'sql4csv_Table', the role 'sql4csv_Table17' has cardinality 0..*.
+An association connects 'sql4csv_Equality' and 'sql4csv_Column'. From 'sql4csv_Equality', the role 'sql4csv_Equality' has cardinality 0..*, and from 'sql4csv_Column', the role 'sql4csv_Column19' has cardinality 0..*.
+An association connects 'sql4csv_EObject' and 'sql4csv_Equality'. From 'sql4csv_EObject', the role 'sql4csv_EObject' has cardinality 0..*, and from 'sql4csv_Equality', the role 'sql4csv_Equality21' has cardinality 0..*.
+An association connects 'sql4csv_BinaryCondition' and 'sql4csv_Equality'. From 'sql4csv_BinaryCondition', the role 'sql4csv_BinaryCondition' has cardinality 0..*, and from 'sql4csv_Equality', the role 'sql4csv_Equality23' has cardinality 0..*.
+An association connects 'sql4csv_Condition' and 'sql4csv_BinaryCondition'. From 'sql4csv_Condition', the role 'sql4csv_Condition26' has cardinality 0..*, and from 'sql4csv_BinaryCondition', the role 'sql4csv_BinaryCondition25' has cardinality 0..*.
+An association connects 'sql4csv_ColumnEquality' and 'sql4csv_Column'. From 'sql4csv_ColumnEquality', the role 'sql4csv_ColumnEquality' has cardinality 0..*, and from 'sql4csv_Column', the role 'sql4csv_Column28' has cardinality 0..*.

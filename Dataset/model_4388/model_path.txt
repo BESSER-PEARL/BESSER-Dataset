@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/grammarware/sle16/bousse/examples/examples/java/language-workbench/org.gemoc.arduino.sequential.arduino/model/Arduino.ecore

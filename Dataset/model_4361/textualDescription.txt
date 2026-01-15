@@ -1,0 +1,71 @@
+The domain model 'mpl' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'mpl_AddExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'AtomicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mpl_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_AtomicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_LiteralValue' represents an important domain concept.
+It has one attribute: 'rawValue', which is of type int.
+
+'mpl_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_Program' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mpl_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_VariableRefrence' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'mpl_ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mpl_Assignment' is a specialization of 'Statement'.
+The class 'mpl_ExpressionStatement' is a specialization of 'Statement'.
+The class 'mpl_ArithmeticExpression' is a specialization of 'Expression'.
+The class 'mpl_AtomicExpression' is a specialization of 'Expression'.
+The class 'mpl_LiteralValue' is a specialization of 'AtomicExpression'.
+The class 'mpl_VariableRefrence' is a specialization of 'AtomicExpression'.
+The class 'mpl_AddExpression' is a specialization of 'ArithmeticExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mpl_VariableDeclaration' and 'mpl_Program'. From 'mpl_VariableDeclaration', the role 'mpl_VariableDeclaration' has cardinality 0..*, and from 'mpl_Program', the role 'mpl_Program' has cardinality 0..*.
+An association connects 'mpl_Program' and 'mpl_Statement'. From 'mpl_Program', the role 'mpl_Program2' has cardinality 0..*, and from 'mpl_Statement', the role 'mpl_Statement' has cardinality 0..*.
+An association connects 'mpl_Variable' and 'mpl_VariableDeclaration'. From 'mpl_Variable', the role 'mpl_Variable' has cardinality 0..*, and from 'mpl_VariableDeclaration', the role 'mpl_VariableDeclaration4' has cardinality 0..*.
+An association connects 'mpl_Expression' and 'mpl_Assignment'. From 'mpl_Expression', the role 'mpl_Expression' has cardinality 0..*, and from 'mpl_Assignment', the role 'mpl_Assignment' has cardinality 0..*.
+An association connects 'mpl_VariableRefrence' and 'mpl_Assignment'. From 'mpl_VariableRefrence', the role 'mpl_VariableRefrence' has cardinality 0..*, and from 'mpl_Assignment', the role 'mpl_Assignment7' has cardinality 0..*.
+An association connects 'mpl_Expression' and 'mpl_ExpressionStatement'. From 'mpl_Expression', the role 'mpl_Expression9' has cardinality 0..*, and from 'mpl_ExpressionStatement', the role 'mpl_ExpressionStatement' has cardinality 0..*.
+An association connects 'mpl_ArithmeticExpression' and 'mpl_Expression'. From 'mpl_ArithmeticExpression', the role 'mpl_ArithmeticExpression' has cardinality 0..*, and from 'mpl_Expression', the role 'mpl_Expression11' has cardinality 0..*.
+An association connects 'mpl_ArithmeticExpression' and 'mpl_Expression'. From 'mpl_ArithmeticExpression', the role 'mpl_ArithmeticExpression13' has cardinality 0..*, and from 'mpl_Expression', the role 'mpl_Expression14' has cardinality 0..*.
+An association connects 'mpl_VariableRefrence' and 'mpl_Variable'. From 'mpl_VariableRefrence', the role 'mpl_VariableRefrence16' has cardinality 0..*, and from 'mpl_Variable', the role 'mpl_Variable17' has cardinality 0..*.

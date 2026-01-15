@@ -1,0 +1,213 @@
+The domain model 'notation' describes the core structural elements and their relationships within the system.
+
+The model defines 48 main class(es).
+
+'notation_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Rectangle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Composite' represents an important domain concept.
+It has one attribute: 'layout', which is of type str.
+
+'notation_Compartment' represents an important domain concept.
+It has one attribute: 'layout', which is of type str.
+
+'notation_Icon' represents an important domain concept.
+It has one attribute: 'iconType', which is of type str.
+
+'Figure' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_TextualElement' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_LineStyle' represents an important domain concept.
+It has the following attributes: 'length', which is of type float; 'color', which is of type str; 'thickness', which is of type float; 'texture', which is of type str; 'brightness', which is of type int; 'orientation', which is of type str.
+
+'notation_Triangle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_TextualContainment' represents an important domain concept.
+It has one attribute: 'layout', which is of type str.
+
+'notation_Line' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'TextualElement' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_FigureStyle' represents an important domain concept.
+It has the following attributes: 'height', which is of type float; 'fillTextureColor', which is of type str; 'fillOrientation', which is of type str; 'brightness', which is of type int; 'orientation', which is of type str; 'fillColor', which is of type str; 'width', which is of type float; 'fillTexture', which is of type str.
+
+'notation_Circle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_AttributeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Square' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_GraphicalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'Style' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Roundtangle' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Polyline' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Point' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'x', which is of type int.
+
+'notation_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Diamond' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_SyntaxOf' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphicalElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_NotationDefinition' represents an important domain concept.
+It has one attribute: 'Type', which is of type str.
+
+'notation_DiagramDefinition' represents an important domain concept.
+It has the following attributes: 'Level', which is of type int; 'targetedAudience', which is of type str; 'allowChunks', which is of type bool; 'Legend', which is of type str.
+
+'notation_TextStyle' represents an important domain concept.
+It has the following attributes: 'fontName', which is of type str; 'italic', which is of type bool; 'fontSize', which is of type int; 'underlined', which is of type bool; 'bold', which is of type bool; 'fontColor', which is of type str.
+
+'notation_Image' represents an important domain concept.
+It has one attribute: 'path', which is of type str.
+
+'notation_Style' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_FigureContainment' represents an important domain concept.
+It has one attribute: 'layout', which is of type str.
+
+'IDElement' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Figure' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_BorderStyle' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'thickness', which is of type float; 'texture', which is of type str.
+
+'notation_ReferenceValue' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_IDElement' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+'notation_Keyword' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Cube' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_IconStyle' represents an important domain concept.
+It has the following attributes: 'width', which is of type float; 'brightness', which is of type int; 'height', which is of type float; 'color', which is of type str; 'orientation', which is of type str.
+
+'notation_Cylinder' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'LineTextureType' defines the following possible values: 'DOT', 'SOLID', 'DASHDOT', 'DOUBLE', 'DASHDOTDOT', 'DASH', 'INVISIBLE'.
+The enumeration 'AudienceType' defines the following possible values: 'BOTH', 'BEGINNER', 'EXPERT'.
+The enumeration 'Color' defines the following possible values: 'DARK_GRAY', 'LIGHT_GRAY', 'BLUE', 'BLACK', 'YELLOW', 'CYAN', 'LIGHT_GREEN', 'DARK_GREEN', 'WHITE', 'GREEN', 'RED', 'LIGHT_BLUE', 'GRAY', 'ORANGE', 'DARK_BLUE'.
+The enumeration 'IconType' defines the following possible values: 'LETTER', 'ARROW', 'CROSS'.
+The enumeration 'DefinitionType' defines the following possible values: 'TEXTUAL', 'HYBRID', 'GRAPHICAL'.
+The enumeration 'Layout' defines the following possible values: 'VERTICAL', 'HORIZONTAL', 'UNKNOWN'.
+The enumeration 'Orientation' defines the following possible values: 'LEFT_DIAGONAL', 'VERTICAL', 'HORIZONTAL', 'RIGHT_DIAGONAL'.
+The enumeration 'FillTextureType' defines the following possible values: 'STRIP', 'DASH', 'DASHDOT', 'DOT', 'DASHDOTDOT', 'NONE'.
+
+The model also captures inheritance relationships between classes.
+The class 'notation_DiagramElement' is a specialization of 'IDElement'.
+The class 'notation_Node' is a specialization of 'DiagramElement'.
+The class 'notation_Relation' is a specialization of 'DiagramElement'.
+The class 'notation_Compartment' is a specialization of 'Relation'.
+The class 'notation_Link' is a specialization of 'Relation'.
+The class 'notation_GraphicalElement' is a specialization of 'IDElement'.
+The class 'notation_SyntaxOf' is a specialization of 'GraphicalElement'.
+The class 'notation_Icon' is a specialization of 'GraphicalElement'.
+The class 'notation_Image' is a specialization of 'GraphicalElement'.
+The class 'notation_Composite' is a specialization of 'GraphicalElement'.
+The class 'notation_Label' is a specialization of 'GraphicalElement'.
+The class 'notation_Line' is a specialization of 'GraphicalElement'.
+The class 'notation_Figure' is a specialization of 'GraphicalElement'.
+The class 'notation_Rectangle' is a specialization of 'Figure'.
+The class 'notation_Roundtangle' is a specialization of 'Figure'.
+The class 'notation_Square' is a specialization of 'Figure'.
+The class 'notation_Diamond' is a specialization of 'Figure'.
+The class 'notation_Triangle' is a specialization of 'Figure'.
+The class 'notation_Circle' is a specialization of 'Figure'.
+The class 'notation_Cylinder' is a specialization of 'Figure'.
+The class 'notation_Cube' is a specialization of 'Figure'.
+The class 'notation_Polyline' is a specialization of 'Figure'.
+The class 'notation_TextualElement' is a specialization of 'IDElement'.
+The class 'notation_Token' is a specialization of 'TextualElement'.
+The class 'notation_Keyword' is a specialization of 'TextualElement'.
+The class 'notation_Value' is a specialization of 'TextualElement'.
+The class 'notation_AttributeValue' is a specialization of 'Value'.
+The class 'notation_ReferenceValue' is a specialization of 'Value'.
+The class 'notation_LineStyle' is a specialization of 'Style'.
+The class 'notation_FigureStyle' is a specialization of 'Style'.
+The class 'notation_IconStyle' is a specialization of 'Style'.
+The class 'notation_BorderStyle' is a specialization of 'Style'.
+The class 'notation_TextStyle' is a specialization of 'Style'.
+
+Relationships between classes are modeled using associations.
+An association connects 'notation_DiagramDefinition' and 'notation_NotationDefinition'. From 'notation_DiagramDefinition', the role 'notation_DiagramDefinition' has cardinality 0..*, and from 'notation_NotationDefinition', the role 'notation_NotationDefinition' has cardinality 0..*.
+An association connects 'notation_DiagramElement' and 'notation_DiagramDefinition'. From 'notation_DiagramElement', the role 'notation_DiagramElement' has cardinality 0..*, and from 'notation_DiagramDefinition', the role 'notation_DiagramDefinition2' has cardinality 0..*.
+An association connects 'notation_GraphicalElement' and 'notation_Node'. From 'notation_GraphicalElement', the role 'notation_GraphicalElement' has cardinality 0..*, and from 'notation_Node', the role 'notation_Node' has cardinality 0..*.
+An association connects 'notation_Compartment' and 'notation_Node'. From 'notation_Compartment', the role 'notation_Compartment' has cardinality 0..*, and from 'notation_Node', the role 'notation_Node5' has cardinality 0..*.
+An association connects 'notation_GraphicalElement' and 'notation_Link'. From 'notation_GraphicalElement', the role 'notation_GraphicalElement7' has cardinality 0..*, and from 'notation_Link', the role 'notation_Link' has cardinality 0..*.
+An association connects 'notation_DiagramElement' and 'notation_SyntaxOf'. From 'notation_DiagramElement', the role 'notation_DiagramElement9' has cardinality 0..*, and from 'notation_SyntaxOf', the role 'notation_SyntaxOf' has cardinality 0..*.
+An association connects 'notation_Icon' and 'notation_IconStyle'. From 'notation_Icon', the role 'notation_Icon' has cardinality 0..*, and from 'notation_IconStyle', the role 'notation_IconStyle' has cardinality 0..*.
+An association connects 'notation_Image' and 'notation_GraphicalElement'. From 'notation_Image', the role 'notation_Image' has cardinality 0..*, and from 'notation_GraphicalElement', the role 'notation_GraphicalElement12' has cardinality 0..*.
+An association connects 'notation_GraphicalElement' and 'notation_Composite'. From 'notation_GraphicalElement', the role 'notation_GraphicalElement14' has cardinality 0..*, and from 'notation_Composite', the role 'notation_Composite' has cardinality 0..*.
+An association connects 'notation_Composite' and 'notation_GraphicalElement'. From 'notation_Composite', the role 'notation_Composite16' has cardinality 0..*, and from 'notation_GraphicalElement', the role 'notation_GraphicalElement17' has cardinality 0..*.
+An association connects 'notation_Label' and 'notation_TextStyle'. From 'notation_Label', the role 'notation_Label' has cardinality 0..*, and from 'notation_TextStyle', the role 'notation_TextStyle' has cardinality 0..*.
+An association connects 'notation_TextualContainment' and 'notation_Label'. From 'notation_TextualContainment', the role 'notation_TextualContainment' has cardinality 0..*, and from 'notation_Label', the role 'notation_Label20' has cardinality 0..*.
+An association connects 'notation_LineStyle' and 'notation_Line'. From 'notation_LineStyle', the role 'notation_LineStyle' has cardinality 0..*, and from 'notation_Line', the role 'notation_Line' has cardinality 0..*.
+An association connects 'notation_FigureStyle' and 'notation_Figure'. From 'notation_FigureStyle', the role 'notation_FigureStyle' has cardinality 0..*, and from 'notation_Figure', the role 'notation_Figure' has cardinality 0..*.
+An association connects 'notation_BorderStyle' and 'notation_Figure'. From 'notation_BorderStyle', the role 'notation_BorderStyle' has cardinality 0..*, and from 'notation_Figure', the role 'notation_Figure24' has cardinality 0..*.
+An association connects 'notation_Figure' and 'notation_FigureContainment'. From 'notation_Figure', the role 'notation_Figure26' has cardinality 0..*, and from 'notation_FigureContainment', the role 'notation_FigureContainment' has cardinality 0..*.
+An association connects 'notation_FigureContainment' and 'notation_GraphicalElement'. From 'notation_FigureContainment', the role 'notation_FigureContainment28' has cardinality 0..*, and from 'notation_GraphicalElement', the role 'notation_GraphicalElement29' has cardinality 0..*.
+An association connects 'notation_Point' and 'notation_Polyline'. From 'notation_Point', the role 'notation_Point' has cardinality 0..*, and from 'notation_Polyline', the role 'notation_Polyline' has cardinality 0..*.
+An association connects 'notation_TextualElement' and 'notation_TextualContainment'. From 'notation_TextualElement', the role 'notation_TextualElement' has cardinality 0..*, and from 'notation_TextualContainment', the role 'notation_TextualContainment32' has cardinality 0..*.

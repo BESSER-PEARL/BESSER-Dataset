@@ -1,0 +1,88 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'myDsl_ExprSimple' represents an important domain concept.
+It has one attribute: 'mot', which is of type str.
+
+'myDsl_Lexpr' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_And' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Exprs' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Command' represents an important domain concept.
+It has one attribute: 'nom', which is of type str.
+
+'myDsl_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Function' represents an important domain concept.
+It has one attribute: 'funName', which is of type str.
+
+'myDsl_ExprTerm' represents an important domain concept.
+It has the following attributes: 'termVar', which is of type str; 'termSym', which is of type str.
+
+'myDsl_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Vars' represents an important domain concept.
+It has the following attributes: 'v2', which is of type str; 'v1', which is of type str.
+
+'myDsl_Eq' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Input' represents an important domain concept.
+It has the following attributes: 'v2', which is of type str; 'v', which is of type str.
+
+'myDsl_Commands' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Not' represents an important domain concept.
+It has one attribute: 'non', which is of type str.
+
+'myDsl_Definiton' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Output' represents an important domain concept.
+It has the following attributes: 'v', which is of type str; 'v2', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_Model' and 'myDsl_Function'. From 'myDsl_Model', the role 'myDsl_Model' has cardinality 0..*, and from 'myDsl_Function', the role 'myDsl_Function' has cardinality 0..*.
+An association connects 'myDsl_Definiton' and 'myDsl_Function'. From 'myDsl_Definiton', the role 'myDsl_Definiton' has cardinality 0..*, and from 'myDsl_Function', the role 'myDsl_Function2' has cardinality 0..*.
+An association connects 'myDsl_Definiton' and 'myDsl_Input'. From 'myDsl_Definiton', the role 'myDsl_Definiton4' has cardinality 0..*, and from 'myDsl_Input', the role 'myDsl_Input' has cardinality 0..*.
+An association connects 'myDsl_Definiton' and 'myDsl_Commands'. From 'myDsl_Definiton', the role 'myDsl_Definiton6' has cardinality 0..*, and from 'myDsl_Commands', the role 'myDsl_Commands' has cardinality 0..*.
+An association connects 'myDsl_Definiton' and 'myDsl_Output'. From 'myDsl_Definiton', the role 'myDsl_Definiton8' has cardinality 0..*, and from 'myDsl_Output', the role 'myDsl_Output' has cardinality 0..*.
+An association connects 'myDsl_Command' and 'myDsl_Commands'. From 'myDsl_Command', the role 'myDsl_Command' has cardinality 0..*, and from 'myDsl_Commands', the role 'myDsl_Commands10' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_Exprs'. From 'myDsl_Expr', the role 'myDsl_Expr' has cardinality 0..*, and from 'myDsl_Exprs', the role 'myDsl_Exprs' has cardinality 0..*.
+An association connects 'myDsl_Exprs' and 'myDsl_Expr'. From 'myDsl_Exprs', the role 'myDsl_Exprs13' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr14' has cardinality 0..*.
+An association connects 'myDsl_Command' and 'myDsl_Vars'. From 'myDsl_Command', the role 'myDsl_Command16' has cardinality 0..*, and from 'myDsl_Vars', the role 'myDsl_Vars' has cardinality 0..*.
+An association connects 'myDsl_Command' and 'myDsl_Exprs'. From 'myDsl_Command', the role 'myDsl_Command18' has cardinality 0..*, and from 'myDsl_Exprs', the role 'myDsl_Exprs19' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_Command'. From 'myDsl_Expr', the role 'myDsl_Expr22' has cardinality 0..*, and from 'myDsl_Command', the role 'myDsl_Command21' has cardinality 0..*.
+An association connects 'myDsl_Command' and 'myDsl_Commands'. From 'myDsl_Command', the role 'myDsl_Command24' has cardinality 0..*, and from 'myDsl_Commands', the role 'myDsl_Commands25' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_Command'. From 'myDsl_Expr', the role 'myDsl_Expr28' has cardinality 0..*, and from 'myDsl_Command', the role 'myDsl_Command27' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_Command'. From 'myDsl_Expr', the role 'myDsl_Expr31' has cardinality 0..*, and from 'myDsl_Command', the role 'myDsl_Command30' has cardinality 0..*.
+An association connects 'myDsl_Commands' and 'myDsl_Command'. From 'myDsl_Commands', the role 'myDsl_Commands34' has cardinality 0..*, and from 'myDsl_Command', the role 'myDsl_Command33' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_ExprSimple'. From 'myDsl_Expr', the role 'myDsl_Expr36' has cardinality 0..*, and from 'myDsl_ExprSimple', the role 'myDsl_ExprSimple' has cardinality 0..*.
+An association connects 'myDsl_And' and 'myDsl_Expr'. From 'myDsl_And', the role 'myDsl_And' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr38' has cardinality 0..*.
+An association connects 'myDsl_ExprTerm' and 'myDsl_Expr'. From 'myDsl_ExprTerm', the role 'myDsl_ExprTerm' has cardinality 0..*, and from 'myDsl_Expr', the role 'myDsl_Expr40' has cardinality 0..*.
+An association connects 'myDsl_And' and 'myDsl_Or'. From 'myDsl_And', the role 'myDsl_And42' has cardinality 0..*, and from 'myDsl_Or', the role 'myDsl_Or' has cardinality 0..*.
+An association connects 'myDsl_And' and 'myDsl_Or'. From 'myDsl_And', the role 'myDsl_And44' has cardinality 0..*, and from 'myDsl_Or', the role 'myDsl_Or45' has cardinality 0..*.
+An association connects 'myDsl_Not' and 'myDsl_Or'. From 'myDsl_Not', the role 'myDsl_Not' has cardinality 0..*, and from 'myDsl_Or', the role 'myDsl_Or47' has cardinality 0..*.
+An association connects 'myDsl_Not' and 'myDsl_Or'. From 'myDsl_Not', the role 'myDsl_Not50' has cardinality 0..*, and from 'myDsl_Or', the role 'myDsl_Or49' has cardinality 0..*.
+An association connects 'myDsl_Eq' and 'myDsl_Not'. From 'myDsl_Eq', the role 'myDsl_Eq' has cardinality 0..*, and from 'myDsl_Not', the role 'myDsl_Not52' has cardinality 0..*.
+An association connects 'myDsl_Eq' and 'myDsl_EObject'. From 'myDsl_Eq', the role 'myDsl_Eq54' has cardinality 0..*, and from 'myDsl_EObject', the role 'myDsl_EObject' has cardinality 0..*.
+An association connects 'myDsl_EObject' and 'myDsl_Eq'. From 'myDsl_EObject', the role 'myDsl_EObject57' has cardinality 0..*, and from 'myDsl_Eq', the role 'myDsl_Eq56' has cardinality 0..*.
+An association connects 'myDsl_Eq' and 'myDsl_EObject'. From 'myDsl_Eq', the role 'myDsl_Eq59' has cardinality 0..*, and from 'myDsl_EObject', the role 'myDsl_EObject60' has cardinality 0..*.
+An association connects 'myDsl_Lexpr' and 'myDsl_ExprSimple'. From 'myDsl_Lexpr', the role 'myDsl_Lexpr' has cardinality 0..*, and from 'myDsl_ExprSimple', the role 'myDsl_ExprSimple62' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_ExprSimple'. From 'myDsl_Expr', the role 'myDsl_Expr65' has cardinality 0..*, and from 'myDsl_ExprSimple', the role 'myDsl_ExprSimple64' has cardinality 0..*.
+An association connects 'myDsl_Expr' and 'myDsl_Lexpr'. From 'myDsl_Expr', the role 'myDsl_Expr68' has cardinality 0..*, and from 'myDsl_Lexpr', the role 'myDsl_Lexpr67' has cardinality 0..*.

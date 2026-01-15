@@ -1,0 +1,18 @@
+The domain model 'simpleClass' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'simpleClass_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isPublic', which is of type bool.
+
+'simpleClass_Class' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleClass_Model' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleClass_Class' and 'simpleClass_Model'. From 'simpleClass_Class', the role 'simpleClass_Class' has cardinality 0..*, and from 'simpleClass_Model', the role 'simpleClass_Model' has cardinality 0..*.
+An association connects 'simpleClass_Class' and 'simpleClass_Class'. From 'simpleClass_Class', the role 'simpleClass_Class1' has cardinality 0..*, and from 'simpleClass_Class', the role 'simpleClass_Class3' has cardinality 0..*.
+An association connects 'simpleClass_Class' and 'simpleClass_Attribute'. From 'simpleClass_Class', the role 'simpleClass_Class5' has cardinality 0..*, and from 'simpleClass_Attribute', the role 'simpleClass_Attribute' has cardinality 0..*.
+An association connects 'simpleClass_Attribute' and 'simpleClass_Class'. From 'simpleClass_Attribute', the role 'simpleClass_Attribute7' has cardinality 0..*, and from 'simpleClass_Class', the role 'simpleClass_Class8' has cardinality 0..*.

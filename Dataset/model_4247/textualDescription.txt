@@ -1,0 +1,73 @@
+The domain model 'restapp' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'restapp_model_User' represents an important domain concept.
+It has the following attributes: 'status', which is of type int; 'password', which is of type str; 'id', which is of type int; 'user', which is of type str.
+
+'Purchase' represents an important domain concept.
+It does not declare any attributes.
+
+'Card' represents an important domain concept.
+It does not declare any attributes.
+
+'Category' represents an important domain concept.
+It does not declare any attributes.
+
+'PhysicalCard' represents an important domain concept.
+It does not declare any attributes.
+
+'User' represents an important domain concept.
+It does not declare any attributes.
+
+'restapp_model_Purchase' represents an important domain concept.
+It has the following attributes: 'totalWithDiscount', which is of type float; 'totalValue', which is of type float; 'discount', which is of type int; 'date', which is of type date; 'id', which is of type int.
+
+'restapp_model_Provider' represents an important domain concept.
+It has the following attributes: 'phone', which is of type str; 'name', which is of type str; 'contact', which is of type str; 'CNPJ', which is of type str; 'Address', which is of type str; 'id', which is of type int.
+
+'restapp_model_PhysicalCard' represents an important domain concept.
+It has the following attributes: 'number', which is of type int; 'status', which is of type int; 'id', which is of type int.
+
+'restapp_model_ProductsCard' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'date', which is of type date.
+
+'restapp_model_Employee' represents an important domain concept.
+It has the following attributes: 'fired', which is of type date; 'phone', which is of type str; 'zipcode', which is of type str; 'comission', which is of type float; 'status', which is of type int; 'mobile', which is of type str; 'name', which is of type str; 'contracted', which is of type date; 'working', which is of type bool; 'id', which is of type int; 'salary', which is of type float; 'rg', which is of type str; 'cpf', which is of type str; 'address', which is of type str.
+
+'Product' represents an important domain concept.
+It does not declare any attributes.
+
+'Employee' represents an important domain concept.
+It does not declare any attributes.
+
+'restapp_model_Product' represents an important domain concept.
+It has the following attributes: 'status', which is of type int; 'id', which is of type int; 'stock', which is of type int; 'description', which is of type str; 'name', which is of type str.
+
+'Provider' represents an important domain concept.
+It does not declare any attributes.
+
+'restapp_model_Price' represents an important domain concept.
+It has the following attributes: 'date', which is of type date; 'value', which is of type float; 'id', which is of type int.
+
+'restapp_model_ProductsPurchase' represents an important domain concept.
+It has the following attributes: 'unityDiscount', which is of type int; 'unityValue', which is of type float; 'unityValueWithDiscount', which is of type float; 'quantity', which is of type int.
+
+'restapp_model_Card' represents an important domain concept.
+It has the following attributes: 'totalValue', which is of type float; 'payedValue', which is of type float; 'id', which is of type int; 'discount', which is of type int; 'totalValueWithDiscount', which is of type float; 'change', which is of type float; 'sellDate', which is of type date.
+
+'restapp_model_Category' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'description', which is of type str; 'name', which is of type str; 'status', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'restapp_model_User' and 'Employee'. From 'restapp_model_User', the role 'restapp_model_User' has cardinality 0..*, and from 'Employee', the role 'Employee' has cardinality 0..*.
+An association connects 'Category' and 'restapp_model_Product'. From 'Category', the role 'Category' has cardinality 0..*, and from 'restapp_model_Product', the role 'restapp_model_Product' has cardinality 0..*.
+An association connects 'Product' and 'restapp_model_Price'. From 'Product', the role 'Product' has cardinality 0..*, and from 'restapp_model_Price', the role 'restapp_model_Price' has cardinality 0..*.
+An association connects 'restapp_model_Purchase' and 'Provider'. From 'restapp_model_Purchase', the role 'restapp_model_Purchase' has cardinality 0..*, and from 'Provider', the role 'Provider' has cardinality 0..*.
+An association connects 'restapp_model_Purchase' and 'User'. From 'restapp_model_Purchase', the role 'restapp_model_Purchase5' has cardinality 0..*, and from 'User', the role 'User' has cardinality 0..*.
+An association connects 'Purchase' and 'restapp_model_ProductsPurchase'. From 'Purchase', the role 'Purchase' has cardinality 0..*, and from 'restapp_model_ProductsPurchase', the role 'restapp_model_ProductsPurchase' has cardinality 0..*.
+An association connects 'restapp_model_ProductsPurchase' and 'Product'. From 'restapp_model_ProductsPurchase', the role 'restapp_model_ProductsPurchase8' has cardinality 0..*, and from 'Product', the role 'Product9' has cardinality 0..*.
+An association connects 'PhysicalCard' and 'restapp_model_Card'. From 'PhysicalCard', the role 'PhysicalCard' has cardinality 0..*, and from 'restapp_model_Card', the role 'restapp_model_Card' has cardinality 0..*.
+An association connects 'Product' and 'restapp_model_ProductsCard'. From 'Product', the role 'Product12' has cardinality 0..*, and from 'restapp_model_ProductsCard', the role 'restapp_model_ProductsCard' has cardinality 0..*.
+An association connects 'restapp_model_ProductsCard' and 'Card'. From 'restapp_model_ProductsCard', the role 'restapp_model_ProductsCard14' has cardinality 0..*, and from 'Card', the role 'Card' has cardinality 0..*.
+An association connects 'restapp_model_ProductsCard' and 'User'. From 'restapp_model_ProductsCard', the role 'restapp_model_ProductsCard16' has cardinality 0..*, and from 'User', the role 'User17' has cardinality 0..*.

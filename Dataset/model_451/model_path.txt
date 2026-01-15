@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/sunwuliang/SlicingProject2.0/org.csu.slicing.uml2/bin/org/csu/slicing/UML2/impl/UML2.ecore

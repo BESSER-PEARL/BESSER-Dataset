@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/MDEGroup/CITRIC/resources/demo/metamodels/KM3.ecore

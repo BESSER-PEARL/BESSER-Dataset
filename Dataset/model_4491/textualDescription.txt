@@ -1,0 +1,74 @@
+The domain model 'taskDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'taskDSL_Speak' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'DriveAction' represents an important domain concept.
+It does not declare any attributes.
+
+'taskDSL_Mission' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'taskDSL_MoveBack' represents an important domain concept.
+It has one attribute: 'meters', which is of type int.
+
+'taskDSL_FollowLine' represents an important domain concept.
+It has one attribute: 'distance', which is of type int.
+
+'taskDSL_Avoid' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'object', which is of type str.
+
+'taskDSL_Task' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'taskDSL_Investigate' represents an important domain concept.
+It has one attribute: 'speed', which is of type str.
+
+'taskDSL_DriveAction' represents an important domain concept.
+It does not declare any attributes.
+
+'taskDSL_TurnLeft' represents an important domain concept.
+It has one attribute: 'degrees', which is of type int.
+
+'taskDSL_DriveUntil' represents an important domain concept.
+It has the following attributes: 'object', which is of type str; 'color', which is of type str; 'speed', which is of type str.
+
+'taskDSL_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'taskDSL_TurnRight' represents an important domain concept.
+It has one attribute: 'degrees', which is of type int.
+
+'taskDSL_DSL' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'taskDSL_Detector' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Color' defines the following possible values: 'GREEN', 'BLUE', 'RED'.
+The enumeration 'Object' defines the following possible values: 'ROCK', 'LAKE'.
+The enumeration 'Speed' defines the following possible values: 'FAST', 'NORMAL', 'SLOW'.
+
+The model also captures inheritance relationships between classes.
+The class 'taskDSL_DriveUntil' is a specialization of 'Action'.
+The class 'taskDSL_Investigate' is a specialization of 'Action'.
+The class 'taskDSL_Speak' is a specialization of 'Action'.
+The class 'taskDSL_FollowLine' is a specialization of 'Action'.
+The class 'taskDSL_MoveBack' is a specialization of 'DriveAction'.
+The class 'taskDSL_TurnLeft' is a specialization of 'DriveAction'.
+The class 'taskDSL_TurnRight' is a specialization of 'DriveAction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'taskDSL_Mission' and 'taskDSL_DSL'. From 'taskDSL_Mission', the role 'taskDSL_Mission' has cardinality 0..*, and from 'taskDSL_DSL', the role 'taskDSL_DSL' has cardinality 0..*.
+An association connects 'taskDSL_Task' and 'taskDSL_DSL'. From 'taskDSL_Task', the role 'taskDSL_Task' has cardinality 0..*, and from 'taskDSL_DSL', the role 'taskDSL_DSL2' has cardinality 0..*.
+An association connects 'taskDSL_Task' and 'taskDSL_Mission'. From 'taskDSL_Task', the role 'taskDSL_Task5' has cardinality 0..*, and from 'taskDSL_Mission', the role 'taskDSL_Mission4' has cardinality 0..*.
+An association connects 'taskDSL_Action' and 'taskDSL_Task'. From 'taskDSL_Action', the role 'taskDSL_Action' has cardinality 0..*, and from 'taskDSL_Task', the role 'taskDSL_Task7' has cardinality 0..*.
+An association connects 'taskDSL_Task' and 'taskDSL_Detector'. From 'taskDSL_Task', the role 'taskDSL_Task9' has cardinality 0..*, and from 'taskDSL_Detector', the role 'taskDSL_Detector' has cardinality 0..*.
+An association connects 'taskDSL_Avoid' and 'taskDSL_Detector'. From 'taskDSL_Avoid', the role 'taskDSL_Avoid' has cardinality 0..*, and from 'taskDSL_Detector', the role 'taskDSL_Detector11' has cardinality 0..*.
+An association connects 'taskDSL_Avoid' and 'taskDSL_DriveAction'. From 'taskDSL_Avoid', the role 'taskDSL_Avoid13' has cardinality 0..*, and from 'taskDSL_DriveAction', the role 'taskDSL_DriveAction' has cardinality 0..*.

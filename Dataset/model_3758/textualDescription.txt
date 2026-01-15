@@ -1,0 +1,229 @@
+The domain model 'rdbms' describes the core structural elements and their relationships within the system.
+
+The model defines 47 main class(es).
+
+'rdbms_RdbmsModifyTableOperation' represents an important domain concept.
+It has one attribute: 'nameChanged', which is of type str.
+
+'rdbms_RdbmsField' represents an important domain concept.
+It has the following attributes: 'rdbmsTypeName', which is of type str; 'scale', which is of type int; 'storageByte', which is of type int; 'precision', which is of type int; 'mandatory', which is of type bool; 'size', which is of type int.
+
+'rdbms_RdbmsRelationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsForeignKey' represents an important domain concept.
+It has the following attributes: 'readOnly', which is of type bool; 'foreignKeySqlName', which is of type str; 'inheritenceBased', which is of type bool; 'deferred', which is of type bool; 'deleteOnCascade', which is of type bool.
+
+'rdbms_RdbmsFieldType' represents an important domain concept.
+It has the following attributes: 'scale', which is of type int; 'name', which is of type str; 'description', which is of type str; 'precision', which is of type int; 'size', which is of type int; 'rdbmsTypeName', which is of type str; 'uuid', which is of type str; 'storageByte', which is of type int.
+
+'RdbmsElement' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsViewExpressionField' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'rdbms_RdbmsViewForeignIdentifierField' represents an important domain concept.
+It does not declare any attributes.
+
+'RdbmsTable' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsCreateTableOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsModifyFieldOperation' represents an important domain concept.
+It has the following attributes: 'changedForeignKeyToValueField', which is of type str; 'mandatoryChanged', which is of type bool; 'changedValueFieldToForeignKey', which is of type str; 'nameChanged', which is of type str; 'sizeChanged', which is of type str; 'typeChanged', which is of type bool.
+
+'RdbmsTableOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'RdbmsIdentifierField' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsElement' represents an important domain concept.
+It has the following attributes: 'sqlName', which is of type str; 'description', which is of type str; 'name', which is of type str; 'originalName', which is of type str; 'fullName', which is of type str; 'uuid', which is of type str; 'originalPackage', which is of type str; 'shortName', which is of type str.
+
+'RdbmsViewField' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsExpression' represents an important domain concept.
+It has one attribute: 'expression', which is of type str.
+
+'rdbms_RdbmsFieldOperation' represents an important domain concept.
+It has one attribute: 'reviewRequired', which is of type bool.
+
+'rdbms_RdbmsJunctionTable' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsViewRecord' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsLabelExpression' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'rdbms_RdbmsCreateFieldOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'RdbmsField' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsViewField' represents an important domain concept.
+It has one attribute: 'inherited', which is of type bool.
+
+'rdbms_RdbmsDeleteFieldOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsViewRelation' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rdbms_RdbmsTableOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsDeleteTableOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsIndex' represents an important domain concept.
+It has one attribute: 'unique', which is of type bool.
+
+'rdbms_RdbmsTable' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsViewIdentifierField' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsConfiguration' represents an important domain concept.
+It has one attribute: 'dialect', which is of type str.
+
+'rdbms_RdbmsTableAlias' represents an important domain concept.
+It does not declare any attributes.
+
+'RdbmsViewAliasField' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsValueField' represents an important domain concept.
+It has one attribute: 'technical', which is of type bool.
+
+'rdbms_RdbmsViewRecordValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'rdbms_RdbmsViewValueField' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsViewTableField' represents an important domain concept.
+It has one attribute: 'foreign', which is of type bool.
+
+'rdbms_RdbmsUniqueConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsViewAliasField' represents an important domain concept.
+It does not declare any attributes.
+
+'RdbmsViewTableField' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsView' represents an important domain concept.
+It has one attribute: 'originUuid', which is of type str.
+
+'rdbms_RdbmsFeature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RdbmsFieldOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsOperationMeta' represents an important domain concept.
+It does not declare any attributes.
+
+'RdbmsExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsIdentifierField' represents an important domain concept.
+It does not declare any attributes.
+
+'rdbms_RdbmsModel' represents an important domain concept.
+It has one attribute: 'version', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'rdbms_RdbmsTable' is a specialization of 'RdbmsElement'.
+The class 'rdbms_RdbmsField' is a specialization of 'RdbmsElement'.
+The class 'rdbms_RdbmsForeignKey' is a specialization of 'RdbmsIdentifierField'.
+The class 'rdbms_RdbmsUniqueConstraint' is a specialization of 'RdbmsElement'.
+The class 'rdbms_RdbmsJunctionTable' is a specialization of 'RdbmsTable'.
+The class 'rdbms_RdbmsIdentifierField' is a specialization of 'RdbmsField'.
+The class 'rdbms_RdbmsView' is a specialization of 'RdbmsElement'.
+The class 'rdbms_RdbmsViewField' is a specialization of 'RdbmsElement'.
+The class 'rdbms_RdbmsViewValueField' is a specialization of 'RdbmsViewAliasField'.
+The class 'rdbms_RdbmsViewExpressionField' is a specialization of 'RdbmsViewField'.
+The class 'rdbms_RdbmsExpression' is a specialization of 'RdbmsElement'.
+The class 'rdbms_RdbmsValueField' is a specialization of 'RdbmsField'.
+The class 'rdbms_RdbmsViewIdentifierField' is a specialization of 'RdbmsViewAliasField'.
+The class 'rdbms_RdbmsTableAlias' is a specialization of 'RdbmsElement'.
+The class 'rdbms_RdbmsLabelExpression' is a specialization of 'RdbmsExpression'.
+The class 'rdbms_RdbmsRelationExpression' is a specialization of 'RdbmsExpression'.
+The class 'rdbms_RdbmsViewAliasField' is a specialization of 'RdbmsViewTableField'.
+The class 'rdbms_RdbmsModifyTableOperation' is a specialization of 'RdbmsTableOperation'.
+The class 'rdbms_RdbmsFieldOperation' is a specialization of 'RdbmsElement'.
+The class 'rdbms_RdbmsCreateFieldOperation' is a specialization of 'RdbmsFieldOperation'.
+The class 'rdbms_RdbmsModifyFieldOperation' is a specialization of 'RdbmsFieldOperation'.
+The class 'rdbms_RdbmsDeleteFieldOperation' is a specialization of 'RdbmsFieldOperation'.
+The class 'rdbms_RdbmsViewTableField' is a specialization of 'RdbmsViewField'.
+The class 'rdbms_RdbmsViewForeignIdentifierField' is a specialization of 'RdbmsViewTableField'.
+The class 'rdbms_RdbmsIndex' is a specialization of 'RdbmsElement'.
+The class 'rdbms_RdbmsTableOperation' is a specialization of 'RdbmsElement'.
+The class 'rdbms_RdbmsCreateTableOperation' is a specialization of 'RdbmsTableOperation'.
+The class 'rdbms_RdbmsDeleteTableOperation' is a specialization of 'RdbmsTableOperation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rdbms_RdbmsField' and 'rdbms_RdbmsTable'. From 'rdbms_RdbmsField', the role 'RdbmsField' has cardinality 0..*, and from 'rdbms_RdbmsTable', the role 'table' has cardinality 0..*.
+An association connects 'rdbms_RdbmsTable' and 'rdbms_RdbmsUniqueConstraint'. From 'rdbms_RdbmsTable', the role 'table2' has cardinality 0..*, and from 'rdbms_RdbmsUniqueConstraint', the role 'RdbmsUniqueConstraint' has cardinality 0..*.
+An association connects 'rdbms_RdbmsIdentifierField' and 'rdbms_RdbmsTable'. From 'rdbms_RdbmsIdentifierField', the role 'rdbms_RdbmsIdentifierField' has cardinality 0..*, and from 'rdbms_RdbmsTable', the role 'rdbms_RdbmsTable' has cardinality 0..*.
+An association connects 'rdbms_RdbmsIndex' and 'rdbms_RdbmsTable'. From 'rdbms_RdbmsIndex', the role 'RdbmsIndex' has cardinality 0..*, and from 'rdbms_RdbmsTable', the role 'table5' has cardinality 0..*.
+An association connects 'rdbms_RdbmsTable' and 'rdbms_RdbmsTable'. From 'rdbms_RdbmsTable', the role 'rdbms_RdbmsTable8' has cardinality 0..*, and from 'rdbms_RdbmsTable', the role 'rdbms_RdbmsTable6' has cardinality 0..*.
+An association connects 'rdbms_RdbmsField' and 'rdbms_RdbmsTable'. From 'rdbms_RdbmsField', the role 'fields' has cardinality 0..*, and from 'rdbms_RdbmsTable', the role 'RdbmsTable' has cardinality 0..*.
+An association connects 'rdbms_RdbmsField' and 'rdbms_RdbmsFieldType'. From 'rdbms_RdbmsField', the role 'rdbms_RdbmsField' has cardinality 0..*, and from 'rdbms_RdbmsFieldType', the role 'rdbms_RdbmsFieldType' has cardinality 0..*.
+An association connects 'rdbms_RdbmsForeignKey' and 'rdbms_RdbmsIdentifierField'. From 'rdbms_RdbmsForeignKey', the role 'foreignKeys' has cardinality 0..*, and from 'rdbms_RdbmsIdentifierField', the role 'RdbmsIdentifierField' has cardinality 0..*.
+An association connects 'rdbms_RdbmsTable' and 'rdbms_RdbmsUniqueConstraint'. From 'rdbms_RdbmsTable', the role 'RdbmsTable13' has cardinality 0..*, and from 'rdbms_RdbmsUniqueConstraint', the role 'uniqueConstraints' has cardinality 0..*.
+An association connects 'rdbms_RdbmsField' and 'rdbms_RdbmsUniqueConstraint'. From 'rdbms_RdbmsField', the role 'rdbms_RdbmsField15' has cardinality 0..*, and from 'rdbms_RdbmsUniqueConstraint', the role 'rdbms_RdbmsUniqueConstraint' has cardinality 0..*.
+An association connects 'rdbms_RdbmsForeignKey' and 'rdbms_RdbmsJunctionTable'. From 'rdbms_RdbmsForeignKey', the role 'rdbms_RdbmsForeignKey' has cardinality 0..*, and from 'rdbms_RdbmsJunctionTable', the role 'rdbms_RdbmsJunctionTable' has cardinality 0..*.
+An association connects 'rdbms_RdbmsForeignKey' and 'rdbms_RdbmsJunctionTable'. From 'rdbms_RdbmsForeignKey', the role 'rdbms_RdbmsForeignKey19' has cardinality 0..*, and from 'rdbms_RdbmsJunctionTable', the role 'rdbms_RdbmsJunctionTable18' has cardinality 0..*.
+An association connects 'rdbms_RdbmsIdentifierField' and 'rdbms_RdbmsForeignKey'. From 'rdbms_RdbmsIdentifierField', the role 'referenceKey' has cardinality 0..*, and from 'rdbms_RdbmsForeignKey', the role 'RdbmsForeignKey' has cardinality 0..*.
+An association connects 'rdbms_RdbmsView' and 'rdbms_RdbmsViewField'. From 'rdbms_RdbmsView', the role 'view' has cardinality 0..*, and from 'rdbms_RdbmsViewField', the role 'RdbmsViewField' has cardinality 0..*.
+An association connects 'rdbms_RdbmsTableAlias' and 'rdbms_RdbmsView'. From 'rdbms_RdbmsTableAlias', the role 'rdbms_RdbmsTableAlias' has cardinality 0..*, and from 'rdbms_RdbmsView', the role 'rdbms_RdbmsView' has cardinality 0..*.
+An association connects 'rdbms_RdbmsView' and 'rdbms_RdbmsViewRelation'. From 'rdbms_RdbmsView', the role 'rdbms_RdbmsView24' has cardinality 0..*, and from 'rdbms_RdbmsViewRelation', the role 'rdbms_RdbmsViewRelation' has cardinality 0..*.
+An association connects 'rdbms_RdbmsViewIdentifierField' and 'rdbms_RdbmsView'. From 'rdbms_RdbmsViewIdentifierField', the role 'rdbms_RdbmsViewIdentifierField' has cardinality 0..*, and from 'rdbms_RdbmsView', the role 'rdbms_RdbmsView26' has cardinality 0..*.
+An association connects 'rdbms_RdbmsTableAlias' and 'rdbms_RdbmsView'. From 'rdbms_RdbmsTableAlias', the role 'RdbmsTableAlias' has cardinality 0..*, and from 'rdbms_RdbmsView', the role 'view28' has cardinality 0..*.
+An association connects 'rdbms_RdbmsView' and 'rdbms_RdbmsViewField'. From 'rdbms_RdbmsView', the role 'RdbmsView' has cardinality 0..*, and from 'rdbms_RdbmsViewField', the role 'fields30' has cardinality 0..*.
+An association connects 'rdbms_RdbmsExpression' and 'rdbms_RdbmsViewExpressionField'. From 'rdbms_RdbmsExpression', the role 'rdbms_RdbmsExpression' has cardinality 0..*, and from 'rdbms_RdbmsViewExpressionField', the role 'rdbms_RdbmsViewExpressionField' has cardinality 0..*.
+An association connects 'rdbms_RdbmsFieldType' and 'rdbms_RdbmsModel'. From 'rdbms_RdbmsFieldType', the role 'rdbms_RdbmsFieldType33' has cardinality 0..*, and from 'rdbms_RdbmsModel', the role 'rdbms_RdbmsModel' has cardinality 0..*.
+An association connects 'rdbms_RdbmsTable' and 'rdbms_RdbmsModel'. From 'rdbms_RdbmsTable', the role 'rdbms_RdbmsTable36' has cardinality 0..*, and from 'rdbms_RdbmsModel', the role 'rdbms_RdbmsModel35' has cardinality 0..*.
+An association connects 'rdbms_RdbmsModel' and 'rdbms_RdbmsView'. From 'rdbms_RdbmsModel', the role 'rdbms_RdbmsModel38' has cardinality 0..*, and from 'rdbms_RdbmsView', the role 'rdbms_RdbmsView39' has cardinality 0..*.
+An association connects 'rdbms_RdbmsConfiguration' and 'rdbms_RdbmsModel'. From 'rdbms_RdbmsConfiguration', the role 'rdbms_RdbmsConfiguration' has cardinality 0..*, and from 'rdbms_RdbmsModel', the role 'rdbms_RdbmsModel41' has cardinality 0..*.
+An association connects 'rdbms_RdbmsModel' and 'rdbms_RdbmsTableOperation'. From 'rdbms_RdbmsModel', the role 'rdbms_RdbmsModel43' has cardinality 0..*, and from 'rdbms_RdbmsTableOperation', the role 'rdbms_RdbmsTableOperation' has cardinality 0..*.
+An association connects 'rdbms_RdbmsModel' and 'rdbms_RdbmsViewRecord'. From 'rdbms_RdbmsModel', the role 'rdbms_RdbmsModel45' has cardinality 0..*, and from 'rdbms_RdbmsViewRecord', the role 'rdbms_RdbmsViewRecord' has cardinality 0..*.
+An association connects 'rdbms_RdbmsFeature' and 'rdbms_RdbmsConfiguration'. From 'rdbms_RdbmsFeature', the role 'rdbms_RdbmsFeature' has cardinality 0..*, and from 'rdbms_RdbmsConfiguration', the role 'rdbms_RdbmsConfiguration47' has cardinality 0..*.
+An association connects 'rdbms_RdbmsTable' and 'rdbms_RdbmsTableAlias'. From 'rdbms_RdbmsTable', the role 'rdbms_RdbmsTable50' has cardinality 0..*, and from 'rdbms_RdbmsTableAlias', the role 'rdbms_RdbmsTableAlias49' has cardinality 0..*.
+An association connects 'rdbms_RdbmsView' and 'rdbms_RdbmsTableAlias'. From 'rdbms_RdbmsView', the role 'RdbmsView52' has cardinality 0..*, and from 'rdbms_RdbmsTableAlias', the role 'tables' has cardinality 0..*.
+An association connects 'rdbms_RdbmsRelationExpression' and 'rdbms_RdbmsViewAliasField'. From 'rdbms_RdbmsRelationExpression', the role 'rdbms_RdbmsRelationExpression' has cardinality 0..*, and from 'rdbms_RdbmsViewAliasField', the role 'rdbms_RdbmsViewAliasField' has cardinality 0..*.
+An association connects 'rdbms_RdbmsViewAliasField' and 'rdbms_RdbmsTableAlias'. From 'rdbms_RdbmsViewAliasField', the role 'rdbms_RdbmsViewAliasField55' has cardinality 0..*, and from 'rdbms_RdbmsTableAlias', the role 'rdbms_RdbmsTableAlias56' has cardinality 0..*.
+An association connects 'rdbms_RdbmsCreateFieldOperation' and 'rdbms_RdbmsModifyTableOperation'. From 'rdbms_RdbmsCreateFieldOperation', the role 'rdbms_RdbmsCreateFieldOperation' has cardinality 0..*, and from 'rdbms_RdbmsModifyTableOperation', the role 'rdbms_RdbmsModifyTableOperation' has cardinality 0..*.
+An association connects 'rdbms_RdbmsModifyFieldOperation' and 'rdbms_RdbmsModifyTableOperation'. From 'rdbms_RdbmsModifyFieldOperation', the role 'rdbms_RdbmsModifyFieldOperation' has cardinality 0..*, and from 'rdbms_RdbmsModifyTableOperation', the role 'rdbms_RdbmsModifyTableOperation59' has cardinality 0..*.
+An association connects 'rdbms_RdbmsModifyTableOperation' and 'rdbms_RdbmsDeleteFieldOperation'. From 'rdbms_RdbmsModifyTableOperation', the role 'rdbms_RdbmsModifyTableOperation61' has cardinality 0..*, and from 'rdbms_RdbmsDeleteFieldOperation', the role 'rdbms_RdbmsDeleteFieldOperation' has cardinality 0..*.
+An association connects 'rdbms_RdbmsModifyTableOperation' and 'rdbms_RdbmsTable'. From 'rdbms_RdbmsModifyTableOperation', the role 'rdbms_RdbmsModifyTableOperation63' has cardinality 0..*, and from 'rdbms_RdbmsTable', the role 'rdbms_RdbmsTable64' has cardinality 0..*.
+An association connects 'rdbms_RdbmsField' and 'rdbms_RdbmsFieldOperation'. From 'rdbms_RdbmsField', the role 'rdbms_RdbmsField66' has cardinality 0..*, and from 'rdbms_RdbmsFieldOperation', the role 'rdbms_RdbmsFieldOperation' has cardinality 0..*.
+An association connects 'rdbms_RdbmsField' and 'rdbms_RdbmsModifyFieldOperation'. From 'rdbms_RdbmsField', the role 'rdbms_RdbmsField69' has cardinality 0..*, and from 'rdbms_RdbmsModifyFieldOperation', the role 'rdbms_RdbmsModifyFieldOperation68' has cardinality 0..*.
+An association connects 'rdbms_RdbmsViewRelation' and 'rdbms_RdbmsTableAlias'. From 'rdbms_RdbmsViewRelation', the role 'rdbms_RdbmsViewRelation71' has cardinality 0..*, and from 'rdbms_RdbmsTableAlias', the role 'rdbms_RdbmsTableAlias72' has cardinality 0..*.
+An association connects 'rdbms_RdbmsViewRelation' and 'rdbms_RdbmsTableAlias'. From 'rdbms_RdbmsViewRelation', the role 'rdbms_RdbmsViewRelation74' has cardinality 0..*, and from 'rdbms_RdbmsTableAlias', the role 'rdbms_RdbmsTableAlias75' has cardinality 0..*.
+An association connects 'rdbms_RdbmsViewRelation' and 'rdbms_RdbmsIdentifierField'. From 'rdbms_RdbmsViewRelation', the role 'rdbms_RdbmsViewRelation77' has cardinality 0..*, and from 'rdbms_RdbmsIdentifierField', the role 'rdbms_RdbmsIdentifierField78' has cardinality 0..*.
+An association connects 'rdbms_RdbmsViewRelation' and 'rdbms_RdbmsIdentifierField'. From 'rdbms_RdbmsViewRelation', the role 'rdbms_RdbmsViewRelation80' has cardinality 0..*, and from 'rdbms_RdbmsIdentifierField', the role 'rdbms_RdbmsIdentifierField81' has cardinality 0..*.
+An association connects 'rdbms_RdbmsViewTableField' and 'rdbms_RdbmsField'. From 'rdbms_RdbmsViewTableField', the role 'rdbms_RdbmsViewTableField' has cardinality 0..*, and from 'rdbms_RdbmsField', the role 'rdbms_RdbmsField83' has cardinality 0..*.
+An association connects 'rdbms_RdbmsViewForeignIdentifierField' and 'rdbms_RdbmsViewIdentifierField'. From 'rdbms_RdbmsViewForeignIdentifierField', the role 'rdbms_RdbmsViewForeignIdentifierField' has cardinality 0..*, and from 'rdbms_RdbmsViewIdentifierField', the role 'rdbms_RdbmsViewIdentifierField85' has cardinality 0..*.
+An association connects 'rdbms_RdbmsIndex' and 'rdbms_RdbmsTable'. From 'rdbms_RdbmsIndex', the role 'indexes' has cardinality 0..*, and from 'rdbms_RdbmsTable', the role 'RdbmsTable87' has cardinality 0..*.
+An association connects 'rdbms_RdbmsField' and 'rdbms_RdbmsIndex'. From 'rdbms_RdbmsField', the role 'rdbms_RdbmsField89' has cardinality 0..*, and from 'rdbms_RdbmsIndex', the role 'rdbms_RdbmsIndex' has cardinality 0..*.
+An association connects 'rdbms_RdbmsViewRecordValue' and 'rdbms_RdbmsViewRecord'. From 'rdbms_RdbmsViewRecordValue', the role 'rdbms_RdbmsViewRecordValue' has cardinality 0..*, and from 'rdbms_RdbmsViewRecord', the role 'rdbms_RdbmsViewRecord91' has cardinality 0..*.
+An association connects 'rdbms_RdbmsViewRecord' and 'rdbms_RdbmsView'. From 'rdbms_RdbmsViewRecord', the role 'rdbms_RdbmsViewRecord93' has cardinality 0..*, and from 'rdbms_RdbmsView', the role 'rdbms_RdbmsView94' has cardinality 0..*.
+An association connects 'rdbms_RdbmsViewIdentifierField' and 'rdbms_RdbmsViewRecordValue'. From 'rdbms_RdbmsViewIdentifierField', the role 'rdbms_RdbmsViewIdentifierField97' has cardinality 0..*, and from 'rdbms_RdbmsViewRecordValue', the role 'rdbms_RdbmsViewRecordValue96' has cardinality 0..*.
+An association connects 'rdbms_RdbmsViewValueField' and 'rdbms_RdbmsViewRecordValue'. From 'rdbms_RdbmsViewValueField', the role 'rdbms_RdbmsViewValueField' has cardinality 0..*, and from 'rdbms_RdbmsViewRecordValue', the role 'rdbms_RdbmsViewRecordValue99' has cardinality 0..*.
+An association connects 'rdbms_RdbmsTableOperation' and 'rdbms_RdbmsTable'. From 'rdbms_RdbmsTableOperation', the role 'rdbms_RdbmsTableOperation101' has cardinality 0..*, and from 'rdbms_RdbmsTable', the role 'rdbms_RdbmsTable102' has cardinality 0..*.
+An association connects 'rdbms_RdbmsModel' and 'rdbms_RdbmsOperationMeta'. From 'rdbms_RdbmsModel', the role 'rdbms_RdbmsModel104' has cardinality 0..*, and from 'rdbms_RdbmsOperationMeta', the role 'rdbms_RdbmsOperationMeta' has cardinality 0..*.
+An association connects 'rdbms_RdbmsModel' and 'rdbms_RdbmsOperationMeta'. From 'rdbms_RdbmsModel', the role 'rdbms_RdbmsModel107' has cardinality 0..*, and from 'rdbms_RdbmsOperationMeta', the role 'rdbms_RdbmsOperationMeta106' has cardinality 0..*.
+An association connects 'rdbms_RdbmsOperationMeta' and 'rdbms_RdbmsModel'. From 'rdbms_RdbmsOperationMeta', the role 'rdbms_RdbmsOperationMeta109' has cardinality 0..*, and from 'rdbms_RdbmsModel', the role 'rdbms_RdbmsModel110' has cardinality 0..*.

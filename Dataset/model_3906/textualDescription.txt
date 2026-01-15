@@ -1,0 +1,763 @@
+The domain model 'pcm' describes the core structural elements and their relationships within the system.
+
+The model defines 176 main class(es).
+
+'pcm_parameter_CharacterisedVariable' represents an important domain concept.
+It has one attribute: 'characterisationType', which is of type str.
+
+'pcm_repository_DelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_ResourceDemandingBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessingResourceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'QoSAnnotations' represents an important domain concept.
+It does not declare any attributes.
+
+'InnerDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_InterfaceRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_performance_ComponentSpecifiedExecutionTime' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_AbstractAction' represents an important domain concept.
+It does not declare any attributes.
+
+'System' represents an important domain concept.
+It does not declare any attributes.
+
+'PassiveResource' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_ResourceDemandingBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_Signature' represents an important domain concept.
+It has one attribute: 'serviceName', which is of type str.
+
+'pcm_seff_StartAction' represents an important domain concept.
+It does not declare any attributes.
+
+'AllocationContext' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_composition_ProvidedDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_performance_ParametricResourceDemand' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_SynchronisationPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_InnerDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'performance_ParametricResourceDemand' represents an important domain concept.
+It does not declare any attributes.
+
+'UnitCarryingElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BranchTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_qosannotations_SpecifiedOutputParameterAbstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_InterfaceProvidingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_usagemodel_Delay' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_entity_ResourceInterfaceRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_Parameter' represents an important domain concept.
+It has the following attributes: 'parameterName', which is of type str; 'modifier__Parameter', which is of type str.
+
+'pcm_repository_ProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_core_PCMRandomVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_GuardedBranchTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_resourcetype_CommunicationLinkResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'Workload' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_usagemodel_EntryLevelSystemCall' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_resourcetype_ProcessingResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_qosannotations_SpecifiedQoSAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'UserData' represents an important domain concept.
+It does not declare any attributes.
+
+'repository_RepositoryComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'RequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_entity_NamedElement' represents an important domain concept.
+It has one attribute: 'entityName', which is of type str.
+
+'composition_AssemblyConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'UsageScenario' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_RepositoryComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SpecifiedOutputParameterAbstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_composition_ResourceRequiredDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_CompleteComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_InterfaceProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_usagemodel_ScenarioBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_usagemodel_BranchTransition' represents an important domain concept.
+It has one attribute: 'branchProbability', which is of type float.
+
+'Signature' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_ForkedBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'SpecifiedQoSAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_entity_InterfaceProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_ComposedProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'repository_ImplementationComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_RequiredDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_SetVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_usagemodel_UserData' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_AcquireAction' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_ResourceInterfaceRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'Role' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_usagemodel_UsageModel' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_composition_AssemblyConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_ResourceRequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_usagemodel_UsageScenario' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_performance_SystemSpecifiedExecutionTime' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_AssemblyContext' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceDemandingBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_ProbabilisticBranchTransition' represents an important domain concept.
+It has one attribute: 'branchProbability', which is of type float.
+
+'pcm_repository_BasicComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_parameter_VariableCharacterisation' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'pcm_repository_CompositeComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'repository_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_resourceenvironment_ProcessingResourceSpecification' represents an important domain concept.
+It has the following attributes: 'schedulingPolicy', which is of type str; 'MTTR', which is of type float; 'MTTF', which is of type float.
+
+'RepositoryComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_entity_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_connectors_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_usagemodel_Workload' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_usagemodel_ClosedWorkload' represents an important domain concept.
+It has one attribute: 'population', which is of type int.
+
+'pcm_resourcetype_ResourceRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractUserAction' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableCharacterisation' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_ReleaseAction' represents an important domain concept.
+It does not declare any attributes.
+
+'parameter_pcm_AbstractNamedReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceRequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractInternalControlFlowAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_resourceenvironment_LinkingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'DelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_ForkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_qosannotations_QoSAnnotations' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_ResourceDemandingSEFF' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_BranchAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_composition_AssemblyContext' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_resourcetype_ResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_ImplementationComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_AbstractBranchTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_entity_ComposedProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractAction' represents an important domain concept.
+It does not declare any attributes.
+
+'RandomVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_usagemodel_OpenWorkload' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_subsystem_SubSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_resourceenvironment_CommunicationLinkResourceSpecification' represents an important domain concept.
+It has one attribute: 'failureProbability', which is of type float.
+
+'composition_ProvidedDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_ProvidesComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_ServiceEffectSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_CollectionDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_Repository' represents an important domain concept.
+It has one attribute: 'repositoryDescription', which is of type str.
+
+'CompositeDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractLoopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_InternalAction' represents an important domain concept.
+It has one attribute: 'failureProbability', which is of type float.
+
+'pcm_resourceenvironment_ResourceContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'PCMRandomVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_protocol_ServiceCall' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_StopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_AbstractInternalControlFlowAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_LoopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_usagemodel_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_PassiveResource' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_RequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_PrimitiveDataType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'ProvidesComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_usagemodel_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_ResourceRequiredDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_allocation_Allocation' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_usagemodel_AbstractUserAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CommunicationLinkResourceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractBranchTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'ScenarioBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_ExceptionType' represents an important domain concept.
+It has the following attributes: 'exceptionName', which is of type str; 'exceptionMessage', which is of type str.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'SynchronisationPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_protocol_Protocol' represents an important domain concept.
+It has one attribute: 'protocolTypeID', which is of type str.
+
+'pcm_seff_CollectionIteratorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_system_System' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableUsage' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_resourceenvironment_ResourceEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_ComposedStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ForkedBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'ExceptionType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_composition_RequiredDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'Repository' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_usagemodel_Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_reliability_SpecifiedFailureProbability' represents an important domain concept.
+It has one attribute: 'failureProbability', which is of type float.
+
+'Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessingResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_parameter_VariableUsage' represents an important domain concept.
+It does not declare any attributes.
+
+'CommunicationLinkResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_usagemodel_Stop' represents an important domain concept.
+It does not declare any attributes.
+
+'Protocol' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_composition_ComposedStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_AbstractLoopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_ServiceEffectSpecification' represents an important domain concept.
+It has one attribute: 'seffTypeID', which is of type str.
+
+'pcm_entity_InterfaceProvidingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_entity_InterfaceRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_allocation_AllocationContext' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_repository_CompositeDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ImplementationComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_seff_ExternalCallAction' represents an important domain concept.
+It has one attribute: 'retryCount', which is of type int.
+
+'ServiceEffectSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'VariableCharacterisationType' defines the following possible values: 'STRUCTURE', 'NUMBER_OF_ELEMENTS', 'BYTESIZE', 'TYPE', 'VALUE'.
+The enumeration 'PrimitiveTypeEnum' defines the following possible values: 'STRING', 'INT', 'BYTE', 'DOUBLE', 'BOOL', 'CHAR', 'LONG'.
+The enumeration 'SchedulingPolicy' defines the following possible values: 'DELAY', 'PROCESSOR_SHARING', 'FCFS'.
+The enumeration 'ParameterModifier' defines the following possible values: 'in', 'out', 'none', 'inout'.
+
+The model also captures inheritance relationships between classes.
+The class 'pcm_core_PCMRandomVariable' is a specialization of 'RandomVariable'.
+The class 'pcm_entity_Entity' is a specialization of 'Identifier'.
+The class 'pcm_entity_Entity' is a specialization of 'entity_NamedElement'.
+The class 'pcm_entity_InterfaceProvidingEntity' is a specialization of 'Entity'.
+The class 'pcm_entity_InterfaceProvidingRequiringEntity' is a specialization of 'entity_InterfaceProvidingEntity'.
+The class 'pcm_entity_InterfaceProvidingRequiringEntity' is a specialization of 'entity_InterfaceRequiringEntity'.
+The class 'pcm_entity_InterfaceProvidingRequiringEntity' is a specialization of 'entity_ResourceInterfaceRequiringEntity'.
+The class 'pcm_entity_InterfaceRequiringEntity' is a specialization of 'Entity'.
+The class 'pcm_entity_ResourceInterfaceRequiringEntity' is a specialization of 'Entity'.
+The class 'pcm_entity_ComposedProvidingRequiringEntity' is a specialization of 'composition_ComposedStructure'.
+The class 'pcm_entity_ComposedProvidingRequiringEntity' is a specialization of 'entity_InterfaceProvidingRequiringEntity'.
+The class 'pcm_connectors_Connector' is a specialization of 'Entity'.
+The class 'pcm_composition_ProvidedDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'pcm_composition_AssemblyContext' is a specialization of 'Entity'.
+The class 'pcm_composition_RequiredDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'pcm_composition_AssemblyConnector' is a specialization of 'Connector'.
+The class 'pcm_composition_ComposedStructure' is a specialization of 'Entity'.
+The class 'pcm_repository_PassiveResource' is a specialization of 'Entity'.
+The class 'pcm_repository_Repository' is a specialization of 'Entity'.
+The class 'pcm_repository_RepositoryComponent' is a specialization of 'InterfaceProvidingRequiringEntity'.
+The class 'pcm_repository_RequiredRole' is a specialization of 'Role'.
+The class 'pcm_repository_Role' is a specialization of 'Entity'.
+The class 'pcm_repository_Interface' is a specialization of 'Entity'.
+The class 'pcm_repository_ResourceRequiredRole' is a specialization of 'Role'.
+The class 'pcm_repository_ProvidesComponentType' is a specialization of 'RepositoryComponent'.
+The class 'pcm_repository_ImplementationComponentType' is a specialization of 'RepositoryComponent'.
+The class 'pcm_repository_CompleteComponentType' is a specialization of 'RepositoryComponent'.
+The class 'pcm_repository_DelegationConnector' is a specialization of 'Connector'.
+The class 'pcm_repository_CompositeComponent' is a specialization of 'entity_ComposedProvidingRequiringEntity'.
+The class 'pcm_repository_CompositeComponent' is a specialization of 'repository_ImplementationComponentType'.
+The class 'pcm_repository_BasicComponent' is a specialization of 'ImplementationComponentType'.
+The class 'pcm_repository_PrimitiveDataType' is a specialization of 'DataType'.
+The class 'pcm_repository_CollectionDataType' is a specialization of 'entity_Entity'.
+The class 'pcm_repository_CollectionDataType' is a specialization of 'repository_DataType'.
+The class 'pcm_repository_CompositeDataType' is a specialization of 'entity_Entity'.
+The class 'pcm_repository_CompositeDataType' is a specialization of 'repository_DataType'.
+The class 'pcm_repository_InnerDeclaration' is a specialization of 'NamedElement'.
+The class 'pcm_repository_ProvidedRole' is a specialization of 'Role'.
+The class 'pcm_parameter_CharacterisedVariable' is a specialization of 'Variable'.
+The class 'pcm_seff_StopAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_seff_AbstractInternalControlFlowAction' is a specialization of 'AbstractAction'.
+The class 'pcm_seff_AbstractAction' is a specialization of 'Entity'.
+The class 'pcm_seff_StartAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_seff_ResourceDemandingSEFF' is a specialization of 'Identifier'.
+The class 'pcm_seff_ResourceDemandingSEFF' is a specialization of 'seff_ServiceEffectSpecification'.
+The class 'pcm_seff_ResourceDemandingSEFF' is a specialization of 'seff_ResourceDemandingBehaviour'.
+The class 'pcm_seff_ReleaseAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_seff_LoopAction' is a specialization of 'AbstractLoopAction'.
+The class 'pcm_seff_AbstractLoopAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_seff_InternalAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_seff_ForkAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_seff_ForkedBehaviour' is a specialization of 'ResourceDemandingBehaviour'.
+The class 'pcm_seff_ExternalCallAction' is a specialization of 'AbstractAction'.
+The class 'pcm_seff_ProbabilisticBranchTransition' is a specialization of 'AbstractBranchTransition'.
+The class 'pcm_seff_AbstractBranchTransition' is a specialization of 'NamedElement'.
+The class 'pcm_seff_BranchAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_seff_AcquireAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_seff_CollectionIteratorAction' is a specialization of 'AbstractLoopAction'.
+The class 'pcm_seff_GuardedBranchTransition' is a specialization of 'AbstractBranchTransition'.
+The class 'pcm_seff_SetVariableAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_resourcetype_ResourceType' is a specialization of 'entity_Entity'.
+The class 'pcm_resourcetype_ResourceType' is a specialization of 'UnitCarryingElement'.
+The class 'pcm_resourcetype_CommunicationLinkResourceType' is a specialization of 'ProcessingResourceType'.
+The class 'pcm_resourcetype_ProcessingResourceType' is a specialization of 'ResourceType'.
+The class 'pcm_allocation_AllocationContext' is a specialization of 'Entity'.
+The class 'pcm_allocation_Allocation' is a specialization of 'Entity'.
+The class 'pcm_resourceenvironment_LinkingResource' is a specialization of 'Entity'.
+The class 'pcm_resourceenvironment_ResourceContainer' is a specialization of 'Entity'.
+The class 'pcm_system_System' is a specialization of 'entity_Entity'.
+The class 'pcm_system_System' is a specialization of 'entity_ComposedProvidingRequiringEntity'.
+The class 'pcm_qosannotations_QoSAnnotations' is a specialization of 'Entity'.
+The class 'pcm_performance_SystemSpecifiedExecutionTime' is a specialization of 'SpecifiedQoSAnnotation'.
+The class 'pcm_performance_ComponentSpecifiedExecutionTime' is a specialization of 'SpecifiedQoSAnnotation'.
+The class 'pcm_reliability_SpecifiedFailureProbability' is a specialization of 'SpecifiedQoSAnnotation'.
+The class 'pcm_usagemodel_UsageScenario' is a specialization of 'Entity'.
+The class 'pcm_usagemodel_ScenarioBehaviour' is a specialization of 'Entity'.
+The class 'pcm_usagemodel_AbstractUserAction' is a specialization of 'Entity'.
+The class 'pcm_usagemodel_Stop' is a specialization of 'AbstractUserAction'.
+The class 'pcm_usagemodel_Start' is a specialization of 'AbstractUserAction'.
+The class 'pcm_usagemodel_OpenWorkload' is a specialization of 'Workload'.
+The class 'pcm_usagemodel_Loop' is a specialization of 'AbstractUserAction'.
+The class 'pcm_usagemodel_EntryLevelSystemCall' is a specialization of 'AbstractUserAction'.
+The class 'pcm_usagemodel_ClosedWorkload' is a specialization of 'Workload'.
+The class 'pcm_usagemodel_Branch' is a specialization of 'AbstractUserAction'.
+The class 'pcm_usagemodel_Delay' is a specialization of 'AbstractUserAction'.
+The class 'pcm_subsystem_SubSystem' is a specialization of 'entity_ComposedProvidingRequiringEntity'.
+The class 'pcm_subsystem_SubSystem' is a specialization of 'repository_RepositoryComponent'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ProvidedRole' and 'pcm_entity_InterfaceProvidingEntity'. From 'ProvidedRole', the role 'repository' has cardinality 0..*, and from 'pcm_entity_InterfaceProvidingEntity', the role 'ProvidedRole' has cardinality 0..*.
+An association connects 'pcm_entity_InterfaceRequiringEntity' and 'RequiredRole'. From 'pcm_entity_InterfaceRequiringEntity', the role 'RequiredRole' has cardinality 0..*, and from 'RequiredRole', the role 'repository2' has cardinality 0..*.
+An association connects 'ResourceRequiredRole' and 'pcm_entity_ResourceInterfaceRequiringEntity'. From 'ResourceRequiredRole', the role 'repository4' has cardinality 0..*, and from 'pcm_entity_ResourceInterfaceRequiringEntity', the role 'ResourceRequiredRole' has cardinality 0..*.
+An association connects 'pcm_composition_ProvidedDelegationConnector' and 'ProvidedRole'. From 'pcm_composition_ProvidedDelegationConnector', the role 'pcm_composition_ProvidedDelegationConnector' has cardinality 0..*, and from 'ProvidedRole', the role 'ProvidedRole6' has cardinality 0..*.
+An association connects 'ProvidedRole' and 'pcm_composition_ProvidedDelegationConnector'. From 'ProvidedRole', the role 'ProvidedRole9' has cardinality 0..*, and from 'pcm_composition_ProvidedDelegationConnector', the role 'pcm_composition_ProvidedDelegationConnector8' has cardinality 0..*.
+An association connects 'pcm_composition_ProvidedDelegationConnector' and 'composition_AssemblyContext'. From 'pcm_composition_ProvidedDelegationConnector', the role 'pcm_composition_ProvidedDelegationConnector11' has cardinality 0..*, and from 'composition_AssemblyContext', the role 'composition_AssemblyContext' has cardinality 0..*.
+An association connects 'pcm_composition_ProvidedDelegationConnector' and 'composition_ComposedStructure'. From 'pcm_composition_ProvidedDelegationConnector', the role 'composition' has cardinality 0..*, and from 'composition_ComposedStructure', the role 'core' has cardinality 0..*.
+An association connects 'RepositoryComponent' and 'pcm_composition_AssemblyContext'. From 'RepositoryComponent', the role 'RepositoryComponent' has cardinality 0..*, and from 'pcm_composition_AssemblyContext', the role 'pcm_composition_AssemblyContext' has cardinality 0..*.
+An association connects 'pcm_composition_AssemblyContext' and 'composition_ComposedStructure'. From 'pcm_composition_AssemblyContext', the role 'composition15' has cardinality 0..*, and from 'composition_ComposedStructure', the role 'core16' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_composition_AssemblyContext'. From 'VariableUsage', the role 'VariableUsage' has cardinality 0..*, and from 'pcm_composition_AssemblyContext', the role 'pcm_composition_AssemblyContext18' has cardinality 0..*.
+An association connects 'pcm_composition_RequiredDelegationConnector' and 'RequiredRole'. From 'pcm_composition_RequiredDelegationConnector', the role 'pcm_composition_RequiredDelegationConnector' has cardinality 0..*, and from 'RequiredRole', the role 'RequiredRole20' has cardinality 0..*.
+An association connects 'pcm_composition_RequiredDelegationConnector' and 'RequiredRole'. From 'pcm_composition_RequiredDelegationConnector', the role 'pcm_composition_RequiredDelegationConnector22' has cardinality 0..*, and from 'RequiredRole', the role 'RequiredRole23' has cardinality 0..*.
+An association connects 'composition_AssemblyContext' and 'pcm_composition_RequiredDelegationConnector'. From 'composition_AssemblyContext', the role 'composition_AssemblyContext26' has cardinality 0..*, and from 'pcm_composition_RequiredDelegationConnector', the role 'pcm_composition_RequiredDelegationConnector25' has cardinality 0..*.
+An association connects 'composition_ComposedStructure' and 'pcm_composition_RequiredDelegationConnector'. From 'composition_ComposedStructure', the role 'core29' has cardinality 0..*, and from 'pcm_composition_RequiredDelegationConnector', the role 'composition28' has cardinality 0..*.
+An association connects 'composition_AssemblyContext' and 'pcm_composition_AssemblyConnector'. From 'composition_AssemblyContext', the role 'composition_AssemblyContext31' has cardinality 0..*, and from 'pcm_composition_AssemblyConnector', the role 'pcm_composition_AssemblyConnector' has cardinality 0..*.
+An association connects 'pcm_composition_AssemblyConnector' and 'composition_AssemblyContext'. From 'pcm_composition_AssemblyConnector', the role 'pcm_composition_AssemblyConnector33' has cardinality 0..*, and from 'composition_AssemblyContext', the role 'composition_AssemblyContext34' has cardinality 0..*.
+An association connects 'ProvidedRole' and 'pcm_composition_AssemblyConnector'. From 'ProvidedRole', the role 'ProvidedRole37' has cardinality 0..*, and from 'pcm_composition_AssemblyConnector', the role 'pcm_composition_AssemblyConnector36' has cardinality 0..*.
+An association connects 'RequiredRole' and 'pcm_composition_AssemblyConnector'. From 'RequiredRole', the role 'RequiredRole40' has cardinality 0..*, and from 'pcm_composition_AssemblyConnector', the role 'pcm_composition_AssemblyConnector39' has cardinality 0..*.
+An association connects 'pcm_composition_AssemblyConnector' and 'composition_ComposedStructure'. From 'pcm_composition_AssemblyConnector', the role 'composition42' has cardinality 0..*, and from 'composition_ComposedStructure', the role 'core43' has cardinality 0..*.
+An association connects 'pcm_composition_ResourceRequiredDelegationConnector' and 'composition_ComposedStructure'. From 'pcm_composition_ResourceRequiredDelegationConnector', the role 'composition45' has cardinality 0..*, and from 'composition_ComposedStructure', the role 'core46' has cardinality 0..*.
+An association connects 'ResourceRequiredRole' and 'pcm_composition_ResourceRequiredDelegationConnector'. From 'ResourceRequiredRole', the role 'ResourceRequiredRole48' has cardinality 0..*, and from 'pcm_composition_ResourceRequiredDelegationConnector', the role 'pcm_composition_ResourceRequiredDelegationConnector' has cardinality 0..*.
+An association connects 'ResourceRequiredRole' and 'pcm_composition_ResourceRequiredDelegationConnector'. From 'ResourceRequiredRole', the role 'ResourceRequiredRole51' has cardinality 0..*, and from 'pcm_composition_ResourceRequiredDelegationConnector', the role 'pcm_composition_ResourceRequiredDelegationConnector50' has cardinality 0..*.
+An association connects 'pcm_composition_ComposedStructure' and 'composition_AssemblyContext'. From 'pcm_composition_ComposedStructure', the role 'composition53' has cardinality 0..*, and from 'composition_AssemblyContext', the role 'core54' has cardinality 0..*.
+An association connects 'pcm_composition_ComposedStructure' and 'composition_ProvidedDelegationConnector'. From 'pcm_composition_ComposedStructure', the role 'composition56' has cardinality 0..*, and from 'composition_ProvidedDelegationConnector', the role 'core57' has cardinality 0..*.
+An association connects 'composition_RequiredDelegationConnector' and 'pcm_composition_ComposedStructure'. From 'composition_RequiredDelegationConnector', the role 'core60' has cardinality 0..*, and from 'pcm_composition_ComposedStructure', the role 'composition59' has cardinality 0..*.
+An association connects 'pcm_composition_ComposedStructure' and 'composition_AssemblyConnector'. From 'pcm_composition_ComposedStructure', the role 'composition62' has cardinality 0..*, and from 'composition_AssemblyConnector', the role 'core63' has cardinality 0..*.
+An association connects 'composition_ResourceRequiredDelegationConnector' and 'pcm_composition_ComposedStructure'. From 'composition_ResourceRequiredDelegationConnector', the role 'core66' has cardinality 0..*, and from 'pcm_composition_ComposedStructure', the role 'composition65' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_repository_PassiveResource'. From 'PCMRandomVariable', the role 'PCMRandomVariable' has cardinality 0..*, and from 'pcm_repository_PassiveResource', the role 'pcm_repository_PassiveResource' has cardinality 0..*.
+An association connects 'pcm_repository_Signature' and 'Parameter'. From 'pcm_repository_Signature', the role 'Parameter' has cardinality 0..*, and from 'Parameter', the role 'repository69' has cardinality 0..*.
+An association connects 'Interface' and 'pcm_repository_Signature'. From 'Interface', the role 'repository71' has cardinality 0..*, and from 'pcm_repository_Signature', the role 'Interface' has cardinality 0..*.
+An association connects 'pcm_repository_Signature' and 'DataType'. From 'pcm_repository_Signature', the role 'pcm_repository_Signature' has cardinality 0..*, and from 'DataType', the role 'DataType' has cardinality 0..*.
+An association connects 'ExceptionType' and 'pcm_repository_Signature'. From 'ExceptionType', the role 'ExceptionType' has cardinality 0..*, and from 'pcm_repository_Signature', the role 'pcm_repository_Signature74' has cardinality 0..*.
+An association connects 'pcm_repository_Parameter' and 'DataType'. From 'pcm_repository_Parameter', the role 'pcm_repository_Parameter' has cardinality 0..*, and from 'DataType', the role 'DataType76' has cardinality 0..*.
+An association connects 'pcm_repository_Parameter' and 'Signature'. From 'pcm_repository_Parameter', the role 'Signature' has cardinality 0..*, and from 'Signature', the role 'repository78' has cardinality 0..*.
+An association connects 'Repository' and 'pcm_repository_DataType'. From 'Repository', the role 'repository80' has cardinality 0..*, and from 'pcm_repository_DataType', the role 'Repository' has cardinality 0..*.
+An association connects 'RepositoryComponent' and 'pcm_repository_Repository'. From 'RepositoryComponent', the role 'repository83' has cardinality 0..*, and from 'pcm_repository_Repository', the role 'RepositoryComponent82' has cardinality 0..*.
+An association connects 'Interface' and 'pcm_repository_Repository'. From 'Interface', the role 'repository86' has cardinality 0..*, and from 'pcm_repository_Repository', the role 'Interface85' has cardinality 0..*.
+An association connects 'DataType' and 'pcm_repository_Repository'. From 'DataType', the role 'repository89' has cardinality 0..*, and from 'pcm_repository_Repository', the role 'DataType88' has cardinality 0..*.
+An association connects 'Repository' and 'pcm_repository_RepositoryComponent'. From 'Repository', the role 'repository92' has cardinality 0..*, and from 'pcm_repository_RepositoryComponent', the role 'Repository91' has cardinality 0..*.
+An association connects 'pcm_repository_RequiredRole' and 'Interface'. From 'pcm_repository_RequiredRole', the role 'pcm_repository_RequiredRole' has cardinality 0..*, and from 'Interface', the role 'Interface94' has cardinality 0..*.
+An association connects 'pcm_repository_RequiredRole' and 'entity_InterfaceRequiringEntity'. From 'pcm_repository_RequiredRole', the role 'entity' has cardinality 0..*, and from 'entity_InterfaceRequiringEntity', the role 'core96' has cardinality 0..*.
+An association connects 'pcm_repository_Interface' and 'Interface'. From 'pcm_repository_Interface', the role 'pcm_repository_Interface' has cardinality 0..*, and from 'Interface', the role 'Interface98' has cardinality 0..*.
+An association connects 'pcm_repository_Interface' and 'Interface'. From 'pcm_repository_Interface', the role 'pcm_repository_Interface100' has cardinality 0..*, and from 'Interface', the role 'Interface101' has cardinality 0..*.
+An association connects 'pcm_repository_Interface' and 'Protocol'. From 'pcm_repository_Interface', the role 'pcm_repository_Interface103' has cardinality 0..*, and from 'Protocol', the role 'Protocol' has cardinality 0..*.
+An association connects 'pcm_repository_Interface' and 'Signature'. From 'pcm_repository_Interface', the role 'Signature105' has cardinality 0..*, and from 'Signature', the role 'repository106' has cardinality 0..*.
+An association connects 'Repository' and 'pcm_repository_Interface'. From 'Repository', the role 'repository109' has cardinality 0..*, and from 'pcm_repository_Interface', the role 'Repository108' has cardinality 0..*.
+An association connects 'Interface' and 'pcm_repository_ResourceRequiredRole'. From 'Interface', the role 'Interface111' has cardinality 0..*, and from 'pcm_repository_ResourceRequiredRole', the role 'pcm_repository_ResourceRequiredRole' has cardinality 0..*.
+An association connects 'pcm_repository_ResourceRequiredRole' and 'entity_ResourceInterfaceRequiringEntity'. From 'pcm_repository_ResourceRequiredRole', the role 'entity113' has cardinality 0..*, and from 'entity_ResourceInterfaceRequiringEntity', the role 'core114' has cardinality 0..*.
+An association connects 'CompleteComponentType' and 'pcm_repository_ImplementationComponentType'. From 'CompleteComponentType', the role 'CompleteComponentType' has cardinality 0..*, and from 'pcm_repository_ImplementationComponentType', the role 'pcm_repository_ImplementationComponentType' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_repository_ImplementationComponentType'. From 'VariableUsage', the role 'VariableUsage118' has cardinality 0..*, and from 'pcm_repository_ImplementationComponentType', the role 'pcm_repository_ImplementationComponentType117' has cardinality 0..*.
+An association connects 'ProvidesComponentType' and 'pcm_repository_CompleteComponentType'. From 'ProvidesComponentType', the role 'ProvidesComponentType' has cardinality 0..*, and from 'pcm_repository_CompleteComponentType', the role 'pcm_repository_CompleteComponentType' has cardinality 0..*.
+An association connects 'ServiceEffectSpecification' and 'pcm_repository_BasicComponent'. From 'ServiceEffectSpecification', the role 'ServiceEffectSpecification' has cardinality 0..*, and from 'pcm_repository_BasicComponent', the role 'pcm_repository_BasicComponent' has cardinality 0..*.
+An association connects 'PassiveResource' and 'pcm_repository_BasicComponent'. From 'PassiveResource', the role 'PassiveResource' has cardinality 0..*, and from 'pcm_repository_BasicComponent', the role 'pcm_repository_BasicComponent122' has cardinality 0..*.
+An association connects 'pcm_repository_CollectionDataType' and 'DataType'. From 'pcm_repository_CollectionDataType', the role 'pcm_repository_CollectionDataType' has cardinality 0..*, and from 'DataType', the role 'DataType124' has cardinality 0..*.
+An association connects 'CompositeDataType' and 'pcm_repository_CompositeDataType'. From 'CompositeDataType', the role 'CompositeDataType' has cardinality 0..*, and from 'pcm_repository_CompositeDataType', the role 'pcm_repository_CompositeDataType' has cardinality 0..*.
+An association connects 'InnerDeclaration' and 'pcm_repository_CompositeDataType'. From 'InnerDeclaration', the role 'InnerDeclaration' has cardinality 0..*, and from 'pcm_repository_CompositeDataType', the role 'pcm_repository_CompositeDataType127' has cardinality 0..*.
+An association connects 'pcm_repository_InnerDeclaration' and 'DataType'. From 'pcm_repository_InnerDeclaration', the role 'pcm_repository_InnerDeclaration' has cardinality 0..*, and from 'DataType', the role 'DataType129' has cardinality 0..*.
+An association connects 'pcm_repository_ProvidedRole' and 'Interface'. From 'pcm_repository_ProvidedRole', the role 'pcm_repository_ProvidedRole' has cardinality 0..*, and from 'Interface', the role 'Interface131' has cardinality 0..*.
+An association connects 'entity_InterfaceProvidingEntity' and 'pcm_repository_ProvidedRole'. From 'entity_InterfaceProvidingEntity', the role 'core134' has cardinality 0..*, and from 'pcm_repository_ProvidedRole', the role 'entity133' has cardinality 0..*.
+An association connects 'Signature' and 'pcm_protocol_ServiceCall'. From 'Signature', the role 'Signature136' has cardinality 0..*, and from 'pcm_protocol_ServiceCall', the role 'pcm_protocol_ServiceCall' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_parameter_VariableCharacterisation'. From 'PCMRandomVariable', the role 'PCMRandomVariable138' has cardinality 0..*, and from 'pcm_parameter_VariableCharacterisation', the role 'pcm_parameter_VariableCharacterisation' has cardinality 0..*.
+An association connects 'pcm_parameter_VariableUsage' and 'VariableCharacterisation'. From 'pcm_parameter_VariableUsage', the role 'pcm_parameter_VariableUsage' has cardinality 0..*, and from 'VariableCharacterisation', the role 'VariableCharacterisation' has cardinality 0..*.
+An association connects 'parameter_pcm_AbstractNamedReference' and 'pcm_parameter_VariableUsage'. From 'parameter_pcm_AbstractNamedReference', the role 'parameter_pcm_AbstractNamedReference' has cardinality 0..*, and from 'pcm_parameter_VariableUsage', the role 'pcm_parameter_VariableUsage141' has cardinality 0..*.
+An association connects 'performance_ParametricResourceDemand' and 'pcm_seff_AbstractInternalControlFlowAction'. From 'performance_ParametricResourceDemand', the role 'seff' has cardinality 0..*, and from 'pcm_seff_AbstractInternalControlFlowAction', the role 'performance' has cardinality 0..*.
+An association connects 'AbstractAction' and 'pcm_seff_AbstractAction'. From 'AbstractAction', the role 'seff144' has cardinality 0..*, and from 'pcm_seff_AbstractAction', the role 'AbstractAction' has cardinality 0..*.
+An association connects 'AbstractAction' and 'pcm_seff_AbstractAction'. From 'AbstractAction', the role 'seff147' has cardinality 0..*, and from 'pcm_seff_AbstractAction', the role 'AbstractAction146' has cardinality 0..*.
+An association connects 'pcm_seff_ResourceDemandingBehaviour' and 'AbstractAction'. From 'pcm_seff_ResourceDemandingBehaviour', the role 'pcm_seff_ResourceDemandingBehaviour' has cardinality 0..*, and from 'AbstractAction', the role 'AbstractAction149' has cardinality 0..*.
+An association connects 'pcm_seff_ReleaseAction' and 'PassiveResource'. From 'pcm_seff_ReleaseAction', the role 'pcm_seff_ReleaseAction' has cardinality 0..*, and from 'PassiveResource', the role 'PassiveResource151' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_seff_LoopAction'. From 'PCMRandomVariable', the role 'PCMRandomVariable153' has cardinality 0..*, and from 'pcm_seff_LoopAction', the role 'pcm_seff_LoopAction' has cardinality 0..*.
+An association connects 'ResourceDemandingBehaviour' and 'pcm_seff_AbstractLoopAction'. From 'ResourceDemandingBehaviour', the role 'ResourceDemandingBehaviour' has cardinality 0..*, and from 'pcm_seff_AbstractLoopAction', the role 'pcm_seff_AbstractLoopAction' has cardinality 0..*.
+An association connects 'ForkedBehaviour' and 'pcm_seff_ForkAction'. From 'ForkedBehaviour', the role 'ForkedBehaviour' has cardinality 0..*, and from 'pcm_seff_ForkAction', the role 'pcm_seff_ForkAction' has cardinality 0..*.
+An association connects 'pcm_seff_ForkAction' and 'SynchronisationPoint'. From 'pcm_seff_ForkAction', the role 'pcm_seff_ForkAction157' has cardinality 0..*, and from 'SynchronisationPoint', the role 'SynchronisationPoint' has cardinality 0..*.
+An association connects 'pcm_seff_SynchronisationPoint' and 'ForkedBehaviour'. From 'pcm_seff_SynchronisationPoint', the role 'pcm_seff_SynchronisationPoint' has cardinality 0..*, and from 'ForkedBehaviour', the role 'ForkedBehaviour159' has cardinality 0..*.
+An association connects 'pcm_seff_SynchronisationPoint' and 'VariableUsage'. From 'pcm_seff_SynchronisationPoint', the role 'pcm_seff_SynchronisationPoint161' has cardinality 0..*, and from 'VariableUsage', the role 'VariableUsage162' has cardinality 0..*.
+An association connects 'pcm_seff_ExternalCallAction' and 'Signature'. From 'pcm_seff_ExternalCallAction', the role 'pcm_seff_ExternalCallAction' has cardinality 0..*, and from 'Signature', the role 'Signature164' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_seff_ExternalCallAction'. From 'VariableUsage', the role 'VariableUsage167' has cardinality 0..*, and from 'pcm_seff_ExternalCallAction', the role 'pcm_seff_ExternalCallAction166' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_seff_ExternalCallAction'. From 'VariableUsage', the role 'VariableUsage170' has cardinality 0..*, and from 'pcm_seff_ExternalCallAction', the role 'pcm_seff_ExternalCallAction169' has cardinality 0..*.
+An association connects 'Role' and 'pcm_seff_ExternalCallAction'. From 'Role', the role 'Role' has cardinality 0..*, and from 'pcm_seff_ExternalCallAction', the role 'pcm_seff_ExternalCallAction172' has cardinality 0..*.
+An association connects 'ResourceDemandingBehaviour' and 'pcm_seff_AbstractBranchTransition'. From 'ResourceDemandingBehaviour', the role 'ResourceDemandingBehaviour174' has cardinality 0..*, and from 'pcm_seff_AbstractBranchTransition', the role 'pcm_seff_AbstractBranchTransition' has cardinality 0..*.
+An association connects 'pcm_seff_BranchAction' and 'AbstractBranchTransition'. From 'pcm_seff_BranchAction', the role 'pcm_seff_BranchAction' has cardinality 0..*, and from 'AbstractBranchTransition', the role 'AbstractBranchTransition' has cardinality 0..*.
+An association connects 'pcm_seff_AcquireAction' and 'PassiveResource'. From 'pcm_seff_AcquireAction', the role 'pcm_seff_AcquireAction' has cardinality 0..*, and from 'PassiveResource', the role 'PassiveResource177' has cardinality 0..*.
+An association connects 'Parameter' and 'pcm_seff_CollectionIteratorAction'. From 'Parameter', the role 'Parameter179' has cardinality 0..*, and from 'pcm_seff_CollectionIteratorAction', the role 'pcm_seff_CollectionIteratorAction' has cardinality 0..*.
+An association connects 'pcm_seff_GuardedBranchTransition' and 'PCMRandomVariable'. From 'pcm_seff_GuardedBranchTransition', the role 'pcm_seff_GuardedBranchTransition' has cardinality 0..*, and from 'PCMRandomVariable', the role 'PCMRandomVariable181' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_seff_SetVariableAction'. From 'VariableUsage', the role 'VariableUsage183' has cardinality 0..*, and from 'pcm_seff_SetVariableAction', the role 'pcm_seff_SetVariableAction' has cardinality 0..*.
+An association connects 'Signature' and 'pcm_seff_ServiceEffectSpecification'. From 'Signature', the role 'Signature185' has cardinality 0..*, and from 'pcm_seff_ServiceEffectSpecification', the role 'pcm_seff_ServiceEffectSpecification' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_performance_ParametricResourceDemand'. From 'PCMRandomVariable', the role 'PCMRandomVariable187' has cardinality 0..*, and from 'pcm_performance_ParametricResourceDemand', the role 'pcm_performance_ParametricResourceDemand' has cardinality 0..*.
+An association connects 'ProcessingResourceType' and 'pcm_performance_ParametricResourceDemand'. From 'ProcessingResourceType', the role 'ProcessingResourceType' has cardinality 0..*, and from 'pcm_performance_ParametricResourceDemand', the role 'pcm_performance_ParametricResourceDemand189' has cardinality 0..*.
+An association connects 'AbstractInternalControlFlowAction' and 'pcm_performance_ParametricResourceDemand'. From 'AbstractInternalControlFlowAction', the role 'seff191' has cardinality 0..*, and from 'pcm_performance_ParametricResourceDemand', the role 'AbstractInternalControlFlowAction' has cardinality 0..*.
+An association connects 'ResourceType' and 'pcm_resourcetype_ResourceRepository'. From 'ResourceType', the role 'ResourceType' has cardinality 0..*, and from 'pcm_resourcetype_ResourceRepository', the role 'pcm_resourcetype_ResourceRepository' has cardinality 0..*.
+An association connects 'ResourceContainer' and 'pcm_allocation_AllocationContext'. From 'ResourceContainer', the role 'ResourceContainer' has cardinality 0..*, and from 'pcm_allocation_AllocationContext', the role 'pcm_allocation_AllocationContext' has cardinality 0..*.
+An association connects 'pcm_allocation_AllocationContext' and 'composition_AssemblyContext'. From 'pcm_allocation_AllocationContext', the role 'pcm_allocation_AllocationContext195' has cardinality 0..*, and from 'composition_AssemblyContext', the role 'composition_AssemblyContext196' has cardinality 0..*.
+An association connects 'AllocationContext' and 'pcm_allocation_Allocation'. From 'AllocationContext', the role 'AllocationContext' has cardinality 0..*, and from 'pcm_allocation_Allocation', the role 'pcm_allocation_Allocation' has cardinality 0..*.
+An association connects 'pcm_allocation_Allocation' and 'ResourceEnvironment'. From 'pcm_allocation_Allocation', the role 'pcm_allocation_Allocation199' has cardinality 0..*, and from 'ResourceEnvironment', the role 'ResourceEnvironment' has cardinality 0..*.
+An association connects 'pcm_allocation_Allocation' and 'System'. From 'pcm_allocation_Allocation', the role 'pcm_allocation_Allocation201' has cardinality 0..*, and from 'System', the role 'System' has cardinality 0..*.
+An association connects 'LinkingResource' and 'pcm_resourceenvironment_ResourceEnvironment'. From 'LinkingResource', the role 'LinkingResource' has cardinality 0..*, and from 'pcm_resourceenvironment_ResourceEnvironment', the role 'pcm_resourceenvironment_ResourceEnvironment' has cardinality 0..*.
+An association connects 'pcm_resourceenvironment_ResourceEnvironment' and 'ResourceContainer'. From 'pcm_resourceenvironment_ResourceEnvironment', the role 'pcm_resourceenvironment_ResourceEnvironment204' has cardinality 0..*, and from 'ResourceContainer', the role 'ResourceContainer205' has cardinality 0..*.
+An association connects 'pcm_resourceenvironment_LinkingResource' and 'ResourceContainer'. From 'pcm_resourceenvironment_LinkingResource', the role 'pcm_resourceenvironment_LinkingResource' has cardinality 0..*, and from 'ResourceContainer', the role 'ResourceContainer207' has cardinality 0..*.
+An association connects 'pcm_resourceenvironment_LinkingResource' and 'ResourceContainer'. From 'pcm_resourceenvironment_LinkingResource', the role 'pcm_resourceenvironment_LinkingResource209' has cardinality 0..*, and from 'ResourceContainer', the role 'ResourceContainer210' has cardinality 0..*.
+An association connects 'pcm_resourceenvironment_LinkingResource' and 'CommunicationLinkResourceSpecification'. From 'pcm_resourceenvironment_LinkingResource', the role 'pcm_resourceenvironment_LinkingResource212' has cardinality 0..*, and from 'CommunicationLinkResourceSpecification', the role 'CommunicationLinkResourceSpecification' has cardinality 0..*.
+An association connects 'pcm_resourceenvironment_CommunicationLinkResourceSpecification' and 'CommunicationLinkResourceType'. From 'pcm_resourceenvironment_CommunicationLinkResourceSpecification', the role 'pcm_resourceenvironment_CommunicationLinkResourceSpecification' has cardinality 0..*, and from 'CommunicationLinkResourceType', the role 'CommunicationLinkResourceType' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_resourceenvironment_CommunicationLinkResourceSpecification'. From 'PCMRandomVariable', the role 'PCMRandomVariable216' has cardinality 0..*, and from 'pcm_resourceenvironment_CommunicationLinkResourceSpecification', the role 'pcm_resourceenvironment_CommunicationLinkResourceSpecification215' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_resourceenvironment_CommunicationLinkResourceSpecification'. From 'PCMRandomVariable', the role 'PCMRandomVariable219' has cardinality 0..*, and from 'pcm_resourceenvironment_CommunicationLinkResourceSpecification', the role 'pcm_resourceenvironment_CommunicationLinkResourceSpecification218' has cardinality 0..*.
+An association connects 'ProcessingResourceType' and 'pcm_resourceenvironment_ProcessingResourceSpecification'. From 'ProcessingResourceType', the role 'ProcessingResourceType221' has cardinality 0..*, and from 'pcm_resourceenvironment_ProcessingResourceSpecification', the role 'pcm_resourceenvironment_ProcessingResourceSpecification' has cardinality 0..*.
+An association connects 'pcm_resourceenvironment_ProcessingResourceSpecification' and 'PCMRandomVariable'. From 'pcm_resourceenvironment_ProcessingResourceSpecification', the role 'pcm_resourceenvironment_ProcessingResourceSpecification223' has cardinality 0..*, and from 'PCMRandomVariable', the role 'PCMRandomVariable224' has cardinality 0..*.
+An association connects 'pcm_resourceenvironment_ResourceContainer' and 'ProcessingResourceSpecification'. From 'pcm_resourceenvironment_ResourceContainer', the role 'pcm_resourceenvironment_ResourceContainer' has cardinality 0..*, and from 'ProcessingResourceSpecification', the role 'ProcessingResourceSpecification' has cardinality 0..*.
+An association connects 'pcm_system_System' and 'QoSAnnotations'. From 'pcm_system_System', the role 'pcm_system_System' has cardinality 0..*, and from 'QoSAnnotations', the role 'QoSAnnotations' has cardinality 0..*.
+An association connects 'pcm_qosannotations_SpecifiedQoSAnnotation' and 'Signature'. From 'pcm_qosannotations_SpecifiedQoSAnnotation', the role 'pcm_qosannotations_SpecifiedQoSAnnotation' has cardinality 0..*, and from 'Signature', the role 'Signature228' has cardinality 0..*.
+An association connects 'Role' and 'pcm_qosannotations_SpecifiedQoSAnnotation'. From 'Role', the role 'Role231' has cardinality 0..*, and from 'pcm_qosannotations_SpecifiedQoSAnnotation', the role 'pcm_qosannotations_SpecifiedQoSAnnotation230' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_qosannotations_SpecifiedQoSAnnotation'. From 'PCMRandomVariable', the role 'PCMRandomVariable234' has cardinality 0..*, and from 'pcm_qosannotations_SpecifiedQoSAnnotation', the role 'pcm_qosannotations_SpecifiedQoSAnnotation233' has cardinality 0..*.
+An association connects 'pcm_qosannotations_SpecifiedOutputParameterAbstraction' and 'Signature'. From 'pcm_qosannotations_SpecifiedOutputParameterAbstraction', the role 'pcm_qosannotations_SpecifiedOutputParameterAbstraction' has cardinality 0..*, and from 'Signature', the role 'Signature236' has cardinality 0..*.
+An association connects 'Role' and 'pcm_qosannotations_SpecifiedOutputParameterAbstraction'. From 'Role', the role 'Role239' has cardinality 0..*, and from 'pcm_qosannotations_SpecifiedOutputParameterAbstraction', the role 'pcm_qosannotations_SpecifiedOutputParameterAbstraction238' has cardinality 0..*.
+An association connects 'pcm_qosannotations_SpecifiedOutputParameterAbstraction' and 'VariableUsage'. From 'pcm_qosannotations_SpecifiedOutputParameterAbstraction', the role 'pcm_qosannotations_SpecifiedOutputParameterAbstraction241' has cardinality 0..*, and from 'VariableUsage', the role 'VariableUsage242' has cardinality 0..*.
+An association connects 'pcm_qosannotations_QoSAnnotations' and 'SpecifiedQoSAnnotation'. From 'pcm_qosannotations_QoSAnnotations', the role 'pcm_qosannotations_QoSAnnotations' has cardinality 0..*, and from 'SpecifiedQoSAnnotation', the role 'SpecifiedQoSAnnotation' has cardinality 0..*.
+An association connects 'pcm_qosannotations_QoSAnnotations' and 'SpecifiedOutputParameterAbstraction'. From 'pcm_qosannotations_QoSAnnotations', the role 'pcm_qosannotations_QoSAnnotations245' has cardinality 0..*, and from 'SpecifiedOutputParameterAbstraction', the role 'SpecifiedOutputParameterAbstraction' has cardinality 0..*.
+An association connects 'pcm_performance_ComponentSpecifiedExecutionTime' and 'composition_AssemblyContext'. From 'pcm_performance_ComponentSpecifiedExecutionTime', the role 'pcm_performance_ComponentSpecifiedExecutionTime' has cardinality 0..*, and from 'composition_AssemblyContext', the role 'composition_AssemblyContext247' has cardinality 0..*.
+An association connects 'pcm_usagemodel_UsageScenario' and 'Workload'. From 'pcm_usagemodel_UsageScenario', the role 'pcm_usagemodel_UsageScenario' has cardinality 0..*, and from 'Workload', the role 'Workload' has cardinality 0..*.
+An association connects 'pcm_usagemodel_UsageScenario' and 'ScenarioBehaviour'. From 'pcm_usagemodel_UsageScenario', the role 'pcm_usagemodel_UsageScenario250' has cardinality 0..*, and from 'ScenarioBehaviour', the role 'ScenarioBehaviour' has cardinality 0..*.
+An association connects 'AbstractUserAction' and 'pcm_usagemodel_ScenarioBehaviour'. From 'AbstractUserAction', the role 'AbstractUserAction' has cardinality 0..*, and from 'pcm_usagemodel_ScenarioBehaviour', the role 'pcm_usagemodel_ScenarioBehaviour' has cardinality 0..*.
+An association connects 'pcm_usagemodel_AbstractUserAction' and 'AbstractUserAction'. From 'pcm_usagemodel_AbstractUserAction', the role 'AbstractUserAction253' has cardinality 0..*, and from 'AbstractUserAction', the role 'usagemodel' has cardinality 0..*.
+An association connects 'AbstractUserAction' and 'pcm_usagemodel_AbstractUserAction'. From 'AbstractUserAction', the role 'usagemodel256' has cardinality 0..*, and from 'pcm_usagemodel_AbstractUserAction', the role 'AbstractUserAction255' has cardinality 0..*.
+An association connects 'UsageScenario' and 'pcm_usagemodel_UsageModel'. From 'UsageScenario', the role 'UsageScenario' has cardinality 0..*, and from 'pcm_usagemodel_UsageModel', the role 'pcm_usagemodel_UsageModel' has cardinality 0..*.
+An association connects 'UserData' and 'pcm_usagemodel_UsageModel'. From 'UserData', the role 'UserData' has cardinality 0..*, and from 'pcm_usagemodel_UsageModel', the role 'pcm_usagemodel_UsageModel259' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_usagemodel_UserData'. From 'VariableUsage', the role 'VariableUsage261' has cardinality 0..*, and from 'pcm_usagemodel_UserData', the role 'pcm_usagemodel_UserData' has cardinality 0..*.
+An association connects 'pcm_usagemodel_UserData' and 'composition_AssemblyContext'. From 'pcm_usagemodel_UserData', the role 'pcm_usagemodel_UserData263' has cardinality 0..*, and from 'composition_AssemblyContext', the role 'composition_AssemblyContext264' has cardinality 0..*.
+An association connects 'pcm_usagemodel_OpenWorkload' and 'PCMRandomVariable'. From 'pcm_usagemodel_OpenWorkload', the role 'pcm_usagemodel_OpenWorkload' has cardinality 0..*, and from 'PCMRandomVariable', the role 'PCMRandomVariable266' has cardinality 0..*.
+An association connects 'pcm_usagemodel_Loop' and 'ScenarioBehaviour'. From 'pcm_usagemodel_Loop', the role 'pcm_usagemodel_Loop' has cardinality 0..*, and from 'ScenarioBehaviour', the role 'ScenarioBehaviour268' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_usagemodel_Loop'. From 'PCMRandomVariable', the role 'PCMRandomVariable271' has cardinality 0..*, and from 'pcm_usagemodel_Loop', the role 'pcm_usagemodel_Loop270' has cardinality 0..*.
+An association connects 'pcm_usagemodel_EntryLevelSystemCall' and 'VariableUsage'. From 'pcm_usagemodel_EntryLevelSystemCall', the role 'pcm_usagemodel_EntryLevelSystemCall' has cardinality 0..*, and from 'VariableUsage', the role 'VariableUsage273' has cardinality 0..*.
+An association connects 'pcm_usagemodel_EntryLevelSystemCall' and 'ProvidedRole'. From 'pcm_usagemodel_EntryLevelSystemCall', the role 'pcm_usagemodel_EntryLevelSystemCall275' has cardinality 0..*, and from 'ProvidedRole', the role 'ProvidedRole276' has cardinality 0..*.
+An association connects 'Signature' and 'pcm_usagemodel_EntryLevelSystemCall'. From 'Signature', the role 'Signature279' has cardinality 0..*, and from 'pcm_usagemodel_EntryLevelSystemCall', the role 'pcm_usagemodel_EntryLevelSystemCall278' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_usagemodel_EntryLevelSystemCall'. From 'VariableUsage', the role 'VariableUsage282' has cardinality 0..*, and from 'pcm_usagemodel_EntryLevelSystemCall', the role 'pcm_usagemodel_EntryLevelSystemCall281' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_usagemodel_ClosedWorkload'. From 'PCMRandomVariable', the role 'PCMRandomVariable284' has cardinality 0..*, and from 'pcm_usagemodel_ClosedWorkload', the role 'pcm_usagemodel_ClosedWorkload' has cardinality 0..*.
+An association connects 'BranchTransition' and 'pcm_usagemodel_Branch'. From 'BranchTransition', the role 'BranchTransition' has cardinality 0..*, and from 'pcm_usagemodel_Branch', the role 'pcm_usagemodel_Branch' has cardinality 0..*.
+An association connects 'ScenarioBehaviour' and 'pcm_usagemodel_BranchTransition'. From 'ScenarioBehaviour', the role 'ScenarioBehaviour287' has cardinality 0..*, and from 'pcm_usagemodel_BranchTransition', the role 'pcm_usagemodel_BranchTransition' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_usagemodel_Delay'. From 'PCMRandomVariable', the role 'PCMRandomVariable289' has cardinality 0..*, and from 'pcm_usagemodel_Delay', the role 'pcm_usagemodel_Delay' has cardinality 0..*.

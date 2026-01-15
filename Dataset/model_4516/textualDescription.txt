@@ -1,0 +1,146 @@
+The domain model 'logo' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'logo_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Backward' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Mult' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_PenDown' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Clear' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Repeat' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_ParameterCall' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Lower' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_If' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Left' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'logo_LogoProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_ProcCall' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Right' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_While' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_ProcDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'logo_Constant' represents an important domain concept.
+It has one attribute: 'integerValue', which is of type int.
+
+'logo_Forward' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_PenUp' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Equals' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'logo_Backward' is a specialization of 'Instruction'.
+The class 'logo_Forward' is a specialization of 'Instruction'.
+The class 'logo_Left' is a specialization of 'Instruction'.
+The class 'logo_Right' is a specialization of 'Instruction'.
+The class 'logo_PenDown' is a specialization of 'Instruction'.
+The class 'logo_PenUp' is a specialization of 'Instruction'.
+The class 'logo_Clear' is a specialization of 'Instruction'.
+The class 'logo_Constant' is a specialization of 'Expression'.
+The class 'logo_ProcCall' is a specialization of 'Instruction'.
+The class 'logo_ProcDeclaration' is a specialization of 'Instruction'.
+The class 'logo_Block' is a specialization of 'Instruction'.
+The class 'logo_If' is a specialization of 'Instruction'.
+The class 'logo_Repeat' is a specialization of 'Instruction'.
+The class 'logo_While' is a specialization of 'Instruction'.
+The class 'logo_ParameterCall' is a specialization of 'Instruction'.
+The class 'logo_ParameterCall' is a specialization of 'Expression'.
+The class 'logo_Equals' is a specialization of 'Expression'.
+The class 'logo_Greater' is a specialization of 'Expression'.
+The class 'logo_Lower' is a specialization of 'Expression'.
+The class 'logo_Plus' is a specialization of 'Expression'.
+The class 'logo_Minus' is a specialization of 'Expression'.
+The class 'logo_Mult' is a specialization of 'Expression'.
+The class 'logo_Div' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'logo_LogoProgram' and 'logo_Instruction'. From 'logo_LogoProgram', the role 'logo_LogoProgram' has cardinality 0..*, and from 'logo_Instruction', the role 'logo_Instruction' has cardinality 0..*.
+An association connects 'logo_Expression' and 'logo_Backward'. From 'logo_Expression', the role 'logo_Expression' has cardinality 0..*, and from 'logo_Backward', the role 'logo_Backward' has cardinality 0..*.
+An association connects 'logo_Forward' and 'logo_Expression'. From 'logo_Forward', the role 'logo_Forward' has cardinality 0..*, and from 'logo_Expression', the role 'logo_Expression3' has cardinality 0..*.
+An association connects 'logo_Left' and 'logo_Expression'. From 'logo_Left', the role 'logo_Left' has cardinality 0..*, and from 'logo_Expression', the role 'logo_Expression5' has cardinality 0..*.
+An association connects 'logo_Expression' and 'logo_Right'. From 'logo_Expression', the role 'logo_Expression7' has cardinality 0..*, and from 'logo_Right', the role 'logo_Right' has cardinality 0..*.
+An association connects 'logo_ProcDeclaration' and 'logo_ProcCall'. From 'logo_ProcDeclaration', the role 'logo_ProcDeclaration' has cardinality 0..*, and from 'logo_ProcCall', the role 'logo_ProcCall' has cardinality 0..*.
+An association connects 'logo_Expression' and 'logo_ProcCall'. From 'logo_Expression', the role 'logo_Expression11' has cardinality 0..*, and from 'logo_ProcCall', the role 'logo_ProcCall10' has cardinality 0..*.
+An association connects 'logo_ProcDeclaration' and 'logo_Parameter'. From 'logo_ProcDeclaration', the role 'logo_ProcDeclaration13' has cardinality 0..*, and from 'logo_Parameter', the role 'logo_Parameter' has cardinality 0..*.
+An association connects 'logo_Instruction' and 'logo_ProcDeclaration'. From 'logo_Instruction', the role 'logo_Instruction16' has cardinality 0..*, and from 'logo_ProcDeclaration', the role 'logo_ProcDeclaration15' has cardinality 0..*.
+An association connects 'logo_Instruction' and 'logo_Block'. From 'logo_Instruction', the role 'logo_Instruction18' has cardinality 0..*, and from 'logo_Block', the role 'logo_Block' has cardinality 0..*.
+An association connects 'logo_If' and 'logo_Expression'. From 'logo_If', the role 'logo_If' has cardinality 0..*, and from 'logo_Expression', the role 'logo_Expression20' has cardinality 0..*.
+An association connects 'logo_If' and 'logo_Block'. From 'logo_If', the role 'logo_If22' has cardinality 0..*, and from 'logo_Block', the role 'logo_Block23' has cardinality 0..*.
+An association connects 'logo_If' and 'logo_Block'. From 'logo_If', the role 'logo_If25' has cardinality 0..*, and from 'logo_Block', the role 'logo_Block26' has cardinality 0..*.
+An association connects 'logo_Repeat' and 'logo_Expression'. From 'logo_Repeat', the role 'logo_Repeat' has cardinality 0..*, and from 'logo_Expression', the role 'logo_Expression28' has cardinality 0..*.
+An association connects 'logo_Repeat' and 'logo_Block'. From 'logo_Repeat', the role 'logo_Repeat30' has cardinality 0..*, and from 'logo_Block', the role 'logo_Block31' has cardinality 0..*.
+An association connects 'logo_While' and 'logo_Expression'. From 'logo_While', the role 'logo_While' has cardinality 0..*, and from 'logo_Expression', the role 'logo_Expression33' has cardinality 0..*.
+An association connects 'logo_While' and 'logo_Block'. From 'logo_While', the role 'logo_While35' has cardinality 0..*, and from 'logo_Block', the role 'logo_Block36' has cardinality 0..*.
+An association connects 'logo_Parameter' and 'logo_ParameterCall'. From 'logo_Parameter', the role 'logo_Parameter38' has cardinality 0..*, and from 'logo_ParameterCall', the role 'logo_ParameterCall' has cardinality 0..*.
+An association connects 'logo_Equals' and 'logo_Expression'. From 'logo_Equals', the role 'logo_Equals' has cardinality 0..*, and from 'logo_Expression', the role 'logo_Expression40' has cardinality 0..*.
+An association connects 'logo_Equals' and 'logo_Expression'. From 'logo_Equals', the role 'logo_Equals42' has cardinality 0..*, and from 'logo_Expression', the role 'logo_Expression43' has cardinality 0..*.
+An association connects 'logo_Greater' and 'logo_Expression'. From 'logo_Greater', the role 'logo_Greater' has cardinality 0..*, and from 'logo_Expression', the role 'logo_Expression45' has cardinality 0..*.
+An association connects 'logo_Expression' and 'logo_Greater'. From 'logo_Expression', the role 'logo_Expression48' has cardinality 0..*, and from 'logo_Greater', the role 'logo_Greater47' has cardinality 0..*.
+An association connects 'logo_Expression' and 'logo_Lower'. From 'logo_Expression', the role 'logo_Expression50' has cardinality 0..*, and from 'logo_Lower', the role 'logo_Lower' has cardinality 0..*.
+An association connects 'logo_Lower' and 'logo_Expression'. From 'logo_Lower', the role 'logo_Lower52' has cardinality 0..*, and from 'logo_Expression', the role 'logo_Expression53' has cardinality 0..*.
+An association connects 'logo_Plus' and 'logo_Expression'. From 'logo_Plus', the role 'logo_Plus' has cardinality 0..*, and from 'logo_Expression', the role 'logo_Expression55' has cardinality 0..*.
+An association connects 'logo_Expression' and 'logo_Plus'. From 'logo_Expression', the role 'logo_Expression58' has cardinality 0..*, and from 'logo_Plus', the role 'logo_Plus57' has cardinality 0..*.
+An association connects 'logo_Expression' and 'logo_Minus'. From 'logo_Expression', the role 'logo_Expression60' has cardinality 0..*, and from 'logo_Minus', the role 'logo_Minus' has cardinality 0..*.
+An association connects 'logo_Minus' and 'logo_Expression'. From 'logo_Minus', the role 'logo_Minus62' has cardinality 0..*, and from 'logo_Expression', the role 'logo_Expression63' has cardinality 0..*.
+An association connects 'logo_Expression' and 'logo_Mult'. From 'logo_Expression', the role 'logo_Expression65' has cardinality 0..*, and from 'logo_Mult', the role 'logo_Mult' has cardinality 0..*.
+An association connects 'logo_Expression' and 'logo_Mult'. From 'logo_Expression', the role 'logo_Expression68' has cardinality 0..*, and from 'logo_Mult', the role 'logo_Mult67' has cardinality 0..*.
+An association connects 'logo_Div' and 'logo_Expression'. From 'logo_Div', the role 'logo_Div' has cardinality 0..*, and from 'logo_Expression', the role 'logo_Expression70' has cardinality 0..*.
+An association connects 'logo_Div' and 'logo_Expression'. From 'logo_Div', the role 'logo_Div72' has cardinality 0..*, and from 'logo_Expression', the role 'logo_Expression73' has cardinality 0..*.

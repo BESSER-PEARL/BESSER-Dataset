@@ -1,0 +1,41 @@
+The domain model 'automaton' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'automaton_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'automaton_Output' represents an important domain concept.
+It does not declare any attributes.
+
+'automaton_State' represents an important domain concept.
+It does not declare any attributes.
+
+'automaton_Automaton' represents an important domain concept.
+It does not declare any attributes.
+
+'automaton_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'automaton_Input' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'automaton_State' is a specialization of 'NamedElement'.
+The class 'automaton_Input' is a specialization of 'NamedElement'.
+The class 'automaton_Output' is a specialization of 'NamedElement'.
+The class 'automaton_Transition' is a specialization of 'NamedElement'.
+The class 'automaton_Automaton' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'automaton_Input' and 'automaton_Transition'. From 'automaton_Input', the role 'automaton_Input' has cardinality 0..*, and from 'automaton_Transition', the role 'automaton_Transition' has cardinality 0..*.
+An association connects 'automaton_Transition' and 'automaton_Output'. From 'automaton_Transition', the role 'automaton_Transition2' has cardinality 0..*, and from 'automaton_Output', the role 'automaton_Output' has cardinality 0..*.
+An association connects 'automaton_Transition' and 'automaton_State'. From 'automaton_Transition', the role 'automaton_Transition4' has cardinality 0..*, and from 'automaton_State', the role 'automaton_State' has cardinality 0..*.
+An association connects 'automaton_State' and 'automaton_Transition'. From 'automaton_State', the role 'automaton_State7' has cardinality 0..*, and from 'automaton_Transition', the role 'automaton_Transition6' has cardinality 0..*.
+An association connects 'automaton_Automaton' and 'automaton_State'. From 'automaton_Automaton', the role 'automaton_Automaton' has cardinality 0..*, and from 'automaton_State', the role 'automaton_State9' has cardinality 0..*.
+An association connects 'automaton_Automaton' and 'automaton_Transition'. From 'automaton_Automaton', the role 'automaton_Automaton11' has cardinality 0..*, and from 'automaton_Transition', the role 'automaton_Transition12' has cardinality 0..*.
+An association connects 'automaton_Automaton' and 'automaton_Input'. From 'automaton_Automaton', the role 'automaton_Automaton14' has cardinality 0..*, and from 'automaton_Input', the role 'automaton_Input15' has cardinality 0..*.
+An association connects 'automaton_Output' and 'automaton_Automaton'. From 'automaton_Output', the role 'automaton_Output18' has cardinality 0..*, and from 'automaton_Automaton', the role 'automaton_Automaton17' has cardinality 0..*.

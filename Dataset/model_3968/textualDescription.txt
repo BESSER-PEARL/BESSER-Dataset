@@ -1,0 +1,67 @@
+The domain model 'subsetUnion' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'subsetUnion_Element_Level4' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnion_Element_Level2' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnion_Element_Level6' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnion_Element_Level10' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnion_Element_Level1' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnion_Element_Level3' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnion_Element_Level8' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnion_Container' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'subsetUnion_Element_Level7' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnion_Element_Level9' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnion_Element' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'subsetUnion_Element_Level5' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'subsetUnion_Element_Level1' is a specialization of 'Element'.
+The class 'subsetUnion_Element_Level2' is a specialization of 'Element'.
+The class 'subsetUnion_Element_Level3' is a specialization of 'Element'.
+The class 'subsetUnion_Element_Level4' is a specialization of 'Element'.
+The class 'subsetUnion_Element_Level5' is a specialization of 'Element'.
+The class 'subsetUnion_Element_Level6' is a specialization of 'Element'.
+The class 'subsetUnion_Element_Level7' is a specialization of 'Element'.
+The class 'subsetUnion_Element_Level8' is a specialization of 'Element'.
+The class 'subsetUnion_Element_Level9' is a specialization of 'Element'.
+The class 'subsetUnion_Element_Level10' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'subsetUnion_Container' and 'subsetUnion_Element'. From 'subsetUnion_Container', the role 'subsetUnion_Container' has cardinality 0..*, and from 'subsetUnion_Element', the role 'subsetUnion_Element' has cardinality 0..*.
+An association connects 'subsetUnion_Element_Level1' and 'subsetUnion_Container'. From 'subsetUnion_Element_Level1', the role 'subsetUnion_Element_Level1' has cardinality 0..*, and from 'subsetUnion_Container', the role 'subsetUnion_Container2' has cardinality 0..*.
+An association connects 'subsetUnion_Container' and 'subsetUnion_Element_Level2'. From 'subsetUnion_Container', the role 'subsetUnion_Container4' has cardinality 0..*, and from 'subsetUnion_Element_Level2', the role 'subsetUnion_Element_Level2' has cardinality 0..*.
+An association connects 'subsetUnion_Element_Level3' and 'subsetUnion_Container'. From 'subsetUnion_Element_Level3', the role 'subsetUnion_Element_Level3' has cardinality 0..*, and from 'subsetUnion_Container', the role 'subsetUnion_Container6' has cardinality 0..*.
+An association connects 'subsetUnion_Element_Level4' and 'subsetUnion_Container'. From 'subsetUnion_Element_Level4', the role 'subsetUnion_Element_Level4' has cardinality 0..*, and from 'subsetUnion_Container', the role 'subsetUnion_Container8' has cardinality 0..*.
+An association connects 'subsetUnion_Element_Level5' and 'subsetUnion_Container'. From 'subsetUnion_Element_Level5', the role 'subsetUnion_Element_Level5' has cardinality 0..*, and from 'subsetUnion_Container', the role 'subsetUnion_Container10' has cardinality 0..*.
+An association connects 'subsetUnion_Container' and 'subsetUnion_Element_Level6'. From 'subsetUnion_Container', the role 'subsetUnion_Container12' has cardinality 0..*, and from 'subsetUnion_Element_Level6', the role 'subsetUnion_Element_Level6' has cardinality 0..*.
+An association connects 'subsetUnion_Container' and 'subsetUnion_Element_Level7'. From 'subsetUnion_Container', the role 'subsetUnion_Container14' has cardinality 0..*, and from 'subsetUnion_Element_Level7', the role 'subsetUnion_Element_Level7' has cardinality 0..*.
+An association connects 'subsetUnion_Container' and 'subsetUnion_Element_Level8'. From 'subsetUnion_Container', the role 'subsetUnion_Container16' has cardinality 0..*, and from 'subsetUnion_Element_Level8', the role 'subsetUnion_Element_Level8' has cardinality 0..*.
+An association connects 'subsetUnion_Element_Level9' and 'subsetUnion_Container'. From 'subsetUnion_Element_Level9', the role 'subsetUnion_Element_Level9' has cardinality 0..*, and from 'subsetUnion_Container', the role 'subsetUnion_Container18' has cardinality 0..*.
+An association connects 'subsetUnion_Element_Level10' and 'subsetUnion_Container'. From 'subsetUnion_Element_Level10', the role 'subsetUnion_Element_Level10' has cardinality 0..*, and from 'subsetUnion_Container', the role 'subsetUnion_Container20' has cardinality 0..*.

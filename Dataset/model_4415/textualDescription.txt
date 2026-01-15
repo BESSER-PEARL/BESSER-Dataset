@@ -1,0 +1,173 @@
+The domain model 'mindstorms' describes the core structural elements and their relationships within the system.
+
+The model defines 41 main class(es).
+
+'mindstorms_Release' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_ReturnBottleToBase' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_TouchSensor' represents an important domain concept.
+It has one attribute: 'isPressed', which is of type bool.
+
+'mindstorms_Main' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Procedure' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Arbitrator' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_BlockContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_GoToEnemy' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mindstorms_Grab' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_ConditionContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Rotate' represents an important domain concept.
+It has the following attributes: 'random', which is of type bool; 'degrees', which is of type int.
+
+'mindstorms_While' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_GoTo' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'x', which is of type int.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_GoBackward' represents an important domain concept.
+It has the following attributes: 'infinite', which is of type bool; 'cm', which is of type int.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_UltrasonicSensor' represents an important domain concept.
+It has the following attributes: 'operator', which is of type str; 'value', which is of type float.
+
+'mindstorms_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_If' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_ExploreForward' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_ReuseInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'BlockContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'Flow' represents an important domain concept.
+It does not declare any attributes.
+
+'Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_AvoidObstacle' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_ColorSensor' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+'mindstorms_GoForward' represents an important domain concept.
+It has the following attributes: 'infinite', which is of type bool; 'cm', which is of type int.
+
+'mindstorms_ReturnToBase' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Delay' represents an important domain concept.
+It has one attribute: 'ms', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'OperatorKind' defines the following possible values: 'lowerOrEqual', 'equal', 'upperOrEqual', 'notEqual'.
+The enumeration 'Color' defines the following possible values: 'BROWN', 'BLUE', 'BLACK', 'GRAY', 'PINK', 'YELLOW', 'WHITE', 'LIGHT_GRAY', 'DARK_GRAY', 'NONE', 'ORANGE', 'MAGENTA', 'RED', 'CYAN', 'GREEN'.
+
+The model also captures inheritance relationships between classes.
+The class 'mindstorms_Instruction' is a specialization of 'NamedElement'.
+The class 'mindstorms_Procedure' is a specialization of 'Instruction'.
+The class 'mindstorms_Procedure' is a specialization of 'BlockContainer'.
+The class 'mindstorms_Arbitrator' is a specialization of 'Instruction'.
+The class 'mindstorms_Arbitrator' is a specialization of 'ConditionContainer'.
+The class 'mindstorms_Behavior' is a specialization of 'NamedElement'.
+The class 'mindstorms_Behavior' is a specialization of 'BlockContainer'.
+The class 'mindstorms_Behavior' is a specialization of 'ConditionContainer'.
+The class 'mindstorms_ReuseInstruction' is a specialization of 'Instruction'.
+The class 'mindstorms_Block' is a specialization of 'Instruction'.
+The class 'mindstorms_Action' is a specialization of 'Block'.
+The class 'mindstorms_Flow' is a specialization of 'Block'.
+The class 'mindstorms_Flow' is a specialization of 'BlockContainer'.
+The class 'mindstorms_Flow' is a specialization of 'ConditionContainer'.
+The class 'mindstorms_Sensor' is a specialization of 'NamedElement'.
+The class 'mindstorms_Sensor' is a specialization of 'Condition'.
+The class 'mindstorms_If' is a specialization of 'Flow'.
+The class 'mindstorms_While' is a specialization of 'Flow'.
+The class 'mindstorms_GoForward' is a specialization of 'Action'.
+The class 'mindstorms_GoBackward' is a specialization of 'Action'.
+The class 'mindstorms_Rotate' is a specialization of 'Action'.
+The class 'mindstorms_GoTo' is a specialization of 'Action'.
+The class 'mindstorms_ReturnToBase' is a specialization of 'Action'.
+The class 'mindstorms_Grab' is a specialization of 'Action'.
+The class 'mindstorms_Release' is a specialization of 'Action'.
+The class 'mindstorms_Delay' is a specialization of 'Action'.
+The class 'mindstorms_AvoidObstacle' is a specialization of 'Behavior'.
+The class 'mindstorms_ReturnBottleToBase' is a specialization of 'Behavior'.
+The class 'mindstorms_ExploreForward' is a specialization of 'Behavior'.
+The class 'mindstorms_TouchSensor' is a specialization of 'Sensor'.
+The class 'mindstorms_UltrasonicSensor' is a specialization of 'Sensor'.
+The class 'mindstorms_ColorSensor' is a specialization of 'Sensor'.
+The class 'mindstorms_GoToEnemy' is a specialization of 'Action'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mindstorms_Main' and 'mindstorms_Instruction'. From 'mindstorms_Main', the role 'mindstorms_Main' has cardinality 0..*, and from 'mindstorms_Instruction', the role 'mindstorms_Instruction' has cardinality 0..*.
+An association connects 'mindstorms_Block' and 'mindstorms_BlockContainer'. From 'mindstorms_Block', the role 'mindstorms_Block' has cardinality 0..*, and from 'mindstorms_BlockContainer', the role 'mindstorms_BlockContainer' has cardinality 0..*.
+An association connects 'mindstorms_Behavior' and 'mindstorms_Arbitrator'. From 'mindstorms_Behavior', the role 'mindstorms_Behavior' has cardinality 0..*, and from 'mindstorms_Arbitrator', the role 'mindstorms_Arbitrator' has cardinality 0..*.
+An association connects 'mindstorms_Arbitrator' and 'mindstorms_Behavior'. From 'mindstorms_Arbitrator', the role 'mindstorms_Arbitrator4' has cardinality 0..*, and from 'mindstorms_Behavior', the role 'mindstorms_Behavior5' has cardinality 0..*.
+An association connects 'mindstorms_Instruction' and 'mindstorms_ReuseInstruction'. From 'mindstorms_Instruction', the role 'mindstorms_Instruction7' has cardinality 0..*, and from 'mindstorms_ReuseInstruction', the role 'mindstorms_ReuseInstruction' has cardinality 0..*.
+An association connects 'mindstorms_ConditionContainer' and 'mindstorms_Condition'. From 'mindstorms_ConditionContainer', the role 'mindstorms_ConditionContainer' has cardinality 0..*, and from 'mindstorms_Condition', the role 'mindstorms_Condition' has cardinality 0..*.

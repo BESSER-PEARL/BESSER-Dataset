@@ -1,0 +1,88 @@
+The domain model 'mtm_di' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'mtm_di_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'mtm_di_ExtensionType' represents an important domain concept.
+It has one attribute: 'any', which is of type str.
+
+'mtm_di_Bounds' represents an important domain concept.
+It does not declare any attributes.
+
+'Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'mtm_di_Diagram' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'documentation', which is of type str; 'id', which is of type str; 'resolution', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramElement' represents an important domain concept.
+It does not declare any attributes.
+
+'mtm_di_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'mtm_di_LabeledEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'mtm_di_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'mtm_di_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'mtm_di_Style' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'mtm_di_Plane' represents an important domain concept.
+It has one attribute: 'diagramElementGroup', which is of type str.
+
+'mtm_di_Point' represents an important domain concept.
+It does not declare any attributes.
+
+'Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'mtm_di_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'mtm_di_LabeledShape' represents an important domain concept.
+It does not declare any attributes.
+
+'mtm_di_Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'mtm_di_DiagramElement' represents an important domain concept.
+It has the following attributes: 'anyAttribute', which is of type str; 'id', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'mtm_di_Edge' is a specialization of 'DiagramElement'.
+The class 'mtm_di_Label' is a specialization of 'Node'.
+The class 'mtm_di_LabeledEdge' is a specialization of 'Edge'.
+The class 'mtm_di_LabeledShape' is a specialization of 'Shape'.
+The class 'mtm_di_Node' is a specialization of 'DiagramElement'.
+The class 'mtm_di_Plane' is a specialization of 'Node'.
+The class 'mtm_di_Shape' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mtm_di_ExtensionType' and 'mtm_di_DiagramElement'. From 'mtm_di_ExtensionType', the role 'mtm_di_ExtensionType' has cardinality 0..*, and from 'mtm_di_DiagramElement', the role 'mtm_di_DiagramElement' has cardinality 0..*.
+An association connects 'mtm_di_Point' and 'mtm_di_Edge'. From 'mtm_di_Point', the role 'mtm_di_Point' has cardinality 0..*, and from 'mtm_di_Edge', the role 'mtm_di_Edge' has cardinality 0..*.
+An association connects 'mtm_di_Bounds' and 'mtm_di_Label'. From 'mtm_di_Bounds', the role 'mtm_di_Bounds' has cardinality 0..*, and from 'mtm_di_Label', the role 'mtm_di_Label' has cardinality 0..*.
+An association connects 'mtm_di_DiagramElement' and 'mtm_di_Plane'. From 'mtm_di_DiagramElement', the role 'mtm_di_DiagramElement4' has cardinality 0..*, and from 'mtm_di_Plane', the role 'mtm_di_Plane' has cardinality 0..*.
+An association connects 'mtm_di_Shape' and 'mtm_di_Bounds'. From 'mtm_di_Shape', the role 'mtm_di_Shape' has cardinality 0..*, and from 'mtm_di_Bounds', the role 'mtm_di_Bounds6' has cardinality 0..*.
+An association connects 'mtm_di_EStringToStringMapEntry' and 'mtm_di_DocumentRoot'. From 'mtm_di_EStringToStringMapEntry', the role 'mtm_di_EStringToStringMapEntry' has cardinality 0..*, and from 'mtm_di_DocumentRoot', the role 'mtm_di_DocumentRoot' has cardinality 0..*.
+An association connects 'mtm_di_DocumentRoot' and 'mtm_di_EStringToStringMapEntry'. From 'mtm_di_DocumentRoot', the role 'mtm_di_DocumentRoot9' has cardinality 0..*, and from 'mtm_di_EStringToStringMapEntry', the role 'mtm_di_EStringToStringMapEntry10' has cardinality 0..*.
+An association connects 'mtm_di_DiagramElement' and 'mtm_di_DocumentRoot'. From 'mtm_di_DiagramElement', the role 'mtm_di_DiagramElement13' has cardinality 0..*, and from 'mtm_di_DocumentRoot', the role 'mtm_di_DocumentRoot12' has cardinality 0..*.
+An association connects 'mtm_di_Diagram' and 'mtm_di_DocumentRoot'. From 'mtm_di_Diagram', the role 'mtm_di_Diagram' has cardinality 0..*, and from 'mtm_di_DocumentRoot', the role 'mtm_di_DocumentRoot15' has cardinality 0..*.
+An association connects 'mtm_di_DocumentRoot' and 'mtm_di_Edge'. From 'mtm_di_DocumentRoot', the role 'mtm_di_DocumentRoot17' has cardinality 0..*, and from 'mtm_di_Edge', the role 'mtm_di_Edge18' has cardinality 0..*.
+An association connects 'mtm_di_DocumentRoot' and 'mtm_di_Label'. From 'mtm_di_DocumentRoot', the role 'mtm_di_DocumentRoot20' has cardinality 0..*, and from 'mtm_di_Label', the role 'mtm_di_Label21' has cardinality 0..*.
+An association connects 'mtm_di_LabeledEdge' and 'mtm_di_DocumentRoot'. From 'mtm_di_LabeledEdge', the role 'mtm_di_LabeledEdge' has cardinality 0..*, and from 'mtm_di_DocumentRoot', the role 'mtm_di_DocumentRoot23' has cardinality 0..*.
+An association connects 'mtm_di_LabeledShape' and 'mtm_di_DocumentRoot'. From 'mtm_di_LabeledShape', the role 'mtm_di_LabeledShape' has cardinality 0..*, and from 'mtm_di_DocumentRoot', the role 'mtm_di_DocumentRoot25' has cardinality 0..*.
+An association connects 'mtm_di_Node' and 'mtm_di_DocumentRoot'. From 'mtm_di_Node', the role 'mtm_di_Node' has cardinality 0..*, and from 'mtm_di_DocumentRoot', the role 'mtm_di_DocumentRoot27' has cardinality 0..*.
+An association connects 'mtm_di_Plane' and 'mtm_di_DocumentRoot'. From 'mtm_di_Plane', the role 'mtm_di_Plane30' has cardinality 0..*, and from 'mtm_di_DocumentRoot', the role 'mtm_di_DocumentRoot29' has cardinality 0..*.
+An association connects 'mtm_di_Shape' and 'mtm_di_DocumentRoot'. From 'mtm_di_Shape', the role 'mtm_di_Shape33' has cardinality 0..*, and from 'mtm_di_DocumentRoot', the role 'mtm_di_DocumentRoot32' has cardinality 0..*.
+An association connects 'mtm_di_DocumentRoot' and 'mtm_di_Style'. From 'mtm_di_DocumentRoot', the role 'mtm_di_DocumentRoot35' has cardinality 0..*, and from 'mtm_di_Style', the role 'mtm_di_Style' has cardinality 0..*.

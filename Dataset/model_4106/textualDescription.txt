@@ -1,0 +1,45 @@
+The domain model 'compositestates' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'compositestates_AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'compositestates_Pseudostate' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'compositestates_State' represents an important domain concept.
+It does not declare any attributes.
+
+'compositestates_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'compositestates_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'compositestates_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'AbstractState' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PseudostateKind' defines a single possible value: 'initial'.
+
+The model also captures inheritance relationships between classes.
+The class 'compositestates_Region' is a specialization of 'NamedElement'.
+The class 'compositestates_State' is a specialization of 'AbstractState'.
+The class 'compositestates_Pseudostate' is a specialization of 'AbstractState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'compositestates_Region' and 'compositestates_AbstractState'. From 'compositestates_Region', the role 'unnamed role' has cardinality 0..*, and from 'compositestates_AbstractState', the role '1' has cardinality 0..*.
+An association connects 'compositestates_Region' and 'compositestates_State'. From 'compositestates_Region', the role '3' has cardinality 0..*, and from 'compositestates_State', the role '4' has cardinality 0..*.
+An association connects 'compositestates_State' and 'compositestates_Region'. From 'compositestates_State', the role '6' has cardinality 0..*, and from 'compositestates_Region', the role '7' has cardinality 0..*.
+An association connects 'compositestates_AbstractState' and 'compositestates_Transition'. From 'compositestates_AbstractState', the role '9' has cardinality 0..*, and from 'compositestates_Transition', the role '10' has cardinality 0..*.
+An association connects 'compositestates_Transition' and 'compositestates_AbstractState'. From 'compositestates_Transition', the role '13' has cardinality 0..*, and from 'compositestates_AbstractState', the role '12' has cardinality 0..*.
+An association connects 'compositestates_AbstractState' and 'compositestates_Region'. From 'compositestates_AbstractState', the role '15' has cardinality 0..*, and from 'compositestates_Region', the role '16' has cardinality 0..*.
+An association connects 'compositestates_Transition' and 'compositestates_AbstractState'. From 'compositestates_Transition', the role '18' has cardinality 0..*, and from 'compositestates_AbstractState', the role '19' has cardinality 0..*.
+An association connects 'compositestates_AbstractState' and 'compositestates_Transition'. From 'compositestates_AbstractState', the role '22' has cardinality 0..*, and from 'compositestates_Transition', the role '21' has cardinality 0..*.

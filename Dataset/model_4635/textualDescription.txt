@@ -1,0 +1,181 @@
+The domain model 'trnet' describes the core structural elements and their relationships within the system.
+
+The model defines 39 main class(es).
+
+'trnet_AttributePattern' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'trnet_OptionalOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_Operand' represents an important domain concept.
+It has one attribute: 'index', which is of type int.
+
+'trnet_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_Pattern' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'expected_size', which is of type int.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_SomeResult' represents an important domain concept.
+It has one attribute: 'count', which is of type int.
+
+'trnet_MandatoryNode' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_Equality' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_AnyResult' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_Result' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_AntiOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_AnyOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'Restriction' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_Restriction' represents an important domain concept.
+It does not declare any attributes.
+
+'Result' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_ExpressionOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'NodePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_TrNetModel' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'trnet_Eventually' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_External' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_Different' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_NodePattern' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'trnet_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Operand' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_Next' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_Same' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_Operator' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'trnet_EdgePattern' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'trnet_FlowRule' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowRule' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_Union' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_SomeOperand' represents an important domain concept.
+It has one attribute: 'count', which is of type int.
+
+'trnet_NextDerived' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_OptionalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_Keep' represents an important domain concept.
+It does not declare any attributes.
+
+'trnet_Combinator' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'trnet_Combinator' is a specialization of 'Operator'.
+The class 'trnet_Same' is a specialization of 'Restriction'.
+The class 'trnet_StringLiteral' is a specialization of 'Expression'.
+The class 'trnet_Keep' is a specialization of 'Restriction'.
+The class 'trnet_SomeOperand' is a specialization of 'Operand'.
+The class 'trnet_AntiOperand' is a specialization of 'Operand'.
+The class 'trnet_AnyOperand' is a specialization of 'Operand'.
+The class 'trnet_SomeResult' is a specialization of 'Result'.
+The class 'trnet_AnyResult' is a specialization of 'Result'.
+The class 'trnet_Different' is a specialization of 'Restriction'.
+The class 'trnet_External' is a specialization of 'Operator'.
+The class 'trnet_Union' is a specialization of 'Operator'.
+The class 'trnet_MandatoryNode' is a specialization of 'NodePattern'.
+The class 'trnet_OptionalNode' is a specialization of 'NodePattern'.
+The class 'trnet_Equality' is a specialization of 'ExpressionOperator'.
+The class 'trnet_OptionalOperand' is a specialization of 'Operand'.
+The class 'trnet_Next' is a specialization of 'FlowRule'.
+The class 'trnet_Eventually' is a specialization of 'FlowRule'.
+The class 'trnet_NextDerived' is a specialization of 'FlowRule'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trnet_Pattern' and 'trnet_TrNetModel'. From 'trnet_Pattern', the role 'trnet_Pattern' has cardinality 0..*, and from 'trnet_TrNetModel', the role 'trnet_TrNetModel' has cardinality 0..*.
+An association connects 'trnet_Operator' and 'trnet_TrNetModel'. From 'trnet_Operator', the role 'trnet_Operator' has cardinality 0..*, and from 'trnet_TrNetModel', the role 'trnet_TrNetModel2' has cardinality 0..*.
+An association connects 'trnet_FlowRule' and 'trnet_TrNetModel'. From 'trnet_FlowRule', the role 'trnet_FlowRule' has cardinality 0..*, and from 'trnet_TrNetModel', the role 'trnet_TrNetModel4' has cardinality 0..*.
+An association connects 'trnet_EdgePattern' and 'trnet_NodePattern'. From 'trnet_EdgePattern', the role 'EdgePattern' has cardinality 0..*, and from 'trnet_NodePattern', the role 'target' has cardinality 0..*.
+An association connects 'trnet_EdgePattern' and 'trnet_NodePattern'. From 'trnet_EdgePattern', the role 'EdgePattern7' has cardinality 0..*, and from 'trnet_NodePattern', the role 'source' has cardinality 0..*.
+An association connects 'trnet_NodePattern' and 'trnet_Same'. From 'trnet_NodePattern', the role 'source9' has cardinality 0..*, and from 'trnet_Same', the role 'Same' has cardinality 0..*.
+An association connects 'trnet_NodePattern' and 'trnet_Same'. From 'trnet_NodePattern', the role 'target11' has cardinality 0..*, and from 'trnet_Same', the role 'Same12' has cardinality 0..*.
+An association connects 'trnet_NodePattern' and 'trnet_Pattern'. From 'trnet_NodePattern', the role 'nodes' has cardinality 0..*, and from 'trnet_Pattern', the role 'Pattern' has cardinality 0..*.
+An association connects 'trnet_AttributePattern' and 'trnet_NodePattern'. From 'trnet_AttributePattern', the role 'trnet_AttributePattern' has cardinality 0..*, and from 'trnet_NodePattern', the role 'trnet_NodePattern' has cardinality 0..*.
+An association connects 'trnet_NodePattern' and 'trnet_Different'. From 'trnet_NodePattern', the role 'target16' has cardinality 0..*, and from 'trnet_Different', the role 'Different' has cardinality 0..*.
+An association connects 'trnet_NodePattern' and 'trnet_Different'. From 'trnet_NodePattern', the role 'source18' has cardinality 0..*, and from 'trnet_Different', the role 'Different19' has cardinality 0..*.
+An association connects 'trnet_NodePattern' and 'trnet_Keep'. From 'trnet_NodePattern', the role 'target21' has cardinality 0..*, and from 'trnet_Keep', the role 'Keep' has cardinality 0..*.
+An association connects 'trnet_NodePattern' and 'trnet_Keep'. From 'trnet_NodePattern', the role 'source23' has cardinality 0..*, and from 'trnet_Keep', the role 'Keep24' has cardinality 0..*.
+An association connects 'trnet_NodePattern' and 'trnet_EdgePattern'. From 'trnet_NodePattern', the role 'NodePattern' has cardinality 0..*, and from 'trnet_EdgePattern', the role 'outgoing' has cardinality 0..*.
+An association connects 'trnet_EdgePattern' and 'trnet_NodePattern'. From 'trnet_EdgePattern', the role 'incoming' has cardinality 0..*, and from 'trnet_NodePattern', the role 'NodePattern27' has cardinality 0..*.
+An association connects 'trnet_Pattern' and 'trnet_EdgePattern'. From 'trnet_Pattern', the role 'Pattern29' has cardinality 0..*, and from 'trnet_EdgePattern', the role 'edges' has cardinality 0..*.
+An association connects 'trnet_NodePattern' and 'trnet_Pattern'. From 'trnet_NodePattern', the role 'NodePattern31' has cardinality 0..*, and from 'trnet_Pattern', the role 'pattern' has cardinality 0..*.
+An association connects 'trnet_Pattern' and 'trnet_EdgePattern'. From 'trnet_Pattern', the role 'pattern33' has cardinality 0..*, and from 'trnet_EdgePattern', the role 'EdgePattern34' has cardinality 0..*.
+An association connects 'trnet_Operand' and 'trnet_Pattern'. From 'trnet_Operand', the role 'Operand' has cardinality 0..*, and from 'trnet_Pattern', the role 'pattern36' has cardinality 0..*.
+An association connects 'trnet_Result' and 'trnet_Pattern'. From 'trnet_Result', the role 'Result' has cardinality 0..*, and from 'trnet_Pattern', the role 'pattern38' has cardinality 0..*.
+An association connects 'trnet_Operator' and 'trnet_Operand'. From 'trnet_Operator', the role 'operator' has cardinality 0..*, and from 'trnet_Operand', the role 'Operand40' has cardinality 0..*.
+An association connects 'trnet_Result' and 'trnet_Operator'. From 'trnet_Result', the role 'Result43' has cardinality 0..*, and from 'trnet_Operator', the role 'operator42' has cardinality 0..*.
+An association connects 'trnet_Combinator' and 'trnet_Restriction'. From 'trnet_Combinator', the role 'trnet_Combinator' has cardinality 0..*, and from 'trnet_Restriction', the role 'trnet_Restriction' has cardinality 0..*.
+An association connects 'trnet_NodePattern' and 'trnet_Same'. From 'trnet_NodePattern', the role 'NodePattern46' has cardinality 0..*, and from 'trnet_Same', the role 'sameOut' has cardinality 0..*.
+An association connects 'trnet_NodePattern' and 'trnet_Same'. From 'trnet_NodePattern', the role 'NodePattern48' has cardinality 0..*, and from 'trnet_Same', the role 'sameIn' has cardinality 0..*.
+An association connects 'trnet_AttributePattern' and 'trnet_Expression'. From 'trnet_AttributePattern', the role 'trnet_AttributePattern50' has cardinality 0..*, and from 'trnet_Expression', the role 'trnet_Expression' has cardinality 0..*.
+An association connects 'trnet_ExpressionOperator' and 'trnet_AttributePattern'. From 'trnet_ExpressionOperator', the role 'trnet_ExpressionOperator' has cardinality 0..*, and from 'trnet_AttributePattern', the role 'trnet_AttributePattern52' has cardinality 0..*.
+An association connects 'trnet_NodePattern' and 'trnet_Keep'. From 'trnet_NodePattern', the role 'NodePattern54' has cardinality 0..*, and from 'trnet_Keep', the role 'keepOut' has cardinality 0..*.
+An association connects 'trnet_NodePattern' and 'trnet_Keep'. From 'trnet_NodePattern', the role 'NodePattern56' has cardinality 0..*, and from 'trnet_Keep', the role 'keepIn' has cardinality 0..*.
+An association connects 'trnet_Operand' and 'trnet_Pattern'. From 'trnet_Operand', the role 'outgoingOperands' has cardinality 0..*, and from 'trnet_Pattern', the role 'Pattern58' has cardinality 0..*.
+An association connects 'trnet_Operand' and 'trnet_Operator'. From 'trnet_Operand', the role 'operands' has cardinality 0..*, and from 'trnet_Operator', the role 'Operator' has cardinality 0..*.
+An association connects 'trnet_Result' and 'trnet_Pattern'. From 'trnet_Result', the role 'incommingResults' has cardinality 0..*, and from 'trnet_Pattern', the role 'Pattern61' has cardinality 0..*.
+An association connects 'trnet_Result' and 'trnet_Operator'. From 'trnet_Result', the role 'results' has cardinality 0..*, and from 'trnet_Operator', the role 'Operator63' has cardinality 0..*.
+An association connects 'trnet_Different' and 'trnet_NodePattern'. From 'trnet_Different', the role 'differentOut' has cardinality 0..*, and from 'trnet_NodePattern', the role 'NodePattern65' has cardinality 0..*.
+An association connects 'trnet_NodePattern' and 'trnet_Different'. From 'trnet_NodePattern', the role 'NodePattern67' has cardinality 0..*, and from 'trnet_Different', the role 'differentIn' has cardinality 0..*.
+An association connects 'trnet_Restriction' and 'trnet_Union'. From 'trnet_Restriction', the role 'trnet_Restriction69' has cardinality 0..*, and from 'trnet_Union', the role 'trnet_Union' has cardinality 0..*.
+An association connects 'trnet_TrNetModel' and 'trnet_FlowRule'. From 'trnet_TrNetModel', the role 'trnet_TrNetModel72' has cardinality 0..*, and from 'trnet_FlowRule', the role 'trnet_FlowRule71' has cardinality 0..*.
+An association connects 'trnet_TrNetModel' and 'trnet_FlowRule'. From 'trnet_TrNetModel', the role 'trnet_TrNetModel75' has cardinality 0..*, and from 'trnet_FlowRule', the role 'trnet_FlowRule74' has cardinality 0..*.

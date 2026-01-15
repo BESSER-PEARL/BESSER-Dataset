@@ -1,0 +1,89 @@
+The domain model 'arithmetic' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'arithmetic_Evaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetic_Multi' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetic_NumberLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'arithmetic_SumExpression' represents an important domain concept.
+It has the following attributes: 'upper', which is of type int; 'lower', which is of type int.
+
+'arithmetic_Module' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'arithmetic_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetic_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetic_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetic_Import' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetic_DeclaredParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetic_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetic_AbstractDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'arithmetic_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetic_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetic_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'arithmetic_Definition' is a specialization of 'Statement'.
+The class 'arithmetic_Definition' is a specialization of 'AbstractDefinition'.
+The class 'arithmetic_DeclaredParameter' is a specialization of 'AbstractDefinition'.
+The class 'arithmetic_Evaluation' is a specialization of 'Statement'.
+The class 'arithmetic_SumExpression' is a specialization of 'Expression'.
+The class 'arithmetic_Plus' is a specialization of 'Expression'.
+The class 'arithmetic_Minus' is a specialization of 'Expression'.
+The class 'arithmetic_Multi' is a specialization of 'Expression'.
+The class 'arithmetic_Div' is a specialization of 'Expression'.
+The class 'arithmetic_NumberLiteral' is a specialization of 'Expression'.
+The class 'arithmetic_FunctionCall' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'arithmetic_Import' and 'arithmetic_Module'. From 'arithmetic_Import', the role 'arithmetic_Import' has cardinality 0..*, and from 'arithmetic_Module', the role 'arithmetic_Module' has cardinality 0..*.
+An association connects 'arithmetic_Statement' and 'arithmetic_Module'. From 'arithmetic_Statement', the role 'arithmetic_Statement' has cardinality 0..*, and from 'arithmetic_Module', the role 'arithmetic_Module2' has cardinality 0..*.
+An association connects 'arithmetic_Module' and 'arithmetic_Import'. From 'arithmetic_Module', the role 'arithmetic_Module5' has cardinality 0..*, and from 'arithmetic_Import', the role 'arithmetic_Import4' has cardinality 0..*.
+An association connects 'arithmetic_Definition' and 'arithmetic_DeclaredParameter'. From 'arithmetic_Definition', the role 'arithmetic_Definition' has cardinality 0..*, and from 'arithmetic_DeclaredParameter', the role 'arithmetic_DeclaredParameter' has cardinality 0..*.
+An association connects 'arithmetic_Expression' and 'arithmetic_Definition'. From 'arithmetic_Expression', the role 'arithmetic_Expression' has cardinality 0..*, and from 'arithmetic_Definition', the role 'arithmetic_Definition8' has cardinality 0..*.
+An association connects 'arithmetic_Evaluation' and 'arithmetic_Expression'. From 'arithmetic_Evaluation', the role 'arithmetic_Evaluation' has cardinality 0..*, and from 'arithmetic_Expression', the role 'arithmetic_Expression10' has cardinality 0..*.
+An association connects 'arithmetic_DeclaredParameter' and 'arithmetic_SumExpression'. From 'arithmetic_DeclaredParameter', the role 'arithmetic_DeclaredParameter12' has cardinality 0..*, and from 'arithmetic_SumExpression', the role 'arithmetic_SumExpression' has cardinality 0..*.
+An association connects 'arithmetic_SumExpression' and 'arithmetic_Expression'. From 'arithmetic_SumExpression', the role 'arithmetic_SumExpression14' has cardinality 0..*, and from 'arithmetic_Expression', the role 'arithmetic_Expression15' has cardinality 0..*.
+An association connects 'arithmetic_Plus' and 'arithmetic_Expression'. From 'arithmetic_Plus', the role 'arithmetic_Plus' has cardinality 0..*, and from 'arithmetic_Expression', the role 'arithmetic_Expression17' has cardinality 0..*.
+An association connects 'arithmetic_Plus' and 'arithmetic_Expression'. From 'arithmetic_Plus', the role 'arithmetic_Plus19' has cardinality 0..*, and from 'arithmetic_Expression', the role 'arithmetic_Expression20' has cardinality 0..*.
+An association connects 'arithmetic_Expression' and 'arithmetic_Minus'. From 'arithmetic_Expression', the role 'arithmetic_Expression22' has cardinality 0..*, and from 'arithmetic_Minus', the role 'arithmetic_Minus' has cardinality 0..*.
+An association connects 'arithmetic_Expression' and 'arithmetic_Minus'. From 'arithmetic_Expression', the role 'arithmetic_Expression25' has cardinality 0..*, and from 'arithmetic_Minus', the role 'arithmetic_Minus24' has cardinality 0..*.
+An association connects 'arithmetic_Expression' and 'arithmetic_Multi'. From 'arithmetic_Expression', the role 'arithmetic_Expression27' has cardinality 0..*, and from 'arithmetic_Multi', the role 'arithmetic_Multi' has cardinality 0..*.
+An association connects 'arithmetic_Multi' and 'arithmetic_Expression'. From 'arithmetic_Multi', the role 'arithmetic_Multi29' has cardinality 0..*, and from 'arithmetic_Expression', the role 'arithmetic_Expression30' has cardinality 0..*.
+An association connects 'arithmetic_Div' and 'arithmetic_Expression'. From 'arithmetic_Div', the role 'arithmetic_Div' has cardinality 0..*, and from 'arithmetic_Expression', the role 'arithmetic_Expression32' has cardinality 0..*.
+An association connects 'arithmetic_Div' and 'arithmetic_Expression'. From 'arithmetic_Div', the role 'arithmetic_Div34' has cardinality 0..*, and from 'arithmetic_Expression', the role 'arithmetic_Expression35' has cardinality 0..*.
+An association connects 'arithmetic_FunctionCall' and 'arithmetic_AbstractDefinition'. From 'arithmetic_FunctionCall', the role 'arithmetic_FunctionCall' has cardinality 0..*, and from 'arithmetic_AbstractDefinition', the role 'arithmetic_AbstractDefinition' has cardinality 0..*.

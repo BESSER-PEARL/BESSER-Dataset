@@ -1,0 +1,9 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 1 main class(es).
+
+'myDsl_Greeting' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_Greeting' and 'myDsl_Greeting'. From 'myDsl_Greeting', the role 'myDsl_Greeting' has cardinality 0..*, and from 'myDsl_Greeting', the role 'myDsl_Greeting0' has cardinality 0..*.

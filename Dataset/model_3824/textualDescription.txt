@@ -1,0 +1,208 @@
+The domain model 'sexec' describes the core structural elements and their relationships within the system.
+
+The model defines 44 main class(es).
+
+'sexec_TraceStateEntered' represents an important domain concept.
+It does not declare any attributes.
+
+'ScopedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_ScheduleTimeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_HistoryEntry' represents an important domain concept.
+It has one attribute: 'deep', which is of type bool.
+
+'Step' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_Call' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_Check' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_ExecutionChoice' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_ReactionFired' represents an important domain concept.
+It does not declare any attributes.
+
+'MappedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_ExecutionState' represents an important domain concept.
+It has one attribute: 'leaf', which is of type bool.
+
+'sexec_ExecutionRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_ExitState' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_Execution' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_MappedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_CheckRef' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_TraceReactionWillFire' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_TraceEndRunCycle' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_StateVector' represents an important domain concept.
+It has the following attributes: 'offset', which is of type int; 'size', which is of type int.
+
+'sexec_ExecutionFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_UnscheduleTimeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_StateCase' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_ExecutionScope' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_TraceBeginRunCycle' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_ExecutionEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Check' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_Step' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'sexec_SaveHistory' represents an important domain concept.
+It has one attribute: 'deep', which is of type bool.
+
+'sexec_ExecutionSynchronization' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_TimeEvent' represents an important domain concept.
+It has one attribute: 'periodic', which is of type bool.
+
+'sexec_ExecutionExit' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_TraceNodeExecuted' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_TraceStateExited' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutionScope' represents an important domain concept.
+It does not declare any attributes.
+
+'Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_ExecutionNode' represents an important domain concept.
+It has one attribute: 'simpleName', which is of type str.
+
+'sexec_StateSwitch' represents an important domain concept.
+It has one attribute: 'stateConfigurationIdx', which is of type int.
+
+'sexec_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'sexec_EnterState' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'sexec_ExecutionFlow' is a specialization of 'ScopedElement'.
+The class 'sexec_ExecutionFlow' is a specialization of 'ExecutionScope'.
+The class 'sexec_ExecutionFlow' is a specialization of 'ExecutionNode'.
+The class 'sexec_ExecutionNode' is a specialization of 'MappedElement'.
+The class 'sexec_ExecutionNode' is a specialization of 'NamedElement'.
+The class 'sexec_ExecutionState' is a specialization of 'ExecutionNode'.
+The class 'sexec_ExecutionState' is a specialization of 'ExecutionScope'.
+The class 'sexec_ExecutionScope' is a specialization of 'MappedElement'.
+The class 'sexec_ExecutionScope' is a specialization of 'NamedElement'.
+The class 'sexec_ExecutionRegion' is a specialization of 'ExecutionScope'.
+The class 'sexec_ExecutionEntry' is a specialization of 'ExecutionNode'.
+The class 'sexec_ExecutionExit' is a specialization of 'ExecutionNode'.
+The class 'sexec_ExecutionChoice' is a specialization of 'ExecutionNode'.
+The class 'sexec_ExecutionSynchronization' is a specialization of 'ExecutionNode'.
+The class 'sexec_TimeEvent' is a specialization of 'Event'.
+The class 'sexec_Step' is a specialization of 'NamedElement'.
+The class 'sexec_Check' is a specialization of 'Step'.
+The class 'sexec_CheckRef' is a specialization of 'Check'.
+The class 'sexec_Execution' is a specialization of 'Step'.
+The class 'sexec_EnterState' is a specialization of 'Step'.
+The class 'sexec_ExitState' is a specialization of 'Step'.
+The class 'sexec_Call' is a specialization of 'Step'.
+The class 'sexec_ScheduleTimeEvent' is a specialization of 'Step'.
+The class 'sexec_UnscheduleTimeEvent' is a specialization of 'Step'.
+The class 'sexec_StateSwitch' is a specialization of 'Step'.
+The class 'sexec_SaveHistory' is a specialization of 'Step'.
+The class 'sexec_HistoryEntry' is a specialization of 'Step'.
+The class 'sexec_Trace' is a specialization of 'Step'.
+The class 'sexec_TraceNodeExecuted' is a specialization of 'Trace'.
+The class 'sexec_ReactionFired' is a specialization of 'Trace'.
+The class 'sexec_TraceReactionWillFire' is a specialization of 'Trace'.
+The class 'sexec_TraceStateEntered' is a specialization of 'Trace'.
+The class 'sexec_TraceStateExited' is a specialization of 'Trace'.
+The class 'sexec_TraceBeginRunCycle' is a specialization of 'Trace'.
+The class 'sexec_TraceEndRunCycle' is a specialization of 'Trace'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sexec_EObject' and 'sexec_MappedElement'. From 'sexec_EObject', the role 'sexec_EObject' has cardinality 0..*, and from 'sexec_MappedElement', the role 'sexec_MappedElement' has cardinality 0..*.
+An association connects 'sexec_ExecutionFlow' and 'sexec_ExecutionState'. From 'sexec_ExecutionFlow', the role 'sexec_ExecutionFlow' has cardinality 0..*, and from 'sexec_ExecutionState', the role 'sexec_ExecutionState' has cardinality 0..*.
+An association connects 'sexec_ExecutionFlow' and 'sexec_ExecutionNode'. From 'sexec_ExecutionFlow', the role 'sexec_ExecutionFlow3' has cardinality 0..*, and from 'sexec_ExecutionNode', the role 'sexec_ExecutionNode' has cardinality 0..*.
+An association connects 'sexec_ExecutionRegion' and 'sexec_ExecutionFlow'. From 'sexec_ExecutionRegion', the role 'sexec_ExecutionRegion' has cardinality 0..*, and from 'sexec_ExecutionFlow', the role 'sexec_ExecutionFlow5' has cardinality 0..*.
+An association connects 'sexec_StateVector' and 'sexec_ExecutionFlow'. From 'sexec_StateVector', the role 'sexec_StateVector' has cardinality 0..*, and from 'sexec_ExecutionFlow', the role 'sexec_ExecutionFlow7' has cardinality 0..*.
+An association connects 'sexec_ExecutionFlow' and 'sexec_Step'. From 'sexec_ExecutionFlow', the role 'sexec_ExecutionFlow9' has cardinality 0..*, and from 'sexec_Step', the role 'sexec_Step' has cardinality 0..*.
+An association connects 'sexec_Step' and 'sexec_ExecutionFlow'. From 'sexec_Step', the role 'sexec_Step12' has cardinality 0..*, and from 'sexec_ExecutionFlow', the role 'sexec_ExecutionFlow11' has cardinality 0..*.
+An association connects 'sexec_Step' and 'sexec_ExecutionState'. From 'sexec_Step', the role 'sexec_Step15' has cardinality 0..*, and from 'sexec_ExecutionState', the role 'sexec_ExecutionState14' has cardinality 0..*.
+An association connects 'sexec_Step' and 'sexec_ExecutionState'. From 'sexec_Step', the role 'sexec_Step18' has cardinality 0..*, and from 'sexec_ExecutionState', the role 'sexec_ExecutionState17' has cardinality 0..*.
+An association connects 'sexec_ExecutionScope' and 'sexec_StateVector'. From 'sexec_ExecutionScope', the role 'sexec_ExecutionScope' has cardinality 0..*, and from 'sexec_StateVector', the role 'sexec_StateVector20' has cardinality 0..*.
+An association connects 'sexec_ExecutionScope' and 'sexec_ExecutionScope'. From 'sexec_ExecutionScope', the role 'superScope' has cardinality 0..*, and from 'sexec_ExecutionScope', the role 'ExecutionScope' has cardinality 0..*.
+An association connects 'sexec_ExecutionScope' and 'sexec_ExecutionScope'. From 'sexec_ExecutionScope', the role 'subScopes' has cardinality 0..*, and from 'sexec_ExecutionScope', the role 'ExecutionScope25' has cardinality 0..*.
+An association connects 'sexec_StateVector' and 'sexec_ExecutionRegion'. From 'sexec_StateVector', the role 'sexec_StateVector28' has cardinality 0..*, and from 'sexec_ExecutionRegion', the role 'sexec_ExecutionRegion27' has cardinality 0..*.
+An association connects 'sexec_ExecutionRegion' and 'sexec_ExecutionNode'. From 'sexec_ExecutionRegion', the role 'sexec_ExecutionRegion30' has cardinality 0..*, and from 'sexec_ExecutionNode', the role 'sexec_ExecutionNode31' has cardinality 0..*.
+An association connects 'sexec_Check' and 'sexec_Expression'. From 'sexec_Check', the role 'sexec_Check' has cardinality 0..*, and from 'sexec_Expression', the role 'sexec_Expression' has cardinality 0..*.
+An association connects 'sexec_Check' and 'sexec_CheckRef'. From 'sexec_Check', the role 'check' has cardinality 0..*, and from 'sexec_CheckRef', the role 'CheckRef' has cardinality 0..*.
+An association connects 'sexec_Check' and 'sexec_CheckRef'. From 'sexec_Check', the role 'Check' has cardinality 0..*, and from 'sexec_CheckRef', the role 'refs' has cardinality 0..*.
+An association connects 'sexec_Expression' and 'sexec_Execution'. From 'sexec_Expression', the role 'sexec_Expression36' has cardinality 0..*, and from 'sexec_Execution', the role 'sexec_Execution' has cardinality 0..*.
+An association connects 'sexec_ExecutionState' and 'sexec_EnterState'. From 'sexec_ExecutionState', the role 'sexec_ExecutionState38' has cardinality 0..*, and from 'sexec_EnterState', the role 'sexec_EnterState' has cardinality 0..*.
+An association connects 'sexec_ExitState' and 'sexec_ExecutionState'. From 'sexec_ExitState', the role 'sexec_ExitState' has cardinality 0..*, and from 'sexec_ExecutionState', the role 'sexec_ExecutionState40' has cardinality 0..*.
+An association connects 'sexec_ScheduleTimeEvent' and 'sexec_TimeEvent'. From 'sexec_ScheduleTimeEvent', the role 'sexec_ScheduleTimeEvent' has cardinality 0..*, and from 'sexec_TimeEvent', the role 'sexec_TimeEvent' has cardinality 0..*.
+An association connects 'sexec_ScheduleTimeEvent' and 'sexec_Expression'. From 'sexec_ScheduleTimeEvent', the role 'sexec_ScheduleTimeEvent43' has cardinality 0..*, and from 'sexec_Expression', the role 'sexec_Expression44' has cardinality 0..*.
+An association connects 'sexec_TimeEvent' and 'sexec_UnscheduleTimeEvent'. From 'sexec_TimeEvent', the role 'sexec_TimeEvent46' has cardinality 0..*, and from 'sexec_UnscheduleTimeEvent', the role 'sexec_UnscheduleTimeEvent' has cardinality 0..*.
+An association connects 'sexec_StateCase' and 'sexec_StateSwitch'. From 'sexec_StateCase', the role 'sexec_StateCase' has cardinality 0..*, and from 'sexec_StateSwitch', the role 'sexec_StateSwitch' has cardinality 0..*.
+An association connects 'sexec_ExecutionRegion' and 'sexec_StateSwitch'. From 'sexec_ExecutionRegion', the role 'sexec_ExecutionRegion50' has cardinality 0..*, and from 'sexec_StateSwitch', the role 'sexec_StateSwitch49' has cardinality 0..*.
+An association connects 'sexec_ExecutionState' and 'sexec_StateCase'. From 'sexec_ExecutionState', the role 'sexec_ExecutionState53' has cardinality 0..*, and from 'sexec_StateCase', the role 'sexec_StateCase52' has cardinality 0..*.
+An association connects 'sexec_StateCase' and 'sexec_Step'. From 'sexec_StateCase', the role 'sexec_StateCase55' has cardinality 0..*, and from 'sexec_Step', the role 'sexec_Step56' has cardinality 0..*.
+An association connects 'sexec_SaveHistory' and 'sexec_ExecutionRegion'. From 'sexec_SaveHistory', the role 'sexec_SaveHistory' has cardinality 0..*, and from 'sexec_ExecutionRegion', the role 'sexec_ExecutionRegion58' has cardinality 0..*.
+An association connects 'sexec_HistoryEntry' and 'sexec_Step'. From 'sexec_HistoryEntry', the role 'sexec_HistoryEntry' has cardinality 0..*, and from 'sexec_Step', the role 'sexec_Step60' has cardinality 0..*.
+An association connects 'sexec_ExecutionRegion' and 'sexec_HistoryEntry'. From 'sexec_ExecutionRegion', the role 'sexec_ExecutionRegion63' has cardinality 0..*, and from 'sexec_HistoryEntry', the role 'sexec_HistoryEntry62' has cardinality 0..*.
+An association connects 'sexec_Step' and 'sexec_HistoryEntry'. From 'sexec_Step', the role 'sexec_Step66' has cardinality 0..*, and from 'sexec_HistoryEntry', the role 'sexec_HistoryEntry65' has cardinality 0..*.
+An association connects 'sexec_ExecutionNode' and 'sexec_TraceNodeExecuted'. From 'sexec_ExecutionNode', the role 'sexec_ExecutionNode68' has cardinality 0..*, and from 'sexec_TraceNodeExecuted', the role 'sexec_TraceNodeExecuted' has cardinality 0..*.
+An association connects 'sexec_TraceStateEntered' and 'sexec_ExecutionState'. From 'sexec_TraceStateEntered', the role 'sexec_TraceStateEntered' has cardinality 0..*, and from 'sexec_ExecutionState', the role 'sexec_ExecutionState70' has cardinality 0..*.
+An association connects 'sexec_ExecutionState' and 'sexec_TraceStateExited'. From 'sexec_ExecutionState', the role 'sexec_ExecutionState72' has cardinality 0..*, and from 'sexec_TraceStateExited', the role 'sexec_TraceStateExited' has cardinality 0..*.

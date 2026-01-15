@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/LorenzoBettini/eclipse-fatjar-example/org.example.model/model/greetings.ecore

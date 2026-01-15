@@ -1,0 +1,43 @@
+The domain model 'dsl' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'dsl_ColorSensor' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'dsl_UltrasonicSensor' represents an important domain concept.
+It has the following attributes: 'distance', which is of type str; 'comparator', which is of type str.
+
+'dsl_SensorType' represents an important domain concept.
+It does not declare any attributes.
+
+'SensorType' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Task' represents an important domain concept.
+It has the following attributes: 'action', which is of type str; 'ignoreBehavior', which is of type bool; 'name', which is of type str.
+
+'dsl_Ignorables' represents an important domain concept.
+It has one attribute: 'AVOID_OBJECTS', which is of type str.
+
+'dsl_Mission' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_TouchSensor' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Colors' defines the following possible values: 'LIGHT_GRAY', 'CYAN', 'WHITE', 'YELLOW', 'GREEN', 'MAGENTA', 'ORANGE', 'BLACK', 'RED', 'PINK', 'GRAY', 'DARK_GRAY', 'BLUE'.
+The enumeration 'Directions' defines the following possible values: 'E', 'SW', 'NE', 'W', 'NW', 'S', 'SE', 'N'.
+The enumeration 'TouchSensorSides' defines the following possible values: 'BOTH', 'LEFT', 'RIGHT'.
+The enumeration 'CompareOperator' defines the following possible values: 'EQ', 'L', 'LEQ', 'G', 'NEQ', 'GEQ'.
+The enumeration 'Actions' defines the following possible values: 'TURN_AROUND', 'DRIVE_FORWARD', 'ROTATE_L', 'DRIVETOEDGE', 'STOP_DRIVING', 'ROTATE_R', 'BEEP', 'DRIVE_BACKWARD', 'MEASURE'.
+
+The model also captures inheritance relationships between classes.
+The class 'dsl_ColorSensor' is a specialization of 'SensorType'.
+The class 'dsl_TouchSensor' is a specialization of 'SensorType'.
+The class 'dsl_UltrasonicSensor' is a specialization of 'SensorType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dsl_Task' and 'dsl_Mission'. From 'dsl_Task', the role 'dsl_Task' has cardinality 0..*, and from 'dsl_Mission', the role 'dsl_Mission' has cardinality 0..*.
+An association connects 'dsl_SensorType' and 'dsl_Task'. From 'dsl_SensorType', the role 'dsl_SensorType' has cardinality 0..*, and from 'dsl_Task', the role 'dsl_Task2' has cardinality 0..*.

@@ -1,0 +1,51 @@
+The domain model 'junitmodel' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'junitmodel_JUnitTestCase' represents an important domain concept.
+It does not declare any attributes.
+
+'junitmodel_JUnitTraceStackframe' represents an important domain concept.
+It does not declare any attributes.
+
+'junitmodel_JUnitTestSuite' represents an important domain concept.
+It does not declare any attributes.
+
+'TestCaseElement' represents an important domain concept.
+It does not declare any attributes.
+
+'TestProblem' represents an important domain concept.
+It does not declare any attributes.
+
+'TraceStackframe' represents an important domain concept.
+It does not declare any attributes.
+
+'junitmodel_JUnitRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'ComparisonProblem' represents an important domain concept.
+It does not declare any attributes.
+
+'JUnitProblem' represents an important domain concept.
+It does not declare any attributes.
+
+'junitmodel_JUnitProblem' represents an important domain concept.
+It has one attribute: 'lastTraceWasFiltered', which is of type bool.
+
+'TestContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'junitmodel_JUnitComparisonProblem' represents an important domain concept.
+It does not declare any attributes.
+
+'TestRoot' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'junitmodel_JUnitTestCase' is a specialization of 'TestCaseElement'.
+The class 'junitmodel_JUnitTestSuite' is a specialization of 'TestContainer'.
+The class 'junitmodel_JUnitRoot' is a specialization of 'TestRoot'.
+The class 'junitmodel_JUnitProblem' is a specialization of 'TestProblem'.
+The class 'junitmodel_JUnitComparisonProblem' is a specialization of 'JUnitProblem'.
+The class 'junitmodel_JUnitComparisonProblem' is a specialization of 'ComparisonProblem'.
+The class 'junitmodel_JUnitTraceStackframe' is a specialization of 'TraceStackframe'.

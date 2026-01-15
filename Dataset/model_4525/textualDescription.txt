@@ -1,0 +1,241 @@
+The domain model 'drn' describes the core structural elements and their relationships within the system.
+
+The model defines 52 main class(es).
+
+'drn_CameraBottom' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'drn_Limit' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'drn_LEFT' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_BACKWARD' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_With' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Limit' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Hmax' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_CERCLEXY' represents an important domain concept.
+It has one attribute: 'rayonCST', which is of type str.
+
+'drn_TakeOff' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drn_DepYZ_IMPL' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'tempsCST', which is of type str.
+
+'drn_DepZ_Impl' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'distanceCST', which is of type str; 'tempsCST', which is of type str.
+
+'drn_RefPart' represents an important domain concept.
+It has one attribute: 'params', which is of type str.
+
+'drn_DepX_Impl' represents an important domain concept.
+It has the following attributes: 'tempsCST', which is of type str; 'distanceCST', which is of type str; 'name', which is of type str.
+
+'drn_CARREXY' represents an important domain concept.
+It has one attribute: 'coteCST', which is of type str.
+
+'drn_DepXY_IMPL' represents an important domain concept.
+It has the following attributes: 'tempsCST', which is of type str; 'name', which is of type str.
+
+'DepY_Impl' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_DepXYZ_IMPL' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drn_Parametre' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drn_FORWARD' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Assignement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drn_Led_Impl' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+'drn_UP' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Expression' represents an important domain concept.
+It has one attribute: 'repeatCST', which is of type str.
+
+'drn_Rotate' represents an important domain concept.
+It has the following attributes: 'angleCST', which is of type str; 'tempsCST', which is of type str; 'name', which is of type str.
+
+'DepYZ_IMPL' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'DepX_Impl' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_CERCLEYZ' represents an important domain concept.
+It has one attribute: 'rayonCST', which is of type str.
+
+'drn_LedBlink' represents an important domain concept.
+It has the following attributes: 'blink_per_secCST', which is of type str; 'color', which is of type str.
+
+'drn_Flip' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Context' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_DepYZ' represents an important domain concept.
+It has one attribute: 'distanceCST', which is of type str.
+
+'drn_DOWN' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_DepXY' represents an important domain concept.
+It has one attribute: 'distanceCST', which is of type str.
+
+'drn_DepXYZ' represents an important domain concept.
+It has the following attributes: 'tempsCST', which is of type str; 'distanceCST', which is of type str.
+
+'drn_Wait' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'tempsCST', which is of type str.
+
+'drn_Option' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DepXZ_IMPL' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_RIGHT' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_CameraFront' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'DepXYZ_IMPL' represents an important domain concept.
+It does not declare any attributes.
+
+'DepZ_Impl' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_DepY_Impl' represents an important domain concept.
+It has the following attributes: 'tempsCST', which is of type str; 'name', which is of type str; 'distanceCST', which is of type str.
+
+'Option' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_Land' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drn_DepXZ_IMPL' represents an important domain concept.
+It does not declare any attributes.
+
+'DepXY_IMPL' represents an important domain concept.
+It does not declare any attributes.
+
+'drn_CARREYZ' represents an important domain concept.
+It has one attribute: 'coteCST', which is of type str.
+
+'drn_And' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drn_DepXZ' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'tempsCST', which is of type str; 'distanceCST', which is of type str.
+
+'drn_Vmax' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ColorLed' defines the following possible values: 'BLUE', 'WHITE', 'RED', 'YELLOW', 'GREEN'.
+The enumeration 'Mode' defines the following possible values: 'ON', 'OFF'.
+The enumeration 'EBool' defines the following possible values: 'FALSE', 'TRUE'.
+
+The model also captures inheritance relationships between classes.
+The class 'drn_Vmax' is a specialization of 'Limit'.
+The class 'drn_Hmax' is a specialization of 'Limit'.
+The class 'drn_RefPart' is a specialization of 'Expression'.
+The class 'drn_And' is a specialization of 'Expression'.
+The class 'drn_DepY_Impl' is a specialization of 'Expression'.
+The class 'drn_FORWARD' is a specialization of 'DepY_Impl'.
+The class 'drn_BACKWARD' is a specialization of 'DepY_Impl'.
+The class 'drn_DepX_Impl' is a specialization of 'Expression'.
+The class 'drn_LEFT' is a specialization of 'DepX_Impl'.
+The class 'drn_RIGHT' is a specialization of 'DepX_Impl'.
+The class 'drn_DepZ_Impl' is a specialization of 'Expression'.
+The class 'drn_UP' is a specialization of 'DepZ_Impl'.
+The class 'drn_DOWN' is a specialization of 'DepZ_Impl'.
+The class 'drn_DepXY_IMPL' is a specialization of 'Expression'.
+The class 'drn_DepXY' is a specialization of 'DepXY_IMPL'.
+The class 'drn_CERCLEXY' is a specialization of 'DepXY_IMPL'.
+The class 'drn_CARREXY' is a specialization of 'DepXY_IMPL'.
+The class 'drn_DepYZ_IMPL' is a specialization of 'Expression'.
+The class 'drn_DepYZ' is a specialization of 'DepYZ_IMPL'.
+The class 'drn_CERCLEYZ' is a specialization of 'DepYZ_IMPL'.
+The class 'drn_CARREYZ' is a specialization of 'DepYZ_IMPL'.
+The class 'drn_DepXZ_IMPL' is a specialization of 'Expression'.
+The class 'drn_DepXZ' is a specialization of 'DepXZ_IMPL'.
+The class 'drn_DepXYZ_IMPL' is a specialization of 'Expression'.
+The class 'drn_DepXYZ' is a specialization of 'DepXYZ_IMPL'.
+The class 'drn_Flip' is a specialization of 'DepXYZ_IMPL'.
+The class 'drn_Rotate' is a specialization of 'Expression'.
+The class 'drn_Wait' is a specialization of 'Expression'.
+The class 'drn_TakeOff' is a specialization of 'Expression'.
+The class 'drn_Land' is a specialization of 'Expression'.
+The class 'drn_Led_Impl' is a specialization of 'Option'.
+The class 'drn_LedBlink' is a specialization of 'Option'.
+The class 'drn_CameraFront' is a specialization of 'Option'.
+The class 'drn_CameraBottom' is a specialization of 'Option'.
+
+Relationships between classes are modeled using associations.
+An association connects 'drn_Model' and 'drn_Context'. From 'drn_Model', the role 'drn_Model' has cardinality 0..*, and from 'drn_Context', the role 'drn_Context' has cardinality 0..*.
+An association connects 'drn_Assignement' and 'drn_Model'. From 'drn_Assignement', the role 'drn_Assignement' has cardinality 0..*, and from 'drn_Model', the role 'drn_Model2' has cardinality 0..*.
+An association connects 'drn_Model' and 'drn_RefPart'. From 'drn_Model', the role 'drn_Model4' has cardinality 0..*, and from 'drn_RefPart', the role 'drn_RefPart' has cardinality 0..*.
+An association connects 'drn_Context' and 'drn_Limit'. From 'drn_Context', the role 'drn_Context6' has cardinality 0..*, and from 'drn_Limit', the role 'drn_Limit' has cardinality 0..*.
+An association connects 'drn_Assignement' and 'drn_Parametre'. From 'drn_Assignement', the role 'drn_Assignement8' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre' has cardinality 0..*.
+An association connects 'drn_Expression' and 'drn_Assignement'. From 'drn_Expression', the role 'drn_Expression' has cardinality 0..*, and from 'drn_Assignement', the role 'drn_Assignement10' has cardinality 0..*.
+An association connects 'drn_Expression' and 'drn_Parametre'. From 'drn_Expression', the role 'drn_Expression12' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre13' has cardinality 0..*.
+An association connects 'drn_Expression' and 'drn_With'. From 'drn_Expression', the role 'drn_Expression15' has cardinality 0..*, and from 'drn_With', the role 'drn_With' has cardinality 0..*.
+An association connects 'drn_Expression' and 'drn_Expression'. From 'drn_Expression', the role 'drn_Expression18' has cardinality 0..*, and from 'drn_Expression', the role 'drn_Expression16' has cardinality 0..*.
+An association connects 'drn_RefPart' and 'drn_Assignement'. From 'drn_RefPart', the role 'drn_RefPart20' has cardinality 0..*, and from 'drn_Assignement', the role 'drn_Assignement21' has cardinality 0..*.
+An association connects 'drn_And' and 'drn_Rotate'. From 'drn_And', the role 'drn_And' has cardinality 0..*, and from 'drn_Rotate', the role 'drn_Rotate' has cardinality 0..*.
+An association connects 'drn_And' and 'drn_DepX_Impl'. From 'drn_And', the role 'drn_And24' has cardinality 0..*, and from 'drn_DepX_Impl', the role 'drn_DepX_Impl' has cardinality 0..*.
+An association connects 'drn_DepY_Impl' and 'drn_And'. From 'drn_DepY_Impl', the role 'drn_DepY_Impl' has cardinality 0..*, and from 'drn_And', the role 'drn_And26' has cardinality 0..*.
+An association connects 'drn_DepXZ_IMPL' and 'drn_And'. From 'drn_DepXZ_IMPL', the role 'drn_DepXZ_IMPL' has cardinality 0..*, and from 'drn_And', the role 'drn_And28' has cardinality 0..*.
+An association connects 'drn_DepXY_IMPL' and 'drn_And'. From 'drn_DepXY_IMPL', the role 'drn_DepXY_IMPL' has cardinality 0..*, and from 'drn_And', the role 'drn_And30' has cardinality 0..*.
+An association connects 'drn_DepZ_Impl' and 'drn_And'. From 'drn_DepZ_Impl', the role 'drn_DepZ_Impl' has cardinality 0..*, and from 'drn_And', the role 'drn_And32' has cardinality 0..*.
+An association connects 'drn_Parametre' and 'drn_DepY_Impl'. From 'drn_Parametre', the role 'drn_Parametre35' has cardinality 0..*, and from 'drn_DepY_Impl', the role 'drn_DepY_Impl34' has cardinality 0..*.
+An association connects 'drn_DepY_Impl' and 'drn_Parametre'. From 'drn_DepY_Impl', the role 'drn_DepY_Impl37' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre38' has cardinality 0..*.
+An association connects 'drn_DepX_Impl' and 'drn_Parametre'. From 'drn_DepX_Impl', the role 'drn_DepX_Impl40' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre41' has cardinality 0..*.
+An association connects 'drn_DepX_Impl' and 'drn_Parametre'. From 'drn_DepX_Impl', the role 'drn_DepX_Impl43' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre44' has cardinality 0..*.
+An association connects 'drn_DepZ_Impl' and 'drn_Parametre'. From 'drn_DepZ_Impl', the role 'drn_DepZ_Impl46' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre47' has cardinality 0..*.
+An association connects 'drn_Parametre' and 'drn_DepZ_Impl'. From 'drn_Parametre', the role 'drn_Parametre50' has cardinality 0..*, and from 'drn_DepZ_Impl', the role 'drn_DepZ_Impl49' has cardinality 0..*.
+An association connects 'drn_DepXY_IMPL' and 'drn_Parametre'. From 'drn_DepXY_IMPL', the role 'drn_DepXY_IMPL52' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre53' has cardinality 0..*.
+An association connects 'drn_Parametre' and 'drn_DepXY'. From 'drn_Parametre', the role 'drn_Parametre55' has cardinality 0..*, and from 'drn_DepXY', the role 'drn_DepXY' has cardinality 0..*.
+An association connects 'drn_CERCLEXY' and 'drn_Parametre'. From 'drn_CERCLEXY', the role 'drn_CERCLEXY' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre57' has cardinality 0..*.
+An association connects 'drn_Parametre' and 'drn_CARREXY'. From 'drn_Parametre', the role 'drn_Parametre59' has cardinality 0..*, and from 'drn_CARREXY', the role 'drn_CARREXY' has cardinality 0..*.
+An association connects 'drn_DepYZ_IMPL' and 'drn_Parametre'. From 'drn_DepYZ_IMPL', the role 'drn_DepYZ_IMPL' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre61' has cardinality 0..*.
+An association connects 'drn_DepYZ' and 'drn_Parametre'. From 'drn_DepYZ', the role 'drn_DepYZ' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre63' has cardinality 0..*.
+An association connects 'drn_CERCLEYZ' and 'drn_Parametre'. From 'drn_CERCLEYZ', the role 'drn_CERCLEYZ' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre65' has cardinality 0..*.
+An association connects 'drn_Parametre' and 'drn_CARREYZ'. From 'drn_Parametre', the role 'drn_Parametre67' has cardinality 0..*, and from 'drn_CARREYZ', the role 'drn_CARREYZ' has cardinality 0..*.
+An association connects 'drn_DepXZ' and 'drn_Parametre'. From 'drn_DepXZ', the role 'drn_DepXZ' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre69' has cardinality 0..*.
+An association connects 'drn_Parametre' and 'drn_DepXZ'. From 'drn_Parametre', the role 'drn_Parametre72' has cardinality 0..*, and from 'drn_DepXZ', the role 'drn_DepXZ71' has cardinality 0..*.
+An association connects 'drn_Parametre' and 'drn_DepXYZ'. From 'drn_Parametre', the role 'drn_Parametre74' has cardinality 0..*, and from 'drn_DepXYZ', the role 'drn_DepXYZ' has cardinality 0..*.
+An association connects 'drn_DepXYZ' and 'drn_Parametre'. From 'drn_DepXYZ', the role 'drn_DepXYZ76' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre77' has cardinality 0..*.
+An association connects 'drn_Rotate' and 'drn_Parametre'. From 'drn_Rotate', the role 'drn_Rotate79' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre80' has cardinality 0..*.
+An association connects 'drn_Rotate' and 'drn_Parametre'. From 'drn_Rotate', the role 'drn_Rotate82' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre83' has cardinality 0..*.
+An association connects 'drn_Wait' and 'drn_Parametre'. From 'drn_Wait', the role 'drn_Wait' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre85' has cardinality 0..*.
+An association connects 'drn_With' and 'drn_Option'. From 'drn_With', the role 'drn_With87' has cardinality 0..*, and from 'drn_Option', the role 'drn_Option' has cardinality 0..*.
+An association connects 'drn_LedBlink' and 'drn_Parametre'. From 'drn_LedBlink', the role 'drn_LedBlink' has cardinality 0..*, and from 'drn_Parametre', the role 'drn_Parametre89' has cardinality 0..*.

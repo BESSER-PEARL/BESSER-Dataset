@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/sunwuliang/SlicingProject2.0/ClassModelSlicing/slices/SlicedUML2InsDataSet1.ecore

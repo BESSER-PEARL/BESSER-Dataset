@@ -1,0 +1,112 @@
+The domain model 'gseq' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'gseq_Var' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'gseq_BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gseq_Assign' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'gseq_False' represents an important domain concept.
+It does not declare any attributes.
+
+'gseq_GreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+'gseq_Equality' represents an important domain concept.
+It does not declare any attributes.
+
+'gseq_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gseq_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'gseq_And' represents an important domain concept.
+It does not declare any attributes.
+
+'gseq_Print' represents an important domain concept.
+It does not declare any attributes.
+
+'gseq_Method' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gseq_While' represents an important domain concept.
+It does not declare any attributes.
+
+'gseq_Const' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'gseq_IntegerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gseq_True' represents an important domain concept.
+It does not declare any attributes.
+
+'gseq_If' represents an important domain concept.
+It does not declare any attributes.
+
+'gseq_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'gseq_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'gseq_MethodCall' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'gseq_Print' is a specialization of 'Operation'.
+The class 'gseq_MethodCall' is a specialization of 'IntegerExpression'.
+The class 'gseq_BooleanExpression' is a specialization of 'Operation'.
+The class 'gseq_If' is a specialization of 'Operation'.
+The class 'gseq_True' is a specialization of 'BooleanExpression'.
+The class 'gseq_False' is a specialization of 'BooleanExpression'.
+The class 'gseq_Equality' is a specialization of 'BooleanExpression'.
+The class 'gseq_Not' is a specialization of 'BooleanExpression'.
+The class 'gseq_And' is a specialization of 'BooleanExpression'.
+The class 'gseq_IntegerExpression' is a specialization of 'Operation'.
+The class 'gseq_Const' is a specialization of 'IntegerExpression'.
+The class 'gseq_Var' is a specialization of 'IntegerExpression'.
+The class 'gseq_Assign' is a specialization of 'Operation'.
+The class 'gseq_Plus' is a specialization of 'IntegerExpression'.
+The class 'gseq_GreaterThan' is a specialization of 'BooleanExpression'.
+The class 'gseq_While' is a specialization of 'Operation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gseq_Method' and 'gseq_Program'. From 'gseq_Method', the role 'Method' has cardinality 0..*, and from 'gseq_Program', the role 'inProgram' has cardinality 0..*.
+An association connects 'gseq_Program' and 'gseq_Method'. From 'gseq_Program', the role 'gseq_Program' has cardinality 0..*, and from 'gseq_Method', the role 'gseq_Method' has cardinality 0..*.
+An association connects 'gseq_Operation' and 'gseq_Method'. From 'gseq_Operation', the role 'Operation' has cardinality 0..*, and from 'gseq_Method', the role 'executedBy' has cardinality 0..*.
+An association connects 'gseq_Program' and 'gseq_Method'. From 'gseq_Program', the role 'Program' has cardinality 0..*, and from 'gseq_Method', the role 'methods' has cardinality 0..*.
+An association connects 'gseq_Method' and 'gseq_MethodCall'. From 'gseq_Method', the role 'methodToCall' has cardinality 0..*, and from 'gseq_MethodCall', the role 'MethodCall' has cardinality 0..*.
+An association connects 'gseq_Operation' and 'gseq_Method'. From 'gseq_Operation', the role 'operations' has cardinality 0..*, and from 'gseq_Method', the role 'Method6' has cardinality 0..*.
+An association connects 'gseq_Print' and 'gseq_Operation'. From 'gseq_Print', the role 'gseq_Print' has cardinality 0..*, and from 'gseq_Operation', the role 'gseq_Operation' has cardinality 0..*.
+An association connects 'gseq_Method' and 'gseq_MethodCall'. From 'gseq_Method', the role 'Method9' has cardinality 0..*, and from 'gseq_MethodCall', the role 'calledBy' has cardinality 0..*.
+An association connects 'gseq_Operation' and 'gseq_If'. From 'gseq_Operation', the role 'gseq_Operation11' has cardinality 0..*, and from 'gseq_If', the role 'gseq_If' has cardinality 0..*.
+An association connects 'gseq_If' and 'gseq_Operation'. From 'gseq_If', the role 'gseq_If13' has cardinality 0..*, and from 'gseq_Operation', the role 'gseq_Operation14' has cardinality 0..*.
+An association connects 'gseq_If' and 'gseq_BooleanExpression'. From 'gseq_If', the role 'gseq_If16' has cardinality 0..*, and from 'gseq_BooleanExpression', the role 'gseq_BooleanExpression' has cardinality 0..*.
+An association connects 'gseq_IntegerExpression' and 'gseq_Equality'. From 'gseq_IntegerExpression', the role 'gseq_IntegerExpression' has cardinality 0..*, and from 'gseq_Equality', the role 'gseq_Equality' has cardinality 0..*.
+An association connects 'gseq_IntegerExpression' and 'gseq_Equality'. From 'gseq_IntegerExpression', the role 'gseq_IntegerExpression20' has cardinality 0..*, and from 'gseq_Equality', the role 'gseq_Equality19' has cardinality 0..*.
+An association connects 'gseq_Not' and 'gseq_BooleanExpression'. From 'gseq_Not', the role 'gseq_Not' has cardinality 0..*, and from 'gseq_BooleanExpression', the role 'gseq_BooleanExpression22' has cardinality 0..*.
+An association connects 'gseq_BooleanExpression' and 'gseq_And'. From 'gseq_BooleanExpression', the role 'gseq_BooleanExpression24' has cardinality 0..*, and from 'gseq_And', the role 'gseq_And' has cardinality 0..*.
+An association connects 'gseq_And' and 'gseq_BooleanExpression'. From 'gseq_And', the role 'gseq_And26' has cardinality 0..*, and from 'gseq_BooleanExpression', the role 'gseq_BooleanExpression27' has cardinality 0..*.
+An association connects 'gseq_IntegerExpression' and 'gseq_Assign'. From 'gseq_IntegerExpression', the role 'gseq_IntegerExpression29' has cardinality 0..*, and from 'gseq_Assign', the role 'gseq_Assign' has cardinality 0..*.
+An association connects 'gseq_Plus' and 'gseq_IntegerExpression'. From 'gseq_Plus', the role 'gseq_Plus' has cardinality 0..*, and from 'gseq_IntegerExpression', the role 'gseq_IntegerExpression31' has cardinality 0..*.
+An association connects 'gseq_IntegerExpression' and 'gseq_Plus'. From 'gseq_IntegerExpression', the role 'gseq_IntegerExpression34' has cardinality 0..*, and from 'gseq_Plus', the role 'gseq_Plus33' has cardinality 0..*.
+An association connects 'gseq_IntegerExpression' and 'gseq_GreaterThan'. From 'gseq_IntegerExpression', the role 'gseq_IntegerExpression36' has cardinality 0..*, and from 'gseq_GreaterThan', the role 'gseq_GreaterThan' has cardinality 0..*.
+An association connects 'gseq_IntegerExpression' and 'gseq_GreaterThan'. From 'gseq_IntegerExpression', the role 'gseq_IntegerExpression39' has cardinality 0..*, and from 'gseq_GreaterThan', the role 'gseq_GreaterThan38' has cardinality 0..*.
+An association connects 'gseq_While' and 'gseq_BooleanExpression'. From 'gseq_While', the role 'gseq_While' has cardinality 0..*, and from 'gseq_BooleanExpression', the role 'gseq_BooleanExpression41' has cardinality 0..*.
+An association connects 'gseq_IntegerExpression' and 'gseq_While'. From 'gseq_IntegerExpression', the role 'gseq_IntegerExpression44' has cardinality 0..*, and from 'gseq_While', the role 'gseq_While43' has cardinality 0..*.

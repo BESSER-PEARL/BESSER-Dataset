@@ -1,0 +1,16 @@
+The domain model 'cde' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'cde_Department' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cde_Company' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cde_Employee' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'address', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'cde_Company' and 'cde_Department'. From 'cde_Company', the role 'cde_Company' has cardinality 0..*, and from 'cde_Department', the role 'cde_Department' has cardinality 0..*.
+An association connects 'cde_Department' and 'cde_Employee'. From 'cde_Department', the role 'cde_Department2' has cardinality 0..*, and from 'cde_Employee', the role 'cde_Employee' has cardinality 0..*.

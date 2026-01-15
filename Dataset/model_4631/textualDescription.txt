@@ -1,0 +1,407 @@
+The domain model 'table' describes the core structural elements and their relationships within the system.
+
+The model defines 92 main class(es).
+
+'CreateCellTool' represents an important domain concept.
+It does not declare any attributes.
+
+'table_DTargetColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'LineContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_TableMapping' represents an important domain concept.
+It has one attribute: 'semanticElements', which is of type str.
+
+'TableMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'DTableElementStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_BackgroundStyleDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'description_table_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_ElementColumnMapping' represents an important domain concept.
+It has the following attributes: 'domainClass', which is of type str; 'semanticCandidatesExpression', which is of type str.
+
+'table_description_DeleteColumnTool' represents an important domain concept.
+It does not declare any attributes.
+
+'RepresentationNavigationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'ColumnMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'description_RepresentationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'ForegroundConditionalStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_IntersectionMapping' represents an important domain concept.
+It has the following attributes: 'lineFinderExpression', which is of type str; 'labelExpression', which is of type str; 'columnFinderExpression', which is of type str; 'domainClass', which is of type str; 'semanticCandidatesExpression', which is of type str; 'preconditionExpression', which is of type str; 'useDomainClass', which is of type bool.
+
+'table_description_CreateCellTool' represents an important domain concept.
+It does not declare any attributes.
+
+'table_DFeatureColumn' represents an important domain concept.
+It has one attribute: 'featureName', which is of type str.
+
+'BackgroundStyleDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_TableNavigationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_StyleUpdater' represents an important domain concept.
+It does not declare any attributes.
+
+'description_DocumentedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'table_DLine' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'collapsed', which is of type bool; 'visible', which is of type bool.
+
+'TableVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'LineMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'LabelEditTool' represents an important domain concept.
+It does not declare any attributes.
+
+'description_TableTool' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_ModelOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'table_DTableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_EditMaskVariables' represents an important domain concept.
+It does not declare any attributes.
+
+'description_CellUpdater' represents an important domain concept.
+It does not declare any attributes.
+
+'TableDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'CreateTool' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementColumnMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_BackgroundConditionalStyle' represents an important domain concept.
+It has one attribute: 'predicateExpression', which is of type str.
+
+'table_description_EditionTableDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_LabelEditTool' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_DeleteLineTool' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_TableCreationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'table_LineContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'RepresentationElementMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_VariableContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_CreateColumnTool' represents an important domain concept.
+It does not declare any attributes.
+
+'RepresentationCreationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_TableTool' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_CreateLineTool' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_TableVariable' represents an important domain concept.
+It has one attribute: 'documentation', which is of type str.
+
+'table_DCell' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'table_RGBValues' represents an important domain concept.
+It does not declare any attributes.
+
+'table_DTableElementUpdater' represents an important domain concept.
+It does not declare any attributes.
+
+'CreateCrossColumnTool' represents an important domain concept.
+It does not declare any attributes.
+
+'CreateColumnTool' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_ColumnMapping' represents an important domain concept.
+It has the following attributes: 'initialWidth', which is of type int; 'headerLabelExpression', which is of type str.
+
+'DRepresentationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_CreateTool' represents an important domain concept.
+It does not declare any attributes.
+
+'DeleteColumnTool' represents an important domain concept.
+It does not declare any attributes.
+
+'DRepresentation' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_FeatureColumnMapping' represents an important domain concept.
+It has the following attributes: 'labelExpression', which is of type str; 'featureParentExpression', which is of type str; 'featureName', which is of type str.
+
+'tool_AbstractToolDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_LineMapping' represents an important domain concept.
+It has the following attributes: 'headerLabelExpression', which is of type str; 'domainClass', which is of type str; 'semanticCandidatesExpression', which is of type str.
+
+'ColorDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'description_StyleUpdater' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_AbstractVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_DeleteTool' represents an important domain concept.
+It does not declare any attributes.
+
+'table_DTableElementSynchronizer' represents an important domain concept.
+It does not declare any attributes.
+
+'DeleteTool' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_RepresentationCreationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_CellUpdater' represents an important domain concept.
+It has one attribute: 'canEdit', which is of type str.
+
+'CellUpdater' represents an important domain concept.
+It does not declare any attributes.
+
+'DTableElementUpdater' represents an important domain concept.
+It does not declare any attributes.
+
+'CreateLineTool' represents an important domain concept.
+It does not declare any attributes.
+
+'table_DCellStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'description_EndUserDocumentedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_ForegroundStyleDescription' represents an important domain concept.
+It has the following attributes: 'labelSize', which is of type int; 'labelFormat', which is of type str.
+
+'table_description_CrossTableDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_RepresentationNavigationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'DSemanticDecorator' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_ForegroundConditionalStyle' represents an important domain concept.
+It has one attribute: 'predicateExpression', which is of type str.
+
+'DeleteLineTool' represents an important domain concept.
+It does not declare any attributes.
+
+'DColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'table_DTable' represents an important domain concept.
+It has one attribute: 'headerColumnWidth', which is of type int.
+
+'description_ColumnMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureColumnMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_CreateCrossColumnTool' represents an important domain concept.
+It does not declare any attributes.
+
+'description_TableMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'ForegroundStyleDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'IntersectionMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'TableTool' represents an important domain concept.
+It does not declare any attributes.
+
+'table_DTableElementStyle' represents an important domain concept.
+It has the following attributes: 'labelFormat', which is of type str; 'defaultBackgroundStyle', which is of type bool; 'defaultForegroundStyle', which is of type bool; 'labelSize', which is of type int.
+
+'DTableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'table_DColumn' represents an important domain concept.
+It has the following attributes: 'label', which is of type str; 'visible', which is of type bool; 'width', which is of type int.
+
+'BackgroundConditionalStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'table_description_TableDescription' represents an important domain concept.
+It has the following attributes: 'preconditionExpression', which is of type str; 'domainClass', which is of type str; 'initialHeaderColumnWidth', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'table_DTable' is a specialization of 'DRepresentation'.
+The class 'table_DTable' is a specialization of 'LineContainer'.
+The class 'table_DTable' is a specialization of 'DTableElementUpdater'.
+The class 'table_DTableElement' is a specialization of 'DRepresentationElement'.
+The class 'table_LineContainer' is a specialization of 'DSemanticDecorator'.
+The class 'table_DLine' is a specialization of 'LineContainer'.
+The class 'table_DLine' is a specialization of 'DTableElement'.
+The class 'table_DLine' is a specialization of 'DTableElementUpdater'.
+The class 'table_DCell' is a specialization of 'DSemanticDecorator'.
+The class 'table_DCell' is a specialization of 'DTableElement'.
+The class 'table_DCell' is a specialization of 'DTableElementUpdater'.
+The class 'table_DCellStyle' is a specialization of 'DTableElementStyle'.
+The class 'table_DColumn' is a specialization of 'DTableElement'.
+The class 'table_DTargetColumn' is a specialization of 'DSemanticDecorator'.
+The class 'table_DTargetColumn' is a specialization of 'DColumn'.
+The class 'table_DTargetColumn' is a specialization of 'DTableElementUpdater'.
+The class 'table_DFeatureColumn' is a specialization of 'DColumn'.
+The class 'table_description_TableDescription' is a specialization of 'description_RepresentationDescription'.
+The class 'table_description_TableDescription' is a specialization of 'description_DocumentedElement'.
+The class 'table_description_TableDescription' is a specialization of 'description_EndUserDocumentedElement'.
+The class 'table_description_EditionTableDescription' is a specialization of 'TableDescription'.
+The class 'table_description_CrossTableDescription' is a specialization of 'TableDescription'.
+The class 'table_description_TableMapping' is a specialization of 'RepresentationElementMapping'.
+The class 'table_description_LineMapping' is a specialization of 'description_TableMapping'.
+The class 'table_description_LineMapping' is a specialization of 'description_StyleUpdater'.
+The class 'table_description_ColumnMapping' is a specialization of 'TableMapping'.
+The class 'table_description_ElementColumnMapping' is a specialization of 'description_ColumnMapping'.
+The class 'table_description_ElementColumnMapping' is a specialization of 'description_StyleUpdater'.
+The class 'table_description_FeatureColumnMapping' is a specialization of 'description_ColumnMapping'.
+The class 'table_description_FeatureColumnMapping' is a specialization of 'description_CellUpdater'.
+The class 'table_description_FeatureColumnMapping' is a specialization of 'description_StyleUpdater'.
+The class 'table_description_IntersectionMapping' is a specialization of 'description_TableMapping'.
+The class 'table_description_IntersectionMapping' is a specialization of 'description_CellUpdater'.
+The class 'table_description_IntersectionMapping' is a specialization of 'description_StyleUpdater'.
+The class 'table_description_LabelEditTool' is a specialization of 'TableTool'.
+The class 'table_description_CreateTool' is a specialization of 'tool_AbstractToolDescription'.
+The class 'table_description_CreateTool' is a specialization of 'description_TableTool'.
+The class 'table_description_CreateColumnTool' is a specialization of 'CreateTool'.
+The class 'table_description_CreateCrossColumnTool' is a specialization of 'CreateTool'.
+The class 'table_description_CreateLineTool' is a specialization of 'CreateTool'.
+The class 'table_description_CreateCellTool' is a specialization of 'description_TableTool'.
+The class 'table_description_CreateCellTool' is a specialization of 'tool_AbstractToolDescription'.
+The class 'table_description_DeleteTool' is a specialization of 'tool_AbstractToolDescription'.
+The class 'table_description_DeleteTool' is a specialization of 'description_TableTool'.
+The class 'table_description_DeleteColumnTool' is a specialization of 'DeleteTool'.
+The class 'table_description_DeleteLineTool' is a specialization of 'DeleteTool'.
+The class 'table_description_TableVariable' is a specialization of 'tool_AbstractVariable'.
+The class 'table_description_TableVariable' is a specialization of 'tool_VariableContainer'.
+The class 'table_description_TableCreationDescription' is a specialization of 'RepresentationCreationDescription'.
+The class 'table_description_TableNavigationDescription' is a specialization of 'RepresentationNavigationDescription'.
+
+Relationships between classes are modeled using associations.
+An association connects 'table_DColumn' and 'table_DTable'. From 'table_DColumn', the role 'DColumn' has cardinality 0..*, and from 'table_DTable', the role 'table' has cardinality 0..*.
+An association connects 'table_DTable' and 'TableDescription'. From 'table_DTable', the role 'table_DTable' has cardinality 0..*, and from 'TableDescription', the role 'TableDescription' has cardinality 0..*.
+An association connects 'TableMapping' and 'table_DTableElement'. From 'TableMapping', the role 'TableMapping' has cardinality 0..*, and from 'table_DTableElement', the role 'table_DTableElement' has cardinality 0..*.
+An association connects 'table_LineContainer' and 'table_DLine'. From 'table_LineContainer', the role 'container' has cardinality 0..*, and from 'table_DLine', the role 'DLine' has cardinality 0..*.
+An association connects 'table_DLine' and 'LineMapping'. From 'table_DLine', the role 'table_DLine' has cardinality 0..*, and from 'LineMapping', the role 'LineMapping' has cardinality 0..*.
+An association connects 'table_DLine' and 'table_DCell'. From 'table_DLine', the role 'line' has cardinality 0..*, and from 'table_DCell', the role 'DCell' has cardinality 0..*.
+An association connects 'table_DLine' and 'table_LineContainer'. From 'table_DLine', the role 'lines' has cardinality 0..*, and from 'table_LineContainer', the role 'LineContainer' has cardinality 0..*.
+An association connects 'table_DLine' and 'table_DCell'. From 'table_DLine', the role 'table_DLine8' has cardinality 0..*, and from 'table_DCell', the role 'table_DCell' has cardinality 0..*.
+An association connects 'table_DTableElementStyle' and 'table_DLine'. From 'table_DTableElementStyle', the role 'table_DTableElementStyle' has cardinality 0..*, and from 'table_DLine', the role 'table_DLine10' has cardinality 0..*.
+An association connects 'table_DCell' and 'table_DLine'. From 'table_DCell', the role 'cells' has cardinality 0..*, and from 'table_DLine', the role 'DLine12' has cardinality 0..*.
+An association connects 'table_DCell' and 'table_DColumn'. From 'table_DCell', the role 'cells14' has cardinality 0..*, and from 'table_DColumn', the role 'DColumn15' has cardinality 0..*.
+An association connects 'table_DCellStyle' and 'table_DCell'. From 'table_DCellStyle', the role 'table_DCellStyle' has cardinality 0..*, and from 'table_DCell', the role 'table_DCell17' has cardinality 0..*.
+An association connects 'CellUpdater' and 'table_DCell'. From 'CellUpdater', the role 'CellUpdater' has cardinality 0..*, and from 'table_DCell', the role 'table_DCell19' has cardinality 0..*.
+An association connects 'table_DCell' and 'IntersectionMapping'. From 'table_DCell', the role 'table_DCell21' has cardinality 0..*, and from 'IntersectionMapping', the role 'IntersectionMapping' has cardinality 0..*.
+An association connects 'TableMapping' and 'table_DCellStyle'. From 'TableMapping', the role 'TableMapping24' has cardinality 0..*, and from 'table_DCellStyle', the role 'table_DCellStyle23' has cardinality 0..*.
+An association connects 'TableMapping' and 'table_DCellStyle'. From 'TableMapping', the role 'TableMapping27' has cardinality 0..*, and from 'table_DCellStyle', the role 'table_DCellStyle26' has cardinality 0..*.
+An association connects 'table_DColumn' and 'table_DCell'. From 'table_DColumn', the role 'column' has cardinality 0..*, and from 'table_DCell', the role 'DCell29' has cardinality 0..*.
+An association connects 'table_DColumn' and 'ColumnMapping'. From 'table_DColumn', the role 'table_DColumn' has cardinality 0..*, and from 'ColumnMapping', the role 'ColumnMapping' has cardinality 0..*.
+An association connects 'table_DTable' and 'table_DColumn'. From 'table_DTable', the role 'DTable' has cardinality 0..*, and from 'table_DColumn', the role 'columns' has cardinality 0..*.
+An association connects 'table_DColumn' and 'table_DCell'. From 'table_DColumn', the role 'table_DColumn33' has cardinality 0..*, and from 'table_DCell', the role 'table_DCell34' has cardinality 0..*.
+An association connects 'table_DColumn' and 'table_DTableElementStyle'. From 'table_DColumn', the role 'table_DColumn36' has cardinality 0..*, and from 'table_DTableElementStyle', the role 'table_DTableElementStyle37' has cardinality 0..*.
+An association connects 'table_DTableElementStyle' and 'table_RGBValues'. From 'table_DTableElementStyle', the role 'table_DTableElementStyle39' has cardinality 0..*, and from 'table_RGBValues', the role 'table_RGBValues' has cardinality 0..*.
+An association connects 'table_DTableElementStyle' and 'table_RGBValues'. From 'table_DTableElementStyle', the role 'table_DTableElementStyle41' has cardinality 0..*, and from 'table_RGBValues', the role 'table_RGBValues42' has cardinality 0..*.
+An association connects 'tool_RepresentationCreationDescription' and 'table_description_TableDescription'. From 'tool_RepresentationCreationDescription', the role 'tool_RepresentationCreationDescription' has cardinality 0..*, and from 'table_description_TableDescription', the role 'table_description_TableDescription' has cardinality 0..*.
+An association connects 'tool_RepresentationCreationDescription' and 'table_description_TableDescription'. From 'tool_RepresentationCreationDescription', the role 'tool_RepresentationCreationDescription46' has cardinality 0..*, and from 'table_description_TableDescription', the role 'table_description_TableDescription45' has cardinality 0..*.
+An association connects 'tool_RepresentationCreationDescription' and 'table_description_TableDescription'. From 'tool_RepresentationCreationDescription', the role 'tool_RepresentationCreationDescription49' has cardinality 0..*, and from 'table_description_TableDescription', the role 'table_description_TableDescription48' has cardinality 0..*.
+An association connects 'table_description_TableDescription' and 'tool_RepresentationNavigationDescription'. From 'table_description_TableDescription', the role 'table_description_TableDescription51' has cardinality 0..*, and from 'tool_RepresentationNavigationDescription', the role 'tool_RepresentationNavigationDescription' has cardinality 0..*.
+An association connects 'table_description_TableDescription' and 'tool_RepresentationNavigationDescription'. From 'table_description_TableDescription', the role 'table_description_TableDescription53' has cardinality 0..*, and from 'tool_RepresentationNavigationDescription', the role 'tool_RepresentationNavigationDescription54' has cardinality 0..*.
+An association connects 'table_description_TableDescription' and 'tool_RepresentationNavigationDescription'. From 'table_description_TableDescription', the role 'table_description_TableDescription56' has cardinality 0..*, and from 'tool_RepresentationNavigationDescription', the role 'tool_RepresentationNavigationDescription57' has cardinality 0..*.
+An association connects 'table_description_TableDescription' and 'LineMapping'. From 'table_description_TableDescription', the role 'table_description_TableDescription59' has cardinality 0..*, and from 'LineMapping', the role 'LineMapping60' has cardinality 0..*.
+An association connects 'LineMapping' and 'table_description_TableDescription'. From 'LineMapping', the role 'LineMapping63' has cardinality 0..*, and from 'table_description_TableDescription', the role 'table_description_TableDescription62' has cardinality 0..*.
+An association connects 'LineMapping' and 'table_description_TableDescription'. From 'LineMapping', the role 'LineMapping66' has cardinality 0..*, and from 'table_description_TableDescription', the role 'table_description_TableDescription65' has cardinality 0..*.
+An association connects 'CreateLineTool' and 'table_description_TableDescription'. From 'CreateLineTool', the role 'CreateLineTool' has cardinality 0..*, and from 'table_description_TableDescription', the role 'table_description_TableDescription68' has cardinality 0..*.
+An association connects 'table_description_TableDescription' and 'CreateLineTool'. From 'table_description_TableDescription', the role 'table_description_TableDescription70' has cardinality 0..*, and from 'CreateLineTool', the role 'CreateLineTool71' has cardinality 0..*.
+An association connects 'CreateLineTool' and 'table_description_TableDescription'. From 'CreateLineTool', the role 'CreateLineTool74' has cardinality 0..*, and from 'table_description_TableDescription', the role 'table_description_TableDescription73' has cardinality 0..*.
+An association connects 'table_description_TableDescription' and 'description_table_EObject'. From 'table_description_TableDescription', the role 'table_description_TableDescription76' has cardinality 0..*, and from 'description_table_EObject', the role 'description_table_EObject' has cardinality 0..*.
+An association connects 'FeatureColumnMapping' and 'table_description_EditionTableDescription'. From 'FeatureColumnMapping', the role 'FeatureColumnMapping' has cardinality 0..*, and from 'table_description_EditionTableDescription', the role 'table_description_EditionTableDescription' has cardinality 0..*.
+An association connects 'table_description_EditionTableDescription' and 'FeatureColumnMapping'. From 'table_description_EditionTableDescription', the role 'table_description_EditionTableDescription79' has cardinality 0..*, and from 'FeatureColumnMapping', the role 'FeatureColumnMapping80' has cardinality 0..*.
+An association connects 'FeatureColumnMapping' and 'table_description_EditionTableDescription'. From 'FeatureColumnMapping', the role 'FeatureColumnMapping83' has cardinality 0..*, and from 'table_description_EditionTableDescription', the role 'table_description_EditionTableDescription82' has cardinality 0..*.
+An association connects 'ElementColumnMapping' and 'table_description_CrossTableDescription'. From 'ElementColumnMapping', the role 'ElementColumnMapping' has cardinality 0..*, and from 'table_description_CrossTableDescription', the role 'table_description_CrossTableDescription' has cardinality 0..*.
+An association connects 'table_description_CrossTableDescription' and 'IntersectionMapping'. From 'table_description_CrossTableDescription', the role 'table_description_CrossTableDescription86' has cardinality 0..*, and from 'IntersectionMapping', the role 'IntersectionMapping87' has cardinality 0..*.
+An association connects 'CreateCrossColumnTool' and 'table_description_CrossTableDescription'. From 'CreateCrossColumnTool', the role 'CreateCrossColumnTool' has cardinality 0..*, and from 'table_description_CrossTableDescription', the role 'table_description_CrossTableDescription89' has cardinality 0..*.
+An association connects 'table_description_LineMapping' and 'LineMapping'. From 'table_description_LineMapping', the role 'table_description_LineMapping' has cardinality 0..*, and from 'LineMapping', the role 'LineMapping91' has cardinality 0..*.
+An association connects 'table_description_LineMapping' and 'LineMapping'. From 'table_description_LineMapping', the role 'LineMapping93' has cardinality 0..*, and from 'LineMapping', the role 'description' has cardinality 0..*.
+An association connects 'table_description_LineMapping' and 'LineMapping'. From 'table_description_LineMapping', the role 'table_description_LineMapping95' has cardinality 0..*, and from 'LineMapping', the role 'LineMapping96' has cardinality 0..*.
+An association connects 'LineMapping' and 'table_description_LineMapping'. From 'LineMapping', the role 'description99' has cardinality 0..*, and from 'table_description_LineMapping', the role 'LineMapping98' has cardinality 0..*.
+An association connects 'table_description_LineMapping' and 'CreateLineTool'. From 'table_description_LineMapping', the role 'table_description_LineMapping101' has cardinality 0..*, and from 'CreateLineTool', the role 'CreateLineTool102' has cardinality 0..*.
+An association connects 'table_description_LineMapping' and 'DeleteLineTool'. From 'table_description_LineMapping', the role 'DeleteLineTool' has cardinality 0..*, and from 'DeleteLineTool', the role 'description104' has cardinality 0..*.
+An association connects 'CreateColumnTool' and 'table_description_ElementColumnMapping'. From 'CreateColumnTool', the role 'description106' has cardinality 0..*, and from 'table_description_ElementColumnMapping', the role 'CreateColumnTool' has cardinality 0..*.
+An association connects 'table_description_ElementColumnMapping' and 'DeleteColumnTool'. From 'table_description_ElementColumnMapping', the role 'DeleteColumnTool' has cardinality 0..*, and from 'DeleteColumnTool', the role 'description108' has cardinality 0..*.
+An association connects 'LabelEditTool' and 'table_description_CellUpdater'. From 'LabelEditTool', the role 'LabelEditTool' has cardinality 0..*, and from 'table_description_CellUpdater', the role 'table_description_CellUpdater' has cardinality 0..*.
+An association connects 'table_description_StyleUpdater' and 'ForegroundStyleDescription'. From 'table_description_StyleUpdater', the role 'table_description_StyleUpdater' has cardinality 0..*, and from 'ForegroundStyleDescription', the role 'ForegroundStyleDescription' has cardinality 0..*.
+An association connects 'ForegroundConditionalStyle' and 'table_description_StyleUpdater'. From 'ForegroundConditionalStyle', the role 'ForegroundConditionalStyle' has cardinality 0..*, and from 'table_description_StyleUpdater', the role 'table_description_StyleUpdater112' has cardinality 0..*.
+An association connects 'table_description_StyleUpdater' and 'BackgroundStyleDescription'. From 'table_description_StyleUpdater', the role 'table_description_StyleUpdater114' has cardinality 0..*, and from 'BackgroundStyleDescription', the role 'BackgroundStyleDescription' has cardinality 0..*.
+An association connects 'BackgroundConditionalStyle' and 'table_description_StyleUpdater'. From 'BackgroundConditionalStyle', the role 'BackgroundConditionalStyle' has cardinality 0..*, and from 'table_description_StyleUpdater', the role 'table_description_StyleUpdater116' has cardinality 0..*.
+An association connects 'table_description_IntersectionMapping' and 'LineMapping'. From 'table_description_IntersectionMapping', the role 'table_description_IntersectionMapping' has cardinality 0..*, and from 'LineMapping', the role 'LineMapping118' has cardinality 0..*.
+An association connects 'ColumnMapping' and 'table_description_IntersectionMapping'. From 'ColumnMapping', the role 'ColumnMapping121' has cardinality 0..*, and from 'table_description_IntersectionMapping', the role 'table_description_IntersectionMapping120' has cardinality 0..*.
+An association connects 'CreateCellTool' and 'table_description_IntersectionMapping'. From 'CreateCellTool', the role 'description123' has cardinality 0..*, and from 'table_description_IntersectionMapping', the role 'CreateCellTool' has cardinality 0..*.
+An association connects 'table_description_TableTool' and 'TableVariable'. From 'table_description_TableTool', the role 'table_description_TableTool' has cardinality 0..*, and from 'TableVariable', the role 'TableVariable' has cardinality 0..*.
+An association connects 'tool_ModelOperation' and 'table_description_TableTool'. From 'tool_ModelOperation', the role 'tool_ModelOperation' has cardinality 0..*, and from 'table_description_TableTool', the role 'table_description_TableTool126' has cardinality 0..*.
+An association connects 'table_description_LabelEditTool' and 'tool_EditMaskVariables'. From 'table_description_LabelEditTool', the role 'table_description_LabelEditTool' has cardinality 0..*, and from 'tool_EditMaskVariables', the role 'tool_EditMaskVariables' has cardinality 0..*.
+An association connects 'table_description_CreateColumnTool' and 'ElementColumnMapping'. From 'table_description_CreateColumnTool', the role 'ElementColumnMapping129' has cardinality 0..*, and from 'ElementColumnMapping', the role 'description130' has cardinality 0..*.
+An association connects 'ElementColumnMapping' and 'table_description_CreateCrossColumnTool'. From 'ElementColumnMapping', the role 'ElementColumnMapping132' has cardinality 0..*, and from 'table_description_CreateCrossColumnTool', the role 'table_description_CreateCrossColumnTool' has cardinality 0..*.
+An association connects 'table_description_CreateLineTool' and 'LineMapping'. From 'table_description_CreateLineTool', the role 'table_description_CreateLineTool' has cardinality 0..*, and from 'LineMapping', the role 'LineMapping134' has cardinality 0..*.
+An association connects 'table_description_CreateCellTool' and 'tool_EditMaskVariables'. From 'table_description_CreateCellTool', the role 'table_description_CreateCellTool' has cardinality 0..*, and from 'tool_EditMaskVariables', the role 'tool_EditMaskVariables136' has cardinality 0..*.
+An association connects 'table_description_CreateCellTool' and 'IntersectionMapping'. From 'table_description_CreateCellTool', the role 'IntersectionMapping138' has cardinality 0..*, and from 'IntersectionMapping', the role 'description139' has cardinality 0..*.
+An association connects 'table_description_DeleteColumnTool' and 'ElementColumnMapping'. From 'table_description_DeleteColumnTool', the role 'ElementColumnMapping141' has cardinality 0..*, and from 'ElementColumnMapping', the role 'description142' has cardinality 0..*.
+An association connects 'table_description_DeleteLineTool' and 'LineMapping'. From 'table_description_DeleteLineTool', the role 'LineMapping144' has cardinality 0..*, and from 'LineMapping', the role 'description145' has cardinality 0..*.
+An association connects 'ColorDescription' and 'table_description_ForegroundStyleDescription'. From 'ColorDescription', the role 'ColorDescription' has cardinality 0..*, and from 'table_description_ForegroundStyleDescription', the role 'table_description_ForegroundStyleDescription' has cardinality 0..*.
+An association connects 'ColorDescription' and 'table_description_BackgroundStyleDescription'. From 'ColorDescription', the role 'ColorDescription148' has cardinality 0..*, and from 'table_description_BackgroundStyleDescription', the role 'table_description_BackgroundStyleDescription' has cardinality 0..*.
+An association connects 'ForegroundStyleDescription' and 'table_description_ForegroundConditionalStyle'. From 'ForegroundStyleDescription', the role 'ForegroundStyleDescription150' has cardinality 0..*, and from 'table_description_ForegroundConditionalStyle', the role 'table_description_ForegroundConditionalStyle' has cardinality 0..*.
+An association connects 'BackgroundStyleDescription' and 'table_description_BackgroundConditionalStyle'. From 'BackgroundStyleDescription', the role 'BackgroundStyleDescription152' has cardinality 0..*, and from 'table_description_BackgroundConditionalStyle', the role 'table_description_BackgroundConditionalStyle' has cardinality 0..*.
+An association connects 'TableDescription' and 'table_description_TableCreationDescription'. From 'TableDescription', the role 'TableDescription154' has cardinality 0..*, and from 'table_description_TableCreationDescription', the role 'table_description_TableCreationDescription' has cardinality 0..*.
+An association connects 'table_description_TableNavigationDescription' and 'TableDescription'. From 'table_description_TableNavigationDescription', the role 'table_description_TableNavigationDescription' has cardinality 0..*, and from 'TableDescription', the role 'TableDescription156' has cardinality 0..*.

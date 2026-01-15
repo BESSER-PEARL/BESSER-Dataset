@@ -1,0 +1,87 @@
+The domain model 'archDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'archDSL_OptMethod' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'archDSL_Connector' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'archDSL_CertainCall' represents an important domain concept.
+It does not declare any attributes.
+
+'archDSL_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'archDSL_UncertainInterface' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'archDSL_SuperMethod' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'archDSL_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'archDSL_AltMethod' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'a_name', which is of type str.
+
+'archDSL_Interface' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SuperMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'archDSL_Method' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'archDSL_SuperCall' represents an important domain concept.
+It does not declare any attributes.
+
+'SuperCall' represents an important domain concept.
+It does not declare any attributes.
+
+'archDSL_Param' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'archDSL_UncertainConnector' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'archDSL_UncertainBehavior' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'archDSL_OptCall' represents an important domain concept.
+It does not declare any attributes.
+
+'archDSL_AltCall' represents an important domain concept.
+It has one attribute: 'opt', which is of type bool.
+
+The model also captures inheritance relationships between classes.
+The class 'archDSL_Method' is a specialization of 'SuperMethod'.
+The class 'archDSL_AltMethod' is a specialization of 'SuperMethod'.
+The class 'archDSL_OptMethod' is a specialization of 'SuperMethod'.
+The class 'archDSL_CertainCall' is a specialization of 'SuperCall'.
+The class 'archDSL_OptCall' is a specialization of 'SuperCall'.
+The class 'archDSL_AltCall' is a specialization of 'SuperCall'.
+
+Relationships between classes are modeled using associations.
+An association connects 'archDSL_Model' and 'archDSL_Interface'. From 'archDSL_Model', the role 'archDSL_Model' has cardinality 0..*, and from 'archDSL_Interface', the role 'archDSL_Interface' has cardinality 0..*.
+An association connects 'archDSL_Model' and 'archDSL_UncertainInterface'. From 'archDSL_Model', the role 'archDSL_Model2' has cardinality 0..*, and from 'archDSL_UncertainInterface', the role 'archDSL_UncertainInterface' has cardinality 0..*.
+An association connects 'archDSL_Model' and 'archDSL_Behavior'. From 'archDSL_Model', the role 'archDSL_Model4' has cardinality 0..*, and from 'archDSL_Behavior', the role 'archDSL_Behavior' has cardinality 0..*.
+An association connects 'archDSL_UncertainConnector' and 'archDSL_Model'. From 'archDSL_UncertainConnector', the role 'archDSL_UncertainConnector' has cardinality 0..*, and from 'archDSL_Model', the role 'archDSL_Model6' has cardinality 0..*.
+An association connects 'archDSL_Model' and 'archDSL_Connector'. From 'archDSL_Model', the role 'archDSL_Model8' has cardinality 0..*, and from 'archDSL_Connector', the role 'archDSL_Connector' has cardinality 0..*.
+An association connects 'archDSL_UncertainInterface' and 'archDSL_Interface'. From 'archDSL_UncertainInterface', the role 'archDSL_UncertainInterface10' has cardinality 0..*, and from 'archDSL_Interface', the role 'archDSL_Interface11' has cardinality 0..*.
+An association connects 'archDSL_UncertainInterface' and 'archDSL_AltMethod'. From 'archDSL_UncertainInterface', the role 'archDSL_UncertainInterface13' has cardinality 0..*, and from 'archDSL_AltMethod', the role 'archDSL_AltMethod' has cardinality 0..*.
+An association connects 'archDSL_UncertainInterface' and 'archDSL_OptMethod'. From 'archDSL_UncertainInterface', the role 'archDSL_UncertainInterface15' has cardinality 0..*, and from 'archDSL_OptMethod', the role 'archDSL_OptMethod' has cardinality 0..*.
+An association connects 'archDSL_Interface' and 'archDSL_Method'. From 'archDSL_Interface', the role 'archDSL_Interface17' has cardinality 0..*, and from 'archDSL_Method', the role 'archDSL_Method' has cardinality 0..*.
+An association connects 'archDSL_Connector' and 'archDSL_Behavior'. From 'archDSL_Connector', the role 'archDSL_Connector19' has cardinality 0..*, and from 'archDSL_Behavior', the role 'archDSL_Behavior20' has cardinality 0..*.
+An association connects 'archDSL_Interface' and 'archDSL_UncertainConnector'. From 'archDSL_Interface', the role 'archDSL_Interface23' has cardinality 0..*, and from 'archDSL_UncertainConnector', the role 'archDSL_UncertainConnector22' has cardinality 0..*.
+An association connects 'archDSL_UncertainBehavior' and 'archDSL_UncertainConnector'. From 'archDSL_UncertainBehavior', the role 'archDSL_UncertainBehavior' has cardinality 0..*, and from 'archDSL_UncertainConnector', the role 'archDSL_UncertainConnector25' has cardinality 0..*.
+An association connects 'archDSL_Behavior' and 'archDSL_Interface'. From 'archDSL_Behavior', the role 'archDSL_Behavior27' has cardinality 0..*, and from 'archDSL_Interface', the role 'archDSL_Interface28' has cardinality 0..*.
+An association connects 'archDSL_Method' and 'archDSL_Behavior'. From 'archDSL_Method', the role 'archDSL_Method31' has cardinality 0..*, and from 'archDSL_Behavior', the role 'archDSL_Behavior30' has cardinality 0..*.
+An association connects 'archDSL_Interface' and 'archDSL_Behavior'. From 'archDSL_Interface', the role 'archDSL_Interface34' has cardinality 0..*, and from 'archDSL_Behavior', the role 'archDSL_Behavior33' has cardinality 0..*.
+An association connects 'archDSL_Param' and 'archDSL_SuperMethod'. From 'archDSL_Param', the role 'archDSL_Param' has cardinality 0..*, and from 'archDSL_SuperMethod', the role 'archDSL_SuperMethod' has cardinality 0..*.
+An association connects 'archDSL_UncertainBehavior' and 'archDSL_SuperCall'. From 'archDSL_UncertainBehavior', the role 'archDSL_UncertainBehavior37' has cardinality 0..*, and from 'archDSL_SuperCall', the role 'archDSL_SuperCall' has cardinality 0..*.
+An association connects 'archDSL_UncertainBehavior' and 'archDSL_Interface'. From 'archDSL_UncertainBehavior', the role 'archDSL_UncertainBehavior39' has cardinality 0..*, and from 'archDSL_Interface', the role 'archDSL_Interface40' has cardinality 0..*.
+An association connects 'archDSL_SuperMethod' and 'archDSL_AltCall'. From 'archDSL_SuperMethod', the role 'archDSL_SuperMethod42' has cardinality 0..*, and from 'archDSL_AltCall', the role 'archDSL_AltCall' has cardinality 0..*.
+An association connects 'archDSL_SuperCall' and 'archDSL_SuperMethod'. From 'archDSL_SuperCall', the role 'archDSL_SuperCall44' has cardinality 0..*, and from 'archDSL_SuperMethod', the role 'archDSL_SuperMethod45' has cardinality 0..*.

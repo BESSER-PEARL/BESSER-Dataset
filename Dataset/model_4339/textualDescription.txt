@@ -1,0 +1,164 @@
+The domain model 'tExp' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'tExp_TraceExpression' represents an important domain concept.
+It has the following attributes: 'modules', which is of type str; 'rolesL', which is of type str; 'constraintsL', which is of type str; 'decentralized', which is of type str; 'name', which is of type str; 'gui', which is of type str; 'thresholdL', which is of type str; 'modulesL', which is of type str; 'channelsL', which is of type str; 'threshold', which is of type str; 'decentralizedL', which is of type str; 'partitionL', which is of type str; 'bodyL', which is of type str; 'minimal', which is of type str; 'guiL', which is of type str; 'minimalL', which is of type str; 'typesL', which is of type str.
+
+'tExp_EventType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tExp_Partition' represents an important domain concept.
+It does not declare any attributes.
+
+'tExp_VariableExpression' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tExp_ShuffleExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'tExp_Cardinality' represents an important domain concept.
+It has the following attributes: 'maxCardinality', which is of type int; 'minCardinality', which is of type int.
+
+'tExp_Role' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'args', which is of type str; 'class', which is of type str.
+
+'tExp_Expression' represents an important domain concept.
+It has the following attributes: 'variable', which is of type str; 'operator', which is of type str; 'eps', which is of type str.
+
+'tExp_PrologExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'tExp_ListExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'tExp_TerminalExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'tExp_SeqExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'tExp_FilterExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'tExp_AndExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'tExp_Channel' represents an important domain concept.
+It has the following attributes: 'reliability', which is of type str; 'name', which is of type str.
+
+'tExp_Singletons' represents an important domain concept.
+It has the following attributes: 'maxSingletons', which is of type int; 'minSingletons', which is of type int.
+
+'tExp_UnionExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'tExp_AtomExpression' represents an important domain concept.
+It has one attribute: 'atom', which is of type str.
+
+'PrologExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'tExp_Domainmodel' represents an important domain concept.
+It does not declare any attributes.
+
+'tExp_NumberExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'tExp_CatExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'tExp_Msg' represents an important domain concept.
+It has one attribute: 'performative', which is of type str.
+
+'tExp_Constraint' represents an important domain concept.
+It has the following attributes: 'split', which is of type str; 'parMin', which is of type str; 'together', which is of type str; 'parMax', which is of type str.
+
+'tExp_VarExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'tExp_Together' represents an important domain concept.
+It does not declare any attributes.
+
+'tExp_Term' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'tExp_StringExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'tExp_Size' represents an important domain concept.
+It has the following attributes: 'minSize', which is of type int; 'maxSize', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'tExp_AtomExpression' is a specialization of 'PrologExpression'.
+The class 'tExp_VariableExpression' is a specialization of 'PrologExpression'.
+The class 'tExp_StringExpression' is a specialization of 'PrologExpression'.
+The class 'tExp_NumberExpression' is a specialization of 'PrologExpression'.
+The class 'tExp_ListExpression' is a specialization of 'PrologExpression'.
+The class 'tExp_ShuffleExpr' is a specialization of 'Expression'.
+The class 'tExp_UnionExpr' is a specialization of 'Expression'.
+The class 'tExp_AndExpr' is a specialization of 'Expression'.
+The class 'tExp_CatExpr' is a specialization of 'Expression'.
+The class 'tExp_SeqExpr' is a specialization of 'Expression'.
+The class 'tExp_FilterExpr' is a specialization of 'Expression'.
+The class 'tExp_VarExpr' is a specialization of 'Expression'.
+The class 'tExp_TerminalExpr' is a specialization of 'Expression'.
+The class 'tExp_Singletons' is a specialization of 'Constraint'.
+The class 'tExp_Size' is a specialization of 'Constraint'.
+The class 'tExp_Cardinality' is a specialization of 'Constraint'.
+
+Relationships between classes are modeled using associations.
+An association connects 'tExp_TraceExpression' and 'tExp_Domainmodel'. From 'tExp_TraceExpression', the role 'tExp_TraceExpression' has cardinality 0..*, and from 'tExp_Domainmodel', the role 'tExp_Domainmodel' has cardinality 0..*.
+An association connects 'tExp_PrologExpression' and 'tExp_PrologExpression'. From 'tExp_PrologExpression', the role 'tExp_PrologExpression' has cardinality 0..*, and from 'tExp_PrologExpression', the role 'tExp_PrologExpression1' has cardinality 0..*.
+An association connects 'tExp_PrologExpression' and 'tExp_PrologExpression'. From 'tExp_PrologExpression', the role 'tExp_PrologExpression3' has cardinality 0..*, and from 'tExp_PrologExpression', the role 'tExp_PrologExpression5' has cardinality 0..*.
+An association connects 'tExp_TraceExpression' and 'tExp_Term'. From 'tExp_TraceExpression', the role 'tExp_TraceExpression7' has cardinality 0..*, and from 'tExp_Term', the role 'tExp_Term' has cardinality 0..*.
+An association connects 'tExp_Role' and 'tExp_TraceExpression'. From 'tExp_Role', the role 'tExp_Role' has cardinality 0..*, and from 'tExp_TraceExpression', the role 'tExp_TraceExpression9' has cardinality 0..*.
+An association connects 'tExp_TraceExpression' and 'tExp_EventType'. From 'tExp_TraceExpression', the role 'tExp_TraceExpression11' has cardinality 0..*, and from 'tExp_EventType', the role 'tExp_EventType' has cardinality 0..*.
+An association connects 'tExp_Partition' and 'tExp_TraceExpression'. From 'tExp_Partition', the role 'tExp_Partition' has cardinality 0..*, and from 'tExp_TraceExpression', the role 'tExp_TraceExpression13' has cardinality 0..*.
+An association connects 'tExp_Constraint' and 'tExp_TraceExpression'. From 'tExp_Constraint', the role 'tExp_Constraint' has cardinality 0..*, and from 'tExp_TraceExpression', the role 'tExp_TraceExpression15' has cardinality 0..*.
+An association connects 'tExp_TraceExpression' and 'tExp_Channel'. From 'tExp_TraceExpression', the role 'tExp_TraceExpression17' has cardinality 0..*, and from 'tExp_Channel', the role 'tExp_Channel' has cardinality 0..*.
+An association connects 'tExp_Term' and 'tExp_Expression'. From 'tExp_Term', the role 'tExp_Term19' has cardinality 0..*, and from 'tExp_Expression', the role 'tExp_Expression' has cardinality 0..*.
+An association connects 'tExp_Expression' and 'tExp_Expression'. From 'tExp_Expression', the role 'tExp_Expression22' has cardinality 0..*, and from 'tExp_Expression', the role 'tExp_Expression20' has cardinality 0..*.
+An association connects 'tExp_Expression' and 'tExp_EventType'. From 'tExp_Expression', the role 'tExp_Expression24' has cardinality 0..*, and from 'tExp_EventType', the role 'tExp_EventType25' has cardinality 0..*.
+An association connects 'tExp_Expression' and 'tExp_PrologExpression'. From 'tExp_Expression', the role 'tExp_Expression27' has cardinality 0..*, and from 'tExp_PrologExpression', the role 'tExp_PrologExpression28' has cardinality 0..*.
+An association connects 'tExp_PrologExpression' and 'tExp_Expression'. From 'tExp_PrologExpression', the role 'tExp_PrologExpression31' has cardinality 0..*, and from 'tExp_Expression', the role 'tExp_Expression30' has cardinality 0..*.
+An association connects 'tExp_Expression' and 'tExp_Expression'. From 'tExp_Expression', the role 'tExp_Expression32' has cardinality 0..*, and from 'tExp_Expression', the role 'tExp_Expression34' has cardinality 0..*.
+An association connects 'tExp_Expression' and 'tExp_EventType'. From 'tExp_Expression', the role 'tExp_Expression36' has cardinality 0..*, and from 'tExp_EventType', the role 'tExp_EventType37' has cardinality 0..*.
+An association connects 'tExp_Expression' and 'tExp_Expression'. From 'tExp_Expression', the role 'tExp_Expression38' has cardinality 0..*, and from 'tExp_Expression', the role 'tExp_Expression40' has cardinality 0..*.
+An association connects 'tExp_Term' and 'tExp_Expression'. From 'tExp_Term', the role 'tExp_Term43' has cardinality 0..*, and from 'tExp_Expression', the role 'tExp_Expression42' has cardinality 0..*.
+An association connects 'tExp_Expression' and 'tExp_Expression'. From 'tExp_Expression', the role 'tExp_Expression46' has cardinality 0..*, and from 'tExp_Expression', the role 'tExp_Expression44' has cardinality 0..*.
+An association connects 'tExp_EventType' and 'tExp_PrologExpression'. From 'tExp_EventType', the role 'tExp_EventType48' has cardinality 0..*, and from 'tExp_PrologExpression', the role 'tExp_PrologExpression49' has cardinality 0..*.
+An association connects 'tExp_EventType' and 'tExp_PrologExpression'. From 'tExp_EventType', the role 'tExp_EventType51' has cardinality 0..*, and from 'tExp_PrologExpression', the role 'tExp_PrologExpression52' has cardinality 0..*.
+An association connects 'tExp_EventType' and 'tExp_Msg'. From 'tExp_EventType', the role 'tExp_EventType54' has cardinality 0..*, and from 'tExp_Msg', the role 'tExp_Msg' has cardinality 0..*.
+An association connects 'tExp_EventType' and 'tExp_Channel'. From 'tExp_EventType', the role 'tExp_EventType56' has cardinality 0..*, and from 'tExp_Channel', the role 'tExp_Channel57' has cardinality 0..*.
+An association connects 'tExp_Role' and 'tExp_Msg'. From 'tExp_Role', the role 'tExp_Role60' has cardinality 0..*, and from 'tExp_Msg', the role 'tExp_Msg59' has cardinality 0..*.
+An association connects 'tExp_Msg' and 'tExp_Role'. From 'tExp_Msg', the role 'tExp_Msg62' has cardinality 0..*, and from 'tExp_Role', the role 'tExp_Role63' has cardinality 0..*.
+An association connects 'tExp_Role' and 'tExp_Msg'. From 'tExp_Role', the role 'tExp_Role66' has cardinality 0..*, and from 'tExp_Msg', the role 'tExp_Msg65' has cardinality 0..*.
+An association connects 'tExp_Msg' and 'tExp_Role'. From 'tExp_Msg', the role 'tExp_Msg68' has cardinality 0..*, and from 'tExp_Role', the role 'tExp_Role69' has cardinality 0..*.
+An association connects 'tExp_PrologExpression' and 'tExp_Msg'. From 'tExp_PrologExpression', the role 'tExp_PrologExpression72' has cardinality 0..*, and from 'tExp_Msg', the role 'tExp_Msg71' has cardinality 0..*.
+An association connects 'tExp_Msg' and 'tExp_PrologExpression'. From 'tExp_Msg', the role 'tExp_Msg74' has cardinality 0..*, and from 'tExp_PrologExpression', the role 'tExp_PrologExpression75' has cardinality 0..*.
+An association connects 'tExp_Together' and 'tExp_Partition'. From 'tExp_Together', the role 'tExp_Together' has cardinality 0..*, and from 'tExp_Partition', the role 'tExp_Partition77' has cardinality 0..*.
+An association connects 'tExp_Together' and 'tExp_Role'. From 'tExp_Together', the role 'tExp_Together79' has cardinality 0..*, and from 'tExp_Role', the role 'tExp_Role80' has cardinality 0..*.
+An association connects 'tExp_Role' and 'tExp_Constraint'. From 'tExp_Role', the role 'tExp_Role83' has cardinality 0..*, and from 'tExp_Constraint', the role 'tExp_Constraint82' has cardinality 0..*.
+An association connects 'tExp_Role' and 'tExp_Constraint'. From 'tExp_Role', the role 'tExp_Role86' has cardinality 0..*, and from 'tExp_Constraint', the role 'tExp_Constraint85' has cardinality 0..*.
+An association connects 'tExp_AtomExpression' and 'tExp_PrologExpression'. From 'tExp_AtomExpression', the role 'tExp_AtomExpression' has cardinality 0..*, and from 'tExp_PrologExpression', the role 'tExp_PrologExpression88' has cardinality 0..*.
+An association connects 'tExp_ListExpression' and 'tExp_PrologExpression'. From 'tExp_ListExpression', the role 'tExp_ListExpression' has cardinality 0..*, and from 'tExp_PrologExpression', the role 'tExp_PrologExpression90' has cardinality 0..*.
+An association connects 'tExp_ListExpression' and 'tExp_PrologExpression'. From 'tExp_ListExpression', the role 'tExp_ListExpression92' has cardinality 0..*, and from 'tExp_PrologExpression', the role 'tExp_PrologExpression93' has cardinality 0..*.
+An association connects 'tExp_ShuffleExpr' and 'tExp_Expression'. From 'tExp_ShuffleExpr', the role 'tExp_ShuffleExpr' has cardinality 0..*, and from 'tExp_Expression', the role 'tExp_Expression95' has cardinality 0..*.
+An association connects 'tExp_Expression' and 'tExp_ShuffleExpr'. From 'tExp_Expression', the role 'tExp_Expression98' has cardinality 0..*, and from 'tExp_ShuffleExpr', the role 'tExp_ShuffleExpr97' has cardinality 0..*.
+An association connects 'tExp_UnionExpr' and 'tExp_Expression'. From 'tExp_UnionExpr', the role 'tExp_UnionExpr' has cardinality 0..*, and from 'tExp_Expression', the role 'tExp_Expression100' has cardinality 0..*.
+An association connects 'tExp_UnionExpr' and 'tExp_Expression'. From 'tExp_UnionExpr', the role 'tExp_UnionExpr102' has cardinality 0..*, and from 'tExp_Expression', the role 'tExp_Expression103' has cardinality 0..*.
+An association connects 'tExp_Expression' and 'tExp_AndExpr'. From 'tExp_Expression', the role 'tExp_Expression105' has cardinality 0..*, and from 'tExp_AndExpr', the role 'tExp_AndExpr' has cardinality 0..*.
+An association connects 'tExp_Expression' and 'tExp_AndExpr'. From 'tExp_Expression', the role 'tExp_Expression108' has cardinality 0..*, and from 'tExp_AndExpr', the role 'tExp_AndExpr107' has cardinality 0..*.
+An association connects 'tExp_Expression' and 'tExp_CatExpr'. From 'tExp_Expression', the role 'tExp_Expression110' has cardinality 0..*, and from 'tExp_CatExpr', the role 'tExp_CatExpr' has cardinality 0..*.
+An association connects 'tExp_Expression' and 'tExp_CatExpr'. From 'tExp_Expression', the role 'tExp_Expression113' has cardinality 0..*, and from 'tExp_CatExpr', the role 'tExp_CatExpr112' has cardinality 0..*.
+An association connects 'tExp_Expression' and 'tExp_SeqExpr'. From 'tExp_Expression', the role 'tExp_Expression115' has cardinality 0..*, and from 'tExp_SeqExpr', the role 'tExp_SeqExpr' has cardinality 0..*.
+An association connects 'tExp_FilterExpr' and 'tExp_Expression'. From 'tExp_FilterExpr', the role 'tExp_FilterExpr' has cardinality 0..*, and from 'tExp_Expression', the role 'tExp_Expression117' has cardinality 0..*.
+An association connects 'tExp_VarExpr' and 'tExp_Expression'. From 'tExp_VarExpr', the role 'tExp_VarExpr' has cardinality 0..*, and from 'tExp_Expression', the role 'tExp_Expression119' has cardinality 0..*.
+An association connects 'tExp_TerminalExpr' and 'tExp_Expression'. From 'tExp_TerminalExpr', the role 'tExp_TerminalExpr' has cardinality 0..*, and from 'tExp_Expression', the role 'tExp_Expression121' has cardinality 0..*.

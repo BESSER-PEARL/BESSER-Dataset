@@ -1,0 +1,57 @@
+The domain model 'mathInterpeter' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'mathInterpeter_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpeter_MathExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpeter_Number' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpeter_Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpeter_Mult' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpeter_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpeter_Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpeter_Parenthesis' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpeter_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mathInterpeter_Primary' is a specialization of 'Exp'.
+The class 'mathInterpeter_Parenthesis' is a specialization of 'Primary'.
+The class 'mathInterpeter_Number' is a specialization of 'Primary'.
+The class 'mathInterpeter_Plus' is a specialization of 'Exp'.
+The class 'mathInterpeter_Minus' is a specialization of 'Exp'.
+The class 'mathInterpeter_Mult' is a specialization of 'Exp'.
+The class 'mathInterpeter_Div' is a specialization of 'Exp'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mathInterpeter_MathExp' and 'mathInterpeter_Exp'. From 'mathInterpeter_MathExp', the role 'mathInterpeter_MathExp' has cardinality 0..*, and from 'mathInterpeter_Exp', the role 'mathInterpeter_Exp' has cardinality 0..*.
+An association connects 'mathInterpeter_Parenthesis' and 'mathInterpeter_Exp'. From 'mathInterpeter_Parenthesis', the role 'mathInterpeter_Parenthesis' has cardinality 0..*, and from 'mathInterpeter_Exp', the role 'mathInterpeter_Exp2' has cardinality 0..*.
+An association connects 'mathInterpeter_Exp' and 'mathInterpeter_Plus'. From 'mathInterpeter_Exp', the role 'mathInterpeter_Exp4' has cardinality 0..*, and from 'mathInterpeter_Plus', the role 'mathInterpeter_Plus' has cardinality 0..*.
+An association connects 'mathInterpeter_Plus' and 'mathInterpeter_Exp'. From 'mathInterpeter_Plus', the role 'mathInterpeter_Plus6' has cardinality 0..*, and from 'mathInterpeter_Exp', the role 'mathInterpeter_Exp7' has cardinality 0..*.
+An association connects 'mathInterpeter_Minus' and 'mathInterpeter_Exp'. From 'mathInterpeter_Minus', the role 'mathInterpeter_Minus' has cardinality 0..*, and from 'mathInterpeter_Exp', the role 'mathInterpeter_Exp9' has cardinality 0..*.
+An association connects 'mathInterpeter_Exp' and 'mathInterpeter_Minus'. From 'mathInterpeter_Exp', the role 'mathInterpeter_Exp12' has cardinality 0..*, and from 'mathInterpeter_Minus', the role 'mathInterpeter_Minus11' has cardinality 0..*.
+An association connects 'mathInterpeter_Mult' and 'mathInterpeter_Exp'. From 'mathInterpeter_Mult', the role 'mathInterpeter_Mult' has cardinality 0..*, and from 'mathInterpeter_Exp', the role 'mathInterpeter_Exp14' has cardinality 0..*.
+An association connects 'mathInterpeter_Primary' and 'mathInterpeter_Mult'. From 'mathInterpeter_Primary', the role 'mathInterpeter_Primary' has cardinality 0..*, and from 'mathInterpeter_Mult', the role 'mathInterpeter_Mult16' has cardinality 0..*.
+An association connects 'mathInterpeter_Div' and 'mathInterpeter_Exp'. From 'mathInterpeter_Div', the role 'mathInterpeter_Div' has cardinality 0..*, and from 'mathInterpeter_Exp', the role 'mathInterpeter_Exp18' has cardinality 0..*.
+An association connects 'mathInterpeter_Primary' and 'mathInterpeter_Div'. From 'mathInterpeter_Primary', the role 'mathInterpeter_Primary21' has cardinality 0..*, and from 'mathInterpeter_Div', the role 'mathInterpeter_Div20' has cardinality 0..*.

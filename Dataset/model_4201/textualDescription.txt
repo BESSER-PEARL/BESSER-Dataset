@@ -1,0 +1,16 @@
+The domain model 'helloWorld' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'helloWorld_Greeting' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'helloWorld_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'helloWorld_KeywordsExample' represents an important domain concept.
+It has one attribute: 'option', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'helloWorld_Model' and 'helloWorld_Greeting'. From 'helloWorld_Model', the role 'helloWorld_Model' has cardinality 0..*, and from 'helloWorld_Greeting', the role 'helloWorld_Greeting' has cardinality 0..*.
+An association connects 'helloWorld_Model' and 'helloWorld_KeywordsExample'. From 'helloWorld_Model', the role 'helloWorld_Model2' has cardinality 0..*, and from 'helloWorld_KeywordsExample', the role 'helloWorld_KeywordsExample' has cardinality 0..*.

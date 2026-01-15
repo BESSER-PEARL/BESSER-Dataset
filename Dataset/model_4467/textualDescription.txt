@@ -1,0 +1,52 @@
+The domain model 'polybot_modelling_language' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'polybot_modelling_language_TurnLeft' represents an important domain concept.
+It does not declare any attributes.
+
+'polybot_modelling_language_Robot' represents an important domain concept.
+It has one attribute: 'debug', which is of type bool.
+
+'polybot_modelling_language_ComeHome' represents an important domain concept.
+It does not declare any attributes.
+
+'polybot_modelling_language_Release' represents an important domain concept.
+It does not declare any attributes.
+
+'Turn' represents an important domain concept.
+It does not declare any attributes.
+
+'polybot_modelling_language_Scene' represents an important domain concept.
+It does not declare any attributes.
+
+'polybot_modelling_language_Turn' represents an important domain concept.
+It has one attribute: 'angle', which is of type int.
+
+'polybot_modelling_language_TurnRight' represents an important domain concept.
+It does not declare any attributes.
+
+'polybot_modelling_language_Instruction' represents an important domain concept.
+It has the following attributes: 'nextInstructionFalse', which is of type str; 'nextInstruction', which is of type str; 'name', which is of type str; 'nextInstructionTrue', which is of type str.
+
+'polybot_modelling_language_Catch' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'polybot_modelling_language_MoveStraight' represents an important domain concept.
+It has one attribute: 'distance', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'polybot_modelling_language_MoveStraight' is a specialization of 'Instruction'.
+The class 'polybot_modelling_language_TurnRight' is a specialization of 'Turn'.
+The class 'polybot_modelling_language_Release' is a specialization of 'Instruction'.
+The class 'polybot_modelling_language_Catch' is a specialization of 'Instruction'.
+The class 'polybot_modelling_language_TurnLeft' is a specialization of 'Turn'.
+The class 'polybot_modelling_language_Turn' is a specialization of 'Instruction'.
+The class 'polybot_modelling_language_ComeHome' is a specialization of 'Instruction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'polybot_modelling_language_Scene' and 'polybot_modelling_language_Robot'. From 'polybot_modelling_language_Scene', the role 'polybot_modelling_language_Scene' has cardinality 0..*, and from 'polybot_modelling_language_Robot', the role 'polybot_modelling_language_Robot' has cardinality 0..*.
+An association connects 'polybot_modelling_language_Robot' and 'polybot_modelling_language_Instruction'. From 'polybot_modelling_language_Robot', the role 'polybot_modelling_language_Robot2' has cardinality 0..*, and from 'polybot_modelling_language_Instruction', the role 'polybot_modelling_language_Instruction' has cardinality 0..*.

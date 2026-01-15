@@ -1,0 +1,132 @@
+The domain model 'UML' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_LiteralInteger' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Element' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'name', which is of type str.
+
+'UML_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_LiteralUnlimitedNatural' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'UML_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_TemplateBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_TemplateParameterSubstitution' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Property' represents an important domain concept.
+It has one attribute: 'isStatic', which is of type bool.
+
+'UML_Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Parameter' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'UML_PackageableElement' is a specialization of 'Element'.
+The class 'UML_Package' is a specialization of 'PackageableElement'.
+The class 'UML_Model' is a specialization of 'Package'.
+The class 'UML_TypedElement' is a specialization of 'Element'.
+The class 'UML_PrimitiveType' is a specialization of 'Package'.
+The class 'UML_LiteralInteger' is a specialization of 'Package'.
+The class 'UML_LiteralUnlimitedNatural' is a specialization of 'Package'.
+The class 'UML_Attribute' is a specialization of 'TypedElement'.
+The class 'UML_Property' is a specialization of 'Attribute'.
+The class 'UML_Parameter' is a specialization of 'TypedElement'.
+The class 'UML_Operation' is a specialization of 'Package'.
+The class 'UML_Class' is a specialization of 'Package'.
+The class 'UML_Interface' is a specialization of 'Class'.
+The class 'UML_EnumerationLiteral' is a specialization of 'Package'.
+The class 'UML_Enumeration' is a specialization of 'Class'.
+The class 'UML_Generalization' is a specialization of 'Element'.
+The class 'UML_Association' is a specialization of 'Package'.
+The class 'UML_TemplateParameterSubstitution' is a specialization of 'Element'.
+The class 'UML_TemplateBinding' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML_Package' and 'UML_PackageableElement'. From 'UML_Package', the role 'UML_Package' has cardinality 0..*, and from 'UML_PackageableElement', the role 'UML_PackageableElement' has cardinality 0..*.
+An association connects 'UML_TypedElement' and 'UML_Package'. From 'UML_TypedElement', the role 'UML_TypedElement' has cardinality 0..*, and from 'UML_Package', the role 'UML_Package2' has cardinality 0..*.
+An association connects 'UML_TypedElement' and 'UML_LiteralInteger'. From 'UML_TypedElement', the role 'UML_TypedElement4' has cardinality 0..*, and from 'UML_LiteralInteger', the role 'UML_LiteralInteger' has cardinality 0..*.
+An association connects 'UML_TypedElement' and 'UML_LiteralUnlimitedNatural'. From 'UML_TypedElement', the role 'UML_TypedElement6' has cardinality 0..*, and from 'UML_LiteralUnlimitedNatural', the role 'UML_LiteralUnlimitedNatural' has cardinality 0..*.
+An association connects 'UML_Property' and 'UML_Association'. From 'UML_Property', the role 'UML_Property' has cardinality 0..*, and from 'UML_Association', the role 'UML_Association' has cardinality 0..*.
+An association connects 'UML_Property' and 'UML_Property'. From 'UML_Property', the role 'UML_Property8' has cardinality 0..*, and from 'UML_Property', the role 'UML_Property10' has cardinality 0..*.
+An association connects 'UML_Association' and 'UML_Property'. From 'UML_Association', the role 'UML_Association13' has cardinality 0..*, and from 'UML_Property', the role 'UML_Property12' has cardinality 0..*.
+An association connects 'UML_Property' and 'UML_Association'. From 'UML_Property', the role 'UML_Property15' has cardinality 0..*, and from 'UML_Association', the role 'UML_Association16' has cardinality 0..*.
+An association connects 'UML_Interface' and 'UML_Property'. From 'UML_Interface', the role 'UML_Interface' has cardinality 0..*, and from 'UML_Property', the role 'UML_Property18' has cardinality 0..*.
+An association connects 'UML_Operation' and 'UML_Parameter'. From 'UML_Operation', the role 'UML_Operation' has cardinality 0..*, and from 'UML_Parameter', the role 'UML_Parameter' has cardinality 0..*.
+An association connects 'UML_Operation' and 'UML_Class'. From 'UML_Operation', the role 'UML_Operation21' has cardinality 0..*, and from 'UML_Class', the role 'UML_Class' has cardinality 0..*.
+An association connects 'UML_Operation' and 'UML_Interface'. From 'UML_Operation', the role 'UML_Operation23' has cardinality 0..*, and from 'UML_Interface', the role 'UML_Interface24' has cardinality 0..*.
+An association connects 'UML_Attribute' and 'UML_Class'. From 'UML_Attribute', the role 'UML_Attribute' has cardinality 0..*, and from 'UML_Class', the role 'UML_Class26' has cardinality 0..*.
+An association connects 'UML_Class' and 'UML_Operation'. From 'UML_Class', the role 'UML_Class28' has cardinality 0..*, and from 'UML_Operation', the role 'UML_Operation29' has cardinality 0..*.
+An association connects 'UML_Generalization' and 'UML_Class'. From 'UML_Generalization', the role 'UML_Generalization' has cardinality 0..*, and from 'UML_Class', the role 'UML_Class31' has cardinality 0..*.
+An association connects 'UML_TemplateBinding' and 'UML_Class'. From 'UML_TemplateBinding', the role 'UML_TemplateBinding' has cardinality 0..*, and from 'UML_Class', the role 'UML_Class33' has cardinality 0..*.
+An association connects 'UML_Class' and 'UML_Class'. From 'UML_Class', the role 'UML_Class36' has cardinality 0..*, and from 'UML_Class', the role 'UML_Class34' has cardinality 0..*.
+An association connects 'UML_Enumeration' and 'UML_EnumerationLiteral'. From 'UML_Enumeration', the role 'UML_Enumeration' has cardinality 0..*, and from 'UML_EnumerationLiteral', the role 'UML_EnumerationLiteral' has cardinality 0..*.
+An association connects 'UML_EnumerationLiteral' and 'UML_Enumeration'. From 'UML_EnumerationLiteral', the role 'UML_EnumerationLiteral39' has cardinality 0..*, and from 'UML_Enumeration', the role 'UML_Enumeration40' has cardinality 0..*.
+An association connects 'UML_Enumeration' and 'UML_EnumerationLiteral'. From 'UML_Enumeration', the role 'UML_Enumeration42' has cardinality 0..*, and from 'UML_EnumerationLiteral', the role 'UML_EnumerationLiteral43' has cardinality 0..*.
+An association connects 'UML_Class' and 'UML_Generalization'. From 'UML_Class', the role 'UML_Class46' has cardinality 0..*, and from 'UML_Generalization', the role 'UML_Generalization45' has cardinality 0..*.
+An association connects 'UML_Generalization' and 'UML_Class'. From 'UML_Generalization', the role 'UML_Generalization48' has cardinality 0..*, and from 'UML_Class', the role 'UML_Class49' has cardinality 0..*.
+An association connects 'UML_Property' and 'UML_Association'. From 'UML_Property', the role 'UML_Property52' has cardinality 0..*, and from 'UML_Association', the role 'UML_Association51' has cardinality 0..*.
+An association connects 'UML_Association' and 'UML_Property'. From 'UML_Association', the role 'UML_Association54' has cardinality 0..*, and from 'UML_Property', the role 'UML_Property55' has cardinality 0..*.
+An association connects 'UML_Package' and 'UML_TemplateParameterSubstitution'. From 'UML_Package', the role 'UML_Package57' has cardinality 0..*, and from 'UML_TemplateParameterSubstitution', the role 'UML_TemplateParameterSubstitution' has cardinality 0..*.
+An association connects 'UML_TemplateParameterSubstitution' and 'UML_TemplateBinding'. From 'UML_TemplateParameterSubstitution', the role 'UML_TemplateParameterSubstitution59' has cardinality 0..*, and from 'UML_TemplateBinding', the role 'UML_TemplateBinding60' has cardinality 0..*.
+An association connects 'UML_TemplateBinding' and 'UML_TemplateParameterSubstitution'. From 'UML_TemplateBinding', the role 'UML_TemplateBinding62' has cardinality 0..*, and from 'UML_TemplateParameterSubstitution', the role 'UML_TemplateParameterSubstitution63' has cardinality 0..*.
+An association connects 'UML_Package' and 'UML_TemplateBinding'. From 'UML_Package', the role 'UML_Package66' has cardinality 0..*, and from 'UML_TemplateBinding', the role 'UML_TemplateBinding65' has cardinality 0..*.

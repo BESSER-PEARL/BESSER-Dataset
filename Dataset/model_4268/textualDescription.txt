@@ -1,0 +1,28 @@
+The domain model 'bowling' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'bowling_League' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bowling_Tournament' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'bowling_Player' represents an important domain concept.
+It has the following attributes: 'dateOfBirth', which is of type date; 'name', which is of type str; 'isProfessional', which is of type bool; 'height', which is of type float.
+
+'bowling_Matchup' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'bowling_Game' represents an important domain concept.
+It has one attribute: 'frames', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TournamentType' defines the following possible values: 'Pro', 'Amateur'.
+
+Relationships between classes are modeled using associations.
+An association connects 'bowling_Player' and 'bowling_League'. From 'bowling_Player', the role 'bowling_Player' has cardinality 0..*, and from 'bowling_League', the role 'bowling_League' has cardinality 0..*.
+An association connects 'bowling_Tournament' and 'bowling_Matchup'. From 'bowling_Tournament', the role 'bowling_Tournament' has cardinality 0..*, and from 'bowling_Matchup', the role 'bowling_Matchup' has cardinality 0..*.
+An association connects 'bowling_Game' and 'bowling_Matchup'. From 'bowling_Game', the role 'Game' has cardinality 0..*, and from 'bowling_Matchup', the role 'matchup' has cardinality 0..*.
+An association connects 'bowling_Matchup' and 'bowling_Game'. From 'bowling_Matchup', the role 'Matchup' has cardinality 0..*, and from 'bowling_Game', the role 'games' has cardinality 0..*.
+An association connects 'bowling_Player' and 'bowling_Game'. From 'bowling_Player', the role 'bowling_Player5' has cardinality 0..*, and from 'bowling_Game', the role 'bowling_Game' has cardinality 0..*.

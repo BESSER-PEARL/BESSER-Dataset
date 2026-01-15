@@ -1,0 +1,135 @@
+The domain model 'gv' describes the core structural elements and their relationships within the system.
+
+The model defines 28 main class(es).
+
+'StrictIdentifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'gv_Identifiable' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'Connectable' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'gv_AList' represents an important domain concept.
+It does not declare any attributes.
+
+'Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'gv_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Commentable' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'gv_Graph' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'strict', which is of type str.
+
+'gv_AttributeStatement' represents an important domain concept.
+It has one attribute: 'context', which is of type str.
+
+'gv_Attributable' represents an important domain concept.
+It does not declare any attributes.
+
+'gv_AssignmentStatement' represents an important domain concept.
+It has the following attributes: 'right', which is of type str; 'left', which is of type str.
+
+'gv_Commentable' represents an important domain concept.
+It has one attribute: 'comments', which is of type str.
+
+'gv_AttributeList' represents an important domain concept.
+It does not declare any attributes.
+
+'gv_EdgeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Attributable' represents an important domain concept.
+It does not declare any attributes.
+
+'gv_StatementList' represents an important domain concept.
+It does not declare any attributes.
+
+'gv_Attribute' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'gv_NodeStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'gv_Connectable' represents an important domain concept.
+It does not declare any attributes.
+
+'gv_Target' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+'gv_AbstractGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'gv_Port' represents an important domain concept.
+It has one attribute: 'compass', which is of type str.
+
+'gv_StrictIdentifiable' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'gv_Subgraph' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'gv_NodeID' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Compass' defines the following possible values: 'EAST', 'NORTH_EAST', 'SOUTH_WEST', 'SOUTH', 'APPROPRIATE', 'NORTH_WEST', 'WEST', 'NORTH', 'SOUTH_EAST', 'CENTER'.
+
+The model also captures inheritance relationships between classes.
+The class 'gv_AbstractGraph' is a specialization of 'Identifiable'.
+The class 'gv_AList' is a specialization of 'Commentable'.
+The class 'gv_AssignmentStatement' is a specialization of 'Statement'.
+The class 'gv_AssignmentStatement' is a specialization of 'Commentable'.
+The class 'gv_Attribute' is a specialization of 'Commentable'.
+The class 'gv_AttributeList' is a specialization of 'Commentable'.
+The class 'gv_AttributeStatement' is a specialization of 'Statement'.
+The class 'gv_AttributeStatement' is a specialization of 'Commentable'.
+The class 'gv_EdgeStatement' is a specialization of 'Statement'.
+The class 'gv_EdgeStatement' is a specialization of 'Attributable'.
+The class 'gv_EdgeStatement' is a specialization of 'Commentable'.
+The class 'gv_Graph' is a specialization of 'AbstractGraph'.
+The class 'gv_Graph' is a specialization of 'Commentable'.
+The class 'gv_NodeStatement' is a specialization of 'Statement'.
+The class 'gv_NodeStatement' is a specialization of 'Attributable'.
+The class 'gv_NodeStatement' is a specialization of 'Attribute'.
+The class 'gv_NodeID' is a specialization of 'Connectable'.
+The class 'gv_NodeID' is a specialization of 'StrictIdentifiable'.
+The class 'gv_NodeID' is a specialization of 'Commentable'.
+The class 'gv_Port' is a specialization of 'Identifiable'.
+The class 'gv_Port' is a specialization of 'Commentable'.
+The class 'gv_StatementList' is a specialization of 'Commentable'.
+The class 'gv_Subgraph' is a specialization of 'AbstractGraph'.
+The class 'gv_Subgraph' is a specialization of 'Connectable'.
+The class 'gv_Subgraph' is a specialization of 'Commentable'.
+The class 'gv_Target' is a specialization of 'Commentable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gv_StatementList' and 'gv_AbstractGraph'. From 'gv_StatementList', the role 'gv_StatementList' has cardinality 0..*, and from 'gv_AbstractGraph', the role 'gv_AbstractGraph' has cardinality 0..*.
+An association connects 'gv_Attribute' and 'gv_AList'. From 'gv_Attribute', the role 'gv_Attribute' has cardinality 0..*, and from 'gv_AList', the role 'gv_AList' has cardinality 0..*.
+An association connects 'gv_AList' and 'gv_AList'. From 'gv_AList', the role 'gv_AList4' has cardinality 0..*, and from 'gv_AList', the role 'gv_AList2' has cardinality 0..*.
+An association connects 'gv_AttributeList' and 'gv_Attributable'. From 'gv_AttributeList', the role 'gv_AttributeList' has cardinality 0..*, and from 'gv_Attributable', the role 'gv_Attributable' has cardinality 0..*.
+An association connects 'gv_AList' and 'gv_AttributeList'. From 'gv_AList', the role 'gv_AList8' has cardinality 0..*, and from 'gv_AttributeList', the role 'gv_AttributeList7' has cardinality 0..*.
+An association connects 'gv_AttributeList' and 'gv_AttributeList'. From 'gv_AttributeList', the role 'gv_AttributeList9' has cardinality 0..*, and from 'gv_AttributeList', the role 'gv_AttributeList11' has cardinality 0..*.
+An association connects 'gv_AttributeList' and 'gv_AttributeStatement'. From 'gv_AttributeList', the role 'gv_AttributeList13' has cardinality 0..*, and from 'gv_AttributeStatement', the role 'gv_AttributeStatement' has cardinality 0..*.
+An association connects 'gv_EdgeStatement' and 'gv_Connectable'. From 'gv_EdgeStatement', the role 'gv_EdgeStatement' has cardinality 0..*, and from 'gv_Connectable', the role 'gv_Connectable' has cardinality 0..*.
+An association connects 'gv_EdgeStatement' and 'gv_Target'. From 'gv_EdgeStatement', the role 'gv_EdgeStatement16' has cardinality 0..*, and from 'gv_Target', the role 'gv_Target' has cardinality 0..*.
+An association connects 'gv_NodeID' and 'gv_NodeStatement'. From 'gv_NodeID', the role 'gv_NodeID' has cardinality 0..*, and from 'gv_NodeStatement', the role 'gv_NodeStatement' has cardinality 0..*.
+An association connects 'gv_NodeID' and 'gv_Port'. From 'gv_NodeID', the role 'gv_NodeID19' has cardinality 0..*, and from 'gv_Port', the role 'gv_Port' has cardinality 0..*.
+An association connects 'gv_Statement' and 'gv_StatementList'. From 'gv_Statement', the role 'gv_Statement' has cardinality 0..*, and from 'gv_StatementList', the role 'gv_StatementList21' has cardinality 0..*.
+An association connects 'gv_StatementList' and 'gv_StatementList'. From 'gv_StatementList', the role 'gv_StatementList22' has cardinality 0..*, and from 'gv_StatementList', the role 'gv_StatementList24' has cardinality 0..*.
+An association connects 'gv_Target' and 'gv_Target'. From 'gv_Target', the role 'gv_Target27' has cardinality 0..*, and from 'gv_Target', the role 'gv_Target25' has cardinality 0..*.
+An association connects 'gv_Target' and 'gv_Connectable'. From 'gv_Target', the role 'gv_Target29' has cardinality 0..*, and from 'gv_Connectable', the role 'gv_Connectable30' has cardinality 0..*.

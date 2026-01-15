@@ -1,0 +1,26 @@
+The domain model 'Data' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'Data_DeclarationType' represents an important domain concept.
+It has one attribute: 'nom', which is of type str.
+
+'Data_Attribut' represents an important domain concept.
+It has the following attributes: 'nom', which is of type str; 'estTableau', which is of type bool; 'typeStr', which is of type str.
+
+'DeclarationType' represents an important domain concept.
+It does not declare any attributes.
+
+'Data_Modele' represents an important domain concept.
+It does not declare any attributes.
+
+'Data_Classe' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Data_Classe' is a specialization of 'DeclarationType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Data_Classe' and 'Data_Attribut'. From 'Data_Classe', the role 'Data_Classe' has cardinality 0..*, and from 'Data_Attribut', the role 'Data_Attribut' has cardinality 0..*.
+An association connects 'Data_Classe' and 'Data_Attribut'. From 'Data_Classe', the role 'Data_Classe3' has cardinality 0..*, and from 'Data_Attribut', the role 'Data_Attribut2' has cardinality 0..*.
+An association connects 'Data_Modele' and 'Data_Classe'. From 'Data_Modele', the role 'Data_Modele' has cardinality 0..*, and from 'Data_Classe', the role 'Data_Classe5' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ifu-lobuntu/jbpm-designer-extensions/jbpm-designer-extensions-emf/models/DI.ecore

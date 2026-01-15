@@ -1,0 +1,12 @@
+The domain model 'ce' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'ce_Company' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ce_Employee' represents an important domain concept.
+It has the following attributes: 'department', which is of type str; 'name', which is of type str; 'address', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'ce_Employee' and 'ce_Company'. From 'ce_Employee', the role 'ce_Employee' has cardinality 0..*, and from 'ce_Company', the role 'ce_Company' has cardinality 0..*.

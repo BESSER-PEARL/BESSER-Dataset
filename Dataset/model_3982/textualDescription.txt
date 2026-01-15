@@ -1,0 +1,36 @@
+The domain model 'markov' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'markov_Entity' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'markov_Transition' represents an important domain concept.
+It has one attribute: 'probability', which is of type float.
+
+'markov_MarkovChain' represents an important domain concept.
+It does not declare any attributes.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'markov_Label' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'markov_State' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'traces', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'StateType' defines the following possible values: 'Failure', 'Success', 'Start', 'Default'.
+
+The model also captures inheritance relationships between classes.
+The class 'markov_State' is a specialization of 'Entity'.
+The class 'markov_Transition' is a specialization of 'Entity'.
+The class 'markov_MarkovChain' is a specialization of 'Entity'.
+
+Relationships between classes are modeled using associations.
+An association connects 'markov_Label' and 'markov_State'. From 'markov_Label', the role 'markov_Label' has cardinality 0..*, and from 'markov_State', the role 'markov_State' has cardinality 0..*.
+An association connects 'markov_State' and 'markov_Transition'. From 'markov_State', the role 'markov_State2' has cardinality 0..*, and from 'markov_Transition', the role 'markov_Transition' has cardinality 0..*.
+An association connects 'markov_State' and 'markov_Transition'. From 'markov_State', the role 'markov_State5' has cardinality 0..*, and from 'markov_Transition', the role 'markov_Transition4' has cardinality 0..*.
+An association connects 'markov_MarkovChain' and 'markov_State'. From 'markov_MarkovChain', the role 'markov_MarkovChain' has cardinality 0..*, and from 'markov_State', the role 'markov_State7' has cardinality 0..*.
+An association connects 'markov_Transition' and 'markov_MarkovChain'. From 'markov_Transition', the role 'markov_Transition10' has cardinality 0..*, and from 'markov_MarkovChain', the role 'markov_MarkovChain9' has cardinality 0..*.

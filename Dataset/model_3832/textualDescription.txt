@@ -1,0 +1,6 @@
+The domain model 'attributeTest' describes the core structural elements and their relationships within the system.
+
+The model defines 1 main class(es).
+
+'attributeTest_Root' represents an important domain concept.
+It has the following attributes: 'longPrimitive', which is of type str; 'listInt1', which is of type int; 'byteObj', which is of type str; 'bigInteger', which is of type str; 'javaObject', which is of type str; 'stringObj', which is of type str; 'listString', which is of type str; 'doubleObj', which is of type str; 'charPrimitive', which is of type str; 'shortObj', which is of type str; 'listShort', which is of type str; 'map', which is of type str; 'floatPrimitive', which is of type float; 'intObj', which is of type str; 'listInt', which is of type int; 'longObj', which is of type str; 'date', which is of type date; 'boolPrimitive', which is of type bool; 'boolObj', which is of type str; 'shortPrimitive', which is of type str; 'intPrimitive', which is of type int; 'eList', which is of type str; 'floatObj', which is of type str; 'bytePrimitive', which is of type str; 'bigDecimal', which is of type str; 'listInt2', which is of type int; 'byteArray', which is of type str; 'charObj', which is of type str; 'doublePrimitive', which is of type float.

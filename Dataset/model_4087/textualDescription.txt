@@ -1,0 +1,18 @@
+The domain model 'simpleuml' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'simpleuml_Class' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleuml_Class' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleuml_Class' and 'simpleuml_Classifier'. From 'simpleuml_Class', the role 'simpleuml_Class' has cardinality 0..*, and from 'simpleuml_Classifier', the role 'simpleuml_Classifier' has cardinality 0..*.

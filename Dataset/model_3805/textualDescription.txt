@@ -1,0 +1,20 @@
+The domain model 'stateMachineEditRules' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'stateMachineEditRules_State' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'isEnd', which is of type bool; 'isStart', which is of type bool.
+
+'stateMachineEditRules_Transition' represents an important domain concept.
+It has one attribute: 'input', which is of type str.
+
+'stateMachineEditRules_DFA' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'stateMachineEditRules_State' and 'stateMachineEditRules_Transition'. From 'stateMachineEditRules_State', the role 'State' has cardinality 0..*, and from 'stateMachineEditRules_Transition', the role 'incomingTransitions' has cardinality 0..*.
+An association connects 'stateMachineEditRules_Transition' and 'stateMachineEditRules_State'. From 'stateMachineEditRules_Transition', the role 'outgoingTransitions' has cardinality 0..*, and from 'stateMachineEditRules_State', the role 'State2' has cardinality 0..*.
+An association connects 'stateMachineEditRules_Transition' and 'stateMachineEditRules_State'. From 'stateMachineEditRules_Transition', the role 'Transition' has cardinality 0..*, and from 'stateMachineEditRules_State', the role 'to' has cardinality 0..*.
+An association connects 'stateMachineEditRules_State' and 'stateMachineEditRules_Transition'. From 'stateMachineEditRules_State', the role 'from' has cardinality 0..*, and from 'stateMachineEditRules_Transition', the role 'Transition5' has cardinality 0..*.
+An association connects 'stateMachineEditRules_DFA' and 'stateMachineEditRules_State'. From 'stateMachineEditRules_DFA', the role 'stateMachineEditRules_DFA' has cardinality 0..*, and from 'stateMachineEditRules_State', the role 'stateMachineEditRules_State' has cardinality 0..*.
+An association connects 'stateMachineEditRules_Transition' and 'stateMachineEditRules_DFA'. From 'stateMachineEditRules_Transition', the role 'stateMachineEditRules_Transition' has cardinality 0..*, and from 'stateMachineEditRules_DFA', the role 'stateMachineEditRules_DFA8' has cardinality 0..*.

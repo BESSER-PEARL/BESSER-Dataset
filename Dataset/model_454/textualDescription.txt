@@ -1,0 +1,1472 @@
+The domain model 'UMLModel' describes the core structural elements and their relationships within the system.
+
+The model defines 327 main class(es).
+
+'VariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_SendSignalAction' represents an important domain concept.
+It has one attribute: 'signal', which is of type str.
+
+'UMLModel_ExecutionOccurrenceSpecification' represents an important domain concept.
+It has one attribute: 'execution', which is of type str.
+
+'UMLModel_DataStoreNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_LoopNode' represents an important domain concept.
+It has the following attributes: 'setupPart', which is of type str; 'test', which is of type str; 'decider', which is of type str; 'bodyOutput', which is of type str; 'bodyPart', which is of type str; 'isTestedFirst', which is of type str; 'loopVariable', which is of type str.
+
+'Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_BehavioredClassifier' represents an important domain concept.
+It has one attribute: 'classifierBehavior', which is of type str.
+
+'UMLModel_Region' represents an important domain concept.
+It has the following attributes: 'state', which is of type str; 'extendedRegion', which is of type str; 'stateMachine', which is of type str.
+
+'UMLModel_Constraint' represents an important domain concept.
+It has the following attributes: 'constrainedElement', which is of type str; 'context', which is of type str.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'CentralBufferNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_SendSignalEvent' represents an important domain concept.
+It has one attribute: 'signal', which is of type str.
+
+'UMLModel_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ReceiveSignalEvent' represents an important domain concept.
+It has one attribute: 'signal', which is of type str.
+
+'UMLModel_TemplateBinding' represents an important domain concept.
+It has the following attributes: 'boundElement', which is of type str; 'signature', which is of type str.
+
+'UMLModel_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Interval' represents an important domain concept.
+It has the following attributes: 'max', which is of type str; 'min', which is of type str.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ExecutionSpecification' represents an important domain concept.
+It has the following attributes: 'start', which is of type str; 'finish', which is of type str.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Lifeline' represents an important domain concept.
+It has the following attributes: 'coveredBy', which is of type str; 'decomposedAs', which is of type str; 'interaction', which is of type str; 'represents', which is of type str.
+
+'UMLModel_ParameterSet' represents an important domain concept.
+It has one attribute: 'parameter', which is of type str.
+
+'UMLModel_ObjectNode' represents an important domain concept.
+It has the following attributes: 'inState', which is of type str; 'selection', which is of type str; 'ordering', which is of type str; 'isControlType', which is of type str.
+
+'UMLModel_InteractionUse' represents an important domain concept.
+It has one attribute: 'refersTo', which is of type str.
+
+'DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'OccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_BroadcastSignalAction' represents an important domain concept.
+It has one attribute: 'signal', which is of type str.
+
+'UMLModel_CreateLinkObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_InteractionFragment' represents an important domain concept.
+It has the following attributes: 'enclosingInteraction', which is of type str; 'enclosingOperand', which is of type str; 'covered', which is of type str.
+
+'UMLModel_Vertex' represents an important domain concept.
+It has the following attributes: 'incoming', which is of type str; 'container', which is of type str; 'outgoing', which is of type str.
+
+'UMLModel_Transition' represents an important domain concept.
+It has the following attributes: 'guard', which is of type str; 'kind', which is of type str; 'source', which is of type str; 'target', which is of type str; 'container', which is of type str; 'redefinedTransition', which is of type str.
+
+'UMLModel_DeploymentTarget' represents an important domain concept.
+It has one attribute: 'deployedElement', which is of type str.
+
+'UMLModel_ReceiveOperationEvent' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Clause' represents an important domain concept.
+It has the following attributes: 'bodyOutput', which is of type str; 'test', which is of type str; 'predecessorClause', which is of type str; 'decider', which is of type str; 'successorClause', which is of type str; 'body', which is of type str.
+
+'UMLModel_ExpansionNode' represents an important domain concept.
+It has the following attributes: 'regionAsInput', which is of type str; 'regionAsOutput', which is of type str.
+
+'UMLModel_Association' represents an important domain concept.
+It has the following attributes: 'endType', which is of type str; 'isDerived', which is of type str; 'navigableOwnedEnd', which is of type str; 'memberEnd', which is of type str.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_VariableAction' represents an important domain concept.
+It has one attribute: 'variable', which is of type str.
+
+'UMLModel_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_DecisionNode' represents an important domain concept.
+It has one attribute: 'decisionInput', which is of type str.
+
+'ParameterableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_WriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Continuation' represents an important domain concept.
+It has one attribute: 'setting', which is of type str.
+
+'UMLModel_TemplateableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_BehavioralFeature' represents an important domain concept.
+It has the following attributes: 'isAbstract', which is of type str; 'method', which is of type str; 'raisedException', which is of type str; 'concurrency', which is of type str.
+
+'StructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ExpansionRegion' represents an important domain concept.
+It has the following attributes: 'outputElement', which is of type str; 'inputElement', which is of type str; 'mode', which is of type str.
+
+'UMLModel_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ActionInputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'InteractionFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_SequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Property' represents an important domain concept.
+It has the following attributes: 'opposite', which is of type str; 'isComposite', which is of type str; 'associationEnd', which is of type str; 'redefinedProperty', which is of type str; 'association', which is of type str; 'class', which is of type str; 'datatype', which is of type str; 'aggregation', which is of type str; 'owningAssociation', which is of type str; 'default', which is of type str; 'subsettedProperty', which is of type str; 'isDerived', which is of type str; 'isDerivedUnion', which is of type str.
+
+'CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_DeployedArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_TestIdentityAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Extend' represents an important domain concept.
+It has the following attributes: 'extensionLocation', which is of type str; 'extension', which is of type str; 'extendedCase', which is of type str.
+
+'UMLModel_ReclassifyObjectAction' represents an important domain concept.
+It has the following attributes: 'isReplaceAll', which is of type str; 'oldClassifier', which is of type str; 'newClassifier', which is of type str.
+
+'UMLModel_Message' represents an important domain concept.
+It has the following attributes: 'connector', which is of type str; 'interaction', which is of type str; 'sendEvent', which is of type str; 'messageKind', which is of type str; 'signature', which is of type str; 'receiveEvent', which is of type str; 'messageSort', which is of type str.
+
+'UMLModel_ParameterableElement' represents an important domain concept.
+It has the following attributes: 'owningTemplateParameter', which is of type str; 'templateParameter', which is of type str.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_SignalEvent' represents an important domain concept.
+It has one attribute: 'signal', which is of type str.
+
+'UMLModel_ActivityNode' represents an important domain concept.
+It has the following attributes: 'redefinedNode', which is of type str; 'incoming', which is of type str; 'inPartition', which is of type str; 'inInterruptibleRegion', which is of type str; 'inGroup', which is of type str; 'activity', which is of type str; 'inStructuredNode', which is of type str; 'outgoing', which is of type str.
+
+'UMLModel_CreationEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_CreateObjectAction' represents an important domain concept.
+It has one attribute: 'classifier', which is of type str.
+
+'UMLModel_ExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_CallBehaviorAction' represents an important domain concept.
+It has one attribute: 'behavior', which is of type str.
+
+'UMLModel_ConnectableElementTemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_TimeEvent' represents an important domain concept.
+It has one attribute: 'isRelative', which is of type str.
+
+'UMLModel_Extension' represents an important domain concept.
+It has the following attributes: 'metaClass', which is of type str; 'isRequired', which is of type str.
+
+'UMLModel_ReadLinkObjectEndAction' represents an important domain concept.
+It has one attribute: 'end', which is of type str.
+
+'UMLModel_TemplateSignature' represents an important domain concept.
+It has the following attributes: 'parameter', which is of type str; 'template', which is of type str.
+
+'UMLModel_StateInvariant' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ReadIsClassifiedObjectAction' represents an important domain concept.
+It has the following attributes: 'isDirect', which is of type str; 'classifier', which is of type str.
+
+'UMLModel_ConditionalNode' represents an important domain concept.
+It has the following attributes: 'isAssured', which is of type str; 'isDeterminate', which is of type str.
+
+'UMLModel_Comment' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'annotatedElement', which is of type str.
+
+'UMLModel_MessageEnd' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'UMLModel_TemplateParameterSubstitution' represents an important domain concept.
+It has the following attributes: 'formal', which is of type str; 'actual', which is of type str; 'templateBinding', which is of type str.
+
+'WriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ReadExtentAction' represents an important domain concept.
+It has one attribute: 'classifier', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_StartClassifierBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_CreateLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Package' represents an important domain concept.
+It has the following attributes: 'nestingPackage', which is of type str; 'ownedType', which is of type str; 'nestedPackage', which is of type str.
+
+'StructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_TemplateParameter' represents an important domain concept.
+It has the following attributes: 'default', which is of type str; 'parameteredElement', which is of type str; 'signature', which is of type str.
+
+'UMLModel_PackageMerge' represents an important domain concept.
+It has the following attributes: 'receivingPackage', which is of type str; 'mergedPackage', which is of type str.
+
+'UMLModel_ExtensionPoint' represents an important domain concept.
+It has one attribute: 'useCase', which is of type str.
+
+'CombinedFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ReadLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_WriteVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CreateLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Expression' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'UMLModel_MessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_CentralBufferNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_StructuralFeature' represents an important domain concept.
+It has one attribute: 'isReadOnly', which is of type str.
+
+'UMLModel_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_InteractionConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_MessageOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_SendObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Gate' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Parameter' represents an important domain concept.
+It has the following attributes: 'operation', which is of type str; 'default', which is of type str; 'isException', which is of type str; 'isStream', which is of type str; 'direction', which is of type str; 'parameterSet', which is of type str; 'effect', which is of type str.
+
+'UMLModel_IntervalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ActivityPartition' represents an important domain concept.
+It has the following attributes: 'superPartition', which is of type str; 'isExternal', which is of type str; 'isDimension', which is of type str; 'edge', which is of type str; 'node', which is of type str; 'subpartition', which is of type str; 'represents', which is of type str.
+
+'UMLModel_Deployment' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'deployedArtifact', which is of type str.
+
+'UMLModel_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Manifestation' represents an important domain concept.
+It has one attribute: 'utilizedElement', which is of type str.
+
+'UMLModel_Behavior' represents an important domain concept.
+It has the following attributes: 'redefinedBahavior', which is of type str; 'specification', which is of type str; 'precondition', which is of type str; 'isReentrant', which is of type str; 'context', which is of type str; 'postcondition', which is of type str.
+
+'UMLModel_Collaboration' represents an important domain concept.
+It has one attribute: 'collaborationRole', which is of type str.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Feature' represents an important domain concept.
+It has the following attributes: 'featuringClassifier', which is of type str; 'isStatic', which is of type str.
+
+'UMLModel_Model' represents an important domain concept.
+It has one attribute: 'viewpoint', which is of type str.
+
+'UMLModel_DeploymentSpecification' represents an important domain concept.
+It has the following attributes: 'deploymentLocation', which is of type str; 'deployment', which is of type str; 'executionLocation', which is of type str.
+
+'UMLModel_StructuredActivityNode' represents an important domain concept.
+It has one attribute: 'mustIsolate', which is of type str.
+
+'UMLModel_DirectedRelationship' represents an important domain concept.
+It has the following attributes: 'target', which is of type str; 'source', which is of type str.
+
+'UMLModel_ProfileApplication' represents an important domain concept.
+It has the following attributes: 'appliedProfile', which is of type str; 'applyingPackage', which is of type str; 'isStrict', which is of type str.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ConsiderIgnoreFragment' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'UMLModel_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_CallAction' represents an important domain concept.
+It has one attribute: 'isSynchronous', which is of type str.
+
+'UMLModel_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'upper', which is of type str; 'isOrdered', which is of type str; 'lower', which is of type str; 'isUnique', which is of type str.
+
+'UMLModel_EncapsulatedClassifier' represents an important domain concept.
+It has one attribute: 'ownedPort', which is of type str.
+
+'UMLModel_Component' represents an important domain concept.
+It has the following attributes: 'required', which is of type str; 'provided', which is of type str; 'indirectlyInstantiated', which is of type str.
+
+'UMLModel_InformationItem' represents an important domain concept.
+It has one attribute: 'represented', which is of type str.
+
+'UMLModel_AnyReceiveEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Reception' represents an important domain concept.
+It has one attribute: 'signal', which is of type str.
+
+'UMLModel_InteractionOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'OpaqueBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ReadVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Element' represents an important domain concept.
+It has the following attributes: 'href', which is of type str; 'owner', which is of type str; 'ownedElement', which is of type str.
+
+'UMLModel_InterfaceRealization' represents an important domain concept.
+It has the following attributes: 'contract', which is of type str; 'realizingClassifier', which is of type str.
+
+'UMLModel_ReadLinkObjectEndQualifierAction' represents an important domain concept.
+It has one attribute: 'qualifier', which is of type str.
+
+'UMLModel_NamedElement' represents an important domain concept.
+It has the following attributes: 'qualifiedName', which is of type str; 'namespace', which is of type str; 'visibility', which is of type str; 'name', which is of type str; 'clientDependency', which is of type str.
+
+'UMLModel_AddVariableValueAction' represents an important domain concept.
+It has one attribute: 'isReplaceAll', which is of type str.
+
+'UMLModel_ComponentRealization' represents an important domain concept.
+It has the following attributes: 'abstraction', which is of type str; 'realizingClassifier', which is of type str.
+
+'UMLModel_Duration' represents an important domain concept.
+It has the following attributes: 'expr', which is of type str; 'observation', which is of type str.
+
+'UMLModel_CommunicationPath' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_FlowFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_OperationTemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_TimeConstraint' represents an important domain concept.
+It has one attribute: 'firstEvent', which is of type str.
+
+'UMLModel_BehaviorExecutionSpecification' represents an important domain concept.
+It has one attribute: 'behavior', which is of type str.
+
+'MessageEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_AcceptEventAction' represents an important domain concept.
+It has one attribute: 'isUnmarshall', which is of type str.
+
+'UMLModel_FunctionBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Namespace' represents an important domain concept.
+It has the following attributes: 'member', which is of type str; 'importedMember', which is of type str; 'ownedMember', which is of type str.
+
+'WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_CallOperationAction' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+'Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Action' represents an important domain concept.
+It has the following attributes: 'output', which is of type str; 'input', which is of type str; 'context', which is of type str.
+
+'UMLModel_InformationFlow' represents an important domain concept.
+It has the following attributes: 'realizingConnector', which is of type str; 'realization', which is of type str; 'realizingMessage', which is of type str; 'conveyed', which is of type str; 'informationSource', which is of type str; 'informationTarget', which is of type str; 'realizingActivityEdge', which is of type str.
+
+'UMLModel_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ChangeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ReadSelfAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_TimeInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_GeneralOrdering' represents an important domain concept.
+It has the following attributes: 'before', which is of type str; 'after', which is of type str.
+
+'UMLModel_JoinNode' represents an important domain concept.
+It has one attribute: 'isCombineDuplicate', which is of type str.
+
+'UMLModel_PartDecomposition' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_GeneralizationSet' represents an important domain concept.
+It has the following attributes: 'generalization', which is of type str; 'isCovering', which is of type str; 'powerType', which is of type str; 'isDisjoint', which is of type str.
+
+'UMLModel_ConnectorEnd' represents an important domain concept.
+It has the following attributes: 'definingEnd', which is of type str; 'role', which is of type str; 'partWithPort', which is of type str.
+
+'UMLModel_Image' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'format', which is of type str; 'location', which is of type str.
+
+'UMLModel_CombinedFragment' represents an important domain concept.
+It has one attribute: 'interactionOperator', which is of type str.
+
+'UMLModel_LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Pin' represents an important domain concept.
+It has one attribute: 'isControl', which is of type str.
+
+'UMLModel_Dependency' represents an important domain concept.
+It has the following attributes: 'client', which is of type str; 'supplier', which is of type str.
+
+'UMLModel_DestroyObjectAction' represents an important domain concept.
+It has the following attributes: 'isDestroyOwnedObjects', which is of type str; 'isDestroyLinks', which is of type str.
+
+'UMLModel_Trigger' represents an important domain concept.
+It has the following attributes: 'port', which is of type str; 'event', which is of type str.
+
+'UMLModel_StructuralFeatureAction' represents an important domain concept.
+It has one attribute: 'structuralFeature', which is of type str.
+
+'UMLModel_StringExpression' represents an important domain concept.
+It has one attribute: 'owningExpression', which is of type str.
+
+'ExecutionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_CallEvent' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+'UMLModel_ReadStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ActivityEdge' represents an important domain concept.
+It has the following attributes: 'activity', which is of type str; 'source', which is of type str; 'target', which is of type str; 'inGroup', which is of type str; 'inPartition', which is of type str; 'redefinedEdge', which is of type str; 'inStructuredNode', which is of type str; 'interrupts', which is of type str.
+
+'UMLModel_DestroyLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_DestructionEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Interface' represents an important domain concept.
+It has the following attributes: 'isActive', which is of type bool; 'redefinedInterface', which is of type str.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_DurationConstraint' represents an important domain concept.
+It has one attribute: 'firstEvent', which is of type str.
+
+'InteractionUse' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Substitution' represents an important domain concept.
+It has the following attributes: 'contract', which is of type str; 'substitutingClassifier', which is of type str.
+
+'UMLModel_Include' represents an important domain concept.
+It has the following attributes: 'includingCase', which is of type str; 'addition', which is of type str.
+
+'UMLModel_TimeExpression' represents an important domain concept.
+It has the following attributes: 'observation', which is of type str; 'expr', which is of type str.
+
+'UMLModel_TimeObservation' represents an important domain concept.
+It has the following attributes: 'event', which is of type str; 'firstEvent', which is of type str.
+
+'UMLModel_OpaqueAction' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'body', which is of type str.
+
+'UMLModel_RedefinableTemplateSignature' represents an important domain concept.
+It has the following attributes: 'extendedSignature', which is of type str; 'classifier', which is of type str; 'inheritedParameter', which is of type str.
+
+'UMLModel_PackageImport' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'importingNamespace', which is of type str.
+
+'UMLModel_DurationObservation' represents an important domain concept.
+It has the following attributes: 'firstEvent', which is of type str; 'event', which is of type str.
+
+'UMLModel_ProtocolTransition' represents an important domain concept.
+It has the following attributes: 'referred', which is of type str; 'postCondition', which is of type str; 'preCondition', which is of type str.
+
+'UMLModel_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_State' represents an important domain concept.
+It has the following attributes: 'isComposite', which is of type str; 'isSimple', which is of type str; 'isOrthogonal', which is of type str; 'isSubmachineState', which is of type str; 'redefinedState', which is of type str; 'submachine', which is of type str.
+
+'MessageEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'IntervalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ReduceAction' represents an important domain concept.
+It has the following attributes: 'reducer', which is of type str; 'isOrdered', which is of type str.
+
+'UMLModel_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ClearStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_DurationInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Profile' represents an important domain concept.
+It has the following attributes: 'ownedStereotype', which is of type str; 'metamodelReference', which is of type str; 'metaclassReference', which is of type str.
+
+'ActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_AcceptCallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_InstanceValue' represents an important domain concept.
+It has one attribute: 'instance', which is of type str.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ElementImport' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'importingNamespace', which is of type str; 'alias', which is of type str.
+
+'UMLModel_InstanceSpecification' represents an important domain concept.
+It has one attribute: 'classifier', which is of type str.
+
+'TemplateSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_UMLBase' represents an important domain concept.
+It has one attribute: 'umlID', which is of type str.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLBase' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_LiteralString' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'UMLModel_ClearVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_RemoveStructuralFeatureValueAction' represents an important domain concept.
+It has one attribute: 'isRemoveDuplicates', which is of type str.
+
+'UMLModel_Artifact' represents an important domain concept.
+It has one attribute: 'fileName', which is of type str.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_LiteralInteger' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'Observation' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_StructuredClassifier' represents an important domain concept.
+It has the following attributes: 'role', which is of type str; 'part', which is of type str.
+
+'UMLModel_StateMachine' represents an important domain concept.
+It has the following attributes: 'extendedStateMachine', which is of type str; 'submachineState', which is of type str.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Class' represents an important domain concept.
+It has the following attributes: 'isActive', which is of type str; 'extension', which is of type str; 'superclass', which is of type str.
+
+'EncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ReplyAction' represents an important domain concept.
+It has one attribute: 'replyToCall', which is of type str.
+
+'UMLModel_LiteralBoolean' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'UMLModel_OpaqueExpression' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'behavior', which is of type str; 'body', which is of type str; 'result', which is of type str.
+
+'DeploymentTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_LiteralNull' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ProtocolStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_LiteralUnlimitedNatural' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'UMLModel_Operation' represents an important domain concept.
+It has the following attributes: 'isQuery', which is of type str; 'isUnique', which is of type str; 'type', which is of type str; 'interface', which is of type str; 'postcondition', which is of type str; 'redefinedOperation', which is of type str; 'class', which is of type str; 'isOrdered', which is of type str; 'datatype', which is of type str; 'lower', which is of type str; 'bodyCondition', which is of type str; 'precondition', which is of type str; 'upper', which is of type str.
+
+'UMLModel_ClearAssociationAction' represents an important domain concept.
+It has one attribute: 'association', which is of type str.
+
+'UMLModel_LinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_TypedElement' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_InterruptibleActivityRegion' represents an important domain concept.
+It has the following attributes: 'node', which is of type str; 'interruptingEdge', which is of type str.
+
+'UMLModel_RemoveVariableValueAction' represents an important domain concept.
+It has one attribute: 'isRemoveDuplicates', which is of type str.
+
+'UMLModel_Type' represents an important domain concept.
+It has one attribute: 'package', which is of type str.
+
+'UMLModel_LinkEndData' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'end', which is of type str.
+
+'UMLModel_Connector' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'type', which is of type str; 'contract', which is of type str; 'redefinedConnector', which is of type str.
+
+'UMLModel_ClassifierTemplateParameter' represents an important domain concept.
+It has the following attributes: 'allowSubstitutable', which is of type str; 'constrainingClassifier', which is of type str; 'defaultClassifier', which is of type str.
+
+'UMLModel_RedefinableElement' represents an important domain concept.
+It has the following attributes: 'redefinedElement', which is of type str; 'isLeaf', which is of type str; 'redefinitionContext', which is of type str.
+
+'WriteVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_AddStructuralFeatureValueAction' represents an important domain concept.
+It has one attribute: 'isReplaceAll', which is of type str.
+
+'UMLModel_LinkEndCreationData' represents an important domain concept.
+It has the following attributes: 'insertAt', which is of type str; 'isReplaceAll', which is of type str.
+
+'InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Classifier' represents an important domain concept.
+It has the following attributes: 'powertypeExtent', which is of type str; 'useCase', which is of type str; 'attribute', which is of type str; 'representation', which is of type str; 'isAbstract', which is of type str; 'general', which is of type str; 'inheritedMember', which is of type str; 'feature', which is of type str; 'redefinedClassifier', which is of type str.
+
+'UMLModel_LinkEndDestructionData' represents an important domain concept.
+It has the following attributes: 'destroyAt', which is of type str; 'isDestroyDuplicates', which is of type str.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ActivityGroup' represents an important domain concept.
+It has the following attributes: 'inActivity', which is of type str; 'superGroup', which is of type str; 'subgroup', which is of type str.
+
+'UMLModel_OpaqueBehavior' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'language', which is of type str.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_InvocationAction' represents an important domain concept.
+It has one attribute: 'onPort', which is of type str.
+
+'UMLModel_Stereotype' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_EnumerationLiteral' represents an important domain concept.
+It has one attribute: 'enumeration', which is of type str.
+
+'UMLModel_ValuePin' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Variable' represents an important domain concept.
+It has the following attributes: 'activityScope', which is of type str; 'scope', which is of type str.
+
+'UMLModel_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_OccurrenceSpecification' represents an important domain concept.
+It has the following attributes: 'toBefore', which is of type str; 'toAfter', which is of type str; 'event', which is of type str.
+
+'UMLModel_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ConnectionPointReference' represents an important domain concept.
+It has the following attributes: 'state', which is of type str; 'exit', which is of type str; 'entry', which is of type str.
+
+'UMLModel_Slot' represents an important domain concept.
+It has the following attributes: 'owningInstance', which is of type str; 'definingFeature', which is of type str.
+
+'UMLModel_QualifierValue' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'qualifier', which is of type str.
+
+'UMLModel_ProtocolConformance' represents an important domain concept.
+It has the following attributes: 'generalMachine', which is of type str; 'specificMachine', which is of type str.
+
+'UMLModel_UnmarshallAction' represents an important domain concept.
+It has one attribute: 'unmarshallType', which is of type str.
+
+'UMLModel_ActivityParameterNode' represents an important domain concept.
+It has one attribute: 'parameter', which is of type str.
+
+'LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'DeployedArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ActionExecutionSpecification' represents an important domain concept.
+It has one attribute: 'action', which is of type str.
+
+'UMLModel_Port' represents an important domain concept.
+It has the following attributes: 'provided', which is of type str; 'isService', which is of type str; 'required', which is of type str; 'protocol', which is of type str; 'isBehavior', which is of type str; 'redefinedPort', which is of type str.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_RaiseExceptionAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Pseudostate' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'state', which is of type str; 'stateMachine', which is of type str.
+
+'ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ExceptionHandler' represents an important domain concept.
+It has the following attributes: 'exceptionInput', which is of type str; 'handlerBody', which is of type str; 'protectedNode', which is of type str; 'exceptionType', which is of type str.
+
+'UMLModel_Activity' represents an important domain concept.
+It has the following attributes: 'isSingleExecution', which is of type str; 'partition', which is of type str; 'structuredNode', which is of type str; 'isReadOnly', which is of type str.
+
+'UMLModel_UseCase' represents an important domain concept.
+It has one attribute: 'subject', which is of type str.
+
+'AcceptEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ConnectableElement' represents an important domain concept.
+It has one attribute: 'end', which is of type str.
+
+'UMLModel_ExecutionEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Generalization' represents an important domain concept.
+It has the following attributes: 'generalizationSet', which is of type str; 'specific', which is of type str; 'isSubstitutable', which is of type str; 'general', which is of type str.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Relationship' represents an important domain concept.
+It has one attribute: 'relatedElement', which is of type str.
+
+'UMLModel_Usage' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Observation' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ValueSpecificationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ObjectFlow' represents an important domain concept.
+It has the following attributes: 'transformation', which is of type str; 'isMulticast', which is of type str; 'selection', which is of type str; 'isMultireceive', which is of type str.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Interaction' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_CollaborationUse' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'UMLModel_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModel_ExecutionEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ObjectNodeOrderingKind' defines the following possible values: 'unordered', 'FIFO', 'LIFO', 'ordered'.
+The enumeration 'CallConcurrencyKind' defines the following possible values: 'guarded', 'concurrent', 'sequential'.
+The enumeration 'ExpansionKind' defines the following possible values: 'iterative', 'stream', 'parallel'.
+The enumeration 'MessageSort' defines the following possible values: 'createMessage', 'synchCall', 'deleteMessage', 'asynchCall', 'reply', 'asynchSignal'.
+The enumeration 'MessageKind' defines the following possible values: 'found', 'complete', 'lost', 'unknown'.
+The enumeration 'AggregationKind' defines the following possible values: 'none', 'composite', 'shared'.
+The enumeration 'ConnectorKind' defines the following possible values: 'delegation', 'assembly'.
+The enumeration 'VisibilityKind' defines the following possible values: 'package', 'public', 'private', 'protected'.
+The enumeration 'ParameterDirectionKind' defines the following possible values: 'out', 'in', 'inout', 'return'.
+The enumeration 'ParameterEffectKind' defines the following possible values: 'create', 'read', 'delete', 'update'.
+The enumeration 'InteractionOperatorKind' defines the following possible values: 'break', 'opt', 'critical', 'par', 'loop', 'alt', 'neg', 'consider', 'strict', 'assert', 'seq', 'ignore'.
+The enumeration 'TransitionKind' defines the following possible values: 'external', 'internal', 'local'.
+The enumeration 'PseudostateKind' defines the following possible values: 'choice', 'join', 'fork', 'initial', 'exitPoint', 'terminate', 'deepHistory', 'junction', 'shallowHistory', 'entryPoint'.
+
+The model also captures inheritance relationships between classes.
+The class 'UMLModel_Abstraction' is a specialization of 'Dependency'.
+The class 'UMLModel_AcceptCallAction' is a specialization of 'AcceptEventAction'.
+The class 'UMLModel_AcceptEventAction' is a specialization of 'Action'.
+The class 'UMLModel_Action' is a specialization of 'ExecutableNode'.
+The class 'UMLModel_ActionExecutionSpecification' is a specialization of 'ExecutionSpecification'.
+The class 'UMLModel_ActionInputPin' is a specialization of 'InputPin'.
+The class 'UMLModel_Activity' is a specialization of 'Behavior'.
+The class 'UMLModel_ActivityEdge' is a specialization of 'RedefinableElement'.
+The class 'UMLModel_ActivityFinalNode' is a specialization of 'FinalNode'.
+The class 'UMLModel_ActivityNode' is a specialization of 'RedefinableElement'.
+The class 'UMLModel_ActivityGroup' is a specialization of 'Element'.
+The class 'UMLModel_ActivityPartition' is a specialization of 'NamedElement'.
+The class 'UMLModel_ActivityPartition' is a specialization of 'ActivityGroup'.
+The class 'UMLModel_ActivityParameterNode' is a specialization of 'ObjectNode'.
+The class 'UMLModel_Actor' is a specialization of 'BehavioredClassifier'.
+The class 'UMLModel_AddStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'UMLModel_AddVariableValueAction' is a specialization of 'WriteVariableAction'.
+The class 'UMLModel_AnyReceiveEvent' is a specialization of 'MessageEvent'.
+The class 'UMLModel_Artifact' is a specialization of 'Classifier'.
+The class 'UMLModel_Artifact' is a specialization of 'DeployedArtifact'.
+The class 'UMLModel_Association' is a specialization of 'Classifier'.
+The class 'UMLModel_Association' is a specialization of 'Relationship'.
+The class 'UMLModel_AssociationClass' is a specialization of 'Class'.
+The class 'UMLModel_AssociationClass' is a specialization of 'Association'.
+The class 'UMLModel_Behavior' is a specialization of 'Class'.
+The class 'UMLModel_BehaviorExecutionSpecification' is a specialization of 'ExecutionSpecification'.
+The class 'UMLModel_BehavioralFeature' is a specialization of 'Namespace'.
+The class 'UMLModel_BehavioralFeature' is a specialization of 'Feature'.
+The class 'UMLModel_BehavioredClassifier' is a specialization of 'Classifier'.
+The class 'UMLModel_BroadcastSignalAction' is a specialization of 'InvocationAction'.
+The class 'UMLModel_CallAction' is a specialization of 'InvocationAction'.
+The class 'UMLModel_CallBehaviorAction' is a specialization of 'CallAction'.
+The class 'UMLModel_CallEvent' is a specialization of 'MessageEvent'.
+The class 'UMLModel_CallOperationAction' is a specialization of 'CallAction'.
+The class 'UMLModel_ChangeEvent' is a specialization of 'Event'.
+The class 'UMLModel_Class' is a specialization of 'EncapsulatedClassifier'.
+The class 'UMLModel_Class' is a specialization of 'BehavioredClassifier'.
+The class 'UMLModel_Classifier' is a specialization of 'Namespace'.
+The class 'UMLModel_Classifier' is a specialization of 'RedefinableElement'.
+The class 'UMLModel_Classifier' is a specialization of 'Type'.
+The class 'UMLModel_Classifier' is a specialization of 'TemplateableElement'.
+The class 'UMLModel_ClassifierTemplateParameter' is a specialization of 'TemplateParameter'.
+The class 'UMLModel_Clause' is a specialization of 'Element'.
+The class 'UMLModel_ClearVariableAction' is a specialization of 'VariableAction'.
+The class 'UMLModel_ClearAssociationAction' is a specialization of 'Action'.
+The class 'UMLModel_ClearStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'UMLModel_Collaboration' is a specialization of 'BehavioredClassifier'.
+The class 'UMLModel_Collaboration' is a specialization of 'StructuredClassifier'.
+The class 'UMLModel_CollaborationUse' is a specialization of 'NamedElement'.
+The class 'UMLModel_Comment' is a specialization of 'Element'.
+The class 'UMLModel_CommunicationPath' is a specialization of 'Association'.
+The class 'UMLModel_Component' is a specialization of 'Class'.
+The class 'UMLModel_ComponentRealization' is a specialization of 'Realization'.
+The class 'UMLModel_CombinedFragment' is a specialization of 'InteractionFragment'.
+The class 'UMLModel_ConditionalNode' is a specialization of 'StructuredActivityNode'.
+The class 'UMLModel_Constraint' is a specialization of 'PackageableElement'.
+The class 'UMLModel_ConsiderIgnoreFragment' is a specialization of 'CombinedFragment'.
+The class 'UMLModel_Continuation' is a specialization of 'InteractionFragment'.
+The class 'UMLModel_ConnectableElement' is a specialization of 'TypedElement'.
+The class 'UMLModel_ConnectableElement' is a specialization of 'ParameterableElement'.
+The class 'UMLModel_ConnectableElementTemplateParameter' is a specialization of 'TemplateParameter'.
+The class 'UMLModel_ConnectorEnd' is a specialization of 'MultiplicityElement'.
+The class 'UMLModel_ConnectionPointReference' is a specialization of 'Vertex'.
+The class 'UMLModel_Connector' is a specialization of 'Feature'.
+The class 'UMLModel_ControlFlow' is a specialization of 'ActivityEdge'.
+The class 'UMLModel_ControlNode' is a specialization of 'ActivityNode'.
+The class 'UMLModel_CreationEvent' is a specialization of 'Event'.
+The class 'UMLModel_CreateLinkObjectAction' is a specialization of 'CreateLinkAction'.
+The class 'UMLModel_CreateObjectAction' is a specialization of 'Action'.
+The class 'UMLModel_CreateLinkAction' is a specialization of 'WriteLinkAction'.
+The class 'UMLModel_CentralBufferNode' is a specialization of 'ObjectNode'.
+The class 'UMLModel_DataStoreNode' is a specialization of 'CentralBufferNode'.
+The class 'UMLModel_DataType' is a specialization of 'Classifier'.
+The class 'UMLModel_DecisionNode' is a specialization of 'ControlNode'.
+The class 'UMLModel_Dependency' is a specialization of 'PackageableElement'.
+The class 'UMLModel_Dependency' is a specialization of 'DirectedRelationship'.
+The class 'UMLModel_DeploymentTarget' is a specialization of 'NamedElement'.
+The class 'UMLModel_Deployment' is a specialization of 'Dependency'.
+The class 'UMLModel_DeployedArtifact' is a specialization of 'NamedElement'.
+The class 'UMLModel_DeploymentSpecification' is a specialization of 'Artifact'.
+The class 'UMLModel_DirectedRelationship' is a specialization of 'Relationship'.
+The class 'UMLModel_Device' is a specialization of 'Node'.
+The class 'UMLModel_DestroyLinkAction' is a specialization of 'WriteLinkAction'.
+The class 'UMLModel_DestroyObjectAction' is a specialization of 'Action'.
+The class 'UMLModel_DestructionEvent' is a specialization of 'Event'.
+The class 'UMLModel_Duration' is a specialization of 'ValueSpecification'.
+The class 'UMLModel_DurationConstraint' is a specialization of 'IntervalConstraint'.
+The class 'UMLModel_DurationInterval' is a specialization of 'Interval'.
+The class 'UMLModel_DurationObservation' is a specialization of 'Observation'.
+The class 'UMLModel_Element' is a specialization of 'UMLBase'.
+The class 'UMLModel_ElementImport' is a specialization of 'DirectedRelationship'.
+The class 'UMLModel_EncapsulatedClassifier' is a specialization of 'StructuredClassifier'.
+The class 'UMLModel_Enumeration' is a specialization of 'DataType'.
+The class 'UMLModel_EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+The class 'UMLModel_ExceptionHandler' is a specialization of 'Element'.
+The class 'UMLModel_ExecutableNode' is a specialization of 'ActivityNode'.
+The class 'UMLModel_ExecutionEnvironment' is a specialization of 'Node'.
+The class 'UMLModel_ExecutionEvent' is a specialization of 'Event'.
+The class 'UMLModel_ExecutionOccurrenceSpecification' is a specialization of 'OccurrenceSpecification'.
+The class 'UMLModel_ExecutionSpecification' is a specialization of 'InteractionFragment'.
+The class 'UMLModel_ExpansionNode' is a specialization of 'ObjectNode'.
+The class 'UMLModel_ExpansionRegion' is a specialization of 'StructuredActivityNode'.
+The class 'UMLModel_Extend' is a specialization of 'NamedElement'.
+The class 'UMLModel_Extend' is a specialization of 'DirectedRelationship'.
+The class 'UMLModel_Extension' is a specialization of 'Association'.
+The class 'UMLModel_ExtensionEnd' is a specialization of 'Property'.
+The class 'UMLModel_ExtensionPoint' is a specialization of 'RedefinableElement'.
+The class 'UMLModel_Expression' is a specialization of 'ValueSpecification'.
+The class 'UMLModel_Event' is a specialization of 'PackageableElement'.
+The class 'UMLModel_Feature' is a specialization of 'RedefinableElement'.
+The class 'UMLModel_FinalState' is a specialization of 'State'.
+The class 'UMLModel_ForkNode' is a specialization of 'ControlNode'.
+The class 'UMLModel_FlowFinalNode' is a specialization of 'FinalNode'.
+The class 'UMLModel_FinalNode' is a specialization of 'ControlNode'.
+The class 'UMLModel_FunctionBehavior' is a specialization of 'OpaqueBehavior'.
+The class 'UMLModel_Gate' is a specialization of 'MessageEnd'.
+The class 'UMLModel_GeneralOrdering' is a specialization of 'NamedElement'.
+The class 'UMLModel_Generalization' is a specialization of 'DirectedRelationship'.
+The class 'UMLModel_GeneralizationSet' is a specialization of 'PackageableElement'.
+The class 'UMLModel_Image' is a specialization of 'Element'.
+The class 'UMLModel_InterfaceRealization' is a specialization of 'Realization'.
+The class 'UMLModel_Interface' is a specialization of 'Classifier'.
+The class 'UMLModel_Include' is a specialization of 'NamedElement'.
+The class 'UMLModel_Include' is a specialization of 'DirectedRelationship'.
+The class 'UMLModel_InstanceSpecification' is a specialization of 'DeploymentTarget'.
+The class 'UMLModel_InstanceSpecification' is a specialization of 'PackageableElement'.
+The class 'UMLModel_InstanceSpecification' is a specialization of 'DeployedArtifact'.
+The class 'UMLModel_InstanceValue' is a specialization of 'ValueSpecification'.
+The class 'UMLModel_InterruptibleActivityRegion' is a specialization of 'ActivityGroup'.
+The class 'UMLModel_InputPin' is a specialization of 'Pin'.
+The class 'UMLModel_InvocationAction' is a specialization of 'Action'.
+The class 'UMLModel_InitialNode' is a specialization of 'ControlNode'.
+The class 'UMLModel_Interaction' is a specialization of 'Behavior'.
+The class 'UMLModel_Interaction' is a specialization of 'InteractionFragment'.
+The class 'UMLModel_InteractionFragment' is a specialization of 'NamedElement'.
+The class 'UMLModel_InteractionUse' is a specialization of 'InteractionFragment'.
+The class 'UMLModel_InteractionOperand' is a specialization of 'Namespace'.
+The class 'UMLModel_InteractionOperand' is a specialization of 'InteractionFragment'.
+The class 'UMLModel_InteractionConstraint' is a specialization of 'Constraint'.
+The class 'UMLModel_Interval' is a specialization of 'ValueSpecification'.
+The class 'UMLModel_IntervalConstraint' is a specialization of 'Constraint'.
+The class 'UMLModel_InformationItem' is a specialization of 'Classifier'.
+The class 'UMLModel_InformationFlow' is a specialization of 'PackageableElement'.
+The class 'UMLModel_InformationFlow' is a specialization of 'DirectedRelationship'.
+The class 'UMLModel_JoinNode' is a specialization of 'ControlNode'.
+The class 'UMLModel_LiteralSpecification' is a specialization of 'ValueSpecification'.
+The class 'UMLModel_LiteralInteger' is a specialization of 'LiteralSpecification'.
+The class 'UMLModel_LiteralString' is a specialization of 'LiteralSpecification'.
+The class 'UMLModel_LiteralBoolean' is a specialization of 'LiteralSpecification'.
+The class 'UMLModel_LiteralNull' is a specialization of 'LiteralSpecification'.
+The class 'UMLModel_LiteralUnlimitedNatural' is a specialization of 'LiteralSpecification'.
+The class 'UMLModel_Lifeline' is a specialization of 'NamedElement'.
+The class 'UMLModel_LinkAction' is a specialization of 'Action'.
+The class 'UMLModel_LinkEndData' is a specialization of 'Element'.
+The class 'UMLModel_LinkEndCreationData' is a specialization of 'LinkEndData'.
+The class 'UMLModel_LinkEndDestructionData' is a specialization of 'LinkEndData'.
+The class 'UMLModel_LoopNode' is a specialization of 'StructuredActivityNode'.
+The class 'UMLModel_Manifestation' is a specialization of 'Abstraction'.
+The class 'UMLModel_Message' is a specialization of 'NamedElement'.
+The class 'UMLModel_MessageEnd' is a specialization of 'NamedElement'.
+The class 'UMLModel_MessageEvent' is a specialization of 'Event'.
+The class 'UMLModel_MessageOccurrenceSpecification' is a specialization of 'OccurrenceSpecification'.
+The class 'UMLModel_MessageOccurrenceSpecification' is a specialization of 'MessageEnd'.
+The class 'UMLModel_MergeNode' is a specialization of 'ControlNode'.
+The class 'UMLModel_Model' is a specialization of 'Package'.
+The class 'UMLModel_MultiplicityElement' is a specialization of 'Element'.
+The class 'UMLModel_NamedElement' is a specialization of 'Element'.
+The class 'UMLModel_Namespace' is a specialization of 'NamedElement'.
+The class 'UMLModel_Node' is a specialization of 'Class'.
+The class 'UMLModel_Node' is a specialization of 'DeploymentTarget'.
+The class 'UMLModel_Operation' is a specialization of 'BehavioralFeature'.
+The class 'UMLModel_Operation' is a specialization of 'ParameterableElement'.
+The class 'UMLModel_Operation' is a specialization of 'TemplateableElement'.
+The class 'UMLModel_OperationTemplateParameter' is a specialization of 'TemplateParameter'.
+The class 'UMLModel_OpaqueAction' is a specialization of 'Action'.
+The class 'UMLModel_OpaqueBehavior' is a specialization of 'Behavior'.
+The class 'UMLModel_OpaqueExpression' is a specialization of 'ValueSpecification'.
+The class 'UMLModel_OccurrenceSpecification' is a specialization of 'InteractionFragment'.
+The class 'UMLModel_ObjectFlow' is a specialization of 'ActivityEdge'.
+The class 'UMLModel_Observation' is a specialization of 'PackageableElement'.
+The class 'UMLModel_ObjectNode' is a specialization of 'ActivityNode'.
+The class 'UMLModel_ObjectNode' is a specialization of 'TypedElement'.
+The class 'UMLModel_OutputPin' is a specialization of 'Pin'.
+The class 'UMLModel_Parameter' is a specialization of 'ConnectableElement'.
+The class 'UMLModel_Parameter' is a specialization of 'MultiplicityElement'.
+The class 'UMLModel_ParameterableElement' is a specialization of 'Element'.
+The class 'UMLModel_Package' is a specialization of 'Namespace'.
+The class 'UMLModel_Package' is a specialization of 'PackageableElement'.
+The class 'UMLModel_Package' is a specialization of 'TemplateableElement'.
+The class 'UMLModel_PackageableElement' is a specialization of 'NamedElement'.
+The class 'UMLModel_PackageableElement' is a specialization of 'ParameterableElement'.
+The class 'UMLModel_PackageImport' is a specialization of 'DirectedRelationship'.
+The class 'UMLModel_PackageMerge' is a specialization of 'DirectedRelationship'.
+The class 'UMLModel_ParameterSet' is a specialization of 'NamedElement'.
+The class 'UMLModel_PartDecomposition' is a specialization of 'InteractionUse'.
+The class 'UMLModel_Pin' is a specialization of 'ObjectNode'.
+The class 'UMLModel_Pin' is a specialization of 'MultiplicityElement'.
+The class 'UMLModel_PrimitiveType' is a specialization of 'DataType'.
+The class 'UMLModel_ProtocolTransition' is a specialization of 'Transition'.
+The class 'UMLModel_Profile' is a specialization of 'Package'.
+The class 'UMLModel_ProfileApplication' is a specialization of 'DirectedRelationship'.
+The class 'UMLModel_Property' is a specialization of 'StructuralFeature'.
+The class 'UMLModel_Property' is a specialization of 'ConnectableElement'.
+The class 'UMLModel_Property' is a specialization of 'DeploymentTarget'.
+The class 'UMLModel_Property' is a specialization of 'TemplateableElement'.
+The class 'UMLModel_ProtocolStateMachine' is a specialization of 'StateMachine'.
+The class 'UMLModel_ProtocolConformance' is a specialization of 'DirectedRelationship'.
+The class 'UMLModel_Port' is a specialization of 'Property'.
+The class 'UMLModel_Pseudostate' is a specialization of 'Vertex'.
+The class 'UMLModel_QualifierValue' is a specialization of 'Element'.
+The class 'UMLModel_RaiseExceptionAction' is a specialization of 'Action'.
+The class 'UMLModel_ReceiveOperationEvent' is a specialization of 'MessageEvent'.
+The class 'UMLModel_ReceiveSignalEvent' is a specialization of 'MessageEvent'.
+The class 'UMLModel_ReclassifyObjectAction' is a specialization of 'Action'.
+The class 'UMLModel_ReadIsClassifiedObjectAction' is a specialization of 'Action'.
+The class 'UMLModel_ReadExtentAction' is a specialization of 'Action'.
+The class 'UMLModel_ReadLinkAction' is a specialization of 'LinkAction'.
+The class 'UMLModel_ReadLinkObjectEndAction' is a specialization of 'Action'.
+The class 'UMLModel_ReadLinkObjectEndQualifierAction' is a specialization of 'Action'.
+The class 'UMLModel_ReadSelfAction' is a specialization of 'Action'.
+The class 'UMLModel_ReadStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'UMLModel_ReadVariableAction' is a specialization of 'VariableAction'.
+The class 'UMLModel_RedefinableTemplateSignature' is a specialization of 'RedefinableElement'.
+The class 'UMLModel_RedefinableTemplateSignature' is a specialization of 'TemplateSignature'.
+The class 'UMLModel_ReduceAction' is a specialization of 'Action'.
+The class 'UMLModel_ReplyAction' is a specialization of 'Action'.
+The class 'UMLModel_RemoveVariableValueAction' is a specialization of 'WriteVariableAction'.
+The class 'UMLModel_RemoveStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'UMLModel_RedefinableElement' is a specialization of 'NamedElement'.
+The class 'UMLModel_Relationship' is a specialization of 'Element'.
+The class 'UMLModel_Realization' is a specialization of 'Abstraction'.
+The class 'UMLModel_Reception' is a specialization of 'BehavioralFeature'.
+The class 'UMLModel_Region' is a specialization of 'Namespace'.
+The class 'UMLModel_Region' is a specialization of 'RedefinableElement'.
+The class 'UMLModel_SendSignalAction' is a specialization of 'InvocationAction'.
+The class 'UMLModel_SendSignalEvent' is a specialization of 'MessageEvent'.
+The class 'UMLModel_SequenceNode' is a specialization of 'StructuredActivityNode'.
+The class 'UMLModel_SignalEvent' is a specialization of 'MessageEvent'.
+The class 'UMLModel_Slot' is a specialization of 'Element'.
+The class 'UMLModel_StateInvariant' is a specialization of 'InteractionFragment'.
+The class 'UMLModel_StartClassifierBehaviorAction' is a specialization of 'Action'.
+The class 'UMLModel_SendObjectAction' is a specialization of 'InvocationAction'.
+The class 'UMLModel_StringExpression' is a specialization of 'Expression'.
+The class 'UMLModel_StringExpression' is a specialization of 'TemplateableElement'.
+The class 'UMLModel_StructuredActivityNode' is a specialization of 'Action'.
+The class 'UMLModel_StructuredActivityNode' is a specialization of 'Namespace'.
+The class 'UMLModel_StructuredActivityNode' is a specialization of 'ActivityGroup'.
+The class 'UMLModel_StructuralFeature' is a specialization of 'Feature'.
+The class 'UMLModel_StructuralFeature' is a specialization of 'TypedElement'.
+The class 'UMLModel_StructuralFeature' is a specialization of 'MultiplicityElement'.
+The class 'UMLModel_StructuralFeatureAction' is a specialization of 'Action'.
+The class 'UMLModel_Substitution' is a specialization of 'Realization'.
+The class 'UMLModel_Signal' is a specialization of 'Classifier'.
+The class 'UMLModel_State' is a specialization of 'Namespace'.
+The class 'UMLModel_State' is a specialization of 'RedefinableElement'.
+The class 'UMLModel_State' is a specialization of 'Vertex'.
+The class 'UMLModel_StateMachine' is a specialization of 'Behavior'.
+The class 'UMLModel_StructuredClassifier' is a specialization of 'Classifier'.
+The class 'UMLModel_Stereotype' is a specialization of 'Class'.
+The class 'UMLModel_TemplateableElement' is a specialization of 'Element'.
+The class 'UMLModel_TemplateBinding' is a specialization of 'DirectedRelationship'.
+The class 'UMLModel_TemplateSignature' is a specialization of 'Element'.
+The class 'UMLModel_TemplateParameter' is a specialization of 'Element'.
+The class 'UMLModel_TemplateParameterSubstitution' is a specialization of 'Element'.
+The class 'UMLModel_TestIdentityAction' is a specialization of 'Action'.
+The class 'UMLModel_TimeConstraint' is a specialization of 'IntervalConstraint'.
+The class 'UMLModel_TimeEvent' is a specialization of 'Event'.
+The class 'UMLModel_TimeExpression' is a specialization of 'ValueSpecification'.
+The class 'UMLModel_TimeInterval' is a specialization of 'Interval'.
+The class 'UMLModel_TimeObservation' is a specialization of 'Observation'.
+The class 'UMLModel_Transition' is a specialization of 'Namespace'.
+The class 'UMLModel_Transition' is a specialization of 'RedefinableElement'.
+The class 'UMLModel_Trigger' is a specialization of 'NamedElement'.
+The class 'UMLModel_TypedElement' is a specialization of 'NamedElement'.
+The class 'UMLModel_Type' is a specialization of 'PackageableElement'.
+The class 'UMLModel_UnmarshallAction' is a specialization of 'Action'.
+The class 'UMLModel_UMLBase' is a specialization of 'EObject'.
+The class 'UMLModel_Usage' is a specialization of 'Dependency'.
+The class 'UMLModel_UseCase' is a specialization of 'BehavioredClassifier'.
+The class 'UMLModel_ValuePin' is a specialization of 'InputPin'.
+The class 'UMLModel_ValueSpecificationAction' is a specialization of 'Action'.
+The class 'UMLModel_ValueSpecification' is a specialization of 'PackageableElement'.
+The class 'UMLModel_ValueSpecification' is a specialization of 'TypedElement'.
+The class 'UMLModel_Variable' is a specialization of 'ConnectableElement'.
+The class 'UMLModel_Variable' is a specialization of 'MultiplicityElement'.
+The class 'UMLModel_VariableAction' is a specialization of 'Action'.
+The class 'UMLModel_Vertex' is a specialization of 'NamedElement'.
+The class 'UMLModel_WriteLinkAction' is a specialization of 'LinkAction'.
+The class 'UMLModel_WriteVariableAction' is a specialization of 'VariableAction'.
+The class 'UMLModel_WriteStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UMLModel_Abstraction' and 'UMLModel_OpaqueExpression'. From 'UMLModel_Abstraction', the role 'UMLModel_Abstraction' has cardinality 0..*, and from 'UMLModel_OpaqueExpression', the role 'UMLModel_OpaqueExpression' has cardinality 0..*.
+An association connects 'UMLModel_OutputPin' and 'UMLModel_AcceptCallAction'. From 'UMLModel_OutputPin', the role 'UMLModel_OutputPin' has cardinality 0..*, and from 'UMLModel_AcceptCallAction', the role 'UMLModel_AcceptCallAction' has cardinality 0..*.
+An association connects 'UMLModel_AcceptEventAction' and 'UMLModel_OutputPin'. From 'UMLModel_AcceptEventAction', the role 'UMLModel_AcceptEventAction' has cardinality 0..*, and from 'UMLModel_OutputPin', the role 'UMLModel_OutputPin3' has cardinality 0..*.
+An association connects 'UMLModel_Trigger' and 'UMLModel_AcceptEventAction'. From 'UMLModel_Trigger', the role 'UMLModel_Trigger' has cardinality 0..*, and from 'UMLModel_AcceptEventAction', the role 'UMLModel_AcceptEventAction5' has cardinality 0..*.
+An association connects 'UMLModel_Constraint' and 'UMLModel_Action'. From 'UMLModel_Constraint', the role 'UMLModel_Constraint' has cardinality 0..*, and from 'UMLModel_Action', the role 'UMLModel_Action' has cardinality 0..*.
+An association connects 'UMLModel_Action' and 'UMLModel_Constraint'. From 'UMLModel_Action', the role 'UMLModel_Action8' has cardinality 0..*, and from 'UMLModel_Constraint', the role 'UMLModel_Constraint9' has cardinality 0..*.
+An association connects 'UMLModel_Action' and 'UMLModel_ActionInputPin'. From 'UMLModel_Action', the role 'UMLModel_Action11' has cardinality 0..*, and from 'UMLModel_ActionInputPin', the role 'UMLModel_ActionInputPin' has cardinality 0..*.
+An association connects 'UMLModel_Activity' and 'UMLModel_Variable'. From 'UMLModel_Activity', the role 'UMLModel_Activity' has cardinality 0..*, and from 'UMLModel_Variable', the role 'UMLModel_Variable' has cardinality 0..*.
+An association connects 'UMLModel_Activity' and 'UMLModel_ActivityNode'. From 'UMLModel_Activity', the role 'UMLModel_Activity14' has cardinality 0..*, and from 'UMLModel_ActivityNode', the role 'UMLModel_ActivityNode' has cardinality 0..*.
+An association connects 'UMLModel_ActivityEdge' and 'UMLModel_Activity'. From 'UMLModel_ActivityEdge', the role 'UMLModel_ActivityEdge' has cardinality 0..*, and from 'UMLModel_Activity', the role 'UMLModel_Activity16' has cardinality 0..*.
+An association connects 'UMLModel_Activity' and 'UMLModel_ActivityGroup'. From 'UMLModel_Activity', the role 'UMLModel_Activity18' has cardinality 0..*, and from 'UMLModel_ActivityGroup', the role 'UMLModel_ActivityGroup' has cardinality 0..*.
+An association connects 'UMLModel_ActivityEdge' and 'UMLModel_ValueSpecification'. From 'UMLModel_ActivityEdge', the role 'UMLModel_ActivityEdge20' has cardinality 0..*, and from 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification' has cardinality 0..*.
+An association connects 'UMLModel_ValueSpecification' and 'UMLModel_ActivityEdge'. From 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification23' has cardinality 0..*, and from 'UMLModel_ActivityEdge', the role 'UMLModel_ActivityEdge22' has cardinality 0..*.
+An association connects 'UMLModel_ActivityGroup' and 'UMLModel_ActivityEdge'. From 'UMLModel_ActivityGroup', the role 'UMLModel_ActivityGroup25' has cardinality 0..*, and from 'UMLModel_ActivityEdge', the role 'UMLModel_ActivityEdge26' has cardinality 0..*.
+An association connects 'UMLModel_ActivityGroup' and 'UMLModel_ActivityNode'. From 'UMLModel_ActivityGroup', the role 'UMLModel_ActivityGroup28' has cardinality 0..*, and from 'UMLModel_ActivityNode', the role 'UMLModel_ActivityNode29' has cardinality 0..*.
+An association connects 'UMLModel_AddStructuralFeatureValueAction' and 'UMLModel_InputPin'. From 'UMLModel_AddStructuralFeatureValueAction', the role 'UMLModel_AddStructuralFeatureValueAction' has cardinality 0..*, and from 'UMLModel_InputPin', the role 'UMLModel_InputPin' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_AddVariableValueAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin32' has cardinality 0..*, and from 'UMLModel_AddVariableValueAction', the role 'UMLModel_AddVariableValueAction' has cardinality 0..*.
+An association connects 'UMLModel_Artifact' and 'UMLModel_Artifact'. From 'UMLModel_Artifact', the role 'UMLModel_Artifact' has cardinality 0..*, and from 'UMLModel_Artifact', the role 'UMLModel_Artifact33' has cardinality 0..*.
+An association connects 'UMLModel_Artifact' and 'UMLModel_Manifestation'. From 'UMLModel_Artifact', the role 'UMLModel_Artifact36' has cardinality 0..*, and from 'UMLModel_Manifestation', the role 'UMLModel_Manifestation' has cardinality 0..*.
+An association connects 'UMLModel_Operation' and 'UMLModel_Artifact'. From 'UMLModel_Operation', the role 'UMLModel_Operation' has cardinality 0..*, and from 'UMLModel_Artifact', the role 'UMLModel_Artifact38' has cardinality 0..*.
+An association connects 'UMLModel_Artifact' and 'UMLModel_Property'. From 'UMLModel_Artifact', the role 'UMLModel_Artifact40' has cardinality 0..*, and from 'UMLModel_Property', the role 'UMLModel_Property' has cardinality 0..*.
+An association connects 'UMLModel_Association' and 'UMLModel_Property'. From 'UMLModel_Association', the role 'UMLModel_Association' has cardinality 0..*, and from 'UMLModel_Property', the role 'UMLModel_Property42' has cardinality 0..*.
+An association connects 'UMLModel_Parameter' and 'UMLModel_Behavior'. From 'UMLModel_Parameter', the role 'UMLModel_Parameter' has cardinality 0..*, and from 'UMLModel_Behavior', the role 'UMLModel_Behavior' has cardinality 0..*.
+An association connects 'UMLModel_Behavior' and 'UMLModel_ParameterSet'. From 'UMLModel_Behavior', the role 'UMLModel_Behavior45' has cardinality 0..*, and from 'UMLModel_ParameterSet', the role 'UMLModel_ParameterSet' has cardinality 0..*.
+An association connects 'UMLModel_BehavioralFeature' and 'UMLModel_Parameter'. From 'UMLModel_BehavioralFeature', the role 'UMLModel_BehavioralFeature' has cardinality 0..*, and from 'UMLModel_Parameter', the role 'UMLModel_Parameter47' has cardinality 0..*.
+An association connects 'UMLModel_ParameterSet' and 'UMLModel_BehavioralFeature'. From 'UMLModel_ParameterSet', the role 'UMLModel_ParameterSet50' has cardinality 0..*, and from 'UMLModel_BehavioralFeature', the role 'UMLModel_BehavioralFeature49' has cardinality 0..*.
+An association connects 'UMLModel_Behavior' and 'UMLModel_BehavioredClassifier'. From 'UMLModel_Behavior', the role 'UMLModel_Behavior52' has cardinality 0..*, and from 'UMLModel_BehavioredClassifier', the role 'UMLModel_BehavioredClassifier' has cardinality 0..*.
+An association connects 'UMLModel_BehavioredClassifier' and 'UMLModel_InterfaceRealization'. From 'UMLModel_BehavioredClassifier', the role 'UMLModel_BehavioredClassifier54' has cardinality 0..*, and from 'UMLModel_InterfaceRealization', the role 'UMLModel_InterfaceRealization' has cardinality 0..*.
+An association connects 'UMLModel_Trigger' and 'UMLModel_BehavioredClassifier'. From 'UMLModel_Trigger', the role 'UMLModel_Trigger57' has cardinality 0..*, and from 'UMLModel_BehavioredClassifier', the role 'UMLModel_BehavioredClassifier56' has cardinality 0..*.
+An association connects 'UMLModel_OutputPin' and 'UMLModel_CallAction'. From 'UMLModel_OutputPin', the role 'UMLModel_OutputPin59' has cardinality 0..*, and from 'UMLModel_CallAction', the role 'UMLModel_CallAction' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_CallOperationAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin61' has cardinality 0..*, and from 'UMLModel_CallOperationAction', the role 'UMLModel_CallOperationAction' has cardinality 0..*.
+An association connects 'UMLModel_ValueSpecification' and 'UMLModel_ChangeEvent'. From 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification63' has cardinality 0..*, and from 'UMLModel_ChangeEvent', the role 'UMLModel_ChangeEvent' has cardinality 0..*.
+An association connects 'UMLModel_Classifier' and 'UMLModel_Class'. From 'UMLModel_Classifier', the role 'UMLModel_Classifier' has cardinality 0..*, and from 'UMLModel_Class', the role 'UMLModel_Class' has cardinality 0..*.
+An association connects 'UMLModel_Class' and 'UMLModel_Operation'. From 'UMLModel_Class', the role 'UMLModel_Class66' has cardinality 0..*, and from 'UMLModel_Operation', the role 'UMLModel_Operation67' has cardinality 0..*.
+An association connects 'UMLModel_Class' and 'UMLModel_Reception'. From 'UMLModel_Class', the role 'UMLModel_Class69' has cardinality 0..*, and from 'UMLModel_Reception', the role 'UMLModel_Reception' has cardinality 0..*.
+An association connects 'UMLModel_Classifier' and 'UMLModel_Generalization'. From 'UMLModel_Classifier', the role 'UMLModel_Classifier71' has cardinality 0..*, and from 'UMLModel_Generalization', the role 'UMLModel_Generalization' has cardinality 0..*.
+An association connects 'UMLModel_Substitution' and 'UMLModel_Classifier'. From 'UMLModel_Substitution', the role 'UMLModel_Substitution' has cardinality 0..*, and from 'UMLModel_Classifier', the role 'UMLModel_Classifier73' has cardinality 0..*.
+An association connects 'UMLModel_CollaborationUse' and 'UMLModel_Classifier'. From 'UMLModel_CollaborationUse', the role 'UMLModel_CollaborationUse' has cardinality 0..*, and from 'UMLModel_Classifier', the role 'UMLModel_Classifier75' has cardinality 0..*.
+An association connects 'UMLModel_UseCase' and 'UMLModel_Classifier'. From 'UMLModel_UseCase', the role 'UMLModel_UseCase' has cardinality 0..*, and from 'UMLModel_Classifier', the role 'UMLModel_Classifier77' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_ClearAssociationAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin79' has cardinality 0..*, and from 'UMLModel_ClearAssociationAction', the role 'UMLModel_ClearAssociationAction' has cardinality 0..*.
+An association connects 'UMLModel_Dependency' and 'UMLModel_CollaborationUse'. From 'UMLModel_Dependency', the role 'UMLModel_Dependency' has cardinality 0..*, and from 'UMLModel_CollaborationUse', the role 'UMLModel_CollaborationUse81' has cardinality 0..*.
+An association connects 'UMLModel_PackageableElement' and 'UMLModel_Component'. From 'UMLModel_PackageableElement', the role 'UMLModel_PackageableElement' has cardinality 0..*, and from 'UMLModel_Component', the role 'UMLModel_Component' has cardinality 0..*.
+An association connects 'UMLModel_ComponentRealization' and 'UMLModel_Component'. From 'UMLModel_ComponentRealization', the role 'UMLModel_ComponentRealization' has cardinality 0..*, and from 'UMLModel_Component', the role 'UMLModel_Component84' has cardinality 0..*.
+An association connects 'UMLModel_InteractionOperand' and 'UMLModel_CombinedFragment'. From 'UMLModel_InteractionOperand', the role 'UMLModel_InteractionOperand' has cardinality 0..*, and from 'UMLModel_CombinedFragment', the role 'UMLModel_CombinedFragment' has cardinality 0..*.
+An association connects 'UMLModel_Gate' and 'UMLModel_CombinedFragment'. From 'UMLModel_Gate', the role 'UMLModel_Gate' has cardinality 0..*, and from 'UMLModel_CombinedFragment', the role 'UMLModel_CombinedFragment87' has cardinality 0..*.
+An association connects 'UMLModel_Clause' and 'UMLModel_ConditionalNode'. From 'UMLModel_Clause', the role 'UMLModel_Clause' has cardinality 0..*, and from 'UMLModel_ConditionalNode', the role 'UMLModel_ConditionalNode' has cardinality 0..*.
+An association connects 'UMLModel_ConditionalNode' and 'UMLModel_OutputPin'. From 'UMLModel_ConditionalNode', the role 'UMLModel_ConditionalNode90' has cardinality 0..*, and from 'UMLModel_OutputPin', the role 'UMLModel_OutputPin91' has cardinality 0..*.
+An association connects 'UMLModel_ValueSpecification' and 'UMLModel_Constraint'. From 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification94' has cardinality 0..*, and from 'UMLModel_Constraint', the role 'UMLModel_Constraint93' has cardinality 0..*.
+An association connects 'UMLModel_Connector' and 'UMLModel_ConnectorEnd'. From 'UMLModel_Connector', the role 'UMLModel_Connector' has cardinality 0..*, and from 'UMLModel_ConnectorEnd', the role 'UMLModel_ConnectorEnd' has cardinality 0..*.
+An association connects 'UMLModel_CreateLinkObjectAction' and 'UMLModel_OutputPin'. From 'UMLModel_CreateLinkObjectAction', the role 'UMLModel_CreateLinkObjectAction' has cardinality 0..*, and from 'UMLModel_OutputPin', the role 'UMLModel_OutputPin97' has cardinality 0..*.
+An association connects 'UMLModel_OutputPin' and 'UMLModel_CreateObjectAction'. From 'UMLModel_OutputPin', the role 'UMLModel_OutputPin99' has cardinality 0..*, and from 'UMLModel_CreateObjectAction', the role 'UMLModel_CreateObjectAction' has cardinality 0..*.
+An association connects 'UMLModel_Property' and 'UMLModel_DataType'. From 'UMLModel_Property', the role 'UMLModel_Property101' has cardinality 0..*, and from 'UMLModel_DataType', the role 'UMLModel_DataType' has cardinality 0..*.
+An association connects 'UMLModel_Operation' and 'UMLModel_DataType'. From 'UMLModel_Operation', the role 'UMLModel_Operation104' has cardinality 0..*, and from 'UMLModel_DataType', the role 'UMLModel_DataType103' has cardinality 0..*.
+An association connects 'UMLModel_DeploymentTarget' and 'UMLModel_Deployment'. From 'UMLModel_DeploymentTarget', the role 'UMLModel_DeploymentTarget' has cardinality 0..*, and from 'UMLModel_Deployment', the role 'UMLModel_Deployment' has cardinality 0..*.
+An association connects 'UMLModel_Deployment' and 'UMLModel_DeploymentSpecification'. From 'UMLModel_Deployment', the role 'UMLModel_Deployment107' has cardinality 0..*, and from 'UMLModel_DeploymentSpecification', the role 'UMLModel_DeploymentSpecification' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_DestroyObjectAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin109' has cardinality 0..*, and from 'UMLModel_DestroyObjectAction', the role 'UMLModel_DestroyObjectAction' has cardinality 0..*.
+An association connects 'UMLModel_Comment' and 'UMLModel_Element'. From 'UMLModel_Comment', the role 'UMLModel_Comment' has cardinality 0..*, and from 'UMLModel_Element', the role 'UMLModel_Element' has cardinality 0..*.
+An association connects 'UMLModel_PackageableElement' and 'UMLModel_ElementImport'. From 'UMLModel_PackageableElement', the role 'UMLModel_PackageableElement112' has cardinality 0..*, and from 'UMLModel_ElementImport', the role 'UMLModel_ElementImport' has cardinality 0..*.
+An association connects 'UMLModel_EnumerationLiteral' and 'UMLModel_Enumeration'. From 'UMLModel_EnumerationLiteral', the role 'UMLModel_EnumerationLiteral' has cardinality 0..*, and from 'UMLModel_Enumeration', the role 'UMLModel_Enumeration' has cardinality 0..*.
+An association connects 'UMLModel_ExecutableNode' and 'UMLModel_ExceptionHandler'. From 'UMLModel_ExecutableNode', the role 'UMLModel_ExecutableNode' has cardinality 0..*, and from 'UMLModel_ExceptionHandler', the role 'UMLModel_ExceptionHandler' has cardinality 0..*.
+An association connects 'UMLModel_Extend' and 'UMLModel_Constraint'. From 'UMLModel_Extend', the role 'UMLModel_Extend' has cardinality 0..*, and from 'UMLModel_Constraint', the role 'UMLModel_Constraint116' has cardinality 0..*.
+An association connects 'UMLModel_Expression' and 'UMLModel_ValueSpecification'. From 'UMLModel_Expression', the role 'UMLModel_Expression' has cardinality 0..*, and from 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification118' has cardinality 0..*.
+An association connects 'UMLModel_Interface' and 'UMLModel_Property'. From 'UMLModel_Interface', the role 'UMLModel_Interface' has cardinality 0..*, and from 'UMLModel_Property', the role 'UMLModel_Property120' has cardinality 0..*.
+An association connects 'UMLModel_Interface' and 'UMLModel_Operation'. From 'UMLModel_Interface', the role 'UMLModel_Interface122' has cardinality 0..*, and from 'UMLModel_Operation', the role 'UMLModel_Operation123' has cardinality 0..*.
+An association connects 'UMLModel_Classifier' and 'UMLModel_Interface'. From 'UMLModel_Classifier', the role 'UMLModel_Classifier126' has cardinality 0..*, and from 'UMLModel_Interface', the role 'UMLModel_Interface125' has cardinality 0..*.
+An association connects 'UMLModel_Reception' and 'UMLModel_Interface'. From 'UMLModel_Reception', the role 'UMLModel_Reception129' has cardinality 0..*, and from 'UMLModel_Interface', the role 'UMLModel_Interface128' has cardinality 0..*.
+An association connects 'UMLModel_Interface' and 'UMLModel_ProtocolStateMachine'. From 'UMLModel_Interface', the role 'UMLModel_Interface131' has cardinality 0..*, and from 'UMLModel_ProtocolStateMachine', the role 'UMLModel_ProtocolStateMachine' has cardinality 0..*.
+An association connects 'UMLModel_InstanceSpecification' and 'UMLModel_Slot'. From 'UMLModel_InstanceSpecification', the role 'UMLModel_InstanceSpecification' has cardinality 0..*, and from 'UMLModel_Slot', the role 'UMLModel_Slot' has cardinality 0..*.
+An association connects 'UMLModel_ValueSpecification' and 'UMLModel_InstanceSpecification'. From 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification135' has cardinality 0..*, and from 'UMLModel_InstanceSpecification', the role 'UMLModel_InstanceSpecification134' has cardinality 0..*.
+An association connects 'UMLModel_InvocationAction' and 'UMLModel_InputPin'. From 'UMLModel_InvocationAction', the role 'UMLModel_InvocationAction' has cardinality 0..*, and from 'UMLModel_InputPin', the role 'UMLModel_InputPin137' has cardinality 0..*.
+An association connects 'UMLModel_Interaction' and 'UMLModel_Lifeline'. From 'UMLModel_Interaction', the role 'UMLModel_Interaction' has cardinality 0..*, and from 'UMLModel_Lifeline', the role 'UMLModel_Lifeline' has cardinality 0..*.
+An association connects 'UMLModel_Interaction' and 'UMLModel_InteractionFragment'. From 'UMLModel_Interaction', the role 'UMLModel_Interaction140' has cardinality 0..*, and from 'UMLModel_InteractionFragment', the role 'UMLModel_InteractionFragment' has cardinality 0..*.
+An association connects 'UMLModel_Interaction' and 'UMLModel_Action'. From 'UMLModel_Interaction', the role 'UMLModel_Interaction142' has cardinality 0..*, and from 'UMLModel_Action', the role 'UMLModel_Action143' has cardinality 0..*.
+An association connects 'UMLModel_Gate' and 'UMLModel_Interaction'. From 'UMLModel_Gate', the role 'UMLModel_Gate146' has cardinality 0..*, and from 'UMLModel_Interaction', the role 'UMLModel_Interaction145' has cardinality 0..*.
+An association connects 'UMLModel_Interaction' and 'UMLModel_Message'. From 'UMLModel_Interaction', the role 'UMLModel_Interaction148' has cardinality 0..*, and from 'UMLModel_Message', the role 'UMLModel_Message' has cardinality 0..*.
+An association connects 'UMLModel_InteractionFragment' and 'UMLModel_GeneralOrdering'. From 'UMLModel_InteractionFragment', the role 'UMLModel_InteractionFragment150' has cardinality 0..*, and from 'UMLModel_GeneralOrdering', the role 'UMLModel_GeneralOrdering' has cardinality 0..*.
+An association connects 'UMLModel_InteractionUse' and 'UMLModel_Gate'. From 'UMLModel_InteractionUse', the role 'UMLModel_InteractionUse' has cardinality 0..*, and from 'UMLModel_Gate', the role 'UMLModel_Gate152' has cardinality 0..*.
+An association connects 'UMLModel_Action' and 'UMLModel_InteractionUse'. From 'UMLModel_Action', the role 'UMLModel_Action155' has cardinality 0..*, and from 'UMLModel_InteractionUse', the role 'UMLModel_InteractionUse154' has cardinality 0..*.
+An association connects 'UMLModel_InteractionOperand' and 'UMLModel_InteractionConstraint'. From 'UMLModel_InteractionOperand', the role 'UMLModel_InteractionOperand157' has cardinality 0..*, and from 'UMLModel_InteractionConstraint', the role 'UMLModel_InteractionConstraint' has cardinality 0..*.
+An association connects 'UMLModel_InteractionFragment' and 'UMLModel_InteractionOperand'. From 'UMLModel_InteractionFragment', the role 'UMLModel_InteractionFragment160' has cardinality 0..*, and from 'UMLModel_InteractionOperand', the role 'UMLModel_InteractionOperand159' has cardinality 0..*.
+An association connects 'UMLModel_InteractionConstraint' and 'UMLModel_ValueSpecification'. From 'UMLModel_InteractionConstraint', the role 'UMLModel_InteractionConstraint162' has cardinality 0..*, and from 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification163' has cardinality 0..*.
+An association connects 'UMLModel_ValueSpecification' and 'UMLModel_InteractionConstraint'. From 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification166' has cardinality 0..*, and from 'UMLModel_InteractionConstraint', the role 'UMLModel_InteractionConstraint165' has cardinality 0..*.
+An association connects 'UMLModel_ValueSpecification' and 'UMLModel_JoinNode'. From 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification168' has cardinality 0..*, and from 'UMLModel_JoinNode', the role 'UMLModel_JoinNode' has cardinality 0..*.
+An association connects 'UMLModel_Lifeline' and 'UMLModel_ValueSpecification'. From 'UMLModel_Lifeline', the role 'UMLModel_Lifeline170' has cardinality 0..*, and from 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification171' has cardinality 0..*.
+An association connects 'UMLModel_LinkAction' and 'UMLModel_LinkEndData'. From 'UMLModel_LinkAction', the role 'UMLModel_LinkAction' has cardinality 0..*, and from 'UMLModel_LinkEndData', the role 'UMLModel_LinkEndData' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_LinkAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin175' has cardinality 0..*, and from 'UMLModel_LinkAction', the role 'UMLModel_LinkAction174' has cardinality 0..*.
+An association connects 'UMLModel_QualifierValue' and 'UMLModel_LinkEndData'. From 'UMLModel_QualifierValue', the role 'UMLModel_QualifierValue' has cardinality 0..*, and from 'UMLModel_LinkEndData', the role 'UMLModel_LinkEndData177' has cardinality 0..*.
+An association connects 'UMLModel_LoopNode' and 'UMLModel_OutputPin'. From 'UMLModel_LoopNode', the role 'UMLModel_LoopNode' has cardinality 0..*, and from 'UMLModel_OutputPin', the role 'UMLModel_OutputPin179' has cardinality 0..*.
+An association connects 'UMLModel_LoopNode' and 'UMLModel_InputPin'. From 'UMLModel_LoopNode', the role 'UMLModel_LoopNode181' has cardinality 0..*, and from 'UMLModel_InputPin', the role 'UMLModel_InputPin182' has cardinality 0..*.
+An association connects 'UMLModel_ValueSpecification' and 'UMLModel_Message'. From 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification185' has cardinality 0..*, and from 'UMLModel_Message', the role 'UMLModel_Message184' has cardinality 0..*.
+An association connects 'UMLModel_MultiplicityElement' and 'UMLModel_ValueSpecification'. From 'UMLModel_MultiplicityElement', the role 'UMLModel_MultiplicityElement' has cardinality 0..*, and from 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification187' has cardinality 0..*.
+An association connects 'UMLModel_MultiplicityElement' and 'UMLModel_ValueSpecification'. From 'UMLModel_MultiplicityElement', the role 'UMLModel_MultiplicityElement189' has cardinality 0..*, and from 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification190' has cardinality 0..*.
+An association connects 'UMLModel_NamedElement' and 'UMLModel_StringExpression'. From 'UMLModel_NamedElement', the role 'UMLModel_NamedElement' has cardinality 0..*, and from 'UMLModel_StringExpression', the role 'UMLModel_StringExpression' has cardinality 0..*.
+An association connects 'UMLModel_Namespace' and 'UMLModel_ElementImport'. From 'UMLModel_Namespace', the role 'UMLModel_Namespace' has cardinality 0..*, and from 'UMLModel_ElementImport', the role 'UMLModel_ElementImport193' has cardinality 0..*.
+An association connects 'UMLModel_Namespace' and 'UMLModel_PackageImport'. From 'UMLModel_Namespace', the role 'UMLModel_Namespace195' has cardinality 0..*, and from 'UMLModel_PackageImport', the role 'UMLModel_PackageImport' has cardinality 0..*.
+An association connects 'UMLModel_Constraint' and 'UMLModel_Namespace'. From 'UMLModel_Constraint', the role 'UMLModel_Constraint198' has cardinality 0..*, and from 'UMLModel_Namespace', the role 'UMLModel_Namespace197' has cardinality 0..*.
+An association connects 'UMLModel_Node' and 'UMLModel_Node'. From 'UMLModel_Node', the role 'UMLModel_Node199' has cardinality 0..*, and from 'UMLModel_Node', the role 'UMLModel_Node' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_OpaqueAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin202' has cardinality 0..*, and from 'UMLModel_OpaqueAction', the role 'UMLModel_OpaqueAction' has cardinality 0..*.
+An association connects 'UMLModel_OpaqueAction' and 'UMLModel_OutputPin'. From 'UMLModel_OpaqueAction', the role 'UMLModel_OpaqueAction204' has cardinality 0..*, and from 'UMLModel_OutputPin', the role 'UMLModel_OutputPin205' has cardinality 0..*.
+An association connects 'UMLModel_ValueSpecification' and 'UMLModel_ObjectNode'. From 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification207' has cardinality 0..*, and from 'UMLModel_ObjectNode', the role 'UMLModel_ObjectNode' has cardinality 0..*.
+An association connects 'UMLModel_Parameter' and 'UMLModel_ValueSpecification'. From 'UMLModel_Parameter', the role 'UMLModel_Parameter209' has cardinality 0..*, and from 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification210' has cardinality 0..*.
+An association connects 'UMLModel_Package' and 'UMLModel_PackageMerge'. From 'UMLModel_Package', the role 'UMLModel_Package' has cardinality 0..*, and from 'UMLModel_PackageMerge', the role 'UMLModel_PackageMerge' has cardinality 0..*.
+An association connects 'UMLModel_PackageableElement' and 'UMLModel_Package'. From 'UMLModel_PackageableElement', the role 'UMLModel_PackageableElement214' has cardinality 0..*, and from 'UMLModel_Package', the role 'UMLModel_Package213' has cardinality 0..*.
+An association connects 'UMLModel_ProfileApplication' and 'UMLModel_Package'. From 'UMLModel_ProfileApplication', the role 'UMLModel_ProfileApplication' has cardinality 0..*, and from 'UMLModel_Package', the role 'UMLModel_Package216' has cardinality 0..*.
+An association connects 'UMLModel_PackageImport' and 'UMLModel_PackageableElement'. From 'UMLModel_PackageImport', the role 'UMLModel_PackageImport218' has cardinality 0..*, and from 'UMLModel_PackageableElement', the role 'UMLModel_PackageableElement219' has cardinality 0..*.
+An association connects 'UMLModel_ParameterSet' and 'UMLModel_Constraint'. From 'UMLModel_ParameterSet', the role 'UMLModel_ParameterSet221' has cardinality 0..*, and from 'UMLModel_Constraint', the role 'UMLModel_Constraint222' has cardinality 0..*.
+An association connects 'UMLModel_Property' and 'UMLModel_ValueSpecification'. From 'UMLModel_Property', the role 'UMLModel_Property224' has cardinality 0..*, and from 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification225' has cardinality 0..*.
+An association connects 'UMLModel_Property' and 'UMLModel_Property'. From 'UMLModel_Property', the role 'UMLModel_Property226' has cardinality 0..*, and from 'UMLModel_Property', the role 'UMLModel_Property228' has cardinality 0..*.
+An association connects 'UMLModel_ProtocolStateMachine' and 'UMLModel_ProtocolConformance'. From 'UMLModel_ProtocolStateMachine', the role 'UMLModel_ProtocolStateMachine230' has cardinality 0..*, and from 'UMLModel_ProtocolConformance', the role 'UMLModel_ProtocolConformance' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_RaiseExceptionAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin232' has cardinality 0..*, and from 'UMLModel_RaiseExceptionAction', the role 'UMLModel_RaiseExceptionAction' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_ReclassifyObjectAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin234' has cardinality 0..*, and from 'UMLModel_ReclassifyObjectAction', the role 'UMLModel_ReclassifyObjectAction' has cardinality 0..*.
+An association connects 'UMLModel_ReadIsClassifiedObjectAction' and 'UMLModel_OutputPin'. From 'UMLModel_ReadIsClassifiedObjectAction', the role 'UMLModel_ReadIsClassifiedObjectAction' has cardinality 0..*, and from 'UMLModel_OutputPin', the role 'UMLModel_OutputPin236' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_ReadIsClassifiedObjectAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin239' has cardinality 0..*, and from 'UMLModel_ReadIsClassifiedObjectAction', the role 'UMLModel_ReadIsClassifiedObjectAction238' has cardinality 0..*.
+An association connects 'UMLModel_ReadExtentAction' and 'UMLModel_OutputPin'. From 'UMLModel_ReadExtentAction', the role 'UMLModel_ReadExtentAction' has cardinality 0..*, and from 'UMLModel_OutputPin', the role 'UMLModel_OutputPin241' has cardinality 0..*.
+An association connects 'UMLModel_OutputPin' and 'UMLModel_ReadLinkAction'. From 'UMLModel_OutputPin', the role 'UMLModel_OutputPin243' has cardinality 0..*, and from 'UMLModel_ReadLinkAction', the role 'UMLModel_ReadLinkAction' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_ReadLinkObjectEndAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin245' has cardinality 0..*, and from 'UMLModel_ReadLinkObjectEndAction', the role 'UMLModel_ReadLinkObjectEndAction' has cardinality 0..*.
+An association connects 'UMLModel_ReadLinkObjectEndAction' and 'UMLModel_OutputPin'. From 'UMLModel_ReadLinkObjectEndAction', the role 'UMLModel_ReadLinkObjectEndAction247' has cardinality 0..*, and from 'UMLModel_OutputPin', the role 'UMLModel_OutputPin248' has cardinality 0..*.
+An association connects 'UMLModel_ReadLinkObjectEndQualifierAction' and 'UMLModel_InputPin'. From 'UMLModel_ReadLinkObjectEndQualifierAction', the role 'UMLModel_ReadLinkObjectEndQualifierAction' has cardinality 0..*, and from 'UMLModel_InputPin', the role 'UMLModel_InputPin250' has cardinality 0..*.
+An association connects 'UMLModel_ReadLinkObjectEndQualifierAction' and 'UMLModel_OutputPin'. From 'UMLModel_ReadLinkObjectEndQualifierAction', the role 'UMLModel_ReadLinkObjectEndQualifierAction252' has cardinality 0..*, and from 'UMLModel_OutputPin', the role 'UMLModel_OutputPin253' has cardinality 0..*.
+An association connects 'UMLModel_ReadSelfAction' and 'UMLModel_OutputPin'. From 'UMLModel_ReadSelfAction', the role 'UMLModel_ReadSelfAction' has cardinality 0..*, and from 'UMLModel_OutputPin', the role 'UMLModel_OutputPin255' has cardinality 0..*.
+An association connects 'UMLModel_ReadStructuralFeatureAction' and 'UMLModel_OutputPin'. From 'UMLModel_ReadStructuralFeatureAction', the role 'UMLModel_ReadStructuralFeatureAction' has cardinality 0..*, and from 'UMLModel_OutputPin', the role 'UMLModel_OutputPin257' has cardinality 0..*.
+An association connects 'UMLModel_OutputPin' and 'UMLModel_ReadVariableAction'. From 'UMLModel_OutputPin', the role 'UMLModel_OutputPin259' has cardinality 0..*, and from 'UMLModel_ReadVariableAction', the role 'UMLModel_ReadVariableAction' has cardinality 0..*.
+An association connects 'UMLModel_ReduceAction' and 'UMLModel_OutputPin'. From 'UMLModel_ReduceAction', the role 'UMLModel_ReduceAction' has cardinality 0..*, and from 'UMLModel_OutputPin', the role 'UMLModel_OutputPin261' has cardinality 0..*.
+An association connects 'UMLModel_ReduceAction' and 'UMLModel_InputPin'. From 'UMLModel_ReduceAction', the role 'UMLModel_ReduceAction263' has cardinality 0..*, and from 'UMLModel_InputPin', the role 'UMLModel_InputPin264' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_ReplyAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin266' has cardinality 0..*, and from 'UMLModel_ReplyAction', the role 'UMLModel_ReplyAction' has cardinality 0..*.
+An association connects 'UMLModel_ReplyAction' and 'UMLModel_InputPin'. From 'UMLModel_ReplyAction', the role 'UMLModel_ReplyAction268' has cardinality 0..*, and from 'UMLModel_InputPin', the role 'UMLModel_InputPin269' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_RemoveVariableValueAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin271' has cardinality 0..*, and from 'UMLModel_RemoveVariableValueAction', the role 'UMLModel_RemoveVariableValueAction' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_RemoveStructuralFeatureValueAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin273' has cardinality 0..*, and from 'UMLModel_RemoveStructuralFeatureValueAction', the role 'UMLModel_RemoveStructuralFeatureValueAction' has cardinality 0..*.
+An association connects 'UMLModel_Region' and 'UMLModel_Vertex'. From 'UMLModel_Region', the role 'UMLModel_Region' has cardinality 0..*, and from 'UMLModel_Vertex', the role 'UMLModel_Vertex' has cardinality 0..*.
+An association connects 'UMLModel_Transition' and 'UMLModel_Region'. From 'UMLModel_Transition', the role 'UMLModel_Transition' has cardinality 0..*, and from 'UMLModel_Region', the role 'UMLModel_Region276' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_SendSignalAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin278' has cardinality 0..*, and from 'UMLModel_SendSignalAction', the role 'UMLModel_SendSignalAction' has cardinality 0..*.
+An association connects 'UMLModel_SequenceNode' and 'UMLModel_ExecutableNode'. From 'UMLModel_SequenceNode', the role 'UMLModel_SequenceNode' has cardinality 0..*, and from 'UMLModel_ExecutableNode', the role 'UMLModel_ExecutableNode280' has cardinality 0..*.
+An association connects 'UMLModel_Slot' and 'UMLModel_ValueSpecification'. From 'UMLModel_Slot', the role 'UMLModel_Slot282' has cardinality 0..*, and from 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification283' has cardinality 0..*.
+An association connects 'UMLModel_Constraint' and 'UMLModel_StateInvariant'. From 'UMLModel_Constraint', the role 'UMLModel_Constraint285' has cardinality 0..*, and from 'UMLModel_StateInvariant', the role 'UMLModel_StateInvariant' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_StartClassifierBehaviorAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin287' has cardinality 0..*, and from 'UMLModel_StartClassifierBehaviorAction', the role 'UMLModel_StartClassifierBehaviorAction' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_SendObjectAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin289' has cardinality 0..*, and from 'UMLModel_SendObjectAction', the role 'UMLModel_SendObjectAction' has cardinality 0..*.
+An association connects 'UMLModel_SendObjectAction' and 'UMLModel_InputPin'. From 'UMLModel_SendObjectAction', the role 'UMLModel_SendObjectAction291' has cardinality 0..*, and from 'UMLModel_InputPin', the role 'UMLModel_InputPin292' has cardinality 0..*.
+An association connects 'UMLModel_StringExpression' and 'UMLModel_StringExpression'. From 'UMLModel_StringExpression', the role 'UMLModel_StringExpression295' has cardinality 0..*, and from 'UMLModel_StringExpression', the role 'UMLModel_StringExpression293' has cardinality 0..*.
+An association connects 'UMLModel_Variable' and 'UMLModel_StructuredActivityNode'. From 'UMLModel_Variable', the role 'UMLModel_Variable297' has cardinality 0..*, and from 'UMLModel_StructuredActivityNode', the role 'UMLModel_StructuredActivityNode' has cardinality 0..*.
+An association connects 'UMLModel_ActivityEdge' and 'UMLModel_StructuredActivityNode'. From 'UMLModel_ActivityEdge', the role 'UMLModel_ActivityEdge300' has cardinality 0..*, and from 'UMLModel_StructuredActivityNode', the role 'UMLModel_StructuredActivityNode299' has cardinality 0..*.
+An association connects 'UMLModel_StructuredActivityNode' and 'UMLModel_ActivityNode'. From 'UMLModel_StructuredActivityNode', the role 'UMLModel_StructuredActivityNode302' has cardinality 0..*, and from 'UMLModel_ActivityNode', the role 'UMLModel_ActivityNode303' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_StructuralFeatureAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin305' has cardinality 0..*, and from 'UMLModel_StructuralFeatureAction', the role 'UMLModel_StructuralFeatureAction' has cardinality 0..*.
+An association connects 'UMLModel_Signal' and 'UMLModel_Property'. From 'UMLModel_Signal', the role 'UMLModel_Signal' has cardinality 0..*, and from 'UMLModel_Property', the role 'UMLModel_Property307' has cardinality 0..*.
+An association connects 'UMLModel_ConnectionPointReference' and 'UMLModel_State'. From 'UMLModel_ConnectionPointReference', the role 'UMLModel_ConnectionPointReference' has cardinality 0..*, and from 'UMLModel_State', the role 'UMLModel_State' has cardinality 0..*.
+An association connects 'UMLModel_Pseudostate' and 'UMLModel_State'. From 'UMLModel_Pseudostate', the role 'UMLModel_Pseudostate' has cardinality 0..*, and from 'UMLModel_State', the role 'UMLModel_State310' has cardinality 0..*.
+An association connects 'UMLModel_State' and 'UMLModel_Constraint'. From 'UMLModel_State', the role 'UMLModel_State312' has cardinality 0..*, and from 'UMLModel_Constraint', the role 'UMLModel_Constraint313' has cardinality 0..*.
+An association connects 'UMLModel_State' and 'UMLModel_Behavior'. From 'UMLModel_State', the role 'UMLModel_State315' has cardinality 0..*, and from 'UMLModel_Behavior', the role 'UMLModel_Behavior316' has cardinality 0..*.
+An association connects 'UMLModel_Behavior' and 'UMLModel_State'. From 'UMLModel_Behavior', the role 'UMLModel_Behavior319' has cardinality 0..*, and from 'UMLModel_State', the role 'UMLModel_State318' has cardinality 0..*.
+An association connects 'UMLModel_State' and 'UMLModel_Behavior'. From 'UMLModel_State', the role 'UMLModel_State321' has cardinality 0..*, and from 'UMLModel_Behavior', the role 'UMLModel_Behavior322' has cardinality 0..*.
+An association connects 'UMLModel_Trigger' and 'UMLModel_State'. From 'UMLModel_Trigger', the role 'UMLModel_Trigger325' has cardinality 0..*, and from 'UMLModel_State', the role 'UMLModel_State324' has cardinality 0..*.
+An association connects 'UMLModel_State' and 'UMLModel_Region'. From 'UMLModel_State', the role 'UMLModel_State327' has cardinality 0..*, and from 'UMLModel_Region', the role 'UMLModel_Region328' has cardinality 0..*.
+An association connects 'UMLModel_StateMachine' and 'UMLModel_Region'. From 'UMLModel_StateMachine', the role 'UMLModel_StateMachine' has cardinality 0..*, and from 'UMLModel_Region', the role 'UMLModel_Region330' has cardinality 0..*.
+An association connects 'UMLModel_Pseudostate' and 'UMLModel_StateMachine'. From 'UMLModel_Pseudostate', the role 'UMLModel_Pseudostate333' has cardinality 0..*, and from 'UMLModel_StateMachine', the role 'UMLModel_StateMachine332' has cardinality 0..*.
+An association connects 'UMLModel_Property' and 'UMLModel_StructuredClassifier'. From 'UMLModel_Property', the role 'UMLModel_Property335' has cardinality 0..*, and from 'UMLModel_StructuredClassifier', the role 'UMLModel_StructuredClassifier' has cardinality 0..*.
+An association connects 'UMLModel_Connector' and 'UMLModel_StructuredClassifier'. From 'UMLModel_Connector', the role 'UMLModel_Connector338' has cardinality 0..*, and from 'UMLModel_StructuredClassifier', the role 'UMLModel_StructuredClassifier337' has cardinality 0..*.
+An association connects 'UMLModel_Image' and 'UMLModel_Stereotype'. From 'UMLModel_Image', the role 'UMLModel_Image' has cardinality 0..*, and from 'UMLModel_Stereotype', the role 'UMLModel_Stereotype' has cardinality 0..*.
+An association connects 'UMLModel_TemplateableElement' and 'UMLModel_TemplateBinding'. From 'UMLModel_TemplateableElement', the role 'UMLModel_TemplateableElement' has cardinality 0..*, and from 'UMLModel_TemplateBinding', the role 'UMLModel_TemplateBinding' has cardinality 0..*.
+An association connects 'UMLModel_TemplateableElement' and 'UMLModel_TemplateSignature'. From 'UMLModel_TemplateableElement', the role 'UMLModel_TemplateableElement342' has cardinality 0..*, and from 'UMLModel_TemplateSignature', the role 'UMLModel_TemplateSignature' has cardinality 0..*.
+An association connects 'UMLModel_TemplateBinding' and 'UMLModel_TemplateParameterSubstitution'. From 'UMLModel_TemplateBinding', the role 'UMLModel_TemplateBinding344' has cardinality 0..*, and from 'UMLModel_TemplateParameterSubstitution', the role 'UMLModel_TemplateParameterSubstitution' has cardinality 0..*.
+An association connects 'UMLModel_TemplateSignature' and 'UMLModel_TemplateParameter'. From 'UMLModel_TemplateSignature', the role 'UMLModel_TemplateSignature346' has cardinality 0..*, and from 'UMLModel_TemplateParameter', the role 'UMLModel_TemplateParameter' has cardinality 0..*.
+An association connects 'UMLModel_ParameterableElement' and 'UMLModel_TemplateParameter'. From 'UMLModel_ParameterableElement', the role 'UMLModel_ParameterableElement' has cardinality 0..*, and from 'UMLModel_TemplateParameter', the role 'UMLModel_TemplateParameter348' has cardinality 0..*.
+An association connects 'UMLModel_TemplateParameter' and 'UMLModel_ParameterableElement'. From 'UMLModel_TemplateParameter', the role 'UMLModel_TemplateParameter350' has cardinality 0..*, and from 'UMLModel_ParameterableElement', the role 'UMLModel_ParameterableElement351' has cardinality 0..*.
+An association connects 'UMLModel_ParameterableElement' and 'UMLModel_TemplateParameterSubstitution'. From 'UMLModel_ParameterableElement', the role 'UMLModel_ParameterableElement354' has cardinality 0..*, and from 'UMLModel_TemplateParameterSubstitution', the role 'UMLModel_TemplateParameterSubstitution353' has cardinality 0..*.
+An association connects 'UMLModel_TestIdentityAction' and 'UMLModel_InputPin'. From 'UMLModel_TestIdentityAction', the role 'UMLModel_TestIdentityAction' has cardinality 0..*, and from 'UMLModel_InputPin', the role 'UMLModel_InputPin356' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_TestIdentityAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin359' has cardinality 0..*, and from 'UMLModel_TestIdentityAction', the role 'UMLModel_TestIdentityAction358' has cardinality 0..*.
+An association connects 'UMLModel_TestIdentityAction' and 'UMLModel_OutputPin'. From 'UMLModel_TestIdentityAction', the role 'UMLModel_TestIdentityAction361' has cardinality 0..*, and from 'UMLModel_OutputPin', the role 'UMLModel_OutputPin362' has cardinality 0..*.
+An association connects 'UMLModel_TimeEvent' and 'UMLModel_ValueSpecification'. From 'UMLModel_TimeEvent', the role 'UMLModel_TimeEvent' has cardinality 0..*, and from 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification364' has cardinality 0..*.
+An association connects 'UMLModel_Transition' and 'UMLModel_Behavior'. From 'UMLModel_Transition', the role 'UMLModel_Transition366' has cardinality 0..*, and from 'UMLModel_Behavior', the role 'UMLModel_Behavior367' has cardinality 0..*.
+An association connects 'UMLModel_Transition' and 'UMLModel_Trigger'. From 'UMLModel_Transition', the role 'UMLModel_Transition369' has cardinality 0..*, and from 'UMLModel_Trigger', the role 'UMLModel_Trigger370' has cardinality 0..*.
+An association connects 'UMLModel_OutputPin' and 'UMLModel_UnmarshallAction'. From 'UMLModel_OutputPin', the role 'UMLModel_OutputPin372' has cardinality 0..*, and from 'UMLModel_UnmarshallAction', the role 'UMLModel_UnmarshallAction' has cardinality 0..*.
+An association connects 'UMLModel_InputPin' and 'UMLModel_UnmarshallAction'. From 'UMLModel_InputPin', the role 'UMLModel_InputPin375' has cardinality 0..*, and from 'UMLModel_UnmarshallAction', the role 'UMLModel_UnmarshallAction374' has cardinality 0..*.
+An association connects 'UMLModel_UseCase' and 'UMLModel_Include'. From 'UMLModel_UseCase', the role 'UMLModel_UseCase377' has cardinality 0..*, and from 'UMLModel_Include', the role 'UMLModel_Include' has cardinality 0..*.
+An association connects 'UMLModel_UseCase' and 'UMLModel_Extend'. From 'UMLModel_UseCase', the role 'UMLModel_UseCase379' has cardinality 0..*, and from 'UMLModel_Extend', the role 'UMLModel_Extend380' has cardinality 0..*.
+An association connects 'UMLModel_UseCase' and 'UMLModel_ExtensionPoint'. From 'UMLModel_UseCase', the role 'UMLModel_UseCase382' has cardinality 0..*, and from 'UMLModel_ExtensionPoint', the role 'UMLModel_ExtensionPoint' has cardinality 0..*.
+An association connects 'UMLModel_ValueSpecification' and 'UMLModel_ValuePin'. From 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification384' has cardinality 0..*, and from 'UMLModel_ValuePin', the role 'UMLModel_ValuePin' has cardinality 0..*.
+An association connects 'UMLModel_ValueSpecification' and 'UMLModel_ValueSpecificationAction'. From 'UMLModel_ValueSpecification', the role 'UMLModel_ValueSpecification386' has cardinality 0..*, and from 'UMLModel_ValueSpecificationAction', the role 'UMLModel_ValueSpecificationAction' has cardinality 0..*.
+An association connects 'UMLModel_ValueSpecificationAction' and 'UMLModel_OutputPin'. From 'UMLModel_ValueSpecificationAction', the role 'UMLModel_ValueSpecificationAction388' has cardinality 0..*, and from 'UMLModel_OutputPin', the role 'UMLModel_OutputPin389' has cardinality 0..*.
+An association connects 'UMLModel_WriteVariableAction' and 'UMLModel_InputPin'. From 'UMLModel_WriteVariableAction', the role 'UMLModel_WriteVariableAction' has cardinality 0..*, and from 'UMLModel_InputPin', the role 'UMLModel_InputPin391' has cardinality 0..*.
+An association connects 'UMLModel_WriteStructuralFeatureAction' and 'UMLModel_InputPin'. From 'UMLModel_WriteStructuralFeatureAction', the role 'UMLModel_WriteStructuralFeatureAction' has cardinality 0..*, and from 'UMLModel_InputPin', the role 'UMLModel_InputPin393' has cardinality 0..*.

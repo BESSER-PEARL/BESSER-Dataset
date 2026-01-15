@@ -1,0 +1,43 @@
+The domain model 'uml_15_to_20_associationEndToProperty' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'uml_15_to_20_associationEndToProperty_AssociationEnd' represents an important domain concept.
+It has one attribute: 'isNavigable', which is of type bool.
+
+'uml_15_to_20_associationEndToProperty_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_15_to_20_associationEndToProperty_StructuralFeature' represents an important domain concept.
+It has the following attributes: 'targetScope', which is of type str; 'ownerScope', which is of type str.
+
+'uml_15_to_20_associationEndToProperty_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_15_to_20_associationEndToProperty_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_15_to_20_associationEndToProperty_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_15_to_20_associationEndToProperty_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ScopeKind' defines the following possible values: 'instance', 'classifier'.
+
+The model also captures inheritance relationships between classes.
+The class 'uml_15_to_20_associationEndToProperty_Attribute' is a specialization of 'StructuralFeature'.
+The class 'uml_15_to_20_associationEndToProperty_Operation' is a specialization of 'StructuralFeature'.
+
+Relationships between classes are modeled using associations.
+An association connects 'uml_15_to_20_associationEndToProperty_Model' and 'uml_15_to_20_associationEndToProperty_Class'. From 'uml_15_to_20_associationEndToProperty_Model', the role 'uml_15_to_20_associationEndToProperty_Model' has cardinality 0..*, and from 'uml_15_to_20_associationEndToProperty_Class', the role 'uml_15_to_20_associationEndToProperty_Class' has cardinality 0..*.
+An association connects 'uml_15_to_20_associationEndToProperty_Association' and 'uml_15_to_20_associationEndToProperty_Model'. From 'uml_15_to_20_associationEndToProperty_Association', the role 'uml_15_to_20_associationEndToProperty_Association' has cardinality 0..*, and from 'uml_15_to_20_associationEndToProperty_Model', the role 'uml_15_to_20_associationEndToProperty_Model2' has cardinality 0..*.
+An association connects 'uml_15_to_20_associationEndToProperty_StructuralFeature' and 'uml_15_to_20_associationEndToProperty_Class'. From 'uml_15_to_20_associationEndToProperty_StructuralFeature', the role 'uml_15_to_20_associationEndToProperty_StructuralFeature' has cardinality 0..*, and from 'uml_15_to_20_associationEndToProperty_Class', the role 'uml_15_to_20_associationEndToProperty_Class4' has cardinality 0..*.
+An association connects 'uml_15_to_20_associationEndToProperty_Class' and 'uml_15_to_20_associationEndToProperty_AssociationEnd'. From 'uml_15_to_20_associationEndToProperty_Class', the role 'participant' has cardinality 0..*, and from 'uml_15_to_20_associationEndToProperty_AssociationEnd', the role 'AssociationEnd' has cardinality 0..*.
+An association connects 'uml_15_to_20_associationEndToProperty_Association' and 'uml_15_to_20_associationEndToProperty_AssociationEnd'. From 'uml_15_to_20_associationEndToProperty_Association', the role 'association' has cardinality 0..*, and from 'uml_15_to_20_associationEndToProperty_AssociationEnd', the role 'AssociationEnd7' has cardinality 0..*.
+An association connects 'uml_15_to_20_associationEndToProperty_Class' and 'uml_15_to_20_associationEndToProperty_AssociationEnd'. From 'uml_15_to_20_associationEndToProperty_Class', the role 'Class' has cardinality 0..*, and from 'uml_15_to_20_associationEndToProperty_AssociationEnd', the role 'associations' has cardinality 0..*.
+An association connects 'uml_15_to_20_associationEndToProperty_AssociationEnd' and 'uml_15_to_20_associationEndToProperty_Association'. From 'uml_15_to_20_associationEndToProperty_AssociationEnd', the role 'connections' has cardinality 0..*, and from 'uml_15_to_20_associationEndToProperty_Association', the role 'Association' has cardinality 0..*.

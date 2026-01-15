@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/dvojtise/logo/dynamic_semantic/example.logo.vm.model/model/VMLogo.ecore

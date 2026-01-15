@@ -1,0 +1,207 @@
+The domain model 'cool' describes the core structural elements and their relationships within the system.
+
+The model defines 41 main class(es).
+
+'cool_CaseExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature_' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_IdentifiableElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cool_BlockExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_CompareExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'cool_LetExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_SelfTypeLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cool_ParenExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'IdentifiableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_Case' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_Formal' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_ConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_LetDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_Attr' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cool_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_AssignmentExpression' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cool_NewExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_Class_' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_IdentifierRefExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_MultiplicationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_IntegerCompositeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_Feature_' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_DispatchExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_NumberLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'cool_IsvoidExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_AdditionExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_LoopExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cool_NegationExpression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'cool_Class_' is a specialization of 'Type'.
+The class 'cool_Class_' is a specialization of 'IdentifiableElement'.
+The class 'cool_Feature_' is a specialization of 'IdentifiableElement'.
+The class 'cool_Attr' is a specialization of 'Feature_'.
+The class 'cool_Method' is a specialization of 'Feature_'.
+The class 'cool_Formal' is a specialization of 'IdentifiableElement'.
+The class 'cool_PrimaryExpression' is a specialization of 'Expression'.
+The class 'cool_SelfTypeLiteral' is a specialization of 'PrimaryExpression'.
+The class 'cool_IdentifierRefExpression' is a specialization of 'PrimaryExpression'.
+The class 'cool_Literal' is a specialization of 'PrimaryExpression'.
+The class 'cool_NumberLiteral' is a specialization of 'Literal'.
+The class 'cool_StringLiteral' is a specialization of 'Literal'.
+The class 'cool_BooleanLiteral' is a specialization of 'Literal'.
+The class 'cool_ParenExpression' is a specialization of 'PrimaryExpression'.
+The class 'cool_AssignmentExpression' is a specialization of 'PrimaryExpression'.
+The class 'cool_NegationExpression' is a specialization of 'PrimaryExpression'.
+The class 'cool_IntegerCompositeExpression' is a specialization of 'PrimaryExpression'.
+The class 'cool_NewExpression' is a specialization of 'PrimaryExpression'.
+The class 'cool_DispatchExpression' is a specialization of 'PrimaryExpression'.
+The class 'cool_ConditionalExpression' is a specialization of 'PrimaryExpression'.
+The class 'cool_LoopExpression' is a specialization of 'PrimaryExpression'.
+The class 'cool_BlockExpression' is a specialization of 'PrimaryExpression'.
+The class 'cool_IsvoidExpression' is a specialization of 'PrimaryExpression'.
+The class 'cool_LetExpression' is a specialization of 'PrimaryExpression'.
+The class 'cool_LetDeclaration' is a specialization of 'IdentifiableElement'.
+The class 'cool_CaseExpression' is a specialization of 'PrimaryExpression'.
+The class 'cool_Case' is a specialization of 'IdentifiableElement'.
+The class 'cool_CompareExpression' is a specialization of 'Expression'.
+The class 'cool_AdditionExpression' is a specialization of 'Expression'.
+The class 'cool_Minus' is a specialization of 'Expression'.
+The class 'cool_MultiplicationExpression' is a specialization of 'Expression'.
+The class 'cool_Div' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'cool_Class_' and 'cool_Program'. From 'cool_Class_', the role 'cool_Class_' has cardinality 0..*, and from 'cool_Program', the role 'cool_Program' has cardinality 0..*.
+An association connects 'cool_Class_' and 'cool_Type'. From 'cool_Class_', the role 'cool_Class_2' has cardinality 0..*, and from 'cool_Type', the role 'cool_Type' has cardinality 0..*.
+An association connects 'cool_Feature_' and 'cool_Class_'. From 'cool_Feature_', the role 'cool_Feature_' has cardinality 0..*, and from 'cool_Class_', the role 'cool_Class_4' has cardinality 0..*.
+An association connects 'cool_Attr' and 'cool_Type'. From 'cool_Attr', the role 'cool_Attr' has cardinality 0..*, and from 'cool_Type', the role 'cool_Type6' has cardinality 0..*.
+An association connects 'cool_Expression' and 'cool_Attr'. From 'cool_Expression', the role 'cool_Expression' has cardinality 0..*, and from 'cool_Attr', the role 'cool_Attr8' has cardinality 0..*.
+An association connects 'cool_Formal' and 'cool_Method'. From 'cool_Formal', the role 'cool_Formal' has cardinality 0..*, and from 'cool_Method', the role 'cool_Method' has cardinality 0..*.
+An association connects 'cool_Method' and 'cool_Type'. From 'cool_Method', the role 'cool_Method11' has cardinality 0..*, and from 'cool_Type', the role 'cool_Type12' has cardinality 0..*.
+An association connects 'cool_Expression' and 'cool_Method'. From 'cool_Expression', the role 'cool_Expression15' has cardinality 0..*, and from 'cool_Method', the role 'cool_Method14' has cardinality 0..*.
+An association connects 'cool_Type' and 'cool_Formal'. From 'cool_Type', the role 'cool_Type18' has cardinality 0..*, and from 'cool_Formal', the role 'cool_Formal17' has cardinality 0..*.
+An association connects 'cool_IdentifierRefExpression' and 'cool_IdentifiableElement'. From 'cool_IdentifierRefExpression', the role 'cool_IdentifierRefExpression' has cardinality 0..*, and from 'cool_IdentifiableElement', the role 'cool_IdentifiableElement' has cardinality 0..*.
+An association connects 'cool_ParenExpression' and 'cool_Expression'. From 'cool_ParenExpression', the role 'cool_ParenExpression' has cardinality 0..*, and from 'cool_Expression', the role 'cool_Expression21' has cardinality 0..*.
+An association connects 'cool_AssignmentExpression' and 'cool_Expression'. From 'cool_AssignmentExpression', the role 'cool_AssignmentExpression' has cardinality 0..*, and from 'cool_Expression', the role 'cool_Expression23' has cardinality 0..*.
+An association connects 'cool_NegationExpression' and 'cool_Expression'. From 'cool_NegationExpression', the role 'cool_NegationExpression' has cardinality 0..*, and from 'cool_Expression', the role 'cool_Expression25' has cardinality 0..*.
+An association connects 'cool_IntegerCompositeExpression' and 'cool_Expression'. From 'cool_IntegerCompositeExpression', the role 'cool_IntegerCompositeExpression' has cardinality 0..*, and from 'cool_Expression', the role 'cool_Expression27' has cardinality 0..*.
+An association connects 'cool_Type' and 'cool_NewExpression'. From 'cool_Type', the role 'cool_Type29' has cardinality 0..*, and from 'cool_NewExpression', the role 'cool_NewExpression' has cardinality 0..*.
+An association connects 'cool_DispatchExpression' and 'cool_IdentifierRefExpression'. From 'cool_DispatchExpression', the role 'cool_DispatchExpression' has cardinality 0..*, and from 'cool_IdentifierRefExpression', the role 'cool_IdentifierRefExpression31' has cardinality 0..*.
+An association connects 'cool_Expression' and 'cool_DispatchExpression'. From 'cool_Expression', the role 'cool_Expression34' has cardinality 0..*, and from 'cool_DispatchExpression', the role 'cool_DispatchExpression33' has cardinality 0..*.
+An association connects 'cool_DispatchExpression' and 'cool_DispatchExpression'. From 'cool_DispatchExpression', the role 'cool_DispatchExpression37' has cardinality 0..*, and from 'cool_DispatchExpression', the role 'cool_DispatchExpression35' has cardinality 0..*.
+An association connects 'cool_PrimaryExpression' and 'cool_DispatchExpression'. From 'cool_PrimaryExpression', the role 'cool_PrimaryExpression' has cardinality 0..*, and from 'cool_DispatchExpression', the role 'cool_DispatchExpression39' has cardinality 0..*.
+An association connects 'cool_Type' and 'cool_DispatchExpression'. From 'cool_Type', the role 'cool_Type42' has cardinality 0..*, and from 'cool_DispatchExpression', the role 'cool_DispatchExpression41' has cardinality 0..*.
+An association connects 'cool_Expression' and 'cool_ConditionalExpression'. From 'cool_Expression', the role 'cool_Expression44' has cardinality 0..*, and from 'cool_ConditionalExpression', the role 'cool_ConditionalExpression' has cardinality 0..*.
+An association connects 'cool_Expression' and 'cool_ConditionalExpression'. From 'cool_Expression', the role 'cool_Expression47' has cardinality 0..*, and from 'cool_ConditionalExpression', the role 'cool_ConditionalExpression46' has cardinality 0..*.
+An association connects 'cool_Expression' and 'cool_ConditionalExpression'. From 'cool_Expression', the role 'cool_Expression50' has cardinality 0..*, and from 'cool_ConditionalExpression', the role 'cool_ConditionalExpression49' has cardinality 0..*.
+An association connects 'cool_LoopExpression' and 'cool_Expression'. From 'cool_LoopExpression', the role 'cool_LoopExpression' has cardinality 0..*, and from 'cool_Expression', the role 'cool_Expression52' has cardinality 0..*.
+An association connects 'cool_Expression' and 'cool_LoopExpression'. From 'cool_Expression', the role 'cool_Expression55' has cardinality 0..*, and from 'cool_LoopExpression', the role 'cool_LoopExpression54' has cardinality 0..*.
+An association connects 'cool_Expression' and 'cool_BlockExpression'. From 'cool_Expression', the role 'cool_Expression57' has cardinality 0..*, and from 'cool_BlockExpression', the role 'cool_BlockExpression' has cardinality 0..*.
+An association connects 'cool_IsvoidExpression' and 'cool_Expression'. From 'cool_IsvoidExpression', the role 'cool_IsvoidExpression' has cardinality 0..*, and from 'cool_Expression', the role 'cool_Expression59' has cardinality 0..*.
+An association connects 'cool_LetExpression' and 'cool_LetDeclaration'. From 'cool_LetExpression', the role 'cool_LetExpression' has cardinality 0..*, and from 'cool_LetDeclaration', the role 'cool_LetDeclaration' has cardinality 0..*.
+An association connects 'cool_Expression' and 'cool_LetExpression'. From 'cool_Expression', the role 'cool_Expression63' has cardinality 0..*, and from 'cool_LetExpression', the role 'cool_LetExpression62' has cardinality 0..*.
+An association connects 'cool_LetDeclaration' and 'cool_Type'. From 'cool_LetDeclaration', the role 'cool_LetDeclaration65' has cardinality 0..*, and from 'cool_Type', the role 'cool_Type66' has cardinality 0..*.
+An association connects 'cool_Expression' and 'cool_LetDeclaration'. From 'cool_Expression', the role 'cool_Expression69' has cardinality 0..*, and from 'cool_LetDeclaration', the role 'cool_LetDeclaration68' has cardinality 0..*.
+An association connects 'cool_CaseExpression' and 'cool_Expression'. From 'cool_CaseExpression', the role 'cool_CaseExpression' has cardinality 0..*, and from 'cool_Expression', the role 'cool_Expression71' has cardinality 0..*.
+An association connects 'cool_CaseExpression' and 'cool_Case'. From 'cool_CaseExpression', the role 'cool_CaseExpression73' has cardinality 0..*, and from 'cool_Case', the role 'cool_Case' has cardinality 0..*.
+An association connects 'cool_Case' and 'cool_Type'. From 'cool_Case', the role 'cool_Case75' has cardinality 0..*, and from 'cool_Type', the role 'cool_Type76' has cardinality 0..*.
+An association connects 'cool_Case' and 'cool_Expression'. From 'cool_Case', the role 'cool_Case78' has cardinality 0..*, and from 'cool_Expression', the role 'cool_Expression79' has cardinality 0..*.
+An association connects 'cool_Expression' and 'cool_CompareExpression'. From 'cool_Expression', the role 'cool_Expression81' has cardinality 0..*, and from 'cool_CompareExpression', the role 'cool_CompareExpression' has cardinality 0..*.
+An association connects 'cool_Expression' and 'cool_CompareExpression'. From 'cool_Expression', the role 'cool_Expression84' has cardinality 0..*, and from 'cool_CompareExpression', the role 'cool_CompareExpression83' has cardinality 0..*.
+An association connects 'cool_AdditionExpression' and 'cool_Expression'. From 'cool_AdditionExpression', the role 'cool_AdditionExpression' has cardinality 0..*, and from 'cool_Expression', the role 'cool_Expression86' has cardinality 0..*.
+An association connects 'cool_Expression' and 'cool_AdditionExpression'. From 'cool_Expression', the role 'cool_Expression89' has cardinality 0..*, and from 'cool_AdditionExpression', the role 'cool_AdditionExpression88' has cardinality 0..*.
+An association connects 'cool_Minus' and 'cool_Expression'. From 'cool_Minus', the role 'cool_Minus' has cardinality 0..*, and from 'cool_Expression', the role 'cool_Expression91' has cardinality 0..*.
+An association connects 'cool_Minus' and 'cool_Expression'. From 'cool_Minus', the role 'cool_Minus93' has cardinality 0..*, and from 'cool_Expression', the role 'cool_Expression94' has cardinality 0..*.
+An association connects 'cool_MultiplicationExpression' and 'cool_Expression'. From 'cool_MultiplicationExpression', the role 'cool_MultiplicationExpression' has cardinality 0..*, and from 'cool_Expression', the role 'cool_Expression96' has cardinality 0..*.
+An association connects 'cool_Expression' and 'cool_MultiplicationExpression'. From 'cool_Expression', the role 'cool_Expression99' has cardinality 0..*, and from 'cool_MultiplicationExpression', the role 'cool_MultiplicationExpression98' has cardinality 0..*.
+An association connects 'cool_Div' and 'cool_Expression'. From 'cool_Div', the role 'cool_Div' has cardinality 0..*, and from 'cool_Expression', the role 'cool_Expression101' has cardinality 0..*.
+An association connects 'cool_Div' and 'cool_Expression'. From 'cool_Div', the role 'cool_Div103' has cardinality 0..*, and from 'cool_Expression', the role 'cool_Expression104' has cardinality 0..*.

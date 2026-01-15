@@ -1,0 +1,51 @@
+The domain model 'mathAssignmentLanguage' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'mathAssignmentLanguage_MathExp' represents an important domain concept.
+It does not declare any attributes.
+
+'mathAssignmentLanguage_Mult' represents an important domain concept.
+It does not declare any attributes.
+
+'mathAssignmentLanguage_Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'mathAssignmentLanguage_ExpOp' represents an important domain concept.
+It does not declare any attributes.
+
+'mathAssignmentLanguage_Parenthesis' represents an important domain concept.
+It does not declare any attributes.
+
+'Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'mathAssignmentLanguage_Number' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'ExpOp' represents an important domain concept.
+It does not declare any attributes.
+
+'mathAssignmentLanguage_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'mathAssignmentLanguage_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'mathAssignmentLanguage_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mathAssignmentLanguage_Mult' is a specialization of 'ExpOp'.
+The class 'mathAssignmentLanguage_Div' is a specialization of 'ExpOp'.
+The class 'mathAssignmentLanguage_Plus' is a specialization of 'ExpOp'.
+The class 'mathAssignmentLanguage_Minus' is a specialization of 'ExpOp'.
+The class 'mathAssignmentLanguage_Number' is a specialization of 'Exp'.
+The class 'mathAssignmentLanguage_Parenthesis' is a specialization of 'Exp'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mathAssignmentLanguage_Exp' and 'mathAssignmentLanguage_MathExp'. From 'mathAssignmentLanguage_Exp', the role 'mathAssignmentLanguage_Exp' has cardinality 0..*, and from 'mathAssignmentLanguage_MathExp', the role 'mathAssignmentLanguage_MathExp' has cardinality 0..*.
+An association connects 'mathAssignmentLanguage_Exp' and 'mathAssignmentLanguage_Exp'. From 'mathAssignmentLanguage_Exp', the role 'mathAssignmentLanguage_Exp1' has cardinality 0..*, and from 'mathAssignmentLanguage_Exp', the role 'mathAssignmentLanguage_Exp3' has cardinality 0..*.
+An association connects 'mathAssignmentLanguage_Exp' and 'mathAssignmentLanguage_ExpOp'. From 'mathAssignmentLanguage_Exp', the role 'mathAssignmentLanguage_Exp5' has cardinality 0..*, and from 'mathAssignmentLanguage_ExpOp', the role 'mathAssignmentLanguage_ExpOp' has cardinality 0..*.
+An association connects 'mathAssignmentLanguage_Exp' and 'mathAssignmentLanguage_Exp'. From 'mathAssignmentLanguage_Exp', the role 'mathAssignmentLanguage_Exp6' has cardinality 0..*, and from 'mathAssignmentLanguage_Exp', the role 'mathAssignmentLanguage_Exp8' has cardinality 0..*.
+An association connects 'mathAssignmentLanguage_Parenthesis' and 'mathAssignmentLanguage_Exp'. From 'mathAssignmentLanguage_Parenthesis', the role 'mathAssignmentLanguage_Parenthesis' has cardinality 0..*, and from 'mathAssignmentLanguage_Exp', the role 'mathAssignmentLanguage_Exp10' has cardinality 0..*.

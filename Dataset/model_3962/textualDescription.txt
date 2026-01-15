@@ -1,0 +1,115 @@
+The domain model 'umlClass' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'umlClass_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlClass_StructuralFeature' represents an important domain concept.
+It has one attribute: 'isReadOnly', which is of type str.
+
+'DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'umlClass_Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'umlClass_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlClass_NamedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'Archpoint', which is of type str.
+
+'umlClass_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'umlClass_Operation' represents an important domain concept.
+It has the following attributes: 'isQuery', which is of type str; 'isUnique', which is of type str; 'upper', which is of type str; 'lower', which is of type str; 'isOrdered', which is of type str.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'umlClass_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'umlClass_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'umlClass_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'umlClass_Class' represents an important domain concept.
+It has one attribute: 'isActive', which is of type str.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'umlClass_DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'umlClass_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'umlClass_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'umlClass_NamedElement' is a specialization of 'Element'.
+The class 'umlClass_Classifier' is a specialization of 'NamedElement'.
+The class 'umlClass_StructuralFeature' is a specialization of 'TypedElement'.
+The class 'umlClass_Class' is a specialization of 'Classifier'.
+The class 'umlClass_Property' is a specialization of 'StructuralFeature'.
+The class 'umlClass_Association' is a specialization of 'Classifier'.
+The class 'umlClass_Association' is a specialization of 'Relationship'.
+The class 'umlClass_Operation' is a specialization of 'NamedElement'.
+The class 'umlClass_DataType' is a specialization of 'Classifier'.
+The class 'umlClass_TypedElement' is a specialization of 'NamedElement'.
+The class 'umlClass_Package' is a specialization of 'NamedElement'.
+The class 'umlClass_Generalization' is a specialization of 'DirectedRelationship'.
+The class 'umlClass_Relationship' is a specialization of 'Element'.
+The class 'umlClass_DirectedRelationship' is a specialization of 'Relationship'.
+
+Relationships between classes are modeled using associations.
+An association connects 'umlClass_Property' and 'umlClass_Classifier'. From 'umlClass_Property', the role 'Property' has cardinality 0..*, and from 'umlClass_Classifier', the role 'classifier' has cardinality 0..*.
+An association connects 'umlClass_Classifier' and 'umlClass_Classifier'. From 'umlClass_Classifier', the role 'umlClass_Classifier1' has cardinality 0..*, and from 'umlClass_Classifier', the role 'umlClass_Classifier' has cardinality 0..*.
+An association connects 'umlClass_Classifier' and 'umlClass_Package'. From 'umlClass_Classifier', the role 'classifiers' has cardinality 0..*, and from 'umlClass_Package', the role 'Package' has cardinality 0..*.
+An association connects 'umlClass_Classifier' and 'umlClass_Generalization'. From 'umlClass_Classifier', the role 'specific' has cardinality 0..*, and from 'umlClass_Generalization', the role 'Generalization' has cardinality 0..*.
+An association connects 'umlClass_Operation' and 'umlClass_Class'. From 'umlClass_Operation', the role 'Operation' has cardinality 0..*, and from 'umlClass_Class', the role 'class' has cardinality 0..*.
+An association connects 'umlClass_Class' and 'umlClass_Property'. From 'umlClass_Class', the role 'class7' has cardinality 0..*, and from 'umlClass_Property', the role 'Property8' has cardinality 0..*.
+An association connects 'umlClass_Class' and 'umlClass_Class'. From 'umlClass_Class', the role 'umlClass_Class' has cardinality 0..*, and from 'umlClass_Class', the role 'umlClass_Class9' has cardinality 0..*.
+An association connects 'umlClass_Class' and 'umlClass_Association'. From 'umlClass_Class', the role 'umlClass_Class12' has cardinality 0..*, and from 'umlClass_Association', the role 'umlClass_Association' has cardinality 0..*.
+An association connects 'umlClass_Class' and 'umlClass_Classifier'. From 'umlClass_Class', the role 'umlClass_Class14' has cardinality 0..*, and from 'umlClass_Classifier', the role 'umlClass_Classifier15' has cardinality 0..*.
+An association connects 'umlClass_Class' and 'umlClass_Property'. From 'umlClass_Class', the role 'Class' has cardinality 0..*, and from 'umlClass_Property', the role 'ownedAttribute' has cardinality 0..*.
+An association connects 'umlClass_DataType' and 'umlClass_Property'. From 'umlClass_DataType', the role 'DataType' has cardinality 0..*, and from 'umlClass_Property', the role 'ownedAttribute18' has cardinality 0..*.
+An association connects 'umlClass_Property' and 'umlClass_Property'. From 'umlClass_Property', the role 'umlClass_Property' has cardinality 0..*, and from 'umlClass_Property', the role 'umlClass_Property19' has cardinality 0..*.
+An association connects 'umlClass_Association' and 'umlClass_Property'. From 'umlClass_Association', the role 'Association' has cardinality 0..*, and from 'umlClass_Property', the role 'ownedEnd' has cardinality 0..*.
+An association connects 'umlClass_Association' and 'umlClass_Property'. From 'umlClass_Association', the role 'Association23' has cardinality 0..*, and from 'umlClass_Property', the role 'memberEnd' has cardinality 0..*.
+An association connects 'umlClass_Property' and 'umlClass_Property'. From 'umlClass_Property', the role 'umlClass_Property24' has cardinality 0..*, and from 'umlClass_Property', the role 'umlClass_Property26' has cardinality 0..*.
+An association connects 'umlClass_Property' and 'umlClass_Property'. From 'umlClass_Property', the role 'umlClass_Property29' has cardinality 0..*, and from 'umlClass_Property', the role 'umlClass_Property27' has cardinality 0..*.
+An association connects 'umlClass_Property' and 'umlClass_Classifier'. From 'umlClass_Property', the role 'attribute' has cardinality 0..*, and from 'umlClass_Classifier', the role 'Classifier' has cardinality 0..*.
+An association connects 'umlClass_Association' and 'umlClass_Property'. From 'umlClass_Association', the role 'owningAssociation' has cardinality 0..*, and from 'umlClass_Property', the role 'Property32' has cardinality 0..*.
+An association connects 'umlClass_Association' and 'umlClass_Property'. From 'umlClass_Association', the role 'association' has cardinality 0..*, and from 'umlClass_Property', the role 'Property34' has cardinality 0..*.
+An association connects 'umlClass_Property' and 'umlClass_Association'. From 'umlClass_Property', the role 'umlClass_Property37' has cardinality 0..*, and from 'umlClass_Association', the role 'umlClass_Association36' has cardinality 0..*.
+An association connects 'umlClass_Association' and 'umlClass_Class'. From 'umlClass_Association', the role 'umlClass_Association39' has cardinality 0..*, and from 'umlClass_Class', the role 'umlClass_Class40' has cardinality 0..*.
+An association connects 'umlClass_Operation' and 'umlClass_Class'. From 'umlClass_Operation', the role 'ownedOperation' has cardinality 0..*, and from 'umlClass_Class', the role 'Class42' has cardinality 0..*.
+An association connects 'umlClass_DataType' and 'umlClass_Operation'. From 'umlClass_DataType', the role 'DataType45' has cardinality 0..*, and from 'umlClass_Operation', the role 'ownedOperation44' has cardinality 0..*.
+An association connects 'umlClass_Property' and 'umlClass_DataType'. From 'umlClass_Property', the role 'Property47' has cardinality 0..*, and from 'umlClass_DataType', the role 'datatype' has cardinality 0..*.
+An association connects 'umlClass_Operation' and 'umlClass_DataType'. From 'umlClass_Operation', the role 'Operation50' has cardinality 0..*, and from 'umlClass_DataType', the role 'datatype49' has cardinality 0..*.
+An association connects 'umlClass_Package' and 'umlClass_Classifier'. From 'umlClass_Package', the role 'package' has cardinality 0..*, and from 'umlClass_Classifier', the role 'Classifier52' has cardinality 0..*.
+An association connects 'umlClass_Classifier' and 'umlClass_Generalization'. From 'umlClass_Classifier', the role 'Classifier54' has cardinality 0..*, and from 'umlClass_Generalization', the role 'generalization' has cardinality 0..*.
+An association connects 'umlClass_Class' and 'umlClass_Generalization'. From 'umlClass_Class', the role 'umlClass_Class56' has cardinality 0..*, and from 'umlClass_Generalization', the role 'umlClass_Generalization' has cardinality 0..*.
+An association connects 'umlClass_Class' and 'umlClass_Generalization'. From 'umlClass_Class', the role 'umlClass_Class59' has cardinality 0..*, and from 'umlClass_Generalization', the role 'umlClass_Generalization58' has cardinality 0..*.
+An association connects 'umlClass_Element' and 'umlClass_Element'. From 'umlClass_Element', the role 'ownedElement' has cardinality 0..*, and from 'umlClass_Element', the role 'Element' has cardinality 0..*.
+An association connects 'umlClass_Element' and 'umlClass_Element'. From 'umlClass_Element', the role 'owner' has cardinality 0..*, and from 'umlClass_Element', the role 'Element64' has cardinality 0..*.

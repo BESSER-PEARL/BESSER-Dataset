@@ -1,0 +1,70 @@
+The domain model 'railway' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'railway_RailwayContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'railway_RailwayElement' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'railway_Semaphore' represents an important domain concept.
+It has one attribute: 'signal', which is of type str.
+
+'TrackElement' represents an important domain concept.
+It does not declare any attributes.
+
+'railway_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'railway_Route' represents an important domain concept.
+It has one attribute: 'active', which is of type bool.
+
+'railway_SwitchPosition' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'RailwayElement' represents an important domain concept.
+It does not declare any attributes.
+
+'railway_Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'railway_Segment' represents an important domain concept.
+It has one attribute: 'length', which is of type int.
+
+'railway_TrackElement' represents an important domain concept.
+It does not declare any attributes.
+
+'railway_Switch' represents an important domain concept.
+It has one attribute: 'currentPosition', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Position' defines the following possible values: 'STRAIGHT', 'FAILURE', 'DIVERGING'.
+The enumeration 'Signal' defines the following possible values: 'GO', 'FAILURE', 'STOP'.
+
+The model also captures inheritance relationships between classes.
+The class 'railway_Region' is a specialization of 'RailwayElement'.
+The class 'railway_Route' is a specialization of 'RailwayElement'.
+The class 'railway_Sensor' is a specialization of 'RailwayElement'.
+The class 'railway_TrackElement' is a specialization of 'RailwayElement'.
+The class 'railway_Segment' is a specialization of 'TrackElement'.
+The class 'railway_Switch' is a specialization of 'TrackElement'.
+The class 'railway_SwitchPosition' is a specialization of 'RailwayElement'.
+The class 'railway_Semaphore' is a specialization of 'RailwayElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'railway_RailwayContainer' and 'railway_Route'. From 'railway_RailwayContainer', the role 'railway_RailwayContainer' has cardinality 0..*, and from 'railway_Route', the role 'railway_Route' has cardinality 0..*.
+An association connects 'railway_RailwayContainer' and 'railway_Region'. From 'railway_RailwayContainer', the role 'railway_RailwayContainer2' has cardinality 0..*, and from 'railway_Region', the role 'railway_Region' has cardinality 0..*.
+An association connects 'railway_Sensor' and 'railway_Region'. From 'railway_Sensor', the role 'railway_Sensor' has cardinality 0..*, and from 'railway_Region', the role 'railway_Region4' has cardinality 0..*.
+An association connects 'railway_Region' and 'railway_TrackElement'. From 'railway_Region', the role 'railway_Region6' has cardinality 0..*, and from 'railway_TrackElement', the role 'railway_TrackElement' has cardinality 0..*.
+An association connects 'railway_SwitchPosition' and 'railway_Route'. From 'railway_SwitchPosition', the role 'SwitchPosition' has cardinality 0..*, and from 'railway_Route', the role 'route' has cardinality 0..*.
+An association connects 'railway_Sensor' and 'railway_Route'. From 'railway_Sensor', the role 'railway_Sensor10' has cardinality 0..*, and from 'railway_Route', the role 'railway_Route9' has cardinality 0..*.
+An association connects 'railway_Route' and 'railway_Semaphore'. From 'railway_Route', the role 'railway_Route12' has cardinality 0..*, and from 'railway_Semaphore', the role 'railway_Semaphore' has cardinality 0..*.
+An association connects 'railway_Route' and 'railway_Semaphore'. From 'railway_Route', the role 'railway_Route14' has cardinality 0..*, and from 'railway_Semaphore', the role 'railway_Semaphore15' has cardinality 0..*.
+An association connects 'railway_TrackElement' and 'railway_Sensor'. From 'railway_TrackElement', the role 'TrackElement' has cardinality 0..*, and from 'railway_Sensor', the role 'monitoredBy' has cardinality 0..*.
+An association connects 'railway_Sensor' and 'railway_TrackElement'. From 'railway_Sensor', the role 'Sensor' has cardinality 0..*, and from 'railway_TrackElement', the role 'monitors' has cardinality 0..*.
+An association connects 'railway_TrackElement' and 'railway_TrackElement'. From 'railway_TrackElement', the role 'railway_TrackElement18' has cardinality 0..*, and from 'railway_TrackElement', the role 'railway_TrackElement20' has cardinality 0..*.
+An association connects 'railway_Segment' and 'railway_Semaphore'. From 'railway_Segment', the role 'railway_Segment' has cardinality 0..*, and from 'railway_Semaphore', the role 'railway_Semaphore22' has cardinality 0..*.
+An association connects 'railway_SwitchPosition' and 'railway_Switch'. From 'railway_SwitchPosition', the role 'SwitchPosition24' has cardinality 0..*, and from 'railway_Switch', the role 'target' has cardinality 0..*.
+An association connects 'railway_Route' and 'railway_SwitchPosition'. From 'railway_Route', the role 'Route' has cardinality 0..*, and from 'railway_SwitchPosition', the role 'follows' has cardinality 0..*.
+An association connects 'railway_Switch' and 'railway_SwitchPosition'. From 'railway_Switch', the role 'Switch' has cardinality 0..*, and from 'railway_SwitchPosition', the role 'positions' has cardinality 0..*.

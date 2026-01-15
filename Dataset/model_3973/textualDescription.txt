@@ -1,0 +1,159 @@
+The domain model 'l2' describes the core structural elements and their relationships within the system.
+
+The model defines 40 main class(es).
+
+'l2_Source' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Destroy' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'File' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_ImplementationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Focus' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Framework' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Instantiate' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Utility' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Usage' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Send' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Subsystem' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Metaclass' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Implement' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Auxiliary' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_ModelLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Process' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Script' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Specification' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Refine' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Document' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Executable' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_File' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Derive' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Responsibility' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Call' represents an important domain concept.
+It does not declare any attributes.
+
+'l2_Create' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'l2_Document' is a specialization of 'File'.
+The class 'l2_Executable' is a specialization of 'File'.
+The class 'l2_Library' is a specialization of 'File'.
+The class 'l2_Script' is a specialization of 'File'.
+The class 'l2_Source' is a specialization of 'File'.
+
+Relationships between classes are modeled using associations.
+An association connects 'l2_Auxiliary' and 'l2_Class'. From 'l2_Auxiliary', the role 'l2_Auxiliary' has cardinality 0..*, and from 'l2_Class', the role 'l2_Class' has cardinality 0..*.
+An association connects 'l2_Usage' and 'l2_Call'. From 'l2_Usage', the role 'l2_Usage' has cardinality 0..*, and from 'l2_Call', the role 'l2_Call' has cardinality 0..*.
+An association connects 'l2_BehavioralFeature' and 'l2_Create'. From 'l2_BehavioralFeature', the role 'l2_BehavioralFeature' has cardinality 0..*, and from 'l2_Create', the role 'l2_Create' has cardinality 0..*.
+An association connects 'l2_Usage' and 'l2_Create'. From 'l2_Usage', the role 'l2_Usage5' has cardinality 0..*, and from 'l2_Create', the role 'l2_Create4' has cardinality 0..*.
+An association connects 'l2_Derive' and 'l2_Abstraction'. From 'l2_Derive', the role 'l2_Derive' has cardinality 0..*, and from 'l2_Abstraction', the role 'l2_Abstraction' has cardinality 0..*.
+An association connects 'l2_Derive' and 'l2_ValueSpecification'. From 'l2_Derive', the role 'l2_Derive8' has cardinality 0..*, and from 'l2_ValueSpecification', the role 'l2_ValueSpecification' has cardinality 0..*.
+An association connects 'l2_Destroy' and 'l2_BehavioralFeature'. From 'l2_Destroy', the role 'l2_Destroy' has cardinality 0..*, and from 'l2_BehavioralFeature', the role 'l2_BehavioralFeature10' has cardinality 0..*.
+An association connects 'l2_File' and 'l2_Artifact'. From 'l2_File', the role 'l2_File' has cardinality 0..*, and from 'l2_Artifact', the role 'l2_Artifact' has cardinality 0..*.
+An association connects 'l2_Entity' and 'l2_Component'. From 'l2_Entity', the role 'l2_Entity' has cardinality 0..*, and from 'l2_Component', the role 'l2_Component' has cardinality 0..*.
+An association connects 'l2_Class' and 'l2_Focus'. From 'l2_Class', the role 'l2_Class14' has cardinality 0..*, and from 'l2_Focus', the role 'l2_Focus' has cardinality 0..*.
+An association connects 'l2_Framework' and 'l2_Package'. From 'l2_Framework', the role 'l2_Framework' has cardinality 0..*, and from 'l2_Package', the role 'l2_Package' has cardinality 0..*.
+An association connects 'l2_Implement' and 'l2_Component'. From 'l2_Implement', the role 'l2_Implement' has cardinality 0..*, and from 'l2_Component', the role 'l2_Component17' has cardinality 0..*.
+An association connects 'l2_ImplementationClass' and 'l2_Class'. From 'l2_ImplementationClass', the role 'l2_ImplementationClass' has cardinality 0..*, and from 'l2_Class', the role 'l2_Class19' has cardinality 0..*.
+An association connects 'l2_Usage' and 'l2_Instantiate'. From 'l2_Usage', the role 'l2_Usage21' has cardinality 0..*, and from 'l2_Instantiate', the role 'l2_Instantiate' has cardinality 0..*.
+An association connects 'l2_Metaclass' and 'l2_Class'. From 'l2_Metaclass', the role 'l2_Metaclass' has cardinality 0..*, and from 'l2_Class', the role 'l2_Class23' has cardinality 0..*.
+An association connects 'l2_ModelLibrary' and 'l2_Package'. From 'l2_ModelLibrary', the role 'l2_ModelLibrary' has cardinality 0..*, and from 'l2_Package', the role 'l2_Package25' has cardinality 0..*.
+An association connects 'l2_Process' and 'l2_Component'. From 'l2_Process', the role 'l2_Process' has cardinality 0..*, and from 'l2_Component', the role 'l2_Component27' has cardinality 0..*.
+An association connects 'l2_Classifier' and 'l2_Realization'. From 'l2_Classifier', the role 'l2_Classifier' has cardinality 0..*, and from 'l2_Realization', the role 'l2_Realization' has cardinality 0..*.
+An association connects 'l2_Abstraction' and 'l2_Refine'. From 'l2_Abstraction', the role 'l2_Abstraction30' has cardinality 0..*, and from 'l2_Refine', the role 'l2_Refine' has cardinality 0..*.
+An association connects 'l2_Responsibility' and 'l2_Usage'. From 'l2_Responsibility', the role 'l2_Responsibility' has cardinality 0..*, and from 'l2_Usage', the role 'l2_Usage32' has cardinality 0..*.
+An association connects 'l2_Usage' and 'l2_Send'. From 'l2_Usage', the role 'l2_Usage34' has cardinality 0..*, and from 'l2_Send', the role 'l2_Send' has cardinality 0..*.
+An association connects 'l2_Component' and 'l2_Service'. From 'l2_Component', the role 'l2_Component36' has cardinality 0..*, and from 'l2_Service', the role 'l2_Service' has cardinality 0..*.
+An association connects 'l2_Specification' and 'l2_Classifier'. From 'l2_Specification', the role 'l2_Specification' has cardinality 0..*, and from 'l2_Classifier', the role 'l2_Classifier38' has cardinality 0..*.
+An association connects 'l2_Component' and 'l2_Subsystem'. From 'l2_Component', the role 'l2_Component40' has cardinality 0..*, and from 'l2_Subsystem', the role 'l2_Subsystem' has cardinality 0..*.
+An association connects 'l2_Abstraction' and 'l2_Trace'. From 'l2_Abstraction', the role 'l2_Abstraction42' has cardinality 0..*, and from 'l2_Trace', the role 'l2_Trace' has cardinality 0..*.
+An association connects 'l2_Type' and 'l2_Class'. From 'l2_Type', the role 'l2_Type' has cardinality 0..*, and from 'l2_Class', the role 'l2_Class44' has cardinality 0..*.
+An association connects 'l2_Class' and 'l2_Utility'. From 'l2_Class', the role 'l2_Class46' has cardinality 0..*, and from 'l2_Utility', the role 'l2_Utility' has cardinality 0..*.

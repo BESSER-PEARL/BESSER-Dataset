@@ -1,0 +1,45 @@
+The domain model 'dot' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'dot_DirectedGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_Attribute' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'dot_GraphModel' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_DirectedEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_UndirectedGraph' represents an important domain concept.
+It does not declare any attributes.
+
+'Graph' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dot_UnDirectedEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'dot_Graph' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'dot_UndirectedGraph' is a specialization of 'Graph'.
+The class 'dot_DirectedGraph' is a specialization of 'Graph'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dot_Graph' and 'dot_GraphModel'. From 'dot_Graph', the role 'dot_Graph' has cardinality 0..*, and from 'dot_GraphModel', the role 'dot_GraphModel' has cardinality 0..*.
+An association connects 'dot_UndirectedGraph' and 'dot_UnDirectedEdge'. From 'dot_UndirectedGraph', the role 'dot_UndirectedGraph' has cardinality 0..*, and from 'dot_UnDirectedEdge', the role 'dot_UnDirectedEdge' has cardinality 0..*.
+An association connects 'dot_DirectedGraph' and 'dot_DirectedEdge'. From 'dot_DirectedGraph', the role 'dot_DirectedGraph' has cardinality 0..*, and from 'dot_DirectedEdge', the role 'dot_DirectedEdge' has cardinality 0..*.
+An association connects 'dot_Node' and 'dot_UnDirectedEdge'. From 'dot_Node', the role 'dot_Node' has cardinality 0..*, and from 'dot_UnDirectedEdge', the role 'dot_UnDirectedEdge4' has cardinality 0..*.
+An association connects 'dot_Node' and 'dot_UnDirectedEdge'. From 'dot_Node', the role 'dot_Node7' has cardinality 0..*, and from 'dot_UnDirectedEdge', the role 'dot_UnDirectedEdge6' has cardinality 0..*.
+An association connects 'dot_UnDirectedEdge' and 'dot_Attribute'. From 'dot_UnDirectedEdge', the role 'dot_UnDirectedEdge9' has cardinality 0..*, and from 'dot_Attribute', the role 'dot_Attribute' has cardinality 0..*.
+An association connects 'dot_DirectedEdge' and 'dot_Node'. From 'dot_DirectedEdge', the role 'dot_DirectedEdge11' has cardinality 0..*, and from 'dot_Node', the role 'dot_Node12' has cardinality 0..*.
+An association connects 'dot_DirectedEdge' and 'dot_Node'. From 'dot_DirectedEdge', the role 'dot_DirectedEdge14' has cardinality 0..*, and from 'dot_Node', the role 'dot_Node15' has cardinality 0..*.
+An association connects 'dot_DirectedEdge' and 'dot_Attribute'. From 'dot_DirectedEdge', the role 'dot_DirectedEdge17' has cardinality 0..*, and from 'dot_Attribute', the role 'dot_Attribute18' has cardinality 0..*.

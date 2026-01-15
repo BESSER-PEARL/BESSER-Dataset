@@ -1,0 +1,26 @@
+The domain model 'mydsl' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'mydsl_MyElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mydsl_MyReference' represents an important domain concept.
+It does not declare any attributes.
+
+'mydsl_MyAbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+'mydsl_MyModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MyAbstractElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mydsl_MyElement' is a specialization of 'MyAbstractElement'.
+The class 'mydsl_MyReference' is a specialization of 'MyAbstractElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mydsl_MyAbstractElement' and 'mydsl_MyModel'. From 'mydsl_MyAbstractElement', the role 'mydsl_MyAbstractElement' has cardinality 0..*, and from 'mydsl_MyModel', the role 'mydsl_MyModel' has cardinality 0..*.
+An association connects 'mydsl_MyElement' and 'mydsl_MyReference'. From 'mydsl_MyElement', the role 'mydsl_MyElement' has cardinality 0..*, and from 'mydsl_MyReference', the role 'mydsl_MyReference' has cardinality 0..*.

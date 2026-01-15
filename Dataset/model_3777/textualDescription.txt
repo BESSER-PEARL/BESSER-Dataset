@@ -1,0 +1,13 @@
+The domain model 'features' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'features_Feature' represents an important domain concept.
+It has the following attributes: 'mandatory', which is of type bool; 'nome', which is of type str.
+
+'features_Root' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'features_Root' and 'features_Feature'. From 'features_Root', the role 'features_Root' has cardinality 0..*, and from 'features_Feature', the role 'features_Feature' has cardinality 0..*.
+An association connects 'features_Feature' and 'features_Feature'. From 'features_Feature', the role 'features_Feature1' has cardinality 0..*, and from 'features_Feature', the role 'features_Feature3' has cardinality 0..*.

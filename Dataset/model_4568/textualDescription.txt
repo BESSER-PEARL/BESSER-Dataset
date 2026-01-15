@@ -1,0 +1,194 @@
+The domain model 'iotdsl' describes the core structural elements and their relationships within the system.
+
+The model defines 44 main class(es).
+
+'iotdsl_TimingExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_AndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Reaction' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Delay' represents an important domain concept.
+It has the following attributes: 'unit', which is of type str; 'time', which is of type int.
+
+'iotdsl_IntConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'TimingExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_AfterExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_EventOccurrence' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_NotExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Gateway' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_BoolConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'iotdsl_Sensing' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iotdsl_Actuating' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_DeclaredType' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_CommunicationPath' represents an important domain concept.
+It has one attribute: 'protocol', which is of type str.
+
+'iotdsl_Capability' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Content' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Feature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iotdsl_WithinExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'Content' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'Capability' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Rule' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iotdsl_NodeInstance' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iotdsl_StringConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'iotdsl_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'iotdsl_EnumLiteral' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iotdsl_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iotdsl_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iotdsl_Configuration' represents an important domain concept.
+It has one attribute: 'confname', which is of type str.
+
+'iotdsl_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'iotdsl_IotModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iotdsl_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'DeclaredType' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Operator' defines the following possible values: 'lesser', 'geq', 'neq', 'leq', 'greater', 'equal'.
+The enumeration 'Unit' defines the following possible values: 'sec', 'milli', 'hour', 'min'.
+The enumeration 'DefaultType' defines the following possible values: 'Boolean', 'String', 'Integer', 'Real', 'Void'.
+The enumeration 'Protocol' defines the following possible values: 'zwave', 'dds', 'ip', 'mqtt', 'zigbee'.
+
+The model also captures inheritance relationships between classes.
+The class 'iotdsl_Type' is a specialization of 'Content'.
+The class 'iotdsl_PrimitiveType' is a specialization of 'Type'.
+The class 'iotdsl_DeclaredType' is a specialization of 'Type'.
+The class 'iotdsl_Enumeration' is a specialization of 'DeclaredType'.
+The class 'iotdsl_Node' is a specialization of 'DeclaredType'.
+The class 'iotdsl_Device' is a specialization of 'Node'.
+The class 'iotdsl_Gateway' is a specialization of 'Node'.
+The class 'iotdsl_Property' is a specialization of 'Feature'.
+The class 'iotdsl_Capability' is a specialization of 'Feature'.
+The class 'iotdsl_Actuating' is a specialization of 'Capability'.
+The class 'iotdsl_Sensing' is a specialization of 'Capability'.
+The class 'iotdsl_Configuration' is a specialization of 'Content'.
+The class 'iotdsl_Rule' is a specialization of 'Content'.
+The class 'iotdsl_NotExpression' is a specialization of 'Expression'.
+The class 'iotdsl_EventOccurrence' is a specialization of 'Expression'.
+The class 'iotdsl_AndExpression' is a specialization of 'Expression'.
+The class 'iotdsl_TimingExpression' is a specialization of 'Expression'.
+The class 'iotdsl_WithinExpression' is a specialization of 'TimingExpression'.
+The class 'iotdsl_AfterExpression' is a specialization of 'TimingExpression'.
+The class 'iotdsl_StringConstant' is a specialization of 'Value'.
+The class 'iotdsl_IntConstant' is a specialization of 'Value'.
+The class 'iotdsl_BoolConstant' is a specialization of 'Value'.
+
+Relationships between classes are modeled using associations.
+An association connects 'iotdsl_Import' and 'iotdsl_IotModel'. From 'iotdsl_Import', the role 'iotdsl_Import' has cardinality 0..*, and from 'iotdsl_IotModel', the role 'iotdsl_IotModel' has cardinality 0..*.
+An association connects 'iotdsl_IotModel' and 'iotdsl_Content'. From 'iotdsl_IotModel', the role 'iotdsl_IotModel2' has cardinality 0..*, and from 'iotdsl_Content', the role 'iotdsl_Content' has cardinality 0..*.
+An association connects 'iotdsl_EnumLiteral' and 'iotdsl_Enumeration'. From 'iotdsl_EnumLiteral', the role 'iotdsl_EnumLiteral' has cardinality 0..*, and from 'iotdsl_Enumeration', the role 'iotdsl_Enumeration' has cardinality 0..*.
+An association connects 'iotdsl_Device' and 'iotdsl_Feature'. From 'iotdsl_Device', the role 'iotdsl_Device' has cardinality 0..*, and from 'iotdsl_Feature', the role 'iotdsl_Feature' has cardinality 0..*.
+An association connects 'iotdsl_Property' and 'iotdsl_Value'. From 'iotdsl_Property', the role 'iotdsl_Property' has cardinality 0..*, and from 'iotdsl_Value', the role 'iotdsl_Value' has cardinality 0..*.
+An association connects 'iotdsl_Parameter' and 'iotdsl_Capability'. From 'iotdsl_Parameter', the role 'iotdsl_Parameter' has cardinality 0..*, and from 'iotdsl_Capability', the role 'iotdsl_Capability' has cardinality 0..*.
+An association connects 'iotdsl_Parameter' and 'iotdsl_Type'. From 'iotdsl_Parameter', the role 'iotdsl_Parameter8' has cardinality 0..*, and from 'iotdsl_Type', the role 'iotdsl_Type' has cardinality 0..*.
+An association connects 'iotdsl_Configuration' and 'iotdsl_NodeInstance'. From 'iotdsl_Configuration', the role 'iotdsl_Configuration' has cardinality 0..*, and from 'iotdsl_NodeInstance', the role 'iotdsl_NodeInstance' has cardinality 0..*.
+An association connects 'iotdsl_CommunicationPath' and 'iotdsl_Configuration'. From 'iotdsl_CommunicationPath', the role 'iotdsl_CommunicationPath' has cardinality 0..*, and from 'iotdsl_Configuration', the role 'iotdsl_Configuration11' has cardinality 0..*.
+An association connects 'iotdsl_Type' and 'iotdsl_NodeInstance'. From 'iotdsl_Type', the role 'iotdsl_Type14' has cardinality 0..*, and from 'iotdsl_NodeInstance', the role 'iotdsl_NodeInstance13' has cardinality 0..*.
+An association connects 'iotdsl_NodeInstance' and 'iotdsl_CommunicationPath'. From 'iotdsl_NodeInstance', the role 'iotdsl_NodeInstance17' has cardinality 0..*, and from 'iotdsl_CommunicationPath', the role 'iotdsl_CommunicationPath16' has cardinality 0..*.
+An association connects 'iotdsl_NodeInstance' and 'iotdsl_CommunicationPath'. From 'iotdsl_NodeInstance', the role 'iotdsl_NodeInstance20' has cardinality 0..*, and from 'iotdsl_CommunicationPath', the role 'iotdsl_CommunicationPath19' has cardinality 0..*.
+An association connects 'iotdsl_Expression' and 'iotdsl_Rule'. From 'iotdsl_Expression', the role 'iotdsl_Expression' has cardinality 0..*, and from 'iotdsl_Rule', the role 'iotdsl_Rule' has cardinality 0..*.
+An association connects 'iotdsl_Rule' and 'iotdsl_Reaction'. From 'iotdsl_Rule', the role 'iotdsl_Rule23' has cardinality 0..*, and from 'iotdsl_Reaction', the role 'iotdsl_Reaction' has cardinality 0..*.
+An association connects 'iotdsl_EventOccurrence' and 'iotdsl_NotExpression'. From 'iotdsl_EventOccurrence', the role 'iotdsl_EventOccurrence' has cardinality 0..*, and from 'iotdsl_NotExpression', the role 'iotdsl_NotExpression' has cardinality 0..*.
+An association connects 'iotdsl_EventOccurrence' and 'iotdsl_NodeInstance'. From 'iotdsl_EventOccurrence', the role 'iotdsl_EventOccurrence26' has cardinality 0..*, and from 'iotdsl_NodeInstance', the role 'iotdsl_NodeInstance27' has cardinality 0..*.
+An association connects 'iotdsl_EventOccurrence' and 'iotdsl_Sensing'. From 'iotdsl_EventOccurrence', the role 'iotdsl_EventOccurrence29' has cardinality 0..*, and from 'iotdsl_Sensing', the role 'iotdsl_Sensing' has cardinality 0..*.
+An association connects 'iotdsl_Attribute' and 'iotdsl_EventOccurrence'. From 'iotdsl_Attribute', the role 'iotdsl_Attribute' has cardinality 0..*, and from 'iotdsl_EventOccurrence', the role 'iotdsl_EventOccurrence31' has cardinality 0..*.
+An association connects 'iotdsl_EventOccurrence' and 'iotdsl_Value'. From 'iotdsl_EventOccurrence', the role 'iotdsl_EventOccurrence33' has cardinality 0..*, and from 'iotdsl_Value', the role 'iotdsl_Value34' has cardinality 0..*.
+An association connects 'iotdsl_Reaction' and 'iotdsl_NodeInstance'. From 'iotdsl_Reaction', the role 'iotdsl_Reaction36' has cardinality 0..*, and from 'iotdsl_NodeInstance', the role 'iotdsl_NodeInstance37' has cardinality 0..*.
+An association connects 'iotdsl_Reaction' and 'iotdsl_Actuating'. From 'iotdsl_Reaction', the role 'iotdsl_Reaction39' has cardinality 0..*, and from 'iotdsl_Actuating', the role 'iotdsl_Actuating' has cardinality 0..*.
+An association connects 'iotdsl_Attribute' and 'iotdsl_Reaction'. From 'iotdsl_Attribute', the role 'iotdsl_Attribute42' has cardinality 0..*, and from 'iotdsl_Reaction', the role 'iotdsl_Reaction41' has cardinality 0..*.
+An association connects 'iotdsl_AndExpression' and 'iotdsl_Expression'. From 'iotdsl_AndExpression', the role 'iotdsl_AndExpression' has cardinality 0..*, and from 'iotdsl_Expression', the role 'iotdsl_Expression44' has cardinality 0..*.
+An association connects 'iotdsl_AndExpression' and 'iotdsl_Expression'. From 'iotdsl_AndExpression', the role 'iotdsl_AndExpression46' has cardinality 0..*, and from 'iotdsl_Expression', the role 'iotdsl_Expression47' has cardinality 0..*.
+An association connects 'iotdsl_Expression' and 'iotdsl_TimingExpression'. From 'iotdsl_Expression', the role 'iotdsl_Expression49' has cardinality 0..*, and from 'iotdsl_TimingExpression', the role 'iotdsl_TimingExpression' has cardinality 0..*.
+An association connects 'iotdsl_Expression' and 'iotdsl_TimingExpression'. From 'iotdsl_Expression', the role 'iotdsl_Expression52' has cardinality 0..*, and from 'iotdsl_TimingExpression', the role 'iotdsl_TimingExpression51' has cardinality 0..*.
+An association connects 'iotdsl_WithinExpression' and 'iotdsl_Delay'. From 'iotdsl_WithinExpression', the role 'iotdsl_WithinExpression' has cardinality 0..*, and from 'iotdsl_Delay', the role 'iotdsl_Delay' has cardinality 0..*.

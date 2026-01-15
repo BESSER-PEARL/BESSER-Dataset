@@ -1,0 +1,420 @@
+The domain model 'Activities' describes the core structural elements and their relationships within the system.
+
+The model defines 94 main class(es).
+
+'Activities_BasicActivities_Parameter' represents an important domain concept.
+It has the following attributes: 'isException', which is of type bool; 'isStream', which is of type bool; 'effect', which is of type str.
+
+'Activities_BasicActivities_RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FundamentalActivities_ActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_JoinNode' represents an important domain concept.
+It has one attribute: 'isCombineDuplicate', which is of type bool.
+
+'Activities_FundamentalActivities_ActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_StructuredActivities_LoopNode' represents an important domain concept.
+It has one attribute: 'isTestedFirst', which is of type bool.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_StructuredActivities_Clause' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_ParameterSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_ActivityPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_BasicActivities_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_StructuredActivities_StructuredActivityNode' represents an important domain concept.
+It has one attribute: 'mustIsolate', which is of type bool.
+
+'Activities_ExtraStructuredActivities_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_BasicActivities_Pin' represents an important domain concept.
+It has one attribute: 'isControl', which is of type bool.
+
+'IntermediateActivities_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_State' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_FundamentalActivities_Action' represents an important domain concept.
+It has one attribute: 'isLocallyReentrant', which is of type bool.
+
+'ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicActivities_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_StructuredActivities_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_FundamentalActivities_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_ExtraStructuredActivities_ExceptionHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_BasicActivities_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicActivities_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_DataStoreNode' represents an important domain concept.
+It does not declare any attributes.
+
+'FundamentalActivities_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_ExtraStructuredActivities_ExpansionRegion' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'Activities_BasicActivities_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'InterruptibleActivityRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'IntermediateActivities_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_CentralBufferNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_BasicActivities_ObjectFlow' represents an important domain concept.
+It has the following attributes: 'ordering', which is of type str; 'isMultireceive', which is of type bool; 'isControlType', which is of type bool; 'isMulticast', which is of type bool.
+
+'Activities_FundamentalActivities_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'FundamentalActivities_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredActivities_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicActivities_RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_FundamentalActivities_Activity' represents an important domain concept.
+It has the following attributes: 'isReadOnly', which is of type bool; 'isSingleExecution', which is of type bool.
+
+'Activities_IntermediateActivities_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_BasicActivities_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredActivities_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_CompleteStructuredActivities_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'ExceptionHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Clause' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_StructuredActivities_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_BasicActivities_ActivityParameterNode' represents an important domain concept.
+It does not declare any attributes.
+
+'FundamentalActivities_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_StructuredActivities_SequenceNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_FlowFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_BasicActivities_ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_StructuredActivities_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_InterruptibleActivityRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_BasicActivities_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_StructuredActivities_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'FundamentalActivities_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_StructuredActivities_ConditionalNode' represents an important domain concept.
+It has the following attributes: 'isAssumed', which is of type bool; 'isDeterminate', which is of type bool.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_ExtraStructuredActivities_ExpansionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpansionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpansionRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'CentralBufferNode' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_BasicActivities_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_IntermediateActivities_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_FundamentalActivities_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'Activities_FundamentalActivities_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ObjectNodeOrderingKind' defines the following possible values: 'unordered', 'FIFO', 'LIFO', 'ordered'.
+The enumeration 'ParameterEffectKind' defines the following possible values: 'delete', 'update', 'create', 'read'.
+The enumeration 'ExpansionKind' defines the following possible values: 'stream', 'iterative', 'parallel'.
+
+The model also captures inheritance relationships between classes.
+The class 'Activities_FundamentalActivities_Activity' is a specialization of 'Behavior'.
+The class 'Activities_FundamentalActivities_Behavior' is a specialization of 'Class'.
+The class 'Activities_FundamentalActivities_ActivityNode' is a specialization of 'FundamentalActivities_NamedElement'.
+The class 'Activities_FundamentalActivities_ActivityNode' is a specialization of 'BasicActivities_RedefinableElement'.
+The class 'Activities_FundamentalActivities_Action' is a specialization of 'ActivityNode'.
+The class 'Activities_FundamentalActivities_ActivityGroup' is a specialization of 'NamedElement'.
+The class 'Activities_BasicActivities_ObjectNode' is a specialization of 'FundamentalActivities_ActivityNode'.
+The class 'Activities_BasicActivities_ObjectNode' is a specialization of 'BasicActivities_TypedElement'.
+The class 'Activities_BasicActivities_Pin' is a specialization of 'ObjectNode'.
+The class 'Activities_BasicActivities_ActivityParameterNode' is a specialization of 'ObjectNode'.
+The class 'Activities_BasicActivities_ControlNode' is a specialization of 'ActivityNode'.
+The class 'Activities_BasicActivities_ActivityFinalNode' is a specialization of 'BasicActivities_ControlNode'.
+The class 'Activities_BasicActivities_ActivityFinalNode' is a specialization of 'IntermediateActivities_FinalNode'.
+The class 'Activities_BasicActivities_InitialNode' is a specialization of 'ControlNode'.
+The class 'Activities_BasicActivities_ActivityEdge' is a specialization of 'RedefinableElement'.
+The class 'Activities_BasicActivities_ControlFlow' is a specialization of 'ActivityEdge'.
+The class 'Activities_BasicActivities_ObjectFlow' is a specialization of 'ActivityEdge'.
+The class 'Activities_IntermediateActivities_CentralBufferNode' is a specialization of 'ObjectNode'.
+The class 'Activities_IntermediateActivities_FinalNode' is a specialization of 'ControlNode'.
+The class 'Activities_IntermediateActivities_FlowFinalNode' is a specialization of 'FinalNode'.
+The class 'Activities_IntermediateActivities_ForkNode' is a specialization of 'ControlNode'.
+The class 'Activities_IntermediateActivities_JoinNode' is a specialization of 'ControlNode'.
+The class 'Activities_IntermediateActivities_MergeNode' is a specialization of 'ControlNode'.
+The class 'Activities_IntermediateActivities_DecisionNode' is a specialization of 'ControlNode'.
+The class 'Activities_IntermediateActivities_ActivityPartition' is a specialization of 'ActivityGroup'.
+The class 'Activities_IntermediateActivities_DataStoreNode' is a specialization of 'CentralBufferNode'.
+The class 'Activities_IntermediateActivities_ParameterSet' is a specialization of 'NamedElement'.
+The class 'Activities_IntermediateActivities_BehavioralFeature' is a specialization of 'FundamentalActivities_Namespace'.
+The class 'Activities_IntermediateActivities_BehavioralFeature' is a specialization of 'IntermediateActivities_Feature'.
+The class 'Activities_IntermediateActivities_InterruptibleActivityRegion' is a specialization of 'ActivityGroup'.
+The class 'Activities_StructuredActivities_StructuredActivityNode' is a specialization of 'FundamentalActivities_Namespace'.
+The class 'Activities_StructuredActivities_StructuredActivityNode' is a specialization of 'StructuredActivities_ExecutableNode'.
+The class 'Activities_StructuredActivities_StructuredActivityNode' is a specialization of 'FundamentalActivities_ActivityGroup'.
+The class 'Activities_StructuredActivities_StructuredActivityNode' is a specialization of 'FundamentalActivities_Action'.
+The class 'Activities_StructuredActivities_ExecutableNode' is a specialization of 'ActivityNode'.
+The class 'Activities_StructuredActivities_Variable' is a specialization of 'StructuredActivities_MultiplicityElement'.
+The class 'Activities_StructuredActivities_Variable' is a specialization of 'BasicActivities_TypedElement'.
+The class 'Activities_StructuredActivities_LoopNode' is a specialization of 'StructuredActivityNode'.
+The class 'Activities_StructuredActivities_ConditionalNode' is a specialization of 'StructuredActivityNode'.
+The class 'Activities_StructuredActivities_Clause' is a specialization of 'Element'.
+The class 'Activities_StructuredActivities_SequenceNode' is a specialization of 'StructuredActivityNode'.
+The class 'Activities_ExtraStructuredActivities_ExceptionHandler' is a specialization of 'Element'.
+The class 'Activities_ExtraStructuredActivities_ExpansionRegion' is a specialization of 'StructuredActivityNode'.
+The class 'Activities_ExtraStructuredActivities_ExpansionNode' is a specialization of 'ObjectNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ActivityNode' and 'Activities_FundamentalActivities_Activity'. From 'ActivityNode', the role 'ActivityNode' has cardinality 0..*, and from 'Activities_FundamentalActivities_Activity', the role 'Activities_FundamentalActivities_Activity' has cardinality 0..*.
+An association connects 'ActivityGroup' and 'Activities_FundamentalActivities_Activity'. From 'ActivityGroup', the role 'FundamentalActivities' has cardinality 0..*, and from 'Activities_FundamentalActivities_Activity', the role 'ActivityGroup' has cardinality 0..*.
+An association connects 'ActivityEdge' and 'Activities_FundamentalActivities_Activity'. From 'ActivityEdge', the role 'ActivityEdge' has cardinality 0..*, and from 'Activities_FundamentalActivities_Activity', the role 'Activities_FundamentalActivities_Activity3' has cardinality 0..*.
+An association connects 'ActivityPartition' and 'Activities_FundamentalActivities_Activity'. From 'ActivityPartition', the role 'ActivityPartition' has cardinality 0..*, and from 'Activities_FundamentalActivities_Activity', the role 'Activities_FundamentalActivities_Activity5' has cardinality 0..*.
+An association connects 'Activities_FundamentalActivities_Activity' and 'StructuredActivityNode'. From 'Activities_FundamentalActivities_Activity', the role 'StructuredActivityNode' has cardinality 0..*, and from 'StructuredActivityNode', the role 'StructuredActivities' has cardinality 0..*.
+An association connects 'Variable' and 'Activities_FundamentalActivities_Activity'. From 'Variable', the role 'Variable' has cardinality 0..*, and from 'Activities_FundamentalActivities_Activity', the role 'Activities_FundamentalActivities_Activity8' has cardinality 0..*.
+An association connects 'ParameterSet' and 'Activities_FundamentalActivities_Behavior'. From 'ParameterSet', the role 'ParameterSet' has cardinality 0..*, and from 'Activities_FundamentalActivities_Behavior', the role 'Activities_FundamentalActivities_Behavior' has cardinality 0..*.
+An association connects 'ActivityGroup' and 'Activities_FundamentalActivities_ActivityNode'. From 'ActivityGroup', the role 'FundamentalActivities12' has cardinality 0..*, and from 'Activities_FundamentalActivities_ActivityNode', the role 'ActivityGroup11' has cardinality 0..*.
+An association connects 'Activities_FundamentalActivities_ActivityNode' and 'ActivityNode'. From 'Activities_FundamentalActivities_ActivityNode', the role 'Activities_FundamentalActivities_ActivityNode' has cardinality 0..*, and from 'ActivityNode', the role 'ActivityNode14' has cardinality 0..*.
+An association connects 'ActivityEdge' and 'Activities_FundamentalActivities_ActivityNode'. From 'ActivityEdge', the role 'BasicActivities' has cardinality 0..*, and from 'Activities_FundamentalActivities_ActivityNode', the role 'ActivityEdge16' has cardinality 0..*.
+An association connects 'Activities_FundamentalActivities_ActivityNode' and 'ActivityEdge'. From 'Activities_FundamentalActivities_ActivityNode', the role 'ActivityEdge18' has cardinality 0..*, and from 'ActivityEdge', the role 'BasicActivities19' has cardinality 0..*.
+An association connects 'Activities_FundamentalActivities_ActivityNode' and 'ActivityPartition'. From 'Activities_FundamentalActivities_ActivityNode', the role 'ActivityPartition21' has cardinality 0..*, and from 'ActivityPartition', the role 'IntermediateActivities' has cardinality 0..*.
+An association connects 'Activities_FundamentalActivities_ActivityNode' and 'InterruptibleActivityRegion'. From 'Activities_FundamentalActivities_ActivityNode', the role 'InterruptibleActivityRegion' has cardinality 0..*, and from 'InterruptibleActivityRegion', the role 'IntermediateActivities23' has cardinality 0..*.
+An association connects 'StructuredActivityNode' and 'Activities_FundamentalActivities_ActivityNode'. From 'StructuredActivityNode', the role 'StructuredActivities26' has cardinality 0..*, and from 'Activities_FundamentalActivities_ActivityNode', the role 'StructuredActivityNode25' has cardinality 0..*.
+An association connects 'Constraint' and 'Activities_FundamentalActivities_Action'. From 'Constraint', the role 'Constraint' has cardinality 0..*, and from 'Activities_FundamentalActivities_Action', the role 'Activities_FundamentalActivities_Action' has cardinality 0..*.
+An association connects 'Constraint' and 'Activities_FundamentalActivities_Action'. From 'Constraint', the role 'Constraint30' has cardinality 0..*, and from 'Activities_FundamentalActivities_Action', the role 'Activities_FundamentalActivities_Action29' has cardinality 0..*.
+An association connects 'InputPin' and 'Activities_FundamentalActivities_Action'. From 'InputPin', the role 'InputPin' has cardinality 0..*, and from 'Activities_FundamentalActivities_Action', the role 'Activities_FundamentalActivities_Action32' has cardinality 0..*.
+An association connects 'Activities_FundamentalActivities_Action' and 'OutputPin'. From 'Activities_FundamentalActivities_Action', the role 'Activities_FundamentalActivities_Action34' has cardinality 0..*, and from 'OutputPin', the role 'OutputPin' has cardinality 0..*.
+An association connects 'Activities_FundamentalActivities_ActivityGroup' and 'ActivityGroup'. From 'Activities_FundamentalActivities_ActivityGroup', the role 'ActivityGroup36' has cardinality 0..*, and from 'ActivityGroup', the role 'FundamentalActivities37' has cardinality 0..*.
+An association connects 'Activities_FundamentalActivities_ActivityGroup' and 'ActivityGroup'. From 'Activities_FundamentalActivities_ActivityGroup', the role 'ActivityGroup39' has cardinality 0..*, and from 'ActivityGroup', the role 'FundamentalActivities40' has cardinality 0..*.
+An association connects 'Activity' and 'Activities_FundamentalActivities_ActivityGroup'. From 'Activity', the role 'FundamentalActivities42' has cardinality 0..*, and from 'Activities_FundamentalActivities_ActivityGroup', the role 'Activity' has cardinality 0..*.
+An association connects 'ActivityNode' and 'Activities_FundamentalActivities_ActivityGroup'. From 'ActivityNode', the role 'FundamentalActivities45' has cardinality 0..*, and from 'Activities_FundamentalActivities_ActivityGroup', the role 'ActivityNode44' has cardinality 0..*.
+An association connects 'ActivityEdge' and 'Activities_FundamentalActivities_ActivityGroup'. From 'ActivityEdge', the role 'BasicActivities48' has cardinality 0..*, and from 'Activities_FundamentalActivities_ActivityGroup', the role 'ActivityEdge47' has cardinality 0..*.
+An association connects 'Activities_BasicActivities_RedefinableElement' and 'RedefinableElement'. From 'Activities_BasicActivities_RedefinableElement', the role 'Activities_BasicActivities_RedefinableElement' has cardinality 0..*, and from 'RedefinableElement', the role 'RedefinableElement' has cardinality 0..*.
+An association connects 'Activities_BasicActivities_ActivityParameterNode' and 'Parameter'. From 'Activities_BasicActivities_ActivityParameterNode', the role 'Activities_BasicActivities_ActivityParameterNode' has cardinality 0..*, and from 'Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'Activities_BasicActivities_Parameter' and 'ParameterSet'. From 'Activities_BasicActivities_Parameter', the role 'ParameterSet52' has cardinality 0..*, and from 'ParameterSet', the role 'IntermediateActivities53' has cardinality 0..*.
+An association connects 'ActivityNode' and 'Activities_BasicActivities_ActivityEdge'. From 'ActivityNode', the role 'FundamentalActivities56' has cardinality 0..*, and from 'Activities_BasicActivities_ActivityEdge', the role 'ActivityNode55' has cardinality 0..*.
+An association connects 'Activities_BasicActivities_ActivityEdge' and 'ActivityNode'. From 'Activities_BasicActivities_ActivityEdge', the role 'ActivityNode58' has cardinality 0..*, and from 'ActivityNode', the role 'FundamentalActivities59' has cardinality 0..*.
+An association connects 'Activities_BasicActivities_ActivityEdge' and 'ActivityEdge'. From 'Activities_BasicActivities_ActivityEdge', the role 'Activities_BasicActivities_ActivityEdge' has cardinality 0..*, and from 'ActivityEdge', the role 'ActivityEdge61' has cardinality 0..*.
+An association connects 'Activities_BasicActivities_ActivityEdge' and 'ActivityGroup'. From 'Activities_BasicActivities_ActivityEdge', the role 'ActivityGroup63' has cardinality 0..*, and from 'ActivityGroup', the role 'FundamentalActivities64' has cardinality 0..*.
+An association connects 'ValueSpecification' and 'Activities_BasicActivities_ActivityEdge'. From 'ValueSpecification', the role 'ValueSpecification' has cardinality 0..*, and from 'Activities_BasicActivities_ActivityEdge', the role 'Activities_BasicActivities_ActivityEdge66' has cardinality 0..*.
+An association connects 'Activities_BasicActivities_ActivityEdge' and 'ActivityPartition'. From 'Activities_BasicActivities_ActivityEdge', the role 'ActivityPartition68' has cardinality 0..*, and from 'ActivityPartition', the role 'IntermediateActivities69' has cardinality 0..*.
+An association connects 'ValueSpecification' and 'Activities_BasicActivities_ActivityEdge'. From 'ValueSpecification', the role 'ValueSpecification72' has cardinality 0..*, and from 'Activities_BasicActivities_ActivityEdge', the role 'Activities_BasicActivities_ActivityEdge71' has cardinality 0..*.
+An association connects 'Activities_BasicActivities_ActivityEdge' and 'InterruptibleActivityRegion'. From 'Activities_BasicActivities_ActivityEdge', the role 'InterruptibleActivityRegion74' has cardinality 0..*, and from 'InterruptibleActivityRegion', the role 'IntermediateActivities75' has cardinality 0..*.
+An association connects 'StructuredActivityNode' and 'Activities_BasicActivities_ActivityEdge'. From 'StructuredActivityNode', the role 'StructuredActivities78' has cardinality 0..*, and from 'Activities_BasicActivities_ActivityEdge', the role 'StructuredActivityNode77' has cardinality 0..*.
+An association connects 'Behavior' and 'Activities_BasicActivities_ObjectFlow'. From 'Behavior', the role 'Behavior' has cardinality 0..*, and from 'Activities_BasicActivities_ObjectFlow', the role 'Activities_BasicActivities_ObjectFlow' has cardinality 0..*.
+An association connects 'Behavior' and 'Activities_BasicActivities_ObjectFlow'. From 'Behavior', the role 'Behavior82' has cardinality 0..*, and from 'Activities_BasicActivities_ObjectFlow', the role 'Activities_BasicActivities_ObjectFlow81' has cardinality 0..*.
+An association connects 'State' and 'Activities_BasicActivities_ObjectFlow'. From 'State', the role 'State' has cardinality 0..*, and from 'Activities_BasicActivities_ObjectFlow', the role 'Activities_BasicActivities_ObjectFlow84' has cardinality 0..*.
+An association connects 'ValueSpecification' and 'Activities_IntermediateActivities_JoinNode'. From 'ValueSpecification', the role 'ValueSpecification86' has cardinality 0..*, and from 'Activities_IntermediateActivities_JoinNode', the role 'Activities_IntermediateActivities_JoinNode' has cardinality 0..*.
+An association connects 'ObjectFlow' and 'Activities_IntermediateActivities_DecisionNode'. From 'ObjectFlow', the role 'ObjectFlow' has cardinality 0..*, and from 'Activities_IntermediateActivities_DecisionNode', the role 'Activities_IntermediateActivities_DecisionNode' has cardinality 0..*.
+An association connects 'Behavior' and 'Activities_IntermediateActivities_DecisionNode'. From 'Behavior', the role 'Behavior90' has cardinality 0..*, and from 'Activities_IntermediateActivities_DecisionNode', the role 'Activities_IntermediateActivities_DecisionNode89' has cardinality 0..*.
+An association connects 'Activities_IntermediateActivities_ActivityPartition' and 'ActivityEdge'. From 'Activities_IntermediateActivities_ActivityPartition', the role 'ActivityEdge92' has cardinality 0..*, and from 'ActivityEdge', the role 'BasicActivities93' has cardinality 0..*.
+An association connects 'ActivityPartition' and 'Activities_IntermediateActivities_ActivityPartition'. From 'ActivityPartition', the role 'IntermediateActivities96' has cardinality 0..*, and from 'Activities_IntermediateActivities_ActivityPartition', the role 'ActivityPartition95' has cardinality 0..*.
+An association connects 'Activities_IntermediateActivities_ActivityPartition' and 'ActivityPartition'. From 'Activities_IntermediateActivities_ActivityPartition', the role 'ActivityPartition98' has cardinality 0..*, and from 'ActivityPartition', the role 'IntermediateActivities99' has cardinality 0..*.
+An association connects 'Element' and 'Activities_IntermediateActivities_ActivityPartition'. From 'Element', the role 'Element' has cardinality 0..*, and from 'Activities_IntermediateActivities_ActivityPartition', the role 'Activities_IntermediateActivities_ActivityPartition' has cardinality 0..*.
+An association connects 'Activities_IntermediateActivities_ActivityPartition' and 'ActivityNode'. From 'Activities_IntermediateActivities_ActivityPartition', the role 'ActivityNode102' has cardinality 0..*, and from 'ActivityNode', the role 'FundamentalActivities103' has cardinality 0..*.
+An association connects 'Parameter' and 'Activities_IntermediateActivities_ParameterSet'. From 'Parameter', the role 'BasicActivities106' has cardinality 0..*, and from 'Activities_IntermediateActivities_ParameterSet', the role 'Parameter105' has cardinality 0..*.
+An association connects 'Constraint' and 'Activities_IntermediateActivities_ParameterSet'. From 'Constraint', the role 'Constraint108' has cardinality 0..*, and from 'Activities_IntermediateActivities_ParameterSet', the role 'Activities_IntermediateActivities_ParameterSet' has cardinality 0..*.
+An association connects 'Activities_IntermediateActivities_BehavioralFeature' and 'ParameterSet'. From 'Activities_IntermediateActivities_BehavioralFeature', the role 'Activities_IntermediateActivities_BehavioralFeature' has cardinality 0..*, and from 'ParameterSet', the role 'ParameterSet110' has cardinality 0..*.
+An association connects 'ActivityEdge' and 'Activities_IntermediateActivities_InterruptibleActivityRegion'. From 'ActivityEdge', the role 'BasicActivities113' has cardinality 0..*, and from 'Activities_IntermediateActivities_InterruptibleActivityRegion', the role 'ActivityEdge112' has cardinality 0..*.
+An association connects 'Activities_IntermediateActivities_InterruptibleActivityRegion' and 'ActivityNode'. From 'Activities_IntermediateActivities_InterruptibleActivityRegion', the role 'ActivityNode115' has cardinality 0..*, and from 'ActivityNode', the role 'FundamentalActivities116' has cardinality 0..*.
+An association connects 'Activities_StructuredActivities_StructuredActivityNode' and 'Activity'. From 'Activities_StructuredActivities_StructuredActivityNode', the role 'Activity118' has cardinality 0..*, and from 'Activity', the role 'FundamentalActivities119' has cardinality 0..*.
+An association connects 'Activities_StructuredActivities_StructuredActivityNode' and 'Variable'. From 'Activities_StructuredActivities_StructuredActivityNode', the role 'Activities_StructuredActivities_StructuredActivityNode' has cardinality 0..*, and from 'Variable', the role 'Variable121' has cardinality 0..*.
+An association connects 'ActivityNode' and 'Activities_StructuredActivities_StructuredActivityNode'. From 'ActivityNode', the role 'FundamentalActivities124' has cardinality 0..*, and from 'Activities_StructuredActivities_StructuredActivityNode', the role 'ActivityNode123' has cardinality 0..*.
+An association connects 'InputPin' and 'Activities_StructuredActivities_StructuredActivityNode'. From 'InputPin', the role 'InputPin127' has cardinality 0..*, and from 'Activities_StructuredActivities_StructuredActivityNode', the role 'Activities_StructuredActivities_StructuredActivityNode126' has cardinality 0..*.
+An association connects 'Activities_StructuredActivities_StructuredActivityNode' and 'ActivityEdge'. From 'Activities_StructuredActivities_StructuredActivityNode', the role 'ActivityEdge129' has cardinality 0..*, and from 'ActivityEdge', the role 'BasicActivities130' has cardinality 0..*.
+An association connects 'OutputPin' and 'Activities_StructuredActivities_StructuredActivityNode'. From 'OutputPin', the role 'OutputPin133' has cardinality 0..*, and from 'Activities_StructuredActivities_StructuredActivityNode', the role 'Activities_StructuredActivities_StructuredActivityNode132' has cardinality 0..*.
+An association connects 'Activities_StructuredActivities_ExecutableNode' and 'ExceptionHandler'. From 'Activities_StructuredActivities_ExecutableNode', the role 'ExceptionHandler' has cardinality 0..*, and from 'ExceptionHandler', the role 'ExtraStructuredActivities' has cardinality 0..*.
+An association connects 'ExecutableNode' and 'Activities_StructuredActivities_LoopNode'. From 'ExecutableNode', the role 'ExecutableNode' has cardinality 0..*, and from 'Activities_StructuredActivities_LoopNode', the role 'Activities_StructuredActivities_LoopNode' has cardinality 0..*.
+An association connects 'Activities_StructuredActivities_LoopNode' and 'ExecutableNode'. From 'Activities_StructuredActivities_LoopNode', the role 'Activities_StructuredActivities_LoopNode137' has cardinality 0..*, and from 'ExecutableNode', the role 'ExecutableNode138' has cardinality 0..*.
+An association connects 'ExecutableNode' and 'Activities_StructuredActivities_LoopNode'. From 'ExecutableNode', the role 'ExecutableNode141' has cardinality 0..*, and from 'Activities_StructuredActivities_LoopNode', the role 'Activities_StructuredActivities_LoopNode140' has cardinality 0..*.
+An association connects 'Activities_StructuredActivities_LoopNode' and 'OutputPin'. From 'Activities_StructuredActivities_LoopNode', the role 'Activities_StructuredActivities_LoopNode143' has cardinality 0..*, and from 'OutputPin', the role 'OutputPin144' has cardinality 0..*.
+An association connects 'Activities_StructuredActivities_LoopNode' and 'InputPin'. From 'Activities_StructuredActivities_LoopNode', the role 'Activities_StructuredActivities_LoopNode146' has cardinality 0..*, and from 'InputPin', the role 'InputPin147' has cardinality 0..*.
+An association connects 'Activities_StructuredActivities_LoopNode' and 'OutputPin'. From 'Activities_StructuredActivities_LoopNode', the role 'Activities_StructuredActivities_LoopNode149' has cardinality 0..*, and from 'OutputPin', the role 'OutputPin150' has cardinality 0..*.
+An association connects 'Activities_StructuredActivities_LoopNode' and 'OutputPin'. From 'Activities_StructuredActivities_LoopNode', the role 'Activities_StructuredActivities_LoopNode152' has cardinality 0..*, and from 'OutputPin', the role 'OutputPin153' has cardinality 0..*.
+An association connects 'OutputPin' and 'Activities_StructuredActivities_LoopNode'. From 'OutputPin', the role 'OutputPin156' has cardinality 0..*, and from 'Activities_StructuredActivities_LoopNode', the role 'Activities_StructuredActivities_LoopNode155' has cardinality 0..*.
+An association connects 'Activities_StructuredActivities_ConditionalNode' and 'Clause'. From 'Activities_StructuredActivities_ConditionalNode', the role 'Activities_StructuredActivities_ConditionalNode' has cardinality 0..*, and from 'Clause', the role 'Clause' has cardinality 0..*.
+An association connects 'Activities_StructuredActivities_ConditionalNode' and 'ExecutableNode'. From 'Activities_StructuredActivities_ConditionalNode', the role 'Activities_StructuredActivities_ConditionalNode159' has cardinality 0..*, and from 'ExecutableNode', the role 'ExecutableNode160' has cardinality 0..*.
+An association connects 'Activities_StructuredActivities_ConditionalNode' and 'ExecutableNode'. From 'Activities_StructuredActivities_ConditionalNode', the role 'Activities_StructuredActivities_ConditionalNode162' has cardinality 0..*, and from 'ExecutableNode', the role 'ExecutableNode163' has cardinality 0..*.
+An association connects 'OutputPin' and 'Activities_StructuredActivities_ConditionalNode'. From 'OutputPin', the role 'OutputPin166' has cardinality 0..*, and from 'Activities_StructuredActivities_ConditionalNode', the role 'Activities_StructuredActivities_ConditionalNode165' has cardinality 0..*.
+An association connects 'Activities_StructuredActivities_Clause' and 'Clause'. From 'Activities_StructuredActivities_Clause', the role 'Clause168' has cardinality 0..*, and from 'Clause', the role 'StructuredActivities169' has cardinality 0..*.
+An association connects 'Activities_StructuredActivities_Clause' and 'Clause'. From 'Activities_StructuredActivities_Clause', the role 'Clause171' has cardinality 0..*, and from 'Clause', the role 'StructuredActivities172' has cardinality 0..*.
+An association connects 'OutputPin' and 'Activities_StructuredActivities_Clause'. From 'OutputPin', the role 'OutputPin174' has cardinality 0..*, and from 'Activities_StructuredActivities_Clause', the role 'Activities_StructuredActivities_Clause' has cardinality 0..*.
+An association connects 'ExecutableNode' and 'Activities_StructuredActivities_SequenceNode'. From 'ExecutableNode', the role 'ExecutableNode176' has cardinality 0..*, and from 'Activities_StructuredActivities_SequenceNode', the role 'Activities_StructuredActivities_SequenceNode' has cardinality 0..*.
+An association connects 'Activities_ExtraStructuredActivities_ExceptionHandler' and 'ExecutableNode'. From 'Activities_ExtraStructuredActivities_ExceptionHandler', the role 'Activities_ExtraStructuredActivities_ExceptionHandler' has cardinality 0..*, and from 'ExecutableNode', the role 'ExecutableNode178' has cardinality 0..*.
+An association connects 'ExecutableNode' and 'Activities_ExtraStructuredActivities_ExceptionHandler'. From 'ExecutableNode', the role 'StructuredActivities181' has cardinality 0..*, and from 'Activities_ExtraStructuredActivities_ExceptionHandler', the role 'ExecutableNode180' has cardinality 0..*.
+An association connects 'Activities_ExtraStructuredActivities_ExceptionHandler' and 'ObjectNode'. From 'Activities_ExtraStructuredActivities_ExceptionHandler', the role 'Activities_ExtraStructuredActivities_ExceptionHandler183' has cardinality 0..*, and from 'ObjectNode', the role 'ObjectNode' has cardinality 0..*.
+An association connects 'Activities_ExtraStructuredActivities_ExceptionHandler' and 'Classifier'. From 'Activities_ExtraStructuredActivities_ExceptionHandler', the role 'Activities_ExtraStructuredActivities_ExceptionHandler185' has cardinality 0..*, and from 'Classifier', the role 'Classifier' has cardinality 0..*.
+An association connects 'ExpansionNode' and 'Activities_ExtraStructuredActivities_ExpansionRegion'. From 'ExpansionNode', the role 'ExtraStructuredActivities187' has cardinality 0..*, and from 'Activities_ExtraStructuredActivities_ExpansionRegion', the role 'ExpansionNode' has cardinality 0..*.
+An association connects 'Activities_ExtraStructuredActivities_ExpansionRegion' and 'ExpansionNode'. From 'Activities_ExtraStructuredActivities_ExpansionRegion', the role 'ExpansionNode189' has cardinality 0..*, and from 'ExpansionNode', the role 'ExtraStructuredActivities190' has cardinality 0..*.
+An association connects 'Activities_ExtraStructuredActivities_ExpansionNode' and 'ExpansionRegion'. From 'Activities_ExtraStructuredActivities_ExpansionNode', the role 'ExpansionRegion' has cardinality 0..*, and from 'ExpansionRegion', the role 'ExtraStructuredActivities192' has cardinality 0..*.
+An association connects 'ExpansionRegion' and 'Activities_ExtraStructuredActivities_ExpansionNode'. From 'ExpansionRegion', the role 'ExtraStructuredActivities195' has cardinality 0..*, and from 'Activities_ExtraStructuredActivities_ExpansionNode', the role 'ExpansionRegion194' has cardinality 0..*.

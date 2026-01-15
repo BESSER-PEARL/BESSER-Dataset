@@ -1,0 +1,144 @@
+The domain model 'sooml' describes the core structural elements and their relationships within the system.
+
+The model defines 29 main class(es).
+
+'sooml_EntryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sooml_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_Attribute' represents an important domain concept.
+It has one attribute: 'dataType', which is of type str.
+
+'sooml_IsInStateCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_ReferenceIsInStateCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'IsInStateCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_ParameterBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_Parameter' represents an important domain concept.
+It has one attribute: 'dataType', which is of type str.
+
+'sooml_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_ReferenceAssignmentAction' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'CallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_CallReferenceOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_Guard' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_State' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_CallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_CallParameterOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_StructuralFeature' represents an important domain concept.
+It has the following attributes: 'lowerBound', which is of type int; 'upperBound', which is of type int.
+
+'sooml_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'sooml_ParameterIsInStateCondition' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DataType' defines the following possible values: 'String', 'Boolean', 'Integer', 'Complex'.
+
+The model also captures inheritance relationships between classes.
+The class 'sooml_Package' is a specialization of 'NamedElement'.
+The class 'sooml_Class' is a specialization of 'NamedElement'.
+The class 'sooml_Attribute' is a specialization of 'StructuralFeature'.
+The class 'sooml_Reference' is a specialization of 'StructuralFeature'.
+The class 'sooml_Operation' is a specialization of 'NamedElement'.
+The class 'sooml_StructuralFeature' is a specialization of 'NamedElement'.
+The class 'sooml_State' is a specialization of 'NamedElement'.
+The class 'sooml_Parameter' is a specialization of 'NamedElement'.
+The class 'sooml_CallOperationAction' is a specialization of 'Action'.
+The class 'sooml_IsInStateCondition' is a specialization of 'Guard'.
+The class 'sooml_ReferenceIsInStateCondition' is a specialization of 'IsInStateCondition'.
+The class 'sooml_ParameterIsInStateCondition' is a specialization of 'IsInStateCondition'.
+The class 'sooml_CallReferenceOperationAction' is a specialization of 'CallOperationAction'.
+The class 'sooml_CallParameterOperationAction' is a specialization of 'CallOperationAction'.
+The class 'sooml_ReferenceAssignmentAction' is a specialization of 'Action'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sooml_Class' and 'sooml_Package'. From 'sooml_Class', the role 'sooml_Class' has cardinality 0..*, and from 'sooml_Package', the role 'sooml_Package' has cardinality 0..*.
+An association connects 'sooml_Package' and 'sooml_Package'. From 'sooml_Package', the role 'parentPackage' has cardinality 0..*, and from 'sooml_Package', the role 'Package' has cardinality 0..*.
+An association connects 'sooml_Package' and 'sooml_Package'. From 'sooml_Package', the role 'packages' has cardinality 0..*, and from 'sooml_Package', the role 'Package5' has cardinality 0..*.
+An association connects 'sooml_Class' and 'sooml_StateMachine'. From 'sooml_Class', the role 'class' has cardinality 0..*, and from 'sooml_StateMachine', the role 'StateMachine' has cardinality 0..*.
+An association connects 'sooml_Class' and 'sooml_Operation'. From 'sooml_Class', the role 'sooml_Class8' has cardinality 0..*, and from 'sooml_Operation', the role 'sooml_Operation' has cardinality 0..*.
+An association connects 'sooml_Class' and 'sooml_StructuralFeature'. From 'sooml_Class', the role 'sooml_Class10' has cardinality 0..*, and from 'sooml_StructuralFeature', the role 'sooml_StructuralFeature' has cardinality 0..*.
+An association connects 'sooml_Reference' and 'sooml_Class'. From 'sooml_Reference', the role 'sooml_Reference' has cardinality 0..*, and from 'sooml_Class', the role 'sooml_Class12' has cardinality 0..*.
+An association connects 'sooml_Reference' and 'sooml_Reference'. From 'sooml_Reference', the role 'sooml_Reference13' has cardinality 0..*, and from 'sooml_Reference', the role 'sooml_Reference15' has cardinality 0..*.
+An association connects 'sooml_Operation' and 'sooml_Parameter'. From 'sooml_Operation', the role 'sooml_Operation17' has cardinality 0..*, and from 'sooml_Parameter', the role 'sooml_Parameter' has cardinality 0..*.
+An association connects 'sooml_StateMachine' and 'sooml_Class'. From 'sooml_StateMachine', the role 'stateMachine' has cardinality 0..*, and from 'sooml_Class', the role 'Class' has cardinality 0..*.
+An association connects 'sooml_StateMachine' and 'sooml_State'. From 'sooml_StateMachine', the role 'sooml_StateMachine' has cardinality 0..*, and from 'sooml_State', the role 'sooml_State' has cardinality 0..*.
+An association connects 'sooml_StateMachine' and 'sooml_State'. From 'sooml_StateMachine', the role 'sooml_StateMachine21' has cardinality 0..*, and from 'sooml_State', the role 'sooml_State22' has cardinality 0..*.
+An association connects 'sooml_Transition' and 'sooml_State'. From 'sooml_Transition', the role 'sooml_Transition' has cardinality 0..*, and from 'sooml_State', the role 'sooml_State24' has cardinality 0..*.
+An association connects 'sooml_State' and 'sooml_EntryOperation'. From 'sooml_State', the role 'sooml_State26' has cardinality 0..*, and from 'sooml_EntryOperation', the role 'sooml_EntryOperation' has cardinality 0..*.
+An association connects 'sooml_Transition' and 'sooml_Action'. From 'sooml_Transition', the role 'sooml_Transition28' has cardinality 0..*, and from 'sooml_Action', the role 'sooml_Action' has cardinality 0..*.
+An association connects 'sooml_Guard' and 'sooml_Transition'. From 'sooml_Guard', the role 'sooml_Guard' has cardinality 0..*, and from 'sooml_Transition', the role 'sooml_Transition30' has cardinality 0..*.
+An association connects 'sooml_Transition' and 'sooml_Event'. From 'sooml_Transition', the role 'sooml_Transition32' has cardinality 0..*, and from 'sooml_Event', the role 'sooml_Event' has cardinality 0..*.
+An association connects 'sooml_Transition' and 'sooml_State'. From 'sooml_Transition', the role 'sooml_Transition34' has cardinality 0..*, and from 'sooml_State', the role 'sooml_State35' has cardinality 0..*.
+An association connects 'sooml_Event' and 'sooml_Operation'. From 'sooml_Event', the role 'sooml_Event37' has cardinality 0..*, and from 'sooml_Operation', the role 'sooml_Operation38' has cardinality 0..*.
+An association connects 'sooml_Parameter' and 'sooml_Class'. From 'sooml_Parameter', the role 'sooml_Parameter40' has cardinality 0..*, and from 'sooml_Class', the role 'sooml_Class41' has cardinality 0..*.
+An association connects 'sooml_Operation' and 'sooml_CallOperationAction'. From 'sooml_Operation', the role 'sooml_Operation43' has cardinality 0..*, and from 'sooml_CallOperationAction', the role 'sooml_CallOperationAction' has cardinality 0..*.
+An association connects 'sooml_CallOperationAction' and 'sooml_ParameterBinding'. From 'sooml_CallOperationAction', the role 'sooml_CallOperationAction45' has cardinality 0..*, and from 'sooml_ParameterBinding', the role 'sooml_ParameterBinding' has cardinality 0..*.
+An association connects 'sooml_ParameterBinding' and 'sooml_StructuralFeature'. From 'sooml_ParameterBinding', the role 'sooml_ParameterBinding47' has cardinality 0..*, and from 'sooml_StructuralFeature', the role 'sooml_StructuralFeature48' has cardinality 0..*.
+An association connects 'sooml_Parameter' and 'sooml_ParameterBinding'. From 'sooml_Parameter', the role 'sooml_Parameter51' has cardinality 0..*, and from 'sooml_ParameterBinding', the role 'sooml_ParameterBinding50' has cardinality 0..*.
+An association connects 'sooml_IsInStateCondition' and 'sooml_State'. From 'sooml_IsInStateCondition', the role 'sooml_IsInStateCondition' has cardinality 0..*, and from 'sooml_State', the role 'sooml_State53' has cardinality 0..*.
+An association connects 'sooml_Operation' and 'sooml_EntryOperation'. From 'sooml_Operation', the role 'sooml_Operation56' has cardinality 0..*, and from 'sooml_EntryOperation', the role 'sooml_EntryOperation55' has cardinality 0..*.
+An association connects 'sooml_Reference' and 'sooml_ReferenceIsInStateCondition'. From 'sooml_Reference', the role 'sooml_Reference58' has cardinality 0..*, and from 'sooml_ReferenceIsInStateCondition', the role 'sooml_ReferenceIsInStateCondition' has cardinality 0..*.
+An association connects 'sooml_ParameterIsInStateCondition' and 'sooml_Parameter'. From 'sooml_ParameterIsInStateCondition', the role 'sooml_ParameterIsInStateCondition' has cardinality 0..*, and from 'sooml_Parameter', the role 'sooml_Parameter60' has cardinality 0..*.
+An association connects 'sooml_CallReferenceOperationAction' and 'sooml_Reference'. From 'sooml_CallReferenceOperationAction', the role 'sooml_CallReferenceOperationAction' has cardinality 0..*, and from 'sooml_Reference', the role 'sooml_Reference62' has cardinality 0..*.
+An association connects 'sooml_Parameter' and 'sooml_CallParameterOperationAction'. From 'sooml_Parameter', the role 'sooml_Parameter64' has cardinality 0..*, and from 'sooml_CallParameterOperationAction', the role 'sooml_CallParameterOperationAction' has cardinality 0..*.
+An association connects 'sooml_ReferenceAssignmentAction' and 'sooml_Parameter'. From 'sooml_ReferenceAssignmentAction', the role 'sooml_ReferenceAssignmentAction' has cardinality 0..*, and from 'sooml_Parameter', the role 'sooml_Parameter66' has cardinality 0..*.
+An association connects 'sooml_ReferenceAssignmentAction' and 'sooml_Reference'. From 'sooml_ReferenceAssignmentAction', the role 'sooml_ReferenceAssignmentAction68' has cardinality 0..*, and from 'sooml_Reference', the role 'sooml_Reference69' has cardinality 0..*.

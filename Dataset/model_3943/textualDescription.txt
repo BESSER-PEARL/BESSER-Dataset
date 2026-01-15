@@ -1,0 +1,36 @@
+The domain model 'PathExp' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'PathExp_Element' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PathExp_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'PathExp_State' represents an important domain concept.
+It does not declare any attributes.
+
+'PathExp_PathExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'PathExp_PathExp' is a specialization of 'Element'.
+The class 'PathExp_Transition' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'PathExp_PathExp' and 'State'. From 'PathExp_PathExp', the role 'PathExp_PathExp' has cardinality 0..*, and from 'State', the role 'State' has cardinality 0..*.
+An association connects 'Transition' and 'PathExp_PathExp'. From 'Transition', the role 'Transition' has cardinality 0..*, and from 'PathExp_PathExp', the role 'PathExp_PathExp2' has cardinality 0..*.
+An association connects 'Transition' and 'PathExp_State'. From 'Transition', the role 'unnamed role' has cardinality 0..*, and from 'PathExp_State', the role '0' has cardinality 0..*.
+An association connects 'PathExp_State' and 'Transition'. From 'PathExp_State', the role '05' has cardinality 0..*, and from 'Transition', the role '6' has cardinality 0..*.
+An association connects 'State' and 'PathExp_Transition'. From 'State', the role '9' has cardinality 0..*, and from 'PathExp_Transition', the role '08' has cardinality 0..*.
+An association connects 'State' and 'PathExp_Transition'. From 'State', the role '12' has cardinality 0..*, and from 'PathExp_Transition', the role '011' has cardinality 0..*.

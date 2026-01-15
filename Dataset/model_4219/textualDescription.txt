@@ -1,0 +1,20 @@
+The domain model 'CompanyModel' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'CompanyModel_Employee' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isManager', which is of type bool.
+
+'CompanyModel_Product' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'productID', which is of type int.
+
+'CompanyModel_Company' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'CompanyModel_Department' represents an important domain concept.
+It has one attribute: 'number', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'CompanyModel_Company' and 'CompanyModel_Department'. From 'CompanyModel_Company', the role 'CompanyModel_Company' has cardinality 0..*, and from 'CompanyModel_Department', the role 'CompanyModel_Department' has cardinality 0..*.
+An association connects 'CompanyModel_Employee' and 'CompanyModel_Department'. From 'CompanyModel_Employee', the role 'CompanyModel_Employee' has cardinality 0..*, and from 'CompanyModel_Department', the role 'CompanyModel_Department2' has cardinality 0..*.
+An association connects 'CompanyModel_Department' and 'CompanyModel_Product'. From 'CompanyModel_Department', the role 'CompanyModel_Department4' has cardinality 0..*, and from 'CompanyModel_Product', the role 'CompanyModel_Product' has cardinality 0..*.

@@ -1,0 +1,269 @@
+The domain model 'majordomo' describes the core structural elements and their relationships within the system.
+
+The model defines 60 main class(es).
+
+'majordomo_LightSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_RoofWindowActor' represents an important domain concept.
+It does not declare any attributes.
+
+'RoomMountable' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_RainSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_BooleanSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_Extendable' represents an important domain concept.
+It does not declare any attributes.
+
+'FloatSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_NotOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanActor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_ValueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_TemperatureSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'Extendable' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_FloatActor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_SwitchSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_ActionSetReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_PreparedActionSet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'majordomo_Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_CoffeeActor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_PreparedValue' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'majordomo_BinaryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_CompareOperation' represents an important domain concept.
+It has one attribute: 'comparator', which is of type str.
+
+'majordomo_Majordomo' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'majordomo_ConstantValue' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'majordomo_RadiatorActor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_Extension' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'majordomo_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_LampActor' represents an important domain concept.
+It does not declare any attributes.
+
+'HouseMountable' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_BinaryAndOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_FloatAction' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_Room' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_BooleanActor' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_SensorValue' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_BooleanAction' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'majordomo_House' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_ValueReference' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_StatementReference' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_BoilerActor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_BooleanSensorStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_RollerActor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_RoomMountable' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_HouseMountable' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_BinaryOrOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_FloatSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_ClockSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'ValueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_NumberSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'FloatActor' represents an important domain concept.
+It does not declare any attributes.
+
+'majordomo_PreparedStatement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Comparator' defines the following possible values: 'LE', 'LT', 'GE', 'GT'.
+
+The model also captures inheritance relationships between classes.
+The class 'majordomo_House' is a specialization of 'Extendable'.
+The class 'majordomo_Room' is a specialization of 'Extendable'.
+The class 'majordomo_Sensor' is a specialization of 'Extension'.
+The class 'majordomo_Actor' is a specialization of 'Extension'.
+The class 'majordomo_LightSensor' is a specialization of 'HouseMountable'.
+The class 'majordomo_LightSensor' is a specialization of 'RoomMountable'.
+The class 'majordomo_LightSensor' is a specialization of 'FloatSensor'.
+The class 'majordomo_TemperatureSensor' is a specialization of 'HouseMountable'.
+The class 'majordomo_TemperatureSensor' is a specialization of 'RoomMountable'.
+The class 'majordomo_TemperatureSensor' is a specialization of 'FloatSensor'.
+The class 'majordomo_RainSensor' is a specialization of 'HouseMountable'.
+The class 'majordomo_RainSensor' is a specialization of 'BooleanSensor'.
+The class 'majordomo_SwitchSensor' is a specialization of 'RoomMountable'.
+The class 'majordomo_SwitchSensor' is a specialization of 'BooleanSensor'.
+The class 'majordomo_NumberSensor' is a specialization of 'RoomMountable'.
+The class 'majordomo_NumberSensor' is a specialization of 'FloatSensor'.
+The class 'majordomo_ClockSensor' is a specialization of 'HouseMountable'.
+The class 'majordomo_ClockSensor' is a specialization of 'FloatSensor'.
+The class 'majordomo_LampActor' is a specialization of 'HouseMountable'.
+The class 'majordomo_LampActor' is a specialization of 'RoomMountable'.
+The class 'majordomo_LampActor' is a specialization of 'FloatActor'.
+The class 'majordomo_RollerActor' is a specialization of 'RoomMountable'.
+The class 'majordomo_RollerActor' is a specialization of 'BooleanActor'.
+The class 'majordomo_RoofWindowActor' is a specialization of 'RoomMountable'.
+The class 'majordomo_RoofWindowActor' is a specialization of 'BooleanActor'.
+The class 'majordomo_BoilerActor' is a specialization of 'HouseMountable'.
+The class 'majordomo_BoilerActor' is a specialization of 'BooleanActor'.
+The class 'majordomo_RadiatorActor' is a specialization of 'RoomMountable'.
+The class 'majordomo_RadiatorActor' is a specialization of 'BooleanActor'.
+The class 'majordomo_BooleanSensor' is a specialization of 'Sensor'.
+The class 'majordomo_FloatSensor' is a specialization of 'Sensor'.
+The class 'majordomo_BooleanActor' is a specialization of 'Actor'.
+The class 'majordomo_FloatActor' is a specialization of 'Actor'.
+The class 'majordomo_FloatAction' is a specialization of 'Action'.
+The class 'majordomo_BooleanAction' is a specialization of 'Action'.
+The class 'majordomo_CoffeeActor' is a specialization of 'RoomMountable'.
+The class 'majordomo_CoffeeActor' is a specialization of 'BooleanActor'.
+The class 'majordomo_BinaryOperation' is a specialization of 'Statement'.
+The class 'majordomo_NotOperation' is a specialization of 'Statement'.
+The class 'majordomo_CompareOperation' is a specialization of 'Statement'.
+The class 'majordomo_BooleanSensorStatement' is a specialization of 'Statement'.
+The class 'majordomo_ConstantValue' is a specialization of 'ValueExpression'.
+The class 'majordomo_SensorValue' is a specialization of 'ValueExpression'.
+The class 'majordomo_StatementReference' is a specialization of 'Statement'.
+The class 'majordomo_ActionSetReference' is a specialization of 'Action'.
+The class 'majordomo_BinaryAndOperation' is a specialization of 'BinaryOperation'.
+The class 'majordomo_BinaryOrOperation' is a specialization of 'BinaryOperation'.
+The class 'majordomo_ValueReference' is a specialization of 'ValueExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'majordomo_Majordomo' and 'majordomo_House'. From 'majordomo_Majordomo', the role 'majordomo_Majordomo' has cardinality 0..*, and from 'majordomo_House', the role 'majordomo_House' has cardinality 0..*.
+An association connects 'majordomo_Majordomo' and 'majordomo_Room'. From 'majordomo_Majordomo', the role 'majordomo_Majordomo2' has cardinality 0..*, and from 'majordomo_Room', the role 'majordomo_Room' has cardinality 0..*.
+An association connects 'majordomo_Program' and 'majordomo_Majordomo'. From 'majordomo_Program', the role 'majordomo_Program' has cardinality 0..*, and from 'majordomo_Majordomo', the role 'majordomo_Majordomo4' has cardinality 0..*.
+An association connects 'majordomo_Sensor' and 'majordomo_Extendable'. From 'majordomo_Sensor', the role 'Sensor' has cardinality 0..*, and from 'majordomo_Extendable', the role 'ctx' has cardinality 0..*.
+An association connects 'majordomo_Extendable' and 'majordomo_Actor'. From 'majordomo_Extendable', the role 'ctx7' has cardinality 0..*, and from 'majordomo_Actor', the role 'Actor' has cardinality 0..*.
+An association connects 'majordomo_Extendable' and 'majordomo_Sensor'. From 'majordomo_Extendable', the role 'Extendable' has cardinality 0..*, and from 'majordomo_Sensor', the role 'sensors' has cardinality 0..*.
+An association connects 'majordomo_Actor' and 'majordomo_Extendable'. From 'majordomo_Actor', the role 'actors' has cardinality 0..*, and from 'majordomo_Extendable', the role 'Extendable10' has cardinality 0..*.
+An association connects 'majordomo_Rule' and 'majordomo_Statement'. From 'majordomo_Rule', the role 'majordomo_Rule' has cardinality 0..*, and from 'majordomo_Statement', the role 'majordomo_Statement' has cardinality 0..*.
+An association connects 'majordomo_Action' and 'majordomo_Rule'. From 'majordomo_Action', the role 'majordomo_Action' has cardinality 0..*, and from 'majordomo_Rule', the role 'majordomo_Rule13' has cardinality 0..*.
+An association connects 'majordomo_FloatActor' and 'majordomo_FloatAction'. From 'majordomo_FloatActor', the role 'majordomo_FloatActor' has cardinality 0..*, and from 'majordomo_FloatAction', the role 'majordomo_FloatAction' has cardinality 0..*.
+An association connects 'majordomo_BooleanActor' and 'majordomo_BooleanAction'. From 'majordomo_BooleanActor', the role 'majordomo_BooleanActor' has cardinality 0..*, and from 'majordomo_BooleanAction', the role 'majordomo_BooleanAction' has cardinality 0..*.
+An association connects 'majordomo_BinaryOperation' and 'majordomo_Statement'. From 'majordomo_BinaryOperation', the role 'majordomo_BinaryOperation' has cardinality 0..*, and from 'majordomo_Statement', the role 'majordomo_Statement17' has cardinality 0..*.
+An association connects 'majordomo_Statement' and 'majordomo_BinaryOperation'. From 'majordomo_Statement', the role 'majordomo_Statement20' has cardinality 0..*, and from 'majordomo_BinaryOperation', the role 'majordomo_BinaryOperation19' has cardinality 0..*.
+An association connects 'majordomo_NotOperation' and 'majordomo_Statement'. From 'majordomo_NotOperation', the role 'majordomo_NotOperation' has cardinality 0..*, and from 'majordomo_Statement', the role 'majordomo_Statement22' has cardinality 0..*.
+An association connects 'majordomo_CompareOperation' and 'majordomo_ValueExpression'. From 'majordomo_CompareOperation', the role 'majordomo_CompareOperation' has cardinality 0..*, and from 'majordomo_ValueExpression', the role 'majordomo_ValueExpression' has cardinality 0..*.
+An association connects 'majordomo_ValueExpression' and 'majordomo_CompareOperation'. From 'majordomo_ValueExpression', the role 'majordomo_ValueExpression26' has cardinality 0..*, and from 'majordomo_CompareOperation', the role 'majordomo_CompareOperation25' has cardinality 0..*.
+An association connects 'majordomo_BooleanSensorStatement' and 'majordomo_BooleanSensor'. From 'majordomo_BooleanSensorStatement', the role 'majordomo_BooleanSensorStatement' has cardinality 0..*, and from 'majordomo_BooleanSensor', the role 'majordomo_BooleanSensor' has cardinality 0..*.
+An association connects 'majordomo_FloatSensor' and 'majordomo_SensorValue'. From 'majordomo_FloatSensor', the role 'majordomo_FloatSensor' has cardinality 0..*, and from 'majordomo_SensorValue', the role 'majordomo_SensorValue' has cardinality 0..*.
+An association connects 'majordomo_StatementReference' and 'majordomo_PreparedStatement'. From 'majordomo_StatementReference', the role 'majordomo_StatementReference' has cardinality 0..*, and from 'majordomo_PreparedStatement', the role 'majordomo_PreparedStatement' has cardinality 0..*.
+An association connects 'majordomo_Program' and 'majordomo_PreparedValue'. From 'majordomo_Program', the role 'ctx31' has cardinality 0..*, and from 'majordomo_PreparedValue', the role 'PreparedValue' has cardinality 0..*.
+An association connects 'majordomo_Program' and 'majordomo_PreparedStatement'. From 'majordomo_Program', the role 'ctx33' has cardinality 0..*, and from 'majordomo_PreparedStatement', the role 'PreparedStatement' has cardinality 0..*.
+An association connects 'majordomo_PreparedActionSet' and 'majordomo_Program'. From 'majordomo_PreparedActionSet', the role 'PreparedActionSet' has cardinality 0..*, and from 'majordomo_Program', the role 'ctx35' has cardinality 0..*.
+An association connects 'majordomo_Program' and 'majordomo_Rule'. From 'majordomo_Program', the role 'majordomo_Program37' has cardinality 0..*, and from 'majordomo_Rule', the role 'majordomo_Rule38' has cardinality 0..*.
+An association connects 'majordomo_PreparedStatement' and 'majordomo_Program'. From 'majordomo_PreparedStatement', the role 'preparedStatements' has cardinality 0..*, and from 'majordomo_Program', the role 'Program' has cardinality 0..*.
+An association connects 'majordomo_PreparedStatement' and 'majordomo_Statement'. From 'majordomo_PreparedStatement', the role 'majordomo_PreparedStatement41' has cardinality 0..*, and from 'majordomo_Statement', the role 'majordomo_Statement42' has cardinality 0..*.
+An association connects 'majordomo_PreparedActionSet' and 'majordomo_Program'. From 'majordomo_PreparedActionSet', the role 'preparedActionSets' has cardinality 0..*, and from 'majordomo_Program', the role 'Program44' has cardinality 0..*.
+An association connects 'majordomo_PreparedActionSet' and 'majordomo_Action'. From 'majordomo_PreparedActionSet', the role 'majordomo_PreparedActionSet' has cardinality 0..*, and from 'majordomo_Action', the role 'majordomo_Action46' has cardinality 0..*.
+An association connects 'majordomo_PreparedActionSet' and 'majordomo_ActionSetReference'. From 'majordomo_PreparedActionSet', the role 'majordomo_PreparedActionSet48' has cardinality 0..*, and from 'majordomo_ActionSetReference', the role 'majordomo_ActionSetReference' has cardinality 0..*.
+An association connects 'majordomo_PreparedValue' and 'majordomo_Program'. From 'majordomo_PreparedValue', the role 'constants' has cardinality 0..*, and from 'majordomo_Program', the role 'Program50' has cardinality 0..*.
+An association connects 'majordomo_PreparedValue' and 'majordomo_ValueExpression'. From 'majordomo_PreparedValue', the role 'majordomo_PreparedValue' has cardinality 0..*, and from 'majordomo_ValueExpression', the role 'majordomo_ValueExpression52' has cardinality 0..*.
+An association connects 'majordomo_ValueReference' and 'majordomo_PreparedValue'. From 'majordomo_ValueReference', the role 'majordomo_ValueReference' has cardinality 0..*, and from 'majordomo_PreparedValue', the role 'majordomo_PreparedValue54' has cardinality 0..*.

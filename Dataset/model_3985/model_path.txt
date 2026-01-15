@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/robsman/stardust.ide/model/org.eclipse.stardust.model.xpdl/model/carnot.ecore

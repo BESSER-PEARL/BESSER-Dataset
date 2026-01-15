@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gemoc/ale-lang-compiler/languages/logo/logo.lang.interpreter.truffle/interpreter-comp/kmLogo.ecore

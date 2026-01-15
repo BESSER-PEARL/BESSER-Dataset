@@ -1,0 +1,80 @@
+The domain model 'KragsteinPackage' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'KragsteinPackage_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'KragsteinPackage_Note' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'name', which is of type str.
+
+'KragsteinPackage_Attribute' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'type', which is of type str; 'name', which is of type str; 'isStatic', which is of type bool; 'value', which is of type str; 'isConst', which is of type bool.
+
+'KragsteinPackage_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'KragsteinPackage_Method' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'isConst', which is of type bool; 'isStatic', which is of type bool; 'name', which is of type str; 'isVirtual', which is of type bool; 'type', which is of type str.
+
+'KragsteinPackage_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'KragsteinPackage_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'KragsteinPackage_Parameter' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str; 'type', which is of type str.
+
+'KragsteinPackage_Relationship' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'upperBound', which is of type int; 'lowerBound', which is of type int.
+
+'KragsteinPackage_Generalization' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'KragsteinPackage_ImportedClass' represents an important domain concept.
+It has the following attributes: 'isInternal', which is of type bool; 'name', which is of type str; 'path', which is of type str.
+
+'KragsteinPackage_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'KragsteinPackage_Package' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'path', which is of type str.
+
+'KragsteinPackage_Aggregation' represents an important domain concept.
+It does not declare any attributes.
+
+'KragsteinPackage_Class' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'supplierElement', which is of type str; 'isSingletone', which is of type bool; 'superClass', which is of type str; 'isInterface', which is of type bool; 'visibility', which is of type str.
+
+'KragsteinPackage_Composition' represents an important domain concept.
+It does not declare any attributes.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'KragsteinPackage_Generalization' is a specialization of 'Relationship'.
+The class 'KragsteinPackage_Realization' is a specialization of 'Relationship'.
+The class 'KragsteinPackage_Association' is a specialization of 'Relationship'.
+The class 'KragsteinPackage_Aggregation' is a specialization of 'Relationship'.
+The class 'KragsteinPackage_Composition' is a specialization of 'Relationship'.
+The class 'KragsteinPackage_Dependency' is a specialization of 'Relationship'.
+The class 'KragsteinPackage_Note' is a specialization of 'Unit'.
+The class 'KragsteinPackage_Class' is a specialization of 'Unit'.
+
+Relationships between classes are modeled using associations.
+An association connects 'KragsteinPackage_Package' and 'KragsteinPackage_Unit'. From 'KragsteinPackage_Package', the role 'KragsteinPackage_Package' has cardinality 0..*, and from 'KragsteinPackage_Unit', the role 'KragsteinPackage_Unit' has cardinality 0..*.
+An association connects 'KragsteinPackage_Relationship' and 'KragsteinPackage_Class'. From 'KragsteinPackage_Relationship', the role 'KragsteinPackage_Relationship' has cardinality 0..*, and from 'KragsteinPackage_Class', the role 'KragsteinPackage_Class' has cardinality 0..*.
+An association connects 'KragsteinPackage_Relationship' and 'KragsteinPackage_Class'. From 'KragsteinPackage_Relationship', the role 'KragsteinPackage_Relationship3' has cardinality 0..*, and from 'KragsteinPackage_Class', the role 'KragsteinPackage_Class4' has cardinality 0..*.
+An association connects 'KragsteinPackage_Attribute' and 'KragsteinPackage_Class'. From 'KragsteinPackage_Attribute', the role 'KragsteinPackage_Attribute' has cardinality 0..*, and from 'KragsteinPackage_Class', the role 'KragsteinPackage_Class6' has cardinality 0..*.
+An association connects 'KragsteinPackage_Class' and 'KragsteinPackage_Method'. From 'KragsteinPackage_Class', the role 'KragsteinPackage_Class8' has cardinality 0..*, and from 'KragsteinPackage_Method', the role 'KragsteinPackage_Method' has cardinality 0..*.
+An association connects 'KragsteinPackage_Relationship' and 'KragsteinPackage_Class'. From 'KragsteinPackage_Relationship', the role 'KragsteinPackage_Relationship11' has cardinality 0..*, and from 'KragsteinPackage_Class', the role 'KragsteinPackage_Class10' has cardinality 0..*.
+An association connects 'KragsteinPackage_Class' and 'KragsteinPackage_ImportedClass'. From 'KragsteinPackage_Class', the role 'KragsteinPackage_Class13' has cardinality 0..*, and from 'KragsteinPackage_ImportedClass', the role 'KragsteinPackage_ImportedClass' has cardinality 0..*.
+An association connects 'KragsteinPackage_Parameter' and 'KragsteinPackage_Method'. From 'KragsteinPackage_Parameter', the role 'KragsteinPackage_Parameter' has cardinality 0..*, and from 'KragsteinPackage_Method', the role 'KragsteinPackage_Method15' has cardinality 0..*.
+An association connects 'KragsteinPackage_Link' and 'KragsteinPackage_Unit'. From 'KragsteinPackage_Link', the role 'KragsteinPackage_Link' has cardinality 0..*, and from 'KragsteinPackage_Unit', the role 'KragsteinPackage_Unit17' has cardinality 0..*.
+An association connects 'KragsteinPackage_Link' and 'KragsteinPackage_Unit'. From 'KragsteinPackage_Link', the role 'KragsteinPackage_Link19' has cardinality 0..*, and from 'KragsteinPackage_Unit', the role 'KragsteinPackage_Unit20' has cardinality 0..*.
+An association connects 'KragsteinPackage_Link' and 'KragsteinPackage_Unit'. From 'KragsteinPackage_Link', the role 'KragsteinPackage_Link22' has cardinality 0..*, and from 'KragsteinPackage_Unit', the role 'KragsteinPackage_Unit23' has cardinality 0..*.

@@ -1,0 +1,56 @@
+The domain model 'platoon' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'platoon_FrontGap' represents an important domain concept.
+It has one attribute: 'actualGapSize', which is of type int.
+
+'platoon_PlatooningSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_JoiningVehicle' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Platoon' represents an important domain concept.
+It has the following attributes: 'length', which is of type int; 'desiredGapSize', which is of type int.
+
+'platoon_JoinPlatoonCoord' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_JoiningPosition' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Vehicle' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'Vehicle' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_PlatoonVehicle' represents an important domain concept.
+It has one attribute: 'position', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'platoon_JoiningVehicle' is a specialization of 'Vehicle'.
+The class 'platoon_PlatoonVehicle' is a specialization of 'Vehicle'.
+
+Relationships between classes are modeled using associations.
+An association connects 'platoon_PlatoonVehicle' and 'platoon_Platoon'. From 'platoon_PlatoonVehicle', the role 'platoon_PlatoonVehicle' has cardinality 0..*, and from 'platoon_Platoon', the role 'platoon_Platoon' has cardinality 0..*.
+An association connects 'platoon_Platoon' and 'platoon_PlatoonVehicle'. From 'platoon_Platoon', the role 'platoon_Platoon2' has cardinality 0..*, and from 'platoon_PlatoonVehicle', the role 'platoon_PlatoonVehicle3' has cardinality 0..*.
+An association connects 'platoon_Platoon' and 'platoon_Platoon'. From 'platoon_Platoon', the role 'platoon_Platoon4' has cardinality 0..*, and from 'platoon_Platoon', the role 'platoon_Platoon6' has cardinality 0..*.
+An association connects 'platoon_JoinPlatoonCoord' and 'platoon_Platoon'. From 'platoon_JoinPlatoonCoord', the role 'platoon_JoinPlatoonCoord' has cardinality 0..*, and from 'platoon_Platoon', the role 'platoon_Platoon8' has cardinality 0..*.
+An association connects 'platoon_Platoon' and 'platoon_PlatoonVehicle'. From 'platoon_Platoon', the role 'platoon' has cardinality 0..*, and from 'platoon_PlatoonVehicle', the role 'PlatoonVehicle' has cardinality 0..*.
+An association connects 'platoon_Vehicle' and 'platoon_Vehicle'. From 'platoon_Vehicle', the role 'platoon_Vehicle' has cardinality 0..*, and from 'platoon_Vehicle', the role 'platoon_Vehicle10' has cardinality 0..*.
+An association connects 'platoon_Vehicle' and 'platoon_Vehicle'. From 'platoon_Vehicle', the role 'platoon_Vehicle14' has cardinality 0..*, and from 'platoon_Vehicle', the role 'platoon_Vehicle12' has cardinality 0..*.
+An association connects 'platoon_Vehicle' and 'platoon_JoinPlatoonCoord'. From 'platoon_Vehicle', the role 'platoon_Vehicle16' has cardinality 0..*, and from 'platoon_JoinPlatoonCoord', the role 'platoon_JoinPlatoonCoord17' has cardinality 0..*.
+An association connects 'platoon_Vehicle' and 'platoon_JoinPlatoonCoord'. From 'platoon_Vehicle', the role 'platoon_Vehicle20' has cardinality 0..*, and from 'platoon_JoinPlatoonCoord', the role 'platoon_JoinPlatoonCoord19' has cardinality 0..*.
+An association connects 'platoon_JoinPlatoonCoord' and 'platoon_Vehicle'. From 'platoon_JoinPlatoonCoord', the role 'platoon_JoinPlatoonCoord22' has cardinality 0..*, and from 'platoon_Vehicle', the role 'platoon_Vehicle23' has cardinality 0..*.
+An association connects 'platoon_Vehicle' and 'platoon_JoinPlatoonCoord'. From 'platoon_Vehicle', the role 'platoon_Vehicle26' has cardinality 0..*, and from 'platoon_JoinPlatoonCoord', the role 'platoon_JoinPlatoonCoord25' has cardinality 0..*.
+An association connects 'platoon_FrontGap' and 'platoon_JoiningVehicle'. From 'platoon_FrontGap', the role 'platoon_FrontGap' has cardinality 0..*, and from 'platoon_JoiningVehicle', the role 'platoon_JoiningVehicle' has cardinality 0..*.
+An association connects 'platoon_JoiningVehicle' and 'platoon_PlatoonVehicle'. From 'platoon_JoiningVehicle', the role 'joiningRequest' has cardinality 0..*, and from 'platoon_PlatoonVehicle', the role 'PlatoonVehicle29' has cardinality 0..*.
+An association connects 'platoon_JoiningVehicle' and 'platoon_JoiningPosition'. From 'platoon_JoiningVehicle', the role 'platoon_JoiningVehicle31' has cardinality 0..*, and from 'platoon_JoiningPosition', the role 'platoon_JoiningPosition' has cardinality 0..*.
+An association connects 'platoon_FrontGap' and 'platoon_PlatoonVehicle'. From 'platoon_FrontGap', the role 'platoon_FrontGap34' has cardinality 0..*, and from 'platoon_PlatoonVehicle', the role 'platoon_PlatoonVehicle33' has cardinality 0..*.
+An association connects 'platoon_JoiningPosition' and 'platoon_PlatoonVehicle'. From 'platoon_JoiningPosition', the role 'platoon_JoiningPosition37' has cardinality 0..*, and from 'platoon_PlatoonVehicle', the role 'platoon_PlatoonVehicle36' has cardinality 0..*.
+An association connects 'platoon_JoiningVehicle' and 'platoon_PlatoonVehicle'. From 'platoon_JoiningVehicle', the role 'JoiningVehicle' has cardinality 0..*, and from 'platoon_PlatoonVehicle', the role 'wantsToJoin' has cardinality 0..*.
+An association connects 'platoon_Platoon' and 'platoon_PlatoonVehicle'. From 'platoon_Platoon', the role 'Platoon' has cardinality 0..*, and from 'platoon_PlatoonVehicle', the role 'members' has cardinality 0..*.
+An association connects 'platoon_PlatooningSystem' and 'platoon_Vehicle'. From 'platoon_PlatooningSystem', the role 'platoon_PlatooningSystem' has cardinality 0..*, and from 'platoon_Vehicle', the role 'platoon_Vehicle41' has cardinality 0..*.
+An association connects 'platoon_PlatooningSystem' and 'platoon_Platoon'. From 'platoon_PlatooningSystem', the role 'platoon_PlatooningSystem43' has cardinality 0..*, and from 'platoon_Platoon', the role 'platoon_Platoon44' has cardinality 0..*.

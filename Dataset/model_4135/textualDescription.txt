@@ -1,0 +1,64 @@
+The domain model 'asso' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'asso_VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'asso_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'asso_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'asso_NegFloatConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'asso_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'asso_EvalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'asso_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'asso_FloatConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'asso_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'asso_Mult' represents an important domain concept.
+It does not declare any attributes.
+
+'asso_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'asso_FloatConstant' is a specialization of 'Expression'.
+The class 'asso_NegFloatConstant' is a specialization of 'Expression'.
+The class 'asso_VariableRef' is a specialization of 'Expression'.
+The class 'asso_Plus' is a specialization of 'Expression'.
+The class 'asso_Minus' is a specialization of 'Expression'.
+The class 'asso_Mult' is a specialization of 'Expression'.
+The class 'asso_Div' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'asso_Model' and 'asso_Variable'. From 'asso_Model', the role 'asso_Model' has cardinality 0..*, and from 'asso_Variable', the role 'asso_Variable' has cardinality 0..*.
+An association connects 'asso_EvalExpression' and 'asso_Model'. From 'asso_EvalExpression', the role 'asso_EvalExpression' has cardinality 0..*, and from 'asso_Model', the role 'asso_Model2' has cardinality 0..*.
+An association connects 'asso_Variable' and 'asso_Variable'. From 'asso_Variable', the role 'asso_Variable3' has cardinality 0..*, and from 'asso_Variable', the role 'asso_Variable5' has cardinality 0..*.
+An association connects 'asso_Variable' and 'asso_Expression'. From 'asso_Variable', the role 'asso_Variable7' has cardinality 0..*, and from 'asso_Expression', the role 'asso_Expression' has cardinality 0..*.
+An association connects 'asso_EvalExpression' and 'asso_Expression'. From 'asso_EvalExpression', the role 'asso_EvalExpression9' has cardinality 0..*, and from 'asso_Expression', the role 'asso_Expression10' has cardinality 0..*.
+An association connects 'asso_VariableRef' and 'asso_Variable'. From 'asso_VariableRef', the role 'asso_VariableRef' has cardinality 0..*, and from 'asso_Variable', the role 'asso_Variable12' has cardinality 0..*.
+An association connects 'asso_Plus' and 'asso_Expression'. From 'asso_Plus', the role 'asso_Plus' has cardinality 0..*, and from 'asso_Expression', the role 'asso_Expression14' has cardinality 0..*.
+An association connects 'asso_Expression' and 'asso_Plus'. From 'asso_Expression', the role 'asso_Expression17' has cardinality 0..*, and from 'asso_Plus', the role 'asso_Plus16' has cardinality 0..*.
+An association connects 'asso_Expression' and 'asso_Minus'. From 'asso_Expression', the role 'asso_Expression19' has cardinality 0..*, and from 'asso_Minus', the role 'asso_Minus' has cardinality 0..*.
+An association connects 'asso_Minus' and 'asso_Expression'. From 'asso_Minus', the role 'asso_Minus21' has cardinality 0..*, and from 'asso_Expression', the role 'asso_Expression22' has cardinality 0..*.
+An association connects 'asso_Expression' and 'asso_Mult'. From 'asso_Expression', the role 'asso_Expression24' has cardinality 0..*, and from 'asso_Mult', the role 'asso_Mult' has cardinality 0..*.
+An association connects 'asso_Expression' and 'asso_Mult'. From 'asso_Expression', the role 'asso_Expression27' has cardinality 0..*, and from 'asso_Mult', the role 'asso_Mult26' has cardinality 0..*.
+An association connects 'asso_Div' and 'asso_Expression'. From 'asso_Div', the role 'asso_Div' has cardinality 0..*, and from 'asso_Expression', the role 'asso_Expression29' has cardinality 0..*.
+An association connects 'asso_Div' and 'asso_Expression'. From 'asso_Div', the role 'asso_Div31' has cardinality 0..*, and from 'asso_Expression', the role 'asso_Expression32' has cardinality 0..*.

@@ -1,0 +1,60 @@
+The domain model 'PrimitiveTypes' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'PathExp_State' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'Bool_attrElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PathExp' represents an important domain concept.
+It does not declare any attributes.
+
+'PathExp_Final' represents an important domain concept.
+It does not declare any attributes.
+
+'PathExp_PathExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'PathExp_Initial' represents an important domain concept.
+It does not declare any attributes.
+
+'PathExp_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'PathExp_Element' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PathExp_Bool_attrElement' represents an important domain concept.
+It has one attribute: 'bool_attr', which is of type bool.
+
+'PathExp_Internal' represents an important domain concept.
+It has one attribute: 'attr', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'PathExp_PathExp' is a specialization of 'Element'.
+The class 'PathExp_Transition' is a specialization of 'Element'.
+The class 'PathExp_Initial' is a specialization of 'State'.
+The class 'PathExp_Initial' is a specialization of 'Bool_attrElement'.
+The class 'PathExp_Final' is a specialization of 'State'.
+The class 'PathExp_Final' is a specialization of 'Bool_attrElement'.
+The class 'PathExp_Internal' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'State' and 'PathExp_PathExp'. From 'State', the role '#' has cardinality 0..*, and from 'PathExp_PathExp', the role '0' has cardinality 0..*.
+An association connects 'PathExp_PathExp' and 'Transition'. From 'PathExp_PathExp', the role 'PathExp_PathExp' has cardinality 0..*, and from 'Transition', the role 'Transition' has cardinality 0..*.
+An association connects 'PathExp_State' and 'Transition'. From 'PathExp_State', the role '03' has cardinality 0..*, and from 'Transition', the role '#4' has cardinality 0..*.
+An association connects 'PathExp_State' and 'Transition'. From 'PathExp_State', the role '06' has cardinality 0..*, and from 'Transition', the role '#7' has cardinality 0..*.
+An association connects 'PathExp' and 'PathExp_State'. From 'PathExp', the role '#10' has cardinality 0..*, and from 'PathExp_State', the role '09' has cardinality 0..*.
+An association connects 'State' and 'PathExp_Transition'. From 'State', the role '#13' has cardinality 0..*, and from 'PathExp_Transition', the role '012' has cardinality 0..*.
+An association connects 'State' and 'PathExp_Transition'. From 'State', the role '#16' has cardinality 0..*, and from 'PathExp_Transition', the role '015' has cardinality 0..*.

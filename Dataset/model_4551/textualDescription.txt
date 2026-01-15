@@ -1,0 +1,67 @@
+The domain model 'polybot' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'polybot_Point' represents an important domain concept.
+It has the following attributes: 'x', which is of type int; 'y', which is of type int.
+
+'polybot_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'polybot_Bot' represents an important domain concept.
+It does not declare any attributes.
+
+'polybot_IfObjectDetected' represents an important domain concept.
+It does not declare any attributes.
+
+'polybot_Right' represents an important domain concept.
+It does not declare any attributes.
+
+'polybot_Reverse' represents an important domain concept.
+It does not declare any attributes.
+
+'polybot_IfObstacleDetected' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'polybot_Left' represents an important domain concept.
+It does not declare any attributes.
+
+'Move' represents an important domain concept.
+It does not declare any attributes.
+
+'polybot_Move' represents an important domain concept.
+It has the following attributes: 'speed', which is of type int; 'duration', which is of type int.
+
+'polybot_While' represents an important domain concept.
+It has one attribute: 'nb', which is of type int.
+
+'polybot_Forward' represents an important domain concept.
+It does not declare any attributes.
+
+'polybot_TakeDropObject' represents an important domain concept.
+It does not declare any attributes.
+
+'polybot_GoTo' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'polybot_GoTo' is a specialization of 'Move'.
+The class 'polybot_Move' is a specialization of 'Instruction'.
+The class 'polybot_Right' is a specialization of 'Move'.
+The class 'polybot_Left' is a specialization of 'Move'.
+The class 'polybot_Reverse' is a specialization of 'Move'.
+The class 'polybot_Forward' is a specialization of 'Move'.
+The class 'polybot_IfObjectDetected' is a specialization of 'Instruction'.
+The class 'polybot_IfObstacleDetected' is a specialization of 'Instruction'.
+The class 'polybot_TakeDropObject' is a specialization of 'Instruction'.
+The class 'polybot_While' is a specialization of 'Instruction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'polybot_Point' and 'polybot_Bot'. From 'polybot_Point', the role 'polybot_Point' has cardinality 0..*, and from 'polybot_Bot', the role 'polybot_Bot' has cardinality 0..*.
+An association connects 'polybot_Instruction' and 'polybot_Bot'. From 'polybot_Instruction', the role 'polybot_Instruction' has cardinality 0..*, and from 'polybot_Bot', the role 'polybot_Bot2' has cardinality 0..*.
+An association connects 'polybot_Instruction' and 'polybot_IfObjectDetected'. From 'polybot_Instruction', the role 'polybot_Instruction4' has cardinality 0..*, and from 'polybot_IfObjectDetected', the role 'polybot_IfObjectDetected' has cardinality 0..*.
+An association connects 'polybot_Instruction' and 'polybot_IfObstacleDetected'. From 'polybot_Instruction', the role 'polybot_Instruction6' has cardinality 0..*, and from 'polybot_IfObstacleDetected', the role 'polybot_IfObstacleDetected' has cardinality 0..*.
+An association connects 'polybot_While' and 'polybot_Instruction'. From 'polybot_While', the role 'polybot_While' has cardinality 0..*, and from 'polybot_Instruction', the role 'polybot_Instruction8' has cardinality 0..*.

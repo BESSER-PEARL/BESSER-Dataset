@@ -1,0 +1,64 @@
+The domain model 'marsRover' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'marsRover_color_indication' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'color', which is of type str.
+
+'marsRover_indication' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'marsRover_avoid_obstacles' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'marsRover_ultra' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'distance', which is of type int.
+
+'marsRover_sound' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'frequency', which is of type int; 'duration', which is of type int.
+
+'marsRover_mission' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'marsRover_detect_rocks' represents an important domain concept.
+It has the following attributes: 'number_of_rocks', which is of type int; 'name', which is of type str.
+
+'marsRover_after_action' represents an important domain concept.
+It has one attribute: 'action', which is of type str.
+
+'marsRover_detect_lakes' represents an important domain concept.
+It has the following attributes: 'lakes_colors', which is of type str; 'number_of_lakes', which is of type int; 'name', which is of type str.
+
+'marsRover_avoid_lakes' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'marsRover_message' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'msg', which is of type str.
+
+'marsRover_push_obstacles' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'marsRover_Robot' represents an important domain concept.
+It has the following attributes: 'drive_speed', which is of type int; 'slave_address', which is of type str; 'name', which is of type str; 'special_speed', which is of type int.
+
+'marsRover_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'marsRover_park' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'marsRover_bumpers' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'LED_Color' defines the following possible values: 'LED_ORANGE', 'LED_OFF', 'LED_RED', 'LED_GREEN'.
+The enumeration 'Color' defines the following possible values: 'COLOR_RED', 'COLOR_BLUE', 'COLOR_GREEN', 'COLOR_ORANGE', 'COLOR_BLACK', 'COLOR_OFF', 'COLOR_WHITE'.
+
+Relationships between classes are modeled using associations.
+An association connects 'marsRover_Robot' and 'marsRover_mission'. From 'marsRover_Robot', the role 'marsRover_Robot' has cardinality 0..*, and from 'marsRover_mission', the role 'marsRover_mission' has cardinality 0..*.
+An association connects 'marsRover_mission' and 'marsRover_EObject'. From 'marsRover_mission', the role 'marsRover_mission2' has cardinality 0..*, and from 'marsRover_EObject', the role 'marsRover_EObject' has cardinality 0..*.
+An association connects 'marsRover_avoid_obstacles' and 'marsRover_EObject'. From 'marsRover_avoid_obstacles', the role 'marsRover_avoid_obstacles' has cardinality 0..*, and from 'marsRover_EObject', the role 'marsRover_EObject4' has cardinality 0..*.
+An association connects 'marsRover_detect_lakes' and 'marsRover_after_action'. From 'marsRover_detect_lakes', the role 'marsRover_detect_lakes' has cardinality 0..*, and from 'marsRover_after_action', the role 'marsRover_after_action' has cardinality 0..*.
+An association connects 'marsRover_detect_rocks' and 'marsRover_after_action'. From 'marsRover_detect_rocks', the role 'marsRover_detect_rocks' has cardinality 0..*, and from 'marsRover_after_action', the role 'marsRover_after_action7' has cardinality 0..*.
+An association connects 'marsRover_indication' and 'marsRover_after_action'. From 'marsRover_indication', the role 'marsRover_indication' has cardinality 0..*, and from 'marsRover_after_action', the role 'marsRover_after_action9' has cardinality 0..*.
+An association connects 'marsRover_EObject' and 'marsRover_indication'. From 'marsRover_EObject', the role 'marsRover_EObject12' has cardinality 0..*, and from 'marsRover_indication', the role 'marsRover_indication11' has cardinality 0..*.

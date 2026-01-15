@@ -1,0 +1,136 @@
+The domain model 'farmbot_modeling' describes the core structural elements and their relationships within the system.
+
+The model defines 33 main class(es).
+
+'farmbot_modeling_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'farmbot_modeling_TurnOnAnalog' represents an important domain concept.
+It has the following attributes: 'pin', which is of type int; 'value', which is of type int.
+
+'SequenceCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'farmbot_modeling_MoveRelative' represents an important domain concept.
+It does not declare any attributes.
+
+'farmbot_modeling_If' represents an important domain concept.
+It does not declare any attributes.
+
+'Move' represents an important domain concept.
+It does not declare any attributes.
+
+'farmbot_modeling_RunFarmware' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'farmbot_modeling_IsEqualTo' represents an important domain concept.
+It does not declare any attributes.
+
+'farmbot_modeling_SequenceCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'farmbot_modeling_Sequence' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'farmbot_modeling_BooleanExpression' represents an important domain concept.
+It has the following attributes: 'pinNumber', which is of type int; 'axe', which is of type str; 'value', which is of type int.
+
+'farmbot_modeling_TurnOnDigital' represents an important domain concept.
+It has one attribute: 'pin', which is of type int.
+
+'farmbot_modeling_SendMessage' represents an important domain concept.
+It has the following attributes: 'message', which is of type str; 'messageType', which is of type str.
+
+'SequenceInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'farmbot_modeling_TakePhoto' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'farmbot_modeling_SequenceInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'farmbot_modeling_ListSequences' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Command' represents an important domain concept.
+It does not declare any attributes.
+
+'farmbot_modeling_Schedule' represents an important domain concept.
+It has the following attributes: 'endDate', which is of type str; 'repeat', which is of type bool; 'repeatUnit', which is of type str; 'sequence', which is of type int; 'startTime', which is of type str; 'endTime', which is of type str; 'startDate', which is of type str.
+
+'farmbot_modeling_IsLowerThan' represents an important domain concept.
+It does not declare any attributes.
+
+'farmbot_modeling_Move' represents an important domain concept.
+It has the following attributes: 'x', which is of type int; 'speed', which is of type int; 'y', which is of type int; 'z', which is of type int.
+
+'farmbot_modeling_FindHome' represents an important domain concept.
+It has one attribute: 'axis', which is of type str.
+
+'farmbot_modeling_Farmbot' represents an important domain concept.
+It does not declare any attributes.
+
+'farmbot_modeling_MoveAbsolute' represents an important domain concept.
+It does not declare any attributes.
+
+'farmbot_modeling_Wait' represents an important domain concept.
+It has one attribute: 'duration', which is of type float.
+
+'farmbot_modeling_TurnOff' represents an important domain concept.
+It has one attribute: 'pin', which is of type int.
+
+'farmbot_modeling_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'farmbot_modeling_ListScheduledEvents' represents an important domain concept.
+It does not declare any attributes.
+
+'farmbot_modeling_ExecuteSequence' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'farmbot_modeling_IsNotEqualTo' represents an important domain concept.
+It does not declare any attributes.
+
+'farmbot_modeling_IsGreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'farmbot_modeling_SequenceCommand' is a specialization of 'Command'.
+The class 'farmbot_modeling_SequenceCommand' is a specialization of 'SequenceInstruction'.
+The class 'farmbot_modeling_Move' is a specialization of 'SequenceCommand'.
+The class 'farmbot_modeling_TurnOnDigital' is a specialization of 'SequenceCommand'.
+The class 'farmbot_modeling_TurnOff' is a specialization of 'SequenceCommand'.
+The class 'farmbot_modeling_MoveRelative' is a specialization of 'Move'.
+The class 'farmbot_modeling_FindHome' is a specialization of 'SequenceCommand'.
+The class 'farmbot_modeling_Sequence' is a specialization of 'Instruction'.
+The class 'farmbot_modeling_If' is a specialization of 'SequenceInstruction'.
+The class 'farmbot_modeling_MoveAbsolute' is a specialization of 'Move'.
+The class 'farmbot_modeling_ExecuteSequence' is a specialization of 'SequenceCommand'.
+The class 'farmbot_modeling_Wait' is a specialization of 'SequenceCommand'.
+The class 'farmbot_modeling_SendMessage' is a specialization of 'SequenceCommand'.
+The class 'farmbot_modeling_RunFarmware' is a specialization of 'SequenceCommand'.
+The class 'farmbot_modeling_TakePhoto' is a specialization of 'SequenceCommand'.
+The class 'farmbot_modeling_SequenceInstruction' is a specialization of 'Instruction'.
+The class 'farmbot_modeling_IsEqualTo' is a specialization of 'BooleanExpression'.
+The class 'farmbot_modeling_IsNotEqualTo' is a specialization of 'BooleanExpression'.
+The class 'farmbot_modeling_IsGreaterThan' is a specialization of 'BooleanExpression'.
+The class 'farmbot_modeling_IsLowerThan' is a specialization of 'BooleanExpression'.
+The class 'farmbot_modeling_Schedule' is a specialization of 'Command'.
+The class 'farmbot_modeling_Command' is a specialization of 'Instruction'.
+The class 'farmbot_modeling_ListSequences' is a specialization of 'Command'.
+The class 'farmbot_modeling_ListScheduledEvents' is a specialization of 'Command'.
+The class 'farmbot_modeling_TurnOnAnalog' is a specialization of 'SequenceCommand'.
+
+Relationships between classes are modeled using associations.
+An association connects 'farmbot_modeling_Instruction' and 'farmbot_modeling_Farmbot'. From 'farmbot_modeling_Instruction', the role 'farmbot_modeling_Instruction' has cardinality 0..*, and from 'farmbot_modeling_Farmbot', the role 'farmbot_modeling_Farmbot' has cardinality 0..*.
+An association connects 'farmbot_modeling_SequenceInstruction' and 'farmbot_modeling_Sequence'. From 'farmbot_modeling_SequenceInstruction', the role 'farmbot_modeling_SequenceInstruction' has cardinality 0..*, and from 'farmbot_modeling_Sequence', the role 'farmbot_modeling_Sequence' has cardinality 0..*.
+An association connects 'farmbot_modeling_If' and 'farmbot_modeling_BooleanExpression'. From 'farmbot_modeling_If', the role 'farmbot_modeling_If' has cardinality 0..*, and from 'farmbot_modeling_BooleanExpression', the role 'farmbot_modeling_BooleanExpression' has cardinality 0..*.
+An association connects 'farmbot_modeling_ExecuteSequence' and 'farmbot_modeling_If'. From 'farmbot_modeling_ExecuteSequence', the role 'farmbot_modeling_ExecuteSequence' has cardinality 0..*, and from 'farmbot_modeling_If', the role 'farmbot_modeling_If4' has cardinality 0..*.
+An association connects 'farmbot_modeling_If' and 'farmbot_modeling_ExecuteSequence'. From 'farmbot_modeling_If', the role 'farmbot_modeling_If6' has cardinality 0..*, and from 'farmbot_modeling_ExecuteSequence', the role 'farmbot_modeling_ExecuteSequence7' has cardinality 0..*.

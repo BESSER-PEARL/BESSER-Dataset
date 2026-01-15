@@ -1,0 +1,91 @@
+The domain model 'company104' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'company104_Goal' represents an important domain concept.
+It has one attribute: 'statement', which is of type str.
+
+'Function' represents an important domain concept.
+It does not declare any attributes.
+
+'company104_Department' represents an important domain concept.
+It does not declare any attributes.
+
+'company104_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'company104_Agency' represents an important domain concept.
+It has the following attributes: 'Status', which is of type str; 'Accronym', which is of type str.
+
+'company104_ObjectiveReach' represents an important domain concept.
+It has the following attributes: 'value', which is of type float; 'statement', which is of type str.
+
+'company104_HierarchyLink' represents an important domain concept.
+It has one attribute: 'hierarchy', which is of type str.
+
+'company104_Employee' represents an important domain concept.
+It has the following attributes: 'address', which is of type int; 'fullName', which is of type str; 'socialSecurityNumber', which is of type str.
+
+'company104_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'company104_Room' represents an important domain concept.
+It does not declare any attributes.
+
+'company104_Interval' represents an important domain concept.
+It has the following attributes: 'dateTo', which is of type str; 'dateFrom', which is of type str.
+
+'company104_Workstation' represents an important domain concept.
+It has one attribute: 'ProfileDescription', which is of type str.
+
+'company104_Company' represents an important domain concept.
+It does not declare any attributes.
+
+'Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'company104_Objective' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'nature', which is of type str; 'value', which is of type float.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'company104_Flow' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RoleType' defines the following possible values: 'Composite', 'Transformation', 'Decision', 'Control'.
+The enumeration 'ObjectiveNature' defines the following possible values: 'Environmental', 'Quality', 'Economical', 'Other', 'None', 'Cost', 'Delay', 'Legal', 'Human', 'Performance'.
+The enumeration 'ObjectiveType' defines the following possible values: 'Tactic', 'Strategic', 'None', 'Operational'.
+The enumeration 'Hierarchy' defines the following possible values: 'Supervisor', 'Subordinate'.
+
+The model also captures inheritance relationships between classes.
+The class 'company104_Department' is a specialization of 'Function'.
+The class 'company104_Flow' is a specialization of 'NamedElement'.
+The class 'company104_Room' is a specialization of 'Function'.
+The class 'company104_Workstation' is a specialization of 'NamedElement'.
+The class 'company104_Goal' is a specialization of 'Interval'.
+The class 'company104_Agency' is a specialization of 'Function'.
+The class 'company104_Function' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'company104_Agency' and 'company104_Company'. From 'company104_Agency', the role 'company104_Agency' has cardinality 0..*, and from 'company104_Company', the role 'company104_Company' has cardinality 0..*.
+An association connects 'company104_Goal' and 'company104_Company'. From 'company104_Goal', the role 'company104_Goal' has cardinality 0..*, and from 'company104_Company', the role 'company104_Company2' has cardinality 0..*.
+An association connects 'company104_Department' and 'company104_Room'. From 'company104_Department', the role 'company104_Department' has cardinality 0..*, and from 'company104_Room', the role 'company104_Room' has cardinality 0..*.
+An association connects 'company104_Function' and 'company104_Flow'. From 'company104_Function', the role 'company104_Function' has cardinality 0..*, and from 'company104_Flow', the role 'company104_Flow' has cardinality 0..*.
+An association connects 'company104_Function' and 'company104_Flow'. From 'company104_Function', the role 'company104_Function7' has cardinality 0..*, and from 'company104_Flow', the role 'company104_Flow6' has cardinality 0..*.
+An association connects 'company104_HierarchyLink' and 'company104_Employee'. From 'company104_HierarchyLink', the role 'company104_HierarchyLink' has cardinality 0..*, and from 'company104_Employee', the role 'company104_Employee' has cardinality 0..*.
+An association connects 'company104_Room' and 'company104_Employee'. From 'company104_Room', the role 'company104_Room11' has cardinality 0..*, and from 'company104_Employee', the role 'company104_Employee10' has cardinality 0..*.
+An association connects 'company104_Employee' and 'company104_Workstation'. From 'company104_Employee', the role 'owners' has cardinality 0..*, and from 'company104_Workstation', the role 'Workstation' has cardinality 0..*.
+An association connects 'company104_Employee' and 'company104_HierarchyLink'. From 'company104_Employee', the role 'company104_Employee15' has cardinality 0..*, and from 'company104_HierarchyLink', the role 'company104_HierarchyLink14' has cardinality 0..*.
+An association connects 'company104_HierarchyLink' and 'company104_Employee'. From 'company104_HierarchyLink', the role 'company104_HierarchyLink17' has cardinality 0..*, and from 'company104_Employee', the role 'company104_Employee18' has cardinality 0..*.
+An association connects 'company104_Room' and 'company104_Room'. From 'company104_Room', the role 'company104_Room21' has cardinality 0..*, and from 'company104_Room', the role 'company104_Room19' has cardinality 0..*.
+An association connects 'company104_Room' and 'company104_Workstation'. From 'company104_Room', the role 'company104_Room23' has cardinality 0..*, and from 'company104_Workstation', the role 'company104_Workstation' has cardinality 0..*.
+An association connects 'company104_Workstation' and 'company104_Employee'. From 'company104_Workstation', the role 'inChargeOf' has cardinality 0..*, and from 'company104_Employee', the role 'Employee' has cardinality 0..*.
+An association connects 'company104_Objective' and 'company104_Goal'. From 'company104_Objective', the role 'company104_Objective' has cardinality 0..*, and from 'company104_Goal', the role 'company104_Goal26' has cardinality 0..*.
+An association connects 'company104_Agency' and 'company104_Department'. From 'company104_Agency', the role 'company104_Agency28' has cardinality 0..*, and from 'company104_Department', the role 'company104_Department29' has cardinality 0..*.
+An association connects 'company104_Employee' and 'company104_Agency'. From 'company104_Employee', the role 'company104_Employee32' has cardinality 0..*, and from 'company104_Agency', the role 'company104_Agency31' has cardinality 0..*.
+An association connects 'company104_Agency' and 'company104_ObjectiveReach'. From 'company104_Agency', the role 'company104_Agency34' has cardinality 0..*, and from 'company104_ObjectiveReach', the role 'company104_ObjectiveReach' has cardinality 0..*.
+An association connects 'company104_ObjectiveReach' and 'company104_Objective'. From 'company104_ObjectiveReach', the role 'company104_ObjectiveReach36' has cardinality 0..*, and from 'company104_Objective', the role 'company104_Objective37' has cardinality 0..*.
+An association connects 'company104_ObjectiveReach' and 'company104_Agency'. From 'company104_ObjectiveReach', the role 'company104_ObjectiveReach39' has cardinality 0..*, and from 'company104_Agency', the role 'company104_Agency40' has cardinality 0..*.
+An association connects 'company104_Function' and 'company104_Flow'. From 'company104_Function', the role 'company104_Function42' has cardinality 0..*, and from 'company104_Flow', the role 'company104_Flow43' has cardinality 0..*.

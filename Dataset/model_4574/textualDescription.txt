@@ -1,0 +1,165 @@
+The domain model 'dsl' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'dsl_PlusElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_MinusElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ModuloElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_DiffElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_IfDoSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Number_Object' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'dsl_MultiplicationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ElseIfDoSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_EqualElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_LargerElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Boolean_Object' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'dsl_SmallerEqualElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_State_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_NegateElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_LargerEqualElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_State' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_RunTimeModel' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Resource_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_AppMetaData' represents an important domain concept.
+It has one attribute: 'appID', which is of type str.
+
+'dsl_DivisionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_AndElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_EnvironmentMetaData' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_OrElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_SmallerElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Specification' represents an important domain concept.
+It has the following attributes: 'specID', which is of type str; 'priority', which is of type int.
+
+'dsl_Resource' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_ElseDoSpec' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'dsl_OrElement' is a specialization of 'Element'.
+The class 'dsl_AndElement' is a specialization of 'Element'.
+The class 'dsl_DiffElement' is a specialization of 'Element'.
+The class 'dsl_EqualElement' is a specialization of 'Element'.
+The class 'dsl_LargerElement' is a specialization of 'Element'.
+The class 'dsl_LargerEqualElement' is a specialization of 'Element'.
+The class 'dsl_SmallerElement' is a specialization of 'Element'.
+The class 'dsl_SmallerEqualElement' is a specialization of 'Element'.
+The class 'dsl_PlusElement' is a specialization of 'Element'.
+The class 'dsl_MinusElement' is a specialization of 'Element'.
+The class 'dsl_MultiplicationElement' is a specialization of 'Element'.
+The class 'dsl_DivisionElement' is a specialization of 'Element'.
+The class 'dsl_ModuloElement' is a specialization of 'Element'.
+The class 'dsl_Number_Object' is a specialization of 'Element'.
+The class 'dsl_Boolean_Object' is a specialization of 'Element'.
+The class 'dsl_Resource_Object' is a specialization of 'Element'.
+The class 'dsl_State_Object' is a specialization of 'Element'.
+The class 'dsl_NegateElement' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dsl_RunTimeModel' and 'dsl_EnvironmentMetaData'. From 'dsl_RunTimeModel', the role 'dsl_RunTimeModel' has cardinality 0..*, and from 'dsl_EnvironmentMetaData', the role 'dsl_EnvironmentMetaData' has cardinality 0..*.
+An association connects 'dsl_RunTimeModel' and 'dsl_AppMetaData'. From 'dsl_RunTimeModel', the role 'dsl_RunTimeModel2' has cardinality 0..*, and from 'dsl_AppMetaData', the role 'dsl_AppMetaData' has cardinality 0..*.
+An association connects 'dsl_State' and 'dsl_Resource'. From 'dsl_State', the role 'dsl_State' has cardinality 0..*, and from 'dsl_Resource', the role 'dsl_Resource' has cardinality 0..*.
+An association connects 'dsl_AppMetaData' and 'dsl_Specification'. From 'dsl_AppMetaData', the role 'dsl_AppMetaData5' has cardinality 0..*, and from 'dsl_Specification', the role 'dsl_Specification' has cardinality 0..*.
+An association connects 'dsl_Specification' and 'dsl_Trigger'. From 'dsl_Specification', the role 'dsl_Specification7' has cardinality 0..*, and from 'dsl_Trigger', the role 'dsl_Trigger' has cardinality 0..*.
+An association connects 'dsl_IfDoSpec' and 'dsl_Specification'. From 'dsl_IfDoSpec', the role 'dsl_IfDoSpec' has cardinality 0..*, and from 'dsl_Specification', the role 'dsl_Specification9' has cardinality 0..*.
+An association connects 'dsl_Specification' and 'dsl_ElseIfDoSpec'. From 'dsl_Specification', the role 'dsl_Specification11' has cardinality 0..*, and from 'dsl_ElseIfDoSpec', the role 'dsl_ElseIfDoSpec' has cardinality 0..*.
+An association connects 'dsl_ElseDoSpec' and 'dsl_Specification'. From 'dsl_ElseDoSpec', the role 'dsl_ElseDoSpec' has cardinality 0..*, and from 'dsl_Specification', the role 'dsl_Specification13' has cardinality 0..*.
+An association connects 'dsl_Resource' and 'dsl_Trigger'. From 'dsl_Resource', the role 'dsl_Resource16' has cardinality 0..*, and from 'dsl_Trigger', the role 'dsl_Trigger15' has cardinality 0..*.
+An association connects 'dsl_Trigger' and 'dsl_State'. From 'dsl_Trigger', the role 'dsl_Trigger18' has cardinality 0..*, and from 'dsl_State', the role 'dsl_State19' has cardinality 0..*.
+An association connects 'dsl_IfDoSpec' and 'dsl_Element'. From 'dsl_IfDoSpec', the role 'dsl_IfDoSpec21' has cardinality 0..*, and from 'dsl_Element', the role 'dsl_Element' has cardinality 0..*.
+An association connects 'dsl_Action' and 'dsl_IfDoSpec'. From 'dsl_Action', the role 'dsl_Action' has cardinality 0..*, and from 'dsl_IfDoSpec', the role 'dsl_IfDoSpec23' has cardinality 0..*.
+An association connects 'dsl_Element' and 'dsl_ElseIfDoSpec'. From 'dsl_Element', the role 'dsl_Element26' has cardinality 0..*, and from 'dsl_ElseIfDoSpec', the role 'dsl_ElseIfDoSpec25' has cardinality 0..*.
+An association connects 'dsl_ElseIfDoSpec' and 'dsl_Action'. From 'dsl_ElseIfDoSpec', the role 'dsl_ElseIfDoSpec28' has cardinality 0..*, and from 'dsl_Action', the role 'dsl_Action29' has cardinality 0..*.
+An association connects 'dsl_ElseDoSpec' and 'dsl_Action'. From 'dsl_ElseDoSpec', the role 'dsl_ElseDoSpec31' has cardinality 0..*, and from 'dsl_Action', the role 'dsl_Action32' has cardinality 0..*.
+An association connects 'dsl_Resource' and 'dsl_EnvironmentMetaData'. From 'dsl_Resource', the role 'dsl_Resource35' has cardinality 0..*, and from 'dsl_EnvironmentMetaData', the role 'dsl_EnvironmentMetaData34' has cardinality 0..*.
+An association connects 'dsl_Action' and 'dsl_Resource'. From 'dsl_Action', the role 'dsl_Action37' has cardinality 0..*, and from 'dsl_Resource', the role 'dsl_Resource38' has cardinality 0..*.
+An association connects 'dsl_Action' and 'dsl_State'. From 'dsl_Action', the role 'dsl_Action40' has cardinality 0..*, and from 'dsl_State', the role 'dsl_State41' has cardinality 0..*.
+An association connects 'dsl_Element' and 'dsl_OrElement'. From 'dsl_Element', the role 'dsl_Element43' has cardinality 0..*, and from 'dsl_OrElement', the role 'dsl_OrElement' has cardinality 0..*.
+An association connects 'dsl_Element' and 'dsl_OrElement'. From 'dsl_Element', the role 'dsl_Element46' has cardinality 0..*, and from 'dsl_OrElement', the role 'dsl_OrElement45' has cardinality 0..*.
+An association connects 'dsl_Element' and 'dsl_AndElement'. From 'dsl_Element', the role 'dsl_Element48' has cardinality 0..*, and from 'dsl_AndElement', the role 'dsl_AndElement' has cardinality 0..*.
+An association connects 'dsl_AndElement' and 'dsl_Element'. From 'dsl_AndElement', the role 'dsl_AndElement50' has cardinality 0..*, and from 'dsl_Element', the role 'dsl_Element51' has cardinality 0..*.
+An association connects 'dsl_Element' and 'dsl_DiffElement'. From 'dsl_Element', the role 'dsl_Element53' has cardinality 0..*, and from 'dsl_DiffElement', the role 'dsl_DiffElement' has cardinality 0..*.
+An association connects 'dsl_DiffElement' and 'dsl_Element'. From 'dsl_DiffElement', the role 'dsl_DiffElement55' has cardinality 0..*, and from 'dsl_Element', the role 'dsl_Element56' has cardinality 0..*.
+An association connects 'dsl_EqualElement' and 'dsl_Element'. From 'dsl_EqualElement', the role 'dsl_EqualElement' has cardinality 0..*, and from 'dsl_Element', the role 'dsl_Element58' has cardinality 0..*.
+An association connects 'dsl_EqualElement' and 'dsl_Element'. From 'dsl_EqualElement', the role 'dsl_EqualElement60' has cardinality 0..*, and from 'dsl_Element', the role 'dsl_Element61' has cardinality 0..*.
+An association connects 'dsl_Element' and 'dsl_LargerElement'. From 'dsl_Element', the role 'dsl_Element63' has cardinality 0..*, and from 'dsl_LargerElement', the role 'dsl_LargerElement' has cardinality 0..*.
+An association connects 'dsl_Element' and 'dsl_LargerElement'. From 'dsl_Element', the role 'dsl_Element66' has cardinality 0..*, and from 'dsl_LargerElement', the role 'dsl_LargerElement65' has cardinality 0..*.
+An association connects 'dsl_LargerEqualElement' and 'dsl_Element'. From 'dsl_LargerEqualElement', the role 'dsl_LargerEqualElement' has cardinality 0..*, and from 'dsl_Element', the role 'dsl_Element68' has cardinality 0..*.
+An association connects 'dsl_LargerEqualElement' and 'dsl_Element'. From 'dsl_LargerEqualElement', the role 'dsl_LargerEqualElement70' has cardinality 0..*, and from 'dsl_Element', the role 'dsl_Element71' has cardinality 0..*.
+An association connects 'dsl_SmallerElement' and 'dsl_Element'. From 'dsl_SmallerElement', the role 'dsl_SmallerElement' has cardinality 0..*, and from 'dsl_Element', the role 'dsl_Element73' has cardinality 0..*.
+An association connects 'dsl_Element' and 'dsl_SmallerElement'. From 'dsl_Element', the role 'dsl_Element76' has cardinality 0..*, and from 'dsl_SmallerElement', the role 'dsl_SmallerElement75' has cardinality 0..*.
+An association connects 'dsl_SmallerEqualElement' and 'dsl_Element'. From 'dsl_SmallerEqualElement', the role 'dsl_SmallerEqualElement' has cardinality 0..*, and from 'dsl_Element', the role 'dsl_Element78' has cardinality 0..*.
+An association connects 'dsl_SmallerEqualElement' and 'dsl_Element'. From 'dsl_SmallerEqualElement', the role 'dsl_SmallerEqualElement80' has cardinality 0..*, and from 'dsl_Element', the role 'dsl_Element81' has cardinality 0..*.
+An association connects 'dsl_PlusElement' and 'dsl_Element'. From 'dsl_PlusElement', the role 'dsl_PlusElement' has cardinality 0..*, and from 'dsl_Element', the role 'dsl_Element83' has cardinality 0..*.
+An association connects 'dsl_Element' and 'dsl_PlusElement'. From 'dsl_Element', the role 'dsl_Element86' has cardinality 0..*, and from 'dsl_PlusElement', the role 'dsl_PlusElement85' has cardinality 0..*.
+An association connects 'dsl_Element' and 'dsl_MinusElement'. From 'dsl_Element', the role 'dsl_Element88' has cardinality 0..*, and from 'dsl_MinusElement', the role 'dsl_MinusElement' has cardinality 0..*.
+An association connects 'dsl_Element' and 'dsl_MinusElement'. From 'dsl_Element', the role 'dsl_Element91' has cardinality 0..*, and from 'dsl_MinusElement', the role 'dsl_MinusElement90' has cardinality 0..*.
+An association connects 'dsl_Element' and 'dsl_MultiplicationElement'. From 'dsl_Element', the role 'dsl_Element93' has cardinality 0..*, and from 'dsl_MultiplicationElement', the role 'dsl_MultiplicationElement' has cardinality 0..*.
+An association connects 'dsl_Element' and 'dsl_MultiplicationElement'. From 'dsl_Element', the role 'dsl_Element96' has cardinality 0..*, and from 'dsl_MultiplicationElement', the role 'dsl_MultiplicationElement95' has cardinality 0..*.
+An association connects 'dsl_DivisionElement' and 'dsl_Element'. From 'dsl_DivisionElement', the role 'dsl_DivisionElement' has cardinality 0..*, and from 'dsl_Element', the role 'dsl_Element98' has cardinality 0..*.
+An association connects 'dsl_Element' and 'dsl_DivisionElement'. From 'dsl_Element', the role 'dsl_Element101' has cardinality 0..*, and from 'dsl_DivisionElement', the role 'dsl_DivisionElement100' has cardinality 0..*.
+An association connects 'dsl_Element' and 'dsl_ModuloElement'. From 'dsl_Element', the role 'dsl_Element103' has cardinality 0..*, and from 'dsl_ModuloElement', the role 'dsl_ModuloElement' has cardinality 0..*.
+An association connects 'dsl_ModuloElement' and 'dsl_Element'. From 'dsl_ModuloElement', the role 'dsl_ModuloElement105' has cardinality 0..*, and from 'dsl_Element', the role 'dsl_Element106' has cardinality 0..*.
+An association connects 'dsl_Resource_Object' and 'dsl_Resource'. From 'dsl_Resource_Object', the role 'dsl_Resource_Object' has cardinality 0..*, and from 'dsl_Resource', the role 'dsl_Resource108' has cardinality 0..*.
+An association connects 'dsl_State_Object' and 'dsl_State'. From 'dsl_State_Object', the role 'dsl_State_Object' has cardinality 0..*, and from 'dsl_State', the role 'dsl_State110' has cardinality 0..*.
+An association connects 'dsl_NegateElement' and 'dsl_Element'. From 'dsl_NegateElement', the role 'dsl_NegateElement' has cardinality 0..*, and from 'dsl_Element', the role 'dsl_Element112' has cardinality 0..*.

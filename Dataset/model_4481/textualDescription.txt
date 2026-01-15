@@ -1,0 +1,150 @@
+The domain model 'Logo' describes the core structural elements and their relationships within the system.
+
+The model defines 32 main class(es).
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Left' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Forward' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Back' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Boolean' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'Logo_Void' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_While' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Integer' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'Logo_Procedure' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Logo_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_ProcedureCall' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_BooleanExpr' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Logo_String' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Logo_VarDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Logo_If' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Assignation' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Right' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_LogoProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_ArithmeticExpr' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Logo_VarReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_Double' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_BinaryExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'Logo_ControlStructure' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BooleanOperator' defines the following possible values: 'equal', 'greaterThan', 'lowerThan', 'diff'.
+The enumeration 'ArithmeticOperator' defines the following possible values: 'minus', 'mult', 'plus', 'div'.
+
+The model also captures inheritance relationships between classes.
+The class 'Logo_Primitive' is a specialization of 'Instruction'.
+The class 'Logo_Forward' is a specialization of 'Primitive'.
+The class 'Logo_Back' is a specialization of 'Primitive'.
+The class 'Logo_Left' is a specialization of 'Primitive'.
+The class 'Logo_Right' is a specialization of 'Primitive'.
+The class 'Logo_Expression' is a specialization of 'Instruction'.
+The class 'Logo_Literal' is a specialization of 'Expression'.
+The class 'Logo_Integer' is a specialization of 'Literal'.
+The class 'Logo_Void' is a specialization of 'Literal'.
+The class 'Logo_Double' is a specialization of 'Literal'.
+The class 'Logo_String' is a specialization of 'Literal'.
+The class 'Logo_Boolean' is a specialization of 'Literal'.
+The class 'Logo_VarDecl' is a specialization of 'Instruction'.
+The class 'Logo_VarReference' is a specialization of 'Expression'.
+The class 'Logo_ControlStructure' is a specialization of 'Instruction'.
+The class 'Logo_If' is a specialization of 'ControlStructure'.
+The class 'Logo_Block' is a specialization of 'ControlStructure'.
+The class 'Logo_While' is a specialization of 'ControlStructure'.
+The class 'Logo_BinaryExpr' is a specialization of 'Expression'.
+The class 'Logo_ArithmeticExpr' is a specialization of 'BinaryExpr'.
+The class 'Logo_BooleanExpr' is a specialization of 'BinaryExpr'.
+The class 'Logo_Procedure' is a specialization of 'Instruction'.
+The class 'Logo_ProcedureCall' is a specialization of 'Expression'.
+The class 'Logo_Assignation' is a specialization of 'Instruction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Logo_LogoProgram' and 'Logo_Instruction'. From 'Logo_LogoProgram', the role 'Logo_LogoProgram' has cardinality 0..*, and from 'Logo_Instruction', the role 'Logo_Instruction' has cardinality 0..*.
+An association connects 'Logo_Expression' and 'Logo_Forward'. From 'Logo_Expression', the role 'Logo_Expression' has cardinality 0..*, and from 'Logo_Forward', the role 'Logo_Forward' has cardinality 0..*.
+An association connects 'Logo_Back' and 'Logo_Expression'. From 'Logo_Back', the role 'Logo_Back' has cardinality 0..*, and from 'Logo_Expression', the role 'Logo_Expression3' has cardinality 0..*.
+An association connects 'Logo_Left' and 'Logo_Expression'. From 'Logo_Left', the role 'Logo_Left' has cardinality 0..*, and from 'Logo_Expression', the role 'Logo_Expression5' has cardinality 0..*.
+An association connects 'Logo_Right' and 'Logo_Expression'. From 'Logo_Right', the role 'Logo_Right' has cardinality 0..*, and from 'Logo_Expression', the role 'Logo_Expression7' has cardinality 0..*.
+An association connects 'Logo_VarDecl' and 'Logo_Expression'. From 'Logo_VarDecl', the role 'Logo_VarDecl' has cardinality 0..*, and from 'Logo_Expression', the role 'Logo_Expression9' has cardinality 0..*.
+An association connects 'Logo_VarReference' and 'Logo_VarDecl'. From 'Logo_VarReference', the role 'Logo_VarReference' has cardinality 0..*, and from 'Logo_VarDecl', the role 'Logo_VarDecl11' has cardinality 0..*.
+An association connects 'Logo_If' and 'Logo_Block'. From 'Logo_If', the role 'Logo_If' has cardinality 0..*, and from 'Logo_Block', the role 'Logo_Block' has cardinality 0..*.
+An association connects 'Logo_If' and 'Logo_Expression'. From 'Logo_If', the role 'Logo_If14' has cardinality 0..*, and from 'Logo_Expression', the role 'Logo_Expression15' has cardinality 0..*.
+An association connects 'Logo_Block' and 'Logo_Instruction'. From 'Logo_Block', the role 'Logo_Block17' has cardinality 0..*, and from 'Logo_Instruction', the role 'Logo_Instruction18' has cardinality 0..*.
+An association connects 'Logo_Block' and 'Logo_While'. From 'Logo_Block', the role 'Logo_Block20' has cardinality 0..*, and from 'Logo_While', the role 'Logo_While' has cardinality 0..*.
+An association connects 'Logo_While' and 'Logo_Expression'. From 'Logo_While', the role 'Logo_While22' has cardinality 0..*, and from 'Logo_Expression', the role 'Logo_Expression23' has cardinality 0..*.
+An association connects 'Logo_Expression' and 'Logo_BinaryExpr'. From 'Logo_Expression', the role 'Logo_Expression25' has cardinality 0..*, and from 'Logo_BinaryExpr', the role 'Logo_BinaryExpr' has cardinality 0..*.
+An association connects 'Logo_Expression' and 'Logo_BinaryExpr'. From 'Logo_Expression', the role 'Logo_Expression28' has cardinality 0..*, and from 'Logo_BinaryExpr', the role 'Logo_BinaryExpr27' has cardinality 0..*.
+An association connects 'Logo_Procedure' and 'Logo_Block'. From 'Logo_Procedure', the role 'Logo_Procedure' has cardinality 0..*, and from 'Logo_Block', the role 'Logo_Block30' has cardinality 0..*.
+An association connects 'Logo_Procedure' and 'Logo_Literal'. From 'Logo_Procedure', the role 'Logo_Procedure32' has cardinality 0..*, and from 'Logo_Literal', the role 'Logo_Literal' has cardinality 0..*.
+An association connects 'Logo_ProcedureCall' and 'Logo_Procedure'. From 'Logo_ProcedureCall', the role 'Logo_ProcedureCall' has cardinality 0..*, and from 'Logo_Procedure', the role 'Logo_Procedure34' has cardinality 0..*.
+An association connects 'Logo_Assignation' and 'Logo_VarDecl'. From 'Logo_Assignation', the role 'Logo_Assignation' has cardinality 0..*, and from 'Logo_VarDecl', the role 'Logo_VarDecl36' has cardinality 0..*.
+An association connects 'Logo_Assignation' and 'Logo_Expression'. From 'Logo_Assignation', the role 'Logo_Assignation38' has cardinality 0..*, and from 'Logo_Expression', the role 'Logo_Expression39' has cardinality 0..*.

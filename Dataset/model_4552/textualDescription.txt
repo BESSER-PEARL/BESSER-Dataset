@@ -1,0 +1,30 @@
+The domain model 'logo' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'Command' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Move' represents an important domain concept.
+It has one attribute: 'distance', which is of type float.
+
+'logo_WhileNoObstacle' represents an important domain concept.
+It has one attribute: 'distance', which is of type float.
+
+'logo_ProgramUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Turn' represents an important domain concept.
+It has one attribute: 'angle', which is of type float.
+
+The model also captures inheritance relationships between classes.
+The class 'logo_Move' is a specialization of 'Command'.
+The class 'logo_Turn' is a specialization of 'Command'.
+The class 'logo_WhileNoObstacle' is a specialization of 'Command'.
+
+Relationships between classes are modeled using associations.
+An association connects 'logo_Command' and 'logo_ProgramUnit'. From 'logo_Command', the role 'logo_Command' has cardinality 0..*, and from 'logo_ProgramUnit', the role 'logo_ProgramUnit' has cardinality 0..*.
+An association connects 'logo_WhileNoObstacle' and 'logo_Command'. From 'logo_WhileNoObstacle', the role 'logo_WhileNoObstacle' has cardinality 0..*, and from 'logo_Command', the role 'logo_Command2' has cardinality 0..*.

@@ -1,0 +1,35 @@
+The domain model 'gametournament' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'gametournament_Gamer' represents an important domain concept.
+It has the following attributes: 'firstName', which is of type str; 'pseudo', which is of type str; 'matches', which is of type int; 'lastName', which is of type str; 'victories', which is of type int.
+
+'gametournament_QualificationPhase' represents an important domain concept.
+It does not declare any attributes.
+
+'gametournament_Pool' represents an important domain concept.
+It does not declare any attributes.
+
+'gametournament_Game' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'gametournament_FinalPhase' represents an important domain concept.
+It does not declare any attributes.
+
+'gametournament_Tournament' represents an important domain concept.
+It has the following attributes: 'endDate', which is of type date; 'prize', which is of type int; 'location', which is of type str; 'startDate', which is of type date; 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'GameType' defines the following possible values: 'RPG', 'STRATEGIC', 'ACTION', 'COMBAT', 'FPS'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gametournament_Game' and 'gametournament_Tournament'. From 'gametournament_Game', the role 'gametournament_Game' has cardinality 0..*, and from 'gametournament_Tournament', the role 'gametournament_Tournament' has cardinality 0..*.
+An association connects 'gametournament_Gamer' and 'gametournament_Tournament'. From 'gametournament_Gamer', the role 'gametournament_Gamer' has cardinality 0..*, and from 'gametournament_Tournament', the role 'gametournament_Tournament2' has cardinality 0..*.
+An association connects 'gametournament_FinalPhase' and 'gametournament_Tournament'. From 'gametournament_FinalPhase', the role 'gametournament_FinalPhase' has cardinality 0..*, and from 'gametournament_Tournament', the role 'gametournament_Tournament4' has cardinality 0..*.
+An association connects 'gametournament_Tournament' and 'gametournament_QualificationPhase'. From 'gametournament_Tournament', the role 'gametournament_Tournament6' has cardinality 0..*, and from 'gametournament_QualificationPhase', the role 'gametournament_QualificationPhase' has cardinality 0..*.
+An association connects 'gametournament_Pool' and 'gametournament_QualificationPhase'. From 'gametournament_Pool', the role 'gametournament_Pool' has cardinality 0..*, and from 'gametournament_QualificationPhase', the role 'gametournament_QualificationPhase8' has cardinality 0..*.
+An association connects 'gametournament_Gamer' and 'gametournament_FinalPhase'. From 'gametournament_Gamer', the role 'gametournament_Gamer11' has cardinality 0..*, and from 'gametournament_FinalPhase', the role 'gametournament_FinalPhase10' has cardinality 0..*.
+An association connects 'gametournament_QualificationPhase' and 'gametournament_FinalPhase'. From 'gametournament_QualificationPhase', the role 'gametournament_QualificationPhase14' has cardinality 0..*, and from 'gametournament_FinalPhase', the role 'gametournament_FinalPhase13' has cardinality 0..*.
+An association connects 'gametournament_Gamer' and 'gametournament_Pool'. From 'gametournament_Gamer', the role 'gametournament_Gamer17' has cardinality 0..*, and from 'gametournament_Pool', the role 'gametournament_Pool16' has cardinality 0..*.
+An association connects 'gametournament_Pool' and 'gametournament_Gamer'. From 'gametournament_Pool', the role 'gametournament_Pool19' has cardinality 0..*, and from 'gametournament_Gamer', the role 'gametournament_Gamer20' has cardinality 0..*.

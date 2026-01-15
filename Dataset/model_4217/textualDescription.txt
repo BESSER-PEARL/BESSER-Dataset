@@ -1,0 +1,10 @@
+The domain model 'talltree' describes the core structural elements and their relationships within the system.
+
+The model defines 1 main class(es).
+
+'talltree_TallNode' represents an important domain concept.
+It has the following attributes: 'height', which is of type int; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'talltree_TallNode' and 'talltree_TallNode'. From 'talltree_TallNode', the role 'TallNode' has cardinality 0..*, and from 'talltree_TallNode', the role 'parent' has cardinality 0..*.
+An association connects 'talltree_TallNode' and 'talltree_TallNode'. From 'talltree_TallNode', the role 'TallNode4' has cardinality 0..*, and from 'talltree_TallNode', the role 'children' has cardinality 0..*.

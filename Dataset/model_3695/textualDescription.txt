@@ -1,0 +1,56 @@
+The domain model 'UML2WithID' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_ExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Property' represents an important domain concept.
+It has one attribute: 'aggregation', which is of type str.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_CommunicationPath' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2WithID_Element' represents an important domain concept.
+It has one attribute: 'ID', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AggregationKind' defines the following possible values: 'composite', 'shared', 'none'.
+
+The model also captures inheritance relationships between classes.
+The class 'UML2WithID_Property' is a specialization of 'Element'.
+The class 'UML2WithID_ExtensionEnd' is a specialization of 'Property'.
+The class 'UML2WithID_ExtensionEnd' is a specialization of 'Element'.
+The class 'UML2WithID_Port' is a specialization of 'Property'.
+The class 'UML2WithID_Port' is a specialization of 'Element'.
+The class 'UML2WithID_AssociationClass' is a specialization of 'Association'.
+The class 'UML2WithID_AssociationClass' is a specialization of 'Element'.
+The class 'UML2WithID_Association' is a specialization of 'Element'.
+The class 'UML2WithID_Extension' is a specialization of 'Association'.
+The class 'UML2WithID_Extension' is a specialization of 'Element'.
+The class 'UML2WithID_CommunicationPath' is a specialization of 'Association'.
+The class 'UML2WithID_CommunicationPath' is a specialization of 'Element'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML2WithID_Property' and 'UML2WithID_Association'. From 'UML2WithID_Property', the role 'UML2WithID_Property' has cardinality 0..*, and from 'UML2WithID_Association', the role 'UML2WithID_Association' has cardinality 0..*.

@@ -1,0 +1,37 @@
+The domain model 'iot' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'iot_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_IotSystemSpec' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Message' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Message' represents an important domain concept.
+It has the following attributes: 'msg', which is of type str; 'name', which is of type str.
+
+'iot_Dispatch' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_IotSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_Request' represents an important domain concept.
+It does not declare any attributes.
+
+'iot_BrokerSpec' represents an important domain concept.
+It has the following attributes: 'brokerPort', which is of type int; 'brokerHost', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'iot_Event' is a specialization of 'Message'.
+The class 'iot_Dispatch' is a specialization of 'Message'.
+The class 'iot_Request' is a specialization of 'Message'.
+
+Relationships between classes are modeled using associations.
+An association connects 'iot_IotSystem' and 'iot_IotSystemSpec'. From 'iot_IotSystem', the role 'iot_IotSystem' has cardinality 0..*, and from 'iot_IotSystemSpec', the role 'iot_IotSystemSpec' has cardinality 0..*.
+An association connects 'iot_IotSystemSpec' and 'iot_BrokerSpec'. From 'iot_IotSystemSpec', the role 'iot_IotSystemSpec2' has cardinality 0..*, and from 'iot_BrokerSpec', the role 'iot_BrokerSpec' has cardinality 0..*.
+An association connects 'iot_IotSystemSpec' and 'iot_Message'. From 'iot_IotSystemSpec', the role 'iot_IotSystemSpec4' has cardinality 0..*, and from 'iot_Message', the role 'iot_Message' has cardinality 0..*.

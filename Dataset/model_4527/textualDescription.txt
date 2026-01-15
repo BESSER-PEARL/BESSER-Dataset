@@ -1,0 +1,66 @@
+The domain model 'platoon' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'platoon_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Left' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'Vehicle' represents an important domain concept.
+It does not declare any attributes.
+
+'Turn' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Route' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'platoon_Turn' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Constraints' represents an important domain concept.
+It has the following attributes: 'minHeadway', which is of type int; 'maxHeadway', which is of type int.
+
+'platoon_FV' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Forward' represents an important domain concept.
+It has one attribute: 'distance', which is of type int.
+
+'platoon_LV' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Platoon' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Vehicle' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Right' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'platoon_FV' is a specialization of 'Vehicle'.
+The class 'platoon_LV' is a specialization of 'Vehicle'.
+The class 'platoon_Turn' is a specialization of 'Action'.
+The class 'platoon_Forward' is a specialization of 'Action'.
+The class 'platoon_Left' is a specialization of 'Turn'.
+The class 'platoon_Right' is a specialization of 'Turn'.
+
+Relationships between classes are modeled using associations.
+An association connects 'platoon_Model' and 'platoon_Platoon'. From 'platoon_Model', the role 'platoon_Model' has cardinality 0..*, and from 'platoon_Platoon', the role 'platoon_Platoon' has cardinality 0..*.
+An association connects 'platoon_Route' and 'platoon_Model'. From 'platoon_Route', the role 'platoon_Route' has cardinality 0..*, and from 'platoon_Model', the role 'platoon_Model2' has cardinality 0..*.
+An association connects 'platoon_Constraints' and 'platoon_Model'. From 'platoon_Constraints', the role 'platoon_Constraints' has cardinality 0..*, and from 'platoon_Model', the role 'platoon_Model4' has cardinality 0..*.
+An association connects 'platoon_LV' and 'platoon_Platoon'. From 'platoon_LV', the role 'platoon_LV' has cardinality 0..*, and from 'platoon_Platoon', the role 'platoon_Platoon6' has cardinality 0..*.
+An association connects 'platoon_Platoon' and 'platoon_FV'. From 'platoon_Platoon', the role 'platoon_Platoon8' has cardinality 0..*, and from 'platoon_FV', the role 'platoon_FV' has cardinality 0..*.
+An association connects 'platoon_FV' and 'platoon_Vehicle'. From 'platoon_FV', the role 'platoon_FV10' has cardinality 0..*, and from 'platoon_Vehicle', the role 'platoon_Vehicle' has cardinality 0..*.
+An association connects 'platoon_Route' and 'platoon_LV'. From 'platoon_Route', the role 'platoon_Route13' has cardinality 0..*, and from 'platoon_LV', the role 'platoon_LV12' has cardinality 0..*.
+An association connects 'platoon_Route' and 'platoon_Action'. From 'platoon_Route', the role 'platoon_Route15' has cardinality 0..*, and from 'platoon_Action', the role 'platoon_Action' has cardinality 0..*.

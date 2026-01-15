@@ -1,0 +1,70 @@
+The domain model 'dronesSimulation' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'dronesSimulation_Scenario' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesSimulation_Task' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesSimulation_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesSimulation_Observation' represents an important domain concept.
+It has the following attributes: 'time', which is of type str; 'id', which is of type str.
+
+'dronesSimulation_DronesSimulation' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesSimulation_ObstacleObservation' represents an important domain concept.
+It does not declare any attributes.
+
+'Observation' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesSimulation_Obstacle' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesSimulation_RoleInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesSimulation_DroneObservation' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesSimulation_Position' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesSimulation_TaskInstance' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'dronesSimulation_Drone' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesSimulation_DroneInstance' represents an important domain concept.
+It has the following attributes: 'state', which is of type str; 'currentBattery', which is of type float.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TaskState' defines the following possible values: 'NOT_STARTED', 'WAITING', 'IN_PROGRESS', 'DONE'.
+The enumeration 'DroneState' defines the following possible values: 'DONE', 'HOVERING', 'MOVING', 'CREATED'.
+
+The model also captures inheritance relationships between classes.
+The class 'dronesSimulation_ObstacleObservation' is a specialization of 'Observation'.
+The class 'dronesSimulation_DroneObservation' is a specialization of 'Observation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dronesSimulation_Scenario' and 'dronesSimulation_DronesSimulation'. From 'dronesSimulation_Scenario', the role 'dronesSimulation_Scenario' has cardinality 0..*, and from 'dronesSimulation_DronesSimulation', the role 'dronesSimulation_DronesSimulation' has cardinality 0..*.
+An association connects 'dronesSimulation_TaskInstance' and 'dronesSimulation_DronesSimulation'. From 'dronesSimulation_TaskInstance', the role 'dronesSimulation_TaskInstance' has cardinality 0..*, and from 'dronesSimulation_DronesSimulation', the role 'dronesSimulation_DronesSimulation2' has cardinality 0..*.
+An association connects 'dronesSimulation_DroneInstance' and 'dronesSimulation_DronesSimulation'. From 'dronesSimulation_DroneInstance', the role 'dronesSimulation_DroneInstance' has cardinality 0..*, and from 'dronesSimulation_DronesSimulation', the role 'dronesSimulation_DronesSimulation4' has cardinality 0..*.
+An association connects 'dronesSimulation_Drone' and 'dronesSimulation_DroneInstance'. From 'dronesSimulation_Drone', the role 'dronesSimulation_Drone' has cardinality 0..*, and from 'dronesSimulation_DroneInstance', the role 'dronesSimulation_DroneInstance6' has cardinality 0..*.
+An association connects 'dronesSimulation_DroneInstance' and 'dronesSimulation_Position'. From 'dronesSimulation_DroneInstance', the role 'dronesSimulation_DroneInstance8' has cardinality 0..*, and from 'dronesSimulation_Position', the role 'dronesSimulation_Position' has cardinality 0..*.
+An association connects 'dronesSimulation_RoleInstance' and 'dronesSimulation_DroneInstance'. From 'dronesSimulation_RoleInstance', the role 'RoleInstance' has cardinality 0..*, and from 'dronesSimulation_DroneInstance', the role 'allocatedDrone' has cardinality 0..*.
+An association connects 'dronesSimulation_DroneInstance' and 'dronesSimulation_Observation'. From 'dronesSimulation_DroneInstance', the role 'dronesSimulation_DroneInstance11' has cardinality 0..*, and from 'dronesSimulation_Observation', the role 'dronesSimulation_Observation' has cardinality 0..*.
+An association connects 'dronesSimulation_Task' and 'dronesSimulation_TaskInstance'. From 'dronesSimulation_Task', the role 'dronesSimulation_Task' has cardinality 0..*, and from 'dronesSimulation_TaskInstance', the role 'dronesSimulation_TaskInstance13' has cardinality 0..*.
+An association connects 'dronesSimulation_RoleInstance' and 'dronesSimulation_TaskInstance'. From 'dronesSimulation_RoleInstance', the role 'RoleInstance15' has cardinality 0..*, and from 'dronesSimulation_TaskInstance', the role 'taskInstance' has cardinality 0..*.
+An association connects 'dronesSimulation_Role' and 'dronesSimulation_RoleInstance'. From 'dronesSimulation_Role', the role 'dronesSimulation_Role' has cardinality 0..*, and from 'dronesSimulation_RoleInstance', the role 'dronesSimulation_RoleInstance' has cardinality 0..*.
+An association connects 'dronesSimulation_RoleInstance' and 'dronesSimulation_TaskInstance'. From 'dronesSimulation_RoleInstance', the role 'roleInstances' has cardinality 0..*, and from 'dronesSimulation_TaskInstance', the role 'TaskInstance' has cardinality 0..*.
+An association connects 'dronesSimulation_RoleInstance' and 'dronesSimulation_DroneInstance'. From 'dronesSimulation_RoleInstance', the role 'currentRole' has cardinality 0..*, and from 'dronesSimulation_DroneInstance', the role 'DroneInstance' has cardinality 0..*.
+An association connects 'dronesSimulation_ObstacleObservation' and 'dronesSimulation_Obstacle'. From 'dronesSimulation_ObstacleObservation', the role 'dronesSimulation_ObstacleObservation' has cardinality 0..*, and from 'dronesSimulation_Obstacle', the role 'dronesSimulation_Obstacle' has cardinality 0..*.
+An association connects 'dronesSimulation_DroneObservation' and 'dronesSimulation_Drone'. From 'dronesSimulation_DroneObservation', the role 'dronesSimulation_DroneObservation' has cardinality 0..*, and from 'dronesSimulation_Drone', the role 'dronesSimulation_Drone21' has cardinality 0..*.
+An association connects 'dronesSimulation_Position' and 'dronesSimulation_DroneObservation'. From 'dronesSimulation_Position', the role 'dronesSimulation_Position24' has cardinality 0..*, and from 'dronesSimulation_DroneObservation', the role 'dronesSimulation_DroneObservation23' has cardinality 0..*.

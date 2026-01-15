@@ -1,0 +1,60 @@
+The domain model 'bowling' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'bowling_Area' represents an important domain concept.
+It does not declare any attributes.
+
+'bowling_Referee' represents an important domain concept.
+It has one attribute: 'dateOfBirth', which is of type str.
+
+'bowling_Matchup' represents an important domain concept.
+It has one attribute: 'nrSpectators', which is of type str.
+
+'bowling_Merchandise' represents an important domain concept.
+It has the following attributes: 'price', which is of type str; 'serialNumber', which is of type str; 'name', which is of type str.
+
+'bowling_Tournament' represents an important domain concept.
+It has the following attributes: 'priceMoney', which is of type float; 'matchDays', which is of type date; 'type', which is of type str; 'receivesTrophy', which is of type bool.
+
+'bowling_Fan' represents an important domain concept.
+It has the following attributes: 'moneySpentOnTickets', which is of type float; 'gender', which is of type str; 'dateOfBirth', which is of type date; 'eMails', which is of type str; 'numberOfTournamentsVisited', which is of type int; 'name', which is of type str; 'hasSeasonTicket', which is of type bool.
+
+'bowling_PlayerToPointsMap' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'bowling_Player' represents an important domain concept.
+It has the following attributes: 'playedTournamentTypes', which is of type str; 'height', which is of type float; 'isProfessional', which is of type bool; 'winLossRatio', which is of type str; 'numberOfVictories', which is of type int; 'gender', which is of type str; 'name', which is of type str; 'dateOfBirth', which is of type date; 'eMails', which is of type str.
+
+'bowling_RefereeToGamesMap' represents an important domain concept.
+It does not declare any attributes.
+
+'bowling_Game' represents an important domain concept.
+It has one attribute: 'frames', which is of type int.
+
+'bowling_League' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TournamentType' defines the following possible values: 'Amateur', 'Pro'.
+The enumeration 'Gender' defines the following possible values: 'Male', 'Female'.
+
+Relationships between classes are modeled using associations.
+An association connects 'bowling_League' and 'bowling_Player'. From 'bowling_League', the role 'bowling_League' has cardinality 0..*, and from 'bowling_Player', the role 'bowling_Player' has cardinality 0..*.
+An association connects 'bowling_Tournament' and 'bowling_Matchup'. From 'bowling_Tournament', the role 'bowling_Tournament' has cardinality 0..*, and from 'bowling_Matchup', the role 'bowling_Matchup' has cardinality 0..*.
+An association connects 'bowling_PlayerToPointsMap' and 'bowling_Tournament'. From 'bowling_PlayerToPointsMap', the role 'bowling_PlayerToPointsMap' has cardinality 0..*, and from 'bowling_Tournament', the role 'bowling_Tournament3' has cardinality 0..*.
+An association connects 'bowling_Player' and 'bowling_Tournament'. From 'bowling_Player', the role 'bowling_Player6' has cardinality 0..*, and from 'bowling_Tournament', the role 'bowling_Tournament5' has cardinality 0..*.
+An association connects 'bowling_Tournament' and 'bowling_RefereeToGamesMap'. From 'bowling_Tournament', the role 'bowling_Tournament8' has cardinality 0..*, and from 'bowling_RefereeToGamesMap', the role 'bowling_RefereeToGamesMap' has cardinality 0..*.
+An association connects 'bowling_Game' and 'bowling_Matchup'. From 'bowling_Game', the role 'Game' has cardinality 0..*, and from 'bowling_Matchup', the role 'matchup' has cardinality 0..*.
+An association connects 'bowling_Game' and 'bowling_Matchup'. From 'bowling_Game', the role 'games' has cardinality 0..*, and from 'bowling_Matchup', the role 'Matchup' has cardinality 0..*.
+An association connects 'bowling_Game' and 'bowling_Player'. From 'bowling_Game', the role 'bowling_Game' has cardinality 0..*, and from 'bowling_Player', the role 'bowling_Player12' has cardinality 0..*.
+An association connects 'bowling_Player' and 'bowling_PlayerToPointsMap'. From 'bowling_Player', the role 'bowling_Player15' has cardinality 0..*, and from 'bowling_PlayerToPointsMap', the role 'bowling_PlayerToPointsMap14' has cardinality 0..*.
+An association connects 'bowling_League' and 'bowling_Referee'. From 'bowling_League', the role 'bowling_League17' has cardinality 0..*, and from 'bowling_Referee', the role 'bowling_Referee' has cardinality 0..*.
+An association connects 'bowling_RefereeToGamesMap' and 'bowling_Referee'. From 'bowling_RefereeToGamesMap', the role 'bowling_RefereeToGamesMap19' has cardinality 0..*, and from 'bowling_Referee', the role 'bowling_Referee20' has cardinality 0..*.
+An association connects 'bowling_Game' and 'bowling_RefereeToGamesMap'. From 'bowling_Game', the role 'bowling_Game23' has cardinality 0..*, and from 'bowling_RefereeToGamesMap', the role 'bowling_RefereeToGamesMap22' has cardinality 0..*.
+An association connects 'bowling_Area' and 'bowling_Area'. From 'bowling_Area', the role 'bowling_Area24' has cardinality 0..*, and from 'bowling_Area', the role 'bowling_Area' has cardinality 0..*.
+An association connects 'bowling_Area' and 'bowling_Tournament'. From 'bowling_Area', the role 'bowling_Area27' has cardinality 0..*, and from 'bowling_Tournament', the role 'bowling_Tournament28' has cardinality 0..*.
+An association connects 'bowling_Fan' and 'bowling_Player'. From 'bowling_Fan', the role 'bowling_Fan' has cardinality 0..*, and from 'bowling_Player', the role 'bowling_Player30' has cardinality 0..*.
+An association connects 'bowling_Fan' and 'bowling_Merchandise'. From 'bowling_Fan', the role 'bowling_Fan32' has cardinality 0..*, and from 'bowling_Merchandise', the role 'bowling_Merchandise' has cardinality 0..*.
+An association connects 'bowling_Merchandise' and 'bowling_Fan'. From 'bowling_Merchandise', the role 'bowling_Merchandise35' has cardinality 0..*, and from 'bowling_Fan', the role 'bowling_Fan34' has cardinality 0..*.
+An association connects 'bowling_Tournament' and 'bowling_Fan'. From 'bowling_Tournament', the role 'bowling_Tournament38' has cardinality 0..*, and from 'bowling_Fan', the role 'bowling_Fan37' has cardinality 0..*.

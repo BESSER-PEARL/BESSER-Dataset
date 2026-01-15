@@ -1,0 +1,66 @@
+The domain model 'JavaMM' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'JavaMM_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaMM_Container' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'JavaMM_Package' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'JavaMM_EntityClass' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaMM_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaMM_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaMM_Attribute' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'name', which is of type str.
+
+'JavaMM_TestClass' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaMM_DAOClass' represents an important domain concept.
+It does not declare any attributes.
+
+'JavaMM_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'JavaMM_Annotation' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'content', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Visibility' defines the following possible values: 'private', 'public'.
+
+The model also captures inheritance relationships between classes.
+The class 'JavaMM_Class' is a specialization of 'Type'.
+The class 'JavaMM_PrimitiveType' is a specialization of 'Type'.
+The class 'JavaMM_Container' is a specialization of 'Type'.
+The class 'JavaMM_EntityClass' is a specialization of 'Class'.
+The class 'JavaMM_DAOClass' is a specialization of 'Class'.
+The class 'JavaMM_TestClass' is a specialization of 'Class'.
+
+Relationships between classes are modeled using associations.
+An association connects 'JavaMM_Program' and 'JavaMM_Package'. From 'JavaMM_Program', the role 'JavaMM_Program' has cardinality 0..*, and from 'JavaMM_Package', the role 'JavaMM_Package' has cardinality 0..*.
+An association connects 'JavaMM_Program' and 'JavaMM_PrimitiveType'. From 'JavaMM_Program', the role 'JavaMM_Program2' has cardinality 0..*, and from 'JavaMM_PrimitiveType', the role 'JavaMM_PrimitiveType' has cardinality 0..*.
+An association connects 'JavaMM_Container' and 'JavaMM_Program'. From 'JavaMM_Container', the role 'JavaMM_Container' has cardinality 0..*, and from 'JavaMM_Program', the role 'JavaMM_Program4' has cardinality 0..*.
+An association connects 'JavaMM_Package' and 'JavaMM_Class'. From 'JavaMM_Package', the role 'JavaMM_Package6' has cardinality 0..*, and from 'JavaMM_Class', the role 'JavaMM_Class' has cardinality 0..*.
+An association connects 'JavaMM_Class' and 'JavaMM_Attribute'. From 'JavaMM_Class', the role 'JavaMM_Class8' has cardinality 0..*, and from 'JavaMM_Attribute', the role 'JavaMM_Attribute' has cardinality 0..*.
+An association connects 'JavaMM_Attribute' and 'JavaMM_Type'. From 'JavaMM_Attribute', the role 'JavaMM_Attribute10' has cardinality 0..*, and from 'JavaMM_Type', the role 'JavaMM_Type' has cardinality 0..*.
+An association connects 'JavaMM_Annotation' and 'JavaMM_Attribute'. From 'JavaMM_Annotation', the role 'JavaMM_Annotation' has cardinality 0..*, and from 'JavaMM_Attribute', the role 'JavaMM_Attribute12' has cardinality 0..*.
+An association connects 'JavaMM_Type' and 'JavaMM_Container'. From 'JavaMM_Type', the role 'JavaMM_Type15' has cardinality 0..*, and from 'JavaMM_Container', the role 'JavaMM_Container14' has cardinality 0..*.
+An association connects 'JavaMM_EntityClass' and 'JavaMM_DAOClass'. From 'JavaMM_EntityClass', the role 'JavaMM_EntityClass' has cardinality 0..*, and from 'JavaMM_DAOClass', the role 'JavaMM_DAOClass' has cardinality 0..*.
+An association connects 'JavaMM_DAOClass' and 'JavaMM_TestClass'. From 'JavaMM_DAOClass', the role 'JavaMM_DAOClass18' has cardinality 0..*, and from 'JavaMM_TestClass', the role 'JavaMM_TestClass' has cardinality 0..*.
+An association connects 'JavaMM_TestClass' and 'JavaMM_EntityClass'. From 'JavaMM_TestClass', the role 'JavaMM_TestClass20' has cardinality 0..*, and from 'JavaMM_EntityClass', the role 'JavaMM_EntityClass21' has cardinality 0..*.

@@ -1,0 +1,50 @@
+The domain model 'entity' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'entity_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_Member' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'Member' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_Method' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'entity_Package' is a specialization of 'NamedElement'.
+The class 'entity_Entity' is a specialization of 'Type'.
+The class 'entity_Member' is a specialization of 'NamedElement'.
+The class 'entity_Field' is a specialization of 'Member'.
+The class 'entity_Method' is a specialization of 'Member'.
+The class 'entity_Service' is a specialization of 'Type'.
+The class 'entity_Type' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'entity_Type' and 'entity_Package'. From 'entity_Type', the role 'entity_Type' has cardinality 0..*, and from 'entity_Package', the role 'entity_Package' has cardinality 0..*.
+An association connects 'entity_Entity' and 'entity_Member'. From 'entity_Entity', the role 'entity_Entity' has cardinality 0..*, and from 'entity_Member', the role 'entity_Member' has cardinality 0..*.
+An association connects 'entity_Service' and 'entity_Method'. From 'entity_Service', the role 'entity_Service' has cardinality 0..*, and from 'entity_Method', the role 'entity_Method' has cardinality 0..*.

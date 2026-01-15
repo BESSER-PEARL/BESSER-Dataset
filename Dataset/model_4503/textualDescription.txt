@@ -1,0 +1,180 @@
+The domain model 'rcl' describes the core structural elements and their relationships within the system.
+
+The model defines 39 main class(es).
+
+'BooleanValue' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_TurnDegAction' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_BackwardMinAction' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_StopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_HumidityQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_RoverValue' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_StringExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type bool.
+
+'rcl_BooleanValue' represents an important domain concept.
+It has one attribute: 'bValue', which is of type bool.
+
+'rcl_NumberValue' represents an important domain concept.
+It has one attribute: 'nValue', which is of type str.
+
+'rcl_LogAction' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'rcl_TemperatureQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_RclBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_ForwardMinAction' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_StringValue' represents an important domain concept.
+It has one attribute: 'sValue', which is of type bool.
+
+'StringValue' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_VarAssignment' represents an important domain concept.
+It has one attribute: 'name', which is of type bool.
+
+'RoverExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_VarRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rcl_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_ForwardAction' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_BackwardAction' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_RoverExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_SendAction' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'NumberValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Query' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_Query' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_BooleanExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'rcl_MessageQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_ObstacleQuery' represents an important domain concept.
+It has one attribute: 'front', which is of type bool.
+
+'RoverValue' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_TurnAction' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_RoverProgram' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'rcl_NumericExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type bool.
+
+'rcl_Param' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'NumericOperator' defines the following possible values: 'lt', 'neq', 'geq', 'leq', 'eq', 'gt'.
+The enumeration 'StringOperator' defines the following possible values: 'neq', 'eq'.
+The enumeration 'BooleanOperator' defines the following possible values: 'eq', 'neq'.
+
+The model also captures inheritance relationships between classes.
+The class 'rcl_VarAssignment' is a specialization of 'Statement'.
+The class 'rcl_Conditional' is a specialization of 'Statement'.
+The class 'rcl_Loop' is a specialization of 'Statement'.
+The class 'rcl_RclBlock' is a specialization of 'Statement'.
+The class 'rcl_TemperatureQuery' is a specialization of 'Query'.
+The class 'rcl_TemperatureQuery' is a specialization of 'NumberValue'.
+The class 'rcl_HumidityQuery' is a specialization of 'Query'.
+The class 'rcl_HumidityQuery' is a specialization of 'NumberValue'.
+The class 'rcl_MessageQuery' is a specialization of 'Query'.
+The class 'rcl_MessageQuery' is a specialization of 'StringValue'.
+The class 'rcl_ObstacleQuery' is a specialization of 'Query'.
+The class 'rcl_ObstacleQuery' is a specialization of 'BooleanValue'.
+The class 'rcl_NumericExpression' is a specialization of 'RoverExpression'.
+The class 'rcl_StringExpression' is a specialization of 'RoverExpression'.
+The class 'rcl_BooleanExpression' is a specialization of 'RoverExpression'.
+The class 'rcl_NumberValue' is a specialization of 'RoverValue'.
+The class 'rcl_StringValue' is a specialization of 'RoverValue'.
+The class 'rcl_BooleanValue' is a specialization of 'RoverValue'.
+The class 'rcl_Action' is a specialization of 'Statement'.
+The class 'rcl_ForwardAction' is a specialization of 'Action'.
+The class 'rcl_ForwardMinAction' is a specialization of 'Action'.
+The class 'rcl_BackwardAction' is a specialization of 'Action'.
+The class 'rcl_BackwardMinAction' is a specialization of 'Action'.
+The class 'rcl_TurnAction' is a specialization of 'Action'.
+The class 'rcl_TurnDegAction' is a specialization of 'Action'.
+The class 'rcl_StopAction' is a specialization of 'Action'.
+The class 'rcl_LogAction' is a specialization of 'Action'.
+The class 'rcl_SendAction' is a specialization of 'Action'.
+The class 'rcl_VarRef' is a specialization of 'BooleanValue'.
+The class 'rcl_VarRef' is a specialization of 'NumberValue'.
+The class 'rcl_VarRef' is a specialization of 'StringValue'.
+The class 'rcl_VarRef' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rcl_Param' and 'rcl_RoverProgram'. From 'rcl_Param', the role 'rcl_Param' has cardinality 0..*, and from 'rcl_RoverProgram', the role 'rcl_RoverProgram' has cardinality 0..*.
+An association connects 'rcl_RclBlock' and 'rcl_RoverProgram'. From 'rcl_RclBlock', the role 'rcl_RclBlock' has cardinality 0..*, and from 'rcl_RoverProgram', the role 'rcl_RoverProgram2' has cardinality 0..*.
+An association connects 'rcl_Statement' and 'rcl_RclBlock'. From 'rcl_Statement', the role 'unnamed role' has cardinality 0..*, and from 'rcl_RclBlock', the role '4' has cardinality 0..*.
+An association connects 'rcl_RoverValue' and 'rcl_VarAssignment'. From 'rcl_RoverValue', the role 'rcl_RoverValue' has cardinality 0..*, and from 'rcl_VarAssignment', the role 'rcl_VarAssignment' has cardinality 0..*.
+An association connects 'rcl_Conditional' and 'rcl_RoverExpression'. From 'rcl_Conditional', the role 'rcl_Conditional' has cardinality 0..*, and from 'rcl_RoverExpression', the role 'rcl_RoverExpression' has cardinality 0..*.
+An association connects 'rcl_RclBlock' and 'rcl_Conditional'. From 'rcl_RclBlock', the role 'rcl_RclBlock9' has cardinality 0..*, and from 'rcl_Conditional', the role 'rcl_Conditional8' has cardinality 0..*.
+An association connects 'rcl_RclBlock' and 'rcl_Conditional'. From 'rcl_RclBlock', the role 'rcl_RclBlock12' has cardinality 0..*, and from 'rcl_Conditional', the role 'rcl_Conditional11' has cardinality 0..*.
+An association connects 'rcl_Loop' and 'rcl_RoverExpression'. From 'rcl_Loop', the role 'rcl_Loop' has cardinality 0..*, and from 'rcl_RoverExpression', the role 'rcl_RoverExpression14' has cardinality 0..*.
+An association connects 'rcl_RclBlock' and 'rcl_Loop'. From 'rcl_RclBlock', the role 'rcl_RclBlock17' has cardinality 0..*, and from 'rcl_Loop', the role 'rcl_Loop16' has cardinality 0..*.
+An association connects 'rcl_RclBlock' and 'rcl_Statement'. From 'rcl_RclBlock', the role '19' has cardinality 0..*, and from 'rcl_Statement', the role '20' has cardinality 0..*.
+An association connects 'rcl_NumericExpression' and 'rcl_NumberValue'. From 'rcl_NumericExpression', the role 'rcl_NumericExpression' has cardinality 0..*, and from 'rcl_NumberValue', the role 'rcl_NumberValue' has cardinality 0..*.
+An association connects 'rcl_NumberValue' and 'rcl_NumericExpression'. From 'rcl_NumberValue', the role 'rcl_NumberValue24' has cardinality 0..*, and from 'rcl_NumericExpression', the role 'rcl_NumericExpression23' has cardinality 0..*.
+An association connects 'rcl_StringValue' and 'rcl_StringExpression'. From 'rcl_StringValue', the role 'rcl_StringValue' has cardinality 0..*, and from 'rcl_StringExpression', the role 'rcl_StringExpression' has cardinality 0..*.
+An association connects 'rcl_StringValue' and 'rcl_StringExpression'. From 'rcl_StringValue', the role 'rcl_StringValue28' has cardinality 0..*, and from 'rcl_StringExpression', the role 'rcl_StringExpression27' has cardinality 0..*.
+An association connects 'rcl_BooleanExpression' and 'rcl_BooleanValue'. From 'rcl_BooleanExpression', the role 'rcl_BooleanExpression' has cardinality 0..*, and from 'rcl_BooleanValue', the role 'rcl_BooleanValue' has cardinality 0..*.
+An association connects 'rcl_BooleanValue' and 'rcl_BooleanExpression'. From 'rcl_BooleanValue', the role 'rcl_BooleanValue32' has cardinality 0..*, and from 'rcl_BooleanExpression', the role 'rcl_BooleanExpression31' has cardinality 0..*.
+An association connects 'rcl_ForwardMinAction' and 'rcl_NumberValue'. From 'rcl_ForwardMinAction', the role 'rcl_ForwardMinAction' has cardinality 0..*, and from 'rcl_NumberValue', the role 'rcl_NumberValue34' has cardinality 0..*.
+An association connects 'rcl_NumberValue' and 'rcl_BackwardMinAction'. From 'rcl_NumberValue', the role 'rcl_NumberValue36' has cardinality 0..*, and from 'rcl_BackwardMinAction', the role 'rcl_BackwardMinAction' has cardinality 0..*.
+An association connects 'rcl_TurnDegAction' and 'rcl_NumberValue'. From 'rcl_TurnDegAction', the role 'rcl_TurnDegAction' has cardinality 0..*, and from 'rcl_NumberValue', the role 'rcl_NumberValue38' has cardinality 0..*.

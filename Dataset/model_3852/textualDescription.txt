@@ -1,0 +1,28 @@
+The domain model 'SimpleRDBMS' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'SimpleRDBMS_Column' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'type', which is of type str; 'name', which is of type str.
+
+'SimpleRDBMS_Table' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'name', which is of type str.
+
+'SimpleRDBMS_PKey' represents an important domain concept.
+It does not declare any attributes.
+
+'FKey' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleRDBMS_FKey' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'SimpleRDBMS_PKey' is a specialization of 'FKey'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SimpleRDBMS_Table' and 'SimpleRDBMS_FKey'. From 'SimpleRDBMS_Table', the role 'SimpleRDBMS_Table' has cardinality 0..*, and from 'SimpleRDBMS_FKey', the role 'SimpleRDBMS_FKey' has cardinality 0..*.
+An association connects 'SimpleRDBMS_Column' and 'SimpleRDBMS_Table'. From 'SimpleRDBMS_Column', the role 'SimpleRDBMS_Column' has cardinality 0..*, and from 'SimpleRDBMS_Table', the role 'SimpleRDBMS_Table2' has cardinality 0..*.
+An association connects 'SimpleRDBMS_Column' and 'SimpleRDBMS_Table'. From 'SimpleRDBMS_Column', the role 'SimpleRDBMS_Column5' has cardinality 0..*, and from 'SimpleRDBMS_Table', the role 'SimpleRDBMS_Table4' has cardinality 0..*.
+An association connects 'SimpleRDBMS_FKey' and 'SimpleRDBMS_Table'. From 'SimpleRDBMS_FKey', the role 'SimpleRDBMS_FKey7' has cardinality 0..*, and from 'SimpleRDBMS_Table', the role 'SimpleRDBMS_Table8' has cardinality 0..*.
+An association connects 'SimpleRDBMS_FKey' and 'SimpleRDBMS_Column'. From 'SimpleRDBMS_FKey', the role 'SimpleRDBMS_FKey10' has cardinality 0..*, and from 'SimpleRDBMS_Column', the role 'SimpleRDBMS_Column11' has cardinality 0..*.

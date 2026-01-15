@@ -1,0 +1,58 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'model_ExtraBall' represents an important domain concept.
+It has the following attributes: 'isValidBall', which is of type str; 'extraType', which is of type str.
+
+'model_Innings' represents an important domain concept.
+It has the following attributes: 'wicketsDown', which is of type int; 'Summary', which is of type str; 'total', which is of type int; 'noOvers', which is of type int; 'overCount', which is of type str.
+
+'model_Ball' represents an important domain concept.
+It has the following attributes: 'runValue', which is of type int; 'runs', which is of type str; 'switchEnds', which is of type str.
+
+'model_Player' represents an important domain concept.
+It has the following attributes: 'howOut', which is of type str; 'name', which is of type str; 'runsScored', which is of type int; 'noBallsFaced', which is of type int; 'noOversBowled', which is of type str.
+
+'model_Game' represents an important domain concept.
+It has the following attributes: 'venue', which is of type str; 'date', which is of type date.
+
+'model_Team' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'model_WicketBall' represents an important domain concept.
+It has one attribute: 'howOut', which is of type str.
+
+'Ball' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Over' represents an important domain concept.
+It has the following attributes: 'validBalls', which is of type int; 'isComplete', which is of type bool; 'runs', which is of type int; 'BALLS_IN_OVER', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'HowOut' defines the following possible values: 'Bowled', 'Run_Out', 'Lbw', 'Caught', 'Stumped'.
+The enumeration 'ExtraType' defines the following possible values: 'LegBye', 'Bye', 'NoBall', 'Wide'.
+The enumeration 'BallType' defines the following possible values: 'one_run', 'four_runs', 'three_runs', 'six_runs', 'dot_ball', 'two_runs'.
+
+The model also captures inheritance relationships between classes.
+The class 'model_WicketBall' is a specialization of 'Ball'.
+The class 'model_ExtraBall' is a specialization of 'Ball'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Game' and 'model_Innings'. From 'model_Game', the role 'model_Game' has cardinality 0..*, and from 'model_Innings', the role 'model_Innings' has cardinality 0..*.
+An association connects 'model_Team' and 'model_Game'. From 'model_Team', the role 'model_Team' has cardinality 0..*, and from 'model_Game', the role 'model_Game2' has cardinality 0..*.
+An association connects 'model_Over' and 'model_Innings'. From 'model_Over', the role 'Over' has cardinality 0..*, and from 'model_Innings', the role 'innings' has cardinality 0..*.
+An association connects 'model_Innings' and 'model_Team'. From 'model_Innings', the role 'model_Innings5' has cardinality 0..*, and from 'model_Team', the role 'model_Team6' has cardinality 0..*.
+An association connects 'model_Innings' and 'model_Team'. From 'model_Innings', the role 'model_Innings8' has cardinality 0..*, and from 'model_Team', the role 'model_Team9' has cardinality 0..*.
+An association connects 'model_Innings' and 'model_Player'. From 'model_Innings', the role 'model_Innings11' has cardinality 0..*, and from 'model_Player', the role 'model_Player' has cardinality 0..*.
+An association connects 'model_Player' and 'model_Innings'. From 'model_Player', the role 'model_Player14' has cardinality 0..*, and from 'model_Innings', the role 'model_Innings13' has cardinality 0..*.
+An association connects 'model_Over' and 'model_Ball'. From 'model_Over', the role 'model_Over' has cardinality 0..*, and from 'model_Ball', the role 'model_Ball' has cardinality 0..*.
+An association connects 'model_Over' and 'model_Innings'. From 'model_Over', the role 'overs' has cardinality 0..*, and from 'model_Innings', the role 'Innings' has cardinality 0..*.
+An association connects 'model_Over' and 'model_Player'. From 'model_Over', the role 'oversBowled' has cardinality 0..*, and from 'model_Player', the role 'Player' has cardinality 0..*.
+An association connects 'model_Ball' and 'model_Player'. From 'model_Ball', the role 'ballsFaced' has cardinality 0..*, and from 'model_Player', the role 'Player19' has cardinality 0..*.
+An association connects 'model_Ball' and 'model_Player'. From 'model_Ball', the role 'Ball' has cardinality 0..*, and from 'model_Player', the role 'batsman' has cardinality 0..*.
+An association connects 'model_Player' and 'model_Over'. From 'model_Player', the role 'bowler' has cardinality 0..*, and from 'model_Over', the role 'Over22' has cardinality 0..*.
+An association connects 'model_WicketBall' and 'model_Player'. From 'model_WicketBall', the role 'WicketBall' has cardinality 0..*, and from 'model_Player', the role 'playerOut' has cardinality 0..*.
+An association connects 'model_Player' and 'model_Team'. From 'model_Player', the role 'model_Player26' has cardinality 0..*, and from 'model_Team', the role 'model_Team25' has cardinality 0..*.
+An association connects 'model_WicketBall' and 'model_Player'. From 'model_WicketBall', the role 'model_WicketBall' has cardinality 0..*, and from 'model_Player', the role 'model_Player28' has cardinality 0..*.
+An association connects 'model_Player' and 'model_WicketBall'. From 'model_Player', the role 'Player30' has cardinality 0..*, and from 'model_WicketBall', the role 'wicketball' has cardinality 0..*.

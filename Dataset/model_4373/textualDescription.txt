@@ -1,0 +1,202 @@
+The domain model 'hydraconstraints' describes the core structural elements and their relationships within the system.
+
+The model defines 49 main class(es).
+
+'hydraconstraints_MultipleFeature' represents an important domain concept.
+It has one attribute: 'featureName', which is of type str.
+
+'hydraconstraints_All' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Implies' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_BoolOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Mul' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_BoolPriorityOperand2' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Comparison' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_MoreOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'Operand' represents an important domain concept.
+It does not declare any attributes.
+
+'BoolOperandChoices' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Any' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Model' represents an important domain concept.
+It has one attribute: 'featureList', which is of type str.
+
+'hydraconstraints_More' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryOp' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_NotEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Operand' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_BoolPriorityOperand1' represents an important domain concept.
+It does not declare any attributes.
+
+'Comparison' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_UnaryOp' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'NumOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Xor' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_SimpleFeature' represents an important domain concept.
+It has one attribute: 'featureName', which is of type str.
+
+'hydraconstraints_Context' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_NumPriorityOperand1' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_LogicalOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_NumPriorityOperand2' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_NumOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_NumOperandChoices' represents an important domain concept.
+It does not declare any attributes.
+
+'NumOperandChoices' represents an important domain concept.
+It does not declare any attributes.
+
+'Selection' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_LessOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicalOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_BoolOperandChoices' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Neg' represents an important domain concept.
+It does not declare any attributes.
+
+'BoolOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryOp' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Less' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_NumOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_BinaryOp' represents an important domain concept.
+It does not declare any attributes.
+
+'NumOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Number' represents an important domain concept.
+It has one attribute: 'numValue', which is of type int.
+
+'hydraconstraints_And' represents an important domain concept.
+It does not declare any attributes.
+
+'hydraconstraints_Selection' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'hydraconstraints_BoolOperand' is a specialization of 'Operand'.
+The class 'hydraconstraints_LogicalOperator' is a specialization of 'BoolOperand'.
+The class 'hydraconstraints_UnaryOp' is a specialization of 'LogicalOperator'.
+The class 'hydraconstraints_Neg' is a specialization of 'UnaryOp'.
+The class 'hydraconstraints_BinaryOp' is a specialization of 'LogicalOperator'.
+The class 'hydraconstraints_And' is a specialization of 'BinaryOp'.
+The class 'hydraconstraints_Or' is a specialization of 'BinaryOp'.
+The class 'hydraconstraints_Implies' is a specialization of 'BinaryOp'.
+The class 'hydraconstraints_Xor' is a specialization of 'BinaryOp'.
+The class 'hydraconstraints_Comparison' is a specialization of 'LogicalOperator'.
+The class 'hydraconstraints_More' is a specialization of 'Comparison'.
+The class 'hydraconstraints_MoreOrEqual' is a specialization of 'Comparison'.
+The class 'hydraconstraints_NotEqual' is a specialization of 'Comparison'.
+The class 'hydraconstraints_Less' is a specialization of 'Comparison'.
+The class 'hydraconstraints_Equal' is a specialization of 'Comparison'.
+The class 'hydraconstraints_LessOrEqual' is a specialization of 'Comparison'.
+The class 'hydraconstraints_NumOperand' is a specialization of 'Operand'.
+The class 'hydraconstraints_NumOperator' is a specialization of 'NumOperand'.
+The class 'hydraconstraints_Plus' is a specialization of 'NumOperator'.
+The class 'hydraconstraints_Mul' is a specialization of 'NumOperator'.
+The class 'hydraconstraints_Minus' is a specialization of 'NumOperator'.
+The class 'hydraconstraints_Div' is a specialization of 'NumOperator'.
+The class 'hydraconstraints_NumOperandChoices' is a specialization of 'NumOperand'.
+The class 'hydraconstraints_MultipleFeature' is a specialization of 'NumOperandChoices'.
+The class 'hydraconstraints_SimpleFeature' is a specialization of 'BoolOperandChoices'.
+The class 'hydraconstraints_BoolOperandChoices' is a specialization of 'BoolOperand'.
+The class 'hydraconstraints_Context' is a specialization of 'BoolOperandChoices'.
+The class 'hydraconstraints_Context' is a specialization of 'NumOperandChoices'.
+The class 'hydraconstraints_Selection' is a specialization of 'BoolOperandChoices'.
+The class 'hydraconstraints_Any' is a specialization of 'Selection'.
+The class 'hydraconstraints_All' is a specialization of 'Selection'.
+The class 'hydraconstraints_Number' is a specialization of 'NumOperandChoices'.
+
+Relationships between classes are modeled using associations.
+An association connects 'hydraconstraints_Constraint' and 'hydraconstraints_Model'. From 'hydraconstraints_Constraint', the role 'hydraconstraints_Constraint' has cardinality 0..*, and from 'hydraconstraints_Model', the role 'hydraconstraints_Model' has cardinality 0..*.
+An association connects 'hydraconstraints_Constraint' and 'hydraconstraints_BoolOperand'. From 'hydraconstraints_Constraint', the role 'hydraconstraints_Constraint2' has cardinality 0..*, and from 'hydraconstraints_BoolOperand', the role 'hydraconstraints_BoolOperand' has cardinality 0..*.
+An association connects 'hydraconstraints_BoolOperand' and 'hydraconstraints_BoolPriorityOperand1'. From 'hydraconstraints_BoolOperand', the role 'hydraconstraints_BoolOperand4' has cardinality 0..*, and from 'hydraconstraints_BoolPriorityOperand1', the role 'hydraconstraints_BoolPriorityOperand1' has cardinality 0..*.
+An association connects 'hydraconstraints_BoolOperand' and 'hydraconstraints_BoolPriorityOperand2'. From 'hydraconstraints_BoolOperand', the role 'hydraconstraints_BoolOperand6' has cardinality 0..*, and from 'hydraconstraints_BoolPriorityOperand2', the role 'hydraconstraints_BoolPriorityOperand2' has cardinality 0..*.
+An association connects 'hydraconstraints_UnaryOp' and 'hydraconstraints_BoolPriorityOperand2'. From 'hydraconstraints_UnaryOp', the role 'hydraconstraints_UnaryOp' has cardinality 0..*, and from 'hydraconstraints_BoolPriorityOperand2', the role 'hydraconstraints_BoolPriorityOperand28' has cardinality 0..*.
+An association connects 'hydraconstraints_BoolPriorityOperand1' and 'hydraconstraints_BinaryOp'. From 'hydraconstraints_BoolPriorityOperand1', the role 'hydraconstraints_BoolPriorityOperand110' has cardinality 0..*, and from 'hydraconstraints_BinaryOp', the role 'hydraconstraints_BinaryOp' has cardinality 0..*.
+An association connects 'hydraconstraints_BoolPriorityOperand2' and 'hydraconstraints_BinaryOp'. From 'hydraconstraints_BoolPriorityOperand2', the role 'hydraconstraints_BoolPriorityOperand213' has cardinality 0..*, and from 'hydraconstraints_BinaryOp', the role 'hydraconstraints_BinaryOp12' has cardinality 0..*.
+An association connects 'hydraconstraints_NumPriorityOperand2' and 'hydraconstraints_Comparison'. From 'hydraconstraints_NumPriorityOperand2', the role 'hydraconstraints_NumPriorityOperand2' has cardinality 0..*, and from 'hydraconstraints_Comparison', the role 'hydraconstraints_Comparison' has cardinality 0..*.
+An association connects 'hydraconstraints_NumPriorityOperand2' and 'hydraconstraints_Comparison'. From 'hydraconstraints_NumPriorityOperand2', the role 'hydraconstraints_NumPriorityOperand217' has cardinality 0..*, and from 'hydraconstraints_Comparison', the role 'hydraconstraints_Comparison16' has cardinality 0..*.
+An association connects 'hydraconstraints_NumOperand' and 'hydraconstraints_NumPriorityOperand2'. From 'hydraconstraints_NumOperand', the role 'hydraconstraints_NumOperand' has cardinality 0..*, and from 'hydraconstraints_NumPriorityOperand2', the role 'hydraconstraints_NumPriorityOperand219' has cardinality 0..*.
+An association connects 'hydraconstraints_NumOperand' and 'hydraconstraints_NumPriorityOperand1'. From 'hydraconstraints_NumOperand', the role 'hydraconstraints_NumOperand21' has cardinality 0..*, and from 'hydraconstraints_NumPriorityOperand1', the role 'hydraconstraints_NumPriorityOperand1' has cardinality 0..*.
+An association connects 'hydraconstraints_NumPriorityOperand1' and 'hydraconstraints_NumOperator'. From 'hydraconstraints_NumPriorityOperand1', the role 'hydraconstraints_NumPriorityOperand123' has cardinality 0..*, and from 'hydraconstraints_NumOperator', the role 'hydraconstraints_NumOperator' has cardinality 0..*.
+An association connects 'hydraconstraints_NumOperator' and 'hydraconstraints_NumPriorityOperand2'. From 'hydraconstraints_NumOperator', the role 'hydraconstraints_NumOperator25' has cardinality 0..*, and from 'hydraconstraints_NumPriorityOperand2', the role 'hydraconstraints_NumPriorityOperand226' has cardinality 0..*.
+An association connects 'hydraconstraints_Constraint' and 'hydraconstraints_Context'. From 'hydraconstraints_Constraint', the role 'hydraconstraints_Constraint28' has cardinality 0..*, and from 'hydraconstraints_Context', the role 'hydraconstraints_Context' has cardinality 0..*.
+An association connects 'hydraconstraints_MultipleFeature' and 'hydraconstraints_Context'. From 'hydraconstraints_MultipleFeature', the role 'hydraconstraints_MultipleFeature' has cardinality 0..*, and from 'hydraconstraints_Context', the role 'hydraconstraints_Context30' has cardinality 0..*.
+An association connects 'hydraconstraints_Selection' and 'hydraconstraints_Context'. From 'hydraconstraints_Selection', the role 'hydraconstraints_Selection' has cardinality 0..*, and from 'hydraconstraints_Context', the role 'hydraconstraints_Context32' has cardinality 0..*.

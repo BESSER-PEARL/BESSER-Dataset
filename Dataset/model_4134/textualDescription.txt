@@ -1,0 +1,36 @@
+The domain model 'mathInterpreter' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'mathInterpreter_Div' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'mathInterpreter_MathExp' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpreter_Exp' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpreter_Mult' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'mathInterpreter_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpreter_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mathInterpreter_Plus' is a specialization of 'Exp'.
+The class 'mathInterpreter_Minus' is a specialization of 'Exp'.
+The class 'mathInterpreter_Mult' is a specialization of 'Exp'.
+The class 'mathInterpreter_Div' is a specialization of 'Exp'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mathInterpreter_MathExp' and 'mathInterpreter_Exp'. From 'mathInterpreter_MathExp', the role 'mathInterpreter_MathExp' has cardinality 0..*, and from 'mathInterpreter_Exp', the role 'mathInterpreter_Exp' has cardinality 0..*.
+An association connects 'mathInterpreter_Exp' and 'mathInterpreter_Exp'. From 'mathInterpreter_Exp', the role 'mathInterpreter_Exp1' has cardinality 0..*, and from 'mathInterpreter_Exp', the role 'mathInterpreter_Exp3' has cardinality 0..*.
+An association connects 'mathInterpreter_Exp' and 'mathInterpreter_Exp'. From 'mathInterpreter_Exp', the role 'mathInterpreter_Exp4' has cardinality 0..*, and from 'mathInterpreter_Exp', the role 'mathInterpreter_Exp6' has cardinality 0..*.
+An association connects 'mathInterpreter_Exp' and 'mathInterpreter_Exp'. From 'mathInterpreter_Exp', the role 'mathInterpreter_Exp9' has cardinality 0..*, and from 'mathInterpreter_Exp', the role 'mathInterpreter_Exp7' has cardinality 0..*.

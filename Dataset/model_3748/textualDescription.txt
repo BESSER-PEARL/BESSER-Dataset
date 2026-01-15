@@ -1,0 +1,58 @@
+The domain model 'rdb' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'rdb_DB' represents an important domain concept.
+It has the following attributes: 'dbType', which is of type str; 'id', which is of type str; 'key', which is of type str; 'comment', which is of type str; 'url', which is of type str; 'sid', which is of type str.
+
+'ERDInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_Relation' represents an important domain concept.
+It has the following attributes: 'comment', which is of type str; 'constraint_name', which is of type str; 'referenced_column_name', which is of type str; 'source_kind', which is of type str; 'column_name', which is of type str; 'target_kind', which is of type str; 'bendpoint', which is of type str.
+
+'rdb_UserComment' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'rdb_View' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_ERDInfo' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'autoLayout', which is of type bool.
+
+'Table' represents an important domain concept.
+It does not declare any attributes.
+
+'rdb_Column' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'default', which is of type str; 'logicalField', which is of type str; 'key', which is of type str; 'comment', which is of type str; 'field', which is of type str; 'extra', which is of type str; 'null', which is of type str.
+
+'rdb_Table' represents an important domain concept.
+It has the following attributes: 'constraints', which is of type str; 'logicalName', which is of type str; 'comment', which is of type str; 'name', which is of type str.
+
+'rdb_Style' represents an important domain concept.
+It has the following attributes: 'columnComment', which is of type str; 'columnNullCheck', which is of type str; 'columnPrimaryKey', which is of type str; 'tableTitle', which is of type str; 'grid', which is of type str; 'columnName', which is of type str; 'columnType', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RelationKind' defines the following possible values: 'ZERO_OR_ONE', 'ONLY_ONE', 'ONE_OR_MANY', 'ZERO_OR_MANY'.
+
+The model also captures inheritance relationships between classes.
+The class 'rdb_DB' is a specialization of 'ERDInfo'.
+The class 'rdb_View' is a specialization of 'Table'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rdb_DB' and 'rdb_Table'. From 'rdb_DB', the role 'db' has cardinality 0..*, and from 'rdb_Table', the role 'Table' has cardinality 0..*.
+An association connects 'rdb_Relation' and 'rdb_DB'. From 'rdb_Relation', the role 'Relation' has cardinality 0..*, and from 'rdb_DB', the role 'db2' has cardinality 0..*.
+An association connects 'rdb_DB' and 'rdb_UserComment'. From 'rdb_DB', the role 'rdb_DB' has cardinality 0..*, and from 'rdb_UserComment', the role 'rdb_UserComment' has cardinality 0..*.
+An association connects 'rdb_DB' and 'rdb_Style'. From 'rdb_DB', the role 'db5' has cardinality 0..*, and from 'rdb_Style', the role 'Style' has cardinality 0..*.
+An association connects 'rdb_Column' and 'rdb_Table'. From 'rdb_Column', the role 'Column' has cardinality 0..*, and from 'rdb_Table', the role 'table' has cardinality 0..*.
+An association connects 'rdb_DB' and 'rdb_Table'. From 'rdb_DB', the role 'DB' has cardinality 0..*, and from 'rdb_Table', the role 'tables' has cardinality 0..*.
+An association connects 'rdb_Table' and 'rdb_Relation'. From 'rdb_Table', the role 'target' has cardinality 0..*, and from 'rdb_Relation', the role 'Relation9' has cardinality 0..*.
+An association connects 'rdb_Table' and 'rdb_Relation'. From 'rdb_Table', the role 'source' has cardinality 0..*, and from 'rdb_Relation', the role 'Relation11' has cardinality 0..*.
+An association connects 'rdb_Table' and 'rdb_UserComment'. From 'rdb_Table', the role 'rdb_Table' has cardinality 0..*, and from 'rdb_UserComment', the role 'rdb_UserComment13' has cardinality 0..*.
+An association connects 'rdb_Table' and 'rdb_Column'. From 'rdb_Table', the role 'Table15' has cardinality 0..*, and from 'rdb_Column', the role 'columns' has cardinality 0..*.
+An association connects 'rdb_Relation' and 'rdb_Table'. From 'rdb_Relation', the role 'outgoingLinks' has cardinality 0..*, and from 'rdb_Table', the role 'Table17' has cardinality 0..*.
+An association connects 'rdb_Table' and 'rdb_Relation'. From 'rdb_Table', the role 'Table19' has cardinality 0..*, and from 'rdb_Relation', the role 'incomingLinks' has cardinality 0..*.
+An association connects 'rdb_DB' and 'rdb_Relation'. From 'rdb_DB', the role 'DB21' has cardinality 0..*, and from 'rdb_Relation', the role 'references' has cardinality 0..*.
+An association connects 'rdb_View' and 'rdb_Table'. From 'rdb_View', the role 'rdb_View' has cardinality 0..*, and from 'rdb_Table', the role 'rdb_Table23' has cardinality 0..*.
+An association connects 'rdb_Style' and 'rdb_ERDInfo'. From 'rdb_Style', the role 'rdb_Style' has cardinality 0..*, and from 'rdb_ERDInfo', the role 'rdb_ERDInfo' has cardinality 0..*.
+An association connects 'rdb_DB' and 'rdb_Style'. From 'rdb_DB', the role 'DB26' has cardinality 0..*, and from 'rdb_Style', the role 'styledReference' has cardinality 0..*.

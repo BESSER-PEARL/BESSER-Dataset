@@ -1,0 +1,56 @@
+The domain model 'ioAutomaton' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'ioAutomaton_AutomatonCollection' represents an important domain concept.
+It does not declare any attributes.
+
+'ioAutomaton_Automaton' represents an important domain concept.
+It does not declare any attributes.
+
+'ioAutomaton_SystemActor' represents an important domain concept.
+It does not declare any attributes.
+
+'ioAutomaton_OutMessage' represents an important domain concept.
+It does not declare any attributes.
+
+'ioAutomaton_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'ioAutomaton_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'ioAutomaton_State' represents an important domain concept.
+It does not declare any attributes.
+
+'ioAutomaton_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'ioAutomaton_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'ioAutomaton_State' is a specialization of 'State'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ioAutomaton_Automaton' and 'ioAutomaton_AutomatonCollection'. From 'ioAutomaton_Automaton', the role 'Automaton' has cardinality 0..*, and from 'ioAutomaton_AutomatonCollection', the role 'collection' has cardinality 0..*.
+An association connects 'ioAutomaton_Automaton' and 'ioAutomaton_SystemActor'. From 'ioAutomaton_Automaton', the role 'ioAutomaton_Automaton' has cardinality 0..*, and from 'ioAutomaton_SystemActor', the role 'ioAutomaton_SystemActor' has cardinality 0..*.
+An association connects 'ioAutomaton_State' and 'ioAutomaton_Automaton'. From 'ioAutomaton_State', the role 'State' has cardinality 0..*, and from 'ioAutomaton_Automaton', the role 'automaton' has cardinality 0..*.
+An association connects 'ioAutomaton_Transition' and 'ioAutomaton_Automaton'. From 'ioAutomaton_Transition', the role 'Transition' has cardinality 0..*, and from 'ioAutomaton_Automaton', the role 'automaton4' has cardinality 0..*.
+An association connects 'ioAutomaton_Automaton' and 'ioAutomaton_AutomatonCollection'. From 'ioAutomaton_Automaton', the role 'automaton6' has cardinality 0..*, and from 'ioAutomaton_AutomatonCollection', the role 'AutomatonCollection' has cardinality 0..*.
+An association connects 'ioAutomaton_State' and 'ioAutomaton_Automaton'. From 'ioAutomaton_State', the role 'ioAutomaton_State' has cardinality 0..*, and from 'ioAutomaton_Automaton', the role 'ioAutomaton_Automaton8' has cardinality 0..*.
+An association connects 'ioAutomaton_State' and 'ioAutomaton_Automaton'. From 'ioAutomaton_State', the role 'state' has cardinality 0..*, and from 'ioAutomaton_Automaton', the role 'Automaton10' has cardinality 0..*.
+An association connects 'ioAutomaton_Transition' and 'ioAutomaton_State'. From 'ioAutomaton_Transition', the role 'Transition12' has cardinality 0..*, and from 'ioAutomaton_State', the role 'preState' has cardinality 0..*.
+An association connects 'ioAutomaton_State' and 'ioAutomaton_Transition'. From 'ioAutomaton_State', the role 'postState' has cardinality 0..*, and from 'ioAutomaton_Transition', the role 'Transition14' has cardinality 0..*.
+An association connects 'ioAutomaton_Automaton' and 'ioAutomaton_Transition'. From 'ioAutomaton_Automaton', the role 'Automaton16' has cardinality 0..*, and from 'ioAutomaton_Transition', the role 'transition' has cardinality 0..*.
+An association connects 'ioAutomaton_State' and 'ioAutomaton_Transition'. From 'ioAutomaton_State', the role 'State18' has cardinality 0..*, and from 'ioAutomaton_Transition', the role 'outgoingTransition' has cardinality 0..*.
+An association connects 'ioAutomaton_Operation' and 'ioAutomaton_Transition'. From 'ioAutomaton_Operation', the role 'ioAutomaton_Operation' has cardinality 0..*, and from 'ioAutomaton_Transition', the role 'ioAutomaton_Transition' has cardinality 0..*.
+An association connects 'ioAutomaton_OutMessage' and 'ioAutomaton_Transition'. From 'ioAutomaton_OutMessage', the role 'ioAutomaton_OutMessage' has cardinality 0..*, and from 'ioAutomaton_Transition', the role 'ioAutomaton_Transition21' has cardinality 0..*.
+An association connects 'ioAutomaton_Return' and 'ioAutomaton_Transition'. From 'ioAutomaton_Return', the role 'ioAutomaton_Return' has cardinality 0..*, and from 'ioAutomaton_Transition', the role 'ioAutomaton_Transition23' has cardinality 0..*.
+An association connects 'ioAutomaton_State' and 'ioAutomaton_Transition'. From 'ioAutomaton_State', the role 'State25' has cardinality 0..*, and from 'ioAutomaton_Transition', the role 'incomingTransition' has cardinality 0..*.
+An association connects 'ioAutomaton_Operation' and 'ioAutomaton_OutMessage'. From 'ioAutomaton_Operation', the role 'ioAutomaton_Operation28' has cardinality 0..*, and from 'ioAutomaton_OutMessage', the role 'ioAutomaton_OutMessage27' has cardinality 0..*.
+An association connects 'ioAutomaton_OutMessage' and 'ioAutomaton_Actor'. From 'ioAutomaton_OutMessage', the role 'ioAutomaton_OutMessage30' has cardinality 0..*, and from 'ioAutomaton_Actor', the role 'ioAutomaton_Actor' has cardinality 0..*.
+An association connects 'ioAutomaton_OutMessage' and 'ioAutomaton_Return'. From 'ioAutomaton_OutMessage', the role 'ioAutomaton_OutMessage32' has cardinality 0..*, and from 'ioAutomaton_Return', the role 'ioAutomaton_Return33' has cardinality 0..*.

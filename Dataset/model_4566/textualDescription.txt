@@ -1,0 +1,93 @@
+The domain model 'RobyOneKenoby' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'RobyOneKenoby_While' represents an important domain concept.
+It does not declare any attributes.
+
+'Order' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_NewEClass16' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_Order' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_NewEClass12' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_And' represents an important domain concept.
+It does not declare any attributes.
+
+'Test' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_NewEClass14' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_NewEClass15' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_RobyLanguage' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_If' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_LanguageElmt' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_NewEClass18' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_Obstacle' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_HasTurned' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_NewEClass13' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_Test' represents an important domain concept.
+It does not declare any attributes.
+
+'LanguageElmt' represents an important domain concept.
+It does not declare any attributes.
+
+'RobyOneKenoby_NewEClass17' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'RobyOneKenoby_Test' is a specialization of 'LanguageElmt'.
+The class 'RobyOneKenoby_Order' is a specialization of 'LanguageElmt'.
+The class 'RobyOneKenoby_Condition' is a specialization of 'LanguageElmt'.
+The class 'RobyOneKenoby_If' is a specialization of 'Condition'.
+The class 'RobyOneKenoby_While' is a specialization of 'Condition'.
+The class 'RobyOneKenoby_Not' is a specialization of 'Test'.
+The class 'RobyOneKenoby_And' is a specialization of 'Test'.
+The class 'RobyOneKenoby_Obstacle' is a specialization of 'Test'.
+The class 'RobyOneKenoby_HasTurned' is a specialization of 'Test'.
+The class 'RobyOneKenoby_NewEClass12' is a specialization of 'Order'.
+The class 'RobyOneKenoby_NewEClass13' is a specialization of 'Order'.
+The class 'RobyOneKenoby_NewEClass14' is a specialization of 'Order'.
+The class 'RobyOneKenoby_NewEClass15' is a specialization of 'Order'.
+The class 'RobyOneKenoby_NewEClass16' is a specialization of 'Order'.
+The class 'RobyOneKenoby_NewEClass17' is a specialization of 'Order'.
+The class 'RobyOneKenoby_NewEClass18' is a specialization of 'Order'.
+
+Relationships between classes are modeled using associations.
+An association connects 'RobyOneKenoby_LanguageElmt' and 'RobyOneKenoby_RobyLanguage'. From 'RobyOneKenoby_LanguageElmt', the role 'RobyOneKenoby_LanguageElmt' has cardinality 0..*, and from 'RobyOneKenoby_RobyLanguage', the role 'RobyOneKenoby_RobyLanguage' has cardinality 0..*.
+An association connects 'RobyOneKenoby_Test' and 'RobyOneKenoby_Condition'. From 'RobyOneKenoby_Test', the role 'RobyOneKenoby_Test' has cardinality 0..*, and from 'RobyOneKenoby_Condition', the role 'RobyOneKenoby_Condition' has cardinality 0..*.
+An association connects 'RobyOneKenoby_Test' and 'RobyOneKenoby_Not'. From 'RobyOneKenoby_Test', the role 'RobyOneKenoby_Test3' has cardinality 0..*, and from 'RobyOneKenoby_Not', the role 'RobyOneKenoby_Not' has cardinality 0..*.
+An association connects 'RobyOneKenoby_Test' and 'RobyOneKenoby_And'. From 'RobyOneKenoby_Test', the role 'RobyOneKenoby_Test5' has cardinality 0..*, and from 'RobyOneKenoby_And', the role 'RobyOneKenoby_And' has cardinality 0..*.

@@ -1,0 +1,26 @@
+The domain model 'UML2' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'UML2_ExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_StructuralFeature' represents an important domain concept.
+It has one attribute: 'isReadOnly', which is of type bool.
+
+'UML2_Property' represents an important domain concept.
+It has one attribute: 'isDerivedUnion', which is of type bool.
+
+The model also captures inheritance relationships between classes.
+The class 'UML2_Property' is a specialization of 'StructuralFeature'.
+The class 'UML2_Port' is a specialization of 'Property'.
+The class 'UML2_ExtensionEnd' is a specialization of 'Property'.

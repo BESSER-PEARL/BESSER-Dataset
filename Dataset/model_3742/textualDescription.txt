@@ -1,0 +1,309 @@
+The domain model 'ORDB4ORA' describes the core structural elements and their relationships within the system.
+
+The model defines 64 main class(es).
+
+'Datatype' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_DatetimeType' represents an important domain concept.
+It has the following attributes: 'SecondPrecision_Min', which is of type int; 'SecondPrecision_Max', which is of type int; 'YearPrecision_Min', which is of type int; 'YearPrecision_Max', which is of type int; 'SecondPrecision_Def', which is of type int; 'DayPrecision_Min', which is of type int; 'YearPrecision_Def', which is of type int; 'Descriptor', which is of type str; 'DayPrecision_Def', which is of type int; 'DayPrecision_Max', which is of type int.
+
+'ORDB4ORA_XMLType' represents an important domain concept.
+It has one attribute: 'Descriptor', which is of type str.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_AnyType' represents an important domain concept.
+It has one attribute: 'Descriptor', which is of type str.
+
+'ORDB4ORA_StructuredType' represents an important domain concept.
+It has the following attributes: 'is_instantiable', which is of type bool; 'is_final', which is of type bool; 'Name', which is of type str.
+
+'ORDB4ORA_NotNull' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'ORDB4ORA_Varray' represents an important domain concept.
+It has the following attributes: 'NumElements', which is of type int; 'Name', which is of type str.
+
+'ORDB4ORA_Datatype' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_SpacialType' represents an important domain concept.
+It has one attribute: 'Descriptor', which is of type str.
+
+'ORDB4ORA_DatetimeFeature' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'ORDB4ORA_Table' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'BuiltInType' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_ROWIDType' represents an important domain concept.
+It has the following attributes: 'Size_Min', which is of type int; 'Size_Max', which is of type int; 'Descriptor', which is of type str.
+
+'ORDB4ORA_Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_Trigger' represents an important domain concept.
+It has the following attributes: 'Body', which is of type str; 'Event', which is of type str; 'Action', which is of type str; 'Name', which is of type str.
+
+'ORDB4ORA_Operation' represents an important domain concept.
+It has the following attributes: 'Body', which is of type str; 'Name', which is of type str.
+
+'ORDB4ORA_Column' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_ANSINumberType' represents an important domain concept.
+It has one attribute: 'Descriptor', which is of type str.
+
+'ORDB4ORA_Unique' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'BasicDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_NestedTableType' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'Table' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_StructuralComponent' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'ANSIType' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_IntervalFeature' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'ORDB4ORA_ANSICharacterType' represents an important domain concept.
+It has one attribute: 'Descriptor', which is of type str.
+
+'DerivedTable' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_Model' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'SuppliedType' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_MethodParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_View' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_TypedTable' represents an important domain concept.
+It does not declare any attributes.
+
+'Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_Method' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Body', which is of type str.
+
+'ORDB4ORA_NumberFeature' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'ORDB4ORA_Package' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'ORDB4ORA_RowFeature' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'ORDB4ORA_ForeignKey' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'OnDelete', which is of type str.
+
+'ORDB4ORA_MediaType' represents an important domain concept.
+It has one attribute: 'Descriptor', which is of type str.
+
+'ORDB4ORA_Check' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Condition', which is of type str.
+
+'ORDB4ORA_ANSIType' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_Restriction' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_Attribute' represents an important domain concept.
+It has one attribute: 'default', which is of type str.
+
+'ORDB4ORA_Parameter' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'ORDB4ORA_Procedure' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_BuiltInNumberType' represents an important domain concept.
+It has the following attributes: 'Scale_Min', which is of type int; 'Descriptor', which is of type str; 'Precision_Max', which is of type int; 'Scale_Max', which is of type int; 'Precision_Mn', which is of type int.
+
+'ORDB4ORA_PrimaryKey' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'ORDB4ORA_RawFeature' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'ORDB4ORA_CharacterFeature' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str.
+
+'ORDB4ORA_BasicDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_StoredNestedTable' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'ORDB4ORA_OperationParameter' represents an important domain concept.
+It has one attribute: 'Mode', which is of type str.
+
+'ORDB4ORA_DerivedTable' represents an important domain concept.
+It has one attribute: 'query_expression', which is of type str.
+
+'ORDB4ORA_SuppliedType' represents an important domain concept.
+It does not declare any attributes.
+
+'Restriction' represents an important domain concept.
+It does not declare any attributes.
+
+'ORDB4ORA_BuiltInCharacterType' represents an important domain concept.
+It has the following attributes: 'Semantic', which is of type str; 'Size_Min', which is of type int; 'Size_Max', which is of type int; 'Descriptor', which is of type str; 'Size_Def', which is of type int.
+
+'ORDB4ORA_LOBType' represents an important domain concept.
+It has one attribute: 'Descriptor', which is of type str.
+
+'ORDB4ORA_ReferenceType' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'ORDB4ORA_LongAndRawType' represents an important domain concept.
+It has the following attributes: 'Size_Max', which is of type int; 'Descriptor', which is of type str; 'Size_Min', which is of type int.
+
+'ORDB4ORA_BuiltInType' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ANSINumberTypes' defines the following possible values: 'DEC', 'INTEGER', 'FLOAT', 'SMALLINT', 'REAL', 'DOUBLEPRECISION', 'NUMERIC', 'DECIMAL', 'INT'.
+The enumeration 'SuppliedMediaTypes' defines the following possible values: 'ORDImage', 'SI_COLOR', 'SI_POSITIONALCOLOR', 'ORDDoc', 'ORDVideo', 'SI_AVERAGECOLOR', 'SI_FEATURELIST', 'SI_TEXTURE', 'SI_STILLIMAGE', 'ORDImageSignature', 'ORDAudio', 'SI_COLORHISTOGRAM'.
+The enumeration 'ONDELETEActions' defines the following possible values: 'SETNULL', 'CASCADE'.
+The enumeration 'SuppliedSpacialTypes' defines the following possible values: 'SDO_TOPO_GEOMETRY', 'SDO_GEOMETRY', 'SDO_RASTER'.
+The enumeration 'TriggerActionTime' defines the following possible values: 'INSTEADOF', 'AFTER', 'BEFORE'.
+The enumeration 'SuppliedXMLTypes' defines the following possible values: 'URITYPE', 'XMLTYPE'.
+The enumeration 'TriggerEvent' defines the following possible values: 'INSERT', 'DELETE', 'UPDATE'.
+The enumeration 'BuiltNumberTypes' defines the following possible values: 'NUMBER', 'BINARY_DOUBLE', 'BINARY_FLOAT'.
+The enumeration 'SuppliedAnyTypes' defines the following possible values: 'SYSANYDATA', 'SYSANYTYPE', 'SYSANYDATASET'.
+The enumeration 'DatetimeFeatures' defines a single possible value: 'precision'.
+The enumeration 'ANSICharacterTypes' defines the following possible values: 'VARCHAR', 'NCHARVARYING', 'CHARVARYING', 'NATIONALCHARACTER', 'NATIONALCHARACTERVARYING', 'CHARACTER', 'NATIONALCHAR', 'CHARACTERVARYING', 'NATIONALCHARVARYING'.
+The enumeration 'CharacterFeatures' defines the following possible values: 'semantic', 'size'.
+The enumeration 'RowFeatures' defines a single possible value: 'size'.
+The enumeration 'NumberFeatures' defines the following possible values: 'scale', 'size', 'precision'.
+The enumeration 'BuiltInCharacterTypes' defines the following possible values: 'NVARCHAR2', 'VARCHAR2', 'CHAR', 'NCHAR'.
+The enumeration 'RawFeatures' defines a single possible value: 'size'.
+The enumeration 'BuiltInLongAndRawTypes' defines the following possible values: 'LONGRAW', 'LONG', 'RAW'.
+The enumeration 'BuiltInROWIDType' defines the following possible values: 'ROWID', 'UROWID'.
+The enumeration 'ParameterMode' defines the following possible values: 'IN', 'INOUT', 'OUT'.
+The enumeration 'BuiltInDatetimeTypes' defines the following possible values: 'TIMESTAMP', 'TIMESTAMPWITHLOCALTIMEZONE', 'INTERVALYEARTOMONTH', 'TIMESTAMPWITHTIMEZONE', 'INTERVALDAYTOSECOND', 'DATE'.
+The enumeration 'IntervalFeatures' defines the following possible values: 'year_precision', 'second_precision', 'day_precision'.
+The enumeration 'BuiltInLOBType' defines the following possible values: 'NLOB', 'CLOB', 'BLOB', 'BFILE'.
+The enumeration 'BuiltInCharacterSemantics' defines the following possible values: 'CHAR', 'BYTE'.
+
+The model also captures inheritance relationships between classes.
+The class 'ORDB4ORA_ANSICharacterType' is a specialization of 'ANSIType'.
+The class 'ORDB4ORA_ANSINumberType' is a specialization of 'ANSIType'.
+The class 'ORDB4ORA_ANSIType' is a specialization of 'BasicDataType'.
+The class 'ORDB4ORA_AnyType' is a specialization of 'SuppliedType'.
+The class 'ORDB4ORA_Attribute' is a specialization of 'StructuralComponent'.
+The class 'ORDB4ORA_BasicDataType' is a specialization of 'Datatype'.
+The class 'ORDB4ORA_BuiltInCharacterType' is a specialization of 'BuiltInType'.
+The class 'ORDB4ORA_BuiltInNumberType' is a specialization of 'BuiltInType'.
+The class 'ORDB4ORA_BuiltInType' is a specialization of 'BasicDataType'.
+The class 'ORDB4ORA_CharacterFeature' is a specialization of 'Feature'.
+The class 'ORDB4ORA_Check' is a specialization of 'Restriction'.
+The class 'ORDB4ORA_Column' is a specialization of 'StructuralComponent'.
+The class 'ORDB4ORA_DatetimeFeature' is a specialization of 'Feature'.
+The class 'ORDB4ORA_DatetimeType' is a specialization of 'BuiltInType'.
+The class 'ORDB4ORA_ForeignKey' is a specialization of 'Restriction'.
+The class 'ORDB4ORA_Function' is a specialization of 'Operation'.
+The class 'ORDB4ORA_IntervalFeature' is a specialization of 'Feature'.
+The class 'ORDB4ORA_LOBType' is a specialization of 'BuiltInType'.
+The class 'ORDB4ORA_LongAndRawType' is a specialization of 'BuiltInType'.
+The class 'ORDB4ORA_MediaType' is a specialization of 'SuppliedType'.
+The class 'ORDB4ORA_MethodParameter' is a specialization of 'Parameter'.
+The class 'ORDB4ORA_NestedTableType' is a specialization of 'Datatype'.
+The class 'ORDB4ORA_NotNull' is a specialization of 'Restriction'.
+The class 'ORDB4ORA_NumberFeature' is a specialization of 'Feature'.
+The class 'ORDB4ORA_OperationParameter' is a specialization of 'Parameter'.
+The class 'ORDB4ORA_PrimaryKey' is a specialization of 'Restriction'.
+The class 'ORDB4ORA_Procedure' is a specialization of 'Operation'.
+The class 'ORDB4ORA_ROWIDType' is a specialization of 'BuiltInType'.
+The class 'ORDB4ORA_RawFeature' is a specialization of 'Feature'.
+The class 'ORDB4ORA_ReferenceType' is a specialization of 'Datatype'.
+The class 'ORDB4ORA_RowFeature' is a specialization of 'Feature'.
+The class 'ORDB4ORA_SpacialType' is a specialization of 'SuppliedType'.
+The class 'ORDB4ORA_StructuredType' is a specialization of 'Datatype'.
+The class 'ORDB4ORA_SuppliedType' is a specialization of 'BasicDataType'.
+The class 'ORDB4ORA_TypedTable' is a specialization of 'Table'.
+The class 'ORDB4ORA_Unique' is a specialization of 'Restriction'.
+The class 'ORDB4ORA_Varray' is a specialization of 'Datatype'.
+The class 'ORDB4ORA_XMLType' is a specialization of 'SuppliedType'.
+The class 'ORDB4ORA_DerivedTable' is a specialization of 'Table'.
+The class 'ORDB4ORA_View' is a specialization of 'DerivedTable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ORDB4ORA_Attribute' and 'ORDB4ORA_StructuredType'. From 'ORDB4ORA_Attribute', the role 'attribute' has cardinality 0..*, and from 'ORDB4ORA_StructuredType', the role 'StructuredType' has cardinality 0..*.
+An association connects 'ORDB4ORA_Table' and 'ORDB4ORA_Column'. From 'ORDB4ORA_Table', the role 'Table' has cardinality 0..*, and from 'ORDB4ORA_Column', the role 'columns' has cardinality 0..*.
+An association connects 'ORDB4ORA_Datatype' and 'ORDB4ORA_Model'. From 'ORDB4ORA_Datatype', the role 'datatype' has cardinality 0..*, and from 'ORDB4ORA_Model', the role 'Model' has cardinality 0..*.
+An association connects 'ORDB4ORA_Table' and 'ORDB4ORA_ForeignKey'. From 'ORDB4ORA_Table', the role 'ORDB4ORA_Table' has cardinality 0..*, and from 'ORDB4ORA_ForeignKey', the role 'ORDB4ORA_ForeignKey' has cardinality 0..*.
+An association connects 'ORDB4ORA_Datatype' and 'ORDB4ORA_Function'. From 'ORDB4ORA_Datatype', the role 'ORDB4ORA_Datatype' has cardinality 0..*, and from 'ORDB4ORA_Function', the role 'ORDB4ORA_Function' has cardinality 0..*.
+An association connects 'ORDB4ORA_Method' and 'ORDB4ORA_Method'. From 'ORDB4ORA_Method', the role 'ORDB4ORA_Method5' has cardinality 0..*, and from 'ORDB4ORA_Method', the role 'ORDB4ORA_Method' has cardinality 0..*.
+An association connects 'ORDB4ORA_StructuredType' and 'ORDB4ORA_Method'. From 'ORDB4ORA_StructuredType', the role 'StructuredType8' has cardinality 0..*, and from 'ORDB4ORA_Method', the role 'method' has cardinality 0..*.
+An association connects 'ORDB4ORA_Method' and 'ORDB4ORA_MethodParameter'. From 'ORDB4ORA_Method', the role 'method10' has cardinality 0..*, and from 'ORDB4ORA_MethodParameter', the role 'MethodParameter' has cardinality 0..*.
+An association connects 'ORDB4ORA_Method' and 'ORDB4ORA_Datatype'. From 'ORDB4ORA_Method', the role 'ORDB4ORA_Method12' has cardinality 0..*, and from 'ORDB4ORA_Datatype', the role 'ORDB4ORA_Datatype13' has cardinality 0..*.
+An association connects 'ORDB4ORA_Method' and 'ORDB4ORA_MethodParameter'. From 'ORDB4ORA_Method', the role 'Method' has cardinality 0..*, and from 'ORDB4ORA_MethodParameter', the role 'parameters' has cardinality 0..*.
+An association connects 'ORDB4ORA_Model' and 'ORDB4ORA_Datatype'. From 'ORDB4ORA_Model', the role 'model' has cardinality 0..*, and from 'ORDB4ORA_Datatype', the role 'Datatype' has cardinality 0..*.
+An association connects 'ORDB4ORA_Model' and 'ORDB4ORA_Table'. From 'ORDB4ORA_Model', the role 'model17' has cardinality 0..*, and from 'ORDB4ORA_Table', the role 'Table18' has cardinality 0..*.
+An association connects 'ORDB4ORA_Operation' and 'ORDB4ORA_Model'. From 'ORDB4ORA_Operation', the role 'Operation' has cardinality 0..*, and from 'ORDB4ORA_Model', the role 'model20' has cardinality 0..*.
+An association connects 'ORDB4ORA_Package' and 'ORDB4ORA_Model'. From 'ORDB4ORA_Package', the role 'Package' has cardinality 0..*, and from 'ORDB4ORA_Model', the role 'model22' has cardinality 0..*.
+An association connects 'ORDB4ORA_Datatype' and 'ORDB4ORA_NestedTableType'. From 'ORDB4ORA_Datatype', the role 'ORDB4ORA_Datatype24' has cardinality 0..*, and from 'ORDB4ORA_NestedTableType', the role 'ORDB4ORA_NestedTableType' has cardinality 0..*.
+An association connects 'ORDB4ORA_OperationParameter' and 'ORDB4ORA_Operation'. From 'ORDB4ORA_OperationParameter', the role 'OperationParameter' has cardinality 0..*, and from 'ORDB4ORA_Operation', the role 'operation' has cardinality 0..*.
+An association connects 'ORDB4ORA_Operation' and 'ORDB4ORA_Model'. From 'ORDB4ORA_Operation', the role 'operation27' has cardinality 0..*, and from 'ORDB4ORA_Model', the role 'Model28' has cardinality 0..*.
+An association connects 'ORDB4ORA_Operation' and 'ORDB4ORA_Package'. From 'ORDB4ORA_Operation', the role 'operations' has cardinality 0..*, and from 'ORDB4ORA_Package', the role 'Package30' has cardinality 0..*.
+An association connects 'ORDB4ORA_OperationParameter' and 'ORDB4ORA_Operation'. From 'ORDB4ORA_OperationParameter', the role 'operationParameters' has cardinality 0..*, and from 'ORDB4ORA_Operation', the role 'Operation32' has cardinality 0..*.
+An association connects 'ORDB4ORA_Package' and 'ORDB4ORA_Operation'. From 'ORDB4ORA_Package', the role 'package' has cardinality 0..*, and from 'ORDB4ORA_Operation', the role 'Operation34' has cardinality 0..*.
+An association connects 'ORDB4ORA_Model' and 'ORDB4ORA_Package'. From 'ORDB4ORA_Model', the role 'Model37' has cardinality 0..*, and from 'ORDB4ORA_Package', the role 'package36' has cardinality 0..*.
+An association connects 'ORDB4ORA_Datatype' and 'ORDB4ORA_Parameter'. From 'ORDB4ORA_Datatype', the role 'ORDB4ORA_Datatype39' has cardinality 0..*, and from 'ORDB4ORA_Parameter', the role 'ORDB4ORA_Parameter' has cardinality 0..*.
+An association connects 'ORDB4ORA_ReferenceType' and 'ORDB4ORA_StructuredType'. From 'ORDB4ORA_ReferenceType', the role 'ORDB4ORA_ReferenceType' has cardinality 0..*, and from 'ORDB4ORA_StructuredType', the role 'ORDB4ORA_StructuredType' has cardinality 0..*.
+An association connects 'ORDB4ORA_Restriction' and 'ORDB4ORA_StructuralComponent'. From 'ORDB4ORA_Restriction', the role 'restrictions' has cardinality 0..*, and from 'ORDB4ORA_StructuralComponent', the role 'StructuralComponent' has cardinality 0..*.
+An association connects 'ORDB4ORA_Table' and 'ORDB4ORA_Restriction'. From 'ORDB4ORA_Table', the role 'Table43' has cardinality 0..*, and from 'ORDB4ORA_Restriction', the role 'restriction' has cardinality 0..*.
+An association connects 'ORDB4ORA_Attribute' and 'ORDB4ORA_StoredNestedTable'. From 'ORDB4ORA_Attribute', the role 'ORDB4ORA_Attribute' has cardinality 0..*, and from 'ORDB4ORA_StoredNestedTable', the role 'ORDB4ORA_StoredNestedTable' has cardinality 0..*.
+An association connects 'ORDB4ORA_TypedTable' and 'ORDB4ORA_StoredNestedTable'. From 'ORDB4ORA_TypedTable', the role 'TypedTable' has cardinality 0..*, and from 'ORDB4ORA_StoredNestedTable', the role 'storedNested' has cardinality 0..*.
+An association connects 'ORDB4ORA_Datatype' and 'ORDB4ORA_StructuralComponent'. From 'ORDB4ORA_Datatype', the role 'ORDB4ORA_Datatype47' has cardinality 0..*, and from 'ORDB4ORA_StructuralComponent', the role 'ORDB4ORA_StructuralComponent' has cardinality 0..*.
+An association connects 'ORDB4ORA_StructuralComponent' and 'ORDB4ORA_Feature'. From 'ORDB4ORA_StructuralComponent', the role 'ORDB4ORA_StructuralComponent49' has cardinality 0..*, and from 'ORDB4ORA_Feature', the role 'ORDB4ORA_Feature' has cardinality 0..*.
+An association connects 'ORDB4ORA_StructuralComponent' and 'ORDB4ORA_Restriction'. From 'ORDB4ORA_StructuralComponent', the role 'attributes' has cardinality 0..*, and from 'ORDB4ORA_Restriction', the role 'Restriction' has cardinality 0..*.
+An association connects 'ORDB4ORA_StructuredType' and 'ORDB4ORA_Attribute'. From 'ORDB4ORA_StructuredType', the role 'structured' has cardinality 0..*, and from 'ORDB4ORA_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'ORDB4ORA_Method' and 'ORDB4ORA_StructuredType'. From 'ORDB4ORA_Method', the role 'Method54' has cardinality 0..*, and from 'ORDB4ORA_StructuredType', the role 'structured53' has cardinality 0..*.
+An association connects 'ORDB4ORA_TypedTable' and 'ORDB4ORA_StructuredType'. From 'ORDB4ORA_TypedTable', the role 'TypedTable56' has cardinality 0..*, and from 'ORDB4ORA_StructuredType', the role 'structuredType' has cardinality 0..*.
+An association connects 'ORDB4ORA_StructuredType' and 'ORDB4ORA_StructuredType'. From 'ORDB4ORA_StructuredType', the role 'ORDB4ORA_StructuredType59' has cardinality 0..*, and from 'ORDB4ORA_StructuredType', the role 'ORDB4ORA_StructuredType57' has cardinality 0..*.
+An association connects 'ORDB4ORA_Table' and 'ORDB4ORA_Restriction'. From 'ORDB4ORA_Table', the role 'table' has cardinality 0..*, and from 'ORDB4ORA_Restriction', the role 'Restriction61' has cardinality 0..*.
+An association connects 'ORDB4ORA_Table' and 'ORDB4ORA_Column'. From 'ORDB4ORA_Table', the role 'table63' has cardinality 0..*, and from 'ORDB4ORA_Column', the role 'Column' has cardinality 0..*.
+An association connects 'ORDB4ORA_Model' and 'ORDB4ORA_Table'. From 'ORDB4ORA_Model', the role 'Model66' has cardinality 0..*, and from 'ORDB4ORA_Table', the role 'table65' has cardinality 0..*.
+An association connects 'ORDB4ORA_Trigger' and 'ORDB4ORA_Table'. From 'ORDB4ORA_Trigger', the role 'Trigger' has cardinality 0..*, and from 'ORDB4ORA_Table', the role 'table68' has cardinality 0..*.
+An association connects 'ORDB4ORA_Trigger' and 'ORDB4ORA_StructuralComponent'. From 'ORDB4ORA_Trigger', the role 'ORDB4ORA_Trigger' has cardinality 0..*, and from 'ORDB4ORA_StructuralComponent', the role 'ORDB4ORA_StructuralComponent70' has cardinality 0..*.
+An association connects 'ORDB4ORA_Table' and 'ORDB4ORA_Trigger'. From 'ORDB4ORA_Table', the role 'Table72' has cardinality 0..*, and from 'ORDB4ORA_Trigger', the role 'triggers' has cardinality 0..*.
+An association connects 'ORDB4ORA_TypedTable' and 'ORDB4ORA_StoredNestedTable'. From 'ORDB4ORA_TypedTable', the role 'typed' has cardinality 0..*, and from 'ORDB4ORA_StoredNestedTable', the role 'StoredNestedTable' has cardinality 0..*.
+An association connects 'ORDB4ORA_TypedTable' and 'ORDB4ORA_StructuredType'. From 'ORDB4ORA_TypedTable', the role 'typed75' has cardinality 0..*, and from 'ORDB4ORA_StructuredType', the role 'StructuredType76' has cardinality 0..*.
+An association connects 'ORDB4ORA_Varray' and 'ORDB4ORA_Datatype'. From 'ORDB4ORA_Varray', the role 'ORDB4ORA_Varray' has cardinality 0..*, and from 'ORDB4ORA_Datatype', the role 'ORDB4ORA_Datatype78' has cardinality 0..*.
+An association connects 'ORDB4ORA_View' and 'ORDB4ORA_Table'. From 'ORDB4ORA_View', the role 'ORDB4ORA_View' has cardinality 0..*, and from 'ORDB4ORA_Table', the role 'ORDB4ORA_Table80' has cardinality 0..*.
+An association connects 'ORDB4ORA_StructuralComponent' and 'ORDB4ORA_View'. From 'ORDB4ORA_StructuralComponent', the role 'ORDB4ORA_StructuralComponent83' has cardinality 0..*, and from 'ORDB4ORA_View', the role 'ORDB4ORA_View82' has cardinality 0..*.

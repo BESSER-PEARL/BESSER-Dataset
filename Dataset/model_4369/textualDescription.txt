@@ -1,0 +1,87 @@
+The domain model 'klang' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'klang_TreeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'klang_EventHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'klang_SpriteActor' represents an important domain concept.
+It does not declare any attributes.
+
+'GlobalEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'klang_MessageReceivedEvent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'klang_ClickEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'klang_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'klang_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'klang_KeyPressEvent' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'klang_CollisionEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'klang_GameStartEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'ActorEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'klang_AbstractActor' represents an important domain concept.
+It has the following attributes: 'subject', which is of type str; 'subjectType', which is of type str; 'name', which is of type str.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'klang_ActorEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'klang_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'klang_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'klang_GlobalEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'klang_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'klang_SceneActor' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Keys' defines the following possible values: 'LEFT', 'O', 'RIGHT', 'E', 'M', 'C', 'G', 'V', 'SPACE', 'I', 'Y', 'F', 'W', 'J', 'S', 'DOWN', 'UP', 'D', 'R', 'K', 'U', 'Z', 'N', 'H', 'B', 'X', 'ENTER', 'T', 'L', 'A', 'P', 'Q'.
+
+The model also captures inheritance relationships between classes.
+The class 'klang_GameStartEvent' is a specialization of 'GlobalEvent'.
+The class 'klang_ClickEvent' is a specialization of 'ActorEvent'.
+The class 'klang_KeyPressEvent' is a specialization of 'GlobalEvent'.
+The class 'klang_CollisionEvent' is a specialization of 'ActorEvent'.
+The class 'klang_MessageReceivedEvent' is a specialization of 'GlobalEvent'.
+The class 'klang_GlobalEvent' is a specialization of 'Event'.
+The class 'klang_ActorEvent' is a specialization of 'Event'.
+
+Relationships between classes are modeled using associations.
+An association connects 'klang_SceneActor' and 'klang_Program'. From 'klang_SceneActor', the role 'sceneActor' has cardinality 0..*, and from 'klang_Program', the role 'Program' has cardinality 0..*.
+An association connects 'klang_Program' and 'klang_SpriteActor'. From 'klang_Program', the role 'Program2' has cardinality 0..*, and from 'klang_SpriteActor', the role 'spriteActors' has cardinality 0..*.
+An association connects 'klang_Statement' and 'klang_EventHandler'. From 'klang_Statement', the role 'klang_Statement' has cardinality 0..*, and from 'klang_EventHandler', the role 'klang_EventHandler' has cardinality 0..*.
+An association connects 'klang_EventHandler' and 'klang_Event'. From 'klang_EventHandler', the role 'klang_EventHandler5' has cardinality 0..*, and from 'klang_Event', the role 'klang_Event' has cardinality 0..*.
+An association connects 'klang_VariableDeclaration' and 'klang_Expression'. From 'klang_VariableDeclaration', the role 'klang_VariableDeclaration' has cardinality 0..*, and from 'klang_Expression', the role 'klang_Expression' has cardinality 0..*.
+An association connects 'klang_EventHandler' and 'klang_AbstractActor'. From 'klang_EventHandler', the role 'EventHandler' has cardinality 0..*, and from 'klang_AbstractActor', the role 'actor' has cardinality 0..*.
+An association connects 'klang_VariableDeclaration' and 'klang_AbstractActor'. From 'klang_VariableDeclaration', the role 'VariableDeclaration' has cardinality 0..*, and from 'klang_AbstractActor', the role 'actor9' has cardinality 0..*.
+An association connects 'klang_CollisionEvent' and 'klang_SpriteActor'. From 'klang_CollisionEvent', the role 'klang_CollisionEvent' has cardinality 0..*, and from 'klang_SpriteActor', the role 'klang_SpriteActor' has cardinality 0..*.
+An association connects 'klang_Program' and 'klang_SceneActor'. From 'klang_Program', the role 'program' has cardinality 0..*, and from 'klang_SceneActor', the role 'SceneActor' has cardinality 0..*.
+An association connects 'klang_SpriteActor' and 'klang_Program'. From 'klang_SpriteActor', the role 'SpriteActor' has cardinality 0..*, and from 'klang_Program', the role 'program13' has cardinality 0..*.

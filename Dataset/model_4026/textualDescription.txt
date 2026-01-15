@@ -1,0 +1,92 @@
+The domain model 'UML_14' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'UML_14_root' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Eigenschaft' represents an important domain concept.
+It has the following attributes: 'sichtbarkeit', which is of type str; 'initialWert', which is of type str.
+
+'UML_14_Verhalten' represents an important domain concept.
+It has the following attributes: 'inhlat', which is of type str; 'sichtbarkeit', which is of type str.
+
+'UML_14_Verbindungsende' represents an important domain concept.
+It has the following attributes: 'istNavigierbar', which is of type str; 'sichtbarkeit', which is of type str.
+
+'UML_14_Schachtel' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Aufzaehlung' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Einfach' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Vererbung' represents an important domain concept.
+It has one attribute: 'unterscheidung', which is of type str.
+
+'UML_14_Aufzaehlungswert' represents an important domain concept.
+It has one attribute: 'wert', which is of type str.
+
+'UML_14_InstanzAnzahl' represents an important domain concept.
+It has the following attributes: 'untergrenze', which is of type str; 'obergrenze', which is of type str.
+
+'Benanntes' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_Kommentar' represents an important domain concept.
+It has one attribute: 'inhalt', which is of type str.
+
+'UML_14_Konzept' represents an important domain concept.
+It has one attribute: 'istAktiev', which is of type str.
+
+'UML_14_Einschraenkung' represents an important domain concept.
+It has one attribute: 'beschreibung', which is of type str.
+
+'UML_14_Benanntes' represents an important domain concept.
+It has one attribute: 'beschreibung', which is of type str.
+
+'UML_14_Verbindung' represents an important domain concept.
+It does not declare any attributes.
+
+'UML_14_MethodenWert' represents an important domain concept.
+It has the following attributes: 'art', which is of type str; 'standartWert', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'UML_14_MethodenWert' is a specialization of 'Benanntes'.
+The class 'UML_14_Verhalten' is a specialization of 'Benanntes'.
+The class 'UML_14_Eigenschaft' is a specialization of 'Benanntes'.
+The class 'UML_14_Verbindung' is a specialization of 'Benanntes'.
+The class 'UML_14_Verbindungsende' is a specialization of 'Benanntes'.
+The class 'UML_14_Konzept' is a specialization of 'Benanntes'.
+The class 'UML_14_Einfach' is a specialization of 'Benanntes'.
+The class 'UML_14_Aufzaehlung' is a specialization of 'Benanntes'.
+The class 'UML_14_Schachtel' is a specialization of 'Benanntes'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML_14_MethodenWert' and 'UML_14_Aufzaehlung'. From 'UML_14_MethodenWert', the role 'UML_14_MethodenWert' has cardinality 0..*, and from 'UML_14_Aufzaehlung', the role 'UML_14_Aufzaehlung' has cardinality 0..*.
+An association connects 'UML_14_MethodenWert' and 'UML_14_Einfach'. From 'UML_14_MethodenWert', the role 'UML_14_MethodenWert2' has cardinality 0..*, and from 'UML_14_Einfach', the role 'UML_14_Einfach' has cardinality 0..*.
+An association connects 'UML_14_Verhalten' and 'UML_14_MethodenWert'. From 'UML_14_Verhalten', the role 'UML_14_Verhalten' has cardinality 0..*, and from 'UML_14_MethodenWert', the role 'UML_14_MethodenWert4' has cardinality 0..*.
+An association connects 'UML_14_Eigenschaft' and 'UML_14_InstanzAnzahl'. From 'UML_14_Eigenschaft', the role 'UML_14_Eigenschaft' has cardinality 0..*, and from 'UML_14_InstanzAnzahl', the role 'UML_14_InstanzAnzahl' has cardinality 0..*.
+An association connects 'UML_14_Eigenschaft' and 'UML_14_Aufzaehlung'. From 'UML_14_Eigenschaft', the role 'UML_14_Eigenschaft7' has cardinality 0..*, and from 'UML_14_Aufzaehlung', the role 'UML_14_Aufzaehlung8' has cardinality 0..*.
+An association connects 'UML_14_Einfach' and 'UML_14_Eigenschaft'. From 'UML_14_Einfach', the role 'UML_14_Einfach11' has cardinality 0..*, and from 'UML_14_Eigenschaft', the role 'UML_14_Eigenschaft10' has cardinality 0..*.
+An association connects 'UML_14_Konzept' and 'UML_14_Vererbung'. From 'UML_14_Konzept', the role 'UML_14_Konzept' has cardinality 0..*, and from 'UML_14_Vererbung', the role 'UML_14_Vererbung' has cardinality 0..*.
+An association connects 'UML_14_Konzept' and 'UML_14_Vererbung'. From 'UML_14_Konzept', the role 'UML_14_Konzept15' has cardinality 0..*, and from 'UML_14_Vererbung', the role 'UML_14_Vererbung14' has cardinality 0..*.
+An association connects 'UML_14_Verbindung' and 'UML_14_Verbindungsende'. From 'UML_14_Verbindung', the role 'link' has cardinality 0..*, and from 'UML_14_Verbindungsende', the role 'Verbindungsende' has cardinality 0..*.
+An association connects 'UML_14_Verbindungsende' and 'UML_14_Verbindung'. From 'UML_14_Verbindungsende', the role 'verbinder' has cardinality 0..*, and from 'UML_14_Verbindung', the role 'Verbindung' has cardinality 0..*.
+An association connects 'UML_14_Konzept' and 'UML_14_Verbindungsende'. From 'UML_14_Konzept', the role 'UML_14_Konzept19' has cardinality 0..*, and from 'UML_14_Verbindungsende', the role 'UML_14_Verbindungsende' has cardinality 0..*.
+An association connects 'UML_14_InstanzAnzahl' and 'UML_14_Verbindungsende'. From 'UML_14_InstanzAnzahl', the role 'UML_14_InstanzAnzahl22' has cardinality 0..*, and from 'UML_14_Verbindungsende', the role 'UML_14_Verbindungsende21' has cardinality 0..*.
+An association connects 'UML_14_Eigenschaft' and 'UML_14_Verbindungsende'. From 'UML_14_Eigenschaft', the role 'UML_14_Eigenschaft25' has cardinality 0..*, and from 'UML_14_Verbindungsende', the role 'UML_14_Verbindungsende24' has cardinality 0..*.
+An association connects 'UML_14_Konzept' and 'UML_14_Eigenschaft'. From 'UML_14_Konzept', the role 'UML_14_Konzept27' has cardinality 0..*, and from 'UML_14_Eigenschaft', the role 'UML_14_Eigenschaft28' has cardinality 0..*.
+An association connects 'UML_14_Verhalten' and 'UML_14_Konzept'. From 'UML_14_Verhalten', the role 'UML_14_Verhalten31' has cardinality 0..*, and from 'UML_14_Konzept', the role 'UML_14_Konzept30' has cardinality 0..*.
+An association connects 'UML_14_Aufzaehlung' and 'UML_14_Aufzaehlungswert'. From 'UML_14_Aufzaehlung', the role 'UML_14_Aufzaehlung33' has cardinality 0..*, and from 'UML_14_Aufzaehlungswert', the role 'UML_14_Aufzaehlungswert' has cardinality 0..*.
+An association connects 'UML_14_Schachtel' and 'UML_14_root'. From 'UML_14_Schachtel', the role 'UML_14_Schachtel' has cardinality 0..*, and from 'UML_14_root', the role 'UML_14_root' has cardinality 0..*.
+An association connects 'UML_14_Schachtel' and 'UML_14_Konzept'. From 'UML_14_Schachtel', the role 'UML_14_Schachtel36' has cardinality 0..*, and from 'UML_14_Konzept', the role 'UML_14_Konzept37' has cardinality 0..*.
+An association connects 'UML_14_Schachtel' and 'UML_14_Schachtel'. From 'UML_14_Schachtel', the role 'UML_14_Schachtel40' has cardinality 0..*, and from 'UML_14_Schachtel', the role 'UML_14_Schachtel38' has cardinality 0..*.
+An association connects 'UML_14_Aufzaehlung' and 'UML_14_Schachtel'. From 'UML_14_Aufzaehlung', the role 'UML_14_Aufzaehlung43' has cardinality 0..*, and from 'UML_14_Schachtel', the role 'UML_14_Schachtel42' has cardinality 0..*.
+An association connects 'UML_14_Vererbung' and 'UML_14_Schachtel'. From 'UML_14_Vererbung', the role 'UML_14_Vererbung46' has cardinality 0..*, and from 'UML_14_Schachtel', the role 'UML_14_Schachtel45' has cardinality 0..*.
+An association connects 'UML_14_Verbindung' and 'UML_14_Schachtel'. From 'UML_14_Verbindung', the role 'UML_14_Verbindung' has cardinality 0..*, and from 'UML_14_Schachtel', the role 'UML_14_Schachtel48' has cardinality 0..*.
+An association connects 'UML_14_Einfach' and 'UML_14_Schachtel'. From 'UML_14_Einfach', the role 'UML_14_Einfach51' has cardinality 0..*, and from 'UML_14_Schachtel', the role 'UML_14_Schachtel50' has cardinality 0..*.
+An association connects 'UML_14_Benanntes' and 'UML_14_Kommentar'. From 'UML_14_Benanntes', the role 'UML_14_Benanntes' has cardinality 0..*, and from 'UML_14_Kommentar', the role 'UML_14_Kommentar' has cardinality 0..*.
+An association connects 'UML_14_Einschraenkung' and 'UML_14_Benanntes'. From 'UML_14_Einschraenkung', the role 'UML_14_Einschraenkung' has cardinality 0..*, and from 'UML_14_Benanntes', the role 'UML_14_Benanntes54' has cardinality 0..*.

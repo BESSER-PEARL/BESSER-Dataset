@@ -1,0 +1,857 @@
+from datetime import datetime, date, time
+from abc import ABC, abstractmethod
+
+
+############################################
+# Definition of Classes
+############################################
+
+class uml2CD_Parameter:
+
+    def __init__(self, kind: str, defaultValue: str, uml2CD_Parameter: "uml2CD_DataType" = None):
+        self.kind = kind
+        self.defaultValue = defaultValue
+        self.uml2CD_Parameter = uml2CD_Parameter
+        
+    @property
+    def defaultValue(self) -> str:
+        return self.__defaultValue
+
+    @defaultValue.setter
+    def defaultValue(self, defaultValue: str):
+        self.__defaultValue = defaultValue
+
+    @property
+    def kind(self) -> str:
+        return self.__kind
+
+    @kind.setter
+    def kind(self, kind: str):
+        self.__kind = kind
+
+    @property
+    def uml2CD_Parameter(self):
+        return self.__uml2CD_Parameter
+
+    @uml2CD_Parameter.setter
+    def uml2CD_Parameter(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Parameter__uml2CD_Parameter", None)
+        self.__uml2CD_Parameter = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_DataType22"):
+                opp_val = getattr(old_value, "uml2CD_DataType22", None)
+                if opp_val == self:
+                    setattr(old_value, "uml2CD_DataType22", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_DataType22"):
+                opp_val = getattr(value, "uml2CD_DataType22", None)
+                setattr(value, "uml2CD_DataType22", self)
+
+class uml2CD_GeneralizationSet:
+
+    def __init__(self, isCovering: str, isDisjoint: str, uml2CD_GeneralizationSet: "uml2CD_Generalization" = None):
+        self.isCovering = isCovering
+        self.isDisjoint = isDisjoint
+        self.uml2CD_GeneralizationSet = uml2CD_GeneralizationSet
+        
+    @property
+    def isCovering(self) -> str:
+        return self.__isCovering
+
+    @isCovering.setter
+    def isCovering(self, isCovering: str):
+        self.__isCovering = isCovering
+
+    @property
+    def isDisjoint(self) -> str:
+        return self.__isDisjoint
+
+    @isDisjoint.setter
+    def isDisjoint(self, isDisjoint: str):
+        self.__isDisjoint = isDisjoint
+
+    @property
+    def uml2CD_GeneralizationSet(self):
+        return self.__uml2CD_GeneralizationSet
+
+    @uml2CD_GeneralizationSet.setter
+    def uml2CD_GeneralizationSet(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_GeneralizationSet__uml2CD_GeneralizationSet", None)
+        self.__uml2CD_GeneralizationSet = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_Generalization20"):
+                opp_val = getattr(old_value, "uml2CD_Generalization20", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_Generalization20"):
+                opp_val = getattr(value, "uml2CD_Generalization20", None)
+                if opp_val is None:
+                    setattr(value, "uml2CD_Generalization20", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+class uml2CD_UMLModel:
+
+    pass
+class DataType:
+
+    pass
+class uml2CD_Enumeration(DataType):
+
+    pass
+class uml2CD_PrimitiveType(DataType):
+
+    pass
+class uml2CD_Generalization:
+
+    def __init__(self, isSubstitutable: str, uml2CD_Generalization: "uml2CD_Package" = None, uml2CD_Generalization14: "uml2CD_Class" = None, uml2CD_Generalization17: "uml2CD_Class" = None, uml2CD_Generalization20: set["uml2CD_GeneralizationSet"] = None):
+        self.isSubstitutable = isSubstitutable
+        self.uml2CD_Generalization = uml2CD_Generalization
+        self.uml2CD_Generalization14 = uml2CD_Generalization14
+        self.uml2CD_Generalization17 = uml2CD_Generalization17
+        self.uml2CD_Generalization20 = uml2CD_Generalization20 if uml2CD_Generalization20 is not None else set()
+        
+    @property
+    def isSubstitutable(self) -> str:
+        return self.__isSubstitutable
+
+    @isSubstitutable.setter
+    def isSubstitutable(self, isSubstitutable: str):
+        self.__isSubstitutable = isSubstitutable
+
+    @property
+    def uml2CD_Generalization20(self):
+        return self.__uml2CD_Generalization20
+
+    @uml2CD_Generalization20.setter
+    def uml2CD_Generalization20(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Generalization__uml2CD_Generalization20", None)
+        self.__uml2CD_Generalization20 = value if value is not None else set()
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            for item in old_value:
+                if hasattr(item, "uml2CD_GeneralizationSet"):
+                    opp_val = getattr(item, "uml2CD_GeneralizationSet", None)
+                    
+                    if opp_val == self:
+                        setattr(item, "uml2CD_GeneralizationSet", None)
+                    
+        # Add self to new opposite end
+        if value is not None:
+            for item in value:
+                if hasattr(item, "uml2CD_GeneralizationSet"):
+                    opp_val = getattr(item, "uml2CD_GeneralizationSet", None)
+                    
+                    setattr(item, "uml2CD_GeneralizationSet", self)
+                    
+
+    @property
+    def uml2CD_Generalization17(self):
+        return self.__uml2CD_Generalization17
+
+    @uml2CD_Generalization17.setter
+    def uml2CD_Generalization17(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Generalization__uml2CD_Generalization17", None)
+        self.__uml2CD_Generalization17 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_Class18"):
+                opp_val = getattr(old_value, "uml2CD_Class18", None)
+                if opp_val == self:
+                    setattr(old_value, "uml2CD_Class18", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_Class18"):
+                opp_val = getattr(value, "uml2CD_Class18", None)
+                setattr(value, "uml2CD_Class18", self)
+
+    @property
+    def uml2CD_Generalization(self):
+        return self.__uml2CD_Generalization
+
+    @uml2CD_Generalization.setter
+    def uml2CD_Generalization(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Generalization__uml2CD_Generalization", None)
+        self.__uml2CD_Generalization = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_Package12"):
+                opp_val = getattr(old_value, "uml2CD_Package12", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_Package12"):
+                opp_val = getattr(value, "uml2CD_Package12", None)
+                if opp_val is None:
+                    setattr(value, "uml2CD_Package12", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def uml2CD_Generalization14(self):
+        return self.__uml2CD_Generalization14
+
+    @uml2CD_Generalization14.setter
+    def uml2CD_Generalization14(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Generalization__uml2CD_Generalization14", None)
+        self.__uml2CD_Generalization14 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_Class15"):
+                opp_val = getattr(old_value, "uml2CD_Class15", None)
+                if opp_val == self:
+                    setattr(old_value, "uml2CD_Class15", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_Class15"):
+                opp_val = getattr(value, "uml2CD_Class15", None)
+                setattr(value, "uml2CD_Class15", self)
+
+class NamedElement:
+
+    pass
+class uml2CD_Association(NamedElement):
+
+    def __init__(self, isDerived: str, uml2CD_Association: "uml2CD_Package" = None, uml2CD_Association31: set["uml2CD_Property"] = None, uml2CD_Association34: set["uml2CD_Property"] = None):
+        self.isDerived = isDerived
+        self.uml2CD_Association = uml2CD_Association
+        self.uml2CD_Association31 = uml2CD_Association31 if uml2CD_Association31 is not None else set()
+        self.uml2CD_Association34 = uml2CD_Association34 if uml2CD_Association34 is not None else set()
+        
+    @property
+    def isDerived(self) -> str:
+        return self.__isDerived
+
+    @isDerived.setter
+    def isDerived(self, isDerived: str):
+        self.__isDerived = isDerived
+
+    @property
+    def uml2CD_Association31(self):
+        return self.__uml2CD_Association31
+
+    @uml2CD_Association31.setter
+    def uml2CD_Association31(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Association__uml2CD_Association31", None)
+        self.__uml2CD_Association31 = value if value is not None else set()
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            for item in old_value:
+                if hasattr(item, "uml2CD_Property32"):
+                    opp_val = getattr(item, "uml2CD_Property32", None)
+                    
+                    if opp_val == self:
+                        setattr(item, "uml2CD_Property32", None)
+                    
+        # Add self to new opposite end
+        if value is not None:
+            for item in value:
+                if hasattr(item, "uml2CD_Property32"):
+                    opp_val = getattr(item, "uml2CD_Property32", None)
+                    
+                    setattr(item, "uml2CD_Property32", self)
+                    
+
+    @property
+    def uml2CD_Association(self):
+        return self.__uml2CD_Association
+
+    @uml2CD_Association.setter
+    def uml2CD_Association(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Association__uml2CD_Association", None)
+        self.__uml2CD_Association = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_Package10"):
+                opp_val = getattr(old_value, "uml2CD_Package10", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_Package10"):
+                opp_val = getattr(value, "uml2CD_Package10", None)
+                if opp_val is None:
+                    setattr(value, "uml2CD_Package10", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def uml2CD_Association34(self):
+        return self.__uml2CD_Association34
+
+    @uml2CD_Association34.setter
+    def uml2CD_Association34(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Association__uml2CD_Association34", None)
+        self.__uml2CD_Association34 = value if value is not None else set()
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            for item in old_value:
+                if hasattr(item, "uml2CD_Property35"):
+                    opp_val = getattr(item, "uml2CD_Property35", None)
+                    
+                    if opp_val == self:
+                        setattr(item, "uml2CD_Property35", None)
+                    
+        # Add self to new opposite end
+        if value is not None:
+            for item in value:
+                if hasattr(item, "uml2CD_Property35"):
+                    opp_val = getattr(item, "uml2CD_Property35", None)
+                    
+                    setattr(item, "uml2CD_Property35", self)
+                    
+
+class uml2CD_Operation(NamedElement):
+
+    def __init__(self, isQuery: str, visibility: str, body: str, uml2CD_Operation27: "uml2CD_Class" = None, uml2CD_Operation: "uml2CD_Operation" = None, uml2CD_Operation23: set["uml2CD_Operation"] = None):
+        self.isQuery = isQuery
+        self.visibility = visibility
+        self.body = body
+        self.uml2CD_Operation27 = uml2CD_Operation27
+        self.uml2CD_Operation = uml2CD_Operation
+        self.uml2CD_Operation23 = uml2CD_Operation23 if uml2CD_Operation23 is not None else set()
+        
+    @property
+    def visibility(self) -> str:
+        return self.__visibility
+
+    @visibility.setter
+    def visibility(self, visibility: str):
+        self.__visibility = visibility
+
+    @property
+    def isQuery(self) -> str:
+        return self.__isQuery
+
+    @isQuery.setter
+    def isQuery(self, isQuery: str):
+        self.__isQuery = isQuery
+
+    @property
+    def body(self) -> str:
+        return self.__body
+
+    @body.setter
+    def body(self, body: str):
+        self.__body = body
+
+    @property
+    def uml2CD_Operation(self):
+        return self.__uml2CD_Operation
+
+    @uml2CD_Operation.setter
+    def uml2CD_Operation(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Operation__uml2CD_Operation", None)
+        self.__uml2CD_Operation = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_Operation23"):
+                opp_val = getattr(old_value, "uml2CD_Operation23", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_Operation23"):
+                opp_val = getattr(value, "uml2CD_Operation23", None)
+                if opp_val is None:
+                    setattr(value, "uml2CD_Operation23", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def uml2CD_Operation23(self):
+        return self.__uml2CD_Operation23
+
+    @uml2CD_Operation23.setter
+    def uml2CD_Operation23(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Operation__uml2CD_Operation23", None)
+        self.__uml2CD_Operation23 = value if value is not None else set()
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            for item in old_value:
+                if hasattr(item, "uml2CD_Operation"):
+                    opp_val = getattr(item, "uml2CD_Operation", None)
+                    
+                    if opp_val == self:
+                        setattr(item, "uml2CD_Operation", None)
+                    
+        # Add self to new opposite end
+        if value is not None:
+            for item in value:
+                if hasattr(item, "uml2CD_Operation"):
+                    opp_val = getattr(item, "uml2CD_Operation", None)
+                    
+                    setattr(item, "uml2CD_Operation", self)
+                    
+
+    @property
+    def uml2CD_Operation27(self):
+        return self.__uml2CD_Operation27
+
+    @uml2CD_Operation27.setter
+    def uml2CD_Operation27(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Operation__uml2CD_Operation27", None)
+        self.__uml2CD_Operation27 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_Class26"):
+                opp_val = getattr(old_value, "uml2CD_Class26", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_Class26"):
+                opp_val = getattr(value, "uml2CD_Class26", None)
+                if opp_val is None:
+                    setattr(value, "uml2CD_Class26", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+class uml2CD_Class(NamedElement):
+
+    def __init__(self, active: str, uml2CD_Class: "uml2CD_Package" = None, uml2CD_Class15: "uml2CD_Generalization" = None, uml2CD_Class26: set["uml2CD_Operation"] = None, uml2CD_Class29: set["uml2CD_Property"] = None, uml2CD_Class18: "uml2CD_Generalization" = None):
+        self.active = active
+        self.uml2CD_Class = uml2CD_Class
+        self.uml2CD_Class15 = uml2CD_Class15
+        self.uml2CD_Class26 = uml2CD_Class26 if uml2CD_Class26 is not None else set()
+        self.uml2CD_Class29 = uml2CD_Class29 if uml2CD_Class29 is not None else set()
+        self.uml2CD_Class18 = uml2CD_Class18
+        
+    @property
+    def active(self) -> str:
+        return self.__active
+
+    @active.setter
+    def active(self, active: str):
+        self.__active = active
+
+    @property
+    def uml2CD_Class(self):
+        return self.__uml2CD_Class
+
+    @uml2CD_Class.setter
+    def uml2CD_Class(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Class__uml2CD_Class", None)
+        self.__uml2CD_Class = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_Package6"):
+                opp_val = getattr(old_value, "uml2CD_Package6", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_Package6"):
+                opp_val = getattr(value, "uml2CD_Package6", None)
+                if opp_val is None:
+                    setattr(value, "uml2CD_Package6", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def uml2CD_Class26(self):
+        return self.__uml2CD_Class26
+
+    @uml2CD_Class26.setter
+    def uml2CD_Class26(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Class__uml2CD_Class26", None)
+        self.__uml2CD_Class26 = value if value is not None else set()
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            for item in old_value:
+                if hasattr(item, "uml2CD_Operation27"):
+                    opp_val = getattr(item, "uml2CD_Operation27", None)
+                    
+                    if opp_val == self:
+                        setattr(item, "uml2CD_Operation27", None)
+                    
+        # Add self to new opposite end
+        if value is not None:
+            for item in value:
+                if hasattr(item, "uml2CD_Operation27"):
+                    opp_val = getattr(item, "uml2CD_Operation27", None)
+                    
+                    setattr(item, "uml2CD_Operation27", self)
+                    
+
+    @property
+    def uml2CD_Class18(self):
+        return self.__uml2CD_Class18
+
+    @uml2CD_Class18.setter
+    def uml2CD_Class18(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Class__uml2CD_Class18", None)
+        self.__uml2CD_Class18 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_Generalization17"):
+                opp_val = getattr(old_value, "uml2CD_Generalization17", None)
+                if opp_val == self:
+                    setattr(old_value, "uml2CD_Generalization17", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_Generalization17"):
+                opp_val = getattr(value, "uml2CD_Generalization17", None)
+                setattr(value, "uml2CD_Generalization17", self)
+
+    @property
+    def uml2CD_Class15(self):
+        return self.__uml2CD_Class15
+
+    @uml2CD_Class15.setter
+    def uml2CD_Class15(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Class__uml2CD_Class15", None)
+        self.__uml2CD_Class15 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_Generalization14"):
+                opp_val = getattr(old_value, "uml2CD_Generalization14", None)
+                if opp_val == self:
+                    setattr(old_value, "uml2CD_Generalization14", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_Generalization14"):
+                opp_val = getattr(value, "uml2CD_Generalization14", None)
+                setattr(value, "uml2CD_Generalization14", self)
+
+    @property
+    def uml2CD_Class29(self):
+        return self.__uml2CD_Class29
+
+    @uml2CD_Class29.setter
+    def uml2CD_Class29(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Class__uml2CD_Class29", None)
+        self.__uml2CD_Class29 = value if value is not None else set()
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            for item in old_value:
+                if hasattr(item, "uml2CD_Property"):
+                    opp_val = getattr(item, "uml2CD_Property", None)
+                    
+                    if opp_val == self:
+                        setattr(item, "uml2CD_Property", None)
+                    
+        # Add self to new opposite end
+        if value is not None:
+            for item in value:
+                if hasattr(item, "uml2CD_Property"):
+                    opp_val = getattr(item, "uml2CD_Property", None)
+                    
+                    setattr(item, "uml2CD_Property", self)
+                    
+
+class uml2CD_DataType(NamedElement):
+
+    pass
+class uml2CD_Property(NamedElement):
+
+    def __init__(self, isDerived: str, aggregation: str, lower: str, upper: str, uml2CD_Property: "uml2CD_Class" = None, uml2CD_Property32: "uml2CD_Association" = None, uml2CD_Property35: "uml2CD_Association" = None):
+        self.isDerived = isDerived
+        self.aggregation = aggregation
+        self.lower = lower
+        self.upper = upper
+        self.uml2CD_Property = uml2CD_Property
+        self.uml2CD_Property32 = uml2CD_Property32
+        self.uml2CD_Property35 = uml2CD_Property35
+        
+    @property
+    def upper(self) -> str:
+        return self.__upper
+
+    @upper.setter
+    def upper(self, upper: str):
+        self.__upper = upper
+
+    @property
+    def isDerived(self) -> str:
+        return self.__isDerived
+
+    @isDerived.setter
+    def isDerived(self, isDerived: str):
+        self.__isDerived = isDerived
+
+    @property
+    def lower(self) -> str:
+        return self.__lower
+
+    @lower.setter
+    def lower(self, lower: str):
+        self.__lower = lower
+
+    @property
+    def aggregation(self) -> str:
+        return self.__aggregation
+
+    @aggregation.setter
+    def aggregation(self, aggregation: str):
+        self.__aggregation = aggregation
+
+    @property
+    def uml2CD_Property32(self):
+        return self.__uml2CD_Property32
+
+    @uml2CD_Property32.setter
+    def uml2CD_Property32(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Property__uml2CD_Property32", None)
+        self.__uml2CD_Property32 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_Association31"):
+                opp_val = getattr(old_value, "uml2CD_Association31", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_Association31"):
+                opp_val = getattr(value, "uml2CD_Association31", None)
+                if opp_val is None:
+                    setattr(value, "uml2CD_Association31", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def uml2CD_Property(self):
+        return self.__uml2CD_Property
+
+    @uml2CD_Property.setter
+    def uml2CD_Property(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Property__uml2CD_Property", None)
+        self.__uml2CD_Property = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_Class29"):
+                opp_val = getattr(old_value, "uml2CD_Class29", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_Class29"):
+                opp_val = getattr(value, "uml2CD_Class29", None)
+                if opp_val is None:
+                    setattr(value, "uml2CD_Class29", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+    @property
+    def uml2CD_Property35(self):
+        return self.__uml2CD_Property35
+
+    @uml2CD_Property35.setter
+    def uml2CD_Property35(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Property__uml2CD_Property35", None)
+        self.__uml2CD_Property35 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_Association34"):
+                opp_val = getattr(old_value, "uml2CD_Association34", None)
+                if isinstance(opp_val, set):
+                    opp_val.discard(self)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_Association34"):
+                opp_val = getattr(value, "uml2CD_Association34", None)
+                if opp_val is None:
+                    setattr(value, "uml2CD_Association34", set([self]))
+                elif isinstance(opp_val, set):
+                    opp_val.add(self)
+
+class uml2CD_EnumerationLiteral(NamedElement):
+
+    pass
+class uml2CD_Package(NamedElement):
+
+    pass
+class uml2CD_Constraint:
+
+    def __init__(self, specification: str, uml2CD_Constraint: "uml2CD_NamedElement" = None):
+        self.specification = specification
+        self.uml2CD_Constraint = uml2CD_Constraint
+        
+    @property
+    def specification(self) -> str:
+        return self.__specification
+
+    @specification.setter
+    def specification(self, specification: str):
+        self.__specification = specification
+
+    @property
+    def uml2CD_Constraint(self):
+        return self.__uml2CD_Constraint
+
+    @uml2CD_Constraint.setter
+    def uml2CD_Constraint(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Constraint__uml2CD_Constraint", None)
+        self.__uml2CD_Constraint = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_NamedElement2"):
+                opp_val = getattr(old_value, "uml2CD_NamedElement2", None)
+                if opp_val == self:
+                    setattr(old_value, "uml2CD_NamedElement2", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_NamedElement2"):
+                opp_val = getattr(value, "uml2CD_NamedElement2", None)
+                setattr(value, "uml2CD_NamedElement2", self)
+
+class uml2CD_NamedElement(ABC):
+
+    def __init__(self, name: str, uml2CD_NamedElement: "uml2CD_Comment" = None, uml2CD_NamedElement2: "uml2CD_Constraint" = None):
+        self.name = name
+        self.uml2CD_NamedElement = uml2CD_NamedElement
+        self.uml2CD_NamedElement2 = uml2CD_NamedElement2
+        
+    @property
+    def name(self) -> str:
+        return self.__name
+
+    @name.setter
+    def name(self, name: str):
+        self.__name = name
+
+    @property
+    def uml2CD_NamedElement(self):
+        return self.__uml2CD_NamedElement
+
+    @uml2CD_NamedElement.setter
+    def uml2CD_NamedElement(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_NamedElement__uml2CD_NamedElement", None)
+        self.__uml2CD_NamedElement = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_Comment"):
+                opp_val = getattr(old_value, "uml2CD_Comment", None)
+                if opp_val == self:
+                    setattr(old_value, "uml2CD_Comment", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_Comment"):
+                opp_val = getattr(value, "uml2CD_Comment", None)
+                setattr(value, "uml2CD_Comment", self)
+
+    @property
+    def uml2CD_NamedElement2(self):
+        return self.__uml2CD_NamedElement2
+
+    @uml2CD_NamedElement2.setter
+    def uml2CD_NamedElement2(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_NamedElement__uml2CD_NamedElement2", None)
+        self.__uml2CD_NamedElement2 = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_Constraint"):
+                opp_val = getattr(old_value, "uml2CD_Constraint", None)
+                if opp_val == self:
+                    setattr(old_value, "uml2CD_Constraint", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_Constraint"):
+                opp_val = getattr(value, "uml2CD_Constraint", None)
+                setattr(value, "uml2CD_Constraint", self)
+
+class uml2CD_Comment:
+
+    def __init__(self, value: str, uml2CD_Comment: "uml2CD_NamedElement" = None):
+        self.value = value
+        self.uml2CD_Comment = uml2CD_Comment
+        
+    @property
+    def value(self) -> str:
+        return self.__value
+
+    @value.setter
+    def value(self, value: str):
+        self.__value = value
+
+    @property
+    def uml2CD_Comment(self):
+        return self.__uml2CD_Comment
+
+    @uml2CD_Comment.setter
+    def uml2CD_Comment(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_uml2CD_Comment__uml2CD_Comment", None)
+        self.__uml2CD_Comment = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "uml2CD_NamedElement"):
+                opp_val = getattr(old_value, "uml2CD_NamedElement", None)
+                if opp_val == self:
+                    setattr(old_value, "uml2CD_NamedElement", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "uml2CD_NamedElement"):
+                opp_val = getattr(value, "uml2CD_NamedElement", None)
+                setattr(value, "uml2CD_NamedElement", self)

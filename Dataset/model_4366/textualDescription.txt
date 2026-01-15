@@ -1,0 +1,112 @@
+The domain model 'minilang' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'minilang_CallMethod' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Program' represents an important domain concept.
+It has the following attributes: 'angle', which is of type str; 'x', which is of type float; 'y', which is of type float; 'distance', which is of type float.
+
+'minilang_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Variable' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type float.
+
+'minilang_BinaryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_RotateRight' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_GreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Sum' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_RotateLeft' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Line' represents an important domain concept.
+It has the following attributes: 'x1', which is of type float; 'y2', which is of type float; 'y1', which is of type float; 'x2', which is of type float.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_VariableAffect' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_IfStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Move' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Constant' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Modulo' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Method' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Cardinals' defines the following possible values: 'WEST', 'SOUTH', 'EAST', 'NORTH'.
+
+The model also captures inheritance relationships between classes.
+The class 'minilang_IfStmt' is a specialization of 'Statement'.
+The class 'minilang_GreaterThan' is a specialization of 'Condition'.
+The class 'minilang_Constant' is a specialization of 'Value'.
+The class 'minilang_VariableRef' is a specialization of 'Value'.
+The class 'minilang_VariableAffect' is a specialization of 'Statement'.
+The class 'minilang_Sum' is a specialization of 'BinaryOperation'.
+The class 'minilang_Modulo' is a specialization of 'BinaryOperation'.
+The class 'minilang_BinaryOperation' is a specialization of 'Value'.
+The class 'minilang_CallMethod' is a specialization of 'Statement'.
+The class 'minilang_Move' is a specialization of 'Statement'.
+The class 'minilang_RotateRight' is a specialization of 'Statement'.
+The class 'minilang_RotateLeft' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'minilang_Program' and 'minilang_Method'. From 'minilang_Program', the role 'unnamed role' has cardinality 0..*, and from 'minilang_Method', the role '1' has cardinality 0..*.
+An association connects 'minilang_Method' and 'minilang_Program'. From 'minilang_Method', the role 'minilang_Method' has cardinality 0..*, and from 'minilang_Program', the role 'minilang_Program' has cardinality 0..*.
+An association connects 'minilang_Program' and 'minilang_Variable'. From 'minilang_Program', the role 'minilang_Program4' has cardinality 0..*, and from 'minilang_Variable', the role 'minilang_Variable' has cardinality 0..*.
+An association connects 'minilang_Line' and 'minilang_Program'. From 'minilang_Line', the role 'minilang_Line' has cardinality 0..*, and from 'minilang_Program', the role 'minilang_Program6' has cardinality 0..*.
+An association connects 'minilang_Program' and 'minilang_Method'. From 'minilang_Program', the role '9' has cardinality 0..*, and from 'minilang_Method', the role '8' has cardinality 0..*.
+An association connects 'minilang_Method' and 'minilang_Block'. From 'minilang_Method', the role 'minilang_Method11' has cardinality 0..*, and from 'minilang_Block', the role 'minilang_Block' has cardinality 0..*.
+An association connects 'minilang_Statement' and 'minilang_Block'. From 'minilang_Statement', the role 'minilang_Statement' has cardinality 0..*, and from 'minilang_Block', the role 'minilang_Block13' has cardinality 0..*.
+An association connects 'minilang_IfStmt' and 'minilang_Block'. From 'minilang_IfStmt', the role 'minilang_IfStmt' has cardinality 0..*, and from 'minilang_Block', the role 'minilang_Block15' has cardinality 0..*.
+An association connects 'minilang_Block' and 'minilang_IfStmt'. From 'minilang_Block', the role 'minilang_Block18' has cardinality 0..*, and from 'minilang_IfStmt', the role 'minilang_IfStmt17' has cardinality 0..*.
+An association connects 'minilang_Condition' and 'minilang_IfStmt'. From 'minilang_Condition', the role 'minilang_Condition' has cardinality 0..*, and from 'minilang_IfStmt', the role 'minilang_IfStmt20' has cardinality 0..*.
+An association connects 'minilang_GreaterThan' and 'minilang_Value'. From 'minilang_GreaterThan', the role 'minilang_GreaterThan' has cardinality 0..*, and from 'minilang_Value', the role 'minilang_Value' has cardinality 0..*.
+An association connects 'minilang_GreaterThan' and 'minilang_Value'. From 'minilang_GreaterThan', the role 'minilang_GreaterThan23' has cardinality 0..*, and from 'minilang_Value', the role 'minilang_Value24' has cardinality 0..*.
+An association connects 'minilang_Variable' and 'minilang_VariableRef'. From 'minilang_Variable', the role 'minilang_Variable26' has cardinality 0..*, and from 'minilang_VariableRef', the role 'minilang_VariableRef' has cardinality 0..*.
+An association connects 'minilang_VariableAffect' and 'minilang_Variable'. From 'minilang_VariableAffect', the role 'minilang_VariableAffect' has cardinality 0..*, and from 'minilang_Variable', the role 'minilang_Variable28' has cardinality 0..*.
+An association connects 'minilang_Value' and 'minilang_VariableAffect'. From 'minilang_Value', the role 'minilang_Value31' has cardinality 0..*, and from 'minilang_VariableAffect', the role 'minilang_VariableAffect30' has cardinality 0..*.
+An association connects 'minilang_BinaryOperation' and 'minilang_Value'. From 'minilang_BinaryOperation', the role 'minilang_BinaryOperation' has cardinality 0..*, and from 'minilang_Value', the role 'minilang_Value33' has cardinality 0..*.
+An association connects 'minilang_Value' and 'minilang_BinaryOperation'. From 'minilang_Value', the role 'minilang_Value36' has cardinality 0..*, and from 'minilang_BinaryOperation', the role 'minilang_BinaryOperation35' has cardinality 0..*.
+An association connects 'minilang_Method' and 'minilang_CallMethod'. From 'minilang_Method', the role 'minilang_Method38' has cardinality 0..*, and from 'minilang_CallMethod', the role 'minilang_CallMethod' has cardinality 0..*.

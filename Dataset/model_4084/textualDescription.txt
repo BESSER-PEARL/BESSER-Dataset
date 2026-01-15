@@ -1,0 +1,17 @@
+The domain model 'simpleUML' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'simpleUML_UMLClass' represents an important domain concept.
+It has one attribute: 'umlName', which is of type str.
+
+'simpleUML_Generalization' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleUML_Model' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleUML_Model' and 'simpleUML_UMLClass'. From 'simpleUML_Model', the role 'simpleUML_Model' has cardinality 0..*, and from 'simpleUML_UMLClass', the role 'simpleUML_UMLClass' has cardinality 0..*.
+An association connects 'simpleUML_UMLClass' and 'simpleUML_Generalization'. From 'simpleUML_UMLClass', the role 'simpleUML_UMLClass2' has cardinality 0..*, and from 'simpleUML_Generalization', the role 'simpleUML_Generalization' has cardinality 0..*.
+An association connects 'simpleUML_UMLClass' and 'simpleUML_Generalization'. From 'simpleUML_UMLClass', the role 'simpleUML_UMLClass5' has cardinality 0..*, and from 'simpleUML_Generalization', the role 'simpleUML_Generalization4' has cardinality 0..*.

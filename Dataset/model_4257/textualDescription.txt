@@ -1,0 +1,30 @@
+The domain model 'attroverridesecondarytable' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'attroverridesecondarytable_NonEmployee' represents an important domain concept.
+It does not declare any attributes.
+
+'attroverridesecondarytable_Employee' represents an important domain concept.
+It has one attribute: 'employeeNumber', which is of type str.
+
+'attroverridesecondarytable_Country' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'attroverridesecondarytable_Person' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'age', which is of type int.
+
+'attroverridesecondarytable_Address' represents an important domain concept.
+It has the following attributes: 'street', which is of type str; 'name', which is of type str; 'city', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'attroverridesecondarytable_Employee' is a specialization of 'Person'.
+The class 'attroverridesecondarytable_NonEmployee' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'attroverridesecondarytable_Country' and 'attroverridesecondarytable_Address'. From 'attroverridesecondarytable_Country', the role 'attroverridesecondarytable_Country' has cardinality 0..*, and from 'attroverridesecondarytable_Address', the role 'attroverridesecondarytable_Address' has cardinality 0..*.
+An association connects 'attroverridesecondarytable_Address' and 'attroverridesecondarytable_Employee'. From 'attroverridesecondarytable_Address', the role 'attroverridesecondarytable_Address2' has cardinality 0..*, and from 'attroverridesecondarytable_Employee', the role 'attroverridesecondarytable_Employee' has cardinality 0..*.
+An association connects 'attroverridesecondarytable_Address' and 'attroverridesecondarytable_NonEmployee'. From 'attroverridesecondarytable_Address', the role 'attroverridesecondarytable_Address4' has cardinality 0..*, and from 'attroverridesecondarytable_NonEmployee', the role 'attroverridesecondarytable_NonEmployee' has cardinality 0..*.

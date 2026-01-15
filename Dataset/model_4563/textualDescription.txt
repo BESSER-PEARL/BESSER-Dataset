@@ -1,0 +1,99 @@
+The domain model 'robot' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'Command' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_robot_StopEngineCmd' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_FlotCtrl_BoolExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_robot_SetTurnAngleCmd' represents an important domain concept.
+It has one attribute: 'angle', which is of type str.
+
+'robot_robot_ProgramUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_FlotCtrl_NegExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_FlotCtrl_IfBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_robot_StopProgramCmd' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_robot_MoveCmd' represents an important domain concept.
+It has one attribute: 'power', which is of type str.
+
+'robot_robot_Bip' represents an important domain concept.
+It has the following attributes: 'power', which is of type str; 'repet', which is of type str; 'duration', which is of type str.
+
+'robot_FlotCtrl_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_robot_PrintCmd' represents an important domain concept.
+It has the following attributes: 'duration', which is of type str; 'msg', which is of type str; 'col', which is of type str; 'line', which is of type str.
+
+'robot_robot_ObstacleCmd' represents an important domain concept.
+It has one attribute: 'distance', which is of type str.
+
+'robot_FlotCtrl_WhileLoop' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_robot_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_robot_HasTurnedCmd' represents an important domain concept.
+It has one attribute: 'angle', which is of type str.
+
+'robot_robot_TurnCmd' represents an important domain concept.
+It has the following attributes: 'power', which is of type str; 'angle', which is of type str.
+
+'FlotCtrl_BoolExp' represents an important domain concept.
+It does not declare any attributes.
+
+'BoolExp' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_FlotCtrl_AndExp' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'robot_robot_Command' is a specialization of 'Expression'.
+The class 'robot_robot_MoveCmd' is a specialization of 'Command'.
+The class 'robot_robot_ObstacleCmd' is a specialization of 'FlotCtrl_BoolExp'.
+The class 'robot_robot_ObstacleCmd' is a specialization of 'robot_Command'.
+The class 'robot_robot_Bip' is a specialization of 'Command'.
+The class 'robot_robot_SetTurnAngleCmd' is a specialization of 'Command'.
+The class 'robot_robot_HasTurnedCmd' is a specialization of 'FlotCtrl_BoolExp'.
+The class 'robot_robot_HasTurnedCmd' is a specialization of 'robot_Command'.
+The class 'robot_robot_TurnCmd' is a specialization of 'Command'.
+The class 'robot_robot_StopEngineCmd' is a specialization of 'Command'.
+The class 'robot_robot_StopProgramCmd' is a specialization of 'Command'.
+The class 'robot_robot_PrintCmd' is a specialization of 'Command'.
+The class 'robot_FlotCtrl_WhileLoop' is a specialization of 'Expression'.
+The class 'robot_FlotCtrl_NegExp' is a specialization of 'BoolExp'.
+The class 'robot_FlotCtrl_BoolExp' is a specialization of 'Expression'.
+The class 'robot_FlotCtrl_AndExp' is a specialization of 'BoolExp'.
+The class 'robot_FlotCtrl_IfBlock' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'robot_robot_ProgramUnit' and 'Expression'. From 'robot_robot_ProgramUnit', the role 'robot_robot_ProgramUnit' has cardinality 0..*, and from 'Expression', the role 'Expression' has cardinality 0..*.
+An association connects 'BoolExp' and 'robot_FlotCtrl_WhileLoop'. From 'BoolExp', the role 'BoolExp' has cardinality 0..*, and from 'robot_FlotCtrl_WhileLoop', the role 'robot_FlotCtrl_WhileLoop' has cardinality 0..*.
+An association connects 'Expression' and 'robot_FlotCtrl_WhileLoop'. From 'Expression', the role 'Expression4' has cardinality 0..*, and from 'robot_FlotCtrl_WhileLoop', the role 'robot_FlotCtrl_WhileLoop3' has cardinality 0..*.
+An association connects 'robot_FlotCtrl_NegExp' and 'BoolExp'. From 'robot_FlotCtrl_NegExp', the role 'robot_FlotCtrl_NegExp' has cardinality 0..*, and from 'BoolExp', the role 'BoolExp6' has cardinality 0..*.
+An association connects 'robot_FlotCtrl_AndExp' and 'BoolExp'. From 'robot_FlotCtrl_AndExp', the role 'robot_FlotCtrl_AndExp' has cardinality 0..*, and from 'BoolExp', the role 'BoolExp8' has cardinality 0..*.
+An association connects 'robot_FlotCtrl_AndExp' and 'BoolExp'. From 'robot_FlotCtrl_AndExp', the role 'robot_FlotCtrl_AndExp10' has cardinality 0..*, and from 'BoolExp', the role 'BoolExp11' has cardinality 0..*.
+An association connects 'robot_FlotCtrl_IfBlock' and 'BoolExp'. From 'robot_FlotCtrl_IfBlock', the role 'robot_FlotCtrl_IfBlock' has cardinality 0..*, and from 'BoolExp', the role 'BoolExp13' has cardinality 0..*.
+An association connects 'Expression' and 'robot_FlotCtrl_IfBlock'. From 'Expression', the role 'Expression16' has cardinality 0..*, and from 'robot_FlotCtrl_IfBlock', the role 'robot_FlotCtrl_IfBlock15' has cardinality 0..*.
+An association connects 'Expression' and 'robot_FlotCtrl_IfBlock'. From 'Expression', the role 'Expression19' has cardinality 0..*, and from 'robot_FlotCtrl_IfBlock', the role 'robot_FlotCtrl_IfBlock18' has cardinality 0..*.

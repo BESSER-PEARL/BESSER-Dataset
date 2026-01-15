@@ -1,0 +1,224 @@
+The domain model 'logo' describes the core structural elements and their relationships within the system.
+
+The model defines 55 main class(es).
+
+'logo_binary_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_statement_ProcedureCall' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_expression_ExtendedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_constant_BoolValue' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'logo_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'statement_logo_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_statement_Left' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_statement_Forward' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_statement_ControlStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_value_IntValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'logo_extended_And' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_unary_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_binary_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_expression_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_binary_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_unary_Opposite' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_binary_Mult' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Logo' represents an important domain concept.
+It does not declare any attributes.
+
+'statement_logo_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtendedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_binary_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_expression_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_expression_VariableRead' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'logo_Symbol' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'logo_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'logo_constant_IntValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'logo_statement_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_control_Repeat' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_expression_Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_symbol_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'statement_logo_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcedureDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_control_While' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_extended_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_control_If' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_symbol_Procedure' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_statement_Right' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_statement_ProcedureDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'logo_statement_PenDown' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_statement_PenUp' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_binary_Lower' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_value_BoolValue' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'Symbol' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_binary_Equals' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_logo_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'logo_statement_Right' is a specialization of 'Statement'.
+The class 'logo_statement_Left' is a specialization of 'Statement'.
+The class 'logo_statement_Forward' is a specialization of 'Statement'.
+The class 'logo_statement_PenDown' is a specialization of 'Statement'.
+The class 'logo_statement_PenUp' is a specialization of 'Statement'.
+The class 'logo_statement_ProcedureDefinition' is a specialization of 'Statement'.
+The class 'logo_statement_ProcedureCall' is a specialization of 'Statement'.
+The class 'logo_statement_Block' is a specialization of 'Statement'.
+The class 'logo_statement_ControlStatement' is a specialization of 'Statement'.
+The class 'logo_control_If' is a specialization of 'ControlStatement'.
+The class 'logo_control_While' is a specialization of 'ControlStatement'.
+The class 'logo_control_Repeat' is a specialization of 'ControlStatement'.
+The class 'logo_expression_BinaryExpression' is a specialization of 'Expression'.
+The class 'logo_expression_UnaryExpression' is a specialization of 'Expression'.
+The class 'logo_expression_Constant' is a specialization of 'Expression'.
+The class 'logo_expression_ExtendedExpression' is a specialization of 'Expression'.
+The class 'logo_expression_VariableRead' is a specialization of 'Expression'.
+The class 'logo_constant_IntValue' is a specialization of 'Constant'.
+The class 'logo_constant_BoolValue' is a specialization of 'Constant'.
+The class 'logo_unary_Not' is a specialization of 'UnaryExpression'.
+The class 'logo_unary_Opposite' is a specialization of 'UnaryExpression'.
+The class 'logo_binary_Minus' is a specialization of 'BinaryExpression'.
+The class 'logo_binary_Plus' is a specialization of 'BinaryExpression'.
+The class 'logo_binary_Mult' is a specialization of 'BinaryExpression'.
+The class 'logo_binary_Div' is a specialization of 'BinaryExpression'.
+The class 'logo_binary_Equals' is a specialization of 'BinaryExpression'.
+The class 'logo_binary_Greater' is a specialization of 'BinaryExpression'.
+The class 'logo_binary_Lower' is a specialization of 'BinaryExpression'.
+The class 'logo_extended_And' is a specialization of 'ExtendedExpression'.
+The class 'logo_extended_Or' is a specialization of 'ExtendedExpression'.
+The class 'logo_symbol_Variable' is a specialization of 'Symbol'.
+The class 'logo_symbol_Procedure' is a specialization of 'Symbol'.
+The class 'logo_value_IntValue' is a specialization of 'Value'.
+The class 'logo_value_BoolValue' is a specialization of 'Value'.
+
+Relationships between classes are modeled using associations.
+An association connects 'logo_Logo' and 'logo_Statement'. From 'logo_Logo', the role 'logo_Logo' has cardinality 0..*, and from 'logo_Statement', the role 'logo_Statement' has cardinality 0..*.
+An association connects 'logo_statement_Right' and 'statement_logo_Expression'. From 'logo_statement_Right', the role 'logo_statement_Right' has cardinality 0..*, and from 'statement_logo_Expression', the role 'statement_logo_Expression' has cardinality 0..*.
+An association connects 'logo_statement_Left' and 'statement_logo_Expression'. From 'logo_statement_Left', the role 'logo_statement_Left' has cardinality 0..*, and from 'statement_logo_Expression', the role 'statement_logo_Expression3' has cardinality 0..*.
+An association connects 'logo_statement_Forward' and 'statement_logo_Expression'. From 'logo_statement_Forward', the role 'logo_statement_Forward' has cardinality 0..*, and from 'statement_logo_Expression', the role 'statement_logo_Expression5' has cardinality 0..*.
+An association connects 'logo_statement_ProcedureDefinition' and 'statement_logo_Parameter'. From 'logo_statement_ProcedureDefinition', the role 'logo_statement_ProcedureDefinition' has cardinality 0..*, and from 'statement_logo_Parameter', the role 'statement_logo_Parameter' has cardinality 0..*.
+An association connects 'statement_logo_Statement' and 'logo_statement_ProcedureDefinition'. From 'statement_logo_Statement', the role 'statement_logo_Statement' has cardinality 0..*, and from 'logo_statement_ProcedureDefinition', the role 'logo_statement_ProcedureDefinition8' has cardinality 0..*.
+An association connects 'logo_statement_ProcedureCall' and 'statement_logo_Expression'. From 'logo_statement_ProcedureCall', the role 'logo_statement_ProcedureCall' has cardinality 0..*, and from 'statement_logo_Expression', the role 'statement_logo_Expression10' has cardinality 0..*.
+An association connects 'logo_statement_ProcedureCall' and 'ProcedureDefinition'. From 'logo_statement_ProcedureCall', the role 'logo_statement_ProcedureCall12' has cardinality 0..*, and from 'ProcedureDefinition', the role 'ProcedureDefinition' has cardinality 0..*.
+An association connects 'statement_logo_Statement' and 'logo_statement_Block'. From 'statement_logo_Statement', the role 'statement_logo_Statement14' has cardinality 0..*, and from 'logo_statement_Block', the role 'logo_statement_Block' has cardinality 0..*.
+An association connects 'statement_logo_Expression' and 'logo_statement_ControlStatement'. From 'statement_logo_Expression', the role 'statement_logo_Expression16' has cardinality 0..*, and from 'logo_statement_ControlStatement', the role 'logo_statement_ControlStatement' has cardinality 0..*.
+An association connects 'logo_control_If' and 'Block'. From 'logo_control_If', the role 'logo_control_If' has cardinality 0..*, and from 'Block', the role 'Block' has cardinality 0..*.
+An association connects 'Block' and 'logo_control_If'. From 'Block', the role 'Block20' has cardinality 0..*, and from 'logo_control_If', the role 'logo_control_If19' has cardinality 0..*.
+An association connects 'Block' and 'logo_control_While'. From 'Block', the role 'Block22' has cardinality 0..*, and from 'logo_control_While', the role 'logo_control_While' has cardinality 0..*.
+An association connects 'logo_control_Repeat' and 'Block'. From 'logo_control_Repeat', the role 'logo_control_Repeat' has cardinality 0..*, and from 'Block', the role 'Block24' has cardinality 0..*.
+An association connects 'logo_expression_BinaryExpression' and 'expression_logo_Expression'. From 'logo_expression_BinaryExpression', the role 'logo_expression_BinaryExpression' has cardinality 0..*, and from 'expression_logo_Expression', the role 'expression_logo_Expression' has cardinality 0..*.
+An association connects 'logo_expression_BinaryExpression' and 'expression_logo_Expression'. From 'logo_expression_BinaryExpression', the role 'logo_expression_BinaryExpression27' has cardinality 0..*, and from 'expression_logo_Expression', the role 'expression_logo_Expression28' has cardinality 0..*.
+An association connects 'expression_logo_Expression' and 'logo_expression_UnaryExpression'. From 'expression_logo_Expression', the role 'expression_logo_Expression30' has cardinality 0..*, and from 'logo_expression_UnaryExpression', the role 'logo_expression_UnaryExpression' has cardinality 0..*.
+An association connects 'logo_expression_ExtendedExpression' and 'expression_logo_Expression'. From 'logo_expression_ExtendedExpression', the role 'logo_expression_ExtendedExpression' has cardinality 0..*, and from 'expression_logo_Expression', the role 'expression_logo_Expression32' has cardinality 0..*.

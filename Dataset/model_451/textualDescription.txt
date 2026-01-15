@@ -1,0 +1,1636 @@
+The domain model 'UML2' describes the core structural elements and their relationships within the system.
+
+The model defines 303 main class(es).
+
+'UML2_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_StringExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ClearStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ConnectorEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_PackageMerge' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_CreateLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_JoinNode' represents an important domain concept.
+It has one attribute: 'isCombineDuplicate', which is of type bool.
+
+'UML2_LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ReadVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageImport' represents an important domain concept.
+It does not declare any attributes.
+
+'EventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_SendObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_TimeConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_EncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Stereotype' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_PrimitiveFunction' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'language', which is of type str.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_CallTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ParameterableClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_TemplateableClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_TimeExpression' represents an important domain concept.
+It has one attribute: 'firstTime', which is of type bool.
+
+'UML2_DestroyLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_LinkEndCreationData' represents an important domain concept.
+It has one attribute: 'isReplaceAll', which is of type bool.
+
+'InteractionFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'isUnique', which is of type bool; 'upper', which is of type str; 'lower', which is of type int; 'isOrdered', which is of type bool.
+
+'UML2_CreateLinkObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_CallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_CombinedFragment' represents an important domain concept.
+It has one attribute: 'interactionOperator', which is of type str.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_SignalTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_AddStructuralFeatureValueAction' represents an important domain concept.
+It has one attribute: 'isReplaceAll', which is of type bool.
+
+'UML2_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_CollaborationOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_RedefinableElement' represents an important domain concept.
+It has one attribute: 'isLeaf', which is of type bool.
+
+'UML2_ReadSelfAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ProfileApplication' represents an important domain concept.
+It does not declare any attributes.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_LoopNode' represents an important domain concept.
+It has one attribute: 'isTestedFirst', which is of type bool.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_StructuredActivityNode' represents an important domain concept.
+It has one attribute: 'mustIsolate', which is of type bool.
+
+'UML2_Message' represents an important domain concept.
+It has the following attributes: 'messageSort', which is of type str; 'messageKind', which is of type str.
+
+'AcceptEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_CreateObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_RemoveStructuralFeatureValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_QualifierValue' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_LiteralBoolean' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'UML2_StructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_TemplateParameterSubstitution' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Pseudostate' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'UML2_Association' represents an important domain concept.
+It has one attribute: 'isDerived', which is of type bool.
+
+'UML2_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Substitution' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ExceptionHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ConnectionPointReference' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_AddVariableValueAction' represents an important domain concept.
+It has one attribute: 'isReplaceAll', which is of type bool.
+
+'EncapsulatedClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_TemplateSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ReadLinkObjectEndAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_PartDecomposition' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ReadIsClassifiedObjectAction' represents an important domain concept.
+It has one attribute: 'isDirect', which is of type bool.
+
+'IntervalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_RaiseExceptionAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Component' represents an important domain concept.
+It has one attribute: 'isIndirectlyInstantiated', which is of type bool.
+
+'UML2_DeploymentTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_RedefinableTemplateSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_AnyTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Feature' represents an important domain concept.
+It has one attribute: 'isStatic', which is of type bool.
+
+'UML2_ParameterSet' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ValuePin' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_DurationInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_EventOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ApplyFunctionAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_MessageEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_GeneralOrdering' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_StructuralFeature' represents an important domain concept.
+It has one attribute: 'isReadOnly', which is of type bool.
+
+'UML2_TimeInterval' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_InteractionOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_BehavioralFeature' represents an important domain concept.
+It has the following attributes: 'isAbstract', which is of type bool; 'concurrency', which is of type str.
+
+'UML2_InteractionOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ObjectNode' represents an important domain concept.
+It has one attribute: 'ordering', which is of type str.
+
+'UML2_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Manifestation' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_LinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ProtocolStateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_VariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Port' represents an important domain concept.
+It has the following attributes: 'isBehavior', which is of type bool; 'isService', which is of type bool.
+
+'UML2_InteractionFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Generalization' represents an important domain concept.
+It has one attribute: 'isSubstitutable', which is of type bool.
+
+'UML2_ClearVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_StateInvariant' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ReadExtentAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Class' represents an important domain concept.
+It has one attribute: 'isActive', which is of type bool.
+
+'UML2_Connector' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'StructuredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ConnectableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Lifeline' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Collaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ReadStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_PackageableElement' represents an important domain concept.
+It has one attribute: 'packageableElement_visibility', which is of type str.
+
+'UML2_ExtensionPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Duration' represents an important domain concept.
+It has one attribute: 'firstTime', which is of type bool.
+
+'UML2_WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ReadLinkObjectEndQualifierAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ReplyAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ConditionalNode' represents an important domain concept.
+It has the following attributes: 'isDeterminate', which is of type bool; 'isAssured', which is of type bool.
+
+'UML2_ActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_WriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_BroadcastSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_StateMachine' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Extension' represents an important domain concept.
+It has one attribute: 'isRequired', which is of type bool.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_DeployedArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ConnectableElementTemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Model' represents an important domain concept.
+It has one attribute: 'viewpoint', which is of type str.
+
+'UML2_Operation' represents an important domain concept.
+It has one attribute: 'isQuery', which is of type bool.
+
+'Relationship' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_InteractionConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_WriteVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_CallAction' represents an important domain concept.
+It has one attribute: 'isSynchronous', which is of type bool.
+
+'UML2_Extend' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Continuation' represents an important domain concept.
+It has one attribute: 'setting', which is of type bool.
+
+'UML2_IntervalConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_InstanceValue' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ExecutionOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Reception' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Signal' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ClassifierTemplateParameter' represents an important domain concept.
+It has one attribute: 'allowSubstitutable', which is of type bool.
+
+'UML2_TestIdentityAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_OperationTemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+'OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_RemoveVariableValueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_TimeObservationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'DeployedArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ElementImport' represents an important domain concept.
+It has the following attributes: 'alias', which is of type str; 'visibility', which is of type str.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_FlowFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_DestroyObjectAction' represents an important domain concept.
+It has the following attributes: 'isDestroyLinks', which is of type bool; 'isDestroyOwnedObjects', which is of type bool.
+
+'UML2_Implementation' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Artifact' represents an important domain concept.
+It has one attribute: 'fileName', which is of type str.
+
+'UML2_ActivityParameterNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Stop' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Action' represents an important domain concept.
+It has one attribute: 'effect', which is of type str.
+
+'UML2_Permission' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ReclassifyObjectAction' represents an important domain concept.
+It has one attribute: 'isReplaceAll', which is of type bool.
+
+'UML2_Gate' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Interaction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_AcceptEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'DirectedRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_InterruptibleActivityRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Profile' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_SendSignalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ExpansionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Clause' represents an important domain concept.
+It does not declare any attributes.
+
+'WriteVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_TemplateBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_State' represents an important domain concept.
+It has the following attributes: 'isOrthogonal', which is of type bool; 'isSimple', which is of type bool; 'isComposite', which is of type bool; 'isSubmachineState', which is of type bool.
+
+'UML2_Classifier' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ExecutionEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_InformationItem' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ActivityPartition' represents an important domain concept.
+It has the following attributes: 'isDimension', which is of type bool; 'isExternal', which is of type bool.
+
+'UML2_Behavior' represents an important domain concept.
+It has one attribute: 'isReentrant', which is of type bool.
+
+'UML2_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ParameterableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_GeneralizationSet' represents an important domain concept.
+It has the following attributes: 'isCovering', which is of type bool; 'isDisjoint', which is of type bool.
+
+'FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Parameter' represents an important domain concept.
+It has the following attributes: 'isStream', which is of type bool; 'effect', which is of type str; 'isException', which is of type bool; 'default', which is of type str; 'direction', which is of type str.
+
+'ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_PackageImport' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_LiteralUnlimitedNatural' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'UML2_Comment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'UML2_InformationFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Expression' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'DeploymentTarget' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_LiteralNull' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ObjectFlow' represents an important domain concept.
+It has the following attributes: 'isMulticast', which is of type bool; 'isMultireceive', which is of type bool.
+
+'UML2_OpaqueExpression' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'bodies', which is of type str.
+
+'UML2_Transition' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_CommunicationPath' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ReadLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Deployment' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Activity' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'isSingleExecution', which is of type bool; 'body', which is of type str; 'isReadOnly', which is of type bool.
+
+'UML2_ExpansionRegion' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'UML2_StructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ClearAssociationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'InvocationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Property' represents an important domain concept.
+It has the following attributes: 'isDerived', which is of type bool; 'aggregation', which is of type str; 'isDerivedUnion', which is of type bool; 'default', which is of type str; 'isComposite', which is of type bool.
+
+'UML2_Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_CallBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'TemplateSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_DurationObservationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_DeploymentSpecification' represents an important domain concept.
+It has the following attributes: 'executionLocation', which is of type str; 'deploymentLocation', which is of type str.
+
+'UML2_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ProtocolConformance' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_MessageTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'WriteLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_StartOwnedBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ChangeTrigger' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_LiteralInteger' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'UML2_LiteralString' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'CreateLinkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'CentralBufferNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ProtocolTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_NamedElement' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'qualifiedName', which is of type str; 'name', which is of type str.
+
+'UML2_ExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_CentralBufferNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_AcceptCallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Include' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_TemplateableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'WriteStructuralFeatureAction' represents an important domain concept.
+It does not declare any attributes.
+
+'StructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Usage' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_DataStoreNode' represents an important domain concept.
+It does not declare any attributes.
+
+'InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'InteractionOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_UseCase' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_TemplateParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_DurationConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_TimeTrigger' represents an important domain concept.
+It has one attribute: 'isRelative', which is of type bool.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TransitionKind' defines the following possible values: 'internal', 'external', 'local'.
+The enumeration 'ParameterDirectionKind' defines the following possible values: 'inout', 'out', 'return', 'in'.
+The enumeration 'ExpansionKind' defines the following possible values: 'parallel', 'stream', 'iterative'.
+The enumeration 'AggregationKind' defines the following possible values: 'none', 'shared', 'composite'.
+The enumeration 'MessageKind' defines the following possible values: 'complete', 'unknown', 'found', 'lost'.
+The enumeration 'VisibilityKind' defines the following possible values: 'public', 'package', 'private', 'protected'.
+The enumeration 'CallConcurrencyKind' defines the following possible values: 'concurrent', 'sequential', 'guarded'.
+The enumeration 'ObjectNodeOrderingKind' defines the following possible values: 'unordered', 'LIFO', 'FIFO', 'ordered'.
+The enumeration 'InteractionOperator' defines the following possible values: 'consider', 'assert', 'neg', 'strict', 'critical', 'opt', 'break', 'alt', 'loop', 'par', 'ignore', 'seq'.
+The enumeration 'MessageSort' defines the following possible values: 'asynchSignal', 'synchSignal', 'asynchCall', 'synchCall'.
+The enumeration 'ConnectorKind' defines the following possible values: 'assembly', 'delegation'.
+The enumeration 'PseudostateKind' defines the following possible values: 'deepHistory', 'exitPoint', 'choice', 'junction', 'fork', 'terminate', 'entryPoint', 'initial', 'shallowHistory', 'join'.
+The enumeration 'ParameterEffectKind' defines the following possible values: 'read', 'delete', 'create', 'update'.
+
+The model also captures inheritance relationships between classes.
+The class 'UML2_MultiplicityElement' is a specialization of 'Element'.
+The class 'UML2_NamedElement' is a specialization of 'TemplateableElement'.
+The class 'UML2_Namespace' is a specialization of 'NamedElement'.
+The class 'UML2_OpaqueExpression' is a specialization of 'ValueSpecification'.
+The class 'UML2_ValueSpecification' is a specialization of 'TypedElement'.
+The class 'UML2_ValueSpecification' is a specialization of 'ParameterableElement'.
+The class 'UML2_Expression' is a specialization of 'OpaqueExpression'.
+The class 'UML2_Comment' is a specialization of 'TemplateableElement'.
+The class 'UML2_DirectedRelationship' is a specialization of 'Relationship'.
+The class 'UML2_Relationship' is a specialization of 'Element'.
+The class 'UML2_Class' is a specialization of 'BehavioredClassifier'.
+The class 'UML2_Class' is a specialization of 'EncapsulatedClassifier'.
+The class 'UML2_Type' is a specialization of 'PackageableElement'.
+The class 'UML2_Property' is a specialization of 'StructuralFeature'.
+The class 'UML2_Property' is a specialization of 'ConnectableElement'.
+The class 'UML2_Property' is a specialization of 'DeploymentTarget'.
+The class 'UML2_Operation' is a specialization of 'BehavioralFeature'.
+The class 'UML2_Operation' is a specialization of 'TypedElement'.
+The class 'UML2_Operation' is a specialization of 'MultiplicityElement'.
+The class 'UML2_Operation' is a specialization of 'ParameterableElement'.
+The class 'UML2_TypedElement' is a specialization of 'NamedElement'.
+The class 'UML2_Parameter' is a specialization of 'ConnectableElement'.
+The class 'UML2_Parameter' is a specialization of 'TypedElement'.
+The class 'UML2_Parameter' is a specialization of 'MultiplicityElement'.
+The class 'UML2_Package' is a specialization of 'Namespace'.
+The class 'UML2_Package' is a specialization of 'PackageableElement'.
+The class 'UML2_Enumeration' is a specialization of 'DataType'.
+The class 'UML2_DataType' is a specialization of 'Classifier'.
+The class 'UML2_EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+The class 'UML2_PrimitiveType' is a specialization of 'DataType'.
+The class 'UML2_Classifier' is a specialization of 'Namespace'.
+The class 'UML2_Classifier' is a specialization of 'Type'.
+The class 'UML2_Classifier' is a specialization of 'RedefinableElement'.
+The class 'UML2_Feature' is a specialization of 'RedefinableElement'.
+The class 'UML2_Constraint' is a specialization of 'PackageableElement'.
+The class 'UML2_LiteralBoolean' is a specialization of 'LiteralSpecification'.
+The class 'UML2_LiteralSpecification' is a specialization of 'ValueSpecification'.
+The class 'UML2_LiteralString' is a specialization of 'LiteralSpecification'.
+The class 'UML2_LiteralNull' is a specialization of 'LiteralSpecification'.
+The class 'UML2_LiteralInteger' is a specialization of 'LiteralSpecification'.
+The class 'UML2_LiteralUnlimitedNatural' is a specialization of 'LiteralSpecification'.
+The class 'UML2_BehavioralFeature' is a specialization of 'Namespace'.
+The class 'UML2_BehavioralFeature' is a specialization of 'Feature'.
+The class 'UML2_StructuralFeature' is a specialization of 'Feature'.
+The class 'UML2_StructuralFeature' is a specialization of 'TypedElement'.
+The class 'UML2_StructuralFeature' is a specialization of 'MultiplicityElement'.
+The class 'UML2_InstanceSpecification' is a specialization of 'PackageableElement'.
+The class 'UML2_InstanceSpecification' is a specialization of 'DeploymentTarget'.
+The class 'UML2_InstanceSpecification' is a specialization of 'DeployedArtifact'.
+The class 'UML2_Slot' is a specialization of 'Element'.
+The class 'UML2_InstanceValue' is a specialization of 'ValueSpecification'.
+The class 'UML2_RedefinableElement' is a specialization of 'NamedElement'.
+The class 'UML2_Generalization' is a specialization of 'DirectedRelationship'.
+The class 'UML2_PackageableElement' is a specialization of 'NamedElement'.
+The class 'UML2_PackageableElement' is a specialization of 'ParameterableElement'.
+The class 'UML2_ElementImport' is a specialization of 'DirectedRelationship'.
+The class 'UML2_PackageImport' is a specialization of 'DirectedRelationship'.
+The class 'UML2_Association' is a specialization of 'Classifier'.
+The class 'UML2_Association' is a specialization of 'Relationship'.
+The class 'UML2_PackageMerge' is a specialization of 'DirectedRelationship'.
+The class 'UML2_Stereotype' is a specialization of 'Class'.
+The class 'UML2_Profile' is a specialization of 'Package'.
+The class 'UML2_ProfileApplication' is a specialization of 'PackageImport'.
+The class 'UML2_Extension' is a specialization of 'Association'.
+The class 'UML2_ExtensionEnd' is a specialization of 'Property'.
+The class 'UML2_Behavior' is a specialization of 'Class'.
+The class 'UML2_BehavioredClassifier' is a specialization of 'Classifier'.
+The class 'UML2_Activity' is a specialization of 'Behavior'.
+The class 'UML2_Permission' is a specialization of 'Dependency'.
+The class 'UML2_Dependency' is a specialization of 'PackageableElement'.
+The class 'UML2_Dependency' is a specialization of 'DirectedRelationship'.
+The class 'UML2_Usage' is a specialization of 'Dependency'.
+The class 'UML2_Abstraction' is a specialization of 'Dependency'.
+The class 'UML2_Realization' is a specialization of 'Abstraction'.
+The class 'UML2_Substitution' is a specialization of 'Realization'.
+The class 'UML2_GeneralizationSet' is a specialization of 'PackageableElement'.
+The class 'UML2_AssociationClass' is a specialization of 'Class'.
+The class 'UML2_AssociationClass' is a specialization of 'Association'.
+The class 'UML2_InformationItem' is a specialization of 'Classifier'.
+The class 'UML2_InformationFlow' is a specialization of 'PackageableElement'.
+The class 'UML2_InformationFlow' is a specialization of 'DirectedRelationship'.
+The class 'UML2_Model' is a specialization of 'Package'.
+The class 'UML2_ConnectorEnd' is a specialization of 'MultiplicityElement'.
+The class 'UML2_ConnectableElement' is a specialization of 'NamedElement'.
+The class 'UML2_ConnectableElement' is a specialization of 'ParameterableElement'.
+The class 'UML2_Connector' is a specialization of 'Feature'.
+The class 'UML2_StructuredClassifier' is a specialization of 'Classifier'.
+The class 'UML2_ActivityEdge' is a specialization of 'RedefinableElement'.
+The class 'UML2_ActivityGroup' is a specialization of 'Element'.
+The class 'UML2_ActivityNode' is a specialization of 'RedefinableElement'.
+The class 'UML2_Action' is a specialization of 'ExecutableNode'.
+The class 'UML2_ObjectNode' is a specialization of 'ActivityNode'.
+The class 'UML2_ObjectNode' is a specialization of 'TypedElement'.
+The class 'UML2_ControlNode' is a specialization of 'ActivityNode'.
+The class 'UML2_ControlFlow' is a specialization of 'ActivityEdge'.
+The class 'UML2_ObjectFlow' is a specialization of 'ActivityEdge'.
+The class 'UML2_InitialNode' is a specialization of 'ControlNode'.
+The class 'UML2_FinalNode' is a specialization of 'ControlNode'.
+The class 'UML2_ActivityFinalNode' is a specialization of 'FinalNode'.
+The class 'UML2_DecisionNode' is a specialization of 'ControlNode'.
+The class 'UML2_MergeNode' is a specialization of 'ControlNode'.
+The class 'UML2_ExecutableNode' is a specialization of 'ActivityNode'.
+The class 'UML2_OutputPin' is a specialization of 'Pin'.
+The class 'UML2_InputPin' is a specialization of 'Pin'.
+The class 'UML2_Pin' is a specialization of 'ObjectNode'.
+The class 'UML2_Pin' is a specialization of 'MultiplicityElement'.
+The class 'UML2_ActivityParameterNode' is a specialization of 'ObjectNode'.
+The class 'UML2_ValuePin' is a specialization of 'InputPin'.
+The class 'UML2_Interface' is a specialization of 'Classifier'.
+The class 'UML2_Implementation' is a specialization of 'Realization'.
+The class 'UML2_Artifact' is a specialization of 'Classifier'.
+The class 'UML2_Artifact' is a specialization of 'DeployedArtifact'.
+The class 'UML2_Manifestation' is a specialization of 'Abstraction'.
+The class 'UML2_Actor' is a specialization of 'Classifier'.
+The class 'UML2_Extend' is a specialization of 'NamedElement'.
+The class 'UML2_Extend' is a specialization of 'DirectedRelationship'.
+The class 'UML2_UseCase' is a specialization of 'BehavioredClassifier'.
+The class 'UML2_ExtensionPoint' is a specialization of 'RedefinableElement'.
+The class 'UML2_Include' is a specialization of 'NamedElement'.
+The class 'UML2_Include' is a specialization of 'DirectedRelationship'.
+The class 'UML2_CollaborationOccurrence' is a specialization of 'NamedElement'.
+The class 'UML2_Collaboration' is a specialization of 'BehavioredClassifier'.
+The class 'UML2_Collaboration' is a specialization of 'StructuredClassifier'.
+The class 'UML2_Port' is a specialization of 'Property'.
+The class 'UML2_EncapsulatedClassifier' is a specialization of 'StructuredClassifier'.
+The class 'UML2_CallTrigger' is a specialization of 'MessageTrigger'.
+The class 'UML2_MessageTrigger' is a specialization of 'Trigger'.
+The class 'UML2_ChangeTrigger' is a specialization of 'Trigger'.
+The class 'UML2_Trigger' is a specialization of 'NamedElement'.
+The class 'UML2_Reception' is a specialization of 'BehavioralFeature'.
+The class 'UML2_Signal' is a specialization of 'Classifier'.
+The class 'UML2_SignalTrigger' is a specialization of 'MessageTrigger'.
+The class 'UML2_TimeTrigger' is a specialization of 'Trigger'.
+The class 'UML2_AnyTrigger' is a specialization of 'MessageTrigger'.
+The class 'UML2_Variable' is a specialization of 'ConnectableElement'.
+The class 'UML2_Variable' is a specialization of 'TypedElement'.
+The class 'UML2_Variable' is a specialization of 'MultiplicityElement'.
+The class 'UML2_StructuredActivityNode' is a specialization of 'Action'.
+The class 'UML2_StructuredActivityNode' is a specialization of 'Namespace'.
+The class 'UML2_StructuredActivityNode' is a specialization of 'ActivityGroup'.
+The class 'UML2_ConditionalNode' is a specialization of 'StructuredActivityNode'.
+The class 'UML2_Clause' is a specialization of 'Element'.
+The class 'UML2_LoopNode' is a specialization of 'StructuredActivityNode'.
+The class 'UML2_Interaction' is a specialization of 'Behavior'.
+The class 'UML2_Interaction' is a specialization of 'InteractionFragment'.
+The class 'UML2_InteractionFragment' is a specialization of 'NamedElement'.
+The class 'UML2_Lifeline' is a specialization of 'NamedElement'.
+The class 'UML2_Message' is a specialization of 'NamedElement'.
+The class 'UML2_GeneralOrdering' is a specialization of 'NamedElement'.
+The class 'UML2_MessageEnd' is a specialization of 'NamedElement'.
+The class 'UML2_EventOccurrence' is a specialization of 'InteractionFragment'.
+The class 'UML2_EventOccurrence' is a specialization of 'MessageEnd'.
+The class 'UML2_ExecutionOccurrence' is a specialization of 'InteractionFragment'.
+The class 'UML2_StateInvariant' is a specialization of 'InteractionFragment'.
+The class 'UML2_Stop' is a specialization of 'EventOccurrence'.
+The class 'UML2_TemplateSignature' is a specialization of 'Element'.
+The class 'UML2_TemplateParameter' is a specialization of 'Element'.
+The class 'UML2_TemplateableElement' is a specialization of 'Element'.
+The class 'UML2_StringExpression' is a specialization of 'TemplateableElement'.
+The class 'UML2_ParameterableElement' is a specialization of 'Element'.
+The class 'UML2_TemplateBinding' is a specialization of 'DirectedRelationship'.
+The class 'UML2_TemplateParameterSubstitution' is a specialization of 'Element'.
+The class 'UML2_OperationTemplateParameter' is a specialization of 'TemplateParameter'.
+The class 'UML2_ClassifierTemplateParameter' is a specialization of 'TemplateParameter'.
+The class 'UML2_ParameterableClassifier' is a specialization of 'Classifier'.
+The class 'UML2_RedefinableTemplateSignature' is a specialization of 'RedefinableElement'.
+The class 'UML2_RedefinableTemplateSignature' is a specialization of 'TemplateSignature'.
+The class 'UML2_TemplateableClassifier' is a specialization of 'Classifier'.
+The class 'UML2_ConnectableElementTemplateParameter' is a specialization of 'TemplateParameter'.
+The class 'UML2_ForkNode' is a specialization of 'ControlNode'.
+The class 'UML2_JoinNode' is a specialization of 'ControlNode'.
+The class 'UML2_FlowFinalNode' is a specialization of 'FinalNode'.
+The class 'UML2_CentralBufferNode' is a specialization of 'ObjectNode'.
+The class 'UML2_ActivityPartition' is a specialization of 'NamedElement'.
+The class 'UML2_ActivityPartition' is a specialization of 'ActivityGroup'.
+The class 'UML2_ExpansionNode' is a specialization of 'ObjectNode'.
+The class 'UML2_ExpansionRegion' is a specialization of 'StructuredActivityNode'.
+The class 'UML2_ExceptionHandler' is a specialization of 'Element'.
+The class 'UML2_InteractionOccurrence' is a specialization of 'InteractionFragment'.
+The class 'UML2_Gate' is a specialization of 'MessageEnd'.
+The class 'UML2_PartDecomposition' is a specialization of 'InteractionOccurrence'.
+The class 'UML2_InteractionOperand' is a specialization of 'Namespace'.
+The class 'UML2_InteractionOperand' is a specialization of 'InteractionFragment'.
+The class 'UML2_InteractionConstraint' is a specialization of 'Constraint'.
+The class 'UML2_CombinedFragment' is a specialization of 'InteractionFragment'.
+The class 'UML2_Continuation' is a specialization of 'InteractionFragment'.
+The class 'UML2_StateMachine' is a specialization of 'Behavior'.
+The class 'UML2_Region' is a specialization of 'Namespace'.
+The class 'UML2_Region' is a specialization of 'RedefinableElement'.
+The class 'UML2_Pseudostate' is a specialization of 'Vertex'.
+The class 'UML2_State' is a specialization of 'Namespace'.
+The class 'UML2_State' is a specialization of 'RedefinableElement'.
+The class 'UML2_State' is a specialization of 'Vertex'.
+The class 'UML2_Vertex' is a specialization of 'NamedElement'.
+The class 'UML2_ConnectionPointReference' is a specialization of 'Vertex'.
+The class 'UML2_Transition' is a specialization of 'RedefinableElement'.
+The class 'UML2_FinalState' is a specialization of 'State'.
+The class 'UML2_CreateObjectAction' is a specialization of 'Action'.
+The class 'UML2_DestroyObjectAction' is a specialization of 'Action'.
+The class 'UML2_TestIdentityAction' is a specialization of 'Action'.
+The class 'UML2_ReadSelfAction' is a specialization of 'Action'.
+The class 'UML2_StructuralFeatureAction' is a specialization of 'Action'.
+The class 'UML2_ReadStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'UML2_WriteStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'UML2_ClearStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+The class 'UML2_RemoveStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'UML2_AddStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'UML2_LinkAction' is a specialization of 'Action'.
+The class 'UML2_LinkEndData' is a specialization of 'Element'.
+The class 'UML2_ReadLinkAction' is a specialization of 'LinkAction'.
+The class 'UML2_LinkEndCreationData' is a specialization of 'LinkEndData'.
+The class 'UML2_CreateLinkAction' is a specialization of 'WriteLinkAction'.
+The class 'UML2_WriteLinkAction' is a specialization of 'LinkAction'.
+The class 'UML2_DestroyLinkAction' is a specialization of 'WriteLinkAction'.
+The class 'UML2_ClearAssociationAction' is a specialization of 'Action'.
+The class 'UML2_VariableAction' is a specialization of 'Action'.
+The class 'UML2_ReadVariableAction' is a specialization of 'VariableAction'.
+The class 'UML2_WriteVariableAction' is a specialization of 'VariableAction'.
+The class 'UML2_ClearVariableAction' is a specialization of 'VariableAction'.
+The class 'UML2_AddVariableValueAction' is a specialization of 'WriteVariableAction'.
+The class 'UML2_RemoveVariableValueAction' is a specialization of 'WriteVariableAction'.
+The class 'UML2_ApplyFunctionAction' is a specialization of 'Action'.
+The class 'UML2_PrimitiveFunction' is a specialization of 'PackageableElement'.
+The class 'UML2_CallAction' is a specialization of 'InvocationAction'.
+The class 'UML2_InvocationAction' is a specialization of 'Action'.
+The class 'UML2_SendSignalAction' is a specialization of 'InvocationAction'.
+The class 'UML2_BroadcastSignalAction' is a specialization of 'InvocationAction'.
+The class 'UML2_SendObjectAction' is a specialization of 'InvocationAction'.
+The class 'UML2_CallOperationAction' is a specialization of 'CallAction'.
+The class 'UML2_CallBehaviorAction' is a specialization of 'CallAction'.
+The class 'UML2_TimeExpression' is a specialization of 'ValueSpecification'.
+The class 'UML2_Duration' is a specialization of 'ValueSpecification'.
+The class 'UML2_TimeObservationAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'UML2_DurationInterval' is a specialization of 'Interval'.
+The class 'UML2_Interval' is a specialization of 'ValueSpecification'.
+The class 'UML2_TimeConstraint' is a specialization of 'IntervalConstraint'.
+The class 'UML2_IntervalConstraint' is a specialization of 'Constraint'.
+The class 'UML2_TimeInterval' is a specialization of 'Interval'.
+The class 'UML2_DurationObservationAction' is a specialization of 'WriteStructuralFeatureAction'.
+The class 'UML2_DurationConstraint' is a specialization of 'IntervalConstraint'.
+The class 'UML2_DataStoreNode' is a specialization of 'CentralBufferNode'.
+The class 'UML2_InterruptibleActivityRegion' is a specialization of 'ActivityGroup'.
+The class 'UML2_ParameterSet' is a specialization of 'NamedElement'.
+The class 'UML2_Component' is a specialization of 'Class'.
+The class 'UML2_Deployment' is a specialization of 'Dependency'.
+The class 'UML2_DeployedArtifact' is a specialization of 'NamedElement'.
+The class 'UML2_DeploymentTarget' is a specialization of 'NamedElement'.
+The class 'UML2_Node' is a specialization of 'Class'.
+The class 'UML2_Node' is a specialization of 'DeploymentTarget'.
+The class 'UML2_Device' is a specialization of 'Node'.
+The class 'UML2_ExecutionEnvironment' is a specialization of 'Node'.
+The class 'UML2_CommunicationPath' is a specialization of 'Association'.
+The class 'UML2_ProtocolConformance' is a specialization of 'DirectedRelationship'.
+The class 'UML2_ProtocolStateMachine' is a specialization of 'StateMachine'.
+The class 'UML2_ProtocolTransition' is a specialization of 'Transition'.
+The class 'UML2_ReadExtentAction' is a specialization of 'Action'.
+The class 'UML2_ReclassifyObjectAction' is a specialization of 'Action'.
+The class 'UML2_ReadIsClassifiedObjectAction' is a specialization of 'Action'.
+The class 'UML2_StartOwnedBehaviorAction' is a specialization of 'Action'.
+The class 'UML2_QualifierValue' is a specialization of 'Element'.
+The class 'UML2_ReadLinkObjectEndAction' is a specialization of 'Action'.
+The class 'UML2_ReadLinkObjectEndQualifierAction' is a specialization of 'Action'.
+The class 'UML2_CreateLinkObjectAction' is a specialization of 'CreateLinkAction'.
+The class 'UML2_AcceptEventAction' is a specialization of 'Action'.
+The class 'UML2_AcceptCallAction' is a specialization of 'AcceptEventAction'.
+The class 'UML2_ReplyAction' is a specialization of 'Action'.
+The class 'UML2_RaiseExceptionAction' is a specialization of 'Action'.
+The class 'UML2_DeploymentSpecification' is a specialization of 'Artifact'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML2_Element' and 'UML2_Element'. From 'UML2_Element', the role 'owner' has cardinality 0..*, and from 'UML2_Element', the role 'Element' has cardinality 0..*.
+An association connects 'UML2_Element' and 'UML2_Element'. From 'UML2_Element', the role 'Element4' has cardinality 0..*, and from 'UML2_Element', the role 'ownedElement' has cardinality 0..*.
+An association connects 'UML2_Comment' and 'UML2_Element'. From 'UML2_Comment', the role 'UML2_Comment' has cardinality 0..*, and from 'UML2_Element', the role 'UML2_Element' has cardinality 0..*.
+An association connects 'UML2_ValueSpecification' and 'UML2_MultiplicityElement'. From 'UML2_ValueSpecification', the role 'UML2_ValueSpecification' has cardinality 0..*, and from 'UML2_MultiplicityElement', the role 'UML2_MultiplicityElement' has cardinality 0..*.
+An association connects 'UML2_ValueSpecification' and 'UML2_MultiplicityElement'. From 'UML2_ValueSpecification', the role 'UML2_ValueSpecification9' has cardinality 0..*, and from 'UML2_MultiplicityElement', the role 'UML2_MultiplicityElement8' has cardinality 0..*.
+An association connects 'UML2_NamedElement' and 'UML2_Dependency'. From 'UML2_NamedElement', the role 'client' has cardinality 0..*, and from 'UML2_Dependency', the role 'Dependency' has cardinality 0..*.
+An association connects 'UML2_NamedElement' and 'UML2_StringExpression'. From 'UML2_NamedElement', the role 'UML2_NamedElement' has cardinality 0..*, and from 'UML2_StringExpression', the role 'UML2_StringExpression' has cardinality 0..*.
+An association connects 'UML2_Namespace' and 'UML2_NamedElement'. From 'UML2_Namespace', the role 'UML2_Namespace' has cardinality 0..*, and from 'UML2_NamedElement', the role 'UML2_NamedElement13' has cardinality 0..*.
+An association connects 'UML2_Namespace' and 'UML2_Constraint'. From 'UML2_Namespace', the role 'namespace' has cardinality 0..*, and from 'UML2_Constraint', the role 'Constraint' has cardinality 0..*.
+An association connects 'UML2_PackageableElement' and 'UML2_Namespace'. From 'UML2_PackageableElement', the role 'UML2_PackageableElement' has cardinality 0..*, and from 'UML2_Namespace', the role 'UML2_Namespace16' has cardinality 0..*.
+An association connects 'UML2_Namespace' and 'UML2_ElementImport'. From 'UML2_Namespace', the role 'importingNamespace' has cardinality 0..*, and from 'UML2_ElementImport', the role 'ElementImport' has cardinality 0..*.
+An association connects 'UML2_Namespace' and 'UML2_PackageImport'. From 'UML2_Namespace', the role 'importingNamespace19' has cardinality 0..*, and from 'UML2_PackageImport', the role 'PackageImport' has cardinality 0..*.
+An association connects 'UML2_OpaqueExpression' and 'UML2_Parameter'. From 'UML2_OpaqueExpression', the role 'UML2_OpaqueExpression' has cardinality 0..*, and from 'UML2_Parameter', the role 'UML2_Parameter' has cardinality 0..*.
+An association connects 'UML2_Behavior' and 'UML2_OpaqueExpression'. From 'UML2_Behavior', the role 'UML2_Behavior' has cardinality 0..*, and from 'UML2_OpaqueExpression', the role 'UML2_OpaqueExpression22' has cardinality 0..*.
+An association connects 'UML2_ValueSpecification' and 'UML2_Expression'. From 'UML2_ValueSpecification', the role 'UML2_ValueSpecification24' has cardinality 0..*, and from 'UML2_Expression', the role 'UML2_Expression' has cardinality 0..*.
+An association connects 'UML2_Comment' and 'UML2_Element'. From 'UML2_Comment', the role 'UML2_Comment26' has cardinality 0..*, and from 'UML2_Element', the role 'UML2_Element27' has cardinality 0..*.
+An association connects 'UML2_StringExpression' and 'UML2_Comment'. From 'UML2_StringExpression', the role 'UML2_StringExpression30' has cardinality 0..*, and from 'UML2_Comment', the role 'UML2_Comment29' has cardinality 0..*.
+An association connects 'UML2_DirectedRelationship' and 'UML2_Element'. From 'UML2_DirectedRelationship', the role 'UML2_DirectedRelationship' has cardinality 0..*, and from 'UML2_Element', the role 'UML2_Element32' has cardinality 0..*.
+An association connects 'UML2_DirectedRelationship' and 'UML2_Element'. From 'UML2_DirectedRelationship', the role 'UML2_DirectedRelationship34' has cardinality 0..*, and from 'UML2_Element', the role 'UML2_Element35' has cardinality 0..*.
+An association connects 'UML2_Element' and 'UML2_Relationship'. From 'UML2_Element', the role 'UML2_Element37' has cardinality 0..*, and from 'UML2_Relationship', the role 'UML2_Relationship' has cardinality 0..*.
+An association connects 'UML2_Class' and 'UML2_Operation'. From 'UML2_Class', the role 'class_' has cardinality 0..*, and from 'UML2_Operation', the role 'Operation' has cardinality 0..*.
+An association connects 'UML2_Class' and 'UML2_Class'. From 'UML2_Class', the role 'UML2_Class39' has cardinality 0..*, and from 'UML2_Class', the role 'UML2_Class' has cardinality 0..*.
+An association connects 'UML2_Class' and 'UML2_Extension'. From 'UML2_Class', the role 'metaclass' has cardinality 0..*, and from 'UML2_Extension', the role 'Extension' has cardinality 0..*.
+An association connects 'UML2_Class' and 'UML2_Classifier'. From 'UML2_Class', the role 'UML2_Class43' has cardinality 0..*, and from 'UML2_Classifier', the role 'UML2_Classifier' has cardinality 0..*.
+An association connects 'UML2_Reception' and 'UML2_Class'. From 'UML2_Reception', the role 'UML2_Reception' has cardinality 0..*, and from 'UML2_Class', the role 'UML2_Class45' has cardinality 0..*.
+An association connects 'UML2_Type' and 'UML2_Package'. From 'UML2_Type', the role 'ownedType' has cardinality 0..*, and from 'UML2_Package', the role 'Package' has cardinality 0..*.
+An association connects 'UML2_Class' and 'UML2_Property'. From 'UML2_Class', the role 'UML2_Class48' has cardinality 0..*, and from 'UML2_Property', the role 'UML2_Property' has cardinality 0..*.
+An association connects 'UML2_Property' and 'UML2_Property'. From 'UML2_Property', the role 'UML2_Property51' has cardinality 0..*, and from 'UML2_Property', the role 'UML2_Property49' has cardinality 0..*.
+An association connects 'UML2_Association' and 'UML2_Property'. From 'UML2_Association', the role 'Association' has cardinality 0..*, and from 'UML2_Property', the role 'ownedEnd' has cardinality 0..*.
+An association connects 'UML2_Property' and 'UML2_Property'. From 'UML2_Property', the role 'UML2_Property53' has cardinality 0..*, and from 'UML2_Property', the role 'UML2_Property55' has cardinality 0..*.
+An association connects 'UML2_Property' and 'UML2_Property'. From 'UML2_Property', the role 'UML2_Property56' has cardinality 0..*, and from 'UML2_Property', the role 'UML2_Property58' has cardinality 0..*.
+An association connects 'UML2_DataType' and 'UML2_Property'. From 'UML2_DataType', the role 'DataType' has cardinality 0..*, and from 'UML2_Property', the role 'ownedAttribute' has cardinality 0..*.
+An association connects 'UML2_Association' and 'UML2_Property'. From 'UML2_Association', the role 'Association61' has cardinality 0..*, and from 'UML2_Property', the role 'memberEnd' has cardinality 0..*.
+An association connects 'UML2_Property' and 'UML2_ValueSpecification'. From 'UML2_Property', the role 'UML2_Property63' has cardinality 0..*, and from 'UML2_ValueSpecification', the role 'UML2_ValueSpecification64' has cardinality 0..*.
+An association connects 'UML2_Property' and 'UML2_Property'. From 'UML2_Property', the role 'Property' has cardinality 0..*, and from 'UML2_Property', the role 'associationEnd' has cardinality 0..*.
+An association connects 'UML2_Property' and 'UML2_Property'. From 'UML2_Property', the role 'qualifier' has cardinality 0..*, and from 'UML2_Property', the role 'Property69' has cardinality 0..*.
+An association connects 'UML2_Parameter' and 'UML2_Operation'. From 'UML2_Parameter', the role 'Parameter' has cardinality 0..*, and from 'UML2_Operation', the role 'operation' has cardinality 0..*.
+An association connects 'UML2_Class' and 'UML2_Operation'. From 'UML2_Class', the role 'Class' has cardinality 0..*, and from 'UML2_Operation', the role 'ownedOperation' has cardinality 0..*.
+An association connects 'UML2_Operation' and 'UML2_DataType'. From 'UML2_Operation', the role 'ownedOperation73' has cardinality 0..*, and from 'UML2_DataType', the role 'DataType74' has cardinality 0..*.
+An association connects 'UML2_Operation' and 'UML2_Constraint'. From 'UML2_Operation', the role 'UML2_Operation' has cardinality 0..*, and from 'UML2_Constraint', the role 'UML2_Constraint' has cardinality 0..*.
+An association connects 'UML2_Operation' and 'UML2_Constraint'. From 'UML2_Operation', the role 'UML2_Operation77' has cardinality 0..*, and from 'UML2_Constraint', the role 'UML2_Constraint78' has cardinality 0..*.
+An association connects 'UML2_Operation' and 'UML2_Operation'. From 'UML2_Operation', the role 'UML2_Operation81' has cardinality 0..*, and from 'UML2_Operation', the role 'UML2_Operation79' has cardinality 0..*.
+An association connects 'UML2_Constraint' and 'UML2_Operation'. From 'UML2_Constraint', the role 'UML2_Constraint84' has cardinality 0..*, and from 'UML2_Operation', the role 'UML2_Operation83' has cardinality 0..*.
+An association connects 'UML2_Type' and 'UML2_TypedElement'. From 'UML2_Type', the role 'UML2_Type' has cardinality 0..*, and from 'UML2_TypedElement', the role 'UML2_TypedElement' has cardinality 0..*.
+An association connects 'UML2_Operation' and 'UML2_Parameter'. From 'UML2_Operation', the role 'Operation87' has cardinality 0..*, and from 'UML2_Parameter', the role 'ownedParameter' has cardinality 0..*.
+An association connects 'UML2_ValueSpecification' and 'UML2_Parameter'. From 'UML2_ValueSpecification', the role 'UML2_ValueSpecification90' has cardinality 0..*, and from 'UML2_Parameter', the role 'UML2_Parameter89' has cardinality 0..*.
+An association connects 'UML2_Parameter' and 'UML2_ParameterSet'. From 'UML2_Parameter', the role 'parameter' has cardinality 0..*, and from 'UML2_ParameterSet', the role 'ParameterSet' has cardinality 0..*.
+An association connects 'UML2_Package' and 'UML2_Package'. From 'UML2_Package', the role 'nestingPackage' has cardinality 0..*, and from 'UML2_Package', the role 'Package94' has cardinality 0..*.
+An association connects 'UML2_Package' and 'UML2_Package'. From 'UML2_Package', the role 'nestedPackage' has cardinality 0..*, and from 'UML2_Package', the role 'Package97' has cardinality 0..*.
+An association connects 'UML2_Package' and 'UML2_Type'. From 'UML2_Package', the role 'package' has cardinality 0..*, and from 'UML2_Type', the role 'Type' has cardinality 0..*.
+An association connects 'UML2_Package' and 'UML2_PackageableElement'. From 'UML2_Package', the role 'UML2_Package' has cardinality 0..*, and from 'UML2_PackageableElement', the role 'UML2_PackageableElement100' has cardinality 0..*.
+An association connects 'UML2_Package' and 'UML2_PackageMerge'. From 'UML2_Package', the role 'mergingPackage' has cardinality 0..*, and from 'UML2_PackageMerge', the role 'PackageMerge' has cardinality 0..*.
+An association connects 'UML2_Package' and 'UML2_ProfileApplication'. From 'UML2_Package', the role 'UML2_Package103' has cardinality 0..*, and from 'UML2_ProfileApplication', the role 'UML2_ProfileApplication' has cardinality 0..*.
+An association connects 'UML2_PackageMerge' and 'UML2_Package'. From 'UML2_PackageMerge', the role 'UML2_PackageMerge' has cardinality 0..*, and from 'UML2_Package', the role 'UML2_Package105' has cardinality 0..*.
+An association connects 'UML2_Enumeration' and 'UML2_EnumerationLiteral'. From 'UML2_Enumeration', the role 'enumeration' has cardinality 0..*, and from 'UML2_EnumerationLiteral', the role 'EnumerationLiteral' has cardinality 0..*.
+An association connects 'UML2_Property' and 'UML2_DataType'. From 'UML2_Property', the role 'Property108' has cardinality 0..*, and from 'UML2_DataType', the role 'datatype' has cardinality 0..*.
+An association connects 'UML2_DataType' and 'UML2_Operation'. From 'UML2_DataType', the role 'datatype110' has cardinality 0..*, and from 'UML2_Operation', the role 'Operation111' has cardinality 0..*.
+An association connects 'UML2_Enumeration' and 'UML2_EnumerationLiteral'. From 'UML2_Enumeration', the role 'Enumeration' has cardinality 0..*, and from 'UML2_EnumerationLiteral', the role 'ownedLiteral' has cardinality 0..*.
+An association connects 'UML2_Feature' and 'UML2_Classifier'. From 'UML2_Feature', the role 'Feature' has cardinality 0..*, and from 'UML2_Classifier', the role 'featuringClassifier' has cardinality 0..*.
+An association connects 'UML2_NamedElement' and 'UML2_Classifier'. From 'UML2_NamedElement', the role 'UML2_NamedElement116' has cardinality 0..*, and from 'UML2_Classifier', the role 'UML2_Classifier115' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_Classifier'. From 'UML2_Classifier', the role 'UML2_Classifier119' has cardinality 0..*, and from 'UML2_Classifier', the role 'UML2_Classifier117' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_Generalization'. From 'UML2_Classifier', the role 'specific' has cardinality 0..*, and from 'UML2_Generalization', the role 'Generalization' has cardinality 0..*.
+An association connects 'UML2_Property' and 'UML2_Classifier'. From 'UML2_Property', the role 'UML2_Property123' has cardinality 0..*, and from 'UML2_Classifier', the role 'UML2_Classifier122' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_Classifier'. From 'UML2_Classifier', the role 'UML2_Classifier124' has cardinality 0..*, and from 'UML2_Classifier', the role 'UML2_Classifier126' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_Substitution'. From 'UML2_Classifier', the role 'substitutingClassifier' has cardinality 0..*, and from 'UML2_Substitution', the role 'Substitution' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_GeneralizationSet'. From 'UML2_Classifier', the role 'powertype' has cardinality 0..*, and from 'UML2_GeneralizationSet', the role 'GeneralizationSet' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_UseCase'. From 'UML2_Classifier', the role 'UML2_Classifier130' has cardinality 0..*, and from 'UML2_UseCase', the role 'UML2_UseCase' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_UseCase'. From 'UML2_Classifier', the role 'subject' has cardinality 0..*, and from 'UML2_UseCase', the role 'UseCase' has cardinality 0..*.
+An association connects 'UML2_CollaborationOccurrence' and 'UML2_Classifier'. From 'UML2_CollaborationOccurrence', the role 'UML2_CollaborationOccurrence' has cardinality 0..*, and from 'UML2_Classifier', the role 'UML2_Classifier133' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_CollaborationOccurrence'. From 'UML2_Classifier', the role 'UML2_Classifier135' has cardinality 0..*, and from 'UML2_CollaborationOccurrence', the role 'UML2_CollaborationOccurrence136' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_Feature'. From 'UML2_Classifier', the role 'Classifier' has cardinality 0..*, and from 'UML2_Feature', the role 'feature' has cardinality 0..*.
+An association connects 'UML2_Namespace' and 'UML2_Constraint'. From 'UML2_Namespace', the role 'UML2_Namespace140' has cardinality 0..*, and from 'UML2_Constraint', the role 'UML2_Constraint139' has cardinality 0..*.
+An association connects 'UML2_Namespace' and 'UML2_Constraint'. From 'UML2_Namespace', the role 'Namespace' has cardinality 0..*, and from 'UML2_Constraint', the role 'ownedRule' has cardinality 0..*.
+An association connects 'UML2_Constraint' and 'UML2_ValueSpecification'. From 'UML2_Constraint', the role 'UML2_Constraint143' has cardinality 0..*, and from 'UML2_ValueSpecification', the role 'UML2_ValueSpecification144' has cardinality 0..*.
+An association connects 'UML2_Element' and 'UML2_Constraint'. From 'UML2_Element', the role 'UML2_Element147' has cardinality 0..*, and from 'UML2_Constraint', the role 'UML2_Constraint146' has cardinality 0..*.
+An association connects 'UML2_BehavioralFeature' and 'UML2_Parameter'. From 'UML2_BehavioralFeature', the role 'UML2_BehavioralFeature' has cardinality 0..*, and from 'UML2_Parameter', the role 'UML2_Parameter149' has cardinality 0..*.
+An association connects 'UML2_Parameter' and 'UML2_BehavioralFeature'. From 'UML2_Parameter', the role 'UML2_Parameter152' has cardinality 0..*, and from 'UML2_BehavioralFeature', the role 'UML2_BehavioralFeature151' has cardinality 0..*.
+An association connects 'UML2_BehavioralFeature' and 'UML2_Parameter'. From 'UML2_BehavioralFeature', the role 'UML2_BehavioralFeature154' has cardinality 0..*, and from 'UML2_Parameter', the role 'UML2_Parameter155' has cardinality 0..*.
+An association connects 'UML2_Type' and 'UML2_BehavioralFeature'. From 'UML2_Type', the role 'UML2_Type158' has cardinality 0..*, and from 'UML2_BehavioralFeature', the role 'UML2_BehavioralFeature157' has cardinality 0..*.
+An association connects 'UML2_Behavior' and 'UML2_BehavioralFeature'. From 'UML2_Behavior', the role 'Behavior' has cardinality 0..*, and from 'UML2_BehavioralFeature', the role 'specification' has cardinality 0..*.
+An association connects 'UML2_Slot' and 'UML2_InstanceSpecification'. From 'UML2_Slot', the role 'Slot' has cardinality 0..*, and from 'UML2_InstanceSpecification', the role 'owningInstance' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_InstanceSpecification'. From 'UML2_Classifier', the role 'UML2_Classifier162' has cardinality 0..*, and from 'UML2_InstanceSpecification', the role 'UML2_InstanceSpecification' has cardinality 0..*.
+An association connects 'UML2_InstanceSpecification' and 'UML2_ValueSpecification'. From 'UML2_InstanceSpecification', the role 'UML2_InstanceSpecification164' has cardinality 0..*, and from 'UML2_ValueSpecification', the role 'UML2_ValueSpecification165' has cardinality 0..*.
+An association connects 'UML2_Slot' and 'UML2_InstanceSpecification'. From 'UML2_Slot', the role 'slot' has cardinality 0..*, and from 'UML2_InstanceSpecification', the role 'InstanceSpecification' has cardinality 0..*.
+An association connects 'UML2_ValueSpecification' and 'UML2_Slot'. From 'UML2_ValueSpecification', the role 'UML2_ValueSpecification168' has cardinality 0..*, and from 'UML2_Slot', the role 'UML2_Slot' has cardinality 0..*.
+An association connects 'UML2_StructuralFeature' and 'UML2_Slot'. From 'UML2_StructuralFeature', the role 'UML2_StructuralFeature' has cardinality 0..*, and from 'UML2_Slot', the role 'UML2_Slot170' has cardinality 0..*.
+An association connects 'UML2_InstanceValue' and 'UML2_InstanceSpecification'. From 'UML2_InstanceValue', the role 'UML2_InstanceValue' has cardinality 0..*, and from 'UML2_InstanceSpecification', the role 'UML2_InstanceSpecification172' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_RedefinableElement'. From 'UML2_Classifier', the role 'UML2_Classifier174' has cardinality 0..*, and from 'UML2_RedefinableElement', the role 'UML2_RedefinableElement' has cardinality 0..*.
+An association connects 'UML2_Generalization' and 'UML2_Classifier'. From 'UML2_Generalization', the role 'generalization' has cardinality 0..*, and from 'UML2_Classifier', the role 'Classifier176' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_Generalization'. From 'UML2_Classifier', the role 'UML2_Classifier178' has cardinality 0..*, and from 'UML2_Generalization', the role 'UML2_Generalization' has cardinality 0..*.
+An association connects 'UML2_GeneralizationSet' and 'UML2_Generalization'. From 'UML2_GeneralizationSet', the role 'GeneralizationSet181' has cardinality 0..*, and from 'UML2_Generalization', the role 'generalization180' has cardinality 0..*.
+An association connects 'UML2_ElementImport' and 'UML2_PackageableElement'. From 'UML2_ElementImport', the role 'UML2_ElementImport' has cardinality 0..*, and from 'UML2_PackageableElement', the role 'UML2_PackageableElement183' has cardinality 0..*.
+An association connects 'UML2_ElementImport' and 'UML2_Namespace'. From 'UML2_ElementImport', the role 'elementImport' has cardinality 0..*, and from 'UML2_Namespace', the role 'Namespace185' has cardinality 0..*.
+An association connects 'UML2_PackageImport' and 'UML2_Package'. From 'UML2_PackageImport', the role 'UML2_PackageImport' has cardinality 0..*, and from 'UML2_Package', the role 'UML2_Package187' has cardinality 0..*.
+An association connects 'UML2_Namespace' and 'UML2_PackageImport'. From 'UML2_Namespace', the role 'Namespace189' has cardinality 0..*, and from 'UML2_PackageImport', the role 'packageImport' has cardinality 0..*.
+An association connects 'UML2_Property' and 'UML2_Association'. From 'UML2_Property', the role 'Property191' has cardinality 0..*, and from 'UML2_Association', the role 'owningAssociation' has cardinality 0..*.
+An association connects 'UML2_Type' and 'UML2_Association'. From 'UML2_Type', the role 'UML2_Type193' has cardinality 0..*, and from 'UML2_Association', the role 'UML2_Association' has cardinality 0..*.
+An association connects 'UML2_Property' and 'UML2_Association'. From 'UML2_Property', the role 'Property195' has cardinality 0..*, and from 'UML2_Association', the role 'association' has cardinality 0..*.
+An association connects 'UML2_PackageMerge' and 'UML2_Package'. From 'UML2_PackageMerge', the role 'packageMerge' has cardinality 0..*, and from 'UML2_Package', the role 'Package197' has cardinality 0..*.
+An association connects 'UML2_Package' and 'UML2_PackageMerge'. From 'UML2_Package', the role 'UML2_Package200' has cardinality 0..*, and from 'UML2_PackageMerge', the role 'UML2_PackageMerge199' has cardinality 0..*.
+An association connects 'UML2_Profile' and 'UML2_Stereotype'. From 'UML2_Profile', the role 'UML2_Profile' has cardinality 0..*, and from 'UML2_Stereotype', the role 'UML2_Stereotype' has cardinality 0..*.
+An association connects 'UML2_Profile' and 'UML2_ElementImport'. From 'UML2_Profile', the role 'UML2_Profile203' has cardinality 0..*, and from 'UML2_ElementImport', the role 'UML2_ElementImport204' has cardinality 0..*.
+An association connects 'UML2_Profile' and 'UML2_PackageImport'. From 'UML2_Profile', the role 'UML2_Profile206' has cardinality 0..*, and from 'UML2_PackageImport', the role 'UML2_PackageImport207' has cardinality 0..*.
+An association connects 'UML2_Profile' and 'UML2_ProfileApplication'. From 'UML2_Profile', the role 'UML2_Profile210' has cardinality 0..*, and from 'UML2_ProfileApplication', the role 'UML2_ProfileApplication209' has cardinality 0..*.
+An association connects 'UML2_Class' and 'UML2_Extension'. From 'UML2_Class', the role 'Class212' has cardinality 0..*, and from 'UML2_Extension', the role 'extension' has cardinality 0..*.
+An association connects 'UML2_Behavior' and 'UML2_BehavioredClassifier'. From 'UML2_Behavior', the role 'ownedBehavior' has cardinality 0..*, and from 'UML2_BehavioredClassifier', the role 'BehavioredClassifier' has cardinality 0..*.
+An association connects 'UML2_Behavior' and 'UML2_Behavior'. From 'UML2_Behavior', the role 'UML2_Behavior214' has cardinality 0..*, and from 'UML2_Behavior', the role 'UML2_Behavior216' has cardinality 0..*.
+An association connects 'UML2_Behavior' and 'UML2_BehavioralFeature'. From 'UML2_Behavior', the role 'method' has cardinality 0..*, and from 'UML2_BehavioralFeature', the role 'BehavioralFeature' has cardinality 0..*.
+An association connects 'UML2_Behavior' and 'UML2_Parameter'. From 'UML2_Behavior', the role 'UML2_Behavior219' has cardinality 0..*, and from 'UML2_Parameter', the role 'UML2_Parameter220' has cardinality 0..*.
+An association connects 'UML2_Behavior' and 'UML2_Parameter'. From 'UML2_Behavior', the role 'UML2_Behavior222' has cardinality 0..*, and from 'UML2_Parameter', the role 'UML2_Parameter223' has cardinality 0..*.
+An association connects 'UML2_Behavior' and 'UML2_Parameter'. From 'UML2_Behavior', the role 'UML2_Behavior225' has cardinality 0..*, and from 'UML2_Parameter', the role 'UML2_Parameter226' has cardinality 0..*.
+An association connects 'UML2_Behavior' and 'UML2_Constraint'. From 'UML2_Behavior', the role 'UML2_Behavior228' has cardinality 0..*, and from 'UML2_Constraint', the role 'UML2_Constraint229' has cardinality 0..*.
+An association connects 'UML2_Constraint' and 'UML2_Behavior'. From 'UML2_Constraint', the role 'UML2_Constraint232' has cardinality 0..*, and from 'UML2_Behavior', the role 'UML2_Behavior231' has cardinality 0..*.
+An association connects 'UML2_ParameterSet' and 'UML2_Behavior'. From 'UML2_ParameterSet', the role 'UML2_ParameterSet' has cardinality 0..*, and from 'UML2_Behavior', the role 'UML2_Behavior234' has cardinality 0..*.
+An association connects 'UML2_BehavioredClassifier' and 'UML2_Behavior'. From 'UML2_BehavioredClassifier', the role 'context' has cardinality 0..*, and from 'UML2_Behavior', the role 'Behavior236' has cardinality 0..*.
+An association connects 'UML2_BehavioredClassifier' and 'UML2_Behavior'. From 'UML2_BehavioredClassifier', the role 'UML2_BehavioredClassifier' has cardinality 0..*, and from 'UML2_Behavior', the role 'UML2_Behavior238' has cardinality 0..*.
+An association connects 'UML2_BehavioredClassifier' and 'UML2_Implementation'. From 'UML2_BehavioredClassifier', the role 'implementingClassifier' has cardinality 0..*, and from 'UML2_Implementation', the role 'Implementation' has cardinality 0..*.
+An association connects 'UML2_BehavioredClassifier' and 'UML2_Trigger'. From 'UML2_BehavioredClassifier', the role 'UML2_BehavioredClassifier241' has cardinality 0..*, and from 'UML2_Trigger', the role 'UML2_Trigger' has cardinality 0..*.
+An association connects 'UML2_BehavioredClassifier' and 'UML2_StateMachine'. From 'UML2_BehavioredClassifier', the role 'stateMachine_redefinitionContext' has cardinality 0..*, and from 'UML2_StateMachine', the role 'StateMachine' has cardinality 0..*.
+An association connects 'UML2_ActivityEdge' and 'UML2_Activity'. From 'UML2_ActivityEdge', the role 'ActivityEdge' has cardinality 0..*, and from 'UML2_Activity', the role 'activity' has cardinality 0..*.
+An association connects 'UML2_Activity' and 'UML2_ActivityGroup'. From 'UML2_Activity', the role 'activityGroup_activity' has cardinality 0..*, and from 'UML2_ActivityGroup', the role 'ActivityGroup' has cardinality 0..*.
+An association connects 'UML2_Activity' and 'UML2_ActivityNode'. From 'UML2_Activity', the role 'activity246' has cardinality 0..*, and from 'UML2_ActivityNode', the role 'ActivityNode' has cardinality 0..*.
+An association connects 'UML2_Action' and 'UML2_Activity'. From 'UML2_Action', the role 'UML2_Action' has cardinality 0..*, and from 'UML2_Activity', the role 'UML2_Activity' has cardinality 0..*.
+An association connects 'UML2_StructuredActivityNode' and 'UML2_Activity'. From 'UML2_StructuredActivityNode', the role 'UML2_StructuredActivityNode' has cardinality 0..*, and from 'UML2_Activity', the role 'UML2_Activity249' has cardinality 0..*.
+An association connects 'UML2_Dependency' and 'UML2_NamedElement'. From 'UML2_Dependency', the role 'clientDependency' has cardinality 0..*, and from 'UML2_NamedElement', the role 'NamedElement' has cardinality 0..*.
+An association connects 'UML2_Dependency' and 'UML2_NamedElement'. From 'UML2_Dependency', the role 'UML2_Dependency' has cardinality 0..*, and from 'UML2_NamedElement', the role 'UML2_NamedElement252' has cardinality 0..*.
+An association connects 'UML2_OpaqueExpression' and 'UML2_Abstraction'. From 'UML2_OpaqueExpression', the role 'UML2_OpaqueExpression254' has cardinality 0..*, and from 'UML2_Abstraction', the role 'UML2_Abstraction' has cardinality 0..*.
+An association connects 'UML2_Component' and 'UML2_Realization'. From 'UML2_Component', the role 'Component' has cardinality 0..*, and from 'UML2_Realization', the role 'realization' has cardinality 0..*.
+An association connects 'UML2_Realization' and 'UML2_Classifier'. From 'UML2_Realization', the role 'UML2_Realization' has cardinality 0..*, and from 'UML2_Classifier', the role 'UML2_Classifier257' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_Substitution'. From 'UML2_Classifier', the role 'UML2_Classifier259' has cardinality 0..*, and from 'UML2_Substitution', the role 'UML2_Substitution' has cardinality 0..*.
+An association connects 'UML2_Substitution' and 'UML2_Classifier'. From 'UML2_Substitution', the role 'substitution' has cardinality 0..*, and from 'UML2_Classifier', the role 'Classifier261' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_GeneralizationSet'. From 'UML2_Classifier', the role 'Classifier263' has cardinality 0..*, and from 'UML2_GeneralizationSet', the role 'powertypeExtent' has cardinality 0..*.
+An association connects 'UML2_GeneralizationSet' and 'UML2_Generalization'. From 'UML2_GeneralizationSet', the role 'generalizationSet' has cardinality 0..*, and from 'UML2_Generalization', the role 'Generalization265' has cardinality 0..*.
+An association connects 'UML2_InformationItem' and 'UML2_Classifier'. From 'UML2_InformationItem', the role 'UML2_InformationItem' has cardinality 0..*, and from 'UML2_Classifier', the role 'UML2_Classifier267' has cardinality 0..*.
+An association connects 'UML2_InformationFlow' and 'UML2_Relationship'. From 'UML2_InformationFlow', the role 'UML2_InformationFlow' has cardinality 0..*, and from 'UML2_Relationship', the role 'UML2_Relationship269' has cardinality 0..*.
+An association connects 'UML2_InformationFlow' and 'UML2_Classifier'. From 'UML2_InformationFlow', the role 'UML2_InformationFlow271' has cardinality 0..*, and from 'UML2_Classifier', the role 'UML2_Classifier272' has cardinality 0..*.
+An association connects 'UML2_ConnectorEnd' and 'UML2_Property'. From 'UML2_ConnectorEnd', the role 'UML2_ConnectorEnd' has cardinality 0..*, and from 'UML2_Property', the role 'UML2_Property274' has cardinality 0..*.
+An association connects 'UML2_ConnectorEnd' and 'UML2_ConnectableElement'. From 'UML2_ConnectorEnd', the role 'end' has cardinality 0..*, and from 'UML2_ConnectableElement', the role 'ConnectableElement' has cardinality 0..*.
+An association connects 'UML2_ConnectorEnd' and 'UML2_Property'. From 'UML2_ConnectorEnd', the role 'UML2_ConnectorEnd277' has cardinality 0..*, and from 'UML2_Property', the role 'UML2_Property278' has cardinality 0..*.
+An association connects 'UML2_ConnectableElement' and 'UML2_ConnectorEnd'. From 'UML2_ConnectableElement', the role 'role' has cardinality 0..*, and from 'UML2_ConnectorEnd', the role 'ConnectorEnd' has cardinality 0..*.
+An association connects 'UML2_Connector' and 'UML2_Association'. From 'UML2_Connector', the role 'UML2_Connector' has cardinality 0..*, and from 'UML2_Association', the role 'UML2_Association281' has cardinality 0..*.
+An association connects 'UML2_Connector' and 'UML2_Connector'. From 'UML2_Connector', the role 'UML2_Connector284' has cardinality 0..*, and from 'UML2_Connector', the role 'UML2_Connector282' has cardinality 0..*.
+An association connects 'UML2_ConnectorEnd' and 'UML2_Connector'. From 'UML2_ConnectorEnd', the role 'UML2_ConnectorEnd287' has cardinality 0..*, and from 'UML2_Connector', the role 'UML2_Connector286' has cardinality 0..*.
+An association connects 'UML2_Connector' and 'UML2_Behavior'. From 'UML2_Connector', the role 'UML2_Connector289' has cardinality 0..*, and from 'UML2_Behavior', the role 'UML2_Behavior290' has cardinality 0..*.
+An association connects 'UML2_StructuredClassifier' and 'UML2_Property'. From 'UML2_StructuredClassifier', the role 'UML2_StructuredClassifier' has cardinality 0..*, and from 'UML2_Property', the role 'UML2_Property292' has cardinality 0..*.
+An association connects 'UML2_Property' and 'UML2_StructuredClassifier'. From 'UML2_Property', the role 'UML2_Property295' has cardinality 0..*, and from 'UML2_StructuredClassifier', the role 'UML2_StructuredClassifier294' has cardinality 0..*.
+An association connects 'UML2_StructuredClassifier' and 'UML2_ConnectableElement'. From 'UML2_StructuredClassifier', the role 'UML2_StructuredClassifier297' has cardinality 0..*, and from 'UML2_ConnectableElement', the role 'UML2_ConnectableElement' has cardinality 0..*.
+An association connects 'UML2_Connector' and 'UML2_StructuredClassifier'. From 'UML2_Connector', the role 'UML2_Connector300' has cardinality 0..*, and from 'UML2_StructuredClassifier', the role 'UML2_StructuredClassifier299' has cardinality 0..*.
+An association connects 'UML2_Activity' and 'UML2_ActivityEdge'. From 'UML2_Activity', the role 'Activity' has cardinality 0..*, and from 'UML2_ActivityEdge', the role 'edge' has cardinality 0..*.
+An association connects 'UML2_ActivityNode' and 'UML2_ActivityEdge'. From 'UML2_ActivityNode', the role 'ActivityNode303' has cardinality 0..*, and from 'UML2_ActivityEdge', the role 'outgoing' has cardinality 0..*.
+An association connects 'UML2_ActivityEdge' and 'UML2_ActivityNode'. From 'UML2_ActivityEdge', the role 'incoming' has cardinality 0..*, and from 'UML2_ActivityNode', the role 'ActivityNode305' has cardinality 0..*.
+An association connects 'UML2_ActivityGroup' and 'UML2_ActivityEdge'. From 'UML2_ActivityGroup', the role 'UML2_ActivityGroup' has cardinality 0..*, and from 'UML2_ActivityEdge', the role 'UML2_ActivityEdge' has cardinality 0..*.
+An association connects 'UML2_ValueSpecification' and 'UML2_ActivityEdge'. From 'UML2_ValueSpecification', the role 'UML2_ValueSpecification309' has cardinality 0..*, and from 'UML2_ActivityEdge', the role 'UML2_ActivityEdge308' has cardinality 0..*.
+An association connects 'UML2_ActivityEdge' and 'UML2_ActivityEdge'. From 'UML2_ActivityEdge', the role 'UML2_ActivityEdge310' has cardinality 0..*, and from 'UML2_ActivityEdge', the role 'UML2_ActivityEdge312' has cardinality 0..*.
+An association connects 'UML2_StructuredActivityNode' and 'UML2_ActivityEdge'. From 'UML2_StructuredActivityNode', the role 'StructuredActivityNode' has cardinality 0..*, and from 'UML2_ActivityEdge', the role 'containedEdge' has cardinality 0..*.
+An association connects 'UML2_ActivityEdge' and 'UML2_ActivityPartition'. From 'UML2_ActivityEdge', the role 'containedEdge315' has cardinality 0..*, and from 'UML2_ActivityPartition', the role 'ActivityPartition' has cardinality 0..*.
+An association connects 'UML2_ActivityEdge' and 'UML2_ValueSpecification'. From 'UML2_ActivityEdge', the role 'UML2_ActivityEdge317' has cardinality 0..*, and from 'UML2_ValueSpecification', the role 'UML2_ValueSpecification318' has cardinality 0..*.
+An association connects 'UML2_ActivityEdge' and 'UML2_InterruptibleActivityRegion'. From 'UML2_ActivityEdge', the role 'interruptingEdge' has cardinality 0..*, and from 'UML2_InterruptibleActivityRegion', the role 'InterruptibleActivityRegion' has cardinality 0..*.
+An association connects 'UML2_ActivityGroup' and 'UML2_ActivityGroup'. From 'UML2_ActivityGroup', the role 'UML2_ActivityGroup320' has cardinality 0..*, and from 'UML2_ActivityGroup', the role 'UML2_ActivityGroup322' has cardinality 0..*.
+An association connects 'UML2_Activity' and 'UML2_ActivityGroup'. From 'UML2_Activity', the role 'Activity324' has cardinality 0..*, and from 'UML2_ActivityGroup', the role 'group' has cardinality 0..*.
+An association connects 'UML2_ActivityNode' and 'UML2_ActivityEdge'. From 'UML2_ActivityNode', the role 'source' has cardinality 0..*, and from 'UML2_ActivityEdge', the role 'ActivityEdge326' has cardinality 0..*.
+An association connects 'UML2_ActivityEdge' and 'UML2_ActivityNode'. From 'UML2_ActivityEdge', the role 'ActivityEdge328' has cardinality 0..*, and from 'UML2_ActivityNode', the role 'target' has cardinality 0..*.
+An association connects 'UML2_ActivityNode' and 'UML2_ActivityGroup'. From 'UML2_ActivityNode', the role 'UML2_ActivityNode' has cardinality 0..*, and from 'UML2_ActivityGroup', the role 'UML2_ActivityGroup330' has cardinality 0..*.
+An association connects 'UML2_ActivityNode' and 'UML2_Activity'. From 'UML2_ActivityNode', the role 'node' has cardinality 0..*, and from 'UML2_Activity', the role 'Activity332' has cardinality 0..*.
+An association connects 'UML2_ActivityNode' and 'UML2_ActivityNode'. From 'UML2_ActivityNode', the role 'UML2_ActivityNode335' has cardinality 0..*, and from 'UML2_ActivityNode', the role 'UML2_ActivityNode333' has cardinality 0..*.
+An association connects 'UML2_StructuredActivityNode' and 'UML2_ActivityNode'. From 'UML2_StructuredActivityNode', the role 'StructuredActivityNode337' has cardinality 0..*, and from 'UML2_ActivityNode', the role 'containedNode' has cardinality 0..*.
+An association connects 'UML2_ActivityPartition' and 'UML2_ActivityNode'. From 'UML2_ActivityPartition', the role 'ActivityPartition340' has cardinality 0..*, and from 'UML2_ActivityNode', the role 'containedNode339' has cardinality 0..*.
+An association connects 'UML2_ActivityNode' and 'UML2_InterruptibleActivityRegion'. From 'UML2_ActivityNode', the role 'containedNode342' has cardinality 0..*, and from 'UML2_InterruptibleActivityRegion', the role 'InterruptibleActivityRegion343' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_Action'. From 'UML2_OutputPin', the role 'UML2_OutputPin' has cardinality 0..*, and from 'UML2_Action', the role 'UML2_Action345' has cardinality 0..*.
+An association connects 'UML2_InputPin' and 'UML2_Action'. From 'UML2_InputPin', the role 'UML2_InputPin' has cardinality 0..*, and from 'UML2_Action', the role 'UML2_Action347' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_Action'. From 'UML2_Classifier', the role 'UML2_Classifier350' has cardinality 0..*, and from 'UML2_Action', the role 'UML2_Action349' has cardinality 0..*.
+An association connects 'UML2_Action' and 'UML2_Constraint'. From 'UML2_Action', the role 'UML2_Action352' has cardinality 0..*, and from 'UML2_Constraint', the role 'UML2_Constraint353' has cardinality 0..*.
+An association connects 'UML2_Action' and 'UML2_Constraint'. From 'UML2_Action', the role 'UML2_Action355' has cardinality 0..*, and from 'UML2_Constraint', the role 'UML2_Constraint356' has cardinality 0..*.
+An association connects 'UML2_ValueSpecification' and 'UML2_ObjectNode'. From 'UML2_ValueSpecification', the role 'UML2_ValueSpecification358' has cardinality 0..*, and from 'UML2_ObjectNode', the role 'UML2_ObjectNode' has cardinality 0..*.
+An association connects 'UML2_State' and 'UML2_ObjectNode'. From 'UML2_State', the role 'UML2_State' has cardinality 0..*, and from 'UML2_ObjectNode', the role 'UML2_ObjectNode360' has cardinality 0..*.
+An association connects 'UML2_ObjectNode' and 'UML2_Behavior'. From 'UML2_ObjectNode', the role 'UML2_ObjectNode362' has cardinality 0..*, and from 'UML2_Behavior', the role 'UML2_Behavior363' has cardinality 0..*.
+An association connects 'UML2_ObjectFlow' and 'UML2_Behavior'. From 'UML2_ObjectFlow', the role 'UML2_ObjectFlow' has cardinality 0..*, and from 'UML2_Behavior', the role 'UML2_Behavior365' has cardinality 0..*.
+An association connects 'UML2_Behavior' and 'UML2_ObjectFlow'. From 'UML2_Behavior', the role 'UML2_Behavior368' has cardinality 0..*, and from 'UML2_ObjectFlow', the role 'UML2_ObjectFlow367' has cardinality 0..*.
+An association connects 'UML2_DecisionNode' and 'UML2_Behavior'. From 'UML2_DecisionNode', the role 'UML2_DecisionNode' has cardinality 0..*, and from 'UML2_Behavior', the role 'UML2_Behavior370' has cardinality 0..*.
+An association connects 'UML2_ExceptionHandler' and 'UML2_ExecutableNode'. From 'UML2_ExceptionHandler', the role 'ExceptionHandler' has cardinality 0..*, and from 'UML2_ExecutableNode', the role 'protectedNode' has cardinality 0..*.
+An association connects 'UML2_ActivityParameterNode' and 'UML2_Parameter'. From 'UML2_ActivityParameterNode', the role 'UML2_ActivityParameterNode' has cardinality 0..*, and from 'UML2_Parameter', the role 'UML2_Parameter373' has cardinality 0..*.
+An association connects 'UML2_ValueSpecification' and 'UML2_ValuePin'. From 'UML2_ValueSpecification', the role 'UML2_ValueSpecification375' has cardinality 0..*, and from 'UML2_ValuePin', the role 'UML2_ValuePin' has cardinality 0..*.
+An association connects 'UML2_Property' and 'UML2_Interface'. From 'UML2_Property', the role 'UML2_Property377' has cardinality 0..*, and from 'UML2_Interface', the role 'UML2_Interface' has cardinality 0..*.
+An association connects 'UML2_Interface' and 'UML2_Operation'. From 'UML2_Interface', the role 'UML2_Interface379' has cardinality 0..*, and from 'UML2_Operation', the role 'UML2_Operation380' has cardinality 0..*.
+An association connects 'UML2_Interface' and 'UML2_Interface'. From 'UML2_Interface', the role 'UML2_Interface383' has cardinality 0..*, and from 'UML2_Interface', the role 'UML2_Interface381' has cardinality 0..*.
+An association connects 'UML2_Interface' and 'UML2_Classifier'. From 'UML2_Interface', the role 'UML2_Interface385' has cardinality 0..*, and from 'UML2_Classifier', the role 'UML2_Classifier386' has cardinality 0..*.
+An association connects 'UML2_Interface' and 'UML2_Reception'. From 'UML2_Interface', the role 'UML2_Interface388' has cardinality 0..*, and from 'UML2_Reception', the role 'UML2_Reception389' has cardinality 0..*.
+An association connects 'UML2_Interface' and 'UML2_ProtocolStateMachine'. From 'UML2_Interface', the role 'UML2_Interface391' has cardinality 0..*, and from 'UML2_ProtocolStateMachine', the role 'UML2_ProtocolStateMachine' has cardinality 0..*.
+An association connects 'UML2_Interface' and 'UML2_Implementation'. From 'UML2_Interface', the role 'UML2_Interface393' has cardinality 0..*, and from 'UML2_Implementation', the role 'UML2_Implementation' has cardinality 0..*.
+An association connects 'UML2_BehavioredClassifier' and 'UML2_Implementation'. From 'UML2_BehavioredClassifier', the role 'BehavioredClassifier395' has cardinality 0..*, and from 'UML2_Implementation', the role 'implementation' has cardinality 0..*.
+An association connects 'UML2_Artifact' and 'UML2_Artifact'. From 'UML2_Artifact', the role 'UML2_Artifact' has cardinality 0..*, and from 'UML2_Artifact', the role 'UML2_Artifact396' has cardinality 0..*.
+An association connects 'UML2_Artifact' and 'UML2_Manifestation'. From 'UML2_Artifact', the role 'UML2_Artifact399' has cardinality 0..*, and from 'UML2_Manifestation', the role 'UML2_Manifestation' has cardinality 0..*.
+An association connects 'UML2_Artifact' and 'UML2_Operation'. From 'UML2_Artifact', the role 'UML2_Artifact401' has cardinality 0..*, and from 'UML2_Operation', the role 'UML2_Operation402' has cardinality 0..*.
+An association connects 'UML2_Property' and 'UML2_Artifact'. From 'UML2_Property', the role 'UML2_Property405' has cardinality 0..*, and from 'UML2_Artifact', the role 'UML2_Artifact404' has cardinality 0..*.
+An association connects 'UML2_PackageableElement' and 'UML2_Manifestation'. From 'UML2_PackageableElement', the role 'UML2_PackageableElement408' has cardinality 0..*, and from 'UML2_Manifestation', the role 'UML2_Manifestation407' has cardinality 0..*.
+An association connects 'UML2_UseCase' and 'UML2_Extend'. From 'UML2_UseCase', the role 'UML2_UseCase410' has cardinality 0..*, and from 'UML2_Extend', the role 'UML2_Extend' has cardinality 0..*.
+An association connects 'UML2_Extend' and 'UML2_UseCase'. From 'UML2_Extend', the role 'extend' has cardinality 0..*, and from 'UML2_UseCase', the role 'UseCase412' has cardinality 0..*.
+An association connects 'UML2_Extend' and 'UML2_Constraint'. From 'UML2_Extend', the role 'UML2_Extend414' has cardinality 0..*, and from 'UML2_Constraint', the role 'UML2_Constraint415' has cardinality 0..*.
+An association connects 'UML2_ExtensionPoint' and 'UML2_Extend'. From 'UML2_ExtensionPoint', the role 'UML2_ExtensionPoint' has cardinality 0..*, and from 'UML2_Extend', the role 'UML2_Extend417' has cardinality 0..*.
+An association connects 'UML2_Include' and 'UML2_UseCase'. From 'UML2_Include', the role 'Include' has cardinality 0..*, and from 'UML2_UseCase', the role 'includingCase' has cardinality 0..*.
+An association connects 'UML2_UseCase' and 'UML2_Extend'. From 'UML2_UseCase', the role 'extension420' has cardinality 0..*, and from 'UML2_Extend', the role 'Extend' has cardinality 0..*.
+An association connects 'UML2_ExtensionPoint' and 'UML2_UseCase'. From 'UML2_ExtensionPoint', the role 'ExtensionPoint' has cardinality 0..*, and from 'UML2_UseCase', the role 'useCase' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_UseCase'. From 'UML2_Classifier', the role 'Classifier424' has cardinality 0..*, and from 'UML2_UseCase', the role 'useCase423' has cardinality 0..*.
+An association connects 'UML2_UseCase' and 'UML2_ExtensionPoint'. From 'UML2_UseCase', the role 'UseCase426' has cardinality 0..*, and from 'UML2_ExtensionPoint', the role 'extensionPoint' has cardinality 0..*.
+An association connects 'UML2_Include' and 'UML2_UseCase'. From 'UML2_Include', the role 'include' has cardinality 0..*, and from 'UML2_UseCase', the role 'UseCase428' has cardinality 0..*.
+An association connects 'UML2_Include' and 'UML2_UseCase'. From 'UML2_Include', the role 'UML2_Include' has cardinality 0..*, and from 'UML2_UseCase', the role 'UML2_UseCase430' has cardinality 0..*.
+An association connects 'UML2_Collaboration' and 'UML2_CollaborationOccurrence'. From 'UML2_Collaboration', the role 'UML2_Collaboration' has cardinality 0..*, and from 'UML2_CollaborationOccurrence', the role 'UML2_CollaborationOccurrence432' has cardinality 0..*.
+An association connects 'UML2_CollaborationOccurrence' and 'UML2_Dependency'. From 'UML2_CollaborationOccurrence', the role 'UML2_CollaborationOccurrence434' has cardinality 0..*, and from 'UML2_Dependency', the role 'UML2_Dependency435' has cardinality 0..*.
+An association connects 'UML2_Collaboration' and 'UML2_ConnectableElement'. From 'UML2_Collaboration', the role 'UML2_Collaboration437' has cardinality 0..*, and from 'UML2_ConnectableElement', the role 'UML2_ConnectableElement438' has cardinality 0..*.
+An association connects 'UML2_Interface' and 'UML2_Port'. From 'UML2_Interface', the role 'UML2_Interface440' has cardinality 0..*, and from 'UML2_Port', the role 'UML2_Port' has cardinality 0..*.
+An association connects 'UML2_Port' and 'UML2_Port'. From 'UML2_Port', the role 'UML2_Port443' has cardinality 0..*, and from 'UML2_Port', the role 'UML2_Port441' has cardinality 0..*.
+An association connects 'UML2_Interface' and 'UML2_Port'. From 'UML2_Interface', the role 'UML2_Interface446' has cardinality 0..*, and from 'UML2_Port', the role 'UML2_Port445' has cardinality 0..*.
+An association connects 'UML2_ProtocolStateMachine' and 'UML2_Port'. From 'UML2_ProtocolStateMachine', the role 'UML2_ProtocolStateMachine449' has cardinality 0..*, and from 'UML2_Port', the role 'UML2_Port448' has cardinality 0..*.
+An association connects 'UML2_EncapsulatedClassifier' and 'UML2_Port'. From 'UML2_EncapsulatedClassifier', the role 'UML2_EncapsulatedClassifier' has cardinality 0..*, and from 'UML2_Port', the role 'UML2_Port451' has cardinality 0..*.
+An association connects 'UML2_CallTrigger' and 'UML2_Operation'. From 'UML2_CallTrigger', the role 'UML2_CallTrigger' has cardinality 0..*, and from 'UML2_Operation', the role 'UML2_Operation453' has cardinality 0..*.
+An association connects 'UML2_ValueSpecification' and 'UML2_ChangeTrigger'. From 'UML2_ValueSpecification', the role 'UML2_ValueSpecification455' has cardinality 0..*, and from 'UML2_ChangeTrigger', the role 'UML2_ChangeTrigger' has cardinality 0..*.
+An association connects 'UML2_Port' and 'UML2_Trigger'. From 'UML2_Port', the role 'UML2_Port458' has cardinality 0..*, and from 'UML2_Trigger', the role 'UML2_Trigger457' has cardinality 0..*.
+An association connects 'UML2_Signal' and 'UML2_Reception'. From 'UML2_Signal', the role 'UML2_Signal' has cardinality 0..*, and from 'UML2_Reception', the role 'UML2_Reception460' has cardinality 0..*.
+An association connects 'UML2_Signal' and 'UML2_Property'. From 'UML2_Signal', the role 'UML2_Signal462' has cardinality 0..*, and from 'UML2_Property', the role 'UML2_Property463' has cardinality 0..*.
+An association connects 'UML2_Signal' and 'UML2_SignalTrigger'. From 'UML2_Signal', the role 'UML2_Signal465' has cardinality 0..*, and from 'UML2_SignalTrigger', the role 'UML2_SignalTrigger' has cardinality 0..*.
+An association connects 'UML2_TimeTrigger' and 'UML2_ValueSpecification'. From 'UML2_TimeTrigger', the role 'UML2_TimeTrigger' has cardinality 0..*, and from 'UML2_ValueSpecification', the role 'UML2_ValueSpecification467' has cardinality 0..*.
+An association connects 'UML2_StructuredActivityNode' and 'UML2_Variable'. From 'UML2_StructuredActivityNode', the role 'StructuredActivityNode469' has cardinality 0..*, and from 'UML2_Variable', the role 'variable' has cardinality 0..*.
+An association connects 'UML2_Variable' and 'UML2_StructuredActivityNode'. From 'UML2_Variable', the role 'Variable' has cardinality 0..*, and from 'UML2_StructuredActivityNode', the role 'scope' has cardinality 0..*.
+An association connects 'UML2_StructuredActivityNode' and 'UML2_ActivityNode'. From 'UML2_StructuredActivityNode', the role 'inStructuredNode' has cardinality 0..*, and from 'UML2_ActivityNode', the role 'ActivityNode472' has cardinality 0..*.
+An association connects 'UML2_ActivityEdge' and 'UML2_StructuredActivityNode'. From 'UML2_ActivityEdge', the role 'ActivityEdge475' has cardinality 0..*, and from 'UML2_StructuredActivityNode', the role 'inStructuredNode474' has cardinality 0..*.
+An association connects 'UML2_Clause' and 'UML2_ConditionalNode'. From 'UML2_Clause', the role 'UML2_Clause' has cardinality 0..*, and from 'UML2_ConditionalNode', the role 'UML2_ConditionalNode' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_ConditionalNode'. From 'UML2_OutputPin', the role 'UML2_OutputPin479' has cardinality 0..*, and from 'UML2_ConditionalNode', the role 'UML2_ConditionalNode478' has cardinality 0..*.
+An association connects 'UML2_ActivityNode' and 'UML2_Clause'. From 'UML2_ActivityNode', the role 'UML2_ActivityNode482' has cardinality 0..*, and from 'UML2_Clause', the role 'UML2_Clause481' has cardinality 0..*.
+An association connects 'UML2_Clause' and 'UML2_ActivityNode'. From 'UML2_Clause', the role 'UML2_Clause484' has cardinality 0..*, and from 'UML2_ActivityNode', the role 'UML2_ActivityNode485' has cardinality 0..*.
+An association connects 'UML2_Clause' and 'UML2_Clause'. From 'UML2_Clause', the role 'successorClause' has cardinality 0..*, and from 'UML2_Clause', the role 'Clause' has cardinality 0..*.
+An association connects 'UML2_Clause' and 'UML2_Clause'. From 'UML2_Clause', the role 'Clause490' has cardinality 0..*, and from 'UML2_Clause', the role 'predecessorClause' has cardinality 0..*.
+An association connects 'UML2_Clause' and 'UML2_OutputPin'. From 'UML2_Clause', the role 'UML2_Clause492' has cardinality 0..*, and from 'UML2_OutputPin', the role 'UML2_OutputPin493' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_Clause'. From 'UML2_OutputPin', the role 'UML2_OutputPin496' has cardinality 0..*, and from 'UML2_Clause', the role 'UML2_Clause495' has cardinality 0..*.
+An association connects 'UML2_LoopNode' and 'UML2_ActivityNode'. From 'UML2_LoopNode', the role 'UML2_LoopNode' has cardinality 0..*, and from 'UML2_ActivityNode', the role 'UML2_ActivityNode498' has cardinality 0..*.
+An association connects 'UML2_LoopNode' and 'UML2_ActivityNode'. From 'UML2_LoopNode', the role 'UML2_LoopNode500' has cardinality 0..*, and from 'UML2_ActivityNode', the role 'UML2_ActivityNode501' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_LoopNode'. From 'UML2_OutputPin', the role 'UML2_OutputPin504' has cardinality 0..*, and from 'UML2_LoopNode', the role 'UML2_LoopNode503' has cardinality 0..*.
+An association connects 'UML2_LoopNode' and 'UML2_ActivityNode'. From 'UML2_LoopNode', the role 'UML2_LoopNode506' has cardinality 0..*, and from 'UML2_ActivityNode', the role 'UML2_ActivityNode507' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_LoopNode'. From 'UML2_OutputPin', the role 'UML2_OutputPin510' has cardinality 0..*, and from 'UML2_LoopNode', the role 'UML2_LoopNode509' has cardinality 0..*.
+An association connects 'UML2_LoopNode' and 'UML2_OutputPin'. From 'UML2_LoopNode', the role 'UML2_LoopNode512' has cardinality 0..*, and from 'UML2_OutputPin', the role 'UML2_OutputPin513' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_LoopNode'. From 'UML2_OutputPin', the role 'UML2_OutputPin516' has cardinality 0..*, and from 'UML2_LoopNode', the role 'UML2_LoopNode515' has cardinality 0..*.
+An association connects 'UML2_LoopNode' and 'UML2_InputPin'. From 'UML2_LoopNode', the role 'UML2_LoopNode518' has cardinality 0..*, and from 'UML2_InputPin', the role 'UML2_InputPin519' has cardinality 0..*.
+An association connects 'UML2_Interaction' and 'UML2_Lifeline'. From 'UML2_Interaction', the role 'interaction' has cardinality 0..*, and from 'UML2_Lifeline', the role 'Lifeline' has cardinality 0..*.
+An association connects 'UML2_Message' and 'UML2_Interaction'. From 'UML2_Message', the role 'Message' has cardinality 0..*, and from 'UML2_Interaction', the role 'interaction522' has cardinality 0..*.
+An association connects 'UML2_Interaction' and 'UML2_InteractionFragment'. From 'UML2_Interaction', the role 'enclosingInteraction' has cardinality 0..*, and from 'UML2_InteractionFragment', the role 'InteractionFragment' has cardinality 0..*.
+An association connects 'UML2_Gate' and 'UML2_Interaction'. From 'UML2_Gate', the role 'UML2_Gate' has cardinality 0..*, and from 'UML2_Interaction', the role 'UML2_Interaction' has cardinality 0..*.
+An association connects 'UML2_Lifeline' and 'UML2_InteractionFragment'. From 'UML2_Lifeline', the role 'Lifeline526' has cardinality 0..*, and from 'UML2_InteractionFragment', the role 'coveredBy' has cardinality 0..*.
+An association connects 'UML2_GeneralOrdering' and 'UML2_InteractionFragment'. From 'UML2_GeneralOrdering', the role 'UML2_GeneralOrdering' has cardinality 0..*, and from 'UML2_InteractionFragment', the role 'UML2_InteractionFragment' has cardinality 0..*.
+An association connects 'UML2_InteractionFragment' and 'UML2_Interaction'. From 'UML2_InteractionFragment', the role 'fragment' has cardinality 0..*, and from 'UML2_Interaction', the role 'Interaction' has cardinality 0..*.
+An association connects 'UML2_InteractionFragment' and 'UML2_InteractionOperand'. From 'UML2_InteractionFragment', the role 'fragment530' has cardinality 0..*, and from 'UML2_InteractionOperand', the role 'InteractionOperand' has cardinality 0..*.
+An association connects 'UML2_InteractionFragment' and 'UML2_Lifeline'. From 'UML2_InteractionFragment', the role 'InteractionFragment532' has cardinality 0..*, and from 'UML2_Lifeline', the role 'covered' has cardinality 0..*.
+An association connects 'UML2_Lifeline' and 'UML2_ConnectableElement'. From 'UML2_Lifeline', the role 'UML2_Lifeline' has cardinality 0..*, and from 'UML2_ConnectableElement', the role 'UML2_ConnectableElement534' has cardinality 0..*.
+An association connects 'UML2_Lifeline' and 'UML2_Interaction'. From 'UML2_Lifeline', the role 'lifeline' has cardinality 0..*, and from 'UML2_Interaction', the role 'Interaction536' has cardinality 0..*.
+An association connects 'UML2_OpaqueExpression' and 'UML2_Lifeline'. From 'UML2_OpaqueExpression', the role 'UML2_OpaqueExpression539' has cardinality 0..*, and from 'UML2_Lifeline', the role 'UML2_Lifeline538' has cardinality 0..*.
+An association connects 'UML2_PartDecomposition' and 'UML2_Lifeline'. From 'UML2_PartDecomposition', the role 'UML2_PartDecomposition' has cardinality 0..*, and from 'UML2_Lifeline', the role 'UML2_Lifeline541' has cardinality 0..*.
+An association connects 'UML2_MessageEnd' and 'UML2_Message'. From 'UML2_MessageEnd', the role 'MessageEnd' has cardinality 0..*, and from 'UML2_Message', the role 'receiveMessage' has cardinality 0..*.
+An association connects 'UML2_MessageEnd' and 'UML2_Message'. From 'UML2_MessageEnd', the role 'MessageEnd544' has cardinality 0..*, and from 'UML2_Message', the role 'sendMessage' has cardinality 0..*.
+An association connects 'UML2_Message' and 'UML2_Connector'. From 'UML2_Message', the role 'UML2_Message' has cardinality 0..*, and from 'UML2_Connector', the role 'UML2_Connector546' has cardinality 0..*.
+An association connects 'UML2_Message' and 'UML2_Interaction'. From 'UML2_Message', the role 'message' has cardinality 0..*, and from 'UML2_Interaction', the role 'Interaction548' has cardinality 0..*.
+An association connects 'UML2_NamedElement' and 'UML2_Message'. From 'UML2_NamedElement', the role 'UML2_NamedElement551' has cardinality 0..*, and from 'UML2_Message', the role 'UML2_Message550' has cardinality 0..*.
+An association connects 'UML2_ValueSpecification' and 'UML2_Message'. From 'UML2_ValueSpecification', the role 'UML2_ValueSpecification554' has cardinality 0..*, and from 'UML2_Message', the role 'UML2_Message553' has cardinality 0..*.
+An association connects 'UML2_EventOccurrence' and 'UML2_GeneralOrdering'. From 'UML2_EventOccurrence', the role 'EventOccurrence' has cardinality 0..*, and from 'UML2_GeneralOrdering', the role 'toAfter' has cardinality 0..*.
+An association connects 'UML2_EventOccurrence' and 'UML2_GeneralOrdering'. From 'UML2_EventOccurrence', the role 'EventOccurrence557' has cardinality 0..*, and from 'UML2_GeneralOrdering', the role 'toBefore' has cardinality 0..*.
+An association connects 'UML2_MessageEnd' and 'UML2_Message'. From 'UML2_MessageEnd', the role 'receiveEvent' has cardinality 0..*, and from 'UML2_Message', the role 'Message559' has cardinality 0..*.
+An association connects 'UML2_MessageEnd' and 'UML2_Message'. From 'UML2_MessageEnd', the role 'sendEvent' has cardinality 0..*, and from 'UML2_Message', the role 'Message561' has cardinality 0..*.
+An association connects 'UML2_ExecutionOccurrence' and 'UML2_EventOccurrence'. From 'UML2_ExecutionOccurrence', the role 'ExecutionOccurrence' has cardinality 0..*, and from 'UML2_EventOccurrence', the role 'start' has cardinality 0..*.
+An association connects 'UML2_EventOccurrence' and 'UML2_ExecutionOccurrence'. From 'UML2_EventOccurrence', the role 'finish' has cardinality 0..*, and from 'UML2_ExecutionOccurrence', the role 'ExecutionOccurrence564' has cardinality 0..*.
+An association connects 'UML2_EventOccurrence' and 'UML2_GeneralOrdering'. From 'UML2_EventOccurrence', the role 'before' has cardinality 0..*, and from 'UML2_GeneralOrdering', the role 'GeneralOrdering' has cardinality 0..*.
+An association connects 'UML2_EventOccurrence' and 'UML2_GeneralOrdering'. From 'UML2_EventOccurrence', the role 'after' has cardinality 0..*, and from 'UML2_GeneralOrdering', the role 'GeneralOrdering567' has cardinality 0..*.
+An association connects 'UML2_EventOccurrence' and 'UML2_ExecutionOccurrence'. From 'UML2_EventOccurrence', the role 'EventOccurrence569' has cardinality 0..*, and from 'UML2_ExecutionOccurrence', the role 'startExec' has cardinality 0..*.
+An association connects 'UML2_EventOccurrence' and 'UML2_ExecutionOccurrence'. From 'UML2_EventOccurrence', the role 'EventOccurrence571' has cardinality 0..*, and from 'UML2_ExecutionOccurrence', the role 'finishExec' has cardinality 0..*.
+An association connects 'UML2_Behavior' and 'UML2_ExecutionOccurrence'. From 'UML2_Behavior', the role 'UML2_Behavior573' has cardinality 0..*, and from 'UML2_ExecutionOccurrence', the role 'UML2_ExecutionOccurrence' has cardinality 0..*.
+An association connects 'UML2_Constraint' and 'UML2_StateInvariant'. From 'UML2_Constraint', the role 'UML2_Constraint575' has cardinality 0..*, and from 'UML2_StateInvariant', the role 'UML2_StateInvariant' has cardinality 0..*.
+An association connects 'UML2_TemplateParameter' and 'UML2_TemplateSignature'. From 'UML2_TemplateParameter', the role 'UML2_TemplateParameter' has cardinality 0..*, and from 'UML2_TemplateSignature', the role 'UML2_TemplateSignature' has cardinality 0..*.
+An association connects 'UML2_TemplateSignature' and 'UML2_TemplateParameter'. From 'UML2_TemplateSignature', the role 'signature' has cardinality 0..*, and from 'UML2_TemplateParameter', the role 'TemplateParameter' has cardinality 0..*.
+An association connects 'UML2_TemplateSignature' and 'UML2_TemplateSignature'. From 'UML2_TemplateSignature', the role 'nestingSignature' has cardinality 0..*, and from 'UML2_TemplateSignature', the role 'TemplateSignature' has cardinality 0..*.
+An association connects 'UML2_TemplateSignature' and 'UML2_TemplateSignature'. From 'UML2_TemplateSignature', the role 'nestedSignature' has cardinality 0..*, and from 'UML2_TemplateSignature', the role 'TemplateSignature582' has cardinality 0..*.
+An association connects 'UML2_TemplateableElement' and 'UML2_TemplateSignature'. From 'UML2_TemplateableElement', the role 'TemplateableElement' has cardinality 0..*, and from 'UML2_TemplateSignature', the role 'ownedTemplateSignature' has cardinality 0..*.
+An association connects 'UML2_TemplateParameter' and 'UML2_TemplateSignature'. From 'UML2_TemplateParameter', the role 'ownedParameter585' has cardinality 0..*, and from 'UML2_TemplateSignature', the role 'TemplateSignature586' has cardinality 0..*.
+An association connects 'UML2_TemplateParameter' and 'UML2_ParameterableElement'. From 'UML2_TemplateParameter', the role 'templateParameter' has cardinality 0..*, and from 'UML2_ParameterableElement', the role 'ParameterableElement' has cardinality 0..*.
+An association connects 'UML2_TemplateParameter' and 'UML2_ParameterableElement'. From 'UML2_TemplateParameter', the role 'owningParameter' has cardinality 0..*, and from 'UML2_ParameterableElement', the role 'ParameterableElement589' has cardinality 0..*.
+An association connects 'UML2_TemplateParameter' and 'UML2_ParameterableElement'. From 'UML2_TemplateParameter', the role 'UML2_TemplateParameter591' has cardinality 0..*, and from 'UML2_ParameterableElement', the role 'UML2_ParameterableElement' has cardinality 0..*.
+An association connects 'UML2_ParameterableElement' and 'UML2_TemplateParameter'. From 'UML2_ParameterableElement', the role 'UML2_ParameterableElement594' has cardinality 0..*, and from 'UML2_TemplateParameter', the role 'UML2_TemplateParameter593' has cardinality 0..*.
+An association connects 'UML2_TemplateBinding' and 'UML2_TemplateableElement'. From 'UML2_TemplateBinding', the role 'TemplateBinding' has cardinality 0..*, and from 'UML2_TemplateableElement', the role 'boundElement' has cardinality 0..*.
+An association connects 'UML2_TemplateSignature' and 'UML2_TemplateableElement'. From 'UML2_TemplateSignature', the role 'TemplateSignature597' has cardinality 0..*, and from 'UML2_TemplateableElement', the role 'template' has cardinality 0..*.
+An association connects 'UML2_StringExpression' and 'UML2_StringExpression'. From 'UML2_StringExpression', the role 'StringExpression' has cardinality 0..*, and from 'UML2_StringExpression', the role 'owningExpression' has cardinality 0..*.
+An association connects 'UML2_StringExpression' and 'UML2_StringExpression'. From 'UML2_StringExpression', the role 'subExpression' has cardinality 0..*, and from 'UML2_StringExpression', the role 'StringExpression602' has cardinality 0..*.
+An association connects 'UML2_TemplateParameter' and 'UML2_ParameterableElement'. From 'UML2_TemplateParameter', the role 'TemplateParameter604' has cardinality 0..*, and from 'UML2_ParameterableElement', the role 'parameteredElement' has cardinality 0..*.
+An association connects 'UML2_ParameterableElement' and 'UML2_TemplateParameter'. From 'UML2_ParameterableElement', the role 'ownedParameteredElement' has cardinality 0..*, and from 'UML2_TemplateParameter', the role 'TemplateParameter606' has cardinality 0..*.
+An association connects 'UML2_TemplateBinding' and 'UML2_TemplateableElement'. From 'UML2_TemplateBinding', the role 'templateBinding' has cardinality 0..*, and from 'UML2_TemplateableElement', the role 'TemplateableElement608' has cardinality 0..*.
+An association connects 'UML2_TemplateBinding' and 'UML2_TemplateSignature'. From 'UML2_TemplateBinding', the role 'UML2_TemplateBinding' has cardinality 0..*, and from 'UML2_TemplateSignature', the role 'UML2_TemplateSignature610' has cardinality 0..*.
+An association connects 'UML2_TemplateParameterSubstitution' and 'UML2_TemplateBinding'. From 'UML2_TemplateParameterSubstitution', the role 'TemplateParameterSubstitution' has cardinality 0..*, and from 'UML2_TemplateBinding', the role 'templateBinding612' has cardinality 0..*.
+An association connects 'UML2_TemplateParameterSubstitution' and 'UML2_TemplateParameter'. From 'UML2_TemplateParameterSubstitution', the role 'UML2_TemplateParameterSubstitution' has cardinality 0..*, and from 'UML2_TemplateParameter', the role 'UML2_TemplateParameter614' has cardinality 0..*.
+An association connects 'UML2_TemplateParameterSubstitution' and 'UML2_TemplateBinding'. From 'UML2_TemplateParameterSubstitution', the role 'parameterSubstitution' has cardinality 0..*, and from 'UML2_TemplateBinding', the role 'TemplateBinding616' has cardinality 0..*.
+An association connects 'UML2_ParameterableElement' and 'UML2_TemplateParameterSubstitution'. From 'UML2_ParameterableElement', the role 'UML2_ParameterableElement619' has cardinality 0..*, and from 'UML2_TemplateParameterSubstitution', the role 'UML2_TemplateParameterSubstitution618' has cardinality 0..*.
+An association connects 'UML2_TemplateParameterSubstitution' and 'UML2_ParameterableElement'. From 'UML2_TemplateParameterSubstitution', the role 'UML2_TemplateParameterSubstitution621' has cardinality 0..*, and from 'UML2_ParameterableElement', the role 'UML2_ParameterableElement622' has cardinality 0..*.
+An association connects 'UML2_ValueSpecification' and 'UML2_JoinNode'. From 'UML2_ValueSpecification', the role 'UML2_ValueSpecification624' has cardinality 0..*, and from 'UML2_JoinNode', the role 'UML2_JoinNode' has cardinality 0..*.
+An association connects 'UML2_ActivityEdge' and 'UML2_ActivityPartition'. From 'UML2_ActivityEdge', the role 'ActivityEdge626' has cardinality 0..*, and from 'UML2_ActivityPartition', the role 'inPartition' has cardinality 0..*.
+An association connects 'UML2_ActivityNode' and 'UML2_ActivityPartition'. From 'UML2_ActivityNode', the role 'ActivityNode629' has cardinality 0..*, and from 'UML2_ActivityPartition', the role 'inPartition628' has cardinality 0..*.
+An association connects 'UML2_ActivityPartition' and 'UML2_ActivityPartition'. From 'UML2_ActivityPartition', the role 'ActivityPartition632' has cardinality 0..*, and from 'UML2_ActivityPartition', the role 'superPartition' has cardinality 0..*.
+An association connects 'UML2_ActivityPartition' and 'UML2_ActivityPartition'. From 'UML2_ActivityPartition', the role 'subgroup' has cardinality 0..*, and from 'UML2_ActivityPartition', the role 'ActivityPartition635' has cardinality 0..*.
+An association connects 'UML2_ActivityPartition' and 'UML2_Element'. From 'UML2_ActivityPartition', the role 'UML2_ActivityPartition' has cardinality 0..*, and from 'UML2_Element', the role 'UML2_Element637' has cardinality 0..*.
+An association connects 'UML2_ExpansionRegion' and 'UML2_ExpansionNode'. From 'UML2_ExpansionRegion', the role 'ExpansionRegion' has cardinality 0..*, and from 'UML2_ExpansionNode', the role 'outputElement' has cardinality 0..*.
+An association connects 'UML2_ExpansionNode' and 'UML2_ExpansionRegion'. From 'UML2_ExpansionNode', the role 'inputElement' has cardinality 0..*, and from 'UML2_ExpansionRegion', the role 'ExpansionRegion640' has cardinality 0..*.
+An association connects 'UML2_ExpansionRegion' and 'UML2_ExpansionNode'. From 'UML2_ExpansionRegion', the role 'regionAsOutput' has cardinality 0..*, and from 'UML2_ExpansionNode', the role 'ExpansionNode' has cardinality 0..*.
+An association connects 'UML2_ExpansionNode' and 'UML2_ExpansionRegion'. From 'UML2_ExpansionNode', the role 'ExpansionNode643' has cardinality 0..*, and from 'UML2_ExpansionRegion', the role 'regionAsInput' has cardinality 0..*.
+An association connects 'UML2_ExecutableNode' and 'UML2_ExceptionHandler'. From 'UML2_ExecutableNode', the role 'ExecutableNode' has cardinality 0..*, and from 'UML2_ExceptionHandler', the role 'handler' has cardinality 0..*.
+An association connects 'UML2_ExecutableNode' and 'UML2_ExceptionHandler'. From 'UML2_ExecutableNode', the role 'UML2_ExecutableNode' has cardinality 0..*, and from 'UML2_ExceptionHandler', the role 'UML2_ExceptionHandler' has cardinality 0..*.
+An association connects 'UML2_ObjectNode' and 'UML2_ExceptionHandler'. From 'UML2_ObjectNode', the role 'UML2_ObjectNode648' has cardinality 0..*, and from 'UML2_ExceptionHandler', the role 'UML2_ExceptionHandler647' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_ExceptionHandler'. From 'UML2_Classifier', the role 'UML2_Classifier651' has cardinality 0..*, and from 'UML2_ExceptionHandler', the role 'UML2_ExceptionHandler650' has cardinality 0..*.
+An association connects 'UML2_Interaction' and 'UML2_InteractionOccurrence'. From 'UML2_Interaction', the role 'UML2_Interaction653' has cardinality 0..*, and from 'UML2_InteractionOccurrence', the role 'UML2_InteractionOccurrence' has cardinality 0..*.
+An association connects 'UML2_InteractionOccurrence' and 'UML2_Gate'. From 'UML2_InteractionOccurrence', the role 'UML2_InteractionOccurrence655' has cardinality 0..*, and from 'UML2_Gate', the role 'UML2_Gate656' has cardinality 0..*.
+An association connects 'UML2_InteractionOccurrence' and 'UML2_InputPin'. From 'UML2_InteractionOccurrence', the role 'UML2_InteractionOccurrence658' has cardinality 0..*, and from 'UML2_InputPin', the role 'UML2_InputPin659' has cardinality 0..*.
+An association connects 'UML2_InteractionOperand' and 'UML2_InteractionConstraint'. From 'UML2_InteractionOperand', the role 'UML2_InteractionOperand' has cardinality 0..*, and from 'UML2_InteractionConstraint', the role 'UML2_InteractionConstraint' has cardinality 0..*.
+An association connects 'UML2_InteractionFragment' and 'UML2_InteractionOperand'. From 'UML2_InteractionFragment', the role 'InteractionFragment662' has cardinality 0..*, and from 'UML2_InteractionOperand', the role 'enclosingOperand' has cardinality 0..*.
+An association connects 'UML2_ValueSpecification' and 'UML2_InteractionConstraint'. From 'UML2_ValueSpecification', the role 'UML2_ValueSpecification665' has cardinality 0..*, and from 'UML2_InteractionConstraint', the role 'UML2_InteractionConstraint664' has cardinality 0..*.
+An association connects 'UML2_InteractionConstraint' and 'UML2_ValueSpecification'. From 'UML2_InteractionConstraint', the role 'UML2_InteractionConstraint667' has cardinality 0..*, and from 'UML2_ValueSpecification', the role 'UML2_ValueSpecification668' has cardinality 0..*.
+An association connects 'UML2_InteractionOperand' and 'UML2_CombinedFragment'. From 'UML2_InteractionOperand', the role 'UML2_InteractionOperand670' has cardinality 0..*, and from 'UML2_CombinedFragment', the role 'UML2_CombinedFragment' has cardinality 0..*.
+An association connects 'UML2_Gate' and 'UML2_CombinedFragment'. From 'UML2_Gate', the role 'UML2_Gate673' has cardinality 0..*, and from 'UML2_CombinedFragment', the role 'UML2_CombinedFragment672' has cardinality 0..*.
+An association connects 'UML2_StateMachine' and 'UML2_Region'. From 'UML2_StateMachine', the role 'stateMachine' has cardinality 0..*, and from 'UML2_Region', the role 'Region' has cardinality 0..*.
+An association connects 'UML2_StateMachine' and 'UML2_Pseudostate'. From 'UML2_StateMachine', the role 'UML2_StateMachine' has cardinality 0..*, and from 'UML2_Pseudostate', the role 'UML2_Pseudostate' has cardinality 0..*.
+An association connects 'UML2_StateMachine' and 'UML2_StateMachine'. From 'UML2_StateMachine', the role 'UML2_StateMachine676' has cardinality 0..*, and from 'UML2_StateMachine', the role 'UML2_StateMachine678' has cardinality 0..*.
+An association connects 'UML2_StateMachine' and 'UML2_BehavioredClassifier'. From 'UML2_StateMachine', the role 'ownedStateMachine' has cardinality 0..*, and from 'UML2_BehavioredClassifier', the role 'BehavioredClassifier680' has cardinality 0..*.
+An association connects 'UML2_Region' and 'UML2_Vertex'. From 'UML2_Region', the role 'container' has cardinality 0..*, and from 'UML2_Vertex', the role 'Vertex' has cardinality 0..*.
+An association connects 'UML2_Transition' and 'UML2_Region'. From 'UML2_Transition', the role 'Transition' has cardinality 0..*, and from 'UML2_Region', the role 'container683' has cardinality 0..*.
+An association connects 'UML2_StateMachine' and 'UML2_Region'. From 'UML2_StateMachine', the role 'StateMachine685' has cardinality 0..*, and from 'UML2_Region', the role 'region' has cardinality 0..*.
+An association connects 'UML2_Region' and 'UML2_State'. From 'UML2_Region', the role 'region687' has cardinality 0..*, and from 'UML2_State', the role 'State' has cardinality 0..*.
+An association connects 'UML2_Region' and 'UML2_Region'. From 'UML2_Region', the role 'UML2_Region688' has cardinality 0..*, and from 'UML2_Region', the role 'UML2_Region' has cardinality 0..*.
+An association connects 'UML2_State' and 'UML2_StateMachine'. From 'UML2_State', the role 'UML2_State691' has cardinality 0..*, and from 'UML2_StateMachine', the role 'UML2_StateMachine692' has cardinality 0..*.
+An association connects 'UML2_State' and 'UML2_ConnectionPointReference'. From 'UML2_State', the role 'UML2_State694' has cardinality 0..*, and from 'UML2_ConnectionPointReference', the role 'UML2_ConnectionPointReference' has cardinality 0..*.
+An association connects 'UML2_State' and 'UML2_State'. From 'UML2_State', the role 'UML2_State697' has cardinality 0..*, and from 'UML2_State', the role 'UML2_State695' has cardinality 0..*.
+An association connects 'UML2_Trigger' and 'UML2_State'. From 'UML2_Trigger', the role 'UML2_Trigger700' has cardinality 0..*, and from 'UML2_State', the role 'UML2_State699' has cardinality 0..*.
+An association connects 'UML2_Region' and 'UML2_State'. From 'UML2_Region', the role 'Region702' has cardinality 0..*, and from 'UML2_State', the role 'state' has cardinality 0..*.
+An association connects 'UML2_State' and 'UML2_Activity'. From 'UML2_State', the role 'UML2_State704' has cardinality 0..*, and from 'UML2_Activity', the role 'UML2_Activity705' has cardinality 0..*.
+An association connects 'UML2_Activity' and 'UML2_State'. From 'UML2_Activity', the role 'UML2_Activity708' has cardinality 0..*, and from 'UML2_State', the role 'UML2_State707' has cardinality 0..*.
+An association connects 'UML2_State' and 'UML2_Activity'. From 'UML2_State', the role 'UML2_State710' has cardinality 0..*, and from 'UML2_Activity', the role 'UML2_Activity711' has cardinality 0..*.
+An association connects 'UML2_State' and 'UML2_Constraint'. From 'UML2_State', the role 'UML2_State713' has cardinality 0..*, and from 'UML2_Constraint', the role 'UML2_Constraint714' has cardinality 0..*.
+An association connects 'UML2_Vertex' and 'UML2_Region'. From 'UML2_Vertex', the role 'subvertex' has cardinality 0..*, and from 'UML2_Region', the role 'Region716' has cardinality 0..*.
+An association connects 'UML2_Transition' and 'UML2_Vertex'. From 'UML2_Transition', the role 'Transition719' has cardinality 0..*, and from 'UML2_Vertex', the role 'source718' has cardinality 0..*.
+An association connects 'UML2_Vertex' and 'UML2_Transition'. From 'UML2_Vertex', the role 'target721' has cardinality 0..*, and from 'UML2_Transition', the role 'Transition722' has cardinality 0..*.
+An association connects 'UML2_Pseudostate' and 'UML2_ConnectionPointReference'. From 'UML2_Pseudostate', the role 'UML2_Pseudostate725' has cardinality 0..*, and from 'UML2_ConnectionPointReference', the role 'UML2_ConnectionPointReference724' has cardinality 0..*.
+An association connects 'UML2_ConnectionPointReference' and 'UML2_Pseudostate'. From 'UML2_ConnectionPointReference', the role 'UML2_ConnectionPointReference727' has cardinality 0..*, and from 'UML2_Pseudostate', the role 'UML2_Pseudostate728' has cardinality 0..*.
+An association connects 'UML2_Transition' and 'UML2_Region'. From 'UML2_Transition', the role 'transition' has cardinality 0..*, and from 'UML2_Region', the role 'Region730' has cardinality 0..*.
+An association connects 'UML2_Vertex' and 'UML2_Transition'. From 'UML2_Vertex', the role 'Vertex733' has cardinality 0..*, and from 'UML2_Transition', the role 'outgoing732' has cardinality 0..*.
+An association connects 'UML2_Transition' and 'UML2_Vertex'. From 'UML2_Transition', the role 'incoming735' has cardinality 0..*, and from 'UML2_Vertex', the role 'Vertex736' has cardinality 0..*.
+An association connects 'UML2_Transition' and 'UML2_Transition'. From 'UML2_Transition', the role 'UML2_Transition737' has cardinality 0..*, and from 'UML2_Transition', the role 'UML2_Transition' has cardinality 0..*.
+An association connects 'UML2_Trigger' and 'UML2_Transition'. From 'UML2_Trigger', the role 'UML2_Trigger741' has cardinality 0..*, and from 'UML2_Transition', the role 'UML2_Transition740' has cardinality 0..*.
+An association connects 'UML2_Constraint' and 'UML2_Transition'. From 'UML2_Constraint', the role 'UML2_Constraint744' has cardinality 0..*, and from 'UML2_Transition', the role 'UML2_Transition743' has cardinality 0..*.
+An association connects 'UML2_Activity' and 'UML2_Transition'. From 'UML2_Activity', the role 'UML2_Activity747' has cardinality 0..*, and from 'UML2_Transition', the role 'UML2_Transition746' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_CreateObjectAction'. From 'UML2_Classifier', the role 'UML2_Classifier749' has cardinality 0..*, and from 'UML2_CreateObjectAction', the role 'UML2_CreateObjectAction' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_CreateObjectAction'. From 'UML2_OutputPin', the role 'UML2_OutputPin752' has cardinality 0..*, and from 'UML2_CreateObjectAction', the role 'UML2_CreateObjectAction751' has cardinality 0..*.
+An association connects 'UML2_InputPin' and 'UML2_DestroyObjectAction'. From 'UML2_InputPin', the role 'UML2_InputPin754' has cardinality 0..*, and from 'UML2_DestroyObjectAction', the role 'UML2_DestroyObjectAction' has cardinality 0..*.
+An association connects 'UML2_InputPin' and 'UML2_TestIdentityAction'. From 'UML2_InputPin', the role 'UML2_InputPin756' has cardinality 0..*, and from 'UML2_TestIdentityAction', the role 'UML2_TestIdentityAction' has cardinality 0..*.
+An association connects 'UML2_InputPin' and 'UML2_TestIdentityAction'. From 'UML2_InputPin', the role 'UML2_InputPin759' has cardinality 0..*, and from 'UML2_TestIdentityAction', the role 'UML2_TestIdentityAction758' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_TestIdentityAction'. From 'UML2_OutputPin', the role 'UML2_OutputPin762' has cardinality 0..*, and from 'UML2_TestIdentityAction', the role 'UML2_TestIdentityAction761' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_ReadSelfAction'. From 'UML2_OutputPin', the role 'UML2_OutputPin764' has cardinality 0..*, and from 'UML2_ReadSelfAction', the role 'UML2_ReadSelfAction' has cardinality 0..*.
+An association connects 'UML2_StructuralFeatureAction' and 'UML2_StructuralFeature'. From 'UML2_StructuralFeatureAction', the role 'UML2_StructuralFeatureAction' has cardinality 0..*, and from 'UML2_StructuralFeature', the role 'UML2_StructuralFeature766' has cardinality 0..*.
+An association connects 'UML2_InputPin' and 'UML2_StructuralFeatureAction'. From 'UML2_InputPin', the role 'UML2_InputPin769' has cardinality 0..*, and from 'UML2_StructuralFeatureAction', the role 'UML2_StructuralFeatureAction768' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_ReadStructuralFeatureAction'. From 'UML2_OutputPin', the role 'UML2_OutputPin771' has cardinality 0..*, and from 'UML2_ReadStructuralFeatureAction', the role 'UML2_ReadStructuralFeatureAction' has cardinality 0..*.
+An association connects 'UML2_WriteStructuralFeatureAction' and 'UML2_InputPin'. From 'UML2_WriteStructuralFeatureAction', the role 'UML2_WriteStructuralFeatureAction' has cardinality 0..*, and from 'UML2_InputPin', the role 'UML2_InputPin773' has cardinality 0..*.
+An association connects 'UML2_InputPin' and 'UML2_AddStructuralFeatureValueAction'. From 'UML2_InputPin', the role 'UML2_InputPin775' has cardinality 0..*, and from 'UML2_AddStructuralFeatureValueAction', the role 'UML2_AddStructuralFeatureValueAction' has cardinality 0..*.
+An association connects 'UML2_LinkAction' and 'UML2_LinkEndData'. From 'UML2_LinkAction', the role 'UML2_LinkAction' has cardinality 0..*, and from 'UML2_LinkEndData', the role 'UML2_LinkEndData' has cardinality 0..*.
+An association connects 'UML2_LinkEndData' and 'UML2_InputPin'. From 'UML2_LinkEndData', the role 'UML2_LinkEndData778' has cardinality 0..*, and from 'UML2_InputPin', the role 'UML2_InputPin779' has cardinality 0..*.
+An association connects 'UML2_LinkEndData' and 'UML2_Property'. From 'UML2_LinkEndData', the role 'UML2_LinkEndData781' has cardinality 0..*, and from 'UML2_Property', the role 'UML2_Property782' has cardinality 0..*.
+An association connects 'UML2_LinkEndData' and 'UML2_QualifierValue'. From 'UML2_LinkEndData', the role 'UML2_LinkEndData784' has cardinality 0..*, and from 'UML2_QualifierValue', the role 'UML2_QualifierValue' has cardinality 0..*.
+An association connects 'UML2_ReadLinkAction' and 'UML2_OutputPin'. From 'UML2_ReadLinkAction', the role 'UML2_ReadLinkAction' has cardinality 0..*, and from 'UML2_OutputPin', the role 'UML2_OutputPin786' has cardinality 0..*.
+An association connects 'UML2_InputPin' and 'UML2_LinkEndCreationData'. From 'UML2_InputPin', the role 'UML2_InputPin788' has cardinality 0..*, and from 'UML2_LinkEndCreationData', the role 'UML2_LinkEndCreationData' has cardinality 0..*.
+An association connects 'UML2_InputPin' and 'UML2_ClearAssociationAction'. From 'UML2_InputPin', the role 'UML2_InputPin790' has cardinality 0..*, and from 'UML2_ClearAssociationAction', the role 'UML2_ClearAssociationAction' has cardinality 0..*.
+An association connects 'UML2_Association' and 'UML2_ClearAssociationAction'. From 'UML2_Association', the role 'UML2_Association793' has cardinality 0..*, and from 'UML2_ClearAssociationAction', the role 'UML2_ClearAssociationAction792' has cardinality 0..*.
+An association connects 'UML2_Variable' and 'UML2_VariableAction'. From 'UML2_Variable', the role 'UML2_Variable' has cardinality 0..*, and from 'UML2_VariableAction', the role 'UML2_VariableAction' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_ReadVariableAction'. From 'UML2_OutputPin', the role 'UML2_OutputPin796' has cardinality 0..*, and from 'UML2_ReadVariableAction', the role 'UML2_ReadVariableAction' has cardinality 0..*.
+An association connects 'UML2_WriteVariableAction' and 'UML2_InputPin'. From 'UML2_WriteVariableAction', the role 'UML2_WriteVariableAction' has cardinality 0..*, and from 'UML2_InputPin', the role 'UML2_InputPin798' has cardinality 0..*.
+An association connects 'UML2_AddVariableValueAction' and 'UML2_InputPin'. From 'UML2_AddVariableValueAction', the role 'UML2_AddVariableValueAction' has cardinality 0..*, and from 'UML2_InputPin', the role 'UML2_InputPin800' has cardinality 0..*.
+An association connects 'UML2_ApplyFunctionAction' and 'UML2_PrimitiveFunction'. From 'UML2_ApplyFunctionAction', the role 'UML2_ApplyFunctionAction' has cardinality 0..*, and from 'UML2_PrimitiveFunction', the role 'UML2_PrimitiveFunction' has cardinality 0..*.
+An association connects 'UML2_InputPin' and 'UML2_ApplyFunctionAction'. From 'UML2_InputPin', the role 'UML2_InputPin804' has cardinality 0..*, and from 'UML2_ApplyFunctionAction', the role 'UML2_ApplyFunctionAction803' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_ApplyFunctionAction'. From 'UML2_OutputPin', the role 'UML2_OutputPin807' has cardinality 0..*, and from 'UML2_ApplyFunctionAction', the role 'UML2_ApplyFunctionAction806' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_CallAction'. From 'UML2_OutputPin', the role 'UML2_OutputPin809' has cardinality 0..*, and from 'UML2_CallAction', the role 'UML2_CallAction' has cardinality 0..*.
+An association connects 'UML2_InputPin' and 'UML2_InvocationAction'. From 'UML2_InputPin', the role 'UML2_InputPin811' has cardinality 0..*, and from 'UML2_InvocationAction', the role 'UML2_InvocationAction' has cardinality 0..*.
+An association connects 'UML2_InvocationAction' and 'UML2_Port'. From 'UML2_InvocationAction', the role 'UML2_InvocationAction813' has cardinality 0..*, and from 'UML2_Port', the role 'UML2_Port814' has cardinality 0..*.
+An association connects 'UML2_SendSignalAction' and 'UML2_InputPin'. From 'UML2_SendSignalAction', the role 'UML2_SendSignalAction' has cardinality 0..*, and from 'UML2_InputPin', the role 'UML2_InputPin816' has cardinality 0..*.
+An association connects 'UML2_Signal' and 'UML2_SendSignalAction'. From 'UML2_Signal', the role 'UML2_Signal819' has cardinality 0..*, and from 'UML2_SendSignalAction', the role 'UML2_SendSignalAction818' has cardinality 0..*.
+An association connects 'UML2_Signal' and 'UML2_BroadcastSignalAction'. From 'UML2_Signal', the role 'UML2_Signal821' has cardinality 0..*, and from 'UML2_BroadcastSignalAction', the role 'UML2_BroadcastSignalAction' has cardinality 0..*.
+An association connects 'UML2_InputPin' and 'UML2_SendObjectAction'. From 'UML2_InputPin', the role 'UML2_InputPin823' has cardinality 0..*, and from 'UML2_SendObjectAction', the role 'UML2_SendObjectAction' has cardinality 0..*.
+An association connects 'UML2_SendObjectAction' and 'UML2_InputPin'. From 'UML2_SendObjectAction', the role 'UML2_SendObjectAction825' has cardinality 0..*, and from 'UML2_InputPin', the role 'UML2_InputPin826' has cardinality 0..*.
+An association connects 'UML2_CallOperationAction' and 'UML2_Operation'. From 'UML2_CallOperationAction', the role 'UML2_CallOperationAction' has cardinality 0..*, and from 'UML2_Operation', the role 'UML2_Operation828' has cardinality 0..*.
+An association connects 'UML2_CallOperationAction' and 'UML2_InputPin'. From 'UML2_CallOperationAction', the role 'UML2_CallOperationAction830' has cardinality 0..*, and from 'UML2_InputPin', the role 'UML2_InputPin831' has cardinality 0..*.
+An association connects 'UML2_Behavior' and 'UML2_CallBehaviorAction'. From 'UML2_Behavior', the role 'UML2_Behavior833' has cardinality 0..*, and from 'UML2_CallBehaviorAction', the role 'UML2_CallBehaviorAction' has cardinality 0..*.
+An association connects 'UML2_NamedElement' and 'UML2_TimeExpression'. From 'UML2_NamedElement', the role 'UML2_NamedElement835' has cardinality 0..*, and from 'UML2_TimeExpression', the role 'UML2_TimeExpression' has cardinality 0..*.
+An association connects 'UML2_Duration' and 'UML2_NamedElement'. From 'UML2_Duration', the role 'UML2_Duration' has cardinality 0..*, and from 'UML2_NamedElement', the role 'UML2_NamedElement837' has cardinality 0..*.
+An association connects 'UML2_TimeExpression' and 'UML2_TimeObservationAction'. From 'UML2_TimeExpression', the role 'UML2_TimeExpression839' has cardinality 0..*, and from 'UML2_TimeObservationAction', the role 'UML2_TimeObservationAction' has cardinality 0..*.
+An association connects 'UML2_ValueSpecification' and 'UML2_Interval'. From 'UML2_ValueSpecification', the role 'UML2_ValueSpecification841' has cardinality 0..*, and from 'UML2_Interval', the role 'UML2_Interval' has cardinality 0..*.
+An association connects 'UML2_ValueSpecification' and 'UML2_Interval'. From 'UML2_ValueSpecification', the role 'UML2_ValueSpecification844' has cardinality 0..*, and from 'UML2_Interval', the role 'UML2_Interval843' has cardinality 0..*.
+An association connects 'UML2_Duration' and 'UML2_DurationObservationAction'. From 'UML2_Duration', the role 'UML2_Duration846' has cardinality 0..*, and from 'UML2_DurationObservationAction', the role 'UML2_DurationObservationAction' has cardinality 0..*.
+An association connects 'UML2_InterruptibleActivityRegion' and 'UML2_ActivityEdge'. From 'UML2_InterruptibleActivityRegion', the role 'interrupts' has cardinality 0..*, and from 'UML2_ActivityEdge', the role 'ActivityEdge848' has cardinality 0..*.
+An association connects 'UML2_InterruptibleActivityRegion' and 'UML2_ActivityNode'. From 'UML2_InterruptibleActivityRegion', the role 'inInterruptibleRegion' has cardinality 0..*, and from 'UML2_ActivityNode', the role 'ActivityNode850' has cardinality 0..*.
+An association connects 'UML2_ParameterSet' and 'UML2_Parameter'. From 'UML2_ParameterSet', the role 'parameterSet' has cardinality 0..*, and from 'UML2_Parameter', the role 'Parameter852' has cardinality 0..*.
+An association connects 'UML2_ParameterSet' and 'UML2_Constraint'. From 'UML2_ParameterSet', the role 'UML2_ParameterSet854' has cardinality 0..*, and from 'UML2_Constraint', the role 'UML2_Constraint855' has cardinality 0..*.
+An association connects 'UML2_Component' and 'UML2_Interface'. From 'UML2_Component', the role 'UML2_Component' has cardinality 0..*, and from 'UML2_Interface', the role 'UML2_Interface857' has cardinality 0..*.
+An association connects 'UML2_Interface' and 'UML2_Component'. From 'UML2_Interface', the role 'UML2_Interface860' has cardinality 0..*, and from 'UML2_Component', the role 'UML2_Component859' has cardinality 0..*.
+An association connects 'UML2_Component' and 'UML2_Realization'. From 'UML2_Component', the role 'abstraction' has cardinality 0..*, and from 'UML2_Realization', the role 'Realization' has cardinality 0..*.
+An association connects 'UML2_Component' and 'UML2_PackageableElement'. From 'UML2_Component', the role 'UML2_Component863' has cardinality 0..*, and from 'UML2_PackageableElement', the role 'UML2_PackageableElement864' has cardinality 0..*.
+An association connects 'UML2_Deployment' and 'UML2_DeployedArtifact'. From 'UML2_Deployment', the role 'UML2_Deployment' has cardinality 0..*, and from 'UML2_DeployedArtifact', the role 'UML2_DeployedArtifact' has cardinality 0..*.
+An association connects 'UML2_Deployment' and 'UML2_DeploymentTarget'. From 'UML2_Deployment', the role 'deployment' has cardinality 0..*, and from 'UML2_DeploymentTarget', the role 'DeploymentTarget' has cardinality 0..*.
+An association connects 'UML2_Deployment' and 'UML2_DeploymentSpecification'. From 'UML2_Deployment', the role 'UML2_Deployment868' has cardinality 0..*, and from 'UML2_DeploymentSpecification', the role 'UML2_DeploymentSpecification' has cardinality 0..*.
+An association connects 'UML2_DeploymentTarget' and 'UML2_Deployment'. From 'UML2_DeploymentTarget', the role 'location' has cardinality 0..*, and from 'UML2_Deployment', the role 'Deployment' has cardinality 0..*.
+An association connects 'UML2_PackageableElement' and 'UML2_DeploymentTarget'. From 'UML2_PackageableElement', the role 'UML2_PackageableElement871' has cardinality 0..*, and from 'UML2_DeploymentTarget', the role 'UML2_DeploymentTarget' has cardinality 0..*.
+An association connects 'UML2_Node' and 'UML2_Node'. From 'UML2_Node', the role 'UML2_Node' has cardinality 0..*, and from 'UML2_Node', the role 'UML2_Node872' has cardinality 0..*.
+An association connects 'UML2_ProtocolConformance' and 'UML2_ProtocolStateMachine'. From 'UML2_ProtocolConformance', the role 'conformance' has cardinality 0..*, and from 'UML2_ProtocolStateMachine', the role 'ProtocolStateMachine' has cardinality 0..*.
+An association connects 'UML2_ProtocolConformance' and 'UML2_ProtocolStateMachine'. From 'UML2_ProtocolConformance', the role 'UML2_ProtocolConformance' has cardinality 0..*, and from 'UML2_ProtocolStateMachine', the role 'UML2_ProtocolStateMachine876' has cardinality 0..*.
+An association connects 'UML2_ProtocolConformance' and 'UML2_ProtocolStateMachine'. From 'UML2_ProtocolConformance', the role 'ProtocolConformance' has cardinality 0..*, and from 'UML2_ProtocolStateMachine', the role 'specificMachine' has cardinality 0..*.
+An association connects 'UML2_ProtocolTransition' and 'UML2_Constraint'. From 'UML2_ProtocolTransition', the role 'UML2_ProtocolTransition' has cardinality 0..*, and from 'UML2_Constraint', the role 'UML2_Constraint879' has cardinality 0..*.
+An association connects 'UML2_Operation' and 'UML2_ProtocolTransition'. From 'UML2_Operation', the role 'UML2_Operation882' has cardinality 0..*, and from 'UML2_ProtocolTransition', the role 'UML2_ProtocolTransition881' has cardinality 0..*.
+An association connects 'UML2_Constraint' and 'UML2_ProtocolTransition'. From 'UML2_Constraint', the role 'UML2_Constraint885' has cardinality 0..*, and from 'UML2_ProtocolTransition', the role 'UML2_ProtocolTransition884' has cardinality 0..*.
+An association connects 'UML2_ReadExtentAction' and 'UML2_OutputPin'. From 'UML2_ReadExtentAction', the role 'UML2_ReadExtentAction' has cardinality 0..*, and from 'UML2_OutputPin', the role 'UML2_OutputPin887' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_ReadExtentAction'. From 'UML2_Classifier', the role 'UML2_Classifier890' has cardinality 0..*, and from 'UML2_ReadExtentAction', the role 'UML2_ReadExtentAction889' has cardinality 0..*.
+An association connects 'UML2_ReclassifyObjectAction' and 'UML2_Classifier'. From 'UML2_ReclassifyObjectAction', the role 'UML2_ReclassifyObjectAction' has cardinality 0..*, and from 'UML2_Classifier', the role 'UML2_Classifier892' has cardinality 0..*.
+An association connects 'UML2_Classifier' and 'UML2_ReclassifyObjectAction'. From 'UML2_Classifier', the role 'UML2_Classifier895' has cardinality 0..*, and from 'UML2_ReclassifyObjectAction', the role 'UML2_ReclassifyObjectAction894' has cardinality 0..*.
+An association connects 'UML2_ReclassifyObjectAction' and 'UML2_InputPin'. From 'UML2_ReclassifyObjectAction', the role 'UML2_ReclassifyObjectAction897' has cardinality 0..*, and from 'UML2_InputPin', the role 'UML2_InputPin898' has cardinality 0..*.
+An association connects 'UML2_ReadIsClassifiedObjectAction' and 'UML2_Classifier'. From 'UML2_ReadIsClassifiedObjectAction', the role 'UML2_ReadIsClassifiedObjectAction' has cardinality 0..*, and from 'UML2_Classifier', the role 'UML2_Classifier900' has cardinality 0..*.
+An association connects 'UML2_ReadIsClassifiedObjectAction' and 'UML2_OutputPin'. From 'UML2_ReadIsClassifiedObjectAction', the role 'UML2_ReadIsClassifiedObjectAction902' has cardinality 0..*, and from 'UML2_OutputPin', the role 'UML2_OutputPin903' has cardinality 0..*.
+An association connects 'UML2_InputPin' and 'UML2_ReadIsClassifiedObjectAction'. From 'UML2_InputPin', the role 'UML2_InputPin906' has cardinality 0..*, and from 'UML2_ReadIsClassifiedObjectAction', the role 'UML2_ReadIsClassifiedObjectAction905' has cardinality 0..*.
+An association connects 'UML2_InputPin' and 'UML2_StartOwnedBehaviorAction'. From 'UML2_InputPin', the role 'UML2_InputPin908' has cardinality 0..*, and from 'UML2_StartOwnedBehaviorAction', the role 'UML2_StartOwnedBehaviorAction' has cardinality 0..*.
+An association connects 'UML2_Property' and 'UML2_QualifierValue'. From 'UML2_Property', the role 'UML2_Property911' has cardinality 0..*, and from 'UML2_QualifierValue', the role 'UML2_QualifierValue910' has cardinality 0..*.
+An association connects 'UML2_QualifierValue' and 'UML2_InputPin'. From 'UML2_QualifierValue', the role 'UML2_QualifierValue913' has cardinality 0..*, and from 'UML2_InputPin', the role 'UML2_InputPin914' has cardinality 0..*.
+An association connects 'UML2_InputPin' and 'UML2_ReadLinkObjectEndAction'. From 'UML2_InputPin', the role 'UML2_InputPin916' has cardinality 0..*, and from 'UML2_ReadLinkObjectEndAction', the role 'UML2_ReadLinkObjectEndAction' has cardinality 0..*.
+An association connects 'UML2_ReadLinkObjectEndAction' and 'UML2_Property'. From 'UML2_ReadLinkObjectEndAction', the role 'UML2_ReadLinkObjectEndAction918' has cardinality 0..*, and from 'UML2_Property', the role 'UML2_Property919' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_ReadLinkObjectEndAction'. From 'UML2_OutputPin', the role 'UML2_OutputPin922' has cardinality 0..*, and from 'UML2_ReadLinkObjectEndAction', the role 'UML2_ReadLinkObjectEndAction921' has cardinality 0..*.
+An association connects 'UML2_InputPin' and 'UML2_ReadLinkObjectEndQualifierAction'. From 'UML2_InputPin', the role 'UML2_InputPin924' has cardinality 0..*, and from 'UML2_ReadLinkObjectEndQualifierAction', the role 'UML2_ReadLinkObjectEndQualifierAction' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_ReadLinkObjectEndQualifierAction'. From 'UML2_OutputPin', the role 'UML2_OutputPin927' has cardinality 0..*, and from 'UML2_ReadLinkObjectEndQualifierAction', the role 'UML2_ReadLinkObjectEndQualifierAction926' has cardinality 0..*.
+An association connects 'UML2_ReadLinkObjectEndQualifierAction' and 'UML2_Property'. From 'UML2_ReadLinkObjectEndQualifierAction', the role 'UML2_ReadLinkObjectEndQualifierAction929' has cardinality 0..*, and from 'UML2_Property', the role 'UML2_Property930' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_CreateLinkObjectAction'. From 'UML2_OutputPin', the role 'UML2_OutputPin932' has cardinality 0..*, and from 'UML2_CreateLinkObjectAction', the role 'UML2_CreateLinkObjectAction' has cardinality 0..*.
+An association connects 'UML2_Trigger' and 'UML2_AcceptEventAction'. From 'UML2_Trigger', the role 'UML2_Trigger934' has cardinality 0..*, and from 'UML2_AcceptEventAction', the role 'UML2_AcceptEventAction' has cardinality 0..*.
+An association connects 'UML2_AcceptEventAction' and 'UML2_OutputPin'. From 'UML2_AcceptEventAction', the role 'UML2_AcceptEventAction936' has cardinality 0..*, and from 'UML2_OutputPin', the role 'UML2_OutputPin937' has cardinality 0..*.
+An association connects 'UML2_OutputPin' and 'UML2_AcceptCallAction'. From 'UML2_OutputPin', the role 'UML2_OutputPin939' has cardinality 0..*, and from 'UML2_AcceptCallAction', the role 'UML2_AcceptCallAction' has cardinality 0..*.
+An association connects 'UML2_CallTrigger' and 'UML2_ReplyAction'. From 'UML2_CallTrigger', the role 'UML2_CallTrigger941' has cardinality 0..*, and from 'UML2_ReplyAction', the role 'UML2_ReplyAction' has cardinality 0..*.
+An association connects 'UML2_ReplyAction' and 'UML2_InputPin'. From 'UML2_ReplyAction', the role 'UML2_ReplyAction943' has cardinality 0..*, and from 'UML2_InputPin', the role 'UML2_InputPin944' has cardinality 0..*.
+An association connects 'UML2_ReplyAction' and 'UML2_InputPin'. From 'UML2_ReplyAction', the role 'UML2_ReplyAction946' has cardinality 0..*, and from 'UML2_InputPin', the role 'UML2_InputPin947' has cardinality 0..*.
+An association connects 'UML2_InputPin' and 'UML2_RaiseExceptionAction'. From 'UML2_InputPin', the role 'UML2_InputPin949' has cardinality 0..*, and from 'UML2_RaiseExceptionAction', the role 'UML2_RaiseExceptionAction' has cardinality 0..*.

@@ -1,0 +1,40 @@
+The domain model 'simpleClass' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'simpleClass_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleClass_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleClass_Class' represents an important domain concept.
+It has one attribute: 'persistent', which is of type bool.
+
+'simpleClass_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleClass_ClassModel' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleClass_Association' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleClass_Package' is a specialization of 'NamedElement'.
+The class 'simpleClass_Class' is a specialization of 'NamedElement'.
+The class 'simpleClass_Attribute' is a specialization of 'NamedElement'.
+The class 'simpleClass_Association' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleClass_Package' and 'simpleClass_ClassModel'. From 'simpleClass_Package', the role 'simpleClass_Package' has cardinality 0..*, and from 'simpleClass_ClassModel', the role 'simpleClass_ClassModel' has cardinality 0..*.
+An association connects 'simpleClass_Package' and 'simpleClass_Package'. From 'simpleClass_Package', the role 'simpleClass_Package1' has cardinality 0..*, and from 'simpleClass_Package', the role 'simpleClass_Package3' has cardinality 0..*.
+An association connects 'simpleClass_Package' and 'simpleClass_Class'. From 'simpleClass_Package', the role 'simpleClass_Package5' has cardinality 0..*, and from 'simpleClass_Class', the role 'simpleClass_Class' has cardinality 0..*.
+An association connects 'simpleClass_Package' and 'simpleClass_Association'. From 'simpleClass_Package', the role 'simpleClass_Package7' has cardinality 0..*, and from 'simpleClass_Association', the role 'simpleClass_Association' has cardinality 0..*.
+An association connects 'simpleClass_Class' and 'simpleClass_Attribute'. From 'simpleClass_Class', the role 'simpleClass_Class9' has cardinality 0..*, and from 'simpleClass_Attribute', the role 'simpleClass_Attribute' has cardinality 0..*.
+An association connects 'simpleClass_Class' and 'simpleClass_Class'. From 'simpleClass_Class', the role 'simpleClass_Class12' has cardinality 0..*, and from 'simpleClass_Class', the role 'simpleClass_Class10' has cardinality 0..*.
+An association connects 'simpleClass_Association' and 'simpleClass_Class'. From 'simpleClass_Association', the role 'simpleClass_Association14' has cardinality 0..*, and from 'simpleClass_Class', the role 'simpleClass_Class15' has cardinality 0..*.
+An association connects 'simpleClass_Association' and 'simpleClass_Class'. From 'simpleClass_Association', the role 'simpleClass_Association17' has cardinality 0..*, and from 'simpleClass_Class', the role 'simpleClass_Class18' has cardinality 0..*.

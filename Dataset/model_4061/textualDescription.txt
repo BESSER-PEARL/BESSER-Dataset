@@ -1,0 +1,57 @@
+The domain model 'SimpleUML' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'SimpleUML_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleUML_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleUML_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleUML_PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleUML_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleUML_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'UMLModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleUML_UMLModelElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'kind', which is of type str.
+
+'SimpleUML_PackageElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'SimpleUML_Classifier' is a specialization of 'PackageElement'.
+The class 'SimpleUML_Attribute' is a specialization of 'UMLModelElement'.
+The class 'SimpleUML_Class' is a specialization of 'Classifier'.
+The class 'SimpleUML_Association' is a specialization of 'PackageElement'.
+The class 'SimpleUML_PrimitiveDataType' is a specialization of 'Classifier'.
+The class 'SimpleUML_Package' is a specialization of 'UMLModelElement'.
+The class 'SimpleUML_PackageElement' is a specialization of 'UMLModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SimpleUML_Classifier' and 'SimpleUML_Attribute'. From 'SimpleUML_Classifier', the role 'SimpleUML_Classifier' has cardinality 0..*, and from 'SimpleUML_Attribute', the role 'SimpleUML_Attribute' has cardinality 0..*.
+An association connects 'SimpleUML_Attribute' and 'SimpleUML_Class'. From 'SimpleUML_Attribute', the role 'attribute' has cardinality 0..*, and from 'SimpleUML_Class', the role 'Class' has cardinality 0..*.
+An association connects 'SimpleUML_Attribute' and 'SimpleUML_Class'. From 'SimpleUML_Attribute', the role 'Attribute' has cardinality 0..*, and from 'SimpleUML_Class', the role 'owner' has cardinality 0..*.
+An association connects 'SimpleUML_Class' and 'SimpleUML_Class'. From 'SimpleUML_Class', the role 'SimpleUML_Class3' has cardinality 0..*, and from 'SimpleUML_Class', the role 'SimpleUML_Class' has cardinality 0..*.
+An association connects 'SimpleUML_Class' and 'SimpleUML_Association'. From 'SimpleUML_Class', the role 'source' has cardinality 0..*, and from 'SimpleUML_Association', the role 'Association' has cardinality 0..*.
+An association connects 'SimpleUML_Association' and 'SimpleUML_Class'. From 'SimpleUML_Association', the role 'Association7' has cardinality 0..*, and from 'SimpleUML_Class', the role 'destination' has cardinality 0..*.
+An association connects 'SimpleUML_Class' and 'SimpleUML_Association'. From 'SimpleUML_Class', the role 'Class9' has cardinality 0..*, and from 'SimpleUML_Association', the role 'reverse' has cardinality 0..*.
+An association connects 'SimpleUML_Class' and 'SimpleUML_Association'. From 'SimpleUML_Class', the role 'Class11' has cardinality 0..*, and from 'SimpleUML_Association', the role 'forward' has cardinality 0..*.
+An association connects 'SimpleUML_PackageElement' and 'SimpleUML_Package'. From 'SimpleUML_PackageElement', the role 'PackageElement' has cardinality 0..*, and from 'SimpleUML_Package', the role 'namespace' has cardinality 0..*.
+An association connects 'SimpleUML_PackageElement' and 'SimpleUML_Package'. From 'SimpleUML_PackageElement', the role 'elements' has cardinality 0..*, and from 'SimpleUML_Package', the role 'Package' has cardinality 0..*.

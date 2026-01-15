@@ -1,0 +1,71 @@
+The domain model 'smalluml' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Boolean' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Heritage' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Role' represents an important domain concept.
+It has the following attributes: 'upper', which is of type int; 'lower', which is of type int.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Float' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'smalluml_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_String' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Int' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Association' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'smalluml_Class' is a specialization of 'NamedElement'.
+The class 'smalluml_Method' is a specialization of 'NamedElement'.
+The class 'smalluml_Association' is a specialization of 'NamedElement'.
+The class 'smalluml_Heritage' is a specialization of 'NamedElement'.
+The class 'smalluml_Role' is a specialization of 'NamedElement'.
+The class 'smalluml_Type' is a specialization of 'NamedElement'.
+The class 'smalluml_Float' is a specialization of 'Type'.
+The class 'smalluml_Int' is a specialization of 'Type'.
+The class 'smalluml_Boolean' is a specialization of 'Type'.
+The class 'smalluml_String' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'smalluml_Class' and 'smalluml_Method'. From 'smalluml_Class', the role 'smalluml_Class' has cardinality 0..*, and from 'smalluml_Method', the role 'smalluml_Method' has cardinality 0..*.
+An association connects 'smalluml_Type' and 'smalluml_Class'. From 'smalluml_Type', the role 'smalluml_Type' has cardinality 0..*, and from 'smalluml_Class', the role 'smalluml_Class2' has cardinality 0..*.
+An association connects 'smalluml_Type' and 'smalluml_Method'. From 'smalluml_Type', the role 'smalluml_Type5' has cardinality 0..*, and from 'smalluml_Method', the role 'smalluml_Method4' has cardinality 0..*.
+An association connects 'smalluml_Type' and 'smalluml_Method'. From 'smalluml_Type', the role 'smalluml_Type8' has cardinality 0..*, and from 'smalluml_Method', the role 'smalluml_Method7' has cardinality 0..*.
+An association connects 'smalluml_Role' and 'smalluml_Association'. From 'smalluml_Role', the role 'smalluml_Role' has cardinality 0..*, and from 'smalluml_Association', the role 'smalluml_Association' has cardinality 0..*.
+An association connects 'smalluml_Role' and 'smalluml_Association'. From 'smalluml_Role', the role 'smalluml_Role12' has cardinality 0..*, and from 'smalluml_Association', the role 'smalluml_Association11' has cardinality 0..*.
+An association connects 'smalluml_Heritage' and 'smalluml_Role'. From 'smalluml_Heritage', the role 'smalluml_Heritage' has cardinality 0..*, and from 'smalluml_Role', the role 'smalluml_Role14' has cardinality 0..*.
+An association connects 'smalluml_Heritage' and 'smalluml_Role'. From 'smalluml_Heritage', the role 'smalluml_Heritage16' has cardinality 0..*, and from 'smalluml_Role', the role 'smalluml_Role17' has cardinality 0..*.
+An association connects 'smalluml_Role' and 'smalluml_Class'. From 'smalluml_Role', the role 'smalluml_Role19' has cardinality 0..*, and from 'smalluml_Class', the role 'smalluml_Class20' has cardinality 0..*.
+An association connects 'smalluml_Association' and 'smalluml_Diagram'. From 'smalluml_Association', the role 'smalluml_Association22' has cardinality 0..*, and from 'smalluml_Diagram', the role 'smalluml_Diagram' has cardinality 0..*.
+An association connects 'smalluml_Heritage' and 'smalluml_Diagram'. From 'smalluml_Heritage', the role 'smalluml_Heritage25' has cardinality 0..*, and from 'smalluml_Diagram', the role 'smalluml_Diagram24' has cardinality 0..*.
+An association connects 'smalluml_Class' and 'smalluml_Diagram'. From 'smalluml_Class', the role 'smalluml_Class28' has cardinality 0..*, and from 'smalluml_Diagram', the role 'smalluml_Diagram27' has cardinality 0..*.

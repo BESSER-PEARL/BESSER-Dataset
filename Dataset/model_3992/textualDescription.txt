@@ -1,0 +1,414 @@
+The domain model 'xpdl1' describes the core structural elements and their relationships within the system.
+
+The model defines 67 main class(es).
+
+'xpdl1_DataFieldsType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_ActivitySetType' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'xpdl1_ActivitySetsType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_BasicTypeType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'xpdl1_EnumerationValueType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'xpdl1_RedefinableHeaderType' represents an important domain concept.
+It has the following attributes: 'countrykey', which is of type str; 'codepage', which is of type str; 'version', which is of type str; 'author', which is of type str; 'publicationStatus', which is of type str.
+
+'xpdl1_ApplicationType' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'id', which is of type str.
+
+'xpdl1_ExternalPackagesType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_ParticipantTypeType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'xpdl1_ConformanceClassType' represents an important domain concept.
+It has one attribute: 'graphConformance', which is of type str.
+
+'xpdl1_TypeDeclarationsType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_JoinType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'xpdl1_ParticipantType' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str; 'description', which is of type str.
+
+'xpdl1_ActivityType' represents an important domain concept.
+It has the following attributes: 'documentation', which is of type str; 'performer', which is of type str; 'limit', which is of type str; 'priority', which is of type str; 'id', which is of type str; 'description', which is of type str; 'name', which is of type str; 'icon', which is of type str.
+
+'xpdl1_NoType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_FormalParameterType' represents an important domain concept.
+It has the following attributes: 'index', which is of type str; 'mode', which is of type str; 'description', which is of type str; 'id', which is of type str.
+
+'xpdl1_TypeDeclarationType' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str; 'description', which is of type str.
+
+'xpdl1_SimulationInformationType' represents an important domain concept.
+It has the following attributes: 'instantiation', which is of type str; 'cost', which is of type str.
+
+'xpdl1_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_EnumerationTypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_DocumentRoot' represents an important domain concept.
+It has the following attributes: 'actualParameter', which is of type str; 'costUnit', which is of type str; 'validTo', which is of type str; 'mixed', which is of type str; 'duration', which is of type str; 'countrykey', which is of type str; 'initialValue', which is of type str; 'responsible', which is of type str; 'vendor', which is of type str; 'waitingTime', which is of type str; 'icon', which is of type str; 'validFrom', which is of type str; 'priority', which is of type str; 'workingTime', which is of type str; 'cost', which is of type str; 'length', which is of type str; 'xPDLVersion', which is of type str; 'limit', which is of type str; 'performer', which is of type str; 'priorityUnit', which is of type str; 'documentation', which is of type str; 'description', which is of type str; 'version', which is of type str; 'created', which is of type str; 'codepage', which is of type str; 'author', which is of type str.
+
+'xpdl1_ScriptType' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'type', which is of type str; 'grammar', which is of type str.
+
+'xpdl1_AutomaticType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_DataFieldType' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'description', which is of type str; 'isArray', which is of type str; 'initialValue', which is of type str; 'length', which is of type str; 'name', which is of type str.
+
+'xpdl1_ExternalPackageType' represents an important domain concept.
+It has one attribute: 'href', which is of type str.
+
+'xpdl1_SplitType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'xpdl1_ImplementationType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_TimeEstimationType' represents an important domain concept.
+It has the following attributes: 'duration', which is of type str; 'waitingTime', which is of type str; 'workingTime', which is of type str.
+
+'xpdl1_TransitionRefsType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_ResponsiblesType' represents an important domain concept.
+It has one attribute: 'responsible', which is of type str.
+
+'xpdl1_ConditionType' represents an important domain concept.
+It has the following attributes: 'mixed', which is of type str; 'group', which is of type str; 'type', which is of type str.
+
+'xpdl1_MemberType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_ApplicationsType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_TransitionsType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_ParticipantsType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_RouteType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_DeclaredTypeType' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'xpdl1_WorkflowProcessType' represents an important domain concept.
+It has the following attributes: 'accessLevel', which is of type str; 'id', which is of type str; 'name', which is of type str.
+
+'xpdl1_FinishModeType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_FormalParametersType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_ListTypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_ExtendedAttributeType' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'mixed', which is of type str; 'name', which is of type str; 'value', which is of type str; 'any', which is of type str.
+
+'xpdl1_DeadlineType' represents an important domain concept.
+It has one attribute: 'execution', which is of type str.
+
+'xpdl1_TransitionType' represents an important domain concept.
+It has the following attributes: 'from', which is of type str; 'id', which is of type str; 'to', which is of type str; 'description', which is of type str; 'name', which is of type str.
+
+'xpdl1_BlockActivityType' represents an important domain concept.
+It has one attribute: 'blockId', which is of type str.
+
+'xpdl1_XpressionType' represents an important domain concept.
+It has the following attributes: 'group', which is of type str; 'mixed', which is of type str; 'any', which is of type str.
+
+'xpdl1_ManualType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_ExtendedAttributesType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_StartModeType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_ArrayTypeType' represents an important domain concept.
+It has the following attributes: 'lowerIndex', which is of type str; 'upperIndex', which is of type str.
+
+'xpdl1_TransitionRestrictionType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_ActivitiesType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_WorkflowProcessesType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_ActualParametersType' represents an important domain concept.
+It has one attribute: 'actualParameter', which is of type str.
+
+'xpdl1_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_TransitionRefType' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'xpdl1_PackageHeaderType' represents an important domain concept.
+It has the following attributes: 'created', which is of type str; 'xPDLVersion', which is of type str; 'description', which is of type str; 'vendor', which is of type str; 'documentation', which is of type str; 'priorityUnit', which is of type str; 'costUnit', which is of type str.
+
+'xpdl1_ToolType' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'type', which is of type str; 'description', which is of type str.
+
+'xpdl1_RecordTypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_TransitionRestrictionsType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_SchemaTypeType' represents an important domain concept.
+It has one attribute: 'any', which is of type str.
+
+'xpdl1_ProcessHeaderType' represents an important domain concept.
+It has the following attributes: 'priority', which is of type str; 'validFrom', which is of type str; 'validTo', which is of type str; 'durationUnit', which is of type str; 'created', which is of type str; 'description', which is of type str; 'limit', which is of type str.
+
+'xpdl1_UnionTypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_ExternalReferenceType' represents an important domain concept.
+It has the following attributes: 'namespace', which is of type str; 'location', which is of type str; 'xref', which is of type str.
+
+'xpdl1_PackageType' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'xpdl1_DataTypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl1_SubFlowType' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'execution', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'GraphConformanceType' defines the following possible values: 'LOOPBLOCKED', 'FULLBLOCKED', 'NONBLOCKED'.
+The enumeration 'InstantiationType' defines the following possible values: 'ONCE', 'MULTIPLE'.
+The enumeration 'TypeType1' defines the following possible values: 'RESOURCE', 'RESOURCESET', 'ROLE', 'SYSTEM', 'ORGANIZATIONALUNIT', 'HUMAN'.
+The enumeration 'ExecutionType1' defines the following possible values: 'ASYNCHR', 'SYNCHR'.
+The enumeration 'ModeType' defines the following possible values: 'IN', 'OUT', 'INOUT'.
+The enumeration 'AccessLevelType' defines the following possible values: 'PRIVATE', 'PUBLIC'.
+The enumeration 'TypeType2' defines the following possible values: 'OTHERWISE', 'DEFAULTEXCEPTION', 'EXCEPTION', 'CONDITION'.
+The enumeration 'TypeType5' defines the following possible values: 'PROCEDURE', 'APPLICATION'.
+The enumeration 'DurationUnitType' defines the following possible values: 'Y', 'h', 'D', 'M', 'm1', 's'.
+The enumeration 'PublicationStatusType' defines the following possible values: 'UNDERTEST', 'UNDERREVISION', 'RELEASED'.
+The enumeration 'ExecutionType' defines the following possible values: 'ASYNCHR', 'SYNCHR'.
+The enumeration 'IsArrayType' defines the following possible values: 'TRUE', 'FALSE'.
+The enumeration 'TypeType' defines the following possible values: 'AND', 'XOR'.
+The enumeration 'TypeType4' defines the following possible values: 'AND', 'XOR'.
+The enumeration 'TypeType3' defines the following possible values: 'BOOLEAN', 'INTEGER', 'DATETIME', 'REFERENCE', 'FLOAT', 'STRING', 'PERFORMER'.
+
+Relationships between classes are modeled using associations.
+An association connects 'xpdl1_ActivitiesType' and 'xpdl1_ActivityType'. From 'xpdl1_ActivitiesType', the role 'xpdl1_ActivitiesType' has cardinality 0..*, and from 'xpdl1_ActivityType', the role 'xpdl1_ActivityType' has cardinality 0..*.
+An association connects 'xpdl1_ActivitySetType' and 'xpdl1_ActivitySetsType'. From 'xpdl1_ActivitySetType', the role 'xpdl1_ActivitySetType' has cardinality 0..*, and from 'xpdl1_ActivitySetsType', the role 'xpdl1_ActivitySetsType' has cardinality 0..*.
+An association connects 'xpdl1_ActivitySetType' and 'xpdl1_ActivitiesType'. From 'xpdl1_ActivitySetType', the role 'xpdl1_ActivitySetType3' has cardinality 0..*, and from 'xpdl1_ActivitiesType', the role 'xpdl1_ActivitiesType4' has cardinality 0..*.
+An association connects 'xpdl1_TransitionsType' and 'xpdl1_ActivitySetType'. From 'xpdl1_TransitionsType', the role 'xpdl1_TransitionsType' has cardinality 0..*, and from 'xpdl1_ActivitySetType', the role 'xpdl1_ActivitySetType6' has cardinality 0..*.
+An association connects 'xpdl1_RouteType' and 'xpdl1_ActivityType'. From 'xpdl1_RouteType', the role 'xpdl1_RouteType' has cardinality 0..*, and from 'xpdl1_ActivityType', the role 'xpdl1_ActivityType8' has cardinality 0..*.
+An association connects 'xpdl1_ActivityType' and 'xpdl1_ImplementationType'. From 'xpdl1_ActivityType', the role 'xpdl1_ActivityType10' has cardinality 0..*, and from 'xpdl1_ImplementationType', the role 'xpdl1_ImplementationType' has cardinality 0..*.
+An association connects 'xpdl1_ActivityType' and 'xpdl1_BlockActivityType'. From 'xpdl1_ActivityType', the role 'xpdl1_ActivityType12' has cardinality 0..*, and from 'xpdl1_BlockActivityType', the role 'xpdl1_BlockActivityType' has cardinality 0..*.
+An association connects 'xpdl1_StartModeType' and 'xpdl1_ActivityType'. From 'xpdl1_StartModeType', the role 'xpdl1_StartModeType' has cardinality 0..*, and from 'xpdl1_ActivityType', the role 'xpdl1_ActivityType14' has cardinality 0..*.
+An association connects 'xpdl1_FinishModeType' and 'xpdl1_ActivityType'. From 'xpdl1_FinishModeType', the role 'xpdl1_FinishModeType' has cardinality 0..*, and from 'xpdl1_ActivityType', the role 'xpdl1_ActivityType16' has cardinality 0..*.
+An association connects 'xpdl1_DeadlineType' and 'xpdl1_ActivityType'. From 'xpdl1_DeadlineType', the role 'xpdl1_DeadlineType' has cardinality 0..*, and from 'xpdl1_ActivityType', the role 'xpdl1_ActivityType18' has cardinality 0..*.
+An association connects 'xpdl1_ActivityType' and 'xpdl1_SimulationInformationType'. From 'xpdl1_ActivityType', the role 'xpdl1_ActivityType20' has cardinality 0..*, and from 'xpdl1_SimulationInformationType', the role 'xpdl1_SimulationInformationType' has cardinality 0..*.
+An association connects 'xpdl1_ActivityType' and 'xpdl1_TransitionRestrictionsType'. From 'xpdl1_ActivityType', the role 'xpdl1_ActivityType22' has cardinality 0..*, and from 'xpdl1_TransitionRestrictionsType', the role 'xpdl1_TransitionRestrictionsType' has cardinality 0..*.
+An association connects 'xpdl1_ExtendedAttributesType' and 'xpdl1_ActivityType'. From 'xpdl1_ExtendedAttributesType', the role 'xpdl1_ExtendedAttributesType' has cardinality 0..*, and from 'xpdl1_ActivityType', the role 'xpdl1_ActivityType24' has cardinality 0..*.
+An association connects 'xpdl1_ApplicationType' and 'xpdl1_ApplicationsType'. From 'xpdl1_ApplicationType', the role 'xpdl1_ApplicationType' has cardinality 0..*, and from 'xpdl1_ApplicationsType', the role 'xpdl1_ApplicationsType' has cardinality 0..*.
+An association connects 'xpdl1_ApplicationType' and 'xpdl1_FormalParametersType'. From 'xpdl1_ApplicationType', the role 'xpdl1_ApplicationType27' has cardinality 0..*, and from 'xpdl1_FormalParametersType', the role 'xpdl1_FormalParametersType' has cardinality 0..*.
+An association connects 'xpdl1_ApplicationType' and 'xpdl1_ExternalReferenceType'. From 'xpdl1_ApplicationType', the role 'xpdl1_ApplicationType29' has cardinality 0..*, and from 'xpdl1_ExternalReferenceType', the role 'xpdl1_ExternalReferenceType' has cardinality 0..*.
+An association connects 'xpdl1_ApplicationType' and 'xpdl1_ExtendedAttributesType'. From 'xpdl1_ApplicationType', the role 'xpdl1_ApplicationType31' has cardinality 0..*, and from 'xpdl1_ExtendedAttributesType', the role 'xpdl1_ExtendedAttributesType32' has cardinality 0..*.
+An association connects 'xpdl1_BasicTypeType' and 'xpdl1_ArrayTypeType'. From 'xpdl1_BasicTypeType', the role 'xpdl1_BasicTypeType' has cardinality 0..*, and from 'xpdl1_ArrayTypeType', the role 'xpdl1_ArrayTypeType' has cardinality 0..*.
+An association connects 'xpdl1_ArrayTypeType' and 'xpdl1_DeclaredTypeType'. From 'xpdl1_ArrayTypeType', the role 'xpdl1_ArrayTypeType35' has cardinality 0..*, and from 'xpdl1_DeclaredTypeType', the role 'xpdl1_DeclaredTypeType' has cardinality 0..*.
+An association connects 'xpdl1_SchemaTypeType' and 'xpdl1_ArrayTypeType'. From 'xpdl1_SchemaTypeType', the role 'xpdl1_SchemaTypeType' has cardinality 0..*, and from 'xpdl1_ArrayTypeType', the role 'xpdl1_ArrayTypeType37' has cardinality 0..*.
+An association connects 'xpdl1_ExternalReferenceType' and 'xpdl1_ArrayTypeType'. From 'xpdl1_ExternalReferenceType', the role 'xpdl1_ExternalReferenceType40' has cardinality 0..*, and from 'xpdl1_ArrayTypeType', the role 'xpdl1_ArrayTypeType39' has cardinality 0..*.
+An association connects 'xpdl1_ArrayTypeType' and 'xpdl1_RecordTypeType'. From 'xpdl1_ArrayTypeType', the role 'xpdl1_ArrayTypeType42' has cardinality 0..*, and from 'xpdl1_RecordTypeType', the role 'xpdl1_RecordTypeType' has cardinality 0..*.
+An association connects 'xpdl1_UnionTypeType' and 'xpdl1_ArrayTypeType'. From 'xpdl1_UnionTypeType', the role 'xpdl1_UnionTypeType' has cardinality 0..*, and from 'xpdl1_ArrayTypeType', the role 'xpdl1_ArrayTypeType44' has cardinality 0..*.
+An association connects 'xpdl1_ArrayTypeType' and 'xpdl1_EnumerationTypeType'. From 'xpdl1_ArrayTypeType', the role 'xpdl1_ArrayTypeType46' has cardinality 0..*, and from 'xpdl1_EnumerationTypeType', the role 'xpdl1_EnumerationTypeType' has cardinality 0..*.
+An association connects 'xpdl1_ArrayTypeType' and 'xpdl1_ArrayTypeType'. From 'xpdl1_ArrayTypeType', the role 'xpdl1_ArrayTypeType49' has cardinality 0..*, and from 'xpdl1_ArrayTypeType', the role 'xpdl1_ArrayTypeType47' has cardinality 0..*.
+An association connects 'xpdl1_ArrayTypeType' and 'xpdl1_ListTypeType'. From 'xpdl1_ArrayTypeType', the role 'xpdl1_ArrayTypeType51' has cardinality 0..*, and from 'xpdl1_ListTypeType', the role 'xpdl1_ListTypeType' has cardinality 0..*.
+An association connects 'xpdl1_ConditionType' and 'xpdl1_XpressionType'. From 'xpdl1_ConditionType', the role 'xpdl1_ConditionType' has cardinality 0..*, and from 'xpdl1_XpressionType', the role 'xpdl1_XpressionType' has cardinality 0..*.
+An association connects 'xpdl1_DataFieldsType' and 'xpdl1_DataFieldType'. From 'xpdl1_DataFieldsType', the role 'xpdl1_DataFieldsType' has cardinality 0..*, and from 'xpdl1_DataFieldType', the role 'xpdl1_DataFieldType' has cardinality 0..*.
+An association connects 'xpdl1_DataFieldType' and 'xpdl1_DataTypeType'. From 'xpdl1_DataFieldType', the role 'xpdl1_DataFieldType55' has cardinality 0..*, and from 'xpdl1_DataTypeType', the role 'xpdl1_DataTypeType' has cardinality 0..*.
+An association connects 'xpdl1_ExtendedAttributesType' and 'xpdl1_DataFieldType'. From 'xpdl1_ExtendedAttributesType', the role 'xpdl1_ExtendedAttributesType58' has cardinality 0..*, and from 'xpdl1_DataFieldType', the role 'xpdl1_DataFieldType57' has cardinality 0..*.
+An association connects 'xpdl1_DataTypeType' and 'xpdl1_BasicTypeType'. From 'xpdl1_DataTypeType', the role 'xpdl1_DataTypeType60' has cardinality 0..*, and from 'xpdl1_BasicTypeType', the role 'xpdl1_BasicTypeType61' has cardinality 0..*.
+An association connects 'xpdl1_DataTypeType' and 'xpdl1_DeclaredTypeType'. From 'xpdl1_DataTypeType', the role 'xpdl1_DataTypeType63' has cardinality 0..*, and from 'xpdl1_DeclaredTypeType', the role 'xpdl1_DeclaredTypeType64' has cardinality 0..*.
+An association connects 'xpdl1_SchemaTypeType' and 'xpdl1_DataTypeType'. From 'xpdl1_SchemaTypeType', the role 'xpdl1_SchemaTypeType67' has cardinality 0..*, and from 'xpdl1_DataTypeType', the role 'xpdl1_DataTypeType66' has cardinality 0..*.
+An association connects 'xpdl1_ExternalReferenceType' and 'xpdl1_DataTypeType'. From 'xpdl1_ExternalReferenceType', the role 'xpdl1_ExternalReferenceType70' has cardinality 0..*, and from 'xpdl1_DataTypeType', the role 'xpdl1_DataTypeType69' has cardinality 0..*.
+An association connects 'xpdl1_DataTypeType' and 'xpdl1_RecordTypeType'. From 'xpdl1_DataTypeType', the role 'xpdl1_DataTypeType72' has cardinality 0..*, and from 'xpdl1_RecordTypeType', the role 'xpdl1_RecordTypeType73' has cardinality 0..*.
+An association connects 'xpdl1_UnionTypeType' and 'xpdl1_DataTypeType'. From 'xpdl1_UnionTypeType', the role 'xpdl1_UnionTypeType76' has cardinality 0..*, and from 'xpdl1_DataTypeType', the role 'xpdl1_DataTypeType75' has cardinality 0..*.
+An association connects 'xpdl1_DataTypeType' and 'xpdl1_EnumerationTypeType'. From 'xpdl1_DataTypeType', the role 'xpdl1_DataTypeType78' has cardinality 0..*, and from 'xpdl1_EnumerationTypeType', the role 'xpdl1_EnumerationTypeType79' has cardinality 0..*.
+An association connects 'xpdl1_DataTypeType' and 'xpdl1_ArrayTypeType'. From 'xpdl1_DataTypeType', the role 'xpdl1_DataTypeType81' has cardinality 0..*, and from 'xpdl1_ArrayTypeType', the role 'xpdl1_ArrayTypeType82' has cardinality 0..*.
+An association connects 'xpdl1_DataTypeType' and 'xpdl1_ListTypeType'. From 'xpdl1_DataTypeType', the role 'xpdl1_DataTypeType84' has cardinality 0..*, and from 'xpdl1_ListTypeType', the role 'xpdl1_ListTypeType85' has cardinality 0..*.
+An association connects 'xpdl1_EObject' and 'xpdl1_DeadlineType'. From 'xpdl1_EObject', the role 'xpdl1_EObject' has cardinality 0..*, and from 'xpdl1_DeadlineType', the role 'xpdl1_DeadlineType87' has cardinality 0..*.
+An association connects 'xpdl1_DeadlineType' and 'xpdl1_EObject'. From 'xpdl1_DeadlineType', the role 'xpdl1_DeadlineType89' has cardinality 0..*, and from 'xpdl1_EObject', the role 'xpdl1_EObject90' has cardinality 0..*.
+An association connects 'xpdl1_EStringToStringMapEntry' and 'xpdl1_DocumentRoot'. From 'xpdl1_EStringToStringMapEntry', the role 'xpdl1_EStringToStringMapEntry' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_EStringToStringMapEntry'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot93' has cardinality 0..*, and from 'xpdl1_EStringToStringMapEntry', the role 'xpdl1_EStringToStringMapEntry94' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ActivitiesType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot96' has cardinality 0..*, and from 'xpdl1_ActivitiesType', the role 'xpdl1_ActivitiesType97' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ActivityType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot99' has cardinality 0..*, and from 'xpdl1_ActivityType', the role 'xpdl1_ActivityType100' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ActivitySetType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot102' has cardinality 0..*, and from 'xpdl1_ActivitySetType', the role 'xpdl1_ActivitySetType103' has cardinality 0..*.
+An association connects 'xpdl1_ActivitySetsType' and 'xpdl1_DocumentRoot'. From 'xpdl1_ActivitySetsType', the role 'xpdl1_ActivitySetsType106' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot105' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ActualParametersType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot108' has cardinality 0..*, and from 'xpdl1_ActualParametersType', the role 'xpdl1_ActualParametersType' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ApplicationType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot110' has cardinality 0..*, and from 'xpdl1_ApplicationType', the role 'xpdl1_ApplicationType111' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ApplicationsType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot113' has cardinality 0..*, and from 'xpdl1_ApplicationsType', the role 'xpdl1_ApplicationsType114' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ArrayTypeType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot116' has cardinality 0..*, and from 'xpdl1_ArrayTypeType', the role 'xpdl1_ArrayTypeType117' has cardinality 0..*.
+An association connects 'xpdl1_AutomaticType' and 'xpdl1_DocumentRoot'. From 'xpdl1_AutomaticType', the role 'xpdl1_AutomaticType' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot119' has cardinality 0..*.
+An association connects 'xpdl1_BasicTypeType' and 'xpdl1_DocumentRoot'. From 'xpdl1_BasicTypeType', the role 'xpdl1_BasicTypeType122' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot121' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_BlockActivityType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot124' has cardinality 0..*, and from 'xpdl1_BlockActivityType', the role 'xpdl1_BlockActivityType125' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ConditionType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot127' has cardinality 0..*, and from 'xpdl1_ConditionType', the role 'xpdl1_ConditionType128' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ConformanceClassType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot130' has cardinality 0..*, and from 'xpdl1_ConformanceClassType', the role 'xpdl1_ConformanceClassType' has cardinality 0..*.
+An association connects 'xpdl1_DataFieldType' and 'xpdl1_DocumentRoot'. From 'xpdl1_DataFieldType', the role 'xpdl1_DataFieldType133' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot132' has cardinality 0..*.
+An association connects 'xpdl1_DataFieldsType' and 'xpdl1_DocumentRoot'. From 'xpdl1_DataFieldsType', the role 'xpdl1_DataFieldsType136' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot135' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_DataTypeType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot138' has cardinality 0..*, and from 'xpdl1_DataTypeType', the role 'xpdl1_DataTypeType139' has cardinality 0..*.
+An association connects 'xpdl1_DeadlineType' and 'xpdl1_DocumentRoot'. From 'xpdl1_DeadlineType', the role 'xpdl1_DeadlineType142' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot141' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_DeclaredTypeType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot144' has cardinality 0..*, and from 'xpdl1_DeclaredTypeType', the role 'xpdl1_DeclaredTypeType145' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_EnumerationTypeType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot147' has cardinality 0..*, and from 'xpdl1_EnumerationTypeType', the role 'xpdl1_EnumerationTypeType148' has cardinality 0..*.
+An association connects 'xpdl1_EnumerationValueType' and 'xpdl1_DocumentRoot'. From 'xpdl1_EnumerationValueType', the role 'xpdl1_EnumerationValueType' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot150' has cardinality 0..*.
+An association connects 'xpdl1_ExtendedAttributeType' and 'xpdl1_DocumentRoot'. From 'xpdl1_ExtendedAttributeType', the role 'xpdl1_ExtendedAttributeType' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot152' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ExtendedAttributesType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot154' has cardinality 0..*, and from 'xpdl1_ExtendedAttributesType', the role 'xpdl1_ExtendedAttributesType155' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ExternalPackageType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot157' has cardinality 0..*, and from 'xpdl1_ExternalPackageType', the role 'xpdl1_ExternalPackageType' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ExternalPackagesType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot159' has cardinality 0..*, and from 'xpdl1_ExternalPackagesType', the role 'xpdl1_ExternalPackagesType' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ExternalReferenceType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot161' has cardinality 0..*, and from 'xpdl1_ExternalReferenceType', the role 'xpdl1_ExternalReferenceType162' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_FinishModeType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot164' has cardinality 0..*, and from 'xpdl1_FinishModeType', the role 'xpdl1_FinishModeType165' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_FormalParameterType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot167' has cardinality 0..*, and from 'xpdl1_FormalParameterType', the role 'xpdl1_FormalParameterType' has cardinality 0..*.
+An association connects 'xpdl1_FormalParametersType' and 'xpdl1_DocumentRoot'. From 'xpdl1_FormalParametersType', the role 'xpdl1_FormalParametersType170' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot169' has cardinality 0..*.
+An association connects 'xpdl1_ImplementationType' and 'xpdl1_DocumentRoot'. From 'xpdl1_ImplementationType', the role 'xpdl1_ImplementationType173' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot172' has cardinality 0..*.
+An association connects 'xpdl1_JoinType' and 'xpdl1_DocumentRoot'. From 'xpdl1_JoinType', the role 'xpdl1_JoinType' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot175' has cardinality 0..*.
+An association connects 'xpdl1_ListTypeType' and 'xpdl1_DocumentRoot'. From 'xpdl1_ListTypeType', the role 'xpdl1_ListTypeType178' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot177' has cardinality 0..*.
+An association connects 'xpdl1_ManualType' and 'xpdl1_DocumentRoot'. From 'xpdl1_ManualType', the role 'xpdl1_ManualType' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot180' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_MemberType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot182' has cardinality 0..*, and from 'xpdl1_MemberType', the role 'xpdl1_MemberType' has cardinality 0..*.
+An association connects 'xpdl1_NoType' and 'xpdl1_DocumentRoot'. From 'xpdl1_NoType', the role 'xpdl1_NoType' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot184' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_PackageType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot186' has cardinality 0..*, and from 'xpdl1_PackageType', the role 'xpdl1_PackageType' has cardinality 0..*.
+An association connects 'xpdl1_PackageHeaderType' and 'xpdl1_DocumentRoot'. From 'xpdl1_PackageHeaderType', the role 'xpdl1_PackageHeaderType' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot188' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ParticipantType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot190' has cardinality 0..*, and from 'xpdl1_ParticipantType', the role 'xpdl1_ParticipantType' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ParticipantsType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot192' has cardinality 0..*, and from 'xpdl1_ParticipantsType', the role 'xpdl1_ParticipantsType' has cardinality 0..*.
+An association connects 'xpdl1_ParticipantTypeType' and 'xpdl1_DocumentRoot'. From 'xpdl1_ParticipantTypeType', the role 'xpdl1_ParticipantTypeType' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot194' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ProcessHeaderType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot196' has cardinality 0..*, and from 'xpdl1_ProcessHeaderType', the role 'xpdl1_ProcessHeaderType' has cardinality 0..*.
+An association connects 'xpdl1_RecordTypeType' and 'xpdl1_DocumentRoot'. From 'xpdl1_RecordTypeType', the role 'xpdl1_RecordTypeType199' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot198' has cardinality 0..*.
+An association connects 'xpdl1_RedefinableHeaderType' and 'xpdl1_DocumentRoot'. From 'xpdl1_RedefinableHeaderType', the role 'xpdl1_RedefinableHeaderType' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot201' has cardinality 0..*.
+An association connects 'xpdl1_ResponsiblesType' and 'xpdl1_DocumentRoot'. From 'xpdl1_ResponsiblesType', the role 'xpdl1_ResponsiblesType' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot203' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_RouteType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot205' has cardinality 0..*, and from 'xpdl1_RouteType', the role 'xpdl1_RouteType206' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_SchemaTypeType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot208' has cardinality 0..*, and from 'xpdl1_SchemaTypeType', the role 'xpdl1_SchemaTypeType209' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ScriptType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot211' has cardinality 0..*, and from 'xpdl1_ScriptType', the role 'xpdl1_ScriptType' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_SimulationInformationType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot213' has cardinality 0..*, and from 'xpdl1_SimulationInformationType', the role 'xpdl1_SimulationInformationType214' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_SplitType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot216' has cardinality 0..*, and from 'xpdl1_SplitType', the role 'xpdl1_SplitType' has cardinality 0..*.
+An association connects 'xpdl1_StartModeType' and 'xpdl1_DocumentRoot'. From 'xpdl1_StartModeType', the role 'xpdl1_StartModeType219' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot218' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_SubFlowType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot221' has cardinality 0..*, and from 'xpdl1_SubFlowType', the role 'xpdl1_SubFlowType' has cardinality 0..*.
+An association connects 'xpdl1_TimeEstimationType' and 'xpdl1_DocumentRoot'. From 'xpdl1_TimeEstimationType', the role 'xpdl1_TimeEstimationType' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot223' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_ToolType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot225' has cardinality 0..*, and from 'xpdl1_ToolType', the role 'xpdl1_ToolType' has cardinality 0..*.
+An association connects 'xpdl1_TransitionType' and 'xpdl1_DocumentRoot'. From 'xpdl1_TransitionType', the role 'xpdl1_TransitionType' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot227' has cardinality 0..*.
+An association connects 'xpdl1_TransitionRefType' and 'xpdl1_DocumentRoot'. From 'xpdl1_TransitionRefType', the role 'xpdl1_TransitionRefType' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot229' has cardinality 0..*.
+An association connects 'xpdl1_TransitionRefsType' and 'xpdl1_DocumentRoot'. From 'xpdl1_TransitionRefsType', the role 'xpdl1_TransitionRefsType' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot231' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_TransitionRestrictionType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot233' has cardinality 0..*, and from 'xpdl1_TransitionRestrictionType', the role 'xpdl1_TransitionRestrictionType' has cardinality 0..*.
+An association connects 'xpdl1_TransitionRestrictionsType' and 'xpdl1_DocumentRoot'. From 'xpdl1_TransitionRestrictionsType', the role 'xpdl1_TransitionRestrictionsType236' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot235' has cardinality 0..*.
+An association connects 'xpdl1_TransitionsType' and 'xpdl1_DocumentRoot'. From 'xpdl1_TransitionsType', the role 'xpdl1_TransitionsType239' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot238' has cardinality 0..*.
+An association connects 'xpdl1_TypeDeclarationType' and 'xpdl1_DocumentRoot'. From 'xpdl1_TypeDeclarationType', the role 'xpdl1_TypeDeclarationType' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot241' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_TypeDeclarationsType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot243' has cardinality 0..*, and from 'xpdl1_TypeDeclarationsType', the role 'xpdl1_TypeDeclarationsType' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_UnionTypeType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot245' has cardinality 0..*, and from 'xpdl1_UnionTypeType', the role 'xpdl1_UnionTypeType246' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_WorkflowProcessType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot248' has cardinality 0..*, and from 'xpdl1_WorkflowProcessType', the role 'xpdl1_WorkflowProcessType' has cardinality 0..*.
+An association connects 'xpdl1_WorkflowProcessesType' and 'xpdl1_DocumentRoot'. From 'xpdl1_WorkflowProcessesType', the role 'xpdl1_WorkflowProcessesType' has cardinality 0..*, and from 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot250' has cardinality 0..*.
+An association connects 'xpdl1_DocumentRoot' and 'xpdl1_XpressionType'. From 'xpdl1_DocumentRoot', the role 'xpdl1_DocumentRoot252' has cardinality 0..*, and from 'xpdl1_XpressionType', the role 'xpdl1_XpressionType253' has cardinality 0..*.
+An association connects 'xpdl1_EnumerationValueType' and 'xpdl1_EnumerationTypeType'. From 'xpdl1_EnumerationValueType', the role 'xpdl1_EnumerationValueType256' has cardinality 0..*, and from 'xpdl1_EnumerationTypeType', the role 'xpdl1_EnumerationTypeType255' has cardinality 0..*.
+An association connects 'xpdl1_ExtendedAttributesType' and 'xpdl1_ExtendedAttributeType'. From 'xpdl1_ExtendedAttributesType', the role 'xpdl1_ExtendedAttributesType258' has cardinality 0..*, and from 'xpdl1_ExtendedAttributeType', the role 'xpdl1_ExtendedAttributeType259' has cardinality 0..*.
+An association connects 'xpdl1_ExternalPackageType' and 'xpdl1_ExternalPackagesType'. From 'xpdl1_ExternalPackageType', the role 'xpdl1_ExternalPackageType262' has cardinality 0..*, and from 'xpdl1_ExternalPackagesType', the role 'xpdl1_ExternalPackagesType261' has cardinality 0..*.
+An association connects 'xpdl1_ExternalPackageType' and 'xpdl1_ExtendedAttributesType'. From 'xpdl1_ExternalPackageType', the role 'xpdl1_ExternalPackageType264' has cardinality 0..*, and from 'xpdl1_ExtendedAttributesType', the role 'xpdl1_ExtendedAttributesType265' has cardinality 0..*.
+An association connects 'xpdl1_FinishModeType' and 'xpdl1_AutomaticType'. From 'xpdl1_FinishModeType', the role 'xpdl1_FinishModeType267' has cardinality 0..*, and from 'xpdl1_AutomaticType', the role 'xpdl1_AutomaticType268' has cardinality 0..*.
+An association connects 'xpdl1_FinishModeType' and 'xpdl1_ManualType'. From 'xpdl1_FinishModeType', the role 'xpdl1_FinishModeType270' has cardinality 0..*, and from 'xpdl1_ManualType', the role 'xpdl1_ManualType271' has cardinality 0..*.
+An association connects 'xpdl1_FormalParametersType' and 'xpdl1_FormalParameterType'. From 'xpdl1_FormalParametersType', the role 'xpdl1_FormalParametersType273' has cardinality 0..*, and from 'xpdl1_FormalParameterType', the role 'xpdl1_FormalParameterType274' has cardinality 0..*.
+An association connects 'xpdl1_DataTypeType' and 'xpdl1_FormalParameterType'. From 'xpdl1_DataTypeType', the role 'xpdl1_DataTypeType277' has cardinality 0..*, and from 'xpdl1_FormalParameterType', the role 'xpdl1_FormalParameterType276' has cardinality 0..*.
+An association connects 'xpdl1_NoType' and 'xpdl1_ImplementationType'. From 'xpdl1_NoType', the role 'xpdl1_NoType280' has cardinality 0..*, and from 'xpdl1_ImplementationType', the role 'xpdl1_ImplementationType279' has cardinality 0..*.
+An association connects 'xpdl1_ToolType' and 'xpdl1_ImplementationType'. From 'xpdl1_ToolType', the role 'xpdl1_ToolType283' has cardinality 0..*, and from 'xpdl1_ImplementationType', the role 'xpdl1_ImplementationType282' has cardinality 0..*.
+An association connects 'xpdl1_SubFlowType' and 'xpdl1_ImplementationType'. From 'xpdl1_SubFlowType', the role 'xpdl1_SubFlowType286' has cardinality 0..*, and from 'xpdl1_ImplementationType', the role 'xpdl1_ImplementationType285' has cardinality 0..*.
+An association connects 'xpdl1_BasicTypeType' and 'xpdl1_ListTypeType'. From 'xpdl1_BasicTypeType', the role 'xpdl1_BasicTypeType289' has cardinality 0..*, and from 'xpdl1_ListTypeType', the role 'xpdl1_ListTypeType288' has cardinality 0..*.
+An association connects 'xpdl1_DeclaredTypeType' and 'xpdl1_ListTypeType'. From 'xpdl1_DeclaredTypeType', the role 'xpdl1_DeclaredTypeType292' has cardinality 0..*, and from 'xpdl1_ListTypeType', the role 'xpdl1_ListTypeType291' has cardinality 0..*.
+An association connects 'xpdl1_SchemaTypeType' and 'xpdl1_ListTypeType'. From 'xpdl1_SchemaTypeType', the role 'xpdl1_SchemaTypeType295' has cardinality 0..*, and from 'xpdl1_ListTypeType', the role 'xpdl1_ListTypeType294' has cardinality 0..*.
+An association connects 'xpdl1_ListTypeType' and 'xpdl1_ExternalReferenceType'. From 'xpdl1_ListTypeType', the role 'xpdl1_ListTypeType297' has cardinality 0..*, and from 'xpdl1_ExternalReferenceType', the role 'xpdl1_ExternalReferenceType298' has cardinality 0..*.
+An association connects 'xpdl1_ListTypeType' and 'xpdl1_RecordTypeType'. From 'xpdl1_ListTypeType', the role 'xpdl1_ListTypeType300' has cardinality 0..*, and from 'xpdl1_RecordTypeType', the role 'xpdl1_RecordTypeType301' has cardinality 0..*.
+An association connects 'xpdl1_UnionTypeType' and 'xpdl1_ListTypeType'. From 'xpdl1_UnionTypeType', the role 'xpdl1_UnionTypeType304' has cardinality 0..*, and from 'xpdl1_ListTypeType', the role 'xpdl1_ListTypeType303' has cardinality 0..*.
+An association connects 'xpdl1_ListTypeType' and 'xpdl1_EnumerationTypeType'. From 'xpdl1_ListTypeType', the role 'xpdl1_ListTypeType306' has cardinality 0..*, and from 'xpdl1_EnumerationTypeType', the role 'xpdl1_EnumerationTypeType307' has cardinality 0..*.
+An association connects 'xpdl1_ListTypeType' and 'xpdl1_ArrayTypeType'. From 'xpdl1_ListTypeType', the role 'xpdl1_ListTypeType309' has cardinality 0..*, and from 'xpdl1_ArrayTypeType', the role 'xpdl1_ArrayTypeType310' has cardinality 0..*.
+An association connects 'xpdl1_ListTypeType' and 'xpdl1_ListTypeType'. From 'xpdl1_ListTypeType', the role 'xpdl1_ListTypeType313' has cardinality 0..*, and from 'xpdl1_ListTypeType', the role 'xpdl1_ListTypeType311' has cardinality 0..*.
+An association connects 'xpdl1_MemberType' and 'xpdl1_BasicTypeType'. From 'xpdl1_MemberType', the role 'xpdl1_MemberType315' has cardinality 0..*, and from 'xpdl1_BasicTypeType', the role 'xpdl1_BasicTypeType316' has cardinality 0..*.
+An association connects 'xpdl1_DeclaredTypeType' and 'xpdl1_MemberType'. From 'xpdl1_DeclaredTypeType', the role 'xpdl1_DeclaredTypeType319' has cardinality 0..*, and from 'xpdl1_MemberType', the role 'xpdl1_MemberType318' has cardinality 0..*.
+An association connects 'xpdl1_MemberType' and 'xpdl1_SchemaTypeType'. From 'xpdl1_MemberType', the role 'xpdl1_MemberType321' has cardinality 0..*, and from 'xpdl1_SchemaTypeType', the role 'xpdl1_SchemaTypeType322' has cardinality 0..*.
+An association connects 'xpdl1_ExternalReferenceType' and 'xpdl1_MemberType'. From 'xpdl1_ExternalReferenceType', the role 'xpdl1_ExternalReferenceType325' has cardinality 0..*, and from 'xpdl1_MemberType', the role 'xpdl1_MemberType324' has cardinality 0..*.
+An association connects 'xpdl1_MemberType' and 'xpdl1_RecordTypeType'. From 'xpdl1_MemberType', the role 'xpdl1_MemberType327' has cardinality 0..*, and from 'xpdl1_RecordTypeType', the role 'xpdl1_RecordTypeType328' has cardinality 0..*.
+An association connects 'xpdl1_UnionTypeType' and 'xpdl1_MemberType'. From 'xpdl1_UnionTypeType', the role 'xpdl1_UnionTypeType331' has cardinality 0..*, and from 'xpdl1_MemberType', the role 'xpdl1_MemberType330' has cardinality 0..*.
+An association connects 'xpdl1_MemberType' and 'xpdl1_EnumerationTypeType'. From 'xpdl1_MemberType', the role 'xpdl1_MemberType333' has cardinality 0..*, and from 'xpdl1_EnumerationTypeType', the role 'xpdl1_EnumerationTypeType334' has cardinality 0..*.
+An association connects 'xpdl1_ArrayTypeType' and 'xpdl1_MemberType'. From 'xpdl1_ArrayTypeType', the role 'xpdl1_ArrayTypeType337' has cardinality 0..*, and from 'xpdl1_MemberType', the role 'xpdl1_MemberType336' has cardinality 0..*.
+An association connects 'xpdl1_MemberType' and 'xpdl1_ListTypeType'. From 'xpdl1_MemberType', the role 'xpdl1_MemberType339' has cardinality 0..*, and from 'xpdl1_ListTypeType', the role 'xpdl1_ListTypeType340' has cardinality 0..*.
+An association connects 'xpdl1_PackageHeaderType' and 'xpdl1_PackageType'. From 'xpdl1_PackageHeaderType', the role 'xpdl1_PackageHeaderType343' has cardinality 0..*, and from 'xpdl1_PackageType', the role 'xpdl1_PackageType342' has cardinality 0..*.
+An association connects 'xpdl1_PackageType' and 'xpdl1_RedefinableHeaderType'. From 'xpdl1_PackageType', the role 'xpdl1_PackageType345' has cardinality 0..*, and from 'xpdl1_RedefinableHeaderType', the role 'xpdl1_RedefinableHeaderType346' has cardinality 0..*.
+An association connects 'xpdl1_PackageType' and 'xpdl1_ConformanceClassType'. From 'xpdl1_PackageType', the role 'xpdl1_PackageType348' has cardinality 0..*, and from 'xpdl1_ConformanceClassType', the role 'xpdl1_ConformanceClassType349' has cardinality 0..*.
+An association connects 'xpdl1_ScriptType' and 'xpdl1_PackageType'. From 'xpdl1_ScriptType', the role 'xpdl1_ScriptType352' has cardinality 0..*, and from 'xpdl1_PackageType', the role 'xpdl1_PackageType351' has cardinality 0..*.
+An association connects 'xpdl1_PackageType' and 'xpdl1_ExternalPackagesType'. From 'xpdl1_PackageType', the role 'xpdl1_PackageType354' has cardinality 0..*, and from 'xpdl1_ExternalPackagesType', the role 'xpdl1_ExternalPackagesType355' has cardinality 0..*.
+An association connects 'xpdl1_PackageType' and 'xpdl1_TypeDeclarationsType'. From 'xpdl1_PackageType', the role 'xpdl1_PackageType357' has cardinality 0..*, and from 'xpdl1_TypeDeclarationsType', the role 'xpdl1_TypeDeclarationsType358' has cardinality 0..*.
+An association connects 'xpdl1_ParticipantsType' and 'xpdl1_PackageType'. From 'xpdl1_ParticipantsType', the role 'xpdl1_ParticipantsType361' has cardinality 0..*, and from 'xpdl1_PackageType', the role 'xpdl1_PackageType360' has cardinality 0..*.
+An association connects 'xpdl1_ApplicationsType' and 'xpdl1_PackageType'. From 'xpdl1_ApplicationsType', the role 'xpdl1_ApplicationsType364' has cardinality 0..*, and from 'xpdl1_PackageType', the role 'xpdl1_PackageType363' has cardinality 0..*.
+An association connects 'xpdl1_DataFieldsType' and 'xpdl1_PackageType'. From 'xpdl1_DataFieldsType', the role 'xpdl1_DataFieldsType367' has cardinality 0..*, and from 'xpdl1_PackageType', the role 'xpdl1_PackageType366' has cardinality 0..*.
+An association connects 'xpdl1_WorkflowProcessesType' and 'xpdl1_PackageType'. From 'xpdl1_WorkflowProcessesType', the role 'xpdl1_WorkflowProcessesType370' has cardinality 0..*, and from 'xpdl1_PackageType', the role 'xpdl1_PackageType369' has cardinality 0..*.
+An association connects 'xpdl1_ExtendedAttributesType' and 'xpdl1_PackageType'. From 'xpdl1_ExtendedAttributesType', the role 'xpdl1_ExtendedAttributesType373' has cardinality 0..*, and from 'xpdl1_PackageType', the role 'xpdl1_PackageType372' has cardinality 0..*.
+An association connects 'xpdl1_ParticipantsType' and 'xpdl1_ParticipantType'. From 'xpdl1_ParticipantsType', the role 'xpdl1_ParticipantsType375' has cardinality 0..*, and from 'xpdl1_ParticipantType', the role 'xpdl1_ParticipantType376' has cardinality 0..*.
+An association connects 'xpdl1_ParticipantTypeType' and 'xpdl1_ParticipantType'. From 'xpdl1_ParticipantTypeType', the role 'xpdl1_ParticipantTypeType379' has cardinality 0..*, and from 'xpdl1_ParticipantType', the role 'xpdl1_ParticipantType378' has cardinality 0..*.
+An association connects 'xpdl1_ExternalReferenceType' and 'xpdl1_ParticipantType'. From 'xpdl1_ExternalReferenceType', the role 'xpdl1_ExternalReferenceType382' has cardinality 0..*, and from 'xpdl1_ParticipantType', the role 'xpdl1_ParticipantType381' has cardinality 0..*.
+An association connects 'xpdl1_ParticipantType' and 'xpdl1_ExtendedAttributesType'. From 'xpdl1_ParticipantType', the role 'xpdl1_ParticipantType384' has cardinality 0..*, and from 'xpdl1_ExtendedAttributesType', the role 'xpdl1_ExtendedAttributesType385' has cardinality 0..*.
+An association connects 'xpdl1_TimeEstimationType' and 'xpdl1_ProcessHeaderType'. From 'xpdl1_TimeEstimationType', the role 'xpdl1_TimeEstimationType388' has cardinality 0..*, and from 'xpdl1_ProcessHeaderType', the role 'xpdl1_ProcessHeaderType387' has cardinality 0..*.
+An association connects 'xpdl1_MemberType' and 'xpdl1_RecordTypeType'. From 'xpdl1_MemberType', the role 'xpdl1_MemberType391' has cardinality 0..*, and from 'xpdl1_RecordTypeType', the role 'xpdl1_RecordTypeType390' has cardinality 0..*.
+An association connects 'xpdl1_ResponsiblesType' and 'xpdl1_RedefinableHeaderType'. From 'xpdl1_ResponsiblesType', the role 'xpdl1_ResponsiblesType394' has cardinality 0..*, and from 'xpdl1_RedefinableHeaderType', the role 'xpdl1_RedefinableHeaderType393' has cardinality 0..*.
+An association connects 'xpdl1_TimeEstimationType' and 'xpdl1_SimulationInformationType'. From 'xpdl1_TimeEstimationType', the role 'xpdl1_TimeEstimationType397' has cardinality 0..*, and from 'xpdl1_SimulationInformationType', the role 'xpdl1_SimulationInformationType396' has cardinality 0..*.
+An association connects 'xpdl1_TransitionRefsType' and 'xpdl1_SplitType'. From 'xpdl1_TransitionRefsType', the role 'xpdl1_TransitionRefsType400' has cardinality 0..*, and from 'xpdl1_SplitType', the role 'xpdl1_SplitType399' has cardinality 0..*.
+An association connects 'xpdl1_AutomaticType' and 'xpdl1_StartModeType'. From 'xpdl1_AutomaticType', the role 'xpdl1_AutomaticType403' has cardinality 0..*, and from 'xpdl1_StartModeType', the role 'xpdl1_StartModeType402' has cardinality 0..*.
+An association connects 'xpdl1_StartModeType' and 'xpdl1_ManualType'. From 'xpdl1_StartModeType', the role 'xpdl1_StartModeType405' has cardinality 0..*, and from 'xpdl1_ManualType', the role 'xpdl1_ManualType406' has cardinality 0..*.
+An association connects 'xpdl1_SubFlowType' and 'xpdl1_ActualParametersType'. From 'xpdl1_SubFlowType', the role 'xpdl1_SubFlowType408' has cardinality 0..*, and from 'xpdl1_ActualParametersType', the role 'xpdl1_ActualParametersType409' has cardinality 0..*.
+An association connects 'xpdl1_ToolType' and 'xpdl1_ActualParametersType'. From 'xpdl1_ToolType', the role 'xpdl1_ToolType411' has cardinality 0..*, and from 'xpdl1_ActualParametersType', the role 'xpdl1_ActualParametersType412' has cardinality 0..*.
+An association connects 'xpdl1_ExtendedAttributesType' and 'xpdl1_ToolType'. From 'xpdl1_ExtendedAttributesType', the role 'xpdl1_ExtendedAttributesType415' has cardinality 0..*, and from 'xpdl1_ToolType', the role 'xpdl1_ToolType414' has cardinality 0..*.
+An association connects 'xpdl1_TransitionRefsType' and 'xpdl1_TransitionRefType'. From 'xpdl1_TransitionRefsType', the role 'xpdl1_TransitionRefsType417' has cardinality 0..*, and from 'xpdl1_TransitionRefType', the role 'xpdl1_TransitionRefType418' has cardinality 0..*.
+An association connects 'xpdl1_TransitionRestrictionsType' and 'xpdl1_TransitionRestrictionType'. From 'xpdl1_TransitionRestrictionsType', the role 'xpdl1_TransitionRestrictionsType420' has cardinality 0..*, and from 'xpdl1_TransitionRestrictionType', the role 'xpdl1_TransitionRestrictionType421' has cardinality 0..*.
+An association connects 'xpdl1_JoinType' and 'xpdl1_TransitionRestrictionType'. From 'xpdl1_JoinType', the role 'xpdl1_JoinType424' has cardinality 0..*, and from 'xpdl1_TransitionRestrictionType', the role 'xpdl1_TransitionRestrictionType423' has cardinality 0..*.
+An association connects 'xpdl1_TransitionRestrictionType' and 'xpdl1_SplitType'. From 'xpdl1_TransitionRestrictionType', the role 'xpdl1_TransitionRestrictionType426' has cardinality 0..*, and from 'xpdl1_SplitType', the role 'xpdl1_SplitType427' has cardinality 0..*.
+An association connects 'xpdl1_TransitionType' and 'xpdl1_TransitionsType'. From 'xpdl1_TransitionType', the role 'xpdl1_TransitionType430' has cardinality 0..*, and from 'xpdl1_TransitionsType', the role 'xpdl1_TransitionsType429' has cardinality 0..*.
+An association connects 'xpdl1_TransitionType' and 'xpdl1_ConditionType'. From 'xpdl1_TransitionType', the role 'xpdl1_TransitionType432' has cardinality 0..*, and from 'xpdl1_ConditionType', the role 'xpdl1_ConditionType433' has cardinality 0..*.
+An association connects 'xpdl1_TransitionType' and 'xpdl1_ExtendedAttributesType'. From 'xpdl1_TransitionType', the role 'xpdl1_TransitionType435' has cardinality 0..*, and from 'xpdl1_ExtendedAttributesType', the role 'xpdl1_ExtendedAttributesType436' has cardinality 0..*.
+An association connects 'xpdl1_TypeDeclarationsType' and 'xpdl1_TypeDeclarationType'. From 'xpdl1_TypeDeclarationsType', the role 'xpdl1_TypeDeclarationsType438' has cardinality 0..*, and from 'xpdl1_TypeDeclarationType', the role 'xpdl1_TypeDeclarationType439' has cardinality 0..*.
+An association connects 'xpdl1_TypeDeclarationType' and 'xpdl1_BasicTypeType'. From 'xpdl1_TypeDeclarationType', the role 'xpdl1_TypeDeclarationType441' has cardinality 0..*, and from 'xpdl1_BasicTypeType', the role 'xpdl1_BasicTypeType442' has cardinality 0..*.
+An association connects 'xpdl1_DeclaredTypeType' and 'xpdl1_TypeDeclarationType'. From 'xpdl1_DeclaredTypeType', the role 'xpdl1_DeclaredTypeType445' has cardinality 0..*, and from 'xpdl1_TypeDeclarationType', the role 'xpdl1_TypeDeclarationType444' has cardinality 0..*.
+An association connects 'xpdl1_TypeDeclarationType' and 'xpdl1_SchemaTypeType'. From 'xpdl1_TypeDeclarationType', the role 'xpdl1_TypeDeclarationType447' has cardinality 0..*, and from 'xpdl1_SchemaTypeType', the role 'xpdl1_SchemaTypeType448' has cardinality 0..*.
+An association connects 'xpdl1_TypeDeclarationType' and 'xpdl1_ExternalReferenceType'. From 'xpdl1_TypeDeclarationType', the role 'xpdl1_TypeDeclarationType450' has cardinality 0..*, and from 'xpdl1_ExternalReferenceType', the role 'xpdl1_ExternalReferenceType451' has cardinality 0..*.
+An association connects 'xpdl1_RecordTypeType' and 'xpdl1_TypeDeclarationType'. From 'xpdl1_RecordTypeType', the role 'xpdl1_RecordTypeType454' has cardinality 0..*, and from 'xpdl1_TypeDeclarationType', the role 'xpdl1_TypeDeclarationType453' has cardinality 0..*.
+An association connects 'xpdl1_UnionTypeType' and 'xpdl1_TypeDeclarationType'. From 'xpdl1_UnionTypeType', the role 'xpdl1_UnionTypeType457' has cardinality 0..*, and from 'xpdl1_TypeDeclarationType', the role 'xpdl1_TypeDeclarationType456' has cardinality 0..*.
+An association connects 'xpdl1_TypeDeclarationType' and 'xpdl1_EnumerationTypeType'. From 'xpdl1_TypeDeclarationType', the role 'xpdl1_TypeDeclarationType459' has cardinality 0..*, and from 'xpdl1_EnumerationTypeType', the role 'xpdl1_EnumerationTypeType460' has cardinality 0..*.
+An association connects 'xpdl1_ArrayTypeType' and 'xpdl1_TypeDeclarationType'. From 'xpdl1_ArrayTypeType', the role 'xpdl1_ArrayTypeType463' has cardinality 0..*, and from 'xpdl1_TypeDeclarationType', the role 'xpdl1_TypeDeclarationType462' has cardinality 0..*.
+An association connects 'xpdl1_TypeDeclarationType' and 'xpdl1_ListTypeType'. From 'xpdl1_TypeDeclarationType', the role 'xpdl1_TypeDeclarationType465' has cardinality 0..*, and from 'xpdl1_ListTypeType', the role 'xpdl1_ListTypeType466' has cardinality 0..*.
+An association connects 'xpdl1_TypeDeclarationType' and 'xpdl1_ExtendedAttributesType'. From 'xpdl1_TypeDeclarationType', the role 'xpdl1_TypeDeclarationType468' has cardinality 0..*, and from 'xpdl1_ExtendedAttributesType', the role 'xpdl1_ExtendedAttributesType469' has cardinality 0..*.
+An association connects 'xpdl1_UnionTypeType' and 'xpdl1_MemberType'. From 'xpdl1_UnionTypeType', the role 'xpdl1_UnionTypeType471' has cardinality 0..*, and from 'xpdl1_MemberType', the role 'xpdl1_MemberType472' has cardinality 0..*.
+An association connects 'xpdl1_WorkflowProcessType' and 'xpdl1_WorkflowProcessesType'. From 'xpdl1_WorkflowProcessType', the role 'xpdl1_WorkflowProcessType475' has cardinality 0..*, and from 'xpdl1_WorkflowProcessesType', the role 'xpdl1_WorkflowProcessesType474' has cardinality 0..*.
+An association connects 'xpdl1_ProcessHeaderType' and 'xpdl1_WorkflowProcessType'. From 'xpdl1_ProcessHeaderType', the role 'xpdl1_ProcessHeaderType478' has cardinality 0..*, and from 'xpdl1_WorkflowProcessType', the role 'xpdl1_WorkflowProcessType477' has cardinality 0..*.
+An association connects 'xpdl1_WorkflowProcessType' and 'xpdl1_RedefinableHeaderType'. From 'xpdl1_WorkflowProcessType', the role 'xpdl1_WorkflowProcessType480' has cardinality 0..*, and from 'xpdl1_RedefinableHeaderType', the role 'xpdl1_RedefinableHeaderType481' has cardinality 0..*.
+An association connects 'xpdl1_WorkflowProcessType' and 'xpdl1_FormalParametersType'. From 'xpdl1_WorkflowProcessType', the role 'xpdl1_WorkflowProcessType483' has cardinality 0..*, and from 'xpdl1_FormalParametersType', the role 'xpdl1_FormalParametersType484' has cardinality 0..*.
+An association connects 'xpdl1_WorkflowProcessType' and 'xpdl1_DataFieldsType'. From 'xpdl1_WorkflowProcessType', the role 'xpdl1_WorkflowProcessType486' has cardinality 0..*, and from 'xpdl1_DataFieldsType', the role 'xpdl1_DataFieldsType487' has cardinality 0..*.
+An association connects 'xpdl1_WorkflowProcessType' and 'xpdl1_ParticipantsType'. From 'xpdl1_WorkflowProcessType', the role 'xpdl1_WorkflowProcessType489' has cardinality 0..*, and from 'xpdl1_ParticipantsType', the role 'xpdl1_ParticipantsType490' has cardinality 0..*.
+An association connects 'xpdl1_ApplicationsType' and 'xpdl1_WorkflowProcessType'. From 'xpdl1_ApplicationsType', the role 'xpdl1_ApplicationsType493' has cardinality 0..*, and from 'xpdl1_WorkflowProcessType', the role 'xpdl1_WorkflowProcessType492' has cardinality 0..*.
+An association connects 'xpdl1_WorkflowProcessType' and 'xpdl1_ActivitySetsType'. From 'xpdl1_WorkflowProcessType', the role 'xpdl1_WorkflowProcessType495' has cardinality 0..*, and from 'xpdl1_ActivitySetsType', the role 'xpdl1_ActivitySetsType496' has cardinality 0..*.
+An association connects 'xpdl1_WorkflowProcessType' and 'xpdl1_ActivitiesType'. From 'xpdl1_WorkflowProcessType', the role 'xpdl1_WorkflowProcessType498' has cardinality 0..*, and from 'xpdl1_ActivitiesType', the role 'xpdl1_ActivitiesType499' has cardinality 0..*.
+An association connects 'xpdl1_WorkflowProcessType' and 'xpdl1_TransitionsType'. From 'xpdl1_WorkflowProcessType', the role 'xpdl1_WorkflowProcessType501' has cardinality 0..*, and from 'xpdl1_TransitionsType', the role 'xpdl1_TransitionsType502' has cardinality 0..*.
+An association connects 'xpdl1_WorkflowProcessType' and 'xpdl1_ExtendedAttributesType'. From 'xpdl1_WorkflowProcessType', the role 'xpdl1_WorkflowProcessType504' has cardinality 0..*, and from 'xpdl1_ExtendedAttributesType', the role 'xpdl1_ExtendedAttributesType505' has cardinality 0..*.

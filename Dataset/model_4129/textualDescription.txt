@@ -1,0 +1,139 @@
+The domain model 'mathinterpreter' describes the core structural elements and their relationships within the system.
+
+The model defines 35 main class(es).
+
+'MathExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'PlusMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'PowExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_PlusMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_Pow' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'PMExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_PMExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Power' represents an important domain concept.
+It does not declare any attributes.
+
+'MDExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_MultiplyDivide' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_MDExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_Multiply' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_MathExpression' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'mathinterpreter_Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_DefineExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_DefParenthesis' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_Negative' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplyDivide' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_PowExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_Divide' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_Positive' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_Number' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'Number' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_VariableName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mathinterpreter_External' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mathinterpreter_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mathinterpreter_PMParenthesis' represents an important domain concept.
+It does not declare any attributes.
+
+'DefParenthesis' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'mathinterpreter_Power' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mathinterpreter_Function' is a specialization of 'MathExpression'.
+The class 'mathinterpreter_DefineExpr' is a specialization of 'MathExpression'.
+The class 'mathinterpreter_DefineExpr' is a specialization of 'DefParenthesis'.
+The class 'mathinterpreter_External' is a specialization of 'Primary'.
+The class 'mathinterpreter_MDExpression' is a specialization of 'PMExpression'.
+The class 'mathinterpreter_PowExpression' is a specialization of 'MDExpression'.
+The class 'mathinterpreter_Primary' is a specialization of 'PowExpression'.
+The class 'mathinterpreter_VariableName' is a specialization of 'Primary'.
+The class 'mathinterpreter_Number' is a specialization of 'Primary'.
+The class 'mathinterpreter_Positive' is a specialization of 'Number'.
+The class 'mathinterpreter_Negative' is a specialization of 'Number'.
+The class 'mathinterpreter_PMParenthesis' is a specialization of 'Primary'.
+The class 'mathinterpreter_DefParenthesis' is a specialization of 'Primary'.
+The class 'mathinterpreter_Pow' is a specialization of 'Power'.
+The class 'mathinterpreter_Plus' is a specialization of 'PlusMinus'.
+The class 'mathinterpreter_Minus' is a specialization of 'PlusMinus'.
+The class 'mathinterpreter_Multiply' is a specialization of 'MultiplyDivide'.
+The class 'mathinterpreter_Divide' is a specialization of 'MultiplyDivide'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mathinterpreter_MathExpression' and 'mathinterpreter_Model'. From 'mathinterpreter_MathExpression', the role 'mathinterpreter_MathExpression' has cardinality 0..*, and from 'mathinterpreter_Model', the role 'mathinterpreter_Model' has cardinality 0..*.
+An association connects 'mathinterpreter_MathExpression' and 'mathinterpreter_PMExpression'. From 'mathinterpreter_MathExpression', the role 'mathinterpreter_MathExpression2' has cardinality 0..*, and from 'mathinterpreter_PMExpression', the role 'mathinterpreter_PMExpression' has cardinality 0..*.
+An association connects 'mathinterpreter_DefineExpr' and 'mathinterpreter_Variable'. From 'mathinterpreter_DefineExpr', the role 'mathinterpreter_DefineExpr' has cardinality 0..*, and from 'mathinterpreter_Variable', the role 'mathinterpreter_Variable' has cardinality 0..*.
+An association connects 'mathinterpreter_Variable' and 'mathinterpreter_PMExpression'. From 'mathinterpreter_Variable', the role 'mathinterpreter_Variable5' has cardinality 0..*, and from 'mathinterpreter_PMExpression', the role 'mathinterpreter_PMExpression6' has cardinality 0..*.
+An association connects 'mathinterpreter_External' and 'mathinterpreter_Primary'. From 'mathinterpreter_External', the role 'mathinterpreter_External' has cardinality 0..*, and from 'mathinterpreter_Primary', the role 'mathinterpreter_Primary' has cardinality 0..*.
+An association connects 'mathinterpreter_PMExpression' and 'mathinterpreter_PMExpression'. From 'mathinterpreter_PMExpression', the role 'mathinterpreter_PMExpression10' has cardinality 0..*, and from 'mathinterpreter_PMExpression', the role 'mathinterpreter_PMExpression8' has cardinality 0..*.
+An association connects 'mathinterpreter_EObject' and 'mathinterpreter_PMExpression'. From 'mathinterpreter_EObject', the role 'mathinterpreter_EObject' has cardinality 0..*, and from 'mathinterpreter_PMExpression', the role 'mathinterpreter_PMExpression12' has cardinality 0..*.
+An association connects 'mathinterpreter_PMExpression' and 'mathinterpreter_MDExpression'. From 'mathinterpreter_PMExpression', the role 'mathinterpreter_PMExpression14' has cardinality 0..*, and from 'mathinterpreter_MDExpression', the role 'mathinterpreter_MDExpression' has cardinality 0..*.
+An association connects 'mathinterpreter_PMParenthesis' and 'mathinterpreter_PMExpression'. From 'mathinterpreter_PMParenthesis', the role 'mathinterpreter_PMParenthesis' has cardinality 0..*, and from 'mathinterpreter_PMExpression', the role 'mathinterpreter_PMExpression16' has cardinality 0..*.

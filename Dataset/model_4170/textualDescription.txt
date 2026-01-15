@@ -1,0 +1,12 @@
+The domain model 'pascal' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'pascal_Greeting' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'pascal_Model' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'pascal_Model' and 'pascal_Greeting'. From 'pascal_Model', the role 'pascal_Model' has cardinality 0..*, and from 'pascal_Greeting', the role 'pascal_Greeting' has cardinality 0..*.

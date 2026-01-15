@@ -1,0 +1,45 @@
+The domain model 'myumlclassdiagram' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'myumlclassdiagram_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'myumlclassdiagram_Attribute' represents an important domain concept.
+It has the following attributes: 'Visibility', which is of type str; 'Type', which is of type str.
+
+'myumlclassdiagram_Parameter' represents an important domain concept.
+It has one attribute: 'Type', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'myumlclassdiagram_NamedElement' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'myumlclassdiagram_Method' represents an important domain concept.
+It has the following attributes: 'Visibility', which is of type str; 'Returns', which is of type str.
+
+'myumlclassdiagram_Class' represents an important domain concept.
+It has one attribute: 'Visibility', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EVisibility' defines the following possible values: 'protected', 'private', 'public'.
+The enumeration 'EType' defines the following possible values: 'integer', 'string'.
+The enumeration 'EReturnType' defines the following possible values: 'void', 'string', 'integer'.
+
+The model also captures inheritance relationships between classes.
+The class 'myumlclassdiagram_Package' is a specialization of 'NamedElement'.
+The class 'myumlclassdiagram_Class' is a specialization of 'NamedElement'.
+The class 'myumlclassdiagram_Attribute' is a specialization of 'NamedElement'.
+The class 'myumlclassdiagram_Method' is a specialization of 'NamedElement'.
+The class 'myumlclassdiagram_Parameter' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myumlclassdiagram_Package' and 'myumlclassdiagram_Class'. From 'myumlclassdiagram_Package', the role 'myumlclassdiagram_Package' has cardinality 0..*, and from 'myumlclassdiagram_Class', the role 'myumlclassdiagram_Class' has cardinality 0..*.
+An association connects 'myumlclassdiagram_Class' and 'myumlclassdiagram_Attribute'. From 'myumlclassdiagram_Class', the role 'Owner' has cardinality 0..*, and from 'myumlclassdiagram_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'myumlclassdiagram_Class' and 'myumlclassdiagram_Method'. From 'myumlclassdiagram_Class', the role 'Owner3' has cardinality 0..*, and from 'myumlclassdiagram_Method', the role 'Method' has cardinality 0..*.
+An association connects 'myumlclassdiagram_Attribute' and 'myumlclassdiagram_Class'. From 'myumlclassdiagram_Attribute', the role 'Attributes' has cardinality 0..*, and from 'myumlclassdiagram_Class', the role 'Class' has cardinality 0..*.
+An association connects 'myumlclassdiagram_Method' and 'myumlclassdiagram_Parameter'. From 'myumlclassdiagram_Method', the role 'Owner6' has cardinality 0..*, and from 'myumlclassdiagram_Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'myumlclassdiagram_Method' and 'myumlclassdiagram_Class'. From 'myumlclassdiagram_Method', the role 'Methods' has cardinality 0..*, and from 'myumlclassdiagram_Class', the role 'Class8' has cardinality 0..*.
+An association connects 'myumlclassdiagram_Parameter' and 'myumlclassdiagram_Method'. From 'myumlclassdiagram_Parameter', the role 'Parameters' has cardinality 0..*, and from 'myumlclassdiagram_Method', the role 'Method10' has cardinality 0..*.

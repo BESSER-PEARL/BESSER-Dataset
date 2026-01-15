@@ -1,0 +1,48 @@
+The domain model 'Primitives' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'Primitives_Left' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitives_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitives_Right' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitives_Primitive' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitives_Forward' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitives_LogoProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitives_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Primitives_Back' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Primitives_Primitive' is a specialization of 'Instruction'.
+The class 'Primitives_Forward' is a specialization of 'Primitive'.
+The class 'Primitives_Back' is a specialization of 'Primitive'.
+The class 'Primitives_Left' is a specialization of 'Primitive'.
+The class 'Primitives_Right' is a specialization of 'Primitive'.
+The class 'Primitives_Expression' is a specialization of 'Instruction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Primitives_LogoProgram' and 'Primitives_Instruction'. From 'Primitives_LogoProgram', the role 'Primitives_LogoProgram' has cardinality 0..*, and from 'Primitives_Instruction', the role 'Primitives_Instruction' has cardinality 0..*.
+An association connects 'Primitives_Forward' and 'Primitives_Expression'. From 'Primitives_Forward', the role 'Primitives_Forward' has cardinality 0..*, and from 'Primitives_Expression', the role 'Primitives_Expression' has cardinality 0..*.
+An association connects 'Primitives_Back' and 'Primitives_Expression'. From 'Primitives_Back', the role 'Primitives_Back' has cardinality 0..*, and from 'Primitives_Expression', the role 'Primitives_Expression3' has cardinality 0..*.
+An association connects 'Primitives_Expression' and 'Primitives_Left'. From 'Primitives_Expression', the role 'Primitives_Expression5' has cardinality 0..*, and from 'Primitives_Left', the role 'Primitives_Left' has cardinality 0..*.
+An association connects 'Primitives_Right' and 'Primitives_Expression'. From 'Primitives_Right', the role 'Primitives_Right' has cardinality 0..*, and from 'Primitives_Expression', the role 'Primitives_Expression7' has cardinality 0..*.

@@ -1,0 +1,28 @@
+The domain model 'SimpleUML' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'SimpleUML_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleUML_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleUML_Feature' represents an important domain concept.
+It has one attribute: 'isMultivalued', which is of type bool.
+
+'SimpleUML_Class' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'SimpleUML_Class' is a specialization of 'NamedElement'.
+The class 'SimpleUML_Feature' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SimpleUML_Class' and 'SimpleUML_Package'. From 'SimpleUML_Class', the role 'Class' has cardinality 0..*, and from 'SimpleUML_Package', the role 'pkg' has cardinality 0..*.
+An association connects 'SimpleUML_Feature' and 'SimpleUML_Class'. From 'SimpleUML_Feature', the role 'SimpleUML_Feature' has cardinality 0..*, and from 'SimpleUML_Class', the role 'SimpleUML_Class' has cardinality 0..*.
+An association connects 'SimpleUML_Package' and 'SimpleUML_Class'. From 'SimpleUML_Package', the role 'Package' has cardinality 0..*, and from 'SimpleUML_Class', the role 'classes' has cardinality 0..*.
+An association connects 'SimpleUML_Class' and 'SimpleUML_Feature'. From 'SimpleUML_Class', the role 'SimpleUML_Class5' has cardinality 0..*, and from 'SimpleUML_Feature', the role 'SimpleUML_Feature4' has cardinality 0..*.

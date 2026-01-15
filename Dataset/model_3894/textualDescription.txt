@@ -1,0 +1,59 @@
+The domain model 'workflow' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'IPort' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_IOutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_IPort' represents an important domain concept.
+It has one attribute: 'fileName', which is of type str.
+
+'IWorkflowElement' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_IWorkflowElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+'workflow_ILink' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_IWorkflowJob' represents an important domain concept.
+It has the following attributes: 'jobDescriptionFileName', which is of type str; 'jobDescription', which is of type str.
+
+'IWorkflowNode' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_IWorkflow' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_IInputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_IWorkflowNode' represents an important domain concept.
+It has the following attributes: 'isStart', which is of type bool; 'isFinish', which is of type bool.
+
+The model also captures inheritance relationships between classes.
+The class 'workflow_IPort' is a specialization of 'IWorkflowElement'.
+The class 'workflow_ILink' is a specialization of 'IWorkflowElement'.
+The class 'workflow_IInputPort' is a specialization of 'IPort'.
+The class 'workflow_IOutputPort' is a specialization of 'IPort'.
+The class 'workflow_IWorkflow' is a specialization of 'IWorkflowElement'.
+The class 'workflow_IWorkflowJob' is a specialization of 'IWorkflowNode'.
+The class 'workflow_IWorkflowNode' is a specialization of 'IWorkflowElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'workflow_IWorkflow' and 'workflow_ILink'. From 'workflow_IWorkflow', the role 'IWorkflow' has cardinality 0..*, and from 'workflow_ILink', the role 'links' has cardinality 0..*.
+An association connects 'workflow_IInputPort' and 'workflow_ILink'. From 'workflow_IInputPort', the role 'IInputPort' has cardinality 0..*, and from 'workflow_ILink', the role 'links2' has cardinality 0..*.
+An association connects 'workflow_ILink' and 'workflow_IOutputPort'. From 'workflow_ILink', the role 'links4' has cardinality 0..*, and from 'workflow_IOutputPort', the role 'IOutputPort' has cardinality 0..*.
+An association connects 'workflow_IInputPort' and 'workflow_IWorkflowNode'. From 'workflow_IInputPort', the role 'inputs' has cardinality 0..*, and from 'workflow_IWorkflowNode', the role 'IWorkflowNode' has cardinality 0..*.
+An association connects 'workflow_IInputPort' and 'workflow_ILink'. From 'workflow_IInputPort', the role 'target' has cardinality 0..*, and from 'workflow_ILink', the role 'ILink' has cardinality 0..*.
+An association connects 'workflow_IOutputPort' and 'workflow_IWorkflowNode'. From 'workflow_IOutputPort', the role 'outputs' has cardinality 0..*, and from 'workflow_IWorkflowNode', the role 'IWorkflowNode8' has cardinality 0..*.
+An association connects 'workflow_IOutputPort' and 'workflow_ILink'. From 'workflow_IOutputPort', the role 'source' has cardinality 0..*, and from 'workflow_ILink', the role 'ILink10' has cardinality 0..*.
+An association connects 'workflow_IWorkflow' and 'workflow_IWorkflowNode'. From 'workflow_IWorkflow', the role 'workflow' has cardinality 0..*, and from 'workflow_IWorkflowNode', the role 'IWorkflowNode12' has cardinality 0..*.
+An association connects 'workflow_ILink' and 'workflow_IWorkflow'. From 'workflow_ILink', the role 'ILink15' has cardinality 0..*, and from 'workflow_IWorkflow', the role 'workflow14' has cardinality 0..*.
+An association connects 'workflow_IWorkflow' and 'workflow_IWorkflowNode'. From 'workflow_IWorkflow', the role 'IWorkflow17' has cardinality 0..*, and from 'workflow_IWorkflowNode', the role 'nodes' has cardinality 0..*.
+An association connects 'workflow_IOutputPort' and 'workflow_IWorkflowNode'. From 'workflow_IOutputPort', the role 'IOutputPort19' has cardinality 0..*, and from 'workflow_IWorkflowNode', the role 'node' has cardinality 0..*.
+An association connects 'workflow_IInputPort' and 'workflow_IWorkflowNode'. From 'workflow_IInputPort', the role 'IInputPort22' has cardinality 0..*, and from 'workflow_IWorkflowNode', the role 'node21' has cardinality 0..*.

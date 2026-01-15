@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/PacktPublishing/Implementing-Domain-Specific-Languages-with-Xtext-and-Xtend/org.example.customgreetings.parent/org.example.customgreetings/model/custom/Greetings.ecore

@@ -1,0 +1,237 @@
+The domain model 'behavior' describes the core structural elements and their relationships within the system.
+
+The model defines 49 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Object' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_OccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_ExecutionEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_InteractionFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Lifeline' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_MessageOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_AlternativeMessage' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_DestructionEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_NamedElement' represents an important domain concept.
+It has the following attributes: 'Archpoint', which is of type bool; 'name', which is of type str.
+
+'behavior_Message' represents an important domain concept.
+It has one attribute: 'MessageOrder', which is of type int.
+
+'behavior_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Object' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Comment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'behavior_MessageEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_OptionalMessage' represents an important domain concept.
+It does not declare any attributes.
+
+'Message' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'OccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Interaction' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Classifier' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'Event' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_BehavioredClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Feature' represents an important domain concept.
+It has one attribute: 'isStatic', which is of type bool.
+
+'behavior_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_CreatEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'InteractionFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_BehaviorExecutionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_ExecutionOccurrenceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_GeneralOrdering' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'behavior_ExecutionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'behavior_BehavioralFeature' is a specialization of 'Feature'.
+The class 'behavior_BehavioralFeature' is a specialization of 'NamedElement'.
+The class 'behavior_Operation' is a specialization of 'BehavioralFeature'.
+The class 'behavior_NamedElement' is a specialization of 'Element'.
+The class 'behavior_Behavior' is a specialization of 'Class'.
+The class 'behavior_BehavioredClassifier' is a specialization of 'Classifier'.
+The class 'behavior_Classifier' is a specialization of 'Namespace'.
+The class 'behavior_Actor' is a specialization of 'Object'.
+The class 'behavior_Class' is a specialization of 'BehavioredClassifier'.
+The class 'behavior_Namespace' is a specialization of 'NamedElement'.
+The class 'behavior_RedefinableElement' is a specialization of 'NamedElement'.
+The class 'behavior_Message' is a specialization of 'NamedElement'.
+The class 'behavior_Lifeline' is a specialization of 'NamedElement'.
+The class 'behavior_Interaction' is a specialization of 'Behavior'.
+The class 'behavior_Interaction' is a specialization of 'InteractionFragment'.
+The class 'behavior_InteractionFragment' is a specialization of 'NamedElement'.
+The class 'behavior_Comment' is a specialization of 'Element'.
+The class 'behavior_Feature' is a specialization of 'RedefinableElement'.
+The class 'behavior_OccurrenceSpecification' is a specialization of 'InteractionFragment'.
+The class 'behavior_ExecutionSpecification' is a specialization of 'InteractionFragment'.
+The class 'behavior_MessageEnd' is a specialization of 'NamedElement'.
+The class 'behavior_Connector' is a specialization of 'Feature'.
+The class 'behavior_Event' is a specialization of 'NamedElement'.
+The class 'behavior_CreatEvent' is a specialization of 'Event'.
+The class 'behavior_DestructionEvent' is a specialization of 'Event'.
+The class 'behavior_ExecutionEvent' is a specialization of 'Event'.
+The class 'behavior_MessageOccurrenceSpecification' is a specialization of 'OccurrenceSpecification'.
+The class 'behavior_MessageOccurrenceSpecification' is a specialization of 'MessageEnd'.
+The class 'behavior_ExecutionOccurrenceSpecification' is a specialization of 'OccurrenceSpecification'.
+The class 'behavior_GeneralOrdering' is a specialization of 'NamedElement'.
+The class 'behavior_BehaviorExecutionSpecification' is a specialization of 'ExecutionSpecification'.
+The class 'behavior_Object' is a specialization of 'BehavioredClassifier'.
+The class 'behavior_OptionalMessage' is a specialization of 'Message'.
+The class 'behavior_AlternativeMessage' is a specialization of 'Message'.
+
+Relationships between classes are modeled using associations.
+An association connects 'behavior_BehavioralFeature' and 'behavior_Behavior'. From 'behavior_BehavioralFeature', the role 'specification' has cardinality 0..*, and from 'behavior_Behavior', the role 'Behavior' has cardinality 0..*.
+An association connects 'behavior_BehavioredClassifier' and 'behavior_Behavior'. From 'behavior_BehavioredClassifier', the role 'behavior_BehavioredClassifier' has cardinality 0..*, and from 'behavior_Behavior', the role 'behavior_Behavior' has cardinality 0..*.
+An association connects 'behavior_BehavioralFeature' and 'behavior_Behavior'. From 'behavior_BehavioralFeature', the role 'BehavioralFeature' has cardinality 0..*, and from 'behavior_Behavior', the role 'method' has cardinality 0..*.
+An association connects 'behavior_Behavior' and 'behavior_Behavior'. From 'behavior_Behavior', the role 'behavior_Behavior3' has cardinality 0..*, and from 'behavior_Behavior', the role 'behavior_Behavior5' has cardinality 0..*.
+An association connects 'behavior_Behavior' and 'behavior_BehavioredClassifier'. From 'behavior_Behavior', the role 'behavior_Behavior8' has cardinality 0..*, and from 'behavior_BehavioredClassifier', the role 'behavior_BehavioredClassifier7' has cardinality 0..*.
+An association connects 'behavior_Behavior' and 'behavior_BehavioredClassifier'. From 'behavior_Behavior', the role 'behavior_Behavior11' has cardinality 0..*, and from 'behavior_BehavioredClassifier', the role 'behavior_BehavioredClassifier10' has cardinality 0..*.
+An association connects 'behavior_Lifeline' and 'behavior_BehavioredClassifier'. From 'behavior_Lifeline', the role 'Lifeline' has cardinality 0..*, and from 'behavior_BehavioredClassifier', the role 'actor' has cardinality 0..*.
+An association connects 'behavior_Classifier' and 'behavior_NamedElement'. From 'behavior_Classifier', the role 'behavior_Classifier' has cardinality 0..*, and from 'behavior_NamedElement', the role 'behavior_NamedElement' has cardinality 0..*.
+An association connects 'behavior_Classifier' and 'behavior_Classifier'. From 'behavior_Classifier', the role 'behavior_Classifier14' has cardinality 0..*, and from 'behavior_Classifier', the role 'behavior_Classifier16' has cardinality 0..*.
+An association connects 'behavior_Classifier' and 'behavior_Classifier'. From 'behavior_Classifier', the role 'behavior_Classifier19' has cardinality 0..*, and from 'behavior_Classifier', the role 'behavior_Classifier17' has cardinality 0..*.
+An association connects 'behavior_Classifier' and 'behavior_Feature'. From 'behavior_Classifier', the role 'featuringClassifier' has cardinality 0..*, and from 'behavior_Feature', the role 'Feature' has cardinality 0..*.
+An association connects 'behavior_Classifier' and 'behavior_Class'. From 'behavior_Classifier', the role 'behavior_Classifier22' has cardinality 0..*, and from 'behavior_Class', the role 'behavior_Class' has cardinality 0..*.
+An association connects 'behavior_Classifier' and 'behavior_RedefinableElement'. From 'behavior_Classifier', the role 'behavior_Classifier24' has cardinality 0..*, and from 'behavior_RedefinableElement', the role 'behavior_RedefinableElement' has cardinality 0..*.
+An association connects 'behavior_RedefinableElement' and 'behavior_RedefinableElement'. From 'behavior_RedefinableElement', the role 'behavior_RedefinableElement25' has cardinality 0..*, and from 'behavior_RedefinableElement', the role 'behavior_RedefinableElement27' has cardinality 0..*.
+An association connects 'behavior_Comment' and 'behavior_Element'. From 'behavior_Comment', the role 'behavior_Comment' has cardinality 0..*, and from 'behavior_Element', the role 'behavior_Element' has cardinality 0..*.
+An association connects 'behavior_Element' and 'behavior_Element'. From 'behavior_Element', the role 'behavior_Element29' has cardinality 0..*, and from 'behavior_Element', the role 'behavior_Element31' has cardinality 0..*.
+An association connects 'behavior_Element' and 'behavior_Element'. From 'behavior_Element', the role 'behavior_Element32' has cardinality 0..*, and from 'behavior_Element', the role 'behavior_Element34' has cardinality 0..*.
+An association connects 'behavior_Interaction' and 'behavior_Message'. From 'behavior_Interaction', the role 'Interaction' has cardinality 0..*, and from 'behavior_Message', the role 'message' has cardinality 0..*.
+An association connects 'behavior_Message' and 'behavior_MessageEnd'. From 'behavior_Message', the role 'behavior_Message' has cardinality 0..*, and from 'behavior_MessageEnd', the role 'behavior_MessageEnd' has cardinality 0..*.
+An association connects 'behavior_MessageEnd' and 'behavior_Message'. From 'behavior_MessageEnd', the role 'behavior_MessageEnd39' has cardinality 0..*, and from 'behavior_Message', the role 'behavior_Message38' has cardinality 0..*.
+An association connects 'behavior_Connector' and 'behavior_Message'. From 'behavior_Connector', the role 'behavior_Connector' has cardinality 0..*, and from 'behavior_Message', the role 'behavior_Message41' has cardinality 0..*.
+An association connects 'behavior_InteractionFragment' and 'behavior_Lifeline'. From 'behavior_InteractionFragment', the role 'InteractionFragment' has cardinality 0..*, and from 'behavior_Lifeline', the role 'covered' has cardinality 0..*.
+An association connects 'behavior_Interaction' and 'behavior_Lifeline'. From 'behavior_Interaction', the role 'Interaction44' has cardinality 0..*, and from 'behavior_Lifeline', the role 'lifeline' has cardinality 0..*.
+An association connects 'behavior_DestructionEvent' and 'behavior_Lifeline'. From 'behavior_DestructionEvent', the role 'DestructionEvent' has cardinality 0..*, and from 'behavior_Lifeline', the role 'end' has cardinality 0..*.
+An association connects 'behavior_BehavioredClassifier' and 'behavior_Lifeline'. From 'behavior_BehavioredClassifier', the role 'BehavioredClassifier' has cardinality 0..*, and from 'behavior_Lifeline', the role 'include' has cardinality 0..*.
+An association connects 'behavior_Lifeline' and 'behavior_BehaviorExecutionSpecification'. From 'behavior_Lifeline', the role 'behavior_Lifeline' has cardinality 0..*, and from 'behavior_BehaviorExecutionSpecification', the role 'behavior_BehaviorExecutionSpecification' has cardinality 0..*.
+An association connects 'behavior_Interaction' and 'behavior_InteractionFragment'. From 'behavior_Interaction', the role 'enclosingInteraction' has cardinality 0..*, and from 'behavior_InteractionFragment', the role 'InteractionFragment49' has cardinality 0..*.
+An association connects 'behavior_Interaction' and 'behavior_BehavioredClassifier'. From 'behavior_Interaction', the role 'behavior_Interaction' has cardinality 0..*, and from 'behavior_BehavioredClassifier', the role 'behavior_BehavioredClassifier51' has cardinality 0..*.
+An association connects 'behavior_DestructionEvent' and 'behavior_Interaction'. From 'behavior_DestructionEvent', the role 'DestructionEvent53' has cardinality 0..*, and from 'behavior_Interaction', the role 'interaction' has cardinality 0..*.
+An association connects 'behavior_Lifeline' and 'behavior_Interaction'. From 'behavior_Lifeline', the role 'Lifeline56' has cardinality 0..*, and from 'behavior_Interaction', the role 'interaction55' has cardinality 0..*.
+An association connects 'behavior_Message' and 'behavior_Interaction'. From 'behavior_Message', the role 'Message' has cardinality 0..*, and from 'behavior_Interaction', the role 'interaction58' has cardinality 0..*.
+An association connects 'behavior_Lifeline' and 'behavior_InteractionFragment'. From 'behavior_Lifeline', the role 'Lifeline60' has cardinality 0..*, and from 'behavior_InteractionFragment', the role 'coveredBy' has cardinality 0..*.
+An association connects 'behavior_InteractionFragment' and 'behavior_Interaction'. From 'behavior_InteractionFragment', the role 'fragment' has cardinality 0..*, and from 'behavior_Interaction', the role 'Interaction62' has cardinality 0..*.
+An association connects 'behavior_GeneralOrdering' and 'behavior_InteractionFragment'. From 'behavior_GeneralOrdering', the role 'behavior_GeneralOrdering' has cardinality 0..*, and from 'behavior_InteractionFragment', the role 'behavior_InteractionFragment' has cardinality 0..*.
+An association connects 'behavior_Comment' and 'behavior_Element'. From 'behavior_Comment', the role 'behavior_Comment65' has cardinality 0..*, and from 'behavior_Element', the role 'behavior_Element66' has cardinality 0..*.
+An association connects 'behavior_Feature' and 'behavior_Classifier'. From 'behavior_Feature', the role 'feature' has cardinality 0..*, and from 'behavior_Classifier', the role 'Classifier' has cardinality 0..*.
+An association connects 'behavior_GeneralOrdering' and 'behavior_OccurrenceSpecification'. From 'behavior_GeneralOrdering', the role 'GeneralOrdering' has cardinality 0..*, and from 'behavior_OccurrenceSpecification', the role 'before' has cardinality 0..*.
+An association connects 'behavior_GeneralOrdering' and 'behavior_OccurrenceSpecification'. From 'behavior_GeneralOrdering', the role 'GeneralOrdering70' has cardinality 0..*, and from 'behavior_OccurrenceSpecification', the role 'after' has cardinality 0..*.
+An association connects 'behavior_OccurrenceSpecification' and 'behavior_ExecutionSpecification'. From 'behavior_OccurrenceSpecification', the role 'behavior_OccurrenceSpecification' has cardinality 0..*, and from 'behavior_ExecutionSpecification', the role 'behavior_ExecutionSpecification' has cardinality 0..*.
+An association connects 'behavior_OccurrenceSpecification' and 'behavior_ExecutionSpecification'. From 'behavior_OccurrenceSpecification', the role 'behavior_OccurrenceSpecification74' has cardinality 0..*, and from 'behavior_ExecutionSpecification', the role 'behavior_ExecutionSpecification73' has cardinality 0..*.
+An association connects 'behavior_Message' and 'behavior_MessageEnd'. From 'behavior_Message', the role 'behavior_Message77' has cardinality 0..*, and from 'behavior_MessageEnd', the role 'behavior_MessageEnd76' has cardinality 0..*.
+An association connects 'behavior_Behavior' and 'behavior_Connector'. From 'behavior_Behavior', the role 'behavior_Behavior80' has cardinality 0..*, and from 'behavior_Connector', the role 'behavior_Connector79' has cardinality 0..*.
+An association connects 'behavior_DestructionEvent' and 'behavior_Lifeline'. From 'behavior_DestructionEvent', the role 'endby' has cardinality 0..*, and from 'behavior_Lifeline', the role 'Lifeline82' has cardinality 0..*.
+An association connects 'behavior_Interaction' and 'behavior_DestructionEvent'. From 'behavior_Interaction', the role 'Interaction84' has cardinality 0..*, and from 'behavior_DestructionEvent', the role 'destructionevent' has cardinality 0..*.
+An association connects 'behavior_Event' and 'behavior_MessageOccurrenceSpecification'. From 'behavior_Event', the role 'behavior_Event' has cardinality 0..*, and from 'behavior_MessageOccurrenceSpecification', the role 'behavior_MessageOccurrenceSpecification' has cardinality 0..*.
+An association connects 'behavior_ExecutionOccurrenceSpecification' and 'behavior_ExecutionSpecification'. From 'behavior_ExecutionOccurrenceSpecification', the role 'behavior_ExecutionOccurrenceSpecification' has cardinality 0..*, and from 'behavior_ExecutionSpecification', the role 'behavior_ExecutionSpecification87' has cardinality 0..*.
+An association connects 'behavior_GeneralOrdering' and 'behavior_OccurrenceSpecification'. From 'behavior_GeneralOrdering', the role 'toAfter' has cardinality 0..*, and from 'behavior_OccurrenceSpecification', the role 'OccurrenceSpecification' has cardinality 0..*.
+An association connects 'behavior_OccurrenceSpecification' and 'behavior_GeneralOrdering'. From 'behavior_OccurrenceSpecification', the role 'OccurrenceSpecification90' has cardinality 0..*, and from 'behavior_GeneralOrdering', the role 'toBefore' has cardinality 0..*.
+An association connects 'behavior_AlternativeMessage' and 'behavior_Message'. From 'behavior_AlternativeMessage', the role 'behavior_AlternativeMessage' has cardinality 0..*, and from 'behavior_Message', the role 'behavior_Message92' has cardinality 0..*.

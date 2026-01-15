@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/amirms/gelato/org.servicifi.gelato.language.kernel/metamodel/kernel.ecore

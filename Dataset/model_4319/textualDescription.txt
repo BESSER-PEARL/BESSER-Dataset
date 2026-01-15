@@ -1,0 +1,17 @@
+The domain model 'metrics' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'metrics_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'metrics_RuleMetrics' represents an important domain concept.
+It has the following attributes: 'numberOfEdges', which is of type int; 'numberOfAttributes', which is of type int; 'numberOfNodes', which is of type int.
+
+'metrics_RuleSetMetrics' represents an important domain concept.
+It has the following attributes: 'totalNumberOfAttributes', which is of type int; 'numberOfRules', which is of type int; 'totalNumberOfEdges', which is of type int; 'totalNumberOfNodes', which is of type int.
+
+Relationships between classes are modeled using associations.
+An association connects 'metrics_RuleMetrics' and 'metrics_RuleSetMetrics'. From 'metrics_RuleMetrics', the role 'metrics_RuleMetrics' has cardinality 0..*, and from 'metrics_RuleSetMetrics', the role 'metrics_RuleSetMetrics' has cardinality 0..*.
+An association connects 'metrics_Rule' and 'metrics_RuleSetMetrics'. From 'metrics_Rule', the role 'metrics_Rule' has cardinality 0..*, and from 'metrics_RuleSetMetrics', the role 'metrics_RuleSetMetrics2' has cardinality 0..*.
+An association connects 'metrics_RuleMetrics' and 'metrics_Rule'. From 'metrics_RuleMetrics', the role 'metrics_RuleMetrics4' has cardinality 0..*, and from 'metrics_Rule', the role 'metrics_Rule5' has cardinality 0..*.

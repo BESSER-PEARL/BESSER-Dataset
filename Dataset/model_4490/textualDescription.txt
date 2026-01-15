@@ -1,0 +1,38 @@
+The domain model 'missionsDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'missionsDSL_Robot' represents an important domain concept.
+It has the following attributes: 'minAngle', which is of type int; 'defaultSpeed', which is of type int; 'slaveAddress', which is of type str; 'slowSpeed', which is of type int; 'maxAngle', which is of type int; 'refreshRate', which is of type int.
+
+'missionsDSL_Action' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'duration', which is of type int; 'action', which is of type str.
+
+'missionsDSL_Value' represents an important domain concept.
+It has the following attributes: 'color', which is of type str; 'bool', which is of type str; 'integer', which is of type int.
+
+'missionsDSL_Mission' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str; 'priority', which is of type int.
+
+'missionsDSL_NewMissions' represents an important domain concept.
+It does not declare any attributes.
+
+'missionsDSL_Condition' represents an important domain concept.
+It has the following attributes: 'sensor', which is of type str; 'relation', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MissionType' defines the following possible values: 'FINDINORDER', 'AVOID', 'FIND', 'FINDSIMULTANEOUS'.
+The enumeration 'Sensor' defines the following possible values: 'color', 'proximity', 'touch'.
+The enumeration 'Color' defines the following possible values: 'BLUE', 'WHITE', 'RED', 'YELLOW', 'GREEN', 'BLACK', 'BROWN'.
+The enumeration 'Relation' defines the following possible values: 'GT', 'LE', 'EQ', 'GE', 'LT'.
+The enumeration 'EV3_ACTION' defines the following possible values: 'STOP', 'REVERSE', 'HALT', 'ROTATE', 'PLAY'.
+
+Relationships between classes are modeled using associations.
+An association connects 'missionsDSL_Mission' and 'missionsDSL_Robot'. From 'missionsDSL_Mission', the role 'missionsDSL_Mission' has cardinality 0..*, and from 'missionsDSL_Robot', the role 'missionsDSL_Robot' has cardinality 0..*.
+An association connects 'missionsDSL_Robot' and 'missionsDSL_Mission'. From 'missionsDSL_Robot', the role 'missionsDSL_Robot2' has cardinality 0..*, and from 'missionsDSL_Mission', the role 'missionsDSL_Mission3' has cardinality 0..*.
+An association connects 'missionsDSL_Mission' and 'missionsDSL_Condition'. From 'missionsDSL_Mission', the role 'missionsDSL_Mission5' has cardinality 0..*, and from 'missionsDSL_Condition', the role 'missionsDSL_Condition' has cardinality 0..*.
+An association connects 'missionsDSL_Mission' and 'missionsDSL_Action'. From 'missionsDSL_Mission', the role 'missionsDSL_Mission7' has cardinality 0..*, and from 'missionsDSL_Action', the role 'missionsDSL_Action' has cardinality 0..*.
+An association connects 'missionsDSL_NewMissions' and 'missionsDSL_Mission'. From 'missionsDSL_NewMissions', the role 'missionsDSL_NewMissions' has cardinality 0..*, and from 'missionsDSL_Mission', the role 'missionsDSL_Mission9' has cardinality 0..*.
+An association connects 'missionsDSL_Value' and 'missionsDSL_Condition'. From 'missionsDSL_Value', the role 'missionsDSL_Value' has cardinality 0..*, and from 'missionsDSL_Condition', the role 'missionsDSL_Condition11' has cardinality 0..*.
+An association connects 'missionsDSL_Action' and 'missionsDSL_Condition'. From 'missionsDSL_Action', the role 'missionsDSL_Action14' has cardinality 0..*, and from 'missionsDSL_Condition', the role 'missionsDSL_Condition13' has cardinality 0..*.
+An association connects 'missionsDSL_NewMissions' and 'missionsDSL_Mission'. From 'missionsDSL_NewMissions', the role 'missionsDSL_NewMissions16' has cardinality 0..*, and from 'missionsDSL_Mission', the role 'missionsDSL_Mission17' has cardinality 0..*.

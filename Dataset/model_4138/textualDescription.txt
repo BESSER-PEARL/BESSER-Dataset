@@ -1,0 +1,45 @@
+The domain model 'myMath' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myMath_Mult' represents an important domain concept.
+It does not declare any attributes.
+
+'myMath_MathExp' represents an important domain concept.
+It does not declare any attributes.
+
+'myMath_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'myMath_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'myMath_Sub' represents an important domain concept.
+It does not declare any attributes.
+
+'myMath_Add' represents an important domain concept.
+It does not declare any attributes.
+
+'myMath_Num' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'myMath_Add' is a specialization of 'Expression'.
+The class 'myMath_Sub' is a specialization of 'Expression'.
+The class 'myMath_Mult' is a specialization of 'Expression'.
+The class 'myMath_Div' is a specialization of 'Expression'.
+The class 'myMath_Num' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myMath_Expression' and 'myMath_MathExp'. From 'myMath_Expression', the role 'myMath_Expression' has cardinality 0..*, and from 'myMath_MathExp', the role 'myMath_MathExp' has cardinality 0..*.
+An association connects 'myMath_Add' and 'myMath_Expression'. From 'myMath_Add', the role 'myMath_Add' has cardinality 0..*, and from 'myMath_Expression', the role 'myMath_Expression2' has cardinality 0..*.
+An association connects 'myMath_Expression' and 'myMath_Add'. From 'myMath_Expression', the role 'myMath_Expression5' has cardinality 0..*, and from 'myMath_Add', the role 'myMath_Add4' has cardinality 0..*.
+An association connects 'myMath_Expression' and 'myMath_Sub'. From 'myMath_Expression', the role 'myMath_Expression7' has cardinality 0..*, and from 'myMath_Sub', the role 'myMath_Sub' has cardinality 0..*.
+An association connects 'myMath_Sub' and 'myMath_Expression'. From 'myMath_Sub', the role 'myMath_Sub9' has cardinality 0..*, and from 'myMath_Expression', the role 'myMath_Expression10' has cardinality 0..*.
+An association connects 'myMath_Expression' and 'myMath_Mult'. From 'myMath_Expression', the role 'myMath_Expression12' has cardinality 0..*, and from 'myMath_Mult', the role 'myMath_Mult' has cardinality 0..*.
+An association connects 'myMath_Expression' and 'myMath_Mult'. From 'myMath_Expression', the role 'myMath_Expression15' has cardinality 0..*, and from 'myMath_Mult', the role 'myMath_Mult14' has cardinality 0..*.
+An association connects 'myMath_Expression' and 'myMath_Div'. From 'myMath_Expression', the role 'myMath_Expression17' has cardinality 0..*, and from 'myMath_Div', the role 'myMath_Div' has cardinality 0..*.
+An association connects 'myMath_Div' and 'myMath_Expression'. From 'myMath_Div', the role 'myMath_Div19' has cardinality 0..*, and from 'myMath_Expression', the role 'myMath_Expression20' has cardinality 0..*.

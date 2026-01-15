@@ -1,0 +1,138 @@
+The domain model 'ardlers' describes the core structural elements and their relationships within the system.
+
+The model defines 31 main class(es).
+
+'ardlers_Rule' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'ardlers_Rate' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'ardlers_Smoothing' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'ardlers_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'ardlers_Map' represents an important domain concept.
+It does not declare any attributes.
+
+'ardlers_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'ardlers_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ardlers_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'ardlers_RuleBody' represents an important domain concept.
+It does not declare any attributes.
+
+'ardlers_SensorImport' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ardlers_Comparison' represents an important domain concept.
+It does not declare any attributes.
+
+'ardlers_Exp' represents an important domain concept.
+It does not declare any attributes.
+
+'ardlers_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'ardlers_Parenthesis' represents an important domain concept.
+It does not declare any attributes.
+
+'Parenthesis' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ardlers_And' represents an important domain concept.
+It does not declare any attributes.
+
+'ardlers_BoardDefinition' represents an important domain concept.
+It has the following attributes: 'aout', which is of type int; 'name', which is of type str; 'ain', which is of type int; 'do', which is of type int; 'di', which is of type int.
+
+'ardlers_ComponentBody' represents an important domain concept.
+It has the following attributes: 'pinned', which is of type str; 'pin', which is of type int; 'io', which is of type str; 'type', which is of type str.
+
+'ardlers_Or' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'ardlers_Range' represents an important domain concept.
+It has the following attributes: 'high', which is of type float; 'low', which is of type float.
+
+'ardlers_Factor' represents an important domain concept.
+It does not declare any attributes.
+
+'ardlers_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'ardlers_State' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Or' represents an important domain concept.
+It does not declare any attributes.
+
+'ardlers_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ardlers_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ardlers_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'ardlers_Delta' represents an important domain concept.
+It does not declare any attributes.
+
+'ardlers_NumberLiteral' represents an important domain concept.
+It has the following attributes: 'int', which is of type int; 'float', which is of type str.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'IO' defines the following possible values: 'INPUT', 'OUTPUT'.
+The enumeration 'TYPE' defines the following possible values: 'ANALOG', 'DIGITAL'.
+
+The model also captures inheritance relationships between classes.
+The class 'ardlers_Expression' is a specialization of 'Or'.
+The class 'ardlers_Parenthesis' is a specialization of 'Expression'.
+The class 'ardlers_Value' is a specialization of 'Parenthesis'.
+The class 'ardlers_Attribute' is a specialization of 'Value'.
+The class 'ardlers_Delta' is a specialization of 'Value'.
+The class 'ardlers_NumberLiteral' is a specialization of 'Value'.
+The class 'ardlers_And' is a specialization of 'Expression'.
+The class 'ardlers_Comparison' is a specialization of 'Expression'.
+The class 'ardlers_Exp' is a specialization of 'Expression'.
+The class 'ardlers_Factor' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ardlers_Program' and 'ardlers_Library'. From 'ardlers_Program', the role 'ardlers_Program' has cardinality 0..*, and from 'ardlers_Library', the role 'ardlers_Library' has cardinality 0..*.
+An association connects 'ardlers_SensorImport' and 'ardlers_Program'. From 'ardlers_SensorImport', the role 'ardlers_SensorImport' has cardinality 0..*, and from 'ardlers_Program', the role 'ardlers_Program2' has cardinality 0..*.
+An association connects 'ardlers_Program' and 'ardlers_EObject'. From 'ardlers_Program', the role 'ardlers_Program4' has cardinality 0..*, and from 'ardlers_EObject', the role 'ardlers_EObject' has cardinality 0..*.
+An association connects 'ardlers_Program' and 'ardlers_BoardDefinition'. From 'ardlers_Program', the role 'ardlers_Program6' has cardinality 0..*, and from 'ardlers_BoardDefinition', the role 'ardlers_BoardDefinition' has cardinality 0..*.
+An association connects 'ardlers_BoardDefinition' and 'ardlers_Library'. From 'ardlers_BoardDefinition', the role 'ardlers_BoardDefinition9' has cardinality 0..*, and from 'ardlers_Library', the role 'ardlers_Library8' has cardinality 0..*.
+An association connects 'ardlers_Rule' and 'ardlers_Or'. From 'ardlers_Rule', the role 'ardlers_Rule' has cardinality 0..*, and from 'ardlers_Or', the role 'ardlers_Or' has cardinality 0..*.
+An association connects 'ardlers_RuleBody' and 'ardlers_Rule'. From 'ardlers_RuleBody', the role 'ardlers_RuleBody' has cardinality 0..*, and from 'ardlers_Rule', the role 'ardlers_Rule12' has cardinality 0..*.
+An association connects 'ardlers_Or' and 'ardlers_Or'. From 'ardlers_Or', the role 'ardlers_Or13' has cardinality 0..*, and from 'ardlers_Or', the role 'ardlers_Or15' has cardinality 0..*.
+An association connects 'ardlers_Expression' and 'ardlers_Or'. From 'ardlers_Expression', the role 'ardlers_Expression' has cardinality 0..*, and from 'ardlers_Or', the role 'ardlers_Or17' has cardinality 0..*.
+An association connects 'ardlers_Or' and 'ardlers_Parenthesis'. From 'ardlers_Or', the role 'ardlers_Or19' has cardinality 0..*, and from 'ardlers_Parenthesis', the role 'ardlers_Parenthesis' has cardinality 0..*.
+An association connects 'ardlers_Attribute' and 'ardlers_Node'. From 'ardlers_Attribute', the role 'ardlers_Attribute' has cardinality 0..*, and from 'ardlers_Node', the role 'ardlers_Node' has cardinality 0..*.
+An association connects 'ardlers_Attribute' and 'ardlers_Component'. From 'ardlers_Attribute', the role 'ardlers_Attribute22' has cardinality 0..*, and from 'ardlers_Component', the role 'ardlers_Component' has cardinality 0..*.
+An association connects 'ardlers_Attribute' and 'ardlers_Delta'. From 'ardlers_Attribute', the role 'ardlers_Attribute24' has cardinality 0..*, and from 'ardlers_Delta', the role 'ardlers_Delta' has cardinality 0..*.
+An association connects 'ardlers_RuleBody' and 'ardlers_Assignment'. From 'ardlers_RuleBody', the role 'ardlers_RuleBody26' has cardinality 0..*, and from 'ardlers_Assignment', the role 'ardlers_Assignment' has cardinality 0..*.
+An association connects 'ardlers_Attribute' and 'ardlers_Assignment'. From 'ardlers_Attribute', the role 'ardlers_Attribute29' has cardinality 0..*, and from 'ardlers_Assignment', the role 'ardlers_Assignment28' has cardinality 0..*.
+An association connects 'ardlers_EObject' and 'ardlers_Assignment'. From 'ardlers_EObject', the role 'ardlers_EObject32' has cardinality 0..*, and from 'ardlers_Assignment', the role 'ardlers_Assignment31' has cardinality 0..*.
+An association connects 'ardlers_Node' and 'ardlers_BoardDefinition'. From 'ardlers_Node', the role 'ardlers_Node34' has cardinality 0..*, and from 'ardlers_BoardDefinition', the role 'ardlers_BoardDefinition35' has cardinality 0..*.
+An association connects 'ardlers_Component' and 'ardlers_Node'. From 'ardlers_Component', the role 'ardlers_Component38' has cardinality 0..*, and from 'ardlers_Node', the role 'ardlers_Node37' has cardinality 0..*.
+An association connects 'ardlers_SensorImport' and 'ardlers_Component'. From 'ardlers_SensorImport', the role 'ardlers_SensorImport41' has cardinality 0..*, and from 'ardlers_Component', the role 'ardlers_Component40' has cardinality 0..*.
+An association connects 'ardlers_ComponentBody' and 'ardlers_Component'. From 'ardlers_ComponentBody', the role 'ardlers_ComponentBody' has cardinality 0..*, and from 'ardlers_Component', the role 'ardlers_Component43' has cardinality 0..*.
+An association connects 'ardlers_ComponentBody' and 'ardlers_Rate'. From 'ardlers_ComponentBody', the role 'ardlers_ComponentBody45' has cardinality 0..*, and from 'ardlers_Rate', the role 'ardlers_Rate' has cardinality 0..*.
+An association connects 'ardlers_Map' and 'ardlers_ComponentBody'. From 'ardlers_Map', the role 'ardlers_Map' has cardinality 0..*, and from 'ardlers_ComponentBody', the role 'ardlers_ComponentBody47' has cardinality 0..*.
+An association connects 'ardlers_Range' and 'ardlers_Map'. From 'ardlers_Range', the role 'ardlers_Range' has cardinality 0..*, and from 'ardlers_Map', the role 'ardlers_Map49' has cardinality 0..*.
+An association connects 'ardlers_Range' and 'ardlers_Map'. From 'ardlers_Range', the role 'ardlers_Range52' has cardinality 0..*, and from 'ardlers_Map', the role 'ardlers_Map51' has cardinality 0..*.

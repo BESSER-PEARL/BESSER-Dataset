@@ -1,0 +1,40 @@
+The domain model 'classes' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'classes_Attribute' represents an important domain concept.
+It has one attribute: 'isMany', which is of type bool.
+
+'classes_CModel' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Datatype' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_CClass' represents an important domain concept.
+It has one attribute: 'abstract', which is of type bool.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'classes_Classifier' is a specialization of 'NamedElement'.
+The class 'classes_CClass' is a specialization of 'Classifier'.
+The class 'classes_Attribute' is a specialization of 'NamedElement'.
+The class 'classes_Datatype' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'classes_CModel' and 'classes_Classifier'. From 'classes_CModel', the role 'classes_CModel' has cardinality 0..*, and from 'classes_Classifier', the role 'classes_Classifier' has cardinality 0..*.
+An association connects 'classes_CClass' and 'classes_CClass'. From 'classes_CClass', the role 'classes_CClass' has cardinality 0..*, and from 'classes_CClass', the role 'classes_CClass1' has cardinality 0..*.
+An association connects 'classes_Attribute' and 'classes_CClass'. From 'classes_Attribute', the role 'classes_Attribute' has cardinality 0..*, and from 'classes_CClass', the role 'classes_CClass4' has cardinality 0..*.
+An association connects 'classes_CClass' and 'classes_CClass'. From 'classes_CClass', the role 'classes_CClass5' has cardinality 0..*, and from 'classes_CClass', the role 'classes_CClass7' has cardinality 0..*.
+An association connects 'classes_Attribute' and 'classes_Classifier'. From 'classes_Attribute', the role 'classes_Attribute9' has cardinality 0..*, and from 'classes_Classifier', the role 'classes_Classifier10' has cardinality 0..*.

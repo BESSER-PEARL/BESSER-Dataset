@@ -1,0 +1,72 @@
+The domain model 'notation' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'LayoutConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Diagram' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Location' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_NotationElement' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'idBeforeRemoval', which is of type str.
+
+'notation_Note' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'notation_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_MindMapNode' represents an important domain concept.
+It has the following attributes: 'hasChildren', which is of type bool; 'expanded', which is of type bool; 'side', which is of type int.
+
+'notation_LayoutConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Bounds' represents an important domain concept.
+It has the following attributes: 'height', which is of type int; 'width', which is of type int.
+
+'notation_View' represents an important domain concept.
+It has the following attributes: 'viewType', which is of type str; 'viewDetails', which is of type str.
+
+'NotationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'View' represents an important domain concept.
+It does not declare any attributes.
+
+'notation_Location' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'x', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'notation_View' is a specialization of 'NotationElement'.
+The class 'notation_Node' is a specialization of 'View'.
+The class 'notation_Edge' is a specialization of 'View'.
+The class 'notation_Diagram' is a specialization of 'View'.
+The class 'notation_Location' is a specialization of 'NotationElement'.
+The class 'notation_Location' is a specialization of 'LayoutConstraint'.
+The class 'notation_Bounds' is a specialization of 'Location'.
+The class 'notation_Note' is a specialization of 'Node'.
+The class 'notation_MindMapNode' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'notation_Node' and 'notation_View'. From 'notation_Node', the role 'notation_Node' has cardinality 0..*, and from 'notation_View', the role 'notation_View' has cardinality 0..*.
+An association connects 'notation_EObject' and 'notation_View'. From 'notation_EObject', the role 'notation_EObject' has cardinality 0..*, and from 'notation_View', the role 'notation_View2' has cardinality 0..*.
+An association connects 'notation_View' and 'notation_Edge'. From 'notation_View', the role 'source' has cardinality 0..*, and from 'notation_Edge', the role 'Edge' has cardinality 0..*.
+An association connects 'notation_View' and 'notation_Edge'. From 'notation_View', the role 'target' has cardinality 0..*, and from 'notation_Edge', the role 'Edge5' has cardinality 0..*.
+An association connects 'notation_Bounds' and 'notation_Node'. From 'notation_Bounds', the role 'notation_Bounds' has cardinality 0..*, and from 'notation_Node', the role 'notation_Node7' has cardinality 0..*.
+An association connects 'notation_Edge' and 'notation_View'. From 'notation_Edge', the role 'sourceEdges' has cardinality 0..*, and from 'notation_View', the role 'View' has cardinality 0..*.
+An association connects 'notation_Edge' and 'notation_View'. From 'notation_Edge', the role 'targetEdges' has cardinality 0..*, and from 'notation_View', the role 'View10' has cardinality 0..*.
+An association connects 'notation_Diagram' and 'notation_Edge'. From 'notation_Diagram', the role 'notation_Diagram' has cardinality 0..*, and from 'notation_Edge', the role 'notation_Edge' has cardinality 0..*.

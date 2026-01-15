@@ -1,0 +1,12 @@
+The domain model 'simple_metrics' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'simple_metrics_Metric' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'simple_metrics_MetricsSet' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'simple_metrics_MetricsSet' and 'simple_metrics_Metric'. From 'simple_metrics_MetricsSet', the role 'simple_metrics_MetricsSet' has cardinality 0..*, and from 'simple_metrics_Metric', the role 'simple_metrics_Metric' has cardinality 0..*.

@@ -1,0 +1,12 @@
+The domain model 'bowling' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'bowling_Player' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'dateOfBirth', which is of type date; 'height', which is of type float; 'isProfessional', which is of type bool.
+
+'bowling_League' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'bowling_League' and 'bowling_Player'. From 'bowling_League', the role 'bowling_League' has cardinality 0..*, and from 'bowling_Player', the role 'bowling_Player' has cardinality 0..*.

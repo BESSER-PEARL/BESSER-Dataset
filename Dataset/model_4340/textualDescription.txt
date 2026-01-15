@@ -1,0 +1,363 @@
+The domain model 'edu' describes the core structural elements and their relationships within the system.
+
+The model defines 81 main class(es).
+
+'edu_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'GuardAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_ForAllQuantifier' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Less' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_IntegerType' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_ASTNode' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_BooleanType' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Subtraction' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Modulus' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_ExistsQuantifier' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_ArrayAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'edu_FunctionDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'edu_Precondition' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_ExpressionEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_ExpressionToExpressionMap' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_TernaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_VariableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_GreaterOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'FunctionAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'Assertion' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_ArrayFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Axiom' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_DivisorNotZeroAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'QuantifiedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_ArrayType' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_ReturnValueReference' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Sign' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_GuardAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'SymbolReference' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Implication' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Conjunction' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Sign' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_VariableDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'edu_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'edu_Postcondition' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_ReturnStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_LessOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_FunctionCallPreconditionAssertion' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_visitor_IASTNodeVisitor' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Unequal' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_ArrayLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Addition' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_FunctionAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_QuantifiedExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Assumption' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Equivalence' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Disjunction' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Assertion' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Invariant' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_LetExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_Negation' represents an important domain concept.
+It does not declare any attributes.
+
+'edu_SymbolReference' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'edu_Program' is a specialization of 'ASTNode'.
+The class 'edu_Addition' is a specialization of 'BinaryExpression'.
+The class 'edu_BinaryExpression' is a specialization of 'Expression'.
+The class 'edu_Expression' is a specialization of 'ASTNode'.
+The class 'edu_UnaryExpression' is a specialization of 'Expression'.
+The class 'edu_ArrayLiteral' is a specialization of 'Literal'.
+The class 'edu_Literal' is a specialization of 'Expression'.
+The class 'edu_ArrayType' is a specialization of 'Type'.
+The class 'edu_Type' is a specialization of 'ASTNode'.
+The class 'edu_PrimitiveType' is a specialization of 'Type'.
+The class 'edu_Assertion' is a specialization of 'Annotation'.
+The class 'edu_GuardAssertion' is a specialization of 'Assertion'.
+The class 'edu_FunctionCallPreconditionAssertion' is a specialization of 'GuardAssertion'.
+The class 'edu_DivisorNotZeroAssertion' is a specialization of 'GuardAssertion'.
+The class 'edu_Annotation' is a specialization of 'Statement'.
+The class 'edu_Assignment' is a specialization of 'Statement'.
+The class 'edu_VariableDeclaration' is a specialization of 'Statement'.
+The class 'edu_Assumption' is a specialization of 'Annotation'.
+The class 'edu_Axiom' is a specialization of 'Annotation'.
+The class 'edu_Block' is a specialization of 'Statement'.
+The class 'edu_BooleanLiteral' is a specialization of 'Literal'.
+The class 'edu_BooleanType' is a specialization of 'PrimitiveType'.
+The class 'edu_Conditional' is a specialization of 'Statement'.
+The class 'edu_Conjunction' is a specialization of 'BinaryExpression'.
+The class 'edu_Disjunction' is a specialization of 'BinaryExpression'.
+The class 'edu_Division' is a specialization of 'BinaryExpression'.
+The class 'edu_Equal' is a specialization of 'BinaryExpression'.
+The class 'edu_Equivalence' is a specialization of 'BinaryExpression'.
+The class 'edu_ExistsQuantifier' is a specialization of 'QuantifiedExpression'.
+The class 'edu_QuantifiedExpression' is a specialization of 'Expression'.
+The class 'edu_ForAllQuantifier' is a specialization of 'QuantifiedExpression'.
+The class 'edu_FunctionCall' is a specialization of 'Expression'.
+The class 'edu_FunctionDeclaration' is a specialization of 'ASTNode'.
+The class 'edu_Precondition' is a specialization of 'FunctionAnnotation'.
+The class 'edu_Postcondition' is a specialization of 'FunctionAnnotation'.
+The class 'edu_Greater' is a specialization of 'BinaryExpression'.
+The class 'edu_GreaterOrEqual' is a specialization of 'BinaryExpression'.
+The class 'edu_Implication' is a specialization of 'BinaryExpression'.
+The class 'edu_IntegerLiteral' is a specialization of 'Literal'.
+The class 'edu_IntegerType' is a specialization of 'PrimitiveType'.
+The class 'edu_Invariant' is a specialization of 'Annotation'.
+The class 'edu_Less' is a specialization of 'BinaryExpression'.
+The class 'edu_LessOrEqual' is a specialization of 'BinaryExpression'.
+The class 'edu_Loop' is a specialization of 'Statement'.
+The class 'edu_Minus' is a specialization of 'Sign'.
+The class 'edu_Sign' is a specialization of 'UnaryExpression'.
+The class 'edu_Modulus' is a specialization of 'BinaryExpression'.
+The class 'edu_Multiplication' is a specialization of 'BinaryExpression'.
+The class 'edu_Negation' is a specialization of 'UnaryExpression'.
+The class 'edu_Plus' is a specialization of 'Sign'.
+The class 'edu_ReturnStatement' is a specialization of 'Statement'.
+The class 'edu_Subtraction' is a specialization of 'BinaryExpression'.
+The class 'edu_Unequal' is a specialization of 'BinaryExpression'.
+The class 'edu_VariableReference' is a specialization of 'SymbolReference'.
+The class 'edu_Statement' is a specialization of 'ASTNode'.
+The class 'edu_ReturnValueReference' is a specialization of 'SymbolReference'.
+The class 'edu_SymbolReference' is a specialization of 'Expression'.
+The class 'edu_ExpressionEvaluation' is a specialization of 'ASTNode'.
+The class 'edu_ArrayFunction' is a specialization of 'Literal'.
+The class 'edu_ArrayAccess' is a specialization of 'Expression'.
+The class 'edu_FunctionAnnotation' is a specialization of 'Annotation'.
+The class 'edu_TernaryExpression' is a specialization of 'Expression'.
+The class 'edu_LetExpression' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'edu_Program' and 'edu_FunctionDeclaration'. From 'edu_Program', the role 'edu_Program' has cardinality 0..*, and from 'edu_FunctionDeclaration', the role 'edu_FunctionDeclaration' has cardinality 0..*.
+An association connects 'edu_Program' and 'edu_Block'. From 'edu_Program', the role 'edu_Program2' has cardinality 0..*, and from 'edu_Block', the role 'edu_Block' has cardinality 0..*.
+An association connects 'edu_Program' and 'edu_Axiom'. From 'edu_Program', the role 'edu_Program4' has cardinality 0..*, and from 'edu_Axiom', the role 'edu_Axiom' has cardinality 0..*.
+An association connects 'edu_BinaryExpression' and 'edu_Expression'. From 'edu_BinaryExpression', the role 'edu_BinaryExpression' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression' has cardinality 0..*.
+An association connects 'edu_Expression' and 'edu_BinaryExpression'. From 'edu_Expression', the role 'edu_Expression8' has cardinality 0..*, and from 'edu_BinaryExpression', the role 'edu_BinaryExpression7' has cardinality 0..*.
+An association connects 'edu_UnaryExpression' and 'edu_Expression'. From 'edu_UnaryExpression', the role 'edu_UnaryExpression' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression10' has cardinality 0..*.
+An association connects 'edu_ArrayLiteral' and 'edu_Expression'. From 'edu_ArrayLiteral', the role 'edu_ArrayLiteral' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression12' has cardinality 0..*.
+An association connects 'edu_ArrayType' and 'edu_PrimitiveType'. From 'edu_ArrayType', the role 'edu_ArrayType' has cardinality 0..*, and from 'edu_PrimitiveType', the role 'edu_PrimitiveType' has cardinality 0..*.
+An association connects 'edu_FunctionCallPreconditionAssertion' and 'edu_FunctionCall'. From 'edu_FunctionCallPreconditionAssertion', the role 'edu_FunctionCallPreconditionAssertion' has cardinality 0..*, and from 'edu_FunctionCall', the role 'edu_FunctionCall' has cardinality 0..*.
+An association connects 'edu_Expression' and 'edu_DivisorNotZeroAssertion'. From 'edu_Expression', the role 'edu_Expression16' has cardinality 0..*, and from 'edu_DivisorNotZeroAssertion', the role 'edu_DivisorNotZeroAssertion' has cardinality 0..*.
+An association connects 'edu_Annotation' and 'edu_Expression'. From 'edu_Annotation', the role 'edu_Annotation' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression18' has cardinality 0..*.
+An association connects 'edu_Assignment' and 'edu_Expression'. From 'edu_Assignment', the role 'edu_Assignment' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression20' has cardinality 0..*.
+An association connects 'edu_VariableReference' and 'edu_Assignment'. From 'edu_VariableReference', the role 'edu_VariableReference' has cardinality 0..*, and from 'edu_Assignment', the role 'edu_Assignment22' has cardinality 0..*.
+An association connects 'edu_Type' and 'edu_VariableDeclaration'. From 'edu_Type', the role 'edu_Type' has cardinality 0..*, and from 'edu_VariableDeclaration', the role 'edu_VariableDeclaration' has cardinality 0..*.
+An association connects 'edu_VariableDeclaration' and 'edu_Expression'. From 'edu_VariableDeclaration', the role 'edu_VariableDeclaration25' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression26' has cardinality 0..*.
+An association connects 'edu_Block' and 'edu_Statement'. From 'edu_Block', the role 'edu_Block28' has cardinality 0..*, and from 'edu_Statement', the role 'edu_Statement' has cardinality 0..*.
+An association connects 'edu_Conditional' and 'edu_Expression'. From 'edu_Conditional', the role 'edu_Conditional' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression30' has cardinality 0..*.
+An association connects 'edu_Block' and 'edu_Conditional'. From 'edu_Block', the role 'edu_Block33' has cardinality 0..*, and from 'edu_Conditional', the role 'edu_Conditional32' has cardinality 0..*.
+An association connects 'edu_Conditional' and 'edu_Block'. From 'edu_Conditional', the role 'edu_Conditional35' has cardinality 0..*, and from 'edu_Block', the role 'edu_Block36' has cardinality 0..*.
+An association connects 'edu_QuantifiedExpression' and 'edu_VariableDeclaration'. From 'edu_QuantifiedExpression', the role 'edu_QuantifiedExpression' has cardinality 0..*, and from 'edu_VariableDeclaration', the role 'edu_VariableDeclaration38' has cardinality 0..*.
+An association connects 'edu_QuantifiedExpression' and 'edu_Expression'. From 'edu_QuantifiedExpression', the role 'edu_QuantifiedExpression40' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression41' has cardinality 0..*.
+An association connects 'edu_Expression' and 'edu_QuantifiedExpression'. From 'edu_Expression', the role 'edu_Expression44' has cardinality 0..*, and from 'edu_QuantifiedExpression', the role 'edu_QuantifiedExpression43' has cardinality 0..*.
+An association connects 'edu_FunctionCall' and 'edu_Expression'. From 'edu_FunctionCall', the role 'edu_FunctionCall46' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression47' has cardinality 0..*.
+An association connects 'edu_FunctionDeclaration' and 'edu_FunctionCall'. From 'edu_FunctionDeclaration', the role 'edu_FunctionDeclaration50' has cardinality 0..*, and from 'edu_FunctionCall', the role 'edu_FunctionCall49' has cardinality 0..*.
+An association connects 'edu_Precondition' and 'edu_FunctionDeclaration'. From 'edu_Precondition', the role 'edu_Precondition' has cardinality 0..*, and from 'edu_FunctionDeclaration', the role 'edu_FunctionDeclaration52' has cardinality 0..*.
+An association connects 'edu_Postcondition' and 'edu_FunctionDeclaration'. From 'edu_Postcondition', the role 'edu_Postcondition' has cardinality 0..*, and from 'edu_FunctionDeclaration', the role 'edu_FunctionDeclaration54' has cardinality 0..*.
+An association connects 'edu_FunctionDeclaration' and 'edu_VariableDeclaration'. From 'edu_FunctionDeclaration', the role 'edu_FunctionDeclaration56' has cardinality 0..*, and from 'edu_VariableDeclaration', the role 'edu_VariableDeclaration57' has cardinality 0..*.
+An association connects 'edu_Block' and 'edu_FunctionDeclaration'. From 'edu_Block', the role 'edu_Block60' has cardinality 0..*, and from 'edu_FunctionDeclaration', the role 'edu_FunctionDeclaration59' has cardinality 0..*.
+An association connects 'edu_FunctionDeclaration' and 'edu_Type'. From 'edu_FunctionDeclaration', the role 'edu_FunctionDeclaration62' has cardinality 0..*, and from 'edu_Type', the role 'edu_Type63' has cardinality 0..*.
+An association connects 'edu_Loop' and 'edu_Expression'. From 'edu_Loop', the role 'edu_Loop' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression65' has cardinality 0..*.
+An association connects 'edu_Loop' and 'edu_Block'. From 'edu_Loop', the role 'edu_Loop67' has cardinality 0..*, and from 'edu_Block', the role 'edu_Block68' has cardinality 0..*.
+An association connects 'edu_Invariant' and 'edu_Loop'. From 'edu_Invariant', the role 'edu_Invariant' has cardinality 0..*, and from 'edu_Loop', the role 'edu_Loop70' has cardinality 0..*.
+An association connects 'edu_Expression' and 'edu_ReturnStatement'. From 'edu_Expression', the role 'edu_Expression72' has cardinality 0..*, and from 'edu_ReturnStatement', the role 'edu_ReturnStatement' has cardinality 0..*.
+An association connects 'edu_FunctionDeclaration' and 'edu_ReturnStatement'. From 'edu_FunctionDeclaration', the role 'edu_FunctionDeclaration75' has cardinality 0..*, and from 'edu_ReturnStatement', the role 'edu_ReturnStatement74' has cardinality 0..*.
+An association connects 'edu_VariableReference' and 'edu_VariableDeclaration'. From 'edu_VariableReference', the role 'edu_VariableReference77' has cardinality 0..*, and from 'edu_VariableDeclaration', the role 'edu_VariableDeclaration78' has cardinality 0..*.
+An association connects 'edu_ReturnValueReference' and 'edu_FunctionDeclaration'. From 'edu_ReturnValueReference', the role 'edu_ReturnValueReference' has cardinality 0..*, and from 'edu_FunctionDeclaration', the role 'edu_FunctionDeclaration80' has cardinality 0..*.
+An association connects 'edu_SymbolReference' and 'edu_Expression'. From 'edu_SymbolReference', the role 'edu_SymbolReference' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression82' has cardinality 0..*.
+An association connects 'edu_Expression' and 'edu_ExpressionEvaluation'. From 'edu_Expression', the role 'edu_Expression84' has cardinality 0..*, and from 'edu_ExpressionEvaluation', the role 'edu_ExpressionEvaluation' has cardinality 0..*.
+An association connects 'edu_ArrayFunction' and 'edu_Expression'. From 'edu_ArrayFunction', the role 'edu_ArrayFunction' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression86' has cardinality 0..*.
+An association connects 'edu_Expression' and 'edu_ArrayFunction'. From 'edu_Expression', the role 'edu_Expression89' has cardinality 0..*, and from 'edu_ArrayFunction', the role 'edu_ArrayFunction88' has cardinality 0..*.
+An association connects 'edu_ArrayFunction' and 'edu_Expression'. From 'edu_ArrayFunction', the role 'edu_ArrayFunction91' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression92' has cardinality 0..*.
+An association connects 'edu_Expression' and 'edu_ArrayAccess'. From 'edu_Expression', the role 'edu_Expression94' has cardinality 0..*, and from 'edu_ArrayAccess', the role 'edu_ArrayAccess' has cardinality 0..*.
+An association connects 'edu_ArrayAccess' and 'edu_Expression'. From 'edu_ArrayAccess', the role 'edu_ArrayAccess96' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression97' has cardinality 0..*.
+An association connects 'edu_ExpressionToExpressionMap' and 'edu_Expression'. From 'edu_ExpressionToExpressionMap', the role 'edu_ExpressionToExpressionMap' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression99' has cardinality 0..*.
+An association connects 'edu_Expression' and 'edu_ExpressionToExpressionMap'. From 'edu_Expression', the role 'edu_Expression102' has cardinality 0..*, and from 'edu_ExpressionToExpressionMap', the role 'edu_ExpressionToExpressionMap101' has cardinality 0..*.
+An association connects 'edu_TernaryExpression' and 'edu_Expression'. From 'edu_TernaryExpression', the role 'edu_TernaryExpression' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression104' has cardinality 0..*.
+An association connects 'edu_TernaryExpression' and 'edu_Expression'. From 'edu_TernaryExpression', the role 'edu_TernaryExpression106' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression107' has cardinality 0..*.
+An association connects 'edu_TernaryExpression' and 'edu_Expression'. From 'edu_TernaryExpression', the role 'edu_TernaryExpression109' has cardinality 0..*, and from 'edu_Expression', the role 'edu_Expression110' has cardinality 0..*.
+An association connects 'edu_VariableDeclaration' and 'edu_LetExpression'. From 'edu_VariableDeclaration', the role 'edu_VariableDeclaration112' has cardinality 0..*, and from 'edu_LetExpression', the role 'edu_LetExpression' has cardinality 0..*.
+An association connects 'edu_Expression' and 'edu_LetExpression'. From 'edu_Expression', the role 'edu_Expression115' has cardinality 0..*, and from 'edu_LetExpression', the role 'edu_LetExpression114' has cardinality 0..*.

@@ -1,0 +1,41 @@
+The domain model 'automation' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'automation_Output' represents an important domain concept.
+It does not declare any attributes.
+
+'automation_Automation' represents an important domain concept.
+It does not declare any attributes.
+
+'automation_Input' represents an important domain concept.
+It does not declare any attributes.
+
+'automation_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'automation_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'automation_State' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'automation_State' is a specialization of 'NamedElement'.
+The class 'automation_Input' is a specialization of 'NamedElement'.
+The class 'automation_Output' is a specialization of 'NamedElement'.
+The class 'automation_Transition' is a specialization of 'NamedElement'.
+The class 'automation_Automation' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'automation_Transition' and 'automation_Input'. From 'automation_Transition', the role 'automation_Transition' has cardinality 0..*, and from 'automation_Input', the role 'automation_Input' has cardinality 0..*.
+An association connects 'automation_Transition' and 'automation_Output'. From 'automation_Transition', the role 'automation_Transition2' has cardinality 0..*, and from 'automation_Output', the role 'automation_Output' has cardinality 0..*.
+An association connects 'automation_Transition' and 'automation_State'. From 'automation_Transition', the role 'automation_Transition4' has cardinality 0..*, and from 'automation_State', the role 'automation_State' has cardinality 0..*.
+An association connects 'automation_Transition' and 'automation_State'. From 'automation_Transition', the role 'automation_Transition6' has cardinality 0..*, and from 'automation_State', the role 'automation_State7' has cardinality 0..*.
+An association connects 'automation_Automation' and 'automation_Transition'. From 'automation_Automation', the role 'automation_Automation' has cardinality 0..*, and from 'automation_Transition', the role 'automation_Transition9' has cardinality 0..*.
+An association connects 'automation_State' and 'automation_Automation'. From 'automation_State', the role 'automation_State12' has cardinality 0..*, and from 'automation_Automation', the role 'automation_Automation11' has cardinality 0..*.
+An association connects 'automation_Input' and 'automation_Automation'. From 'automation_Input', the role 'automation_Input15' has cardinality 0..*, and from 'automation_Automation', the role 'automation_Automation14' has cardinality 0..*.
+An association connects 'automation_Automation' and 'automation_Output'. From 'automation_Automation', the role 'automation_Automation17' has cardinality 0..*, and from 'automation_Output', the role 'automation_Output18' has cardinality 0..*.

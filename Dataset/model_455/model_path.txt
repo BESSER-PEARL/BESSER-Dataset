@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/anatlyzer/anatlyzer/examples/anatlyzer.example.issre2014/metamodels/UML2_3_0_0.ecore

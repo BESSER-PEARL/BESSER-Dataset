@@ -1,0 +1,61 @@
+The domain model 'simple_OO_concept' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'simple_OO_concept_Class' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_OO_concept_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_OO_concept_Feature' represents an important domain concept.
+It has the following attributes: 'isPublic', which is of type bool; 'isProtected', which is of type bool; 'isPrivate', which is of type bool.
+
+'Class' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_OO_concept_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_OO_concept_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_OO_concept_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_OO_concept_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simple_OO_concept_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_OO_concept_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simple_OO_concept_Package' is a specialization of 'NamedElement'.
+The class 'simple_OO_concept_Class' is a specialization of 'NamedElement'.
+The class 'simple_OO_concept_Attribute' is a specialization of 'NamedElement'.
+The class 'simple_OO_concept_Attribute' is a specialization of 'Feature'.
+The class 'simple_OO_concept_Operation' is a specialization of 'NamedElement'.
+The class 'simple_OO_concept_Operation' is a specialization of 'Feature'.
+The class 'simple_OO_concept_Behavior' is a specialization of 'Class'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simple_OO_concept_Package' and 'simple_OO_concept_Class'. From 'simple_OO_concept_Package', the role 'simple_OO_concept_Package' has cardinality 0..*, and from 'simple_OO_concept_Class', the role 'simple_OO_concept_Class' has cardinality 0..*.
+An association connects 'simple_OO_concept_Package' and 'simple_OO_concept_Dependency'. From 'simple_OO_concept_Package', the role 'simple_OO_concept_Package2' has cardinality 0..*, and from 'simple_OO_concept_Dependency', the role 'simple_OO_concept_Dependency' has cardinality 0..*.
+An association connects 'simple_OO_concept_Dependency' and 'simple_OO_concept_NamedElement'. From 'simple_OO_concept_Dependency', the role 'simple_OO_concept_Dependency4' has cardinality 0..*, and from 'simple_OO_concept_NamedElement', the role 'simple_OO_concept_NamedElement' has cardinality 0..*.
+An association connects 'simple_OO_concept_Dependency' and 'simple_OO_concept_NamedElement'. From 'simple_OO_concept_Dependency', the role 'simple_OO_concept_Dependency6' has cardinality 0..*, and from 'simple_OO_concept_NamedElement', the role 'simple_OO_concept_NamedElement7' has cardinality 0..*.
+An association connects 'simple_OO_concept_Attribute' and 'simple_OO_concept_Class'. From 'simple_OO_concept_Attribute', the role 'simple_OO_concept_Attribute' has cardinality 0..*, and from 'simple_OO_concept_Class', the role 'simple_OO_concept_Class9' has cardinality 0..*.
+An association connects 'simple_OO_concept_Class' and 'simple_OO_concept_Operation'. From 'simple_OO_concept_Class', the role 'simple_OO_concept_Class11' has cardinality 0..*, and from 'simple_OO_concept_Operation', the role 'simple_OO_concept_Operation' has cardinality 0..*.
+An association connects 'simple_OO_concept_Class' and 'simple_OO_concept_Class'. From 'simple_OO_concept_Class', the role 'simple_OO_concept_Class14' has cardinality 0..*, and from 'simple_OO_concept_Class', the role 'simple_OO_concept_Class12' has cardinality 0..*.
+An association connects 'simple_OO_concept_Class' and 'simple_OO_concept_Attribute'. From 'simple_OO_concept_Class', the role 'simple_OO_concept_Class17' has cardinality 0..*, and from 'simple_OO_concept_Attribute', the role 'simple_OO_concept_Attribute16' has cardinality 0..*.
+An association connects 'simple_OO_concept_Operation' and 'simple_OO_concept_Parameter'. From 'simple_OO_concept_Operation', the role 'simple_OO_concept_Operation19' has cardinality 0..*, and from 'simple_OO_concept_Parameter', the role 'simple_OO_concept_Parameter' has cardinality 0..*.
+An association connects 'simple_OO_concept_Operation' and 'simple_OO_concept_Behavior'. From 'simple_OO_concept_Operation', the role 'simple_OO_concept_Operation21' has cardinality 0..*, and from 'simple_OO_concept_Behavior', the role 'simple_OO_concept_Behavior' has cardinality 0..*.
+An association connects 'simple_OO_concept_Parameter' and 'simple_OO_concept_Class'. From 'simple_OO_concept_Parameter', the role 'simple_OO_concept_Parameter23' has cardinality 0..*, and from 'simple_OO_concept_Class', the role 'simple_OO_concept_Class24' has cardinality 0..*.

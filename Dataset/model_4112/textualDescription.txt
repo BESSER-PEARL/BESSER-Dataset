@@ -1,0 +1,112 @@
+The domain model 'while_l' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'while_l_Input' represents an important domain concept.
+It has one attribute: 'vars', which is of type str.
+
+'while_l_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_If' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_ExprSym' represents an important domain concept.
+It has one attribute: 'arg1', which is of type str.
+
+'while_l_ExprTl' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_For' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_Output' represents an important domain concept.
+It has one attribute: 'vars', which is of type str.
+
+'while_l_Nop' represents an important domain concept.
+It has one attribute: 'nop', which is of type str.
+
+'while_l_ExprCons' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_ExprList' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_Function' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'while_l_While' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_Wh' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_Commands' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_ExprOr' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_Affect' represents an important domain concept.
+It has one attribute: 'vars', which is of type str.
+
+'while_l_ExprNot' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_ExprSimple' represents an important domain concept.
+It has the following attributes: 'sym', which is of type str; 'varSimple', which is of type str; 'str', which is of type str; 'nameFunction', which is of type str.
+
+'while_l_ExprEq' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_ExprAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_ExprHd' represents an important domain concept.
+It does not declare any attributes.
+
+'while_l_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'while_l_Program' and 'while_l_Wh'. From 'while_l_Program', the role 'while_l_Program' has cardinality 0..*, and from 'while_l_Wh', the role 'while_l_Wh' has cardinality 0..*.
+An association connects 'while_l_Program' and 'while_l_Function'. From 'while_l_Program', the role 'while_l_Program2' has cardinality 0..*, and from 'while_l_Function', the role 'while_l_Function' has cardinality 0..*.
+An association connects 'while_l_Function' and 'while_l_Definition'. From 'while_l_Function', the role 'while_l_Function4' has cardinality 0..*, and from 'while_l_Definition', the role 'while_l_Definition' has cardinality 0..*.
+An association connects 'while_l_Input' and 'while_l_Definition'. From 'while_l_Input', the role 'while_l_Input' has cardinality 0..*, and from 'while_l_Definition', the role 'while_l_Definition6' has cardinality 0..*.
+An association connects 'while_l_Definition' and 'while_l_Commands'. From 'while_l_Definition', the role 'while_l_Definition8' has cardinality 0..*, and from 'while_l_Commands', the role 'while_l_Commands' has cardinality 0..*.
+An association connects 'while_l_Output' and 'while_l_Definition'. From 'while_l_Output', the role 'while_l_Output' has cardinality 0..*, and from 'while_l_Definition', the role 'while_l_Definition10' has cardinality 0..*.
+An association connects 'while_l_Commands' and 'while_l_Command'. From 'while_l_Commands', the role 'while_l_Commands12' has cardinality 0..*, and from 'while_l_Command', the role 'while_l_Command' has cardinality 0..*.
+An association connects 'while_l_EObject' and 'while_l_Command'. From 'while_l_EObject', the role 'while_l_EObject' has cardinality 0..*, and from 'while_l_Command', the role 'while_l_Command14' has cardinality 0..*.
+An association connects 'while_l_If' and 'while_l_Expr'. From 'while_l_If', the role 'while_l_If' has cardinality 0..*, and from 'while_l_Expr', the role 'while_l_Expr' has cardinality 0..*.
+An association connects 'while_l_Commands' and 'while_l_If'. From 'while_l_Commands', the role 'while_l_Commands18' has cardinality 0..*, and from 'while_l_If', the role 'while_l_If17' has cardinality 0..*.
+An association connects 'while_l_Commands' and 'while_l_If'. From 'while_l_Commands', the role 'while_l_Commands21' has cardinality 0..*, and from 'while_l_If', the role 'while_l_If20' has cardinality 0..*.
+An association connects 'while_l_Affect' and 'while_l_Expr'. From 'while_l_Affect', the role 'while_l_Affect' has cardinality 0..*, and from 'while_l_Expr', the role 'while_l_Expr23' has cardinality 0..*.
+An association connects 'while_l_For' and 'while_l_Expr'. From 'while_l_For', the role 'while_l_For' has cardinality 0..*, and from 'while_l_Expr', the role 'while_l_Expr25' has cardinality 0..*.
+An association connects 'while_l_Commands' and 'while_l_For'. From 'while_l_Commands', the role 'while_l_Commands28' has cardinality 0..*, and from 'while_l_For', the role 'while_l_For27' has cardinality 0..*.
+An association connects 'while_l_Expr' and 'while_l_While'. From 'while_l_Expr', the role 'while_l_Expr30' has cardinality 0..*, and from 'while_l_While', the role 'while_l_While' has cardinality 0..*.
+An association connects 'while_l_Commands' and 'while_l_While'. From 'while_l_Commands', the role 'while_l_Commands33' has cardinality 0..*, and from 'while_l_While', the role 'while_l_While32' has cardinality 0..*.
+An association connects 'while_l_EObject' and 'while_l_Expr'. From 'while_l_EObject', the role 'while_l_EObject36' has cardinality 0..*, and from 'while_l_Expr', the role 'while_l_Expr35' has cardinality 0..*.
+An association connects 'while_l_ExprEq' and 'while_l_Expr'. From 'while_l_ExprEq', the role 'while_l_ExprEq' has cardinality 0..*, and from 'while_l_Expr', the role 'while_l_Expr38' has cardinality 0..*.
+An association connects 'while_l_ExprSimple' and 'while_l_Input'. From 'while_l_ExprSimple', the role 'while_l_ExprSimple' has cardinality 0..*, and from 'while_l_Input', the role 'while_l_Input40' has cardinality 0..*.
+An association connects 'while_l_ExprSimple' and 'while_l_ExprAnd'. From 'while_l_ExprSimple', the role 'while_l_ExprSimple42' has cardinality 0..*, and from 'while_l_ExprAnd', the role 'while_l_ExprAnd' has cardinality 0..*.
+An association connects 'while_l_Expr' and 'while_l_ExprAnd'. From 'while_l_Expr', the role 'while_l_Expr45' has cardinality 0..*, and from 'while_l_ExprAnd', the role 'while_l_ExprAnd44' has cardinality 0..*.
+An association connects 'while_l_ExprOr' and 'while_l_ExprSimple'. From 'while_l_ExprOr', the role 'while_l_ExprOr' has cardinality 0..*, and from 'while_l_ExprSimple', the role 'while_l_ExprSimple47' has cardinality 0..*.
+An association connects 'while_l_ExprOr' and 'while_l_Expr'. From 'while_l_ExprOr', the role 'while_l_ExprOr49' has cardinality 0..*, and from 'while_l_Expr', the role 'while_l_Expr50' has cardinality 0..*.
+An association connects 'while_l_Expr' and 'while_l_ExprCons'. From 'while_l_Expr', the role 'while_l_Expr52' has cardinality 0..*, and from 'while_l_ExprCons', the role 'while_l_ExprCons' has cardinality 0..*.
+An association connects 'while_l_ExprCons' and 'while_l_Expr'. From 'while_l_ExprCons', the role 'while_l_ExprCons54' has cardinality 0..*, and from 'while_l_Expr', the role 'while_l_Expr55' has cardinality 0..*.
+An association connects 'while_l_Expr' and 'while_l_ExprList'. From 'while_l_Expr', the role 'while_l_Expr57' has cardinality 0..*, and from 'while_l_ExprList', the role 'while_l_ExprList' has cardinality 0..*.
+An association connects 'while_l_Expr' and 'while_l_ExprHd'. From 'while_l_Expr', the role 'while_l_Expr59' has cardinality 0..*, and from 'while_l_ExprHd', the role 'while_l_ExprHd' has cardinality 0..*.
+An association connects 'while_l_Expr' and 'while_l_ExprTl'. From 'while_l_Expr', the role 'while_l_Expr61' has cardinality 0..*, and from 'while_l_ExprTl', the role 'while_l_ExprTl' has cardinality 0..*.
+An association connects 'while_l_Expr' and 'while_l_ExprSym'. From 'while_l_Expr', the role 'while_l_Expr63' has cardinality 0..*, and from 'while_l_ExprSym', the role 'while_l_ExprSym' has cardinality 0..*.
+An association connects 'while_l_ExprEq' and 'while_l_ExprNot'. From 'while_l_ExprEq', the role 'while_l_ExprEq65' has cardinality 0..*, and from 'while_l_ExprNot', the role 'while_l_ExprNot' has cardinality 0..*.
+An association connects 'while_l_ExprSimple' and 'while_l_ExprEq'. From 'while_l_ExprSimple', the role 'while_l_ExprSimple68' has cardinality 0..*, and from 'while_l_ExprEq', the role 'while_l_ExprEq67' has cardinality 0..*.
+An association connects 'while_l_ExprEq' and 'while_l_ExprSimple'. From 'while_l_ExprEq', the role 'while_l_ExprEq70' has cardinality 0..*, and from 'while_l_ExprSimple', the role 'while_l_ExprSimple71' has cardinality 0..*.

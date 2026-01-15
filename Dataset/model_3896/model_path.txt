@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/botacatalin/workflowEngine/my.generator.workflow/src/metamodel/workflow.ecore

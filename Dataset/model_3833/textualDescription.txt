@@ -1,0 +1,57 @@
+The domain model 'realop' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'realop_XorExp' represents an important domain concept.
+It does not declare any attributes.
+
+'realop_NotExp' represents an important domain concept.
+It does not declare any attributes.
+
+'realop_Realop' represents an important domain concept.
+It does not declare any attributes.
+
+'realop_AndExp' represents an important domain concept.
+It does not declare any attributes.
+
+'realop_IsNegative' represents an important domain concept.
+It has one attribute: 'featureName', which is of type str.
+
+'realop_OrExp' represents an important domain concept.
+It does not declare any attributes.
+
+'realop_IsPositive' represents an important domain concept.
+It has one attribute: 'featureName', which is of type str.
+
+'realop_IsRealised' represents an important domain concept.
+It has one attribute: 'featureName', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'realop_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'realop_Operator' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'realop_OrExp' is a specialization of 'Expression'.
+The class 'realop_AndExp' is a specialization of 'Expression'.
+The class 'realop_XorExp' is a specialization of 'Expression'.
+The class 'realop_NotExp' is a specialization of 'Expression'.
+The class 'realop_IsRealised' is a specialization of 'Expression'.
+The class 'realop_IsPositive' is a specialization of 'Expression'.
+The class 'realop_IsNegative' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'realop_Realop' and 'realop_Operator'. From 'realop_Realop', the role 'realop_Realop' has cardinality 0..*, and from 'realop_Operator', the role 'realop_Operator' has cardinality 0..*.
+An association connects 'realop_Operator' and 'realop_Expression'. From 'realop_Operator', the role 'realop_Operator2' has cardinality 0..*, and from 'realop_Expression', the role 'realop_Expression' has cardinality 0..*.
+An association connects 'realop_Expression' and 'realop_Operator'. From 'realop_Expression', the role 'realop_Expression5' has cardinality 0..*, and from 'realop_Operator', the role 'realop_Operator4' has cardinality 0..*.
+An association connects 'realop_OrExp' and 'realop_Expression'. From 'realop_OrExp', the role 'realop_OrExp' has cardinality 0..*, and from 'realop_Expression', the role 'realop_Expression7' has cardinality 0..*.
+An association connects 'realop_Expression' and 'realop_OrExp'. From 'realop_Expression', the role 'realop_Expression10' has cardinality 0..*, and from 'realop_OrExp', the role 'realop_OrExp9' has cardinality 0..*.
+An association connects 'realop_AndExp' and 'realop_Expression'. From 'realop_AndExp', the role 'realop_AndExp' has cardinality 0..*, and from 'realop_Expression', the role 'realop_Expression12' has cardinality 0..*.
+An association connects 'realop_AndExp' and 'realop_Expression'. From 'realop_AndExp', the role 'realop_AndExp14' has cardinality 0..*, and from 'realop_Expression', the role 'realop_Expression15' has cardinality 0..*.
+An association connects 'realop_XorExp' and 'realop_Expression'. From 'realop_XorExp', the role 'realop_XorExp' has cardinality 0..*, and from 'realop_Expression', the role 'realop_Expression17' has cardinality 0..*.
+An association connects 'realop_XorExp' and 'realop_Expression'. From 'realop_XorExp', the role 'realop_XorExp19' has cardinality 0..*, and from 'realop_Expression', the role 'realop_Expression20' has cardinality 0..*.
+An association connects 'realop_Expression' and 'realop_NotExp'. From 'realop_Expression', the role 'realop_Expression22' has cardinality 0..*, and from 'realop_NotExp', the role 'realop_NotExp' has cardinality 0..*.

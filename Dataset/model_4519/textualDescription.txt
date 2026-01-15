@@ -1,0 +1,43 @@
+The domain model 'logo' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'logo_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'logo_Left' represents an important domain concept.
+It has one attribute: 'angle', which is of type int.
+
+'logo_LogoProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'logo_ProcCall' represents an important domain concept.
+It has one attribute: 'actualArgs', which is of type int.
+
+'logo_Right' represents an important domain concept.
+It has one attribute: 'angle', which is of type int.
+
+'logo_Forward' represents an important domain concept.
+It has one attribute: 'steps', which is of type int.
+
+'logo_ProcDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'logo_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'logo_ProcDeclaration' is a specialization of 'Instruction'.
+The class 'logo_ProcCall' is a specialization of 'Instruction'.
+The class 'logo_Forward' is a specialization of 'Instruction'.
+The class 'logo_Left' is a specialization of 'Instruction'.
+The class 'logo_Right' is a specialization of 'Instruction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'logo_LogoProgram' and 'logo_Instruction'. From 'logo_LogoProgram', the role 'logo_LogoProgram' has cardinality 0..*, and from 'logo_Instruction', the role 'logo_Instruction' has cardinality 0..*.
+An association connects 'logo_ProcDeclaration' and 'logo_Parameter'. From 'logo_ProcDeclaration', the role 'logo_ProcDeclaration' has cardinality 0..*, and from 'logo_Parameter', the role 'logo_Parameter' has cardinality 0..*.
+An association connects 'logo_ProcDeclaration' and 'logo_Instruction'. From 'logo_ProcDeclaration', the role 'logo_ProcDeclaration3' has cardinality 0..*, and from 'logo_Instruction', the role 'logo_Instruction4' has cardinality 0..*.
+An association connects 'logo_ProcCall' and 'logo_ProcDeclaration'. From 'logo_ProcCall', the role 'logo_ProcCall' has cardinality 0..*, and from 'logo_ProcDeclaration', the role 'logo_ProcDeclaration6' has cardinality 0..*.

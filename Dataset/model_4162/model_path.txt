@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Buggaboo/xplatform/nl.sison.dsl.mobgen.Resource/model/generated/Resource.ecore

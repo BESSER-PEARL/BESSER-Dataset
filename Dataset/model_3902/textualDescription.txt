@@ -1,0 +1,1100 @@
+The domain model 'BPMNProfile' describes the core structural elements and their relationships within the system.
+
+The model defines 217 main class(es).
+
+'BPMNProfile_Auditing' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_GlobalManualTask' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_CatchEvent' represents an important domain concept.
+It has one attribute: 'parallelMultiple', which is of type str.
+
+'BPMNProfile_CorrelationSubscription' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ConditionalEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_BPMNRelationship' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'direction', which is of type str.
+
+'BPMNProfile_BPMNAssociation' represents an important domain concept.
+It has one attribute: 'associationDirection', which is of type str.
+
+'BPMNProfile_DataState' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_InputOutputSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ParticipantMultiplicity' represents an important domain concept.
+It has the following attributes: 'maximum', which is of type str; 'minimum', which is of type str.
+
+'BPMNProfile_Escalation' represents an important domain concept.
+It has one attribute: 'escalationCode', which is of type str.
+
+'BPMNProfile_Conversation' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_OutputSet' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Participant' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_DataOutputAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ScriptTask' represents an important domain concept.
+It has the following attributes: 'script', which is of type str; 'scriptFormat', which is of type str.
+
+'BPMNProfile_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_CorrelationKey' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ImplicitThrowEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_InclusiveGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_EndEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopCharacteristics' represents an important domain concept.
+It does not declare any attributes.
+
+'CallableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_AdHocSubProcess' represents an important domain concept.
+It has the following attributes: 'ordering', which is of type str; 'cancelRemainingInstances', which is of type str.
+
+'BPMNProfile_Gateway' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_IntermediateCatchEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_State' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_GlobalUserTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'CatchEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ItemAwareElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_BPMNActivity' represents an important domain concept.
+It has the following attributes: 'isForCompensation', which is of type str; 'startQuantity', which is of type str; 'completionQuantity', which is of type str.
+
+'BPMNProfile_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_DataObject' represents an important domain concept.
+It has one attribute: 'isCollection', which is of type str.
+
+'BPMNProfile_ComplexGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'DataAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_CallBehaviorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Task' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_SendTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'BPMNProfile_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Error' represents an important domain concept.
+It has one attribute: 'errorCode', which is of type str.
+
+'BPMNProfile_OpaqueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ParallelGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ErrorEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_BPMNInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ChangeEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Resource' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_BPMNSignal' represents an important domain concept.
+It does not declare any attributes.
+
+'ItemDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ResourceAssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_GlobalScriptTask' represents an important domain concept.
+It has the following attributes: 'scriptFormat', which is of type str; 'script', which is of type str.
+
+'BPMNProfile_FlowElementsContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Operation' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Documentation' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'textFormat', which is of type str.
+
+'NonExclusiveGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_FlowFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Lane' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ObjectFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ResourceParameterBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_BusinessRuleTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'BPMNEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_InputSet' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_CategoryValue' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_SendObjectAction' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Category' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Dependency' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_TimerEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Transaction' represents an important domain concept.
+It has one attribute: 'method', which is of type str.
+
+'BPMNProfile_CallableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_InputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Rendering' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_DataAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_BPMNExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ResourceRole' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_CorrelationProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_CorrelationPropertyBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_OpaqueBehavior' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ExtensionAttributeValue' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_EscalationEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ExtensionDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'HumanPerformer' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ExtensionAttributeDefinition' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'isReference', which is of type str.
+
+'BPMNProfile_CallEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'ThrowEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ParticipantAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'Task' represents an important domain concept.
+It does not declare any attributes.
+
+'EventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_DataInput' represents an important domain concept.
+It has one attribute: 'isCollection', which is of type str.
+
+'BPMNProfile_CompensateEventDefinition' represents an important domain concept.
+It has one attribute: 'waitForCompletion', which is of type str.
+
+'BPMNCollaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_InformationFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_LoopNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ItemDefinition' represents an important domain concept.
+It has the following attributes: 'isCollection', which is of type str; 'itemKind', which is of type str.
+
+'BPMNProfile_IntermediateThrowEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_InterruptibleActivityRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_NonExclusiveGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_BPMNProcess' represents an important domain concept.
+It has the following attributes: 'isExecutable', which is of type str; 'processType', which is of type str; 'isClosed', which is of type str.
+
+'BPMNProfile_EventBasedGateway' represents an important domain concept.
+It has the following attributes: 'instantiate', which is of type str; 'eventGatewayType', which is of type str.
+
+'BPMNProfile_MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_BPMNArtifact' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ConversationLink' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_EventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Collaboration' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_AcceptEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ParameterSet' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_TerminateEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_BaseElement' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'BPMNProfile_ActivityParameterNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_DataObjectReference' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_JoinNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ConversationNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_InteractionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_PartnerRole' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_CollaborationUse' represents an important domain concept.
+It does not declare any attributes.
+
+'Performer' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ItemAwareElement' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_CancelEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_DataInputAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_StandardLoopCharacteristics' represents an important domain concept.
+It has the following attributes: 'loopMaximum', which is of type str; 'testBefore', which is of type str.
+
+'BPMNProfile_ThrowEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_BPMNExtension' represents an important domain concept.
+It has one attribute: 'mustUnderstand', which is of type str.
+
+'BPMNProfile_BoundaryEvent' represents an important domain concept.
+It has one attribute: 'cancelActivity', which is of type str.
+
+'BPMNProfile_CallOperationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_SignalEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_DataStoreReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceRole' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ReceiveTask' represents an important domain concept.
+It has the following attributes: 'instantiate', which is of type str; 'implementation', which is of type str.
+
+'BPMNProfile_DataStoreNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_UserTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'BPMNProfile_MessageFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_CallActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_SubConversation' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_SubProcess' represents an important domain concept.
+It has one attribute: 'triggeredByEvent', which is of type str.
+
+'BPMNProfile_MultiInstanceLoopCharacteristics' represents an important domain concept.
+It has the following attributes: 'isSequential', which is of type str; 'behavior', which is of type str.
+
+'BPMNProfile_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_BPMNCollaboration' represents an important domain concept.
+It has one attribute: 'isClosed', which is of type str.
+
+'BPMNProfile_RootElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_BPMNOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_LoopCharacteristics' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_MessageEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_SequenceFlow' represents an important domain concept.
+It has one attribute: 'isImmediate', which is of type str.
+
+'BPMNProfile_StartEvent' represents an important domain concept.
+It has one attribute: 'isInterrupting', which is of type str.
+
+'BPMNProfile_OutputPin' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Stereotype' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ResourceParameter' represents an important domain concept.
+It has one attribute: 'isRequired', which is of type str.
+
+'BPMNProfile_Performer' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_LinkEventDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNActivity' represents an important domain concept.
+It does not declare any attributes.
+
+'RootElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_CallConversation' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_BPMNEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Definitions' represents an important domain concept.
+It has the following attributes: 'exporter', which is of type str; 'exporterVersion', which is of type str; 'targetNamespace', which is of type str; 'typeLanguage', which is of type str; 'expressionLanguage', which is of type str.
+
+'BPMNProfile_ComplexBehaviorDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_BPMNProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Image' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_OpaqueExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Gateway' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_TextAnnotation' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'textFormat', which is of type str.
+
+'BPMNProfile_GlobalConversation' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_DataStore' represents an important domain concept.
+It has the following attributes: 'isUnlimited', which is of type str; 'capacity', which is of type str.
+
+'BPMNProfile_PotentialOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_FlowElement' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Import' represents an important domain concept.
+It has the following attributes: 'namespace', which is of type str; 'importType', which is of type str; 'location', which is of type str.
+
+'BPMNProfile_InputOutputBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_BPMNMessage' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_MessageFlowAssociation' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_FormalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ManualTask' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ConversationNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_PartnerEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'InteractionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'SubProcess' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_FlowNode' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ExclusiveGateway' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_CorrelationPropertyRetrievalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_GlobalTask' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_PackageImport' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_DataOutput' represents an important domain concept.
+It has one attribute: 'isCollection', which is of type str.
+
+'FlowElementsContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_GlobalBusinessRuleTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'GlobalTask' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_HumanPerformer' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ServiceTask' represents an important domain concept.
+It has one attribute: 'implementation', which is of type str.
+
+'BPMNProfile_ExpansionRegion' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ActivityGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Monitoring' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_ActivityPartition' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_LaneSet' represents an important domain concept.
+It does not declare any attributes.
+
+'BPMNProfile_StructuredActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MultiInstanceBehavior' defines the following possible values: 'one', 'all', 'complex', 'none'.
+The enumeration 'AssociationDirection' defines the following possible values: 'one', 'none', 'both'.
+The enumeration 'GatewayDirection' defines the following possible values: 'mixed', 'unspecified', 'diverging', 'converging'.
+The enumeration 'EventBasedGatewayType' defines the following possible values: 'exclusive', 'parallel'.
+The enumeration 'ItemKind' defines the following possible values: 'information', 'physical'.
+The enumeration 'AdHocOrdering' defines the following possible values: 'parallel', 'sequential'.
+The enumeration 'RelationshipDirection' defines the following possible values: 'none', 'both', 'backward', 'forward'.
+The enumeration 'ProcessType' defines the following possible values: 'none', 'private', 'public'.
+
+The model also captures inheritance relationships between classes.
+The class 'BPMNProfile_InclusiveGateway' is a specialization of 'NonExclusiveGateway'.
+The class 'BPMNProfile_NonExclusiveGateway' is a specialization of 'Gateway'.
+The class 'BPMNProfile_Gateway' is a specialization of 'FlowNode'.
+The class 'BPMNProfile_FlowNode' is a specialization of 'FlowElement'.
+The class 'BPMNProfile_FlowElement' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_Documentation' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_BPMNAssociation' is a specialization of 'BPMNArtifact'.
+The class 'BPMNProfile_BPMNArtifact' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_Auditing' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_Monitoring' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_CategoryValue' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_FlowElementsContainer' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_LaneSet' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_Lane' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_SequenceFlow' is a specialization of 'FlowElement'.
+The class 'BPMNProfile_BPMNExpression' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_EventBasedGateway' is a specialization of 'Gateway'.
+The class 'BPMNProfile_ParallelGateway' is a specialization of 'NonExclusiveGateway'.
+The class 'BPMNProfile_ComplexGateway' is a specialization of 'NonExclusiveGateway'.
+The class 'BPMNProfile_ExclusiveGateway' is a specialization of 'Gateway'.
+The class 'BPMNProfile_RootElement' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_Definitions' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_BPMNRelationship' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_BPMNProcess' is a specialization of 'CallableElement'.
+The class 'BPMNProfile_BPMNProcess' is a specialization of 'FlowElementsContainer'.
+The class 'BPMNProfile_CallableElement' is a specialization of 'RootElement'.
+The class 'BPMNProfile_InputOutputSpecification' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_DataInput' is a specialization of 'ItemAwareElement'.
+The class 'BPMNProfile_ItemAwareElement' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_DataState' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_ItemDefinition' is a specialization of 'RootElement'.
+The class 'BPMNProfile_InputSet' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_DataOutput' is a specialization of 'ItemAwareElement'.
+The class 'BPMNProfile_OutputSet' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_BPMNInterface' is a specialization of 'RootElement'.
+The class 'BPMNProfile_BPMNOperation' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_BPMNMessage' is a specialization of 'ItemDefinition'.
+The class 'BPMNProfile_Error' is a specialization of 'ItemDefinition'.
+The class 'BPMNProfile_InputOutputBinding' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_BPMNCollaboration' is a specialization of 'RootElement'.
+The class 'BPMNProfile_ParticipantAssociation' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_Participant' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_ConversationLink' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_ParticipantMultiplicity' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_PartnerEntity' is a specialization of 'RootElement'.
+The class 'BPMNProfile_PartnerRole' is a specialization of 'RootElement'.
+The class 'BPMNProfile_MessageFlowAssociation' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_MessageFlow' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_ConversationNode' is a specialization of 'InteractionNode'.
+The class 'BPMNProfile_CorrelationKey' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_CorrelationProperty' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_CorrelationPropertyRetrievalExpression' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_FormalExpression' is a specialization of 'BPMNExpression'.
+The class 'BPMNProfile_CorrelationSubscription' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_CorrelationPropertyBinding' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_BPMNProperty' is a specialization of 'ItemAwareElement'.
+The class 'BPMNProfile_ResourceRole' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_ResourceAssignmentExpression' is a specialization of 'BPMNExpression'.
+The class 'BPMNProfile_Resource' is a specialization of 'ItemDefinition'.
+The class 'BPMNProfile_ResourceParameter' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_ResourceParameterBinding' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_GlobalScriptTask' is a specialization of 'GlobalTask'.
+The class 'BPMNProfile_GlobalTask' is a specialization of 'CallableElement'.
+The class 'BPMNProfile_GlobalBusinessRuleTask' is a specialization of 'GlobalTask'.
+The class 'BPMNProfile_CompensateEventDefinition' is a specialization of 'EventDefinition'.
+The class 'BPMNProfile_EventDefinition' is a specialization of 'RootElement'.
+The class 'BPMNProfile_BPMNActivity' is a specialization of 'FlowNode'.
+The class 'BPMNProfile_BoundaryEvent' is a specialization of 'CatchEvent'.
+The class 'BPMNProfile_CatchEvent' is a specialization of 'BPMNEvent'.
+The class 'BPMNProfile_BPMNEvent' is a specialization of 'FlowNode'.
+The class 'BPMNProfile_DataOutputAssociation' is a specialization of 'DataAssociation'.
+The class 'BPMNProfile_DataAssociation' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_Assignment' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_DataInputAssociation' is a specialization of 'DataAssociation'.
+The class 'BPMNProfile_LoopCharacteristics' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_EscalationEventDefinition' is a specialization of 'EventDefinition'.
+The class 'BPMNProfile_Escalation' is a specialization of 'ItemDefinition'.
+The class 'BPMNProfile_TimerEventDefinition' is a specialization of 'EventDefinition'.
+The class 'BPMNProfile_SignalEventDefinition' is a specialization of 'EventDefinition'.
+The class 'BPMNProfile_BPMNSignal' is a specialization of 'ItemDefinition'.
+The class 'BPMNProfile_EndEvent' is a specialization of 'ThrowEvent'.
+The class 'BPMNProfile_ThrowEvent' is a specialization of 'BPMNEvent'.
+The class 'BPMNProfile_MessageEventDefinition' is a specialization of 'EventDefinition'.
+The class 'BPMNProfile_StartEvent' is a specialization of 'CatchEvent'.
+The class 'BPMNProfile_ConditionalEventDefinition' is a specialization of 'EventDefinition'.
+The class 'BPMNProfile_LinkEventDefinition' is a specialization of 'EventDefinition'.
+The class 'BPMNProfile_ErrorEventDefinition' is a specialization of 'EventDefinition'.
+The class 'BPMNProfile_IntermediateCatchEvent' is a specialization of 'CatchEvent'.
+The class 'BPMNProfile_IntermediateThrowEvent' is a specialization of 'ThrowEvent'.
+The class 'BPMNProfile_TerminateEventDefinition' is a specialization of 'EventDefinition'.
+The class 'BPMNProfile_ImplicitThrowEvent' is a specialization of 'ThrowEvent'.
+The class 'BPMNProfile_CancelEventDefinition' is a specialization of 'EventDefinition'.
+The class 'BPMNProfile_TextAnnotation' is a specialization of 'BPMNArtifact'.
+The class 'BPMNProfile_Category' is a specialization of 'RootElement'.
+The class 'BPMNProfile_Group' is a specialization of 'BPMNArtifact'.
+The class 'BPMNProfile_DataObjectReference' is a specialization of 'FlowElement'.
+The class 'BPMNProfile_DataObjectReference' is a specialization of 'ItemAwareElement'.
+The class 'BPMNProfile_DataObject' is a specialization of 'FlowElement'.
+The class 'BPMNProfile_DataObject' is a specialization of 'ItemAwareElement'.
+The class 'BPMNProfile_DataStore' is a specialization of 'RootElement'.
+The class 'BPMNProfile_DataStoreReference' is a specialization of 'FlowElement'.
+The class 'BPMNProfile_DataStoreReference' is a specialization of 'ItemAwareElement'.
+The class 'BPMNProfile_UserTask' is a specialization of 'Task'.
+The class 'BPMNProfile_Task' is a specialization of 'BPMNActivity'.
+The class 'BPMNProfile_Rendering' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_HumanPerformer' is a specialization of 'Performer'.
+The class 'BPMNProfile_Performer' is a specialization of 'ResourceRole'.
+The class 'BPMNProfile_GlobalUserTask' is a specialization of 'GlobalTask'.
+The class 'BPMNProfile_GlobalManualTask' is a specialization of 'GlobalTask'.
+The class 'BPMNProfile_ManualTask' is a specialization of 'Task'.
+The class 'BPMNProfile_PotentialOwner' is a specialization of 'HumanPerformer'.
+The class 'BPMNProfile_SubConversation' is a specialization of 'ConversationNode'.
+The class 'BPMNProfile_GlobalConversation' is a specialization of 'BPMNCollaboration'.
+The class 'BPMNProfile_CallConversation' is a specialization of 'ConversationNode'.
+The class 'BPMNProfile_Conversation' is a specialization of 'ConversationNode'.
+The class 'BPMNProfile_SubProcess' is a specialization of 'BPMNActivity'.
+The class 'BPMNProfile_SubProcess' is a specialization of 'FlowElementsContainer'.
+The class 'BPMNProfile_CallActivity' is a specialization of 'BPMNActivity'.
+The class 'BPMNProfile_BusinessRuleTask' is a specialization of 'Task'.
+The class 'BPMNProfile_ComplexBehaviorDefinition' is a specialization of 'BaseElement'.
+The class 'BPMNProfile_AdHocSubProcess' is a specialization of 'SubProcess'.
+The class 'BPMNProfile_ScriptTask' is a specialization of 'Task'.
+The class 'BPMNProfile_SendTask' is a specialization of 'Task'.
+The class 'BPMNProfile_Transaction' is a specialization of 'SubProcess'.
+The class 'BPMNProfile_StandardLoopCharacteristics' is a specialization of 'LoopCharacteristics'.
+The class 'BPMNProfile_ReceiveTask' is a specialization of 'Task'.
+The class 'BPMNProfile_ServiceTask' is a specialization of 'Task'.
+The class 'BPMNProfile_MultiInstanceLoopCharacteristics' is a specialization of 'LoopCharacteristics'.
+
+Relationships between classes are modeled using associations.
+An association connects 'BPMNProfile_SequenceFlow' and 'BPMNProfile_InclusiveGateway'. From 'BPMNProfile_SequenceFlow', the role 'BPMNProfile_SequenceFlow' has cardinality 0..*, and from 'BPMNProfile_InclusiveGateway', the role 'BPMNProfile_InclusiveGateway' has cardinality 0..*.
+An association connects 'BPMNProfile_JoinNode' and 'BPMNProfile_NonExclusiveGateway'. From 'BPMNProfile_JoinNode', the role 'BPMNProfile_JoinNode' has cardinality 0..*, and from 'BPMNProfile_NonExclusiveGateway', the role 'BPMNProfile_NonExclusiveGateway' has cardinality 0..*.
+An association connects 'BPMNProfile_ForkNode' and 'BPMNProfile_NonExclusiveGateway'. From 'BPMNProfile_ForkNode', the role 'BPMNProfile_ForkNode' has cardinality 0..*, and from 'BPMNProfile_NonExclusiveGateway', the role 'BPMNProfile_NonExclusiveGateway3' has cardinality 0..*.
+An association connects 'BPMNProfile_Gateway' and 'BPMNProfile_ControlNode'. From 'BPMNProfile_Gateway', the role 'BPMNProfile_Gateway' has cardinality 0..*, and from 'BPMNProfile_ControlNode', the role 'BPMNProfile_ControlNode' has cardinality 0..*.
+An association connects 'BPMNProfile_Gateway' and 'BPMNProfile_ActivityGroup'. From 'BPMNProfile_Gateway', the role 'BPMNProfile_Gateway6' has cardinality 0..*, and from 'BPMNProfile_ActivityGroup', the role 'BPMNProfile_ActivityGroup' has cardinality 0..*.
+An association connects 'BPMNProfile_FlowNode' and 'BPMNProfile_ActivityNode'. From 'BPMNProfile_FlowNode', the role 'BPMNProfile_FlowNode' has cardinality 0..*, and from 'BPMNProfile_ActivityNode', the role 'BPMNProfile_ActivityNode' has cardinality 0..*.
+An association connects 'BPMNProfile_Auditing' and 'BPMNProfile_FlowElement'. From 'BPMNProfile_Auditing', the role 'BPMNProfile_Auditing' has cardinality 0..*, and from 'BPMNProfile_FlowElement', the role 'BPMNProfile_FlowElement' has cardinality 0..*.
+An association connects 'BPMNProfile_FlowElement' and 'BPMNProfile_Monitoring'. From 'BPMNProfile_FlowElement', the role 'BPMNProfile_FlowElement10' has cardinality 0..*, and from 'BPMNProfile_Monitoring', the role 'BPMNProfile_Monitoring' has cardinality 0..*.
+An association connects 'BPMNProfile_FlowElement' and 'BPMNProfile_CategoryValue'. From 'BPMNProfile_FlowElement', the role 'categorizedFlowElements' has cardinality 0..*, and from 'BPMNProfile_CategoryValue', the role 'CategoryValue' has cardinality 0..*.
+An association connects 'BPMNProfile_FlowElement' and 'BPMNProfile_FlowElementsContainer'. From 'BPMNProfile_FlowElement', the role 'flowElements' has cardinality 0..*, and from 'BPMNProfile_FlowElementsContainer', the role 'FlowElementsContainer' has cardinality 0..*.
+An association connects 'BPMNProfile_ExtensionAttributeValue' and 'BPMNProfile_BaseElement'. From 'BPMNProfile_ExtensionAttributeValue', the role 'BPMNProfile_ExtensionAttributeValue' has cardinality 0..*, and from 'BPMNProfile_BaseElement', the role 'BPMNProfile_BaseElement' has cardinality 0..*.
+An association connects 'BPMNProfile_Element' and 'BPMNProfile_BaseElement'. From 'BPMNProfile_Element', the role 'BPMNProfile_Element' has cardinality 0..*, and from 'BPMNProfile_BaseElement', the role 'BPMNProfile_BaseElement15' has cardinality 0..*.
+An association connects 'BPMNProfile_Documentation' and 'BPMNProfile_BaseElement'. From 'BPMNProfile_Documentation', the role 'BPMNProfile_Documentation' has cardinality 0..*, and from 'BPMNProfile_BaseElement', the role 'BPMNProfile_BaseElement17' has cardinality 0..*.
+An association connects 'BPMNProfile_BaseElement' and 'BPMNProfile_ExtensionDefinition'. From 'BPMNProfile_BaseElement', the role 'BPMNProfile_BaseElement19' has cardinality 0..*, and from 'BPMNProfile_ExtensionDefinition', the role 'BPMNProfile_ExtensionDefinition' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNAssociation' and 'BPMNProfile_BaseElement'. From 'BPMNProfile_BPMNAssociation', the role 'BPMNAssociation' has cardinality 0..*, and from 'BPMNProfile_BaseElement', the role 'sourceRef' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNAssociation' and 'BPMNProfile_BaseElement'. From 'BPMNProfile_BPMNAssociation', the role 'BPMNAssociation22' has cardinality 0..*, and from 'BPMNProfile_BaseElement', the role 'targetRef' has cardinality 0..*.
+An association connects 'BPMNProfile_Slot' and 'BPMNProfile_ExtensionAttributeValue'. From 'BPMNProfile_Slot', the role 'BPMNProfile_Slot' has cardinality 0..*, and from 'BPMNProfile_ExtensionAttributeValue', the role 'BPMNProfile_ExtensionAttributeValue24' has cardinality 0..*.
+An association connects 'BPMNProfile_Element' and 'BPMNProfile_ExtensionAttributeValue'. From 'BPMNProfile_Element', the role 'BPMNProfile_Element27' has cardinality 0..*, and from 'BPMNProfile_ExtensionAttributeValue', the role 'BPMNProfile_ExtensionAttributeValue26' has cardinality 0..*.
+An association connects 'BPMNProfile_ExtensionAttributeDefinition' and 'BPMNProfile_ExtensionAttributeValue'. From 'BPMNProfile_ExtensionAttributeDefinition', the role 'BPMNProfile_ExtensionAttributeDefinition' has cardinality 0..*, and from 'BPMNProfile_ExtensionAttributeValue', the role 'BPMNProfile_ExtensionAttributeValue29' has cardinality 0..*.
+An association connects 'BPMNProfile_ExtensionAttributeDefinition' and 'BPMNProfile_Property'. From 'BPMNProfile_ExtensionAttributeDefinition', the role 'BPMNProfile_ExtensionAttributeDefinition31' has cardinality 0..*, and from 'BPMNProfile_Property', the role 'BPMNProfile_Property' has cardinality 0..*.
+An association connects 'BPMNProfile_Comment' and 'BPMNProfile_Documentation'. From 'BPMNProfile_Comment', the role 'BPMNProfile_Comment' has cardinality 0..*, and from 'BPMNProfile_Documentation', the role 'BPMNProfile_Documentation33' has cardinality 0..*.
+An association connects 'BPMNProfile_Stereotype' and 'BPMNProfile_ExtensionDefinition'. From 'BPMNProfile_Stereotype', the role 'BPMNProfile_Stereotype' has cardinality 0..*, and from 'BPMNProfile_ExtensionDefinition', the role 'BPMNProfile_ExtensionDefinition35' has cardinality 0..*.
+An association connects 'BPMNProfile_ExtensionAttributeDefinition' and 'BPMNProfile_ExtensionDefinition'. From 'BPMNProfile_ExtensionAttributeDefinition', the role 'BPMNProfile_ExtensionAttributeDefinition38' has cardinality 0..*, and from 'BPMNProfile_ExtensionDefinition', the role 'BPMNProfile_ExtensionDefinition37' has cardinality 0..*.
+An association connects 'BPMNProfile_Dependency' and 'BPMNProfile_BPMNAssociation'. From 'BPMNProfile_Dependency', the role 'BPMNProfile_Dependency' has cardinality 0..*, and from 'BPMNProfile_BPMNAssociation', the role 'BPMNProfile_BPMNAssociation' has cardinality 0..*.
+An association connects 'BPMNProfile_BaseElement' and 'BPMNProfile_BPMNAssociation'. From 'BPMNProfile_BaseElement', the role 'BaseElement' has cardinality 0..*, and from 'BPMNProfile_BPMNAssociation', the role 'incoming' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNAssociation' and 'BPMNProfile_BaseElement'. From 'BPMNProfile_BPMNAssociation', the role 'outgoing' has cardinality 0..*, and from 'BPMNProfile_BaseElement', the role 'BaseElement42' has cardinality 0..*.
+An association connects 'BPMNProfile_Class' and 'BPMNProfile_Auditing'. From 'BPMNProfile_Class', the role 'BPMNProfile_Class' has cardinality 0..*, and from 'BPMNProfile_Auditing', the role 'BPMNProfile_Auditing44' has cardinality 0..*.
+An association connects 'BPMNProfile_Class' and 'BPMNProfile_Monitoring'. From 'BPMNProfile_Class', the role 'BPMNProfile_Class47' has cardinality 0..*, and from 'BPMNProfile_Monitoring', the role 'BPMNProfile_Monitoring46' has cardinality 0..*.
+An association connects 'BPMNProfile_CategoryValue' and 'BPMNProfile_EnumerationLiteral'. From 'BPMNProfile_CategoryValue', the role 'BPMNProfile_CategoryValue' has cardinality 0..*, and from 'BPMNProfile_EnumerationLiteral', the role 'BPMNProfile_EnumerationLiteral' has cardinality 0..*.
+An association connects 'BPMNProfile_CategoryValue' and 'BPMNProfile_FlowElement'. From 'BPMNProfile_CategoryValue', the role '_categoryValueRef' has cardinality 0..*, and from 'BPMNProfile_FlowElement', the role 'FlowElement' has cardinality 0..*.
+An association connects 'BPMNProfile_LaneSet' and 'BPMNProfile_FlowElementsContainer'. From 'BPMNProfile_LaneSet', the role 'LaneSet' has cardinality 0..*, and from 'BPMNProfile_FlowElementsContainer', the role 'flowElementsContainer' has cardinality 0..*.
+An association connects 'BPMNProfile_FlowElementsContainer' and 'BPMNProfile_FlowElement'. From 'BPMNProfile_FlowElementsContainer', the role 'container' has cardinality 0..*, and from 'BPMNProfile_FlowElement', the role 'FlowElement52' has cardinality 0..*.
+An association connects 'BPMNProfile_ActivityPartition' and 'BPMNProfile_LaneSet'. From 'BPMNProfile_ActivityPartition', the role 'BPMNProfile_ActivityPartition' has cardinality 0..*, and from 'BPMNProfile_LaneSet', the role 'BPMNProfile_LaneSet' has cardinality 0..*.
+An association connects 'BPMNProfile_Lane' and 'BPMNProfile_LaneSet'. From 'BPMNProfile_Lane', the role 'Lane' has cardinality 0..*, and from 'BPMNProfile_LaneSet', the role 'laneSet' has cardinality 0..*.
+An association connects 'BPMNProfile_LaneSet' and 'BPMNProfile_Lane'. From 'BPMNProfile_LaneSet', the role 'BPMNProfile_LaneSet56' has cardinality 0..*, and from 'BPMNProfile_Lane', the role 'BPMNProfile_Lane' has cardinality 0..*.
+An association connects 'BPMNProfile_LaneSet' and 'BPMNProfile_FlowElementsContainer'. From 'BPMNProfile_LaneSet', the role 'laneSets' has cardinality 0..*, and from 'BPMNProfile_FlowElementsContainer', the role 'FlowElementsContainer58' has cardinality 0..*.
+An association connects 'BPMNProfile_Lane' and 'BPMNProfile_ActivityPartition'. From 'BPMNProfile_Lane', the role 'BPMNProfile_Lane60' has cardinality 0..*, and from 'BPMNProfile_ActivityPartition', the role 'BPMNProfile_ActivityPartition61' has cardinality 0..*.
+An association connects 'BPMNProfile_Element' and 'BPMNProfile_Lane'. From 'BPMNProfile_Element', the role 'BPMNProfile_Element64' has cardinality 0..*, and from 'BPMNProfile_Lane', the role 'BPMNProfile_Lane63' has cardinality 0..*.
+An association connects 'BPMNProfile_Lane' and 'BPMNProfile_FlowNode'. From 'BPMNProfile_Lane', the role 'BPMNProfile_Lane66' has cardinality 0..*, and from 'BPMNProfile_FlowNode', the role 'BPMNProfile_FlowNode67' has cardinality 0..*.
+An association connects 'BPMNProfile_Lane' and 'BPMNProfile_BaseElement'. From 'BPMNProfile_Lane', the role 'BPMNProfile_Lane69' has cardinality 0..*, and from 'BPMNProfile_BaseElement', the role 'BPMNProfile_BaseElement70' has cardinality 0..*.
+An association connects 'BPMNProfile_LaneSet' and 'BPMNProfile_Lane'. From 'BPMNProfile_LaneSet', the role 'BPMNProfile_LaneSet73' has cardinality 0..*, and from 'BPMNProfile_Lane', the role 'BPMNProfile_Lane72' has cardinality 0..*.
+An association connects 'BPMNProfile_Lane' and 'BPMNProfile_LaneSet'. From 'BPMNProfile_Lane', the role 'lanes' has cardinality 0..*, and from 'BPMNProfile_LaneSet', the role 'LaneSet75' has cardinality 0..*.
+An association connects 'BPMNProfile_ControlFlow' and 'BPMNProfile_SequenceFlow'. From 'BPMNProfile_ControlFlow', the role 'BPMNProfile_ControlFlow' has cardinality 0..*, and from 'BPMNProfile_SequenceFlow', the role 'BPMNProfile_SequenceFlow77' has cardinality 0..*.
+An association connects 'BPMNProfile_SequenceFlow' and 'BPMNProfile_BPMNExpression'. From 'BPMNProfile_SequenceFlow', the role 'BPMNProfile_SequenceFlow79' has cardinality 0..*, and from 'BPMNProfile_BPMNExpression', the role 'BPMNProfile_BPMNExpression' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNExpression' and 'BPMNProfile_OpaqueExpression'. From 'BPMNProfile_BPMNExpression', the role 'BPMNProfile_BPMNExpression81' has cardinality 0..*, and from 'BPMNProfile_OpaqueExpression', the role 'BPMNProfile_OpaqueExpression' has cardinality 0..*.
+An association connects 'BPMNProfile_EventBasedGateway' and 'BPMNProfile_ForkNode'. From 'BPMNProfile_EventBasedGateway', the role 'BPMNProfile_EventBasedGateway' has cardinality 0..*, and from 'BPMNProfile_ForkNode', the role 'BPMNProfile_ForkNode83' has cardinality 0..*.
+An association connects 'BPMNProfile_StructuredActivityNode' and 'BPMNProfile_EventBasedGateway'. From 'BPMNProfile_StructuredActivityNode', the role 'BPMNProfile_StructuredActivityNode' has cardinality 0..*, and from 'BPMNProfile_EventBasedGateway', the role 'BPMNProfile_EventBasedGateway85' has cardinality 0..*.
+An association connects 'BPMNProfile_InterruptibleActivityRegion' and 'BPMNProfile_EventBasedGateway'. From 'BPMNProfile_InterruptibleActivityRegion', the role 'BPMNProfile_InterruptibleActivityRegion' has cardinality 0..*, and from 'BPMNProfile_EventBasedGateway', the role 'BPMNProfile_EventBasedGateway87' has cardinality 0..*.
+An association connects 'BPMNProfile_SequenceFlow' and 'BPMNProfile_ComplexGateway'. From 'BPMNProfile_SequenceFlow', the role 'BPMNProfile_SequenceFlow89' has cardinality 0..*, and from 'BPMNProfile_ComplexGateway', the role 'BPMNProfile_ComplexGateway' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNExpression' and 'BPMNProfile_ComplexGateway'. From 'BPMNProfile_BPMNExpression', the role 'BPMNProfile_BPMNExpression92' has cardinality 0..*, and from 'BPMNProfile_ComplexGateway', the role 'BPMNProfile_ComplexGateway91' has cardinality 0..*.
+An association connects 'BPMNProfile_ExclusiveGateway' and 'BPMNProfile_DecisionNode'. From 'BPMNProfile_ExclusiveGateway', the role 'BPMNProfile_ExclusiveGateway' has cardinality 0..*, and from 'BPMNProfile_DecisionNode', the role 'BPMNProfile_DecisionNode' has cardinality 0..*.
+An association connects 'BPMNProfile_ExclusiveGateway' and 'BPMNProfile_MergeNode'. From 'BPMNProfile_ExclusiveGateway', the role 'BPMNProfile_ExclusiveGateway95' has cardinality 0..*, and from 'BPMNProfile_MergeNode', the role 'BPMNProfile_MergeNode' has cardinality 0..*.
+An association connects 'BPMNProfile_ExclusiveGateway' and 'BPMNProfile_SequenceFlow'. From 'BPMNProfile_ExclusiveGateway', the role 'BPMNProfile_ExclusiveGateway97' has cardinality 0..*, and from 'BPMNProfile_SequenceFlow', the role 'BPMNProfile_SequenceFlow98' has cardinality 0..*.
+An association connects 'BPMNProfile_RootElement' and 'BPMNProfile_PackageableElement'. From 'BPMNProfile_RootElement', the role 'BPMNProfile_RootElement' has cardinality 0..*, and from 'BPMNProfile_PackageableElement', the role 'BPMNProfile_PackageableElement' has cardinality 0..*.
+An association connects 'BPMNProfile_Definitions' and 'BPMNProfile_RootElement'. From 'BPMNProfile_Definitions', the role 'Definitions' has cardinality 0..*, and from 'BPMNProfile_RootElement', the role 'rootElements' has cardinality 0..*.
+An association connects 'BPMNProfile_Definitions' and 'BPMNProfile_Package'. From 'BPMNProfile_Definitions', the role 'BPMNProfile_Definitions' has cardinality 0..*, and from 'BPMNProfile_Package', the role 'BPMNProfile_Package' has cardinality 0..*.
+An association connects 'BPMNProfile_Definitions' and 'BPMNProfile_BPMNExtension'. From 'BPMNProfile_Definitions', the role 'BPMNProfile_Definitions103' has cardinality 0..*, and from 'BPMNProfile_BPMNExtension', the role 'BPMNProfile_BPMNExtension' has cardinality 0..*.
+An association connects 'BPMNProfile_Definitions' and 'BPMNProfile_Import'. From 'BPMNProfile_Definitions', the role 'BPMNProfile_Definitions105' has cardinality 0..*, and from 'BPMNProfile_Import', the role 'BPMNProfile_Import' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNRelationship' and 'BPMNProfile_Definitions'. From 'BPMNProfile_BPMNRelationship', the role 'BPMNProfile_BPMNRelationship' has cardinality 0..*, and from 'BPMNProfile_Definitions', the role 'BPMNProfile_Definitions107' has cardinality 0..*.
+An association connects 'BPMNProfile_Definitions' and 'BPMNProfile_RootElement'. From 'BPMNProfile_Definitions', the role 'definition' has cardinality 0..*, and from 'BPMNProfile_RootElement', the role 'RootElement' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNExtension' and 'BPMNProfile_Stereotype'. From 'BPMNProfile_BPMNExtension', the role 'BPMNProfile_BPMNExtension110' has cardinality 0..*, and from 'BPMNProfile_Stereotype', the role 'BPMNProfile_Stereotype111' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNExtension' and 'BPMNProfile_ExtensionDefinition'. From 'BPMNProfile_BPMNExtension', the role 'BPMNProfile_BPMNExtension113' has cardinality 0..*, and from 'BPMNProfile_ExtensionDefinition', the role 'BPMNProfile_ExtensionDefinition114' has cardinality 0..*.
+An association connects 'BPMNProfile_PackageImport' and 'BPMNProfile_Import'. From 'BPMNProfile_PackageImport', the role 'BPMNProfile_PackageImport' has cardinality 0..*, and from 'BPMNProfile_Import', the role 'BPMNProfile_Import116' has cardinality 0..*.
+An association connects 'BPMNProfile_Definitions' and 'BPMNProfile_Import'. From 'BPMNProfile_Definitions', the role 'BPMNProfile_Definitions119' has cardinality 0..*, and from 'BPMNProfile_Import', the role 'BPMNProfile_Import118' has cardinality 0..*.
+An association connects 'BPMNProfile_Constraint' and 'BPMNProfile_BPMNRelationship'. From 'BPMNProfile_Constraint', the role 'BPMNProfile_Constraint' has cardinality 0..*, and from 'BPMNProfile_BPMNRelationship', the role 'BPMNProfile_BPMNRelationship121' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNRelationship' and 'BPMNProfile_Element'. From 'BPMNProfile_BPMNRelationship', the role 'BPMNProfile_BPMNRelationship123' has cardinality 0..*, and from 'BPMNProfile_Element', the role 'BPMNProfile_Element124' has cardinality 0..*.
+An association connects 'BPMNProfile_Element' and 'BPMNProfile_BPMNRelationship'. From 'BPMNProfile_Element', the role 'BPMNProfile_Element127' has cardinality 0..*, and from 'BPMNProfile_BPMNRelationship', the role 'BPMNProfile_BPMNRelationship126' has cardinality 0..*.
+An association connects 'BPMNProfile_Definitions' and 'BPMNProfile_BPMNRelationship'. From 'BPMNProfile_Definitions', the role 'BPMNProfile_Definitions130' has cardinality 0..*, and from 'BPMNProfile_BPMNRelationship', the role 'BPMNProfile_BPMNRelationship129' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNProcess' and 'BPMNProfile_Auditing'. From 'BPMNProfile_BPMNProcess', the role 'BPMNProfile_BPMNProcess' has cardinality 0..*, and from 'BPMNProfile_Auditing', the role 'BPMNProfile_Auditing132' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNCollaboration' and 'BPMNProfile_BPMNProcess'. From 'BPMNProfile_BPMNCollaboration', the role 'BPMNProfile_BPMNCollaboration' has cardinality 0..*, and from 'BPMNProfile_BPMNProcess', the role 'BPMNProfile_BPMNProcess134' has cardinality 0..*.
+An association connects 'BPMNProfile_Activity' and 'BPMNProfile_BPMNProcess'. From 'BPMNProfile_Activity', the role 'BPMNProfile_Activity' has cardinality 0..*, and from 'BPMNProfile_BPMNProcess', the role 'BPMNProfile_BPMNProcess136' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNProcess' and 'BPMNProfile_CorrelationSubscription'. From 'BPMNProfile_BPMNProcess', the role 'BPMNProfile_BPMNProcess138' has cardinality 0..*, and from 'BPMNProfile_CorrelationSubscription', the role 'BPMNProfile_CorrelationSubscription' has cardinality 0..*.
+An association connects 'BPMNProfile_Monitoring' and 'BPMNProfile_BPMNProcess'. From 'BPMNProfile_Monitoring', the role 'BPMNProfile_Monitoring141' has cardinality 0..*, and from 'BPMNProfile_BPMNProcess', the role 'BPMNProfile_BPMNProcess140' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNProcess' and 'BPMNProfile_BPMNProcess'. From 'BPMNProfile_BPMNProcess', the role 'BPMNProfile_BPMNProcess144' has cardinality 0..*, and from 'BPMNProfile_BPMNProcess', the role 'BPMNProfile_BPMNProcess142' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNProperty' and 'BPMNProfile_BPMNProcess'. From 'BPMNProfile_BPMNProperty', the role 'BPMNProfile_BPMNProperty' has cardinality 0..*, and from 'BPMNProfile_BPMNProcess', the role 'BPMNProfile_BPMNProcess146' has cardinality 0..*.
+An association connects 'BPMNProfile_ResourceRole' and 'BPMNProfile_BPMNProcess'. From 'BPMNProfile_ResourceRole', the role 'ResourceRole' has cardinality 0..*, and from 'BPMNProfile_BPMNProcess', the role 'process' has cardinality 0..*.
+An association connects 'BPMNProfile_CallableElement' and 'BPMNProfile_Behavior'. From 'BPMNProfile_CallableElement', the role 'BPMNProfile_CallableElement' has cardinality 0..*, and from 'BPMNProfile_Behavior', the role 'BPMNProfile_Behavior' has cardinality 0..*.
+An association connects 'BPMNProfile_InputOutputSpecification' and 'BPMNProfile_CallableElement'. From 'BPMNProfile_InputOutputSpecification', the role 'BPMNProfile_InputOutputSpecification' has cardinality 0..*, and from 'BPMNProfile_CallableElement', the role 'BPMNProfile_CallableElement150' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNInterface' and 'BPMNProfile_CallableElement'. From 'BPMNProfile_BPMNInterface', the role 'BPMNProfile_BPMNInterface' has cardinality 0..*, and from 'BPMNProfile_CallableElement', the role 'BPMNProfile_CallableElement152' has cardinality 0..*.
+An association connects 'BPMNProfile_CallableElement' and 'BPMNProfile_InputOutputBinding'. From 'BPMNProfile_CallableElement', the role 'BPMNProfile_CallableElement154' has cardinality 0..*, and from 'BPMNProfile_InputOutputBinding', the role 'BPMNProfile_InputOutputBinding' has cardinality 0..*.
+An association connects 'BPMNProfile_InputOutputSpecification' and 'BPMNProfile_Behavior'. From 'BPMNProfile_InputOutputSpecification', the role 'BPMNProfile_InputOutputSpecification156' has cardinality 0..*, and from 'BPMNProfile_Behavior', the role 'BPMNProfile_Behavior157' has cardinality 0..*.
+An association connects 'BPMNProfile_InputOutputSpecification' and 'BPMNProfile_Action'. From 'BPMNProfile_InputOutputSpecification', the role 'BPMNProfile_InputOutputSpecification159' has cardinality 0..*, and from 'BPMNProfile_Action', the role 'BPMNProfile_Action' has cardinality 0..*.
+An association connects 'BPMNProfile_DataInput' and 'BPMNProfile_InputOutputSpecification'. From 'BPMNProfile_DataInput', the role 'BPMNProfile_DataInput' has cardinality 0..*, and from 'BPMNProfile_InputOutputSpecification', the role 'BPMNProfile_InputOutputSpecification161' has cardinality 0..*.
+An association connects 'BPMNProfile_InputOutputSpecification' and 'BPMNProfile_DataOutput'. From 'BPMNProfile_InputOutputSpecification', the role 'BPMNProfile_InputOutputSpecification163' has cardinality 0..*, and from 'BPMNProfile_DataOutput', the role 'BPMNProfile_DataOutput' has cardinality 0..*.
+An association connects 'BPMNProfile_InputSet' and 'BPMNProfile_InputOutputSpecification'. From 'BPMNProfile_InputSet', the role 'BPMNProfile_InputSet' has cardinality 0..*, and from 'BPMNProfile_InputOutputSpecification', the role 'BPMNProfile_InputOutputSpecification165' has cardinality 0..*.
+An association connects 'BPMNProfile_InputOutputSpecification' and 'BPMNProfile_OutputSet'. From 'BPMNProfile_InputOutputSpecification', the role 'BPMNProfile_InputOutputSpecification167' has cardinality 0..*, and from 'BPMNProfile_OutputSet', the role 'BPMNProfile_OutputSet' has cardinality 0..*.
+An association connects 'BPMNProfile_InputPin' and 'BPMNProfile_DataInput'. From 'BPMNProfile_InputPin', the role 'BPMNProfile_InputPin' has cardinality 0..*, and from 'BPMNProfile_DataInput', the role 'BPMNProfile_DataInput169' has cardinality 0..*.
+An association connects 'BPMNProfile_DataInput' and 'BPMNProfile_Parameter'. From 'BPMNProfile_DataInput', the role 'BPMNProfile_DataInput171' has cardinality 0..*, and from 'BPMNProfile_Parameter', the role 'BPMNProfile_Parameter' has cardinality 0..*.
+An association connects 'BPMNProfile_ActivityParameterNode' and 'BPMNProfile_DataInput'. From 'BPMNProfile_ActivityParameterNode', the role 'BPMNProfile_ActivityParameterNode' has cardinality 0..*, and from 'BPMNProfile_DataInput', the role 'BPMNProfile_DataInput173' has cardinality 0..*.
+An association connects 'BPMNProfile_InputSet' and 'BPMNProfile_DataInput'. From 'BPMNProfile_InputSet', the role 'InputSet' has cardinality 0..*, and from 'BPMNProfile_DataInput', the role 'dataInputRefs' has cardinality 0..*.
+An association connects 'BPMNProfile_DataInput' and 'BPMNProfile_InputSet'. From 'BPMNProfile_DataInput', the role 'optionalInputRefs' has cardinality 0..*, and from 'BPMNProfile_InputSet', the role 'InputSet176' has cardinality 0..*.
+An association connects 'BPMNProfile_InputSet' and 'BPMNProfile_DataInput'. From 'BPMNProfile_InputSet', the role 'InputSet178' has cardinality 0..*, and from 'BPMNProfile_DataInput', the role 'whileExecutingInputRefs' has cardinality 0..*.
+An association connects 'BPMNProfile_DataState' and 'BPMNProfile_ItemAwareElement'. From 'BPMNProfile_DataState', the role 'BPMNProfile_DataState' has cardinality 0..*, and from 'BPMNProfile_ItemAwareElement', the role 'BPMNProfile_ItemAwareElement' has cardinality 0..*.
+An association connects 'BPMNProfile_TypedElement' and 'BPMNProfile_ItemAwareElement'. From 'BPMNProfile_TypedElement', the role 'BPMNProfile_TypedElement' has cardinality 0..*, and from 'BPMNProfile_ItemAwareElement', the role 'BPMNProfile_ItemAwareElement181' has cardinality 0..*.
+An association connects 'BPMNProfile_ItemAwareElement' and 'BPMNProfile_ItemDefinition'. From 'BPMNProfile_ItemAwareElement', the role 'BPMNProfile_ItemAwareElement183' has cardinality 0..*, and from 'BPMNProfile_ItemDefinition', the role 'BPMNProfile_ItemDefinition' has cardinality 0..*.
+An association connects 'BPMNProfile_State' and 'BPMNProfile_DataState'. From 'BPMNProfile_State', the role 'BPMNProfile_State' has cardinality 0..*, and from 'BPMNProfile_DataState', the role 'BPMNProfile_DataState185' has cardinality 0..*.
+An association connects 'BPMNProfile_ItemDefinition' and 'BPMNProfile_Class'. From 'BPMNProfile_ItemDefinition', the role 'BPMNProfile_ItemDefinition187' has cardinality 0..*, and from 'BPMNProfile_Class', the role 'BPMNProfile_Class188' has cardinality 0..*.
+An association connects 'BPMNProfile_ItemDefinition' and 'BPMNProfile_Element'. From 'BPMNProfile_ItemDefinition', the role 'BPMNProfile_ItemDefinition190' has cardinality 0..*, and from 'BPMNProfile_Element', the role 'BPMNProfile_Element191' has cardinality 0..*.
+An association connects 'BPMNProfile_ItemDefinition' and 'BPMNProfile_Import'. From 'BPMNProfile_ItemDefinition', the role 'BPMNProfile_ItemDefinition193' has cardinality 0..*, and from 'BPMNProfile_Import', the role 'BPMNProfile_Import194' has cardinality 0..*.
+An association connects 'BPMNProfile_InputSet' and 'BPMNProfile_ParameterSet'. From 'BPMNProfile_InputSet', the role 'BPMNProfile_InputSet196' has cardinality 0..*, and from 'BPMNProfile_ParameterSet', the role 'BPMNProfile_ParameterSet' has cardinality 0..*.
+An association connects 'BPMNProfile_DataInput' and 'BPMNProfile_InputSet'. From 'BPMNProfile_DataInput', the role 'DataInput' has cardinality 0..*, and from 'BPMNProfile_InputSet', the role 'inputSetWithOptional' has cardinality 0..*.
+An association connects 'BPMNProfile_DataInput' and 'BPMNProfile_InputSet'. From 'BPMNProfile_DataInput', the role 'DataInput199' has cardinality 0..*, and from 'BPMNProfile_InputSet', the role 'inputSetWithWhileExecuting' has cardinality 0..*.
+An association connects 'BPMNProfile_DataInput' and 'BPMNProfile_InputSet'. From 'BPMNProfile_DataInput', the role 'DataInput201' has cardinality 0..*, and from 'BPMNProfile_InputSet', the role 'inputSetRefs' has cardinality 0..*.
+An association connects 'BPMNProfile_DataOutput' and 'BPMNProfile_OutputPin'. From 'BPMNProfile_DataOutput', the role 'BPMNProfile_DataOutput203' has cardinality 0..*, and from 'BPMNProfile_OutputPin', the role 'BPMNProfile_OutputPin' has cardinality 0..*.
+An association connects 'BPMNProfile_DataOutput' and 'BPMNProfile_Parameter'. From 'BPMNProfile_DataOutput', the role 'BPMNProfile_DataOutput205' has cardinality 0..*, and from 'BPMNProfile_Parameter', the role 'BPMNProfile_Parameter206' has cardinality 0..*.
+An association connects 'BPMNProfile_DataOutput' and 'BPMNProfile_ActivityParameterNode'. From 'BPMNProfile_DataOutput', the role 'BPMNProfile_DataOutput208' has cardinality 0..*, and from 'BPMNProfile_ActivityParameterNode', the role 'BPMNProfile_ActivityParameterNode209' has cardinality 0..*.
+An association connects 'BPMNProfile_DataOutput' and 'BPMNProfile_OutputSet'. From 'BPMNProfile_DataOutput', the role 'dataOutputRefs' has cardinality 0..*, and from 'BPMNProfile_OutputSet', the role 'OutputSet' has cardinality 0..*.
+An association connects 'BPMNProfile_OutputSet' and 'BPMNProfile_DataOutput'. From 'BPMNProfile_OutputSet', the role 'BPMNProfile_OutputSet213' has cardinality 0..*, and from 'BPMNProfile_DataOutput', the role 'BPMNProfile_DataOutput212' has cardinality 0..*.
+An association connects 'BPMNProfile_DataOutput' and 'BPMNProfile_OutputSet'. From 'BPMNProfile_DataOutput', the role 'BPMNProfile_DataOutput215' has cardinality 0..*, and from 'BPMNProfile_OutputSet', the role 'BPMNProfile_OutputSet216' has cardinality 0..*.
+An association connects 'BPMNProfile_OutputSet' and 'BPMNProfile_ParameterSet'. From 'BPMNProfile_OutputSet', the role 'BPMNProfile_OutputSet218' has cardinality 0..*, and from 'BPMNProfile_ParameterSet', the role 'BPMNProfile_ParameterSet219' has cardinality 0..*.
+An association connects 'BPMNProfile_OutputSet' and 'BPMNProfile_DataOutput'. From 'BPMNProfile_OutputSet', the role 'BPMNProfile_OutputSet221' has cardinality 0..*, and from 'BPMNProfile_DataOutput', the role 'BPMNProfile_DataOutput222' has cardinality 0..*.
+An association connects 'BPMNProfile_DataOutput' and 'BPMNProfile_OutputSet'. From 'BPMNProfile_DataOutput', the role 'BPMNProfile_DataOutput225' has cardinality 0..*, and from 'BPMNProfile_OutputSet', the role 'BPMNProfile_OutputSet224' has cardinality 0..*.
+An association connects 'BPMNProfile_DataOutput' and 'BPMNProfile_OutputSet'. From 'BPMNProfile_DataOutput', the role 'DataOutput' has cardinality 0..*, and from 'BPMNProfile_OutputSet', the role 'outputSetRefs' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNInterface' and 'BPMNProfile_Interface'. From 'BPMNProfile_BPMNInterface', the role 'BPMNProfile_BPMNInterface228' has cardinality 0..*, and from 'BPMNProfile_Interface', the role 'BPMNProfile_Interface' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNInterface' and 'BPMNProfile_Element'. From 'BPMNProfile_BPMNInterface', the role 'BPMNProfile_BPMNInterface230' has cardinality 0..*, and from 'BPMNProfile_Element', the role 'BPMNProfile_Element231' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNInterface' and 'BPMNProfile_BPMNOperation'. From 'BPMNProfile_BPMNInterface', the role 'BPMNProfile_BPMNInterface233' has cardinality 0..*, and from 'BPMNProfile_BPMNOperation', the role 'BPMNProfile_BPMNOperation' has cardinality 0..*.
+An association connects 'BPMNProfile_CallableElement' and 'BPMNProfile_BPMNInterface'. From 'BPMNProfile_CallableElement', the role 'BPMNProfile_CallableElement236' has cardinality 0..*, and from 'BPMNProfile_BPMNInterface', the role 'BPMNProfile_BPMNInterface235' has cardinality 0..*.
+An association connects 'BPMNProfile_Operation' and 'BPMNProfile_BPMNOperation'. From 'BPMNProfile_Operation', the role 'BPMNProfile_Operation' has cardinality 0..*, and from 'BPMNProfile_BPMNOperation', the role 'BPMNProfile_BPMNOperation238' has cardinality 0..*.
+An association connects 'BPMNProfile_Element' and 'BPMNProfile_BPMNOperation'. From 'BPMNProfile_Element', the role 'BPMNProfile_Element241' has cardinality 0..*, and from 'BPMNProfile_BPMNOperation', the role 'BPMNProfile_BPMNOperation240' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNOperation' and 'BPMNProfile_BPMNMessage'. From 'BPMNProfile_BPMNOperation', the role 'BPMNProfile_BPMNOperation243' has cardinality 0..*, and from 'BPMNProfile_BPMNMessage', the role 'BPMNProfile_BPMNMessage' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNOperation' and 'BPMNProfile_BPMNMessage'. From 'BPMNProfile_BPMNOperation', the role 'BPMNProfile_BPMNOperation245' has cardinality 0..*, and from 'BPMNProfile_BPMNMessage', the role 'BPMNProfile_BPMNMessage246' has cardinality 0..*.
+An association connects 'BPMNProfile_Error' and 'BPMNProfile_BPMNOperation'. From 'BPMNProfile_Error', the role 'BPMNProfile_Error' has cardinality 0..*, and from 'BPMNProfile_BPMNOperation', the role 'BPMNProfile_BPMNOperation248' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNMessage' and 'BPMNProfile_ItemDefinition'. From 'BPMNProfile_BPMNMessage', the role 'BPMNProfile_BPMNMessage250' has cardinality 0..*, and from 'BPMNProfile_ItemDefinition', the role 'BPMNProfile_ItemDefinition251' has cardinality 0..*.
+An association connects 'BPMNProfile_InputSet' and 'BPMNProfile_InputOutputBinding'. From 'BPMNProfile_InputSet', the role 'BPMNProfile_InputSet254' has cardinality 0..*, and from 'BPMNProfile_InputOutputBinding', the role 'BPMNProfile_InputOutputBinding253' has cardinality 0..*.
+An association connects 'BPMNProfile_OutputSet' and 'BPMNProfile_InputOutputBinding'. From 'BPMNProfile_OutputSet', the role 'BPMNProfile_OutputSet257' has cardinality 0..*, and from 'BPMNProfile_InputOutputBinding', the role 'BPMNProfile_InputOutputBinding256' has cardinality 0..*.
+An association connects 'BPMNProfile_InputOutputBinding' and 'BPMNProfile_BPMNOperation'. From 'BPMNProfile_InputOutputBinding', the role 'BPMNProfile_InputOutputBinding259' has cardinality 0..*, and from 'BPMNProfile_BPMNOperation', the role 'BPMNProfile_BPMNOperation260' has cardinality 0..*.
+An association connects 'BPMNProfile_InputOutputBinding' and 'BPMNProfile_Dependency'. From 'BPMNProfile_InputOutputBinding', the role 'BPMNProfile_InputOutputBinding262' has cardinality 0..*, and from 'BPMNProfile_Dependency', the role 'BPMNProfile_Dependency263' has cardinality 0..*.
+An association connects 'BPMNProfile_ParticipantAssociation' and 'BPMNProfile_BPMNCollaboration'. From 'BPMNProfile_ParticipantAssociation', the role 'BPMNProfile_ParticipantAssociation' has cardinality 0..*, and from 'BPMNProfile_BPMNCollaboration', the role 'BPMNProfile_BPMNCollaboration265' has cardinality 0..*.
+An association connects 'BPMNProfile_ConversationLink' and 'BPMNProfile_BPMNCollaboration'. From 'BPMNProfile_ConversationLink', the role 'ConversationLink' has cardinality 0..*, and from 'BPMNProfile_BPMNCollaboration', the role 'collaboration' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNCollaboration' and 'BPMNProfile_MessageFlowAssociation'. From 'BPMNProfile_BPMNCollaboration', the role 'BPMNProfile_BPMNCollaboration268' has cardinality 0..*, and from 'BPMNProfile_MessageFlowAssociation', the role 'BPMNProfile_MessageFlowAssociation' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNCollaboration' and 'BPMNProfile_MessageFlow'. From 'BPMNProfile_BPMNCollaboration', the role 'BPMNProfile_BPMNCollaboration270' has cardinality 0..*, and from 'BPMNProfile_MessageFlow', the role 'BPMNProfile_MessageFlow' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNCollaboration' and 'BPMNProfile_Collaboration'. From 'BPMNProfile_BPMNCollaboration', the role 'BPMNProfile_BPMNCollaboration272' has cardinality 0..*, and from 'BPMNProfile_Collaboration', the role 'BPMNProfile_Collaboration' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNCollaboration' and 'BPMNProfile_ConversationNode'. From 'BPMNProfile_BPMNCollaboration', the role 'BPMNProfile_BPMNCollaboration274' has cardinality 0..*, and from 'BPMNProfile_ConversationNode', the role 'BPMNProfile_ConversationNode' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNCollaboration' and 'BPMNProfile_CorrelationKey'. From 'BPMNProfile_BPMNCollaboration', the role 'BPMNProfile_BPMNCollaboration276' has cardinality 0..*, and from 'BPMNProfile_CorrelationKey', the role 'BPMNProfile_CorrelationKey' has cardinality 0..*.
+An association connects 'BPMNProfile_Participant' and 'BPMNProfile_BPMNCollaboration'. From 'BPMNProfile_Participant', the role 'BPMNProfile_Participant' has cardinality 0..*, and from 'BPMNProfile_BPMNCollaboration', the role 'BPMNProfile_BPMNCollaboration278' has cardinality 0..*.
+An association connects 'BPMNProfile_Dependency' and 'BPMNProfile_ParticipantAssociation'. From 'BPMNProfile_Dependency', the role 'BPMNProfile_Dependency281' has cardinality 0..*, and from 'BPMNProfile_ParticipantAssociation', the role 'BPMNProfile_ParticipantAssociation280' has cardinality 0..*.
+An association connects 'BPMNProfile_ParticipantAssociation' and 'BPMNProfile_Participant'. From 'BPMNProfile_ParticipantAssociation', the role 'BPMNProfile_ParticipantAssociation283' has cardinality 0..*, and from 'BPMNProfile_Participant', the role 'BPMNProfile_Participant284' has cardinality 0..*.
+An association connects 'BPMNProfile_ParticipantAssociation' and 'BPMNProfile_Participant'. From 'BPMNProfile_ParticipantAssociation', the role 'BPMNProfile_ParticipantAssociation286' has cardinality 0..*, and from 'BPMNProfile_Participant', the role 'BPMNProfile_Participant287' has cardinality 0..*.
+An association connects 'BPMNProfile_Participant' and 'BPMNProfile_Property'. From 'BPMNProfile_Participant', the role 'BPMNProfile_Participant289' has cardinality 0..*, and from 'BPMNProfile_Property', the role 'BPMNProfile_Property290' has cardinality 0..*.
+An association connects 'BPMNProfile_Participant' and 'BPMNProfile_BPMNProcess'. From 'BPMNProfile_Participant', the role 'BPMNProfile_Participant292' has cardinality 0..*, and from 'BPMNProfile_BPMNProcess', the role 'BPMNProfile_BPMNProcess293' has cardinality 0..*.
+An association connects 'BPMNProfile_Participant' and 'BPMNProfile_ParticipantMultiplicity'. From 'BPMNProfile_Participant', the role 'BPMNProfile_Participant295' has cardinality 0..*, and from 'BPMNProfile_ParticipantMultiplicity', the role 'BPMNProfile_ParticipantMultiplicity' has cardinality 0..*.
+An association connects 'BPMNProfile_Participant' and 'BPMNProfile_PartnerEntity'. From 'BPMNProfile_Participant', the role 'participantRef' has cardinality 0..*, and from 'BPMNProfile_PartnerEntity', the role 'PartnerEntity' has cardinality 0..*.
+An association connects 'BPMNProfile_Participant' and 'BPMNProfile_PartnerRole'. From 'BPMNProfile_Participant', the role 'participantRef298' has cardinality 0..*, and from 'BPMNProfile_PartnerRole', the role 'PartnerRole' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNInterface' and 'BPMNProfile_Participant'. From 'BPMNProfile_BPMNInterface', the role 'BPMNProfile_BPMNInterface301' has cardinality 0..*, and from 'BPMNProfile_Participant', the role 'BPMNProfile_Participant300' has cardinality 0..*.
+An association connects 'BPMNProfile_Element' and 'BPMNProfile_InteractionNode'. From 'BPMNProfile_Element', the role 'BPMNProfile_Element303' has cardinality 0..*, and from 'BPMNProfile_InteractionNode', the role 'BPMNProfile_InteractionNode' has cardinality 0..*.
+An association connects 'BPMNProfile_InteractionNode' and 'BPMNProfile_ConversationLink'. From 'BPMNProfile_InteractionNode', the role 'sourceRef305' has cardinality 0..*, and from 'BPMNProfile_ConversationLink', the role 'ConversationLink306' has cardinality 0..*.
+An association connects 'BPMNProfile_ConversationLink' and 'BPMNProfile_InteractionNode'. From 'BPMNProfile_ConversationLink', the role 'ConversationLink309' has cardinality 0..*, and from 'BPMNProfile_InteractionNode', the role 'targetRef308' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNCollaboration' and 'BPMNProfile_ConversationLink'. From 'BPMNProfile_BPMNCollaboration', the role 'BPMNCollaboration' has cardinality 0..*, and from 'BPMNProfile_ConversationLink', the role 'conversationLinks' has cardinality 0..*.
+An association connects 'BPMNProfile_Dependency' and 'BPMNProfile_ConversationLink'. From 'BPMNProfile_Dependency', the role 'BPMNProfile_Dependency312' has cardinality 0..*, and from 'BPMNProfile_ConversationLink', the role 'BPMNProfile_ConversationLink' has cardinality 0..*.
+An association connects 'BPMNProfile_InteractionNode' and 'BPMNProfile_ConversationLink'. From 'BPMNProfile_InteractionNode', the role 'InteractionNode' has cardinality 0..*, and from 'BPMNProfile_ConversationLink', the role 'incomingConversationLinks' has cardinality 0..*.
+An association connects 'BPMNProfile_InteractionNode' and 'BPMNProfile_ConversationLink'. From 'BPMNProfile_InteractionNode', the role 'InteractionNode315' has cardinality 0..*, and from 'BPMNProfile_ConversationLink', the role 'outgoingConversationLinks' has cardinality 0..*.
+An association connects 'BPMNProfile_ParticipantMultiplicity' and 'BPMNProfile_MultiplicityElement'. From 'BPMNProfile_ParticipantMultiplicity', the role 'BPMNProfile_ParticipantMultiplicity317' has cardinality 0..*, and from 'BPMNProfile_MultiplicityElement', the role 'BPMNProfile_MultiplicityElement' has cardinality 0..*.
+An association connects 'BPMNProfile_PartnerEntity' and 'BPMNProfile_InstanceSpecification'. From 'BPMNProfile_PartnerEntity', the role 'BPMNProfile_PartnerEntity' has cardinality 0..*, and from 'BPMNProfile_InstanceSpecification', the role 'BPMNProfile_InstanceSpecification' has cardinality 0..*.
+An association connects 'BPMNProfile_Participant' and 'BPMNProfile_PartnerEntity'. From 'BPMNProfile_Participant', the role 'Participant' has cardinality 0..*, and from 'BPMNProfile_PartnerEntity', the role 'partnerEntityRef' has cardinality 0..*.
+An association connects 'BPMNProfile_Class' and 'BPMNProfile_PartnerRole'. From 'BPMNProfile_Class', the role 'BPMNProfile_Class321' has cardinality 0..*, and from 'BPMNProfile_PartnerRole', the role 'BPMNProfile_PartnerRole' has cardinality 0..*.
+An association connects 'BPMNProfile_PartnerRole' and 'BPMNProfile_Participant'. From 'BPMNProfile_PartnerRole', the role 'partnerRoleRef' has cardinality 0..*, and from 'BPMNProfile_Participant', the role 'Participant323' has cardinality 0..*.
+An association connects 'BPMNProfile_Dependency' and 'BPMNProfile_MessageFlowAssociation'. From 'BPMNProfile_Dependency', the role 'BPMNProfile_Dependency326' has cardinality 0..*, and from 'BPMNProfile_MessageFlowAssociation', the role 'BPMNProfile_MessageFlowAssociation325' has cardinality 0..*.
+An association connects 'BPMNProfile_MessageFlow' and 'BPMNProfile_MessageFlowAssociation'. From 'BPMNProfile_MessageFlow', the role 'BPMNProfile_MessageFlow329' has cardinality 0..*, and from 'BPMNProfile_MessageFlowAssociation', the role 'BPMNProfile_MessageFlowAssociation328' has cardinality 0..*.
+An association connects 'BPMNProfile_MessageFlowAssociation' and 'BPMNProfile_MessageFlow'. From 'BPMNProfile_MessageFlowAssociation', the role 'BPMNProfile_MessageFlowAssociation331' has cardinality 0..*, and from 'BPMNProfile_MessageFlow', the role 'BPMNProfile_MessageFlow332' has cardinality 0..*.
+An association connects 'BPMNProfile_InformationFlow' and 'BPMNProfile_MessageFlow'. From 'BPMNProfile_InformationFlow', the role 'BPMNProfile_InformationFlow' has cardinality 0..*, and from 'BPMNProfile_MessageFlow', the role 'BPMNProfile_MessageFlow334' has cardinality 0..*.
+An association connects 'BPMNProfile_InteractionNode' and 'BPMNProfile_MessageFlow'. From 'BPMNProfile_InteractionNode', the role 'BPMNProfile_InteractionNode337' has cardinality 0..*, and from 'BPMNProfile_MessageFlow', the role 'BPMNProfile_MessageFlow336' has cardinality 0..*.
+An association connects 'BPMNProfile_MessageFlow' and 'BPMNProfile_InteractionNode'. From 'BPMNProfile_MessageFlow', the role 'BPMNProfile_MessageFlow339' has cardinality 0..*, and from 'BPMNProfile_InteractionNode', the role 'BPMNProfile_InteractionNode340' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNMessage' and 'BPMNProfile_MessageFlow'. From 'BPMNProfile_BPMNMessage', the role 'BPMNProfile_BPMNMessage343' has cardinality 0..*, and from 'BPMNProfile_MessageFlow', the role 'BPMNProfile_MessageFlow342' has cardinality 0..*.
+An association connects 'BPMNProfile_ConversationNode' and 'BPMNProfile_InformationFlow'. From 'BPMNProfile_ConversationNode', the role 'BPMNProfile_ConversationNode345' has cardinality 0..*, and from 'BPMNProfile_InformationFlow', the role 'BPMNProfile_InformationFlow346' has cardinality 0..*.
+An association connects 'BPMNProfile_ConversationNode' and 'BPMNProfile_MessageFlow'. From 'BPMNProfile_ConversationNode', the role 'BPMNProfile_ConversationNode348' has cardinality 0..*, and from 'BPMNProfile_MessageFlow', the role 'BPMNProfile_MessageFlow349' has cardinality 0..*.
+An association connects 'BPMNProfile_CorrelationKey' and 'BPMNProfile_ConversationNode'. From 'BPMNProfile_CorrelationKey', the role 'BPMNProfile_CorrelationKey352' has cardinality 0..*, and from 'BPMNProfile_ConversationNode', the role 'BPMNProfile_ConversationNode351' has cardinality 0..*.
+An association connects 'BPMNProfile_ConversationNode' and 'BPMNProfile_Participant'. From 'BPMNProfile_ConversationNode', the role 'BPMNProfile_ConversationNode354' has cardinality 0..*, and from 'BPMNProfile_Participant', the role 'BPMNProfile_Participant355' has cardinality 0..*.
+An association connects 'BPMNProfile_CorrelationKey' and 'BPMNProfile_Class'. From 'BPMNProfile_CorrelationKey', the role 'BPMNProfile_CorrelationKey357' has cardinality 0..*, and from 'BPMNProfile_Class', the role 'BPMNProfile_Class358' has cardinality 0..*.
+An association connects 'BPMNProfile_CorrelationProperty' and 'BPMNProfile_CorrelationKey'. From 'BPMNProfile_CorrelationProperty', the role 'BPMNProfile_CorrelationProperty' has cardinality 0..*, and from 'BPMNProfile_CorrelationKey', the role 'BPMNProfile_CorrelationKey360' has cardinality 0..*.
+An association connects 'BPMNProfile_Property' and 'BPMNProfile_CorrelationProperty'. From 'BPMNProfile_Property', the role 'BPMNProfile_Property363' has cardinality 0..*, and from 'BPMNProfile_CorrelationProperty', the role 'BPMNProfile_CorrelationProperty362' has cardinality 0..*.
+An association connects 'BPMNProfile_CorrelationProperty' and 'BPMNProfile_ItemDefinition'. From 'BPMNProfile_CorrelationProperty', the role 'BPMNProfile_CorrelationProperty365' has cardinality 0..*, and from 'BPMNProfile_ItemDefinition', the role 'BPMNProfile_ItemDefinition366' has cardinality 0..*.
+An association connects 'BPMNProfile_CorrelationProperty' and 'BPMNProfile_CorrelationPropertyRetrievalExpression'. From 'BPMNProfile_CorrelationProperty', the role 'BPMNProfile_CorrelationProperty368' has cardinality 0..*, and from 'BPMNProfile_CorrelationPropertyRetrievalExpression', the role 'BPMNProfile_CorrelationPropertyRetrievalExpression' has cardinality 0..*.
+An association connects 'BPMNProfile_Dependency' and 'BPMNProfile_CorrelationPropertyRetrievalExpression'. From 'BPMNProfile_Dependency', the role 'BPMNProfile_Dependency371' has cardinality 0..*, and from 'BPMNProfile_CorrelationPropertyRetrievalExpression', the role 'BPMNProfile_CorrelationPropertyRetrievalExpression370' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNMessage' and 'BPMNProfile_CorrelationPropertyRetrievalExpression'. From 'BPMNProfile_BPMNMessage', the role 'BPMNProfile_BPMNMessage374' has cardinality 0..*, and from 'BPMNProfile_CorrelationPropertyRetrievalExpression', the role 'BPMNProfile_CorrelationPropertyRetrievalExpression373' has cardinality 0..*.
+An association connects 'BPMNProfile_CorrelationPropertyRetrievalExpression' and 'BPMNProfile_FormalExpression'. From 'BPMNProfile_CorrelationPropertyRetrievalExpression', the role 'BPMNProfile_CorrelationPropertyRetrievalExpression376' has cardinality 0..*, and from 'BPMNProfile_FormalExpression', the role 'BPMNProfile_FormalExpression' has cardinality 0..*.
+An association connects 'BPMNProfile_FormalExpression' and 'BPMNProfile_ItemDefinition'. From 'BPMNProfile_FormalExpression', the role 'BPMNProfile_FormalExpression378' has cardinality 0..*, and from 'BPMNProfile_ItemDefinition', the role 'BPMNProfile_ItemDefinition379' has cardinality 0..*.
+An association connects 'BPMNProfile_CorrelationSubscription' and 'BPMNProfile_Class'. From 'BPMNProfile_CorrelationSubscription', the role 'BPMNProfile_CorrelationSubscription381' has cardinality 0..*, and from 'BPMNProfile_Class', the role 'BPMNProfile_Class382' has cardinality 0..*.
+An association connects 'BPMNProfile_CorrelationKey' and 'BPMNProfile_CorrelationSubscription'. From 'BPMNProfile_CorrelationKey', the role 'BPMNProfile_CorrelationKey385' has cardinality 0..*, and from 'BPMNProfile_CorrelationSubscription', the role 'BPMNProfile_CorrelationSubscription384' has cardinality 0..*.
+An association connects 'BPMNProfile_CorrelationPropertyBinding' and 'BPMNProfile_CorrelationSubscription'. From 'BPMNProfile_CorrelationPropertyBinding', the role 'BPMNProfile_CorrelationPropertyBinding' has cardinality 0..*, and from 'BPMNProfile_CorrelationSubscription', the role 'BPMNProfile_CorrelationSubscription387' has cardinality 0..*.
+An association connects 'BPMNProfile_Property' and 'BPMNProfile_CorrelationPropertyBinding'. From 'BPMNProfile_Property', the role 'BPMNProfile_Property390' has cardinality 0..*, and from 'BPMNProfile_CorrelationPropertyBinding', the role 'BPMNProfile_CorrelationPropertyBinding389' has cardinality 0..*.
+An association connects 'BPMNProfile_FormalExpression' and 'BPMNProfile_CorrelationPropertyBinding'. From 'BPMNProfile_FormalExpression', the role 'BPMNProfile_FormalExpression393' has cardinality 0..*, and from 'BPMNProfile_CorrelationPropertyBinding', the role 'BPMNProfile_CorrelationPropertyBinding392' has cardinality 0..*.
+An association connects 'BPMNProfile_CorrelationProperty' and 'BPMNProfile_CorrelationPropertyBinding'. From 'BPMNProfile_CorrelationProperty', the role 'BPMNProfile_CorrelationProperty396' has cardinality 0..*, and from 'BPMNProfile_CorrelationPropertyBinding', the role 'BPMNProfile_CorrelationPropertyBinding395' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNProperty' and 'BPMNProfile_DataStoreNode'. From 'BPMNProfile_BPMNProperty', the role 'BPMNProfile_BPMNProperty398' has cardinality 0..*, and from 'BPMNProfile_DataStoreNode', the role 'BPMNProfile_DataStoreNode' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNProperty' and 'BPMNProfile_Property'. From 'BPMNProfile_BPMNProperty', the role 'BPMNProfile_BPMNProperty400' has cardinality 0..*, and from 'BPMNProfile_Property', the role 'BPMNProfile_Property401' has cardinality 0..*.
+An association connects 'BPMNProfile_Property' and 'BPMNProfile_ResourceRole'. From 'BPMNProfile_Property', the role 'BPMNProfile_Property403' has cardinality 0..*, and from 'BPMNProfile_ResourceRole', the role 'BPMNProfile_ResourceRole' has cardinality 0..*.
+An association connects 'BPMNProfile_ResourceAssignmentExpression' and 'BPMNProfile_ResourceRole'. From 'BPMNProfile_ResourceAssignmentExpression', the role 'BPMNProfile_ResourceAssignmentExpression' has cardinality 0..*, and from 'BPMNProfile_ResourceRole', the role 'BPMNProfile_ResourceRole405' has cardinality 0..*.
+An association connects 'BPMNProfile_Resource' and 'BPMNProfile_ResourceRole'. From 'BPMNProfile_Resource', the role 'BPMNProfile_Resource' has cardinality 0..*, and from 'BPMNProfile_ResourceRole', the role 'BPMNProfile_ResourceRole407' has cardinality 0..*.
+An association connects 'BPMNProfile_ResourceParameterBinding' and 'BPMNProfile_ResourceRole'. From 'BPMNProfile_ResourceParameterBinding', the role 'BPMNProfile_ResourceParameterBinding' has cardinality 0..*, and from 'BPMNProfile_ResourceRole', the role 'BPMNProfile_ResourceRole409' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNProcess' and 'BPMNProfile_ResourceRole'. From 'BPMNProfile_BPMNProcess', the role 'BPMNProcess' has cardinality 0..*, and from 'BPMNProfile_ResourceRole', the role 'resources' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNExpression' and 'BPMNProfile_ResourceAssignmentExpression'. From 'BPMNProfile_BPMNExpression', the role 'BPMNProfile_BPMNExpression413' has cardinality 0..*, and from 'BPMNProfile_ResourceAssignmentExpression', the role 'BPMNProfile_ResourceAssignmentExpression412' has cardinality 0..*.
+An association connects 'BPMNProfile_Resource' and 'BPMNProfile_ResourceParameter'. From 'BPMNProfile_Resource', the role 'BPMNProfile_Resource415' has cardinality 0..*, and from 'BPMNProfile_ResourceParameter', the role 'BPMNProfile_ResourceParameter' has cardinality 0..*.
+An association connects 'BPMNProfile_Property' and 'BPMNProfile_ResourceParameter'. From 'BPMNProfile_Property', the role 'BPMNProfile_Property418' has cardinality 0..*, and from 'BPMNProfile_ResourceParameter', the role 'BPMNProfile_ResourceParameter417' has cardinality 0..*.
+An association connects 'BPMNProfile_ResourceParameter' and 'BPMNProfile_ItemDefinition'. From 'BPMNProfile_ResourceParameter', the role 'BPMNProfile_ResourceParameter420' has cardinality 0..*, and from 'BPMNProfile_ItemDefinition', the role 'BPMNProfile_ItemDefinition421' has cardinality 0..*.
+An association connects 'BPMNProfile_Slot' and 'BPMNProfile_ResourceParameterBinding'. From 'BPMNProfile_Slot', the role 'BPMNProfile_Slot424' has cardinality 0..*, and from 'BPMNProfile_ResourceParameterBinding', the role 'BPMNProfile_ResourceParameterBinding423' has cardinality 0..*.
+An association connects 'BPMNProfile_ResourceParameterBinding' and 'BPMNProfile_ResourceParameter'. From 'BPMNProfile_ResourceParameterBinding', the role 'BPMNProfile_ResourceParameterBinding426' has cardinality 0..*, and from 'BPMNProfile_ResourceParameter', the role 'BPMNProfile_ResourceParameter427' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNExpression' and 'BPMNProfile_ResourceParameterBinding'. From 'BPMNProfile_BPMNExpression', the role 'BPMNProfile_BPMNExpression430' has cardinality 0..*, and from 'BPMNProfile_ResourceParameterBinding', the role 'BPMNProfile_ResourceParameterBinding429' has cardinality 0..*.
+An association connects 'BPMNProfile_OpaqueBehavior' and 'BPMNProfile_GlobalTask'. From 'BPMNProfile_OpaqueBehavior', the role 'BPMNProfile_OpaqueBehavior' has cardinality 0..*, and from 'BPMNProfile_GlobalTask', the role 'BPMNProfile_GlobalTask' has cardinality 0..*.
+An association connects 'BPMNProfile_ResourceRole' and 'BPMNProfile_GlobalTask'. From 'BPMNProfile_ResourceRole', the role 'BPMNProfile_ResourceRole434' has cardinality 0..*, and from 'BPMNProfile_GlobalTask', the role 'BPMNProfile_GlobalTask433' has cardinality 0..*.
+An association connects 'BPMNProfile_CompensateEventDefinition' and 'BPMNProfile_BPMNActivity'. From 'BPMNProfile_CompensateEventDefinition', the role 'BPMNProfile_CompensateEventDefinition' has cardinality 0..*, and from 'BPMNProfile_BPMNActivity', the role 'BPMNProfile_BPMNActivity' has cardinality 0..*.
+An association connects 'BPMNProfile_CallEvent' and 'BPMNProfile_CompensateEventDefinition'. From 'BPMNProfile_CallEvent', the role 'BPMNProfile_CallEvent' has cardinality 0..*, and from 'BPMNProfile_CompensateEventDefinition', the role 'BPMNProfile_CompensateEventDefinition437' has cardinality 0..*.
+An association connects 'BPMNProfile_EventDefinition' and 'BPMNProfile_Event'. From 'BPMNProfile_EventDefinition', the role 'BPMNProfile_EventDefinition' has cardinality 0..*, and from 'BPMNProfile_Event', the role 'BPMNProfile_Event' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNActivity' and 'BPMNProfile_Action'. From 'BPMNProfile_BPMNActivity', the role 'BPMNProfile_BPMNActivity440' has cardinality 0..*, and from 'BPMNProfile_Action', the role 'BPMNProfile_Action441' has cardinality 0..*.
+An association connects 'BPMNProfile_Class' and 'BPMNProfile_BPMNActivity'. From 'BPMNProfile_Class', the role 'BPMNProfile_Class444' has cardinality 0..*, and from 'BPMNProfile_BPMNActivity', the role 'BPMNProfile_BPMNActivity443' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNActivity' and 'BPMNProfile_BPMNProperty'. From 'BPMNProfile_BPMNActivity', the role 'BPMNProfile_BPMNActivity446' has cardinality 0..*, and from 'BPMNProfile_BPMNProperty', the role 'BPMNProfile_BPMNProperty447' has cardinality 0..*.
+An association connects 'BPMNProfile_SequenceFlow' and 'BPMNProfile_BPMNActivity'. From 'BPMNProfile_SequenceFlow', the role 'BPMNProfile_SequenceFlow450' has cardinality 0..*, and from 'BPMNProfile_BPMNActivity', the role 'BPMNProfile_BPMNActivity449' has cardinality 0..*.
+An association connects 'BPMNProfile_BoundaryEvent' and 'BPMNProfile_BPMNActivity'. From 'BPMNProfile_BoundaryEvent', the role 'BPMNProfile_BoundaryEvent' has cardinality 0..*, and from 'BPMNProfile_BPMNActivity', the role 'BPMNProfile_BPMNActivity452' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNActivity' and 'BPMNProfile_DataInputAssociation'. From 'BPMNProfile_BPMNActivity', the role 'BPMNProfile_BPMNActivity454' has cardinality 0..*, and from 'BPMNProfile_DataInputAssociation', the role 'BPMNProfile_DataInputAssociation' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNActivity' and 'BPMNProfile_DataOutputAssociation'. From 'BPMNProfile_BPMNActivity', the role 'BPMNProfile_BPMNActivity456' has cardinality 0..*, and from 'BPMNProfile_DataOutputAssociation', the role 'BPMNProfile_DataOutputAssociation' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNActivity' and 'BPMNProfile_LoopCharacteristics'. From 'BPMNProfile_BPMNActivity', the role 'BPMNProfile_BPMNActivity458' has cardinality 0..*, and from 'BPMNProfile_LoopCharacteristics', the role 'BPMNProfile_LoopCharacteristics' has cardinality 0..*.
+An association connects 'BPMNProfile_ResourceRole' and 'BPMNProfile_BPMNActivity'. From 'BPMNProfile_ResourceRole', the role 'BPMNProfile_ResourceRole461' has cardinality 0..*, and from 'BPMNProfile_BPMNActivity', the role 'BPMNProfile_BPMNActivity460' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNActivity' and 'BPMNProfile_BoundaryEvent'. From 'BPMNProfile_BPMNActivity', the role 'BPMNProfile_BPMNActivity464' has cardinality 0..*, and from 'BPMNProfile_BoundaryEvent', the role 'BPMNProfile_BoundaryEvent463' has cardinality 0..*.
+An association connects 'BPMNProfile_AcceptEventAction' and 'BPMNProfile_CatchEvent'. From 'BPMNProfile_AcceptEventAction', the role 'BPMNProfile_AcceptEventAction' has cardinality 0..*, and from 'BPMNProfile_CatchEvent', the role 'BPMNProfile_CatchEvent' has cardinality 0..*.
+An association connects 'BPMNProfile_InitialNode' and 'BPMNProfile_CatchEvent'. From 'BPMNProfile_InitialNode', the role 'BPMNProfile_InitialNode' has cardinality 0..*, and from 'BPMNProfile_CatchEvent', the role 'BPMNProfile_CatchEvent467' has cardinality 0..*.
+An association connects 'BPMNProfile_DataOutputAssociation' and 'BPMNProfile_CatchEvent'. From 'BPMNProfile_DataOutputAssociation', the role 'BPMNProfile_DataOutputAssociation470' has cardinality 0..*, and from 'BPMNProfile_CatchEvent', the role 'BPMNProfile_CatchEvent469' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNEvent' and 'BPMNProfile_Class'. From 'BPMNProfile_BPMNEvent', the role 'BPMNProfile_BPMNEvent' has cardinality 0..*, and from 'BPMNProfile_Class', the role 'BPMNProfile_Class472' has cardinality 0..*.
+An association connects 'BPMNProfile_EventDefinition' and 'BPMNProfile_BPMNEvent'. From 'BPMNProfile_EventDefinition', the role 'BPMNProfile_EventDefinition475' has cardinality 0..*, and from 'BPMNProfile_BPMNEvent', the role 'BPMNProfile_BPMNEvent474' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNProperty' and 'BPMNProfile_BPMNEvent'. From 'BPMNProfile_BPMNProperty', the role 'BPMNProfile_BPMNProperty478' has cardinality 0..*, and from 'BPMNProfile_BPMNEvent', the role 'BPMNProfile_BPMNEvent477' has cardinality 0..*.
+An association connects 'BPMNProfile_EventDefinition' and 'BPMNProfile_BPMNEvent'. From 'BPMNProfile_EventDefinition', the role 'BPMNProfile_EventDefinition481' has cardinality 0..*, and from 'BPMNProfile_BPMNEvent', the role 'BPMNProfile_BPMNEvent480' has cardinality 0..*.
+An association connects 'BPMNProfile_DataAssociation' and 'BPMNProfile_ObjectFlow'. From 'BPMNProfile_DataAssociation', the role 'BPMNProfile_DataAssociation' has cardinality 0..*, and from 'BPMNProfile_ObjectFlow', the role 'BPMNProfile_ObjectFlow' has cardinality 0..*.
+An association connects 'BPMNProfile_DataAssociation' and 'BPMNProfile_ItemAwareElement'. From 'BPMNProfile_DataAssociation', the role 'BPMNProfile_DataAssociation484' has cardinality 0..*, and from 'BPMNProfile_ItemAwareElement', the role 'BPMNProfile_ItemAwareElement485' has cardinality 0..*.
+An association connects 'BPMNProfile_ItemAwareElement' and 'BPMNProfile_DataAssociation'. From 'BPMNProfile_ItemAwareElement', the role 'BPMNProfile_ItemAwareElement488' has cardinality 0..*, and from 'BPMNProfile_DataAssociation', the role 'BPMNProfile_DataAssociation487' has cardinality 0..*.
+An association connects 'BPMNProfile_DataAssociation' and 'BPMNProfile_FormalExpression'. From 'BPMNProfile_DataAssociation', the role 'BPMNProfile_DataAssociation490' has cardinality 0..*, and from 'BPMNProfile_FormalExpression', the role 'BPMNProfile_FormalExpression491' has cardinality 0..*.
+An association connects 'BPMNProfile_Assignment' and 'BPMNProfile_DataAssociation'. From 'BPMNProfile_Assignment', the role 'BPMNProfile_Assignment' has cardinality 0..*, and from 'BPMNProfile_DataAssociation', the role 'BPMNProfile_DataAssociation493' has cardinality 0..*.
+An association connects 'BPMNProfile_Assignment' and 'BPMNProfile_Dependency'. From 'BPMNProfile_Assignment', the role 'BPMNProfile_Assignment495' has cardinality 0..*, and from 'BPMNProfile_Dependency', the role 'BPMNProfile_Dependency496' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNExpression' and 'BPMNProfile_Assignment'. From 'BPMNProfile_BPMNExpression', the role 'BPMNProfile_BPMNExpression499' has cardinality 0..*, and from 'BPMNProfile_Assignment', the role 'BPMNProfile_Assignment498' has cardinality 0..*.
+An association connects 'BPMNProfile_Assignment' and 'BPMNProfile_BPMNExpression'. From 'BPMNProfile_Assignment', the role 'BPMNProfile_Assignment501' has cardinality 0..*, and from 'BPMNProfile_BPMNExpression', the role 'BPMNProfile_BPMNExpression502' has cardinality 0..*.
+An association connects 'BPMNProfile_LoopCharacteristics' and 'BPMNProfile_StructuredActivityNode'. From 'BPMNProfile_LoopCharacteristics', the role 'BPMNProfile_LoopCharacteristics504' has cardinality 0..*, and from 'BPMNProfile_StructuredActivityNode', the role 'BPMNProfile_StructuredActivityNode505' has cardinality 0..*.
+An association connects 'BPMNProfile_Escalation' and 'BPMNProfile_EscalationEventDefinition'. From 'BPMNProfile_Escalation', the role 'BPMNProfile_Escalation' has cardinality 0..*, and from 'BPMNProfile_EscalationEventDefinition', the role 'BPMNProfile_EscalationEventDefinition' has cardinality 0..*.
+An association connects 'BPMNProfile_CallEvent' and 'BPMNProfile_EscalationEventDefinition'. From 'BPMNProfile_CallEvent', the role 'BPMNProfile_CallEvent509' has cardinality 0..*, and from 'BPMNProfile_EscalationEventDefinition', the role 'BPMNProfile_EscalationEventDefinition508' has cardinality 0..*.
+An association connects 'BPMNProfile_TimerEventDefinition' and 'BPMNProfile_BPMNExpression'. From 'BPMNProfile_TimerEventDefinition', the role 'BPMNProfile_TimerEventDefinition' has cardinality 0..*, and from 'BPMNProfile_BPMNExpression', the role 'BPMNProfile_BPMNExpression511' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNExpression' and 'BPMNProfile_TimerEventDefinition'. From 'BPMNProfile_BPMNExpression', the role 'BPMNProfile_BPMNExpression514' has cardinality 0..*, and from 'BPMNProfile_TimerEventDefinition', the role 'BPMNProfile_TimerEventDefinition513' has cardinality 0..*.
+An association connects 'BPMNProfile_TimerEventDefinition' and 'BPMNProfile_BPMNExpression'. From 'BPMNProfile_TimerEventDefinition', the role 'BPMNProfile_TimerEventDefinition516' has cardinality 0..*, and from 'BPMNProfile_BPMNExpression', the role 'BPMNProfile_BPMNExpression517' has cardinality 0..*.
+An association connects 'BPMNProfile_ChangeEvent' and 'BPMNProfile_TimerEventDefinition'. From 'BPMNProfile_ChangeEvent', the role 'BPMNProfile_ChangeEvent' has cardinality 0..*, and from 'BPMNProfile_TimerEventDefinition', the role 'BPMNProfile_TimerEventDefinition519' has cardinality 0..*.
+An association connects 'BPMNProfile_SignalEventDefinition' and 'BPMNProfile_BPMNSignal'. From 'BPMNProfile_SignalEventDefinition', the role 'BPMNProfile_SignalEventDefinition' has cardinality 0..*, and from 'BPMNProfile_BPMNSignal', the role 'BPMNProfile_BPMNSignal' has cardinality 0..*.
+An association connects 'BPMNProfile_SignalEventDefinition' and 'BPMNProfile_CallEvent'. From 'BPMNProfile_SignalEventDefinition', the role 'BPMNProfile_SignalEventDefinition522' has cardinality 0..*, and from 'BPMNProfile_CallEvent', the role 'BPMNProfile_CallEvent523' has cardinality 0..*.
+An association connects 'BPMNProfile_EndEvent' and 'BPMNProfile_FinalNode'. From 'BPMNProfile_EndEvent', the role 'BPMNProfile_EndEvent' has cardinality 0..*, and from 'BPMNProfile_FinalNode', the role 'BPMNProfile_FinalNode' has cardinality 0..*.
+An association connects 'BPMNProfile_ThrowEvent' and 'BPMNProfile_CallOperationAction'. From 'BPMNProfile_ThrowEvent', the role 'BPMNProfile_ThrowEvent' has cardinality 0..*, and from 'BPMNProfile_CallOperationAction', the role 'BPMNProfile_CallOperationAction' has cardinality 0..*.
+An association connects 'BPMNProfile_ThrowEvent' and 'BPMNProfile_FlowFinalNode'. From 'BPMNProfile_ThrowEvent', the role 'BPMNProfile_ThrowEvent527' has cardinality 0..*, and from 'BPMNProfile_FlowFinalNode', the role 'BPMNProfile_FlowFinalNode' has cardinality 0..*.
+An association connects 'BPMNProfile_ThrowEvent' and 'BPMNProfile_DataInputAssociation'. From 'BPMNProfile_ThrowEvent', the role 'BPMNProfile_ThrowEvent529' has cardinality 0..*, and from 'BPMNProfile_DataInputAssociation', the role 'BPMNProfile_DataInputAssociation530' has cardinality 0..*.
+An association connects 'BPMNProfile_MessageEventDefinition' and 'BPMNProfile_BPMNMessage'. From 'BPMNProfile_MessageEventDefinition', the role 'BPMNProfile_MessageEventDefinition' has cardinality 0..*, and from 'BPMNProfile_BPMNMessage', the role 'BPMNProfile_BPMNMessage532' has cardinality 0..*.
+An association connects 'BPMNProfile_MessageEventDefinition' and 'BPMNProfile_BPMNOperation'. From 'BPMNProfile_MessageEventDefinition', the role 'BPMNProfile_MessageEventDefinition534' has cardinality 0..*, and from 'BPMNProfile_BPMNOperation', the role 'BPMNProfile_BPMNOperation535' has cardinality 0..*.
+An association connects 'BPMNProfile_CallEvent' and 'BPMNProfile_MessageEventDefinition'. From 'BPMNProfile_CallEvent', the role 'BPMNProfile_CallEvent538' has cardinality 0..*, and from 'BPMNProfile_MessageEventDefinition', the role 'BPMNProfile_MessageEventDefinition537' has cardinality 0..*.
+An association connects 'BPMNProfile_ChangeEvent' and 'BPMNProfile_ConditionalEventDefinition'. From 'BPMNProfile_ChangeEvent', the role 'BPMNProfile_ChangeEvent540' has cardinality 0..*, and from 'BPMNProfile_ConditionalEventDefinition', the role 'BPMNProfile_ConditionalEventDefinition' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNExpression' and 'BPMNProfile_ConditionalEventDefinition'. From 'BPMNProfile_BPMNExpression', the role 'BPMNProfile_BPMNExpression543' has cardinality 0..*, and from 'BPMNProfile_ConditionalEventDefinition', the role 'BPMNProfile_ConditionalEventDefinition542' has cardinality 0..*.
+An association connects 'BPMNProfile_LinkEventDefinition' and 'BPMNProfile_LinkEventDefinition'. From 'BPMNProfile_LinkEventDefinition', the role 'LinkEventDefinition' has cardinality 0..*, and from 'BPMNProfile_LinkEventDefinition', the role 'source' has cardinality 0..*.
+An association connects 'BPMNProfile_LinkEventDefinition' and 'BPMNProfile_LinkEventDefinition'. From 'BPMNProfile_LinkEventDefinition', the role '_target' has cardinality 0..*, and from 'BPMNProfile_LinkEventDefinition', the role 'LinkEventDefinition548' has cardinality 0..*.
+An association connects 'BPMNProfile_LinkEventDefinition' and 'BPMNProfile_CallEvent'. From 'BPMNProfile_LinkEventDefinition', the role 'BPMNProfile_LinkEventDefinition' has cardinality 0..*, and from 'BPMNProfile_CallEvent', the role 'BPMNProfile_CallEvent550' has cardinality 0..*.
+An association connects 'BPMNProfile_ErrorEventDefinition' and 'BPMNProfile_Error'. From 'BPMNProfile_ErrorEventDefinition', the role 'BPMNProfile_ErrorEventDefinition' has cardinality 0..*, and from 'BPMNProfile_Error', the role 'BPMNProfile_Error552' has cardinality 0..*.
+An association connects 'BPMNProfile_CallEvent' and 'BPMNProfile_ErrorEventDefinition'. From 'BPMNProfile_CallEvent', the role 'BPMNProfile_CallEvent555' has cardinality 0..*, and from 'BPMNProfile_ErrorEventDefinition', the role 'BPMNProfile_ErrorEventDefinition554' has cardinality 0..*.
+An association connects 'BPMNProfile_IntermediateThrowEvent' and 'BPMNProfile_SendObjectAction'. From 'BPMNProfile_IntermediateThrowEvent', the role 'BPMNProfile_IntermediateThrowEvent' has cardinality 0..*, and from 'BPMNProfile_SendObjectAction', the role 'BPMNProfile_SendObjectAction' has cardinality 0..*.
+An association connects 'BPMNProfile_TerminateEventDefinition' and 'BPMNProfile_CallEvent'. From 'BPMNProfile_TerminateEventDefinition', the role 'BPMNProfile_TerminateEventDefinition' has cardinality 0..*, and from 'BPMNProfile_CallEvent', the role 'BPMNProfile_CallEvent558' has cardinality 0..*.
+An association connects 'BPMNProfile_CallEvent' and 'BPMNProfile_CancelEventDefinition'. From 'BPMNProfile_CallEvent', the role 'BPMNProfile_CallEvent560' has cardinality 0..*, and from 'BPMNProfile_CancelEventDefinition', the role 'BPMNProfile_CancelEventDefinition' has cardinality 0..*.
+An association connects 'BPMNProfile_Comment' and 'BPMNProfile_TextAnnotation'. From 'BPMNProfile_Comment', the role 'BPMNProfile_Comment562' has cardinality 0..*, and from 'BPMNProfile_TextAnnotation', the role 'BPMNProfile_TextAnnotation' has cardinality 0..*.
+An association connects 'BPMNProfile_Category' and 'BPMNProfile_Enumeration'. From 'BPMNProfile_Category', the role 'BPMNProfile_Category' has cardinality 0..*, and from 'BPMNProfile_Enumeration', the role 'BPMNProfile_Enumeration' has cardinality 0..*.
+An association connects 'BPMNProfile_Category' and 'BPMNProfile_CategoryValue'. From 'BPMNProfile_Category', the role 'BPMNProfile_Category565' has cardinality 0..*, and from 'BPMNProfile_CategoryValue', the role 'BPMNProfile_CategoryValue566' has cardinality 0..*.
+An association connects 'BPMNProfile_ActivityPartition' and 'BPMNProfile_Group'. From 'BPMNProfile_ActivityPartition', the role 'BPMNProfile_ActivityPartition568' has cardinality 0..*, and from 'BPMNProfile_Group', the role 'BPMNProfile_Group' has cardinality 0..*.
+An association connects 'BPMNProfile_Group' and 'BPMNProfile_CategoryValue'. From 'BPMNProfile_Group', the role 'BPMNProfile_Group570' has cardinality 0..*, and from 'BPMNProfile_CategoryValue', the role 'BPMNProfile_CategoryValue571' has cardinality 0..*.
+An association connects 'BPMNProfile_DataObject' and 'BPMNProfile_DataObjectReference'. From 'BPMNProfile_DataObject', the role 'BPMNProfile_DataObject' has cardinality 0..*, and from 'BPMNProfile_DataObjectReference', the role 'BPMNProfile_DataObjectReference' has cardinality 0..*.
+An association connects 'BPMNProfile_DataStoreNode' and 'BPMNProfile_DataObjectReference'. From 'BPMNProfile_DataStoreNode', the role 'BPMNProfile_DataStoreNode575' has cardinality 0..*, and from 'BPMNProfile_DataObjectReference', the role 'BPMNProfile_DataObjectReference574' has cardinality 0..*.
+An association connects 'BPMNProfile_DataStoreNode' and 'BPMNProfile_DataObject'. From 'BPMNProfile_DataStoreNode', the role 'BPMNProfile_DataStoreNode578' has cardinality 0..*, and from 'BPMNProfile_DataObject', the role 'BPMNProfile_DataObject577' has cardinality 0..*.
+An association connects 'BPMNProfile_Class' and 'BPMNProfile_DataStore'. From 'BPMNProfile_Class', the role 'BPMNProfile_Class580' has cardinality 0..*, and from 'BPMNProfile_DataStore', the role 'BPMNProfile_DataStore' has cardinality 0..*.
+An association connects 'BPMNProfile_ItemDefinition' and 'BPMNProfile_DataStore'. From 'BPMNProfile_ItemDefinition', the role 'BPMNProfile_ItemDefinition583' has cardinality 0..*, and from 'BPMNProfile_DataStore', the role 'BPMNProfile_DataStore582' has cardinality 0..*.
+An association connects 'BPMNProfile_DataStoreReference' and 'BPMNProfile_DataStore'. From 'BPMNProfile_DataStoreReference', the role 'BPMNProfile_DataStoreReference' has cardinality 0..*, and from 'BPMNProfile_DataStore', the role 'BPMNProfile_DataStore585' has cardinality 0..*.
+An association connects 'BPMNProfile_DataStoreReference' and 'BPMNProfile_DataStoreNode'. From 'BPMNProfile_DataStoreReference', the role 'BPMNProfile_DataStoreReference587' has cardinality 0..*, and from 'BPMNProfile_DataStoreNode', the role 'BPMNProfile_DataStoreNode588' has cardinality 0..*.
+An association connects 'BPMNProfile_OpaqueAction' and 'BPMNProfile_UserTask'. From 'BPMNProfile_OpaqueAction', the role 'BPMNProfile_OpaqueAction' has cardinality 0..*, and from 'BPMNProfile_UserTask', the role 'BPMNProfile_UserTask' has cardinality 0..*.
+An association connects 'BPMNProfile_Rendering' and 'BPMNProfile_UserTask'. From 'BPMNProfile_Rendering', the role 'BPMNProfile_Rendering' has cardinality 0..*, and from 'BPMNProfile_UserTask', the role 'BPMNProfile_UserTask591' has cardinality 0..*.
+An association connects 'BPMNProfile_Task' and 'BPMNProfile_InputOutputSpecification'. From 'BPMNProfile_Task', the role 'BPMNProfile_Task' has cardinality 0..*, and from 'BPMNProfile_InputOutputSpecification', the role 'BPMNProfile_InputOutputSpecification593' has cardinality 0..*.
+An association connects 'BPMNProfile_Rendering' and 'BPMNProfile_Image'. From 'BPMNProfile_Rendering', the role 'BPMNProfile_Rendering595' has cardinality 0..*, and from 'BPMNProfile_Image', the role 'BPMNProfile_Image' has cardinality 0..*.
+An association connects 'BPMNProfile_Rendering' and 'BPMNProfile_GlobalUserTask'. From 'BPMNProfile_Rendering', the role 'BPMNProfile_Rendering597' has cardinality 0..*, and from 'BPMNProfile_GlobalUserTask', the role 'BPMNProfile_GlobalUserTask' has cardinality 0..*.
+An association connects 'BPMNProfile_OpaqueAction' and 'BPMNProfile_ManualTask'. From 'BPMNProfile_OpaqueAction', the role 'BPMNProfile_OpaqueAction599' has cardinality 0..*, and from 'BPMNProfile_ManualTask', the role 'BPMNProfile_ManualTask' has cardinality 0..*.
+An association connects 'BPMNProfile_SubConversation' and 'BPMNProfile_ConversationNode'. From 'BPMNProfile_SubConversation', the role 'BPMNProfile_SubConversation' has cardinality 0..*, and from 'BPMNProfile_ConversationNode', the role 'BPMNProfile_ConversationNode601' has cardinality 0..*.
+An association connects 'BPMNProfile_CollaborationUse' and 'BPMNProfile_CallConversation'. From 'BPMNProfile_CollaborationUse', the role 'BPMNProfile_CollaborationUse' has cardinality 0..*, and from 'BPMNProfile_CallConversation', the role 'BPMNProfile_CallConversation' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNCollaboration' and 'BPMNProfile_CallConversation'. From 'BPMNProfile_BPMNCollaboration', the role 'BPMNProfile_BPMNCollaboration605' has cardinality 0..*, and from 'BPMNProfile_CallConversation', the role 'BPMNProfile_CallConversation604' has cardinality 0..*.
+An association connects 'BPMNProfile_ParticipantAssociation' and 'BPMNProfile_CallConversation'. From 'BPMNProfile_ParticipantAssociation', the role 'BPMNProfile_ParticipantAssociation608' has cardinality 0..*, and from 'BPMNProfile_CallConversation', the role 'BPMNProfile_CallConversation607' has cardinality 0..*.
+An association connects 'BPMNProfile_StructuredActivityNode' and 'BPMNProfile_SubProcess'. From 'BPMNProfile_StructuredActivityNode', the role 'BPMNProfile_StructuredActivityNode610' has cardinality 0..*, and from 'BPMNProfile_SubProcess', the role 'BPMNProfile_SubProcess' has cardinality 0..*.
+An association connects 'BPMNProfile_SubProcess' and 'BPMNProfile_LaneSet'. From 'BPMNProfile_SubProcess', the role 'BPMNProfile_SubProcess612' has cardinality 0..*, and from 'BPMNProfile_LaneSet', the role 'BPMNProfile_LaneSet613' has cardinality 0..*.
+An association connects 'BPMNProfile_CallActivity' and 'BPMNProfile_CallBehaviorAction'. From 'BPMNProfile_CallActivity', the role 'BPMNProfile_CallActivity' has cardinality 0..*, and from 'BPMNProfile_CallBehaviorAction', the role 'BPMNProfile_CallBehaviorAction' has cardinality 0..*.
+An association connects 'BPMNProfile_CallableElement' and 'BPMNProfile_CallActivity'. From 'BPMNProfile_CallableElement', the role 'BPMNProfile_CallableElement617' has cardinality 0..*, and from 'BPMNProfile_CallActivity', the role 'BPMNProfile_CallActivity616' has cardinality 0..*.
+An association connects 'BPMNProfile_BusinessRuleTask' and 'BPMNProfile_OpaqueAction'. From 'BPMNProfile_BusinessRuleTask', the role 'BPMNProfile_BusinessRuleTask' has cardinality 0..*, and from 'BPMNProfile_OpaqueAction', the role 'BPMNProfile_OpaqueAction619' has cardinality 0..*.
+An association connects 'BPMNProfile_FormalExpression' and 'BPMNProfile_ComplexBehaviorDefinition'. From 'BPMNProfile_FormalExpression', the role 'BPMNProfile_FormalExpression621' has cardinality 0..*, and from 'BPMNProfile_ComplexBehaviorDefinition', the role 'BPMNProfile_ComplexBehaviorDefinition' has cardinality 0..*.
+An association connects 'BPMNProfile_ComplexBehaviorDefinition' and 'BPMNProfile_ImplicitThrowEvent'. From 'BPMNProfile_ComplexBehaviorDefinition', the role 'BPMNProfile_ComplexBehaviorDefinition623' has cardinality 0..*, and from 'BPMNProfile_ImplicitThrowEvent', the role 'BPMNProfile_ImplicitThrowEvent' has cardinality 0..*.
+An association connects 'BPMNProfile_ComplexBehaviorDefinition' and 'BPMNProfile_ControlFlow'. From 'BPMNProfile_ComplexBehaviorDefinition', the role 'BPMNProfile_ComplexBehaviorDefinition625' has cardinality 0..*, and from 'BPMNProfile_ControlFlow', the role 'BPMNProfile_ControlFlow626' has cardinality 0..*.
+An association connects 'BPMNProfile_AdHocSubProcess' and 'BPMNProfile_BPMNExpression'. From 'BPMNProfile_AdHocSubProcess', the role 'BPMNProfile_AdHocSubProcess' has cardinality 0..*, and from 'BPMNProfile_BPMNExpression', the role 'BPMNProfile_BPMNExpression628' has cardinality 0..*.
+An association connects 'BPMNProfile_OpaqueAction' and 'BPMNProfile_ScriptTask'. From 'BPMNProfile_OpaqueAction', the role 'BPMNProfile_OpaqueAction630' has cardinality 0..*, and from 'BPMNProfile_ScriptTask', the role 'BPMNProfile_ScriptTask' has cardinality 0..*.
+An association connects 'BPMNProfile_SendTask' and 'BPMNProfile_BPMNMessage'. From 'BPMNProfile_SendTask', the role 'BPMNProfile_SendTask' has cardinality 0..*, and from 'BPMNProfile_BPMNMessage', the role 'BPMNProfile_BPMNMessage632' has cardinality 0..*.
+An association connects 'BPMNProfile_CallOperationAction' and 'BPMNProfile_SendTask'. From 'BPMNProfile_CallOperationAction', the role 'BPMNProfile_CallOperationAction635' has cardinality 0..*, and from 'BPMNProfile_SendTask', the role 'BPMNProfile_SendTask634' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNOperation' and 'BPMNProfile_SendTask'. From 'BPMNProfile_BPMNOperation', the role 'BPMNProfile_BPMNOperation638' has cardinality 0..*, and from 'BPMNProfile_SendTask', the role 'BPMNProfile_SendTask637' has cardinality 0..*.
+An association connects 'BPMNProfile_LoopNode' and 'BPMNProfile_StandardLoopCharacteristics'. From 'BPMNProfile_LoopNode', the role 'BPMNProfile_LoopNode' has cardinality 0..*, and from 'BPMNProfile_StandardLoopCharacteristics', the role 'BPMNProfile_StandardLoopCharacteristics' has cardinality 0..*.
+An association connects 'BPMNProfile_StandardLoopCharacteristics' and 'BPMNProfile_BPMNExpression'. From 'BPMNProfile_StandardLoopCharacteristics', the role 'BPMNProfile_StandardLoopCharacteristics641' has cardinality 0..*, and from 'BPMNProfile_BPMNExpression', the role 'BPMNProfile_BPMNExpression642' has cardinality 0..*.
+An association connects 'BPMNProfile_ReceiveTask' and 'BPMNProfile_BPMNMessage'. From 'BPMNProfile_ReceiveTask', the role 'BPMNProfile_ReceiveTask' has cardinality 0..*, and from 'BPMNProfile_BPMNMessage', the role 'BPMNProfile_BPMNMessage644' has cardinality 0..*.
+An association connects 'BPMNProfile_ReceiveTask' and 'BPMNProfile_AcceptEventAction'. From 'BPMNProfile_ReceiveTask', the role 'BPMNProfile_ReceiveTask646' has cardinality 0..*, and from 'BPMNProfile_AcceptEventAction', the role 'BPMNProfile_AcceptEventAction647' has cardinality 0..*.
+An association connects 'BPMNProfile_ReceiveTask' and 'BPMNProfile_BPMNOperation'. From 'BPMNProfile_ReceiveTask', the role 'BPMNProfile_ReceiveTask649' has cardinality 0..*, and from 'BPMNProfile_BPMNOperation', the role 'BPMNProfile_BPMNOperation650' has cardinality 0..*.
+An association connects 'BPMNProfile_ServiceTask' and 'BPMNProfile_CallOperationAction'. From 'BPMNProfile_ServiceTask', the role 'BPMNProfile_ServiceTask' has cardinality 0..*, and from 'BPMNProfile_CallOperationAction', the role 'BPMNProfile_CallOperationAction652' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNOperation' and 'BPMNProfile_ServiceTask'. From 'BPMNProfile_BPMNOperation', the role 'BPMNProfile_BPMNOperation655' has cardinality 0..*, and from 'BPMNProfile_ServiceTask', the role 'BPMNProfile_ServiceTask654' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNExpression' and 'BPMNProfile_MultiInstanceLoopCharacteristics'. From 'BPMNProfile_BPMNExpression', the role 'BPMNProfile_BPMNExpression657' has cardinality 0..*, and from 'BPMNProfile_MultiInstanceLoopCharacteristics', the role 'BPMNProfile_MultiInstanceLoopCharacteristics' has cardinality 0..*.
+An association connects 'BPMNProfile_BPMNExpression' and 'BPMNProfile_MultiInstanceLoopCharacteristics'. From 'BPMNProfile_BPMNExpression', the role 'BPMNProfile_BPMNExpression660' has cardinality 0..*, and from 'BPMNProfile_MultiInstanceLoopCharacteristics', the role 'BPMNProfile_MultiInstanceLoopCharacteristics659' has cardinality 0..*.
+An association connects 'BPMNProfile_ExpansionRegion' and 'BPMNProfile_MultiInstanceLoopCharacteristics'. From 'BPMNProfile_ExpansionRegion', the role 'BPMNProfile_ExpansionRegion' has cardinality 0..*, and from 'BPMNProfile_MultiInstanceLoopCharacteristics', the role 'BPMNProfile_MultiInstanceLoopCharacteristics662' has cardinality 0..*.
+An association connects 'BPMNProfile_MultiInstanceLoopCharacteristics' and 'BPMNProfile_ItemAwareElement'. From 'BPMNProfile_MultiInstanceLoopCharacteristics', the role 'BPMNProfile_MultiInstanceLoopCharacteristics664' has cardinality 0..*, and from 'BPMNProfile_ItemAwareElement', the role 'BPMNProfile_ItemAwareElement665' has cardinality 0..*.
+An association connects 'BPMNProfile_MultiInstanceLoopCharacteristics' and 'BPMNProfile_ItemAwareElement'. From 'BPMNProfile_MultiInstanceLoopCharacteristics', the role 'BPMNProfile_MultiInstanceLoopCharacteristics667' has cardinality 0..*, and from 'BPMNProfile_ItemAwareElement', the role 'BPMNProfile_ItemAwareElement668' has cardinality 0..*.
+An association connects 'BPMNProfile_DataOutput' and 'BPMNProfile_MultiInstanceLoopCharacteristics'. From 'BPMNProfile_DataOutput', the role 'BPMNProfile_DataOutput671' has cardinality 0..*, and from 'BPMNProfile_MultiInstanceLoopCharacteristics', the role 'BPMNProfile_MultiInstanceLoopCharacteristics670' has cardinality 0..*.
+An association connects 'BPMNProfile_MultiInstanceLoopCharacteristics' and 'BPMNProfile_DataInput'. From 'BPMNProfile_MultiInstanceLoopCharacteristics', the role 'BPMNProfile_MultiInstanceLoopCharacteristics673' has cardinality 0..*, and from 'BPMNProfile_DataInput', the role 'BPMNProfile_DataInput674' has cardinality 0..*.
+An association connects 'BPMNProfile_MultiInstanceLoopCharacteristics' and 'BPMNProfile_EventDefinition'. From 'BPMNProfile_MultiInstanceLoopCharacteristics', the role 'BPMNProfile_MultiInstanceLoopCharacteristics676' has cardinality 0..*, and from 'BPMNProfile_EventDefinition', the role 'BPMNProfile_EventDefinition677' has cardinality 0..*.
+An association connects 'BPMNProfile_EventDefinition' and 'BPMNProfile_MultiInstanceLoopCharacteristics'. From 'BPMNProfile_EventDefinition', the role 'BPMNProfile_EventDefinition680' has cardinality 0..*, and from 'BPMNProfile_MultiInstanceLoopCharacteristics', the role 'BPMNProfile_MultiInstanceLoopCharacteristics679' has cardinality 0..*.
+An association connects 'BPMNProfile_MultiInstanceLoopCharacteristics' and 'BPMNProfile_ComplexBehaviorDefinition'. From 'BPMNProfile_MultiInstanceLoopCharacteristics', the role 'BPMNProfile_MultiInstanceLoopCharacteristics682' has cardinality 0..*, and from 'BPMNProfile_ComplexBehaviorDefinition', the role 'BPMNProfile_ComplexBehaviorDefinition683' has cardinality 0..*.

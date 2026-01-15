@@ -1,0 +1,364 @@
+The domain model 'jointPackage_Ecore2Maude' describes the core structural elements and their relationships within the system.
+
+The model defines 77 main class(es).
+
+'SrcEClassifier' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgRule' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgModuleIdModExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgViewMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgMaudeTopEl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jointPackage_Ecore2Maude_TrgCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgModule' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgLabelMapping' represents an important domain concept.
+It has the following attributes: 'from', which is of type str; 'to', which is of type str.
+
+'jointPackage_Ecore2Maude_TrgSubsortRel' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgSModule' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgView' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgModExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgEquationalCond' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jointPackage_Ecore2Maude_TrgOpMapping' represents an important domain concept.
+It has one attribute: 'to', which is of type str.
+
+'jointPackage_Ecore2Maude_TrgRenMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgEqualCond' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgSort' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcEDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgInstModExp' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_SrcEClassifier' represents an important domain concept.
+It has the following attributes: 'instanceTypeName', which is of type str; 'instanceClassName', which is of type str.
+
+'jointPackage_Ecore2Maude_TrgConstant' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'jointPackage_Ecore2Maude_TrgVariable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TrgModElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgStatement' represents an important domain concept.
+It has the following attributes: 'atts', which is of type str; 'label', which is of type str.
+
+'jointPackage_Ecore2Maude_TrgTermMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgTerm' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_SrcEReference' represents an important domain concept.
+It has the following attributes: 'container', which is of type bool; 'resolveProxies', which is of type bool; 'containment', which is of type bool.
+
+'jointPackage_Ecore2Maude_TrgSTheory' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_SrcEEnumLiteral' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'literal', which is of type str.
+
+'jointPackage_Ecore2Maude_TrgTheory' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_SrcEStructuralFeature' represents an important domain concept.
+It has the following attributes: 'transient', which is of type bool; 'changeable', which is of type bool; 'derived', which is of type bool; 'defaultValueLiteral', which is of type str; 'volatile', which is of type bool; 'unsettable', which is of type bool.
+
+'SrcENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_SrcEStringToStringMapEntry' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'jointPackage_Ecore2Maude_TrgRenModExp' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgMaudeSpec' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgParameter' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'jointPackage_Ecore2Maude_TrgEquation' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgSortMapping' represents an important domain concept.
+It has one attribute: 'to', which is of type str.
+
+'jointPackage_Ecore2Maude_TrgCompModExp' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgRewriteCond' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_SrcENamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'jointPackage_Ecore2Maude_TrgFModule' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_SrcEAttribute' represents an important domain concept.
+It has one attribute: 'iD', which is of type bool.
+
+'jointPackage_Ecore2Maude_TrgTheoryIdModExp' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_SrcETypedElement' represents an important domain concept.
+It has the following attributes: 'ordered', which is of type bool; 'lowerBound', which is of type int; 'required', which is of type bool; 'unique', which is of type bool; 'many', which is of type bool; 'upperBound', which is of type int.
+
+'TrgMaudeTopEl' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgKind' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgMatchingCond' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcETypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_SrcEPackage' represents an important domain concept.
+It has the following attributes: 'nsPrefix', which is of type str; 'nsURI', which is of type str.
+
+'jointPackage_Ecore2Maude_TrgModImportation' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgMembership' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_SrcEDataType' represents an important domain concept.
+It has one attribute: 'serializable', which is of type bool.
+
+'jointPackage_Ecore2Maude_TrgMembershipCond' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgTheory' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgBooleanCond' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgRenMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgRecTerm' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'jointPackage_Ecore2Maude_SrcEOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_JointMM' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_SrcEEnum' represents an important domain concept.
+It does not declare any attributes.
+
+'SrcEStructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgOperation' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'atts', which is of type str.
+
+'jointPackage_Ecore2Maude_TrgEquationalCond' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgOpTypedMapping' represents an important domain concept.
+It has the following attributes: 'atts', which is of type str; 'to', which is of type str.
+
+'jointPackage_Ecore2Maude_TrgModElement' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgFTheory' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgModule' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_TrgModExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_SrcEClass' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'interface', which is of type bool.
+
+'jointPackage_Ecore2Maude_TrgViewMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'TrgType' represents an important domain concept.
+It does not declare any attributes.
+
+'jointPackage_Ecore2Maude_SrcEParameter' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'jointPackage_Ecore2Maude_SrcEAttribute' is a specialization of 'SrcEStructuralFeature'.
+The class 'jointPackage_Ecore2Maude_SrcEClass' is a specialization of 'SrcEClassifier'.
+The class 'jointPackage_Ecore2Maude_SrcEClassifier' is a specialization of 'SrcENamedElement'.
+The class 'jointPackage_Ecore2Maude_SrcEDataType' is a specialization of 'SrcEClassifier'.
+The class 'jointPackage_Ecore2Maude_SrcEEnum' is a specialization of 'SrcEDataType'.
+The class 'jointPackage_Ecore2Maude_SrcEEnumLiteral' is a specialization of 'SrcENamedElement'.
+The class 'jointPackage_Ecore2Maude_SrcEOperation' is a specialization of 'SrcETypedElement'.
+The class 'jointPackage_Ecore2Maude_SrcEPackage' is a specialization of 'SrcENamedElement'.
+The class 'jointPackage_Ecore2Maude_SrcEParameter' is a specialization of 'SrcETypedElement'.
+The class 'jointPackage_Ecore2Maude_SrcEReference' is a specialization of 'SrcEStructuralFeature'.
+The class 'jointPackage_Ecore2Maude_SrcEStructuralFeature' is a specialization of 'SrcETypedElement'.
+The class 'jointPackage_Ecore2Maude_SrcETypedElement' is a specialization of 'SrcENamedElement'.
+The class 'jointPackage_Ecore2Maude_TrgMembership' is a specialization of 'TrgStatement'.
+The class 'jointPackage_Ecore2Maude_TrgEquation' is a specialization of 'TrgStatement'.
+The class 'jointPackage_Ecore2Maude_TrgRule' is a specialization of 'TrgStatement'.
+The class 'jointPackage_Ecore2Maude_TrgMembershipCond' is a specialization of 'TrgEquationalCond'.
+The class 'jointPackage_Ecore2Maude_TrgBooleanCond' is a specialization of 'TrgEquationalCond'.
+The class 'jointPackage_Ecore2Maude_TrgMatchingCond' is a specialization of 'TrgEquationalCond'.
+The class 'jointPackage_Ecore2Maude_TrgEqualCond' is a specialization of 'TrgEquationalCond'.
+The class 'jointPackage_Ecore2Maude_TrgInstModExp' is a specialization of 'TrgModExpression'.
+The class 'jointPackage_Ecore2Maude_TrgRenModExp' is a specialization of 'TrgModExpression'.
+The class 'jointPackage_Ecore2Maude_TrgCompModExp' is a specialization of 'TrgModExpression'.
+The class 'jointPackage_Ecore2Maude_TrgModuleIdModExp' is a specialization of 'TrgModExpression'.
+The class 'jointPackage_Ecore2Maude_TrgTheoryIdModExp' is a specialization of 'TrgModExpression'.
+The class 'jointPackage_Ecore2Maude_TrgParameter' is a specialization of 'TrgModExpression'.
+The class 'jointPackage_Ecore2Maude_TrgTheory' is a specialization of 'TrgMaudeTopEl'.
+The class 'jointPackage_Ecore2Maude_TrgFTheory' is a specialization of 'TrgTheory'.
+The class 'jointPackage_Ecore2Maude_TrgSTheory' is a specialization of 'TrgTheory'.
+The class 'jointPackage_Ecore2Maude_TrgModule' is a specialization of 'TrgMaudeTopEl'.
+The class 'jointPackage_Ecore2Maude_TrgFModule' is a specialization of 'TrgModule'.
+The class 'jointPackage_Ecore2Maude_TrgSModule' is a specialization of 'TrgModule'.
+The class 'jointPackage_Ecore2Maude_TrgModImportation' is a specialization of 'TrgModElement'.
+The class 'jointPackage_Ecore2Maude_TrgSort' is a specialization of 'TrgType'.
+The class 'jointPackage_Ecore2Maude_TrgSort' is a specialization of 'TrgModElement'.
+The class 'jointPackage_Ecore2Maude_TrgKind' is a specialization of 'TrgType'.
+The class 'jointPackage_Ecore2Maude_TrgSubsortRel' is a specialization of 'TrgModElement'.
+The class 'jointPackage_Ecore2Maude_TrgOperation' is a specialization of 'TrgModElement'.
+The class 'jointPackage_Ecore2Maude_TrgStatement' is a specialization of 'TrgModElement'.
+The class 'jointPackage_Ecore2Maude_TrgEquationalCond' is a specialization of 'TrgCondition'.
+The class 'jointPackage_Ecore2Maude_TrgRewriteCond' is a specialization of 'TrgCondition'.
+The class 'jointPackage_Ecore2Maude_TrgConstant' is a specialization of 'TrgTerm'.
+The class 'jointPackage_Ecore2Maude_TrgRecTerm' is a specialization of 'TrgTerm'.
+The class 'jointPackage_Ecore2Maude_TrgVariable' is a specialization of 'TrgTerm'.
+The class 'jointPackage_Ecore2Maude_TrgView' is a specialization of 'TrgMaudeTopEl'.
+The class 'jointPackage_Ecore2Maude_TrgRenMapping' is a specialization of 'TrgViewMapping'.
+The class 'jointPackage_Ecore2Maude_TrgTermMapping' is a specialization of 'TrgViewMapping'.
+The class 'jointPackage_Ecore2Maude_TrgSortMapping' is a specialization of 'TrgRenMapping'.
+The class 'jointPackage_Ecore2Maude_TrgOpTypedMapping' is a specialization of 'TrgRenMapping'.
+The class 'jointPackage_Ecore2Maude_TrgOpMapping' is a specialization of 'TrgRenMapping'.
+The class 'jointPackage_Ecore2Maude_TrgLabelMapping' is a specialization of 'TrgRenMapping'.
+
+Relationships between classes are modeled using associations.
+An association connects 'jointPackage_Ecore2Maude_JointMM' and 'jointPackage_Ecore2Maude_SrcEStringToStringMapEntry'. From 'jointPackage_Ecore2Maude_JointMM', the role 'jointPackage_Ecore2Maude_JointMM' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEStringToStringMapEntry', the role 'jointPackage_Ecore2Maude_SrcEStringToStringMapEntry' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgEqualCond' and 'jointPackage_Ecore2Maude_JointMM'. From 'jointPackage_Ecore2Maude_TrgEqualCond', the role 'jointPackage_Ecore2Maude_TrgEqualCond' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_JointMM', the role 'jointPackage_Ecore2Maude_JointMM2' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEAttribute' and 'jointPackage_Ecore2Maude_SrcEDataType'. From 'jointPackage_Ecore2Maude_SrcEAttribute', the role 'jointPackage_Ecore2Maude_SrcEAttribute' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEDataType', the role 'jointPackage_Ecore2Maude_SrcEDataType' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEClass' and 'jointPackage_Ecore2Maude_SrcEClass'. From 'jointPackage_Ecore2Maude_SrcEClass', the role 'jointPackage_Ecore2Maude_SrcEClass4' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEClass', the role 'jointPackage_Ecore2Maude_SrcEClass' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEClass' and 'jointPackage_Ecore2Maude_SrcEOperation'. From 'jointPackage_Ecore2Maude_SrcEClass', the role 'eContainingClass' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEOperation', the role 'SrcEOperation' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEClass' and 'jointPackage_Ecore2Maude_SrcEAttribute'. From 'jointPackage_Ecore2Maude_SrcEClass', the role 'jointPackage_Ecore2Maude_SrcEClass8' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEAttribute', the role 'jointPackage_Ecore2Maude_SrcEAttribute9' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEClass' and 'jointPackage_Ecore2Maude_SrcEReference'. From 'jointPackage_Ecore2Maude_SrcEClass', the role 'jointPackage_Ecore2Maude_SrcEClass11' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEReference', the role 'jointPackage_Ecore2Maude_SrcEReference' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEClass' and 'jointPackage_Ecore2Maude_SrcEReference'. From 'jointPackage_Ecore2Maude_SrcEClass', the role 'jointPackage_Ecore2Maude_SrcEClass13' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEReference', the role 'jointPackage_Ecore2Maude_SrcEReference14' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEClass' and 'jointPackage_Ecore2Maude_SrcEAttribute'. From 'jointPackage_Ecore2Maude_SrcEClass', the role 'jointPackage_Ecore2Maude_SrcEClass16' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEAttribute', the role 'jointPackage_Ecore2Maude_SrcEAttribute17' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEClass' and 'jointPackage_Ecore2Maude_SrcEReference'. From 'jointPackage_Ecore2Maude_SrcEClass', the role 'jointPackage_Ecore2Maude_SrcEClass19' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEReference', the role 'jointPackage_Ecore2Maude_SrcEReference20' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEOperation' and 'jointPackage_Ecore2Maude_SrcEClass'. From 'jointPackage_Ecore2Maude_SrcEOperation', the role 'jointPackage_Ecore2Maude_SrcEOperation' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEClass', the role 'jointPackage_Ecore2Maude_SrcEClass22' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEStructuralFeature' and 'jointPackage_Ecore2Maude_SrcEClass'. From 'jointPackage_Ecore2Maude_SrcEStructuralFeature', the role 'jointPackage_Ecore2Maude_SrcEStructuralFeature' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEClass', the role 'jointPackage_Ecore2Maude_SrcEClass24' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEClass' and 'jointPackage_Ecore2Maude_SrcEClass'. From 'jointPackage_Ecore2Maude_SrcEClass', the role 'jointPackage_Ecore2Maude_SrcEClass27' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEClass', the role 'jointPackage_Ecore2Maude_SrcEClass25' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEAttribute' and 'jointPackage_Ecore2Maude_SrcEClass'. From 'jointPackage_Ecore2Maude_SrcEAttribute', the role 'jointPackage_Ecore2Maude_SrcEAttribute30' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEClass', the role 'jointPackage_Ecore2Maude_SrcEClass29' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEClass' and 'jointPackage_Ecore2Maude_SrcEStructuralFeature'. From 'jointPackage_Ecore2Maude_SrcEClass', the role 'eContainingClass32' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEStructuralFeature', the role 'SrcEStructuralFeature' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEClassifier' and 'jointPackage_Ecore2Maude_SrcEPackage'. From 'jointPackage_Ecore2Maude_SrcEClassifier', the role 'eClassifiers' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEPackage', the role 'SrcEPackage' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEEnumLiteral' and 'jointPackage_Ecore2Maude_SrcEEnum'. From 'jointPackage_Ecore2Maude_SrcEEnumLiteral', the role 'SrcEEnumLiteral' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEEnum', the role 'eEnum' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEEnumLiteral' and 'jointPackage_Ecore2Maude_SrcEEnum'. From 'jointPackage_Ecore2Maude_SrcEEnumLiteral', the role 'eLiterals' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEEnum', the role 'SrcEEnum' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEClass' and 'jointPackage_Ecore2Maude_SrcEOperation'. From 'jointPackage_Ecore2Maude_SrcEClass', the role 'SrcEClass' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEOperation', the role 'eOperations' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEParameter' and 'jointPackage_Ecore2Maude_SrcEOperation'. From 'jointPackage_Ecore2Maude_SrcEParameter', the role 'SrcEParameter' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEOperation', the role 'eOperation' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEClassifier' and 'jointPackage_Ecore2Maude_SrcEOperation'. From 'jointPackage_Ecore2Maude_SrcEClassifier', the role 'jointPackage_Ecore2Maude_SrcEClassifier' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEOperation', the role 'jointPackage_Ecore2Maude_SrcEOperation39' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEClassifier' and 'jointPackage_Ecore2Maude_SrcEPackage'. From 'jointPackage_Ecore2Maude_SrcEClassifier', the role 'SrcEClassifier' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEPackage', the role 'ePackage' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEPackage' and 'jointPackage_Ecore2Maude_SrcEPackage'. From 'jointPackage_Ecore2Maude_SrcEPackage', the role 'eSuperPackage' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEPackage', the role 'SrcEPackage43' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEPackage' and 'jointPackage_Ecore2Maude_SrcEPackage'. From 'jointPackage_Ecore2Maude_SrcEPackage', the role 'eSubpackages' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEPackage', the role 'SrcEPackage46' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEParameter' and 'jointPackage_Ecore2Maude_SrcEOperation'. From 'jointPackage_Ecore2Maude_SrcEParameter', the role 'eParameters' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEOperation', the role 'SrcEOperation48' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEReference' and 'jointPackage_Ecore2Maude_SrcEReference'. From 'jointPackage_Ecore2Maude_SrcEReference', the role 'jointPackage_Ecore2Maude_SrcEReference49' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEReference', the role 'jointPackage_Ecore2Maude_SrcEReference51' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEReference' and 'jointPackage_Ecore2Maude_SrcEClass'. From 'jointPackage_Ecore2Maude_SrcEReference', the role 'jointPackage_Ecore2Maude_SrcEReference53' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEClass', the role 'jointPackage_Ecore2Maude_SrcEClass54' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEAttribute' and 'jointPackage_Ecore2Maude_SrcEReference'. From 'jointPackage_Ecore2Maude_SrcEAttribute', the role 'jointPackage_Ecore2Maude_SrcEAttribute57' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEReference', the role 'jointPackage_Ecore2Maude_SrcEReference56' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcEClass' and 'jointPackage_Ecore2Maude_SrcEStructuralFeature'. From 'jointPackage_Ecore2Maude_SrcEClass', the role 'SrcEClass59' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEStructuralFeature', the role 'eStructuralFeatures' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_SrcETypedElement' and 'jointPackage_Ecore2Maude_SrcEClassifier'. From 'jointPackage_Ecore2Maude_SrcETypedElement', the role 'jointPackage_Ecore2Maude_SrcETypedElement' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_SrcEClassifier', the role 'jointPackage_Ecore2Maude_SrcEClassifier61' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgMaudeTopEl' and 'jointPackage_Ecore2Maude_TrgMaudeSpec'. From 'jointPackage_Ecore2Maude_TrgMaudeTopEl', the role 'jointPackage_Ecore2Maude_TrgMaudeTopEl' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgMaudeSpec', the role 'jointPackage_Ecore2Maude_TrgMaudeSpec' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgMaudeSpec' and 'jointPackage_Ecore2Maude_TrgMaudeTopEl'. From 'jointPackage_Ecore2Maude_TrgMaudeSpec', the role 'jointPackage_Ecore2Maude_TrgMaudeSpec64' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgMaudeTopEl', the role 'jointPackage_Ecore2Maude_TrgMaudeTopEl65' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgMembership' and 'jointPackage_Ecore2Maude_TrgTerm'. From 'jointPackage_Ecore2Maude_TrgMembership', the role 'jointPackage_Ecore2Maude_TrgMembership' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgTerm', the role 'jointPackage_Ecore2Maude_TrgTerm' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgMembership' and 'jointPackage_Ecore2Maude_TrgSort'. From 'jointPackage_Ecore2Maude_TrgMembership', the role 'jointPackage_Ecore2Maude_TrgMembership68' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgSort', the role 'jointPackage_Ecore2Maude_TrgSort' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgTerm' and 'jointPackage_Ecore2Maude_TrgEquation'. From 'jointPackage_Ecore2Maude_TrgTerm', the role 'jointPackage_Ecore2Maude_TrgTerm70' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgEquation', the role 'jointPackage_Ecore2Maude_TrgEquation' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgTerm' and 'jointPackage_Ecore2Maude_TrgEquation'. From 'jointPackage_Ecore2Maude_TrgTerm', the role 'jointPackage_Ecore2Maude_TrgTerm73' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgEquation', the role 'jointPackage_Ecore2Maude_TrgEquation72' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgTerm' and 'jointPackage_Ecore2Maude_TrgRule'. From 'jointPackage_Ecore2Maude_TrgTerm', the role 'jointPackage_Ecore2Maude_TrgTerm75' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgRule', the role 'jointPackage_Ecore2Maude_TrgRule' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgTerm' and 'jointPackage_Ecore2Maude_TrgRule'. From 'jointPackage_Ecore2Maude_TrgTerm', the role 'jointPackage_Ecore2Maude_TrgTerm78' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgRule', the role 'jointPackage_Ecore2Maude_TrgRule77' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgMembershipCond' and 'jointPackage_Ecore2Maude_TrgSort'. From 'jointPackage_Ecore2Maude_TrgMembershipCond', the role 'jointPackage_Ecore2Maude_TrgMembershipCond' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgSort', the role 'jointPackage_Ecore2Maude_TrgSort80' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgTerm' and 'jointPackage_Ecore2Maude_TrgMatchingCond'. From 'jointPackage_Ecore2Maude_TrgTerm', the role 'jointPackage_Ecore2Maude_TrgTerm82' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgMatchingCond', the role 'jointPackage_Ecore2Maude_TrgMatchingCond' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgTerm' and 'jointPackage_Ecore2Maude_TrgEqualCond'. From 'jointPackage_Ecore2Maude_TrgTerm', the role 'jointPackage_Ecore2Maude_TrgTerm85' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgEqualCond', the role 'jointPackage_Ecore2Maude_TrgEqualCond84' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgModExpression' and 'jointPackage_Ecore2Maude_TrgInstModExp'. From 'jointPackage_Ecore2Maude_TrgModExpression', the role 'jointPackage_Ecore2Maude_TrgModExpression' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgInstModExp', the role 'jointPackage_Ecore2Maude_TrgInstModExp' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgView' and 'jointPackage_Ecore2Maude_TrgInstModExp'. From 'jointPackage_Ecore2Maude_TrgView', the role 'jointPackage_Ecore2Maude_TrgView' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgInstModExp', the role 'jointPackage_Ecore2Maude_TrgInstModExp88' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgModExpression' and 'jointPackage_Ecore2Maude_TrgRenModExp'. From 'jointPackage_Ecore2Maude_TrgModExpression', the role 'jointPackage_Ecore2Maude_TrgModExpression90' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgRenModExp', the role 'jointPackage_Ecore2Maude_TrgRenModExp' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgRenMapping' and 'jointPackage_Ecore2Maude_TrgRenModExp'. From 'jointPackage_Ecore2Maude_TrgRenMapping', the role 'jointPackage_Ecore2Maude_TrgRenMapping' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgRenModExp', the role 'jointPackage_Ecore2Maude_TrgRenModExp92' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgCompModExp' and 'jointPackage_Ecore2Maude_TrgModExpression'. From 'jointPackage_Ecore2Maude_TrgCompModExp', the role 'jointPackage_Ecore2Maude_TrgCompModExp' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgModExpression', the role 'jointPackage_Ecore2Maude_TrgModExpression94' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgModule' and 'jointPackage_Ecore2Maude_TrgModuleIdModExp'. From 'jointPackage_Ecore2Maude_TrgModule', the role 'jointPackage_Ecore2Maude_TrgModule' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgModuleIdModExp', the role 'jointPackage_Ecore2Maude_TrgModuleIdModExp' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgTheoryIdModExp' and 'jointPackage_Ecore2Maude_TrgTheory'. From 'jointPackage_Ecore2Maude_TrgTheoryIdModExp', the role 'jointPackage_Ecore2Maude_TrgTheoryIdModExp' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgTheory', the role 'jointPackage_Ecore2Maude_TrgTheory' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgParameter' and 'jointPackage_Ecore2Maude_TrgModExpression'. From 'jointPackage_Ecore2Maude_TrgParameter', the role 'jointPackage_Ecore2Maude_TrgParameter' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgModExpression', the role 'jointPackage_Ecore2Maude_TrgModExpression98' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgModElement' and 'jointPackage_Ecore2Maude_TrgTheory'. From 'jointPackage_Ecore2Maude_TrgModElement', the role 'TrgModElement' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgTheory', the role 'theory' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgModule' and 'jointPackage_Ecore2Maude_TrgModElement'. From 'jointPackage_Ecore2Maude_TrgModule', the role 'module' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgModElement', the role 'TrgModElement101' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgParameter' and 'jointPackage_Ecore2Maude_TrgModule'. From 'jointPackage_Ecore2Maude_TrgParameter', the role 'jointPackage_Ecore2Maude_TrgParameter104' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgModule', the role 'jointPackage_Ecore2Maude_TrgModule103' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgModElement' and 'jointPackage_Ecore2Maude_TrgModule'. From 'jointPackage_Ecore2Maude_TrgModElement', the role 'els' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgModule', the role 'TrgModule' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgTheory' and 'jointPackage_Ecore2Maude_TrgModElement'. From 'jointPackage_Ecore2Maude_TrgTheory', the role 'TrgTheory' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgModElement', the role 'els107' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgModImportation' and 'jointPackage_Ecore2Maude_TrgModExpression'. From 'jointPackage_Ecore2Maude_TrgModImportation', the role 'jointPackage_Ecore2Maude_TrgModImportation' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgModExpression', the role 'jointPackage_Ecore2Maude_TrgModExpression109' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgSort' and 'jointPackage_Ecore2Maude_TrgSubsortRel'. From 'jointPackage_Ecore2Maude_TrgSort', the role 'supersorts' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgSubsortRel', the role 'TrgSubsortRel' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgSubsortRel' and 'jointPackage_Ecore2Maude_TrgSort'. From 'jointPackage_Ecore2Maude_TrgSubsortRel', the role 'TrgSubsortRel112' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgSort', the role 'subsorts' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgKind' and 'jointPackage_Ecore2Maude_TrgSort'. From 'jointPackage_Ecore2Maude_TrgKind', the role 'TrgKind' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgSort', the role 'sorts' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgKind' and 'jointPackage_Ecore2Maude_TrgSort'. From 'jointPackage_Ecore2Maude_TrgKind', the role 'kind' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgSort', the role 'TrgSort' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgSort' and 'jointPackage_Ecore2Maude_TrgSubsortRel'. From 'jointPackage_Ecore2Maude_TrgSort', the role 'TrgSort116' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgSubsortRel', the role 'supersortRels' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgSort' and 'jointPackage_Ecore2Maude_TrgSubsortRel'. From 'jointPackage_Ecore2Maude_TrgSort', the role 'TrgSort118' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgSubsortRel', the role 'subsortRels' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgOperation' and 'jointPackage_Ecore2Maude_TrgType'. From 'jointPackage_Ecore2Maude_TrgOperation', the role 'jointPackage_Ecore2Maude_TrgOperation' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgType', the role 'jointPackage_Ecore2Maude_TrgType' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgOperation' and 'jointPackage_Ecore2Maude_TrgType'. From 'jointPackage_Ecore2Maude_TrgOperation', the role 'jointPackage_Ecore2Maude_TrgOperation121' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgType', the role 'jointPackage_Ecore2Maude_TrgType122' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgStatement' and 'jointPackage_Ecore2Maude_TrgCondition'. From 'jointPackage_Ecore2Maude_TrgStatement', the role 'jointPackage_Ecore2Maude_TrgStatement' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgCondition', the role 'jointPackage_Ecore2Maude_TrgCondition' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgCondition' and 'jointPackage_Ecore2Maude_TrgTerm'. From 'jointPackage_Ecore2Maude_TrgCondition', the role 'jointPackage_Ecore2Maude_TrgCondition125' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgTerm', the role 'jointPackage_Ecore2Maude_TrgTerm126' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgTerm' and 'jointPackage_Ecore2Maude_TrgRewriteCond'. From 'jointPackage_Ecore2Maude_TrgTerm', the role 'jointPackage_Ecore2Maude_TrgTerm128' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgRewriteCond', the role 'jointPackage_Ecore2Maude_TrgRewriteCond' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgTerm' and 'jointPackage_Ecore2Maude_TrgType'. From 'jointPackage_Ecore2Maude_TrgTerm', the role 'jointPackage_Ecore2Maude_TrgTerm130' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgType', the role 'jointPackage_Ecore2Maude_TrgType131' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgTerm' and 'jointPackage_Ecore2Maude_TrgRecTerm'. From 'jointPackage_Ecore2Maude_TrgTerm', the role 'jointPackage_Ecore2Maude_TrgTerm133' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgRecTerm', the role 'jointPackage_Ecore2Maude_TrgRecTerm' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgModExpression' and 'jointPackage_Ecore2Maude_TrgView'. From 'jointPackage_Ecore2Maude_TrgModExpression', the role 'jointPackage_Ecore2Maude_TrgModExpression136' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgView', the role 'jointPackage_Ecore2Maude_TrgView135' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgModExpression' and 'jointPackage_Ecore2Maude_TrgView'. From 'jointPackage_Ecore2Maude_TrgModExpression', the role 'jointPackage_Ecore2Maude_TrgModExpression139' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgView', the role 'jointPackage_Ecore2Maude_TrgView138' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgViewMapping' and 'jointPackage_Ecore2Maude_TrgView'. From 'jointPackage_Ecore2Maude_TrgViewMapping', the role 'jointPackage_Ecore2Maude_TrgViewMapping' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgView', the role 'jointPackage_Ecore2Maude_TrgView141' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgTerm' and 'jointPackage_Ecore2Maude_TrgTermMapping'. From 'jointPackage_Ecore2Maude_TrgTerm', the role 'jointPackage_Ecore2Maude_TrgTerm143' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgTermMapping', the role 'jointPackage_Ecore2Maude_TrgTermMapping' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgTerm' and 'jointPackage_Ecore2Maude_TrgTermMapping'. From 'jointPackage_Ecore2Maude_TrgTerm', the role 'jointPackage_Ecore2Maude_TrgTerm146' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgTermMapping', the role 'jointPackage_Ecore2Maude_TrgTermMapping145' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgSortMapping' and 'jointPackage_Ecore2Maude_TrgSort'. From 'jointPackage_Ecore2Maude_TrgSortMapping', the role 'jointPackage_Ecore2Maude_TrgSortMapping' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgSort', the role 'jointPackage_Ecore2Maude_TrgSort148' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgOperation' and 'jointPackage_Ecore2Maude_TrgOpTypedMapping'. From 'jointPackage_Ecore2Maude_TrgOperation', the role 'jointPackage_Ecore2Maude_TrgOperation150' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgOpTypedMapping', the role 'jointPackage_Ecore2Maude_TrgOpTypedMapping' has cardinality 0..*.
+An association connects 'jointPackage_Ecore2Maude_TrgOperation' and 'jointPackage_Ecore2Maude_TrgOpMapping'. From 'jointPackage_Ecore2Maude_TrgOperation', the role 'jointPackage_Ecore2Maude_TrgOperation152' has cardinality 0..*, and from 'jointPackage_Ecore2Maude_TrgOpMapping', the role 'jointPackage_Ecore2Maude_TrgOpMapping' has cardinality 0..*.

@@ -1,0 +1,20 @@
+The domain model 'dfamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'dfamodel_State' represents an important domain concept.
+It has the following attributes: 'isStart', which is of type bool; 'id', which is of type str; 'isEnd', which is of type bool.
+
+'dfamodel_Transition' represents an important domain concept.
+It has one attribute: 'input', which is of type str.
+
+'dfamodel_DFA' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'dfamodel_State' and 'dfamodel_DFA'. From 'dfamodel_State', the role 'dfamodel_State' has cardinality 0..*, and from 'dfamodel_DFA', the role 'dfamodel_DFA' has cardinality 0..*.
+An association connects 'dfamodel_DFA' and 'dfamodel_Transition'. From 'dfamodel_DFA', the role 'dfamodel_DFA2' has cardinality 0..*, and from 'dfamodel_Transition', the role 'dfamodel_Transition' has cardinality 0..*.
+An association connects 'dfamodel_Transition' and 'dfamodel_State'. From 'dfamodel_Transition', the role 'outgoingTransitions' has cardinality 0..*, and from 'dfamodel_State', the role 'State' has cardinality 0..*.
+An association connects 'dfamodel_Transition' and 'dfamodel_State'. From 'dfamodel_Transition', the role 'incomingTransitions' has cardinality 0..*, and from 'dfamodel_State', the role 'State5' has cardinality 0..*.
+An association connects 'dfamodel_Transition' and 'dfamodel_State'. From 'dfamodel_Transition', the role 'Transition' has cardinality 0..*, and from 'dfamodel_State', the role 'from' has cardinality 0..*.
+An association connects 'dfamodel_Transition' and 'dfamodel_State'. From 'dfamodel_Transition', the role 'Transition8' has cardinality 0..*, and from 'dfamodel_State', the role 'to' has cardinality 0..*.

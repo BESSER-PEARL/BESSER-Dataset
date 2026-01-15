@@ -1,0 +1,160 @@
+The domain model 'minilang' describes the core structural elements and their relationships within the system.
+
+The model defines 37 main class(es).
+
+'minilang_LessOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_BooleanAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Greater' represents an important domain concept.
+It does not declare any attributes.
+
+'IntOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_VariableRef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_BooleanVariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_IntVariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_And' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_If' represents an important domain concept.
+It does not declare any attributes.
+
+'IntComparison' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_IntComparison' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Integer' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'minilang_Multiply' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_IntExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_PrintVar' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'IntExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_IntOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_GreaterOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Boolean' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'minilang_BooleanOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Divide' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_IntAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_PrintStr' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'minilang_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Less' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_While' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'minilang_Or' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'minilang_Integer' is a specialization of 'IntExpression'.
+The class 'minilang_Boolean' is a specialization of 'BooleanExpression'.
+The class 'minilang_IntOperation' is a specialization of 'IntExpression'.
+The class 'minilang_Equal' is a specialization of 'IntComparison'.
+The class 'minilang_Greater' is a specialization of 'IntComparison'.
+The class 'minilang_GreaterOrEqual' is a specialization of 'IntComparison'.
+The class 'minilang_Less' is a specialization of 'IntComparison'.
+The class 'minilang_LessOrEqual' is a specialization of 'IntComparison'.
+The class 'minilang_Not' is a specialization of 'BooleanExpression'.
+The class 'minilang_Or' is a specialization of 'BooleanOperation'.
+The class 'minilang_And' is a specialization of 'BooleanOperation'.
+The class 'minilang_Plus' is a specialization of 'IntOperation'.
+The class 'minilang_Minus' is a specialization of 'IntOperation'.
+The class 'minilang_Multiply' is a specialization of 'IntOperation'.
+The class 'minilang_Divide' is a specialization of 'IntOperation'.
+The class 'minilang_IntComparison' is a specialization of 'BooleanExpression'.
+The class 'minilang_BooleanOperation' is a specialization of 'BooleanExpression'.
+The class 'minilang_BooleanVariableRef' is a specialization of 'VariableRef'.
+The class 'minilang_BooleanVariableRef' is a specialization of 'BooleanExpression'.
+The class 'minilang_IntVariableRef' is a specialization of 'VariableRef'.
+The class 'minilang_IntVariableRef' is a specialization of 'IntExpression'.
+The class 'minilang_BooleanAssignment' is a specialization of 'Statement'.
+The class 'minilang_IntAssignment' is a specialization of 'Statement'.
+The class 'minilang_PrintVar' is a specialization of 'Statement'.
+The class 'minilang_PrintStr' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'minilang_IntExpression' and 'minilang_IntOperation'. From 'minilang_IntExpression', the role 'minilang_IntExpression' has cardinality 0..*, and from 'minilang_IntOperation', the role 'minilang_IntOperation' has cardinality 0..*.
+An association connects 'minilang_IntExpression' and 'minilang_IntOperation'. From 'minilang_IntExpression', the role 'minilang_IntExpression3' has cardinality 0..*, and from 'minilang_IntOperation', the role 'minilang_IntOperation2' has cardinality 0..*.
+An association connects 'minilang_Not' and 'minilang_BooleanExpression'. From 'minilang_Not', the role 'minilang_Not' has cardinality 0..*, and from 'minilang_BooleanExpression', the role 'minilang_BooleanExpression' has cardinality 0..*.
+An association connects 'minilang_IntComparison' and 'minilang_IntExpression'. From 'minilang_IntComparison', the role 'minilang_IntComparison' has cardinality 0..*, and from 'minilang_IntExpression', the role 'minilang_IntExpression6' has cardinality 0..*.
+An association connects 'minilang_IntExpression' and 'minilang_IntComparison'. From 'minilang_IntExpression', the role 'minilang_IntExpression9' has cardinality 0..*, and from 'minilang_IntComparison', the role 'minilang_IntComparison8' has cardinality 0..*.
+An association connects 'minilang_BooleanOperation' and 'minilang_BooleanExpression'. From 'minilang_BooleanOperation', the role 'minilang_BooleanOperation' has cardinality 0..*, and from 'minilang_BooleanExpression', the role 'minilang_BooleanExpression11' has cardinality 0..*.
+An association connects 'minilang_BooleanExpression' and 'minilang_BooleanOperation'. From 'minilang_BooleanExpression', the role 'minilang_BooleanExpression14' has cardinality 0..*, and from 'minilang_BooleanOperation', the role 'minilang_BooleanOperation13' has cardinality 0..*.
+An association connects 'minilang_BooleanVariableRef' and 'minilang_BooleanAssignment'. From 'minilang_BooleanVariableRef', the role 'minilang_BooleanVariableRef' has cardinality 0..*, and from 'minilang_BooleanAssignment', the role 'minilang_BooleanAssignment' has cardinality 0..*.
+An association connects 'minilang_BooleanAssignment' and 'minilang_BooleanExpression'. From 'minilang_BooleanAssignment', the role 'minilang_BooleanAssignment17' has cardinality 0..*, and from 'minilang_BooleanExpression', the role 'minilang_BooleanExpression18' has cardinality 0..*.
+An association connects 'minilang_IntVariableRef' and 'minilang_IntAssignment'. From 'minilang_IntVariableRef', the role 'minilang_IntVariableRef' has cardinality 0..*, and from 'minilang_IntAssignment', the role 'minilang_IntAssignment' has cardinality 0..*.
+An association connects 'minilang_IntAssignment' and 'minilang_IntExpression'. From 'minilang_IntAssignment', the role 'minilang_IntAssignment21' has cardinality 0..*, and from 'minilang_IntExpression', the role 'minilang_IntExpression22' has cardinality 0..*.
+An association connects 'minilang_Statement' and 'minilang_Block'. From 'minilang_Statement', the role 'minilang_Statement' has cardinality 0..*, and from 'minilang_Block', the role 'minilang_Block' has cardinality 0..*.
+An association connects 'minilang_BooleanExpression' and 'minilang_If'. From 'minilang_BooleanExpression', the role 'minilang_BooleanExpression25' has cardinality 0..*, and from 'minilang_If', the role 'minilang_If' has cardinality 0..*.
+An association connects 'minilang_If' and 'minilang_Block'. From 'minilang_If', the role 'minilang_If27' has cardinality 0..*, and from 'minilang_Block', the role 'minilang_Block28' has cardinality 0..*.
+An association connects 'minilang_If' and 'minilang_Block'. From 'minilang_If', the role 'minilang_If30' has cardinality 0..*, and from 'minilang_Block', the role 'minilang_Block31' has cardinality 0..*.
+An association connects 'minilang_BooleanExpression' and 'minilang_While'. From 'minilang_BooleanExpression', the role 'minilang_BooleanExpression33' has cardinality 0..*, and from 'minilang_While', the role 'minilang_While' has cardinality 0..*.
+An association connects 'minilang_Block' and 'minilang_While'. From 'minilang_Block', the role 'minilang_Block36' has cardinality 0..*, and from 'minilang_While', the role 'minilang_While35' has cardinality 0..*.

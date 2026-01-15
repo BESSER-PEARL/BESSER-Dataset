@@ -1,0 +1,73 @@
+The domain model 'mindstorms' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'mindstorms_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_GoForward' represents an important domain concept.
+It has the following attributes: 'infinite', which is of type bool; 'cm', which is of type int.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Rotate' represents an important domain concept.
+It has the following attributes: 'degrees', which is of type int; 'random', which is of type bool.
+
+'mindstorms_Choreography' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_EdgeInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Release' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_End' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'Block' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_Grab' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mindstorms_Begin' represents an important domain concept.
+It does not declare any attributes.
+
+'mindstorms_GoBackward' represents an important domain concept.
+It has the following attributes: 'infinite', which is of type bool; 'cm', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'mindstorms_Instruction' is a specialization of 'NamedElement'.
+The class 'mindstorms_GoForward' is a specialization of 'Action'.
+The class 'mindstorms_GoBackward' is a specialization of 'Action'.
+The class 'mindstorms_Begin' is a specialization of 'Action'.
+The class 'mindstorms_Rotate' is a specialization of 'Action'.
+The class 'mindstorms_Release' is a specialization of 'Action'.
+The class 'mindstorms_Action' is a specialization of 'Block'.
+The class 'mindstorms_Block' is a specialization of 'Instruction'.
+The class 'mindstorms_End' is a specialization of 'Action'.
+The class 'mindstorms_Choreography' is a specialization of 'Instruction'.
+The class 'mindstorms_Grab' is a specialization of 'Action'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mindstorms_Choreography' and 'mindstorms_Instruction'. From 'mindstorms_Choreography', the role 'mindstorms_Choreography' has cardinality 0..*, and from 'mindstorms_Instruction', the role 'mindstorms_Instruction' has cardinality 0..*.
+An association connects 'mindstorms_EdgeInstruction' and 'mindstorms_Choreography'. From 'mindstorms_EdgeInstruction', the role 'mindstorms_EdgeInstruction' has cardinality 0..*, and from 'mindstorms_Choreography', the role 'mindstorms_Choreography2' has cardinality 0..*.
+An association connects 'mindstorms_EdgeInstruction' and 'mindstorms_Instruction'. From 'mindstorms_EdgeInstruction', the role 'mindstorms_EdgeInstruction4' has cardinality 0..*, and from 'mindstorms_Instruction', the role 'mindstorms_Instruction5' has cardinality 0..*.
+An association connects 'mindstorms_EdgeInstruction' and 'mindstorms_Instruction'. From 'mindstorms_EdgeInstruction', the role 'mindstorms_EdgeInstruction7' has cardinality 0..*, and from 'mindstorms_Instruction', the role 'mindstorms_Instruction8' has cardinality 0..*.

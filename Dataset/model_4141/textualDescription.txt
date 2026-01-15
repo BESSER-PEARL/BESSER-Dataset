@@ -1,0 +1,45 @@
+The domain model 'arithmetics' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'arithmetics_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetics_Evaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetics_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetics_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetics_NumberLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetics_Multi' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetics_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'arithmetics_Plus' is a specialization of 'Expression'.
+The class 'arithmetics_Minus' is a specialization of 'Expression'.
+The class 'arithmetics_Multi' is a specialization of 'Expression'.
+The class 'arithmetics_Div' is a specialization of 'Expression'.
+The class 'arithmetics_NumberLiteral' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'arithmetics_Evaluation' and 'arithmetics_Expression'. From 'arithmetics_Evaluation', the role 'arithmetics_Evaluation' has cardinality 0..*, and from 'arithmetics_Expression', the role 'arithmetics_Expression' has cardinality 0..*.
+An association connects 'arithmetics_Plus' and 'arithmetics_Expression'. From 'arithmetics_Plus', the role 'arithmetics_Plus' has cardinality 0..*, and from 'arithmetics_Expression', the role 'arithmetics_Expression2' has cardinality 0..*.
+An association connects 'arithmetics_Plus' and 'arithmetics_Expression'. From 'arithmetics_Plus', the role 'arithmetics_Plus4' has cardinality 0..*, and from 'arithmetics_Expression', the role 'arithmetics_Expression5' has cardinality 0..*.
+An association connects 'arithmetics_Minus' and 'arithmetics_Expression'. From 'arithmetics_Minus', the role 'arithmetics_Minus' has cardinality 0..*, and from 'arithmetics_Expression', the role 'arithmetics_Expression7' has cardinality 0..*.
+An association connects 'arithmetics_Minus' and 'arithmetics_Expression'. From 'arithmetics_Minus', the role 'arithmetics_Minus9' has cardinality 0..*, and from 'arithmetics_Expression', the role 'arithmetics_Expression10' has cardinality 0..*.
+An association connects 'arithmetics_Multi' and 'arithmetics_Expression'. From 'arithmetics_Multi', the role 'arithmetics_Multi' has cardinality 0..*, and from 'arithmetics_Expression', the role 'arithmetics_Expression12' has cardinality 0..*.
+An association connects 'arithmetics_Multi' and 'arithmetics_Expression'. From 'arithmetics_Multi', the role 'arithmetics_Multi14' has cardinality 0..*, and from 'arithmetics_Expression', the role 'arithmetics_Expression15' has cardinality 0..*.
+An association connects 'arithmetics_Div' and 'arithmetics_Expression'. From 'arithmetics_Div', the role 'arithmetics_Div' has cardinality 0..*, and from 'arithmetics_Expression', the role 'arithmetics_Expression17' has cardinality 0..*.
+An association connects 'arithmetics_Expression' and 'arithmetics_Div'. From 'arithmetics_Expression', the role 'arithmetics_Expression20' has cardinality 0..*, and from 'arithmetics_Div', the role 'arithmetics_Div19' has cardinality 0..*.

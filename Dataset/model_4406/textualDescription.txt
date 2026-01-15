@@ -1,0 +1,346 @@
+The domain model 'arduino' describes the core structural elements and their relationships within the system.
+
+The model defines 80 main class(es).
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_If' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Control' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Sketch' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_ModuleInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_MusicPlayer' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Board' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_IntegerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_ArduinoCommunicationModule' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_RotationSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_AmbientLightSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_LED' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+'ModuleGet' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_BooleanModuleGet' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_MicroServo' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_ModuleAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_IntegerVariable' represents an important domain concept.
+It has one attribute: 'initialValue', which is of type int.
+
+'arduino_Repeat' represents an important domain concept.
+It has one attribute: 'iteration', which is of type int.
+
+'arduino_ArduinoBoard' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Utilities' represents an important domain concept.
+It does not declare any attributes.
+
+'ArduinoModule' represents an important domain concept.
+It does not declare any attributes.
+
+'ModuleInstruction' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_PushButton' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Buzzer' represents an important domain concept.
+It does not declare any attributes.
+
+'ArduinoAnalogModule' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_DigitalPin' represents an important domain concept.
+It does not declare any attributes.
+
+'Utilities' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_VariableAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Project' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_BooleanVariable' represents an important domain concept.
+It has one attribute: 'initialValue', which is of type bool.
+
+'arduino_UnaryBooleanExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'arduino_BooleanVariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'Control' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_BooleanConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'arduino_ArduinoAnalogModule' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_BluetoothTransceiver' represents an important domain concept.
+It does not declare any attributes.
+
+'ArduinoDigitalModule' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_AnalogPin' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'arduino_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'Board' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_BinaryIntegerExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'arduino_IntegerConstant' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'arduino_ModuleGet' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_BinaryBooleanExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'arduino_VariableDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_ArduinoDigitalModule' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_ArduinoModule' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_While' represents an important domain concept.
+It does not declare any attributes.
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_InfraRedSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'ArduinoCommunicationModule' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_IntegerModuleGet' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_SoundSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Delay' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'unit', which is of type str.
+
+'BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Constant' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_UnaryIntegerExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'arduino_IntegerVariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Fan' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BinaryBooleanOperatorKind' defines the following possible values: 'Different', 'infOrEqual', 'or', 'inf', 'equal', 'and', 'sup', 'supOrEqual'.
+The enumeration 'UnaryIntegerOperatorKind' defines the following possible values: 'minus', 'squareRoot'.
+The enumeration 'Time' defines the following possible values: 'MicroSecond', 'MilliSecond'.
+The enumeration 'UnaryBooleanOperatorKind' defines a single possible value: 'not'.
+The enumeration 'BinaryIntegerOperatorKind' defines the following possible values: 'div', 'plus', 'min', 'minus', 'max', 'pourcent', 'mul'.
+The enumeration 'Color' defines the following possible values: 'red', 'blue', 'white'.
+
+The model also captures inheritance relationships between classes.
+The class 'arduino_Board' is a specialization of 'NamedElement'.
+The class 'arduino_Module' is a specialization of 'NamedElement'.
+The class 'arduino_DigitalPin' is a specialization of 'Pin'.
+The class 'arduino_Pin' is a specialization of 'NamedElement'.
+The class 'arduino_AnalogPin' is a specialization of 'Pin'.
+The class 'arduino_Sketch' is a specialization of 'NamedElement'.
+The class 'arduino_ModuleAssignment' is a specialization of 'ModuleInstruction'.
+The class 'arduino_ModuleAssignment' is a specialization of 'Assignment'.
+The class 'arduino_ModuleInstruction' is a specialization of 'Instruction'.
+The class 'arduino_Control' is a specialization of 'Instruction'.
+The class 'arduino_Utilities' is a specialization of 'Instruction'.
+The class 'arduino_Delay' is a specialization of 'Utilities'.
+The class 'arduino_Repeat' is a specialization of 'Control'.
+The class 'arduino_ModuleGet' is a specialization of 'Expression'.
+The class 'arduino_ModuleGet' is a specialization of 'ModuleInstruction'.
+The class 'arduino_While' is a specialization of 'Control'.
+The class 'arduino_BinaryExpression' is a specialization of 'Expression'.
+The class 'arduino_Variable' is a specialization of 'NamedElement'.
+The class 'arduino_VariableAssignment' is a specialization of 'Instruction'.
+The class 'arduino_VariableAssignment' is a specialization of 'Assignment'.
+The class 'arduino_BinaryIntegerExpression' is a specialization of 'BinaryExpression'.
+The class 'arduino_BinaryIntegerExpression' is a specialization of 'IntegerExpression'.
+The class 'arduino_BinaryBooleanExpression' is a specialization of 'BinaryExpression'.
+The class 'arduino_BinaryBooleanExpression' is a specialization of 'BooleanExpression'.
+The class 'arduino_Constant' is a specialization of 'Expression'.
+The class 'arduino_If' is a specialization of 'Control'.
+The class 'arduino_IntegerConstant' is a specialization of 'Constant'.
+The class 'arduino_IntegerConstant' is a specialization of 'IntegerExpression'.
+The class 'arduino_BooleanConstant' is a specialization of 'Constant'.
+The class 'arduino_BooleanConstant' is a specialization of 'BooleanExpression'.
+The class 'arduino_BooleanExpression' is a specialization of 'Expression'.
+The class 'arduino_IntegerExpression' is a specialization of 'Expression'.
+The class 'arduino_Assignment' is a specialization of 'Instruction'.
+The class 'arduino_IntegerVariable' is a specialization of 'Variable'.
+The class 'arduino_BooleanVariable' is a specialization of 'Variable'.
+The class 'arduino_BooleanModuleGet' is a specialization of 'ModuleGet'.
+The class 'arduino_BooleanModuleGet' is a specialization of 'BooleanExpression'.
+The class 'arduino_IntegerModuleGet' is a specialization of 'ModuleGet'.
+The class 'arduino_IntegerModuleGet' is a specialization of 'IntegerExpression'.
+The class 'arduino_UnaryExpression' is a specialization of 'Expression'.
+The class 'arduino_UnaryBooleanExpression' is a specialization of 'UnaryExpression'.
+The class 'arduino_UnaryBooleanExpression' is a specialization of 'BooleanExpression'.
+The class 'arduino_UnaryIntegerExpression' is a specialization of 'UnaryExpression'.
+The class 'arduino_UnaryIntegerExpression' is a specialization of 'IntegerExpression'.
+The class 'arduino_VariableDeclaration' is a specialization of 'Instruction'.
+The class 'arduino_VariableRef' is a specialization of 'Expression'.
+The class 'arduino_IntegerVariableRef' is a specialization of 'VariableRef'.
+The class 'arduino_IntegerVariableRef' is a specialization of 'IntegerExpression'.
+The class 'arduino_LED' is a specialization of 'ArduinoDigitalModule'.
+The class 'arduino_PushButton' is a specialization of 'ArduinoDigitalModule'.
+The class 'arduino_Buzzer' is a specialization of 'ArduinoDigitalModule'.
+The class 'arduino_RotationSensor' is a specialization of 'ArduinoAnalogModule'.
+The class 'arduino_MicroServo' is a specialization of 'ArduinoDigitalModule'.
+The class 'arduino_InfraRedSensor' is a specialization of 'ArduinoDigitalModule'.
+The class 'arduino_AmbientLightSensor' is a specialization of 'ArduinoAnalogModule'.
+The class 'arduino_SoundSensor' is a specialization of 'ArduinoAnalogModule'.
+The class 'arduino_Fan' is a specialization of 'ArduinoDigitalModule'.
+The class 'arduino_MusicPlayer' is a specialization of 'ArduinoAnalogModule'.
+The class 'arduino_ArduinoModule' is a specialization of 'Module'.
+The class 'arduino_ArduinoBoard' is a specialization of 'Board'.
+The class 'arduino_ArduinoDigitalModule' is a specialization of 'ArduinoModule'.
+The class 'arduino_ArduinoAnalogModule' is a specialization of 'ArduinoModule'.
+The class 'arduino_BooleanVariableRef' is a specialization of 'VariableRef'.
+The class 'arduino_BooleanVariableRef' is a specialization of 'BooleanExpression'.
+The class 'arduino_ArduinoCommunicationModule' is a specialization of 'ArduinoAnalogModule'.
+The class 'arduino_BluetoothTransceiver' is a specialization of 'ArduinoCommunicationModule'.
+
+Relationships between classes are modeled using associations.
+An association connects 'arduino_Project' and 'arduino_Board'. From 'arduino_Project', the role '1' has cardinality 0..*, and from 'arduino_Board', the role 'unnamed role' has cardinality 0..*.
+An association connects 'arduino_DigitalPin' and 'arduino_ArduinoDigitalModule'. From 'arduino_DigitalPin', the role 'arduino_DigitalPin' has cardinality 0..*, and from 'arduino_ArduinoDigitalModule', the role 'arduino_ArduinoDigitalModule' has cardinality 0..*.
+An association connects 'arduino_ArduinoAnalogModule' and 'arduino_AnalogPin'. From 'arduino_ArduinoAnalogModule', the role 'arduino_ArduinoAnalogModule' has cardinality 0..*, and from 'arduino_AnalogPin', the role 'arduino_AnalogPin' has cardinality 0..*.
+An association connects 'arduino_Sketch' and 'arduino_Project'. From 'arduino_Sketch', the role '5' has cardinality 0..*, and from 'arduino_Project', the role '6' has cardinality 0..*.
+An association connects 'arduino_Sketch' and 'arduino_Block'. From 'arduino_Sketch', the role 'arduino_Sketch' has cardinality 0..*, and from 'arduino_Block', the role 'arduino_Block' has cardinality 0..*.
+An association connects 'arduino_Sketch' and 'arduino_Board'. From 'arduino_Sketch', the role 'arduino_Sketch9' has cardinality 0..*, and from 'arduino_Board', the role 'arduino_Board' has cardinality 0..*.
+An association connects 'arduino_Project' and 'arduino_Board'. From 'arduino_Project', the role '11' has cardinality 0..*, and from 'arduino_Board', the role '12' has cardinality 0..*.
+An association connects 'arduino_Sketch' and 'arduino_Project'. From 'arduino_Sketch', the role '15' has cardinality 0..*, and from 'arduino_Project', the role '14' has cardinality 0..*.
+An association connects 'arduino_ModuleInstruction' and 'arduino_Module'. From 'arduino_ModuleInstruction', the role 'arduino_ModuleInstruction' has cardinality 0..*, and from 'arduino_Module', the role 'arduino_Module' has cardinality 0..*.
+An association connects 'arduino_Block' and 'arduino_Control'. From 'arduino_Block', the role 'arduino_Block18' has cardinality 0..*, and from 'arduino_Control', the role 'arduino_Control' has cardinality 0..*.
+An association connects 'arduino_BooleanExpression' and 'arduino_While'. From 'arduino_BooleanExpression', the role 'arduino_BooleanExpression' has cardinality 0..*, and from 'arduino_While', the role 'arduino_While' has cardinality 0..*.
+An association connects 'arduino_Expression' and 'arduino_BinaryExpression'. From 'arduino_Expression', the role 'arduino_Expression' has cardinality 0..*, and from 'arduino_BinaryExpression', the role 'arduino_BinaryExpression' has cardinality 0..*.
+An association connects 'arduino_Expression' and 'arduino_BinaryExpression'. From 'arduino_Expression', the role 'arduino_Expression23' has cardinality 0..*, and from 'arduino_BinaryExpression', the role 'arduino_BinaryExpression22' has cardinality 0..*.
+An association connects 'arduino_VariableAssignment' and 'arduino_Variable'. From 'arduino_VariableAssignment', the role 'arduino_VariableAssignment' has cardinality 0..*, and from 'arduino_Variable', the role 'arduino_Variable' has cardinality 0..*.
+An association connects 'arduino_BooleanExpression' and 'arduino_If'. From 'arduino_BooleanExpression', the role 'arduino_BooleanExpression26' has cardinality 0..*, and from 'arduino_If', the role 'arduino_If' has cardinality 0..*.
+An association connects 'arduino_Block' and 'arduino_If'. From 'arduino_Block', the role 'arduino_Block29' has cardinality 0..*, and from 'arduino_If', the role 'arduino_If28' has cardinality 0..*.
+An association connects 'arduino_Expression' and 'arduino_Assignment'. From 'arduino_Expression', the role 'arduino_Expression31' has cardinality 0..*, and from 'arduino_Assignment', the role 'arduino_Assignment' has cardinality 0..*.
+An association connects 'arduino_Expression' and 'arduino_UnaryExpression'. From 'arduino_Expression', the role 'arduino_Expression33' has cardinality 0..*, and from 'arduino_UnaryExpression', the role 'arduino_UnaryExpression' has cardinality 0..*.
+An association connects 'arduino_VariableDeclaration' and 'arduino_Variable'. From 'arduino_VariableDeclaration', the role 'arduino_VariableDeclaration' has cardinality 0..*, and from 'arduino_Variable', the role 'arduino_Variable35' has cardinality 0..*.
+An association connects 'arduino_IntegerVariable' and 'arduino_IntegerVariableRef'. From 'arduino_IntegerVariable', the role 'arduino_IntegerVariable' has cardinality 0..*, and from 'arduino_IntegerVariableRef', the role 'arduino_IntegerVariableRef' has cardinality 0..*.
+An association connects 'arduino_Block' and 'arduino_Instruction'. From 'arduino_Block', the role 'arduino_Block38' has cardinality 0..*, and from 'arduino_Instruction', the role 'arduino_Instruction' has cardinality 0..*.
+An association connects 'arduino_ArduinoBoard' and 'arduino_DigitalPin'. From 'arduino_ArduinoBoard', the role 'arduino_ArduinoBoard' has cardinality 0..*, and from 'arduino_DigitalPin', the role 'arduino_DigitalPin40' has cardinality 0..*.
+An association connects 'arduino_ArduinoBoard' and 'arduino_AnalogPin'. From 'arduino_ArduinoBoard', the role 'arduino_ArduinoBoard42' has cardinality 0..*, and from 'arduino_AnalogPin', the role 'arduino_AnalogPin43' has cardinality 0..*.
+An association connects 'arduino_BooleanVariable' and 'arduino_BooleanVariableRef'. From 'arduino_BooleanVariable', the role 'arduino_BooleanVariable' has cardinality 0..*, and from 'arduino_BooleanVariableRef', the role 'arduino_BooleanVariableRef' has cardinality 0..*.
+An association connects 'arduino_BluetoothTransceiver' and 'arduino_BluetoothTransceiver'. From 'arduino_BluetoothTransceiver', the role 'arduino_BluetoothTransceiver45' has cardinality 0..*, and from 'arduino_BluetoothTransceiver', the role 'arduino_BluetoothTransceiver' has cardinality 0..*.

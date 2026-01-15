@@ -1,0 +1,67 @@
+The domain model 'statespace' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'statespace_Rule' represents an important domain concept.
+It does not declare any attributes.
+
+'statespace_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'statespace_StateSpace' represents an important domain concept.
+It has the following attributes: 'stateCount', which is of type int; 'layoutStateRepulsion', which is of type int; 'transitionCount', which is of type int; 'layoutHideLabels', which is of type bool; 'maxStateDistance', which is of type int; 'layoutZoomLevel', which is of type int; 'layoutHideIndizes', which is of type bool; 'layoutTransitionAttraction', which is of type int; 'allParameterKeys', which is of type str.
+
+'statespace_Model' represents an important domain concept.
+It has the following attributes: 'eGraph', which is of type str; 'resource', which is of type str; 'objectKeys', which is of type str; 'objectCount', which is of type int.
+
+'statespace_State' represents an important domain concept.
+It has the following attributes: 'location', which is of type str; 'derivedFrom', which is of type int; 'pruned', which is of type bool; 'goal', which is of type bool; 'open', which is of type bool; 'hashCode', which is of type int; 'objectCount', which is of type int; 'objectKeys', which is of type str; 'index', which is of type int.
+
+'statespace_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'statespace_Storage' represents an important domain concept.
+It has one attribute: 'data', which is of type str.
+
+'statespace_EObjectIntegerMapEntry' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'statespace_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'statespace_EqualityHelper' represents an important domain concept.
+It has one attribute: 'checkLinkOrder', which is of type bool.
+
+'statespace_Transition' represents an important domain concept.
+It has the following attributes: 'parameterCount', which is of type int; 'parameterKeys', which is of type str; 'match', which is of type int.
+
+'Storage' represents an important domain concept.
+It does not declare any attributes.
+
+'statespace_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'statespace_StateSpace' is a specialization of 'Storage'.
+The class 'statespace_State' is a specialization of 'Storage'.
+The class 'statespace_Transition' is a specialization of 'Storage'.
+
+Relationships between classes are modeled using associations.
+An association connects 'statespace_Rule' and 'statespace_StateSpace'. From 'statespace_Rule', the role 'statespace_Rule' has cardinality 0..*, and from 'statespace_StateSpace', the role 'statespace_StateSpace' has cardinality 0..*.
+An association connects 'statespace_State' and 'statespace_StateSpace'. From 'statespace_State', the role 'State' has cardinality 0..*, and from 'statespace_StateSpace', the role 'stateSpace' has cardinality 0..*.
+An association connects 'statespace_StateSpace' and 'statespace_State'. From 'statespace_StateSpace', the role 'statespace_StateSpace3' has cardinality 0..*, and from 'statespace_State', the role 'statespace_State' has cardinality 0..*.
+An association connects 'statespace_StateSpace' and 'statespace_State'. From 'statespace_StateSpace', the role 'statespace_StateSpace5' has cardinality 0..*, and from 'statespace_State', the role 'statespace_State6' has cardinality 0..*.
+An association connects 'statespace_StateSpace' and 'statespace_EqualityHelper'. From 'statespace_StateSpace', the role 'statespace_StateSpace8' has cardinality 0..*, and from 'statespace_EqualityHelper', the role 'statespace_EqualityHelper' has cardinality 0..*.
+An association connects 'statespace_StateSpace' and 'statespace_EStringToStringMapEntry'. From 'statespace_StateSpace', the role 'statespace_StateSpace10' has cardinality 0..*, and from 'statespace_EStringToStringMapEntry', the role 'statespace_EStringToStringMapEntry' has cardinality 0..*.
+An association connects 'statespace_Transition' and 'statespace_State'. From 'statespace_Transition', the role 'Transition' has cardinality 0..*, and from 'statespace_State', the role 'target' has cardinality 0..*.
+An association connects 'statespace_Transition' and 'statespace_State'. From 'statespace_Transition', the role 'Transition13' has cardinality 0..*, and from 'statespace_State', the role 'source' has cardinality 0..*.
+An association connects 'statespace_StateSpace' and 'statespace_State'. From 'statespace_StateSpace', the role 'StateSpace' has cardinality 0..*, and from 'statespace_State', the role 'states' has cardinality 0..*.
+An association connects 'statespace_State' and 'statespace_Model'. From 'statespace_State', the role 'statespace_State16' has cardinality 0..*, and from 'statespace_Model', the role 'statespace_Model' has cardinality 0..*.
+An association connects 'statespace_Model' and 'statespace_EObjectIntegerMapEntry'. From 'statespace_Model', the role 'statespace_Model18' has cardinality 0..*, and from 'statespace_EObjectIntegerMapEntry', the role 'statespace_EObjectIntegerMapEntry' has cardinality 0..*.
+An association connects 'statespace_Model' and 'statespace_EObjectIntegerMapEntry'. From 'statespace_Model', the role 'statespace_Model20' has cardinality 0..*, and from 'statespace_EObjectIntegerMapEntry', the role 'statespace_EObjectIntegerMapEntry21' has cardinality 0..*.
+An association connects 'statespace_Transition' and 'statespace_State'. From 'statespace_Transition', the role 'outgoing' has cardinality 0..*, and from 'statespace_State', the role 'State23' has cardinality 0..*.
+An association connects 'statespace_State' and 'statespace_Transition'. From 'statespace_State', the role 'State25' has cardinality 0..*, and from 'statespace_Transition', the role 'incoming' has cardinality 0..*.
+An association connects 'statespace_Rule' and 'statespace_Transition'. From 'statespace_Rule', the role 'statespace_Rule27' has cardinality 0..*, and from 'statespace_Transition', the role 'statespace_Transition' has cardinality 0..*.
+An association connects 'statespace_EqualityHelper' and 'statespace_EAttribute'. From 'statespace_EqualityHelper', the role 'statespace_EqualityHelper29' has cardinality 0..*, and from 'statespace_EAttribute', the role 'statespace_EAttribute' has cardinality 0..*.
+An association connects 'statespace_EqualityHelper' and 'statespace_EClass'. From 'statespace_EqualityHelper', the role 'statespace_EqualityHelper31' has cardinality 0..*, and from 'statespace_EClass', the role 'statespace_EClass' has cardinality 0..*.
+An association connects 'statespace_EObjectIntegerMapEntry' and 'statespace_EObject'. From 'statespace_EObjectIntegerMapEntry', the role 'statespace_EObjectIntegerMapEntry33' has cardinality 0..*, and from 'statespace_EObject', the role 'statespace_EObject' has cardinality 0..*.

@@ -1,0 +1,12 @@
+The domain model 'example' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'example_Codec' represents an important domain concept.
+It does not declare any attributes.
+
+'example_Player' represents an important domain concept.
+It has one attribute: 'compression1', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'example_Codec' and 'example_Player'. From 'example_Codec', the role 'example_Codec' has cardinality 0..*, and from 'example_Player', the role 'example_Player' has cardinality 0..*.

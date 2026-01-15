@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/mde-book/logo/domain/example.logo.model/model/ASMLogo.ecore

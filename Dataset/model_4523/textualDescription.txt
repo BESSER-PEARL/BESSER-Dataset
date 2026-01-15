@@ -1,0 +1,30 @@
+The domain model 'vmlogo' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'vmlogo_Turtle' represents an important domain concept.
+It has the following attributes: 'heading', which is of type float; 'penUp', which is of type bool.
+
+'vmlogo_StackFrame' represents an important domain concept.
+It does not declare any attributes.
+
+'vmlogo_Variable' represents an important domain concept.
+It has the following attributes: 'value', which is of type float; 'name', which is of type str.
+
+'vmlogo_CallStack' represents an important domain concept.
+It does not declare any attributes.
+
+'vmlogo_Segment' represents an important domain concept.
+It does not declare any attributes.
+
+'vmlogo_Point' represents an important domain concept.
+It has the following attributes: 'x', which is of type float; 'y', which is of type float.
+
+Relationships between classes are modeled using associations.
+An association connects 'vmlogo_Turtle' and 'vmlogo_Point'. From 'vmlogo_Turtle', the role 'vmlogo_Turtle' has cardinality 0..*, and from 'vmlogo_Point', the role 'vmlogo_Point' has cardinality 0..*.
+An association connects 'vmlogo_Segment' and 'vmlogo_Turtle'. From 'vmlogo_Segment', the role 'vmlogo_Segment' has cardinality 0..*, and from 'vmlogo_Turtle', the role 'vmlogo_Turtle2' has cardinality 0..*.
+An association connects 'vmlogo_CallStack' and 'vmlogo_Turtle'. From 'vmlogo_CallStack', the role 'vmlogo_CallStack' has cardinality 0..*, and from 'vmlogo_Turtle', the role 'vmlogo_Turtle4' has cardinality 0..*.
+An association connects 'vmlogo_Segment' and 'vmlogo_Point'. From 'vmlogo_Segment', the role 'vmlogo_Segment6' has cardinality 0..*, and from 'vmlogo_Point', the role 'vmlogo_Point7' has cardinality 0..*.
+An association connects 'vmlogo_Point' and 'vmlogo_Segment'. From 'vmlogo_Point', the role 'vmlogo_Point10' has cardinality 0..*, and from 'vmlogo_Segment', the role 'vmlogo_Segment9' has cardinality 0..*.
+An association connects 'vmlogo_StackFrame' and 'vmlogo_CallStack'. From 'vmlogo_StackFrame', the role 'vmlogo_StackFrame' has cardinality 0..*, and from 'vmlogo_CallStack', the role 'vmlogo_CallStack12' has cardinality 0..*.
+An association connects 'vmlogo_Variable' and 'vmlogo_StackFrame'. From 'vmlogo_Variable', the role 'vmlogo_Variable' has cardinality 0..*, and from 'vmlogo_StackFrame', the role 'vmlogo_StackFrame14' has cardinality 0..*.

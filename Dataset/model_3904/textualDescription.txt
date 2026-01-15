@@ -1,0 +1,419 @@
+The domain model 'shr5Management' describes the core structural elements and their relationships within the system.
+
+The model defines 99 main class(es).
+
+'shr5Management_Shr5KarmaGenerator' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_MartialartTechnique' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_Adept' represents an important domain concept.
+It has one attribute: 'magic', which is of type int.
+
+'shr5Management_FreeStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'Adept' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_LifeModule' represents an important domain concept.
+It has the following attributes: 'time', which is of type int; 'moduleType', which is of type str; 'karmaCost', which is of type int.
+
+'shr5Management_EClass' represents an important domain concept.
+It does not declare any attributes.
+
+'CharacterChange' represents an important domain concept.
+It does not declare any attributes.
+
+'Quelle' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_KarmaGenerator' represents an important domain concept.
+It has the following attributes: 'karmaSpend', which is of type int; 'karmaToResource', which is of type int; 'startResources', which is of type int; 'resourceSpend', which is of type int; 'choiseKarmaCost', which is of type int; 'startKarma', which is of type int.
+
+'Shr5Generator' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_AbstraktPersona' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_RangeTableEntry' represents an important domain concept.
+It has the following attributes: 'to', which is of type int; 'from', which is of type int.
+
+'shr5Management_EReference' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_LifestyleToStartMoney' represents an important domain concept.
+It has the following attributes: 'numberOfW', which is of type int; 'moneyFactor', which is of type int.
+
+'shr5Management_LifeModulesGenerator' represents an important domain concept.
+It has the following attributes: 'startingAge', which is of type int; 'moduleKarmaCost', which is of type int.
+
+'shr5Management_CharacterGenerator' represents an important domain concept.
+It has the following attributes: 'characterName', which is of type str; 'currentInstruction', which is of type str; 'state', which is of type str.
+
+'shr5Management_KarmaGaint' represents an important domain concept.
+It has one attribute: 'karma', which is of type int.
+
+'shr5Management_DiaryEntry' represents an important domain concept.
+It has the following attributes: 'date', which is of type str; 'message', which is of type str.
+
+'RangeTableEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'PriorityCategorie' represents an important domain concept.
+It does not declare any attributes.
+
+'PersonaValueChange' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_Erlernbar' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_RangeTable' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_PersonaChange' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_Skill' represents an important domain concept.
+It has the following attributes: 'groupPoints', which is of type int; 'skillPoints', which is of type int.
+
+'shr5Management_NonPlayerCharacter' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_AttributeChange' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_ModuleTeachableChange' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_QuellenConstrain' represents an important domain concept.
+It has one attribute: 'constrainType', which is of type str.
+
+'shr5Management_Changes' represents an important domain concept.
+It has the following attributes: 'date', which is of type str; 'changeApplied', which is of type bool; 'dateApplied', which is of type str; 'karmaCost', which is of type int.
+
+'shr5Management_Connection' represents an important domain concept.
+It has the following attributes: 'loyality', which is of type int; 'influence', which is of type int.
+
+'shr5Management_Lifestyle' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_Pack' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_Fahrzeug' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_SpecialType' represents an important domain concept.
+It has the following attributes: 'skillNumber', which is of type int; 'skillValue', which is of type int.
+
+'shr5Management_GruntMembers' represents an important domain concept.
+It has one attribute: 'count', which is of type int.
+
+'shr5Management_AbstraktGegenstand' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_GruntGroup' represents an important domain concept.
+It has one attribute: 'professionalRating', which is of type int.
+
+'shr5Management_PlayerManagement' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_MetaType' represents an important domain concept.
+It has one attribute: 'specialPoints', which is of type int.
+
+'shr5Management_MartialartStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_SumToTenGenerator' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_EAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_ModuleSkillGroupChange' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_ModuleAttributeChange' represents an important domain concept.
+It does not declare any attributes.
+
+'CharacterGeneratorSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_ManagedCharacter' represents an important domain concept.
+It has the following attributes: 'publicAwareness', which is of type int; 'weight', which is of type int; 'notoriety', which is of type int; 'sex', which is of type str; 'height', which is of type int; 'karmaGaint', which is of type int; 'streetCred', which is of type int; 'dateofbirth', which is of type str; 'notorietyBasic', which is of type int; 'currentKarma', which is of type int.
+
+'PlayerManagement' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_SourceBook' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_ModuleSkillChange' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_IncreaseCharacterPart' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_CharacterGeneratorSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'ManagedCharacter' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_TrainingsTime' represents an important domain concept.
+It has the following attributes: 'daysRemains', which is of type int; 'trainingComplete', which is of type bool; 'daysTrained', which is of type int.
+
+'shr5Management_ContractPayment' represents an important domain concept.
+It has one attribute: 'payed', which is of type bool.
+
+'shr5Management_PersonaValueChange' represents an important domain concept.
+It has the following attributes: 'from', which is of type int; 'to', which is of type int.
+
+'shr5Management_PersonaMartialArtChange' represents an important domain concept.
+It does not declare any attributes.
+
+'Changes' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_GamemasterManagement' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_Spezies' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_Shr5System' represents an important domain concept.
+It has the following attributes: 'charismaToConnectionFactor', which is of type int; 'maxResourceToKeep', which is of type int; 'maxConnectionRating', which is of type int; 'numberOfSpecalism', which is of type int; 'numberOfMaxAttributes', which is of type int; 'maxKarmaToKeep', which is of type int; 'freeMartialArtTechniques', which is of type int; 'maxMartialArtStyles', which is of type int; 'maxKarmaToResources', which is of type int; 'boundSprititServiceCost', which is of type int; 'karmaToConnectionFactor', which is of type int; 'knowlegeSkillFactor', which is of type int; 'karmaToMagicFactor', which is of type int; 'sumToTenValue', which is of type int; 'skillMax', which is of type int; 'karmaToResourceFactor', which is of type int.
+
+'shr5Management_LifeModulesSystem' represents an important domain concept.
+It has one attribute: 'knowlegeSkillMax', which is of type int.
+
+'shr5Management_PriorityCategorie' represents an important domain concept.
+It has the following attributes: 'cost', which is of type int; 'categorieName', which is of type str.
+
+'shr5Management_CharacterDiary' represents an important domain concept.
+It has one attribute: 'characterDate', which is of type str.
+
+'PrioritySystem' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_Quelle' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_CharacterAdvancementSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_GeneratorStateToEStringMapEntry' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'DiaryEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_Shr5Generator' represents an important domain concept.
+It has the following attributes: 'attributeSpend', which is of type int; 'knownlegePointSpend', which is of type int; 'karmaToResource', which is of type int; 'spellPointSpend', which is of type int; 'startResources', which is of type int; 'resourceSpend', which is of type int; 'specialPointSpend', which is of type int; 'karmaSpend', which is of type int; 'groupPointSpend', which is of type int; 'startKarma', which is of type int; 'skillPointSpend', which is of type int; 'connectionSpend', which is of type int.
+
+'shr5Management_FertigkeitsGruppe' represents an important domain concept.
+It does not declare any attributes.
+
+'Shr5System' represents an important domain concept.
+It does not declare any attributes.
+
+'GeldWert' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_Resourcen' represents an important domain concept.
+It has one attribute: 'resource', which is of type int.
+
+'shr5Management_PrioritySystem' represents an important domain concept.
+It has one attribute: 'karmaPoints', which is of type int.
+
+'shr5Management_Fertigkeit' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_ModuleChange' represents an important domain concept.
+It does not declare any attributes.
+
+'ModuleChange' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_ModuleFeatureChange' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_Mudan' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_TrainingRange' represents an important domain concept.
+It has the following attributes: 'end', which is of type str; 'daysTrained', which is of type int; 'start', which is of type str.
+
+'shr5Management_Technomancer' represents an important domain concept.
+It has the following attributes: 'resonanz', which is of type int; 'complexForms', which is of type int.
+
+'shr5Management_Vertrag' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_CharacterGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_Shr5RuleGenerator' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_CharacterChange' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_Advancement' represents an important domain concept.
+It has one attribute: 'karmaFactor', which is of type int.
+
+'Beschreibbar' represents an important domain concept.
+It does not declare any attributes.
+
+'SpecialType' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_Spellcaster' represents an important domain concept.
+It has one attribute: 'spellPoints', which is of type int.
+
+'shr5Management_FreeStyleGenerator' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_PlayerCharacter' represents an important domain concept.
+It has one attribute: 'age', which is of type int.
+
+'shr5Management_TrainingRate' represents an important domain concept.
+It has the following attributes: 'timeUnit', which is of type str; 'factor', which is of type int.
+
+'shr5Management_Sprachfertigkeit' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_Attributes' represents an important domain concept.
+It has one attribute: 'attibutePoints', which is of type int.
+
+'PersonaChange' represents an important domain concept.
+It does not declare any attributes.
+
+'shr5Management_ModuleTypeChange' represents an important domain concept.
+It has one attribute: 'grade', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'QuellenConstrainType' defines the following possible values: 'needOneOf', 'notTogether'.
+The enumeration 'GeneratorState' defines the following possible values: 'readyForCreation', 'new', 'commited', 'personaCreated'.
+The enumeration 'Sex' defines the following possible values: 'female', 'none', 'undefinde', 'male'.
+The enumeration 'LifeModuleType' defines the following possible values: 'nationality', 'teenYears', 'realLife', 'furtherEducation', 'formativeYears'.
+
+The model also captures inheritance relationships between classes.
+The class 'shr5Management_CharacterGeneratorSystem' is a specialization of 'Beschreibbar'.
+The class 'shr5Management_CharacterGeneratorSystem' is a specialization of 'Quelle'.
+The class 'shr5Management_PrioritySystem' is a specialization of 'CharacterGeneratorSystem'.
+The class 'shr5Management_NonPlayerCharacter' is a specialization of 'ManagedCharacter'.
+The class 'shr5Management_KarmaGaint' is a specialization of 'Changes'.
+The class 'shr5Management_FreeStyle' is a specialization of 'CharacterGeneratorSystem'.
+The class 'shr5Management_Shr5System' is a specialization of 'PrioritySystem'.
+The class 'shr5Management_MetaType' is a specialization of 'PriorityCategorie'.
+The class 'shr5Management_Attributes' is a specialization of 'PriorityCategorie'.
+The class 'shr5Management_Skill' is a specialization of 'PriorityCategorie'.
+The class 'shr5Management_Resourcen' is a specialization of 'PriorityCategorie'.
+The class 'shr5Management_SpecialType' is a specialization of 'PriorityCategorie'.
+The class 'shr5Management_Technomancer' is a specialization of 'SpecialType'.
+The class 'shr5Management_Spellcaster' is a specialization of 'Adept'.
+The class 'shr5Management_Adept' is a specialization of 'SpecialType'.
+The class 'shr5Management_AttributeChange' is a specialization of 'PersonaValueChange'.
+The class 'shr5Management_PlayerCharacter' is a specialization of 'ManagedCharacter'.
+The class 'shr5Management_Mudan' is a specialization of 'SpecialType'.
+The class 'shr5Management_CharacterGroup' is a specialization of 'Beschreibbar'.
+The class 'shr5Management_PersonaChange' is a specialization of 'PersonaValueChange'.
+The class 'shr5Management_PersonaValueChange' is a specialization of 'Changes'.
+The class 'shr5Management_GruntGroup' is a specialization of 'Beschreibbar'.
+The class 'shr5Management_PlayerManagement' is a specialization of 'Beschreibbar'.
+The class 'shr5Management_GamemasterManagement' is a specialization of 'PlayerManagement'.
+The class 'shr5Management_CharacterAdvancementSystem' is a specialization of 'Beschreibbar'.
+The class 'shr5Management_Pack' is a specialization of 'Beschreibbar'.
+The class 'shr5Management_Pack' is a specialization of 'Quelle'.
+The class 'shr5Management_Pack' is a specialization of 'GeldWert'.
+The class 'shr5Management_ContractPayment' is a specialization of 'DiaryEntry'.
+The class 'shr5Management_CharacterChange' is a specialization of 'DiaryEntry'.
+The class 'shr5Management_SumToTenGenerator' is a specialization of 'Shr5Generator'.
+The class 'shr5Management_LifeModulesSystem' is a specialization of 'Shr5System'.
+The class 'shr5Management_LifeModule' is a specialization of 'Beschreibbar'.
+The class 'shr5Management_LifeModule' is a specialization of 'Quelle'.
+The class 'shr5Management_ModuleFeatureChange' is a specialization of 'ModuleChange'.
+The class 'shr5Management_ModuleTypeChange' is a specialization of 'ModuleChange'.
+The class 'shr5Management_TrainingRate' is a specialization of 'RangeTableEntry'.
+The class 'shr5Management_TrainingsTime' is a specialization of 'CharacterChange'.
+The class 'shr5Management_PersonaMartialArtChange' is a specialization of 'PersonaChange'.
+
+Relationships between classes are modeled using associations.
+An association connects 'shr5Management_AbstraktPersona' and 'shr5Management_ManagedCharacter'. From 'shr5Management_AbstraktPersona', the role 'shr5Management_AbstraktPersona' has cardinality 0..*, and from 'shr5Management_ManagedCharacter', the role 'shr5Management_ManagedCharacter' has cardinality 0..*.
+An association connects 'shr5Management_ManagedCharacter' and 'shr5Management_Changes'. From 'shr5Management_ManagedCharacter', the role 'character' has cardinality 0..*, and from 'shr5Management_Changes', the role 'Changes' has cardinality 0..*.
+An association connects 'shr5Management_ManagedCharacter' and 'shr5Management_AbstraktGegenstand'. From 'shr5Management_ManagedCharacter', the role 'shr5Management_ManagedCharacter3' has cardinality 0..*, and from 'shr5Management_AbstraktGegenstand', the role 'shr5Management_AbstraktGegenstand' has cardinality 0..*.
+An association connects 'shr5Management_ManagedCharacter' and 'shr5Management_Vertrag'. From 'shr5Management_ManagedCharacter', the role 'shr5Management_ManagedCharacter5' has cardinality 0..*, and from 'shr5Management_Vertrag', the role 'shr5Management_Vertrag' has cardinality 0..*.
+An association connects 'shr5Management_Connection' and 'shr5Management_ManagedCharacter'. From 'shr5Management_Connection', the role 'shr5Management_Connection' has cardinality 0..*, and from 'shr5Management_ManagedCharacter', the role 'shr5Management_ManagedCharacter7' has cardinality 0..*.
+An association connects 'shr5Management_Fahrzeug' and 'shr5Management_ManagedCharacter'. From 'shr5Management_Fahrzeug', the role 'shr5Management_Fahrzeug' has cardinality 0..*, and from 'shr5Management_ManagedCharacter', the role 'shr5Management_ManagedCharacter9' has cardinality 0..*.
+An association connects 'shr5Management_Lifestyle' and 'shr5Management_ManagedCharacter'. From 'shr5Management_Lifestyle', the role 'shr5Management_Lifestyle' has cardinality 0..*, and from 'shr5Management_ManagedCharacter', the role 'shr5Management_ManagedCharacter11' has cardinality 0..*.
+An association connects 'shr5Management_ManagedCharacter' and 'shr5Management_Sprachfertigkeit'. From 'shr5Management_ManagedCharacter', the role 'shr5Management_ManagedCharacter13' has cardinality 0..*, and from 'shr5Management_Sprachfertigkeit', the role 'shr5Management_Sprachfertigkeit' has cardinality 0..*.
+An association connects 'shr5Management_CharacterGeneratorSystem' and 'shr5Management_GeneratorStateToEStringMapEntry'. From 'shr5Management_CharacterGeneratorSystem', the role 'shr5Management_CharacterGeneratorSystem' has cardinality 0..*, and from 'shr5Management_GeneratorStateToEStringMapEntry', the role 'shr5Management_GeneratorStateToEStringMapEntry' has cardinality 0..*.
+An association connects 'shr5Management_CharacterGeneratorSystem' and 'shr5Management_LifestyleToStartMoney'. From 'shr5Management_CharacterGeneratorSystem', the role 'shr5Management_CharacterGeneratorSystem16' has cardinality 0..*, and from 'shr5Management_LifestyleToStartMoney', the role 'shr5Management_LifestyleToStartMoney' has cardinality 0..*.
+An association connects 'shr5Management_CharacterGeneratorSystem' and 'shr5Management_CharacterAdvancementSystem'. From 'shr5Management_CharacterGeneratorSystem', the role 'shr5Management_CharacterGeneratorSystem18' has cardinality 0..*, and from 'shr5Management_CharacterAdvancementSystem', the role 'shr5Management_CharacterAdvancementSystem' has cardinality 0..*.
+An association connects 'shr5Management_QuellenConstrain' and 'shr5Management_CharacterGeneratorSystem'. From 'shr5Management_QuellenConstrain', the role 'shr5Management_QuellenConstrain' has cardinality 0..*, and from 'shr5Management_CharacterGeneratorSystem', the role 'shr5Management_CharacterGeneratorSystem20' has cardinality 0..*.
+An association connects 'shr5Management_PriorityCategorie' and 'shr5Management_PrioritySystem'. From 'shr5Management_PriorityCategorie', the role 'shr5Management_PriorityCategorie' has cardinality 0..*, and from 'shr5Management_PrioritySystem', the role 'shr5Management_PrioritySystem' has cardinality 0..*.
+An association connects 'shr5Management_Changes' and 'shr5Management_ManagedCharacter'. From 'shr5Management_Changes', the role 'changes' has cardinality 0..*, and from 'shr5Management_ManagedCharacter', the role 'ManagedCharacter' has cardinality 0..*.
+An association connects 'shr5Management_Shr5System' and 'shr5Management_EClass'. From 'shr5Management_Shr5System', the role 'shr5Management_Shr5System' has cardinality 0..*, and from 'shr5Management_EClass', the role 'shr5Management_EClass' has cardinality 0..*.
+An association connects 'shr5Management_Spezies' and 'shr5Management_MetaType'. From 'shr5Management_Spezies', the role 'shr5Management_Spezies' has cardinality 0..*, and from 'shr5Management_MetaType', the role 'shr5Management_MetaType' has cardinality 0..*.
+An association connects 'shr5Management_SpecialType' and 'shr5Management_EClass'. From 'shr5Management_SpecialType', the role 'shr5Management_SpecialType' has cardinality 0..*, and from 'shr5Management_EClass', the role 'shr5Management_EClass26' has cardinality 0..*.
+An association connects 'shr5Management_Fertigkeit' and 'shr5Management_SpecialType'. From 'shr5Management_Fertigkeit', the role 'shr5Management_Fertigkeit' has cardinality 0..*, and from 'shr5Management_SpecialType', the role 'shr5Management_SpecialType28' has cardinality 0..*.
+An association connects 'shr5Management_SpecialType' and 'shr5Management_FertigkeitsGruppe'. From 'shr5Management_SpecialType', the role 'shr5Management_SpecialType30' has cardinality 0..*, and from 'shr5Management_FertigkeitsGruppe', the role 'shr5Management_FertigkeitsGruppe' has cardinality 0..*.
+An association connects 'shr5Management_ManagedCharacter' and 'shr5Management_CharacterGenerator'. From 'shr5Management_ManagedCharacter', the role 'ManagedCharacter32' has cardinality 0..*, and from 'shr5Management_CharacterGenerator', the role 'chracterSource' has cardinality 0..*.
+An association connects 'shr5Management_CharacterGroup' and 'shr5Management_CharacterGenerator'. From 'shr5Management_CharacterGroup', the role 'shr5Management_CharacterGroup' has cardinality 0..*, and from 'shr5Management_CharacterGenerator', the role 'shr5Management_CharacterGenerator' has cardinality 0..*.
+An association connects 'shr5Management_FreeStyleGenerator' and 'shr5Management_FreeStyle'. From 'shr5Management_FreeStyleGenerator', the role 'shr5Management_FreeStyleGenerator' has cardinality 0..*, and from 'shr5Management_FreeStyle', the role 'shr5Management_FreeStyle' has cardinality 0..*.
+An association connects 'shr5Management_AbstraktPersona' and 'shr5Management_FreeStyleGenerator'. From 'shr5Management_AbstraktPersona', the role 'shr5Management_AbstraktPersona37' has cardinality 0..*, and from 'shr5Management_FreeStyleGenerator', the role 'shr5Management_FreeStyleGenerator36' has cardinality 0..*.
+An association connects 'shr5Management_Spezies' and 'shr5Management_FreeStyleGenerator'. From 'shr5Management_Spezies', the role 'shr5Management_Spezies40' has cardinality 0..*, and from 'shr5Management_FreeStyleGenerator', the role 'shr5Management_FreeStyleGenerator39' has cardinality 0..*.
+An association connects 'shr5Management_EClass' and 'shr5Management_FreeStyleGenerator'. From 'shr5Management_EClass', the role 'shr5Management_EClass43' has cardinality 0..*, and from 'shr5Management_FreeStyleGenerator', the role 'shr5Management_FreeStyleGenerator42' has cardinality 0..*.
+An association connects 'shr5Management_Resourcen' and 'shr5Management_Shr5Generator'. From 'shr5Management_Resourcen', the role 'shr5Management_Resourcen' has cardinality 0..*, and from 'shr5Management_Shr5Generator', the role 'shr5Management_Shr5Generator' has cardinality 0..*.
+An association connects 'shr5Management_Shr5Generator' and 'shr5Management_Skill'. From 'shr5Management_Shr5Generator', the role 'shr5Management_Shr5Generator46' has cardinality 0..*, and from 'shr5Management_Skill', the role 'shr5Management_Skill' has cardinality 0..*.
+An association connects 'shr5Management_Attributes' and 'shr5Management_Shr5Generator'. From 'shr5Management_Attributes', the role 'shr5Management_Attributes' has cardinality 0..*, and from 'shr5Management_Shr5Generator', the role 'shr5Management_Shr5Generator48' has cardinality 0..*.
+An association connects 'shr5Management_Shr5Generator' and 'shr5Management_MetaType'. From 'shr5Management_Shr5Generator', the role 'shr5Management_Shr5Generator50' has cardinality 0..*, and from 'shr5Management_MetaType', the role 'shr5Management_MetaType51' has cardinality 0..*.
+An association connects 'shr5Management_SpecialType' and 'shr5Management_Shr5Generator'. From 'shr5Management_SpecialType', the role 'shr5Management_SpecialType54' has cardinality 0..*, and from 'shr5Management_Shr5Generator', the role 'shr5Management_Shr5Generator53' has cardinality 0..*.
+An association connects 'shr5Management_EAttribute' and 'shr5Management_AttributeChange'. From 'shr5Management_EAttribute', the role 'shr5Management_EAttribute' has cardinality 0..*, and from 'shr5Management_AttributeChange', the role 'shr5Management_AttributeChange' has cardinality 0..*.
+An association connects 'shr5Management_CharacterDiary' and 'shr5Management_PlayerCharacter'. From 'shr5Management_CharacterDiary', the role 'shr5Management_CharacterDiary' has cardinality 0..*, and from 'shr5Management_PlayerCharacter', the role 'shr5Management_PlayerCharacter' has cardinality 0..*.
+An association connects 'shr5Management_ManagedCharacter' and 'shr5Management_CharacterGroup'. From 'shr5Management_ManagedCharacter', the role 'shr5Management_ManagedCharacter59' has cardinality 0..*, and from 'shr5Management_CharacterGroup', the role 'shr5Management_CharacterGroup58' has cardinality 0..*.
+An association connects 'shr5Management_Connection' and 'shr5Management_ManagedCharacter'. From 'shr5Management_Connection', the role 'shr5Management_Connection61' has cardinality 0..*, and from 'shr5Management_ManagedCharacter', the role 'shr5Management_ManagedCharacter62' has cardinality 0..*.
+An association connects 'shr5Management_Erlernbar' and 'shr5Management_PersonaChange'. From 'shr5Management_Erlernbar', the role 'shr5Management_Erlernbar' has cardinality 0..*, and from 'shr5Management_PersonaChange', the role 'shr5Management_PersonaChange' has cardinality 0..*.
+An association connects 'shr5Management_EClass' and 'shr5Management_IncreaseCharacterPart'. From 'shr5Management_EClass', the role 'shr5Management_EClass65' has cardinality 0..*, and from 'shr5Management_IncreaseCharacterPart', the role 'shr5Management_IncreaseCharacterPart' has cardinality 0..*.
+An association connects 'shr5Management_LifestyleToStartMoney' and 'shr5Management_Lifestyle'. From 'shr5Management_LifestyleToStartMoney', the role 'shr5Management_LifestyleToStartMoney67' has cardinality 0..*, and from 'shr5Management_Lifestyle', the role 'shr5Management_Lifestyle68' has cardinality 0..*.
+An association connects 'shr5Management_GruntGroup' and 'shr5Management_GruntMembers'. From 'shr5Management_GruntGroup', the role 'shr5Management_GruntGroup' has cardinality 0..*, and from 'shr5Management_GruntMembers', the role 'shr5Management_GruntMembers' has cardinality 0..*.
+An association connects 'shr5Management_GruntMembers' and 'shr5Management_GruntGroup'. From 'shr5Management_GruntMembers', the role 'shr5Management_GruntMembers72' has cardinality 0..*, and from 'shr5Management_GruntGroup', the role 'shr5Management_GruntGroup71' has cardinality 0..*.
+An association connects 'shr5Management_NonPlayerCharacter' and 'shr5Management_GruntMembers'. From 'shr5Management_NonPlayerCharacter', the role 'shr5Management_NonPlayerCharacter' has cardinality 0..*, and from 'shr5Management_GruntMembers', the role 'shr5Management_GruntMembers74' has cardinality 0..*.
+An association connects 'shr5Management_CharacterGroup' and 'shr5Management_PlayerManagement'. From 'shr5Management_CharacterGroup', the role 'shr5Management_CharacterGroup76' has cardinality 0..*, and from 'shr5Management_PlayerManagement', the role 'shr5Management_PlayerManagement' has cardinality 0..*.
+An association connects 'shr5Management_PlayerManagement' and 'shr5Management_PlayerManagement'. From 'shr5Management_PlayerManagement', the role 'shr5Management_PlayerManagement79' has cardinality 0..*, and from 'shr5Management_PlayerManagement', the role 'shr5Management_PlayerManagement77' has cardinality 0..*.
+An association connects 'shr5Management_GruntGroup' and 'shr5Management_GamemasterManagement'. From 'shr5Management_GruntGroup', the role 'shr5Management_GruntGroup81' has cardinality 0..*, and from 'shr5Management_GamemasterManagement', the role 'shr5Management_GamemasterManagement' has cardinality 0..*.
+An association connects 'shr5Management_CharacterAdvancementSystem' and 'shr5Management_Advancement'. From 'shr5Management_CharacterAdvancementSystem', the role 'shr5Management_CharacterAdvancementSystem83' has cardinality 0..*, and from 'shr5Management_Advancement', the role 'shr5Management_Advancement' has cardinality 0..*.
+An association connects 'shr5Management_SourceBook' and 'shr5Management_Shr5RuleGenerator'. From 'shr5Management_SourceBook', the role 'shr5Management_SourceBook' has cardinality 0..*, and from 'shr5Management_Shr5RuleGenerator', the role 'shr5Management_Shr5RuleGenerator' has cardinality 0..*.
+An association connects 'shr5Management_KarmaGenerator' and 'shr5Management_MetaType'. From 'shr5Management_KarmaGenerator', the role 'shr5Management_KarmaGenerator' has cardinality 0..*, and from 'shr5Management_MetaType', the role 'shr5Management_MetaType86' has cardinality 0..*.
+An association connects 'shr5Management_SpecialType' and 'shr5Management_KarmaGenerator'. From 'shr5Management_SpecialType', the role 'shr5Management_SpecialType89' has cardinality 0..*, and from 'shr5Management_KarmaGenerator', the role 'shr5Management_KarmaGenerator88' has cardinality 0..*.
+An association connects 'shr5Management_Quelle' and 'shr5Management_QuellenConstrain'. From 'shr5Management_Quelle', the role 'shr5Management_Quelle' has cardinality 0..*, and from 'shr5Management_QuellenConstrain', the role 'shr5Management_QuellenConstrain91' has cardinality 0..*.
+An association connects 'shr5Management_QuellenConstrain' and 'shr5Management_Quelle'. From 'shr5Management_QuellenConstrain', the role 'shr5Management_QuellenConstrain93' has cardinality 0..*, and from 'shr5Management_Quelle', the role 'shr5Management_Quelle94' has cardinality 0..*.
+An association connects 'shr5Management_Quelle' and 'shr5Management_Pack'. From 'shr5Management_Quelle', the role 'shr5Management_Quelle96' has cardinality 0..*, and from 'shr5Management_Pack', the role 'shr5Management_Pack' has cardinality 0..*.
+An association connects 'shr5Management_CharacterDiary' and 'shr5Management_DiaryEntry'. From 'shr5Management_CharacterDiary', the role 'shr5Management_CharacterDiary98' has cardinality 0..*, and from 'shr5Management_DiaryEntry', the role 'shr5Management_DiaryEntry' has cardinality 0..*.
+An association connects 'shr5Management_ContractPayment' and 'shr5Management_Vertrag'. From 'shr5Management_ContractPayment', the role 'shr5Management_ContractPayment' has cardinality 0..*, and from 'shr5Management_Vertrag', the role 'shr5Management_Vertrag100' has cardinality 0..*.
+An association connects 'shr5Management_CharacterChange' and 'shr5Management_Changes'. From 'shr5Management_CharacterChange', the role 'shr5Management_CharacterChange' has cardinality 0..*, and from 'shr5Management_Changes', the role 'shr5Management_Changes' has cardinality 0..*.
+An association connects 'shr5Management_LifeModule' and 'shr5Management_LifeModulesGenerator'. From 'shr5Management_LifeModule', the role 'shr5Management_LifeModule' has cardinality 0..*, and from 'shr5Management_LifeModulesGenerator', the role 'shr5Management_LifeModulesGenerator' has cardinality 0..*.
+An association connects 'shr5Management_LifeModulesGenerator' and 'shr5Management_LifeModule'. From 'shr5Management_LifeModulesGenerator', the role 'shr5Management_LifeModulesGenerator104' has cardinality 0..*, and from 'shr5Management_LifeModule', the role 'shr5Management_LifeModule105' has cardinality 0..*.
+An association connects 'shr5Management_LifeModule' and 'shr5Management_LifeModulesGenerator'. From 'shr5Management_LifeModule', the role 'shr5Management_LifeModule108' has cardinality 0..*, and from 'shr5Management_LifeModulesGenerator', the role 'shr5Management_LifeModulesGenerator107' has cardinality 0..*.
+An association connects 'shr5Management_LifeModulesGenerator' and 'shr5Management_LifeModule'. From 'shr5Management_LifeModulesGenerator', the role 'shr5Management_LifeModulesGenerator110' has cardinality 0..*, and from 'shr5Management_LifeModule', the role 'shr5Management_LifeModule111' has cardinality 0..*.
+An association connects 'shr5Management_LifeModulesGenerator' and 'shr5Management_LifeModule'. From 'shr5Management_LifeModulesGenerator', the role 'shr5Management_LifeModulesGenerator113' has cardinality 0..*, and from 'shr5Management_LifeModule', the role 'shr5Management_LifeModule114' has cardinality 0..*.
+An association connects 'shr5Management_LifeModule' and 'shr5Management_LifeModulesSystem'. From 'shr5Management_LifeModule', the role 'shr5Management_LifeModule116' has cardinality 0..*, and from 'shr5Management_LifeModulesSystem', the role 'shr5Management_LifeModulesSystem' has cardinality 0..*.
+An association connects 'shr5Management_ModuleChange' and 'shr5Management_LifeModule'. From 'shr5Management_ModuleChange', the role 'shr5Management_ModuleChange' has cardinality 0..*, and from 'shr5Management_LifeModule', the role 'shr5Management_LifeModule118' has cardinality 0..*.
+An association connects 'shr5Management_Fertigkeit' and 'shr5Management_ModuleSkillChange'. From 'shr5Management_Fertigkeit', the role 'shr5Management_Fertigkeit120' has cardinality 0..*, and from 'shr5Management_ModuleSkillChange', the role 'shr5Management_ModuleSkillChange' has cardinality 0..*.
+An association connects 'shr5Management_ModuleTeachableChange' and 'shr5Management_Erlernbar'. From 'shr5Management_ModuleTeachableChange', the role 'shr5Management_ModuleTeachableChange' has cardinality 0..*, and from 'shr5Management_Erlernbar', the role 'shr5Management_Erlernbar122' has cardinality 0..*.
+An association connects 'shr5Management_ModuleAttributeChange' and 'shr5Management_EAttribute'. From 'shr5Management_ModuleAttributeChange', the role 'shr5Management_ModuleAttributeChange' has cardinality 0..*, and from 'shr5Management_EAttribute', the role 'shr5Management_EAttribute124' has cardinality 0..*.
+An association connects 'shr5Management_EReference' and 'shr5Management_ModuleFeatureChange'. From 'shr5Management_EReference', the role 'shr5Management_EReference' has cardinality 0..*, and from 'shr5Management_ModuleFeatureChange', the role 'shr5Management_ModuleFeatureChange' has cardinality 0..*.
+An association connects 'shr5Management_EObject' and 'shr5Management_ModuleFeatureChange'. From 'shr5Management_EObject', the role 'shr5Management_EObject' has cardinality 0..*, and from 'shr5Management_ModuleFeatureChange', the role 'shr5Management_ModuleFeatureChange127' has cardinality 0..*.
+An association connects 'shr5Management_FertigkeitsGruppe' and 'shr5Management_ModuleSkillGroupChange'. From 'shr5Management_FertigkeitsGruppe', the role 'shr5Management_FertigkeitsGruppe129' has cardinality 0..*, and from 'shr5Management_ModuleSkillGroupChange', the role 'shr5Management_ModuleSkillGroupChange' has cardinality 0..*.
+An association connects 'shr5Management_TrainingRange' and 'shr5Management_TrainingsTime'. From 'shr5Management_TrainingRange', the role 'TrainingRange' has cardinality 0..*, and from 'shr5Management_TrainingsTime', the role 'trainingTime' has cardinality 0..*.
+An association connects 'shr5Management_PersonaMartialArtChange' and 'shr5Management_MartialartStyle'. From 'shr5Management_PersonaMartialArtChange', the role 'shr5Management_PersonaMartialArtChange' has cardinality 0..*, and from 'shr5Management_MartialartStyle', the role 'shr5Management_MartialartStyle' has cardinality 0..*.
+An association connects 'shr5Management_MartialartTechnique' and 'shr5Management_PersonaMartialArtChange'. From 'shr5Management_MartialartTechnique', the role 'shr5Management_MartialartTechnique' has cardinality 0..*, and from 'shr5Management_PersonaMartialArtChange', the role 'shr5Management_PersonaMartialArtChange133' has cardinality 0..*.
+An association connects 'shr5Management_TrainingRange' and 'shr5Management_TrainingsTime'. From 'shr5Management_TrainingRange', the role 'training' has cardinality 0..*, and from 'shr5Management_TrainingsTime', the role 'TrainingsTime' has cardinality 0..*.

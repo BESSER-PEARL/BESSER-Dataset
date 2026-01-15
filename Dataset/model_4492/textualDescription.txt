@@ -1,0 +1,89 @@
+The domain model 'robotDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'robotDSL_Flag' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'robotDSL_Task' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'prio', which is of type int.
+
+'robotDSL_Direction' represents an important domain concept.
+It has one attribute: 'dir', which is of type str.
+
+'robotDSL_Trigger' represents an important domain concept.
+It has the following attributes: 'degrees', which is of type int; 'touching', which is of type str.
+
+'robotDSL_Bool' represents an important domain concept.
+It has one attribute: 'boolType', which is of type str.
+
+'robotDSL_Missions' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'robotDSL_Action' represents an important domain concept.
+It has the following attributes: 'duration', which is of type int; 'degr', which is of type int; 'cent', which is of type str.
+
+'robotDSL_Mission' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'robotDSL_Negation' represents an important domain concept.
+It has one attribute: 'NOT', which is of type str.
+
+'robotDSL_Color' represents an important domain concept.
+It has one attribute: 'colorName', which is of type str.
+
+'robotDSL_Goal' represents an important domain concept.
+It does not declare any attributes.
+
+'robotDSL_Time' represents an important domain concept.
+It has one attribute: 'sec', which is of type int.
+
+'robotDSL_ArmOp' represents an important domain concept.
+It has one attribute: 'opType', which is of type str.
+
+'robotDSL_Speed' represents an important domain concept.
+It has one attribute: 'speed', which is of type str.
+
+'robotDSL_Sound' represents an important domain concept.
+It has one attribute: 'soundName', which is of type str.
+
+'robotDSL_Sensor' represents an important domain concept.
+It has one attribute: 'sensorType', which is of type str.
+
+'robotDSL_Distance' represents an important domain concept.
+It has one attribute: 'distance', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SensorType' defines the following possible values: 'COLOR', 'GYRO', 'RIGHTLIGHT', 'FRONTUS', 'LEFTTOUCH', 'BACKUS', 'RIGHTTOUCH', 'LEFTLIGHT'.
+The enumeration 'ColorName' defines the following possible values: 'WHITE', 'GREEN', 'BLUE', 'BLACK', 'RED'.
+The enumeration 'BoolType' defines the following possible values: 'G', 'FALSE', 'AND', 'TRUE', 'OR', 'L'.
+The enumeration 'SoundName' defines the following possible values: 'BUZZ', 'FANFARE'.
+The enumeration 'ArmOpType' defines the following possible values: 'DOWN', 'UP'.
+The enumeration 'DirectionVal' defines the following possible values: 'LEFT', 'FORWARD', 'RIGHT', 'BACKWARD'.
+The enumeration 'SpeedVal' defines the following possible values: 'LOW', 'MED', 'HIGH'.
+
+Relationships between classes are modeled using associations.
+An association connects 'robotDSL_Mission' and 'robotDSL_Missions'. From 'robotDSL_Mission', the role 'robotDSL_Mission' has cardinality 0..*, and from 'robotDSL_Missions', the role 'robotDSL_Missions' has cardinality 0..*.
+An association connects 'robotDSL_Flag' and 'robotDSL_Mission'. From 'robotDSL_Flag', the role 'robotDSL_Flag' has cardinality 0..*, and from 'robotDSL_Mission', the role 'robotDSL_Mission2' has cardinality 0..*.
+An association connects 'robotDSL_Mission' and 'robotDSL_Task'. From 'robotDSL_Mission', the role 'robotDSL_Mission4' has cardinality 0..*, and from 'robotDSL_Task', the role 'robotDSL_Task' has cardinality 0..*.
+An association connects 'robotDSL_Goal' and 'robotDSL_Mission'. From 'robotDSL_Goal', the role 'robotDSL_Goal' has cardinality 0..*, and from 'robotDSL_Mission', the role 'robotDSL_Mission6' has cardinality 0..*.
+An association connects 'robotDSL_Goal' and 'robotDSL_Trigger'. From 'robotDSL_Goal', the role 'robotDSL_Goal8' has cardinality 0..*, and from 'robotDSL_Trigger', the role 'robotDSL_Trigger' has cardinality 0..*.
+An association connects 'robotDSL_Time' and 'robotDSL_Goal'. From 'robotDSL_Time', the role 'robotDSL_Time' has cardinality 0..*, and from 'robotDSL_Goal', the role 'robotDSL_Goal10' has cardinality 0..*.
+An association connects 'robotDSL_Action' and 'robotDSL_Goal'. From 'robotDSL_Action', the role 'robotDSL_Action' has cardinality 0..*, and from 'robotDSL_Goal', the role 'robotDSL_Goal12' has cardinality 0..*.
+An association connects 'robotDSL_Trigger' and 'robotDSL_Task'. From 'robotDSL_Trigger', the role 'robotDSL_Trigger15' has cardinality 0..*, and from 'robotDSL_Task', the role 'robotDSL_Task14' has cardinality 0..*.
+An association connects 'robotDSL_Action' and 'robotDSL_Task'. From 'robotDSL_Action', the role 'robotDSL_Action18' has cardinality 0..*, and from 'robotDSL_Task', the role 'robotDSL_Task17' has cardinality 0..*.
+An association connects 'robotDSL_Direction' and 'robotDSL_Action'. From 'robotDSL_Direction', the role 'robotDSL_Direction' has cardinality 0..*, and from 'robotDSL_Action', the role 'robotDSL_Action20' has cardinality 0..*.
+An association connects 'robotDSL_Speed' and 'robotDSL_Action'. From 'robotDSL_Speed', the role 'robotDSL_Speed' has cardinality 0..*, and from 'robotDSL_Action', the role 'robotDSL_Action22' has cardinality 0..*.
+An association connects 'robotDSL_Direction' and 'robotDSL_Action'. From 'robotDSL_Direction', the role 'robotDSL_Direction25' has cardinality 0..*, and from 'robotDSL_Action', the role 'robotDSL_Action24' has cardinality 0..*.
+An association connects 'robotDSL_Trigger' and 'robotDSL_Action'. From 'robotDSL_Trigger', the role 'robotDSL_Trigger28' has cardinality 0..*, and from 'robotDSL_Action', the role 'robotDSL_Action27' has cardinality 0..*.
+An association connects 'robotDSL_ArmOp' and 'robotDSL_Action'. From 'robotDSL_ArmOp', the role 'robotDSL_ArmOp' has cardinality 0..*, and from 'robotDSL_Action', the role 'robotDSL_Action30' has cardinality 0..*.
+An association connects 'robotDSL_Sound' and 'robotDSL_Action'. From 'robotDSL_Sound', the role 'robotDSL_Sound' has cardinality 0..*, and from 'robotDSL_Action', the role 'robotDSL_Action32' has cardinality 0..*.
+An association connects 'robotDSL_Flag' and 'robotDSL_Action'. From 'robotDSL_Flag', the role 'robotDSL_Flag35' has cardinality 0..*, and from 'robotDSL_Action', the role 'robotDSL_Action34' has cardinality 0..*.
+An association connects 'robotDSL_Action' and 'robotDSL_Bool'. From 'robotDSL_Action', the role 'robotDSL_Action37' has cardinality 0..*, and from 'robotDSL_Bool', the role 'robotDSL_Bool' has cardinality 0..*.
+An association connects 'robotDSL_Bool' and 'robotDSL_Trigger'. From 'robotDSL_Bool', the role 'robotDSL_Bool40' has cardinality 0..*, and from 'robotDSL_Trigger', the role 'robotDSL_Trigger39' has cardinality 0..*.
+An association connects 'robotDSL_Negation' and 'robotDSL_Trigger'. From 'robotDSL_Negation', the role 'robotDSL_Negation' has cardinality 0..*, and from 'robotDSL_Trigger', the role 'robotDSL_Trigger42' has cardinality 0..*.
+An association connects 'robotDSL_Flag' and 'robotDSL_Trigger'. From 'robotDSL_Flag', the role 'robotDSL_Flag45' has cardinality 0..*, and from 'robotDSL_Trigger', the role 'robotDSL_Trigger44' has cardinality 0..*.
+An association connects 'robotDSL_Trigger' and 'robotDSL_Sensor'. From 'robotDSL_Trigger', the role 'robotDSL_Trigger47' has cardinality 0..*, and from 'robotDSL_Sensor', the role 'robotDSL_Sensor' has cardinality 0..*.
+An association connects 'robotDSL_Color' and 'robotDSL_Trigger'. From 'robotDSL_Color', the role 'robotDSL_Color' has cardinality 0..*, and from 'robotDSL_Trigger', the role 'robotDSL_Trigger49' has cardinality 0..*.
+An association connects 'robotDSL_Distance' and 'robotDSL_Trigger'. From 'robotDSL_Distance', the role 'robotDSL_Distance' has cardinality 0..*, and from 'robotDSL_Trigger', the role 'robotDSL_Trigger51' has cardinality 0..*.
+An association connects 'robotDSL_Distance' and 'robotDSL_Bool'. From 'robotDSL_Distance', the role 'robotDSL_Distance53' has cardinality 0..*, and from 'robotDSL_Bool', the role 'robotDSL_Bool54' has cardinality 0..*.

@@ -1,0 +1,170 @@
+The domain model 'StandardProfile' describes the core structural elements and their relationships within the system.
+
+The model defines 43 main class(es).
+
+'StandardProfile_Focus' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Metaclass' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_File' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_SystemModel' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Trace' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Framework' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Send' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Artifact' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Subsystem' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Derive' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_BuildComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Utility' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Refine' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Responsibility' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_ModelLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Source' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Usage' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Process' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Executable' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Create' represents an important domain concept.
+It does not declare any attributes.
+
+'File' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Specification' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Document' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Script' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Component' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Library' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Metamodel' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Destroy' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Call' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Instantiate' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Realization' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Implement' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Abstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_ImplementationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'StandardProfile_Auxiliary' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'StandardProfile_Document' is a specialization of 'File'.
+The class 'StandardProfile_Executable' is a specialization of 'File'.
+The class 'StandardProfile_Library' is a specialization of 'File'.
+The class 'StandardProfile_Script' is a specialization of 'File'.
+The class 'StandardProfile_Source' is a specialization of 'File'.
+
+Relationships between classes are modeled using associations.
+An association connects 'StandardProfile_Auxiliary' and 'StandardProfile_Class'. From 'StandardProfile_Auxiliary', the role 'StandardProfile_Auxiliary' has cardinality 0..*, and from 'StandardProfile_Class', the role 'StandardProfile_Class' has cardinality 0..*.
+An association connects 'StandardProfile_Usage' and 'StandardProfile_Call'. From 'StandardProfile_Usage', the role 'StandardProfile_Usage' has cardinality 0..*, and from 'StandardProfile_Call', the role 'StandardProfile_Call' has cardinality 0..*.
+An association connects 'StandardProfile_BehavioralFeature' and 'StandardProfile_Create'. From 'StandardProfile_BehavioralFeature', the role 'StandardProfile_BehavioralFeature' has cardinality 0..*, and from 'StandardProfile_Create', the role 'StandardProfile_Create' has cardinality 0..*.
+An association connects 'StandardProfile_Create' and 'StandardProfile_Usage'. From 'StandardProfile_Create', the role 'StandardProfile_Create4' has cardinality 0..*, and from 'StandardProfile_Usage', the role 'StandardProfile_Usage5' has cardinality 0..*.
+An association connects 'StandardProfile_Abstraction' and 'StandardProfile_Derive'. From 'StandardProfile_Abstraction', the role 'StandardProfile_Abstraction' has cardinality 0..*, and from 'StandardProfile_Derive', the role 'StandardProfile_Derive' has cardinality 0..*.
+An association connects 'StandardProfile_BehavioralFeature' and 'StandardProfile_Destroy'. From 'StandardProfile_BehavioralFeature', the role 'StandardProfile_BehavioralFeature8' has cardinality 0..*, and from 'StandardProfile_Destroy', the role 'StandardProfile_Destroy' has cardinality 0..*.
+An association connects 'StandardProfile_File' and 'StandardProfile_Artifact'. From 'StandardProfile_File', the role 'StandardProfile_File' has cardinality 0..*, and from 'StandardProfile_Artifact', the role 'StandardProfile_Artifact' has cardinality 0..*.
+An association connects 'StandardProfile_Entity' and 'StandardProfile_Component'. From 'StandardProfile_Entity', the role 'StandardProfile_Entity' has cardinality 0..*, and from 'StandardProfile_Component', the role 'StandardProfile_Component' has cardinality 0..*.
+An association connects 'StandardProfile_Class' and 'StandardProfile_Focus'. From 'StandardProfile_Class', the role 'StandardProfile_Class12' has cardinality 0..*, and from 'StandardProfile_Focus', the role 'StandardProfile_Focus' has cardinality 0..*.
+An association connects 'StandardProfile_Package' and 'StandardProfile_Framework'. From 'StandardProfile_Package', the role 'StandardProfile_Package' has cardinality 0..*, and from 'StandardProfile_Framework', the role 'StandardProfile_Framework' has cardinality 0..*.
+An association connects 'StandardProfile_Implement' and 'StandardProfile_Component'. From 'StandardProfile_Implement', the role 'StandardProfile_Implement' has cardinality 0..*, and from 'StandardProfile_Component', the role 'StandardProfile_Component15' has cardinality 0..*.
+An association connects 'StandardProfile_Class' and 'StandardProfile_ImplementationClass'. From 'StandardProfile_Class', the role 'StandardProfile_Class17' has cardinality 0..*, and from 'StandardProfile_ImplementationClass', the role 'StandardProfile_ImplementationClass' has cardinality 0..*.
+An association connects 'StandardProfile_Instantiate' and 'StandardProfile_Usage'. From 'StandardProfile_Instantiate', the role 'StandardProfile_Instantiate' has cardinality 0..*, and from 'StandardProfile_Usage', the role 'StandardProfile_Usage19' has cardinality 0..*.
+An association connects 'StandardProfile_Metaclass' and 'StandardProfile_Class'. From 'StandardProfile_Metaclass', the role 'StandardProfile_Metaclass' has cardinality 0..*, and from 'StandardProfile_Class', the role 'StandardProfile_Class21' has cardinality 0..*.
+An association connects 'StandardProfile_Package' and 'StandardProfile_ModelLibrary'. From 'StandardProfile_Package', the role 'StandardProfile_Package23' has cardinality 0..*, and from 'StandardProfile_ModelLibrary', the role 'StandardProfile_ModelLibrary' has cardinality 0..*.
+An association connects 'StandardProfile_Component' and 'StandardProfile_Process'. From 'StandardProfile_Component', the role 'StandardProfile_Component25' has cardinality 0..*, and from 'StandardProfile_Process', the role 'StandardProfile_Process' has cardinality 0..*.
+An association connects 'StandardProfile_Realization' and 'StandardProfile_Classifier'. From 'StandardProfile_Realization', the role 'StandardProfile_Realization' has cardinality 0..*, and from 'StandardProfile_Classifier', the role 'StandardProfile_Classifier' has cardinality 0..*.
+An association connects 'StandardProfile_Abstraction' and 'StandardProfile_Refine'. From 'StandardProfile_Abstraction', the role 'StandardProfile_Abstraction28' has cardinality 0..*, and from 'StandardProfile_Refine', the role 'StandardProfile_Refine' has cardinality 0..*.
+An association connects 'StandardProfile_Responsibility' and 'StandardProfile_Usage'. From 'StandardProfile_Responsibility', the role 'StandardProfile_Responsibility' has cardinality 0..*, and from 'StandardProfile_Usage', the role 'StandardProfile_Usage30' has cardinality 0..*.
+An association connects 'StandardProfile_Send' and 'StandardProfile_Usage'. From 'StandardProfile_Send', the role 'StandardProfile_Send' has cardinality 0..*, and from 'StandardProfile_Usage', the role 'StandardProfile_Usage32' has cardinality 0..*.
+An association connects 'StandardProfile_Service' and 'StandardProfile_Component'. From 'StandardProfile_Service', the role 'StandardProfile_Service' has cardinality 0..*, and from 'StandardProfile_Component', the role 'StandardProfile_Component34' has cardinality 0..*.
+An association connects 'StandardProfile_Classifier' and 'StandardProfile_Specification'. From 'StandardProfile_Classifier', the role 'StandardProfile_Classifier36' has cardinality 0..*, and from 'StandardProfile_Specification', the role 'StandardProfile_Specification' has cardinality 0..*.
+An association connects 'StandardProfile_Subsystem' and 'StandardProfile_Component'. From 'StandardProfile_Subsystem', the role 'StandardProfile_Subsystem' has cardinality 0..*, and from 'StandardProfile_Component', the role 'StandardProfile_Component38' has cardinality 0..*.
+An association connects 'StandardProfile_Abstraction' and 'StandardProfile_Trace'. From 'StandardProfile_Abstraction', the role 'StandardProfile_Abstraction40' has cardinality 0..*, and from 'StandardProfile_Trace', the role 'StandardProfile_Trace' has cardinality 0..*.
+An association connects 'StandardProfile_Class' and 'StandardProfile_Type'. From 'StandardProfile_Class', the role 'StandardProfile_Class42' has cardinality 0..*, and from 'StandardProfile_Type', the role 'StandardProfile_Type' has cardinality 0..*.
+An association connects 'StandardProfile_Class' and 'StandardProfile_Utility'. From 'StandardProfile_Class', the role 'StandardProfile_Class44' has cardinality 0..*, and from 'StandardProfile_Utility', the role 'StandardProfile_Utility' has cardinality 0..*.
+An association connects 'StandardProfile_BuildComponent' and 'StandardProfile_Component'. From 'StandardProfile_BuildComponent', the role 'StandardProfile_BuildComponent' has cardinality 0..*, and from 'StandardProfile_Component', the role 'StandardProfile_Component46' has cardinality 0..*.
+An association connects 'StandardProfile_Metamodel' and 'StandardProfile_Model'. From 'StandardProfile_Metamodel', the role 'StandardProfile_Metamodel' has cardinality 0..*, and from 'StandardProfile_Model', the role 'StandardProfile_Model' has cardinality 0..*.
+An association connects 'StandardProfile_Model' and 'StandardProfile_SystemModel'. From 'StandardProfile_Model', the role 'StandardProfile_Model49' has cardinality 0..*, and from 'StandardProfile_SystemModel', the role 'StandardProfile_SystemModel' has cardinality 0..*.

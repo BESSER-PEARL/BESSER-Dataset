@@ -1,0 +1,67 @@
+The domain model 'exhaustive' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'exhaustive_GenericTest' represents an important domain concept.
+It has one attribute: 'genericAttr', which is of type str.
+
+'InterfaceTest' represents an important domain concept.
+It does not declare any attributes.
+
+'MultipleSuperTest' represents an important domain concept.
+It does not declare any attributes.
+
+'exhaustive_InterfaceTest' represents an important domain concept.
+It does not declare any attributes.
+
+'exhaustive_AbstractTest' represents an important domain concept.
+It does not declare any attributes.
+
+'exhaustive_AttributesTest' represents an important domain concept.
+It has the following attributes: 'changeableYes', which is of type float; 'volatileYes', which is of type str; 'idYes', which is of type str; 'lowerBound1', which is of type str; 'derivedNo', which is of type str; 'upperBound0', which is of type str; 'defaultValue', which is of type str; 'transientNo', which is of type str; 'upperBoundN', which is of type str; 'unsettableYes', which is of type str; 'orderenedNo', which is of type str; 'volatileNo', which is of type str; 'lowerBoundN', which is of type str; 'idNo', which is of type str; 'uniqueYes', which is of type str; 'lowerBound0', which is of type int; 'changeableNo', which is of type str; 'upperBound2', which is of type str; 'uniqueNo', which is of type str; 'derivedYes', which is of type str; 'transientYes', which is of type float; 'unsettableNo', which is of type str; 'upperBound1', which is of type date; 'orderedYes', which is of type str; 'lowerBound2', which is of type str.
+
+'AbstractTest' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationsTest' represents an important domain concept.
+It does not declare any attributes.
+
+'exhaustive_ReferencesTest' represents an important domain concept.
+It does not declare any attributes.
+
+'exhaustive_OperationsTest' represents an important domain concept.
+It does not declare any attributes.
+
+'exhaustive_MultipleSuperTest' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'UnserializableEnumTest' defines the following possible values: 'name1', 'name2'.
+The enumeration 'SerializableEnumTest' defines the following possible values: 'name3', 'name4'.
+
+The model also captures inheritance relationships between classes.
+The class 'exhaustive_AbstractTest' is a specialization of 'OperationsTest'.
+The class 'exhaustive_InterfaceTest' is a specialization of 'OperationsTest'.
+The class 'exhaustive_MultipleSuperTest' is a specialization of 'AbstractTest'.
+The class 'exhaustive_MultipleSuperTest' is a specialization of 'InterfaceTest'.
+The class 'exhaustive_ReferencesTest' is a specialization of 'AbstractTest'.
+The class 'exhaustive_AttributesTest' is a specialization of 'MultipleSuperTest'.
+The class 'exhaustive_AttributesTest' is a specialization of 'InterfaceTest'.
+
+Relationships between classes are modeled using associations.
+An association connects 'exhaustive_ReferencesTest' and 'exhaustive_AbstractTest'. From 'exhaustive_ReferencesTest', the role 'exhaustive_ReferencesTest' has cardinality 0..*, and from 'exhaustive_AbstractTest', the role 'exhaustive_AbstractTest' has cardinality 0..*.
+An association connects 'exhaustive_AbstractTest' and 'exhaustive_ReferencesTest'. From 'exhaustive_AbstractTest', the role 'exhaustive_AbstractTest3' has cardinality 0..*, and from 'exhaustive_ReferencesTest', the role 'exhaustive_ReferencesTest2' has cardinality 0..*.
+An association connects 'exhaustive_ReferencesTest' and 'exhaustive_MultipleSuperTest'. From 'exhaustive_ReferencesTest', the role 'exhaustive_ReferencesTest5' has cardinality 0..*, and from 'exhaustive_MultipleSuperTest', the role 'exhaustive_MultipleSuperTest' has cardinality 0..*.
+An association connects 'exhaustive_ReferencesTest' and 'exhaustive_AttributesTest'. From 'exhaustive_ReferencesTest', the role 'opposite2' has cardinality 0..*, and from 'exhaustive_AttributesTest', the role 'AttributesTest' has cardinality 0..*.
+An association connects 'exhaustive_AttributesTest' and 'exhaustive_ReferencesTest'. From 'exhaustive_AttributesTest', the role 'exhaustive_AttributesTest' has cardinality 0..*, and from 'exhaustive_ReferencesTest', the role 'exhaustive_ReferencesTest8' has cardinality 0..*.
+An association connects 'exhaustive_AttributesTest' and 'exhaustive_ReferencesTest'. From 'exhaustive_AttributesTest', the role 'exhaustive_AttributesTest11' has cardinality 0..*, and from 'exhaustive_ReferencesTest', the role 'exhaustive_ReferencesTest10' has cardinality 0..*.
+An association connects 'exhaustive_AttributesTest' and 'exhaustive_ReferencesTest'. From 'exhaustive_AttributesTest', the role 'exhaustive_AttributesTest14' has cardinality 0..*, and from 'exhaustive_ReferencesTest', the role 'exhaustive_ReferencesTest13' has cardinality 0..*.
+An association connects 'exhaustive_ReferencesTest' and 'exhaustive_AttributesTest'. From 'exhaustive_ReferencesTest', the role 'exhaustive_ReferencesTest16' has cardinality 0..*, and from 'exhaustive_AttributesTest', the role 'exhaustive_AttributesTest17' has cardinality 0..*.
+An association connects 'exhaustive_AttributesTest' and 'exhaustive_ReferencesTest'. From 'exhaustive_AttributesTest', the role 'exhaustive_AttributesTest20' has cardinality 0..*, and from 'exhaustive_ReferencesTest', the role 'exhaustive_ReferencesTest19' has cardinality 0..*.
+An association connects 'exhaustive_AttributesTest' and 'exhaustive_ReferencesTest'. From 'exhaustive_AttributesTest', the role 'exhaustive_AttributesTest23' has cardinality 0..*, and from 'exhaustive_ReferencesTest', the role 'exhaustive_ReferencesTest22' has cardinality 0..*.
+An association connects 'exhaustive_AttributesTest' and 'exhaustive_ReferencesTest'. From 'exhaustive_AttributesTest', the role 'exhaustive_AttributesTest26' has cardinality 0..*, and from 'exhaustive_ReferencesTest', the role 'exhaustive_ReferencesTest25' has cardinality 0..*.
+An association connects 'exhaustive_AttributesTest' and 'exhaustive_ReferencesTest'. From 'exhaustive_AttributesTest', the role 'exhaustive_AttributesTest29' has cardinality 0..*, and from 'exhaustive_ReferencesTest', the role 'exhaustive_ReferencesTest28' has cardinality 0..*.
+An association connects 'exhaustive_ReferencesTest' and 'exhaustive_AttributesTest'. From 'exhaustive_ReferencesTest', the role 'exhaustive_ReferencesTest31' has cardinality 0..*, and from 'exhaustive_AttributesTest', the role 'exhaustive_AttributesTest32' has cardinality 0..*.
+An association connects 'exhaustive_AttributesTest' and 'exhaustive_ReferencesTest'. From 'exhaustive_AttributesTest', the role 'exhaustive_AttributesTest35' has cardinality 0..*, and from 'exhaustive_ReferencesTest', the role 'exhaustive_ReferencesTest34' has cardinality 0..*.
+An association connects 'exhaustive_ReferencesTest' and 'exhaustive_AttributesTest'. From 'exhaustive_ReferencesTest', the role 'exhaustive_ReferencesTest37' has cardinality 0..*, and from 'exhaustive_AttributesTest', the role 'exhaustive_AttributesTest38' has cardinality 0..*.
+An association connects 'exhaustive_ReferencesTest' and 'exhaustive_AttributesTest'. From 'exhaustive_ReferencesTest', the role 'ReferencesTest' has cardinality 0..*, and from 'exhaustive_AttributesTest', the role 'opposite1' has cardinality 0..*.

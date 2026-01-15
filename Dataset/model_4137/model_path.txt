@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/sharanka/MDSD-assignment2/dk.sdu.student.shsha15.mathInterpreter/model/generated/MathInterpreter.ecore

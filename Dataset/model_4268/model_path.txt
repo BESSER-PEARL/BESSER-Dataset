@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tylertravismya/cli/samples/models/bowling.ecore

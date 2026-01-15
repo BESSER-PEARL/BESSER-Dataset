@@ -1,0 +1,1331 @@
+The domain model 'pcm_pc_pc' describes the core structural elements and their relationships within the system.
+
+The model defines 294 main class(es).
+
+'CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_usagemodel_pc_pc_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_reliability_pc_pc_SoftwareInducedFailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_pc_pc_AbstractAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_resourcetype_pc_pc_CommunicationLinkResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_ProbabilisticBranchTransition' represents an important domain concept.
+It has one attribute: 'branchProbability', which is of type float.
+
+'pcm_pc_pc_composition_pc_pc_EventChannel' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_composition_pc_pc_RequiredInfrastructureDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'RepositoryComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'PCMRandomVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_ProvidesComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'PassiveResource' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_composition_pc_pc_DelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'qos_reliability_pc_pc_SpecifiedReliabilityAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_pc_pc_EventChannelSourceConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_composition_pc_pc_ProvidedDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'InfrastructureRequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_ExternalCallAction' represents an important domain concept.
+It has one attribute: 'retryCount', which is of type int.
+
+'pcm_pc_pc_usagemodel_pc_pc_ScenarioBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'FailureOccurrenceDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_usagemodel_pc_pc_Stop' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_performance_pc_pc_ParametricResourceDemand' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_reliability_pc_pc_InternalFailureOccurrenceDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'SynchronisationPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_resourcetype_pc_pc_ResourceInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_GuardedBranchTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'OpenWorkload' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_composition_pc_pc_AssemblyEventConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_composition_pc_pc_SinkDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_OperationRequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_usagemodel_pc_pc_UserData' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_AbstractAction' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_pc_pc_EventChannel' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_EventGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_resourceenvironment_pc_pc_ResourceEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_pc_pc_ResourceInterfaceRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_reliability_pc_pc_RecoveryActionBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_entity_pc_pc_NamedElement' represents an important domain concept.
+It has one attribute: 'entityName', which is of type str.
+
+'ProvidesComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_qos_performance_pc_pc_SpecifiedExecutionTime' represents an important domain concept.
+It does not declare any attributes.
+
+'NetworkInducedFailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'Role' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_StopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_pc_pc_ResourceRequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'SchedulingPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_composition_pc_pc_RequiredDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_usagemodel_pc_pc_AbstractUserAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_reliability_pc_pc_FailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'ExternalCallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'repository_pc_pc_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Allocation' represents an important domain concept.
+It does not declare any attributes.
+
+'Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_completions_pc_pc_NetworkDemandParametricResourceDemand' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_performance_pc_pc_InfrastructureCall' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_qos_reliability_pc_pc_SpecifiedReliabilityAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_CollectionDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessingResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'ExceptionType' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_pc_pc_ResourceDemandingBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'qos_performance_pc_pc_SpecifiedExecutionTime' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_usagemodel_pc_pc_OpenWorkload' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_reliability_pc_pc_ResourceTimeoutFailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_resourceenvironment_pc_pc_ProcessingResourceSpecification' represents an important domain concept.
+It has the following attributes: 'requiredByContainer', which is of type bool; 'MTTF', which is of type float; 'MTTR', which is of type float; 'numberOfReplicas', which is of type int.
+
+'entity_pc_pc_InterfaceProvidingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_reliability_pc_pc_RecoveryAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_resourceenvironment_pc_pc_CommunicationLinkResourceSpecification' represents an important domain concept.
+It has one attribute: 'failureProbability', which is of type float.
+
+'pcm_pc_pc_usagemodel_pc_pc_Workload' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_composition_pc_pc_ResourceRequiredDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'ParametricResourceDemand' represents an important domain concept.
+It does not declare any attributes.
+
+'BranchTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_InfrastructureProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_AbstractInternalControlFlowAction' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_pc_pc_AssemblyContext' represents an important domain concept.
+It does not declare any attributes.
+
+'Repository' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_qos_performance_pc_pc_SystemSpecifiedExecutionTime' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_composition_pc_pc_AssemblyContext' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_composition_pc_pc_EventChannelSinkConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_Repository' represents an important domain concept.
+It has one attribute: 'repositoryDescription', which is of type str.
+
+'pcm_pc_pc_seff_pc_pc_ResourceDemandingBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'ProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_performance_pc_pc_ParametricResourceDemand' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_reliability_pc_pc_ExternalFailureOccurrenceDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_pc_pc_CallReturnAction' represents an important domain concept.
+It does not declare any attributes.
+
+'RequiredCharacterisation' represents an important domain concept.
+It does not declare any attributes.
+
+'FailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'SetVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationRequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'SpecifiedOutputParameterAbstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_core_pc_pc_PCMRandomVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_pc_pc_ServiceEffectSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'SpecifiedQoSAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_composition_pc_pc_SourceDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_usagemodel_pc_pc_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_performance_pc_pc_ResourceCall' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractUserAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ExternalFailureOccurrenceDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'Delay' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_qosannotations_pc_pc_QoSAnnotations' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_ReleaseAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ForkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_entity_pc_pc_InterfaceProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_InfrastructureInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_entity_pc_pc_InterfaceRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'repository_pc_pc_ImplementationComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_resourcetype_pc_pc_ResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_allocation_pc_pc_Allocation' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_AbstractLoopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_pc_pc_EventChannelSinkConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_pc_pc_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CommunicationLinkResourceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_reliability_pc_pc_NetworkInducedFailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_reliability_pc_pc_RecoveryActionBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_entity_pc_pc_ResourceInterfaceProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Workload' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_OperationProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'UnitCarryingElement' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceDemandingInternalBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'HardwareInducedFailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_AbstractBranchTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'QoSAnnotations' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_pc_pc_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_usagemodel_pc_pc_Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'DelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_entity_pc_pc_ResourceInterfaceRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_InternalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'ScenarioBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_pc_pc_CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_OperationInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_entity_pc_pc_ResourceProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_qos_performance_pc_pc_ComponentSpecifiedExecutionTime' represents an important domain concept.
+It does not declare any attributes.
+
+'Completion' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_SetVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_SourceRole' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'System' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_completions_pc_pc_CompletionRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_usagemodel_pc_pc_Delay' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_resourcetype_pc_pc_ResourceRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_composition_pc_pc_ProvidedInfrastructureDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_Signature' represents an important domain concept.
+It does not declare any attributes.
+
+'UserData' represents an important domain concept.
+It does not declare any attributes.
+
+'CommunicationLinkResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'InternalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_pc_pc_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'UsageModel' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_LoopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'parameter_pc_pc_pcm_pc_pc_AbstractNamedReference' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_qosannotations_pc_pc_SpecifiedOutputParameterAbstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'RandomVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_entity_pc_pc_ResourceRequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'SinkRole' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceEffectSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_pc_pc_ResourceRequiredDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CallReturnAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_resourcetype_pc_pc_ResourceSignature' represents an important domain concept.
+It has one attribute: 'resourceServiceId', which is of type int.
+
+'pcm_pc_pc_system_pc_pc_System' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_pc_pc_ResourceProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_entity_pc_pc_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_BranchAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_parameter_pc_pc_VariableCharacterisation' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'pcm_pc_pc_repository_pc_pc_RepositoryComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'InfrastructureInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'SoftwareInducedFailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_ResourceDemandingInternalBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'SourceRole' represents an important domain concept.
+It does not declare any attributes.
+
+'InfrastructureSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_usagemodel_pc_pc_EntryLevelSystemCall' represents an important domain concept.
+It has one attribute: 'priority', which is of type int.
+
+'pcm_pc_pc_reliability_pc_pc_FailureOccurrenceDescription' represents an important domain concept.
+It has one attribute: 'failureProbability', which is of type float.
+
+'VariableUsage' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceDemandingSEFF' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_pc_pc_ComposedStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_BasicComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_resourcetype_pc_pc_SchedulingPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_composition_pc_pc_ComposedStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_ExceptionType' represents an important domain concept.
+It has the following attributes: 'exceptionMessage', which is of type str; 'exceptionName', which is of type str.
+
+'entity_pc_pc_ComposedProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_OperationSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_entity_pc_pc_ResourceInterfaceProvidingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'EventType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_PointcutPointcut' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_DummyClass' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_SynchronisationPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_ServiceEffectSpecification' represents an important domain concept.
+It has one attribute: 'seffTypeID', which is of type str.
+
+'pcm_pc_pc_resourceenvironment_pc_pc_LinkingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractLoopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'repository_pc_pc_RepositoryComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_completions_pc_pc_Completion' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_CallReturnAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_reliability_pc_pc_HardwareInducedFailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_usagemodel_pc_pc_UsageScenario' represents an important domain concept.
+It does not declare any attributes.
+
+'InnerDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_allocation_pc_pc_AllocationContext' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_reliability_pc_pc_FailureHandlingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'InfrastructureProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'InternalFailureOccurrenceDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_EmitEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_usagemodel_pc_pc_ClosedWorkload' represents an important domain concept.
+It has one attribute: 'population', which is of type int.
+
+'pcm_pc_pc_resourcetype_pc_pc_ProcessingResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_usagemodel_pc_pc_BranchTransition' represents an important domain concept.
+It has one attribute: 'branchProbability', which is of type float.
+
+'pcm_pc_pc_composition_pc_pc_RequiredResourceDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceDemandingBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_EventType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_parameter_pc_pc_VariableUsage' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_usagemodel_pc_pc_UsageModel' represents an important domain concept.
+It does not declare any attributes.
+
+'Signature' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_PrimitiveDataType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'seff_pc_pc_AbstractInternalControlFlowAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_PassiveResource' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_protocol_pc_pc_Protocol' represents an important domain concept.
+It has one attribute: 'protocolTypeID', which is of type str.
+
+'pcm_pc_pc_composition_pc_pc_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_RequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_subsystem_pc_pc_SubSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_CompositeComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_completions_pc_pc_DelegatingExternalCallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ImplementationComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'EntryLevelSystemCall' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_pc_pc_InterfaceRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'EventGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractBranchTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'GuardedBranchTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'BranchAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_InternalCallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableCharacterisation' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_pc_pc_ResourceInterfaceProvidingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'Protocol' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_pc_pc_AssemblyEventConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_parameter_pc_pc_CharacterisedVariable' represents an important domain concept.
+It has one attribute: 'characterisationType', which is of type str.
+
+'pcm_pc_pc_repository_pc_pc_Parameter' represents an important domain concept.
+It has the following attributes: 'parameterName', which is of type str; 'modifier__Parameter', which is of type str.
+
+'AllocationContext' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceTimeoutFailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'UsageScenario' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_InfrastructureSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_entity_pc_pc_InterfaceProvidingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_ProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_qosannotations_pc_pc_SpecifiedQoSAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_composition_pc_pc_EventChannelSourceConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_ForkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'SpecifiedExecutionTime' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_entity_pc_pc_ComposedProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessingResourceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_ResourceDemandingSEFF' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_ImplementationComponentType' represents an important domain concept.
+It has one attribute: 'componentType', which is of type str.
+
+'pcm_pc_pc_repository_pc_pc_RequiredCharacterisation' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_composition_pc_pc_AssemblyConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_SinkRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_ForkedBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_reliability_pc_pc_RecoveryAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_CompleteComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_reliability_pc_pc_FailureHandlingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_performance_pc_pc_InfrastructureCall' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_InfrastructureRequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_pc_pc_InterfaceProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'ClosedWorkload' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_InnerDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_StartAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_CollectionIteratorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'RequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'ForkedBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_seff_pc_pc_AcquireAction' represents an important domain concept.
+It has the following attributes: 'timeout', which is of type bool; 'timeoutValue', which is of type float.
+
+'Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_performance_pc_pc_ResourceCall' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_composition_pc_pc_AssemblyInfrastructureConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractInternalControlFlowAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_resourceenvironment_pc_pc_ResourceContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_repository_pc_pc_CompositeDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_pc_pc_Pointcut' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ParameterModifier' defines the following possible values: 'out', 'in', 'none', 'inout'.
+The enumeration 'VariableCharacterisationType' defines the following possible values: 'BYTESIZE', 'TYPE', 'VALUE', 'NUMBER_OF_ELEMENTS', 'STRUCTURE'.
+The enumeration 'ComponentType' defines the following possible values: 'INFRASTRUCTURE_COMPONENT', 'BUSINESS_COMPONENT'.
+The enumeration 'PrimitiveTypeEnum' defines the following possible values: 'STRING', 'LONG', 'BOOL', 'CHAR', 'DOUBLE', 'INT', 'BYTE'.
+
+The model also captures inheritance relationships between classes.
+The class 'pcm_pc_pc_core_pc_pc_PCMRandomVariable' is a specialization of 'RandomVariable'.
+The class 'pcm_pc_pc_entity_pc_pc_ResourceProvidedRole' is a specialization of 'Role'.
+The class 'pcm_pc_pc_entity_pc_pc_InterfaceProvidingRequiringEntity' is a specialization of 'entity_pc_pc_InterfaceProvidingEntity'.
+The class 'pcm_pc_pc_entity_pc_pc_InterfaceProvidingRequiringEntity' is a specialization of 'entity_pc_pc_InterfaceRequiringEntity'.
+The class 'pcm_pc_pc_entity_pc_pc_InterfaceProvidingEntity' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_entity_pc_pc_InterfaceRequiringEntity' is a specialization of 'entity_pc_pc_Entity'.
+The class 'pcm_pc_pc_entity_pc_pc_InterfaceRequiringEntity' is a specialization of 'entity_pc_pc_ResourceInterfaceRequiringEntity'.
+The class 'pcm_pc_pc_entity_pc_pc_ResourceInterfaceRequiringEntity' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_entity_pc_pc_ResourceRequiredRole' is a specialization of 'Role'.
+The class 'pcm_pc_pc_entity_pc_pc_ResourceInterfaceProvidingEntity' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_entity_pc_pc_ComposedProvidingRequiringEntity' is a specialization of 'composition_pc_pc_ComposedStructure'.
+The class 'pcm_pc_pc_entity_pc_pc_ComposedProvidingRequiringEntity' is a specialization of 'entity_pc_pc_InterfaceProvidingRequiringEntity'.
+The class 'pcm_pc_pc_entity_pc_pc_ResourceInterfaceProvidingRequiringEntity' is a specialization of 'entity_pc_pc_ResourceInterfaceRequiringEntity'.
+The class 'pcm_pc_pc_entity_pc_pc_ResourceInterfaceProvidingRequiringEntity' is a specialization of 'entity_pc_pc_ResourceInterfaceProvidingEntity'.
+The class 'pcm_pc_pc_entity_pc_pc_Entity' is a specialization of 'Identifier'.
+The class 'pcm_pc_pc_entity_pc_pc_Entity' is a specialization of 'entity_pc_pc_NamedElement'.
+The class 'pcm_pc_pc_composition_pc_pc_DelegationConnector' is a specialization of 'Connector'.
+The class 'pcm_pc_pc_composition_pc_pc_Connector' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_composition_pc_pc_ComposedStructure' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_composition_pc_pc_EventChannel' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_composition_pc_pc_EventChannelSourceConnector' is a specialization of 'Connector'.
+The class 'pcm_pc_pc_composition_pc_pc_EventChannelSinkConnector' is a specialization of 'Connector'.
+The class 'pcm_pc_pc_composition_pc_pc_ProvidedDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'pcm_pc_pc_composition_pc_pc_RequiredDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'pcm_pc_pc_composition_pc_pc_AssemblyConnector' is a specialization of 'Connector'.
+The class 'pcm_pc_pc_composition_pc_pc_AssemblyEventConnector' is a specialization of 'Connector'.
+The class 'pcm_pc_pc_composition_pc_pc_SourceDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'pcm_pc_pc_composition_pc_pc_SinkDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'pcm_pc_pc_composition_pc_pc_AssemblyInfrastructureConnector' is a specialization of 'Connector'.
+The class 'pcm_pc_pc_composition_pc_pc_ProvidedInfrastructureDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'pcm_pc_pc_composition_pc_pc_RequiredInfrastructureDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'pcm_pc_pc_composition_pc_pc_RequiredResourceDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'pcm_pc_pc_composition_pc_pc_AssemblyContext' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_usagemodel_pc_pc_UsageScenario' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_usagemodel_pc_pc_EntryLevelSystemCall' is a specialization of 'AbstractUserAction'.
+The class 'pcm_pc_pc_usagemodel_pc_pc_AbstractUserAction' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_usagemodel_pc_pc_ScenarioBehaviour' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_usagemodel_pc_pc_Branch' is a specialization of 'AbstractUserAction'.
+The class 'pcm_pc_pc_usagemodel_pc_pc_Loop' is a specialization of 'AbstractUserAction'.
+The class 'pcm_pc_pc_usagemodel_pc_pc_Stop' is a specialization of 'AbstractUserAction'.
+The class 'pcm_pc_pc_usagemodel_pc_pc_Start' is a specialization of 'AbstractUserAction'.
+The class 'pcm_pc_pc_usagemodel_pc_pc_OpenWorkload' is a specialization of 'Workload'.
+The class 'pcm_pc_pc_usagemodel_pc_pc_Delay' is a specialization of 'AbstractUserAction'.
+The class 'pcm_pc_pc_usagemodel_pc_pc_ClosedWorkload' is a specialization of 'Workload'.
+The class 'pcm_pc_pc_repository_pc_pc_PassiveResource' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_repository_pc_pc_BasicComponent' is a specialization of 'ImplementationComponentType'.
+The class 'pcm_pc_pc_repository_pc_pc_ImplementationComponentType' is a specialization of 'RepositoryComponent'.
+The class 'pcm_pc_pc_repository_pc_pc_RepositoryComponent' is a specialization of 'InterfaceProvidingRequiringEntity'.
+The class 'pcm_pc_pc_repository_pc_pc_ProvidedRole' is a specialization of 'Role'.
+The class 'pcm_pc_pc_repository_pc_pc_Repository' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_repository_pc_pc_Interface' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_repository_pc_pc_EventGroup' is a specialization of 'Interface'.
+The class 'pcm_pc_pc_repository_pc_pc_EventType' is a specialization of 'Signature'.
+The class 'pcm_pc_pc_repository_pc_pc_Signature' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_repository_pc_pc_InfrastructureSignature' is a specialization of 'Signature'.
+The class 'pcm_pc_pc_repository_pc_pc_InfrastructureInterface' is a specialization of 'Interface'.
+The class 'pcm_pc_pc_repository_pc_pc_InfrastructureRequiredRole' is a specialization of 'RequiredRole'.
+The class 'pcm_pc_pc_repository_pc_pc_RequiredRole' is a specialization of 'Role'.
+The class 'pcm_pc_pc_repository_pc_pc_OperationSignature' is a specialization of 'Signature'.
+The class 'pcm_pc_pc_repository_pc_pc_OperationInterface' is a specialization of 'Interface'.
+The class 'pcm_pc_pc_repository_pc_pc_OperationRequiredRole' is a specialization of 'RequiredRole'.
+The class 'pcm_pc_pc_repository_pc_pc_SourceRole' is a specialization of 'RequiredRole'.
+The class 'pcm_pc_pc_repository_pc_pc_SinkRole' is a specialization of 'ProvidedRole'.
+The class 'pcm_pc_pc_repository_pc_pc_OperationProvidedRole' is a specialization of 'ProvidedRole'.
+The class 'pcm_pc_pc_repository_pc_pc_InfrastructureProvidedRole' is a specialization of 'ProvidedRole'.
+The class 'pcm_pc_pc_repository_pc_pc_CompleteComponentType' is a specialization of 'RepositoryComponent'.
+The class 'pcm_pc_pc_repository_pc_pc_ProvidesComponentType' is a specialization of 'RepositoryComponent'.
+The class 'pcm_pc_pc_repository_pc_pc_CompositeComponent' is a specialization of 'entity_pc_pc_ComposedProvidingRequiringEntity'.
+The class 'pcm_pc_pc_repository_pc_pc_CompositeComponent' is a specialization of 'repository_pc_pc_ImplementationComponentType'.
+The class 'pcm_pc_pc_repository_pc_pc_PrimitiveDataType' is a specialization of 'DataType'.
+The class 'pcm_pc_pc_repository_pc_pc_CollectionDataType' is a specialization of 'entity_pc_pc_Entity'.
+The class 'pcm_pc_pc_repository_pc_pc_CollectionDataType' is a specialization of 'repository_pc_pc_DataType'.
+The class 'pcm_pc_pc_repository_pc_pc_CompositeDataType' is a specialization of 'entity_pc_pc_Entity'.
+The class 'pcm_pc_pc_repository_pc_pc_CompositeDataType' is a specialization of 'repository_pc_pc_DataType'.
+The class 'pcm_pc_pc_repository_pc_pc_InnerDeclaration' is a specialization of 'NamedElement'.
+The class 'pcm_pc_pc_repository_pc_pc_Role' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_resourcetype_pc_pc_ResourceSignature' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_resourcetype_pc_pc_ProcessingResourceType' is a specialization of 'ResourceType'.
+The class 'pcm_pc_pc_resourcetype_pc_pc_ResourceType' is a specialization of 'entity_pc_pc_Entity'.
+The class 'pcm_pc_pc_resourcetype_pc_pc_ResourceType' is a specialization of 'UnitCarryingElement'.
+The class 'pcm_pc_pc_resourcetype_pc_pc_ResourceType' is a specialization of 'entity_pc_pc_ResourceInterfaceProvidingEntity'.
+The class 'pcm_pc_pc_resourcetype_pc_pc_SchedulingPolicy' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_resourcetype_pc_pc_CommunicationLinkResourceType' is a specialization of 'ResourceType'.
+The class 'pcm_pc_pc_resourcetype_pc_pc_ResourceInterface' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_parameter_pc_pc_CharacterisedVariable' is a specialization of 'Variable'.
+The class 'pcm_pc_pc_reliability_pc_pc_HardwareInducedFailureType' is a specialization of 'FailureType'.
+The class 'pcm_pc_pc_reliability_pc_pc_SoftwareInducedFailureType' is a specialization of 'FailureType'.
+The class 'pcm_pc_pc_reliability_pc_pc_InternalFailureOccurrenceDescription' is a specialization of 'FailureOccurrenceDescription'.
+The class 'pcm_pc_pc_reliability_pc_pc_NetworkInducedFailureType' is a specialization of 'FailureType'.
+The class 'pcm_pc_pc_reliability_pc_pc_ExternalFailureOccurrenceDescription' is a specialization of 'FailureOccurrenceDescription'.
+The class 'pcm_pc_pc_reliability_pc_pc_ResourceTimeoutFailureType' is a specialization of 'SoftwareInducedFailureType'.
+The class 'pcm_pc_pc_reliability_pc_pc_FailureType' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_seff_pc_pc_StopAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_pc_pc_seff_pc_pc_AbstractInternalControlFlowAction' is a specialization of 'AbstractAction'.
+The class 'pcm_pc_pc_seff_pc_pc_AbstractAction' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_seff_pc_pc_ResourceDemandingBehaviour' is a specialization of 'Identifier'.
+The class 'pcm_pc_pc_seff_pc_pc_AbstractLoopAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_pc_pc_seff_pc_pc_AbstractBranchTransition' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_seff_pc_pc_BranchAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_pc_pc_seff_pc_pc_StartAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_pc_pc_seff_pc_pc_ResourceDemandingSEFF' is a specialization of 'Identifier'.
+The class 'pcm_pc_pc_seff_pc_pc_ResourceDemandingSEFF' is a specialization of 'seff_pc_pc_ServiceEffectSpecification'.
+The class 'pcm_pc_pc_seff_pc_pc_ResourceDemandingSEFF' is a specialization of 'seff_pc_pc_ResourceDemandingBehaviour'.
+The class 'pcm_pc_pc_seff_pc_pc_ResourceDemandingInternalBehaviour' is a specialization of 'ResourceDemandingBehaviour'.
+The class 'pcm_pc_pc_seff_pc_pc_ReleaseAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_pc_pc_seff_pc_pc_LoopAction' is a specialization of 'AbstractLoopAction'.
+The class 'pcm_pc_pc_seff_pc_pc_ForkAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_pc_pc_seff_pc_pc_ForkedBehaviour' is a specialization of 'ResourceDemandingBehaviour'.
+The class 'pcm_pc_pc_seff_pc_pc_ExternalCallAction' is a specialization of 'seff_pc_pc_AbstractAction'.
+The class 'pcm_pc_pc_seff_pc_pc_ExternalCallAction' is a specialization of 'seff_pc_pc_CallReturnAction'.
+The class 'pcm_pc_pc_seff_pc_pc_ExternalCallAction' is a specialization of 'seff_reliability_pc_pc_FailureHandlingEntity'.
+The class 'pcm_pc_pc_seff_pc_pc_CallReturnAction' is a specialization of 'CallAction'.
+The class 'pcm_pc_pc_seff_pc_pc_ProbabilisticBranchTransition' is a specialization of 'AbstractBranchTransition'.
+The class 'pcm_pc_pc_seff_pc_pc_AcquireAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_pc_pc_seff_pc_pc_CollectionIteratorAction' is a specialization of 'AbstractLoopAction'.
+The class 'pcm_pc_pc_seff_pc_pc_GuardedBranchTransition' is a specialization of 'AbstractBranchTransition'.
+The class 'pcm_pc_pc_seff_pc_pc_SetVariableAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_pc_pc_seff_pc_pc_InternalCallAction' is a specialization of 'seff_pc_pc_CallAction'.
+The class 'pcm_pc_pc_seff_pc_pc_InternalCallAction' is a specialization of 'seff_pc_pc_AbstractInternalControlFlowAction'.
+The class 'pcm_pc_pc_seff_pc_pc_EmitEventAction' is a specialization of 'seff_pc_pc_AbstractAction'.
+The class 'pcm_pc_pc_seff_pc_pc_EmitEventAction' is a specialization of 'seff_pc_pc_CallAction'.
+The class 'pcm_pc_pc_seff_pc_pc_InternalAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_pc_pc_seff_performance_pc_pc_InfrastructureCall' is a specialization of 'CallAction'.
+The class 'pcm_pc_pc_seff_performance_pc_pc_ResourceCall' is a specialization of 'CallAction'.
+The class 'pcm_pc_pc_seff_reliability_pc_pc_RecoveryActionBehaviour' is a specialization of 'seff_reliability_pc_pc_FailureHandlingEntity'.
+The class 'pcm_pc_pc_seff_reliability_pc_pc_RecoveryActionBehaviour' is a specialization of 'seff_pc_pc_ResourceDemandingBehaviour'.
+The class 'pcm_pc_pc_seff_reliability_pc_pc_RecoveryAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_pc_pc_seff_reliability_pc_pc_FailureHandlingEntity' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_qosannotations_pc_pc_QoSAnnotations' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_qos_performance_pc_pc_SystemSpecifiedExecutionTime' is a specialization of 'SpecifiedExecutionTime'.
+The class 'pcm_pc_pc_qos_performance_pc_pc_SpecifiedExecutionTime' is a specialization of 'SpecifiedQoSAnnotation'.
+The class 'pcm_pc_pc_qos_performance_pc_pc_ComponentSpecifiedExecutionTime' is a specialization of 'SpecifiedExecutionTime'.
+The class 'pcm_pc_pc_qos_reliability_pc_pc_SpecifiedReliabilityAnnotation' is a specialization of 'SpecifiedQoSAnnotation'.
+The class 'pcm_pc_pc_system_pc_pc_System' is a specialization of 'entity_pc_pc_Entity'.
+The class 'pcm_pc_pc_system_pc_pc_System' is a specialization of 'entity_pc_pc_ComposedProvidingRequiringEntity'.
+The class 'pcm_pc_pc_resourceenvironment_pc_pc_ResourceEnvironment' is a specialization of 'NamedElement'.
+The class 'pcm_pc_pc_resourceenvironment_pc_pc_LinkingResource' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_resourceenvironment_pc_pc_ResourceContainer' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_resourceenvironment_pc_pc_ProcessingResourceSpecification' is a specialization of 'Identifier'.
+The class 'pcm_pc_pc_resourceenvironment_pc_pc_CommunicationLinkResourceSpecification' is a specialization of 'Identifier'.
+The class 'pcm_pc_pc_allocation_pc_pc_AllocationContext' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_allocation_pc_pc_Allocation' is a specialization of 'Entity'.
+The class 'pcm_pc_pc_subsystem_pc_pc_SubSystem' is a specialization of 'entity_pc_pc_ComposedProvidingRequiringEntity'.
+The class 'pcm_pc_pc_subsystem_pc_pc_SubSystem' is a specialization of 'repository_pc_pc_RepositoryComponent'.
+The class 'pcm_pc_pc_completions_pc_pc_Completion' is a specialization of 'entity_pc_pc_ComposedProvidingRequiringEntity'.
+The class 'pcm_pc_pc_completions_pc_pc_Completion' is a specialization of 'repository_pc_pc_ImplementationComponentType'.
+The class 'pcm_pc_pc_completions_pc_pc_DelegatingExternalCallAction' is a specialization of 'ExternalCallAction'.
+The class 'pcm_pc_pc_completions_pc_pc_NetworkDemandParametricResourceDemand' is a specialization of 'ParametricResourceDemand'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pcm_pc_pc_PointcutPointcut' and 'pcm_pc_pc_EObject'. From 'pcm_pc_pc_PointcutPointcut', the role 'pcm_pc_pc_PointcutPointcut' has cardinality 0..*, and from 'pcm_pc_pc_EObject', the role 'pcm_pc_pc_EObject' has cardinality 0..*.
+An association connects 'pcm_pc_pc_Pointcut' and 'pcm_pc_pc_EObject'. From 'pcm_pc_pc_Pointcut', the role 'pcm_pc_pc_Pointcut' has cardinality 0..*, and from 'pcm_pc_pc_EObject', the role 'pcm_pc_pc_EObject2' has cardinality 0..*.
+An association connects 'pcm_pc_pc_core_pc_pc_PCMRandomVariable' and 'ClosedWorkload'. From 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'ClosedWorkload' has cardinality 0..*, and from 'ClosedWorkload', the role 'usagemodel_pc_pc' has cardinality 0..*.
+An association connects 'PassiveResource' and 'pcm_pc_pc_core_pc_pc_PCMRandomVariable'. From 'PassiveResource', the role 'repository_pc_pc' has cardinality 0..*, and from 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'PassiveResource' has cardinality 0..*.
+An association connects 'VariableCharacterisation' and 'pcm_pc_pc_core_pc_pc_PCMRandomVariable'. From 'VariableCharacterisation', the role 'parameter_pc_pc' has cardinality 0..*, and from 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'VariableCharacterisation' has cardinality 0..*.
+An association connects 'pcm_pc_pc_core_pc_pc_PCMRandomVariable' and 'seff_performance_pc_pc_InfrastructureCall'. From 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'seff_performance_pc_pc' has cardinality 0..*, and from 'seff_performance_pc_pc_InfrastructureCall', the role 'seff_pc_pc' has cardinality 0..*.
+An association connects 'seff_performance_pc_pc_ResourceCall' and 'pcm_pc_pc_core_pc_pc_PCMRandomVariable'. From 'seff_performance_pc_pc_ResourceCall', the role 'seff_pc_pc9' has cardinality 0..*, and from 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'seff_performance_pc_pc8' has cardinality 0..*.
+An association connects 'pcm_pc_pc_core_pc_pc_PCMRandomVariable' and 'seff_performance_pc_pc_ParametricResourceDemand'. From 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'seff_performance_pc_pc11' has cardinality 0..*, and from 'seff_performance_pc_pc_ParametricResourceDemand', the role 'seff_pc_pc12' has cardinality 0..*.
+An association connects 'pcm_pc_pc_core_pc_pc_PCMRandomVariable' and 'LoopAction'. From 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'LoopAction' has cardinality 0..*, and from 'LoopAction', the role 'seff_pc_pc14' has cardinality 0..*.
+An association connects 'pcm_pc_pc_core_pc_pc_PCMRandomVariable' and 'GuardedBranchTransition'. From 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'GuardedBranchTransition' has cardinality 0..*, and from 'GuardedBranchTransition', the role 'seff_pc_pc16' has cardinality 0..*.
+An association connects 'qos_performance_pc_pc_SpecifiedExecutionTime' and 'pcm_pc_pc_core_pc_pc_PCMRandomVariable'. From 'qos_performance_pc_pc_SpecifiedExecutionTime', the role 'qosannotations_pc_pc' has cardinality 0..*, and from 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'qos_performance_pc_pc' has cardinality 0..*.
+An association connects 'pcm_pc_pc_core_pc_pc_PCMRandomVariable' and 'composition_pc_pc_EventChannelSinkConnector'. From 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'composition_pc_pc' has cardinality 0..*, and from 'composition_pc_pc_EventChannelSinkConnector', the role 'core_pc_pc' has cardinality 0..*.
+An association connects 'pcm_pc_pc_core_pc_pc_PCMRandomVariable' and 'composition_pc_pc_AssemblyEventConnector'. From 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'composition_pc_pc20' has cardinality 0..*, and from 'composition_pc_pc_AssemblyEventConnector', the role 'core_pc_pc21' has cardinality 0..*.
+An association connects 'pcm_pc_pc_core_pc_pc_PCMRandomVariable' and 'Loop'. From 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'Loop' has cardinality 0..*, and from 'Loop', the role 'usagemodel_pc_pc23' has cardinality 0..*.
+An association connects 'OpenWorkload' and 'pcm_pc_pc_core_pc_pc_PCMRandomVariable'. From 'OpenWorkload', the role 'usagemodel_pc_pc25' has cardinality 0..*, and from 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'OpenWorkload' has cardinality 0..*.
+An association connects 'pcm_pc_pc_core_pc_pc_PCMRandomVariable' and 'Delay'. From 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'Delay' has cardinality 0..*, and from 'Delay', the role 'usagemodel_pc_pc27' has cardinality 0..*.
+An association connects 'pcm_pc_pc_core_pc_pc_PCMRandomVariable' and 'CommunicationLinkResourceSpecification'. From 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'CommunicationLinkResourceSpecification' has cardinality 0..*, and from 'CommunicationLinkResourceSpecification', the role 'resourceenvironment_pc_pc' has cardinality 0..*.
+An association connects 'pcm_pc_pc_core_pc_pc_PCMRandomVariable' and 'ProcessingResourceSpecification'. From 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'ProcessingResourceSpecification' has cardinality 0..*, and from 'ProcessingResourceSpecification', the role 'resourceenvironment_pc_pc30' has cardinality 0..*.
+An association connects 'pcm_pc_pc_core_pc_pc_PCMRandomVariable' and 'CommunicationLinkResourceSpecification'. From 'pcm_pc_pc_core_pc_pc_PCMRandomVariable', the role 'CommunicationLinkResourceSpecification32' has cardinality 0..*, and from 'CommunicationLinkResourceSpecification', the role 'resourceenvironment_pc_pc33' has cardinality 0..*.
+An association connects 'pcm_pc_pc_entity_pc_pc_ResourceProvidedRole' and 'entity_pc_pc_ResourceInterfaceProvidingEntity'. From 'pcm_pc_pc_entity_pc_pc_ResourceProvidedRole', the role 'entity_pc_pc' has cardinality 0..*, and from 'entity_pc_pc_ResourceInterfaceProvidingEntity', the role 'core_pc_pc35' has cardinality 0..*.
+An association connects 'ResourceInterface' and 'pcm_pc_pc_entity_pc_pc_ResourceProvidedRole'. From 'ResourceInterface', the role 'ResourceInterface' has cardinality 0..*, and from 'pcm_pc_pc_entity_pc_pc_ResourceProvidedRole', the role 'pcm_pc_pc_entity_pc_pc_ResourceProvidedRole' has cardinality 0..*.
+An association connects 'ProvidedRole' and 'pcm_pc_pc_entity_pc_pc_InterfaceProvidingEntity'. From 'ProvidedRole', the role 'repository_pc_pc38' has cardinality 0..*, and from 'pcm_pc_pc_entity_pc_pc_InterfaceProvidingEntity', the role 'ProvidedRole' has cardinality 0..*.
+An association connects 'pcm_pc_pc_entity_pc_pc_InterfaceRequiringEntity' and 'RequiredRole'. From 'pcm_pc_pc_entity_pc_pc_InterfaceRequiringEntity', the role 'RequiredRole' has cardinality 0..*, and from 'RequiredRole', the role 'repository_pc_pc40' has cardinality 0..*.
+An association connects 'entity_pc_pc_ResourceRequiredRole' and 'pcm_pc_pc_entity_pc_pc_ResourceInterfaceRequiringEntity'. From 'entity_pc_pc_ResourceRequiredRole', the role 'core_pc_pc43' has cardinality 0..*, and from 'pcm_pc_pc_entity_pc_pc_ResourceInterfaceRequiringEntity', the role 'entity_pc_pc42' has cardinality 0..*.
+An association connects 'ResourceInterface' and 'pcm_pc_pc_entity_pc_pc_ResourceRequiredRole'. From 'ResourceInterface', the role 'ResourceInterface45' has cardinality 0..*, and from 'pcm_pc_pc_entity_pc_pc_ResourceRequiredRole', the role 'pcm_pc_pc_entity_pc_pc_ResourceRequiredRole' has cardinality 0..*.
+An association connects 'entity_pc_pc_ResourceInterfaceRequiringEntity' and 'pcm_pc_pc_entity_pc_pc_ResourceRequiredRole'. From 'entity_pc_pc_ResourceInterfaceRequiringEntity', the role 'core_pc_pc48' has cardinality 0..*, and from 'pcm_pc_pc_entity_pc_pc_ResourceRequiredRole', the role 'entity_pc_pc47' has cardinality 0..*.
+An association connects 'pcm_pc_pc_entity_pc_pc_ResourceInterfaceProvidingEntity' and 'entity_pc_pc_ResourceProvidedRole'. From 'pcm_pc_pc_entity_pc_pc_ResourceInterfaceProvidingEntity', the role 'entity_pc_pc50' has cardinality 0..*, and from 'entity_pc_pc_ResourceProvidedRole', the role 'core_pc_pc51' has cardinality 0..*.
+An association connects 'composition_pc_pc_ComposedStructure' and 'pcm_pc_pc_composition_pc_pc_Connector'. From 'composition_pc_pc_ComposedStructure', the role 'core_pc_pc54' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_Connector', the role 'composition_pc_pc53' has cardinality 0..*.
+An association connects 'composition_pc_pc_AssemblyContext' and 'pcm_pc_pc_composition_pc_pc_ComposedStructure'. From 'composition_pc_pc_AssemblyContext', the role 'core_pc_pc57' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_ComposedStructure', the role 'composition_pc_pc56' has cardinality 0..*.
+An association connects 'composition_pc_pc_ResourceRequiredDelegationConnector' and 'pcm_pc_pc_composition_pc_pc_ComposedStructure'. From 'composition_pc_pc_ResourceRequiredDelegationConnector', the role 'core_pc_pc60' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_ComposedStructure', the role 'composition_pc_pc59' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_ComposedStructure' and 'composition_pc_pc_EventChannel'. From 'pcm_pc_pc_composition_pc_pc_ComposedStructure', the role 'composition_pc_pc62' has cardinality 0..*, and from 'composition_pc_pc_EventChannel', the role 'core_pc_pc63' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_ComposedStructure' and 'composition_pc_pc_Connector'. From 'pcm_pc_pc_composition_pc_pc_ComposedStructure', the role 'composition_pc_pc65' has cardinality 0..*, and from 'composition_pc_pc_Connector', the role 'core_pc_pc66' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_ResourceRequiredDelegationConnector' and 'entity_pc_pc_ResourceRequiredRole'. From 'pcm_pc_pc_composition_pc_pc_ResourceRequiredDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_ResourceRequiredDelegationConnector' has cardinality 0..*, and from 'entity_pc_pc_ResourceRequiredRole', the role 'entity_pc_pc_ResourceRequiredRole' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_ResourceRequiredDelegationConnector' and 'entity_pc_pc_ResourceRequiredRole'. From 'pcm_pc_pc_composition_pc_pc_ResourceRequiredDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_ResourceRequiredDelegationConnector69' has cardinality 0..*, and from 'entity_pc_pc_ResourceRequiredRole', the role 'entity_pc_pc_ResourceRequiredRole70' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_ResourceRequiredDelegationConnector' and 'composition_pc_pc_ComposedStructure'. From 'pcm_pc_pc_composition_pc_pc_ResourceRequiredDelegationConnector', the role 'composition_pc_pc72' has cardinality 0..*, and from 'composition_pc_pc_ComposedStructure', the role 'core_pc_pc73' has cardinality 0..*.
+An association connects 'EventGroup' and 'pcm_pc_pc_composition_pc_pc_EventChannel'. From 'EventGroup', the role 'EventGroup' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_EventChannel', the role 'pcm_pc_pc_composition_pc_pc_EventChannel' has cardinality 0..*.
+An association connects 'composition_pc_pc_EventChannelSourceConnector' and 'pcm_pc_pc_composition_pc_pc_EventChannel'. From 'composition_pc_pc_EventChannelSourceConnector', the role 'core_pc_pc77' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_EventChannel', the role 'composition_pc_pc76' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_EventChannel' and 'composition_pc_pc_EventChannelSinkConnector'. From 'pcm_pc_pc_composition_pc_pc_EventChannel', the role 'composition_pc_pc79' has cardinality 0..*, and from 'composition_pc_pc_EventChannelSinkConnector', the role 'core_pc_pc80' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_EventChannel' and 'composition_pc_pc_ComposedStructure'. From 'pcm_pc_pc_composition_pc_pc_EventChannel', the role 'composition_pc_pc82' has cardinality 0..*, and from 'composition_pc_pc_ComposedStructure', the role 'core_pc_pc83' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_EventChannelSourceConnector' and 'SourceRole'. From 'pcm_pc_pc_composition_pc_pc_EventChannelSourceConnector', the role 'pcm_pc_pc_composition_pc_pc_EventChannelSourceConnector' has cardinality 0..*, and from 'SourceRole', the role 'SourceRole' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_EventChannelSourceConnector' and 'composition_pc_pc_AssemblyContext'. From 'pcm_pc_pc_composition_pc_pc_EventChannelSourceConnector', the role 'pcm_pc_pc_composition_pc_pc_EventChannelSourceConnector86' has cardinality 0..*, and from 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_EventChannelSourceConnector' and 'composition_pc_pc_EventChannel'. From 'pcm_pc_pc_composition_pc_pc_EventChannelSourceConnector', the role 'composition_pc_pc88' has cardinality 0..*, and from 'composition_pc_pc_EventChannel', the role 'core_pc_pc89' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_EventChannelSinkConnector' and 'SinkRole'. From 'pcm_pc_pc_composition_pc_pc_EventChannelSinkConnector', the role 'pcm_pc_pc_composition_pc_pc_EventChannelSinkConnector' has cardinality 0..*, and from 'SinkRole', the role 'SinkRole' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_EventChannelSinkConnector' and 'PCMRandomVariable'. From 'pcm_pc_pc_composition_pc_pc_EventChannelSinkConnector', the role 'PCMRandomVariable' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_pc_pc92' has cardinality 0..*.
+An association connects 'composition_pc_pc_AssemblyContext' and 'pcm_pc_pc_composition_pc_pc_EventChannelSinkConnector'. From 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext95' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_EventChannelSinkConnector', the role 'pcm_pc_pc_composition_pc_pc_EventChannelSinkConnector94' has cardinality 0..*.
+An association connects 'composition_pc_pc_EventChannel' and 'pcm_pc_pc_composition_pc_pc_EventChannelSinkConnector'. From 'composition_pc_pc_EventChannel', the role 'core_pc_pc98' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_EventChannelSinkConnector', the role 'composition_pc_pc97' has cardinality 0..*.
+An association connects 'OperationProvidedRole' and 'pcm_pc_pc_composition_pc_pc_ProvidedDelegationConnector'. From 'OperationProvidedRole', the role 'OperationProvidedRole' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_ProvidedDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_ProvidedDelegationConnector' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_ProvidedDelegationConnector' and 'OperationProvidedRole'. From 'pcm_pc_pc_composition_pc_pc_ProvidedDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_ProvidedDelegationConnector101' has cardinality 0..*, and from 'OperationProvidedRole', the role 'OperationProvidedRole102' has cardinality 0..*.
+An association connects 'composition_pc_pc_AssemblyContext' and 'pcm_pc_pc_composition_pc_pc_ProvidedDelegationConnector'. From 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext105' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_ProvidedDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_ProvidedDelegationConnector104' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_RequiredDelegationConnector' and 'OperationRequiredRole'. From 'pcm_pc_pc_composition_pc_pc_RequiredDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_RequiredDelegationConnector' has cardinality 0..*, and from 'OperationRequiredRole', the role 'OperationRequiredRole' has cardinality 0..*.
+An association connects 'OperationRequiredRole' and 'pcm_pc_pc_composition_pc_pc_RequiredDelegationConnector'. From 'OperationRequiredRole', the role 'OperationRequiredRole109' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_RequiredDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_RequiredDelegationConnector108' has cardinality 0..*.
+An association connects 'composition_pc_pc_AssemblyContext' and 'pcm_pc_pc_composition_pc_pc_RequiredDelegationConnector'. From 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext112' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_RequiredDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_RequiredDelegationConnector111' has cardinality 0..*.
+An association connects 'composition_pc_pc_AssemblyContext' and 'pcm_pc_pc_composition_pc_pc_AssemblyConnector'. From 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext114' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_AssemblyConnector', the role 'pcm_pc_pc_composition_pc_pc_AssemblyConnector' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_AssemblyConnector' and 'composition_pc_pc_AssemblyContext'. From 'pcm_pc_pc_composition_pc_pc_AssemblyConnector', the role 'pcm_pc_pc_composition_pc_pc_AssemblyConnector116' has cardinality 0..*, and from 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext117' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_AssemblyConnector' and 'OperationProvidedRole'. From 'pcm_pc_pc_composition_pc_pc_AssemblyConnector', the role 'pcm_pc_pc_composition_pc_pc_AssemblyConnector119' has cardinality 0..*, and from 'OperationProvidedRole', the role 'OperationProvidedRole120' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_AssemblyConnector' and 'OperationRequiredRole'. From 'pcm_pc_pc_composition_pc_pc_AssemblyConnector', the role 'pcm_pc_pc_composition_pc_pc_AssemblyConnector122' has cardinality 0..*, and from 'OperationRequiredRole', the role 'OperationRequiredRole123' has cardinality 0..*.
+An association connects 'SinkRole' and 'pcm_pc_pc_composition_pc_pc_AssemblyEventConnector'. From 'SinkRole', the role 'SinkRole125' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_AssemblyEventConnector', the role 'pcm_pc_pc_composition_pc_pc_AssemblyEventConnector' has cardinality 0..*.
+An association connects 'SourceRole' and 'pcm_pc_pc_composition_pc_pc_AssemblyEventConnector'. From 'SourceRole', the role 'SourceRole128' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_AssemblyEventConnector', the role 'pcm_pc_pc_composition_pc_pc_AssemblyEventConnector127' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_AssemblyEventConnector' and 'composition_pc_pc_AssemblyContext'. From 'pcm_pc_pc_composition_pc_pc_AssemblyEventConnector', the role 'pcm_pc_pc_composition_pc_pc_AssemblyEventConnector130' has cardinality 0..*, and from 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext131' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_AssemblyEventConnector' and 'composition_pc_pc_AssemblyContext'. From 'pcm_pc_pc_composition_pc_pc_AssemblyEventConnector', the role 'pcm_pc_pc_composition_pc_pc_AssemblyEventConnector133' has cardinality 0..*, and from 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext134' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_pc_pc_composition_pc_pc_AssemblyEventConnector'. From 'PCMRandomVariable', the role 'core_pc_pc137' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_AssemblyEventConnector', the role 'PCMRandomVariable136' has cardinality 0..*.
+An association connects 'SourceRole' and 'pcm_pc_pc_composition_pc_pc_SourceDelegationConnector'. From 'SourceRole', the role 'SourceRole139' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_SourceDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_SourceDelegationConnector' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_SourceDelegationConnector' and 'SourceRole'. From 'pcm_pc_pc_composition_pc_pc_SourceDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_SourceDelegationConnector141' has cardinality 0..*, and from 'SourceRole', the role 'SourceRole142' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_SourceDelegationConnector' and 'composition_pc_pc_AssemblyContext'. From 'pcm_pc_pc_composition_pc_pc_SourceDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_SourceDelegationConnector144' has cardinality 0..*, and from 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext145' has cardinality 0..*.
+An association connects 'composition_pc_pc_AssemblyContext' and 'pcm_pc_pc_composition_pc_pc_SinkDelegationConnector'. From 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext147' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_SinkDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_SinkDelegationConnector' has cardinality 0..*.
+An association connects 'SinkRole' and 'pcm_pc_pc_composition_pc_pc_SinkDelegationConnector'. From 'SinkRole', the role 'SinkRole150' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_SinkDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_SinkDelegationConnector149' has cardinality 0..*.
+An association connects 'SinkRole' and 'pcm_pc_pc_composition_pc_pc_SinkDelegationConnector'. From 'SinkRole', the role 'SinkRole153' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_SinkDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_SinkDelegationConnector152' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_AssemblyInfrastructureConnector' and 'InfrastructureProvidedRole'. From 'pcm_pc_pc_composition_pc_pc_AssemblyInfrastructureConnector', the role 'pcm_pc_pc_composition_pc_pc_AssemblyInfrastructureConnector' has cardinality 0..*, and from 'InfrastructureProvidedRole', the role 'InfrastructureProvidedRole' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_AssemblyInfrastructureConnector' and 'InfrastructureRequiredRole'. From 'pcm_pc_pc_composition_pc_pc_AssemblyInfrastructureConnector', the role 'pcm_pc_pc_composition_pc_pc_AssemblyInfrastructureConnector156' has cardinality 0..*, and from 'InfrastructureRequiredRole', the role 'InfrastructureRequiredRole' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_AssemblyInfrastructureConnector' and 'composition_pc_pc_AssemblyContext'. From 'pcm_pc_pc_composition_pc_pc_AssemblyInfrastructureConnector', the role 'pcm_pc_pc_composition_pc_pc_AssemblyInfrastructureConnector158' has cardinality 0..*, and from 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext159' has cardinality 0..*.
+An association connects 'composition_pc_pc_AssemblyContext' and 'pcm_pc_pc_composition_pc_pc_AssemblyInfrastructureConnector'. From 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext162' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_AssemblyInfrastructureConnector', the role 'pcm_pc_pc_composition_pc_pc_AssemblyInfrastructureConnector161' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_ProvidedInfrastructureDelegationConnector' and 'InfrastructureProvidedRole'. From 'pcm_pc_pc_composition_pc_pc_ProvidedInfrastructureDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_ProvidedInfrastructureDelegationConnector' has cardinality 0..*, and from 'InfrastructureProvidedRole', the role 'InfrastructureProvidedRole164' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_ProvidedInfrastructureDelegationConnector' and 'InfrastructureProvidedRole'. From 'pcm_pc_pc_composition_pc_pc_ProvidedInfrastructureDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_ProvidedInfrastructureDelegationConnector166' has cardinality 0..*, and from 'InfrastructureProvidedRole', the role 'InfrastructureProvidedRole167' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_ProvidedInfrastructureDelegationConnector' and 'composition_pc_pc_AssemblyContext'. From 'pcm_pc_pc_composition_pc_pc_ProvidedInfrastructureDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_ProvidedInfrastructureDelegationConnector169' has cardinality 0..*, and from 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext170' has cardinality 0..*.
+An association connects 'InfrastructureRequiredRole' and 'pcm_pc_pc_composition_pc_pc_RequiredInfrastructureDelegationConnector'. From 'InfrastructureRequiredRole', the role 'InfrastructureRequiredRole172' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_RequiredInfrastructureDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_RequiredInfrastructureDelegationConnector' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_RequiredInfrastructureDelegationConnector' and 'InfrastructureRequiredRole'. From 'pcm_pc_pc_composition_pc_pc_RequiredInfrastructureDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_RequiredInfrastructureDelegationConnector174' has cardinality 0..*, and from 'InfrastructureRequiredRole', the role 'InfrastructureRequiredRole175' has cardinality 0..*.
+An association connects 'composition_pc_pc_AssemblyContext' and 'pcm_pc_pc_composition_pc_pc_RequiredInfrastructureDelegationConnector'. From 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext178' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_RequiredInfrastructureDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_RequiredInfrastructureDelegationConnector177' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_RequiredResourceDelegationConnector' and 'composition_pc_pc_AssemblyContext'. From 'pcm_pc_pc_composition_pc_pc_RequiredResourceDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_RequiredResourceDelegationConnector' has cardinality 0..*, and from 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext180' has cardinality 0..*.
+An association connects 'entity_pc_pc_ResourceRequiredRole' and 'pcm_pc_pc_composition_pc_pc_RequiredResourceDelegationConnector'. From 'entity_pc_pc_ResourceRequiredRole', the role 'entity_pc_pc_ResourceRequiredRole183' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_RequiredResourceDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_RequiredResourceDelegationConnector182' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_RequiredResourceDelegationConnector' and 'entity_pc_pc_ResourceRequiredRole'. From 'pcm_pc_pc_composition_pc_pc_RequiredResourceDelegationConnector', the role 'pcm_pc_pc_composition_pc_pc_RequiredResourceDelegationConnector185' has cardinality 0..*, and from 'entity_pc_pc_ResourceRequiredRole', the role 'entity_pc_pc_ResourceRequiredRole186' has cardinality 0..*.
+An association connects 'composition_pc_pc_ComposedStructure' and 'pcm_pc_pc_composition_pc_pc_AssemblyContext'. From 'composition_pc_pc_ComposedStructure', the role 'core_pc_pc189' has cardinality 0..*, and from 'pcm_pc_pc_composition_pc_pc_AssemblyContext', the role 'composition_pc_pc188' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_AssemblyContext' and 'RepositoryComponent'. From 'pcm_pc_pc_composition_pc_pc_AssemblyContext', the role 'pcm_pc_pc_composition_pc_pc_AssemblyContext' has cardinality 0..*, and from 'RepositoryComponent', the role 'RepositoryComponent' has cardinality 0..*.
+An association connects 'pcm_pc_pc_composition_pc_pc_AssemblyContext' and 'VariableUsage'. From 'pcm_pc_pc_composition_pc_pc_AssemblyContext', the role 'VariableUsage' has cardinality 0..*, and from 'VariableUsage', the role 'parameter_pc_pc192' has cardinality 0..*.
+An association connects 'UsageScenario' and 'pcm_pc_pc_usagemodel_pc_pc_Workload'. From 'UsageScenario', the role 'usagemodel_pc_pc194' has cardinality 0..*, and from 'pcm_pc_pc_usagemodel_pc_pc_Workload', the role 'UsageScenario' has cardinality 0..*.
+An association connects 'UsageModel' and 'pcm_pc_pc_usagemodel_pc_pc_UsageScenario'. From 'UsageModel', the role 'usagemodel_pc_pc196' has cardinality 0..*, and from 'pcm_pc_pc_usagemodel_pc_pc_UsageScenario', the role 'UsageModel' has cardinality 0..*.
+An association connects 'pcm_pc_pc_usagemodel_pc_pc_UsageScenario' and 'ScenarioBehaviour'. From 'pcm_pc_pc_usagemodel_pc_pc_UsageScenario', the role 'ScenarioBehaviour' has cardinality 0..*, and from 'ScenarioBehaviour', the role 'usagemodel_pc_pc198' has cardinality 0..*.
+An association connects 'Workload' and 'pcm_pc_pc_usagemodel_pc_pc_UsageScenario'. From 'Workload', the role 'usagemodel_pc_pc200' has cardinality 0..*, and from 'pcm_pc_pc_usagemodel_pc_pc_UsageScenario', the role 'Workload' has cardinality 0..*.
+An association connects 'composition_pc_pc_AssemblyContext' and 'pcm_pc_pc_usagemodel_pc_pc_UserData'. From 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext202' has cardinality 0..*, and from 'pcm_pc_pc_usagemodel_pc_pc_UserData', the role 'pcm_pc_pc_usagemodel_pc_pc_UserData' has cardinality 0..*.
+An association connects 'UsageModel' and 'pcm_pc_pc_usagemodel_pc_pc_UserData'. From 'UsageModel', the role 'usagemodel_pc_pc205' has cardinality 0..*, and from 'pcm_pc_pc_usagemodel_pc_pc_UserData', the role 'UsageModel204' has cardinality 0..*.
+An association connects 'pcm_pc_pc_usagemodel_pc_pc_UserData' and 'VariableUsage'. From 'pcm_pc_pc_usagemodel_pc_pc_UserData', the role 'VariableUsage207' has cardinality 0..*, and from 'VariableUsage', the role 'parameter_pc_pc208' has cardinality 0..*.
+An association connects 'pcm_pc_pc_usagemodel_pc_pc_UsageModel' and 'UsageScenario'. From 'pcm_pc_pc_usagemodel_pc_pc_UsageModel', the role 'UsageScenario210' has cardinality 0..*, and from 'UsageScenario', the role 'usagemodel_pc_pc211' has cardinality 0..*.
+An association connects 'pcm_pc_pc_usagemodel_pc_pc_UsageModel' and 'UserData'. From 'pcm_pc_pc_usagemodel_pc_pc_UsageModel', the role 'UserData' has cardinality 0..*, and from 'UserData', the role 'usagemodel_pc_pc213' has cardinality 0..*.
+An association connects 'OperationProvidedRole' and 'pcm_pc_pc_usagemodel_pc_pc_EntryLevelSystemCall'. From 'OperationProvidedRole', the role 'OperationProvidedRole215' has cardinality 0..*, and from 'pcm_pc_pc_usagemodel_pc_pc_EntryLevelSystemCall', the role 'pcm_pc_pc_usagemodel_pc_pc_EntryLevelSystemCall' has cardinality 0..*.
+An association connects 'pcm_pc_pc_usagemodel_pc_pc_EntryLevelSystemCall' and 'OperationSignature'. From 'pcm_pc_pc_usagemodel_pc_pc_EntryLevelSystemCall', the role 'pcm_pc_pc_usagemodel_pc_pc_EntryLevelSystemCall217' has cardinality 0..*, and from 'OperationSignature', the role 'OperationSignature' has cardinality 0..*.
+An association connects 'pcm_pc_pc_usagemodel_pc_pc_EntryLevelSystemCall' and 'VariableUsage'. From 'pcm_pc_pc_usagemodel_pc_pc_EntryLevelSystemCall', the role 'VariableUsage219' has cardinality 0..*, and from 'VariableUsage', the role 'parameter_pc_pc220' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_pc_pc_usagemodel_pc_pc_EntryLevelSystemCall'. From 'VariableUsage', the role 'parameter_pc_pc223' has cardinality 0..*, and from 'pcm_pc_pc_usagemodel_pc_pc_EntryLevelSystemCall', the role 'VariableUsage222' has cardinality 0..*.
+An association connects 'AbstractUserAction' and 'pcm_pc_pc_usagemodel_pc_pc_AbstractUserAction'. From 'AbstractUserAction', the role 'usagemodel_pc_pc225' has cardinality 0..*, and from 'pcm_pc_pc_usagemodel_pc_pc_AbstractUserAction', the role 'AbstractUserAction' has cardinality 0..*.
+An association connects 'AbstractUserAction' and 'pcm_pc_pc_usagemodel_pc_pc_AbstractUserAction'. From 'AbstractUserAction', the role 'usagemodel_pc_pc228' has cardinality 0..*, and from 'pcm_pc_pc_usagemodel_pc_pc_AbstractUserAction', the role 'AbstractUserAction227' has cardinality 0..*.
+An association connects 'pcm_pc_pc_usagemodel_pc_pc_AbstractUserAction' and 'ScenarioBehaviour'. From 'pcm_pc_pc_usagemodel_pc_pc_AbstractUserAction', the role 'ScenarioBehaviour230' has cardinality 0..*, and from 'ScenarioBehaviour', the role 'usagemodel_pc_pc231' has cardinality 0..*.
+An association connects 'pcm_pc_pc_usagemodel_pc_pc_ScenarioBehaviour' and 'UsageScenario'. From 'pcm_pc_pc_usagemodel_pc_pc_ScenarioBehaviour', the role 'UsageScenario233' has cardinality 0..*, and from 'UsageScenario', the role 'usagemodel_pc_pc234' has cardinality 0..*.
+An association connects 'BranchTransition' and 'pcm_pc_pc_usagemodel_pc_pc_ScenarioBehaviour'. From 'BranchTransition', the role 'usagemodel_pc_pc236' has cardinality 0..*, and from 'pcm_pc_pc_usagemodel_pc_pc_ScenarioBehaviour', the role 'BranchTransition' has cardinality 0..*.
+An association connects 'pcm_pc_pc_usagemodel_pc_pc_ScenarioBehaviour' and 'Loop'. From 'pcm_pc_pc_usagemodel_pc_pc_ScenarioBehaviour', the role 'Loop238' has cardinality 0..*, and from 'Loop', the role 'usagemodel_pc_pc239' has cardinality 0..*.
+An association connects 'pcm_pc_pc_usagemodel_pc_pc_ScenarioBehaviour' and 'AbstractUserAction'. From 'pcm_pc_pc_usagemodel_pc_pc_ScenarioBehaviour', the role 'AbstractUserAction241' has cardinality 0..*, and from 'AbstractUserAction', the role 'usagemodel_pc_pc242' has cardinality 0..*.
+An association connects 'Branch' and 'pcm_pc_pc_usagemodel_pc_pc_BranchTransition'. From 'Branch', the role 'usagemodel_pc_pc244' has cardinality 0..*, and from 'pcm_pc_pc_usagemodel_pc_pc_BranchTransition', the role 'Branch' has cardinality 0..*.
+An association connects 'ScenarioBehaviour' and 'pcm_pc_pc_usagemodel_pc_pc_BranchTransition'. From 'ScenarioBehaviour', the role 'usagemodel_pc_pc247' has cardinality 0..*, and from 'pcm_pc_pc_usagemodel_pc_pc_BranchTransition', the role 'ScenarioBehaviour246' has cardinality 0..*.
+An association connects 'BranchTransition' and 'pcm_pc_pc_usagemodel_pc_pc_Branch'. From 'BranchTransition', the role 'usagemodel_pc_pc250' has cardinality 0..*, and from 'pcm_pc_pc_usagemodel_pc_pc_Branch', the role 'BranchTransition249' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_pc_pc_usagemodel_pc_pc_Loop'. From 'PCMRandomVariable', the role 'core_pc_pc253' has cardinality 0..*, and from 'pcm_pc_pc_usagemodel_pc_pc_Loop', the role 'PCMRandomVariable252' has cardinality 0..*.
+An association connects 'pcm_pc_pc_usagemodel_pc_pc_Loop' and 'ScenarioBehaviour'. From 'pcm_pc_pc_usagemodel_pc_pc_Loop', the role 'ScenarioBehaviour255' has cardinality 0..*, and from 'ScenarioBehaviour', the role 'usagemodel_pc_pc256' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_pc_pc_usagemodel_pc_pc_OpenWorkload'. From 'PCMRandomVariable', the role 'core_pc_pc259' has cardinality 0..*, and from 'pcm_pc_pc_usagemodel_pc_pc_OpenWorkload', the role 'PCMRandomVariable258' has cardinality 0..*.
+An association connects 'pcm_pc_pc_usagemodel_pc_pc_Delay' and 'PCMRandomVariable'. From 'pcm_pc_pc_usagemodel_pc_pc_Delay', the role 'PCMRandomVariable261' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_pc_pc262' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_pc_pc_usagemodel_pc_pc_ClosedWorkload'. From 'PCMRandomVariable', the role 'core_pc_pc265' has cardinality 0..*, and from 'pcm_pc_pc_usagemodel_pc_pc_ClosedWorkload', the role 'PCMRandomVariable264' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_pc_pc_repository_pc_pc_PassiveResource'. From 'PCMRandomVariable', the role 'core_pc_pc268' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_PassiveResource', the role 'PCMRandomVariable267' has cardinality 0..*.
+An association connects 'BasicComponent' and 'pcm_pc_pc_repository_pc_pc_PassiveResource'. From 'BasicComponent', the role 'repository_pc_pc270' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_PassiveResource', the role 'BasicComponent' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_PassiveResource' and 'ResourceTimeoutFailureType'. From 'pcm_pc_pc_repository_pc_pc_PassiveResource', the role 'ResourceTimeoutFailureType' has cardinality 0..*, and from 'ResourceTimeoutFailureType', the role 'reliability_pc_pc' has cardinality 0..*.
+An association connects 'ServiceEffectSpecification' and 'pcm_pc_pc_repository_pc_pc_BasicComponent'. From 'ServiceEffectSpecification', the role 'seff_pc_pc273' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_BasicComponent', the role 'ServiceEffectSpecification' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_BasicComponent' and 'PassiveResource'. From 'pcm_pc_pc_repository_pc_pc_BasicComponent', the role 'PassiveResource275' has cardinality 0..*, and from 'PassiveResource', the role 'repository_pc_pc276' has cardinality 0..*.
+An association connects 'CompleteComponentType' and 'pcm_pc_pc_repository_pc_pc_ImplementationComponentType'. From 'CompleteComponentType', the role 'CompleteComponentType' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_ImplementationComponentType', the role 'pcm_pc_pc_repository_pc_pc_ImplementationComponentType' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_ImplementationComponentType' and 'VariableUsage'. From 'pcm_pc_pc_repository_pc_pc_ImplementationComponentType', the role 'pcm_pc_pc_repository_pc_pc_ImplementationComponentType279' has cardinality 0..*, and from 'VariableUsage', the role 'VariableUsage280' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_RepositoryComponent' and 'Repository'. From 'pcm_pc_pc_repository_pc_pc_RepositoryComponent', the role 'Repository' has cardinality 0..*, and from 'Repository', the role 'repository_pc_pc282' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_ProvidedRole' and 'entity_pc_pc_InterfaceProvidingEntity'. From 'pcm_pc_pc_repository_pc_pc_ProvidedRole', the role 'entity_pc_pc284' has cardinality 0..*, and from 'entity_pc_pc_InterfaceProvidingEntity', the role 'core_pc_pc285' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_Parameter' and 'DataType'. From 'pcm_pc_pc_repository_pc_pc_Parameter', the role 'pcm_pc_pc_repository_pc_pc_Parameter' has cardinality 0..*, and from 'DataType', the role 'DataType' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_Parameter' and 'InfrastructureSignature'. From 'pcm_pc_pc_repository_pc_pc_Parameter', the role 'InfrastructureSignature' has cardinality 0..*, and from 'InfrastructureSignature', the role 'repository_pc_pc288' has cardinality 0..*.
+An association connects 'OperationSignature' and 'pcm_pc_pc_repository_pc_pc_Parameter'. From 'OperationSignature', the role 'repository_pc_pc291' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_Parameter', the role 'OperationSignature290' has cardinality 0..*.
+An association connects 'EventType' and 'pcm_pc_pc_repository_pc_pc_Parameter'. From 'EventType', the role 'repository_pc_pc293' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_Parameter', the role 'EventType' has cardinality 0..*.
+An association connects 'ResourceSignature' and 'pcm_pc_pc_repository_pc_pc_Parameter'. From 'ResourceSignature', the role 'resourcetype_pc_pc' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_Parameter', the role 'ResourceSignature' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_DataType' and 'Repository'. From 'pcm_pc_pc_repository_pc_pc_DataType', the role 'Repository296' has cardinality 0..*, and from 'Repository', the role 'repository_pc_pc297' has cardinality 0..*.
+An association connects 'RepositoryComponent' and 'pcm_pc_pc_repository_pc_pc_Repository'. From 'RepositoryComponent', the role 'repository_pc_pc300' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_Repository', the role 'RepositoryComponent299' has cardinality 0..*.
+An association connects 'Interface' and 'pcm_pc_pc_repository_pc_pc_Repository'. From 'Interface', the role 'repository_pc_pc302' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_Repository', the role 'Interface' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_Repository' and 'FailureType'. From 'pcm_pc_pc_repository_pc_pc_Repository', the role 'FailureType' has cardinality 0..*, and from 'FailureType', the role 'reliability_pc_pc304' has cardinality 0..*.
+An association connects 'DataType' and 'pcm_pc_pc_repository_pc_pc_Repository'. From 'DataType', the role 'repository_pc_pc307' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_Repository', the role 'DataType306' has cardinality 0..*.
+An association connects 'Interface' and 'pcm_pc_pc_repository_pc_pc_Interface'. From 'Interface', the role 'Interface309' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_Interface', the role 'pcm_pc_pc_repository_pc_pc_Interface' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_Interface' and 'Protocol'. From 'pcm_pc_pc_repository_pc_pc_Interface', the role 'pcm_pc_pc_repository_pc_pc_Interface311' has cardinality 0..*, and from 'Protocol', the role 'Protocol' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_Interface' and 'RequiredCharacterisation'. From 'pcm_pc_pc_repository_pc_pc_Interface', the role 'RequiredCharacterisation' has cardinality 0..*, and from 'RequiredCharacterisation', the role 'repository_pc_pc313' has cardinality 0..*.
+An association connects 'Repository' and 'pcm_pc_pc_repository_pc_pc_Interface'. From 'Repository', the role 'repository_pc_pc316' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_Interface', the role 'Repository315' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_RequiredCharacterisation' and 'Parameter'. From 'pcm_pc_pc_repository_pc_pc_RequiredCharacterisation', the role 'pcm_pc_pc_repository_pc_pc_RequiredCharacterisation' has cardinality 0..*, and from 'Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_RequiredCharacterisation' and 'Interface'. From 'pcm_pc_pc_repository_pc_pc_RequiredCharacterisation', the role 'Interface319' has cardinality 0..*, and from 'Interface', the role 'repository_pc_pc320' has cardinality 0..*.
+An association connects 'EventType' and 'pcm_pc_pc_repository_pc_pc_EventGroup'. From 'EventType', the role 'repository_pc_pc323' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_EventGroup', the role 'EventType322' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_EventType' and 'Parameter'. From 'pcm_pc_pc_repository_pc_pc_EventType', the role 'Parameter325' has cardinality 0..*, and from 'Parameter', the role 'repository_pc_pc326' has cardinality 0..*.
+An association connects 'EventGroup' and 'pcm_pc_pc_repository_pc_pc_EventType'. From 'EventGroup', the role 'repository_pc_pc329' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_EventType', the role 'EventGroup328' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_Signature' and 'ExceptionType'. From 'pcm_pc_pc_repository_pc_pc_Signature', the role 'pcm_pc_pc_repository_pc_pc_Signature' has cardinality 0..*, and from 'ExceptionType', the role 'ExceptionType' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_Signature' and 'FailureType'. From 'pcm_pc_pc_repository_pc_pc_Signature', the role 'pcm_pc_pc_repository_pc_pc_Signature332' has cardinality 0..*, and from 'FailureType', the role 'FailureType333' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_InfrastructureSignature' and 'Parameter'. From 'pcm_pc_pc_repository_pc_pc_InfrastructureSignature', the role 'Parameter335' has cardinality 0..*, and from 'Parameter', the role 'repository_pc_pc336' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_InfrastructureSignature' and 'InfrastructureInterface'. From 'pcm_pc_pc_repository_pc_pc_InfrastructureSignature', the role 'InfrastructureInterface' has cardinality 0..*, and from 'InfrastructureInterface', the role 'repository_pc_pc338' has cardinality 0..*.
+An association connects 'InfrastructureSignature' and 'pcm_pc_pc_repository_pc_pc_InfrastructureInterface'. From 'InfrastructureSignature', the role 'repository_pc_pc341' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_InfrastructureInterface', the role 'InfrastructureSignature340' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_InfrastructureRequiredRole' and 'InfrastructureInterface'. From 'pcm_pc_pc_repository_pc_pc_InfrastructureRequiredRole', the role 'pcm_pc_pc_repository_pc_pc_InfrastructureRequiredRole' has cardinality 0..*, and from 'InfrastructureInterface', the role 'InfrastructureInterface343' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_RequiredRole' and 'entity_pc_pc_InterfaceRequiringEntity'. From 'pcm_pc_pc_repository_pc_pc_RequiredRole', the role 'entity_pc_pc345' has cardinality 0..*, and from 'entity_pc_pc_InterfaceRequiringEntity', the role 'core_pc_pc346' has cardinality 0..*.
+An association connects 'OperationInterface' and 'pcm_pc_pc_repository_pc_pc_OperationSignature'. From 'OperationInterface', the role 'repository_pc_pc348' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_OperationSignature', the role 'OperationInterface' has cardinality 0..*.
+An association connects 'Parameter' and 'pcm_pc_pc_repository_pc_pc_OperationSignature'. From 'Parameter', the role 'repository_pc_pc351' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_OperationSignature', the role 'Parameter350' has cardinality 0..*.
+An association connects 'DataType' and 'pcm_pc_pc_repository_pc_pc_OperationSignature'. From 'DataType', the role 'DataType353' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_OperationSignature', the role 'pcm_pc_pc_repository_pc_pc_OperationSignature' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_OperationInterface' and 'OperationSignature'. From 'pcm_pc_pc_repository_pc_pc_OperationInterface', the role 'OperationSignature355' has cardinality 0..*, and from 'OperationSignature', the role 'repository_pc_pc356' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_OperationRequiredRole' and 'OperationInterface'. From 'pcm_pc_pc_repository_pc_pc_OperationRequiredRole', the role 'pcm_pc_pc_repository_pc_pc_OperationRequiredRole' has cardinality 0..*, and from 'OperationInterface', the role 'OperationInterface358' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_SourceRole' and 'EventGroup'. From 'pcm_pc_pc_repository_pc_pc_SourceRole', the role 'pcm_pc_pc_repository_pc_pc_SourceRole' has cardinality 0..*, and from 'EventGroup', the role 'EventGroup360' has cardinality 0..*.
+An association connects 'EventGroup' and 'pcm_pc_pc_repository_pc_pc_SinkRole'. From 'EventGroup', the role 'EventGroup362' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_SinkRole', the role 'pcm_pc_pc_repository_pc_pc_SinkRole' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_OperationProvidedRole' and 'OperationInterface'. From 'pcm_pc_pc_repository_pc_pc_OperationProvidedRole', the role 'pcm_pc_pc_repository_pc_pc_OperationProvidedRole' has cardinality 0..*, and from 'OperationInterface', the role 'OperationInterface364' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_InfrastructureProvidedRole' and 'InfrastructureInterface'. From 'pcm_pc_pc_repository_pc_pc_InfrastructureProvidedRole', the role 'pcm_pc_pc_repository_pc_pc_InfrastructureProvidedRole' has cardinality 0..*, and from 'InfrastructureInterface', the role 'InfrastructureInterface366' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_CompleteComponentType' and 'ProvidesComponentType'. From 'pcm_pc_pc_repository_pc_pc_CompleteComponentType', the role 'pcm_pc_pc_repository_pc_pc_CompleteComponentType' has cardinality 0..*, and from 'ProvidesComponentType', the role 'ProvidesComponentType' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_CollectionDataType' and 'DataType'. From 'pcm_pc_pc_repository_pc_pc_CollectionDataType', the role 'pcm_pc_pc_repository_pc_pc_CollectionDataType' has cardinality 0..*, and from 'DataType', the role 'DataType369' has cardinality 0..*.
+An association connects 'CompositeDataType' and 'pcm_pc_pc_repository_pc_pc_CompositeDataType'. From 'CompositeDataType', the role 'CompositeDataType' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_CompositeDataType', the role 'pcm_pc_pc_repository_pc_pc_CompositeDataType' has cardinality 0..*.
+An association connects 'InnerDeclaration' and 'pcm_pc_pc_repository_pc_pc_CompositeDataType'. From 'InnerDeclaration', the role 'repository_pc_pc372' has cardinality 0..*, and from 'pcm_pc_pc_repository_pc_pc_CompositeDataType', the role 'InnerDeclaration' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_InnerDeclaration' and 'DataType'. From 'pcm_pc_pc_repository_pc_pc_InnerDeclaration', the role 'pcm_pc_pc_repository_pc_pc_InnerDeclaration' has cardinality 0..*, and from 'DataType', the role 'DataType374' has cardinality 0..*.
+An association connects 'pcm_pc_pc_repository_pc_pc_InnerDeclaration' and 'CompositeDataType'. From 'pcm_pc_pc_repository_pc_pc_InnerDeclaration', the role 'CompositeDataType376' has cardinality 0..*, and from 'CompositeDataType', the role 'repository_pc_pc377' has cardinality 0..*.
+An association connects 'pcm_pc_pc_resourcetype_pc_pc_ResourceSignature' and 'Parameter'. From 'pcm_pc_pc_resourcetype_pc_pc_ResourceSignature', the role 'Parameter379' has cardinality 0..*, and from 'Parameter', the role 'repository_pc_pc380' has cardinality 0..*.
+An association connects 'ResourceInterface' and 'pcm_pc_pc_resourcetype_pc_pc_ResourceSignature'. From 'ResourceInterface', the role 'resourcetype_pc_pc383' has cardinality 0..*, and from 'pcm_pc_pc_resourcetype_pc_pc_ResourceSignature', the role 'ResourceInterface382' has cardinality 0..*.
+An association connects 'HardwareInducedFailureType' and 'pcm_pc_pc_resourcetype_pc_pc_ProcessingResourceType'. From 'HardwareInducedFailureType', the role 'reliability_pc_pc385' has cardinality 0..*, and from 'pcm_pc_pc_resourcetype_pc_pc_ProcessingResourceType', the role 'HardwareInducedFailureType' has cardinality 0..*.
+An association connects 'ResourceRepository' and 'pcm_pc_pc_resourcetype_pc_pc_ResourceType'. From 'ResourceRepository', the role 'resourcetype_pc_pc387' has cardinality 0..*, and from 'pcm_pc_pc_resourcetype_pc_pc_ResourceType', the role 'ResourceRepository' has cardinality 0..*.
+An association connects 'ResourceInterface' and 'pcm_pc_pc_resourcetype_pc_pc_ResourceRepository'. From 'ResourceInterface', the role 'resourcetype_pc_pc390' has cardinality 0..*, and from 'pcm_pc_pc_resourcetype_pc_pc_ResourceRepository', the role 'ResourceInterface389' has cardinality 0..*.
+An association connects 'pcm_pc_pc_resourcetype_pc_pc_ResourceRepository' and 'SchedulingPolicy'. From 'pcm_pc_pc_resourcetype_pc_pc_ResourceRepository', the role 'SchedulingPolicy' has cardinality 0..*, and from 'SchedulingPolicy', the role 'resourcetype_pc_pc392' has cardinality 0..*.
+An association connects 'pcm_pc_pc_resourcetype_pc_pc_ResourceRepository' and 'ResourceType'. From 'pcm_pc_pc_resourcetype_pc_pc_ResourceRepository', the role 'ResourceType' has cardinality 0..*, and from 'ResourceType', the role 'resourcetype_pc_pc394' has cardinality 0..*.
+An association connects 'pcm_pc_pc_resourcetype_pc_pc_SchedulingPolicy' and 'ResourceRepository'. From 'pcm_pc_pc_resourcetype_pc_pc_SchedulingPolicy', the role 'ResourceRepository396' has cardinality 0..*, and from 'ResourceRepository', the role 'resourcetype_pc_pc397' has cardinality 0..*.
+An association connects 'pcm_pc_pc_resourcetype_pc_pc_CommunicationLinkResourceType' and 'NetworkInducedFailureType'. From 'pcm_pc_pc_resourcetype_pc_pc_CommunicationLinkResourceType', the role 'NetworkInducedFailureType' has cardinality 0..*, and from 'NetworkInducedFailureType', the role 'reliability_pc_pc399' has cardinality 0..*.
+An association connects 'ResourceRepository' and 'pcm_pc_pc_resourcetype_pc_pc_ResourceInterface'. From 'ResourceRepository', the role 'resourcetype_pc_pc402' has cardinality 0..*, and from 'pcm_pc_pc_resourcetype_pc_pc_ResourceInterface', the role 'ResourceRepository401' has cardinality 0..*.
+An association connects 'ResourceSignature' and 'pcm_pc_pc_resourcetype_pc_pc_ResourceInterface'. From 'ResourceSignature', the role 'resourcetype_pc_pc405' has cardinality 0..*, and from 'pcm_pc_pc_resourcetype_pc_pc_ResourceInterface', the role 'ResourceSignature404' has cardinality 0..*.
+An association connects 'VariableCharacterisation' and 'pcm_pc_pc_parameter_pc_pc_VariableUsage'. From 'VariableCharacterisation', the role 'parameter_pc_pc408' has cardinality 0..*, and from 'pcm_pc_pc_parameter_pc_pc_VariableUsage', the role 'VariableCharacterisation407' has cardinality 0..*.
+An association connects 'pcm_pc_pc_parameter_pc_pc_VariableUsage' and 'UserData'. From 'pcm_pc_pc_parameter_pc_pc_VariableUsage', the role 'UserData410' has cardinality 0..*, and from 'UserData', the role 'usagemodel_pc_pc411' has cardinality 0..*.
+An association connects 'pcm_pc_pc_parameter_pc_pc_VariableUsage' and 'CallAction'. From 'pcm_pc_pc_parameter_pc_pc_VariableUsage', the role 'CallAction' has cardinality 0..*, and from 'CallAction', the role 'seff_pc_pc413' has cardinality 0..*.
+An association connects 'SynchronisationPoint' and 'pcm_pc_pc_parameter_pc_pc_VariableUsage'. From 'SynchronisationPoint', the role 'seff_pc_pc415' has cardinality 0..*, and from 'pcm_pc_pc_parameter_pc_pc_VariableUsage', the role 'SynchronisationPoint' has cardinality 0..*.
+An association connects 'CallReturnAction' and 'pcm_pc_pc_parameter_pc_pc_VariableUsage'. From 'CallReturnAction', the role 'seff_pc_pc417' has cardinality 0..*, and from 'pcm_pc_pc_parameter_pc_pc_VariableUsage', the role 'CallReturnAction' has cardinality 0..*.
+An association connects 'SetVariableAction' and 'pcm_pc_pc_parameter_pc_pc_VariableUsage'. From 'SetVariableAction', the role 'seff_pc_pc419' has cardinality 0..*, and from 'pcm_pc_pc_parameter_pc_pc_VariableUsage', the role 'SetVariableAction' has cardinality 0..*.
+An association connects 'SpecifiedOutputParameterAbstraction' and 'pcm_pc_pc_parameter_pc_pc_VariableUsage'. From 'SpecifiedOutputParameterAbstraction', the role 'qosannotations_pc_pc421' has cardinality 0..*, and from 'pcm_pc_pc_parameter_pc_pc_VariableUsage', the role 'SpecifiedOutputParameterAbstraction' has cardinality 0..*.
+An association connects 'pcm_pc_pc_parameter_pc_pc_VariableUsage' and 'composition_pc_pc_AssemblyContext'. From 'pcm_pc_pc_parameter_pc_pc_VariableUsage', the role 'composition_pc_pc423' has cardinality 0..*, and from 'composition_pc_pc_AssemblyContext', the role 'core_pc_pc424' has cardinality 0..*.
+An association connects 'EntryLevelSystemCall' and 'pcm_pc_pc_parameter_pc_pc_VariableUsage'. From 'EntryLevelSystemCall', the role 'usagemodel_pc_pc426' has cardinality 0..*, and from 'pcm_pc_pc_parameter_pc_pc_VariableUsage', the role 'EntryLevelSystemCall' has cardinality 0..*.
+An association connects 'EntryLevelSystemCall' and 'pcm_pc_pc_parameter_pc_pc_VariableUsage'. From 'EntryLevelSystemCall', the role 'usagemodel_pc_pc429' has cardinality 0..*, and from 'pcm_pc_pc_parameter_pc_pc_VariableUsage', the role 'EntryLevelSystemCall428' has cardinality 0..*.
+An association connects 'parameter_pc_pc_pcm_pc_pc_AbstractNamedReference' and 'pcm_pc_pc_parameter_pc_pc_VariableUsage'. From 'parameter_pc_pc_pcm_pc_pc_AbstractNamedReference', the role 'parameter_pc_pc_pcm_pc_pc_AbstractNamedReference' has cardinality 0..*, and from 'pcm_pc_pc_parameter_pc_pc_VariableUsage', the role 'pcm_pc_pc_parameter_pc_pc_VariableUsage' has cardinality 0..*.
+An association connects 'pcm_pc_pc_parameter_pc_pc_VariableCharacterisation' and 'PCMRandomVariable'. From 'pcm_pc_pc_parameter_pc_pc_VariableCharacterisation', the role 'PCMRandomVariable432' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_pc_pc433' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_pc_pc_parameter_pc_pc_VariableCharacterisation'. From 'VariableUsage', the role 'parameter_pc_pc436' has cardinality 0..*, and from 'pcm_pc_pc_parameter_pc_pc_VariableCharacterisation', the role 'VariableUsage435' has cardinality 0..*.
+An association connects 'ProcessingResourceType' and 'pcm_pc_pc_reliability_pc_pc_HardwareInducedFailureType'. From 'ProcessingResourceType', the role 'resourcetype_pc_pc438' has cardinality 0..*, and from 'pcm_pc_pc_reliability_pc_pc_HardwareInducedFailureType', the role 'ProcessingResourceType' has cardinality 0..*.
+An association connects 'InternalFailureOccurrenceDescription' and 'pcm_pc_pc_reliability_pc_pc_SoftwareInducedFailureType'. From 'InternalFailureOccurrenceDescription', the role 'reliability_pc_pc440' has cardinality 0..*, and from 'pcm_pc_pc_reliability_pc_pc_SoftwareInducedFailureType', the role 'InternalFailureOccurrenceDescription' has cardinality 0..*.
+An association connects 'pcm_pc_pc_reliability_pc_pc_InternalFailureOccurrenceDescription' and 'InternalAction'. From 'pcm_pc_pc_reliability_pc_pc_InternalFailureOccurrenceDescription', the role 'InternalAction' has cardinality 0..*, and from 'InternalAction', the role 'seff_pc_pc442' has cardinality 0..*.
+An association connects 'SoftwareInducedFailureType' and 'pcm_pc_pc_reliability_pc_pc_InternalFailureOccurrenceDescription'. From 'SoftwareInducedFailureType', the role 'reliability_pc_pc444' has cardinality 0..*, and from 'pcm_pc_pc_reliability_pc_pc_InternalFailureOccurrenceDescription', the role 'SoftwareInducedFailureType' has cardinality 0..*.
+An association connects 'pcm_pc_pc_reliability_pc_pc_NetworkInducedFailureType' and 'CommunicationLinkResourceType'. From 'pcm_pc_pc_reliability_pc_pc_NetworkInducedFailureType', the role 'CommunicationLinkResourceType' has cardinality 0..*, and from 'CommunicationLinkResourceType', the role 'resourcetype_pc_pc446' has cardinality 0..*.
+An association connects 'qos_reliability_pc_pc_SpecifiedReliabilityAnnotation' and 'pcm_pc_pc_reliability_pc_pc_ExternalFailureOccurrenceDescription'. From 'qos_reliability_pc_pc_SpecifiedReliabilityAnnotation', the role 'qosannotations_pc_pc448' has cardinality 0..*, and from 'pcm_pc_pc_reliability_pc_pc_ExternalFailureOccurrenceDescription', the role 'qos_reliability_pc_pc' has cardinality 0..*.
+An association connects 'FailureType' and 'pcm_pc_pc_reliability_pc_pc_ExternalFailureOccurrenceDescription'. From 'FailureType', the role 'FailureType450' has cardinality 0..*, and from 'pcm_pc_pc_reliability_pc_pc_ExternalFailureOccurrenceDescription', the role 'pcm_pc_pc_reliability_pc_pc_ExternalFailureOccurrenceDescription' has cardinality 0..*.
+An association connects 'pcm_pc_pc_reliability_pc_pc_ResourceTimeoutFailureType' and 'PassiveResource'. From 'pcm_pc_pc_reliability_pc_pc_ResourceTimeoutFailureType', the role 'PassiveResource452' has cardinality 0..*, and from 'PassiveResource', the role 'repository_pc_pc453' has cardinality 0..*.
+An association connects 'pcm_pc_pc_reliability_pc_pc_FailureType' and 'Repository'. From 'pcm_pc_pc_reliability_pc_pc_FailureType', the role 'Repository455' has cardinality 0..*, and from 'Repository', the role 'repository_pc_pc456' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_AbstractInternalControlFlowAction' and 'seff_performance_pc_pc_ParametricResourceDemand'. From 'pcm_pc_pc_seff_pc_pc_AbstractInternalControlFlowAction', the role 'seff_performance_pc_pc458' has cardinality 0..*, and from 'seff_performance_pc_pc_ParametricResourceDemand', the role 'seff_pc_pc459' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_AbstractInternalControlFlowAction' and 'seff_performance_pc_pc_InfrastructureCall'. From 'pcm_pc_pc_seff_pc_pc_AbstractInternalControlFlowAction', the role 'seff_performance_pc_pc461' has cardinality 0..*, and from 'seff_performance_pc_pc_InfrastructureCall', the role 'seff_pc_pc462' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_AbstractInternalControlFlowAction' and 'seff_performance_pc_pc_ResourceCall'. From 'pcm_pc_pc_seff_pc_pc_AbstractInternalControlFlowAction', the role 'seff_performance_pc_pc464' has cardinality 0..*, and from 'seff_performance_pc_pc_ResourceCall', the role 'seff_pc_pc465' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_AbstractAction' and 'AbstractAction'. From 'pcm_pc_pc_seff_pc_pc_AbstractAction', the role 'AbstractAction' has cardinality 0..*, and from 'AbstractAction', the role 'seff_pc_pc467' has cardinality 0..*.
+An association connects 'AbstractAction' and 'pcm_pc_pc_seff_pc_pc_AbstractAction'. From 'AbstractAction', the role 'seff_pc_pc470' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_AbstractAction', the role 'AbstractAction469' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_AbstractAction' and 'ResourceDemandingBehaviour'. From 'pcm_pc_pc_seff_pc_pc_AbstractAction', the role 'ResourceDemandingBehaviour' has cardinality 0..*, and from 'ResourceDemandingBehaviour', the role 'seff_pc_pc472' has cardinality 0..*.
+An association connects 'AbstractLoopAction' and 'pcm_pc_pc_seff_pc_pc_ResourceDemandingBehaviour'. From 'AbstractLoopAction', the role 'seff_pc_pc474' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_ResourceDemandingBehaviour', the role 'AbstractLoopAction' has cardinality 0..*.
+An association connects 'AbstractBranchTransition' and 'pcm_pc_pc_seff_pc_pc_ResourceDemandingBehaviour'. From 'AbstractBranchTransition', the role 'seff_pc_pc476' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_ResourceDemandingBehaviour', the role 'AbstractBranchTransition' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_ResourceDemandingBehaviour' and 'AbstractAction'. From 'pcm_pc_pc_seff_pc_pc_ResourceDemandingBehaviour', the role 'AbstractAction478' has cardinality 0..*, and from 'AbstractAction', the role 'seff_pc_pc479' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_AbstractLoopAction' and 'ResourceDemandingBehaviour'. From 'pcm_pc_pc_seff_pc_pc_AbstractLoopAction', the role 'ResourceDemandingBehaviour481' has cardinality 0..*, and from 'ResourceDemandingBehaviour', the role 'seff_pc_pc482' has cardinality 0..*.
+An association connects 'BranchAction' and 'pcm_pc_pc_seff_pc_pc_AbstractBranchTransition'. From 'BranchAction', the role 'seff_pc_pc484' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_AbstractBranchTransition', the role 'BranchAction' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_AbstractBranchTransition' and 'ResourceDemandingBehaviour'. From 'pcm_pc_pc_seff_pc_pc_AbstractBranchTransition', the role 'ResourceDemandingBehaviour486' has cardinality 0..*, and from 'ResourceDemandingBehaviour', the role 'seff_pc_pc487' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_BranchAction' and 'AbstractBranchTransition'. From 'pcm_pc_pc_seff_pc_pc_BranchAction', the role 'AbstractBranchTransition489' has cardinality 0..*, and from 'AbstractBranchTransition', the role 'seff_pc_pc490' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_pc_pc_seff_pc_pc_CallAction'. From 'VariableUsage', the role 'parameter_pc_pc493' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_CallAction', the role 'VariableUsage492' has cardinality 0..*.
+An association connects 'Signature' and 'pcm_pc_pc_seff_pc_pc_ServiceEffectSpecification'. From 'Signature', the role 'Signature' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_ServiceEffectSpecification', the role 'pcm_pc_pc_seff_pc_pc_ServiceEffectSpecification' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_ServiceEffectSpecification' and 'BasicComponent'. From 'pcm_pc_pc_seff_pc_pc_ServiceEffectSpecification', the role 'BasicComponent496' has cardinality 0..*, and from 'BasicComponent', the role 'repository_pc_pc497' has cardinality 0..*.
+An association connects 'ResourceDemandingInternalBehaviour' and 'pcm_pc_pc_seff_pc_pc_ResourceDemandingSEFF'. From 'ResourceDemandingInternalBehaviour', the role 'seff_pc_pc499' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_ResourceDemandingSEFF', the role 'ResourceDemandingInternalBehaviour' has cardinality 0..*.
+An association connects 'ResourceDemandingSEFF' and 'pcm_pc_pc_seff_pc_pc_ResourceDemandingInternalBehaviour'. From 'ResourceDemandingSEFF', the role 'seff_pc_pc501' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_ResourceDemandingInternalBehaviour', the role 'ResourceDemandingSEFF' has cardinality 0..*.
+An association connects 'PassiveResource' and 'pcm_pc_pc_seff_pc_pc_ReleaseAction'. From 'PassiveResource', the role 'PassiveResource503' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_ReleaseAction', the role 'pcm_pc_pc_seff_pc_pc_ReleaseAction' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_LoopAction' and 'PCMRandomVariable'. From 'pcm_pc_pc_seff_pc_pc_LoopAction', the role 'PCMRandomVariable505' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_pc_pc506' has cardinality 0..*.
+An association connects 'ForkedBehaviour' and 'pcm_pc_pc_seff_pc_pc_ForkAction'. From 'ForkedBehaviour', the role 'seff_pc_pc508' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_ForkAction', the role 'ForkedBehaviour' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_ForkAction' and 'SynchronisationPoint'. From 'pcm_pc_pc_seff_pc_pc_ForkAction', the role 'SynchronisationPoint510' has cardinality 0..*, and from 'SynchronisationPoint', the role 'seff_pc_pc511' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_ForkedBehaviour' and 'SynchronisationPoint'. From 'pcm_pc_pc_seff_pc_pc_ForkedBehaviour', the role 'SynchronisationPoint513' has cardinality 0..*, and from 'SynchronisationPoint', the role 'seff_pc_pc514' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_ForkedBehaviour' and 'ForkAction'. From 'pcm_pc_pc_seff_pc_pc_ForkedBehaviour', the role 'ForkAction' has cardinality 0..*, and from 'ForkAction', the role 'seff_pc_pc516' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_pc_pc_seff_pc_pc_SynchronisationPoint'. From 'VariableUsage', the role 'parameter_pc_pc519' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_SynchronisationPoint', the role 'VariableUsage518' has cardinality 0..*.
+An association connects 'ForkAction' and 'pcm_pc_pc_seff_pc_pc_SynchronisationPoint'. From 'ForkAction', the role 'seff_pc_pc522' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_SynchronisationPoint', the role 'ForkAction521' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_SynchronisationPoint' and 'ForkedBehaviour'. From 'pcm_pc_pc_seff_pc_pc_SynchronisationPoint', the role 'ForkedBehaviour524' has cardinality 0..*, and from 'ForkedBehaviour', the role 'seff_pc_pc525' has cardinality 0..*.
+An association connects 'OperationSignature' and 'pcm_pc_pc_seff_pc_pc_ExternalCallAction'. From 'OperationSignature', the role 'OperationSignature527' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_ExternalCallAction', the role 'pcm_pc_pc_seff_pc_pc_ExternalCallAction' has cardinality 0..*.
+An association connects 'OperationRequiredRole' and 'pcm_pc_pc_seff_pc_pc_ExternalCallAction'. From 'OperationRequiredRole', the role 'OperationRequiredRole530' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_ExternalCallAction', the role 'pcm_pc_pc_seff_pc_pc_ExternalCallAction529' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_CallReturnAction' and 'VariableUsage'. From 'pcm_pc_pc_seff_pc_pc_CallReturnAction', the role 'VariableUsage532' has cardinality 0..*, and from 'VariableUsage', the role 'parameter_pc_pc533' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_AcquireAction' and 'PassiveResource'. From 'pcm_pc_pc_seff_pc_pc_AcquireAction', the role 'pcm_pc_pc_seff_pc_pc_AcquireAction' has cardinality 0..*, and from 'PassiveResource', the role 'PassiveResource535' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_CollectionIteratorAction' and 'Parameter'. From 'pcm_pc_pc_seff_pc_pc_CollectionIteratorAction', the role 'pcm_pc_pc_seff_pc_pc_CollectionIteratorAction' has cardinality 0..*, and from 'Parameter', the role 'Parameter537' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_pc_pc_seff_pc_pc_GuardedBranchTransition'. From 'PCMRandomVariable', the role 'core_pc_pc540' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_GuardedBranchTransition', the role 'PCMRandomVariable539' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_SetVariableAction' and 'VariableUsage'. From 'pcm_pc_pc_seff_pc_pc_SetVariableAction', the role 'VariableUsage542' has cardinality 0..*, and from 'VariableUsage', the role 'parameter_pc_pc543' has cardinality 0..*.
+An association connects 'ResourceDemandingInternalBehaviour' and 'pcm_pc_pc_seff_pc_pc_InternalCallAction'. From 'ResourceDemandingInternalBehaviour', the role 'ResourceDemandingInternalBehaviour545' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_InternalCallAction', the role 'pcm_pc_pc_seff_pc_pc_InternalCallAction' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_EmitEventAction' and 'EventType'. From 'pcm_pc_pc_seff_pc_pc_EmitEventAction', the role 'pcm_pc_pc_seff_pc_pc_EmitEventAction' has cardinality 0..*, and from 'EventType', the role 'EventType547' has cardinality 0..*.
+An association connects 'SourceRole' and 'pcm_pc_pc_seff_pc_pc_EmitEventAction'. From 'SourceRole', the role 'SourceRole550' has cardinality 0..*, and from 'pcm_pc_pc_seff_pc_pc_EmitEventAction', the role 'pcm_pc_pc_seff_pc_pc_EmitEventAction549' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_pc_pc_InternalAction' and 'InternalFailureOccurrenceDescription'. From 'pcm_pc_pc_seff_pc_pc_InternalAction', the role 'InternalFailureOccurrenceDescription552' has cardinality 0..*, and from 'InternalFailureOccurrenceDescription', the role 'reliability_pc_pc553' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_performance_pc_pc_InfrastructureCall' and 'InfrastructureSignature'. From 'pcm_pc_pc_seff_performance_pc_pc_InfrastructureCall', the role 'pcm_pc_pc_seff_performance_pc_pc_InfrastructureCall' has cardinality 0..*, and from 'InfrastructureSignature', the role 'InfrastructureSignature555' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_performance_pc_pc_InfrastructureCall' and 'PCMRandomVariable'. From 'pcm_pc_pc_seff_performance_pc_pc_InfrastructureCall', the role 'PCMRandomVariable557' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_pc_pc558' has cardinality 0..*.
+An association connects 'AbstractInternalControlFlowAction' and 'pcm_pc_pc_seff_performance_pc_pc_InfrastructureCall'. From 'AbstractInternalControlFlowAction', the role 'seff_pc_pc560' has cardinality 0..*, and from 'pcm_pc_pc_seff_performance_pc_pc_InfrastructureCall', the role 'AbstractInternalControlFlowAction' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_performance_pc_pc_InfrastructureCall' and 'InfrastructureRequiredRole'. From 'pcm_pc_pc_seff_performance_pc_pc_InfrastructureCall', the role 'pcm_pc_pc_seff_performance_pc_pc_InfrastructureCall562' has cardinality 0..*, and from 'InfrastructureRequiredRole', the role 'InfrastructureRequiredRole563' has cardinality 0..*.
+An association connects 'AbstractInternalControlFlowAction' and 'pcm_pc_pc_seff_performance_pc_pc_ResourceCall'. From 'AbstractInternalControlFlowAction', the role 'seff_pc_pc566' has cardinality 0..*, and from 'pcm_pc_pc_seff_performance_pc_pc_ResourceCall', the role 'AbstractInternalControlFlowAction565' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_performance_pc_pc_ResourceCall' and 'entity_pc_pc_ResourceRequiredRole'. From 'pcm_pc_pc_seff_performance_pc_pc_ResourceCall', the role 'pcm_pc_pc_seff_performance_pc_pc_ResourceCall' has cardinality 0..*, and from 'entity_pc_pc_ResourceRequiredRole', the role 'entity_pc_pc_ResourceRequiredRole568' has cardinality 0..*.
+An association connects 'ResourceSignature' and 'pcm_pc_pc_seff_performance_pc_pc_ResourceCall'. From 'ResourceSignature', the role 'ResourceSignature571' has cardinality 0..*, and from 'pcm_pc_pc_seff_performance_pc_pc_ResourceCall', the role 'pcm_pc_pc_seff_performance_pc_pc_ResourceCall570' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_performance_pc_pc_ResourceCall' and 'PCMRandomVariable'. From 'pcm_pc_pc_seff_performance_pc_pc_ResourceCall', the role 'PCMRandomVariable573' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_pc_pc574' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_pc_pc_seff_performance_pc_pc_ParametricResourceDemand'. From 'PCMRandomVariable', the role 'core_pc_pc577' has cardinality 0..*, and from 'pcm_pc_pc_seff_performance_pc_pc_ParametricResourceDemand', the role 'PCMRandomVariable576' has cardinality 0..*.
+An association connects 'ProcessingResourceType' and 'pcm_pc_pc_seff_performance_pc_pc_ParametricResourceDemand'. From 'ProcessingResourceType', the role 'ProcessingResourceType579' has cardinality 0..*, and from 'pcm_pc_pc_seff_performance_pc_pc_ParametricResourceDemand', the role 'pcm_pc_pc_seff_performance_pc_pc_ParametricResourceDemand' has cardinality 0..*.
+An association connects 'AbstractInternalControlFlowAction' and 'pcm_pc_pc_seff_performance_pc_pc_ParametricResourceDemand'. From 'AbstractInternalControlFlowAction', the role 'seff_pc_pc582' has cardinality 0..*, and from 'pcm_pc_pc_seff_performance_pc_pc_ParametricResourceDemand', the role 'AbstractInternalControlFlowAction581' has cardinality 0..*.
+An association connects 'seff_reliability_pc_pc_RecoveryActionBehaviour' and 'pcm_pc_pc_seff_reliability_pc_pc_RecoveryActionBehaviour'. From 'seff_reliability_pc_pc_RecoveryActionBehaviour', the role 'seff_reliability_pc_pc_RecoveryActionBehaviour' has cardinality 0..*, and from 'pcm_pc_pc_seff_reliability_pc_pc_RecoveryActionBehaviour', the role 'pcm_pc_pc_seff_reliability_pc_pc_RecoveryActionBehaviour' has cardinality 0..*.
+An association connects 'seff_reliability_pc_pc_RecoveryAction' and 'pcm_pc_pc_seff_reliability_pc_pc_RecoveryActionBehaviour'. From 'seff_reliability_pc_pc_RecoveryAction', the role 'seff_pc_pc585' has cardinality 0..*, and from 'pcm_pc_pc_seff_reliability_pc_pc_RecoveryActionBehaviour', the role 'seff_reliability_pc_pc' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_reliability_pc_pc_RecoveryAction' and 'seff_reliability_pc_pc_RecoveryActionBehaviour'. From 'pcm_pc_pc_seff_reliability_pc_pc_RecoveryAction', the role 'pcm_pc_pc_seff_reliability_pc_pc_RecoveryAction' has cardinality 0..*, and from 'seff_reliability_pc_pc_RecoveryActionBehaviour', the role 'seff_reliability_pc_pc_RecoveryActionBehaviour587' has cardinality 0..*.
+An association connects 'pcm_pc_pc_seff_reliability_pc_pc_RecoveryAction' and 'seff_reliability_pc_pc_RecoveryActionBehaviour'. From 'pcm_pc_pc_seff_reliability_pc_pc_RecoveryAction', the role 'seff_reliability_pc_pc589' has cardinality 0..*, and from 'seff_reliability_pc_pc_RecoveryActionBehaviour', the role 'seff_pc_pc590' has cardinality 0..*.
+An association connects 'FailureType' and 'pcm_pc_pc_seff_reliability_pc_pc_FailureHandlingEntity'. From 'FailureType', the role 'FailureType592' has cardinality 0..*, and from 'pcm_pc_pc_seff_reliability_pc_pc_FailureHandlingEntity', the role 'pcm_pc_pc_seff_reliability_pc_pc_FailureHandlingEntity' has cardinality 0..*.
+An association connects 'Signature' and 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedQoSAnnotation'. From 'Signature', the role 'Signature594' has cardinality 0..*, and from 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedQoSAnnotation', the role 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedQoSAnnotation' has cardinality 0..*.
+An association connects 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedQoSAnnotation' and 'Role'. From 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedQoSAnnotation', the role 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedQoSAnnotation596' has cardinality 0..*, and from 'Role', the role 'Role' has cardinality 0..*.
+An association connects 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedQoSAnnotation' and 'QoSAnnotations'. From 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedQoSAnnotation', the role 'QoSAnnotations' has cardinality 0..*, and from 'QoSAnnotations', the role 'qosannotations_pc_pc598' has cardinality 0..*.
+An association connects 'SpecifiedOutputParameterAbstraction' and 'pcm_pc_pc_qosannotations_pc_pc_QoSAnnotations'. From 'SpecifiedOutputParameterAbstraction', the role 'qosannotations_pc_pc601' has cardinality 0..*, and from 'pcm_pc_pc_qosannotations_pc_pc_QoSAnnotations', the role 'SpecifiedOutputParameterAbstraction600' has cardinality 0..*.
+An association connects 'System' and 'pcm_pc_pc_qosannotations_pc_pc_QoSAnnotations'. From 'System', the role 'system_pc_pc' has cardinality 0..*, and from 'pcm_pc_pc_qosannotations_pc_pc_QoSAnnotations', the role 'System' has cardinality 0..*.
+An association connects 'pcm_pc_pc_qosannotations_pc_pc_QoSAnnotations' and 'SpecifiedQoSAnnotation'. From 'pcm_pc_pc_qosannotations_pc_pc_QoSAnnotations', the role 'SpecifiedQoSAnnotation' has cardinality 0..*, and from 'SpecifiedQoSAnnotation', the role 'qosannotations_pc_pc604' has cardinality 0..*.
+An association connects 'Signature' and 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedOutputParameterAbstraction'. From 'Signature', the role 'Signature606' has cardinality 0..*, and from 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedOutputParameterAbstraction', the role 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedOutputParameterAbstraction' has cardinality 0..*.
+An association connects 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedOutputParameterAbstraction' and 'Role'. From 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedOutputParameterAbstraction', the role 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedOutputParameterAbstraction608' has cardinality 0..*, and from 'Role', the role 'Role609' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedOutputParameterAbstraction'. From 'VariableUsage', the role 'parameter_pc_pc612' has cardinality 0..*, and from 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedOutputParameterAbstraction', the role 'VariableUsage611' has cardinality 0..*.
+An association connects 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedOutputParameterAbstraction' and 'QoSAnnotations'. From 'pcm_pc_pc_qosannotations_pc_pc_SpecifiedOutputParameterAbstraction', the role 'QoSAnnotations614' has cardinality 0..*, and from 'QoSAnnotations', the role 'qosannotations_pc_pc615' has cardinality 0..*.
+An association connects 'pcm_pc_pc_qos_performance_pc_pc_SpecifiedExecutionTime' and 'PCMRandomVariable'. From 'pcm_pc_pc_qos_performance_pc_pc_SpecifiedExecutionTime', the role 'PCMRandomVariable617' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_pc_pc618' has cardinality 0..*.
+An association connects 'pcm_pc_pc_qos_performance_pc_pc_ComponentSpecifiedExecutionTime' and 'composition_pc_pc_AssemblyContext'. From 'pcm_pc_pc_qos_performance_pc_pc_ComponentSpecifiedExecutionTime', the role 'pcm_pc_pc_qos_performance_pc_pc_ComponentSpecifiedExecutionTime' has cardinality 0..*, and from 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext620' has cardinality 0..*.
+An association connects 'ExternalFailureOccurrenceDescription' and 'pcm_pc_pc_qos_reliability_pc_pc_SpecifiedReliabilityAnnotation'. From 'ExternalFailureOccurrenceDescription', the role 'reliability_pc_pc622' has cardinality 0..*, and from 'pcm_pc_pc_qos_reliability_pc_pc_SpecifiedReliabilityAnnotation', the role 'ExternalFailureOccurrenceDescription' has cardinality 0..*.
+An association connects 'QoSAnnotations' and 'pcm_pc_pc_system_pc_pc_System'. From 'QoSAnnotations', the role 'qosannotations_pc_pc625' has cardinality 0..*, and from 'pcm_pc_pc_system_pc_pc_System', the role 'QoSAnnotations624' has cardinality 0..*.
+An association connects 'LinkingResource' and 'pcm_pc_pc_resourceenvironment_pc_pc_ResourceEnvironment'. From 'LinkingResource', the role 'resourceenvironment_pc_pc627' has cardinality 0..*, and from 'pcm_pc_pc_resourceenvironment_pc_pc_ResourceEnvironment', the role 'LinkingResource' has cardinality 0..*.
+An association connects 'pcm_pc_pc_resourceenvironment_pc_pc_ResourceEnvironment' and 'ResourceContainer'. From 'pcm_pc_pc_resourceenvironment_pc_pc_ResourceEnvironment', the role 'ResourceContainer' has cardinality 0..*, and from 'ResourceContainer', the role 'resourceenvironment_pc_pc629' has cardinality 0..*.
+An association connects 'ResourceContainer' and 'pcm_pc_pc_resourceenvironment_pc_pc_LinkingResource'. From 'ResourceContainer', the role 'ResourceContainer631' has cardinality 0..*, and from 'pcm_pc_pc_resourceenvironment_pc_pc_LinkingResource', the role 'pcm_pc_pc_resourceenvironment_pc_pc_LinkingResource' has cardinality 0..*.
+An association connects 'pcm_pc_pc_resourceenvironment_pc_pc_LinkingResource' and 'CommunicationLinkResourceSpecification'. From 'pcm_pc_pc_resourceenvironment_pc_pc_LinkingResource', the role 'CommunicationLinkResourceSpecification633' has cardinality 0..*, and from 'CommunicationLinkResourceSpecification', the role 'resourceenvironment_pc_pc634' has cardinality 0..*.
+An association connects 'ResourceEnvironment' and 'pcm_pc_pc_resourceenvironment_pc_pc_LinkingResource'. From 'ResourceEnvironment', the role 'resourceenvironment_pc_pc636' has cardinality 0..*, and from 'pcm_pc_pc_resourceenvironment_pc_pc_LinkingResource', the role 'ResourceEnvironment' has cardinality 0..*.
+An association connects 'pcm_pc_pc_resourceenvironment_pc_pc_ResourceContainer' and 'ProcessingResourceSpecification'. From 'pcm_pc_pc_resourceenvironment_pc_pc_ResourceContainer', the role 'ProcessingResourceSpecification638' has cardinality 0..*, and from 'ProcessingResourceSpecification', the role 'resourceenvironment_pc_pc639' has cardinality 0..*.
+An association connects 'ResourceEnvironment' and 'pcm_pc_pc_resourceenvironment_pc_pc_ResourceContainer'. From 'ResourceEnvironment', the role 'resourceenvironment_pc_pc642' has cardinality 0..*, and from 'pcm_pc_pc_resourceenvironment_pc_pc_ResourceContainer', the role 'ResourceEnvironment641' has cardinality 0..*.
+An association connects 'pcm_pc_pc_resourceenvironment_pc_pc_ResourceContainer' and 'ResourceContainer'. From 'pcm_pc_pc_resourceenvironment_pc_pc_ResourceContainer', the role 'ResourceContainer644' has cardinality 0..*, and from 'ResourceContainer', the role 'resourceenvironment_pc_pc645' has cardinality 0..*.
+An association connects 'ResourceContainer' and 'pcm_pc_pc_resourceenvironment_pc_pc_ResourceContainer'. From 'ResourceContainer', the role 'resourceenvironment_pc_pc648' has cardinality 0..*, and from 'pcm_pc_pc_resourceenvironment_pc_pc_ResourceContainer', the role 'ResourceContainer647' has cardinality 0..*.
+An association connects 'SchedulingPolicy' and 'pcm_pc_pc_resourceenvironment_pc_pc_ProcessingResourceSpecification'. From 'SchedulingPolicy', the role 'SchedulingPolicy650' has cardinality 0..*, and from 'pcm_pc_pc_resourceenvironment_pc_pc_ProcessingResourceSpecification', the role 'pcm_pc_pc_resourceenvironment_pc_pc_ProcessingResourceSpecification' has cardinality 0..*.
+An association connects 'ProcessingResourceType' and 'pcm_pc_pc_resourceenvironment_pc_pc_ProcessingResourceSpecification'. From 'ProcessingResourceType', the role 'ProcessingResourceType653' has cardinality 0..*, and from 'pcm_pc_pc_resourceenvironment_pc_pc_ProcessingResourceSpecification', the role 'pcm_pc_pc_resourceenvironment_pc_pc_ProcessingResourceSpecification652' has cardinality 0..*.
+An association connects 'pcm_pc_pc_resourceenvironment_pc_pc_ProcessingResourceSpecification' and 'PCMRandomVariable'. From 'pcm_pc_pc_resourceenvironment_pc_pc_ProcessingResourceSpecification', the role 'PCMRandomVariable655' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_pc_pc656' has cardinality 0..*.
+An association connects 'ResourceContainer' and 'pcm_pc_pc_resourceenvironment_pc_pc_ProcessingResourceSpecification'. From 'ResourceContainer', the role 'resourceenvironment_pc_pc659' has cardinality 0..*, and from 'pcm_pc_pc_resourceenvironment_pc_pc_ProcessingResourceSpecification', the role 'ResourceContainer658' has cardinality 0..*.
+An association connects 'LinkingResource' and 'pcm_pc_pc_resourceenvironment_pc_pc_CommunicationLinkResourceSpecification'. From 'LinkingResource', the role 'resourceenvironment_pc_pc662' has cardinality 0..*, and from 'pcm_pc_pc_resourceenvironment_pc_pc_CommunicationLinkResourceSpecification', the role 'LinkingResource661' has cardinality 0..*.
+An association connects 'pcm_pc_pc_resourceenvironment_pc_pc_CommunicationLinkResourceSpecification' and 'CommunicationLinkResourceType'. From 'pcm_pc_pc_resourceenvironment_pc_pc_CommunicationLinkResourceSpecification', the role 'pcm_pc_pc_resourceenvironment_pc_pc_CommunicationLinkResourceSpecification' has cardinality 0..*, and from 'CommunicationLinkResourceType', the role 'CommunicationLinkResourceType664' has cardinality 0..*.
+An association connects 'pcm_pc_pc_resourceenvironment_pc_pc_CommunicationLinkResourceSpecification' and 'PCMRandomVariable'. From 'pcm_pc_pc_resourceenvironment_pc_pc_CommunicationLinkResourceSpecification', the role 'PCMRandomVariable666' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_pc_pc667' has cardinality 0..*.
+An association connects 'pcm_pc_pc_resourceenvironment_pc_pc_CommunicationLinkResourceSpecification' and 'PCMRandomVariable'. From 'pcm_pc_pc_resourceenvironment_pc_pc_CommunicationLinkResourceSpecification', the role 'PCMRandomVariable669' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_pc_pc670' has cardinality 0..*.
+An association connects 'ResourceContainer' and 'pcm_pc_pc_allocation_pc_pc_AllocationContext'. From 'ResourceContainer', the role 'ResourceContainer672' has cardinality 0..*, and from 'pcm_pc_pc_allocation_pc_pc_AllocationContext', the role 'pcm_pc_pc_allocation_pc_pc_AllocationContext' has cardinality 0..*.
+An association connects 'composition_pc_pc_AssemblyContext' and 'pcm_pc_pc_allocation_pc_pc_AllocationContext'. From 'composition_pc_pc_AssemblyContext', the role 'composition_pc_pc_AssemblyContext675' has cardinality 0..*, and from 'pcm_pc_pc_allocation_pc_pc_AllocationContext', the role 'pcm_pc_pc_allocation_pc_pc_AllocationContext674' has cardinality 0..*.
+An association connects 'pcm_pc_pc_allocation_pc_pc_AllocationContext' and 'Allocation'. From 'pcm_pc_pc_allocation_pc_pc_AllocationContext', the role 'Allocation' has cardinality 0..*, and from 'Allocation', the role 'allocation_pc_pc' has cardinality 0..*.
+An association connects 'composition_pc_pc_EventChannel' and 'pcm_pc_pc_allocation_pc_pc_AllocationContext'. From 'composition_pc_pc_EventChannel', the role 'composition_pc_pc_EventChannel' has cardinality 0..*, and from 'pcm_pc_pc_allocation_pc_pc_AllocationContext', the role 'pcm_pc_pc_allocation_pc_pc_AllocationContext678' has cardinality 0..*.
+An association connects 'pcm_pc_pc_allocation_pc_pc_Allocation' and 'ResourceEnvironment'. From 'pcm_pc_pc_allocation_pc_pc_Allocation', the role 'pcm_pc_pc_allocation_pc_pc_Allocation' has cardinality 0..*, and from 'ResourceEnvironment', the role 'ResourceEnvironment680' has cardinality 0..*.
+An association connects 'System' and 'pcm_pc_pc_allocation_pc_pc_Allocation'. From 'System', the role 'System683' has cardinality 0..*, and from 'pcm_pc_pc_allocation_pc_pc_Allocation', the role 'pcm_pc_pc_allocation_pc_pc_Allocation682' has cardinality 0..*.
+An association connects 'pcm_pc_pc_allocation_pc_pc_Allocation' and 'AllocationContext'. From 'pcm_pc_pc_allocation_pc_pc_Allocation', the role 'AllocationContext' has cardinality 0..*, and from 'AllocationContext', the role 'allocation_pc_pc685' has cardinality 0..*.
+An association connects 'pcm_pc_pc_completions_pc_pc_CompletionRepository' and 'Completion'. From 'pcm_pc_pc_completions_pc_pc_CompletionRepository', the role 'pcm_pc_pc_completions_pc_pc_CompletionRepository' has cardinality 0..*, and from 'Completion', the role 'Completion' has cardinality 0..*.
+An association connects 'pcm_pc_pc_completions_pc_pc_NetworkDemandParametricResourceDemand' and 'CommunicationLinkResourceType'. From 'pcm_pc_pc_completions_pc_pc_NetworkDemandParametricResourceDemand', the role 'pcm_pc_pc_completions_pc_pc_NetworkDemandParametricResourceDemand' has cardinality 0..*, and from 'CommunicationLinkResourceType', the role 'CommunicationLinkResourceType688' has cardinality 0..*.

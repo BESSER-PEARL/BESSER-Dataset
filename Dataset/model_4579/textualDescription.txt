@@ -1,0 +1,48 @@
+The domain model 'dsl' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'dsl_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Device' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Fonctionnalite' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_EJavaObject' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Robot' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dsl_Parametre' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EJavaObject' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_Capture' represents an important domain concept.
+It does not declare any attributes.
+
+'Fonctionnalite' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_IDevice' represents an important domain concept.
+It has the following attributes: 'typeof', which is of type str; 'name', which is of type str.
+
+'dsl_Object' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'dsl_Capture' is a specialization of 'Fonctionnalite'.
+The class 'dsl_Action' is a specialization of 'Fonctionnalite'.
+The class 'dsl_Object' is a specialization of 'EJavaObject'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dsl_Robot' and 'dsl_IDevice'. From 'dsl_Robot', the role 'dsl_Robot' has cardinality 0..*, and from 'dsl_IDevice', the role 'dsl_IDevice' has cardinality 0..*.
+An association connects 'dsl_Fonctionnalite' and 'dsl_Parametre'. From 'dsl_Fonctionnalite', the role 'dsl_Fonctionnalite' has cardinality 0..*, and from 'dsl_Parametre', the role 'dsl_Parametre' has cardinality 0..*.
+An association connects 'dsl_Fonctionnalite' and 'dsl_Device'. From 'dsl_Fonctionnalite', the role 'dsl_Fonctionnalite3' has cardinality 0..*, and from 'dsl_Device', the role 'dsl_Device' has cardinality 0..*.
+An association connects 'dsl_EJavaObject' and 'dsl_Parametre'. From 'dsl_EJavaObject', the role 'dsl_EJavaObject' has cardinality 0..*, and from 'dsl_Parametre', the role 'dsl_Parametre5' has cardinality 0..*.
+An association connects 'dsl_EJavaObject' and 'dsl_Action'. From 'dsl_EJavaObject', the role 'dsl_EJavaObject7' has cardinality 0..*, and from 'dsl_Action', the role 'dsl_Action' has cardinality 0..*.

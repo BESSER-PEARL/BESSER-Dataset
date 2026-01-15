@@ -1,0 +1,36 @@
+The domain model 'my' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'my_FKRelation' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'my_Column' represents an important domain concept.
+It has the following attributes: 'unique', which is of type bool; 'size', which is of type int; 'type', which is of type str; 'primary', which is of type bool.
+
+'my_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'my_Database' represents an important domain concept.
+It does not declare any attributes.
+
+'my_Table' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ColumnType' defines the following possible values: 'Date', 'Char', 'Number'.
+
+The model also captures inheritance relationships between classes.
+The class 'my_Column' is a specialization of 'NamedElement'.
+The class 'my_Table' is a specialization of 'NamedElement'.
+The class 'my_Database' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'my_Table' and 'my_Column'. From 'my_Table', the role 'my_Table' has cardinality 0..*, and from 'my_Column', the role 'my_Column' has cardinality 0..*.
+An association connects 'my_Database' and 'my_Table'. From 'my_Database', the role 'my_Database' has cardinality 0..*, and from 'my_Table', the role 'my_Table2' has cardinality 0..*.
+An association connects 'my_FKRelation' and 'my_Database'. From 'my_FKRelation', the role 'my_FKRelation' has cardinality 0..*, and from 'my_Database', the role 'my_Database4' has cardinality 0..*.
+An association connects 'my_FKRelation' and 'my_Column'. From 'my_FKRelation', the role 'my_FKRelation6' has cardinality 0..*, and from 'my_Column', the role 'my_Column7' has cardinality 0..*.
+An association connects 'my_Column' and 'my_FKRelation'. From 'my_Column', the role 'my_Column10' has cardinality 0..*, and from 'my_FKRelation', the role 'my_FKRelation9' has cardinality 0..*.

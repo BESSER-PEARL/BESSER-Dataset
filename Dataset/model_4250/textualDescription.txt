@@ -1,0 +1,12 @@
+The domain model 'Employees' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'Employees_Employee' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'ID', which is of type int; 'salary', which is of type int.
+
+'Employees_EmployeeContainer' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'Employees_EmployeeContainer' and 'Employees_Employee'. From 'Employees_EmployeeContainer', the role 'Employees_EmployeeContainer' has cardinality 0..*, and from 'Employees_Employee', the role 'Employees_Employee' has cardinality 0..*.

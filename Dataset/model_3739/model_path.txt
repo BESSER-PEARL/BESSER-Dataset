@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/HerrAugust/ModelDrivenEngineering/Homeworks/homework1_models_metamodels/model/Metamodels/MySQL.ecore

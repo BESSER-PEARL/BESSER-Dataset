@@ -1,0 +1,90 @@
+The domain model 'product' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'product_ProductDomainModels' represents an important domain concept.
+It does not declare any attributes.
+
+'product_ProductFragment' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'product_ProductImplementationElements' represents an important domain concept.
+It does not declare any attributes.
+
+'product_ProductTemplate' represents an important domain concept.
+It has one attribute: 'generateToPath', which is of type str.
+
+'product_Product' represents an important domain concept.
+It does not declare any attributes.
+
+'product_ProductEntity' represents an important domain concept.
+It has the following attributes: 'path', which is of type str; 'name', which is of type str.
+
+'product_ProductFile' represents an important domain concept.
+It does not declare any attributes.
+
+'product_ProductFragmentContainer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'product_ProductFolder' represents an important domain concept.
+It does not declare any attributes.
+
+'product_ProductContainer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'product_ProductAspect' represents an important domain concept.
+It does not declare any attributes.
+
+'product_ProductFeaturesConfiguration' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'attribute', which is of type str.
+
+'product_ProductResourcesContainer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'product_ProductDomainModel' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'elements', which is of type str.
+
+'product_ProductFeatureConfiguration' represents an important domain concept.
+It has the following attributes: 'min', which is of type int; 'attribute', which is of type str; 'isSelected', which is of type bool; 'name', which is of type str; 'max', which is of type int.
+
+'ProductEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'product_ProductClass' represents an important domain concept.
+It does not declare any attributes.
+
+'product_ProductComponent' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'product_ProductComponent' is a specialization of 'ProductEntity'.
+The class 'product_ProductClass' is a specialization of 'ProductEntity'.
+The class 'product_ProductAspect' is a specialization of 'ProductEntity'.
+The class 'product_ProductFile' is a specialization of 'ProductEntity'.
+The class 'product_ProductFolder' is a specialization of 'ProductEntity'.
+The class 'product_ProductTemplate' is a specialization of 'ProductEntity'.
+The class 'product_ProductFragment' is a specialization of 'ProductEntity'.
+
+Relationships between classes are modeled using associations.
+An association connects 'product_ProductImplementationElements' and 'product_Product'. From 'product_ProductImplementationElements', the role 'product_ProductImplementationElements' has cardinality 0..*, and from 'product_Product', the role 'product_Product' has cardinality 0..*.
+An association connects 'product_ProductFeaturesConfiguration' and 'product_Product'. From 'product_ProductFeaturesConfiguration', the role 'product_ProductFeaturesConfiguration' has cardinality 0..*, and from 'product_Product', the role 'product_Product2' has cardinality 0..*.
+An association connects 'product_Product' and 'product_ProductDomainModels'. From 'product_Product', the role 'product_Product4' has cardinality 0..*, and from 'product_ProductDomainModels', the role 'product_ProductDomainModels' has cardinality 0..*.
+An association connects 'product_ProductImplementationElements' and 'product_ProductContainer'. From 'product_ProductImplementationElements', the role 'product_ProductImplementationElements6' has cardinality 0..*, and from 'product_ProductContainer', the role 'product_ProductContainer' has cardinality 0..*.
+An association connects 'product_ProductImplementationElements' and 'product_ProductFragmentContainer'. From 'product_ProductImplementationElements', the role 'product_ProductImplementationElements8' has cardinality 0..*, and from 'product_ProductFragmentContainer', the role 'product_ProductFragmentContainer' has cardinality 0..*.
+An association connects 'product_ProductImplementationElements' and 'product_ProductResourcesContainer'. From 'product_ProductImplementationElements', the role 'product_ProductImplementationElements10' has cardinality 0..*, and from 'product_ProductResourcesContainer', the role 'product_ProductResourcesContainer' has cardinality 0..*.
+An association connects 'product_ProductContainer' and 'product_ProductComponent'. From 'product_ProductContainer', the role 'product_ProductContainer12' has cardinality 0..*, and from 'product_ProductComponent', the role 'product_ProductComponent' has cardinality 0..*.
+An association connects 'product_ProductResourcesContainer' and 'product_ProductFolder'. From 'product_ProductResourcesContainer', the role 'product_ProductResourcesContainer14' has cardinality 0..*, and from 'product_ProductFolder', the role 'product_ProductFolder' has cardinality 0..*.
+An association connects 'product_ProductFile' and 'product_ProductResourcesContainer'. From 'product_ProductFile', the role 'product_ProductFile' has cardinality 0..*, and from 'product_ProductResourcesContainer', the role 'product_ProductResourcesContainer16' has cardinality 0..*.
+An association connects 'product_ProductResourcesContainer' and 'product_ProductTemplate'. From 'product_ProductResourcesContainer', the role 'product_ProductResourcesContainer18' has cardinality 0..*, and from 'product_ProductTemplate', the role 'product_ProductTemplate' has cardinality 0..*.
+An association connects 'product_ProductComponent' and 'product_ProductClass'. From 'product_ProductComponent', the role 'product_ProductComponent20' has cardinality 0..*, and from 'product_ProductClass', the role 'product_ProductClass' has cardinality 0..*.
+An association connects 'product_ProductComponent' and 'product_ProductAspect'. From 'product_ProductComponent', the role 'product_ProductComponent22' has cardinality 0..*, and from 'product_ProductAspect', the role 'product_ProductAspect' has cardinality 0..*.
+An association connects 'product_ProductFile' and 'product_ProductComponent'. From 'product_ProductFile', the role 'product_ProductFile25' has cardinality 0..*, and from 'product_ProductComponent', the role 'product_ProductComponent24' has cardinality 0..*.
+An association connects 'product_ProductComponent' and 'product_ProductTemplate'. From 'product_ProductComponent', the role 'product_ProductComponent27' has cardinality 0..*, and from 'product_ProductTemplate', the role 'product_ProductTemplate28' has cardinality 0..*.
+An association connects 'product_ProductComponent' and 'product_ProductComponent'. From 'product_ProductComponent', the role 'product_ProductComponent29' has cardinality 0..*, and from 'product_ProductComponent', the role 'product_ProductComponent31' has cardinality 0..*.
+An association connects 'product_ProductFolder' and 'product_ProductFolder'. From 'product_ProductFolder', the role 'product_ProductFolder32' has cardinality 0..*, and from 'product_ProductFolder', the role 'product_ProductFolder34' has cardinality 0..*.
+An association connects 'product_ProductFolder' and 'product_ProductFile'. From 'product_ProductFolder', the role 'product_ProductFolder36' has cardinality 0..*, and from 'product_ProductFile', the role 'product_ProductFile37' has cardinality 0..*.
+An association connects 'product_ProductTemplate' and 'product_ProductFolder'. From 'product_ProductTemplate', the role 'product_ProductTemplate40' has cardinality 0..*, and from 'product_ProductFolder', the role 'product_ProductFolder39' has cardinality 0..*.
+An association connects 'product_ProductFragmentContainer' and 'product_ProductFragment'. From 'product_ProductFragmentContainer', the role 'product_ProductFragmentContainer42' has cardinality 0..*, and from 'product_ProductFragment', the role 'product_ProductFragment' has cardinality 0..*.
+An association connects 'product_ProductFeaturesConfiguration' and 'product_ProductFeatureConfiguration'. From 'product_ProductFeaturesConfiguration', the role 'product_ProductFeaturesConfiguration44' has cardinality 0..*, and from 'product_ProductFeatureConfiguration', the role 'product_ProductFeatureConfiguration' has cardinality 0..*.
+An association connects 'product_ProductFeatureConfiguration' and 'product_ProductFeatureConfiguration'. From 'product_ProductFeatureConfiguration', the role 'product_ProductFeatureConfiguration47' has cardinality 0..*, and from 'product_ProductFeatureConfiguration', the role 'product_ProductFeatureConfiguration45' has cardinality 0..*.
+An association connects 'product_ProductDomainModels' and 'product_ProductDomainModel'. From 'product_ProductDomainModels', the role 'product_ProductDomainModels49' has cardinality 0..*, and from 'product_ProductDomainModel', the role 'product_ProductDomainModel' has cardinality 0..*.

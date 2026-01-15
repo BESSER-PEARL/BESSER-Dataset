@@ -1,0 +1,148 @@
+The domain model 'behaviour' describes the core structural elements and their relationships within the system.
+
+The model defines 32 main class(es).
+
+'behaviour_MulticastNotify' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_CommunicationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_CheckNotification' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Parameter' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'value', which is of type str.
+
+'behaviour_HeadTo' represents an important domain concept.
+It has one attribute: 'direction', which is of type float.
+
+'behaviour_BroadcastNotify' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Move' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Drone' represents an important domain concept.
+It has the following attributes: 'travelMode', which is of type str; 'typeName', which is of type str.
+
+'behaviour_GoTo' represents an important domain concept.
+It has one attribute: 'strategy', which is of type str.
+
+'behaviour_Stop' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_DeviceAction' represents an important domain concept.
+It has one attribute: 'actionName', which is of type str.
+
+'behaviour_Hover' represents an important domain concept.
+It has one attribute: 'duration', which is of type float.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Land' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_MoveTransition' represents an important domain concept.
+It has one attribute: 'fluid', which is of type bool.
+
+'CommunicationAction' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Feedback' represents an important domain concept.
+It has one attribute: 'actionName', which is of type str.
+
+'Move' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_TakeOff' represents an important domain concept.
+It has one attribute: 'altitude', which is of type float.
+
+'Notify' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Behaviour' represents an important domain concept.
+It has one attribute: 'crs', which is of type str.
+
+'behaviour_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'behaviour_UnicastNotify' represents an important domain concept.
+It does not declare any attributes.
+
+'MoveTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Notify' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Coordinate' represents an important domain concept.
+It has the following attributes: 'heading', which is of type float; 'latitude', which is of type float; 'longitude', which is of type float; 'altitude', which is of type float.
+
+'behaviour_Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'behaviour_Choice' represents an important domain concept.
+It has one attribute: 'conditionIdentifier', which is of type str.
+
+'behaviour_Circle' represents an important domain concept.
+It has the following attributes: 'duration', which is of type float; 'clockwise', which is of type bool; 'radius', which is of type float; 'altitude', which is of type float.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'GoToStrategy' defines the following possible values: 'HORIZONTAL_FIRST', 'VERTICAL_FIRST', 'DIRECT'.
+The enumeration 'TravelMode' defines the following possible values: 'SAFE', 'AGGRESSIVE', 'NORMAL'.
+
+The model also captures inheritance relationships between classes.
+The class 'behaviour_Behaviour' is a specialization of 'NamedElement'.
+The class 'behaviour_Drone' is a specialization of 'NamedElement'.
+The class 'behaviour_Action' is a specialization of 'NamedElement'.
+The class 'behaviour_Start' is a specialization of 'Move'.
+The class 'behaviour_Stop' is a specialization of 'Move'.
+The class 'behaviour_Choice' is a specialization of 'MoveTransition'.
+The class 'behaviour_Move' is a specialization of 'NamedElement'.
+The class 'behaviour_TakeOff' is a specialization of 'Move'.
+The class 'behaviour_Land' is a specialization of 'Move'.
+The class 'behaviour_GoTo' is a specialization of 'Move'.
+The class 'behaviour_Hover' is a specialization of 'Move'.
+The class 'behaviour_HeadTo' is a specialization of 'Move'.
+The class 'behaviour_Circle' is a specialization of 'Move'.
+The class 'behaviour_CommunicationAction' is a specialization of 'Action'.
+The class 'behaviour_Notify' is a specialization of 'CommunicationAction'.
+The class 'behaviour_BroadcastNotify' is a specialization of 'Notify'.
+The class 'behaviour_UnicastNotify' is a specialization of 'Notify'.
+The class 'behaviour_MulticastNotify' is a specialization of 'Notify'.
+The class 'behaviour_CheckNotification' is a specialization of 'CommunicationAction'.
+The class 'behaviour_Slot' is a specialization of 'NamedElement'.
+The class 'behaviour_DeviceAction' is a specialization of 'Action'.
+The class 'behaviour_Feedback' is a specialization of 'CommunicationAction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'behaviour_Behaviour' and 'behaviour_Drone'. From 'behaviour_Behaviour', the role 'behaviour_Behaviour' has cardinality 0..*, and from 'behaviour_Drone', the role 'behaviour_Drone' has cardinality 0..*.
+An association connects 'behaviour_Drone' and 'behaviour_Coordinate'. From 'behaviour_Drone', the role 'behaviour_Drone2' has cardinality 0..*, and from 'behaviour_Coordinate', the role 'behaviour_Coordinate' has cardinality 0..*.
+An association connects 'behaviour_Move' and 'behaviour_Drone'. From 'behaviour_Move', the role 'behaviour_Move' has cardinality 0..*, and from 'behaviour_Drone', the role 'behaviour_Drone4' has cardinality 0..*.
+An association connects 'behaviour_MoveTransition' and 'behaviour_Drone'. From 'behaviour_MoveTransition', the role 'behaviour_MoveTransition' has cardinality 0..*, and from 'behaviour_Drone', the role 'behaviour_Drone6' has cardinality 0..*.
+An association connects 'behaviour_Drone' and 'behaviour_Slot'. From 'behaviour_Drone', the role 'behaviour_Drone8' has cardinality 0..*, and from 'behaviour_Slot', the role 'behaviour_Slot' has cardinality 0..*.
+An association connects 'behaviour_Move' and 'behaviour_Choice'. From 'behaviour_Move', the role 'behaviour_Move10' has cardinality 0..*, and from 'behaviour_Choice', the role 'behaviour_Choice' has cardinality 0..*.
+An association connects 'behaviour_Action' and 'behaviour_Move'. From 'behaviour_Action', the role 'behaviour_Action' has cardinality 0..*, and from 'behaviour_Move', the role 'behaviour_Move12' has cardinality 0..*.
+An association connects 'behaviour_Action' and 'behaviour_Move'. From 'behaviour_Action', the role 'behaviour_Action15' has cardinality 0..*, and from 'behaviour_Move', the role 'behaviour_Move14' has cardinality 0..*.
+An association connects 'behaviour_GoTo' and 'behaviour_Coordinate'. From 'behaviour_GoTo', the role 'behaviour_GoTo' has cardinality 0..*, and from 'behaviour_Coordinate', the role 'behaviour_Coordinate17' has cardinality 0..*.
+An association connects 'behaviour_Circle' and 'behaviour_Coordinate'. From 'behaviour_Circle', the role 'behaviour_Circle' has cardinality 0..*, and from 'behaviour_Coordinate', the role 'behaviour_Coordinate19' has cardinality 0..*.
+An association connects 'behaviour_Notify' and 'behaviour_Slot'. From 'behaviour_Notify', the role 'behaviour_Notify' has cardinality 0..*, and from 'behaviour_Slot', the role 'behaviour_Slot21' has cardinality 0..*.
+An association connects 'behaviour_UnicastNotify' and 'behaviour_Drone'. From 'behaviour_UnicastNotify', the role 'behaviour_UnicastNotify' has cardinality 0..*, and from 'behaviour_Drone', the role 'behaviour_Drone23' has cardinality 0..*.
+An association connects 'behaviour_Drone' and 'behaviour_MulticastNotify'. From 'behaviour_Drone', the role 'behaviour_Drone25' has cardinality 0..*, and from 'behaviour_MulticastNotify', the role 'behaviour_MulticastNotify' has cardinality 0..*.
+An association connects 'behaviour_Slot' and 'behaviour_CheckNotification'. From 'behaviour_Slot', the role 'behaviour_Slot27' has cardinality 0..*, and from 'behaviour_CheckNotification', the role 'behaviour_CheckNotification' has cardinality 0..*.
+An association connects 'behaviour_Parameter' and 'behaviour_DeviceAction'. From 'behaviour_Parameter', the role 'behaviour_Parameter' has cardinality 0..*, and from 'behaviour_DeviceAction', the role 'behaviour_DeviceAction' has cardinality 0..*.
+An association connects 'behaviour_MoveTransition' and 'behaviour_Slot'. From 'behaviour_MoveTransition', the role 'behaviour_MoveTransition30' has cardinality 0..*, and from 'behaviour_Slot', the role 'behaviour_Slot31' has cardinality 0..*.
+An association connects 'behaviour_Move' and 'behaviour_MoveTransition'. From 'behaviour_Move', the role 'behaviour_Move34' has cardinality 0..*, and from 'behaviour_MoveTransition', the role 'behaviour_MoveTransition33' has cardinality 0..*.
+An association connects 'behaviour_MoveTransition' and 'behaviour_Move'. From 'behaviour_MoveTransition', the role 'behaviour_MoveTransition36' has cardinality 0..*, and from 'behaviour_Move', the role 'behaviour_Move37' has cardinality 0..*.
+An association connects 'behaviour_Feedback' and 'behaviour_Parameter'. From 'behaviour_Feedback', the role 'behaviour_Feedback' has cardinality 0..*, and from 'behaviour_Parameter', the role 'behaviour_Parameter39' has cardinality 0..*.

@@ -1,0 +1,707 @@
+The domain model 'carnot' describes the core structural elements and their relationships within the system.
+
+The model defines 125 main class(es).
+
+'extensions_carnot_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_ConditionalPerformerType' represents an important domain concept.
+It has the following attributes: 'isUser', which is of type str; 'dataPath', which is of type str.
+
+'carnot_IMetaType' represents an important domain concept.
+It has one attribute: 'isPredefined', which is of type str.
+
+'carnot_EventActionTypeType' represents an important domain concept.
+It has the following attributes: 'unsupportedContexts', which is of type str; 'activityAction', which is of type str; 'panelClass', which is of type str; 'actionClass', which is of type str; 'processAction', which is of type str; 'supportedConditionTypes', which is of type str.
+
+'carnot_TransitionConnectionType' represents an important domain concept.
+It has one attribute: 'points', which is of type str.
+
+'carnot_ModelType' represents an important domain concept.
+It has the following attributes: 'created', which is of type str; 'carnotVersion', which is of type str; 'modelOID', which is of type str; 'oid', which is of type str; 'author', which is of type str; 'vendor', which is of type str.
+
+'carnot_LoopType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_TextSymbolType' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'carnot_ISymbolContainer' represents an important domain concept.
+It has the following attributes: 'nodes', which is of type str; 'connections', which is of type str.
+
+'FormalParameterMappingsType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_ParticipantType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_ApplicationType' represents an important domain concept.
+It has one attribute: 'interactive', which is of type str.
+
+'carnot_ProcessDefinitionType' represents an important domain concept.
+It has one attribute: 'defaultPriority', which is of type str.
+
+'carnot_ActivityType' represents an important domain concept.
+It has the following attributes: 'loopCondition', which is of type str; 'allowsAbortByPerformer', which is of type str; 'loopType', which is of type str; 'hibernateOnCreation', which is of type str; 'split', which is of type str; 'subProcessMode', which is of type str; 'implementation', which is of type str; 'join', which is of type str.
+
+'carnot_IdRef' represents an important domain concept.
+It has one attribute: 'ref', which is of type str.
+
+'carnot_OrganizationSymbolType' represents an important domain concept.
+It does not declare any attributes.
+
+'IModelElementNodeSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'IFlowObjectSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractEventSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_RoleSymbolType' represents an important domain concept.
+It does not declare any attributes.
+
+'IMetaType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_SubProcessOfConnectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'ITypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_DataTypeType' represents an important domain concept.
+It has the following attributes: 'readable', which is of type str; 'evaluator', which is of type str; 'panelClass', which is of type str; 'instanceClass', which is of type str; 'validatorClass', which is of type str; 'writable', which is of type str; 'accessPathEditor', which is of type str; 'storageStrategy', which is of type str; 'valueCreator', which is of type str.
+
+'carnot_PublicInterfaceSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'IModelParticipantSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_QualityControlType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_IAccessPointOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_BindActionType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_ConditionalPerformerSymbolType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_ModelerType' represents an important domain concept.
+It has the following attributes: 'email', which is of type str; 'password', which is of type str.
+
+'carnot_TypeDeclarationsType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_IGraphicalObject' represents an important domain concept.
+It has the following attributes: 'borderColor', which is of type str; 'fillColor', which is of type str; 'style', which is of type str.
+
+'carnot_ViewType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'carnot_EventHandlerType' represents an important domain concept.
+It has the following attributes: 'unbindOnMatch', which is of type str; 'logHandler', which is of type str; 'consumeOnMatch', which is of type str; 'autoBind', which is of type str.
+
+'carnot_AccessPointType' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'ISymbolContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_TransitionType' represents an important domain concept.
+It has the following attributes: 'forkOnTraversal', which is of type str; 'condition', which is of type str.
+
+'carnot_IModelParticipantSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_IdRefOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_LaneSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_ProcessSymbolType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_OrganizationType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_IModelParticipant' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_AbstractEventSymbol' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'carnot_ApplicationSymbolType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_ParameterMappingType' represents an important domain concept.
+It has the following attributes: 'dataPath', which is of type str; 'parameter', which is of type str; 'parameterPath', which is of type str.
+
+'carnot_DescriptionType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'carnot_WorksForConnectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_TriggerTypeType' represents an important domain concept.
+It has the following attributes: 'rule', which is of type str; 'panelClass', which is of type str; 'pullTrigger', which is of type str; 'pullTriggerEvaluator', which is of type str.
+
+'carnot_TeamLeadConnectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_DataMappingType' represents an important domain concept.
+It has the following attributes: 'dataPath', which is of type str; 'applicationAccessPoint', which is of type str; 'context', which is of type str; 'applicationPath', which is of type str; 'direction', which is of type str.
+
+'carnot_TriggerType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_AnnotationSymbolType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'IIdentifiableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_UnbindActionType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_Code' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'code', which is of type str; 'name', which is of type str.
+
+'IModelParticipant' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_ExternalPackage' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_XmlTextNode' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'carnot_ViewableType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_ContextType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_GroupSymbolType' represents an important domain concept.
+It does not declare any attributes.
+
+'IAccessPointOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_IModelElementNodeSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'INodeSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_DataType' represents an important domain concept.
+It has one attribute: 'predefined', which is of type str.
+
+'carnot_IntermediateEventSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_ExecutedByConnectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'IdRefOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_IIdentifiableElement' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'IConnectionSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_FormalParametersType' represents an important domain concept.
+It does not declare any attributes.
+
+'IModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_GenericLinkConnectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_DataSymbolType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_IModelElement' represents an important domain concept.
+It has one attribute: 'elementOid', which is of type str.
+
+'carnot_Coordinates' represents an important domain concept.
+It has the following attributes: 'xPos', which is of type str; 'yPos', which is of type str.
+
+'ISwimlaneSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_ApplicationTypeType' represents an important domain concept.
+It has the following attributes: 'instanceClass', which is of type str; 'accessPointProviderClass', which is of type str; 'panelClass', which is of type str; 'synchronous', which is of type str; 'validatorClass', which is of type str.
+
+'carnot_ActivitySymbolType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_ExternalReferenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_PerformsConnectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_StartEventSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_IConnectionSymbol' represents an important domain concept.
+It has the following attributes: 'sourceAnchor', which is of type str; 'routing', which is of type str; 'targetAnchor', which is of type str.
+
+'carnot_LinkTypeType' represents an important domain concept.
+It has the following attributes: 'targetCardinality', which is of type str; 'showLinkTypeName', which is of type str; 'sourceCardinality', which is of type str; 'targetClass', which is of type str; 'targetSymbol', which is of type str; 'sourceRole', which is of type str; 'sourceSymbol', which is of type str; 'showRoleNames', which is of type str; 'lineStyle', which is of type str; 'lineColor', which is of type str; 'sourceClass', which is of type str; 'targetRole', which is of type str.
+
+'carnot_PartOfConnectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'IEventHandlerOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_ApplicationContextTypeType' represents an important domain concept.
+It has the following attributes: 'validatorClass', which is of type str; 'hasApplicationPath', which is of type str; 'accessPointProviderClass', which is of type str; 'panelClass', which is of type str; 'hasMappingId', which is of type str.
+
+'carnot_IIdentifiableModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_IExtensibleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_EventConditionTypeType' represents an important domain concept.
+It has the following attributes: 'pullEventEmitterClass', which is of type str; 'rule', which is of type str; 'panelClass', which is of type str; 'implementation', which is of type str; 'processCondition', which is of type str; 'binderClass', which is of type str; 'activityCondition', which is of type str.
+
+'carnot_ExternalPackages' represents an important domain concept.
+It does not declare any attributes.
+
+'IExtensibleElement' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_ScriptType' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_RoleType' represents an important domain concept.
+It has one attribute: 'cardinality', which is of type int.
+
+'FormalParameterMappingType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_IEventHandlerOwner' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_ITypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_TextType' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'carnot_ModelerSymbolType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_TriggersConnectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_AttributeType' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'any', which is of type str; 'group', which is of type str; 'mixed', which is of type str; 'type', which is of type str; 'name', which is of type str.
+
+'carnot_ISwimlaneSymbol' represents an important domain concept.
+It has the following attributes: 'collapsed', which is of type str; 'orientation', which is of type str.
+
+'carnot_DiagramType' represents an important domain concept.
+It has the following attributes: 'orientation', which is of type str; 'mode', which is of type str; 'name', which is of type str.
+
+'carnot_EventActionType' represents an important domain concept.
+It does not declare any attributes.
+
+'extensions_carnot_FormalParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_DataPathType' represents an important domain concept.
+It has the following attributes: 'key', which is of type str; 'direction', which is of type str; 'descriptor', which is of type str; 'dataPath', which is of type str.
+
+'carnot_IdentifiableReference' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_extensions_FormalParameterMappingType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_PoolSymbol' represents an important domain concept.
+It has one attribute: 'boundaryVisible', which is of type str.
+
+'carnot_AbstractEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_RefersToConnectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_DocumentRoot' represents an important domain concept.
+It has one attribute: 'mixed', which is of type str.
+
+'IGraphicalObject' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_IFlowObjectSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_INodeSymbol' represents an important domain concept.
+It has the following attributes: 'shape', which is of type str; 'height', which is of type str; 'xPos', which is of type str; 'yPos', which is of type str; 'width', which is of type str.
+
+'carnot_extensions_FormalParameterMappingsType' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_DataMappingConnectionType' represents an important domain concept.
+It does not declare any attributes.
+
+'IIdentifiableModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'carnot_GatewaySymbol' represents an important domain concept.
+It has one attribute: 'flowKind', which is of type str.
+
+'carnot_EndEventSymbol' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'LinkEndStyle' defines the following possible values: 'OpenTriangle', 'NoArrow', 'Unknown', 'FilledRhombus', 'EmptyTriangle', 'FilledTriangle', 'EmptyRhombus'.
+The enumeration 'ActivityImplementationType' defines the following possible values: 'Subprocess', 'Application', 'Route', 'Manual'.
+The enumeration 'ImplementationType' defines the following possible values: 'pull', 'engine', 'push'.
+The enumeration 'FlowControlType' defines the following possible values: 'join', 'none', 'split'.
+The enumeration 'OrientationType' defines the following possible values: 'Horizontal', 'Vertical'.
+The enumeration 'DirectionType' defines the following possible values: 'OUT', 'IN', 'INOUT'.
+The enumeration 'LinkColor' defines the following possible values: 'DarkGray', 'LightGray', 'Red', 'Blue', 'Black', 'Unknown', 'Yellow', 'DarkBlue'.
+The enumeration 'LinkLineStyle' defines the following possible values: 'ShortStrokes', 'Unknown', 'LongStrokes', 'Normal'.
+The enumeration 'DiagramModeType' defines the following possible values: 'MODE_4_5_0', 'MODE_4_0_0'.
+The enumeration 'LoopType' defines the following possible values: 'Repeat', 'Unknown', 'None', 'While'.
+The enumeration 'RoutingType' defines the following possible values: 'Manhattan', 'ShortestPath', 'Explicit', 'Default'.
+The enumeration 'LinkCardinality' defines the following possible values: 'Unknown', 'Many', 'One'.
+The enumeration 'JoinSplitType' defines the following possible values: 'AND', 'XOR', 'None', 'OR'.
+The enumeration 'SubProcessModeType' defines the following possible values: 'sync_shared', 'sync_separate', 'async_separate'.
+
+The model also captures inheritance relationships between classes.
+The class 'carnot_IIdentifiableModelElement' is a specialization of 'IModelElement'.
+The class 'carnot_IIdentifiableModelElement' is a specialization of 'IIdentifiableElement'.
+The class 'carnot_IIdentifiableModelElement' is a specialization of 'IExtensibleElement'.
+The class 'carnot_IMetaType' is a specialization of 'IIdentifiableModelElement'.
+The class 'carnot_ISymbolContainer' is a specialization of 'IExtensibleElement'.
+The class 'carnot_IGraphicalObject' is a specialization of 'IModelElement'.
+The class 'carnot_INodeSymbol' is a specialization of 'IGraphicalObject'.
+The class 'carnot_ISwimlaneSymbol' is a specialization of 'INodeSymbol'.
+The class 'carnot_ISwimlaneSymbol' is a specialization of 'IIdentifiableElement'.
+The class 'carnot_IModelElementNodeSymbol' is a specialization of 'INodeSymbol'.
+The class 'carnot_IFlowObjectSymbol' is a specialization of 'INodeSymbol'.
+The class 'carnot_IConnectionSymbol' is a specialization of 'IGraphicalObject'.
+The class 'carnot_IModelParticipant' is a specialization of 'IIdentifiableModelElement'.
+The class 'carnot_IModelParticipantSymbol' is a specialization of 'IModelElementNodeSymbol'.
+The class 'carnot_AbstractEventAction' is a specialization of 'IIdentifiableModelElement'.
+The class 'carnot_AbstractEventAction' is a specialization of 'ITypedElement'.
+The class 'carnot_AbstractEventSymbol' is a specialization of 'IFlowObjectSymbol'.
+The class 'carnot_AbstractEventSymbol' is a specialization of 'IModelElementNodeSymbol'.
+The class 'carnot_AccessPointType' is a specialization of 'IIdentifiableModelElement'.
+The class 'carnot_AccessPointType' is a specialization of 'ITypedElement'.
+The class 'carnot_ActivitySymbolType' is a specialization of 'IFlowObjectSymbol'.
+The class 'carnot_ActivitySymbolType' is a specialization of 'IModelElementNodeSymbol'.
+The class 'carnot_ActivityType' is a specialization of 'IIdentifiableModelElement'.
+The class 'carnot_ActivityType' is a specialization of 'IEventHandlerOwner'.
+The class 'carnot_ActivityType' is a specialization of 'IdRefOwner'.
+The class 'carnot_AnnotationSymbolType' is a specialization of 'INodeSymbol'.
+The class 'carnot_ApplicationContextTypeType' is a specialization of 'IMetaType'.
+The class 'carnot_ApplicationSymbolType' is a specialization of 'IModelElementNodeSymbol'.
+The class 'carnot_ApplicationType' is a specialization of 'IIdentifiableModelElement'.
+The class 'carnot_ApplicationType' is a specialization of 'ITypedElement'.
+The class 'carnot_ApplicationType' is a specialization of 'IAccessPointOwner'.
+The class 'carnot_ApplicationTypeType' is a specialization of 'IMetaType'.
+The class 'carnot_BindActionType' is a specialization of 'AbstractEventAction'.
+The class 'carnot_ConditionalPerformerSymbolType' is a specialization of 'IModelParticipantSymbol'.
+The class 'carnot_ConditionalPerformerType' is a specialization of 'IModelParticipant'.
+The class 'carnot_ContextType' is a specialization of 'IModelElement'.
+The class 'carnot_ContextType' is a specialization of 'IExtensibleElement'.
+The class 'carnot_ContextType' is a specialization of 'ITypedElement'.
+The class 'carnot_ContextType' is a specialization of 'IAccessPointOwner'.
+The class 'carnot_DataMappingConnectionType' is a specialization of 'IConnectionSymbol'.
+The class 'carnot_DataMappingType' is a specialization of 'IModelElement'.
+The class 'carnot_DataMappingType' is a specialization of 'IIdentifiableElement'.
+The class 'carnot_DataMappingType' is a specialization of 'IExtensibleElement'.
+The class 'carnot_DataPathType' is a specialization of 'IIdentifiableModelElement'.
+The class 'carnot_DataSymbolType' is a specialization of 'IModelElementNodeSymbol'.
+The class 'carnot_DataType' is a specialization of 'IIdentifiableModelElement'.
+The class 'carnot_DataType' is a specialization of 'ITypedElement'.
+The class 'carnot_DataTypeType' is a specialization of 'IMetaType'.
+The class 'carnot_DiagramType' is a specialization of 'ISymbolContainer'.
+The class 'carnot_DiagramType' is a specialization of 'IModelElement'.
+The class 'carnot_DiagramType' is a specialization of 'IExtensibleElement'.
+The class 'carnot_EndEventSymbol' is a specialization of 'AbstractEventSymbol'.
+The class 'carnot_EventActionType' is a specialization of 'AbstractEventAction'.
+The class 'carnot_EventActionTypeType' is a specialization of 'IMetaType'.
+The class 'carnot_EventConditionTypeType' is a specialization of 'IMetaType'.
+The class 'carnot_EventHandlerType' is a specialization of 'IIdentifiableModelElement'.
+The class 'carnot_EventHandlerType' is a specialization of 'ITypedElement'.
+The class 'carnot_EventHandlerType' is a specialization of 'IAccessPointOwner'.
+The class 'carnot_ExecutedByConnectionType' is a specialization of 'IConnectionSymbol'.
+The class 'carnot_GatewaySymbol' is a specialization of 'IFlowObjectSymbol'.
+The class 'carnot_GenericLinkConnectionType' is a specialization of 'IConnectionSymbol'.
+The class 'carnot_GenericLinkConnectionType' is a specialization of 'ITypedElement'.
+The class 'carnot_GroupSymbolType' is a specialization of 'ISymbolContainer'.
+The class 'carnot_GroupSymbolType' is a specialization of 'INodeSymbol'.
+The class 'carnot_IntermediateEventSymbol' is a specialization of 'AbstractEventSymbol'.
+The class 'carnot_LaneSymbol' is a specialization of 'ISymbolContainer'.
+The class 'carnot_LaneSymbol' is a specialization of 'ISwimlaneSymbol'.
+The class 'carnot_LinkTypeType' is a specialization of 'IMetaType'.
+The class 'carnot_LinkTypeType' is a specialization of 'IExtensibleElement'.
+The class 'carnot_ModelerSymbolType' is a specialization of 'IModelElementNodeSymbol'.
+The class 'carnot_ModelerType' is a specialization of 'IIdentifiableModelElement'.
+The class 'carnot_ModelType' is a specialization of 'IIdentifiableElement'.
+The class 'carnot_ModelType' is a specialization of 'IExtensibleElement'.
+The class 'carnot_OrganizationSymbolType' is a specialization of 'IModelParticipantSymbol'.
+The class 'carnot_OrganizationType' is a specialization of 'IModelParticipant'.
+The class 'carnot_ParameterMappingType' is a specialization of 'IModelElement'.
+The class 'carnot_PartOfConnectionType' is a specialization of 'IConnectionSymbol'.
+The class 'carnot_PerformsConnectionType' is a specialization of 'IConnectionSymbol'.
+The class 'carnot_PoolSymbol' is a specialization of 'ISymbolContainer'.
+The class 'carnot_PoolSymbol' is a specialization of 'ISwimlaneSymbol'.
+The class 'carnot_ProcessDefinitionType' is a specialization of 'IIdentifiableModelElement'.
+The class 'carnot_ProcessDefinitionType' is a specialization of 'IEventHandlerOwner'.
+The class 'carnot_ProcessDefinitionType' is a specialization of 'IdRefOwner'.
+The class 'carnot_ProcessSymbolType' is a specialization of 'IModelElementNodeSymbol'.
+The class 'carnot_PublicInterfaceSymbol' is a specialization of 'AbstractEventSymbol'.
+The class 'carnot_RefersToConnectionType' is a specialization of 'IConnectionSymbol'.
+The class 'carnot_RoleSymbolType' is a specialization of 'IModelParticipantSymbol'.
+The class 'carnot_RoleType' is a specialization of 'IModelParticipant'.
+The class 'carnot_StartEventSymbol' is a specialization of 'AbstractEventSymbol'.
+The class 'carnot_SubProcessOfConnectionType' is a specialization of 'IConnectionSymbol'.
+The class 'carnot_TeamLeadConnectionType' is a specialization of 'IConnectionSymbol'.
+The class 'carnot_TextSymbolType' is a specialization of 'INodeSymbol'.
+The class 'carnot_TransitionConnectionType' is a specialization of 'IConnectionSymbol'.
+The class 'carnot_TransitionType' is a specialization of 'IIdentifiableModelElement'.
+The class 'carnot_TriggersConnectionType' is a specialization of 'IConnectionSymbol'.
+The class 'carnot_TriggerType' is a specialization of 'IIdentifiableModelElement'.
+The class 'carnot_TriggerType' is a specialization of 'ITypedElement'.
+The class 'carnot_TriggerType' is a specialization of 'IAccessPointOwner'.
+The class 'carnot_TriggerTypeType' is a specialization of 'IMetaType'.
+The class 'carnot_UnbindActionType' is a specialization of 'AbstractEventAction'.
+The class 'carnot_ViewType' is a specialization of 'IModelElement'.
+The class 'carnot_ViewType' is a specialization of 'IExtensibleElement'.
+The class 'carnot_WorksForConnectionType' is a specialization of 'IConnectionSymbol'.
+
+Relationships between classes are modeled using associations.
+An association connects 'carnot_AttributeType' and 'carnot_IExtensibleElement'. From 'carnot_AttributeType', the role 'carnot_AttributeType' has cardinality 0..*, and from 'carnot_IExtensibleElement', the role 'carnot_IExtensibleElement' has cardinality 0..*.
+An association connects 'carnot_IdentifiableReference' and 'carnot_AttributeType'. From 'carnot_IdentifiableReference', the role 'reference' has cardinality 0..*, and from 'carnot_AttributeType', the role 'AttributeType' has cardinality 0..*.
+An association connects 'carnot_IdentifiableReference' and 'carnot_EObject'. From 'carnot_IdentifiableReference', the role 'carnot_IdentifiableReference' has cardinality 0..*, and from 'carnot_EObject', the role 'carnot_EObject' has cardinality 0..*.
+An association connects 'carnot_DescriptionType' and 'carnot_IIdentifiableModelElement'. From 'carnot_DescriptionType', the role 'carnot_DescriptionType' has cardinality 0..*, and from 'carnot_IIdentifiableModelElement', the role 'carnot_IIdentifiableModelElement' has cardinality 0..*.
+An association connects 'carnot_EventHandlerType' and 'carnot_IEventHandlerOwner'. From 'carnot_EventHandlerType', the role 'carnot_EventHandlerType' has cardinality 0..*, and from 'carnot_IEventHandlerOwner', the role 'carnot_IEventHandlerOwner' has cardinality 0..*.
+An association connects 'carnot_IAccessPointOwner' and 'carnot_AccessPointType'. From 'carnot_IAccessPointOwner', the role 'carnot_IAccessPointOwner' has cardinality 0..*, and from 'carnot_AccessPointType', the role 'carnot_AccessPointType' has cardinality 0..*.
+An association connects 'carnot_ActivitySymbolType' and 'carnot_ISymbolContainer'. From 'carnot_ActivitySymbolType', the role 'carnot_ActivitySymbolType' has cardinality 0..*, and from 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer' has cardinality 0..*.
+An association connects 'carnot_ISymbolContainer' and 'carnot_AnnotationSymbolType'. From 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer8' has cardinality 0..*, and from 'carnot_AnnotationSymbolType', the role 'carnot_AnnotationSymbolType' has cardinality 0..*.
+An association connects 'carnot_ApplicationSymbolType' and 'carnot_ISymbolContainer'. From 'carnot_ApplicationSymbolType', the role 'carnot_ApplicationSymbolType' has cardinality 0..*, and from 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer10' has cardinality 0..*.
+An association connects 'carnot_ISymbolContainer' and 'carnot_ConditionalPerformerSymbolType'. From 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer12' has cardinality 0..*, and from 'carnot_ConditionalPerformerSymbolType', the role 'carnot_ConditionalPerformerSymbolType' has cardinality 0..*.
+An association connects 'carnot_DataSymbolType' and 'carnot_ISymbolContainer'. From 'carnot_DataSymbolType', the role 'carnot_DataSymbolType' has cardinality 0..*, and from 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer14' has cardinality 0..*.
+An association connects 'carnot_EndEventSymbol' and 'carnot_ISymbolContainer'. From 'carnot_EndEventSymbol', the role 'carnot_EndEventSymbol' has cardinality 0..*, and from 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer16' has cardinality 0..*.
+An association connects 'carnot_GatewaySymbol' and 'carnot_ISymbolContainer'. From 'carnot_GatewaySymbol', the role 'carnot_GatewaySymbol' has cardinality 0..*, and from 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer18' has cardinality 0..*.
+An association connects 'carnot_ISymbolContainer' and 'carnot_GroupSymbolType'. From 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer20' has cardinality 0..*, and from 'carnot_GroupSymbolType', the role 'carnot_GroupSymbolType' has cardinality 0..*.
+An association connects 'carnot_IntermediateEventSymbol' and 'carnot_ISymbolContainer'. From 'carnot_IntermediateEventSymbol', the role 'carnot_IntermediateEventSymbol' has cardinality 0..*, and from 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer22' has cardinality 0..*.
+An association connects 'carnot_ISymbolContainer' and 'carnot_ModelerSymbolType'. From 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer24' has cardinality 0..*, and from 'carnot_ModelerSymbolType', the role 'carnot_ModelerSymbolType' has cardinality 0..*.
+An association connects 'carnot_ISymbolContainer' and 'carnot_OrganizationSymbolType'. From 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer26' has cardinality 0..*, and from 'carnot_OrganizationSymbolType', the role 'carnot_OrganizationSymbolType' has cardinality 0..*.
+An association connects 'carnot_ISymbolContainer' and 'carnot_ProcessSymbolType'. From 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer28' has cardinality 0..*, and from 'carnot_ProcessSymbolType', the role 'carnot_ProcessSymbolType' has cardinality 0..*.
+An association connects 'carnot_ISymbolContainer' and 'carnot_PublicInterfaceSymbol'. From 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer30' has cardinality 0..*, and from 'carnot_PublicInterfaceSymbol', the role 'carnot_PublicInterfaceSymbol' has cardinality 0..*.
+An association connects 'carnot_ISymbolContainer' and 'carnot_RoleSymbolType'. From 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer32' has cardinality 0..*, and from 'carnot_RoleSymbolType', the role 'carnot_RoleSymbolType' has cardinality 0..*.
+An association connects 'carnot_StartEventSymbol' and 'carnot_ISymbolContainer'. From 'carnot_StartEventSymbol', the role 'carnot_StartEventSymbol' has cardinality 0..*, and from 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer34' has cardinality 0..*.
+An association connects 'carnot_TextSymbolType' and 'carnot_ISymbolContainer'. From 'carnot_TextSymbolType', the role 'carnot_TextSymbolType' has cardinality 0..*, and from 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer36' has cardinality 0..*.
+An association connects 'carnot_DataMappingConnectionType' and 'carnot_ISymbolContainer'. From 'carnot_DataMappingConnectionType', the role 'carnot_DataMappingConnectionType' has cardinality 0..*, and from 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer38' has cardinality 0..*.
+An association connects 'carnot_ISymbolContainer' and 'carnot_ExecutedByConnectionType'. From 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer40' has cardinality 0..*, and from 'carnot_ExecutedByConnectionType', the role 'carnot_ExecutedByConnectionType' has cardinality 0..*.
+An association connects 'carnot_ISymbolContainer' and 'carnot_GenericLinkConnectionType'. From 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer42' has cardinality 0..*, and from 'carnot_GenericLinkConnectionType', the role 'carnot_GenericLinkConnectionType' has cardinality 0..*.
+An association connects 'carnot_PartOfConnectionType' and 'carnot_ISymbolContainer'. From 'carnot_PartOfConnectionType', the role 'carnot_PartOfConnectionType' has cardinality 0..*, and from 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer44' has cardinality 0..*.
+An association connects 'carnot_ISymbolContainer' and 'carnot_PerformsConnectionType'. From 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer46' has cardinality 0..*, and from 'carnot_PerformsConnectionType', the role 'carnot_PerformsConnectionType' has cardinality 0..*.
+An association connects 'carnot_TriggersConnectionType' and 'carnot_ISymbolContainer'. From 'carnot_TriggersConnectionType', the role 'carnot_TriggersConnectionType' has cardinality 0..*, and from 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer48' has cardinality 0..*.
+An association connects 'carnot_ISymbolContainer' and 'carnot_RefersToConnectionType'. From 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer50' has cardinality 0..*, and from 'carnot_RefersToConnectionType', the role 'carnot_RefersToConnectionType' has cardinality 0..*.
+An association connects 'carnot_ISymbolContainer' and 'carnot_SubProcessOfConnectionType'. From 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer52' has cardinality 0..*, and from 'carnot_SubProcessOfConnectionType', the role 'carnot_SubProcessOfConnectionType' has cardinality 0..*.
+An association connects 'carnot_ISymbolContainer' and 'carnot_TransitionConnectionType'. From 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer54' has cardinality 0..*, and from 'carnot_TransitionConnectionType', the role 'carnot_TransitionConnectionType' has cardinality 0..*.
+An association connects 'carnot_WorksForConnectionType' and 'carnot_ISymbolContainer'. From 'carnot_WorksForConnectionType', the role 'carnot_WorksForConnectionType' has cardinality 0..*, and from 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer56' has cardinality 0..*.
+An association connects 'carnot_ISymbolContainer' and 'carnot_TeamLeadConnectionType'. From 'carnot_ISymbolContainer', the role 'carnot_ISymbolContainer58' has cardinality 0..*, and from 'carnot_TeamLeadConnectionType', the role 'carnot_TeamLeadConnectionType' has cardinality 0..*.
+An association connects 'carnot_IGraphicalObject' and 'carnot_RefersToConnectionType'. From 'carnot_IGraphicalObject', the role 'to' has cardinality 0..*, and from 'carnot_RefersToConnectionType', the role 'RefersToConnectionType' has cardinality 0..*.
+An association connects 'carnot_IGraphicalObject' and 'carnot_RefersToConnectionType'. From 'carnot_IGraphicalObject', the role 'from' has cardinality 0..*, and from 'carnot_RefersToConnectionType', the role 'RefersToConnectionType61' has cardinality 0..*.
+An association connects 'carnot_INodeSymbol' and 'carnot_GenericLinkConnectionType'. From 'carnot_INodeSymbol', the role 'targetSymbol' has cardinality 0..*, and from 'carnot_GenericLinkConnectionType', the role 'GenericLinkConnectionType' has cardinality 0..*.
+An association connects 'carnot_INodeSymbol' and 'carnot_GenericLinkConnectionType'. From 'carnot_INodeSymbol', the role 'sourceSymbol' has cardinality 0..*, and from 'carnot_GenericLinkConnectionType', the role 'GenericLinkConnectionType64' has cardinality 0..*.
+An association connects 'carnot_ISwimlaneSymbol' and 'carnot_IModelParticipant'. From 'carnot_ISwimlaneSymbol', the role 'performedSwimlanes' has cardinality 0..*, and from 'carnot_IModelParticipant', the role 'IModelParticipant' has cardinality 0..*.
+An association connects 'carnot_LaneSymbol' and 'carnot_ISwimlaneSymbol'. From 'carnot_LaneSymbol', the role 'LaneSymbol' has cardinality 0..*, and from 'carnot_ISwimlaneSymbol', the role 'parentLane' has cardinality 0..*.
+An association connects 'carnot_IModelParticipant' and 'carnot_ISwimlaneSymbol'. From 'carnot_IModelParticipant', the role 'carnot_IModelParticipant' has cardinality 0..*, and from 'carnot_ISwimlaneSymbol', the role 'carnot_ISwimlaneSymbol' has cardinality 0..*.
+An association connects 'carnot_TransitionConnectionType' and 'carnot_IFlowObjectSymbol'. From 'carnot_TransitionConnectionType', the role 'TransitionConnectionType' has cardinality 0..*, and from 'carnot_IFlowObjectSymbol', the role 'targetActivitySymbol' has cardinality 0..*.
+An association connects 'carnot_IFlowObjectSymbol' and 'carnot_TransitionConnectionType'. From 'carnot_IFlowObjectSymbol', the role 'sourceActivitySymbol' has cardinality 0..*, and from 'carnot_TransitionConnectionType', the role 'TransitionConnectionType70' has cardinality 0..*.
+An association connects 'carnot_Coordinates' and 'carnot_IConnectionSymbol'. From 'carnot_Coordinates', the role 'carnot_Coordinates' has cardinality 0..*, and from 'carnot_IConnectionSymbol', the role 'carnot_IConnectionSymbol' has cardinality 0..*.
+An association connects 'carnot_IModelParticipant' and 'carnot_ActivityType'. From 'carnot_IModelParticipant', the role 'performer' has cardinality 0..*, and from 'carnot_ActivityType', the role 'ActivityType' has cardinality 0..*.
+An association connects 'carnot_ISwimlaneSymbol' and 'carnot_IModelParticipant'. From 'carnot_ISwimlaneSymbol', the role 'ISwimlaneSymbol' has cardinality 0..*, and from 'carnot_IModelParticipant', the role 'participant' has cardinality 0..*.
+An association connects 'carnot_IModelParticipant' and 'carnot_ParticipantType'. From 'carnot_IModelParticipant', the role 'participant75' has cardinality 0..*, and from 'carnot_ParticipantType', the role 'ParticipantType' has cardinality 0..*.
+An association connects 'carnot_PerformsConnectionType' and 'carnot_IModelParticipantSymbol'. From 'carnot_PerformsConnectionType', the role 'PerformsConnectionType' has cardinality 0..*, and from 'carnot_IModelParticipantSymbol', the role 'participantSymbol' has cardinality 0..*.
+An association connects 'carnot_IModelParticipantSymbol' and 'carnot_TriggersConnectionType'. From 'carnot_IModelParticipantSymbol', the role 'participantSymbol78' has cardinality 0..*, and from 'carnot_TriggersConnectionType', the role 'TriggersConnectionType' has cardinality 0..*.
+An association connects 'carnot_AbstractEventAction' and 'carnot_EventActionTypeType'. From 'carnot_AbstractEventAction', the role 'actionInstances' has cardinality 0..*, and from 'carnot_EventActionTypeType', the role 'EventActionTypeType' has cardinality 0..*.
+An association connects 'carnot_AccessPointType' and 'carnot_DataTypeType'. From 'carnot_AccessPointType', the role 'carnot_AccessPointType81' has cardinality 0..*, and from 'carnot_DataTypeType', the role 'carnot_DataTypeType' has cardinality 0..*.
+An association connects 'carnot_ActivitySymbolType' and 'carnot_ActivityType'. From 'carnot_ActivitySymbolType', the role 'activitySymbols' has cardinality 0..*, and from 'carnot_ActivityType', the role 'ActivityType83' has cardinality 0..*.
+An association connects 'carnot_PerformsConnectionType' and 'carnot_ActivitySymbolType'. From 'carnot_PerformsConnectionType', the role 'PerformsConnectionType85' has cardinality 0..*, and from 'carnot_ActivitySymbolType', the role 'activitySymbol' has cardinality 0..*.
+An association connects 'carnot_ExecutedByConnectionType' and 'carnot_ActivitySymbolType'. From 'carnot_ExecutedByConnectionType', the role 'ExecutedByConnectionType' has cardinality 0..*, and from 'carnot_ActivitySymbolType', the role 'activitySymbol87' has cardinality 0..*.
+An association connects 'carnot_DataMappingConnectionType' and 'carnot_ActivitySymbolType'. From 'carnot_DataMappingConnectionType', the role 'DataMappingConnectionType' has cardinality 0..*, and from 'carnot_ActivitySymbolType', the role 'activitySymbol89' has cardinality 0..*.
+An association connects 'carnot_ActivitySymbolType' and 'carnot_GatewaySymbol'. From 'carnot_ActivitySymbolType', the role 'activitySymbol91' has cardinality 0..*, and from 'carnot_GatewaySymbol', the role 'GatewaySymbol' has cardinality 0..*.
+An association connects 'carnot_ActivityType' and 'carnot_DataMappingType'. From 'carnot_ActivityType', the role 'carnot_ActivityType' has cardinality 0..*, and from 'carnot_DataMappingType', the role 'carnot_DataMappingType' has cardinality 0..*.
+An association connects 'carnot_ApplicationType' and 'carnot_ActivityType'. From 'carnot_ApplicationType', the role 'ApplicationType' has cardinality 0..*, and from 'carnot_ActivityType', the role 'executedActivities' has cardinality 0..*.
+An association connects 'carnot_ProcessDefinitionType' and 'carnot_ActivityType'. From 'carnot_ProcessDefinitionType', the role 'ProcessDefinitionType' has cardinality 0..*, and from 'carnot_ActivityType', the role 'executingActivities' has cardinality 0..*.
+An association connects 'carnot_ActivityType' and 'carnot_IModelParticipant'. From 'carnot_ActivityType', the role 'performedActivities' has cardinality 0..*, and from 'carnot_IModelParticipant', the role 'IModelParticipant96' has cardinality 0..*.
+An association connects 'carnot_IModelParticipant' and 'carnot_ActivityType'. From 'carnot_IModelParticipant', the role 'carnot_IModelParticipant99' has cardinality 0..*, and from 'carnot_ActivityType', the role 'carnot_ActivityType98' has cardinality 0..*.
+An association connects 'carnot_ActivitySymbolType' and 'carnot_ActivityType'. From 'carnot_ActivitySymbolType', the role 'ActivitySymbolType' has cardinality 0..*, and from 'carnot_ActivityType', the role 'activity' has cardinality 0..*.
+An association connects 'carnot_StartEventSymbol' and 'carnot_ActivityType'. From 'carnot_StartEventSymbol', the role 'StartEventSymbol' has cardinality 0..*, and from 'carnot_ActivityType', the role 'startActivity' has cardinality 0..*.
+An association connects 'carnot_ActivityType' and 'carnot_TransitionType'. From 'carnot_ActivityType', the role 'to103' has cardinality 0..*, and from 'carnot_TransitionType', the role 'TransitionType' has cardinality 0..*.
+An association connects 'carnot_ActivityType' and 'carnot_TransitionType'. From 'carnot_ActivityType', the role 'from105' has cardinality 0..*, and from 'carnot_TransitionType', the role 'TransitionType106' has cardinality 0..*.
+An association connects 'carnot_Code' and 'carnot_ActivityType'. From 'carnot_Code', the role 'carnot_Code' has cardinality 0..*, and from 'carnot_ActivityType', the role 'carnot_ActivityType108' has cardinality 0..*.
+An association connects 'carnot_ActivityType' and 'carnot_LoopType'. From 'carnot_ActivityType', the role 'carnot_ActivityType110' has cardinality 0..*, and from 'carnot_LoopType', the role 'carnot_LoopType' has cardinality 0..*.
+An association connects 'carnot_AnnotationSymbolType' and 'carnot_TextType'. From 'carnot_AnnotationSymbolType', the role 'carnot_AnnotationSymbolType112' has cardinality 0..*, and from 'carnot_TextType', the role 'carnot_TextType' has cardinality 0..*.
+An association connects 'carnot_ContextType' and 'carnot_ApplicationContextTypeType'. From 'carnot_ContextType', the role 'ContextType' has cardinality 0..*, and from 'carnot_ApplicationContextTypeType', the role 'type' has cardinality 0..*.
+An association connects 'carnot_ExecutedByConnectionType' and 'carnot_ApplicationSymbolType'. From 'carnot_ExecutedByConnectionType', the role 'ExecutedByConnectionType115' has cardinality 0..*, and from 'carnot_ApplicationSymbolType', the role 'applicationSymbol' has cardinality 0..*.
+An association connects 'carnot_ApplicationSymbolType' and 'carnot_ApplicationType'. From 'carnot_ApplicationSymbolType', the role 'applicationSymbols' has cardinality 0..*, and from 'carnot_ApplicationType', the role 'ApplicationType117' has cardinality 0..*.
+An association connects 'carnot_ApplicationType' and 'carnot_ContextType'. From 'carnot_ApplicationType', the role 'carnot_ApplicationType' has cardinality 0..*, and from 'carnot_ContextType', the role 'carnot_ContextType' has cardinality 0..*.
+An association connects 'carnot_ApplicationType' and 'carnot_ApplicationTypeType'. From 'carnot_ApplicationType', the role 'applications' has cardinality 0..*, and from 'carnot_ApplicationTypeType', the role 'ApplicationTypeType' has cardinality 0..*.
+An association connects 'carnot_ApplicationType' and 'carnot_ActivityType'. From 'carnot_ApplicationType', the role 'application' has cardinality 0..*, and from 'carnot_ActivityType', the role 'ActivityType121' has cardinality 0..*.
+An association connects 'carnot_ApplicationType' and 'carnot_ApplicationSymbolType'. From 'carnot_ApplicationType', the role 'application123' has cardinality 0..*, and from 'carnot_ApplicationSymbolType', the role 'ApplicationSymbolType' has cardinality 0..*.
+An association connects 'carnot_ApplicationType' and 'carnot_ApplicationTypeType'. From 'carnot_ApplicationType', the role 'ApplicationType126' has cardinality 0..*, and from 'carnot_ApplicationTypeType', the role 'type125' has cardinality 0..*.
+An association connects 'carnot_AttributeType' and 'carnot_XmlTextNode'. From 'carnot_AttributeType', the role 'carnot_AttributeType128' has cardinality 0..*, and from 'carnot_XmlTextNode', the role 'carnot_XmlTextNode' has cardinality 0..*.
+An association connects 'carnot_AttributeType' and 'carnot_IdentifiableReference'. From 'carnot_AttributeType', the role 'attribute' has cardinality 0..*, and from 'carnot_IdentifiableReference', the role 'IdentifiableReference' has cardinality 0..*.
+An association connects 'carnot_ConditionalPerformerSymbolType' and 'carnot_ConditionalPerformerType'. From 'carnot_ConditionalPerformerSymbolType', the role 'conditionalPerformerSymbols' has cardinality 0..*, and from 'carnot_ConditionalPerformerType', the role 'ConditionalPerformerType' has cardinality 0..*.
+An association connects 'carnot_DataType' and 'carnot_ConditionalPerformerType'. From 'carnot_DataType', the role 'DataType' has cardinality 0..*, and from 'carnot_ConditionalPerformerType', the role 'conditionalPerformers' has cardinality 0..*.
+An association connects 'carnot_ConditionalPerformerSymbolType' and 'carnot_ConditionalPerformerType'. From 'carnot_ConditionalPerformerSymbolType', the role 'ConditionalPerformerSymbolType' has cardinality 0..*, and from 'carnot_ConditionalPerformerType', the role 'participant133' has cardinality 0..*.
+An association connects 'carnot_DescriptionType' and 'carnot_ContextType'. From 'carnot_DescriptionType', the role 'carnot_DescriptionType136' has cardinality 0..*, and from 'carnot_ContextType', the role 'carnot_ContextType135' has cardinality 0..*.
+An association connects 'carnot_ApplicationContextTypeType' and 'carnot_ContextType'. From 'carnot_ApplicationContextTypeType', the role 'ApplicationContextTypeType' has cardinality 0..*, and from 'carnot_ContextType', the role 'contexts' has cardinality 0..*.
+An association connects 'carnot_DataMappingConnectionType' and 'carnot_ActivitySymbolType'. From 'carnot_DataMappingConnectionType', the role 'dataMappings' has cardinality 0..*, and from 'carnot_ActivitySymbolType', the role 'ActivitySymbolType139' has cardinality 0..*.
+An association connects 'carnot_DataSymbolType' and 'carnot_DataMappingConnectionType'. From 'carnot_DataSymbolType', the role 'DataSymbolType' has cardinality 0..*, and from 'carnot_DataMappingConnectionType', the role 'dataMappings141' has cardinality 0..*.
+An association connects 'carnot_DataMappingType' and 'carnot_DataType'. From 'carnot_DataMappingType', the role 'dataMappings143' has cardinality 0..*, and from 'carnot_DataType', the role 'DataType144' has cardinality 0..*.
+An association connects 'carnot_DataType' and 'carnot_DataPathType'. From 'carnot_DataType', the role 'DataType146' has cardinality 0..*, and from 'carnot_DataPathType', the role 'dataPaths' has cardinality 0..*.
+An association connects 'carnot_DataSymbolType' and 'carnot_DataType'. From 'carnot_DataSymbolType', the role 'dataSymbols' has cardinality 0..*, and from 'carnot_DataType', the role 'DataType148' has cardinality 0..*.
+An association connects 'carnot_DataSymbolType' and 'carnot_DataMappingConnectionType'. From 'carnot_DataSymbolType', the role 'dataSymbol' has cardinality 0..*, and from 'carnot_DataMappingConnectionType', the role 'DataMappingConnectionType150' has cardinality 0..*.
+An association connects 'carnot_DataMappingType' and 'carnot_DataType'. From 'carnot_DataMappingType', the role 'DataMappingType' has cardinality 0..*, and from 'carnot_DataType', the role 'data' has cardinality 0..*.
+An association connects 'carnot_DataType' and 'carnot_DataTypeType'. From 'carnot_DataType', the role 'data153' has cardinality 0..*, and from 'carnot_DataTypeType', the role 'DataTypeType' has cardinality 0..*.
+An association connects 'carnot_DataSymbolType' and 'carnot_DataType'. From 'carnot_DataSymbolType', the role 'DataSymbolType156' has cardinality 0..*, and from 'carnot_DataType', the role 'data155' has cardinality 0..*.
+An association connects 'carnot_ConditionalPerformerType' and 'carnot_DataType'. From 'carnot_ConditionalPerformerType', the role 'ConditionalPerformerType159' has cardinality 0..*, and from 'carnot_DataType', the role 'data158' has cardinality 0..*.
+An association connects 'carnot_DataPathType' and 'carnot_DataType'. From 'carnot_DataPathType', the role 'DataPathType' has cardinality 0..*, and from 'carnot_DataType', the role 'data161' has cardinality 0..*.
+An association connects 'carnot_DataType' and 'carnot_ParameterMappingType'. From 'carnot_DataType', the role 'data163' has cardinality 0..*, and from 'carnot_ParameterMappingType', the role 'ParameterMappingType' has cardinality 0..*.
+An association connects 'carnot_ExternalReferenceType' and 'carnot_DataType'. From 'carnot_ExternalReferenceType', the role 'carnot_ExternalReferenceType' has cardinality 0..*, and from 'carnot_DataType', the role 'carnot_DataType' has cardinality 0..*.
+An association connects 'carnot_DataTypeType' and 'carnot_DataType'. From 'carnot_DataTypeType', the role 'type166' has cardinality 0..*, and from 'carnot_DataType', the role 'DataType167' has cardinality 0..*.
+An association connects 'carnot_PoolSymbol' and 'carnot_DiagramType'. From 'carnot_PoolSymbol', the role 'PoolSymbol' has cardinality 0..*, and from 'carnot_DiagramType', the role 'diagram' has cardinality 0..*.
+An association connects 'carnot_EStringToStringMapEntry' and 'carnot_DocumentRoot'. From 'carnot_EStringToStringMapEntry', the role 'carnot_EStringToStringMapEntry' has cardinality 0..*, and from 'carnot_DocumentRoot', the role 'carnot_DocumentRoot' has cardinality 0..*.
+An association connects 'carnot_EStringToStringMapEntry' and 'carnot_DocumentRoot'. From 'carnot_EStringToStringMapEntry', the role 'carnot_EStringToStringMapEntry172' has cardinality 0..*, and from 'carnot_DocumentRoot', the role 'carnot_DocumentRoot171' has cardinality 0..*.
+An association connects 'carnot_ModelType' and 'carnot_DocumentRoot'. From 'carnot_ModelType', the role 'carnot_ModelType' has cardinality 0..*, and from 'carnot_DocumentRoot', the role 'carnot_DocumentRoot174' has cardinality 0..*.
+An association connects 'carnot_EventActionTypeType' and 'carnot_AbstractEventAction'. From 'carnot_EventActionTypeType', the role 'type176' has cardinality 0..*, and from 'carnot_AbstractEventAction', the role 'AbstractEventAction' has cardinality 0..*.
+An association connects 'carnot_EventHandlerType' and 'carnot_EventConditionTypeType'. From 'carnot_EventHandlerType', the role 'EventHandlerType' has cardinality 0..*, and from 'carnot_EventConditionTypeType', the role 'type178' has cardinality 0..*.
+An association connects 'carnot_EventHandlerType' and 'carnot_BindActionType'. From 'carnot_EventHandlerType', the role 'carnot_EventHandlerType180' has cardinality 0..*, and from 'carnot_BindActionType', the role 'carnot_BindActionType' has cardinality 0..*.
+An association connects 'carnot_EventActionType' and 'carnot_EventHandlerType'. From 'carnot_EventActionType', the role 'carnot_EventActionType' has cardinality 0..*, and from 'carnot_EventHandlerType', the role 'carnot_EventHandlerType182' has cardinality 0..*.
+An association connects 'carnot_UnbindActionType' and 'carnot_EventHandlerType'. From 'carnot_UnbindActionType', the role 'carnot_UnbindActionType' has cardinality 0..*, and from 'carnot_EventHandlerType', the role 'carnot_EventHandlerType184' has cardinality 0..*.
+An association connects 'carnot_EventHandlerType' and 'carnot_EventConditionTypeType'. From 'carnot_EventHandlerType', the role 'eventHandlers' has cardinality 0..*, and from 'carnot_EventConditionTypeType', the role 'EventConditionTypeType' has cardinality 0..*.
+An association connects 'carnot_ExecutedByConnectionType' and 'carnot_ActivitySymbolType'. From 'carnot_ExecutedByConnectionType', the role 'executedByConnections' has cardinality 0..*, and from 'carnot_ActivitySymbolType', the role 'ActivitySymbolType187' has cardinality 0..*.
+An association connects 'carnot_ApplicationSymbolType' and 'carnot_ExecutedByConnectionType'. From 'carnot_ApplicationSymbolType', the role 'ApplicationSymbolType190' has cardinality 0..*, and from 'carnot_ExecutedByConnectionType', the role 'executingActivities189' has cardinality 0..*.
+An association connects 'carnot_IdRef' and 'carnot_ExternalPackage'. From 'carnot_IdRef', the role 'carnot_IdRef' has cardinality 0..*, and from 'carnot_ExternalPackage', the role 'carnot_ExternalPackage' has cardinality 0..*.
+An association connects 'carnot_IdRefOwner' and 'carnot_IdRef'. From 'carnot_IdRefOwner', the role 'carnot_IdRefOwner' has cardinality 0..*, and from 'carnot_IdRef', the role 'carnot_IdRef193' has cardinality 0..*.
+An association connects 'carnot_GatewaySymbol' and 'carnot_ActivitySymbolType'. From 'carnot_GatewaySymbol', the role 'gatewaySymbols' has cardinality 0..*, and from 'carnot_ActivitySymbolType', the role 'ActivitySymbolType195' has cardinality 0..*.
+An association connects 'carnot_GenericLinkConnectionType' and 'carnot_LinkTypeType'. From 'carnot_GenericLinkConnectionType', the role 'linkInstances' has cardinality 0..*, and from 'carnot_LinkTypeType', the role 'LinkTypeType' has cardinality 0..*.
+An association connects 'carnot_INodeSymbol' and 'carnot_GenericLinkConnectionType'. From 'carnot_INodeSymbol', the role 'INodeSymbol' has cardinality 0..*, and from 'carnot_GenericLinkConnectionType', the role 'outLinks' has cardinality 0..*.
+An association connects 'carnot_INodeSymbol' and 'carnot_GenericLinkConnectionType'. From 'carnot_INodeSymbol', the role 'INodeSymbol199' has cardinality 0..*, and from 'carnot_GenericLinkConnectionType', the role 'inLinks' has cardinality 0..*.
+An association connects 'carnot_PoolSymbol' and 'carnot_LaneSymbol'. From 'carnot_PoolSymbol', the role 'PoolSymbol201' has cardinality 0..*, and from 'carnot_LaneSymbol', the role 'lanes' has cardinality 0..*.
+An association connects 'carnot_ISwimlaneSymbol' and 'carnot_LaneSymbol'. From 'carnot_ISwimlaneSymbol', the role 'ISwimlaneSymbol203' has cardinality 0..*, and from 'carnot_LaneSymbol', the role 'childLanes' has cardinality 0..*.
+An association connects 'carnot_LinkTypeType' and 'carnot_GenericLinkConnectionType'. From 'carnot_LinkTypeType', the role 'linkType' has cardinality 0..*, and from 'carnot_GenericLinkConnectionType', the role 'GenericLinkConnectionType205' has cardinality 0..*.
+An association connects 'carnot_ModelerType' and 'carnot_ModelerSymbolType'. From 'carnot_ModelerType', the role 'ModelerType' has cardinality 0..*, and from 'carnot_ModelerSymbolType', the role 'modelerSymbols' has cardinality 0..*.
+An association connects 'carnot_ModelerType' and 'carnot_ModelerSymbolType'. From 'carnot_ModelerType', the role 'modeler' has cardinality 0..*, and from 'carnot_ModelerSymbolType', the role 'ModelerSymbolType' has cardinality 0..*.
+An association connects 'carnot_ModelType' and 'carnot_DescriptionType'. From 'carnot_ModelType', the role 'carnot_ModelType209' has cardinality 0..*, and from 'carnot_DescriptionType', the role 'carnot_DescriptionType210' has cardinality 0..*.
+An association connects 'carnot_ModelType' and 'carnot_DataTypeType'. From 'carnot_ModelType', the role 'carnot_ModelType212' has cardinality 0..*, and from 'carnot_DataTypeType', the role 'carnot_DataTypeType213' has cardinality 0..*.
+An association connects 'carnot_ModelType' and 'carnot_ApplicationTypeType'. From 'carnot_ModelType', the role 'carnot_ModelType215' has cardinality 0..*, and from 'carnot_ApplicationTypeType', the role 'carnot_ApplicationTypeType' has cardinality 0..*.
+An association connects 'carnot_ApplicationContextTypeType' and 'carnot_ModelType'. From 'carnot_ApplicationContextTypeType', the role 'carnot_ApplicationContextTypeType' has cardinality 0..*, and from 'carnot_ModelType', the role 'carnot_ModelType217' has cardinality 0..*.
+An association connects 'carnot_TriggerTypeType' and 'carnot_ModelType'. From 'carnot_TriggerTypeType', the role 'carnot_TriggerTypeType' has cardinality 0..*, and from 'carnot_ModelType', the role 'carnot_ModelType219' has cardinality 0..*.
+An association connects 'carnot_EventConditionTypeType' and 'carnot_ModelType'. From 'carnot_EventConditionTypeType', the role 'carnot_EventConditionTypeType' has cardinality 0..*, and from 'carnot_ModelType', the role 'carnot_ModelType221' has cardinality 0..*.
+An association connects 'carnot_EventActionTypeType' and 'carnot_ModelType'. From 'carnot_EventActionTypeType', the role 'carnot_EventActionTypeType' has cardinality 0..*, and from 'carnot_ModelType', the role 'carnot_ModelType223' has cardinality 0..*.
+An association connects 'carnot_DataType' and 'carnot_ModelType'. From 'carnot_DataType', the role 'carnot_DataType226' has cardinality 0..*, and from 'carnot_ModelType', the role 'carnot_ModelType225' has cardinality 0..*.
+An association connects 'carnot_ModelType' and 'carnot_ApplicationType'. From 'carnot_ModelType', the role 'carnot_ModelType228' has cardinality 0..*, and from 'carnot_ApplicationType', the role 'carnot_ApplicationType229' has cardinality 0..*.
+An association connects 'carnot_ModelType' and 'carnot_ModelerType'. From 'carnot_ModelType', the role 'carnot_ModelType231' has cardinality 0..*, and from 'carnot_ModelerType', the role 'carnot_ModelerType' has cardinality 0..*.
+An association connects 'carnot_QualityControlType' and 'carnot_ModelType'. From 'carnot_QualityControlType', the role 'carnot_QualityControlType' has cardinality 0..*, and from 'carnot_ModelType', the role 'carnot_ModelType233' has cardinality 0..*.
+An association connects 'carnot_RoleType' and 'carnot_ModelType'. From 'carnot_RoleType', the role 'carnot_RoleType' has cardinality 0..*, and from 'carnot_ModelType', the role 'carnot_ModelType235' has cardinality 0..*.
+An association connects 'carnot_OrganizationType' and 'carnot_ModelType'. From 'carnot_OrganizationType', the role 'carnot_OrganizationType' has cardinality 0..*, and from 'carnot_ModelType', the role 'carnot_ModelType237' has cardinality 0..*.
+An association connects 'carnot_ConditionalPerformerType' and 'carnot_ModelType'. From 'carnot_ConditionalPerformerType', the role 'carnot_ConditionalPerformerType' has cardinality 0..*, and from 'carnot_ModelType', the role 'carnot_ModelType239' has cardinality 0..*.
+An association connects 'carnot_ProcessDefinitionType' and 'carnot_ModelType'. From 'carnot_ProcessDefinitionType', the role 'carnot_ProcessDefinitionType' has cardinality 0..*, and from 'carnot_ModelType', the role 'carnot_ModelType241' has cardinality 0..*.
+An association connects 'carnot_ModelType' and 'carnot_ExternalPackages'. From 'carnot_ModelType', the role 'carnot_ModelType243' has cardinality 0..*, and from 'carnot_ExternalPackages', the role 'carnot_ExternalPackages' has cardinality 0..*.
+An association connects 'carnot_ModelType' and 'carnot_ScriptType'. From 'carnot_ModelType', the role 'carnot_ModelType245' has cardinality 0..*, and from 'carnot_ScriptType', the role 'carnot_ScriptType' has cardinality 0..*.
+An association connects 'carnot_ModelType' and 'carnot_TypeDeclarationsType'. From 'carnot_ModelType', the role 'carnot_ModelType247' has cardinality 0..*, and from 'carnot_TypeDeclarationsType', the role 'carnot_TypeDeclarationsType' has cardinality 0..*.
+An association connects 'carnot_ModelType' and 'carnot_DiagramType'. From 'carnot_ModelType', the role 'carnot_ModelType249' has cardinality 0..*, and from 'carnot_DiagramType', the role 'carnot_DiagramType' has cardinality 0..*.
+An association connects 'carnot_LinkTypeType' and 'carnot_ModelType'. From 'carnot_LinkTypeType', the role 'carnot_LinkTypeType' has cardinality 0..*, and from 'carnot_ModelType', the role 'carnot_ModelType251' has cardinality 0..*.
+An association connects 'carnot_ViewType' and 'carnot_ModelType'. From 'carnot_ViewType', the role 'carnot_ViewType' has cardinality 0..*, and from 'carnot_ModelType', the role 'carnot_ModelType253' has cardinality 0..*.
+An association connects 'carnot_OrganizationType' and 'carnot_OrganizationSymbolType'. From 'carnot_OrganizationType', the role 'OrganizationType' has cardinality 0..*, and from 'carnot_OrganizationSymbolType', the role 'organizationSymbols' has cardinality 0..*.
+An association connects 'carnot_OrganizationSymbolType' and 'carnot_PartOfConnectionType'. From 'carnot_OrganizationSymbolType', the role 'suborganizationSymbol' has cardinality 0..*, and from 'carnot_PartOfConnectionType', the role 'PartOfConnectionType' has cardinality 0..*.
+An association connects 'carnot_PartOfConnectionType' and 'carnot_OrganizationSymbolType'. From 'carnot_PartOfConnectionType', the role 'PartOfConnectionType257' has cardinality 0..*, and from 'carnot_OrganizationSymbolType', the role 'organizationSymbol' has cardinality 0..*.
+An association connects 'carnot_OrganizationSymbolType' and 'carnot_WorksForConnectionType'. From 'carnot_OrganizationSymbolType', the role 'organizationSymbol259' has cardinality 0..*, and from 'carnot_WorksForConnectionType', the role 'WorksForConnectionType' has cardinality 0..*.
+An association connects 'carnot_OrganizationSymbolType' and 'carnot_TeamLeadConnectionType'. From 'carnot_OrganizationSymbolType', the role 'teamSymbol' has cardinality 0..*, and from 'carnot_TeamLeadConnectionType', the role 'TeamLeadConnectionType' has cardinality 0..*.
+An association connects 'carnot_OrganizationType' and 'carnot_ParticipantType'. From 'carnot_OrganizationType', the role 'carnot_OrganizationType262' has cardinality 0..*, and from 'carnot_ParticipantType', the role 'carnot_ParticipantType' has cardinality 0..*.
+An association connects 'carnot_OrganizationType' and 'carnot_OrganizationSymbolType'. From 'carnot_OrganizationType', the role 'organization' has cardinality 0..*, and from 'carnot_OrganizationSymbolType', the role 'OrganizationSymbolType' has cardinality 0..*.
+An association connects 'carnot_OrganizationType' and 'carnot_RoleType'. From 'carnot_OrganizationType', the role 'teams' has cardinality 0..*, and from 'carnot_RoleType', the role 'RoleType' has cardinality 0..*.
+An association connects 'carnot_DataType' and 'carnot_ParameterMappingType'. From 'carnot_DataType', the role 'DataType266' has cardinality 0..*, and from 'carnot_ParameterMappingType', the role 'parameterMappings' has cardinality 0..*.
+An association connects 'carnot_IModelParticipant' and 'carnot_ParticipantType'. From 'carnot_IModelParticipant', the role 'IModelParticipant268' has cardinality 0..*, and from 'carnot_ParticipantType', the role 'participantAssociations' has cardinality 0..*.
+An association connects 'carnot_OrganizationSymbolType' and 'carnot_PartOfConnectionType'. From 'carnot_OrganizationSymbolType', the role 'OrganizationSymbolType270' has cardinality 0..*, and from 'carnot_PartOfConnectionType', the role 'subOrganizations' has cardinality 0..*.
+An association connects 'carnot_PartOfConnectionType' and 'carnot_OrganizationSymbolType'. From 'carnot_PartOfConnectionType', the role 'superOrganizations' has cardinality 0..*, and from 'carnot_OrganizationSymbolType', the role 'OrganizationSymbolType272' has cardinality 0..*.
+An association connects 'carnot_ActivitySymbolType' and 'carnot_PerformsConnectionType'. From 'carnot_ActivitySymbolType', the role 'ActivitySymbolType274' has cardinality 0..*, and from 'carnot_PerformsConnectionType', the role 'performsConnections' has cardinality 0..*.
+An association connects 'carnot_PerformsConnectionType' and 'carnot_IModelParticipantSymbol'. From 'carnot_PerformsConnectionType', the role 'performedActivities276' has cardinality 0..*, and from 'carnot_IModelParticipantSymbol', the role 'IModelParticipantSymbol' has cardinality 0..*.
+An association connects 'carnot_DiagramType' and 'carnot_PoolSymbol'. From 'carnot_DiagramType', the role 'DiagramType' has cardinality 0..*, and from 'carnot_PoolSymbol', the role 'poolSymbols' has cardinality 0..*.
+An association connects 'carnot_PoolSymbol' and 'carnot_ProcessDefinitionType'. From 'carnot_PoolSymbol', the role 'carnot_PoolSymbol' has cardinality 0..*, and from 'carnot_ProcessDefinitionType', the role 'carnot_ProcessDefinitionType279' has cardinality 0..*.
+An association connects 'carnot_PoolSymbol' and 'carnot_LaneSymbol'. From 'carnot_PoolSymbol', the role 'parentPool' has cardinality 0..*, and from 'carnot_LaneSymbol', the role 'LaneSymbol281' has cardinality 0..*.
+An association connects 'carnot_ActivityType' and 'carnot_ProcessDefinitionType'. From 'carnot_ActivityType', the role 'carnot_ActivityType284' has cardinality 0..*, and from 'carnot_ProcessDefinitionType', the role 'carnot_ProcessDefinitionType283' has cardinality 0..*.
+An association connects 'carnot_TransitionType' and 'carnot_ProcessDefinitionType'. From 'carnot_TransitionType', the role 'carnot_TransitionType' has cardinality 0..*, and from 'carnot_ProcessDefinitionType', the role 'carnot_ProcessDefinitionType286' has cardinality 0..*.
+An association connects 'carnot_TriggerType' and 'carnot_ProcessDefinitionType'. From 'carnot_TriggerType', the role 'carnot_TriggerType' has cardinality 0..*, and from 'carnot_ProcessDefinitionType', the role 'carnot_ProcessDefinitionType288' has cardinality 0..*.
+An association connects 'carnot_ProcessDefinitionType' and 'carnot_DataPathType'. From 'carnot_ProcessDefinitionType', the role 'carnot_ProcessDefinitionType290' has cardinality 0..*, and from 'carnot_DataPathType', the role 'carnot_DataPathType' has cardinality 0..*.
+An association connects 'carnot_DiagramType' and 'carnot_ProcessDefinitionType'. From 'carnot_DiagramType', the role 'carnot_DiagramType293' has cardinality 0..*, and from 'carnot_ProcessDefinitionType', the role 'carnot_ProcessDefinitionType292' has cardinality 0..*.
+An association connects 'carnot_ProcessDefinitionType' and 'carnot_ActivityType'. From 'carnot_ProcessDefinitionType', the role 'implementationProcess' has cardinality 0..*, and from 'carnot_ActivityType', the role 'ActivityType295' has cardinality 0..*.
+An association connects 'carnot_ProcessDefinitionType' and 'carnot_ProcessSymbolType'. From 'carnot_ProcessDefinitionType', the role 'process' has cardinality 0..*, and from 'carnot_ProcessSymbolType', the role 'ProcessSymbolType' has cardinality 0..*.
+An association connects 'carnot_ProcessDefinitionType' and 'carnot_FormalParametersType'. From 'carnot_ProcessDefinitionType', the role 'carnot_ProcessDefinitionType298' has cardinality 0..*, and from 'carnot_FormalParametersType', the role 'carnot_FormalParametersType' has cardinality 0..*.
+An association connects 'carnot_ProcessDefinitionType' and 'FormalParameterMappingsType'. From 'carnot_ProcessDefinitionType', the role 'carnot_ProcessDefinitionType300' has cardinality 0..*, and from 'FormalParameterMappingsType', the role 'FormalParameterMappingsType' has cardinality 0..*.
+An association connects 'carnot_ProcessDefinitionType' and 'carnot_ProcessSymbolType'. From 'carnot_ProcessDefinitionType', the role 'ProcessDefinitionType302' has cardinality 0..*, and from 'carnot_ProcessSymbolType', the role 'processSymbols' has cardinality 0..*.
+An association connects 'carnot_SubProcessOfConnectionType' and 'carnot_ProcessSymbolType'. From 'carnot_SubProcessOfConnectionType', the role 'SubProcessOfConnectionType' has cardinality 0..*, and from 'carnot_ProcessSymbolType', the role 'processSymbol' has cardinality 0..*.
+An association connects 'carnot_ProcessSymbolType' and 'carnot_SubProcessOfConnectionType'. From 'carnot_ProcessSymbolType', the role 'subprocessSymbol' has cardinality 0..*, and from 'carnot_SubProcessOfConnectionType', the role 'SubProcessOfConnectionType305' has cardinality 0..*.
+An association connects 'carnot_QualityControlType' and 'carnot_Code'. From 'carnot_QualityControlType', the role 'carnot_QualityControlType307' has cardinality 0..*, and from 'carnot_Code', the role 'carnot_Code308' has cardinality 0..*.
+An association connects 'carnot_RefersToConnectionType' and 'carnot_IGraphicalObject'. From 'carnot_RefersToConnectionType', the role 'referingFromConnections' has cardinality 0..*, and from 'carnot_IGraphicalObject', the role 'IGraphicalObject' has cardinality 0..*.
+An association connects 'carnot_IGraphicalObject' and 'carnot_RefersToConnectionType'. From 'carnot_IGraphicalObject', the role 'IGraphicalObject311' has cardinality 0..*, and from 'carnot_RefersToConnectionType', the role 'referingToConnections' has cardinality 0..*.
+An association connects 'carnot_RoleType' and 'carnot_RoleSymbolType'. From 'carnot_RoleType', the role 'RoleType313' has cardinality 0..*, and from 'carnot_RoleSymbolType', the role 'roleSymbols' has cardinality 0..*.
+An association connects 'carnot_WorksForConnectionType' and 'carnot_RoleSymbolType'. From 'carnot_WorksForConnectionType', the role 'WorksForConnectionType316' has cardinality 0..*, and from 'carnot_RoleSymbolType', the role 'participantSymbol315' has cardinality 0..*.
+An association connects 'carnot_RoleSymbolType' and 'carnot_TeamLeadConnectionType'. From 'carnot_RoleSymbolType', the role 'teamLeadSymbol' has cardinality 0..*, and from 'carnot_TeamLeadConnectionType', the role 'TeamLeadConnectionType318' has cardinality 0..*.
+An association connects 'carnot_OrganizationType' and 'carnot_RoleType'. From 'carnot_OrganizationType', the role 'OrganizationType320' has cardinality 0..*, and from 'carnot_RoleType', the role 'teamLead' has cardinality 0..*.
+An association connects 'carnot_RoleType' and 'carnot_RoleSymbolType'. From 'carnot_RoleType', the role 'role' has cardinality 0..*, and from 'carnot_RoleSymbolType', the role 'RoleSymbolType' has cardinality 0..*.
+An association connects 'carnot_StartEventSymbol' and 'carnot_TriggerType'. From 'carnot_StartEventSymbol', the role 'startingEventSymbols' has cardinality 0..*, and from 'carnot_TriggerType', the role 'TriggerType' has cardinality 0..*.
+An association connects 'carnot_TriggersConnectionType' and 'carnot_StartEventSymbol'. From 'carnot_TriggersConnectionType', the role 'TriggersConnectionType324' has cardinality 0..*, and from 'carnot_StartEventSymbol', the role 'startEventSymbol' has cardinality 0..*.
+An association connects 'carnot_StartEventSymbol' and 'carnot_ActivityType'. From 'carnot_StartEventSymbol', the role 'startingEventSymbols326' has cardinality 0..*, and from 'carnot_ActivityType', the role 'ActivityType327' has cardinality 0..*.
+An association connects 'carnot_SubProcessOfConnectionType' and 'carnot_ProcessSymbolType'. From 'carnot_SubProcessOfConnectionType', the role 'subProcesses' has cardinality 0..*, and from 'carnot_ProcessSymbolType', the role 'ProcessSymbolType329' has cardinality 0..*.
+An association connects 'carnot_SubProcessOfConnectionType' and 'carnot_ProcessSymbolType'. From 'carnot_SubProcessOfConnectionType', the role 'parentProcesses' has cardinality 0..*, and from 'carnot_ProcessSymbolType', the role 'ProcessSymbolType331' has cardinality 0..*.
+An association connects 'carnot_OrganizationSymbolType' and 'carnot_TeamLeadConnectionType'. From 'carnot_OrganizationSymbolType', the role 'OrganizationSymbolType334' has cardinality 0..*, and from 'carnot_TeamLeadConnectionType', the role 'teamLead333' has cardinality 0..*.
+An association connects 'carnot_RoleSymbolType' and 'carnot_TeamLeadConnectionType'. From 'carnot_RoleSymbolType', the role 'RoleSymbolType337' has cardinality 0..*, and from 'carnot_TeamLeadConnectionType', the role 'teams336' has cardinality 0..*.
+An association connects 'carnot_TransitionConnectionType' and 'carnot_IFlowObjectSymbol'. From 'carnot_TransitionConnectionType', the role 'outTransitions' has cardinality 0..*, and from 'carnot_IFlowObjectSymbol', the role 'IFlowObjectSymbol' has cardinality 0..*.
+An association connects 'carnot_IFlowObjectSymbol' and 'carnot_TransitionConnectionType'. From 'carnot_IFlowObjectSymbol', the role 'IFlowObjectSymbol340' has cardinality 0..*, and from 'carnot_TransitionConnectionType', the role 'inTransitions' has cardinality 0..*.
+An association connects 'carnot_TransitionType' and 'carnot_TransitionConnectionType'. From 'carnot_TransitionType', the role 'TransitionType342' has cardinality 0..*, and from 'carnot_TransitionConnectionType', the role 'transitionConnections' has cardinality 0..*.
+An association connects 'carnot_TransitionType' and 'carnot_XmlTextNode'. From 'carnot_TransitionType', the role 'carnot_TransitionType344' has cardinality 0..*, and from 'carnot_XmlTextNode', the role 'carnot_XmlTextNode345' has cardinality 0..*.
+An association connects 'carnot_TransitionType' and 'carnot_ActivityType'. From 'carnot_TransitionType', the role 'outTransitions347' has cardinality 0..*, and from 'carnot_ActivityType', the role 'ActivityType348' has cardinality 0..*.
+An association connects 'carnot_ActivityType' and 'carnot_TransitionType'. From 'carnot_ActivityType', the role 'ActivityType351' has cardinality 0..*, and from 'carnot_TransitionType', the role 'inTransitions350' has cardinality 0..*.
+An association connects 'carnot_TransitionType' and 'carnot_TransitionConnectionType'. From 'carnot_TransitionType', the role 'transition' has cardinality 0..*, and from 'carnot_TransitionConnectionType', the role 'TransitionConnectionType353' has cardinality 0..*.
+An association connects 'carnot_StartEventSymbol' and 'carnot_TriggersConnectionType'. From 'carnot_StartEventSymbol', the role 'StartEventSymbol355' has cardinality 0..*, and from 'carnot_TriggersConnectionType', the role 'triggersConnections' has cardinality 0..*.
+An association connects 'carnot_TriggersConnectionType' and 'carnot_IModelParticipantSymbol'. From 'carnot_TriggersConnectionType', the role 'triggeredEvents' has cardinality 0..*, and from 'carnot_IModelParticipantSymbol', the role 'IModelParticipantSymbol357' has cardinality 0..*.
+An association connects 'carnot_ParameterMappingType' and 'carnot_TriggerType'. From 'carnot_ParameterMappingType', the role 'carnot_ParameterMappingType' has cardinality 0..*, and from 'carnot_TriggerType', the role 'carnot_TriggerType359' has cardinality 0..*.
+An association connects 'carnot_TriggerTypeType' and 'carnot_TriggerType'. From 'carnot_TriggerTypeType', the role 'TriggerTypeType' has cardinality 0..*, and from 'carnot_TriggerType', the role 'triggers' has cardinality 0..*.
+An association connects 'carnot_TriggerType' and 'carnot_StartEventSymbol'. From 'carnot_TriggerType', the role 'trigger' has cardinality 0..*, and from 'carnot_StartEventSymbol', the role 'StartEventSymbol362' has cardinality 0..*.
+An association connects 'carnot_TriggerTypeType' and 'carnot_TriggerType'. From 'carnot_TriggerTypeType', the role 'type364' has cardinality 0..*, and from 'carnot_TriggerType', the role 'TriggerType365' has cardinality 0..*.
+An association connects 'carnot_ViewableType' and 'carnot_IModelElement'. From 'carnot_ViewableType', the role 'carnot_ViewableType' has cardinality 0..*, and from 'carnot_IModelElement', the role 'carnot_IModelElement' has cardinality 0..*.
+An association connects 'carnot_ViewType' and 'carnot_DescriptionType'. From 'carnot_ViewType', the role 'carnot_ViewType368' has cardinality 0..*, and from 'carnot_DescriptionType', the role 'carnot_DescriptionType369' has cardinality 0..*.
+An association connects 'carnot_ViewType' and 'carnot_ViewType'. From 'carnot_ViewType', the role 'carnot_ViewType370' has cardinality 0..*, and from 'carnot_ViewType', the role 'carnot_ViewType372' has cardinality 0..*.
+An association connects 'carnot_ViewableType' and 'carnot_ViewType'. From 'carnot_ViewableType', the role 'carnot_ViewableType375' has cardinality 0..*, and from 'carnot_ViewType', the role 'carnot_ViewType374' has cardinality 0..*.
+An association connects 'carnot_OrganizationSymbolType' and 'carnot_WorksForConnectionType'. From 'carnot_OrganizationSymbolType', the role 'OrganizationSymbolType377' has cardinality 0..*, and from 'carnot_WorksForConnectionType', the role 'memberRoles' has cardinality 0..*.
+An association connects 'carnot_RoleSymbolType' and 'carnot_WorksForConnectionType'. From 'carnot_RoleSymbolType', the role 'RoleSymbolType379' has cardinality 0..*, and from 'carnot_WorksForConnectionType', the role 'organizationMemberships' has cardinality 0..*.
+An association connects 'carnot_extensions_FormalParameterMappingType' and 'extensions_carnot_DataType'. From 'carnot_extensions_FormalParameterMappingType', the role 'carnot_extensions_FormalParameterMappingType' has cardinality 0..*, and from 'extensions_carnot_DataType', the role 'extensions_carnot_DataType' has cardinality 0..*.
+An association connects 'extensions_carnot_FormalParameterType' and 'carnot_extensions_FormalParameterMappingType'. From 'extensions_carnot_FormalParameterType', the role 'extensions_carnot_FormalParameterType' has cardinality 0..*, and from 'carnot_extensions_FormalParameterMappingType', the role 'carnot_extensions_FormalParameterMappingType382' has cardinality 0..*.
+An association connects 'carnot_extensions_FormalParameterMappingsType' and 'FormalParameterMappingType'. From 'carnot_extensions_FormalParameterMappingsType', the role 'carnot_extensions_FormalParameterMappingsType' has cardinality 0..*, and from 'FormalParameterMappingType', the role 'FormalParameterMappingType' has cardinality 0..*.

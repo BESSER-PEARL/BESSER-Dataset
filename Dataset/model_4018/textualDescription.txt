@@ -1,0 +1,21 @@
+The domain model 'Data' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'Data_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'Data_Classe' represents an important domain concept.
+It has one attribute: 'nom', which is of type str.
+
+'Data_Methode' represents an important domain concept.
+It has the following attributes: 'nom', which is of type str; 'typeRetour', which is of type str.
+
+'Data_Attribut' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'nom', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Data_Attribut' and 'Data_Classe'. From 'Data_Attribut', the role 'Data_Attribut' has cardinality 0..*, and from 'Data_Classe', the role 'Data_Classe' has cardinality 0..*.
+An association connects 'Data_Methode' and 'Data_Classe'. From 'Data_Methode', the role 'Data_Methode' has cardinality 0..*, and from 'Data_Classe', the role 'Data_Classe2' has cardinality 0..*.
+An association connects 'Data_Attribut' and 'Data_Methode'. From 'Data_Attribut', the role 'Data_Attribut5' has cardinality 0..*, and from 'Data_Methode', the role 'Data_Methode4' has cardinality 0..*.
+An association connects 'Data_Model' and 'Data_Classe'. From 'Data_Model', the role 'Data_Model' has cardinality 0..*, and from 'Data_Classe', the role 'Data_Classe7' has cardinality 0..*.

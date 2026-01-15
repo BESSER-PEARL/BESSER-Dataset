@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/marcelorodriguesfortes/experimentos-ferramenta-v-v/VerificationAndValidationB3/src/br/com/standalone/models/feature/metamodelo/MetamodeloFeature.ecore

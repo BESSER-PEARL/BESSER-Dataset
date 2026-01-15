@@ -1,0 +1,31 @@
+The domain model 'petrinet' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'petrinet_PetriNet' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Node' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'petrinet_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'petrinet_Place' represents an important domain concept.
+It has the following attributes: 'capacity', which is of type int; 'tokens', which is of type int.
+
+'petrinet_Arc' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'petrinet_Place' is a specialization of 'Node'.
+The class 'petrinet_Transition' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'petrinet_Node' and 'petrinet_PetriNet'. From 'petrinet_Node', the role 'petrinet_Node' has cardinality 0..*, and from 'petrinet_PetriNet', the role 'petrinet_PetriNet' has cardinality 0..*.
+An association connects 'petrinet_PetriNet' and 'petrinet_Arc'. From 'petrinet_PetriNet', the role 'petrinet_PetriNet2' has cardinality 0..*, and from 'petrinet_Arc', the role 'petrinet_Arc' has cardinality 0..*.
+An association connects 'petrinet_Node' and 'petrinet_Arc'. From 'petrinet_Node', the role 'petrinet_Node5' has cardinality 0..*, and from 'petrinet_Arc', the role 'petrinet_Arc4' has cardinality 0..*.
+An association connects 'petrinet_Arc' and 'petrinet_Node'. From 'petrinet_Arc', the role 'petrinet_Arc7' has cardinality 0..*, and from 'petrinet_Node', the role 'petrinet_Node8' has cardinality 0..*.

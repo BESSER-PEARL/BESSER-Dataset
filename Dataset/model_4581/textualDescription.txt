@@ -1,0 +1,103 @@
+The domain model 'sparrow' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'sparrow_TrelloPUT' represents an important domain concept.
+It has the following attributes: 'useraccount', which is of type str; 'source', which is of type str; 'key', which is of type str; 'value', which is of type str; 'authtoken', which is of type str; 'list', which is of type str.
+
+'sparrow_Transform' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'on', which is of type str.
+
+'sparrow_Fetch' represents an important domain concept.
+It has the following attributes: 'source', which is of type str; 'value', which is of type str.
+
+'sparrow_Action' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sparrow_FBCLead' represents an important domain concept.
+It has the following attributes: 'target', which is of type str; 'accountId', which is of type str; 'campaignId', which is of type str; 'accessToken', which is of type str; 'value', which is of type str; 'appSecret', which is of type str.
+
+'sparrow_GooglecalPUT' represents an important domain concept.
+It has the following attributes: 'useraccount', which is of type str; 'value', which is of type str; 'source', which is of type str; 'key', which is of type str; 'authstore', which is of type str.
+
+'sparrow_Try' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sparrow_RestPart' represents an important domain concept.
+It has the following attributes: 'partName', which is of type str; 'partData', which is of type str.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'sparrow_Sms' represents an important domain concept.
+It has the following attributes: 'target', which is of type str; 'value', which is of type str.
+
+'sparrow_WriteCsv' represents an important domain concept.
+It has the following attributes: 'source', which is of type str; 'value', which is of type str; 'delim', which is of type str; 'to', which is of type str.
+
+'sparrow_Rest' represents an important domain concept.
+It has the following attributes: 'method', which is of type str; 'headerdatafrom', which is of type str; 'parentName', which is of type str; 'postdatafrom', which is of type str; 'resourcedatafrom', which is of type str; 'url', which is of type str; 'headerdata', which is of type str; 'authtoken', which is of type str; 'ackdata', which is of type str; 'parentdata', which is of type str; 'urldata', which is of type str; 'ackdatato', which is of type str.
+
+'sparrow_Expression' represents an important domain concept.
+It has the following attributes: 'rhs', which is of type str; 'lhs', which is of type str; 'operator', which is of type str.
+
+'sparrow_Process' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sparrow_Updatedaudit' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'logsink', which is of type str.
+
+'sparrow_Dropfile' represents an important domain concept.
+It has one attribute: 'target', which is of type str.
+
+'sparrow_LoadCsv' represents an important domain concept.
+It has the following attributes: 'delim', which is of type str; 'value', which is of type str; 'to', which is of type str; 'source', which is of type str.
+
+'sparrow_Doozle' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'on', which is of type str; 'target', which is of type str.
+
+'sparrow_SlackPUT' represents an important domain concept.
+It has the following attributes: 'team', which is of type str; 'value', which is of type str; 'channel', which is of type str.
+
+'sparrow_Catch' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sparrow_Copydata' represents an important domain concept.
+It has the following attributes: 'source', which is of type str; 'value', which is of type str; 'to', which is of type str.
+
+'sparrow_TrelloGET' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'key', which is of type str; 'useraccount', which is of type str; 'target', which is of type str; 'board', which is of type str; 'authtoken', which is of type str.
+
+'sparrow_Finally' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sparrow_Callprocess' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'datasource', which is of type str; 'target', which is of type str; 'source', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'sparrow_FBCLead' is a specialization of 'Action'.
+The class 'sparrow_Dropfile' is a specialization of 'Action'.
+The class 'sparrow_Doozle' is a specialization of 'Action'.
+The class 'sparrow_Rest' is a specialization of 'Action'.
+The class 'sparrow_TrelloGET' is a specialization of 'Action'.
+The class 'sparrow_TrelloPUT' is a specialization of 'Action'.
+The class 'sparrow_Fetch' is a specialization of 'Action'.
+The class 'sparrow_Callprocess' is a specialization of 'Action'.
+The class 'sparrow_Updatedaudit' is a specialization of 'Action'.
+The class 'sparrow_Sms' is a specialization of 'Action'.
+The class 'sparrow_SlackPUT' is a specialization of 'Action'.
+The class 'sparrow_GooglecalPUT' is a specialization of 'Action'.
+The class 'sparrow_Copydata' is a specialization of 'Action'.
+The class 'sparrow_WriteCsv' is a specialization of 'Action'.
+The class 'sparrow_LoadCsv' is a specialization of 'Action'.
+The class 'sparrow_Transform' is a specialization of 'Action'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sparrow_Try' and 'sparrow_Process'. From 'sparrow_Try', the role 'sparrow_Try' has cardinality 0..*, and from 'sparrow_Process', the role 'sparrow_Process' has cardinality 0..*.
+An association connects 'sparrow_Catch' and 'sparrow_Process'. From 'sparrow_Catch', the role 'sparrow_Catch' has cardinality 0..*, and from 'sparrow_Process', the role 'sparrow_Process2' has cardinality 0..*.
+An association connects 'sparrow_Finally' and 'sparrow_Process'. From 'sparrow_Finally', the role 'sparrow_Finally' has cardinality 0..*, and from 'sparrow_Process', the role 'sparrow_Process4' has cardinality 0..*.
+An association connects 'sparrow_Try' and 'sparrow_Action'. From 'sparrow_Try', the role 'sparrow_Try6' has cardinality 0..*, and from 'sparrow_Action', the role 'sparrow_Action' has cardinality 0..*.
+An association connects 'sparrow_Action' and 'sparrow_Finally'. From 'sparrow_Action', the role 'sparrow_Action9' has cardinality 0..*, and from 'sparrow_Finally', the role 'sparrow_Finally8' has cardinality 0..*.
+An association connects 'sparrow_Action' and 'sparrow_Catch'. From 'sparrow_Action', the role 'sparrow_Action12' has cardinality 0..*, and from 'sparrow_Catch', the role 'sparrow_Catch11' has cardinality 0..*.
+An association connects 'sparrow_Expression' and 'sparrow_Action'. From 'sparrow_Expression', the role 'sparrow_Expression' has cardinality 0..*, and from 'sparrow_Action', the role 'sparrow_Action14' has cardinality 0..*.
+An association connects 'sparrow_RestPart' and 'sparrow_Rest'. From 'sparrow_RestPart', the role 'sparrow_RestPart' has cardinality 0..*, and from 'sparrow_Rest', the role 'sparrow_Rest' has cardinality 0..*.

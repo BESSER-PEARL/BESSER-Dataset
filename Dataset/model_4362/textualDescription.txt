@@ -1,0 +1,197 @@
+The domain model 'workflow' describes the core structural elements and their relationships within the system.
+
+The model defines 44 main class(es).
+
+'workflow_ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Addition' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_GreaterThanOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_CompilationUnit' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'language', which is of type str.
+
+'workflow_And' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_ProcedureDeclaration' represents an important domain concept.
+It has the following attributes: 'returnType', which is of type str; 'accessModifier', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_ProcedureCall' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Read' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'workflow_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_LogicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_UMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_LessThanOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_ProcedureReturn' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Write' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_LessThan' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'workflow_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_VariableDeclaration' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'isConstant', which is of type str.
+
+'workflow_While' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_NotEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Declaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EqualityExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Constant' represents an important domain concept.
+It has the following attributes: 'asString', which is of type str; 'asReal', which is of type str; 'asBoolean', which is of type str; 'asInteger', which is of type str.
+
+'workflow_GreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_VariableAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_If' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_ParameterDeclaration' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Subtraction' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AccessModifiers' defines the following possible values: 'default', 'protected', 'public', 'private'.
+The enumeration 'Type' defines the following possible values: 'long', 'int', 'void', 'string', 'double', 'float', 'boolean'.
+The enumeration 'Languages' defines the following possible values: 'CS', 'Java', 'CPP', 'Python'.
+
+The model also captures inheritance relationships between classes.
+The class 'workflow_Block' is a specialization of 'Statement'.
+The class 'workflow_If' is a specialization of 'Statement'.
+The class 'workflow_While' is a specialization of 'Statement'.
+The class 'workflow_VariableAssignment' is a specialization of 'Statement'.
+The class 'workflow_ProcedureReturn' is a specialization of 'Statement'.
+The class 'workflow_Write' is a specialization of 'Statement'.
+The class 'workflow_Read' is a specialization of 'Statement'.
+The class 'workflow_Declaration' is a specialization of 'Statement'.
+The class 'workflow_VariableDeclaration' is a specialization of 'Declaration'.
+The class 'workflow_ProcedureDeclaration' is a specialization of 'Declaration'.
+The class 'workflow_Expression' is a specialization of 'Statement'.
+The class 'workflow_Constant' is a specialization of 'Expression'.
+The class 'workflow_ProcedureCall' is a specialization of 'Expression'.
+The class 'workflow_UnaryExpression' is a specialization of 'Expression'.
+The class 'workflow_Not' is a specialization of 'UnaryExpression'.
+The class 'workflow_UMinus' is a specialization of 'UnaryExpression'.
+The class 'workflow_BinaryExpression' is a specialization of 'Expression'.
+The class 'workflow_LogicExpression' is a specialization of 'BinaryExpression'.
+The class 'workflow_And' is a specialization of 'LogicExpression'.
+The class 'workflow_Or' is a specialization of 'LogicExpression'.
+The class 'workflow_EqualityExpression' is a specialization of 'BinaryExpression'.
+The class 'workflow_Equal' is a specialization of 'EqualityExpression'.
+The class 'workflow_GreaterThan' is a specialization of 'EqualityExpression'.
+The class 'workflow_LessThan' is a specialization of 'EqualityExpression'.
+The class 'workflow_GreaterThanOrEqual' is a specialization of 'EqualityExpression'.
+The class 'workflow_LessThanOrEqual' is a specialization of 'EqualityExpression'.
+The class 'workflow_ArithmeticExpression' is a specialization of 'BinaryExpression'.
+The class 'workflow_Addition' is a specialization of 'ArithmeticExpression'.
+The class 'workflow_Subtraction' is a specialization of 'ArithmeticExpression'.
+The class 'workflow_Multiplication' is a specialization of 'ArithmeticExpression'.
+The class 'workflow_Division' is a specialization of 'ArithmeticExpression'.
+The class 'workflow_ParameterDeclaration' is a specialization of 'Declaration'.
+The class 'workflow_Variable' is a specialization of 'Expression'.
+The class 'workflow_NotEqual' is a specialization of 'EqualityExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'workflow_CompilationUnit' and 'workflow_ProcedureDeclaration'. From 'workflow_CompilationUnit', the role 'workflow_CompilationUnit' has cardinality 0..*, and from 'workflow_ProcedureDeclaration', the role 'workflow_ProcedureDeclaration' has cardinality 0..*.
+An association connects 'workflow_Block' and 'workflow_Statement'. From 'workflow_Block', the role 'workflow_Block' has cardinality 0..*, and from 'workflow_Statement', the role 'workflow_Statement' has cardinality 0..*.
+An association connects 'workflow_If' and 'workflow_Expression'. From 'workflow_If', the role 'workflow_If' has cardinality 0..*, and from 'workflow_Expression', the role 'workflow_Expression' has cardinality 0..*.
+An association connects 'workflow_If' and 'workflow_Block'. From 'workflow_If', the role 'workflow_If4' has cardinality 0..*, and from 'workflow_Block', the role 'workflow_Block5' has cardinality 0..*.
+An association connects 'workflow_If' and 'workflow_Block'. From 'workflow_If', the role 'workflow_If7' has cardinality 0..*, and from 'workflow_Block', the role 'workflow_Block8' has cardinality 0..*.
+An association connects 'workflow_While' and 'workflow_Expression'. From 'workflow_While', the role 'workflow_While' has cardinality 0..*, and from 'workflow_Expression', the role 'workflow_Expression10' has cardinality 0..*.
+An association connects 'workflow_Block' and 'workflow_While'. From 'workflow_Block', the role 'workflow_Block13' has cardinality 0..*, and from 'workflow_While', the role 'workflow_While12' has cardinality 0..*.
+An association connects 'workflow_VariableAssignment' and 'workflow_Variable'. From 'workflow_VariableAssignment', the role 'workflow_VariableAssignment' has cardinality 0..*, and from 'workflow_Variable', the role 'workflow_Variable' has cardinality 0..*.
+An association connects 'workflow_VariableAssignment' and 'workflow_Expression'. From 'workflow_VariableAssignment', the role 'workflow_VariableAssignment16' has cardinality 0..*, and from 'workflow_Expression', the role 'workflow_Expression17' has cardinality 0..*.
+An association connects 'workflow_Expression' and 'workflow_ProcedureReturn'. From 'workflow_Expression', the role 'workflow_Expression19' has cardinality 0..*, and from 'workflow_ProcedureReturn', the role 'workflow_ProcedureReturn' has cardinality 0..*.
+An association connects 'workflow_Write' and 'workflow_Variable'. From 'workflow_Write', the role 'workflow_Write' has cardinality 0..*, and from 'workflow_Variable', the role 'workflow_Variable21' has cardinality 0..*.
+An association connects 'workflow_Read' and 'workflow_Variable'. From 'workflow_Read', the role 'workflow_Read' has cardinality 0..*, and from 'workflow_Variable', the role 'workflow_Variable23' has cardinality 0..*.
+An association connects 'workflow_ProcedureDeclaration' and 'workflow_VariableDeclaration'. From 'workflow_ProcedureDeclaration', the role 'workflow_ProcedureDeclaration25' has cardinality 0..*, and from 'workflow_VariableDeclaration', the role 'workflow_VariableDeclaration' has cardinality 0..*.
+An association connects 'workflow_ProcedureDeclaration' and 'workflow_Block'. From 'workflow_ProcedureDeclaration', the role 'workflow_ProcedureDeclaration27' has cardinality 0..*, and from 'workflow_Block', the role 'workflow_Block28' has cardinality 0..*.
+An association connects 'workflow_ProcedureDeclaration' and 'workflow_ParameterDeclaration'. From 'workflow_ProcedureDeclaration', the role 'workflow_ProcedureDeclaration30' has cardinality 0..*, and from 'workflow_ParameterDeclaration', the role 'workflow_ParameterDeclaration' has cardinality 0..*.
+An association connects 'workflow_ProcedureCall' and 'workflow_Expression'. From 'workflow_ProcedureCall', the role 'workflow_ProcedureCall' has cardinality 0..*, and from 'workflow_Expression', the role 'workflow_Expression32' has cardinality 0..*.
+An association connects 'workflow_Expression' and 'workflow_UnaryExpression'. From 'workflow_Expression', the role 'workflow_Expression34' has cardinality 0..*, and from 'workflow_UnaryExpression', the role 'workflow_UnaryExpression' has cardinality 0..*.
+An association connects 'workflow_BinaryExpression' and 'workflow_Expression'. From 'workflow_BinaryExpression', the role 'workflow_BinaryExpression' has cardinality 0..*, and from 'workflow_Expression', the role 'workflow_Expression36' has cardinality 0..*.
+An association connects 'workflow_BinaryExpression' and 'workflow_Expression'. From 'workflow_BinaryExpression', the role 'workflow_BinaryExpression38' has cardinality 0..*, and from 'workflow_Expression', the role 'workflow_Expression39' has cardinality 0..*.

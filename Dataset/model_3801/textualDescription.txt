@@ -1,0 +1,32 @@
+The domain model 'ER' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'ER_RelshipEnd' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ER_Relship' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ER_ERAttribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'isKey', which is of type bool.
+
+'ER_Entity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ER_ERSchema' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'ER_ERSchema' and 'ER_Entity'. From 'ER_ERSchema', the role 'schema' has cardinality 0..*, and from 'ER_Entity', the role 'Entity' has cardinality 0..*.
+An association connects 'ER_Relship' and 'ER_ERSchema'. From 'ER_Relship', the role 'Relship' has cardinality 0..*, and from 'ER_ERSchema', the role 'schema2' has cardinality 0..*.
+An association connects 'ER_ERAttribute' and 'ER_Entity'. From 'ER_ERAttribute', the role 'ERAttribute' has cardinality 0..*, and from 'ER_Entity', the role 'entity' has cardinality 0..*.
+An association connects 'ER_RelshipEnd' and 'ER_Entity'. From 'ER_RelshipEnd', the role 'RelshipEnd' has cardinality 0..*, and from 'ER_Entity', the role 'entity5' has cardinality 0..*.
+An association connects 'ER_ERSchema' and 'ER_Entity'. From 'ER_ERSchema', the role 'ERSchema' has cardinality 0..*, and from 'ER_Entity', the role 'entities' has cardinality 0..*.
+An association connects 'ER_Relship' and 'ER_ERAttribute'. From 'ER_Relship', the role 'relship' has cardinality 0..*, and from 'ER_ERAttribute', the role 'ERAttribute8' has cardinality 0..*.
+An association connects 'ER_RelshipEnd' and 'ER_Relship'. From 'ER_RelshipEnd', the role 'RelshipEnd11' has cardinality 0..*, and from 'ER_Relship', the role 'relship10' has cardinality 0..*.
+An association connects 'ER_Relship' and 'ER_ERSchema'. From 'ER_Relship', the role 'relships' has cardinality 0..*, and from 'ER_ERSchema', the role 'ERSchema13' has cardinality 0..*.
+An association connects 'ER_RelshipEnd' and 'ER_Relship'. From 'ER_RelshipEnd', the role 'ends' has cardinality 0..*, and from 'ER_Relship', the role 'Relship15' has cardinality 0..*.
+An association connects 'ER_Entity' and 'ER_RelshipEnd'. From 'ER_Entity', the role 'Entity18' has cardinality 0..*, and from 'ER_RelshipEnd', the role 'ends17' has cardinality 0..*.
+An association connects 'ER_Entity' and 'ER_ERAttribute'. From 'ER_Entity', the role 'Entity20' has cardinality 0..*, and from 'ER_ERAttribute', the role 'attrs' has cardinality 0..*.
+An association connects 'ER_ERAttribute' and 'ER_Relship'. From 'ER_ERAttribute', the role 'attrs22' has cardinality 0..*, and from 'ER_Relship', the role 'Relship23' has cardinality 0..*.

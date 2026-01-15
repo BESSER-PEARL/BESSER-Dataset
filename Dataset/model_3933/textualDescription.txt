@@ -1,0 +1,33 @@
+The domain model 'document' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'document_FullEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'document_Chapter' represents an important domain concept.
+It does not declare any attributes.
+
+'document_Section' represents an important domain concept.
+It does not declare any attributes.
+
+'document_Entry' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'isBold', which is of type bool; 'isItalic', which is of type bool.
+
+'document_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'document_BasicEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'Entry' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'document_FullEntry' is a specialization of 'Entry'.
+The class 'document_BasicEntry' is a specialization of 'Entry'.
+
+Relationships between classes are modeled using associations.
+An association connects 'document_Section' and 'document_Chapter'. From 'document_Section', the role 'document_Section' has cardinality 0..*, and from 'document_Chapter', the role 'document_Chapter' has cardinality 0..*.
+An association connects 'document_Table' and 'document_Section'. From 'document_Table', the role 'document_Table' has cardinality 0..*, and from 'document_Section', the role 'document_Section2' has cardinality 0..*.
+An association connects 'document_Entry' and 'document_Table'. From 'document_Entry', the role 'document_Entry' has cardinality 0..*, and from 'document_Table', the role 'document_Table4' has cardinality 0..*.

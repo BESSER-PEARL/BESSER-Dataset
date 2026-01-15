@@ -1,0 +1,53 @@
+The domain model 'timeBasedRouting' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'OccursModel' represents an important domain concept.
+It does not declare any attributes.
+
+'timeBasedRouting_TimeItem' represents an important domain concept.
+It has one attribute: 'description', which is of type str.
+
+'timeBasedRouting_DailyOccursModel' represents an important domain concept.
+It has the following attributes: 'skipDays', which is of type int; 'startDate', which is of type date.
+
+'DynamicValue' represents an important domain concept.
+It does not declare any attributes.
+
+'timeBasedRouting_WeeklyOccursModel' represents an important domain concept.
+It has the following attributes: 'days', which is of type str; 'startDate', which is of type date; 'skipWeeks', which is of type int.
+
+'ActionStep' represents an important domain concept.
+It does not declare any attributes.
+
+'timeBasedRouting_MonthlyOccursModel' represents an important domain concept.
+It has the following attributes: 'dayOccurence', which is of type str; 'dayIndex', which is of type int; 'skipMonths', which is of type int; 'byIndex', which is of type bool; 'day', which is of type str; 'startDate', which is of type date.
+
+'CaseItem' represents an important domain concept.
+It does not declare any attributes.
+
+'timeBasedRouting_TimeRange' represents an important domain concept.
+It has the following attributes: 'startRange', which is of type date; 'endRange', which is of type date; 'name', which is of type str.
+
+'timeBasedRouting_TimeBasedRouting' represents an important domain concept.
+It does not declare any attributes.
+
+'timeBasedRouting_OccursModel' represents an important domain concept.
+It has the following attributes: 'mode', which is of type str; 'description', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'OccursMode' defines the following possible values: 'MONTHLY', 'DAILY', 'WEEKLY'.
+The enumeration 'Day' defines the following possible values: 'SUNDAY', 'MONDAY', 'TUESDAY', 'SATURDAY', 'THURSDAY', 'FRIDAY', 'WEDNESDAY'.
+The enumeration 'DayOccurrence' defines the following possible values: 'LAST', 'FOURTH', 'SECOND', 'FIRST', 'THIRD'.
+
+The model also captures inheritance relationships between classes.
+The class 'timeBasedRouting_TimeBasedRouting' is a specialization of 'ActionStep'.
+The class 'timeBasedRouting_TimeItem' is a specialization of 'CaseItem'.
+The class 'timeBasedRouting_DailyOccursModel' is a specialization of 'OccursModel'.
+The class 'timeBasedRouting_WeeklyOccursModel' is a specialization of 'OccursModel'.
+The class 'timeBasedRouting_MonthlyOccursModel' is a specialization of 'OccursModel'.
+
+Relationships between classes are modeled using associations.
+An association connects 'DynamicValue' and 'timeBasedRouting_TimeBasedRouting'. From 'DynamicValue', the role 'DynamicValue' has cardinality 0..*, and from 'timeBasedRouting_TimeBasedRouting', the role 'timeBasedRouting_TimeBasedRouting' has cardinality 0..*.
+An association connects 'timeBasedRouting_TimeBasedRouting' and 'timeBasedRouting_TimeItem'. From 'timeBasedRouting_TimeBasedRouting', the role 'timeBasedRouting_TimeBasedRouting2' has cardinality 0..*, and from 'timeBasedRouting_TimeItem', the role 'timeBasedRouting_TimeItem' has cardinality 0..*.
+An association connects 'timeBasedRouting_TimeRange' and 'timeBasedRouting_OccursModel'. From 'timeBasedRouting_TimeRange', the role 'timeBasedRouting_TimeRange' has cardinality 0..*, and from 'timeBasedRouting_OccursModel', the role 'timeBasedRouting_OccursModel' has cardinality 0..*.

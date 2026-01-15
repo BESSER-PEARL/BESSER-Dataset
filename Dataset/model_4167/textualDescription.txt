@@ -1,0 +1,12 @@
+The domain model 'comp' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'comp_Greeting' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'comp_Model' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'comp_Greeting' and 'comp_Model'. From 'comp_Greeting', the role 'comp_Greeting' has cardinality 0..*, and from 'comp_Model', the role 'comp_Model' has cardinality 0..*.

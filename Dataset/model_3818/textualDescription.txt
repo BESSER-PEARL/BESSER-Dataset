@@ -1,0 +1,148 @@
+The domain model 'EventAutomatonModel' describes the core structural elements and their relationships within the system.
+
+The model defines 33 main class(es).
+
+'EventAutomatonModel_TokenParameterBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_SymbolicEventParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_Automaton' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'TimerAction' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_SymbolicEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_TimerAction' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_SetTimerAction' represents an important domain concept.
+It has one attribute: 'toValue', which is of type int.
+
+'EventAutomatonModel_EventGuard' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_SymbolicTimeoutEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_SymbolicTokenParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_SymbolicParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EventAutomatonModel_ConstantBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'SymbolicEvent' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_State' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'acceptor', which is of type str.
+
+'EventAutomatonModel_FixParameter' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Binding' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_AbstractTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_ResetTimerAction' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_EpsilonTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_SymbolicTimer' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EventAutomatonModel_Token' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_ComplexEventProcessor' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_FreeParameter' represents an important domain concept.
+It has one attribute: 'excludedValues', which is of type str.
+
+'EventAutomatonModel_SymbolicInputEvent' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'EventAutomatonModel_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'SymbolicParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'EventAutomatonModel_Binding' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'EventAutomatonModel_TokenParameterBinding' is a specialization of 'Binding'.
+The class 'EventAutomatonModel_ResetTimerAction' is a specialization of 'TimerAction'.
+The class 'EventAutomatonModel_SymbolicInputEvent' is a specialization of 'SymbolicEvent'.
+The class 'EventAutomatonModel_SymbolicTokenParameter' is a specialization of 'SymbolicParameter'.
+The class 'EventAutomatonModel_ConstantBinding' is a specialization of 'Binding'.
+The class 'EventAutomatonModel_SymbolicEventParameter' is a specialization of 'SymbolicParameter'.
+The class 'EventAutomatonModel_FreeParameter' is a specialization of 'Parameter'.
+The class 'EventAutomatonModel_SetTimerAction' is a specialization of 'TimerAction'.
+The class 'EventAutomatonModel_SymbolicTimeoutEvent' is a specialization of 'SymbolicEvent'.
+The class 'EventAutomatonModel_FixParameter' is a specialization of 'Parameter'.
+The class 'EventAutomatonModel_TimerAction' is a specialization of 'Action'.
+The class 'EventAutomatonModel_EpsilonTransition' is a specialization of 'AbstractTransition'.
+The class 'EventAutomatonModel_Transition' is a specialization of 'AbstractTransition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'EventAutomatonModel_State' and 'EventAutomatonModel_Automaton'. From 'EventAutomatonModel_State', the role 'EventAutomatonModel_State' has cardinality 0..*, and from 'EventAutomatonModel_Automaton', the role 'EventAutomatonModel_Automaton' has cardinality 0..*.
+An association connects 'EventAutomatonModel_Automaton' and 'EventAutomatonModel_Token'. From 'EventAutomatonModel_Automaton', the role 'EventAutomatonModel_Automaton2' has cardinality 0..*, and from 'EventAutomatonModel_Token', the role 'EventAutomatonModel_Token' has cardinality 0..*.
+An association connects 'EventAutomatonModel_Automaton' and 'EventAutomatonModel_State'. From 'EventAutomatonModel_Automaton', the role 'EventAutomatonModel_Automaton4' has cardinality 0..*, and from 'EventAutomatonModel_State', the role 'EventAutomatonModel_State5' has cardinality 0..*.
+An association connects 'EventAutomatonModel_SymbolicParameter' and 'EventAutomatonModel_Automaton'. From 'EventAutomatonModel_SymbolicParameter', the role 'EventAutomatonModel_SymbolicParameter' has cardinality 0..*, and from 'EventAutomatonModel_Automaton', the role 'EventAutomatonModel_Automaton7' has cardinality 0..*.
+An association connects 'EventAutomatonModel_SymbolicTimer' and 'EventAutomatonModel_Automaton'. From 'EventAutomatonModel_SymbolicTimer', the role 'EventAutomatonModel_SymbolicTimer' has cardinality 0..*, and from 'EventAutomatonModel_Automaton', the role 'EventAutomatonModel_Automaton9' has cardinality 0..*.
+An association connects 'EventAutomatonModel_State' and 'EventAutomatonModel_Automaton'. From 'EventAutomatonModel_State', the role 'EventAutomatonModel_State12' has cardinality 0..*, and from 'EventAutomatonModel_Automaton', the role 'EventAutomatonModel_Automaton11' has cardinality 0..*.
+An association connects 'EventAutomatonModel_SymbolicTokenParameter' and 'EventAutomatonModel_TokenParameterBinding'. From 'EventAutomatonModel_SymbolicTokenParameter', the role 'EventAutomatonModel_SymbolicTokenParameter' has cardinality 0..*, and from 'EventAutomatonModel_TokenParameterBinding', the role 'EventAutomatonModel_TokenParameterBinding' has cardinality 0..*.
+An association connects 'EventAutomatonModel_SymbolicTimer' and 'EventAutomatonModel_SymbolicTimeoutEvent'. From 'EventAutomatonModel_SymbolicTimer', the role 'timer' has cardinality 0..*, and from 'EventAutomatonModel_SymbolicTimeoutEvent', the role 'SymbolicTimeoutEvent' has cardinality 0..*.
+An association connects 'EventAutomatonModel_Automaton' and 'EventAutomatonModel_ComplexEventProcessor'. From 'EventAutomatonModel_Automaton', the role 'EventAutomatonModel_Automaton16' has cardinality 0..*, and from 'EventAutomatonModel_ComplexEventProcessor', the role 'EventAutomatonModel_ComplexEventProcessor' has cardinality 0..*.
+An association connects 'EventAutomatonModel_SymbolicInputEvent' and 'EventAutomatonModel_ComplexEventProcessor'. From 'EventAutomatonModel_SymbolicInputEvent', the role 'EventAutomatonModel_SymbolicInputEvent' has cardinality 0..*, and from 'EventAutomatonModel_ComplexEventProcessor', the role 'EventAutomatonModel_ComplexEventProcessor18' has cardinality 0..*.
+An association connects 'EventAutomatonModel_SymbolicParameter' and 'EventAutomatonModel_SymbolicEvent'. From 'EventAutomatonModel_SymbolicParameter', the role 'EventAutomatonModel_SymbolicParameter20' has cardinality 0..*, and from 'EventAutomatonModel_SymbolicEvent', the role 'EventAutomatonModel_SymbolicEvent' has cardinality 0..*.
+An association connects 'EventAutomatonModel_SymbolicParameter' and 'EventAutomatonModel_Parameter'. From 'EventAutomatonModel_SymbolicParameter', the role 'EventAutomatonModel_SymbolicParameter22' has cardinality 0..*, and from 'EventAutomatonModel_Parameter', the role 'EventAutomatonModel_Parameter' has cardinality 0..*.
+An association connects 'EventAutomatonModel_Token' and 'EventAutomatonModel_State'. From 'EventAutomatonModel_Token', the role 'Token' has cardinality 0..*, and from 'EventAutomatonModel_State', the role 'on' has cardinality 0..*.
+An association connects 'EventAutomatonModel_State' and 'EventAutomatonModel_AbstractTransition'. From 'EventAutomatonModel_State', the role 'to' has cardinality 0..*, and from 'EventAutomatonModel_AbstractTransition', the role 'AbstractTransition' has cardinality 0..*.
+An association connects 'EventAutomatonModel_State' and 'EventAutomatonModel_AbstractTransition'. From 'EventAutomatonModel_State', the role 'from' has cardinality 0..*, and from 'EventAutomatonModel_AbstractTransition', the role 'AbstractTransition26' has cardinality 0..*.
+An association connects 'EventAutomatonModel_FixParameter' and 'EventAutomatonModel_ConstantBinding'. From 'EventAutomatonModel_FixParameter', the role 'EventAutomatonModel_FixParameter' has cardinality 0..*, and from 'EventAutomatonModel_ConstantBinding', the role 'EventAutomatonModel_ConstantBinding' has cardinality 0..*.
+An association connects 'EventAutomatonModel_SymbolicTimeoutEvent' and 'EventAutomatonModel_SymbolicTimer'. From 'EventAutomatonModel_SymbolicTimeoutEvent', the role 'timeoutEvent' has cardinality 0..*, and from 'EventAutomatonModel_SymbolicTimer', the role 'SymbolicTimer' has cardinality 0..*.
+An association connects 'EventAutomatonModel_Binding' and 'EventAutomatonModel_SymbolicEventParameter'. From 'EventAutomatonModel_Binding', the role 'EventAutomatonModel_Binding' has cardinality 0..*, and from 'EventAutomatonModel_SymbolicEventParameter', the role 'EventAutomatonModel_SymbolicEventParameter' has cardinality 0..*.
+An association connects 'EventAutomatonModel_SymbolicTimer' and 'EventAutomatonModel_TimerAction'. From 'EventAutomatonModel_SymbolicTimer', the role 'EventAutomatonModel_SymbolicTimer31' has cardinality 0..*, and from 'EventAutomatonModel_TimerAction', the role 'EventAutomatonModel_TimerAction' has cardinality 0..*.
+An association connects 'EventAutomatonModel_Event' and 'EventAutomatonModel_SymbolicEvent'. From 'EventAutomatonModel_Event', the role 'EventAutomatonModel_Event' has cardinality 0..*, and from 'EventAutomatonModel_SymbolicEvent', the role 'EventAutomatonModel_SymbolicEvent33' has cardinality 0..*.
+An association connects 'EventAutomatonModel_Event' and 'EventAutomatonModel_FixParameter'. From 'EventAutomatonModel_Event', the role 'EventAutomatonModel_Event35' has cardinality 0..*, and from 'EventAutomatonModel_FixParameter', the role 'EventAutomatonModel_FixParameter36' has cardinality 0..*.
+An association connects 'EventAutomatonModel_Token' and 'EventAutomatonModel_State'. From 'EventAutomatonModel_Token', the role 'tokens' has cardinality 0..*, and from 'EventAutomatonModel_State', the role 'State' has cardinality 0..*.
+An association connects 'EventAutomatonModel_Parameter' and 'EventAutomatonModel_Token'. From 'EventAutomatonModel_Parameter', the role 'EventAutomatonModel_Parameter40' has cardinality 0..*, and from 'EventAutomatonModel_Token', the role 'EventAutomatonModel_Token39' has cardinality 0..*.
+An association connects 'EventAutomatonModel_Transition' and 'EventAutomatonModel_EventGuard'. From 'EventAutomatonModel_Transition', the role 'EventAutomatonModel_Transition' has cardinality 0..*, and from 'EventAutomatonModel_EventGuard', the role 'EventAutomatonModel_EventGuard' has cardinality 0..*.
+An association connects 'EventAutomatonModel_EventGuard' and 'EventAutomatonModel_Binding'. From 'EventAutomatonModel_EventGuard', the role 'EventAutomatonModel_EventGuard43' has cardinality 0..*, and from 'EventAutomatonModel_Binding', the role 'EventAutomatonModel_Binding44' has cardinality 0..*.
+An association connects 'EventAutomatonModel_EventGuard' and 'EventAutomatonModel_SymbolicEvent'. From 'EventAutomatonModel_EventGuard', the role 'EventAutomatonModel_EventGuard46' has cardinality 0..*, and from 'EventAutomatonModel_SymbolicEvent', the role 'EventAutomatonModel_SymbolicEvent47' has cardinality 0..*.
+An association connects 'EventAutomatonModel_State' and 'EventAutomatonModel_AbstractTransition'. From 'EventAutomatonModel_State', the role 'State49' has cardinality 0..*, and from 'EventAutomatonModel_AbstractTransition', the role 'incomingTransitions' has cardinality 0..*.
+An association connects 'EventAutomatonModel_State' and 'EventAutomatonModel_AbstractTransition'. From 'EventAutomatonModel_State', the role 'State51' has cardinality 0..*, and from 'EventAutomatonModel_AbstractTransition', the role 'outgoingTransitions' has cardinality 0..*.
+An association connects 'EventAutomatonModel_Action' and 'EventAutomatonModel_AbstractTransition'. From 'EventAutomatonModel_Action', the role 'EventAutomatonModel_Action' has cardinality 0..*, and from 'EventAutomatonModel_AbstractTransition', the role 'EventAutomatonModel_AbstractTransition' has cardinality 0..*.

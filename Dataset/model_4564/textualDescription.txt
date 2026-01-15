@@ -1,0 +1,98 @@
+The domain model 'robot' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_TrueCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'robot_Robot' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_ControlStatement' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'robot_StatementBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_ForwardStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_RightStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_ConditionalStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Scenario' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_PrintStatement' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'robot_ObjectAheadCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_UntilStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_ExecuteStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Connection' represents an important domain concept.
+It has the following attributes: 'port', which is of type int; 'ip', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'robot_Robot' is a specialization of 'NamedElement'.
+The class 'robot_Scenario' is a specialization of 'NamedElement'.
+The class 'robot_ObjectAheadCondition' is a specialization of 'Condition'.
+The class 'robot_TrueCondition' is a specialization of 'Condition'.
+The class 'robot_ConditionalStatement' is a specialization of 'Statement'.
+The class 'robot_ControlStatement' is a specialization of 'Statement'.
+The class 'robot_ExecuteStatement' is a specialization of 'Statement'.
+The class 'robot_ForwardStatement' is a specialization of 'ControlStatement'.
+The class 'robot_IfStatement' is a specialization of 'ConditionalStatement'.
+The class 'robot_PrintStatement' is a specialization of 'Statement'.
+The class 'robot_RightStatement' is a specialization of 'ControlStatement'.
+The class 'robot_UntilStatement' is a specialization of 'ConditionalStatement'.
+The class 'robot_WhileStatement' is a specialization of 'ConditionalStatement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'robot_Scenario' and 'robot_Robot'. From 'robot_Scenario', the role 'robot_Scenario' has cardinality 0..*, and from 'robot_Robot', the role 'robot_Robot' has cardinality 0..*.
+An association connects 'robot_StatementBlock' and 'robot_Robot'. From 'robot_StatementBlock', the role 'robot_StatementBlock' has cardinality 0..*, and from 'robot_Robot', the role 'robot_Robot2' has cardinality 0..*.
+An association connects 'robot_Scenario' and 'robot_Robot'. From 'robot_Scenario', the role 'robot_Scenario5' has cardinality 0..*, and from 'robot_Robot', the role 'robot_Robot4' has cardinality 0..*.
+An association connects 'robot_Robot' and 'robot_Connection'. From 'robot_Robot', the role 'robot_Robot7' has cardinality 0..*, and from 'robot_Connection', the role 'robot_Connection' has cardinality 0..*.
+An association connects 'robot_Scenario' and 'robot_StatementBlock'. From 'robot_Scenario', the role 'robot_Scenario9' has cardinality 0..*, and from 'robot_StatementBlock', the role 'robot_StatementBlock10' has cardinality 0..*.
+An association connects 'robot_ConditionalStatement' and 'robot_Condition'. From 'robot_ConditionalStatement', the role 'robot_ConditionalStatement' has cardinality 0..*, and from 'robot_Condition', the role 'robot_Condition' has cardinality 0..*.
+An association connects 'robot_ConditionalStatement' and 'robot_StatementBlock'. From 'robot_ConditionalStatement', the role 'robot_ConditionalStatement13' has cardinality 0..*, and from 'robot_StatementBlock', the role 'robot_StatementBlock14' has cardinality 0..*.
+An association connects 'robot_Scenario' and 'robot_ExecuteStatement'. From 'robot_Scenario', the role 'robot_Scenario16' has cardinality 0..*, and from 'robot_ExecuteStatement', the role 'robot_ExecuteStatement' has cardinality 0..*.
+An association connects 'robot_Statement' and 'robot_StatementBlock'. From 'robot_Statement', the role 'robot_Statement' has cardinality 0..*, and from 'robot_StatementBlock', the role 'robot_StatementBlock18' has cardinality 0..*.

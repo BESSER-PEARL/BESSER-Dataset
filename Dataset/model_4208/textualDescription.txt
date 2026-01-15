@@ -1,0 +1,63 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'myDsl_Entidades' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Nome' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'myDsl_Api' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Associacao' represents an important domain concept.
+It has one attribute: 'associacao', which is of type str.
+
+'myDsl_Operacao' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Atributos' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Nome_Atributo' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'myDsl_AtributoTipo' represents an important domain concept.
+It has the following attributes: 'tipoColecao', which is of type str; 'tipoPrimitivo', which is of type str; 'tipoObjeto', which is of type str.
+
+'myDsl_Atributo' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_ApiNome' represents an important domain concept.
+It has one attribute: 'nome', which is of type str.
+
+'myDsl_Greeting' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_OperacaoCascada' represents an important domain concept.
+It has one attribute: 'operacao', which is of type str.
+
+'myDsl_Entidade' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_Model' and 'myDsl_Greeting'. From 'myDsl_Model', the role 'myDsl_Model' has cardinality 0..*, and from 'myDsl_Greeting', the role 'myDsl_Greeting' has cardinality 0..*.
+An association connects 'myDsl_Greeting' and 'myDsl_Api'. From 'myDsl_Greeting', the role 'myDsl_Greeting2' has cardinality 0..*, and from 'myDsl_Api', the role 'myDsl_Api' has cardinality 0..*.
+An association connects 'myDsl_Api' and 'myDsl_ApiNome'. From 'myDsl_Api', the role 'myDsl_Api4' has cardinality 0..*, and from 'myDsl_ApiNome', the role 'myDsl_ApiNome' has cardinality 0..*.
+An association connects 'myDsl_Entidades' and 'myDsl_Api'. From 'myDsl_Entidades', the role 'myDsl_Entidades' has cardinality 0..*, and from 'myDsl_Api', the role 'myDsl_Api6' has cardinality 0..*.
+An association connects 'myDsl_Entidades' and 'myDsl_Entidade'. From 'myDsl_Entidades', the role 'myDsl_Entidades8' has cardinality 0..*, and from 'myDsl_Entidade', the role 'myDsl_Entidade' has cardinality 0..*.
+An association connects 'myDsl_Entidade' and 'myDsl_Entidades'. From 'myDsl_Entidade', the role 'myDsl_Entidade11' has cardinality 0..*, and from 'myDsl_Entidades', the role 'myDsl_Entidades10' has cardinality 0..*.
+An association connects 'myDsl_Entidade' and 'myDsl_Nome'. From 'myDsl_Entidade', the role 'myDsl_Entidade13' has cardinality 0..*, and from 'myDsl_Nome', the role 'myDsl_Nome' has cardinality 0..*.
+An association connects 'myDsl_Atributos' and 'myDsl_Entidade'. From 'myDsl_Atributos', the role 'myDsl_Atributos' has cardinality 0..*, and from 'myDsl_Entidade', the role 'myDsl_Entidade15' has cardinality 0..*.
+An association connects 'myDsl_Atributos' and 'myDsl_Atributo'. From 'myDsl_Atributos', the role 'myDsl_Atributos17' has cardinality 0..*, and from 'myDsl_Atributo', the role 'myDsl_Atributo' has cardinality 0..*.
+An association connects 'myDsl_Atributo' and 'myDsl_Atributos'. From 'myDsl_Atributo', the role 'myDsl_Atributo20' has cardinality 0..*, and from 'myDsl_Atributos', the role 'myDsl_Atributos19' has cardinality 0..*.
+An association connects 'myDsl_Atributo' and 'myDsl_Nome_Atributo'. From 'myDsl_Atributo', the role 'myDsl_Atributo22' has cardinality 0..*, and from 'myDsl_Nome_Atributo', the role 'myDsl_Nome_Atributo' has cardinality 0..*.
+An association connects 'myDsl_Atributo' and 'myDsl_AtributoTipo'. From 'myDsl_Atributo', the role 'myDsl_Atributo24' has cardinality 0..*, and from 'myDsl_AtributoTipo', the role 'myDsl_AtributoTipo' has cardinality 0..*.
+An association connects 'myDsl_Associacao' and 'myDsl_Atributo'. From 'myDsl_Associacao', the role 'myDsl_Associacao' has cardinality 0..*, and from 'myDsl_Atributo', the role 'myDsl_Atributo26' has cardinality 0..*.
+An association connects 'myDsl_Operacao' and 'myDsl_Atributo'. From 'myDsl_Operacao', the role 'myDsl_Operacao' has cardinality 0..*, and from 'myDsl_Atributo', the role 'myDsl_Atributo28' has cardinality 0..*.
+An association connects 'myDsl_OperacaoCascada' and 'myDsl_Operacao'. From 'myDsl_OperacaoCascada', the role 'myDsl_OperacaoCascada' has cardinality 0..*, and from 'myDsl_Operacao', the role 'myDsl_Operacao30' has cardinality 0..*.
+An association connects 'myDsl_Operacao' and 'myDsl_OperacaoCascada'. From 'myDsl_Operacao', the role 'myDsl_Operacao32' has cardinality 0..*, and from 'myDsl_OperacaoCascada', the role 'myDsl_OperacaoCascada33' has cardinality 0..*.

@@ -1,0 +1,21 @@
+The domain model 'era' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'era_System' represents an important domain concept.
+It does not declare any attributes.
+
+'era_Relationship' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'era_Attribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'era_Entity' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'inDomain', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'era_System' and 'era_Entity'. From 'era_System', the role 'system' has cardinality 0..*, and from 'era_Entity', the role 'Entity' has cardinality 0..*.
+An association connects 'era_Entity' and 'era_System'. From 'era_Entity', the role 'entity' has cardinality 0..*, and from 'era_System', the role 'System' has cardinality 0..*.
+An association connects 'era_Relationship' and 'era_Entity'. From 'era_Relationship', the role 'Relationship' has cardinality 0..*, and from 'era_Entity', the role 'entities' has cardinality 0..*.
+An association connects 'era_Relationship' and 'era_Entity'. From 'era_Relationship', the role 'relationships' has cardinality 0..*, and from 'era_Entity', the role 'Entity4' has cardinality 0..*.

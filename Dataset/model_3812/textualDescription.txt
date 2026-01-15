@@ -1,0 +1,13 @@
+The domain model 'example' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'example_MP3' represents an important domain concept.
+It does not declare any attributes.
+
+'example_Player' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'example_MP3' and 'example_Player'. From 'example_MP3', the role 'MP3' has cardinality 0..*, and from 'example_Player', the role 'player' has cardinality 0..*.
+An association connects 'example_MP3' and 'example_Player'. From 'example_MP3', the role 'mp3s' has cardinality 0..*, and from 'example_Player', the role 'Player' has cardinality 0..*.

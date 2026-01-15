@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gssi/Company2CRM-case-study/Sosym2019-case-study/model/evo/Company.ecore

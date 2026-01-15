@@ -1,0 +1,94 @@
+The domain model 'smalluml' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'smalluml_UnlimitedNatural' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Bool' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'smalluml_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Enumeration' represents an important domain concept.
+It has one attribute: 'values', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Integer' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Role' represents an important domain concept.
+It has the following attributes: 'upperBound', which is of type int; 'lowerBound', which is of type int.
+
+'smalluml_Composition' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_String' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Method' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Real' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Class' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'smalluml_Class' is a specialization of 'NamedElement'.
+The class 'smalluml_Attribute' is a specialization of 'NamedElement'.
+The class 'smalluml_String' is a specialization of 'Type'.
+The class 'smalluml_Integer' is a specialization of 'Type'.
+The class 'smalluml_Bool' is a specialization of 'Type'.
+The class 'smalluml_Real' is a specialization of 'Type'.
+The class 'smalluml_UnlimitedNatural' is a specialization of 'Type'.
+The class 'smalluml_Method' is a specialization of 'NamedElement'.
+The class 'smalluml_Parameter' is a specialization of 'NamedElement'.
+The class 'smalluml_Relation' is a specialization of 'NamedElement'.
+The class 'smalluml_Role' is a specialization of 'NamedElement'.
+The class 'smalluml_Enumeration' is a specialization of 'Type'.
+The class 'smalluml_Enumeration' is a specialization of 'NamedElement'.
+The class 'smalluml_Composition' is a specialization of 'Relation'.
+The class 'smalluml_Reference' is a specialization of 'Relation'.
+The class 'smalluml_Package' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'smalluml_Class' and 'smalluml_Method'. From 'smalluml_Class', the role 'smalluml_Class' has cardinality 0..*, and from 'smalluml_Method', the role 'smalluml_Method' has cardinality 0..*.
+An association connects 'smalluml_Attribute' and 'smalluml_Class'. From 'smalluml_Attribute', the role 'smalluml_Attribute' has cardinality 0..*, and from 'smalluml_Class', the role 'smalluml_Class2' has cardinality 0..*.
+An association connects 'smalluml_Class' and 'smalluml_Class'. From 'smalluml_Class', the role 'smalluml_Class5' has cardinality 0..*, and from 'smalluml_Class', the role 'smalluml_Class3' has cardinality 0..*.
+An association connects 'smalluml_Type' and 'smalluml_Attribute'. From 'smalluml_Type', the role 'smalluml_Type' has cardinality 0..*, and from 'smalluml_Attribute', the role 'smalluml_Attribute7' has cardinality 0..*.
+An association connects 'smalluml_Method' and 'smalluml_Parameter'. From 'smalluml_Method', the role 'smalluml_Method9' has cardinality 0..*, and from 'smalluml_Parameter', the role 'smalluml_Parameter' has cardinality 0..*.
+An association connects 'smalluml_Method' and 'smalluml_Type'. From 'smalluml_Method', the role 'smalluml_Method11' has cardinality 0..*, and from 'smalluml_Type', the role 'smalluml_Type12' has cardinality 0..*.
+An association connects 'smalluml_Type' and 'smalluml_Parameter'. From 'smalluml_Type', the role 'smalluml_Type15' has cardinality 0..*, and from 'smalluml_Parameter', the role 'smalluml_Parameter14' has cardinality 0..*.
+An association connects 'smalluml_Role' and 'smalluml_Relation'. From 'smalluml_Role', the role 'smalluml_Role' has cardinality 0..*, and from 'smalluml_Relation', the role 'smalluml_Relation' has cardinality 0..*.
+An association connects 'smalluml_Role' and 'smalluml_Relation'. From 'smalluml_Role', the role 'smalluml_Role19' has cardinality 0..*, and from 'smalluml_Relation', the role 'smalluml_Relation18' has cardinality 0..*.
+An association connects 'smalluml_Class' and 'smalluml_Role'. From 'smalluml_Class', the role 'smalluml_Class22' has cardinality 0..*, and from 'smalluml_Role', the role 'smalluml_Role21' has cardinality 0..*.
+An association connects 'smalluml_NamedElement' and 'smalluml_Package'. From 'smalluml_NamedElement', the role 'smalluml_NamedElement' has cardinality 0..*, and from 'smalluml_Package', the role 'smalluml_Package' has cardinality 0..*.

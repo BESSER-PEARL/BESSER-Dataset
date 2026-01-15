@@ -1,0 +1,239 @@
+The domain model 'applauseDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 52 main class(es).
+
+'applauseDsl_LoopVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_UIComponentMemberCall' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_UIComponentOrDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'PlatformMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_UIAction' represents an important domain concept.
+It has the following attributes: 'order', which is of type int; 'gesture', which is of type str; 'icon', which is of type str; 'title', which is of type str.
+
+'applauseDsl_DataSourceCall' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'applauseDsl_AttributeReference' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'applauseDsl_UIActionNavigateAction' represents an important domain concept.
+It has one attribute: 'actionVerb', which is of type str.
+
+'applauseDsl_RESTMethodCall' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_Screen' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'title', which is of type str.
+
+'applauseDsl_UrlFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_ReferrableElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'applauseDsl_Attribute' represents an important domain concept.
+It has the following attributes: 'many', which is of type bool; 'name', which is of type str.
+
+'applauseDsl_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_StringLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'applauseDsl_AbsoluteRESTURL' represents an important domain concept.
+It has one attribute: 'port', which is of type int.
+
+'applauseDsl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'RESTURL' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_EntityMemberCall' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_DataSourceBodySpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_RESTSpecification' represents an important domain concept.
+It has one attribute: 'verb', which is of type str.
+
+'applauseDsl_ScreenListItemCell' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_TypeMapping' represents an important domain concept.
+It has one attribute: 'simpleName', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_RelativeRESTURL' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_UIComponentMemberConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_DataSourceAccessMethod' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'returnsMany', which is of type bool.
+
+'applauseDsl_UIComponentMemberDeclaration' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ReferrableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_EntityMemberCallTail' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_ScreenSectionItems' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_DataSource' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_Entity' represents an important domain concept.
+It has one attribute: 'abstract', which is of type bool.
+
+'applauseDsl_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'UrlFragment' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'UIComponentOrDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_RESTURL' represents an important domain concept.
+It does not declare any attributes.
+
+'UIActionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_UrlPathFragment' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_ScreenSection' represents an important domain concept.
+It has one attribute: 'title', which is of type str.
+
+'applauseDsl_UIActionDeleteAction' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_UIComponentDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_ListItemCellDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_Platform' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_UIActionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'applauseDsl_PlatformMapping' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ActionVerb' defines the following possible values: 'display', 'add', 'edit'.
+The enumeration 'RESTVerb' defines the following possible values: 'PUT', 'POST', 'GET', 'DELETE'.
+The enumeration 'GestureKind' defines the following possible values: 'swipe', 'tap', 'longpress'.
+The enumeration 'ScreenKind' defines the following possible values: 'DefaultDetails', 'DefaultList'.
+The enumeration 'UIActionKind' defines the following possible values: 'navigate', 'performaction', 'delete'.
+
+The model also captures inheritance relationships between classes.
+The class 'applauseDsl_Type' is a specialization of 'NamedElement'.
+The class 'applauseDsl_DataType' is a specialization of 'Type'.
+The class 'applauseDsl_DataType' is a specialization of 'UIComponentOrDataType'.
+The class 'applauseDsl_Entity' is a specialization of 'Type'.
+The class 'applauseDsl_Platform' is a specialization of 'NamedElement'.
+The class 'applauseDsl_TypeMapping' is a specialization of 'PlatformMapping'.
+The class 'applauseDsl_DataSource' is a specialization of 'NamedElement'.
+The class 'applauseDsl_Parameter' is a specialization of 'ReferrableElement'.
+The class 'applauseDsl_AbsoluteRESTURL' is a specialization of 'RESTURL'.
+The class 'applauseDsl_RelativeRESTURL' is a specialization of 'RESTURL'.
+The class 'applauseDsl_UrlPathFragment' is a specialization of 'UrlFragment'.
+The class 'applauseDsl_Variable' is a specialization of 'UrlFragment'.
+The class 'applauseDsl_Screen' is a specialization of 'NamedElement'.
+The class 'applauseDsl_LoopVariable' is a specialization of 'ReferrableElement'.
+The class 'applauseDsl_UIActionNavigateAction' is a specialization of 'UIActionSpecification'.
+The class 'applauseDsl_UIActionDeleteAction' is a specialization of 'UIActionSpecification'.
+The class 'applauseDsl_ListItemCellDeclaration' is a specialization of 'NamedElement'.
+The class 'applauseDsl_UIComponentDeclaration' is a specialization of 'NamedElement'.
+The class 'applauseDsl_UIComponentDeclaration' is a specialization of 'UIComponentOrDataType'.
+The class 'applauseDsl_EntityMemberCall' is a specialization of 'Expression'.
+The class 'applauseDsl_StringLiteral' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'applauseDsl_NamedElement' and 'applauseDsl_Model'. From 'applauseDsl_NamedElement', the role 'applauseDsl_NamedElement' has cardinality 0..*, and from 'applauseDsl_Model', the role 'applauseDsl_Model' has cardinality 0..*.
+An association connects 'applauseDsl_Entity' and 'applauseDsl_Entity'. From 'applauseDsl_Entity', the role 'applauseDsl_Entity' has cardinality 0..*, and from 'applauseDsl_Entity', the role 'applauseDsl_Entity1' has cardinality 0..*.
+An association connects 'applauseDsl_Entity' and 'applauseDsl_Attribute'. From 'applauseDsl_Entity', the role 'applauseDsl_Entity4' has cardinality 0..*, and from 'applauseDsl_Attribute', the role 'applauseDsl_Attribute' has cardinality 0..*.
+An association connects 'applauseDsl_Type' and 'applauseDsl_Attribute'. From 'applauseDsl_Type', the role 'applauseDsl_Type' has cardinality 0..*, and from 'applauseDsl_Attribute', the role 'applauseDsl_Attribute6' has cardinality 0..*.
+An association connects 'applauseDsl_Platform' and 'applauseDsl_PlatformMapping'. From 'applauseDsl_Platform', the role 'applauseDsl_Platform' has cardinality 0..*, and from 'applauseDsl_PlatformMapping', the role 'applauseDsl_PlatformMapping' has cardinality 0..*.
+An association connects 'applauseDsl_TypeMapping' and 'applauseDsl_DataType'. From 'applauseDsl_TypeMapping', the role 'applauseDsl_TypeMapping' has cardinality 0..*, and from 'applauseDsl_DataType', the role 'applauseDsl_DataType' has cardinality 0..*.
+An association connects 'applauseDsl_AbsoluteRESTURL' and 'applauseDsl_DataSource'. From 'applauseDsl_AbsoluteRESTURL', the role 'applauseDsl_AbsoluteRESTURL' has cardinality 0..*, and from 'applauseDsl_DataSource', the role 'applauseDsl_DataSource' has cardinality 0..*.
+An association connects 'applauseDsl_Entity' and 'applauseDsl_DataSource'. From 'applauseDsl_Entity', the role 'applauseDsl_Entity12' has cardinality 0..*, and from 'applauseDsl_DataSource', the role 'applauseDsl_DataSource11' has cardinality 0..*.
+An association connects 'applauseDsl_DataSource' and 'applauseDsl_DataSourceAccessMethod'. From 'applauseDsl_DataSource', the role 'applauseDsl_DataSource14' has cardinality 0..*, and from 'applauseDsl_DataSourceAccessMethod', the role 'applauseDsl_DataSourceAccessMethod' has cardinality 0..*.
+An association connects 'applauseDsl_Parameter' and 'applauseDsl_DataSourceAccessMethod'. From 'applauseDsl_Parameter', the role 'applauseDsl_Parameter' has cardinality 0..*, and from 'applauseDsl_DataSourceAccessMethod', the role 'applauseDsl_DataSourceAccessMethod16' has cardinality 0..*.
+An association connects 'applauseDsl_DataSourceAccessMethod' and 'applauseDsl_RESTSpecification'. From 'applauseDsl_DataSourceAccessMethod', the role 'applauseDsl_DataSourceAccessMethod18' has cardinality 0..*, and from 'applauseDsl_RESTSpecification', the role 'applauseDsl_RESTSpecification' has cardinality 0..*.
+An association connects 'applauseDsl_RESTSpecification' and 'applauseDsl_RESTURL'. From 'applauseDsl_RESTSpecification', the role 'applauseDsl_RESTSpecification20' has cardinality 0..*, and from 'applauseDsl_RESTURL', the role 'applauseDsl_RESTURL' has cardinality 0..*.
+An association connects 'applauseDsl_RESTSpecification' and 'applauseDsl_DataSourceBodySpecification'. From 'applauseDsl_RESTSpecification', the role 'applauseDsl_RESTSpecification22' has cardinality 0..*, and from 'applauseDsl_DataSourceBodySpecification', the role 'applauseDsl_DataSourceBodySpecification' has cardinality 0..*.
+An association connects 'applauseDsl_Parameter' and 'applauseDsl_DataSourceBodySpecification'. From 'applauseDsl_Parameter', the role 'applauseDsl_Parameter25' has cardinality 0..*, and from 'applauseDsl_DataSourceBodySpecification', the role 'applauseDsl_DataSourceBodySpecification24' has cardinality 0..*.
+An association connects 'applauseDsl_Type' and 'applauseDsl_Parameter'. From 'applauseDsl_Type', the role 'applauseDsl_Type28' has cardinality 0..*, and from 'applauseDsl_Parameter', the role 'applauseDsl_Parameter27' has cardinality 0..*.
+An association connects 'applauseDsl_UrlFragment' and 'applauseDsl_RESTURL'. From 'applauseDsl_UrlFragment', the role 'applauseDsl_UrlFragment' has cardinality 0..*, and from 'applauseDsl_RESTURL', the role 'applauseDsl_RESTURL30' has cardinality 0..*.
+An association connects 'applauseDsl_AbsoluteRESTURL' and 'applauseDsl_UrlFragment'. From 'applauseDsl_AbsoluteRESTURL', the role 'applauseDsl_AbsoluteRESTURL32' has cardinality 0..*, and from 'applauseDsl_UrlFragment', the role 'applauseDsl_UrlFragment33' has cardinality 0..*.
+An association connects 'applauseDsl_Variable' and 'applauseDsl_Parameter'. From 'applauseDsl_Variable', the role 'applauseDsl_Variable' has cardinality 0..*, and from 'applauseDsl_Parameter', the role 'applauseDsl_Parameter35' has cardinality 0..*.
+An association connects 'applauseDsl_Parameter' and 'applauseDsl_Screen'. From 'applauseDsl_Parameter', the role 'applauseDsl_Parameter37' has cardinality 0..*, and from 'applauseDsl_Screen', the role 'applauseDsl_Screen' has cardinality 0..*.
+An association connects 'applauseDsl_Screen' and 'applauseDsl_DataSourceCall'. From 'applauseDsl_Screen', the role 'applauseDsl_Screen39' has cardinality 0..*, and from 'applauseDsl_DataSourceCall', the role 'applauseDsl_DataSourceCall' has cardinality 0..*.
+An association connects 'applauseDsl_Screen' and 'applauseDsl_ScreenSection'. From 'applauseDsl_Screen', the role 'applauseDsl_Screen41' has cardinality 0..*, and from 'applauseDsl_ScreenSection', the role 'applauseDsl_ScreenSection' has cardinality 0..*.
+An association connects 'applauseDsl_Screen' and 'applauseDsl_UIAction'. From 'applauseDsl_Screen', the role 'applauseDsl_Screen43' has cardinality 0..*, and from 'applauseDsl_UIAction', the role 'applauseDsl_UIAction' has cardinality 0..*.
+An association connects 'applauseDsl_DataSourceCall' and 'applauseDsl_ScreenSection'. From 'applauseDsl_DataSourceCall', the role 'applauseDsl_DataSourceCall46' has cardinality 0..*, and from 'applauseDsl_ScreenSection', the role 'applauseDsl_ScreenSection45' has cardinality 0..*.
+An association connects 'applauseDsl_ScreenSection' and 'applauseDsl_ScreenSectionItems'. From 'applauseDsl_ScreenSection', the role 'applauseDsl_ScreenSection48' has cardinality 0..*, and from 'applauseDsl_ScreenSectionItems', the role 'applauseDsl_ScreenSectionItems' has cardinality 0..*.
+An association connects 'applauseDsl_ScreenListItemCell' and 'applauseDsl_ScreenSectionItems'. From 'applauseDsl_ScreenListItemCell', the role 'applauseDsl_ScreenListItemCell' has cardinality 0..*, and from 'applauseDsl_ScreenSectionItems', the role 'applauseDsl_ScreenSectionItems50' has cardinality 0..*.
+An association connects 'applauseDsl_ListItemCellDeclaration' and 'applauseDsl_ScreenListItemCell'. From 'applauseDsl_ListItemCellDeclaration', the role 'applauseDsl_ListItemCellDeclaration' has cardinality 0..*, and from 'applauseDsl_ScreenListItemCell', the role 'applauseDsl_ScreenListItemCell52' has cardinality 0..*.
+An association connects 'applauseDsl_RESTMethodCall' and 'applauseDsl_ScreenListItemCell'. From 'applauseDsl_RESTMethodCall', the role 'applauseDsl_RESTMethodCall' has cardinality 0..*, and from 'applauseDsl_ScreenListItemCell', the role 'applauseDsl_ScreenListItemCell54' has cardinality 0..*.
+An association connects 'applauseDsl_ScreenListItemCell' and 'applauseDsl_LoopVariable'. From 'applauseDsl_ScreenListItemCell', the role 'applauseDsl_ScreenListItemCell56' has cardinality 0..*, and from 'applauseDsl_LoopVariable', the role 'applauseDsl_LoopVariable' has cardinality 0..*.
+An association connects 'applauseDsl_UIComponentMemberConfiguration' and 'applauseDsl_ScreenListItemCell'. From 'applauseDsl_UIComponentMemberConfiguration', the role 'applauseDsl_UIComponentMemberConfiguration' has cardinality 0..*, and from 'applauseDsl_ScreenListItemCell', the role 'applauseDsl_ScreenListItemCell58' has cardinality 0..*.
+An association connects 'applauseDsl_ScreenListItemCell' and 'applauseDsl_UIAction'. From 'applauseDsl_ScreenListItemCell', the role 'applauseDsl_ScreenListItemCell60' has cardinality 0..*, and from 'applauseDsl_UIAction', the role 'applauseDsl_UIAction61' has cardinality 0..*.
+An association connects 'applauseDsl_UIAction' and 'applauseDsl_UIActionSpecification'. From 'applauseDsl_UIAction', the role 'applauseDsl_UIAction63' has cardinality 0..*, and from 'applauseDsl_UIActionSpecification', the role 'applauseDsl_UIActionSpecification' has cardinality 0..*.
+An association connects 'applauseDsl_Screen' and 'applauseDsl_UIActionNavigateAction'. From 'applauseDsl_Screen', the role 'applauseDsl_Screen65' has cardinality 0..*, and from 'applauseDsl_UIActionNavigateAction', the role 'applauseDsl_UIActionNavigateAction' has cardinality 0..*.
+An association connects 'applauseDsl_UIActionNavigateAction' and 'applauseDsl_ReferrableElement'. From 'applauseDsl_UIActionNavigateAction', the role 'applauseDsl_UIActionNavigateAction67' has cardinality 0..*, and from 'applauseDsl_ReferrableElement', the role 'applauseDsl_ReferrableElement' has cardinality 0..*.
+An association connects 'applauseDsl_UIComponentMemberDeclaration' and 'applauseDsl_ListItemCellDeclaration'. From 'applauseDsl_UIComponentMemberDeclaration', the role 'applauseDsl_UIComponentMemberDeclaration' has cardinality 0..*, and from 'applauseDsl_ListItemCellDeclaration', the role 'applauseDsl_ListItemCellDeclaration69' has cardinality 0..*.
+An association connects 'applauseDsl_UIComponentDeclaration' and 'applauseDsl_UIComponentMemberDeclaration'. From 'applauseDsl_UIComponentDeclaration', the role 'applauseDsl_UIComponentDeclaration' has cardinality 0..*, and from 'applauseDsl_UIComponentMemberDeclaration', the role 'applauseDsl_UIComponentMemberDeclaration71' has cardinality 0..*.
+An association connects 'applauseDsl_UIComponentOrDataType' and 'applauseDsl_UIComponentMemberDeclaration'. From 'applauseDsl_UIComponentOrDataType', the role 'applauseDsl_UIComponentOrDataType' has cardinality 0..*, and from 'applauseDsl_UIComponentMemberDeclaration', the role 'applauseDsl_UIComponentMemberDeclaration73' has cardinality 0..*.
+An association connects 'applauseDsl_RESTMethodCall' and 'applauseDsl_DataSourceCall'. From 'applauseDsl_RESTMethodCall', the role 'applauseDsl_RESTMethodCall75' has cardinality 0..*, and from 'applauseDsl_DataSourceCall', the role 'applauseDsl_DataSourceCall76' has cardinality 0..*.
+An association connects 'applauseDsl_RESTMethodCall' and 'applauseDsl_DataSourceAccessMethod'. From 'applauseDsl_RESTMethodCall', the role 'applauseDsl_RESTMethodCall78' has cardinality 0..*, and from 'applauseDsl_DataSourceAccessMethod', the role 'applauseDsl_DataSourceAccessMethod79' has cardinality 0..*.
+An association connects 'applauseDsl_DataSource' and 'applauseDsl_DataSourceCall'. From 'applauseDsl_DataSource', the role 'applauseDsl_DataSource82' has cardinality 0..*, and from 'applauseDsl_DataSourceCall', the role 'applauseDsl_DataSourceCall81' has cardinality 0..*.
+An association connects 'applauseDsl_UIComponentMemberConfiguration' and 'applauseDsl_UIComponentMemberCall'. From 'applauseDsl_UIComponentMemberConfiguration', the role 'applauseDsl_UIComponentMemberConfiguration84' has cardinality 0..*, and from 'applauseDsl_UIComponentMemberCall', the role 'applauseDsl_UIComponentMemberCall' has cardinality 0..*.
+An association connects 'applauseDsl_Expression' and 'applauseDsl_UIComponentMemberConfiguration'. From 'applauseDsl_Expression', the role 'applauseDsl_Expression' has cardinality 0..*, and from 'applauseDsl_UIComponentMemberConfiguration', the role 'applauseDsl_UIComponentMemberConfiguration86' has cardinality 0..*.
+An association connects 'applauseDsl_UIComponentMemberDeclaration' and 'applauseDsl_UIComponentMemberCall'. From 'applauseDsl_UIComponentMemberDeclaration', the role 'applauseDsl_UIComponentMemberDeclaration89' has cardinality 0..*, and from 'applauseDsl_UIComponentMemberCall', the role 'applauseDsl_UIComponentMemberCall88' has cardinality 0..*.
+An association connects 'applauseDsl_UIComponentMemberCall' and 'applauseDsl_UIComponentMemberDeclaration'. From 'applauseDsl_UIComponentMemberCall', the role 'applauseDsl_UIComponentMemberCall91' has cardinality 0..*, and from 'applauseDsl_UIComponentMemberDeclaration', the role 'applauseDsl_UIComponentMemberDeclaration92' has cardinality 0..*.
+An association connects 'applauseDsl_Attribute' and 'applauseDsl_EntityMemberCall'. From 'applauseDsl_Attribute', the role 'applauseDsl_Attribute94' has cardinality 0..*, and from 'applauseDsl_EntityMemberCall', the role 'applauseDsl_EntityMemberCall' has cardinality 0..*.
+An association connects 'applauseDsl_EntityMemberCall' and 'applauseDsl_EntityMemberCallTail'. From 'applauseDsl_EntityMemberCall', the role 'applauseDsl_EntityMemberCall96' has cardinality 0..*, and from 'applauseDsl_EntityMemberCallTail', the role 'applauseDsl_EntityMemberCallTail' has cardinality 0..*.
+An association connects 'applauseDsl_Attribute' and 'applauseDsl_EntityMemberCallTail'. From 'applauseDsl_Attribute', the role 'applauseDsl_Attribute99' has cardinality 0..*, and from 'applauseDsl_EntityMemberCallTail', the role 'applauseDsl_EntityMemberCallTail98' has cardinality 0..*.
+An association connects 'applauseDsl_EntityMemberCallTail' and 'applauseDsl_EntityMemberCallTail'. From 'applauseDsl_EntityMemberCallTail', the role 'applauseDsl_EntityMemberCallTail102' has cardinality 0..*, and from 'applauseDsl_EntityMemberCallTail', the role 'applauseDsl_EntityMemberCallTail100' has cardinality 0..*.
+An association connects 'applauseDsl_AttributeReference' and 'applauseDsl_Attribute'. From 'applauseDsl_AttributeReference', the role 'applauseDsl_AttributeReference' has cardinality 0..*, and from 'applauseDsl_Attribute', the role 'applauseDsl_Attribute104' has cardinality 0..*.

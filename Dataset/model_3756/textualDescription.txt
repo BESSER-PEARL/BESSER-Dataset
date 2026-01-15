@@ -1,0 +1,13 @@
+The domain model 'Relational' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'Relational_Table' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'Relational_Column' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'id', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Relational_Column' and 'Relational_Table'. From 'Relational_Column', the role 'Column' has cardinality 0..*, and from 'Relational_Table', the role 'reference' has cardinality 0..*.
+An association connects 'Relational_Table' and 'Relational_Column'. From 'Relational_Table', the role 'Table' has cardinality 0..*, and from 'Relational_Column', the role 'columns' has cardinality 0..*.

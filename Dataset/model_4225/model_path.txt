@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/adolfosbh/cs2as/org.xtext.example.companies/model/Company.ecore

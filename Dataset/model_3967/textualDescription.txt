@@ -1,0 +1,164 @@
+The domain model 'subsetUnionDepth' describes the core structural elements and their relationships within the system.
+
+The model defines 42 main class(es).
+
+'Container_Level8' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Element_Level7' represents an important domain concept.
+It does not declare any attributes.
+
+'Element_Level1' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Element_Level5' represents an important domain concept.
+It does not declare any attributes.
+
+'Element_Level4' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Container_Level2' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Element' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'subsetUnionDepth_Element_Level6' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Container_Level9' represents an important domain concept.
+It does not declare any attributes.
+
+'Element_Level6' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Container' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Element_Level5' represents an important domain concept.
+It does not declare any attributes.
+
+'Container_Level7' represents an important domain concept.
+It does not declare any attributes.
+
+'Container_Level1' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Container_Level5' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Element_Level3' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Element_Level10' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Element_Level1' represents an important domain concept.
+It does not declare any attributes.
+
+'Element_Level3' represents an important domain concept.
+It does not declare any attributes.
+
+'Element_Level8' represents an important domain concept.
+It does not declare any attributes.
+
+'Container' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Container_Level8' represents an important domain concept.
+It does not declare any attributes.
+
+'Element_Level7' represents an important domain concept.
+It does not declare any attributes.
+
+'Container_Level9' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Container_Level4' represents an important domain concept.
+It does not declare any attributes.
+
+'Element_Level2' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Container_Level6' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Element_Level8' represents an important domain concept.
+It does not declare any attributes.
+
+'Container_Level5' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Container_Level10' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Container_Level3' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Element_Level2' represents an important domain concept.
+It does not declare any attributes.
+
+'Container_Level2' represents an important domain concept.
+It does not declare any attributes.
+
+'Container_Level6' represents an important domain concept.
+It does not declare any attributes.
+
+'Container_Level4' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Element_Level4' represents an important domain concept.
+It does not declare any attributes.
+
+'Container_Level3' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Element_Level9' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Container_Level1' represents an important domain concept.
+It does not declare any attributes.
+
+'Element_Level9' represents an important domain concept.
+It does not declare any attributes.
+
+'subsetUnionDepth_Container_Level7' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'subsetUnionDepth_Element_Level1' is a specialization of 'Element'.
+The class 'subsetUnionDepth_Container_Level1' is a specialization of 'Container'.
+The class 'subsetUnionDepth_Element_Level2' is a specialization of 'Element_Level1'.
+The class 'subsetUnionDepth_Container_Level2' is a specialization of 'Container_Level1'.
+The class 'subsetUnionDepth_Element_Level3' is a specialization of 'Element_Level2'.
+The class 'subsetUnionDepth_Container_Level3' is a specialization of 'Container_Level2'.
+The class 'subsetUnionDepth_Element_Level4' is a specialization of 'Element_Level3'.
+The class 'subsetUnionDepth_Container_Level4' is a specialization of 'Container_Level3'.
+The class 'subsetUnionDepth_Container_Level5' is a specialization of 'Container_Level4'.
+The class 'subsetUnionDepth_Element_Level5' is a specialization of 'Element_Level4'.
+The class 'subsetUnionDepth_Element_Level6' is a specialization of 'Element_Level5'.
+The class 'subsetUnionDepth_Container_Level6' is a specialization of 'Container_Level5'.
+The class 'subsetUnionDepth_Element_Level7' is a specialization of 'Element_Level6'.
+The class 'subsetUnionDepth_Container_Level7' is a specialization of 'Container_Level6'.
+The class 'subsetUnionDepth_Container_Level8' is a specialization of 'Container_Level7'.
+The class 'subsetUnionDepth_Element_Level8' is a specialization of 'Element_Level7'.
+The class 'subsetUnionDepth_Element_Level9' is a specialization of 'Element_Level8'.
+The class 'subsetUnionDepth_Container_Level9' is a specialization of 'Container_Level8'.
+The class 'subsetUnionDepth_Element_Level10' is a specialization of 'Element_Level9'.
+The class 'subsetUnionDepth_Container_Level10' is a specialization of 'Container_Level9'.
+
+Relationships between classes are modeled using associations.
+An association connects 'subsetUnionDepth_Element' and 'subsetUnionDepth_Container'. From 'subsetUnionDepth_Element', the role 'subsetUnionDepth_Element' has cardinality 0..*, and from 'subsetUnionDepth_Container', the role 'subsetUnionDepth_Container' has cardinality 0..*.
+An association connects 'subsetUnionDepth_Container_Level1' and 'subsetUnionDepth_Element_Level1'. From 'subsetUnionDepth_Container_Level1', the role 'subsetUnionDepth_Container_Level1' has cardinality 0..*, and from 'subsetUnionDepth_Element_Level1', the role 'subsetUnionDepth_Element_Level1' has cardinality 0..*.
+An association connects 'subsetUnionDepth_Container_Level2' and 'subsetUnionDepth_Element_Level2'. From 'subsetUnionDepth_Container_Level2', the role 'subsetUnionDepth_Container_Level2' has cardinality 0..*, and from 'subsetUnionDepth_Element_Level2', the role 'subsetUnionDepth_Element_Level2' has cardinality 0..*.
+An association connects 'subsetUnionDepth_Container_Level3' and 'subsetUnionDepth_Element_Level3'. From 'subsetUnionDepth_Container_Level3', the role 'subsetUnionDepth_Container_Level3' has cardinality 0..*, and from 'subsetUnionDepth_Element_Level3', the role 'subsetUnionDepth_Element_Level3' has cardinality 0..*.
+An association connects 'subsetUnionDepth_Container_Level4' and 'subsetUnionDepth_Element_Level4'. From 'subsetUnionDepth_Container_Level4', the role 'subsetUnionDepth_Container_Level4' has cardinality 0..*, and from 'subsetUnionDepth_Element_Level4', the role 'subsetUnionDepth_Element_Level4' has cardinality 0..*.
+An association connects 'subsetUnionDepth_Element_Level5' and 'subsetUnionDepth_Container_Level5'. From 'subsetUnionDepth_Element_Level5', the role 'subsetUnionDepth_Element_Level5' has cardinality 0..*, and from 'subsetUnionDepth_Container_Level5', the role 'subsetUnionDepth_Container_Level5' has cardinality 0..*.
+An association connects 'subsetUnionDepth_Element_Level6' and 'subsetUnionDepth_Container_Level6'. From 'subsetUnionDepth_Element_Level6', the role 'subsetUnionDepth_Element_Level6' has cardinality 0..*, and from 'subsetUnionDepth_Container_Level6', the role 'subsetUnionDepth_Container_Level6' has cardinality 0..*.
+An association connects 'subsetUnionDepth_Element_Level7' and 'subsetUnionDepth_Container_Level7'. From 'subsetUnionDepth_Element_Level7', the role 'subsetUnionDepth_Element_Level7' has cardinality 0..*, and from 'subsetUnionDepth_Container_Level7', the role 'subsetUnionDepth_Container_Level7' has cardinality 0..*.
+An association connects 'subsetUnionDepth_Container_Level8' and 'subsetUnionDepth_Element_Level8'. From 'subsetUnionDepth_Container_Level8', the role 'subsetUnionDepth_Container_Level8' has cardinality 0..*, and from 'subsetUnionDepth_Element_Level8', the role 'subsetUnionDepth_Element_Level8' has cardinality 0..*.
+An association connects 'subsetUnionDepth_Container_Level9' and 'subsetUnionDepth_Element_Level9'. From 'subsetUnionDepth_Container_Level9', the role 'subsetUnionDepth_Container_Level9' has cardinality 0..*, and from 'subsetUnionDepth_Element_Level9', the role 'subsetUnionDepth_Element_Level9' has cardinality 0..*.
+An association connects 'subsetUnionDepth_Element_Level10' and 'subsetUnionDepth_Container_Level10'. From 'subsetUnionDepth_Element_Level10', the role 'subsetUnionDepth_Element_Level10' has cardinality 0..*, and from 'subsetUnionDepth_Container_Level10', the role 'subsetUnionDepth_Container_Level10' has cardinality 0..*.

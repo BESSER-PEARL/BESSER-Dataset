@@ -1,0 +1,100 @@
+The domain model 'xpdl' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'xpdl_Extensible' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl_BasicTypeType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'xpdl_ExternalPackage' represents an important domain concept.
+It has the following attributes: 'href', which is of type str; 'id', which is of type str; 'name', which is of type str.
+
+'xpdl_extensions_ExtendedAnnotationType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl_FormalParametersType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl_DeclaredTypeType' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'xpdl_ExtendedAttributesType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl_XpdlTypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl_TypeDeclarationType' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str; 'id', which is of type str.
+
+'xpdl_DataTypeType' represents an important domain concept.
+It has one attribute: 'carnotType', which is of type str.
+
+'xpdl_XSDSchema' represents an important domain concept.
+It does not declare any attributes.
+
+'XpdlTypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'Extensible' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl_ScriptType' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'version', which is of type str; 'grammar', which is of type str.
+
+'xpdl_SchemaTypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl_ExtendedAttributeType' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'name', which is of type str; 'any', which is of type str; 'group', which is of type str; 'mixed', which is of type str.
+
+'xpdl_FormalParameterType' represents an important domain concept.
+It has the following attributes: 'mode', which is of type str; 'name', which is of type str; 'id', which is of type str; 'description', which is of type str.
+
+'xpdl_TypeDeclarationsType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl_ExternalPackages' represents an important domain concept.
+It does not declare any attributes.
+
+'XSDAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'ExtendedAnnotationType' represents an important domain concept.
+It does not declare any attributes.
+
+'xpdl_ExternalReferenceType' represents an important domain concept.
+It has the following attributes: 'namespace', which is of type str; 'xref', which is of type str; 'location', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ModeType' defines the following possible values: 'OUT', 'IN', 'INOUT'.
+The enumeration 'TypeType' defines the following possible values: 'INTEGER', 'STRING', 'FLOAT', 'REFERENCE', 'BOOLEAN', 'DATETIME', 'PERFORMER'.
+
+The model also captures inheritance relationships between classes.
+The class 'xpdl_BasicTypeType' is a specialization of 'XpdlTypeType'.
+The class 'xpdl_DeclaredTypeType' is a specialization of 'XpdlTypeType'.
+The class 'xpdl_ExternalPackage' is a specialization of 'Extensible'.
+The class 'xpdl_ExternalReferenceType' is a specialization of 'XpdlTypeType'.
+The class 'xpdl_SchemaTypeType' is a specialization of 'XpdlTypeType'.
+The class 'xpdl_TypeDeclarationType' is a specialization of 'Extensible'.
+The class 'xpdl_extensions_ExtendedAnnotationType' is a specialization of 'XSDAnnotation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'xpdl_DataTypeType' and 'xpdl_BasicTypeType'. From 'xpdl_DataTypeType', the role 'xpdl_DataTypeType' has cardinality 0..*, and from 'xpdl_BasicTypeType', the role 'xpdl_BasicTypeType' has cardinality 0..*.
+An association connects 'xpdl_DeclaredTypeType' and 'xpdl_DataTypeType'. From 'xpdl_DeclaredTypeType', the role 'xpdl_DeclaredTypeType' has cardinality 0..*, and from 'xpdl_DataTypeType', the role 'xpdl_DataTypeType2' has cardinality 0..*.
+An association connects 'xpdl_DataTypeType' and 'xpdl_SchemaTypeType'. From 'xpdl_DataTypeType', the role 'xpdl_DataTypeType4' has cardinality 0..*, and from 'xpdl_SchemaTypeType', the role 'xpdl_SchemaTypeType' has cardinality 0..*.
+An association connects 'xpdl_DataTypeType' and 'xpdl_ExternalReferenceType'. From 'xpdl_DataTypeType', the role 'xpdl_DataTypeType6' has cardinality 0..*, and from 'xpdl_ExternalReferenceType', the role 'xpdl_ExternalReferenceType' has cardinality 0..*.
+An association connects 'xpdl_ExtendedAttributesType' and 'xpdl_ExtendedAttributeType'. From 'xpdl_ExtendedAttributesType', the role 'xpdl_ExtendedAttributesType' has cardinality 0..*, and from 'xpdl_ExtendedAttributeType', the role 'xpdl_ExtendedAttributeType' has cardinality 0..*.
+An association connects 'ExtendedAnnotationType' and 'xpdl_ExtendedAttributeType'. From 'ExtendedAnnotationType', the role 'ExtendedAnnotationType' has cardinality 0..*, and from 'xpdl_ExtendedAttributeType', the role 'xpdl_ExtendedAttributeType9' has cardinality 0..*.
+An association connects 'xpdl_Extensible' and 'xpdl_ExtendedAttributesType'. From 'xpdl_Extensible', the role 'xpdl_Extensible' has cardinality 0..*, and from 'xpdl_ExtendedAttributesType', the role 'xpdl_ExtendedAttributesType11' has cardinality 0..*.
+An association connects 'xpdl_ExternalPackage' and 'xpdl_ExternalPackages'. From 'xpdl_ExternalPackage', the role 'xpdl_ExternalPackage' has cardinality 0..*, and from 'xpdl_ExternalPackages', the role 'xpdl_ExternalPackages' has cardinality 0..*.
+An association connects 'xpdl_FormalParametersType' and 'xpdl_FormalParameterType'. From 'xpdl_FormalParametersType', the role 'xpdl_FormalParametersType' has cardinality 0..*, and from 'xpdl_FormalParameterType', the role 'xpdl_FormalParameterType' has cardinality 0..*.
+An association connects 'xpdl_DataTypeType' and 'xpdl_FormalParameterType'. From 'xpdl_DataTypeType', the role 'xpdl_DataTypeType16' has cardinality 0..*, and from 'xpdl_FormalParameterType', the role 'xpdl_FormalParameterType15' has cardinality 0..*.
+An association connects 'xpdl_SchemaTypeType' and 'xpdl_XSDSchema'. From 'xpdl_SchemaTypeType', the role 'xpdl_SchemaTypeType18' has cardinality 0..*, and from 'xpdl_XSDSchema', the role 'xpdl_XSDSchema' has cardinality 0..*.
+An association connects 'xpdl_TypeDeclarationsType' and 'xpdl_TypeDeclarationType'. From 'xpdl_TypeDeclarationsType', the role 'xpdl_TypeDeclarationsType' has cardinality 0..*, and from 'xpdl_TypeDeclarationType', the role 'xpdl_TypeDeclarationType' has cardinality 0..*.
+An association connects 'xpdl_BasicTypeType' and 'xpdl_TypeDeclarationType'. From 'xpdl_BasicTypeType', the role 'xpdl_BasicTypeType22' has cardinality 0..*, and from 'xpdl_TypeDeclarationType', the role 'xpdl_TypeDeclarationType21' has cardinality 0..*.
+An association connects 'xpdl_DeclaredTypeType' and 'xpdl_TypeDeclarationType'. From 'xpdl_DeclaredTypeType', the role 'xpdl_DeclaredTypeType25' has cardinality 0..*, and from 'xpdl_TypeDeclarationType', the role 'xpdl_TypeDeclarationType24' has cardinality 0..*.
+An association connects 'xpdl_TypeDeclarationType' and 'xpdl_SchemaTypeType'. From 'xpdl_TypeDeclarationType', the role 'xpdl_TypeDeclarationType27' has cardinality 0..*, and from 'xpdl_SchemaTypeType', the role 'xpdl_SchemaTypeType28' has cardinality 0..*.
+An association connects 'xpdl_ExternalReferenceType' and 'xpdl_TypeDeclarationType'. From 'xpdl_ExternalReferenceType', the role 'xpdl_ExternalReferenceType31' has cardinality 0..*, and from 'xpdl_TypeDeclarationType', the role 'xpdl_TypeDeclarationType30' has cardinality 0..*.

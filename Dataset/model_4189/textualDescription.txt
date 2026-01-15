@@ -1,0 +1,12 @@
+The domain model 'evlDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'evlDSL_Greeting' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'evlDSL_Model' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'evlDSL_Greeting' and 'evlDSL_Model'. From 'evlDSL_Greeting', the role 'evlDSL_Greeting' has cardinality 0..*, and from 'evlDSL_Model', the role 'evlDSL_Model' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/unicase-ls1/unicase/developer/CodeExamples/BowlingExample/org.unicase.bowlingmodel/model/bowlingmodel.ecore

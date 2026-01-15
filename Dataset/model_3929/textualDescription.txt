@@ -1,0 +1,225 @@
+The domain model 'modelDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 50 main class(es).
+
+'modelDsl_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_ChildType' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_EntityElements' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_StringValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'modelDsl_Field' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'modelDsl_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_DataTypeType' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_AnnotationProperty' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str; 'multi', which is of type bool.
+
+'modelDsl_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_Child' represents an important domain concept.
+It does not declare any attributes.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Container' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_Container' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_AnnotationHiddenProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_ParentType' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_FormatRangeValue' represents an important domain concept.
+It has the following attributes: 'to', which is of type str; 'from', which is of type str.
+
+'Field' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_Property' represents an important domain concept.
+It has one attribute: 'optional', which is of type bool.
+
+'modelDsl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_ReferenceListType' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_PropertyType' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_Annotated' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_Import' represents an important domain concept.
+It has one attribute: 'importedNamespace', which is of type str.
+
+'modelDsl_RangeValue' represents an important domain concept.
+It has the following attributes: 'fromInf', which is of type bool; 'from', which is of type int; 'toInf', which is of type bool; 'to', which is of type int.
+
+'modelDsl_AnnoTypes' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_IntegerValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'modelDsl_PackageType' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_AnnotationGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_PatternType' represents an important domain concept.
+It has the following attributes: 'DATE', which is of type str; 'NUMBER', which is of type str; 'REGEX', which is of type str.
+
+'modelDsl_GroupType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'modelDsl_Reference' represents an important domain concept.
+It has one attribute: 'optional', which is of type bool.
+
+'AnnoTypes' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_ReferenceType' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_AnnotationType' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_Annotation' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_Parent' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_EntityGroup' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'modelDsl_ReferenceList' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_Element' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'modelDsl_EntityType' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_AnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Annotated' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_DoubleValue' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'AnnotationValue' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_AnnotationInstance' represents an important domain concept.
+It does not declare any attributes.
+
+'modelDsl_DataTypeField' represents an important domain concept.
+It has one attribute: 'format', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ValueType' defines the following possible values: 'INTEGER', 'STRING', 'INT_RANGE', 'FORMAT_RANGE', 'DOUBLE'.
+
+The model also captures inheritance relationships between classes.
+The class 'modelDsl_Element' is a specialization of 'Annotated'.
+The class 'modelDsl_Type' is a specialization of 'Element'.
+The class 'modelDsl_Package' is a specialization of 'Element'.
+The class 'modelDsl_DataType' is a specialization of 'Type'.
+The class 'modelDsl_Entity' is a specialization of 'Type'.
+The class 'modelDsl_Container' is a specialization of 'Annotated'.
+The class 'modelDsl_Field' is a specialization of 'Annotated'.
+The class 'modelDsl_Parent' is a specialization of 'Container'.
+The class 'modelDsl_Child' is a specialization of 'Container'.
+The class 'modelDsl_Property' is a specialization of 'Field'.
+The class 'modelDsl_Reference' is a specialization of 'Field'.
+The class 'modelDsl_ReferenceList' is a specialization of 'Field'.
+The class 'modelDsl_Annotation' is a specialization of 'Element'.
+The class 'modelDsl_AnnotationGroup' is a specialization of 'AnnotationValue'.
+The class 'modelDsl_AnnotationInstance' is a specialization of 'Annotated'.
+The class 'modelDsl_GroupType' is a specialization of 'AnnoTypes'.
+The class 'modelDsl_PackageType' is a specialization of 'AnnoTypes'.
+The class 'modelDsl_DataTypeType' is a specialization of 'AnnoTypes'.
+The class 'modelDsl_AnnotationType' is a specialization of 'AnnoTypes'.
+The class 'modelDsl_EntityType' is a specialization of 'AnnoTypes'.
+The class 'modelDsl_PropertyType' is a specialization of 'AnnoTypes'.
+The class 'modelDsl_ReferenceType' is a specialization of 'AnnoTypes'.
+The class 'modelDsl_ReferenceListType' is a specialization of 'AnnoTypes'.
+The class 'modelDsl_ParentType' is a specialization of 'AnnoTypes'.
+The class 'modelDsl_ChildType' is a specialization of 'AnnoTypes'.
+The class 'modelDsl_StringValue' is a specialization of 'Value'.
+The class 'modelDsl_IntegerValue' is a specialization of 'Value'.
+The class 'modelDsl_DoubleValue' is a specialization of 'Value'.
+The class 'modelDsl_RangeValue' is a specialization of 'Value'.
+The class 'modelDsl_FormatRangeValue' is a specialization of 'Value'.
+The class 'modelDsl_Value' is a specialization of 'AnnotationValue'.
+
+Relationships between classes are modeled using associations.
+An association connects 'modelDsl_Import' and 'modelDsl_Model'. From 'modelDsl_Import', the role 'modelDsl_Import' has cardinality 0..*, and from 'modelDsl_Model', the role 'modelDsl_Model' has cardinality 0..*.
+An association connects 'modelDsl_Model' and 'modelDsl_Element'. From 'modelDsl_Model', the role 'modelDsl_Model2' has cardinality 0..*, and from 'modelDsl_Element', the role 'modelDsl_Element' has cardinality 0..*.
+An association connects 'modelDsl_Type' and 'modelDsl_AnnotationGroup'. From 'modelDsl_Type', the role 'modelDsl_Type' has cardinality 0..*, and from 'modelDsl_AnnotationGroup', the role 'modelDsl_AnnotationGroup' has cardinality 0..*.
+An association connects 'modelDsl_Package' and 'modelDsl_AnnotationGroup'. From 'modelDsl_Package', the role 'modelDsl_Package' has cardinality 0..*, and from 'modelDsl_AnnotationGroup', the role 'modelDsl_AnnotationGroup5' has cardinality 0..*.
+An association connects 'modelDsl_Element' and 'modelDsl_Package'. From 'modelDsl_Element', the role 'modelDsl_Element8' has cardinality 0..*, and from 'modelDsl_Package', the role 'modelDsl_Package7' has cardinality 0..*.
+An association connects 'modelDsl_DataType' and 'modelDsl_DataTypeField'. From 'modelDsl_DataType', the role 'modelDsl_DataType' has cardinality 0..*, and from 'modelDsl_DataTypeField', the role 'modelDsl_DataTypeField' has cardinality 0..*.
+An association connects 'modelDsl_DataTypeField' and 'modelDsl_PatternType'. From 'modelDsl_DataTypeField', the role 'modelDsl_DataTypeField11' has cardinality 0..*, and from 'modelDsl_PatternType', the role 'modelDsl_PatternType' has cardinality 0..*.
+An association connects 'modelDsl_DataType' and 'modelDsl_DataTypeField'. From 'modelDsl_DataType', the role 'modelDsl_DataType14' has cardinality 0..*, and from 'modelDsl_DataTypeField', the role 'modelDsl_DataTypeField13' has cardinality 0..*.
+An association connects 'modelDsl_Entity' and 'modelDsl_Parent'. From 'modelDsl_Entity', the role 'modelDsl_Entity' has cardinality 0..*, and from 'modelDsl_Parent', the role 'modelDsl_Parent' has cardinality 0..*.
+An association connects 'modelDsl_EntityElements' and 'modelDsl_Entity'. From 'modelDsl_EntityElements', the role 'modelDsl_EntityElements' has cardinality 0..*, and from 'modelDsl_Entity', the role 'modelDsl_Entity17' has cardinality 0..*.
+An association connects 'modelDsl_EntityGroup' and 'modelDsl_Entity'. From 'modelDsl_EntityGroup', the role 'modelDsl_EntityGroup' has cardinality 0..*, and from 'modelDsl_Entity', the role 'modelDsl_Entity19' has cardinality 0..*.
+An association connects 'modelDsl_EntityGroup' and 'modelDsl_EntityElements'. From 'modelDsl_EntityGroup', the role 'modelDsl_EntityGroup21' has cardinality 0..*, and from 'modelDsl_EntityElements', the role 'modelDsl_EntityElements22' has cardinality 0..*.
+An association connects 'modelDsl_Child' and 'modelDsl_EntityElements'. From 'modelDsl_Child', the role 'modelDsl_Child' has cardinality 0..*, and from 'modelDsl_EntityElements', the role 'modelDsl_EntityElements24' has cardinality 0..*.
+An association connects 'modelDsl_Property' and 'modelDsl_EntityElements'. From 'modelDsl_Property', the role 'modelDsl_Property' has cardinality 0..*, and from 'modelDsl_EntityElements', the role 'modelDsl_EntityElements26' has cardinality 0..*.
+An association connects 'modelDsl_EntityElements' and 'modelDsl_Reference'. From 'modelDsl_EntityElements', the role 'modelDsl_EntityElements28' has cardinality 0..*, and from 'modelDsl_Reference', the role 'modelDsl_Reference' has cardinality 0..*.
+An association connects 'modelDsl_ReferenceList' and 'modelDsl_EntityElements'. From 'modelDsl_ReferenceList', the role 'modelDsl_ReferenceList' has cardinality 0..*, and from 'modelDsl_EntityElements', the role 'modelDsl_EntityElements30' has cardinality 0..*.
+An association connects 'modelDsl_Entity' and 'modelDsl_Container'. From 'modelDsl_Entity', the role 'modelDsl_Entity32' has cardinality 0..*, and from 'modelDsl_Container', the role 'modelDsl_Container' has cardinality 0..*.
+An association connects 'modelDsl_AnnotationGroup' and 'modelDsl_Container'. From 'modelDsl_AnnotationGroup', the role 'modelDsl_AnnotationGroup35' has cardinality 0..*, and from 'modelDsl_Container', the role 'modelDsl_Container34' has cardinality 0..*.
+An association connects 'modelDsl_AnnotationGroup' and 'modelDsl_Field'. From 'modelDsl_AnnotationGroup', the role 'modelDsl_AnnotationGroup37' has cardinality 0..*, and from 'modelDsl_Field', the role 'modelDsl_Field' has cardinality 0..*.
+An association connects 'modelDsl_Property' and 'modelDsl_Type'. From 'modelDsl_Property', the role 'modelDsl_Property39' has cardinality 0..*, and from 'modelDsl_Type', the role 'modelDsl_Type40' has cardinality 0..*.
+An association connects 'modelDsl_Entity' and 'modelDsl_Reference'. From 'modelDsl_Entity', the role 'modelDsl_Entity43' has cardinality 0..*, and from 'modelDsl_Reference', the role 'modelDsl_Reference42' has cardinality 0..*.
+An association connects 'modelDsl_ReferenceList' and 'modelDsl_Reference'. From 'modelDsl_ReferenceList', the role 'modelDsl_ReferenceList45' has cardinality 0..*, and from 'modelDsl_Reference', the role 'modelDsl_Reference46' has cardinality 0..*.
+An association connects 'modelDsl_ReferenceList' and 'modelDsl_Entity'. From 'modelDsl_ReferenceList', the role 'modelDsl_ReferenceList48' has cardinality 0..*, and from 'modelDsl_Entity', the role 'modelDsl_Entity49' has cardinality 0..*.
+An association connects 'modelDsl_AnnoTypes' and 'modelDsl_Annotation'. From 'modelDsl_AnnoTypes', the role 'modelDsl_AnnoTypes' has cardinality 0..*, and from 'modelDsl_Annotation', the role 'modelDsl_Annotation' has cardinality 0..*.
+An association connects 'modelDsl_AnnotationInstance' and 'modelDsl_Annotation'. From 'modelDsl_AnnotationInstance', the role 'modelDsl_AnnotationInstance' has cardinality 0..*, and from 'modelDsl_Annotation', the role 'modelDsl_Annotation52' has cardinality 0..*.
+An association connects 'modelDsl_AnnotationProperty' and 'modelDsl_Annotation'. From 'modelDsl_AnnotationProperty', the role 'modelDsl_AnnotationProperty' has cardinality 0..*, and from 'modelDsl_Annotation', the role 'modelDsl_Annotation54' has cardinality 0..*.
+An association connects 'modelDsl_Annotation' and 'modelDsl_AnnotationProperty'. From 'modelDsl_Annotation', the role 'modelDsl_Annotation56' has cardinality 0..*, and from 'modelDsl_AnnotationProperty', the role 'modelDsl_AnnotationProperty57' has cardinality 0..*.
+An association connects 'modelDsl_AnnotationProperty' and 'modelDsl_GroupType'. From 'modelDsl_AnnotationProperty', the role 'modelDsl_AnnotationProperty59' has cardinality 0..*, and from 'modelDsl_GroupType', the role 'modelDsl_GroupType' has cardinality 0..*.
+An association connects 'modelDsl_AnnotationInstance' and 'modelDsl_AnnotationGroup'. From 'modelDsl_AnnotationInstance', the role 'modelDsl_AnnotationInstance62' has cardinality 0..*, and from 'modelDsl_AnnotationGroup', the role 'modelDsl_AnnotationGroup61' has cardinality 0..*.
+An association connects 'modelDsl_AnnotationInstance' and 'modelDsl_Annotation'. From 'modelDsl_AnnotationInstance', the role 'modelDsl_AnnotationInstance64' has cardinality 0..*, and from 'modelDsl_Annotation', the role 'modelDsl_Annotation65' has cardinality 0..*.
+An association connects 'modelDsl_AnnotationInstance' and 'modelDsl_AnnotationValue'. From 'modelDsl_AnnotationInstance', the role 'modelDsl_AnnotationInstance67' has cardinality 0..*, and from 'modelDsl_AnnotationValue', the role 'modelDsl_AnnotationValue' has cardinality 0..*.
+An association connects 'modelDsl_AnnotationHiddenProperty' and 'modelDsl_AnnotationInstance'. From 'modelDsl_AnnotationHiddenProperty', the role 'modelDsl_AnnotationHiddenProperty' has cardinality 0..*, and from 'modelDsl_AnnotationInstance', the role 'modelDsl_AnnotationInstance69' has cardinality 0..*.
+An association connects 'modelDsl_AnnotationHiddenProperty' and 'modelDsl_AnnotationProperty'. From 'modelDsl_AnnotationHiddenProperty', the role 'modelDsl_AnnotationHiddenProperty71' has cardinality 0..*, and from 'modelDsl_AnnotationProperty', the role 'modelDsl_AnnotationProperty72' has cardinality 0..*.
+An association connects 'modelDsl_AnnotationHiddenProperty' and 'modelDsl_AnnotationValue'. From 'modelDsl_AnnotationHiddenProperty', the role 'modelDsl_AnnotationHiddenProperty74' has cardinality 0..*, and from 'modelDsl_AnnotationValue', the role 'modelDsl_AnnotationValue75' has cardinality 0..*.

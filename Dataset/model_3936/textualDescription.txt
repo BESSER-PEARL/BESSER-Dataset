@@ -1,0 +1,42 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'myDsl_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type bool.
+
+'myDsl_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Domainmodel' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_Role' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type bool.
+
+'myDsl_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl_DataType' is a specialization of 'Type'.
+The class 'myDsl_Association' is a specialization of 'Type'.
+The class 'myDsl_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_Domainmodel' and 'myDsl_Type'. From 'myDsl_Domainmodel', the role 'myDsl_Domainmodel' has cardinality 0..*, and from 'myDsl_Type', the role 'myDsl_Type' has cardinality 0..*.
+An association connects 'myDsl_Attribute' and 'myDsl_Association'. From 'myDsl_Attribute', the role 'myDsl_Attribute' has cardinality 0..*, and from 'myDsl_Association', the role 'myDsl_Association' has cardinality 0..*.
+An association connects 'myDsl_Role' and 'myDsl_Association'. From 'myDsl_Role', the role 'myDsl_Role' has cardinality 0..*, and from 'myDsl_Association', the role 'myDsl_Association3' has cardinality 0..*.
+An association connects 'myDsl_Entity' and 'myDsl_Entity'. From 'myDsl_Entity', the role 'myDsl_Entity' has cardinality 0..*, and from 'myDsl_Entity', the role 'myDsl_Entity4' has cardinality 0..*.
+An association connects 'myDsl_Attribute' and 'myDsl_Entity'. From 'myDsl_Attribute', the role 'myDsl_Attribute8' has cardinality 0..*, and from 'myDsl_Entity', the role 'myDsl_Entity7' has cardinality 0..*.
+An association connects 'myDsl_Role' and 'myDsl_Entity'. From 'myDsl_Role', the role 'myDsl_Role11' has cardinality 0..*, and from 'myDsl_Entity', the role 'myDsl_Entity10' has cardinality 0..*.
+An association connects 'myDsl_Type' and 'myDsl_Attribute'. From 'myDsl_Type', the role 'myDsl_Type14' has cardinality 0..*, and from 'myDsl_Attribute', the role 'myDsl_Attribute13' has cardinality 0..*.
+An association connects 'myDsl_Role' and 'myDsl_Type'. From 'myDsl_Role', the role 'myDsl_Role16' has cardinality 0..*, and from 'myDsl_Type', the role 'myDsl_Type17' has cardinality 0..*.

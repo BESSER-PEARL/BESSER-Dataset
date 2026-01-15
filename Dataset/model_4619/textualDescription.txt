@@ -1,0 +1,252 @@
+The domain model 'trnetvisual' describes the core structural elements and their relationships within the system.
+
+The model defines 52 main class(es).
+
+'NodePattern' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_ExternalActionCall' represents an important domain concept.
+It has the following attributes: 'qualifiedName', which is of type str; 'id', which is of type str.
+
+'Calculation' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_ExternalAttributeCalculationCall' represents an important domain concept.
+It has the following attributes: 'qualifiedName', which is of type str; 'id', which is of type str.
+
+'trnetvisual_SomeOperand' represents an important domain concept.
+It has one attribute: 'count', which is of type int.
+
+'trnetvisual_Different' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterRef' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_AntiOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'AttributeCalculation' represents an important domain concept.
+It does not declare any attributes.
+
+'Operand' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_ExternalCalculationCall' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'qualifiedName', which is of type str.
+
+'trnetvisual_AttributePattern' represents an important domain concept.
+It has the following attributes: 'expectedNumberOfDistinctValues', which is of type float; 'name', which is of type str.
+
+'trnetvisual_Operator' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'trnetvisual_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_SomeResult' represents an important domain concept.
+It has one attribute: 'count', which is of type int.
+
+'trnetvisual_ExternalAttributeCalculationCallParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'ApplicationCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_MandatoryNode' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_AttributeCalculation' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_TrNetModel' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'trnetvisual_OptionalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_ExternalCalculationCallParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_ExternalConditionCallParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_EdgePattern' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_Operand' represents an important domain concept.
+It has one attribute: 'index', which is of type int.
+
+'trnetvisual_NextDerived' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_External' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_ParameterRef' represents an important domain concept.
+It has one attribute: 'index', which is of type int.
+
+'Restriction' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_FlowRule' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_Keep' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_Next' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_Result' represents an important domain concept.
+It does not declare any attributes.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'Result' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_NodePattern' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'expectedNumberOfDistinctValues', which is of type float; 'name', which is of type str.
+
+'trnetvisual_ApplicationCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_ExternalActionCallParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_Calculation' represents an important domain concept.
+It does not declare any attributes.
+
+'FlowRule' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_OptionalOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_ExternalConditionCall' represents an important domain concept.
+It has the following attributes: 'qualifiedName', which is of type str; 'id', which is of type str.
+
+'trnetvisual_AnyOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_AnyResult' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_Eventually' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_Restriction' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_Same' represents an important domain concept.
+It does not declare any attributes.
+
+'trnetvisual_Pattern' represents an important domain concept.
+It has the following attributes: 'expected_size', which is of type float; 'id', which is of type str.
+
+'trnetvisual_Combinator' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'trnetvisual_NodePattern' is a specialization of 'Parameter'.
+The class 'trnetvisual_Same' is a specialization of 'Restriction'.
+The class 'trnetvisual_Different' is a specialization of 'Restriction'.
+The class 'trnetvisual_AttributePattern' is a specialization of 'Parameter'.
+The class 'trnetvisual_Keep' is a specialization of 'Restriction'.
+The class 'trnetvisual_MandatoryNode' is a specialization of 'NodePattern'.
+The class 'trnetvisual_OptionalNode' is a specialization of 'NodePattern'.
+The class 'trnetvisual_Combinator' is a specialization of 'Operator'.
+The class 'trnetvisual_External' is a specialization of 'Operator'.
+The class 'trnetvisual_AnyResult' is a specialization of 'Result'.
+The class 'trnetvisual_SomeResult' is a specialization of 'Result'.
+The class 'trnetvisual_AnyOperand' is a specialization of 'Operand'.
+The class 'trnetvisual_SomeOperand' is a specialization of 'Operand'.
+The class 'trnetvisual_AntiOperand' is a specialization of 'Operand'.
+The class 'trnetvisual_OptionalOperand' is a specialization of 'Operand'.
+The class 'trnetvisual_Next' is a specialization of 'FlowRule'.
+The class 'trnetvisual_Eventually' is a specialization of 'FlowRule'.
+The class 'trnetvisual_NextDerived' is a specialization of 'FlowRule'.
+The class 'trnetvisual_AttributeCalculation' is a specialization of 'Restriction'.
+The class 'trnetvisual_ExternalAttributeCalculationCall' is a specialization of 'AttributeCalculation'.
+The class 'trnetvisual_ExternalConditionCall' is a specialization of 'ApplicationCondition'.
+The class 'trnetvisual_ExternalActionCall' is a specialization of 'Action'.
+The class 'trnetvisual_ExternalAttributeCalculationCallParameter' is a specialization of 'ParameterRef'.
+The class 'trnetvisual_ExternalConditionCallParameter' is a specialization of 'ParameterRef'.
+The class 'trnetvisual_ExternalActionCallParameter' is a specialization of 'ParameterRef'.
+The class 'trnetvisual_Calculation' is a specialization of 'Parameter'.
+The class 'trnetvisual_ExternalCalculationCall' is a specialization of 'Calculation'.
+The class 'trnetvisual_ExternalCalculationCallParameter' is a specialization of 'ParameterRef'.
+
+Relationships between classes are modeled using associations.
+An association connects 'trnetvisual_TrNetModel' and 'trnetvisual_Pattern'. From 'trnetvisual_TrNetModel', the role 'trnetvisual_TrNetModel' has cardinality 0..*, and from 'trnetvisual_Pattern', the role 'trnetvisual_Pattern' has cardinality 0..*.
+An association connects 'trnetvisual_TrNetModel' and 'trnetvisual_Operator'. From 'trnetvisual_TrNetModel', the role 'trnetvisual_TrNetModel2' has cardinality 0..*, and from 'trnetvisual_Operator', the role 'trnetvisual_Operator' has cardinality 0..*.
+An association connects 'trnetvisual_TrNetModel' and 'trnetvisual_Restriction'. From 'trnetvisual_TrNetModel', the role 'trnetvisual_TrNetModel4' has cardinality 0..*, and from 'trnetvisual_Restriction', the role 'trnetvisual_Restriction' has cardinality 0..*.
+An association connects 'trnetvisual_Operand' and 'trnetvisual_TrNetModel'. From 'trnetvisual_Operand', the role 'trnetvisual_Operand' has cardinality 0..*, and from 'trnetvisual_TrNetModel', the role 'trnetvisual_TrNetModel6' has cardinality 0..*.
+An association connects 'trnetvisual_TrNetModel' and 'trnetvisual_Result'. From 'trnetvisual_TrNetModel', the role 'trnetvisual_TrNetModel8' has cardinality 0..*, and from 'trnetvisual_Result', the role 'trnetvisual_Result' has cardinality 0..*.
+An association connects 'trnetvisual_TrNetModel' and 'trnetvisual_FlowRule'. From 'trnetvisual_TrNetModel', the role 'trnetvisual_TrNetModel10' has cardinality 0..*, and from 'trnetvisual_FlowRule', the role 'trnetvisual_FlowRule' has cardinality 0..*.
+An association connects 'trnetvisual_TrNetModel' and 'trnetvisual_Calculation'. From 'trnetvisual_TrNetModel', the role 'trnetvisual_TrNetModel12' has cardinality 0..*, and from 'trnetvisual_Calculation', the role 'trnetvisual_Calculation' has cardinality 0..*.
+An association connects 'trnetvisual_NodePattern' and 'trnetvisual_EdgePattern'. From 'trnetvisual_NodePattern', the role 'target' has cardinality 0..*, and from 'trnetvisual_EdgePattern', the role 'EdgePattern' has cardinality 0..*.
+An association connects 'trnetvisual_EdgePattern' and 'trnetvisual_NodePattern'. From 'trnetvisual_EdgePattern', the role 'EdgePattern15' has cardinality 0..*, and from 'trnetvisual_NodePattern', the role 'source' has cardinality 0..*.
+An association connects 'trnetvisual_Same' and 'trnetvisual_NodePattern'. From 'trnetvisual_Same', the role 'Same' has cardinality 0..*, and from 'trnetvisual_NodePattern', the role 'source17' has cardinality 0..*.
+An association connects 'trnetvisual_NodePattern' and 'trnetvisual_Same'. From 'trnetvisual_NodePattern', the role 'target19' has cardinality 0..*, and from 'trnetvisual_Same', the role 'Same20' has cardinality 0..*.
+An association connects 'trnetvisual_NodePattern' and 'trnetvisual_Pattern'. From 'trnetvisual_NodePattern', the role 'nodes' has cardinality 0..*, and from 'trnetvisual_Pattern', the role 'Pattern' has cardinality 0..*.
+An association connects 'trnetvisual_AttributePattern' and 'trnetvisual_NodePattern'. From 'trnetvisual_AttributePattern', the role 'AttributePattern' has cardinality 0..*, and from 'trnetvisual_NodePattern', the role 'ownerNode' has cardinality 0..*.
+An association connects 'trnetvisual_Keep' and 'trnetvisual_NodePattern'. From 'trnetvisual_Keep', the role 'Keep' has cardinality 0..*, and from 'trnetvisual_NodePattern', the role 'target24' has cardinality 0..*.
+An association connects 'trnetvisual_Keep' and 'trnetvisual_NodePattern'. From 'trnetvisual_Keep', the role 'Keep27' has cardinality 0..*, and from 'trnetvisual_NodePattern', the role 'source26' has cardinality 0..*.
+An association connects 'trnetvisual_NodePattern' and 'trnetvisual_Different'. From 'trnetvisual_NodePattern', the role 'target29' has cardinality 0..*, and from 'trnetvisual_Different', the role 'Different' has cardinality 0..*.
+An association connects 'trnetvisual_NodePattern' and 'trnetvisual_Different'. From 'trnetvisual_NodePattern', the role 'source31' has cardinality 0..*, and from 'trnetvisual_Different', the role 'Different32' has cardinality 0..*.
+An association connects 'trnetvisual_EdgePattern' and 'trnetvisual_NodePattern'. From 'trnetvisual_EdgePattern', the role 'outgoing' has cardinality 0..*, and from 'trnetvisual_NodePattern', the role 'NodePattern' has cardinality 0..*.
+An association connects 'trnetvisual_EdgePattern' and 'trnetvisual_NodePattern'. From 'trnetvisual_EdgePattern', the role 'incoming' has cardinality 0..*, and from 'trnetvisual_NodePattern', the role 'NodePattern35' has cardinality 0..*.
+An association connects 'trnetvisual_Pattern' and 'trnetvisual_EdgePattern'. From 'trnetvisual_Pattern', the role 'Pattern37' has cardinality 0..*, and from 'trnetvisual_EdgePattern', the role 'edges' has cardinality 0..*.
+An association connects 'trnetvisual_Pattern' and 'trnetvisual_NodePattern'. From 'trnetvisual_Pattern', the role 'pattern' has cardinality 0..*, and from 'trnetvisual_NodePattern', the role 'NodePattern39' has cardinality 0..*.
+An association connects 'trnetvisual_EdgePattern' and 'trnetvisual_Pattern'. From 'trnetvisual_EdgePattern', the role 'EdgePattern42' has cardinality 0..*, and from 'trnetvisual_Pattern', the role 'pattern41' has cardinality 0..*.
+An association connects 'trnetvisual_Result' and 'trnetvisual_Pattern'. From 'trnetvisual_Result', the role 'Result' has cardinality 0..*, and from 'trnetvisual_Pattern', the role 'pattern44' has cardinality 0..*.
+An association connects 'trnetvisual_Pattern' and 'trnetvisual_Operand'. From 'trnetvisual_Pattern', the role 'pattern46' has cardinality 0..*, and from 'trnetvisual_Operand', the role 'Operand' has cardinality 0..*.
+An association connects 'trnetvisual_NodePattern' and 'trnetvisual_Same'. From 'trnetvisual_NodePattern', the role 'NodePattern48' has cardinality 0..*, and from 'trnetvisual_Same', the role 'sameOut' has cardinality 0..*.
+An association connects 'trnetvisual_NodePattern' and 'trnetvisual_Same'. From 'trnetvisual_NodePattern', the role 'NodePattern50' has cardinality 0..*, and from 'trnetvisual_Same', the role 'sameIn' has cardinality 0..*.
+An association connects 'trnetvisual_NodePattern' and 'trnetvisual_Different'. From 'trnetvisual_NodePattern', the role 'NodePattern52' has cardinality 0..*, and from 'trnetvisual_Different', the role 'differentOut' has cardinality 0..*.
+An association connects 'trnetvisual_Different' and 'trnetvisual_NodePattern'. From 'trnetvisual_Different', the role 'differentIn' has cardinality 0..*, and from 'trnetvisual_NodePattern', the role 'NodePattern54' has cardinality 0..*.
+An association connects 'trnetvisual_AttributePattern' and 'trnetvisual_ExternalAttributeCalculationCall'. From 'trnetvisual_AttributePattern', the role 'result' has cardinality 0..*, and from 'trnetvisual_ExternalAttributeCalculationCall', the role 'ExternalAttributeCalculationCall' has cardinality 0..*.
+An association connects 'trnetvisual_NodePattern' and 'trnetvisual_AttributePattern'. From 'trnetvisual_NodePattern', the role 'NodePattern57' has cardinality 0..*, and from 'trnetvisual_AttributePattern', the role 'attributes' has cardinality 0..*.
+An association connects 'trnetvisual_NodePattern' and 'trnetvisual_Keep'. From 'trnetvisual_NodePattern', the role 'NodePattern59' has cardinality 0..*, and from 'trnetvisual_Keep', the role 'keepOut' has cardinality 0..*.
+An association connects 'trnetvisual_NodePattern' and 'trnetvisual_Keep'. From 'trnetvisual_NodePattern', the role 'NodePattern61' has cardinality 0..*, and from 'trnetvisual_Keep', the role 'keepIn' has cardinality 0..*.
+An association connects 'trnetvisual_Operand' and 'trnetvisual_Operator'. From 'trnetvisual_Operand', the role 'Operand63' has cardinality 0..*, and from 'trnetvisual_Operator', the role 'operator' has cardinality 0..*.
+An association connects 'trnetvisual_Operator' and 'trnetvisual_Result'. From 'trnetvisual_Operator', the role 'operator65' has cardinality 0..*, and from 'trnetvisual_Result', the role 'Result66' has cardinality 0..*.
+An association connects 'trnetvisual_Operator' and 'trnetvisual_FlowRule'. From 'trnetvisual_Operator', the role 'source68' has cardinality 0..*, and from 'trnetvisual_FlowRule', the role 'FlowRule' has cardinality 0..*.
+An association connects 'trnetvisual_Operator' and 'trnetvisual_FlowRule'. From 'trnetvisual_Operator', the role 'target70' has cardinality 0..*, and from 'trnetvisual_FlowRule', the role 'FlowRule71' has cardinality 0..*.
+An association connects 'trnetvisual_Operator' and 'trnetvisual_ApplicationCondition'. From 'trnetvisual_Operator', the role 'trnetvisual_Operator73' has cardinality 0..*, and from 'trnetvisual_ApplicationCondition', the role 'trnetvisual_ApplicationCondition' has cardinality 0..*.
+An association connects 'trnetvisual_Action' and 'trnetvisual_Operator'. From 'trnetvisual_Action', the role 'trnetvisual_Action' has cardinality 0..*, and from 'trnetvisual_Operator', the role 'trnetvisual_Operator75' has cardinality 0..*.
+An association connects 'trnetvisual_Result' and 'trnetvisual_Pattern'. From 'trnetvisual_Result', the role 'incomingResults' has cardinality 0..*, and from 'trnetvisual_Pattern', the role 'Pattern77' has cardinality 0..*.
+An association connects 'trnetvisual_Operator' and 'trnetvisual_Result'. From 'trnetvisual_Operator', the role 'Operator' has cardinality 0..*, and from 'trnetvisual_Result', the role 'results' has cardinality 0..*.
+An association connects 'trnetvisual_Operand' and 'trnetvisual_Operator'. From 'trnetvisual_Operand', the role 'operands' has cardinality 0..*, and from 'trnetvisual_Operator', the role 'Operator80' has cardinality 0..*.
+An association connects 'trnetvisual_Operand' and 'trnetvisual_Pattern'. From 'trnetvisual_Operand', the role 'outgoingOperands' has cardinality 0..*, and from 'trnetvisual_Pattern', the role 'Pattern82' has cardinality 0..*.
+An association connects 'trnetvisual_FlowRule' and 'trnetvisual_Operator'. From 'trnetvisual_FlowRule', the role 'flowOut' has cardinality 0..*, and from 'trnetvisual_Operator', the role 'Operator84' has cardinality 0..*.
+An association connects 'trnetvisual_Operator' and 'trnetvisual_FlowRule'. From 'trnetvisual_Operator', the role 'Operator86' has cardinality 0..*, and from 'trnetvisual_FlowRule', the role 'flowIn' has cardinality 0..*.
+An association connects 'trnetvisual_AttributePattern' and 'trnetvisual_ExternalAttributeCalculationCall'. From 'trnetvisual_AttributePattern', the role 'AttributePattern88' has cardinality 0..*, and from 'trnetvisual_ExternalAttributeCalculationCall', the role 'attributeExternalCalculationCall' has cardinality 0..*.
+An association connects 'trnetvisual_ExternalAttributeCalculationCallParameter' and 'trnetvisual_ExternalAttributeCalculationCall'. From 'trnetvisual_ExternalAttributeCalculationCallParameter', the role 'ExternalAttributeCalculationCallParameter' has cardinality 0..*, and from 'trnetvisual_ExternalAttributeCalculationCall', the role 'owner' has cardinality 0..*.
+An association connects 'trnetvisual_Parameter' and 'trnetvisual_ExternalAttributeCalculationCallParameter'. From 'trnetvisual_Parameter', the role 'parameter' has cardinality 0..*, and from 'trnetvisual_ExternalAttributeCalculationCallParameter', the role 'ExternalAttributeCalculationCallParameter91' has cardinality 0..*.
+An association connects 'trnetvisual_Parameter' and 'trnetvisual_ExternalConditionCallParameter'. From 'trnetvisual_Parameter', the role 'parameter93' has cardinality 0..*, and from 'trnetvisual_ExternalConditionCallParameter', the role 'ExternalConditionCallParameter' has cardinality 0..*.
+An association connects 'trnetvisual_Parameter' and 'trnetvisual_ExternalActionCallParameter'. From 'trnetvisual_Parameter', the role 'parameter95' has cardinality 0..*, and from 'trnetvisual_ExternalActionCallParameter', the role 'ExternalActionCallParameter' has cardinality 0..*.
+An association connects 'trnetvisual_Parameter' and 'trnetvisual_ExternalCalculationCallParameter'. From 'trnetvisual_Parameter', the role 'parameter97' has cardinality 0..*, and from 'trnetvisual_ExternalCalculationCallParameter', the role 'ExternalCalculationCallParameter' has cardinality 0..*.
+An association connects 'trnetvisual_ExternalConditionCall' and 'trnetvisual_ExternalConditionCallParameter'. From 'trnetvisual_ExternalConditionCall', the role 'owner99' has cardinality 0..*, and from 'trnetvisual_ExternalConditionCallParameter', the role 'ExternalConditionCallParameter100' has cardinality 0..*.
+An association connects 'trnetvisual_ExternalActionCallParameter' and 'trnetvisual_ExternalActionCall'. From 'trnetvisual_ExternalActionCallParameter', the role 'ExternalActionCallParameter103' has cardinality 0..*, and from 'trnetvisual_ExternalActionCall', the role 'owner102' has cardinality 0..*.
+An association connects 'trnetvisual_ExternalAttributeCalculationCallParameter' and 'trnetvisual_ExternalAttributeCalculationCall'. From 'trnetvisual_ExternalAttributeCalculationCallParameter', the role 'parameters' has cardinality 0..*, and from 'trnetvisual_ExternalAttributeCalculationCall', the role 'ExternalAttributeCalculationCall105' has cardinality 0..*.
+An association connects 'trnetvisual_Parameter' and 'trnetvisual_ExternalAttributeCalculationCallParameter'. From 'trnetvisual_Parameter', the role 'Parameter' has cardinality 0..*, and from 'trnetvisual_ExternalAttributeCalculationCallParameter', the role 'externalAttributeCalculationCallRef' has cardinality 0..*.
+An association connects 'trnetvisual_ExternalConditionCall' and 'trnetvisual_ExternalConditionCallParameter'. From 'trnetvisual_ExternalConditionCall', the role 'ExternalConditionCall' has cardinality 0..*, and from 'trnetvisual_ExternalConditionCallParameter', the role 'parameters108' has cardinality 0..*.
+An association connects 'trnetvisual_Parameter' and 'trnetvisual_ExternalConditionCallParameter'. From 'trnetvisual_Parameter', the role 'Parameter110' has cardinality 0..*, and from 'trnetvisual_ExternalConditionCallParameter', the role 'externalConditionCallRef' has cardinality 0..*.
+An association connects 'trnetvisual_ExternalActionCallParameter' and 'trnetvisual_ExternalActionCall'. From 'trnetvisual_ExternalActionCallParameter', the role 'parameters112' has cardinality 0..*, and from 'trnetvisual_ExternalActionCall', the role 'ExternalActionCall' has cardinality 0..*.
+An association connects 'trnetvisual_Parameter' and 'trnetvisual_ExternalActionCallParameter'. From 'trnetvisual_Parameter', the role 'Parameter114' has cardinality 0..*, and from 'trnetvisual_ExternalActionCallParameter', the role 'externalActionCallRef' has cardinality 0..*.
+An association connects 'trnetvisual_ExternalCalculationCallParameter' and 'trnetvisual_ExternalCalculationCall'. From 'trnetvisual_ExternalCalculationCallParameter', the role 'ExternalCalculationCallParameter117' has cardinality 0..*, and from 'trnetvisual_ExternalCalculationCall', the role 'owner116' has cardinality 0..*.
+An association connects 'trnetvisual_ExternalCalculationCallParameter' and 'trnetvisual_ExternalCalculationCall'. From 'trnetvisual_ExternalCalculationCallParameter', the role 'parameters119' has cardinality 0..*, and from 'trnetvisual_ExternalCalculationCall', the role 'ExternalCalculationCall' has cardinality 0..*.
+An association connects 'trnetvisual_Parameter' and 'trnetvisual_ExternalCalculationCallParameter'. From 'trnetvisual_Parameter', the role 'Parameter121' has cardinality 0..*, and from 'trnetvisual_ExternalCalculationCallParameter', the role 'externalCalculationCallRef' has cardinality 0..*.

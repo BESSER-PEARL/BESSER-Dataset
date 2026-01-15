@@ -1,0 +1,375 @@
+The domain model 'smm' describes the core structural elements and their relationships within the system.
+
+The model defines 70 main class(es).
+
+'smm_Characteristic' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryMeasure' represents an important domain concept.
+It does not declare any attributes.
+
+'SmmRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'DirectMeasure' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_SmmRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_Base1MeasurementRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'DirectMeasurement' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractMeasureElement' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_BaseMeasureRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_Count' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_RescaleMeasureRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_RefinementMeasurementRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_MofElement' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_Scope' represents an important domain concept.
+It has one attribute: 'class', which is of type str.
+
+'smm_Counting' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_RecursiveMeasureRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_Annotation' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'smm_RescaledMeasure' represents an important domain concept.
+It has one attribute: 'formula', which is of type str.
+
+'smm_EquivalentMeasurementRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_CategoryRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_BaseMeasurementRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_ObservedMeasure' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_RatioMeasurement' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_OCLOperation' represents an important domain concept.
+It has the following attributes: 'context', which is of type str; 'body', which is of type str.
+
+'smm_Argument' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'value', which is of type str.
+
+'smm_ObservationScope' represents an important domain concept.
+It has one attribute: 'scopeUri', which is of type str.
+
+'smm_Operation' represents an important domain concept.
+It has the following attributes: 'language', which is of type str; 'body', which is of type str.
+
+'DimensionalMeasure' represents an important domain concept.
+It does not declare any attributes.
+
+'Measure' represents an important domain concept.
+It does not declare any attributes.
+
+'SmmElement' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_DirectMeasurement' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_RankingMeasurementRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_AbstractMeasureElement' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_BinaryMeasurement' represents an important domain concept.
+It has one attribute: 'isBaseSupplied', which is of type str.
+
+'smm_DimensionalMeasurement' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'smm_MeasureRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryMeasurement' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_SmmElement' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'name', which is of type str; 'shortDescription', which is of type str.
+
+'smm_RatioMeasure' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_RefinementMeasureRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_Base2MeasureRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_Observation' represents an important domain concept.
+It has the following attributes: 'observer', which is of type str; 'tool', which is of type str; 'whenObserved', which is of type str.
+
+'smm_NamedMeasure' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_RecursiveMeasurementRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_NamedMeasurement' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_CollectiveMeasure' represents an important domain concept.
+It has one attribute: 'accumulator', which is of type str.
+
+'smm_EquivalentMeasureRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_CollectiveMeasurement' represents an important domain concept.
+It has the following attributes: 'accumulator', which is of type str; 'isBaseSupplied', which is of type str.
+
+'MeasurementRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_BinaryMeasure' represents an important domain concept.
+It has one attribute: 'functor', which is of type str.
+
+'smm_RescaledMeasurement' represents an important domain concept.
+It has one attribute: 'isBaseSupplied', which is of type str.
+
+'MeasureRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_MeasureCategory' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_SmmModel' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_RankingMeasureRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_Measurement' represents an important domain concept.
+It has the following attributes: 'error', which is of type str; 'breakValue', which is of type str.
+
+'smm_MeasurementRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_Ranking' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_Attribute' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'tag', which is of type str.
+
+'Measurement' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_DimensionalMeasure' represents an important domain concept.
+It has one attribute: 'unit', which is of type str.
+
+'smm_Grade' represents an important domain concept.
+It has the following attributes: 'value', which is of type str; 'isBaseSupplied', which is of type str.
+
+'smm_Measure' represents an important domain concept.
+It has the following attributes: 'measureLabelFormat', which is of type str; 'measurementLabelFormat', which is of type str; 'visible', which is of type str.
+
+'smm_RankingInterval' represents an important domain concept.
+It has the following attributes: 'minimumOpen', which is of type str; 'minimumEndpoint', which is of type str; 'maximumOpen', which is of type str; 'symbol', which is of type str; 'maximumEndpoint', which is of type str.
+
+'smm_DirectMeasure' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_RescaleMeasurementRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'DimensionalMeasurement' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_Base1MeasureRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_MeasureLibrary' represents an important domain concept.
+It does not declare any attributes.
+
+'smm_Base2MeasurementRelationship' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Accumulator' defines the following possible values: 'minimum', 'maximum', 'sum', 'standardDeviation', 'average'.
+
+The model also captures inheritance relationships between classes.
+The class 'smm_AbstractMeasureElement' is a specialization of 'SmmElement'.
+The class 'smm_Annotation' is a specialization of 'SmmElement'.
+The class 'smm_Argument' is a specialization of 'SmmElement'.
+The class 'smm_Attribute' is a specialization of 'SmmElement'.
+The class 'smm_Base1MeasureRelationship' is a specialization of 'MeasureRelationship'.
+The class 'smm_Base1MeasurementRelationship' is a specialization of 'MeasurementRelationship'.
+The class 'smm_Base2MeasureRelationship' is a specialization of 'MeasureRelationship'.
+The class 'smm_Base2MeasurementRelationship' is a specialization of 'MeasurementRelationship'.
+The class 'smm_BaseMeasureRelationship' is a specialization of 'MeasureRelationship'.
+The class 'smm_BaseMeasurementRelationship' is a specialization of 'MeasurementRelationship'.
+The class 'smm_BinaryMeasure' is a specialization of 'DimensionalMeasure'.
+The class 'smm_BinaryMeasurement' is a specialization of 'DimensionalMeasurement'.
+The class 'smm_CategoryRelationship' is a specialization of 'SmmRelationship'.
+The class 'smm_Characteristic' is a specialization of 'AbstractMeasureElement'.
+The class 'smm_CollectiveMeasure' is a specialization of 'DimensionalMeasure'.
+The class 'smm_CollectiveMeasurement' is a specialization of 'DimensionalMeasurement'.
+The class 'smm_Count' is a specialization of 'DirectMeasurement'.
+The class 'smm_Counting' is a specialization of 'DirectMeasure'.
+The class 'smm_DimensionalMeasure' is a specialization of 'Measure'.
+The class 'smm_DimensionalMeasurement' is a specialization of 'Measurement'.
+The class 'smm_DirectMeasure' is a specialization of 'DimensionalMeasure'.
+The class 'smm_DirectMeasurement' is a specialization of 'DimensionalMeasurement'.
+The class 'smm_EquivalentMeasureRelationship' is a specialization of 'MeasureRelationship'.
+The class 'smm_EquivalentMeasurementRelationship' is a specialization of 'MeasurementRelationship'.
+The class 'smm_Grade' is a specialization of 'Measurement'.
+The class 'smm_Measure' is a specialization of 'AbstractMeasureElement'.
+The class 'smm_MeasureCategory' is a specialization of 'AbstractMeasureElement'.
+The class 'smm_MeasureLibrary' is a specialization of 'SmmElement'.
+The class 'smm_MeasureRelationship' is a specialization of 'SmmRelationship'.
+The class 'smm_Measurement' is a specialization of 'SmmElement'.
+The class 'smm_MeasurementRelationship' is a specialization of 'SmmRelationship'.
+The class 'smm_NamedMeasure' is a specialization of 'DimensionalMeasure'.
+The class 'smm_NamedMeasurement' is a specialization of 'DimensionalMeasurement'.
+The class 'smm_OCLOperation' is a specialization of 'AbstractMeasureElement'.
+The class 'smm_Observation' is a specialization of 'SmmElement'.
+The class 'smm_ObservationScope' is a specialization of 'SmmElement'.
+The class 'smm_ObservedMeasure' is a specialization of 'SmmRelationship'.
+The class 'smm_Operation' is a specialization of 'AbstractMeasureElement'.
+The class 'smm_Ranking' is a specialization of 'Measure'.
+The class 'smm_RankingInterval' is a specialization of 'SmmElement'.
+The class 'smm_RankingMeasureRelationship' is a specialization of 'MeasureRelationship'.
+The class 'smm_RankingMeasurementRelationship' is a specialization of 'MeasurementRelationship'.
+The class 'smm_RatioMeasure' is a specialization of 'BinaryMeasure'.
+The class 'smm_RatioMeasurement' is a specialization of 'BinaryMeasurement'.
+The class 'smm_RecursiveMeasureRelationship' is a specialization of 'MeasureRelationship'.
+The class 'smm_RecursiveMeasurementRelationship' is a specialization of 'MeasurementRelationship'.
+The class 'smm_RefinementMeasureRelationship' is a specialization of 'MeasureRelationship'.
+The class 'smm_RefinementMeasurementRelationship' is a specialization of 'MeasurementRelationship'.
+The class 'smm_RescaledMeasure' is a specialization of 'DimensionalMeasure'.
+The class 'smm_RescaleMeasureRelationship' is a specialization of 'MeasureRelationship'.
+The class 'smm_RescaledMeasurement' is a specialization of 'DimensionalMeasurement'.
+The class 'smm_RescaleMeasurementRelationship' is a specialization of 'MeasurementRelationship'.
+The class 'smm_Scope' is a specialization of 'AbstractMeasureElement'.
+The class 'smm_SmmModel' is a specialization of 'SmmElement'.
+The class 'smm_SmmRelationship' is a specialization of 'SmmElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'smm_BinaryMeasure' and 'smm_Base1MeasureRelationship'. From 'smm_BinaryMeasure', the role 'BinaryMeasure' has cardinality 0..*, and from 'smm_Base1MeasureRelationship', the role 'baseMeasure1To' has cardinality 0..*.
+An association connects 'smm_DimensionalMeasure' and 'smm_Base1MeasureRelationship'. From 'smm_DimensionalMeasure', the role 'DimensionalMeasure' has cardinality 0..*, and from 'smm_Base1MeasureRelationship', the role 'baseMeasure1From' has cardinality 0..*.
+An association connects 'smm_Base1MeasurementRelationship' and 'smm_BinaryMeasurement'. From 'smm_Base1MeasurementRelationship', the role 'baseMeasurement1To' has cardinality 0..*, and from 'smm_BinaryMeasurement', the role 'BinaryMeasurement' has cardinality 0..*.
+An association connects 'smm_DimensionalMeasurement' and 'smm_Base1MeasurementRelationship'. From 'smm_DimensionalMeasurement', the role 'DimensionalMeasurement' has cardinality 0..*, and from 'smm_Base1MeasurementRelationship', the role 'baseMeasurement1From' has cardinality 0..*.
+An association connects 'smm_BinaryMeasure' and 'smm_Base2MeasureRelationship'. From 'smm_BinaryMeasure', the role 'BinaryMeasure5' has cardinality 0..*, and from 'smm_Base2MeasureRelationship', the role 'baseMeasure2To' has cardinality 0..*.
+An association connects 'smm_DimensionalMeasure' and 'smm_Base2MeasureRelationship'. From 'smm_DimensionalMeasure', the role 'DimensionalMeasure7' has cardinality 0..*, and from 'smm_Base2MeasureRelationship', the role 'baseMeasure2From' has cardinality 0..*.
+An association connects 'smm_Base2MeasurementRelationship' and 'smm_BinaryMeasurement'. From 'smm_Base2MeasurementRelationship', the role 'baseMeasurement2To' has cardinality 0..*, and from 'smm_BinaryMeasurement', the role 'BinaryMeasurement9' has cardinality 0..*.
+An association connects 'smm_Base2MeasurementRelationship' and 'smm_DimensionalMeasurement'. From 'smm_Base2MeasurementRelationship', the role 'baseMeasurement2From' has cardinality 0..*, and from 'smm_DimensionalMeasurement', the role 'DimensionalMeasurement11' has cardinality 0..*.
+An association connects 'smm_BaseMeasureRelationship' and 'smm_CollectiveMeasure'. From 'smm_BaseMeasureRelationship', the role 'baseMeasureTo' has cardinality 0..*, and from 'smm_CollectiveMeasure', the role 'CollectiveMeasure' has cardinality 0..*.
+An association connects 'smm_BaseMeasureRelationship' and 'smm_DimensionalMeasure'. From 'smm_BaseMeasureRelationship', the role 'baseMeasureFrom' has cardinality 0..*, and from 'smm_DimensionalMeasure', the role 'DimensionalMeasure14' has cardinality 0..*.
+An association connects 'smm_CollectiveMeasurement' and 'smm_BaseMeasurementRelationship'. From 'smm_CollectiveMeasurement', the role 'CollectiveMeasurement' has cardinality 0..*, and from 'smm_BaseMeasurementRelationship', the role 'baseMeasurementTo' has cardinality 0..*.
+An association connects 'smm_BaseMeasurementRelationship' and 'smm_DimensionalMeasurement'. From 'smm_BaseMeasurementRelationship', the role 'baseMeasurementFrom' has cardinality 0..*, and from 'smm_DimensionalMeasurement', the role 'DimensionalMeasurement17' has cardinality 0..*.
+An association connects 'smm_BinaryMeasure' and 'smm_Base1MeasureRelationship'. From 'smm_BinaryMeasure', the role 'from' has cardinality 0..*, and from 'smm_Base1MeasureRelationship', the role 'Base1MeasureRelationship' has cardinality 0..*.
+An association connects 'smm_BinaryMeasure' and 'smm_Base2MeasureRelationship'. From 'smm_BinaryMeasure', the role 'from20' has cardinality 0..*, and from 'smm_Base2MeasureRelationship', the role 'Base2MeasureRelationship' has cardinality 0..*.
+An association connects 'smm_BinaryMeasurement' and 'smm_Base1MeasurementRelationship'. From 'smm_BinaryMeasurement', the role 'from22' has cardinality 0..*, and from 'smm_Base1MeasurementRelationship', the role 'Base1MeasurementRelationship' has cardinality 0..*.
+An association connects 'smm_BinaryMeasurement' and 'smm_Base2MeasurementRelationship'. From 'smm_BinaryMeasurement', the role 'from24' has cardinality 0..*, and from 'smm_Base2MeasurementRelationship', the role 'Base2MeasurementRelationship' has cardinality 0..*.
+An association connects 'smm_CategoryRelationship' and 'smm_MeasureCategory'. From 'smm_CategoryRelationship', the role 'smm_CategoryRelationship' has cardinality 0..*, and from 'smm_MeasureCategory', the role 'smm_MeasureCategory' has cardinality 0..*.
+An association connects 'smm_CategoryRelationship' and 'smm_AbstractMeasureElement'. From 'smm_CategoryRelationship', the role 'smm_CategoryRelationship27' has cardinality 0..*, and from 'smm_AbstractMeasureElement', the role 'smm_AbstractMeasureElement' has cardinality 0..*.
+An association connects 'smm_Characteristic' and 'smm_Characteristic'. From 'smm_Characteristic', the role 'smm_Characteristic' has cardinality 0..*, and from 'smm_Characteristic', the role 'smm_Characteristic28' has cardinality 0..*.
+An association connects 'smm_CollectiveMeasure' and 'smm_BaseMeasureRelationship'. From 'smm_CollectiveMeasure', the role 'from31' has cardinality 0..*, and from 'smm_BaseMeasureRelationship', the role 'BaseMeasureRelationship' has cardinality 0..*.
+An association connects 'smm_CollectiveMeasurement' and 'smm_BaseMeasurementRelationship'. From 'smm_CollectiveMeasurement', the role 'from33' has cardinality 0..*, and from 'smm_BaseMeasurementRelationship', the role 'BaseMeasurementRelationship' has cardinality 0..*.
+An association connects 'smm_BaseMeasureRelationship' and 'smm_DimensionalMeasure'. From 'smm_BaseMeasureRelationship', the role 'BaseMeasureRelationship35' has cardinality 0..*, and from 'smm_DimensionalMeasure', the role 'to' has cardinality 0..*.
+An association connects 'smm_Base1MeasureRelationship' and 'smm_DimensionalMeasure'. From 'smm_Base1MeasureRelationship', the role 'Base1MeasureRelationship38' has cardinality 0..*, and from 'smm_DimensionalMeasure', the role 'to37' has cardinality 0..*.
+An association connects 'smm_Base2MeasureRelationship' and 'smm_DimensionalMeasure'. From 'smm_Base2MeasureRelationship', the role 'Base2MeasureRelationship41' has cardinality 0..*, and from 'smm_DimensionalMeasure', the role 'to40' has cardinality 0..*.
+An association connects 'smm_DimensionalMeasure' and 'smm_RescaleMeasureRelationship'. From 'smm_DimensionalMeasure', the role 'from43' has cardinality 0..*, and from 'smm_RescaleMeasureRelationship', the role 'RescaleMeasureRelationship' has cardinality 0..*.
+An association connects 'smm_RankingMeasureRelationship' and 'smm_DimensionalMeasure'. From 'smm_RankingMeasureRelationship', the role 'RankingMeasureRelationship' has cardinality 0..*, and from 'smm_DimensionalMeasure', the role 'to45' has cardinality 0..*.
+An association connects 'smm_BaseMeasurementRelationship' and 'smm_DimensionalMeasurement'. From 'smm_BaseMeasurementRelationship', the role 'BaseMeasurementRelationship48' has cardinality 0..*, and from 'smm_DimensionalMeasurement', the role 'to47' has cardinality 0..*.
+An association connects 'smm_Base1MeasurementRelationship' and 'smm_DimensionalMeasurement'. From 'smm_Base1MeasurementRelationship', the role 'Base1MeasurementRelationship51' has cardinality 0..*, and from 'smm_DimensionalMeasurement', the role 'to50' has cardinality 0..*.
+An association connects 'smm_Base2MeasurementRelationship' and 'smm_DimensionalMeasurement'. From 'smm_Base2MeasurementRelationship', the role 'Base2MeasurementRelationship54' has cardinality 0..*, and from 'smm_DimensionalMeasurement', the role 'to53' has cardinality 0..*.
+An association connects 'smm_RescaleMeasurementRelationship' and 'smm_DimensionalMeasurement'. From 'smm_RescaleMeasurementRelationship', the role 'RescaleMeasurementRelationship' has cardinality 0..*, and from 'smm_DimensionalMeasurement', the role 'from56' has cardinality 0..*.
+An association connects 'smm_DimensionalMeasurement' and 'smm_RankingMeasurementRelationship'. From 'smm_DimensionalMeasurement', the role 'to58' has cardinality 0..*, and from 'smm_RankingMeasurementRelationship', the role 'RankingMeasurementRelationship' has cardinality 0..*.
+An association connects 'smm_DirectMeasure' and 'smm_Operation'. From 'smm_DirectMeasure', the role 'smm_DirectMeasure' has cardinality 0..*, and from 'smm_Operation', the role 'smm_Operation' has cardinality 0..*.
+An association connects 'smm_EquivalentMeasureRelationship' and 'smm_Operation'. From 'smm_EquivalentMeasureRelationship', the role 'smm_EquivalentMeasureRelationship' has cardinality 0..*, and from 'smm_Operation', the role 'smm_Operation61' has cardinality 0..*.
+An association connects 'smm_EquivalentMeasureRelationship' and 'smm_Measure'. From 'smm_EquivalentMeasureRelationship', the role 'equivalentTo' has cardinality 0..*, and from 'smm_Measure', the role 'Measure' has cardinality 0..*.
+An association connects 'smm_EquivalentMeasureRelationship' and 'smm_Measure'. From 'smm_EquivalentMeasureRelationship', the role 'equivalentFrom' has cardinality 0..*, and from 'smm_Measure', the role 'Measure64' has cardinality 0..*.
+An association connects 'smm_EquivalentMeasurementRelationship' and 'smm_Measurement'. From 'smm_EquivalentMeasurementRelationship', the role 'equivalentTo66' has cardinality 0..*, and from 'smm_Measurement', the role 'Measurement' has cardinality 0..*.
+An association connects 'smm_EquivalentMeasurementRelationship' and 'smm_Measurement'. From 'smm_EquivalentMeasurementRelationship', the role 'equivalentFrom68' has cardinality 0..*, and from 'smm_Measurement', the role 'Measurement69' has cardinality 0..*.
+An association connects 'smm_RankingMeasurementRelationship' and 'smm_Grade'. From 'smm_RankingMeasurementRelationship', the role 'RankingMeasurementRelationship72' has cardinality 0..*, and from 'smm_Grade', the role 'from71' has cardinality 0..*.
+An association connects 'smm_MeasureCategory' and 'smm_Measure'. From 'smm_MeasureCategory', the role 'MeasureCategory' has cardinality 0..*, and from 'smm_Measure', the role 'categoryMeasure' has cardinality 0..*.
+An association connects 'smm_Measure' and 'smm_Characteristic'. From 'smm_Measure', the role 'smm_Measure' has cardinality 0..*, and from 'smm_Characteristic', the role 'smm_Characteristic75' has cardinality 0..*.
+An association connects 'smm_Measure' and 'smm_Scope'. From 'smm_Measure', the role 'smm_Measure77' has cardinality 0..*, and from 'smm_Scope', the role 'smm_Scope' has cardinality 0..*.
+An association connects 'smm_RefinementMeasureRelationship' and 'smm_Measure'. From 'smm_RefinementMeasureRelationship', the role 'RefinementMeasureRelationship' has cardinality 0..*, and from 'smm_Measure', the role 'from79' has cardinality 0..*.
+An association connects 'smm_Measure' and 'smm_RefinementMeasureRelationship'. From 'smm_Measure', the role 'to81' has cardinality 0..*, and from 'smm_RefinementMeasureRelationship', the role 'RefinementMeasureRelationship82' has cardinality 0..*.
+An association connects 'smm_Measure' and 'smm_EquivalentMeasureRelationship'. From 'smm_Measure', the role 'from84' has cardinality 0..*, and from 'smm_EquivalentMeasureRelationship', the role 'EquivalentMeasureRelationship' has cardinality 0..*.
+An association connects 'smm_Measure' and 'smm_EquivalentMeasureRelationship'. From 'smm_Measure', the role 'to86' has cardinality 0..*, and from 'smm_EquivalentMeasureRelationship', the role 'EquivalentMeasureRelationship87' has cardinality 0..*.
+An association connects 'smm_RecursiveMeasureRelationship' and 'smm_Measure'. From 'smm_RecursiveMeasureRelationship', the role 'RecursiveMeasureRelationship' has cardinality 0..*, and from 'smm_Measure', the role 'from89' has cardinality 0..*.
+An association connects 'smm_Measure' and 'smm_RecursiveMeasureRelationship'. From 'smm_Measure', the role 'to91' has cardinality 0..*, and from 'smm_RecursiveMeasureRelationship', the role 'RecursiveMeasureRelationship92' has cardinality 0..*.
+An association connects 'smm_Measure' and 'smm_MeasureRelationship'. From 'smm_Measure', the role 'smm_Measure94' has cardinality 0..*, and from 'smm_MeasureRelationship', the role 'smm_MeasureRelationship' has cardinality 0..*.
+An association connects 'smm_Measure' and 'smm_Operation'. From 'smm_Measure', the role 'smm_Measure96' has cardinality 0..*, and from 'smm_Operation', the role 'smm_Operation97' has cardinality 0..*.
+An association connects 'smm_Measure' and 'smm_MeasureRelationship'. From 'smm_Measure', the role 'smm_Measure99' has cardinality 0..*, and from 'smm_MeasureRelationship', the role 'smm_MeasureRelationship100' has cardinality 0..*.
+An association connects 'smm_MeasureRelationship' and 'smm_Measure'. From 'smm_MeasureRelationship', the role 'smm_MeasureRelationship103' has cardinality 0..*, and from 'smm_Measure', the role 'smm_Measure102' has cardinality 0..*.
+An association connects 'smm_MeasureCategory' and 'smm_MeasureCategory'. From 'smm_MeasureCategory', the role 'MeasureCategory106' has cardinality 0..*, and from 'smm_MeasureCategory', the role 'categoryElement' has cardinality 0..*.
+An association connects 'smm_MeasureCategory' and 'smm_MeasureCategory'. From 'smm_MeasureCategory', the role 'MeasureCategory109' has cardinality 0..*, and from 'smm_MeasureCategory', the role 'category' has cardinality 0..*.
+An association connects 'smm_MeasureCategory' and 'smm_Measure'. From 'smm_MeasureCategory', the role 'category111' has cardinality 0..*, and from 'smm_Measure', the role 'Measure112' has cardinality 0..*.
+An association connects 'smm_AbstractMeasureElement' and 'smm_MeasureLibrary'. From 'smm_AbstractMeasureElement', the role 'smm_AbstractMeasureElement114' has cardinality 0..*, and from 'smm_MeasureLibrary', the role 'smm_MeasureLibrary' has cardinality 0..*.
+An association connects 'smm_CategoryRelationship' and 'smm_MeasureLibrary'. From 'smm_CategoryRelationship', the role 'smm_CategoryRelationship117' has cardinality 0..*, and from 'smm_MeasureLibrary', the role 'smm_MeasureLibrary116' has cardinality 0..*.
+An association connects 'smm_MeasureRelationship' and 'smm_Operation'. From 'smm_MeasureRelationship', the role 'smm_MeasureRelationship119' has cardinality 0..*, and from 'smm_Operation', the role 'smm_Operation120' has cardinality 0..*.
+An association connects 'smm_MofElement' and 'smm_Measurement'. From 'smm_MofElement', the role 'smm_MofElement' has cardinality 0..*, and from 'smm_Measurement', the role 'smm_Measurement' has cardinality 0..*.
+An association connects 'smm_Measurement' and 'smm_RefinementMeasurementRelationship'. From 'smm_Measurement', the role 'from123' has cardinality 0..*, and from 'smm_RefinementMeasurementRelationship', the role 'RefinementMeasurementRelationship' has cardinality 0..*.
+An association connects 'smm_Measurement' and 'smm_RefinementMeasurementRelationship'. From 'smm_Measurement', the role 'to125' has cardinality 0..*, and from 'smm_RefinementMeasurementRelationship', the role 'RefinementMeasurementRelationship126' has cardinality 0..*.
+An association connects 'smm_Measurement' and 'smm_EquivalentMeasurementRelationship'. From 'smm_Measurement', the role 'from128' has cardinality 0..*, and from 'smm_EquivalentMeasurementRelationship', the role 'EquivalentMeasurementRelationship' has cardinality 0..*.
+An association connects 'smm_EquivalentMeasurementRelationship' and 'smm_Measurement'. From 'smm_EquivalentMeasurementRelationship', the role 'EquivalentMeasurementRelationship131' has cardinality 0..*, and from 'smm_Measurement', the role 'to130' has cardinality 0..*.
+An association connects 'smm_Measurement' and 'smm_RecursiveMeasurementRelationship'. From 'smm_Measurement', the role 'from133' has cardinality 0..*, and from 'smm_RecursiveMeasurementRelationship', the role 'RecursiveMeasurementRelationship' has cardinality 0..*.
+An association connects 'smm_RecursiveMeasurementRelationship' and 'smm_Measurement'. From 'smm_RecursiveMeasurementRelationship', the role 'RecursiveMeasurementRelationship136' has cardinality 0..*, and from 'smm_Measurement', the role 'to135' has cardinality 0..*.
+An association connects 'smm_Measurement' and 'smm_MeasurementRelationship'. From 'smm_Measurement', the role 'smm_Measurement138' has cardinality 0..*, and from 'smm_MeasurementRelationship', the role 'smm_MeasurementRelationship' has cardinality 0..*.
+An association connects 'smm_Measurement' and 'smm_MeasurementRelationship'. From 'smm_Measurement', the role 'smm_Measurement140' has cardinality 0..*, and from 'smm_MeasurementRelationship', the role 'smm_MeasurementRelationship141' has cardinality 0..*.
+An association connects 'smm_MeasurementRelationship' and 'smm_Measurement'. From 'smm_MeasurementRelationship', the role 'smm_MeasurementRelationship144' has cardinality 0..*, and from 'smm_Measurement', the role 'smm_Measurement143' has cardinality 0..*.
+An association connects 'smm_ObservationScope' and 'smm_Observation'. From 'smm_ObservationScope', the role 'smm_ObservationScope' has cardinality 0..*, and from 'smm_Observation', the role 'smm_Observation' has cardinality 0..*.
+An association connects 'smm_Observation' and 'smm_ObservedMeasure'. From 'smm_Observation', the role 'smm_Observation147' has cardinality 0..*, and from 'smm_ObservedMeasure', the role 'smm_ObservedMeasure' has cardinality 0..*.
+An association connects 'smm_Observation' and 'smm_SmmElement'. From 'smm_Observation', the role 'smm_Observation149' has cardinality 0..*, and from 'smm_SmmElement', the role 'smm_SmmElement' has cardinality 0..*.
+An association connects 'smm_SmmRelationship' and 'smm_Observation'. From 'smm_SmmRelationship', the role 'smm_SmmRelationship' has cardinality 0..*, and from 'smm_Observation', the role 'smm_Observation151' has cardinality 0..*.
+An association connects 'smm_Observation' and 'smm_Argument'. From 'smm_Observation', the role 'smm_Observation153' has cardinality 0..*, and from 'smm_Argument', the role 'smm_Argument' has cardinality 0..*.
+An association connects 'smm_Measure' and 'smm_ObservedMeasure'. From 'smm_Measure', the role 'smm_Measure156' has cardinality 0..*, and from 'smm_ObservedMeasure', the role 'smm_ObservedMeasure155' has cardinality 0..*.
+An association connects 'smm_Measurement' and 'smm_ObservedMeasure'. From 'smm_Measurement', the role 'smm_Measurement159' has cardinality 0..*, and from 'smm_ObservedMeasure', the role 'smm_ObservedMeasure158' has cardinality 0..*.
+An association connects 'smm_Ranking' and 'smm_RankingInterval'. From 'smm_Ranking', the role 'smm_Ranking' has cardinality 0..*, and from 'smm_RankingInterval', the role 'smm_RankingInterval' has cardinality 0..*.
+An association connects 'smm_Ranking' and 'smm_RankingMeasureRelationship'. From 'smm_Ranking', the role 'from162' has cardinality 0..*, and from 'smm_RankingMeasureRelationship', the role 'RankingMeasureRelationship163' has cardinality 0..*.
+An association connects 'smm_RankingMeasureRelationship' and 'smm_Ranking'. From 'smm_RankingMeasureRelationship', the role 'rankingTo' has cardinality 0..*, and from 'smm_Ranking', the role 'Ranking' has cardinality 0..*.
+An association connects 'smm_RankingMeasureRelationship' and 'smm_DimensionalMeasure'. From 'smm_RankingMeasureRelationship', the role 'rankingFrom' has cardinality 0..*, and from 'smm_DimensionalMeasure', the role 'DimensionalMeasure166' has cardinality 0..*.
+An association connects 'smm_RankingMeasurementRelationship' and 'smm_Grade'. From 'smm_RankingMeasurementRelationship', the role 'rankingTo168' has cardinality 0..*, and from 'smm_Grade', the role 'Grade' has cardinality 0..*.
+An association connects 'smm_DimensionalMeasurement' and 'smm_RankingMeasurementRelationship'. From 'smm_DimensionalMeasurement', the role 'DimensionalMeasurement171' has cardinality 0..*, and from 'smm_RankingMeasurementRelationship', the role 'rankingFrom170' has cardinality 0..*.
+An association connects 'smm_RecursiveMeasureRelationship' and 'smm_Measure'. From 'smm_RecursiveMeasureRelationship', the role 'recursiveTo' has cardinality 0..*, and from 'smm_Measure', the role 'Measure173' has cardinality 0..*.
+An association connects 'smm_Measure' and 'smm_RecursiveMeasureRelationship'. From 'smm_Measure', the role 'Measure175' has cardinality 0..*, and from 'smm_RecursiveMeasureRelationship', the role 'recursiveFrom' has cardinality 0..*.
+An association connects 'smm_RecursiveMeasurementRelationship' and 'smm_Measurement'. From 'smm_RecursiveMeasurementRelationship', the role 'recursiveTo177' has cardinality 0..*, and from 'smm_Measurement', the role 'Measurement178' has cardinality 0..*.
+An association connects 'smm_Measurement' and 'smm_RecursiveMeasurementRelationship'. From 'smm_Measurement', the role 'Measurement181' has cardinality 0..*, and from 'smm_RecursiveMeasurementRelationship', the role 'recursiveFrom180' has cardinality 0..*.
+An association connects 'smm_Measure' and 'smm_RefinementMeasureRelationship'. From 'smm_Measure', the role 'Measure183' has cardinality 0..*, and from 'smm_RefinementMeasureRelationship', the role 'refinementTo' has cardinality 0..*.
+An association connects 'smm_Measure' and 'smm_RefinementMeasureRelationship'. From 'smm_Measure', the role 'Measure185' has cardinality 0..*, and from 'smm_RefinementMeasureRelationship', the role 'refinementFrom' has cardinality 0..*.
+An association connects 'smm_Measurement' and 'smm_RefinementMeasurementRelationship'. From 'smm_Measurement', the role 'Measurement188' has cardinality 0..*, and from 'smm_RefinementMeasurementRelationship', the role 'refinementTo187' has cardinality 0..*.
+An association connects 'smm_Measurement' and 'smm_RefinementMeasurementRelationship'. From 'smm_Measurement', the role 'Measurement191' has cardinality 0..*, and from 'smm_RefinementMeasurementRelationship', the role 'refinementFrom190' has cardinality 0..*.
+An association connects 'smm_RescaledMeasure' and 'smm_RescaleMeasureRelationship'. From 'smm_RescaledMeasure', the role 'to193' has cardinality 0..*, and from 'smm_RescaleMeasureRelationship', the role 'RescaleMeasureRelationship194' has cardinality 0..*.
+An association connects 'smm_RescaledMeasure' and 'smm_RescaleMeasureRelationship'. From 'smm_RescaledMeasure', the role 'RescaledMeasure' has cardinality 0..*, and from 'smm_RescaleMeasureRelationship', the role 'rescaleFrom' has cardinality 0..*.
+An association connects 'smm_RescaleMeasureRelationship' and 'smm_DimensionalMeasure'. From 'smm_RescaleMeasureRelationship', the role 'rescaleTo' has cardinality 0..*, and from 'smm_DimensionalMeasure', the role 'DimensionalMeasure197' has cardinality 0..*.
+An association connects 'smm_RescaledMeasurement' and 'smm_RescaleMeasurementRelationship'. From 'smm_RescaledMeasurement', the role 'to199' has cardinality 0..*, and from 'smm_RescaleMeasurementRelationship', the role 'RescaleMeasurementRelationship200' has cardinality 0..*.
+An association connects 'smm_RescaledMeasurement' and 'smm_RescaleMeasurementRelationship'. From 'smm_RescaledMeasurement', the role 'RescaledMeasurement' has cardinality 0..*, and from 'smm_RescaleMeasurementRelationship', the role 'rescaleFrom202' has cardinality 0..*.
+An association connects 'smm_RescaleMeasurementRelationship' and 'smm_DimensionalMeasurement'. From 'smm_RescaleMeasurementRelationship', the role 'rescaleTo204' has cardinality 0..*, and from 'smm_DimensionalMeasurement', the role 'DimensionalMeasurement205' has cardinality 0..*.
+An association connects 'smm_Scope' and 'smm_Operation'. From 'smm_Scope', the role 'smm_Scope207' has cardinality 0..*, and from 'smm_Operation', the role 'smm_Operation208' has cardinality 0..*.
+An association connects 'smm_Scope' and 'smm_Operation'. From 'smm_Scope', the role 'smm_Scope210' has cardinality 0..*, and from 'smm_Operation', the role 'smm_Operation211' has cardinality 0..*.
+An association connects 'smm_SmmElement' and 'smm_Attribute'. From 'smm_SmmElement', the role 'smm_SmmElement213' has cardinality 0..*, and from 'smm_Attribute', the role 'smm_Attribute' has cardinality 0..*.
+An association connects 'smm_SmmElement' and 'smm_Annotation'. From 'smm_SmmElement', the role 'smm_SmmElement215' has cardinality 0..*, and from 'smm_Annotation', the role 'smm_Annotation' has cardinality 0..*.
+An association connects 'smm_Observation' and 'smm_SmmModel'. From 'smm_Observation', the role 'smm_Observation217' has cardinality 0..*, and from 'smm_SmmModel', the role 'smm_SmmModel' has cardinality 0..*.
+An association connects 'smm_SmmModel' and 'smm_MeasureLibrary'. From 'smm_SmmModel', the role 'smm_SmmModel219' has cardinality 0..*, and from 'smm_MeasureLibrary', the role 'smm_MeasureLibrary220' has cardinality 0..*.

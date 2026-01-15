@@ -1,0 +1,31 @@
+The domain model 'QualityMetrics' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'QualityMetrics_AggregatedRealMetric' represents an important domain concept.
+It has the following attributes: 'Minimum', which is of type float; 'Average', which is of type float; 'Maximum', which is of type float; 'Median', which is of type float; 'StandardDeviation', which is of type float.
+
+'QualityMetrics_Metrics' represents an important domain concept.
+It has one attribute: 'TrafoName', which is of type str.
+
+'QualityMetrics_SimpleMetric' represents an important domain concept.
+It has one attribute: 'Value', which is of type int.
+
+'QualityMetrics_Metric' represents an important domain concept.
+It has one attribute: 'Metric', which is of type str.
+
+'QualityMetrics_AggregatedIntegerMetric' represents an important domain concept.
+It has the following attributes: 'Minimum', which is of type int; 'Average', which is of type float; 'Maximum', which is of type int; 'Median', which is of type int; 'StandardDeviation', which is of type float.
+
+'Metric' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'QualityMetrics_SimpleMetric' is a specialization of 'Metric'.
+The class 'QualityMetrics_AggregatedIntegerMetric' is a specialization of 'Metric'.
+The class 'QualityMetrics_AggregatedRealMetric' is a specialization of 'Metric'.
+
+Relationships between classes are modeled using associations.
+An association connects 'QualityMetrics_SimpleMetric' and 'QualityMetrics_Metrics'. From 'QualityMetrics_SimpleMetric', the role 'QualityMetrics_SimpleMetric' has cardinality 0..*, and from 'QualityMetrics_Metrics', the role 'QualityMetrics_Metrics' has cardinality 0..*.
+An association connects 'QualityMetrics_Metrics' and 'QualityMetrics_AggregatedIntegerMetric'. From 'QualityMetrics_Metrics', the role 'QualityMetrics_Metrics2' has cardinality 0..*, and from 'QualityMetrics_AggregatedIntegerMetric', the role 'QualityMetrics_AggregatedIntegerMetric' has cardinality 0..*.
+An association connects 'QualityMetrics_Metrics' and 'QualityMetrics_AggregatedRealMetric'. From 'QualityMetrics_Metrics', the role 'QualityMetrics_Metrics4' has cardinality 0..*, and from 'QualityMetrics_AggregatedRealMetric', the role 'QualityMetrics_AggregatedRealMetric' has cardinality 0..*.

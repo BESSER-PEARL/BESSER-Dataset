@@ -1,0 +1,42 @@
+The domain model 'mdc' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'TransactionalState' represents an important domain concept.
+It does not declare any attributes.
+
+'State' represents an important domain concept.
+It does not declare any attributes.
+
+'StationaryState' represents an important domain concept.
+It does not declare any attributes.
+
+'mdc_StationaryStateImpl' represents an important domain concept.
+It does not declare any attributes.
+
+'mdc_State' represents an important domain concept.
+It has the following attributes: 'input', which is of type str; 'name', which is of type str; 'messages', which is of type str.
+
+'mdc_TransactionalState' represents an important domain concept.
+It does not declare any attributes.
+
+'mdc_Chatbot' represents an important domain concept.
+It has the following attributes: 'token', which is of type str; 'name', which is of type str.
+
+'mdc_StationaryState' represents an important domain concept.
+It does not declare any attributes.
+
+'mdc_TransactionalStateImpl' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'mdc_TransactionalState' is a specialization of 'State'.
+The class 'mdc_StationaryState' is a specialization of 'State'.
+The class 'mdc_TransactionalStateImpl' is a specialization of 'TransactionalState'.
+The class 'mdc_StationaryStateImpl' is a specialization of 'StationaryState'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mdc_Chatbot' and 'mdc_State'. From 'mdc_Chatbot', the role 'mdc_Chatbot' has cardinality 0..*, and from 'mdc_State', the role 'mdc_State' has cardinality 0..*.
+An association connects 'mdc_Chatbot' and 'mdc_StationaryState'. From 'mdc_Chatbot', the role 'mdc_Chatbot2' has cardinality 0..*, and from 'mdc_StationaryState', the role 'mdc_StationaryState' has cardinality 0..*.
+An association connects 'mdc_StationaryState' and 'mdc_State'. From 'mdc_StationaryState', the role 'mdc_StationaryState4' has cardinality 0..*, and from 'mdc_State', the role 'mdc_State5' has cardinality 0..*.
+An association connects 'mdc_TransactionalState' and 'mdc_StationaryState'. From 'mdc_TransactionalState', the role 'mdc_TransactionalState' has cardinality 0..*, and from 'mdc_StationaryState', the role 'mdc_StationaryState7' has cardinality 0..*.

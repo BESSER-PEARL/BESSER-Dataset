@@ -1,0 +1,16 @@
+The domain model 'helloworld2' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'helloworld2_Person' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'helloworld2_GreetingMessage' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'helloworld2_Greeting' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'helloworld2_GreetingMessage' and 'helloworld2_Greeting'. From 'helloworld2_GreetingMessage', the role 'helloworld2_GreetingMessage' has cardinality 0..*, and from 'helloworld2_Greeting', the role 'helloworld2_Greeting' has cardinality 0..*.
+An association connects 'helloworld2_Person' and 'helloworld2_Greeting'. From 'helloworld2_Person', the role 'helloworld2_Person' has cardinality 0..*, and from 'helloworld2_Greeting', the role 'helloworld2_Greeting2' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/vhfragal/ConFTGen-tool/work_neon_ubu/org.yakindu.sct.model.sexec/model/sexec.ecore

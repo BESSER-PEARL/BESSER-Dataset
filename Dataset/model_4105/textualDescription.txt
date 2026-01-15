@@ -1,0 +1,62 @@
+The domain model 'Concept' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'Concept_SwitchPosition' represents an important domain concept.
+It has one attribute: 'SwitchPosition_switchState', which is of type str.
+
+'Concept_Signal' represents an important domain concept.
+It has one attribute: 'Signal_actualState', which is of type str.
+
+'Concept_Thing' represents an important domain concept.
+It does not declare any attributes.
+
+'Concept_Switch' represents an important domain concept.
+It has one attribute: 'Switch_actualState', which is of type str.
+
+'Concept_Route' represents an important domain concept.
+It does not declare any attributes.
+
+'Concept_Segment' represents an important domain concept.
+It has one attribute: 'Segment_length', which is of type int.
+
+'Trackelement' represents an important domain concept.
+It does not declare any attributes.
+
+'Concept_Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'Thing' represents an important domain concept.
+It does not declare any attributes.
+
+'Concept_Trackelement' represents an important domain concept.
+It does not declare any attributes.
+
+'Concept_IndividualContainer' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SwitchStateKind' defines the following possible values: 'PointStateKind_FAILURE', 'PointStateKind_RIGHT', 'PointStateKind_STRAIGHT', 'PointStateKind_LEFT'.
+The enumeration 'SignalStateKind' defines the following possible values: 'SignalStateKind_STOP', 'SignalStateKind_FAILURE', 'SignalStateKind_GO'.
+
+The model also captures inheritance relationships between classes.
+The class 'Concept_Segment' is a specialization of 'Trackelement'.
+The class 'Concept_Trackelement' is a specialization of 'Thing'.
+The class 'Concept_Switch' is a specialization of 'Trackelement'.
+The class 'Concept_Route' is a specialization of 'Thing'.
+The class 'Concept_Signal' is a specialization of 'Thing'.
+The class 'Concept_SwitchPosition' is a specialization of 'Thing'.
+The class 'Concept_Sensor' is a specialization of 'Thing'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Concept_Trackelement' and 'Concept_Sensor'. From 'Concept_Trackelement', the role 'Sensor_trackElement' has cardinality 0..*, and from 'Concept_Sensor', the role 'Sensor' has cardinality 0..*.
+An association connects 'Concept_Trackelement' and 'Concept_Trackelement'. From 'Concept_Trackelement', the role 'Concept_Trackelement1' has cardinality 0..*, and from 'Concept_Trackelement', the role 'Concept_Trackelement' has cardinality 0..*.
+An association connects 'Concept_Switch' and 'Concept_SwitchPosition'. From 'Concept_Switch', the role 'SwitchPosition_switch' has cardinality 0..*, and from 'Concept_SwitchPosition', the role 'SwitchPosition' has cardinality 0..*.
+An association connects 'Concept_Route' and 'Concept_Signal'. From 'Concept_Route', the role 'Concept_Route' has cardinality 0..*, and from 'Concept_Signal', the role 'Concept_Signal' has cardinality 0..*.
+An association connects 'Concept_SwitchPosition' and 'Concept_Route'. From 'Concept_SwitchPosition', the role 'SwitchPosition6' has cardinality 0..*, and from 'Concept_Route', the role 'SwitchPosition_route' has cardinality 0..*.
+An association connects 'Concept_Signal' and 'Concept_Route'. From 'Concept_Signal', the role 'Concept_Signal9' has cardinality 0..*, and from 'Concept_Route', the role 'Concept_Route8' has cardinality 0..*.
+An association connects 'Concept_Sensor' and 'Concept_Route'. From 'Concept_Sensor', the role 'Concept_Sensor' has cardinality 0..*, and from 'Concept_Route', the role 'Concept_Route11' has cardinality 0..*.
+An association connects 'Concept_SwitchPosition' and 'Concept_Switch'. From 'Concept_SwitchPosition', the role 'Switch_switchPosition' has cardinality 0..*, and from 'Concept_Switch', the role 'Switch' has cardinality 0..*.
+An association connects 'Concept_SwitchPosition' and 'Concept_Route'. From 'Concept_SwitchPosition', the role 'Route_switchPosition' has cardinality 0..*, and from 'Concept_Route', the role 'Route' has cardinality 0..*.
+An association connects 'Concept_Trackelement' and 'Concept_Sensor'. From 'Concept_Trackelement', the role 'Trackelement' has cardinality 0..*, and from 'Concept_Sensor', the role 'TrackElement_sensor' has cardinality 0..*.
+An association connects 'Concept_IndividualContainer' and 'Concept_Thing'. From 'Concept_IndividualContainer', the role 'Concept_IndividualContainer' has cardinality 0..*, and from 'Concept_Thing', the role 'Concept_Thing' has cardinality 0..*.

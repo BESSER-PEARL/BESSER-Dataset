@@ -1,0 +1,78 @@
+The domain model 'robot' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'robot_Obstacle' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Move' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_And' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_ExpBool' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_StopEngine' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpBool' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Turn' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_SetTurnAngle' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_While' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_HasTurned' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_StopProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Bip' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_If' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'robot_Bip' is a specialization of 'Instruction'.
+The class 'robot_SetTurnAngle' is a specialization of 'Instruction'.
+The class 'robot_Turn' is a specialization of 'Instruction'.
+The class 'robot_Move' is a specialization of 'Instruction'.
+The class 'robot_StopEngine' is a specialization of 'Instruction'.
+The class 'robot_StopProgram' is a specialization of 'Instruction'.
+The class 'robot_Obstacle' is a specialization of 'ExpBool'.
+The class 'robot_While' is a specialization of 'ExpBool'.
+The class 'robot_Not' is a specialization of 'ExpBool'.
+The class 'robot_If' is a specialization of 'ExpBool'.
+The class 'robot_HasTurned' is a specialization of 'ExpBool'.
+The class 'robot_And' is a specialization of 'ExpBool'.
+
+Relationships between classes are modeled using associations.
+An association connects 'robot_Instruction' and 'robot_Program'. From 'robot_Instruction', the role 'robot_Instruction' has cardinality 0..*, and from 'robot_Program', the role 'robot_Program' has cardinality 0..*.
+An association connects 'robot_ExpBool' and 'robot_While'. From 'robot_ExpBool', the role 'robot_ExpBool' has cardinality 0..*, and from 'robot_While', the role 'robot_While' has cardinality 0..*.
+An association connects 'robot_While' and 'robot_Instruction'. From 'robot_While', the role 'robot_While3' has cardinality 0..*, and from 'robot_Instruction', the role 'robot_Instruction4' has cardinality 0..*.
+An association connects 'robot_ExpBool' and 'robot_Not'. From 'robot_ExpBool', the role 'robot_ExpBool6' has cardinality 0..*, and from 'robot_Not', the role 'robot_Not' has cardinality 0..*.
+An association connects 'robot_If' and 'robot_ExpBool'. From 'robot_If', the role 'robot_If' has cardinality 0..*, and from 'robot_ExpBool', the role 'robot_ExpBool8' has cardinality 0..*.
+An association connects 'robot_Instruction' and 'robot_If'. From 'robot_Instruction', the role 'robot_Instruction11' has cardinality 0..*, and from 'robot_If', the role 'robot_If10' has cardinality 0..*.
+An association connects 'robot_ExpBool' and 'robot_And'. From 'robot_ExpBool', the role 'robot_ExpBool13' has cardinality 0..*, and from 'robot_And', the role 'robot_And' has cardinality 0..*.
+An association connects 'robot_ExpBool' and 'robot_And'. From 'robot_ExpBool', the role 'robot_ExpBool16' has cardinality 0..*, and from 'robot_And', the role 'robot_And15' has cardinality 0..*.

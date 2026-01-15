@@ -1,0 +1,118 @@
+The domain model 'py' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'py_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'py_ExprList' represents an important domain concept.
+It does not declare any attributes.
+
+'py_Commands' represents an important domain concept.
+It does not declare any attributes.
+
+'py_ExprSym' represents an important domain concept.
+It has one attribute: 'arg1', which is of type str.
+
+'py_ExprOr' represents an important domain concept.
+It does not declare any attributes.
+
+'py_Wh' represents an important domain concept.
+It does not declare any attributes.
+
+'py_Nop' represents an important domain concept.
+It has one attribute: 'nop', which is of type str.
+
+'py_Affect' represents an important domain concept.
+It has one attribute: 'vars', which is of type str.
+
+'py_While' represents an important domain concept.
+It does not declare any attributes.
+
+'py_ExprSimple' represents an important domain concept.
+It has the following attributes: 'str', which is of type str; 'varSimple', which is of type str; 'sym', which is of type str.
+
+'py_ExprEq' represents an important domain concept.
+It does not declare any attributes.
+
+'py_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'py_For' represents an important domain concept.
+It does not declare any attributes.
+
+'py_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'py_Output' represents an important domain concept.
+It has one attribute: 'vars', which is of type str.
+
+'py_FunctionP' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'py_Foreach' represents an important domain concept.
+It has one attribute: 'var', which is of type str.
+
+'py_ExprAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'py_Input' represents an important domain concept.
+It has one attribute: 'vars', which is of type str.
+
+'py_ExprHd' represents an important domain concept.
+It does not declare any attributes.
+
+'py_ExprTl' represents an important domain concept.
+It does not declare any attributes.
+
+'py_ExprCons' represents an important domain concept.
+It does not declare any attributes.
+
+'py_ExprNot' represents an important domain concept.
+It does not declare any attributes.
+
+'py_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'py_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'py_If' represents an important domain concept.
+It does not declare any attributes.
+
+'py_LExpr' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'py_Wh' and 'py_Program'. From 'py_Wh', the role 'py_Wh' has cardinality 0..*, and from 'py_Program', the role 'py_Program' has cardinality 0..*.
+An association connects 'py_Program' and 'py_FunctionP'. From 'py_Program', the role 'py_Program2' has cardinality 0..*, and from 'py_FunctionP', the role 'py_FunctionP' has cardinality 0..*.
+An association connects 'py_Definition' and 'py_FunctionP'. From 'py_Definition', the role 'py_Definition' has cardinality 0..*, and from 'py_FunctionP', the role 'py_FunctionP4' has cardinality 0..*.
+An association connects 'py_Definition' and 'py_Input'. From 'py_Definition', the role 'py_Definition6' has cardinality 0..*, and from 'py_Input', the role 'py_Input' has cardinality 0..*.
+An association connects 'py_Definition' and 'py_Commands'. From 'py_Definition', the role 'py_Definition8' has cardinality 0..*, and from 'py_Commands', the role 'py_Commands' has cardinality 0..*.
+An association connects 'py_Definition' and 'py_Output'. From 'py_Definition', the role 'py_Definition10' has cardinality 0..*, and from 'py_Output', the role 'py_Output' has cardinality 0..*.
+An association connects 'py_Commands' and 'py_Command'. From 'py_Commands', the role 'py_Commands12' has cardinality 0..*, and from 'py_Command', the role 'py_Command' has cardinality 0..*.
+An association connects 'py_EObject' and 'py_Command'. From 'py_EObject', the role 'py_EObject' has cardinality 0..*, and from 'py_Command', the role 'py_Command14' has cardinality 0..*.
+An association connects 'py_If' and 'py_Expr'. From 'py_If', the role 'py_If' has cardinality 0..*, and from 'py_Expr', the role 'py_Expr' has cardinality 0..*.
+An association connects 'py_If' and 'py_Commands'. From 'py_If', the role 'py_If17' has cardinality 0..*, and from 'py_Commands', the role 'py_Commands18' has cardinality 0..*.
+An association connects 'py_If' and 'py_Commands'. From 'py_If', the role 'py_If20' has cardinality 0..*, and from 'py_Commands', the role 'py_Commands21' has cardinality 0..*.
+An association connects 'py_Expr' and 'py_Affect'. From 'py_Expr', the role 'py_Expr23' has cardinality 0..*, and from 'py_Affect', the role 'py_Affect' has cardinality 0..*.
+An association connects 'py_Expr' and 'py_For'. From 'py_Expr', the role 'py_Expr25' has cardinality 0..*, and from 'py_For', the role 'py_For' has cardinality 0..*.
+An association connects 'py_For' and 'py_Commands'. From 'py_For', the role 'py_For27' has cardinality 0..*, and from 'py_Commands', the role 'py_Commands28' has cardinality 0..*.
+An association connects 'py_Expr' and 'py_Foreach'. From 'py_Expr', the role 'py_Expr30' has cardinality 0..*, and from 'py_Foreach', the role 'py_Foreach' has cardinality 0..*.
+An association connects 'py_Foreach' and 'py_Commands'. From 'py_Foreach', the role 'py_Foreach32' has cardinality 0..*, and from 'py_Commands', the role 'py_Commands33' has cardinality 0..*.
+An association connects 'py_Expr' and 'py_While'. From 'py_Expr', the role 'py_Expr35' has cardinality 0..*, and from 'py_While', the role 'py_While' has cardinality 0..*.
+An association connects 'py_Commands' and 'py_While'. From 'py_Commands', the role 'py_Commands38' has cardinality 0..*, and from 'py_While', the role 'py_While37' has cardinality 0..*.
+An association connects 'py_EObject' and 'py_Expr'. From 'py_EObject', the role 'py_EObject41' has cardinality 0..*, and from 'py_Expr', the role 'py_Expr40' has cardinality 0..*.
+An association connects 'py_ExprSimple' and 'py_ExprAnd'. From 'py_ExprSimple', the role 'py_ExprSimple' has cardinality 0..*, and from 'py_ExprAnd', the role 'py_ExprAnd' has cardinality 0..*.
+An association connects 'py_Expr' and 'py_ExprAnd'. From 'py_Expr', the role 'py_Expr45' has cardinality 0..*, and from 'py_ExprAnd', the role 'py_ExprAnd44' has cardinality 0..*.
+An association connects 'py_ExprSimple' and 'py_ExprOr'. From 'py_ExprSimple', the role 'py_ExprSimple47' has cardinality 0..*, and from 'py_ExprOr', the role 'py_ExprOr' has cardinality 0..*.
+An association connects 'py_Expr' and 'py_ExprOr'. From 'py_Expr', the role 'py_Expr50' has cardinality 0..*, and from 'py_ExprOr', the role 'py_ExprOr49' has cardinality 0..*.
+An association connects 'py_ExprCons' and 'py_LExpr'. From 'py_ExprCons', the role 'py_ExprCons' has cardinality 0..*, and from 'py_LExpr', the role 'py_LExpr' has cardinality 0..*.
+An association connects 'py_Expr' and 'py_LExpr'. From 'py_Expr', the role 'py_Expr54' has cardinality 0..*, and from 'py_LExpr', the role 'py_LExpr53' has cardinality 0..*.
+An association connects 'py_ExprList' and 'py_Expr'. From 'py_ExprList', the role 'py_ExprList' has cardinality 0..*, and from 'py_Expr', the role 'py_Expr56' has cardinality 0..*.
+An association connects 'py_ExprHd' and 'py_Expr'. From 'py_ExprHd', the role 'py_ExprHd' has cardinality 0..*, and from 'py_Expr', the role 'py_Expr58' has cardinality 0..*.
+An association connects 'py_ExprTl' and 'py_Expr'. From 'py_ExprTl', the role 'py_ExprTl' has cardinality 0..*, and from 'py_Expr', the role 'py_Expr60' has cardinality 0..*.
+An association connects 'py_ExprSym' and 'py_Expr'. From 'py_ExprSym', the role 'py_ExprSym' has cardinality 0..*, and from 'py_Expr', the role 'py_Expr62' has cardinality 0..*.
+An association connects 'py_Expr' and 'py_ExprNot'. From 'py_Expr', the role 'py_Expr64' has cardinality 0..*, and from 'py_ExprNot', the role 'py_ExprNot' has cardinality 0..*.
+An association connects 'py_ExprEq' and 'py_ExprSimple'. From 'py_ExprEq', the role 'py_ExprEq' has cardinality 0..*, and from 'py_ExprSimple', the role 'py_ExprSimple66' has cardinality 0..*.
+An association connects 'py_Expr' and 'py_ExprEq'. From 'py_Expr', the role 'py_Expr69' has cardinality 0..*, and from 'py_ExprEq', the role 'py_ExprEq68' has cardinality 0..*.

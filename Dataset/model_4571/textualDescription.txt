@@ -1,0 +1,332 @@
+The domain model 'lua' describes the core structural elements and their relationships within the system.
+
+The model defines 66 main class(es).
+
+'lua_Expression_Concatenation' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Nil' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Exponentiation' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_LastStatement_ReturnWithValue' represents an important domain concept.
+It does not declare any attributes.
+
+'LastStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_AccessMember' represents an important domain concept.
+It has one attribute: 'memberName', which is of type str.
+
+'lua_Expression_String' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'lua_Chunk' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_False' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_CallFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Statement_If_Then_Else' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_VariableName' represents an important domain concept.
+It has one attribute: 'variable', which is of type str.
+
+'lua_Field_AddEntryToTable_Brackets' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_True' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Statement_GlobalFunction_Declaration' represents an important domain concept.
+It has the following attributes: 'functionName', which is of type str; 'prefix', which is of type str.
+
+'lua_Statement_Local_Variable_Declaration' represents an important domain concept.
+It has one attribute: 'variableNames', which is of type str.
+
+'lua_Field_AddEntryToTable' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'lua_LastStatement_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Statement_For_Generic' represents an important domain concept.
+It has one attribute: 'names', which is of type str.
+
+'lua_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Statement_Repeat' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Function' represents an important domain concept.
+It has the following attributes: 'parameters', which is of type str; 'varArgs', which is of type bool.
+
+'lua_Expression_And' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Statement_For_Numeric' represents an important domain concept.
+It has one attribute: 'iteratorName', which is of type str.
+
+'lua_Expression_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement_FunctioncallOrAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Statement_FunctioncallOrAssignment' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Statement_If_Then_Else_ElseIfPart' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Length' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Smaller' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'LastStatement_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'Field' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Statement_While' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Field_AppendEntryToTable' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_LastStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Not_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Larger_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Negate' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_LastStatement_Break' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Statement_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Modulo' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Functioncall_Arguments' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Larger' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_VarArgs' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Invert' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'Chunk' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_CallMemberFunction' represents an important domain concept.
+It has one attribute: 'memberFunctionName', which is of type str.
+
+'lua_Expression_Smaller_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Statement_LocalFunction_Declaration' represents an important domain concept.
+It has one attribute: 'functionName', which is of type str.
+
+'lua_Statement_CallMemberFunction' represents an important domain concept.
+It has one attribute: 'memberFunctionName', which is of type str.
+
+'lua_Statement_CallFunction' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Statement_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_TableConstructor' represents an important domain concept.
+It does not declare any attributes.
+
+'lua_Expression_Number' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'lua_Expression_AccessArray' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'lua_Block' is a specialization of 'Chunk'.
+The class 'lua_LastStatement_Return' is a specialization of 'LastStatement'.
+The class 'lua_LastStatement_Break' is a specialization of 'LastStatement'.
+The class 'lua_Statement_Block' is a specialization of 'Statement'.
+The class 'lua_Statement_While' is a specialization of 'Statement'.
+The class 'lua_Statement_Repeat' is a specialization of 'Statement'.
+The class 'lua_Statement_If_Then_Else' is a specialization of 'Statement'.
+The class 'lua_Statement_For_Numeric' is a specialization of 'Statement'.
+The class 'lua_Statement_For_Generic' is a specialization of 'Statement'.
+The class 'lua_Statement_GlobalFunction_Declaration' is a specialization of 'Statement'.
+The class 'lua_Statement_LocalFunction_Declaration' is a specialization of 'Statement'.
+The class 'lua_Statement_Local_Variable_Declaration' is a specialization of 'Statement'.
+The class 'lua_Statement_FunctioncallOrAssignment' is a specialization of 'Statement'.
+The class 'lua_Expression' is a specialization of 'Statement_FunctioncallOrAssignment'.
+The class 'lua_Expression_Nil' is a specialization of 'Expression'.
+The class 'lua_Expression_True' is a specialization of 'Expression'.
+The class 'lua_Expression_False' is a specialization of 'Expression'.
+The class 'lua_Expression_Number' is a specialization of 'Expression'.
+The class 'lua_Expression_VarArgs' is a specialization of 'Expression'.
+The class 'lua_Expression_String' is a specialization of 'Expression'.
+The class 'lua_Expression_Function' is a specialization of 'Expression'.
+The class 'lua_Expression_TableConstructor' is a specialization of 'Expression'.
+The class 'lua_Field_AddEntryToTable_Brackets' is a specialization of 'Field'.
+The class 'lua_Field_AddEntryToTable' is a specialization of 'Field'.
+The class 'lua_Field_AppendEntryToTable' is a specialization of 'Field'.
+The class 'lua_LastStatement_ReturnWithValue' is a specialization of 'LastStatement_Return'.
+The class 'lua_Statement_Assignment' is a specialization of 'Statement_FunctioncallOrAssignment'.
+The class 'lua_Statement_CallMemberFunction' is a specialization of 'Statement_FunctioncallOrAssignment'.
+The class 'lua_Statement_CallFunction' is a specialization of 'Statement_FunctioncallOrAssignment'.
+The class 'lua_Expression_Or' is a specialization of 'Expression'.
+The class 'lua_Expression_And' is a specialization of 'Expression'.
+The class 'lua_Expression_Larger' is a specialization of 'Expression'.
+The class 'lua_Expression_Larger_Equal' is a specialization of 'Expression'.
+The class 'lua_Expression_Smaller' is a specialization of 'Expression'.
+The class 'lua_Expression_Smaller_Equal' is a specialization of 'Expression'.
+The class 'lua_Expression_Equal' is a specialization of 'Expression'.
+The class 'lua_Expression_Not_Equal' is a specialization of 'Expression'.
+The class 'lua_Expression_Concatenation' is a specialization of 'Expression'.
+The class 'lua_Expression_Plus' is a specialization of 'Expression'.
+The class 'lua_Expression_Minus' is a specialization of 'Expression'.
+The class 'lua_Expression_Multiplication' is a specialization of 'Expression'.
+The class 'lua_Expression_Division' is a specialization of 'Expression'.
+The class 'lua_Expression_Modulo' is a specialization of 'Expression'.
+The class 'lua_Expression_Negate' is a specialization of 'Expression'.
+The class 'lua_Expression_Length' is a specialization of 'Expression'.
+The class 'lua_Expression_Invert' is a specialization of 'Expression'.
+The class 'lua_Expression_Exponentiation' is a specialization of 'Expression'.
+The class 'lua_Expression_CallMemberFunction' is a specialization of 'Expression'.
+The class 'lua_Expression_CallFunction' is a specialization of 'Expression'.
+The class 'lua_Expression_AccessArray' is a specialization of 'Expression'.
+The class 'lua_Expression_AccessMember' is a specialization of 'Expression'.
+The class 'lua_Expression_VariableName' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'lua_Statement' and 'lua_Block'. From 'lua_Statement', the role 'lua_Statement' has cardinality 0..*, and from 'lua_Block', the role 'lua_Block' has cardinality 0..*.
+An association connects 'lua_Block' and 'lua_LastStatement'. From 'lua_Block', the role 'lua_Block2' has cardinality 0..*, and from 'lua_LastStatement', the role 'lua_LastStatement' has cardinality 0..*.
+An association connects 'lua_Block' and 'lua_Statement_Block'. From 'lua_Block', the role 'lua_Block4' has cardinality 0..*, and from 'lua_Statement_Block', the role 'lua_Statement_Block' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Statement_While'. From 'lua_Expression', the role 'lua_Expression' has cardinality 0..*, and from 'lua_Statement_While', the role 'lua_Statement_While' has cardinality 0..*.
+An association connects 'lua_Statement_While' and 'lua_Block'. From 'lua_Statement_While', the role 'lua_Statement_While7' has cardinality 0..*, and from 'lua_Block', the role 'lua_Block8' has cardinality 0..*.
+An association connects 'lua_Statement_Repeat' and 'lua_Block'. From 'lua_Statement_Repeat', the role 'lua_Statement_Repeat' has cardinality 0..*, and from 'lua_Block', the role 'lua_Block10' has cardinality 0..*.
+An association connects 'lua_Statement_Repeat' and 'lua_Expression'. From 'lua_Statement_Repeat', the role 'lua_Statement_Repeat12' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression13' has cardinality 0..*.
+An association connects 'lua_Statement_If_Then_Else' and 'lua_Expression'. From 'lua_Statement_If_Then_Else', the role 'lua_Statement_If_Then_Else' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression15' has cardinality 0..*.
+An association connects 'lua_Block' and 'lua_Statement_If_Then_Else'. From 'lua_Block', the role 'lua_Block18' has cardinality 0..*, and from 'lua_Statement_If_Then_Else', the role 'lua_Statement_If_Then_Else17' has cardinality 0..*.
+An association connects 'lua_Statement_If_Then_Else' and 'lua_Statement_If_Then_Else_ElseIfPart'. From 'lua_Statement_If_Then_Else', the role 'lua_Statement_If_Then_Else20' has cardinality 0..*, and from 'lua_Statement_If_Then_Else_ElseIfPart', the role 'lua_Statement_If_Then_Else_ElseIfPart' has cardinality 0..*.
+An association connects 'lua_Statement_If_Then_Else' and 'lua_Block'. From 'lua_Statement_If_Then_Else', the role 'lua_Statement_If_Then_Else22' has cardinality 0..*, and from 'lua_Block', the role 'lua_Block23' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Statement_If_Then_Else_ElseIfPart'. From 'lua_Expression', the role 'lua_Expression26' has cardinality 0..*, and from 'lua_Statement_If_Then_Else_ElseIfPart', the role 'lua_Statement_If_Then_Else_ElseIfPart25' has cardinality 0..*.
+An association connects 'lua_Block' and 'lua_Statement_If_Then_Else_ElseIfPart'. From 'lua_Block', the role 'lua_Block29' has cardinality 0..*, and from 'lua_Statement_If_Then_Else_ElseIfPart', the role 'lua_Statement_If_Then_Else_ElseIfPart28' has cardinality 0..*.
+An association connects 'lua_Statement_For_Numeric' and 'lua_Expression'. From 'lua_Statement_For_Numeric', the role 'lua_Statement_For_Numeric' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression31' has cardinality 0..*.
+An association connects 'lua_Statement_For_Numeric' and 'lua_Expression'. From 'lua_Statement_For_Numeric', the role 'lua_Statement_For_Numeric33' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression34' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Statement_For_Numeric'. From 'lua_Expression', the role 'lua_Expression37' has cardinality 0..*, and from 'lua_Statement_For_Numeric', the role 'lua_Statement_For_Numeric36' has cardinality 0..*.
+An association connects 'lua_Block' and 'lua_Statement_For_Numeric'. From 'lua_Block', the role 'lua_Block40' has cardinality 0..*, and from 'lua_Statement_For_Numeric', the role 'lua_Statement_For_Numeric39' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Statement_For_Generic'. From 'lua_Expression', the role 'lua_Expression42' has cardinality 0..*, and from 'lua_Statement_For_Generic', the role 'lua_Statement_For_Generic' has cardinality 0..*.
+An association connects 'lua_Statement_For_Generic' and 'lua_Block'. From 'lua_Statement_For_Generic', the role 'lua_Statement_For_Generic44' has cardinality 0..*, and from 'lua_Block', the role 'lua_Block45' has cardinality 0..*.
+An association connects 'lua_Statement_GlobalFunction_Declaration' and 'lua_Function'. From 'lua_Statement_GlobalFunction_Declaration', the role 'lua_Statement_GlobalFunction_Declaration' has cardinality 0..*, and from 'lua_Function', the role 'lua_Function' has cardinality 0..*.
+An association connects 'lua_Statement_LocalFunction_Declaration' and 'lua_Function'. From 'lua_Statement_LocalFunction_Declaration', the role 'lua_Statement_LocalFunction_Declaration' has cardinality 0..*, and from 'lua_Function', the role 'lua_Function48' has cardinality 0..*.
+An association connects 'lua_Statement_Local_Variable_Declaration' and 'lua_Expression'. From 'lua_Statement_Local_Variable_Declaration', the role 'lua_Statement_Local_Variable_Declaration' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression50' has cardinality 0..*.
+An association connects 'lua_Function' and 'lua_Expression_Function'. From 'lua_Function', the role 'lua_Function52' has cardinality 0..*, and from 'lua_Expression_Function', the role 'lua_Expression_Function' has cardinality 0..*.
+An association connects 'lua_Field' and 'lua_Expression_TableConstructor'. From 'lua_Field', the role 'lua_Field' has cardinality 0..*, and from 'lua_Expression_TableConstructor', the role 'lua_Expression_TableConstructor' has cardinality 0..*.
+An association connects 'lua_Function' and 'lua_Block'. From 'lua_Function', the role 'lua_Function55' has cardinality 0..*, and from 'lua_Block', the role 'lua_Block56' has cardinality 0..*.
+An association connects 'lua_Functioncall_Arguments' and 'lua_Expression'. From 'lua_Functioncall_Arguments', the role 'lua_Functioncall_Arguments' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression58' has cardinality 0..*.
+An association connects 'lua_Field' and 'lua_Expression'. From 'lua_Field', the role 'lua_Field60' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression61' has cardinality 0..*.
+An association connects 'lua_Field_AddEntryToTable_Brackets' and 'lua_Expression'. From 'lua_Field_AddEntryToTable_Brackets', the role 'lua_Field_AddEntryToTable_Brackets' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression63' has cardinality 0..*.
+An association connects 'lua_LastStatement_ReturnWithValue' and 'lua_Expression'. From 'lua_LastStatement_ReturnWithValue', the role 'lua_LastStatement_ReturnWithValue' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression65' has cardinality 0..*.
+An association connects 'lua_Statement_Assignment' and 'lua_Expression'. From 'lua_Statement_Assignment', the role 'lua_Statement_Assignment' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression67' has cardinality 0..*.
+An association connects 'lua_Statement_Assignment' and 'lua_Expression'. From 'lua_Statement_Assignment', the role 'lua_Statement_Assignment69' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression70' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Statement_CallMemberFunction'. From 'lua_Expression', the role 'lua_Expression72' has cardinality 0..*, and from 'lua_Statement_CallMemberFunction', the role 'lua_Statement_CallMemberFunction' has cardinality 0..*.
+An association connects 'lua_Statement_CallMemberFunction' and 'lua_Functioncall_Arguments'. From 'lua_Statement_CallMemberFunction', the role 'lua_Statement_CallMemberFunction74' has cardinality 0..*, and from 'lua_Functioncall_Arguments', the role 'lua_Functioncall_Arguments75' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Statement_CallFunction'. From 'lua_Expression', the role 'lua_Expression77' has cardinality 0..*, and from 'lua_Statement_CallFunction', the role 'lua_Statement_CallFunction' has cardinality 0..*.
+An association connects 'lua_Functioncall_Arguments' and 'lua_Statement_CallFunction'. From 'lua_Functioncall_Arguments', the role 'lua_Functioncall_Arguments80' has cardinality 0..*, and from 'lua_Statement_CallFunction', the role 'lua_Statement_CallFunction79' has cardinality 0..*.
+An association connects 'lua_Expression_Or' and 'lua_Expression'. From 'lua_Expression_Or', the role 'lua_Expression_Or' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression82' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_Or'. From 'lua_Expression', the role 'lua_Expression85' has cardinality 0..*, and from 'lua_Expression_Or', the role 'lua_Expression_Or84' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_And'. From 'lua_Expression', the role 'lua_Expression87' has cardinality 0..*, and from 'lua_Expression_And', the role 'lua_Expression_And' has cardinality 0..*.
+An association connects 'lua_Expression_And' and 'lua_Expression'. From 'lua_Expression_And', the role 'lua_Expression_And89' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression90' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_Larger'. From 'lua_Expression', the role 'lua_Expression92' has cardinality 0..*, and from 'lua_Expression_Larger', the role 'lua_Expression_Larger' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_Larger'. From 'lua_Expression', the role 'lua_Expression95' has cardinality 0..*, and from 'lua_Expression_Larger', the role 'lua_Expression_Larger94' has cardinality 0..*.
+An association connects 'lua_Expression_Larger_Equal' and 'lua_Expression'. From 'lua_Expression_Larger_Equal', the role 'lua_Expression_Larger_Equal' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression97' has cardinality 0..*.
+An association connects 'lua_Expression_Larger_Equal' and 'lua_Expression'. From 'lua_Expression_Larger_Equal', the role 'lua_Expression_Larger_Equal99' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression100' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_Smaller'. From 'lua_Expression', the role 'lua_Expression102' has cardinality 0..*, and from 'lua_Expression_Smaller', the role 'lua_Expression_Smaller' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_Smaller'. From 'lua_Expression', the role 'lua_Expression105' has cardinality 0..*, and from 'lua_Expression_Smaller', the role 'lua_Expression_Smaller104' has cardinality 0..*.
+An association connects 'lua_Expression_Smaller_Equal' and 'lua_Expression'. From 'lua_Expression_Smaller_Equal', the role 'lua_Expression_Smaller_Equal' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression107' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_Smaller_Equal'. From 'lua_Expression', the role 'lua_Expression110' has cardinality 0..*, and from 'lua_Expression_Smaller_Equal', the role 'lua_Expression_Smaller_Equal109' has cardinality 0..*.
+An association connects 'lua_Expression_Equal' and 'lua_Expression'. From 'lua_Expression_Equal', the role 'lua_Expression_Equal' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression112' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_Equal'. From 'lua_Expression', the role 'lua_Expression115' has cardinality 0..*, and from 'lua_Expression_Equal', the role 'lua_Expression_Equal114' has cardinality 0..*.
+An association connects 'lua_Expression_Not_Equal' and 'lua_Expression'. From 'lua_Expression_Not_Equal', the role 'lua_Expression_Not_Equal' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression117' has cardinality 0..*.
+An association connects 'lua_Expression_Not_Equal' and 'lua_Expression'. From 'lua_Expression_Not_Equal', the role 'lua_Expression_Not_Equal119' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression120' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_Concatenation'. From 'lua_Expression', the role 'lua_Expression122' has cardinality 0..*, and from 'lua_Expression_Concatenation', the role 'lua_Expression_Concatenation' has cardinality 0..*.
+An association connects 'lua_Expression_Concatenation' and 'lua_Expression'. From 'lua_Expression_Concatenation', the role 'lua_Expression_Concatenation124' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression125' has cardinality 0..*.
+An association connects 'lua_Expression_Plus' and 'lua_Expression'. From 'lua_Expression_Plus', the role 'lua_Expression_Plus' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression127' has cardinality 0..*.
+An association connects 'lua_Expression_Plus' and 'lua_Expression'. From 'lua_Expression_Plus', the role 'lua_Expression_Plus129' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression130' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_Minus'. From 'lua_Expression', the role 'lua_Expression132' has cardinality 0..*, and from 'lua_Expression_Minus', the role 'lua_Expression_Minus' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_Minus'. From 'lua_Expression', the role 'lua_Expression135' has cardinality 0..*, and from 'lua_Expression_Minus', the role 'lua_Expression_Minus134' has cardinality 0..*.
+An association connects 'lua_Expression_Multiplication' and 'lua_Expression'. From 'lua_Expression_Multiplication', the role 'lua_Expression_Multiplication' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression137' has cardinality 0..*.
+An association connects 'lua_Expression_Multiplication' and 'lua_Expression'. From 'lua_Expression_Multiplication', the role 'lua_Expression_Multiplication139' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression140' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_Division'. From 'lua_Expression', the role 'lua_Expression142' has cardinality 0..*, and from 'lua_Expression_Division', the role 'lua_Expression_Division' has cardinality 0..*.
+An association connects 'lua_Expression_Division' and 'lua_Expression'. From 'lua_Expression_Division', the role 'lua_Expression_Division144' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression145' has cardinality 0..*.
+An association connects 'lua_Expression_Modulo' and 'lua_Expression'. From 'lua_Expression_Modulo', the role 'lua_Expression_Modulo' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression147' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_Modulo'. From 'lua_Expression', the role 'lua_Expression150' has cardinality 0..*, and from 'lua_Expression_Modulo', the role 'lua_Expression_Modulo149' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_Negate'. From 'lua_Expression', the role 'lua_Expression152' has cardinality 0..*, and from 'lua_Expression_Negate', the role 'lua_Expression_Negate' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_Length'. From 'lua_Expression', the role 'lua_Expression154' has cardinality 0..*, and from 'lua_Expression_Length', the role 'lua_Expression_Length' has cardinality 0..*.
+An association connects 'lua_Expression_Invert' and 'lua_Expression'. From 'lua_Expression_Invert', the role 'lua_Expression_Invert' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression156' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_Exponentiation'. From 'lua_Expression', the role 'lua_Expression158' has cardinality 0..*, and from 'lua_Expression_Exponentiation', the role 'lua_Expression_Exponentiation' has cardinality 0..*.
+An association connects 'lua_Expression_Exponentiation' and 'lua_Expression'. From 'lua_Expression_Exponentiation', the role 'lua_Expression_Exponentiation160' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression161' has cardinality 0..*.
+An association connects 'lua_Expression_CallMemberFunction' and 'lua_Expression'. From 'lua_Expression_CallMemberFunction', the role 'lua_Expression_CallMemberFunction' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression163' has cardinality 0..*.
+An association connects 'lua_Functioncall_Arguments' and 'lua_Expression_CallMemberFunction'. From 'lua_Functioncall_Arguments', the role 'lua_Functioncall_Arguments166' has cardinality 0..*, and from 'lua_Expression_CallMemberFunction', the role 'lua_Expression_CallMemberFunction165' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_CallFunction'. From 'lua_Expression', the role 'lua_Expression168' has cardinality 0..*, and from 'lua_Expression_CallFunction', the role 'lua_Expression_CallFunction' has cardinality 0..*.
+An association connects 'lua_Functioncall_Arguments' and 'lua_Expression_CallFunction'. From 'lua_Functioncall_Arguments', the role 'lua_Functioncall_Arguments171' has cardinality 0..*, and from 'lua_Expression_CallFunction', the role 'lua_Expression_CallFunction170' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_AccessArray'. From 'lua_Expression', the role 'lua_Expression173' has cardinality 0..*, and from 'lua_Expression_AccessArray', the role 'lua_Expression_AccessArray' has cardinality 0..*.
+An association connects 'lua_Expression' and 'lua_Expression_AccessArray'. From 'lua_Expression', the role 'lua_Expression176' has cardinality 0..*, and from 'lua_Expression_AccessArray', the role 'lua_Expression_AccessArray175' has cardinality 0..*.
+An association connects 'lua_Expression_AccessMember' and 'lua_Expression'. From 'lua_Expression_AccessMember', the role 'lua_Expression_AccessMember' has cardinality 0..*, and from 'lua_Expression', the role 'lua_Expression178' has cardinality 0..*.

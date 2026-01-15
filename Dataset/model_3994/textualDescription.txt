@@ -1,0 +1,41 @@
+The domain model 'CLASS' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'CLASS_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'CLASS_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'CLASS_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'CLASS_Class' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'CLASS_Attribute' represents an important domain concept.
+It has one attribute: 'multiValued', which is of type bool.
+
+'CLASS_System' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'CLASS_Classifier' is a specialization of 'NamedElement'.
+The class 'CLASS_DataType' is a specialization of 'Classifier'.
+The class 'CLASS_Class' is a specialization of 'Classifier'.
+The class 'CLASS_Attribute' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'CLASS_System' and 'CLASS_NamedElement'. From 'CLASS_System', the role 'System' has cardinality 0..*, and from 'CLASS_NamedElement', the role 'elements' has cardinality 0..*.
+An association connects 'CLASS_Class' and 'CLASS_Class'. From 'CLASS_Class', the role 'CLASS_Class1' has cardinality 0..*, and from 'CLASS_Class', the role 'CLASS_Class' has cardinality 0..*.
+An association connects 'CLASS_Class' and 'CLASS_Attribute'. From 'CLASS_Class', the role 'owner' has cardinality 0..*, and from 'CLASS_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'CLASS_Attribute' and 'CLASS_Classifier'. From 'CLASS_Attribute', the role 'CLASS_Attribute' has cardinality 0..*, and from 'CLASS_Classifier', the role 'CLASS_Classifier' has cardinality 0..*.
+An association connects 'CLASS_Class' and 'CLASS_Attribute'. From 'CLASS_Class', the role 'Class' has cardinality 0..*, and from 'CLASS_Attribute', the role 'attributes' has cardinality 0..*.
+An association connects 'CLASS_NamedElement' and 'CLASS_System'. From 'CLASS_NamedElement', the role 'NamedElement' has cardinality 0..*, and from 'CLASS_System', the role 'system' has cardinality 0..*.

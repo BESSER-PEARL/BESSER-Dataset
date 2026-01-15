@@ -1,0 +1,109 @@
+The domain model 'arduino' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'arduino_Variar' represents an important domain concept.
+It has one attribute: 'pwm', which is of type str.
+
+'Bloques' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Apagar' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_While' represents an important domain concept.
+It has the following attributes: 'operando', which is of type str; 'valor', which is of type str; 'referencia', which is of type str.
+
+'Instrucciones' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Sketch' represents an important domain concept.
+It has one attribute: 'Nombre', which is of type str.
+
+'Actuadores' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Temperatura' represents an important domain concept.
+It has one attribute: 'temperatura', which is of type str.
+
+'arduino_Instrucciones' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_PIR' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Esperar' represents an important domain concept.
+It has one attribute: 'miliseg', which is of type str.
+
+'arduino_Actuadores' represents an important domain concept.
+It has one attribute: 'pin', which is of type str.
+
+'Sensores' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Bloques' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Potenciometro' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Encender' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_LDR' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Led' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_Sensores' represents an important domain concept.
+It has the following attributes: 'pin', which is of type str; 'med', which is of type str.
+
+'arduino_Buzzer' represents an important domain concept.
+It does not declare any attributes.
+
+'arduino_If' represents an important domain concept.
+It has the following attributes: 'operando', which is of type str; 'referencia', which is of type str; 'valor', which is of type str.
+
+'arduino_Servo' represents an important domain concept.
+It has the following attributes: 'angulo', which is of type str; 'libreria', which is of type str.
+
+'arduino_Boton' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'operandos' defines the following possible values: 'menorigual', 'mayorigual', 'igual', 'mayor', 'diferente', 'menor'.
+
+The model also captures inheritance relationships between classes.
+The class 'arduino_Led' is a specialization of 'Actuadores'.
+The class 'arduino_LDR' is a specialization of 'Sensores'.
+The class 'arduino_Apagar' is a specialization of 'Instrucciones'.
+The class 'arduino_Variar' is a specialization of 'Instrucciones'.
+The class 'arduino_Esperar' is a specialization of 'Instrucciones'.
+The class 'arduino_Encender' is a specialization of 'Instrucciones'.
+The class 'arduino_If' is a specialization of 'Bloques'.
+The class 'arduino_While' is a specialization of 'Bloques'.
+The class 'arduino_Temperatura' is a specialization of 'Sensores'.
+The class 'arduino_Potenciometro' is a specialization of 'Sensores'.
+The class 'arduino_Boton' is a specialization of 'Sensores'.
+The class 'arduino_PIR' is a specialization of 'Sensores'.
+The class 'arduino_Buzzer' is a specialization of 'Actuadores'.
+The class 'arduino_Servo' is a specialization of 'Actuadores'.
+
+Relationships between classes are modeled using associations.
+An association connects 'arduino_Sensores' and 'arduino_Sketch'. From 'arduino_Sensores', the role 'arduino_Sensores' has cardinality 0..*, and from 'arduino_Sketch', the role 'arduino_Sketch' has cardinality 0..*.
+An association connects 'arduino_Actuadores' and 'arduino_Sketch'. From 'arduino_Actuadores', the role 'arduino_Actuadores' has cardinality 0..*, and from 'arduino_Sketch', the role 'arduino_Sketch2' has cardinality 0..*.
+An association connects 'arduino_Sketch' and 'arduino_Instrucciones'. From 'arduino_Sketch', the role 'arduino_Sketch4' has cardinality 0..*, and from 'arduino_Instrucciones', the role 'arduino_Instrucciones' has cardinality 0..*.
+An association connects 'arduino_Bloques' and 'arduino_Sketch'. From 'arduino_Bloques', the role 'arduino_Bloques' has cardinality 0..*, and from 'arduino_Sketch', the role 'arduino_Sketch6' has cardinality 0..*.
+An association connects 'arduino_Actuadores' and 'arduino_Instrucciones'. From 'arduino_Actuadores', the role 'arduino_Actuadores8' has cardinality 0..*, and from 'arduino_Instrucciones', the role 'arduino_Instrucciones9' has cardinality 0..*.
+An association connects 'arduino_Sensores' and 'arduino_Actuadores'. From 'arduino_Sensores', the role 'arduino_Sensores11' has cardinality 0..*, and from 'arduino_Actuadores', the role 'arduino_Actuadores12' has cardinality 0..*.
+An association connects 'arduino_Apagar' and 'arduino_Esperar'. From 'arduino_Apagar', the role 'arduino_Apagar' has cardinality 0..*, and from 'arduino_Esperar', the role 'arduino_Esperar' has cardinality 0..*.
+An association connects 'arduino_Sensores' and 'arduino_Variar'. From 'arduino_Sensores', the role 'arduino_Sensores15' has cardinality 0..*, and from 'arduino_Variar', the role 'arduino_Variar' has cardinality 0..*.
+An association connects 'arduino_Apagar' and 'arduino_Esperar'. From 'arduino_Apagar', the role 'arduino_Apagar18' has cardinality 0..*, and from 'arduino_Esperar', the role 'arduino_Esperar17' has cardinality 0..*.
+An association connects 'arduino_Esperar' and 'arduino_Encender'. From 'arduino_Esperar', the role 'arduino_Esperar20' has cardinality 0..*, and from 'arduino_Encender', the role 'arduino_Encender' has cardinality 0..*.
+An association connects 'arduino_Encender' and 'arduino_Esperar'. From 'arduino_Encender', the role 'arduino_Encender22' has cardinality 0..*, and from 'arduino_Esperar', the role 'arduino_Esperar23' has cardinality 0..*.
+An association connects 'arduino_Bloques' and 'arduino_Bloques'. From 'arduino_Bloques', the role 'arduino_Bloques24' has cardinality 0..*, and from 'arduino_Bloques', the role 'arduino_Bloques26' has cardinality 0..*.
+An association connects 'arduino_Bloques' and 'arduino_Actuadores'. From 'arduino_Bloques', the role 'arduino_Bloques28' has cardinality 0..*, and from 'arduino_Actuadores', the role 'arduino_Actuadores29' has cardinality 0..*.
+An association connects 'arduino_Bloques' and 'arduino_Instrucciones'. From 'arduino_Bloques', the role 'arduino_Bloques31' has cardinality 0..*, and from 'arduino_Instrucciones', the role 'arduino_Instrucciones32' has cardinality 0..*.
+An association connects 'arduino_Sensores' and 'arduino_Bloques'. From 'arduino_Sensores', the role 'arduino_Sensores35' has cardinality 0..*, and from 'arduino_Bloques', the role 'arduino_Bloques34' has cardinality 0..*.
+An association connects 'arduino_Bloques' and 'arduino_Actuadores'. From 'arduino_Bloques', the role 'arduino_Bloques37' has cardinality 0..*, and from 'arduino_Actuadores', the role 'arduino_Actuadores38' has cardinality 0..*.

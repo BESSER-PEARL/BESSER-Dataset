@@ -1,0 +1,200 @@
+The domain model 'componentBasedSystem' describes the core structural elements and their relationships within the system.
+
+The model defines 46 main class(es).
+
+'componentBasedSystem_Environment' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_dataTypes_Type' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'componentBasedSystem_dataTypes_ReturnType' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_Signature' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'componentBasedSystem_Component' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Role' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_DelegationConnector' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'componentBasedSystem_behaviourDescription_Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_dataTypes_Void' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_behaviourDescription_InternalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_roles_AssemblyConnector' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'componentBasedSystem_AssemblyContext' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'componentBasedSystem_Interface' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'BehaviourDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_Allocation' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_behaviourDescription_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_roles_Role' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'DescriptionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_roles_ProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'ReturnType' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_roles_RequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_Service' represents an important domain concept.
+It does not declare any attributes.
+
+'dataTypes_ParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_AllocationContext' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_behaviourDescription_BehaviourDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'Component' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_Parameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dataTypes_ReturnType' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_dataTypes_Simple' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'componentBasedSystem_dataTypes_Complex' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_CompositeComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'ParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_behaviourDescription_ExternalCall' represents an important domain concept.
+It does not declare any attributes.
+
+'AssemblyConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'ProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_Link' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'componentBasedSystem_dataTypes_ParameterType' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_ComponentBasedSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_behaviourDescription_DescriptionElement' represents an important domain concept.
+It does not declare any attributes.
+
+'roles_componentBasedSystem_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'RequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'Simple' represents an important domain concept.
+It does not declare any attributes.
+
+'roles_componentBasedSystem_AssemblyContext' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_Repository' represents an important domain concept.
+It does not declare any attributes.
+
+'componentBasedSystem_Container' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'simpleTypes' defines the following possible values: 'map', 'string', 'int', 'double', 'char', 'date', 'boolean', 'long', 'list', 'float'.
+
+The model also captures inheritance relationships between classes.
+The class 'componentBasedSystem_CompositeComponent' is a specialization of 'Component'.
+The class 'componentBasedSystem_dataTypes_Simple' is a specialization of 'dataTypes_ParameterType'.
+The class 'componentBasedSystem_dataTypes_Simple' is a specialization of 'dataTypes_ReturnType'.
+The class 'componentBasedSystem_dataTypes_Complex' is a specialization of 'dataTypes_ReturnType'.
+The class 'componentBasedSystem_dataTypes_Complex' is a specialization of 'dataTypes_ParameterType'.
+The class 'componentBasedSystem_dataTypes_ParameterType' is a specialization of 'Type'.
+The class 'componentBasedSystem_dataTypes_Void' is a specialization of 'ReturnType'.
+The class 'componentBasedSystem_dataTypes_ReturnType' is a specialization of 'Type'.
+The class 'componentBasedSystem_behaviourDescription_InternalAction' is a specialization of 'DescriptionElement'.
+The class 'componentBasedSystem_behaviourDescription_ExternalCall' is a specialization of 'DescriptionElement'.
+The class 'componentBasedSystem_behaviourDescription_Loop' is a specialization of 'DescriptionElement'.
+The class 'componentBasedSystem_behaviourDescription_Branch' is a specialization of 'DescriptionElement'.
+The class 'componentBasedSystem_roles_RequiredRole' is a specialization of 'Role'.
+The class 'componentBasedSystem_roles_ProvidedRole' is a specialization of 'Role'.
+
+Relationships between classes are modeled using associations.
+An association connects 'componentBasedSystem_AssemblyContext' and 'componentBasedSystem_ComponentBasedSystem'. From 'componentBasedSystem_AssemblyContext', the role 'componentBasedSystem_AssemblyContext' has cardinality 0..*, and from 'componentBasedSystem_ComponentBasedSystem', the role 'componentBasedSystem_ComponentBasedSystem' has cardinality 0..*.
+An association connects 'Type' and 'componentBasedSystem_ComponentBasedSystem'. From 'Type', the role 'Type' has cardinality 0..*, and from 'componentBasedSystem_ComponentBasedSystem', the role 'componentBasedSystem_ComponentBasedSystem2' has cardinality 0..*.
+An association connects 'AssemblyConnector' and 'componentBasedSystem_ComponentBasedSystem'. From 'AssemblyConnector', the role 'AssemblyConnector' has cardinality 0..*, and from 'componentBasedSystem_ComponentBasedSystem', the role 'componentBasedSystem_ComponentBasedSystem4' has cardinality 0..*.
+An association connects 'componentBasedSystem_Allocation' and 'componentBasedSystem_ComponentBasedSystem'. From 'componentBasedSystem_Allocation', the role 'componentBasedSystem_Allocation' has cardinality 0..*, and from 'componentBasedSystem_ComponentBasedSystem', the role 'componentBasedSystem_ComponentBasedSystem6' has cardinality 0..*.
+An association connects 'componentBasedSystem_ComponentBasedSystem' and 'componentBasedSystem_Repository'. From 'componentBasedSystem_ComponentBasedSystem', the role 'componentBasedSystem_ComponentBasedSystem8' has cardinality 0..*, and from 'componentBasedSystem_Repository', the role 'componentBasedSystem_Repository' has cardinality 0..*.
+An association connects 'componentBasedSystem_ComponentBasedSystem' and 'componentBasedSystem_Environment'. From 'componentBasedSystem_ComponentBasedSystem', the role 'componentBasedSystem_ComponentBasedSystem10' has cardinality 0..*, and from 'componentBasedSystem_Environment', the role 'componentBasedSystem_Environment' has cardinality 0..*.
+An association connects 'componentBasedSystem_ComponentBasedSystem' and 'ProvidedRole'. From 'componentBasedSystem_ComponentBasedSystem', the role 'componentBasedSystem_ComponentBasedSystem12' has cardinality 0..*, and from 'ProvidedRole', the role 'ProvidedRole' has cardinality 0..*.
+An association connects 'RequiredRole' and 'componentBasedSystem_ComponentBasedSystem'. From 'RequiredRole', the role 'RequiredRole' has cardinality 0..*, and from 'componentBasedSystem_ComponentBasedSystem', the role 'componentBasedSystem_ComponentBasedSystem14' has cardinality 0..*.
+An association connects 'componentBasedSystem_Component' and 'BehaviourDescription'. From 'componentBasedSystem_Component', the role 'componentBasedSystem_Component' has cardinality 0..*, and from 'BehaviourDescription', the role 'BehaviourDescription' has cardinality 0..*.
+An association connects 'componentBasedSystem_Component' and 'componentBasedSystem_Service'. From 'componentBasedSystem_Component', the role 'componentBasedSystem_Component17' has cardinality 0..*, and from 'componentBasedSystem_Service', the role 'componentBasedSystem_Service' has cardinality 0..*.
+An association connects 'componentBasedSystem_Component' and 'RequiredRole'. From 'componentBasedSystem_Component', the role 'componentBasedSystem_Component19' has cardinality 0..*, and from 'RequiredRole', the role 'RequiredRole20' has cardinality 0..*.
+An association connects 'componentBasedSystem_Component' and 'ProvidedRole'. From 'componentBasedSystem_Component', the role 'componentBasedSystem_Component22' has cardinality 0..*, and from 'ProvidedRole', the role 'ProvidedRole23' has cardinality 0..*.
+An association connects 'componentBasedSystem_Signature' and 'componentBasedSystem_Interface'. From 'componentBasedSystem_Signature', the role 'componentBasedSystem_Signature' has cardinality 0..*, and from 'componentBasedSystem_Interface', the role 'componentBasedSystem_Interface' has cardinality 0..*.
+An association connects 'componentBasedSystem_AssemblyContext' and 'componentBasedSystem_CompositeComponent'. From 'componentBasedSystem_AssemblyContext', the role 'componentBasedSystem_AssemblyContext26' has cardinality 0..*, and from 'componentBasedSystem_CompositeComponent', the role 'componentBasedSystem_CompositeComponent' has cardinality 0..*.
+An association connects 'componentBasedSystem_CompositeComponent' and 'componentBasedSystem_DelegationConnector'. From 'componentBasedSystem_CompositeComponent', the role 'componentBasedSystem_CompositeComponent28' has cardinality 0..*, and from 'componentBasedSystem_DelegationConnector', the role 'componentBasedSystem_DelegationConnector' has cardinality 0..*.
+An association connects 'componentBasedSystem_Container' and 'componentBasedSystem_Link'. From 'componentBasedSystem_Container', the role 'componentBasedSystem_Container' has cardinality 0..*, and from 'componentBasedSystem_Link', the role 'componentBasedSystem_Link' has cardinality 0..*.
+An association connects 'componentBasedSystem_Parameter' and 'componentBasedSystem_Signature'. From 'componentBasedSystem_Parameter', the role 'componentBasedSystem_Parameter' has cardinality 0..*, and from 'componentBasedSystem_Signature', the role 'componentBasedSystem_Signature31' has cardinality 0..*.
+An association connects 'componentBasedSystem_Signature' and 'ReturnType'. From 'componentBasedSystem_Signature', the role 'componentBasedSystem_Signature33' has cardinality 0..*, and from 'ReturnType', the role 'ReturnType' has cardinality 0..*.
+An association connects 'ParameterType' and 'componentBasedSystem_Parameter'. From 'ParameterType', the role 'ParameterType' has cardinality 0..*, and from 'componentBasedSystem_Parameter', the role 'componentBasedSystem_Parameter35' has cardinality 0..*.
+An association connects 'componentBasedSystem_AssemblyContext' and 'componentBasedSystem_Component'. From 'componentBasedSystem_AssemblyContext', the role 'componentBasedSystem_AssemblyContext37' has cardinality 0..*, and from 'componentBasedSystem_Component', the role 'componentBasedSystem_Component38' has cardinality 0..*.
+An association connects 'componentBasedSystem_AllocationContext' and 'componentBasedSystem_Container'. From 'componentBasedSystem_AllocationContext', the role 'componentBasedSystem_AllocationContext' has cardinality 0..*, and from 'componentBasedSystem_Container', the role 'componentBasedSystem_Container40' has cardinality 0..*.
+An association connects 'componentBasedSystem_AllocationContext' and 'componentBasedSystem_AssemblyContext'. From 'componentBasedSystem_AllocationContext', the role 'componentBasedSystem_AllocationContext42' has cardinality 0..*, and from 'componentBasedSystem_AssemblyContext', the role 'componentBasedSystem_AssemblyContext43' has cardinality 0..*.
+An association connects 'componentBasedSystem_DelegationConnector' and 'Role'. From 'componentBasedSystem_DelegationConnector', the role 'componentBasedSystem_DelegationConnector45' has cardinality 0..*, and from 'Role', the role 'Role' has cardinality 0..*.
+An association connects 'componentBasedSystem_Container' and 'componentBasedSystem_Environment'. From 'componentBasedSystem_Container', the role 'componentBasedSystem_Container48' has cardinality 0..*, and from 'componentBasedSystem_Environment', the role 'componentBasedSystem_Environment47' has cardinality 0..*.
+An association connects 'componentBasedSystem_Environment' and 'componentBasedSystem_Link'. From 'componentBasedSystem_Environment', the role 'componentBasedSystem_Environment50' has cardinality 0..*, and from 'componentBasedSystem_Link', the role 'componentBasedSystem_Link51' has cardinality 0..*.
+An association connects 'componentBasedSystem_Interface' and 'componentBasedSystem_Repository'. From 'componentBasedSystem_Interface', the role 'componentBasedSystem_Interface54' has cardinality 0..*, and from 'componentBasedSystem_Repository', the role 'componentBasedSystem_Repository53' has cardinality 0..*.
+An association connects 'componentBasedSystem_Component' and 'componentBasedSystem_Repository'. From 'componentBasedSystem_Component', the role 'componentBasedSystem_Component57' has cardinality 0..*, and from 'componentBasedSystem_Repository', the role 'componentBasedSystem_Repository56' has cardinality 0..*.
+An association connects 'componentBasedSystem_Allocation' and 'componentBasedSystem_AllocationContext'. From 'componentBasedSystem_Allocation', the role 'componentBasedSystem_Allocation59' has cardinality 0..*, and from 'componentBasedSystem_AllocationContext', the role 'componentBasedSystem_AllocationContext60' has cardinality 0..*.
+An association connects 'componentBasedSystem_Signature' and 'componentBasedSystem_Service'. From 'componentBasedSystem_Signature', the role 'componentBasedSystem_Signature63' has cardinality 0..*, and from 'componentBasedSystem_Service', the role 'componentBasedSystem_Service62' has cardinality 0..*.
+An association connects 'Simple' and 'componentBasedSystem_dataTypes_Complex'. From 'Simple', the role 'Simple' has cardinality 0..*, and from 'componentBasedSystem_dataTypes_Complex', the role 'componentBasedSystem_dataTypes_Complex' has cardinality 0..*.
+An association connects 'componentBasedSystem_behaviourDescription_Loop' and 'DescriptionElement'. From 'componentBasedSystem_behaviourDescription_Loop', the role 'componentBasedSystem_behaviourDescription_Loop' has cardinality 0..*, and from 'DescriptionElement', the role 'DescriptionElement' has cardinality 0..*.
+An association connects 'DescriptionElement' and 'componentBasedSystem_behaviourDescription_Branch'. From 'DescriptionElement', the role 'DescriptionElement67' has cardinality 0..*, and from 'componentBasedSystem_behaviourDescription_Branch', the role 'componentBasedSystem_behaviourDescription_Branch' has cardinality 0..*.
+An association connects 'DescriptionElement' and 'componentBasedSystem_behaviourDescription_BehaviourDescription'. From 'DescriptionElement', the role 'DescriptionElement69' has cardinality 0..*, and from 'componentBasedSystem_behaviourDescription_BehaviourDescription', the role 'componentBasedSystem_behaviourDescription_BehaviourDescription' has cardinality 0..*.
+An association connects 'componentBasedSystem_roles_Role' and 'roles_componentBasedSystem_Interface'. From 'componentBasedSystem_roles_Role', the role 'componentBasedSystem_roles_Role' has cardinality 0..*, and from 'roles_componentBasedSystem_Interface', the role 'roles_componentBasedSystem_Interface' has cardinality 0..*.
+An association connects 'componentBasedSystem_roles_AssemblyConnector' and 'ProvidedRole'. From 'componentBasedSystem_roles_AssemblyConnector', the role 'componentBasedSystem_roles_AssemblyConnector' has cardinality 0..*, and from 'ProvidedRole', the role 'ProvidedRole72' has cardinality 0..*.
+An association connects 'componentBasedSystem_roles_AssemblyConnector' and 'RequiredRole'. From 'componentBasedSystem_roles_AssemblyConnector', the role 'componentBasedSystem_roles_AssemblyConnector74' has cardinality 0..*, and from 'RequiredRole', the role 'RequiredRole75' has cardinality 0..*.
+An association connects 'componentBasedSystem_roles_AssemblyConnector' and 'roles_componentBasedSystem_AssemblyContext'. From 'componentBasedSystem_roles_AssemblyConnector', the role 'componentBasedSystem_roles_AssemblyConnector77' has cardinality 0..*, and from 'roles_componentBasedSystem_AssemblyContext', the role 'roles_componentBasedSystem_AssemblyContext' has cardinality 0..*.
+An association connects 'roles_componentBasedSystem_AssemblyContext' and 'componentBasedSystem_roles_AssemblyConnector'. From 'roles_componentBasedSystem_AssemblyContext', the role 'roles_componentBasedSystem_AssemblyContext80' has cardinality 0..*, and from 'componentBasedSystem_roles_AssemblyConnector', the role 'componentBasedSystem_roles_AssemblyConnector79' has cardinality 0..*.

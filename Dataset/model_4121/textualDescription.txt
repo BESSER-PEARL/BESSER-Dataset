@@ -1,0 +1,124 @@
+The domain model 'whileDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'whileDsl_ExprSimpleWithExpr' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+'whileDsl_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_Exprs' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_ExprNot' represents an important domain concept.
+It has one attribute: 'negation', which is of type bool.
+
+'whileDsl_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_ExprOr' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_ExprEq' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_ForeachCommand' represents an important domain concept.
+It has one attribute: 'expElement', which is of type str.
+
+'Command' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_ExprSimpleWithLExpr' represents an important domain concept.
+It has one attribute: 'operation', which is of type str.
+
+'whileDsl_VarsCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_IfCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_ExprSimpleWithSymbolLExpr' represents an important domain concept.
+It has one attribute: 'symbol', which is of type str.
+
+'whileDsl_ForCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_WhileCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_Input' represents an important domain concept.
+It has one attribute: 'variables', which is of type str.
+
+'whileDsl_Function' represents an important domain concept.
+It has one attribute: 'functionName', which is of type str.
+
+'whileDsl_ExprAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_Commands' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_LExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_Vars' represents an important domain concept.
+It has one attribute: 'variables', which is of type str.
+
+'whileDsl_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_NopCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'whileDsl_Output' represents an important domain concept.
+It has one attribute: 'variables', which is of type str.
+
+'whileDsl_ExprSimple' represents an important domain concept.
+It has one attribute: 'term', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'whileDsl_WhileCommand' is a specialization of 'Command'.
+The class 'whileDsl_ForCommand' is a specialization of 'Command'.
+The class 'whileDsl_IfCommand' is a specialization of 'Command'.
+The class 'whileDsl_ForeachCommand' is a specialization of 'Command'.
+The class 'whileDsl_VarsCommand' is a specialization of 'Command'.
+The class 'whileDsl_NopCommand' is a specialization of 'Command'.
+
+Relationships between classes are modeled using associations.
+An association connects 'whileDsl_Model' and 'whileDsl_Function'. From 'whileDsl_Model', the role 'whileDsl_Model' has cardinality 0..*, and from 'whileDsl_Function', the role 'whileDsl_Function' has cardinality 0..*.
+An association connects 'whileDsl_Function' and 'whileDsl_Definition'. From 'whileDsl_Function', the role 'whileDsl_Function2' has cardinality 0..*, and from 'whileDsl_Definition', the role 'whileDsl_Definition' has cardinality 0..*.
+An association connects 'whileDsl_Input' and 'whileDsl_Definition'. From 'whileDsl_Input', the role 'whileDsl_Input' has cardinality 0..*, and from 'whileDsl_Definition', the role 'whileDsl_Definition4' has cardinality 0..*.
+An association connects 'whileDsl_Definition' and 'whileDsl_Commands'. From 'whileDsl_Definition', the role 'whileDsl_Definition6' has cardinality 0..*, and from 'whileDsl_Commands', the role 'whileDsl_Commands' has cardinality 0..*.
+An association connects 'whileDsl_Output' and 'whileDsl_Definition'. From 'whileDsl_Output', the role 'whileDsl_Output' has cardinality 0..*, and from 'whileDsl_Definition', the role 'whileDsl_Definition8' has cardinality 0..*.
+An association connects 'whileDsl_Commands' and 'whileDsl_Command'. From 'whileDsl_Commands', the role 'whileDsl_Commands10' has cardinality 0..*, and from 'whileDsl_Command', the role 'whileDsl_Command' has cardinality 0..*.
+An association connects 'whileDsl_Expr' and 'whileDsl_WhileCommand'. From 'whileDsl_Expr', the role 'whileDsl_Expr' has cardinality 0..*, and from 'whileDsl_WhileCommand', the role 'whileDsl_WhileCommand' has cardinality 0..*.
+An association connects 'whileDsl_Commands' and 'whileDsl_WhileCommand'. From 'whileDsl_Commands', the role 'whileDsl_Commands14' has cardinality 0..*, and from 'whileDsl_WhileCommand', the role 'whileDsl_WhileCommand13' has cardinality 0..*.
+An association connects 'whileDsl_Expr' and 'whileDsl_ForCommand'. From 'whileDsl_Expr', the role 'whileDsl_Expr16' has cardinality 0..*, and from 'whileDsl_ForCommand', the role 'whileDsl_ForCommand' has cardinality 0..*.
+An association connects 'whileDsl_Commands' and 'whileDsl_ForCommand'. From 'whileDsl_Commands', the role 'whileDsl_Commands19' has cardinality 0..*, and from 'whileDsl_ForCommand', the role 'whileDsl_ForCommand18' has cardinality 0..*.
+An association connects 'whileDsl_Expr' and 'whileDsl_IfCommand'. From 'whileDsl_Expr', the role 'whileDsl_Expr21' has cardinality 0..*, and from 'whileDsl_IfCommand', the role 'whileDsl_IfCommand' has cardinality 0..*.
+An association connects 'whileDsl_IfCommand' and 'whileDsl_Commands'. From 'whileDsl_IfCommand', the role 'whileDsl_IfCommand23' has cardinality 0..*, and from 'whileDsl_Commands', the role 'whileDsl_Commands24' has cardinality 0..*.
+An association connects 'whileDsl_Commands' and 'whileDsl_IfCommand'. From 'whileDsl_Commands', the role 'whileDsl_Commands27' has cardinality 0..*, and from 'whileDsl_IfCommand', the role 'whileDsl_IfCommand26' has cardinality 0..*.
+An association connects 'whileDsl_ForeachCommand' and 'whileDsl_Expr'. From 'whileDsl_ForeachCommand', the role 'whileDsl_ForeachCommand' has cardinality 0..*, and from 'whileDsl_Expr', the role 'whileDsl_Expr29' has cardinality 0..*.
+An association connects 'whileDsl_ForeachCommand' and 'whileDsl_Commands'. From 'whileDsl_ForeachCommand', the role 'whileDsl_ForeachCommand31' has cardinality 0..*, and from 'whileDsl_Commands', the role 'whileDsl_Commands32' has cardinality 0..*.
+An association connects 'whileDsl_VarsCommand' and 'whileDsl_Vars'. From 'whileDsl_VarsCommand', the role 'whileDsl_VarsCommand' has cardinality 0..*, and from 'whileDsl_Vars', the role 'whileDsl_Vars' has cardinality 0..*.
+An association connects 'whileDsl_VarsCommand' and 'whileDsl_Exprs'. From 'whileDsl_VarsCommand', the role 'whileDsl_VarsCommand35' has cardinality 0..*, and from 'whileDsl_Exprs', the role 'whileDsl_Exprs' has cardinality 0..*.
+An association connects 'whileDsl_EObject' and 'whileDsl_ExprSimple'. From 'whileDsl_EObject', the role 'whileDsl_EObject' has cardinality 0..*, and from 'whileDsl_ExprSimple', the role 'whileDsl_ExprSimple' has cardinality 0..*.
+An association connects 'whileDsl_LExpr' and 'whileDsl_ExprSimpleWithLExpr'. From 'whileDsl_LExpr', the role 'whileDsl_LExpr' has cardinality 0..*, and from 'whileDsl_ExprSimpleWithLExpr', the role 'whileDsl_ExprSimpleWithLExpr' has cardinality 0..*.
+An association connects 'whileDsl_Expr' and 'whileDsl_ExprSimpleWithExpr'. From 'whileDsl_Expr', the role 'whileDsl_Expr39' has cardinality 0..*, and from 'whileDsl_ExprSimpleWithExpr', the role 'whileDsl_ExprSimpleWithExpr' has cardinality 0..*.
+An association connects 'whileDsl_ExprSimpleWithSymbolLExpr' and 'whileDsl_LExpr'. From 'whileDsl_ExprSimpleWithSymbolLExpr', the role 'whileDsl_ExprSimpleWithSymbolLExpr' has cardinality 0..*, and from 'whileDsl_LExpr', the role 'whileDsl_LExpr41' has cardinality 0..*.
+An association connects 'whileDsl_LExpr' and 'whileDsl_Expr'. From 'whileDsl_LExpr', the role 'whileDsl_LExpr43' has cardinality 0..*, and from 'whileDsl_Expr', the role 'whileDsl_Expr44' has cardinality 0..*.
+An association connects 'whileDsl_Exprs' and 'whileDsl_Expr'. From 'whileDsl_Exprs', the role 'whileDsl_Exprs46' has cardinality 0..*, and from 'whileDsl_Expr', the role 'whileDsl_Expr47' has cardinality 0..*.
+An association connects 'whileDsl_EObject' and 'whileDsl_Expr'. From 'whileDsl_EObject', the role 'whileDsl_EObject50' has cardinality 0..*, and from 'whileDsl_Expr', the role 'whileDsl_Expr49' has cardinality 0..*.
+An association connects 'whileDsl_ExprOr' and 'whileDsl_ExprAnd'. From 'whileDsl_ExprOr', the role 'whileDsl_ExprOr' has cardinality 0..*, and from 'whileDsl_ExprAnd', the role 'whileDsl_ExprAnd' has cardinality 0..*.
+An association connects 'whileDsl_ExprNot' and 'whileDsl_ExprOr'. From 'whileDsl_ExprNot', the role 'whileDsl_ExprNot' has cardinality 0..*, and from 'whileDsl_ExprOr', the role 'whileDsl_ExprOr53' has cardinality 0..*.
+An association connects 'whileDsl_ExprEq' and 'whileDsl_ExprNot'. From 'whileDsl_ExprEq', the role 'whileDsl_ExprEq' has cardinality 0..*, and from 'whileDsl_ExprNot', the role 'whileDsl_ExprNot55' has cardinality 0..*.
+An association connects 'whileDsl_ExprEq' and 'whileDsl_ExprSimple'. From 'whileDsl_ExprEq', the role 'whileDsl_ExprEq57' has cardinality 0..*, and from 'whileDsl_ExprSimple', the role 'whileDsl_ExprSimple58' has cardinality 0..*.
+An association connects 'whileDsl_ExprSimple' and 'whileDsl_ExprEq'. From 'whileDsl_ExprSimple', the role 'whileDsl_ExprSimple61' has cardinality 0..*, and from 'whileDsl_ExprEq', the role 'whileDsl_ExprEq60' has cardinality 0..*.
+An association connects 'whileDsl_Expr' and 'whileDsl_ExprEq'. From 'whileDsl_Expr', the role 'whileDsl_Expr64' has cardinality 0..*, and from 'whileDsl_ExprEq', the role 'whileDsl_ExprEq63' has cardinality 0..*.

@@ -1,0 +1,38 @@
+The domain model 'employee' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'employee_RichDepartment' represents an important domain concept.
+It does not declare any attributes.
+
+'Department' represents an important domain concept.
+It does not declare any attributes.
+
+'employee_NamedEntity' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'employee_Employee' represents an important domain concept.
+It has one attribute: 'wage', which is of type int.
+
+'employee_PoorDepartment' represents an important domain concept.
+It does not declare any attributes.
+
+'employee_Company' represents an important domain concept.
+It does not declare any attributes.
+
+'employee_Department' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedEntity' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'employee_Company' is a specialization of 'NamedEntity'.
+The class 'employee_RichDepartment' is a specialization of 'Department'.
+The class 'employee_PoorDepartment' is a specialization of 'Department'.
+The class 'employee_Department' is a specialization of 'NamedEntity'.
+The class 'employee_Employee' is a specialization of 'NamedEntity'.
+
+Relationships between classes are modeled using associations.
+An association connects 'employee_Company' and 'employee_Department'. From 'employee_Company', the role 'employee_Company' has cardinality 0..*, and from 'employee_Department', the role 'employee_Department' has cardinality 0..*.
+An association connects 'employee_Employee' and 'employee_Department'. From 'employee_Employee', the role 'employee_Employee' has cardinality 0..*, and from 'employee_Department', the role 'employee_Department2' has cardinality 0..*.

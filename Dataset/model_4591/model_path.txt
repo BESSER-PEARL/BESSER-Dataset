@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jblomer/GrGen.NET/engine-net-2/examples/ModelMigration-TTC2010/minimal_evolved/evolved_minimal_metamodel.ecore

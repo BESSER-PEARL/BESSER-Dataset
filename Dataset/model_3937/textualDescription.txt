@@ -1,0 +1,38 @@
+The domain model 'smalluml' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'smalluml_Generalisation' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Association' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'smalluml_Attribute' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+'smalluml_SchemaUML' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Role' represents an important domain concept.
+It has one attribute: 'Multiplicity', which is of type str.
+
+'smalluml_Methode' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'returnType', which is of type str.
+
+'smalluml_SmallClass' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'smalluml_SchemaUML' and 'smalluml_Generalisation'. From 'smalluml_SchemaUML', the role 'smalluml_SchemaUML' has cardinality 0..*, and from 'smalluml_Generalisation', the role 'smalluml_Generalisation' has cardinality 0..*.
+An association connects 'smalluml_SmallClass' and 'smalluml_SchemaUML'. From 'smalluml_SmallClass', the role 'smalluml_SmallClass' has cardinality 0..*, and from 'smalluml_SchemaUML', the role 'smalluml_SchemaUML2' has cardinality 0..*.
+An association connects 'smalluml_Association' and 'smalluml_SchemaUML'. From 'smalluml_Association', the role 'smalluml_Association' has cardinality 0..*, and from 'smalluml_SchemaUML', the role 'smalluml_SchemaUML4' has cardinality 0..*.
+An association connects 'smalluml_Attribute' and 'smalluml_SmallClass'. From 'smalluml_Attribute', the role 'smalluml_Attribute' has cardinality 0..*, and from 'smalluml_SmallClass', the role 'smalluml_SmallClass6' has cardinality 0..*.
+An association connects 'smalluml_SmallClass' and 'smalluml_Methode'. From 'smalluml_SmallClass', the role 'smalluml_SmallClass8' has cardinality 0..*, and from 'smalluml_Methode', the role 'smalluml_Methode' has cardinality 0..*.
+An association connects 'smalluml_Generalisation' and 'smalluml_SmallClass'. From 'smalluml_Generalisation', the role 'smalluml_Generalisation10' has cardinality 0..*, and from 'smalluml_SmallClass', the role 'smalluml_SmallClass11' has cardinality 0..*.
+An association connects 'smalluml_SmallClass' and 'smalluml_Generalisation'. From 'smalluml_SmallClass', the role 'smalluml_SmallClass14' has cardinality 0..*, and from 'smalluml_Generalisation', the role 'smalluml_Generalisation13' has cardinality 0..*.
+An association connects 'smalluml_SmallClass' and 'smalluml_Association'. From 'smalluml_SmallClass', the role 'smalluml_SmallClass17' has cardinality 0..*, and from 'smalluml_Association', the role 'smalluml_Association16' has cardinality 0..*.
+An association connects 'smalluml_Association' and 'smalluml_SmallClass'. From 'smalluml_Association', the role 'smalluml_Association19' has cardinality 0..*, and from 'smalluml_SmallClass', the role 'smalluml_SmallClass20' has cardinality 0..*.
+An association connects 'smalluml_Association' and 'smalluml_Attribute'. From 'smalluml_Association', the role 'smalluml_Association22' has cardinality 0..*, and from 'smalluml_Attribute', the role 'smalluml_Attribute23' has cardinality 0..*.
+An association connects 'smalluml_Role' and 'smalluml_Association'. From 'smalluml_Role', the role 'smalluml_Role' has cardinality 0..*, and from 'smalluml_Association', the role 'smalluml_Association25' has cardinality 0..*.
+An association connects 'smalluml_SmallClass' and 'smalluml_Role'. From 'smalluml_SmallClass', the role 'smalluml_SmallClass28' has cardinality 0..*, and from 'smalluml_Role', the role 'smalluml_Role27' has cardinality 0..*.

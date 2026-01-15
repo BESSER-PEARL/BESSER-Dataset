@@ -1,0 +1,12 @@
+The domain model 'cherry1to2' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'cherry1to2_Greeting' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cherry1to2_Model' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'cherry1to2_Greeting' and 'cherry1to2_Model'. From 'cherry1to2_Greeting', the role 'cherry1to2_Greeting' has cardinality 0..*, and from 'cherry1to2_Model', the role 'cherry1to2_Model' has cardinality 0..*.

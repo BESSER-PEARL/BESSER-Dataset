@@ -1,0 +1,97 @@
+The domain model 'farrusco' describes the core structural elements and their relationships within the system.
+
+The model defines 23 main class(es).
+
+'farrusco_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_LED' represents an important domain concept.
+It has one attribute: 'on_off', which is of type bool.
+
+'farrusco_AlterarEstado' represents an important domain concept.
+It has the following attributes: 'succ_policy', which is of type int; 'runn_policy', which is of type int; 'fail_policy', which is of type int.
+
+'farrusco_Paralelo' represents an important domain concept.
+It does not declare any attributes.
+
+'Actuate' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_Actuate' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_Espera' represents an important domain concept.
+It has one attribute: 'time', which is of type int.
+
+'Behavior' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_Irmao' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_Distancia' represents an important domain concept.
+It has the following attributes: 'distancia', which is of type int; 'how_sucess', which is of type bool.
+
+'farrusco_BumperDireito' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_Behavior' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'farrusco_Action' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'farrusco_Prioridade' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_Robot' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+'farrusco_Motor' represents an important domain concept.
+It has the following attributes: 'MotorRight', which is of type int; 'MotorLeft', which is of type int.
+
+'farrusco_Servo' represents an important domain concept.
+It has the following attributes: 'min', which is of type int; 'inc', which is of type int; 'max', which is of type int.
+
+'farrusco_BumperEsquerdo' represents an important domain concept.
+It does not declare any attributes.
+
+'farrusco_Filho' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'farrusco_Behavior' is a specialization of 'Node'.
+The class 'farrusco_Prioridade' is a specialization of 'Behavior'.
+The class 'farrusco_Paralelo' is a specialization of 'Behavior'.
+The class 'farrusco_AlterarEstado' is a specialization of 'Behavior'.
+The class 'farrusco_Action' is a specialization of 'Node'.
+The class 'farrusco_Condition' is a specialization of 'Action'.
+The class 'farrusco_Distancia' is a specialization of 'Condition'.
+The class 'farrusco_BumperDireito' is a specialization of 'Condition'.
+The class 'farrusco_BumperEsquerdo' is a specialization of 'Condition'.
+The class 'farrusco_Espera' is a specialization of 'Condition'.
+The class 'farrusco_Actuate' is a specialization of 'Action'.
+The class 'farrusco_Motor' is a specialization of 'Actuate'.
+The class 'farrusco_Servo' is a specialization of 'Actuate'.
+The class 'farrusco_LED' is a specialization of 'Actuate'.
+
+Relationships between classes are modeled using associations.
+An association connects 'farrusco_Node' and 'farrusco_Robot'. From 'farrusco_Node', the role 'farrusco_Node' has cardinality 0..*, and from 'farrusco_Robot', the role 'farrusco_Robot' has cardinality 0..*.
+An association connects 'farrusco_Robot' and 'farrusco_Filho'. From 'farrusco_Robot', the role 'farrusco_Robot2' has cardinality 0..*, and from 'farrusco_Filho', the role 'farrusco_Filho' has cardinality 0..*.
+An association connects 'farrusco_Robot' and 'farrusco_Irmao'. From 'farrusco_Robot', the role 'farrusco_Robot4' has cardinality 0..*, and from 'farrusco_Irmao', the role 'farrusco_Irmao' has cardinality 0..*.
+An association connects 'farrusco_Filho' and 'farrusco_Behavior'. From 'farrusco_Filho', the role 'farrusco_Filho6' has cardinality 0..*, and from 'farrusco_Behavior', the role 'farrusco_Behavior' has cardinality 0..*.
+An association connects 'farrusco_Filho' and 'farrusco_Node'. From 'farrusco_Filho', the role 'farrusco_Filho8' has cardinality 0..*, and from 'farrusco_Node', the role 'farrusco_Node9' has cardinality 0..*.
+An association connects 'farrusco_Node' and 'farrusco_Irmao'. From 'farrusco_Node', the role 'farrusco_Node12' has cardinality 0..*, and from 'farrusco_Irmao', the role 'farrusco_Irmao11' has cardinality 0..*.
+An association connects 'farrusco_Irmao' and 'farrusco_Node'. From 'farrusco_Irmao', the role 'farrusco_Irmao14' has cardinality 0..*, and from 'farrusco_Node', the role 'farrusco_Node15' has cardinality 0..*.

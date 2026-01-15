@@ -1,0 +1,24 @@
+The domain model 'roverDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'roverDSL_Robot' represents an important domain concept.
+It has the following attributes: 'defaultSpeed', which is of type int; 'minAngle', which is of type int; 'maxAngle', which is of type int; 'slowSpeed', which is of type int.
+
+'roverDSL_DetectBottle' represents an important domain concept.
+It has one attribute: 'maxDistance', which is of type int.
+
+'roverDSL_Mission' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+'roverDSL_Colors' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Color' defines the following possible values: 'yellow', 'red', 'blue'.
+
+Relationships between classes are modeled using associations.
+An association connects 'roverDSL_Robot' and 'roverDSL_Mission'. From 'roverDSL_Robot', the role 'roverDSL_Robot' has cardinality 0..*, and from 'roverDSL_Mission', the role 'roverDSL_Mission' has cardinality 0..*.
+An association connects 'roverDSL_Mission' and 'roverDSL_Colors'. From 'roverDSL_Mission', the role 'roverDSL_Mission2' has cardinality 0..*, and from 'roverDSL_Colors', the role 'roverDSL_Colors' has cardinality 0..*.
+An association connects 'roverDSL_DetectBottle' and 'roverDSL_Mission'. From 'roverDSL_DetectBottle', the role 'roverDSL_DetectBottle' has cardinality 0..*, and from 'roverDSL_Mission', the role 'roverDSL_Mission4' has cardinality 0..*.
+An association connects 'roverDSL_Colors' and 'roverDSL_Mission'. From 'roverDSL_Colors', the role 'roverDSL_Colors7' has cardinality 0..*, and from 'roverDSL_Mission', the role 'roverDSL_Mission6' has cardinality 0..*.

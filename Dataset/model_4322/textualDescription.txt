@@ -1,0 +1,30 @@
+The domain model 'metric' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'metric_Metric' represents an important domain concept.
+It does not declare any attributes.
+
+'Metric' represents an important domain concept.
+It does not declare any attributes.
+
+'metric_ConstraintMetrics' represents an important domain concept.
+It has one attribute: 'numberOfConstraintsByKind', which is of type str.
+
+'ConstraintMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'metric_ConstraintMetric' represents an important domain concept.
+It has the following attributes: 'numberOfLetExpressions', which is of type int; 'calledOperations', which is of type str; 'expressionDepth', which is of type int; 'numberOfIfExpressions', which is of type int; 'calledProperties', which is of type str; 'expressionCount', which is of type int; 'usedIterators', which is of type str; 'usedLiterals', which is of type str.
+
+'metric_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'metric_ConstraintMetrics' is a specialization of 'ConstraintMetric'.
+The class 'metric_ConstraintMetric' is a specialization of 'Metric'.
+
+Relationships between classes are modeled using associations.
+An association connects 'metric_ConstraintMetric' and 'metric_ConstraintMetrics'. From 'metric_ConstraintMetric', the role 'metric_ConstraintMetric' has cardinality 0..*, and from 'metric_ConstraintMetrics', the role 'metric_ConstraintMetrics' has cardinality 0..*.
+An association connects 'metric_ConstraintMetrics' and 'metric_Constraint'. From 'metric_ConstraintMetrics', the role 'metric_ConstraintMetrics2' has cardinality 0..*, and from 'metric_Constraint', the role 'metric_Constraint' has cardinality 0..*.
+An association connects 'metric_ConstraintMetric' and 'metric_Constraint'. From 'metric_ConstraintMetric', the role 'metric_ConstraintMetric4' has cardinality 0..*, and from 'metric_Constraint', the role 'metric_Constraint5' has cardinality 0..*.

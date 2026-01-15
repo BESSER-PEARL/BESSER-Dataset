@@ -1,0 +1,115 @@
+The domain model 'eSport' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'eSport_League' represents an important domain concept.
+It has the following attributes: 'year', which is of type int; 'size', which is of type int; 'season', which is of type str; 'name', which is of type str.
+
+'eSport_GroupStage' represents an important domain concept.
+It has the following attributes: 'meetingsWithOtherGroups', which is of type int; 'maxNbGames', which is of type int; 'meetingsInSameGroup', which is of type int; 'type', which is of type str.
+
+'eSport_Country' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Person' represents an important domain concept.
+It does not declare any attributes.
+
+'eSport_FinalStage' represents an important domain concept.
+It has one attribute: 'maxNbGames', which is of type int.
+
+'eSport_Match' represents an important domain concept.
+It has the following attributes: 'loserWins', which is of type int; 'type', which is of type str.
+
+'eSport_Coach' represents an important domain concept.
+It does not declare any attributes.
+
+'eSport_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'eSport_Team' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'championshipPoints', which is of type int.
+
+'eSport_Capacity' represents an important domain concept.
+It has the following attributes: 'value', which is of type int; 'type', which is of type str.
+
+'eSport_Zone' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eSport_Tournament' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str; 'year', which is of type int; 'size', which is of type int.
+
+'eSport_Person' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'age', which is of type int; 'name', which is of type str.
+
+'eSport_Qualification' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'eSport_Player' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'eSport_Group' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'GroupStageType' defines the following possible values: 'worldsGroup', 'msiPlayIn', 'league', 'riftRivalsGroup', 'allStarsGroup', 'msiGroup', 'worldsPlayIn'.
+The enumeration 'TournamentType' defines the following possible values: 'worlds', 'regionals', 'midSeasonInvitational', 'promotion', 'riftRivals', 'playOff', 'allStars'.
+The enumeration 'CapacityType' defines the following possible values: 'steal', 'aggressivity', 'splitPush', 'objectivePlay', 'awareness', 'farm', 'positioning', 'leadership', 'teamPlay', 'stressManagement', 'draft', 'experience', 'escapeMechanics', 'pathing', 'playmakingMechanics', 'metaGame', 'patience'.
+The enumeration 'Position' defines the following possible values: 'support', 'attackDamageCarry', 'topLane', 'jungle', 'midLane'.
+The enumeration 'Season' defines the following possible values: 'spring', 'summer'.
+The enumeration 'MatchType' defines the following possible values: 'semiFinal', 'final', 'group', 'singleRoundElimination', 'quarterFinal'.
+
+The model also captures inheritance relationships between classes.
+The class 'eSport_Player' is a specialization of 'Person'.
+The class 'eSport_Coach' is a specialization of 'Person'.
+
+Relationships between classes are modeled using associations.
+An association connects 'eSport_Player' and 'eSport_Team'. From 'eSport_Player', the role 'players' has cardinality 0..*, and from 'eSport_Team', the role 'Team' has cardinality 0..*.
+An association connects 'eSport_Team' and 'eSport_Coach'. From 'eSport_Team', the role 'Team2' has cardinality 0..*, and from 'eSport_Coach', the role 'coach' has cardinality 0..*.
+An association connects 'eSport_Tournament' and 'eSport_Country'. From 'eSport_Tournament', the role 'tournaments' has cardinality 0..*, and from 'eSport_Country', the role 'Country' has cardinality 0..*.
+An association connects 'eSport_Tournament' and 'eSport_Zone'. From 'eSport_Tournament', the role 'tournaments5' has cardinality 0..*, and from 'eSport_Zone', the role 'Zone' has cardinality 0..*.
+An association connects 'eSport_FinalStage' and 'eSport_Tournament'. From 'eSport_FinalStage', the role 'FinalStage' has cardinality 0..*, and from 'eSport_Tournament', the role 'tournament' has cardinality 0..*.
+An association connects 'eSport_Tournament' and 'eSport_GroupStage'. From 'eSport_Tournament', the role 'tournament8' has cardinality 0..*, and from 'eSport_GroupStage', the role 'GroupStage' has cardinality 0..*.
+An association connects 'eSport_Qualification' and 'eSport_Tournament'. From 'eSport_Qualification', the role 'Qualification' has cardinality 0..*, and from 'eSport_Tournament', the role 'tournamentFrom' has cardinality 0..*.
+An association connects 'eSport_Qualification' and 'eSport_Tournament'. From 'eSport_Qualification', the role 'Qualification11' has cardinality 0..*, and from 'eSport_Tournament', the role 'tournamentTo' has cardinality 0..*.
+An association connects 'eSport_League' and 'eSport_Zone'. From 'eSport_League', the role 'leagues' has cardinality 0..*, and from 'eSport_Zone', the role 'Zone13' has cardinality 0..*.
+An association connects 'eSport_GroupStage' and 'eSport_League'. From 'eSport_GroupStage', the role 'GroupStage15' has cardinality 0..*, and from 'eSport_League', the role 'league' has cardinality 0..*.
+An association connects 'eSport_League' and 'eSport_Qualification'. From 'eSport_League', the role 'leagueFrom' has cardinality 0..*, and from 'eSport_Qualification', the role 'Qualification17' has cardinality 0..*.
+An association connects 'eSport_Person' and 'eSport_Country'. From 'eSport_Person', the role 'persons' has cardinality 0..*, and from 'eSport_Country', the role 'Country19' has cardinality 0..*.
+An association connects 'eSport_Person' and 'eSport_Capacity'. From 'eSport_Person', the role 'eSport_Person' has cardinality 0..*, and from 'eSport_Capacity', the role 'eSport_Capacity' has cardinality 0..*.
+An association connects 'eSport_Tournament' and 'eSport_Country'. From 'eSport_Tournament', the role 'Tournament' has cardinality 0..*, and from 'eSport_Country', the role 'countries' has cardinality 0..*.
+An association connects 'eSport_Zone' and 'eSport_Country'. From 'eSport_Zone', the role 'Zone24' has cardinality 0..*, and from 'eSport_Country', the role 'countries23' has cardinality 0..*.
+An association connects 'eSport_Person' and 'eSport_Country'. From 'eSport_Person', the role 'Person' has cardinality 0..*, and from 'eSport_Country', the role 'country' has cardinality 0..*.
+An association connects 'eSport_Tournament' and 'eSport_Zone'. From 'eSport_Tournament', the role 'Tournament27' has cardinality 0..*, and from 'eSport_Zone', the role 'allowedZones' has cardinality 0..*.
+An association connects 'eSport_Zone' and 'eSport_League'. From 'eSport_Zone', the role 'zone' has cardinality 0..*, and from 'eSport_League', the role 'League' has cardinality 0..*.
+An association connects 'eSport_Country' and 'eSport_Zone'. From 'eSport_Country', the role 'Country31' has cardinality 0..*, and from 'eSport_Zone', the role 'zone30' has cardinality 0..*.
+An association connects 'eSport_Zone' and 'eSport_Team'. From 'eSport_Zone', the role 'zone33' has cardinality 0..*, and from 'eSport_Team', the role 'Team34' has cardinality 0..*.
+An association connects 'eSport_Team' and 'eSport_Player'. From 'eSport_Team', the role 'team' has cardinality 0..*, and from 'eSport_Player', the role 'Player' has cardinality 0..*.
+An association connects 'eSport_Coach' and 'eSport_Team'. From 'eSport_Coach', the role 'Coach' has cardinality 0..*, and from 'eSport_Team', the role 'team37' has cardinality 0..*.
+An association connects 'eSport_Zone' and 'eSport_Team'. From 'eSport_Zone', the role 'Zone39' has cardinality 0..*, and from 'eSport_Team', the role 'teams' has cardinality 0..*.
+An association connects 'eSport_Team' and 'eSport_Group'. From 'eSport_Team', the role 'teams41' has cardinality 0..*, and from 'eSport_Group', the role 'Group' has cardinality 0..*.
+An association connects 'eSport_Team' and 'eSport_Match'. From 'eSport_Team', the role 'teamWinner' has cardinality 0..*, and from 'eSport_Match', the role 'Match' has cardinality 0..*.
+An association connects 'eSport_Team' and 'eSport_Match'. From 'eSport_Team', the role 'teamLoser' has cardinality 0..*, and from 'eSport_Match', the role 'Match44' has cardinality 0..*.
+An association connects 'eSport_FinalStage' and 'eSport_Team'. From 'eSport_FinalStage', the role 'FinalStage47' has cardinality 0..*, and from 'eSport_Team', the role 'teams46' has cardinality 0..*.
+An association connects 'eSport_Match' and 'eSport_Group'. From 'eSport_Match', the role 'matchs' has cardinality 0..*, and from 'eSport_Group', the role 'Group49' has cardinality 0..*.
+An association connects 'eSport_FinalStage' and 'eSport_Match'. From 'eSport_FinalStage', the role 'FinalStage52' has cardinality 0..*, and from 'eSport_Match', the role 'matchs51' has cardinality 0..*.
+An association connects 'eSport_Team' and 'eSport_Match'. From 'eSport_Team', the role 'Team54' has cardinality 0..*, and from 'eSport_Match', the role 'matchsWon' has cardinality 0..*.
+An association connects 'eSport_Match' and 'eSport_Team'. From 'eSport_Match', the role 'matchsLost' has cardinality 0..*, and from 'eSport_Team', the role 'Team56' has cardinality 0..*.
+An association connects 'eSport_Group' and 'eSport_GroupStage'. From 'eSport_Group', the role 'groups' has cardinality 0..*, and from 'eSport_GroupStage', the role 'GroupStage58' has cardinality 0..*.
+An association connects 'eSport_Group' and 'eSport_Match'. From 'eSport_Group', the role 'group' has cardinality 0..*, and from 'eSport_Match', the role 'Match60' has cardinality 0..*.
+An association connects 'eSport_Group' and 'eSport_Team'. From 'eSport_Group', the role 'groups62' has cardinality 0..*, and from 'eSport_Team', the role 'Team63' has cardinality 0..*.
+An association connects 'eSport_GroupStage' and 'eSport_Group'. From 'eSport_GroupStage', the role 'groupstage' has cardinality 0..*, and from 'eSport_Group', the role 'Group65' has cardinality 0..*.
+An association connects 'eSport_Tournament' and 'eSport_GroupStage'. From 'eSport_Tournament', the role 'Tournament67' has cardinality 0..*, and from 'eSport_GroupStage', the role 'groupstages' has cardinality 0..*.
+An association connects 'eSport_League' and 'eSport_GroupStage'. From 'eSport_League', the role 'League70' has cardinality 0..*, and from 'eSport_GroupStage', the role 'groupstage69' has cardinality 0..*.
+An association connects 'eSport_FinalStage' and 'eSport_Match'. From 'eSport_FinalStage', the role 'finalstage' has cardinality 0..*, and from 'eSport_Match', the role 'Match72' has cardinality 0..*.
+An association connects 'eSport_Tournament' and 'eSport_FinalStage'. From 'eSport_Tournament', the role 'Tournament74' has cardinality 0..*, and from 'eSport_FinalStage', the role 'finalstages' has cardinality 0..*.
+An association connects 'eSport_Team' and 'eSport_FinalStage'. From 'eSport_Team', the role 'Team77' has cardinality 0..*, and from 'eSport_FinalStage', the role 'finalstages76' has cardinality 0..*.
+An association connects 'eSport_Qualification' and 'eSport_Tournament'. From 'eSport_Qualification', the role 'qualifiesFor' has cardinality 0..*, and from 'eSport_Tournament', the role 'Tournament79' has cardinality 0..*.
+An association connects 'eSport_Qualification' and 'eSport_Tournament'. From 'eSport_Qualification', the role 'qualifiesFrom' has cardinality 0..*, and from 'eSport_Tournament', the role 'Tournament81' has cardinality 0..*.
+An association connects 'eSport_League' and 'eSport_Qualification'. From 'eSport_League', the role 'League84' has cardinality 0..*, and from 'eSport_Qualification', the role 'qualifiesFor83' has cardinality 0..*.
+An association connects 'eSport_Root' and 'eSport_Zone'. From 'eSport_Root', the role 'eSport_Root' has cardinality 0..*, and from 'eSport_Zone', the role 'eSport_Zone' has cardinality 0..*.
+An association connects 'eSport_Tournament' and 'eSport_Root'. From 'eSport_Tournament', the role 'eSport_Tournament' has cardinality 0..*, and from 'eSport_Root', the role 'eSport_Root87' has cardinality 0..*.
+An association connects 'eSport_League' and 'eSport_Root'. From 'eSport_League', the role 'eSport_League' has cardinality 0..*, and from 'eSport_Root', the role 'eSport_Root89' has cardinality 0..*.
+An association connects 'eSport_Root' and 'eSport_Team'. From 'eSport_Root', the role 'eSport_Root91' has cardinality 0..*, and from 'eSport_Team', the role 'eSport_Team' has cardinality 0..*.
+An association connects 'eSport_Person' and 'eSport_Root'. From 'eSport_Person', the role 'eSport_Person94' has cardinality 0..*, and from 'eSport_Root', the role 'eSport_Root93' has cardinality 0..*.
+An association connects 'eSport_Root' and 'eSport_Qualification'. From 'eSport_Root', the role 'eSport_Root96' has cardinality 0..*, and from 'eSport_Qualification', the role 'eSport_Qualification' has cardinality 0..*.
+An association connects 'eSport_Country' and 'eSport_Root'. From 'eSport_Country', the role 'eSport_Country' has cardinality 0..*, and from 'eSport_Root', the role 'eSport_Root98' has cardinality 0..*.

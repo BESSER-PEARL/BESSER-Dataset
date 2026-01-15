@@ -1,0 +1,32 @@
+The domain model 'minidrone' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'minidrone_Jump' represents an important domain concept.
+It has one attribute: 'jumpType', which is of type str.
+
+'minidrone_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'minidrone_Go' represents an important domain concept.
+It has one attribute: 'distance', which is of type int.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'minidrone_MiniDroneProgram' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'minidrone_Turn' represents an important domain concept.
+It has one attribute: 'angle', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'JumpType' defines the following possible values: 'JUMP_HIGH', 'JUMP_MAX', 'JUMP_LONG'.
+
+The model also captures inheritance relationships between classes.
+The class 'minidrone_Go' is a specialization of 'Instruction'.
+The class 'minidrone_Turn' is a specialization of 'Instruction'.
+The class 'minidrone_Jump' is a specialization of 'Instruction'.
+
+Relationships between classes are modeled using associations.
+An association connects 'minidrone_Instruction' and 'minidrone_MiniDroneProgram'. From 'minidrone_Instruction', the role 'minidrone_Instruction' has cardinality 0..*, and from 'minidrone_MiniDroneProgram', the role 'minidrone_MiniDroneProgram' has cardinality 0..*.

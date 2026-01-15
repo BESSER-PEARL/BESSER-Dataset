@@ -1,0 +1,2542 @@
+The domain model 'cobol' describes the core structural elements and their relationships within the system.
+
+The model defines 610 main class(es).
+
+'CICSStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'specialnames_MnemonicName' represents an important domain concept.
+It does not declare any attributes.
+
+'DataItem' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Jump' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_SelectStatementClause' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'DirectSubscript' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_specialnames_OffStatus' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_sentences_StatementContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Exit' represents an important domain concept.
+It has one attribute: 'exitLabel', which is of type str.
+
+'PrimaryOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'Subscript' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_specialnames_SymbolicCharacter' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Add' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Write' represents an important domain concept.
+It does not declare any attributes.
+
+'EvaluateCase' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_references_ReferenceableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Inspect' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_ios_OutputFile' represents an important domain concept.
+It does not declare any attributes.
+
+'RangeExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_registers_Register' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Rewrite' represents an important domain concept.
+It does not declare any attributes.
+
+'ReplacementOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_VaryingUntilCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_SwitchStatus' represents an important domain concept.
+It has one attribute: 'status', which is of type str.
+
+'FileDescriptorWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_PerformNestedStatementUntilCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_ios_FileDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_sentences_Sentence' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_IOControlDescription' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_tables_IndexName' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_sentences_EntrySentence' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_PriorityNumber' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_water_AcceptStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'ExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_dataitems_PictureString' represents an important domain concept.
+It has one attribute: 'picture', which is of type str.
+
+'Label' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_sections_DataDivisionSection' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_references_DataNameReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_specialnames_SymbolicCharacterStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_sections_FileSection' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_CloseStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_sections_EnvironmentDivisionSection' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_dataitems_DataName' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_sections_ConfigurationSection' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_ios_OutputDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_dataitems_ConditionName' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_RepositoryDescription' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'AdditionalIndexName' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_FileIOStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'references_ConditionName' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_ErrorHandled' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_PerformNestedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_KeyDescriptor' represents an important domain concept.
+It has one attribute: 'order', which is of type str.
+
+'cobol_ios_IODirectives' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_references_ConditionNameReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_containers_EmptyModel' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_files_FileStatus' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_ios_InputFile' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operands_PrimaryOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_dataitems_External' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_InvokeStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_OpenStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_sentences_AlteredGoTo' represents an important domain concept.
+It does not declare any attributes.
+
+'AdditiveOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_ObjectComputerParagraphWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Accept' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_files_FileName' represents an important domain concept.
+It has one attribute: 'fileDescriptor', which is of type str.
+
+'statements_PerformFixedTimes' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_sentences_EmptySentence' represents an important domain concept.
+It does not declare any attributes.
+
+'AcceptStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'ElementReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_ObjectComputerDescription' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'EnvironmentDivisionSection' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_dataitems_GroupUsage' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Entry' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_NextSentence' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_tables_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_sentences_ExitProcedure' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_specialnames_UPSISwitchIs' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_containers_CompilationUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'ObjectComputerParagraphWater' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_DataDescription' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'AlphabetType' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_PerformUntilCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'DataItemAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_GoTo' represents an important domain concept.
+It does not declare any attributes.
+
+'DataDivisionSection' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_ProgramDescription' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_dataitems_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'IdentificationDivisionWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_sections_LocalStorageSection' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_Dot' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_arithmetics_ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_sentences_ExecuteSentence' represents an important domain concept.
+It does not declare any attributes.
+
+'ios_ProcedureDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'SelectStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_PerformUntilCondition' represents an important domain concept.
+It has one attribute: 'position', which is of type str.
+
+'containers_CobolRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'IOControlParagraphWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_specialnames_SystemDeviceIs' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_NestedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'FileName' represents an important domain concept.
+It does not declare any attributes.
+
+'StopLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_dataitems_DataItemAttribute' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_references_FileNameReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_SQLStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'references_ReferenceableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_references_ConditionName' represents an important domain concept.
+It does not declare any attributes.
+
+'ios_FileDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicativeArithmeticExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_references_SpecialNamesConditionNameReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Display' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_containers_CobolRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'ClassOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_references_IndexNameReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_PerformNestedStatementFixedTimes' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_ErrorHandled' represents an important domain concept.
+It does not declare any attributes.
+
+'SQLStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'TableDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithmeticOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Sort' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_identifiers_DirectSubscript' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_identifiers_LinageCounter' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_IOControlParagraphWater' represents an important domain concept.
+It does not declare any attributes.
+
+'CobolRoot' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_Water' represents an important domain concept.
+It does not declare any attributes.
+
+'arithmetics_PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'KeyDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_arithmetics_AssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'references_Qualifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_dataitems_DataItem' represents an important domain concept.
+It has one attribute: 'levelNumber', which is of type str.
+
+'cobol_sections_LinkageStorageSection' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_sections_WorkingStorageSection' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_UseStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_arithmetics_MultiplicativeArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_DataDescriptorWater' represents an important domain concept.
+It does not declare any attributes.
+
+'references_ElementReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operands_ArithmeticOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcedureDivision' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_AcceptStatementToken' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_sentences_UseSentence' represents an important domain concept.
+It does not declare any attributes.
+
+'TallyingIn' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_files_SelectStatement' represents an important domain concept.
+It has the following attributes: 'externalFileNames', which is of type str; 'isOptional', which is of type bool.
+
+'cobol_water_SelectStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Execute' represents an important domain concept.
+It has one attribute: 'water', which is of type str.
+
+'cobol_water_IdentificationDivisionWater' represents an important domain concept.
+It does not declare any attributes.
+
+'Qualifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Environment' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_FileDescriptorWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_specialnames_OnStatus' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_specialnames_CodeNameAlphabetType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_specialnames_MnemonicName' represents an important domain concept.
+It does not declare any attributes.
+
+'AssignmentExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'conditions_AbbreviatedRelationalExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Continue' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryArithmeticExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_Perform' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_PerformFixedTimes' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_references_IdentifierReferenceQualifier' represents an important domain concept.
+It does not declare any attributes.
+
+'RangeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'KeyName' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_arithmetics_PrimaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_dataitems_RenamingDataName' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_identifiers_RelativeSubscript' represents an important domain concept.
+It does not declare any attributes.
+
+'Through' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_sections_IOSection' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_arithmetics_PowerArithmeticExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'ios_InputDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_CICSStatementToken' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_tables_AdditionalIndexName' represents an important domain concept.
+It does not declare any attributes.
+
+'Sentence' represents an important domain concept.
+It does not declare any attributes.
+
+'ios_OutputDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'EnvironmentDivision' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_references_MnemonicNameReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Multiply' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_dataitems_Usage' represents an important domain concept.
+It has the following attributes: 'isNative', which is of type bool; 'usage', which is of type str.
+
+'cobol_tables_KeyName' represents an important domain concept.
+It has one attribute: 'keyOrder', which is of type str.
+
+'IdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'AlphabetNameReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Stop' represents an important domain concept.
+It does not declare any attributes.
+
+'CloseStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'MnemonicNameReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_references_AlphabetNameReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_containers_CompilationGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_specialnames_ClassName' represents an important domain concept.
+It does not declare any attributes.
+
+'conditions_SimpleConditionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_ios_InputProcedure' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_specialnames_AlphabetName' represents an important domain concept.
+It does not declare any attributes.
+
+'references_IdentifierReferenceQualifier' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_GoBack' represents an important domain concept.
+It does not declare any attributes.
+
+'Write' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Move' represents an important domain concept.
+It has one attribute: 'corresponding', which is of type str.
+
+'cobol_statements_Merge' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_arithmetics_RangeExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_sections_Section' represents an important domain concept.
+It has one attribute: 'segmentNumber', which is of type str.
+
+'DataName' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_parameters_Parametrizable' represents an important domain concept.
+It does not declare any attributes.
+
+'InputDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_tables_TableDimension' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'cobol_dataitems_Redefines' represents an important domain concept.
+It does not declare any attributes.
+
+'operands_ReplacementOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'IntegerLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcedureRangeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'InvokeStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_dataitems_RecordName' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operands_Operand' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Replace' represents an important domain concept.
+It has one attribute: 'replaceSwitch', which is of type bool.
+
+'cobol_specialnames_ExplicitAlphabetType' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_arithmetics_AdditiveArithmeticExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_specialnames_CurrencySign' represents an important domain concept.
+It has one attribute: 'pictureSymbol', which is of type str.
+
+'cobol_statements_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'SymbolicCharacter' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'UseStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Compute' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Subtract' represents an important domain concept.
+It does not declare any attributes.
+
+'IODirectives' represents an important domain concept.
+It does not declare any attributes.
+
+'SpecialName' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_SpecialNamesClause' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_specialnames_SpecialName' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_parameters_ByValueParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_EvaluateCase' represents an important domain concept.
+It does not declare any attributes.
+
+'DataDescriptorWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_specialnames_AlphabetType' represents an important domain concept.
+It does not declare any attributes.
+
+'NestedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_IncompleteElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dataitems_DataItem' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_arithmetics_UnaryArithmeticExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Read' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_CICSStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicativeOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operands_Encoding' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'DataDivision' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_ios_InputDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'IdentificationDivision' represents an important domain concept.
+It does not declare any attributes.
+
+'ReferenceableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'commons_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_NestedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_specialnames_SpecialNameStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Divide' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_CloseStatementToken' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_statements_Release' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_UseStatementToken' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_operands_RoundedIdentifier' represents an important domain concept.
+It does not declare any attributes.
+
+'identifiers_IdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Jump' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionName' represents an important domain concept.
+It does not declare any attributes.
+
+'PowerArithmeticExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_references_ElementReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_references_Qualifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_specialnames_ConditionName' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_arithmetics_RangeExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_RepositoryParagraphWater' represents an important domain concept.
+It does not declare any attributes.
+
+'sentences_StatementContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_InvokeStatementToken' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'AdditiveArithmeticExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'Operand' represents an important domain concept.
+It does not declare any attributes.
+
+'OutputDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_SQLStatementToken' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_specialnames_PredefinedAlphabetType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_dataitems_Global' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_arithmetics_UnaryArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'operands_Operand' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_arithmetics_NestedArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_parameters_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_PerformProcedureFixedTimes' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_SpecialNamesParagraphWater' represents an important domain concept.
+It does not declare any attributes.
+
+'specialnames_SpecialName' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_arithmetics_PowerArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'operands_ArithmeticOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'RepositoryParagraphWater' represents an important domain concept.
+It does not declare any attributes.
+
+'AfterUntilCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_PerformProcedure' represents an important domain concept.
+It does not declare any attributes.
+
+'FileStatus' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Set' represents an important domain concept.
+It does not declare any attributes.
+
+'Water' represents an important domain concept.
+It does not declare any attributes.
+
+'specialnames_SpecialNameStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_PerformNestedStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_FileDescription' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_statements_ArithmeticStatement' represents an important domain concept.
+It has one attribute: 'corresponding', which is of type str.
+
+'cobol_statements_Statement' represents an important domain concept.
+It has one attribute: 'endVerb', which is of type bool.
+
+'cobol_identifiers_Qualifier' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_arithmetics_AdditiveArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'ArithmeticStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_PerformProcedureUntilCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_arithmetics_MultiplicativeArithmeticExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_sections_DeclarativeSection' represents an important domain concept.
+It does not declare any attributes.
+
+'Perform' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operands_ReplacementOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_ios_OutputProcedure' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_parameters_ByReferenceParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Perform' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_ios_ProcedureDirective' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_PerformProcedure' represents an important domain concept.
+It does not declare any attributes.
+
+'IndexName' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_AbbreviatedRelationalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_GTEQPhrase' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_divisions_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'paragraphs_IOSectionParagraph' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_Alphabetic' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_functions_ByValueArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'AbbreviatedRelationalExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_Kanji' represents an important domain concept.
+It does not declare any attributes.
+
+'SimpleConditionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_Addition' represents an important domain concept.
+It does not declare any attributes.
+
+'DeclarativeSection' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_EqualSign' represents an important domain concept.
+It does not declare any attributes.
+
+'water_SQLStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_strings_StringManipulation' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_ClassCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'water_ObjectComputerParagraphWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_strings_TallyingOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_NestedCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_NestedAbbreviatedConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_ConditionAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_handlers_AtEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_paragraphs_ObjectComputerParagraph' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_paragraphs_IOControlParagraph' represents an important domain concept.
+It does not declare any attributes.
+
+'water_FileDescriptorWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_identifiers_Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_strings_SpecificCharacterBySpecificCharacter' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_divisions_IdentificationDivision' represents an important domain concept.
+It has one attribute: 'properties', which is of type str.
+
+'cobol_operators_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_RelationalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_paragraphs_DebuggingMode' represents an important domain concept.
+It does not declare any attributes.
+
+'Commentable' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_SetStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_labels_ProcedureRangeChild' represents an important domain concept.
+It does not declare any attributes.
+
+'GreaterThan' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_SetSwitches' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_strings_SplittedString' represents an important domain concept.
+It does not declare any attributes.
+
+'AbbreviatedConditionalExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_divisions_ProcedureDivision' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_Characters' represents an important domain concept.
+It does not declare any attributes.
+
+'water_SortPhraseWater' represents an important domain concept.
+It does not declare any attributes.
+
+'labels_Procedure' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_IOFileDescriptor' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'cobol_operators_LTEQSign' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Call' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_BooleanLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'cobol_paragraphs_IOSectionParagraph' represents an important domain concept.
+It does not declare any attributes.
+
+'identifiers_Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'ManipulatedStrings' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_labels_ProcedureLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'Paragraph' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_NationalLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_operators_ClassOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_SerialSearch' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaratives' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_IOFile' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_ConditionalOrExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Negate' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_DBCS' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_GTPhrase' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_handlers_AtEndOfPage' represents an important domain concept.
+It has one attribute: 'eop', which is of type str.
+
+'cobol_statements_Evaluate' represents an important domain concept.
+It does not declare any attributes.
+
+'functions_Argumentable' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_HighValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_operators_Subtraction' represents an important domain concept.
+It does not declare any attributes.
+
+'NumericLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_ConditionalAndExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_handlers_Handler' represents an important domain concept.
+It does not declare any attributes.
+
+'water_UseStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'SpecialNamesParagraphWater' represents an important domain concept.
+It does not declare any attributes.
+
+'operands_PrimaryOperand' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_ExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_Numeric' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_strings_SpecificCharacter' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalAndExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_handlers_OnException' represents an important domain concept.
+It does not declare any attributes.
+
+'DebuggingMode' represents an important domain concept.
+It does not declare any attributes.
+
+'water_IdentificationDivisionWater' represents an important domain concept.
+It does not declare any attributes.
+
+'NegatedAbbreviatedConditionalExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'water_SelectStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_VaryingUntilCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'ConfigurationSectionParagraph' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_environments_Pocket' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_functions_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_SimpleConditionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'Section' represents an important domain concept.
+It does not declare any attributes.
+
+'Procedure' represents an important domain concept.
+It does not declare any attributes.
+
+'water_DataDescriptorWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_Negate' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Cancel' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_NumericLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_labels_StopLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_declaratives_Declaratives' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Initialize' represents an important domain concept.
+It does not declare any attributes.
+
+'RelationalOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'ConstantLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_environments_Channel' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'operators_AdditiveOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'Argument' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_labels_ProcedureRange' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_commons_Commentable' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_AbbreviatedRelationalExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_strings_AnyCharacter' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_OpenStatementToken' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_literals_FigurativeConstantLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Register' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_LTSign' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_NegatedConditionalExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_handlers_NotOnException' represents an important domain concept.
+It does not declare any attributes.
+
+'Tallying' represents an important domain concept.
+It does not declare any attributes.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'SortPhraseWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_String' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_NegatedAbbreviatedConditionalExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'LogicalOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_registers_LengthOf' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_MultiplicativeOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_functions_ByReferenceArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_SortPhraseToken' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'String' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_handlers_InvalidKey' represents an important domain concept.
+It does not declare any attributes.
+
+'operators_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_handlers_NotErrorHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_references_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_functions_Argumentable' represents an important domain concept.
+It does not declare any attributes.
+
+'divisions_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_NationalHexLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'cobol_operators_LessThan' represents an important domain concept.
+It has one attribute: 'than', which is of type bool.
+
+'cobol_statements_AfterUntilCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_commons_LabellableElement' represents an important domain concept.
+It has one attribute: 'label', which is of type str.
+
+'water_AcceptStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'SelectStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_registers_AddressOf' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_labels_ProcedureRangeLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_strings_ReplacementOccurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_AdditiveOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_Negative' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_NormalEvaluateCase' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Open' represents an important domain concept.
+It does not declare any attributes.
+
+'AlphanumericLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_labels_Procedure' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_Equal' represents an important domain concept.
+It has one attribute: 'to', which is of type bool.
+
+'cobol_literals_Space' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_operators_RelationalOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Close' represents an important domain concept.
+It does not declare any attributes.
+
+'NormalEvaluateCase' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_LowValue' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'ProcedureRangeChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_divisions_DataDivision' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_paragraphs_ConfigurationSectionParagraph' represents an important domain concept.
+It does not declare any attributes.
+
+'paragraphs_ConfigurationSectionParagraph' represents an important domain concept.
+It does not declare any attributes.
+
+'water_CICSStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_FileIOStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'literals_NumericLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Division' represents an important domain concept.
+It does not declare any attributes.
+
+'water_SpecialNamesParagraphWater' represents an important domain concept.
+It does not declare any attributes.
+
+'statements_IOStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_IOStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'IOSectionParagraph' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_NegatedConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_handlers_NotAtEndOfPage' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_ConditionalOrExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_Zero' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_FixedDecimalLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_registers_WhenCompiled' represents an important domain concept.
+It does not declare any attributes.
+
+'Is' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_paragraphs_SpecialNamesParagraph' represents an important domain concept.
+It does not declare any attributes.
+
+'water_RepositoryParagraphWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_strings_ManipulatedStrings' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_AlphabeticUpper' represents an important domain concept.
+It does not declare any attributes.
+
+'FileNameReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_Null' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_labels_Run' represents an important domain concept.
+It does not declare any attributes.
+
+'GreaterThanOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_SetIndexName' represents an important domain concept.
+It has one attribute: 'adjust', which is of type str.
+
+'LessThan' represents an important domain concept.
+It does not declare any attributes.
+
+'ConcatenatingStrings' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_AbbreviatedConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_environments_SuppressSpacing' represents an important domain concept.
+It does not declare any attributes.
+
+'IOFileDescriptor' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_handlers_NotOnOverflow' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_ConstantLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_SignOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_environments_AdvancedFunctionPrinting' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_handlers_NotOnSizeError' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_paragraphs_FileControlParagraph' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_Zero' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_operators_LTEQPhrase' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_TallyingIn' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_AlphanumericLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'IndexNameReference' represents an important domain concept.
+It does not declare any attributes.
+
+'IOFile' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_environments_Environment' represents an important domain concept.
+It does not declare any attributes.
+
+'water_InvokeStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_ConditionalAndExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'parameters_Parametrizable' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_OtherEvaluateCase' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_functions_OmittedArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'SignOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'FigurativeConstantLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Delete' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_handlers_NotInvalidKey' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_AlphanumericHexaDecimalLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'SwitchStatus' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_environments_SystemPunchDevice' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'water_IOControlParagraphWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_environments_SystemLogicalOutput' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_functions_Argument' represents an important domain concept.
+It does not declare any attributes.
+
+'ConditionalOrExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'labels_StopLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_Quote' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_paragraphs_RepositoryParagraph' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_identifiers_IdentifierReference' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_DecimalLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_operators_Through' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_verbs_Is' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_commons_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'cobol_labels_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_handlers_OnOverflow' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_EqualPhrase' represents an important domain concept.
+It does not declare any attributes.
+
+'StatementContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'SetStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_LessThanOrEqual' represents an important domain concept.
+It has the following attributes: 'than', which is of type bool; 'to', which is of type bool.
+
+'NotErrorHandler' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_Any' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_environments_Console' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_handlers_NotAtEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'DecimalLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_GreaterThan' represents an important domain concept.
+It has one attribute: 'than', which is of type bool.
+
+'cobol_statements_BinarySearch' represents an important domain concept.
+It does not declare any attributes.
+
+'ReferenceModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_paragraphs_SourceComputerParagraph' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_registers_ShiftOut' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_commons_URIableElement' represents an important domain concept.
+It has one attribute: 'uri', which is of type str.
+
+'Handler' represents an important domain concept.
+It does not declare any attributes.
+
+'LessThanOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_GreaterThanOrEqual' represents an important domain concept.
+It has the following attributes: 'than', which is of type bool; 'to', which is of type bool.
+
+'SearchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_FloatingDecimalLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_ClassName' represents an important domain concept.
+It does not declare any attributes.
+
+'DBCSLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_strings_Location' represents an important domain concept.
+It has the following attributes: 'position', which is of type str; 'initial', which is of type bool.
+
+'cobol_operators_LTPhrase' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_environments_SystemLogicalInput' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'StringManipulation' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_AllLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_verbs_Verb' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_divisions_EnvironmentDivision' represents an important domain concept.
+It does not declare any attributes.
+
+'SpecialNameStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_identifiers_ReferenceModifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Location' represents an important domain concept.
+It does not declare any attributes.
+
+'water_IncompleteElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_identifiers_Subscript' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_strings_Occurrence' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'cobol_paragraphs_Paragraph' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_environments_SystemDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_strings_String' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_PseudoLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Replacement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_SignCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_handlers_OnSizeError' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_Unstring' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_water_SortPhraseWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_Power' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_strings_ConcatenatingStrings' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_strings_AnyCharacterBySpecificCharacter' represents an important domain concept.
+It does not declare any attributes.
+
+'Verb' represents an important domain concept.
+It does not declare any attributes.
+
+'strings_Tallying' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_conditions_AbbreviatedConditionalExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'SystemDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_LogicalOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_AlphabeticLower' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_Positive' represents an important domain concept.
+It does not declare any attributes.
+
+'IncompleteElement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_IntegerLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'strings_Occurrence' represents an important domain concept.
+It does not declare any attributes.
+
+'NegatedConditionalExpressionChild' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_strings_Tallying' represents an important domain concept.
+It does not declare any attributes.
+
+'strings_Replacement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_GTSign' represents an important domain concept.
+It does not declare any attributes.
+
+'Literal' represents an important domain concept.
+It does not declare any attributes.
+
+'OpenStatementWater' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_literals_DBCSLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'VaryingUntilCondition' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_environments_UPSI' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'cobol_conditions_NegatedAbbreviatedConditionalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_registers_ShiftIn' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_identifiers_All' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_GTEQSign' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_strings_Replacement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_registers_ReturnCode' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_functions_ByContentArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'SplittedString' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_statements_SearchStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'cobol_operators_ConditionOr' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SQLStatementTokens' defines the following possible values: 'into', 'update', 'from', 'select', 'delete', 'declare', 'include', 'insert'.
+The enumeration 'Usages' defines the following possible values: 'comp5', 'packedDecimal', 'procedurePointer', 'comp1', 'index', 'display', 'comp3', 'comp2', 'computational4', 'comp4', 'computational5', 'national', 'pointer', 'display1', 'binary', 'functionPointer', 'computational', 'computational3', 'comp', 'computational2', 'computational1'.
+The enumeration 'EOP' defines the following possible values: 'eop', 'endOfPage'.
+The enumeration 'ExitLabels' defines the following possible values: 'program', 'paragraph', 'method'.
+The enumeration 'AcceptStatementTokens' defines the following possible values: 'dow', 'day', 'date', 'dateformat2', 'from', 'time', 'dateformat1'.
+The enumeration 'DataDescriptionInfo' defines the following possible values: 'zeros', 'just', 'blank', 'separate', 'leading', 'when', 'is', 'character', 'date', 'justified', 'sync', 'zero', 'sign', 'trailing', 'zeroes', 'right', 'format', 'left', 'synchronized'.
+The enumeration 'SelectStatementClauses' defines the following possible values: 'with', 'dynamic', 'indexed', 'is', 'record', 'alternate', 'character', 'organization', 'sequential', 'key', 'access', 'area', 'delimiter', 'mode', 'padding', 'random', 'areas', 'standard1', 'relative', 'duplicates', 'reserve'.
+The enumeration 'SortingOrder' defines the following possible values: 'asc', 'dsc'.
+The enumeration 'FileDescriptors' defines the following possible values: 'sd', 'fd'.
+The enumeration 'UseStatementTokens' defines the following possible values: 'debugging', 'beginning', 'all', 'file', 'extend', 'unit', 'io', 'procedures', 'ending', 'global', 'on', 'procedure', 'for', 'input', 'exception', 'output', 'error', 'after', 'reel', 'standard', 'label'.
+The enumeration 'InvokeStatementTokens' defines the following possible values: 'of', 'new', 'length', 'returning', 'value', 'using', 'super', 'by', 'self'.
+The enumeration 'SpecialNamesClauses' defines the following possible values: 'is', 'comma', 'decimalPoint', 'xmlSchema'.
+The enumeration 'ObjectComputerDescriptionInfo' defines the following possible values: 'program', 'size', 'collating', 'segment', 'memory', 'sequence', 'segmentLimit', 'words', 'characters', 'modules'.
+The enumeration 'ProgramDescriptionInfo' defines the following possible values: 'dateCompleted', 'author', 'security', 'installation', 'dateWritten'.
+The enumeration 'PictureStringCharacters' defines the following possible values: 'asterik', 'leadingZero', 'escape', 'assumedDecimalPoint', 'negative', 'numeric', 'debit', 'slash', 'comma', 'zero', 'any', 'period', 'decimalPoint', 'blank', 'alphabetic', 'plus', 'exponent', 'sign', 'national', 'credit', 'dollar'.
+The enumeration 'CloseStatementTokens' defines the following possible values: 'reel', 'removal', 'no', 'rewind', 'with', 'unit', 'lock', 'for'.
+The enumeration 'OpenStatementTokens' defines the following possible values: 'reversed', 'rewind', 'with', 'no'.
+The enumeration 'PredefinedAlphabetTypes' defines the following possible values: 'native', 'standard2', 'ebcdic', 'standard1'.
+The enumeration 'IOControlDescriptionInfo' defines the following possible values: 'reel', 'tape', 'sortMerge', 'of', 'rerun', 'every', 'record', 'writeOnly', 'sort', 'apply', 'unit', 'on', 'file', 'contains', 'position', 'area', 'multiple', 'for', 'records', 'same'.
+The enumeration 'RepositoryDescriptionInfo' defines the following possible values: 'is', 'class'.
+The enumeration 'FileDescriptionInfo' defines the following possible values: 'id', 'top', 'standard', 'f', 'identification', 'characters', 'to', 'varying', 'data', 'footing', 'of', 'label', 'u', 'linage', 'at', 'depending', 'on', 'contains', 'block', 'value', 'with', 'size', 'from', 'omitted', 'codeSet', 'reports', 'mode', 'records', 'bottom', 'report', 's', 'in', 'v', 'is', 'record', 'lines', 'recording', 'are'.
+The enumeration 'EncodingTypes' defines the following possible values: 'alphanumeric', 'numericEdited', 'nationalEdited', 'national', 'egcs', 'dbcs', 'alphanumericEdited', 'numeric', 'alphabetic'.
+The enumeration 'CICSStatementTokens' defines the following possible values: 'sysid', 'inputmsglen', 'repeatable', 'write', 'into', 'ridfld', 'update', 'closepar', 'synconreturn', 'xrba', 'auxiliary', 'read', 'tr', 'generic', 'keylength', 'from', 'commarea', 'next', 'openpar', 'qname', 'datalength', 'token', 'numitems', 'deleteq', 'rrn', 'program', 'inputmsg', 'start', 'queue', 'dataset', 'sys', 'uncommitted', 'length', 'nosuspend', 'file', 'load', 'gteq', 'main', 'equal', 'xctl', 'rewrite', 'rba', 'channel', 'set', 'td', 'massinsert', 'item', 'ts', 'writeq', 'transid', 'consistent'.
+The enumeration 'Nulls' defines the following possible values: 'null', 'nulls'.
+The enumeration 'Positions' defines the following possible values: 'before', 'after'.
+The enumeration 'Quotes' defines the following possible values: 'quote', 'quotes'.
+The enumeration 'SystemOutputs' defines the following possible values: 'syslist', 'syslst', 'sysout'.
+The enumeration 'Occurrences' defines the following possible values: 'all', 'leading', 'first'.
+The enumeration 'Properties' defines the following possible values: 'common', 'initial', 'recursive'.
+The enumeration 'HighValues' defines the following possible values: 'highValues', 'highValue'.
+The enumeration 'Corresponding' defines the following possible values: 'corr', 'corresponding'.
+The enumeration 'Spaces' defines the following possible values: 'spaces', 'space'.
+The enumeration 'IOTypes' defines the following possible values: 'extend', 'input', 'output', 'io'.
+The enumeration 'Selects' defines the following possible values: 's5', 's3', 's4', 's2', 's1'.
+The enumeration 'Status' defines the following possible values: 'off', 'on'.
+The enumeration 'UPSISwitches' defines the following possible values: 'upsi7', 'upsi1', 'upsi2', 'upsi4', 'upsi0', 'upsi6', 'upsi5', 'upsi3'.
+The enumeration 'Zeroes' defines the following possible values: 'zero', 'zeros', 'zeroes'.
+The enumeration 'Orders' defines the following possible values: 'dsc', 'asc'.
+The enumeration 'SortPhraseTokens' defines the following possible values: 'order', 'duplicates', 'collating', 'in', 'with', 'sequence', 'is'.
+The enumeration 'ThroughPhrase' defines the following possible values: 'through', 'thru'.
+The enumeration 'Adjustings' defines the following possible values: 'up', 'down'.
+The enumeration 'SystemPunchDevices' defines the following possible values: 'syspunch', 'syspch'.
+The enumeration 'LowValues' defines the following possible values: 'lowValues', 'lowValue'.
+The enumeration 'Channels' defines the following possible values: 'c12', 'c6', 'c9', 'c1', 'c8', 'c10', 'c3', 'c5', 'c11', 'c2', 'c4', 'c7'.
+The enumeration 'SystemInputs' defines the following possible values: 'sysipt', 'sysin'.
+
+The model also captures inheritance relationships between classes.
+The class 'cobol_commons_NamedElement' is a specialization of 'Commentable'.
+The class 'cobol_commons_LabellableElement' is a specialization of 'Commentable'.
+The class 'cobol_commons_URIableElement' is a specialization of 'Commentable'.
+The class 'cobol_conditions_ConditionalOrExpression' is a specialization of 'Condition'.
+The class 'cobol_conditions_ConditionalOrExpressionChild' is a specialization of 'Condition'.
+The class 'cobol_conditions_NegatedConditionalExpression' is a specialization of 'ConditionalAndExpressionChild'.
+The class 'cobol_conditions_NegatedConditionalExpressionChild' is a specialization of 'ConditionalAndExpressionChild'.
+The class 'cobol_conditions_SimpleConditionChild' is a specialization of 'NegatedConditionalExpressionChild'.
+The class 'cobol_conditions_RelationalExpression' is a specialization of 'NegatedConditionalExpressionChild'.
+The class 'cobol_conditions_ConditionalAndExpressionChild' is a specialization of 'ConditionalOrExpressionChild'.
+The class 'cobol_conditions_ConditionalAndExpression' is a specialization of 'ConditionalOrExpressionChild'.
+The class 'cobol_conditions_AbbreviatedConditionalExpression' is a specialization of 'ConditionalAndExpressionChild'.
+The class 'cobol_conditions_AbbreviatedConditionalExpressionChild' is a specialization of 'ConditionalAndExpressionChild'.
+The class 'cobol_conditions_NegatedAbbreviatedConditionalExpression' is a specialization of 'AbbreviatedConditionalExpressionChild'.
+The class 'cobol_conditions_NegatedAbbreviatedConditionalExpressionChild' is a specialization of 'AbbreviatedConditionalExpressionChild'.
+The class 'cobol_conditions_AbbreviatedRelationalExpression' is a specialization of 'NegatedAbbreviatedConditionalExpressionChild'.
+The class 'cobol_conditions_NestedAbbreviatedConditionalExpression' is a specialization of 'AbbreviatedRelationalExpressionChild'.
+The class 'cobol_conditions_SignCondition' is a specialization of 'NegatedConditionalExpressionChild'.
+The class 'cobol_conditions_ClassCondition' is a specialization of 'NegatedConditionalExpressionChild'.
+The class 'cobol_conditions_AbbreviatedRelationalExpressionChild' is a specialization of 'NegatedAbbreviatedConditionalExpressionChild'.
+The class 'cobol_conditions_NestedCondition' is a specialization of 'SimpleConditionChild'.
+The class 'cobol_arithmetics_AdditiveArithmeticExpression' is a specialization of 'RangeExpressionChild'.
+The class 'cobol_arithmetics_AdditiveArithmeticExpressionChild' is a specialization of 'RangeExpressionChild'.
+The class 'cobol_arithmetics_MultiplicativeArithmeticExpression' is a specialization of 'AdditiveArithmeticExpressionChild'.
+The class 'cobol_arithmetics_MultiplicativeArithmeticExpressionChild' is a specialization of 'AdditiveArithmeticExpressionChild'.
+The class 'cobol_arithmetics_PowerArithmeticExpression' is a specialization of 'MultiplicativeArithmeticExpressionChild'.
+The class 'cobol_arithmetics_PowerArithmeticExpressionChild' is a specialization of 'MultiplicativeArithmeticExpressionChild'.
+The class 'cobol_arithmetics_UnaryArithmeticExpressionChild' is a specialization of 'PowerArithmeticExpressionChild'.
+The class 'cobol_arithmetics_UnaryArithmeticExpression' is a specialization of 'PowerArithmeticExpressionChild'.
+The class 'cobol_arithmetics_PrimaryExpression' is a specialization of 'UnaryArithmeticExpressionChild'.
+The class 'cobol_arithmetics_RangeExpression' is a specialization of 'ArithmeticExpression'.
+The class 'cobol_arithmetics_RangeExpressionChild' is a specialization of 'ArithmeticExpression'.
+The class 'cobol_arithmetics_NestedArithmeticExpression' is a specialization of 'PrimaryExpression'.
+The class 'cobol_arithmetics_ArithmeticExpression' is a specialization of 'conditions_AbbreviatedRelationalExpressionChild'.
+The class 'cobol_arithmetics_ArithmeticExpression' is a specialization of 'conditions_SimpleConditionChild'.
+The class 'cobol_containers_CompilationGroup' is a specialization of 'containers_CobolRoot'.
+The class 'cobol_containers_CompilationGroup' is a specialization of 'commons_NamedElement'.
+The class 'cobol_containers_CompilationUnit' is a specialization of 'NamedElement'.
+The class 'cobol_containers_EmptyModel' is a specialization of 'CobolRoot'.
+The class 'cobol_divisions_Division' is a specialization of 'NamedElement'.
+The class 'cobol_divisions_DataDivision' is a specialization of 'Division'.
+The class 'cobol_divisions_EnvironmentDivision' is a specialization of 'Division'.
+The class 'cobol_divisions_IdentificationDivision' is a specialization of 'divisions_Division'.
+The class 'cobol_divisions_IdentificationDivision' is a specialization of 'water_IncompleteElement'.
+The class 'cobol_divisions_ProcedureDivision' is a specialization of 'divisions_Division'.
+The class 'cobol_divisions_ProcedureDivision' is a specialization of 'parameters_Parametrizable'.
+The class 'cobol_literals_Literal' is a specialization of 'water_SelectStatementWater'.
+The class 'cobol_literals_Literal' is a specialization of 'water_SpecialNamesParagraphWater'.
+The class 'cobol_literals_Literal' is a specialization of 'water_CICSStatementWater'.
+The class 'cobol_literals_Literal' is a specialization of 'operands_PrimaryOperand'.
+The class 'cobol_literals_Literal' is a specialization of 'water_InvokeStatementWater'.
+The class 'cobol_literals_Literal' is a specialization of 'labels_StopLabel'.
+The class 'cobol_literals_AlphanumericLiteral' is a specialization of 'Literal'.
+The class 'cobol_literals_IntegerLiteral' is a specialization of 'literals_NumericLiteral'.
+The class 'cobol_literals_IntegerLiteral' is a specialization of 'water_ObjectComputerParagraphWater'.
+The class 'cobol_literals_IntegerLiteral' is a specialization of 'water_FileDescriptorWater'.
+The class 'cobol_literals_IntegerLiteral' is a specialization of 'water_IOControlParagraphWater'.
+The class 'cobol_literals_DecimalLiteral' is a specialization of 'NumericLiteral'.
+The class 'cobol_literals_FigurativeConstantLiteral' is a specialization of 'Literal'.
+The class 'cobol_literals_BooleanLiteral' is a specialization of 'Literal'.
+The class 'cobol_literals_FloatingDecimalLiteral' is a specialization of 'DecimalLiteral'.
+The class 'cobol_literals_AllLiteral' is a specialization of 'FigurativeConstantLiteral'.
+The class 'cobol_literals_NumericLiteral' is a specialization of 'Literal'.
+The class 'cobol_literals_ConstantLiteral' is a specialization of 'FigurativeConstantLiteral'.
+The class 'cobol_literals_PseudoLiteral' is a specialization of 'Literal'.
+The class 'cobol_literals_DBCSLiteral' is a specialization of 'Literal'.
+The class 'cobol_literals_NationalLiteral' is a specialization of 'DBCSLiteral'.
+The class 'cobol_literals_FixedDecimalLiteral' is a specialization of 'DecimalLiteral'.
+The class 'cobol_literals_NationalHexLiteral' is a specialization of 'DBCSLiteral'.
+The class 'cobol_literals_Null' is a specialization of 'ConstantLiteral'.
+The class 'cobol_literals_Zero' is a specialization of 'ConstantLiteral'.
+The class 'cobol_literals_Quote' is a specialization of 'ConstantLiteral'.
+The class 'cobol_literals_LowValue' is a specialization of 'ConstantLiteral'.
+The class 'cobol_literals_HighValue' is a specialization of 'ConstantLiteral'.
+The class 'cobol_literals_Space' is a specialization of 'ConstantLiteral'.
+The class 'cobol_literals_Any' is a specialization of 'Literal'.
+The class 'cobol_literals_Characters' is a specialization of 'Literal'.
+The class 'cobol_literals_AlphanumericHexaDecimalLiteral' is a specialization of 'AlphanumericLiteral'.
+The class 'cobol_operators_AdditiveOperator' is a specialization of 'Operator'.
+The class 'cobol_operators_MultiplicativeOperator' is a specialization of 'Operator'.
+The class 'cobol_operators_UnaryOperator' is a specialization of 'Operator'.
+The class 'cobol_operators_LogicalOperator' is a specialization of 'Operator'.
+The class 'cobol_operators_RelationalOperator' is a specialization of 'Operator'.
+The class 'cobol_operators_ConditionOr' is a specialization of 'LogicalOperator'.
+The class 'cobol_operators_ConditionAnd' is a specialization of 'LogicalOperator'.
+The class 'cobol_operators_Multiplication' is a specialization of 'MultiplicativeOperator'.
+The class 'cobol_operators_SignOperator' is a specialization of 'Operator'.
+The class 'cobol_operators_Positive' is a specialization of 'SignOperator'.
+The class 'cobol_operators_Negative' is a specialization of 'SignOperator'.
+The class 'cobol_operators_Division' is a specialization of 'MultiplicativeOperator'.
+The class 'cobol_operators_Addition' is a specialization of 'operators_AdditiveOperator'.
+The class 'cobol_operators_Addition' is a specialization of 'operators_UnaryOperator'.
+The class 'cobol_operators_Subtraction' is a specialization of 'operators_AdditiveOperator'.
+The class 'cobol_operators_Subtraction' is a specialization of 'operators_UnaryOperator'.
+The class 'cobol_operators_GreaterThanOrEqual' is a specialization of 'RelationalOperator'.
+The class 'cobol_operators_GreaterThan' is a specialization of 'RelationalOperator'.
+The class 'cobol_operators_LessThan' is a specialization of 'RelationalOperator'.
+The class 'cobol_operators_LessThanOrEqual' is a specialization of 'RelationalOperator'.
+The class 'cobol_operators_Equal' is a specialization of 'RelationalOperator'.
+The class 'cobol_operators_Power' is a specialization of 'Operator'.
+The class 'cobol_operators_Negate' is a specialization of 'Operator'.
+The class 'cobol_operators_Through' is a specialization of 'Operator'.
+The class 'cobol_operators_ClassOperator' is a specialization of 'Operator'.
+The class 'cobol_operators_Zero' is a specialization of 'SignOperator'.
+The class 'cobol_operators_ClassName' is a specialization of 'ClassOperator'.
+The class 'cobol_operators_Alphabetic' is a specialization of 'ClassOperator'.
+The class 'cobol_operators_DBCS' is a specialization of 'ClassOperator'.
+The class 'cobol_operators_Numeric' is a specialization of 'ClassOperator'.
+The class 'cobol_operators_AlphabeticUpper' is a specialization of 'ClassOperator'.
+The class 'cobol_operators_AlphabeticLower' is a specialization of 'ClassOperator'.
+The class 'cobol_operators_Kanji' is a specialization of 'ClassOperator'.
+The class 'cobol_operators_EqualPhrase' is a specialization of 'Equal'.
+The class 'cobol_operators_EqualSign' is a specialization of 'Equal'.
+The class 'cobol_operators_LTPhrase' is a specialization of 'LessThan'.
+The class 'cobol_operators_LTSign' is a specialization of 'LessThan'.
+The class 'cobol_operators_LTEQPhrase' is a specialization of 'LessThanOrEqual'.
+The class 'cobol_operators_LTEQSign' is a specialization of 'LessThanOrEqual'.
+The class 'cobol_operators_GTPhrase' is a specialization of 'GreaterThan'.
+The class 'cobol_operators_GTSign' is a specialization of 'GreaterThan'.
+The class 'cobol_operators_GTEQPhrase' is a specialization of 'GreaterThanOrEqual'.
+The class 'cobol_operators_GTEQSign' is a specialization of 'GreaterThanOrEqual'.
+The class 'cobol_paragraphs_Paragraph' is a specialization of 'commons_NamedElement'.
+The class 'cobol_paragraphs_Paragraph' is a specialization of 'labels_Procedure'.
+The class 'cobol_paragraphs_SourceComputerParagraph' is a specialization of 'ConfigurationSectionParagraph'.
+The class 'cobol_paragraphs_ObjectComputerParagraph' is a specialization of 'paragraphs_ConfigurationSectionParagraph'.
+The class 'cobol_paragraphs_ObjectComputerParagraph' is a specialization of 'water_IncompleteElement'.
+The class 'cobol_paragraphs_FileControlParagraph' is a specialization of 'IOSectionParagraph'.
+The class 'cobol_paragraphs_IOControlParagraph' is a specialization of 'paragraphs_IOSectionParagraph'.
+The class 'cobol_paragraphs_IOControlParagraph' is a specialization of 'water_IncompleteElement'.
+The class 'cobol_paragraphs_ConfigurationSectionParagraph' is a specialization of 'Paragraph'.
+The class 'cobol_paragraphs_IOSectionParagraph' is a specialization of 'Paragraph'.
+The class 'cobol_paragraphs_SpecialNamesParagraph' is a specialization of 'ConfigurationSectionParagraph'.
+The class 'cobol_paragraphs_RepositoryParagraph' is a specialization of 'paragraphs_ConfigurationSectionParagraph'.
+The class 'cobol_paragraphs_RepositoryParagraph' is a specialization of 'water_IncompleteElement'.
+The class 'cobol_references_ReferenceableElement' is a specialization of 'NamedElement'.
+The class 'cobol_references_ElementReference' is a specialization of 'Reference'.
+The class 'cobol_references_SpecialNamesConditionNameReference' is a specialization of 'references_ElementReference'.
+The class 'cobol_references_SpecialNamesConditionNameReference' is a specialization of 'references_Qualifiable'.
+The class 'cobol_references_SpecialNamesConditionNameReference' is a specialization of 'references_ConditionName'.
+The class 'cobol_references_FileNameReference' is a specialization of 'references_ElementReference'.
+The class 'cobol_references_FileNameReference' is a specialization of 'references_IdentifierReferenceQualifier'.
+The class 'cobol_references_IndexNameReference' is a specialization of 'IdentifierReference'.
+The class 'cobol_references_MnemonicNameReference' is a specialization of 'references_ElementReference'.
+The class 'cobol_references_MnemonicNameReference' is a specialization of 'references_Qualifiable'.
+The class 'cobol_references_AlphabetNameReference' is a specialization of 'ElementReference'.
+The class 'cobol_references_ConditionNameReference' is a specialization of 'identifiers_IdentifierReference'.
+The class 'cobol_references_ConditionNameReference' is a specialization of 'references_ConditionName'.
+The class 'cobol_references_DataNameReference' is a specialization of 'identifiers_IdentifierReference'.
+The class 'cobol_references_DataNameReference' is a specialization of 'references_IdentifierReferenceQualifier'.
+The class 'cobol_references_IdentifierReferenceQualifier' is a specialization of 'references_Qualifiable'.
+The class 'cobol_references_IdentifierReferenceQualifier' is a specialization of 'references_ElementReference'.
+The class 'cobol_sections_Section' is a specialization of 'commons_NamedElement'.
+The class 'cobol_sections_Section' is a specialization of 'labels_Procedure'.
+The class 'cobol_sections_WorkingStorageSection' is a specialization of 'DataDivisionSection'.
+The class 'cobol_sections_LocalStorageSection' is a specialization of 'DataDivisionSection'.
+The class 'cobol_sections_LinkageStorageSection' is a specialization of 'DataDivisionSection'.
+The class 'cobol_sections_IOSection' is a specialization of 'EnvironmentDivisionSection'.
+The class 'cobol_sections_ConfigurationSection' is a specialization of 'EnvironmentDivisionSection'.
+The class 'cobol_sections_EnvironmentDivisionSection' is a specialization of 'Section'.
+The class 'cobol_sections_DataDivisionSection' is a specialization of 'Section'.
+The class 'cobol_sections_FileSection' is a specialization of 'DataDivisionSection'.
+The class 'cobol_sections_DeclarativeSection' is a specialization of 'Section'.
+The class 'cobol_sentences_EmptySentence' is a specialization of 'Sentence'.
+The class 'cobol_sentences_UseSentence' is a specialization of 'sentences_StatementContainer'.
+The class 'cobol_sentences_UseSentence' is a specialization of 'water_IncompleteElement'.
+The class 'cobol_sentences_AlteredGoTo' is a specialization of 'Sentence'.
+The class 'cobol_sentences_ExitProcedure' is a specialization of 'Sentence'.
+The class 'cobol_sentences_EntrySentence' is a specialization of 'Sentence'.
+The class 'cobol_sentences_ExecuteSentence' is a specialization of 'StatementContainer'.
+The class 'cobol_sentences_Sentence' is a specialization of 'StatementContainer'.
+The class 'cobol_operands_PrimaryOperand' is a specialization of 'operands_ReplacementOperand'.
+The class 'cobol_operands_PrimaryOperand' is a specialization of 'operands_Operand'.
+The class 'cobol_operands_PrimaryOperand' is a specialization of 'arithmetics_PrimaryExpression'.
+The class 'cobol_operands_PrimaryOperand' is a specialization of 'operands_ArithmeticOperand'.
+The class 'cobol_operands_RoundedIdentifier' is a specialization of 'ArithmeticOperand'.
+The class 'cobol_operands_ReplacementOperand' is a specialization of 'Operand'.
+The class 'cobol_operands_Encoding' is a specialization of 'ReplacementOperand'.
+The class 'cobol_operands_ArithmeticOperand' is a specialization of 'Operand'.
+The class 'cobol_statements_ArithmeticStatement' is a specialization of 'statements_Statement'.
+The class 'cobol_statements_ArithmeticStatement' is a specialization of 'statements_ErrorHandled'.
+The class 'cobol_statements_Add' is a specialization of 'ArithmeticStatement'.
+The class 'cobol_statements_Subtract' is a specialization of 'ArithmeticStatement'.
+The class 'cobol_statements_Multiply' is a specialization of 'ArithmeticStatement'.
+The class 'cobol_statements_Divide' is a specialization of 'ArithmeticStatement'.
+The class 'cobol_statements_Perform' is a specialization of 'Statement'.
+The class 'cobol_statements_PerformNestedStatement' is a specialization of 'statements_Perform'.
+The class 'cobol_statements_PerformNestedStatement' is a specialization of 'statements_NestedStatement'.
+The class 'cobol_statements_PerformProcedure' is a specialization of 'Perform'.
+The class 'cobol_statements_Jump' is a specialization of 'Statement'.
+The class 'cobol_statements_NextSentence' is a specialization of 'Jump'.
+The class 'cobol_statements_GoTo' is a specialization of 'Jump'.
+The class 'cobol_statements_GoBack' is a specialization of 'Jump'.
+The class 'cobol_statements_Move' is a specialization of 'Statement'.
+The class 'cobol_statements_Exit' is a specialization of 'Statement'.
+The class 'cobol_statements_Condition' is a specialization of 'statements_NestedStatement'.
+The class 'cobol_statements_Condition' is a specialization of 'statements_Conditional'.
+The class 'cobol_statements_Condition' is a specialization of 'statements_Statement'.
+The class 'cobol_statements_Stop' is a specialization of 'Statement'.
+The class 'cobol_statements_Display' is a specialization of 'Statement'.
+The class 'cobol_statements_Compute' is a specialization of 'statements_Statement'.
+The class 'cobol_statements_Compute' is a specialization of 'statements_ErrorHandled'.
+The class 'cobol_statements_Accept' is a specialization of 'statements_Statement'.
+The class 'cobol_statements_Accept' is a specialization of 'water_IncompleteElement'.
+The class 'cobol_statements_Execute' is a specialization of 'Statement'.
+The class 'cobol_statements_Return' is a specialization of 'statements_Statement'.
+The class 'cobol_statements_Return' is a specialization of 'statements_ErrorHandled'.
+The class 'cobol_statements_SetStatement' is a specialization of 'Statement'.
+The class 'cobol_statements_SetSwitches' is a specialization of 'SetStatement'.
+The class 'cobol_statements_SetIndexName' is a specialization of 'SetStatement'.
+The class 'cobol_statements_String' is a specialization of 'statements_Statement'.
+The class 'cobol_statements_String' is a specialization of 'statements_ErrorHandled'.
+The class 'cobol_statements_Close' is a specialization of 'water_IncompleteElement'.
+The class 'cobol_statements_Close' is a specialization of 'statements_IOStatement'.
+The class 'cobol_statements_Cancel' is a specialization of 'Statement'.
+The class 'cobol_statements_Call' is a specialization of 'statements_Statement'.
+The class 'cobol_statements_Call' is a specialization of 'functions_Argumentable'.
+The class 'cobol_statements_Call' is a specialization of 'statements_ErrorHandled'.
+The class 'cobol_statements_Initialize' is a specialization of 'Statement'.
+The class 'cobol_statements_Open' is a specialization of 'water_IncompleteElement'.
+The class 'cobol_statements_Open' is a specialization of 'statements_IOStatement'.
+The class 'cobol_statements_SearchStatement' is a specialization of 'statements_Statement'.
+The class 'cobol_statements_SearchStatement' is a specialization of 'statements_ErrorHandled'.
+The class 'cobol_statements_SerialSearch' is a specialization of 'SearchStatement'.
+The class 'cobol_statements_BinarySearch' is a specialization of 'SearchStatement'.
+The class 'cobol_statements_Unstring' is a specialization of 'statements_ErrorHandled'.
+The class 'cobol_statements_Unstring' is a specialization of 'statements_Statement'.
+The class 'cobol_statements_Evaluate' is a specialization of 'Statement'.
+The class 'cobol_statements_NormalEvaluateCase' is a specialization of 'EvaluateCase'.
+The class 'cobol_statements_OtherEvaluateCase' is a specialization of 'EvaluateCase'.
+The class 'cobol_statements_EvaluateCase' is a specialization of 'NestedStatement'.
+The class 'cobol_statements_Replace' is a specialization of 'Statement'.
+The class 'cobol_statements_Entry' is a specialization of 'parameters_Parametrizable'.
+The class 'cobol_statements_Entry' is a specialization of 'statements_Statement'.
+The class 'cobol_statements_Inspect' is a specialization of 'Statement'.
+The class 'cobol_statements_Set' is a specialization of 'SetStatement'.
+The class 'cobol_statements_Read' is a specialization of 'statements_Statement'.
+The class 'cobol_statements_Read' is a specialization of 'statements_ErrorHandled'.
+The class 'cobol_statements_Write' is a specialization of 'statements_Statement'.
+The class 'cobol_statements_Write' is a specialization of 'statements_ErrorHandled'.
+The class 'cobol_statements_Rewrite' is a specialization of 'Write'.
+The class 'cobol_statements_PerformProcedureFixedTimes' is a specialization of 'statements_PerformProcedure'.
+The class 'cobol_statements_PerformProcedureFixedTimes' is a specialization of 'statements_PerformFixedTimes'.
+The class 'cobol_statements_PerformUntilCondition' is a specialization of 'statements_Perform'.
+The class 'cobol_statements_PerformUntilCondition' is a specialization of 'statements_VaryingUntilCondition'.
+The class 'cobol_statements_PerformFixedTimes' is a specialization of 'Perform'.
+The class 'cobol_statements_PerformProcedureUntilCondition' is a specialization of 'statements_PerformUntilCondition'.
+The class 'cobol_statements_PerformProcedureUntilCondition' is a specialization of 'statements_PerformProcedure'.
+The class 'cobol_statements_PerformNestedStatementFixedTimes' is a specialization of 'statements_PerformNestedStatement'.
+The class 'cobol_statements_PerformNestedStatementFixedTimes' is a specialization of 'statements_PerformFixedTimes'.
+The class 'cobol_statements_PerformNestedStatementUntilCondition' is a specialization of 'statements_PerformUntilCondition'.
+The class 'cobol_statements_PerformNestedStatementUntilCondition' is a specialization of 'statements_PerformNestedStatement'.
+The class 'cobol_statements_Continue' is a specialization of 'Jump'.
+The class 'cobol_statements_FileIOStatement' is a specialization of 'Statement'.
+The class 'cobol_statements_Sort' is a specialization of 'statements_FileIOStatement'.
+The class 'cobol_statements_Sort' is a specialization of 'water_IncompleteElement'.
+The class 'cobol_statements_Merge' is a specialization of 'statements_FileIOStatement'.
+The class 'cobol_statements_Merge' is a specialization of 'water_IncompleteElement'.
+The class 'cobol_statements_Release' is a specialization of 'Statement'.
+The class 'cobol_statements_IOStatement' is a specialization of 'Statement'.
+The class 'cobol_statements_IOFile' is a specialization of 'IncompleteElement'.
+The class 'cobol_statements_VaryingUntilCondition' is a specialization of 'Conditional'.
+The class 'cobol_statements_AfterUntilCondition' is a specialization of 'VaryingUntilCondition'.
+The class 'cobol_statements_Start' is a specialization of 'statements_ErrorHandled'.
+The class 'cobol_statements_Start' is a specialization of 'statements_Statement'.
+The class 'cobol_statements_Delete' is a specialization of 'statements_Statement'.
+The class 'cobol_statements_Delete' is a specialization of 'statements_ErrorHandled'.
+The class 'cobol_identifiers_Identifier' is a specialization of 'operands_PrimaryOperand'.
+The class 'cobol_identifiers_Identifier' is a specialization of 'water_AcceptStatementWater'.
+The class 'cobol_identifiers_Identifier' is a specialization of 'water_CICSStatementWater'.
+The class 'cobol_identifiers_Identifier' is a specialization of 'water_SpecialNamesParagraphWater'.
+The class 'cobol_identifiers_Identifier' is a specialization of 'water_ObjectComputerParagraphWater'.
+The class 'cobol_identifiers_Identifier' is a specialization of 'water_RepositoryParagraphWater'.
+The class 'cobol_identifiers_Identifier' is a specialization of 'water_IOControlParagraphWater'.
+The class 'cobol_identifiers_Identifier' is a specialization of 'water_IdentificationDivisionWater'.
+The class 'cobol_identifiers_Identifier' is a specialization of 'water_InvokeStatementWater'.
+The class 'cobol_identifiers_Identifier' is a specialization of 'water_SQLStatementWater'.
+The class 'cobol_identifiers_Identifier' is a specialization of 'water_UseStatementWater'.
+The class 'cobol_identifiers_Identifier' is a specialization of 'water_FileDescriptorWater'.
+The class 'cobol_identifiers_Identifier' is a specialization of 'water_DataDescriptorWater'.
+The class 'cobol_identifiers_Identifier' is a specialization of 'water_SelectStatementWater'.
+The class 'cobol_identifiers_Identifier' is a specialization of 'water_SortPhraseWater'.
+The class 'cobol_identifiers_IdentifierReference' is a specialization of 'identifiers_Identifier'.
+The class 'cobol_identifiers_IdentifierReference' is a specialization of 'references_ElementReference'.
+The class 'cobol_identifiers_IdentifierReference' is a specialization of 'references_Qualifiable'.
+The class 'cobol_identifiers_All' is a specialization of 'DirectSubscript'.
+The class 'cobol_identifiers_LinageCounter' is a specialization of 'identifiers_Identifier'.
+The class 'cobol_identifiers_LinageCounter' is a specialization of 'references_Qualifiable'.
+The class 'cobol_identifiers_Qualifier' is a specialization of 'ElementReference'.
+The class 'cobol_identifiers_RelativeSubscript' is a specialization of 'Subscript'.
+The class 'cobol_identifiers_DirectSubscript' is a specialization of 'Subscript'.
+The class 'cobol_ios_InputProcedure' is a specialization of 'ios_InputDirective'.
+The class 'cobol_ios_InputProcedure' is a specialization of 'ios_ProcedureDirective'.
+The class 'cobol_ios_InputDirective' is a specialization of 'IODirectives'.
+The class 'cobol_ios_InputFile' is a specialization of 'ios_InputDirective'.
+The class 'cobol_ios_InputFile' is a specialization of 'ios_FileDirective'.
+The class 'cobol_ios_OutputDirective' is a specialization of 'IODirectives'.
+The class 'cobol_ios_OutputProcedure' is a specialization of 'ios_ProcedureDirective'.
+The class 'cobol_ios_OutputProcedure' is a specialization of 'ios_OutputDirective'.
+The class 'cobol_ios_OutputFile' is a specialization of 'ios_OutputDirective'.
+The class 'cobol_ios_OutputFile' is a specialization of 'ios_FileDirective'.
+The class 'cobol_ios_FileDirective' is a specialization of 'IODirectives'.
+The class 'cobol_ios_ProcedureDirective' is a specialization of 'IODirectives'.
+The class 'cobol_water_IdentificationDivisionWater' is a specialization of 'Water'.
+The class 'cobol_water_ProgramDescription' is a specialization of 'IdentificationDivisionWater'.
+The class 'cobol_water_Dot' is a specialization of 'water_IdentificationDivisionWater'.
+The class 'cobol_water_Dot' is a specialization of 'water_SQLStatementWater'.
+The class 'cobol_water_ObjectComputerParagraphWater' is a specialization of 'Water'.
+The class 'cobol_water_ObjectComputerDescription' is a specialization of 'ObjectComputerParagraphWater'.
+The class 'cobol_water_PriorityNumber' is a specialization of 'ObjectComputerParagraphWater'.
+The class 'cobol_water_SelectStatementWater' is a specialization of 'Water'.
+The class 'cobol_water_SelectStatementClause' is a specialization of 'SelectStatementWater'.
+The class 'cobol_water_SpecialNamesParagraphWater' is a specialization of 'Water'.
+The class 'cobol_water_SpecialNamesClause' is a specialization of 'SpecialNamesParagraphWater'.
+The class 'cobol_water_FileDescriptorWater' is a specialization of 'Water'.
+The class 'cobol_water_FileDescription' is a specialization of 'FileDescriptorWater'.
+The class 'cobol_water_DataDescriptorWater' is a specialization of 'Water'.
+The class 'cobol_water_DataDescription' is a specialization of 'DataDescriptorWater'.
+The class 'cobol_water_IOControlParagraphWater' is a specialization of 'Water'.
+The class 'cobol_water_IOControlDescription' is a specialization of 'IOControlParagraphWater'.
+The class 'cobol_water_RepositoryParagraphWater' is a specialization of 'Water'.
+The class 'cobol_water_RepositoryDescription' is a specialization of 'RepositoryParagraphWater'.
+The class 'cobol_water_SQLStatementWater' is a specialization of 'Water'.
+The class 'cobol_water_CICSStatementWater' is a specialization of 'Water'.
+The class 'cobol_water_SQLStatementToken' is a specialization of 'SQLStatementWater'.
+The class 'cobol_water_CICSStatementToken' is a specialization of 'CICSStatementWater'.
+The class 'cobol_water_AcceptStatementWater' is a specialization of 'Water'.
+The class 'cobol_water_AcceptStatementToken' is a specialization of 'AcceptStatementWater'.
+The class 'cobol_water_UseStatementWater' is a specialization of 'Water'.
+The class 'cobol_water_UseStatementToken' is a specialization of 'UseStatementWater'.
+The class 'cobol_water_CloseStatementWater' is a specialization of 'Water'.
+The class 'cobol_water_CloseStatementToken' is a specialization of 'CloseStatementWater'.
+The class 'cobol_water_InvokeStatementWater' is a specialization of 'Water'.
+The class 'cobol_water_InvokeStatementToken' is a specialization of 'InvokeStatementWater'.
+The class 'cobol_water_OpenStatementWater' is a specialization of 'Water'.
+The class 'cobol_water_OpenStatementToken' is a specialization of 'OpenStatementWater'.
+The class 'cobol_water_SortPhraseToken' is a specialization of 'SortPhraseWater'.
+The class 'cobol_water_SortPhraseWater' is a specialization of 'Water'.
+The class 'cobol_registers_Register' is a specialization of 'PrimaryOperand'.
+The class 'cobol_registers_ShiftIn' is a specialization of 'Register'.
+The class 'cobol_registers_ShiftOut' is a specialization of 'Register'.
+The class 'cobol_registers_AddressOf' is a specialization of 'Register'.
+The class 'cobol_registers_LengthOf' is a specialization of 'Register'.
+The class 'cobol_registers_ReturnCode' is a specialization of 'Register'.
+The class 'cobol_registers_WhenCompiled' is a specialization of 'Register'.
+The class 'cobol_environments_SystemDevice' is a specialization of 'Environment'.
+The class 'cobol_environments_SystemLogicalInput' is a specialization of 'SystemDevice'.
+The class 'cobol_environments_UPSI' is a specialization of 'Environment'.
+The class 'cobol_environments_SystemLogicalOutput' is a specialization of 'SystemDevice'.
+The class 'cobol_environments_SystemPunchDevice' is a specialization of 'SystemDevice'.
+The class 'cobol_environments_Console' is a specialization of 'SystemDevice'.
+The class 'cobol_environments_Channel' is a specialization of 'SystemDevice'.
+The class 'cobol_environments_AdvancedFunctionPrinting' is a specialization of 'SystemDevice'.
+The class 'cobol_environments_SuppressSpacing' is a specialization of 'SystemDevice'.
+The class 'cobol_environments_Pocket' is a specialization of 'SystemDevice'.
+The class 'cobol_environments_Environment' is a specialization of 'AcceptStatementWater'.
+The class 'cobol_dataitems_PictureString' is a specialization of 'DataItemAttribute'.
+The class 'cobol_dataitems_RenamingDataName' is a specialization of 'DataName'.
+The class 'cobol_dataitems_ConditionName' is a specialization of 'DataItem'.
+The class 'cobol_dataitems_Global' is a specialization of 'DataItemAttribute'.
+The class 'cobol_dataitems_External' is a specialization of 'DataItemAttribute'.
+The class 'cobol_dataitems_Value' is a specialization of 'DataItemAttribute'.
+The class 'cobol_dataitems_Usage' is a specialization of 'DataItemAttribute'.
+The class 'cobol_dataitems_GroupUsage' is a specialization of 'DataItemAttribute'.
+The class 'cobol_dataitems_DataItem' is a specialization of 'references_ReferenceableElement'.
+The class 'cobol_dataitems_DataItem' is a specialization of 'water_IncompleteElement'.
+The class 'cobol_dataitems_RecordName' is a specialization of 'DataItem'.
+The class 'cobol_dataitems_DataName' is a specialization of 'DataItem'.
+The class 'cobol_dataitems_Redefines' is a specialization of 'DataItemAttribute'.
+The class 'cobol_specialnames_SpecialName' is a specialization of 'ReferenceableElement'.
+The class 'cobol_specialnames_ConditionName' is a specialization of 'commons_NamedElement'.
+The class 'cobol_specialnames_ConditionName' is a specialization of 'specialnames_SpecialName'.
+The class 'cobol_specialnames_OnStatus' is a specialization of 'ConditionName'.
+The class 'cobol_specialnames_OffStatus' is a specialization of 'ConditionName'.
+The class 'cobol_specialnames_AlphabetName' is a specialization of 'specialnames_SpecialName'.
+The class 'cobol_specialnames_AlphabetName' is a specialization of 'specialnames_SpecialNameStatement'.
+The class 'cobol_specialnames_UPSISwitchIs' is a specialization of 'specialnames_MnemonicName'.
+The class 'cobol_specialnames_UPSISwitchIs' is a specialization of 'specialnames_SpecialNameStatement'.
+The class 'cobol_specialnames_PredefinedAlphabetType' is a specialization of 'AlphabetType'.
+The class 'cobol_specialnames_ExplicitAlphabetType' is a specialization of 'AlphabetType'.
+The class 'cobol_specialnames_CodeNameAlphabetType' is a specialization of 'AlphabetType'.
+The class 'cobol_specialnames_CurrencySign' is a specialization of 'specialnames_SpecialName'.
+The class 'cobol_specialnames_CurrencySign' is a specialization of 'specialnames_SpecialNameStatement'.
+The class 'cobol_specialnames_ClassName' is a specialization of 'specialnames_SpecialName'.
+The class 'cobol_specialnames_ClassName' is a specialization of 'specialnames_SpecialNameStatement'.
+The class 'cobol_specialnames_MnemonicName' is a specialization of 'SpecialName'.
+The class 'cobol_specialnames_SystemDeviceIs' is a specialization of 'specialnames_MnemonicName'.
+The class 'cobol_specialnames_SystemDeviceIs' is a specialization of 'specialnames_SpecialNameStatement'.
+The class 'cobol_specialnames_SymbolicCharacter' is a specialization of 'SpecialName'.
+The class 'cobol_specialnames_SymbolicCharacterStatement' is a specialization of 'specialnames_SpecialNameStatement'.
+The class 'cobol_specialnames_SymbolicCharacterStatement' is a specialization of 'references_ElementReference'.
+The class 'cobol_tables_Table' is a specialization of 'dataitems_DataItem'.
+The class 'cobol_tables_Table' is a specialization of 'water_IncompleteElement'.
+The class 'cobol_tables_IndexName' is a specialization of 'commons_NamedElement'.
+The class 'cobol_tables_IndexName' is a specialization of 'references_ReferenceableElement'.
+The class 'cobol_tables_AdditionalIndexName' is a specialization of 'ReferenceableElement'.
+The class 'cobol_files_FileName' is a specialization of 'water_IncompleteElement'.
+The class 'cobol_files_FileName' is a specialization of 'references_ReferenceableElement'.
+The class 'cobol_files_SelectStatement' is a specialization of 'IncompleteElement'.
+The class 'cobol_parameters_Parameter' is a specialization of 'ReferenceableElement'.
+The class 'cobol_parameters_ByReferenceParameter' is a specialization of 'Parameter'.
+The class 'cobol_parameters_ByValueParameter' is a specialization of 'Parameter'.
+The class 'cobol_verbs_Is' is a specialization of 'Verb'.
+The class 'cobol_labels_ProcedureRange' is a specialization of 'ProcedureRangeLabel'.
+The class 'cobol_labels_ProcedureRangeLabel' is a specialization of 'Label'.
+The class 'cobol_labels_ProcedureRangeChild' is a specialization of 'ProcedureRangeLabel'.
+The class 'cobol_labels_ProcedureLabel' is a specialization of 'ProcedureRangeChild'.
+The class 'cobol_labels_StopLabel' is a specialization of 'Label'.
+The class 'cobol_labels_Run' is a specialization of 'StopLabel'.
+The class 'cobol_functions_FunctionCall' is a specialization of 'functions_Argumentable'.
+The class 'cobol_functions_FunctionCall' is a specialization of 'commons_NamedElement'.
+The class 'cobol_functions_FunctionCall' is a specialization of 'identifiers_Identifier'.
+The class 'cobol_functions_ByReferenceArgument' is a specialization of 'Argument'.
+The class 'cobol_functions_ByValueArgument' is a specialization of 'Argument'.
+The class 'cobol_functions_ByContentArgument' is a specialization of 'Argument'.
+The class 'cobol_functions_OmittedArgument' is a specialization of 'Argument'.
+The class 'cobol_handlers_OnSizeError' is a specialization of 'Handler'.
+The class 'cobol_handlers_Handler' is a specialization of 'NestedStatement'.
+The class 'cobol_handlers_NotOnSizeError' is a specialization of 'NotErrorHandler'.
+The class 'cobol_handlers_OnOverflow' is a specialization of 'Handler'.
+The class 'cobol_handlers_OnException' is a specialization of 'Handler'.
+The class 'cobol_handlers_NotOnException' is a specialization of 'NotErrorHandler'.
+The class 'cobol_handlers_NotErrorHandler' is a specialization of 'Handler'.
+The class 'cobol_handlers_NotOnOverflow' is a specialization of 'NotErrorHandler'.
+The class 'cobol_handlers_NotAtEnd' is a specialization of 'NotErrorHandler'.
+The class 'cobol_handlers_AtEnd' is a specialization of 'Handler'.
+The class 'cobol_handlers_AtEndOfPage' is a specialization of 'Handler'.
+The class 'cobol_handlers_InvalidKey' is a specialization of 'Handler'.
+The class 'cobol_handlers_NotAtEndOfPage' is a specialization of 'NotErrorHandler'.
+The class 'cobol_handlers_NotInvalidKey' is a specialization of 'NotErrorHandler'.
+The class 'cobol_strings_Tallying' is a specialization of 'StringManipulation'.
+The class 'cobol_strings_StringManipulation' is a specialization of 'String'.
+The class 'cobol_strings_ManipulatedStrings' is a specialization of 'String'.
+The class 'cobol_strings_ConcatenatingStrings' is a specialization of 'ManipulatedStrings'.
+The class 'cobol_strings_SplittedString' is a specialization of 'ManipulatedStrings'.
+The class 'cobol_strings_Replacement' is a specialization of 'StringManipulation'.
+The class 'cobol_strings_TallyingOccurrence' is a specialization of 'strings_Tallying'.
+The class 'cobol_strings_TallyingOccurrence' is a specialization of 'strings_Occurrence'.
+The class 'cobol_strings_ReplacementOccurrence' is a specialization of 'strings_Occurrence'.
+The class 'cobol_strings_ReplacementOccurrence' is a specialization of 'strings_Replacement'.
+The class 'cobol_strings_AnyCharacter' is a specialization of 'Tallying'.
+The class 'cobol_strings_SpecificCharacter' is a specialization of 'Tallying'.
+The class 'cobol_strings_AnyCharacterBySpecificCharacter' is a specialization of 'Replacement'.
+The class 'cobol_strings_SpecificCharacterBySpecificCharacter' is a specialization of 'Replacement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ConditionalOrExpressionChild' and 'cobol_conditions_ConditionalOrExpression'. From 'ConditionalOrExpressionChild', the role 'ConditionalOrExpressionChild' has cardinality 0..*, and from 'cobol_conditions_ConditionalOrExpression', the role 'cobol_conditions_ConditionalOrExpression' has cardinality 0..*.
+An association connects 'cobol_conditions_ConditionalOrExpression' and 'LogicalOperator'. From 'cobol_conditions_ConditionalOrExpression', the role 'cobol_conditions_ConditionalOrExpression2' has cardinality 0..*, and from 'LogicalOperator', the role 'LogicalOperator' has cardinality 0..*.
+An association connects 'NegatedConditionalExpressionChild' and 'cobol_conditions_NegatedConditionalExpression'. From 'NegatedConditionalExpressionChild', the role 'NegatedConditionalExpressionChild' has cardinality 0..*, and from 'cobol_conditions_NegatedConditionalExpression', the role 'cobol_conditions_NegatedConditionalExpression' has cardinality 0..*.
+An association connects 'cobol_conditions_NegatedConditionalExpression' and 'Negate'. From 'cobol_conditions_NegatedConditionalExpression', the role 'cobol_conditions_NegatedConditionalExpression5' has cardinality 0..*, and from 'Negate', the role 'Negate' has cardinality 0..*.
+An association connects 'cobol_conditions_RelationalExpression' and 'SimpleConditionChild'. From 'cobol_conditions_RelationalExpression', the role 'cobol_conditions_RelationalExpression' has cardinality 0..*, and from 'SimpleConditionChild', the role 'SimpleConditionChild' has cardinality 0..*.
+An association connects 'RelationalOperator' and 'cobol_conditions_RelationalExpression'. From 'RelationalOperator', the role 'RelationalOperator' has cardinality 0..*, and from 'cobol_conditions_RelationalExpression', the role 'cobol_conditions_RelationalExpression8' has cardinality 0..*.
+An association connects 'cobol_conditions_RelationalExpression' and 'Negate'. From 'cobol_conditions_RelationalExpression', the role 'cobol_conditions_RelationalExpression10' has cardinality 0..*, and from 'Negate', the role 'Negate11' has cardinality 0..*.
+An association connects 'cobol_conditions_RelationalExpression' and 'Is'. From 'cobol_conditions_RelationalExpression', the role 'cobol_conditions_RelationalExpression13' has cardinality 0..*, and from 'Is', the role 'Is' has cardinality 0..*.
+An association connects 'cobol_conditions_ExpressionList' and 'Condition'. From 'cobol_conditions_ExpressionList', the role 'cobol_conditions_ExpressionList' has cardinality 0..*, and from 'Condition', the role 'Condition' has cardinality 0..*.
+An association connects 'ConditionalAndExpressionChild' and 'cobol_conditions_ConditionalAndExpression'. From 'ConditionalAndExpressionChild', the role 'ConditionalAndExpressionChild' has cardinality 0..*, and from 'cobol_conditions_ConditionalAndExpression', the role 'cobol_conditions_ConditionalAndExpression' has cardinality 0..*.
+An association connects 'AbbreviatedConditionalExpressionChild' and 'cobol_conditions_AbbreviatedConditionalExpression'. From 'AbbreviatedConditionalExpressionChild', the role 'AbbreviatedConditionalExpressionChild' has cardinality 0..*, and from 'cobol_conditions_AbbreviatedConditionalExpression', the role 'cobol_conditions_AbbreviatedConditionalExpression' has cardinality 0..*.
+An association connects 'cobol_conditions_NegatedAbbreviatedConditionalExpression' and 'NegatedAbbreviatedConditionalExpressionChild'. From 'cobol_conditions_NegatedAbbreviatedConditionalExpression', the role 'cobol_conditions_NegatedAbbreviatedConditionalExpression' has cardinality 0..*, and from 'NegatedAbbreviatedConditionalExpressionChild', the role 'NegatedAbbreviatedConditionalExpressionChild' has cardinality 0..*.
+An association connects 'Negate' and 'cobol_conditions_NegatedAbbreviatedConditionalExpression'. From 'Negate', the role 'Negate20' has cardinality 0..*, and from 'cobol_conditions_NegatedAbbreviatedConditionalExpression', the role 'cobol_conditions_NegatedAbbreviatedConditionalExpression19' has cardinality 0..*.
+An association connects 'RelationalOperator' and 'cobol_conditions_AbbreviatedRelationalExpression'. From 'RelationalOperator', the role 'RelationalOperator22' has cardinality 0..*, and from 'cobol_conditions_AbbreviatedRelationalExpression', the role 'cobol_conditions_AbbreviatedRelationalExpression' has cardinality 0..*.
+An association connects 'cobol_conditions_AbbreviatedRelationalExpression' and 'AbbreviatedRelationalExpressionChild'. From 'cobol_conditions_AbbreviatedRelationalExpression', the role 'cobol_conditions_AbbreviatedRelationalExpression24' has cardinality 0..*, and from 'AbbreviatedRelationalExpressionChild', the role 'AbbreviatedRelationalExpressionChild' has cardinality 0..*.
+An association connects 'Negate' and 'cobol_conditions_AbbreviatedRelationalExpression'. From 'Negate', the role 'Negate27' has cardinality 0..*, and from 'cobol_conditions_AbbreviatedRelationalExpression', the role 'cobol_conditions_AbbreviatedRelationalExpression26' has cardinality 0..*.
+An association connects 'cobol_conditions_AbbreviatedRelationalExpression' and 'Is'. From 'cobol_conditions_AbbreviatedRelationalExpression', the role 'cobol_conditions_AbbreviatedRelationalExpression29' has cardinality 0..*, and from 'Is', the role 'Is30' has cardinality 0..*.
+An association connects 'Condition' and 'cobol_conditions_NestedAbbreviatedConditionalExpression'. From 'Condition', the role 'Condition32' has cardinality 0..*, and from 'cobol_conditions_NestedAbbreviatedConditionalExpression', the role 'cobol_conditions_NestedAbbreviatedConditionalExpression' has cardinality 0..*.
+An association connects 'Condition' and 'cobol_conditions_NestedAbbreviatedConditionalExpression'. From 'Condition', the role 'Condition35' has cardinality 0..*, and from 'cobol_conditions_NestedAbbreviatedConditionalExpression', the role 'cobol_conditions_NestedAbbreviatedConditionalExpression34' has cardinality 0..*.
+An association connects 'cobol_conditions_SignCondition' and 'SimpleConditionChild'. From 'cobol_conditions_SignCondition', the role 'cobol_conditions_SignCondition' has cardinality 0..*, and from 'SimpleConditionChild', the role 'SimpleConditionChild37' has cardinality 0..*.
+An association connects 'cobol_conditions_SignCondition' and 'SignOperator'. From 'cobol_conditions_SignCondition', the role 'cobol_conditions_SignCondition39' has cardinality 0..*, and from 'SignOperator', the role 'SignOperator' has cardinality 0..*.
+An association connects 'Negate' and 'cobol_conditions_SignCondition'. From 'Negate', the role 'Negate42' has cardinality 0..*, and from 'cobol_conditions_SignCondition', the role 'cobol_conditions_SignCondition41' has cardinality 0..*.
+An association connects 'Is' and 'cobol_conditions_SignCondition'. From 'Is', the role 'Is45' has cardinality 0..*, and from 'cobol_conditions_SignCondition', the role 'cobol_conditions_SignCondition44' has cardinality 0..*.
+An association connects 'cobol_conditions_ClassCondition' and 'SimpleConditionChild'. From 'cobol_conditions_ClassCondition', the role 'cobol_conditions_ClassCondition' has cardinality 0..*, and from 'SimpleConditionChild', the role 'SimpleConditionChild47' has cardinality 0..*.
+An association connects 'cobol_conditions_ClassCondition' and 'ClassOperator'. From 'cobol_conditions_ClassCondition', the role 'cobol_conditions_ClassCondition49' has cardinality 0..*, and from 'ClassOperator', the role 'ClassOperator' has cardinality 0..*.
+An association connects 'Negate' and 'cobol_conditions_ClassCondition'. From 'Negate', the role 'Negate52' has cardinality 0..*, and from 'cobol_conditions_ClassCondition', the role 'cobol_conditions_ClassCondition51' has cardinality 0..*.
+An association connects 'cobol_conditions_ClassCondition' and 'Is'. From 'cobol_conditions_ClassCondition', the role 'cobol_conditions_ClassCondition54' has cardinality 0..*, and from 'Is', the role 'Is55' has cardinality 0..*.
+An association connects 'cobol_conditions_NestedCondition' and 'Condition'. From 'cobol_conditions_NestedCondition', the role 'cobol_conditions_NestedCondition' has cardinality 0..*, and from 'Condition', the role 'Condition57' has cardinality 0..*.
+An association connects 'cobol_arithmetics_AdditiveArithmeticExpression' and 'AdditiveArithmeticExpressionChild'. From 'cobol_arithmetics_AdditiveArithmeticExpression', the role 'cobol_arithmetics_AdditiveArithmeticExpression' has cardinality 0..*, and from 'AdditiveArithmeticExpressionChild', the role 'AdditiveArithmeticExpressionChild' has cardinality 0..*.
+An association connects 'cobol_arithmetics_AdditiveArithmeticExpression' and 'AdditiveOperator'. From 'cobol_arithmetics_AdditiveArithmeticExpression', the role 'cobol_arithmetics_AdditiveArithmeticExpression60' has cardinality 0..*, and from 'AdditiveOperator', the role 'AdditiveOperator' has cardinality 0..*.
+An association connects 'cobol_arithmetics_MultiplicativeArithmeticExpression' and 'MultiplicativeArithmeticExpressionChild'. From 'cobol_arithmetics_MultiplicativeArithmeticExpression', the role 'cobol_arithmetics_MultiplicativeArithmeticExpression' has cardinality 0..*, and from 'MultiplicativeArithmeticExpressionChild', the role 'MultiplicativeArithmeticExpressionChild' has cardinality 0..*.
+An association connects 'cobol_arithmetics_MultiplicativeArithmeticExpression' and 'MultiplicativeOperator'. From 'cobol_arithmetics_MultiplicativeArithmeticExpression', the role 'cobol_arithmetics_MultiplicativeArithmeticExpression63' has cardinality 0..*, and from 'MultiplicativeOperator', the role 'MultiplicativeOperator' has cardinality 0..*.
+An association connects 'PowerArithmeticExpressionChild' and 'cobol_arithmetics_PowerArithmeticExpression'. From 'PowerArithmeticExpressionChild', the role 'PowerArithmeticExpressionChild' has cardinality 0..*, and from 'cobol_arithmetics_PowerArithmeticExpression', the role 'cobol_arithmetics_PowerArithmeticExpression' has cardinality 0..*.
+An association connects 'UnaryArithmeticExpressionChild' and 'cobol_arithmetics_UnaryArithmeticExpression'. From 'UnaryArithmeticExpressionChild', the role 'UnaryArithmeticExpressionChild' has cardinality 0..*, and from 'cobol_arithmetics_UnaryArithmeticExpression', the role 'cobol_arithmetics_UnaryArithmeticExpression' has cardinality 0..*.
+An association connects 'UnaryOperator' and 'cobol_arithmetics_UnaryArithmeticExpression'. From 'UnaryOperator', the role 'UnaryOperator' has cardinality 0..*, and from 'cobol_arithmetics_UnaryArithmeticExpression', the role 'cobol_arithmetics_UnaryArithmeticExpression67' has cardinality 0..*.
+An association connects 'Equal' and 'cobol_arithmetics_AssignmentExpression'. From 'Equal', the role 'Equal' has cardinality 0..*, and from 'cobol_arithmetics_AssignmentExpression', the role 'cobol_arithmetics_AssignmentExpression' has cardinality 0..*.
+An association connects 'ArithmeticExpression' and 'cobol_arithmetics_AssignmentExpression'. From 'ArithmeticExpression', the role 'ArithmeticExpression' has cardinality 0..*, and from 'cobol_arithmetics_AssignmentExpression', the role 'cobol_arithmetics_AssignmentExpression70' has cardinality 0..*.
+An association connects 'ArithmeticExpression' and 'cobol_arithmetics_AssignmentExpression'. From 'ArithmeticExpression', the role 'ArithmeticExpression73' has cardinality 0..*, and from 'cobol_arithmetics_AssignmentExpression', the role 'cobol_arithmetics_AssignmentExpression72' has cardinality 0..*.
+An association connects 'cobol_arithmetics_RangeExpression' and 'RangeExpressionChild'. From 'cobol_arithmetics_RangeExpression', the role 'cobol_arithmetics_RangeExpression' has cardinality 0..*, and from 'RangeExpressionChild', the role 'RangeExpressionChild' has cardinality 0..*.
+An association connects 'cobol_arithmetics_RangeExpression' and 'Through'. From 'cobol_arithmetics_RangeExpression', the role 'cobol_arithmetics_RangeExpression76' has cardinality 0..*, and from 'Through', the role 'Through' has cardinality 0..*.
+An association connects 'cobol_arithmetics_NestedArithmeticExpression' and 'ArithmeticExpression'. From 'cobol_arithmetics_NestedArithmeticExpression', the role 'cobol_arithmetics_NestedArithmeticExpression' has cardinality 0..*, and from 'ArithmeticExpression', the role 'ArithmeticExpression78' has cardinality 0..*.
+An association connects 'CompilationUnit' and 'cobol_containers_CompilationGroup'. From 'CompilationUnit', the role 'CompilationUnit' has cardinality 0..*, and from 'cobol_containers_CompilationGroup', the role 'cobol_containers_CompilationGroup' has cardinality 0..*.
+An association connects 'IdentificationDivision' and 'cobol_containers_CompilationUnit'. From 'IdentificationDivision', the role 'IdentificationDivision' has cardinality 0..*, and from 'cobol_containers_CompilationUnit', the role 'cobol_containers_CompilationUnit' has cardinality 0..*.
+An association connects 'EnvironmentDivision' and 'cobol_containers_CompilationUnit'. From 'EnvironmentDivision', the role 'EnvironmentDivision' has cardinality 0..*, and from 'cobol_containers_CompilationUnit', the role 'cobol_containers_CompilationUnit82' has cardinality 0..*.
+An association connects 'cobol_containers_CompilationUnit' and 'DataDivision'. From 'cobol_containers_CompilationUnit', the role 'cobol_containers_CompilationUnit84' has cardinality 0..*, and from 'DataDivision', the role 'DataDivision' has cardinality 0..*.
+An association connects 'ProcedureDivision' and 'cobol_containers_CompilationUnit'. From 'ProcedureDivision', the role 'ProcedureDivision' has cardinality 0..*, and from 'cobol_containers_CompilationUnit', the role 'cobol_containers_CompilationUnit86' has cardinality 0..*.
+An association connects 'cobol_containers_CompilationUnit' and 'CompilationUnit'. From 'cobol_containers_CompilationUnit', the role 'cobol_containers_CompilationUnit88' has cardinality 0..*, and from 'CompilationUnit', the role 'CompilationUnit89' has cardinality 0..*.
+An association connects 'cobol_divisions_Division' and 'Section'. From 'cobol_divisions_Division', the role 'cobol_divisions_Division' has cardinality 0..*, and from 'Section', the role 'Section' has cardinality 0..*.
+An association connects 'Paragraph' and 'cobol_divisions_Division'. From 'Paragraph', the role 'Paragraph' has cardinality 0..*, and from 'cobol_divisions_Division', the role 'cobol_divisions_Division92' has cardinality 0..*.
+An association connects 'StatementContainer' and 'cobol_divisions_Division'. From 'StatementContainer', the role 'StatementContainer' has cardinality 0..*, and from 'cobol_divisions_Division', the role 'cobol_divisions_Division94' has cardinality 0..*.
+An association connects 'cobol_divisions_ProcedureDivision' and 'Declaratives'. From 'cobol_divisions_ProcedureDivision', the role 'cobol_divisions_ProcedureDivision' has cardinality 0..*, and from 'Declaratives', the role 'Declaratives' has cardinality 0..*.
+An association connects 'ConstantLiteral' and 'cobol_literals_AllLiteral'. From 'ConstantLiteral', the role 'ConstantLiteral' has cardinality 0..*, and from 'cobol_literals_AllLiteral', the role 'cobol_literals_AllLiteral' has cardinality 0..*.
+An association connects 'cobol_paragraphs_Paragraph' and 'StatementContainer'. From 'cobol_paragraphs_Paragraph', the role 'cobol_paragraphs_Paragraph' has cardinality 0..*, and from 'StatementContainer', the role 'StatementContainer98' has cardinality 0..*.
+An association connects 'cobol_paragraphs_SourceComputerParagraph' and 'DebuggingMode'. From 'cobol_paragraphs_SourceComputerParagraph', the role 'cobol_paragraphs_SourceComputerParagraph' has cardinality 0..*, and from 'DebuggingMode', the role 'DebuggingMode' has cardinality 0..*.
+An association connects 'SelectStatement' and 'cobol_paragraphs_FileControlParagraph'. From 'SelectStatement', the role 'SelectStatement' has cardinality 0..*, and from 'cobol_paragraphs_FileControlParagraph', the role 'cobol_paragraphs_FileControlParagraph' has cardinality 0..*.
+An association connects 'SpecialNameStatement' and 'cobol_paragraphs_SpecialNamesParagraph'. From 'SpecialNameStatement', the role 'SpecialNameStatement' has cardinality 0..*, and from 'cobol_paragraphs_SpecialNamesParagraph', the role 'cobol_paragraphs_SpecialNamesParagraph' has cardinality 0..*.
+An association connects 'SpecialNamesParagraphWater' and 'cobol_paragraphs_SpecialNamesParagraph'. From 'SpecialNamesParagraphWater', the role 'SpecialNamesParagraphWater' has cardinality 0..*, and from 'cobol_paragraphs_SpecialNamesParagraph', the role 'cobol_paragraphs_SpecialNamesParagraph103' has cardinality 0..*.
+An association connects 'cobol_references_ReferenceableElement' and 'ReferenceableElement'. From 'cobol_references_ReferenceableElement', the role 'ReferenceableElement' has cardinality 0..*, and from 'ReferenceableElement', the role 'references' has cardinality 0..*.
+An association connects 'cobol_references_ReferenceableElement' and 'ReferenceableElement'. From 'cobol_references_ReferenceableElement', the role 'ReferenceableElement106' has cardinality 0..*, and from 'ReferenceableElement', the role 'references107' has cardinality 0..*.
+An association connects 'ReferenceableElement' and 'cobol_references_ElementReference'. From 'ReferenceableElement', the role 'ReferenceableElement109' has cardinality 0..*, and from 'cobol_references_ElementReference', the role 'cobol_references_ElementReference' has cardinality 0..*.
+An association connects 'ElementReference' and 'cobol_references_Qualifiable'. From 'ElementReference', the role 'ElementReference' has cardinality 0..*, and from 'cobol_references_Qualifiable', the role 'cobol_references_Qualifiable' has cardinality 0..*.
+An association connects 'cobol_sections_Section' and 'StatementContainer'. From 'cobol_sections_Section', the role 'cobol_sections_Section' has cardinality 0..*, and from 'StatementContainer', the role 'StatementContainer112' has cardinality 0..*.
+An association connects 'cobol_sections_Section' and 'Paragraph'. From 'cobol_sections_Section', the role 'cobol_sections_Section114' has cardinality 0..*, and from 'Paragraph', the role 'Paragraph115' has cardinality 0..*.
+An association connects 'Statement' and 'cobol_sections_DataDivisionSection'. From 'Statement', the role 'Statement' has cardinality 0..*, and from 'cobol_sections_DataDivisionSection', the role 'cobol_sections_DataDivisionSection' has cardinality 0..*.
+An association connects 'DataItem' and 'cobol_sections_DataDivisionSection'. From 'DataItem', the role 'DataItem' has cardinality 0..*, and from 'cobol_sections_DataDivisionSection', the role 'cobol_sections_DataDivisionSection118' has cardinality 0..*.
+An association connects 'cobol_sections_FileSection' and 'FileName'. From 'cobol_sections_FileSection', the role 'cobol_sections_FileSection' has cardinality 0..*, and from 'FileName', the role 'FileName' has cardinality 0..*.
+An association connects 'cobol_sentences_StatementContainer' and 'Statement'. From 'cobol_sentences_StatementContainer', the role 'cobol_sentences_StatementContainer' has cardinality 0..*, and from 'Statement', the role 'Statement121' has cardinality 0..*.
+An association connects 'Sentence' and 'cobol_sentences_Sentence'. From 'Sentence', the role 'Sentence' has cardinality 0..*, and from 'cobol_sentences_Sentence', the role 'cobol_sentences_Sentence' has cardinality 0..*.
+An association connects 'Identifier' and 'cobol_operands_RoundedIdentifier'. From 'Identifier', the role 'Identifier' has cardinality 0..*, and from 'cobol_operands_RoundedIdentifier', the role 'cobol_operands_RoundedIdentifier' has cardinality 0..*.
+An association connects 'cobol_statements_Statement' and 'Statement'. From 'cobol_statements_Statement', the role 'cobol_statements_Statement' has cardinality 0..*, and from 'Statement', the role 'Statement125' has cardinality 0..*.
+An association connects 'ArithmeticOperand' and 'cobol_statements_ArithmeticStatement'. From 'ArithmeticOperand', the role 'ArithmeticOperand' has cardinality 0..*, and from 'cobol_statements_ArithmeticStatement', the role 'cobol_statements_ArithmeticStatement' has cardinality 0..*.
+An association connects 'ArithmeticOperand' and 'cobol_statements_ArithmeticStatement'. From 'ArithmeticOperand', the role 'ArithmeticOperand129' has cardinality 0..*, and from 'cobol_statements_ArithmeticStatement', the role 'cobol_statements_ArithmeticStatement128' has cardinality 0..*.
+An association connects 'ArithmeticOperand' and 'cobol_statements_Add'. From 'ArithmeticOperand', the role 'ArithmeticOperand131' has cardinality 0..*, and from 'cobol_statements_Add', the role 'cobol_statements_Add' has cardinality 0..*.
+An association connects 'ArithmeticOperand' and 'cobol_statements_Subtract'. From 'ArithmeticOperand', the role 'ArithmeticOperand133' has cardinality 0..*, and from 'cobol_statements_Subtract', the role 'cobol_statements_Subtract' has cardinality 0..*.
+An association connects 'ArithmeticOperand' and 'cobol_statements_Multiply'. From 'ArithmeticOperand', the role 'ArithmeticOperand135' has cardinality 0..*, and from 'cobol_statements_Multiply', the role 'cobol_statements_Multiply' has cardinality 0..*.
+An association connects 'cobol_statements_Divide' and 'ArithmeticOperand'. From 'cobol_statements_Divide', the role 'cobol_statements_Divide' has cardinality 0..*, and from 'ArithmeticOperand', the role 'ArithmeticOperand137' has cardinality 0..*.
+An association connects 'Identifier' and 'cobol_statements_Divide'. From 'Identifier', the role 'Identifier140' has cardinality 0..*, and from 'cobol_statements_Divide', the role 'cobol_statements_Divide139' has cardinality 0..*.
+An association connects 'cobol_statements_PerformProcedure' and 'ProcedureRangeLabel'. From 'cobol_statements_PerformProcedure', the role 'cobol_statements_PerformProcedure' has cardinality 0..*, and from 'ProcedureRangeLabel', the role 'ProcedureRangeLabel' has cardinality 0..*.
+An association connects 'cobol_statements_Jump' and 'ProcedureRangeLabel'. From 'cobol_statements_Jump', the role 'cobol_statements_Jump' has cardinality 0..*, and from 'ProcedureRangeLabel', the role 'ProcedureRangeLabel143' has cardinality 0..*.
+An association connects 'IdentifierReference' and 'cobol_statements_GoTo'. From 'IdentifierReference', the role 'IdentifierReference' has cardinality 0..*, and from 'cobol_statements_GoTo', the role 'cobol_statements_GoTo' has cardinality 0..*.
+An association connects 'Statement' and 'cobol_statements_NestedStatement'. From 'Statement', the role 'Statement146' has cardinality 0..*, and from 'cobol_statements_NestedStatement', the role 'cobol_statements_NestedStatement' has cardinality 0..*.
+An association connects 'cobol_statements_Move' and 'PrimaryOperand'. From 'cobol_statements_Move', the role 'cobol_statements_Move' has cardinality 0..*, and from 'PrimaryOperand', the role 'PrimaryOperand' has cardinality 0..*.
+An association connects 'cobol_statements_Move' and 'PrimaryOperand'. From 'cobol_statements_Move', the role 'cobol_statements_Move149' has cardinality 0..*, and from 'PrimaryOperand', the role 'PrimaryOperand150' has cardinality 0..*.
+An association connects 'cobol_statements_Condition' and 'Statement'. From 'cobol_statements_Condition', the role 'cobol_statements_Condition' has cardinality 0..*, and from 'Statement', the role 'Statement152' has cardinality 0..*.
+An association connects 'Condition' and 'cobol_statements_Conditional'. From 'Condition', the role 'Condition154' has cardinality 0..*, and from 'cobol_statements_Conditional', the role 'cobol_statements_Conditional' has cardinality 0..*.
+An association connects 'cobol_statements_Stop' and 'StopLabel'. From 'cobol_statements_Stop', the role 'cobol_statements_Stop' has cardinality 0..*, and from 'StopLabel', the role 'StopLabel' has cardinality 0..*.
+An association connects 'PrimaryOperand' and 'cobol_statements_Display'. From 'PrimaryOperand', the role 'PrimaryOperand157' has cardinality 0..*, and from 'cobol_statements_Display', the role 'cobol_statements_Display' has cardinality 0..*.
+An association connects 'cobol_statements_Display' and 'Environment'. From 'cobol_statements_Display', the role 'cobol_statements_Display159' has cardinality 0..*, and from 'Environment', the role 'Environment' has cardinality 0..*.
+An association connects 'cobol_statements_Compute' and 'AssignmentExpression'. From 'cobol_statements_Compute', the role 'cobol_statements_Compute' has cardinality 0..*, and from 'AssignmentExpression', the role 'AssignmentExpression' has cardinality 0..*.
+An association connects 'cobol_statements_Accept' and 'PrimaryOperand'. From 'cobol_statements_Accept', the role 'cobol_statements_Accept' has cardinality 0..*, and from 'PrimaryOperand', the role 'PrimaryOperand162' has cardinality 0..*.
+An association connects 'cobol_statements_ErrorHandled' and 'Handler'. From 'cobol_statements_ErrorHandled', the role 'cobol_statements_ErrorHandled' has cardinality 0..*, and from 'Handler', the role 'Handler' has cardinality 0..*.
+An association connects 'FileNameReference' and 'cobol_statements_Return'. From 'FileNameReference', the role 'FileNameReference' has cardinality 0..*, and from 'cobol_statements_Return', the role 'cobol_statements_Return' has cardinality 0..*.
+An association connects 'cobol_statements_Return' and 'IdentifierReference'. From 'cobol_statements_Return', the role 'cobol_statements_Return166' has cardinality 0..*, and from 'IdentifierReference', the role 'IdentifierReference167' has cardinality 0..*.
+An association connects 'PrimaryOperand' and 'cobol_statements_SetStatement'. From 'PrimaryOperand', the role 'PrimaryOperand169' has cardinality 0..*, and from 'cobol_statements_SetStatement', the role 'cobol_statements_SetStatement' has cardinality 0..*.
+An association connects 'SwitchStatus' and 'cobol_statements_SetSwitches'. From 'SwitchStatus', the role 'SwitchStatus' has cardinality 0..*, and from 'cobol_statements_SetSwitches', the role 'cobol_statements_SetSwitches' has cardinality 0..*.
+An association connects 'IndexNameReference' and 'cobol_statements_SetIndexName'. From 'IndexNameReference', the role 'IndexNameReference' has cardinality 0..*, and from 'cobol_statements_SetIndexName', the role 'cobol_statements_SetIndexName' has cardinality 0..*.
+An association connects 'cobol_statements_String' and 'Identifier'. From 'cobol_statements_String', the role 'cobol_statements_String' has cardinality 0..*, and from 'Identifier', the role 'Identifier173' has cardinality 0..*.
+An association connects 'Identifier' and 'cobol_statements_String'. From 'Identifier', the role 'Identifier176' has cardinality 0..*, and from 'cobol_statements_String', the role 'cobol_statements_String175' has cardinality 0..*.
+An association connects 'cobol_statements_String' and 'ConcatenatingStrings'. From 'cobol_statements_String', the role 'cobol_statements_String178' has cardinality 0..*, and from 'ConcatenatingStrings', the role 'ConcatenatingStrings' has cardinality 0..*.
+An association connects 'cobol_statements_Cancel' and 'PrimaryOperand'. From 'cobol_statements_Cancel', the role 'cobol_statements_Cancel' has cardinality 0..*, and from 'PrimaryOperand', the role 'PrimaryOperand180' has cardinality 0..*.
+An association connects 'cobol_statements_Call' and 'PrimaryOperand'. From 'cobol_statements_Call', the role 'cobol_statements_Call' has cardinality 0..*, and from 'PrimaryOperand', the role 'PrimaryOperand182' has cardinality 0..*.
+An association connects 'Identifier' and 'cobol_statements_Initialize'. From 'Identifier', the role 'Identifier184' has cardinality 0..*, and from 'cobol_statements_Initialize', the role 'cobol_statements_Initialize' has cardinality 0..*.
+An association connects 'cobol_statements_Initialize' and 'Replacement'. From 'cobol_statements_Initialize', the role 'cobol_statements_Initialize186' has cardinality 0..*, and from 'Replacement', the role 'Replacement' has cardinality 0..*.
+An association connects 'NormalEvaluateCase' and 'cobol_statements_SearchStatement'. From 'NormalEvaluateCase', the role 'NormalEvaluateCase' has cardinality 0..*, and from 'cobol_statements_SearchStatement', the role 'cobol_statements_SearchStatement' has cardinality 0..*.
+An association connects 'PrimaryOperand' and 'cobol_statements_SearchStatement'. From 'PrimaryOperand', the role 'PrimaryOperand190' has cardinality 0..*, and from 'cobol_statements_SearchStatement', the role 'cobol_statements_SearchStatement189' has cardinality 0..*.
+An association connects 'cobol_statements_SerialSearch' and 'Identifier'. From 'cobol_statements_SerialSearch', the role 'cobol_statements_SerialSearch' has cardinality 0..*, and from 'Identifier', the role 'Identifier192' has cardinality 0..*.
+An association connects 'Identifier' and 'cobol_statements_Unstring'. From 'Identifier', the role 'Identifier194' has cardinality 0..*, and from 'cobol_statements_Unstring', the role 'cobol_statements_Unstring' has cardinality 0..*.
+An association connects 'IdentifierReference' and 'cobol_statements_Unstring'. From 'IdentifierReference', the role 'IdentifierReference197' has cardinality 0..*, and from 'cobol_statements_Unstring', the role 'cobol_statements_Unstring196' has cardinality 0..*.
+An association connects 'Identifier' and 'cobol_statements_Unstring'. From 'Identifier', the role 'Identifier200' has cardinality 0..*, and from 'cobol_statements_Unstring', the role 'cobol_statements_Unstring199' has cardinality 0..*.
+An association connects 'cobol_statements_Unstring' and 'SplittedString'. From 'cobol_statements_Unstring', the role 'cobol_statements_Unstring202' has cardinality 0..*, and from 'SplittedString', the role 'SplittedString' has cardinality 0..*.
+An association connects 'Condition' and 'cobol_statements_Unstring'. From 'Condition', the role 'Condition205' has cardinality 0..*, and from 'cobol_statements_Unstring', the role 'cobol_statements_Unstring204' has cardinality 0..*.
+An association connects 'cobol_statements_Unstring' and 'Identifier'. From 'cobol_statements_Unstring', the role 'cobol_statements_Unstring207' has cardinality 0..*, and from 'Identifier', the role 'Identifier208' has cardinality 0..*.
+An association connects 'cobol_statements_Evaluate' and 'EvaluateCase'. From 'cobol_statements_Evaluate', the role 'cobol_statements_Evaluate' has cardinality 0..*, and from 'EvaluateCase', the role 'EvaluateCase' has cardinality 0..*.
+An association connects 'ExpressionList' and 'cobol_statements_Evaluate'. From 'ExpressionList', the role 'ExpressionList' has cardinality 0..*, and from 'cobol_statements_Evaluate', the role 'cobol_statements_Evaluate211' has cardinality 0..*.
+An association connects 'ExpressionList' and 'cobol_statements_EvaluateCase'. From 'ExpressionList', the role 'ExpressionList213' has cardinality 0..*, and from 'cobol_statements_EvaluateCase', the role 'cobol_statements_EvaluateCase' has cardinality 0..*.
+An association connects 'cobol_statements_Inspect' and 'TallyingIn'. From 'cobol_statements_Inspect', the role 'cobol_statements_Inspect' has cardinality 0..*, and from 'TallyingIn', the role 'TallyingIn' has cardinality 0..*.
+An association connects 'Replacement' and 'cobol_statements_Inspect'. From 'Replacement', the role 'Replacement217' has cardinality 0..*, and from 'cobol_statements_Inspect', the role 'cobol_statements_Inspect216' has cardinality 0..*.
+An association connects 'Replacement' and 'cobol_statements_Inspect'. From 'Replacement', the role 'Replacement220' has cardinality 0..*, and from 'cobol_statements_Inspect', the role 'cobol_statements_Inspect219' has cardinality 0..*.
+An association connects 'cobol_statements_Inspect' and 'PrimaryOperand'. From 'cobol_statements_Inspect', the role 'cobol_statements_Inspect222' has cardinality 0..*, and from 'PrimaryOperand', the role 'PrimaryOperand223' has cardinality 0..*.
+An association connects 'cobol_statements_Set' and 'IdentifierReference'. From 'cobol_statements_Set', the role 'cobol_statements_Set' has cardinality 0..*, and from 'IdentifierReference', the role 'IdentifierReference225' has cardinality 0..*.
+An association connects 'cobol_statements_Read' and 'Identifier'. From 'cobol_statements_Read', the role 'cobol_statements_Read' has cardinality 0..*, and from 'Identifier', the role 'Identifier227' has cardinality 0..*.
+An association connects 'Identifier' and 'cobol_statements_Read'. From 'Identifier', the role 'Identifier230' has cardinality 0..*, and from 'cobol_statements_Read', the role 'cobol_statements_Read229' has cardinality 0..*.
+An association connects 'FileNameReference' and 'cobol_statements_Read'. From 'FileNameReference', the role 'FileNameReference233' has cardinality 0..*, and from 'cobol_statements_Read', the role 'cobol_statements_Read232' has cardinality 0..*.
+An association connects 'Identifier' and 'cobol_statements_Write'. From 'Identifier', the role 'Identifier235' has cardinality 0..*, and from 'cobol_statements_Write', the role 'cobol_statements_Write' has cardinality 0..*.
+An association connects 'cobol_statements_Write' and 'Identifier'. From 'cobol_statements_Write', the role 'cobol_statements_Write237' has cardinality 0..*, and from 'Identifier', the role 'Identifier238' has cardinality 0..*.
+An association connects 'IntegerLiteral' and 'cobol_statements_Write'. From 'IntegerLiteral', the role 'IntegerLiteral' has cardinality 0..*, and from 'cobol_statements_Write', the role 'cobol_statements_Write240' has cardinality 0..*.
+An association connects 'cobol_statements_Write' and 'MnemonicNameReference'. From 'cobol_statements_Write', the role 'cobol_statements_Write242' has cardinality 0..*, and from 'MnemonicNameReference', the role 'MnemonicNameReference' has cardinality 0..*.
+An association connects 'cobol_statements_Write' and 'Identifier'. From 'cobol_statements_Write', the role 'cobol_statements_Write244' has cardinality 0..*, and from 'Identifier', the role 'Identifier245' has cardinality 0..*.
+An association connects 'MnemonicNameReference' and 'cobol_statements_SwitchStatus'. From 'MnemonicNameReference', the role 'MnemonicNameReference247' has cardinality 0..*, and from 'cobol_statements_SwitchStatus', the role 'cobol_statements_SwitchStatus' has cardinality 0..*.
+An association connects 'Condition' and 'cobol_statements_PerformUntilCondition'. From 'Condition', the role 'Condition249' has cardinality 0..*, and from 'cobol_statements_PerformUntilCondition', the role 'cobol_statements_PerformUntilCondition' has cardinality 0..*.
+An association connects 'PrimaryOperand' and 'cobol_statements_PerformFixedTimes'. From 'PrimaryOperand', the role 'PrimaryOperand251' has cardinality 0..*, and from 'cobol_statements_PerformFixedTimes', the role 'cobol_statements_PerformFixedTimes' has cardinality 0..*.
+An association connects 'AfterUntilCondition' and 'cobol_statements_PerformProcedureUntilCondition'. From 'AfterUntilCondition', the role 'AfterUntilCondition' has cardinality 0..*, and from 'cobol_statements_PerformProcedureUntilCondition', the role 'cobol_statements_PerformProcedureUntilCondition' has cardinality 0..*.
+An association connects 'cobol_statements_FileIOStatement' and 'FileNameReference'. From 'cobol_statements_FileIOStatement', the role 'cobol_statements_FileIOStatement' has cardinality 0..*, and from 'FileNameReference', the role 'FileNameReference254' has cardinality 0..*.
+An association connects 'InputDirective' and 'cobol_statements_FileIOStatement'. From 'InputDirective', the role 'InputDirective' has cardinality 0..*, and from 'cobol_statements_FileIOStatement', the role 'cobol_statements_FileIOStatement256' has cardinality 0..*.
+An association connects 'cobol_statements_FileIOStatement' and 'OutputDirective'. From 'cobol_statements_FileIOStatement', the role 'cobol_statements_FileIOStatement258' has cardinality 0..*, and from 'OutputDirective', the role 'OutputDirective' has cardinality 0..*.
+An association connects 'cobol_statements_FileIOStatement' and 'KeyDescriptor'. From 'cobol_statements_FileIOStatement', the role 'cobol_statements_FileIOStatement260' has cardinality 0..*, and from 'KeyDescriptor', the role 'KeyDescriptor' has cardinality 0..*.
+An association connects 'cobol_statements_Release' and 'IdentifierReference'. From 'cobol_statements_Release', the role 'cobol_statements_Release' has cardinality 0..*, and from 'IdentifierReference', the role 'IdentifierReference262' has cardinality 0..*.
+An association connects 'IdentifierReference' and 'cobol_statements_Release'. From 'IdentifierReference', the role 'IdentifierReference265' has cardinality 0..*, and from 'cobol_statements_Release', the role 'cobol_statements_Release264' has cardinality 0..*.
+An association connects 'cobol_statements_KeyDescriptor' and 'IdentifierReference'. From 'cobol_statements_KeyDescriptor', the role 'cobol_statements_KeyDescriptor' has cardinality 0..*, and from 'IdentifierReference', the role 'IdentifierReference267' has cardinality 0..*.
+An association connects 'cobol_statements_IOStatement' and 'IOFileDescriptor'. From 'cobol_statements_IOStatement', the role 'cobol_statements_IOStatement' has cardinality 0..*, and from 'IOFileDescriptor', the role 'IOFileDescriptor' has cardinality 0..*.
+An association connects 'IOFile' and 'cobol_statements_IOFileDescriptor'. From 'IOFile', the role 'IOFile' has cardinality 0..*, and from 'cobol_statements_IOFileDescriptor', the role 'cobol_statements_IOFileDescriptor' has cardinality 0..*.
+An association connects 'cobol_statements_IOFile' and 'FileNameReference'. From 'cobol_statements_IOFile', the role 'cobol_statements_IOFile' has cardinality 0..*, and from 'FileNameReference', the role 'FileNameReference271' has cardinality 0..*.
+An association connects 'cobol_statements_TallyingIn' and 'Tallying'. From 'cobol_statements_TallyingIn', the role 'cobol_statements_TallyingIn' has cardinality 0..*, and from 'Tallying', the role 'Tallying' has cardinality 0..*.
+An association connects 'Identifier' and 'cobol_statements_TallyingIn'. From 'Identifier', the role 'Identifier275' has cardinality 0..*, and from 'cobol_statements_TallyingIn', the role 'cobol_statements_TallyingIn274' has cardinality 0..*.
+An association connects 'cobol_statements_VaryingUntilCondition' and 'IdentifierReference'. From 'cobol_statements_VaryingUntilCondition', the role 'cobol_statements_VaryingUntilCondition' has cardinality 0..*, and from 'IdentifierReference', the role 'IdentifierReference277' has cardinality 0..*.
+An association connects 'cobol_statements_VaryingUntilCondition' and 'PrimaryOperand'. From 'cobol_statements_VaryingUntilCondition', the role 'cobol_statements_VaryingUntilCondition279' has cardinality 0..*, and from 'PrimaryOperand', the role 'PrimaryOperand280' has cardinality 0..*.
+An association connects 'PrimaryOperand' and 'cobol_statements_VaryingUntilCondition'. From 'PrimaryOperand', the role 'PrimaryOperand283' has cardinality 0..*, and from 'cobol_statements_VaryingUntilCondition', the role 'cobol_statements_VaryingUntilCondition282' has cardinality 0..*.
+An association connects 'FileNameReference' and 'cobol_statements_Start'. From 'FileNameReference', the role 'FileNameReference285' has cardinality 0..*, and from 'cobol_statements_Start', the role 'cobol_statements_Start' has cardinality 0..*.
+An association connects 'RelationalOperator' and 'cobol_statements_Start'. From 'RelationalOperator', the role 'RelationalOperator288' has cardinality 0..*, and from 'cobol_statements_Start', the role 'cobol_statements_Start287' has cardinality 0..*.
+An association connects 'Identifier' and 'cobol_statements_Start'. From 'Identifier', the role 'Identifier291' has cardinality 0..*, and from 'cobol_statements_Start', the role 'cobol_statements_Start290' has cardinality 0..*.
+An association connects 'cobol_statements_Start' and 'Negate'. From 'cobol_statements_Start', the role 'cobol_statements_Start293' has cardinality 0..*, and from 'Negate', the role 'Negate294' has cardinality 0..*.
+An association connects 'cobol_statements_Delete' and 'FileNameReference'. From 'cobol_statements_Delete', the role 'cobol_statements_Delete' has cardinality 0..*, and from 'FileNameReference', the role 'FileNameReference296' has cardinality 0..*.
+An association connects 'cobol_identifiers_Subscript' and 'Operand'. From 'cobol_identifiers_Subscript', the role 'cobol_identifiers_Subscript' has cardinality 0..*, and from 'Operand', the role 'Operand' has cardinality 0..*.
+An association connects 'ReferenceModifier' and 'cobol_identifiers_Identifier'. From 'ReferenceModifier', the role 'ReferenceModifier' has cardinality 0..*, and from 'cobol_identifiers_Identifier', the role 'cobol_identifiers_Identifier' has cardinality 0..*.
+An association connects 'Subscript' and 'cobol_identifiers_IdentifierReference'. From 'Subscript', the role 'Subscript' has cardinality 0..*, and from 'cobol_identifiers_IdentifierReference', the role 'cobol_identifiers_IdentifierReference' has cardinality 0..*.
+An association connects 'cobol_identifiers_IdentifierReference' and 'Qualifier'. From 'cobol_identifiers_IdentifierReference', the role 'cobol_identifiers_IdentifierReference301' has cardinality 0..*, and from 'Qualifier', the role 'Qualifier' has cardinality 0..*.
+An association connects 'ArithmeticExpression' and 'cobol_identifiers_ReferenceModifier'. From 'ArithmeticExpression', the role 'ArithmeticExpression303' has cardinality 0..*, and from 'cobol_identifiers_ReferenceModifier', the role 'cobol_identifiers_ReferenceModifier' has cardinality 0..*.
+An association connects 'cobol_identifiers_ReferenceModifier' and 'ArithmeticExpression'. From 'cobol_identifiers_ReferenceModifier', the role 'cobol_identifiers_ReferenceModifier305' has cardinality 0..*, and from 'ArithmeticExpression', the role 'ArithmeticExpression306' has cardinality 0..*.
+An association connects 'AdditiveOperator' and 'cobol_identifiers_RelativeSubscript'. From 'AdditiveOperator', the role 'AdditiveOperator308' has cardinality 0..*, and from 'cobol_identifiers_RelativeSubscript', the role 'cobol_identifiers_RelativeSubscript' has cardinality 0..*.
+An association connects 'IntegerLiteral' and 'cobol_identifiers_RelativeSubscript'. From 'IntegerLiteral', the role 'IntegerLiteral311' has cardinality 0..*, and from 'cobol_identifiers_RelativeSubscript', the role 'cobol_identifiers_RelativeSubscript310' has cardinality 0..*.
+An association connects 'cobol_ios_FileDirective' and 'FileNameReference'. From 'cobol_ios_FileDirective', the role 'cobol_ios_FileDirective' has cardinality 0..*, and from 'FileNameReference', the role 'FileNameReference313' has cardinality 0..*.
+An association connects 'Label' and 'cobol_ios_ProcedureDirective'. From 'Label', the role 'Label' has cardinality 0..*, and from 'cobol_ios_ProcedureDirective', the role 'cobol_ios_ProcedureDirective' has cardinality 0..*.
+An association connects 'cobol_water_IncompleteElement' and 'Water'. From 'cobol_water_IncompleteElement', the role 'cobol_water_IncompleteElement' has cardinality 0..*, and from 'Water', the role 'Water' has cardinality 0..*.
+An association connects 'PrimaryOperand' and 'cobol_registers_Register'. From 'PrimaryOperand', the role 'PrimaryOperand317' has cardinality 0..*, and from 'cobol_registers_Register', the role 'cobol_registers_Register' has cardinality 0..*.
+An association connects 'cobol_dataitems_RenamingDataName' and 'RangeExpression'. From 'cobol_dataitems_RenamingDataName', the role 'cobol_dataitems_RenamingDataName' has cardinality 0..*, and from 'RangeExpression', the role 'RangeExpression' has cardinality 0..*.
+An association connects 'cobol_dataitems_Value' and 'Condition'. From 'cobol_dataitems_Value', the role 'cobol_dataitems_Value' has cardinality 0..*, and from 'Condition', the role 'Condition320' has cardinality 0..*.
+An association connects 'DataItemAttribute' and 'cobol_dataitems_DataItem'. From 'DataItemAttribute', the role 'DataItemAttribute' has cardinality 0..*, and from 'cobol_dataitems_DataItem', the role 'cobol_dataitems_DataItem' has cardinality 0..*.
+An association connects 'cobol_dataitems_DataItem' and 'DataItem'. From 'cobol_dataitems_DataItem', the role 'DataItem323' has cardinality 0..*, and from 'DataItem', the role 'dataitems' has cardinality 0..*.
+An association connects 'DataItem' and 'cobol_dataitems_DataItem'. From 'DataItem', the role 'dataitems326' has cardinality 0..*, and from 'cobol_dataitems_DataItem', the role 'DataItem325' has cardinality 0..*.
+An association connects 'DataItem' and 'cobol_dataitems_RecordName'. From 'DataItem', the role 'DataItem328' has cardinality 0..*, and from 'cobol_dataitems_RecordName', the role 'cobol_dataitems_RecordName' has cardinality 0..*.
+An association connects 'cobol_dataitems_Redefines' and 'IdentifierReference'. From 'cobol_dataitems_Redefines', the role 'cobol_dataitems_Redefines' has cardinality 0..*, and from 'IdentifierReference', the role 'IdentifierReference330' has cardinality 0..*.
+An association connects 'cobol_specialnames_AlphabetName' and 'AlphabetType'. From 'cobol_specialnames_AlphabetName', the role 'cobol_specialnames_AlphabetName' has cardinality 0..*, and from 'AlphabetType', the role 'AlphabetType' has cardinality 0..*.
+An association connects 'cobol_specialnames_UPSISwitchIs' and 'ConditionName'. From 'cobol_specialnames_UPSISwitchIs', the role 'cobol_specialnames_UPSISwitchIs' has cardinality 0..*, and from 'ConditionName', the role 'ConditionName' has cardinality 0..*.
+An association connects 'RangeExpression' and 'cobol_specialnames_ExplicitAlphabetType'. From 'RangeExpression', the role 'RangeExpression334' has cardinality 0..*, and from 'cobol_specialnames_ExplicitAlphabetType', the role 'cobol_specialnames_ExplicitAlphabetType' has cardinality 0..*.
+An association connects 'Literal' and 'cobol_specialnames_CurrencySign'. From 'Literal', the role 'Literal' has cardinality 0..*, and from 'cobol_specialnames_CurrencySign', the role 'cobol_specialnames_CurrencySign' has cardinality 0..*.
+An association connects 'cobol_specialnames_ClassName' and 'RangeExpression'. From 'cobol_specialnames_ClassName', the role 'cobol_specialnames_ClassName' has cardinality 0..*, and from 'RangeExpression', the role 'RangeExpression337' has cardinality 0..*.
+An association connects 'cobol_specialnames_MnemonicName' and 'Environment'. From 'cobol_specialnames_MnemonicName', the role 'cobol_specialnames_MnemonicName' has cardinality 0..*, and from 'Environment', the role 'Environment339' has cardinality 0..*.
+An association connects 'IntegerLiteral' and 'cobol_specialnames_SymbolicCharacter'. From 'IntegerLiteral', the role 'IntegerLiteral341' has cardinality 0..*, and from 'cobol_specialnames_SymbolicCharacter', the role 'cobol_specialnames_SymbolicCharacter' has cardinality 0..*.
+An association connects 'cobol_specialnames_SymbolicCharacterStatement' and 'SymbolicCharacter'. From 'cobol_specialnames_SymbolicCharacterStatement', the role 'cobol_specialnames_SymbolicCharacterStatement' has cardinality 0..*, and from 'SymbolicCharacter', the role 'SymbolicCharacter' has cardinality 0..*.
+An association connects 'AlphabetNameReference' and 'cobol_specialnames_SymbolicCharacterStatement'. From 'AlphabetNameReference', the role 'AlphabetNameReference' has cardinality 0..*, and from 'cobol_specialnames_SymbolicCharacterStatement', the role 'cobol_specialnames_SymbolicCharacterStatement344' has cardinality 0..*.
+An association connects 'TableDimension' and 'cobol_tables_Table'. From 'TableDimension', the role 'TableDimension' has cardinality 0..*, and from 'cobol_tables_Table', the role 'cobol_tables_Table' has cardinality 0..*.
+An association connects 'cobol_tables_Table' and 'IndexName'. From 'cobol_tables_Table', the role 'cobol_tables_Table347' has cardinality 0..*, and from 'IndexName', the role 'IndexName' has cardinality 0..*.
+An association connects 'cobol_tables_Table' and 'KeyName'. From 'cobol_tables_Table', the role 'cobol_tables_Table349' has cardinality 0..*, and from 'KeyName', the role 'KeyName' has cardinality 0..*.
+An association connects 'cobol_tables_Table' and 'TableDimension'. From 'cobol_tables_Table', the role 'cobol_tables_Table351' has cardinality 0..*, and from 'TableDimension', the role 'TableDimension352' has cardinality 0..*.
+An association connects 'cobol_tables_Table' and 'IdentifierReference'. From 'cobol_tables_Table', the role 'cobol_tables_Table354' has cardinality 0..*, and from 'IdentifierReference', the role 'IdentifierReference355' has cardinality 0..*.
+An association connects 'IdentifierReference' and 'cobol_tables_KeyName'. From 'IdentifierReference', the role 'IdentifierReference357' has cardinality 0..*, and from 'cobol_tables_KeyName', the role 'cobol_tables_KeyName' has cardinality 0..*.
+An association connects 'cobol_tables_IndexName' and 'AdditionalIndexName'. From 'cobol_tables_IndexName', the role 'cobol_tables_IndexName' has cardinality 0..*, and from 'AdditionalIndexName', the role 'AdditionalIndexName' has cardinality 0..*.
+An association connects 'cobol_files_FileName' and 'DataItem'. From 'cobol_files_FileName', the role 'cobol_files_FileName' has cardinality 0..*, and from 'DataItem', the role 'DataItem360' has cardinality 0..*.
+An association connects 'cobol_files_FileName' and 'DataItemAttribute'. From 'cobol_files_FileName', the role 'cobol_files_FileName362' has cardinality 0..*, and from 'DataItemAttribute', the role 'DataItemAttribute363' has cardinality 0..*.
+An association connects 'cobol_files_FileName' and 'StatementContainer'. From 'cobol_files_FileName', the role 'cobol_files_FileName365' has cardinality 0..*, and from 'StatementContainer', the role 'StatementContainer366' has cardinality 0..*.
+An association connects 'FileStatus' and 'cobol_files_SelectStatement'. From 'FileStatus', the role 'FileStatus' has cardinality 0..*, and from 'cobol_files_SelectStatement', the role 'cobol_files_SelectStatement' has cardinality 0..*.
+An association connects 'FileNameReference' and 'cobol_files_SelectStatement'. From 'FileNameReference', the role 'FileNameReference370' has cardinality 0..*, and from 'cobol_files_SelectStatement', the role 'cobol_files_SelectStatement369' has cardinality 0..*.
+An association connects 'IdentifierReference' and 'cobol_files_FileStatus'. From 'IdentifierReference', the role 'IdentifierReference372' has cardinality 0..*, and from 'cobol_files_FileStatus', the role 'cobol_files_FileStatus' has cardinality 0..*.
+An association connects 'cobol_files_FileStatus' and 'IdentifierReference'. From 'cobol_files_FileStatus', the role 'cobol_files_FileStatus374' has cardinality 0..*, and from 'IdentifierReference', the role 'IdentifierReference375' has cardinality 0..*.
+An association connects 'cobol_parameters_Parametrizable' and 'Parameter'. From 'cobol_parameters_Parametrizable', the role 'cobol_parameters_Parametrizable' has cardinality 0..*, and from 'Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'cobol_parameters_Parametrizable' and 'Parameter'. From 'cobol_parameters_Parametrizable', the role 'cobol_parameters_Parametrizable378' has cardinality 0..*, and from 'Parameter', the role 'Parameter379' has cardinality 0..*.
+An association connects 'DeclarativeSection' and 'cobol_declaratives_Declaratives'. From 'DeclarativeSection', the role 'DeclarativeSection' has cardinality 0..*, and from 'cobol_declaratives_Declaratives', the role 'cobol_declaratives_Declaratives' has cardinality 0..*.
+An association connects 'cobol_labels_ProcedureRange' and 'ProcedureRangeChild'. From 'cobol_labels_ProcedureRange', the role 'cobol_labels_ProcedureRange' has cardinality 0..*, and from 'ProcedureRangeChild', the role 'ProcedureRangeChild' has cardinality 0..*.
+An association connects 'Through' and 'cobol_labels_ProcedureRange'. From 'Through', the role 'Through384' has cardinality 0..*, and from 'cobol_labels_ProcedureRange', the role 'cobol_labels_ProcedureRange383' has cardinality 0..*.
+An association connects 'cobol_labels_ProcedureRangeChild' and 'Procedure'. From 'cobol_labels_ProcedureRangeChild', the role 'cobol_labels_ProcedureRangeChild' has cardinality 0..*, and from 'Procedure', the role 'Procedure' has cardinality 0..*.
+An association connects 'Section' and 'cobol_labels_ProcedureLabel'. From 'Section', the role 'Section387' has cardinality 0..*, and from 'cobol_labels_ProcedureLabel', the role 'cobol_labels_ProcedureLabel' has cardinality 0..*.
+An association connects 'PrimaryOperand' and 'cobol_functions_Argument'. From 'PrimaryOperand', the role 'PrimaryOperand389' has cardinality 0..*, and from 'cobol_functions_Argument', the role 'cobol_functions_Argument' has cardinality 0..*.
+An association connects 'cobol_functions_Argumentable' and 'Argument'. From 'cobol_functions_Argumentable', the role 'cobol_functions_Argumentable' has cardinality 0..*, and from 'Argument', the role 'Argument' has cardinality 0..*.
+An association connects 'Argument' and 'cobol_functions_Argumentable'. From 'Argument', the role 'Argument393' has cardinality 0..*, and from 'cobol_functions_Argumentable', the role 'cobol_functions_Argumentable392' has cardinality 0..*.
+An association connects 'cobol_handlers_NotErrorHandler' and 'Handler'. From 'cobol_handlers_NotErrorHandler', the role 'cobol_handlers_NotErrorHandler' has cardinality 0..*, and from 'Handler', the role 'Handler395' has cardinality 0..*.
+An association connects 'Location' and 'cobol_strings_StringManipulation'. From 'Location', the role 'Location' has cardinality 0..*, and from 'cobol_strings_StringManipulation', the role 'cobol_strings_StringManipulation' has cardinality 0..*.
+An association connects 'PrimaryOperand' and 'cobol_strings_ManipulatedStrings'. From 'PrimaryOperand', the role 'PrimaryOperand398' has cardinality 0..*, and from 'cobol_strings_ManipulatedStrings', the role 'cobol_strings_ManipulatedStrings' has cardinality 0..*.
+An association connects 'cobol_strings_ManipulatedStrings' and 'PrimaryOperand'. From 'cobol_strings_ManipulatedStrings', the role 'cobol_strings_ManipulatedStrings400' has cardinality 0..*, and from 'PrimaryOperand', the role 'PrimaryOperand401' has cardinality 0..*.
+An association connects 'PrimaryOperand' and 'cobol_strings_SplittedString'. From 'PrimaryOperand', the role 'PrimaryOperand403' has cardinality 0..*, and from 'cobol_strings_SplittedString', the role 'cobol_strings_SplittedString' has cardinality 0..*.
+An association connects 'PrimaryOperand' and 'cobol_strings_Location'. From 'PrimaryOperand', the role 'PrimaryOperand405' has cardinality 0..*, and from 'cobol_strings_Location', the role 'cobol_strings_Location' has cardinality 0..*.
+An association connects 'ReplacementOperand' and 'cobol_strings_Replacement'. From 'ReplacementOperand', the role 'ReplacementOperand' has cardinality 0..*, and from 'cobol_strings_Replacement', the role 'cobol_strings_Replacement' has cardinality 0..*.
+An association connects 'Tallying' and 'cobol_strings_TallyingOccurrence'. From 'Tallying', the role 'Tallying408' has cardinality 0..*, and from 'cobol_strings_TallyingOccurrence', the role 'cobol_strings_TallyingOccurrence' has cardinality 0..*.
+An association connects 'cobol_strings_ReplacementOccurrence' and 'Replacement'. From 'cobol_strings_ReplacementOccurrence', the role 'cobol_strings_ReplacementOccurrence' has cardinality 0..*, and from 'Replacement', the role 'Replacement410' has cardinality 0..*.
+An association connects 'PrimaryOperand' and 'cobol_strings_SpecificCharacter'. From 'PrimaryOperand', the role 'PrimaryOperand412' has cardinality 0..*, and from 'cobol_strings_SpecificCharacter', the role 'cobol_strings_SpecificCharacter' has cardinality 0..*.
+An association connects 'cobol_strings_SpecificCharacterBySpecificCharacter' and 'ReplacementOperand'. From 'cobol_strings_SpecificCharacterBySpecificCharacter', the role 'cobol_strings_SpecificCharacterBySpecificCharacter' has cardinality 0..*, and from 'ReplacementOperand', the role 'ReplacementOperand414' has cardinality 0..*.

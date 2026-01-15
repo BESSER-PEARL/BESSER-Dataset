@@ -1,0 +1,166 @@
+The domain model 'sgraph' describes the core structural elements and their relationships within the system.
+
+The model defines 37 main class(es).
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_ReactiveElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_Choice' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'sgraph_ReactionProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_FinalState' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_Effect' represents an important domain concept.
+It does not declare any attributes.
+
+'ScopedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_State' represents an important domain concept.
+It has the following attributes: 'leaf', which is of type bool; 'simple', which is of type bool; 'orthogonal', which is of type bool; 'composite', which is of type bool.
+
+'ReactiveElement' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_Entry' represents an important domain concept.
+It has one attribute: 'kind', which is of type str.
+
+'sgraph_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_Synchronization' represents an important domain concept.
+It does not declare any attributes.
+
+'DocumentedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_ImportDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'RegularState' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_SpecificationElement' represents an important domain concept.
+It has one attribute: 'specification', which is of type str.
+
+'sgraph_RegularState' represents an important domain concept.
+It does not declare any attributes.
+
+'Declaration' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_ScopedElement' represents an important domain concept.
+It has one attribute: 'namespace', which is of type str.
+
+'sgraph_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_CompositeElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_Trigger' represents an important domain concept.
+It does not declare any attributes.
+
+'Pseudostate' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_Reaction' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_Scope' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_Vertex' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_Statechart' represents an important domain concept.
+It does not declare any attributes.
+
+'Reaction' represents an important domain concept.
+It does not declare any attributes.
+
+'DomainElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SpecificationElement' represents an important domain concept.
+It does not declare any attributes.
+
+'sgraph_Exit' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ChoiceKind' defines the following possible values: 'static', 'dynamic'.
+The enumeration 'EntryKind' defines the following possible values: 'shallowHistory', 'deepHistory', 'initial'.
+
+The model also captures inheritance relationships between classes.
+The class 'sgraph_Pseudostate' is a specialization of 'Vertex'.
+The class 'sgraph_Vertex' is a specialization of 'NamedElement'.
+The class 'sgraph_Region' is a specialization of 'NamedElement'.
+The class 'sgraph_Transition' is a specialization of 'SpecificationElement'.
+The class 'sgraph_Transition' is a specialization of 'Reaction'.
+The class 'sgraph_Transition' is a specialization of 'DocumentedElement'.
+The class 'sgraph_FinalState' is a specialization of 'RegularState'.
+The class 'sgraph_Choice' is a specialization of 'Pseudostate'.
+The class 'sgraph_Statechart' is a specialization of 'SpecificationElement'.
+The class 'sgraph_Statechart' is a specialization of 'ReactiveElement'.
+The class 'sgraph_Statechart' is a specialization of 'ScopedElement'.
+The class 'sgraph_Statechart' is a specialization of 'CompositeElement'.
+The class 'sgraph_Statechart' is a specialization of 'NamedElement'.
+The class 'sgraph_Statechart' is a specialization of 'DocumentedElement'.
+The class 'sgraph_Statechart' is a specialization of 'DomainElement'.
+The class 'sgraph_Entry' is a specialization of 'Pseudostate'.
+The class 'sgraph_Exit' is a specialization of 'Pseudostate'.
+The class 'sgraph_Synchronization' is a specialization of 'Pseudostate'.
+The class 'sgraph_State' is a specialization of 'SpecificationElement'.
+The class 'sgraph_State' is a specialization of 'ReactiveElement'.
+The class 'sgraph_State' is a specialization of 'ScopedElement'.
+The class 'sgraph_State' is a specialization of 'RegularState'.
+The class 'sgraph_State' is a specialization of 'CompositeElement'.
+The class 'sgraph_State' is a specialization of 'DocumentedElement'.
+The class 'sgraph_RegularState' is a specialization of 'Vertex'.
+The class 'sgraph_ImportDeclaration' is a specialization of 'Declaration'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sgraph_Region' and 'sgraph_Vertex'. From 'sgraph_Region', the role 'Region' has cardinality 0..*, and from 'sgraph_Vertex', the role 'vertices' has cardinality 0..*.
+An association connects 'sgraph_Transition' and 'sgraph_Vertex'. From 'sgraph_Transition', the role 'Transition' has cardinality 0..*, and from 'sgraph_Vertex', the role 'target' has cardinality 0..*.
+An association connects 'sgraph_Vertex' and 'sgraph_Transition'. From 'sgraph_Vertex', the role 'source' has cardinality 0..*, and from 'sgraph_Transition', the role 'Transition3' has cardinality 0..*.
+An association connects 'sgraph_Vertex' and 'sgraph_Region'. From 'sgraph_Vertex', the role 'Vertex' has cardinality 0..*, and from 'sgraph_Region', the role 'parentRegion' has cardinality 0..*.
+An association connects 'sgraph_CompositeElement' and 'sgraph_Region'. From 'sgraph_CompositeElement', the role 'CompositeElement' has cardinality 0..*, and from 'sgraph_Region', the role 'regions' has cardinality 0..*.
+An association connects 'sgraph_Transition' and 'sgraph_Vertex'. From 'sgraph_Transition', the role 'incomingTransitions' has cardinality 0..*, and from 'sgraph_Vertex', the role 'Vertex7' has cardinality 0..*.
+An association connects 'sgraph_Vertex' and 'sgraph_Transition'. From 'sgraph_Vertex', the role 'Vertex9' has cardinality 0..*, and from 'sgraph_Transition', the role 'outgoingTransitions' has cardinality 0..*.
+An association connects 'sgraph_Reaction' and 'sgraph_ReactiveElement'. From 'sgraph_Reaction', the role 'sgraph_Reaction' has cardinality 0..*, and from 'sgraph_ReactiveElement', the role 'sgraph_ReactiveElement' has cardinality 0..*.
+An association connects 'sgraph_Trigger' and 'sgraph_Reaction'. From 'sgraph_Trigger', the role 'sgraph_Trigger' has cardinality 0..*, and from 'sgraph_Reaction', the role 'sgraph_Reaction12' has cardinality 0..*.
+An association connects 'sgraph_Reaction' and 'sgraph_Effect'. From 'sgraph_Reaction', the role 'sgraph_Reaction14' has cardinality 0..*, and from 'sgraph_Effect', the role 'sgraph_Effect' has cardinality 0..*.
+An association connects 'sgraph_ReactionProperty' and 'sgraph_Reaction'. From 'sgraph_ReactionProperty', the role 'sgraph_ReactionProperty' has cardinality 0..*, and from 'sgraph_Reaction', the role 'sgraph_Reaction16' has cardinality 0..*.
+An association connects 'sgraph_Declaration' and 'sgraph_Scope'. From 'sgraph_Declaration', the role 'sgraph_Declaration' has cardinality 0..*, and from 'sgraph_Scope', the role 'sgraph_Scope' has cardinality 0..*.
+An association connects 'sgraph_Scope' and 'sgraph_Event'. From 'sgraph_Scope', the role 'sgraph_Scope19' has cardinality 0..*, and from 'sgraph_Event', the role 'sgraph_Event' has cardinality 0..*.
+An association connects 'sgraph_Scope' and 'sgraph_Property'. From 'sgraph_Scope', the role 'sgraph_Scope21' has cardinality 0..*, and from 'sgraph_Property', the role 'sgraph_Property' has cardinality 0..*.
+An association connects 'sgraph_Reaction' and 'sgraph_Scope'. From 'sgraph_Reaction', the role 'sgraph_Reaction24' has cardinality 0..*, and from 'sgraph_Scope', the role 'sgraph_Scope23' has cardinality 0..*.
+An association connects 'sgraph_Scope' and 'sgraph_ScopedElement'. From 'sgraph_Scope', the role 'sgraph_Scope26' has cardinality 0..*, and from 'sgraph_ScopedElement', the role 'sgraph_ScopedElement' has cardinality 0..*.
+An association connects 'sgraph_CompositeElement' and 'sgraph_Region'. From 'sgraph_CompositeElement', the role 'composite' has cardinality 0..*, and from 'sgraph_Region', the role 'Region28' has cardinality 0..*.
+An association connects 'sgraph_Declaration' and 'sgraph_ImportDeclaration'. From 'sgraph_Declaration', the role 'sgraph_Declaration30' has cardinality 0..*, and from 'sgraph_ImportDeclaration', the role 'sgraph_ImportDeclaration' has cardinality 0..*.

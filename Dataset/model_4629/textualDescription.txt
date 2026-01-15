@@ -1,0 +1,455 @@
+The domain model 'sequence' describes the core structural elements and their relationships within the system.
+
+The model defines 108 main class(es).
+
+'EventMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_template_TExecutionMapping' represents an important domain concept.
+It has the following attributes: 'recursive', which is of type bool; 'startingEndFinderExpression', which is of type str; 'finishingEndFinderExpression', which is of type str.
+
+'sequence_description_SequenceDiagramDescription' represents an important domain concept.
+It has the following attributes: 'instanceRolesOrdering', which is of type str; 'endsOrdering', which is of type str.
+
+'sequence_template_TSourceTargetMessageMapping' represents an important domain concept.
+It has the following attributes: 'sourceFinderExpression', which is of type str; 'targetFinderExpression', which is of type str; 'useDomainElement', which is of type bool.
+
+'sequence_template_TMessageMapping' represents an important domain concept.
+It has the following attributes: 'sendingEndFinderExpression', which is of type str; 'receivingEndFinderExpression', which is of type str.
+
+'sequence_description_CombinedFragmentMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'ordering_sequence_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'TBasicMessageMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'TTransformer' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_tool_SequenceDiagramToolDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_tool_InteractionUseCreationTool' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_tool_ObservationPointCreationTool' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_ordering_EventEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'ColorDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_description_ObservationPointMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'EventEndsOrdering' represents an important domain concept.
+It does not declare any attributes.
+
+'description_EdgeMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_template_TSequenceDiagram' represents an important domain concept.
+It has the following attributes: 'domainClass', which is of type str; 'endsOrdering', which is of type str.
+
+'MessageEndVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_tool_ReorderTool' represents an important domain concept.
+It does not declare any attributes.
+
+'CoveredLifelinesVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_description_BasicMessageMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'EventEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'TExecutionStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'InstanceRolesOrdering' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_tool_CoveringElementCreationTool' represents an important domain concept.
+It does not declare any attributes.
+
+'TAbstractMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'template_sequence_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_description_CoveredLifelinesVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_tool_OrderedElementCreationTool' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_template_TConditionalExecutionStyle' represents an important domain concept.
+It has one attribute: 'predicateExpression', which is of type str.
+
+'sequence_description_ExecutionMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'description_ContainerMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_CoveringElementCreationTool' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_NodeCreationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_InitialOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_tool_LifelineCreationTool' represents an important domain concept.
+It does not declare any attributes.
+
+'DSemanticDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_description_FrameMapping' represents an important domain concept.
+It has the following attributes: 'centerLabelExpression', which is of type str; 'coveredLifelinesExpression', which is of type str.
+
+'sequence_tool_InstanceRoleCreationTool' represents an important domain concept.
+It does not declare any attributes.
+
+'FrameMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_EdgeCreationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_description_InstanceRoleMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_description_EventMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'MessageMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_description_EndOfLifeMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_template_TCreationMessageMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_ContainerCreationDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_template_TAbstractMapping' represents an important domain concept.
+It has the following attributes: 'domainClass', which is of type str; 'semanticCandidatesExpression', which is of type str; 'name', which is of type str.
+
+'sequence_ordering_EventEndsOrdering' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_description_OperandMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'ordering_sequence_SequenceDDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_ordering_CompoundEventEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_description_ReturnMessageMapping' represents an important domain concept.
+It has one attribute: 'invocationMessageFinderExpression', which is of type str.
+
+'sequence_SequenceDDiagram' represents an important domain concept.
+It does not declare any attributes.
+
+'DiagramDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'TSourceTargetMessageMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_template_TTransformer' represents an important domain concept.
+It does not declare any attributes.
+
+'TExecutionMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_template_TDestructionMessageMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'style_NodeStyleDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'template_TAbstractMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_description_MessageEndVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_template_TReturnMessageMapping' represents an important domain concept.
+It has one attribute: 'invocationMessageFinderExpression', which is of type str.
+
+'tool_SequenceDiagramToolDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_template_TExecutionStyle' represents an important domain concept.
+It has one attribute: 'borderSizeComputationExpression', which is of type str.
+
+'description_NodeMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'template_TTransformer' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'TConditionalMessageStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_template_TMessageExtremity' represents an important domain concept.
+It does not declare any attributes.
+
+'description_DelimitedEventMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_ordering_InstanceRolesOrdering' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_template_TConditionalMessageStyle' represents an important domain concept.
+It has one attribute: 'predicateExpression', which is of type str.
+
+'tool_ElementVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_OrderedElementCreationTool' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_template_TLifelineMapping' represents an important domain concept.
+It has one attribute: 'eolVisibleExpression', which is of type str.
+
+'SingleEventEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'description_EventMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_template_TBasicMessageMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'TMessageExtremity' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_ordering_SingleEventEnd' represents an important domain concept.
+It has one attribute: 'start', which is of type bool.
+
+'sequence_tool_StateCreationTool' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_description_MessageMapping' represents an important domain concept.
+It has the following attributes: 'receivingEndFinderExpression', which is of type str; 'sendingEndFinderExpression', which is of type str.
+
+'TConditionalLifelineStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'TConditionalExecutionStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'description_RepresentationTemplate' represents an important domain concept.
+It does not declare any attributes.
+
+'TMessageMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'TLifelineStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_template_TLifelineStyle' represents an important domain concept.
+It has one attribute: 'lifelineWidthComputationExpression', which is of type str.
+
+'TLifelineMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_tool_MessageCreationTool' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_description_CreationMessageMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_template_TMessageStyle' represents an important domain concept.
+It has the following attributes: 'labelExpression', which is of type str; 'targetArrow', which is of type str; 'lineStyle', which is of type str; 'sourceArrow', which is of type str.
+
+'sequence_template_TConditionalLifelineStyle' represents an important domain concept.
+It has one attribute: 'predicateExpression', which is of type str.
+
+'sequence_tool_InstanceRoleReorderTool' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_tool_OperandCreationTool' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_tool_CombinedFragmentCreationTool' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_description_DelimitedEventMapping' represents an important domain concept.
+It has the following attributes: 'finishingEndFinderExpression', which is of type str; 'startingEndFinderExpression', which is of type str.
+
+'sequence_description_InteractionUseMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'tool_AbstractToolDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'template_TMessageExtremity' represents an important domain concept.
+It does not declare any attributes.
+
+'TMessageStyle' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_description_StateMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'InstanceRoleMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_description_DestructionMessageMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'sequence_tool_ExecutionCreationTool' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'sequence_SequenceDDiagram' is a specialization of 'DSemanticDiagram'.
+The class 'sequence_description_SequenceDiagramDescription' is a specialization of 'DiagramDescription'.
+The class 'sequence_description_InstanceRoleMapping' is a specialization of 'NodeMapping'.
+The class 'sequence_description_DelimitedEventMapping' is a specialization of 'EventMapping'.
+The class 'sequence_description_ExecutionMapping' is a specialization of 'description_NodeMapping'.
+The class 'sequence_description_ExecutionMapping' is a specialization of 'description_DelimitedEventMapping'.
+The class 'sequence_description_StateMapping' is a specialization of 'description_NodeMapping'.
+The class 'sequence_description_StateMapping' is a specialization of 'description_DelimitedEventMapping'.
+The class 'sequence_description_EndOfLifeMapping' is a specialization of 'NodeMapping'.
+The class 'sequence_description_MessageMapping' is a specialization of 'description_EdgeMapping'.
+The class 'sequence_description_MessageMapping' is a specialization of 'description_EventMapping'.
+The class 'sequence_description_BasicMessageMapping' is a specialization of 'MessageMapping'.
+The class 'sequence_description_ReturnMessageMapping' is a specialization of 'MessageMapping'.
+The class 'sequence_description_CreationMessageMapping' is a specialization of 'MessageMapping'.
+The class 'sequence_description_DestructionMessageMapping' is a specialization of 'MessageMapping'.
+The class 'sequence_description_MessageEndVariable' is a specialization of 'AbstractVariable'.
+The class 'sequence_description_CoveredLifelinesVariable' is a specialization of 'AbstractVariable'.
+The class 'sequence_description_FrameMapping' is a specialization of 'description_ContainerMapping'.
+The class 'sequence_description_FrameMapping' is a specialization of 'description_DelimitedEventMapping'.
+The class 'sequence_description_InteractionUseMapping' is a specialization of 'FrameMapping'.
+The class 'sequence_description_CombinedFragmentMapping' is a specialization of 'FrameMapping'.
+The class 'sequence_description_OperandMapping' is a specialization of 'description_ContainerMapping'.
+The class 'sequence_description_OperandMapping' is a specialization of 'description_DelimitedEventMapping'.
+The class 'sequence_description_ObservationPointMapping' is a specialization of 'NodeMapping'.
+The class 'sequence_tool_InstanceRoleCreationTool' is a specialization of 'tool_NodeCreationDescription'.
+The class 'sequence_tool_InstanceRoleCreationTool' is a specialization of 'tool_SequenceDiagramToolDescription'.
+The class 'sequence_tool_LifelineCreationTool' is a specialization of 'tool_ContainerCreationDescription'.
+The class 'sequence_tool_LifelineCreationTool' is a specialization of 'tool_SequenceDiagramToolDescription'.
+The class 'sequence_tool_MessageCreationTool' is a specialization of 'tool_SequenceDiagramToolDescription'.
+The class 'sequence_tool_MessageCreationTool' is a specialization of 'tool_EdgeCreationDescription'.
+The class 'sequence_tool_MessageCreationTool' is a specialization of 'tool_OrderedElementCreationTool'.
+The class 'sequence_tool_ExecutionCreationTool' is a specialization of 'tool_NodeCreationDescription'.
+The class 'sequence_tool_ExecutionCreationTool' is a specialization of 'tool_SequenceDiagramToolDescription'.
+The class 'sequence_tool_ExecutionCreationTool' is a specialization of 'tool_OrderedElementCreationTool'.
+The class 'sequence_tool_StateCreationTool' is a specialization of 'tool_NodeCreationDescription'.
+The class 'sequence_tool_StateCreationTool' is a specialization of 'tool_SequenceDiagramToolDescription'.
+The class 'sequence_tool_StateCreationTool' is a specialization of 'tool_OrderedElementCreationTool'.
+The class 'sequence_tool_InteractionUseCreationTool' is a specialization of 'tool_ContainerCreationDescription'.
+The class 'sequence_tool_InteractionUseCreationTool' is a specialization of 'tool_SequenceDiagramToolDescription'.
+The class 'sequence_tool_InteractionUseCreationTool' is a specialization of 'tool_OrderedElementCreationTool'.
+The class 'sequence_tool_InteractionUseCreationTool' is a specialization of 'tool_CoveringElementCreationTool'.
+The class 'sequence_tool_CombinedFragmentCreationTool' is a specialization of 'tool_ContainerCreationDescription'.
+The class 'sequence_tool_CombinedFragmentCreationTool' is a specialization of 'tool_SequenceDiagramToolDescription'.
+The class 'sequence_tool_CombinedFragmentCreationTool' is a specialization of 'tool_OrderedElementCreationTool'.
+The class 'sequence_tool_CombinedFragmentCreationTool' is a specialization of 'tool_CoveringElementCreationTool'.
+The class 'sequence_tool_OperandCreationTool' is a specialization of 'tool_ContainerCreationDescription'.
+The class 'sequence_tool_OperandCreationTool' is a specialization of 'tool_SequenceDiagramToolDescription'.
+The class 'sequence_tool_OperandCreationTool' is a specialization of 'tool_OrderedElementCreationTool'.
+The class 'sequence_tool_ObservationPointCreationTool' is a specialization of 'tool_NodeCreationDescription'.
+The class 'sequence_tool_ObservationPointCreationTool' is a specialization of 'tool_SequenceDiagramToolDescription'.
+The class 'sequence_tool_ObservationPointCreationTool' is a specialization of 'tool_OrderedElementCreationTool'.
+The class 'sequence_tool_ReorderTool' is a specialization of 'tool_AbstractToolDescription'.
+The class 'sequence_tool_ReorderTool' is a specialization of 'tool_SequenceDiagramToolDescription'.
+The class 'sequence_tool_InstanceRoleReorderTool' is a specialization of 'tool_AbstractToolDescription'.
+The class 'sequence_tool_InstanceRoleReorderTool' is a specialization of 'tool_SequenceDiagramToolDescription'.
+The class 'sequence_ordering_SingleEventEnd' is a specialization of 'EventEnd'.
+The class 'sequence_ordering_CompoundEventEnd' is a specialization of 'EventEnd'.
+The class 'sequence_template_TAbstractMapping' is a specialization of 'TTransformer'.
+The class 'sequence_template_TSequenceDiagram' is a specialization of 'description_RepresentationTemplate'.
+The class 'sequence_template_TSequenceDiagram' is a specialization of 'template_TTransformer'.
+The class 'sequence_template_TLifelineMapping' is a specialization of 'template_TAbstractMapping'.
+The class 'sequence_template_TLifelineMapping' is a specialization of 'template_TMessageExtremity'.
+The class 'sequence_template_TLifelineStyle' is a specialization of 'TTransformer'.
+The class 'sequence_template_TConditionalLifelineStyle' is a specialization of 'TTransformer'.
+The class 'sequence_template_TExecutionMapping' is a specialization of 'template_TAbstractMapping'.
+The class 'sequence_template_TExecutionMapping' is a specialization of 'template_TMessageExtremity'.
+The class 'sequence_template_TExecutionStyle' is a specialization of 'TTransformer'.
+The class 'sequence_template_TConditionalExecutionStyle' is a specialization of 'TTransformer'.
+The class 'sequence_template_TMessageMapping' is a specialization of 'TAbstractMapping'.
+The class 'sequence_template_TMessageStyle' is a specialization of 'TTransformer'.
+The class 'sequence_template_TConditionalMessageStyle' is a specialization of 'TTransformer'.
+The class 'sequence_template_TBasicMessageMapping' is a specialization of 'TSourceTargetMessageMapping'.
+The class 'sequence_template_TSourceTargetMessageMapping' is a specialization of 'TMessageMapping'.
+The class 'sequence_template_TReturnMessageMapping' is a specialization of 'TMessageMapping'.
+The class 'sequence_template_TCreationMessageMapping' is a specialization of 'TSourceTargetMessageMapping'.
+The class 'sequence_template_TDestructionMessageMapping' is a specialization of 'TSourceTargetMessageMapping'.
+
+Relationships between classes are modeled using associations.
+An association connects 'EventEndsOrdering' and 'sequence_SequenceDDiagram'. From 'EventEndsOrdering', the role 'EventEndsOrdering' has cardinality 0..*, and from 'sequence_SequenceDDiagram', the role 'sequence_SequenceDDiagram' has cardinality 0..*.
+An association connects 'sequence_SequenceDDiagram' and 'EventEndsOrdering'. From 'sequence_SequenceDDiagram', the role 'sequence_SequenceDDiagram2' has cardinality 0..*, and from 'EventEndsOrdering', the role 'EventEndsOrdering3' has cardinality 0..*.
+An association connects 'sequence_SequenceDDiagram' and 'InstanceRolesOrdering'. From 'sequence_SequenceDDiagram', the role 'sequence_SequenceDDiagram5' has cardinality 0..*, and from 'InstanceRolesOrdering', the role 'InstanceRolesOrdering' has cardinality 0..*.
+An association connects 'MessageEndVariable' and 'sequence_tool_OrderedElementCreationTool'. From 'MessageEndVariable', the role 'MessageEndVariable' has cardinality 0..*, and from 'sequence_tool_OrderedElementCreationTool', the role 'sequence_tool_OrderedElementCreationTool' has cardinality 0..*.
+An association connects 'MessageEndVariable' and 'sequence_tool_OrderedElementCreationTool'. From 'MessageEndVariable', the role 'MessageEndVariable9' has cardinality 0..*, and from 'sequence_tool_OrderedElementCreationTool', the role 'sequence_tool_OrderedElementCreationTool8' has cardinality 0..*.
+An association connects 'CoveredLifelinesVariable' and 'sequence_tool_CoveringElementCreationTool'. From 'CoveredLifelinesVariable', the role 'CoveredLifelinesVariable' has cardinality 0..*, and from 'sequence_tool_CoveringElementCreationTool', the role 'sequence_tool_CoveringElementCreationTool' has cardinality 0..*.
+An association connects 'tool_ElementVariable' and 'sequence_tool_InstanceRoleCreationTool'. From 'tool_ElementVariable', the role 'tool_ElementVariable' has cardinality 0..*, and from 'sequence_tool_InstanceRoleCreationTool', the role 'sequence_tool_InstanceRoleCreationTool' has cardinality 0..*.
+An association connects 'EventMapping' and 'sequence_tool_ReorderTool'. From 'EventMapping', the role 'EventMapping' has cardinality 0..*, and from 'sequence_tool_ReorderTool', the role 'sequence_tool_ReorderTool' has cardinality 0..*.
+An association connects 'MessageEndVariable' and 'sequence_tool_ReorderTool'. From 'MessageEndVariable', the role 'MessageEndVariable15' has cardinality 0..*, and from 'sequence_tool_ReorderTool', the role 'sequence_tool_ReorderTool14' has cardinality 0..*.
+An association connects 'MessageEndVariable' and 'sequence_tool_ReorderTool'. From 'MessageEndVariable', the role 'MessageEndVariable18' has cardinality 0..*, and from 'sequence_tool_ReorderTool', the role 'sequence_tool_ReorderTool17' has cardinality 0..*.
+An association connects 'MessageEndVariable' and 'sequence_tool_ReorderTool'. From 'MessageEndVariable', the role 'MessageEndVariable21' has cardinality 0..*, and from 'sequence_tool_ReorderTool', the role 'sequence_tool_ReorderTool20' has cardinality 0..*.
+An association connects 'MessageEndVariable' and 'sequence_tool_ReorderTool'. From 'MessageEndVariable', the role 'MessageEndVariable24' has cardinality 0..*, and from 'sequence_tool_ReorderTool', the role 'sequence_tool_ReorderTool23' has cardinality 0..*.
+An association connects 'tool_InitialOperation' and 'sequence_tool_ReorderTool'. From 'tool_InitialOperation', the role 'tool_InitialOperation' has cardinality 0..*, and from 'sequence_tool_ReorderTool', the role 'sequence_tool_ReorderTool26' has cardinality 0..*.
+An association connects 'sequence_tool_InstanceRoleReorderTool' and 'InstanceRoleMapping'. From 'sequence_tool_InstanceRoleReorderTool', the role 'sequence_tool_InstanceRoleReorderTool' has cardinality 0..*, and from 'InstanceRoleMapping', the role 'InstanceRoleMapping' has cardinality 0..*.
+An association connects 'tool_ElementVariable' and 'sequence_tool_InstanceRoleReorderTool'. From 'tool_ElementVariable', the role 'tool_ElementVariable30' has cardinality 0..*, and from 'sequence_tool_InstanceRoleReorderTool', the role 'sequence_tool_InstanceRoleReorderTool29' has cardinality 0..*.
+An association connects 'sequence_tool_InstanceRoleReorderTool' and 'tool_ElementVariable'. From 'sequence_tool_InstanceRoleReorderTool', the role 'sequence_tool_InstanceRoleReorderTool32' has cardinality 0..*, and from 'tool_ElementVariable', the role 'tool_ElementVariable33' has cardinality 0..*.
+An association connects 'tool_InitialOperation' and 'sequence_tool_InstanceRoleReorderTool'. From 'tool_InitialOperation', the role 'tool_InitialOperation36' has cardinality 0..*, and from 'sequence_tool_InstanceRoleReorderTool', the role 'sequence_tool_InstanceRoleReorderTool35' has cardinality 0..*.
+An association connects 'sequence_ordering_EventEndsOrdering' and 'ordering_sequence_SequenceDDiagram'. From 'sequence_ordering_EventEndsOrdering', the role 'sequence_ordering_EventEndsOrdering' has cardinality 0..*, and from 'ordering_sequence_SequenceDDiagram', the role 'ordering_sequence_SequenceDDiagram' has cardinality 0..*.
+An association connects 'sequence_ordering_EventEndsOrdering' and 'EventEnd'. From 'sequence_ordering_EventEndsOrdering', the role 'sequence_ordering_EventEndsOrdering39' has cardinality 0..*, and from 'EventEnd', the role 'EventEnd' has cardinality 0..*.
+An association connects 'ordering_sequence_EObject' and 'sequence_ordering_EventEnd'. From 'ordering_sequence_EObject', the role 'ordering_sequence_EObject' has cardinality 0..*, and from 'sequence_ordering_EventEnd', the role 'sequence_ordering_EventEnd' has cardinality 0..*.
+An association connects 'ordering_sequence_EObject' and 'sequence_ordering_SingleEventEnd'. From 'ordering_sequence_EObject', the role 'ordering_sequence_EObject42' has cardinality 0..*, and from 'sequence_ordering_SingleEventEnd', the role 'sequence_ordering_SingleEventEnd' has cardinality 0..*.
+An association connects 'sequence_ordering_CompoundEventEnd' and 'SingleEventEnd'. From 'sequence_ordering_CompoundEventEnd', the role 'sequence_ordering_CompoundEventEnd' has cardinality 0..*, and from 'SingleEventEnd', the role 'SingleEventEnd' has cardinality 0..*.
+An association connects 'ordering_sequence_EObject' and 'sequence_ordering_InstanceRolesOrdering'. From 'ordering_sequence_EObject', the role 'ordering_sequence_EObject45' has cardinality 0..*, and from 'sequence_ordering_InstanceRolesOrdering', the role 'sequence_ordering_InstanceRolesOrdering' has cardinality 0..*.
+An association connects 'template_sequence_EObject' and 'sequence_template_TTransformer'. From 'template_sequence_EObject', the role 'template_sequence_EObject' has cardinality 0..*, and from 'sequence_template_TTransformer', the role 'sequence_template_TTransformer' has cardinality 0..*.
+An association connects 'sequence_template_TSequenceDiagram' and 'TLifelineMapping'. From 'sequence_template_TSequenceDiagram', the role 'sequence_template_TSequenceDiagram' has cardinality 0..*, and from 'TLifelineMapping', the role 'TLifelineMapping' has cardinality 0..*.
+An association connects 'TMessageMapping' and 'sequence_template_TSequenceDiagram'. From 'TMessageMapping', the role 'TMessageMapping' has cardinality 0..*, and from 'sequence_template_TSequenceDiagram', the role 'sequence_template_TSequenceDiagram49' has cardinality 0..*.
+An association connects 'TExecutionMapping' and 'sequence_template_TLifelineMapping'. From 'TExecutionMapping', the role 'TExecutionMapping' has cardinality 0..*, and from 'sequence_template_TLifelineMapping', the role 'sequence_template_TLifelineMapping' has cardinality 0..*.
+An association connects 'sequence_template_TLifelineMapping' and 'style_NodeStyleDescription'. From 'sequence_template_TLifelineMapping', the role 'sequence_template_TLifelineMapping52' has cardinality 0..*, and from 'style_NodeStyleDescription', the role 'style_NodeStyleDescription' has cardinality 0..*.
+An association connects 'sequence_template_TLifelineMapping' and 'TLifelineStyle'. From 'sequence_template_TLifelineMapping', the role 'sequence_template_TLifelineMapping54' has cardinality 0..*, and from 'TLifelineStyle', the role 'TLifelineStyle' has cardinality 0..*.
+An association connects 'sequence_template_TLifelineMapping' and 'style_NodeStyleDescription'. From 'sequence_template_TLifelineMapping', the role 'sequence_template_TLifelineMapping56' has cardinality 0..*, and from 'style_NodeStyleDescription', the role 'style_NodeStyleDescription57' has cardinality 0..*.
+An association connects 'TConditionalLifelineStyle' and 'sequence_template_TLifelineMapping'. From 'TConditionalLifelineStyle', the role 'TConditionalLifelineStyle' has cardinality 0..*, and from 'sequence_template_TLifelineMapping', the role 'sequence_template_TLifelineMapping59' has cardinality 0..*.
+An association connects 'sequence_template_TLifelineStyle' and 'ColorDescription'. From 'sequence_template_TLifelineStyle', the role 'sequence_template_TLifelineStyle' has cardinality 0..*, and from 'ColorDescription', the role 'ColorDescription' has cardinality 0..*.
+An association connects 'TLifelineStyle' and 'sequence_template_TConditionalLifelineStyle'. From 'TLifelineStyle', the role 'TLifelineStyle62' has cardinality 0..*, and from 'sequence_template_TConditionalLifelineStyle', the role 'sequence_template_TConditionalLifelineStyle' has cardinality 0..*.
+An association connects 'sequence_template_TExecutionMapping' and 'TExecutionMapping'. From 'sequence_template_TExecutionMapping', the role 'sequence_template_TExecutionMapping' has cardinality 0..*, and from 'TExecutionMapping', the role 'TExecutionMapping64' has cardinality 0..*.
+An association connects 'TExecutionStyle' and 'sequence_template_TExecutionMapping'. From 'TExecutionStyle', the role 'TExecutionStyle' has cardinality 0..*, and from 'sequence_template_TExecutionMapping', the role 'sequence_template_TExecutionMapping66' has cardinality 0..*.
+An association connects 'sequence_template_TExecutionMapping' and 'TConditionalExecutionStyle'. From 'sequence_template_TExecutionMapping', the role 'sequence_template_TExecutionMapping68' has cardinality 0..*, and from 'TConditionalExecutionStyle', the role 'TConditionalExecutionStyle' has cardinality 0..*.
+An association connects 'ColorDescription' and 'sequence_template_TExecutionStyle'. From 'ColorDescription', the role 'ColorDescription70' has cardinality 0..*, and from 'sequence_template_TExecutionStyle', the role 'sequence_template_TExecutionStyle' has cardinality 0..*.
+An association connects 'sequence_template_TExecutionStyle' and 'ColorDescription'. From 'sequence_template_TExecutionStyle', the role 'sequence_template_TExecutionStyle72' has cardinality 0..*, and from 'ColorDescription', the role 'ColorDescription73' has cardinality 0..*.
+An association connects 'TExecutionStyle' and 'sequence_template_TConditionalExecutionStyle'. From 'TExecutionStyle', the role 'TExecutionStyle75' has cardinality 0..*, and from 'sequence_template_TConditionalExecutionStyle', the role 'sequence_template_TConditionalExecutionStyle' has cardinality 0..*.
+An association connects 'TMessageStyle' and 'sequence_template_TMessageMapping'. From 'TMessageStyle', the role 'TMessageStyle' has cardinality 0..*, and from 'sequence_template_TMessageMapping', the role 'sequence_template_TMessageMapping' has cardinality 0..*.
+An association connects 'TConditionalMessageStyle' and 'sequence_template_TMessageMapping'. From 'TConditionalMessageStyle', the role 'TConditionalMessageStyle' has cardinality 0..*, and from 'sequence_template_TMessageMapping', the role 'sequence_template_TMessageMapping78' has cardinality 0..*.
+An association connects 'sequence_template_TMessageStyle' and 'ColorDescription'. From 'sequence_template_TMessageStyle', the role 'sequence_template_TMessageStyle' has cardinality 0..*, and from 'ColorDescription', the role 'ColorDescription80' has cardinality 0..*.
+An association connects 'TMessageStyle' and 'sequence_template_TConditionalMessageStyle'. From 'TMessageStyle', the role 'TMessageStyle82' has cardinality 0..*, and from 'sequence_template_TConditionalMessageStyle', the role 'sequence_template_TConditionalMessageStyle' has cardinality 0..*.
+An association connects 'TMessageExtremity' and 'sequence_template_TBasicMessageMapping'. From 'TMessageExtremity', the role 'TMessageExtremity' has cardinality 0..*, and from 'sequence_template_TBasicMessageMapping', the role 'sequence_template_TBasicMessageMapping' has cardinality 0..*.
+An association connects 'sequence_template_TSourceTargetMessageMapping' and 'TMessageExtremity'. From 'sequence_template_TSourceTargetMessageMapping', the role 'sequence_template_TSourceTargetMessageMapping' has cardinality 0..*, and from 'TMessageExtremity', the role 'TMessageExtremity85' has cardinality 0..*.
+An association connects 'sequence_template_TReturnMessageMapping' and 'TBasicMessageMapping'. From 'sequence_template_TReturnMessageMapping', the role 'sequence_template_TReturnMessageMapping' has cardinality 0..*, and from 'TBasicMessageMapping', the role 'TBasicMessageMapping' has cardinality 0..*.
+An association connects 'TLifelineMapping' and 'sequence_template_TCreationMessageMapping'. From 'TLifelineMapping', the role 'TLifelineMapping88' has cardinality 0..*, and from 'sequence_template_TCreationMessageMapping', the role 'sequence_template_TCreationMessageMapping' has cardinality 0..*.
+An association connects 'TLifelineMapping' and 'sequence_template_TDestructionMessageMapping'. From 'TLifelineMapping', the role 'TLifelineMapping90' has cardinality 0..*, and from 'sequence_template_TDestructionMessageMapping', the role 'sequence_template_TDestructionMessageMapping' has cardinality 0..*.

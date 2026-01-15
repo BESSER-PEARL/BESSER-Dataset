@@ -1,0 +1,1347 @@
+The domain model 'pcm_av_av' describes the core structural elements and their relationships within the system.
+
+The model defines 298 main class(es).
+
+'pcm_av_av_composition_av_av_DelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_resourceenvironment_av_av_LinkingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractUserAction' represents an important domain concept.
+It does not declare any attributes.
+
+'SpecifiedExecutionTime' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_av_av_ResourceInterfaceRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'SpecifiedOutputParameterAbstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'SourceRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_resourceenvironment_av_av_ResourceEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_composition_av_av_ProvidedInfrastructureDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_entity_av_av_InterfaceProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_InfrastructureInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_SynchronisationPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_composition_av_av_AssemblyContext' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_SinkRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_OperationProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkingResource' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationRequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'InfrastructureInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_reliability_av_av_FailureHandlingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'SinkRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_LoopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_usagemodel_av_av_Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'BasicComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_allocation_av_av_AllocationContext' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_CompleteComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_AdviceAdvice' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_OperationRequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_resourcetype_av_av_CommunicationLinkResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'Signature' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_performance_av_av_InfrastructureCall' represents an important domain concept.
+It does not declare any attributes.
+
+'UserData' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_ResourceDemandingInternalBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableCharacterisation' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_OperationSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_composition_av_av_RequiredDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_PerJoinPointScope' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_parameter_av_av_VariableCharacterisation' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'Allocation' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_SetVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_ExternalCallAction' represents an important domain concept.
+It has one attribute: 'retryCount', which is of type int.
+
+'pcm_av_av_repository_av_av_RequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'EntryLevelSystemCall' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'EventGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'ScenarioBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'CommunicationLinkResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_EmitEventAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_composition_av_av_AssemblyEventConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'ParametricResourceDemand' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_av_av_ResourceRequiredDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'qos_performance_av_av_SpecifiedExecutionTime' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_av_av_EventChannel' represents an important domain concept.
+It does not declare any attributes.
+
+'qos_reliability_av_av_SpecifiedReliabilityAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'Delay' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'RequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_usagemodel_av_av_EntryLevelSystemCall' represents an important domain concept.
+It has one attribute: 'priority', which is of type int.
+
+'pcm_av_av_composition_av_av_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_usagemodel_av_av_OpenWorkload' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_PrimitiveDataType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'SoftwareInducedFailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_entity_av_av_NamedElement' represents an important domain concept.
+It has one attribute: 'entityName', which is of type str.
+
+'pcm_av_av_seff_av_av_CollectionIteratorAction' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_av_av_ComposedStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_performance_av_av_InfrastructureCall' represents an important domain concept.
+It does not declare any attributes.
+
+'ImplementationComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'FailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_ExceptionType' represents an important domain concept.
+It has the following attributes: 'exceptionName', which is of type str; 'exceptionMessage', which is of type str.
+
+'repository_av_av_ImplementationComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_GuardedBranchTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_usagemodel_av_av_AbstractUserAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CompositeDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_ResourceDemandingSEFF' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_resourceenvironment_av_av_ResourceContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_ProvidesComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_GlobalScopeGlobalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceDemandingSEFF' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_AbstractBranchTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_entity_av_av_InterfaceProvidingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'DelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_core_av_av_PCMRandomVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_composition_av_av_ResourceRequiredDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'SynchronisationPoint' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_reliability_av_av_FailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'ProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_RequiredCharacterisation' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'pcm_av_av_Advice' represents an important domain concept.
+It does not declare any attributes.
+
+'Workload' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_entity_av_av_ResourceProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_av_av_AssemblyContext' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_PerJoinPointScopePerJoinPointScope' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_StartAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ServiceEffectSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_entity_av_av_InterfaceRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'GuardedBranchTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_completions_av_av_DelegatingExternalCallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_reliability_av_av_ResourceTimeoutFailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_AcquireAction' represents an important domain concept.
+It has the following attributes: 'timeout', which is of type bool; 'timeoutValue', which is of type float.
+
+'pcm_av_av_composition_av_av_ProvidedDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_entity_av_av_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_AbstractInternalControlFlowAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_entity_av_av_ComposedProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_composition_av_av_AssemblyConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractBranchTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'VariableUsage' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_av_av_InterfaceRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'CallReturnAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_InternalCallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_BasicComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_parameter_av_av_VariableUsage' represents an important domain concept.
+It does not declare any attributes.
+
+'BranchTransition' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_reliability_av_av_FailureOccurrenceDescription' represents an important domain concept.
+It has one attribute: 'failureProbability', which is of type float.
+
+'pcm_av_av_entity_av_av_ResourceInterfaceProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessingResourceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Completion' represents an important domain concept.
+It does not declare any attributes.
+
+'Identifier' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_qosannotations_av_av_QoSAnnotations' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_ProbabilisticBranchTransition' represents an important domain concept.
+It has one attribute: 'branchProbability', which is of type float.
+
+'pcm_av_av_seff_reliability_av_av_RecoveryAction' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_av_av_AssemblyEventConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_composition_av_av_EventChannelSinkConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'QoSAnnotations' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_ImplementationComponentType' represents an important domain concept.
+It has one attribute: 'componentType', which is of type str.
+
+'pcm_av_av_repository_av_av_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_reliability_av_av_ExternalFailureOccurrenceDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_reliability_av_av_RecoveryActionBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'InfrastructureSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_resourcetype_av_av_ResourceInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_usagemodel_av_av_UsageScenario' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_system_av_av_System' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_entity_av_av_ResourceRequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_InnerDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_reliability_av_av_InternalFailureOccurrenceDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'UsageScenario' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_qos_performance_av_av_SystemSpecifiedExecutionTime' represents an important domain concept.
+It does not declare any attributes.
+
+'RandomVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_subsystem_av_av_SubSystem' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_resourceenvironment_av_av_ProcessingResourceSpecification' represents an important domain concept.
+It has the following attributes: 'MTTR', which is of type float; 'numberOfReplicas', which is of type int; 'requiredByContainer', which is of type bool; 'MTTF', which is of type float.
+
+'Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'HardwareInducedFailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'SpecifiedQoSAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_composition_av_av_EventChannel' represents an important domain concept.
+It does not declare any attributes.
+
+'ExternalCallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_usagemodel_av_av_ScenarioBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_av_av_CallReturnAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_resourcetype_av_av_ResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_av_av_ResourceRequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'UsageModel' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_GlobalScope' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_ReleaseAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_usagemodel_av_av_UsageModel' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_resourceenvironment_av_av_CommunicationLinkResourceSpecification' represents an important domain concept.
+It has one attribute: 'failureProbability', which is of type float.
+
+'seff_performance_av_av_ParametricResourceDemand' represents an important domain concept.
+It does not declare any attributes.
+
+'InfrastructureProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'ForkedBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_av_av_EventChannelSinkConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_usagemodel_av_av_Workload' represents an important domain concept.
+It does not declare any attributes.
+
+'CompleteComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_ServiceEffectSpecification' represents an important domain concept.
+It has one attribute: 'seffTypeID', which is of type str.
+
+'InternalFailureOccurrenceDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'InnerDeclaration' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_qosannotations_av_av_SpecifiedOutputParameterAbstraction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_ProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_parameter_av_av_CharacterisedVariable' represents an important domain concept.
+It has one attribute: 'characterisationType', which is of type str.
+
+'pcm_av_av_reliability_av_av_SoftwareInducedFailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'Branch' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_usagemodel_av_av_BranchTransition' represents an important domain concept.
+It has one attribute: 'branchProbability', which is of type float.
+
+'entity_av_av_InterfaceProvidingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_reliability_av_av_NetworkInducedFailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_reliability_av_av_RecoveryActionBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_StopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_performance_av_av_ResourceCall' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_av_av_ResourceProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'Protocol' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_usagemodel_av_av_UserData' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceContainer' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_InfrastructureRequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_EventType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_qosannotations_av_av_SpecifiedQoSAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_AbstractLoopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ClosedWorkload' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_CompositeComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_InternalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_reliability_av_av_FailureHandlingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_BranchAction' represents an important domain concept.
+It does not declare any attributes.
+
+'System' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_Interface' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_usagemodel_av_av_ClosedWorkload' represents an important domain concept.
+It has one attribute: 'population', which is of type int.
+
+'pcm_av_av_repository_av_av_EventGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_composition_av_av_ComposedStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_DummyClass' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_av_av_NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Role' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_allocation_av_av_Allocation' represents an important domain concept.
+It does not declare any attributes.
+
+'repository_av_av_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'RequiredCharacterisation' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_qos_reliability_av_av_SpecifiedReliabilityAnnotation' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceDemandingBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_av_av_EventChannelSourceConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_av_av_AbstractInternalControlFlowAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'EventType' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_av_av_CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'InfrastructureRequiredRole' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_PassiveResource' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_entity_av_av_ResourceInterfaceProvidingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_CollectionDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_composition_av_av_EventChannelSourceConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'ProcessingResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_av_av_AbstractAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_Signature' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractLoopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'CommunicationLinkResourceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_entity_av_av_ResourceInterfaceRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'RepositoryComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_Repository' represents an important domain concept.
+It has one attribute: 'repositoryDescription', which is of type str.
+
+'ResourceTimeoutFailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_usagemodel_av_av_Stop' represents an important domain concept.
+It does not declare any attributes.
+
+'OperationProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'repository_av_av_RepositoryComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'Repository' represents an important domain concept.
+It does not declare any attributes.
+
+'SetVariableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractInternalControlFlowAction' represents an important domain concept.
+It does not declare any attributes.
+
+'AllocationContext' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_ForkedBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'UnitCarryingElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PCMRandomVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_reliability_av_av_HardwareInducedFailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'ProvidesComponentType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_composition_av_av_RequiredInfrastructureDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'CallAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_performance_av_av_ResourceCall' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_protocol_av_av_Protocol' represents an important domain concept.
+It has one attribute: 'protocolTypeID', which is of type str.
+
+'BranchAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_Parameter' represents an important domain concept.
+It has the following attributes: 'parameterName', which is of type str; 'modifier__Parameter', which is of type str.
+
+'pcm_av_av_repository_av_av_OperationInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'InternalAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_resourcetype_av_av_ProcessingResourceType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_InfrastructureSignature' represents an important domain concept.
+It does not declare any attributes.
+
+'InterfaceProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_qos_performance_av_av_SpecifiedExecutionTime' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_completions_av_av_NetworkDemandParametricResourceDemand' represents an important domain concept.
+It does not declare any attributes.
+
+'Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_resourcetype_av_av_ResourceSignature' represents an important domain concept.
+It has one attribute: 'resourceServiceId', which is of type int.
+
+'pcm_av_av_resourcetype_av_av_ResourceRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_av_av_ComposedProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_av_av_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_composition_av_av_SinkDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_ResourceDemandingBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_qos_performance_av_av_ComponentSpecifiedExecutionTime' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'NetworkInducedFailureType' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_composition_av_av_RequiredResourceDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_reliability_av_av_RecoveryAction' represents an important domain concept.
+It does not declare any attributes.
+
+'composition_av_av_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_composition_av_av_SourceDelegationConnector' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_CompositeDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_av_av_ResourceDemandingBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_performance_av_av_ParametricResourceDemand' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_av_av_InterfaceProvidingRequiringEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'OpenWorkload' represents an important domain concept.
+It does not declare any attributes.
+
+'PassiveResource' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_InfrastructureProvidedRole' represents an important domain concept.
+It does not declare any attributes.
+
+'FailureOccurrenceDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'SchedulingPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_AbstractAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_SourceRole' represents an important domain concept.
+It does not declare any attributes.
+
+'ResourceDemandingInternalBehaviour' represents an important domain concept.
+It does not declare any attributes.
+
+'LoopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ForkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_repository_av_av_RepositoryComponent' represents an important domain concept.
+It does not declare any attributes.
+
+'parameter_av_av_pcm_av_av_AbstractNamedReference' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_completions_av_av_CompletionRepository' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_ForkAction' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_completions_av_av_Completion' represents an important domain concept.
+It does not declare any attributes.
+
+'ExceptionType' represents an important domain concept.
+It does not declare any attributes.
+
+'seff_av_av_ServiceEffectSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_usagemodel_av_av_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_usagemodel_av_av_Delay' represents an important domain concept.
+It does not declare any attributes.
+
+'ExternalFailureOccurrenceDescription' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_usagemodel_av_av_Start' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_seff_av_av_CallReturnAction' represents an important domain concept.
+It does not declare any attributes.
+
+'entity_av_av_ResourceInterfaceProvidingEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pcm_av_av_resourcetype_av_av_SchedulingPolicy' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'PrimitiveTypeEnum' defines the following possible values: 'BOOL', 'STRING', 'LONG', 'BYTE', 'DOUBLE', 'INT', 'CHAR'.
+The enumeration 'ParameterModifier' defines the following possible values: 'out', 'in', 'inout', 'none'.
+The enumeration 'ComponentType' defines the following possible values: 'BUSINESS_COMPONENT', 'INFRASTRUCTURE_COMPONENT'.
+The enumeration 'VariableCharacterisationType' defines the following possible values: 'BYTESIZE', 'NUMBER_OF_ELEMENTS', 'VALUE', 'STRUCTURE', 'TYPE'.
+
+The model also captures inheritance relationships between classes.
+The class 'pcm_av_av_core_av_av_PCMRandomVariable' is a specialization of 'RandomVariable'.
+The class 'pcm_av_av_entity_av_av_ResourceProvidedRole' is a specialization of 'Role'.
+The class 'pcm_av_av_entity_av_av_InterfaceProvidingRequiringEntity' is a specialization of 'entity_av_av_InterfaceProvidingEntity'.
+The class 'pcm_av_av_entity_av_av_InterfaceProvidingRequiringEntity' is a specialization of 'entity_av_av_InterfaceRequiringEntity'.
+The class 'pcm_av_av_entity_av_av_InterfaceProvidingEntity' is a specialization of 'Entity'.
+The class 'pcm_av_av_entity_av_av_InterfaceRequiringEntity' is a specialization of 'entity_av_av_Entity'.
+The class 'pcm_av_av_entity_av_av_InterfaceRequiringEntity' is a specialization of 'entity_av_av_ResourceInterfaceRequiringEntity'.
+The class 'pcm_av_av_entity_av_av_ResourceInterfaceRequiringEntity' is a specialization of 'Entity'.
+The class 'pcm_av_av_entity_av_av_ResourceRequiredRole' is a specialization of 'Role'.
+The class 'pcm_av_av_entity_av_av_ResourceInterfaceProvidingEntity' is a specialization of 'Entity'.
+The class 'pcm_av_av_entity_av_av_ComposedProvidingRequiringEntity' is a specialization of 'composition_av_av_ComposedStructure'.
+The class 'pcm_av_av_entity_av_av_ComposedProvidingRequiringEntity' is a specialization of 'entity_av_av_InterfaceProvidingRequiringEntity'.
+The class 'pcm_av_av_entity_av_av_ResourceInterfaceProvidingRequiringEntity' is a specialization of 'entity_av_av_ResourceInterfaceRequiringEntity'.
+The class 'pcm_av_av_entity_av_av_ResourceInterfaceProvidingRequiringEntity' is a specialization of 'entity_av_av_ResourceInterfaceProvidingEntity'.
+The class 'pcm_av_av_entity_av_av_Entity' is a specialization of 'Identifier'.
+The class 'pcm_av_av_entity_av_av_Entity' is a specialization of 'entity_av_av_NamedElement'.
+The class 'pcm_av_av_composition_av_av_DelegationConnector' is a specialization of 'Connector'.
+The class 'pcm_av_av_composition_av_av_Connector' is a specialization of 'Entity'.
+The class 'pcm_av_av_composition_av_av_ComposedStructure' is a specialization of 'Entity'.
+The class 'pcm_av_av_composition_av_av_EventChannel' is a specialization of 'Entity'.
+The class 'pcm_av_av_composition_av_av_EventChannelSourceConnector' is a specialization of 'Connector'.
+The class 'pcm_av_av_composition_av_av_EventChannelSinkConnector' is a specialization of 'Connector'.
+The class 'pcm_av_av_composition_av_av_ProvidedDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'pcm_av_av_composition_av_av_RequiredDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'pcm_av_av_composition_av_av_AssemblyConnector' is a specialization of 'Connector'.
+The class 'pcm_av_av_composition_av_av_AssemblyEventConnector' is a specialization of 'Connector'.
+The class 'pcm_av_av_composition_av_av_SourceDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'pcm_av_av_composition_av_av_SinkDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector' is a specialization of 'Connector'.
+The class 'pcm_av_av_composition_av_av_ProvidedInfrastructureDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'pcm_av_av_composition_av_av_RequiredInfrastructureDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'pcm_av_av_composition_av_av_RequiredResourceDelegationConnector' is a specialization of 'DelegationConnector'.
+The class 'pcm_av_av_composition_av_av_AssemblyContext' is a specialization of 'Entity'.
+The class 'pcm_av_av_usagemodel_av_av_UsageScenario' is a specialization of 'Entity'.
+The class 'pcm_av_av_usagemodel_av_av_EntryLevelSystemCall' is a specialization of 'AbstractUserAction'.
+The class 'pcm_av_av_usagemodel_av_av_AbstractUserAction' is a specialization of 'Entity'.
+The class 'pcm_av_av_usagemodel_av_av_ScenarioBehaviour' is a specialization of 'Entity'.
+The class 'pcm_av_av_usagemodel_av_av_Branch' is a specialization of 'AbstractUserAction'.
+The class 'pcm_av_av_usagemodel_av_av_Loop' is a specialization of 'AbstractUserAction'.
+The class 'pcm_av_av_usagemodel_av_av_Stop' is a specialization of 'AbstractUserAction'.
+The class 'pcm_av_av_usagemodel_av_av_Start' is a specialization of 'AbstractUserAction'.
+The class 'pcm_av_av_usagemodel_av_av_OpenWorkload' is a specialization of 'Workload'.
+The class 'pcm_av_av_usagemodel_av_av_Delay' is a specialization of 'AbstractUserAction'.
+The class 'pcm_av_av_usagemodel_av_av_ClosedWorkload' is a specialization of 'Workload'.
+The class 'pcm_av_av_repository_av_av_PassiveResource' is a specialization of 'Entity'.
+The class 'pcm_av_av_repository_av_av_BasicComponent' is a specialization of 'ImplementationComponentType'.
+The class 'pcm_av_av_repository_av_av_ImplementationComponentType' is a specialization of 'RepositoryComponent'.
+The class 'pcm_av_av_repository_av_av_RepositoryComponent' is a specialization of 'InterfaceProvidingRequiringEntity'.
+The class 'pcm_av_av_repository_av_av_ProvidedRole' is a specialization of 'Role'.
+The class 'pcm_av_av_repository_av_av_Repository' is a specialization of 'Entity'.
+The class 'pcm_av_av_repository_av_av_Interface' is a specialization of 'Entity'.
+The class 'pcm_av_av_repository_av_av_EventGroup' is a specialization of 'Interface'.
+The class 'pcm_av_av_repository_av_av_EventType' is a specialization of 'Signature'.
+The class 'pcm_av_av_repository_av_av_Signature' is a specialization of 'Entity'.
+The class 'pcm_av_av_repository_av_av_InfrastructureSignature' is a specialization of 'Signature'.
+The class 'pcm_av_av_repository_av_av_InfrastructureInterface' is a specialization of 'Interface'.
+The class 'pcm_av_av_repository_av_av_InfrastructureRequiredRole' is a specialization of 'RequiredRole'.
+The class 'pcm_av_av_repository_av_av_RequiredRole' is a specialization of 'Role'.
+The class 'pcm_av_av_repository_av_av_OperationSignature' is a specialization of 'Signature'.
+The class 'pcm_av_av_repository_av_av_OperationInterface' is a specialization of 'Interface'.
+The class 'pcm_av_av_repository_av_av_OperationRequiredRole' is a specialization of 'RequiredRole'.
+The class 'pcm_av_av_repository_av_av_SourceRole' is a specialization of 'RequiredRole'.
+The class 'pcm_av_av_repository_av_av_SinkRole' is a specialization of 'ProvidedRole'.
+The class 'pcm_av_av_repository_av_av_OperationProvidedRole' is a specialization of 'ProvidedRole'.
+The class 'pcm_av_av_repository_av_av_InfrastructureProvidedRole' is a specialization of 'ProvidedRole'.
+The class 'pcm_av_av_repository_av_av_CompleteComponentType' is a specialization of 'RepositoryComponent'.
+The class 'pcm_av_av_repository_av_av_ProvidesComponentType' is a specialization of 'RepositoryComponent'.
+The class 'pcm_av_av_repository_av_av_CompositeComponent' is a specialization of 'entity_av_av_ComposedProvidingRequiringEntity'.
+The class 'pcm_av_av_repository_av_av_CompositeComponent' is a specialization of 'repository_av_av_ImplementationComponentType'.
+The class 'pcm_av_av_repository_av_av_PrimitiveDataType' is a specialization of 'DataType'.
+The class 'pcm_av_av_repository_av_av_CollectionDataType' is a specialization of 'entity_av_av_Entity'.
+The class 'pcm_av_av_repository_av_av_CollectionDataType' is a specialization of 'repository_av_av_DataType'.
+The class 'pcm_av_av_repository_av_av_CompositeDataType' is a specialization of 'entity_av_av_Entity'.
+The class 'pcm_av_av_repository_av_av_CompositeDataType' is a specialization of 'repository_av_av_DataType'.
+The class 'pcm_av_av_repository_av_av_InnerDeclaration' is a specialization of 'NamedElement'.
+The class 'pcm_av_av_repository_av_av_Role' is a specialization of 'Entity'.
+The class 'pcm_av_av_resourcetype_av_av_ResourceSignature' is a specialization of 'Entity'.
+The class 'pcm_av_av_resourcetype_av_av_ProcessingResourceType' is a specialization of 'ResourceType'.
+The class 'pcm_av_av_resourcetype_av_av_ResourceType' is a specialization of 'entity_av_av_Entity'.
+The class 'pcm_av_av_resourcetype_av_av_ResourceType' is a specialization of 'UnitCarryingElement'.
+The class 'pcm_av_av_resourcetype_av_av_ResourceType' is a specialization of 'entity_av_av_ResourceInterfaceProvidingEntity'.
+The class 'pcm_av_av_resourcetype_av_av_SchedulingPolicy' is a specialization of 'Entity'.
+The class 'pcm_av_av_resourcetype_av_av_CommunicationLinkResourceType' is a specialization of 'ResourceType'.
+The class 'pcm_av_av_resourcetype_av_av_ResourceInterface' is a specialization of 'Entity'.
+The class 'pcm_av_av_parameter_av_av_CharacterisedVariable' is a specialization of 'Variable'.
+The class 'pcm_av_av_reliability_av_av_HardwareInducedFailureType' is a specialization of 'FailureType'.
+The class 'pcm_av_av_reliability_av_av_SoftwareInducedFailureType' is a specialization of 'FailureType'.
+The class 'pcm_av_av_reliability_av_av_InternalFailureOccurrenceDescription' is a specialization of 'FailureOccurrenceDescription'.
+The class 'pcm_av_av_reliability_av_av_NetworkInducedFailureType' is a specialization of 'FailureType'.
+The class 'pcm_av_av_reliability_av_av_ExternalFailureOccurrenceDescription' is a specialization of 'FailureOccurrenceDescription'.
+The class 'pcm_av_av_reliability_av_av_ResourceTimeoutFailureType' is a specialization of 'SoftwareInducedFailureType'.
+The class 'pcm_av_av_reliability_av_av_FailureType' is a specialization of 'Entity'.
+The class 'pcm_av_av_seff_av_av_StopAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_av_av_seff_av_av_AbstractInternalControlFlowAction' is a specialization of 'AbstractAction'.
+The class 'pcm_av_av_seff_av_av_AbstractAction' is a specialization of 'Entity'.
+The class 'pcm_av_av_seff_av_av_ResourceDemandingBehaviour' is a specialization of 'Identifier'.
+The class 'pcm_av_av_seff_av_av_AbstractLoopAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_av_av_seff_av_av_AbstractBranchTransition' is a specialization of 'Entity'.
+The class 'pcm_av_av_seff_av_av_BranchAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_av_av_seff_av_av_StartAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_av_av_seff_av_av_ResourceDemandingSEFF' is a specialization of 'Identifier'.
+The class 'pcm_av_av_seff_av_av_ResourceDemandingSEFF' is a specialization of 'seff_av_av_ServiceEffectSpecification'.
+The class 'pcm_av_av_seff_av_av_ResourceDemandingSEFF' is a specialization of 'seff_av_av_ResourceDemandingBehaviour'.
+The class 'pcm_av_av_seff_av_av_ResourceDemandingInternalBehaviour' is a specialization of 'ResourceDemandingBehaviour'.
+The class 'pcm_av_av_seff_av_av_ReleaseAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_av_av_seff_av_av_LoopAction' is a specialization of 'AbstractLoopAction'.
+The class 'pcm_av_av_seff_av_av_ForkAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_av_av_seff_av_av_ForkedBehaviour' is a specialization of 'ResourceDemandingBehaviour'.
+The class 'pcm_av_av_seff_av_av_ExternalCallAction' is a specialization of 'seff_av_av_AbstractAction'.
+The class 'pcm_av_av_seff_av_av_ExternalCallAction' is a specialization of 'seff_av_av_CallReturnAction'.
+The class 'pcm_av_av_seff_av_av_ExternalCallAction' is a specialization of 'seff_reliability_av_av_FailureHandlingEntity'.
+The class 'pcm_av_av_seff_av_av_CallReturnAction' is a specialization of 'CallAction'.
+The class 'pcm_av_av_seff_av_av_ProbabilisticBranchTransition' is a specialization of 'AbstractBranchTransition'.
+The class 'pcm_av_av_seff_av_av_AcquireAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_av_av_seff_av_av_CollectionIteratorAction' is a specialization of 'AbstractLoopAction'.
+The class 'pcm_av_av_seff_av_av_GuardedBranchTransition' is a specialization of 'AbstractBranchTransition'.
+The class 'pcm_av_av_seff_av_av_SetVariableAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_av_av_seff_av_av_InternalCallAction' is a specialization of 'seff_av_av_CallAction'.
+The class 'pcm_av_av_seff_av_av_InternalCallAction' is a specialization of 'seff_av_av_AbstractInternalControlFlowAction'.
+The class 'pcm_av_av_seff_av_av_EmitEventAction' is a specialization of 'seff_av_av_AbstractAction'.
+The class 'pcm_av_av_seff_av_av_EmitEventAction' is a specialization of 'seff_av_av_CallAction'.
+The class 'pcm_av_av_seff_av_av_InternalAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_av_av_seff_performance_av_av_InfrastructureCall' is a specialization of 'CallAction'.
+The class 'pcm_av_av_seff_performance_av_av_ResourceCall' is a specialization of 'CallAction'.
+The class 'pcm_av_av_seff_reliability_av_av_RecoveryActionBehaviour' is a specialization of 'seff_reliability_av_av_FailureHandlingEntity'.
+The class 'pcm_av_av_seff_reliability_av_av_RecoveryActionBehaviour' is a specialization of 'seff_av_av_ResourceDemandingBehaviour'.
+The class 'pcm_av_av_seff_reliability_av_av_RecoveryAction' is a specialization of 'AbstractInternalControlFlowAction'.
+The class 'pcm_av_av_seff_reliability_av_av_FailureHandlingEntity' is a specialization of 'Entity'.
+The class 'pcm_av_av_qosannotations_av_av_QoSAnnotations' is a specialization of 'Entity'.
+The class 'pcm_av_av_qos_performance_av_av_SystemSpecifiedExecutionTime' is a specialization of 'SpecifiedExecutionTime'.
+The class 'pcm_av_av_qos_performance_av_av_SpecifiedExecutionTime' is a specialization of 'SpecifiedQoSAnnotation'.
+The class 'pcm_av_av_qos_performance_av_av_ComponentSpecifiedExecutionTime' is a specialization of 'SpecifiedExecutionTime'.
+The class 'pcm_av_av_qos_reliability_av_av_SpecifiedReliabilityAnnotation' is a specialization of 'SpecifiedQoSAnnotation'.
+The class 'pcm_av_av_system_av_av_System' is a specialization of 'entity_av_av_Entity'.
+The class 'pcm_av_av_system_av_av_System' is a specialization of 'entity_av_av_ComposedProvidingRequiringEntity'.
+The class 'pcm_av_av_resourceenvironment_av_av_ResourceEnvironment' is a specialization of 'NamedElement'.
+The class 'pcm_av_av_resourceenvironment_av_av_LinkingResource' is a specialization of 'Entity'.
+The class 'pcm_av_av_resourceenvironment_av_av_ResourceContainer' is a specialization of 'Entity'.
+The class 'pcm_av_av_resourceenvironment_av_av_ProcessingResourceSpecification' is a specialization of 'Identifier'.
+The class 'pcm_av_av_resourceenvironment_av_av_CommunicationLinkResourceSpecification' is a specialization of 'Identifier'.
+The class 'pcm_av_av_allocation_av_av_AllocationContext' is a specialization of 'Entity'.
+The class 'pcm_av_av_allocation_av_av_Allocation' is a specialization of 'Entity'.
+The class 'pcm_av_av_subsystem_av_av_SubSystem' is a specialization of 'entity_av_av_ComposedProvidingRequiringEntity'.
+The class 'pcm_av_av_subsystem_av_av_SubSystem' is a specialization of 'repository_av_av_RepositoryComponent'.
+The class 'pcm_av_av_completions_av_av_Completion' is a specialization of 'entity_av_av_ComposedProvidingRequiringEntity'.
+The class 'pcm_av_av_completions_av_av_Completion' is a specialization of 'repository_av_av_ImplementationComponentType'.
+The class 'pcm_av_av_completions_av_av_DelegatingExternalCallAction' is a specialization of 'ExternalCallAction'.
+The class 'pcm_av_av_completions_av_av_NetworkDemandParametricResourceDemand' is a specialization of 'ParametricResourceDemand'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pcm_av_av_AdviceAdvice' and 'pcm_av_av_EObject'. From 'pcm_av_av_AdviceAdvice', the role 'pcm_av_av_AdviceAdvice' has cardinality 0..*, and from 'pcm_av_av_EObject', the role 'pcm_av_av_EObject' has cardinality 0..*.
+An association connects 'pcm_av_av_GlobalScopeGlobalScope' and 'pcm_av_av_EObject'. From 'pcm_av_av_GlobalScopeGlobalScope', the role 'pcm_av_av_GlobalScopeGlobalScope' has cardinality 0..*, and from 'pcm_av_av_EObject', the role 'pcm_av_av_EObject2' has cardinality 0..*.
+An association connects 'pcm_av_av_PerJoinPointScopePerJoinPointScope' and 'pcm_av_av_EObject'. From 'pcm_av_av_PerJoinPointScopePerJoinPointScope', the role 'pcm_av_av_PerJoinPointScopePerJoinPointScope' has cardinality 0..*, and from 'pcm_av_av_EObject', the role 'pcm_av_av_EObject4' has cardinality 0..*.
+An association connects 'pcm_av_av_EObject' and 'pcm_av_av_Advice'. From 'pcm_av_av_EObject', the role 'pcm_av_av_EObject6' has cardinality 0..*, and from 'pcm_av_av_Advice', the role 'pcm_av_av_Advice' has cardinality 0..*.
+An association connects 'pcm_av_av_GlobalScope' and 'pcm_av_av_EObject'. From 'pcm_av_av_GlobalScope', the role 'pcm_av_av_GlobalScope' has cardinality 0..*, and from 'pcm_av_av_EObject', the role 'pcm_av_av_EObject8' has cardinality 0..*.
+An association connects 'pcm_av_av_EObject' and 'pcm_av_av_PerJoinPointScope'. From 'pcm_av_av_EObject', the role 'pcm_av_av_EObject10' has cardinality 0..*, and from 'pcm_av_av_PerJoinPointScope', the role 'pcm_av_av_PerJoinPointScope' has cardinality 0..*.
+An association connects 'ClosedWorkload' and 'pcm_av_av_core_av_av_PCMRandomVariable'. From 'ClosedWorkload', the role 'usagemodel_av_av' has cardinality 0..*, and from 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'ClosedWorkload' has cardinality 0..*.
+An association connects 'pcm_av_av_core_av_av_PCMRandomVariable' and 'PassiveResource'. From 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'PassiveResource' has cardinality 0..*, and from 'PassiveResource', the role 'repository_av_av' has cardinality 0..*.
+An association connects 'VariableCharacterisation' and 'pcm_av_av_core_av_av_PCMRandomVariable'. From 'VariableCharacterisation', the role 'parameter_av_av' has cardinality 0..*, and from 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'VariableCharacterisation' has cardinality 0..*.
+An association connects 'seff_performance_av_av_InfrastructureCall' and 'pcm_av_av_core_av_av_PCMRandomVariable'. From 'seff_performance_av_av_InfrastructureCall', the role 'seff_av_av' has cardinality 0..*, and from 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'seff_performance_av_av' has cardinality 0..*.
+An association connects 'pcm_av_av_core_av_av_PCMRandomVariable' and 'seff_performance_av_av_ResourceCall'. From 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'seff_performance_av_av16' has cardinality 0..*, and from 'seff_performance_av_av_ResourceCall', the role 'seff_av_av17' has cardinality 0..*.
+An association connects 'pcm_av_av_core_av_av_PCMRandomVariable' and 'seff_performance_av_av_ParametricResourceDemand'. From 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'seff_performance_av_av19' has cardinality 0..*, and from 'seff_performance_av_av_ParametricResourceDemand', the role 'seff_av_av20' has cardinality 0..*.
+An association connects 'LoopAction' and 'pcm_av_av_core_av_av_PCMRandomVariable'. From 'LoopAction', the role 'seff_av_av22' has cardinality 0..*, and from 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'LoopAction' has cardinality 0..*.
+An association connects 'pcm_av_av_core_av_av_PCMRandomVariable' and 'GuardedBranchTransition'. From 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'GuardedBranchTransition' has cardinality 0..*, and from 'GuardedBranchTransition', the role 'seff_av_av24' has cardinality 0..*.
+An association connects 'pcm_av_av_core_av_av_PCMRandomVariable' and 'qos_performance_av_av_SpecifiedExecutionTime'. From 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'qos_performance_av_av' has cardinality 0..*, and from 'qos_performance_av_av_SpecifiedExecutionTime', the role 'qosannotations_av_av' has cardinality 0..*.
+An association connects 'composition_av_av_EventChannelSinkConnector' and 'pcm_av_av_core_av_av_PCMRandomVariable'. From 'composition_av_av_EventChannelSinkConnector', the role 'core_av_av' has cardinality 0..*, and from 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'composition_av_av' has cardinality 0..*.
+An association connects 'composition_av_av_AssemblyEventConnector' and 'pcm_av_av_core_av_av_PCMRandomVariable'. From 'composition_av_av_AssemblyEventConnector', the role 'core_av_av29' has cardinality 0..*, and from 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'composition_av_av28' has cardinality 0..*.
+An association connects 'pcm_av_av_core_av_av_PCMRandomVariable' and 'Loop'. From 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'Loop' has cardinality 0..*, and from 'Loop', the role 'usagemodel_av_av31' has cardinality 0..*.
+An association connects 'pcm_av_av_core_av_av_PCMRandomVariable' and 'OpenWorkload'. From 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'OpenWorkload' has cardinality 0..*, and from 'OpenWorkload', the role 'usagemodel_av_av33' has cardinality 0..*.
+An association connects 'pcm_av_av_core_av_av_PCMRandomVariable' and 'Delay'. From 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'Delay' has cardinality 0..*, and from 'Delay', the role 'usagemodel_av_av35' has cardinality 0..*.
+An association connects 'pcm_av_av_core_av_av_PCMRandomVariable' and 'CommunicationLinkResourceSpecification'. From 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'CommunicationLinkResourceSpecification' has cardinality 0..*, and from 'CommunicationLinkResourceSpecification', the role 'resourceenvironment_av_av' has cardinality 0..*.
+An association connects 'ProcessingResourceSpecification' and 'pcm_av_av_core_av_av_PCMRandomVariable'. From 'ProcessingResourceSpecification', the role 'resourceenvironment_av_av38' has cardinality 0..*, and from 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'ProcessingResourceSpecification' has cardinality 0..*.
+An association connects 'CommunicationLinkResourceSpecification' and 'pcm_av_av_core_av_av_PCMRandomVariable'. From 'CommunicationLinkResourceSpecification', the role 'resourceenvironment_av_av41' has cardinality 0..*, and from 'pcm_av_av_core_av_av_PCMRandomVariable', the role 'CommunicationLinkResourceSpecification40' has cardinality 0..*.
+An association connects 'entity_av_av_ResourceInterfaceProvidingEntity' and 'pcm_av_av_entity_av_av_ResourceProvidedRole'. From 'entity_av_av_ResourceInterfaceProvidingEntity', the role 'core_av_av43' has cardinality 0..*, and from 'pcm_av_av_entity_av_av_ResourceProvidedRole', the role 'entity_av_av' has cardinality 0..*.
+An association connects 'pcm_av_av_entity_av_av_ResourceProvidedRole' and 'ResourceInterface'. From 'pcm_av_av_entity_av_av_ResourceProvidedRole', the role 'pcm_av_av_entity_av_av_ResourceProvidedRole' has cardinality 0..*, and from 'ResourceInterface', the role 'ResourceInterface' has cardinality 0..*.
+An association connects 'ProvidedRole' and 'pcm_av_av_entity_av_av_InterfaceProvidingEntity'. From 'ProvidedRole', the role 'repository_av_av46' has cardinality 0..*, and from 'pcm_av_av_entity_av_av_InterfaceProvidingEntity', the role 'ProvidedRole' has cardinality 0..*.
+An association connects 'RequiredRole' and 'pcm_av_av_entity_av_av_InterfaceRequiringEntity'. From 'RequiredRole', the role 'repository_av_av48' has cardinality 0..*, and from 'pcm_av_av_entity_av_av_InterfaceRequiringEntity', the role 'RequiredRole' has cardinality 0..*.
+An association connects 'pcm_av_av_entity_av_av_ResourceInterfaceRequiringEntity' and 'entity_av_av_ResourceRequiredRole'. From 'pcm_av_av_entity_av_av_ResourceInterfaceRequiringEntity', the role 'entity_av_av50' has cardinality 0..*, and from 'entity_av_av_ResourceRequiredRole', the role 'core_av_av51' has cardinality 0..*.
+An association connects 'pcm_av_av_entity_av_av_ResourceRequiredRole' and 'ResourceInterface'. From 'pcm_av_av_entity_av_av_ResourceRequiredRole', the role 'pcm_av_av_entity_av_av_ResourceRequiredRole' has cardinality 0..*, and from 'ResourceInterface', the role 'ResourceInterface53' has cardinality 0..*.
+An association connects 'entity_av_av_ResourceInterfaceRequiringEntity' and 'pcm_av_av_entity_av_av_ResourceRequiredRole'. From 'entity_av_av_ResourceInterfaceRequiringEntity', the role 'core_av_av56' has cardinality 0..*, and from 'pcm_av_av_entity_av_av_ResourceRequiredRole', the role 'entity_av_av55' has cardinality 0..*.
+An association connects 'entity_av_av_ResourceProvidedRole' and 'pcm_av_av_entity_av_av_ResourceInterfaceProvidingEntity'. From 'entity_av_av_ResourceProvidedRole', the role 'core_av_av59' has cardinality 0..*, and from 'pcm_av_av_entity_av_av_ResourceInterfaceProvidingEntity', the role 'entity_av_av58' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_Connector' and 'composition_av_av_ComposedStructure'. From 'pcm_av_av_composition_av_av_Connector', the role 'composition_av_av61' has cardinality 0..*, and from 'composition_av_av_ComposedStructure', the role 'core_av_av62' has cardinality 0..*.
+An association connects 'composition_av_av_AssemblyContext' and 'pcm_av_av_composition_av_av_ComposedStructure'. From 'composition_av_av_AssemblyContext', the role 'core_av_av65' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_ComposedStructure', the role 'composition_av_av64' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_ComposedStructure' and 'composition_av_av_ResourceRequiredDelegationConnector'. From 'pcm_av_av_composition_av_av_ComposedStructure', the role 'composition_av_av67' has cardinality 0..*, and from 'composition_av_av_ResourceRequiredDelegationConnector', the role 'core_av_av68' has cardinality 0..*.
+An association connects 'composition_av_av_EventChannel' and 'pcm_av_av_composition_av_av_ComposedStructure'. From 'composition_av_av_EventChannel', the role 'core_av_av71' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_ComposedStructure', the role 'composition_av_av70' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_ComposedStructure' and 'composition_av_av_Connector'. From 'pcm_av_av_composition_av_av_ComposedStructure', the role 'composition_av_av73' has cardinality 0..*, and from 'composition_av_av_Connector', the role 'core_av_av74' has cardinality 0..*.
+An association connects 'entity_av_av_ResourceRequiredRole' and 'pcm_av_av_composition_av_av_ResourceRequiredDelegationConnector'. From 'entity_av_av_ResourceRequiredRole', the role 'entity_av_av_ResourceRequiredRole' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_ResourceRequiredDelegationConnector', the role 'pcm_av_av_composition_av_av_ResourceRequiredDelegationConnector' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_ResourceRequiredDelegationConnector' and 'entity_av_av_ResourceRequiredRole'. From 'pcm_av_av_composition_av_av_ResourceRequiredDelegationConnector', the role 'pcm_av_av_composition_av_av_ResourceRequiredDelegationConnector77' has cardinality 0..*, and from 'entity_av_av_ResourceRequiredRole', the role 'entity_av_av_ResourceRequiredRole78' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_ResourceRequiredDelegationConnector' and 'composition_av_av_ComposedStructure'. From 'pcm_av_av_composition_av_av_ResourceRequiredDelegationConnector', the role 'composition_av_av80' has cardinality 0..*, and from 'composition_av_av_ComposedStructure', the role 'core_av_av81' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_EventChannel' and 'EventGroup'. From 'pcm_av_av_composition_av_av_EventChannel', the role 'pcm_av_av_composition_av_av_EventChannel' has cardinality 0..*, and from 'EventGroup', the role 'EventGroup' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_EventChannel' and 'composition_av_av_EventChannelSourceConnector'. From 'pcm_av_av_composition_av_av_EventChannel', the role 'composition_av_av84' has cardinality 0..*, and from 'composition_av_av_EventChannelSourceConnector', the role 'core_av_av85' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_EventChannel' and 'composition_av_av_EventChannelSinkConnector'. From 'pcm_av_av_composition_av_av_EventChannel', the role 'composition_av_av87' has cardinality 0..*, and from 'composition_av_av_EventChannelSinkConnector', the role 'core_av_av88' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_EventChannel' and 'composition_av_av_ComposedStructure'. From 'pcm_av_av_composition_av_av_EventChannel', the role 'composition_av_av90' has cardinality 0..*, and from 'composition_av_av_ComposedStructure', the role 'core_av_av91' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_EventChannelSourceConnector' and 'SourceRole'. From 'pcm_av_av_composition_av_av_EventChannelSourceConnector', the role 'pcm_av_av_composition_av_av_EventChannelSourceConnector' has cardinality 0..*, and from 'SourceRole', the role 'SourceRole' has cardinality 0..*.
+An association connects 'composition_av_av_AssemblyContext' and 'pcm_av_av_composition_av_av_EventChannelSourceConnector'. From 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_EventChannelSourceConnector', the role 'pcm_av_av_composition_av_av_EventChannelSourceConnector94' has cardinality 0..*.
+An association connects 'composition_av_av_EventChannel' and 'pcm_av_av_composition_av_av_EventChannelSourceConnector'. From 'composition_av_av_EventChannel', the role 'core_av_av97' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_EventChannelSourceConnector', the role 'composition_av_av96' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_EventChannelSinkConnector' and 'SinkRole'. From 'pcm_av_av_composition_av_av_EventChannelSinkConnector', the role 'pcm_av_av_composition_av_av_EventChannelSinkConnector' has cardinality 0..*, and from 'SinkRole', the role 'SinkRole' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_av_av_composition_av_av_EventChannelSinkConnector'. From 'PCMRandomVariable', the role 'core_av_av100' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_EventChannelSinkConnector', the role 'PCMRandomVariable' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_EventChannelSinkConnector' and 'composition_av_av_AssemblyContext'. From 'pcm_av_av_composition_av_av_EventChannelSinkConnector', the role 'pcm_av_av_composition_av_av_EventChannelSinkConnector102' has cardinality 0..*, and from 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext103' has cardinality 0..*.
+An association connects 'composition_av_av_EventChannel' and 'pcm_av_av_composition_av_av_EventChannelSinkConnector'. From 'composition_av_av_EventChannel', the role 'core_av_av106' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_EventChannelSinkConnector', the role 'composition_av_av105' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_ProvidedDelegationConnector' and 'OperationProvidedRole'. From 'pcm_av_av_composition_av_av_ProvidedDelegationConnector', the role 'pcm_av_av_composition_av_av_ProvidedDelegationConnector' has cardinality 0..*, and from 'OperationProvidedRole', the role 'OperationProvidedRole' has cardinality 0..*.
+An association connects 'OperationProvidedRole' and 'pcm_av_av_composition_av_av_ProvidedDelegationConnector'. From 'OperationProvidedRole', the role 'OperationProvidedRole110' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_ProvidedDelegationConnector', the role 'pcm_av_av_composition_av_av_ProvidedDelegationConnector109' has cardinality 0..*.
+An association connects 'composition_av_av_AssemblyContext' and 'pcm_av_av_composition_av_av_ProvidedDelegationConnector'. From 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext113' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_ProvidedDelegationConnector', the role 'pcm_av_av_composition_av_av_ProvidedDelegationConnector112' has cardinality 0..*.
+An association connects 'OperationRequiredRole' and 'pcm_av_av_composition_av_av_RequiredDelegationConnector'. From 'OperationRequiredRole', the role 'OperationRequiredRole' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_RequiredDelegationConnector', the role 'pcm_av_av_composition_av_av_RequiredDelegationConnector' has cardinality 0..*.
+An association connects 'OperationRequiredRole' and 'pcm_av_av_composition_av_av_RequiredDelegationConnector'. From 'OperationRequiredRole', the role 'OperationRequiredRole117' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_RequiredDelegationConnector', the role 'pcm_av_av_composition_av_av_RequiredDelegationConnector116' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_RequiredDelegationConnector' and 'composition_av_av_AssemblyContext'. From 'pcm_av_av_composition_av_av_RequiredDelegationConnector', the role 'pcm_av_av_composition_av_av_RequiredDelegationConnector119' has cardinality 0..*, and from 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext120' has cardinality 0..*.
+An association connects 'composition_av_av_AssemblyContext' and 'pcm_av_av_composition_av_av_AssemblyConnector'. From 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext122' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_AssemblyConnector', the role 'pcm_av_av_composition_av_av_AssemblyConnector' has cardinality 0..*.
+An association connects 'composition_av_av_AssemblyContext' and 'pcm_av_av_composition_av_av_AssemblyConnector'. From 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext125' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_AssemblyConnector', the role 'pcm_av_av_composition_av_av_AssemblyConnector124' has cardinality 0..*.
+An association connects 'OperationProvidedRole' and 'pcm_av_av_composition_av_av_AssemblyConnector'. From 'OperationProvidedRole', the role 'OperationProvidedRole128' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_AssemblyConnector', the role 'pcm_av_av_composition_av_av_AssemblyConnector127' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_AssemblyConnector' and 'OperationRequiredRole'. From 'pcm_av_av_composition_av_av_AssemblyConnector', the role 'pcm_av_av_composition_av_av_AssemblyConnector130' has cardinality 0..*, and from 'OperationRequiredRole', the role 'OperationRequiredRole131' has cardinality 0..*.
+An association connects 'SinkRole' and 'pcm_av_av_composition_av_av_AssemblyEventConnector'. From 'SinkRole', the role 'SinkRole133' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_AssemblyEventConnector', the role 'pcm_av_av_composition_av_av_AssemblyEventConnector' has cardinality 0..*.
+An association connects 'SourceRole' and 'pcm_av_av_composition_av_av_AssemblyEventConnector'. From 'SourceRole', the role 'SourceRole136' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_AssemblyEventConnector', the role 'pcm_av_av_composition_av_av_AssemblyEventConnector135' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_AssemblyEventConnector' and 'composition_av_av_AssemblyContext'. From 'pcm_av_av_composition_av_av_AssemblyEventConnector', the role 'pcm_av_av_composition_av_av_AssemblyEventConnector138' has cardinality 0..*, and from 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext139' has cardinality 0..*.
+An association connects 'composition_av_av_AssemblyContext' and 'pcm_av_av_composition_av_av_AssemblyEventConnector'. From 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext142' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_AssemblyEventConnector', the role 'pcm_av_av_composition_av_av_AssemblyEventConnector141' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_AssemblyEventConnector' and 'PCMRandomVariable'. From 'pcm_av_av_composition_av_av_AssemblyEventConnector', the role 'PCMRandomVariable144' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_av_av145' has cardinality 0..*.
+An association connects 'SourceRole' and 'pcm_av_av_composition_av_av_SourceDelegationConnector'. From 'SourceRole', the role 'SourceRole147' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_SourceDelegationConnector', the role 'pcm_av_av_composition_av_av_SourceDelegationConnector' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_SourceDelegationConnector' and 'SourceRole'. From 'pcm_av_av_composition_av_av_SourceDelegationConnector', the role 'pcm_av_av_composition_av_av_SourceDelegationConnector149' has cardinality 0..*, and from 'SourceRole', the role 'SourceRole150' has cardinality 0..*.
+An association connects 'composition_av_av_AssemblyContext' and 'pcm_av_av_composition_av_av_SourceDelegationConnector'. From 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext153' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_SourceDelegationConnector', the role 'pcm_av_av_composition_av_av_SourceDelegationConnector152' has cardinality 0..*.
+An association connects 'composition_av_av_AssemblyContext' and 'pcm_av_av_composition_av_av_SinkDelegationConnector'. From 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext155' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_SinkDelegationConnector', the role 'pcm_av_av_composition_av_av_SinkDelegationConnector' has cardinality 0..*.
+An association connects 'SinkRole' and 'pcm_av_av_composition_av_av_SinkDelegationConnector'. From 'SinkRole', the role 'SinkRole158' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_SinkDelegationConnector', the role 'pcm_av_av_composition_av_av_SinkDelegationConnector157' has cardinality 0..*.
+An association connects 'SinkRole' and 'pcm_av_av_composition_av_av_SinkDelegationConnector'. From 'SinkRole', the role 'SinkRole161' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_SinkDelegationConnector', the role 'pcm_av_av_composition_av_av_SinkDelegationConnector160' has cardinality 0..*.
+An association connects 'InfrastructureProvidedRole' and 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector'. From 'InfrastructureProvidedRole', the role 'InfrastructureProvidedRole' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector', the role 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector' and 'InfrastructureRequiredRole'. From 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector', the role 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector164' has cardinality 0..*, and from 'InfrastructureRequiredRole', the role 'InfrastructureRequiredRole' has cardinality 0..*.
+An association connects 'composition_av_av_AssemblyContext' and 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector'. From 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext167' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector', the role 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector166' has cardinality 0..*.
+An association connects 'composition_av_av_AssemblyContext' and 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector'. From 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext170' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector', the role 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector169' has cardinality 0..*.
+An association connects 'InfrastructureProvidedRole' and 'pcm_av_av_composition_av_av_ProvidedInfrastructureDelegationConnector'. From 'InfrastructureProvidedRole', the role 'InfrastructureProvidedRole172' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_ProvidedInfrastructureDelegationConnector', the role 'pcm_av_av_composition_av_av_ProvidedInfrastructureDelegationConnector' has cardinality 0..*.
+An association connects 'InfrastructureProvidedRole' and 'pcm_av_av_composition_av_av_ProvidedInfrastructureDelegationConnector'. From 'InfrastructureProvidedRole', the role 'InfrastructureProvidedRole175' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_ProvidedInfrastructureDelegationConnector', the role 'pcm_av_av_composition_av_av_ProvidedInfrastructureDelegationConnector174' has cardinality 0..*.
+An association connects 'composition_av_av_AssemblyContext' and 'pcm_av_av_composition_av_av_ProvidedInfrastructureDelegationConnector'. From 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext178' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_ProvidedInfrastructureDelegationConnector', the role 'pcm_av_av_composition_av_av_ProvidedInfrastructureDelegationConnector177' has cardinality 0..*.
+An association connects 'InfrastructureRequiredRole' and 'pcm_av_av_composition_av_av_RequiredInfrastructureDelegationConnector'. From 'InfrastructureRequiredRole', the role 'InfrastructureRequiredRole180' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_RequiredInfrastructureDelegationConnector', the role 'pcm_av_av_composition_av_av_RequiredInfrastructureDelegationConnector' has cardinality 0..*.
+An association connects 'InfrastructureRequiredRole' and 'pcm_av_av_composition_av_av_RequiredInfrastructureDelegationConnector'. From 'InfrastructureRequiredRole', the role 'InfrastructureRequiredRole183' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_RequiredInfrastructureDelegationConnector', the role 'pcm_av_av_composition_av_av_RequiredInfrastructureDelegationConnector182' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_RequiredInfrastructureDelegationConnector' and 'composition_av_av_AssemblyContext'. From 'pcm_av_av_composition_av_av_RequiredInfrastructureDelegationConnector', the role 'pcm_av_av_composition_av_av_RequiredInfrastructureDelegationConnector185' has cardinality 0..*, and from 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext186' has cardinality 0..*.
+An association connects 'composition_av_av_AssemblyContext' and 'pcm_av_av_composition_av_av_RequiredResourceDelegationConnector'. From 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext188' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_RequiredResourceDelegationConnector', the role 'pcm_av_av_composition_av_av_RequiredResourceDelegationConnector' has cardinality 0..*.
+An association connects 'entity_av_av_ResourceRequiredRole' and 'pcm_av_av_composition_av_av_RequiredResourceDelegationConnector'. From 'entity_av_av_ResourceRequiredRole', the role 'entity_av_av_ResourceRequiredRole191' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_RequiredResourceDelegationConnector', the role 'pcm_av_av_composition_av_av_RequiredResourceDelegationConnector190' has cardinality 0..*.
+An association connects 'entity_av_av_ResourceRequiredRole' and 'pcm_av_av_composition_av_av_RequiredResourceDelegationConnector'. From 'entity_av_av_ResourceRequiredRole', the role 'entity_av_av_ResourceRequiredRole194' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_RequiredResourceDelegationConnector', the role 'pcm_av_av_composition_av_av_RequiredResourceDelegationConnector193' has cardinality 0..*.
+An association connects 'pcm_av_av_composition_av_av_AssemblyContext' and 'composition_av_av_ComposedStructure'. From 'pcm_av_av_composition_av_av_AssemblyContext', the role 'composition_av_av196' has cardinality 0..*, and from 'composition_av_av_ComposedStructure', the role 'core_av_av197' has cardinality 0..*.
+An association connects 'RepositoryComponent' and 'pcm_av_av_composition_av_av_AssemblyContext'. From 'RepositoryComponent', the role 'RepositoryComponent' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_AssemblyContext', the role 'pcm_av_av_composition_av_av_AssemblyContext' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_av_av_composition_av_av_AssemblyContext'. From 'VariableUsage', the role 'parameter_av_av200' has cardinality 0..*, and from 'pcm_av_av_composition_av_av_AssemblyContext', the role 'VariableUsage' has cardinality 0..*.
+An association connects 'pcm_av_av_usagemodel_av_av_Workload' and 'UsageScenario'. From 'pcm_av_av_usagemodel_av_av_Workload', the role 'UsageScenario' has cardinality 0..*, and from 'UsageScenario', the role 'usagemodel_av_av202' has cardinality 0..*.
+An association connects 'UsageModel' and 'pcm_av_av_usagemodel_av_av_UsageScenario'. From 'UsageModel', the role 'usagemodel_av_av204' has cardinality 0..*, and from 'pcm_av_av_usagemodel_av_av_UsageScenario', the role 'UsageModel' has cardinality 0..*.
+An association connects 'pcm_av_av_usagemodel_av_av_UsageScenario' and 'ScenarioBehaviour'. From 'pcm_av_av_usagemodel_av_av_UsageScenario', the role 'ScenarioBehaviour' has cardinality 0..*, and from 'ScenarioBehaviour', the role 'usagemodel_av_av206' has cardinality 0..*.
+An association connects 'pcm_av_av_usagemodel_av_av_UsageScenario' and 'Workload'. From 'pcm_av_av_usagemodel_av_av_UsageScenario', the role 'Workload' has cardinality 0..*, and from 'Workload', the role 'usagemodel_av_av208' has cardinality 0..*.
+An association connects 'composition_av_av_AssemblyContext' and 'pcm_av_av_usagemodel_av_av_UserData'. From 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext210' has cardinality 0..*, and from 'pcm_av_av_usagemodel_av_av_UserData', the role 'pcm_av_av_usagemodel_av_av_UserData' has cardinality 0..*.
+An association connects 'pcm_av_av_usagemodel_av_av_UserData' and 'UsageModel'. From 'pcm_av_av_usagemodel_av_av_UserData', the role 'UsageModel212' has cardinality 0..*, and from 'UsageModel', the role 'usagemodel_av_av213' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_av_av_usagemodel_av_av_UserData'. From 'VariableUsage', the role 'parameter_av_av216' has cardinality 0..*, and from 'pcm_av_av_usagemodel_av_av_UserData', the role 'VariableUsage215' has cardinality 0..*.
+An association connects 'pcm_av_av_usagemodel_av_av_UsageModel' and 'UsageScenario'. From 'pcm_av_av_usagemodel_av_av_UsageModel', the role 'UsageScenario218' has cardinality 0..*, and from 'UsageScenario', the role 'usagemodel_av_av219' has cardinality 0..*.
+An association connects 'pcm_av_av_usagemodel_av_av_UsageModel' and 'UserData'. From 'pcm_av_av_usagemodel_av_av_UsageModel', the role 'UserData' has cardinality 0..*, and from 'UserData', the role 'usagemodel_av_av221' has cardinality 0..*.
+An association connects 'pcm_av_av_usagemodel_av_av_EntryLevelSystemCall' and 'OperationProvidedRole'. From 'pcm_av_av_usagemodel_av_av_EntryLevelSystemCall', the role 'pcm_av_av_usagemodel_av_av_EntryLevelSystemCall' has cardinality 0..*, and from 'OperationProvidedRole', the role 'OperationProvidedRole223' has cardinality 0..*.
+An association connects 'pcm_av_av_usagemodel_av_av_EntryLevelSystemCall' and 'OperationSignature'. From 'pcm_av_av_usagemodel_av_av_EntryLevelSystemCall', the role 'pcm_av_av_usagemodel_av_av_EntryLevelSystemCall225' has cardinality 0..*, and from 'OperationSignature', the role 'OperationSignature' has cardinality 0..*.
+An association connects 'pcm_av_av_usagemodel_av_av_EntryLevelSystemCall' and 'VariableUsage'. From 'pcm_av_av_usagemodel_av_av_EntryLevelSystemCall', the role 'VariableUsage227' has cardinality 0..*, and from 'VariableUsage', the role 'parameter_av_av228' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_av_av_usagemodel_av_av_EntryLevelSystemCall'. From 'VariableUsage', the role 'parameter_av_av231' has cardinality 0..*, and from 'pcm_av_av_usagemodel_av_av_EntryLevelSystemCall', the role 'VariableUsage230' has cardinality 0..*.
+An association connects 'AbstractUserAction' and 'pcm_av_av_usagemodel_av_av_AbstractUserAction'. From 'AbstractUserAction', the role 'usagemodel_av_av233' has cardinality 0..*, and from 'pcm_av_av_usagemodel_av_av_AbstractUserAction', the role 'AbstractUserAction' has cardinality 0..*.
+An association connects 'pcm_av_av_usagemodel_av_av_AbstractUserAction' and 'AbstractUserAction'. From 'pcm_av_av_usagemodel_av_av_AbstractUserAction', the role 'AbstractUserAction235' has cardinality 0..*, and from 'AbstractUserAction', the role 'usagemodel_av_av236' has cardinality 0..*.
+An association connects 'ScenarioBehaviour' and 'pcm_av_av_usagemodel_av_av_AbstractUserAction'. From 'ScenarioBehaviour', the role 'usagemodel_av_av239' has cardinality 0..*, and from 'pcm_av_av_usagemodel_av_av_AbstractUserAction', the role 'ScenarioBehaviour238' has cardinality 0..*.
+An association connects 'UsageScenario' and 'pcm_av_av_usagemodel_av_av_ScenarioBehaviour'. From 'UsageScenario', the role 'usagemodel_av_av242' has cardinality 0..*, and from 'pcm_av_av_usagemodel_av_av_ScenarioBehaviour', the role 'UsageScenario241' has cardinality 0..*.
+An association connects 'BranchTransition' and 'pcm_av_av_usagemodel_av_av_ScenarioBehaviour'. From 'BranchTransition', the role 'usagemodel_av_av244' has cardinality 0..*, and from 'pcm_av_av_usagemodel_av_av_ScenarioBehaviour', the role 'BranchTransition' has cardinality 0..*.
+An association connects 'pcm_av_av_usagemodel_av_av_ScenarioBehaviour' and 'Loop'. From 'pcm_av_av_usagemodel_av_av_ScenarioBehaviour', the role 'Loop246' has cardinality 0..*, and from 'Loop', the role 'usagemodel_av_av247' has cardinality 0..*.
+An association connects 'AbstractUserAction' and 'pcm_av_av_usagemodel_av_av_ScenarioBehaviour'. From 'AbstractUserAction', the role 'usagemodel_av_av250' has cardinality 0..*, and from 'pcm_av_av_usagemodel_av_av_ScenarioBehaviour', the role 'AbstractUserAction249' has cardinality 0..*.
+An association connects 'Branch' and 'pcm_av_av_usagemodel_av_av_BranchTransition'. From 'Branch', the role 'usagemodel_av_av252' has cardinality 0..*, and from 'pcm_av_av_usagemodel_av_av_BranchTransition', the role 'Branch' has cardinality 0..*.
+An association connects 'ScenarioBehaviour' and 'pcm_av_av_usagemodel_av_av_BranchTransition'. From 'ScenarioBehaviour', the role 'usagemodel_av_av255' has cardinality 0..*, and from 'pcm_av_av_usagemodel_av_av_BranchTransition', the role 'ScenarioBehaviour254' has cardinality 0..*.
+An association connects 'BranchTransition' and 'pcm_av_av_usagemodel_av_av_Branch'. From 'BranchTransition', the role 'usagemodel_av_av258' has cardinality 0..*, and from 'pcm_av_av_usagemodel_av_av_Branch', the role 'BranchTransition257' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_av_av_usagemodel_av_av_Loop'. From 'PCMRandomVariable', the role 'core_av_av261' has cardinality 0..*, and from 'pcm_av_av_usagemodel_av_av_Loop', the role 'PCMRandomVariable260' has cardinality 0..*.
+An association connects 'ScenarioBehaviour' and 'pcm_av_av_usagemodel_av_av_Loop'. From 'ScenarioBehaviour', the role 'usagemodel_av_av264' has cardinality 0..*, and from 'pcm_av_av_usagemodel_av_av_Loop', the role 'ScenarioBehaviour263' has cardinality 0..*.
+An association connects 'pcm_av_av_usagemodel_av_av_OpenWorkload' and 'PCMRandomVariable'. From 'pcm_av_av_usagemodel_av_av_OpenWorkload', the role 'PCMRandomVariable266' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_av_av267' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_av_av_usagemodel_av_av_Delay'. From 'PCMRandomVariable', the role 'core_av_av270' has cardinality 0..*, and from 'pcm_av_av_usagemodel_av_av_Delay', the role 'PCMRandomVariable269' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_av_av_usagemodel_av_av_ClosedWorkload'. From 'PCMRandomVariable', the role 'core_av_av273' has cardinality 0..*, and from 'pcm_av_av_usagemodel_av_av_ClosedWorkload', the role 'PCMRandomVariable272' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_av_av_repository_av_av_PassiveResource'. From 'PCMRandomVariable', the role 'core_av_av276' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_PassiveResource', the role 'PCMRandomVariable275' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_PassiveResource' and 'BasicComponent'. From 'pcm_av_av_repository_av_av_PassiveResource', the role 'BasicComponent' has cardinality 0..*, and from 'BasicComponent', the role 'repository_av_av278' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_PassiveResource' and 'ResourceTimeoutFailureType'. From 'pcm_av_av_repository_av_av_PassiveResource', the role 'ResourceTimeoutFailureType' has cardinality 0..*, and from 'ResourceTimeoutFailureType', the role 'reliability_av_av' has cardinality 0..*.
+An association connects 'ServiceEffectSpecification' and 'pcm_av_av_repository_av_av_BasicComponent'. From 'ServiceEffectSpecification', the role 'seff_av_av281' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_BasicComponent', the role 'ServiceEffectSpecification' has cardinality 0..*.
+An association connects 'PassiveResource' and 'pcm_av_av_repository_av_av_BasicComponent'. From 'PassiveResource', the role 'repository_av_av284' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_BasicComponent', the role 'PassiveResource283' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_ImplementationComponentType' and 'CompleteComponentType'. From 'pcm_av_av_repository_av_av_ImplementationComponentType', the role 'pcm_av_av_repository_av_av_ImplementationComponentType' has cardinality 0..*, and from 'CompleteComponentType', the role 'CompleteComponentType' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_ImplementationComponentType' and 'VariableUsage'. From 'pcm_av_av_repository_av_av_ImplementationComponentType', the role 'pcm_av_av_repository_av_av_ImplementationComponentType287' has cardinality 0..*, and from 'VariableUsage', the role 'VariableUsage288' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_RepositoryComponent' and 'Repository'. From 'pcm_av_av_repository_av_av_RepositoryComponent', the role 'Repository' has cardinality 0..*, and from 'Repository', the role 'repository_av_av290' has cardinality 0..*.
+An association connects 'entity_av_av_InterfaceProvidingEntity' and 'pcm_av_av_repository_av_av_ProvidedRole'. From 'entity_av_av_InterfaceProvidingEntity', the role 'core_av_av293' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_ProvidedRole', the role 'entity_av_av292' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_Parameter' and 'DataType'. From 'pcm_av_av_repository_av_av_Parameter', the role 'pcm_av_av_repository_av_av_Parameter' has cardinality 0..*, and from 'DataType', the role 'DataType' has cardinality 0..*.
+An association connects 'InfrastructureSignature' and 'pcm_av_av_repository_av_av_Parameter'. From 'InfrastructureSignature', the role 'repository_av_av296' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_Parameter', the role 'InfrastructureSignature' has cardinality 0..*.
+An association connects 'OperationSignature' and 'pcm_av_av_repository_av_av_Parameter'. From 'OperationSignature', the role 'repository_av_av299' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_Parameter', the role 'OperationSignature298' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_Parameter' and 'EventType'. From 'pcm_av_av_repository_av_av_Parameter', the role 'EventType' has cardinality 0..*, and from 'EventType', the role 'repository_av_av301' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_Parameter' and 'ResourceSignature'. From 'pcm_av_av_repository_av_av_Parameter', the role 'ResourceSignature' has cardinality 0..*, and from 'ResourceSignature', the role 'resourcetype_av_av' has cardinality 0..*.
+An association connects 'Repository' and 'pcm_av_av_repository_av_av_DataType'. From 'Repository', the role 'repository_av_av305' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_DataType', the role 'Repository304' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_Repository' and 'RepositoryComponent'. From 'pcm_av_av_repository_av_av_Repository', the role 'RepositoryComponent307' has cardinality 0..*, and from 'RepositoryComponent', the role 'repository_av_av308' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_Repository' and 'Interface'. From 'pcm_av_av_repository_av_av_Repository', the role 'Interface' has cardinality 0..*, and from 'Interface', the role 'repository_av_av310' has cardinality 0..*.
+An association connects 'FailureType' and 'pcm_av_av_repository_av_av_Repository'. From 'FailureType', the role 'reliability_av_av312' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_Repository', the role 'FailureType' has cardinality 0..*.
+An association connects 'DataType' and 'pcm_av_av_repository_av_av_Repository'. From 'DataType', the role 'repository_av_av315' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_Repository', the role 'DataType314' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_Interface' and 'Interface'. From 'pcm_av_av_repository_av_av_Interface', the role 'pcm_av_av_repository_av_av_Interface' has cardinality 0..*, and from 'Interface', the role 'Interface317' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_Interface' and 'Protocol'. From 'pcm_av_av_repository_av_av_Interface', the role 'pcm_av_av_repository_av_av_Interface319' has cardinality 0..*, and from 'Protocol', the role 'Protocol' has cardinality 0..*.
+An association connects 'RequiredCharacterisation' and 'pcm_av_av_repository_av_av_Interface'. From 'RequiredCharacterisation', the role 'repository_av_av321' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_Interface', the role 'RequiredCharacterisation' has cardinality 0..*.
+An association connects 'Repository' and 'pcm_av_av_repository_av_av_Interface'. From 'Repository', the role 'repository_av_av324' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_Interface', the role 'Repository323' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_RequiredCharacterisation' and 'Parameter'. From 'pcm_av_av_repository_av_av_RequiredCharacterisation', the role 'pcm_av_av_repository_av_av_RequiredCharacterisation' has cardinality 0..*, and from 'Parameter', the role 'Parameter' has cardinality 0..*.
+An association connects 'Interface' and 'pcm_av_av_repository_av_av_RequiredCharacterisation'. From 'Interface', the role 'repository_av_av328' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_RequiredCharacterisation', the role 'Interface327' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_EventGroup' and 'EventType'. From 'pcm_av_av_repository_av_av_EventGroup', the role 'EventType330' has cardinality 0..*, and from 'EventType', the role 'repository_av_av331' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_EventType' and 'Parameter'. From 'pcm_av_av_repository_av_av_EventType', the role 'Parameter333' has cardinality 0..*, and from 'Parameter', the role 'repository_av_av334' has cardinality 0..*.
+An association connects 'EventGroup' and 'pcm_av_av_repository_av_av_EventType'. From 'EventGroup', the role 'repository_av_av337' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_EventType', the role 'EventGroup336' has cardinality 0..*.
+An association connects 'ExceptionType' and 'pcm_av_av_repository_av_av_Signature'. From 'ExceptionType', the role 'ExceptionType' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_Signature', the role 'pcm_av_av_repository_av_av_Signature' has cardinality 0..*.
+An association connects 'FailureType' and 'pcm_av_av_repository_av_av_Signature'. From 'FailureType', the role 'FailureType341' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_Signature', the role 'pcm_av_av_repository_av_av_Signature340' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_InfrastructureSignature' and 'Parameter'. From 'pcm_av_av_repository_av_av_InfrastructureSignature', the role 'Parameter343' has cardinality 0..*, and from 'Parameter', the role 'repository_av_av344' has cardinality 0..*.
+An association connects 'InfrastructureInterface' and 'pcm_av_av_repository_av_av_InfrastructureSignature'. From 'InfrastructureInterface', the role 'repository_av_av346' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_InfrastructureSignature', the role 'InfrastructureInterface' has cardinality 0..*.
+An association connects 'InfrastructureSignature' and 'pcm_av_av_repository_av_av_InfrastructureInterface'. From 'InfrastructureSignature', the role 'repository_av_av349' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_InfrastructureInterface', the role 'InfrastructureSignature348' has cardinality 0..*.
+An association connects 'InfrastructureInterface' and 'pcm_av_av_repository_av_av_InfrastructureRequiredRole'. From 'InfrastructureInterface', the role 'InfrastructureInterface351' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_InfrastructureRequiredRole', the role 'pcm_av_av_repository_av_av_InfrastructureRequiredRole' has cardinality 0..*.
+An association connects 'entity_av_av_InterfaceRequiringEntity' and 'pcm_av_av_repository_av_av_RequiredRole'. From 'entity_av_av_InterfaceRequiringEntity', the role 'core_av_av354' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_RequiredRole', the role 'entity_av_av353' has cardinality 0..*.
+An association connects 'OperationInterface' and 'pcm_av_av_repository_av_av_OperationSignature'. From 'OperationInterface', the role 'repository_av_av356' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_OperationSignature', the role 'OperationInterface' has cardinality 0..*.
+An association connects 'Parameter' and 'pcm_av_av_repository_av_av_OperationSignature'. From 'Parameter', the role 'repository_av_av359' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_OperationSignature', the role 'Parameter358' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_OperationSignature' and 'DataType'. From 'pcm_av_av_repository_av_av_OperationSignature', the role 'pcm_av_av_repository_av_av_OperationSignature' has cardinality 0..*, and from 'DataType', the role 'DataType361' has cardinality 0..*.
+An association connects 'OperationSignature' and 'pcm_av_av_repository_av_av_OperationInterface'. From 'OperationSignature', the role 'repository_av_av364' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_OperationInterface', the role 'OperationSignature363' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_OperationRequiredRole' and 'OperationInterface'. From 'pcm_av_av_repository_av_av_OperationRequiredRole', the role 'pcm_av_av_repository_av_av_OperationRequiredRole' has cardinality 0..*, and from 'OperationInterface', the role 'OperationInterface366' has cardinality 0..*.
+An association connects 'EventGroup' and 'pcm_av_av_repository_av_av_SourceRole'. From 'EventGroup', the role 'EventGroup368' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_SourceRole', the role 'pcm_av_av_repository_av_av_SourceRole' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_SinkRole' and 'EventGroup'. From 'pcm_av_av_repository_av_av_SinkRole', the role 'pcm_av_av_repository_av_av_SinkRole' has cardinality 0..*, and from 'EventGroup', the role 'EventGroup370' has cardinality 0..*.
+An association connects 'OperationInterface' and 'pcm_av_av_repository_av_av_OperationProvidedRole'. From 'OperationInterface', the role 'OperationInterface372' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_OperationProvidedRole', the role 'pcm_av_av_repository_av_av_OperationProvidedRole' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_InfrastructureProvidedRole' and 'InfrastructureInterface'. From 'pcm_av_av_repository_av_av_InfrastructureProvidedRole', the role 'pcm_av_av_repository_av_av_InfrastructureProvidedRole' has cardinality 0..*, and from 'InfrastructureInterface', the role 'InfrastructureInterface374' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_CompleteComponentType' and 'ProvidesComponentType'. From 'pcm_av_av_repository_av_av_CompleteComponentType', the role 'pcm_av_av_repository_av_av_CompleteComponentType' has cardinality 0..*, and from 'ProvidesComponentType', the role 'ProvidesComponentType' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_CollectionDataType' and 'DataType'. From 'pcm_av_av_repository_av_av_CollectionDataType', the role 'pcm_av_av_repository_av_av_CollectionDataType' has cardinality 0..*, and from 'DataType', the role 'DataType377' has cardinality 0..*.
+An association connects 'pcm_av_av_repository_av_av_CompositeDataType' and 'CompositeDataType'. From 'pcm_av_av_repository_av_av_CompositeDataType', the role 'pcm_av_av_repository_av_av_CompositeDataType' has cardinality 0..*, and from 'CompositeDataType', the role 'CompositeDataType' has cardinality 0..*.
+An association connects 'InnerDeclaration' and 'pcm_av_av_repository_av_av_CompositeDataType'. From 'InnerDeclaration', the role 'repository_av_av380' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_CompositeDataType', the role 'InnerDeclaration' has cardinality 0..*.
+An association connects 'DataType' and 'pcm_av_av_repository_av_av_InnerDeclaration'. From 'DataType', the role 'DataType382' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_InnerDeclaration', the role 'pcm_av_av_repository_av_av_InnerDeclaration' has cardinality 0..*.
+An association connects 'CompositeDataType' and 'pcm_av_av_repository_av_av_InnerDeclaration'. From 'CompositeDataType', the role 'repository_av_av385' has cardinality 0..*, and from 'pcm_av_av_repository_av_av_InnerDeclaration', the role 'CompositeDataType384' has cardinality 0..*.
+An association connects 'pcm_av_av_resourcetype_av_av_ResourceSignature' and 'Parameter'. From 'pcm_av_av_resourcetype_av_av_ResourceSignature', the role 'Parameter387' has cardinality 0..*, and from 'Parameter', the role 'repository_av_av388' has cardinality 0..*.
+An association connects 'ResourceInterface' and 'pcm_av_av_resourcetype_av_av_ResourceSignature'. From 'ResourceInterface', the role 'resourcetype_av_av391' has cardinality 0..*, and from 'pcm_av_av_resourcetype_av_av_ResourceSignature', the role 'ResourceInterface390' has cardinality 0..*.
+An association connects 'pcm_av_av_resourcetype_av_av_ProcessingResourceType' and 'HardwareInducedFailureType'. From 'pcm_av_av_resourcetype_av_av_ProcessingResourceType', the role 'HardwareInducedFailureType' has cardinality 0..*, and from 'HardwareInducedFailureType', the role 'reliability_av_av393' has cardinality 0..*.
+An association connects 'ResourceRepository' and 'pcm_av_av_resourcetype_av_av_ResourceType'. From 'ResourceRepository', the role 'resourcetype_av_av395' has cardinality 0..*, and from 'pcm_av_av_resourcetype_av_av_ResourceType', the role 'ResourceRepository' has cardinality 0..*.
+An association connects 'ResourceInterface' and 'pcm_av_av_resourcetype_av_av_ResourceRepository'. From 'ResourceInterface', the role 'resourcetype_av_av398' has cardinality 0..*, and from 'pcm_av_av_resourcetype_av_av_ResourceRepository', the role 'ResourceInterface397' has cardinality 0..*.
+An association connects 'pcm_av_av_resourcetype_av_av_ResourceRepository' and 'SchedulingPolicy'. From 'pcm_av_av_resourcetype_av_av_ResourceRepository', the role 'SchedulingPolicy' has cardinality 0..*, and from 'SchedulingPolicy', the role 'resourcetype_av_av400' has cardinality 0..*.
+An association connects 'pcm_av_av_resourcetype_av_av_ResourceRepository' and 'ResourceType'. From 'pcm_av_av_resourcetype_av_av_ResourceRepository', the role 'ResourceType' has cardinality 0..*, and from 'ResourceType', the role 'resourcetype_av_av402' has cardinality 0..*.
+An association connects 'pcm_av_av_resourcetype_av_av_SchedulingPolicy' and 'ResourceRepository'. From 'pcm_av_av_resourcetype_av_av_SchedulingPolicy', the role 'ResourceRepository404' has cardinality 0..*, and from 'ResourceRepository', the role 'resourcetype_av_av405' has cardinality 0..*.
+An association connects 'NetworkInducedFailureType' and 'pcm_av_av_resourcetype_av_av_CommunicationLinkResourceType'. From 'NetworkInducedFailureType', the role 'reliability_av_av407' has cardinality 0..*, and from 'pcm_av_av_resourcetype_av_av_CommunicationLinkResourceType', the role 'NetworkInducedFailureType' has cardinality 0..*.
+An association connects 'ResourceRepository' and 'pcm_av_av_resourcetype_av_av_ResourceInterface'. From 'ResourceRepository', the role 'resourcetype_av_av410' has cardinality 0..*, and from 'pcm_av_av_resourcetype_av_av_ResourceInterface', the role 'ResourceRepository409' has cardinality 0..*.
+An association connects 'pcm_av_av_resourcetype_av_av_ResourceInterface' and 'ResourceSignature'. From 'pcm_av_av_resourcetype_av_av_ResourceInterface', the role 'ResourceSignature412' has cardinality 0..*, and from 'ResourceSignature', the role 'resourcetype_av_av413' has cardinality 0..*.
+An association connects 'pcm_av_av_parameter_av_av_VariableUsage' and 'VariableCharacterisation'. From 'pcm_av_av_parameter_av_av_VariableUsage', the role 'VariableCharacterisation415' has cardinality 0..*, and from 'VariableCharacterisation', the role 'parameter_av_av416' has cardinality 0..*.
+An association connects 'pcm_av_av_parameter_av_av_VariableUsage' and 'UserData'. From 'pcm_av_av_parameter_av_av_VariableUsage', the role 'UserData418' has cardinality 0..*, and from 'UserData', the role 'usagemodel_av_av419' has cardinality 0..*.
+An association connects 'pcm_av_av_parameter_av_av_VariableUsage' and 'CallAction'. From 'pcm_av_av_parameter_av_av_VariableUsage', the role 'CallAction' has cardinality 0..*, and from 'CallAction', the role 'seff_av_av421' has cardinality 0..*.
+An association connects 'SynchronisationPoint' and 'pcm_av_av_parameter_av_av_VariableUsage'. From 'SynchronisationPoint', the role 'seff_av_av423' has cardinality 0..*, and from 'pcm_av_av_parameter_av_av_VariableUsage', the role 'SynchronisationPoint' has cardinality 0..*.
+An association connects 'CallReturnAction' and 'pcm_av_av_parameter_av_av_VariableUsage'. From 'CallReturnAction', the role 'seff_av_av425' has cardinality 0..*, and from 'pcm_av_av_parameter_av_av_VariableUsage', the role 'CallReturnAction' has cardinality 0..*.
+An association connects 'pcm_av_av_parameter_av_av_VariableUsage' and 'SetVariableAction'. From 'pcm_av_av_parameter_av_av_VariableUsage', the role 'SetVariableAction' has cardinality 0..*, and from 'SetVariableAction', the role 'seff_av_av427' has cardinality 0..*.
+An association connects 'pcm_av_av_parameter_av_av_VariableUsage' and 'SpecifiedOutputParameterAbstraction'. From 'pcm_av_av_parameter_av_av_VariableUsage', the role 'SpecifiedOutputParameterAbstraction' has cardinality 0..*, and from 'SpecifiedOutputParameterAbstraction', the role 'qosannotations_av_av429' has cardinality 0..*.
+An association connects 'composition_av_av_AssemblyContext' and 'pcm_av_av_parameter_av_av_VariableUsage'. From 'composition_av_av_AssemblyContext', the role 'core_av_av432' has cardinality 0..*, and from 'pcm_av_av_parameter_av_av_VariableUsage', the role 'composition_av_av431' has cardinality 0..*.
+An association connects 'pcm_av_av_parameter_av_av_VariableUsage' and 'EntryLevelSystemCall'. From 'pcm_av_av_parameter_av_av_VariableUsage', the role 'EntryLevelSystemCall' has cardinality 0..*, and from 'EntryLevelSystemCall', the role 'usagemodel_av_av434' has cardinality 0..*.
+An association connects 'EntryLevelSystemCall' and 'pcm_av_av_parameter_av_av_VariableUsage'. From 'EntryLevelSystemCall', the role 'usagemodel_av_av437' has cardinality 0..*, and from 'pcm_av_av_parameter_av_av_VariableUsage', the role 'EntryLevelSystemCall436' has cardinality 0..*.
+An association connects 'parameter_av_av_pcm_av_av_AbstractNamedReference' and 'pcm_av_av_parameter_av_av_VariableUsage'. From 'parameter_av_av_pcm_av_av_AbstractNamedReference', the role 'parameter_av_av_pcm_av_av_AbstractNamedReference' has cardinality 0..*, and from 'pcm_av_av_parameter_av_av_VariableUsage', the role 'pcm_av_av_parameter_av_av_VariableUsage' has cardinality 0..*.
+An association connects 'pcm_av_av_parameter_av_av_VariableCharacterisation' and 'PCMRandomVariable'. From 'pcm_av_av_parameter_av_av_VariableCharacterisation', the role 'PCMRandomVariable440' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_av_av441' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_av_av_parameter_av_av_VariableCharacterisation'. From 'VariableUsage', the role 'parameter_av_av444' has cardinality 0..*, and from 'pcm_av_av_parameter_av_av_VariableCharacterisation', the role 'VariableUsage443' has cardinality 0..*.
+An association connects 'pcm_av_av_reliability_av_av_HardwareInducedFailureType' and 'ProcessingResourceType'. From 'pcm_av_av_reliability_av_av_HardwareInducedFailureType', the role 'ProcessingResourceType' has cardinality 0..*, and from 'ProcessingResourceType', the role 'resourcetype_av_av446' has cardinality 0..*.
+An association connects 'InternalFailureOccurrenceDescription' and 'pcm_av_av_reliability_av_av_SoftwareInducedFailureType'. From 'InternalFailureOccurrenceDescription', the role 'reliability_av_av448' has cardinality 0..*, and from 'pcm_av_av_reliability_av_av_SoftwareInducedFailureType', the role 'InternalFailureOccurrenceDescription' has cardinality 0..*.
+An association connects 'InternalAction' and 'pcm_av_av_reliability_av_av_InternalFailureOccurrenceDescription'. From 'InternalAction', the role 'seff_av_av450' has cardinality 0..*, and from 'pcm_av_av_reliability_av_av_InternalFailureOccurrenceDescription', the role 'InternalAction' has cardinality 0..*.
+An association connects 'pcm_av_av_reliability_av_av_InternalFailureOccurrenceDescription' and 'SoftwareInducedFailureType'. From 'pcm_av_av_reliability_av_av_InternalFailureOccurrenceDescription', the role 'SoftwareInducedFailureType' has cardinality 0..*, and from 'SoftwareInducedFailureType', the role 'reliability_av_av452' has cardinality 0..*.
+An association connects 'CommunicationLinkResourceType' and 'pcm_av_av_reliability_av_av_NetworkInducedFailureType'. From 'CommunicationLinkResourceType', the role 'resourcetype_av_av454' has cardinality 0..*, and from 'pcm_av_av_reliability_av_av_NetworkInducedFailureType', the role 'CommunicationLinkResourceType' has cardinality 0..*.
+An association connects 'pcm_av_av_reliability_av_av_ExternalFailureOccurrenceDescription' and 'qos_reliability_av_av_SpecifiedReliabilityAnnotation'. From 'pcm_av_av_reliability_av_av_ExternalFailureOccurrenceDescription', the role 'qos_reliability_av_av' has cardinality 0..*, and from 'qos_reliability_av_av_SpecifiedReliabilityAnnotation', the role 'qosannotations_av_av456' has cardinality 0..*.
+An association connects 'FailureType' and 'pcm_av_av_reliability_av_av_ExternalFailureOccurrenceDescription'. From 'FailureType', the role 'FailureType458' has cardinality 0..*, and from 'pcm_av_av_reliability_av_av_ExternalFailureOccurrenceDescription', the role 'pcm_av_av_reliability_av_av_ExternalFailureOccurrenceDescription' has cardinality 0..*.
+An association connects 'pcm_av_av_reliability_av_av_ResourceTimeoutFailureType' and 'PassiveResource'. From 'pcm_av_av_reliability_av_av_ResourceTimeoutFailureType', the role 'PassiveResource460' has cardinality 0..*, and from 'PassiveResource', the role 'repository_av_av461' has cardinality 0..*.
+An association connects 'pcm_av_av_reliability_av_av_FailureType' and 'Repository'. From 'pcm_av_av_reliability_av_av_FailureType', the role 'Repository463' has cardinality 0..*, and from 'Repository', the role 'repository_av_av464' has cardinality 0..*.
+An association connects 'seff_performance_av_av_ParametricResourceDemand' and 'pcm_av_av_seff_av_av_AbstractInternalControlFlowAction'. From 'seff_performance_av_av_ParametricResourceDemand', the role 'seff_av_av467' has cardinality 0..*, and from 'pcm_av_av_seff_av_av_AbstractInternalControlFlowAction', the role 'seff_performance_av_av466' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_AbstractInternalControlFlowAction' and 'seff_performance_av_av_InfrastructureCall'. From 'pcm_av_av_seff_av_av_AbstractInternalControlFlowAction', the role 'seff_performance_av_av469' has cardinality 0..*, and from 'seff_performance_av_av_InfrastructureCall', the role 'seff_av_av470' has cardinality 0..*.
+An association connects 'seff_performance_av_av_ResourceCall' and 'pcm_av_av_seff_av_av_AbstractInternalControlFlowAction'. From 'seff_performance_av_av_ResourceCall', the role 'seff_av_av473' has cardinality 0..*, and from 'pcm_av_av_seff_av_av_AbstractInternalControlFlowAction', the role 'seff_performance_av_av472' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_AbstractAction' and 'AbstractAction'. From 'pcm_av_av_seff_av_av_AbstractAction', the role 'AbstractAction' has cardinality 0..*, and from 'AbstractAction', the role 'seff_av_av475' has cardinality 0..*.
+An association connects 'AbstractAction' and 'pcm_av_av_seff_av_av_AbstractAction'. From 'AbstractAction', the role 'seff_av_av478' has cardinality 0..*, and from 'pcm_av_av_seff_av_av_AbstractAction', the role 'AbstractAction477' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_AbstractAction' and 'ResourceDemandingBehaviour'. From 'pcm_av_av_seff_av_av_AbstractAction', the role 'ResourceDemandingBehaviour' has cardinality 0..*, and from 'ResourceDemandingBehaviour', the role 'seff_av_av480' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_ResourceDemandingBehaviour' and 'AbstractLoopAction'. From 'pcm_av_av_seff_av_av_ResourceDemandingBehaviour', the role 'AbstractLoopAction' has cardinality 0..*, and from 'AbstractLoopAction', the role 'seff_av_av482' has cardinality 0..*.
+An association connects 'AbstractBranchTransition' and 'pcm_av_av_seff_av_av_ResourceDemandingBehaviour'. From 'AbstractBranchTransition', the role 'seff_av_av484' has cardinality 0..*, and from 'pcm_av_av_seff_av_av_ResourceDemandingBehaviour', the role 'AbstractBranchTransition' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_ResourceDemandingBehaviour' and 'AbstractAction'. From 'pcm_av_av_seff_av_av_ResourceDemandingBehaviour', the role 'AbstractAction486' has cardinality 0..*, and from 'AbstractAction', the role 'seff_av_av487' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_AbstractLoopAction' and 'ResourceDemandingBehaviour'. From 'pcm_av_av_seff_av_av_AbstractLoopAction', the role 'ResourceDemandingBehaviour489' has cardinality 0..*, and from 'ResourceDemandingBehaviour', the role 'seff_av_av490' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_AbstractBranchTransition' and 'BranchAction'. From 'pcm_av_av_seff_av_av_AbstractBranchTransition', the role 'BranchAction' has cardinality 0..*, and from 'BranchAction', the role 'seff_av_av492' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_AbstractBranchTransition' and 'ResourceDemandingBehaviour'. From 'pcm_av_av_seff_av_av_AbstractBranchTransition', the role 'ResourceDemandingBehaviour494' has cardinality 0..*, and from 'ResourceDemandingBehaviour', the role 'seff_av_av495' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_BranchAction' and 'AbstractBranchTransition'. From 'pcm_av_av_seff_av_av_BranchAction', the role 'AbstractBranchTransition497' has cardinality 0..*, and from 'AbstractBranchTransition', the role 'seff_av_av498' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_CallAction' and 'VariableUsage'. From 'pcm_av_av_seff_av_av_CallAction', the role 'VariableUsage500' has cardinality 0..*, and from 'VariableUsage', the role 'parameter_av_av501' has cardinality 0..*.
+An association connects 'Signature' and 'pcm_av_av_seff_av_av_ServiceEffectSpecification'. From 'Signature', the role 'Signature' has cardinality 0..*, and from 'pcm_av_av_seff_av_av_ServiceEffectSpecification', the role 'pcm_av_av_seff_av_av_ServiceEffectSpecification' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_ServiceEffectSpecification' and 'BasicComponent'. From 'pcm_av_av_seff_av_av_ServiceEffectSpecification', the role 'BasicComponent504' has cardinality 0..*, and from 'BasicComponent', the role 'repository_av_av505' has cardinality 0..*.
+An association connects 'ResourceDemandingInternalBehaviour' and 'pcm_av_av_seff_av_av_ResourceDemandingSEFF'. From 'ResourceDemandingInternalBehaviour', the role 'seff_av_av507' has cardinality 0..*, and from 'pcm_av_av_seff_av_av_ResourceDemandingSEFF', the role 'ResourceDemandingInternalBehaviour' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_ResourceDemandingInternalBehaviour' and 'ResourceDemandingSEFF'. From 'pcm_av_av_seff_av_av_ResourceDemandingInternalBehaviour', the role 'ResourceDemandingSEFF' has cardinality 0..*, and from 'ResourceDemandingSEFF', the role 'seff_av_av509' has cardinality 0..*.
+An association connects 'PassiveResource' and 'pcm_av_av_seff_av_av_ReleaseAction'. From 'PassiveResource', the role 'PassiveResource511' has cardinality 0..*, and from 'pcm_av_av_seff_av_av_ReleaseAction', the role 'pcm_av_av_seff_av_av_ReleaseAction' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_LoopAction' and 'PCMRandomVariable'. From 'pcm_av_av_seff_av_av_LoopAction', the role 'PCMRandomVariable513' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_av_av514' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_ForkAction' and 'ForkedBehaviour'. From 'pcm_av_av_seff_av_av_ForkAction', the role 'ForkedBehaviour' has cardinality 0..*, and from 'ForkedBehaviour', the role 'seff_av_av516' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_ForkAction' and 'SynchronisationPoint'. From 'pcm_av_av_seff_av_av_ForkAction', the role 'SynchronisationPoint518' has cardinality 0..*, and from 'SynchronisationPoint', the role 'seff_av_av519' has cardinality 0..*.
+An association connects 'SynchronisationPoint' and 'pcm_av_av_seff_av_av_ForkedBehaviour'. From 'SynchronisationPoint', the role 'seff_av_av522' has cardinality 0..*, and from 'pcm_av_av_seff_av_av_ForkedBehaviour', the role 'SynchronisationPoint521' has cardinality 0..*.
+An association connects 'ForkAction' and 'pcm_av_av_seff_av_av_ForkedBehaviour'. From 'ForkAction', the role 'seff_av_av524' has cardinality 0..*, and from 'pcm_av_av_seff_av_av_ForkedBehaviour', the role 'ForkAction' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_SynchronisationPoint' and 'VariableUsage'. From 'pcm_av_av_seff_av_av_SynchronisationPoint', the role 'VariableUsage526' has cardinality 0..*, and from 'VariableUsage', the role 'parameter_av_av527' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_SynchronisationPoint' and 'ForkAction'. From 'pcm_av_av_seff_av_av_SynchronisationPoint', the role 'ForkAction529' has cardinality 0..*, and from 'ForkAction', the role 'seff_av_av530' has cardinality 0..*.
+An association connects 'ForkedBehaviour' and 'pcm_av_av_seff_av_av_SynchronisationPoint'. From 'ForkedBehaviour', the role 'seff_av_av533' has cardinality 0..*, and from 'pcm_av_av_seff_av_av_SynchronisationPoint', the role 'ForkedBehaviour532' has cardinality 0..*.
+An association connects 'OperationSignature' and 'pcm_av_av_seff_av_av_ExternalCallAction'. From 'OperationSignature', the role 'OperationSignature535' has cardinality 0..*, and from 'pcm_av_av_seff_av_av_ExternalCallAction', the role 'pcm_av_av_seff_av_av_ExternalCallAction' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_ExternalCallAction' and 'OperationRequiredRole'. From 'pcm_av_av_seff_av_av_ExternalCallAction', the role 'pcm_av_av_seff_av_av_ExternalCallAction537' has cardinality 0..*, and from 'OperationRequiredRole', the role 'OperationRequiredRole538' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_CallReturnAction' and 'VariableUsage'. From 'pcm_av_av_seff_av_av_CallReturnAction', the role 'VariableUsage540' has cardinality 0..*, and from 'VariableUsage', the role 'parameter_av_av541' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_AcquireAction' and 'PassiveResource'. From 'pcm_av_av_seff_av_av_AcquireAction', the role 'pcm_av_av_seff_av_av_AcquireAction' has cardinality 0..*, and from 'PassiveResource', the role 'PassiveResource543' has cardinality 0..*.
+An association connects 'Parameter' and 'pcm_av_av_seff_av_av_CollectionIteratorAction'. From 'Parameter', the role 'Parameter545' has cardinality 0..*, and from 'pcm_av_av_seff_av_av_CollectionIteratorAction', the role 'pcm_av_av_seff_av_av_CollectionIteratorAction' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_av_av_seff_av_av_GuardedBranchTransition'. From 'PCMRandomVariable', the role 'core_av_av548' has cardinality 0..*, and from 'pcm_av_av_seff_av_av_GuardedBranchTransition', the role 'PCMRandomVariable547' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_av_av_seff_av_av_SetVariableAction'. From 'VariableUsage', the role 'parameter_av_av551' has cardinality 0..*, and from 'pcm_av_av_seff_av_av_SetVariableAction', the role 'VariableUsage550' has cardinality 0..*.
+An association connects 'ResourceDemandingInternalBehaviour' and 'pcm_av_av_seff_av_av_InternalCallAction'. From 'ResourceDemandingInternalBehaviour', the role 'ResourceDemandingInternalBehaviour553' has cardinality 0..*, and from 'pcm_av_av_seff_av_av_InternalCallAction', the role 'pcm_av_av_seff_av_av_InternalCallAction' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_EmitEventAction' and 'EventType'. From 'pcm_av_av_seff_av_av_EmitEventAction', the role 'pcm_av_av_seff_av_av_EmitEventAction' has cardinality 0..*, and from 'EventType', the role 'EventType555' has cardinality 0..*.
+An association connects 'SourceRole' and 'pcm_av_av_seff_av_av_EmitEventAction'. From 'SourceRole', the role 'SourceRole558' has cardinality 0..*, and from 'pcm_av_av_seff_av_av_EmitEventAction', the role 'pcm_av_av_seff_av_av_EmitEventAction557' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_av_av_InternalAction' and 'InternalFailureOccurrenceDescription'. From 'pcm_av_av_seff_av_av_InternalAction', the role 'InternalFailureOccurrenceDescription560' has cardinality 0..*, and from 'InternalFailureOccurrenceDescription', the role 'reliability_av_av561' has cardinality 0..*.
+An association connects 'InfrastructureSignature' and 'pcm_av_av_seff_performance_av_av_InfrastructureCall'. From 'InfrastructureSignature', the role 'InfrastructureSignature563' has cardinality 0..*, and from 'pcm_av_av_seff_performance_av_av_InfrastructureCall', the role 'pcm_av_av_seff_performance_av_av_InfrastructureCall' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_performance_av_av_InfrastructureCall' and 'PCMRandomVariable'. From 'pcm_av_av_seff_performance_av_av_InfrastructureCall', the role 'PCMRandomVariable565' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_av_av566' has cardinality 0..*.
+An association connects 'AbstractInternalControlFlowAction' and 'pcm_av_av_seff_performance_av_av_InfrastructureCall'. From 'AbstractInternalControlFlowAction', the role 'seff_av_av568' has cardinality 0..*, and from 'pcm_av_av_seff_performance_av_av_InfrastructureCall', the role 'AbstractInternalControlFlowAction' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_performance_av_av_InfrastructureCall' and 'InfrastructureRequiredRole'. From 'pcm_av_av_seff_performance_av_av_InfrastructureCall', the role 'pcm_av_av_seff_performance_av_av_InfrastructureCall570' has cardinality 0..*, and from 'InfrastructureRequiredRole', the role 'InfrastructureRequiredRole571' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_performance_av_av_ResourceCall' and 'AbstractInternalControlFlowAction'. From 'pcm_av_av_seff_performance_av_av_ResourceCall', the role 'AbstractInternalControlFlowAction573' has cardinality 0..*, and from 'AbstractInternalControlFlowAction', the role 'seff_av_av574' has cardinality 0..*.
+An association connects 'entity_av_av_ResourceRequiredRole' and 'pcm_av_av_seff_performance_av_av_ResourceCall'. From 'entity_av_av_ResourceRequiredRole', the role 'entity_av_av_ResourceRequiredRole576' has cardinality 0..*, and from 'pcm_av_av_seff_performance_av_av_ResourceCall', the role 'pcm_av_av_seff_performance_av_av_ResourceCall' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_performance_av_av_ResourceCall' and 'ResourceSignature'. From 'pcm_av_av_seff_performance_av_av_ResourceCall', the role 'pcm_av_av_seff_performance_av_av_ResourceCall578' has cardinality 0..*, and from 'ResourceSignature', the role 'ResourceSignature579' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_performance_av_av_ResourceCall' and 'PCMRandomVariable'. From 'pcm_av_av_seff_performance_av_av_ResourceCall', the role 'PCMRandomVariable581' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_av_av582' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_av_av_seff_performance_av_av_ParametricResourceDemand'. From 'PCMRandomVariable', the role 'core_av_av585' has cardinality 0..*, and from 'pcm_av_av_seff_performance_av_av_ParametricResourceDemand', the role 'PCMRandomVariable584' has cardinality 0..*.
+An association connects 'ProcessingResourceType' and 'pcm_av_av_seff_performance_av_av_ParametricResourceDemand'. From 'ProcessingResourceType', the role 'ProcessingResourceType587' has cardinality 0..*, and from 'pcm_av_av_seff_performance_av_av_ParametricResourceDemand', the role 'pcm_av_av_seff_performance_av_av_ParametricResourceDemand' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_performance_av_av_ParametricResourceDemand' and 'AbstractInternalControlFlowAction'. From 'pcm_av_av_seff_performance_av_av_ParametricResourceDemand', the role 'AbstractInternalControlFlowAction589' has cardinality 0..*, and from 'AbstractInternalControlFlowAction', the role 'seff_av_av590' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_reliability_av_av_RecoveryActionBehaviour' and 'seff_reliability_av_av_RecoveryActionBehaviour'. From 'pcm_av_av_seff_reliability_av_av_RecoveryActionBehaviour', the role 'pcm_av_av_seff_reliability_av_av_RecoveryActionBehaviour' has cardinality 0..*, and from 'seff_reliability_av_av_RecoveryActionBehaviour', the role 'seff_reliability_av_av_RecoveryActionBehaviour' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_reliability_av_av_RecoveryActionBehaviour' and 'seff_reliability_av_av_RecoveryAction'. From 'pcm_av_av_seff_reliability_av_av_RecoveryActionBehaviour', the role 'seff_reliability_av_av' has cardinality 0..*, and from 'seff_reliability_av_av_RecoveryAction', the role 'seff_av_av593' has cardinality 0..*.
+An association connects 'seff_reliability_av_av_RecoveryActionBehaviour' and 'pcm_av_av_seff_reliability_av_av_RecoveryAction'. From 'seff_reliability_av_av_RecoveryActionBehaviour', the role 'seff_reliability_av_av_RecoveryActionBehaviour595' has cardinality 0..*, and from 'pcm_av_av_seff_reliability_av_av_RecoveryAction', the role 'pcm_av_av_seff_reliability_av_av_RecoveryAction' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_reliability_av_av_RecoveryAction' and 'seff_reliability_av_av_RecoveryActionBehaviour'. From 'pcm_av_av_seff_reliability_av_av_RecoveryAction', the role 'seff_reliability_av_av597' has cardinality 0..*, and from 'seff_reliability_av_av_RecoveryActionBehaviour', the role 'seff_av_av598' has cardinality 0..*.
+An association connects 'pcm_av_av_seff_reliability_av_av_FailureHandlingEntity' and 'FailureType'. From 'pcm_av_av_seff_reliability_av_av_FailureHandlingEntity', the role 'pcm_av_av_seff_reliability_av_av_FailureHandlingEntity' has cardinality 0..*, and from 'FailureType', the role 'FailureType600' has cardinality 0..*.
+An association connects 'Signature' and 'pcm_av_av_qosannotations_av_av_SpecifiedQoSAnnotation'. From 'Signature', the role 'Signature602' has cardinality 0..*, and from 'pcm_av_av_qosannotations_av_av_SpecifiedQoSAnnotation', the role 'pcm_av_av_qosannotations_av_av_SpecifiedQoSAnnotation' has cardinality 0..*.
+An association connects 'pcm_av_av_qosannotations_av_av_SpecifiedQoSAnnotation' and 'Role'. From 'pcm_av_av_qosannotations_av_av_SpecifiedQoSAnnotation', the role 'pcm_av_av_qosannotations_av_av_SpecifiedQoSAnnotation604' has cardinality 0..*, and from 'Role', the role 'Role' has cardinality 0..*.
+An association connects 'QoSAnnotations' and 'pcm_av_av_qosannotations_av_av_SpecifiedQoSAnnotation'. From 'QoSAnnotations', the role 'qosannotations_av_av606' has cardinality 0..*, and from 'pcm_av_av_qosannotations_av_av_SpecifiedQoSAnnotation', the role 'QoSAnnotations' has cardinality 0..*.
+An association connects 'pcm_av_av_qosannotations_av_av_QoSAnnotations' and 'SpecifiedOutputParameterAbstraction'. From 'pcm_av_av_qosannotations_av_av_QoSAnnotations', the role 'SpecifiedOutputParameterAbstraction608' has cardinality 0..*, and from 'SpecifiedOutputParameterAbstraction', the role 'qosannotations_av_av609' has cardinality 0..*.
+An association connects 'System' and 'pcm_av_av_qosannotations_av_av_QoSAnnotations'. From 'System', the role 'system_av_av' has cardinality 0..*, and from 'pcm_av_av_qosannotations_av_av_QoSAnnotations', the role 'System' has cardinality 0..*.
+An association connects 'pcm_av_av_qosannotations_av_av_QoSAnnotations' and 'SpecifiedQoSAnnotation'. From 'pcm_av_av_qosannotations_av_av_QoSAnnotations', the role 'SpecifiedQoSAnnotation' has cardinality 0..*, and from 'SpecifiedQoSAnnotation', the role 'qosannotations_av_av612' has cardinality 0..*.
+An association connects 'pcm_av_av_qosannotations_av_av_SpecifiedOutputParameterAbstraction' and 'Signature'. From 'pcm_av_av_qosannotations_av_av_SpecifiedOutputParameterAbstraction', the role 'pcm_av_av_qosannotations_av_av_SpecifiedOutputParameterAbstraction' has cardinality 0..*, and from 'Signature', the role 'Signature614' has cardinality 0..*.
+An association connects 'Role' and 'pcm_av_av_qosannotations_av_av_SpecifiedOutputParameterAbstraction'. From 'Role', the role 'Role617' has cardinality 0..*, and from 'pcm_av_av_qosannotations_av_av_SpecifiedOutputParameterAbstraction', the role 'pcm_av_av_qosannotations_av_av_SpecifiedOutputParameterAbstraction616' has cardinality 0..*.
+An association connects 'VariableUsage' and 'pcm_av_av_qosannotations_av_av_SpecifiedOutputParameterAbstraction'. From 'VariableUsage', the role 'parameter_av_av620' has cardinality 0..*, and from 'pcm_av_av_qosannotations_av_av_SpecifiedOutputParameterAbstraction', the role 'VariableUsage619' has cardinality 0..*.
+An association connects 'QoSAnnotations' and 'pcm_av_av_qosannotations_av_av_SpecifiedOutputParameterAbstraction'. From 'QoSAnnotations', the role 'qosannotations_av_av623' has cardinality 0..*, and from 'pcm_av_av_qosannotations_av_av_SpecifiedOutputParameterAbstraction', the role 'QoSAnnotations622' has cardinality 0..*.
+An association connects 'pcm_av_av_qos_performance_av_av_SpecifiedExecutionTime' and 'PCMRandomVariable'. From 'pcm_av_av_qos_performance_av_av_SpecifiedExecutionTime', the role 'PCMRandomVariable625' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_av_av626' has cardinality 0..*.
+An association connects 'pcm_av_av_qos_performance_av_av_ComponentSpecifiedExecutionTime' and 'composition_av_av_AssemblyContext'. From 'pcm_av_av_qos_performance_av_av_ComponentSpecifiedExecutionTime', the role 'pcm_av_av_qos_performance_av_av_ComponentSpecifiedExecutionTime' has cardinality 0..*, and from 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext628' has cardinality 0..*.
+An association connects 'pcm_av_av_qos_reliability_av_av_SpecifiedReliabilityAnnotation' and 'ExternalFailureOccurrenceDescription'. From 'pcm_av_av_qos_reliability_av_av_SpecifiedReliabilityAnnotation', the role 'ExternalFailureOccurrenceDescription' has cardinality 0..*, and from 'ExternalFailureOccurrenceDescription', the role 'reliability_av_av630' has cardinality 0..*.
+An association connects 'pcm_av_av_system_av_av_System' and 'QoSAnnotations'. From 'pcm_av_av_system_av_av_System', the role 'QoSAnnotations632' has cardinality 0..*, and from 'QoSAnnotations', the role 'qosannotations_av_av633' has cardinality 0..*.
+An association connects 'pcm_av_av_resourceenvironment_av_av_ResourceEnvironment' and 'LinkingResource'. From 'pcm_av_av_resourceenvironment_av_av_ResourceEnvironment', the role 'LinkingResource' has cardinality 0..*, and from 'LinkingResource', the role 'resourceenvironment_av_av635' has cardinality 0..*.
+An association connects 'pcm_av_av_resourceenvironment_av_av_ResourceEnvironment' and 'ResourceContainer'. From 'pcm_av_av_resourceenvironment_av_av_ResourceEnvironment', the role 'ResourceContainer' has cardinality 0..*, and from 'ResourceContainer', the role 'resourceenvironment_av_av637' has cardinality 0..*.
+An association connects 'ResourceContainer' and 'pcm_av_av_resourceenvironment_av_av_LinkingResource'. From 'ResourceContainer', the role 'ResourceContainer639' has cardinality 0..*, and from 'pcm_av_av_resourceenvironment_av_av_LinkingResource', the role 'pcm_av_av_resourceenvironment_av_av_LinkingResource' has cardinality 0..*.
+An association connects 'CommunicationLinkResourceSpecification' and 'pcm_av_av_resourceenvironment_av_av_LinkingResource'. From 'CommunicationLinkResourceSpecification', the role 'resourceenvironment_av_av642' has cardinality 0..*, and from 'pcm_av_av_resourceenvironment_av_av_LinkingResource', the role 'CommunicationLinkResourceSpecification641' has cardinality 0..*.
+An association connects 'pcm_av_av_resourceenvironment_av_av_LinkingResource' and 'ResourceEnvironment'. From 'pcm_av_av_resourceenvironment_av_av_LinkingResource', the role 'ResourceEnvironment' has cardinality 0..*, and from 'ResourceEnvironment', the role 'resourceenvironment_av_av644' has cardinality 0..*.
+An association connects 'pcm_av_av_resourceenvironment_av_av_ResourceContainer' and 'ProcessingResourceSpecification'. From 'pcm_av_av_resourceenvironment_av_av_ResourceContainer', the role 'ProcessingResourceSpecification646' has cardinality 0..*, and from 'ProcessingResourceSpecification', the role 'resourceenvironment_av_av647' has cardinality 0..*.
+An association connects 'ResourceEnvironment' and 'pcm_av_av_resourceenvironment_av_av_ResourceContainer'. From 'ResourceEnvironment', the role 'resourceenvironment_av_av650' has cardinality 0..*, and from 'pcm_av_av_resourceenvironment_av_av_ResourceContainer', the role 'ResourceEnvironment649' has cardinality 0..*.
+An association connects 'ResourceContainer' and 'pcm_av_av_resourceenvironment_av_av_ResourceContainer'. From 'ResourceContainer', the role 'resourceenvironment_av_av653' has cardinality 0..*, and from 'pcm_av_av_resourceenvironment_av_av_ResourceContainer', the role 'ResourceContainer652' has cardinality 0..*.
+An association connects 'ResourceContainer' and 'pcm_av_av_resourceenvironment_av_av_ResourceContainer'. From 'ResourceContainer', the role 'resourceenvironment_av_av656' has cardinality 0..*, and from 'pcm_av_av_resourceenvironment_av_av_ResourceContainer', the role 'ResourceContainer655' has cardinality 0..*.
+An association connects 'SchedulingPolicy' and 'pcm_av_av_resourceenvironment_av_av_ProcessingResourceSpecification'. From 'SchedulingPolicy', the role 'SchedulingPolicy658' has cardinality 0..*, and from 'pcm_av_av_resourceenvironment_av_av_ProcessingResourceSpecification', the role 'pcm_av_av_resourceenvironment_av_av_ProcessingResourceSpecification' has cardinality 0..*.
+An association connects 'pcm_av_av_resourceenvironment_av_av_ProcessingResourceSpecification' and 'ProcessingResourceType'. From 'pcm_av_av_resourceenvironment_av_av_ProcessingResourceSpecification', the role 'pcm_av_av_resourceenvironment_av_av_ProcessingResourceSpecification660' has cardinality 0..*, and from 'ProcessingResourceType', the role 'ProcessingResourceType661' has cardinality 0..*.
+An association connects 'pcm_av_av_resourceenvironment_av_av_ProcessingResourceSpecification' and 'PCMRandomVariable'. From 'pcm_av_av_resourceenvironment_av_av_ProcessingResourceSpecification', the role 'PCMRandomVariable663' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_av_av664' has cardinality 0..*.
+An association connects 'ResourceContainer' and 'pcm_av_av_resourceenvironment_av_av_ProcessingResourceSpecification'. From 'ResourceContainer', the role 'resourceenvironment_av_av667' has cardinality 0..*, and from 'pcm_av_av_resourceenvironment_av_av_ProcessingResourceSpecification', the role 'ResourceContainer666' has cardinality 0..*.
+An association connects 'pcm_av_av_resourceenvironment_av_av_CommunicationLinkResourceSpecification' and 'LinkingResource'. From 'pcm_av_av_resourceenvironment_av_av_CommunicationLinkResourceSpecification', the role 'LinkingResource669' has cardinality 0..*, and from 'LinkingResource', the role 'resourceenvironment_av_av670' has cardinality 0..*.
+An association connects 'pcm_av_av_resourceenvironment_av_av_CommunicationLinkResourceSpecification' and 'CommunicationLinkResourceType'. From 'pcm_av_av_resourceenvironment_av_av_CommunicationLinkResourceSpecification', the role 'pcm_av_av_resourceenvironment_av_av_CommunicationLinkResourceSpecification' has cardinality 0..*, and from 'CommunicationLinkResourceType', the role 'CommunicationLinkResourceType672' has cardinality 0..*.
+An association connects 'pcm_av_av_resourceenvironment_av_av_CommunicationLinkResourceSpecification' and 'PCMRandomVariable'. From 'pcm_av_av_resourceenvironment_av_av_CommunicationLinkResourceSpecification', the role 'PCMRandomVariable674' has cardinality 0..*, and from 'PCMRandomVariable', the role 'core_av_av675' has cardinality 0..*.
+An association connects 'PCMRandomVariable' and 'pcm_av_av_resourceenvironment_av_av_CommunicationLinkResourceSpecification'. From 'PCMRandomVariable', the role 'core_av_av678' has cardinality 0..*, and from 'pcm_av_av_resourceenvironment_av_av_CommunicationLinkResourceSpecification', the role 'PCMRandomVariable677' has cardinality 0..*.
+An association connects 'ResourceContainer' and 'pcm_av_av_allocation_av_av_AllocationContext'. From 'ResourceContainer', the role 'ResourceContainer680' has cardinality 0..*, and from 'pcm_av_av_allocation_av_av_AllocationContext', the role 'pcm_av_av_allocation_av_av_AllocationContext' has cardinality 0..*.
+An association connects 'pcm_av_av_allocation_av_av_AllocationContext' and 'composition_av_av_AssemblyContext'. From 'pcm_av_av_allocation_av_av_AllocationContext', the role 'pcm_av_av_allocation_av_av_AllocationContext682' has cardinality 0..*, and from 'composition_av_av_AssemblyContext', the role 'composition_av_av_AssemblyContext683' has cardinality 0..*.
+An association connects 'Allocation' and 'pcm_av_av_allocation_av_av_AllocationContext'. From 'Allocation', the role 'allocation_av_av' has cardinality 0..*, and from 'pcm_av_av_allocation_av_av_AllocationContext', the role 'Allocation' has cardinality 0..*.
+An association connects 'pcm_av_av_allocation_av_av_AllocationContext' and 'composition_av_av_EventChannel'. From 'pcm_av_av_allocation_av_av_AllocationContext', the role 'pcm_av_av_allocation_av_av_AllocationContext686' has cardinality 0..*, and from 'composition_av_av_EventChannel', the role 'composition_av_av_EventChannel' has cardinality 0..*.
+An association connects 'ResourceEnvironment' and 'pcm_av_av_allocation_av_av_Allocation'. From 'ResourceEnvironment', the role 'ResourceEnvironment688' has cardinality 0..*, and from 'pcm_av_av_allocation_av_av_Allocation', the role 'pcm_av_av_allocation_av_av_Allocation' has cardinality 0..*.
+An association connects 'pcm_av_av_allocation_av_av_Allocation' and 'System'. From 'pcm_av_av_allocation_av_av_Allocation', the role 'pcm_av_av_allocation_av_av_Allocation690' has cardinality 0..*, and from 'System', the role 'System691' has cardinality 0..*.
+An association connects 'pcm_av_av_allocation_av_av_Allocation' and 'AllocationContext'. From 'pcm_av_av_allocation_av_av_Allocation', the role 'AllocationContext' has cardinality 0..*, and from 'AllocationContext', the role 'allocation_av_av693' has cardinality 0..*.
+An association connects 'Completion' and 'pcm_av_av_completions_av_av_CompletionRepository'. From 'Completion', the role 'Completion' has cardinality 0..*, and from 'pcm_av_av_completions_av_av_CompletionRepository', the role 'pcm_av_av_completions_av_av_CompletionRepository' has cardinality 0..*.
+An association connects 'CommunicationLinkResourceType' and 'pcm_av_av_completions_av_av_NetworkDemandParametricResourceDemand'. From 'CommunicationLinkResourceType', the role 'CommunicationLinkResourceType696' has cardinality 0..*, and from 'pcm_av_av_completions_av_av_NetworkDemandParametricResourceDemand', the role 'pcm_av_av_completions_av_av_NetworkDemandParametricResourceDemand' has cardinality 0..*.

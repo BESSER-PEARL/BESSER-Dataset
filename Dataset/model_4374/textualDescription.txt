@@ -1,0 +1,60 @@
+The domain model 'specializationModel' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'specializationModel_Project' represents an important domain concept.
+It has the following attributes: 'nameConfigFile', which is of type str; 'featureModelURI', which is of type str; 'userConstraintsState', which is of type bool; 'nameConstraintsFile', which is of type str; 'infiniteDomain', which is of type bool; 'numberOfProducts', which is of type int.
+
+'specializationModel_RelationFG' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'specializationModel_TypedValue' represents an important domain concept.
+It has the following attributes: 'floatValue', which is of type str; 'stringValue', which is of type str; 'integerValue', which is of type str.
+
+'specializationModel_Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'specializationModel_RelationFeature' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'lowerBound', which is of type int; 'upperBound', which is of type int.
+
+'specializationModel_FeatureGroup' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'lowerBound', which is of type int; 'upperBound', which is of type int.
+
+'Relation' represents an important domain concept.
+It does not declare any attributes.
+
+'specializationModel_Feature' represents an important domain concept.
+It has the following attributes: 'valueType', which is of type str; 'state', which is of type str; 'name', which is of type str; 'realName', which is of type str.
+
+'specializationModel_Node' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'FeatureType' defines the following possible values: 'OPTIONAL', 'SIMPLE', 'MANDATORY'.
+The enumeration 'FeatureGroupType' defines the following possible values: 'ORGROUP', 'XORGROUP', 'SIMPLEGROUP'.
+The enumeration 'ValueType' defines the following possible values: 'FEATURE', 'STRING', 'FLOAT', 'INTEGER', 'NONE'.
+The enumeration 'ConfigState' defines the following possible values: 'USER_ELIMINATED', 'UNDECIDED', 'USER_SELECTED'.
+
+The model also captures inheritance relationships between classes.
+The class 'specializationModel_Feature' is a specialization of 'Node'.
+The class 'specializationModel_FeatureGroup' is a specialization of 'Node'.
+The class 'specializationModel_RelationFG' is a specialization of 'Relation'.
+The class 'specializationModel_RelationFeature' is a specialization of 'Relation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'specializationModel_Feature' and 'specializationModel_TypedValue'. From 'specializationModel_Feature', the role 'specializationModel_Feature' has cardinality 0..*, and from 'specializationModel_TypedValue', the role 'specializationModel_TypedValue' has cardinality 0..*.
+An association connects 'specializationModel_Feature' and 'specializationModel_Feature'. From 'specializationModel_Feature', the role 'specializationModel_Feature3' has cardinality 0..*, and from 'specializationModel_Feature', the role 'specializationModel_Feature1' has cardinality 0..*.
+An association connects 'specializationModel_Node' and 'specializationModel_Feature'. From 'specializationModel_Node', the role 'specializationModel_Node' has cardinality 0..*, and from 'specializationModel_Feature', the role 'specializationModel_Feature5' has cardinality 0..*.
+An association connects 'specializationModel_Feature' and 'specializationModel_Feature'. From 'specializationModel_Feature', the role 'specializationModel_Feature6' has cardinality 0..*, and from 'specializationModel_Feature', the role 'specializationModel_Feature8' has cardinality 0..*.
+An association connects 'specializationModel_TypedValue' and 'specializationModel_Feature'. From 'specializationModel_TypedValue', the role 'specializationModel_TypedValue10' has cardinality 0..*, and from 'specializationModel_Feature', the role 'specializationModel_Feature11' has cardinality 0..*.
+An association connects 'specializationModel_Node' and 'specializationModel_Project'. From 'specializationModel_Node', the role 'specializationModel_Node13' has cardinality 0..*, and from 'specializationModel_Project', the role 'specializationModel_Project' has cardinality 0..*.
+An association connects 'specializationModel_Project' and 'specializationModel_Relation'. From 'specializationModel_Project', the role 'specializationModel_Project15' has cardinality 0..*, and from 'specializationModel_Relation', the role 'specializationModel_Relation' has cardinality 0..*.
+An association connects 'specializationModel_Feature' and 'specializationModel_FeatureGroup'. From 'specializationModel_Feature', the role 'specializationModel_Feature17' has cardinality 0..*, and from 'specializationModel_FeatureGroup', the role 'specializationModel_FeatureGroup' has cardinality 0..*.
+An association connects 'specializationModel_Node' and 'specializationModel_Node'. From 'specializationModel_Node', the role 'specializationModel_Node20' has cardinality 0..*, and from 'specializationModel_Node', the role 'specializationModel_Node18' has cardinality 0..*.
+An association connects 'specializationModel_RelationFG' and 'specializationModel_Node'. From 'specializationModel_RelationFG', the role 'specializationModel_RelationFG' has cardinality 0..*, and from 'specializationModel_Node', the role 'specializationModel_Node22' has cardinality 0..*.
+An association connects 'specializationModel_Node' and 'specializationModel_RelationFG'. From 'specializationModel_Node', the role 'specializationModel_Node25' has cardinality 0..*, and from 'specializationModel_RelationFG', the role 'specializationModel_RelationFG24' has cardinality 0..*.
+An association connects 'specializationModel_Feature' and 'specializationModel_RelationFeature'. From 'specializationModel_Feature', the role 'specializationModel_Feature27' has cardinality 0..*, and from 'specializationModel_RelationFeature', the role 'specializationModel_RelationFeature' has cardinality 0..*.
+An association connects 'specializationModel_RelationFeature' and 'specializationModel_Feature'. From 'specializationModel_RelationFeature', the role 'specializationModel_RelationFeature29' has cardinality 0..*, and from 'specializationModel_Feature', the role 'specializationModel_Feature30' has cardinality 0..*.

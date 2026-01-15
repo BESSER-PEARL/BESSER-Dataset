@@ -1,0 +1,118 @@
+The domain model 'workflow' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'workflow_Input' represents an important domain concept.
+It does not declare any attributes.
+
+'Setter' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Workflow' represents an important domain concept.
+It has one attribute: 'language', which is of type str.
+
+'SimpleTask' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_SimpleTask' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_CustomTask' represents an important domain concept.
+It has one attribute: 'runner', which is of type str.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_BaseTask' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_TaskOutput' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_LibraryFunction' represents an important domain concept.
+It has one attribute: 'function', which is of type str.
+
+'workflow_TypedElement' represents an important domain concept.
+It has the following attributes: 'typeAsString', which is of type str; 'valueAsString', which is of type str.
+
+'Nsetter' represents an important domain concept.
+It does not declare any attributes.
+
+'AbstractTask' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_IsNotInitSetter' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Output' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'IsInitSetter' represents an important domain concept.
+It does not declare any attributes.
+
+'TaskInput' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_AbstractTask' represents an important domain concept.
+It has one attribute: 'status', which is of type str.
+
+'workflow_TaskInput' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Setter' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_LibraryTask' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_IsInitSetter' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Nsetter' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TaskStatus' defines the following possible values: 'FINISHED', 'PREPARED', 'PROCESSING', 'NOT_PREPARED'.
+The enumeration 'Language' defines the following possible values: 'Python', 'Java'.
+
+The model also captures inheritance relationships between classes.
+The class 'workflow_AbstractTask' is a specialization of 'NamedElement'.
+The class 'workflow_SimpleTask' is a specialization of 'AbstractTask'.
+The class 'workflow_BaseTask' is a specialization of 'AbstractTask'.
+The class 'workflow_TaskOutput' is a specialization of 'NamedElement'.
+The class 'workflow_TaskOutput' is a specialization of 'TypedElement'.
+The class 'workflow_TaskInput' is a specialization of 'NamedElement'.
+The class 'workflow_LibraryFunction' is a specialization of 'NamedElement'.
+The class 'workflow_LibraryTask' is a specialization of 'SimpleTask'.
+The class 'workflow_Workflow' is a specialization of 'NamedElement'.
+The class 'workflow_Setter' is a specialization of 'TypedElement'.
+The class 'workflow_Setter' is a specialization of 'TaskInput'.
+The class 'workflow_Connection' is a specialization of 'TaskInput'.
+The class 'workflow_CustomTask' is a specialization of 'SimpleTask'.
+The class 'workflow_Nsetter' is a specialization of 'Setter'.
+The class 'workflow_IsInitSetter' is a specialization of 'Nsetter'.
+The class 'workflow_IsNotInitSetter' is a specialization of 'IsInitSetter'.
+The class 'workflow_Input' is a specialization of 'TypedElement'.
+The class 'workflow_Input' is a specialization of 'NamedElement'.
+The class 'workflow_Output' is a specialization of 'NamedElement'.
+The class 'workflow_Output' is a specialization of 'TypedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'workflow_AbstractTask' and 'workflow_TaskInput'. From 'workflow_AbstractTask', the role 'workflow_AbstractTask' has cardinality 0..*, and from 'workflow_TaskInput', the role 'workflow_TaskInput' has cardinality 0..*.
+An association connects 'workflow_TaskOutput' and 'workflow_AbstractTask'. From 'workflow_TaskOutput', the role 'workflow_TaskOutput' has cardinality 0..*, and from 'workflow_AbstractTask', the role 'workflow_AbstractTask2' has cardinality 0..*.
+An association connects 'workflow_AbstractTask' and 'workflow_BaseTask'. From 'workflow_AbstractTask', the role 'workflow_AbstractTask4' has cardinality 0..*, and from 'workflow_BaseTask', the role 'workflow_BaseTask' has cardinality 0..*.
+An association connects 'workflow_Output' and 'workflow_LibraryFunction'. From 'workflow_Output', the role 'workflow_Output' has cardinality 0..*, and from 'workflow_LibraryFunction', the role 'workflow_LibraryFunction' has cardinality 0..*.
+An association connects 'workflow_Input' and 'workflow_LibraryFunction'. From 'workflow_Input', the role 'workflow_Input' has cardinality 0..*, and from 'workflow_LibraryFunction', the role 'workflow_LibraryFunction7' has cardinality 0..*.
+An association connects 'workflow_LibraryTask' and 'workflow_LibraryFunction'. From 'workflow_LibraryTask', the role 'workflow_LibraryTask' has cardinality 0..*, and from 'workflow_LibraryFunction', the role 'workflow_LibraryFunction9' has cardinality 0..*.
+An association connects 'workflow_Workflow' and 'workflow_BaseTask'. From 'workflow_Workflow', the role 'workflow_Workflow' has cardinality 0..*, and from 'workflow_BaseTask', the role 'workflow_BaseTask11' has cardinality 0..*.
+An association connects 'workflow_Workflow' and 'workflow_LibraryFunction'. From 'workflow_Workflow', the role 'workflow_Workflow13' has cardinality 0..*, and from 'workflow_LibraryFunction', the role 'workflow_LibraryFunction14' has cardinality 0..*.
+An association connects 'workflow_TaskOutput' and 'workflow_Connection'. From 'workflow_TaskOutput', the role 'workflow_TaskOutput16' has cardinality 0..*, and from 'workflow_Connection', the role 'workflow_Connection' has cardinality 0..*.

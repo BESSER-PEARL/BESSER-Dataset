@@ -1,0 +1,124 @@
+The domain model 'wh' describes the core structural elements and their relationships within the system.
+
+The model defines 26 main class(es).
+
+'wh_ExprCons' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_While' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_If' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_ExprList' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_ExprEq' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_ExprTl' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_ExprAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Input' represents an important domain concept.
+It has one attribute: 'vars', which is of type str.
+
+'wh_Output' represents an important domain concept.
+It has one attribute: 'vars', which is of type str.
+
+'wh_Commands' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Affect' represents an important domain concept.
+It has one attribute: 'vars', which is of type str.
+
+'wh_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_ExprSimple' represents an important domain concept.
+It has the following attributes: 'sym', which is of type str; 'varSimple', which is of type str; 'str', which is of type str.
+
+'wh_ExprHd' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Function' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'wh_ExprNot' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Command' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Nop' represents an important domain concept.
+It has one attribute: 'nop', which is of type str.
+
+'wh_ExprSym' represents an important domain concept.
+It has one attribute: 'arg1', which is of type str.
+
+'wh_Wh' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_ExprOr' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_For' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'wh_ExprSimple' is a specialization of 'Expr'.
+The class 'wh_ExprAnd' is a specialization of 'Expr'.
+The class 'wh_ExprOr' is a specialization of 'Expr'.
+The class 'wh_ExprCons' is a specialization of 'Expr'.
+The class 'wh_ExprList' is a specialization of 'Expr'.
+The class 'wh_ExprHd' is a specialization of 'Expr'.
+The class 'wh_ExprTl' is a specialization of 'Expr'.
+The class 'wh_ExprSym' is a specialization of 'Expr'.
+The class 'wh_ExprNot' is a specialization of 'Expr'.
+The class 'wh_ExprEq' is a specialization of 'Expr'.
+
+Relationships between classes are modeled using associations.
+An association connects 'wh_Wh' and 'wh_Program'. From 'wh_Wh', the role 'wh_Wh' has cardinality 0..*, and from 'wh_Program', the role 'wh_Program' has cardinality 0..*.
+An association connects 'wh_Function' and 'wh_Program'. From 'wh_Function', the role 'wh_Function' has cardinality 0..*, and from 'wh_Program', the role 'wh_Program2' has cardinality 0..*.
+An association connects 'wh_Definition' and 'wh_Function'. From 'wh_Definition', the role 'wh_Definition' has cardinality 0..*, and from 'wh_Function', the role 'wh_Function4' has cardinality 0..*.
+An association connects 'wh_Definition' and 'wh_Input'. From 'wh_Definition', the role 'wh_Definition6' has cardinality 0..*, and from 'wh_Input', the role 'wh_Input' has cardinality 0..*.
+An association connects 'wh_Definition' and 'wh_Commands'. From 'wh_Definition', the role 'wh_Definition8' has cardinality 0..*, and from 'wh_Commands', the role 'wh_Commands' has cardinality 0..*.
+An association connects 'wh_Output' and 'wh_Definition'. From 'wh_Output', the role 'wh_Output' has cardinality 0..*, and from 'wh_Definition', the role 'wh_Definition10' has cardinality 0..*.
+An association connects 'wh_Commands' and 'wh_Command'. From 'wh_Commands', the role 'wh_Commands12' has cardinality 0..*, and from 'wh_Command', the role 'wh_Command' has cardinality 0..*.
+An association connects 'wh_EObject' and 'wh_Command'. From 'wh_EObject', the role 'wh_EObject' has cardinality 0..*, and from 'wh_Command', the role 'wh_Command14' has cardinality 0..*.
+An association connects 'wh_Expr' and 'wh_If'. From 'wh_Expr', the role 'wh_Expr' has cardinality 0..*, and from 'wh_If', the role 'wh_If' has cardinality 0..*.
+An association connects 'wh_If' and 'wh_Commands'. From 'wh_If', the role 'wh_If17' has cardinality 0..*, and from 'wh_Commands', the role 'wh_Commands18' has cardinality 0..*.
+An association connects 'wh_Commands' and 'wh_If'. From 'wh_Commands', the role 'wh_Commands21' has cardinality 0..*, and from 'wh_If', the role 'wh_If20' has cardinality 0..*.
+An association connects 'wh_Affect' and 'wh_Expr'. From 'wh_Affect', the role 'wh_Affect' has cardinality 0..*, and from 'wh_Expr', the role 'wh_Expr23' has cardinality 0..*.
+An association connects 'wh_For' and 'wh_Expr'. From 'wh_For', the role 'wh_For' has cardinality 0..*, and from 'wh_Expr', the role 'wh_Expr25' has cardinality 0..*.
+An association connects 'wh_Commands' and 'wh_For'. From 'wh_Commands', the role 'wh_Commands28' has cardinality 0..*, and from 'wh_For', the role 'wh_For27' has cardinality 0..*.
+An association connects 'wh_Expr' and 'wh_While'. From 'wh_Expr', the role 'wh_Expr30' has cardinality 0..*, and from 'wh_While', the role 'wh_While' has cardinality 0..*.
+An association connects 'wh_Commands' and 'wh_While'. From 'wh_Commands', the role 'wh_Commands33' has cardinality 0..*, and from 'wh_While', the role 'wh_While32' has cardinality 0..*.
+An association connects 'wh_Expr' and 'wh_Expr'. From 'wh_Expr', the role 'wh_Expr34' has cardinality 0..*, and from 'wh_Expr', the role 'wh_Expr36' has cardinality 0..*.
+An association connects 'wh_ExprSimple' and 'wh_ExprAnd'. From 'wh_ExprSimple', the role 'wh_ExprSimple' has cardinality 0..*, and from 'wh_ExprAnd', the role 'wh_ExprAnd' has cardinality 0..*.
+An association connects 'wh_ExprAnd' and 'wh_Expr'. From 'wh_ExprAnd', the role 'wh_ExprAnd39' has cardinality 0..*, and from 'wh_Expr', the role 'wh_Expr40' has cardinality 0..*.
+An association connects 'wh_ExprSimple' and 'wh_ExprOr'. From 'wh_ExprSimple', the role 'wh_ExprSimple42' has cardinality 0..*, and from 'wh_ExprOr', the role 'wh_ExprOr' has cardinality 0..*.
+An association connects 'wh_Expr' and 'wh_ExprOr'. From 'wh_Expr', the role 'wh_Expr45' has cardinality 0..*, and from 'wh_ExprOr', the role 'wh_ExprOr44' has cardinality 0..*.
+An association connects 'wh_ExprCons' and 'wh_Expr'. From 'wh_ExprCons', the role 'wh_ExprCons' has cardinality 0..*, and from 'wh_Expr', the role 'wh_Expr47' has cardinality 0..*.
+An association connects 'wh_Expr' and 'wh_ExprList'. From 'wh_Expr', the role 'wh_Expr49' has cardinality 0..*, and from 'wh_ExprList', the role 'wh_ExprList' has cardinality 0..*.
+An association connects 'wh_Expr' and 'wh_ExprHd'. From 'wh_Expr', the role 'wh_Expr51' has cardinality 0..*, and from 'wh_ExprHd', the role 'wh_ExprHd' has cardinality 0..*.
+An association connects 'wh_ExprTl' and 'wh_Expr'. From 'wh_ExprTl', the role 'wh_ExprTl' has cardinality 0..*, and from 'wh_Expr', the role 'wh_Expr53' has cardinality 0..*.
+An association connects 'wh_ExprSym' and 'wh_Expr'. From 'wh_ExprSym', the role 'wh_ExprSym' has cardinality 0..*, and from 'wh_Expr', the role 'wh_Expr55' has cardinality 0..*.
+An association connects 'wh_ExprNot' and 'wh_ExprEq'. From 'wh_ExprNot', the role 'wh_ExprNot' has cardinality 0..*, and from 'wh_ExprEq', the role 'wh_ExprEq' has cardinality 0..*.
+An association connects 'wh_ExprEq' and 'wh_ExprSimple'. From 'wh_ExprEq', the role 'wh_ExprEq58' has cardinality 0..*, and from 'wh_ExprSimple', the role 'wh_ExprSimple59' has cardinality 0..*.
+An association connects 'wh_ExprSimple' and 'wh_ExprEq'. From 'wh_ExprSimple', the role 'wh_ExprSimple62' has cardinality 0..*, and from 'wh_ExprEq', the role 'wh_ExprEq61' has cardinality 0..*.

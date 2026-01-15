@@ -1,0 +1,161 @@
+The domain model 'DOT' describes the core structural elements and their relationships within the system.
+
+The model defines 34 main class(es).
+
+'DOT_DirectedArc' represents an important domain concept.
+It has the following attributes: 'tail_lp', which is of type float; 'head_lp', which is of type float.
+
+'ComplexNodeShape' represents an important domain concept.
+It does not declare any attributes.
+
+'Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'Nodelike' represents an important domain concept.
+It does not declare any attributes.
+
+'DOT_SimpleNodeShape' represents an important domain concept.
+It does not declare any attributes.
+
+'DOT_Arc' represents an important domain concept.
+It has the following attributes: 'minlen', which is of type int; 'sameHead', which is of type str; 'group', which is of type str; 'constraint', which is of type bool; 'sameTail', which is of type str; 'decorate', which is of type bool.
+
+'DOT_ComplexLabel' represents an important domain concept.
+It does not declare any attributes.
+
+'Label' represents an important domain concept.
+It does not declare any attributes.
+
+'DOT_ComplexNodeShape' represents an important domain concept.
+It does not declare any attributes.
+
+'NodeShape' represents an important domain concept.
+It does not declare any attributes.
+
+'DOT_HorizontalCompartment' represents an important domain concept.
+It does not declare any attributes.
+
+'DOT_RecordNodeShape' represents an important domain concept.
+It does not declare any attributes.
+
+'DOT_Layer' represents an important domain concept.
+It has one attribute: 'layerSeparator', which is of type str.
+
+'DOT_Shape' represents an important domain concept.
+It has the following attributes: 'width', which is of type int; 'peripheries', which is of type int; 'height', which is of type int.
+
+'DOT_Compartment' represents an important domain concept.
+It does not declare any attributes.
+
+'DOT_UndirectedArc' represents an important domain concept.
+It does not declare any attributes.
+
+'DOT_SimpleLabel' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'DOT_PolygonNodeShape' represents an important domain concept.
+It has the following attributes: 'sides', which is of type int; 'isRegular', which is of type bool; 'skew', which is of type int; 'distortion', which is of type int; 'orientation', which is of type int.
+
+'DOT_GraphElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'style', which is of type str; 'color', which is of type str.
+
+'DOT_Graph' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'labelloc', which is of type str; 'size', which is of type str; 'nodeSeparation', which is of type float; 'center', which is of type bool; 'labeljust', which is of type str; 'compound', which is of type bool; 'rankDir', which is of type str; 'ordering', which is of type str; 'boundingBox', which is of type str; 'ratio', which is of type str; 'concentrate', which is of type bool.
+
+'DOT_ArrowShape' represents an important domain concept.
+It has the following attributes: 'size', which is of type int; 'isPlain', which is of type bool; 'clipping', which is of type str.
+
+'DOT_PointNodeShape' represents an important domain concept.
+It does not declare any attributes.
+
+'DOT_Nodelike' represents an important domain concept.
+It does not declare any attributes.
+
+'Arc' represents an important domain concept.
+It does not declare any attributes.
+
+'Compartment' represents an important domain concept.
+It does not declare any attributes.
+
+'DOT_SubGraph' represents an important domain concept.
+It has one attribute: 'labelloc', which is of type str.
+
+'DOT_NodeShape' represents an important domain concept.
+It does not declare any attributes.
+
+'DOT_Node' represents an important domain concept.
+It has the following attributes: 'fontsize', which is of type int; 'fontname', which is of type str; 'width', which is of type int; 'fixedSize', which is of type bool; 'height', which is of type int.
+
+'DOT_MNodeShape' represents an important domain concept.
+It does not declare any attributes.
+
+'GraphElement' represents an important domain concept.
+It does not declare any attributes.
+
+'DOT_SimpleCompartment' represents an important domain concept.
+It has one attribute: 'content', which is of type str.
+
+'DOT_Label' represents an important domain concept.
+It does not declare any attributes.
+
+'DOT_VerticalCompartment' represents an important domain concept.
+It does not declare any attributes.
+
+'DOT_Anchor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'DOT_SimpleLabel' is a specialization of 'Label'.
+The class 'DOT_ComplexLabel' is a specialization of 'Label'.
+The class 'DOT_VerticalCompartment' is a specialization of 'Compartment'.
+The class 'DOT_HorizontalCompartment' is a specialization of 'Compartment'.
+The class 'DOT_SimpleCompartment' is a specialization of 'Compartment'.
+The class 'DOT_Graph' is a specialization of 'GraphElement'.
+The class 'DOT_Layer' is a specialization of 'GraphElement'.
+The class 'DOT_Nodelike' is a specialization of 'GraphElement'.
+The class 'DOT_SubGraph' is a specialization of 'Nodelike'.
+The class 'DOT_Node' is a specialization of 'Nodelike'.
+The class 'DOT_Arc' is a specialization of 'GraphElement'.
+The class 'DOT_DirectedArc' is a specialization of 'Arc'.
+The class 'DOT_UndirectedArc' is a specialization of 'Arc'.
+The class 'DOT_Shape' is a specialization of 'GraphElement'.
+The class 'DOT_NodeShape' is a specialization of 'Shape'.
+The class 'DOT_SimpleNodeShape' is a specialization of 'NodeShape'.
+The class 'DOT_PointNodeShape' is a specialization of 'NodeShape'.
+The class 'DOT_ComplexNodeShape' is a specialization of 'NodeShape'.
+The class 'DOT_PolygonNodeShape' is a specialization of 'ComplexNodeShape'.
+The class 'DOT_MNodeShape' is a specialization of 'ComplexNodeShape'.
+The class 'DOT_RecordNodeShape' is a specialization of 'ComplexNodeShape'.
+The class 'DOT_ArrowShape' is a specialization of 'Shape'.
+
+Relationships between classes are modeled using associations.
+An association connects 'DOT_Label' and 'DOT_GraphElement'. From 'DOT_Label', the role 'label' has cardinality 0..*, and from 'DOT_GraphElement', the role 'GraphElement' has cardinality 0..*.
+An association connects 'DOT_ComplexLabel' and 'DOT_Compartment'. From 'DOT_ComplexLabel', the role 'complexLabel' has cardinality 0..*, and from 'DOT_Compartment', the role 'Compartment' has cardinality 0..*.
+An association connects 'DOT_ComplexLabel' and 'DOT_Compartment'. From 'DOT_ComplexLabel', the role 'ComplexLabel' has cardinality 0..*, and from 'DOT_Compartment', the role 'compartments' has cardinality 0..*.
+An association connects 'DOT_Compartment' and 'DOT_Compartment'. From 'DOT_Compartment', the role 'DOT_Compartment3' has cardinality 0..*, and from 'DOT_Compartment', the role 'DOT_Compartment' has cardinality 0..*.
+An association connects 'DOT_Compartment' and 'DOT_Anchor'. From 'DOT_Compartment', the role 'source' has cardinality 0..*, and from 'DOT_Anchor', the role 'Anchor' has cardinality 0..*.
+An association connects 'DOT_Anchor' and 'DOT_Compartment'. From 'DOT_Anchor', the role 'anchor' has cardinality 0..*, and from 'DOT_Compartment', the role 'Compartment7' has cardinality 0..*.
+An association connects 'DOT_GraphElement' and 'DOT_Label'. From 'DOT_GraphElement', the role 'element' has cardinality 0..*, and from 'DOT_Label', the role 'Label' has cardinality 0..*.
+An association connects 'DOT_Nodelike' and 'DOT_Graph'. From 'DOT_Nodelike', the role 'Nodelike' has cardinality 0..*, and from 'DOT_Graph', the role 'graph' has cardinality 0..*.
+An association connects 'DOT_Graph' and 'DOT_Layer'. From 'DOT_Graph', the role 'graph11' has cardinality 0..*, and from 'DOT_Layer', the role 'Layer' has cardinality 0..*.
+An association connects 'DOT_Layer' and 'DOT_Nodelike'. From 'DOT_Layer', the role 'layers' has cardinality 0..*, and from 'DOT_Nodelike', the role 'Nodelike13' has cardinality 0..*.
+An association connects 'DOT_Arc' and 'DOT_Layer'. From 'DOT_Arc', the role 'Arc' has cardinality 0..*, and from 'DOT_Layer', the role 'layers15' has cardinality 0..*.
+An association connects 'DOT_Graph' and 'DOT_Layer'. From 'DOT_Graph', the role 'Graph' has cardinality 0..*, and from 'DOT_Layer', the role 'layers17' has cardinality 0..*.
+An association connects 'DOT_Nodelike' and 'DOT_SubGraph'. From 'DOT_Nodelike', the role 'nodes' has cardinality 0..*, and from 'DOT_SubGraph', the role 'SubGraph' has cardinality 0..*.
+An association connects 'DOT_Nodelike' and 'DOT_Arc'. From 'DOT_Nodelike', the role 'fromNode' has cardinality 0..*, and from 'DOT_Arc', the role 'Arc20' has cardinality 0..*.
+An association connects 'DOT_Nodelike' and 'DOT_Arc'. From 'DOT_Nodelike', the role 'toNode' has cardinality 0..*, and from 'DOT_Arc', the role 'Arc22' has cardinality 0..*.
+An association connects 'DOT_Nodelike' and 'DOT_Graph'. From 'DOT_Nodelike', the role 'nodes24' has cardinality 0..*, and from 'DOT_Graph', the role 'Graph25' has cardinality 0..*.
+An association connects 'DOT_Nodelike' and 'DOT_Layer'. From 'DOT_Nodelike', the role 'nodes27' has cardinality 0..*, and from 'DOT_Layer', the role 'Layer28' has cardinality 0..*.
+An association connects 'DOT_Nodelike' and 'DOT_SubGraph'. From 'DOT_Nodelike', the role 'Nodelike30' has cardinality 0..*, and from 'DOT_SubGraph', the role 'owner' has cardinality 0..*.
+An association connects 'DOT_NodeShape' and 'DOT_Node'. From 'DOT_NodeShape', the role 'DOT_NodeShape' has cardinality 0..*, and from 'DOT_Node', the role 'DOT_Node' has cardinality 0..*.
+An association connects 'DOT_Nodelike' and 'DOT_Arc'. From 'DOT_Nodelike', the role 'Nodelike33' has cardinality 0..*, and from 'DOT_Arc', the role 'refers' has cardinality 0..*.
+An association connects 'DOT_Arc' and 'DOT_Nodelike'. From 'DOT_Arc', the role 'referredBy' has cardinality 0..*, and from 'DOT_Nodelike', the role 'Nodelike35' has cardinality 0..*.
+An association connects 'DOT_Arc' and 'DOT_Layer'. From 'DOT_Arc', the role 'arcs' has cardinality 0..*, and from 'DOT_Layer', the role 'Layer37' has cardinality 0..*.
+An association connects 'DOT_Arc' and 'DOT_Nodelike'. From 'DOT_Arc', the role 'DOT_Arc' has cardinality 0..*, and from 'DOT_Nodelike', the role 'DOT_Nodelike' has cardinality 0..*.
+An association connects 'DOT_Nodelike' and 'DOT_Arc'. From 'DOT_Nodelike', the role 'DOT_Nodelike41' has cardinality 0..*, and from 'DOT_Arc', the role 'DOT_Arc40' has cardinality 0..*.
+An association connects 'DOT_ArrowShape' and 'DOT_DirectedArc'. From 'DOT_ArrowShape', the role 'DOT_ArrowShape' has cardinality 0..*, and from 'DOT_DirectedArc', the role 'DOT_DirectedArc' has cardinality 0..*.
+An association connects 'DOT_DirectedArc' and 'DOT_Label'. From 'DOT_DirectedArc', the role 'DOT_DirectedArc44' has cardinality 0..*, and from 'DOT_Label', the role 'DOT_Label' has cardinality 0..*.
+An association connects 'DOT_DirectedArc' and 'DOT_Label'. From 'DOT_DirectedArc', the role 'DOT_DirectedArc46' has cardinality 0..*, and from 'DOT_Label', the role 'DOT_Label47' has cardinality 0..*.
+An association connects 'DOT_ArrowShape' and 'DOT_DirectedArc'. From 'DOT_ArrowShape', the role 'DOT_ArrowShape50' has cardinality 0..*, and from 'DOT_DirectedArc', the role 'DOT_DirectedArc49' has cardinality 0..*.
+An association connects 'DOT_MNodeShape' and 'DOT_Label'. From 'DOT_MNodeShape', the role 'DOT_MNodeShape' has cardinality 0..*, and from 'DOT_Label', the role 'DOT_Label52' has cardinality 0..*.
+An association connects 'DOT_Label' and 'DOT_MNodeShape'. From 'DOT_Label', the role 'DOT_Label55' has cardinality 0..*, and from 'DOT_MNodeShape', the role 'DOT_MNodeShape54' has cardinality 0..*.

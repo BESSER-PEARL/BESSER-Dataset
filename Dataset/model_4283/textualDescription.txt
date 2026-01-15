@@ -1,0 +1,103 @@
+The domain model 'pokerleague' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'pokerleague_Invitation' represents an important domain concept.
+It has the following attributes: 'reply', which is of type str; 'uuid', which is of type str; 'ordinal', which is of type int.
+
+'pokerleague_DataVersion' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'currentVersion', which is of type str.
+
+'Serializable' represents an important domain concept.
+It does not declare any attributes.
+
+'pokerleague_PrizeMoneyRule' represents an important domain concept.
+It has one attribute: 'numberOfPlayers', which is of type int.
+
+'pokerleague_PlayerInGame' represents an important domain concept.
+It has one attribute: 'rank', which is of type int.
+
+'pokerleague_PrizeMoneyRuleSet' represents an important domain concept.
+It does not declare any attributes.
+
+'pokerleague_Game' represents an important domain concept.
+It has the following attributes: 'buyIn', which is of type int; 'ordinal', which is of type int.
+
+'pokerleague_Serializable' represents an important domain concept.
+It does not declare any attributes.
+
+'DescribedEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pokerleague_Settings' represents an important domain concept.
+It has the following attributes: 'defaultTimeZone', which is of type str; 'adminPassword', which is of type str; 'id', which is of type int.
+
+'pokerleague_Player' represents an important domain concept.
+It has the following attributes: 'lastName', which is of type str; 'emailAddress', which is of type str; 'nick', which is of type str; 'active', which is of type bool; 'firstName', which is of type str.
+
+'pokerleague_InvitationEvent' represents an important domain concept.
+It has the following attributes: 'eventType', which is of type str; 'eventTime', which is of type str; 'sent', which is of type bool.
+
+'IdentifiableEntity' represents an important domain concept.
+It does not declare any attributes.
+
+'pokerleague_PrizeMoneyFormula' represents an important domain concept.
+It has the following attributes: 'relativePrizeMoney', which is of type int; 'rank', which is of type int.
+
+'pokerleague_DescribedEntity' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'pokerleague_Competition' represents an important domain concept.
+It has the following attributes: 'defaultBuyIn', which is of type int; 'minimalAttendance', which is of type int; 'defaultTournamentAnnouncementLead', which is of type int; 'defaultMaxPlayers', which is of type int; 'endDate', which is of type date; 'defaultMinPlayers', which is of type int; 'startDate', which is of type date.
+
+'pokerleague_DataStructureVersion' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'currentVersion', which is of type str.
+
+'pokerleague_Tournament' represents an important domain concept.
+It has the following attributes: 'tournamentAnnouncementLead', which is of type int; 'minPlayers', which is of type int; 'tournamentStart', which is of type str; 'defaultBuyIn', which is of type int; 'tournamentEnd', which is of type str; 'maxPlayers', which is of type int.
+
+'pokerleague_IdentifiableEntity' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'proxy', which is of type bool; 'obsolete', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'InvitationEventType' defines the following possible values: 'CHANGED', 'GENERATED'.
+The enumeration 'InvitationReply' defines the following possible values: 'NO_REPLY', 'ACCEPTED', 'REJECTED'.
+
+The model also captures inheritance relationships between classes.
+The class 'pokerleague_DataStructureVersion' is a specialization of 'Serializable'.
+The class 'pokerleague_DataVersion' is a specialization of 'Serializable'.
+The class 'pokerleague_Settings' is a specialization of 'Serializable'.
+The class 'pokerleague_IdentifiableEntity' is a specialization of 'Serializable'.
+The class 'pokerleague_DescribedEntity' is a specialization of 'IdentifiableEntity'.
+The class 'pokerleague_Player' is a specialization of 'IdentifiableEntity'.
+The class 'pokerleague_PrizeMoneyRuleSet' is a specialization of 'DescribedEntity'.
+The class 'pokerleague_PrizeMoneyRule' is a specialization of 'IdentifiableEntity'.
+The class 'pokerleague_PrizeMoneyFormula' is a specialization of 'IdentifiableEntity'.
+The class 'pokerleague_Competition' is a specialization of 'DescribedEntity'.
+The class 'pokerleague_Tournament' is a specialization of 'DescribedEntity'.
+The class 'pokerleague_Invitation' is a specialization of 'IdentifiableEntity'.
+The class 'pokerleague_InvitationEvent' is a specialization of 'IdentifiableEntity'.
+The class 'pokerleague_Game' is a specialization of 'IdentifiableEntity'.
+The class 'pokerleague_PlayerInGame' is a specialization of 'IdentifiableEntity'.
+
+Relationships between classes are modeled using associations.
+An association connects 'pokerleague_PrizeMoneyRuleSet' and 'pokerleague_PrizeMoneyRule'. From 'pokerleague_PrizeMoneyRuleSet', the role 'prizeMoneyRuleSet' has cardinality 0..*, and from 'pokerleague_PrizeMoneyRule', the role 'PrizeMoneyRule' has cardinality 0..*.
+An association connects 'pokerleague_PrizeMoneyRuleSet' and 'pokerleague_PrizeMoneyRule'. From 'pokerleague_PrizeMoneyRuleSet', the role 'PrizeMoneyRuleSet' has cardinality 0..*, and from 'pokerleague_PrizeMoneyRule', the role 'prizeMoneyRules' has cardinality 0..*.
+An association connects 'pokerleague_PrizeMoneyFormula' and 'pokerleague_PrizeMoneyRule'. From 'pokerleague_PrizeMoneyFormula', the role 'PrizeMoneyFormula' has cardinality 0..*, and from 'pokerleague_PrizeMoneyRule', the role 'prizeMoneyRule' has cardinality 0..*.
+An association connects 'pokerleague_PrizeMoneyRule' and 'pokerleague_PrizeMoneyFormula'. From 'pokerleague_PrizeMoneyRule', the role 'PrizeMoneyRule4' has cardinality 0..*, and from 'pokerleague_PrizeMoneyFormula', the role 'prizeMoneyFormulas' has cardinality 0..*.
+An association connects 'pokerleague_Competition' and 'pokerleague_PrizeMoneyRuleSet'. From 'pokerleague_Competition', the role 'pokerleague_Competition' has cardinality 0..*, and from 'pokerleague_PrizeMoneyRuleSet', the role 'pokerleague_PrizeMoneyRuleSet' has cardinality 0..*.
+An association connects 'pokerleague_Tournament' and 'pokerleague_Competition'. From 'pokerleague_Tournament', the role 'Tournament' has cardinality 0..*, and from 'pokerleague_Competition', the role 'competition' has cardinality 0..*.
+An association connects 'pokerleague_Player' and 'pokerleague_Competition'. From 'pokerleague_Player', the role 'pokerleague_Player' has cardinality 0..*, and from 'pokerleague_Competition', the role 'pokerleague_Competition8' has cardinality 0..*.
+An association connects 'pokerleague_Tournament' and 'pokerleague_PrizeMoneyRuleSet'. From 'pokerleague_Tournament', the role 'pokerleague_Tournament' has cardinality 0..*, and from 'pokerleague_PrizeMoneyRuleSet', the role 'pokerleague_PrizeMoneyRuleSet10' has cardinality 0..*.
+An association connects 'pokerleague_Invitation' and 'pokerleague_Tournament'. From 'pokerleague_Invitation', the role 'Invitation' has cardinality 0..*, and from 'pokerleague_Tournament', the role 'tournament' has cardinality 0..*.
+An association connects 'pokerleague_Competition' and 'pokerleague_Tournament'. From 'pokerleague_Competition', the role 'Competition' has cardinality 0..*, and from 'pokerleague_Tournament', the role 'tournaments' has cardinality 0..*.
+An association connects 'pokerleague_Game' and 'pokerleague_Tournament'. From 'pokerleague_Game', the role 'Game' has cardinality 0..*, and from 'pokerleague_Tournament', the role 'tournament14' has cardinality 0..*.
+An association connects 'pokerleague_Invitation' and 'pokerleague_Tournament'. From 'pokerleague_Invitation', the role 'invitations' has cardinality 0..*, and from 'pokerleague_Tournament', the role 'Tournament16' has cardinality 0..*.
+An association connects 'pokerleague_Player' and 'pokerleague_Invitation'. From 'pokerleague_Player', the role 'pokerleague_Player18' has cardinality 0..*, and from 'pokerleague_Invitation', the role 'pokerleague_Invitation' has cardinality 0..*.
+An association connects 'pokerleague_Invitation' and 'pokerleague_InvitationEvent'. From 'pokerleague_Invitation', the role 'invitation' has cardinality 0..*, and from 'pokerleague_InvitationEvent', the role 'InvitationEvent' has cardinality 0..*.
+An association connects 'pokerleague_Invitation' and 'pokerleague_InvitationEvent'. From 'pokerleague_Invitation', the role 'Invitation21' has cardinality 0..*, and from 'pokerleague_InvitationEvent', the role 'events' has cardinality 0..*.
+An association connects 'pokerleague_Tournament' and 'pokerleague_Game'. From 'pokerleague_Tournament', the role 'Tournament23' has cardinality 0..*, and from 'pokerleague_Game', the role 'games' has cardinality 0..*.
+An association connects 'pokerleague_PrizeMoneyRuleSet' and 'pokerleague_Game'. From 'pokerleague_PrizeMoneyRuleSet', the role 'pokerleague_PrizeMoneyRuleSet25' has cardinality 0..*, and from 'pokerleague_Game', the role 'pokerleague_Game' has cardinality 0..*.
+An association connects 'pokerleague_PlayerInGame' and 'pokerleague_Game'. From 'pokerleague_PlayerInGame', the role 'PlayerInGame' has cardinality 0..*, and from 'pokerleague_Game', the role 'game' has cardinality 0..*.
+An association connects 'pokerleague_Player' and 'pokerleague_PlayerInGame'. From 'pokerleague_Player', the role 'pokerleague_Player28' has cardinality 0..*, and from 'pokerleague_PlayerInGame', the role 'pokerleague_PlayerInGame' has cardinality 0..*.
+An association connects 'pokerleague_Game' and 'pokerleague_PlayerInGame'. From 'pokerleague_Game', the role 'Game30' has cardinality 0..*, and from 'pokerleague_PlayerInGame', the role 'playersInGame' has cardinality 0..*.

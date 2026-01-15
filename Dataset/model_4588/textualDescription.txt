@@ -1,0 +1,182 @@
+The domain model 'adwithoutruntime' describes the core structural elements and their relationships within the system.
+
+The model defines 41 main class(es).
+
+'adwithoutruntime_BooleanVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_BooleanUnaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'adwithoutruntime_MergeNode' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_ControlNode' represents an important domain concept.
+It does not declare any attributes.
+
+'FinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_IntegerVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityNode' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_IntegerValue' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adwithoutruntime_InitialNode' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_IntegerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_ActivityFinalNode' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_IntegerComparisonExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'adwithoutruntime_BooleanBinaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'IntegerExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'adwithoutruntime_Value' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_ControlFlow' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_OpaqueAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ActivityEdge' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_Activity' represents an important domain concept.
+It does not declare any attributes.
+
+'ExecutableNode' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_ForkNode' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_JoinNode' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_DecisionNode' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_IntegerCalculationExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'adwithoutruntime_BooleanExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'adwithoutruntime_BooleanValue' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'BooleanBinaryOperator' defines the following possible values: 'AND', 'OR'.
+The enumeration 'IntegerComparisonOperator' defines the following possible values: 'EQUALS', 'GREATER_EQUALS', 'SMALLER', 'GREATER', 'SMALLER_EQUALS'.
+The enumeration 'IntegerCalculationOperator' defines the following possible values: 'ADD', 'SUBRACT'.
+The enumeration 'BooleanUnaryOperator' defines a single possible value: 'NOT'.
+
+The model also captures inheritance relationships between classes.
+The class 'adwithoutruntime_Activity' is a specialization of 'NamedElement'.
+The class 'adwithoutruntime_ActivityNode' is a specialization of 'NamedElement'.
+The class 'adwithoutruntime_ActivityEdge' is a specialization of 'NamedElement'.
+The class 'adwithoutruntime_ControlFlow' is a specialization of 'ActivityEdge'.
+The class 'adwithoutruntime_ControlNode' is a specialization of 'ActivityNode'.
+The class 'adwithoutruntime_ExecutableNode' is a specialization of 'ActivityNode'.
+The class 'adwithoutruntime_Action' is a specialization of 'ExecutableNode'.
+The class 'adwithoutruntime_OpaqueAction' is a specialization of 'Action'.
+The class 'adwithoutruntime_InitialNode' is a specialization of 'ControlNode'.
+The class 'adwithoutruntime_FinalNode' is a specialization of 'ControlNode'.
+The class 'adwithoutruntime_ActivityFinalNode' is a specialization of 'FinalNode'.
+The class 'adwithoutruntime_ForkNode' is a specialization of 'ControlNode'.
+The class 'adwithoutruntime_JoinNode' is a specialization of 'ControlNode'.
+The class 'adwithoutruntime_MergeNode' is a specialization of 'ControlNode'.
+The class 'adwithoutruntime_DecisionNode' is a specialization of 'ControlNode'.
+The class 'adwithoutruntime_IntegerVariable' is a specialization of 'Variable'.
+The class 'adwithoutruntime_BooleanVariable' is a specialization of 'Variable'.
+The class 'adwithoutruntime_BooleanValue' is a specialization of 'Value'.
+The class 'adwithoutruntime_IntegerValue' is a specialization of 'Value'.
+The class 'adwithoutruntime_IntegerExpression' is a specialization of 'Expression'.
+The class 'adwithoutruntime_BooleanExpression' is a specialization of 'Expression'.
+The class 'adwithoutruntime_IntegerCalculationExpression' is a specialization of 'IntegerExpression'.
+The class 'adwithoutruntime_IntegerComparisonExpression' is a specialization of 'IntegerExpression'.
+The class 'adwithoutruntime_BooleanUnaryExpression' is a specialization of 'BooleanExpression'.
+The class 'adwithoutruntime_BooleanBinaryExpression' is a specialization of 'BooleanExpression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adwithoutruntime_Activity' and 'adwithoutruntime_ActivityNode'. From 'adwithoutruntime_Activity', the role 'unnamed role' has cardinality 0..*, and from 'adwithoutruntime_ActivityNode', the role '1' has cardinality 0..*.
+An association connects 'adwithoutruntime_Activity' and 'adwithoutruntime_ActivityEdge'. From 'adwithoutruntime_Activity', the role 'adwithoutruntime_Activity' has cardinality 0..*, and from 'adwithoutruntime_ActivityEdge', the role 'adwithoutruntime_ActivityEdge' has cardinality 0..*.
+An association connects 'adwithoutruntime_Variable' and 'adwithoutruntime_Activity'. From 'adwithoutruntime_Variable', the role 'adwithoutruntime_Variable' has cardinality 0..*, and from 'adwithoutruntime_Activity', the role 'adwithoutruntime_Activity4' has cardinality 0..*.
+An association connects 'adwithoutruntime_Variable' and 'adwithoutruntime_Activity'. From 'adwithoutruntime_Variable', the role 'adwithoutruntime_Variable7' has cardinality 0..*, and from 'adwithoutruntime_Activity', the role 'adwithoutruntime_Activity6' has cardinality 0..*.
+An association connects 'adwithoutruntime_ActivityEdge' and 'adwithoutruntime_ActivityNode'. From 'adwithoutruntime_ActivityEdge', the role '10' has cardinality 0..*, and from 'adwithoutruntime_ActivityNode', the role '9' has cardinality 0..*.
+An association connects 'adwithoutruntime_ActivityEdge' and 'adwithoutruntime_ActivityNode'. From 'adwithoutruntime_ActivityEdge', the role '13' has cardinality 0..*, and from 'adwithoutruntime_ActivityNode', the role '12' has cardinality 0..*.
+An association connects 'adwithoutruntime_Activity' and 'adwithoutruntime_ActivityNode'. From 'adwithoutruntime_Activity', the role '16' has cardinality 0..*, and from 'adwithoutruntime_ActivityNode', the role '15' has cardinality 0..*.
+An association connects 'adwithoutruntime_ActivityEdge' and 'adwithoutruntime_ActivityNode'. From 'adwithoutruntime_ActivityEdge', the role '18' has cardinality 0..*, and from 'adwithoutruntime_ActivityNode', the role '19' has cardinality 0..*.
+An association connects 'adwithoutruntime_ActivityEdge' and 'adwithoutruntime_ActivityNode'. From 'adwithoutruntime_ActivityEdge', the role '21' has cardinality 0..*, and from 'adwithoutruntime_ActivityNode', the role '22' has cardinality 0..*.
+An association connects 'adwithoutruntime_BooleanVariable' and 'adwithoutruntime_ControlFlow'. From 'adwithoutruntime_BooleanVariable', the role 'adwithoutruntime_BooleanVariable' has cardinality 0..*, and from 'adwithoutruntime_ControlFlow', the role 'adwithoutruntime_ControlFlow' has cardinality 0..*.
+An association connects 'adwithoutruntime_OpaqueAction' and 'adwithoutruntime_Expression'. From 'adwithoutruntime_OpaqueAction', the role 'adwithoutruntime_OpaqueAction' has cardinality 0..*, and from 'adwithoutruntime_Expression', the role 'adwithoutruntime_Expression' has cardinality 0..*.
+An association connects 'adwithoutruntime_Value' and 'adwithoutruntime_Variable'. From 'adwithoutruntime_Value', the role 'adwithoutruntime_Value' has cardinality 0..*, and from 'adwithoutruntime_Variable', the role 'adwithoutruntime_Variable26' has cardinality 0..*.
+An association connects 'adwithoutruntime_Variable' and 'adwithoutruntime_Value'. From 'adwithoutruntime_Variable', the role 'adwithoutruntime_Variable28' has cardinality 0..*, and from 'adwithoutruntime_Value', the role 'adwithoutruntime_Value29' has cardinality 0..*.
+An association connects 'adwithoutruntime_IntegerVariable' and 'adwithoutruntime_IntegerExpression'. From 'adwithoutruntime_IntegerVariable', the role 'adwithoutruntime_IntegerVariable' has cardinality 0..*, and from 'adwithoutruntime_IntegerExpression', the role 'adwithoutruntime_IntegerExpression' has cardinality 0..*.
+An association connects 'adwithoutruntime_IntegerExpression' and 'adwithoutruntime_IntegerVariable'. From 'adwithoutruntime_IntegerExpression', the role 'adwithoutruntime_IntegerExpression32' has cardinality 0..*, and from 'adwithoutruntime_IntegerVariable', the role 'adwithoutruntime_IntegerVariable33' has cardinality 0..*.
+An association connects 'adwithoutruntime_BooleanVariable' and 'adwithoutruntime_BooleanExpression'. From 'adwithoutruntime_BooleanVariable', the role 'adwithoutruntime_BooleanVariable35' has cardinality 0..*, and from 'adwithoutruntime_BooleanExpression', the role 'adwithoutruntime_BooleanExpression' has cardinality 0..*.
+An association connects 'adwithoutruntime_IntegerVariable' and 'adwithoutruntime_IntegerCalculationExpression'. From 'adwithoutruntime_IntegerVariable', the role 'adwithoutruntime_IntegerVariable37' has cardinality 0..*, and from 'adwithoutruntime_IntegerCalculationExpression', the role 'adwithoutruntime_IntegerCalculationExpression' has cardinality 0..*.
+An association connects 'adwithoutruntime_IntegerComparisonExpression' and 'adwithoutruntime_BooleanVariable'. From 'adwithoutruntime_IntegerComparisonExpression', the role 'adwithoutruntime_IntegerComparisonExpression' has cardinality 0..*, and from 'adwithoutruntime_BooleanVariable', the role 'adwithoutruntime_BooleanVariable39' has cardinality 0..*.
+An association connects 'adwithoutruntime_BooleanUnaryExpression' and 'adwithoutruntime_BooleanVariable'. From 'adwithoutruntime_BooleanUnaryExpression', the role 'adwithoutruntime_BooleanUnaryExpression' has cardinality 0..*, and from 'adwithoutruntime_BooleanVariable', the role 'adwithoutruntime_BooleanVariable41' has cardinality 0..*.
+An association connects 'adwithoutruntime_BooleanVariable' and 'adwithoutruntime_BooleanBinaryExpression'. From 'adwithoutruntime_BooleanVariable', the role 'adwithoutruntime_BooleanVariable43' has cardinality 0..*, and from 'adwithoutruntime_BooleanBinaryExpression', the role 'adwithoutruntime_BooleanBinaryExpression' has cardinality 0..*.
+An association connects 'adwithoutruntime_BooleanBinaryExpression' and 'adwithoutruntime_BooleanVariable'. From 'adwithoutruntime_BooleanBinaryExpression', the role 'adwithoutruntime_BooleanBinaryExpression45' has cardinality 0..*, and from 'adwithoutruntime_BooleanVariable', the role 'adwithoutruntime_BooleanVariable46' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/iivanoo/FLYAQ/backend/it.univaq.flyaq.drone/model/drone.ecore

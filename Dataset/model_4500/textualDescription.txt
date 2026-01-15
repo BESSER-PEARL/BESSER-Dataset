@@ -1,0 +1,287 @@
+The domain model 'model' describes the core structural elements and their relationships within the system.
+
+The model defines 71 main class(es).
+
+'model_TrafficIntensity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DataStorageCapacity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DataStorageCapacityConversionFactor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MeasurementUncertainty' represents an important domain concept.
+It has one attribute: 'standardUncertainty', which is of type float.
+
+'MeasurementUncertaintyInformation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LuminousIntensityConversionFactor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Angle' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LevelConversionFactor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Mass' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ElectricCurrentUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_SystemOfUnits' represents an important domain concept.
+It has the following attributes: 'standardizationBody', which is of type str; 'name', which is of type str.
+
+'model_Sampling' represents an important domain concept.
+It has one attribute: 'measurementProcedure', which is of type str.
+
+'model_Time' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LevelUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MassUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Sample' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ThermodynamicTemperature' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LuminousIntensity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Level' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ElectricCurrentDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DataStorageCapacityDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AngleConversionFactor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Dimension' represents an important domain concept.
+It has one attribute: 'exponent', which is of type float.
+
+'BaseQuantity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LuminousIntensityDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DataStorageCapacityUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Entropy' represents an important domain concept.
+It does not declare any attributes.
+
+'model_EntropyConversionFactor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_NormalDistribution' represents an important domain concept.
+It has the following attributes: 'standardDeviation', which is of type float; 'meanValue', which is of type float.
+
+'model_MeasurementUncertaintyInformation' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TimeDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AmountOfSubstance' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AngleUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'Dimension' represents an important domain concept.
+It does not declare any attributes.
+
+'model_EntropyDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BaseQuantity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ThermodynamicTemperatureUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Interval' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AngleDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AmountOfSubstanceConversionFactor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Length' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ConversionFactor' represents an important domain concept.
+It has the following attributes: 'offset', which is of type float; 'multiplicator', which is of type float.
+
+'model_LevelDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DerivedQuantityUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_QuantityValue' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'model_MassDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'model_BaseQuantityUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'BaseQuantityUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LengthDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AmountOfSubstanceDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LengthConversionFactor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LuminousIntensityUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'Quantity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ThermodynamicTemperatureDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Quantity' represents an important domain concept.
+It does not declare any attributes.
+
+'model_MassConversionFactor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TrafficIntensityConversionFactor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ThermodynamicTemperatureConversionFactor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ElectricCurrent' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TrafficIntensityDimension' represents an important domain concept.
+It does not declare any attributes.
+
+'ConversionFactor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_LengthUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_AmountOfSubstanceUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TimeUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_ElectricCurrentConversionFactor' represents an important domain concept.
+It does not declare any attributes.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TimeConversionFactor' represents an important domain concept.
+It does not declare any attributes.
+
+'model_TrafficIntensityUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_Unit' represents an important domain concept.
+It has the following attributes: 'isDerivedUnit', which is of type bool; 'isBaseUnit', which is of type bool; 'isCoherentDerivedUnit', which is of type bool; 'isRatioScaled', which is of type bool; 'symbol', which is of type str; 'isIntervalScaled', which is of type bool; 'name', which is of type str.
+
+'model_EntropyUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'model_DerivedQuantity' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'model_Length' is a specialization of 'BaseQuantity'.
+The class 'model_Angle' is a specialization of 'BaseQuantity'.
+The class 'model_Mass' is a specialization of 'BaseQuantity'.
+The class 'model_Time' is a specialization of 'BaseQuantity'.
+The class 'model_ElectricCurrent' is a specialization of 'BaseQuantity'.
+The class 'model_ThermodynamicTemperature' is a specialization of 'BaseQuantity'.
+The class 'model_AmountOfSubstance' is a specialization of 'BaseQuantity'.
+The class 'model_LuminousIntensity' is a specialization of 'BaseQuantity'.
+The class 'model_LengthUnit' is a specialization of 'BaseQuantityUnit'.
+The class 'model_MassUnit' is a specialization of 'BaseQuantityUnit'.
+The class 'model_TimeUnit' is a specialization of 'BaseQuantityUnit'.
+The class 'model_ElectricCurrentUnit' is a specialization of 'BaseQuantityUnit'.
+The class 'model_ThermodynamicTemperatureUnit' is a specialization of 'BaseQuantityUnit'.
+The class 'model_AmountOfSubstanceUnit' is a specialization of 'BaseQuantityUnit'.
+The class 'model_LuminousIntensityUnit' is a specialization of 'BaseQuantityUnit'.
+The class 'model_AngleUnit' is a specialization of 'BaseQuantityUnit'.
+The class 'model_LengthDimension' is a specialization of 'Dimension'.
+The class 'model_MassDimension' is a specialization of 'Dimension'.
+The class 'model_TimeDimension' is a specialization of 'Dimension'.
+The class 'model_ElectricCurrentDimension' is a specialization of 'Dimension'.
+The class 'model_ThermodynamicTemperatureDimension' is a specialization of 'Dimension'.
+The class 'model_AmountOfSubstanceDimension' is a specialization of 'Dimension'.
+The class 'model_LuminousIntensityDimension' is a specialization of 'Dimension'.
+The class 'model_AngleDimension' is a specialization of 'Dimension'.
+The class 'model_DataStorageCapacity' is a specialization of 'BaseQuantity'.
+The class 'model_Entropy' is a specialization of 'BaseQuantity'.
+The class 'model_TrafficIntensity' is a specialization of 'BaseQuantity'.
+The class 'model_Level' is a specialization of 'BaseQuantity'.
+The class 'model_DataStorageCapacityUnit' is a specialization of 'BaseQuantityUnit'.
+The class 'model_EntropyUnit' is a specialization of 'BaseQuantityUnit'.
+The class 'model_TrafficIntensityUnit' is a specialization of 'BaseQuantityUnit'.
+The class 'model_LevelUnit' is a specialization of 'BaseQuantityUnit'.
+The class 'model_DataStorageCapacityDimension' is a specialization of 'Dimension'.
+The class 'model_EntropyDimension' is a specialization of 'Dimension'.
+The class 'model_TrafficIntensityDimension' is a specialization of 'Dimension'.
+The class 'model_LevelDimension' is a specialization of 'Dimension'.
+The class 'model_LengthConversionFactor' is a specialization of 'ConversionFactor'.
+The class 'model_MassConversionFactor' is a specialization of 'ConversionFactor'.
+The class 'model_TimeConversionFactor' is a specialization of 'ConversionFactor'.
+The class 'model_ElectricCurrentConversionFactor' is a specialization of 'ConversionFactor'.
+The class 'model_ThermodynamicTemperatureConversionFactor' is a specialization of 'ConversionFactor'.
+The class 'model_AmountOfSubstanceConversionFactor' is a specialization of 'ConversionFactor'.
+The class 'model_LuminousIntensityConversionFactor' is a specialization of 'ConversionFactor'.
+The class 'model_AngleConversionFactor' is a specialization of 'ConversionFactor'.
+The class 'model_DataStorageCapacityConversionFactor' is a specialization of 'ConversionFactor'.
+The class 'model_EntropyConversionFactor' is a specialization of 'ConversionFactor'.
+The class 'model_TrafficIntensityConversionFactor' is a specialization of 'ConversionFactor'.
+The class 'model_LevelConversionFactor' is a specialization of 'ConversionFactor'.
+The class 'model_NormalDistribution' is a specialization of 'MeasurementUncertaintyInformation'.
+The class 'model_Interval' is a specialization of 'MeasurementUncertaintyInformation'.
+The class 'model_Sampling' is a specialization of 'MeasurementUncertaintyInformation'.
+The class 'model_BaseQuantity' is a specialization of 'Quantity'.
+The class 'model_DerivedQuantity' is a specialization of 'Quantity'.
+The class 'model_BaseQuantityUnit' is a specialization of 'Unit'.
+The class 'model_DerivedQuantityUnit' is a specialization of 'Unit'.
+
+Relationships between classes are modeled using associations.
+An association connects 'model_Quantity' and 'model_Unit'. From 'model_Quantity', the role 'model_Quantity' has cardinality 0..*, and from 'model_Unit', the role 'model_Unit' has cardinality 0..*.
+An association connects 'model_Quantity' and 'model_QuantityValue'. From 'model_Quantity', the role 'model_Quantity2' has cardinality 0..*, and from 'model_QuantityValue', the role 'model_QuantityValue' has cardinality 0..*.
+An association connects 'model_Dimension' and 'model_Unit'. From 'model_Dimension', the role 'model_Dimension' has cardinality 0..*, and from 'model_Unit', the role 'model_Unit4' has cardinality 0..*.
+An association connects 'model_ConversionFactor' and 'model_Unit'. From 'model_ConversionFactor', the role 'model_ConversionFactor' has cardinality 0..*, and from 'model_Unit', the role 'model_Unit6' has cardinality 0..*.
+An association connects 'model_Unit' and 'model_SystemOfUnits'. From 'model_Unit', the role 'model_Unit8' has cardinality 0..*, and from 'model_SystemOfUnits', the role 'model_SystemOfUnits' has cardinality 0..*.
+An association connects 'model_ConversionFactor' and 'model_Unit'. From 'model_ConversionFactor', the role 'model_ConversionFactor10' has cardinality 0..*, and from 'model_Unit', the role 'model_Unit11' has cardinality 0..*.
+An association connects 'model_QuantityValue' and 'model_MeasurementUncertainty'. From 'model_QuantityValue', the role 'model_QuantityValue13' has cardinality 0..*, and from 'model_MeasurementUncertainty', the role 'model_MeasurementUncertainty' has cardinality 0..*.
+An association connects 'model_MeasurementUncertaintyInformation' and 'model_MeasurementUncertainty'. From 'model_MeasurementUncertaintyInformation', the role 'model_MeasurementUncertaintyInformation' has cardinality 0..*, and from 'model_MeasurementUncertainty', the role 'model_MeasurementUncertainty15' has cardinality 0..*.
+An association connects 'model_Interval' and 'model_Quantity'. From 'model_Interval', the role 'model_Interval' has cardinality 0..*, and from 'model_Quantity', the role 'model_Quantity17' has cardinality 0..*.
+An association connects 'model_Quantity' and 'model_Interval'. From 'model_Quantity', the role 'model_Quantity20' has cardinality 0..*, and from 'model_Interval', the role 'model_Interval19' has cardinality 0..*.
+An association connects 'model_Sample' and 'model_Sampling'. From 'model_Sample', the role 'model_Sample' has cardinality 0..*, and from 'model_Sampling', the role 'model_Sampling' has cardinality 0..*.
+An association connects 'model_Quantity' and 'model_Sample'. From 'model_Quantity', the role 'model_Quantity24' has cardinality 0..*, and from 'model_Sample', the role 'model_Sample23' has cardinality 0..*.

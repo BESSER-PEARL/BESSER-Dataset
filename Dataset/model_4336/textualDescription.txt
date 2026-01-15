@@ -1,0 +1,20 @@
+The domain model 'Expression' describes the core structural elements and their relationships within the system.
+
+The model defines 3 main class(es).
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression_Operation' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'Expression_Expression' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+The model also captures inheritance relationships between classes.
+The class 'Expression_Operation' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Expression_Expression' and 'Expression_Operation'. From 'Expression_Expression', the role 'left' has cardinality 0..*, and from 'Expression_Operation', the role 'Operation' has cardinality 0..*.
+An association connects 'Expression_Operation' and 'Expression_Expression'. From 'Expression_Operation', the role 'operation' has cardinality 0..*, and from 'Expression_Expression', the role 'Expression' has cardinality 0..*.
+An association connects 'Expression_Expression' and 'Expression_Operation'. From 'Expression_Expression', the role 'Expression_Expression' has cardinality 0..*, and from 'Expression_Operation', the role 'Expression_Operation' has cardinality 0..*.

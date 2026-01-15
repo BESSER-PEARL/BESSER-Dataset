@@ -1,0 +1,42 @@
+The domain model 'di' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'di_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'di_DiNode' represents an important domain concept.
+It has one attribute: 'modelElement', which is of type str.
+
+'di_ContainerShape' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Link' represents an important domain concept.
+It does not declare any attributes.
+
+'DiNode' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Shape' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'height', which is of type int; 'x', which is of type int; 'width', which is of type int.
+
+'di_Diagram' represents an important domain concept.
+It does not declare any attributes.
+
+'ContainerShape' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'di_ContainerShape' is a specialization of 'DiNode'.
+The class 'di_Shape' is a specialization of 'ContainerShape'.
+The class 'di_Link' is a specialization of 'DiNode'.
+The class 'di_Diagram' is a specialization of 'ContainerShape'.
+
+Relationships between classes are modeled using associations.
+An association connects 'di_ContainerShape' and 'di_Shape'. From 'di_ContainerShape', the role 'di_ContainerShape' has cardinality 0..*, and from 'di_Shape', the role 'di_Shape' has cardinality 0..*.
+An association connects 'di_Link' and 'di_Shape'. From 'di_Link', the role 'Link' has cardinality 0..*, and from 'di_Shape', the role 'target' has cardinality 0..*.
+An association connects 'di_Shape' and 'di_Link'. From 'di_Shape', the role 'source' has cardinality 0..*, and from 'di_Link', the role 'Link3' has cardinality 0..*.
+An association connects 'di_Shape' and 'di_Link'. From 'di_Shape', the role 'Shape' has cardinality 0..*, and from 'di_Link', the role 'targetLinks' has cardinality 0..*.
+An association connects 'di_Link' and 'di_Shape'. From 'di_Link', the role 'sourceLinks' has cardinality 0..*, and from 'di_Shape', the role 'Shape6' has cardinality 0..*.
+An association connects 'di_Diagram' and 'di_Link'. From 'di_Diagram', the role 'di_Diagram' has cardinality 0..*, and from 'di_Link', the role 'di_Link' has cardinality 0..*.
+An association connects 'di_EStringToStringMapEntry' and 'di_DiNode'. From 'di_EStringToStringMapEntry', the role 'di_EStringToStringMapEntry' has cardinality 0..*, and from 'di_DiNode', the role 'di_DiNode' has cardinality 0..*.

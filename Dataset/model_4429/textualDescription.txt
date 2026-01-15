@@ -1,0 +1,220 @@
+The domain model 'metamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 53 main class(es).
+
+'Actuator' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Actuator' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Sensor' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'UnaryCond' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_LessOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Less' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Behaviour' represents an important domain concept.
+It has the following attributes: 'priority', which is of type int; 'name', which is of type str.
+
+'metamodel_State' represents an important domain concept.
+It has the following attributes: 'uid', which is of type int; 'isInitial', which is of type bool; 'name', which is of type str.
+
+'metamodel_Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_ActionWheel' represents an important domain concept.
+It has one attribute: 'speed', which is of type int.
+
+'metamodel_BoolVal' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'metamodel_Sensor' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'sensorName', which is of type str.
+
+'metamodel_Group' represents an important domain concept.
+It does not declare any attributes.
+
+'Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_TurnLeft' represents an important domain concept.
+It does not declare any attributes.
+
+'Operator' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Robot' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodel_BinaryCond' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_And' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Negation' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Add' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Sub' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_DifferentialWheel' represents an important domain concept.
+It has the following attributes: 'speed', which is of type int; 'isLeft', which is of type bool.
+
+'UnaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Forward' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Value' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodel_Transition' represents an important domain concept.
+It has one attribute: 'nameIn', which is of type str.
+
+'metamodel_Condition' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Positive' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Negative' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_More' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Stopping' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_TurnRight' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionWheel' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_DistanceSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Different' represents an important domain concept.
+It does not declare any attributes.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'BinaryCond' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_FloatVal' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+'metamodel_UnaryCond' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_IntVal' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'metamodel_LightSensor' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_MoreOrEqual' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_Backward' represents an important domain concept.
+It does not declare any attributes.
+
+'metamodel_StateMachine' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metamodel_BinaryOperator' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'metamodel_DifferentialWheel' is a specialization of 'Actuator'.
+The class 'metamodel_Group' is a specialization of 'Actuator'.
+The class 'metamodel_ActionWheel' is a specialization of 'Action'.
+The class 'metamodel_TurnLeft' is a specialization of 'ActionWheel'.
+The class 'metamodel_Forward' is a specialization of 'ActionWheel'.
+The class 'metamodel_Stopping' is a specialization of 'ActionWheel'.
+The class 'metamodel_Backward' is a specialization of 'ActionWheel'.
+The class 'metamodel_TurnRight' is a specialization of 'ActionWheel'.
+The class 'metamodel_DistanceSensor' is a specialization of 'Sensor'.
+The class 'metamodel_LightSensor' is a specialization of 'Sensor'.
+The class 'metamodel_BoolVal' is a specialization of 'Type'.
+The class 'metamodel_FloatVal' is a specialization of 'Type'.
+The class 'metamodel_IntVal' is a specialization of 'Type'.
+The class 'metamodel_UnaryOperator' is a specialization of 'Operator'.
+The class 'metamodel_BinaryOperator' is a specialization of 'Operator'.
+The class 'metamodel_BinaryCond' is a specialization of 'Condition'.
+The class 'metamodel_Or' is a specialization of 'BinaryCond'.
+The class 'metamodel_And' is a specialization of 'BinaryCond'.
+The class 'metamodel_UnaryCond' is a specialization of 'Condition'.
+The class 'metamodel_Negation' is a specialization of 'UnaryCond'.
+The class 'metamodel_Equal' is a specialization of 'BinaryOperator'.
+The class 'metamodel_Less' is a specialization of 'BinaryOperator'.
+The class 'metamodel_More' is a specialization of 'BinaryOperator'.
+The class 'metamodel_Different' is a specialization of 'BinaryOperator'.
+The class 'metamodel_LessOrEqual' is a specialization of 'BinaryOperator'.
+The class 'metamodel_MoreOrEqual' is a specialization of 'BinaryOperator'.
+The class 'metamodel_Add' is a specialization of 'BinaryOperator'.
+The class 'metamodel_Sub' is a specialization of 'BinaryOperator'.
+The class 'metamodel_Negative' is a specialization of 'UnaryOperator'.
+The class 'metamodel_Positive' is a specialization of 'UnaryOperator'.
+The class 'metamodel_Operator' is a specialization of 'Condition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'metamodel_Behaviour' and 'metamodel_Robot'. From 'metamodel_Behaviour', the role 'metamodel_Behaviour' has cardinality 0..*, and from 'metamodel_Robot', the role 'metamodel_Robot' has cardinality 0..*.
+An association connects 'metamodel_Sensor' and 'metamodel_Robot'. From 'metamodel_Sensor', the role 'metamodel_Sensor' has cardinality 0..*, and from 'metamodel_Robot', the role 'metamodel_Robot2' has cardinality 0..*.
+An association connects 'metamodel_Robot' and 'metamodel_Actuator'. From 'metamodel_Robot', the role 'metamodel_Robot4' has cardinality 0..*, and from 'metamodel_Actuator', the role 'metamodel_Actuator' has cardinality 0..*.
+An association connects 'metamodel_Action' and 'metamodel_Robot'. From 'metamodel_Action', the role 'metamodel_Action' has cardinality 0..*, and from 'metamodel_Robot', the role 'metamodel_Robot6' has cardinality 0..*.
+An association connects 'metamodel_DifferentialWheel' and 'metamodel_Group'. From 'metamodel_DifferentialWheel', the role 'metamodel_DifferentialWheel' has cardinality 0..*, and from 'metamodel_Group', the role 'metamodel_Group' has cardinality 0..*.
+An association connects 'metamodel_Group' and 'metamodel_ActionWheel'. From 'metamodel_Group', the role 'metamodel_Group9' has cardinality 0..*, and from 'metamodel_ActionWheel', the role 'metamodel_ActionWheel' has cardinality 0..*.
+An association connects 'metamodel_Value' and 'metamodel_Sensor'. From 'metamodel_Value', the role 'metamodel_Value' has cardinality 0..*, and from 'metamodel_Sensor', the role 'metamodel_Sensor11' has cardinality 0..*.
+An association connects 'metamodel_Type' and 'metamodel_Value'. From 'metamodel_Type', the role 'metamodel_Type' has cardinality 0..*, and from 'metamodel_Value', the role 'metamodel_Value13' has cardinality 0..*.
+An association connects 'metamodel_StateMachine' and 'metamodel_Behaviour'. From 'metamodel_StateMachine', the role 'metamodel_StateMachine' has cardinality 0..*, and from 'metamodel_Behaviour', the role 'metamodel_Behaviour15' has cardinality 0..*.
+An association connects 'metamodel_StateMachine' and 'metamodel_State'. From 'metamodel_StateMachine', the role 'metamodel_StateMachine17' has cardinality 0..*, and from 'metamodel_State', the role 'metamodel_State' has cardinality 0..*.
+An association connects 'metamodel_StateMachine' and 'metamodel_Value'. From 'metamodel_StateMachine', the role 'metamodel_StateMachine19' has cardinality 0..*, and from 'metamodel_Value', the role 'metamodel_Value20' has cardinality 0..*.
+An association connects 'metamodel_State' and 'metamodel_Transition'. From 'metamodel_State', the role 'metamodel_State22' has cardinality 0..*, and from 'metamodel_Transition', the role 'metamodel_Transition' has cardinality 0..*.
+An association connects 'metamodel_State' and 'metamodel_Action'. From 'metamodel_State', the role 'metamodel_State24' has cardinality 0..*, and from 'metamodel_Action', the role 'metamodel_Action25' has cardinality 0..*.
+An association connects 'metamodel_Action' and 'metamodel_State'. From 'metamodel_Action', the role 'metamodel_Action28' has cardinality 0..*, and from 'metamodel_State', the role 'metamodel_State27' has cardinality 0..*.
+An association connects 'metamodel_State' and 'metamodel_Action'. From 'metamodel_State', the role 'metamodel_State30' has cardinality 0..*, and from 'metamodel_Action', the role 'metamodel_Action31' has cardinality 0..*.
+An association connects 'metamodel_Transition' and 'metamodel_State'. From 'metamodel_Transition', the role 'metamodel_Transition33' has cardinality 0..*, and from 'metamodel_State', the role 'metamodel_State34' has cardinality 0..*.
+An association connects 'metamodel_Transition' and 'metamodel_Condition'. From 'metamodel_Transition', the role 'metamodel_Transition36' has cardinality 0..*, and from 'metamodel_Condition', the role 'metamodel_Condition' has cardinality 0..*.
+An association connects 'metamodel_Value' and 'metamodel_UnaryOperator'. From 'metamodel_Value', the role 'metamodel_Value38' has cardinality 0..*, and from 'metamodel_UnaryOperator', the role 'metamodel_UnaryOperator' has cardinality 0..*.
+An association connects 'metamodel_Operator' and 'metamodel_BinaryOperator'. From 'metamodel_Operator', the role 'metamodel_Operator' has cardinality 0..*, and from 'metamodel_BinaryOperator', the role 'metamodel_BinaryOperator' has cardinality 0..*.
+An association connects 'metamodel_BinaryOperator' and 'metamodel_Operator'. From 'metamodel_BinaryOperator', the role 'metamodel_BinaryOperator41' has cardinality 0..*, and from 'metamodel_Operator', the role 'metamodel_Operator42' has cardinality 0..*.
+An association connects 'metamodel_BinaryCond' and 'metamodel_Condition'. From 'metamodel_BinaryCond', the role 'metamodel_BinaryCond' has cardinality 0..*, and from 'metamodel_Condition', the role 'metamodel_Condition44' has cardinality 0..*.
+An association connects 'metamodel_Condition' and 'metamodel_BinaryCond'. From 'metamodel_Condition', the role 'metamodel_Condition47' has cardinality 0..*, and from 'metamodel_BinaryCond', the role 'metamodel_BinaryCond46' has cardinality 0..*.
+An association connects 'metamodel_Condition' and 'metamodel_UnaryCond'. From 'metamodel_Condition', the role 'metamodel_Condition49' has cardinality 0..*, and from 'metamodel_UnaryCond', the role 'metamodel_UnaryCond' has cardinality 0..*.

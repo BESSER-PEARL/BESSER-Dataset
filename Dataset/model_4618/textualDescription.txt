@@ -1,0 +1,131 @@
+The domain model 'dataflow' describes the core structural elements and their relationships within the system.
+
+The model defines 22 main class(es).
+
+'dataflow_Port' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dataflow_Guard' represents an important domain concept.
+It has one attribute: 'tag', which is of type str.
+
+'dataflow_SharedVariable' represents an important domain concept.
+It has one attribute: 'tag', which is of type str.
+
+'dataflow_Procedure' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dataflow_TypeList' represents an important domain concept.
+It has one attribute: 'elements', which is of type int.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'dataflow_TypeInt' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'dataflow_Actor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dataflow_Version' represents an important domain concept.
+It does not declare any attributes.
+
+'dataflow_Action' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dataflow_TypeString' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'dataflow_Variable' represents an important domain concept.
+It has the following attributes: 'shared', which is of type bool; 'name', which is of type str.
+
+'dataflow_TypeBoolean' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'dataflow_Network' represents an important domain concept.
+It has the following attributes: 'sourceFile', which is of type str; 'name', which is of type str; 'project', which is of type str.
+
+'dataflow_TypeUint' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'Attributable' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'dataflow_ActorClass' represents an important domain concept.
+It has the following attributes: 'nameSpace', which is of type str; 'sourceFile', which is of type str; 'name', which is of type str; 'sourceCode', which is of type str.
+
+'dataflow_Type' represents an important domain concept.
+It has the following attributes: 'bits', which is of type int; 'etype', which is of type str.
+
+'dataflow_TypeDouble' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'dataflow_Buffer' represents an important domain concept.
+It does not declare any attributes.
+
+'dataflow_TypeUndefined' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'dataflow_Network' is a specialization of 'Attributable'.
+The class 'dataflow_ActorClass' is a specialization of 'Attributable'.
+The class 'dataflow_Actor' is a specialization of 'Attributable'.
+The class 'dataflow_Action' is a specialization of 'Attributable'.
+The class 'dataflow_Procedure' is a specialization of 'Attributable'.
+The class 'dataflow_Variable' is a specialization of 'Attributable'.
+The class 'dataflow_SharedVariable' is a specialization of 'Variable'.
+The class 'dataflow_Port' is a specialization of 'Attributable'.
+The class 'dataflow_Buffer' is a specialization of 'Attributable'.
+The class 'dataflow_Guard' is a specialization of 'Attributable'.
+The class 'dataflow_TypeUint' is a specialization of 'Type'.
+The class 'dataflow_TypeInt' is a specialization of 'Type'.
+The class 'dataflow_TypeString' is a specialization of 'Type'.
+The class 'dataflow_TypeList' is a specialization of 'Type'.
+The class 'dataflow_TypeBoolean' is a specialization of 'Type'.
+The class 'dataflow_TypeDouble' is a specialization of 'Type'.
+The class 'dataflow_TypeUndefined' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dataflow_Actor' and 'dataflow_Network'. From 'dataflow_Actor', the role 'dataflow_Actor' has cardinality 0..*, and from 'dataflow_Network', the role 'dataflow_Network' has cardinality 0..*.
+An association connects 'dataflow_ActorClass' and 'dataflow_Network'. From 'dataflow_ActorClass', the role 'dataflow_ActorClass' has cardinality 0..*, and from 'dataflow_Network', the role 'dataflow_Network2' has cardinality 0..*.
+An association connects 'dataflow_Buffer' and 'dataflow_Network'. From 'dataflow_Buffer', the role 'dataflow_Buffer' has cardinality 0..*, and from 'dataflow_Network', the role 'dataflow_Network4' has cardinality 0..*.
+An association connects 'dataflow_Network' and 'dataflow_Port'. From 'dataflow_Network', the role 'dataflow_Network6' has cardinality 0..*, and from 'dataflow_Port', the role 'dataflow_Port' has cardinality 0..*.
+An association connects 'dataflow_Port' and 'dataflow_Network'. From 'dataflow_Port', the role 'dataflow_Port9' has cardinality 0..*, and from 'dataflow_Network', the role 'dataflow_Network8' has cardinality 0..*.
+An association connects 'dataflow_SharedVariable' and 'dataflow_Network'. From 'dataflow_SharedVariable', the role 'dataflow_SharedVariable' has cardinality 0..*, and from 'dataflow_Network', the role 'dataflow_Network11' has cardinality 0..*.
+An association connects 'dataflow_Network' and 'dataflow_Version'. From 'dataflow_Network', the role 'dataflow_Network13' has cardinality 0..*, and from 'dataflow_Version', the role 'dataflow_Version' has cardinality 0..*.
+An association connects 'dataflow_ActorClass' and 'dataflow_Actor'. From 'dataflow_ActorClass', the role 'actorClass' has cardinality 0..*, and from 'dataflow_Actor', the role 'Actor' has cardinality 0..*.
+An association connects 'dataflow_Version' and 'dataflow_ActorClass'. From 'dataflow_Version', the role 'dataflow_Version17' has cardinality 0..*, and from 'dataflow_ActorClass', the role 'dataflow_ActorClass16' has cardinality 0..*.
+An association connects 'dataflow_ActorClass' and 'dataflow_Network'. From 'dataflow_ActorClass', the role 'dataflow_ActorClass19' has cardinality 0..*, and from 'dataflow_Network', the role 'dataflow_Network20' has cardinality 0..*.
+An association connects 'dataflow_Actor' and 'dataflow_Port'. From 'dataflow_Actor', the role 'dataflow_Actor22' has cardinality 0..*, and from 'dataflow_Port', the role 'dataflow_Port23' has cardinality 0..*.
+An association connects 'dataflow_Port' and 'dataflow_Actor'. From 'dataflow_Port', the role 'dataflow_Port26' has cardinality 0..*, and from 'dataflow_Actor', the role 'dataflow_Actor25' has cardinality 0..*.
+An association connects 'dataflow_Actor' and 'dataflow_Variable'. From 'dataflow_Actor', the role 'dataflow_Actor28' has cardinality 0..*, and from 'dataflow_Variable', the role 'dataflow_Variable' has cardinality 0..*.
+An association connects 'dataflow_Actor' and 'dataflow_ActorClass'. From 'dataflow_Actor', the role 'actors' has cardinality 0..*, and from 'dataflow_ActorClass', the role 'ActorClass' has cardinality 0..*.
+An association connects 'dataflow_Action' and 'dataflow_Actor'. From 'dataflow_Action', the role 'dataflow_Action' has cardinality 0..*, and from 'dataflow_Actor', the role 'dataflow_Actor31' has cardinality 0..*.
+An association connects 'dataflow_Actor' and 'dataflow_Procedure'. From 'dataflow_Actor', the role 'dataflow_Actor33' has cardinality 0..*, and from 'dataflow_Procedure', the role 'dataflow_Procedure' has cardinality 0..*.
+An association connects 'dataflow_Network' and 'dataflow_Actor'. From 'dataflow_Network', the role 'dataflow_Network36' has cardinality 0..*, and from 'dataflow_Actor', the role 'dataflow_Actor35' has cardinality 0..*.
+An association connects 'dataflow_Buffer' and 'dataflow_Actor'. From 'dataflow_Buffer', the role 'dataflow_Buffer39' has cardinality 0..*, and from 'dataflow_Actor', the role 'dataflow_Actor38' has cardinality 0..*.
+An association connects 'dataflow_Buffer' and 'dataflow_Actor'. From 'dataflow_Buffer', the role 'dataflow_Buffer42' has cardinality 0..*, and from 'dataflow_Actor', the role 'dataflow_Actor41' has cardinality 0..*.
+An association connects 'dataflow_Buffer' and 'dataflow_Actor'. From 'dataflow_Buffer', the role 'dataflow_Buffer45' has cardinality 0..*, and from 'dataflow_Actor', the role 'dataflow_Actor44' has cardinality 0..*.
+An association connects 'dataflow_Actor' and 'dataflow_Actor'. From 'dataflow_Actor', the role 'dataflow_Actor46' has cardinality 0..*, and from 'dataflow_Actor', the role 'dataflow_Actor48' has cardinality 0..*.
+An association connects 'dataflow_Actor' and 'dataflow_Actor'. From 'dataflow_Actor', the role 'dataflow_Actor49' has cardinality 0..*, and from 'dataflow_Actor', the role 'dataflow_Actor51' has cardinality 0..*.
+An association connects 'dataflow_Action' and 'dataflow_Port'. From 'dataflow_Action', the role 'readers' has cardinality 0..*, and from 'dataflow_Port', the role 'Port' has cardinality 0..*.
+An association connects 'dataflow_Action' and 'dataflow_Port'. From 'dataflow_Action', the role 'writers' has cardinality 0..*, and from 'dataflow_Port', the role 'Port54' has cardinality 0..*.
+An association connects 'dataflow_Guard' and 'dataflow_Action'. From 'dataflow_Guard', the role 'dataflow_Guard' has cardinality 0..*, and from 'dataflow_Action', the role 'dataflow_Action56' has cardinality 0..*.
+An association connects 'dataflow_Action' and 'dataflow_Actor'. From 'dataflow_Action', the role 'dataflow_Action58' has cardinality 0..*, and from 'dataflow_Actor', the role 'dataflow_Actor59' has cardinality 0..*.
+An association connects 'dataflow_Procedure' and 'dataflow_Variable'. From 'dataflow_Procedure', the role 'dataflow_Procedure61' has cardinality 0..*, and from 'dataflow_Variable', the role 'dataflow_Variable62' has cardinality 0..*.
+An association connects 'dataflow_Procedure' and 'dataflow_Actor'. From 'dataflow_Procedure', the role 'dataflow_Procedure64' has cardinality 0..*, and from 'dataflow_Actor', the role 'dataflow_Actor65' has cardinality 0..*.
+An association connects 'dataflow_Type' and 'dataflow_Variable'. From 'dataflow_Type', the role 'dataflow_Type' has cardinality 0..*, and from 'dataflow_Variable', the role 'dataflow_Variable67' has cardinality 0..*.
+An association connects 'dataflow_Actor' and 'dataflow_Variable'. From 'dataflow_Actor', the role 'dataflow_Actor70' has cardinality 0..*, and from 'dataflow_Variable', the role 'dataflow_Variable69' has cardinality 0..*.
+An association connects 'dataflow_Action' and 'dataflow_Port'. From 'dataflow_Action', the role 'Action' has cardinality 0..*, and from 'dataflow_Port', the role 'outputPorts' has cardinality 0..*.
+An association connects 'dataflow_Action' and 'dataflow_Port'. From 'dataflow_Action', the role 'Action73' has cardinality 0..*, and from 'dataflow_Port', the role 'inputPorts' has cardinality 0..*.
+An association connects 'dataflow_Buffer' and 'dataflow_Port'. From 'dataflow_Buffer', the role 'Buffer' has cardinality 0..*, and from 'dataflow_Port', the role 'target' has cardinality 0..*.
+An association connects 'dataflow_Port' and 'dataflow_Buffer'. From 'dataflow_Port', the role 'source' has cardinality 0..*, and from 'dataflow_Buffer', the role 'Buffer76' has cardinality 0..*.
+An association connects 'dataflow_Port' and 'dataflow_Actor'. From 'dataflow_Port', the role 'dataflow_Port78' has cardinality 0..*, and from 'dataflow_Actor', the role 'dataflow_Actor79' has cardinality 0..*.
+An association connects 'dataflow_Port' and 'dataflow_Buffer'. From 'dataflow_Port', the role 'Port81' has cardinality 0..*, and from 'dataflow_Buffer', the role 'outputs' has cardinality 0..*.
+An association connects 'dataflow_Port' and 'dataflow_Buffer'. From 'dataflow_Port', the role 'Port83' has cardinality 0..*, and from 'dataflow_Buffer', the role 'input' has cardinality 0..*.
+An association connects 'dataflow_Buffer' and 'dataflow_Type'. From 'dataflow_Buffer', the role 'dataflow_Buffer85' has cardinality 0..*, and from 'dataflow_Type', the role 'dataflow_Type86' has cardinality 0..*.
+An association connects 'dataflow_Network' and 'dataflow_Buffer'. From 'dataflow_Network', the role 'dataflow_Network89' has cardinality 0..*, and from 'dataflow_Buffer', the role 'dataflow_Buffer88' has cardinality 0..*.
+An association connects 'dataflow_Guard' and 'dataflow_Action'. From 'dataflow_Guard', the role 'dataflow_Guard91' has cardinality 0..*, and from 'dataflow_Action', the role 'dataflow_Action92' has cardinality 0..*.
+An association connects 'dataflow_TypeList' and 'dataflow_Type'. From 'dataflow_TypeList', the role 'dataflow_TypeList' has cardinality 0..*, and from 'dataflow_Type', the role 'dataflow_Type94' has cardinality 0..*.

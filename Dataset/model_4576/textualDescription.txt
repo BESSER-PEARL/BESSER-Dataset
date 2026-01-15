@@ -1,0 +1,242 @@
+The domain model 'sensinact' describes the core structural elements and their relationships within the system.
+
+The model defines 48 main class(es).
+
+'DSL_REF' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_Expression_Diff' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_ElseDo' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_FLAG_AUTOSTART' represents an important domain concept.
+It has one attribute: 'activated', which is of type bool.
+
+'sensinact_DSL_CEP_AVG' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_CEP_COUNT' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_CEP_MIN' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_Object_String' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'sensinact_DSL_Object_Boolean' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'sensinact_DSL_Expression_Smaller_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_Object_Ref' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_Sensinact' represents an important domain concept.
+It does not declare any attributes.
+
+'DSL_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_REF' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'sensinact_DSL_Expression_And' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_On' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_CEP_SUM' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_Expression_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_Expression_Smaller' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_ListActions' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_ResourceAction' represents an important domain concept.
+It has the following attributes: 'variable', which is of type str; 'actiontype', which is of type str.
+
+'sensinact_DSL_CEP_STATEMENT' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_REF_CONDITION' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_CEP_AFTER' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_ListParam' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_CEP_MAX' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_Expression_Multiplication' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_CEP_DURATION_MIN' represents an important domain concept.
+It has one attribute: 'min', which is of type str.
+
+'sensinact_DSL_Object_Number' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'sensinact_DSL_ElseIfDo' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_SENSINACT' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_IfDo' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_CEP_DURATION' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_Expression_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_Expression_Larger' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_Expression_Larger_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_Expression_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_CEP_COINCIDE' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_Expression_Negate' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_CEP_BEFORE' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_CEP_DURATION_SEC' represents an important domain concept.
+It has one attribute: 'sec', which is of type str.
+
+'sensinact_DSL_Expression_Division' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_Expression_Modulo' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_Expression_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_ECA_STATEMENT' represents an important domain concept.
+It does not declare any attributes.
+
+'sensinact_DSL_Resource' represents an important domain concept.
+It has the following attributes: 'gatewayID', which is of type str; 'resourceID', which is of type str; 'deviceID', which is of type str; 'serviceID', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'sensinact_DSL_Resource' is a specialization of 'DSL_REF'.
+The class 'sensinact_DSL_CEP_STATEMENT' is a specialization of 'DSL_REF'.
+The class 'sensinact_DSL_Expression_Or' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Expression_And' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Expression_Diff' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Expression_Equal' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Expression_Larger' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Expression_Larger_Equal' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Expression_Smaller' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Expression_Smaller_Equal' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Expression_Plus' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Expression_Minus' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Expression_Multiplication' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Expression_Division' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Expression_Modulo' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Object_Number' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Object_String' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Object_Boolean' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Object_Ref' is a specialization of 'DSL_Expression'.
+The class 'sensinact_DSL_Expression_Negate' is a specialization of 'DSL_Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'sensinact_Sensinact' and 'sensinact_DSL_SENSINACT'. From 'sensinact_Sensinact', the role 'sensinact_Sensinact' has cardinality 0..*, and from 'sensinact_DSL_SENSINACT', the role 'sensinact_DSL_SENSINACT' has cardinality 0..*.
+An association connects 'sensinact_DSL_SENSINACT' and 'sensinact_DSL_FLAG_AUTOSTART'. From 'sensinact_DSL_SENSINACT', the role 'sensinact_DSL_SENSINACT2' has cardinality 0..*, and from 'sensinact_DSL_FLAG_AUTOSTART', the role 'sensinact_DSL_FLAG_AUTOSTART' has cardinality 0..*.
+An association connects 'sensinact_DSL_Resource' and 'sensinact_DSL_SENSINACT'. From 'sensinact_DSL_Resource', the role 'sensinact_DSL_Resource' has cardinality 0..*, and from 'sensinact_DSL_SENSINACT', the role 'sensinact_DSL_SENSINACT4' has cardinality 0..*.
+An association connects 'sensinact_DSL_CEP_STATEMENT' and 'sensinact_DSL_SENSINACT'. From 'sensinact_DSL_CEP_STATEMENT', the role 'sensinact_DSL_CEP_STATEMENT' has cardinality 0..*, and from 'sensinact_DSL_SENSINACT', the role 'sensinact_DSL_SENSINACT6' has cardinality 0..*.
+An association connects 'sensinact_DSL_On' and 'sensinact_DSL_SENSINACT'. From 'sensinact_DSL_On', the role 'sensinact_DSL_On' has cardinality 0..*, and from 'sensinact_DSL_SENSINACT', the role 'sensinact_DSL_SENSINACT8' has cardinality 0..*.
+An association connects 'sensinact_DSL_SENSINACT' and 'sensinact_DSL_ECA_STATEMENT'. From 'sensinact_DSL_SENSINACT', the role 'sensinact_DSL_SENSINACT10' has cardinality 0..*, and from 'sensinact_DSL_ECA_STATEMENT', the role 'sensinact_DSL_ECA_STATEMENT' has cardinality 0..*.
+An association connects 'sensinact_DSL_REF_CONDITION' and 'sensinact_DSL_On'. From 'sensinact_DSL_REF_CONDITION', the role 'sensinact_DSL_REF_CONDITION' has cardinality 0..*, and from 'sensinact_DSL_On', the role 'sensinact_DSL_On12' has cardinality 0..*.
+An association connects 'sensinact_DSL_IfDo' and 'sensinact_DSL_ECA_STATEMENT'. From 'sensinact_DSL_IfDo', the role 'sensinact_DSL_IfDo' has cardinality 0..*, and from 'sensinact_DSL_ECA_STATEMENT', the role 'sensinact_DSL_ECA_STATEMENT14' has cardinality 0..*.
+An association connects 'sensinact_DSL_ECA_STATEMENT' and 'sensinact_DSL_ElseIfDo'. From 'sensinact_DSL_ECA_STATEMENT', the role 'sensinact_DSL_ECA_STATEMENT16' has cardinality 0..*, and from 'sensinact_DSL_ElseIfDo', the role 'sensinact_DSL_ElseIfDo' has cardinality 0..*.
+An association connects 'sensinact_DSL_ElseDo' and 'sensinact_DSL_ECA_STATEMENT'. From 'sensinact_DSL_ElseDo', the role 'sensinact_DSL_ElseDo' has cardinality 0..*, and from 'sensinact_DSL_ECA_STATEMENT', the role 'sensinact_DSL_ECA_STATEMENT18' has cardinality 0..*.
+An association connects 'sensinact_DSL_IfDo' and 'sensinact_DSL_Expression'. From 'sensinact_DSL_IfDo', the role 'sensinact_DSL_IfDo20' has cardinality 0..*, and from 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression' has cardinality 0..*.
+An association connects 'sensinact_DSL_IfDo' and 'sensinact_DSL_ListActions'. From 'sensinact_DSL_IfDo', the role 'sensinact_DSL_IfDo22' has cardinality 0..*, and from 'sensinact_DSL_ListActions', the role 'sensinact_DSL_ListActions' has cardinality 0..*.
+An association connects 'sensinact_DSL_ElseIfDo' and 'sensinact_DSL_Expression'. From 'sensinact_DSL_ElseIfDo', the role 'sensinact_DSL_ElseIfDo24' has cardinality 0..*, and from 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression25' has cardinality 0..*.
+An association connects 'sensinact_DSL_ListActions' and 'sensinact_DSL_ElseIfDo'. From 'sensinact_DSL_ListActions', the role 'sensinact_DSL_ListActions28' has cardinality 0..*, and from 'sensinact_DSL_ElseIfDo', the role 'sensinact_DSL_ElseIfDo27' has cardinality 0..*.
+An association connects 'sensinact_DSL_ElseDo' and 'sensinact_DSL_ListActions'. From 'sensinact_DSL_ElseDo', the role 'sensinact_DSL_ElseDo30' has cardinality 0..*, and from 'sensinact_DSL_ListActions', the role 'sensinact_DSL_ListActions31' has cardinality 0..*.
+An association connects 'sensinact_DSL_REF' and 'sensinact_DSL_REF_CONDITION'. From 'sensinact_DSL_REF', the role 'sensinact_DSL_REF' has cardinality 0..*, and from 'sensinact_DSL_REF_CONDITION', the role 'sensinact_DSL_REF_CONDITION33' has cardinality 0..*.
+An association connects 'sensinact_DSL_CEP_STATEMENT' and 'sensinact_EObject'. From 'sensinact_DSL_CEP_STATEMENT', the role 'sensinact_DSL_CEP_STATEMENT35' has cardinality 0..*, and from 'sensinact_EObject', the role 'sensinact_EObject' has cardinality 0..*.
+An association connects 'sensinact_DSL_CEP_AFTER' and 'sensinact_DSL_REF_CONDITION'. From 'sensinact_DSL_CEP_AFTER', the role 'sensinact_DSL_CEP_AFTER' has cardinality 0..*, and from 'sensinact_DSL_REF_CONDITION', the role 'sensinact_DSL_REF_CONDITION37' has cardinality 0..*.
+An association connects 'sensinact_DSL_CEP_AFTER' and 'sensinact_DSL_REF_CONDITION'. From 'sensinact_DSL_CEP_AFTER', the role 'sensinact_DSL_CEP_AFTER39' has cardinality 0..*, and from 'sensinact_DSL_REF_CONDITION', the role 'sensinact_DSL_REF_CONDITION40' has cardinality 0..*.
+An association connects 'sensinact_DSL_CEP_DURATION' and 'sensinact_DSL_CEP_AFTER'. From 'sensinact_DSL_CEP_DURATION', the role 'sensinact_DSL_CEP_DURATION' has cardinality 0..*, and from 'sensinact_DSL_CEP_AFTER', the role 'sensinact_DSL_CEP_AFTER42' has cardinality 0..*.
+An association connects 'sensinact_DSL_CEP_DURATION' and 'sensinact_DSL_CEP_AFTER'. From 'sensinact_DSL_CEP_DURATION', the role 'sensinact_DSL_CEP_DURATION45' has cardinality 0..*, and from 'sensinact_DSL_CEP_AFTER', the role 'sensinact_DSL_CEP_AFTER44' has cardinality 0..*.
+An association connects 'sensinact_DSL_REF_CONDITION' and 'sensinact_DSL_CEP_BEFORE'. From 'sensinact_DSL_REF_CONDITION', the role 'sensinact_DSL_REF_CONDITION47' has cardinality 0..*, and from 'sensinact_DSL_CEP_BEFORE', the role 'sensinact_DSL_CEP_BEFORE' has cardinality 0..*.
+An association connects 'sensinact_DSL_REF_CONDITION' and 'sensinact_DSL_CEP_BEFORE'. From 'sensinact_DSL_REF_CONDITION', the role 'sensinact_DSL_REF_CONDITION50' has cardinality 0..*, and from 'sensinact_DSL_CEP_BEFORE', the role 'sensinact_DSL_CEP_BEFORE49' has cardinality 0..*.
+An association connects 'sensinact_DSL_CEP_DURATION' and 'sensinact_DSL_CEP_BEFORE'. From 'sensinact_DSL_CEP_DURATION', the role 'sensinact_DSL_CEP_DURATION53' has cardinality 0..*, and from 'sensinact_DSL_CEP_BEFORE', the role 'sensinact_DSL_CEP_BEFORE52' has cardinality 0..*.
+An association connects 'sensinact_DSL_CEP_DURATION' and 'sensinact_DSL_CEP_BEFORE'. From 'sensinact_DSL_CEP_DURATION', the role 'sensinact_DSL_CEP_DURATION56' has cardinality 0..*, and from 'sensinact_DSL_CEP_BEFORE', the role 'sensinact_DSL_CEP_BEFORE55' has cardinality 0..*.
+An association connects 'sensinact_DSL_REF_CONDITION' and 'sensinact_DSL_CEP_COINCIDE'. From 'sensinact_DSL_REF_CONDITION', the role 'sensinact_DSL_REF_CONDITION58' has cardinality 0..*, and from 'sensinact_DSL_CEP_COINCIDE', the role 'sensinact_DSL_CEP_COINCIDE' has cardinality 0..*.
+An association connects 'sensinact_DSL_REF_CONDITION' and 'sensinact_DSL_CEP_COINCIDE'. From 'sensinact_DSL_REF_CONDITION', the role 'sensinact_DSL_REF_CONDITION61' has cardinality 0..*, and from 'sensinact_DSL_CEP_COINCIDE', the role 'sensinact_DSL_CEP_COINCIDE60' has cardinality 0..*.
+An association connects 'sensinact_DSL_CEP_COINCIDE' and 'sensinact_DSL_CEP_DURATION'. From 'sensinact_DSL_CEP_COINCIDE', the role 'sensinact_DSL_CEP_COINCIDE63' has cardinality 0..*, and from 'sensinact_DSL_CEP_DURATION', the role 'sensinact_DSL_CEP_DURATION64' has cardinality 0..*.
+An association connects 'sensinact_DSL_CEP_MIN' and 'sensinact_DSL_REF_CONDITION'. From 'sensinact_DSL_CEP_MIN', the role 'sensinact_DSL_CEP_MIN' has cardinality 0..*, and from 'sensinact_DSL_REF_CONDITION', the role 'sensinact_DSL_REF_CONDITION66' has cardinality 0..*.
+An association connects 'sensinact_DSL_CEP_DURATION' and 'sensinact_DSL_CEP_MIN'. From 'sensinact_DSL_CEP_DURATION', the role 'sensinact_DSL_CEP_DURATION69' has cardinality 0..*, and from 'sensinact_DSL_CEP_MIN', the role 'sensinact_DSL_CEP_MIN68' has cardinality 0..*.
+An association connects 'sensinact_DSL_REF_CONDITION' and 'sensinact_DSL_CEP_MAX'. From 'sensinact_DSL_REF_CONDITION', the role 'sensinact_DSL_REF_CONDITION71' has cardinality 0..*, and from 'sensinact_DSL_CEP_MAX', the role 'sensinact_DSL_CEP_MAX' has cardinality 0..*.
+An association connects 'sensinact_DSL_CEP_MAX' and 'sensinact_DSL_CEP_DURATION'. From 'sensinact_DSL_CEP_MAX', the role 'sensinact_DSL_CEP_MAX73' has cardinality 0..*, and from 'sensinact_DSL_CEP_DURATION', the role 'sensinact_DSL_CEP_DURATION74' has cardinality 0..*.
+An association connects 'sensinact_DSL_REF_CONDITION' and 'sensinact_DSL_CEP_AVG'. From 'sensinact_DSL_REF_CONDITION', the role 'sensinact_DSL_REF_CONDITION76' has cardinality 0..*, and from 'sensinact_DSL_CEP_AVG', the role 'sensinact_DSL_CEP_AVG' has cardinality 0..*.
+An association connects 'sensinact_DSL_CEP_AVG' and 'sensinact_DSL_CEP_DURATION'. From 'sensinact_DSL_CEP_AVG', the role 'sensinact_DSL_CEP_AVG78' has cardinality 0..*, and from 'sensinact_DSL_CEP_DURATION', the role 'sensinact_DSL_CEP_DURATION79' has cardinality 0..*.
+An association connects 'sensinact_DSL_REF_CONDITION' and 'sensinact_DSL_CEP_SUM'. From 'sensinact_DSL_REF_CONDITION', the role 'sensinact_DSL_REF_CONDITION81' has cardinality 0..*, and from 'sensinact_DSL_CEP_SUM', the role 'sensinact_DSL_CEP_SUM' has cardinality 0..*.
+An association connects 'sensinact_DSL_CEP_DURATION' and 'sensinact_DSL_CEP_SUM'. From 'sensinact_DSL_CEP_DURATION', the role 'sensinact_DSL_CEP_DURATION84' has cardinality 0..*, and from 'sensinact_DSL_CEP_SUM', the role 'sensinact_DSL_CEP_SUM83' has cardinality 0..*.
+An association connects 'sensinact_DSL_REF_CONDITION' and 'sensinact_DSL_CEP_COUNT'. From 'sensinact_DSL_REF_CONDITION', the role 'sensinact_DSL_REF_CONDITION86' has cardinality 0..*, and from 'sensinact_DSL_CEP_COUNT', the role 'sensinact_DSL_CEP_COUNT' has cardinality 0..*.
+An association connects 'sensinact_DSL_CEP_DURATION' and 'sensinact_DSL_CEP_COUNT'. From 'sensinact_DSL_CEP_DURATION', the role 'sensinact_DSL_CEP_DURATION89' has cardinality 0..*, and from 'sensinact_DSL_CEP_COUNT', the role 'sensinact_DSL_CEP_COUNT88' has cardinality 0..*.
+An association connects 'sensinact_DSL_CEP_DURATION' and 'sensinact_EObject'. From 'sensinact_DSL_CEP_DURATION', the role 'sensinact_DSL_CEP_DURATION91' has cardinality 0..*, and from 'sensinact_EObject', the role 'sensinact_EObject92' has cardinality 0..*.
+An association connects 'sensinact_DSL_ListActions' and 'sensinact_DSL_ResourceAction'. From 'sensinact_DSL_ListActions', the role 'sensinact_DSL_ListActions94' has cardinality 0..*, and from 'sensinact_DSL_ResourceAction', the role 'sensinact_DSL_ResourceAction' has cardinality 0..*.
+An association connects 'sensinact_DSL_REF' and 'sensinact_DSL_ResourceAction'. From 'sensinact_DSL_REF', the role 'sensinact_DSL_REF97' has cardinality 0..*, and from 'sensinact_DSL_ResourceAction', the role 'sensinact_DSL_ResourceAction96' has cardinality 0..*.
+An association connects 'sensinact_DSL_ResourceAction' and 'sensinact_DSL_ListParam'. From 'sensinact_DSL_ResourceAction', the role 'sensinact_DSL_ResourceAction99' has cardinality 0..*, and from 'sensinact_DSL_ListParam', the role 'sensinact_DSL_ListParam' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_ListParam'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression102' has cardinality 0..*, and from 'sensinact_DSL_ListParam', the role 'sensinact_DSL_ListParam101' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression_Or' and 'sensinact_DSL_Expression'. From 'sensinact_DSL_Expression_Or', the role 'sensinact_DSL_Expression_Or' has cardinality 0..*, and from 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression104' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_Expression_Or'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression107' has cardinality 0..*, and from 'sensinact_DSL_Expression_Or', the role 'sensinact_DSL_Expression_Or106' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression_And' and 'sensinact_DSL_Expression'. From 'sensinact_DSL_Expression_And', the role 'sensinact_DSL_Expression_And' has cardinality 0..*, and from 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression109' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression_And' and 'sensinact_DSL_Expression'. From 'sensinact_DSL_Expression_And', the role 'sensinact_DSL_Expression_And111' has cardinality 0..*, and from 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression112' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_Expression_Diff'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression114' has cardinality 0..*, and from 'sensinact_DSL_Expression_Diff', the role 'sensinact_DSL_Expression_Diff' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_Expression_Diff'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression117' has cardinality 0..*, and from 'sensinact_DSL_Expression_Diff', the role 'sensinact_DSL_Expression_Diff116' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_Expression_Equal'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression119' has cardinality 0..*, and from 'sensinact_DSL_Expression_Equal', the role 'sensinact_DSL_Expression_Equal' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_Expression_Equal'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression122' has cardinality 0..*, and from 'sensinact_DSL_Expression_Equal', the role 'sensinact_DSL_Expression_Equal121' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression_Larger' and 'sensinact_DSL_Expression'. From 'sensinact_DSL_Expression_Larger', the role 'sensinact_DSL_Expression_Larger' has cardinality 0..*, and from 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression124' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression_Larger' and 'sensinact_DSL_Expression'. From 'sensinact_DSL_Expression_Larger', the role 'sensinact_DSL_Expression_Larger126' has cardinality 0..*, and from 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression127' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_Expression_Larger_Equal'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression129' has cardinality 0..*, and from 'sensinact_DSL_Expression_Larger_Equal', the role 'sensinact_DSL_Expression_Larger_Equal' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression_Larger_Equal' and 'sensinact_DSL_Expression'. From 'sensinact_DSL_Expression_Larger_Equal', the role 'sensinact_DSL_Expression_Larger_Equal131' has cardinality 0..*, and from 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression132' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_Expression_Smaller'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression134' has cardinality 0..*, and from 'sensinact_DSL_Expression_Smaller', the role 'sensinact_DSL_Expression_Smaller' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_Expression_Smaller'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression137' has cardinality 0..*, and from 'sensinact_DSL_Expression_Smaller', the role 'sensinact_DSL_Expression_Smaller136' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_Expression_Smaller_Equal'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression139' has cardinality 0..*, and from 'sensinact_DSL_Expression_Smaller_Equal', the role 'sensinact_DSL_Expression_Smaller_Equal' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression_Smaller_Equal' and 'sensinact_DSL_Expression'. From 'sensinact_DSL_Expression_Smaller_Equal', the role 'sensinact_DSL_Expression_Smaller_Equal141' has cardinality 0..*, and from 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression142' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_Expression_Plus'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression144' has cardinality 0..*, and from 'sensinact_DSL_Expression_Plus', the role 'sensinact_DSL_Expression_Plus' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_Expression_Plus'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression147' has cardinality 0..*, and from 'sensinact_DSL_Expression_Plus', the role 'sensinact_DSL_Expression_Plus146' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_Expression_Minus'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression149' has cardinality 0..*, and from 'sensinact_DSL_Expression_Minus', the role 'sensinact_DSL_Expression_Minus' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_Expression_Minus'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression152' has cardinality 0..*, and from 'sensinact_DSL_Expression_Minus', the role 'sensinact_DSL_Expression_Minus151' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression_Multiplication' and 'sensinact_DSL_Expression'. From 'sensinact_DSL_Expression_Multiplication', the role 'sensinact_DSL_Expression_Multiplication' has cardinality 0..*, and from 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression154' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression_Multiplication' and 'sensinact_DSL_Expression'. From 'sensinact_DSL_Expression_Multiplication', the role 'sensinact_DSL_Expression_Multiplication156' has cardinality 0..*, and from 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression157' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression_Division' and 'sensinact_DSL_Expression'. From 'sensinact_DSL_Expression_Division', the role 'sensinact_DSL_Expression_Division' has cardinality 0..*, and from 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression159' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_Expression_Division'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression162' has cardinality 0..*, and from 'sensinact_DSL_Expression_Division', the role 'sensinact_DSL_Expression_Division161' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_Expression_Modulo'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression164' has cardinality 0..*, and from 'sensinact_DSL_Expression_Modulo', the role 'sensinact_DSL_Expression_Modulo' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression_Modulo' and 'sensinact_DSL_Expression'. From 'sensinact_DSL_Expression_Modulo', the role 'sensinact_DSL_Expression_Modulo166' has cardinality 0..*, and from 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression167' has cardinality 0..*.
+An association connects 'sensinact_DSL_REF' and 'sensinact_DSL_Object_Ref'. From 'sensinact_DSL_REF', the role 'sensinact_DSL_REF169' has cardinality 0..*, and from 'sensinact_DSL_Object_Ref', the role 'sensinact_DSL_Object_Ref' has cardinality 0..*.
+An association connects 'sensinact_DSL_Expression' and 'sensinact_DSL_Expression_Negate'. From 'sensinact_DSL_Expression', the role 'sensinact_DSL_Expression171' has cardinality 0..*, and from 'sensinact_DSL_Expression_Negate', the role 'sensinact_DSL_Expression_Negate' has cardinality 0..*.

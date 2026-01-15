@@ -1,0 +1,51 @@
+The domain model 'entities' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'entities_Property' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'many', which is of type bool.
+
+'entities_PackagedType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'entities_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_TypeDef' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_Entity' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_SimpleType' represents an important domain concept.
+It does not declare any attributes.
+
+'entities_JAVAID' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'PackagedType' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'entities_Package' is a specialization of 'PackagedType'.
+The class 'entities_Type' is a specialization of 'PackagedType'.
+The class 'entities_SimpleType' is a specialization of 'Type'.
+The class 'entities_Entity' is a specialization of 'Type'.
+
+Relationships between classes are modeled using associations.
+An association connects 'entities_Model' and 'entities_Package'. From 'entities_Model', the role 'entities_Model' has cardinality 0..*, and from 'entities_Package', the role 'entities_Package' has cardinality 0..*.
+An association connects 'entities_JAVAID' and 'entities_TypeDef'. From 'entities_JAVAID', the role 'entities_JAVAID' has cardinality 0..*, and from 'entities_TypeDef', the role 'entities_TypeDef' has cardinality 0..*.
+An association connects 'entities_PackagedType' and 'entities_Package'. From 'entities_PackagedType', the role 'entities_PackagedType' has cardinality 0..*, and from 'entities_Package', the role 'entities_Package3' has cardinality 0..*.
+An association connects 'entities_Type' and 'entities_Property'. From 'entities_Type', the role 'entities_Type' has cardinality 0..*, and from 'entities_Property', the role 'entities_Property' has cardinality 0..*.
+An association connects 'entities_Entity' and 'entities_Entity'. From 'entities_Entity', the role 'entities_Entity5' has cardinality 0..*, and from 'entities_Entity', the role 'entities_Entity' has cardinality 0..*.
+An association connects 'entities_Entity' and 'entities_Property'. From 'entities_Entity', the role 'entities_Entity8' has cardinality 0..*, and from 'entities_Property', the role 'entities_Property9' has cardinality 0..*.
+An association connects 'entities_Entity' and 'entities_Package'. From 'entities_Entity', the role 'entities_Entity11' has cardinality 0..*, and from 'entities_Package', the role 'entities_Package12' has cardinality 0..*.

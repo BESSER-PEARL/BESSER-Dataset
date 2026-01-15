@@ -1,0 +1,131 @@
+The domain model 'flinkie2' describes the core structural elements and their relationships within the system.
+
+The model defines 25 main class(es).
+
+'flinkie2_BoolVal' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'flinkie2_BooleanEvaluation' represents an important domain concept.
+It does not declare any attributes.
+
+'flinkie2_Question' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'flinkie2_Comparison' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'flinkie2_OneOpBool' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'flinkie2_BracExprInt' represents an important domain concept.
+It does not declare any attributes.
+
+'flinkie2_AssignStat' represents an important domain concept.
+It does not declare any attributes.
+
+'flinkie2_Message' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'flinkie2_FlowChart' represents an important domain concept.
+It does not declare any attributes.
+
+'flinkie2_Number' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'flinkie2_Init' represents an important domain concept.
+It does not declare any attributes.
+
+'BoolExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'flinkie2_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'flinkie2_BracExprBool' represents an important domain concept.
+It does not declare any attributes.
+
+'flinkie2_IntExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'flinkie2_DeclStat' represents an important domain concept.
+It does not declare any attributes.
+
+'flinkie2_OneOpInt' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'flinkie2_Option' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'flinkie2_Node' represents an important domain concept.
+It does not declare any attributes.
+
+'flinkie2_TwoOpInt' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'flinkie2_BoolExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'flinkie2_VariableExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'flinkie2_TwoOpBool' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'IntExpr' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'EIntTwoOp' defines the following possible values: 'MUL', 'DIV', 'ADD', 'SUB'.
+The enumeration 'EBoolTwoOp' defines the following possible values: 'OR', 'AND', 'XOR'.
+The enumeration 'EBoolVal' defines the following possible values: 'TRUE', 'FALSE'.
+The enumeration 'EBoolOneOp' defines a single possible value: 'NOT'.
+The enumeration 'EIntOneOp' defines a single possible value: 'MIN'.
+The enumeration 'ECompOp' defines the following possible values: 'LT', 'GT', 'NE', 'LE', 'GE', 'EQ'.
+
+The model also captures inheritance relationships between classes.
+The class 'flinkie2_BooleanEvaluation' is a specialization of 'Node'.
+The class 'flinkie2_Question' is a specialization of 'Node'.
+The class 'flinkie2_Message' is a specialization of 'Node'.
+The class 'flinkie2_OneOpInt' is a specialization of 'IntExpr'.
+The class 'flinkie2_TwoOpInt' is a specialization of 'IntExpr'.
+The class 'flinkie2_Number' is a specialization of 'IntExpr'.
+The class 'flinkie2_BracExprInt' is a specialization of 'IntExpr'.
+The class 'flinkie2_VariableExpr' is a specialization of 'IntExpr'.
+The class 'flinkie2_OneOpBool' is a specialization of 'BoolExpr'.
+The class 'flinkie2_TwoOpBool' is a specialization of 'BoolExpr'.
+The class 'flinkie2_BoolVal' is a specialization of 'BoolExpr'.
+The class 'flinkie2_BracExprBool' is a specialization of 'BoolExpr'.
+The class 'flinkie2_Comparison' is a specialization of 'BoolExpr'.
+
+Relationships between classes are modeled using associations.
+An association connects 'flinkie2_DeclStat' and 'flinkie2_Init'. From 'flinkie2_DeclStat', the role 'flinkie2_DeclStat' has cardinality 0..*, and from 'flinkie2_Init', the role 'flinkie2_Init' has cardinality 0..*.
+An association connects 'flinkie2_Node' and 'flinkie2_Init'. From 'flinkie2_Node', the role 'flinkie2_Node' has cardinality 0..*, and from 'flinkie2_Init', the role 'flinkie2_Init2' has cardinality 0..*.
+An association connects 'flinkie2_Variable' and 'flinkie2_DeclStat'. From 'flinkie2_Variable', the role 'flinkie2_Variable' has cardinality 0..*, and from 'flinkie2_DeclStat', the role 'flinkie2_DeclStat4' has cardinality 0..*.
+An association connects 'flinkie2_AssignStat' and 'flinkie2_BooleanEvaluation'. From 'flinkie2_AssignStat', the role 'flinkie2_AssignStat' has cardinality 0..*, and from 'flinkie2_BooleanEvaluation', the role 'flinkie2_BooleanEvaluation' has cardinality 0..*.
+An association connects 'flinkie2_BooleanEvaluation' and 'flinkie2_Node'. From 'flinkie2_BooleanEvaluation', the role 'flinkie2_BooleanEvaluation7' has cardinality 0..*, and from 'flinkie2_Node', the role 'flinkie2_Node8' has cardinality 0..*.
+An association connects 'flinkie2_Node' and 'flinkie2_BooleanEvaluation'. From 'flinkie2_Node', the role 'flinkie2_Node11' has cardinality 0..*, and from 'flinkie2_BooleanEvaluation', the role 'flinkie2_BooleanEvaluation10' has cardinality 0..*.
+An association connects 'flinkie2_BoolExpr' and 'flinkie2_BooleanEvaluation'. From 'flinkie2_BoolExpr', the role 'flinkie2_BoolExpr' has cardinality 0..*, and from 'flinkie2_BooleanEvaluation', the role 'flinkie2_BooleanEvaluation13' has cardinality 0..*.
+An association connects 'flinkie2_Option' and 'flinkie2_Question'. From 'flinkie2_Option', the role 'flinkie2_Option' has cardinality 0..*, and from 'flinkie2_Question', the role 'flinkie2_Question' has cardinality 0..*.
+An association connects 'flinkie2_Question' and 'flinkie2_AssignStat'. From 'flinkie2_Question', the role 'flinkie2_Question16' has cardinality 0..*, and from 'flinkie2_AssignStat', the role 'flinkie2_AssignStat17' has cardinality 0..*.
+An association connects 'flinkie2_Message' and 'flinkie2_AssignStat'. From 'flinkie2_Message', the role 'flinkie2_Message' has cardinality 0..*, and from 'flinkie2_AssignStat', the role 'flinkie2_AssignStat19' has cardinality 0..*.
+An association connects 'flinkie2_Message' and 'flinkie2_Node'. From 'flinkie2_Message', the role 'flinkie2_Message21' has cardinality 0..*, and from 'flinkie2_Node', the role 'flinkie2_Node22' has cardinality 0..*.
+An association connects 'flinkie2_Option' and 'flinkie2_AssignStat'. From 'flinkie2_Option', the role 'flinkie2_Option24' has cardinality 0..*, and from 'flinkie2_AssignStat', the role 'flinkie2_AssignStat25' has cardinality 0..*.
+An association connects 'flinkie2_Node' and 'flinkie2_Option'. From 'flinkie2_Node', the role 'flinkie2_Node28' has cardinality 0..*, and from 'flinkie2_Option', the role 'flinkie2_Option27' has cardinality 0..*.
+An association connects 'flinkie2_OneOpInt' and 'flinkie2_IntExpr'. From 'flinkie2_OneOpInt', the role 'flinkie2_OneOpInt' has cardinality 0..*, and from 'flinkie2_IntExpr', the role 'flinkie2_IntExpr' has cardinality 0..*.
+An association connects 'flinkie2_IntExpr' and 'flinkie2_TwoOpInt'. From 'flinkie2_IntExpr', the role 'flinkie2_IntExpr31' has cardinality 0..*, and from 'flinkie2_TwoOpInt', the role 'flinkie2_TwoOpInt' has cardinality 0..*.
+An association connects 'flinkie2_IntExpr' and 'flinkie2_TwoOpInt'. From 'flinkie2_IntExpr', the role 'flinkie2_IntExpr34' has cardinality 0..*, and from 'flinkie2_TwoOpInt', the role 'flinkie2_TwoOpInt33' has cardinality 0..*.
+An association connects 'flinkie2_VariableExpr' and 'flinkie2_AssignStat'. From 'flinkie2_VariableExpr', the role 'flinkie2_VariableExpr' has cardinality 0..*, and from 'flinkie2_AssignStat', the role 'flinkie2_AssignStat36' has cardinality 0..*.
+An association connects 'flinkie2_IntExpr' and 'flinkie2_AssignStat'. From 'flinkie2_IntExpr', the role 'flinkie2_IntExpr39' has cardinality 0..*, and from 'flinkie2_AssignStat', the role 'flinkie2_AssignStat38' has cardinality 0..*.
+An association connects 'flinkie2_Node' and 'flinkie2_FlowChart'. From 'flinkie2_Node', the role 'flinkie2_Node41' has cardinality 0..*, and from 'flinkie2_FlowChart', the role 'flinkie2_FlowChart' has cardinality 0..*.
+An association connects 'flinkie2_FlowChart' and 'flinkie2_Init'. From 'flinkie2_FlowChart', the role 'flinkie2_FlowChart43' has cardinality 0..*, and from 'flinkie2_Init', the role 'flinkie2_Init44' has cardinality 0..*.
+An association connects 'flinkie2_BracExprInt' and 'flinkie2_IntExpr'. From 'flinkie2_BracExprInt', the role 'flinkie2_BracExprInt' has cardinality 0..*, and from 'flinkie2_IntExpr', the role 'flinkie2_IntExpr46' has cardinality 0..*.
+An association connects 'flinkie2_VariableExpr' and 'flinkie2_Variable'. From 'flinkie2_VariableExpr', the role 'flinkie2_VariableExpr48' has cardinality 0..*, and from 'flinkie2_Variable', the role 'flinkie2_Variable49' has cardinality 0..*.
+An association connects 'flinkie2_OneOpBool' and 'flinkie2_BoolExpr'. From 'flinkie2_OneOpBool', the role 'flinkie2_OneOpBool' has cardinality 0..*, and from 'flinkie2_BoolExpr', the role 'flinkie2_BoolExpr51' has cardinality 0..*.
+An association connects 'flinkie2_TwoOpBool' and 'flinkie2_BoolExpr'. From 'flinkie2_TwoOpBool', the role 'flinkie2_TwoOpBool' has cardinality 0..*, and from 'flinkie2_BoolExpr', the role 'flinkie2_BoolExpr53' has cardinality 0..*.
+An association connects 'flinkie2_TwoOpBool' and 'flinkie2_BoolExpr'. From 'flinkie2_TwoOpBool', the role 'flinkie2_TwoOpBool55' has cardinality 0..*, and from 'flinkie2_BoolExpr', the role 'flinkie2_BoolExpr56' has cardinality 0..*.
+An association connects 'flinkie2_BoolExpr' and 'flinkie2_BracExprBool'. From 'flinkie2_BoolExpr', the role 'flinkie2_BoolExpr58' has cardinality 0..*, and from 'flinkie2_BracExprBool', the role 'flinkie2_BracExprBool' has cardinality 0..*.
+An association connects 'flinkie2_Comparison' and 'flinkie2_IntExpr'. From 'flinkie2_Comparison', the role 'flinkie2_Comparison' has cardinality 0..*, and from 'flinkie2_IntExpr', the role 'flinkie2_IntExpr60' has cardinality 0..*.
+An association connects 'flinkie2_IntExpr' and 'flinkie2_Comparison'. From 'flinkie2_IntExpr', the role 'flinkie2_IntExpr63' has cardinality 0..*, and from 'flinkie2_Comparison', the role 'flinkie2_Comparison62' has cardinality 0..*.

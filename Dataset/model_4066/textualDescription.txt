@@ -1,0 +1,94 @@
+The domain model 'simpleuml' describes the core structural elements and their relationships within the system.
+
+The model defines 21 main class(es).
+
+'simpleuml_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_Class' represents an important domain concept.
+It has one attribute: 'abstract', which is of type bool.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_ModelElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'stereotype', which is of type str.
+
+'simpleuml_Packageable' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_TaggedValue' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'value', which is of type str.
+
+'simpleuml_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_Generalization' represents an important domain concept.
+It has one attribute: 'isSubstitutable', which is of type bool.
+
+'simpleuml_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleuml_EnumerationLiteral' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'simpleuml_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'ModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Packageable' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleuml_Model' is a specialization of 'Package'.
+The class 'simpleuml_Package' is a specialization of 'Classifier'.
+The class 'simpleuml_Package' is a specialization of 'Packageable'.
+The class 'simpleuml_Class' is a specialization of 'DataType'.
+The class 'simpleuml_Property' is a specialization of 'ModelElement'.
+The class 'simpleuml_Association' is a specialization of 'ModelElement'.
+The class 'simpleuml_Association' is a specialization of 'Packageable'.
+The class 'simpleuml_PrimitiveType' is a specialization of 'Type'.
+The class 'simpleuml_DataType' is a specialization of 'Type'.
+The class 'simpleuml_Enumeration' is a specialization of 'Type'.
+The class 'simpleuml_Classifier' is a specialization of 'ModelElement'.
+The class 'simpleuml_Type' is a specialization of 'Classifier'.
+The class 'simpleuml_Type' is a specialization of 'Packageable'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleuml_Packageable' and 'simpleuml_Package'. From 'simpleuml_Packageable', the role 'Packageable' has cardinality 0..*, and from 'simpleuml_Package', the role 'owner' has cardinality 0..*.
+An association connects 'simpleuml_Class' and 'simpleuml_Generalization'. From 'simpleuml_Class', the role 'simpleuml_Class' has cardinality 0..*, and from 'simpleuml_Generalization', the role 'simpleuml_Generalization' has cardinality 0..*.
+An association connects 'simpleuml_Type' and 'simpleuml_Property'. From 'simpleuml_Type', the role 'simpleuml_Type' has cardinality 0..*, and from 'simpleuml_Property', the role 'simpleuml_Property' has cardinality 0..*.
+An association connects 'simpleuml_Property' and 'simpleuml_DataType'. From 'simpleuml_Property', the role 'attributes' has cardinality 0..*, and from 'simpleuml_DataType', the role 'DataType' has cardinality 0..*.
+An association connects 'simpleuml_Association' and 'simpleuml_Class'. From 'simpleuml_Association', the role 'simpleuml_Association' has cardinality 0..*, and from 'simpleuml_Class', the role 'simpleuml_Class5' has cardinality 0..*.
+An association connects 'simpleuml_Class' and 'simpleuml_Association'. From 'simpleuml_Class', the role 'simpleuml_Class8' has cardinality 0..*, and from 'simpleuml_Association', the role 'simpleuml_Association7' has cardinality 0..*.
+An association connects 'simpleuml_Property' and 'simpleuml_DataType'. From 'simpleuml_Property', the role 'Property' has cardinality 0..*, and from 'simpleuml_DataType', the role 'owner10' has cardinality 0..*.
+An association connects 'simpleuml_EnumerationLiteral' and 'simpleuml_Enumeration'. From 'simpleuml_EnumerationLiteral', the role 'simpleuml_EnumerationLiteral' has cardinality 0..*, and from 'simpleuml_Enumeration', the role 'simpleuml_Enumeration' has cardinality 0..*.
+An association connects 'simpleuml_TaggedValue' and 'simpleuml_ModelElement'. From 'simpleuml_TaggedValue', the role 'simpleuml_TaggedValue' has cardinality 0..*, and from 'simpleuml_ModelElement', the role 'simpleuml_ModelElement' has cardinality 0..*.
+An association connects 'simpleuml_Class' and 'simpleuml_Generalization'. From 'simpleuml_Class', the role 'simpleuml_Class15' has cardinality 0..*, and from 'simpleuml_Generalization', the role 'simpleuml_Generalization14' has cardinality 0..*.
+An association connects 'simpleuml_Package' and 'simpleuml_Packageable'. From 'simpleuml_Package', the role 'Package' has cardinality 0..*, and from 'simpleuml_Packageable', the role 'ownedElements' has cardinality 0..*.

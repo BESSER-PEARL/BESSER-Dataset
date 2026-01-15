@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Samsung/sirius/plugins/org.eclipse.sirius/model/viewpoint.ecore

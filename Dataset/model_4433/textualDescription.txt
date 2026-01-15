@@ -1,0 +1,41 @@
+The domain model 'RobotWork' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'RobotWork_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotWork_Rotate' represents an important domain concept.
+It has the following attributes: 'random', which is of type bool; 'degrees', which is of type int.
+
+'RobotWork_GoForward' represents an important domain concept.
+It has one attribute: 'cm', which is of type int.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotWork_Chrography' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RobotWork_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotWork_Release' represents an important domain concept.
+It does not declare any attributes.
+
+'RobotWork_Grab' represents an important domain concept.
+It does not declare any attributes.
+
+'Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'RobotWork_Action' is a specialization of 'Instruction'.
+The class 'RobotWork_Chrography' is a specialization of 'Instruction'.
+The class 'RobotWork_Grab' is a specialization of 'Action'.
+The class 'RobotWork_Release' is a specialization of 'Action'.
+The class 'RobotWork_Rotate' is a specialization of 'Action'.
+The class 'RobotWork_GoForward' is a specialization of 'Action'.
+
+Relationships between classes are modeled using associations.
+An association connects 'RobotWork_Instruction' and 'RobotWork_Chrography'. From 'RobotWork_Instruction', the role 'RobotWork_Instruction' has cardinality 0..*, and from 'RobotWork_Chrography', the role 'RobotWork_Chrography' has cardinality 0..*.

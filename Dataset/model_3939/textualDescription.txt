@@ -1,0 +1,81 @@
+The domain model 'myDsl01' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'myDsl01_ListWindow' represents an important domain concept.
+It does not declare any attributes.
+
+'Window' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl01_Button' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'text', which is of type str.
+
+'myDsl01_Window' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'title', which is of type str.
+
+'myDsl01_UIElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'myDsl01_Bounds' represents an important domain concept.
+It has the following attributes: 'y', which is of type int; 'x', which is of type int; 'height', which is of type int; 'width', which is of type int.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl01_Field' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl01_Reference' represents an important domain concept.
+It has one attribute: 'multiplicity', which is of type str.
+
+'myDsl01_Attribute' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'optional', which is of type bool.
+
+'myDsl01_Label' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'myDsl01_Size' represents an important domain concept.
+It has the following attributes: 'width', which is of type int; 'height', which is of type int.
+
+'myDsl01_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl01_Entity' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'name', which is of type str.
+
+'myDsl01_Property' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UIElement' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl01_EntryWindow' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'MultiplicityKind' defines the following possible values: 'Single', 'Multiple'.
+The enumeration 'AttributeType' defines the following possible values: 'Date', 'Integer', 'String'.
+The enumeration 'ButtonKind' defines the following possible values: 'delete', 'cancel', 'createEdit'.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl01_Attribute' is a specialization of 'Property'.
+The class 'myDsl01_Reference' is a specialization of 'Property'.
+The class 'myDsl01_ListWindow' is a specialization of 'Window'.
+The class 'myDsl01_EntryWindow' is a specialization of 'Window'.
+The class 'myDsl01_Label' is a specialization of 'UIElement'.
+The class 'myDsl01_Field' is a specialization of 'UIElement'.
+The class 'myDsl01_Button' is a specialization of 'UIElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl01_Entity' and 'myDsl01_Model'. From 'myDsl01_Entity', the role 'myDsl01_Entity' has cardinality 0..*, and from 'myDsl01_Model', the role 'myDsl01_Model' has cardinality 0..*.
+An association connects 'myDsl01_Window' and 'myDsl01_Model'. From 'myDsl01_Window', the role 'myDsl01_Window' has cardinality 0..*, and from 'myDsl01_Model', the role 'myDsl01_Model2' has cardinality 0..*.
+An association connects 'myDsl01_Entity' and 'myDsl01_Entity'. From 'myDsl01_Entity', the role 'myDsl01_Entity3' has cardinality 0..*, and from 'myDsl01_Entity', the role 'myDsl01_Entity5' has cardinality 0..*.
+An association connects 'myDsl01_Entity' and 'myDsl01_Property'. From 'myDsl01_Entity', the role 'myDsl01_Entity7' has cardinality 0..*, and from 'myDsl01_Property', the role 'myDsl01_Property' has cardinality 0..*.
+An association connects 'myDsl01_Reference' and 'myDsl01_Entity'. From 'myDsl01_Reference', the role 'myDsl01_Reference' has cardinality 0..*, and from 'myDsl01_Entity', the role 'myDsl01_Entity9' has cardinality 0..*.
+An association connects 'myDsl01_Reference' and 'myDsl01_Reference'. From 'myDsl01_Reference', the role 'myDsl01_Reference12' has cardinality 0..*, and from 'myDsl01_Reference', the role 'myDsl01_Reference10' has cardinality 0..*.
+An association connects 'myDsl01_Entity' and 'myDsl01_Window'. From 'myDsl01_Entity', the role 'myDsl01_Entity15' has cardinality 0..*, and from 'myDsl01_Window', the role 'myDsl01_Window14' has cardinality 0..*.
+An association connects 'myDsl01_Size' and 'myDsl01_Window'. From 'myDsl01_Size', the role 'myDsl01_Size' has cardinality 0..*, and from 'myDsl01_Window', the role 'myDsl01_Window17' has cardinality 0..*.
+An association connects 'myDsl01_EntryWindow' and 'myDsl01_UIElement'. From 'myDsl01_EntryWindow', the role 'myDsl01_EntryWindow' has cardinality 0..*, and from 'myDsl01_UIElement', the role 'myDsl01_UIElement' has cardinality 0..*.
+An association connects 'myDsl01_Bounds' and 'myDsl01_UIElement'. From 'myDsl01_Bounds', the role 'myDsl01_Bounds' has cardinality 0..*, and from 'myDsl01_UIElement', the role 'myDsl01_UIElement20' has cardinality 0..*.
+An association connects 'myDsl01_Property' and 'myDsl01_Field'. From 'myDsl01_Property', the role 'myDsl01_Property22' has cardinality 0..*, and from 'myDsl01_Field', the role 'myDsl01_Field' has cardinality 0..*.

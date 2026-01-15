@@ -1,0 +1,151 @@
+The domain model 'core' describes the core structural elements and their relationships within the system.
+
+The model defines 29 main class(es).
+
+'core_CORECompositionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'core_COREBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'core_COREModelReuse' represents an important domain concept.
+It does not declare any attributes.
+
+'COREModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_COREFeatureModel' represents an important domain concept.
+It does not declare any attributes.
+
+'core_COREImpactModelElement' represents an important domain concept.
+It has the following attributes: 'offset', which is of type float; 'scalingFactor', which is of type float.
+
+'core_COREImpactModelBinding' represents an important domain concept.
+It does not declare any attributes.
+
+'core_COREPattern' represents an important domain concept.
+It does not declare any attributes.
+
+'core_COREImpactModel' represents an important domain concept.
+It does not declare any attributes.
+
+'core_LayoutElement' represents an important domain concept.
+It has the following attributes: 'x', which is of type float; 'y', which is of type float.
+
+'core_COREFeature' represents an important domain concept.
+It has one attribute: 'parentRelationship', which is of type str.
+
+'core_COREReuse' represents an important domain concept.
+It does not declare any attributes.
+
+'core_COREConcern' represents an important domain concept.
+It does not declare any attributes.
+
+'core_LayoutMap' represents an important domain concept.
+It does not declare any attributes.
+
+'core_COREFeatureImpact' represents an important domain concept.
+It has one attribute: 'relativeFeatureWeight', which is of type float.
+
+'COREModel' represents an important domain concept.
+It does not declare any attributes.
+
+'core_COREMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'core_COREModelElement' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'partiality', which is of type str.
+
+'core_COREConfiguration' represents an important domain concept.
+It does not declare any attributes.
+
+'CORENamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_LayoutContainerMap' represents an important domain concept.
+It does not declare any attributes.
+
+'core_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'core_COREWeightedMapping' represents an important domain concept.
+It has one attribute: 'weight', which is of type int.
+
+'core_COREInterface' represents an important domain concept.
+It does not declare any attributes.
+
+'COREImpactModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'core_COREModelCompositionSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'core_COREModel' represents an important domain concept.
+It does not declare any attributes.
+
+'core_CORENamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'core_COREContribution' represents an important domain concept.
+It has one attribute: 'relativeWeight', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'COREPartialityType' defines the following possible values: 'concern', 'none', 'public'.
+The enumeration 'COREFeatureRelationshipType' defines the following possible values: 'Optional', 'XOR', 'None', 'OR', 'Mandatory'.
+The enumeration 'COREVisibilityType' defines the following possible values: 'concern', 'public'.
+
+The model also captures inheritance relationships between classes.
+The class 'core_COREModel' is a specialization of 'CORENamedElement'.
+The class 'core_COREImpactModel' is a specialization of 'COREModel'.
+The class 'core_COREConcern' is a specialization of 'CORENamedElement'.
+The class 'core_COREFeature' is a specialization of 'COREModelElement'.
+The class 'core_COREModelElement' is a specialization of 'CORENamedElement'.
+The class 'core_COREReuse' is a specialization of 'CORENamedElement'.
+The class 'core_COREImpactModelElement' is a specialization of 'COREModelElement'.
+The class 'core_COREFeatureModel' is a specialization of 'COREModel'.
+The class 'core_COREFeatureImpact' is a specialization of 'COREImpactModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'core_COREModel' and 'core_COREModelReuse'. From 'core_COREModel', the role 'core_COREModel' has cardinality 0..*, and from 'core_COREModelReuse', the role 'core_COREModelReuse' has cardinality 0..*.
+An association connects 'core_COREModelElement' and 'core_COREModel'. From 'core_COREModelElement', the role 'core_COREModelElement' has cardinality 0..*, and from 'core_COREModel', the role 'core_COREModel2' has cardinality 0..*.
+An association connects 'core_COREModel' and 'core_COREFeature'. From 'core_COREModel', the role 'realizedBy' has cardinality 0..*, and from 'core_COREFeature', the role 'COREFeature' has cardinality 0..*.
+An association connects 'core_COREModel' and 'core_COREConcern'. From 'core_COREModel', the role 'models' has cardinality 0..*, and from 'core_COREConcern', the role 'COREConcern' has cardinality 0..*.
+An association connects 'core_COREImpactModelElement' and 'core_COREImpactModel'. From 'core_COREImpactModelElement', the role 'core_COREImpactModelElement' has cardinality 0..*, and from 'core_COREImpactModel', the role 'core_COREImpactModel' has cardinality 0..*.
+An association connects 'core_COREImpactModel' and 'core_LayoutContainerMap'. From 'core_COREImpactModel', the role 'core_COREImpactModel7' has cardinality 0..*, and from 'core_LayoutContainerMap', the role 'core_LayoutContainerMap' has cardinality 0..*.
+An association connects 'core_COREImpactModel' and 'core_COREContribution'. From 'core_COREImpactModel', the role 'core_COREImpactModel9' has cardinality 0..*, and from 'core_COREContribution', the role 'core_COREContribution' has cardinality 0..*.
+An association connects 'core_COREConcern' and 'core_COREModel'. From 'core_COREConcern', the role 'concern' has cardinality 0..*, and from 'core_COREModel', the role 'COREModel' has cardinality 0..*.
+An association connects 'core_COREInterface' and 'core_COREConcern'. From 'core_COREInterface', the role 'core_COREInterface' has cardinality 0..*, and from 'core_COREConcern', the role 'core_COREConcern' has cardinality 0..*.
+An association connects 'core_COREFeatureModel' and 'core_COREConcern'. From 'core_COREFeatureModel', the role 'core_COREFeatureModel' has cardinality 0..*, and from 'core_COREConcern', the role 'core_COREConcern13' has cardinality 0..*.
+An association connects 'core_COREImpactModel' and 'core_COREConcern'. From 'core_COREImpactModel', the role 'core_COREImpactModel16' has cardinality 0..*, and from 'core_COREConcern', the role 'core_COREConcern15' has cardinality 0..*.
+An association connects 'core_COREModel' and 'core_COREFeature'. From 'core_COREModel', the role 'COREModel18' has cardinality 0..*, and from 'core_COREFeature', the role 'realizes' has cardinality 0..*.
+An association connects 'core_COREReuse' and 'core_COREFeature'. From 'core_COREReuse', the role 'core_COREReuse' has cardinality 0..*, and from 'core_COREFeature', the role 'core_COREFeature' has cardinality 0..*.
+An association connects 'core_COREFeature' and 'core_COREFeature'. From 'core_COREFeature', the role 'parent' has cardinality 0..*, and from 'core_COREFeature', the role 'COREFeature22' has cardinality 0..*.
+An association connects 'core_COREFeature' and 'core_COREFeature'. From 'core_COREFeature', the role 'COREFeature25' has cardinality 0..*, and from 'core_COREFeature', the role 'children' has cardinality 0..*.
+An association connects 'core_COREFeature' and 'core_COREFeature'. From 'core_COREFeature', the role 'core_COREFeature26' has cardinality 0..*, and from 'core_COREFeature', the role 'core_COREFeature28' has cardinality 0..*.
+An association connects 'core_COREFeature' and 'core_COREFeature'. From 'core_COREFeature', the role 'core_COREFeature29' has cardinality 0..*, and from 'core_COREFeature', the role 'core_COREFeature31' has cardinality 0..*.
+An association connects 'core_COREReuse' and 'core_CORECompositionSpecification'. From 'core_COREReuse', the role 'core_COREReuse33' has cardinality 0..*, and from 'core_CORECompositionSpecification', the role 'core_CORECompositionSpecification' has cardinality 0..*.
+An association connects 'core_COREFeature' and 'core_COREInterface'. From 'core_COREFeature', the role 'core_COREFeature36' has cardinality 0..*, and from 'core_COREInterface', the role 'core_COREInterface35' has cardinality 0..*.
+An association connects 'core_COREModelElement' and 'core_COREInterface'. From 'core_COREModelElement', the role 'core_COREModelElement39' has cardinality 0..*, and from 'core_COREInterface', the role 'core_COREInterface38' has cardinality 0..*.
+An association connects 'core_COREModelElement' and 'core_COREInterface'. From 'core_COREModelElement', the role 'core_COREModelElement42' has cardinality 0..*, and from 'core_COREInterface', the role 'core_COREInterface41' has cardinality 0..*.
+An association connects 'core_COREInterface' and 'core_COREImpactModelElement'. From 'core_COREInterface', the role 'core_COREInterface44' has cardinality 0..*, and from 'core_COREImpactModelElement', the role 'core_COREImpactModelElement45' has cardinality 0..*.
+An association connects 'core_COREConfiguration' and 'core_COREInterface'. From 'core_COREConfiguration', the role 'core_COREConfiguration' has cardinality 0..*, and from 'core_COREInterface', the role 'core_COREInterface47' has cardinality 0..*.
+An association connects 'core_COREReuse' and 'core_COREConcern'. From 'core_COREReuse', the role 'core_COREReuse49' has cardinality 0..*, and from 'core_COREConcern', the role 'core_COREConcern50' has cardinality 0..*.
+An association connects 'core_COREReuse' and 'core_COREConfiguration'. From 'core_COREReuse', the role 'core_COREReuse52' has cardinality 0..*, and from 'core_COREConfiguration', the role 'core_COREConfiguration53' has cardinality 0..*.
+An association connects 'core_COREReuse' and 'core_COREConfiguration'. From 'core_COREReuse', the role 'core_COREReuse55' has cardinality 0..*, and from 'core_COREConfiguration', the role 'core_COREConfiguration56' has cardinality 0..*.
+An association connects 'core_COREReuse' and 'core_COREModelReuse'. From 'core_COREReuse', the role 'reuse' has cardinality 0..*, and from 'core_COREModelReuse', the role 'COREModelReuse' has cardinality 0..*.
+An association connects 'core_COREReuse' and 'core_COREReuse'. From 'core_COREReuse', the role 'core_COREReuse60' has cardinality 0..*, and from 'core_COREReuse', the role 'core_COREReuse58' has cardinality 0..*.
+An association connects 'core_COREContribution' and 'core_COREImpactModelElement'. From 'core_COREContribution', the role 'COREContribution' has cardinality 0..*, and from 'core_COREImpactModelElement', the role 'source' has cardinality 0..*.
+An association connects 'core_COREImpactModelElement' and 'core_COREContribution'. From 'core_COREImpactModelElement', the role 'impacts' has cardinality 0..*, and from 'core_COREContribution', the role 'COREContribution63' has cardinality 0..*.
+An association connects 'core_COREFeature' and 'core_COREConfiguration'. From 'core_COREFeature', the role 'core_COREFeature66' has cardinality 0..*, and from 'core_COREConfiguration', the role 'core_COREConfiguration65' has cardinality 0..*.
+An association connects 'core_COREConfiguration' and 'core_COREFeature'. From 'core_COREConfiguration', the role 'core_COREConfiguration68' has cardinality 0..*, and from 'core_COREFeature', the role 'core_COREFeature69' has cardinality 0..*.
+An association connects 'core_COREConfiguration' and 'core_COREConfiguration'. From 'core_COREConfiguration', the role 'core_COREConfiguration72' has cardinality 0..*, and from 'core_COREConfiguration', the role 'core_COREConfiguration70' has cardinality 0..*.
+An association connects 'core_COREFeature' and 'core_COREFeatureModel'. From 'core_COREFeature', the role 'core_COREFeature75' has cardinality 0..*, and from 'core_COREFeatureModel', the role 'core_COREFeatureModel74' has cardinality 0..*.
+An association connects 'core_COREFeature' and 'core_COREFeatureModel'. From 'core_COREFeature', the role 'core_COREFeature78' has cardinality 0..*, and from 'core_COREFeatureModel', the role 'core_COREFeatureModel77' has cardinality 0..*.
+An association connects 'core_COREModelReuse' and 'core_COREReuse'. From 'core_COREModelReuse', the role 'modelReuses' has cardinality 0..*, and from 'core_COREReuse', the role 'COREReuse' has cardinality 0..*.
+An association connects 'core_COREContribution' and 'core_COREImpactModelElement'. From 'core_COREContribution', the role 'outgoing' has cardinality 0..*, and from 'core_COREImpactModelElement', the role 'COREImpactModelElement' has cardinality 0..*.
+An association connects 'core_COREImpactModelElement' and 'core_COREContribution'. From 'core_COREImpactModelElement', the role 'COREImpactModelElement82' has cardinality 0..*, and from 'core_COREContribution', the role 'incoming' has cardinality 0..*.
+An association connects 'core_LayoutMap' and 'core_EObject'. From 'core_LayoutMap', the role 'core_LayoutMap' has cardinality 0..*, and from 'core_EObject', the role 'core_EObject' has cardinality 0..*.
+An association connects 'core_LayoutElement' and 'core_LayoutMap'. From 'core_LayoutElement', the role 'core_LayoutElement' has cardinality 0..*, and from 'core_LayoutMap', the role 'core_LayoutMap85' has cardinality 0..*.
+An association connects 'core_EObject' and 'core_LayoutContainerMap'. From 'core_EObject', the role 'core_EObject88' has cardinality 0..*, and from 'core_LayoutContainerMap', the role 'core_LayoutContainerMap87' has cardinality 0..*.
+An association connects 'core_LayoutContainerMap' and 'core_LayoutMap'. From 'core_LayoutContainerMap', the role 'core_LayoutContainerMap90' has cardinality 0..*, and from 'core_LayoutMap', the role 'core_LayoutMap91' has cardinality 0..*.
+An association connects 'core_COREFeature' and 'core_COREFeatureImpact'. From 'core_COREFeature', the role 'core_COREFeature93' has cardinality 0..*, and from 'core_COREFeatureImpact', the role 'core_COREFeatureImpact' has cardinality 0..*.

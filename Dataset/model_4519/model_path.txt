@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/dvojtise/mde-crashcourse-logo/part1-grammarfirst-base/fr.inria.sed.logo.xtext/model/generated/Logo.ecore

@@ -1,0 +1,55 @@
+The domain model 'toppkg' describes the core structural elements and their relationships within the system.
+
+The model defines 14 main class(es).
+
+'subpkg3_Subpkg3Class2' represents an important domain concept.
+It does not declare any attributes.
+
+'toppkg_subpkg1_Subpkg1Class2' represents an important domain concept.
+It does not declare any attributes.
+
+'toppkg_subpkg1_Subpkg1Class1' represents an important domain concept.
+It does not declare any attributes.
+
+'Subpkg2Class2' represents an important domain concept.
+It does not declare any attributes.
+
+'toppkg_TopClass1' represents an important domain concept.
+It does not declare any attributes.
+
+'toppkg_TopClass2' represents an important domain concept.
+It does not declare any attributes.
+
+'Subpkg2Class1' represents an important domain concept.
+It does not declare any attributes.
+
+'toppkg_subpkg3_Subpkg3Class1' represents an important domain concept.
+It does not declare any attributes.
+
+'toppkg_subpkg3_Subpkg3Class2' represents an important domain concept.
+It does not declare any attributes.
+
+'Subpkg1Class2' represents an important domain concept.
+It does not declare any attributes.
+
+'toppkg_subpkg2_Subpkg2Class1' represents an important domain concept.
+It does not declare any attributes.
+
+'Subpkg1Class1' represents an important domain concept.
+It does not declare any attributes.
+
+'toppkg_subpkg2_Subpkg2Class2' represents an important domain concept.
+It does not declare any attributes.
+
+'subpkg3_Subpkg3Class1' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'toppkg_TopClass2' and 'toppkg_TopClass1'. From 'toppkg_TopClass2', the role '1' has cardinality 0..*, and from 'toppkg_TopClass1', the role 'unnamed role' has cardinality 0..*.
+An association connects 'toppkg_TopClass1' and 'Subpkg1Class1'. From 'toppkg_TopClass1', the role 'toppkg_TopClass1' has cardinality 0..*, and from 'Subpkg1Class1', the role 'Subpkg1Class1' has cardinality 0..*.
+An association connects 'toppkg_TopClass1' and 'Subpkg2Class1'. From 'toppkg_TopClass1', the role 'toppkg_TopClass14' has cardinality 0..*, and from 'Subpkg2Class1', the role 'Subpkg2Class1' has cardinality 0..*.
+An association connects 'toppkg_TopClass2' and 'toppkg_TopClass1'. From 'toppkg_TopClass2', the role '6' has cardinality 0..*, and from 'toppkg_TopClass1', the role '7' has cardinality 0..*.
+An association connects 'Subpkg1Class2' and 'toppkg_subpkg1_Subpkg1Class1'. From 'Subpkg1Class2', the role 'Subpkg1Class2' has cardinality 0..*, and from 'toppkg_subpkg1_Subpkg1Class1', the role 'toppkg_subpkg1_Subpkg1Class1' has cardinality 0..*.
+An association connects 'toppkg_subpkg2_Subpkg2Class1' and 'Subpkg2Class2'. From 'toppkg_subpkg2_Subpkg2Class1', the role 'toppkg_subpkg2_Subpkg2Class1' has cardinality 0..*, and from 'Subpkg2Class2', the role 'Subpkg2Class2' has cardinality 0..*.
+An association connects 'subpkg3_Subpkg3Class1' and 'toppkg_subpkg2_Subpkg2Class2'. From 'subpkg3_Subpkg3Class1', the role 'subpkg3_Subpkg3Class1' has cardinality 0..*, and from 'toppkg_subpkg2_Subpkg2Class2', the role 'toppkg_subpkg2_Subpkg2Class2' has cardinality 0..*.
+An association connects 'toppkg_subpkg3_Subpkg3Class1' and 'subpkg3_Subpkg3Class2'. From 'toppkg_subpkg3_Subpkg3Class1', the role 'toppkg_subpkg3_Subpkg3Class1' has cardinality 0..*, and from 'subpkg3_Subpkg3Class2', the role 'subpkg3_Subpkg3Class2' has cardinality 0..*.

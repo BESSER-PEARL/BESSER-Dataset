@@ -1,0 +1,103 @@
+The domain model 'di' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'di_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Node' represents an important domain concept.
+It has the following attributes: 'allOutgoingLines', which is of type str; 'allIncomingLines', which is of type str.
+
+'di_Shape' represents an important domain concept.
+It has the following attributes: 'foreground', which is of type int; 'background', which is of type int; 'bounds', which is of type str.
+
+'Container' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Container' represents an important domain concept.
+It has the following attributes: 'allLines', which is of type str; 'allShapes', which is of type str.
+
+'di_View' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'label', which is of type str.
+
+'View' represents an important domain concept.
+It does not declare any attributes.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'di_ElementEntry' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'di_Connector' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'di_GradientShape' represents an important domain concept.
+It has the following attributes: 'gradientColor', which is of type int; 'usingGradient', which is of type bool; 'verticalGradient', which is of type bool.
+
+'Line' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Line' represents an important domain concept.
+It has the following attributes: 'lineDash', which is of type int; 'sourceAnchor', which is of type str; 'style', which is of type str; 'targetNode', which is of type str; 'color', which is of type int; 'sourceNode', which is of type str; 'targetAnchor', which is of type str; 'width', which is of type int.
+
+'di_Diagram' represents an important domain concept.
+It has the following attributes: 'snapToGeometry', which is of type bool; 'snapToGrid', which is of type bool; 'rulers', which is of type str.
+
+'di_Ruler' represents an important domain concept.
+It has one attribute: 'unit', which is of type str.
+
+'di_CommentLink' represents an important domain concept.
+It does not declare any attributes.
+
+'Shape' represents an important domain concept.
+It does not declare any attributes.
+
+'di_Grid' represents an important domain concept.
+It has the following attributes: 'style', which is of type str; 'spacing', which is of type int; 'color', which is of type int.
+
+'di_Guide' represents an important domain concept.
+It has one attribute: 'position', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'RulerUnit' defines the following possible values: 'INCHES', 'CENTIMETERS', 'PIXELS'.
+The enumeration 'LineStyle' defines the following possible values: 'DASHDOT', 'DASHDOTDOT', 'DOT', 'SOLID', 'LINE_CUSTOM', 'DASH'.
+The enumeration 'Alignment' defines the following possible values: 'RIGHT', 'TOP', 'BOTTOM', 'CENTER', 'LEFT'.
+
+The model also captures inheritance relationships between classes.
+The class 'di_Node' is a specialization of 'View'.
+The class 'di_Container' is a specialization of 'View'.
+The class 'di_Diagram' is a specialization of 'Container'.
+The class 'di_Shape' is a specialization of 'Container'.
+The class 'di_Shape' is a specialization of 'Node'.
+The class 'di_GradientShape' is a specialization of 'Shape'.
+The class 'di_Line' is a specialization of 'Node'.
+The class 'di_Connector' is a specialization of 'Line'.
+The class 'di_Comment' is a specialization of 'Shape'.
+The class 'di_CommentLink' is a specialization of 'Line'.
+
+Relationships between classes are modeled using associations.
+An association connects 'di_EObject' and 'di_View'. From 'di_EObject', the role 'di_EObject' has cardinality 0..*, and from 'di_View', the role 'di_View' has cardinality 0..*.
+An association connects 'di_Node' and 'di_CommentLink'. From 'di_Node', the role 'source' has cardinality 0..*, and from 'di_CommentLink', the role 'CommentLink' has cardinality 0..*.
+An association connects 'di_Connector' and 'di_Node'. From 'di_Connector', the role 'Connector' has cardinality 0..*, and from 'di_Node', the role 'source3' has cardinality 0..*.
+An association connects 'di_Connector' and 'di_Node'. From 'di_Connector', the role 'Connector5' has cardinality 0..*, and from 'di_Node', the role 'target' has cardinality 0..*.
+An association connects 'di_Container' and 'di_Shape'. From 'di_Container', the role 'di_Container' has cardinality 0..*, and from 'di_Shape', the role 'di_Shape' has cardinality 0..*.
+An association connects 'di_Container' and 'di_Line'. From 'di_Container', the role 'di_Container8' has cardinality 0..*, and from 'di_Line', the role 'di_Line' has cardinality 0..*.
+An association connects 'di_Diagram' and 'di_Comment'. From 'di_Diagram', the role 'di_Diagram' has cardinality 0..*, and from 'di_Comment', the role 'di_Comment' has cardinality 0..*.
+An association connects 'di_Diagram' and 'di_CommentLink'. From 'di_Diagram', the role 'di_Diagram11' has cardinality 0..*, and from 'di_CommentLink', the role 'di_CommentLink' has cardinality 0..*.
+An association connects 'di_Ruler' and 'di_Diagram'. From 'di_Ruler', the role 'di_Ruler' has cardinality 0..*, and from 'di_Diagram', the role 'di_Diagram13' has cardinality 0..*.
+An association connects 'di_Ruler' and 'di_Diagram'. From 'di_Ruler', the role 'di_Ruler16' has cardinality 0..*, and from 'di_Diagram', the role 'di_Diagram15' has cardinality 0..*.
+An association connects 'di_Diagram' and 'di_Grid'. From 'di_Diagram', the role 'di_Diagram18' has cardinality 0..*, and from 'di_Grid', the role 'di_Grid' has cardinality 0..*.
+An association connects 'di_Connector' and 'di_Node'. From 'di_Connector', the role 'incomingLines' has cardinality 0..*, and from 'di_Node', the role 'Node' has cardinality 0..*.
+An association connects 'di_Node' and 'di_Connector'. From 'di_Node', the role 'Node21' has cardinality 0..*, and from 'di_Connector', the role 'outgoingLines' has cardinality 0..*.
+An association connects 'di_EObject' and 'di_Connector'. From 'di_EObject', the role 'di_EObject23' has cardinality 0..*, and from 'di_Connector', the role 'di_Connector' has cardinality 0..*.
+An association connects 'di_CommentLink' and 'di_Comment'. From 'di_CommentLink', the role 'CommentLink26' has cardinality 0..*, and from 'di_Comment', the role 'target25' has cardinality 0..*.
+An association connects 'di_CommentLink' and 'di_Node'. From 'di_CommentLink', the role 'commentLinks' has cardinality 0..*, and from 'di_Node', the role 'Node28' has cardinality 0..*.
+An association connects 'di_CommentLink' and 'di_Comment'. From 'di_CommentLink', the role 'inputs' has cardinality 0..*, and from 'di_Comment', the role 'Comment' has cardinality 0..*.
+An association connects 'di_Guide' and 'di_Ruler'. From 'di_Guide', the role 'Guide' has cardinality 0..*, and from 'di_Ruler', the role 'ruler' has cardinality 0..*.
+An association connects 'di_Guide' and 'di_Ruler'. From 'di_Guide', the role 'guides' has cardinality 0..*, and from 'di_Ruler', the role 'Ruler' has cardinality 0..*.
+An association connects 'di_ElementEntry' and 'di_Guide'. From 'di_ElementEntry', the role 'di_ElementEntry' has cardinality 0..*, and from 'di_Guide', the role 'di_Guide' has cardinality 0..*.
+An association connects 'di_View' and 'di_ElementEntry'. From 'di_View', the role 'di_View35' has cardinality 0..*, and from 'di_ElementEntry', the role 'di_ElementEntry34' has cardinality 0..*.

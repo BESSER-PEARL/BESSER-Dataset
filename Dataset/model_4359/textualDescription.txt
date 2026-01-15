@@ -1,0 +1,89 @@
+The domain model 'simple_lang' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'simple_lang_FeatureCallExpression' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'BinaryExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_lang_ArithmeticExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_lang_ComparisonExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_lang_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_lang_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_lang_SimpleLang' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_lang_MethodCallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_lang_WhileStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_lang_LogicalExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'FeatureCallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_lang_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_lang_AssignmentStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_lang_BinaryExpression' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'simple_lang_PropertyCallExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_lang_ExpressionStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'simple_lang_IfStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simple_lang_BinaryExpression' is a specialization of 'Expression'.
+The class 'simple_lang_LogicalExpression' is a specialization of 'BinaryExpression'.
+The class 'simple_lang_ArithmeticExpression' is a specialization of 'BinaryExpression'.
+The class 'simple_lang_ComparisonExpression' is a specialization of 'BinaryExpression'.
+The class 'simple_lang_FeatureCallExpression' is a specialization of 'Expression'.
+The class 'simple_lang_MethodCallExpression' is a specialization of 'FeatureCallExpression'.
+The class 'simple_lang_PropertyCallExpression' is a specialization of 'FeatureCallExpression'.
+The class 'simple_lang_ExpressionStatement' is a specialization of 'Statement'.
+The class 'simple_lang_IfStatement' is a specialization of 'Statement'.
+The class 'simple_lang_WhileStatement' is a specialization of 'Statement'.
+The class 'simple_lang_AssignmentStatement' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simple_lang_SimpleLang' and 'simple_lang_Statement'. From 'simple_lang_SimpleLang', the role 'simple_lang_SimpleLang' has cardinality 0..*, and from 'simple_lang_Statement', the role 'simple_lang_Statement' has cardinality 0..*.
+An association connects 'simple_lang_Type' and 'simple_lang_Expression'. From 'simple_lang_Type', the role 'simple_lang_Type' has cardinality 0..*, and from 'simple_lang_Expression', the role 'simple_lang_Expression' has cardinality 0..*.
+An association connects 'simple_lang_BinaryExpression' and 'simple_lang_Expression'. From 'simple_lang_BinaryExpression', the role 'simple_lang_BinaryExpression' has cardinality 0..*, and from 'simple_lang_Expression', the role 'simple_lang_Expression3' has cardinality 0..*.
+An association connects 'simple_lang_Expression' and 'simple_lang_BinaryExpression'. From 'simple_lang_Expression', the role 'simple_lang_Expression6' has cardinality 0..*, and from 'simple_lang_BinaryExpression', the role 'simple_lang_BinaryExpression5' has cardinality 0..*.
+An association connects 'simple_lang_Expression' and 'simple_lang_FeatureCallExpression'. From 'simple_lang_Expression', the role 'simple_lang_Expression8' has cardinality 0..*, and from 'simple_lang_FeatureCallExpression', the role 'simple_lang_FeatureCallExpression' has cardinality 0..*.
+An association connects 'simple_lang_MethodCallExpression' and 'simple_lang_Expression'. From 'simple_lang_MethodCallExpression', the role 'simple_lang_MethodCallExpression' has cardinality 0..*, and from 'simple_lang_Expression', the role 'simple_lang_Expression10' has cardinality 0..*.
+An association connects 'simple_lang_ExpressionStatement' and 'simple_lang_Expression'. From 'simple_lang_ExpressionStatement', the role 'simple_lang_ExpressionStatement' has cardinality 0..*, and from 'simple_lang_Expression', the role 'simple_lang_Expression12' has cardinality 0..*.
+An association connects 'simple_lang_Expression' and 'simple_lang_IfStatement'. From 'simple_lang_Expression', the role 'simple_lang_Expression14' has cardinality 0..*, and from 'simple_lang_IfStatement', the role 'simple_lang_IfStatement' has cardinality 0..*.
+An association connects 'simple_lang_IfStatement' and 'simple_lang_Statement'. From 'simple_lang_IfStatement', the role 'simple_lang_IfStatement16' has cardinality 0..*, and from 'simple_lang_Statement', the role 'simple_lang_Statement17' has cardinality 0..*.
+An association connects 'simple_lang_IfStatement' and 'simple_lang_Statement'. From 'simple_lang_IfStatement', the role 'simple_lang_IfStatement19' has cardinality 0..*, and from 'simple_lang_Statement', the role 'simple_lang_Statement20' has cardinality 0..*.
+An association connects 'simple_lang_WhileStatement' and 'simple_lang_Expression'. From 'simple_lang_WhileStatement', the role 'simple_lang_WhileStatement' has cardinality 0..*, and from 'simple_lang_Expression', the role 'simple_lang_Expression22' has cardinality 0..*.
+An association connects 'simple_lang_WhileStatement' and 'simple_lang_Statement'. From 'simple_lang_WhileStatement', the role 'simple_lang_WhileStatement24' has cardinality 0..*, and from 'simple_lang_Statement', the role 'simple_lang_Statement25' has cardinality 0..*.
+An association connects 'simple_lang_AssignmentStatement' and 'simple_lang_Expression'. From 'simple_lang_AssignmentStatement', the role 'simple_lang_AssignmentStatement' has cardinality 0..*, and from 'simple_lang_Expression', the role 'simple_lang_Expression27' has cardinality 0..*.
+An association connects 'simple_lang_Expression' and 'simple_lang_AssignmentStatement'. From 'simple_lang_Expression', the role 'simple_lang_Expression30' has cardinality 0..*, and from 'simple_lang_AssignmentStatement', the role 'simple_lang_AssignmentStatement29' has cardinality 0..*.

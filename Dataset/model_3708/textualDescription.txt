@@ -1,0 +1,51 @@
+The domain model 'UML2' describes the core structural elements and their relationships within the system.
+
+The model defines 12 main class(es).
+
+'UML2_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_AssociationClass' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_CommunicationPath' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Property' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_ExtensionEnd' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_LinkEndCreationData' represents an important domain concept.
+It does not declare any attributes.
+
+'LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'Property' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_LinkEndData' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Extension' represents an important domain concept.
+It does not declare any attributes.
+
+'UML2_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'Association' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'UML2_LinkEndCreationData' is a specialization of 'LinkEndData'.
+The class 'UML2_CommunicationPath' is a specialization of 'Association'.
+The class 'UML2_ExtensionEnd' is a specialization of 'Property'.
+The class 'UML2_Port' is a specialization of 'Property'.
+The class 'UML2_AssociationClass' is a specialization of 'Association'.
+The class 'UML2_Extension' is a specialization of 'Association'.
+
+Relationships between classes are modeled using associations.
+An association connects 'UML2_LinkEndData' and 'UML2_Property'. From 'UML2_LinkEndData', the role 'UML2_LinkEndData' has cardinality 0..*, and from 'UML2_Property', the role 'UML2_Property' has cardinality 0..*.
+An association connects 'UML2_Association' and 'UML2_Property'. From 'UML2_Association', the role 'UML2_Association' has cardinality 0..*, and from 'UML2_Property', the role 'UML2_Property2' has cardinality 0..*.

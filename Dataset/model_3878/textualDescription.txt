@@ -1,0 +1,181 @@
+The domain model 'dinkiemodel' describes the core structural elements and their relationships within the system.
+
+The model defines 36 main class(es).
+
+'dinkiemodel_FilledArrayDecl' represents an important domain concept.
+It has the following attributes: 'global', which is of type bool; 'varName', which is of type str.
+
+'dinkiemodel_ArrayAssign' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'dinkiemodel_BoolVal' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'dinkiemodel_Argument' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dinkiemodel_Sync' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'dinkiemodel_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'dinkiemodel_ThreadID' represents an important domain concept.
+It does not declare any attributes.
+
+'dinkiemodel_ArrayType' represents an important domain concept.
+It has one attribute: 'arrayType', which is of type str.
+
+'dinkiemodel_Number' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'dinkiemodel_IfTwo' represents an important domain concept.
+It does not declare any attributes.
+
+'dinkiemodel_OneOperator' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'dinkiemodel_VariableExpr' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dinkiemodel_EmptyArrayDecl' represents an important domain concept.
+It has the following attributes: 'varName', which is of type str; 'global', which is of type bool; 'size', which is of type int.
+
+'dinkiemodel_FunctionDecl' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'dinkiemodel_StringArrayDecl' represents an important domain concept.
+It has the following attributes: 'content', which is of type str; 'global', which is of type bool; 'varName', which is of type str.
+
+'dinkiemodel_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'dinkiemodel_Main' represents an important domain concept.
+It does not declare any attributes.
+
+'dinkiemodel_ArrayExpr' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'dinkiemodel_BracketExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'dinkiemodel_Parallel' represents an important domain concept.
+It has one attribute: 'nrOfThreads', which is of type int.
+
+'dinkiemodel_WriteStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'dinkiemodel_Declaration' represents an important domain concept.
+It has the following attributes: 'global', which is of type bool; 'varName', which is of type str.
+
+'dinkiemodel_IfOne' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'dinkiemodel_BaseType' represents an important domain concept.
+It has one attribute: 'type', which is of type str.
+
+'dinkiemodel_Character' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'dinkiemodel_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'dinkiemodel_TwoOperator' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'dinkiemodel_FuncExpr' represents an important domain concept.
+It has one attribute: 'funcName', which is of type str.
+
+'dinkiemodel_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'dinkiemodel_Return' represents an important domain concept.
+It does not declare any attributes.
+
+'dinkiemodel_While' represents an important domain concept.
+It does not declare any attributes.
+
+'dinkiemodel_Assign' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+'dinkiemodel_ReadStatement' represents an important domain concept.
+It has one attribute: 'varName', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ETwoOperator' defines the following possible values: 'GE', 'GT', 'EQUAL', 'XOR', 'DEVIDE', 'MINUS', 'LT', 'LE', 'OR', 'AND', 'PLUS', 'TIMES', 'NOT_EQUAL'.
+The enumeration 'EOneOperator' defines the following possible values: 'MINUS', 'NOT'.
+The enumeration 'EBaseType' defines the following possible values: 'INT', 'CHAR', 'BOOL'.
+
+The model also captures inheritance relationships between classes.
+The class 'dinkiemodel_Declaration' is a specialization of 'Statement'.
+The class 'dinkiemodel_BaseType' is a specialization of 'Type'.
+The class 'dinkiemodel_ArrayType' is a specialization of 'Type'.
+The class 'dinkiemodel_EmptyArrayDecl' is a specialization of 'Statement'.
+The class 'dinkiemodel_ReadStatement' is a specialization of 'Statement'.
+The class 'dinkiemodel_WriteStatement' is a specialization of 'Statement'.
+The class 'dinkiemodel_Assign' is a specialization of 'Statement'.
+The class 'dinkiemodel_FilledArrayDecl' is a specialization of 'Statement'.
+The class 'dinkiemodel_StringArrayDecl' is a specialization of 'Statement'.
+The class 'dinkiemodel_ArrayAssign' is a specialization of 'Statement'.
+The class 'dinkiemodel_While' is a specialization of 'Statement'.
+The class 'dinkiemodel_IfOne' is a specialization of 'Statement'.
+The class 'dinkiemodel_IfTwo' is a specialization of 'Statement'.
+The class 'dinkiemodel_Parallel' is a specialization of 'Statement'.
+The class 'dinkiemodel_Sync' is a specialization of 'Statement'.
+The class 'dinkiemodel_Return' is a specialization of 'Statement'.
+The class 'dinkiemodel_Number' is a specialization of 'Expression'.
+The class 'dinkiemodel_BoolVal' is a specialization of 'Expression'.
+The class 'dinkiemodel_Character' is a specialization of 'Expression'.
+The class 'dinkiemodel_OneOperator' is a specialization of 'Expression'.
+The class 'dinkiemodel_TwoOperator' is a specialization of 'Expression'.
+The class 'dinkiemodel_BracketExpr' is a specialization of 'Expression'.
+The class 'dinkiemodel_ArrayExpr' is a specialization of 'Expression'.
+The class 'dinkiemodel_FuncExpr' is a specialization of 'Expression'.
+The class 'dinkiemodel_FuncExpr' is a specialization of 'Statement'.
+The class 'dinkiemodel_ThreadID' is a specialization of 'Expression'.
+The class 'dinkiemodel_VariableExpr' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dinkiemodel_FunctionDecl' and 'dinkiemodel_Program'. From 'dinkiemodel_FunctionDecl', the role 'dinkiemodel_FunctionDecl' has cardinality 0..*, and from 'dinkiemodel_Program', the role 'dinkiemodel_Program' has cardinality 0..*.
+An association connects 'dinkiemodel_Program' and 'dinkiemodel_Main'. From 'dinkiemodel_Program', the role 'dinkiemodel_Program2' has cardinality 0..*, and from 'dinkiemodel_Main', the role 'dinkiemodel_Main' has cardinality 0..*.
+An association connects 'dinkiemodel_Main' and 'dinkiemodel_Statement'. From 'dinkiemodel_Main', the role 'dinkiemodel_Main4' has cardinality 0..*, and from 'dinkiemodel_Statement', the role 'dinkiemodel_Statement' has cardinality 0..*.
+An association connects 'dinkiemodel_FunctionDecl' and 'dinkiemodel_Statement'. From 'dinkiemodel_FunctionDecl', the role 'dinkiemodel_FunctionDecl6' has cardinality 0..*, and from 'dinkiemodel_Statement', the role 'dinkiemodel_Statement7' has cardinality 0..*.
+An association connects 'dinkiemodel_Argument' and 'dinkiemodel_FunctionDecl'. From 'dinkiemodel_Argument', the role 'dinkiemodel_Argument' has cardinality 0..*, and from 'dinkiemodel_FunctionDecl', the role 'dinkiemodel_FunctionDecl9' has cardinality 0..*.
+An association connects 'dinkiemodel_Type' and 'dinkiemodel_FunctionDecl'. From 'dinkiemodel_Type', the role 'dinkiemodel_Type' has cardinality 0..*, and from 'dinkiemodel_FunctionDecl', the role 'dinkiemodel_FunctionDecl11' has cardinality 0..*.
+An association connects 'dinkiemodel_Declaration' and 'dinkiemodel_BaseType'. From 'dinkiemodel_Declaration', the role 'dinkiemodel_Declaration' has cardinality 0..*, and from 'dinkiemodel_BaseType', the role 'dinkiemodel_BaseType' has cardinality 0..*.
+An association connects 'dinkiemodel_Expression' and 'dinkiemodel_Declaration'. From 'dinkiemodel_Expression', the role 'dinkiemodel_Expression' has cardinality 0..*, and from 'dinkiemodel_Declaration', the role 'dinkiemodel_Declaration14' has cardinality 0..*.
+An association connects 'dinkiemodel_ArrayType' and 'dinkiemodel_EmptyArrayDecl'. From 'dinkiemodel_ArrayType', the role 'dinkiemodel_ArrayType' has cardinality 0..*, and from 'dinkiemodel_EmptyArrayDecl', the role 'dinkiemodel_EmptyArrayDecl' has cardinality 0..*.
+An association connects 'dinkiemodel_BaseType' and 'dinkiemodel_ReadStatement'. From 'dinkiemodel_BaseType', the role 'dinkiemodel_BaseType17' has cardinality 0..*, and from 'dinkiemodel_ReadStatement', the role 'dinkiemodel_ReadStatement' has cardinality 0..*.
+An association connects 'dinkiemodel_Type' and 'dinkiemodel_WriteStatement'. From 'dinkiemodel_Type', the role 'dinkiemodel_Type19' has cardinality 0..*, and from 'dinkiemodel_WriteStatement', the role 'dinkiemodel_WriteStatement' has cardinality 0..*.
+An association connects 'dinkiemodel_WriteStatement' and 'dinkiemodel_Expression'. From 'dinkiemodel_WriteStatement', the role 'dinkiemodel_WriteStatement21' has cardinality 0..*, and from 'dinkiemodel_Expression', the role 'dinkiemodel_Expression22' has cardinality 0..*.
+An association connects 'dinkiemodel_Assign' and 'dinkiemodel_Expression'. From 'dinkiemodel_Assign', the role 'dinkiemodel_Assign' has cardinality 0..*, and from 'dinkiemodel_Expression', the role 'dinkiemodel_Expression24' has cardinality 0..*.
+An association connects 'dinkiemodel_FilledArrayDecl' and 'dinkiemodel_ArrayType'. From 'dinkiemodel_FilledArrayDecl', the role 'dinkiemodel_FilledArrayDecl' has cardinality 0..*, and from 'dinkiemodel_ArrayType', the role 'dinkiemodel_ArrayType26' has cardinality 0..*.
+An association connects 'dinkiemodel_FilledArrayDecl' and 'dinkiemodel_Expression'. From 'dinkiemodel_FilledArrayDecl', the role 'dinkiemodel_FilledArrayDecl28' has cardinality 0..*, and from 'dinkiemodel_Expression', the role 'dinkiemodel_Expression29' has cardinality 0..*.
+An association connects 'dinkiemodel_Expression' and 'dinkiemodel_ArrayAssign'. From 'dinkiemodel_Expression', the role 'dinkiemodel_Expression31' has cardinality 0..*, and from 'dinkiemodel_ArrayAssign', the role 'dinkiemodel_ArrayAssign' has cardinality 0..*.
+An association connects 'dinkiemodel_Expression' and 'dinkiemodel_ArrayAssign'. From 'dinkiemodel_Expression', the role 'dinkiemodel_Expression34' has cardinality 0..*, and from 'dinkiemodel_ArrayAssign', the role 'dinkiemodel_ArrayAssign33' has cardinality 0..*.
+An association connects 'dinkiemodel_Expression' and 'dinkiemodel_While'. From 'dinkiemodel_Expression', the role 'dinkiemodel_Expression36' has cardinality 0..*, and from 'dinkiemodel_While', the role 'dinkiemodel_While' has cardinality 0..*.
+An association connects 'dinkiemodel_While' and 'dinkiemodel_Statement'. From 'dinkiemodel_While', the role 'dinkiemodel_While38' has cardinality 0..*, and from 'dinkiemodel_Statement', the role 'dinkiemodel_Statement39' has cardinality 0..*.
+An association connects 'dinkiemodel_Expression' and 'dinkiemodel_IfOne'. From 'dinkiemodel_Expression', the role 'dinkiemodel_Expression41' has cardinality 0..*, and from 'dinkiemodel_IfOne', the role 'dinkiemodel_IfOne' has cardinality 0..*.
+An association connects 'dinkiemodel_Statement' and 'dinkiemodel_IfOne'. From 'dinkiemodel_Statement', the role 'dinkiemodel_Statement44' has cardinality 0..*, and from 'dinkiemodel_IfOne', the role 'dinkiemodel_IfOne43' has cardinality 0..*.
+An association connects 'dinkiemodel_IfTwo' and 'dinkiemodel_Statement'. From 'dinkiemodel_IfTwo', the role 'dinkiemodel_IfTwo' has cardinality 0..*, and from 'dinkiemodel_Statement', the role 'dinkiemodel_Statement46' has cardinality 0..*.
+An association connects 'dinkiemodel_IfTwo' and 'dinkiemodel_Expression'. From 'dinkiemodel_IfTwo', the role 'dinkiemodel_IfTwo48' has cardinality 0..*, and from 'dinkiemodel_Expression', the role 'dinkiemodel_Expression49' has cardinality 0..*.
+An association connects 'dinkiemodel_IfTwo' and 'dinkiemodel_Statement'. From 'dinkiemodel_IfTwo', the role 'dinkiemodel_IfTwo51' has cardinality 0..*, and from 'dinkiemodel_Statement', the role 'dinkiemodel_Statement52' has cardinality 0..*.
+An association connects 'dinkiemodel_Parallel' and 'dinkiemodel_Statement'. From 'dinkiemodel_Parallel', the role 'dinkiemodel_Parallel' has cardinality 0..*, and from 'dinkiemodel_Statement', the role 'dinkiemodel_Statement54' has cardinality 0..*.
+An association connects 'dinkiemodel_Statement' and 'dinkiemodel_Sync'. From 'dinkiemodel_Statement', the role 'dinkiemodel_Statement56' has cardinality 0..*, and from 'dinkiemodel_Sync', the role 'dinkiemodel_Sync' has cardinality 0..*.
+An association connects 'dinkiemodel_Return' and 'dinkiemodel_Expression'. From 'dinkiemodel_Return', the role 'dinkiemodel_Return' has cardinality 0..*, and from 'dinkiemodel_Expression', the role 'dinkiemodel_Expression58' has cardinality 0..*.
+An association connects 'dinkiemodel_Expression' and 'dinkiemodel_OneOperator'. From 'dinkiemodel_Expression', the role 'dinkiemodel_Expression60' has cardinality 0..*, and from 'dinkiemodel_OneOperator', the role 'dinkiemodel_OneOperator' has cardinality 0..*.
+An association connects 'dinkiemodel_Expression' and 'dinkiemodel_TwoOperator'. From 'dinkiemodel_Expression', the role 'dinkiemodel_Expression62' has cardinality 0..*, and from 'dinkiemodel_TwoOperator', the role 'dinkiemodel_TwoOperator' has cardinality 0..*.
+An association connects 'dinkiemodel_TwoOperator' and 'dinkiemodel_Expression'. From 'dinkiemodel_TwoOperator', the role 'dinkiemodel_TwoOperator64' has cardinality 0..*, and from 'dinkiemodel_Expression', the role 'dinkiemodel_Expression65' has cardinality 0..*.
+An association connects 'dinkiemodel_BracketExpr' and 'dinkiemodel_Expression'. From 'dinkiemodel_BracketExpr', the role 'dinkiemodel_BracketExpr' has cardinality 0..*, and from 'dinkiemodel_Expression', the role 'dinkiemodel_Expression67' has cardinality 0..*.
+An association connects 'dinkiemodel_Expression' and 'dinkiemodel_ArrayExpr'. From 'dinkiemodel_Expression', the role 'dinkiemodel_Expression69' has cardinality 0..*, and from 'dinkiemodel_ArrayExpr', the role 'dinkiemodel_ArrayExpr' has cardinality 0..*.
+An association connects 'dinkiemodel_FuncExpr' and 'dinkiemodel_Expression'. From 'dinkiemodel_FuncExpr', the role 'dinkiemodel_FuncExpr' has cardinality 0..*, and from 'dinkiemodel_Expression', the role 'dinkiemodel_Expression71' has cardinality 0..*.
+An association connects 'dinkiemodel_Type' and 'dinkiemodel_Argument'. From 'dinkiemodel_Type', the role 'dinkiemodel_Type74' has cardinality 0..*, and from 'dinkiemodel_Argument', the role 'dinkiemodel_Argument73' has cardinality 0..*.

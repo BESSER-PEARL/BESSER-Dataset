@@ -1,0 +1,13 @@
+The domain model 'configDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'configDsl_Generator' represents an important domain concept.
+It has the following attributes: 'bundle', which is of type str; 'name', which is of type str; 'genClass', which is of type str.
+
+'configDsl_Config' represents an important domain concept.
+It has the following attributes: 'outFolder', which is of type str; 'srcFolder', which is of type str; 'mainClass', which is of type str; 'appName', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'configDsl_Generator' and 'configDsl_Config'. From 'configDsl_Generator', the role 'configDsl_Generator' has cardinality 0..*, and from 'configDsl_Config', the role 'configDsl_Config' has cardinality 0..*.
+An association connects 'configDsl_Generator' and 'configDsl_Config'. From 'configDsl_Generator', the role 'configDsl_Generator3' has cardinality 0..*, and from 'configDsl_Config', the role 'configDsl_Config2' has cardinality 0..*.

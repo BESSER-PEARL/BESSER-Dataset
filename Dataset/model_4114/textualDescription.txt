@@ -1,0 +1,97 @@
+The domain model 'whileCpp' describes the core structural elements and their relationships within the system.
+
+The model defines 19 main class(es).
+
+'whileCpp_Commands' represents an important domain concept.
+It does not declare any attributes.
+
+'whileCpp_ExprAnd' represents an important domain concept.
+It has one attribute: 'exprAnd', which is of type str.
+
+'whileCpp_Vars' represents an important domain concept.
+It has one attribute: 'varGen', which is of type str.
+
+'whileCpp_ExprSimple' represents an important domain concept.
+It has the following attributes: 'vari', which is of type str; 'nomSymb', which is of type str; 'exprHead', which is of type str; 'exprTail', which is of type str; 'symb', which is of type str; 'nil', which is of type str.
+
+'whileCpp_ExprOr' represents an important domain concept.
+It has one attribute: 'exprOr', which is of type str.
+
+'whileCpp_ExprNot' represents an important domain concept.
+It has one attribute: 'not', which is of type str.
+
+'whileCpp_CommandWhile' represents an important domain concept.
+It has one attribute: 'w', which is of type str.
+
+'whileCpp_Function' represents an important domain concept.
+It has one attribute: 'nom', which is of type str.
+
+'whileCpp_Cons' represents an important domain concept.
+It has one attribute: 'exprCons', which is of type str.
+
+'whileCpp_Exprs' represents an important domain concept.
+It does not declare any attributes.
+
+'whileCpp_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'whileCpp_CommandIf' represents an important domain concept.
+It does not declare any attributes.
+
+'whileCpp_ExprEq' represents an important domain concept.
+It does not declare any attributes.
+
+'whileCpp_Command' represents an important domain concept.
+It has one attribute: 'nop', which is of type str.
+
+'whileCpp_Output' represents an important domain concept.
+It has one attribute: 'varOut', which is of type str.
+
+'whileCpp_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'whileCpp_Input' represents an important domain concept.
+It has one attribute: 'varIn', which is of type str.
+
+'whileCpp_CommandForEach' represents an important domain concept.
+It does not declare any attributes.
+
+'whileCpp_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'whileCpp_Function' and 'whileCpp_Program'. From 'whileCpp_Function', the role 'whileCpp_Function' has cardinality 0..*, and from 'whileCpp_Program', the role 'whileCpp_Program' has cardinality 0..*.
+An association connects 'whileCpp_Definition' and 'whileCpp_Function'. From 'whileCpp_Definition', the role 'whileCpp_Definition' has cardinality 0..*, and from 'whileCpp_Function', the role 'whileCpp_Function2' has cardinality 0..*.
+An association connects 'whileCpp_Definition' and 'whileCpp_Input'. From 'whileCpp_Definition', the role 'whileCpp_Definition4' has cardinality 0..*, and from 'whileCpp_Input', the role 'whileCpp_Input' has cardinality 0..*.
+An association connects 'whileCpp_Definition' and 'whileCpp_Commands'. From 'whileCpp_Definition', the role 'whileCpp_Definition6' has cardinality 0..*, and from 'whileCpp_Commands', the role 'whileCpp_Commands' has cardinality 0..*.
+An association connects 'whileCpp_Definition' and 'whileCpp_Output'. From 'whileCpp_Definition', the role 'whileCpp_Definition8' has cardinality 0..*, and from 'whileCpp_Output', the role 'whileCpp_Output' has cardinality 0..*.
+An association connects 'whileCpp_Commands' and 'whileCpp_Command'. From 'whileCpp_Commands', the role 'whileCpp_Commands10' has cardinality 0..*, and from 'whileCpp_Command', the role 'whileCpp_Command' has cardinality 0..*.
+An association connects 'whileCpp_Vars' and 'whileCpp_Command'. From 'whileCpp_Vars', the role 'whileCpp_Vars' has cardinality 0..*, and from 'whileCpp_Command', the role 'whileCpp_Command12' has cardinality 0..*.
+An association connects 'whileCpp_Command' and 'whileCpp_Exprs'. From 'whileCpp_Command', the role 'whileCpp_Command14' has cardinality 0..*, and from 'whileCpp_Exprs', the role 'whileCpp_Exprs' has cardinality 0..*.
+An association connects 'whileCpp_Command' and 'whileCpp_CommandWhile'. From 'whileCpp_Command', the role 'whileCpp_Command16' has cardinality 0..*, and from 'whileCpp_CommandWhile', the role 'whileCpp_CommandWhile' has cardinality 0..*.
+An association connects 'whileCpp_CommandIf' and 'whileCpp_Command'. From 'whileCpp_CommandIf', the role 'whileCpp_CommandIf' has cardinality 0..*, and from 'whileCpp_Command', the role 'whileCpp_Command18' has cardinality 0..*.
+An association connects 'whileCpp_Command' and 'whileCpp_CommandForEach'. From 'whileCpp_Command', the role 'whileCpp_Command20' has cardinality 0..*, and from 'whileCpp_CommandForEach', the role 'whileCpp_CommandForEach' has cardinality 0..*.
+An association connects 'whileCpp_CommandWhile' and 'whileCpp_Expr'. From 'whileCpp_CommandWhile', the role 'whileCpp_CommandWhile22' has cardinality 0..*, and from 'whileCpp_Expr', the role 'whileCpp_Expr' has cardinality 0..*.
+An association connects 'whileCpp_Commands' and 'whileCpp_CommandWhile'. From 'whileCpp_Commands', the role 'whileCpp_Commands25' has cardinality 0..*, and from 'whileCpp_CommandWhile', the role 'whileCpp_CommandWhile24' has cardinality 0..*.
+An association connects 'whileCpp_CommandIf' and 'whileCpp_Expr'. From 'whileCpp_CommandIf', the role 'whileCpp_CommandIf27' has cardinality 0..*, and from 'whileCpp_Expr', the role 'whileCpp_Expr28' has cardinality 0..*.
+An association connects 'whileCpp_CommandIf' and 'whileCpp_Commands'. From 'whileCpp_CommandIf', the role 'whileCpp_CommandIf30' has cardinality 0..*, and from 'whileCpp_Commands', the role 'whileCpp_Commands31' has cardinality 0..*.
+An association connects 'whileCpp_Commands' and 'whileCpp_CommandIf'. From 'whileCpp_Commands', the role 'whileCpp_Commands34' has cardinality 0..*, and from 'whileCpp_CommandIf', the role 'whileCpp_CommandIf33' has cardinality 0..*.
+An association connects 'whileCpp_CommandForEach' and 'whileCpp_Expr'. From 'whileCpp_CommandForEach', the role 'whileCpp_CommandForEach36' has cardinality 0..*, and from 'whileCpp_Expr', the role 'whileCpp_Expr37' has cardinality 0..*.
+An association connects 'whileCpp_CommandForEach' and 'whileCpp_Expr'. From 'whileCpp_CommandForEach', the role 'whileCpp_CommandForEach39' has cardinality 0..*, and from 'whileCpp_Expr', the role 'whileCpp_Expr40' has cardinality 0..*.
+An association connects 'whileCpp_CommandForEach' and 'whileCpp_Commands'. From 'whileCpp_CommandForEach', the role 'whileCpp_CommandForEach42' has cardinality 0..*, and from 'whileCpp_Commands', the role 'whileCpp_Commands43' has cardinality 0..*.
+An association connects 'whileCpp_Exprs' and 'whileCpp_Expr'. From 'whileCpp_Exprs', the role 'whileCpp_Exprs45' has cardinality 0..*, and from 'whileCpp_Expr', the role 'whileCpp_Expr46' has cardinality 0..*.
+An association connects 'whileCpp_ExprSimple' and 'whileCpp_Expr'. From 'whileCpp_ExprSimple', the role 'whileCpp_ExprSimple' has cardinality 0..*, and from 'whileCpp_Expr', the role 'whileCpp_Expr48' has cardinality 0..*.
+An association connects 'whileCpp_Expr' and 'whileCpp_ExprAnd'. From 'whileCpp_Expr', the role 'whileCpp_Expr50' has cardinality 0..*, and from 'whileCpp_ExprAnd', the role 'whileCpp_ExprAnd' has cardinality 0..*.
+An association connects 'whileCpp_ExprSimple' and 'whileCpp_Cons'. From 'whileCpp_ExprSimple', the role 'whileCpp_ExprSimple52' has cardinality 0..*, and from 'whileCpp_Cons', the role 'whileCpp_Cons' has cardinality 0..*.
+An association connects 'whileCpp_ExprSimple' and 'whileCpp_Expr'. From 'whileCpp_ExprSimple', the role 'whileCpp_ExprSimple54' has cardinality 0..*, and from 'whileCpp_Expr', the role 'whileCpp_Expr55' has cardinality 0..*.
+An association connects 'whileCpp_ExprSimple' and 'whileCpp_Expr'. From 'whileCpp_ExprSimple', the role 'whileCpp_ExprSimple57' has cardinality 0..*, and from 'whileCpp_Expr', the role 'whileCpp_Expr58' has cardinality 0..*.
+An association connects 'whileCpp_Expr' and 'whileCpp_ExprSimple'. From 'whileCpp_Expr', the role 'whileCpp_Expr61' has cardinality 0..*, and from 'whileCpp_ExprSimple', the role 'whileCpp_ExprSimple60' has cardinality 0..*.
+An association connects 'whileCpp_ExprOr' and 'whileCpp_ExprAnd'. From 'whileCpp_ExprOr', the role 'whileCpp_ExprOr' has cardinality 0..*, and from 'whileCpp_ExprAnd', the role 'whileCpp_ExprAnd63' has cardinality 0..*.
+An association connects 'whileCpp_ExprAnd' and 'whileCpp_ExprAnd'. From 'whileCpp_ExprAnd', the role 'whileCpp_ExprAnd66' has cardinality 0..*, and from 'whileCpp_ExprAnd', the role 'whileCpp_ExprAnd64' has cardinality 0..*.
+An association connects 'whileCpp_ExprNot' and 'whileCpp_ExprOr'. From 'whileCpp_ExprNot', the role 'whileCpp_ExprNot' has cardinality 0..*, and from 'whileCpp_ExprOr', the role 'whileCpp_ExprOr68' has cardinality 0..*.
+An association connects 'whileCpp_ExprOr' and 'whileCpp_ExprOr'. From 'whileCpp_ExprOr', the role 'whileCpp_ExprOr71' has cardinality 0..*, and from 'whileCpp_ExprOr', the role 'whileCpp_ExprOr69' has cardinality 0..*.
+An association connects 'whileCpp_ExprNot' and 'whileCpp_ExprEq'. From 'whileCpp_ExprNot', the role 'whileCpp_ExprNot73' has cardinality 0..*, and from 'whileCpp_ExprEq', the role 'whileCpp_ExprEq' has cardinality 0..*.
+An association connects 'whileCpp_Expr' and 'whileCpp_ExprEq'. From 'whileCpp_Expr', the role 'whileCpp_Expr76' has cardinality 0..*, and from 'whileCpp_ExprEq', the role 'whileCpp_ExprEq75' has cardinality 0..*.
+An association connects 'whileCpp_ExprSimple' and 'whileCpp_ExprEq'. From 'whileCpp_ExprSimple', the role 'whileCpp_ExprSimple79' has cardinality 0..*, and from 'whileCpp_ExprEq', the role 'whileCpp_ExprEq78' has cardinality 0..*.
+An association connects 'whileCpp_ExprSimple' and 'whileCpp_ExprEq'. From 'whileCpp_ExprSimple', the role 'whileCpp_ExprSimple82' has cardinality 0..*, and from 'whileCpp_ExprEq', the role 'whileCpp_ExprEq81' has cardinality 0..*.
+An association connects 'whileCpp_Cons' and 'whileCpp_Expr'. From 'whileCpp_Cons', the role 'whileCpp_Cons84' has cardinality 0..*, and from 'whileCpp_Expr', the role 'whileCpp_Expr85' has cardinality 0..*.

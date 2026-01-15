@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/barais/SEISummerSchool/1.Logo/org.inria.diverse.logo.VM/model/VMLogo.ecore

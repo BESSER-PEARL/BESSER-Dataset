@@ -1,0 +1,37 @@
+The domain model 'movies' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'movies_Place' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'name', which is of type str.
+
+'movies_CriticsReview' represents an important domain concept.
+It has the following attributes: 'reviewedBy', which is of type str; 'rating', which is of type str.
+
+'movies_Movie' represents an important domain concept.
+It has the following attributes: 'actors', which is of type str; 'summary', which is of type str; 'genre', which is of type str; 'title', which is of type str; 'director', which is of type str.
+
+'CriticsReview' represents an important domain concept.
+It does not declare any attributes.
+
+'movies_CustomerReview' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'movies_MoviesDB' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'movies_Copy' represents an important domain concept.
+It has one attribute: 'id', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'GenreTypes' defines the following possible values: 'Documentary', 'Family', 'Horror', 'Thriller', 'Animation', 'Action', 'Classics', 'Comedy', 'SciFi', 'Romance', 'Drama', 'NewRelease'.
+
+The model also captures inheritance relationships between classes.
+The class 'movies_CustomerReview' is a specialization of 'CriticsReview'.
+
+Relationships between classes are modeled using associations.
+An association connects 'movies_Movie' and 'movies_Copy'. From 'movies_Movie', the role 'movies_Movie' has cardinality 0..*, and from 'movies_Copy', the role 'movies_Copy' has cardinality 0..*.
+An association connects 'movies_Movie' and 'movies_CriticsReview'. From 'movies_Movie', the role 'movies_Movie2' has cardinality 0..*, and from 'movies_CriticsReview', the role 'movies_CriticsReview' has cardinality 0..*.
+An association connects 'movies_Movie' and 'movies_MoviesDB'. From 'movies_Movie', the role 'movies_Movie4' has cardinality 0..*, and from 'movies_MoviesDB', the role 'movies_MoviesDB' has cardinality 0..*.
+An association connects 'movies_MoviesDB' and 'movies_Place'. From 'movies_MoviesDB', the role 'movies_MoviesDB6' has cardinality 0..*, and from 'movies_Place', the role 'movies_Place' has cardinality 0..*.
+An association connects 'movies_Place' and 'movies_Copy'. From 'movies_Place', the role 'movies_Place9' has cardinality 0..*, and from 'movies_Copy', the role 'movies_Copy8' has cardinality 0..*.

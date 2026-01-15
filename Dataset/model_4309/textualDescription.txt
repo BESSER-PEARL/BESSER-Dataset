@@ -1,0 +1,74 @@
+The domain model 'metricDSL' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'Metric' represents an important domain concept.
+It does not declare any attributes.
+
+'metricDSL_Parameter' represents an important domain concept.
+It has the following attributes: 'shortname', which is of type str; 'description', which is of type str; 'defaultValue', which is of type float.
+
+'metricDSL_BoundAndWeight' represents an important domain concept.
+It does not declare any attributes.
+
+'metricDSL_WeightedMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'Number' represents an important domain concept.
+It does not declare any attributes.
+
+'metricDSL_ExternalMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'metricDSL_MetricModel' represents an important domain concept.
+It has one attribute: 'importURI', which is of type str.
+
+'metricDSL_MetricDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'metricDSL_Number' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'metricDSL_StepwiseMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'metricDSL_MetricAndWeight' represents an important domain concept.
+It does not declare any attributes.
+
+'metricDSL_Metric' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MetricDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'metricDSL_InternalMetric' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'shortName', which is of type str.
+
+'metricDSL_RatioMetric' represents an important domain concept.
+It does not declare any attributes.
+
+'metricDSL_Constant' represents an important domain concept.
+It has one attribute: 'value', which is of type float.
+
+The model also captures inheritance relationships between classes.
+The class 'metricDSL_ExternalMetric' is a specialization of 'Metric'.
+The class 'metricDSL_InternalMetric' is a specialization of 'Metric'.
+The class 'metricDSL_Parameter' is a specialization of 'Number'.
+The class 'metricDSL_Constant' is a specialization of 'Number'.
+The class 'metricDSL_WeightedMetric' is a specialization of 'MetricDefinition'.
+The class 'metricDSL_StepwiseMetric' is a specialization of 'MetricDefinition'.
+The class 'metricDSL_RatioMetric' is a specialization of 'MetricDefinition'.
+
+Relationships between classes are modeled using associations.
+An association connects 'metricDSL_MetricModel' and 'metricDSL_Metric'. From 'metricDSL_MetricModel', the role 'metricDSL_MetricModel' has cardinality 0..*, and from 'metricDSL_Metric', the role 'metricDSL_Metric' has cardinality 0..*.
+An association connects 'metricDSL_Number' and 'metricDSL_InternalMetric'. From 'metricDSL_Number', the role 'metricDSL_Number' has cardinality 0..*, and from 'metricDSL_InternalMetric', the role 'metricDSL_InternalMetric' has cardinality 0..*.
+An association connects 'metricDSL_InternalMetric' and 'metricDSL_MetricDefinition'. From 'metricDSL_InternalMetric', the role 'metricDSL_InternalMetric3' has cardinality 0..*, and from 'metricDSL_MetricDefinition', the role 'metricDSL_MetricDefinition' has cardinality 0..*.
+An association connects 'metricDSL_WeightedMetric' and 'metricDSL_MetricAndWeight'. From 'metricDSL_WeightedMetric', the role 'metricDSL_WeightedMetric' has cardinality 0..*, and from 'metricDSL_MetricAndWeight', the role 'metricDSL_MetricAndWeight' has cardinality 0..*.
+An association connects 'metricDSL_Metric' and 'metricDSL_StepwiseMetric'. From 'metricDSL_Metric', the role 'metricDSL_Metric6' has cardinality 0..*, and from 'metricDSL_StepwiseMetric', the role 'metricDSL_StepwiseMetric' has cardinality 0..*.
+An association connects 'metricDSL_BoundAndWeight' and 'metricDSL_StepwiseMetric'. From 'metricDSL_BoundAndWeight', the role 'metricDSL_BoundAndWeight' has cardinality 0..*, and from 'metricDSL_StepwiseMetric', the role 'metricDSL_StepwiseMetric8' has cardinality 0..*.
+An association connects 'metricDSL_RatioMetric' and 'metricDSL_Metric'. From 'metricDSL_RatioMetric', the role 'metricDSL_RatioMetric' has cardinality 0..*, and from 'metricDSL_Metric', the role 'metricDSL_Metric10' has cardinality 0..*.
+An association connects 'metricDSL_Metric' and 'metricDSL_RatioMetric'. From 'metricDSL_Metric', the role 'metricDSL_Metric13' has cardinality 0..*, and from 'metricDSL_RatioMetric', the role 'metricDSL_RatioMetric12' has cardinality 0..*.
+An association connects 'metricDSL_BoundAndWeight' and 'metricDSL_Number'. From 'metricDSL_BoundAndWeight', the role 'metricDSL_BoundAndWeight15' has cardinality 0..*, and from 'metricDSL_Number', the role 'metricDSL_Number16' has cardinality 0..*.
+An association connects 'metricDSL_Number' and 'metricDSL_BoundAndWeight'. From 'metricDSL_Number', the role 'metricDSL_Number19' has cardinality 0..*, and from 'metricDSL_BoundAndWeight', the role 'metricDSL_BoundAndWeight18' has cardinality 0..*.
+An association connects 'metricDSL_MetricAndWeight' and 'metricDSL_Metric'. From 'metricDSL_MetricAndWeight', the role 'metricDSL_MetricAndWeight21' has cardinality 0..*, and from 'metricDSL_Metric', the role 'metricDSL_Metric22' has cardinality 0..*.
+An association connects 'metricDSL_MetricAndWeight' and 'metricDSL_Number'. From 'metricDSL_MetricAndWeight', the role 'metricDSL_MetricAndWeight24' has cardinality 0..*, and from 'metricDSL_Number', the role 'metricDSL_Number25' has cardinality 0..*.

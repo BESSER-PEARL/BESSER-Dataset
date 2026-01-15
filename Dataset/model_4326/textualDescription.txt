@@ -1,0 +1,83 @@
+The domain model 'QualityMetamodel' describes the core structural elements and their relationships within the system.
+
+The model defines 18 main class(es).
+
+'QualityMetamodel_AggregatedValueMetric' represents an important domain concept.
+It has the following attributes: 'standardDeviation', which is of type str; 'median', which is of type str; 'maximum', which is of type str; 'minimum', which is of type str; 'average', which is of type str.
+
+'QualityMetamodel_RealValueType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'QualityMetamodel_IntegerValueType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'QualityMetamodel_SingleValue' represents an important domain concept.
+It does not declare any attributes.
+
+'Value' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_AggregatedValue' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_Operation' represents an important domain concept.
+It has the following attributes: 'body', which is of type str; 'name', which is of type str.
+
+'QualityMetamodel_RangeValueType' represents an important domain concept.
+It has the following attributes: 'max', which is of type str; 'min', which is of type str.
+
+'QualityMetamodel_QualityModel' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'QualityMetamodel_MetricProvider' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str; 'id', which is of type str.
+
+'QualityMetamodel_TextValueType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'QualityMetamodel_ValueType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ValueType' represents an important domain concept.
+It does not declare any attributes.
+
+'QualityMetamodel_QualityAttribute' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'QualityMetamodel_Value' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'description', which is of type str.
+
+'QualityMetamodel_BooleanValueType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'QualityMetamodel_EnumerationItem' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'QualityMetamodel_EnumerationMetric' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'QualityMetamodel_SingleValue' is a specialization of 'Value'.
+The class 'QualityMetamodel_AggregatedValue' is a specialization of 'Value'.
+The class 'QualityMetamodel_TextValueType' is a specialization of 'ValueType'.
+The class 'QualityMetamodel_RangeValueType' is a specialization of 'ValueType'.
+The class 'QualityMetamodel_AggregatedValueMetric' is a specialization of 'ValueType'.
+The class 'QualityMetamodel_EnumerationMetric' is a specialization of 'ValueType'.
+The class 'QualityMetamodel_RealValueType' is a specialization of 'ValueType'.
+The class 'QualityMetamodel_BooleanValueType' is a specialization of 'ValueType'.
+The class 'QualityMetamodel_IntegerValueType' is a specialization of 'ValueType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'QualityMetamodel_MetricProvider' and 'QualityMetamodel_QualityModel'. From 'QualityMetamodel_MetricProvider', the role 'QualityMetamodel_MetricProvider' has cardinality 0..*, and from 'QualityMetamodel_QualityModel', the role 'QualityMetamodel_QualityModel' has cardinality 0..*.
+An association connects 'QualityMetamodel_QualityModel' and 'QualityMetamodel_ValueType'. From 'QualityMetamodel_QualityModel', the role 'QualityMetamodel_QualityModel2' has cardinality 0..*, and from 'QualityMetamodel_ValueType', the role 'QualityMetamodel_ValueType' has cardinality 0..*.
+An association connects 'QualityMetamodel_QualityAttribute' and 'QualityMetamodel_QualityModel'. From 'QualityMetamodel_QualityAttribute', the role 'QualityMetamodel_QualityAttribute' has cardinality 0..*, and from 'QualityMetamodel_QualityModel', the role 'QualityMetamodel_QualityModel4' has cardinality 0..*.
+An association connects 'QualityMetamodel_Value' and 'QualityMetamodel_QualityModel'. From 'QualityMetamodel_Value', the role 'QualityMetamodel_Value' has cardinality 0..*, and from 'QualityMetamodel_QualityModel', the role 'QualityMetamodel_QualityModel6' has cardinality 0..*.
+An association connects 'QualityMetamodel_Value' and 'QualityMetamodel_QualityAttribute'. From 'QualityMetamodel_Value', the role 'QualityMetamodel_Value9' has cardinality 0..*, and from 'QualityMetamodel_QualityAttribute', the role 'QualityMetamodel_QualityAttribute8' has cardinality 0..*.
+An association connects 'QualityMetamodel_QualityAttribute' and 'QualityMetamodel_QualityAttribute'. From 'QualityMetamodel_QualityAttribute', the role 'QualityMetamodel_QualityAttribute12' has cardinality 0..*, and from 'QualityMetamodel_QualityAttribute', the role 'QualityMetamodel_QualityAttribute10' has cardinality 0..*.
+An association connects 'QualityMetamodel_ValueType' and 'QualityMetamodel_Value'. From 'QualityMetamodel_ValueType', the role 'ValueType' has cardinality 0..*, and from 'QualityMetamodel_Value', the role 'val' has cardinality 0..*.
+An association connects 'QualityMetamodel_Value' and 'QualityMetamodel_ValueType'. From 'QualityMetamodel_Value', the role 'Value' has cardinality 0..*, and from 'QualityMetamodel_ValueType', the role 'type' has cardinality 0..*.
+An association connects 'QualityMetamodel_MetricProvider' and 'QualityMetamodel_SingleValue'. From 'QualityMetamodel_MetricProvider', the role 'QualityMetamodel_MetricProvider16' has cardinality 0..*, and from 'QualityMetamodel_SingleValue', the role 'QualityMetamodel_SingleValue' has cardinality 0..*.
+An association connects 'QualityMetamodel_AggregatedValue' and 'QualityMetamodel_Operation'. From 'QualityMetamodel_AggregatedValue', the role 'QualityMetamodel_AggregatedValue' has cardinality 0..*, and from 'QualityMetamodel_Operation', the role 'QualityMetamodel_Operation' has cardinality 0..*.
+An association connects 'QualityMetamodel_Value' and 'QualityMetamodel_Operation'. From 'QualityMetamodel_Value', the role 'QualityMetamodel_Value20' has cardinality 0..*, and from 'QualityMetamodel_Operation', the role 'QualityMetamodel_Operation19' has cardinality 0..*.
+An association connects 'QualityMetamodel_EnumerationItem' and 'QualityMetamodel_EnumerationMetric'. From 'QualityMetamodel_EnumerationItem', the role 'QualityMetamodel_EnumerationItem' has cardinality 0..*, and from 'QualityMetamodel_EnumerationMetric', the role 'QualityMetamodel_EnumerationMetric' has cardinality 0..*.
+An association connects 'QualityMetamodel_EnumerationMetric' and 'QualityMetamodel_EnumerationItem'. From 'QualityMetamodel_EnumerationMetric', the role 'QualityMetamodel_EnumerationMetric23' has cardinality 0..*, and from 'QualityMetamodel_EnumerationItem', the role 'QualityMetamodel_EnumerationItem24' has cardinality 0..*.

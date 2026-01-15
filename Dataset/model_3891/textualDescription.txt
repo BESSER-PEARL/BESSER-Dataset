@@ -1,0 +1,96 @@
+The domain model 'workflow' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'workflow_ConditionalTask' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Port' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_WorkflowNode' represents an important domain concept.
+It has the following attributes: 'isStart', which is of type bool; 'isFinish', which is of type bool.
+
+'workflow_Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'WorkflowElement' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_CompoundTask' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Task' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Edge' represents an important domain concept.
+It does not declare any attributes.
+
+'WorkflowNode' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Fault' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_WorkflowElement' represents an important domain concept.
+It has the following attributes: 'width', which is of type int; 'height', which is of type int; 'id', which is of type str; 'x', which is of type int; 'comment', which is of type str; 'y', which is of type int; 'name', which is of type str.
+
+'workflow_ConditionalOutputPort' represents an important domain concept.
+It has one attribute: 'condition', which is of type str.
+
+'CompoundTask' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_TransformationTask' represents an important domain concept.
+It has one attribute: 'transformExpression', which is of type str.
+
+'OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_Workflow' represents an important domain concept.
+It does not declare any attributes.
+
+'workflow_LoopTask' represents an important domain concept.
+It has one attribute: 'whileCondition', which is of type str.
+
+'workflow_OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'workflow_Workflow' is a specialization of 'WorkflowElement'.
+The class 'workflow_WorkflowNode' is a specialization of 'WorkflowElement'.
+The class 'workflow_Edge' is a specialization of 'WorkflowElement'.
+The class 'workflow_InputPort' is a specialization of 'Port'.
+The class 'workflow_OutputPort' is a specialization of 'Port'.
+The class 'workflow_Fault' is a specialization of 'OutputPort'.
+The class 'workflow_CompoundTask' is a specialization of 'WorkflowNode'.
+The class 'workflow_Port' is a specialization of 'WorkflowElement'.
+The class 'workflow_TransformationTask' is a specialization of 'WorkflowNode'.
+The class 'workflow_ConditionalTask' is a specialization of 'WorkflowNode'.
+The class 'workflow_LoopTask' is a specialization of 'CompoundTask'.
+The class 'workflow_ConditionalOutputPort' is a specialization of 'OutputPort'.
+The class 'workflow_Comment' is a specialization of 'WorkflowElement'.
+The class 'workflow_Task' is a specialization of 'WorkflowNode'.
+
+Relationships between classes are modeled using associations.
+An association connects 'workflow_Workflow' and 'workflow_WorkflowNode'. From 'workflow_Workflow', the role 'workflow' has cardinality 0..*, and from 'workflow_WorkflowNode', the role 'WorkflowNode' has cardinality 0..*.
+An association connects 'workflow_Edge' and 'workflow_Workflow'. From 'workflow_Edge', the role 'Edge' has cardinality 0..*, and from 'workflow_Workflow', the role 'workflow2' has cardinality 0..*.
+An association connects 'workflow_Comment' and 'workflow_Workflow'. From 'workflow_Comment', the role 'Comment' has cardinality 0..*, and from 'workflow_Workflow', the role 'workflow4' has cardinality 0..*.
+An association connects 'workflow_Workflow' and 'workflow_WorkflowNode'. From 'workflow_Workflow', the role 'Workflow' has cardinality 0..*, and from 'workflow_WorkflowNode', the role 'nodes' has cardinality 0..*.
+An association connects 'workflow_WorkflowNode' and 'workflow_OutputPort'. From 'workflow_WorkflowNode', the role 'node' has cardinality 0..*, and from 'workflow_OutputPort', the role 'OutputPort' has cardinality 0..*.
+An association connects 'workflow_InputPort' and 'workflow_WorkflowNode'. From 'workflow_InputPort', the role 'InputPort' has cardinality 0..*, and from 'workflow_WorkflowNode', the role 'node8' has cardinality 0..*.
+An association connects 'workflow_Edge' and 'workflow_Workflow'. From 'workflow_Edge', the role 'edges' has cardinality 0..*, and from 'workflow_Workflow', the role 'Workflow10' has cardinality 0..*.
+An association connects 'workflow_Edge' and 'workflow_InputPort'. From 'workflow_Edge', the role 'edges12' has cardinality 0..*, and from 'workflow_InputPort', the role 'InputPort13' has cardinality 0..*.
+An association connects 'workflow_OutputPort' and 'workflow_Edge'. From 'workflow_OutputPort', the role 'OutputPort16' has cardinality 0..*, and from 'workflow_Edge', the role 'edges15' has cardinality 0..*.
+An association connects 'workflow_WorkflowNode' and 'workflow_InputPort'. From 'workflow_WorkflowNode', the role 'WorkflowNode18' has cardinality 0..*, and from 'workflow_InputPort', the role 'inputs' has cardinality 0..*.
+An association connects 'workflow_Edge' and 'workflow_InputPort'. From 'workflow_Edge', the role 'Edge20' has cardinality 0..*, and from 'workflow_InputPort', the role 'target' has cardinality 0..*.
+An association connects 'workflow_WorkflowNode' and 'workflow_OutputPort'. From 'workflow_WorkflowNode', the role 'WorkflowNode22' has cardinality 0..*, and from 'workflow_OutputPort', the role 'outputs' has cardinality 0..*.
+An association connects 'workflow_Edge' and 'workflow_OutputPort'. From 'workflow_Edge', the role 'Edge24' has cardinality 0..*, and from 'workflow_OutputPort', the role 'source' has cardinality 0..*.
+An association connects 'workflow_CompoundTask' and 'workflow_Workflow'. From 'workflow_CompoundTask', the role 'workflow_CompoundTask' has cardinality 0..*, and from 'workflow_Workflow', the role 'workflow_Workflow' has cardinality 0..*.
+An association connects 'workflow_Workflow' and 'workflow_Comment'. From 'workflow_Workflow', the role 'Workflow27' has cardinality 0..*, and from 'workflow_Comment', the role 'comments' has cardinality 0..*.

@@ -1,0 +1,12 @@
+The domain model 'font' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'font_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'font_Greeting' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'font_Greeting' and 'font_Model'. From 'font_Greeting', the role 'font_Greeting' has cardinality 0..*, and from 'font_Model', the role 'font_Model' has cardinality 0..*.

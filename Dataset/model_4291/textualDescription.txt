@@ -1,0 +1,49 @@
+The domain model 'expression' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'expression_ExpressionList' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_BooleanExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'SubExpression2' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_SubExpression2' represents an important domain concept.
+It does not declare any attributes.
+
+'SubExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_StringExpression' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'expression_NegativeIntExpression' represents an important domain concept.
+It has the following attributes: 'isNegative', which is of type str; 'value', which is of type str.
+
+'expression_SubExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'expression_IncludingExpression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'expression_IncludingExpression' is a specialization of 'SubExpression'.
+The class 'expression_StringExpression' is a specialization of 'SubExpression2'.
+The class 'expression_BooleanExpression' is a specialization of 'SubExpression'.
+The class 'expression_NegativeIntExpression' is a specialization of 'SubExpression2'.
+The class 'expression_SubExpression' is a specialization of 'Expression'.
+The class 'expression_SubExpression2' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'expression_Expression' and 'expression_IncludingExpression'. From 'expression_Expression', the role 'expression_Expression' has cardinality 0..*, and from 'expression_IncludingExpression', the role 'expression_IncludingExpression' has cardinality 0..*.
+An association connects 'expression_Expression' and 'expression_IncludingExpression'. From 'expression_Expression', the role 'expression_Expression3' has cardinality 0..*, and from 'expression_IncludingExpression', the role 'expression_IncludingExpression2' has cardinality 0..*.
+An association connects 'expression_ExpressionList' and 'expression_Expression'. From 'expression_ExpressionList', the role 'expression_ExpressionList' has cardinality 0..*, and from 'expression_Expression', the role 'expression_Expression5' has cardinality 0..*.

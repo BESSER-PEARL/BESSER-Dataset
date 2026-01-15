@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/juancadavid/Eclipse-UPR/standardized/bundles/org.eclipse.upr.bpmn/bin/org/eclipse/upr/bpmnprof/impl/bpmnprof.ecore

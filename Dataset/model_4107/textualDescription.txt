@@ -1,0 +1,87 @@
+The domain model 'wh' describes the core structural elements and their relationships within the system.
+
+The model defines 20 main class(es).
+
+'wh_Exprs' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_ExprAnd' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Program' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'wh_Input' represents an important domain concept.
+It has one attribute: 'vars', which is of type str.
+
+'wh_ExprEq' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_ExprOr' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_ListExpr' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_ExprNot' represents an important domain concept.
+It has one attribute: 'not', which is of type str.
+
+'wh_ExprSimple' represents an important domain concept.
+It has one attribute: 'str', which is of type str.
+
+'wh_Nop' represents an important domain concept.
+It has one attribute: 'nop', which is of type str.
+
+'wh_Wh' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Output' represents an important domain concept.
+It has one attribute: 'vars', which is of type str.
+
+'wh_Commands' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Affect' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Vars' represents an important domain concept.
+It has one attribute: 'vars', which is of type str.
+
+'wh_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Cons' represents an important domain concept.
+It does not declare any attributes.
+
+'wh_Command' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'wh_Wh' and 'wh_Program'. From 'wh_Wh', the role 'wh_Wh' has cardinality 0..*, and from 'wh_Program', the role 'wh_Program' has cardinality 0..*.
+An association connects 'wh_Definition' and 'wh_Program'. From 'wh_Definition', the role 'wh_Definition' has cardinality 0..*, and from 'wh_Program', the role 'wh_Program2' has cardinality 0..*.
+An association connects 'wh_Input' and 'wh_Definition'. From 'wh_Input', the role 'wh_Input' has cardinality 0..*, and from 'wh_Definition', the role 'wh_Definition4' has cardinality 0..*.
+An association connects 'wh_Commands' and 'wh_Definition'. From 'wh_Commands', the role 'wh_Commands' has cardinality 0..*, and from 'wh_Definition', the role 'wh_Definition6' has cardinality 0..*.
+An association connects 'wh_Output' and 'wh_Definition'. From 'wh_Output', the role 'wh_Output' has cardinality 0..*, and from 'wh_Definition', the role 'wh_Definition8' has cardinality 0..*.
+An association connects 'wh_Commands' and 'wh_Command'. From 'wh_Commands', the role 'wh_Commands10' has cardinality 0..*, and from 'wh_Command', the role 'wh_Command' has cardinality 0..*.
+An association connects 'wh_EObject' and 'wh_Command'. From 'wh_EObject', the role 'wh_EObject' has cardinality 0..*, and from 'wh_Command', the role 'wh_Command12' has cardinality 0..*.
+An association connects 'wh_Vars' and 'wh_Affect'. From 'wh_Vars', the role 'wh_Vars' has cardinality 0..*, and from 'wh_Affect', the role 'wh_Affect' has cardinality 0..*.
+An association connects 'wh_Affect' and 'wh_Exprs'. From 'wh_Affect', the role 'wh_Affect15' has cardinality 0..*, and from 'wh_Exprs', the role 'wh_Exprs' has cardinality 0..*.
+An association connects 'wh_Expr' and 'wh_Exprs'. From 'wh_Expr', the role 'wh_Expr' has cardinality 0..*, and from 'wh_Exprs', the role 'wh_Exprs17' has cardinality 0..*.
+An association connects 'wh_EObject' and 'wh_Expr'. From 'wh_EObject', the role 'wh_EObject20' has cardinality 0..*, and from 'wh_Expr', the role 'wh_Expr19' has cardinality 0..*.
+An association connects 'wh_ExprSimple' and 'wh_Cons'. From 'wh_ExprSimple', the role 'wh_ExprSimple' has cardinality 0..*, and from 'wh_Cons', the role 'wh_Cons' has cardinality 0..*.
+An association connects 'wh_Cons' and 'wh_ListExpr'. From 'wh_Cons', the role 'wh_Cons23' has cardinality 0..*, and from 'wh_ListExpr', the role 'wh_ListExpr' has cardinality 0..*.
+An association connects 'wh_ListExpr' and 'wh_Expr'. From 'wh_ListExpr', the role 'wh_ListExpr25' has cardinality 0..*, and from 'wh_Expr', the role 'wh_Expr26' has cardinality 0..*.
+An association connects 'wh_ExprOr' and 'wh_ExprAnd'. From 'wh_ExprOr', the role 'wh_ExprOr' has cardinality 0..*, and from 'wh_ExprAnd', the role 'wh_ExprAnd' has cardinality 0..*.
+An association connects 'wh_ExprOr' and 'wh_ExprAnd'. From 'wh_ExprOr', the role 'wh_ExprOr30' has cardinality 0..*, and from 'wh_ExprAnd', the role 'wh_ExprAnd29' has cardinality 0..*.
+An association connects 'wh_ExprOr' and 'wh_ExprNot'. From 'wh_ExprOr', the role 'wh_ExprOr32' has cardinality 0..*, and from 'wh_ExprNot', the role 'wh_ExprNot' has cardinality 0..*.
+An association connects 'wh_ExprNot' and 'wh_ExprOr'. From 'wh_ExprNot', the role 'wh_ExprNot35' has cardinality 0..*, and from 'wh_ExprOr', the role 'wh_ExprOr34' has cardinality 0..*.
+An association connects 'wh_ExprNot' and 'wh_ExprEq'. From 'wh_ExprNot', the role 'wh_ExprNot37' has cardinality 0..*, and from 'wh_ExprEq', the role 'wh_ExprEq' has cardinality 0..*.
+An association connects 'wh_ExprSimple' and 'wh_ExprEq'. From 'wh_ExprSimple', the role 'wh_ExprSimple40' has cardinality 0..*, and from 'wh_ExprEq', the role 'wh_ExprEq39' has cardinality 0..*.
+An association connects 'wh_ExprEq' and 'wh_ExprSimple'. From 'wh_ExprEq', the role 'wh_ExprEq42' has cardinality 0..*, and from 'wh_ExprSimple', the role 'wh_ExprSimple43' has cardinality 0..*.
+An association connects 'wh_Expr' and 'wh_ExprEq'. From 'wh_Expr', the role 'wh_Expr46' has cardinality 0..*, and from 'wh_ExprEq', the role 'wh_ExprEq45' has cardinality 0..*.

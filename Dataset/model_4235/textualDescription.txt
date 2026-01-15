@@ -1,0 +1,27 @@
+The domain model 'projectDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'projectDsl_Task' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'projectDsl_Project' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'projectDsl_Employees' represents an important domain concept.
+It does not declare any attributes.
+
+'projectDsl_Employee' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'height', which is of type int; 'weight', which is of type int.
+
+'projectDsl_Company' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'taskType' defines the following possible values: 'documentation', 'development'.
+
+Relationships between classes are modeled using associations.
+An association connects 'projectDsl_Company' and 'projectDsl_Employees'. From 'projectDsl_Company', the role 'projectDsl_Company' has cardinality 0..*, and from 'projectDsl_Employees', the role 'projectDsl_Employees' has cardinality 0..*.
+An association connects 'projectDsl_Company' and 'projectDsl_Project'. From 'projectDsl_Company', the role 'projectDsl_Company2' has cardinality 0..*, and from 'projectDsl_Project', the role 'projectDsl_Project' has cardinality 0..*.
+An association connects 'projectDsl_Employee' and 'projectDsl_Employees'. From 'projectDsl_Employee', the role 'projectDsl_Employee' has cardinality 0..*, and from 'projectDsl_Employees', the role 'projectDsl_Employees4' has cardinality 0..*.
+An association connects 'projectDsl_Project' and 'projectDsl_Task'. From 'projectDsl_Project', the role 'projectDsl_Project6' has cardinality 0..*, and from 'projectDsl_Task', the role 'projectDsl_Task' has cardinality 0..*.

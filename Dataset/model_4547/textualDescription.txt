@@ -1,0 +1,121 @@
+The domain model 'dronesStructure' describes the core structural elements and their relationships within the system.
+
+The model defines 24 main class(es).
+
+'dronesStructure_ScanningCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesStructure_Drone' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesStructure_AABB' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesStructure_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Region' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesStructure_Role' represents an important domain concept.
+It does not declare any attributes.
+
+'Capability' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesStructure_Scenario' represents an important domain concept.
+It has the following attributes: 'safeCommunicationDistance', which is of type float; 'maximumCommunicationDistance', which is of type float.
+
+'dronesStructure_Capability' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesStructure_Region' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesStructure_Charger' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesStructure_RequiredCapability' represents an important domain concept.
+It has one attribute: 'minimalValue', which is of type float.
+
+'dronesStructure_Dimension' represents an important domain concept.
+It has the following attributes: 'depth', which is of type float; 'width', which is of type float; 'height', which is of type float.
+
+'AABB' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesStructure_MovementCapability' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesStructure_ProvidedCapability' represents an important domain concept.
+It has the following attributes: 'energyConsumptionPerValue', which is of type float; 'maximalValue', which is of type float.
+
+'dronesStructure_Task' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesStructure_ScenarioBounds' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesStructure_DroneType' represents an important domain concept.
+It has the following attributes: 'idleEneryConsumption', which is of type float; 'maxBatteryCapacity', which is of type float; 'weight', which is of type float.
+
+'dronesStructure_Obstacle' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesStructure_Position' represents an important domain concept.
+It has the following attributes: 'y', which is of type float; 'z', which is of type float; 'x', which is of type float.
+
+'dronesStructure_DronesStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'dronesStructure_CooperativeAction' represents an important domain concept.
+It has the following attributes: 'duration', which is of type float; 'startTimeout', which is of type float.
+
+The model also captures inheritance relationships between classes.
+The class 'dronesStructure_Scenario' is a specialization of 'NamedElement'.
+The class 'dronesStructure_Capability' is a specialization of 'NamedElement'.
+The class 'dronesStructure_DroneType' is a specialization of 'NamedElement'.
+The class 'dronesStructure_MovementCapability' is a specialization of 'Capability'.
+The class 'dronesStructure_CooperativeAction' is a specialization of 'NamedElement'.
+The class 'dronesStructure_Role' is a specialization of 'NamedElement'.
+The class 'dronesStructure_Drone' is a specialization of 'NamedElement'.
+The class 'dronesStructure_Obstacle' is a specialization of 'AABB'.
+The class 'dronesStructure_Obstacle' is a specialization of 'NamedElement'.
+The class 'dronesStructure_Region' is a specialization of 'AABB'.
+The class 'dronesStructure_Region' is a specialization of 'NamedElement'.
+The class 'dronesStructure_ScenarioBounds' is a specialization of 'AABB'.
+The class 'dronesStructure_Task' is a specialization of 'NamedElement'.
+The class 'dronesStructure_Charger' is a specialization of 'Region'.
+The class 'dronesStructure_ScanningCapability' is a specialization of 'Capability'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dronesStructure_Scenario' and 'dronesStructure_DronesStructure'. From 'dronesStructure_Scenario', the role 'dronesStructure_Scenario' has cardinality 0..*, and from 'dronesStructure_DronesStructure', the role 'dronesStructure_DronesStructure' has cardinality 0..*.
+An association connects 'dronesStructure_DronesStructure' and 'dronesStructure_DroneType'. From 'dronesStructure_DronesStructure', the role 'dronesStructure_DronesStructure2' has cardinality 0..*, and from 'dronesStructure_DroneType', the role 'dronesStructure_DroneType' has cardinality 0..*.
+An association connects 'dronesStructure_DronesStructure' and 'dronesStructure_CooperativeAction'. From 'dronesStructure_DronesStructure', the role 'dronesStructure_DronesStructure4' has cardinality 0..*, and from 'dronesStructure_CooperativeAction', the role 'dronesStructure_CooperativeAction' has cardinality 0..*.
+An association connects 'dronesStructure_DronesStructure' and 'dronesStructure_Capability'. From 'dronesStructure_DronesStructure', the role 'dronesStructure_DronesStructure6' has cardinality 0..*, and from 'dronesStructure_Capability', the role 'dronesStructure_Capability' has cardinality 0..*.
+An association connects 'dronesStructure_Drone' and 'dronesStructure_Scenario'. From 'dronesStructure_Drone', the role 'dronesStructure_Drone' has cardinality 0..*, and from 'dronesStructure_Scenario', the role 'dronesStructure_Scenario8' has cardinality 0..*.
+An association connects 'dronesStructure_Scenario' and 'dronesStructure_ScenarioBounds'. From 'dronesStructure_Scenario', the role 'dronesStructure_Scenario10' has cardinality 0..*, and from 'dronesStructure_ScenarioBounds', the role 'dronesStructure_ScenarioBounds' has cardinality 0..*.
+An association connects 'dronesStructure_Scenario' and 'dronesStructure_Obstacle'. From 'dronesStructure_Scenario', the role 'dronesStructure_Scenario12' has cardinality 0..*, and from 'dronesStructure_Obstacle', the role 'dronesStructure_Obstacle' has cardinality 0..*.
+An association connects 'dronesStructure_Scenario' and 'dronesStructure_Region'. From 'dronesStructure_Scenario', the role 'dronesStructure_Scenario14' has cardinality 0..*, and from 'dronesStructure_Region', the role 'dronesStructure_Region' has cardinality 0..*.
+An association connects 'dronesStructure_Task' and 'dronesStructure_Scenario'. From 'dronesStructure_Task', the role 'dronesStructure_Task' has cardinality 0..*, and from 'dronesStructure_Scenario', the role 'dronesStructure_Scenario16' has cardinality 0..*.
+An association connects 'dronesStructure_DroneType' and 'dronesStructure_ProvidedCapability'. From 'dronesStructure_DroneType', the role 'droneType' has cardinality 0..*, and from 'dronesStructure_ProvidedCapability', the role 'ProvidedCapability' has cardinality 0..*.
+An association connects 'dronesStructure_DroneType' and 'dronesStructure_ProvidedCapability'. From 'dronesStructure_DroneType', the role 'dronesStructure_DroneType19' has cardinality 0..*, and from 'dronesStructure_ProvidedCapability', the role 'dronesStructure_ProvidedCapability' has cardinality 0..*.
+An association connects 'dronesStructure_DroneType' and 'dronesStructure_Dimension'. From 'dronesStructure_DroneType', the role 'dronesStructure_DroneType21' has cardinality 0..*, and from 'dronesStructure_Dimension', the role 'dronesStructure_Dimension' has cardinality 0..*.
+An association connects 'dronesStructure_DroneType' and 'dronesStructure_ProvidedCapability'. From 'dronesStructure_DroneType', the role 'dronesStructure_DroneType23' has cardinality 0..*, and from 'dronesStructure_ProvidedCapability', the role 'dronesStructure_ProvidedCapability24' has cardinality 0..*.
+An association connects 'dronesStructure_ProvidedCapability' and 'dronesStructure_Capability'. From 'dronesStructure_ProvidedCapability', the role 'dronesStructure_ProvidedCapability26' has cardinality 0..*, and from 'dronesStructure_Capability', the role 'dronesStructure_Capability27' has cardinality 0..*.
+An association connects 'dronesStructure_DroneType' and 'dronesStructure_ProvidedCapability'. From 'dronesStructure_DroneType', the role 'DroneType' has cardinality 0..*, and from 'dronesStructure_ProvidedCapability', the role 'providedCapabilities' has cardinality 0..*.
+An association connects 'dronesStructure_CooperativeAction' and 'dronesStructure_Role'. From 'dronesStructure_CooperativeAction', the role 'cooperativeAction' has cardinality 0..*, and from 'dronesStructure_Role', the role 'Role' has cardinality 0..*.
+An association connects 'dronesStructure_RequiredCapability' and 'dronesStructure_Role'. From 'dronesStructure_RequiredCapability', the role 'RequiredCapability' has cardinality 0..*, and from 'dronesStructure_Role', the role 'role' has cardinality 0..*.
+An association connects 'dronesStructure_CooperativeAction' and 'dronesStructure_Role'. From 'dronesStructure_CooperativeAction', the role 'CooperativeAction' has cardinality 0..*, and from 'dronesStructure_Role', the role 'roles' has cardinality 0..*.
+An association connects 'dronesStructure_Capability' and 'dronesStructure_RequiredCapability'. From 'dronesStructure_Capability', the role 'dronesStructure_Capability33' has cardinality 0..*, and from 'dronesStructure_RequiredCapability', the role 'dronesStructure_RequiredCapability' has cardinality 0..*.
+An association connects 'dronesStructure_Role' and 'dronesStructure_RequiredCapability'. From 'dronesStructure_Role', the role 'Role35' has cardinality 0..*, and from 'dronesStructure_RequiredCapability', the role 'requiredCapabilities' has cardinality 0..*.
+An association connects 'dronesStructure_Drone' and 'dronesStructure_Position'. From 'dronesStructure_Drone', the role 'dronesStructure_Drone37' has cardinality 0..*, and from 'dronesStructure_Position', the role 'dronesStructure_Position' has cardinality 0..*.
+An association connects 'dronesStructure_Drone' and 'dronesStructure_DroneType'. From 'dronesStructure_Drone', the role 'dronesStructure_Drone39' has cardinality 0..*, and from 'dronesStructure_DroneType', the role 'dronesStructure_DroneType40' has cardinality 0..*.
+An association connects 'dronesStructure_Position' and 'dronesStructure_AABB'. From 'dronesStructure_Position', the role 'dronesStructure_Position42' has cardinality 0..*, and from 'dronesStructure_AABB', the role 'dronesStructure_AABB' has cardinality 0..*.
+An association connects 'dronesStructure_AABB' and 'dronesStructure_Dimension'. From 'dronesStructure_AABB', the role 'dronesStructure_AABB44' has cardinality 0..*, and from 'dronesStructure_Dimension', the role 'dronesStructure_Dimension45' has cardinality 0..*.
+An association connects 'dronesStructure_Region' and 'dronesStructure_Task'. From 'dronesStructure_Region', the role 'region' has cardinality 0..*, and from 'dronesStructure_Task', the role 'Task' has cardinality 0..*.
+An association connects 'dronesStructure_Task' and 'dronesStructure_Region'. From 'dronesStructure_Task', the role 'tasks' has cardinality 0..*, and from 'dronesStructure_Region', the role 'Region' has cardinality 0..*.
+An association connects 'dronesStructure_Task' and 'dronesStructure_CooperativeAction'. From 'dronesStructure_Task', the role 'dronesStructure_Task49' has cardinality 0..*, and from 'dronesStructure_CooperativeAction', the role 'dronesStructure_CooperativeAction50' has cardinality 0..*.

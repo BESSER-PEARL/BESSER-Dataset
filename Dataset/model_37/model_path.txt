@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset-mtl/repos/adisandro/MMINT/plugins/Types/PetriNet/edu.toronto.cs.se.modelepedia.petrinet/model/petrinet.ecore

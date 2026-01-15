@@ -1,0 +1,12 @@
+The domain model 'Organization' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'Organization_Employee' represents an important domain concept.
+It has the following attributes: 'Name', which is of type str; 'Address', which is of type str; 'EmpID', which is of type str.
+
+'Organization_Skill' represents an important domain concept.
+It has one attribute: 'Name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Organization_Employee' and 'Organization_Skill'. From 'Organization_Employee', the role 'Organization_Employee' has cardinality 0..*, and from 'Organization_Skill', the role 'Organization_Skill' has cardinality 0..*.

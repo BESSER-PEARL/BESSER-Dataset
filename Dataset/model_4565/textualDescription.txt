@@ -1,0 +1,170 @@
+The domain model 'robot' describes the core structural elements and their relationships within the system.
+
+The model defines 37 main class(es).
+
+'Simulacra' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Effector' represents an important domain concept.
+It has the following attributes: 'throttle', which is of type int; 'sustain', which is of type int.
+
+'Channel' represents an important domain concept.
+It does not declare any attributes.
+
+'LinearChannel' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_ColorChannel' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'robot_Roboid' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'provider', which is of type str; 'address', which is of type str; 'uid', which is of type str; 'id', which is of type str.
+
+'SensoryDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_DeviceListener' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_FileChannel' represents an important domain concept.
+It does not declare any attributes.
+
+'Storable' represents an important domain concept.
+It does not declare any attributes.
+
+'Findable' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Command' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'robot_Simulacra' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Findable' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Device' represents an important domain concept.
+It has the following attributes: 'min', which is of type str; 'proxy', which is of type bool; 'access', which is of type str; 'default', which is of type str; 'dataSize', which is of type int; 'dataType', which is of type str; 'max', which is of type str.
+
+'Device' represents an important domain concept.
+It does not declare any attributes.
+
+'ChannelDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_LinearChannel' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'robot_Storable' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_VoiceChannel' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_TextChannel' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Protocol' represents an important domain concept.
+It has the following attributes: 'bufferSize', which is of type int; 'remainingBuffer', which is of type int; 'version', which is of type str.
+
+'robot_SensoryDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Robot' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'provider', which is of type str; 'standard', which is of type str.
+
+'robot_NamedElement' represents an important domain concept.
+It has the following attributes: 'literal', which is of type str; 'comment', which is of type str; 'name', which is of type str.
+
+'robot_Event' represents an important domain concept.
+It has one attribute: 'id', which is of type int.
+
+'robot_AudioChannel' represents an important domain concept.
+It does not declare any attributes.
+
+'MotoringDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Sensor' represents an important domain concept.
+It has one attribute: 'throttle', which is of type int.
+
+'robot_Control' represents an important domain concept.
+It has the following attributes: 'frameLimit', which is of type int; 'version', which is of type str.
+
+'robot_MotoringDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_CommandChannel' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Port' represents an important domain concept.
+It has one attribute: 'mode', which is of type str.
+
+'robot_ChannelDevice' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_MatrixChannel' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_Channel' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'IoMode' defines the following possible values: 'DIGITAL_OUTPUT', 'ANALOG_INPUT', 'PWM_OUTPUT', 'NONE', 'DIGITAL_INPUT', 'SERVO_OUTPUT'.
+The enumeration 'DataType' defines the following possible values: 'INTEGER', 'UNSIGNED_BYTE', 'IMAGE', 'STRING', 'BYTE', 'SHORT', 'FLOAT', 'UNSIGNED_SHORT'.
+The enumeration 'AudioMode' defines the following possible values: 'STEREO', 'MONO'.
+The enumeration 'ColorMode' defines the following possible values: 'GRAY', 'RED', 'BLUE', 'GREEN', 'RGB', 'RED_GREEN'.
+The enumeration 'LinearMode' defines the following possible values: 'LINEAR', 'SUSTAIN'.
+The enumeration 'AccessType' defines the following possible values: 'PUBLIC', 'PRIVATE'.
+
+The model also captures inheritance relationships between classes.
+The class 'robot_Robot' is a specialization of 'NamedElement'.
+The class 'robot_Robot' is a specialization of 'Storable'.
+The class 'robot_Robot' is a specialization of 'Findable'.
+The class 'robot_Roboid' is a specialization of 'NamedElement'.
+The class 'robot_Roboid' is a specialization of 'Storable'.
+The class 'robot_Roboid' is a specialization of 'Simulacra'.
+The class 'robot_Roboid' is a specialization of 'Findable'.
+The class 'robot_Control' is a specialization of 'NamedElement'.
+The class 'robot_Protocol' is a specialization of 'NamedElement'.
+The class 'robot_Device' is a specialization of 'NamedElement'.
+The class 'robot_Device' is a specialization of 'Storable'.
+The class 'robot_Device' is a specialization of 'Simulacra'.
+The class 'robot_ChannelDevice' is a specialization of 'Device'.
+The class 'robot_SensoryDevice' is a specialization of 'Device'.
+The class 'robot_MotoringDevice' is a specialization of 'ChannelDevice'.
+The class 'robot_Sensor' is a specialization of 'SensoryDevice'.
+The class 'robot_Effector' is a specialization of 'MotoringDevice'.
+The class 'robot_Command' is a specialization of 'MotoringDevice'.
+The class 'robot_Event' is a specialization of 'SensoryDevice'.
+The class 'robot_Port' is a specialization of 'ChannelDevice'.
+The class 'robot_Channel' is a specialization of 'NamedElement'.
+The class 'robot_LinearChannel' is a specialization of 'Channel'.
+The class 'robot_CommandChannel' is a specialization of 'Channel'.
+The class 'robot_AudioChannel' is a specialization of 'Channel'.
+The class 'robot_VoiceChannel' is a specialization of 'Channel'.
+The class 'robot_ColorChannel' is a specialization of 'Channel'.
+The class 'robot_TextChannel' is a specialization of 'Channel'.
+The class 'robot_MatrixChannel' is a specialization of 'LinearChannel'.
+The class 'robot_FileChannel' is a specialization of 'Channel'.
+
+Relationships between classes are modeled using associations.
+An association connects 'robot_Robot' and 'robot_Roboid'. From 'robot_Robot', the role 'robot_Robot' has cardinality 0..*, and from 'robot_Roboid', the role 'robot_Roboid' has cardinality 0..*.
+An association connects 'robot_Robot' and 'robot_Control'. From 'robot_Robot', the role 'robot_Robot2' has cardinality 0..*, and from 'robot_Control', the role 'robot_Control' has cardinality 0..*.
+An association connects 'robot_Roboid' and 'robot_Roboid'. From 'robot_Roboid', the role 'robot_Roboid5' has cardinality 0..*, and from 'robot_Roboid', the role 'robot_Roboid3' has cardinality 0..*.
+An association connects 'robot_Roboid' and 'robot_Protocol'. From 'robot_Roboid', the role 'robot_Roboid7' has cardinality 0..*, and from 'robot_Protocol', the role 'robot_Protocol' has cardinality 0..*.
+An association connects 'robot_Roboid' and 'robot_Device'. From 'robot_Roboid', the role 'robot_Roboid9' has cardinality 0..*, and from 'robot_Device', the role 'robot_Device' has cardinality 0..*.
+An association connects 'robot_Roboid' and 'robot_Roboid'. From 'robot_Roboid', the role 'robot_Roboid10' has cardinality 0..*, and from 'robot_Roboid', the role 'robot_Roboid12' has cardinality 0..*.
+An association connects 'robot_Control' and 'robot_Channel'. From 'robot_Control', the role 'robot_Control14' has cardinality 0..*, and from 'robot_Channel', the role 'robot_Channel' has cardinality 0..*.
+An association connects 'robot_Sensor' and 'robot_Sensor'. From 'robot_Sensor', the role 'robot_Sensor' has cardinality 0..*, and from 'robot_Sensor', the role 'robot_Sensor15' has cardinality 0..*.
+An association connects 'robot_Sensor' and 'robot_Effector'. From 'robot_Sensor', the role 'robot_Sensor18' has cardinality 0..*, and from 'robot_Effector', the role 'robot_Effector' has cardinality 0..*.
+An association connects 'robot_Effector' and 'robot_Effector'. From 'robot_Effector', the role 'robot_Effector21' has cardinality 0..*, and from 'robot_Effector', the role 'robot_Effector19' has cardinality 0..*.
+An association connects 'robot_Command' and 'robot_Command'. From 'robot_Command', the role 'robot_Command22' has cardinality 0..*, and from 'robot_Command', the role 'robot_Command' has cardinality 0..*.
+An association connects 'robot_Event' and 'robot_Event'. From 'robot_Event', the role 'robot_Event' has cardinality 0..*, and from 'robot_Event', the role 'robot_Event24' has cardinality 0..*.
+An association connects 'robot_Command' and 'robot_Event'. From 'robot_Command', the role 'robot_Command28' has cardinality 0..*, and from 'robot_Event', the role 'robot_Event27' has cardinality 0..*.
+An association connects 'robot_Port' and 'robot_Port'. From 'robot_Port', the role 'robot_Port' has cardinality 0..*, and from 'robot_Port', the role 'robot_Port29' has cardinality 0..*.
+An association connects 'robot_Channel' and 'robot_ChannelDevice'. From 'robot_Channel', the role 'robot_Channel32' has cardinality 0..*, and from 'robot_ChannelDevice', the role 'robot_ChannelDevice' has cardinality 0..*.

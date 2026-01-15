@@ -1,0 +1,44 @@
+The domain model 'simpleUml' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'simpleUml_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleUml_PackageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleUml_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleUml_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleUml_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleUml_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'simpleUml_UMLModelElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'kind', which is of type str.
+
+'UMLModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageElement' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'simpleUml_Package' is a specialization of 'UMLModelElement'.
+The class 'simpleUml_Class' is a specialization of 'Classifier'.
+The class 'simpleUml_Classifier' is a specialization of 'PackageElement'.
+The class 'simpleUml_PackageElement' is a specialization of 'UMLModelElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'simpleUml_PackageElement' and 'simpleUml_Package'. From 'simpleUml_PackageElement', the role 'PackageElement' has cardinality 0..*, and from 'simpleUml_Package', the role 'namespace' has cardinality 0..*.
+An association connects 'simpleUml_Attribute' and 'simpleUml_Class'. From 'simpleUml_Attribute', the role 'simpleUml_Attribute' has cardinality 0..*, and from 'simpleUml_Class', the role 'simpleUml_Class' has cardinality 0..*.
+An association connects 'simpleUml_Package' and 'simpleUml_PackageElement'. From 'simpleUml_Package', the role 'Package' has cardinality 0..*, and from 'simpleUml_PackageElement', the role 'elements' has cardinality 0..*.

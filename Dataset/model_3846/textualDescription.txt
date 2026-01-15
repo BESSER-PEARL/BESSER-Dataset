@@ -1,0 +1,186 @@
+The domain model 'ddlDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 43 main class(es).
+
+'ddlDsl_SqlNumber' represents an important domain concept.
+It has the following attributes: 'hasPrecision', which is of type bool; 'precision', which is of type int; 'scale', which is of type int.
+
+'ddlDsl_DropTableConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_TableProperty' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'AlterTableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_Column' represents an important domain concept.
+It has the following attributes: 'sorted', which is of type bool; 'default', which is of type str.
+
+'ddlDsl_CreateTable' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_SqlCharacter' represents an important domain concept.
+It has the following attributes: 'size', which is of type int; 'national', which is of type bool.
+
+'ddlDsl_Drop' represents an important domain concept.
+It has one attribute: 'object', which is of type str.
+
+'ddlDsl_PrimaryKeyConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_LongRaw' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_Comment' represents an important domain concept.
+It has one attribute: 'comment', which is of type str.
+
+'ddlDsl_Raw' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'ddlDsl_Alter' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_SqlDate' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_AlterTableAction' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_Ddl' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_ForeignKeyConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'Create' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_AddTableConstraint' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ddlDsl_ColumnComment' represents an important domain concept.
+It does not declare any attributes.
+
+'SqlDateTime' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_SqlDateTime' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_CreateIndex' represents an important domain concept.
+It has the following attributes: 'sortOrders', which is of type str; 'unique', which is of type bool.
+
+'DdlStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_SqlTimeStamp' represents an important domain concept.
+It has one attribute: 'precision', which is of type int.
+
+'ddlDsl_NullableConstraint' represents an important domain concept.
+It has one attribute: 'not', which is of type bool.
+
+'ddlDsl_Long' represents an important domain concept.
+It has one attribute: 'raw', which is of type bool.
+
+'ddlDsl_ReferenceClause' represents an important domain concept.
+It does not declare any attributes.
+
+'TableProperty' represents an important domain concept.
+It does not declare any attributes.
+
+'SqlDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_SqlDataType' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Constraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_DdlStatement' represents an important domain concept.
+It does not declare any attributes.
+
+'LongRaw' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_UniqueKeyConstraint' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_LargeObjectType' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'ddlDsl_TableComment' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_Create' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ddlDsl_SqlInterval' represents an important domain concept.
+It has the following attributes: 'precision', which is of type int; 'secondsPrecision', which is of type int; 'day', which is of type bool; 'year', which is of type bool.
+
+'Comment' represents an important domain concept.
+It does not declare any attributes.
+
+'ddlDsl_RowIdType' represents an important domain concept.
+It has one attribute: 'size', which is of type int.
+
+'ddlDsl_SqlBoolean' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'SortDirectionEnum' defines the following possible values: 'DESC', 'ASC'.
+
+The model also captures inheritance relationships between classes.
+The class 'ddlDsl_Alter' is a specialization of 'DdlStatement'.
+The class 'ddlDsl_DropTableConstraint' is a specialization of 'AlterTableAction'.
+The class 'ddlDsl_Comment' is a specialization of 'DdlStatement'.
+The class 'ddlDsl_TableComment' is a specialization of 'Comment'.
+The class 'ddlDsl_ColumnComment' is a specialization of 'Comment'.
+The class 'ddlDsl_AddTableConstraint' is a specialization of 'AlterTableAction'.
+The class 'ddlDsl_Create' is a specialization of 'DdlStatement'.
+The class 'ddlDsl_CreateTable' is a specialization of 'Create'.
+The class 'ddlDsl_CreateIndex' is a specialization of 'Create'.
+The class 'ddlDsl_Column' is a specialization of 'TableProperty'.
+The class 'ddlDsl_Drop' is a specialization of 'DdlStatement'.
+The class 'ddlDsl_Constraint' is a specialization of 'TableProperty'.
+The class 'ddlDsl_NullableConstraint' is a specialization of 'Constraint'.
+The class 'ddlDsl_UniqueKeyConstraint' is a specialization of 'Constraint'.
+The class 'ddlDsl_PrimaryKeyConstraint' is a specialization of 'Constraint'.
+The class 'ddlDsl_ForeignKeyConstraint' is a specialization of 'Constraint'.
+The class 'ddlDsl_SqlCharacter' is a specialization of 'SqlDataType'.
+The class 'ddlDsl_SqlNumber' is a specialization of 'SqlDataType'.
+The class 'ddlDsl_LongRaw' is a specialization of 'SqlDataType'.
+The class 'ddlDsl_Long' is a specialization of 'LongRaw'.
+The class 'ddlDsl_Raw' is a specialization of 'LongRaw'.
+The class 'ddlDsl_SqlDateTime' is a specialization of 'SqlDataType'.
+The class 'ddlDsl_SqlDate' is a specialization of 'SqlDateTime'.
+The class 'ddlDsl_SqlTimeStamp' is a specialization of 'SqlDateTime'.
+The class 'ddlDsl_SqlInterval' is a specialization of 'SqlDateTime'.
+The class 'ddlDsl_LargeObjectType' is a specialization of 'SqlDataType'.
+The class 'ddlDsl_RowIdType' is a specialization of 'SqlDataType'.
+The class 'ddlDsl_SqlBoolean' is a specialization of 'SqlDataType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ddlDsl_DdlStatement' and 'ddlDsl_Ddl'. From 'ddlDsl_DdlStatement', the role 'ddlDsl_DdlStatement' has cardinality 0..*, and from 'ddlDsl_Ddl', the role 'ddlDsl_Ddl' has cardinality 0..*.
+An association connects 'ddlDsl_Alter' and 'ddlDsl_CreateTable'. From 'ddlDsl_Alter', the role 'ddlDsl_Alter' has cardinality 0..*, and from 'ddlDsl_CreateTable', the role 'ddlDsl_CreateTable' has cardinality 0..*.
+An association connects 'ddlDsl_AlterTableAction' and 'ddlDsl_Alter'. From 'ddlDsl_AlterTableAction', the role 'ddlDsl_AlterTableAction' has cardinality 0..*, and from 'ddlDsl_Alter', the role 'ddlDsl_Alter3' has cardinality 0..*.
+An association connects 'ddlDsl_AlterTableAction' and 'ddlDsl_Constraint'. From 'ddlDsl_AlterTableAction', the role 'ddlDsl_AlterTableAction5' has cardinality 0..*, and from 'ddlDsl_Constraint', the role 'ddlDsl_Constraint' has cardinality 0..*.
+An association connects 'ddlDsl_Constraint' and 'ddlDsl_DropTableConstraint'. From 'ddlDsl_Constraint', the role 'ddlDsl_Constraint7' has cardinality 0..*, and from 'ddlDsl_DropTableConstraint', the role 'ddlDsl_DropTableConstraint' has cardinality 0..*.
+An association connects 'ddlDsl_TableComment' and 'ddlDsl_CreateTable'. From 'ddlDsl_TableComment', the role 'ddlDsl_TableComment' has cardinality 0..*, and from 'ddlDsl_CreateTable', the role 'ddlDsl_CreateTable9' has cardinality 0..*.
+An association connects 'ddlDsl_Column' and 'ddlDsl_ColumnComment'. From 'ddlDsl_Column', the role 'ddlDsl_Column' has cardinality 0..*, and from 'ddlDsl_ColumnComment', the role 'ddlDsl_ColumnComment' has cardinality 0..*.
+An association connects 'ddlDsl_CreateTable' and 'ddlDsl_TableProperty'. From 'ddlDsl_CreateTable', the role 'ddlDsl_CreateTable12' has cardinality 0..*, and from 'ddlDsl_TableProperty', the role 'ddlDsl_TableProperty' has cardinality 0..*.
+An association connects 'ddlDsl_CreateIndex' and 'ddlDsl_CreateTable'. From 'ddlDsl_CreateIndex', the role 'ddlDsl_CreateIndex' has cardinality 0..*, and from 'ddlDsl_CreateTable', the role 'ddlDsl_CreateTable14' has cardinality 0..*.
+An association connects 'ddlDsl_Column' and 'ddlDsl_CreateIndex'. From 'ddlDsl_Column', the role 'ddlDsl_Column17' has cardinality 0..*, and from 'ddlDsl_CreateIndex', the role 'ddlDsl_CreateIndex16' has cardinality 0..*.
+An association connects 'ddlDsl_Column' and 'ddlDsl_SqlDataType'. From 'ddlDsl_Column', the role 'ddlDsl_Column19' has cardinality 0..*, and from 'ddlDsl_SqlDataType', the role 'ddlDsl_SqlDataType' has cardinality 0..*.
+An association connects 'ddlDsl_Constraint' and 'ddlDsl_Column'. From 'ddlDsl_Constraint', the role 'ddlDsl_Constraint22' has cardinality 0..*, and from 'ddlDsl_Column', the role 'ddlDsl_Column21' has cardinality 0..*.
+An association connects 'ddlDsl_ReferenceClause' and 'ddlDsl_Column'. From 'ddlDsl_ReferenceClause', the role 'ddlDsl_ReferenceClause' has cardinality 0..*, and from 'ddlDsl_Column', the role 'ddlDsl_Column24' has cardinality 0..*.
+An association connects 'ddlDsl_Column' and 'ddlDsl_UniqueKeyConstraint'. From 'ddlDsl_Column', the role 'ddlDsl_Column26' has cardinality 0..*, and from 'ddlDsl_UniqueKeyConstraint', the role 'ddlDsl_UniqueKeyConstraint' has cardinality 0..*.
+An association connects 'ddlDsl_PrimaryKeyConstraint' and 'ddlDsl_Column'. From 'ddlDsl_PrimaryKeyConstraint', the role 'ddlDsl_PrimaryKeyConstraint' has cardinality 0..*, and from 'ddlDsl_Column', the role 'ddlDsl_Column28' has cardinality 0..*.
+An association connects 'ddlDsl_ForeignKeyConstraint' and 'ddlDsl_Column'. From 'ddlDsl_ForeignKeyConstraint', the role 'ddlDsl_ForeignKeyConstraint' has cardinality 0..*, and from 'ddlDsl_Column', the role 'ddlDsl_Column30' has cardinality 0..*.
+An association connects 'ddlDsl_ForeignKeyConstraint' and 'ddlDsl_ReferenceClause'. From 'ddlDsl_ForeignKeyConstraint', the role 'ddlDsl_ForeignKeyConstraint32' has cardinality 0..*, and from 'ddlDsl_ReferenceClause', the role 'ddlDsl_ReferenceClause33' has cardinality 0..*.
+An association connects 'ddlDsl_ReferenceClause' and 'ddlDsl_CreateTable'. From 'ddlDsl_ReferenceClause', the role 'ddlDsl_ReferenceClause35' has cardinality 0..*, and from 'ddlDsl_CreateTable', the role 'ddlDsl_CreateTable36' has cardinality 0..*.
+An association connects 'ddlDsl_ReferenceClause' and 'ddlDsl_Column'. From 'ddlDsl_ReferenceClause', the role 'ddlDsl_ReferenceClause38' has cardinality 0..*, and from 'ddlDsl_Column', the role 'ddlDsl_Column39' has cardinality 0..*.

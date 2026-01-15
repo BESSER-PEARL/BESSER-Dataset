@@ -1,0 +1,66 @@
+The domain model 'rankPL' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'rankPL_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'rankPL_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'rankPL_Definition' represents an important domain concept.
+It does not declare any attributes.
+
+'rankPL_NumberLiteral' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'AbstractDefinition' represents an important domain concept.
+It does not declare any attributes.
+
+'rankPL_DeclaredParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'rankPL_Multi' represents an important domain concept.
+It does not declare any attributes.
+
+'rankPL_FunctionCall' represents an important domain concept.
+It does not declare any attributes.
+
+'rankPL_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'rankPL_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'rankPL_AbstractDefinition' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'rankPL_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'rankPL_Definition' is a specialization of 'AbstractDefinition'.
+The class 'rankPL_DeclaredParameter' is a specialization of 'AbstractDefinition'.
+The class 'rankPL_Plus' is a specialization of 'Expression'.
+The class 'rankPL_Minus' is a specialization of 'Expression'.
+The class 'rankPL_Multi' is a specialization of 'Expression'.
+The class 'rankPL_Div' is a specialization of 'Expression'.
+The class 'rankPL_NumberLiteral' is a specialization of 'Expression'.
+The class 'rankPL_FunctionCall' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'rankPL_Model' and 'rankPL_AbstractDefinition'. From 'rankPL_Model', the role 'rankPL_Model' has cardinality 0..*, and from 'rankPL_AbstractDefinition', the role 'rankPL_AbstractDefinition' has cardinality 0..*.
+An association connects 'rankPL_Definition' and 'rankPL_Expression'. From 'rankPL_Definition', the role 'rankPL_Definition' has cardinality 0..*, and from 'rankPL_Expression', the role 'rankPL_Expression' has cardinality 0..*.
+An association connects 'rankPL_Plus' and 'rankPL_Expression'. From 'rankPL_Plus', the role 'rankPL_Plus' has cardinality 0..*, and from 'rankPL_Expression', the role 'rankPL_Expression3' has cardinality 0..*.
+An association connects 'rankPL_Expression' and 'rankPL_Plus'. From 'rankPL_Expression', the role 'rankPL_Expression6' has cardinality 0..*, and from 'rankPL_Plus', the role 'rankPL_Plus5' has cardinality 0..*.
+An association connects 'rankPL_Minus' and 'rankPL_Expression'. From 'rankPL_Minus', the role 'rankPL_Minus' has cardinality 0..*, and from 'rankPL_Expression', the role 'rankPL_Expression8' has cardinality 0..*.
+An association connects 'rankPL_Expression' and 'rankPL_Minus'. From 'rankPL_Expression', the role 'rankPL_Expression11' has cardinality 0..*, and from 'rankPL_Minus', the role 'rankPL_Minus10' has cardinality 0..*.
+An association connects 'rankPL_Multi' and 'rankPL_Expression'. From 'rankPL_Multi', the role 'rankPL_Multi' has cardinality 0..*, and from 'rankPL_Expression', the role 'rankPL_Expression13' has cardinality 0..*.
+An association connects 'rankPL_Multi' and 'rankPL_Expression'. From 'rankPL_Multi', the role 'rankPL_Multi15' has cardinality 0..*, and from 'rankPL_Expression', the role 'rankPL_Expression16' has cardinality 0..*.
+An association connects 'rankPL_Expression' and 'rankPL_Div'. From 'rankPL_Expression', the role 'rankPL_Expression18' has cardinality 0..*, and from 'rankPL_Div', the role 'rankPL_Div' has cardinality 0..*.
+An association connects 'rankPL_Expression' and 'rankPL_Div'. From 'rankPL_Expression', the role 'rankPL_Expression21' has cardinality 0..*, and from 'rankPL_Div', the role 'rankPL_Div20' has cardinality 0..*.
+An association connects 'rankPL_FunctionCall' and 'rankPL_AbstractDefinition'. From 'rankPL_FunctionCall', the role 'rankPL_FunctionCall' has cardinality 0..*, and from 'rankPL_AbstractDefinition', the role 'rankPL_AbstractDefinition23' has cardinality 0..*.
+An association connects 'rankPL_FunctionCall' and 'rankPL_Expression'. From 'rankPL_FunctionCall', the role 'rankPL_FunctionCall25' has cardinality 0..*, and from 'rankPL_Expression', the role 'rankPL_Expression26' has cardinality 0..*.

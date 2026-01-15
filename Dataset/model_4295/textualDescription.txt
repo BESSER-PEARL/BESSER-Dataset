@@ -1,0 +1,39 @@
+The domain model 'package1' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'TestTypeClass1' represents an important domain concept.
+It does not declare any attributes.
+
+'package1_TestOperationAndParameterClass' represents an important domain concept.
+It does not declare any attributes.
+
+'package1_TestTypeClass1' represents an important domain concept.
+It has one attribute: 'property1', which is of type bool.
+
+'package1_TestPrimitiveTypeClass' represents an important domain concept.
+It has the following attributes: 'aStringEChar', which is of type str; 'anIntegerELong', which is of type str; 'anIntegerShort', which is of type str; 'aStringString', which is of type str; 'anIntegerEByteObject', which is of type str; 'anIntegerBigDecimal', which is of type str; 'anIntegerLong', which is of type str; 'aRealDoubleObject', which is of type str; 'anIntegerShortObject', which is of type str; 'anIntegerELongObject', which is of type str; 'aStringEString', which is of type str; 'anIntegerLongObject', which is of type str; 'anIntegerEShort', which is of type str; 'aStringChar', which is of type str; 'aBooleanBooleanObject', which is of type str; 'aRealEFloat', which is of type float; 'aBooleanBoolean', which is of type str; 'anIntegerEByte', which is of type str; 'aBooleanEBoolean', which is of type bool; 'anIntegerByte', which is of type str; 'aBooleanEBooleanObject', which is of type str; 'aRealFloat', which is of type str; 'aRealDouble', which is of type str; 'anIntegerEBigDecimal', which is of type str; 'aRealFloatObject', which is of type str; 'aStringECharacterObject', which is of type str; 'anIntegerEBigInteger', which is of type str; 'aRealEDouble', which is of type float; 'anIntegerEInt', which is of type int; 'anIntegerBigInteger', which is of type str; 'aStringCharacterObject', which is of type str; 'anIntegerEIntegerObject', which is of type str; 'aRealEFloatObject', which is of type str; 'anIntegerIntegerObject', which is of type str; 'anIntegerByteObject', which is of type str; 'anIntegerInt', which is of type str; 'aRealEDoubleObject', which is of type str; 'anIntegerEShortObject', which is of type str.
+
+'package1_TestPropertyClass' represents an important domain concept.
+It has the following attributes: 'nonidentifierProperty', which is of type str; 'identifierProperty', which is of type str.
+
+'package1_TestTypeClass2' represents an important domain concept.
+It has one attribute: 'property2', which is of type bool.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'TestEnumeration' defines the following possible values: 'TestLiteral2', 'TestLiteral1'.
+
+The model also captures inheritance relationships between classes.
+The class 'package1_TestTypeClass2' is a specialization of 'TestTypeClass1'.
+
+Relationships between classes are modeled using associations.
+An association connects 'package1_TestPropertyClass' and 'package1_TestTypeClass1'. From 'package1_TestPropertyClass', the role 'package1_TestPropertyClass' has cardinality 0..*, and from 'package1_TestTypeClass1', the role 'package1_TestTypeClass1' has cardinality 0..*.
+An association connects 'package1_TestTypeClass1' and 'package1_TestPropertyClass'. From 'package1_TestTypeClass1', the role 'package1_TestTypeClass13' has cardinality 0..*, and from 'package1_TestPropertyClass', the role 'package1_TestPropertyClass2' has cardinality 0..*.
+An association connects 'package1_TestPropertyClass' and 'package1_TestTypeClass1'. From 'package1_TestPropertyClass', the role 'package1_TestPropertyClass5' has cardinality 0..*, and from 'package1_TestTypeClass1', the role 'package1_TestTypeClass16' has cardinality 0..*.
+An association connects 'package1_TestTypeClass1' and 'package1_TestPropertyClass'. From 'package1_TestTypeClass1', the role 'package1_TestTypeClass19' has cardinality 0..*, and from 'package1_TestPropertyClass', the role 'package1_TestPropertyClass8' has cardinality 0..*.
+An association connects 'package1_TestTypeClass1' and 'package1_TestPropertyClass'. From 'package1_TestTypeClass1', the role 'package1_TestTypeClass112' has cardinality 0..*, and from 'package1_TestPropertyClass', the role 'package1_TestPropertyClass11' has cardinality 0..*.
+An association connects 'package1_TestPropertyClass' and 'package1_TestTypeClass1'. From 'package1_TestPropertyClass', the role 'package1_TestPropertyClass14' has cardinality 0..*, and from 'package1_TestTypeClass1', the role 'package1_TestTypeClass115' has cardinality 0..*.
+An association connects 'package1_TestPropertyClass' and 'package1_TestTypeClass1'. From 'package1_TestPropertyClass', the role 'package1_TestPropertyClass17' has cardinality 0..*, and from 'package1_TestTypeClass1', the role 'package1_TestTypeClass118' has cardinality 0..*.
+An association connects 'package1_TestPropertyClass' and 'package1_TestTypeClass1'. From 'package1_TestPropertyClass', the role 'package1_TestPropertyClass20' has cardinality 0..*, and from 'package1_TestTypeClass1', the role 'package1_TestTypeClass121' has cardinality 0..*.
+An association connects 'package1_TestTypeClass1' and 'package1_TestPropertyClass'. From 'package1_TestTypeClass1', the role 'package1_TestTypeClass124' has cardinality 0..*, and from 'package1_TestPropertyClass', the role 'package1_TestPropertyClass23' has cardinality 0..*.
+An association connects 'package1_TestTypeClass1' and 'package1_TestPropertyClass'. From 'package1_TestTypeClass1', the role 'package1_TestTypeClass127' has cardinality 0..*, and from 'package1_TestPropertyClass', the role 'package1_TestPropertyClass26' has cardinality 0..*.

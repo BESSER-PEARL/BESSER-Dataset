@@ -1,0 +1,472 @@
+The domain model 'core' describes the core structural elements and their relationships within the system.
+
+The model defines 104 main class(es).
+
+'CallConsumer1' represents an important domain concept.
+It does not declare any attributes.
+
+'ActionStep' represents an important domain concept.
+It does not declare any attributes.
+
+'GetColMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'InputItem' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_MoveToInsertRow' represents an important domain concept.
+It does not declare any attributes.
+
+'core_call_CallConsumer2' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_Assignment' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_CloseDBConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'core_initiator_InitiatorInfo' represents an important domain concept.
+It does not declare any attributes.
+
+'core_call_CallConsumer1' represents an important domain concept.
+It does not declare any attributes.
+
+'actionstep_ActionStep' represents an important domain concept.
+It does not declare any attributes.
+
+'SafletContext' represents an important domain concept.
+It does not declare any attributes.
+
+'core_scripting_RhinoSafletScriptEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_PreviousRow' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_ParameterizedActionstep' represents an important domain concept.
+It does not declare any attributes.
+
+'DBResultSetId' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_SetColMapping' represents an important domain concept.
+It has one attribute: 'setAsDatatype', which is of type str.
+
+'core_actionstep_ExecuteScript' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_ActionStep' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'paused', which is of type bool; 'active', which is of type bool.
+
+'actionstep_core_EStringToStringMapEntry' represents an important domain concept.
+It does not declare any attributes.
+
+'DBConnectionId' represents an important domain concept.
+It does not declare any attributes.
+
+'SafletScriptEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'ScriptScope' represents an important domain concept.
+It does not declare any attributes.
+
+'core_scripting_SafletScript' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'scriptText', which is of type str.
+
+'core_actionstep_IfThen' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_GetColValue' represents an important domain concept.
+It has one attribute: 'getAsDatatype', which is of type str.
+
+'SafletEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_DBQueryId' represents an important domain concept.
+It has the following attributes: 'jdbcStatement', which is of type str; 'id', which is of type str.
+
+'OutputParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_GetColValues' represents an important domain concept.
+It does not declare any attributes.
+
+'core_call_CallSource2' represents an important domain concept.
+It does not declare any attributes.
+
+'QueryParamMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'core_saflet_SafletEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'core_call_CallSource1' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_DBResultSetId' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'jDBCResultSet', which is of type str; 'name', which is of type str.
+
+'PlatformDisposition' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_DynamicValue' represents an important domain concept.
+It has the following attributes: 'text', which is of type str; 'type', which is of type str.
+
+'SafiCall' represents an important domain concept.
+It does not declare any attributes.
+
+'DBQueryParamId' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_DBQueryParamId' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'index', which is of type int.
+
+'saflet_core_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_Output' represents an important domain concept.
+It has the following attributes: 'outputType', which is of type str; 'name', which is of type str.
+
+'CaseItem' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_DebugLog' represents an important domain concept.
+It has one attribute: 'debugLevel', which is of type str.
+
+'core_actionstep_ExecuteQuery' represents an important domain concept.
+It has one attribute: 'resultSetName', which is of type str.
+
+'core_ThreadSensitive' represents an important domain concept.
+It does not declare any attributes.
+
+'SetColMapping' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_GetColMapping' represents an important domain concept.
+It has one attribute: 'getAsDatatype', which is of type str.
+
+'ScriptScopeFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'core_scripting_RhinoScriptScope' represents an important domain concept.
+It does not declare any attributes.
+
+'core_scripting_ScriptScopeFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'core_scripting_RhinoSafletScriptFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_DBConnectionId' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'jdbcConnection', which is of type str.
+
+'core_actionstep_RunQuery' represents an important domain concept.
+It has the following attributes: 'readOnly', which is of type bool; 'scrollable', which is of type bool; 'resultSetName', which is of type str.
+
+'core_actionstep_Heavyweight' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_QueryParamMapping' represents an important domain concept.
+It has one attribute: 'setAsDatatype', which is of type str.
+
+'core_actionstep_DeleteRow' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_Choice' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_ExecuteUpdate' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_Item' represents an important domain concept.
+It has one attribute: 'labelText', which is of type str.
+
+'core_actionstep_OpenDBConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_ParameterizedInitiator' represents an important domain concept.
+It does not declare any attributes.
+
+'core_scripting_RhinoSafletScript' represents an important domain concept.
+It has one attribute: 'rhinoScript', which is of type str.
+
+'core_scripting_ScriptScope' represents an important domain concept.
+It has one attribute: 'scopeObject', which is of type str.
+
+'Initiator' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_SetQueryParam' represents an important domain concept.
+It has one attribute: 'paramDatatype', which is of type str.
+
+'core_scripting_SafletScriptFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'Finally' represents an important domain concept.
+It does not declare any attributes.
+
+'DynamicValue' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_OutputParameter' represents an important domain concept.
+It does not declare any attributes.
+
+'Output' represents an important domain concept.
+It does not declare any attributes.
+
+'ThreadSensitive' represents an important domain concept.
+It does not declare any attributes.
+
+'core_saflet_Saflet' represents an important domain concept.
+It has the following attributes: 'version', which is of type str; 'id', which is of type int; 'active', which is of type bool; 'description', which is of type str; 'name', which is of type str.
+
+'core_actionstep_MoveToRow' represents an important domain concept.
+It does not declare any attributes.
+
+'actionstep_Heavyweight' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_NextRow' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_MoveToLastRow' represents an important domain concept.
+It does not declare any attributes.
+
+'SafletScript' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_UpdatetRow' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_Finally' represents an important domain concept.
+It does not declare any attributes.
+
+'actionstep_core_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_InvokeSaflet' represents an important domain concept.
+It has one attribute: 'labelText', which is of type str.
+
+'core_actionstep_InsertRow' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_OpenQuery' represents an important domain concept.
+It has the following attributes: 'readOnly', which is of type bool; 'useCache', which is of type bool; 'scrollable', which is of type bool; 'scrollMode', which is of type str; 'holdabilityMode', which is of type str.
+
+'actionstep_ParameterizedActionstep' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_CaseItem' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_MoveToFirstRow' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_SetColValue' represents an important domain concept.
+It has one attribute: 'setAsDatatype', which is of type str.
+
+'core_call_SafiCall' represents an important domain concept.
+It has the following attributes: 'uuid', which is of type str; 'name', which is of type str.
+
+'core_scripting_SafletScriptEnvironment' represents an important domain concept.
+It does not declare any attributes.
+
+'core_saflet_SafletContext' represents an important domain concept.
+It has the following attributes: 'exceptions', which is of type str; 'sessionVariables', which is of type str.
+
+'core_ProductIdentifiable' represents an important domain concept.
+It has one attribute: 'productId', which is of type str.
+
+'ProductIdentifiable' represents an important domain concept.
+It does not declare any attributes.
+
+'core_scripting_RhinoScriptScopeFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_SetColValues' represents an important domain concept.
+It does not declare any attributes.
+
+'Saflet' represents an important domain concept.
+It does not declare any attributes.
+
+'core_PlatformDisposition' represents an important domain concept.
+It has the following attributes: 'platformID', which is of type str; 'platformDependant', which is of type bool.
+
+'SafletScriptFactory' represents an important domain concept.
+It does not declare any attributes.
+
+'Item' represents an important domain concept.
+It does not declare any attributes.
+
+'DBQueryId' represents an important domain concept.
+It does not declare any attributes.
+
+'core_actionstep_InputItem' represents an important domain concept.
+It has the following attributes: 'parameterName', which is of type str; 'required', which is of type bool.
+
+'core_initiator_Initiator' represents an important domain concept.
+It does not declare any attributes.
+
+'initiator_Initiator' represents an important domain concept.
+It does not declare any attributes.
+
+'CallSource1' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'DebugLevel' defines the following possible values: 'Info', 'Debug', 'Error', 'Warn'.
+The enumeration 'DynamicValueType' defines the following possible values: 'VariableName', 'LiteralText', 'ScriptText', 'Custom'.
+The enumeration 'OutputType' defines the following possible values: 'Default', 'Error', 'Choice'.
+The enumeration 'InputType' defines the following possible values: 'Variable', 'Value'.
+
+The model also captures inheritance relationships between classes.
+The class 'core_actionstep_ActionStep' is a specialization of 'ProductIdentifiable'.
+The class 'core_actionstep_ActionStep' is a specialization of 'ThreadSensitive'.
+The class 'core_actionstep_ActionStep' is a specialization of 'PlatformDisposition'.
+The class 'core_actionstep_Assignment' is a specialization of 'ActionStep'.
+The class 'core_actionstep_CaseItem' is a specialization of 'Item'.
+The class 'core_actionstep_InputItem' is a specialization of 'CaseItem'.
+The class 'core_actionstep_ParameterizedActionstep' is a specialization of 'ActionStep'.
+The class 'core_actionstep_ParameterizedInitiator' is a specialization of 'initiator_Initiator'.
+The class 'core_actionstep_ParameterizedInitiator' is a specialization of 'actionstep_ParameterizedActionstep'.
+The class 'core_actionstep_Choice' is a specialization of 'ActionStep'.
+The class 'core_actionstep_DynamicValue' is a specialization of 'ThreadSensitive'.
+The class 'core_actionstep_IfThen' is a specialization of 'ActionStep'.
+The class 'core_actionstep_ExecuteScript' is a specialization of 'ActionStep'.
+The class 'core_actionstep_InvokeSaflet' is a specialization of 'ActionStep'.
+The class 'core_actionstep_DebugLog' is a specialization of 'ActionStep'.
+The class 'core_actionstep_OpenDBConnection' is a specialization of 'actionstep_ActionStep'.
+The class 'core_actionstep_OpenDBConnection' is a specialization of 'actionstep_Heavyweight'.
+The class 'core_actionstep_CloseDBConnection' is a specialization of 'ActionStep'.
+The class 'core_actionstep_OpenQuery' is a specialization of 'ActionStep'.
+The class 'core_actionstep_SetQueryParam' is a specialization of 'ActionStep'.
+The class 'core_actionstep_ExecuteUpdate' is a specialization of 'ActionStep'.
+The class 'core_actionstep_ExecuteQuery' is a specialization of 'actionstep_ActionStep'.
+The class 'core_actionstep_ExecuteQuery' is a specialization of 'actionstep_Heavyweight'.
+The class 'core_actionstep_NextRow' is a specialization of 'ActionStep'.
+The class 'core_actionstep_GetColValue' is a specialization of 'ActionStep'.
+The class 'core_actionstep_GetColValues' is a specialization of 'ActionStep'.
+The class 'core_actionstep_SetColValue' is a specialization of 'ActionStep'.
+The class 'core_actionstep_SetColValues' is a specialization of 'ActionStep'.
+The class 'core_actionstep_UpdatetRow' is a specialization of 'actionstep_ActionStep'.
+The class 'core_actionstep_UpdatetRow' is a specialization of 'actionstep_Heavyweight'.
+The class 'core_actionstep_MoveToRow' is a specialization of 'ActionStep'.
+The class 'core_actionstep_MoveToLastRow' is a specialization of 'ActionStep'.
+The class 'core_actionstep_DeleteRow' is a specialization of 'ActionStep'.
+The class 'core_actionstep_MoveToInsertRow' is a specialization of 'ActionStep'.
+The class 'core_actionstep_InsertRow' is a specialization of 'ActionStep'.
+The class 'core_actionstep_MoveToFirstRow' is a specialization of 'ActionStep'.
+The class 'core_actionstep_PreviousRow' is a specialization of 'ActionStep'.
+The class 'core_actionstep_DBConnectionId' is a specialization of 'ThreadSensitive'.
+The class 'core_actionstep_DBQueryId' is a specialization of 'ThreadSensitive'.
+The class 'core_actionstep_DBResultSetId' is a specialization of 'ThreadSensitive'.
+The class 'core_actionstep_GetColMapping' is a specialization of 'Item'.
+The class 'core_actionstep_SetColMapping' is a specialization of 'Item'.
+The class 'core_actionstep_RunQuery' is a specialization of 'actionstep_ActionStep'.
+The class 'core_actionstep_RunQuery' is a specialization of 'actionstep_Heavyweight'.
+The class 'core_actionstep_QueryParamMapping' is a specialization of 'Item'.
+The class 'core_actionstep_Item' is a specialization of 'ThreadSensitive'.
+The class 'core_actionstep_OutputParameter' is a specialization of 'InputItem'.
+The class 'core_actionstep_Finally' is a specialization of 'ActionStep'.
+The class 'core_scripting_RhinoSafletScript' is a specialization of 'SafletScript'.
+The class 'core_scripting_RhinoSafletScriptEnvironment' is a specialization of 'SafletScriptEnvironment'.
+The class 'core_scripting_RhinoSafletScriptFactory' is a specialization of 'SafletScriptFactory'.
+The class 'core_scripting_RhinoScriptScope' is a specialization of 'ScriptScope'.
+The class 'core_scripting_RhinoScriptScopeFactory' is a specialization of 'ScriptScopeFactory'.
+The class 'core_saflet_Saflet' is a specialization of 'ThreadSensitive'.
+The class 'core_saflet_Saflet' is a specialization of 'PlatformDisposition'.
+The class 'core_saflet_SafletContext' is a specialization of 'ThreadSensitive'.
+The class 'core_saflet_SafletEnvironment' is a specialization of 'ThreadSensitive'.
+The class 'core_initiator_Initiator' is a specialization of 'ActionStep'.
+The class 'core_call_SafiCall' is a specialization of 'ThreadSensitive'.
+The class 'core_call_SafiCall' is a specialization of 'PlatformDisposition'.
+The class 'core_call_CallSource2' is a specialization of 'CallSource1'.
+The class 'core_call_CallConsumer2' is a specialization of 'CallConsumer1'.
+
+Relationships between classes are modeled using associations.
+An association connects 'core_actionstep_ActionStep' and 'Output'. From 'core_actionstep_ActionStep', the role 'Output' has cardinality 0..*, and from 'Output', the role 'actionstep' has cardinality 0..*.
+An association connects 'core_actionstep_ActionStep' and 'Saflet'. From 'core_actionstep_ActionStep', the role 'Saflet' has cardinality 0..*, and from 'Saflet', the role 'saflet' has cardinality 0..*.
+An association connects 'Output' and 'core_actionstep_ActionStep'. From 'Output', the role 'Output3' has cardinality 0..*, and from 'core_actionstep_ActionStep', the role 'core_actionstep_ActionStep' has cardinality 0..*.
+An association connects 'Output' and 'core_actionstep_ActionStep'. From 'Output', the role 'Output6' has cardinality 0..*, and from 'core_actionstep_ActionStep', the role 'core_actionstep_ActionStep5' has cardinality 0..*.
+An association connects 'core_actionstep_Assignment' and 'DynamicValue'. From 'core_actionstep_Assignment', the role 'core_actionstep_Assignment' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue' has cardinality 0..*.
+An association connects 'core_actionstep_Assignment' and 'DynamicValue'. From 'core_actionstep_Assignment', the role 'core_actionstep_Assignment9' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue10' has cardinality 0..*.
+An association connects 'DynamicValue' and 'core_actionstep_CaseItem'. From 'DynamicValue', the role 'DynamicValue12' has cardinality 0..*, and from 'core_actionstep_CaseItem', the role 'core_actionstep_CaseItem' has cardinality 0..*.
+An association connects 'InputItem' and 'core_actionstep_ParameterizedActionstep'. From 'InputItem', the role 'InputItem' has cardinality 0..*, and from 'core_actionstep_ParameterizedActionstep', the role 'core_actionstep_ParameterizedActionstep' has cardinality 0..*.
+An association connects 'OutputParameter' and 'core_actionstep_ParameterizedActionstep'. From 'OutputParameter', the role 'OutputParameter' has cardinality 0..*, and from 'core_actionstep_ParameterizedActionstep', the role 'core_actionstep_ParameterizedActionstep15' has cardinality 0..*.
+An association connects 'core_actionstep_Choice' and 'CaseItem'. From 'core_actionstep_Choice', the role 'core_actionstep_Choice' has cardinality 0..*, and from 'CaseItem', the role 'CaseItem' has cardinality 0..*.
+An association connects 'DynamicValue' and 'core_actionstep_Choice'. From 'DynamicValue', the role 'DynamicValue19' has cardinality 0..*, and from 'core_actionstep_Choice', the role 'core_actionstep_Choice18' has cardinality 0..*.
+An association connects 'actionstep_core_EObject' and 'core_actionstep_DynamicValue'. From 'actionstep_core_EObject', the role 'actionstep_core_EObject' has cardinality 0..*, and from 'core_actionstep_DynamicValue', the role 'core_actionstep_DynamicValue' has cardinality 0..*.
+An association connects 'actionstep_core_EStringToStringMapEntry' and 'core_actionstep_DynamicValue'. From 'actionstep_core_EStringToStringMapEntry', the role 'actionstep_core_EStringToStringMapEntry' has cardinality 0..*, and from 'core_actionstep_DynamicValue', the role 'core_actionstep_DynamicValue22' has cardinality 0..*.
+An association connects 'core_actionstep_IfThen' and 'DynamicValue'. From 'core_actionstep_IfThen', the role 'core_actionstep_IfThen' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue24' has cardinality 0..*.
+An association connects 'ActionStep' and 'core_actionstep_Output'. From 'ActionStep', the role 'ActionStep' has cardinality 0..*, and from 'core_actionstep_Output', the role 'core_actionstep_Output' has cardinality 0..*.
+An association connects 'core_actionstep_Output' and 'ActionStep'. From 'core_actionstep_Output', the role 'ActionStep27' has cardinality 0..*, and from 'ActionStep', the role 'actionstep28' has cardinality 0..*.
+An association connects 'core_actionstep_ExecuteScript' and 'DynamicValue'. From 'core_actionstep_ExecuteScript', the role 'core_actionstep_ExecuteScript' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue30' has cardinality 0..*.
+An association connects 'core_actionstep_InvokeSaflet' and 'DynamicValue'. From 'core_actionstep_InvokeSaflet', the role 'core_actionstep_InvokeSaflet' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue32' has cardinality 0..*.
+An association connects 'core_actionstep_DebugLog' and 'DynamicValue'. From 'core_actionstep_DebugLog', the role 'core_actionstep_DebugLog' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue34' has cardinality 0..*.
+An association connects 'core_actionstep_DebugLog' and 'DynamicValue'. From 'core_actionstep_DebugLog', the role 'core_actionstep_DebugLog36' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue37' has cardinality 0..*.
+An association connects 'DBConnectionId' and 'core_actionstep_OpenDBConnection'. From 'DBConnectionId', the role 'DBConnectionId' has cardinality 0..*, and from 'core_actionstep_OpenDBConnection', the role 'core_actionstep_OpenDBConnection' has cardinality 0..*.
+An association connects 'core_actionstep_CloseDBConnection' and 'DBConnectionId'. From 'core_actionstep_CloseDBConnection', the role 'core_actionstep_CloseDBConnection' has cardinality 0..*, and from 'DBConnectionId', the role 'DBConnectionId40' has cardinality 0..*.
+An association connects 'core_actionstep_OpenQuery' and 'DBQueryId'. From 'core_actionstep_OpenQuery', the role 'core_actionstep_OpenQuery' has cardinality 0..*, and from 'DBQueryId', the role 'DBQueryId' has cardinality 0..*.
+An association connects 'DBConnectionId' and 'core_actionstep_OpenQuery'. From 'DBConnectionId', the role 'DBConnectionId44' has cardinality 0..*, and from 'core_actionstep_OpenQuery', the role 'core_actionstep_OpenQuery43' has cardinality 0..*.
+An association connects 'DynamicValue' and 'core_actionstep_SetQueryParam'. From 'DynamicValue', the role 'DynamicValue46' has cardinality 0..*, and from 'core_actionstep_SetQueryParam', the role 'core_actionstep_SetQueryParam' has cardinality 0..*.
+An association connects 'DBQueryParamId' and 'core_actionstep_SetQueryParam'. From 'DBQueryParamId', the role 'DBQueryParamId' has cardinality 0..*, and from 'core_actionstep_SetQueryParam', the role 'core_actionstep_SetQueryParam48' has cardinality 0..*.
+An association connects 'DBQueryId' and 'core_actionstep_SetQueryParam'. From 'DBQueryId', the role 'DBQueryId51' has cardinality 0..*, and from 'core_actionstep_SetQueryParam', the role 'core_actionstep_SetQueryParam50' has cardinality 0..*.
+An association connects 'core_actionstep_ExecuteUpdate' and 'DBQueryId'. From 'core_actionstep_ExecuteUpdate', the role 'core_actionstep_ExecuteUpdate' has cardinality 0..*, and from 'DBQueryId', the role 'DBQueryId53' has cardinality 0..*.
+An association connects 'core_actionstep_ExecuteUpdate' and 'DynamicValue'. From 'core_actionstep_ExecuteUpdate', the role 'core_actionstep_ExecuteUpdate55' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue56' has cardinality 0..*.
+An association connects 'core_actionstep_ExecuteQuery' and 'DBQueryId'. From 'core_actionstep_ExecuteQuery', the role 'core_actionstep_ExecuteQuery' has cardinality 0..*, and from 'DBQueryId', the role 'DBQueryId58' has cardinality 0..*.
+An association connects 'core_actionstep_ExecuteQuery' and 'DBResultSetId'. From 'core_actionstep_ExecuteQuery', the role 'core_actionstep_ExecuteQuery60' has cardinality 0..*, and from 'DBResultSetId', the role 'DBResultSetId' has cardinality 0..*.
+An association connects 'core_actionstep_NextRow' and 'DBResultSetId'. From 'core_actionstep_NextRow', the role 'core_actionstep_NextRow' has cardinality 0..*, and from 'DBResultSetId', the role 'DBResultSetId62' has cardinality 0..*.
+An association connects 'core_actionstep_GetColValue' and 'DBResultSetId'. From 'core_actionstep_GetColValue', the role 'core_actionstep_GetColValue' has cardinality 0..*, and from 'DBResultSetId', the role 'DBResultSetId64' has cardinality 0..*.
+An association connects 'DynamicValue' and 'core_actionstep_GetColValue'. From 'DynamicValue', the role 'DynamicValue67' has cardinality 0..*, and from 'core_actionstep_GetColValue', the role 'core_actionstep_GetColValue66' has cardinality 0..*.
+An association connects 'DynamicValue' and 'core_actionstep_GetColValue'. From 'DynamicValue', the role 'DynamicValue70' has cardinality 0..*, and from 'core_actionstep_GetColValue', the role 'core_actionstep_GetColValue69' has cardinality 0..*.
+An association connects 'core_actionstep_GetColValues' and 'DBResultSetId'. From 'core_actionstep_GetColValues', the role 'core_actionstep_GetColValues' has cardinality 0..*, and from 'DBResultSetId', the role 'DBResultSetId72' has cardinality 0..*.
+An association connects 'GetColMapping' and 'core_actionstep_GetColValues'. From 'GetColMapping', the role 'GetColMapping' has cardinality 0..*, and from 'core_actionstep_GetColValues', the role 'core_actionstep_GetColValues74' has cardinality 0..*.
+An association connects 'core_actionstep_SetColValue' and 'DBResultSetId'. From 'core_actionstep_SetColValue', the role 'core_actionstep_SetColValue' has cardinality 0..*, and from 'DBResultSetId', the role 'DBResultSetId76' has cardinality 0..*.
+An association connects 'DynamicValue' and 'core_actionstep_SetColValue'. From 'DynamicValue', the role 'DynamicValue79' has cardinality 0..*, and from 'core_actionstep_SetColValue', the role 'core_actionstep_SetColValue78' has cardinality 0..*.
+An association connects 'core_actionstep_SetColValue' and 'DynamicValue'. From 'core_actionstep_SetColValue', the role 'core_actionstep_SetColValue81' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue82' has cardinality 0..*.
+An association connects 'DBResultSetId' and 'core_actionstep_SetColValues'. From 'DBResultSetId', the role 'DBResultSetId84' has cardinality 0..*, and from 'core_actionstep_SetColValues', the role 'core_actionstep_SetColValues' has cardinality 0..*.
+An association connects 'core_actionstep_SetColValues' and 'SetColMapping'. From 'core_actionstep_SetColValues', the role 'core_actionstep_SetColValues86' has cardinality 0..*, and from 'SetColMapping', the role 'SetColMapping' has cardinality 0..*.
+An association connects 'core_actionstep_UpdatetRow' and 'DBResultSetId'. From 'core_actionstep_UpdatetRow', the role 'core_actionstep_UpdatetRow' has cardinality 0..*, and from 'DBResultSetId', the role 'DBResultSetId88' has cardinality 0..*.
+An association connects 'core_actionstep_MoveToRow' and 'DBResultSetId'. From 'core_actionstep_MoveToRow', the role 'core_actionstep_MoveToRow' has cardinality 0..*, and from 'DBResultSetId', the role 'DBResultSetId90' has cardinality 0..*.
+An association connects 'core_actionstep_MoveToRow' and 'DynamicValue'. From 'core_actionstep_MoveToRow', the role 'core_actionstep_MoveToRow92' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue93' has cardinality 0..*.
+An association connects 'core_actionstep_MoveToLastRow' and 'DBResultSetId'. From 'core_actionstep_MoveToLastRow', the role 'core_actionstep_MoveToLastRow' has cardinality 0..*, and from 'DBResultSetId', the role 'DBResultSetId95' has cardinality 0..*.
+An association connects 'DBResultSetId' and 'core_actionstep_DeleteRow'. From 'DBResultSetId', the role 'DBResultSetId97' has cardinality 0..*, and from 'core_actionstep_DeleteRow', the role 'core_actionstep_DeleteRow' has cardinality 0..*.
+An association connects 'core_actionstep_MoveToInsertRow' and 'DBResultSetId'. From 'core_actionstep_MoveToInsertRow', the role 'core_actionstep_MoveToInsertRow' has cardinality 0..*, and from 'DBResultSetId', the role 'DBResultSetId99' has cardinality 0..*.
+An association connects 'core_actionstep_InsertRow' and 'DBResultSetId'. From 'core_actionstep_InsertRow', the role 'core_actionstep_InsertRow' has cardinality 0..*, and from 'DBResultSetId', the role 'DBResultSetId101' has cardinality 0..*.
+An association connects 'DBResultSetId' and 'core_actionstep_MoveToFirstRow'. From 'DBResultSetId', the role 'DBResultSetId103' has cardinality 0..*, and from 'core_actionstep_MoveToFirstRow', the role 'core_actionstep_MoveToFirstRow' has cardinality 0..*.
+An association connects 'core_actionstep_PreviousRow' and 'DBResultSetId'. From 'core_actionstep_PreviousRow', the role 'core_actionstep_PreviousRow' has cardinality 0..*, and from 'DBResultSetId', the role 'DBResultSetId105' has cardinality 0..*.
+An association connects 'core_actionstep_GetColMapping' and 'DynamicValue'. From 'core_actionstep_GetColMapping', the role 'core_actionstep_GetColMapping' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue107' has cardinality 0..*.
+An association connects 'core_actionstep_GetColMapping' and 'DynamicValue'. From 'core_actionstep_GetColMapping', the role 'core_actionstep_GetColMapping109' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue110' has cardinality 0..*.
+An association connects 'core_actionstep_SetColMapping' and 'DynamicValue'. From 'core_actionstep_SetColMapping', the role 'core_actionstep_SetColMapping' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue112' has cardinality 0..*.
+An association connects 'core_actionstep_SetColMapping' and 'DynamicValue'. From 'core_actionstep_SetColMapping', the role 'core_actionstep_SetColMapping114' has cardinality 0..*, and from 'DynamicValue', the role 'DynamicValue115' has cardinality 0..*.
+An association connects 'core_actionstep_RunQuery' and 'DBConnectionId'. From 'core_actionstep_RunQuery', the role 'core_actionstep_RunQuery' has cardinality 0..*, and from 'DBConnectionId', the role 'DBConnectionId117' has cardinality 0..*.
+An association connects 'DBQueryId' and 'core_actionstep_RunQuery'. From 'DBQueryId', the role 'DBQueryId120' has cardinality 0..*, and from 'core_actionstep_RunQuery', the role 'core_actionstep_RunQuery119' has cardinality 0..*.
+An association connects 'core_actionstep_RunQuery' and 'QueryParamMapping'. From 'core_actionstep_RunQuery', the role 'core_actionstep_RunQuery122' has cardinality 0..*, and from 'QueryParamMapping', the role 'QueryParamMapping' has cardinality 0..*.
+An association connects 'DBResultSetId' and 'core_actionstep_RunQuery'. From 'DBResultSetId', the role 'DBResultSetId125' has cardinality 0..*, and from 'core_actionstep_RunQuery', the role 'core_actionstep_RunQuery124' has cardinality 0..*.
+An association connects 'DynamicValue' and 'core_actionstep_RunQuery'. From 'DynamicValue', the role 'DynamicValue128' has cardinality 0..*, and from 'core_actionstep_RunQuery', the role 'core_actionstep_RunQuery127' has cardinality 0..*.
+An association connects 'DynamicValue' and 'core_actionstep_RunQuery'. From 'DynamicValue', the role 'DynamicValue131' has cardinality 0..*, and from 'core_actionstep_RunQuery', the role 'core_actionstep_RunQuery130' has cardinality 0..*.
+An association connects 'core_actionstep_QueryParamMapping' and 'DBQueryParamId'. From 'core_actionstep_QueryParamMapping', the role 'core_actionstep_QueryParamMapping' has cardinality 0..*, and from 'DBQueryParamId', the role 'DBQueryParamId133' has cardinality 0..*.
+An association connects 'DynamicValue' and 'core_actionstep_QueryParamMapping'. From 'DynamicValue', the role 'DynamicValue136' has cardinality 0..*, and from 'core_actionstep_QueryParamMapping', the role 'core_actionstep_QueryParamMapping135' has cardinality 0..*.
+An association connects 'ActionStep' and 'core_actionstep_Item'. From 'ActionStep', the role 'ActionStep138' has cardinality 0..*, and from 'core_actionstep_Item', the role 'core_actionstep_Item' has cardinality 0..*.
+An association connects 'ActionStep' and 'core_actionstep_Item'. From 'ActionStep', the role 'ActionStep141' has cardinality 0..*, and from 'core_actionstep_Item', the role 'core_actionstep_Item140' has cardinality 0..*.
+An association connects 'core_scripting_SafletScriptEnvironment' and 'SafletScript'. From 'core_scripting_SafletScriptEnvironment', the role 'core_scripting_SafletScriptEnvironment' has cardinality 0..*, and from 'SafletScript', the role 'SafletScript' has cardinality 0..*.
+An association connects 'core_scripting_SafletScriptEnvironment' and 'ScriptScope'. From 'core_scripting_SafletScriptEnvironment', the role 'core_scripting_SafletScriptEnvironment144' has cardinality 0..*, and from 'ScriptScope', the role 'ScriptScope' has cardinality 0..*.
+An association connects 'core_scripting_SafletScriptEnvironment' and 'SafletScriptFactory'. From 'core_scripting_SafletScriptEnvironment', the role 'core_scripting_SafletScriptEnvironment146' has cardinality 0..*, and from 'SafletScriptFactory', the role 'SafletScriptFactory' has cardinality 0..*.
+An association connects 'core_scripting_SafletScriptEnvironment' and 'ScriptScopeFactory'. From 'core_scripting_SafletScriptEnvironment', the role 'core_scripting_SafletScriptEnvironment148' has cardinality 0..*, and from 'ScriptScopeFactory', the role 'ScriptScopeFactory' has cardinality 0..*.
+An association connects 'SafletScript' and 'core_scripting_SafletScriptFactory'. From 'SafletScript', the role 'SafletScript150' has cardinality 0..*, and from 'core_scripting_SafletScriptFactory', the role 'core_scripting_SafletScriptFactory' has cardinality 0..*.
+An association connects 'core_scripting_ScriptScopeFactory' and 'ScriptScope'. From 'core_scripting_ScriptScopeFactory', the role 'core_scripting_ScriptScopeFactory' has cardinality 0..*, and from 'ScriptScope', the role 'ScriptScope152' has cardinality 0..*.
+An association connects 'core_scripting_ScriptScopeFactory' and 'ScriptScope'. From 'core_scripting_ScriptScopeFactory', the role 'core_scripting_ScriptScopeFactory154' has cardinality 0..*, and from 'ScriptScope', the role 'ScriptScope155' has cardinality 0..*.
+An association connects 'Initiator' and 'core_saflet_Saflet'. From 'Initiator', the role 'Initiator' has cardinality 0..*, and from 'core_saflet_Saflet', the role 'core_saflet_Saflet' has cardinality 0..*.
+An association connects 'SafletContext' and 'core_saflet_Saflet'. From 'SafletContext', the role 'SafletContext' has cardinality 0..*, and from 'core_saflet_Saflet', the role 'core_saflet_Saflet158' has cardinality 0..*.
+An association connects 'core_saflet_Saflet' and 'ScriptScope'. From 'core_saflet_Saflet', the role 'core_saflet_Saflet160' has cardinality 0..*, and from 'ScriptScope', the role 'ScriptScope161' has cardinality 0..*.
+An association connects 'ActionStep' and 'core_saflet_Saflet'. From 'ActionStep', the role 'actionstep164' has cardinality 0..*, and from 'core_saflet_Saflet', the role 'ActionStep163' has cardinality 0..*.
+An association connects 'core_saflet_Saflet' and 'SafletScriptEnvironment'. From 'core_saflet_Saflet', the role 'core_saflet_Saflet166' has cardinality 0..*, and from 'SafletScriptEnvironment', the role 'SafletScriptEnvironment' has cardinality 0..*.
+An association connects 'SafletEnvironment' and 'core_saflet_Saflet'. From 'SafletEnvironment', the role 'SafletEnvironment' has cardinality 0..*, and from 'core_saflet_Saflet', the role 'core_saflet_Saflet168' has cardinality 0..*.
+An association connects 'core_saflet_Saflet' and 'Finally'. From 'core_saflet_Saflet', the role 'core_saflet_Saflet170' has cardinality 0..*, and from 'Finally', the role 'Finally' has cardinality 0..*.
+An association connects 'Saflet' and 'core_saflet_SafletContext'. From 'Saflet', the role 'Saflet172' has cardinality 0..*, and from 'core_saflet_SafletContext', the role 'core_saflet_SafletContext' has cardinality 0..*.
+An association connects 'saflet_core_Variable' and 'core_saflet_SafletContext'. From 'saflet_core_Variable', the role 'saflet_core_Variable' has cardinality 0..*, and from 'core_saflet_SafletContext', the role 'core_saflet_SafletContext174' has cardinality 0..*.
+An association connects 'core_call_CallSource1' and 'SafiCall'. From 'core_call_CallSource1', the role 'core_call_CallSource1' has cardinality 0..*, and from 'SafiCall', the role 'SafiCall' has cardinality 0..*.
+An association connects 'SafiCall' and 'core_call_CallSource2'. From 'SafiCall', the role 'SafiCall177' has cardinality 0..*, and from 'core_call_CallSource2', the role 'core_call_CallSource2' has cardinality 0..*.
+An association connects 'core_call_CallConsumer1' and 'SafiCall'. From 'core_call_CallConsumer1', the role 'core_call_CallConsumer1' has cardinality 0..*, and from 'SafiCall', the role 'SafiCall179' has cardinality 0..*.
+An association connects 'SafiCall' and 'core_call_CallConsumer2'. From 'SafiCall', the role 'SafiCall181' has cardinality 0..*, and from 'core_call_CallConsumer2', the role 'core_call_CallConsumer2' has cardinality 0..*.

@@ -1,0 +1,20 @@
+The domain model 'Data' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'Data_Type' represents an important domain concept.
+It has the following attributes: 'isReference', which is of type bool; 'name', which is of type str.
+
+'Data_Class' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Data_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'Data_Attribute' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'name', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Data_Class' and 'Data_Model'. From 'Data_Class', the role 'Data_Class' has cardinality 0..*, and from 'Data_Model', the role 'Data_Model' has cardinality 0..*.
+An association connects 'Data_Class' and 'Data_Attribute'. From 'Data_Class', the role 'Data_Class2' has cardinality 0..*, and from 'Data_Attribute', the role 'Data_Attribute' has cardinality 0..*.
+An association connects 'Data_Attribute' and 'Data_Type'. From 'Data_Attribute', the role 'Data_Attribute4' has cardinality 0..*, and from 'Data_Type', the role 'Data_Type' has cardinality 0..*.

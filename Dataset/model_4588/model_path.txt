@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tdegueul/ale-xbase/examples/fUML/activitydiagram/org.modelexecution.operationalsemantics.adwithoutruntime/ad/adwithoutruntime.ecore

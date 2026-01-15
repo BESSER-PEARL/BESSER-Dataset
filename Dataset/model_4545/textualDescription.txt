@@ -1,0 +1,177 @@
+The domain model 'SysML_ValueTypes_QUDV' describes the core structural elements and their relationships within the system.
+
+The model defines 38 main class(es).
+
+'Real' represents an important domain concept.
+It does not declare any attributes.
+
+'Dimension' represents an important domain concept.
+It does not declare any attributes.
+
+'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Real' represents an important domain concept.
+It does not declare any attributes.
+
+'SysML_ValueTypes_QUDV_QUDV_DerivedQuantityKind' represents an important domain concept.
+It does not declare any attributes.
+
+'QuantityKind' represents an important domain concept.
+It does not declare any attributes.
+
+'SysML_ValueTypes_QUDV_QUDV_SimpleUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'ConversionBasedUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Number' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SystemOfUnits' represents an important domain concept.
+It does not declare any attributes.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'QuantityKindFactor' represents an important domain concept.
+It does not declare any attributes.
+
+'Number' represents an important domain concept.
+It does not declare any attributes.
+
+'SysML_ValueTypes_QUDV_UnitAndQuantityKind_QuantityKind' represents an important domain concept.
+It has the following attributes: 'symbol', which is of type str; 'definitionURI', which is of type str; 'description', which is of type str; 'name', which is of type str.
+
+'SysML_ValueTypes_QUDV_QUDV_ConversionBasedUnit' represents an important domain concept.
+It has one attribute: 'isInvertible', which is of type bool.
+
+'SysML_ValueTypes_QUDV_UnitAndQuantityKind_Unit' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'symbol', which is of type str; 'definitionURI', which is of type str; 'description', which is of type str.
+
+'SysML_ValueTypes_QUDV_QUDV_LinearConversionUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'SysML_ValueTypes_QUDV_QUDV_Dimension' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SysML_ValueTypes_QUDV_QUDV_Prefix' represents an important domain concept.
+It has the following attributes: 'symbol', which is of type str; 'name', which is of type str.
+
+'SysML_ValueTypes_QUDV_QUDV_DerivedUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Complex' represents an important domain concept.
+It does not declare any attributes.
+
+'SysML_ValueTypes_QUDV_QUDV_QuantityKind' represents an important domain concept.
+It has the following attributes: 'isQuantityOfDimensionOne', which is of type bool; 'isNumberOfEntities', which is of type bool.
+
+'SysML_ValueTypes_QUDV_QUDV_SimpleQuantityKind' represents an important domain concept.
+It does not declare any attributes.
+
+'SysML_ValueTypes_QUDV_QUDV_AffineConversionUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'SysML_ValueTypes_QUDV_QUDV_UnitFactor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Integer' represents an important domain concept.
+It does not declare any attributes.
+
+'SysML_ValueTypes_QUDV_QUDV_QuantityKindFactor' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'UnitFactor' represents an important domain concept.
+It does not declare any attributes.
+
+'SysML_ValueTypes_QUDV_QUDV_GeneralConversionUnit' represents an important domain concept.
+It has the following attributes: 'expressionLanguageURI', which is of type str; 'expression', which is of type str.
+
+'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER' represents an important domain concept.
+It does not declare any attributes.
+
+'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Rational' represents an important domain concept.
+It does not declare any attributes.
+
+'Prefix' represents an important domain concept.
+It does not declare any attributes.
+
+'SysML_ValueTypes_QUDV_QUDV_PrefixedUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'Rational' represents an important domain concept.
+It does not declare any attributes.
+
+'SystemOfQuantities' represents an important domain concept.
+It does not declare any attributes.
+
+'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities' represents an important domain concept.
+It has the following attributes: 'definitionURI', which is of type str; 'name', which is of type str; 'symbol', which is of type str; 'description', which is of type str.
+
+'Integer' represents an important domain concept.
+It does not declare any attributes.
+
+'SysML_ValueTypes_QUDV_QUDV_Unit' represents an important domain concept.
+It has the following attributes: 'isUnitCountOfEntities', which is of type bool; 'isUnitForQuantityOfDimensionOne', which is of type bool.
+
+'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits' represents an important domain concept.
+It has the following attributes: 'definitionURI', which is of type str; 'description', which is of type str; 'symbol', which is of type str; 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Complex' is a specialization of 'Number'.
+The class 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Integer' is a specialization of 'Number'.
+The class 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Real' is a specialization of 'Number'.
+The class 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Rational' is a specialization of 'Number'.
+The class 'SysML_ValueTypes_QUDV_QUDV_AffineConversionUnit' is a specialization of 'ConversionBasedUnit'.
+The class 'SysML_ValueTypes_QUDV_QUDV_ConversionBasedUnit' is a specialization of 'Unit'.
+The class 'SysML_ValueTypes_QUDV_QUDV_DerivedQuantityKind' is a specialization of 'QuantityKind'.
+The class 'SysML_ValueTypes_QUDV_QUDV_DerivedUnit' is a specialization of 'Unit'.
+The class 'SysML_ValueTypes_QUDV_QUDV_GeneralConversionUnit' is a specialization of 'ConversionBasedUnit'.
+The class 'SysML_ValueTypes_QUDV_QUDV_LinearConversionUnit' is a specialization of 'ConversionBasedUnit'.
+The class 'SysML_ValueTypes_QUDV_QUDV_PrefixedUnit' is a specialization of 'ConversionBasedUnit'.
+The class 'SysML_ValueTypes_QUDV_QUDV_QuantityKind' is a specialization of 'QuantityKind'.
+The class 'SysML_ValueTypes_QUDV_QUDV_SimpleQuantityKind' is a specialization of 'QuantityKind'.
+The class 'SysML_ValueTypes_QUDV_QUDV_SimpleUnit' is a specialization of 'Unit'.
+The class 'SysML_ValueTypes_QUDV_QUDV_Unit' is a specialization of 'Unit'.
+
+Relationships between classes are modeled using associations.
+An association connects 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER' and 'Number'. From 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER', the role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER' has cardinality 0..*, and from 'Number', the role 'Number' has cardinality 0..*.
+An association connects 'QuantityKind' and 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER'. From 'QuantityKind', the role 'QuantityKind' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER', the role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER2' has cardinality 0..*.
+An association connects 'Unit' and 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER'. From 'Unit', the role 'Unit' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER', the role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER4' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER' and 'Dimension'. From 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER', the role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER6' has cardinality 0..*, and from 'Dimension', the role 'Dimension' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER' and 'Prefix'. From 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER', the role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER8' has cardinality 0..*, and from 'Prefix', the role 'Prefix' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER' and 'QuantityKindFactor'. From 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER', the role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER10' has cardinality 0..*, and from 'QuantityKindFactor', the role 'QuantityKindFactor' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER' and 'SystemOfQuantities'. From 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER', the role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER12' has cardinality 0..*, and from 'SystemOfQuantities', the role 'SystemOfQuantities' has cardinality 0..*.
+An association connects 'SystemOfUnits' and 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER'. From 'SystemOfUnits', the role 'SystemOfUnits' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER', the role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER14' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER' and 'UnitFactor'. From 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER', the role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER16' has cardinality 0..*, and from 'UnitFactor', the role 'UnitFactor' has cardinality 0..*.
+An association connects 'Real' and 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Complex'. From 'Real', the role 'Real' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Complex', the role 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Complex' has cardinality 0..*.
+An association connects 'Real' and 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Complex'. From 'Real', the role 'Real20' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Complex', the role 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Complex19' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Rational' and 'Integer'. From 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Rational', the role 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Rational' has cardinality 0..*, and from 'Integer', the role 'Integer' has cardinality 0..*.
+An association connects 'Integer' and 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Rational'. From 'Integer', the role 'Integer24' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Rational', the role 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Rational23' has cardinality 0..*.
+An association connects 'QuantityKind' and 'SysML_ValueTypes_QUDV_UnitAndQuantityKind_Unit'. From 'QuantityKind', the role 'QuantityKind26' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_UnitAndQuantityKind_Unit', the role 'SysML_ValueTypes_QUDV_UnitAndQuantityKind_Unit' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_QUDV_AffineConversionUnit' and 'Number'. From 'SysML_ValueTypes_QUDV_QUDV_AffineConversionUnit', the role 'SysML_ValueTypes_QUDV_QUDV_AffineConversionUnit' has cardinality 0..*, and from 'Number', the role 'Number28' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_QUDV_AffineConversionUnit' and 'Number'. From 'SysML_ValueTypes_QUDV_QUDV_AffineConversionUnit', the role 'SysML_ValueTypes_QUDV_QUDV_AffineConversionUnit30' has cardinality 0..*, and from 'Number', the role 'Number31' has cardinality 0..*.
+An association connects 'Unit' and 'SysML_ValueTypes_QUDV_QUDV_ConversionBasedUnit'. From 'Unit', the role 'Unit33' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_QUDV_ConversionBasedUnit', the role 'SysML_ValueTypes_QUDV_QUDV_ConversionBasedUnit' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_QUDV_DerivedQuantityKind' and 'QuantityKindFactor'. From 'SysML_ValueTypes_QUDV_QUDV_DerivedQuantityKind', the role 'SysML_ValueTypes_QUDV_QUDV_DerivedQuantityKind' has cardinality 0..*, and from 'QuantityKindFactor', the role 'QuantityKindFactor35' has cardinality 0..*.
+An association connects 'UnitFactor' and 'SysML_ValueTypes_QUDV_QUDV_DerivedUnit'. From 'UnitFactor', the role 'UnitFactor37' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_QUDV_DerivedUnit', the role 'SysML_ValueTypes_QUDV_QUDV_DerivedUnit' has cardinality 0..*.
+An association connects 'QuantityKindFactor' and 'SysML_ValueTypes_QUDV_QUDV_Dimension'. From 'QuantityKindFactor', the role 'QuantityKindFactor39' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_QUDV_Dimension', the role 'SysML_ValueTypes_QUDV_QUDV_Dimension' has cardinality 0..*.
+An association connects 'Number' and 'SysML_ValueTypes_QUDV_QUDV_LinearConversionUnit'. From 'Number', the role 'Number41' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_QUDV_LinearConversionUnit', the role 'SysML_ValueTypes_QUDV_QUDV_LinearConversionUnit' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_QUDV_Prefix' and 'Rational'. From 'SysML_ValueTypes_QUDV_QUDV_Prefix', the role 'SysML_ValueTypes_QUDV_QUDV_Prefix' has cardinality 0..*, and from 'Rational', the role 'Rational' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_QUDV_PrefixedUnit' and 'Prefix'. From 'SysML_ValueTypes_QUDV_QUDV_PrefixedUnit', the role 'SysML_ValueTypes_QUDV_QUDV_PrefixedUnit' has cardinality 0..*, and from 'Prefix', the role 'Prefix44' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_QUDV_QuantityKind' and 'QuantityKind'. From 'SysML_ValueTypes_QUDV_QUDV_QuantityKind', the role 'SysML_ValueTypes_QUDV_QUDV_QuantityKind' has cardinality 0..*, and from 'QuantityKind', the role 'QuantityKind46' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_QUDV_QuantityKind' and 'QuantityKind'. From 'SysML_ValueTypes_QUDV_QUDV_QuantityKind', the role 'SysML_ValueTypes_QUDV_QUDV_QuantityKind48' has cardinality 0..*, and from 'QuantityKind', the role 'QuantityKind49' has cardinality 0..*.
+An association connects 'Rational' and 'SysML_ValueTypes_QUDV_QUDV_QuantityKindFactor'. From 'Rational', the role 'Rational51' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_QUDV_QuantityKindFactor', the role 'SysML_ValueTypes_QUDV_QUDV_QuantityKindFactor' has cardinality 0..*.
+An association connects 'QuantityKind' and 'SysML_ValueTypes_QUDV_QUDV_QuantityKindFactor'. From 'QuantityKind', the role 'QuantityKind54' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_QUDV_QuantityKindFactor', the role 'SysML_ValueTypes_QUDV_QUDV_QuantityKindFactor53' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities' and 'QuantityKind'. From 'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities', the role 'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities' has cardinality 0..*, and from 'QuantityKind', the role 'QuantityKind56' has cardinality 0..*.
+An association connects 'SystemOfQuantities' and 'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities'. From 'SystemOfQuantities', the role 'SystemOfQuantities59' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities', the role 'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities58' has cardinality 0..*.
+An association connects 'QuantityKind' and 'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities'. From 'QuantityKind', the role 'QuantityKind62' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities', the role 'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities61' has cardinality 0..*.
+An association connects 'SystemOfQuantities' and 'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities'. From 'SystemOfQuantities', the role 'SystemOfQuantities65' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities', the role 'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities64' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits' and 'Unit'. From 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits', the role 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits' has cardinality 0..*, and from 'Unit', the role 'Unit67' has cardinality 0..*.
+An association connects 'SystemOfUnits' and 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits'. From 'SystemOfUnits', the role 'SystemOfUnits70' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits', the role 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits69' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits' and 'Prefix'. From 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits', the role 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits72' has cardinality 0..*, and from 'Prefix', the role 'Prefix73' has cardinality 0..*.
+An association connects 'SystemOfQuantities' and 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits'. From 'SystemOfQuantities', the role 'SystemOfQuantities76' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits', the role 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits75' has cardinality 0..*.
+An association connects 'Unit' and 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits'. From 'Unit', the role 'Unit79' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits', the role 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits78' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits' and 'SystemOfUnits'. From 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits', the role 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits81' has cardinality 0..*, and from 'SystemOfUnits', the role 'SystemOfUnits82' has cardinality 0..*.
+An association connects 'Unit' and 'SysML_ValueTypes_QUDV_QUDV_Unit'. From 'Unit', the role 'Unit84' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_QUDV_Unit', the role 'SysML_ValueTypes_QUDV_QUDV_Unit' has cardinality 0..*.
+An association connects 'Unit' and 'SysML_ValueTypes_QUDV_QUDV_Unit'. From 'Unit', the role 'Unit87' has cardinality 0..*, and from 'SysML_ValueTypes_QUDV_QUDV_Unit', the role 'SysML_ValueTypes_QUDV_QUDV_Unit86' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_QUDV_UnitFactor' and 'Rational'. From 'SysML_ValueTypes_QUDV_QUDV_UnitFactor', the role 'SysML_ValueTypes_QUDV_QUDV_UnitFactor' has cardinality 0..*, and from 'Rational', the role 'Rational89' has cardinality 0..*.
+An association connects 'SysML_ValueTypes_QUDV_QUDV_UnitFactor' and 'Unit'. From 'SysML_ValueTypes_QUDV_QUDV_UnitFactor', the role 'SysML_ValueTypes_QUDV_QUDV_UnitFactor91' has cardinality 0..*, and from 'Unit', the role 'Unit92' has cardinality 0..*.

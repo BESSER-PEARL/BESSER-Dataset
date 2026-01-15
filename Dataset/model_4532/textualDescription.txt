@@ -1,0 +1,116 @@
+The domain model 'robotG' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'robotG_flow_Or' represents an important domain concept.
+It does not declare any attributes.
+
+'OpBinaire' represents an important domain concept.
+It does not declare any attributes.
+
+'robotG_flow_While' represents an important domain concept.
+It does not declare any attributes.
+
+'CommandeRobot' represents an important domain concept.
+It does not declare any attributes.
+
+'robotG_robot_StopEngine' represents an important domain concept.
+It does not declare any attributes.
+
+'robotG_flow_Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'robotG_robot_Move' represents an important domain concept.
+It has one attribute: 'power', which is of type int.
+
+'robotG_flow_StopProgram' represents an important domain concept.
+It does not declare any attributes.
+
+'robotG_robot_HasTurned' represents an important domain concept.
+It has one attribute: 'angle', which is of type int.
+
+'robotG_flow_OpBinaire' represents an important domain concept.
+It does not declare any attributes.
+
+'flow_ExprBool' represents an important domain concept.
+It does not declare any attributes.
+
+'robotG_flow_OpUnaire' represents an important domain concept.
+It does not declare any attributes.
+
+'OpUnaire' represents an important domain concept.
+It does not declare any attributes.
+
+'robot_CommandeRobot' represents an important domain concept.
+It does not declare any attributes.
+
+'robotG_robot_Obstacle' represents an important domain concept.
+It has one attribute: 'distance', which is of type int.
+
+'robotG_robot_CommandeRobot' represents an important domain concept.
+It does not declare any attributes.
+
+'robotG_flow_ExprBool' represents an important domain concept.
+It does not declare any attributes.
+
+'ExprBool' represents an important domain concept.
+It does not declare any attributes.
+
+'robotG_flow_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'Expr' represents an important domain concept.
+It does not declare any attributes.
+
+'robotG_flow_And' represents an important domain concept.
+It does not declare any attributes.
+
+'robotG_robot_SetTurnAngle' represents an important domain concept.
+It has one attribute: 'angle', which is of type int.
+
+'robotG_robot_Display' represents an important domain concept.
+It has the following attributes: 'col', which is of type int; 'duration', which is of type int; 'line', which is of type int; 'msg', which is of type str.
+
+'robotG_robot_Bip' represents an important domain concept.
+It has the following attributes: 'power', which is of type int; 'duration', which is of type int; 'repeat', which is of type bool.
+
+'robotG_flow_If' represents an important domain concept.
+It does not declare any attributes.
+
+'robotG_flow_Programme' represents an important domain concept.
+It does not declare any attributes.
+
+'robotG_robot_Turn' represents an important domain concept.
+It has the following attributes: 'power', which is of type int; 'angle', which is of type int.
+
+The model also captures inheritance relationships between classes.
+The class 'robotG_robot_Move' is a specialization of 'CommandeRobot'.
+The class 'robotG_robot_Bip' is a specialization of 'CommandeRobot'.
+The class 'robotG_robot_Turn' is a specialization of 'CommandeRobot'.
+The class 'robotG_robot_SetTurnAngle' is a specialization of 'CommandeRobot'.
+The class 'robotG_robot_HasTurned' is a specialization of 'flow_ExprBool'.
+The class 'robotG_robot_HasTurned' is a specialization of 'robot_CommandeRobot'.
+The class 'robotG_robot_Display' is a specialization of 'CommandeRobot'.
+The class 'robotG_robot_Obstacle' is a specialization of 'flow_ExprBool'.
+The class 'robotG_robot_Obstacle' is a specialization of 'robot_CommandeRobot'.
+The class 'robotG_robot_StopEngine' is a specialization of 'CommandeRobot'.
+The class 'robotG_robot_CommandeRobot' is a specialization of 'Expr'.
+The class 'robotG_flow_While' is a specialization of 'Expr'.
+The class 'robotG_flow_If' is a specialization of 'Expr'.
+The class 'robotG_flow_Not' is a specialization of 'OpUnaire'.
+The class 'robotG_flow_ExprBool' is a specialization of 'Expr'.
+The class 'robotG_flow_StopProgram' is a specialization of 'Expr'.
+The class 'robotG_flow_OpUnaire' is a specialization of 'ExprBool'.
+The class 'robotG_flow_OpBinaire' is a specialization of 'ExprBool'.
+The class 'robotG_flow_And' is a specialization of 'OpBinaire'.
+The class 'robotG_flow_Or' is a specialization of 'OpBinaire'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ExprBool' and 'robotG_flow_While'. From 'ExprBool', the role 'ExprBool' has cardinality 0..*, and from 'robotG_flow_While', the role 'robotG_flow_While' has cardinality 0..*.
+An association connects 'robotG_flow_While' and 'Expr'. From 'robotG_flow_While', the role 'robotG_flow_While2' has cardinality 0..*, and from 'Expr', the role 'Expr' has cardinality 0..*.
+An association connects 'robotG_flow_If' and 'ExprBool'. From 'robotG_flow_If', the role 'robotG_flow_If' has cardinality 0..*, and from 'ExprBool', the role 'ExprBool4' has cardinality 0..*.
+An association connects 'Expr' and 'robotG_flow_If'. From 'Expr', the role 'Expr7' has cardinality 0..*, and from 'robotG_flow_If', the role 'robotG_flow_If6' has cardinality 0..*.
+An association connects 'robotG_flow_OpUnaire' and 'ExprBool'. From 'robotG_flow_OpUnaire', the role 'robotG_flow_OpUnaire' has cardinality 0..*, and from 'ExprBool', the role 'ExprBool9' has cardinality 0..*.
+An association connects 'ExprBool' and 'robotG_flow_OpBinaire'. From 'ExprBool', the role 'ExprBool11' has cardinality 0..*, and from 'robotG_flow_OpBinaire', the role 'robotG_flow_OpBinaire' has cardinality 0..*.
+An association connects 'robotG_flow_OpBinaire' and 'ExprBool'. From 'robotG_flow_OpBinaire', the role 'robotG_flow_OpBinaire13' has cardinality 0..*, and from 'ExprBool', the role 'ExprBool14' has cardinality 0..*.
+An association connects 'Expr' and 'robotG_flow_Programme'. From 'Expr', the role 'Expr16' has cardinality 0..*, and from 'robotG_flow_Programme', the role 'robotG_flow_Programme' has cardinality 0..*.

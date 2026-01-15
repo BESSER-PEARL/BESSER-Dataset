@@ -1,0 +1,25 @@
+The domain model 'kmLogo' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'Point' represents an important domain concept.
+It does not declare any attributes.
+
+'kmLogo_VM_Turtle' represents an important domain concept.
+It has the following attributes: 'penUp', which is of type str; 'heading', which is of type str.
+
+'kmLogo_VM_Segment' represents an important domain concept.
+It does not declare any attributes.
+
+'Segment' represents an important domain concept.
+It does not declare any attributes.
+
+'kmLogo_VM_Point' represents an important domain concept.
+It has the following attributes: 'x', which is of type str; 'y', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'Point' and 'kmLogo_VM_Turtle'. From 'Point', the role 'Point' has cardinality 0..*, and from 'kmLogo_VM_Turtle', the role 'kmLogo_VM_Turtle' has cardinality 0..*.
+An association connects 'Segment' and 'kmLogo_VM_Turtle'. From 'Segment', the role 'Segment' has cardinality 0..*, and from 'kmLogo_VM_Turtle', the role 'kmLogo_VM_Turtle2' has cardinality 0..*.
+An association connects 'kmLogo_VM_Turtle' and 'Point'. From 'kmLogo_VM_Turtle', the role 'kmLogo_VM_Turtle4' has cardinality 0..*, and from 'Point', the role 'Point5' has cardinality 0..*.
+An association connects 'Point' and 'kmLogo_VM_Segment'. From 'Point', the role 'Point7' has cardinality 0..*, and from 'kmLogo_VM_Segment', the role 'kmLogo_VM_Segment' has cardinality 0..*.
+An association connects 'kmLogo_VM_Segment' and 'Point'. From 'kmLogo_VM_Segment', the role 'kmLogo_VM_Segment9' has cardinality 0..*, and from 'Point', the role 'Point10' has cardinality 0..*.

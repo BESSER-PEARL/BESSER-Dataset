@@ -1,0 +1,75 @@
+The domain model 'mathInterpreter' describes the core structural elements and their relationships within the system.
+
+The model defines 17 main class(es).
+
+'MultiplyOrDivide' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpreter_EObject' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpreter_VariableRef' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpreter_PlusOrMinus' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'mathInterpreter_Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpreter_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpreter_Solution' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpreter_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'mathInterpreter_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpreter_Num' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'PlusOrMinus' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpreter_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpreter_Bracket' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpreter_Divide' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpreter_Multiply' represents an important domain concept.
+It does not declare any attributes.
+
+'Primary' represents an important domain concept.
+It does not declare any attributes.
+
+'mathInterpreter_MultiplyOrDivide' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'mathInterpreter_Plus' is a specialization of 'PlusOrMinus'.
+The class 'mathInterpreter_Minus' is a specialization of 'PlusOrMinus'.
+The class 'mathInterpreter_Multiply' is a specialization of 'MultiplyOrDivide'.
+The class 'mathInterpreter_Divide' is a specialization of 'MultiplyOrDivide'.
+The class 'mathInterpreter_Num' is a specialization of 'Primary'.
+The class 'mathInterpreter_VariableRef' is a specialization of 'Primary'.
+The class 'mathInterpreter_Bracket' is a specialization of 'Primary'.
+
+Relationships between classes are modeled using associations.
+An association connects 'mathInterpreter_Solution' and 'mathInterpreter_Variable'. From 'mathInterpreter_Solution', the role 'mathInterpreter_Solution' has cardinality 0..*, and from 'mathInterpreter_Variable', the role 'mathInterpreter_Variable' has cardinality 0..*.
+An association connects 'mathInterpreter_Expression' and 'mathInterpreter_Solution'. From 'mathInterpreter_Expression', the role 'mathInterpreter_Expression' has cardinality 0..*, and from 'mathInterpreter_Solution', the role 'mathInterpreter_Solution2' has cardinality 0..*.
+An association connects 'mathInterpreter_Variable' and 'mathInterpreter_Expression'. From 'mathInterpreter_Variable', the role 'mathInterpreter_Variable4' has cardinality 0..*, and from 'mathInterpreter_Expression', the role 'mathInterpreter_Expression5' has cardinality 0..*.
+An association connects 'mathInterpreter_Expression' and 'mathInterpreter_PlusOrMinus'. From 'mathInterpreter_Expression', the role 'mathInterpreter_Expression7' has cardinality 0..*, and from 'mathInterpreter_PlusOrMinus', the role 'mathInterpreter_PlusOrMinus' has cardinality 0..*.
+An association connects 'mathInterpreter_EObject' and 'mathInterpreter_PlusOrMinus'. From 'mathInterpreter_EObject', the role 'mathInterpreter_EObject' has cardinality 0..*, and from 'mathInterpreter_PlusOrMinus', the role 'mathInterpreter_PlusOrMinus9' has cardinality 0..*.
+An association connects 'mathInterpreter_PlusOrMinus' and 'mathInterpreter_MultiplyOrDivide'. From 'mathInterpreter_PlusOrMinus', the role 'mathInterpreter_PlusOrMinus11' has cardinality 0..*, and from 'mathInterpreter_MultiplyOrDivide', the role 'mathInterpreter_MultiplyOrDivide' has cardinality 0..*.
+An association connects 'mathInterpreter_MultiplyOrDivide' and 'mathInterpreter_EObject'. From 'mathInterpreter_MultiplyOrDivide', the role 'mathInterpreter_MultiplyOrDivide13' has cardinality 0..*, and from 'mathInterpreter_EObject', the role 'mathInterpreter_EObject14' has cardinality 0..*.
+An association connects 'mathInterpreter_Primary' and 'mathInterpreter_MultiplyOrDivide'. From 'mathInterpreter_Primary', the role 'mathInterpreter_Primary' has cardinality 0..*, and from 'mathInterpreter_MultiplyOrDivide', the role 'mathInterpreter_MultiplyOrDivide16' has cardinality 0..*.
+An association connects 'mathInterpreter_VariableRef' and 'mathInterpreter_Variable'. From 'mathInterpreter_VariableRef', the role 'mathInterpreter_VariableRef' has cardinality 0..*, and from 'mathInterpreter_Variable', the role 'mathInterpreter_Variable18' has cardinality 0..*.
+An association connects 'mathInterpreter_Expression' and 'mathInterpreter_Bracket'. From 'mathInterpreter_Expression', the role 'mathInterpreter_Expression20' has cardinality 0..*, and from 'mathInterpreter_Bracket', the role 'mathInterpreter_Bracket' has cardinality 0..*.

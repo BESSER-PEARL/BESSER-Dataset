@@ -1,0 +1,155 @@
+The domain model 'iOTConnector' describes the core structural elements and their relationships within the system.
+
+The model defines 33 main class(es).
+
+'iOTConnector_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'iOTConnector_Webserver' represents an important domain concept.
+It has the following attributes: 'port', which is of type int; 'url', which is of type str.
+
+'iOTConnector_SensorConfig' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'pinIn', which is of type str; 'pinOut', which is of type str.
+
+'iOTConnector_Config' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iOTConnector_Wifi' represents an important domain concept.
+It has the following attributes: 'password', which is of type str; 'ssid', which is of type str.
+
+'iOTConnector_ReadingNameWithConfigScope' represents an important domain concept.
+It does not declare any attributes.
+
+'iOTConnector_FilterExp' represents an important domain concept.
+It has one attribute: 'number', which is of type int.
+
+'iOTConnector_Send' represents an important domain concept.
+It does not declare any attributes.
+
+'iOTConnector_Num' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'iOTConnector_Mult' represents an important domain concept.
+It does not declare any attributes.
+
+'iOTConnector_Sample' represents an important domain concept.
+It does not declare any attributes.
+
+'iOTConnector_TimeUnit' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'iOTConnector_ReadingName' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iOTConnector_BitwiseOperator' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'iOTConnector_Div' represents an important domain concept.
+It does not declare any attributes.
+
+'iOTConnector_Sensor' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str.
+
+'iOTConnector_ProcessAction' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'iOTConnector_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'iOTConnector_FilterAction' represents an important domain concept.
+It has one attribute: 'number', which is of type int.
+
+'iOTConnector_Function' represents an important domain concept.
+It does not declare any attributes.
+
+'iOTConnector_Var' represents an important domain concept.
+It does not declare any attributes.
+
+'iOTConnector_Board' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'iOTConnector_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'Function' represents an important domain concept.
+It does not declare any attributes.
+
+'iOTConnector_SendAction' represents an important domain concept.
+It has one attribute: 'number', which is of type int.
+
+'iOTConnector_Minus' represents an important domain concept.
+It does not declare any attributes.
+
+'iOTConnector_FilterType' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'iOTConnector_Output' represents an important domain concept.
+It does not declare any attributes.
+
+'iOTConnector_SampleAction' represents an important domain concept.
+It has the following attributes: 'number', which is of type int; 'amountOfTime', which is of type int.
+
+'iOTConnector_RelationalOperator' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'iOTConnector_Process' represents an important domain concept.
+It does not declare any attributes.
+
+'iOTConnector_Filter' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'iOTConnector_Sample' is a specialization of 'Function'.
+The class 'iOTConnector_Filter' is a specialization of 'Function'.
+The class 'iOTConnector_Process' is a specialization of 'Function'.
+The class 'iOTConnector_Plus' is a specialization of 'Expression'.
+The class 'iOTConnector_Minus' is a specialization of 'Expression'.
+The class 'iOTConnector_Mult' is a specialization of 'Expression'.
+The class 'iOTConnector_Div' is a specialization of 'Expression'.
+The class 'iOTConnector_Num' is a specialization of 'Expression'.
+The class 'iOTConnector_Var' is a specialization of 'Expression'.
+
+Relationships between classes are modeled using associations.
+An association connects 'iOTConnector_Program' and 'iOTConnector_Webserver'. From 'iOTConnector_Program', the role 'iOTConnector_Program' has cardinality 0..*, and from 'iOTConnector_Webserver', the role 'iOTConnector_Webserver' has cardinality 0..*.
+An association connects 'iOTConnector_Wifi' and 'iOTConnector_Program'. From 'iOTConnector_Wifi', the role 'iOTConnector_Wifi' has cardinality 0..*, and from 'iOTConnector_Program', the role 'iOTConnector_Program2' has cardinality 0..*.
+An association connects 'iOTConnector_Program' and 'iOTConnector_Config'. From 'iOTConnector_Program', the role 'iOTConnector_Program4' has cardinality 0..*, and from 'iOTConnector_Config', the role 'iOTConnector_Config' has cardinality 0..*.
+An association connects 'iOTConnector_Board' and 'iOTConnector_Program'. From 'iOTConnector_Board', the role 'iOTConnector_Board' has cardinality 0..*, and from 'iOTConnector_Program', the role 'iOTConnector_Program6' has cardinality 0..*.
+An association connects 'iOTConnector_Config' and 'iOTConnector_Sensor'. From 'iOTConnector_Config', the role 'iOTConnector_Config8' has cardinality 0..*, and from 'iOTConnector_Sensor', the role 'iOTConnector_Sensor' has cardinality 0..*.
+An association connects 'iOTConnector_SensorConfig' and 'iOTConnector_Board'. From 'iOTConnector_SensorConfig', the role 'iOTConnector_SensorConfig' has cardinality 0..*, and from 'iOTConnector_Board', the role 'iOTConnector_Board10' has cardinality 0..*.
+An association connects 'iOTConnector_Board' and 'iOTConnector_Config'. From 'iOTConnector_Board', the role 'iOTConnector_Board12' has cardinality 0..*, and from 'iOTConnector_Config', the role 'iOTConnector_Config13' has cardinality 0..*.
+An association connects 'iOTConnector_Output' and 'iOTConnector_Sensor'. From 'iOTConnector_Output', the role 'iOTConnector_Output' has cardinality 0..*, and from 'iOTConnector_Sensor', the role 'iOTConnector_Sensor15' has cardinality 0..*.
+An association connects 'iOTConnector_Sensor' and 'iOTConnector_Function'. From 'iOTConnector_Sensor', the role 'iOTConnector_Sensor17' has cardinality 0..*, and from 'iOTConnector_Function', the role 'iOTConnector_Function' has cardinality 0..*.
+An association connects 'iOTConnector_Send' and 'iOTConnector_Sensor'. From 'iOTConnector_Send', the role 'iOTConnector_Send' has cardinality 0..*, and from 'iOTConnector_Sensor', the role 'iOTConnector_Sensor19' has cardinality 0..*.
+An association connects 'iOTConnector_Output' and 'iOTConnector_ReadingName'. From 'iOTConnector_Output', the role 'iOTConnector_Output21' has cardinality 0..*, and from 'iOTConnector_ReadingName', the role 'iOTConnector_ReadingName' has cardinality 0..*.
+An association connects 'iOTConnector_SampleAction' and 'iOTConnector_Sample'. From 'iOTConnector_SampleAction', the role 'iOTConnector_SampleAction' has cardinality 0..*, and from 'iOTConnector_Sample', the role 'iOTConnector_Sample' has cardinality 0..*.
+An association connects 'iOTConnector_ReadingName' and 'iOTConnector_SampleAction'. From 'iOTConnector_ReadingName', the role 'iOTConnector_ReadingName25' has cardinality 0..*, and from 'iOTConnector_SampleAction', the role 'iOTConnector_SampleAction24' has cardinality 0..*.
+An association connects 'iOTConnector_ReadingNameWithConfigScope' and 'iOTConnector_SampleAction'. From 'iOTConnector_ReadingNameWithConfigScope', the role 'iOTConnector_ReadingNameWithConfigScope' has cardinality 0..*, and from 'iOTConnector_SampleAction', the role 'iOTConnector_SampleAction27' has cardinality 0..*.
+An association connects 'iOTConnector_SampleAction' and 'iOTConnector_RelationalOperator'. From 'iOTConnector_SampleAction', the role 'iOTConnector_SampleAction29' has cardinality 0..*, and from 'iOTConnector_RelationalOperator', the role 'iOTConnector_RelationalOperator' has cardinality 0..*.
+An association connects 'iOTConnector_TimeUnit' and 'iOTConnector_SampleAction'. From 'iOTConnector_TimeUnit', the role 'iOTConnector_TimeUnit' has cardinality 0..*, and from 'iOTConnector_SampleAction', the role 'iOTConnector_SampleAction31' has cardinality 0..*.
+An association connects 'iOTConnector_Filter' and 'iOTConnector_FilterAction'. From 'iOTConnector_Filter', the role 'iOTConnector_Filter' has cardinality 0..*, and from 'iOTConnector_FilterAction', the role 'iOTConnector_FilterAction' has cardinality 0..*.
+An association connects 'iOTConnector_ReadingName' and 'iOTConnector_FilterAction'. From 'iOTConnector_ReadingName', the role 'iOTConnector_ReadingName35' has cardinality 0..*, and from 'iOTConnector_FilterAction', the role 'iOTConnector_FilterAction34' has cardinality 0..*.
+An association connects 'iOTConnector_FilterAction' and 'iOTConnector_FilterType'. From 'iOTConnector_FilterAction', the role 'iOTConnector_FilterAction37' has cardinality 0..*, and from 'iOTConnector_FilterType', the role 'iOTConnector_FilterType' has cardinality 0..*.
+An association connects 'iOTConnector_FilterAction' and 'iOTConnector_FilterExp'. From 'iOTConnector_FilterAction', the role 'iOTConnector_FilterAction39' has cardinality 0..*, and from 'iOTConnector_FilterExp', the role 'iOTConnector_FilterExp' has cardinality 0..*.
+An association connects 'iOTConnector_ReadingNameWithConfigScope' and 'iOTConnector_FilterExp'. From 'iOTConnector_ReadingNameWithConfigScope', the role 'iOTConnector_ReadingNameWithConfigScope42' has cardinality 0..*, and from 'iOTConnector_FilterExp', the role 'iOTConnector_FilterExp41' has cardinality 0..*.
+An association connects 'iOTConnector_RelationalOperator' and 'iOTConnector_FilterExp'. From 'iOTConnector_RelationalOperator', the role 'iOTConnector_RelationalOperator45' has cardinality 0..*, and from 'iOTConnector_FilterExp', the role 'iOTConnector_FilterExp44' has cardinality 0..*.
+An association connects 'iOTConnector_BitwiseOperator' and 'iOTConnector_FilterExp'. From 'iOTConnector_BitwiseOperator', the role 'iOTConnector_BitwiseOperator' has cardinality 0..*, and from 'iOTConnector_FilterExp', the role 'iOTConnector_FilterExp47' has cardinality 0..*.
+An association connects 'iOTConnector_FilterExp' and 'iOTConnector_FilterExp'. From 'iOTConnector_FilterExp', the role 'iOTConnector_FilterExp50' has cardinality 0..*, and from 'iOTConnector_FilterExp', the role 'iOTConnector_FilterExp48' has cardinality 0..*.
+An association connects 'iOTConnector_Process' and 'iOTConnector_ProcessAction'. From 'iOTConnector_Process', the role 'iOTConnector_Process' has cardinality 0..*, and from 'iOTConnector_ProcessAction', the role 'iOTConnector_ProcessAction' has cardinality 0..*.
+An association connects 'iOTConnector_ReadingName' and 'iOTConnector_ProcessAction'. From 'iOTConnector_ReadingName', the role 'iOTConnector_ReadingName54' has cardinality 0..*, and from 'iOTConnector_ProcessAction', the role 'iOTConnector_ProcessAction53' has cardinality 0..*.
+An association connects 'iOTConnector_ProcessAction' and 'iOTConnector_Expression'. From 'iOTConnector_ProcessAction', the role 'iOTConnector_ProcessAction56' has cardinality 0..*, and from 'iOTConnector_Expression', the role 'iOTConnector_Expression' has cardinality 0..*.
+An association connects 'iOTConnector_SendAction' and 'iOTConnector_Send'. From 'iOTConnector_SendAction', the role 'iOTConnector_SendAction' has cardinality 0..*, and from 'iOTConnector_Send', the role 'iOTConnector_Send58' has cardinality 0..*.
+An association connects 'iOTConnector_SendAction' and 'iOTConnector_ReadingName'. From 'iOTConnector_SendAction', the role 'iOTConnector_SendAction60' has cardinality 0..*, and from 'iOTConnector_ReadingName', the role 'iOTConnector_ReadingName61' has cardinality 0..*.
+An association connects 'iOTConnector_RelationalOperator' and 'iOTConnector_SendAction'. From 'iOTConnector_RelationalOperator', the role 'iOTConnector_RelationalOperator64' has cardinality 0..*, and from 'iOTConnector_SendAction', the role 'iOTConnector_SendAction63' has cardinality 0..*.
+An association connects 'iOTConnector_ReadingNameWithConfigScope' and 'iOTConnector_ReadingName'. From 'iOTConnector_ReadingNameWithConfigScope', the role 'iOTConnector_ReadingNameWithConfigScope66' has cardinality 0..*, and from 'iOTConnector_ReadingName', the role 'iOTConnector_ReadingName67' has cardinality 0..*.
+An association connects 'iOTConnector_Plus' and 'iOTConnector_Expression'. From 'iOTConnector_Plus', the role 'iOTConnector_Plus' has cardinality 0..*, and from 'iOTConnector_Expression', the role 'iOTConnector_Expression69' has cardinality 0..*.
+An association connects 'iOTConnector_Expression' and 'iOTConnector_Plus'. From 'iOTConnector_Expression', the role 'iOTConnector_Expression72' has cardinality 0..*, and from 'iOTConnector_Plus', the role 'iOTConnector_Plus71' has cardinality 0..*.
+An association connects 'iOTConnector_Minus' and 'iOTConnector_Expression'. From 'iOTConnector_Minus', the role 'iOTConnector_Minus' has cardinality 0..*, and from 'iOTConnector_Expression', the role 'iOTConnector_Expression74' has cardinality 0..*.
+An association connects 'iOTConnector_Minus' and 'iOTConnector_Expression'. From 'iOTConnector_Minus', the role 'iOTConnector_Minus76' has cardinality 0..*, and from 'iOTConnector_Expression', the role 'iOTConnector_Expression77' has cardinality 0..*.
+An association connects 'iOTConnector_Expression' and 'iOTConnector_Mult'. From 'iOTConnector_Expression', the role 'iOTConnector_Expression79' has cardinality 0..*, and from 'iOTConnector_Mult', the role 'iOTConnector_Mult' has cardinality 0..*.
+An association connects 'iOTConnector_Mult' and 'iOTConnector_Expression'. From 'iOTConnector_Mult', the role 'iOTConnector_Mult81' has cardinality 0..*, and from 'iOTConnector_Expression', the role 'iOTConnector_Expression82' has cardinality 0..*.
+An association connects 'iOTConnector_Expression' and 'iOTConnector_Div'. From 'iOTConnector_Expression', the role 'iOTConnector_Expression84' has cardinality 0..*, and from 'iOTConnector_Div', the role 'iOTConnector_Div' has cardinality 0..*.
+An association connects 'iOTConnector_Div' and 'iOTConnector_Expression'. From 'iOTConnector_Div', the role 'iOTConnector_Div86' has cardinality 0..*, and from 'iOTConnector_Expression', the role 'iOTConnector_Expression87' has cardinality 0..*.
+An association connects 'iOTConnector_Var' and 'iOTConnector_ReadingNameWithConfigScope'. From 'iOTConnector_Var', the role 'iOTConnector_Var' has cardinality 0..*, and from 'iOTConnector_ReadingNameWithConfigScope', the role 'iOTConnector_ReadingNameWithConfigScope89' has cardinality 0..*.

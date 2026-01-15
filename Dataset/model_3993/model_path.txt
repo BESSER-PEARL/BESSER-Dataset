@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/szschaler/ttc2014/TTC2014/models/classes.ecore

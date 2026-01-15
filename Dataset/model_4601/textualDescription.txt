@@ -1,0 +1,83 @@
+The domain model 'adfg' describes the core structural elements and their relationships within the system.
+
+The model defines 16 main class(es).
+
+'adfg_AperiodicActor' represents an important domain concept.
+It has the following attributes: 'replenishmentPeriod', which is of type str; 'capacity', which is of type str.
+
+'adfg_Actor' represents an important domain concept.
+It has the following attributes: 'nbPorts', which is of type int; 'name', which is of type str; 'procNumber', which is of type int; 'sourceCode', which is of type str; 'priority', which is of type int.
+
+'adfg_GraphConnection' represents an important domain concept.
+It does not declare any attributes.
+
+'adfg_InputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'Actor' represents an important domain concept.
+It does not declare any attributes.
+
+'adfg_Graph' represents an important domain concept.
+It has the following attributes: 'bufferingRequirements', which is of type int; 'nbActors', which is of type int; 'id', which is of type int; 'processorUtilization', which is of type float; 'name', which is of type str; 'sourceCode', which is of type str; 'nbBuffers', which is of type int.
+
+'Port' represents an important domain concept.
+It does not declare any attributes.
+
+'adfg_Channel' represents an important domain concept.
+It has one attribute: 'initial', which is of type int.
+
+'adfg_Port' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'name', which is of type str; 'sequence', which is of type str.
+
+'Connection' represents an important domain concept.
+It does not declare any attributes.
+
+'adfg_Connection' represents an important domain concept.
+It has the following attributes: 'id', which is of type int; 'size', which is of type int.
+
+'adfg_OutputPort' represents an important domain concept.
+It does not declare any attributes.
+
+'adfg_Application' represents an important domain concept.
+It has the following attributes: 'dynamicChecking', which is of type bool; 'sourceCode', which is of type str; 'nbProcessors', which is of type int; 'name', which is of type str; 'nbGraphs', which is of type int; 'schedulingAlgorithm', which is of type str.
+
+'adfg_AffineRelation' represents an important domain concept.
+It has the following attributes: 'd', which is of type int; 'phi', which is of type int; 'n', which is of type int.
+
+'adfg_LossyChannel' represents an important domain concept.
+It does not declare any attributes.
+
+'adfg_PeriodicActor' represents an important domain concept.
+It has the following attributes: 'periodUpperBound', which is of type str; 'periodLowerBound', which is of type str; 'wcet', which is of type str; 'deadline', which is of type str; 'phase', which is of type str; 'period', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'adfg_InputPort' is a specialization of 'Port'.
+The class 'adfg_OutputPort' is a specialization of 'Port'.
+The class 'adfg_PeriodicActor' is a specialization of 'Actor'.
+The class 'adfg_Channel' is a specialization of 'Connection'.
+The class 'adfg_AperiodicActor' is a specialization of 'Actor'.
+The class 'adfg_LossyChannel' is a specialization of 'Connection'.
+
+Relationships between classes are modeled using associations.
+An association connects 'adfg_Application' and 'adfg_Graph'. From 'adfg_Application', the role 'owner' has cardinality 0..*, and from 'adfg_Graph', the role 'Graph' has cardinality 0..*.
+An association connects 'adfg_Application' and 'adfg_GraphConnection'. From 'adfg_Application', the role 'owner2' has cardinality 0..*, and from 'adfg_GraphConnection', the role 'GraphConnection' has cardinality 0..*.
+An association connects 'adfg_Application' and 'adfg_Graph'. From 'adfg_Application', the role 'Application' has cardinality 0..*, and from 'adfg_Graph', the role 'graphs' has cardinality 0..*.
+An association connects 'adfg_Graph' and 'adfg_Actor'. From 'adfg_Graph', the role 'owner5' has cardinality 0..*, and from 'adfg_Actor', the role 'Actor' has cardinality 0..*.
+An association connects 'adfg_Graph' and 'adfg_AffineRelation'. From 'adfg_Graph', the role 'owner7' has cardinality 0..*, and from 'adfg_AffineRelation', the role 'AffineRelation' has cardinality 0..*.
+An association connects 'adfg_Connection' and 'adfg_Graph'. From 'adfg_Connection', the role 'Connection' has cardinality 0..*, and from 'adfg_Graph', the role 'owner9' has cardinality 0..*.
+An association connects 'adfg_GraphConnection' and 'adfg_Graph'. From 'adfg_GraphConnection', the role 'adfg_GraphConnection' has cardinality 0..*, and from 'adfg_Graph', the role 'adfg_Graph' has cardinality 0..*.
+An association connects 'adfg_Graph' and 'adfg_GraphConnection'. From 'adfg_Graph', the role 'adfg_Graph13' has cardinality 0..*, and from 'adfg_GraphConnection', the role 'adfg_GraphConnection12' has cardinality 0..*.
+An association connects 'adfg_Application' and 'adfg_GraphConnection'. From 'adfg_Application', the role 'Application15' has cardinality 0..*, and from 'adfg_GraphConnection', the role 'GraphConnections' has cardinality 0..*.
+An association connects 'adfg_Graph' and 'adfg_Actor'. From 'adfg_Graph', the role 'Graph17' has cardinality 0..*, and from 'adfg_Actor', the role 'nodes' has cardinality 0..*.
+An association connects 'adfg_Actor' and 'adfg_Port'. From 'adfg_Actor', the role 'owner19' has cardinality 0..*, and from 'adfg_Port', the role 'Port' has cardinality 0..*.
+An association connects 'adfg_AffineRelation' and 'adfg_PeriodicActor'. From 'adfg_AffineRelation', the role 'affineRelationSource' has cardinality 0..*, and from 'adfg_PeriodicActor', the role 'PeriodicActor' has cardinality 0..*.
+An association connects 'adfg_AffineRelation' and 'adfg_PeriodicActor'. From 'adfg_AffineRelation', the role 'affineRelationTarget' has cardinality 0..*, and from 'adfg_PeriodicActor', the role 'PeriodicActor22' has cardinality 0..*.
+An association connects 'adfg_Graph' and 'adfg_AffineRelation'. From 'adfg_Graph', the role 'Graph24' has cardinality 0..*, and from 'adfg_AffineRelation', the role 'affineRelations' has cardinality 0..*.
+An association connects 'adfg_Connection' and 'adfg_OutputPort'. From 'adfg_Connection', the role 'connection' has cardinality 0..*, and from 'adfg_OutputPort', the role 'OutputPort' has cardinality 0..*.
+An association connects 'adfg_Connection' and 'adfg_InputPort'. From 'adfg_Connection', the role 'connection27' has cardinality 0..*, and from 'adfg_InputPort', the role 'InputPort' has cardinality 0..*.
+An association connects 'adfg_Graph' and 'adfg_Connection'. From 'adfg_Graph', the role 'Graph29' has cardinality 0..*, and from 'adfg_Connection', the role 'connections' has cardinality 0..*.
+An association connects 'adfg_Actor' and 'adfg_Port'. From 'adfg_Actor', the role 'Actor31' has cardinality 0..*, and from 'adfg_Port', the role 'ports' has cardinality 0..*.
+An association connects 'adfg_Connection' and 'adfg_InputPort'. From 'adfg_Connection', the role 'Connection33' has cardinality 0..*, and from 'adfg_InputPort', the role 'target' has cardinality 0..*.
+An association connects 'adfg_Connection' and 'adfg_OutputPort'. From 'adfg_Connection', the role 'Connection35' has cardinality 0..*, and from 'adfg_OutputPort', the role 'source' has cardinality 0..*.
+An association connects 'adfg_PeriodicActor' and 'adfg_AffineRelation'. From 'adfg_PeriodicActor', the role 'source37' has cardinality 0..*, and from 'adfg_AffineRelation', the role 'AffineRelation38' has cardinality 0..*.
+An association connects 'adfg_PeriodicActor' and 'adfg_AffineRelation'. From 'adfg_PeriodicActor', the role 'target40' has cardinality 0..*, and from 'adfg_AffineRelation', the role 'AffineRelation41' has cardinality 0..*.

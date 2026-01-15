@@ -1,0 +1,54 @@
+The domain model 'dsl' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'dsl_timeUnitValue' represents an important domain concept.
+It has one attribute: 'unit', which is of type str.
+
+'dsl_Task' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'nrOfTimes', which is of type int; 'time', which is of type int; 'action', which is of type str.
+
+'dsl_Mission' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ColorSensor' represents an important domain concept.
+It has one attribute: 'distinct', which is of type bool.
+
+'dsl_Ignorables' represents an important domain concept.
+It has one attribute: 'AVOID_OBJECTS', which is of type str.
+
+'dsl_TouchSensor' represents an important domain concept.
+It has one attribute: 'key', which is of type str.
+
+'SensorType' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_UltrasonicSensor' represents an important domain concept.
+It has the following attributes: 'comparator', which is of type str; 'distance', which is of type str.
+
+'dsl_SensorType' represents an important domain concept.
+It does not declare any attributes.
+
+'dsl_ColorValue' represents an important domain concept.
+It has one attribute: 'color', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'Actions' defines the following possible values: 'TURN_AROUND', 'MEASURE', 'BEEP', 'DRIVE_BACKWARD', 'DRIVE_FORWARD', 'ROTATE_L', 'DRIVETOEDGE', 'STOP_DRIVING', 'ROTATE_R'.
+The enumeration 'Directions' defines the following possible values: 'E', 'SW', 'S', 'NE', 'N', 'W', 'NW', 'SE'.
+The enumeration 'CompareOperator' defines the following possible values: 'NEQ', 'EQ', 'GEQ', 'L', 'G', 'LEQ'.
+The enumeration 'timeUnit' defines the following possible values: 'SECONDS', 'MILISECONDS'.
+The enumeration 'Colors' defines the following possible values: 'GRAY', 'DARK_GRAY', 'ORANGE', 'BLACK', 'WHITE', 'BLUE', 'RED', 'MAGENTA', 'GREEN', 'CYAN', 'YELLOW', 'PINK', 'LIGHT_GRAY'.
+The enumeration 'TouchSensorSides' defines the following possible values: 'ANY', 'BOTH', 'RIGHT', 'LEFT'.
+
+The model also captures inheritance relationships between classes.
+The class 'dsl_ColorSensor' is a specialization of 'SensorType'.
+The class 'dsl_TouchSensor' is a specialization of 'SensorType'.
+The class 'dsl_UltrasonicSensor' is a specialization of 'SensorType'.
+
+Relationships between classes are modeled using associations.
+An association connects 'dsl_Task' and 'dsl_Mission'. From 'dsl_Task', the role 'dsl_Task' has cardinality 0..*, and from 'dsl_Mission', the role 'dsl_Mission' has cardinality 0..*.
+An association connects 'dsl_Task' and 'dsl_SensorType'. From 'dsl_Task', the role 'dsl_Task2' has cardinality 0..*, and from 'dsl_SensorType', the role 'dsl_SensorType' has cardinality 0..*.
+An association connects 'dsl_Ignorables' and 'dsl_Task'. From 'dsl_Ignorables', the role 'dsl_Ignorables' has cardinality 0..*, and from 'dsl_Task', the role 'dsl_Task4' has cardinality 0..*.
+An association connects 'dsl_timeUnitValue' and 'dsl_Task'. From 'dsl_timeUnitValue', the role 'dsl_timeUnitValue' has cardinality 0..*, and from 'dsl_Task', the role 'dsl_Task6' has cardinality 0..*.
+An association connects 'dsl_ColorSensor' and 'dsl_ColorValue'. From 'dsl_ColorSensor', the role 'dsl_ColorSensor' has cardinality 0..*, and from 'dsl_ColorValue', the role 'dsl_ColorValue' has cardinality 0..*.
+An association connects 'dsl_ColorSensor' and 'dsl_ColorValue'. From 'dsl_ColorSensor', the role 'dsl_ColorSensor9' has cardinality 0..*, and from 'dsl_ColorValue', the role 'dsl_ColorValue10' has cardinality 0..*.

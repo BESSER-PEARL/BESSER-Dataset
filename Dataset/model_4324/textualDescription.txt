@@ -1,0 +1,52 @@
+The domain model 'Measure' describes the core structural elements and their relationships within the system.
+
+The model defines 9 main class(es).
+
+'Measure_Measure' represents an important domain concept.
+It does not declare any attributes.
+
+'Measure_DoubleMeasure' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Measure_RootMeasureSet' represents an important domain concept.
+It has one attribute: 'modelType', which is of type str.
+
+'Measure' represents an important domain concept.
+It does not declare any attributes.
+
+'Measure_PercentageMeasure' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'Measure_MeasureSet' represents an important domain concept.
+It has the following attributes: 'elementType', which is of type str; 'elementName', which is of type str.
+
+'Measure_Metric' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'preferredValue', which is of type str; 'desc', which is of type str.
+
+'Measure_Category' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'desc', which is of type str.
+
+'Measure_IntegerMeasure' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ModelKind' defines the following possible values: 'KM3', 'UML2'.
+The enumeration 'ElementKind' defines the following possible values: 'metamodel', 'interface', 'class', 'model', 'package'.
+
+The model also captures inheritance relationships between classes.
+The class 'Measure_IntegerMeasure' is a specialization of 'Measure'.
+The class 'Measure_DoubleMeasure' is a specialization of 'Measure'.
+The class 'Measure_PercentageMeasure' is a specialization of 'Measure'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Measure_Category' and 'Measure_RootMeasureSet'. From 'Measure_Category', the role 'Category' has cardinality 0..*, and from 'Measure_RootMeasureSet', the role 'root' has cardinality 0..*.
+An association connects 'Measure_RootMeasureSet' and 'Measure_MeasureSet'. From 'Measure_RootMeasureSet', the role 'root2' has cardinality 0..*, and from 'Measure_MeasureSet', the role 'MeasureSet' has cardinality 0..*.
+An association connects 'Measure_Metric' and 'Measure_Category'. From 'Measure_Metric', the role 'Metric' has cardinality 0..*, and from 'Measure_Category', the role 'category' has cardinality 0..*.
+An association connects 'Measure_Category' and 'Measure_RootMeasureSet'. From 'Measure_Category', the role 'categories' has cardinality 0..*, and from 'Measure_RootMeasureSet', the role 'RootMeasureSet' has cardinality 0..*.
+An association connects 'Measure_Metric' and 'Measure_Category'. From 'Measure_Metric', the role 'metrics' has cardinality 0..*, and from 'Measure_Category', the role 'Category6' has cardinality 0..*.
+An association connects 'Measure_Measure' and 'Measure_MeasureSet'. From 'Measure_Measure', the role 'Measure' has cardinality 0..*, and from 'Measure_MeasureSet', the role 'owner' has cardinality 0..*.
+An association connects 'Measure_MeasureSet' and 'Measure_RootMeasureSet'. From 'Measure_MeasureSet', the role 'measureSets' has cardinality 0..*, and from 'Measure_RootMeasureSet', the role 'RootMeasureSet9' has cardinality 0..*.
+An association connects 'Measure_MeasureSet' and 'Measure_MeasureSet'. From 'Measure_MeasureSet', the role 'parent' has cardinality 0..*, and from 'Measure_MeasureSet', the role 'MeasureSet12' has cardinality 0..*.
+An association connects 'Measure_MeasureSet' and 'Measure_MeasureSet'. From 'Measure_MeasureSet', the role 'MeasureSet15' has cardinality 0..*, and from 'Measure_MeasureSet', the role 'subsets' has cardinality 0..*.
+An association connects 'Measure_Metric' and 'Measure_Measure'. From 'Measure_Metric', the role 'Measure_Metric' has cardinality 0..*, and from 'Measure_Measure', the role 'Measure_Measure' has cardinality 0..*.
+An association connects 'Measure_Measure' and 'Measure_MeasureSet'. From 'Measure_Measure', the role 'measures' has cardinality 0..*, and from 'Measure_MeasureSet', the role 'MeasureSet18' has cardinality 0..*.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/creckord/org.eclipse.uml2/plugins/org.eclipse.uml2.uml.profile.l2/model/L2.ecore

@@ -1,0 +1,28 @@
+The domain model 'testFramework' describes the core structural elements and their relationships within the system.
+
+The model defines 6 main class(es).
+
+'testFramework_Greeting' represents an important domain concept.
+It has the following attributes: 'summaryDetails', which is of type str; 'testcaseValue', which is of type int.
+
+'testFramework_FIRSTACTION' represents an important domain concept.
+It has one attribute: 'checktableAction', which is of type str.
+
+'testFramework_LABEL' represents an important domain concept.
+It has one attribute: 'labelvalue', which is of type str.
+
+'testFramework_IDENTIFIER' represents an important domain concept.
+It has one attribute: 'identifiervalue', which is of type str.
+
+'testFramework_TABLEACTION' represents an important domain concept.
+It does not declare any attributes.
+
+'testFramework_Model' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'testFramework_Greeting' and 'testFramework_Model'. From 'testFramework_Greeting', the role 'testFramework_Greeting' has cardinality 0..*, and from 'testFramework_Model', the role 'testFramework_Model' has cardinality 0..*.
+An association connects 'testFramework_Greeting' and 'testFramework_FIRSTACTION'. From 'testFramework_Greeting', the role 'testFramework_Greeting2' has cardinality 0..*, and from 'testFramework_FIRSTACTION', the role 'testFramework_FIRSTACTION' has cardinality 0..*.
+An association connects 'testFramework_FIRSTACTION' and 'testFramework_TABLEACTION'. From 'testFramework_FIRSTACTION', the role 'testFramework_FIRSTACTION4' has cardinality 0..*, and from 'testFramework_TABLEACTION', the role 'testFramework_TABLEACTION' has cardinality 0..*.
+An association connects 'testFramework_TABLEACTION' and 'testFramework_IDENTIFIER'. From 'testFramework_TABLEACTION', the role 'testFramework_TABLEACTION6' has cardinality 0..*, and from 'testFramework_IDENTIFIER', the role 'testFramework_IDENTIFIER' has cardinality 0..*.
+An association connects 'testFramework_LABEL' and 'testFramework_TABLEACTION'. From 'testFramework_LABEL', the role 'testFramework_LABEL' has cardinality 0..*, and from 'testFramework_TABLEACTION', the role 'testFramework_TABLEACTION8' has cardinality 0..*.

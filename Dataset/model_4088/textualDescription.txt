@@ -1,0 +1,43 @@
+The domain model 'Behavior' describes the core structural elements and their relationships within the system.
+
+The model defines 7 main class(es).
+
+'Behavior_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'Behavior_System' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior_Transition' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior_Event' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior_State' represents an important domain concept.
+It does not declare any attributes.
+
+'Behavior_Component' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'Behavior_System' is a specialization of 'NamedElement'.
+The class 'Behavior_Component' is a specialization of 'NamedElement'.
+The class 'Behavior_Event' is a specialization of 'NamedElement'.
+The class 'Behavior_Transition' is a specialization of 'NamedElement'.
+The class 'Behavior_State' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Behavior_Component' and 'Behavior_System'. From 'Behavior_Component', the role 'Behavior_Component' has cardinality 0..*, and from 'Behavior_System', the role 'Behavior_System' has cardinality 0..*.
+An association connects 'Behavior_Event' and 'Behavior_System'. From 'Behavior_Event', the role 'Behavior_Event' has cardinality 0..*, and from 'Behavior_System', the role 'Behavior_System2' has cardinality 0..*.
+An association connects 'Behavior_State' and 'Behavior_Component'. From 'Behavior_State', the role 'Behavior_State' has cardinality 0..*, and from 'Behavior_Component', the role 'Behavior_Component4' has cardinality 0..*.
+An association connects 'Behavior_Component' and 'Behavior_Transition'. From 'Behavior_Component', the role 'Behavior_Component6' has cardinality 0..*, and from 'Behavior_Transition', the role 'Behavior_Transition' has cardinality 0..*.
+An association connects 'Behavior_Component' and 'Behavior_State'. From 'Behavior_Component', the role 'Behavior_Component8' has cardinality 0..*, and from 'Behavior_State', the role 'Behavior_State9' has cardinality 0..*.
+An association connects 'Behavior_State' and 'Behavior_Transition'. From 'Behavior_State', the role 'Behavior_State12' has cardinality 0..*, and from 'Behavior_Transition', the role 'Behavior_Transition11' has cardinality 0..*.
+An association connects 'Behavior_Transition' and 'Behavior_State'. From 'Behavior_Transition', the role 'Behavior_Transition14' has cardinality 0..*, and from 'Behavior_State', the role 'Behavior_State15' has cardinality 0..*.
+An association connects 'Behavior_State' and 'Behavior_Transition'. From 'Behavior_State', the role 'Behavior_State18' has cardinality 0..*, and from 'Behavior_Transition', the role 'Behavior_Transition17' has cardinality 0..*.
+An association connects 'Behavior_Event' and 'Behavior_Transition'. From 'Behavior_Event', the role 'Behavior_Event21' has cardinality 0..*, and from 'Behavior_Transition', the role 'Behavior_Transition20' has cardinality 0..*.
+An association connects 'Behavior_Transition' and 'Behavior_Event'. From 'Behavior_Transition', the role 'Behavior_Transition23' has cardinality 0..*, and from 'Behavior_Event', the role 'Behavior_Event24' has cardinality 0..*.

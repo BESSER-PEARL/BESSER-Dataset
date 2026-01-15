@@ -1,0 +1,481 @@
+The domain model 'raspirover' describes the core structural elements and their relationships within the system.
+
+The model defines 110 main class(es).
+
+'raspirover_NumericExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type bool.
+
+'Action' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Length' represents an important domain concept.
+It does not declare any attributes.
+
+'Query' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'raspirover_DigitalPin' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_AngleDistinct' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_QuantityArithmeticOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_QuantityScalarOperation' represents an important domain concept.
+It has one attribute: 'rhs', which is of type float.
+
+'raspirover_Foot' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_ForwardAction' represents an important domain concept.
+It does not declare any attributes.
+
+'StringValue' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_QuantityComparisonOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Radian' represents an important domain concept.
+It does not declare any attributes.
+
+'RoverExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Inch' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_TemperatureQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'Module' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_BackwardAction' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_BooleanExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+'raspirover_Meter' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_TurnAction' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_ImperialSystemUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_StopAction' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_LengthOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Turn' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_StringExpression' represents an important domain concept.
+It has one attribute: 'op', which is of type bool.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'ImperialSystemUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'QuantityScalarOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_LengthSmaller' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Conditional' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_TurnDegAction' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_NumberValue' represents an important domain concept.
+It has one attribute: 'nValue', which is of type str.
+
+'QuantityOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_LengthEquals' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_LogAction' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'raspirover_AngleEquals' represents an important domain concept.
+It does not declare any attributes.
+
+'Board' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_RoverExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_ArduinoModule' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Module' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_QuantityHomogenousOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_ArduinoAnalogModule' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_BackwardMinAction' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_LengthDistinct' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_HumidityQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_SendAction' represents an important domain concept.
+It has one attribute: 'message', which is of type str.
+
+'RoverValue' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_ArduinoDigitalModule' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_AngleSmaller' represents an important domain concept.
+It does not declare any attributes.
+
+'MetricSystemUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Param' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'raspirover_Instruction' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_LengthSubtract' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_RasPiBoard' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Query' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_LengthScalarMultiply' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_LengthGreater' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Loop' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_ObstacleQuery' represents an important domain concept.
+It has one attribute: 'front', which is of type bool.
+
+'raspirover_RoverValue' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_MessageQuery' represents an important domain concept.
+It does not declare any attributes.
+
+'AngleUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_VarAssignment' represents an important domain concept.
+It has one attribute: 'name', which is of type bool.
+
+'AngleOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_AngleScalarDivide' represents an important domain concept.
+It does not declare any attributes.
+
+'QuantityHomogenousOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Gradian' represents an important domain concept.
+It does not declare any attributes.
+
+'LengthUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_MetricSystemUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Yard' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_RoverProgram' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'raspirover_LengthScalarDivide' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_LengthUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_AngleScalarMultiply' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_StringValue' represents an important domain concept.
+It has one attribute: 'sValue', which is of type bool.
+
+'Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Pin' represents an important domain concept.
+It has one attribute: 'level', which is of type int.
+
+'raspirover_RclBlock' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_AnalogPin' represents an important domain concept.
+It does not declare any attributes.
+
+'Quantity' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_AngleAdd' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_AngleSubtract' represents an important domain concept.
+It does not declare any attributes.
+
+'ArduinoModule' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Angle' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_BooleanValue' represents an important domain concept.
+It has one attribute: 'bValue', which is of type bool.
+
+'raspirover_Millimeter' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Centimeter' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Sketch' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_AngleOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_ForwardMinAction' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_LengthAdd' represents an important domain concept.
+It does not declare any attributes.
+
+'BooleanValue' represents an important domain concept.
+It does not declare any attributes.
+
+'LengthOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Quantity' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'raspirover_Board' represents an important domain concept.
+It does not declare any attributes.
+
+'NumberValue' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Degree' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_VarRef' represents an important domain concept.
+It has one attribute: 'name', which is of type float.
+
+'raspirover_Unit' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_QuantityOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_AngleGreater' represents an important domain concept.
+It does not declare any attributes.
+
+'Pin' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_AngleUnit' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Project' represents an important domain concept.
+It does not declare any attributes.
+
+'raspirover_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'NumericOperator' defines the following possible values: 'neq', 'lt', 'geq', 'gt', 'eq', 'leq'.
+The enumeration 'StringOperator' defines the following possible values: 'eq', 'neq'.
+The enumeration 'BooleanOperator' defines the following possible values: 'neq', 'eq'.
+
+The model also captures inheritance relationships between classes.
+The class 'raspirover_RasPiBoard' is a specialization of 'Board'.
+The class 'raspirover_Board' is a specialization of 'NamedElement'.
+The class 'raspirover_Sketch' is a specialization of 'NamedElement'.
+The class 'raspirover_DigitalPin' is a specialization of 'Pin'.
+The class 'raspirover_Pin' is a specialization of 'NamedElement'.
+The class 'raspirover_ArduinoDigitalModule' is a specialization of 'ArduinoModule'.
+The class 'raspirover_ArduinoModule' is a specialization of 'Module'.
+The class 'raspirover_Module' is a specialization of 'NamedElement'.
+The class 'raspirover_AnalogPin' is a specialization of 'Pin'.
+The class 'raspirover_ArduinoAnalogModule' is a specialization of 'ArduinoModule'.
+The class 'raspirover_VarAssignment' is a specialization of 'Statement'.
+The class 'raspirover_Conditional' is a specialization of 'Statement'.
+The class 'raspirover_Loop' is a specialization of 'Statement'.
+The class 'raspirover_RclBlock' is a specialization of 'Statement'.
+The class 'raspirover_TemperatureQuery' is a specialization of 'Query'.
+The class 'raspirover_TemperatureQuery' is a specialization of 'NumberValue'.
+The class 'raspirover_HumidityQuery' is a specialization of 'Query'.
+The class 'raspirover_HumidityQuery' is a specialization of 'NumberValue'.
+The class 'raspirover_MessageQuery' is a specialization of 'Query'.
+The class 'raspirover_MessageQuery' is a specialization of 'StringValue'.
+The class 'raspirover_ObstacleQuery' is a specialization of 'Query'.
+The class 'raspirover_ObstacleQuery' is a specialization of 'BooleanValue'.
+The class 'raspirover_NumericExpression' is a specialization of 'RoverExpression'.
+The class 'raspirover_StringExpression' is a specialization of 'RoverExpression'.
+The class 'raspirover_BooleanExpression' is a specialization of 'RoverExpression'.
+The class 'raspirover_NumberValue' is a specialization of 'RoverValue'.
+The class 'raspirover_StringValue' is a specialization of 'RoverValue'.
+The class 'raspirover_BooleanValue' is a specialization of 'RoverValue'.
+The class 'raspirover_Action' is a specialization of 'Statement'.
+The class 'raspirover_ForwardAction' is a specialization of 'Action'.
+The class 'raspirover_ForwardMinAction' is a specialization of 'Action'.
+The class 'raspirover_BackwardAction' is a specialization of 'Action'.
+The class 'raspirover_BackwardMinAction' is a specialization of 'Action'.
+The class 'raspirover_TurnAction' is a specialization of 'Action'.
+The class 'raspirover_TurnDegAction' is a specialization of 'Action'.
+The class 'raspirover_StopAction' is a specialization of 'Action'.
+The class 'raspirover_LogAction' is a specialization of 'Action'.
+The class 'raspirover_SendAction' is a specialization of 'Action'.
+The class 'raspirover_VarRef' is a specialization of 'BooleanValue'.
+The class 'raspirover_VarRef' is a specialization of 'NumberValue'.
+The class 'raspirover_VarRef' is a specialization of 'StringValue'.
+The class 'raspirover_VarRef' is a specialization of 'Statement'.
+The class 'raspirover_LengthUnit' is a specialization of 'Unit'.
+The class 'raspirover_Centimeter' is a specialization of 'MetricSystemUnit'.
+The class 'raspirover_Centimeter' is a specialization of 'LengthUnit'.
+The class 'raspirover_Millimeter' is a specialization of 'MetricSystemUnit'.
+The class 'raspirover_Millimeter' is a specialization of 'LengthUnit'.
+The class 'raspirover_Meter' is a specialization of 'MetricSystemUnit'.
+The class 'raspirover_Meter' is a specialization of 'LengthUnit'.
+The class 'raspirover_Foot' is a specialization of 'ImperialSystemUnit'.
+The class 'raspirover_Foot' is a specialization of 'LengthUnit'.
+The class 'raspirover_Inch' is a specialization of 'ImperialSystemUnit'.
+The class 'raspirover_Inch' is a specialization of 'LengthUnit'.
+The class 'raspirover_Yard' is a specialization of 'ImperialSystemUnit'.
+The class 'raspirover_Yard' is a specialization of 'LengthUnit'.
+The class 'raspirover_MetricSystemUnit' is a specialization of 'Unit'.
+The class 'raspirover_ImperialSystemUnit' is a specialization of 'Unit'.
+The class 'raspirover_AngleUnit' is a specialization of 'Unit'.
+The class 'raspirover_Radian' is a specialization of 'AngleUnit'.
+The class 'raspirover_Degree' is a specialization of 'AngleUnit'.
+The class 'raspirover_Turn' is a specialization of 'AngleUnit'.
+The class 'raspirover_Gradian' is a specialization of 'AngleUnit'.
+The class 'raspirover_Length' is a specialization of 'Quantity'.
+The class 'raspirover_Angle' is a specialization of 'Quantity'.
+The class 'raspirover_LengthOperation' is a specialization of 'QuantityOperation'.
+The class 'raspirover_LengthAdd' is a specialization of 'LengthOperation'.
+The class 'raspirover_LengthAdd' is a specialization of 'QuantityHomogenousOperation'.
+The class 'raspirover_LengthSubtract' is a specialization of 'LengthOperation'.
+The class 'raspirover_LengthSubtract' is a specialization of 'QuantityHomogenousOperation'.
+The class 'raspirover_LengthScalarMultiply' is a specialization of 'LengthOperation'.
+The class 'raspirover_LengthScalarMultiply' is a specialization of 'QuantityScalarOperation'.
+The class 'raspirover_LengthScalarDivide' is a specialization of 'LengthOperation'.
+The class 'raspirover_LengthScalarDivide' is a specialization of 'QuantityScalarOperation'.
+The class 'raspirover_LengthEquals' is a specialization of 'LengthOperation'.
+The class 'raspirover_LengthEquals' is a specialization of 'QuantityHomogenousOperation'.
+The class 'raspirover_LengthDistinct' is a specialization of 'LengthOperation'.
+The class 'raspirover_LengthDistinct' is a specialization of 'QuantityHomogenousOperation'.
+The class 'raspirover_LengthSmaller' is a specialization of 'LengthOperation'.
+The class 'raspirover_LengthSmaller' is a specialization of 'QuantityHomogenousOperation'.
+The class 'raspirover_LengthGreater' is a specialization of 'LengthOperation'.
+The class 'raspirover_LengthGreater' is a specialization of 'QuantityHomogenousOperation'.
+The class 'raspirover_AngleOperation' is a specialization of 'QuantityOperation'.
+The class 'raspirover_AngleAdd' is a specialization of 'AngleOperation'.
+The class 'raspirover_AngleAdd' is a specialization of 'QuantityHomogenousOperation'.
+The class 'raspirover_AngleSubtract' is a specialization of 'AngleOperation'.
+The class 'raspirover_AngleSubtract' is a specialization of 'QuantityHomogenousOperation'.
+The class 'raspirover_AngleScalarMultiply' is a specialization of 'AngleOperation'.
+The class 'raspirover_AngleScalarMultiply' is a specialization of 'QuantityScalarOperation'.
+The class 'raspirover_AngleScalarDivide' is a specialization of 'AngleOperation'.
+The class 'raspirover_AngleScalarDivide' is a specialization of 'QuantityScalarOperation'.
+The class 'raspirover_AngleEquals' is a specialization of 'AngleOperation'.
+The class 'raspirover_AngleEquals' is a specialization of 'QuantityHomogenousOperation'.
+The class 'raspirover_AngleDistinct' is a specialization of 'AngleOperation'.
+The class 'raspirover_AngleDistinct' is a specialization of 'QuantityHomogenousOperation'.
+The class 'raspirover_AngleSmaller' is a specialization of 'AngleOperation'.
+The class 'raspirover_AngleSmaller' is a specialization of 'QuantityHomogenousOperation'.
+The class 'raspirover_AngleGreater' is a specialization of 'AngleOperation'.
+The class 'raspirover_AngleGreater' is a specialization of 'QuantityHomogenousOperation'.
+The class 'raspirover_QuantityArithmeticOperation' is a specialization of 'QuantityOperation'.
+The class 'raspirover_QuantityComparisonOperation' is a specialization of 'QuantityOperation'.
+The class 'raspirover_QuantityHomogenousOperation' is a specialization of 'QuantityOperation'.
+The class 'raspirover_QuantityScalarOperation' is a specialization of 'QuantityOperation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'raspirover_DigitalPin' and 'raspirover_RasPiBoard'. From 'raspirover_DigitalPin', the role 'raspirover_DigitalPin' has cardinality 0..*, and from 'raspirover_RasPiBoard', the role 'raspirover_RasPiBoard' has cardinality 0..*.
+An association connects 'raspirover_RasPiBoard' and 'raspirover_AnalogPin'. From 'raspirover_RasPiBoard', the role 'raspirover_RasPiBoard2' has cardinality 0..*, and from 'raspirover_AnalogPin', the role 'raspirover_AnalogPin' has cardinality 0..*.
+An association connects 'raspirover_Project' and 'raspirover_Board'. From 'raspirover_Project', the role '4' has cardinality 0..*, and from 'raspirover_Board', the role 'unnamed role' has cardinality 0..*.
+An association connects 'raspirover_Project' and 'raspirover_Board'. From 'raspirover_Project', the role '6' has cardinality 0..*, and from 'raspirover_Board', the role '7' has cardinality 0..*.
+An association connects 'raspirover_Project' and 'raspirover_Sketch'. From 'raspirover_Project', the role '9' has cardinality 0..*, and from 'raspirover_Sketch', the role '10' has cardinality 0..*.
+An association connects 'raspirover_RoverProgram' and 'raspirover_Project'. From 'raspirover_RoverProgram', the role 'raspirover_RoverProgram' has cardinality 0..*, and from 'raspirover_Project', the role 'raspirover_Project' has cardinality 0..*.
+An association connects 'raspirover_Project' and 'raspirover_Sketch'. From 'raspirover_Project', the role '14' has cardinality 0..*, and from 'raspirover_Sketch', the role '13' has cardinality 0..*.
+An association connects 'raspirover_Block' and 'raspirover_Sketch'. From 'raspirover_Block', the role 'raspirover_Block' has cardinality 0..*, and from 'raspirover_Sketch', the role 'raspirover_Sketch' has cardinality 0..*.
+An association connects 'raspirover_Sketch' and 'raspirover_Board'. From 'raspirover_Sketch', the role 'raspirover_Sketch17' has cardinality 0..*, and from 'raspirover_Board', the role 'raspirover_Board' has cardinality 0..*.
+An association connects 'raspirover_Block' and 'raspirover_Instruction'. From 'raspirover_Block', the role 'raspirover_Block19' has cardinality 0..*, and from 'raspirover_Instruction', the role 'raspirover_Instruction' has cardinality 0..*.
+An association connects 'raspirover_DigitalPin' and 'raspirover_ArduinoDigitalModule'. From 'raspirover_DigitalPin', the role 'raspirover_DigitalPin21' has cardinality 0..*, and from 'raspirover_ArduinoDigitalModule', the role 'raspirover_ArduinoDigitalModule' has cardinality 0..*.
+An association connects 'raspirover_ArduinoAnalogModule' and 'raspirover_AnalogPin'. From 'raspirover_ArduinoAnalogModule', the role 'raspirover_ArduinoAnalogModule' has cardinality 0..*, and from 'raspirover_AnalogPin', the role 'raspirover_AnalogPin23' has cardinality 0..*.
+An association connects 'raspirover_Param' and 'raspirover_RoverProgram'. From 'raspirover_Param', the role 'raspirover_Param' has cardinality 0..*, and from 'raspirover_RoverProgram', the role 'raspirover_RoverProgram25' has cardinality 0..*.
+An association connects 'raspirover_RoverProgram' and 'raspirover_RclBlock'. From 'raspirover_RoverProgram', the role 'raspirover_RoverProgram27' has cardinality 0..*, and from 'raspirover_RclBlock', the role 'raspirover_RclBlock' has cardinality 0..*.
+An association connects 'raspirover_RclBlock' and 'raspirover_Statement'. From 'raspirover_RclBlock', the role '30' has cardinality 0..*, and from 'raspirover_Statement', the role '29' has cardinality 0..*.
+An association connects 'raspirover_RoverValue' and 'raspirover_VarAssignment'. From 'raspirover_RoverValue', the role 'raspirover_RoverValue' has cardinality 0..*, and from 'raspirover_VarAssignment', the role 'raspirover_VarAssignment' has cardinality 0..*.
+An association connects 'raspirover_Conditional' and 'raspirover_RoverExpression'. From 'raspirover_Conditional', the role 'raspirover_Conditional' has cardinality 0..*, and from 'raspirover_RoverExpression', the role 'raspirover_RoverExpression' has cardinality 0..*.
+An association connects 'raspirover_Conditional' and 'raspirover_RclBlock'. From 'raspirover_Conditional', the role 'raspirover_Conditional34' has cardinality 0..*, and from 'raspirover_RclBlock', the role 'raspirover_RclBlock35' has cardinality 0..*.
+An association connects 'raspirover_RclBlock' and 'raspirover_Conditional'. From 'raspirover_RclBlock', the role 'raspirover_RclBlock38' has cardinality 0..*, and from 'raspirover_Conditional', the role 'raspirover_Conditional37' has cardinality 0..*.
+An association connects 'raspirover_RoverExpression' and 'raspirover_Loop'. From 'raspirover_RoverExpression', the role 'raspirover_RoverExpression40' has cardinality 0..*, and from 'raspirover_Loop', the role 'raspirover_Loop' has cardinality 0..*.
+An association connects 'raspirover_Loop' and 'raspirover_RclBlock'. From 'raspirover_Loop', the role 'raspirover_Loop42' has cardinality 0..*, and from 'raspirover_RclBlock', the role 'raspirover_RclBlock43' has cardinality 0..*.
+An association connects 'raspirover_Statement' and 'raspirover_RclBlock'. From 'raspirover_Statement', the role '46' has cardinality 0..*, and from 'raspirover_RclBlock', the role '45' has cardinality 0..*.
+An association connects 'raspirover_NumericExpression' and 'raspirover_NumberValue'. From 'raspirover_NumericExpression', the role 'raspirover_NumericExpression' has cardinality 0..*, and from 'raspirover_NumberValue', the role 'raspirover_NumberValue' has cardinality 0..*.
+An association connects 'raspirover_NumericExpression' and 'raspirover_NumberValue'. From 'raspirover_NumericExpression', the role 'raspirover_NumericExpression49' has cardinality 0..*, and from 'raspirover_NumberValue', the role 'raspirover_NumberValue50' has cardinality 0..*.
+An association connects 'raspirover_StringExpression' and 'raspirover_StringValue'. From 'raspirover_StringExpression', the role 'raspirover_StringExpression' has cardinality 0..*, and from 'raspirover_StringValue', the role 'raspirover_StringValue' has cardinality 0..*.
+An association connects 'raspirover_StringValue' and 'raspirover_StringExpression'. From 'raspirover_StringValue', the role 'raspirover_StringValue54' has cardinality 0..*, and from 'raspirover_StringExpression', the role 'raspirover_StringExpression53' has cardinality 0..*.
+An association connects 'raspirover_BooleanValue' and 'raspirover_BooleanExpression'. From 'raspirover_BooleanValue', the role 'raspirover_BooleanValue' has cardinality 0..*, and from 'raspirover_BooleanExpression', the role 'raspirover_BooleanExpression' has cardinality 0..*.
+An association connects 'raspirover_BooleanValue' and 'raspirover_BooleanExpression'. From 'raspirover_BooleanValue', the role 'raspirover_BooleanValue58' has cardinality 0..*, and from 'raspirover_BooleanExpression', the role 'raspirover_BooleanExpression57' has cardinality 0..*.
+An association connects 'raspirover_Quantity' and 'raspirover_NumberValue'. From 'raspirover_Quantity', the role 'raspirover_Quantity' has cardinality 0..*, and from 'raspirover_NumberValue', the role 'raspirover_NumberValue60' has cardinality 0..*.
+An association connects 'raspirover_Action' and 'raspirover_Pin'. From 'raspirover_Action', the role 'raspirover_Action' has cardinality 0..*, and from 'raspirover_Pin', the role 'raspirover_Pin' has cardinality 0..*.
+An association connects 'raspirover_ForwardMinAction' and 'raspirover_NumberValue'. From 'raspirover_ForwardMinAction', the role 'raspirover_ForwardMinAction' has cardinality 0..*, and from 'raspirover_NumberValue', the role 'raspirover_NumberValue63' has cardinality 0..*.
+An association connects 'raspirover_BackwardMinAction' and 'raspirover_NumberValue'. From 'raspirover_BackwardMinAction', the role 'raspirover_BackwardMinAction' has cardinality 0..*, and from 'raspirover_NumberValue', the role 'raspirover_NumberValue65' has cardinality 0..*.
+An association connects 'raspirover_NumberValue' and 'raspirover_TurnDegAction'. From 'raspirover_NumberValue', the role 'raspirover_NumberValue67' has cardinality 0..*, and from 'raspirover_TurnDegAction', the role 'raspirover_TurnDegAction' has cardinality 0..*.
+An association connects 'raspirover_Quantity' and 'raspirover_Unit'. From 'raspirover_Quantity', the role 'raspirover_Quantity69' has cardinality 0..*, and from 'raspirover_Unit', the role 'raspirover_Unit' has cardinality 0..*.
+An association connects 'raspirover_QuantityHomogenousOperation' and 'raspirover_Quantity'. From 'raspirover_QuantityHomogenousOperation', the role 'raspirover_QuantityHomogenousOperation' has cardinality 0..*, and from 'raspirover_Quantity', the role 'raspirover_Quantity71' has cardinality 0..*.
+An association connects 'raspirover_QuantityHomogenousOperation' and 'raspirover_Quantity'. From 'raspirover_QuantityHomogenousOperation', the role 'raspirover_QuantityHomogenousOperation73' has cardinality 0..*, and from 'raspirover_Quantity', the role 'raspirover_Quantity74' has cardinality 0..*.
+An association connects 'raspirover_QuantityScalarOperation' and 'raspirover_Quantity'. From 'raspirover_QuantityScalarOperation', the role 'raspirover_QuantityScalarOperation' has cardinality 0..*, and from 'raspirover_Quantity', the role 'raspirover_Quantity76' has cardinality 0..*.

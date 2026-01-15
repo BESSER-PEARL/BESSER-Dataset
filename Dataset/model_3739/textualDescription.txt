@@ -1,0 +1,67 @@
+The domain model 'MySQL' describes the core structural elements and their relationships within the system.
+
+The model defines 15 main class(es).
+
+'Table' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'MySQL_IntegerColumn' represents an important domain concept.
+It has one attribute: 'isAutoIncrement', which is of type str.
+
+'EnumItem' represents an important domain concept.
+It does not declare any attributes.
+
+'MySQL_EnumSet' represents an important domain concept.
+It does not declare any attributes.
+
+'Column' represents an important domain concept.
+It does not declare any attributes.
+
+'MySQL_Column' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'isPrimaryKey', which is of type str; 'comment', which is of type str; 'defaultValue', which is of type str.
+
+'MySQL_ForeignColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'MySQL_EnumItem' represents an important domain concept.
+It does not declare any attributes.
+
+'DataBase' represents an important domain concept.
+It does not declare any attributes.
+
+'MySQL_Table' represents an important domain concept.
+It does not declare any attributes.
+
+'EnumSet' represents an important domain concept.
+It does not declare any attributes.
+
+'MySQL_EnumColumn' represents an important domain concept.
+It does not declare any attributes.
+
+'MySQL_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'MySQL_DataBase' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'MySQL_DataBase' is a specialization of 'NamedElement'.
+The class 'MySQL_Table' is a specialization of 'NamedElement'.
+The class 'MySQL_Column' is a specialization of 'NamedElement'.
+The class 'MySQL_IntegerColumn' is a specialization of 'Column'.
+The class 'MySQL_EnumColumn' is a specialization of 'Column'.
+The class 'MySQL_EnumItem' is a specialization of 'NamedElement'.
+The class 'MySQL_ForeignColumn' is a specialization of 'Column'.
+
+Relationships between classes are modeled using associations.
+An association connects 'Table' and 'MySQL_DataBase'. From 'Table', the role '#' has cardinality 0..*, and from 'MySQL_DataBase', the role '1' has cardinality 0..*.
+An association connects 'Column' and 'MySQL_Table'. From 'Column', the role '#3' has cardinality 0..*, and from 'MySQL_Table', the role '12' has cardinality 0..*.
+An association connects 'DataBase' and 'MySQL_Table'. From 'DataBase', the role '#6' has cardinality 0..*, and from 'MySQL_Table', the role '15' has cardinality 0..*.
+An association connects 'MySQL_Column' and 'Table'. From 'MySQL_Column', the role '18' has cardinality 0..*, and from 'Table', the role '#9' has cardinality 0..*.
+An association connects 'MySQL_EnumColumn' and 'EnumSet'. From 'MySQL_EnumColumn', the role 'MySQL_EnumColumn' has cardinality 0..*, and from 'EnumSet', the role 'EnumSet' has cardinality 0..*.
+An association connects 'MySQL_EnumSet' and 'EnumItem'. From 'MySQL_EnumSet', the role '112' has cardinality 0..*, and from 'EnumItem', the role '#13' has cardinality 0..*.
+An association connects 'EnumSet' and 'MySQL_EnumItem'. From 'EnumSet', the role '#16' has cardinality 0..*, and from 'MySQL_EnumItem', the role '115' has cardinality 0..*.
+An association connects 'Table' and 'MySQL_ForeignColumn'. From 'Table', the role 'Table' has cardinality 0..*, and from 'MySQL_ForeignColumn', the role 'MySQL_ForeignColumn' has cardinality 0..*.

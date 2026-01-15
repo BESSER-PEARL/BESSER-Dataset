@@ -1,0 +1,169 @@
+The domain model 'gx10' describes the core structural elements and their relationships within the system.
+
+The model defines 35 main class(es).
+
+'gx10_IntVar' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_If' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_Referentiable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gx10_False' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_MethodCall' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_Time' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_BoolVarAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_Not' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_True' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_And' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_Block' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_ControlStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_IntConst' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'IntBinaryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_Program' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_Print' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_Async' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_Finish' represents an important domain concept.
+It does not declare any attributes.
+
+'BoolExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_Method' represents an important domain concept.
+It has one attribute: 'name', which is of type bool.
+
+'gx10_BoolVar' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_While' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_IntExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_Plus' represents an important domain concept.
+It does not declare any attributes.
+
+'ControlStructure' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_Equal' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_MethodCallParameter' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'gx10_IntBinaryOperation' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_IntVarAccess' represents an important domain concept.
+It does not declare any attributes.
+
+'gx10_BoolExpression' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'IntExpression' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'gx10_Block' is a specialization of 'Statement'.
+The class 'gx10_ControlStructure' is a specialization of 'Statement'.
+The class 'gx10_IntExpression' is a specialization of 'Expression'.
+The class 'gx10_BoolExpression' is a specialization of 'Expression'.
+The class 'gx10_If' is a specialization of 'ControlStructure'.
+The class 'gx10_While' is a specialization of 'ControlStructure'.
+The class 'gx10_True' is a specialization of 'BoolExpression'.
+The class 'gx10_False' is a specialization of 'BoolExpression'.
+The class 'gx10_Not' is a specialization of 'BoolExpression'.
+The class 'gx10_And' is a specialization of 'BoolExpression'.
+The class 'gx10_IntConst' is a specialization of 'IntExpression'.
+The class 'gx10_IntBinaryOperation' is a specialization of 'IntExpression'.
+The class 'gx10_Async' is a specialization of 'Statement'.
+The class 'gx10_MethodCall' is a specialization of 'Expression'.
+The class 'gx10_Expression' is a specialization of 'Statement'.
+The class 'gx10_Finish' is a specialization of 'Statement'.
+The class 'gx10_Print' is a specialization of 'Statement'.
+The class 'gx10_BoolVar' is a specialization of 'Expression'.
+The class 'gx10_IntVar' is a specialization of 'Statement'.
+The class 'gx10_IntVarAccess' is a specialization of 'IntExpression'.
+The class 'gx10_BoolVarAccess' is a specialization of 'BoolExpression'.
+The class 'gx10_Equal' is a specialization of 'BoolExpression'.
+The class 'gx10_Plus' is a specialization of 'IntBinaryOperation'.
+The class 'gx10_Time' is a specialization of 'IntBinaryOperation'.
+
+Relationships between classes are modeled using associations.
+An association connects 'gx10_Program' and 'gx10_Method'. From 'gx10_Program', the role 'unnamed role' has cardinality 0..*, and from 'gx10_Method', the role '1' has cardinality 0..*.
+An association connects 'gx10_Method' and 'gx10_Program'. From 'gx10_Method', the role 'gx10_Method' has cardinality 0..*, and from 'gx10_Program', the role 'gx10_Program' has cardinality 0..*.
+An association connects 'gx10_Program' and 'gx10_Method'. From 'gx10_Program', the role '5' has cardinality 0..*, and from 'gx10_Method', the role '4' has cardinality 0..*.
+An association connects 'gx10_Block' and 'gx10_Method'. From 'gx10_Block', the role 'gx10_Block' has cardinality 0..*, and from 'gx10_Method', the role 'gx10_Method7' has cardinality 0..*.
+An association connects 'gx10_Method' and 'gx10_MethodCall'. From 'gx10_Method', the role '9' has cardinality 0..*, and from 'gx10_MethodCall', the role '10' has cardinality 0..*.
+An association connects 'gx10_Referentiable' and 'gx10_Method'. From 'gx10_Referentiable', the role 'gx10_Referentiable' has cardinality 0..*, and from 'gx10_Method', the role 'gx10_Method12' has cardinality 0..*.
+An association connects 'gx10_Statement' and 'gx10_Block'. From 'gx10_Statement', the role '15' has cardinality 0..*, and from 'gx10_Block', the role '14' has cardinality 0..*.
+An association connects 'gx10_Statement' and 'gx10_Block'. From 'gx10_Statement', the role '17' has cardinality 0..*, and from 'gx10_Block', the role '18' has cardinality 0..*.
+An association connects 'gx10_ControlStructure' and 'gx10_BoolExpression'. From 'gx10_ControlStructure', the role 'gx10_ControlStructure' has cardinality 0..*, and from 'gx10_BoolExpression', the role 'gx10_BoolExpression' has cardinality 0..*.
+An association connects 'gx10_MethodCallParameter' and 'gx10_IntExpression'. From 'gx10_MethodCallParameter', the role '22' has cardinality 0..*, and from 'gx10_IntExpression', the role '21' has cardinality 0..*.
+An association connects 'gx10_Block' and 'gx10_If'. From 'gx10_Block', the role 'gx10_Block24' has cardinality 0..*, and from 'gx10_If', the role 'gx10_If' has cardinality 0..*.
+An association connects 'gx10_Block' and 'gx10_If'. From 'gx10_Block', the role 'gx10_Block27' has cardinality 0..*, and from 'gx10_If', the role 'gx10_If26' has cardinality 0..*.
+An association connects 'gx10_Block' and 'gx10_While'. From 'gx10_Block', the role 'gx10_Block29' has cardinality 0..*, and from 'gx10_While', the role 'gx10_While' has cardinality 0..*.
+An association connects 'gx10_Not' and 'gx10_BoolExpression'. From 'gx10_Not', the role 'gx10_Not' has cardinality 0..*, and from 'gx10_BoolExpression', the role 'gx10_BoolExpression31' has cardinality 0..*.
+An association connects 'gx10_BoolExpression' and 'gx10_And'. From 'gx10_BoolExpression', the role 'gx10_BoolExpression33' has cardinality 0..*, and from 'gx10_And', the role 'gx10_And' has cardinality 0..*.
+An association connects 'gx10_And' and 'gx10_BoolExpression'. From 'gx10_And', the role 'gx10_And35' has cardinality 0..*, and from 'gx10_BoolExpression', the role 'gx10_BoolExpression36' has cardinality 0..*.
+An association connects 'gx10_IntExpression' and 'gx10_IntBinaryOperation'. From 'gx10_IntExpression', the role 'gx10_IntExpression' has cardinality 0..*, and from 'gx10_IntBinaryOperation', the role 'gx10_IntBinaryOperation' has cardinality 0..*.
+An association connects 'gx10_IntBinaryOperation' and 'gx10_IntExpression'. From 'gx10_IntBinaryOperation', the role 'gx10_IntBinaryOperation39' has cardinality 0..*, and from 'gx10_IntExpression', the role 'gx10_IntExpression40' has cardinality 0..*.
+An association connects 'gx10_Statement' and 'gx10_Async'. From 'gx10_Statement', the role 'gx10_Statement' has cardinality 0..*, and from 'gx10_Async', the role 'gx10_Async' has cardinality 0..*.
+An association connects 'gx10_Method' and 'gx10_MethodCall'. From 'gx10_Method', the role '44' has cardinality 0..*, and from 'gx10_MethodCall', the role '43' has cardinality 0..*.
+An association connects 'gx10_MethodCall' and 'gx10_MethodCallParameter'. From 'gx10_MethodCall', the role '46' has cardinality 0..*, and from 'gx10_MethodCallParameter', the role '47' has cardinality 0..*.
+An association connects 'gx10_Statement' and 'gx10_Finish'. From 'gx10_Statement', the role 'gx10_Statement49' has cardinality 0..*, and from 'gx10_Finish', the role 'gx10_Finish' has cardinality 0..*.
+An association connects 'gx10_Expression' and 'gx10_Print'. From 'gx10_Expression', the role 'gx10_Expression' has cardinality 0..*, and from 'gx10_Print', the role 'gx10_Print' has cardinality 0..*.
+An association connects 'gx10_BoolVar' and 'gx10_BoolExpression'. From 'gx10_BoolVar', the role 'gx10_BoolVar' has cardinality 0..*, and from 'gx10_BoolExpression', the role 'gx10_BoolExpression52' has cardinality 0..*.
+An association connects 'gx10_BoolVar' and 'gx10_Referentiable'. From 'gx10_BoolVar', the role 'gx10_BoolVar54' has cardinality 0..*, and from 'gx10_Referentiable', the role 'gx10_Referentiable55' has cardinality 0..*.
+An association connects 'gx10_IntExpression' and 'gx10_IntVar'. From 'gx10_IntExpression', the role 'gx10_IntExpression57' has cardinality 0..*, and from 'gx10_IntVar', the role 'gx10_IntVar' has cardinality 0..*.
+An association connects 'gx10_IntVar' and 'gx10_Referentiable'. From 'gx10_IntVar', the role 'gx10_IntVar59' has cardinality 0..*, and from 'gx10_Referentiable', the role 'gx10_Referentiable60' has cardinality 0..*.
+An association connects 'gx10_IntVarAccess' and 'gx10_Referentiable'. From 'gx10_IntVarAccess', the role 'gx10_IntVarAccess' has cardinality 0..*, and from 'gx10_Referentiable', the role 'gx10_Referentiable62' has cardinality 0..*.
+An association connects 'gx10_BoolVarAccess' and 'gx10_Referentiable'. From 'gx10_BoolVarAccess', the role 'gx10_BoolVarAccess' has cardinality 0..*, and from 'gx10_Referentiable', the role 'gx10_Referentiable64' has cardinality 0..*.
+An association connects 'gx10_Equal' and 'gx10_IntExpression'. From 'gx10_Equal', the role 'gx10_Equal' has cardinality 0..*, and from 'gx10_IntExpression', the role 'gx10_IntExpression66' has cardinality 0..*.
+An association connects 'gx10_IntExpression' and 'gx10_Equal'. From 'gx10_IntExpression', the role 'gx10_IntExpression69' has cardinality 0..*, and from 'gx10_Equal', the role 'gx10_Equal68' has cardinality 0..*.
+An association connects 'gx10_IntExpression' and 'gx10_MethodCallParameter'. From 'gx10_IntExpression', the role '72' has cardinality 0..*, and from 'gx10_MethodCallParameter', the role '71' has cardinality 0..*.
+An association connects 'gx10_MethodCall' and 'gx10_MethodCallParameter'. From 'gx10_MethodCall', the role '75' has cardinality 0..*, and from 'gx10_MethodCallParameter', the role '74' has cardinality 0..*.

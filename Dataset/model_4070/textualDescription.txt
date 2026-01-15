@@ -1,0 +1,59 @@
+The domain model 'uml' describes the core structural elements and their relationships within the system.
+
+The model defines 11 main class(es).
+
+'UMLModelElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'PackageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_PrimitiveDataType' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_PackageElement' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_Class' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'uml_UMLModelElement' represents an important domain concept.
+It has the following attributes: 'kind', which is of type str; 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'uml_Attribute' is a specialization of 'UMLModelElement'.
+The class 'uml_Association' is a specialization of 'PackageElement'.
+The class 'uml_Class' is a specialization of 'Classifier'.
+The class 'uml_Classifier' is a specialization of 'PackageElement'.
+The class 'uml_Package' is a specialization of 'UMLModelElement'.
+The class 'uml_PackageElement' is a specialization of 'UMLModelElement'.
+The class 'uml_PrimitiveDataType' is a specialization of 'Classifier'.
+
+Relationships between classes are modeled using associations.
+An association connects 'uml_Attribute' and 'uml_Class'. From 'uml_Attribute', the role 'attributes' has cardinality 0..*, and from 'uml_Class', the role 'Class' has cardinality 0..*.
+An association connects 'uml_Attribute' and 'uml_Classifier'. From 'uml_Attribute', the role 'typeOpposite' has cardinality 0..*, and from 'uml_Classifier', the role 'Classifier' has cardinality 0..*.
+An association connects 'uml_Association' and 'uml_Class'. From 'uml_Association', the role 'reverse' has cardinality 0..*, and from 'uml_Class', the role 'Class3' has cardinality 0..*.
+An association connects 'uml_Association' and 'uml_Class'. From 'uml_Association', the role 'forward' has cardinality 0..*, and from 'uml_Class', the role 'Class5' has cardinality 0..*.
+An association connects 'uml_Class' and 'uml_Attribute'. From 'uml_Class', the role 'owner' has cardinality 0..*, and from 'uml_Attribute', the role 'Attribute' has cardinality 0..*.
+An association connects 'uml_Class' and 'uml_Association'. From 'uml_Class', the role 'source' has cardinality 0..*, and from 'uml_Association', the role 'Association' has cardinality 0..*.
+An association connects 'uml_Class' and 'uml_Class'. From 'uml_Class', the role 'generalOpposite' has cardinality 0..*, and from 'uml_Class', the role 'Class10' has cardinality 0..*.
+An association connects 'uml_Class' and 'uml_Class'. From 'uml_Class', the role 'general' has cardinality 0..*, and from 'uml_Class', the role 'Class13' has cardinality 0..*.
+An association connects 'uml_Association' and 'uml_Class'. From 'uml_Association', the role 'Association15' has cardinality 0..*, and from 'uml_Class', the role 'destination' has cardinality 0..*.
+An association connects 'uml_Attribute' and 'uml_Classifier'. From 'uml_Attribute', the role 'Attribute17' has cardinality 0..*, and from 'uml_Classifier', the role 'type' has cardinality 0..*.
+An association connects 'uml_PackageElement' and 'uml_Package'. From 'uml_PackageElement', the role 'PackageElement' has cardinality 0..*, and from 'uml_Package', the role 'namespace' has cardinality 0..*.
+An association connects 'uml_Package' and 'uml_PackageElement'. From 'uml_Package', the role 'Package' has cardinality 0..*, and from 'uml_PackageElement', the role 'elements' has cardinality 0..*.

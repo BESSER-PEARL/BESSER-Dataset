@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/P1erreGaultier/SmallUML/SmallUML/model/smalluml.ecore

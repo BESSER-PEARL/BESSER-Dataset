@@ -1,0 +1,67 @@
+The domain model 'smalluml' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'smalluml_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'smalluml_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Class' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'SuperType' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Operation' represents an important domain concept.
+It has one attribute: 'isAbstract', which is of type bool.
+
+'smalluml_Enumeration' represents an important domain concept.
+It has one attribute: 'enumeration', which is of type str.
+
+'smalluml_Attribute' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_SuperType' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Role' represents an important domain concept.
+It has the following attributes: 'lowerBound', which is of type int; 'upperBound', which is of type int.
+
+'smalluml_Association' represents an important domain concept.
+It does not declare any attributes.
+
+'smalluml_Parameter' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'smalluml_SuperType' is a specialization of 'NamedElement'.
+The class 'smalluml_Attribute' is a specialization of 'NamedElement'.
+The class 'smalluml_Role' is a specialization of 'NamedElement'.
+The class 'smalluml_Association' is a specialization of 'NamedElement'.
+The class 'smalluml_Operation' is a specialization of 'NamedElement'.
+The class 'smalluml_Parameter' is a specialization of 'NamedElement'.
+The class 'smalluml_Class' is a specialization of 'SuperType'.
+The class 'smalluml_Type' is a specialization of 'SuperType'.
+The class 'smalluml_Enumeration' is a specialization of 'SuperType'.
+The class 'smalluml_Package' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'smalluml_Attribute' and 'smalluml_SuperType'. From 'smalluml_Attribute', the role 'smalluml_Attribute' has cardinality 0..*, and from 'smalluml_SuperType', the role 'smalluml_SuperType' has cardinality 0..*.
+An association connects 'smalluml_Class' and 'smalluml_Role'. From 'smalluml_Class', the role 'smalluml_Class' has cardinality 0..*, and from 'smalluml_Role', the role 'smalluml_Role' has cardinality 0..*.
+An association connects 'smalluml_Role' and 'smalluml_Association'. From 'smalluml_Role', the role 'smalluml_Role3' has cardinality 0..*, and from 'smalluml_Association', the role 'smalluml_Association' has cardinality 0..*.
+An association connects 'smalluml_Parameter' and 'smalluml_Operation'. From 'smalluml_Parameter', the role 'smalluml_Parameter' has cardinality 0..*, and from 'smalluml_Operation', the role 'smalluml_Operation' has cardinality 0..*.
+An association connects 'smalluml_Operation' and 'smalluml_SuperType'. From 'smalluml_Operation', the role 'smalluml_Operation6' has cardinality 0..*, and from 'smalluml_SuperType', the role 'smalluml_SuperType7' has cardinality 0..*.
+An association connects 'smalluml_Parameter' and 'smalluml_SuperType'. From 'smalluml_Parameter', the role 'smalluml_Parameter9' has cardinality 0..*, and from 'smalluml_SuperType', the role 'smalluml_SuperType10' has cardinality 0..*.
+An association connects 'smalluml_Class' and 'smalluml_Attribute'. From 'smalluml_Class', the role 'smalluml_Class12' has cardinality 0..*, and from 'smalluml_Attribute', the role 'smalluml_Attribute13' has cardinality 0..*.
+An association connects 'smalluml_Operation' and 'smalluml_Class'. From 'smalluml_Operation', the role 'smalluml_Operation16' has cardinality 0..*, and from 'smalluml_Class', the role 'smalluml_Class15' has cardinality 0..*.
+An association connects 'smalluml_Class' and 'smalluml_Class'. From 'smalluml_Class', the role 'smalluml_Class19' has cardinality 0..*, and from 'smalluml_Class', the role 'smalluml_Class17' has cardinality 0..*.
+An association connects 'smalluml_Package' and 'smalluml_SuperType'. From 'smalluml_Package', the role 'smalluml_Package' has cardinality 0..*, and from 'smalluml_SuperType', the role 'smalluml_SuperType21' has cardinality 0..*.
+An association connects 'smalluml_Package' and 'smalluml_Association'. From 'smalluml_Package', the role 'smalluml_Package23' has cardinality 0..*, and from 'smalluml_Association', the role 'smalluml_Association24' has cardinality 0..*.

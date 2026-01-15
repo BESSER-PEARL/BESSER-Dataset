@@ -1,0 +1,22 @@
+The domain model 'helloScoping' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'helloScoping_Greeting' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'helloScoping_FieldReference' represents an important domain concept.
+It does not declare any attributes.
+
+'helloScoping_Field' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'helloScoping_Model' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'helloScoping_Greeting' and 'helloScoping_Model'. From 'helloScoping_Greeting', the role 'helloScoping_Greeting' has cardinality 0..*, and from 'helloScoping_Model', the role 'helloScoping_Model' has cardinality 0..*.
+An association connects 'helloScoping_Greeting' and 'helloScoping_Greeting'. From 'helloScoping_Greeting', the role 'helloScoping_Greeting1' has cardinality 0..*, and from 'helloScoping_Greeting', the role 'helloScoping_Greeting3' has cardinality 0..*.
+An association connects 'helloScoping_Field' and 'helloScoping_Greeting'. From 'helloScoping_Field', the role 'helloScoping_Field' has cardinality 0..*, and from 'helloScoping_Greeting', the role 'helloScoping_Greeting5' has cardinality 0..*.
+An association connects 'helloScoping_Greeting' and 'helloScoping_FieldReference'. From 'helloScoping_Greeting', the role 'helloScoping_Greeting7' has cardinality 0..*, and from 'helloScoping_FieldReference', the role 'helloScoping_FieldReference' has cardinality 0..*.
+An association connects 'helloScoping_FieldReference' and 'helloScoping_Field'. From 'helloScoping_FieldReference', the role 'helloScoping_FieldReference9' has cardinality 0..*, and from 'helloScoping_Field', the role 'helloScoping_Field10' has cardinality 0..*.

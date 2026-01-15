@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jrwilliams/org.crepe.inria/test-models/DOT.ecore

@@ -1,0 +1,23 @@
+The domain model 'RDBMSMM' describes the core structural elements and their relationships within the system.
+
+The model defines 4 main class(es).
+
+'RDBMSMM_Table' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'RDBMSMM_FKey' represents an important domain concept.
+It does not declare any attributes.
+
+'RDBMSMM_RDBMSModel' represents an important domain concept.
+It does not declare any attributes.
+
+'RDBMSMM_Column' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'type', which is of type str.
+
+Relationships between classes are modeled using associations.
+An association connects 'RDBMSMM_Table' and 'RDBMSMM_Column'. From 'RDBMSMM_Table', the role 'RDBMSMM_Table' has cardinality 0..*, and from 'RDBMSMM_Column', the role 'RDBMSMM_Column' has cardinality 0..*.
+An association connects 'RDBMSMM_Column' and 'RDBMSMM_Table'. From 'RDBMSMM_Column', the role 'RDBMSMM_Column3' has cardinality 0..*, and from 'RDBMSMM_Table', the role 'RDBMSMM_Table2' has cardinality 0..*.
+An association connects 'RDBMSMM_Table' and 'RDBMSMM_FKey'. From 'RDBMSMM_Table', the role 'RDBMSMM_Table5' has cardinality 0..*, and from 'RDBMSMM_FKey', the role 'RDBMSMM_FKey' has cardinality 0..*.
+An association connects 'RDBMSMM_FKey' and 'RDBMSMM_Table'. From 'RDBMSMM_FKey', the role 'RDBMSMM_FKey7' has cardinality 0..*, and from 'RDBMSMM_Table', the role 'RDBMSMM_Table8' has cardinality 0..*.
+An association connects 'RDBMSMM_FKey' and 'RDBMSMM_Column'. From 'RDBMSMM_FKey', the role 'RDBMSMM_FKey10' has cardinality 0..*, and from 'RDBMSMM_Column', the role 'RDBMSMM_Column11' has cardinality 0..*.
+An association connects 'RDBMSMM_Table' and 'RDBMSMM_RDBMSModel'. From 'RDBMSMM_Table', the role 'RDBMSMM_Table13' has cardinality 0..*, and from 'RDBMSMM_RDBMSModel', the role 'RDBMSMM_RDBMSModel' has cardinality 0..*.

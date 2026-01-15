@@ -1,0 +1,59 @@
+The domain model 'platoon' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'Vehicle' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_FollowingVehicle' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_TurnRight' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_LeaderVehicle' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Forward' represents an important domain concept.
+It has one attribute: 'distance', which is of type int.
+
+'platoon_routeCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_TurnLeft' represents an important domain concept.
+It does not declare any attributes.
+
+'routeCommand' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Platoon' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Root' represents an important domain concept.
+It does not declare any attributes.
+
+'platoon_Constraints' represents an important domain concept.
+It has the following attributes: 'lbound', which is of type int; 'ubound', which is of type int.
+
+'platoon_Vehicle' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'platoon_Route' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+The model also captures inheritance relationships between classes.
+The class 'platoon_Forward' is a specialization of 'routeCommand'.
+The class 'platoon_TurnLeft' is a specialization of 'routeCommand'.
+The class 'platoon_TurnRight' is a specialization of 'routeCommand'.
+The class 'platoon_FollowingVehicle' is a specialization of 'Vehicle'.
+The class 'platoon_LeaderVehicle' is a specialization of 'Vehicle'.
+
+Relationships between classes are modeled using associations.
+An association connects 'platoon_Platoon' and 'platoon_Root'. From 'platoon_Platoon', the role 'platoon_Platoon' has cardinality 0..*, and from 'platoon_Root', the role 'platoon_Root' has cardinality 0..*.
+An association connects 'platoon_Route' and 'platoon_Root'. From 'platoon_Route', the role 'platoon_Route' has cardinality 0..*, and from 'platoon_Root', the role 'platoon_Root2' has cardinality 0..*.
+An association connects 'platoon_Root' and 'platoon_Constraints'. From 'platoon_Root', the role 'platoon_Root4' has cardinality 0..*, and from 'platoon_Constraints', the role 'platoon_Constraints' has cardinality 0..*.
+An association connects 'platoon_routeCommand' and 'platoon_Route'. From 'platoon_routeCommand', the role 'platoon_routeCommand' has cardinality 0..*, and from 'platoon_Route', the role 'platoon_Route6' has cardinality 0..*.
+An association connects 'platoon_LeaderVehicle' and 'platoon_Platoon'. From 'platoon_LeaderVehicle', the role 'platoon_LeaderVehicle' has cardinality 0..*, and from 'platoon_Platoon', the role 'platoon_Platoon8' has cardinality 0..*.
+An association connects 'platoon_FollowingVehicle' and 'platoon_Platoon'. From 'platoon_FollowingVehicle', the role 'platoon_FollowingVehicle' has cardinality 0..*, and from 'platoon_Platoon', the role 'platoon_Platoon10' has cardinality 0..*.
+An association connects 'platoon_Vehicle' and 'platoon_FollowingVehicle'. From 'platoon_Vehicle', the role 'platoon_Vehicle' has cardinality 0..*, and from 'platoon_FollowingVehicle', the role 'platoon_FollowingVehicle12' has cardinality 0..*.
+An association connects 'platoon_LeaderVehicle' and 'platoon_Route'. From 'platoon_LeaderVehicle', the role 'platoon_LeaderVehicle14' has cardinality 0..*, and from 'platoon_Route', the role 'platoon_Route15' has cardinality 0..*.

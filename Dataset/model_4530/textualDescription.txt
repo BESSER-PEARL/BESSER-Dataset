@@ -1,0 +1,68 @@
+The domain model 'drone' describes the core structural elements and their relationships within the system.
+
+The model defines 13 main class(es).
+
+'drone_FlightPerformance' represents an important domain concept.
+It has the following attributes: 'maxTurnRate', which is of type float; 'maxOperatingTemperature', which is of type float; 'maxFlightTime', which is of type int; 'maxFlightTimeWithMaxPayload', which is of type int; 'maxPayload', which is of type int; 'maxAltitude', which is of type int; 'maxDescendRate', which is of type float; 'minSpeed', which is of type int; 'maxClimbRate', which is of type float; 'minOperatingTemperature', which is of type float; 'positionHold', which is of type float; 'maxSpeed', which is of type int; 'launchType', which is of type str; 'maxAcceleration', which is of type int; 'minTurnRate', which is of type float; 'minAcceleration', which is of type int.
+
+'drone_Battery' represents an important domain concept.
+It has the following attributes: 'cellType', which is of type str; 'voltage', which is of type float; 'rechargeTime', which is of type int; 'capacity', which is of type int.
+
+'drone_NamedElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'drone_Processor' represents an important domain concept.
+It has the following attributes: 'frequency', which is of type int; 'architecture', which is of type str.
+
+'drone_Property' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'drone_Parameter' represents an important domain concept.
+It has the following attributes: 'description', which is of type str; 'key', which is of type str.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_Device' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_Size' represents an important domain concept.
+It has the following attributes: 'width', which is of type float; 'height', which is of type float; 'propellerSize', which is of type float; 'weight', which is of type float; 'propellers', which is of type int; 'length', which is of type float.
+
+'drone_Action' represents an important domain concept.
+It does not declare any attributes.
+
+'drone_ROSDriver' represents an important domain concept.
+It has the following attributes: 'url', which is of type str; 'version', which is of type str.
+
+'drone_Drone' represents an important domain concept.
+It has the following attributes: 'onBoardObstacleAvoidance', which is of type bool; 'accelerometer', which is of type bool; 'maxVoltage', which is of type float; 'barometer', which is of type bool; 'minVoltage', which is of type float; 'giro', which is of type bool; 'maxPowerConsumption', which is of type float; 'communicationRange', which is of type float; 'radioFrequency', which is of type int; 'gps', which is of type bool; 'magnetometer', which is of type bool; 'dataRate', which is of type int.
+
+'drone_Memory' represents an important domain concept.
+It has the following attributes: 'type', which is of type str; 'subType', which is of type str; 'size', which is of type int.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'LaunchType' defines the following possible values: 'VTOL', 'HTOL', 'OTHER'.
+The enumeration 'MemoryType' defines the following possible values: 'VOLATILE', 'STORAGE'.
+
+The model also captures inheritance relationships between classes.
+The class 'drone_Drone' is a specialization of 'NamedElement'.
+The class 'drone_Processor' is a specialization of 'NamedElement'.
+The class 'drone_Memory' is a specialization of 'NamedElement'.
+The class 'drone_Battery' is a specialization of 'NamedElement'.
+The class 'drone_Device' is a specialization of 'NamedElement'.
+The class 'drone_Action' is a specialization of 'NamedElement'.
+The class 'drone_Property' is a specialization of 'NamedElement'.
+The class 'drone_ROSDriver' is a specialization of 'NamedElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'drone_Size' and 'drone_Drone'. From 'drone_Size', the role 'drone_Size' has cardinality 0..*, and from 'drone_Drone', the role 'drone_Drone' has cardinality 0..*.
+An association connects 'drone_FlightPerformance' and 'drone_Drone'. From 'drone_FlightPerformance', the role 'drone_FlightPerformance' has cardinality 0..*, and from 'drone_Drone', the role 'drone_Drone2' has cardinality 0..*.
+An association connects 'drone_Drone' and 'drone_Battery'. From 'drone_Drone', the role 'drone_Drone4' has cardinality 0..*, and from 'drone_Battery', the role 'drone_Battery' has cardinality 0..*.
+An association connects 'drone_Processor' and 'drone_Drone'. From 'drone_Processor', the role 'drone_Processor' has cardinality 0..*, and from 'drone_Drone', the role 'drone_Drone6' has cardinality 0..*.
+An association connects 'drone_Memory' and 'drone_Drone'. From 'drone_Memory', the role 'drone_Memory' has cardinality 0..*, and from 'drone_Drone', the role 'drone_Drone8' has cardinality 0..*.
+An association connects 'drone_Drone' and 'drone_Device'. From 'drone_Drone', the role 'drone_Drone10' has cardinality 0..*, and from 'drone_Device', the role 'drone_Device' has cardinality 0..*.
+An association connects 'drone_ROSDriver' and 'drone_Drone'. From 'drone_ROSDriver', the role 'drone_ROSDriver' has cardinality 0..*, and from 'drone_Drone', the role 'drone_Drone12' has cardinality 0..*.
+An association connects 'drone_Action' and 'drone_Device'. From 'drone_Action', the role 'drone_Action' has cardinality 0..*, and from 'drone_Device', the role 'drone_Device14' has cardinality 0..*.
+An association connects 'drone_Device' and 'drone_Property'. From 'drone_Device', the role 'drone_Device16' has cardinality 0..*, and from 'drone_Property', the role 'drone_Property' has cardinality 0..*.
+An association connects 'drone_Parameter' and 'drone_Action'. From 'drone_Parameter', the role 'drone_Parameter' has cardinality 0..*, and from 'drone_Action', the role 'drone_Action18' has cardinality 0..*.

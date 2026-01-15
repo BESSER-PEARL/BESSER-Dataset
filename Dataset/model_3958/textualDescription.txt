@@ -1,0 +1,272 @@
+The domain model 'classes' describes the core structural elements and their relationships within the system.
+
+The model defines 54 main class(es).
+
+'classes_Type' represents an important domain concept.
+It does not declare any attributes.
+
+'InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Classifier' represents an important domain concept.
+It has the following attributes: 'abstract', which is of type bool; 'finalSpecialization', which is of type bool.
+
+'ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_LiteralBoolean' represents an important domain concept.
+It has one attribute: 'value', which is of type bool.
+
+'classes_DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_RedefinableElement' represents an important domain concept.
+It has one attribute: 'leaf', which is of type bool.
+
+'Feature' represents an important domain concept.
+It does not declare any attributes.
+
+'MultiplicityElement' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_EnumerationLiteral' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_ElementImport' represents an important domain concept.
+It has the following attributes: 'visibility', which is of type str; 'alias', which is of type str.
+
+'classes_LiteralInteger' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'classes_Package' represents an important domain concept.
+It does not declare any attributes.
+
+'TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_MultiplicityElement' represents an important domain concept.
+It has the following attributes: 'unique', which is of type bool; 'upper', which is of type int; 'ordered', which is of type bool; 'lower', which is of type int.
+
+'classes_LiteralString' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'classes_InstanceValue' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Property' represents an important domain concept.
+It has the following attributes: 'aggregation', which is of type str; 'derived', which is of type bool; 'composite', which is of type bool; 'derivedUnion', which is of type bool.
+
+'classes_Association' represents an important domain concept.
+It has one attribute: 'derived', which is of type bool.
+
+'StructuralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_InstanceSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_PackageImport' represents an important domain concept.
+It has one attribute: 'visibility', which is of type str.
+
+'classes_Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'Classifier' represents an important domain concept.
+It does not declare any attributes.
+
+'BehavioralFeature' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Comment' represents an important domain concept.
+It has one attribute: 'body', which is of type str.
+
+'classes_LiteralUnlimitedNatural' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'classes_NamedElement' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'visibility', which is of type str; 'qualifiedName', which is of type str.
+
+'PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_LiteralNull' represents an important domain concept.
+It does not declare any attributes.
+
+'NamedElement' represents an important domain concept.
+It does not declare any attributes.
+
+'RedefinableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_PackageableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Slot' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Element' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Class' represents an important domain concept.
+It has one attribute: 'active', which is of type bool.
+
+'Element' represents an important domain concept.
+It does not declare any attributes.
+
+'Namespace' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Operation' represents an important domain concept.
+It has the following attributes: 'query', which is of type bool; 'ordered', which is of type bool; 'unique', which is of type bool; 'lower', which is of type str; 'upper', which is of type str.
+
+'classes_Enumeration' represents an important domain concept.
+It does not declare any attributes.
+
+'Package' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_PrimitiveType' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_BehavioralFeature' represents an important domain concept.
+It has one attribute: 'abstract', which is of type bool.
+
+'classes_Feature' represents an important domain concept.
+It has one attribute: 'static', which is of type bool.
+
+'LiteralSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'Type' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_StructuralFeature' represents an important domain concept.
+It has one attribute: 'readOnly', which is of type bool.
+
+'classes_Generalization' represents an important domain concept.
+It has one attribute: 'substitutable', which is of type bool.
+
+'classes_ValueSpecification' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_Parameter' represents an important domain concept.
+It has one attribute: 'direction', which is of type str.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'classes_TypedElement' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'AggregationKind' defines the following possible values: 'composite', 'none', 'shared'.
+The enumeration 'ParameterDirectionKind' defines the following possible values: 'out', 'in', 'return', 'inout'.
+The enumeration 'VisibilityKind' defines the following possible values: 'protected', 'private', 'public', 'package'.
+
+The model also captures inheritance relationships between classes.
+The class 'classes_ValueSpecification' is a specialization of 'TypedElement'.
+The class 'classes_TypedElement' is a specialization of 'NamedElement'.
+The class 'classes_NamedElement' is a specialization of 'Element'.
+The class 'classes_Namespace' is a specialization of 'NamedElement'.
+The class 'classes_ElementImport' is a specialization of 'Element'.
+The class 'classes_PackageableElement' is a specialization of 'NamedElement'.
+The class 'classes_PackageImport' is a specialization of 'Element'.
+The class 'classes_Package' is a specialization of 'Namespace'.
+The class 'classes_Package' is a specialization of 'PackageableElement'.
+The class 'classes_Type' is a specialization of 'PackageableElement'.
+The class 'classes_StructuralFeature' is a specialization of 'Feature'.
+The class 'classes_StructuralFeature' is a specialization of 'MultiplicityElement'.
+The class 'classes_StructuralFeature' is a specialization of 'TypedElement'.
+The class 'classes_Feature' is a specialization of 'RedefinableElement'.
+The class 'classes_RedefinableElement' is a specialization of 'NamedElement'.
+The class 'classes_Classifier' is a specialization of 'Namespace'.
+The class 'classes_Classifier' is a specialization of 'Type'.
+The class 'classes_Generalization' is a specialization of 'Element'.
+The class 'classes_Property' is a specialization of 'StructuralFeature'.
+The class 'classes_Association' is a specialization of 'Classifier'.
+The class 'classes_DataType' is a specialization of 'Classifier'.
+The class 'classes_MultiplicityElement' is a specialization of 'Element'.
+The class 'classes_BehavioralFeature' is a specialization of 'Feature'.
+The class 'classes_Parameter' is a specialization of 'MultiplicityElement'.
+The class 'classes_Parameter' is a specialization of 'TypedElement'.
+The class 'classes_Operation' is a specialization of 'BehavioralFeature'.
+The class 'classes_InstanceSpecification' is a specialization of 'NamedElement'.
+The class 'classes_Slot' is a specialization of 'Element'.
+The class 'classes_InstanceValue' is a specialization of 'ValueSpecification'.
+The class 'classes_LiteralBoolean' is a specialization of 'LiteralSpecification'.
+The class 'classes_LiteralSpecification' is a specialization of 'ValueSpecification'.
+The class 'classes_LiteralInteger' is a specialization of 'LiteralSpecification'.
+The class 'classes_LiteralNull' is a specialization of 'LiteralSpecification'.
+The class 'classes_LiteralString' is a specialization of 'LiteralSpecification'.
+The class 'classes_LiteralUnlimitedNatural' is a specialization of 'LiteralSpecification'.
+The class 'classes_PrimitiveType' is a specialization of 'DataType'.
+The class 'classes_Enumeration' is a specialization of 'DataType'.
+The class 'classes_EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+The class 'classes_Class' is a specialization of 'Classifier'.
+The class 'classes_Model' is a specialization of 'Package'.
+
+Relationships between classes are modeled using associations.
+An association connects 'classes_TypedElement' and 'classes_Type'. From 'classes_TypedElement', the role 'classes_TypedElement' has cardinality 0..*, and from 'classes_Type', the role 'classes_Type' has cardinality 0..*.
+An association connects 'classes_NamedElement' and 'classes_Namespace'. From 'classes_NamedElement', the role 'ownedMember' has cardinality 0..*, and from 'classes_Namespace', the role 'Namespace' has cardinality 0..*.
+An association connects 'classes_Element' and 'classes_Element'. From 'classes_Element', the role 'owner' has cardinality 0..*, and from 'classes_Element', the role 'Element' has cardinality 0..*.
+An association connects 'classes_Element' and 'classes_Element'. From 'classes_Element', the role 'Element6' has cardinality 0..*, and from 'classes_Element', the role 'ownedElement' has cardinality 0..*.
+An association connects 'classes_Comment' and 'classes_Element'. From 'classes_Comment', the role 'classes_Comment' has cardinality 0..*, and from 'classes_Element', the role 'classes_Element' has cardinality 0..*.
+An association connects 'classes_Comment' and 'classes_Element'. From 'classes_Comment', the role 'classes_Comment9' has cardinality 0..*, and from 'classes_Element', the role 'classes_Element10' has cardinality 0..*.
+An association connects 'classes_Namespace' and 'classes_NamedElement'. From 'classes_Namespace', the role 'classes_Namespace' has cardinality 0..*, and from 'classes_NamedElement', the role 'classes_NamedElement' has cardinality 0..*.
+An association connects 'classes_ElementImport' and 'classes_Namespace'. From 'classes_ElementImport', the role 'ElementImport' has cardinality 0..*, and from 'classes_Namespace', the role 'importingNamespace' has cardinality 0..*.
+An association connects 'classes_PackageImport' and 'classes_Namespace'. From 'classes_PackageImport', the role 'PackageImport' has cardinality 0..*, and from 'classes_Namespace', the role 'importingNamespace14' has cardinality 0..*.
+An association connects 'classes_PackageableElement' and 'classes_Namespace'. From 'classes_PackageableElement', the role 'classes_PackageableElement' has cardinality 0..*, and from 'classes_Namespace', the role 'classes_Namespace16' has cardinality 0..*.
+An association connects 'classes_NamedElement' and 'classes_Namespace'. From 'classes_NamedElement', the role 'NamedElement' has cardinality 0..*, and from 'classes_Namespace', the role 'namespace' has cardinality 0..*.
+An association connects 'classes_ElementImport' and 'classes_PackageableElement'. From 'classes_ElementImport', the role 'classes_ElementImport' has cardinality 0..*, and from 'classes_PackageableElement', the role 'classes_PackageableElement19' has cardinality 0..*.
+An association connects 'classes_Namespace' and 'classes_ElementImport'. From 'classes_Namespace', the role 'Namespace21' has cardinality 0..*, and from 'classes_ElementImport', the role 'elementImport' has cardinality 0..*.
+An association connects 'classes_PackageImport' and 'classes_Package'. From 'classes_PackageImport', the role 'classes_PackageImport' has cardinality 0..*, and from 'classes_Package', the role 'classes_Package' has cardinality 0..*.
+An association connects 'classes_PackageImport' and 'classes_Namespace'. From 'classes_PackageImport', the role 'packageImport' has cardinality 0..*, and from 'classes_Namespace', the role 'Namespace24' has cardinality 0..*.
+An association connects 'classes_Package' and 'classes_PackageableElement'. From 'classes_Package', the role 'classes_Package26' has cardinality 0..*, and from 'classes_PackageableElement', the role 'classes_PackageableElement27' has cardinality 0..*.
+An association connects 'classes_Type' and 'classes_Package'. From 'classes_Type', the role 'Type' has cardinality 0..*, and from 'classes_Package', the role 'package' has cardinality 0..*.
+An association connects 'classes_Package' and 'classes_Package'. From 'classes_Package', the role 'nestingPackage' has cardinality 0..*, and from 'classes_Package', the role 'Package' has cardinality 0..*.
+An association connects 'classes_Package' and 'classes_Package'. From 'classes_Package', the role 'nestedPackage' has cardinality 0..*, and from 'classes_Package', the role 'Package33' has cardinality 0..*.
+An association connects 'classes_Type' and 'classes_Package'. From 'classes_Type', the role 'ownedType' has cardinality 0..*, and from 'classes_Package', the role 'Package35' has cardinality 0..*.
+An association connects 'classes_Classifier' and 'classes_Feature'. From 'classes_Classifier', the role 'Classifier' has cardinality 0..*, and from 'classes_Feature', the role 'feature' has cardinality 0..*.
+An association connects 'classes_RedefinableElement' and 'classes_RedefinableElement'. From 'classes_RedefinableElement', the role 'classes_RedefinableElement37' has cardinality 0..*, and from 'classes_RedefinableElement', the role 'classes_RedefinableElement' has cardinality 0..*.
+An association connects 'classes_RedefinableElement' and 'classes_Classifier'. From 'classes_RedefinableElement', the role 'classes_RedefinableElement40' has cardinality 0..*, and from 'classes_Classifier', the role 'classes_Classifier' has cardinality 0..*.
+An association connects 'classes_Generalization' and 'classes_Classifier'. From 'classes_Generalization', the role 'Generalization' has cardinality 0..*, and from 'classes_Classifier', the role 'specific' has cardinality 0..*.
+An association connects 'classes_Classifier' and 'classes_Feature'. From 'classes_Classifier', the role 'featuringClassifier' has cardinality 0..*, and from 'classes_Feature', the role 'Feature' has cardinality 0..*.
+An association connects 'classes_NamedElement' and 'classes_Classifier'. From 'classes_NamedElement', the role 'classes_NamedElement45' has cardinality 0..*, and from 'classes_Classifier', the role 'classes_Classifier44' has cardinality 0..*.
+An association connects 'classes_Classifier' and 'classes_Property'. From 'classes_Classifier', the role 'classes_Classifier47' has cardinality 0..*, and from 'classes_Property', the role 'classes_Property' has cardinality 0..*.
+An association connects 'classes_Classifier' and 'classes_Classifier'. From 'classes_Classifier', the role 'classes_Classifier50' has cardinality 0..*, and from 'classes_Classifier', the role 'classes_Classifier48' has cardinality 0..*.
+An association connects 'classes_Classifier' and 'classes_Generalization'. From 'classes_Classifier', the role 'classes_Classifier52' has cardinality 0..*, and from 'classes_Generalization', the role 'classes_Generalization' has cardinality 0..*.
+An association connects 'classes_Generalization' and 'classes_Classifier'. From 'classes_Generalization', the role 'generalization' has cardinality 0..*, and from 'classes_Classifier', the role 'Classifier54' has cardinality 0..*.
+An association connects 'classes_Association' and 'classes_Property'. From 'classes_Association', the role 'Association' has cardinality 0..*, and from 'classes_Property', the role 'ownedEnd' has cardinality 0..*.
+An association connects 'classes_Property' and 'classes_Association'. From 'classes_Property', the role 'memberEnd' has cardinality 0..*, and from 'classes_Association', the role 'Association57' has cardinality 0..*.
+An association connects 'classes_DataType' and 'classes_Property'. From 'classes_DataType', the role 'DataType' has cardinality 0..*, and from 'classes_Property', the role 'ownedAttribute' has cardinality 0..*.
+An association connects 'classes_Property' and 'classes_Class'. From 'classes_Property', the role 'ownedAttribute60' has cardinality 0..*, and from 'classes_Class', the role 'Class' has cardinality 0..*.
+An association connects 'classes_Property' and 'classes_Property'. From 'classes_Property', the role 'classes_Property63' has cardinality 0..*, and from 'classes_Property', the role 'classes_Property61' has cardinality 0..*.
+An association connects 'classes_Association' and 'classes_Type'. From 'classes_Association', the role 'classes_Association' has cardinality 0..*, and from 'classes_Type', the role 'classes_Type65' has cardinality 0..*.
+An association connects 'classes_Association' and 'classes_Property'. From 'classes_Association', the role 'association' has cardinality 0..*, and from 'classes_Property', the role 'Property' has cardinality 0..*.
+An association connects 'classes_Association' and 'classes_Property'. From 'classes_Association', the role 'classes_Association68' has cardinality 0..*, and from 'classes_Property', the role 'classes_Property69' has cardinality 0..*.
+An association connects 'classes_Association' and 'classes_Property'. From 'classes_Association', the role 'owningAssociation' has cardinality 0..*, and from 'classes_Property', the role 'Property71' has cardinality 0..*.
+An association connects 'classes_DataType' and 'classes_Property'. From 'classes_DataType', the role 'datatype' has cardinality 0..*, and from 'classes_Property', the role 'Property73' has cardinality 0..*.
+An association connects 'classes_ValueSpecification' and 'classes_MultiplicityElement'. From 'classes_ValueSpecification', the role 'classes_ValueSpecification' has cardinality 0..*, and from 'classes_MultiplicityElement', the role 'classes_MultiplicityElement' has cardinality 0..*.
+An association connects 'classes_ValueSpecification' and 'classes_MultiplicityElement'. From 'classes_ValueSpecification', the role 'classes_ValueSpecification77' has cardinality 0..*, and from 'classes_MultiplicityElement', the role 'classes_MultiplicityElement76' has cardinality 0..*.
+An association connects 'classes_Parameter' and 'classes_BehavioralFeature'. From 'classes_Parameter', the role 'classes_Parameter' has cardinality 0..*, and from 'classes_BehavioralFeature', the role 'classes_BehavioralFeature' has cardinality 0..*.
+An association connects 'classes_Operation' and 'classes_Class'. From 'classes_Operation', the role 'ownedOperation' has cardinality 0..*, and from 'classes_Class', the role 'Class80' has cardinality 0..*.
+An association connects 'classes_Operation' and 'classes_Operation'. From 'classes_Operation', the role 'classes_Operation81' has cardinality 0..*, and from 'classes_Operation', the role 'classes_Operation' has cardinality 0..*.
+An association connects 'classes_Type' and 'classes_Operation'. From 'classes_Type', the role 'classes_Type85' has cardinality 0..*, and from 'classes_Operation', the role 'classes_Operation84' has cardinality 0..*.
+An association connects 'classes_InstanceSpecification' and 'classes_Classifier'. From 'classes_InstanceSpecification', the role 'classes_InstanceSpecification' has cardinality 0..*, and from 'classes_Classifier', the role 'classes_Classifier87' has cardinality 0..*.
+An association connects 'classes_Slot' and 'classes_InstanceSpecification'. From 'classes_Slot', the role 'Slot' has cardinality 0..*, and from 'classes_InstanceSpecification', the role 'owningInstance' has cardinality 0..*.
+An association connects 'classes_Slot' and 'classes_StructuralFeature'. From 'classes_Slot', the role 'classes_Slot' has cardinality 0..*, and from 'classes_StructuralFeature', the role 'classes_StructuralFeature' has cardinality 0..*.
+An association connects 'classes_Slot' and 'classes_ValueSpecification'. From 'classes_Slot', the role 'classes_Slot91' has cardinality 0..*, and from 'classes_ValueSpecification', the role 'classes_ValueSpecification92' has cardinality 0..*.
+An association connects 'classes_InstanceSpecification' and 'classes_Slot'. From 'classes_InstanceSpecification', the role 'InstanceSpecification' has cardinality 0..*, and from 'classes_Slot', the role 'slot' has cardinality 0..*.
+An association connects 'classes_InstanceValue' and 'classes_InstanceSpecification'. From 'classes_InstanceValue', the role 'classes_InstanceValue' has cardinality 0..*, and from 'classes_InstanceSpecification', the role 'classes_InstanceSpecification95' has cardinality 0..*.
+An association connects 'classes_EnumerationLiteral' and 'classes_Enumeration'. From 'classes_EnumerationLiteral', the role 'EnumerationLiteral' has cardinality 0..*, and from 'classes_Enumeration', the role 'enumeration' has cardinality 0..*.
+An association connects 'classes_EnumerationLiteral' and 'classes_Enumeration'. From 'classes_EnumerationLiteral', the role 'ownedLiteral' has cardinality 0..*, and from 'classes_Enumeration', the role 'Enumeration' has cardinality 0..*.
+An association connects 'classes_Class' and 'classes_Property'. From 'classes_Class', the role 'class' has cardinality 0..*, and from 'classes_Property', the role 'Property99' has cardinality 0..*.
+An association connects 'classes_Class' and 'classes_Operation'. From 'classes_Class', the role 'class101' has cardinality 0..*, and from 'classes_Operation', the role 'Operation' has cardinality 0..*.
+An association connects 'classes_Class' and 'classes_Class'. From 'classes_Class', the role 'classes_Class' has cardinality 0..*, and from 'classes_Class', the role 'classes_Class102' has cardinality 0..*.
+An association connects 'classes_Classifier' and 'classes_Class'. From 'classes_Classifier', the role 'classes_Classifier106' has cardinality 0..*, and from 'classes_Class', the role 'classes_Class105' has cardinality 0..*.

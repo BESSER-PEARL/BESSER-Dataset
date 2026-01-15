@@ -1,0 +1,44 @@
+The domain model 'ast' describes the core structural elements and their relationships within the system.
+
+The model defines 8 main class(es).
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_Expression' represents an important domain concept.
+It has one attribute: 'incrementalID', which is of type str.
+
+'ast_Model' represents an important domain concept.
+It does not declare any attributes.
+
+'Operand' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_Variable' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'ast_Operand' represents an important domain concept.
+It does not declare any attributes.
+
+'ast_Number' represents an important domain concept.
+It has one attribute: 'value', which is of type int.
+
+'ast_Operator' represents an important domain concept.
+It has one attribute: 'op', which is of type str.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ArithmeticOperator' defines the following possible values: 'Divide', 'Subtract', 'Add', 'Multiply'.
+
+The model also captures inheritance relationships between classes.
+The class 'ast_Operator' is a specialization of 'Expression'.
+The class 'ast_Operand' is a specialization of 'Expression'.
+The class 'ast_Variable' is a specialization of 'Operand'.
+The class 'ast_Number' is a specialization of 'Operand'.
+
+Relationships between classes are modeled using associations.
+An association connects 'ast_Expression' and 'ast_Model'. From 'ast_Expression', the role 'Expression' has cardinality 0..*, and from 'ast_Model', the role 'model' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_Model'. From 'ast_Expression', the role 'expr' has cardinality 0..*, and from 'ast_Model', the role 'Model' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_Operator'. From 'ast_Expression', the role 'left' has cardinality 0..*, and from 'ast_Operator', the role 'Operator' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_Operator'. From 'ast_Expression', the role 'right' has cardinality 0..*, and from 'ast_Operator', the role 'Operator4' has cardinality 0..*.
+An association connects 'ast_Operator' and 'ast_Expression'. From 'ast_Operator', the role 'leftInverse' has cardinality 0..*, and from 'ast_Expression', the role 'Expression6' has cardinality 0..*.
+An association connects 'ast_Expression' and 'ast_Operator'. From 'ast_Expression', the role 'Expression8' has cardinality 0..*, and from 'ast_Operator', the role 'rightInverse' has cardinality 0..*.

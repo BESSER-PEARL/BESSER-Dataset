@@ -1,0 +1,127 @@
+The domain model 'codemodel' describes the core structural elements and their relationships within the system.
+
+The model defines 27 main class(es).
+
+'codemodel_expressions_BinaryExp' represents an important domain concept.
+It has one attribute: 'operator', which is of type str.
+
+'codemodel_Function' represents an important domain concept.
+It has one attribute: 'identifier', which is of type str.
+
+'codemodel_FunctionArgument' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_statements_AssignmentStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_ScalarType' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_statements_CompositeStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_statements_Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'expressions_codemodel_Variable' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_Variable' represents an important domain concept.
+It has the following attributes: 'constant', which is of type bool; 'identifier', which is of type str.
+
+'codemodel_GlobalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_expressions_LiteralExp' represents an important domain concept.
+It has one attribute: 'value', which is of type str.
+
+'codemodel_expressions_Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_CMElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'codemodel_LocalVariable' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_DataType' represents an important domain concept.
+It has one attribute: 'basetype', which is of type str.
+
+'codemodel_MatrixType' represents an important domain concept.
+It has the following attributes: 'columns', which is of type str; 'rows', which is of type str.
+
+'CMElement' represents an important domain concept.
+It does not declare any attributes.
+
+'Expression' represents an important domain concept.
+It does not declare any attributes.
+
+'Statement' represents an important domain concept.
+It does not declare any attributes.
+
+'DataType' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_statements_ForStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'AssignmentStmt' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_VectorType' represents an important domain concept.
+It has one attribute: 'size', which is of type str.
+
+'codemodel_CodeModule' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_expressions_VariableExp' represents an important domain concept.
+It does not declare any attributes.
+
+'codemodel_statements_IfStmt' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'codemodel_CodeModule' is a specialization of 'CMElement'.
+The class 'codemodel_Variable' is a specialization of 'CMElement'.
+The class 'codemodel_Function' is a specialization of 'CMElement'.
+The class 'codemodel_GlobalVariable' is a specialization of 'Variable'.
+The class 'codemodel_FunctionArgument' is a specialization of 'Variable'.
+The class 'codemodel_LocalVariable' is a specialization of 'Variable'.
+The class 'codemodel_MatrixType' is a specialization of 'DataType'.
+The class 'codemodel_DataType' is a specialization of 'CMElement'.
+The class 'codemodel_VectorType' is a specialization of 'DataType'.
+The class 'codemodel_ScalarType' is a specialization of 'DataType'.
+The class 'codemodel_expressions_Expression' is a specialization of 'CMElement'.
+The class 'codemodel_expressions_VariableExp' is a specialization of 'Expression'.
+The class 'codemodel_expressions_BinaryExp' is a specialization of 'Expression'.
+The class 'codemodel_expressions_LiteralExp' is a specialization of 'Expression'.
+The class 'codemodel_statements_Statement' is a specialization of 'CMElement'.
+The class 'codemodel_statements_AssignmentStmt' is a specialization of 'Statement'.
+The class 'codemodel_statements_CompositeStmt' is a specialization of 'Statement'.
+The class 'codemodel_statements_IfStmt' is a specialization of 'Statement'.
+The class 'codemodel_statements_ForStmt' is a specialization of 'Statement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'codemodel_CodeModule' and 'codemodel_GlobalVariable'. From 'codemodel_CodeModule', the role 'codemodel_CodeModule' has cardinality 0..*, and from 'codemodel_GlobalVariable', the role 'codemodel_GlobalVariable' has cardinality 0..*.
+An association connects 'codemodel_CodeModule' and 'codemodel_Function'. From 'codemodel_CodeModule', the role 'codemodel_CodeModule2' has cardinality 0..*, and from 'codemodel_Function', the role 'codemodel_Function' has cardinality 0..*.
+An association connects 'codemodel_DataType' and 'codemodel_CodeModule'. From 'codemodel_DataType', the role 'codemodel_DataType' has cardinality 0..*, and from 'codemodel_CodeModule', the role 'codemodel_CodeModule4' has cardinality 0..*.
+An association connects 'codemodel_Variable' and 'codemodel_DataType'. From 'codemodel_Variable', the role 'codemodel_Variable' has cardinality 0..*, and from 'codemodel_DataType', the role 'codemodel_DataType6' has cardinality 0..*.
+An association connects 'codemodel_Function' and 'codemodel_FunctionArgument'. From 'codemodel_Function', the role 'codemodel_Function8' has cardinality 0..*, and from 'codemodel_FunctionArgument', the role 'codemodel_FunctionArgument' has cardinality 0..*.
+An association connects 'codemodel_LocalVariable' and 'codemodel_Function'. From 'codemodel_LocalVariable', the role 'codemodel_LocalVariable' has cardinality 0..*, and from 'codemodel_Function', the role 'codemodel_Function10' has cardinality 0..*.
+An association connects 'Statement' and 'codemodel_Function'. From 'Statement', the role 'Statement' has cardinality 0..*, and from 'codemodel_Function', the role 'codemodel_Function12' has cardinality 0..*.
+An association connects 'codemodel_expressions_VariableExp' and 'expressions_codemodel_Variable'. From 'codemodel_expressions_VariableExp', the role 'codemodel_expressions_VariableExp' has cardinality 0..*, and from 'expressions_codemodel_Variable', the role 'expressions_codemodel_Variable' has cardinality 0..*.
+An association connects 'codemodel_expressions_BinaryExp' and 'Expression'. From 'codemodel_expressions_BinaryExp', the role 'codemodel_expressions_BinaryExp' has cardinality 0..*, and from 'Expression', the role 'Expression' has cardinality 0..*.
+An association connects 'Expression' and 'codemodel_expressions_BinaryExp'. From 'Expression', the role 'Expression17' has cardinality 0..*, and from 'codemodel_expressions_BinaryExp', the role 'codemodel_expressions_BinaryExp16' has cardinality 0..*.
+An association connects 'Expression' and 'codemodel_statements_AssignmentStmt'. From 'Expression', the role 'Expression19' has cardinality 0..*, and from 'codemodel_statements_AssignmentStmt', the role 'codemodel_statements_AssignmentStmt' has cardinality 0..*.
+An association connects 'Expression' and 'codemodel_statements_AssignmentStmt'. From 'Expression', the role 'Expression22' has cardinality 0..*, and from 'codemodel_statements_AssignmentStmt', the role 'codemodel_statements_AssignmentStmt21' has cardinality 0..*.
+An association connects 'Statement' and 'codemodel_statements_CompositeStmt'. From 'Statement', the role 'Statement24' has cardinality 0..*, and from 'codemodel_statements_CompositeStmt', the role 'codemodel_statements_CompositeStmt' has cardinality 0..*.
+An association connects 'codemodel_statements_IfStmt' and 'Expression'. From 'codemodel_statements_IfStmt', the role 'codemodel_statements_IfStmt' has cardinality 0..*, and from 'Expression', the role 'Expression26' has cardinality 0..*.
+An association connects 'Statement' and 'codemodel_statements_IfStmt'. From 'Statement', the role 'Statement29' has cardinality 0..*, and from 'codemodel_statements_IfStmt', the role 'codemodel_statements_IfStmt28' has cardinality 0..*.
+An association connects 'Statement' and 'codemodel_statements_IfStmt'. From 'Statement', the role 'Statement32' has cardinality 0..*, and from 'codemodel_statements_IfStmt', the role 'codemodel_statements_IfStmt31' has cardinality 0..*.
+An association connects 'codemodel_statements_ForStmt' and 'AssignmentStmt'. From 'codemodel_statements_ForStmt', the role 'codemodel_statements_ForStmt' has cardinality 0..*, and from 'AssignmentStmt', the role 'AssignmentStmt' has cardinality 0..*.
+An association connects 'Expression' and 'codemodel_statements_ForStmt'. From 'Expression', the role 'Expression36' has cardinality 0..*, and from 'codemodel_statements_ForStmt', the role 'codemodel_statements_ForStmt35' has cardinality 0..*.
+An association connects 'Expression' and 'codemodel_statements_ForStmt'. From 'Expression', the role 'Expression39' has cardinality 0..*, and from 'codemodel_statements_ForStmt', the role 'codemodel_statements_ForStmt38' has cardinality 0..*.
+An association connects 'codemodel_statements_ForStmt' and 'Statement'. From 'codemodel_statements_ForStmt', the role 'codemodel_statements_ForStmt41' has cardinality 0..*, and from 'Statement', the role 'Statement42' has cardinality 0..*.

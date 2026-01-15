@@ -1,0 +1,61 @@
+The domain model 'fmp' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'fmp_Constraint' represents an important domain concept.
+It has one attribute: 'text', which is of type str.
+
+'fmp_Clonable' represents an important domain concept.
+It has one attribute: 'state', which is of type str.
+
+'Clonable' represents an important domain concept.
+It does not declare any attributes.
+
+'fmp_FeatureGroup' represents an important domain concept.
+It does not declare any attributes.
+
+'fmp_TypedValue' represents an important domain concept.
+It has the following attributes: 'stringValue', which is of type str; 'integerValue', which is of type str; 'floatValue', which is of type str.
+
+'fmp_Feature' represents an important domain concept.
+It has the following attributes: 'name', which is of type str; 'valueType', which is of type str.
+
+'Node' represents an important domain concept.
+It does not declare any attributes.
+
+'fmp_Reference' represents an important domain concept.
+It does not declare any attributes.
+
+'fmp_Node' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'min', which is of type int; 'max', which is of type int.
+
+'fmp_Project' represents an important domain concept.
+It does not declare any attributes.
+
+Enumerations define attributes whose values are restricted to a fixed set of well-defined literals.
+The enumeration 'ConfigState' defines the following possible values: 'MACHINE_ELIMINATED', 'USER_SELECTED', 'MACHINE_SELECTED', 'UNDECIDED', 'USER_ELIMINATED'.
+The enumeration 'ValueType' defines the following possible values: 'STRING', 'FLOAT', 'FEATURE', 'INTEGER', 'NONE'.
+
+The model also captures inheritance relationships between classes.
+The class 'fmp_Feature' is a specialization of 'Clonable'.
+The class 'fmp_FeatureGroup' is a specialization of 'Node'.
+The class 'fmp_Reference' is a specialization of 'Clonable'.
+The class 'fmp_Clonable' is a specialization of 'Node'.
+
+Relationships between classes are modeled using associations.
+An association connects 'fmp_Feature' and 'fmp_Feature'. From 'fmp_Feature', the role 'fmp_Feature' has cardinality 0..*, and from 'fmp_Feature', the role 'fmp_Feature0' has cardinality 0..*.
+An association connects 'fmp_Reference' and 'fmp_Feature'. From 'fmp_Reference', the role 'Reference' has cardinality 0..*, and from 'fmp_Feature', the role 'feature' has cardinality 0..*.
+An association connects 'fmp_Feature' and 'fmp_TypedValue'. From 'fmp_Feature', the role 'fmp_Feature4' has cardinality 0..*, and from 'fmp_TypedValue', the role 'fmp_TypedValue' has cardinality 0..*.
+An association connects 'fmp_Node' and 'fmp_Feature'. From 'fmp_Node', the role 'Node' has cardinality 0..*, and from 'fmp_Feature', the role 'properties' has cardinality 0..*.
+An association connects 'fmp_Feature' and 'fmp_Constraint'. From 'fmp_Feature', the role 'fmp_Feature7' has cardinality 0..*, and from 'fmp_Constraint', the role 'fmp_Constraint' has cardinality 0..*.
+An association connects 'fmp_Node' and 'fmp_Node'. From 'fmp_Node', the role 'origin' has cardinality 0..*, and from 'fmp_Node', the role 'Node10' has cardinality 0..*.
+An association connects 'fmp_Node' and 'fmp_Node'. From 'fmp_Node', the role 'confs' has cardinality 0..*, and from 'fmp_Node', the role 'Node13' has cardinality 0..*.
+An association connects 'fmp_Node' and 'fmp_Node'. From 'fmp_Node', the role 'fmp_Node' has cardinality 0..*, and from 'fmp_Node', the role 'fmp_Node14' has cardinality 0..*.
+An association connects 'fmp_Feature' and 'fmp_Node'. From 'fmp_Feature', the role 'Feature' has cardinality 0..*, and from 'fmp_Node', the role 'describedNode' has cardinality 0..*.
+An association connects 'fmp_Reference' and 'fmp_Feature'. From 'fmp_Reference', the role 'references' has cardinality 0..*, and from 'fmp_Feature', the role 'Feature18' has cardinality 0..*.
+An association connects 'fmp_Project' and 'fmp_Feature'. From 'fmp_Project', the role 'fmp_Project' has cardinality 0..*, and from 'fmp_Feature', the role 'fmp_Feature20' has cardinality 0..*.
+An association connects 'fmp_Feature' and 'fmp_Project'. From 'fmp_Feature', the role 'fmp_Feature23' has cardinality 0..*, and from 'fmp_Project', the role 'fmp_Project22' has cardinality 0..*.
+An association connects 'fmp_Feature' and 'fmp_Project'. From 'fmp_Feature', the role 'fmp_Feature26' has cardinality 0..*, and from 'fmp_Project', the role 'fmp_Project25' has cardinality 0..*.
+An association connects 'fmp_TypedValue' and 'fmp_Feature'. From 'fmp_TypedValue', the role 'fmp_TypedValue28' has cardinality 0..*, and from 'fmp_Feature', the role 'fmp_Feature29' has cardinality 0..*.
+An association connects 'fmp_Clonable' and 'fmp_Clonable'. From 'fmp_Clonable', the role 'Clonable' has cardinality 0..*, and from 'fmp_Clonable', the role 'prototype' has cardinality 0..*.
+An association connects 'fmp_Clonable' and 'fmp_Clonable'. From 'fmp_Clonable', the role 'clones' has cardinality 0..*, and from 'fmp_Clonable', the role 'Clonable34' has cardinality 0..*.

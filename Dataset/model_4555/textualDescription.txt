@@ -1,0 +1,45 @@
+The domain model 'myDsl' describes the core structural elements and their relationships within the system.
+
+The model defines 10 main class(es).
+
+'myDsl_CMD' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_MOVE' represents an important domain concept.
+It has one attribute: 'amount', which is of type int.
+
+'myDsl_TURTLE' represents an important domain concept.
+It has the following attributes: 'startPosX', which is of type int; 'startPosY', which is of type int.
+
+'myDsl_LEFT' represents an important domain concept.
+It has one attribute: 'amount', which is of type int.
+
+'myDsl_PAPER' represents an important domain concept.
+It has the following attributes: 'sizeY', which is of type int; 'paperColour', which is of type str; 'sizeX', which is of type int.
+
+'myDsl_RIGHT' represents an important domain concept.
+It has one attribute: 'amount', which is of type int.
+
+'myDsl_PENCOLOUR' represents an important domain concept.
+It has one attribute: 'colour', which is of type str.
+
+'myDsl_PROGRAM' represents an important domain concept.
+It does not declare any attributes.
+
+'myDsl_PENSTATE' represents an important domain concept.
+It has one attribute: 'penState', which is of type str.
+
+'CMD' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'myDsl_PAPER' is a specialization of 'CMD'.
+The class 'myDsl_TURTLE' is a specialization of 'CMD'.
+The class 'myDsl_PENSTATE' is a specialization of 'CMD'.
+The class 'myDsl_PENCOLOUR' is a specialization of 'CMD'.
+The class 'myDsl_MOVE' is a specialization of 'CMD'.
+The class 'myDsl_RIGHT' is a specialization of 'CMD'.
+The class 'myDsl_LEFT' is a specialization of 'CMD'.
+
+Relationships between classes are modeled using associations.
+An association connects 'myDsl_CMD' and 'myDsl_PROGRAM'. From 'myDsl_CMD', the role 'myDsl_CMD' has cardinality 0..*, and from 'myDsl_PROGRAM', the role 'myDsl_PROGRAM' has cardinality 0..*.

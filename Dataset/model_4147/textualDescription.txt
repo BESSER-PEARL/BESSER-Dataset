@@ -1,0 +1,12 @@
+The domain model 'lexertrace' describes the core structural elements and their relationships within the system.
+
+The model defines 2 main class(es).
+
+'lexertrace_Greeting' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'lexertrace_Model' represents an important domain concept.
+It does not declare any attributes.
+
+Relationships between classes are modeled using associations.
+An association connects 'lexertrace_Model' and 'lexertrace_Greeting'. From 'lexertrace_Model', the role 'lexertrace_Model' has cardinality 0..*, and from 'lexertrace_Greeting', the role 'lexertrace_Greeting' has cardinality 0..*.

@@ -1,0 +1,29 @@
+The domain model 'exercises' describes the core structural elements and their relationships within the system.
+
+The model defines 5 main class(es).
+
+'NamableElement' represents an important domain concept.
+It does not declare any attributes.
+
+'exercises_State' represents an important domain concept.
+It has the following attributes: 'id', which is of type str; 'isStart', which is of type bool; 'isEnd', which is of type bool.
+
+'exercises_NamableElement' represents an important domain concept.
+It has one attribute: 'name', which is of type str.
+
+'exercises_Transition' represents an important domain concept.
+It has one attribute: 'input', which is of type str.
+
+'exercises_DFA' represents an important domain concept.
+It does not declare any attributes.
+
+The model also captures inheritance relationships between classes.
+The class 'exercises_DFA' is a specialization of 'NamableElement'.
+The class 'exercises_State' is a specialization of 'NamableElement'.
+The class 'exercises_Transition' is a specialization of 'NamableElement'.
+
+Relationships between classes are modeled using associations.
+An association connects 'exercises_DFA' and 'exercises_State'. From 'exercises_DFA', the role 'exercises_DFA' has cardinality 0..*, and from 'exercises_State', the role 'exercises_State' has cardinality 0..*.
+An association connects 'exercises_DFA' and 'exercises_Transition'. From 'exercises_DFA', the role 'exercises_DFA2' has cardinality 0..*, and from 'exercises_Transition', the role 'exercises_Transition' has cardinality 0..*.
+An association connects 'exercises_State' and 'exercises_Transition'. From 'exercises_State', the role 'exercises_State4' has cardinality 0..*, and from 'exercises_Transition', the role 'exercises_Transition5' has cardinality 0..*.
+An association connects 'exercises_Transition' and 'exercises_State'. From 'exercises_Transition', the role 'exercises_Transition8' has cardinality 0..*, and from 'exercises_State', the role 'exercises_State7' has cardinality 0..*.
