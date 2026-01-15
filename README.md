@@ -1,6 +1,3 @@
-<div align="center">
-  <img src="./docs/source/_static/besser_logo_light.png" alt="BESSER platform" width="500"/>
-</div>
 
 # B-UML Dataset
 
@@ -88,7 +85,7 @@ dataset/
 │   ├── textual_description.txt
 │   └── category.txt
 readme.md
-
+```
 ## Code of Conduct
 
 At BESSER, our commitment is centered on establishing and maintaining development environments that are welcoming, inclusive, safe and free from all forms of harassment. All participants are expected to voluntarily respect and support our [Code of Conduct](CODE_OF_CONDUCT.md).
